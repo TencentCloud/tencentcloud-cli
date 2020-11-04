@@ -1,0 +1,361 @@
+{
+  "actions": {
+    "AcquireClusterAdminRole": [
+      {
+        "document": "CAM管理员子账户，拥有此action的权限之后，可以通过该接口获取集群管理员角色，访问kubernetes集群内资源。",
+        "input": "https://tke.tencentcloudapi.com/?Action=AcquireClusterAdminRole\n&ClusterId=cls-xxxx\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\":{\r\n    \"RequestId\":\"xxx\"\r\n  }\r\n}",
+        "title": "获取集群管理员角色"
+      }
+    ],
+    "AddExistedInstances": [
+      {
+        "document": "添加已经存在的实例到集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=AddExistedInstances\n&ClusterId=cls-xxxxxx\n&InstanceIds.0=ins-xxxxx\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TimeoutInstanceIds\": [\r\n        \"ins-lqdahrp3\"\r\n    ], \r\n    \"SuccInstanceIds\": [\r\n        \"ins-lqdahrp4\"\r\n    ], \r\n    \"FailedInstanceIds\": [\r\n        \"ins-lqdahrp5\"\r\n     ], \r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n    \"FailedReasons\": [\r\n        \"InstanceId ins-lqdahrp5 ServiceResetCvmV3 failed ...\"\r\n     ]\r\n  }\r\n}",
+        "title": "添加已经存在的实例到集群"
+      }
+    ],
+    "AddNodeToNodePool": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=AddNodeToNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxx\n&InstanceIds.0=ins-xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxx\"\r\n    }\r\n}",
+        "title": "将集群内节点移入节点池"
+      }
+    ],
+    "CreateCluster": [
+      {
+        "document": "创建托管集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateCluster\n&ClusterType=MANAGED_CLUSTER\n&ClusterCIDRSettings.ClusterCIDR=10.4.0.0/14\n&RunInstancesForNode.0.NodeRole=WORKER\n&RunInstancesForNode.0.RunInstancesPara.0={\"VirtualPrivateCloud\":{\"SubnetId\":\"subnet-xxx\",\"VpcId\":\"vpc-xxx\"},\"Placement\":{\"Zone\":\"ap-region-1\",\"ProjectId\":1032509},\"InstanceType\":\"S3.LARGE8\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\"},\"DataDisks\":[{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50}],\"InstanceCount\":1,\"InternetAccessible\":{\"PublicIpAssigned\":true,\"InternetMaxBandwidthOut\":1},\"LoginSettings\":{\"Password\":\"YourPassword\"},\"UserData\":\"IyEvYmluL3NoCgplY2hvIGFhYQo=\"}\n&ExtensionAddons.0.AddonName=GameApp\n&ExtensionAddons.0.AddonReq={\"kind\":\"GameApp\",\"apiVersion\":\"platform.tke/v1\",\"metadata\":{\"generateName\":\"ga\"},\"spec\":{\"clusterName\":\"xxx\"}}\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"ClusterId\": \"cls-xxx\",\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "创建托管集群示例"
+      },
+      {
+        "document": "创建独立集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateCluster\n&ClusterType=INDEPENDENT_CLUSTER\n&ClusterCIDRSettings.ClusterCIDR=10.4.0.0/14\n&RunInstancesForNode.0.NodeRole=MASTER_ETCD\n&RunInstancesForNode.0.RunInstancesPara.0={\"VirtualPrivateCloud\":{\"SubnetId\":\"subnet-xxx\",\"VpcId\":\"vpc-xxx\"},\"Placement\":{\"Zone\":\"ap-region-1\",\"ProjectId\":1032509},\"InstanceType\":\"S3.LARGE8\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\"},\"DataDisks\":[{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50}],\"InstanceCount\":3,\"InternetAccessible\":{\"PublicIpAssigned\":true,\"InternetMaxBandwidthOut\":1},\"LoginSettings\":{\"Password\":\"YourPassword\"},\"UserData\":\"IyEvYmluL3NoCgplY2hvIGFhYQo=\"}\n&RunInstancesForNode.1.NodeRole=WORKER\n&RunInstancesForNode.1.RunInstancesPara.0={\"VirtualPrivateCloud\":{\"SubnetId\":\"subnet-xxx\",\"VpcId\":\"vpc-xxx\"},\"Placement\":{\"Zone\":\"ap-region-1\",\"ProjectId\":1032509},\"InstanceType\":\"S3.LARGE8\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\"},\"DataDisks\":[{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50}],\"InstanceCount\":1,\"InternetAccessible\":{\"PublicIpAssigned\":true,\"InternetMaxBandwidthOut\":1},\"LoginSettings\":{\"Password\":\"YourPassword\"},\"UserData\":\"IyEvYmluL3NoCgplY2hvIGFhYQo=\"}\n&ExtensionAddons.0.AddonName=GameApp\n&ExtensionAddons.0.AddonReq={\"kind\":\"GameApp\",\"apiVersion\":\"platform.tke/v1\",\"metadata\":{\"generateName\":\"ga\"},\"spec\":{\"clusterName\":\"xxx\"}}\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"ClusterId\": \"cls-xxx\",\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "创建独立集群示例"
+      }
+    ],
+    "CreateClusterAsGroup": [
+      {
+        "document": "创建集群的伸缩组",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterAsGroup\r\n&ClusterId=cls-xxxxxx\r\n&AutoScalingGroupPara=\"{\"AutoScalingGroupName\":\"001\",\"MaxSize\":5,\"MinSize\":0,\"VpcId\":\"vpc-xxxxxxx\",\"SubnetIds\":[\"subnet-xxxxxxx\"],\"RetryPolicy\":\"IMMEDIATE_RETRY\"}\"\r\n&LaunchConfigurePara=\"{\"LaunchConfigurationName\":\"\",\"InstanceType\":\"S4.SMALL1\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50},\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":1,\"PublicIpAssigned\":true},\"LoginSettings\":{\"Password\":\"YourPassword\"},\"SecurityGroupIds\":[\"sg-xxxxxxx\"],\"EnhancedService\":{\"SecurityService\":{\"Enabled\":true},\"MonitorService\":{\"Enabled\":true}},\"InstanceChargeType\":\"POSTPAID_BY_HOUR\"}\"\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"AutoScalingGroupId\":\"asg-xxxxxxx\",\r\n    \"LaunchConfigurationId\":\"asc-xxxxxxxx\",\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "创建集群的伸缩组"
+      }
+    ],
+    "CreateClusterEndpoint": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterEndpoint\r\n&ClusterId=cls-xxxxxxxx\r\n&SubnetId=subnet-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "创建集群访问端口"
+      }
+    ],
+    "CreateClusterEndpointVip": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterEndpointVip\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestFlowId\": \"100000\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "创建托管集群外网访问端口"
+      }
+    ],
+    "CreateClusterInstances": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterInstances\n&ClusterId=cls-xxxxxxxx\n&RunInstancePara={\"Placement\":{\"Zone\":\"ap-guangzhou-4\"},\"InstanceType\":\"S3.SMALL1\"}\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceIdSet\": [\r\n            \"ins-xxxxxxxx\"\r\n        ],\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "扩展集群节点示例"
+      },
+      {
+        "document": "添加带有多个数据盘的节点到集群\n注意1: InstanceAdvancedSettings设置DataDisks,  多盘数据盘挂载信息，后端会根据盘的类型、大小匹配数据盘ID，将对应的路径挂载\n注意2: RunInstancePara设置DataDisks, 此参数透传给CVM，购买多块数据盘\n注意3: InstanceAdvancedSettings的MountTarget早期是支持单盘的，多盘场景废弃，无需填写",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterInstances\n<公共请求参数>\n\n{\"Action\":\"CreateClusterInstances\",\"ApiModule\":\"tke\",\"AppId\":123,\"ClientIp\":\"127.0.0.1\",\"ClusterId\":\"cls-qxxxxxx\",\"InstanceAdvancedSettings\":{\"DataDisks\":[{\"AutoFormatAndMount\":true,\"DiskSize\":50,\"DiskType\":\"CLOUD_PREMIUM\",\"FileSystem\":\"ext4\",\"MountTarget\":\"/data2\"},{\"AutoFormatAndMount\":true,\"DiskSize\":120,\"DiskType\":\"CLOUD_PREMIUM\",\"FileSystem\":\"ext4\",\"MountTarget\":\"/data4\"},{\"AutoFormatAndMount\":true,\"DiskSize\":100,\"DiskType\":\"CLOUD_PREMIUM\",\"FileSystem\":\"ext4\",\"MountTarget\":\"/data3\"},{\"AutoFormatAndMount\":true,\"DiskSize\":50,\"DiskType\":\"CLOUD_PREMIUM\",\"FileSystem\":\"ext4\",\"MountTarget\":\"/data5\"}],\"DockerGraphPath\":\"/var/lib/docker\",\"MountTarget\":\"/var/lib/docker\",\"Unschedulable\":0,\"UserScript\":\"\"},\"Language\":\"zh-CN\",\"Region\":\"ap-chongqing\",\"RequestId\":\"76a8bf8c-c039-4f52-ab31-5be5cafc53e3\",\"RequestSource\":\"MC\",\"RunInstancePara\":\"{\\\"InstanceChargeType\\\":\\\"POSTPAID_BY_HOUR\\\",\\\"Placement\\\":{\\\"Zone\\\":\\\"ap-chongqing-1\\\",\\\"ProjectId\\\":0},\\\"InstanceType\\\":\\\"S3.SMALL1\\\",\\\"SystemDisk\\\":{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\",\\\"DiskSize\\\":50},\\\"DataDisks\\\":[{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\",\\\"DiskSize\\\":50},{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\",\\\"DiskSize\\\":120},{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\",\\\"DiskSize\\\":100},{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\",\\\"DiskSize\\\":50}],\\\"VirtualPrivateCloud\\\":{\\\"VpcId\\\":\\\"vpc-d5ivotej\\\",\\\"SubnetId\\\":\\\"subnet-qh3ax3mo\\\",\\\"AsVpcGateway\\\":false},\\\"InternetAccessible\\\":{\\\"InternetChargeType\\\":\\\"TRAFFIC_POSTPAID_BY_HOUR\\\",\\\"InternetMaxBandwidthOut\\\":1,\\\"PublicIpAssigned\\\":true},\\\"InstanceCount\\\":1,\\\"ImageId\\\":\\\"img-xxxxxx\\\",\\\"InstanceName\\\":\\\"tke_cls-xxx_worker\\\",\\\"LoginSettings\\\":{\\\"KeyIds\\\":[\\\"skey-cxxxx\\\"]},\\\"SecurityGroupIds\\\":[\\\"sg-nxxxxxx\\\"],\\\"EnhancedService\\\":{\\\"SecurityService\\\":{\\\"Enabled\\\":true},\\\"MonitorService\\\":{\\\"Enabled\\\":true}}}\",\"SubAccountUin\":\"123\",\"Timestamp\":\"1574854507\",\"Token\":\"\",\"Uin\":\"12345678\",\"Version\":\"2018-05-25\"}",
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceIdSet\": [\r\n            \"ins-xxxxxxxx\"\r\n        ],\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "添加集群节点(多块数据盘）"
+      }
+    ],
+    "CreateClusterNodePool": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterNodePool\n&ClusterId=cls-xxxxxx\n&AutoScalingGroupPara={\"AutoScalingGroupName\":\"\",\"MaxSize\":1,\"MinSize\":0,\"DesiredCapacity\":1,\"VpcId\":\"vpc-xxx\",\"SubnetIds\":[\"subnet-xxx\"],\"RetryPolicy\":\"IMMEDIATE_RETRY\",\"ServiceSettings\":{\"ScalingMode\":\"CLASSIC_SCALING\"}}\n&LaunchConfigurePara={\"LaunchConfigurationName\":\"\",\"InstanceType\":\"SA2.SMALL1\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50},\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":0,\"PublicIpAssigned\":false},\"LoginSettings\":{\"Password\":\"xxx\"},\"SecurityGroupIds\":[\"sg-xxx\"],\"EnhancedService\":{\"SecurityService\":{\"Enabled\":true},\"MonitorService\":{\"Enabled\":true}},\"InstanceChargeType\":\"POSTPAID_BY_HOUR\"}\n&InstanceAdvancedSettings.MountTarget=xxx\n&EnableAutoscale=true\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"NodePoolId\":\"np-xxx\",\r\n        \"RequestId\":\"xxx-xxx-xxxx-xxx-xxxxx\"\r\n    }\r\n}",
+        "title": "创建节点池"
+      }
+    ],
+    "CreateClusterNodePoolFromExistingAsg": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterNodePoolFromExistingAsg\n&ClusterId=cls-xxxxxx\n&AutoscalingGroupId=asg-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"NodePoolId\":\"np-xxxxxxxx\",\r\n        \"RequestId\":\"xxxxxxxx\"\r\n    }\r\n}",
+        "title": "从伸缩组创建节点池"
+      }
+    ],
+    "CreateClusterRoute": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterRoute\r\n&RouteTableName=MANAGED_CLUSTER\r\n&DestinationCidrBlock=10.4.0.0/24\r\n&GatewayIp=10.0.0.3\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
+        "title": "创建集群路由"
+      }
+    ],
+    "CreateClusterRouteTable": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterRouteTable\r\n&RouteTableName=MANAGED_CLUSTER\r\n&RouteTableCidrBlock=10.4.0.0/16\r\n&VpcId=vpc-xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
+        "title": "创建集群路由表"
+      }
+    ],
+    "CreatePrometheusDashboard": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreatePrometheusDashboard\n&InstanceId=prom-xxx\n&DashboardName=test-dashboards\n&Contens.0=test\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "创建grafana面板"
+      }
+    ],
+    "DeleteCluster": [
+      {
+        "document": "删除集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteCluster\r\n&ClusterId=cls-xxxxxxxx\r\n&InstanceDeleteMode=terminate\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "删除集群"
+      }
+    ],
+    "DeleteClusterAsGroups": [
+      {
+        "document": "删除集群伸缩组",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterAsGroups\r\n&ClusterId=cls-xxxxxx\r\n&AutoScalingGroupIds.0=asg-xxxxxxxx\r\n&KeepInstance=false\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "删除集群伸缩组"
+      }
+    ],
+    "DeleteClusterEndpoint": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterEndpoint\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "删除集群访问端口"
+      }
+    ],
+    "DeleteClusterEndpointVip": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterEndpointVip\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "删除托管集群外网访问端口"
+      }
+    ],
+    "DeleteClusterInstances": [
+      {
+        "document": "删除集群中的实例",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterInstances\r\n&ClusterId=cls-xxxxxx\r\n&InstanceIds.0=ins-xxxxx\r\n&InstanceDeleteMode=terminate\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "删除集群中的实例"
+      }
+    ],
+    "DeleteClusterNodePool": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolIds.0=np-xxxxxxxx\n&KeepInstance=true\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"xxxx\"}}",
+        "title": "删除节点池"
+      }
+    ],
+    "DeleteClusterRoute": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterRoute\r\n&RouteTableName=MANAGED_CLUSTER\r\n&DestinationCidrBlock=10.4.0.0/24\r\n&GatewayIp=10.0.0.3\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
+        "title": "删除集群路由"
+      }
+    ],
+    "DeleteClusterRouteTable": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterRouteTable\r\n&RouteTableName=MANAGED_CLUSTER\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
+        "title": "删除集群路由表"
+      }
+    ],
+    "DescribeClusterAsGroupOption": [
+      {
+        "document": "集群弹性伸缩配置",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterAsGroupOption\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"82f2fe9c-c5fa-4077-9236-f1341180a696\"\r\n    }\r\n}",
+        "title": "集群弹性伸缩配置"
+      }
+    ],
+    "DescribeClusterAsGroups": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterAsGroups\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"82f2fe9c-c5fa-4077-9236-f1341180a696\"\r\n    }\r\n}",
+        "title": "集群关联的伸缩组列表"
+      }
+    ],
+    "DescribeClusterEndpointStatus": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterEndpointStatus\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"Status\": \"Created\"\r\n}\r\n}",
+        "title": "查询集群访问端口状态"
+      }
+    ],
+    "DescribeClusterEndpointVipStatus": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterEndpointVipStatus\r\n&ClusterId=cls-xxxxxxxx,\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"Creating\",\r\n       \"ErrorMsg\":\"\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "查询集群开启端口流程状态"
+      }
+    ],
+    "DescribeClusterInstances": [
+      {
+        "document": "查询集群实例信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterInstances\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"InstanceSet\": [\r\n            {\r\n                \"InstanceId\": \"ins-gsk7l6vw\",\r\n                \"InstanceRole\": \"WORKER\",\r\n                \"InstanceState\": \"running\",\r\n                \"FailedReason\": \"\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"82f2fe9c-c5fa-4077-9236-f1341180a696\"\r\n    }\r\n}",
+        "title": "查询集群实例信息"
+      }
+    ],
+    "DescribeClusterKubeconfig": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterKubeconfig\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"Kubeconfig\":\"xxx\",\r\n        \"RequestId\":\"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\r\n    }\r\n}",
+        "title": "获取集群kubeconfig文件"
+      }
+    ],
+    "DescribeClusterNodePoolDetail": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterNodePoolDetail\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"NodePool\":{\r\n            \"AutoscalingGroupId\":\"asg-xxx\",\r\n            \"AutoscalingGroupStatus\":\"enabled\",\r\n            \"ClusterInstanceId\":\"cls-xxx\",\r\n            \"DesiredNodesNum\":0,\r\n            \"Labels\":[\r\n\r\n            ],\r\n            \"LaunchConfigurationId\":\"asc-xxx\",\r\n            \"LifeState\":\"normal\",\r\n            \"MaxNodesNum\":1,\r\n            \"MinNodesNum\":0,\r\n            \"Name\":\"test\",\r\n            \"NodeCountSummary\":{\r\n                \"AutoscalingAdded\":{\r\n                    \"Initializing\":0,\r\n                    \"Joining\":0,\r\n                    \"Normal\":0,\r\n                    \"Total\":0\r\n                },\r\n                \"ManuallyAdded\":{\r\n                    \"Initializing\":0,\r\n                    \"Joining\":0,\r\n                    \"Normal\":1,\r\n                    \"Total\":1\r\n                }\r\n            },\r\n            \"NodePoolId\":\"np-xxxxx\",\r\n            \"Taints\":[\r\n\r\n            ]\r\n        },\r\n        \"RequestId\":\"xxx\"\r\n    }\r\n}",
+        "title": "查询节点池详情"
+      }
+    ],
+    "DescribeClusterNodePools": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterNodePools\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"NodePoolSet\":[\r\n            {\r\n                \"AutoscalingGroupId\":\"asg-xxxxx\",\r\n                \"AutoscalingGroupStatus\":\"enabled\",\r\n                \"ClusterInstanceId\":\"cls-xxxxx\",\r\n                \"DesiredNodesNum\":1,\r\n                \"Labels\":[\r\n\r\n                ],\r\n                \"LaunchConfigurationId\":\"asc-xxxxx\",\r\n                \"LifeState\":\"normal\",\r\n                \"MaxNodesNum\":1,\r\n                \"MinNodesNum\":0,\r\n                \"Name\":\"test2\",\r\n                \"NodeCountSummary\":{\r\n                    \"AutoscalingAdded\":{\r\n                        \"Initializing\":0,\r\n                        \"Joining\":0,\r\n                        \"Normal\":1,\r\n                        \"Total\":1\r\n                    },\r\n                    \"ManuallyAdded\":{\r\n                        \"Initializing\":0,\r\n                        \"Joining\":0,\r\n                        \"Normal\":0,\r\n                        \"Total\":0\r\n                    }\r\n                },\r\n                \"NodePoolId\":\"np-xxxx\",\r\n                \"Taints\":[\r\n\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\":\"xxxxxx\",\r\n        \"TotalCount\":1\r\n    }\r\n}",
+        "title": "查询节点池列表"
+      }
+    ],
+    "DescribeClusterRouteTables": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterRouteTables\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RouteTableSet\": [{\r\n            \"VpcId\": \"vpc-xxx\",\r\n            \"RouteTableCidrBlock\": \"10.4.0.0/16\",\r\n            \"RouteTableName\": \"MANAGED_CLUSTER\"\r\n        }],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n    }\r\n}",
+        "title": "查询集群路由表"
+      }
+    ],
+    "DescribeClusterRoutes": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterRoutes\n&RouteTableName=MANAGED_CLUSTER\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RouteSet\": [{\r\n            \"RouteTableName\": \"MANAGED_CLUSTER\",\r\n            \"DestinationCidrBlock\": \"10.4.0.0/24\",\r\n            \"GatewayIp\": \"10.0.0.3\"\r\n        }],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n    }\r\n}",
+        "title": "查询集群路由"
+      }
+    ],
+    "DescribeClusterSecurity": [
+      {
+        "document": "集群的密钥信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterSecurity\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"UserName\": \"xxxxx\",\r\n        \"CertificationAuthority\":\"xxxxxx\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\r\n    }\r\n}",
+        "title": "集群的密钥信息"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "查询集群列表，用于获取集群列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusters\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Clusters\": [\r\n            {\r\n                \"ClusterId\": \"cls-xxxxxxx\",\r\n                \"ClusterName\": \"集群\",\r\n                \"ClusterDescription\": \"\",\r\n                \"ClusterVersion\": \"1.10.5\",\r\n                \"ClusterOs\": \"ubuntu16.04.1 LTSx86_64\",\r\n                \"ClusterType\": \"INDEPENDENT_CLUSTER\",\r\n                \"ClusterNetworkSettings\": {\r\n                    \"ClusterCIDR\": \"10.211.0.0/16\",\r\n                    \"IgnoreClusterCIDRConflict\": false,\r\n                    \"MaxNodePodNum\": 256,\r\n                    \"MaxClusterServiceNum\": 256,\r\n                    \"Ipvs\": false,\r\n                    \"VpcId\": \"vpc-xxxxxx\"\r\n                },\r\n                \"ClusterNodeNum\": 3\r\n            }\r\n        ],\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
+        "title": "查询集群列表"
+      }
+    ],
+    "DescribeExistedInstances": [
+      {
+        "document": "查询已经存在的节点，判断是否可以加入集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeExistedInstances\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"ExistedInstanceSet\": [\r\n     {\r\n        \"Usable\": true,\r\n        \"UnusableReason\": \"\",\r\n        \"AlreadyInCluster\": \"\",\r\n        \"InstanceId\": \"ins-xxxxxxxx\",\r\n        \"InstanceName\": \"未命名\",\r\n        \"PrivateIpAddresses\": [\r\n          \"192.168.x.x\"\r\n        ],\r\n        \"PublicIpAddresses\": [\r\n          \"118.24.x.x\"\r\n        ],\r\n        \"CreatedTime\": \"2019-05-13T03:37:24Z\",\r\n        \"CPU\": 2,\r\n        \"Memory\": 4,\r\n        \"OsName\": \"Ubuntu xxxxxxxxx\",\r\n        \"InstanceType\": \"Sxxxxxx\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\r\n  }\r\n}",
+        "title": "查询已经存在的节点"
+      }
+    ],
+    "DescribeImages": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeImages\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\r\n  }\r\n}",
+        "title": "获取镜像信息"
+      }
+    ],
+    "DescribePrometheusAgentInstances": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAgentInstances\n&ClusterId=cls-xxx\n&<公共请求参数>",
+        "output": "{\r\n   \"Response\":{\r\n   \"Instances\":[ \"prome-xxx\"],\r\n   \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n   }\r\n}",
+        "title": "获取关联某集群的实例列表"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "获取地域列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeRegions\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\r\n  }\r\n}",
+        "title": "获取地域列表"
+      }
+    ],
+    "DescribeRouteTableConflicts": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeRouteTableConflicts\n&RouteTableCidrBlock=10.4.0.0/16\n&VpcId=vpc-xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n       \"HasConflict\": false,\r\n       \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n    }\r\n}",
+        "title": "查询路由表冲突列表"
+      }
+    ],
+    "ModifyClusterAsGroupAttribute": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyClusterAsGroupAttribute\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"82f2fe9c-c5fa-4077-9236-f1341180a696\"\r\n    }\r\n}",
+        "title": "修改集群伸缩组属性"
+      }
+    ],
+    "ModifyClusterAttribute": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyClusterAttribute\r\n&ClusterId=cls-xxxxxxx\r\n&ClusterName=aaa\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"ClusterName\":\"xxxxx\",\r\n    \"ClusterDesc\":\"xxxxx\",\r\n    \"ProjectId\":0,\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\r\n  }\r\n}",
+        "title": "修改集群属性"
+      }
+    ],
+    "ModifyClusterEndpointSP": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyClusterEndpointSP\r\n&ClusterId=cls-xxxxxxxx\r\n&SecurityPolicies.0=192.168.1.0/24\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "修改托管集群外网端口的安全策略"
+      }
+    ],
+    "ModifyClusterNodePool": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyClusterNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxx\"\r\n    }\r\n}",
+        "title": "编辑节点池"
+      }
+    ],
+    "RemoveNodeFromNodePool": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=RemoveNodeFromNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxxxx\n&InstanceIds.0=ins-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxx\"\r\n    }\r\n}",
+        "title": "移出节点池节点"
+      }
+    ]
+  },
+  "version": "1.0"
+}

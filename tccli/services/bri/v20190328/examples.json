@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeBRI": [
+      {
+        "document": "",
+        "input": "https://bri.tencentcloudapi.com/?Action=DescribeBRI\n&ResourceId=test_resource_id_for_bri_num\n&RequestData.Service=bri_num\n&RequestData.PhoneNumber=18122223554\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"891f2f2e-4851-4cd8-9555-8d92d6e77902\",\r\n    \"ResponseData\": {\"Score\":71.0,\"Tags\":[\"疑似新客户\"]}\r\n  }\r\n}",
+        "title": "bri_num"
+      }
+    ]
+  },
+  "version": "1.0"
+}

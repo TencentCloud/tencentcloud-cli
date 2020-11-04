@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "Chat": [
+      {
+        "document": "基于文本的机器人聊天",
+        "input": "https://aai.tencentcloudapi.com/?Action=Chat\r\n&Text=\"hello\"\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"Answer\":\"你好啊\",\"RequestId\":\"0f9ceb5c-0995-4347-8933-0cdccd024cf8\"}}",
+        "title": "智能闲聊接口"
+      }
+    ],
+    "SentenceRecognition": [
+      {
+        "document": "实时识别60s以内的短语音。",
+        "input": "https://aai.tencentcloudapi.com/?Action=SentenceRecognition\r\n&ProjectId=0\r\n&SubServiceType=2\r\n&EngSerViceType=8k\r\n&SourceType=0\r\n&Url=http%3A%2F%2Fliqiansunvoice-1255628450.cosgz.myqcloud.com%2Fdemo.mp3\r\n&SecretId=111\r\n&Timestamp=111\r\n&VoiceFormat=mp3\r\n&UsrAudioKey=www\r\n&Data=00011100111\r\n&DataLen=11111\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n                  \"Result\":\"张先生，您好。那个为了规范保险从业人员的销售行为，也为了更好的保护您的合法权益。\",\r\n                 \"RequestId\":\"8984d9a9-343f-4c67-8fd9-5c79510a12da\"\r\n                   }\r\n}",
+        "title": "一句话识别相关接口"
+      }
+    ],
+    "SimultaneousInterpreting": [
+      {
+        "document": "会场同传",
+        "input": "https://aai.tencentcloudapi.com/?Action=SimultaneousInterpreting\r\n&IsEnd=0\r\n&OpenTranslate=1\r\n&ProjectId=1093177\r\n&RecEngineModelType=16k_zh\r\n&SourceLanguage=zh\r\n&SubServiceType=3\r\n&TargetLanguage=en\r\n&VoiceFormat=1\r\n&VoiceId=0234567890abcdef\r\n&Data=ddddd\r\n&DataLen=5\r\n&Seq=0\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"AsrText\":\"你好世界。\",\"NmtText\":\"Hello world.\",\"RequestId\":\"980fae23-e210-4da4-97d8-3ecc131feea5\"}}",
+        "title": "同传接口调用"
+      }
+    ],
+    "TextToVoice": [
+      {
+        "document": "",
+        "input": "https://aai.tencentcloudapi.com/?Action=TextToVoice\r\n&Text=你好\r\n&SessionId=session-1234\r\n&Volume=1\r\n&Speed=1\r\n&ProjectId=0\r\n&ModelType=1\r\n&PrimaryLanguage=1\r\n&SampleRate=16000\r\n&Codec=wav\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Audio\": \"UklGRlR/AABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YSx9AAD+////AQD//wAAAAAAAAIAAQADAAMABgAEAAYABQAGAAUABwAIAAgACQAAE......AAgACAAEAAgADAAIAAwACAAQAAwACAAIAAgADAAMAAgACAAIAAwABAAAAAAAAAAAAAAD/////AAAAAAAA//8AAP///v/9//7//v///////v8AAP///////wAA/////wAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n\t\t\"RequestId\": \"9a7a1615-3e09-4db2-8032-5c6f497f7e6a\",\r\n\t\t\"SessionId\": \"session-1234\"\r\n\t}\r\n}",
+        "title": "API调用"
+      }
+    ]
+  },
+  "version": "1.0"
+}

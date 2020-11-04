@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "QueryAntiFraud": [
+      {
+        "document": "",
+        "input": "https://af.tencentcloudapi.com/?Action=QueryAntiFraud\r\n&Nonce=62972\r\n&Region=all\r\n&SecretId=AKIDufPRYgmsWyC8NtsRMq3t8CdkGWohJNmE\r\n&Timestamp=1467872277\r\n&AccountType=1\r\n&AppIdU=100273020\r\n&BankCardNumber=12345678\r\n&BusinessId=0\r\n&EmailAddress=373909726%40qq.com\r\n&IdNumber=1234567890\r\n&Imei=54654654646\r\n&Imsi=xxxyyzz\r\n&Name=%E6%9D%A8%E7%BA%A2\r\n&PhoneNumber=008613246208548\r\n&PostTime=1436664316\r\n&Uid=00000000000000000000000033121475\r\n&UserIp=8.8.8.8&mac=00-01-6C-06-A6-29\r\n&WifiSSID=test\u0002wifi\r\n&WifiBSSID=00-04-C3-A1-2B-22&Signature=Wn0Wuy3jkncGNvwf485XMxJaVmU%3D\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"CodeDesc\": \"Success\",\r\n\t\"Found\": 1,\r\n\t\"IdFound\": 1,\r\n\t\"PostTime\": \"1436664316\",\r\n\t\"RiskInfo\": [{\r\n\t\t\"RiskCode\": 1107\r\n\t}],\r\n\t\"RiskScore\": 70\r\n}",
+        "title": "借贷反欺诈接口示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

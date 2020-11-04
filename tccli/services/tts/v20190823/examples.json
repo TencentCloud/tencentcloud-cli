@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "TextToVoice": [
+      {
+        "document": "",
+        "input": "https://tts.tencentcloudapi.com/?Action=TextToVoice\n&Text=你好\n&SessionId=session-1234\n&Volume=1\n&Speed=1\n&ProjectId=0\n&ModelType=1\n&PrimaryLanguage=1\n&SampleRate=16000\n&Codec=wav\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Audio\": \"UklGRlR/AABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YSx9AAD+////AQD//wAAAAAAAAIAAQADAAMABgAEAAYABQAGAAUABwAIAAgACQAAE......AAgACAAEAAgADAAIAAwACAAQAAwACAAIAAgADAAMAAgACAAIAAwABAAAAAAAAAAAAAAD/////AAAAAAAA//8AAP///v/9//7//v///////v8AAP///////wAA/////wAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n\t\t\"RequestId\": \"9a7a1615-3e09-4db2-8032-5c6f497f7e6a\",\r\n\t\t\"SessionId\": \"session-1234\"\r\n\t}\r\n}",
+        "title": "API调用"
+      }
+    ]
+  },
+  "version": "1.0"
+}

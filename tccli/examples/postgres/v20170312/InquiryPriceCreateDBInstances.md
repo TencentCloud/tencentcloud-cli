@@ -1,0 +1,28 @@
+**Example 1: 查询实例的售卖价格**
+
+
+
+Input: 
+
+```
+tccli postgres InquiryPriceCreateDBInstances --cli-unfold-argument  \
+    --Zone ap-guangzhou-2\
+    --SpecCode cdb.pg.z1.2g\
+    --Storage 100\
+    --InstanceCount 1\
+    --Period 1\
+    --Pid 11004\
+    --InstanceChargeType PREPAID
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "8a61e500-aa33-454c-9ec2-da2a368c39ab",
+        "OriginalPrice": 27600,
+        "Price": 27600
+    }
+}
+```
+

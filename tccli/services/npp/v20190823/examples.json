@@ -1,0 +1,69 @@
+{
+  "actions": {
+    "CreateCallBack": [
+      {
+        "document": "",
+        "input": "https://xxx.tencentcloudapi.com/?Action=CreateCallBack\r\n&<公共请求参数>\r\n&BizAppId=xxx\r\n&Src=xxxx\r\n&Dst=xxxx\r\n&BizId=xxxxx",
+        "output": "{\r\n    \"Response\": {\r\n        \"CallId\": \"xxxx\",\r\n        \"DstDisplayNum\": \"\",\r\n        \"ErrorCode\": \"0\",\r\n        \"Msg\": \"\",\r\n        \"RequestId\": \"0629205c-aa43-46ce-9251-1cc83b383eef\",\r\n        \"SrcDisplayNum\": \"\"\r\n    }\r\n}",
+        "title": "回拨请求示例"
+      }
+    ],
+    "DelVirtualNum": [
+      {
+        "document": "",
+        "input": "https://npp.tencentcloudapi.com/?Action=DelVirtualNum\r\n&BizAppId=65535\r\n&BindId=14b3eb00-f75a-4181-8138-1d453cca995a\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"BindId\": \"14b3eb00-f75a-4181-8138-1d453cca995a\",\r\n    \"ErrorCode\": \"0\",\r\n    \"Msg\": \"\",\r\n    \"RequestId\": \"2004112214134693726\",\r\n    \"RefLeftNum\": \"0\"\r\n  }\r\n}",
+        "title": "axb解绑"
+      }
+    ],
+    "DeleteCallBack": [
+      {
+        "document": "",
+        "input": "https://xxx.tencentcloudapi.com/?Action=DeleteCallBack\r\n&<公共请求参数>\r\n&BizAppId=xxxx\r\n&CallId=xx",
+        "output": "{\r\n    \"Response\": {\r\n        \"CallId\": \"xxxxx\",\r\n        \"RequestId\": \"b6b0716b-b90f-436d-b520-cfdd2c998c93\"\r\n    }\r\n}",
+        "title": "取消回拨呼叫示例"
+      }
+    ],
+    "DescribeCallBackCdr": [
+      {
+        "document": "",
+        "input": "https://xxx.tencentcloudapi.com/?Action=DescribeCallBackCdr\r\n&<公共请求参数>\r\n&BizAppId=xxx\r\n&CallId=xxxx\r\n&Dst=xxxx\r\n&StartTimeStamp=1577030400\r\n&EndTimeStamp=1577116799",
+        "output": "{\r\n    \"Response\": {\r\n        \"Cdr\": [\r\n            {\r\n                \"BizId\": \"\",\r\n                \"CallEndStatus\": \"1\",\r\n                \"CallId\": \"xxxxx\",\r\n                \"CallType\": \"3\",\r\n                \"Dst\": \"008613xxxxxxx\",\r\n                \"DstAcceptTime\": \"1577082673\",\r\n                \"Duration\": \"13\",\r\n                \"EndCallTime\": \"1577082678\",\r\n                \"OrderId\": \"\",\r\n                \"RecordUrl\": \"url\",\r\n                \"Src\": \"00861xxxxxxx\",\r\n                \"SrcAcceptTime\": \"1577082658\",\r\n                \"StartDstCallTime\": \"1577082658\",\r\n                \"StartDstRingTime\": \"1577082658\",\r\n                \"StartSrcCallTime\": \"1577082644\",\r\n                \"StartSrcRingTime\": \"1577082644\"\r\n            }\r\n        ],\r\n        \"ErrorCode\": \"0\",\r\n        \"Msg\": \"Call Details\",\r\n        \"Offset\": \"0\",\r\n        \"RequestId\": \"e72179b7-9e82-4bcf-a62d-523d5baf571f\"\r\n    }\r\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeCallBackStatus": [
+      {
+        "document": "",
+        "input": "https://xxx.tencentcloudapi.com/?Action=DescribeCallBackStatus\r\n&<公共请求参数>\r\n&BizAppId=xxx\r\n&CallId=xxxx",
+        "output": "{\r\n    \"Response\": {\r\n        \"AppId\": \"\",\r\n        \"CallId\": \"\",\r\n        \"CallStatus\": \"\",\r\n        \"Dst\": \"\",\r\n        \"ErrorCode\": \"-201\",\r\n        \"Msg\": \"callid not exist\",\r\n        \"RequestId\": \"138441d5-0d13-47be-84b5-00c0d7b6fe07\",\r\n        \"Src\": \"\"\r\n    }\r\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeCallerDisplayList": [
+      {
+        "document": "",
+        "input": "https://xxx.tencentcloudapi.com/?Action=DescribeCallerDisplayList\r\n&<公共请求参数>\r\n&BizAppId=xxx",
+        "output": "{\r\n    \"Response\": {\r\n        \"AppId\": \"65535\",\r\n        \"CodeList\": [\r\n            {\r\n                \"Nation\": \"0086\",\r\n                \"Phone\": \"025xxxx\"\r\n            },\r\n            {\r\n                \"Nation\": \"0086\",\r\n                \"Phone\": \"025xxxxx\"\r\n            }\r\n        ],\r\n        \"ErrorCode\": \"0\",\r\n        \"Msg\": \"\",\r\n        \"RequestId\": \"3f166c9c-595e-47cf-ba43-58b3e8f1dd5b\"\r\n    }\r\n}",
+        "title": "示例"
+      }
+    ],
+    "Get400Cdr": [
+      {
+        "document": "",
+        "input": "https://npp.tencentcloudapi.com/?Action=Get400Cdr\r\n&BizAppId=65535\r\n&StartTimeStamp=1586729400\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"ErrorCode\": \"0\",\r\n    \"Msg\": \"\",\r\n    \"Offset\": \"0\",\r\n    \"Cdr\": []\r\n  }\r\n}",
+        "title": "获取中间号话单"
+      }
+    ],
+    "GetVirtualNum": [
+      {
+        "document": "",
+        "input": "https://npp.tencentcloudapi.com/?Action=GetVirtualNum\r\n&BizAppId=65535\r\n&Src=008615602455708\r\n&Dst=008613927437352\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"BindId\": \"14b3eb00-f75a-4181-8138-1d453cca995a\",\r\n    \"RefNum\": \"1\",\r\n    \"ErrorCode\": \"0\",\r\n    \"Msg\": \"\",\r\n    \"RequestId\": \"2004112214134693726\",\r\n    \"VirtualNum\": \"17130896805\"\r\n  }\r\n}",
+        "title": "axb绑定"
+      }
+    ]
+  },
+  "version": "1.0"
+}

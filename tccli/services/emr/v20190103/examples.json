@@ -1,0 +1,85 @@
+{
+  "actions": {
+    "CreateInstance": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=CreateInstance\n&ProductId=4\n&SupportHA=0\n&InstanceName=emr测试\n&PayMode=0\n&Placement.Zone=ap-guangzhou-3\n&Placement.ProjectId=0\n&AutoRenew=0\n&Software.0=hadoop-2.8.4\n&Software.1=zookeeper-3.4.9\n&Software.2=knox-1.2.0\n&ResourceSpec.MasterResourceSpec.MemSize=8192\n&ResourceSpec.MasterResourceSpec.Cpu=4\n&ResourceSpec.MasterResourceSpec.DiskSize=100\n&ResourceSpec.MasterResourceSpec.DiskType=CLOUD_PREMIUM\n&ResourceSpec.MasterResourceSpec.Spec=CVM.S2\n&ResourceSpec.MasterResourceSpec.RootSize=100\n&ResourceSpec.MasterResourceSpec.StorageType=5\n&ResourceSpec.CoreResourceSpec.MemSize=8192\n&ResourceSpec.CoreResourceSpec.Cpu=4\n&ResourceSpec.CoreResourceSpec.DiskSize=100\n&ResourceSpec.CoreResourceSpec.DiskType=CLOUD_PREMIUM\n&ResourceSpec.CoreResourceSpec.Spec=CVM.S2\n&ResourceSpec.CoreResourceSpec.RootSize=100\n&ResourceSpec.CoreResourceSpec.StorageType=5\n&ResourceSpec.MasterCount=1\n&ResourceSpec.CoreCount=2\n&VPCSettings.VpcId=vpc-ezt5qmqz\n&VPCSettings.SubnetId=subnet-jhgsahx0\n&LoginSettings.Password=tencent@cloud123\n&TimeSpan=3600\n&TimeUnit=s\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d830face-6587-4263-8ab0-56bda265787d\"\r\n    }\r\n}",
+        "title": "创建实例"
+      }
+    ],
+    "DescribeClusterNodes": [
+      {
+        "document": "通过emr集群ID获取硬件节点信息",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeClusterNodes\r\n&InstanceId=emr-6deluvd4\r\n&NodeFlag=all\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"NodeList\": [\r\n            {\r\n                \"AppId\": 251008830,\r\n                \"ApplyTime\": \"2020-02-24 20:31:06\",\r\n                \"CdbIp\": \"\",\r\n                \"CdbNodeInfo\": null,\r\n                \"CdbPort\": 0,\r\n                \"ChargeType\": 0,\r\n                \"CpuNum\": 8,\r\n                \"Destroyable\": 0,\r\n                \"DeviceClass\": \"VSELF_2\",\r\n                \"DiskSize\": \"100.00 GB\",\r\n                \"EmrResourceId\": \"emr-vm-6xyf2cb2\",\r\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\r\n                \"Flag\": 1,\r\n                \"FreeTime\": \"0000-00-00 00:00:00\",\r\n                \"HwDiskSize\": 107374182400,\r\n                \"HwDiskSizeDesc\": \"100.00 GB\",\r\n                \"HwMemSize\": 17179869184,\r\n                \"HwMemSizeDesc\": \"16GB\",\r\n                \"Ip\": \"10.0.0.76\",\r\n                \"IsAutoRenew\": 0,\r\n                \"MCMultiDisk\": [\r\n                    {\r\n                        \"Count\": 1,\r\n                        \"Type\": 5,\r\n                        \"Volume\": 107374182400\r\n                    }\r\n                ],\r\n                \"MemDesc\": \"16GB\",\r\n                \"MemSize\": 17179869184,\r\n                \"Mutable\": 1,\r\n                \"NameTag\": \"master.0\",\r\n                \"OrderNo\": \"ins-20224atg\",\r\n                \"RegionId\": 1,\r\n                \"RootSize\": 0,\r\n                \"SerialNo\": \"83d977e5-fa68-4051-875e-ad30ff42534f\",\r\n                \"Services\": \"Zookeeper,NameNode,ResourceManager,JobHistoryServer,HMaster,HbaseThrift,HiveServer2,HiveMetaStore,HiveWebHcat,Spark,SparkJobHistoryServer,Presto-Coordinator,knox\",\r\n                \"Spec\": \"CVM.S2\",\r\n                \"StorageType\": 5,\r\n                \"Tags\": [],\r\n                \"WanIp\": \"--\",\r\n                \"ZoneId\": 100002\r\n            },\r\n            {\r\n                \"AppId\": 251008830,\r\n                \"ApplyTime\": \"2020-02-24 20:31:07\",\r\n                \"CdbIp\": \"\",\r\n                \"CdbNodeInfo\": null,\r\n                \"CdbPort\": 0,\r\n                \"ChargeType\": 0,\r\n                \"CpuNum\": 8,\r\n                \"Destroyable\": 0,\r\n                \"DeviceClass\": \"VSELF_2\",\r\n                \"DiskSize\": \"100.00 GB\",\r\n                \"EmrResourceId\": \"emr-vm-cinlo2wc\",\r\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\r\n                \"Flag\": 2,\r\n                \"FreeTime\": \"0000-00-00 00:00:00\",\r\n                \"HwDiskSize\": 107374182400,\r\n                \"HwDiskSizeDesc\": \"100.00 GB\",\r\n                \"HwMemSize\": 17179869184,\r\n                \"HwMemSizeDesc\": \"16GB\",\r\n                \"Ip\": \"10.0.0.33\",\r\n                \"IsAutoRenew\": 0,\r\n                \"MCMultiDisk\": [\r\n                    {\r\n                        \"Count\": 1,\r\n                        \"Type\": 5,\r\n                        \"Volume\": 107374182400\r\n                    }\r\n                ],\r\n                \"MemDesc\": \"16GB\",\r\n                \"MemSize\": 17179869184,\r\n                \"Mutable\": 1,\r\n                \"NameTag\": \"core.0\",\r\n                \"OrderNo\": \"ins-20224gpk\",\r\n                \"RegionId\": 1,\r\n                \"RootSize\": 0,\r\n                \"SerialNo\": \"8ded940b-a579-4c81-be75-3aaf62137337\",\r\n                \"Services\": \"DataNode,NodeManager,RegionServer,Presto-Worker\",\r\n                \"Spec\": \"CVM.S2\",\r\n                \"StorageType\": 5,\r\n                \"Tags\": [],\r\n                \"WanIp\": \"\",\r\n                \"ZoneId\": 100002\r\n            },\r\n            {\r\n                \"AppId\": 251008830,\r\n                \"ApplyTime\": \"2020-02-24 20:31:08\",\r\n                \"CdbIp\": \"\",\r\n                \"CdbNodeInfo\": null,\r\n                \"CdbPort\": 0,\r\n                \"ChargeType\": 0,\r\n                \"CpuNum\": 8,\r\n                \"Destroyable\": 0,\r\n                \"DeviceClass\": \"VSELF_2\",\r\n                \"DiskSize\": \"100.00 GB\",\r\n                \"EmrResourceId\": \"emr-vm-b32qad6s\",\r\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\r\n                \"Flag\": 2,\r\n                \"FreeTime\": \"0000-00-00 00:00:00\",\r\n                \"HwDiskSize\": 107374182400,\r\n                \"HwDiskSizeDesc\": \"100.00 GB\",\r\n                \"HwMemSize\": 17179869184,\r\n                \"HwMemSizeDesc\": \"16GB\",\r\n                \"Ip\": \"10.0.0.111\",\r\n                \"IsAutoRenew\": 0,\r\n                \"MCMultiDisk\": [\r\n                    {\r\n                        \"Count\": 1,\r\n                        \"Type\": 5,\r\n                        \"Volume\": 107374182400\r\n                    }\r\n                ],\r\n                \"MemDesc\": \"16GB\",\r\n                \"MemSize\": 17179869184,\r\n                \"Mutable\": 1,\r\n                \"NameTag\": \"core.1\",\r\n                \"OrderNo\": \"ins-202241if\",\r\n                \"RegionId\": 1,\r\n                \"RootSize\": 0,\r\n                \"SerialNo\": \"c045bcd7-571a-4c64-b0a5-9024c94d5c15\",\r\n                \"Services\": \"DataNode,NodeManager,RegionServer,Presto-Worker\",\r\n                \"Spec\": \"CVM.S2\",\r\n                \"StorageType\": 5,\r\n                \"Tags\": [],\r\n                \"WanIp\": \"\",\r\n                \"ZoneId\": 100002\r\n            }\r\n        ],\r\n        \"RequestId\": \"bb22bafb-d2a4-4a02-879f-6ccf54a27892\",\r\n        \"TagKeys\": [\r\n            \"测试一下\",\r\n            \"alex_test\",\r\n            \"beckwuxingjia\",\r\n            \"ghghghg\",\r\n            \"tag_auth_test\",\r\n            \"test\",\r\n            \"beckwu\",\r\n            \"emr\",\r\n            \"lg\",\r\n            \"bk\"\r\n        ],\r\n        \"TotalCnt\": 3\r\n    }\r\n}",
+        "title": "获取硬件节点信息"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeInstances\r\n&Offset=0\r\n&Limit=10\r\n&ProjectId=0\r\n&OrderField=clusterid\r\n&Asc=0\r\n&DisplayStrategy=clusterList\r\n&InstanceIds.0=emr-p9f700x8\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ClusterList\": [\r\n            {\r\n                \"AddTime\": \"2019-09-16 16:48:01\",\r\n                \"AlarmInfo\": \"\",\r\n                \"AppId\": 251008830,\r\n                \"ChargeType\": 1,\r\n                \"ClusterId\": \"emr-p9f700x8\",\r\n                \"ClusterName\": \"beckwu_包年勿删\",\r\n                \"Config\": {\r\n                    \"ChargeType\": 1,\r\n                    \"ComNodeSize\": 0,\r\n                    \"ComResource\": {\r\n                        \"Cpu\": 0,\r\n                        \"DiskSize\": 0,\r\n                        \"DiskType\": \"\",\r\n                        \"MemSize\": 0,\r\n                        \"RootSize\": 0,\r\n                        \"Spec\": \"\",\r\n                        \"SpecName\": \"\",\r\n                        \"StorageType\": 0\r\n                    },\r\n                    \"CoreNodeSize\": 2,\r\n                    \"CoreResource\": {\r\n                        \"Cpu\": 2,\r\n                        \"DiskSize\": 100,\r\n                        \"DiskType\": \"CLOUD_BASIC\",\r\n                        \"MemSize\": 8192,\r\n                        \"RootSize\": 0,\r\n                        \"Spec\": \"CVM.S2\",\r\n                        \"SpecName\": \"EMR标准型S2\",\r\n                        \"StorageType\": 2\r\n                    },\r\n                    \"MasterNodeSize\": 1,\r\n                    \"MasterResource\": {\r\n                        \"Cpu\": 2,\r\n                        \"DiskSize\": 100,\r\n                        \"DiskType\": \"CLOUD_BASIC\",\r\n                        \"MemSize\": 8192,\r\n                        \"RootSize\": 0,\r\n                        \"Spec\": \"CVM.S2\",\r\n                        \"SpecName\": \"EMR标准型S2\",\r\n                        \"StorageType\": 2\r\n                    },\r\n                    \"OnCos\": false,\r\n                    \"SoftInfo\": [\r\n                        \"zookeeper-3.4.9\",\r\n                        \"hadoop-3.1.2\",\r\n                        \"knox-1.2.0\",\r\n                        \"sys-1.0\"\r\n                    ],\r\n                    \"TaskNodeSize\": 1,\r\n                    \"TaskResource\": {\r\n                        \"Cpu\": 2,\r\n                        \"DiskSize\": 100,\r\n                        \"DiskType\": \"CLOUD_BASIC\",\r\n                        \"MemSize\": 8192,\r\n                        \"RootSize\": 0,\r\n                        \"Spec\": \"CVM.S2\",\r\n                        \"SpecName\": \"EMR标准型S2\",\r\n                        \"StorageType\": 2\r\n                    }\r\n                },\r\n                \"EmrVersion\": \"EMR-V3.0.0\",\r\n                \"Ftitle\": \"集群运行中\",\r\n                \"Id\": 19541,\r\n                \"IsTradeCluster\": 0,\r\n                \"MasterIp\": \"--\",\r\n                \"ProjectId\": 0,\r\n                \"RegionId\": 1,\r\n                \"ResourceOrderId\": 0,\r\n                \"RunTime\": \"0天2小时48分钟55秒\",\r\n                \"Status\": 2,\r\n                \"SubnetId\": 1230738,\r\n                \"TradeVersion\": 1,\r\n                \"Uin\": \"1875765535\",\r\n                \"VpcId\": 78518,\r\n                \"ZoneId\": 100002\r\n            }\r\n        ],\r\n        \"RequestId\": \"4f337873-6fea-4338-9715-24f539b60949\",\r\n        \"TotalCnt\": 1\r\n    }\r\n}",
+        "title": "查询实例详情"
+      }
+    ],
+    "InquiryPriceCreateInstance": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceCreateInstance\r\n&SupportHA=0\r\n&PayMode=0\r\n&Placement.Zone=ap-guangzhou-3\r\n&Placement.ProjectId=0\r\n&Software.0=hadoop-2.7.3\r\n&Software.1=zookeeper-3.4.9\r\n&Software.2=hive-2.3.2\r\n&Software.3=knox-1.2.0\r\n&ResourceSpec.MasterResourceSpec.MemSize=16384\r\n&ResourceSpec.MasterResourceSpec.Cpu=4\r\n&ResourceSpec.MasterResourceSpec.DiskSize=100\r\n&ResourceSpec.MasterResourceSpec.DiskType=CLOUD_PREMIUM\r\n&ResourceSpec.MasterResourceSpec.Spec=CVM.S3\r\n&ResourceSpec.MasterResourceSpec.RootSize=100\r\n&ResourceSpec.MasterResourceSpec.StorageType=5\r\n&ResourceSpec.CoreResourceSpec.MemSize=16384\r\n&ResourceSpec.CoreResourceSpec.Cpu=4\r\n&ResourceSpec.CoreResourceSpec.DiskSize=100\r\n&ResourceSpec.CoreResourceSpec.DiskType=CLOUD_PREMIUM\r\n&ResourceSpec.CoreResourceSpec.Spec=CVM.S3\r\n&ResourceSpec.CoreResourceSpec.RootSize=100\r\n&ResourceSpec.CoreResourceSpec.StorageType=5\r\n&ResourceSpec.MasterCount=1\r\n&ResourceSpec.CoreCount=2\r\n&VPCSettings.VpcId=vpc-ezt5qmqz\r\n&VPCSettings.SubnetId=subnet-jhgsahx0\r\n&TimeSpan=3600\r\n&TimeUnit=s\r\n&Currency=CNY\r\n&ProductId=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DiscountCost\": 5.53,\r\n        \"OriginalCost\": 7.87,\r\n        \"RequestId\": \"863e0be5-ab86-4daa-84f2-f84953f18aec\",\r\n        \"TimeSpan\": 3600,\r\n        \"TimeUnit\": \"s\"\r\n    }\r\n}",
+        "title": "创建询价"
+      }
+    ],
+    "InquiryPriceRenewInstance": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceRenewInstance\r\n&TimeUnit=m\r\n&TimeSpan=1\r\n&Currency=CNY\r\n&PayMode=1\r\n&ResourceIds.0=emr-vm-jv1s4zas\r\n&Placement.ProjectId=0\r\n&Placement.Zone=ap-guangzhou-4\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DiscountCost\": 596.54,\r\n        \"OriginalCost\": 898.9,\r\n        \"RequestId\": \"223c838e-ce27-4adf-9a41-89661fe7ad21\",\r\n        \"TimeSpan\": 1,\r\n        \"TimeUnit\": \"m\"\r\n    }\r\n}",
+        "title": "续费询价示例"
+      }
+    ],
+    "InquiryPriceScaleOutInstance": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceScaleOutInstance\r\n&TimeUnit=s\r\n&TimeSpan=3600\r\n&ZoneId=100003\r\n&PayMode=0\r\n&InstanceId=emr-3ida6zmi\r\n&CoreCount=1\r\n&TaskCount=0\r\n&Currency=CNY\r\n&RouterCount=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"04daa603-e1e7-4243-b25d-31e6a6736528\"\r\n    }\r\n}",
+        "title": "扩容询价"
+      }
+    ],
+    "InquiryPriceUpdateInstance": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceUpdateInstance\r\n&TimeUnit=s\r\n&TimeSpan=3600\r\n&Placement.Zone=100003\r\n&Currency=CNY\r\n&Placement.ProjectId=0\r\n&UpdateSpec.Memory=16\r\n&UpdateSpec.CPUCores=8\r\n&UpdateSpec.ResourceId=emr-vm-a0xxx9on\r\n&PayMode=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DiscountCost\": 2.01,\r\n        \"OriginalCost\": 3.04,\r\n        \"RequestId\": \"95eb9120-0883-407c-aa5a-43b4e2c250d1\",\r\n        \"TimeSpan\": 3600,\r\n        \"TimeUnit\": \"s\"\r\n    }\r\n}",
+        "title": "变配询价"
+      }
+    ],
+    "ScaleOutInstance": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=ScaleOutInstance\n&TimeUnit=s\n&TimeSpan=3600\n&CoreCount=1\n&InstanceId=emr-5n3l5c83\n&PayMode=0\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"BillId\": \"\",\r\n    \"ClientToken\": \"\",\r\n    \"DealNames\": [\r\n      \"20200309357833\",\r\n      \"20200309357834\",\r\n      \"20200309357835\",\r\n      \"20200309357836\"\r\n    ],\r\n    \"FlowId\": 0,\r\n    \"InstanceId\": \"emr-5n3l5c83\",\r\n    \"RequestId\": \"f0f11d21-6d0d-4f73-9177-8ae4ec456068\"\r\n  }\r\n}",
+        "title": "集群扩容"
+      }
+    ],
+    "TerminateInstance": [
+      {
+        "document": "销毁整个集群",
+        "input": "https://emr.tencentcloudapi.com/?Action=TerminateInstance\r\n&InstanceId=emr-4slr7ad7\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {    \r\n        \"RequestId\": \"4d701c1e-8507-47e1-8c69-a8f06a236f24\"\r\n    }\r\n}",
+        "title": "销毁实例"
+      }
+    ],
+    "TerminateTasks": [
+      {
+        "document": "销毁TASK节点",
+        "input": "https://emr.tencentcloudapi.com/?Action=TerminateTasks\r\n&InstanceId=emr-4slr7ad7\r\n&ResourceIds.0=emr-vm-xxx33tg\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4d701c1e-8507-47e1-8c69-a8f06a236f24\"\r\n    }\r\n}",
+        "title": "销毁节点"
+      }
+    ]
+  },
+  "version": "1.0"
+}

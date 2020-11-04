@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeStatus": [
+      {
+        "document": "",
+        "input": "https://habo.tencentcloudapi.com/?Action=DescribeStatus\r\n&Pk=authkey\r\n&Md5=md5_of_sample\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": 1,\r\n        \"Info\": \"success\",\r\n        \"Data\": \"https://cloud.habo.qq.com/api/dl_report?md5=xxxxx&timeout=xxxxx&crc=xxxxx\",\r\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\"\r\n    }\r\n}",
+        "title": "获取样本分析结果"
+      }
+    ],
+    "StartAnalyse": [
+      {
+        "document": "",
+        "input": "https://habo.tencentcloudapi.com/?Action=StartAnalyse\r\n&Pk=authkey\r\n&Md5=md5_of_sample\r\n&DlUrl=http(s)://down.demo.com%2fsample_path\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": 1,\r\n        \"Info\": \"success\",\r\n        \"Data\": \"\",\r\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\"\r\n    }\r\n}",
+        "title": "提交一个样本进行分析"
+      }
+    ]
+  },
+  "version": "1.0"
+}

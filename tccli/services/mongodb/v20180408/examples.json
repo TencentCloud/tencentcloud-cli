@@ -1,0 +1,109 @@
+{
+  "actions": {
+    "AssignProject": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=AssignProject\r\n&InstanceIds.0=cmgo-eqmoa5sf\r\n&ProjectId=12\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FlowIds\": [\r\n            1081\r\n        ],\r\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\r\n    }\r\n}",
+        "title": "指定云数据库实例的所属项目"
+      }
+    ],
+    "CreateDBInstance": [
+      {
+        "document": "客户需要通过API创建包年包月云数据库实例",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstance\r\n&Memory=4\r\n&Volume=250\r\n&GoodsNum=1\r\n&Zone=ap-guangzhou-2\r\n&UniqVpcId=vpc-0akbol5v\r\n&UniqSubnetId=subnet-fyrtjbqw\r\n&ProjectId=0\r\n&MongoVersion=MONGO_3_WT\r\n&MachineCode=TGIO\r\n&SecondaryNum=2\r\n&TimeSpan=1\r\n&Password=pwd123456\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\r\n        \"DealId\": \"7142863\",\r\n        \"InstanceIds\": [\r\n            \"cmgo-po5f899l\"\r\n        ]\r\n    }\r\n}",
+        "title": "创建包年包月的云数据库实例"
+      }
+    ],
+    "CreateDBInstanceHour": [
+      {
+        "document": "客户需要通过API创建按量计费的云数据库实例",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstanceHour\r\n&Memory=4\r\n&Volume=250\r\n&ReplicateSetNum=1\r\n&SecondaryNum=2\r\n&EngineVersion=MONGO_3_WT\r\n&Machine=TGIO\r\n&GoodsNum=1\r\n&Zone=ap-guangzhou-3\r\n&InstanceRole=MASTER\r\n&InstanceType=REPLSET\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\r\n        \"DealId\": \"20190709160000003502416120946732\",\r\n        \"InstanceIds\": [\r\n            \"cmgo-m26c6jsf\"\r\n        ]\r\n    }\r\n}",
+        "title": "创建云数据库实例（按量计费）"
+      }
+    ],
+    "DescribeClientConnections": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeClientConnections\r\n&InstanceId=cmgo-eqmoaxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Clients\": [\r\n            {\r\n                \"Count\": 15,\r\n                \"IP\": \"10.xx.xx.xx\"\r\n            },\r\n            {\r\n                \"Count\": 15,\r\n                \"IP\": \"10.xx.xx.xx\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"c61fd6e2-c505-4fb9-9f30-edd8e897b236\"\r\n    }\r\n}",
+        "title": "查询云数据库实例的客户端连接情况"
+      }
+    ],
+    "DescribeDBInstances": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeDBInstances\r\n&Limit=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceDetails\": [\r\n            {\r\n                \"AutoRenewFlag\": 0,\r\n                \"CloneInstances\": [],\r\n                \"ClusterType\": 0,\r\n                \"ClusterVer\": 1,\r\n                \"CpuNum\": 2,\r\n                \"CreateTime\": \"2019-04-02 19:29:16\",\r\n                \"DeadLine\": \"2019-04-04 19:29:16\",\r\n                \"InstanceId\": \"cmgo-rw2v134z\",\r\n                \"InstanceName\": \"cmgo-rw2v134z\",\r\n                \"InstanceStatusDesc\": \"回档中\",\r\n                \"InstanceType\": 2,\r\n                \"InstanceVer\": 4,\r\n                \"MachineType\": \"HIO10G\",\r\n                \"MaintenanceEnd\": \"05:00:00\",\r\n                \"MaintenanceStart\": \"04:00:00\",\r\n                \"Memory\": 4096,\r\n                \"MongoVersion\": \"MONGO_3_WT\",\r\n                \"NetType\": 1,\r\n                \"PayMode\": 0,\r\n                \"ProjectId\": 0,\r\n                \"Protocol\": 0,\r\n                \"ReadonlyInstances\": [],\r\n                \"RealInstanceId\": \"cmgo-da0pc0dr\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"RelatedInstance\": {\r\n                    \"InstanceId\": \"\",\r\n                    \"Region\": \"\"\r\n                },\r\n                \"ReplicaSets\": [\r\n                    {\r\n                        \"Memory\": 4096,\r\n                        \"OplogSize\": 10240,\r\n                        \"RealReplicaSetId\": \"cmgo-rw2v134z_0\",\r\n                        \"ReplicaSetId\": \"cmgo-rw2v134z_0\",\r\n                        \"ReplicaSetName\": \"cmgo-rw2v134z_0\",\r\n                        \"SecondaryNum\": 2,\r\n                        \"UsedVolume\": 0,\r\n                        \"Volume\": 102400\r\n                    }\r\n                ],\r\n                \"ReplicationSetNum\": 1,\r\n                \"SecondaryNum\": 2,\r\n                \"StandbyInstances\": [],\r\n                \"Status\": 1,\r\n                \"SubnetId\": \"subnet-b0lagkxi\",\r\n                \"Tags\": [],\r\n                \"UsedVolume\": 0,\r\n                \"Vip\": \"\",\r\n                \"Volume\": 102400,\r\n                \"VpcId\": \"vpc-orgohlut\",\r\n                \"Vport\": 27017,\r\n                \"Zone\": \"ap-guangzhou-3\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"302530d2-ee57-495e-89d0-51e03b11815e\",\r\n        \"TotalCount\": 19\r\n    }\r\n}",
+        "title": "查询实例列表"
+      }
+    ],
+    "DescribeSlowLog": [
+      {
+        "document": "客户需要通过API查询云数据库MongoDB实例慢日志",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSlowLog\r\n&InstanceId=cmgo-eqmoa5sf\r\n&StartTime=2019-06-04 20:21:00\r\n&EndTime=2019-06-04 20:22:00\r\n&SlowMS=200\r\n&Offset=20\r\n&Limit=20\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"302530d2-ee57-495e-89d0-51e03b11815e\",\r\n        \"SlowLogList\": [\"Tue Jun  4 17:52:39.247 I COMMAND  [conn2898] xxxx\"]\r\n    }\r\n}",
+        "title": "查询云数据库MongoDB实例慢日志"
+      }
+    ],
+    "DescribeSpecInfo": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSpecInfo\r\n&Region=ap-guangzhou\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a8c7ade4-2d22-4f5e-9e71-f546f15e6d67\",\r\n        \"SpecInfoList\": [\r\n            {\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"SpecItem\": [\r\n                    {\r\n                        \"ClusterType\": 0,\r\n                        \"Conns\": 1500,\r\n                        \"Cpu\": 2,\r\n                        \"DefaultStorage\": 25600,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 512000,\r\n                        \"Memory\": 4096,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 102400,\r\n                        \"MongoVersionCode\": \"MONGO_36_WT\",\r\n                        \"MongoVersionValue\": 4,\r\n                        \"Qps\": 5000,\r\n                        \"SpecCode\": \"mongo.HIO10G.4g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.6\"\r\n                    },\r\n                    {\r\n                        \"ClusterType\": 0,\r\n                        \"Conns\": 1500,\r\n                        \"Cpu\": 2,\r\n                        \"DefaultStorage\": 25600,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 512000,\r\n                        \"Memory\": 4096,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 102400,\r\n                        \"MongoVersionCode\": \"MONGO_3_WT\",\r\n                        \"MongoVersionValue\": 2,\r\n                        \"Qps\": 5000,\r\n                        \"SpecCode\": \"mongo.HIO10G.4g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.2\"\r\n                    },\r\n                    {\r\n                        \"ClusterType\": 1,\r\n                        \"Conns\": 15000,\r\n                        \"Cpu\": 48,\r\n                        \"DefaultStorage\": 4096000,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 6144000,\r\n                        \"Memory\": 524288,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 1536000,\r\n                        \"MongoVersionCode\": \"MONGO_36_WT\",\r\n                        \"MongoVersionValue\": 4,\r\n                        \"Qps\": 42000,\r\n                        \"SpecCode\": \"mongo.HIO10G.512g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.6\"\r\n                    }\r\n                ],\r\n                \"Zone\": \"ap-guangzhou-3\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询云数据库售卖"
+      }
+    ],
+    "RenameInstance": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=RenameInstance\r\n&InstanceId=cmgo-eqmoa5sf\r\n&NewName=test_name\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\r\n    }\r\n}",
+        "title": "重命名云数据库实例"
+      }
+    ],
+    "SetAutoRenew": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=SetAutoRenew\r\n&InstanceIds.0=cmgo-8l3r6yyt\r\n&AutoRenewFlag=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1d0d55f9-15ee-4f00-b460-7b645a62cc3a\"\r\n    }\r\n}",
+        "title": "设置包年包月实例的续费选项"
+      }
+    ],
+    "SetPassword": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=SetPassword\r\n&InstanceId=cmgo-eqmoa5sf\r\n&UserName=test_user\r\n&Password=test_password123\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FlowId\": 1082,\r\n        \"RequestId\": \"a02372cf-5e09-4d17-ab79-2ee3f60e86ff\"\r\n    }\r\n}",
+        "title": "设置云数据库实例账户密码"
+      }
+    ],
+    "TerminateDBInstance": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=TerminateDBInstance\r\n&InstanceId=cmgo-f555zzzz\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"AsyncRequestId\":\"28920\"\r\n    }\r\n}",
+        "title": "销毁按量计费的云数据库实例"
+      }
+    ],
+    "UpgradeDBInstance": [
+      {
+        "document": "客户需要通过API升级包年包月的云数据库实例",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=UpgradeDBInstance\r\n&Memory=4\r\n&Volume=250\r\n&InstanceId=cmgo-f555zzzz\r\n&OplogSize=26\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"be8f4a30-ea2e-4623-8b6b-0ccce04cd9f7\",\r\n        \"DealId\": \"19297475\"\r\n    }\r\n}",
+        "title": "升级包年包月的云数据库实例"
+      }
+    ],
+    "UpgradeDBInstanceHour": [
+      {
+        "document": "用户需要通过API升级包年包月的云数据库实例",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=UpgradeDBInstanceHour\r\n&Memory=4\r\n&Volume=250\r\n&InstanceId=cmgo-f555zzz\r\n&OplogSize=25\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"DealId\":\"20171201160000002670226599824833\"\r\n    }\r\n}",
+        "title": "升级包年包月的云数据库实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

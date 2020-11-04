@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "CancelTask": [
+      {
+        "document": "取消任务",
+        "input": "https://ams.tencentcloudapi.com/?Action=CancelTask\n&TaskId=123\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n         \"RequestId\":\"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n    }\r\n}",
+        "title": "取消任务"
+      }
+    ],
+    "CreateAudioModerationTask": [
+      {
+        "document": "创建音频审核任务",
+        "input": "https://ams.tencentcloudapi.com/?Action=CreateAudioModerationTask\n&BizType=1001\n&Type=AUDIO\n&Tasks.0.DataId=test_data_1\n&Tasks.0.Input.Type=URL\n&Tasks.0.Input.Url=https://a.com/test.mp3\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Results\": [\r\n      {\r\n        \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\r\n        \"TaskId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\",\r\n        \"Code\": \"OK\",\r\n        \"Message\": \"Success\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n  }\r\n}",
+        "title": "创建音频审核任务"
+      }
+    ],
+    "CreateBizConfig": [
+      {
+        "document": "创建业务配置，1个账号最多可以创建20个配置",
+        "input": "https://ams.tencentcloudapi.com/?Action=CreateBizConfig\n&BizType=1002\n&BizName=音频审核模板\n&ModerationCategories.0=Porn\n&ModerationCategories.1=Polity\n&ModerationCategories.2=Terror\n&MediaModeration.ImageFrequency=5\n&MediaModeration.AudioFrequency=60\n&MediaModeration.SegmentOutput.Bucket=cms_segments-623322\n&MediaModeration.SegmentOutput.Region=ap-guangzhou\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n  }\r\n}",
+        "title": "创建业务配置"
+      }
+    ],
+    "DescribeBizConfig": [
+      {
+        "document": "查看单个配置",
+        "input": "https://ams.tencentcloudapi.com/?Action=DescribeBizConfig\r\n&BizType=1001\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"BizType\": \"1001\",\r\n    \"BizName\": \"测试项目\",\r\n    \"ModerationCategories\": [\r\n      \"Porn\"\r\n    ],\r\n    \"MediaModeration\": {\r\n      \"ImageFrequency\": 1,\r\n      \"AudioFrequency\": 60,\r\n      \"UseOCR\": false,\r\n      \"UseAudio\": true,\r\n      \"CallbackUrl\": \"http://example.com/fromcms\",\r\n      \"SegmentOutput\": {\r\n        \"Bucket\": \"cms-256309736\",\r\n        \"Region\": \"ap-guangzhou\",\r\n        \"ObjectPrefix\": \"_cms_segments/\"\r\n      }\r\n    },\r\n    \"CreatedAt\": \"2020-07-13T11:46:43.840Z\",\r\n    \"UpdatedAt\": \"2020-07-13T11:46:43.840Z\",\r\n    \"RequestId\": \"8d3e4765-48db-40b5-8fdb-aaf1d7225a60\"\r\n  }\r\n}",
+        "title": "查看单个配置"
+      }
+    ],
+    "DescribeTaskDetail": [
+      {
+        "document": "在创建任务后，可以通过TaskId查看任务详情",
+        "input": "https://ams.tencentcloudapi.com/?Action=DescribeTaskDetail\r\n&TaskId=task-audio-Xw0mjnmaiu-Uv1fs\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"task-audio-XwxJtbkKXWgCt8AZ\",\r\n    \"DataId\": \"data_test_01\",\r\n    \"BizType\": \"1001\",\r\n    \"Name\": \"\",\r\n    \"Status\": \"FINISH\",\r\n    \"Type\": \"AUDIO\",\r\n    \"Suggestion\": \"Pass\",\r\n    \"AudioText\": \"识别的音频文本\",\r\n    \"MediaInfo\": {\r\n      \"Codecs\": \"aac\",\r\n      \"Duration\": 36\r\n    },\r\n    \"InputInfo\": {\r\n      \"Type\": \"URL\",\r\n      \"Url\": \"https://cms-video-segments-1256309736.cos.ap-guangzhou.myqcloud.co/huang.mp3\"\r\n    },\r\n    \"CreatedAt\": \"2020-07-13T11:47:01.925Z\",\r\n    \"UpdatedAt\": \"2020-07-13T11:47:25.840Z\",\r\n    \"TryInSeconds\": 10,\r\n    \"AudioSegments\": [\r\n      {\r\n        \"Result\": {\r\n          \"HitFlag\": 0,\r\n          \"Label\": \"Normal\",\r\n          \"Suggestion\": \"Pass\",\r\n          \"Score\": 0,\r\n          \"Text\": \"Breaking har gre a king har Mo ni ou。来给生活比个月。更多的承诺。\",\r\n          \"Url\": \"https://xxx.com/7c019/audio_0.mp3\",\r\n          \"Duration\": \"36398\",\r\n          \"DataId\": \"\",\r\n          \"Results\": [],\r\n          \"CreatedAt\": null,\r\n          \"UpdatedAt\": null\r\n        },\r\n        \"OffsetTime\": \"0\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"8d3e4765-48db-40b5-8fdb-aaf1d7225a60\"\r\n  }\r\n}",
+        "title": "查看任务详情"
+      }
+    ]
+  },
+  "version": "1.0"
+}

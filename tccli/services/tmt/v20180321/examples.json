@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "ImageTranslate": [
+      {
+        "document": "",
+        "input": "https://tmt.tencentcloudapi.com/?Action=ImageTranslate\r\n&SessionUuid=session-00001\r\n&Scene=doc\r\n&Source=zh\r\n&Target=en\r\n&ProjectId=0\r\n&Data=iVBORw0KGgoAAAANSUhEUgAAAdkAAABPCAYAAACnD7%252FoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAJ\r\n......\r\nCCyAAAAwCQgsgAAAMAkILIAAADAJCCyAAAAwCQgsgAAAMAkILIAAADAFJblX8%252F8oMOWYN6nAAAAAElFTkSuQmCC\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"ImageRecord\": {\r\n\t\t\t\"Value\": [{\r\n\t\t\t\t\"H\": 21,\r\n\t\t\t\t\"SourceText\": \" 我们可以比较容易的将字典(ict)类型转为字符串(string)类型。\",\r\n\t\t\t\t\"TargetText\": \"We can easily convert the dictionary icttype to the string) type.\",\r\n\t\t\t\t\"W\": 373,\r\n\t\t\t\t\"X\": 12,\r\n\t\t\t\t\"Y\": 53\r\n\t\t\t}]\r\n\t\t},\r\n\t\t\"Source\": \"zh\",\r\n\t\t\"Target\": \"en\",\r\n                \"SessionUuid\": \"session-00001\",\r\n                \"RequestId\": \"6e698139-615a-4d42-8dea-6bfada24e83c\"\r\n\t} \r\n}",
+        "title": "API调用"
+      }
+    ],
+    "LanguageDetect": [
+      {
+        "document": "",
+        "input": "https://tmt.tencentcloudapi.com/?Action=LanguageDetect\r\n&Text=hello\r\n&ProjectId=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Lang\": \"en\",\r\n        \"RequestId\": \"155a6879-2c39-4e36-b79c-50a68d073ffc\"\r\n    }\r\n}",
+        "title": "API调用"
+      }
+    ],
+    "SpeechTranslate": [
+      {
+        "document": "",
+        "input": "https://tmt.tencentcloudapi.com/?Action=SpeechTranslate\r\n&ProjectId=0\r\n&SessionUuid=sid-1516105689129\r\n&Source=zh\r\n&Target=en\r\n&AudioFormat=83886080\r\n&Seq=0\r\n&IsEnd=1\r\n&Data==%2F%2FtQxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\r\n......\r\nMGCwUAU4UeWgJDOGmC2JgzouqHJQBsZiKUicVTU5UGTZ6mVJYlri5s9geZdCjBnExqtEsaw%2F5rtShQ6UOkolgkGSpWK\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RecognizeStatus\": 0,\r\n\t\t\"RequestId\": \"6e698139-615a-4d42-8dea-6bfada24e83c\",\r\n\t\t\"Seq\": 0,\r\n\t\t\"SessionUuid\": \"sid-1516105689129\",\r\n\t\t\"Source\": \"zh\",\r\n\t\t\"SourceText\": \"你好。\",\r\n\t\t\"Target\": \"en\",\r\n\t\t\"TargetText\": \"Hello.\"\r\n\t}\r\n}",
+        "title": "API调用"
+      }
+    ],
+    "TextTranslate": [
+      {
+        "document": "",
+        "input": "https://tmt.tencentcloudapi.com/?Action=TextTranslate\r\n&ProjectId=0\r\n&Source=en\r\n&SourceText=hello\r\n&Target=zh\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TargetText\": \"你好\",\r\n        \"Source\": \"en\",\r\n        \"Target\": \"zh\",\r\n        \"RequestId\": \"000ee211-f19e-4a34-a214-e2bb1122d248\"\r\n    }\r\n}",
+        "title": "API调用"
+      }
+    ],
+    "TextTranslateBatch": [
+      {
+        "document": "",
+        "input": "https://tmt.tencentcloudapi.com/?Action=TextTranslateBatch\r\n&Source=zh\r\n&Target=en\r\n&ProjectId=0\r\n&SourceTextList.0=你好\r\n&SourceTextList.1=今天天气怎么样\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"beb15bd7-29aa-4f0f-9a80-574d6fc3733f\",\r\n        \"Source\": \"zh\",\r\n        \"Target\": \"en\",\r\n        \"TargetTextList\": [\r\n            \"Hello.\",\r\n            \"What's the weather like today?\"\r\n        ]\r\n    }\r\n}",
+        "title": "批量文本翻译"
+      }
+    ]
+  },
+  "version": "1.0"
+}

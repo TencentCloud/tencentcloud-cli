@@ -1,0 +1,77 @@
+{
+  "actions": {
+    "CreateFileSample": [
+      {
+        "document": "将一张图片新增到样本库中，标注为色情",
+        "input": "https://cms.tencentcloudapi.com/?Action=CreateFileSample\n&EvilType=20002\n&Label=1\n&FileType.0=image\n&Contents.0.FileName=苍老师.jpg\n&Contents.0.FileUrl=http://example.com/q.jpg\n&Contents.0.FileMd5=9cc56fe973ec99c1f03afcc920df3a0b\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"Progress\": 2\n\t}\n}",
+        "title": "新增图片类型样本"
+      }
+    ],
+    "CreateTextSample": [
+      {
+        "document": "将“测试”关键词加入自定义词库，并设置该词类型为正常",
+        "input": "https://cms.tencentcloudapi.com/?Action=CreateTextSample\n&Label=2\n&EvilType=100&Contents.0=测试\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"Progress\": 2,\n                \"ErrMsg\":\"3:-1009,4:-1009,\"\n\t},\n\t\"retcode\": 0,\n\t\"retmsg\": \"success\"\n}",
+        "title": "新增文本样本"
+      }
+    ],
+    "DeleteFileSample": [
+      {
+        "document": "删除图片样本库",
+        "input": "https://cms.tencentcloudapi.com/?Action=DeleteFileSample\n&Ids.0=QUOdt1dK16\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"Progress\": 1\n\t}\n}",
+        "title": "删除图片样本库"
+      }
+    ],
+    "DeleteTextSample": [
+      {
+        "document": "删除文本样本库",
+        "input": "https://cms.tencentcloudapi.com/?Action=DeleteTextSample\nIds.0=QUOdt1dK16\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"Progress\": 1\n\t},\n\t\"retcode\": 0,\n\t\"retmsg\": \"success\"\n}",
+        "title": "删除文本样本库"
+      }
+    ],
+    "DescribeFileSample": [
+      {
+        "document": "查询黑图片样本库前20条内容，并按CreatedAt倒序排序",
+        "input": "https://cms.tencentcloudapi.com/?Action=DescribeFileSample\n&Offset=0\n&Limit=20\n&OrderField=CreatedAt\n&OrderDirection=desc\n&Filters.0.Name=Label\n&Filters.0.Value=1\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"TotalCount\": 10,\n\t\t\"FileSampleSet\": [{\n\t\t\t\"Label\": 1,\n\t\t\t\"EvilType\": 20002,\n\t\t\t\"FileName\": \"1.png\",\n\t\t\t\"FileType\": \"image\",\n\t\t\t\"FileMd5\": \"\",\n\t\t\t\"Code\": 0,\n\t\t\t\"Status\": 1,\n\t\t\t\"CreatedAt\": \"2019-05-28 17:40:01\"\n\t\t}, {\n\t\t\t\"Label\": 1,\n\t\t\t\"EvilType\": 20002,\n\t\t\t\"FileName\": \"2.png\",\n\t\t\t\"FileType\": \"image\",\n\t\t\t\"FileMd5\": \"\",\n\t\t\t\"Code\": 0,\n\t\t\t\"Status\": 1,\n\t\t\t\"CreatedAt\": \"2019-05-28 17:40:01\"\n\t\t}]\n\t}\n}",
+        "title": "查询图片样本库"
+      }
+    ],
+    "DescribeTextSample": [
+      {
+        "document": "查询白库",
+        "input": "https://cms.tencentcloudapi.com/?Action=DescribeTextSampleInstances\n&Offset=0\n&Limit=20\n&OrderField=CreatedAt\n&OrderDirection=desc\n&Filters.0.Name=Label\n&Filters.0.Value=1\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"TotalCount\": 10,\n\t\t\"TextSampleSet\": [{\n\t\t\t\"Label\": 1,\n\t\t\t\"EvilType\": 20002,\n\t\t\t\"Content\": \"太子党\",\n\t\t\t\"Code\": 0,\n\t\t\t\"Status\": 1,\n\t\t\t\"CreatedAt\": \"2019-05-28 17:40:01\"\n\t\t}, {\n\t\t\t\"Label\": 1,\n\t\t\t\"EvilType\": 20002,\n\t\t\t\"Content\": \"赵家党\",\n\t\t\t\"Code\": 0,\n\t\t\t\"Status\": 1,\n\t\t\t\"CreatedAt\": \"2019-05-28 17:40:01\"\n\t\t}]\n\t},\n\t\"retcode\": 0,\n\t\"retmsg\": \"success\"\n}",
+        "title": "查询文本样本库"
+      }
+    ],
+    "ImageModeration": [
+      {
+        "document": "",
+        "input": "https://cms.tencentcloudapi.com/?Action=ImageModeration\n&FileMD5=字符串型\n&FileContent=字符串型\n&FileUrl=https://xxx.jpg\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"BusinessCode\": 0,\n\t\t\"Data\": {\n\t\t\t\"EvilFlag\": 0,\n\t\t\t\"EvilType\": 100,\n\t\t\t\"CodeDetect\": {\n\t\t\t\t\"ModerationCode\": 0,\n\t\t\t\t\"ModerationDetail\": [{\n\t\t\t\t\t\"CodeCharset\": \"UTF-8\",\n\t\t\t\t\t\"CodePosition\": [{\n\t\t\t\t\t\t\"FloatX\": 5.8333335,\n\t\t\t\t\t\t\"FloatY\": 314.16666\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"FloatX\": 5.8333335,\n\t\t\t\t\t\t\"FloatY\": 5.8333335\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"FloatX\": 314.16666,\n\t\t\t\t\t\t\"FloatY\": 5.8333335\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"FloatX\": 314.16666,\n\t\t\t\t\t\t\"FloatY\": 314.16666\n\t\t\t\t\t}],\n\t\t\t\t\t\"CodeText\": \"http://xxx\",\n\t\t\t\t\t\"CodeType\": 2\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"HotDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"Labels\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t},\n\t\t\t\"IllegalDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"Labels\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t},\n\t\t\t\"OCRDetect\": {\n\t\t\t\t\"TextInfo\": \"\"\n\t\t\t},\n\t\t\t\"PolityDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"FaceNames\": [],\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"PolityItems\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t},\n\t\t\t\"PornDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"Labels\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t},\n\t\t\t\"Similar\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"SeedUrl\": \"\"\n\t\t\t},\n\t\t\t\"TerrorDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"Labels\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t}\n\t\t},\n\t\t\"RequestId\": \"57937de8-84a6-452d-b723-0cb6dad0dd1e\"\n\t},\n\t\"retcode\": 0,\n\t\"retmsg\": \"ok\"\n}",
+        "title": "图片内容检测"
+      }
+    ],
+    "ManualReview": [
+      {
+        "document": "业务侧将疑似违规的音频、视频、文本、图片等数据，通过此接口提交到腾讯审核平台，由后端专业人工审核团队进行审核校验。",
+        "input": "https://cms.tencentcloudapi.com/?Action=ManualReview\n&ReviewContent.ContentId=\"123456\"\n&ReviewContent.Content=\"文本为Base64，其他类型提交URL\"\n&ReviewContent.ContentType=3\n&ReviewContent.AutoResult=0\n&ReviewContent.AutoDetailCode=20001\n&ReviewContent.BatchId=\"20200419_0001\"\n&ReviewContent.UserInfo=\"{}\"\n&ReviewContent.CreateTime=130000\n&ReviewContent.Priority=2\n&ReviewContent.CallBackInfo=\"\"\n&ReviewContent.Title=\"\"\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"153e746d-d323-4042-b8ab-50b56ad54d36\",\n\t\t\"Data\": {\n\t\t\t\"ContentId\": \"123456\",\n\t\t\t\"BatchId\": \"20200419_0001\"\n\t\t}\n\t}\n}",
+        "title": "提交审核任务"
+      }
+    ],
+    "TextModeration": [
+      {
+        "document": "",
+        "input": "https://cms.tencentcloudapi.com/?Action=TextModeration\n&Content=57uY5aOw57uY6Imy\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"BusinessCode\": 0,\n\t\t\"Data\": {\n\t\t\t\"EvilType\": 20001,\n\t\t\t\"EvilFlag\": 1,\n\t\t\t\"BizType\": 2,\n\t\t\t\"Score\": 72,\n\t\t\t\"EvilLabel\": \"Polity\",\n\t\t\t\"Suggestion\": \"Review\",\n\t\t\t\"Keywords\": [\"傻子\"],\n\t\t\t\"DetailResult\": [{\n\t\t\t\t\"EvilType\": 20001,\n\t\t\t\t\"KeywordsList\": [\"傻子\"],\n\t\t\t\t\"Prediction\": 72\n\t\t\t}]\n\t\t},\n\t\t\"RequestId\": \"jlUM5m23JWDeAX1tQirYT9cP\"\n\t}, \n\t\"retmsg\": \"success\", \n\t\"retcode\": 0\n}",
+        "title": "文本内容检测"
+      }
+    ]
+  },
+  "version": "1.0"
+}

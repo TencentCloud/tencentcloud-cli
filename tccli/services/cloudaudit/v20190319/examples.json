@@ -1,0 +1,109 @@
+{
+  "actions": {
+    "CreateAudit": [
+      {
+        "document": "创建跟踪集",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=CreateAudit\n&AuditName=auditTest_1\n&CmqQueueName=cmq-01\n&CmqRegion=sh\n&CosBucketName=cos-01\n&CosRegion=ap-shanghai\n&IsCreateNewBucket=1\n&IsCreateNewQueue=1\n&IsEnableCmqNotify=1\n&LogFilePrefix=akshsb1j\n&ReadWriteAttribute=2\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"IsSuccess\": 1,\n    \"RequestId\": \"e9501707-784a-474c-b524-67ed9d3a6b50\"\n  }\n}",
+        "title": "创建跟踪集"
+      }
+    ],
+    "DeleteAudit": [
+      {
+        "document": "删除跟踪集",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=DeleteAudit\n&AuditName=xxxxxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"IsSuccess\": 1,\n    \"RequestId\": \"e27d42d6-855a-40fa-9b5f-462059502463\"\n  }\n}",
+        "title": "删除跟踪集"
+      }
+    ],
+    "DescribeAudit": [
+      {
+        "document": "查询跟踪集详情",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=DescribeAudit\n&AuditName=xxxxx_cloudaudit_2\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"AuditName\": \"xxxxx_cloudaudit_2\",\n    \"CmqQueueName\": \"xxxxx-cloudaudit-2\",\n    \"CmqRegion\": \"hk\",\n    \"CosBucketName\": \"xxxxx-cloudaudit-2\",\n    \"CosRegion\": \"ap-hongkong\",\n    \"IsEnableCmqNotify\": 1,\n    \"LogFilePrefix\": \"xxx2312\",\n    \"ReadWriteAttribute\": 1,\n    \"AuditStatus\": 1,\n    \"RequestId\": \"e23ee347-d011-482a-83fa-12e7d318dd9f\"\n  }\n}",
+        "title": "查询跟踪集详情"
+      }
+    ],
+    "GetAttributeKey": [
+      {
+        "document": "查询AttributeKey的有效取值范围",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=GetAttributeKey\n&WebsiteType=zh\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"6d833833-bbc6-4463-9a8f-6cc62d3a2afd\",\n    \"AttributeKeyDetails\": [\n      {\n        \"Label\": \"只读\",\n        \"Value\": \"ReadOnly\",\n        \"Starter\": \"选择只读值\",\n        \"LabelType\": \"select\",\n        \"Order\": 1\n      },\n      {\n        \"Label\": \"访问密钥\",\n        \"Value\": \"AccessKeyId\",\n        \"Starter\": \"输入访问密钥\",\n        \"LabelType\": \"text\",\n        \"Order\": 2\n      },\n      {\n        \"Label\": \"请求ID\",\n        \"Value\": \"RequestId\",\n        \"Starter\": \"输入请求ID\",\n        \"LabelType\": \"text\",\n        \"Order\": 3\n      },\n      {\n        \"Label\": \"事件名称\",\n        \"Value\": \"EventName\",\n        \"Starter\": \"选择事件名称\",\n        \"LabelType\": \"select\",\n        \"Order\": 4\n      },\n      {\n        \"Label\": \"资源名称\",\n        \"Value\": \"ResourceName\",\n        \"Starter\": \"输入资源名称\",\n        \"LabelType\": \"text\",\n        \"Order\": 5\n      },\n      {\n        \"Label\": \"资源类型\",\n        \"Value\": \"ResourceType\",\n        \"Starter\": \"选择资源类型\",\n        \"LabelType\": \"select\",\n        \"Order\": 6\n      },\n      {\n        \"Label\": \"用户名称\",\n        \"Value\": \"Username\",\n        \"Starter\": \"选择用户名称\",\n        \"LabelType\": \"select\",\n        \"Order\": 7\n      }\n    ]\n  }\n}",
+        "title": "查询AttributeKey的有效取值范围"
+      }
+    ],
+    "InquireAuditCredit": [
+      {
+        "document": "查询用户可创建跟踪集的数量",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=InquireAuditCredit\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"AuditAmount\": 0,\n    \"RequestId\": \"96bd5cb0-e87c-4dd4-965e-9140df49f10e\"\n  }\n}",
+        "title": "查询用户可创建跟踪集的数量"
+      }
+    ],
+    "ListAudits": [
+      {
+        "document": "查询跟踪集概要",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=ListAudits\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"AuditSummarys\": [\n      {\n        \"AuditName\": \"xxxxxx\",\n        \"CosBucketName\": \"ccczzz\",\n        \"LogFilePrefix\": \"xxxx\",\n        \"AuditStatus\": 1\n      }\n    ],\n    \"RequestId\": \"c4496845-6b3b-4e23-8045-e2060b0405a4\"\n  }\n}",
+        "title": "查询跟踪集概要"
+      }
+    ],
+    "ListCmqEnableRegion": [
+      {
+        "document": "查询云审计支持的cmq的可用区",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=ListCmqEnableRegion\n&WebsiteType=zh\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"b69a7b60-e58f-4d27-a2b7-722fe01109c1\",\n    \"EnableRegions\": [\n      {\n        \"CmqRegion\": \"sh\",\n        \"CmqRegionName\": \"上海\"\n      },\n      {\n        \"CmqRegion\": \"hk\",\n        \"CmqRegionName\": \"香港\"\n      }\n    ]\n  }\n}",
+        "title": "查询云审计支持的cmq的可用区"
+      }
+    ],
+    "ListCosEnableRegion": [
+      {
+        "document": "查询云审计支持的cos可用区",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=ListCosEnableRegion\n&WebsiteType=zh\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"2e81bc9d-5463-498f-9336-32f814940018\",\n    \"EnableRegions\": [\n      {\n        \"CosRegion\": \"ap-shanghai\",\n        \"CosRegionName\": \"上海(华东)\"\n      },\n      {\n        \"CosRegion\": \"ap-hongkong\",\n        \"CosRegionName\": \"香港\"\n      }\n    ]\n  }\n}",
+        "title": "查询云审计支持的cos可用区"
+      }
+    ],
+    "ListKeyAliasByRegion": [
+      {
+        "document": "根据地域获取KMS密钥别名",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=ListKeyAliasByRegion\n&KmsRegion=ap-hongkong\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\",\n    \"KeyMetadatas\": [\n      {\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n        \"Alias\": \"KMS-CA\"\n      }\n    ],\n    \"TotalCount\": 1\n  }\n}",
+        "title": "根据地域获取KMS密钥别名"
+      }
+    ],
+    "LookUpEvents": [
+      {
+        "document": "用于对操作日志进行检索，便于用户进行查询相关的操作信息。",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=LookUpEvents\n&EndTime=1553056687\n&LookupAttributes.0.AttributeKey=AccessKeyId\n&LookupAttributes.0.AttributeValue=AKID7JETaYT3IAmutX0vXCcy4q90zJNvlVZf\n&StartTime=1553056487\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"CloudAuditEvent\": \"{\"actionType\":\"Read\",\"apiErrorCode\":\"\",\"apiErrorMessage\":\"\",\"apiVersion\":\"2.0\",\"errorCode\":0,\"errorMessage\":\"permission verify\",\"eventID\":\"e92a92fc259c4a9333d2a7ce64d1ef201\",\"eventName\":\"LookupEvents\",\"eventRegion\":\"ap-guangzhou\",\"eventSource\":\"cloudaudit.api.tencentyun.com/v2/index.php\",\"eventTime\":\"2019-03-20 12:36:27\",\"eventType\":\"ConsoleCall\",\"eventVersion\":2,\"httpMethod\":\"POST\",\"region\":\"\",\"requestID\":\"15936031437374_1553056587.6815_v2\",\"requestParameters\":\"{\"Action\":\"LookupEvents\",\"EndTime\":\"1553097599\",\"MaxResults\":\"10\",\"Nonce\":\"36881\",\"Region\":\"gz\",\"RequestClient\":\"SDK_NODEJS_0.2.1\",\"RequestOperator\":\"1150691759\",\"RequestSource\":\"MC\",\"SecretId\":\"AKID7JETaYT3IAmutX0vXCcy4q90zJNvlVZf\",\"StartTime\":\"1552406400\",\"Timestamp\":\"1553056583\",\"Token\":\"147d2c5b0319541a13d9fe6ceb5af2aae9b67f6610001\",\"seqId\":\"cdb9c38c-7031-bb13-6a9c-cd7641734c8f\"}\",\"resourceName\":\"\",\"resourceType\":\"cloudaudit\",\"resources\":\"\",\"sourceIPAddress\":\"59.37.125.124\",\"userAgent\":\"\",\"userIdentity\":{\"userName\":\"root\",\"type\":\"Root\",\"secretId\":\"AKID7JETaYT3IAmutX0vXCcy4q90zJNvlVZf\",\"accountId\":1150691759,\"principalId\":1150691759,\"sessionContext\":{\"expireTime\":\"2019-03-20 13:04:46\",\"hasPolicyFilter\":0,\"extraInfo\":\"\",\"interfaceName\":\"\",\"ownerUin\":1150691759,\"ua\":\"27513f02ea3ab649f0cacb6476df54eb\",\"mfa\":0,\"userIp\":\"59.37.125.124\",\"mfaExpireTime\":\"2019-03-20 12:34:46\",\"uin\":1150691759,\"token\":\"147d2c5b0319541a13d9fe6ceb5af2aae9b67f6610001\",\"appId\":1251840716,\"policyFilter\":\"\"}}}\",\n                \"EventId\": \"e92a92fc259c4a9333d2a7ce64d1ef201\",\n                \"EventName\": \"LookupEvents\",\n                \"EventTime\": \"2019-03-20 12:36:27\",\n                \"SecretId\": \"AKID7JETaYT3IAmutX0vXCcy4q90zJNvlVZf\",\n                \"ErrorCode\": 0,\n                \"RequestID\": \"15936031437374_1553056587.6815_v2\",\n                \"AccountID\": 1150691759,\n                \"SourceIPAddress\": \"59.37.125.124\",\n                \"EventSource\": \"cloudaudit.api.tencentyun.com/v2/index.php\",\n                \"EventRegion\": \"ap-guangzhou\",\n                \"Resources\": {\n                    \"ResourceName\": \"\",\n                    \"ResourceType\": \"cloudaudit\"\n                },\n                \"Username\": \"root\",\n                \"ResourceTypeCn\": \"云审计\",\n                \"EventNameCn\": \"检索日志\"\n            }\n        ],\n        \"NextToken\": \"DnF1ZXJ5VGhlbkZldGNoDwAAAAAAACBuFjNoRHJ5YTd4U1B5YWY4c1ZmMmxBQWcAAAAAAAAgnBZZZkZoYy04LVJJeVpJNnZJS2hIVTdRAAAAAAAAI1QWYk5mQmZXTzhTWXFNZjFMVlhHY1RjdwAAAAAAAB9sFmhZbV8xbm1FUXE2NGVDQndWSlNoMncAAAAAAAAd9BZOelN1aGMycFNydUVEQ0dQbzdCcEZBAAAAAAAALroWMTh4c00xalhRbk9wR0NsYWZvV20tQQAAAAAAACCdFllmRmhjLTgtUkl5Wkk2dklLaEhVN1EAAAAAAAAuuRYxOHhzTTFqWFFuT3BHQ2xhZm9XbS1BAAAAAAAAIJ4WWWZGaGMtOC1SSXlaSTZ2SUtoSFU3UQAAAAAAAB81FnN5aTBfTWJKU25HdXZuMWxsRkdJZ3cAAAAAAAApMhZ1UjdybjlCY1NRYUZVYWRub2x4YW9RAAAAAAAAHzQWc3lpMF9NYkpTbkd1dm4xbGxGR0lndwAAAAAAAB31Fk56U3VoYzJwU3J1RURDR1BvN0JwRkEAAAAAAAAfbRZoWW1fMW5tRVFxNjRlQ0J3VkpTaDJ3AAAAAAAAH24WaFltXzFubUVRcTY0ZUNCd1ZKU2gydw==\",\n        \"ListOver\": true,\n        \"RequestId\": \"91e2998d-edc0-4ba0-a76d-cebbbfd99391\"\n    }\n}",
+        "title": "日志检索"
+      }
+    ],
+    "StartLogging": [
+      {
+        "document": "开启跟踪集",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=StartLogging\n&AuditName=xxxxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"IsSuccess\": 1,\n    \"RequestId\": \"94ced030-d9df-4fb3-9894-7accd0c29d23\"\n  }\n}",
+        "title": "开启跟踪集"
+      }
+    ],
+    "StopLogging": [
+      {
+        "document": "关闭跟踪集",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=StopLogging\n&AuditName=xxxxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"IsSuccess\": 1,\n    \"RequestId\": \"f6cdaf4a-062b-4ed1-9567-c4160a1c90fa\"\n  }\n}",
+        "title": "关闭跟踪集"
+      }
+    ],
+    "UpdateAudit": [
+      {
+        "document": "更新跟踪集",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=UpdateAudit\n&AuditName=xxxxx\n&CosBucketName=sss\n&CosRegion=ap-hongkong\n&LogFilePrefix=wwwwww\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"IsSuccess\": 1,\n    \"RequestId\": \"45cb39e2-4b94-4d9c-bf95-db7daba5740d\"\n  }\n}",
+        "title": "更新跟踪集"
+      }
+    ]
+  },
+  "version": "1.0"
+}

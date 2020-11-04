@@ -1,0 +1,435 @@
+{
+  "actions": {
+    "AttachCamRole": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=AttachCamRole\r\n&InstanceId=cpm-xxx0\r\n&RoleName=camrolename\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "服务器绑定CAM角色"
+      }
+    ],
+    "BindPsaTag": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=BindPsaTag\r\n&PsaId=123\r\n&TagKey=key1\r\n&TagValue=value1\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\"\r\n}\r\n}",
+        "title": "为预授权规则绑定标签"
+      }
+    ],
+    "BuyDevices": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=BuyDevices\r\n&Zone=ap-guangzhou\r\n&OsTypeId=1\r\n&RaidId=1\r\n&GoodsCount=100\r\n&VpcId=vpc-xxx\r\n&SubnetId=subnet-xxx\r\n&DeviceClassCode=PS100v3\r\n&TimeUnit=M\r\n&TimeSpan=12\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceIds\":[\"cpm-xxx\"],\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "购买物理机"
+      }
+    ],
+    "CreateCustomImage": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=CreateCustomImage\r\n&InstanceId=testid\r\n&ImageName=aa678\r\n&ImageDescription=876aa\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\",\r\n\t\"TaskId\":123\r\n}\r\n}",
+        "title": "创建自定义镜像"
+      }
+    ],
+    "CreatePsaRegulation": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=CreatePsaRegulation\r\n&PsaName=aaa\r\n&PsaDescription=bbb\r\n&RepairLimit=66\r\n&TaskTypeIds.0=44\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n        \"PsaId\":\"123\",\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\"\r\n}\r\n}",
+        "title": "创建预授权规则"
+      }
+    ],
+    "CreateSpotDevice": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=CreateSpotDevice\r\n&ComputeType=v1.c2.medium\r\n&GoodsNum=37\r\n&VpcId=vpc-3c7b2102\r\n&OsTypeId=12\r\n&SubnetId=subnet-34ts34da\r\n&SpotStrategy=SpotWithPriceLimit\r\n&SpotPriceLimit=1000\r\n&Zone=ap-guangzhoutest-blshw-1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"ResourceIds\": [\r\n      \"tcpm-i470dvkz\"\r\n    ],\r\n    \"FlowId\": 902723,\r\n    \"RequestId\": \"f914265c-a5ba-4460-aec4-2e945df894cf\"\r\n  }\r\n}",
+        "title": "创建黑石竞价实例"
+      }
+    ],
+    "CreateUserCmd": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=CreateUserCmd\r\n&Alias=test\r\n&OsType=linux\r\n&Content=xx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"CmdId\": \"cmd-1g3gurc1\",\r\n        \"RequestId\": \"53b72291-a4b1-4c47-9f2f-ae276653b6a4\"\r\n    }\r\n}",
+        "title": "新建脚本"
+      }
+    ],
+    "DeleteCustomImages": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DeleteCustomImages\r\n&ImageIds.0=testid0\r\n&ImageIds.1=testid1\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\",\r\n\t\"TaskId\":123\r\n}\r\n}",
+        "title": "删除自定义镜像"
+      }
+    ],
+    "DeletePsaRegulation": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DeletePsaRegulation\r\n&PsaId=123\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\"\r\n}\r\n}",
+        "title": "删除预授权规则"
+      }
+    ],
+    "DeleteUserCmds": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DeleteUserCmds\r\n&CmdIds.0=cmd-xxx1\r\n&CmdIds.1=cmd-xxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b8841668-09a7-420a-8dc8-6e28653198c9\"\r\n    }\r\n}",
+        "title": "删除自定义脚本"
+      }
+    ],
+    "DescribeCustomImageProcess": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeCustomImageProcess\r\n&ImageId=testid\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"cc8106bc-24a0-46a1-bffb-947bd5d6929f\",\r\n        \"CustomImageProcessSet\": [\r\n            {\r\n                \"StepName\": \"制作前，检查系统环境\",\r\n                \"StepType\": 2,\r\n                \"StartTime\": \"2018-08-06 17:23:31\"\r\n            },\r\n            {\r\n                \"StepName\": \"制作镜像中\",\r\n                \"StepType\": 1,\r\n                \"StartTime\": \"2018-08-06 17:41:54\"\r\n            },\r\n            {\r\n                \"StepName\": \"制作完成，重启系统中\",\r\n                \"StepType\": 0,\r\n                \"StartTime\": \"\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询自定义镜像制作进度"
+      }
+    ],
+    "DescribeCustomImages": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeCustomImages\r\n&Limit=3\r\n&Offset=0\r\n&SearchKey=img\r\n&OrderField=CreateTime\r\n&Order=0\r\n&ImageStatus.0=3\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"52e092d0-fd15-4867-a937-1978c139f26b\",\r\n        \"TotalCount\": 13,\r\n        \"CustomImageSet\": [\r\n            {\r\n                \"ImageId\": \"img-2cmi7d5z\",\r\n                \"ImageName\": \"no-ping1233\",\r\n                \"ImageStatus\": 3,\r\n                \"OsClass\": \"Ubuntu\",\r\n                \"OsVersion\": \"14\",\r\n                \"OsBit\": 64,\r\n                \"ImageSize\": 485,\r\n                \"CreateTime\": \"2018-07-23 10:50:31\",\r\n                \"DeviceClassCode\": \"PS100v1\",\r\n                \"OsTypeId\": 69,\r\n                \"ImageDescription\": \"机器\",\r\n                \"PartitionInfoSet\": [\r\n                    {\r\n                        \"Name\": \"/dev/sda1\",\r\n                        \"Size\": 2048\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda2\",\r\n                        \"Size\": 2048\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda3\",\r\n                        \"Size\": 10240\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda4\",\r\n                        \"Size\": 3126910\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"ImageId\": \"img-m57nhkdn\",\r\n                \"ImageName\": \"centos6\",\r\n                \"ImageStatus\": 3,\r\n                \"OsClass\": \"Centos\",\r\n                \"OsVersion\": \"6.8\",\r\n                \"OsBit\": 64,\r\n                \"ImageSize\": 394,\r\n                \"CreateTime\": \"2018-07-27 14:55:39\",\r\n                \"DeviceClassCode\": \"PS001v1\",\r\n                \"OsTypeId\": 77,\r\n                \"ImageDescription\": \"\",\r\n                \"PartitionInfoSet\": [\r\n                    {\r\n                        \"Name\": \"/dev/sda1\",\r\n                        \"Size\": 2048\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda2\",\r\n                        \"Size\": 22528\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda3\",\r\n                        \"Size\": 2048\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda4\",\r\n                        \"Size\": 830078\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"ImageId\": \"img-5tws80gz\",\r\n                \"ImageName\": \"ssh-port\",\r\n                \"ImageStatus\": 3,\r\n                \"OsClass\": \"Centos\",\r\n                \"OsVersion\": \"6.8\",\r\n                \"OsBit\": 64,\r\n                \"ImageSize\": 394,\r\n                \"CreateTime\": \"2018-07-27 16:02:56\",\r\n                \"DeviceClassCode\": \"PS001v1\",\r\n                \"OsTypeId\": 77,\r\n                \"ImageDescription\": \"\",\r\n                \"PartitionInfoSet\": [\r\n                    {\r\n                        \"Name\": \"/dev/sda1\",\r\n                        \"Size\": 2048\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda2\",\r\n                        \"Size\": 22528\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda3\",\r\n                        \"Size\": 2048\r\n                    },\r\n                    {\r\n                        \"Name\": \"/dev/sda4\",\r\n                        \"Size\": 830078\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查看自定义镜像列表"
+      }
+    ],
+    "DescribeDeviceClass": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDeviceClass\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DeviceClassSet\": [\r\n            {\r\n                \"DeviceClassCode\": \"PS100v3\",\r\n                \"CpuDescription\": \"6133(20核)*2\",\r\n                \"MemDescription\": \"256GB\",\r\n                \"DiskDescription\": \"480G(SSD)*6\",\r\n                \"HaveRaidCard\": 1,\r\n                \"NicDescription\": \"10G * 2\",\r\n                \"GpuDescription\": \"\",\r\n                \"DeviceType\": \"standard\",\r\n                \"Series\": 3,\r\n                \"Cpu\": 40,\r\n                \"Mem\": 256,\r\n                \"Discount\": 50,\r\n                \"UnitPrice\": 1100000,\r\n                \"RealPrice\": 550000,\r\n                \"NormalPrice\": 1100000\r\n            },\r\n            {\r\n                \"DeviceClassCode\": \"PS100v1\",\r\n                \"CpuDescription\": \"E5-2670v3(12核)*2\",\r\n                \"MemDescription\": \"128GB\",\r\n                \"DiskDescription\": \"300G(SAS)*12\",\r\n                \"HaveRaidCard\": 1,\r\n                \"NicDescription\": \"10G * 2\",\r\n                \"GpuDescription\": \"\",\r\n                \"DeviceType\": \"standard\",\r\n                \"Series\": 1,\r\n                \"Cpu\": 24,\r\n                \"Mem\": 128,\r\n                \"Discount\": 50,\r\n                \"UnitPrice\": 590000,\r\n                \"RealPrice\": 295000,\r\n                \"NormalPrice\": 590000\r\n            },\r\n            {\r\n                \"DeviceClassCode\": \"PS001v1\",\r\n                \"CpuDescription\": \"E5-2620v3(6核)*2\",\r\n                \"MemDescription\": \"64GB\",\r\n                \"DiskDescription\": \"6*300G(SAS)\",\r\n                \"HaveRaidCard\": 1,\r\n                \"NicDescription\": \"1G * 2\",\r\n                \"GpuDescription\": \"\",\r\n                \"DeviceType\": \"standard\",\r\n                \"Series\": 1,\r\n                \"Cpu\": 12,\r\n                \"Mem\": 64,\r\n                \"Discount\": 50,\r\n                \"UnitPrice\": 337000,\r\n                \"RealPrice\": 168500,\r\n                \"NormalPrice\": 337000\r\n            }\r\n        ],\r\n        \"RequestId\": \"9b01c2d9-ceda-4d90-8e38-c5246bbf3190\"\r\n    }\r\n}",
+        "title": "查询设备型号"
+      }
+    ],
+    "DescribeDeviceClassPartition": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDeviceClassPartition\r\n&DeviceClassCode=PS001v1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DeviceClassPartitionInfoSet\": [\r\n            {\r\n                \"RaidId\": 2,\r\n                \"Raid\": \"RAID5\",\r\n                \"RaidDisplay\": \"RAID5\",\r\n                \"SystemDiskSize\": 1392,\r\n                \"SysRootSpace\": 20,\r\n                \"SysSwaporuefiSpace\": 2,\r\n                \"SysUsrlocalSpace\": 0,\r\n                \"SysDataSpace\": 1370,\r\n                \"SysIsUefiType\": 0,\r\n                \"DataDiskSize\": 0,\r\n                \"DeviceDiskSizeInfoSet\": [\r\n                    {\r\n                        \"DiskName\": \"sda\",\r\n                        \"DiskSize\": 1392\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"a62dbf3f-45d8-45c4-a659-22b1c844f4d9\"\r\n    }\r\n}",
+        "title": "查询机型RAID方式以及系统盘大小"
+      },
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDeviceClassPartition\r\n&DeviceClassCode=任意值\r\n&InstanceId=tcpm-xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DeviceClassPartitionInfoSet\": [\r\n            {\r\n                \"RaidId\": 1,\r\n                \"Raid\": \"RAID0\",\r\n                \"RaidDisplay\": \"RAID0\",\r\n                \"SystemDiskSize\": 554,\r\n                \"SysRootSpace\": 20,\r\n                \"SysSwaporuefiSpace\": 2,\r\n                \"SysUsrlocalSpace\": 0,\r\n                \"SysDataSpace\": 532,\r\n                \"SysIsUefiType\": 1,\r\n                \"DataDiskSize\": 0,\r\n                \"DeviceDiskSizeInfoSet\": [\r\n                    {\r\n                        \"DiskName\": \"sda\",\r\n                        \"DiskSize\": 554\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"RaidId\": 8,\r\n                \"Raid\": \"RAID1\",\r\n                \"RaidDisplay\": \"RAID 1\",\r\n                \"SystemDiskSize\": 275,\r\n                \"SysRootSpace\": 20,\r\n                \"SysSwaporuefiSpace\": 2,\r\n                \"SysUsrlocalSpace\": 0,\r\n                \"SysDataSpace\": 253,\r\n                \"SysIsUefiType\": 1,\r\n                \"DataDiskSize\": 0,\r\n                \"DeviceDiskSizeInfoSet\": [\r\n                    {\r\n                        \"DiskName\": \"sda\",\r\n                        \"DiskSize\": 275\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"3e4b965e-b543-411a-8f9b-bf20479de1f1\"\r\n    }\r\n}",
+        "title": "查询机型RAID方式以及系统盘大小（自定义机型）"
+      }
+    ],
+    "DescribeDeviceHardwareInfo": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDeviceHardwareInfo\r\n&InstanceIds.0=cpm-xxx0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DeviceHardwareInfoSet\": [\r\n            {\r\n                \"InstanceId\": \"tcpm-xxx1\",\r\n                \"DeviceClassCode\": \"PI100v3\",\r\n                \"IsElastic\": 0,\r\n                \"CpmPayMode\": 2,\r\n                \"CpuId\": 0,\r\n                \"Mem\": 192,\r\n                \"Cpu\": 40,\r\n                \"ContainRaidCard\": 0,\r\n                \"SystemDiskTypeId\": 0,\r\n                \"SystemDiskCount\": 0,\r\n                \"DataDiskTypeId\": 0,\r\n                \"DataDiskCount\": 0,\r\n                \"CpuDescription\": \"6133(20核)*2\",\r\n                \"MemDescription\": \"192GB\",\r\n                \"DiskDescription\": \"480G(SSD)*1+3.6T(NVMeSSD)*4\",\r\n                \"NicDescription\": \"10G * 2\",\r\n                \"RaidDescription\": \"不支持\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"ff7a8b86-ec04-45c1-8cf9-3e6436f74263\"\r\n    }\r\n}",
+        "title": "查询设备硬件配置信息"
+      }
+    ],
+    "DescribeDeviceInventory": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDeviceInventory\r\n&DeviceClassCode=PS100v3\r\n&Zone=ap-guangzhou\r\n&VpcId=vpc-xxx\r\n&SubnetId=subnet-xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DeviceCount\": 6,\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "查询设备库存"
+      }
+    ],
+    "DescribeDeviceOperationLog": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDeviceOperationLog\r\n&InstanceId=cpm-xxx\r\n&StartTime=2018-09-05\r\n&EndTime=2018-10-05\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DeviceOperationLogSet\": [\r\n            {\r\n                \"Id\": 8818,\r\n                \"InstanceId\": \"cpm-xxx\",\r\n                \"TaskId\": 902540,\r\n                \"TaskName\": \"runUserCmd\",\r\n                \"TaskDescription\": \"运行用户自定义命令\",\r\n                \"StartTime\": \"2018-09-20 17:42:21\",\r\n                \"EndTime\": \"2018-09-20 17:42:21\",\r\n                \"Status\": 0,\r\n                \"OpUin\": \"\",\r\n                \"LogDescription\": \"运行用户自定义命令\"\r\n            },\r\n            {\r\n                \"Id\": 8816,\r\n                \"InstanceId\": \"cpm-xxx\",\r\n                \"TaskId\": 902536,\r\n                \"TaskName\": \"resetPasswd\",\r\n                \"TaskDescription\": \"重置密码\",\r\n                \"StartTime\": \"2018-09-20 17:41:39\",\r\n                \"EndTime\": \"2018-09-20 17:41:39\",\r\n                \"Status\": 1,\r\n                \"OpUin\": \"1307774067\",\r\n                \"LogDescription\": \"重置密码\"\r\n            },\r\n            {\r\n                \"Id\": 8815,\r\n                \"InstanceId\": \"cpm-xxx\",\r\n                \"TaskId\": 0,\r\n                \"TaskName\": \"modifyAlias\",\r\n                \"TaskDescription\": \"改名\",\r\n                \"StartTime\": \"2018-09-20 17:32:48\",\r\n                \"EndTime\": \"2018-09-20 17:32:48\",\r\n                \"Status\": 1,\r\n                \"OpUin\": \"1307774067\",\r\n                \"LogDescription\": \"修改设备名称为'melo重启失败'\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 3,\r\n        \"RequestId\": \"d33ccd5a-bda3-498d-994f-98eb3e7380ef\"\r\n    }\r\n}",
+        "title": "查询设备操作日志"
+      }
+    ],
+    "DescribeDevicePartition": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDevicePartition\r\n&InstanceId=cpm-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DevicePartition\": {\r\n            \"SystemDiskSize\": 275,\r\n            \"DataDiskSize\": 44703,\r\n            \"SysIsUefiType\": true,\r\n            \"SysRootSpace\": 20,\r\n            \"SysSwaporuefiSpace\": 2,\r\n            \"SysUsrlocalSpace\": 0,\r\n            \"SysDataSpace\": 253,\r\n            \"DeviceDiskSizeInfoSet\": [\r\n                {\r\n                    \"DiskName\": \"sda\",\r\n                    \"DiskSize\": 275\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdb\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdc\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdd\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sde\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdf\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdg\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdh\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdi\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdj\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdk\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdl\",\r\n                    \"DiskSize\": 3725\r\n                },\r\n                {\r\n                    \"DiskName\": \"sdm\",\r\n                    \"DiskSize\": 3725\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"bf746562-bedf-435f-ad6a-ddaa2b043ecd\"\r\n    }\r\n}",
+        "title": "获取物理机的分区格式"
+      }
+    ],
+    "DescribeDevicePosition": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDevicePosition\r\n&Offset=0\r\n&Limit=20\r\n&VpcId=vpc-3c7b2102\r\n&SubnetId=subnet-6igdzaix\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"DevicePositionInfoSet\": [\r\n            {\r\n                \"InstanceId\": \"tcpm-ewqcmo3n\",\r\n                \"Zone\": \"ap-shanghai-bls-2\",\r\n                \"VpcId\": \"vpc-3c7b2102\",\r\n                \"SubnetId\": \"subnet-6igdzaix\",\r\n                \"LanIp\": \"10.88.99.2\",\r\n                \"Alias\": \"TMI-vpc跨az购买\",\r\n                \"RckName\": \"0302-G03\",\r\n                \"PosCode\": 3,\r\n                \"SwitchName\": \"0302-G01-01/0302-G02-01\",\r\n                \"DeliverTime\": \"2018-08-07 18:41:09\",\r\n                \"Deadline\": \"2100-01-01 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"e324c7c7-7a6f-41e8-a629-f29f4bbe908c\"\r\n    }\r\n}",
+        "title": "查询设备所在机架"
+      }
+    ],
+    "DescribeDevicePriceInfo": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDevicePriceInfo\r\n&TimeUnit=m\r\n&TimeSpan=12\r\n&InstanceIds.0=cpm-xxxxxxx1\r\n&InstanceIds.1=cpm-xxxxxxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DevicePriceInfoSet\": [\r\n            {\r\n                \"InstanceId\": \"cpm-xxxxxxx1\",\r\n                \"DeviceClassCode\": \"PS001v1\",\r\n                \"IsElastic\": 0,\r\n                \"CpmPayMode\": 2,\r\n                \"CpuDescription\": \"E5-2620v3(6核)*2\",\r\n                \"MemDescription\": \"64GB\",\r\n                \"DiskDescription\": \"6*300G(SAS)\",\r\n                \"NicDescription\": \"1G * 2\",\r\n                \"GpuDescription\": \"\",\r\n                \"RaidDescription\": \"支持\",\r\n                \"Price\": 337000,\r\n                \"NormalPrice\": 0,\r\n                \"TotalCost\": 4044000,\r\n                \"RealTotalCost\": 2022000,\r\n                \"TimeSpan\": 12,\r\n                \"TimeUnit\": \"m\",\r\n                \"GoodsCount\": 1\r\n            },\r\n            {\r\n                \"InstanceId\": \"cpm-xxxxxxx2\",\r\n                \"DeviceClassCode\": \"PS001v1\",\r\n                \"IsElastic\": 0,\r\n                \"CpmPayMode\": 2,\r\n                \"CpuDescription\": \"E5-2620v3(6核)*2\",\r\n                \"MemDescription\": \"64GB\",\r\n                \"DiskDescription\": \"6*300G(SAS)\",\r\n                \"NicDescription\": \"1G * 2\",\r\n                \"GpuDescription\": \"\",\r\n                \"RaidDescription\": \"支持\",\r\n                \"Price\": 337000,\r\n                \"NormalPrice\": 0,\r\n                \"TotalCost\": 4044000,\r\n                \"RealTotalCost\": 2022000,\r\n                \"TimeSpan\": 12,\r\n                \"TimeUnit\": \"m\",\r\n                \"GoodsCount\": 1\r\n            }\r\n        ],\r\n        \"RequestId\": \"906e3948-0dd6-4eae-9583-3ad98e22ba61\"\r\n    }\r\n}",
+        "title": "查询服务器价格信息"
+      }
+    ],
+    "DescribeDevices": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeDevices\r\n&Offset=0\r\n&Limit=20\r\n&VpcId=vpc-3c7b2102\r\n&DeviceClassCode=PS001v1\r\n&Alias=test\r\n&VagueIp=88\r\n&DeadlineStartTime=2018-01-01 18:00:00\r\n&DeadlineEndTime=2018-12-01 18:00:00\r\n&AutoRenewFlag=1\r\n&Tags.0.TagKey=testkey\r\n&Tags.0.TagValues.0=testval\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"DeviceInfoSet\": [\r\n            {\r\n                \"InstanceId\": \"tcpm-q0hcvsrn\",\r\n                \"VpcId\": \"vpc-3c7b2102\",\r\n                \"SubnetId\": \"subnet-et5bm4jl\",\r\n                \"DeviceStatus\": 4,\r\n                \"OperateStatus\": 1,\r\n                \"OsTypeId\": 6,\r\n                \"RaidId\": 2,\r\n                \"Alias\": \"ami-test\",\r\n                \"AppId\": 251000873,\r\n                \"Zone\": \"ap-shanghai-bls-2\",\r\n                \"WanIp\": \"\",\r\n                \"LanIp\": \"10.188.1.2\",\r\n                \"DeliverTime\": \"2017-09-28 01:11:11\",\r\n                \"Deadline\": \"2018-10-01 00:00:00\",\r\n                \"AutoRenewFlag\": 1,\r\n                \"DeviceClassCode\": \"PS001v1\",\r\n                \"CpmPayMode\": 2,\r\n                \"DhcpIp\": \"100.81.128.24\",\r\n                \"VpcName\": \"BMGZHW-206002\",\r\n                \"SubnetName\": \"subnet0\",\r\n                \"VpcCidrBlock\": \"10.188.0.0/16\",\r\n                \"SubnetCidrBlock\": \"10.188.1.0/24\",\r\n                \"IsLuckyDevice\":0,\r\n                \"Tags\": [\r\n                    {\r\n                        \"TagKey\": \"testval\",\r\n                        \"TagValues\": [\r\n                            \"____TIMI _____\",\r\n                            \"testval\"\r\n                        ]\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"InstanceId\": \"tcpm-nxl2p7t7\",\r\n                \"VpcId\": \"vpc-3c7b2102\",\r\n                \"SubnetId\": \"subnet-et5bm4jl\",\r\n                \"DeviceStatus\": 4,\r\n                \"OperateStatus\": 9,\r\n                \"OsTypeId\": 50,\r\n                \"RaidId\": 2,\r\n                \"Alias\": \"test用\",\r\n                \"AppId\": 251000873,\r\n                \"Zone\": \"ap-shanghai-bls-2\",\r\n                \"WanIp\": \"\",\r\n                \"LanIp\": \"10.188.1.6\",\r\n                \"DeliverTime\": \"2018-02-08 17:26:01\",\r\n                \"Deadline\": \"2018-10-01 00:00:00\",\r\n                \"AutoRenewFlag\": 1,\r\n                \"DeviceClassCode\": \"PS100v1\",\r\n                \"CpmPayMode\": 2,\r\n                \"DhcpIp\": \"100.81.128.22\",\r\n                \"VpcName\": \"BMGZHW-206002\",\r\n                \"SubnetName\": \"subnet0\",\r\n                \"VpcCidrBlock\": \"10.188.0.0/16\",\r\n                \"SubnetCidrBlock\": \"10.188.1.0/24\",\r\n                \"IsLuckyDevice\":0,\r\n                \"Tags\": [\r\n                    {\r\n                        \"TagKey\": \"testval\",\r\n                        \"TagValues\": [\r\n                            \"testval\"\r\n                        ]\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"7e733b67-48fb-4cbe-99c3-0eb6b81aa759\"\r\n    }\r\n}",
+        "title": "查询物理机信息"
+      }
+    ],
+    "DescribeHardwareSpecification": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeHardwareSpecification\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"CpuInfoSet\": [\r\n            {\r\n                \"CpuId\": 1,\r\n                \"CpuDescription\": \"E5-2620v3 (6核)  * 2\",\r\n                \"Series\": 1,\r\n                \"ContainRaidCard\": [\r\n                    0,\r\n                    1\r\n                ]\r\n            },\r\n            {\r\n                \"CpuId\": 3,\r\n                \"CpuDescription\": \"E5-2670v3 (12核)  * 2\",\r\n                \"Series\": 1,\r\n                \"ContainRaidCard\": [\r\n                    1\r\n                ]\r\n            },\r\n            {\r\n                \"CpuId\": 4,\r\n                \"CpuDescription\": \"E5-2620v4 (8核)  * 2\",\r\n                \"Series\": 2,\r\n                \"ContainRaidCard\": [\r\n                    0,\r\n                    1\r\n                ]\r\n            },\r\n            {\r\n                \"CpuId\": 2,\r\n                \"CpuDescription\": \"E5-2680v4 (14核)  * 2\",\r\n                \"Series\": 2,\r\n                \"ContainRaidCard\": [\r\n                    0,\r\n                    1\r\n                ]\r\n            },\r\n            {\r\n                \"CpuId\": 5,\r\n                \"CpuDescription\": \"4110（8核）* 2\",\r\n                \"Series\": 3,\r\n                \"ContainRaidCard\": [\r\n                    0,\r\n                    1\r\n                ]\r\n            },\r\n            {\r\n                \"CpuId\": 6,\r\n                \"CpuDescription\": \"6133 （20核）* 2\",\r\n                \"Series\": 3,\r\n                \"ContainRaidCard\": [\r\n                    0,\r\n                    1\r\n                ]\r\n            }\r\n        ],\r\n        \"MemSet\": [\r\n            64,\r\n            128,\r\n            192,\r\n            256,\r\n            384,\r\n            512\r\n        ],\r\n        \"DiskInfoSet\": [\r\n            {\r\n                \"DiskTypeId\": 1,\r\n                \"Size\": 300,\r\n                \"DiskDescription\": \"SAS-HDD-300G\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 2,\r\n                \"Size\": 600,\r\n                \"DiskDescription\": \"SAS-HDD-600G\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 3,\r\n                \"Size\": 1200,\r\n                \"DiskDescription\": \"SAS-HDD-1.2T\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 4,\r\n                \"Size\": 2000,\r\n                \"DiskDescription\": \"SATA-HDD-2T\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 5,\r\n                \"Size\": 4000,\r\n                \"DiskDescription\": \"SATA-HDD-4T\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 6,\r\n                \"Size\": 8000,\r\n                \"DiskDescription\": \"SATA-HDD-8T\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 7,\r\n                \"Size\": 240,\r\n                \"DiskDescription\": \"SATA-SSD-240G\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 8,\r\n                \"Size\": 480,\r\n                \"DiskDescription\": \"SATA-SSD-480G\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 9,\r\n                \"Size\": 800,\r\n                \"DiskDescription\": \"SATA-SSD-800G\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 10,\r\n                \"Size\": 2000,\r\n                \"DiskDescription\": \"NVME-SSD-2T\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 11,\r\n                \"Size\": 3200,\r\n                \"DiskDescription\": \"NVME-SSD-3.2T\"\r\n            },\r\n            {\r\n                \"DiskTypeId\": 12,\r\n                \"Size\": 960,\r\n                \"DiskDescription\": \"SATA-SSD-960G\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a2c2794e-fef1-4545-95f4-ec7c7fe773ae\"\r\n    }\r\n}",
+        "title": "查询自定义机型部件信息"
+      }
+    ],
+    "DescribeHostedDeviceOutBandInfo": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeHostedDeviceOutBandInfo\r\n&ZoneId=ap-shanghai-bls-2\r\n&InstanceIds.0=chm-xxx0\r\n&InstanceIds.1=chm-xxx1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"HostedDeviceOutBandInfoSet\": [\r\n            {\r\n                \"InstanceId\": \"chm-xxx0\",\r\n                \"OutBandIp\": \"100.81.160.26\",\r\n                \"VpnIp\": \"139.199.40.96\",\r\n                \"VpnPort\": 443\r\n            },\r\n            {\r\n                \"InstanceId\": \"chm-xxx1\",\r\n                \"OutBandIp\": \"100.81.160.43\",\r\n                \"VpnIp\": \"139.199.40.96\",\r\n                \"VpnPort\": 443\r\n            }\r\n        ],\r\n        \"RequestId\": \"b6fe718b-3900-4fd9-b92d-ed463959e3b5\"\r\n    }\r\n}",
+        "title": "查询托管设备带外信息"
+      }
+    ],
+    "DescribeOperationResult": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeOperationResult\r\n&TaskId=123\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskStatus\": 1,\r\n        \"SubtaskStatusSet\": [\r\n            {\r\n                \"InstanceId\": \"cpm-xxx\",\r\n                \"TaskStatus\": 1\r\n            }\r\n        ],\r\n        \"RequestId\": \"223956ff-6e06-40a0-9aad-1056627ed72a\"\r\n    }\r\n}",
+        "title": "查询异步任务状态"
+      }
+    ],
+    "DescribeOsInfo": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeOsInfo\r\n&DeviceClassCode=PS100v1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"OsInfoSet\": [\r\n            {\r\n                \"OsTypeId\": 85,\r\n                \"OsName\": \"BM-ubuntu16.04-test\",\r\n                \"OsDescription\": \"ubuntu16.04-test\",\r\n                \"OsEnglishDescription\": \"ubuntu16.04-test\",\r\n                \"OsClass\": \"ubuntu\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 23,\r\n                \"OsName\": \"BM-ubuntu16.04\",\r\n                \"OsDescription\": \"ubuntu 16 64位\",\r\n                \"OsEnglishDescription\": \"ubuntu 16 64bit\",\r\n                \"OsClass\": \"ubuntu\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 9,\r\n                \"OsName\": \"BM-ubuntu14\",\r\n                \"OsDescription\": \"ubuntu 14   64位\",\r\n                \"OsEnglishDescription\": \"ubuntu 14   64bit\",\r\n                \"OsClass\": \"ubuntu\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 50,\r\n                \"OsName\": \"BM-tlinux1.2-ori\",\r\n                \"OsDescription\": \"tlinux1.2-ori（内部版）\",\r\n                \"OsEnglishDescription\": \"tlinux1.2-ori（内部版）\",\r\n                \"OsClass\": \"Tlinux\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 51,\r\n                \"OsName\": \"BM-shuteng-centos7.2\",\r\n                \"OsDescription\": \"shuteng-centos7.2(内部版)\",\r\n                \"OsEnglishDescription\": \"shuteng-centos7.2(内部版)\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 52,\r\n                \"OsName\": \"BM-shuteng-centos7.2\",\r\n                \"OsDescription\": \"shuteng-centos7.2\",\r\n                \"OsEnglishDescription\": \"shuteng-centos7.2\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 57,\r\n                \"OsName\": \"BM-shunfeng-centos7.2\",\r\n                \"OsDescription\": \"shunfeng-centos7.2（内部版）\",\r\n                \"OsEnglishDescription\": \"shunfeng-centos7.2\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 56,\r\n                \"OsName\": \"BM-shunfeng-centos7.2\",\r\n                \"OsDescription\": \"shunfeng-centos7.2\",\r\n                \"OsEnglishDescription\": \"shunfeng-centos7.2\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 50\r\n            },\r\n            {\r\n                \"OsTypeId\": 79,\r\n                \"OsName\": \"BM-douban-gentoo\",\r\n                \"OsDescription\": \"gentoo 64位\",\r\n                \"OsEnglishDescription\": \"gentoo16.7 64bit\",\r\n                \"OsClass\": \"gentoo\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 84,\r\n                \"OsName\": \"BM-douban-gentoo\",\r\n                \"OsDescription\": \"douban-gentoo-1803(内部版)\",\r\n                \"OsEnglishDescription\": \"douban-gentoo-1803\",\r\n                \"OsClass\": \"gentoo\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 77,\r\n                \"OsName\": \"BM-centos68-180501\",\r\n                \"OsDescription\": \"centos6.8 180501\",\r\n                \"OsEnglishDescription\": \"centos6.8 180501\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 76,\r\n                \"OsName\": \"BM-centos67-180501\",\r\n                \"OsDescription\": \"centos6.7 180501\",\r\n                \"OsEnglishDescription\": \"centos6.7 180501\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 75,\r\n                \"OsName\": \"BM-centos66-180501\",\r\n                \"OsDescription\": \"centos6.6 180501\",\r\n                \"OsEnglishDescription\": \"centos6.6 180501\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 88,\r\n                \"OsName\": \"BM-XServer_V16_64\",\r\n                \"OsDescription\": \"Windows 2016 数据中心版 64位英文版\",\r\n                \"OsEnglishDescription\": \"Windows Server 2016 Datacenter 64-bit\",\r\n                \"OsClass\": \"Windows\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 14,\r\n                \"OsName\": \"BM-XServer_V12_64\",\r\n                \"OsDescription\": \"Windows 2012 R2 标准版 64位英文版\",\r\n                \"OsEnglishDescription\": \"Windows Server 2012 R2 Standard 64-bit (English)\",\r\n                \"OsClass\": \"Windows\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 70,\r\n                \"OsName\": \"BM-ubuntu16-180501\",\r\n                \"OsDescription\": \"Ubuntu16 180501\",\r\n                \"OsEnglishDescription\": \"Ubuntu16 180501\",\r\n                \"OsClass\": \"ubuntu\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 69,\r\n                \"OsName\": \"BM-ubuntu14-180501\",\r\n                \"OsDescription\": \"Ubuntu14 180501\",\r\n                \"OsEnglishDescription\": \"Ubuntu14 180501\",\r\n                \"OsClass\": \"ubuntu\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 68,\r\n                \"OsName\": \"BM-ubuntu16-base\",\r\n                \"OsDescription\": \"Ubuntu 16（基础版）\",\r\n                \"OsEnglishDescription\": \"Ubuntu 16 base\",\r\n                \"OsClass\": \"ubuntu\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 67,\r\n                \"OsName\": \"BM-ubuntu14-base\",\r\n                \"OsDescription\": \"Ubuntu 14（基础版）\",\r\n                \"OsEnglishDescription\": \"Ubuntu 14 base\",\r\n                \"OsClass\": \"ubuntu\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 24,\r\n                \"OsName\": \"BM-tlinux1.2-ori\",\r\n                \"OsDescription\": \"Tlinux 1.2 origin 64位\",\r\n                \"OsEnglishDescription\": \"BM-tlinux1.2 origin 64bi\",\r\n                \"OsClass\": \"Tlinux\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 16\r\n            },\r\n            {\r\n                \"OsTypeId\": 74,\r\n                \"OsName\": \"BM-debian82-180501\",\r\n                \"OsDescription\": \"Debian8.2 180501\",\r\n                \"OsEnglishDescription\": \"Debian8.2 180501\",\r\n                \"OsClass\": \"Debian\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 73,\r\n                \"OsName\": \"BM-debian78-180501\",\r\n                \"OsDescription\": \"Debian7.8 180501\",\r\n                \"OsEnglishDescription\": \"Debian7.8 180501\",\r\n                \"OsClass\": \"Debian\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 91,\r\n                \"OsName\": \"BM-debian94-base\",\r\n                \"OsDescription\": \"Debian 9.4 64位\",\r\n                \"OsEnglishDescription\": \"Debian 9.4 64bit\",\r\n                \"OsClass\": \"Debian\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 7,\r\n                \"OsName\": \"BM-debian8.2\",\r\n                \"OsDescription\": \"Debian 8.2  64位\",\r\n                \"OsEnglishDescription\": \"Debian 8.2  64bit\",\r\n                \"OsClass\": \"Debian\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 66,\r\n                \"OsName\": \"BM-debian82-base\",\r\n                \"OsDescription\": \"Debian 8 （基础版）\",\r\n                \"OsEnglishDescription\": \"Debian 8 base\",\r\n                \"OsClass\": \"Debian\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 3,\r\n                \"OsName\": \"BM-debian7.8\",\r\n                \"OsDescription\": \"Debian 7.8  64位\",\r\n                \"OsEnglishDescription\": \"Debian 7.8  64bit\",\r\n                \"OsClass\": \"Debian\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 65,\r\n                \"OsName\": \"BM-debian78-base\",\r\n                \"OsDescription\": \"Debian 7 （基础版）\",\r\n                \"OsEnglishDescription\": \"Debian 7 base\",\r\n                \"OsClass\": \"Debian\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 71,\r\n                \"OsName\": \"BM-centos65-180501\",\r\n                \"OsDescription\": \"Centos6.5 180501\",\r\n                \"OsEnglishDescription\": \"Centos6.5 180501\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 47,\r\n                \"OsName\": \"BM-centos7.3\",\r\n                \"OsDescription\": \"Centos 7.3 64位\",\r\n                \"OsEnglishDescription\": \"Centos 7.3 64bit\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 50\r\n            },\r\n            {\r\n                \"OsTypeId\": 16,\r\n                \"OsName\": \"BM-centos72-test\",\r\n                \"OsDescription\": \"Centos 7.2t  64位\",\r\n                \"OsEnglishDescription\": \"Centos 7.2t  64bit\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 2,\r\n                \"OsName\": \"BM-centos7.2\",\r\n                \"OsDescription\": \"Centos 7.2  64位\",\r\n                \"OsEnglishDescription\": \"Centos 7.2  64bit\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 50\r\n            },\r\n            {\r\n                \"OsTypeId\": 63,\r\n                \"OsName\": \"BM-centos72-base\",\r\n                \"OsDescription\": \"Centos 7 （基础版）\",\r\n                \"OsEnglishDescription\": \"centos 7 base\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 48,\r\n                \"OsName\": \"BM-centos6.8\",\r\n                \"OsDescription\": \"Centos 6.8 64位\",\r\n                \"OsEnglishDescription\": \"Centos 6.8 64bit\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 16\r\n            },\r\n            {\r\n                \"OsTypeId\": 49,\r\n                \"OsName\": \"BM-centos6.7\",\r\n                \"OsDescription\": \"Centos 6.7 64位\",\r\n                \"OsEnglishDescription\": \"Centos 6.7 64bit\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 16\r\n            },\r\n            {\r\n                \"OsTypeId\": 1,\r\n                \"OsName\": \"BM-centos6.5\",\r\n                \"OsDescription\": \"Centos 6.5  64位\",\r\n                \"OsEnglishDescription\": \"Centos 6.5 64bit\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 16\r\n            },\r\n            {\r\n                \"OsTypeId\": 64,\r\n                \"OsName\": \"BM-centos65-base\",\r\n                \"OsDescription\": \"Centos 6 （基础版）\",\r\n                \"OsEnglishDescription\": \"centos 6 base\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 72,\r\n                \"OsName\": \"BM-centos72-180501\",\r\n                \"OsDescription\": \"Centos7.2 180501\",\r\n                \"OsEnglishDescription\": \"Centos7.2 180501\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"public\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 78,\r\n                \"OsName\": \"BM-centos73-180501\",\r\n                \"OsDescription\": \"centos7.3 180501\",\r\n                \"OsEnglishDescription\": \"centos7.3 180501\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            },\r\n            {\r\n                \"OsTypeId\": 96,\r\n                \"OsName\": \"BM-centos72-180501\",\r\n                \"OsDescription\": \"Centos7.2 180501 64位 (内部版)\",\r\n                \"OsEnglishDescription\": \"Centos7.2 180501 64bit\",\r\n                \"OsClass\": \"CentOS\",\r\n                \"ImageTag\": \"private\",\r\n                \"MaxPartitionSize\": 1000000\r\n            }\r\n        ],\r\n        \"RequestId\": \"63aafcac-21a3-48a8-9071-090dca3605aa\"\r\n    }\r\n}",
+        "title": "查询操作系统信息"
+      }
+    ],
+    "DescribePsaRegulations": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribePsaRegulations\r\n&Limit=20\r\n&Offset=0\r\n&OrderField=CreateTime\r\n&Order=1\r\n&PsaIds.0=bm\r\n&Tags.0.TagKey=测试_1\r\n&Tags.0.TagValues.0=到底是范德萨\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"080d4ff5-03e5-477b-9be9-3083168c86c2\",\r\n        \"TotalCount\": 1,\r\n        \"PsaRegulations\": [\r\n            {\r\n                \"PsaId\": \"bm-preauth-lswv4dgh\",\r\n                \"PsaName\": \"到底是\",\r\n                \"TagCount\": 1,\r\n                \"InstanceCount\": 5,\r\n                \"RepairCount\": 0,\r\n                \"RepairLimit\": 5,\r\n                \"CreateTime\": \"2018-08-28 12:56:18\",\r\n                \"PsaDescription\": \"\",\r\n                \"TaskTypeIds\": [\r\n                    30,\r\n                    37,\r\n                    40,\r\n                    41,\r\n                    44\r\n                ],\r\n                \"Tags\": [\r\n                    {\r\n                        \"TagKey\": \"测试_1\",\r\n                        \"TagValues\": [\r\n                            \"到底是范德萨\"\r\n                        ]\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取预授权规则列表"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeRegions\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RegionInfoSet\": [\r\n            {\r\n                \"RegionId\": 1,\r\n                \"RegionDescription\": \"华南地区（广州）\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"ZoneInfoSet\": [\r\n                    {\r\n                        \"ZoneId\": 1000100003,\r\n                        \"ZoneDescription\": \"广州物理机一区 \",\r\n                        \"Zone\": \"ap-guangzhou-bls-1\"\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"RegionId\": 4,\r\n                \"RegionDescription\": \"华东地区（上海）\",\r\n                \"Region\": \"ap-shanghai\",\r\n                \"ZoneInfoSet\": [\r\n                    {\r\n                        \"ZoneId\": 1000400001,\r\n                        \"ZoneDescription\": \"上海物理机一区\",\r\n                        \"Zone\": \"ap-shanghai-bls-1\"\r\n                    },\r\n                    {\r\n                        \"ZoneId\": 1000400003,\r\n                        \"ZoneDescription\": \"上海物理机三区\",\r\n                        \"Zone\": \"ap-shanghai-bls-3\"\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"RegionId\": 8,\r\n                \"RegionDescription\": \"华北地区（北京）\",\r\n                \"Region\": \"ap-beijing\",\r\n                \"ZoneInfoSet\": [\r\n                    {\r\n                        \"ZoneId\": 1000800001,\r\n                        \"ZoneDescription\": \"北京物理机一区\",\r\n                        \"Zone\": \"ap-beijing-bls-1\"\r\n                    },\r\n                    {\r\n                        \"ZoneId\": 1000800002,\r\n                        \"ZoneDescription\": \"北京物理机二区\",\r\n                        \"Zone\": \"ap-beijing-bls-2\"\r\n                    },\r\n                    {\r\n                        \"ZoneId\": 1000800003,\r\n                        \"ZoneDescription\": \"北京物理机三区\",\r\n                        \"Zone\": \"ap-beijing-bls-3\"\r\n                    },\r\n                    {\r\n                        \"ZoneId\": 1000800004,\r\n                        \"ZoneDescription\": \"北京物理机四区\",\r\n                        \"Zone\": \"ap-beijing-bls-4\"\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"RegionId\": 19,\r\n                \"RegionDescription\": \"西南地区（重庆）\",\r\n                \"Region\": \"ap-chongqing\",\r\n                \"ZoneInfoSet\": [\r\n                    {\r\n                        \"ZoneId\": 1001900001,\r\n                        \"ZoneDescription\": \"重庆物理机一区\",\r\n                        \"Zone\": \"ap-chongqing-bls-1\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"63caeffd-4782-4704-87d6-c9ce36532c0e\"\r\n    }\r\n}",
+        "title": "查询地域以及可用区"
+      }
+    ],
+    "DescribeRepairTaskConstant": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeRepairTaskConstant\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3b14a9b3-82c5-45fa-906d-0aa07fc07fd7\",\r\n    \"TaskTypeSet\": [\r\n      {\r\n        \"TypeId\": 30,\r\n        \"TypeName\": \"硬盘故障（有冗余）\",\r\n        \"TaskSubType\": \"redundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 31,\r\n        \"TypeName\": \"RAID卡电池故障\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 32,\r\n        \"TypeName\": \"RAID卡缓存故障\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 34,\r\n        \"TypeName\": \"硬盘故障（无冗余）\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 36,\r\n        \"TypeName\": \"逻辑盘只读\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 37,\r\n        \"TypeName\": \"硬盘即将故障（有冗余）\",\r\n        \"TaskSubType\": \"redundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 38,\r\n        \"TypeName\": \"操作系统硬盘故障（无冗余）\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 40,\r\n        \"TypeName\": \"硬盘故障（有冗余，槽位未知）\",\r\n        \"TaskSubType\": \"redundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 41,\r\n        \"TypeName\": \"电源故障（有冗余）\",\r\n        \"TaskSubType\": \"redundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 42,\r\n        \"TypeName\": \"风扇故障\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 43,\r\n        \"TypeName\": \"硬盘故障（无冗余，在线换盘）\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 44,\r\n        \"TypeName\": \"Ping不可达\",\r\n        \"TaskSubType\": \"unconfirmed\"\r\n      },\r\n      {\r\n        \"TypeId\": 47,\r\n        \"TypeName\": \"SSD硬盘故障（无冗余）\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 48,\r\n        \"TypeName\": \"网卡故障\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 49,\r\n        \"TypeName\": \"内存故障\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 53,\r\n        \"TypeName\": \"主板故障\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 55,\r\n        \"TypeName\": \"CPU故障\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 60,\r\n        \"TypeName\": \"SSD硬盘寿命耗尽\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 61,\r\n        \"TypeName\": \"SSD硬盘温度过高（关机换盘）\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 62,\r\n        \"TypeName\": \"SSD硬盘坏块率过高（关机换盘）\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 63,\r\n        \"TypeName\": \"电源故障（无冗余）\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 94,\r\n        \"TypeName\": \"GPU故障\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 124,\r\n        \"TypeName\": \"硬盘掉线\",\r\n        \"TaskSubType\": \"nonredundancy\"\r\n      },\r\n      {\r\n        \"TypeId\": 58,\r\n        \"TypeName\": \"自助重启失败\",\r\n        \"TaskSubType\": \"unconfirmed\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "title": "维修任务配置获取"
+      }
+    ],
+    "DescribeTaskInfo": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeTaskInfo\r\n&Offset=0\r\n&Limit=20\r\n&OrderField=CreateTime\r\n&Order=1\r\n&StartDate=2018-07-10\r\n&EndDate=2018-07-19\r\n&TaskStatus.0=1\r\n&TaskIds.0=b\r\n&InstanceIds.0=o\r\n&Aliases.0=-\r\n&TaskTypeIds.0=44\r\n&TaskTypeIds.1=49\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"56b1bc7b-c97c-4f17-a42d-bb9c181b9b83\",\r\n        \"TotalCount\": 2,\r\n        \"TaskInfoSet\": [\r\n            {\r\n                \"TaskId\": \"bm-repair-pygkh5q7\",\r\n                \"TaskTypeId\": 49,\r\n                \"TaskStatus\": 1,\r\n                \"CreateTime\": \"2018-07-16 10:42:29\",\r\n                \"AuthTime\": \"\",\r\n                \"EndTime\": \"\",\r\n                \"TaskDetail\": \"内存出现故障会导致存储数据发生改变、程序出错，严重情况下会导致系统出现异常直接影响业务。\",\r\n                \"InstanceId\": \"tcpm-rewhxuo7\",\r\n                \"Alias\": \"jason - 黑石 - 织云测试1\",\r\n                \"DeviceStatus\": 4,\r\n                \"OperateStatus\": 20,\r\n                \"VpcId\": \"vpc-34cxlz7z\",\r\n                \"SubnetId\": \"subnet-1so5ae8m\",\r\n                \"WanIp\": \"115.159.240.68\",\r\n                \"LanIp\": \"10.10.1.60\",\r\n                \"MgtIp\": \"100.73.46.196\",\r\n                \"Region\": \"ap-beijing\",\r\n                \"SubnetName\": \"sub1\",\r\n                \"VpcName\": \"test\",\r\n                \"VpcCidrBlock\": \"10.0.0.0/16\",\r\n                \"SubnetCidrBlock\": \"10.0.0.0/24\",\r\n                \"Zone\": \"ap-beijing-bls-1\"\r\n            },\r\n            {\r\n                \"TaskId\": \"bm-repair-6ofdlrht\",\r\n                \"TaskTypeId\": 44,\r\n                \"TaskStatus\": 1,\r\n                \"CreateTime\": \"2018-07-13 17:47:33\",\r\n                \"AuthTime\": \"\",\r\n                \"EndTime\": \"\",\r\n                \"TaskDetail\": \"设备己停机，业务己中断。\",\r\n                \"InstanceId\": \"cpm-cbqm5mo8\",\r\n                \"Alias\": \"ami - NAT日志版本测试\",\r\n                \"DeviceStatus\": 4,\r\n                \"OperateStatus\": 1,\r\n                \"VpcId\": \"vpc-4vk5e4bu\",\r\n                \"SubnetId\": \"subnet-mkziizg3\",\r\n                \"WanIp\": \"\",\r\n                \"LanIp\": \"10.123.0.30\",\r\n                \"MgtIp\": \"100.81.198.66\",\r\n                \"Region\": \"ap-beijing\",\r\n                \"SubnetName\": \"sub13\",\r\n                \"VpcName\": \"HEISHI_VPCk\",\r\n                \"VpcCidrBlock\": \"10.1.0.0/16\",\r\n                \"SubnetCidrBlock\": \"10.1.55.0/24\",\r\n                \"Zone\": \"ap-beijing-bls-1\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "维修任务信息获取"
+      }
+    ],
+    "DescribeTaskOperationLog": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeTaskOperationLog\r\n&TaskId=bmj-test\r\n&OrderField=OperationTime\r\n&Order=0\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\",\r\n\t\"TotalCount\":2,\r\n\t\"TaskOperationLogSet\":[\r\n\t\t{\r\n\t\t\"TaskStep\":\"故障建单\",\r\n\t\t\"Operator\":\"腾讯云\",\r\n\t\t\"OperationDetail\":\"发生故障，系统建单\",\r\n\t\t\"OperationTime\":\"2018-04-15 17:10:25\"\r\n\t\t},\r\n\t\t{\r\n\t\t\"TaskStep\":\"未授权-暂不处理\",\r\n\t\t\"Operator\":\"123456\",\r\n\t\t\"OperationDetail\":\"用户已收到通知，稍后处理\",\r\n\t\t\"OperationTime\":\"2018-04-15 17:50:02\"\r\n\t\t}\r\n\t]\r\n}\r\n}",
+        "title": "获取维修任务操作日志"
+      }
+    ],
+    "DescribeUserCmdTaskInfo": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeUserCmdTaskInfo\r\n&TaskId=cmdtask-mi5k1oct\r\n&Offset=0\r\n&Limit=20\r\n&OrderField=RunBeginTime\r\n&Order=1\r\n&SearchKey=m\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"UserCmdTaskInfoSet\": [\r\n            {\r\n                \"AutoId\": 4,\r\n                \"TaskId\": \"cmdtask-abc1\",\r\n                \"RunBeginTime\": \"2018-09-20 17:42:21\",\r\n                \"RunEndTime\": \"\",\r\n                \"Status\": -1,\r\n                \"InstanceName\": \"xxx1\",\r\n                \"InstanceId\": \"cpm-aaa\",\r\n                \"VpcName\": \"asdas\",\r\n                \"VpcId\": \"vpc-123\",\r\n                \"VpcCidrBlock\": \"10.88.0.0/16\",\r\n                \"SubnetName\": \"asdadads\",\r\n                \"SubnetId\": \"subnet-123\",\r\n                \"SubnetCidrBlock\": \"10.88.0.0/24\",\r\n                \"LanIp\": \"10.88.0.3\",\r\n                \"CmdContent\": \"IyEvYmluL2Jhc2gKZm9yIGkgaW4gezEuLjEwMH0KZG8KICAgIGVjaG8gJGkKCXNsZWVwIDEwCmRvbmUK\",\r\n                \"CmdParam\": \"\",\r\n                \"CmdResult\": \"\",\r\n                \"AppId\": 123,\r\n                \"LastShellExit\": -1\r\n            },\r\n            {\r\n                \"AutoId\": 5,\r\n                \"TaskId\": \"cmdtask-abc2\",\r\n                \"RunBeginTime\": \"2018-09-20 17:42:21\",\r\n                \"RunEndTime\": \"\",\r\n                \"Status\": -1,\r\n                \"InstanceName\": \"xxxxx\",\r\n                \"InstanceId\": \"cpm-bbb\",\r\n                \"VpcName\": \"dsffdssfd\",\r\n                \"VpcId\": \"vpc-234\",\r\n                \"VpcCidrBlock\": \"10.88.0.0/16\",\r\n                \"SubnetName\": \"fdsfdsfds\",\r\n                \"SubnetId\": \"subnet-234\",\r\n                \"SubnetCidrBlock\": \"10.88.255.0/24\",\r\n                \"LanIp\": \"10.88.255.2\",\r\n                \"CmdContent\": \"IyEvYmluL2Jhc2gKZm9yIGkgaW4gezEuLjEwMH0KZG8KICAgIGVjaG8gJGkKCXNsZWVwIDEwCmRvbmUK\",\r\n                \"CmdParam\": \"\",\r\n                \"CmdResult\": \"\",\r\n                \"AppId\": 123,\r\n                \"LastShellExit\": -1\r\n            }\r\n        ],\r\n        \"RequestId\": \"da45b829-bbe4-4e49-b85e-e9cd0aeeb139\"\r\n    }\r\n}",
+        "title": "获取自定义脚本任务详细信息"
+      }
+    ],
+    "DescribeUserCmdTasks": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeUserCmdTasks\r\n&Offset=0\r\n&Limit=20\r\n&OrderField=RunBeginTime\r\n&Order=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 4,\r\n        \"UserCmdTasks\": [\r\n            {\r\n                \"TaskId\": \"cmdtask-1ghosm17\",\r\n                \"Status\": -1,\r\n                \"Alias\": \"marsinfan\",\r\n                \"CmdId\": \"cmd-dr3ja3hq\",\r\n                \"InstanceCount\": 2,\r\n                \"SuccessCount\": 0,\r\n                \"FailureCount\": 0,\r\n                \"RunBeginTime\": \"2018-09-20 17:42:21\",\r\n                \"RunEndTime\": \"\"\r\n            },\r\n            {\r\n                \"TaskId\": \"cmdtask-2obesa6h\",\r\n                \"Status\": -1,\r\n                \"Alias\": \"marsinfan\",\r\n                \"CmdId\": \"cmd-dr3ja3hq\",\r\n                \"InstanceCount\": 1,\r\n                \"SuccessCount\": 0,\r\n                \"FailureCount\": 0,\r\n                \"RunBeginTime\": \"2018-09-10 21:09:49\",\r\n                \"RunEndTime\": \"\"\r\n            },\r\n            {\r\n                \"TaskId\": \"cmdtask-mi5k1o5p\",\r\n                \"Status\": -1,\r\n                \"Alias\": \"marsinfan\",\r\n                \"CmdId\": \"cmd-dr3ja3hq\",\r\n                \"InstanceCount\": 1,\r\n                \"SuccessCount\": 0,\r\n                \"FailureCount\": 0,\r\n                \"RunBeginTime\": \"2018-09-10 21:06:52\",\r\n                \"RunEndTime\": \"\"\r\n            },\r\n            {\r\n                \"TaskId\": \"cmdtask-jjbalbah\",\r\n                \"Status\": -1,\r\n                \"Alias\": \"1\",\r\n                \"CmdId\": \"cmd-bugfk68c\",\r\n                \"InstanceCount\": 1,\r\n                \"SuccessCount\": 0,\r\n                \"FailureCount\": 0,\r\n                \"RunBeginTime\": \"2018-09-10 20:57:09\",\r\n                \"RunEndTime\": \"\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"c63330d9-0e57-4c7e-a34e-3e228d58ebc6\"\r\n    }\r\n}",
+        "title": "获取自定义脚本任务列表"
+      }
+    ],
+    "DescribeUserCmds": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DescribeUserCmds\r\n&Offset=0\r\n&Limit=10\r\n&OrderField=createTime\r\n&Order=1\r\n&SearchKey=3\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 8,\r\n        \"UserCmds\": [\r\n            {\r\n                \"AutoId\": 87,\r\n                \"Alias\": \"111\",\r\n                \"CmdId\": \"cmd-dr3ja3hq\",\r\n                \"OsType\": \"linux\",\r\n                \"Content\": \"IyEvYmluL2Jhc2gKZm9yIGkgaW4gezEuLjEwMH0KZG8KICAgIGVjaG8gJGkKCXNsZWVwIDEwCmRvbmUK\",\r\n                \"CreateTime\": \"2018-05-31 11:57:39\",\r\n                \"ModifyTime\": \"2018-06-15 20:12:59\",\r\n                \"AppId\": 123\r\n            },\r\n            {\r\n                \"AutoId\": 53,\r\n                \"Alias\": \"aa\",\r\n                \"CmdId\": \"cmd-o9o03bk8\",\r\n                \"OsType\": \"linux\",\r\n                \"Content\": \"U1hsRmRtUllUbmxNTWtwd1ltazVkMkZJUVV0UVJEbDNZVWhCUzBOcFVtcGlNMVoxWkVOQk9VbEVRVGREYm1SdllWZDRiRWxEYURCamJsWnNTMUZ3TjBObmEydFpNamt4WW01UmNrdDZjMHREV0U1eldsZFdkMHRFU1hCUGQyOUtXbGRPYjJKNVFXdFpNamt4WW01Uk4wTnVNRDA9\",\r\n                \"CreateTime\": \"2017-10-19 16:06:59\",\r\n                \"ModifyTime\": \"2017-10-19 16:54:13\",\r\n                \"AppId\": 123\r\n            },\r\n            {\r\n                \"AutoId\": 28,\r\n                \"Alias\": \"for\",\r\n                \"CmdId\": \"cmd-ow3g7elm\",\r\n                \"OsType\": \"linux\",\r\n                \"Content\": \"Iy9iaW4vYmFzaApjbGVhcgpmb3IgbnVtIGluIDEgMiAzIDQgNSA2IDcgOCA5IDEwCmRvCiAgICBlY2hvICIkbnVtIgpkb25l\",\r\n                \"CreateTime\": \"2017-10-12 21:33:00\",\r\n                \"ModifyTime\": \"2017-10-12 21:33:00\",\r\n                \"AppId\": 123\r\n            },\r\n            {\r\n                \"AutoId\": 27,\r\n                \"Alias\": \"比较两数大小\",\r\n                \"CmdId\": \"cmd-jvrav3la\",\r\n                \"OsType\": \"linux\",\r\n                \"Content\": \"Iy9iaW4vYmFzaAplY2hvICJwbGVhc2UgZW50ZXIgdHdvIG51bWJlciIKcmVhZCBhCnJlYWQgYgppZiB0ZXN0ICRhIC1lcSAkYgp0aGVuIGVjaG8gIk5PLjEgPSBOTy4yIgplbGlmIHRlc3QgJGEgLWd0ICRiCnRoZW4gZWNobyAiTk8uMSA+IE5PLjIiCmVsc2UgZWNobyAiTk8uMSA8IE5PLjIiIApmaQ==\",\r\n                \"CreateTime\": \"2017-10-12 21:14:56\",\r\n                \"ModifyTime\": \"2017-10-12 21:14:56\",\r\n                \"AppId\": 123\r\n            },\r\n            {\r\n                \"AutoId\": 8,\r\n                \"Alias\": \"1测试\",\r\n                \"CmdId\": \"cmd-c33atn9o\",\r\n                \"OsType\": \"linux\",\r\n                \"Content\": \"dW5hbWVlIC1hIApwd2QKCmxzIFwKLWwKCmVjaG8gJDEK\",\r\n                \"CreateTime\": \"2017-10-10 18:38:19\",\r\n                \"ModifyTime\": \"2017-10-10 18:49:34\",\r\n                \"AppId\": 123\r\n            }\r\n        ],\r\n        \"RequestId\": \"5fa2a5ff-de11-414d-ae12-f45bf7a87fe4\"\r\n    }\r\n}",
+        "title": "获取自定义脚本信息列表"
+      }
+    ],
+    "DetachCamRole": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=DetachCamRole\r\n&InstanceId=cpm-xxx0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "解绑服务器CAM角色"
+      }
+    ],
+    "ModifyCustomImageAttribute": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ModifyCustomImageAttribute\r\n&ImageId=testid\r\n&ImageName=aa678\r\n&ImageDescription=876aa\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\"\r\n}\r\n}",
+        "title": "修改自定义镜像别名或备注"
+      }
+    ],
+    "ModifyDeviceAliases": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ModifyDeviceAliases\r\n&DeviceAliases.0.InstanceId=tcpm-xxx0\r\n&DeviceAliases.0.Alias=名字1\r\n&DeviceAliases.1.InstanceId=tcpm-xxx1\r\n&DeviceAliases.1.Alias=名字2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9716f8a4-5ef9-4cfe-93fd-573c2c699463\"\r\n    }\r\n}",
+        "title": "修改服务器名称"
+      }
+    ],
+    "ModifyDeviceAutoRenewFlag": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ModifyDeviceAutoRenewFlag\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&AutoRenewFlag=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"40628e2b-13c2-4456-8c81-8f3e017b5562\"\r\n    }\r\n}",
+        "title": "修改物理机服务器自动续费标志"
+      }
+    ],
+    "ModifyLanIp": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ModifyLanIp\r\n&InstanceId=cpm-xxxxxxxx\r\n&VpcId=vpc1\r\n&SubnetId=subnet1\r\n&LanIp=10.12.1.2\r\n&RebootDevice=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"4da5579f-43ff-4ca4-b22a-34b449c8aec7\"\r\n    }\r\n}",
+        "title": "修改物理机内网IP"
+      }
+    ],
+    "ModifyPayModePre2Post": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ModifyPayModePre2Post\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"40628e2b-13c2-4456-8c81-8f3e017b5562\"\r\n    }\r\n}",
+        "title": "将设备从预付费转换为后付费"
+      }
+    ],
+    "ModifyPsaRegulation": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ModifyPsaRegulation\r\n&PsaId=123\r\n&PsaName=newname\r\n&PsaDescription=aaa\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\"\r\n}\r\n}",
+        "title": "修改规则信息及关联故障类型"
+      }
+    ],
+    "ModifyUserCmd": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ModifyUserCmd\r\n&CmdId=cmd-xxxxx\r\n&Alias=新名字\r\n&OsType=linux\r\n&Content=test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d432b25f-6878-4d1d-865e-34bd040122e9\"\r\n    }\r\n}",
+        "title": "修改脚本"
+      }
+    ],
+    "OfflineDevices": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=OfflineDevices\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&InstanceIds.2=cpm-xxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "销毁服务器"
+      }
+    ],
+    "RebootDevices": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=RebootDevices\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&InstanceIds.2=cpm-xxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "重启机器"
+      }
+    ],
+    "RecoverDevices": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=RecoverDevices\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&InstanceIds.2=cpm-xxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "恢复物理机"
+      }
+    ],
+    "ReloadDeviceOs": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ReloadDeviceOs\r\n&InstanceId=cpm-xxx\r\n&Password=123456Test\r\n&OsTypeId=1\r\n&VpcId=vpc-xxxxx\r\n&SubnetId=subnet-xxxxx\r\n&RaidId=2\r\n&IsZoning=1\r\n&SysRootSpace=20\r\n&SysSwaporuefiSpace=10\r\n&SysUsrlocalSpace=10\r\n&LanIp=10.88.255.6\r\n&HyperThreading=1\r\n&NeedSecurityAgent=1\r\n&NeedMonitorAgent=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"e9825743-cfaf-43a1-85be-9c99966430dd\"\r\n    }\r\n}",
+        "title": "重装操作系统"
+      }
+    ],
+    "RepairTaskControl": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=RepairTaskControl\r\n&TaskId=bm-repair-4zywlogv\r\n&Operate=AuthorizeRepair\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0436564c-1284-4f0f-a341-59e86f548446\",\r\n        \"TaskId\": 123\r\n    }\r\n}",
+        "title": "维修任务管理-授权维修"
+      }
+    ],
+    "ResetDevicePassword": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ResetDevicePassword\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&InstanceIds.2=cpm-xxx2\r\n&Password=newpasswd\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "重置密码"
+      }
+    ],
+    "ReturnDevices": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ReturnDevices\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&InstanceIds.2=cpm-xxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "退还物理机"
+      }
+    ],
+    "RunUserCmd": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=RunUserCmd\r\n&CmdId=cmd-aaaaa\r\n&UserName=root\r\n&Password=123456\r\n&CmdParam=xx\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&InstanceIds.2=cpm-xxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"SuccessTaskInfoSet\": [\r\n            {\r\n                \"InstanceId\": \"cpm-xxx0\",\r\n                \"TaskId\": 902537\r\n            },\r\n            {\r\n                \"InstanceId\": \"cpm-xxx1\",\r\n                \"TaskId\": 902538\r\n            }\r\n        ],\r\n        \"FailedTaskInfoSet\": [\r\n            {\r\n                \"InstanceId\": \"cpm-xxx2\",\r\n                \"ErrorMsg\": \"Some message\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"b035baf0-b935-4321-b6b4-cbd54c06437a\"\r\n    }\r\n}",
+        "title": "运行自定义脚本"
+      }
+    ],
+    "SetOutBandVpnAuthPassword": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=SetOutBandVpnAuthPassword\r\n&Password=123\r\n&Operate=Create\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"58501eb3-1bbc-42f1-b078-f0363fbb7719\"\r\n    }\r\n}",
+        "title": "设置带外VPN认证用户密码"
+      }
+    ],
+    "ShutdownDevices": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=ShutdownDevices\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&InstanceIds.2=cpm-xxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "关闭服务器"
+      }
+    ],
+    "StartDevices": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=StartDevices\r\n&InstanceIds.0=cpm-xxx0\r\n&InstanceIds.1=cpm-xxx1\r\n&InstanceIds.2=cpm-xxx2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 123,\r\n        \"RequestId\": \"3f02fb0c-f782-4cef-9007-d63c68146e39\"\r\n    }\r\n}",
+        "title": "开启服务器"
+      }
+    ],
+    "UnbindPsaTag": [
+      {
+        "document": "",
+        "input": "https://bm.tencentcloudapi.com/?Action=UnbindPsaTag\r\n&PsaId=123\r\n&TagKey=key1\r\n&TagValue=value1\r\n&<公共请求参数>",
+        "output": "{\r\n\"Response\":{\r\n\t\"RequestId\":\"a2a13989-5776-4a8b-83d6-43714117ac3c\"\r\n}\r\n}",
+        "title": "解除标签与预授权规则的绑定"
+      }
+    ]
+  },
+  "version": "1.0"
+}

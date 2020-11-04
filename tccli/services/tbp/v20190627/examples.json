@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "TextProcess": [
+      {
+        "document": "",
+        "input": "https://tbp.tencentcloudapi.com/?Action=TextProcess\r\n&BotId=972445\r\n&InputText=北京\r\n&TerminalId=123\r\n&BotEnv=dev\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DialogStatus\": \"START\",\r\n        \"BotName\": \"botname\",\r\n        \"IntentName\": \"intentName\",\r\n        \"SlotInfoList\": null,\r\n        \"InputText\": \"hi\",\r\n        \"ResponseMessage\": {\r\n            \"GroupList\": [\r\n                {\r\n                    \"ContentType\": \"text/plain\",\r\n                    \"Url\": \"www.baidu.com\",\r\n                    \"Content\": \"hello\"\r\n                },\r\n                {\r\n                    \"ContentType\": \"audio/wav\",\r\n                    \"Url\": \"www.baidu.com\",\r\n                    \"Content\": \"xccv\"\r\n                }\r\n            ]\r\n        },\r\n        \"ResultType\": \"1\",\r\n        \"SessionAttributes\": \"xxx\"\r\n    }\r\n}",
+        "title": "机器人对话服务接口"
+      }
+    ],
+    "TextReset": [
+      {
+        "document": "",
+        "input": "https://tbp.tencentcloudapi.com/?Action=TextReset\r\n&BotId=972445\r\n&TerminalId=123\r\n&BotEnv=dev\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DialogStatus\": \"START\",\r\n        \"BotName\": \"botname\",\r\n        \"IntentName\": \"intentName\",\r\n        \"SlotInfoList\": null,\r\n        \"InputText\": \"hi\",\r\n        \"ResponseMessage\": {\r\n            \"GroupList\": [\r\n                {\r\n                    \"ContentType\": \"text/plain\",\r\n                    \"Url\": \"www.baidu.com\",\r\n                    \"Content\": \"hello\"\r\n                },\r\n                {\r\n                    \"ContentType\": \"audio/wav\",\r\n                    \"Url\": \"www.baidu.com\",\r\n                    \"Content\": \"xccv\"\r\n                }\r\n            ]\r\n        },\r\n        \"ResultType\": \"1\",\r\n        \"SessionAttributes\": \"xxx\"\r\n    }\r\n}",
+        "title": "机器人对话服务接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

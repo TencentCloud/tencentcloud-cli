@@ -1,0 +1,75 @@
+{
+  "actions": {
+    "DescribeItemById": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeItemById\r\n&ItemIDs=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"Items\":[\r\n            {\r\n                \"Album\":{\r\n                    \"AlbumName\":\"你像她\",\r\n                    \"ImagePathMap\":[\r\n                        {\r\n                            \"Key\":\"JPG-240X240-ALBUM\",\r\n                            \"Value\":\"http://image.tingmall.com/album/172/1727096-JPG-240X240-ALBUM.jpg\"\r\n                        },\r\n                        {\r\n                            \"Key\":\"JPG-320X320-ALBUM\",\r\n                            \"Value\":\"http://image.tingmall.com/album/172/1727096-JPG-320X320-ALBUM.jpg\"\r\n                        },\r\n                        {\r\n                            \"Key\":\"JPG-600X600-ALBUM\",\r\n                            \"Value\":\"http://image.tingmall.com/album/172/1727096-JPG-600X600-ALBUM.jpg\"\r\n                        },\r\n                        {\r\n                            \"Key\":\"JPG-1000X1000-ALBUM\",\r\n                            \"Value\":\"http://image.tingmall.com/album/172/1727096-JPG-1000X1000-ALBUM.jpg\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"Artists\":[\r\n                    {\r\n                        \"ArtistName\":\"炫青\"\r\n                    }\r\n                ],\r\n                \"DataInfo\":{\r\n                    \"AuditionBegin\":31000,\r\n                    \"AuditionEnd\":58000,\r\n                    \"Duration\":\"00:04:25\",\r\n                    \"Name\":\"你像她\",\r\n                    \"Version\":\"伴奏\"\r\n                },\r\n                \"ItemID\":\"58E772961AA8DD0D5569BB40AF7AEF08\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"s1590115749573388000\"\r\n    }\r\n}",
+        "title": "根据歌曲ID查询歌曲信息"
+      }
+    ],
+    "DescribeItems": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeItems\r\n&Limit=1\r\n&Offset=0\r\n&CategoryId=xxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"HaveMore\": 4,\r\n        \"Items\": [{\r\n            \"Album\": {\r\n                \"AlbumName\": \"一个人喝醉\",\r\n                \"ImagePathMap\": [{\r\n                    \"Key\": \"JPG-240X240-ALBUM\",\r\n                    \"Value\": \"http://xxx.com/album/094/941465-JPG-240X240-ALBUM.jpg\"\r\n                }, {\r\n                    \"Key\": \"JPG-320X320-ALBUM\",\r\n                    \"Value\": \"http://xxx.com/album/094/941465-JPG-320X320-ALBUM.jpg\"\r\n                }, {\r\n                    \"Key\": \"JPG-600X600-ALBUM\",\r\n                    \"Value\": \"http://xxx.com/album/094/941465-JPG-600X600-ALBUM.jpg\"\r\n                }, {\r\n                    \"Key\": \"JPG-1000X1000-ALBUM\",\r\n                    \"Value\": \"http://xxx.com/album/094/941465-JPG-1000X1000-ALBUM.jpg\"\r\n                }]\r\n            },\r\n            \"Artists\": [{\r\n                \"ArtistName\": \"刘增瞳\"\r\n            }],\r\n            \"DataInfo\": {\r\n                \"AuditionBegin\": 52000,\r\n                \"AuditionEnd\": 83000,\r\n                \"Duration\": \"00:03:41\",\r\n                \"Name\": \"一个人喝醉\",\r\n                \"Version\": \"\"\r\n            },\r\n            \"ItemID\": \"6A48A96A0253EBF45569BB40AF7AEF00\"\r\n        }],\r\n        \"Offset\": 0,\r\n        \"RequestId\": \"s1568790504896049000\",\r\n        \"Size\": 1,\r\n        \"Total\": 5\r\n    }\r\n}",
+        "title": "获取分类内容下歌曲列表"
+      }
+    ],
+    "DescribeLyric": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeLyric\r\n&ItemId=xxxxx\r\n&SubItemType=LRC-LRC\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Lyric\": {\r\n            \"FileNameExt\": \"lrc\",\r\n            \"SubItemType\": \"LRC-LRC\",\r\n            \"Url\": \"http://xxx.com/lyric/09/860/9860965-LRC-LRC.lrc\"\r\n        },\r\n        \"RequestId\": \"s1568793079544475000\"\r\n    }\r\n}",
+        "title": "获取歌词信息"
+      }
+    ],
+    "DescribeMusic": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeMusic\n&ItemId=xxxx\n&IdentityId=xx\n&SubItemType=MP3-64K-FTD-P\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Music\": {\r\n            \"AuditionBegin\": 0,\r\n            \"AuditionEnd\": 0,\r\n            \"FileExtension\": \"mp3\",\r\n            \"FileSize\": 3475953,\r\n            \"Url\": \"/content/09/800/9860965-MP3-64K-FTD.mp3?sign=71a19ae9f06313071f5876fbc4fc5c30\\u0026t=5d81f154\\u0026transDeliveryCode=YQUFAR@0@1568791612@S@3e760189cf194262\",\r\n            \"FullUrl\": \"http://xxx.com/content/09/800/9860965-MP3-64K-FTD.mp3?sign=71a19ae9f06313071f5876fbc4fc5c30\\u0026t=5d81f154\\u0026transDeliveryCode=YQUFAR@0@1568791612@S@3e760189cf194262\"\r\n        },\r\n        \"RequestId\": \"s1568791637852491000\"\r\n    }\r\n}",
+        "title": "获取歌曲播放信息-正常示例"
+      },
+      {
+        "document": "在Error为ResourceNotFound时，Message中包含Code信息为版权方的错误码，具体含义如下：\n101 无结果\n102 内容无权限获取\n103 内容因版权原因下架\n104 内容仅支持下载，不可在线播放\n105 内容需要付费获取\n106 部分资源内容状态不同\n1001 输入参数错误\n1004 第三方API错误\n1005 支付错误\n1006 非支持支付模式\n1007 系统错误\n1008 其他系统错误\n1009 Token过期\n1205 用户账户不存在\n5023 超过当日下载最大量\n5024 超过当月下载最大量\n5000-5999 其他功能错误定义",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeMusic\n&ItemId=xxxx\n&IdentityId=xx\n&SubItemType=MP3-64K-FTD-P\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Error\": {\r\n            \"Code\": \"ResourceNotFound\",\r\n            \"Message\": \"Code:1001, Msg:Invalid parameter (itemid)\"\r\n        },\r\n        \"RequestId\": \"s1575025791424544000\"\r\n    }\r\n}",
+        "title": "获取歌曲播放信息-版权方错误示例"
+      }
+    ],
+    "DescribePackageItems": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribePackageItems\n&OrderId=xxx\n&Offset=xxx\n&Length=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"PackageItems\":[\r\n            {\r\n                \"ArtistName\":\"格子兮,willen\",\r\n                \"AuthorizedArea\":\"CN\",\r\n                \"Duration\":\"00:03:13\",\r\n                \"Img\":\"http://csimage.tingmall.com/album/095/954833-JPG-600X600-ALBUM.jpg\",\r\n                \"ItemID\":\"EB9DF7B88A3CF5BF5569BB40AF7AEF08\",\r\n                \"OrderId\":\"00070710331231100\",\r\n                \"TrackName\":\"十年寒冬\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"s1596078603574525000\"\r\n    }\r\n}",
+        "title": "查询曲库包已核验歌曲列表接口"
+      }
+    ],
+    "DescribePackages": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribePackages\n&Offset=xxx\n&Length=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"Packages\":[\r\n            {\r\n                \"AuthorizedArea\":\"CN\",\r\n                \"AuthorizedLimit\":2000,\r\n                \"Commercial\":0,\r\n                \"EffectTime\":\"2020-07-03 16:05:01\",\r\n                \"ExpireTime\":\"2021-07-03 16:05:01\",\r\n                \"Name\":\"商用通用-在线\",\r\n                \"OrderId\":\"10070316050031100\",\r\n                \"PackagePrice\":200000,\r\n                \"TermOfValidity\":365,\r\n                \"UseRanges\":[\r\n                    {\r\n                        \"Name\":\"API音乐使用场景/短视频背景音（免费）\",\r\n                        \"UseRangeId\":32\r\n                    },\r\n                    {\r\n                        \"Name\":\"API音乐使用场景/图文背景音（免费）\",\r\n                        \"UseRangeId\":33\r\n                    },\r\n                    {\r\n                        \"Name\":\"API音乐使用场景/应用程序背景音（免费）\",\r\n                        \"UseRangeId\":34\r\n                    },\r\n                    {\r\n                        \"Name\":\"API音乐使用场景/网页/个人空间背景音乐定制（付费）\",\r\n                        \"UseRangeId\":1005\r\n                    },\r\n                    {\r\n                        \"Name\":\"API音乐使用场景/客户端背景音乐内置（付费）\",\r\n                        \"UseRangeId\":1008\r\n                    },\r\n                    {\r\n                        \"Name\":\"API音乐使用场景/视频背景音乐（付费）\",\r\n                        \"UseRangeId\":1013\r\n                    }\r\n                ],\r\n                \"UsedCount\":10\r\n            }\r\n        ],\r\n        \"RequestId\":\"s1596075862723742000\"\r\n    }\r\n}",
+        "title": "查询已购曲库包列表接口"
+      }
+    ],
+    "DescribeStations": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeStations\r\n&Limit=1\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"HaveMore\": 0,\r\n        \"Offset\": 0,\r\n        \"RequestId\": \"s1568780320026098000\",\r\n        \"Size\": 3,\r\n        \"Stations\": [{\r\n            \"CategoryCode\": \"\",\r\n            \"CategoryID\": \"DB5C207AE09E058C\",\r\n            \"ImagePathMap\": [{\r\n                \"Key\": \"JPG-320X320-STATION\",\r\n                \"Value\": \"\"\r\n            }, {\r\n                \"Key\": \"JPG-600X600-STATION\",\r\n                \"Value\": \"\"\r\n            }, {\r\n                \"Key\": \"JPG-NXN-STATION\",\r\n                \"Value\": \"\"\r\n            }],\r\n            \"Name\": \"素材-国风\",\r\n            \"Rank\": 1\r\n        }],\r\n        \"Total\": 3\r\n    }\r\n}",
+        "title": "获取分类内容（Station）列表"
+      }
+    ],
+    "ReportData": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=ReportData\r\n&ReportData=1f8b08000000000000007xxxxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"s1578300559628971903\"\r\n\t}\r\n}",
+        "title": "上报歌曲播放数据"
+      }
+    ]
+  },
+  "version": "1.0"
+}

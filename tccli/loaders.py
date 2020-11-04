@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 import os
 import copy
@@ -232,7 +233,11 @@ class Loader(object):
     def _filling_param_info(self, param_info, para, param_type, member):
         param_info[para["name"]] = {}
         param_info[para["name"]]["document"] = para["document"]
-        param_info[para["name"]]["required"] = "Required" if para["required"] else "Optional"
+        if "required" in para:
+            param_info[para["name"]]["required"] = "Required" if para["required"] else "Optional"
+        if "value_allowed_null" in para:
+            param_info[para["name"]]["value_allowed_null"] = \
+                "AllowedNull" if para["value_allowed_null"] else "NotAllowedNull"
         param_info[para["name"]]["type_name"] = PARAM_TYPE_MAP.get(para["member"], para["member"])
         param_info[para["name"]]["type"] = PARAM_TYPE_MAP.get(param_type, param_type)
         param_info[para["name"]]["members"] = member
@@ -245,7 +250,7 @@ class Loader(object):
                 if para["member"] not in BASE_TYPE:
                     self._filling_param_info(
                         param_info, para, "list",
-                        [self._recur_get_param_info(object_model, para["member"])])
+                        [self._get_param_info(object_model[para["member"]]["members"], object_model)])
                 else:
                     self._filling_param_info(
                         param_info, para, "list", [para["member"]])
@@ -253,36 +258,37 @@ class Loader(object):
                 if para["member"] not in BASE_TYPE:
                     param_info = self._filling_param_info(
                         param_info, para, para["member"],
-                        self._recur_get_param_info(object_model, para["member"]))
+                        self._get_param_info(object_model[para["member"]]["members"], object_model))
                 else:
                     self._filling_param_info(param_info, para, para["member"], para["member"])
         return param_info
-
-    def _recur_get_param_info(self, param_model, name):
-        return self._get_param_info(param_model[name]["members"], param_model)
 
     def get_param_info(self, service, version, action):
         service_model = self.get_service_model(service, version)
         param_model = service_model["objects"]
         return self._get_param_info(param_model[action + "Request"]["members"], param_model)
 
+    def get_output_param_info(self, service, version, action):
+        service_model = self.get_service_model(service, version)
+        param_model = service_model["objects"]
+        return self._get_param_info(param_model[action + "Response"]["members"], param_model)
+
     def _generate_param_skeleton(self, param_model, name):
         param_skeleton = {}
         for para in param_model:
             if para["type"] == "list":
                 if para["member"] not in BASE_TYPE:
-                    param_skeleton[para["name"]] = [self._recur_generate_param_skeleton(name, para["member"])]
+                    param_skeleton[para["name"]] = \
+                        [self._generate_param_skeleton(name[para["member"]]["members"], name)]
                 else:
                     param_skeleton[para["name"]] = [PARAM_TYPE_MAP[para["member"]]]
             else:
                 if para["member"] not in BASE_TYPE:
-                    param_skeleton[para["name"]] = self._recur_generate_param_skeleton(name, para["member"])
+                    param_skeleton[para["name"]] = \
+                        self._generate_param_skeleton(name[para["member"]]["members"], name)
                 else:
                     param_skeleton[para["name"]] = PARAM_TYPE_MAP[para["member"]]
         return param_skeleton
-
-    def _recur_generate_param_skeleton(self, param_model, name):
-        return self._generate_param_skeleton(param_model[name]["members"], param_model)
 
     def generate_param_skeleton(self, service, version, action):
         service_model = self.get_service_model(service, version)
@@ -368,3 +374,108 @@ class Loader(object):
             unfold_param[".".join(param)]["required"] = required
             unfold_param[".".join(param)]["document"] = document
         return unfold_param
+
+    def get_action_example_model(self, service, version, action):
+        services_path = self.get_services_path()
+        version = "v" + version.replace('-', '')
+        example_path = os.path.join(services_path, service, version, "examples.json")
+        if not os.path.exists(example_path):
+            raise Exception("Not find service:%s version:%s model" % (service, version))
+
+        with open(example_path, 'r') as f:
+            examples = json.load(f)
+        return examples['actions'][action]
+
+    def generate_cli_example(self, service, version, action):
+        examples = self.get_action_example_model(service, version, action)
+        for example in examples:
+            example["input"] = self.translate_cli_example(service, action, example)
+            try:
+                example["output"] = json.dumps(json.loads(example["output"], object_pairs_hook=OrderedDict),
+                                               indent=4, separators=(',', ': '), ensure_ascii=False)
+            except Exception:
+                pass
+        return examples
+
+    def translate_cli_example(self, module, action, example):
+        if example["input"].startswith("https"):
+            input_param_list = example["input"].replace(u"&<公共请求参数>", "").split("&")[1:]
+            return self.translate_get_cli_param(input_param_list)
+        elif example["input"].startswith("POST"):
+            input_param = example["input"].split('\n\n')[-1]
+            try:
+                input_param = json.loads(input_param, object_pairs_hook=OrderedDict)
+            except Exception as err:
+                raise Exception("service: %s, action: %s, err: %s" % (module, action, err))
+            return self.translate_post_cli_param(input_param)
+
+    def translate_get_cli_param(self, input_param_list):
+        param_list = [k.strip() for k in input_param_list]
+        param_dict = OrderedDict()
+        for item in param_list:
+            try:
+                key = item.split("=")[0]
+                value = item.split("=")[1]
+            except Exception:
+                continue
+            if key.split(".")[-1].isdigit():
+                key = ".".join(key.split(".")[:-1])
+                if key not in param_dict:
+                    param_dict[key] = [value]
+                else:
+                    param_dict[key].append(value)
+            else:
+                param_dict[key] = value
+
+        cli_param_list = []
+        for key, value in param_dict.items():
+            cli_param = "--" + key
+            if isinstance(value, list):
+                for item in value:
+                    if " " in str(item):
+                        cli_param += " " + "'" + str(item) + "'"
+                    else:
+                        cli_param += " " + str(item)
+            else:
+                if " " in str(value):
+                    cli_param += " " + "'" + str(value) + "'"
+                else:
+                    cli_param += " " + str(value)
+            cli_param_list.append(cli_param)
+        return cli_param_list
+
+    def translate_post_cli_param(self, input_param):
+        all_param_list = []
+        param_list = []
+        self._translate_post_cli_param(input_param, param_list, all_param_list)
+        cli_param_list = ["--" + ".".join(item[:-1]) + ' ' + item[-1] for item in all_param_list]
+        return cli_param_list
+
+    def _translate_post_cli_param(self, input_param, param_list, all_param_list):
+        # basic type
+        if not isinstance(input_param, list) and not isinstance(input_param, dict):
+            if isinstance(input_param, str) and " " in input_param:
+                input_param = "'" + input_param + "'"
+            param_list.append(str(input_param))
+            tmp = copy.deepcopy(param_list)
+            all_param_list.append(tmp)
+            param_list.pop()
+        # basic type array
+        elif isinstance(input_param, list) and not isinstance(input_param[0], dict):
+            value = " ".join(["'"+str(param)+"'" if " " in str(param) else str(param) for param in input_param])
+            param_list.append(value)
+            tmp = copy.deepcopy(param_list)
+            all_param_list.append(tmp)
+            param_list.pop()
+        # complex object type array
+        elif isinstance(input_param, list) and isinstance(input_param[0], dict):
+            for idx, param in enumerate(input_param):
+                param_list.append(str(idx))
+                self._translate_post_cli_param(param, param_list, all_param_list)
+                param_list.pop()
+        # complex object type
+        else:  # isinstance(input_param, dict):
+            for param in input_param:
+                param_list.append(param)
+                self._translate_post_cli_param(input_param[param], param_list, all_param_list)
+                param_list.pop()

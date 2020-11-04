@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "CreateSmpnEpa": [
+      {
+        "document": "",
+        "input": "https://smpn.tencentcloudapi.com/?Action=CreateSmpnEpa\r\n&ResourceId=test_resource_id_for_smpn_epa\r\n&RequestData.PhoneNumber=18122223554\r\n&RequestData.Name=黄页名称\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"891f2f2e-4851-4cd8-9555-8d92d6e77902\",\r\n    \"ResponseData\": {\"RetCode\":0}\r\n  }\r\n}",
+        "title": "CreateSmpnEpa"
+      }
+    ],
+    "DescribeSmpnChp": [
+      {
+        "document": "",
+        "input": "https://smpn.tencentcloudapi.com/?Action=DescribeSmpnChp\r\n&ResourceId= test_resource_id_for_smpn_chp\r\n&RequestData.PhoneNumber= 18122223554\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"891f2f2e-4851-4cd8-9555-8d92d6e77902\",\r\n    \"ResponseData\": {\"TagType\":0,\"TagCount\":0}\r\n  }\r\n}",
+        "title": "DescribeSmpnChp"
+      }
+    ],
+    "DescribeSmpnFnr": [
+      {
+        "document": "",
+        "input": "https://smpn.tencentcloudapi.com/?Action=DescribeSmpnFnr\r\n&ResourceId=test_resource_id_for_smpn_fnr\r\n&RequestData.PhoneNumber=18122225555\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a3e252b4-1209-4a50-b3c0-465116f20d75\",\r\n        \"ResponseData\": {\r\n            \"Name\": \"FNR Test\"\r\n        }\r\n    }\r\n}",
+        "title": "DescribeSmpnFnr"
+      }
+    ],
+    "DescribeSmpnMhm": [
+      {
+        "document": "",
+        "input": "https://smpn.tencentcloudapi.com/?Action=DescribeSmpnMhm\r\n&ResourceId=test_resource_id_for_smpn_mhm\r\n&RequestData.PhoneNumber=18122225555\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"891f2f2e-4851-4cd8-9555-8d92d6e77902\",\r\n    \"ResponseData\": {\"TagType\":0,\"TagCount\":0}\r\n  }\r\n}",
+        "title": "DescribeSmpnMhm"
+      }
+    ],
+    "DescribeSmpnMrl": [
+      {
+        "document": "",
+        "input": "https://smpn.tencentcloudapi.com/?Action=DescribeSmpnMrl\r\n&ResourceId=test_resource_id_for_smpn_mrl\r\n&RequestData.PhoneNumber=18122225555\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"891f2f2e-4851-4cd8-9555-8d92d6e77902\",\r\n     \"ResponseData\": {\"DisturbLevel\":1,\"HouseAgentLevel\":1,\"InsuranceLevel\":1,\"SalesLevel\":1,\"CheatLevel\":1}\r\n  }\r\n}",
+        "title": "DescribeSmpnMrl"
+      }
+    ]
+  },
+  "version": "1.0"
+}

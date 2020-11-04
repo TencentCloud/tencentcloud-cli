@@ -1,0 +1,205 @@
+{
+  "actions": {
+    "AssignProject": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=AssignProject\r\n&InstanceIds.0=cmgo-eqmoa5sf\r\n&ProjectId=12\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FlowIds\": [\r\n            1081\r\n        ],\r\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\r\n    }\r\n}",
+        "title": "指定云数据库实例的所属项目"
+      }
+    ],
+    "CreateBackupDBInstance": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateBackupDBInstance\r\n&InstanceId=cmgo-ayxpky6l\r\n&BackupRemark=remarkInfo\r\n&BackupMethod=0\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"AsyncRequestId\":4773,\"RequestId\":\"e600a8d0-9014-11ea-84c1-01cccde830c6\"}}",
+        "title": "备份实例接口"
+      }
+    ],
+    "CreateDBInstance": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstance\r\n&Memory=4\r\n&Volume=250\r\n&GoodsNum=1\r\n&Zone=ap-guangzhou-2\r\n&UniqVpcId=vpc-0akbol5v\r\n&UniqSubnetId=subnet-fyrtjbqw\r\n&ProjectId=0\r\n&MongoVersion=MONGO_3_WT\r\n&MachineCode=TGIO\r\n&NodeNum=3\r\n&Period=1\r\n&Password=pwd123456\r\n&ClusterType=REPLSET\r\n&ReplicateSetNum=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\r\n        \"DealId\": \"7142863\",\r\n        \"InstanceIds\": [\r\n            \"cmgo-po5f899l\"\r\n        ]\r\n    }\r\n}",
+        "title": "创建包年包月的云数据库实例"
+      }
+    ],
+    "CreateDBInstanceHour": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstanceHour\r\n&Memory=4\r\n&Volume=250\r\n&ReplicateSetNum=1\r\n&NodeNum=2\r\n&MongoVersion=MONGO_3_WT\r\n&MachineCode=TGIO\r\n&GoodsNum=1\r\n&Zone=ap-guangzhou-3\r\n&Clone=1\r\n&ClusterType=REPLSET\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\r\n        \"DealId\": \"20190709160000003502416120946732\",\r\n        \"InstanceIds\": [\r\n            \"cmgo-m26c6jsf\"\r\n        ]\r\n    }\r\n}",
+        "title": "创建云数据库实例（按量计费）"
+      }
+    ],
+    "DescribeAsyncRequestInfo": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeAsyncRequestInfo\n&AsyncRequestId=4762\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"e600a8d0-9014-11ea-84c1-01cccde830c6\",\"Status\":\"success\"}}",
+        "title": "查询异步任务状态接口"
+      }
+    ],
+    "DescribeBackupAccess": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeBackupAccess\r\n&InstanceId=cmgo-f0vrx2v9\r\n&BackupName=cmgo-f0vrx2v9_2019-09-02_04:49\r\n&<公共请求参数>",
+        "output": "{\r\n        \"Bucket\":\"cmongo-cd-backup\",\r\n        \"Files\":[\r\n            {\r\n                \"File\":\"cmongo_hotbackup/cmgo-f0vrx2v9_0/1567370984\",\r\n                \"ReplicaSetId\":\"cmgo-f0vrx2v9_0\"\r\n            }\r\n        ],\r\n        \"Region\":\"ap-chengdu\",\r\n        \"RequestId\":\"7e108f10-d228-11e9-b27e-9500754d2540\"\r\n}",
+        "title": "获取实例备份下载授权"
+      }
+    ],
+    "DescribeClientConnections": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeClientConnections\r\n&InstanceId=cmgo-eqmoaxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\":2,\r\n        \"Clients\": [\r\n            {\r\n                \"Count\": 15,\r\n                \"IP\": \"10.xx.xx.xx\"\r\n            },\r\n            {\r\n                \"Count\": 15,\r\n                \"IP\": \"10.xx.xx.xx\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"c61fd6e2-c505-4fb9-9f30-edd8e897b236\"\r\n    }\r\n}",
+        "title": "查询云数据库实例的客户端连接情况"
+      }
+    ],
+    "DescribeCurrentOp": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeCurrentOp\n&InstanceId=cmgo-p8vnipr5\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"302530d2-ee57-495e-89d0-51e03b11815e\",\r\n        \"TotalCount\": 19\r\n    }\r\n}",
+        "title": "查询云数据库实例的当前操作"
+      }
+    ],
+    "DescribeDBBackups": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeDBBackups\n&InstanceId=cmgo-f555zzzz\n&BackupMethod=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"BackupList\": [],\r\n        \"TotalCount\": 0\r\n    }\r\n}",
+        "title": "查询云数据库实例的备份文件信息"
+      }
+    ],
+    "DescribeDBInstanceDeal": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeDBInstanceDeal\r\n&DealId=20200420111635\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Action\": \"purchase\",\r\n        \"DiscountPrice\": 759.33,\r\n        \"OriginalPrice\": 1116.67,\r\n        \"RequestId\": \"e79836e8-1864-45bf-aa63-0c7af31e7de5\",\r\n        \"Status\": 4\r\n    }\r\n}",
+        "title": "查询订单详情"
+      }
+    ],
+    "DescribeDBInstances": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeDBInstances\n&Limit=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceDetails\": [\r\n            {\r\n                \"AutoRenewFlag\": 0,\r\n                \"CloneInstances\": [],\r\n                \"ClusterType\": 0,\r\n                \"ClusterVer\": 1,\r\n                \"CpuNum\": 2,\r\n                \"CreateTime\": \"2019-04-02 19:29:16\",\r\n                \"DeadLine\": \"2019-04-04 19:29:16\",\r\n                \"InstanceId\": \"cmgo-rw2v134z\",\r\n                \"InstanceName\": \"cmgo-rw2v134z\",\r\n                \"InstanceStatusDesc\": \"回档中\",\r\n                \"InstanceType\": 2,\r\n                \"InstanceVer\": 4,\r\n                \"MachineType\": \"HIO10G\",\r\n                \"MaintenanceEnd\": \"05:00:00\",\r\n                \"MaintenanceStart\": \"04:00:00\",\r\n                \"Memory\": 4096,\r\n                \"MongoVersion\": \"MONGO_3_WT\",\r\n                \"NetType\": 1,\r\n                \"PayMode\": 0,\r\n                \"ProjectId\": 0,\r\n                \"Protocol\": 0,\r\n                \"ReadonlyInstances\": [],\r\n                \"RealInstanceId\": \"cmgo-da0pc0dr\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"RelatedInstance\": {\r\n                    \"InstanceId\": \"\",\r\n                    \"Region\": \"\"\r\n                },\r\n                \"ReplicaSets\": [\r\n                    {\r\n                        \"Memory\": 4096,\r\n                        \"OplogSize\": 10240,\r\n                        \"RealReplicaSetId\": \"cmgo-rw2v134z_0\",\r\n                        \"ReplicaSetId\": \"cmgo-rw2v134z_0\",\r\n                        \"ReplicaSetName\": \"cmgo-rw2v134z_0\",\r\n                        \"SecondaryNum\": 2,\r\n                        \"UsedVolume\": 0,\r\n                        \"Volume\": 102400\r\n                    }\r\n                ],\r\n                \"ReplicationSetNum\": 1,\r\n                \"SecondaryNum\": 2,\r\n                \"StandbyInstances\": [],\r\n                \"Status\": 1,\r\n                \"SubnetId\": \"subnet-b0lagkxi\",\r\n                \"Tags\": [],\r\n                \"UsedVolume\": 0,\r\n                \"Vip\": \"\",\r\n                \"Volume\": 102400,\r\n                \"VpcId\": \"vpc-orgohlut\",\r\n                \"Vport\": 27017,\r\n                \"Zone\": \"ap-guangzhou-3\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"302530d2-ee57-495e-89d0-51e03b11815e\",\r\n        \"TotalCount\": 19\r\n    }\r\n}",
+        "title": "查询实例列表"
+      }
+    ],
+    "DescribeSlowLogPatterns": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSlowLogPatterns\r\n&InstanceId=cmgo-a3bm93hf\r\n&StartTime=2020-04-20 00:00:00\r\n&EndTime=2020-04-20 22:00:00\r\n&SlowMS=100\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Count\": 2,\r\n        \"RequestId\": \"895de939-f726-4cb0-bb02-3890289479e3\",\r\n        \"SlowLogPatterns\": [\r\n            {\r\n                \"AverageTime\": 699,\r\n                \"MaxTime\": 5335,\r\n                \"Pattern\": \"admin.$cmd.command\",\r\n                \"Total\": 12\r\n            },\r\n            {\r\n                \"AverageTime\": 271,\r\n                \"MaxTime\": 423,\r\n                \"Pattern\": \"local.system.replset.command\",\r\n                \"Total\": 8\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询数据库慢日志统计信息"
+      }
+    ],
+    "DescribeSlowLogs": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSlowLogs\r\n&InstanceId=cmgo-a3bm93hf\r\n&StartTime=2020-04-20 00:00:00\r\n&EndTime=2020-04-20 22:00:00\r\n&SlowMS=100\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Count\": 20,\r\n        \"RequestId\": \"3a36aa6e-67e2-42a9-adfe-fc694334cc78\",\r\n        \"SlowLogs\": [\r\n            \"Mon Apr 20 13:55:21.623 I COMMAND  [conn16903] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362114, 1), signature: { hash: BinData(0, 259955995BDC7E0CA35C4276EB23341C03910A48), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362108, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 5335ms\",\r\n            \"Mon Apr 20 14:01:00.309 I COMMAND  [conn1313] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362457, 1), signature: { hash: BinData(0, DC2B16681C70845D7B6C8C6C97400D4DFB394CA0), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362455, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 1264ms\",\r\n            \"Mon Apr 20 14:20:15.283 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587363613, 1), signature: { hash: BinData(0, 72D24884320C8A9A26AF8C4DD1127874085DFAE5), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587363603, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 426ms\",\r\n            \"Mon Apr 20 10:25:45.487 I COMMAND  [conn48] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.112.91.43:7009\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"10.53.61.24:7004\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { wtimeout: 0, w: 1 }, replicaSetId: ObjectId('5e9d08160c269352426f9575') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 423ms\",\r\n            \"Mon Apr 20 10:25:34.934 I COMMAND  [conn28] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 2, protocolVersion: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.112.91.43:7009\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d08160c269352426f9575') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 414ms\",\r\n            \"Mon Apr 20 10:24:52.278 I COMMAND  [conn30] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 2, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"100.93.44.26:7012\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d07ebf3f99b58c95a33fb') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 406ms\",\r\n            \"Mon Apr 20 10:25:02.675 I COMMAND  [conn50] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"100.93.44.26:7012\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"9.34.46.139:7003\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d07ebf3f99b58c95a33fb') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 373ms\",\r\n            \"Mon Apr 20 18:35:15.103 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587378913, 1), signature: { hash: BinData(0, A3C176F81B64A7473F88F3F40B84C59EC9E1E1AE), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587378912, 1), t: 2 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 248ms\",\r\n            \"Mon Apr 20 10:27:38.171 I COMMAND  [conn281] command admin.$cmd command: setFeatureCompatibilityVersion { setFeatureCompatibilityVersion: \\\"4.0\\\", $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 212ms\",\r\n            \"Mon Apr 20 10:26:27.924 I COMMAND  [conn111] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_2\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.112.90.165:7002\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.53.80.6:7012\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"100.93.44.26:7013\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d0841f0f688fc992fd087') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 212ms\",\r\n            \"Mon Apr 20 13:55:15.051 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362114, 1), signature: { hash: BinData(0, 259955995BDC7E0CA35C4276EB23341C03910A48), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362085, 6), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 192ms\",\r\n            \"Mon Apr 20 10:27:39.400 I COMMAND  [conn213] command admin.$cmd command: setFeatureCompatibilityVersion { setFeatureCompatibilityVersion: \\\"4.0\\\", $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 183ms\",\r\n            \"Mon Apr 20 10:26:09.357 I COMMAND  [conn36] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_2\\\", version: 1, members: [ { _id: 1, host: \\\"10.112.90.165:7002\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 59 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 134ms\",\r\n            \"Mon Apr 20 13:00:16.363 I COMMAND  [conn16903] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587358814, 1), signature: { hash: BinData(0, 90BD7BB9B481B9825527D89A3579B52E6C0C3915), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587358809, 2), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 123ms\",\r\n            \"Mon Apr 20 13:35:14.983 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587360912, 1), signature: { hash: BinData(0, 06A84575A66B9316D1ECBFB9FB1C7B2F605AB3A8), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587360909, 5), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 122ms\",\r\n            \"Mon Apr 20 10:24:43.760 I COMMAND  [conn16] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 39 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 112ms\",\r\n            \"Mon Apr 20 10:25:26.300 I COMMAND  [conn15] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 24 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 7 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 110ms\",\r\n            \"Mon Apr 20 10:27:39.400 I COMMAND  [conn213] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 107ms\",\r\n            \"Mon Apr 20 10:27:38.065 I COMMAND  [conn281] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { w: 1 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_msg 107ms\",\r\n            \"Mon Apr 20 10:27:38.170 I COMMAND  [conn281] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 105ms\"\r\n        ]\r\n    }\r\n}",
+        "title": "获取数据库实例慢日志信息"
+      }
+    ],
+    "DescribeSpecInfo": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSpecInfo\r\n&Region=ap-guangzhou\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a8c7ade4-2d22-4f5e-9e71-f546f15e6d67\",\r\n        \"SpecInfoList\": [\r\n            {\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"SpecItems\": [\r\n                    {\r\n                        \"ClusterType\": 0,\r\n                        \"Conns\": 1500,\r\n                        \"Cpu\": 2,\r\n                        \"DefaultStorage\": 25600,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 512000,\r\n                        \"Memory\": 4096,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 102400,\r\n                        \"MongoVersionCode\": \"MONGO_36_WT\",\r\n                        \"MongoVersionValue\": 4,\r\n                        \"Qps\": 5000,\r\n                        \"SpecCode\": \"mongo.HIO10G.4g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.6\"\r\n                    },\r\n                    {\r\n                        \"ClusterType\": 0,\r\n                        \"Conns\": 1500,\r\n                        \"Cpu\": 2,\r\n                        \"DefaultStorage\": 25600,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 512000,\r\n                        \"Memory\": 4096,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 102400,\r\n                        \"MongoVersionCode\": \"MONGO_3_WT\",\r\n                        \"MongoVersionValue\": 2,\r\n                        \"Qps\": 5000,\r\n                        \"SpecCode\": \"mongo.HIO10G.4g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.2\"\r\n                    },\r\n                    {\r\n                        \"ClusterType\": 1,\r\n                        \"Conns\": 15000,\r\n                        \"Cpu\": 48,\r\n                        \"DefaultStorage\": 4096000,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 6144000,\r\n                        \"Memory\": 524288,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 1536000,\r\n                        \"MongoVersionCode\": \"MONGO_36_WT\",\r\n                        \"MongoVersionValue\": 4,\r\n                        \"Qps\": 42000,\r\n                        \"SpecCode\": \"mongo.HIO10G.512g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.6\"\r\n                    }\r\n                ],\r\n                \"Zone\": \"ap-guangzhou-3\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询云数据库售卖"
+      }
+    ],
+    "FlushInstanceRouterConfig": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=FlushInstanceRouterConfig\r\n&InstanceId=cmgo-a3bm93hf\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0ad9f471-fb8f-402a-aa78-b1640c6670c4\"\r\n    }\r\n}",
+        "title": "在所有Mongos上执行FlushRouterConfig"
+      }
+    ],
+    "InquirePriceCreateDBInstances": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=InquirePriceCreateDBInstances\r\n&Zone=ap-guangzhou-4\r\n&NodeNum=3\r\n&Memory=4\r\n&Volume=100\r\n&MongoVersion=MONGO_36_WT\r\n&MachineCode=HIO10G\r\n&GoodsNum=2\r\n&Period=1\r\n&ClusterType=REPLSET\r\n&ReplicateSetNum=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Price\": {\r\n            \"DiscountPrice\": 1340,\r\n            \"OriginalPrice\": 1340,\r\n            \"UnitPrice\": 670\r\n        },\r\n        \"RequestId\": \"fb8b4646-389d-44cc-ab8c-98c081cbdad3\"\r\n    }\r\n}",
+        "title": "查询新购数据库实例价格"
+      }
+    ],
+    "InquirePriceModifyDBInstanceSpec": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=InquirePriceModifyDBInstanceSpec\r\n&InstanceId=cmgo-8oij5631\r\n&Memory=8\r\n&Volume=200\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Price\": {\r\n            \"DiscountPrice\": 449.36,\r\n            \"OriginalPrice\": 660.82,\r\n            \"UnitPrice\": 0\r\n        },\r\n        \"RequestId\": \"ac618a97-5a29-4003-8489-fd8a1e1cc8e9\"\r\n    }\r\n}",
+        "title": "查询调整数据库配置价格"
+      }
+    ],
+    "InquirePriceRenewDBInstances": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=InquirePriceRenewDBInstances\r\n&InstanceIds.0=cmgo-8oij5631\r\n&InstanceChargePrepaid.Period=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Price\": {\r\n            \"DiscountPrice\": 455.6,\r\n            \"OriginalPrice\": 670,\r\n            \"UnitPrice\": 0\r\n        },\r\n        \"RequestId\": \"d08f2a0f-4a69-451e-8ddb-753340d5fb34\"\r\n    }\r\n}",
+        "title": "获取续费数据库实例价格"
+      }
+    ],
+    "IsolateDBInstance": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=IsolateDBInstance\n&InstanceId=cmgo-f555zzzz\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"AsyncRequestId\":\"28920\"\r\n    }\r\n}",
+        "title": "销毁按量计费的云数据库实例"
+      }
+    ],
+    "KillOps": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=KillOps\n&InstanceId=cmgo-p8vnipr5\n&Operations.0.ReplicaSetName=cmgo-p8vnipr5_0\n&Operations.0.NodeName=10.108.93.135:7017:39920912\n&Operations.0.OpId=61\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"302530d2-ee57-495e-89d0-51e03b11815e\"\r\n    }\r\n}",
+        "title": "终止数据库实例特定操作"
+      }
+    ],
+    "ModifyDBInstanceSpec": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=ModifyDBInstanceSpec\r\n&InstanceId=cmgo-p8vnipr5\r\n&Memory=4\r\n&Volume=250\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\r\n        \"DealId\": \"7142863\"\r\n    }\r\n}",
+        "title": "调整云数据库实例配置"
+      }
+    ],
+    "OfflineIsolatedDBInstance": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=OfflineIsolatedDBInstance\n&InstanceId=cmgo-f555zzzz\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"AsyncRequestId\":\"28920\"\r\n    }\r\n}",
+        "title": "下线隔离状态的云数据库实例"
+      }
+    ],
+    "RenameInstance": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=RenameInstance\r\n&InstanceId=cmgo-eqmoa5sf\r\n&NewName=test_name\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\r\n    }\r\n}",
+        "title": "重命名云数据库实例"
+      }
+    ],
+    "RenewDBInstances": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=RenewDBInstances\n&InstanceIds.0=cmgo-gzo03o75\n&InstanceChargePrepaid.Period=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b1886334-acfe-4445-8429-e11a6e7b3851\"\r\n    }\r\n}",
+        "title": "续费包年包月实例"
+      }
+    ],
+    "ResetDBInstancePassword": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=ResetDBInstancePassword\n&InstanceId=cmgo-7pjedvz7\n&UserName=rwuser\n&Password=111111\n&<公共请求参数>",
+        "output": "{\"Response\":{\"AsyncRequestId\":\"4769\",\"RequestId\":\"e600a8d0-9014-11ea-84c1-01cccde830c6\"}}",
+        "title": "修改实例用户的密码"
+      }
+    ]
+  },
+  "version": "1.0"
+}

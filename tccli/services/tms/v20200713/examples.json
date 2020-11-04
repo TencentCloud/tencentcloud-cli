@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "AccountTipoffAccess": [
+      {
+        "document": "举报存在诈骗、违规、违法等行为的账号",
+        "input": "POST / HTTP/1.1\nHost: tms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AccountTipoffAccess\n<公共请求参数>\n\n{\"ReportedAccount\":\"123456789\",\"ReportedAccountType\":2,\"SenderAccount\":\"987654321\",\"SenderAccountType\":2,\"SenderIP\":\"127.0.0.1\",\"EvilType\":1,\"EvilContent\":\"王者代练，入会需交费，+q：123456789\"}",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"9d31ec33\",\r\n        \"Data\":{\r\n            \"ResultCode\":0,\r\n            \"ResultMsg\":\"success\"\r\n        }\r\n    }\r\n}",
+        "title": "账号举报"
+      }
+    ],
+    "TextModeration": [
+      {
+        "document": "",
+        "input": "https://tms.tencentcloudapi.com/?Action=TextModeration\n&Content=57uY5aOw57uY6Imy\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"46f504df-d9ac-4fc0-899f-58020d8abd19\",\r\n        \"BizType\":\"11\",\r\n        \"EvilFlag\":1,\r\n        \"Label\":\"Custom\",\r\n        \"Suggestion\":\"Block\",\r\n        \"Keywords\":[\r\n            \"加我微信\"],\r\n        \"Score\":87,\r\n        \"DetailResults\":[\r\n            {\r\n                \"Label\":\"Ads\",\r\n                \"Suggestion\":\"Block\",\r\n                \"Keywords\":[\r\n                    \"加我微信\",\r\n                    \"扫码分享领红包\",\r\n                    \"购买链接：xxxxxxx\"],\r\n                \"Score\":72\r\n            },\r\n            {\r\n                \"Label\":\"Custom\",\r\n                \"Suggestion\":\"Block\",\r\n                \"Keywords\":[\r\n                    \"手机号码xxxxxxxxxxx\"],\r\n                \"Score\":0,\r\n                \"LibType\":2,\r\n                \"LibId\":\"20548499\",\r\n                \"LibName\":\"priavte\"\r\n            }],\r\n        \"RiskDetails\":[\r\n            {\r\n                \"Lable\":\"RiskAccount\",\r\n                \"Level\":2\r\n            }],\r\n        \"Extra\":\"{\\\"KeywordsInfo\\\":[{\\\"HitInfo\\\":\\\"加微信\\\",\\\"Label\\\":\\\"Ad\\\",\\\"LabelCode\\\":\\\"20105\\\",\\\"SubLabelCode\\\":\\\"20105201\\\"}]}\"\r\n    },\r\n    \"retcode\":0,\r\n    \"retmsg\":\"\"\r\n}",
+        "title": "文本内容安全"
+      }
+    ]
+  },
+  "version": "1.0"
+}

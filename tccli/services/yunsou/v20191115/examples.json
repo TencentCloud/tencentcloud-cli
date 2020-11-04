@@ -1,0 +1,27 @@
+{
+  "actions": {
+    "DataManipulation": [
+      {
+        "document": "通过API往云搜实例上传数据。\n\n其中Contents内容说明如下:\n1. 应用结构定义中的所有字段都必须出现, 如果是空字段, 则传\"\";\n2. 数字都要用引号引起来, 但里面内容必须是数字;\n3. 主键相同的多次上传, 以最后一次上传的内容为准.\n\n以下输入示例中Contents的内容URL编码前为:\n\n[{\"NC\":\"9999\",\"TD\" : \"中文\",\"NA\" : \"1000\",\"NB\" : \"9999\",\"TA\" : \"中文\",\"TB\" : \"abcde\",\"TC\" : \"中文\",\"TE\":\"tttteeee\",\"TF\":\"efeefe\",\"countrycode\":\"cn\",\"renderType\":\"rrr\"}]",
+        "input": "https://yunsou.tencentcloudapi.com/?Action=DataManipulation\r\n&OpType=add\r\n&Encoding=utf8\r\n&ResourceId=80680002\r\n&Contents=%5b%7b%22NC%22%3a%229999%22%2c%22TD%22+%3a+%22%e4%b8%ad%e6%96%87%22%2c%22NA%22+%3a+%221000%22%2c%22NB%22+%3a+%229999%22%2c%22TA%22+%3a+%22%e4%b8%ad%e6%96%87%22%2c%22TB%22+%3a+%22abcde%22%2c%22TC%22+%3a+%22%e4%b8%ad%e6%96%87%22%2c%22TE%22%3a%22tttteeee%22%2c%22TF%22%3a%22efeefe%22%2c%22countrycode%22%3a%22cn%22%2c%22renderType%22%3a%22rrr%22%7d%5d\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"b65234af-9eb4-4e4d-a25e-d5b32c189545\",\r\n\t\t\"Data\": {\r\n\t\t\t\"AppId\": 80680002,\r\n\t\t\t\"Seq\": 1574405237,\r\n\t\t\t\"TotalResult\": \"succ\",\r\n\t\t\t\"Result\": [{\r\n\t\t\t\t\t\"Result\": \"succ\",\r\n\t\t\t\t\t\"DocId\": \"122\",\r\n\t\t\t\t\t\"Errno\": 0\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}",
+        "title": "数据上传接口"
+      },
+      {
+        "document": "通过API删除云搜的某条数据(通过doc_id指定，即应用结构中主键的值)。\n\n以下示例中Contents的内容URL编码前为:\n\n[{\"doc_id\":\"1000\"}]",
+        "input": "https://yunsou.tencentcloudapi.com/?Action=DataManipulation\r\n&OpType=del\r\n&Encoding=utf8\r\n&ResourceId=80680002\r\n&Contents=%5B%7B%22doc_id%22%3A%221000%22%7D%5D\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"b65234af-9eb4-4e4d-a25e-d5b32c189545\",\r\n\t\t\"Data\": {\r\n\t\t\t\"AppId\": 80680002,\r\n\t\t\t\"Seq\": 1575441376,\r\n\t\t\t\"TotalResult\": \"succ\",\r\n\t\t\t\"Result\": [{\r\n\t\t\t\t\t\"Result\": \"succ\",\r\n\t\t\t\t\t\"DocId\": \"1000\",\r\n\t\t\t\t\t\"Errno\": 0\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"ErrorResult\": \"\"\r\n\t\t}\r\n\t}\r\n}",
+        "title": "数据删除接口"
+      }
+    ],
+    "DataSearch": [
+      {
+        "document": "",
+        "input": "https://yunsou.tencentcloudapi.com/?Action=DataSearch\r\n&NumPerPage=10\r\n&PageId=0\r\n&ResourceId=80680002\r\n&SearchId=b65234af-9eb4-4e4d-a25e-d5b32c189545\r\n&SearchQuery=abcde\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"f65234af-adfs-4wws-2dsa-d5b3swr575\",\r\n\t\t\"Data\": {\r\n\t\t\t\"CostTime\": 5,\r\n\t\t\t\"DisplayNum\": 1,\r\n\t\t\t\"Echo\": \"\",\r\n\t\t\t\"EResultNum\": 1,\r\n\t\t\t\"ResultList\": [{\r\n\t\t\t\t\t\"DocAbs\": \"\",\r\n\t\t\t\t\t\"DocId\": \"122\",\r\n\t\t\t\t\t\"DocMeta\": \"{\\\"NC\\\":\\\"9999\\\",\\\"TD\\\" : \\\"中文\\\",\\\"NA\\\" : \\\"1000\\\",\\\"NB\\\" : \\\"9999\\\",\\\"TA\\\" : \\\"中文\\\",\\\"TB\\\" : \\\"abcde\\\",\\\"TC\\\" : \\\"中文\\\",\\\"TE\\\":\\\"tttteeee\\\",\\\"TF\\\":\\\"efeefe\\\",\\\"countrycode\\\":\\\"cn\\\",\\\"renderType\\\":\\\"rrr\\\"}\\n\",\r\n\t\t\t\t\t\"L2Score\": 0,\r\n\t\t\t\t\t\"SearchDebugInfo\": \"\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"ResultNum\": 1,\r\n\t\t\t\"SegList\": [{\r\n\t\t\t\t\t\"SegStr\": \"abcde\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}",
+        "title": "数据搜索接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

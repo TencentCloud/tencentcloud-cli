@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeSdkAppid": [
+      {
+        "document": "",
+        "input": "https://cim.tencentcloudapi.com/?Action=DescribeSdkAppid\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"271011d9-813d-4ff7-84d8-bfd2b858f388\",\r\n        \"SdkAppids\":[140044412,1400345476]\r\n    }\r\n}",
+        "title": "描述 appid 对应的 SdkAppid 的示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,99 @@
+{
+  "actions": {
+    "CreateFirewallRules": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=CreateFirewallRules\n&InstanceId=lhins-aglzynfg\n&FirewallRules.0.Protocol=TCP\n&FirewallRules.0.Port=80\n&FirewallRules.1.Protocol=UDP\n&FirewallRules.1.Port=22,443\n&FirewallRules.2.Protocol=TCP\n&FirewallRules.2.Port=8000-8080\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"667cc0c1-fa3e-4752-a36b-4bf45ec4bc7d\"\r\n    }\r\n}",
+        "title": "添加防火墙规则"
+      }
+    ],
+    "DeleteFirewallRules": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DeleteFirewallRules\n&InstanceId=lhins-aglzynfg\n&FirewallRules.0.Protocol=TCP\n&FirewallRules.0.Port=80\n&FirewallRules.1.Protocol=UDP\n&FirewallRules.1.Port=22,443\n&FirewallRules.2.Protocol=TCP\n&FirewallRules.2.Port=8000-8081\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b5182261-ab41-4801-a702-be05f2277758\"\r\n    }\r\n}",
+        "title": "删除防火墙规则"
+      }
+    ],
+    "DescribeBlueprints": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeBlueprints\n&BlueprintIds.0=lhbp-5e8807sc\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"BlueprintSet\": [\r\n            {\r\n                \"BlueprintId\": \"lhbp-5e8807sc\",\r\n                \"DisplayTitle\": \"wordpress\",\r\n                \"DisplayVersion\": \"5.3.2\",\r\n                \"Description\": \"个人blog建站\",\r\n                \"OsName\": \"CentOS-7.6-64bit\",\r\n                \"Platform\": \"CENTOS\",\r\n                \"PlatformType\": \"LINUX_UNIX\",\r\n                \"BlueprintType\": \"APP_OS\",\r\n                \"ImageUrl\": \"http://www.wordpress.com/image\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"3df9cd92-cec1-4864-a2a1-358084f41551\"\r\n    }\r\n}",
+        "title": "查询镜像信息"
+      }
+    ],
+    "DescribeBundles": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeBundles\n&BundleIds.0=bundle_bw_small1_1\n&BundleIds.1=bundle_ntp_small1_500\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\":{\r\n    \"BundleSet\":[\r\n     {\r\n                \"BundleId\": \"bundle_bw_small1_1\",\r\n                \"CPU\": 1,\r\n                \"Memory\": 1,\r\n                \"SystemDiskType\": \"CLOUD_SSD\",\r\n                \"SystemDiskSize\": 20,\r\n                \"InternetMaxBandwidthOut\": 1,\r\n                \"InternetChargeType\": \"BANDWIDTH_POSTPAID_BY_HOUR\",\r\n                \"MonthlyTraffic\": 1,\r\n                \"Price\": {\r\n                    \"InstancePrice\": {\r\n                        \"OriginalBundlePrice\": 60.0,\r\n                        \"OriginalPrice\": 60.0,\r\n                        \"Discount\": 65,\r\n                        \"DiscountPrice\": 39.0\r\n                    }\r\n                },\r\n                \"SupportLinuxUnixPlatform\": true,\r\n                \"SupportWindowsPlatform\": false,\r\n                \"BundleSalesState\": \"AVAILABLE\",\r\n                \"BundleType\": \"GENERAL_BUNDLE\"\r\n            },\r\n            {\r\n                \"BundleId\": \"bundle_ntp_small1_500\",\r\n                \"CPU\": 1,\r\n                \"Memory\": 1,\r\n                \"SystemDiskType\": \"CLOUD_SSD\",\r\n                \"SystemDiskSize\": 40,\r\n                \"InternetMaxBandwidthOut\": 3,\r\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\r\n                \"MonthlyTraffic\": 500,\r\n                \"Price\": {\r\n                    \"InstancePrice\": {\r\n                        \"OriginalBundlePrice\": 90.0,\r\n                        \"OriginalPrice\": 90.0,\r\n                        \"Discount\": 65,\r\n                        \"DiscountPrice\": 58.5\r\n                    }\r\n                },\r\n                \"SupportLinuxUnixPlatform\": true,\r\n                \"SupportWindowsPlatform\": true,\r\n                \"BundleSalesState\": \"AVAILABLE\",\r\n                \"BundleType\": \"GENERAL_BUNDLE\"\r\n            }\r\n    ],\r\n    \"TotalCount\":2,\r\n    \"RequestId\":\"4f05e47f-9d54-49a9-8d03-bca50b32dbc5\"\r\n  }\r\n}",
+        "title": "查询套餐-成功返回"
+      }
+    ],
+    "DescribeFirewallRules": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeFirewallRules\n&InstanceId=lhins-aglzynfg\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 7,\r\n        \"FirewallRuleSet\": [\r\n            {\r\n                \"AppType\": \"HTTP(80)\",\r\n                \"Protocol\": \"TCP\",\r\n                \"Port\": \"80\"\r\n            },\r\n            {\r\n                \"AppType\": \"HTTPS(443)\",\r\n                \"Protocol\": \"TCP\",\r\n                \"Port\": \"443\"\r\n            },\r\n            {\r\n                \"AppType\": \"Linux登录(22)\",\r\n                \"Protocol\": \"TCP\",\r\n                \"Port\": \"22\"\r\n            },\r\n            {\r\n                \"AppType\": \"Windows登录(3389)\",\r\n                \"Protocol\": \"TCP\",\r\n                \"Port\": \"3389\"\r\n            },\r\n            {\r\n                \"AppType\": \"自定义\",\r\n                \"Protocol\": \"TCP\",\r\n                \"Port\": \"300\"\r\n            },\r\n            {\r\n                \"AppType\": \"自定义\",\r\n                \"Protocol\": \"TCP\",\r\n                \"Port\": \"84-90\"\r\n            },\r\n            {\r\n                \"AppType\": \"自定义\",\r\n                \"Protocol\": \"TCP\",\r\n                \"Port\": \"85,92\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a41e2048-82c8-4d43-826a-9f6a5b23d3e5\"\r\n    }\r\n}",
+        "title": "查询实例的所有防火墙规则"
+      },
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeFirewallRules\n&InstanceId=lhins-aglzynfg\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 7,\r\n        \"FirewallRuleSet\": [\r\n            {\r\n                \"AppType\": \"HTTP(80)\",\r\n                \"Protocol\": \"TCP\",\r\n                \"Port\": \"80\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"28308810-42e6-4ee4-98d7-14471ae149a4\"\r\n    }\r\n}",
+        "title": "查询实例的部分防火墙规则"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "限制返回结果最多为一项",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeInstances\n&Limit=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"InstanceSet\": [\r\n            {\r\n                \"InstanceId\": \"lhins-ruy9d2tw\",\r\n                \"BundleId\": \"bundle_bw_small1_1\",\r\n                \"BlueprintId\": \"lhbp-5e8807lo\",\r\n                \"CPU\": 1,\r\n                \"Memory\": 1,\r\n                \"InstanceName\": \"lighthouse-test\",\r\n                \"OsName\": \"CentOS 7.6 64bit\",\r\n                \"Platform\": \"CENTOS\",\r\n                \"PlatformType\": \"LINUX_UNIX\",\r\n                \"InstanceChargeType\": \"PREPAID\",\r\n                \"SystemDisk\": {\r\n                    \"DiskType\": \"CLOUD_PREMIUM\",\r\n                    \"DiskSize\": 50\r\n                },\r\n                \"PrivateAddresses\": [\r\n                    \"10.0.0.5\"\r\n                ],\r\n                \"PublicAddresses\": [\r\n                    \"170.106.15.201\"\r\n                ],\r\n                \"InternetAccessible\": {\r\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\r\n                    \"InternetMaxBandwidthOut\": 20,\r\n                    \"PublicIpAssigned\": true\r\n                },\r\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\r\n                \"LoginSettings\": {\r\n                    \"KeyIds\": []\r\n                },\r\n                \"InstanceState\": \"RUNNING\",\r\n                \"Uuid\": \"1322d32a-2641-45f3-a244-559405b32228\",\r\n                \"LatestOperation\": \"StartInstances\",\r\n                \"LatestOperationState\": \"SUCCESS\",\r\n                \"LatestOperationRequestId\": \"6b9a6dac-888a-4b4d-9739-0d0b66cbfa88\",\r\n                \"CreatedTime\": \"2020-04-28T03:46:09Z\",\r\n                \"ExpiredTime\": \"2020-05-28T03:46:09Z\",\r\n                \"IsolatedTime\":  null\r\n            }\r\n        ],\r\n        \"RequestId\": \"c9aa9e9b-bb2b-4390-b8da-fc976ffc4608\"\r\n    }\r\n}",
+        "title": "查看实例列表"
+      }
+    ],
+    "DescribeInstancesTrafficPackages": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeInstancesTrafficPackages\n&Limit=2\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"InstanceTrafficPackageSet\": [\r\n            {\r\n                \"InstanceId\": \"lhins-7h98ep3z\",\r\n                \"TrafficPackageSet\": [\r\n                    {\r\n                        \"TrafficPackageId\": \"lhtfp-o1wtyyvx\",\r\n                        \"TrafficUsed\": 5905577,\r\n                        \"TrafficPackageTotal\": 536870912000,\r\n                        \"TrafficPackageRemaining\": 536865006423,\r\n                        \"TrafficOverflow\": 0,\r\n                        \"StartTime\": \"2020-06-28T08:15:18Z\",\r\n                        \"EndTime\": \"2020-07-28T08:15:17Z\",\r\n                        \"Deadline\": \"2020-07-28T08:15:18Z\",\r\n                        \"Status\": \"NETWORK_NORMAL\"\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"InstanceId\": \"lhins-abtdx7eb\",\r\n                \"TrafficPackageSet\": [\r\n                    {\r\n                        \"TrafficPackageId\": \"lhtfp-4noj8p75\",\r\n                        \"TrafficUsed\": 3435972,\r\n                        \"TrafficPackageTotal\": 536870912000,\r\n                        \"TrafficPackageRemaining\": 536867476028,\r\n                        \"TrafficOverflow\": 0,\r\n                        \"StartTime\": \"2020-06-28T08:08:57Z\",\r\n                        \"EndTime\": \"2020-07-28T08:08:56Z\",\r\n                        \"Deadline\": \"2020-07-28T08:08:57Z\",\r\n                        \"Status\": \"NETWORK_NORMAL\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"7839b8ee-f5a4-4a67-b1ab-15fb35b1e2fe\"\r\n    }\r\n}",
+        "title": "查询实例流量包详情"
+      }
+    ],
+    "RebootInstances": [
+      {
+        "document": "本示例用于重启两个实例。",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=RebootInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n       \"RequestId\": \"4225fd9d-38cb-4cc7-b7b0-7332809ddca7\"\r\n  }\r\n}",
+        "title": "重启实例"
+      }
+    ],
+    "ResetInstance": [
+      {
+        "document": "本示例用于指定镜像来重装实例。",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=ResetInstance\n&InstanceId=lhins-ruy9d2tw\n&BlueprintId=lhbp-5e8807lo\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"cb7aaa99-b31a-4767-9d41-4ebdbdf3ba9c\"\r\n  }\r\n}",
+        "title": "重装实例"
+      }
+    ],
+    "StartInstances": [
+      {
+        "document": "同时启动2台处于关机状态的实例",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=StartInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"0e9982ad-ec0b-44f4-b010-40ba25c8b7b7\"\r\n  }\r\n}",
+        "title": "启动指定ID的实例"
+      }
+    ],
+    "StopInstances": [
+      {
+        "document": "本示例用于关闭两个实例。",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=StopInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"5fd6992a-f8b1-4cd2-9574-cb4251bc524f\"\r\n  }\r\n}",
+        "title": "关闭实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

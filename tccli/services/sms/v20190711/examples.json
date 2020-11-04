@@ -1,0 +1,133 @@
+{
+  "actions": {
+    "AddSmsSign": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=AddSmsSign\r\n&SignName=“test”\r\n&SignType=0\r\n&DocumentType=1\r\n&International=0\r\n&UsedMethod=1\r\n&ProofImage=\"xxxx\"\r\n&CommissionImage=\"xxxx\"\r\n&Remark=\"xxxx\"\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AddSignStatus\": {\r\n             \"SignId\": 1110,\r\n             \"SignApplyId\":1109\r\n        },\r\n        \"RequestId\":\"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "AddSmsTemplate": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=AddSmsTemplate\r\n&TemplateName=腾讯云\r\n&TemplateContent=\"xxx\"\r\n&SmsType=test\r\n&International=0\r\n&Remark=“xxx”\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AddTemplateStatus\": {\r\n            \"TemplateId\": 1110,\r\n            \"RequestStatus\":\"return successfully!\"\r\n        },\r\n        \"RequestId\":\"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CallbackStatusStatistics": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=CallbackStatusStatistics\r\n&StartDateTime=2016090800\r\n&EndDataTime=2016090823\r\n&SmsSdkAppid=1400006874\r\n&Limit=0\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"CallbackStatusStatistics\": {\r\n            \"CallbackCount\": 1745,\r\n            \"RequestSuccessCount\": 1880,\r\n            \"CallbackFailCount\": 401,\r\n            \"CallbackSuccessCount\": 1344,\r\n            \"InternalErrorCount\": 0,\r\n            \"InvalidNumberCount\": 0,\r\n            \"ShutdownErrorCount\": 401,\r\n            \"BlackListCount\": 0,\r\n            \"FrequencyLimitCount\": 0\r\n        },\r\n        \"RequestId\": \"3314836f-0b10-45cb-b7be-593e84c1c197\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteSmsSign": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=DeleteSmsSign\r\n&SignId=1234\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DeleteSignStatus\": {\r\n            \"DeleteTime\": 1578988506,\r\n            \"DeleteStatus\":\"return successfully!\"\r\n        },\r\n        \"RequestId\":\"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteSmsTemplate": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=DeleteSmsTemplate\r\n&TemplateId=1234\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DeleteTemplateStatus\": {\r\n            \"DeleteTime\": 1578988506,\r\n            \"DeleteStatus\":\"return successfully!\"\r\n        },\r\n        \"RequestId\":\"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeSmsSignList": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=DescribeSmsSignList\r\n&SignIdSet.0=1110\r\n&SignIdSet.1=1111\r\n&International=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DescribeSignListStatusSet\":[\r\n\t\t\t{\r\n\t\t\t\t\"SignId\": 1110,\r\n\t\t\t\t\"International\":0,\r\n\t\t\t\t\"StatusCode\":0,\r\n\t\t\t\t\"ReviewReply\":\"xxx\",\r\n\t\t\t\t\"SignName\":\"xxx\",\r\n\t\t\t\t\"CreateTime\":\"2020-01-13 15:18:20\"\t\t\r\n\t\t\t},\t\r\n\t\t\t{\r\n\t\t\t\t\"SignId\": 1111,\r\n\t\t\t\t\"International\":0,\r\n\t\t\t\t\"StatusCode\":0,\r\n\t\t\t\t\"ReviewReply\":\"xxx\",\r\n\t\t\t\t\"SignName\":\"xxx\",\r\n\t\t\t\t\"CreateTime\":\"2020-01-13 15:18:21\"\r\n\t\t\t}\r\n\t\t],\r\n        \"RequestId\":\"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeSmsTemplateList": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=DescribeSmsTemplateList\r\n&TemplateIdSet.0=1110\r\n&TemplateIdSet.1=1111\r\n&International=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DescribeTemplateStatusSet\":[\r\n\t\t\t{\r\n\t\t\t\t\"TemplateId\": 1110,\r\n\t\t\t\t\"International\":0,\r\n\t\t\t\t\"StatusCode\":0,\r\n\t\t\t\t\"ReviewReply\":\"xxx\",\r\n\t\t\t\t\"TemplateName\":\"xxx\",\r\n\t\t\t\t\"CreateTime\":\"2020-01-13 15:18:20\"\r\n\t\t\t},\t\r\n\t\t\t{\r\n\t\t\t\t\"TemplateId\": 1111,\r\n\t\t\t\t\"International\":0,\r\n\t\t\t\t\"StatusCode\":0,\r\n\t\t\t\t\"ReviewReply\":\"xxx\",\r\n\t\t\t\t\"TemplateName\":\"xxx\",\r\n\t\t\t\t\"CreateTime\":\"2020-01-13 15:18:21\"\r\n\t\t\t}\r\n\t\t],\r\n        \"RequestId\":\"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifySmsSign": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=ModifySmsSign\r\n&SignId=1110\r\n&SignName=“test”\r\n&SignType=0\r\n&DocumentType=1\r\n&International=0\r\n&UsedMethod=1\r\n&ProofImage=\"xxxx\"\r\n&CommissionImage=\"xxxx\"\r\n&Remark=\"xxxx\"\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ModifySignStatus\": {\r\n            \"SignId\": 1110,\r\n            \"SignApplyId\":1109\r\n        },\r\n        \"RequestId\":\"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifySmsTemplate": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=ModifySmsTemplate\r\n&TemplateId=1110\r\n&TemplateName=腾讯云\r\n&TemplateContent=\"xxx\"\r\n&SmsType=test\r\n&International=0\r\n&Remark=“xxx”\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ModifyTemplateStatus\": {\r\n            \"TemplateId\": 1110\r\n        },\r\n        \"RequestId\":\"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "PullSmsReplyStatus": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=PullSmsReplyStatus\r\n&Limit=2\r\n&SmsSdkAppid=1400006874\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"PullSmsReplyStatusSet\": [\r\n            {\r\n              \"ExtendCode\":\"11\",\r\n\t\t\t  \"NationCode\":\"86\",\r\n                          \"PhoneNumber\":\"+8615291990000\",\r\n\t\t\t  \"Sign\":\"腾讯云\",\r\n\t\t\t  \"ReplyContent\":\"xxxxx\",\r\n\t\t\t  \"ReplyTime\":\"2019-10-08 17:18:36\"\r\n            },\r\n\t\t\t{\r\n              \"ExtendCode\":\"11\",\r\n\t\t\t  \"NationCode\":\"86\",\r\n                           \"PhoneNumber\":\"+8615291990001\",\r\n\t\t\t  \"Sign\":\"腾讯云\",\r\n\t\t\t  \"ReplyContent\":\"xxxxx\",\r\n\t\t\t  \"ReplyTime\":\"2019-10-08 17:18:37\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "PullSmsReplyStatusByPhoneNumber": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=PullSmsReplyStatusByPhoneNumber\r\n&SendDateTime=1464624000\r\n&EndDateTime=1464624123\r\n&Offset=0\r\n&Limit=2\r\n&PhoneNumber=+8615291996666\r\n&SmsSdkAppid=1400006874\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"PullSmsReplyStatusSet\": [\r\n            {\r\n              \"ExtendCode\":\"11\",\r\n\t\t\t  \"NationCode\":\"86\",\r\n                          \"PhoneNumber\":\"+8615291990000\",\r\n\t\t\t  \"Sign\":\"腾讯云\",\r\n\t\t\t  \"ReplyContent\":\"xxxxx\",\r\n\t\t\t  \"ReplyTime\":\"2019-10-08 17:18:36\"\r\n            },\r\n            {\r\n              \"ExtendCode\":\"11\",\r\n\t\t\t  \"NationCode\":\"86\",\r\n                          \"PhoneNumber\":\"+8615291990000\",\r\n\t\t\t  \"Sign\":\"腾讯云\",\r\n\t\t\t  \"ReplyContent\":\"xxxxx\",\r\n\t\t\t  \"ReplyTime\":\"2019-10-08 17:18:37\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "PullSmsSendStatus": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=PullSmsSendStatus\r\n&Limit=2\r\n&SmsSdkAppid=1400006874\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"PullSmsSendStatusSet\": [\r\n            {\r\n                \"UserReceiveTime\": \"2019-10-08 17:18:37\",\r\n                \"NationCode\": \"86\",\r\n                \"PurePhoneNumber\": \"+8615291996666\",\r\n                \"PhoneNumber\": \"15291996666\",\r\n                \"SerialNo\": \"14:19325917feb3914eb78b50d6182d7e452e\",\r\n                \"ReportStatus\": \"SUCCESS\",\r\n                \"Description\": \"DELIVRD\"\r\n            }, \r\n\t\t\t{\r\n                \"UserReceiveTime\": \"2019-10-08 17:18:37\",\r\n                \"NationCode\": \"86\",\r\n                \"PurePhoneNumber\": \"+8615291997777\",\r\n                \"PhoneNumber\": \"15291997777\",\r\n                \"SerialNo\": \"14:19325917feb3914eb78b50d6182d7e452e\",\r\n                \"ReportStatus\": \"SUCCESS\",\r\n                \"Description\": \"DELIVRD\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "PullSmsSendStatusByPhoneNumber": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=PullSmsSendStatusByPhoneNumber\r\n&SendDateTime=1464624000\r\n&EndDateTime=1464624123\r\n&Offset=0\r\n&Limit=2\r\n&PhoneNumber=+8615291996666\r\n&SmsSdkAppid=1400006874\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"PullSmsSendStatusSet\": [\r\n            {\r\n                \"UserReceiveTime\": \"2019-10-08 17:18:37\",\r\n                \"NationCode\": \"86\",\r\n                \"PurePhoneNumber\": \"+8615291996666\",\r\n                \"PhoneNumber\": \"15291996666\",\r\n                \"SerialNo\": \"14:19325917feb3914eb78b50d6182d7e452e\",\r\n                \"ReportStatus\": \"SUCCESS\",\r\n                \"Description\": \"DELIVRD\"\r\n            }, \r\n\t\t\t{\r\n                \"UserReceiveTime\": \"2019-10-08 17:18:37\",\r\n                \"NationCode\": \"86\",\r\n                \"PurePhoneNumber\": \"+8615291996666\",\r\n                \"PhoneNumber\": \"15291996666\",\r\n                \"SerialNo\": \"14:19325917feb3914eb78b50d6182d7e452e\",\r\n                \"ReportStatus\": \"SUCCESS\",\r\n                \"Description\": \"DELIVRD\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "SendSms": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=SendSms\n&PhoneNumberSet.0=+8618511122233\n&PhoneNumberSet.1=+8618511122266\n&TemplateID=1234\n&Sign=腾讯云\n&TemplateParamSet.0=12345\n&SmsSdkAppid=1400006666\n&SessionContext=test\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"SendStatusSet\": [\r\n            {\r\n                \"SerialNo\": \"5000:1045710669157053657849499619\",\r\n                \"PhoneNumber\": \"+8618511122233\",\r\n                \"Fee\": 1,\r\n                \"SessionContext\": \"test\",\r\n                 \"Code\": \"Ok\",\r\n                 \"Message\": \"send success\",\r\n                 \"IsoCode\":\"CN\"\r\n            },\r\n            {\r\n                \"SerialNo\": \"5000:104571066915705365784949619\",\r\n                \"PhoneNumber\": \"+8618511122266\",\r\n                \"Fee\": 1,\r\n                \"SessionContext\": \"test\",\r\n                 \"Code\": \"Ok\",\r\n                 \"Message\": \"send success\",\r\n                  \"IsoCode\":\"CN\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "SendStatusStatistics": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=SendStatusStatistics\r\n&StartDateTime=2016090800\r\n&EndDataTime=2016090823\r\n&SmsSdkAppid=1400006874\r\n&Limit=0\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"SendStatusStatistics\": {\r\n            \"FeeCount\": 1880,\r\n            \"RequestCount\": 1880,\r\n            \"RequestSuccessCount\": 1880\r\n        },\r\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
+    "SmsPackagesStatistics": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=SmsPackagesStatistics\r\n&SmsSdkAppid=1400006879\r\n&Limit=2\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"SmsPackagesStatisticsSet\": [\r\n            {\r\n                \"PackageCreateTime\": \"2019-05-01 00:00:02\",\r\n                \"PackageEffectiveTime\": \"2019-05-01 00:00:00\",\r\n                \"PackageExpiredTime\": \"2019-05-31 23:59:59\",\r\n                \"AmountOfSmsInPackage\": 100,\r\n                \"TypeOfPackage\": 0,\r\n                \"PackageId\": 1000876572,\r\n                \"CurrentUsage\": 100\r\n            },\r\n            {\r\n                \"PackageCreateTime\": \"2019-04-01 00:00:02\",\r\n                \"PackageEffectiveTime\": \"2019-04-01 00:00:00\",\r\n                \"PackageExpiredTime\": \"2019-04-30 23:59:59\",\r\n                \"AmountOfSmsInPackage\": 100,\r\n                \"TypeOfPackage\": 0,\r\n                \"PackageId\": 1000791745,\r\n                \"CurrentUsage\": 100\r\n            }\r\n        ],\r\n        \"RequestId\": \"90242d16-de50-4c9a-80fc-7709b566e93e\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

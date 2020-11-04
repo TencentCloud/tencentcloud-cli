@@ -1,0 +1,30 @@
+**Example 1: 查看实例列表**
+
+
+
+Input: 
+
+```
+tccli tcr DescribeInstances --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "Registries": [
+            {
+                "RegistryId": "cls-xxxxxxx",
+                "RegistryName": "aaa",
+                "Status": "Running",
+                "RegistryType": "standard",
+                "PublicDomain": "mytest.tencentcloudcr.com",
+                "CreateTime": "2019-08-09",
+                "InternalEndpoint": "8.9.10.9"
+            }
+        ],
+        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
+    }
+}
+```
+

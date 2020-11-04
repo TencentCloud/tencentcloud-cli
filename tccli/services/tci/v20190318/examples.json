@@ -1,0 +1,333 @@
+{
+  "actions": {
+    "AIAssistant": [
+      {
+        "document": "发起 AI 助教，选择基础班功能",
+        "input": "https://tci.tencentcloudapi.com/?Action=AIAssistant\n&FileContent=https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_vedio.mp4\n&FileType=vod_url\n&Lang=0\n&LibrarySet.0=library_15603955264181591716\n&VocabLibNameList.0=testlib2\n&VoiceEncodeType=1\n&VoiceFileType=10\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"TaskId\": 2516205217,\n    \"ImageResults\": null,\n    \"RequestId\": \"82d23aac-ff81-4821-bd58-99d2caf6136f\"\n  }\n}",
+        "title": "发起 AI 助教"
+      }
+    ],
+    "CancelTask": [
+      {
+        "document": "取消一个已执行任务",
+        "input": "https://tci.tencentcloudapi.com/?Action=CancelTask\n&JobId=901\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"JobId\": 901,\n    \"RequestId\": \"9c537cfc-549d-40da-b613-e79836fa1da0\"\n  }\n}",
+        "title": "取消任务"
+      }
+    ],
+    "CheckFacePhoto": [
+      {
+        "document": "检查输入人脸图片 url 是否合规",
+        "input": "https://tci.tencentcloudapi.com/?Action=Action=CheckFacePhoto\n&FileContent=https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_facea.png\n&FileType=picture_url\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"7f07c9c3-d7e1-47ee-89ed-f08267d6b39d\",\n    \"CheckResult\": 0\n  }\n}",
+        "title": "检查人脸图片"
+      }
+    ],
+    "CreateFace": [
+      {
+        "document": "添加人脸",
+        "input": "https://tci.tencentcloudapi.com/?Action=CreateFace\n&PersonId=person_xxx\n&LibraryId=library_xxx\n&Urls.0=http://xxx.jpg\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"9e5e3ab1-5bd6-404e-9593-74ab9e6aaf79\",\n    \"FaceInfoSet\": [\n      {\n        \"PersonId\": \"person_xxx\",\n        \"FaceUrl\": \"https://soe-1255701415.cos.ap-beijing.myqcloud.com/251006279/library_1552907886376820469/person_1553000279384479226589/59d46161b44bb83ce496573b6c20cd54.png\",\n        \"FaceId\": \"xxx\",\n        \"ErrorMsg\": \"\"\n      }\n    ]\n  }\n}",
+        "title": "添加人脸"
+      }
+    ],
+    "CreateLibrary": [
+      {
+        "document": "创建人员库",
+        "input": "https://tci.tencentcloudapi.com/?Action=CreateLibrary\n&LibraryName=xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"aa0adf73-1980-41bf-b630-403bf40fe997\",\n    \"LibraryName\": \"xxx\",\n    \"LibraryId\": \"library_155299991460001667993\"\n  }\n}",
+        "title": "创建人员库"
+      }
+    ],
+    "CreatePerson": [
+      {
+        "document": "创建人员",
+        "input": "https://tci.tencentcloudapi.com/?Action=CreatePerson\n&PersonName=xxx\n&LibraryId=library_id\n&PhoneNumber=xxx\n&StudentNumber=xxxx\n&JobNumber=xxx\n&Male=1\n&Mail=xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"366c1cc8-30fe-4c24-a3ac-85fa3459a88c\",\n    \"PersonName\": \"xxx\",\n    \"PersonId\": \"person_1553000279384479226589\",\n    \"LibraryId\": \"library_1552907886376820469\"\n  }\n}",
+        "title": "创建人员"
+      }
+    ],
+    "CreateVocab": [
+      {
+        "document": "创建词汇",
+        "input": "https://tci.tencentcloudapi.com/?Action=CreateVocab\n&VocabLibName=testlib\n&VocabList.0=hello\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"5e840747-6fa4-4e78-8870-c3a5428498cf\"\n  }\n}",
+        "title": "测试创建词汇"
+      }
+    ],
+    "CreateVocabLib": [
+      {
+        "document": "创建词汇库",
+        "input": "https://tci.tencentcloudapi.com/?Action=CreateVocabLib\n&VocabLibName=testlib\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"fbf19835-d0f3-4323-939f-2f5a800c946a\"\n  }\n}",
+        "title": "创建词汇库"
+      }
+    ],
+    "DeleteFace": [
+      {
+        "document": "删除人脸",
+        "input": "https://tci.tencentcloudapi.com/?Action=DeleteFace\n&PersonId=person_xxx\n&FaceIdSet.0=face_xxx\n&LibraryId=library_xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"298fa9b6-38f3-48ce-b293-d447b6f7bedf\",\n    \"FaceInfoSet\": [\n      {\n        \"PersonId\": \"person_xxx\",\n        \"FaceUrl\": \"\",\n        \"FaceId\": \"face_xxx\",\n        \"ErrorMsg\": \"\"\n      }\n    ]\n  }\n}",
+        "title": "删除人脸"
+      }
+    ],
+    "DeleteLibrary": [
+      {
+        "document": "删除人员库",
+        "input": "https://tci.tencentcloudapi.com/?Action=DeleteLibrary\n&LibraryId=libraryid_xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"0548be18-307f-4f49-8f3c-c185f1d4ad31\",\n    \"LibraryName\": \"xxx\",\n    \"LibraryId\": \"library_155299991460001667993\"\n  }\n}",
+        "title": "删除人员库"
+      }
+    ],
+    "DeletePerson": [
+      {
+        "document": "删除人员",
+        "input": "https://tci.tencentcloudapi.com/?Action=DeletePerson\n&PersonId=person_xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"b8d386f8-50d6-44c6-a497-4c5783d91473\",\n    \"PersonName\": \"xxx\",\n    \"PersonId\": \"person_xxx\",\n    \"LibraryId\": \"library_xxx\"\n  }\n}",
+        "title": "删除人员"
+      }
+    ],
+    "DeleteVocab": [
+      {
+        "document": "删除词汇",
+        "input": "https://tci.tencentcloudapi.com/?Action=DeleteVocab\n&VocabLibName=testlib\n&VocabList.0=hello\n&<公共请求参数>",
+        "output": "\n{\n  \"Response\": {\n    \"RequestId\": \"07101fd0-adf9-498e-9cb9-b067ee6fccf6\"\n  }\n}",
+        "title": "测试删除词汇"
+      }
+    ],
+    "DeleteVocabLib": [
+      {
+        "document": "删除词汇库",
+        "input": "https://tci.tencentcloudapi.com/?Action=DeleteVocabLib\n&VocabLibName=testlib\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"83629625-9b5e-4da9-8603-ae57b410d592\"\n  }\n}",
+        "title": "测试删除词汇库"
+      }
+    ],
+    "DescribeAITaskResult": [
+      {
+        "document": "获取 AI 助教分析后的结果",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeAITaskResult\n&TaskId=2516205217\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n      \"TaskId\": 2516205217,\n      \"RequestId\": \"885661be-0fc8-47c2-b1af-3ff1d6a54ecd\",\n      \"ImageResult\": {\n        \"Status\": \"\",\n        \"Message\": \"\",\n        \"TotalCount\": 153,\n        \"ResultSet\": [\n          {\n            \"FaceIdentify\": null,\n            \"FaceInfo\": {\n              \"Left\": 0,\n              \"Top\": 0,\n              \"Width\": 0,\n              \"Height\": 0,\n              \"FrameWidth\": 0,\n              \"FrameHeight\": 0,\n              \"FaceRatio\": 0\n            },\n            \"FacePose\": {\n              \"Direction\": \"frontal\",\n              \"Yaw\": -0.29673076,\n              \"Pitch\": 9.21381,\n              \"Roll\": -0.82792795\n            },\n            \"FaceAttr\": {\n              \"Sex\": \"female\",\n              \"Age\": 23\n            },\n            \"FaceExpression\": {\n              \"Expression\": \"neutral\",\n              \"Confidence\": 0.6842983\n            },\n            \"HandTracking\": null,\n            \"Gesture\": null,\n            \"TeacherBodyMovement\": null,\n            \"StudentBodyMovement\": null,\n            \"Light\": null,\n            \"TimeInfo\": {\n              \"StartTs\": 200,\n              \"EndTs\": 200,\n              \"Duration\": 0\n            },\n            \"ActionInfo\": null\n          }\n        ],\n        \"Statistic\": {\n          \"FaceIdentify\": [\n            {\n              \"PersonId\": \"tci_person_1561445819427009841231\",\n              \"Similarity\": 0.9951723,\n              \"StartTs\": 200,\n              \"EndTs\": 4800,\n              \"Duration\": 5600\n            }\n          ],\n          \"FaceExpression\": [\n            {\n              \"PersonId\": \"tci_person_1561445819427009841231\",\n              \"ExpressRatio\": [\n                {\n                  \"Express\": \"neutral\",\n                  \"Ratio\": 0.80435,\n                  \"Count\": 37\n                },\n                {\n                  \"Express\": \"surprise\",\n                  \"Ratio\": 0.19565,\n                  \"Count\": 9\n                }\n              ]\n            }\n          ],\n          \"Handtracking\": null,\n          \"Gesture\": null,\n          \"TeacherMovement\": null,\n          \"StudentMovement\": null,\n          \"Light\": null\n        }\n      },\n      \"VideoResult\": {\n        \"Status\": \"\",\n        \"Message\": \"\",\n        \"HighlightsInfo\": [\n          {\n            \"HighlightsUrl\": \"http://videowonderful-1255701415.cos.ap-guangzhou.myqcloud.com/test/20190625_162809--ef_wonderful_20190625_162758_.mp4?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEOuBIhv4wHI2ChdxFbnngLxbrzpUGo8H%26q-sign-time%3D1561451290%3B1561451590%26q-key-time%3D1561451290%3B1561451590%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D154fba6daabaef5017849f6dd957cc8c67e3c8ed\",\n            \"Smile\": [\n              {\n                \"StartTime\": 2000,\n                \"EndTime\": 17000\n              }\n            ],\n            \"Concentration\": null,\n            \"PersonId\": \"\"\n          },\n          {\n            \"HighlightsUrl\": \"http://videowonderful-1255701415.cos.ap-guangzhou.myqcloud.com/test/20190625_162818--ef_wonderful_20190625_162758_tci_person_1561445819427009841231.mp4?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEOuBIhv4wHI2ChdxFbnngLxbrzpUGo8H%26q-sign-time%3D1561451299%3B1561451599%26q-key-time%3D1561451299%3B1561451599%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3Db2540e56515761565f11a9e608414a205d153c47\",\n            \"Smile\": [\n              {\n                \"StartTime\": 6000,\n                \"EndTime\": 19000\n              }\n            ],\n            \"Concentration\": null,\n            \"PersonId\": \"tci_person_1561445819427009841231\"\n          }\n        ]\n      },\n      \"AudioResult\": {\n        \"Status\": \"\",\n        \"Message\": \"\",\n        \"TotalCount\": 0,\n        \"Texts\": [\n          {\n            \"TextItem\": {\n              \"Mbtm\": 1790,\n              \"Metm\": 7120,\n              \"Text\": \"He or she. \",\n              \"TextSize\": 11,\n              \"Confidence\": 0.030193144,\n              \"Tag\": 0,\n              \"Words\": [\n                {\n                  \"Mbtm\": 2220,\n                  \"Metm\": 2660,\n                  \"Text\": \"he\",\n                  \"Wsize\": 2,\n                  \"Confidence\": 0\n                },\n                {\n                  \"Mbtm\": 2940,\n                  \"Metm\": 4180,\n                  \"Text\": \"or\",\n                  \"Wsize\": 2,\n                  \"Confidence\": 0\n                },\n                {\n                  \"Mbtm\": 4540,\n                  \"Metm\": 5240,\n                  \"Text\": \"she\",\n                  \"Wsize\": 3,\n                  \"Confidence\": 0\n                }\n              ]\n            },\n            \"Speed\": 0.750469,\n            \"MaxVolume\": 0,\n            \"MinVolume\": 0,\n            \"AvgVolume\": 0\n          }\n        ],\n        \"VocabAnalysisDetailInfo\": null,\n        \"AsrStat\": {\n          \"TotalDuration\": 19820,\n          \"SoundDuration\": 8250,\n          \"MuteDuration\": 11570,\n          \"VadNum\": 3,\n          \"WordNum\": 5,\n          \"AvgSpeed\": 0.6060606,\n          \"MaxVolume\": 0,\n          \"MinVolume\": 0,\n          \"AvgVolume\": 0\n        },\n        \"VocabAnalysisStatInfo\": null\n      }\n    }\n  }",
+        "title": "获取 AI 助教结果"
+      }
+    ],
+    "DescribeAttendanceResult": [
+      {
+        "document": "查询考勤结果",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeAttendanceResult\n&JobId=549\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03262329-3567-4e9c-9049-7e9b60f83dd3\",\n        \"Progress\": 100,\n        \"AttendanceSet\": [\n            {\n                \"PersonId\": \"33944418\",\n                \"Face\": {\n                    \"Ts\": 862640,\n                    \"Similarity\": 0.9369908,\n                    \"SnapshotUrl\": \"http://attendance-pictures-1255701415.cos.ap-guangzhou.myqcloud.com/attendance/74973491_33944418_1616_800_78_95_1554975659.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEOuBIhv4wHI2ChdxFbnngLxbrzpUGo8H%26q-sign-time%3D1554975659%3B1557567659%26q-key-time%3D1554975659%3B1557567659%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D71ce55bb682b1a853ca596538eab2435061fe155\"\n                }\n            },\n            {\n                \"PersonId\": \"36736596\",\n                \"Face\": {\n                    \"Ts\": 104080,\n                    \"Similarity\": 0.97687095,\n                    \"SnapshotUrl\": \"http://attendance-pictures-1255701415.cos.ap-guangzhou.myqcloud.com/attendance/74214931_36736596_1167_1_60_75_1554974891.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEOuBIhv4wHI2ChdxFbnngLxbrzpUGo8H%26q-sign-time%3D1554974891%3B1557566891%26q-key-time%3D1554974891%3B1557566891%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D4434d8381f9d2dac6e3cda05860390d85d7cc905\"\n                }\n            }\n        ],\n        \"SuspectedSet\": [\n            {\n                \"PersonId\": \"37218264\",\n                \"FaceSet\": [\n                    {\n                        \"Ts\": 261560,\n                        \"Similarity\": 0.89789367,\n                        \"SnapshotUrl\": \"http://attendance-pictures-1255701415.cos.ap-guangzhou.myqcloud.com/attendance/74372411_37218264_737_447_57_66_1554974946.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEOuBIhv4wHI2ChdxFbnngLxbrzpUGo8H%26q-sign-time%3D1554974946%3B1557566946%26q-key-time%3D1554974946%3B1557566946%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D6606a82a704d288b6752af74d1cb70207842100f\"\n                    },\n                    {\n                        \"Ts\": 473040,\n                        \"Similarity\": 0.8813029,\n                        \"SnapshotUrl\": \"http://attendance-pictures-1255701415.cos.ap-guangzhou.myqcloud.com/attendance/74583891_37218264_761_380_66_74_1554975022.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEOuBIhv4wHI2ChdxFbnngLxbrzpUGo8H%26q-sign-time%3D1554975022%3B1557567022%26q-key-time%3D1554975022%3B1557567022%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3Da55b9bcdba20dcc51c3c19b7da608c8279cbf7f1\"\n                    },\n                    {\n                        \"Ts\": 218360,\n                        \"Similarity\": 0.82336843,\n                        \"SnapshotUrl\": \"http://attendance-pictures-1255701415.cos.ap-guangzhou.myqcloud.com/attendance/74329211_37218264_791_418_56_68_1554974930.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEOuBIhv4wHI2ChdxFbnngLxbrzpUGo8H%26q-sign-time%3D1554974931%3B1557566931%26q-key-time%3D1554974931%3B1557566931%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3De60ab62375cdde7ad73f00448c8c69b1e39494e4\"\n                    }\n                ]\n            }\n        ],\n        \"AbsenceSet\": null\n    }\n}",
+        "title": "查询考勤结果"
+      }
+    ],
+    "DescribeAudioTask": [
+      {
+        "document": "查询通过AudioSubmit接口提交的音频评估任务的结果。",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeAudioTask\n&JobId=101\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"TotalCount\":10,\n    \"JobId\": 101,\n    \"Texts\": [\n      {\n        \"TextItem\": {\n          \"Mbtm\": 810,\n          \"Metm\": 6880,\n          \"Text\": \"I see a garage a helicopter a jellyfish a lizard and a napkin. \",\n          \"TextSize\": 63,\n          \"Confidence\": 4.5611e-41,\n          \"Tag\": 48,\n          \"Words\": [\n            {\n              \"Mbtm\": 1000,\n              \"Metm\": 1220,\n              \"Text\": \"i\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 1220,\n              \"Metm\": 1440,\n              \"Text\": \"see\",\n              \"Wsize\": 3,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 1440,\n              \"Metm\": 1540,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 1540,\n              \"Metm\": 2080,\n              \"Text\": \"garage\",\n              \"Wsize\": 6,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 2120,\n              \"Metm\": 2240,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 2240,\n              \"Metm\": 3260,\n              \"Text\": \"helicopter\",\n              \"Wsize\": 10,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 3290,\n              \"Metm\": 3440,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 3440,\n              \"Metm\": 4380,\n              \"Text\": \"jellyfish\",\n              \"Wsize\": 9,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 4410,\n              \"Metm\": 4610,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 4610,\n              \"Metm\": 5180,\n              \"Text\": \"lizard\",\n              \"Wsize\": 6,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 5300,\n              \"Metm\": 5570,\n              \"Text\": \"and\",\n              \"Wsize\": 3,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 5570,\n              \"Metm\": 5740,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 5740,\n              \"Metm\": 6340,\n              \"Text\": \"napkin\",\n              \"Wsize\": 6,\n              \"Confidence\": 0\n            }\n          ]\n        },\n        \"Speed\": 2.1416805\n      }\n    ],\n    \"AsrStat\": {\n      \"TotalDuration\": 7580,\n      \"SoundDuration\": 6070,\n      \"MuteDuration\": 1510,\n      \"VadNum\": 1,\n      \"WordNum\": 13,\n      \"AvgSpeed\": 2.1416805\n    },\n    \"VocabAnalysisDetailInfo\": null,\n    \"VocabAnalysisStatInfo\": [\n      {\n        \"VocabLibName\": \"praise\",\n        \"VocabDetailInfo\": null\n      }\n    ],\n    \"RequestId\": \"c3bf143a-a7cf-4651-baec-e291c62507dc\",\n    \"Process\": 0,\n    \"AllMuteSlice\": {\n        \"TotalMuteDuration\": 8899,\n        \"MuteRatio\": 0.23,\t\t\t\t\n        \"MuteSlice\":\n            [\t\t\t\t\n              {\n                   \"MuteBtm\":40860,\t\n                   \"MuteEtm\":41160\t\n              }\n           ]            \n    }\t\n  }\n}",
+        "title": "音频评估结果详情查询"
+      }
+    ],
+    "DescribeConversationTask": [
+      {
+        "document": "查询通过AudioSubmit接口提交的音频评估任务的结果。",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeConversationTask\n&JobId=101\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"TotalCount\":10,\n    \"JobId\": 101,\n    \"Texts\": [\n      {\n        \"TextItem\": {\n          \"Mbtm\": 810,\n          \"Metm\": 6880,\n          \"Text\": \"I see a garage a helicopter a jellyfish a lizard and a napkin. \",\n          \"TextSize\": 63,\n          \"Confidence\": 4.5611e-41,\n          \"Tag\": 48,\n          \"Words\": [\n            {\n              \"Mbtm\": 1000,\n              \"Metm\": 1220,\n              \"Text\": \"i\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 1220,\n              \"Metm\": 1440,\n              \"Text\": \"see\",\n              \"Wsize\": 3,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 1440,\n              \"Metm\": 1540,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 1540,\n              \"Metm\": 2080,\n              \"Text\": \"garage\",\n              \"Wsize\": 6,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 2120,\n              \"Metm\": 2240,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 2240,\n              \"Metm\": 3260,\n              \"Text\": \"helicopter\",\n              \"Wsize\": 10,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 3290,\n              \"Metm\": 3440,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 3440,\n              \"Metm\": 4380,\n              \"Text\": \"jellyfish\",\n              \"Wsize\": 9,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 4410,\n              \"Metm\": 4610,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 4610,\n              \"Metm\": 5180,\n              \"Text\": \"lizard\",\n              \"Wsize\": 6,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 5300,\n              \"Metm\": 5570,\n              \"Text\": \"and\",\n              \"Wsize\": 3,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 5570,\n              \"Metm\": 5740,\n              \"Text\": \"a\",\n              \"Wsize\": 1,\n              \"Confidence\": 0\n            },\n            {\n              \"Mbtm\": 5740,\n              \"Metm\": 6340,\n              \"Text\": \"napkin\",\n              \"Wsize\": 6,\n              \"Confidence\": 0\n            }\n          ]\n        },\n        \"Speed\": 2.1416805\n      }\n    ],\n    \"AsrStat\": {\n      \"TotalDuration\": 7580,\n      \"SoundDuration\": 6070,\n      \"MuteDuration\": 1510,\n      \"VadNum\": 1,\n      \"WordNum\": 13,\n      \"AvgSpeed\": 2.1416805\n    },\n    \"VocabAnalysisDetailInfo\": null,\n    \"VocabAnalysisStatInfo\": [\n      {\n        \"VocabLibName\": \"praise\",\n        \"VocabDetailInfo\": null\n      }\n    ],\n    \"RequestId\": \"c3bf143a-a7cf-4651-baec-e291c62507dc\",\n    \"Process\": 0\n  }\n}",
+        "title": "音频评估结果详情查询"
+      }
+    ],
+    "DescribeHighlightResult": [
+      {
+        "document": "查询通过SubmitHighlights接口提交的精彩集锦剪辑任务的结果。",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeHighlightResult\n&JobId=97\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"JobId\": 97,\n    \"Process\": 100,\n    \"HighlightsInfo\": [\n      {\n        \"FaceId\": \"2258353436553278\",\n        \"HighlightsUrl\": \"http://videowonderful-1255701415.cos.ap-guangzhou.myqcloud.com/test/20190315_201544--ef_wonderful_20190315_201542_2258353436553278.mp4?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEOuBIhv4wHI2ChdxFbnngLxbrzpUGo8H%26q-sign-time%3D1552652149%3B1552652209%26q-key-time%3D1552652149%3B1552652209%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D07e26350266823e5736a17945d2794ec0bcc8d66\",\n        \"Smile\": [\n          {\n            \"StartTime\": 48000,\n            \"EndTime\": 83000\n          },\n          {\n            \"StartTime\": 339000,\n            \"EndTime\": 419000\n          },\n          {\n            \"StartTime\": 1027000,\n            \"EndTime\": 1036000\n          },\n          {\n            \"StartTime\": 1311000,\n            \"EndTime\": 1320000\n          },\n          {\n            \"StartTime\": 1443000,\n            \"EndTime\": 1482000\n          }\n        ],\n        \"Concentration\": null\n      }\n    ],\n    \"RequestId\": \"f571fd7c-131f-459f-93ec-c0605da0bfd9\"\n  }\n}",
+        "title": "视频精彩集锦评估结果详情查询"
+      }
+    ],
+    "DescribeImageTask": [
+      {
+        "document": "拉取任务详情",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeImageTask\n&JobId=task_xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"ff1e1455-b2a9-4cdb-9387-30989c993c03\",\n    \"JobId\": 222,\n    \"Progress\": 100,\n    \"TotalCount\": 10,\n    \"ResultSet\": [\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 131,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": {\n          \"StartTs\": 104400,\n          \"EndTs\": 104400,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 130,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": {\n          \"StartTs\": 202500,\n          \"EndTs\": 202500,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 130,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": {\n          \"StartTs\": 298800,\n          \"EndTs\": 298800,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 130,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": {\n          \"StartTs\": 396000,\n          \"EndTs\": 396000,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 127,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": {\n          \"StartTs\": 495000,\n          \"EndTs\": 495000,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": {\n          \"Left\": 1138,\n          \"Top\": 388,\n          \"Width\": 156,\n          \"Height\": 156,\n          \"FrameWidth\": 1080,\n          \"FrameHeight\": 1920,\n          \"FaceRatio\": 21.293596\n        },\n        \"FacePoseResult\": {\n          \"Direction\": \"frontal\",\n          \"Yaw\": 7.2338576,\n          \"Pitch\": -0.60113126,\n          \"Roll\": 4.263466\n        },\n        \"FaceAttrResult\": {\n          \"Sex\": \"male\",\n          \"Age\": 24\n        },\n        \"FaceExpressionResult\": {\n          \"Expression\": \"neutral\",\n          \"Confidence\": 55\n        },\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": null,\n        \"TimeInfoResult\": {\n          \"StartTs\": 591300,\n          \"EndTs\": 591300,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 124,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": {\n          \"StartTs\": 591300,\n          \"EndTs\": 591300,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": {\n          \"Left\": 799,\n          \"Top\": 410,\n          \"Width\": 117,\n          \"Height\": 117,\n          \"FrameWidth\": 1080,\n          \"FrameHeight\": 1920,\n          \"FaceRatio\": 15.798129\n        },\n        \"FacePoseResult\": {\n          \"Direction\": \"frontal\",\n          \"Yaw\": 14.297856,\n          \"Pitch\": 1.3801595,\n          \"Roll\": -2.8457966\n        },\n        \"FaceAttrResult\": {\n          \"Sex\": \"male\",\n          \"Age\": 28\n        },\n        \"FaceExpressionResult\": {\n          \"Expression\": \"neutral\",\n          \"Confidence\": 99\n        },\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": null,\n        \"TimeInfoResult\": {\n          \"StartTs\": 687600,\n          \"EndTs\": 687600,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 127,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": {\n          \"StartTs\": 687600,\n          \"EndTs\": 687600,\n          \"Duration\": 0\n        }\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": {\n          \"Left\": 875,\n          \"Top\": 417,\n          \"Width\": 209,\n          \"Height\": 209,\n          \"FrameWidth\": 1080,\n          \"FrameHeight\": 1920,\n          \"FaceRatio\": 17.596209\n        },\n        \"FacePoseResult\": {\n          \"Direction\": \"frontal\",\n          \"Yaw\": 12.399566,\n          \"Pitch\": 2.138196,\n          \"Roll\": 1.1387303\n        },\n        \"FaceAttrResult\": {\n          \"Sex\": \"male\",\n          \"Age\": 26\n        },\n        \"FaceExpressionResult\": {\n          \"Expression\": \"neutral\",\n          \"Confidence\": 99\n        },\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": null,\n        \"TimeInfoResult\": {\n          \"StartTs\": 785700,\n          \"EndTs\": 785700,\n          \"Duration\": 0\n        }\n      }\n    ]\n  }\n}",
+        "title": "拉取任务详情"
+      }
+    ],
+    "DescribeImageTaskStatistic": [
+      {
+        "document": "获取图像任务统计信息示例",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeImageTaskStatistic\n&JobId=336\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"fd59a73c-9ba3-4f7a-966c-68f20eaddeac\",\n    \"JobId\": 336,\n    \"Statistic\": {\n      \"FaceIdentify\": null,\n      \"FaceExpression\": null,\n      \"FaceDetect\": null,\n      \"Handtracking\": null,\n      \"Gesture\": null,\n      \"TeacherMovement\": null,\n      \"StudentMovement\": null,\n      \"Light\": {\n        \"LightLevelRatio\": null,\n        \"LightDistribution\": [\n          {\n            \"Time\": 0,\n            \"Value\": 131\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 131\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 130\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 130\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 128\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 130\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 124\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 132\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 133\n          },\n          {\n            \"Time\": 0,\n            \"Value\": 134\n          }\n        ]\n      }\n    }\n  }\n}",
+        "title": "获取图像任务统计信息示例"
+      }
+    ],
+    "DescribeLibraries": [
+      {
+        "document": "拉取人员库列表",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeLibraries\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"23dc79d5-c90a-4455-9eee-203cdb6810ed\",\n    \"TotalCount\": 4,\n    \"LibrarySet\": [\n      {\n        \"LibraryId\": \"library_1552907886376820469\",\n        \"LibraryName\": \"xxx\",\n        \"CreateTime\": \"0001-01-01T00:00:00+08:00\",\n        \"UpdateTime\": \"0001-01-01T00:00:00+08:00\"\n      },\n      {\n        \"LibraryId\": \"library_155297948085170220399\",\n        \"LibraryName\": \"xxx\",\n        \"CreateTime\": \"2019-03-19T15:11:21+08:00\",\n        \"UpdateTime\": \"2019-03-19T15:11:21+08:00\"\n      },\n      {\n        \"LibraryId\": \"library_155297959592861320399\",\n        \"LibraryName\": \"xxx\",\n        \"CreateTime\": \"2019-03-19T15:13:16+08:00\",\n        \"UpdateTime\": \"2019-03-19T15:13:16+08:00\"\n      },\n      {\n        \"LibraryId\": \"library_155298561479521165545\",\n        \"LibraryName\": \"xxx\",\n        \"CreateTime\": \"2019-03-19T16:53:35+08:00\",\n        \"UpdateTime\": \"2019-03-19T16:53:35+08:00\"\n      }\n    ]\n  }\n}",
+        "title": "拉取人员库列表"
+      }
+    ],
+    "DescribePerson": [
+      {
+        "document": "获取人员详细信息",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribePerson\n&PersonId=person_xxx&LibraryId=xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"PersonId\": \"person_xxx\",\n    \"PersonName\": \"xxx\",\n    \"LibraryId\": \"library_xxx\",\n    \"PhoneNumber\": \"xxx\",\n    \"StudentNumber\": \"xxx\",\n    \"JobNumber\": \"xxx\",\n    \"Male\": 1,\n    \"Mail\": \"xxx\",\n    \"CreateTime\": \"2019-03-19T20:57:59+08:00\",\n    \"UpdateTime\": \"2019-03-19T21:08:40+08:00\",\n    \"FaceSet\": null,\n    \"RequestId\": \"735881d4-91cf-46c4-9283-f232bdb67b71\"\n  }\n}",
+        "title": "获取人员详细信息"
+      }
+    ],
+    "DescribePersons": [
+      {
+        "document": "拉取指定库人员列表",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribePersons\n&LibraryId=libraryid_xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"0a28dd6b-138a-4c6c-8ce3-d1e1bb6954d4\",\n    \"TotalCount\": 1,\n    \"PersonSet\": [\n      {\n        \"PersonId\": \"person_xxx\",\n        \"PersonName\": \"xxx\",\n        \"LibraryId\": \"library_xxx\",\n        \"PhoneNumber\": \"xxx\",\n        \"StudentNumber\": \"xxx\",\n        \"JobNumber\": \"xxx\",\n        \"Male\": 1,\n        \"Mail\": \"xxx\",\n        \"CreateTime\": \"2019-03-19T20:57:59+08:00\",\n        \"UpdateTime\": \"2019-03-19T21:08:40+08:00\"\n      }\n    ]\n  }\n}",
+        "title": "拉取指定库人员列表"
+      }
+    ],
+    "DescribeVocab": [
+      {
+        "document": "查询词汇",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeVocab\n&VocabLibName=testlib\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"VocabNameSet\": [\n      \"hello\"\n    ],\n    \"RequestId\": \"505293e0-7f56-40da-ba78-5ea2a577a170\"\n  }\n}",
+        "title": "测试查询词汇"
+      }
+    ],
+    "DescribeVocabLib": [
+      {
+        "document": "查询词汇库",
+        "input": "https://tci.tencentcloudapi.com/?Action=DescribeVocabLib&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"VocabLibNameSet\": [\n      \"testlib\"\n    ],\n    \"RequestId\": \"b71d654c-68d9-4a64-8dd3-e4c1f1505d8f\"\n  }\n}",
+        "title": "测试查询词汇库"
+      }
+    ],
+    "ModifyLibrary": [
+      {
+        "document": "修改人员库名称",
+        "input": "https://tci.tencentcloudapi.com/?Action=ModifyLibrary\n&LibraryName=xxx\n&LibraryId=libraryid_xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"cee066ee-ffff-4a95-ad04-577de598544f\",\n    \"LibraryName\": \"xxx\",\n    \"LibraryId\": \"library_155299991460001667993\"\n  }\n}",
+        "title": "修改人员库名称"
+      }
+    ],
+    "ModifyPerson": [
+      {
+        "document": "修改人员详情",
+        "input": "https://tci.tencentcloudapi.com/?Action=ModifyPerson\n&PersonName=xxx\n&PersonId=personid_xxx\n&LibraryId=library_xxx\n&PhoneNumber=xxx\n&StudentNumber=xxx\n&JobNumber=xxx\n&Male=1\n&Mail=xxx\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"3903c090-485c-433f-9570-cf52f0ea04ba\",\n    \"PersonName\": \"xxx\",\n    \"PersonId\": \"person_xxx\",\n    \"LibraryId\": \"library_xxx\"\n  }\n}",
+        "title": "修改人员详情"
+      }
+    ],
+    "SubmitAudioTask": [
+      {
+        "document": "根据客户所提供的音频，生成相关的评估结果。",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitAudioTask\n&Functions.EnableKeyword=true\n&Functions.EnableVadInfo=true\n&Functions.EnableVolume=true\n&Functions.EnableMuteDetect=true\n&MuteThreshold=3\n&Lang=0\n&Url=https%3A%2F%2Fefpoc-1255701415.cos.ap-shanghai.myqcloud.com%2Fvideos%2F5.mp3\n&VocabLibNameList.0=praise\n&VoiceEncodeType=1\n&VoiceFileType=3\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"JobId\": 101,\n    \"RequestId\": \"dead27ef-04f3-4aef-9f6a-75a51e921c47\"\n  }\n}",
+        "title": "提交音频评估任务"
+      }
+    ],
+    "SubmitCheckAttendanceTask": [
+      {
+        "document": "发起考勤",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitCheckAttendanceTask\n&FileType=vod_url\n&FileContent=http://xxx.mp4\n&StartTime=0\n&EndTime=0\n&LibraryIds.0=library_id\n&PersonIdSet.0=person_id0\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"21331e8d-4a22-41e3-81c5-50a173962db3\",\n    \"JobId\": 549,\n    \"NotRegisteredSet\": null\n  }\n}",
+        "title": "发起考勤"
+      }
+    ],
+    "SubmitCheckAttendanceTaskPlus": [
+      {
+        "document": "发起考勤",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitCheckAttendanceTaskPlus\n&FileType=vod_url\n&FileContent.0=http://xxx.mp4\n&StartTime=0\n&EndTime=0\n&LibraryIds.0=library_id\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"21331e8d-4a22-41e3-81c5-50a173962db3\",\n    \"JobId\": 549,\n    \"NotRegisteredSet\": null\n  }\n}",
+        "title": "发起考勤"
+      }
+    ],
+    "SubmitConversationTask": [
+      {
+        "document": "根据客户所提供的音频，生成相关的评估结果。",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitConversationTask\n&Functions.EnableKeyword=true\n&Functions.EnableVadInfo=true\n&Functions.EnableVolume=true\n&Lang=0\n&Url=https%3A%2F%2Fefpoc-1255701415.cos.ap-shanghai.myqcloud.com%2Fvideos%2F5.mp3\n&VocabLibNameList.0=praise&VoiceEncodeType=1\n&VoiceFileType=3\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"JobId\": 101,\n    \"RequestId\": \"dead27ef-04f3-4aef-9f6a-75a51e921c47\"\n  }\n}",
+        "title": "提交音频评估任务"
+      }
+    ],
+    "SubmitDoubleVideoHighlights": [
+      {
+        "document": "根据客户所提供的视频及参数，生成相关的精彩集锦结果。",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitDoubleVideoHighlights\n&FileContent=https%3A%2F%2Fefpoc-1255701415.cos.ap-shanghai.myqcloud.com%2Fvideos%2Fefpoc_1_27.mp4\n&LibId.0=test_lib\n&PersonIds.0=2124123\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"JobId\": 278,\n    \"RequestId\": \"3c5a7213-e3b5-4732-b5d6-c0ec76897746\",\n    \"NotRegistered\": {}\n  }\n}",
+        "title": "提交精彩集锦剪辑任务"
+      }
+    ],
+    "SubmitFullBodyClassTask": [
+      {
+        "document": "提交传统课堂授课任务",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitFullBodyClassTask\n&FileContent=https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_vedio.mp4\n&FileType=vod_url\n&Lang=0\n&LibrarySet.0=library_15603955264181591716\n&VocabLibNameList.0=testlib2\n&VoiceEncodeType=1\n&VoiceFileType=10\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"TaskId\": 2516205217,\n    \"ImageResults\": null,\n    \"RequestId\": \"82d23aac-ff81-4821-bd58-99d2caf6136f\"\n  }\n}",
+        "title": "提交传统课堂授课任务"
+      }
+    ],
+    "SubmitHighlights": [
+      {
+        "document": "根据客户所提供的视频及参数，生成相关的精彩集锦结果。",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitHighlights\n&FileCont=https%3A%2F%2Fefpoc-1255701415.cos.ap-shanghai.myqcloud.com%2Fvideos%2Fefpoc_1_27.mp4\n&FileType=vod_url\n&Functions.EnableFaceDetect=true\n&Functions.EnableFaceExpression=true\n&Functions.EnableFaceIdent=true\n&GistType.0=smile\n&LibId.0=test_lib\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"JobId\": 278,\n    \"RequestId\": \"3c5a7213-e3b5-4732-b5d6-c0ec76897746\"\n  }\n}",
+        "title": "提交精彩集锦剪辑任务"
+      }
+    ],
+    "SubmitImageTask": [
+      {
+        "document": "提交图像分析任务",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitImageTask\n&Functions.EnableFaceIdentify=true\n&Functions.EnableFaceDetect=true\n&Functions.EnableFaceExpression=true     \n&Functions.EnableGesture=true\n&Functions.EnableStudentBodyMovements=true\n&Functions.EnableLightJudge=true\n&FileType=picture_url\n&FileContent=http://xxx.jpg\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"eeadcc79-13b2-4e1e-a913-d3b8a1cdaf2b\",\n    \"JobId\": 0,\n    \"Progress\": 100,\n    \"ResultSet\": [\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 209,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": null\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": {\n          \"Left\": 159,\n          \"Top\": 115,\n          \"Width\": 184,\n          \"Height\": 184,\n          \"FrameWidth\": 500,\n          \"FrameHeight\": 500,\n          \"FaceRatio\": 7.31\n        },\n        \"FacePoseResult\": {\n          \"Direction\": \"frontal\",\n          \"Yaw\": -1.6001276,\n          \"Pitch\": 4.0072374,\n          \"Roll\": 0.96360093\n        },\n        \"FaceAttrResult\": {\n          \"Sex\": \"male\",\n          \"Age\": 28\n        },\n        \"FaceExpressionResult\": {\n          \"Expression\": \"neutral\",\n          \"Confidence\": 99\n        },\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": null,\n        \"TimeInfoResult\": null\n      }\n    ]\n  }\n}",
+        "title": "提交图像分析任务"
+      }
+    ],
+    "SubmitImageTaskPlus": [
+      {
+        "document": "提交一个图片链接作为输入的图像分析接口",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitImageTaskPlus\n&Functions.EnableFaceIdentify=true\n&Functions.EnableFaceDetect=true\n&Functions.EnableFaceExpression=true     \n&Functions.EnableGesture=true\n&Functions.EnableStudentBodyMovements=true\n&Functions.EnableLightJudge=true\n&FileType=picture_url\n&FileContent.0=http://xxx.jpg\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"eeadcc79-13b2-4e1e-a913-d3b8a1cdaf2b\",\n    \"JobId\": 0,\n    \"Progress\": 100,\n    \"ResultSet\": [\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": null,\n        \"FacePoseResult\": null,\n        \"FaceAttrResult\": null,\n        \"FaceExpressionResult\": null,\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": {\n          \"LightValue\": 209,\n          \"LightLevel\": \"\"\n        },\n        \"TimeInfoResult\": null\n      },\n      {\n        \"FaceIdentifyResult\": null,\n        \"FaceInfoResult\": {\n          \"Left\": 159,\n          \"Top\": 115,\n          \"Width\": 184,\n          \"Height\": 184,\n          \"FrameWidth\": 500,\n          \"FrameHeight\": 500,\n          \"FaceRatio\": 7.31\n        },\n        \"FacePoseResult\": {\n          \"Direction\": \"frontal\",\n          \"Yaw\": -1.6001276,\n          \"Pitch\": 4.0072374,\n          \"Roll\": 0.96360093\n        },\n        \"FaceAttrResult\": {\n          \"Sex\": \"male\",\n          \"Age\": 28\n        },\n        \"FaceExpressionResult\": {\n          \"Expression\": \"neutral\",\n          \"Confidence\": 99\n        },\n        \"HandTrackingResult\": null,\n        \"GestureResult\": null,\n        \"TeacherBodyMovementResult\": null,\n        \"StudentBodyMovementResult\": null,\n        \"LightResult\": null,\n        \"TimeInfoResult\": null\n      }\n    ]\n  }\n}",
+        "title": "提交高级图像分析任务"
+      }
+    ],
+    "SubmitOneByOneClassTask": [
+      {
+        "document": "提交在线1对1课堂任务",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitOneByOneClassTask\n&FileContent=https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_vedio.mp4\n&FileType=vod_url\n&Lang=0\n&LibrarySet.0=library_15603955264181591716\n&VocabLibNameList.0=testlib2\n&VoiceEncodeType=1\n&VoiceFileType=10\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"TaskId\": 2516205217,\n    \"ImageResults\": null,\n    \"RequestId\": \"82d23aac-ff81-4821-bd58-99d2caf6136f\"\n  }\n}",
+        "title": "提交在线1对1课堂任务"
+      }
+    ],
+    "SubmitOpenClassTask": [
+      {
+        "document": "提交线下小班（学生无课桌遮挡场景）课任务，选择视频资源文件类型进行评估。",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitOpenClassTask\n&FileContent=https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_vedio.mp4\n&FileType=vod_url\n&LibrarySet.0=library_15603955264181591716\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"TaskId\": 2516205217,\n    \"ImageResults\": null,\n    \"RequestId\": \"82d23aac-ff81-4821-bd58-99d2caf6136f\"\n  }\n}",
+        "title": "提交线下小班（学生无课桌遮挡场景）课任务"
+      }
+    ],
+    "SubmitPartialBodyClassTask": [
+      {
+        "document": "提交传统课堂授课任务",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitPartialBodyClassTask\n&FileContent=https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_vedio.mp4\n&FileType=vod_url\n&Lang=0\n&LibrarySet.0=library_15603955264181591716\n&VocabLibNameList.0=testlib2\n&VoiceEncodeType=1\n&VoiceFileType=10\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"TaskId\": 2516205217,\n    \"ImageResults\": null,\n    \"RequestId\": \"82d23aac-ff81-4821-bd58-99d2caf6136f\"\n  }\n}",
+        "title": "提交传统课堂授课任务"
+      }
+    ],
+    "SubmitTraditionalClassTask": [
+      {
+        "document": "提交线下传统面授大班课（含课桌）任务，选择视频资源文件类型进行评估。",
+        "input": "https://tci.tencentcloudapi.com/?Action=SubmitTraditionalClassTask\n&FileContent=https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_vedio.mp4\n&FileType=vod_url\n&LibrarySet.0=library_15603955264181591716\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"TaskId\": 2516205217,\n    \"ImageResults\": null,\n    \"RequestId\": \"82d23aac-ff81-4821-bd58-99d2caf6136f\"\n  }\n}",
+        "title": "提交线下传统面授大班课（含课桌）任务"
+      }
+    ],
+    "TransmitAudioStream": [
+      {
+        "document": "一个分片的流式音频分析",
+        "input": "https://tci.tencentcloudapi.com/?Action=TransmitAudioStream\n&Functions.EnableVadInfo=true\n&IsEnd=1\n&SeqId=1&SessionId=testforsession\n&UserVoiceData=SUQzBAAAAAAANFRDT04AAAAHAAADQmx1ZXMAVFNTRQAAAA8AAANMYXZmNTguMjMuMTAyAAAAAAAAAAAAAAD%2F81jAAAAAAAAAAAAASW5mbwAAAA8AAAASAAAITAAiIiIiIi8vLy8vLzw8PDw8SUlJSUlJVlZWVlZjY2NjY2NwcHBwcH19fX19fYqKioqKl5eXl5eXpKSkpKSksbGxsbG%2Bvr6%2Bvr7Ly8vLy9jY2NjY2OXl5eXl8vLy8vLy%2F%2F%2F%2F%2F%2F8AAAAATGF2YzU4LjQxAAAAAAAAAAAAAAAAJAOVAAAAAAAACEyULaIpAAAAAAAAAAAAAAD%2F8zjEABOylnQLRigAETO960QQJ6YQQPAYDTk8mTJ0YQIB9yBwCBwk5CEISd5zvIQjHDgoxzoQihwOEnOdyB8Pnf5CEb%2F%2FJ%2F%2Fkb%2F%2FQnIT%2F%2F%2FU4fOQPh84gcf%2F4fdgZFMFAgSI3tbm442AGGmn%2F8zjEEBkKUvpfi1AAfjskBZcKzUvSVbbkBJDYQQjiAjweEh5oMAAxlFw2k%2Bp54rlpkWD5QfurYURx1YQtGGn7mdM%2FVu3Rmq2QIhX7ZWx7%2F5Eex766IzR8OwyFiH5dn1HFKghCWjAD0l4f9zT%2F8zjEChdqDubXyzgA3lYDYbubfXyPI2D4dmug8D4iJZc9%2BYIwaBEHgPBor9R8YU890ucccaexjHjBqIc6aHHqb%2F%2F%2F%2F%2FsjrS1mImg2cCg1BlukfTFxC7PpC5FCF0fiWcCdCWNpdRAMYCcHqZf%2F8zjECxfpUu7%2BC9JQ7YQQxOR%2FiKEMUe%2F8q1hNE2EaKBQxc4SWEQlDQsCbSBBCTuqSolZZPPt2k1GqT2EbsZFLIkRIWmJpQqDAoCDv%2F%2FXtcHDDGBwHAIXU5FPmGNLVf%2BiOUgqkR5AiDr1Jh7X%2F8zjEChc4tvMWFhJoYfXUNMqB1gdU4pPwIZnrP%2F8mYkJKNHVmM3yXQoSVDEkDMWPMUFXJOsEoLFTr1VAYgA1fSthFzQ28abcksWuOkSyg6C3T2tzJkkKEEk6ov3B9BBMDoBg1EgT8ootC24j%2F8zjEDBb62tI6FgpoO5GE3EBgQmkw%2FnMdCMQQDBEPGNstEOdTnssPdbMz5GHyiIt%2F91KWkPHrVXra7LGO1GOdVOlWHOSHj7%2Fpt3%2F%2FbOrO7pd5%2BQ4xxEh5r%2BoRIDoFhAAZ3YAEH%2F%2FNbiyCRBn%2F8zjEDxWystLcwkSoLYJUnMaxF7LRRVWrMAgQElk6CbkRETWhQsuYrHuoyO9Jiy3naZB9Stfr%2F%2F%2F%2F6p2eh7osy0u5m6Svo1%2F%2F7%2Bj0qavNQdVA7UuiGxAMkt2ZuyUSEUFGaDj8M8WuGo1X4IL%2F8zjEFxMQpupcBowKRR5FI6kt9afbPm38SfPJrAKBHikFpXloKkIsWYM%2FrPf6h7cAAuOGA4tNVeydJCsVHlv%2F%2FedqLkssZVj%2F4yVQtUemsMYhKaZhU2gdEzWb7LfwLDzWJbhnMD46pRpWrnX%2F8zjEKRUKBrh8egSarpKOqT66Fa6S9DbaJ2Qxj%2F%2FZL0VSspQrWVAJ4sLg6Iv7dyyICEv%2F%2BmJBZVUufh4SdxCqFKEJQMJ%2BsEqaXtrbx4WzXlB%2F%2BXX%2FmHNikKupO1hAKmGRGFEaELvR15TSsYz%2F8zjEMxRCimwQeETdreatS1Zyq39ktUtf0cBxymbx%2F%2FO1uX63eKCeBMIFArlLCwIjqBWHSamMJzj5FFxgaNAeKxQqKX0Mn%2F7P2KGxYdzo1IbVIixgYLAyeUaBk5PJUZbson4URTW24h0%2FSgf%2F8zjEQQ%2FoRlwUS8wA%2FglgBwOUTVxujFPq2x72dRxP%2FX0L0t2%2F%2Fb9Le36McQdCK4U7PBlrQGCQ7koxmDjEKZUZWOcimEnIHM7OymihAJljbgm4zUpugWnetpkMhEO7Eb9FucQBM2PECMOt0CX%2F8zjEYBS6PmQVSxAARGA%2BfNEEC0UBchAQ935fc3LjCOC2JEQ0q%2Flw6VyDnDQwFAiEw6iBCb%2F5OGknSuXECJkIToYFAoAN%2FGd%2F5DCIDQIOolycL7idg2UDzwGmEoBFAhEOQELf%2FlMnx3lxjRb%2F8zjEbCb7zowBipAA98NlDbgbiFhIuRcdh9MuE%2BXv%2F%2FoLdO3vcuGZPloyNC8alQvlwumyRS%2F%2F%2F1f%2F%2FzU6B4d3%2B222ku2H%2Fw1qUtolGx5YxBokEwPjG02NhBZBMqZBhqRqmnCqFa1MJiNRAAj%2F8zjELxRwdxL%2FyxACaDh92VacCiWgbq3G71JGf%2BUIpjHUJCJmLNDJNzhAa0tjGk4AhiEN21AFmCjjKLLxjmPBALF5Egr2PkYAFBZqG4%2BCFGqGM9i7X%2F2Xhr%2B2xkcnpdFRR7I0aWhqZ2Q%2FwYD%2F8zjEPBSRwr78AYYwgZQkyJMu7X5XZXcQljwcK%2B%2F%2BSKuABOoCVhWb2EHuNarNrHOLkiSscbiJVXtQ5rEialjXoGiym5fnkCY%2BH5KSOUOr7atkZnV2WhRJGv59X81%2F4bTh%2FxqEFHcWL1qesrb%2F8zjESBXx%2BqpcAYY8VoLRMoNSwUHD%2F6nvVh1QVnUBvHPzELNOiKAIKRYeq%2FKwzFC1rcX%2F%2F%2BzMxQdGx8X8KsNw3xryKmqKyKitNsHQAw61VeVWSRU2v%2BGa59a1FQkHXxEJQaDhENCWR9TxKJb%2F8zjETxdh4nQ0CZCEDR6HKzqwaPYbqeWgrDTaxYeCA4Cwfy3%2FllqGTWX8jVrLZ%2BXZPvyyX%2FlkuZGstQyNQwUMGBhHFRUUFuoka%2F6hf2oHs%2FxYXZLCwr%2F%2BukxBTUUzLjEwMKqqqqqqqqqqqqr%2F8zjEUA8hVcGWCAYAqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqo%3D\n&VocabLibNameList.0=testlib2\n&VoiceEncodeType=1\n&VoiceFileType=3\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"205ca3bb-aa5d-4df8-97d1-06fa865f70d5\",\n    \"Texts\": [\n      {\n        \"TextItem\": {\n          \"Mbtm\": 0,\n          \"Metm\": 512,\n          \"Text\": \"Hey. \",\n          \"TextSize\": 5,\n          \"Confidence\": 0.038818073,\n          \"Tag\": 0,\n          \"Words\": [\n            {\n              \"Mbtm\": 70,\n              \"Metm\": 430,\n              \"Text\": \"hey\",\n              \"Wsize\": 3,\n              \"Confidence\": 0\n            }\n          ]\n        },\n        \"Speed\": 3.90625,\n        \"MaxVolume\": 0,\n        \"MinVolume\": 0,\n        \"AvgVolume\": 0\n      }\n    ],\n    \"VocabAnalysisDetailInfo\": null,\n    \"AsrStat\": {\n      \"TotalDuration\": 612,\n      \"SoundDuration\": 512,\n      \"MuteDuration\": 100,\n      \"VadNum\": 1,\n      \"WordNum\": 1,\n      \"AvgSpeed\": 1.953125,\n      \"MaxVolume\": 0,\n      \"MinVolume\": 0,\n      \"AvgVolume\": 0\n    },\n    \"VocabAnalysisStatInfo\": null\n  }\n}",
+        "title": "流式音频分析示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

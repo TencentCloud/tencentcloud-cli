@@ -1,0 +1,101 @@
+{
+  "actions": {
+    "CheckVcode": [
+      {
+        "document": "检测验证码",
+        "input": "https://ds.tencentcloudapi.com/?Action=CheckVcode\r\n&Module=VerifyCode\r\n&Operation=CheckVcode\r\n&AccountResId=dcu-c33uil4ap6\r\n&ContractResId=dcc-79dlei3yb6\r\n&VerifyCode=243545\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"92f683e1-45e4-47f0-bfa3-d1831b1c1342\"\r\n    }\r\n}",
+        "title": "检测验证码"
+      }
+    ],
+    "CreateContractByUpload": [
+      {
+        "document": "上传合同并新增",
+        "input": "https://ds.tencentcloudapi.com/?Action=CreateContractByUpload\r\n&Module=ContractMng\r\n&Operation=CreateContractByUpload\r\n&ContractFile=https://cloud.tencent.com/\r\n&ContractName=test\r\n&Remarks=test\r\n&Initiator=dcu-c33uil4ap6\r\n&SignInfos.0.AccountResId=dcu-c33uil4ap6\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1cf1946c-5fb1-4eaa-8fdf-49ba755fd798\",\r\n        \"TaskId\": 1\r\n    }\r\n}",
+        "title": "上传合同并新增"
+      }
+    ],
+    "CreateEnterpriseAccount": [
+      {
+        "document": "创建企业帐号",
+        "input": "https://ds.tencentcloudapi.com/?Action=CreateEnterpriseAccount\r\n&Module=AccountMng\r\n&Operation=CreateEnterpriseAccount\r\n&Name=test\r\n&IdentType=8\r\n&IdentNo=140926197802256717\r\n&MobilePhone=18187654321\r\n&TransactorName=test1\r\n&TransactorIdentType=0\r\n&TransactorIdentNo=140926197802256717\r\n&TransactorPhone=18287654321\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AccountResId\": \"dcu-cw3uil4app\",\r\n        \"RequestId\": \"0e72495a-2b48-4b5d-b425-38570fade1f8\"\r\n    }\r\n}",
+        "title": "创建企业帐号"
+      }
+    ],
+    "CreatePersonalAccount": [
+      {
+        "document": "新增个人帐号",
+        "input": "https://ds.tencentcloudapi.com/?Action=CreatePersonalAccount\r\n&Module=AccountMng\r\n&Operation=CreatePersonalAccount\r\n&Name=test\r\n&IdentType=0\r\n&IdentNo=140926197802256717\r\n&MobilePhone=18187654321\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AccountResId\": \"dcu-9mxcxe2mmt\",\r\n        \"RequestId\": \"ca67c21d-28c8-4d20-ba3e-b3f4bc1813b4\"\r\n    }\r\n}",
+        "title": "新增个人帐号"
+      }
+    ],
+    "CreateSeal": [
+      {
+        "document": "创建签章",
+        "input": "https://ds.tencentcloudapi.com/?Action=CreateSeal\r\n&Module=SealMng\r\n&Operation=CreateSeal\r\n&AccountResId=dcu-c33uil4apd\r\n&ImgUrl=https://cloud.tencent.com/\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c3de36ed-11a8-4aca-9355-d891d9da42ad\",\r\n        \"SealResId\": \"dcs-hk6wc1vtir\"\r\n    }\r\n}",
+        "title": "创建签章"
+      }
+    ],
+    "DeleteAccount": [
+      {
+        "document": "删除帐号",
+        "input": "https://ds.tencentcloudapi.com/?Action=DeleteAccount\r\n&Module=AccountMng\r\n&Operation=DeleteAccount\r\n&AccountList.0=dcu-9mxcxewm77\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DelFailedList\": [],\r\n        \"DelSuccessList\": [\r\n            \"dcu-9mxcxewm77\"\r\n        ],\r\n        \"RequestId\": \"341ec462-4d68-4403-8823-2a6582230f20\"\r\n    }\r\n}",
+        "title": "删除帐号"
+      }
+    ],
+    "DeleteSeal": [
+      {
+        "document": "删除签章",
+        "input": "https://ds.tencentcloudapi.com/?Action=DeleteSeal\r\n&Module=SealMng\r\n&Operation=DeleteSeal\r\n&AccountResId=dcu-c33udl4apd\r\n&SealResId=dcs-hr6tc1vtir\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8a01c0a9-d7e5-42b4-8147-c22b9a6e31f8\",\r\n        \"SealResId\": \"dcs-hr6tc1vtir\"\r\n    }\r\n}",
+        "title": "删除签章"
+      }
+    ],
+    "DescribeTaskStatus": [
+      {
+        "document": "获取任务状态",
+        "input": "https://ds.tencentcloudapi.com/?Action=DescribeTaskStatus\r\n&Module=CommonMng\r\n&Operation=DescribeTaskStatus\r\n&TaskId=255\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"13c00ef1-f3cb-4b1e-be8d-11a01b0d13fd\",\r\n        \"TaskResult\": \"{\\\"ContractResId\\\": \\\"dcc-480rzey2ge\\\"}\",\r\n        \"TaskType\": \"010\"\r\n    }\r\n}",
+        "title": "获取任务状态"
+      }
+    ],
+    "DownloadContract": [
+      {
+        "document": "下载合同",
+        "input": "https://ds.tencentcloudapi.com/?Action=DownloadContract\r\n&Module=ContractMng\r\n&Operation=DownloadContract\r\n&ContractResId=dcc-480rzey2ww\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"7896ed76-c159-4b71-9fc4-c445c9c113c4\",\r\n        \"TaskId\": 2\r\n    }\r\n}",
+        "title": "下载合同"
+      }
+    ],
+    "SendVcode": [
+      {
+        "document": "发送验证码",
+        "input": "https://ds.tencentcloudapi.com/?Action=SendVcode\r\n&Module=VerifyCode\r\n&Operation=SendVcode\r\n&ContractResId=dcc-79dlei3yb6\r\n&AccountResId=dcu-c33uil4ap6\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"7fb52b2f-edfc-432b-a51f-690a2bdfc4d4\"\r\n    }\r\n}",
+        "title": "发送验证码"
+      }
+    ],
+    "SignContractByCoordinate": [
+      {
+        "document": "按坐标签署合同",
+        "input": "https://ds.tencentcloudapi.com/?Action=SignContractByCoordinate\r\n&Module=ContractMng\r\n&Operation=SignContractByCoordinate\r\n&ContractResId=dcc-480rzey2gw\r\n&AccountResId=dcu-c33uil3apq\r\n&AuthorizationTime=20180531142255\r\n&Position=10.0.0.238&SealResId=dcs-c654e84rqw\r\n&SignLocations.0.SignOnPage=1\r\n&SignLocations.0.SignLocationLBX=50\r\n&SignLocations.0.SignLocationLBY=140\r\n&SignLocations.0.SignLocationRUX=110\r\n&SignLocations.0.SignLocationRUY=200\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c2dfb7d4-4d3a-4e3b-81eb-516bc06c29e6\"\r\n    }\r\n}",
+        "title": "按坐标签署合同"
+      }
+    ],
+    "SignContractByKeyword": [
+      {
+        "document": "按关键字签署合同",
+        "input": "https://ds.tencentcloudapi.com/?Action=SignContractByKeyword\r\n&Module=ContractMng\r\n&Operation=SignContractByKeyword\r\n&ContractResId=dcc-480rzey2gw\r\n&AccountResId=dcu-c33uil3apq\r\n&AuthorizationTime=20180531142255\r\n&Position=10.0.0.238\r\n&SealResId=dcs-c654e84rqw\r\n&SignKeyword.Keyword=(甲方)\r\n&SignKeyword.OffsetCoordX=0\r\n&SignKeyword.OffsetCoordY=20\r\n&SignKeyword.ImageHeight=150\r\n&SignKeyword.ImageWidth=150\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c2dfb7d4-4d3a-4e3b-81eb-516bc06c29e6\"\r\n    }\r\n}",
+        "title": "按关键字签署合同"
+      }
+    ]
+  },
+  "version": "1.0"
+}

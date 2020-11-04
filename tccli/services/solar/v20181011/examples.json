@@ -1,0 +1,125 @@
+{
+  "actions": {
+    "CopyActivityChannel": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=CopyActivityChannel\r\n&<公共请求参数>\r\n&ActivityId=act_abc123\r\n&ChannelFrom=ch_aaa\r\n&ChannelTo.0=ch_ccc\r\n&ChannelTo.1=ch_bbb",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"08653cdb-55cb-45d0-a70f-33c834e30381\"\r\n    }\r\n}",
+        "title": "CopyActivityChannel"
+      }
+    ],
+    "CreateProject": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=CreateProject\r\n&<公共请求参数>\r\n&ProjectBudget=1000\r\n&ProjectIntroduction=Demo\r\n&ProjectName=Demo\r\n&ProjectOrg=质量部\r\n&ProjectOrgId=652462622289039360",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"ProjectId\": \"testprj-b45zw7v5qk\",\r\n\t\t\"RequestId\": \"2cbf6e1c-10b7-40aa-9d4e-9328ed7def36\"\r\n\t}\r\n}",
+        "title": "CreateProject"
+      }
+    ],
+    "CreateSubProject": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=CreateSubProject\r\n&<公共请求参数>\r\n&ProjectId=prj-ipyzubygh7\r\n&SubProjectName=子项目3",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"b3600119-bb08-4c5a-8331-d46908d6da02\",\r\n\t\t\"SubProjectId\": \"subprj-8jkiiqwwtf\"\r\n\t}\r\n}",
+        "title": "CreateSubProject"
+      }
+    ],
+    "DeleteProject": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=DeleteProject\r\n&<公共请求参数>\r\n&ProjectId=prj-5ysjk29arh",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"a51276e5-a0cc-4ea9-ba87-c834ac207879\"\r\n  }\r\n}",
+        "title": "DeleteProject"
+      }
+    ],
+    "DescribeCustomer": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=DescribeCustomer\r\n&<公共请求参数>\r\n&UserId=659051925723025408",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"7483b380-5eeb-485b-bd3a-0b7ae62e4d55\",\r\n    \"AddressList\": null,\r\n    \"UserId\": \"659051925723025408\",\r\n    \"Avatar\": \"http://thirdwx.qlogo.cn/mmopen/vi_32/PiajxSqBRHtKic20343dJ7AWNRoQ/132\",\r\n    \"Birthday\": \"2010-10-10\",\r\n    \"City\": \"深圳\",\r\n    \"CreateTime\": 1577171824000,\r\n    \"Device\": \"9.0.2524.400\",\r\n    \"Industrys\": \"\",\r\n    \"LastActiveTime\": 1577675316573,\r\n    \"MarkFlag\": 0,\r\n    \"Model\": \"qq\",\r\n    \"OpenId\": \"o5Kw21t6M7TCFrT96ZQ_Qn2Pz4vQ\",\r\n    \"PayFeature\": \"\",\r\n    \"Phone\": \"\",\r\n    \"PhoneList\": \"\",\r\n    \"Province\": \"广东\",\r\n    \"RealName\": null,\r\n    \"RelChannelFlag\": null,\r\n    \"Remark\": null,\r\n    \"Sex\": 1,\r\n    \"SourceAudienceVo\": null,\r\n    \"SubWechats\": null,\r\n    \"UnionId\": \"odreBwax7AzElvM2R1QNTYxqs6kE\",\r\n    \"UpdateTime\": 1577675320000,\r\n    \"UserTypes\": null,\r\n    \"WxCity\": \"深圳\",\r\n    \"WxCountry\": \"中国\",\r\n    \"WxNickname\": \"槐\",\r\n    \"WxProvince\": \"广东\"\r\n  }\r\n}",
+        "title": "DescribeCustomer"
+      }
+    ],
+    "DescribeCustomers": [
+      {
+        "document": "拉取客户档案列表",
+        "input": "https://solar.tencentcloudapi.com/?Action=DescribeCustomers\r\n&<公共请求参数>\r\n&QueryType=0",
+        "output": "{\r\n  \"TotalCount\": 3,\r\n  \"UserList\": [\r\n    {\r\n      \"Activity\": null,\r\n      \"AudienceUserId\": \"645001009076244480\",\r\n      \"Avatar\": \"http://thirdwx.qlogo.cn/mmopen/vi_32/UWsHgrAWRTszfoIWUyMBPMEI6217o8IOAHaHT2aypH0fKhHL3UkjgiaDdFt0tFj6BqzQmsiadrNu0sDFgqCho4ibA/132\",\r\n      \"City\": \"深圳\",\r\n      \"LastActiveTime\": \"2020-01-02 21:01:23\",\r\n      \"MarkFlag\": \"1\",\r\n      \"MonthActive\": 132,\r\n      \"MonthRecommend\": 0,\r\n      \"Phone\": null,\r\n      \"Province\": \"广东\",\r\n      \"RealName\": null,\r\n      \"RelChannelFlag\": 1,\r\n      \"Sex\": 1,\r\n      \"Spread\": 0,\r\n      \"WeekActive\": 90,\r\n      \"WeekRecommend\": 0,\r\n      \"WxCity\": \"深圳\",\r\n      \"WxCountry\": \"中国\",\r\n      \"WxNickname\": \"爱吃肉的鱼\",\r\n      \"WxProvince\": \"广东\"\r\n    },\r\n    {\r\n      \"Activity\": null,\r\n      \"AudienceUserId\": \"645001013354434560\",\r\n      \"Avatar\": \"http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLaL0mCsCCictGKBaqU8ibHBbYR9iamDiaE2Xn3t9qMbicCE9H599bnZzcrUSgibic2l9ck2BmTwZJnYwY5Q/132\",\r\n      \"City\": \"北京\",\r\n      \"LastActiveTime\": \"2020-01-02 20:59:29\",\r\n      \"MarkFlag\": \"0\",\r\n      \"MonthActive\": 152,\r\n      \"MonthRecommend\": 0,\r\n      \"Phone\": null,\r\n      \"Province\": \"北京\",\r\n      \"RealName\": null,\r\n      \"RelChannelFlag\": 0,\r\n      \"Sex\": 2,\r\n      \"Spread\": 0,\r\n      \"WeekActive\": 117,\r\n      \"WeekRecommend\": 0,\r\n      \"WxCity\": \"昌平\",\r\n      \"WxCountry\": \"中国\",\r\n      \"WxNickname\": \"卷卷\",\r\n      \"WxProvince\": \"北京\"\r\n    },\r\n    {\r\n      \"Activity\": null,\r\n      \"AudienceUserId\": \"649204092001980416\",\r\n      \"Avatar\": \"http://thirdwx.qlogo.cn/mmopen/vi_32/ia9mqfl24ZtJz5iaMf2Eo6ANibzwrBAAPzW21BhVib9Ivpu1pC6lpMSTdicDCSz3JEwg6mibNegwN8qHy0s5KH4RrQiaw/132\",\r\n      \"City\": \"西安\",\r\n      \"LastActiveTime\": \"2020-01-02 20:12:45\",\r\n      \"MarkFlag\": \"0\",\r\n      \"MonthActive\": 18,\r\n      \"MonthRecommend\": 0,\r\n      \"Phone\": null,\r\n      \"Province\": \"陕西\",\r\n      \"RealName\": null,\r\n      \"RelChannelFlag\": 1,\r\n      \"Sex\": 1,\r\n      \"Spread\": 0,\r\n      \"WeekActive\": 5,\r\n      \"WeekRecommend\": 0,\r\n      \"WxCity\": \"西安\",\r\n      \"WxCountry\": \"中国\",\r\n      \"WxNickname\": \"\",\r\n      \"WxProvince\": \"陕西\"\r\n    }\r\n  ],\r\n  \"RequestId\": \"528cd582-5824-47c3-a9cf-c33fa07ff070\"\r\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeProject": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=DescribeProject\r\n&<公共请求参数>\r\n&ProjectId=testprj-fjypzt0ne0",
+        "output": "{\r\n  \"ProjectBudget\": 10,\r\n  \"ProjectId\": \"testprj-fjypzt0ne0\",\r\n  \"ProjectIntroduction\": \"小星星\",\r\n  \"ProjectName\": \"小星星\",\r\n  \"ProjectOrg\": \"开发测试中心\",\r\n  \"ProjectOrgId\": \"661594418817667072\",\r\n  \"ProjectStatus\": \"编辑中\",\r\n  \"RequestId\": \"eea5a0dd-677e-4770-b0f3-1fbb9a795307\"\r\n}",
+        "title": "DescribeProject"
+      }
+    ],
+    "DescribeProjectStock": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=DescribeProjectStock\r\n&<公共请求参数>\r\n&SubProjectId=subprj-7df8mxtutd",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"ProjectStocks\": [{\r\n\t\t\t\"PoolIdx\": 1,\r\n\t\t\t\"PoolName\": \"奖池1\",\r\n\t\t\t\"PrizeBat\": 1,\r\n\t\t\t\"PrizeId\": \"res-7p4ohdtip7\",\r\n\t\t\t\"PrizeName\": \"test\",\r\n\t\t\t\"RemainStock\": 1100,\r\n\t\t\t\"UsedStock\": 1\r\n\t\t}],\r\n\t\t\"RequestId\": \"ed458170-a473-4b81-a0e3-856d6b364c19\"\r\n\t}\r\n}",
+        "title": "DescribeProjectStock"
+      }
+    ],
+    "DescribeProjects": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=DescribeProjects\r\n&<公共请求参数>\r\n&PageNo=1\r\n&PageSize=2\r\n&Filters.Type=0",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"ProjectList\": [{\r\n\t\t\t\"CreateTime\": \"2020-01-16 15:32:34\",\r\n\t\t\t\"ProjectBudget\": 10,\r\n\t\t\t\"ProjectId\": \"testprj-fjypzt0ne0\",\r\n\t\t\t\"ProjectIntroduction\": \"小星星\",\r\n\t\t\t\"ProjectName\": \"小星星\",\r\n\t\t\t\"ProjectOrg\": \"开发测试中心\",\r\n\t\t\t\"ProjectOrgId\": \"661594418817667072\",\r\n\t\t\t\"ProjectStatus\": \"编辑中\"\r\n\t\t}, {\r\n\t\t\t\"CreateTime\": \"2020-01-16 15:25:47\",\r\n\t\t\t\"ProjectBudget\": 1111,\r\n\t\t\t\"ProjectId\": \"testprj-8fgl6bile6\",\r\n\t\t\t\"ProjectIntroduction\": \"111\",\r\n\t\t\t\"ProjectName\": \"lhjtest\",\r\n\t\t\t\"ProjectOrg\": \"研发部\",\r\n\t\t\t\"ProjectOrgId\": \"651831291142082560\",\r\n\t\t\t\"ProjectStatus\": \"运营中\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"b81ee8cc-9c08-41bd-95ee-d6f97d5899b8\",\r\n\t\t\"TotalCount\": 158\r\n\t}\r\n}",
+        "title": "DescribeProjects"
+      }
+    ],
+    "DescribeResourceTemplateHeaders": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=DescribeResourceTemplateHeaders\r\n&<公共请求参数>\r\n&WxAppId=wx1e62e94ac374e3fb",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"676cfa85-f039-4f1e-b396-85a1aefff805\",\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"TmplList\": [{\r\n\t\t\t\"CanEdit\": true,\r\n\t\t\t\"CreateTime\": \"2020-01-03 09:45:07\",\r\n\t\t\t\"TmplId\": \"662592265872609280\",\r\n\t\t\t\"TmplName\": \"test\",\r\n\t\t\t\"TmplTitle\": \"任务提醒\",\r\n\t\t\t\"TmplDesc\": \"\",\r\n\t\t\t\"TmplRemark\": \"\"\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "DescribeResourceTemplateHeaders"
+      }
+    ],
+    "DescribeSubProject": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=DescribeSubProject\r\n&<公共请求参数>\r\n&SubProjectId=subprj-7df8mxtutd",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"ActivityInfo\": {\r\n\t\t\t\"ActivityCover\": \"https://jrqy.cloud.tencent.com/templates/lottery/thanksgivingScratch/index.html\",\r\n\t\t\t\"ActivityDesc\": \"抽奖了\",\r\n\t\t\t\"ActivityId\": \"subprj-7df8mxtutd\",\r\n\t\t\t\"ActivityTitle\": \"抽奖了\",\r\n\t\t\t\"ActivityType\": \"lottery\",\r\n\t\t\t\"PersonalConfig\": \"{}\",\r\n\t\t\t\"TemplateId\": \"2209bedc-06d3-11ea-96d0-5254006f7702\"\r\n\t\t},\r\n\t\t\"HasStrategy\": 1,\r\n\t\t\"ProductInfo\": {\r\n\t\t\t\"ProductCover\": \"//p-cdn4.rabbitpre.com/58e42d57-c777-480a-9d60-f87cc00feb29\",\r\n\t\t\t\"ProductDesc\": \"高端奢华快闪高端大气邀请函年会年终盛典新品发布会年终答谢会\",\r\n\t\t\t\"ProductId\": \"af3c32b7-76f5-4f35-8149-d96ca2afed76\",\r\n\t\t\t\"ProductTitle\": \"快闪高端大气邀请函年会年度盛典招商加盟新品发布会年终答谢会\",\r\n\t\t\t\"ProductUrl\": \"https://h5.tensolar.net/m2/aUe1ZiS0p9\",\r\n\t\t\t\"TemplateId\": \"c6719e48-7031-4973-8e76-056424dc2b58\"\r\n\t\t},\r\n\t\t\"RequestId\": \"74d96a7a-84ab-4db9-822f-5fb632d7b62b\",\r\n\t\t\"ShareDesc\": \"高端奢华快闪高端大气邀请函年会年终盛典新品发布会年终答谢会\",\r\n\t\t\"ShareImg\": \"//p-cdn4.rabbitpre.com/58e42d57-c777-480a-9d60-f87cc00feb29\",\r\n\t\t\"ShareTitle\": \"快闪高端大气邀请函年会年度盛典招商加盟新品发布会年终答谢会\",\r\n\t\t\"SubProjectStatus\": \"运营中\",\r\n\t\t\"ShareAppId\": \"Wx123456789\",\r\n\t\t\"ShareWsId\": \"0000-000-00\"\r\n\t}\r\n}",
+        "title": "DescribeSubProject"
+      }
+    ],
+    "ModifyProject": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=ModifyProject\r\n&<公共请求参数>\r\n&ProjectBudget=10\r\n&ProjectId=testprj-fjypzt0ne0\r\n&ProjectIntroduction=小星星\r\n&ProjectName=小星星\r\n&ProjectOrg=开发测试中心\r\n&ProjectOrgId=661594418817667072",
+        "output": "{\r\n  \"RequestId\": \"d2b2e7af-c306-4181-aec9-607e2f64bd5f\"\r\n}",
+        "title": "ModifyProject"
+      }
+    ],
+    "OffLineProject": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=OffLineProject\r\n&<公共请求参数>\r\n&ProjectId=prj-5ysjk29arh",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"a51276e5-a0cc-4ea9-ba87-c834ac207879\"\r\n  }\r\n}",
+        "title": "OffLineProject"
+      }
+    ],
+    "ReplenishProjectStock": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=ReplenishProjectStock\r\n&<公共请求参数>\r\n&SubProjectId=testsubprj-9ikt6t4ybu\r\n&PrizeId=testres-86e7182dbo\r\n&PrizeNum=1\r\n&PoolIndex=1\r\n&PoolName=奖池1",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"409fc3ee-8a88-46ea-a449-748d8ed2207a\"\r\n    }\r\n}",
+        "title": "示例1"
+      }
+    ],
+    "SendWxTouchTask": [
+      {
+        "document": "",
+        "input": "https://solar.tencentcloudapi.com/?Action=SendWxTouchTask\r\n&<公共请求参数>\r\n&GroupId=123\r\n&DistinctFlag=false\r\n&IsSendNow=false\r\n&SendDate=0\r\n&TaskName=123\r\n&WxTouchType=123\r\n&Title=123\r\n&Content=123\r\n&NewsId=123\r\n&SmallProgramId=123\r\n&TemplateId=123\r\n&WxAppId=123",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3395dedb-bd23-4a2d-a87e-58f93b76876d\"\r\n  }\r\n}",
+        "title": "示例1"
+      }
+    ]
+  },
+  "version": "1.0"
+}

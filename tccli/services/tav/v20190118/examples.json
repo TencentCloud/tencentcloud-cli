@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "GetLocalEngine": [
+      {
+        "document": "",
+        "input": "https://tav.tencentcloudapi.com/?Action=GetLocalEngine\r\n&Key=d12790cf44382a3c15e4e8c63e41e74d\r\n&<公共请求参数>",
+        "output": "{\"Response\": {\"Status\": 200, \"Info\": \"scan success\", \"Data\": \"http://s.pc.qq.com/tav/zip/tavlocalengine.zip\", \"RequestId\": \"00f29851-2408-4818-b66c-3b2d2ba4196f\"}}",
+        "title": "TAV本地引擎"
+      }
+    ],
+    "GetScanResult": [
+      {
+        "document": "",
+        "input": "https://tav.tencentcloudapi.com/?Action=GetScanResult\r\n&Key=d12790cf44382a3c15e4e8c63e41e74d\r\n&Md5=0f600011f6abb02f6a117e1efb952a3c\r\n&<公共请求参数>",
+        "output": "{\"Response\": {\"Status\": 200, \"Info\": \"scan success\", \"Data\":\"\",\"RequestId\": \"00f29851-2408-4818-b66c-3b2d2ba4196f\"}}",
+        "title": "tav文件上传扫描结果查询"
+      }
+    ],
+    "ScanFile": [
+      {
+        "document": "",
+        "input": "https://tav.tencentcloudapi.com/?Action=ScanFile\r\n&Key=d12790cf44382a3c15e4e8c63e41e74d\r\n&Sample=http://10.195.2.97/download?md5=02e0f6af62f26284652df601b2613feb\r\n&Md5=0f600011f6abb02f6a117e1efb952a3c\r\n&<公共请求参数>",
+        "output": "{\"Response\": {\"Status\": 200, \"Info\": \"scan success\", \"Data\":\"\",\"RequestId\": \"00f29851-2408-4818-b66c-3b2d2ba4196f\"}}",
+        "title": "tav文件上传扫描"
+      }
+    ],
+    "ScanFileHash": [
+      {
+        "document": "",
+        "input": "https://tav.tencentcloudapi.com/?Action=ScanFileHash\r\n&Key=d12790cf44382a3c15e4e8c63e41e74d\r\n&Md5s=0f600011f6abb02f6a117e1efb952a3c\r\n&WithCategory=0\r\n&SensitiveLevel=10\r\n&<公共请求参数>",
+        "output": "{\"Response\": {\"Status\": 200, \"Info\": \"scan success\", \"Data\": \"md5:0f600011f6abb02f6a117e1efb952a3c,return_state:1,virus_state:2,virus_name:Win32.Trojan.Agent.tkxh|\", \"RequestId\": \"00f29851-2408-4818-b66c-3b2d2ba4196f\"}}",
+        "title": "TAV公有云查"
+      }
+    ]
+  },
+  "version": "1.0"
+}

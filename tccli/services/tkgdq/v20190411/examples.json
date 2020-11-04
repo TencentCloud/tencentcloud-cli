@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "DescribeEntity": [
+      {
+        "document": "给定实体的名称或id，查询实体的所有属性和属性值。常用于个性化推荐、搜索，智能问答等业务场景。",
+        "input": "https://tkgdq.tencentcloudapi.com/?Action=DescribeEntity\n&EntityName=腾讯云\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"Content\": \"{\"Foundin\":[{\"Name\":\"http://baike.baidu.com/item/%E8%85%BE%E8%AE%AF%E4%BA%91\"},{\"Name\":\"http://baike.baidu.com/item/%E8%85%BE%E8%AE%AF%E4%BA%91/9905046\"},{\"Name\":\"http://baike.baidu.com/view/10880522.htm\"}],\"Id\":[{\"Name\":\"205565918609303992\"}],\"ImageDigest\":[{\"Name\":\"1fbf6a63b562ce566635b09342ecd91a\",\"Order\":1000}],\"Name\":[{\"Name\":\"腾讯云\"}],\"Popular\":[{\"Name\":523}],\"RichName\":[{\"Name\":\"腾讯云\"}],\"Type\":[{\"Name\":\"科技产品类_产品 (174)\"}],\"Types\":[{\"Name\":174}],\"Uuid\":[{\"Name\":\"87bc7630-9ed9-4bf0-a3d6-363eeeac4e21\"}],\"中文名\":[{\"Name\":\"腾讯云\",\"Order\":0}],\"使用领域\":[{\"Name\":\"社交\",\"Order\":0},{\"Name\":\"游戏和其他领域\",\"Order\":1}],\"原始名称\":[{\"Name\":\"腾讯云\",\"Order\":1}],\"名称\":[{\"Name\":\"腾讯云\",\"Order\":0}],\"外文名\":[{\"Name\":\"qcloud\",\"Order\":0}],\"应用\":[{\"Name\":\"云空间\",\"Order\":0}],\"相关实体\":[{\"Name\":\"云服务器\",\"Order\":1},{\"Id\":\"6983952906450524110\",\"Name\":\"行业解决方案\",\"Order\":1,\"Popular\":380},{\"Name\":\"阿里云\",\"Order\":1},{\"Id\":\"325666091772717664\",\"Name\":\"阿里云\",\"Order\":1,\"Popular\":615},{\"Name\":\"云服务\",\"Order\":1},{\"Id\":\"9062208975046697975\",\"Name\":\"云服务器\",\"Order\":1,\"Popular\":548},{\"Name\":\"行业解决方案\",\"Order\":1},{\"Id\":\"1146499194548693386\",\"Name\":\"云服务\",\"Order\":1,\"Popular\":593}],\"简介\":[{\"Name\":\"腾讯云有着深厚的基础架构,并且有着多年对海量互联网服务的经验,不管是社交、游戏还是其他领域,都有多年的成熟产品来提供产品服务。腾讯在云端完成重要部署,为开发者及企业提供云服务、云数据、云运营等整体一站式服务方案。|@|具体包括云服务器、云存储、云数据库和弹性web引擎等基础云服务；腾讯云分析(mta)、腾讯云推送(信鸽)等腾讯整体大数据能力；以及 qq互联、qq空间、微云、微社区等云端链接社交体系。这些正是腾讯云可以提供给这个行业的差异化优势,造就了可支持各种互联网使用场景的高品质的腾讯云技术平台。\",\"Order\":0}],\"类别\":[{\"Name\":\"互联网\",\"Order\":0}],\"精选上位词\":[{\"Name\":\"产品\",\"Order\":1},{\"Name\":\"成熟产品来提供产品服务\",\"Order\":1},{\"Name\":\"互联网\",\"Order\":1}],\"精选别名\":[{\"Name\":\"腾讯云\"}],\"英文名\":[{\"Name\":\"qcloud\",\"Order\":0}]}\",\n    \"RequestId\": \"fe0b016c-adc3-48ca-a855-3c3e3e81f664\"\n  }\n}",
+        "title": "实体信息查询"
+      }
+    ],
+    "DescribeRelation": [
+      {
+        "document": "给定两个实体的名称，查询两个实体的边关系。常用于个性化推荐、搜索，智能问答等业务场景。",
+        "input": "https://tkgdq.tencentcloudapi.com/?Action=DescribeRelation\n&LeftEntityName=广东省\n&RightEntityName=深圳市\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"Content\": [\n      {\n        \"Object\": [\n          {\n            \"Id\": [\n              \"7650581563784668161\"\n            ],\n            \"Name\": [\n              \"深圳\"\n            ],\n            \"Popular\": [\n              900\n            ]\n          }\n        ],\n        \"Relation\": \"下辖地区\",\n        \"Subject\": [\n          {\n            \"Id\": [\n              \"4155123354574173272\"\n            ],\n            \"Name\": [\n              \"广东\"\n            ],\n            \"Popular\": [\n              902\n            ]\n          }\n        ]\n      }\n    ],\n    \"RequestId\": \"a56c90ba-167e-4ff0-9170-e44d6894e192\"\n  }\n}",
+        "title": "实体关系查询"
+      }
+    ],
+    "DescribeTriple": [
+      {
+        "document": "通过查询的嵌套，实现知识图谱中实体N度跳转查询。",
+        "input": "https://tkgdq.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"property\": [\"所属洲\"], \"subject\": {\"property\": [\"所属国家\"], \"subject\": {\"property\": [\"首都\"], \"subject\": {\"name\": \"中国\"}}}}\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"Content\": [\n      {\n        \"Id\": \"\",\n        \"Name\": \"亚洲\",\n        \"Popular\": 0,\n        \"Order\": 0\n      }\n    ],\n    \"RequestId\": \"5931f8ff-204d-4001-9952-ee6618eeabe1\"\n  }\n}",
+        "title": "嵌套查询"
+      },
+      {
+        "document": "对查询结果进行排序。",
+        "input": "https://tkgdq.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"order\": {\"direction\": \"decr\", \"property\": \"上映时间\"}, \"property\": [\"电影\"], \"subject\": {\"name\": \"梅兰芳\"}, \"type\": [\"视频类_影视明星\"]}\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"Content\": [\n      {\n        \"Id\": \"6385682411239590016\",\n        \"Name\": \"贵妃醉酒\",\n        \"Popular\": 658,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"97672352249307577\",\n        \"Name\": \"黛玉葬花\",\n        \"Popular\": 329,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"3872879001691542503\",\n        \"Name\": \"游园惊梦\",\n        \"Popular\": 513,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"6039452215267501920\",\n        \"Name\": \"洛神\",\n        \"Popular\": 445,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"874155246214489324\",\n        \"Name\": \"生死恨\",\n        \"Popular\": 619,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"1697700977748569723\",\n        \"Name\": \"红线盗盒\",\n        \"Popular\": 553,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"1764444282223233977\",\n        \"Name\": \"谢尔盖.爱森斯坦\",\n        \"Popular\": 131,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"18020014071881122456\",\n        \"Name\": \"木兰从军\",\n        \"Popular\": 323,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"3084383882260523320\",\n        \"Name\": \"天女散花\",\n        \"Popular\": 323,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"4548611187049221674\",\n        \"Name\": \"虞姬舞剑\",\n        \"Popular\": 200,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"4758047787955938561\",\n        \"Name\": \"上元夫人\",\n        \"Popular\": 200,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"2113278850746938975\",\n        \"Name\": \"春香闹学\",\n        \"Popular\": 240,\n        \"Order\": 0\n      }\n    ],\n    \"RequestId\": \"ba593da1-eccd-42b5-acd9-e95ef6d37804\"\n  }\n}",
+        "title": "排序查询"
+      },
+      {
+        "document": "简单PO查询表示已知宾语和谓语，查询主语，每一个PO查询都是一个可独立执行的查询。常用于推荐、搜索等业务场景。",
+        "input": "https://tkgdq.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"type\": [\"人物类_人物\"], \"condition\": {\"and\": [{\"property\": [\"代表作品\"], \"equal\": \"文心雕龙\"}]}}\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"Content\": [\n      {\n        \"Id\": \"2043040489539444929\",\n        \"Name\": \"刘勰\",\n        \"Popular\": 719,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"9413806637648188367\",\n        \"Name\": \"丹徒人\",\n        \"Popular\": 418,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"3189922825914104695\",\n        \"Name\": \"戚德良\",\n        \"Popular\": 144,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"1277357571304718209\",\n        \"Name\": \"刘邦景\",\n        \"Popular\": 125,\n        \"Order\": 0\n      }\n    ],\n    \"RequestId\": \"e39d2f69-1c74-41e4-bd5c-994899fdf781\"\n  }\n}",
+        "title": "简单PO查询"
+      },
+      {
+        "document": "简单SP查询表示已知主语和谓语查询宾语，每一个SP查询都是一个可独立执行的查询，TQL支持SP查询的嵌套查询，即主语可以是一个嵌套的子查询。",
+        "input": "https://tkgdq.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"property\": [\"妻子\"], \"subject\": {\"name\": \"诸葛亮\"}}\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"Content\": [\n      {\n        \"Id\": \"1427806415100612517\",\n        \"Name\": \"黄月英\",\n        \"Popular\": 644,\n        \"Order\": 1000\n      }\n    ],\n    \"RequestId\": \"a7a92303-bb64-4904-b957-4c344de41725\"\n  }\n}",
+        "title": "简单SP查询"
+      },
+      {
+        "document": "对多个子查询的查询结果求交或求并操作。",
+        "input": "https://tkgdq.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"union\": [{\"property\": [\"代表作品\"], \"subject\": {\"name\": \"李白\"}}, {\"property\": [\"代表作品\"], \"subject\": {\"name\": \"杜甫\"}}]}\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"Content\": [\n      {\n        \"Id\": \"2040123437182277220\",\n        \"Name\": \"蜀道难\",\n        \"Popular\": 744,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"487527294230960076\",\n        \"Name\": \"茅屋为秋风所破歌\",\n        \"Popular\": 734,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"1455284150188265913\",\n        \"Name\": \"梦游天姥吟留别\",\n        \"Popular\": 703,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"930802421448490072\",\n        \"Name\": \"望岳\",\n        \"Popular\": 687,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"591095700822340523\",\n        \"Name\": \"将进酒\",\n        \"Popular\": 676,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"3559237438616619919\",\n        \"Name\": \"登高\",\n        \"Popular\": 667,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"1331369627105961920\",\n        \"Name\": \"春望\",\n        \"Popular\": 652,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"2431867642048154231\",\n        \"Name\": \"静夜思\",\n        \"Popular\": 624,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"11373670987754702313\",\n        \"Name\": \"三别\",\n        \"Popular\": 608,\n        \"Order\": 0\n      },\n      {\n        \"Id\": \"1731436860982500306\",\n        \"Name\": \"三吏\",\n        \"Popular\": 554,\n        \"Order\": 0\n      }\n    ],\n    \"RequestId\": \"91642c1b-017c-4ece-b4f4-e22e694f16a5\"\n  }\n}",
+        "title": "集合操作"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,277 @@
+{
+  "actions": {
+    "ActivateSubscribe": [
+      {
+        "document": "配置数据订阅",
+        "input": "https://dts.tencentcloudapi.com/?Action=ActivateSubscribe\n&SubscribeId=subs-ieuwi83j2e\n&InstanceId=cdb-9dijwkkw2\n&SubscribeObjectType=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"AsyncRequestId\":\"cafebabe-254f-11ea-8995-e92c139e6978\",\r\n        \"RequestId\":\"9iu7ueht-c38f-11ea-84e5-d5a93c1b919b\"\r\n    }\r\n}",
+        "title": "配置数据订阅"
+      }
+    ],
+    "CompleteMigrateJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=CompleteMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5268ea15-6636-44d1-89f9-e989d1c82e7d\"\r\n    }\r\n}",
+        "title": "完成数据迁移任务"
+      }
+    ],
+    "CreateMigrateCheckJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateCheckJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"46b45da1-3e8e-4ef2-8de8-b1bffa027385\"\r\n    }\r\n}",
+        "title": "创建校验迁移任务"
+      }
+    ],
+    "CreateMigrateJob": [
+      {
+        "document": "将用户的mysql公网实例数据, 采用全量方式迁移到腾讯云上海地域的cdb-e78e0nnv实例上. 其中源实例的接入地域为广州. 数据一致性检查做全量检测.",
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateJob\r\n&JobName=usertest                               // DTS任务名称\r\n&SrcDatabaseType=mysql                          // 源实例是mysql\r\n&SrcAccessType=extranet                         // 公网迁移\r\n&DstDatabaseType=mysql                          // 目标实例mysql\r\n&DstAccessType=cdb                              // 目标实例是腾讯云mysql\r\n&MigrateOption.RunMode=1                        // 立即执行\r\n&MigrateOption.MigrateType=2  \t                // 全量\r\n&MigrateOption.MigrateObject=1  \t            // 整实例迁移\r\n&MigrateOption.ConsistencyType=2    \t\t    // 做全量数据一致性检测\r\n&MigrateOption.IsOverrideRoot=0            \t\t// 不覆盖目标库root\r\n&SrcInfo.Ip=14.17.22.36                         // 源实例公网IP\r\n&SrcInfo.Port=10301                             // 源实例公网Port\r\n&SrcInfo.User=root                              // 源实例用户名\r\n&SrcInfo.Supplier=others                        // 非阿里迁移\r\n&SrcInfo.Password=123456                        // 源实例密码\r\n&SrcInfo.Region=ap-guangzhou             \t    // 源实例地域广州\r\n&DstInfo.InstanceId=cdb-e78e0nnv            \t//  目标实例ID\r\n&DstInfo.Region=ap-shanghai                     // 目标地域上海\r\n&DstInfo.ReadOnly=1                             // 目标实例只读\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"dts-1kl0iy0v\",\r\n        \"RequestId\": \"2201c42a-714f-4faa-915b-a51cc09f5cec\"\r\n    }\r\n}",
+        "title": "创建公网数据迁移任务"
+      },
+      {
+        "document": "将用户通过专线接入的mysql实例,  全量+增量迁移迁移到腾讯云上海地域的cdb-d0dqi8nv实例上. 其中源实例的接入地域为广州. 做数据一致性抽样检查.",
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateJob\r\n&JobName=usertest                                    // DTS任务名称\r\n&SrcDatabaseType=mysql                          \t // 源实例是mysql\r\n&SrcAccessType=dcg                                   // 公网迁移\r\n&DstDatabaseType=mysql                 \t\t         // 目标实例mysql\r\n&DstAccessType=cdb                                   // 目标实例是腾讯云mysql\r\n&MigrateOption.RunMode=1              \t\t         // 立即执行\r\n&MigrateOption.MigrateType=3         \t\t         // 全量+增量迁移\r\n&MigrateOption.MigrateObject=1         \t\t\t     // 整实例迁移\r\n&MigrateOption.ConsistencyType=3       \t\t\t\t // 抽样检测\r\n&MigrateOption.ConsistencyParams.SelectRowsPerTable=10    // 随机抽取20% 的表，每张表随机抽取10%的记录进行数据内容校验\r\n&MigrateOption.ConsistencyParams.TablesSelectAll=20\r\n&MigrateOption.ConsistencyParams.TablesSelectCount=30     // 随机抽取30% 的表进行记录条数校验，即Select count(*)\r\n&MigrateOption.IsOverrideRoot=0             \t\t// 不覆盖目标库root\r\n&SrcInfo.UniqDcgId=dcg-cyrjcc09              \t\t// 专线网关ID\r\n&SrcInfo.VpcId=vpc-72jblfaa                       \t// 私有网络ID\r\n&SrcInfo.SubnetId=subnet-7raec42a           \t\t// 子网ID\r\n&SrcInfo.Ip=192.168.120.136                         // 源实例IP\r\n&SrcInfo.Port=3307                                  // 源实例Port\r\n&SrcInfo.User=root                                  // 源实例用户名\r\n&SrcInfo.Supplier=others                            // 非阿里迁移\r\n&SrcInfo.Password=123456                            // 源实例密码\r\n&SrcInfo.Region=ap-guangzhou                  \t\t// 源实例地域广州\r\n&DstInfo.InstanceId=cdb-d0dqi8nv       \t\t\t    // 目标实例ID\r\n&DstInfo.Region=ap-shanghai                    \t\t// 目标地域上海\r\n&DstInfo.ReadOnly=1                                 // 目标实例只读\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"dts-o3s1vxsp\",\r\n        \"RequestId\": \"915bc42a-714f-4faa-915b-a51cc09f5714\"\r\n    }\r\n}",
+        "title": "创建专线数据迁移任务"
+      },
+      {
+        "document": "从腾讯云mysql实例结构迁移到腾讯云另一个mysql实例，选择部分库表做，不做数据一致性检查。",
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateJob\r\n&JobName=usertest                                    // DTS任务名称\r\n&SrcDatabaseType=mysql                           \t // 源实例是mysql\r\n&SrcAccessType=cdb                                   // 云数据库迁移\r\n&DstDatabaseType=mysql                               // 目标实例mysql\r\n&DstAccessType=cdb                                   // 目标实例是腾讯云mysql\r\n&MigrateOption.RunMode=1                  \t\t\t // 立即执行\r\n&MigrateOption.MigrateType=1                 \t\t // 结构迁移\r\n&MigrateOption.MigrateObject=2              \t\t // 指定库表迁移\r\n&DatabaseInfo=[{\"Database\":\"test\",\"Table\":[\"user\",\"log\"]}]    // 需要迁移的库表\r\n&MigrateOption.ConsistencyType=5          \t\t\t // 不检测\r\n&SrcInfo.InstanceId=cdb-powiqx8q            \t\t // 源实例ID\r\n&SrcInfo.User=root                                   // 源实例用户名\r\n&SrcInfo.Supplier=others                             // 非阿里迁移\r\n&SrcInfo.Password=123456                          \t // 源实例密码\r\n&SrcInfo.Region=ap-guangzhou                  \t\t // 源实例地域广州\r\n&DstInfo.InstanceId=cdb-d0dqi8nv             \t\t // 目标实例ID\r\n&DstInfo.Region=ap-shanghai                     \t // 目标地域上海\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"dts-46i7easd\",\r\n        \"RequestId\": \"bc94c57b-9d69-11e9-84cb-256e968056b0\"\r\n    }\r\n}",
+        "title": "创建云数据库迁移任务"
+      },
+      {
+        "document": "通过公网，迁移RDS5.6实例，全量+增量迁移。",
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateJob\r\n&JobName=usertest                                    // DTS任务名称\r\n&SrcDatabaseType=mysql                           \t // 源实例是mysql\r\n&SrcAccessType=extranet                              // 公网迁移\r\n&DstDatabaseType=mysql                               // 目标实例mysql\r\n&DstAccessType=cdb                                   // 目标实例是腾讯云mysql\r\n&MigrateOption.RunMode=1                  \t\t\t // 立即执行\r\n&MigrateOption.MigrateType=3                 \t\t // 全量+增量迁移\r\n&MigrateOption.MigrateObject=1              \t\t // 整个实例\r\n&MigrateOption.ConsistencyType=5          \t\t\t // 不检测\r\n&SrcInfo.AccessKey=cdb-powiqx8q            \t\t\t // 阿里云AccessKey\r\n&SrcInfo.RdsInstanceId=rm-uf546i98x6ngqjnjx\t\t \t // 阿里云RDS实例ID\r\n&SrcInfo.Ip=106.13.216.14\r\n&SrcInfo.Port=3306\r\n&SrcInfo.User=root                                   // 源实例用户名\r\n&SrcInfo.Supplier=aliyun                             // 阿里迁移\r\n&SrcInfo.Password=123456                          \t // 源实例密码\r\n&SrcInfo.Region=ap-guangzhou                  \t\t // 源实例地域广州\r\n&DstInfo.InstanceId=cdb-d0dqi8nv             \t\t // 目标实例ID\r\n&DstInfo.Region=ap-shanghai                     \t // 目标地域上海\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"dts-p01oy6qp\",\r\n        \"RequestId\": \"2fcd891c-32f4-bf82-a8c0-16c99d75e175\"\r\n    }\r\n}",
+        "title": "创建RDS公网迁移任务"
+      }
+    ],
+    "CreateSubscribe": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateSubscribe\r\n&Product=mysql\r\n&PayType=1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"SubscribeIds\":[\r\n        \"subs-ieuwi83j2e\"\r\n    ],\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n  }\r\n}",
+        "title": "创建数据订阅实例"
+      }
+    ],
+    "CreateSyncCheckJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateSyncCheckJob\r\n&JobId=sync-blj8wnt1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"46b45da1-3e8e-4ef2-8de8-b1bffa027385\"\r\n    }\r\n}",
+        "title": "发起灾备同步任务校验"
+      }
+    ],
+    "CreateSyncJob": [
+      {
+        "document": "用户为主实例购买了灾备实例后，首先需要创建灾备同步任务，然后才能开始灾备同步的后续流程。",
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateSyncJob\r\n&JobName=testname\r\n&SrcDatabaseType=mysql\r\n&SrcAccessType=cdb\r\n&DstDatabaseType=mysql\r\n&DstAccessType=cdb\r\n&SyncOption.SyncObject=1\r\n&SrcInfo.Region=ap-shanghai\r\n&SrcInfo.InstanceId=cdb-e28hhsjt\r\n&DstInfo.Region=ap-shanghai\r\n&DstInfo.InstanceId=cdb-mdgezf4d\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"sync-blj8wnt1\",\r\n        \"RequestId\": \"f26f7628-7dad-457d-993e-2f03f0ff518d\"\r\n    }\r\n}",
+        "title": "创建灾备同步任务"
+      }
+    ],
+    "DeleteMigrateJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DeleteMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e15f9b4c-9841-40d2-a28b-dea284a17315\"\r\n    }\r\n}",
+        "title": "删除数据迁移任务"
+      }
+    ],
+    "DeleteSyncJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DeleteSyncJob\r\n&JobId=sync-1r4qpcb1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e15f9b4c-9841-40d2-a28b-dea284a17315\"\r\n    }\r\n}",
+        "title": "删除同步任务"
+      }
+    ],
+    "DescribeAsyncRequestInfo": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeAsyncRequestInfo\r\n&AsyncRequestId=cafebabe-254f-11ea-8995-e92c139e6918\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"Status\":\"success\",\r\n        \"Info\":\"ok\"\r\n    }\r\n}",
+        "title": "查询任务执行结果"
+      }
+    ],
+    "DescribeMigrateCheckJob": [
+      {
+        "document": "校验失败",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateCheckJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"finished\",\r\n        \"ErrorCode\": -1,\r\n        \"ErrorMessage\": \"选择的库表不存在，请重新选择[存在输入参数table在源实例没有找到]\",\r\n        \"Progress\": \"100\",\r\n        \"CheckFlag\": 0,\r\n        \"RequestId\": \"67b4cfcf-6957-48ae-b7ef-ba33209895e3\"\r\n    }\r\n}",
+        "title": "获取迁移校验结果-2"
+      },
+      {
+        "document": "校验成功",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateCheckJob\r\n&JobId=dts-dau5czmd\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"finished\",\r\n        \"ErrorCode\": 0,\r\n        \"ErrorMessage\": \"ok\",\r\n        \"Progress\": \"100\",\r\n        \"CheckFlag\": 1,\r\n        \"RequestId\": \"336448b0-2a45-4be4-8356-c245eab5784f\"\r\n    }\r\n}",
+        "title": "获取迁移校验结果"
+      }
+    ],
+    "DescribeMigrateJobs": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateJobs\r\n&Order=CreateTime\r\n&OrderSeq=DESC\r\n&Offset=0\r\n&Limit=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"JobList\": [\r\n            {\r\n                \"JobId\": \"dts-1kl0iy0v\",\r\n                \"JobName\": \"userdts\",\r\n                \"MigrateOption\": {\r\n                    \"RunMode\": 1,\r\n                    \"ExpectTime\": \"0000-00-00 00:00:00\",\r\n                    \"MigrateType\": 2,\r\n                    \"MigrateObject\": 2,\r\n                    \"ConsistencyType\": 5,\r\n                    \"IsOverrideRoot\": 0,\r\n                    \"ExternParams\": \"[]\",\r\n                    \"ConsistencyParams\": {\r\n                        \"SelectRowsPerTable\": 0,\r\n                        \"TablesSelectAll\": 0,\r\n                        \"TablesSelectCount\": 0\r\n                    }\r\n                },\r\n                \"SrcAccessType\": \"extranet\",\r\n                \"SrcDatabaseType\": \"mysql\",\r\n                \"SrcInfo\": {\r\n                    \"AccessKey\": \"\",\r\n                    \"Ip\": \"9.18.84.24\",\r\n                    \"Port\": 10304,\r\n                    \"User\": \"root\",\r\n                    \"Password\": \"\",\r\n                    \"RdsInstanceId\": \"\",\r\n                    \"CvmInstanceId\": \"\",\r\n                    \"UniqDcgId\": \"\",\r\n                    \"SubnetId\": \"\",\r\n                    \"UniqVpnGwId\": \"\",\r\n                    \"InstanceId\": \"\",\r\n                    \"Region\": \"ap-guangzhou\",\r\n                    \"VpcId\": \"\"\r\n                },\r\n                \"DstAccessType\": \"cdb\",\r\n                \"DstDatabaseType\": \"mysql\",\r\n                \"DstInfo\": {\r\n                    \"InstanceId\": \"cdb-l78e0nbv\",\r\n                    \"Ip\": \"\",\r\n                    \"Port\": 0,\r\n                    \"Region\": \"ap-shanghai\",\r\n                    \"ReadOnly\": 0\r\n                },\r\n                \"Detail\": {\r\n                    \"StepAll\": 0,\r\n                    \"StepNow\": 0,\r\n                    \"Progress\": \"0\",\r\n                    \"CurrentStepProgress\": \"0\",\r\n                    \"MasterSlaveDistance\": 0,\r\n                    \"SecondsBehindMaster\": 0,\r\n                    \"StepInfo\": []\r\n                },\r\n                \"Status\": 1,\r\n                \"DatabaseInfo\": [],\r\n                \"CreateTime\": \"2018-05-24 15:06:03\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"EndTime\": \"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"JobId\": \"dts-dau5czmd\",\r\n                \"JobName\": \"apitest\",\r\n                \"MigrateOption\": {\r\n                    \"RunMode\": 1,\r\n                    \"ExpectTime\": \"\",\r\n                    \"MigrateType\": 2,\r\n                    \"MigrateObject\": 2,\r\n                    \"ConsistencyType\": 5,\r\n                    \"IsOverrideRoot\": 0,\r\n                    \"ExternParams\": \"[]\",\r\n                    \"ConsistencyParams\": {\r\n                        \"SelectRowsPerTable\": 0,\r\n                        \"TablesSelectAll\": 0,\r\n                        \"TablesSelectCount\": 0\r\n                    }\r\n                },\r\n                \"SrcAccessType\": \"extranet\",\r\n                \"SrcDatabaseType\": \"mysql\",\r\n                \"SrcInfo\": {\r\n                    \"AccessKey\": \"\",\r\n                    \"Ip\": \"9.18.81.3\",\r\n                    \"Port\": 11401,\r\n                    \"User\": \"root\",\r\n                    \"Password\": \"\",\r\n                    \"RdsInstanceId\": \"\",\r\n                    \"CvmInstanceId\": \"\",\r\n                    \"UniqDcgId\": \"\",\r\n                    \"SubnetId\": \"\",\r\n                    \"UniqVpnGwId\": \"\",\r\n                    \"InstanceId\": \"\",\r\n                    \"Region\": \"ap-guangzhou\",\r\n                    \"VpcId\": \"\"\r\n                },\r\n                \"DstAccessType\": \"cdb\",\r\n                \"DstDatabaseType\": \"mysql\",\r\n                \"DstInfo\": {\r\n                    \"InstanceId\": \"cdb-m78e0nnv\",\r\n                    \"Ip\": \"\",\r\n                    \"Port\": 0,\r\n                    \"Region\": \"ap-shanghai\",\r\n                    \"ReadOnly\": 0\r\n                },\r\n                \"Detail\": {\r\n                    \"StepAll\": 0,\r\n                    \"StepNow\": 0,\r\n                    \"Progress\": \"0\",\r\n                    \"CurrentStepProgress\": \"\",\r\n                    \"MasterSlaveDistance\": 0,\r\n                    \"SecondsBehindMaster\": 0,\r\n                    \"StepInfo\": []\r\n                },\r\n                \"Status\": 5,\r\n                \"DatabaseInfo\": [],\r\n                \"CreateTime\": \"2018-05-23 11:49:44\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"EndTime\": \"0000-00-00 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"c032aab5-b56a-428d-9cf7-e5f324ee408b\"\r\n    }\r\n}",
+        "title": "查询数据迁移任务"
+      }
+    ],
+    "DescribeRegionConf": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeRegionConf\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Items\": [\r\n            {\r\n                \"RegionName\": \"广州\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"Area\": \"华南地区\",\r\n                \"IsDefaultRegion\": 1,\r\n                \"Status\": 1\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询可售卖订阅的地域"
+      }
+    ],
+    "DescribeSubscribeConf": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSubscribeConf\r\n&SubscribeId=subs-ieuwi83j2e\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ChannelId\": \"dts-channel-C9rS58f2rFx11ZEZ\",\r\n        \"ConsumeStartTime\": \"2019-12-19 16:23:45\",\r\n        \"CreateTime\": \"2019-12-20 14:59:07\",\r\n        \"ExpireTime\": \"0000-00-00 00:00:00\",\r\n        \"InstanceId\": \"cdb-forsubsc\",\r\n        \"InstanceStatus\": \"running\",\r\n        \"IsolateTime\": \"0000-00-00 00:00:00\",\r\n        \"ModifyTime\": \"2019-12-20 18:06:26\",\r\n        \"OfflineTime\": \"0000-00-00 00:00:00\",\r\n        \"PayType\": 1,\r\n        \"Product\": \"mysql\",\r\n        \"Region\": \"ap-guangzhou\",\r\n        \"RequestId\": \"e580eac0-26c7-11ea-8e66-910ac0afe95e\",\r\n        \"SdkConsumedTime\": \"0000-00-00 00:00:00\",\r\n        \"SdkHost\": \"\",\r\n        \"Status\": \"normal\",\r\n        \"SubsStatus\": \"configured\",\r\n        \"SubscribeId\": \"subs-58zcu8bax0\",\r\n        \"SubscribeName\": \"测试实例\",\r\n        \"SubscribeObjectType\": 3,\r\n        \"SubscribeObjects\": [\r\n            {\r\n                \"DatabaseName\": \"dts\",\r\n                \"ObjectsType\": 0,\r\n                \"TableNames\": null\r\n            }\r\n        ],\r\n        \"UniqSubnetId\": \"subnet-4p1hpsj8\",\r\n        \"UniqVpcId\": \"vpc-fbg8gh1j\",\r\n        \"Vip\": \"192.168.1.143\",\r\n        \"Vport\": 7507\r\n    }\r\n}",
+        "title": "查看订阅配置详情"
+      }
+    ],
+    "DescribeSubscribes": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSubscribes\r\n&Status=isolate\r\n&Offset=0\r\n&Limit=1\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"Items\": [{\r\n\t\t\t\t\"ChannelId\": \"dts-channel-C9rS58f2rFx11ZEZ\",\r\n\t\t\t\t\"ConsumeStartTime\": \"2019-12-19 16:23:45\",\r\n\t\t\t\t\"CreateTime\": \"2019-12-20 14:59:07\",\r\n\t\t\t\t\"ExpireTime\": \"0000-00-00 00:00:00\",\r\n\t\t\t\t\"InstanceId\": \"cdb-forsubsc\",\r\n\t\t\t\t\"InstanceStatus\": \"running\",\r\n\t\t\t\t\"IsolateTime\": \"0000-00-00 00:00:00\",\r\n\t\t\t\t\"ModifyTime\": \"2019-12-20 18:06:26\",\r\n\t\t\t\t\"OfflineTime\": \"0000-00-00 00:00:00\",\r\n\t\t\t\t\"PayType\": 1,\r\n\t\t\t\t\"Product\": \"mysql\",\r\n\t\t\t\t\"Region\": \"ap-guangzhou\",\r\n\t\t\t\t\"RequestId\": \"e580eac0-26c7-11ea-8e66-910ac0afe95e\",\r\n\t\t\t\t\"SdkConsumedTime\": \"0000-00-00 00:00:00\",\r\n\t\t\t\t\"Status\": \"normal\",\r\n\t\t\t\t\"SubsStatus\": \"configured\",\r\n\t\t\t\t\"SubscribeId\": \"subs-58zcu8bax0\",\r\n\t\t\t\t\"SubscribeName\": \"测试实例\",\r\n\t\t\t\t\"UniqSubnetId\": \"subnet-4p1hpsj8\",\r\n\t\t\t\t\"UniqVpcId\": \"vpc-fbg8gh1j\",\r\n\t\t\t\t\"Vip\": \"192.168.1.143\",\r\n\t\t\t\t\"Vport\": 7507\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n\t}\r\n}",
+        "title": "查询数据订阅实例列表"
+      }
+    ],
+    "DescribeSyncCheckJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSyncCheckJob\r\n&JobId=sync-blj8wnt1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"finished\",\r\n        \"ErrorCode\": 0,\r\n        \"ErrorMessage\": \"灾备检查成功\",\r\n        \"StepInfo\": [\r\n            {\r\n                \"StepNo\": 1,\r\n                \"StepName\": \"检查参数\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 2,\r\n                \"StepName\": \"检查源实例\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 3,\r\n                \"StepName\": \"检查目标实例\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 4,\r\n                \"StepName\": \"检查实例状态\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 5,\r\n                \"StepName\": \"检查实例规格\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 6,\r\n                \"StepName\": \"检查实例版本\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 7,\r\n                \"StepName\": \"检查目标实例是否为空\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 8,\r\n                \"StepName\": \"检查是否开启加密\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 9,\r\n                \"StepName\": \"检查实例同步的库表信息\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 10,\r\n                \"StepName\": \"检查实例冷备数据\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            }\r\n        ],\r\n        \"CheckFlag\": 1,\r\n        \"RequestId\": \"b3951c71-1da4-4b8f-9de5-ad71ab1e2917\"\r\n    }\r\n}",
+        "title": "查询灾备同步任务校验结果"
+      }
+    ],
+    "DescribeSyncJobs": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSyncJobs\r\n&Order=CreateTime\r\n&OrderSeq=DESC\r\n&Offset=0\r\n&Limit=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"JobList\": [\r\n            {\r\n                \"JobId\": \"sync-blj8wnt1\",\r\n                \"JobName\": \"okJobName1\",\r\n                \"SyncOption\": {\r\n                    \"SyncObject\": 1,\r\n                    \"RunMode\": 1,\r\n                    \"SyncType\": 3,\r\n                    \"ConsistencyType\": 1\r\n                },\r\n                \"SrcAccessType\": \"cdb\",\r\n                \"SrcDatabaseType\": \"mysql\",\r\n                \"SrcInfo\": {\r\n                    \"InstanceId\": \"cdb-e28hhsjt\",\r\n                    \"Region\": \"ap-shanghai\"\r\n                },\r\n                \"DstAccessType\": \"cdb\",\r\n                \"DstDatabaseType\": \"mysql\",\r\n                \"DstInfo\": {\r\n                    \"InstanceId\": \"cdb-mdgezf4d\",\r\n                    \"Region\": \"ap-shanghai\"\r\n                },\r\n                \"Detail\": {\r\n                    \"StepAll\": 0,\r\n                    \"StepNow\": 0,\r\n                    \"Progress\": \"0\",\r\n                    \"CurrentStepProgress\": \"\",\r\n                    \"MasterSlaveDistance\": 0,\r\n                    \"SecondsBehindMaster\": 0,\r\n                    \"StepInfo\": []\r\n                },\r\n                \"Status\": 4,\r\n                \"DatabaseInfo\": \"Array\",\r\n                \"CreateTime\": \"2018-06-22 21:59:16\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"EndTime\": \"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"JobId\": \"sync-2hoficf5\",\r\n                \"JobName\": \"test_create_sync_jobName_0622_2100\",\r\n                \"SyncOption\": {\r\n                    \"SyncObject\": 2,\r\n                    \"RunMode\": 1,\r\n                    \"SyncType\": 3,\r\n                    \"ConsistencyType\": 1\r\n                },\r\n                \"SrcAccessType\": \"cdb\",\r\n                \"SrcDatabaseType\": \"mysql\",\r\n                \"SrcInfo\": {\r\n                    \"InstanceId\": \"cdb-6ygku747\",\r\n                    \"Region\": \"ap-guangzhou\"\r\n                },\r\n                \"DstAccessType\": \"cdb\",\r\n                \"DstDatabaseType\": \"mysql\",\r\n                \"DstInfo\": {\r\n                    \"InstanceId\": \"cdb-ddlroj4d\",\r\n                    \"Region\": \"ap-shanghai\"\r\n                },\r\n                \"Detail\": {\r\n                    \"StepAll\": 0,\r\n                    \"StepNow\": 0,\r\n                    \"Progress\": \"\",\r\n                    \"CurrentStepProgress\": \"\",\r\n                    \"MasterSlaveDistance\": 0,\r\n                    \"SecondsBehindMaster\": 0,\r\n                    \"StepInfo\": []\r\n                },\r\n                \"Status\": 1,\r\n                \"DatabaseInfo\": \"Array\",\r\n                \"CreateTime\": \"2018-06-22 20:37:28\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"EndTime\": \"0000-00-00 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"1ae80092-45be-4cf2-b313-026b6380463e\"\r\n    }\r\n}",
+        "title": "查询灾备同步任务"
+      }
+    ],
+    "IsolateSubscribe": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=IsolateSubscribe\r\n&SubscribeId=subs-ieuwi83j2e\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n  }\r\n}",
+        "title": "隔离订阅对象"
+      }
+    ],
+    "ModifyMigrateJob": [
+      {
+        "document": "修改dts-1kl0iy0v迁移任务配置",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifyMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&JobName=userdts\r\n&DatabaseInfo=[{\"Database\":\"test\",\"Table\":[\"user\",\"log\"]}]\r\n&MigrateOption.RunMode=1\r\n&MigrateOption.MigrateType=2\r\n&MigrateOption.MigrateObject=2\r\n&MigrateOption.ConsistencyType=5\r\n&MigrateOption.IsOverrideRoot=0\r\n&DstInfo.ReadOnly=0\r\n&SrcInfo.Supplier=others \r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"27ef2b7c-a786-48b4-9404-2f9baf3f4916\"\r\n    }\r\n}",
+        "title": "修改数据迁移任务"
+      }
+    ],
+    "ModifySubscribeAutoRenewFlag": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeAutoRenewFlag\r\n&SubscribeId=subs-8392jd821u\r\n&AutoRenewFlag=1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n  }\r\n}",
+        "title": "配置数据订阅自动续费标识"
+      }
+    ],
+    "ModifySubscribeConsumeTime": [
+      {
+        "document": "重置数据订阅通道的数据起点，这样SDK可以消费到以此时间开始的数据",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeConsumeTime\r\n&SubscribeId=subs-ieuwi83j2e\r\n&ConsumeStartTime=2019-10-26 00:00:00\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n  }\r\n}",
+        "title": "修改数据订阅通道的消费时间起点"
+      }
+    ],
+    "ModifySubscribeName": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeName\r\n&SubscribeId=subs-ieuwi83j2e\r\n&SubscribeName=test\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n  }\r\n}",
+        "title": "修改数据订阅实例的名称"
+      }
+    ],
+    "ModifySubscribeObjects": [
+      {
+        "document": "修改数据订阅的订阅规则，如添加或者移除某些库表",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeObjects\r\n&SubscribeId=subs-ieuwi83j2e\r\n&SubscribeObjectType=0\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\",\r\n     \"AsyncRequestId\": \"19b514a7-816c43c1-ffb34ab6-8c6a23eb\"\r\n  }\r\n}",
+        "title": "修改数据订阅通道的订阅规则"
+      }
+    ],
+    "ModifySubscribeVipVport": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeVipVport\r\n&SubscribeId=subs-ieuwi83j2e\r\n&DstVip=192.168.0.1\r\n&DstPort=7575\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n  }\r\n}",
+        "title": "修改数据订阅实例的IP和端口号"
+      }
+    ],
+    "ModifySyncJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action==ModifySyncJob\r\n&JobId=sync-blj8wnt1\r\n&JobName=testname3\r\n&DatabaseInfo=[{\"Database\": \"db1\"}, {\"Database\": \"db2\"}]\r\n&SyncOption.SyncObject=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e3ebe70b-e294-4c15-9377-9e82ef73f342\"\r\n    }\r\n}",
+        "title": "修改灾备同步任务"
+      }
+    ],
+    "OfflineIsolatedSubscribe": [
+      {
+        "document": "订阅实例已经在隔离中，立即发起下线任务",
+        "input": "https://dts.tencentcloudapi.com/?Action=OfflineIsolatedSubscribe\r\n&SubscribeId=subs-ieuwi83j2e\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n  }\r\n}",
+        "title": "下线已隔离的数据订阅实例"
+      }
+    ],
+    "ResetSubscribe": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=ResetSubscribe\r\n&SubscribeId=subs-ieuwi83j2e\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\r\n  }\r\n}",
+        "title": "重置数据订阅实例"
+      }
+    ],
+    "StartMigrateJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=StartMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bab78b9b-ce8a-4645-bfb2-5b03397d6ea0\"\r\n    }\r\n}",
+        "title": "启动数据迁移任务"
+      }
+    ],
+    "StartSyncJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=StartSyncJob\r\n&JobId=sync-blj8wnt1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bab78b9b-ce8a-4645-bfb2-5b03397d6ea0\"\r\n    }\r\n}",
+        "title": "开始灾备同步任务"
+      }
+    ],
+    "StopMigrateJob": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=StopMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"22f6b9ca-e94d-4a4d-b48f-a5133e791374\"\r\n    }\r\n}",
+        "title": "撤销数据迁移任务"
+      }
+    ],
+    "SwitchDrToMaster": [
+      {
+        "document": "",
+        "input": "https://dts.tencentcloudapi.com/?Action=SwitchDrToMaster\r\n&DatabaseType=mysql\r\n&DstInfo.Region=ap-shanghai\r\n&DstInfo.InstanceId=cdb-mdgezf4d\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AsyncRequestId\": \"8826bbe9-27ee6768-9bc0a6ae-82962686\",\r\n        \"RequestId\": \"0ec651b0-755a-4342-991e-184698c00a31\"\r\n    }\r\n}",
+        "title": "升级灾备为主实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "QueryRegisterProtection": [
+      {
+        "document": "",
+        "input": "https://rp.tencentcloudapi.com/?Action=QueryRegisterProtection\r\n&AccountType=10004\r\n&Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&RegisterIp=101.231.62.66\r\n&RegisterTime=1582029456\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Level\": 1,\r\n\t\t\"RegisterIp\": \"101.231.62.66\",\r\n\t\t\"RegisterTime\": \"1582029456\",\r\n\t\t\"RiskType\": [1, 22],\r\n\t\t\"CodeDesc\": \"Success\",\r\n\t\t\"Uid\": \"bfd81ee3ed27ad31c95ca75e21365973\"\r\n\t}\r\n}",
+        "title": "注册保护接口示范"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,95 @@
+**Example 1: 获取人员库列表接口**
+
+获取人员库列表
+
+Input: 
+
+```
+tccli iai GetGroupList --cli-unfold-argument  \
+    --Offset 0\
+    --Limit 10
+```
+
+Output: 
+```
+{
+    "Response": {
+        "GroupInfos": [
+            {
+                "GroupName": "腾讯深圳员工",
+                "GroupId": "TencentShenZhenEmployee",
+                "GroupExDescriptions": [
+                    "事业群",
+                    "部门名",
+                    "组名"
+                ],
+                "Tag": "不含实习生"
+            },
+            {
+                "GroupName": "某某大学竹园宿舍楼1号楼",
+                "GroupId": "ZhuYuanDormitoryNo1",
+                "GroupExDescriptions": [
+                    "学院名",
+                    "专业",
+                    "年级",
+                    "学号"
+                ],
+                "Tag": "全是女生哦"
+            }
+        ],
+        "GroupNum": 2,
+        "RequestId": "72102087-a18d-4225-9ae9-87ef49e9f63e"
+    }
+}
+```
+
+**Example 2: 错误示例-2**
+
+返回数量不能大于1000
+
+Input: 
+
+```
+tccli iai GetGroupList --cli-unfold-argument  \
+    --Offset 0\
+    --Limit 1001
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.LimitExceed",
+            "Message": "返回数量不在合法范围内。"
+        },
+        "RequestId": "a6bb57de-773b-45e4-9e1c-c30ef48eba85"
+    }
+}
+```
+
+**Example 3: 错误示例**
+
+起始序号不能小于0
+
+Input: 
+
+```
+tccli iai GetGroupList --cli-unfold-argument  \
+    --Offset -1\
+    --Limit 100
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameter",
+            "Message": "The value type of parameter `Offset` is not valid."
+        },
+        "RequestId": "9c987f11-f5d0-4aa7-aa13-3d8c1b4b3042"
+    }
+}
+```
+

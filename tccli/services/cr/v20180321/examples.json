@@ -1,0 +1,107 @@
+{
+  "actions": {
+    "ApplyBlackList": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=ApplyBlackList\r\n&Module=account\r\n&Operation=ApplyBlackList\r\n&BlackList.0.BlackType=01\r\n&BlackList.0.OperationType=A\r\n&BlackList.0.BlackValue=13312345233\r\n&BlackList.0.BlackDescription=输入示例\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"13ca0b60-ff5g-43e2-9123-b9361bf0f93e\"\r\n  }\r\n}",
+        "title": "提交黑名单申请"
+      }
+    ],
+    "ApplyCreditAudit": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=ApplyCreditAudit\n&Module=Credit\n&Operation=Apply\n&InstId=ins-xxx\n&ProductId=pdt-yy\n&CaseId=xxx\n&CallbackUrl=aad\n&Data=123\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
+        "title": "提交信审申请"
+      }
+    ],
+    "DescribeCreditResult": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=DescribeCreditResult\n&Module=Credit\n&Operation=Get\n&InstId=123\n&ProductId=123\n&CaseId=123\n&RequestDate=YYYY-MM-DD\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
+        "title": "获取信审结果"
+      }
+    ],
+    "DescribeRecords": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=DescribeRecords\n&Module=Record\n&Operation=List\n&StartBizDate=2019-03-03\n&EndBizDate=2019-03-13\n&Offset=0\n&Limit=10\n&InstId=ins-a1b2c3\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RecordList\": [\r\n      {\r\n        \"AccountNum\": \"QK071200000001\", \r\n        \"BizDate\": \"2019-03-05\", \r\n        \"CallStartTime\": \"2019-03-05 13:00:00\", \r\n        \"CallerPhone\": \"01055553333\", \r\n        \"Direction\": \"O\", \r\n        \"Duration\": 15, \r\n        \"ProductId\": null, \r\n        \"RecordCosUrl\": \"http://cr.cosgz.myqcloud.com/cnc/cr-record-ab-f30\"\r\n      }\r\n    ], \r\n    \"RequestId\": \"\", \r\n    \"TotalCount\": 1\r\n  }\r\n}",
+        "title": "查看录音列表"
+      }
+    ],
+    "DescribeTaskStatus": [
+      {
+        "document": "获取任务状态",
+        "input": "https://cr.tencentcloudapi.com/?Action=DescribeTaskStatus\r\n&Module=Task\r\n&Operation=DescribeTaskStatus\r\n&TaskId=tad-i9yf5g5f0d\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"cea58738-396c-49fa-915e-f32280bc1ac2\",\r\n        \"TaskResult\": \"File Uploading Task Success.\",\r\n        \"TaskType\": \"002\"\r\n    }\r\n}",
+        "title": "获取任务状态"
+      }
+    ],
+    "DownloadDialogueText": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=DownloadDialogueText\r\n&Module=Report\r\n&Operation=DownloadTextReport\r\n&InstId=ins-abc123\r\n&ReportDate=2018-07-15\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TextReportUrl\": \"http://collection-robot.myqcloud.com/report-text.zip\",\r\n    \"RequestId\": \"15d67679-7f71-4077-a7bd-c0ed27ae2461\"\r\n  }\r\n}",
+        "title": "对话文本下载"
+      }
+    ],
+    "DownloadRecordList": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=DownloadRecordList\r\n&Module=Record\r\n&Operation=DownloadList\r\n&InstId=ins-abc123\r\n&BizDate=2019-09-16\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RecordListUrl\": \"http://collection-robot.myqcloud.com/record-list.zip\",\r\n    \"RequestId\": \"15d67679-7f71-4077-a7bd-c0ed27ae2461\"\r\n  }\r\n}",
+        "title": "录音列表下载"
+      }
+    ],
+    "DownloadReport": [
+      {
+        "document": "报告下载",
+        "input": "https://cr.tencentcloudapi.com/?Action=DownloadReport\r\n&Module=Report\r\n&Operation=DownloadReport\r\n&ReportDate=2018-07-15\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"DailyReportUrl\": \"http://collection-robot.myqcloud.com/report-type01.zip\",\r\n    \"ResultReportUrl\": \"http://collection-robot.myqcloud.com/report-type02.zip\",\r\n    \"DetailReportUrl\": \"http://collection-robot.myqcloud.com/report-type03.zip\",\r\n    \"CallbackDailyReportUrl\": \"http://collection-robot.myqcloud.com/report-type04.zip\",\r\n    \"CallbackResultReportUrl\": \"http://collection-robot.myqcloud.com/report-type05.zip\",\r\n    \"CallbackDetailReportUrl\": \"http://collection-robot.myqcloud.com/report-type06.zip\",\r\n    \"RequestId\": \"15d67679-7f71-4077-a7bd-c0ed27ae2461\"\r\n  }\r\n}",
+        "title": "报告下载"
+      }
+    ],
+    "QueryInstantData": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=QueryInstantData\r\n&Module=Data\r\n&Operation=Query\r\n&Offset=0\r\n&Limit=10\r\n&InstanceId=ins-a1b2c3\r\n&Data=\"{\\\"StartBizDate\\\":\\\"2019-03-03\\\", \\\"EndBizDate\\\":\\\"2019-03-13\\\"}\"\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Data\":  \"[{\\\"AccountNum\\\":\\\"QK071200000001\\\",\\\"BizDate\\\":\\\"2019-03-05\\\",\\\"CallStartTime\\\":\\\"2019-03-05 13:00:00\\\",\\\"CallerPhone\\\":\\\"0105555333\\\",\\\"Direction\\\":\\\"O\\\",\\\"Duration\\\":15,\\\"ProductId\\\":null,\\\"RecordCosUrl\\\":\\\"http://cr.cosgz.myqcloud.com/cnc/cr-record-ab-f30\\\"}]\",\r\n    \"RequestId\": \"\", \r\n    \"TotalCount\": 1\r\n  }\r\n}",
+        "title": "查询入催外呼数据"
+      }
+    ],
+    "UploadDataFile": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=UploadDataFile\r\n&Module=Data\r\n&Operation=Upload\r\n&FileName=data_1542284923873.xlsx\r\n%FileUrl=http://cr.cosgz.myqcloud.com/uploadfile/data_1542284923873.xlsx\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"DataResId\": \"tad-iccc970kgp\", \r\n    \"RequestId\": \"13cb0b60-6e0d-43e2-9123-b9361bf0f93e\"\r\n  }\r\n}",
+        "title": "上传到期/逾期提醒文件"
+      },
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=UploadDataFile\r\n&Module=Data\r\n&Operation=Upload\r\n&UploadModel=repay\r\n&FileName=data_1542284924562.xlsx\r\n%FileUrl=http://cr.cosgz.myqcloud.com/uploadfile/data_1542284924562.xlsx\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"DataResId\": \"tad-qccc310kgp\", \r\n    \"RequestId\": \"13cb0b60-1e0d-43e2-9123-b3361bf0f93e\"\r\n  }\r\n}",
+        "title": "上传还款文件"
+      }
+    ],
+    "UploadDataJson": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=UploadDataJson\r\n&Module=Data\r\n&Operation=UploadJson\r\n&UploadModel=repay\r\n&Data={\\\"work_data\\\":\\\"o\\\"}\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Data\": \"ok\",\r\n    \"RequestId\": \"13ca0b60-ff5g-43e2-9123-b9361bf0f93e\"\r\n  }\r\n}",
+        "title": "上传数据"
+      }
+    ],
+    "UploadFile": [
+      {
+        "document": "上传数据文件",
+        "input": "https://cr.tencentcloudapi.com/?Action=UploadFile\r\n&Module=Data\r\n&Operation=UploadFile\r\n&FileUrl=https%3A%2F%2Fcollection-robot-test-1254255210.cosgz.myqcloud.com%2F%25E8%25AF%2595%25E5%2590%25AC%25E6%25A8%25A1%25E6%259D%25BF.xls%3Fsign%3DvnIXGeAyqu4HwHkwLX5X0pic8sphPTEyNTQyNTUyMTAmaz1BS0lEMFR6T2NseXB6MDlaNGZwdVM1bzNRRmN6S2FyOXJJUGomZT0xNTI0ODI4NjMzJnQ9MTUyMjIzNjYzMyZyPTIyMzgxNzMwMSZmPS8lRTglQUYlOTUlRTUlOTAlQUMlRTYlQTglQTElRTYlOUQlQkYueGxzJmI9Y29sbGVjdGlvbi1yb2JvdC10ZJLH\r\n&FileName=%E8%AF%95%E5%90%AC%E6%A8%A1%E6%9D%BF.xls\r\n&FileDate=2018-09-01\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3b10df62-29a2-430b-8493-991b3f6846e8\",\r\n        \"TaskId\": 9\r\n    }\r\n}",
+        "title": "上传数据文件"
+      }
+    ]
+  },
+  "version": "1.0"
+}

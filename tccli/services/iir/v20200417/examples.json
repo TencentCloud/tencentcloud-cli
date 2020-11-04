@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "RecognizeProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iir.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeProduct\n<公共请求参数>\n\n{\"ImageUrl\": \"test.jpg\"}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RegionDetected\": [\r\n            {\r\n                \"Category\": \"家电数码\",\r\n                \"CategoryScore\": 0.894864857197,\r\n                \"Location\": {\r\n                    \"XMin\": 175,\r\n                    \"YMin\": 12,\r\n                    \"XMax\": 401,\r\n                    \"YMax\": 376\r\n                }\r\n            }\r\n        ],\r\n        \"ProductInfo\": {\r\n            \"FindSKU\": 1,\r\n            \"Location\": {\r\n                \"XMin\": 175,\r\n                \"YMin\": 12,\r\n                \"XMax\": 401,\r\n                \"YMax\": 376\r\n            },\r\n            \"Name\": \"手机\",\r\n            \"Brand\": \"iphone\",\r\n            \"Price\": \"￥7299\",\r\n            \"ProductCategory\": \"家电数码\",\r\n            \"Score\": 0.544267654419,\r\n            \"Image\": \"https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74\"\r\n        },\r\n        \"RequestId\": \"2054720d-0c93-4028-9843-8fb9114ce2e2\"\r\n    }\r\n}",
+        "title": "商品识别接口调用成功"
+      }
+    ]
+  },
+  "version": "1.0"
+}

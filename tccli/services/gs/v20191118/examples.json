@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "CreateSession": [
+      {
+        "document": "",
+        "input": "https://gs.tencentcloudapi.com/?Action=CreateSession\n&UserId=字符串型\n&GameId=字符串型\n&GameRegion=字符串型\n&ClientSession=字符串型\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\",\r\n        \"ServerSession\": \"xyz\"\r\n    }\r\n}",
+        "title": "CreateSession示例"
+      }
+    ],
+    "StopGame": [
+      {
+        "document": "",
+        "input": "https://gs.tencentcloudapi.com/?Action=StopGame\n&UserId=字符串型\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"72864dc3-9537-432c-8f01-78b4d35ea18a\"\r\n    }\r\n}",
+        "title": "StopGame示例"
+      }
+    ],
+    "TrylockWorker": [
+      {
+        "document": "",
+        "input": "https://gs.tencentcloudapi.com/?Action=TrylockWorker\n&UserId=字符串型\n&GameId=字符串型\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"42a7c28d-6b1c-4b47-927c-035e3ffc1098\"\r\n    }\r\n}",
+        "title": "TrylockWorker示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

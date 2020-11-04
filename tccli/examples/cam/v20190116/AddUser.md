@@ -1,0 +1,34 @@
+**Example 1: 添加子用户**
+
+
+
+Input: 
+
+```
+tccli cam AddUser --cli-unfold-argument  \
+    --Name test124\
+    --Remark test\
+    --ConsoleLogin 1\
+    --UseApi 1\
+    --Password test123456\
+    --NeedResetPassword 0\
+    --PhoneNum 10086\
+    --CountryCode 86\
+    --Email 123%40qq.com
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Uid": 5648765,
+        "Uin": 100000546533,
+        "Name": "test124",
+        "Password": "test123456",
+        "SecretId": "faweffewagwaegawe",
+        "SecretKey": "fawef23rjhiuaefhuaifhiuawef",
+        "RequestId": "b46d2afe-6893-4529-bc96-2c82d9214957"
+    }
+}
+```
+

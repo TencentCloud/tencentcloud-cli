@@ -1,0 +1,195 @@
+{
+  "actions": {
+    "CreateCodeRepository": [
+      {
+        "document": "创建一个基于Git协议的无密钥存储库",
+        "input": "https://tione.tencentcloudapi.com/?Action=CreateCodeRepository\r\n&CodeRepositoryName=public\r\n&GitConfig.RepositoryUrl=https://github.com/example/test.git\r\n&GitConfig.Branch=master\r\n&GitSecret.NoSecret=true\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"15837630207346314662\",\"CodeRepositoryName\":\"public\"}}",
+        "title": "创建无密钥的存储库"
+      },
+      {
+        "document": "创建一个基于Git协议的需要密钥的存储库",
+        "input": "https://tione.tencentcloudapi.com/?Action=CreateCodeRepository\r\n&CodeRepositoryName=private\r\n&GitConfig.RepositoryUrl=https://github.com/example/test.git\r\n&GitConfig.Branch=master\r\n&GitSecret.Secret={\"UserName\":\"xxx\",\"Password\":\"xxx\"}\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"15837630207346314662\",\"CodeRepositoryName\":\"private\"}}",
+        "title": "创建有密钥的存储库"
+      }
+    ],
+    "CreateNotebookInstance": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=CreateNotebookInstance\r\n&NotebookInstanceName=test\r\n&InstanceType=TI.SMALL2.1core2g\r\n&DirectInternetAccess=Enabled\r\n&RootAccess=Enabled\r\n&SubnetId=subnet-xxx\r\n&VolumeSizeInGB=10\r\n&LifecycleScriptsName=abc\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fe8f6fd2-1f51-4699-b19d-efa8b6efde8a\",\r\n        \"NotebookInstanceName\": \"test\"\r\n    }\r\n}",
+        "title": "创建一个Notebook实例"
+      }
+    ],
+    "CreateNotebookLifecycleScript": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=CreateNotebookLifecycleScripts\r\n&NotebookLifecycleScriptsName=abc\r\n&CreateScript=YWJj&StartScript=YWJj\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"d1bf5910-d5c8-443d-80f1-15fd8adce51e\",\r\n   \"NotebookLifecycleScriptsName\":\"abc\"\r\n   }\r\n}",
+        "title": "创建Notebook生命周期脚本"
+      }
+    ],
+    "CreatePresignedNotebookInstanceUrl": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=CreatePresignedNotebookInstanceUrl\r\n&NotebookInstanceName=test\r\n&SessionExpirationDurationInSeconds=1800\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1f0a0715-e1d9-41a6-b511-729f96b97810\",\r\n        \"AuthorizedUrl\": \"https://test.notebook.ap-guangzhou.ti.tencentcs.com/auth?authToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyMDU0ODQ5OSIsImV4cCI6MTU3NDM5MjUzMSwiaWF0IjoxNTc0MzkwNzMxLCJuYmYiOjE1NzQzOTA2MTEsImNpcGhlclRleHQiOiJTODZrK0hOdjRpZnZteUlVamtEZ2hkdmlTdndQc2VUK2FFckRobk1Uemxnc0tpT1krWkNqQ0oyV0tmbGdlaytiQVdpM3ROazhwckxYTlh3aXhhdGR0UT09LWstZktWUDNXSWxHcGc4bTlMTVc0akVrUT09LWstNXd4U2kzVys5d3NFVTVvOXJVWnNkcEpMdXk5Z2V1VWlUelNRSTBiTmgxdU4yQ0laaTl3WVhQYXVySUpWODBnSjVFMnE1ZHlxRkZYSkdvK2k1WTgrNUZYTE5Sdz0iLCJjcmVkZW50aWFscyI6IkFRTjRBTkpMZDFWNk1rNVNURnBESzNWQ1JXazJVa1ZZVWpSYVMxVkJRbU5UWWtOeGJYUlhNMHg0YWxkSmJrVTRSUzlHZFRVeE1uSTFTRTFWYUZwa2VYQXhPWE55WjNKbE1rbHZTM293YW5aR1pGSkdlV1ZEVFVKTFVUMDlMV3N0Wmt0V1VETlhTV3hIY0djNGJUbE1UVmMwYWtWclVUMDlMV3N0VWt4WFNsUXJlRmg2Ym5OcFZUaFJSbUp3VWxBd0wwUndUWEZIVURVdmNFdENPVnBCT0RkWVZtUTJlVkpoZUhwR0wybzRZa1kxWkZaVVZIaExWVmRGWld0b01FVkxOMElyUW1sdFFuaG1MeXRwYWtOWlMyZDBNRFEwVFQwQURNcExxR3BzQVZhcGNXV3J0d0FBQUFBQUFBQ2Y1NE44NlVjSjdLaWVNbjJDV1dmaTZHSUFBYkhUR2ZlZTA4RWszTjRRMmZkWCtmN29lRWc3Mkh4RkZkcnBtQ2VsbmRNOVdOdW1waU04K0EzbTJmbHJBUTRQenBLTk9GYW1iUGMrMzR2R0Vlb0ZUTm5oNnZDY2Q5dUVUbjlGdkFOWGR0S1pUMy9YQWJLU1o0L09VSU1SWU5PMVJBejFManh1Q3ovN1JRRExFUXhKU3RkWWpEVXlUZFlwWjVuZ1d3VzNJN2kxdk1KMzRLcUFLTW5UaXJNYSJ9.wIUFsHrhNhysizMtabH74bTqpKJmx5XeoxIily0JRWs&view=lab\"\r\n    }\r\n}",
+        "title": "创建Notebook授权Url"
+      }
+    ],
+    "CreateTrainingJob": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=CreateTrainingJob\n&TrainingJobName=test\n&HyperParameters={\"learning_rate\":1.0}\n&AlgorithmSpecification.TrainingImageName=ccr.ccs.tencentyun.com/ti_public/tensorflow:1.14.0-py3\n&AlgorithmSpecification.TrainingInputMode=File\n&OutputDataConfig.CosOutputBucket=bucket\n&OutputDataConfig.CosOutputKeyPrefix=test\n&ResourceConfig.InstanceCount=1\n&ResourceConfig.InstanceType=TI.SMALL2.1core2g\n&ResourceConfig.VolumeSizeInGB=10\n&InputDataConfig.0.ChannelName=train\n&InputDataConfig.0.DataSource.CosDataSource.Bucket=bucket\n&InputDataConfig.0.DataSource.CosDataSource.KeyPrefix=test\n&InputDataConfig.0.InputMode=File\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"89719e50-4e38-4287-9205-00afcf4dd780\",\r\n        \"TrainingJobName\": \"test\"\r\n    }\r\n}",
+        "title": "创建一个训练任务"
+      }
+    ],
+    "DeleteCodeRepository": [
+      {
+        "document": "删除存储库",
+        "input": "https://tione.tencentcloudapi.com/?Action=DeleteCodeRepository\r\n&CodeRepositoryName=private\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1583763583474760630\",\r\n        \"CodeRepositoryName\": \"private\"\r\n    }\r\n}",
+        "title": "删除存储库"
+      }
+    ],
+    "DeleteNotebookInstance": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DeleteNotebookInstance\r\n&NotebookInstanceName=api_test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fe8f6fd2-1f51-4699-b19d-efa8b6efde8a\"\r\n    }\r\n}",
+        "title": "删除Notebook实例"
+      }
+    ],
+    "DeleteNotebookLifecycleScript": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DeleteNotebookLifecycleScripts&NotebookLifecycleScriptsName=abc\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"d1bf5910-d5c8-443d-80f1-15fd8adce51e\"\r\n   }\r\n}",
+        "title": "删除Notebook生命周期脚本"
+      }
+    ],
+    "DescribeCodeRepositories": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeCodeRepositories\r\n&Offset=0\r\n&Limit=20\r\n&Filters.0.Name=instance-name\r\n&Filters.0.Values=private\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15837636504347136271\",\r\n        \"TotalCount\": 1,\r\n        \"CodeRepoSet\": [\r\n            {\r\n                \"CreationTime\": \"2020-03-09 22:01:50\",\r\n                \"LastModifiedTime\": \"2020-03-09 22:01:50\",\r\n                \"CodeRepositoryName\": \"private\",\r\n                \"GitConfig\": {\r\n                    \"Branch\": \"master\",\r\n                    \"RepositoryUrl\": \"https://github.com/example/test.git\",\r\n                    \"KeyId\": \"\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "根据存储库名称查询"
+      }
+    ],
+    "DescribeCodeRepository": [
+      {
+        "document": "查看存储库详情",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeCodeRepository\r\n&CodeRepositoryName=private\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15837634774603167083\",\r\n        \"CreationTime\": \"2020-03-09 17:59:15\",\r\n        \"LastModifiedTime\": \"2020-03-09 17:59:15\",\r\n        \"CodeRepositoryName\": \"private\",\r\n        \"GitConfig\": {\r\n            \"Branch\": \"master\",\r\n            \"RepositoryUrl\": \"https://github.com/example/test.git\"\r\n        },\r\n        \"NoSecret\": true\r\n    }\r\n}",
+        "title": "查看存储库详情"
+      }
+    ],
+    "DescribeNotebookInstance": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeNotebookInstance\r\n&NotebookInstanceName=test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b869fa8e-f3b8-449b-a356-83e44204942b\",\r\n        \"NotebookInstanceName\": \"test\",\r\n        \"InstanceType\": \"TI.SMALL2.1core2g\",\r\n        \"RoleArn\": \"qcs::cam::uin/20548499:roleName/TIONE_QCSRole\",\r\n        \"DirectInternetAccess\": \"Enabled\",\r\n        \"RootAccess\": \"Enabled\",\r\n        \"SubnetId\": \"subnet-xxx\",\r\n        \"VolumeSizeInGB\": 10,\r\n        \"FailureReason\": \"InternalError.GetRoleError-[QC_STS] role not exist\",\r\n        \"CreationTime\": \"2019-11-22 10:15:52\",\r\n        \"LastModifiedTime\": \"2019-11-22 10:17:48\",\r\n        \"LogUrl\": \"https://console.cloud.tencent.com/cls/search?region=ap-guangzhou&logset_id=e9c9d84c-b9bc-4b08-a7c5-93441ce4e790&topic_id=29728e56-8076-4100-808e-c22bf69d4c47&product=tione&start_time=2019-11-21+10%3A31%3A21&end_time=2019-11-22+10%3A31%3A21&query=app%3Anotebook-fzdfj62ktj\",\r\n        \"NotebookInstanceStatus\": \"Failed\",\r\n        \"InstanceId\": \"notebook-fzdfj62ktj\",\r\n        \"LifecycleScriptsName\":\"aaa\",\r\n        \"ClsAccess\": \"Enabled\"\r\n    }\r\n}",
+        "title": "查询Notebook实例"
+      }
+    ],
+    "DescribeNotebookInstances": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeNotebookInstances\r\n&Offset=0\r\n&Limit=10\r\n&SortOrder=Descending\r\n&Filters.0.Name=instance-name\r\n&Filters.0.Values.0=aaaafixa1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15838635149573473305\",\r\n        \"TotalCount\": 1,\r\n        \"NotebookInstanceSet\": [\r\n            {\r\n                \"CreationTime\": \"2020-03-06 12:40:35\",\r\n                \"LastModifiedTime\": \"2020-03-06 12:43:39\",\r\n                \"NotebookInstanceName\": \"aaaafixa1\",\r\n                \"NotebookInstanceStatus\": \"Inservice\",\r\n                \"InstanceType\": \"MEDIUM4\",\r\n                \"Url\": null,\r\n                \"InstanceId\": \"notebook-jq5r1whsjl\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询Notebook实例列表"
+      }
+    ],
+    "DescribeNotebookLifecycleScript": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeNotebookLifecycleScripts&NotebookLifecycleScriptsName=abc\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15833920455685922818\",\r\n        \"NotebookLifecycleScriptsName\": \"abc\",\r\n        \"CreateScript\": \"Y2Nj\",\r\n        \"StartScript\": \"Y2Nj\",\r\n        \"CreationTime\": \"2020-03-04 20:58:54\",\r\n        \"LastModifiedTime\": \"2020-03-04 20:58:54\"\r\n    }\r\n}",
+        "title": "查看notebook生命周期脚本详情"
+      }
+    ],
+    "DescribeNotebookLifecycleScripts": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeNotebookLifecycleScripts\r\n&Offset=0\r\n&Limit=10\r\n&SortBy=created\r\n&SortOrder=Descending\r\n&Filters.0.Name=search-by-name\r\n&Filters.0.Values.0=s\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15838617732076459472\",\r\n        \"TotalCount\": 3,\r\n        \"NotebookLifecycleScriptsSet\": [\r\n            {\r\n                \"CreationTime\": \"2020-03-08 15:02:34\",\r\n                \"LastModifiedTime\": \"2020-03-08 16:35:14\",\r\n                \"NotebookLifecycleScriptsName\": \"bashsss\"\r\n            },\r\n            {\r\n                \"CreationTime\": \"2020-03-08 14:45:28\",\r\n                \"LastModifiedTime\": \"2020-03-08 14:45:28\",\r\n                \"NotebookLifecycleScriptsName\": \"bashSs\"\r\n            },\r\n            {\r\n                \"CreationTime\": \"2020-03-08 14:44:03\",\r\n                \"LastModifiedTime\": \"2020-03-08 14:44:03\",\r\n                \"NotebookLifecycleScriptsName\": \"bashShell\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查看notebook生命周期脚本列表"
+      }
+    ],
+    "DescribeNotebookSummary": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeNotebookSummary\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"48b8674d-83aa-4dcc-9d6d-bfa3eff1130f\",\r\n        \"AllInstanceCnt\": 17,\r\n        \"BillingInstanceCnt\": 17,\r\n        \"StorageOnlyBillingInstanceCnt\": 8,\r\n        \"ComputingBillingInstanceCnt\": 9\r\n    }\r\n}",
+        "title": "查询Notebook概览数据"
+      }
+    ],
+    "DescribeTrainingJob": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeTrainingJob\r\n&TrainingJobName=api_test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9f91ba5c-03bb-4c02-b9cc-d2740821112f\",\r\n        \"TrainingJobName\": \"api_test\",\r\n        \"AlgorithmSpecification\": {\r\n            \"AlgorithmName\": null,\r\n            \"TrainingImageName\": \"ccr.ccs.tencentyun.com/ti_public/tensorflow:1.14.0-py3\",\r\n            \"TrainingInputMode\": \"File\"\r\n        },\r\n        \"HyperParameters\": \"{\\\"b\\\":2}\",\r\n        \"InputDataConfig\": [\r\n            {\r\n                \"ChannelName\": \"training\",\r\n                \"ContentType\": null,\r\n                \"DataSource\": null,\r\n                \"InputMode\": null\r\n            }\r\n        ],\r\n        \"OutputDataConfig\": {\r\n            \"CosOutputBucket\": \"ti-ap-guangzhou-100005457260-1256633383\",\r\n            \"CosOutputKeyPrefix\": \"\",\r\n            \"FileSystemOutputPath\": \"\"\r\n        },\r\n        \"StoppingCondition\": {\r\n            \"MaxRuntimeInSeconds\": 86400\r\n        },\r\n        \"ResourceConfig\": {\r\n            \"InstanceCount\": 1,\r\n            \"InstanceType\": \"TI.SMALL2.1core2g\",\r\n            \"VolumeSizeInGB\": 10\r\n        },\r\n        \"VpcConfig\": null,\r\n        \"RoleName\": \"role_name\",\r\n        \"FailureReason\": \"create training job failure\",\r\n        \"LastModifiedTime\": \"2019-11-22 11:57:52\",\r\n        \"TrainingStartTime\": null,\r\n        \"TrainingEndTime\": null,\r\n        \"ModelArtifacts\": null,\r\n        \"TrainingJobStatus\": \"Failed\",\r\n        \"SecondaryStatus\": \"Failed\",\r\n        \"SecondaryStatusTransitions\": [\r\n            {\r\n                \"StartTime\": \"2019-11-22 11:09:52\",\r\n                \"EndTime\": \"2019-11-22 11:11:34\",\r\n                \"Status\": \"Starting\",\r\n                \"StatusMessage\": \"Launching ML instance\"\r\n            },\r\n            {\r\n                \"StartTime\": \"2019-11-22 11:11:34\",\r\n                \"EndTime\": \"2019-11-22 11:11:36\",\r\n                \"Status\": \"Starting\",\r\n                \"StatusMessage\": \"ML instance ready\"\r\n            },\r\n            {\r\n                \"StartTime\": \"2019-11-22 11:11:36\",\r\n                \"EndTime\": \"2019-11-22 11:11:37\",\r\n                \"Status\": \"Downloading\",\r\n                \"StatusMessage\": \"Training data ready\"\r\n            },\r\n            {\r\n                \"StartTime\": \"2019-11-22 11:11:37\",\r\n                \"EndTime\": null,\r\n                \"Status\": \"Failed\",\r\n                \"StatusMessage\": \"create training job failure\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询训练任务"
+      }
+    ],
+    "DescribeTrainingJobs": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeTrainingJobs\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"f7094a2d-ffa8-4dc9-8bd8-2349ea4f9c63\",\r\n        \"TotalCount\": 1,\r\n        \"TrainingJobSet\": [\r\n            {\r\n                \"CreationTime\": \"2019-11-22 11:09:43\",\r\n                \"LastModifiedTime\": \"2019-11-22 11:27:08\",\r\n                \"TrainingEndTime\": null,\r\n                \"TrainingJobName\": \"api_test\",\r\n                \"TrainingJobStatus\": \"Failed\",\r\n                \"ResourceConfig\": {\r\n                    \"InstanceCount\": 1,\r\n                    \"InstanceType\": \"TI.SMALL2.1core2g\",\r\n                    \"VolumeSizeInGB\": 10\r\n                },\r\n                \"InstanceId\": \"timaker-jly3z0hluj\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询训练任务列表"
+      }
+    ],
+    "StartNotebookInstance": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=StartNotebookInstance\r\n&NotebookInstanceName=apitest\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fe8f6fd2-1f51-4699-b19d-efa8b6efde8a\"\r\n    }\r\n}",
+        "title": "启动一个Notebook实例"
+      }
+    ],
+    "StopNotebookInstance": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=StopNotebookInstance\r\n&NotebookInstanceName=api_test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fe8f6fd2-1f51-4699-b19d-efa8b6efde8a\"\r\n    }\r\n}",
+        "title": "停止Notebook实例"
+      }
+    ],
+    "StopTrainingJob": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=StopTrainingJob\r\n&TrainingJobName=test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fe8f6fd2-1f51-4699-b19d-efa8b6efde8a\"\r\n    }\r\n}",
+        "title": "停止训练任务"
+      }
+    ],
+    "UpdateCodeRepository": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=UpdateCodeRepository\r\n&CodeRepositoryName=private\r\n&GitSecret.Secret={\"UserName\":\"xxx\", \"Password\":\"xxx\"}\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15837643767558277241\",\r\n        \"CodeRepositoryName\": \"private\"\r\n    }\r\n}",
+        "title": "更新存储库秘钥"
+      }
+    ],
+    "UpdateNotebookInstance": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=UpdateNotebookInstance\r\n&NotebookInstanceName=apitest\r\n&RoleArn=role_name\r\n&RootAccess=Enabled\r\n&VolumeSizeInGB=20\r\n&LifecycleScriptsName=aaa\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1ac85a52-fb9d-4b28-b0fa-1017b9ada1ac\"\r\n    }\r\n}",
+        "title": "更新Notebook实例"
+      }
+    ],
+    "UpdateNotebookLifecycleScript": [
+      {
+        "document": "",
+        "input": "https://tione.tencentcloudapi.com/?Action=UpdateNotebookLifecycleScripts\r\n&NotebookLifecycleScriptsName=abc\r\n&CreateScript=YWJj&StartScript=YWJj\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15833967702530096378\"\r\n    }\r\n}",
+        "title": "更新notebook生命周期脚本"
+      }
+    ]
+  },
+  "version": "1.0"
+}

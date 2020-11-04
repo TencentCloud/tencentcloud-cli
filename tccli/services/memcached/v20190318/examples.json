@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "https://memcached.tencentcloudapi.com/?Action=DescribeInstances\n&Limit=无符号整型\n&OrderBy=字符串型\n&OrderType=有符号整型\n&Offset=无符号整型&SearchKeys.0=字符串型&ProjectIds.0=有符号整型&InstanceIds.0=有符号整型&InstanceNames.0=字符串型\n&<公共请求参数>",
+        "output": "{\n    \"Response\":{\n        \"TotalNum\":1,\n        \"RequestId\": \"e3d683fc-f2ff-43c9-980d-fae7a1166abc\",\n        \"InstanceList\":[\n            {\n                \"InstanceId\":165150,\n                \"InstanceName\":\"cmem-a85xwfxm\",\n                \"AppId\":0,\n                \"ProjectId\":0,\n                \"InstanceDesc\":\"cmem-a85xwfxm\",\n                \"Vip\":\"\",\n                \"Vport\":1030,\n                \"Status\":1,\n                \"AutoRenewFlag\":0,\n                \"VpcId\":0,\n                \"SubnetId\":0,\n                \"PayMode\":0,\n                \"ZoneId\":0,\n                \"Expire\":0,\n                \"RegionId\":1,\n                \"AddTimeStamp\":\"2019-03-31 15:23:07\",\n                \"ModTimeStamp\":\"2019-04-03 20:30:06\",\n                \"IsolateTimeStamp\":\"2019-03-31 15:23:07\",\n                \"UniqVpcId\":\"\",\n                \"UniqSubnetId\":\"\",\n                \"DeadlineTimeStamp\":\"0001-01-01 08:05:52\",\n                \"SetId\":0,\n                \"InstanceAlias\":\"\"\n            }\n        ]\n    }\n}",
+        "title": ""
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,165 @@
+{
+  "actions": {
+    "AcceptOrganizationInvitation": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=AcceptOrganizationInvitation\r\n&Id=123\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "接受企业组织邀请"
+      }
+    ],
+    "AddOrganizationNode": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=AddOrganizationNode\r\n&ParentNodeId=123\r\n&Name=\"test\"\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"NodeId\": 123,\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "添加企业组织单元"
+      }
+    ],
+    "CancelOrganizationInvitation": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=CancelOrganizationInvitation\r\n&Id=123\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "取消企业组织邀请"
+      }
+    ],
+    "CreateOrganization": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=CreateOrganization\r\n&OrgType=1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"OrgId\": 123,\r\n    \"Nickname\": \"test\",\r\n    \"Mail\": \"test@qq.com\",\r\n    \"OrgType\": 1,\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "创建企业组织"
+      }
+    ],
+    "DeleteOrganization": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteOrganization\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "删除企业组织"
+      }
+    ],
+    "DeleteOrganizationMemberFromNode": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteOrganizationMemberFromNode\r\n&MemberUin=123\r\n&NodeId=12\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "删除企业组织成员"
+      }
+    ],
+    "DeleteOrganizationMembers": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteOrganizationMembers\r\n&Uins.0=1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "批量删除企业组织成员"
+      }
+    ],
+    "DeleteOrganizationNodes": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteOrganizationNodes\r\n&NodeIds.0=123\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "删除企业组织单元"
+      }
+    ],
+    "DenyOrganizationInvitation": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DenyOrganizationInvitation\r\n&Id=123\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "拒绝企业组织邀请"
+      }
+    ],
+    "GetOrganization": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=GetOrganization\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"OrgId\": 1,\r\n        \"HostUin\": 1,\r\n        \"Nickname\": \"test\",\r\n        \"Mail\": \"test@qq.com\",\r\n        \"OrgType\": 1,\r\n        \"IsEmpty\": 1,\r\n        \"RequestId\": \"629cde15-2b9c-403b-b5f1-033992709327\"\r\n    }\r\n}",
+        "title": "获取企业组织信息"
+      }
+    ],
+    "GetOrganizationMember": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=GetOrganizationMember\r\n&MemberUin=123\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Uin\": 1,\r\n        \"Name\": \"aa\",\r\n        \"Remark\": \"\",\r\n        \"JoinTime\": \"2019-10-10 00:00:00\",\r\n        \"NodeId\": 1,\r\n        \"NodeName\": \"aa\",\r\n        \"ParentNodeId\": 0,\r\n        \"RequestId\": \"fae840be-2b30-47ae-93b7-df5610168eff\"\r\n    }\r\n}",
+        "title": "获取企业组织成员"
+      }
+    ],
+    "ListOrganizationInvitations": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=ListOrganizationInvitations\r\n&Invited=1\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 0,\r\n        \"Invitations\": [\r\n            {\r\n                \"Id\": 1,\r\n                \"Uin\": 1,\r\n                \"HostUin\": 1,\r\n                \"HostName\": \"aa\",\r\n                \"HostMail\": \"aa@qq.com\",\r\n                \"Status\": 1,\r\n                \"Name\": \"aa\",\r\n                \"Remark\": \"\",\r\n                \"OrgType\": 1,\r\n                \"InviteTime\": \"2019-10-10 00:00:00\",\r\n                \"ExpireTime\": \"2019-10-10 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"97fd9345-cfd6-4b93-8205-e25d21ecd26e\"\r\n    }\r\n}",
+        "title": "获取邀请信息列表"
+      }
+    ],
+    "ListOrganizationMembers": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=ListOrganizationMembers\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 0,\r\n        \"Members\": [\r\n            {\r\n                \"Uin\": 1,\r\n                \"Name\": \"aa\",\r\n                \"Remark\": \"\",\r\n                \"JoinTime\": \"2019-10-10 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"789d9d58-8e51-4b50-b3d7-f851216c5e9c\"\r\n    }\r\n}",
+        "title": "获取企业组织成员列表"
+      }
+    ],
+    "ListOrganizationNodeMembers": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=ListOrganizationNodeMembers\r\n&NodeId=123\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 100,\r\n        \"Members\": [\r\n            {\r\n                \"Uin\": 1,\r\n                \"Name\": \"aa\",\r\n                \"Remark\": \"\",\r\n                \"JoinTime\": \"2019-10-10 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"53a54672-d955-4f21-a7c2-a1adaf038702\"\r\n    }\r\n}",
+        "title": "获取企业组织单元成员列表"
+      }
+    ],
+    "ListOrganizationNodes": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=ListOrganizationNodes\r\n&Nodes.0=123\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Nodes\": [\r\n            {\r\n                \"NodeId\": 1,\r\n                \"Name\": \"aa\",\r\n                \"ParentNodeId\": 111,\r\n                \"MemberCount\": 11\r\n            }\r\n         ],\r\n        \"RequestId\": \"f2b75a7e-fc82-4b00-8426-d04371d9052c\"\r\n    }\r\n}",
+        "title": "获取企业组织单元列表"
+      }
+    ],
+    "MoveOrganizationMembersToNode": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=MoveOrganizationMembersToNode\r\n&NodeId=123\r\n&Uins.0=11\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "移动成员到指定组织单元"
+      }
+    ],
+    "QuitOrganization": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=QuitOrganization\r\n&OrgId=123\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "退出企业组织"
+      }
+    ],
+    "SendOrganizationInvitation": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=SendOrganizationInvitation\r\n&InviteUin=123\r\n&Name=\"test\"\r\n&Remark=\"test\"\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "发送企业组织邀请"
+      }
+    ],
+    "UpdateOrganizationMember": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=UpdateOrganizationMember\r\n&MemberUin=123\r\n&Name=\"test\"\r\n&Remark=\"test\"\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "更新企业成员信息"
+      }
+    ],
+    "UpdateOrganizationNode": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=UpdateOrganizationNode\r\n&NodeId=123\r\n&Name=\"test\"\r\n&ParentNodeId=11\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "title": "更新企业组织单元"
+      }
+    ]
+  },
+  "version": "1.0"
+}

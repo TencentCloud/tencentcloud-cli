@@ -1,0 +1,21 @@
+**Example 1: 删除网络ACL**
+
+
+
+Input: 
+
+```
+tccli vpc DeleteNetworkAcl --cli-unfold-argument  \
+    --Version 2017-03-12\
+    --NetworkAclId acl-12345678
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "f23d1450-ed00-4442-98d4-be409e625e6c"
+    }
+}
+```
+

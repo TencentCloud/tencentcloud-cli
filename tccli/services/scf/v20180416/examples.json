@@ -1,0 +1,243 @@
+{
+  "actions": {
+    "CopyFunction": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=CopyFunction\r\n&Namespace=default\r\n&FunctionName=myfunc\r\n&TargetNamespace=otherns\r\n&NewFunctionName=newfunc\r\n&TargetRegion=ap-shanghai\r\n&Override=FALSE\r\n&CopyConfiguration=TRUE\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "title": "复制函数"
+      }
+    ],
+    "CreateAlias": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateAlias\r\n&Name=<AliasName>\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&FunctionVersion=<FunctionVersion>\r\n&RoutingConfig.AdditionalVersionWeights.0.Version=<OtherVersion>\r\n&RoutingConfig.AdditionalVersionWeights.0.Weight=<Weight>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "创建一个别名"
+      }
+    ],
+    "CreateFunction": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateFunction\n&FunctionName=<FunctionName>\n&Handler=<function.handler>\n&Code.CosBucketName=<CosBucketName>\n&Code.CosObjectName=<CosObjectName>\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "创建函数"
+      }
+    ],
+    "CreateNamespace": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateNamespace\r\n&Namespace=test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "title": "创建命名空间。"
+      }
+    ],
+    "CreateTrigger": [
+      {
+        "document": "用户使用该函数创建新的触发器",
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateTrigger\n&FunctionName=<FunctionName>\n&TriggerName=<TriggerName>\n&Type=timer\n&TriggerDesc=*/2****\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "创建新的触发器"
+      }
+    ],
+    "DeleteAlias": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteAlias\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&Name=<AliasName>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\"\r\n    }\r\n}",
+        "title": "删除别名"
+      }
+    ],
+    "DeleteFunction": [
+      {
+        "document": "用户删除函数时需要使用，可指定版本与命名空间。",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteFunction\n&FunctionName=<FunctionName>\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "删除函数"
+      }
+    ],
+    "DeleteLayerVersion": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteLayerVersion\r\n&LayerName=<LayerName>\r\n&LayerVersion=<LayerVersion>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1ffbba5-5489-45bc-89c5-453e50d5386e\"\r\n    }\r\n}",
+        "title": "删除层版本"
+      }
+    ],
+    "DeleteNamespace": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteNamespace\r\n&Namespace=test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "title": "删除命名空间"
+      }
+    ],
+    "DeleteTrigger": [
+      {
+        "document": "用户使用该函数删除触发器。",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteTrigger\r\n&FunctionName=ledDummyAPITest\r\n&TriggerName=test3\r\n&Type=timer\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "删除触发器"
+      }
+    ],
+    "GetAlias": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetAlias\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&Name=<AliasName>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\",\r\n        \"FunctionVersion\": \"1\",\r\n        \"Name\": \"al3\",\r\n        \"RoutingConfig\": {\r\n            \"AdditionalVersionWeights\": [\r\n                {\r\n                    \"Version\": \"3\",\r\n                    \"Weight\": 0.30\r\n                },\r\n                {\r\n                    \"Version\": \"2\",\r\n                    \"Weight\": 0.20\r\n                }\r\n            ]\r\n        },\r\n        \"Description\": \"\"\r\n    }\r\n}",
+        "title": "查询别名详细信息"
+      }
+    ],
+    "GetFunction": [
+      {
+        "document": "用户用此函数获取对应的函数信息，可指定版本与命名空间。",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetFunction\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ModTime\": \"2018-06-07 09:52:23\",\r\n        \"Environment\": {\r\n            \"Variables\": []\r\n        },\r\n        \"CodeError\": \"\",\r\n        \"Description\": \"\",\r\n        \"VpcConfig\": {\r\n            \"SubnetId\": \"\",\r\n            \"VpcId\": \"\"\r\n        },\r\n        \"Triggers\": [],\r\n        \"ErrNo\": 0,\r\n        \"UseGpu\": \"FALSE\",\r\n        \"CodeSize\": 0,\r\n        \"MemorySize\": 128,\r\n        \"Namespace\": \"default\",\r\n        \"FunctionVersion\": \"$LATEST\",\r\n        \"Timeout\": 3,\r\n        \"RequestId\": \"a1ffbba5-5489-45bc-89c5-453e50d5386e\",\r\n        \"CodeResult\": \"failed\",\r\n        \"Handler\": \"scfredis.main_handler\",\r\n        \"Runtime\": \"Python2.7\",\r\n        \"FunctionName\": \"ledDummyAPITest\",\r\n        \"CodeInfo\": \"\",\r\n        \"Role\": \"\",\r\n        \"Qualifier\": \"$LATEST\",\r\n        \"AvailableStatus\": \"Available\",\r\n        \"CfsConfig\": {\r\n        \"CfsInsList\":[\r\n                      {\r\n                      \"LocalMountDir\": \"\",\r\n                      \"RemoteMountDir\": \"\",\r\n     \t              \"MountInsId\": \"\",\r\n                      \"UserId\": 0,\r\n                      \"UserGroupId\": 0,\r\n                      \"CfsId\": \"\",\r\n                      \"IpAddress\": \"\",\r\n                      \"MountVpcId\": \"\",\r\n                      \"MountSubnetId\": \"\"\r\n                     }\r\n                ]\r\n        }\r\n    }\r\n}",
+        "title": "获取函数详细信息"
+      }
+    ],
+    "GetFunctionAddress": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionAddress\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Url\": \"http://lambdacode-1253970226.cosgz.myqcloud.com/1253970226/ledDummyAPITest/ledDummyAPITest_LATEST.zip?sign=RwvyBS5VPXz75hYNCJKHrSUHBqBhPTEyNTM5NzAyMjYmaz1BS0lEQ2dPUFdqUTZCQXh2SHR5Y2toV0FCSlZZU0JqNTQ4cE4mZT0wJnQ9MTUyOTg1MTQxNSZyPTY5NzYyMTk3NCZmPS8xMjUzOTcwMjI2L2xlZER1bW15QVBJVGVzdC9sZWREdW1teUFQSVRlc3RfTEFURVNULnppcCZiPWxhbWJkYWNvZGU=\",\r\n        \"CodeSha256\": \"5077f5203547b225b532434dd6fcf7c9897025d7581a9f3d474a7afee88bc696\",\r\n        \"RequestId\": \"a90cb10a-7ad4-4270-b92d-ba0319be6dbd\"\r\n    }\r\n}",
+        "title": "获取函数代码下载地址"
+      }
+    ],
+    "GetFunctionLogs": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionLogs\n&FunctionName=<FunctionName>\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Data\": [\r\n            {\r\n                \"MemUsage\": 3174400,\r\n                \"RetCode\": 1,\r\n                \"RetMsg\": \"Success\",\r\n                \"Log\": \"\",\r\n                \"BillDuration\": 100,\r\n                \"InvokeFinished\": 1,\r\n                \"RequestId\": \"bc309eaa-6d64-11e8-a7fe-5254000b4175\",\r\n                \"StartTime\": \"2018-06-11 18:46:45\",\r\n                \"Duration\": 0.532,\r\n                \"FunctionName\": \"APITest\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"e2571ff3-da04-4c53-8438-f58bf057ce4a\"\r\n    }\r\n}",
+        "title": "获取函数运行日志"
+      }
+    ],
+    "GetLayerVersion": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetLayerVersion\r\n&LayerName=<LayerName>\r\n&LayerVersion=<LayerVersion>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"Active\",\r\n        \"LayerVersion\": 1,\r\n        \"CodeSha256\": \"c7c8bda601817ce4faab4c4fb3e73b9a32040e0e9f31f7a649d84d4bdde9e4a5\",\r\n        \"Description\": \"desc\",\r\n        \"LicenseInfo\": \"\",\r\n        \"AddTime\": \"2019-11-26 16:15:33\",\r\n        \"Location\": \"https://lambdalayerin-1253665819.cos.ap-mumbai.myqcloud.com/1253970226/layer3/1/1253970226_layer3_1.zip?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDqbBtfGe4eSSK8CExGjmC0e8Qcnswv6yj%26q-sign-time%3D1582083327%3B1582093387%26q-key-time%3D1582083327%3B1582093387%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D255d3e5aaa6c7224396b39f857e134a0dfb27c89&response-content-type=application/octet-stream\",\r\n         \"CompatibleRuntimes\": [\"Nodejs8.9\", \"Nodejs6.10\"],\r\n         \"LayerName\": \"layer3\",\r\n         \"RequestId\": \"6c7578ed-b816-4e50-930a-54e855452b8b\"\r\n    }\r\n}",
+        "title": "获取层版本详情"
+      }
+    ],
+    "Invoke": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=Invoke\r\n&FunctionName=xxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"MemUsage\": 3207168,\r\n            \"Log\": \"\",\r\n            \"RetMsg\": \"hello from scf\",\r\n            \"BillDuration\": 100,\r\n            \"FunctionRequestId\": \"6add56fa-58f1-11e8-89a9-5254005d5fdb\",\r\n            \"Duration\": 0.826,\r\n            \"ErrMsg\": \"\",\r\n            \"InvokeResult\": 0\r\n        },\r\n        \"RequestId\": \"c2af8a64-c922-4d55-aee0-bd86a5c2cd12\"\r\n    }\r\n}",
+        "title": "运行函数"
+      }
+    ],
+    "ListAliases": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListAliases\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\",\r\n        \"EipUseNum\": 4,\r\n        \"EipUserQuota\": 5,\r\n        \"EipTotalUseNum\": 80,\r\n        \"EipTotalQuota\": 200\r\n    }\r\n}",
+        "title": "查询函数下的全部别名"
+      }
+    ],
+    "ListFunctions": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\r\n&Limit=2\r\n&Order=ASC\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Functions\": [\r\n            {\r\n                \"FunctionId\": \"lam-xxxxxxx\",\r\n                \"Namespace\": \"default\",\r\n                \"FunctionName\": \"test\",\r\n                \"ModTime\": \"2018-04-08 19:02:20\",\r\n                \"AddTime\": \"2018-04-08 15:18:49\",\r\n                \"Runtime\": \"Python2.7\"            \r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "title": "获取函数列表"
+      },
+      {
+        "document": "查询status标签的值是dev，且owner标签的值是me的函数",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\r\n&Filters.0.Name=tag-status\r\n&Filters.0.Values.0=dev\r\n&Filters.1.Name=tag-owner\r\n&Filters.1.Values.0=me\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Functions\": [\r\n            {\r\n                \"FunctionId\": \"lam-xxxxxxx\",\r\n                \"Namespace\": \"default\",\r\n                \"FunctionName\": \"test\",\r\n                \"ModTime\": \"2018-04-08 19:02:20\",\r\n                \"AddTime\": \"2018-04-08 15:18:49\",\r\n                \"Runtime\": \"Python2.7\"            \r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "title": "根据标签查询函数"
+      }
+    ],
+    "ListLayerVersions": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListLayerVersions\r\n&LayerName=<LayerName>\r\n&CompatibleRuntime=<CompatibleRuntime>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n         \"LayerVersions\": [{\r\n              \"Status\": \"Active\",\r\n              \"LayerVersion\": 1,\r\n              \"Description\": \"desc\",\r\n              \"LicenseInfo\": \"\",\r\n              \"AddTime\": \"2019-11-26 16:15:33\",\r\n              \"CompatibleRuntimes\": [\"Nodejs8.9\", \"Nodejs6.10\"],\r\n              \"LayerName\": \"layer3\"\r\n         }],\r\n         \"RequestId\": \"4e9bc0ab-0b7c-45f1-8eec-e4f1f4f73e2b\"\r\n    }\r\n}",
+        "title": "获取层版本列表"
+      }
+    ],
+    "ListLayers": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListLayers\n&CompatibleRuntime=<CompatibleRuntime>\n&Limit=<Limit>\n&Offset=<Offset>\n&SearchKey=<SearchKey>\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n       \"Layers\":[],\r\n       \"TotalCount\":0\r\n    }\r\n}",
+        "title": "拉取层列表"
+      }
+    ],
+    "ListNamespaces": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListNamespaces\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Namespaces\": [{\r\n\t\t\t\"Namespaces\": \"python\",\r\n\t\t\t\"Description\": \"test\",\r\n\t\t\t\"AddTime\": \"2018-11-27 12:02:25\",\r\n\t\t\t\"ModTime\": \"2018-11-27 12:02:25\",\r\n                        \"Type\":\"default\"\r\n\t\t}],\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"RequestId\": \"d6b24531-8594-4994-b1a8-f154ec07ff76\"\r\n\t}\r\n}",
+        "title": "列出命名空间列表"
+      }
+    ],
+    "ListTriggers": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListTriggers&FunctionName=aaa\r\n&Limit=2\r\n&Order=ASC\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Triggers\": [\r\n        ],\r\n        \"TotalCount\": 0,\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "title": "获取函数触发器列表"
+      }
+    ],
+    "ListVersionByFunction": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListVersionByFunction\r\n&FunctionName=xxxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FunctionVersion\": [\r\n            \"$LATEST\",\r\n            \"3\",\r\n            \"2\",\r\n            \"1\"\r\n        ],\r\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\",\r\n        \"Versions\": [\r\n            {\r\n                \"Version\": \"$LATEST\",\r\n                \"Description\": \"123\"\r\n            },\r\n            {\r\n                \"Version\": \"3\",\r\n                \"Description\": \"123\"\r\n            },\r\n            {\r\n                \"Version\": \"2\",\r\n                \"Description\": \"123\"\r\n            },\r\n            {\r\n                \"Version\": \"1\",\r\n                \"Description\": \"123\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询函数版本"
+      }
+    ],
+    "PublishLayerVersion": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=PublishLayerVersion\n&LayerName=<LayerName>\n&CompatibleRuntimes=<CompatibleRuntimes>\n&Content=<Content>\n&Description=<Description>\n&LicenseInfo=<LicenseInfo>\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"LayerVersion\": 1\r\n    }\r\n}",
+        "title": "发布层版本"
+      }
+    ],
+    "PublishVersion": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=PublishVersion\r\n&FunctionName=<FunctionName>\r\n&Description=<Description>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Namespace\": \"default\",\r\n        \"Description\": \"dummytut\",\r\n        \"CodeSize\": 45686,\r\n        \"MemorySize\": 256,\r\n        \"Handler\": \"scfredis.main_handler\",\r\n        \"RequestId\": \"68c9669c-9e2c-47b0-9a01-e8406a41be59\",\r\n        \"Timeout\": 3,\r\n        \"Runtime\": \"Python2.7\",\r\n        \"FunctionVersion\": \"4\"\r\n    }\r\n}",
+        "title": "发布新版本"
+      }
+    ],
+    "UpdateAlias": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateAlias\r\n&Name=<AliasName>\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&FunctionVersion=<FunctionVersion>\r\n&RoutingConfig.AdditionalVersionWeights.0.Version=<OtherVersion>\r\n&RoutingConfig.AdditionalVersionWeights.0.Weight=<Weight>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "更新别名的配置"
+      }
+    ],
+    "UpdateFunctionCode": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateFunctionCode\r\n&FunctionName=test\r\n&Handler=index.main\r\n&CosBucketName=<CosBucketName>\r\n&CosObjectName=<CosObjectName>\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "更新函数代码"
+      }
+    ],
+    "UpdateFunctionConfiguration": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateFunctionConfiguration\n&FunctionName=<FunctionName>\n&Description=<Description>\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "更新函数配置"
+      }
+    ],
+    "UpdateNamespace": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateNamespace\r\n&Namespace=test01\r\n&Description=fdsgfds\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b2b845e1-d44a-4c3e-8314-b6b774b4e66f\"\r\n    }\r\n}",
+        "title": "更新命名空间"
+      }
+    ]
+  },
+  "version": "1.0"
+}

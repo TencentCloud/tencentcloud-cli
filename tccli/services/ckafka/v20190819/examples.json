@@ -1,0 +1,229 @@
+{
+  "actions": {
+    "CreateAcl": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateAcl\r\n&InstanceId=xxx\r\n&ResourceType=xxx\r\n&ResourceName=1\r\n&Operation=2\r\n&PermissionType=2\r\n&Host=2\r\n&Principal=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ReturnCode\": \"0\",\r\n            \"ReturnMessage\": \"ok[apply ok]\"\r\n        },\r\n        \"RequestId\": \"b1ce770b-3623-47d3-b31b-538f8941142d\"\r\n    }\r\n}",
+        "title": "添加 ACL 策略"
+      }
+    ],
+    "CreateInstancePre": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateInstancePre\r\n&InstanceName=test\r\n&MsgRetentionTime=1440\r\n&InstanceType=1\r\n&ZoneId=100003\r\n&Period=1m\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ReturnCode\": \"0\",\r\n            \"ReturnMessage\": \"ok\",\r\n            \"Data\": {\r\n                \"FlowId\": 0,\r\n                \"DealNames\": [\r\n                    \"1111111111\"\r\n                ]\r\n            }\r\n        },\r\n        \"RequestId\": \"1ba4ac83-1e9e-497b-b3e1-4c10872a4068\"\r\n    }\r\n}",
+        "title": "创建实例(预付费包年包月)"
+      }
+    ],
+    "CreatePartition": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreatePartition\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&PartitionNum=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Result\": {\r\n\t\t\t\"ReturnCode\": \"0\",\r\n\t\t\t\"ReturnMessage\": \"ok[apply success]\"\r\n\t\t},\r\n\t\t\"RequestId\": \"483c3edd-a2ac-420c-905d-47a5ec7de4ad\"\r\n\t}\r\n}",
+        "title": "增加主题分区"
+      }
+    ],
+    "CreateTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateTopic\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&PartitionNum=1\r\n&ReplicaNum=2\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Result\": {\r\n\t\t\t\"TopicId\": \"topic-k766ruye\"\r\n\t\t},\r\n\t\t\"RequestId\": \"1305a410-b030-476d-acdf-eba0dfd5323b\"\r\n\t}\r\n}",
+        "title": "创建主题"
+      }
+    ],
+    "CreateTopicIpWhiteList": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateTopicIpWhiteList\r\n&InstanceId=xxxx\r\n&TopicName=xxx\r\n&IpWhiteList.n=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Result\": {\r\n\t\t\t\"ReturnCode\": \"0\",\r\n\t\t\t\"ReturnMessage\": \"ok[apply success]\"\r\n\t\t},\r\n\t\t\"RequestId\": \"7a6f7927-a435-4e55-8687-f24a8838f744\"\r\n\t}\r\n}",
+        "title": "创建主题IP白名单"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateUser\r\n&InstanceId=xxx\r\n&Name=xxx\r\n&Password=Password\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ReturnCode\": \"0\",\r\n            \"ReturnMessage\": \"ok\"\r\n        },\r\n        \"RequestId\": \"8bdec3bf-585d-4129-9a87-5a7813797c1f\"\r\n    }\r\n}",
+        "title": "添加用户"
+      }
+    ],
+    "DeleteAcl": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteAcl\r\n&InstanceId=xxx\r\n&ResourceType=xxx\r\n&ResourceName=1\r\n&Operation=2\r\n&PermissionType=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ReturnCode\": \"0\",\r\n            \"ReturnMessage\": \"ok[apply ok]\"\r\n        },\r\n        \"RequestId\": \"2140f435-b350-4429-a105-9b83efe104b0\"\r\n    }\r\n}",
+        "title": "删除ACL"
+      }
+    ],
+    "DeleteTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteTopic\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Result\": {\r\n\t\t\t\"ReturnCode\": \"0\",\r\n\t\t\t\"ReturnMessage\": \"ok[apply success]\"\r\n\t\t},\r\n\t\t\"RequestId\": \"bf88d4c8-06f5-4643-be86-5ffc179dc325\"\r\n\t}\r\n}",
+        "title": "删除主题"
+      }
+    ],
+    "DeleteTopicIpWhiteList": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteTopicIpWhiteList\r\n&InstanceId=xxx\r\n&TopicName=xxxx\r\n&IpWhiteList.n=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Result\": {\r\n\t\t\t\"ReturnCode\": \"0\",\r\n\t\t\t\"ReturnMessage\": \"ok[apply success]\"\r\n\t\t},\r\n\t\t\"RequestId\": \"b800c966-083a-40f5-8d54-44f40c6b364f\"\r\n\t}\r\n}",
+        "title": "删除主题IP白名单"
+      }
+    ],
+    "DeleteUser": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteUser\r\n&InstanceId=xxx\r\n&Name=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ReturnCode\": \"0\",\r\n            \"ReturnMessage\": \"ok\"\r\n        },\r\n        \"RequestId\": \"c0f25f9c-4a80-48bb-ad2a-a5107041d486\"\r\n    }\r\n}",
+        "title": "删除用户"
+      }
+    ],
+    "DescribeACL": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeACL\r\n&InstanceId=xxx\r\n&ResourceType=xxx\r\n&ResourceName=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TotalCount\": 1,\r\n            \"AclList\": [\r\n                {\r\n                    \"ResourceType\": 2,\r\n                    \"ResourceName\": \"test\",\r\n                    \"Principal\": \"User:test\",\r\n                    \"Host\": \"*\",\r\n                    \"Operation\": 3,\r\n                    \"PermissionType\": 3\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"62d589e0-53d5-47e0-95ff-237c48b8fb77\"\r\n    }\r\n}",
+        "title": "枚举ACL"
+      }
+    ],
+    "DescribeAppInfo": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeAppInfo\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TotalCount\": 11,\r\n            \"AppIdList\": [\r\n                1251000011,\r\n                1255426940,\r\n                251000873,\r\n                251000691,\r\n                251006545,\r\n                1251762227,\r\n                1256134262,\r\n                251006131,\r\n                1251006288,\r\n                1251006373\r\n            ]\r\n        },\r\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\r\n    }\r\n}",
+        "title": "查询用户列表"
+      }
+    ],
+    "DescribeConsumerGroup": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeConsumerGroup\r\n&InstanceId=10\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Result\": {\r\n\t\t\t\"TotalCount\": 2,\r\n\t\t\t\"TopicList\": [{\r\n\t\t\t\t\"TopicId\": \"topic-g8ud11it\",\r\n\t\t\t\t\"TopicName\": \"connect-offset\"\r\n\t\t\t}],\r\n\t\t\t\"GroupList\": [{\r\n\t\t\t\t\"ConsumerGroupName\": \"connect-cluster-1\",\r\n\t\t\t\t\"SubscribedInfo\": []\r\n\t\t\t}, {\r\n\t\t\t\t\"ConsumerGroupName\": \"qcloud_tocos\",\r\n\t\t\t\t\"SubscribedInfo\": [{\r\n\t\t\t\t\t\"TopicName\": \"connect-offset\",\r\n\t\t\t\t\t\"PartitionOffset\": [{\r\n\t\t\t\t\t\t\"Partition\": \"0\",\r\n\t\t\t\t\t\t\"Offset\": 966186803\r\n\t\t\t\t\t}, {\r\n\t\t\t\t\t\t\"Partition\": \"1\",\r\n\t\t\t\t\t\t\"Offset\": 968552882\r\n\t\t\t\t\t}, {\r\n\t\t\t\t\t\t\"Partition\": \"2\",\r\n\t\t\t\t\t\t\"Offset\": 957792934\r\n\t\t\t\t\t}]\r\n\t\t\t\t}]\r\n\t\t\t}],\r\n\t\t\t\"TotalPartition\": 0,\r\n\t\t\t\"PartitionListForMonitor\": [],\r\n\t\t\t\"TotalTopic\": 1,\r\n\t\t\t\"TopicListForMonitor\": [{\r\n\t\t\t\t\"TopicId\": \"topic-g8ud11it\",\r\n\t\t\t\t\"TopicName\": \"connect-offset\"\r\n\t\t\t}],\r\n\t\t\t\"GroupListForMonitor\": [{\r\n\t\t\t\t\"GroupName\": \"connect-cluster-1\"\r\n\t\t\t}, {\r\n\t\t\t\t\"GroupName\": \"qcloud_tocos\"\r\n\t\t\t}]\r\n\t\t},\r\n\t\t\"RequestId\": \"3c8a91a3-5921-4d7f-9fd9-6b4261cca363\"\r\n\t}\r\n}",
+        "title": "列出消费分组"
+      }
+    ],
+    "DescribeGroup": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroup\r\n&InstanceId=xxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TotalCount\": 1,\r\n            \"GroupList\": [\r\n                {\r\n                    \"Group\": \"qcloud_tocos\",\r\n                    \"Protocol\": \"consumer\"\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"c931f394-7d72-4ad4-8d70-5a225708c762\"\r\n    }\r\n}",
+        "title": "枚举消费分组"
+      }
+    ],
+    "DescribeGroupInfo": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroupInfo\r\n&InstanceId=xxxx\r\n&GroupList.0=xx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": [\r\n            {\r\n                \"ErrorCode\": \"0\",\r\n                \"State\": \"Stable\",\r\n                \"ProtocolType\": \"consumer\",\r\n                \"Protocol\": \"range\",\r\n                \"Members\": [\r\n                    {\r\n                        \"MemberId\": \"consumer-1-/10.53.88.65-2018-08-10 10:17:19:639-88206ef1-9248-43a0-9ff4-e22c3ab21e92\",\r\n                        \"ClientId\": \"consumer-1\",\r\n                        \"ClientHost\": \"/10.53.88.65\",\r\n                        \"Assignment\": {\r\n                            \"Version\": 0,\r\n                            \"Topics\": [\r\n                                {\r\n                                    \"Topic\": \"test\",\r\n                                    \"Partitions\": [\r\n                                        0\r\n                                    ]\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"Group\": \"perf-consumer-97910\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"8e9b234e-0c3e-4340-9733-adbd05879b10\"\r\n    }\r\n}",
+        "title": "获取消费分组信息"
+      }
+    ],
+    "DescribeGroupOffsets": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroupOffsets\r\n&InstanceId=10\r\n&Group=\"group\"\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TotalCount\": 1,\r\n            \"TopicList\": [\r\n                {\r\n                    \"Topic\": \"test\",\r\n                    \"Partitions\": [\r\n                        {\r\n                            \"Partition\": 0,\r\n                            \"Offset\": 22689638,\r\n                            \"Metadata\": \"\",\r\n                            \"ErrorCode\": 0,\r\n                            \"LogEndOffset\": 207927929,\r\n                            \"Lag\": 185238291\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"fd9afa97-cc0f-4ea7-9da8-63914a0877e1\"\r\n    }\r\n}",
+        "title": "获取消费分组offset"
+      }
+    ],
+    "DescribeInstanceAttributes": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstanceAttributes\r\n&InstanceId=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Tags\": [],\r\n            \"InstanceId\": \"instance-will-s\",\r\n            \"InstanceName\": \"treTest\",\r\n            \"VipList\": [\r\n                {\r\n                    \"Vip\": \"172.16.16.135\",\r\n                    \"Vport\": \"9092\"\r\n                }\r\n            ],\r\n            \"Vip\": \"172.16.16.135\",\r\n            \"Vport\": \"9092\",\r\n            \"Status\": 1,\r\n            \"Bandwidth\": 48000,\r\n            \"DiskSize\": 120000,\r\n            \"ZoneId\": 100003,\r\n            \"VpcId\": \"vpc-1qkosjcb\",\r\n            \"SubnetId\": \"subnet-lt4shnme\",\r\n            \"Healthy\": 1,\r\n            \"HealthyMessage\": \"连接数:0#磁盘使用百分比:0%#消费峰值带宽0MB/s\",\r\n            \"CreateTime\": \"1970-01-19 06:46:02\",\r\n            \"MsgRetentionTime\": \"1970-01-01 08:00:05\",\r\n            \"Config\": {\r\n                \"AutoCreateTopicsEnable\": true,\r\n                \"NumPartitions\": 3,\r\n                \"DefaultReplicationFactor\": 2\r\n            },\r\n            \"RemainderPartitions\": 45,\r\n            \"RemainderTopics\": 17,\r\n            \"CreatedPartitions\": 0,\r\n            \"CreatedTopics\": 0\r\n        },\r\n        \"RequestId\": \"33a2224e-156d-4f23-9ffe-3c66d545c59c\"\r\n    }\r\n}",
+        "title": "获取实例属性"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstances\r\n&InstanceId=instance-will-s\r\n&SearchWord=tre\r\n&Offset=0&Limit=10\r\n&Status.0=0\r\n&Status.1=1\r\n&Status.2=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TotalCount\": 1,\r\n            \"InstanceList\": [\r\n                {\r\n                    \"InstanceId\": \"instance-will-s\",\r\n                    \"InstanceName\": \"treTest\",\r\n                    \"IfCommunity\": true,\r\n                    \"Status\": 1\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"31740399-5d06-404b-a4b5-3652e21c8a1d\"\r\n    }\r\n}",
+        "title": "获取实例列表"
+      }
+    ],
+    "DescribeInstancesDetail": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstancesDetail\r\n&InstanceId=instance-will-s\r\n&SearchWord=tre\r\n&Offset=0&Limit=10\r\n&Status.0=0\r\n&Status.1=1\r\n&Status.2=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TotalCount\": 1,\r\n            \"InstanceList\": [\r\n                {\r\n                    \"InstanceId\": \"instance-will-s\",\r\n                    \"InstanceName\": \"treTest\",\r\n                    \"IfCommunity\": true,\r\n                    \"Status\": 1\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"31740399-5d06-404b-a4b5-3652e21c8a2d\"\r\n    }\r\n}",
+        "title": "获取实例列表详情"
+      }
+    ],
+    "DescribeRoute": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeRoute\r\n&InstanceId=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Routers\": [\r\n                {\r\n                    \"AccessType\": 0,\r\n                    \"RouteId\": 2,\r\n                    \"VipType\": 4,\r\n                    \"VipList\": [\r\n                        {\r\n                            \"Vip\": \"9.13.100.63\",\r\n                            \"Vport\": \"8774\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"e36d80f9-21aa-4a22-9932-91e1fbd12f39\"\r\n    }\r\n}",
+        "title": "查看路由信息"
+      }
+    ],
+    "DescribeTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopic\r\n&InstanceId=ckafka-xxooa0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TopicList\": [\r\n                {\r\n                    \"TopicId\": \"inter-topic-8sj6wxwi\",\r\n                    \"TopicName\": \"test1\",\r\n                    \"Note\": \"\"\r\n                },\r\n                {\r\n                    \"TopicId\": \"inter-topic-844bkmry\",\r\n                    \"TopicName\": \"test10\",\r\n                    \"Note\": \"\"\r\n                }\r\n            ],\r\n            \"TotalCount\": 12\r\n        },\r\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\r\n    }\r\n}",
+        "title": "获取某个实例下的主题列表"
+      }
+    ],
+    "DescribeTopicAttributes": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopicAttributes\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TopicId\": \"inter-topic-d7a2f7fq\",\r\n            \"CreateTime\": \"1970-01-19 09:47:17\",\r\n            \"Note\": \"\",\r\n            \"PartitionNum\": 3,\r\n            \"EnableWhiteList\": 0,\r\n            \"IpWhiteList\": [],\r\n            \"Config\": {\r\n                \"Retention\": 300000000\r\n            },\r\n            \"Partitions\": [\r\n                {\r\n                    \"Partition\": 0,\r\n                    \"LeaderStatus\": 0,\r\n                    \"IsrNum\": 2,\r\n                    \"ReplicaNum\": 2\r\n                },\r\n                {\r\n                    \"Partition\": 1,\r\n                    \"LeaderStatus\": 0,\r\n                    \"IsrNum\": 2,\r\n                    \"ReplicaNum\": 2\r\n                },\r\n                {\r\n                    \"Partition\": 2,\r\n                    \"LeaderStatus\": 0,\r\n                    \"IsrNum\": 2,\r\n                    \"ReplicaNum\": 2\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"b660ef69-993b-4760-a599-995cadb56bbe\"\r\n    }\r\n}",
+        "title": "获取主题属性"
+      }
+    ],
+    "DescribeTopicDetail": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopicDetail\r\n&InstanceId=ckafka-xxooa0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TopicList\": [\r\n                {\r\n                    \"TopicName\": \"test\",\r\n                    \"TopicId\": \"inter-topic-d7a2f7fq\",\r\n                    \"PartitionNum\": 3,\r\n                    \"ReplicaNum\": 2,\r\n                    \"Note\": \"\",\r\n                    \"CreateTime\": 1561637447,\r\n                    \"EnableWhiteList\": false,\r\n                    \"IpWhiteListCount\": 0,\r\n                    \"ForwardCosBucket\": \"\",\r\n                    \"ForwardStatus\": 1,\r\n                    \"ForwardInterval\": 0,\r\n                    \"Config\": {\r\n                        \"Retention\": 300000000\r\n                    }\r\n                }\r\n            ],\r\n            \"TotalCount\": 12\r\n        },\r\n        \"RequestId\": \"98fdae03-9bc2-4c2e-b429-0a96cca7144b\"\r\n    }\r\n}",
+        "title": "获取实例列表详情"
+      }
+    ],
+    "DescribeUser": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeUser\r\n&InstanceId=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Users\": [\r\n                {\r\n                    \"UserId\": 41,\r\n                    \"Name\": \"ANONYMOUS\",\r\n                    \"CreateTime\": \"2019-09-05 00:53:28\",\r\n                    \"UpdateTime\": \"2019-09-05 00:53:28\"\r\n                },\r\n                {\r\n                    \"UserId\": 40,\r\n                    \"Name\": \"test\",\r\n                    \"CreateTime\": \"2019-09-05 00:20:36\",\r\n                    \"UpdateTime\": \"2019-09-05 00:20:36\"\r\n                }\r\n            ],\r\n            \"TotalCount\": 2\r\n        },\r\n        \"RequestId\": \"26f6afd4-2966-43f5-a7a2-d506de3e881f\"\r\n    }\r\n}",
+        "title": "查询用户信息"
+      }
+    ],
+    "ModifyGroupOffsets": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyGroupOffsets\n&InstanceId=10\n&Group=\"group\"\n&Strategy=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ReturnCode\": \"0\",\r\n            \"ReturnMessage\": \"ok\"\r\n        },\r\n        \"RequestId\": \"ae362db8-81f6-4441-b0cc-1f6ffa31127e\"\r\n    }\r\n}",
+        "title": "设置Groups 消费分组offset"
+      }
+    ],
+    "ModifyInstanceAttributes": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyInstanceAttributes\r\n&InstanceId=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ReturnCode\": \"0\",\r\n            \"ReturnMessage\": \"ok[no param set]\"\r\n        },\r\n        \"RequestId\": \"dfc46e62-73d6-4b6b-9cd8-4512259888f5\"\r\n    }\r\n}",
+        "title": "设置实例属性"
+      }
+    ],
+    "ModifyPassword": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyPassword\r\n&InstanceId=xxx\r\n&Name=xxx\r\n&Password=1\r\n&PasswordNew=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ReturnCode\": \"0\",\r\n            \"ReturnMessage\": \"ok\"\r\n        },\r\n        \"RequestId\": \"21c3d702-ae87-4a2a-a51b-b3d4516f121a\"\r\n    }\r\n}",
+        "title": "修改密码"
+      }
+    ],
+    "ModifyTopicAttributes": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyTopicAttributes\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&Note=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Result\": {\r\n\t\t\t\"ReturnCode\": \"0\",\r\n\t\t\t\"ReturnMessage\": \"ok[apply success]\"\r\n\t\t},\r\n\t\t\"RequestId\": \"83d1142c-2754-46fb-99ca-46d9d87f5e3e\"\r\n\t}\r\n}",
+        "title": "设置主题属性"
+      }
+    ]
+  },
+  "version": "1.0"
+}

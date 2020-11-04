@@ -9,10 +9,10 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.yunsou.v20191115 import yunsou_client as yunsou_client_v20191115
-from tencentcloud.yunsou.v20191115 import models as models_v20191115
 from tencentcloud.yunsou.v20180504 import yunsou_client as yunsou_client_v20180504
 from tencentcloud.yunsou.v20180504 import models as models_v20180504
+from tencentcloud.yunsou.v20191115 import yunsou_client as yunsou_client_v20191115
+from tencentcloud.yunsou.v20191115 import models as models_v20191115
 
 
 def doDataManipulation(args, parsed_globals):
@@ -66,14 +66,14 @@ def doDataSearch(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20191115": yunsou_client_v20191115,
     "v20180504": yunsou_client_v20180504,
+    "v20191115": yunsou_client_v20191115,
 
 }
 
 MODELS_MAP = {
-    "v20191115": models_v20191115,
     "v20180504": models_v20180504,
+    "v20191115": models_v20191115,
 
 }
 
@@ -84,8 +84,8 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20191115",
     "v20180504",
+    "v20191115",
 
 ]
 

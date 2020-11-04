@@ -1,0 +1,371 @@
+{
+  "actions": {
+    "ActivateRule": [
+      {
+        "document": "启用规则",
+        "input": "https://iot.tencentcloudapi.com/?Action=ActivateRule\r\n&RuleId=rule-8tju9mg6\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bddb7ef1-ac90-4f43-895d-e683da49e326\"\r\n    }\r\n}",
+        "title": "启用规则"
+      }
+    ],
+    "AddDevice": [
+      {
+        "document": "新增设备",
+        "input": "https://iot.tencentcloudapi.com/?Action=AddDevice\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceName=aaaa\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"98abdf39-fb5d-4314-8b62-ec749951f75f\",\r\n        \"Device\": {\r\n            \"DeviceSecret\": \"f1c8058428adab76b0b61cafb435ec62\",\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"DeviceName\": \"aaaa\",\r\n            \"CreateTime\": \"2018-07-06 01:46:43\",\r\n            \"DeviceInfo\": \"{}\",\r\n            \"UpdateTime\": \"2018-07-06 01:46:43\"\r\n        }\r\n    }\r\n}",
+        "title": "新增设备"
+      }
+    ],
+    "AddProduct": [
+      {
+        "document": "新增产品",
+        "input": "https://iot.tencentcloudapi.com/?Action=AddProduct\r\n&Name=产品名称\r\n&Description=产品描述\r\n&DataTemplate.0.Number.Name=Temperature\r\n&DataTemplate.0.Number.Desc=温度\r\n&DataTemplate.0.Number.Mode=rw\r\n&DataTemplate.0.Number.Range.0=0\r\n&DataTemplate.0.Number.Range.1=50.1\r\n&DataTemplate.1.String.Name=Message\r\n&DataTemplate.1.String.Desc=留言\r\n&DataTemplate.1.String.Mode=rw\r\n&DataTemplate.1.String.Range.0=0\r\n&DataTemplate.1.String.Range.1=1024\r\n&DataTemplate.2.Enum.Name=Weather\r\n&DataTemplate.2.Enum.Desc=天气\r\n&DataTemplate.2.Enum.Mode=r\r\n&DataTemplate.2.Enum.Range.0=Sunny\r\n&DataTemplate.2.Enum.Range.1=Rainy\r\n&DataTemplate.3.Bool.Name=Lock\r\n&DataTemplate.3.Bool.Desc=锁\r\n&DataTemplate.3.Bool.Mode=rw\r\n&DataTemplate.3.Bool.Range.0=true\r\n&DataTemplate.3.Bool.Range.1=false\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b78d722c-c32c-4108-b9d8-a75be705e227\",\r\n        \"Product\": {\r\n            \"DataTemplate\": [\r\n                {\r\n                    \"Number\": {\r\n                        \"Desc\": \"温度\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Temperature\",\r\n                        \"Range\": [\r\n                            0,\r\n                            50.1\r\n                        ]\r\n                    },\r\n                    \"String\": null,\r\n                    \"Enum\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"String\": {\r\n                        \"Desc\": \"留言\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Message\",\r\n                        \"Range\": [\r\n                            0,\r\n                            1024\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"Enum\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"Enum\": {\r\n                        \"Desc\": \"天气\",\r\n                        \"Mode\": \"r\",\r\n                        \"Name\": \"Weather\",\r\n                        \"Range\": [\r\n                            \"Sunny\",\r\n                            \"Rainy\"\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"String\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"Bool\": {\r\n                        \"Desc\": \"锁\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Lock\",\r\n                        \"Range\": [\r\n                            true,\r\n                            false\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"String\": null,\r\n                    \"Enum\": null\r\n                }\r\n            ],\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"ProductKey\": \"mqtt-1ec1b84pe\",\r\n            \"AppId\": 1251006373,\r\n            \"Name\": \"名称\",\r\n            \"Description\": \"描述\",\r\n            \"Domain\": \"mqtt-1ec1b84pe.ap-guangzhou.mqtt.tencentcloudmq.com\",\r\n            \"Standard\": 3,\r\n            \"AuthType\": 1,\r\n            \"DataProtocol\": \"template\",\r\n            \"Deleted\": 0,\r\n            \"Message\": \"\",\r\n            \"CreateTime\": \"2018-03-12 15:59:51\",\r\n            \"UpdateTime\": \"2018-07-05 21:02:06\",\r\n            \"Username\": \"AKIDhFcnnbEo8HoGqGeWNSM5d0BC0b2O4aKs\",\r\n            \"Password\": \"E4udpi9C7GrfuMGDCVa5qQ20k6eVlyCSbroIG0eF7Gs=\"\r\n        }\r\n    }\r\n}",
+        "title": "新增产品"
+      }
+    ],
+    "AddRule": [
+      {
+        "document": "新增规则",
+        "input": "https://iot.tencentcloudapi.com/?Action=AddRule\r\n&Name=规则名称\r\n&Description=规则描述\r\n&Query.Field=*\r\n&Query.Topic=iot-4e0wsxpi/+/new-topic-1\r\n&Query.Condition=\r\n&Actions.0.Topic.Topic=iot-gl9kmqrs/new-device-1/new-topic-1\r\n&Actions.1.Service.Url=http://abc.com\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"07ae8cda-4ff1-4112-914e-32afca4fcffd\",\r\n        \"Rule\": {\r\n            \"RuleId\": \"rule-ox6djvws\",\r\n            \"AppId\": 1251006373,\r\n            \"Name\": \"aaa\",\r\n            \"Description\": \"aaaaaa\",\r\n            \"Query\": {\r\n                \"Field\": \"字符串\",\r\n                \"Topic\": \"iot-5aawn3i8/asdf/asdfa\",\r\n                \"Condition\": \"1=1\"\r\n            },\r\n            \"Actions\": [\r\n                {\r\n                    \"Topic\": {\r\n                        \"Topic\": \"iot-gl9kmqrs/new-device-1/new-topic-1\"\r\n                    },\r\n                    \"Service\": null\r\n                },\r\n                {\r\n                    \"Service\": {\r\n                        \"Url\": \"http://abc.com\"\r\n                    },\r\n                    \"Topic\": null\r\n                }\r\n            ],\r\n            \"MsgOrder\": 0,\r\n            \"DataType\": 0,\r\n            \"Active\": 0,\r\n            \"Deleted\": 0,\r\n            \"CreateTime\": \"2018-06-26 13:15:18\",\r\n            \"UpdateTime\": \"2018-07-04 14:45:40\"\r\n        }\r\n    }\r\n}",
+        "title": "新增规则"
+      }
+    ],
+    "AddTopic": [
+      {
+        "document": "新增Topic",
+        "input": "https://iot.tencentcloudapi.com/?Action=AddTopic\r\n&ProductId=iot-4e0wsxpi\r\n&TopicName=new-topic-1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e2d52ec2-163f-4d53-ab0f-075a4f123073\",\r\n        \"Topic\": {\r\n            \"TopicId\": \"topic-7gjao342\",\r\n            \"TopicName\": \"new-topic-1\",\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"MsgLife\": 86400,\r\n            \"MsgSize\": 65536,\r\n            \"MsgCount\": 1000000,\r\n            \"Deleted\": 0,\r\n            \"CreateTime\": \"2018-03-12 20:32:47\",\r\n            \"UpdateTime\": \"2018-03-12 20:32:47\",\r\n            \"Path\": \"iot-4e0wsxpi/${device_name}/new-topic-1\"\r\n        }\r\n    }\r\n}",
+        "title": "新增Topic"
+      }
+    ],
+    "AppAddUser": [
+      {
+        "document": "注册应用用户",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppAddUser\r\n&UserName=iotappuser\r\n&Password=iotappuser666!\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a83c028f-5a7a-43b0-b9c5-65ec72837535\",\r\n        \"AppUser\": {\r\n            \"ApplicationId\": \"app-hwgab41y\",\r\n            \"UserName\": \"username\",\r\n            \"CreateTime\": \"2018-05-01 20:38:20\",\r\n            \"NickName\": \"\",\r\n            \"UpdateTime\": \"2018-05-01 20:38:20\"\r\n        }\r\n    }\r\n}",
+        "title": "注册应用用户"
+      }
+    ],
+    "AppDeleteDevice": [
+      {
+        "document": "用户解绑设备",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppDeleteDevice\r\n&AccessToken=xxx\r\n&ProductId=iot-a8ojgbji\r\n&DeviceName=device\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6b07242c-dd95-420f-9ab2-032eba5a49f0\"\r\n    }\r\n}",
+        "title": "用户解绑设备"
+      }
+    ],
+    "AppGetDevice": [
+      {
+        "document": "获取绑定设备的基本信息与数据模板定义",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppGetDevice\r\n&AccessToken=xxx\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceName=abc\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c01da37e-7419-44bc-a7fc-93c59ec1cc7a\",\r\n        \"AppDevice\": {\r\n            \"DeviceInfo\": \"{\\\"product\\\":\\\"iot-4e0wsxpi\\\",\\\"device\\\":\\\"abc\\\",\\\"sdk-ver\\\":\\\"2.3\\\",\\\"firm-ver\\\":\\\"LINUX_V1.0\\\",\\\"topic\\\":\\\"ota\\\\/update\\\\/iot-4e0wsxpi\\\\/abc\\\"}\",\r\n            \"DataTemplate\": [\r\n                {\r\n                    \"Number\": {\r\n                        \"Desc\": \"温度\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Temperature\",\r\n                        \"Range\": [\r\n                            0,\r\n                            50.1\r\n                        ]\r\n                    },\r\n                    \"String\": null,\r\n                    \"Enum\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"String\": {\r\n                        \"Desc\": \"留言\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Message\",\r\n                        \"Range\": [\r\n                            0,\r\n                            1024\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"Enum\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"Enum\": {\r\n                        \"Desc\": \"天气\",\r\n                        \"Mode\": \"r\",\r\n                        \"Name\": \"Weather\",\r\n                        \"Range\": [\r\n                            \"Sunny\",\r\n                            \"Rainy\"\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"String\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"Bool\": {\r\n                        \"Desc\": \"锁\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Lock\",\r\n                        \"Range\": [\r\n                            true,\r\n                            false\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"String\": null,\r\n                    \"Enum\": null\r\n                }\r\n            ],\r\n            \"Region\": \"ap-guangzhou\",\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"DeviceName\": \"abc\",\r\n            \"CreateTime\": \"2018-07-06 02:14:14\",\r\n            \"UpdateTime\": \"2018-07-06 02:14:14\",\r\n            \"DeviceId\": \"ap-guangzhou/iot-4e0wsxpi/abc\",\r\n            \"AliasName\": \"\"\r\n        }\r\n    }\r\n}",
+        "title": "获取绑定设备信息"
+      }
+    ],
+    "AppGetDeviceData": [
+      {
+        "document": "获取绑定设备数据",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppGetDeviceData\r\n&AccessToken=xxx\r\n&ProductId=iot-a8ojgbji\r\n&DeviceName=device\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a7c30659-fd9c-4f34-b10d-c3d3c9b49c09\",\r\n        \"DeviceData\": \"{\\\"light\\\":{\\\"value\\\":\\\"on\\\",\\\"timestamp\\\":1520868197}}\"\r\n    }\r\n}",
+        "title": "获取绑定设备数据"
+      }
+    ],
+    "AppGetDeviceStatuses": [
+      {
+        "document": "批量获取绑定绑定设备状态",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppGetDeviceStatuses\r\n&AccessToken=xxx\r\n&DeviceIds.0=ap-guangzhou/iot-a8ojgbji&/abc\r\n&DeviceIds.1=ap-guangzhou/iot-a8ojgbji&/aaa\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3fa7d395-c1ff-4ede-beec-59afdeded8e9\",\r\n        \"DeviceStatuses\": [\r\n            {\r\n                \"DeviceId\": \"ap-guangzhou/iot-a8ojgbji&/abc\",\r\n                \"Status\": \"offline\"\r\n            },\r\n            {\r\n                \"DeviceId\": \"ap-guangzhou/iot-a8ojgbji&/aaa\",\r\n                \"Status\": \"online\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "批量获取绑定绑定设备状态"
+      }
+    ],
+    "AppGetDevices": [
+      {
+        "document": "获取绑定设备列表，用于在APP显示某个用户的绑定设备列表",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppGetDevices\r\n&AccessToken=xxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2eb887d9-7a18-4569-be2e-d06db7c406ec\",\r\n        \"Devices\": [\r\n            {\r\n                \"AliasName\": \"\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"ProductId\": \"iot-a8ojgbji\",\r\n                \"DeviceName\": \"ccc\",\r\n                \"Id\": \"ap-guangzhou/iot-a8ojgbji/ccc\"\r\n            },\r\n            {\r\n                \"AliasName\": \"\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"ProductId\": \"iot-a8ojgbji\",\r\n                \"DeviceName\": \"aaa\",\r\n                \"Id\": \"ap-guangzhou/iot-a8ojgbji/aaa\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取绑定设备列表"
+      }
+    ],
+    "AppGetToken": [
+      {
+        "document": "获取用户token",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppGetToken\r\n&UserName=iotappuser\r\n&Password=iotappuser666!\r\n&Expire=86400\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"96d63e89-5702-4047-8607-35caca174119\",\r\n        \"AccessToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImFwcC1od2dhYjQxeVwvdXNlcm5hbWUiLCJ2ZXIiOiJjODhlZTM4NjQwMmMiLCJleHBfYXQiOjE1MjUyNjU3NTd9.rRTE6BpxYvK3X1IfjAf6jTvh97ZqKd4CUQlXq8vmWSg\"\r\n    }\r\n}",
+        "title": "获取用户token"
+      }
+    ],
+    "AppGetUser": [
+      {
+        "document": "获取用户信息",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppGetUser\r\n&AccessToken=xxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a83c028f-5a7a-43b0-b9c5-65ec72837535\",\r\n        \"AppUser\": {\r\n            \"ApplicationId\": \"app-hwgab41y\",\r\n            \"UserName\": \"username\",\r\n            \"CreateTime\": \"2018-05-01 20:38:20\",\r\n            \"NickName\": \"\",\r\n            \"UpdateTime\": \"2018-05-01 20:38:20\"\r\n        }\r\n    }\r\n}",
+        "title": "获取用户信息"
+      }
+    ],
+    "AppIssueDeviceControl": [
+      {
+        "document": "用户下发设备控制指令",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppIssueDeviceControl\r\n&AccessToken=xxx\r\n&ProductId=iot-a8ojgbji\r\n&DeviceName=device\r\n&ControlData={\"light\":\"on\"}\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6b07242c-dd95-420f-9ab2-032eba5a49f0\"\r\n    }\r\n}",
+        "title": "用户下发设备控制指令"
+      }
+    ],
+    "AppResetPassword": [
+      {
+        "document": "重置密码",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppResetPassword\r\n&AccessToken=xxx\r\n&OldPassword=oldpassword\r\n&NewPassword=newpassword\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6b07242c-dd95-420f-9ab2-032eba5a49f0\"\r\n    }\r\n}",
+        "title": "重置密码"
+      }
+    ],
+    "AppSecureAddDevice": [
+      {
+        "document": "应用与智能家居场景，绑定设备前需获取绑定设备的签名",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppSecureAddDevice\r\n&AccessToken=xxx\r\n&DeviceSignature=xxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3d846510-444b-4b6d-a8af-6d2b5a21981b\",\r\n        \"AppDevice\": {\r\n            \"Region\": \"ap-guangzhou\",\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"DeviceName\": \"aaaa\",\r\n            \"CreateTime\": \"2018-07-06 11:49:32\",\r\n            \"UpdateTime\": \"2018-07-06 11:49:32\",\r\n            \"DeviceId\": \"ap-guangzhou/iot-4e0wsxpi/aaaa\",\r\n            \"AliasName\": \"\"\r\n        }\r\n    }\r\n}",
+        "title": "用户绑定设备"
+      }
+    ],
+    "AppUpdateDevice": [
+      {
+        "document": "应用更新设备信息",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppUpdateDevice\r\n&AccessToken=xxx\r\n&ProductId=iot-a8ojgbji\r\n&DeviceName=aaa\r\n&AliasName=nick\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bc2f59a6-9741-4737-ab3e-5c65d9385330\",\r\n        \"AppDevice\": {\r\n            \"AliasName\": \"nick\",\r\n            \"Region\": \"ap-guangzhou\",\r\n            \"ProductId\": \"iot-a8ojgbji\",\r\n            \"DeviceName\": \"aaa\",\r\n            \"Id\": \"ap-guangzhou/iot-a8ojgbji/aaa\"\r\n        }\r\n    }\r\n}",
+        "title": "应用更新设备信息"
+      }
+    ],
+    "AppUpdateUser": [
+      {
+        "document": "更新用户信息",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppUpdateUser\r\n&NickName=abc\r\n&AccessToken=xxxx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"abcfb085-4db0-4da7-a7c1-55d5f5bfc6e7\",\r\n        \"AppUser\": {\r\n            \"ApplicationId\": \"app-hwgab41y\",\r\n            \"UserName\": \"username\",\r\n            \"CreateTime\": \"2018-05-01 20:38:20\",\r\n            \"NickName\": \"昵称\",\r\n            \"Devices\": [],\r\n            \"UpdateTime\": \"2018-05-01 20:58:48\"\r\n        }\r\n    }\r\n}",
+        "title": "更新用户信息"
+      }
+    ],
+    "AssociateSubDeviceToGatewayProduct": [
+      {
+        "document": "关联子设备产品和网关产品",
+        "input": "https://iot.tencentcloudapi.com/?Action=AssociateSubDeviceToGatewayProduct\r\n&SubDeviceProductId=iot-4e0wsxpi\r\n&GatewayProductId=iot-43e0wsxas\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b78d722c-c32c-4108-b9d8-a75be705e227\"\r\n    }\r\n}",
+        "title": "关联子设备产品和网关产品"
+      }
+    ],
+    "DeactivateRule": [
+      {
+        "document": "禁用规则",
+        "input": "https://iot.tencentcloudapi.com/?Action=DeactivateRule\r\n&RuleId=rule-8tju9mg6\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b1c82819-81fd-42e5-b0e9-81cb74c12da5\"\r\n    }\r\n}",
+        "title": "禁用规则"
+      }
+    ],
+    "DeleteDevice": [
+      {
+        "document": "删除设备",
+        "input": "https://iot.tencentcloudapi.com/?Action=DeleteDevice\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceName=new-device-2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"ed6fdebb-7cd3-45a1-b0b5-47fef22d6f5d\"\r\n    }\r\n}",
+        "title": "删除设备"
+      }
+    ],
+    "DeleteProduct": [
+      {
+        "document": "删除产品",
+        "input": "https://iot.tencentcloudapi.com/?Action=DeleteProduct\r\n&ProductId=iot-4e0wsxpi\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1eec593-a887-49be-8b30-9a80e4a993c7\"\r\n    }\r\n}",
+        "title": "删除产品"
+      }
+    ],
+    "DeleteRule": [
+      {
+        "document": "删除规则",
+        "input": "https://iot.tencentcloudapi.com/?Action=DeleteRule\r\n&RuleId=rule-8tju9mg6\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b1c82819-81fd-42e5-b0e9-81cb74c12da5\"\r\n    }\r\n}",
+        "title": "删除规则"
+      }
+    ],
+    "DeleteTopic": [
+      {
+        "document": "删除Topic",
+        "input": "https://iot.tencentcloudapi.com/?Action=DeleteTopic\r\n&TopicId=topic-7gjao342\r\n&ProductId=iot-4e0wsxpi\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"58798947-964f-4982-a3db-f8125ae67b35\"\r\n    }\r\n}",
+        "title": "删除Topic"
+      }
+    ],
+    "GetDataHistory": [
+      {
+        "document": "获取数据历史",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDataHistory\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceNames.0=dev0\r\n&DeviceNames.1=dev5\r\n&StartTime=2018-03-30 00:00:00\r\n&EndTime=2018-03-30 23:00:00\r\n&Size=5\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6280afe8-fe9e-4d8b-b1b4-6084282671ae\",\r\n        \"DataHistory\": [\r\n            {\r\n                \"DeviceName\": \"dev5\",\r\n                \"Timestamp\": 1522413634455,\r\n                \"Data\": \"{\\\"Temperature\\\": 1023,  \\\"Switch\\\": 1023}\"\r\n            },\r\n            {\r\n                \"DeviceName\": \"dev0\",\r\n                \"Timestamp\": 1522413634455,\r\n                \"Data\": \"{\\\"Temperature\\\": 1023,  \\\"Switch\\\": 1023}\"\r\n            }\r\n        ],\r\n        \"ScrollId\": \"DnF1ZXJ5VGhlbkZldGNoAQAAAAAAACOZFkVEYlVxTG1kUlRpdkdDY1RVaFpFZGc=\",\r\n        \"ScrollTimeout\": 300\r\n    }\r\n}",
+        "title": "获取数据历史"
+      }
+    ],
+    "GetDebugLog": [
+      {
+        "document": "获取调试日志",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDebugLog\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceNames.0=car\r\n&StartTime=2018-05-12 00:00:00\r\n&EndTime=2018-05-12 23:59:59\r\n&Size=5\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"db6a3512-7983-46da-bc6f-d18be937cfff\",\r\n        \"DebugLog\": [\r\n            {\r\n                \"Id\": \"00B6331A2B3A3702A5A05CB7ED20CC54\",\r\n                \"Event\": \"connect\",\r\n                \"LogType\": \"mqtt\",\r\n                \"Result\": \"success\",\r\n                \"Timestamp\": 1526125472000,\r\n                \"DeviceName\": \"car\",\r\n                \"Data\": \"\",\r\n                \"Topic\": \"\"\r\n            },\r\n            {\r\n                \"Id\": \"082CC25A769D3AB496408B26F65FEB45\",\r\n                \"Event\": \"connect\",\r\n                \"LogType\": \"mqtt\",\r\n                \"Result\": \"success\",\r\n                \"Timestamp\": 1526125472000,\r\n                \"DeviceName\": \"car\",\r\n                \"Data\": \"\",\r\n                \"Topic\": \"\"\r\n            },\r\n            {\r\n                \"Id\": \"7BD51645585F31D097730B03272274EB\",\r\n                \"Event\": \"connect\",\r\n                \"LogType\": \"mqtt\",\r\n                \"Result\": \"success\",\r\n                \"Timestamp\": 1526125472000,\r\n                \"DeviceName\": \"car\",\r\n                \"Data\": \"\",\r\n                \"Topic\": \"\"\r\n            },\r\n            {\r\n                \"Id\": \"A6641A9E53683E61B64E78F40A24F782\",\r\n                \"Event\": \"connect\",\r\n                \"LogType\": \"mqtt\",\r\n                \"Result\": \"success\",\r\n                \"Timestamp\": 1526125472000,\r\n                \"DeviceName\": \"car\",\r\n                \"Data\": \"\",\r\n                \"Topic\": \"\"\r\n            },\r\n            {\r\n                \"Id\": \"A694496AA8FA3230A3CFDC8538AA4F7F\",\r\n                \"Event\": \"connect\",\r\n                \"LogType\": \"mqtt\",\r\n                \"Result\": \"success\",\r\n                \"Timestamp\": 1526120670000,\r\n                \"DeviceName\": \"car\",\r\n                \"Data\": \"\",\r\n                \"Topic\": \"\"\r\n            }\r\n        ],\r\n        \"ScrollId\": \"DnF1ZXJ5VGhlbkZldGNoCgAAAAAAAABZFjYzUUxMT211VDVDTXk2X2UtM0tEQ2cAAAAAAAAAWxZDUUs0T2cwR1M4R001OXh6SG96YVRnAAAAAAAAAFoWQ1FLNE9nMEdTOEdNNTl4ekhvemFUZwAAAAAAAABZFkNRSzRPZzBHUzhHTTU5eHpIb3phVGcAAAAAAAAAWxY2M1FMTE9tdVQ1Q015Nl9lLTNLRENnAAAAAAAAAFoWNjNRTExPbXVUNUNNeTZfZS0zS0RDZwAAAAAAAABkFml3djFuZVZGVFM2NnJSb2tFUG9FN3cAAAAAAAAAXBY2M1FMTE9tdVQ1Q015Nl9lLTNLRENnAAAAAAAAAGUWaXd2MW5lVkZUUzY2clJva0VQb0U3dwAAAAAAAABcFkNRSzRPZzBHUzhHTTU5eHpIb3phVGc=\",\r\n        \"ScrollTimeout\": 60\r\n    }\r\n}",
+        "title": "获取调试日志"
+      }
+    ],
+    "GetDevice": [
+      {
+        "document": "获取设备信息",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDevice\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceName=abc\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e8d61efa-80a7-495a-a0cb-8d2d4698d354\",\r\n        \"Device\": {\r\n            \"DeviceSecret\": \"2e0e56544c1e1e548725c79346f409c9\",\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"DeviceName\": \"abc\",\r\n            \"CreateTime\": \"2018-06-11 15:19:41\",\r\n            \"DeviceInfo\": \"{\\\"product\\\":\\\"iot-4e0wsxpi\\\",\\\"device\\\":\\\"abc\\\",\\\"sdk-ver\\\":\\\"2.3\\\",\\\"firm-ver\\\":\\\"LINUX_V1.0\\\",\\\"topic\\\":\\\"ota\\\\/update\\\\/iot-4e0wsxpi\\\\/abc\\\"}\",\r\n            \"UpdateTime\": \"2018-06-19 20:46:34\"\r\n        }\r\n    }\r\n}",
+        "title": "获取设备信息"
+      }
+    ],
+    "GetDeviceData": [
+      {
+        "document": "获取设备数据",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDeviceData\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceName=device1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a7c30659-fd9c-4f34-b10d-c3d3c9b49c09\",\r\n        \"DeviceData\": \"{\\\"light\\\":{\\\"value\\\":\\\"on\\\",\\\"timestamp\\\":1520868197}}\"\r\n    }\r\n}",
+        "title": "获取设备数据"
+      }
+    ],
+    "GetDeviceLog": [
+      {
+        "document": "获取设备日志",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDeviceLog\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceNames.0=dev0\r\n&DeviceNames.1=dev5\r\n&StartTime=2018-03-30 00:00:00\r\n&EndTime=2018-03-30 23:00:00\r\n&Size=5\r\n&Type=comm\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4a82f1ad-1072-4378-ad6e-b29dd417bf6c\",\r\n        \"DeviceLog\": [\r\n            {\r\n                \"Id\": \"uuid0020\",\r\n                \"Msg\": \"{\\\"data\\\":\\\"this is msg body\\\"}\",\r\n                \"Code\": \"err-code\",\r\n                \"Timestamp\": 1521792750222,\r\n                \"DeviceName\": \"dev-name\",\r\n                \"Method\": \"method\"\r\n            },\r\n            {\r\n                \"Id\": \"uuid00215\",\r\n                \"Msg\": \"{\\\"data\\\":\\\"this is msg body\\\"}\",\r\n                \"Code\": \"err-code\",\r\n                \"Timestamp\": 1521792750222,\r\n                \"DeviceName\": \"dev-name\",\r\n                \"Method\": \"method\"\r\n            },\r\n            {\r\n                \"Id\": \"uuid00232\",\r\n                \"Msg\": \"{\\\"data\\\":\\\"this is msg body\\\"}\",\r\n                \"Code\": \"err-code\",\r\n                \"Timestamp\": 1521792750222,\r\n                \"DeviceName\": \"dev-name\",\r\n                \"Method\": \"method\"\r\n            },\r\n            {\r\n                \"Id\": \"uuid00233\",\r\n                \"Msg\": \"{\\\"data\\\":\\\"this is msg body\\\"}\",\r\n                \"Code\": \"err-code\",\r\n                \"Timestamp\": 1521792750222,\r\n                \"DeviceName\": \"dev-name\",\r\n                \"Method\": \"method\"\r\n            },\r\n            {\r\n                \"Id\": \"uuid00238\",\r\n                \"Msg\": \"{\\\"data\\\":\\\"this is msg body\\\"}\",\r\n                \"Code\": \"err-code\",\r\n                \"Timestamp\": 1521792750222,\r\n                \"DeviceName\": \"dev-name\",\r\n                \"Method\": \"method\"\r\n            }\r\n        ],\r\n        \"ScrollId\": \"DnF1ZXJ5VGhlbkZldGNoCgAAAAAAAAL-FmM2eDR6OUQ2Ukh1Nnh2R0ZvclJCb0EAAAAAAAAC_xZjNng0ejlENlJIdTZ4dkdGb3JSQm9BAAAAAAAAAwAWYzZ4NHo5RDZSSHU2eHZHRm9yUkJvQQAAAAAAAAMCFmM2eDR6OUQ2Ukh1Nnh2R0ZvclJCb0EAAAAAAAADARZjNng0ejlENlJIdTZ4dkdGb3JSQm9BAAAAAAAAAwQWYzZ4NHo5RDZSSHU2eHZHRm9yUkJvQQAAAAAAAAMDFmM2eDR6OUQ2Ukh1Nnh2R0ZvclJCb0EAAAAAAAADBRZjNng0ejlENlJIdTZ4dkdGb3JSQm9BAAAAAAAAAwYWYzZ4NHo5RDZSSHU2eHZHRm9yUkJvQQAAAAAAAAMHFmM2eDR6OUQ2Ukh1Nnh2R0ZvclJCb0E=\",\r\n        \"ScrollTimeout\": 60\r\n    }\r\n}",
+        "title": "获取设备日志"
+      }
+    ],
+    "GetDeviceSignatures": [
+      {
+        "document": "获取设备绑定签名，用于用户绑定某个设备以便进行控制",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDeviceSignatures\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceNames.0=device1\r\n&DeviceNames.1=device2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"453702e4-61f1-4ed5-83c1-6f1a5b747751\",\r\n        \"DeviceSignatures\": [\r\n            {\r\n                \"DeviceName\": \"device1\",\r\n                \"DeviceSignature\": \"BSBm4CDokgjFPrwRwTGkbJarpKQ12fXXP8KhzBDyzhBYpVIx+QhT/rpMd0lUhKNR1LPa+kGCUuR5PypPc3v2ne6GB9sYw/rUEjp/tg==\"\r\n            },\r\n            {\r\n                \"DeviceName\": \"device2\",\r\n                \"DeviceSignature\": \"5lrbM6WwyGJwr2iEFDcW2yown2mvU/UpkfhCfx76A6/YfwXW14KVgKwHMDFfnGOvRVfdlWXFRMEbrLcbhgb58zjE7vruRNJ+HrggIA==\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "批量获取设备绑定签名"
+      }
+    ],
+    "GetDeviceStatistics": [
+      {
+        "document": "获取设备统计指标",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDeviceStatistics\r\n&StartDate=2018-04-19\r\n&EndDate=2018-04-23\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d1d98b19-a1b4-41df-95fd-c02797f802c4\",\r\n        \"DeviceStatistics\": [\r\n            {\r\n                \"Datetime\": \"2018-04-20 00:00:00\",\r\n                \"DeviceOnline\": 0,\r\n                \"DeviceActive\": 0,\r\n                \"DeviceTotal\": 11\r\n            },\r\n            {\r\n                \"Datetime\": \"2018-04-21 00:00:00\",\r\n                \"DeviceOnline\": 0,\r\n                \"DeviceActive\": 0,\r\n                \"DeviceTotal\": 0\r\n            },\r\n            {\r\n                \"Datetime\": \"2018-04-22 00:00:00\",\r\n                \"DeviceOnline\": 0,\r\n                \"DeviceActive\": 0,\r\n                \"DeviceTotal\": 0\r\n            },\r\n            {\r\n                \"Datetime\": \"2018-04-23 00:00:00\",\r\n                \"DeviceOnline\": 0,\r\n                \"DeviceActive\": 0,\r\n                \"DeviceTotal\": 0\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取设备统计指标"
+      }
+    ],
+    "GetDeviceStatuses": [
+      {
+        "document": "",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDeviceStatuses\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceNames.0=device1\r\n&DeviceNames.1=device2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3fa7d395-c1ff-4ede-beec-59afdeded8e9\",\r\n        \"DeviceStatuses\": [\r\n            {\r\n                \"DeviceName\": \"device1\",\r\n                \"Status\": \"inactive\"\r\n            },\r\n            {\r\n                \"DeviceName\": \"device2\",\r\n                \"Status\": \"inactive\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "批量获取设备状态"
+      }
+    ],
+    "GetDevices": [
+      {
+        "document": "获取设备列表",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetDevices\r\n&ProductId=iot-5aawn3i8\r\n&Offset=0\r\n&Length=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"296bd834-169f-4056-a3a6-17a4992c7548\",\r\n        \"Devices\": [\r\n            {\r\n                \"DeviceSecret\": \"632fe1778a19fcd997d936305851c0bc\",\r\n                \"ProductId\": \"iot-5aawn3i8\",\r\n                \"DeviceName\": \"device2\",\r\n                \"CreateTime\": \"2018-06-22 14:59:43\"\r\n            },\r\n            {\r\n                \"DeviceSecret\": \"19e5ccc3f9918875c11839b35e7e5215\",\r\n                \"ProductId\": \"iot-5aawn3i8\",\r\n                \"DeviceName\": \"device1\",\r\n                \"CreateTime\": \"2018-06-22 14:59:38\"\r\n            }\r\n        ],\r\n        \"Total\": 2\r\n    }\r\n}",
+        "title": "获取设备列表"
+      }
+    ],
+    "GetProduct": [
+      {
+        "document": "查询产品",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetProduct\r\n&ProductId=iot-4e0wsxpi\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b78d722c-c32c-4108-b9d8-a75be705e227\",\r\n        \"Product\": {\r\n            \"DataTemplate\": [\r\n                {\r\n                    \"Number\": {\r\n                        \"Desc\": \"温度\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Temperature\",\r\n                        \"Range\": [\r\n                            0,\r\n                            50.1\r\n                        ]\r\n                    },\r\n                    \"String\": null,\r\n                    \"Enum\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"String\": {\r\n                        \"Desc\": \"留言\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Message\",\r\n                        \"Range\": [\r\n                            0,\r\n                            1024\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"Enum\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"Enum\": {\r\n                        \"Desc\": \"天气\",\r\n                        \"Mode\": \"r\",\r\n                        \"Name\": \"Weather\",\r\n                        \"Range\": [\r\n                            \"Sunny\",\r\n                            \"Rainy\"\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"String\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"Bool\": {\r\n                        \"Desc\": \"锁\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Lock\",\r\n                        \"Range\": [\r\n                            true,\r\n                            false\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"String\": null,\r\n                    \"Enum\": null\r\n                }\r\n            ],\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"ProductKey\": \"mqtt-1ec1b84pe\",\r\n            \"AppId\": 1251006373,\r\n            \"Name\": \"名称\",\r\n            \"Description\": \"描述\",\r\n            \"Domain\": \"mqtt-1ec1b84pe.ap-guangzhou.mqtt.tencentcloudmq.com\",\r\n            \"Standard\": 3,\r\n            \"AuthType\": 1,\r\n            \"DataProtocol\": \"template\",\r\n            \"Deleted\": 0,\r\n            \"Message\": \"\",\r\n            \"CreateTime\": \"2018-03-12 15:59:51\",\r\n            \"UpdateTime\": \"2018-07-05 21:02:06\",\r\n            \"Username\": \"AKIDhFcnnbEo8HoGqGeWNSM5d0BC0b2O4aKs\",\r\n            \"Password\": \"E4udpi9C7GrfuMGDCVa5qQ20k6eVlyCSbroIG0eF7Gs=\"\r\n        }\r\n    }\r\n}",
+        "title": "查询产品"
+      }
+    ],
+    "GetProducts": [
+      {
+        "document": "获取产品列表",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetProducts\r\n&Offset=0\r\n&Length=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e0cc5d58-3664-4aa7-9523-629e114a17a4\",\r\n        \"Products\": [\r\n            {\r\n                \"ProductId\": \"iot-5aawn3i8\",\r\n                \"ProductKey\": \"mqtt-5por2uztc\",\r\n                \"AppId\": 1251006373,\r\n                \"Name\": \"字符串3\",\r\n                \"Description\": \"字符串\",\r\n                \"Domain\": \"mqtt-5por2uztc.ap-guangzhou.mqtt.tencentcloudmq.com\",\r\n                \"AuthType\": 1,\r\n                \"DataProtocol\": \"native\",\r\n                \"Deleted\": 0,\r\n                \"Message\": \"\",\r\n                \"CreateTime\": \"2018-06-20 15:34:07\"\r\n            },\r\n            {\r\n                \"ProductId\": \"iot-gk2hv9pq\",\r\n                \"ProductKey\": \"mqtt-1e86or9j0\",\r\n                \"AppId\": 1251006373,\r\n                \"Name\": \"字符串2\",\r\n                \"Description\": \"字符串\",\r\n                \"Domain\": \"mqtt-1e86or9j0.ap-guangzhou.mqtt.tencentcloudmq.com\",\r\n                \"AuthType\": 1,\r\n                \"DataProtocol\": \"native\",\r\n                \"Deleted\": 0,\r\n                \"Message\": \"\",\r\n                \"CreateTime\": \"2018-06-20 15:11:19\"\r\n            }\r\n        ],\r\n        \"Total\": 8\r\n    }\r\n}",
+        "title": "获取产品列表"
+      }
+    ],
+    "GetRule": [
+      {
+        "document": "获取转发规则信息",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetRule\r\n&RuleId=rule-8tju9mg6\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"07ae8cda-4ff1-4112-914e-32afca4fcffd\",\r\n        \"Rule\": {\r\n            \"RuleId\": \"rule-ox6djvws\",\r\n            \"AppId\": 1251006373,\r\n            \"Name\": \"aaa\",\r\n            \"Description\": \"aaaaaa\",\r\n            \"Query\": {\r\n                \"Field\": \"字符串\",\r\n                \"Topic\": \"iot-5aawn3i8/asdf/asdfa\",\r\n                \"Condition\": \"1=1\"\r\n            },\r\n            \"Actions\": [\r\n                {\r\n                    \"Topic\": {\r\n                        \"Topic\": \"iot-gl9kmqrs/new-device-1/new-topic-1\"\r\n                    },\r\n                    \"Service\": null\r\n                },\r\n                {\r\n                    \"Service\": {\r\n                        \"Url\": \"http://abc.com\"\r\n                    },\r\n                    \"Topic\": null\r\n                }\r\n            ],\r\n            \"MsgOrder\": 0,\r\n            \"DataType\": 0,\r\n            \"Active\": 0,\r\n            \"Deleted\": 0,\r\n            \"CreateTime\": \"2018-06-26 13:15:18\",\r\n            \"UpdateTime\": \"2018-07-04 14:45:40\"\r\n        }\r\n    }\r\n}",
+        "title": "获取转发规则信息"
+      }
+    ],
+    "GetRules": [
+      {
+        "document": "获取转发规则列表",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetRules\r\n&Offset=0\r\n&Length=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fcb69522-3602-479f-8a69-26e5ed564636\",\r\n        \"Rules\": [\r\n            {\r\n                \"RuleId\": \"rule-ox6djvws\",\r\n                \"AppId\": 1251006373,\r\n                \"Name\": \"aaa\",\r\n                \"Description\": \"aaaaaa\",\r\n                \"Query\": {\r\n                    \"Field\": \"字符串\",\r\n                    \"Topic\": \"iot-5aawn3i8/asdf/asdfa\",\r\n                    \"Condition\": \"1=1\"\r\n                },\r\n                \"Actions\": [\r\n                    {\r\n                        \"Topic\": {\r\n                            \"Topic\": \"iot-gl9kmqrs/new-device-1/new-topic-1\"\r\n                        },\r\n                        \"Service\": null\r\n                    },\r\n                    {\r\n                        \"Service\": {\r\n                            \"Url\": \"http://abc.com\"\r\n                        },\r\n                        \"Topic\": null\r\n                    }\r\n                ],\r\n                \"MsgOrder\": 0,\r\n                \"DataType\": 0,\r\n                \"Active\": 0,\r\n                \"Deleted\": 0,\r\n                \"CreateTime\": \"2018-06-26 13:15:18\",\r\n                \"UpdateTime\": \"2018-07-04 14:45:40\"\r\n            },\r\n            {\r\n                \"RuleId\": \"rule-amxh05xe\",\r\n                \"AppId\": 1251006373,\r\n                \"Name\": \"字符串\",\r\n                \"Description\": \"字符串\",\r\n                \"Query\": {\r\n                    \"Field\": \"*\",\r\n                    \"Topic\": \"iot-5aawn3i8/a/b\",\r\n                    \"Condition\": \"1=1\"\r\n                },\r\n                \"Actions\": [],\r\n                \"MsgOrder\": 0,\r\n                \"DataType\": 0,\r\n                \"Active\": 0,\r\n                \"Deleted\": 0,\r\n                \"CreateTime\": \"2018-06-26 13:11:11\",\r\n                \"UpdateTime\": \"2018-06-26 13:11:11\"\r\n            }\r\n        ],\r\n        \"Total\": 2\r\n    }\r\n}",
+        "title": "获取转发规则列表"
+      }
+    ],
+    "GetTopic": [
+      {
+        "document": "获取Topic信息",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetTopic\r\n&TopicId=topic-7gjao342\r\n&ProductId=iot-4e0wsxpi\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"58798947-964f-4982-a3db-f8125ae67b35\",\r\n        \"Topic\": {\r\n            \"TopicId\": \"topic-7gjao342\",\r\n            \"TopicName\": \"new-topic-1\",\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"MsgLife\": 86400,\r\n            \"MsgSize\": 65536,\r\n            \"MsgCount\": 1000000,\r\n            \"Deleted\": 0,\r\n            \"CreateTime\": \"2018-03-12 20:32:47\",\r\n            \"UpdateTime\": \"2018-03-12 20:32:47\",\r\n            \"Path\": \"iot-4e0wsxpi/${device_name}/new-topic-1\"\r\n        }\r\n    }\r\n}",
+        "title": "获取Topic信息"
+      }
+    ],
+    "GetTopics": [
+      {
+        "document": "获取Topic列表",
+        "input": "https://iot.tencentcloudapi.com/?Action=GetTopics\r\n&ProductId=iot-4e0wsxpi\r\n&Offset=2\r\n&Length=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"afcdaa08-8bb7-4015-999d-57bd8276eeea\",\r\n        \"Topics\": [\r\n            {\r\n                \"TopicId\": \"topic-1ciaft9m\",\r\n                \"TopicName\": \"new-topic-3\",\r\n                \"ProductId\": \"iot-4e0wsxpi\",\r\n                \"MsgLife\": 86400,\r\n                \"MsgSize\": 65536,\r\n                \"MsgCount\": 1000000,\r\n                \"Deleted\": 0,\r\n                \"CreateTime\": \"2018-03-12 20:33:23\",\r\n                \"UpdateTime\": \"2018-03-12 20:33:23\",\r\n                \"Path\": \"iot-4e0wsxpi/${device_name}/new-topic-3\"\r\n            },\r\n            {\r\n                \"TopicId\": \"topic-mhfrckio\",\r\n                \"TopicName\": \"new-topic-2\",\r\n                \"ProductId\": \"iot-4e0wsxpi\",\r\n                \"MsgLife\": 86400,\r\n                \"MsgSize\": 65536,\r\n                \"MsgCount\": 1000000,\r\n                \"Deleted\": 0,\r\n                \"CreateTime\": \"2018-03-12 20:33:21\",\r\n                \"UpdateTime\": \"2018-03-12 20:33:21\",\r\n                \"Path\": \"iot-4e0wsxpi/${device_name}/new-topic-2\"\r\n            },\r\n            {\r\n                \"TopicId\": \"topic-7gjao342\",\r\n                \"TopicName\": \"new-topic-1\",\r\n                \"ProductId\": \"iot-4e0wsxpi\",\r\n                \"MsgLife\": 86400,\r\n                \"MsgSize\": 65536,\r\n                \"MsgCount\": 1000000,\r\n                \"Deleted\": 0,\r\n                \"CreateTime\": \"2018-03-12 20:32:47\",\r\n                \"UpdateTime\": \"2018-03-12 20:32:47\",\r\n                \"Path\": \"iot-4e0wsxpi/${device_name}/new-topic-1\"\r\n            }\r\n        ],\r\n        \"Total\": 3\r\n    }\r\n}",
+        "title": "获取Topic列表"
+      }
+    ],
+    "IssueDeviceControl": [
+      {
+        "document": "下发设备控制指令",
+        "input": "https://iot.tencentcloudapi.com/?Action=IssueDeviceControl\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceName=device1\r\n&ControlData={\"light\":\"on\"}\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"ed6fdebb-7cd3-45a1-b0b5-47fef22d6f5d\"\r\n    }\r\n}",
+        "title": "下发设备控制指令"
+      }
+    ],
+    "PublishMsg": [
+      {
+        "document": "向Topic发布消息，用于从云端向设备端发送消息。",
+        "input": "https://iot.tencentcloudapi.com/?Action=PublishMsg\r\n&Topic=iot-0827lh7q/device1/test\r\n&Message=test_message\r\n&Qos=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1eec593-a887-49be-8b30-9a80e4a993c7\"\r\n    }\r\n}",
+        "title": "向Topic发布消息"
+      }
+    ],
+    "ResetDevice": [
+      {
+        "document": "重置设备",
+        "input": "https://iot.tencentcloudapi.com/?Action=ResetDevice\r\n&ProductId=iot-4e0wsxpi\r\n&DeviceName=device1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1638c57e-1573-4aa7-b459-aada7143ee5c\",\r\n        \"Device\": {\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"DeviceName\": \"device1\",\r\n            \"DeviceSecret\": \"bb171a7a3a8aa1b935f1172043fbd0f6\",\r\n            \"UpdateTime\": \"2018-03-29 20:36:45\",\r\n            \"CreateTime\": \"2018-03-22 12:41:04\",\r\n            \"DeviceInfo\": {}\r\n        }\r\n    }\r\n}",
+        "title": "重置设备"
+      }
+    ],
+    "UnassociateSubDeviceFromGatewayProduct": [
+      {
+        "document": "取消子设备产品与网关设备产品的关联",
+        "input": "https://iot.tencentcloudapi.com/?Action=UnassociateSubDeviceFromGatewayProduct\r\n&SubDeviceProductId=iot-4e0wsxpi\r\n&GatewayProductId=iot-43e0wsxas\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b78d722c-c32c-4108-b9d8-a75be705e227\"\r\n    }\r\n}",
+        "title": "取消子设备产品与网关设备产品的关联"
+      }
+    ],
+    "UpdateProduct": [
+      {
+        "document": "更新产品信息",
+        "input": "https://iot.tencentcloudapi.com/?Action=UpdateProduct\r\n&ProductId=iot-4e0wsxpi\r\n&Name=名称\r\n&Description=描述\r\n&DataTemplate.0.Number.Name=Temperature\r\n&DataTemplate.0.Number.Desc=温度\r\n&DataTemplate.0.Number.Mode=rw\r\n&DataTemplate.0.Number.Range.0=0\r\n&DataTemplate.0.Number.Range.1=50.1\r\n&DataTemplate.1.String.Name=Message\r\n&DataTemplate.1.String.Desc=留言\r\n&DataTemplate.1.String.Mode=rw\r\n&DataTemplate.1.String.Range.0=0\r\n&DataTemplate.1.String.Range.1=1024\r\n&DataTemplate.2.Enum.Name=Weather\r\n&DataTemplate.2.Enum.Desc=天气\r\n&DataTemplate.2.Enum.Mode=r\r\n&DataTemplate.2.Enum.Range.0=Sunny\r\n&DataTemplate.2.Enum.Range.1=Rainy\r\n&DataTemplate.3.Bool.Name=Lock\r\n&DataTemplate.3.Bool.Desc=锁\r\n&DataTemplate.3.Bool.Mode=rw\r\n&DataTemplate.3.Bool.Range.0=true\r\n&DataTemplate.3.Bool.Range.1=false\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b78d722c-c32c-4108-b9d8-a75be705e227\",\r\n        \"Product\": {\r\n            \"DataTemplate\": [\r\n                {\r\n                    \"Number\": {\r\n                        \"Desc\": \"温度\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Temperature\",\r\n                        \"Range\": [\r\n                            0,\r\n                            50.1\r\n                        ]\r\n                    },\r\n                    \"String\": null,\r\n                    \"Enum\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"String\": {\r\n                        \"Desc\": \"留言\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Message\",\r\n                        \"Range\": [\r\n                            0,\r\n                            1024\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"Enum\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"Enum\": {\r\n                        \"Desc\": \"天气\",\r\n                        \"Mode\": \"r\",\r\n                        \"Name\": \"Weather\",\r\n                        \"Range\": [\r\n                            \"Sunny\",\r\n                            \"Rainy\"\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"String\": null,\r\n                    \"Bool\": null\r\n                },\r\n                {\r\n                    \"Bool\": {\r\n                        \"Desc\": \"锁\",\r\n                        \"Mode\": \"rw\",\r\n                        \"Name\": \"Lock\",\r\n                        \"Range\": [\r\n                            true,\r\n                            false\r\n                        ]\r\n                    },\r\n                    \"Number\": null,\r\n                    \"String\": null,\r\n                    \"Enum\": null\r\n                }\r\n            ],\r\n            \"ProductId\": \"iot-4e0wsxpi\",\r\n            \"ProductKey\": \"mqtt-1ec1b84pe\",\r\n            \"AppId\": 1251006373,\r\n            \"Name\": \"名称\",\r\n            \"Description\": \"描述\",\r\n            \"Domain\": \"mqtt-1ec1b84pe.ap-guangzhou.mqtt.tencentcloudmq.com\",\r\n            \"Standard\": 3,\r\n            \"AuthType\": 1,\r\n            \"DataProtocol\": \"template\",\r\n            \"Deleted\": 0,\r\n            \"Message\": \"\",\r\n            \"CreateTime\": \"2018-03-12 15:59:51\",\r\n            \"UpdateTime\": \"2018-07-05 21:02:06\",\r\n            \"Username\": \"AKIDhFcnnbEo8HoGqGeWNSM5d0BC0b2O4aKs\",\r\n            \"Password\": \"E4udpi9C7GrfuMGDCVa5qQ20k6eVlyCSbroIG0eF7Gs=\"\r\n        }\r\n    }\r\n}",
+        "title": "更新产品信息"
+      }
+    ],
+    "UpdateRule": [
+      {
+        "document": "更新规则",
+        "input": "https://iot.tencentcloudapi.com/?Action=UpdateRule\r\n&RuleId=rule-osh3ckco\r\n&Name=新规则名称\r\n&Description=新规则描述\r\n&Query.Field=*\r\n&Query.Topic=iot-4e0wsxpi/+/new-topic-1\r\n&Query.Condition=\r\n&Actions.0.Topic.Topic=iot-gl9kmqrs/new-device-1/new-topic-1\r\n&Actions.1.Service.Url=http://abc.com\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"07ae8cda-4ff1-4112-914e-32afca4fcffd\",\r\n        \"Rule\": {\r\n            \"RuleId\": \"rule-ox6djvws\",\r\n            \"AppId\": 1251006373,\r\n            \"Name\": \"aaa\",\r\n            \"Description\": \"aaaaaa\",\r\n            \"Query\": {\r\n                \"Field\": \"字符串\",\r\n                \"Topic\": \"iot-5aawn3i8/asdf/asdfa\",\r\n                \"Condition\": \"1=1\"\r\n            },\r\n            \"Actions\": [\r\n                {\r\n                    \"Topic\": {\r\n                        \"Topic\": \"iot-gl9kmqrs/new-device-1/new-topic-1\"\r\n                    },\r\n                    \"Service\": null\r\n                },\r\n                {\r\n                    \"Service\": {\r\n                        \"Url\": \"http://abc.com\"\r\n                    },\r\n                    \"Topic\": null\r\n                }\r\n            ],\r\n            \"MsgOrder\": 0,\r\n            \"DataType\": 0,\r\n            \"Active\": 0,\r\n            \"Deleted\": 0,\r\n            \"CreateTime\": \"2018-06-26 13:15:18\",\r\n            \"UpdateTime\": \"2018-07-04 14:45:40\"\r\n        }\r\n    }\r\n}",
+        "title": "更新规则"
+      },
+      {
+        "document": "更新规则转发CKafka",
+        "input": "https://iot.tencentcloudapi.com/?Action=UpdateRule\r\n&RuleId=rule-46d6lldw\r\n&Query.Field=*\r\n&Query.ProductId=iot-4e0wsxpi\r\n&Query.Condition=\r\n&Actions.0.Ckafka.Region=gz\r\n&Actions.0.Ckafka.InstanceId=ckafka-fsl0f3wv\r\n&Actions.0.Ckafka.TopicName=shadow_events\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"246dcf82-4bb4-4957-9f1f-075afab5cd60\",\r\n        \"Rule\": {\r\n            \"RuleId\": \"rule-46d6lldw\",\r\n            \"AppId\": 1251006373,\r\n            \"Name\": \"字符串1\",\r\n            \"Description\": \"字符串\",\r\n            \"Query\": {\r\n                \"Field\": \"*\",\r\n                \"ProductId\": \"iot-4e0wsxpi\",\r\n                \"Condition\": \"\",\r\n                \"Topic\": null\r\n            },\r\n            \"Actions\": [\r\n                {\r\n                    \"Ckafka\": {\r\n                        \"Region\": \"gz\",\r\n                        \"InstanceId\": \"ckafka-fsl0f3wv\",\r\n                        \"TopicName\": \"shadow_events\"\r\n                    },\r\n                    \"Topic\": null,\r\n                    \"Service\": null\r\n                }\r\n            ],\r\n            \"MsgOrder\": 0,\r\n            \"DataType\": 0,\r\n            \"Active\": 0,\r\n            \"Deleted\": 0,\r\n            \"CreateTime\": \"2018-07-06 11:37:18\",\r\n            \"UpdateTime\": \"2018-07-11 23:00:20\"\r\n        }\r\n    }\r\n}",
+        "title": "更新规则转发CKafka"
+      }
+    ]
+  },
+  "version": "1.0"
+}

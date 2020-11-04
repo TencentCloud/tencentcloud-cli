@@ -1,0 +1,141 @@
+{
+  "actions": {
+    "CreateAcRules": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=CreateAcRules\n&Placement.Zone=ap-guangzhou-2\n&ImageId=test\n&Data=[]\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "创建规则"
+      }
+    ],
+    "DeleteAcRule": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DeleteAcRule\n&Placement.Zone=ap-guangzhou-2\n&ImageId=test\n&Id=1\n&Direction=1\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "删除规则"
+      }
+    ],
+    "DeleteAllAccessControlRule": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DeleteAllAccessControlRule\n&Area=''\n&EdgeId=''\n&Direction=0\n&<公共请求参数>",
+        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n    }",
+        "title": "全部删除规则"
+      }
+    ],
+    "DescribeAcLists": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeAcLists\n&Placement.Zone=ap-guangzhou-2\n&ImageId=test\n&Direction=1\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Total\": 0,\r\n    \"AllTotal\": 0,\r\n    \"Enable\":1,\r\n    \"Data\": [],\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "访问控制列表"
+      }
+    ],
+    "DescribeNatRuleOverview": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeNatRuleOverview\n&Direction=1\n&Area=ap-chongqing\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"InstanceId\": \"cfwnat-f3250045\",\r\n\t\t\"InstanceName\": \"nat-name\",\r\n\t\t\"EipList\": [\"192.168.0.1\", \"10.10.10.10\"],\r\n\t\t\"DnatNum\": 10,\r\n\t\t\"TotalNum\": 100,\r\n\t\t\"RemainNum\": 4900,\r\n\t\t\"BlockNum\": 50,\r\n\t\t\"EnableNum\": 10,\r\n\t\t\"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\r\n\t}\r\n}",
+        "title": "nat规则列表概况"
+      }
+    ],
+    "DescribeRuleOverview": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeRuleOverview\n&Placement.Zone=ap-guangzhou-2\n&<公共请求参数>",
+        "output": "{\r\n        \"Response\": {\r\n            \"AllTotal\": 100,\r\n            \"StrategyNum\": 70,\r\n            \"StartRuleNum\": 70,\r\n            \"StopRuleNum\":  30,\r\n            \"RemainingNum\":  30,\r\n            \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\r\n        }\r\n}",
+        "title": "查询规则列表概况"
+      }
+    ],
+    "DescribeSwitchLists": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeSwitchLists\n&Placement.Zone=ap-guangzhou-2\n&ImageId=test\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Total\": 110,\r\n    \"Data\": [],\r\n    \"AreaLists\": [],\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "防火墙状态列表"
+      }
+    ],
+    "DescribeSyncAssetStatus": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeSyncAssetStatus\n&Type=1\n&<公共请求参数>",
+        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n    }",
+        "title": "同步资产状态查询-互联网&VPC"
+      }
+    ],
+    "DescribeTableStatus": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeTableStatus\n&Placement.Zone=ap-guangzhou-2\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "查询规则表状态"
+      }
+    ],
+    "DescribeVpcRuleOverview": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeVpcRuleOverview\n&Placement.Zone=ap-guangzhou-2\n&EdgeId=cfws-1462d1d278\n&<公共请求参数>",
+        "output": "{\r\n        \"Response\": {\r\n            \"StrategyNum\": 70,\r\n             \"StartRuleNum\": 70,\r\n            \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\r\n        }\r\n}",
+        "title": "vpc规则列表概况"
+      }
+    ],
+    "ModifyAcRule": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=ModifyAcRule\n&Placement.Zone=ap-guangzhou-2\n&ImageId=test\n&Data=[]\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "修改规则"
+      }
+    ],
+    "ModifyAllRuleStatus": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=ModifyAllRuleStatus\n&Placement.Zone=ap-guangzhou-2\n&Status=1\n&Direction=0\n&<公共请求参数>",
+        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n }",
+        "title": "启用停用全部规则"
+      }
+    ],
+    "ModifyAllSwitchStatus": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=ModifyAllSwitchStatus\n&Placement.Zone=ap-guangzhou-2\n&ImageId=test\n&Status=-1\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "一键开启和关闭"
+      }
+    ],
+    "ModifyItemSwitchStatus": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=ModifyItemSwitchStatus\n&Placement.Zone=ap-guangzhou-2\n&ImageId=test\n&Id=1\n&Status=1\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "修改单个防火墙开关"
+      }
+    ],
+    "ModifySequenceRules": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=ModifySequenceRules\n&Data=[]\n&EdgeId=''\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Status\":0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "修改规则执行顺序"
+      }
+    ],
+    "ModifyTableStatus": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=ModifyTableStatus\n&Placement.Zone=ap-guangzhou-2\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "修改规则表状态"
+      }
+    ],
+    "RunSyncAsset": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=RunSyncAsset\n&Type=1\n&<公共请求参数>",
+        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n    }",
+        "title": "同步资产-互联网&VPC"
+      }
+    ]
+  },
+  "version": "1.0"
+}

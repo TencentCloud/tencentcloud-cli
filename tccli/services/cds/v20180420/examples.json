@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "DescribeDasbImageIds": [
+      {
+        "document": "",
+        "input": "https://cds.tencentcloudapi.com/?Action=DescribeDasbImageIds\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"BaseImageId\":\"SDFEEF\",\r\n        \"AiImageId\":\"XXXXX\",\r\n        \"RequestId\":\"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "获取镜像列表"
+      }
+    ],
+    "DescribeDbauditInstanceType": [
+      {
+        "document": "本示例用于查询数据安全审计产品规格信息列表",
+        "input": "https://cds.tencentcloudapi.com/?Action=DescribeDbauditInstanceType\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\r\n        \"DbauditTypesSet\": [\r\n            {\r\n                \"InstanceVersionName\":\"合规版\",\r\n                \"InstanceVersionKey\":\"cdsaudit\",\r\n                \"Qps\":\"3000\", \r\n                \"MaxInstances\":3, \r\n                \"InsertSpeed\":3000000, \r\n                \"OnlineStorageCapacity\":400000000,                \"ArchivingStorageCapacity\":4000000000\r\n           },\r\n            {\r\n                \"InstanceVersionName\":\"高级版\",\r\n                \"InstanceVersionKey\":\"cdsaudit_adv\",\r\n                \"Qps\":\"3000\", \r\n                \"MaxInstances\":6, \r\n                \"InsertSpeed\":3000000, \r\n                \"OnlineStorageCapacity\":400000000,                \"ArchivingStorageCapacity\":4000000000\r\n           }\r\n        ]\r\n    }\r\n}",
+        "title": "查询产品规格信息列表"
+      }
+    ],
+    "DescribeDbauditInstances": [
+      {
+        "document": "",
+        "input": "https://cds.tencentcloudapi.com/?Action=DescribeDbauditInstances\r\n&SearchRegion=app-guangzhou\r\n&Offset=1\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"6ef60bec-0242-43af-bb20-270359fb54a7\",\r\n        \"TotalCount\": 1,\r\n\"CdsAuditInstanceSet\":[\r\n\t{\r\n\t\t\"AppId\":\"34343652144\",\r\n\t\t\"Uin\":\"34759392\",\r\n\t\t\"InstanceId\":\"453459565\",\r\n\t\t\"ProjectId\":0,\r\n\t\t\"RenewFlag\":1,\r\n\t\t\"Region\":\"app-guangzhou\",\r\n\t\t\"ZoneId\":0,\r\n\t\t\"Status\":1,\r\n\t\t\"PayMode\":1,\r\n\t\t\"IsolatedTimestamp\":\"0000-00-00 00:00:00\",\r\n\t\t\"CreateTime\":\"2018-03-28 12:34:46\",\r\n\t\"ExpireTime\":\"2018-04-28 12:34:46\"\t\r\n}\r\n]\r\n   }\r\n}",
+        "title": "查询实例列表"
+      }
+    ],
+    "DescribeDbauditUsedRegions": [
+      {
+        "document": "",
+        "input": "https://cds.tencentcloudapi.com/?Action= DescribeDbauditUsedRegions\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\r\n        \"RegionSet\": [\r\n            {\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"RegionName\": \"广州\",\r\n                \"RegionId\": \"1\",\r\n                \"RegionState\": 1\r\n            },\r\n            {\r\n                \"Region\": \"ap-shanghai\",\r\n                \"RegionName\": \"上海\",\r\n                \"RegionId\": 4,\r\n                \"RegionState\": 1\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询可售卖地域列表"
+      }
+    ],
+    "InquiryPriceDbauditInstance": [
+      {
+        "document": "",
+        "input": "https://cds.tencentcloudapi.com/?Action=InquiryPriceDbauditInstance\r\n&TimeSpan=1\r\n&TimeUnit=m\r\n&InstanceVersion=cdsaudit\r\n&InquiryType=renew\r\n&ServiceRegion=app-guangzhou\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"6ef60bec-0242-43af-bb20-270359fb54a7\",\r\n        \"TotalPrice\":\"5000.00\",\r\n        \"RealTotalCost\":\"5000.00\"\r\n    }\r\n}",
+        "title": "查询续费价格"
+      }
+    ],
+    "ModifyDbauditInstancesRenewFlag": [
+      {
+        "document": "",
+        "input": "https://cds.tencentcloudapi.com/?Action=ModifyDbauditInstancesRenewFlag\r\n&InstanceId=1453498545\r\n&AutoRenewFlag=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"6ef60bec-0242-43af-bb20-270359fb54a7\"\r\n    }\r\n}",
+        "title": "修改数据安全审计实例续费标识"
+      }
+    ]
+  },
+  "version": "1.0"
+}

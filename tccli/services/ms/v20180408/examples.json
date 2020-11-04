@@ -1,0 +1,125 @@
+{
+  "actions": {
+    "CreateBindInstance": [
+      {
+        "document": "将应用绑定到资源",
+        "input": "https://ms.tencentcloudapi.com/?Action=CreateBindInstance\r\n&ResourceId=hsihi12923-ioio\r\n&AppIconUrl=http://q.com/1.png\r\n&AppName=微信\r\n&AppPkgName=com.tencent.mm\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"Progress\": 1\r\n\t}\r\n}",
+        "title": "将应用绑定到资源"
+      }
+    ],
+    "CreateCosSecKeyInstance": [
+      {
+        "document": "",
+        "input": "https://ms.tencentcloudapi.com/?Action=CreateCosSecKeyInstance\r\n&CosRegion=ap-guangzhou\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"CosAppid\": 123456,\r\n\t\t\"CosBucket\": \"ms-shield\",\r\n\t\t\"CosId\": \"AKIDzgG3O5Cm9ii31sTgph1XhFISnvKPw0Zi\",\r\n\t\t\"CosKey\": \"55VuqLWV4HKvuYom4tYkn6FdXpVoM7hz\",\r\n\t\t\"CosPrefix\": \"pctool/123456789/1542613158\",\r\n\t\t\"CosRegion\": \"ap-guangzhou\",\r\n\t\t\"CosTocken\": \"13606435fd46b2765dd01aa4eaf356dfca88817030001\",\r\n\t\t\"ExpireTime\": 3600,\r\n\t\t\"RequestId\": \"ce5e66e0-aab5-4d31-9b98-c52caf0fdfae\"\r\n\t}\r\n}",
+        "title": "获取COS临时密钥"
+      }
+    ],
+    "CreateResourceInstances": [
+      {
+        "document": "白名单用户通过创建加固资源自己加固。",
+        "input": "https://ms.tencentcloudapi.com/?Action=CreateResourceInstances\r\n&Pid=12750\r\n&TimeUnit=m\r\n&TimeSpan=6\r\n&ResourceNum=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2dfd3c41-5606-446f-a437-ca7bbbe07b26\",\r\n        \"ResourceSet\": [\r\n            \"mspro_20180913_6b2787b5_0\",\r\n            \"mspro_20180913_6b2787b5_1\",\r\n            \"mspro_20180913_6b2787b5_2\",\r\n            \"mspro_20180913_6b2787b5_3\",\r\n            \"mspro_20180913_6b2787b5_4\"\r\n        ]\r\n    }\r\n}",
+        "title": "创建加固资源"
+      }
+    ],
+    "CreateScanInstances": [
+      {
+        "document": "通过该接口提交要扫描的app信息（示例中的AppUrl和CallbackUrl仅示例，实际无法使用，请用实际可用的url进行替换）",
+        "input": "https://ms.tencentcloudapi.com/?Action=CreateScanInstances\r\n&AppInfos.0.AppUrl=http://example.com/1.apk\r\n&AppInfos.0.AppMd5=dd5b29a800246d7089febf228286d901\r\n&AppInfos.0.AppSize=1024\r\n&ScanInfo.CallbackUrl=http://example.com/cb\r\n&ScanInfo.ScanTypes.0=ADSCAN\r\n&ScanInfo.ScanTypes.1=VULSCAN\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"Progress\": 1,\r\n\t\t\"ItemId\": \"shgugu-hiw72-334kd\",\r\n                \"AppMd5s\": [\"sashiuashiah\",\"hugugusaw76712\"],\r\n                \"LimitTime\": 0,\r\n                \"LimitCount\": 0\r\n\t}\r\n}",
+        "title": "提交一个app进行扫描"
+      }
+    ],
+    "CreateShieldInstance": [
+      {
+        "document": "通过该接口提交要加固的app信息（示例中的AppUrl和CallbackUrl仅示例，实际无法使用，请用实际可用的url进行替换）",
+        "input": "https://ms.tencentcloudapi.com/?Action=CreateShieldInstance\r\n&AppInfo.AppUrl=http://example.com/1.apk\r\n&AppInfo.AppMd5=dd5b29a800246d7089febf228286d901\r\n&AppInfo.AppSize=1024\r\n&ServiceInfo.ServiceEdition=basic\r\n&ServiceInfo.CallbackUrl=http://example.com/cb\r\n&ServiceInfo.SubmitSource=MC\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"Progress\": 1,\r\n\t\t\"ItemId\": \"shgugu-hiw72-334kd\"\r\n\t}\r\n}",
+        "title": "提交一个app进行加固"
+      }
+    ],
+    "CreateShieldPlanInstance": [
+      {
+        "document": "",
+        "input": "https://ms.tencentcloudapi.com/?Action=CreateShieldPlanInstance\r\n&ResourceId=127500-shi\r\n&PlanName=默认加固策略\r\n&PlanInfo.ApkSizeOpt=1\r\n&PlanInfo.Dex=1\r\n&PlanInfo.So=1\r\n&PlanInfo.Bugly=0\r\n&PlanInfo.AntiRepack=1\r\n&PlanInfo.Db=0\r\n&PlanInfo.DexSig=1\r\n&PlanInfo.SeperateDex=0\r\n&PlanInfo.AntiLogLeak=0\r\n&PlanInfo.AntiVMP=0\r\n&PlanInfo.AntiQemuRoot=0\r\n&PlanInfo.AntiAssets=0\r\n&PlanInfo.AntiScreenshot=0\r\n&PlanInfo.AntiSSL=0\r\n&PlanInfo.SoType=so_low_com_dump_huidu\r\n&PlanInfo.SoInfo.SoFileNames.0=1.so\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"Progress\": 1,\r\n\t\t\"PlanId\": 1\r\n\t}\r\n}",
+        "title": "新增加固策略"
+      }
+    ],
+    "DeleteScanInstances": [
+      {
+        "document": "通过传入AppSid集合删除1个或者多个扫描实例",
+        "input": "https://ms.tencentcloudapi.com/?Action=DeleteScanInstances\r\n&AppSids.0=hhussxu-hui2677-kk\r\n&AppSids.1=xyuu-csu-ee78236l\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"Progress\": 1\r\n\t}\r\n}",
+        "title": "根据AppSid对扫描实例进行删除"
+      }
+    ],
+    "DeleteShieldInstances": [
+      {
+        "document": "通过传入ItemId集合删除1个或者多个加固实例",
+        "input": "https://ms.tencentcloudapi.com/?Action=DeleteShieldInstances\r\n&ItemIds.0=hhussxu-hui2677-kk\r\n&ItemIds.1=xyuu-csu-ee78236l\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"Progress\": 1\r\n\t}\r\n}",
+        "title": "根据ItemId对加固实例进行删除"
+      }
+    ],
+    "DescribeResourceInstances": [
+      {
+        "document": "获取某个用户的加固资源信息",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeResourceInstances\r\n&Pids.0=12750\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"TotalCount\": 10,\r\n\t\t\"ResourceSet\": [{\r\n\t\t\t\"ResourceId\": \"\",\r\n                        \"ResourceName\": \"应用加固\",\r\n\t\t\t\"Pid\": \"\",\r\n\t\t\t\"CreateTime\": \"\",\r\n\t\t\t\"ExpireTime\": \"\",\r\n\t\t\t\"IsBind\": 1,\r\n\t\t\t\"BindInfo\": {\r\n\t\t\t\t\"AppIcon\": \"\",\r\n\t\t\t\t\"AppName\": \"微信\",\r\n\t\t\t\t\"AppPkgName\": \"com.tencent.mm\"\r\n\t\t\t}\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "获取某个用户的加固资源信息"
+      }
+    ],
+    "DescribeScanInstances": [
+      {
+        "document": "根据提交实例的包名和名称进行筛选，并返回最新的20条记录",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeScanInstances\r\n&Filters.0.Name=AppName\r\n&Filters.0.Value=wechat\r\n&Filters.1.Name=AppPkgName\r\n&Filters.1.Value=com.tencent.mm\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"ScanSet\": [{\r\n\t\t\t\"ItemId\": \"1234-xcse-ddw1\",\r\n\t\t\t\"AppName\": \"微信\",\r\n\t\t\t\"AppPkgName\": \"com.tencent.mm\",\r\n\t\t\t\"AppVersion\": \"6.5\",\r\n\t\t\t\"AppMd5\": \"der2331ds\",\r\n\t\t\t\"AppSize\": 123454,\r\n\t\t\t\"TaskTime\": \"2018-01-01 12:00:00\",\r\n                        \"AppSid\": \"wiqhiqxasqx282787\",\r\n\t\t\t\"ScanCode\": 0,\r\n\t\t\t\"AppIconUrl\": \"https://wwww.example.com/12334\",\r\n\t\t\t\"TaskStatus\": 1,\r\n\t\t\t\"TaskTime\": 1524744997\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "查询扫描实例列表"
+      }
+    ],
+    "DescribeScanResults": [
+      {
+        "document": "通过唯一标识获取加固的结果，唯一标识ItemId通过请求扫描接口返回",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeScanResults\r\n&ItemId=1shi2e-2387hjgus&AppMd5s.0=dd5b29a800246d7089febf228286d901\r\n&<公共请求参数>",
+        "output": "{\r\n   \"Response\" : {\r\n      \"RequestId\" : \"8fdbd2b2-2867-4758-b450-5bac2d37440f\",\r\n      \"ScanSet\" : [\r\n         {\r\n            \"AdInfo\" : {\r\n               \"Banners\" : [],\r\n               \"BoutiqueRecommands\" : [],\r\n               \"FloatWindowses\" : [],\r\n               \"IntegralWalls\" : [],\r\n               \"NotifyBars\" : [],\r\n               \"Spots\" : []\r\n            },\r\n            \"AppDetailInfo\" : {\r\n               \"AppIconUrl\" : \"http://ms-shield-1251001047.cos.ap-guangzhou.myqcloud.com/legu_icon/1255750086/a9d5f689b518beccc54a6f4286d18bcd?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDmQtAxYTAB2iBS8s2DCzazCD2g7OUq4Zw%26q-sign-time%3D1524646732%3B1524647092%26q-key-time%3D1524646732%3B1524647092%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Da8553d5e3c61c2a44f16e9949b409b94d553d3e0%00\",\r\n               \"AppMd5\" : \"bc80057cf4323db8579e011f8a5f1402\",\r\n               \"AppName\" : \"\",\r\n               \"AppPkgName\" : \"\",\r\n               \"AppSize\" : 484980,\r\n               \"AppVersion\" : \"\",\r\n               \"FileName\" : \"testname\"\r\n            },\r\n            \"PermissionInfo\" : {\r\n               \"PermissionList\" : [\r\n                  {\r\n                     \"Permission\" : \"android.permission.READ_EXTERNAL_STORAGE\"\r\n                  },\r\n                  {\r\n                     \"Permission\" : \"android.permission.WRITE_EXTERNAL_STORAGE\"\r\n                  },\r\n                  {\r\n                     \"Permission\" : \"android.permission.INTERNET\"\r\n                  }\r\n               ]\r\n            },\r\n            \"SensitiveInfo\" : {\r\n               \"SensitiveList\" : [\r\n                  {\r\n                     \"FilePath\" : \"0000bbd2fdef20ad2fa7caef1a9f1e762532f78c/resources.arsc\",\r\n                     \"FileSha\" : \"3513b0e608e075f2e1beb49ba32d59b3e44d7622\",\r\n                     \"WordList\" : [ \"手槍\" ]\r\n                  }\r\n               ]\r\n            },\r\n            \"StatusCode\" : 0,\r\n            \"StatusDesc\" : \"\",\r\n            \"StatusRef\" : \"\",\r\n            \"TaskStatus\" : 1,\r\n            \"TaskTime\" : 1546511829,\r\n            \"VirusInfo\" : {\r\n               \"SafeType\" : 1,\r\n               \"VirusDesc\" : \"\",\r\n               \"VirusName\" : \"\"\r\n            },\r\n            \"VulInfo\" : {\r\n               \"VulFileScore\" : 0,\r\n               \"VulList\" : [\r\n                  {\r\n                     \"RiskLevel\" : 1,\r\n                     \"VulCode\" : \"<com.unity3d.player.UnityPlayer: void <init>(android.content.ContextWrapper)>\",\r\n                     \"VulDesc\" : \"在android中使用Broadcast接收广播的过程中，当receiver没有进行合适的配置时，可能导致攻击者构造广播发送给被攻击recevier。导致被攻击应用接受到错误信息，从而导致进一步的危害。\",\r\n                     \"VulFilepath\" : \"classes.dex\",\r\n                     \"VulId\" : \"22\",\r\n                     \"VulName\" : \"Broadcast Receiver组件暴露风险（含动态注册）\",\r\n                     \"VulSolution\" : \"1.如果应用的Receiver组件不必要导出，或者组件配置了intent filter标签，建议在AndroidManifest.xml文件中设置组件的“android:exported”属性为false\\n2.如果组件必须要提供给外部应用使用，建议对组件进行权限控制\",\r\n                     \"VulSrcType\" : 1\r\n                  },\r\n                  {\r\n                     \"RiskLevel\" : 2,\r\n                     \"VulCode\" : \"debuggable option do not disable in AndroidManifest\",\r\n                     \"VulDesc\" : \"在AndroidManifest.xml中配置debuggable=true导致程序可以被调试，有数据泄漏的风险\",\r\n                     \"VulFilepath\" : \"AndroidManifest.xml\",\r\n                     \"VulId\" : \"1\",\r\n                     \"VulName\" : \"调试标志未关闭漏洞\",\r\n                     \"VulSolution\" : \"在AndroidManifest.xml配置debuggable=false\",\r\n                     \"VulSrcType\" : 0\r\n                  },\r\n                  {\r\n                     \"RiskLevel\" : 2,\r\n                     \"VulCode\" : \"allowBackUp option do not disable in AndroidManifest\",\r\n                     \"VulDesc\" : \"在AndroidManifest.xml若将allowBackUp属性设为true，用户即可通过adb buckup命令备份文件数据并通过adb restore命令将备份文件导入\",\r\n                     \"VulFilepath\" : \"AndroidManifest.xml\",\r\n                     \"VulId\" : \"2\",\r\n                     \"VulName\" : \"allowBackUp文件备份漏洞\",\r\n                     \"VulSolution\" : \"在应用正式发布之前将AndroidManifest.xml文件中的allowBackUp属性值设置为false\",\r\n                     \"VulSrcType\" : 0\r\n                  }\r\n               ]\r\n            }\r\n         }\r\n      ],\r\n      \"TotalCount\" : 1\r\n   }\r\n}",
+        "title": "查询扫描结果"
+      }
+    ],
+    "DescribeShieldInstances": [
+      {
+        "document": "根据加固实例的包名和名称进行筛选，并返回最新的20条记录",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeShieldInstances\r\n&Filters.0.Name=AppName\r\n&Filters.0.Value=wechat\r\n&Filters.1.Name=AppPkgName\r\n&Filters.1.Value=com.tencent.mm\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"TotalCount\": 10,\r\n\t\t\"AppSet\": [{\r\n\t\t\t\"ItemId\": \"1234-xcse-ddw1\",\r\n\t\t\t\"AppName\": \"微信\",\r\n\t\t\t\"AppPkgName\": \"com.tencent.mm\",\r\n\t\t\t\"AppVersion\": \"6.5\",\r\n\t\t\t\"AppMd5\": \"der2331ds\",\r\n\t\t\t\"AppSize\": 123454,\r\n\t\t\t\"ServiceEdition\": \"basic\",\r\n\t\t\t\"ShieldCode\": 0,\r\n\t\t\t\"AppUrl\": \"https://www.example.com/a.apk\",\r\n\t\t\t\"AppIconUrl\": \"https://wwww.example.com/12334\",\r\n\t\t\t\"ShieldMd5\": \"ae5df985a27b07f56d8c670fef70d7c9\",\r\n\t\t\t\"ShieldSize\": 1193311,\r\n\t\t\t\"TaskStatus\": 1,\r\n\t\t\t\"TaskTime\": 1524744997\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "查询加固实例列表"
+      }
+    ],
+    "DescribeShieldPlanInstance": [
+      {
+        "document": "",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeShieldPlanInstance\r\n&Pids=12750\r\n&ResourceId=jsihsih-xx\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"BindInfo\": {\r\n\t\t\t\"AppIconUrl\": \"\",\r\n\t\t\t\"AppName\": \"微信\",\r\n\t\t\t\"AppPkgName\": \"com.tencent.mm\"\r\n\t\t},\r\n\t\t\"ShieldPlanInfo\": {\r\n\t\t\t\"TotalCount\": 5,\r\n\t\t\t\"PlanSet\": [{\r\n\t\t\t\t\"IsDefault\": 0,\r\n\t\t\t\t\"PlanId\": 1,\r\n\t\t\t\t\"PlanName\": \"部分加固\",\r\n\t\t\t\t\"PlanInfo\": {\r\n\t\t\t\t\t\"ApkSizeopt\": 1,\r\n\t\t\t\t\t\"Dex\": 1,\r\n\t\t\t\t\t\"So\": 1,\r\n\t\t\t\t\t\"Bugly\": 1,\r\n\t\t\t\t\t\"AntiRepack\": 1,\r\n\t\t\t\t\t\"SeperateDex\": 0,\r\n\t\t\t\t\t\"Db\": 0,\r\n\t\t\t\t\t\"DexSig\": 1,\r\n                                        \"AntiLogLeak\": 0,\r\n                                        \"AntiVMP\": 0,\r\n                                        \"AntiQemuRoot\": 0,\r\n                                        \"AntiAssets\": 0,\r\n                                        \"AntiScreenshot\": 0,\r\n                                        \"AntiSSL\": 0,\r\n                                        \"SoType\": [\"so_low_com_dump_huidu\"],\r\n\t\t\t\t\t\"SoInfo\": {\r\n\t\t\t\t\t\t\"SoFileNames\": [\"1.so\", \"2.so\"]\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t\t},\r\n\t\t\"ResourceServiceInfo\": {\r\n\t\t\t\"CreateTime\": \"\",\r\n\t\t\t\"ExpireTime\": \"\"\r\n\t\t}\r\n\t}\r\n}",
+        "title": "查询加固策略信息"
+      }
+    ],
+    "DescribeShieldResult": [
+      {
+        "document": "通过唯一标识获取加固的结果，唯一标识ItemId通过请求加固接口返回",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeShieldResult\r\n&ItemId=1shi2e-2387hjgus\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n\t\t\"TaskStatus\": 0,\r\n\t\t\"StatusDesc\": \"\",\r\n\t\t\"StatusRef\": \"\",\r\n\t\t\"AppDetailInfo\": {\r\n\t\t\t\"AppName\": \"微信\",\r\n\t\t\t\"AppPkgName\": \"com.tencent.mm\",\r\n\t\t\t\"AppVersion\": \"1.0\",\r\n\t\t\t\"AppSize\": 1234565,\r\n\t\t\t\"AppMd5\": \"dd5b29a800246d7089febf228286d901\",\r\n\t\t\t\"AppIconUrl\": \"https://example.com/1.png\"\r\n\t\t},\r\n\t\t\"ShieldInfo\": {\r\n\t\t\t\"ShieldCode\": 1,\r\n\t\t\t\"ShieldSize\": 1024,\r\n\t\t\t\"ShieldMd5\": \"25787jhids\",\r\n\t\t\t\"AppUrl\": \"https://example.com/1.apk\",\r\n                        \"TaskTime\": 1245478744,\r\n                        \"ItemId\": \"hji452-huhsxqwq1212\"\r\n\t\t}\r\n\t}\r\n}",
+        "title": "查询加固结果"
+      }
+    ],
+    "DescribeUserBaseInfoInstance": [
+      {
+        "document": "",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeUserBaseInfoInstance\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"ce5e66e0-aab5-4d31-9b98-c52caf0fdfae\",\r\n\t\t\"TimeStamp\": 1544607650,\r\n\t\t\"UserAppid\": 1251006373,\r\n\t\t\"UserUin\": 20548499\r\n\t}\r\n}",
+        "title": "获取用户基础信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}
