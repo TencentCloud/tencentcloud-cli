@@ -1,4 +1,4 @@
-**Example 1: 获取binlog列表**
+**Example 1: Getting the binlog list**
 
 
 

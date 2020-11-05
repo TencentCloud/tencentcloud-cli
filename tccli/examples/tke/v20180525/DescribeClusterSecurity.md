@@ -1,6 +1,6 @@
-**Example 1: 集群的密钥信息**
+**Example 1: Querying key information of a cluster**
 
-集群的密钥信息
+Queries the key information of a cluster
 
 Input: 
 

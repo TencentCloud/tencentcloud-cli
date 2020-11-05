@@ -1,4 +1,4 @@
-**Example 1: 修改云数据库实例名**
+**Example 1: Renaming TencentDB instance**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdb ModifyDBInstanceName --cli-unfold-argument  \
     --InstanceId cdb-f35wr6wj\
-    --InstanceName 我是中文
+    --InstanceName 'I am English text'
 ```
 
 Output: 

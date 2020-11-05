@@ -1,4 +1,4 @@
-**Example 1: 修改实例mssql-j8kv137v的备份策略**
+**Example 1: Modifying the backup policy of the "mssql-j8kv137v" instance**
 
 
 

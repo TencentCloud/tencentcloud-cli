@@ -1,4 +1,4 @@
-**Example 1: 查询指定实例**
+**Example 1: Querying the specified instance**
 
 
 
@@ -26,7 +26,7 @@ Output:
                 "AutoScalingGroupId": "asg-4o61gsxi",
                 "HealthStatus": "HEALTHY",
                 "LifeCycleState": "IN_SERVICE",
-                "LaunchConfigurationName": "系列2本地盘",
+                "LaunchConfigurationName": "series 2 local disk",
                 "InstanceType": "S2.SMALL2"
             }
         ],

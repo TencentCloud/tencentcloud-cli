@@ -1,4 +1,4 @@
-**Example 1: 查询数据库导入任务记录**
+**Example 1: Querying import task record**
 
 
 
@@ -28,7 +28,7 @@ Output:
                 "Process": 5,
                 "CreateTime": "2017-11-09 14:26:31",
                 "FileSize": 12,
-                "Message": "lock_inst.cgi: 某些实例id不存在对应的实例记录",
+                "Message": "lock_inst.cgi: no instance records exist for some instance IDs",
                 "JobId": 16242,
                 "DbName": "test",
                 "AsyncRequestId": "a4788d0a-df23758a-ac961e5a-af414d33"
@@ -43,7 +43,7 @@ Output:
                 "Process": 5,
                 "CreateTime": "2017-10-18 21:18:26",
                 "FileSize": "12",
-                "Message": "lock_inst.cgi: 某些实例id不存在对应的实例记录",
+                "Message": "lock_inst.cgi: no instance records exist for some instance IDs",
                 "JobId": 16223,
                 "DbName": "",
                 "AsyncRequestId": "198e97de-972b1971-fb0ce76a-08ca054e"
@@ -58,7 +58,7 @@ Output:
                 "Process": 5,
                 "CreateTime": "2017-10-18 20:12:07",
                 "FileSize": "2",
-                "Message": "lock_inst.cgi: 某些实例id不存在对应的实例记录",
+                "Message": "lock_inst.cgi: no instance records exist for some instance IDs",
                 "JobId": 16222,
                 "DbName": "test",
                 "AsyncRequestId": "9706dfbf-0d1bc6df-5f18f4e1-bb86f2f4"
@@ -73,7 +73,7 @@ Output:
                 "Process": 5,
                 "CreateTime": "2017-10-18 17:53:54",
                 "FileSize": "12",
-                "Message": "lock_inst.cgi: 某些实例id不存在对应的实例记录",
+                "Message": "lock_inst.cgi: no instance records exist for some instance IDs",
                 "JobId": 16209,
                 "DbName": "",
                 "AsyncRequestId": "e8713d1e-10628d32-74682eef-d0855c1a"

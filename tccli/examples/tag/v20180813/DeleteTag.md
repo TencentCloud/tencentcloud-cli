@@ -1,4 +1,4 @@
-**Example 1: 删除标签**
+**Example 1: Deleting Tags**
 
 
 

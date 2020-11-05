@@ -1,4 +1,4 @@
-**Example 1: 获取转发报表数据**
+**Example 1: Getting forwarding report data**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DescribeBaradData --cli-unfold-argument  \
-    --Business bgpip\
+    --Business shield\
     --Id bgpip-000000x7\
     --Period 300\
     --StartTime '2018-08-28 07:15:00'\

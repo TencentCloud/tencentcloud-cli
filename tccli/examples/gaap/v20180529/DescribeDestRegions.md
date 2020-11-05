@@ -1,4 +1,4 @@
-**Example 1: 查询源站 区域**
+**Example 1: Querying Origin Server Regions**
 
 
 
@@ -14,7 +14,7 @@ Output:
         "AccessRegionSet": [
             {
                 "RegionId": "eu-moscow",
-                "RegionName": "俄罗斯"
+                "RegionName": "Russia"
             }
         ],
         "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd",

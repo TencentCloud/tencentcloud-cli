@@ -1,4 +1,4 @@
-**Example 1: 创建雪碧图模板**
+**Example 1: Creating an image sprite generating template**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateImageSpriteTemplate --cli-unfold-argument  \
-    --Name 雪碧图模板1\
+    --Name 'Image sprite generating template 1'\
     --Width 128\
     --Height 128\
     --SampleType Percent\

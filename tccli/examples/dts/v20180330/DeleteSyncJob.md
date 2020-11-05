@@ -1,4 +1,4 @@
-**Example 1: 删除同步任务**
+**Example 1: Deleting a Sync Task**
 
 
 

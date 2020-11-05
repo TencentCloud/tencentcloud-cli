@@ -1,4 +1,4 @@
-**Example 1: 修改目标组名称**
+**Example 1: Renaming a target group**
 
 
 

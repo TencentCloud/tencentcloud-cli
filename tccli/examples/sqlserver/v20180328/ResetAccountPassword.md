@@ -1,4 +1,4 @@
-**Example 1: 重置mssql-njj2mtpl的账户密码**
+**Example 1: Resetting account password of mssql-njj2mtpl**
 
 
 

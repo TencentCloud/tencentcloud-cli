@@ -1,6 +1,6 @@
-**Example 1: 修改HTTP监听器配置**
+**Example 1: Modifying the HTTP Listener Configuration**
 
-修改HTTP监听器配置
+Modify the HTTP listener configuration.
 
 Input: 
 

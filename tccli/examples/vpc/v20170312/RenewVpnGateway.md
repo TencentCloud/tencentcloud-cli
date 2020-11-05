@@ -1,4 +1,4 @@
-**Example 1: 续费VPN网关**
+**Example 1: Renewing a VPN gateway**
 
 
 

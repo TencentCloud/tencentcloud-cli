@@ -1,4 +1,4 @@
-**Example 1: 将实例转至其他项目**
+**Example 1: Transferring instance to another project**
 
 
 
@@ -20,7 +20,7 @@ Output:
 }
 ```
 
-**Example 2: 将实例postgres-6bwgamo3转移至项目ID为10467的项目里面去**
+**Example 2: Transferring instance postgres-6bwgamo3 to the project whose project ID is 10467**
 
 
 

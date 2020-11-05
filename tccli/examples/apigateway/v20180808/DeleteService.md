@@ -1,4 +1,4 @@
-**Example 1: 删除服务**
+**Example 1: Deleting service**
 
 
 

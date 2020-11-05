@@ -1,6 +1,6 @@
-**Example 1: 取消信任恶意请求**
+**Example 1: Untrusting malicious request**
 
-取消信任恶意请求
+This example shows you how to untrust a malicious request.
 
 Input: 
 

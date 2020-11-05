@@ -1,6 +1,6 @@
-**Example 1: 创建游戏服务会话**
+**Example 1: Creating game server session**
 
-创建游戏服务会话
+This example shows you how to create a game server session.
 
 Input: 
 
@@ -15,30 +15,25 @@ Output:
 {
     "Response": {
         "GameServerSession": {
-            "AvailabilityStatus": "Enable",
-            "CreationTime": "2020-07-30T03:55:43Z",
-            "CreatorId": "",
-            "CurrentCustomCount": 0,
-            "CurrentPlayerSessionCount": 0,
+            "CreationTime": "2019-12-05T04:08:29Z",
+            "CreatorId": "c2",
+            "CurrentPlayerSessionCount": "0",
             "DnsName": "",
-            "FleetId": "fleet-qp33caaa-35555",
+            "FleetId": "fleet-test01",
             "GameProperties": [],
-            "GameServerSessionData": "",
-            "GameServerSessionId": "qcs::gse:ap-shanghai:uin/100000010000:gameserversession/fleet-qp33caaa-35555/gssess-qtk2222-uuu",
-            "InstanceType": "S5.LARGE8",
-            "IpAddress": "127.0.0.1",
+            "GameServerSessionData": "test",
+            "GameServerSessionId": "qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde",
+            "IpAddress": "0000.0.0.0",
             "MatchmakerData": "",
-            "MaxCustomCount": 0,
-            "MaximumPlayerSessionCount": 100,
+            "MaximumPlayerSessionCount": "10",
             "Name": "",
             "PlayerSessionCreationPolicy": "ACCEPT_ALL",
-            "Port": 6000,
+            "Port": "8000",
             "Status": "ACTIVATING",
             "StatusReason": "",
-            "TerminationTime": null,
-            "Weight": 5
+            "TerminationTime": null
         },
-        "RequestId": "s15960816666663333"
+        "RequestId": "s1-test-requestid01"
     }
 }
 ```

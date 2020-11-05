@@ -1,4 +1,4 @@
-**Example 1: 查询点播内容审核时长统计数据**
+**Example 1: Querying VOD content audit duration statistics**
 
 
 

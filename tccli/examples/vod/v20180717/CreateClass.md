@@ -1,4 +1,4 @@
-**Example 1: 创建视频分类**
+**Example 1: Creating video category**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod CreateClass --cli-unfold-argument  \
     --ParentId -1\
-    --ClassName 一级分类1\
+    --ClassName 'First-level Category 1'\
     --SubAppId 1
 ```
 

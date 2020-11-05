@@ -1,4 +1,4 @@
-**Example 1: 修改DDoS的AI防护状态**
+**Example 1: Modifying DDoS AI protection status**
 
 
 

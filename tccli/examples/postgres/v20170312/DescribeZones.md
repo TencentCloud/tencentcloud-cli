@@ -1,4 +1,4 @@
-**Example 1: 查询特定地域下的可用区**
+**Example 1: Querying AZs in a specified region**
 
 
 
@@ -16,19 +16,19 @@ Output:
         "ZoneSet": [
             {
                 "Zone": "ap-guangzhou-2",
-                "ZoneName": "广州二区",
+                "ZoneName": "Guangzhou Zone 2",
                 "ZoneId": 100002,
                 "ZoneState": "AVAILABLE"
             },
             {
                 "Zone": "ap-guangzhou-3",
-                "ZoneName": "广州三区",
+                "ZoneName": "Guangzhou Zone 3",
                 "ZoneId": 100003,
                 "ZoneState": "AVAILABLE"
             },
             {
                 "Zone": "ap-guangzhou-4",
-                "ZoneName": "广州四区",
+                "ZoneName": "Guangzhou Zone 4",
                 "ZoneId": 100004,
                 "ZoneState": "AVAILABLE"
             }

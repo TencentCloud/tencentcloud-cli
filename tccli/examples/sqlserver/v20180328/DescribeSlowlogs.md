@@ -1,4 +1,4 @@
-**Example 1: 获取慢查询记录**
+**Example 1: Getting slow query logs**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 根据源站区域查询可用加速区域**
+**Example 1: Querying available acceleration regions by origin server region**
 
 
 

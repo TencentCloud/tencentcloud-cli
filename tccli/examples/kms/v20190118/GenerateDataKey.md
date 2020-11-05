@@ -1,6 +1,6 @@
-**Example 1: 生成数据密钥示例**
+**Example 1: Generating a DEK**
 
-使用指定的CMK生成Datakey。
+This example shows you how to generate a DEK using the specified CMK.
 
 Input: 
 

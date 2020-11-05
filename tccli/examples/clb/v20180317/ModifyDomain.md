@@ -1,4 +1,4 @@
-**Example 1: 修改HTTP监听器下转发规则的域名**
+**Example 1: Modifying the domain name of a forwarding rule under an HTTP listener**
 
 
 

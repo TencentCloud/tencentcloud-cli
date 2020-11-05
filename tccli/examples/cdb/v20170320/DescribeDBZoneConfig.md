@@ -1,4 +1,4 @@
-**Example 1: 获取云数据库可售卖规格**
+**Example 1: Getting available TencentDB sales specs**
 
 
 
@@ -14,14 +14,14 @@ Output:
         "TotalCount": 17,
         "Items": [
             {
-                "RegionName": "广州",
-                "Area": "中国华南",
+                "RegionName": "Guangzhou",
+                "Area": "South China",
                 "IsDefaultRegion": 0,
                 "Region": "ap-guangzhou",
                 "ZonesConf": [
                     {
                         "Status": 1,
-                        "ZoneName": "广州二区",
+                        "ZoneName": "Guangzhou Zone 2",
                         "IsCustom": true,
                         "IsSupportDr": true,
                         "IsSupportVpc": true,
@@ -75,7 +75,7 @@ Output:
                                 "Configs": [
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 1000,
                                         "Cpu": 0,
@@ -85,12 +85,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 1000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 2000,
                                         "Cpu": 0,
@@ -100,12 +100,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 2400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 4000,
                                         "Cpu": 0,
@@ -115,12 +115,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 4400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上十万人级别的中型游戏应用",
+                                        "Info": "Medium-scale game apps with hundreds of thousands of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 8000,
                                         "Cpu": 0,
@@ -130,12 +130,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 7200,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 16000,
                                         "Cpu": 0,
@@ -145,12 +145,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 18000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 32000,
                                         "Cpu": 0,
@@ -160,12 +160,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 25000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 64000,
                                         "Cpu": 0,
@@ -175,12 +175,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 37689,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 96000,
                                         "Cpu": 0,
@@ -190,12 +190,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 40919,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 128000,
                                         "Cpu": 0,
@@ -205,12 +205,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 61378,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 244000,
                                         "Cpu": 0,
@@ -220,12 +220,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 122755,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 488000,
                                         "Cpu": 0,
@@ -235,7 +235,7 @@ Output:
                                         "Connection": 0,
                                         "Qps": 245509,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     }
                                 ]
@@ -244,7 +244,7 @@ Output:
                     },
                     {
                         "Status": 1,
-                        "ZoneName": "广州三区",
+                        "ZoneName": "Guangzhou Zone 3",
                         "IsCustom": true,
                         "IsSupportDr": true,
                         "IsSupportVpc": true,
@@ -298,7 +298,7 @@ Output:
                                 "Configs": [
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 1000,
                                         "Cpu": 0,
@@ -308,12 +308,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 1000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 2000,
                                         "Cpu": 0,
@@ -323,12 +323,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 2400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 4000,
                                         "Cpu": 0,
@@ -338,12 +338,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 4400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上十万人级别的中型游戏应用",
+                                        "Info": "Medium-scale game apps with hundreds of thousands of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 8000,
                                         "Cpu": 0,
@@ -353,12 +353,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 7200,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 16000,
                                         "Cpu": 0,
@@ -368,12 +368,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 18000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 32000,
                                         "Cpu": 0,
@@ -383,12 +383,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 25000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 64000,
                                         "Cpu": 0,
@@ -398,12 +398,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 37689,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 96000,
                                         "Cpu": 0,
@@ -413,12 +413,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 40919,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 128000,
                                         "Cpu": 0,
@@ -428,12 +428,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 61378,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 244000,
                                         "Cpu": 0,
@@ -443,12 +443,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 122755,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 488000,
                                         "Cpu": 0,
@@ -458,7 +458,7 @@ Output:
                                         "Connection": 0,
                                         "Qps": 245509,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     }
                                 ]
@@ -467,7 +467,7 @@ Output:
                     },
                     {
                         "Status": 4,
-                        "ZoneName": "广州一区",
+                        "ZoneName": "Guangzhou Zone 1",
                         "IsCustom": true,
                         "IsSupportDr": false,
                         "IsSupportVpc": true,
@@ -510,7 +510,7 @@ Output:
                                 "Configs": [
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 360,
                                         "Cpu": 0,
@@ -520,12 +520,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 120,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 1000,
                                         "Cpu": 0,
@@ -535,12 +535,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 1000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 2000,
                                         "Cpu": 0,
@@ -550,12 +550,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 2400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 4000,
                                         "Cpu": 0,
@@ -565,12 +565,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 4400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上十万人级别的中型游戏应用",
+                                        "Info": "Medium-scale game apps with hundreds of thousands of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 8000,
                                         "Cpu": 0,
@@ -580,12 +580,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 7200,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 12000,
                                         "Cpu": 0,
@@ -595,12 +595,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 15000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 16000,
                                         "Cpu": 0,
@@ -610,12 +610,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 18000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 24000,
                                         "Cpu": 0,
@@ -625,12 +625,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 23000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 48000,
                                         "Cpu": 0,
@@ -640,7 +640,7 @@ Output:
                                         "Connection": 0,
                                         "Qps": 37000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     }
                                 ]
@@ -649,7 +649,7 @@ Output:
                     },
                     {
                         "Status": 2,
-                        "ZoneName": "广州四区",
+                        "ZoneName": "Guangzhou Zone 4"
                         "IsCustom": true,
                         "IsSupportDr": true,
                         "IsSupportVpc": true,
@@ -706,7 +706,7 @@ Output:
                                 "Configs": [
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 1000,
                                         "Cpu": 0,
@@ -716,12 +716,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 1000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 2000,
                                         "Cpu": 0,
@@ -731,12 +731,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 2400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 4000,
                                         "Cpu": 0,
@@ -746,12 +746,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 4400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上十万人级别的中型游戏应用",
+                                        "Info": "Medium-scale game apps with hundreds of thousands of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 8000,
                                         "Cpu": 0,
@@ -761,12 +761,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 7200,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 16000,
                                         "Cpu": 0,
@@ -776,12 +776,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 18000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 32000,
                                         "Cpu": 0,
@@ -791,12 +791,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 25000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 64000,
                                         "Cpu": 0,
@@ -806,12 +806,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 37689,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 96000,
                                         "Cpu": 0,
@@ -821,12 +821,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 40919,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 128000,
                                         "Cpu": 0,
@@ -836,12 +836,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 61378,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 244000,
                                         "Cpu": 0,
@@ -851,12 +851,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 122755,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 488000,
                                         "Cpu": 0,
@@ -866,7 +866,7 @@ Output:
                                         "Connection": 0,
                                         "Qps": 245509,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     }
                                 ]
@@ -876,14 +876,14 @@ Output:
                 ]
             },
             {
-                "RegionName": "曼谷",
-                "Area": "亚太地区",
+                "RegionName": "Bangkok",
+                "Area": "Asia Pacific",
                 "IsDefaultRegion": 0,
                 "Region": "ap-bangkok",
                 "ZonesConf": [
                     {
                         "Status": 2,
-                        "ZoneName": "曼谷一区",
+                        "ZoneName": "Bangkok Zone 1",
                         "IsCustom": true,
                         "IsSupportDr": true,
                         "IsSupportVpc": true,
@@ -928,7 +928,7 @@ Output:
                                 "Configs": [
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 1000,
                                         "Cpu": 0,
@@ -938,12 +938,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 1000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 2000,
                                         "Cpu": 0,
@@ -953,12 +953,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 2400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上万的小型游戏应用或百万人级别的工具类应用",
+                                        "Info": "Small-scale game apps with tens of thousands of DAUs or widget apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 4000,
                                         "Cpu": 0,
@@ -968,12 +968,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 4400,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数上十万人级别的中型游戏应用",
+                                        "Info": "Medium-scale game apps with hundreds of thousands of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 8000,
                                         "Cpu": 0,
@@ -983,12 +983,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 7200,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 16000,
                                         "Cpu": 0,
@@ -998,12 +998,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 18000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 32000,
                                         "Cpu": 0,
@@ -1013,12 +1013,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 25000,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 64000,
                                         "Cpu": 0,
@@ -1028,12 +1028,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 37689,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 96000,
                                         "Cpu": 0,
@@ -1043,12 +1043,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 40919,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 128000,
                                         "Cpu": 0,
@@ -1058,12 +1058,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 61378,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 244000,
                                         "Cpu": 0,
@@ -1073,12 +1073,12 @@ Output:
                                         "Connection": 0,
                                         "Qps": 122755,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     },
                                     {
                                         "Device": "Z3",
-                                        "Type": "高可用版",
+                                        "Type": "High-availability edition",
                                         "CdbType": "CUSTOM",
                                         "Memory": 488000,
                                         "Cpu": 0,
@@ -1088,7 +1088,7 @@ Output:
                                         "Connection": 0,
                                         "Qps": 245509,
                                         "Iops": 0,
-                                        "Info": "日活跃用户数在百万人级别的大型游戏应用",
+                                        "Info": "Large-scale game apps with millions of DAUs",
                                         "Status": 0
                                     }
                                 ]

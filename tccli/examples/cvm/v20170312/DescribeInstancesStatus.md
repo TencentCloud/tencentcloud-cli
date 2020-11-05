@@ -1,6 +1,6 @@
-**Example 1: 查看实例状态列表**
+**Example 1: Viewing the list of instance status**
 
-本示例用于查看实例状态列表中的两个实例。
+This example shows you how to query two instances in the list of instance status.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 修改DDoS的防护等级**
+**Example 1: Modifying DDoS protection level**
 
 
 

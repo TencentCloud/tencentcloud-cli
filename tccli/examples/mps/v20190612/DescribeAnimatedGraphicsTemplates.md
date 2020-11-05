@@ -1,4 +1,4 @@
-**Example 1: 获转动图模板列表**
+**Example 1: Getting the list of animated image generating templates**
 
 
 
@@ -17,7 +17,7 @@ Output:
         "ImageSpriteTemplateSet": [
             {
                 "Definition": 10001,
-                "Name": "转动图模板1",
+                "Name": "Animated image generating template 1",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",
                 "Height": 540,

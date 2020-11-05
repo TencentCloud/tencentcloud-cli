@@ -1,4 +1,4 @@
-**Example 1: 查询生命周期挂钩**
+**Example 1: Querying lifecycle hooks**
 
 
 
@@ -79,7 +79,7 @@ Output:
 }
 ```
 
-**Example 2: 查询生命周期挂钩，使用Filter**
+**Example 2: Using Filter to query lifecycle hooks**
 
 
 

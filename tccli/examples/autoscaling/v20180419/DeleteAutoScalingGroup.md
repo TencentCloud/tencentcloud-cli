@@ -1,4 +1,4 @@
-**Example 1: 删除指定伸缩组**
+**Example 1: Deleting the specified scaling group**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 查询子应用资源列表**
+**Example 1: Querying subapplication resource list**
 
 
 
@@ -14,14 +14,14 @@ Output:
         "SubAppIdInfoSet": [
             {
                 "SubAppId": 1451123904,
-                "Name": "子应用1",
-                "Description": "子应用1简介",
+                "Name": "Subapplication 1",
+                "Description": "Overview of subapplication 1",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "Status": "On"
             },
             {
                 "SubAppId": 1251123904,
-                "Name": "主应用",
+                "Name": "Primary application",
                 "Description": "",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "Status": "On"

@@ -1,4 +1,4 @@
-**Example 1: 查询自定义域名的路径映射**
+**Example 1: Querying the path mappings of custom domain name**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 删除一个镜像**
+**Example 1: Deleting an image**
 
-删除一个镜像img-34vaef8fe， 当这个镜像处于使用中或者镜像Id不存在时不采取操作并返回错误码。
+This example shows you how to delete an image whose image ID is `img-34vaef8fe`. If the image is in use or the image ID does not exist, no operation will be performed and an error code will be returned.
 
 Input: 
 

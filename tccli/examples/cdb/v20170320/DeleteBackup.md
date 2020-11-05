@@ -1,4 +1,4 @@
-**Example 1: 删除云数据库备份**
+**Example 1: Deleting TencentDB instance backup**
 
 
 

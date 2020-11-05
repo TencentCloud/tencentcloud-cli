@@ -1,4 +1,4 @@
-**Example 1: 设置基础防护的DDoS告警阈值**
+**Example 1: Setting DDoS alarm threshold for Anti-DDoS Basic**
 
 
 

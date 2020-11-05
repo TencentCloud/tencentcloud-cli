@@ -1,6 +1,6 @@
-**Example 1: 发起直播流审核任务**
+**Example 1: Initiating live steam audit task**
 
-对 URL 为 http://www.abc.com/abc.m3u8 的直播流发起内容识别任务。
+This example shows you how to initiate a content recognition task for a live stream whose URL is `http://www.abc.com/abc.m3u8`.
 
 Input: 
 

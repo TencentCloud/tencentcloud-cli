@@ -1,6 +1,6 @@
-**Example 1: 修改CDH实例的属性**
+**Example 1: Modifying the attributes of a CDH instance**
 
-本示例用于用户修改指定CDH实例的HostName属性。
+This example shows you how to modify the `HostName` attribute of a specified CDH instance.
 
 Input: 
 

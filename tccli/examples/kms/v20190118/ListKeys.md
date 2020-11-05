@@ -1,6 +1,6 @@
-**Example 1: 获取主密钥列表示例**
+**Example 1: Getting CMK list**
 
-获取主密钥列表
+This example shows you how to get the list of CMKs.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 弹性网卡绑定云服务器**
+**Example 1: Binding an ENI to a CVM**
 
 
 
@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli vpc AttachNetworkInterface --cli-unfold-argument  \
+    --Version 2017-03-12\
     --NetworkInterfaceId eni-afo43z61\
     --InstanceId ins-ins-r8hr2upy
 ```

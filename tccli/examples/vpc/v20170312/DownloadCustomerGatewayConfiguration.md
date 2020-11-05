@@ -1,4 +1,4 @@
-**Example 1: 下载VPN通道配置**
+**Example 1: Downloading a VPN tunnel configuration**
 
 
 

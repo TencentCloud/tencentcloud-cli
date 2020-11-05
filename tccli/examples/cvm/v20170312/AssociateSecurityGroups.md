@@ -1,4 +1,4 @@
-**Example 1: 指定多个实例绑定一个安全组**
+**Example 1: Associating multiple instances with one security group**
 
 
 

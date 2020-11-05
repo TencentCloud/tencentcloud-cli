@@ -1,4 +1,4 @@
-**Example 1: 按量计费实例销毁**
+**Example 1: Terminating a pay-as-you-go instance**
 
 
 

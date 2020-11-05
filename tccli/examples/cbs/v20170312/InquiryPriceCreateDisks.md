@@ -1,4 +1,4 @@
-**Example 1: 查询购买6个月50G普通云盘的价格**
+**Example 1: Querying the price for purchasing a 50 GB HDD cloud disk for 6 months**
 
 
 
@@ -32,9 +32,9 @@ Output:
 }
 ```
 
-**Example 2: 查询购买按小时后付费云盘价格**
+**Example 2: Querying the price of a pay-as-you-go cloud disk billed hourly**
 
-查询购买一块大小100GB，云盘类型为高性能云硬盘，计费类型为按小时后付费的价格。
+This example shows you how to query the price of a pay-as-you-go premium cloud disk billed hourly with the capacity of 100 GB 
 
 Input: 
 

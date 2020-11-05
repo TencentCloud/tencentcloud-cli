@@ -1,58 +1,6 @@
-**Example 1: 查询指定任务流模板**
+**Example 1: Querying all task flow templates**
 
-查询名为“我的任务流A”的任务流模板的详情
-
-Input: 
-
-```
-tccli vod DescribeProcedureTemplates --cli-unfold-argument  \
-    --Names 我的任务流A
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 1,
-        "ProcedureTemplateSet": [
-            {
-                "Name": "我的任务流A",
-                "Type": "Custom",
-                "MediaPrcoessTask": {
-                    "TranscodeTaskSet": [
-                        {
-                            "Definition": 20,
-                            "WatermarkSet": null
-                        },
-                        {
-                            "Definition": 30,
-                            "WatermarkSet": null
-                        },
-                        {
-                            "Definition": 40,
-                            "WatermarkSet": null
-                        }
-                    ],
-                    "AnimatedGraphicTaskSet": null,
-                    "SnapshotByTimeOffsetTaskSet": null,
-                    "SampleSnapshotTaskSet": null,
-                    "ImageSpriteTaskSet": null,
-                    "CoverBySnapshotTaskSet": null
-                },
-                "AiContentReviewTask": null,
-                "AiAnalysisTask": null,
-                "AiRecognitionTask": null,
-                "MiniProgramPublishTask": null
-            }
-        ],
-        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3"
-    }
-}
-```
-
-**Example 2: 查询所有的任务流模板**
-
-查询所有的任务流模板的详情，共查到3个任务流模板
+This example shows you how to query the details of all task flow templates (3 templates are queried).
 
 Input: 
 
@@ -66,7 +14,7 @@ Output:
         "TotalCount": 3,
         "ProcedureTemplateSet": [
             {
-                "Name": "我的任务流A",
+                "Name": "My task flow A",
                 "Type": "Custom",
                 "MediaPrcoessTask": {
                     "TranscodeTaskSet": [
@@ -95,7 +43,7 @@ Output:
                 "MiniProgramPublishTask": null
             },
             {
-                "Name": "我的任务流B",
+                "Name": "My task flow B",
                 "Type": "Custom",
                 "MediaPrcoessTask": {
                     "TranscodeTaskSet": [
@@ -139,12 +87,64 @@ Output:
                 "MiniProgramPublishTask": null
             },
             {
-                "Name": "我的任务流C",
+                "Name": "My task flow C",
                 "Type": "Custom",
                 "MediaPrcoessTask": null,
                 "AiContentReviewTask": {
                     "Definition": 10
                 },
+                "AiAnalysisTask": null,
+                "AiRecognitionTask": null,
+                "MiniProgramPublishTask": null
+            }
+        ],
+        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3"
+    }
+}
+```
+
+**Example 2: Querying a specified task flow template**
+
+This example shows you how to query the details of the task flow template named "My task flow A".
+
+Input: 
+
+```
+tccli vod DescribeProcedureTemplates --cli-unfold-argument  \
+    --Names 'My task flow A'
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "ProcedureTemplateSet": [
+            {
+                "Name": "My task flow A",
+                "Type": "Custom",
+                "MediaPrcoessTask": {
+                    "TranscodeTaskSet": [
+                        {
+                            "Definition": 20,
+                            "WatermarkSet": null
+                        },
+                        {
+                            "Definition": 30,
+                            "WatermarkSet": null
+                        },
+                        {
+                            "Definition": 40,
+                            "WatermarkSet": null
+                        }
+                    ],
+                    "AnimatedGraphicTaskSet": null,
+                    "SnapshotByTimeOffsetTaskSet": null,
+                    "SampleSnapshotTaskSet": null,
+                    "ImageSpriteTaskSet": null,
+                    "CoverBySnapshotTaskSet": null
+                },
+                "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
                 "AiRecognitionTask": null,
                 "MiniProgramPublishTask": null

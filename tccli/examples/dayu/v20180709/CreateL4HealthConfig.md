@@ -1,4 +1,4 @@
-**Example 1: 上传四层健康检查配置**
+**Example 1: Uploading layer-4 health check configuration**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 修改人员描述信息接口**
+**Example 1: Modifying person description**
 
 
 
@@ -21,7 +21,7 @@ Output:
 }
 ```
 
-**Example 2: 修改人员描述信息接口-2**
+**Example 2: Modifying person description - 2**
 
 
 
@@ -32,7 +32,7 @@ tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee\
     --PersonId 1001\
     --PersonExDescriptionInfos.0.PersonExDescriptionIndex 1\
-    --PersonExDescriptionInfos.0.PersonExDescription 大数据及人工智能产品中心
+    --PersonExDescriptionInfos.0.PersonExDescription 'Big Data and AI Product Center'
 ```
 
 Output: 
@@ -44,9 +44,9 @@ Output:
 }
 ```
 
-**Example 3: 错误示例**
+**Example 3: Sample error**
 
-下标不合法
+Invalid subscript.
 
 Input: 
 
@@ -55,7 +55,7 @@ tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee\
     --PersonId 1001\
     --PersonExDescriptionInfos.0.PersonExDescriptionIndex -1\
-    --PersonExDescriptionInfos.0.PersonExDescription 人工智能实验室
+    --PersonExDescriptionInfos.0.PersonExDescription 'AI Lab'
 ```
 
 Output: 

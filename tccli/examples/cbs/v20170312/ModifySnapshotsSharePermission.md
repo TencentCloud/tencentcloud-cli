@@ -1,4 +1,4 @@
-**Example 1: 将快照共享给用户**
+**Example 1: Sharing a snapshot with users**
 
 
 

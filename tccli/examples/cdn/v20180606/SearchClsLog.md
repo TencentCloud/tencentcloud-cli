@@ -1,4 +1,4 @@
-**Example 1: 搜索日志**
+**Example 1: Searching for logs**
 
 
 
@@ -32,7 +32,8 @@ Output:
                     "Filename": "",
                     "Source": ""
                 }
-            ]
+            ],
+            "SqlFlag": false
         }
     }
 }

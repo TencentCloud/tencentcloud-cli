@@ -1,4 +1,4 @@
-**Example 1: 修改证书备注**
+**Example 1: Modifying a certificate alias**
 
 
 

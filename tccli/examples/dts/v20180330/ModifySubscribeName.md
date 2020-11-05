@@ -1,4 +1,4 @@
-**Example 1: 修改数据订阅实例的名称**
+**Example 1: Renaming data subscription instance**
 
 
 

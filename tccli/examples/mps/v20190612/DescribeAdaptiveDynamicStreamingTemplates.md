@@ -1,4 +1,4 @@
-**Example 1: 查询转自适应码流模板列表**
+**Example 1: Querying the list of adaptive bitrate streaming templates**
 
 
 
@@ -18,7 +18,7 @@ Output:
             {
                 "Definition": 1001,
                 "Type": "Custom",
-                "Name": "转自适应码流模板1",
+                "Name": "Adaptive bitrate streaming template 1",
                 "Comment": "",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",
@@ -29,7 +29,7 @@ Output:
                         "Definition": 1001,
                         "Container": "mp4",
                         "Type": "Custom",
-                        "Name": "视频轨模板1",
+                        "Name": "Video track template 1",
                         "Comment": "",
                         "CreateTime": "2018-10-01T10:00:00Z",
                         "UpdateTime": "2018-10-01T10:00:00Z",
@@ -47,7 +47,7 @@ Output:
                         "Definition": 1001,
                         "Container": "m4a",
                         "Type": "Custom",
-                        "Name": "音频轨模板1",
+                        "Name": "Audio track template 1",
                         "Comment": "",
                         "CreateTime": "2018-10-01T10:00:00Z",
                         "UpdateTime": "2018-10-01T10:00:00Z",

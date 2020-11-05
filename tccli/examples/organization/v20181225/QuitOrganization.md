@@ -1,4 +1,4 @@
-**Example 1: 退出企业组织**
+**Example 1: Quitting an organization**
 
 
 

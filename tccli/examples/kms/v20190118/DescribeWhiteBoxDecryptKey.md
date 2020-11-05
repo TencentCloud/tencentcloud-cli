@@ -1,4 +1,4 @@
-**Example 1: 获取白盒解密密钥**
+**Example 1: Getting a white-box decryption key**
 
 
 

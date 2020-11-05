@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库账户的权限信息**
+**Example 1: Querying the permission information of TencentDB account**
 
 
 

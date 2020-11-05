@@ -1,6 +1,6 @@
-**Example 1: 删除表**
+**Example 1: Dropping table**
 
-删除表
+This example shows you how to drop a table.
 
 Input: 
 

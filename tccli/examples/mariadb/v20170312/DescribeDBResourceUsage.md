@@ -1,4 +1,4 @@
-**Example 1: 查看实例资源使用情况**
+**Example 1: Viewing instance resource usage**
 
 
 

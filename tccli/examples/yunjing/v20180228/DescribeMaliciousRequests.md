@@ -1,6 +1,6 @@
-**Example 1: 获取恶意请求数据**
+**Example 1: Getting malicious request data**
 
-获取恶意请求数据
+This example shows you how to get malicious request data.
 
 Input: 
 

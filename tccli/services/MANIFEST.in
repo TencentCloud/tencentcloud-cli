@@ -72,6 +72,7 @@ include tccli/services/iai/v20180301/api.json
 include tccli/services/ic/v20190307/api.json
 include tccli/services/ie/v20200304/api.json
 include tccli/services/iir/v20200417/api.json
+include tccli/services/ims/v20200713/api.json
 include tccli/services/iot/v20180123/api.json
 include tccli/services/iotcloud/v20180614/api.json
 include tccli/services/iotexplorer/v20190423/api.json

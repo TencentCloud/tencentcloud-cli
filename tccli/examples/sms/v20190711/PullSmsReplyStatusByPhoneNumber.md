@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
 
 
@@ -23,7 +23,7 @@ Output:
                 "ExtendCode": "11",
                 "NationCode": "86",
                 "PhoneNumber": "+8615291990000",
-                "Sign": "腾讯云",
+                "Sign": "Tencent Cloud",
                 "ReplyContent": "xxxxx",
                 "ReplyTime": "2019-10-08 17:18:36"
             },
@@ -31,7 +31,7 @@ Output:
                 "ExtendCode": "11",
                 "NationCode": "86",
                 "PhoneNumber": "+8615291990000",
-                "Sign": "腾讯云",
+                "Sign": "Tencent Cloud",
                 "ReplyContent": "xxxxx",
                 "ReplyTime": "2019-10-08 17:18:37"
             }

@@ -1,4 +1,4 @@
-**Example 1: 获取高防IP专业版资源的DDoS攻击事件列表**
+**Example 1: Getting the DDoS attack list of Anti-DDoS Ultimate resource**
 
 
 

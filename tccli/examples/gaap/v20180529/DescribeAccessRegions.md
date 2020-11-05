@@ -1,4 +1,4 @@
-**Example 1: 查询加速区域**
+**Example 1: Querying Acceleration Regions**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 查询通道状态列表**
+**Example 1: Querying a Connection Status List**
 
 
 

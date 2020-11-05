@@ -1,4 +1,4 @@
-**Example 1: 获取CC攻击指标数据**
+**Example 1: Obtaining CC attack metric data**
 
 
 

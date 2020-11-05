@@ -1,4 +1,4 @@
-**Example 1: 查询维护时间窗口**
+**Example 1: Querying maintenance window**
 
 
 

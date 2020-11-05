@@ -1,6 +1,6 @@
-**Example 1: 获取多个主密钥属性**
+**Example 1: Getting the attributes of multiple CMKs**
 
-获取多个主密钥属性。
+This example shows you how to get the attributes of multiple CMKs.
 
 Input: 
 

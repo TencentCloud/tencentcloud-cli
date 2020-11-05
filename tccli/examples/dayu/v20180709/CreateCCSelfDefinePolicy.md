@@ -1,4 +1,4 @@
-**Example 1: 创建CC自定义策略**
+**Example 1: Creating custom CC policy**
 
 
 
@@ -18,11 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
-        "Success": {
-            "Code": "Success",
-            "Message": "Success"
-        }
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }
 ```

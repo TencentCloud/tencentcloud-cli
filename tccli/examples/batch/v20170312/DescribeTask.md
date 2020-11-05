@@ -1,4 +1,4 @@
-**Example 1: 查询任务详情**
+**Example 1: Querying Task Details**
 
 
 

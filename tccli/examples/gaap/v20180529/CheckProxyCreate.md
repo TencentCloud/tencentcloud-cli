@@ -1,4 +1,4 @@
-**Example 1: 查询通道是否可以创建**
+**Example 1: Querying whether the connection can be created**
 
 
 

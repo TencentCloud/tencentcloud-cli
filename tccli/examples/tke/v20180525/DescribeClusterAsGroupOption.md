@@ -1,6 +1,6 @@
-**Example 1: 集群弹性伸缩配置**
+**Example 1: Cluster auto scaling configuration**
 
-集群弹性伸缩配置
+Cluster auto scaling configuration
 
 Input: 
 

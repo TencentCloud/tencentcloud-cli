@@ -1,4 +1,4 @@
-**Example 1: 删除云数据库账号**
+**Example 1: Deleting TencentDB account**
 
 
 

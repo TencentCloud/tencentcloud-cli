@@ -1,6 +1,6 @@
-**Example 1: 获取人员列表长度接口**
+**Example 1: Calling the GetPersonListNum API**
 
-获取指定人员库中人员数量
+This example shows you how to get the number of persons in the specified group.
 
 Input: 
 
@@ -20,9 +20,9 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: Sample Error**
 
-人员库ID不存在
+This example shows the error occurred when the specified group ID does not exist.
 
 Input: 
 
@@ -37,7 +37,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.GroupIdNotExist",
-            "Message": "人员库ID不存在。"
+            "Message": "The specified group ID does not exist."
         },
         "RequestId": "2865a458-4db1-46bd-ae52-b7507c9f4e62"
     }

@@ -1,6 +1,6 @@
-**Example 1: 查询表格组列表**
+**Example 1: Querying table group list**
 
-查询表格组列表
+This example shows you how to query the table group list.
 
 Input: 
 
@@ -21,14 +21,14 @@ Output:
                 "TableGroupId": "1",
                 "TableCount": 0,
                 "TotalSize": 0,
-                "TableGroupName": "tdr测试区1"
+                "TableGroupName": "tdr test zone 1"
             },
             {
                 "CreatedTime": "2019-08-30 18:58:03",
                 "TableGroupId": "1001",
                 "TableCount": 0,
                 "TotalSize": 0,
-                "TableGroupName": "tdr正式区1"
+                "TableGroupName": "tdr production zone 1"
             }
         ]
     }

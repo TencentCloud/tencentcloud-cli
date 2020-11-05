@@ -1,6 +1,6 @@
-**Example 1: 修改数据订阅通道的消费时间起点**
+**Example 1: Modifying the consumption starting time point of data subscription channel**
 
-重置数据订阅通道的数据起点，这样SDK可以消费到以此时间开始的数据
+This example shows you how to reset the data starting point of a data subscription channel, so that the SDK can consume data starting at this time point.
 
 Input: 
 

@@ -1,19 +1,23 @@
-**Example 1: 创建物理专线-2**
+**Example 1: Creating a connection**
 
-申请物理专线，接入点为北京航信，中国移动线路，云端端口为千兆单模光口（1000Base-LX）
+This example shows you how to apply for a connection, where the access point is Nanshan, the ISP is China Mobile, and the Tencent Cloud port is a 1-Gigabit single-mode optical Ethernet interface (1000Base-LX), with a redundant connection.
 
 Input: 
 
 ```
 tccli dc CreateDirectConnect --cli-unfold-argument  \
-    --DirectConnectName 北京航信物理专线1\
-    --AccessPointId ap-cn-beijing-hx\
+    --DirectConnectName 'Connection 1'\
+    --AccessPointId ap-cn-shenzhen-ns-A\
     --LineOperator ChinaMobile\
-    --CircuitCode 北京航信ANE0348NP\
-    --Location 北京市海淀区西格玛A大厦14楼\
+    --CircuitCode 'Shenzhen Nanshan ANE0348NP'\
+    --Location '14/F, Building A, Science and Technology Park, Nanshan District, Shenzhen, Guangdong Province'\
     --PortType 1000Base-LX\
     --Bandwidth 1000\
-    --CustomerName 张三\
+    --RedundantDirectConnectId dc-abcdedf\
+    --Vlan 100\
+    --TencentAddress 172.168.1.1/30\
+    --CustomerAddress 172.168.1.2/30\
+    --CustomerName 'John Smith'\
     --CustomerContactMail 12345@qq.com\
     --CustomerContactNumber 18812345678
 ```
@@ -30,26 +34,22 @@ Output:
 }
 ```
 
-**Example 2: 创建物理专线**
+**Example 2: Creating a connection - 2**
 
-申请物理专线，接入点为南山，中国移动线路，云端端口为千兆单模光口（1000Base-LX），有冗余专线
+This example shows you how to apply for a connection, where the access point is TravelSky, the ISP is China Mobile, and the Tencent Cloud port is a 1-Gigabit single-mode optical Ethernet interface (1000Base-LX).
 
 Input: 
 
 ```
 tccli dc CreateDirectConnect --cli-unfold-argument  \
-    --DirectConnectName 物理专线1\
-    --AccessPointId ap-cn-shenzhen-ns-A\
+    --DirectConnectName 'TravelSky connection 1'\
+    --AccessPointId ap-cn-beijing-hx\
     --LineOperator ChinaMobile\
-    --CircuitCode 深圳南山ANE0348NP\
-    --Location 广东省深圳市南山区科技园A大厦14楼\
+    --CircuitCode 'TravelSky ANE0348NP'\
+    --Location '14/F, Sigma Mansion A, Haidian District, Beijing'\
     --PortType 1000Base-LX\
     --Bandwidth 1000\
-    --RedundantDirectConnectId dc-abcdedf\
-    --Vlan 100\
-    --TencentAddress 172.168.1.1/30\
-    --CustomerAddress 172.168.1.2/30\
-    --CustomerName 张三\
+    --CustomerName 'John Smith'\
     --CustomerContactMail 12345@qq.com\
     --CustomerContactNumber 18812345678
 ```

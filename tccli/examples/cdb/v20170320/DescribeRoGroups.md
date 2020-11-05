@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库实例的所有RO组的信息**
+**Example 1: Querying the information of all RO groups of TencentDB instance**
 
 
 

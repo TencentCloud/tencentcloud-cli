@@ -1,4 +1,4 @@
-**Example 1: 完成生命周期动作，通过InstanceId调用**
+**Example 1: Completing a lifecycle action by specifying the `InstanceId`**
 
 
 
@@ -20,7 +20,7 @@ Output:
 }
 ```
 
-**Example 2: 完成生命周期动作，通过LifecycleActionToken调用**
+**Example 2: Completing a lifecycle action by specifying the `LifecycleActionToken`**
 
 
 

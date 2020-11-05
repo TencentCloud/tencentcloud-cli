@@ -1,6 +1,6 @@
-**Example 1: 回溯队列消费位置**
+**Example 1: Rewinding consumption position in queue**
 
-回溯队列消费位置
+This example shows you how to rewind the consumption position in a queue.
 
 Input: 
 

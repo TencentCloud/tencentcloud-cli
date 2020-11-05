@@ -1,4 +1,4 @@
-**Example 1: 清空订阅者消息标签**
+**Example 1: Clearing the message tags of subscriber**
 
 
 

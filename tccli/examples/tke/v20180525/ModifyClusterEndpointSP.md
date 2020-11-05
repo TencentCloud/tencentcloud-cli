@@ -1,4 +1,4 @@
-**Example 1: 修改托管集群外网端口的安全策略**
+**Example 1: Modifying managed cluster public network port’s security policy**
 
 
 

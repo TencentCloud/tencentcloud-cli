@@ -1,4 +1,4 @@
-**Example 1: 查询权限组规则**
+**Example 1: Querying permission group rules**
 
 
 

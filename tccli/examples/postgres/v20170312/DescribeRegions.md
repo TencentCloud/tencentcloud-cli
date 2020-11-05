@@ -1,4 +1,4 @@
-**Example 1: 查询所有地域**
+**Example 1: Querying all regions**
 
 
 
@@ -16,43 +16,43 @@ Output:
         "RegionSet": [
             {
                 "Region": "ap-guangzhou",
-                "RegionName": "华南地区(广州)",
+                "RegionName": "South China (Guangzhou)",
                 "RegionId": 1,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-chengdu",
-                "RegionName": "西南地区(成都)",
+                "RegionName": "Southwest China (Chengdu)",
                 "RegionId": 16,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-shanghai",
-                "RegionName": "华东地区(上海)",
+                "RegionName": "East China (Shanghai)",
                 "RegionId": 4,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "na-toronto",
-                "RegionName": "北美地区(多伦多)",
+                "RegionName": "North America (Toronto)",
                 "RegionId": 6,
                 "RegionState": "UNAVAILABLE"
             },
             {
                 "Region": "ap-shanghai-fsi",
-                "RegionName": "华东地区(上海金融)",
+                "RegionName": "East China (Shanghai Finance)",
                 "RegionId": 7,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-beijing",
-                "RegionName": "华北地区(北京)",
+                "RegionName": "North China (Beijing)",
                 "RegionId": 8,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "na-siliconvalley",
-                "RegionName": "美国西部(硅谷)",
+                "RegionName": "West US (Silicon Valley)",
                 "RegionId": 15,
                 "RegionState": "AVAILABLE"
             }

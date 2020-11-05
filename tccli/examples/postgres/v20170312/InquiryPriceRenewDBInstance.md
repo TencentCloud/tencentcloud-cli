@@ -1,4 +1,4 @@
-**Example 1: 查询实例postgres-6fego161续费价格**
+**Example 1: Querying the renewal price of instance postgres-6fego161**
 
 
 

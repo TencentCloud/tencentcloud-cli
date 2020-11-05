@@ -1,4 +1,4 @@
-**Example 1: 获取证书详情**
+**Example 1: Getting certificate details**
 
 
 

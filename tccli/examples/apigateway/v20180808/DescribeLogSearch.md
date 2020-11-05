@@ -1,8 +1,8 @@
-**Example 1: Filters参数示例**
+**Example 1: Searching for logs with Filters**
 
-LogQuerys 表示日志检索条件，
-其中: LogQuerys.0.Name=api_id&LogQuerys.0.Operator==&LogQuerys.0.Value=api-55rj9ide
-表示检索api_id=api-55rj9ide的日志
+`LogQuerys` indicates the log search criterion.
+Here, `LogQuerys.0.Name=api_id&LogQuerys.0.Operator==&LogQuerys.0.Value=api-55rj9ide`
+indicates to search for logs for `api_id=api-55rj9ide`.
 
 Input: 
 
@@ -49,9 +49,9 @@ Output:
 }
 ```
 
-**Example 2: 请求失败**
+**Example 2: Request failure**
 
-下面的示例提示参数错误
+This example shows an error of invalid parameters.
 
 Input: 
 

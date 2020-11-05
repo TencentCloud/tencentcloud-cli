@@ -1,4 +1,4 @@
-**Example 1: 升级ES商业特性**
+**Example 1: Upgrading ES X-Pack**
 
 
 

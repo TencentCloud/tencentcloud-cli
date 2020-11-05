@@ -1,6 +1,6 @@
-**Example 1: 查询点播存储统计数据**
+**Example 1: Querying VOD storage usage statistics**
 
-查询2018年12月1日（含）到2018年12月7日（含）的存储空间数据。
+This example shows you how to query the storage capacity usage between December 1, 2018 (inclusive) and December 7, 2018 (inclusive).
 
 Input: 
 

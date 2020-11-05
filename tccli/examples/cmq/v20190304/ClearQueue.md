@@ -1,6 +1,6 @@
-**Example 1: 清空队列中堆积的消息**
+**Example 1: Clearing heaped messages in queue**
 
-清空队列中堆积的消息
+This example shows you how to clear heaped messages in a queue.
 
 Input: 
 

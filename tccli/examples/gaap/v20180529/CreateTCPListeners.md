@@ -1,6 +1,6 @@
-**Example 1: 创建TCP监听器**
+**Example 1: Creating a TCP Listener**
 
-创建TCP监听器
+Create a TCP listener.
 
 Input: 
 

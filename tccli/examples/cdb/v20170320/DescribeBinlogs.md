@@ -1,4 +1,4 @@
-**Example 1: 查询二进制日志**
+**Example 1: Querying binlog**
 
 
 

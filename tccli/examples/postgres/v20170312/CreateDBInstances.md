@@ -1,4 +1,4 @@
-**Example 1: 创建PostgreSQL实例**
+**Example 1: Creating TencentDB for PostgreSQL instance**
 
 
 

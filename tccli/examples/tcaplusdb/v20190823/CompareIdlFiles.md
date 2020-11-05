@@ -1,6 +1,6 @@
-**Example 1: 上传并校验修改表格结构文件**
+**Example 1: Uploading and verifying table structure modification file**
 
-上传并校验修改表格结构文件
+This example shows you how to upload and verify a table structure modification file.
 
 Input: 
 

@@ -1,37 +1,13 @@
-**Example 1: 创建仅开启画面鉴黄的内容审核模板**
+**Example 1: Creating content audit template with only porn detection in video image enabled and specifying threshold scores and frame capturing interval**
 
-创建一个自定义 AI 内容审核模板，仅开启画面内容鉴黄任务，判定为违规的分数阈值和判定为需要人工审核的分数阈值都为默认值，不指定过滤标签。
-
-Input: 
-
-```
-tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 内容审核模板\
-    --Comment 模板1\
-    --PornConfigure.ImgReviewInfo.Switch ON\
-    --ReviewWallSwitch OFF
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Definition": 30,
-        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
-    }
-}
-```
-
-**Example 2: 创建仅开启画面鉴黄的任务内容审核模板，并指定分数阈值和截帧间隔**
-
-创建一个自定义 AI 内容审核模板，开启画面内容鉴黄任务，指定判定为画面违规的分数阈值为 80 分，判定为画面需要人工审核的阈值分数为 30 分，截帧间隔为 1 秒。
+This example shows you how to create a custom AI-based content audit template where porn detection in video image is enabled. The threshold scores for violation and human audit are set at 80 and 30, respectively, and the frame capturing interval is 1 second.
 
 Input: 
 
 ```
 tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 内容审核模板\
-    --Comment 模板2\
+    --Name 'Content audit template'\
+    --Comment 'Template 2'\
     --PornConfigure.ImgReviewInfo.Switch ON\
     --PornConfigure.ImgReviewInfo.BlockConfidence 80\
     --PornConfigure.ImgReviewInfo.ReviewConfidence 30\
@@ -49,16 +25,40 @@ Output:
 }
 ```
 
-**Example 3: 创建开启多项审核任务的内容审核模板**
+**Example 2: Creating content audit template with only porn detection in video image enabled**
 
-创建一个自定义 AI 内容审核模板，开启画面内容鉴黄任务，同时开启画面鉴恐及画面鉴政任务，判定为违规的分数阈值及判定为需要人工审核的分数阈值都为默认，且不指定过滤标签。
+This example shows you how to create a custom AI-based content audit template where only a porn detection in video image task is enabled. The default values are used as the threshold scores for violation and human audit, and filter tags are not specified.
 
 Input: 
 
 ```
 tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 内容审核模板\
-    --Comment 模板3\
+    --Name 'Content audit template'\
+    --Comment 'Template 1'\
+    --PornConfigure.ImgReviewInfo.Switch ON\
+    --ReviewWallSwitch OFF
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Definition": 30,
+        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    }
+}
+```
+
+**Example 3: Creating content audit template with multiple audit tasks enabled**
+
+This example shows you how to create a custom AI-based content audit template where porn, terrorism, and politically sensitive information detection in video image tasks are enabled. The default values are used as the threshold scores for violation and human audit, and filter tags are not specified.
+
+Input: 
+
+```
+tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
+    --Name 'Content audit template'\
+    --Comment 'Template 3'\
     --PornConfigure.ImgReviewInfo.Switch ON\
     --TerrorismConfigure.ImgReviewInfo.Switch ON\
     --PoliticalConfigure.ImgReviewInfo.Switch ON\
@@ -75,16 +75,16 @@ Output:
 }
 ```
 
-**Example 4: 创建开启画面鉴黄的内容审核模板，并指定过滤标签**
+**Example 4: Creating content audit template with porn detection in video image enabled and specifying filter tags**
 
-创建一个自定义 AI 内容审核模板，开启画面内容鉴黄任务，指定过滤标签为涉黄及性感，判定为违规的分数阈值及判定为需要人工审核的分数阈值都为默认。
+This example shows you how to create a custom AI-based content audit template where porn detection in video image is enabled. The filter tags are specified as porn and sexy, and the default values are used as the threshold scores for violation and human audit.
 
 Input: 
 
 ```
 tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 内容审核模块\
-    --Comment 模板1\
+    --Name 'Content audit template'\
+    --Comment 'Template 1'\
     --PornConfigure.ImgReviewInfo.Switch ON\
     --PornConfigure.ImgReviewInfo.LabelSet porn sexy\
     --ReviewWallSwitch OFF

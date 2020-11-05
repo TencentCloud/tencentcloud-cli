@@ -1,4 +1,4 @@
-**Example 1: 修改云数据库账号备注**
+**Example 1: Modifying TencentDB account remarks**
 
 
 
@@ -9,7 +9,7 @@ tccli mariadb ModifyAccountDescription --cli-unfold-argument  \
     --InstanceId tdsql-fdpjf5zh\
     --UserName testuser1\
     --Host 172.17.%\
-    --Description 用于测试的账号
+    --Description 'Test account'
 ```
 
 Output: 

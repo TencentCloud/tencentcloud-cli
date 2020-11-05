@@ -1,6 +1,6 @@
-**Example 1: 获取人员基础信息接口**
+**Example 1: Getting the basic information of person**
 
-获取指定人员的信息，包括姓名、性别、人脸等
+This example shows you how to get the information of a specified person, including name, gender, face, etc.
 
 Input: 
 
@@ -24,9 +24,9 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: Sample error**
 
-人员ID不存在
+The person ID does not exist.
 
 Input: 
 
@@ -41,7 +41,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.PersonIdNotExist",
-            "Message": "人员ID不存在。"
+            "Message": "The person ID does not exist."
         },
         "RequestId": "98b4a0bc-802b-4764-9701-bc0c6c544395"
     }

@@ -1,4 +1,4 @@
-**Example 1: 通过标签查询资源列表取并集**
+**Example 1: Querying resource list by tags**
 
 
 
@@ -8,8 +8,8 @@ Input:
 tccli tag DescribeResourcesByTagsUnion --cli-unfold-argument  \
     --ServiceType cvm\
     --ResourcePrefix instance\
-    --ResourceRegion ap-beijing\
-    --ResourceId ins-1234\
+    --ResourceRegion 'ap-beijing
+"ResourceId": "ins-1234"'\
     --TagFilters.0.TagKey key1
 ```
 

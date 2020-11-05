@@ -1,4 +1,4 @@
-**Example 1: 调整计算环境节点期望数量为2**
+**Example 1: Changing the Number of Desired Nodes in a Compute Environment to 2**
 
 
 

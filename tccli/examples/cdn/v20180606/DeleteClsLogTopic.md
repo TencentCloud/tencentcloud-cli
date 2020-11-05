@@ -1,4 +1,4 @@
-**Example 1: 删除日志主题**
+**Example 1: Deleting a log topic**
 
 
 

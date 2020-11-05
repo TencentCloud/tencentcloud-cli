@@ -1,4 +1,4 @@
-**Example 1: 认证高级配置**
+**Example 1: Advanced Authentication Configuration**
 
 
 

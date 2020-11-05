@@ -1,4 +1,4 @@
-**Example 1: 弹性网卡退还内网 IP**
+**Example 1: Returning the private IPs of an ENI**
 
 
 

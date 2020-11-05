@@ -1,6 +1,6 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
-省份和运营商参考： [映射表](/document/api/267/34019)
+District/ISP [mapping table](/document/api/267/34019).
 
 Input: 
 
@@ -39,8 +39,8 @@ Output:
                         "Time": "2019-03-29 09:10:00"
                     }
                 ],
-                "IspName": "电信",
-                "ProvinceName": "广东省"
+                "IspName": "China Telecom",
+                "ProvinceName": "Guangdong"
             },
             {
                 "DetailInfoList": [
@@ -66,8 +66,8 @@ Output:
                         "Time": "2019-03-29 09:10:00"
                     }
                 ],
-                "IspName": "联通",
-                "ProvinceName": "广东省"
+                "IspName": "China Unicom",
+                "ProvinceName": "Guangdong"
             }
         ],
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"

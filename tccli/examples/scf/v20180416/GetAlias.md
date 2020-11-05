@@ -1,4 +1,4 @@
-**Example 1: 查询别名详细信息**
+**Example 1: Querying alias details**
 
 
 

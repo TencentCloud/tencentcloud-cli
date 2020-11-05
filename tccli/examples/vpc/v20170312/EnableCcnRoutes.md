@@ -1,4 +1,4 @@
-**Example 1: 启用多条路由策略**
+**Example 1: Enabling multiple routing policies**
 
 
 

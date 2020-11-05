@@ -1,4 +1,4 @@
-**Example 1: 获取IP封堵列表**
+**Example 1: Getting blocked IP list**
 
 
 

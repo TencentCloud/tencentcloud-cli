@@ -1,4 +1,4 @@
-**Example 1: 查看订阅配置详情**
+**Example 1: Viewing subscription configuration details**
 
 
 
@@ -31,7 +31,7 @@ Output:
         "Status": "normal",
         "SubsStatus": "configured",
         "SubscribeId": "subs-58zcu8bax0",
-        "SubscribeName": "测试实例",
+        "SubscribeName": "Test instance",
         "SubscribeObjectType": 3,
         "SubscribeObjects": [
             {

@@ -1,6 +1,6 @@
-**Example 1: 自动生成一条重定向关系**
+**Example 1: Automatically generating redirection relationship**
 
-lbl-lmeeyb1q 是一个HTTPS:443监听器，www.abc.com 是此监听器下转发规则的域名。
+`lbl-lmeeyb1q` is an HTTPS:443 listener, and `www.abc.com` is a domain name of a forwarding rule under this listener.
 
 Input: 
 

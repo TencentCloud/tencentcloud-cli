@@ -1,6 +1,6 @@
-**Example 1: 查询玩家会话列表**
+**Example 1: Querying player session list**
 
-查询玩家会话列表
+This example shows you how to query the list of player sessions.
 
 Input: 
 

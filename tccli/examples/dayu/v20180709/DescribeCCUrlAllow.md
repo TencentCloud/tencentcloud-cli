@@ -1,4 +1,4 @@
-**Example 1: 获取CC的URL白名单**
+**Example 1: Getting URL whitelist for CC protection**
 
 
 

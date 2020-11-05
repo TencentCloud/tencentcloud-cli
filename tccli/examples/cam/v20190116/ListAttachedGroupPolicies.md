@@ -1,6 +1,6 @@
-**Example 1: 查询用户组关联的策略列表**
+**Example 1: Querying the list of policies associated with a user group**
 
-查询用户组3349关联的策略列表
+This example shows you how to query the list of policies associated with a user group (ID: 3349)
 
 Input: 
 

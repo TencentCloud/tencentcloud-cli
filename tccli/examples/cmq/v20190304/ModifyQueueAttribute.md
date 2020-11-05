@@ -1,6 +1,6 @@
-**Example 1: 修改队列属性**
+**Example 1: Modifying queue attributes**
 
-修改队列属性
+This example shows you how to modify queue attributes.
 
 Input: 
 

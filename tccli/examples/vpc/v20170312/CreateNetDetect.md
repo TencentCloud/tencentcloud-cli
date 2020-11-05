@@ -1,4 +1,4 @@
-**Example 1: 创建网络探测**
+**Example 1: Creating a network detection instance**
 
 
 

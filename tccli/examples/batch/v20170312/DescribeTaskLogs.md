@@ -1,4 +1,4 @@
-**Example 1: 获取任务日志详情**
+**Example 1: Getting Job Log Details**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 删除全部的关联对象**
+**Example 1: Deleting all bound objects**
 
 
 

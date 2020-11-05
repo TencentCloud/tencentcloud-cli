@@ -1,4 +1,4 @@
-**Example 1: 删除企业组织**
+**Example 1: Deleting an organization**
 
 
 

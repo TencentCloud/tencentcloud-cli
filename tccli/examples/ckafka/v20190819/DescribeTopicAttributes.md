@@ -1,4 +1,4 @@
-**Example 1: 获取主题属性**
+**Example 1: Getting topic attributes**
 
 
 

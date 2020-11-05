@@ -1,4 +1,4 @@
-**Example 1: 重新申请关联实例**
+**Example 1: Re-applying for instance association**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 人员搜索接口**
+**Example 1: Searching for person**
 
 
 
@@ -96,9 +96,9 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: Sample error**
 
-图片URL错误
+Incorrect image URL.
 
 Input: 
 
@@ -114,7 +114,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation.ImageDownloadError",
-            "Message": "图片下载错误。"
+            "Message": "An error occurred while downloading the image."
         },
         "RequestId": "527ecffe-4c6a-47c9-8217-4dd2e3f018da"
     }

@@ -1,4 +1,4 @@
-**Example 1: 查询参数模板列表**
+**Example 1: Querying parameter template list**
 
 
 

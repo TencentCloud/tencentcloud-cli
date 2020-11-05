@@ -1,4 +1,4 @@
-**Example 1: 查询置放群组列表**
+**Example 1: Querying placement group list**
 
 
 

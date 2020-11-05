@@ -1,4 +1,4 @@
-**Example 1: 包年包月实例调整配置询价**
+**Example 1: Querying the price of a monthly subscription instance with adjusted configuration**
 
 
 

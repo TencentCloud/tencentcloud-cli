@@ -1,4 +1,4 @@
-**Example 1: 查询Cdn回源数据**
+**Example 1: Querying CDN origin-pull data**
 
 
 

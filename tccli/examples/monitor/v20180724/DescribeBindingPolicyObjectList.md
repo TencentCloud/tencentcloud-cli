@@ -1,4 +1,4 @@
-**Example 1: 获取已绑定对象列表**
+**Example 1: Getting the bound object list**
 
 
 

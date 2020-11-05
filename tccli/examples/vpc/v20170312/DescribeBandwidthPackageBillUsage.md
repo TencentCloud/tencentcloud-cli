@@ -1,4 +1,4 @@
-**Example 1: 查询共享带宽包的当前计费用量**
+**Example 1: Querying the current billable usage of a bandwidth package**
 
 
 

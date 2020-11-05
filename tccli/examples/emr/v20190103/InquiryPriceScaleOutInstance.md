@@ -1,4 +1,4 @@
-**Example 1: 扩容询价**
+**Example 1: Querying the price of scale-out**
 
 
 

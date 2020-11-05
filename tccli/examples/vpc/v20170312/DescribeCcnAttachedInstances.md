@@ -1,4 +1,4 @@
-**Example 1: 查询云联网关联实例列表**
+**Example 1: Querying the list of instances associated with a CCN**
 
 
 

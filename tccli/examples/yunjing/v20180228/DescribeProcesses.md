@@ -1,6 +1,6 @@
-**Example 1: 获取进程列表**
+**Example 1: Getting process list**
 
-获取进程列表
+This example shows you how to get the process list.
 
 Input: 
 

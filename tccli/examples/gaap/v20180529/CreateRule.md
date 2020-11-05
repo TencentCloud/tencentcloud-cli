@@ -1,6 +1,6 @@
-**Example 1: 创建监听器转发规则**
+**Example 1: Creating a Listener Forwarding Rule**
 
-创建HTTP/HTTPS监听器转发规则
+Create an HTTP/HTTPS listener forwarding rule.
 
 Input: 
 

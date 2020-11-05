@@ -1,4 +1,4 @@
-**Example 1: 解绑弹性网卡**
+**Example 1: Unbinding ENI**
 
 
 

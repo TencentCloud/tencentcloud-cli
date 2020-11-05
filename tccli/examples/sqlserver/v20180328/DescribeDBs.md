@@ -1,4 +1,4 @@
-**Example 1: 查询数据库列表**
+**Example 1: Querying the list of databases**
 
 
 
@@ -22,7 +22,7 @@ Output:
                     {
                         "Name": "ceshi1",
                         "Charset": "Chinese_PRC_CI_AS",
-                        "Remark": "测试db1",
+                        "Remark": "Test db1",
                         "CreateTime": "2018-07-02 20:12:24",
                         "Status": 2,
                         "Accounts": [

@@ -1,4 +1,4 @@
-**Example 1: 删除参数模板**
+**Example 1: Deleting parameter template**
 
 
 

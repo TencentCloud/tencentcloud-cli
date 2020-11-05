@@ -1,4 +1,4 @@
-**Example 1: 批量删除定期快照策略**
+**Example 1: Batch Deletion of Scheduled Snapshot Policy**
 
 
 

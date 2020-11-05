@@ -1,4 +1,4 @@
-**Example 1: 获取服务相关角色删除状态**
+**Example 1: Getting the status of the service-linked role deletion**
 
 
 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "Status": "SUCCEEDED",
         "ServiceType": "cam",
-        "ServiceName": "访问管理",
+        "ServiceName": "CAM",
         "Reason": "{}",
         "RequestId": "c3da1c1c-df35-467d-9335-99c68d993e0a"
     }

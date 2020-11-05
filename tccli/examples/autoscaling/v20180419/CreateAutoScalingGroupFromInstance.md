@@ -1,4 +1,4 @@
-**Example 1: 根据实例创建启动配置及伸缩组**
+**Example 1: Creating launch configuration and scaling group based on an instance**
 
 
 

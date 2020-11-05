@@ -1,6 +1,6 @@
-**Example 1: 查询子账号关联的策略列表**
+**Example 1: Querying the list of policies associated with a sub-account**
 
-查询绑定到子账号3449203261的策略列表
+This example shows you how to query the list of policies associated with a sub-account (ID: 3449203261)
 
 Input: 
 

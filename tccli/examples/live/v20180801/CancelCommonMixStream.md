@@ -1,6 +1,6 @@
-**Example 1: 取消示例**
+**Example 1: Canceling stream mix**
 
-根据session id取消混流。
+This example shows you how to cancel a stream mix by session ID.
 
 Input: 
 

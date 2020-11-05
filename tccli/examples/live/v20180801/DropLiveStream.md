@@ -1,6 +1,6 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
-当某些原因暂停主播继续推流时，可调用此接口
+This example shows you how to pause the stream pushed by a host.
 
 Input: 
 

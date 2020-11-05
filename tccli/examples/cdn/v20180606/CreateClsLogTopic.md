@@ -1,4 +1,4 @@
-**Example 1: 创建日志主题**
+**Example 1: Creating a log topic**
 
 
 

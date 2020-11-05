@@ -1,4 +1,4 @@
-**Example 1: 删除源站**
+**Example 1: Deleting an Origin Server**
 
 
 

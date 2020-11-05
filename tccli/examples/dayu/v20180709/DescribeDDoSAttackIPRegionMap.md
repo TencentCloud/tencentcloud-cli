@@ -1,4 +1,4 @@
-**Example 1: DDoS攻击源IP地域分布图**
+**Example 1: Getting the geographical distribution map of DDoS attack source IPs**
 
 
 
@@ -23,7 +23,7 @@ Output:
                 "Record": [
                     {
                         "Key": "Nation",
-                        "Value": "韩国"
+                        "Value": "Korea"
                     },
                     {
                         "Key": "AttackCount",
@@ -43,7 +43,7 @@ Output:
                 "Record": [
                     {
                         "Key": "Nation",
-                        "Value": "保加利亚"
+                        "Value": "Bulgaria"
                     },
                     {
                         "Key": "AttackCount",
@@ -65,7 +65,7 @@ Output:
                 "Record": [
                     {
                         "Key": "Province",
-                        "Value": "浙江省"
+                        "Value": "Zhejiang"
                     },
                     {
                         "Key": "AttackCount",
@@ -85,7 +85,7 @@ Output:
                 "Record": [
                     {
                         "Key": "Province",
-                        "Value": "台湾省"
+                        "Value": "Taiwan (China)"
                     },
                     {
                         "Key": "AttackCount",

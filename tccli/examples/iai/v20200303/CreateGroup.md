@@ -1,4 +1,4 @@
-**Example 1: 创建人员库接口**
+**Example 1: Creating group**
 
 
 
@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 腾讯深圳员工库\
+    --GroupName 'Tencent Employees in Shenzhen'\
     --FaceModelVersion 3.0\
     --GroupId TencentShenZhenEmployee\
-    --Tag 不含实习生\
-    --GroupExDescriptions 事业群 部门名 组名
+    --Tag 'Excluding interns'\
+    --GroupExDescriptions Division 'Department name' 'Team name'
 ```
 
 Output: 
@@ -23,7 +23,7 @@ Output:
 }
 ```
 
-**Example 2: 创建人员库接口-2**
+**Example 2: Creating group - 2**
 
 
 
@@ -31,11 +31,11 @@ Input:
 
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 某某大学竹园宿舍楼1号楼\
+    --GroupName 'Dormitory Building #1, Zhuyuan Campus, XX University'\
     --GroupId ZhuYuanDormitoryNo1\
     --FaceModelVersion 3.0\
-    --Tag 全是女生哦\
-    --GroupExDescriptions 学院名 专业 年级 学号
+    --Tag 'All girls'\
+    --GroupExDescriptions 'School name' Major Grade 'Student ID'
 ```
 
 Output: 
@@ -48,15 +48,15 @@ Output:
 }
 ```
 
-**Example 3: 错误示例**
+**Example 3: Sample error**
 
-人员库ID不可重复
+The group ID must be unique.
 
 Input: 
 
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 腾讯深圳员工库\
+    --GroupName 'Tencent Employees in Shenzhen'\
     --GroupId TencentShenZhenEmployee
 ```
 
@@ -66,23 +66,23 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.GroupIdAlreadyExist",
-            "Message": "人员库ID已经存在。人员库ID不可重复。"
+            "Message": "The group ID already exists. It must be unique."
         },
         "RequestId": "76ec6e41-37d6-4ab9-abef-48ef0c6ab175"
     }
 }
 ```
 
-**Example 4: 错误示例-2**
+**Example 4: Sample error - 2**
 
-人员库ID不支持中文
+The group ID cannot contain Chinese characters.
 
 Input: 
 
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 腾讯深圳员工库\
-    --GroupId 腾讯深圳员工库
+    --GroupName 'Tencent Employees in Shenzhen'\
+    --GroupId 'Tencent Employees in Shenzhen'
 ```
 
 Output: 
@@ -91,7 +91,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.GroupIdIllegal",
-            "Message": "人员库ID包含非法字符。人员库ID只支持英文、数字、-%@#&_。"
+            "Message": "The group ID contains invalid characters. It can contain only letters, digits, and -%@#&_."
         },
         "RequestId": "8125dda4-2905-4e02-88bd-79a93a660ad2"
     }

@@ -1,6 +1,6 @@
-**Example 1: 更新一个策略**
+**Example 1: Updating a policy**
 
-本示例将更新一个策略为允许用户以任何cos的API访问任何cos的资源
+This example shows you how to update a policy to allow the user to access any COS resources with any COS API.
 
 Input: 
 

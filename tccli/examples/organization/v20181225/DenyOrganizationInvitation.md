@@ -1,4 +1,4 @@
-**Example 1: 拒绝企业组织邀请**
+**Example 1: Declining an invitation to an organization**
 
 
 

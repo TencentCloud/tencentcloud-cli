@@ -1,6 +1,6 @@
-**Example 1: 查询详细事件**
+**Example 1: Querying activity details**
 
-查询用户某次通话内的进退房，视频开关等详细事件
+This example shows you how to query a user’s activity details such as room entry/exit and video enablement/disablement during a call.
 
 Input: 
 

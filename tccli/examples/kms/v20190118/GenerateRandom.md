@@ -1,6 +1,6 @@
-**Example 1: 随机数生成接口示例**
+**Example 1: Generating a random number**
 
-生成随机数
+This example shows you how to generate a random number.
 
 Input: 
 

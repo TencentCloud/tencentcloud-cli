@@ -1,4 +1,4 @@
-**Example 1: 绑定权限策略到角色**
+**Example 1: Associating a Permission Policy with a Role**
 
 
 

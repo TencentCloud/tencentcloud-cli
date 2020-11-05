@@ -1,4 +1,4 @@
-**Example 1: 修改通道的属性**
+**Example 1: Modifying the Connection Attributes**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 获取实时拉取端口任务状态**
+**Example 1: Getting the status of real-time port pulling task**
 
-获取实时拉取端口任务状态
+This example shows you how to get the status of a real-time port pulling task.
 
 Input: 
 

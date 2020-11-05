@@ -1,4 +1,4 @@
-**Example 1: 从目标组中解绑服务器**
+**Example 1: Unbinding servers from target groups**
 
 
 

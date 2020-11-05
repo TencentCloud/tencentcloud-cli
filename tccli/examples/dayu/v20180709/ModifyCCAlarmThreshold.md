@@ -1,4 +1,4 @@
-**Example 1: 设置CC告警阈值**
+**Example 1: Setting CC alarm threshold**
 
 
 

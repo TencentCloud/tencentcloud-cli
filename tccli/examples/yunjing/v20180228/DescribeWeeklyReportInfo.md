@@ -1,6 +1,6 @@
-**Example 1: 获取专业周报详情**
+**Example 1: Getting details in weekly CWP Pro report**
 
-获取专业周报详情。
+This example shows you how to get the details in the weekly CWP Pro report.
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
-        "CompanyName": "组件名称",
+        "CompanyName": "Component name",
         "MachineNum": 100,
         "OnlineMachineNum": 80,
         "OfflineMachineNum": 20,

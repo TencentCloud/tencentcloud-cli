@@ -1,4 +1,4 @@
-**Example 1: NAT网关绑定弹性IP**
+**Example 1: Binding an EIP to the NAT gateway**
 
 
 

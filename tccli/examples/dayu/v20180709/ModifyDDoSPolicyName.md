@@ -1,4 +1,4 @@
-**Example 1: 修改DDoS高级策略名称**
+**Example 1: Renaming advanced DDoS policy**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取指定凭据下的版本列表信息**
+**Example 1: Obtaining the list of versions of a Secret**
 
 
 

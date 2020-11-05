@@ -1,6 +1,6 @@
-**Example 1: 修改别名示例**
+**Example 1: Modifying alias**
 
-对指定的CMK修改别名。
+This example shows you how to modify the alias of a specified CMK.
 
 Input: 
 

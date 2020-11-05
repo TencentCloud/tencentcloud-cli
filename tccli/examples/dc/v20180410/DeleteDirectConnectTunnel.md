@@ -1,4 +1,4 @@
-**Example 1: 删除专用通道**
+**Example 1: Deleting a dedicated tunnel**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取L7转发规则**
+**Example 1: Getting layer-7 forwarding rule**
 
 
 

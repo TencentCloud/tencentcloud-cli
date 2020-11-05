@@ -1,4 +1,4 @@
-**Example 1: 获取基础防护CC防护阈值**
+**Example 1: Getting CC protection threshold of Anti-DDoS Basic**
 
 
 

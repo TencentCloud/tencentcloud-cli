@@ -1,4 +1,4 @@
-**Example 1: 获取证书信息**
+**Example 1: Obtaining certificate information**
 
 
 
@@ -16,7 +16,7 @@ Output:
         "From": "trustasia",
         "SubjectAltName": null,
         "VulnerabilityReport": null,
-        "StatusName": "已通过",
+        "StatusName": "approved",
         "CertificateExtra": {
             "OriginCertificateId": null,
             "ReplacedBy": null,
@@ -44,7 +44,7 @@ Output:
         "OrderId": "TBD8NHC9J_01",
         "Domain": "wgc.red",
         "CertificateId": "a90XEOtj",
-        "Alias": "a8xHcaIs的重颁发订单",
+        "Alias": "New order for a8xHcaIs",
         "SubmittedData": null,
         "IsWildcard": false,
         "PackageTypeName": "TrustAsia TLS RSA CA",

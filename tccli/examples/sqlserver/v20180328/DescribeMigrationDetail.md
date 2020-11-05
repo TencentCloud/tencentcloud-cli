@@ -1,4 +1,4 @@
-**Example 1: 查询迁移任务详情**
+**Example 1: Querying migration task details**
 
 
 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "RequestId": "4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3",
         "MigrateId": 2728,
-        "MigrateName": "测试接口",
+        "MigrateName": "Test API",
         "AppId": 1254065710,
         "Region": "ap-guangzhou",
         "SourceType": 5,

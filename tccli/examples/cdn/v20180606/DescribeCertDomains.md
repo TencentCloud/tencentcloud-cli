@@ -1,4 +1,4 @@
-**Example 1: 提取SSL证书中的可配置域名**
+**Example 1: Getting configurable domain names in an SSL certificate**
 
 
 

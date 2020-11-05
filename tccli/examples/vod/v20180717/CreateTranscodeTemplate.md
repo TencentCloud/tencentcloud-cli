@@ -1,4 +1,4 @@
-**Example 1: 创建转码模板**
+**Example 1: Creating a transcoding template**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod CreateTranscodeTemplate --cli-unfold-argument  \
     --Container mp4\
-    --Name 转码模板1\
+    --Name 'Transcoding template 1'\
     --RemoveVideo 0\
     --RemoveAudio 0\
     --VideoTemplate.Codec libx264\

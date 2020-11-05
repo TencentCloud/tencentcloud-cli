@@ -1,4 +1,4 @@
-**Example 1: 获取资源的IP列表**
+**Example 1: Getting the IP list of resource**
 
 
 

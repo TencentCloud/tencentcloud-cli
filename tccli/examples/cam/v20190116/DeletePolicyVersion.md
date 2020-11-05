@@ -1,6 +1,6 @@
-**Example 1: 删除一个策略的策略版本**
+**Example 1: Deleting a policy version**
 
-本示例将删除一个策略的一个策略版本。
+This example shows you how to delete a policy version of a policy.
 
 Input: 
 

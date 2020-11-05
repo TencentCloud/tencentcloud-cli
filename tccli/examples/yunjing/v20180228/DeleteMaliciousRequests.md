@@ -1,6 +1,6 @@
-**Example 1: 删除恶意请求记录**
+**Example 1: Deleting malicious request records**
 
-删除恶意请求记录。
+This example shows you how to delete malicious request records.
 
 Input: 
 

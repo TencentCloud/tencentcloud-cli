@@ -4177,6 +4177,27 @@
       "document": "VerifyPerson返回参数结构体",
       "members": [
         {
+          "document": "给定的人脸照片与 PersonId 对应的相似度。若 PersonId 下有多张人脸（Face），会融合多张人脸信息进行验证。",
+          "member": "float",
+          "name": "Score",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否为同一人的判断。",
+          "member": "bool",
+          "name": "IsMatch",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "人脸识别所用的算法模型版本，是该 Person 所在的人员库的算法模型版本。在创建人员库时设置，详情可参考[算法模型版本](https://cloud.tencent.com/document/product/867/40042)",
+          "member": "string",
+          "name": "FaceModelVersion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

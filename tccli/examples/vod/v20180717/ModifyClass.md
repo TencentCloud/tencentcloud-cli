@@ -1,4 +1,4 @@
-**Example 1: 修改视频分类**
+**Example 1: Modifying video category**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod ModifyClass --cli-unfold-argument  \
     --ClassId 1\
-    --ClassName 一级分类2\
+    --ClassName 'First-level category 2'\
     --SubAppId 1
 ```
 

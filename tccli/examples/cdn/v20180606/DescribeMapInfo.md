@@ -1,4 +1,4 @@
-**Example 1: 查询省份/运营商映射关系**
+**Example 1: Querying the ID information of a district or an ISP**
 
 
 
@@ -17,7 +17,7 @@ Output:
         "MapInfoList": [
             {
                 "Id": 3947,
-                "Name": "中国铁通"
+                "Name": "China Tietong"
             }
         ],
         "ServerRegionRelation": null,

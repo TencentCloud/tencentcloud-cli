@@ -1,4 +1,4 @@
-**Example 1: 设置DDoS告警阈值**
+**Example 1: Setting DDoS alarm threshold**
 
 
 

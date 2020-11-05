@@ -1,4 +1,4 @@
-**Example 1: 集群扩容**
+**Example 1: Scaling out clusters**
 
 
 

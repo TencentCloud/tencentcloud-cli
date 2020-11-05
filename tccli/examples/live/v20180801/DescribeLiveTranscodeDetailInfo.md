@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
 
 
@@ -23,7 +23,7 @@ Output:
                 "Duration": 8,
                 "MoudleCodec": "liveprocessor_H264",
                 "Bitrate": 120,
-                "Type": "混流",
+                "Type": "Mixed stream",
                 "PushDomain": "5000.livepush.com",
                 "Resolution": "480P"
             }

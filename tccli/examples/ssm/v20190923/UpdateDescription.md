@@ -1,4 +1,4 @@
-**Example 1: 更新凭据描述信息**
+**Example 1: Updating the description of a Secret**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 修改HAVIP名称**
+**Example 1: Modifying the HAVIP name**
 
 
 

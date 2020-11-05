@@ -1,6 +1,6 @@
-**Example 1: 启用主密钥示例**
+**Example 1: Enabling a CMK**
 
-启用一个主密钥，允许该 CMK 被使用。
+This example shows you how to enable a CMK for use.
 
 Input: 
 

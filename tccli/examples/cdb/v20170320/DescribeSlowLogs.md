@@ -1,4 +1,4 @@
-**Example 1: 查询慢查询日志**
+**Example 1: Querying slow query log**
 
 
 

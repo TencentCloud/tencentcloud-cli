@@ -1,4 +1,4 @@
-**Example 1: 展示白盒密钥的信息**
+**Example 1: Displaying white-box key information**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取白盒密钥服务状态**
+**Example 1: Getting the white-box key service status**
 
 
 

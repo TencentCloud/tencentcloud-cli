@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库账号全局权限**
+**Example 1: Query the global Permission of the cloud database account**
 
 
 

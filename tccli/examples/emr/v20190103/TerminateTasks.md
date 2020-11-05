@@ -1,6 +1,6 @@
-**Example 1: 销毁节点**
+**Example 1: Terminating a node**
 
-销毁TASK节点
+This example shows you how to terminate a task node.
 
 Input: 
 

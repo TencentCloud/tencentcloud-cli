@@ -1,4 +1,4 @@
-**Example 1: 获取服务开启状态**
+**Example 1: Obtaining service status**
 
 
 

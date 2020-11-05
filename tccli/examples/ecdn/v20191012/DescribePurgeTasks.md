@@ -1,4 +1,4 @@
-**Example 1: 刷新历史查询**
+**Example 1: Querying purge history**
 
 
 

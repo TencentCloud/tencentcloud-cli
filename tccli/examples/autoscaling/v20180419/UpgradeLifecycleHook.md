@@ -1,4 +1,4 @@
-**Example 1: 升级生命周期挂钩**
+**Example 1: Upgrading a lifecycle hook**
 
 
 

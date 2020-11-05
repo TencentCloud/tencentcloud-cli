@@ -1,4 +1,4 @@
-**Example 1: 将伸缩组的负载均衡器修改为传统负载均衡器lb-crhgatrf**
+**Example 1: Changing the load balancer of an auto scaling group to a classic load balancer named `lb-crhgatrf`**
 
 
 
@@ -20,7 +20,7 @@ Output:
 }
 ```
 
-**Example 2: 将伸缩组的负载均衡器修改为应用型负载均衡器lb-23aejgcv，监听器为lbl-ncw704sn**
+**Example 2: Changing the load balancer of an auto scaling group to an application load balancer named `lb-23aejgcv` with the listener `lbl-ncw704sn`**
 
 
 
@@ -47,7 +47,7 @@ Output:
 }
 ```
 
-**Example 3: 清空伸缩组的负载均衡器**
+**Example 3: Unbinding all load balancers from an auto scaling group**
 
 
 

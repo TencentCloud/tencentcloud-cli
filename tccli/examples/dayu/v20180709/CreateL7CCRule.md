@@ -1,4 +1,4 @@
-**Example 1: 查询7层CC的访问频控自定义规则**
+**Example 1: Querying custom layer-7 CC access frequency control rule**
 
 
 

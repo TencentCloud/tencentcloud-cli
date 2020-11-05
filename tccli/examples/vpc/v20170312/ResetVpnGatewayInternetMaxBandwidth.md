@@ -1,4 +1,4 @@
-**Example 1: 调整VPN网关带宽上限**
+**Example 1: Adjusting the bandwidth cap of a VPN gateway**
 
 
 

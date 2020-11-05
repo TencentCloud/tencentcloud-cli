@@ -1,4 +1,4 @@
-**Example 1: 查询可降配次数**
+**Example 1: Querying the number of configuration downgrade operations allowed**
 
 
 

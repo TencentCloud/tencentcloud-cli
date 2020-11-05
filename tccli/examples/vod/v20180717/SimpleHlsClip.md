@@ -1,14 +1,14 @@
-**Example 1: 裁剪 HLS 视频（时间偏移量均为正数）**
+**Example 1: Clipping an HLS video (with time offset being negative)**
 
-裁剪视频第 2 秒到 第 10 秒
+This example shows you how to clip a video from the 2nd second to the 10th second from the end.
 
 Input: 
 
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
-    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8\
+    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhhh.m3u8\
     --StartTimeOffset 2\
-    --EndTimeOffset 10
+    --EndTimeOffset -10
 ```
 
 Output: 
@@ -48,17 +48,17 @@ Output:
 }
 ```
 
-**Example 2: 裁剪 HLS 视频（时间偏移量为负数）**
+**Example 2: Clipping an HLS video (with time offset being positive)**
 
-裁剪第 2 秒开始到倒数第 10 秒
+This example shows you how to clip the 2nd to 10th seconds of a video.
 
 Input: 
 
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
-    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhhh.m3u8\
+    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8\
     --StartTimeOffset 2\
-    --EndTimeOffset -10
+    --EndTimeOffset 10
 ```
 
 Output: 

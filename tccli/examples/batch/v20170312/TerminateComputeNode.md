@@ -1,4 +1,4 @@
-**Example 1: 销毁计算节点**
+**Example 1: Terminating a Compute Node**
 
 
 

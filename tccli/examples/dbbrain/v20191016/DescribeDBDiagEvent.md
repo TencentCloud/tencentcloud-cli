@@ -1,4 +1,4 @@
-**Example 1: 获取诊断事件详情**
+**Example 1: Getting diagnosis event details**
 
 
 
@@ -15,17 +15,17 @@ Output:
 {
     "Response": {
         "Suggestions": "[]",
-        "DiagType": "数据库快照",
+        "DiagType": "Database snapshot",
         "EndTime": "2019-11-06 12:05:50",
         "RequestId": "78cf7bb1-0608-11ea-a9ef-2736f0f7f829",
         "Explanation": "[]",
         "StartTime": "2019-11-06 12:05:40",
         "EventId": 5,
         "Severity": 4,
-        "Outline": "数据库健康检查，发现1个问题",
-        "Problem": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"会话快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"事务快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"Innodb状态快照\"}}]",
+        "Outline": "1 problem found during database health check",
+        "Problem": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"Session snapshot\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"Transaction snapshot\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"InnoDB status snapshot\"}}]",
         "Metric": "",
-        "DiagItem": "健康巡检"
+        "DiagItem": "Health check"
     }
 }
 ```

@@ -1,4 +1,4 @@
-**Example 1: 修改通道组名称**
+**Example 1: Modifying a Connection Group Name**
 
 
 

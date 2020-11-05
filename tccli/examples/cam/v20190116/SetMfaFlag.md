@@ -1,4 +1,4 @@
-**Example 1: 设置登录保护校验方式为微信**
+**Example 1: Setting login account verification to WeChat**
 
 
 

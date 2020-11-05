@@ -1,4 +1,4 @@
-**Example 1: 启用凭据**
+**Example 1: Enabling a Secret**
 
 
 

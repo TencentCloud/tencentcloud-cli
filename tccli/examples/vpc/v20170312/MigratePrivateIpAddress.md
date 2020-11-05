@@ -1,4 +1,4 @@
-**Example 1: 弹性网卡内网IP迁移**
+**Example 1: Migrating private IPs of an ENI**
 
 
 

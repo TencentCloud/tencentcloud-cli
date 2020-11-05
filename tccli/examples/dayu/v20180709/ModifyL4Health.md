@@ -1,4 +1,4 @@
-**Example 1: 修改L4转发规则健康检查参数**
+**Example 1: Modifying the health check parameters of layer-4 forwarding rule**
 
 
 

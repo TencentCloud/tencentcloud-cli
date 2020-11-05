@@ -1,6 +1,6 @@
-**Example 1: 获取可用区的机型配置信息列表**
+**Example 1: Querying the configurations of models in an availability zone**
 
-通过可用区和付费类型作为过滤条件, 查询配置信息列表。
+This example shows you how to query a list of instance configurations using availability zone and billing method as filters.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取一个传统型负载均衡的监听器信息**
+**Example 1: Getting the listener information of a classic CLB instance**
 
 
 

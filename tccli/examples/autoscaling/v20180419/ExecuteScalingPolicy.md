@@ -1,6 +1,6 @@
-**Example 1: 触发伸缩策略**
+**Example 1: Triggering a scaling policy**
 
-触发告警伸缩策略
+This example shows you how to trigger an alarm scaling policy.
 
 Input: 
 

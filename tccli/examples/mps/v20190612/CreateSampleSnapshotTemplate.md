@@ -1,4 +1,4 @@
-**Example 1: 创建采样截图模板**
+**Example 1: Creating a sampled screencapturing template**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps CreateSampleSnapshotTemplate --cli-unfold-argument  \
-    --Name 采样截图模板1\
+    --Name 'Sampled screencapturing template 1'\
     --Width 540\
     --Height 960\
     --SampleType Percent\

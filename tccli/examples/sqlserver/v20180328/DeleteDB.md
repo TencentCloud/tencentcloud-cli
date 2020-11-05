@@ -1,4 +1,4 @@
-**Example 1: 删除数据库**
+**Example 1: Dropping a database**
 
 
 

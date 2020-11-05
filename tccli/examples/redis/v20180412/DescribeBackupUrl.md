@@ -1,4 +1,4 @@
-**Example 1: 查询备份Rdb下载地址**
+**Example 1: Querying the download address of an RDB backup**
 
 
 

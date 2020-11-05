@@ -1,4 +1,4 @@
-**Example 1: 获取DDoS防护状态**
+**Example 1: Getting DDoS protection status**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 调整后付费带宽**
+**Example 1: Adjusting the pay-as-you-go bandwidth**
 
 
 

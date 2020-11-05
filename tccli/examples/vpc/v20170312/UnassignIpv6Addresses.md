@@ -1,4 +1,4 @@
-**Example 1: 释放IPv6地址**
+**Example 1: Releasing IPv6 addresses**
 
 
 

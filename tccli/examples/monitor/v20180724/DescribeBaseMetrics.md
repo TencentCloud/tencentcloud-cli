@@ -1,6 +1,6 @@
-**Example 1: 获取监控指标列表**
+**Example 1: Getting the list of monitoring metrics**
 
-查询基础监控指标的种类。查询到对应的名字空间下面的监控指标类型。
+This example shows you how to query the types of basic monitoring metrics under the corresponding namespace.
 
 Input: 
 
@@ -69,7 +69,7 @@ Output:
                 ],
                 "Meaning": {
                     "En": "",
-                    "Zh": "外网网卡的平均每秒出流量"
+                    "Zh": "Average outbound traffic per second of the public ENI"
                 }
             }
         ]
@@ -77,9 +77,9 @@ Output:
 }
 ```
 
-**Example 2: 获取监控指标列表(QCE/CDB)**
+**Example 2: Getting the list of monitoring metrics (QCE/CDB)**
 
-查询基础监控指标的种类。查询到对应的名字空间下面的监控指标类型。
+This example shows you how to query the types of basic monitoring metrics under the corresponding namespace.
 
 Input: 
 
@@ -142,7 +142,7 @@ Output:
                 ],
                 "Meaning": {
                     "En": "",
-                    "Zh": "接受数据量"
+                    "Zh": "Amount of accepted data"
                 }
             }
         ]

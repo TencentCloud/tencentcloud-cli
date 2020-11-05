@@ -1,4 +1,4 @@
-**Example 1: 修改人员基础信息接口**
+**Example 1: Modifying the basic information of person**
 
 
 
@@ -20,7 +20,7 @@ Output:
 }
 ```
 
-**Example 2: 修改人员基础信息接口-2**
+**Example 2: Modifying the basic information of person - 2**
 
 
 
@@ -42,9 +42,9 @@ Output:
 }
 ```
 
-**Example 3: 错误示例**
+**Example 3: Sample error**
 
-人员性别设置错误
+An error occurred while setting the person gender.
 
 Input: 
 
@@ -60,7 +60,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.PersonGenderIllegal",
-            "Message": "人员性别设置出错。0代表未填写，1代表男性，2代表女性。"
+            "Message": "An error occurred while setting person gender. 0: empty; 1: male; 2: female."
         },
         "RequestId": "f40bf659-0283-4773-abe8-945f643d5015"
     }

@@ -1,4 +1,4 @@
-**Example 1: 删除辅助CIDR**
+**Example 1: Deletes secondary CIDR blocks**
 
 
 

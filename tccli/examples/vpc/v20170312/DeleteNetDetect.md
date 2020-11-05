@@ -1,4 +1,4 @@
-**Example 1: 根据ID删除网络探测**
+**Example 1: Deleting a network detection instance by ID**
 
 
 

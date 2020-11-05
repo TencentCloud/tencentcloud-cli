@@ -1,6 +1,6 @@
-**Example 1: 创建主密钥示例**
+**Example 1: Creating a CMK**
 
-创建用户管理数据密钥的主密钥CMK（Custom Master Key），通过CMK后续可以调用其他接口诸如创建数据密钥、加解密等操作。
+This example shows you how to create a CMK used for data key management. The CMK can be used in other APIs to create data keys, perform encryption and decryption, and do more.
 
 Input: 
 

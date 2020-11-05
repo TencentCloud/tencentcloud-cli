@@ -1,4 +1,4 @@
-**Example 1: 获取CC防护的访问频率控制规则**
+**Example 1: Getting access frequency control rule for CC protection**
 
 
 

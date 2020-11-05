@@ -1,4 +1,4 @@
-**Example 1: 查询数据订阅实例列表**
+**Example 1: Querying data subscription instance list**
 
 
 
@@ -35,7 +35,7 @@ Output:
                 "Status": "normal",
                 "SubsStatus": "configured",
                 "SubscribeId": "subs-58zcu8bax0",
-                "SubscribeName": "测试实例",
+                "SubscribeName": "Test instance",
                 "UniqSubnetId": "subnet-4p1hpsj8",
                 "UniqVpcId": "vpc-fbg8gh1j",
                 "Vip": "192.168.1.143",

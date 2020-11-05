@@ -1,4 +1,4 @@
-**Example 1: 获取转码模板**
+**Example 1: Getting transcoding template**
 
 
 
@@ -18,7 +18,7 @@ Output:
             {
                 "Definition": 1008,
                 "Container": "mp4",
-                "Name": "模板1",
+                "Name": "Template 1",
                 "Comment": null,
                 "Type": 0,
                 "RemoveVideo": 0,

@@ -1,4 +1,4 @@
-**Example 1: 获取指定密钥的设备指纹列表**
+**Example 1: Getting the device fingerprint list of a specified key**
 
 
 

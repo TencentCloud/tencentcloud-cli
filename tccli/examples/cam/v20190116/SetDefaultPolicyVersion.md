@@ -1,6 +1,6 @@
-**Example 1: 设置一个策略生效的策略版本**
+**Example 1: Setting the operative policy version**
 
-本示例将设置一个策略生效的策略版本。
+This example shows you how to set the operative policy version of a policy.
 
 Input: 
 

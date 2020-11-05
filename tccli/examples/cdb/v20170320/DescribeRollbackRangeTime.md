@@ -1,4 +1,4 @@
-**Example 1: 查询可回档时间**
+**Example 1: Querying rollback time range**
 
 
 

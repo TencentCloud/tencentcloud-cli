@@ -1,4 +1,4 @@
-**Example 1: 修改云数据库账号备注**
+**Example 1: Modifying the remarks of a TencentDB account**
 
 
 
@@ -9,7 +9,7 @@ tccli dcdb ModifyAccountDescription --cli-unfold-argument  \
     --InstanceId dcdbt-fdpjf5zh\
     --UserName testuser1\
     --Host 172.17.%\
-    --Description 用于测试的账号
+    --Description 'Test account'
 ```
 
 Output: 

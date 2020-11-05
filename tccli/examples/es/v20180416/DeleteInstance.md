@@ -1,6 +1,6 @@
-**Example 1: 删除ES集群实例**
+**Example 1: Deleting an ES cluster instance**
 
-删除指定ID的集群实例
+This example shows you how to delete a cluster instance with the specified ID.
 
 Input: 
 

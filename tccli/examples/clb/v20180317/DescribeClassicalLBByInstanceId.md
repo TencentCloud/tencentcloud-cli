@@ -1,4 +1,4 @@
-**Example 1: 通过一个后端实例ID获取一个传统型负载均衡的信息**
+**Example 1: Getting the information of a classic CLB instance through a backend CVM instance ID**
 
 
 

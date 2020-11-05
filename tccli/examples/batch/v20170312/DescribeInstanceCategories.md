@@ -1,6 +1,6 @@
-**Example 1: 查询实例分类信息**
+**Example 1: Querying Instance Category Information**
 
-查询当前CVM实例族分类及分类详情。
+Query the category and category details of the current CVM instance family.
 
 Input: 
 

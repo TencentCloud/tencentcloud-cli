@@ -1,4 +1,4 @@
-**Example 1: 人脸搜索分库返回接口**
+**Example 1: Searching for face with results returned by group**
 
 
 
@@ -33,7 +33,7 @@ Output:
                             "PersonId": "1001",
                             "FaceId": "2875093635484912302",
                             "Score": 100,
-                            "PersonName": "张三",
+                            "PersonName": "John Smith",
                             "Gender": 0,
                             "PersonGroupInfos": [
                                 {

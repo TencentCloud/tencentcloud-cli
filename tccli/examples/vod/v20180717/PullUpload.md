@@ -1,4 +1,4 @@
-**Example 1: 拉取上传一个 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频。**
+**Example 1: Pulling an MP4 video from the ```http://www.abc.com/abc.mp4``` URL for upload**
 
 
 
@@ -19,7 +19,7 @@ Output:
 }
 ```
 
-**Example 2: 拉取上传一个国内 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频至重庆园区。**
+**Example 2: Pulling an MP4 video from the ```http://www.abc.com/abc.mp4``` URL in Mainland China and uploading it to the Chongqing region**
 
 
 
@@ -41,7 +41,7 @@ Output:
 }
 ```
 
-**Example 3: 拉取上传一个海外 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频至新加坡园区。**
+**Example 3: Pulling an MP4 video from the ```http://www.abc.com/abc.mp4``` URL outside Mainland China and uploading it to the Singapore region**
 
 
 

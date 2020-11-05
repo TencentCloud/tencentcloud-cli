@@ -1,6 +1,6 @@
-**Example 1: 更改迁移任务所属项目**
+**Example 1: Modifying the project of a migration task**
 
-更改迁移任务所属项目
+This example shows you how to modify the project of a migration task.
 
 Input: 
 

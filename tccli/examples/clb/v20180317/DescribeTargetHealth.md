@@ -1,4 +1,4 @@
-**Example 1: 查询负载均衡实例的后端健康状态**
+**Example 1: Querying the real server health status of CLB instance**
 
 
 

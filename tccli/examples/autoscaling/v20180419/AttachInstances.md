@@ -1,4 +1,4 @@
-**Example 1: 添加实例到伸缩组中**
+**Example 1: Adding an instance to a scaling group**
 
 
 

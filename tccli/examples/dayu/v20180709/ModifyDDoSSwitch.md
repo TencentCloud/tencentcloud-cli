@@ -1,4 +1,4 @@
-**Example 1: 开启或关闭DDoS防护**
+**Example 1: Enabling or disabling DDoS protection**
 
 
 

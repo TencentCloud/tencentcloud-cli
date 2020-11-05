@@ -1,4 +1,4 @@
-**Example 1: 修改通道配置**
+**Example 1: Modifying connection configuration**
 
 
 

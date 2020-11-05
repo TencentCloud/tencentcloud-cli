@@ -1,6 +1,6 @@
-**Example 1: 重置实例机型**
+**Example 1: Resetting the instance model**
 
-当目前的机型配置不满足业务需求时，您可以重新调整其规格。
+This example shows you how to adjust the configuration of an instance that fails to meet your business needs.
 
 Input: 
 

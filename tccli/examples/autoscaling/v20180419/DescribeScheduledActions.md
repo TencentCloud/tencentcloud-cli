@@ -1,4 +1,4 @@
-**Example 1: 查询定时任务**
+**Example 1: Querying a scheduled action**
 
 
 

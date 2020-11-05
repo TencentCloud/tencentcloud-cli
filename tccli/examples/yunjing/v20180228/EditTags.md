@@ -1,13 +1,13 @@
-**Example 1: 新增/编辑标签**
+**Example 1: Adding/Editing tags**
 
-新增/编辑标签
+This example shows you how to add/edit tags.
 
 Input: 
 
 ```
 tccli yunjing EditTags --cli-unfold-argument  \
     --Id 1\
-    --Name 标签名\
+    --Name 'tag name'\
     --Quuids id1
 ```
 

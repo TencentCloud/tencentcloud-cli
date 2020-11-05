@@ -1,4 +1,4 @@
-**Example 1: 更新身份提供商**
+**Example 1: Updating a IdP**
 
 
 

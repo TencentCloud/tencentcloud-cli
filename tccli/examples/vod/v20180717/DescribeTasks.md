@@ -1,4 +1,4 @@
-**Example 1: 获取任务列表**
+**Example 1: Getting task list**
 
 
 
@@ -57,7 +57,38 @@ Output:
 }
 ```
 
-**Example 2: 获取任务列表-翻页**
+**Example 2: Getting task list - processing**
+
+
+
+Input: 
+
+```
+tccli vod DescribeTasks --cli-unfold-argument  \
+    --Status PROCESSING\
+    --Limit 5
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskSet": [
+            {
+                "TaskId": "taskId7",
+                "Type": "transcode",
+                "CreateTime": "2018-12-27T13:57:15Z",
+                "BeginProcessTime": "2018-12-27T13:57:15Z",
+                "FinishTime": null
+            }
+        ],
+        "ScrollToken": null,
+        "RequestId": "46311b39-10ce-47eb-b2b6-7ce82bb4476d"
+    }
+}
+```
+
+**Example 3: Getting task list - scrolling**
 
 
 
@@ -81,37 +112,6 @@ Output:
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
-            }
-        ],
-        "ScrollToken": null,
-        "RequestId": "46311b39-10ce-47eb-b2b6-7ce82bb4476d"
-    }
-}
-```
-
-**Example 3: 获取任务列表-处理中**
-
-
-
-Input: 
-
-```
-tccli vod DescribeTasks --cli-unfold-argument  \
-    --Status PROCESSING\
-    --Limit 5
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TaskSet": [
-            {
-                "TaskId": "taskId7",
-                "Type": "transcode",
-                "CreateTime": "2018-12-27T13:57:15Z",
-                "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": null
             }
         ],
         "ScrollToken": null,

@@ -1,4 +1,4 @@
-**Example 1: 查询异步任务状态接口**
+**Example 1: Querying async task status**
 
 
 

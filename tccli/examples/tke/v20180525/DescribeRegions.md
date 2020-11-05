@@ -1,6 +1,6 @@
-**Example 1: 获取地域列表**
+**Example 1: This example shows you how to get the region list.**
 
-获取地域列表
+This example shows you how to get the region list.
 
 Input: 
 

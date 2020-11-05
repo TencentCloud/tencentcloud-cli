@@ -1,4 +1,4 @@
-**Example 1: 修改通道所属项目**
+**Example 1: Modifying the Connection Project**
 
 
 

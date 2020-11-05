@@ -1,4 +1,4 @@
-**Example 1: 查询实时录制任务**
+**Example 1: Querying a real-time recording task**
 
 
 
@@ -72,7 +72,7 @@ Output:
 }
 ```
 
-**Example 2: 查询录制失败的实时录制任务**
+**Example 2: Querying failed real-time recording tasks**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 删除NAT的端口转发规则**
+**Example 1: Deleting a port forwarding rule of the NAT**
 
-删除NAT的端口转发规则，只需要传递DestinationIpPortTranslationNatRule结构体中的IpProtocol，PublicIpAddress，PublicPort字段。
+To delete a port forwarding rule of the NAT, you only need to pass the IpProtocol, PublicIpAddress, and PublicPort fields in the DestinationIpPortTranslationNatRule structure.
 
 Input: 
 

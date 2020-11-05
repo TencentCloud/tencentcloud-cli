@@ -1,4 +1,4 @@
-**Example 1: 解绑定期快照策略**
+**Example 1: Unbinding a Scheduled Snapshot Policy**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 修改云数据库实例的同步模式**
+**Example 1: Modifying the sync mode of a TencentDB instance**
 
 
 

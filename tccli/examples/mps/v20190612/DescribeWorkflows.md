@@ -1,6 +1,6 @@
-**Example 1: 查询特定工作流**
+**Example 1: Querying the specified workflow**
 
-查询 ID 为78459的工作流。
+This example shows you how to query the workflow whose ID is 78459.
 
 Input: 
 
@@ -40,7 +40,6 @@ Output:
                 },
                 "AiContentReviewTask": null,
                 "AiRecognitionTask": null,
-                "AiAnalysisTask": null,
                 "TaskNotifyConfig": null,
                 "TaskPriority": 0,
                 "CreateTime": "2019-07-18T10:00:00Z",

@@ -1,6 +1,6 @@
-**Example 1: 查询密钥轮换状态**
+**Example 1: Querying key rotation status**
 
-查询指定的CMK密钥轮换功能是否开启。
+This example shows you how to query whether key rotation is enabled for a specified CMK.
 
 Input: 
 

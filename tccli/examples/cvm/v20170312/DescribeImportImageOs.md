@@ -1,4 +1,4 @@
-**Example 1: 查询导入镜像支持的操作系统配置信息**
+**Example 1: Querying the supported operating systems of imported images**
 
 
 

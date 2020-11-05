@@ -1,37 +1,6 @@
-**Example 1: 提交语音文件检测任务-2**
+**Example 1: Submitting audio stream detection task**
 
-通过语音文件的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果
-
-Input: 
-
-```
-tccli gme ScanVoice --cli-unfold-argument  \
-    --BizId 1400000000\
-    --Scenes default\
-    --Live false\
-    --Callback \
-    --Tasks.0.DataId 1400000000_test_data_id\
-    --Tasks.0.Url http://xxx/audio_store/xxxx.mp3
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": [
-            {
-                "DataId": "1400000000_test_data_id",
-                "TaskId": "xxx-xxx-xxx"
-            }
-        ],
-        "RequestId": "xxx-xxx-xxx"
-    }
-}
-```
-
-**Example 2: 提交语音流检测任务**
-
-通过语音流的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果
+This example shows you how to submit a speech detection task for an audio stream where the callback address is empty and the `DescribeScanResultList` API needs to be called to poll the detection result.
 
 Input: 
 
@@ -60,9 +29,9 @@ Output:
 }
 ```
 
-**Example 3: 提交语音文件检测任务**
+**Example 2: Submitting audio file detection task**
 
-通过语音文件的方式提交检测任务，可通过设置回调地址 Callback 获取检测结果
+This example shows you how to submit a speech detection task for an audio file where the callback address (`Callback`) is set to get the detection result.
 
 Input: 
 
@@ -74,6 +43,37 @@ tccli gme ScanVoice --cli-unfold-argument  \
     --Callback https://0.0.0.0/user_callback\
     --Tasks.0.DataId 1400000000_test_data_id\
     --Tasks.0.Url http://xxxx/audio_store/xxxx.mp3
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": [
+            {
+                "DataId": "1400000000_test_data_id",
+                "TaskId": "xxx-xxx-xxx"
+            }
+        ],
+        "RequestId": "xxx-xxx-xxx"
+    }
+}
+```
+
+**Example 3: Submitting audio file detection task**
+
+This example shows you how to submit a speech detection task for an audio file where the callback address is empty and the `DescribeScanResultList` API needs to be called to poll the detection result.
+
+Input: 
+
+```
+tccli gme ScanVoice --cli-unfold-argument  \
+    --BizId 1400000000\
+    --Scenes default\
+    --Live false\
+    --Callback \
+    --Tasks.0.DataId 1400000000_test_data_id\
+    --Tasks.0.Url http://xxx/audio_store/xxxx.mp3
 ```
 
 Output: 

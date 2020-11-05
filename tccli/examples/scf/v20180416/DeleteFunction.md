@@ -1,6 +1,6 @@
-**Example 1: 删除函数**
+**Example 1: Deleting a Function**
 
-用户删除函数时需要使用，可指定版本与命名空间。
+The following sample shows how to delete a function with specified version and namespace.
 
 Input: 
 

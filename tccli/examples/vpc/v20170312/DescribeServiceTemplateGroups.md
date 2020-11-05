@@ -1,4 +1,4 @@
-**Example 1: 查看协议端口模板集合**
+**Example 1: Viewing a protocol port template group**
 
 
 

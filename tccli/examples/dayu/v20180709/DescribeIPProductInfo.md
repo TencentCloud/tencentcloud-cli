@@ -1,4 +1,4 @@
-**Example 1: 获取独享包或共享包IP对应的云资产信息**
+**Example 1: Getting Tencent Cloud asset information corresponding to IP of single IP instance or multi-IP instance**
 
 
 

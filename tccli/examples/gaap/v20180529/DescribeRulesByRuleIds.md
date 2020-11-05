@@ -1,4 +1,4 @@
-**Example 1: 根据规则ID拉取规则信息列表**
+**Example 1: Pulling the list of rules based on rule ID**
 
 
 

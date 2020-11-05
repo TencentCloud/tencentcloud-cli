@@ -1,4 +1,4 @@
-**Example 1: 重置VPN通道**
+**Example 1: Resetting a VPN tunnel**
 
 
 

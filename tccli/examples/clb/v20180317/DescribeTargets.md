@@ -1,4 +1,4 @@
-**Example 1: 查询负载均衡实例上绑定的所有后端服务**
+**Example 1: Querying all real servers bound to CLB instance**
 
 
 

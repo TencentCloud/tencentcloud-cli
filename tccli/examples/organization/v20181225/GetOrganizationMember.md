@@ -1,4 +1,4 @@
-**Example 1: 获取企业组织成员**
+**Example 1: Obtaining information on an organization member**
 
 
 

@@ -1,29 +1,6 @@
-**Example 1: 检查辅助CIDR冲突-2**
+**Example 1: Checks secondary CIDR block conflicts**
 
-CIDR与VPC现存信息不存在冲突。
-
-Input: 
-
-```
-tccli vpc CheckAssistantCidr --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpcId vpc-12345678\
-    --NewCidrBlocks 172.16.0.0/24
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ConflictSourceSet": [],
-        "RequestId": "e906fed4-292c-44ba-a240-f5bde9fd84c7"
-    }
-}
-```
-
-**Example 2: 检查辅助CIDR冲突**
-
-CIDR与VPC现存信息存在冲突。
+CIDR block does not conflict with the existing VPC information.
 
 Input: 
 
@@ -51,6 +28,29 @@ Output:
             }
         ],
         "RequestId": "6e57b8db-4307-4135-b513-8c3d0e12aa4e"
+    }
+}
+```
+
+**Example 2: Checks secondary CIDR block conflicts-2**
+
+CIDR block conflicts with the existing VPC information.
+
+Input: 
+
+```
+tccli vpc CheckAssistantCidr --cli-unfold-argument  \
+    --Version 2017-03-12\
+    --VpcId vpc-12345678\
+    --NewCidrBlocks 172.16.0.0/24
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ConflictSourceSet": [],
+        "RequestId": "e906fed4-292c-44ba-a240-f5bde9fd84c7"
     }
 }
 ```

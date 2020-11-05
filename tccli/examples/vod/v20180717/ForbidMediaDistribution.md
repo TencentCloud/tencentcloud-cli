@@ -1,4 +1,4 @@
-**Example 1: 禁播**
+**Example 1: Forbidding a media file**
 
 
 

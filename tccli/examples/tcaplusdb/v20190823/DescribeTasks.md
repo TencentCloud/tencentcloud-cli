@@ -1,6 +1,6 @@
-**Example 1: 查询任务列表**
+**Example 1: Querying task list**
 
-指定任务ID，查询任务详情
+This example shows you how to query task details by specifying task IDs.
 
 Input: 
 
@@ -18,7 +18,7 @@ Output:
         "RequestId": "72fc70ce-2396-4b8e-ac54-9bce72058da1",
         "TaskInfos": [
             {
-                "ClusterName": "gz测试PROTO",
+                "ClusterName": "gz test PROTO",
                 "ClusterId": "5674209986",
                 "Content": "20548499 modify quotas table(tb_example) of Cluster(5674209986) TableGroup(101), InstanceId tcaplus-1f224454, Storage Layer Expand: volume[1 -> 2], owner 20548499",
                 "Operator": "20548499",
@@ -30,7 +30,7 @@ Output:
                 "UpdateTime": "2019-08-30 18:16:50"
             },
             {
-                "ClusterName": "gz测试PROTO",
+                "ClusterName": "gz test PROTO",
                 "ClusterId": "5674209986",
                 "Content": "20548499 modify table(tb_example)'s structure of Cluster(5674209986) TableGroup(101), InstanceId tcaplus-1f224454, owner 20548499",
                 "Operator": "20548499",
@@ -42,7 +42,7 @@ Output:
                 "UpdateTime": "2019-08-30 18:02:51"
             },
             {
-                "ClusterName": "gz测试PROTO",
+                "ClusterName": "gz test PROTO",
                 "ClusterId": "5674209986",
                 "Content": "20548499 clear table(tb_example) of Cluster(5674209986) TableGroup(101), InstanceId tcaplus-1f224454, owner 20548499",
                 "Operator": "20548499",

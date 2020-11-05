@@ -1,6 +1,6 @@
-**Example 1: 查询文档转码回调地址**
+**Example 1: Querying the document transcoding callback address**
 
-查询文档转码回调地址
+This example shows how to query the document transcoding callback address.
 
 Input: 
 

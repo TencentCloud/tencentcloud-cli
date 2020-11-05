@@ -1,4 +1,4 @@
-**Example 1: 查询刷新用量配额**
+**Example 1: Querying purge usage quota**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取DDoS攻击事件详情**
+**Example 1: Getting details of a specific DDoS attack**
 
 
 

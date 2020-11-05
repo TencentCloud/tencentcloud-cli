@@ -1,6 +1,6 @@
-**Example 1: 获取主密钥属性示例**
+**Example 1: Getting CMK attributes**
 
-获取指定CMK的属性详情信息。
+This example shows you how to get the attribute details of a specified CMK.
 
 Input: 
 
@@ -34,9 +34,9 @@ Output:
 }
 ```
 
-**Example 2: 获取被计划删除主密钥属性示例**
+**Example 2: Getting the attributes of a CMK scheduled for deletion**
 
-此CMK被计划删除
+This example shows you how to get the attributes of a CMK scheduled for deletion.
 
 Input: 
 

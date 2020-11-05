@@ -1,4 +1,4 @@
-**Example 1: 克隆已存在的账号**
+**Example 1: Cloning an existing account**
 
 
 

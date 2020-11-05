@@ -1,6 +1,6 @@
-**Example 1: 查询实例管理终端地址**
+**Example 1: Querying the VNC URL of an instance**
 
-本示例用于查询实例管理终端地址。
+This example shows you how to query the VNC URL of an instance.
 
 Input: 
 

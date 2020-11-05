@@ -385,6 +385,62 @@
       "document": "CreateCfsFileSystem返回参数结构体",
       "members": [
         {
+          "document": "文件系统创建时间",
+          "member": "string",
+          "name": "CreationTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户自定义文件系统名称",
+          "member": "string",
+          "name": "CreationToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统 ID",
+          "member": "string",
+          "name": "FileSystemId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统状态",
+          "member": "string",
+          "name": "LifeCycleState",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统已使用容量大小",
+          "member": "uint64",
+          "name": "SizeByte",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区 ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户自定义文件系统名称",
+          "member": "string",
+          "name": "FsName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统是否加密",
+          "member": "bool",
+          "name": "Encrypted",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

@@ -1,6 +1,6 @@
-**Example 1: 获取函数详细信息**
+**Example 1: Getting function details**
 
-用户用此函数获取对应的函数信息，可指定版本与命名空间。
+This example shows you how to get the information of the corresponding function. You can specify the version and namespace.
 
 Input: 
 

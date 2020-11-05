@@ -1,4 +1,4 @@
-**Example 1: 修改实例名称**
+**Example 1: Renaming instance**
 
 
 

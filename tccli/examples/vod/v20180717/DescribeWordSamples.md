@@ -1,6 +1,6 @@
-**Example 1: 获取关键词样本列表-无条件**
+**Example 1: Getting keyword sample list - with no filters**
 
-不带任何条件，遍历关键词列表。
+This example shows you how to traverse the list of keywords with no filters.
 
 Input: 
 
@@ -14,10 +14,10 @@ Output:
         "TotalCount": 2,
         "WordSet": [
             {
-                "Keyword": "张三",
+                "Keyword": "John Smith",
                 "TagSet": [
-                    "明星",
-                    "艺人"
+                    "Celebrity",
+                    "Artist"
                 ],
                 "Usages": [
                     "Recognition.Ocr",
@@ -26,9 +26,9 @@ Output:
                 "CreateTime": "2018-10-01T10:00:00Z"
             },
             {
-                "Keyword": "李四",
+                "Keyword": "Jane Smith",
                 "TagSet": [
-                    "总统"
+                    "President"
                 ],
                 "Usages": [
                     "Review.Ocr",
@@ -42,17 +42,17 @@ Output:
 }
 ```
 
-**Example 2: 获取关键词样本列表-有条件**
+**Example 2: Getting keyword sample list - with filters**
 
-限定应用场景等条件的关键词查询。
+This example shows you how to query keyword samples with filters such as a specified use case.
 
 Input: 
 
 ```
 tccli vod DescribeWordSamples --cli-unfold-argument  \
     --Usages Recognition Review.Ocr\
-    --Keywords 张三\
-    --Tags 明星\
+    --Keywords 'John Smith'\
+    --Tags Celebrity\
     --Offset 0\
     --Limit 20
 ```
@@ -64,10 +64,10 @@ Output:
         "TotalCount": 1,
         "WordSet": [
             {
-                "Keyword": "张三",
+                "Keyword": "John Smith",
                 "TagSet": [
-                    "明星",
-                    "艺人"
+                    "Celebrity",
+                    "Artist"
                 ],
                 "Usages": [
                     "Recognition.Ocr",

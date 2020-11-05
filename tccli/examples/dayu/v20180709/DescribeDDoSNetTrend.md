@@ -1,4 +1,4 @@
-**Example 1: 获取高防IP专业版资源的DDoS攻击指标数据**
+**Example 1: Getting the DDoS attack metric data of Anti-DDoS Ultimate resource**
 
 
 

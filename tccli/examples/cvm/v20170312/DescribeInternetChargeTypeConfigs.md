@@ -1,6 +1,6 @@
-**Example 1: 查询网络计费类型**
+**Example 1: Querying the network billing methods**
 
-在通过api调用创建子机时，需要填写网络计费类型，通过本接口可以查询所有的网络计费类型并选择一个合适的参数。
+When creating a CVM using API, you need to specify a network billing method. With this API, you can query the list of all network billing methods so that you can select one from them.
 
 Input: 
 
@@ -13,20 +13,24 @@ Output:
     "Response": {
         "InternetChargeTypeConfigSet": [
             {
+                "InternetChargeType": "BANDWIDTH_POSTPAID_BY_MONTH",
+                "Description": "Monthly postpaid"
+            },
+            {
                 "InternetChargeType": "BANDWIDTH_PREPAID",
-                "Description": "按带宽包年包月计费"
+                "Description": "Bill by bandwidth"
             },
             {
                 "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                "Description": "按流量计费"
+                "Description": "Bill by traffic"
             },
             {
                 "InternetChargeType": "BANDWIDTH_POSTPAID_BY_HOUR",
-                "Description": "按带宽使用时长计费"
+                "Description": "Bill by bandwidth usage duration"
             },
             {
                 "InternetChargeType": "BANDWIDTH_PACKAGE",
-                "Description": "带宽包计费"
+                "Description": "Bill by bandwidth package"
             }
         ],
         "RequestId": "c2abdac4-ea7b-4653-b07c-87cc303fabf0"

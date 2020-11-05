@@ -1,6 +1,6 @@
-**Example 1: 查询分散置放群组信息**
+**Example 1: Querying the information of a spread placement group**
 
-查询分散置放群组信息
+This example shows you how to query the information of a spread placement group.
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
         "DisasterRecoverGroupSet": [
             {
                 "DisasterRecoverGroupId": "ps-21q9ibvr",
-                "Name": "数据库业务",
+                "Name": "Database service",
                 "Type": "RACK",
                 "CvmQuotaTotal": 30,
                 "CurrentNum": 0,

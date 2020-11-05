@@ -1,4 +1,4 @@
-**Example 1: 查询合规化审批单**
+**Example 1: Querying a compliance review form**
 
 
 
@@ -7,15 +7,15 @@ Input:
 ```
 tccli vpc DescribeCrossBorderCompliance --cli-unfold-argument  \
     --ServiceProvider UNICOM\
-    --Company 腾讯科技（广州）有限公司\
+    --Company 'Guangzhou Tencent Technology Co., Ltd'\
     --UniformSocialCreditCode 91440101327598294H\
-    --LegalPerson 张颖\
-    --IssuingAuthority 广州市海珠区市场监督管理局\
-    --BusinessAddress 广州市海珠区新港中路397号自编72号(商业街F5-1)\
+    --LegalPerson 'Zhang Ying'\
+    --IssuingAuthority 'Guangzhou Haizhu District Administration for Market Regulation'\
+    --BusinessAddress 'Commercial Street F5-1, No. 397-72, Middle Xingang Road, Haizhu District, Guangzhou City, China'\
     --PostCode 510320\
-    --Manager 李四\
+    --Manager Tom\
     --ManagerId 360732199007108888\
-    --ManagerAddress 广州市海珠区新港中路8888号\
+    --ManagerAddress 'No. 8888, Middle Xingang Road, Haizhu District, Guangzhou City, China'\
     --ManagerTelephone 020-81167888\
     --Email test@tencent.com\
     --ServiceStartDate 2020-07-29\
@@ -30,17 +30,17 @@ Output:
             {
                 "ComplianceId": 10013,
                 "ServiceProvider": "UNICOM",
-                "Company": "腾讯科技（广州）有限公司",
+                "Company": "Guangzhou Tencent Technology Co., Ltd",
                 "UniformSocialCreditCode": "91440101327598294H",
-                "LegalPerson": "张颖",
-                "IssuingAuthority": "广州市海珠区市场监督管理局",
+                "LegalPerson": "Zhang Ying",
+                "IssuingAuthority": "Guangzhou Haizhu District Administration for Market Regulation",
                 "BusinessLicense": "https://cross-border-connection-1258344699.cos.ap-guangzhou.myqcloud.com/BusinessLicense.png?q-sign-algorithm=sha1&q-ak=AKIDLYWGm2QAuUZP1NqFm6OaEcjaCYkVuMRF&q-sign-time=1596446068%3B1596449728&q-key-time=1596446068%3B1596449728&q-header-list=&q-url-param-list=&q-signature=d6f3d34ec6cdb4e7a84b29d96ebab0ceb649e441",
-                "BusinessAddress": "广州市海珠区新港中路397号自编72号(商业街F5-1)",
+                "BusinessAddress": "Commercial Street F5-1, No. 397-72, Middle Xingang Road, Haizhu District, Guangzhou City, China",
                 "PostCode": 510320,
-                "Manager": "李四",
+                "Manager": "Tom",
                 "ManagerId": "360732199007108888",
                 "ManagerIdCard": "https://cross-border-connection-1258344699.cos.ap-guangzhou.myqcloud.com/ManagerIdCard.png?q-sign-algorithm=sha1&q-ak=AKIDLYWGm2QAuUZP1NqFm6OaEcjaCYkVuMRF&q-sign-time=1596446068%3B1596449728&q-key-time=1596446068%3B1596449728&q-header-list=&q-url-param-list=&q-signature=0eef108d574b332046de78b260c84844159b1fc1",
-                "ManagerAddress": "广州市海珠区新港中路8888号",
+                "ManagerAddress": "No. 8888, Middle Xingang Road, Haizhu District, Guangzhou City, China",
                 "ManagerTelephone": "020-81167888",
                 "Email": "test@tencent.com",
                 "ServiceHandlingForm": "https://cross-border-connection-1258344699.cos.ap-guangzhou.myqcloud.com/ServiceHandlingForm.png?q-sign-algorithm=sha1&q-ak=AKIDLYWGm2QAuUZP1NqFm6OaEcjaCYkVuMRF&q-sign-time=1596446068%3B1596449728&q-key-time=1596446068%3B1596449728&q-header-list=&q-url-param-list=&q-signature=8083e838f07cbc5db0d8604962c2148067604311",

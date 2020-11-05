@@ -1,6 +1,6 @@
-**Example 1: 获取异地登录白名单列表**
+**Example 1: Getting the list of login whitelist entries**
 
-获取异地登录白名单列表
+This example shows you how to get the list of login whitelist entries.
 
 Input: 
 

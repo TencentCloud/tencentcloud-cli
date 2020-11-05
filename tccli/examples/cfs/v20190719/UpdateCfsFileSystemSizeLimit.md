@@ -1,4 +1,4 @@
-**Example 1: 更新文件系统存储容量限制**
+**Example 1: Updating the capacity limit of a file system**
 
 
 

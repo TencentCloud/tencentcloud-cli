@@ -1,4 +1,4 @@
-**Example 1: 查询域名详细配置**
+**Example 1: Querying the detailed configuration of a domain name**
 
 
 

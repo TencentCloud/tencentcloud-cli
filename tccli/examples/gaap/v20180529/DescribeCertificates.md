@@ -1,4 +1,4 @@
-**Example 1: 查询服务器证书信息**
+**Example 1: Querying the certificate information of server**
 
 
 

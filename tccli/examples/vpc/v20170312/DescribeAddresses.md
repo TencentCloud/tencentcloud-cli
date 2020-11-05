@@ -1,4 +1,4 @@
-**Example 1: 使用AddressIds查询EIP**
+**Example 1: Querying EIPs using AddressIds**
 
 
 

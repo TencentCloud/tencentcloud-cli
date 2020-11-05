@@ -1,4 +1,4 @@
-**Example 1: 查询所有实例列表**
+**Example 1: Querying the List of Instances**
 
 
 
@@ -66,7 +66,7 @@ Output:
                 "VpcId": "",
                 "SubnetId": "",
                 "DBInstanceId": "postgres-1e2srvtt",
-                "DBInstanceName": "未命名",
+                "DBInstanceName": "Not named",
                 "DBInstanceStatus": "running",
                 "DBInstanceMemory": 4,
                 "DBInstanceStorage": 20,
@@ -104,9 +104,9 @@ Output:
 }
 ```
 
-**Example 2: 根据实例ID查询实例信息**
+**Example 2: Querying instance details by instance ID**
 
-例如：查询实例ID为postgres-6bwgamo3的实例信息
+This example shows you how to query the details of the instance whose ID is `postgres-6bwgamo3`.
 
 Input: 
 

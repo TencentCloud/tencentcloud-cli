@@ -1,4 +1,60 @@
-**Example 1: 获取媒体详细信息**
+**Example 1: Getting only the basic information of a media file**
+
+
+
+Input: 
+
+```
+tccli vod DescribeMediaInfos --cli-unfold-argument  \
+    --FileIds 5285485487985271487 5285485487985271488\
+    --Filters basicInfo
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
+        "MediaInfoSet": [
+            {
+                "FileId": "5285485487985271487",
+                "BasicInfo": {
+                    "Name": "test file",
+                    "Description": "",
+                    "CreateTime": "2017-01-23T07:25:52Z",
+                    "UpdateTime": "2017-01-23T07:25:52Z",
+                    "ExpireTime": "2017-03-23T07:25:52Z",
+                    "ClassId": 1,
+                    "ClassName": "Test",
+                    "ClassPath": "Test",
+                    "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
+                    "Type": "mp4",
+                    "MediaUrl": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                    "TagSet": [],
+                    "SourceInfo": {
+                        "SourceType": "Record",
+                        "SourceContext": ""
+                    },
+                    "StorageRegion": "gzp"
+                },
+                "MetaData": null,
+                "TranscodeInfo": null,
+                "AdaptiveDynamicStreamingInfo": null,
+                "AnimatedGraphicsInfo": null,
+                "SampleSnapshotInfo": null,
+                "ImageSpriteInfo": null,
+                "SnapshotByTimeOffsetInfo": null,
+                "KeyFrameDescInfo": null
+            }
+        ],
+        "NotExistFileIdSet": [
+            "5285485487985271488"
+        ]
+    }
+}
+```
+
+**Example 2: Getting media details**
 
 
 
@@ -24,8 +80,8 @@ Output:
                     "UpdateTime": "2017-01-23T07:25:52Z",
                     "ExpireTime": "2017-03-23T07:25:52Z",
                     "ClassId": 1,
-                    "ClassName": "测试",
-                    "ClassPath": "测试",
+                    "ClassName": "Test",
+                    "ClassPath": "Test",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",
@@ -226,62 +282,6 @@ Output:
                         }
                     ]
                 }
-            }
-        ],
-        "NotExistFileIdSet": [
-            "5285485487985271488"
-        ]
-    }
-}
-```
-
-**Example 2: 只获取媒体基础信息**
-
-
-
-Input: 
-
-```
-tccli vod DescribeMediaInfos --cli-unfold-argument  \
-    --FileIds 5285485487985271487 5285485487985271488\
-    --Filters basicInfo
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
-        "MediaInfoSet": [
-            {
-                "FileId": "5285485487985271487",
-                "BasicInfo": {
-                    "Name": "test file",
-                    "Description": "",
-                    "CreateTime": "2017-01-23T07:25:52Z",
-                    "UpdateTime": "2017-01-23T07:25:52Z",
-                    "ExpireTime": "2017-03-23T07:25:52Z",
-                    "ClassId": 1,
-                    "ClassName": "测试",
-                    "ClassPath": "测试",
-                    "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
-                    "Type": "mp4",
-                    "MediaUrl": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",
-                    "TagSet": [],
-                    "SourceInfo": {
-                        "SourceType": "Record",
-                        "SourceContext": ""
-                    },
-                    "StorageRegion": "gzp"
-                },
-                "MetaData": null,
-                "TranscodeInfo": null,
-                "AdaptiveDynamicStreamingInfo": null,
-                "AnimatedGraphicsInfo": null,
-                "SampleSnapshotInfo": null,
-                "ImageSpriteInfo": null,
-                "SnapshotByTimeOffsetInfo": null,
-                "KeyFrameDescInfo": null
             }
         ],
         "NotExistFileIdSet": [

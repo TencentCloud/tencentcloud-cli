@@ -1,4 +1,4 @@
-**Example 1: 修改一条转发规则的健康检查参数及转发策略**
+**Example 1: Modifying the health check parameter and forwarding policy of a forwarding rule**
 
 
 

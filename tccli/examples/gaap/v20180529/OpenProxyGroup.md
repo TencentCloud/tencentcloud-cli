@@ -1,4 +1,4 @@
-**Example 1: 开启通道组**
+**Example 1: Enabling connection group**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 删除常用登录地**
+**Example 1: Deleting usual login location**
 
-删除常用登录地
+This example shows you how to delete a usual login location.
 
 Input: 
 

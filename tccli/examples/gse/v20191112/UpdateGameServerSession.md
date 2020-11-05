@@ -1,6 +1,6 @@
-**Example 1: 更新游戏会话属性**
+**Example 1: Updating game session attributes**
 
-更新游戏会话属性
+This example shows you how to update the attributes of a game session.
 
 Input: 
 
@@ -14,30 +14,25 @@ Output:
 {
     "Response": {
         "GameServerSession": {
-            "AvailabilityStatus": "Enable",
-            "CreationTime": "2020-07-30T03:55:43Z",
-            "CreatorId": "",
-            "CurrentCustomCount": 0,
-            "CurrentPlayerSessionCount": 0,
+            "CreationTime": "2019-12-06T10:03:50Z",
+            "CreatorId": "c1",
+            "CurrentPlayerSessionCount": 1,
             "DnsName": "",
-            "FleetId": "fleet-qp33caaa-35555",
+            "FleetId": "fleet-00test-a5testzz",
             "GameProperties": [],
-            "GameServerSessionData": "",
-            "GameServerSessionId": "qcs::gse:ap-shanghai:uin/100000010000:gameserversession/fleet-qp33caaa-35555/gssess-qtk2222-uuu",
-            "InstanceType": "S5.LARGE8",
-            "IpAddress": "127.0.0.1",
+            "GameServerSessionData": "testdata",
+            "GameServerSessionId": "qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde",
+            "IpAddress": "0000.0.0.0",
             "MatchmakerData": "",
-            "MaxCustomCount": 0,
-            "MaximumPlayerSessionCount": 100,
+            "MaximumPlayerSessionCount": 10,
             "Name": "",
             "PlayerSessionCreationPolicy": "ACCEPT_ALL",
-            "Port": 6000,
-            "Status": "ACTIVATING",
+            "Port": 8000,
+            "Status": "ACTIVE",
             "StatusReason": "",
-            "TerminationTime": null,
-            "Weight": 5
+            "TerminationTime": "2019-12-06T11:33:10Z"
         },
-        "RequestId": "s15960816666663333"
+        "RequestId": "0fffff4-oooo-43333d-9222-testaaa"
     }
 }
 ```

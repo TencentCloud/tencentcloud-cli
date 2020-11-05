@@ -1,4 +1,4 @@
-**Example 1: 获取地域的资源实例数**
+**Example 1: Getting the number of resource instances in region**
 
 
 

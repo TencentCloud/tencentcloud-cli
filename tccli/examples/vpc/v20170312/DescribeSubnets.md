@@ -1,4 +1,4 @@
-**Example 1: 查询子网列表**
+**Example 1: Querying the subnet list**
 
 
 
@@ -8,7 +8,7 @@ Input:
 tccli vpc DescribeSubnets --cli-unfold-argument  \
     --Version 2017-03-12\
     --Filters.0.Name subnet-name\
-    --Filters.0.Values 默认广州二区子网\
+    --Filters.0.Values 'Default Guangzhou Zone 2 subnet'\
     --Filters.1.Name vpc-id\
     --Filters.1.Values vpc-2at5y1pn\
     --Filters.2.Name subnet-id\
@@ -27,7 +27,7 @@ Output:
             {
                 "VpcId": "vpc-2at5y1pn",
                 "SubnetId": "subnet-otu92seu",
-                "SubnetName": "默认广州二区子网",
+                "SubnetName": "Default Guangzhou Zone 2 subnet",
                 "CidrBlock": "172.16.16.0/20",
                 "Ipv6CidrBlock": "3402:4e00:20:1201::/64",
                 "IsDefault": true,
@@ -46,7 +46,7 @@ Output:
 }
 ```
 
-**Example 2: 查询绑定了标签的子网列表**
+**Example 2: Querying the list of subnets bound to tags**
 
 
 
@@ -67,7 +67,7 @@ Output:
             {
                 "VpcId": "vpc-2at5y1pn",
                 "SubnetId": "subnet-otu92seu",
-                "SubnetName": "默认广州二区子网",
+                "SubnetName": "Default Guangzhou Zone 2 subnet",
                 "CidrBlock": "172.16.16.0/20",
                 "Ipv6CidrBlock": "3402:4e00:20:1201::/64",
                 "IsDefault": true,

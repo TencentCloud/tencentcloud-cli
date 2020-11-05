@@ -1,4 +1,4 @@
-**Example 1: 查询文件系统客户端**
+**Example 1: Querying file system clients**
 
 
 
@@ -17,7 +17,7 @@ Output:
         "ClientList": [
             {
                 "MountDirectory": "/mnt",
-                "ZoneName": "广州一区",
+                "ZoneName": "Guangzhou Zone 1",
                 "Zone": "ap-guangzhou-1",
                 "VpcId": "vpc-gvem39gr",
                 "ClientIp": "10.1.1.10",

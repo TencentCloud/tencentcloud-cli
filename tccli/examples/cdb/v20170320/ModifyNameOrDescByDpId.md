@@ -1,4 +1,4 @@
-**Example 1: 修改置放群组的名称或者描述**
+**Example 1: Modifying the name or description of a placement group**
 
 
 

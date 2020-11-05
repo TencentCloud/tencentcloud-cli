@@ -1,4 +1,4 @@
-**Example 1: 获取慢日志统计柱状图**
+**Example 1: Getting slow log statistics histogram**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取安全统计**
+**Example 1: Getting security statistics**
 
 
 

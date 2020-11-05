@@ -1,4 +1,4 @@
-**Example 1: 查询默认的可设置参数列表**
+**Example 1: Querying default configurable parameter list**
 
 
 

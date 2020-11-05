@@ -1,6 +1,6 @@
-**Example 1: 监听器绑定源站**
+**Example 1: Binding Listeners to the Origin Server**
 
-监听器绑定源站
+Bind a listener to an origin server.
 
 Input: 
 

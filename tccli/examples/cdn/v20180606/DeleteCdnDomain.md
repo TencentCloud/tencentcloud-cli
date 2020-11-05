@@ -1,4 +1,4 @@
-**Example 1: 删除加速域名**
+**Example 1: Deleting an acceleration domain name**
 
 
 

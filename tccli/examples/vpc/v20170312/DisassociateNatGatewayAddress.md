@@ -1,4 +1,4 @@
-**Example 1: 解绑NAT网关的弹性IP**
+**Example 1: Unbinding an EIP from the NAT gateway**
 
 
 

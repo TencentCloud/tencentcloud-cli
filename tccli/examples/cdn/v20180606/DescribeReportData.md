@@ -1,4 +1,4 @@
-**Example 1: 查询报表数据**
+**Example 1: Querying report data**
 
 
 
@@ -28,7 +28,7 @@ Output:
             },
             {
                 "Resource": "www.test2.com",
-                "ResourceId": "cdn-rl523456",
+                "ResourceID": "cdn-rl523456",
                 "Value": 100,
                 "Percentage": 50,
                 "BillingValue": 100,
@@ -38,15 +38,15 @@ Output:
         "ProjectReport": [
             {
                 "Resource": "p1",
-                "ResourceId": "123",
+                "ResourceID": "123",
                 "Value": 100,
                 "Percentage": 10,
                 "BillingValue": 100,
                 "BillingPercentage": 10
             },
             {
-                "Resource": "默认项目",
-                "ResourceId": "0",
+                "Resource": "Default Project",
+                "ResourceID": "0",
                 "Value": 900,
                 "Percentage": 90,
                 "BillingValue": 900,

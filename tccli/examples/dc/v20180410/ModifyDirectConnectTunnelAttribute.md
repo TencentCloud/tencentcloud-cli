@@ -1,4 +1,4 @@
-**Example 1: 修改路由模式是BGP的专用通道**
+**Example 1: Modifying a dedicated tunnel using BGP routing**
 
 
 
@@ -24,7 +24,7 @@ Output:
 }
 ```
 
-**Example 2: 修改路由模式是STATIC的专用通道**
+**Example 2: Modifying a dedicated tunnel using static routing**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 释放IPv6子网段**
+**Example 1: Releasing the IPv6 subnet IP range**
 
 
 

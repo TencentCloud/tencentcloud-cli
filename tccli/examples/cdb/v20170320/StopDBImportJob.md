@@ -1,4 +1,4 @@
-**Example 1: 终止数据导入任务**
+**Example 1: Terminating data import task**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 开通专业版**
+**Example 1: Activating CWP Pro**
 
-开通专业版
+This example shows you how to activate CWP Pro.
 
 Input: 
 

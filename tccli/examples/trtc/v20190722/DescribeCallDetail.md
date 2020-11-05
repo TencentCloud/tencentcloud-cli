@@ -1,4 +1,4 @@
-**Example 1: 查询用户列表与通话指标**
+**Example 1: Querying user list and call metrics**
 
 
 

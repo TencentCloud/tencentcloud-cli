@@ -1,4 +1,4 @@
-**Example 1: 查询所有已挂载的数据盘**
+**Example 1: Querying all mounted data disks**
 
 
 

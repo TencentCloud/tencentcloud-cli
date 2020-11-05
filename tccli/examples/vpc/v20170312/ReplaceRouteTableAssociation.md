@@ -1,4 +1,4 @@
-**Example 1: 替换路由表绑定关系**
+**Example 1: Replacing the association relation of a route table**
 
 
 

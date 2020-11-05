@@ -1,4 +1,4 @@
-**Example 1: 弹性网卡申请内网 IP**
+**Example 1: Applies for private IPs for an ENI**
 
 
 

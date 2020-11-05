@@ -1,4 +1,4 @@
-**Example 1: 删除指定时间点截图模板**
+**Example 1: Deleting a time point screencapturing template**
 
 
 

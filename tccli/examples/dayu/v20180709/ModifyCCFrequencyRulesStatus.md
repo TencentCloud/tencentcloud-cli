@@ -1,4 +1,4 @@
-**Example 1: 开启或关闭CC防护的访问频率控制规则**
+**Example 1: Enabling or disabling access frequency control rule for CC protection**
 
 
 

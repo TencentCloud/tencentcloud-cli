@@ -1,4 +1,4 @@
-**Example 1: 修改伸缩组VPC子网信息**
+**Example 1: Modifying the VPC subnet information of a scaling group**
 
 
 
@@ -20,7 +20,7 @@ Output:
 }
 ```
 
-**Example 2: 修改伸缩组期望实例、最大实例数、最小实例数**
+**Example 2: Modifying the desired, maximum, and minimum capacity of a scaling group**
 
 
 

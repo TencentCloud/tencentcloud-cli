@@ -1,6 +1,6 @@
-**Example 1: 包年包月CDH实例购买**
+**Example 1: Purchasing a monthly subscription CDH instance**
 
-购买付费模式为包年包月的CDH实例，指定位置在广州二区，购买一个月，到期自动续费，实例机型为HS1，购买一台
+This example shows you how to purchase 1 CDH instance with the following configuration. Billing method: monthly subscription; availability zone: Guangzhou Zone 2; subscription period: 1 month; renewal flag: auto-renewal upon expiration; instance model: HS1.
 
 Input: 
 

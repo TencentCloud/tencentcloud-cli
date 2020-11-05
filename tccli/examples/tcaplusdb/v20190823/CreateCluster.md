@@ -1,13 +1,13 @@
-**Example 1: 创建集群Cluster**
+**Example 1: Creating cluster**
 
-新创建TcaplusDB集群
+This example shows you how to create a TcaplusDB cluster.
 
 Input: 
 
 ```
 tccli tcaplusdb CreateCluster --cli-unfold-argument  \
     --IdlType TDR\
-    --ClusterName gz测试TDR\
+    --ClusterName 'gz test TDR'\
     --VpcId vpc-kppg4pm1\
     --SubnetId subnet-3sww53pa\
     --Password 84ea4cbf06573ED

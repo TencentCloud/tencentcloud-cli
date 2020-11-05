@@ -1,6 +1,6 @@
-**Example 1: 查询策略版本详情**
+**Example 1: Querying policy version details**
 
-查询一个策略版本详情
+This example shows you how to query the details of a policy version.
 
 Input: 
 

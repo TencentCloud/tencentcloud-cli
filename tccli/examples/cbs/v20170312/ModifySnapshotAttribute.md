@@ -1,4 +1,4 @@
-**Example 1: 修改快照的名称**
+**Example 1: Modifying the name of a snapshot**
 
 
 

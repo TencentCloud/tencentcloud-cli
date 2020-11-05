@@ -1,6 +1,6 @@
-**Example 1: 创建实时获取端口任务**
+**Example 1: Creating real-time port acquisition task**
 
-创建实时获取端口任务
+This example shows you how to create a real-time port acquisition task.
 
 Input: 
 

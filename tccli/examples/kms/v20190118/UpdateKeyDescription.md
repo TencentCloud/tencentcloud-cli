@@ -1,6 +1,6 @@
-**Example 1: 修改主密钥描述信息示例**
+**Example 1: Modifying the description of a specified CMK**
 
-对指定的CMK修改描述信息
+This example shows you how to modify the description of a specified CMK.
 
 Input: 
 

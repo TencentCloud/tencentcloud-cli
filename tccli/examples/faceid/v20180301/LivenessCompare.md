@@ -1,4 +1,4 @@
-**Example 1: 静默活体人脸比对**
+**Example 1: Face comparison for silent liveness detection**
 
 
 
@@ -16,12 +16,9 @@ Output:
 {
     "Response": {
         "Result": "Success",
-        "Description": "成功",
+        "Description": "Success",
         "BestFrameBase64": "Imagebase64",
-        "BestFrameList": [
-            "Imagebase64"
-        ],
-        "Sim": 89.88,
+        "Sim": "89.88",
         "RequestId": "f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a"
     }
 }

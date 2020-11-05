@@ -1,6 +1,6 @@
-**Example 1: 获取组件统计列表**
+**Example 1: Getting component statistics list**
 
-获取组件统计列表
+This example shows you how to get the component statistics list.
 
 Input: 
 

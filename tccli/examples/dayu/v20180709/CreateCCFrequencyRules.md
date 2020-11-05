@@ -1,6 +1,6 @@
-**Example 1: 添加CC防护的访问频率控制规则**
+**Example 1: Adding access frequency control rule for CC protection**
 
-想转发规则下的所有URI填加一致的频率控制规则，则只需要设置Uri=/即可
+This example shows you how to add an access frequency control rule for CC protection. To add a unified frequency control rule for all URIs under a forwarding rule, simply set `Uri` to `/`.
 
 Input: 
 

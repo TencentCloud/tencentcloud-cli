@@ -1,6 +1,6 @@
-**Example 1: 创建定时录制任务**
+**Example 1: Creating scheduled recording task**
 
-适用于有固定开始时间和结束时间段录制需求的场景， 如培训课堂，商业活动以及节目演出等场景。
+This example shows you how to create a scheduled recording task, which is suitable for scenarios where the start time and end time of recording are fixed, such as training courses, business events, shows, and performances.
 
 Input: 
 
@@ -23,9 +23,9 @@ Output:
 }
 ```
 
-**Example 2: 创建实时录制任务**
+**Example 2: Creating real-time recording task**
 
-适用于直播过程中，遇到精彩画面或因临时需求需要立即开始录制的场景（EndTime 用于指定录制终止时间，录制时长最大支持30分钟）。
+This example shows you how to create a real-time recording task, which is suitable for scenarios where recording needs to start immediately to record certain video content or meet temporary needs during live streaming. (`EndTime` is used to specify the recording end time, and the recording can last for up to 30 minutes.)
 
 Input: 
 

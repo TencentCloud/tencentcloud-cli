@@ -1,4 +1,4 @@
-**Example 1: 获取日志列表**
+**Example 1: Getting the list of logs**
 
 
 

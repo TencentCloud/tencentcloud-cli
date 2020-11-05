@@ -1,4 +1,4 @@
-**Example 1: 查询状态为NORMAL的定期快照策略**
+**Example 1: Querying Scheduled Snapshot Policies with NORMAL Status**
 
 
 
@@ -21,7 +21,7 @@ Output:
                 "DiskIdSet": [],
                 "IsActivated": 1,
                 "AutoSnapshotPolicyState": "NORMAL",
-                "AutoSnapshotPolicyName": "快照策略1",
+                "AutoSnapshotPolicyName": "Snapshot Policy 1",
                 "IsPermanent": 0,
                 "NextTriggerTime": "2017-12-04 12:00:00",
                 "AutoSnapshotPolicyId": "asp-lfp6fi4f",
@@ -43,7 +43,7 @@ Output:
                 "DiskIdSet": [],
                 "IsActivated": 1,
                 "AutoSnapshotPolicyState": "NORMAL",
-                "AutoSnapshotPolicyName": "快照策略2",
+                "AutoSnapshotPolicyName": "Snapshot Policy 2",
                 "IsPermanent": 0,
                 "NextTriggerTime": "2017-12-03 10:00:00",
                 "AutoSnapshotPolicyId": "asp-nqu08k2l",

@@ -1,6 +1,6 @@
-**Example 1: 获取表格组关联的标签列表**
+**Example 1: Obtaining the list of tags associated with a table group**
 
-获取表格组关联的标签列表
+This example shows you how to obtain the list of tags associated with a table group.
 
 Input: 
 

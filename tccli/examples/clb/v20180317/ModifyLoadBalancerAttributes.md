@@ -1,4 +1,4 @@
-**Example 1: 修改负载均衡实例名称**
+**Example 1: Renaming a CLB instance**
 
 
 
@@ -19,7 +19,7 @@ Output:
 }
 ```
 
-**Example 2: 设置负载均衡实例的跨域属性**
+**Example 2: Setting the cross-region attribute of a CLB instance**
 
 
 

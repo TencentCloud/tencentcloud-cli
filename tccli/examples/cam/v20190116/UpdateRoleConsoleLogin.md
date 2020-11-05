@@ -1,6 +1,6 @@
-**Example 1: 修改角色是否可登录**
+**Example 1: Modifying a role’s login permissions**
 
-使用角色ID
+This example shows you how to use a role ID.
 
 Input: 
 

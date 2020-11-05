@@ -1,4 +1,4 @@
-**Example 1: 获取用户的clb独占日志集。**
+**Example 1: Obtaining the CLB exclusive logset of a user**
 
 
 

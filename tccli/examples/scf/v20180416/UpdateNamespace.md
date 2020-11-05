@@ -1,4 +1,4 @@
-**Example 1: 更新命名空间**
+**Example 1: Updating a Namespace**
 
 
 

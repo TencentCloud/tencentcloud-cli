@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
 
 
@@ -29,7 +29,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

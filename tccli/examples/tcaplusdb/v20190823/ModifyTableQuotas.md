@@ -1,6 +1,6 @@
-**Example 1: 表格扩缩容**
+**Example 1: Scaling table**
 
-表格扩缩容
+This example shows you how to scale a table.
 
 Input: 
 

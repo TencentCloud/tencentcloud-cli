@@ -1,4 +1,4 @@
-**Example 1: 禁用域名**
+**Example 1: Disabling domain name**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 创建加速IP**
+**Example 1: Creating an Anycast EIP**
 
-需开通Anycast公网加速白名单
+This example shows you how to create an Anycast EIP, provided that you are an Anycast Internet Acceleration (AIA) beta user.
 
 Input: 
 
@@ -23,7 +23,7 @@ Output:
 }
 ```
 
-**Example 2: 创建常规IP**
+**Example 2: Creating a regular IP address**
 
 
 
@@ -47,9 +47,9 @@ Output:
 }
 ```
 
-**Example 3: 创建静态单线IP**
+**Example 3: Creating a static single-line IP address**
 
-需开通静态单线IP白名单
+This example shows you how to create a static single-line IP address, provided that you are a static single-line IP beta user.
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: 获取漏洞受影响机器列表**
+**Example 1: Getting affected server list**
 
-获取漏洞受影响机器列表
+This example shows you how to get the list of servers affected by a vulnerability.
 
 Input: 
 
@@ -22,10 +22,10 @@ Output:
                 "Id": 4,
                 "VulId": 1001,
                 "MachineIp": "10.10.12.12",
-                "MachineName": "机器名称",
+                "MachineName": "Server name",
                 "VulStatus": "FIXED",
                 "Uuid": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
-                "Description": "漏洞描述",
+                "Description": "Vulnerability description",
                 "LastScanTime": "2018-03-19 17:38:56"
             }
         ],

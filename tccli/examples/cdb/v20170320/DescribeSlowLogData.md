@@ -1,4 +1,4 @@
-**Example 1: 通过检索条件，查询实例慢日志**
+**Example 1: Querying instance slow logs by search criteria**
 
 
 

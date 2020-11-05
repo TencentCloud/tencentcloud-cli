@@ -1,4 +1,4 @@
-**Example 1: 查询订阅详情**
+**Example 1: Querying subscription details**
 
 
 
@@ -6,31 +6,16 @@ Input:
 
 ```
 tccli cmq DescribeSubscriptionDetail --cli-unfold-argument  \
-    --TopicName Conn
+    --TopicName ConnTopic
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "SubscriptionSet": [
-            {
-                "SubscriptionName": "ConnSub",
-                "SubscriptionId": "subsc-8y7fn4t2",
-                "TopicOwner": 0,
-                "MsgCount": 0,
-                "LastModifyTime": 1590632987,
-                "CreateTime": 1590632987,
-                "BindingKey": null,
-                "Endpoint": "test1",
-                "FilterTags": [],
-                "Protocol": "queue",
-                "NotifyStrategy": "EXPONENTIAL_DECAY_RETRY",
-                "NotifyContentFormat": "SIMPLIFIED"
-            }
-        ],
-        "RequestId": "72cd2d9d-d666-45ad-963a-cf5065a1984c"
+        "TotalCount": 0,
+        "SubscriptionSet": [],
+        "RequestId": "c67d0d56-2406-49b2-8e82-320b9beab46c"
     }
 }
 ```

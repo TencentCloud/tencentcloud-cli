@@ -1,4 +1,4 @@
-**Example 1: 查询IP地址模板集合**
+**Example 1: Querying an IP address template group**
 
 
 

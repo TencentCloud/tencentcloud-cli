@@ -1,4 +1,4 @@
-**Example 1: 修改资源自动续费标记**
+**Example 1: Modifying the auto-renewal flag of resource**
 
 
 

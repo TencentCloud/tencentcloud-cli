@@ -1,4 +1,4 @@
-**Example 1: 查询流日志集合**
+**Example 1: Querying the flow log set**
 
 
 

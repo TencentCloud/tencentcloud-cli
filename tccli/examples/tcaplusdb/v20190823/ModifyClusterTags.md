@@ -1,6 +1,6 @@
-**Example 1: 修改集群标签**
+**Example 1: Modifying cluster tags**
 
-修改集群标签
+This example shows you how to modify cluster tags.
 
 Input: 
 

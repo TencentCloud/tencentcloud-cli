@@ -1,4 +1,4 @@
-**Example 1: 修改云硬盘名称**
+**Example 1: Modifying the Name of a Cloud Disk**
 
 
 
@@ -19,9 +19,9 @@ Output:
 }
 ```
 
-**Example 2: 修改云盘类型**
+**Example 2: Modifying the Type of the Cloud Disk**
 
-将一块弹性数据盘，付费模式为预付费，从普通云盘升级为高性能云盘，云盘大小 100G，当前未挂载。
+Upgrade an HDD elastic cloud disk to a premium cloud disk, which is 100 GB in size and is not currently mounted.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 根据标签拉取资源列表**
+**Example 1: Pulling a Resource List Based on Tags**
 
 
 

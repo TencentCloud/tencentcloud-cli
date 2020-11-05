@@ -1,4 +1,4 @@
-**Example 1: 查询实例的详细信息**
+**Example 1: Querying instance details**
 
 
 
@@ -22,7 +22,7 @@ Output:
             "VpcId": "",
             "SubnetId": "",
             "DBInstanceId": "postgres-6bwgamo3",
-            "DBInstanceName": "未命名",
+            "DBInstanceName": "Not named",
             "DBInstanceStatus": "running",
             "DBInstanceMemory": 4,
             "DBInstanceStorage": 20,

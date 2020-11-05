@@ -1,4 +1,4 @@
-**Example 1: 创建扩容成功、扩容失败事件通知**
+**Example 1: Creating notifications for successful and failed scale-out events**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取DDoS攻击指标数据**
+**Example 1: Obtaining DDoS attack metric data**
 
 
 

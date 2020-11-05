@@ -1,6 +1,6 @@
-**Example 1: 查询身份提供商列表**
+**Example 1: Querying Identity Provider List**
 
-查询身份提供商列表
+Querying identity provider list
 
 Input: 
 
@@ -39,7 +39,7 @@ Output:
             },
             {
                 "Name": "api-test",
-                "Description": "API测试",
+                "Description": "API test",
                 "CreateTime": "2018-10-30 11:40:19",
                 "ModifyTime": "2018-10-30 11:40:19"
             },

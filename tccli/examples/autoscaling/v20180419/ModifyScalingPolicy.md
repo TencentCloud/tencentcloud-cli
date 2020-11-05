@@ -1,4 +1,4 @@
-**Example 1: 修改告警触发策略**
+**Example 1: Modifying an alarm trigger policy**
 
 
 

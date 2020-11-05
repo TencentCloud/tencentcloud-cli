@@ -1,4 +1,4 @@
-**Example 1: 修改伸缩组期望实例数**
+**Example 1: Modifying the desired capacity of a scaling group**
 
 
 

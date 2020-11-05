@@ -1,4 +1,4 @@
-**Example 1: 修改密码**
+**Example 1: Changing password**
 
 
 

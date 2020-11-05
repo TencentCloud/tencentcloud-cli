@@ -1,6 +1,6 @@
-**Example 1: 获取异地登录事件**
+**Example 1: Getting unusual login location events**
 
-本接口（DescribeNonlocalLoginPlaces）用于获取异地登录事件。
+This example shows you how to get unusual login location events.
 
 Input: 
 

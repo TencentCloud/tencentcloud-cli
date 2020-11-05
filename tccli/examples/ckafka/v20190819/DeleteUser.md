@@ -1,4 +1,4 @@
-**Example 1: 删除用户**
+**Example 1: Deleting user**
 
 
 

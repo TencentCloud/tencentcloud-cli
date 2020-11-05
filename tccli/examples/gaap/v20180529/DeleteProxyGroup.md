@@ -1,4 +1,4 @@
-**Example 1: 删除通道组**
+**Example 1: Deleting a Connection Group**
 
 
 
@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli gaap DeleteProxyGroup --cli-unfold-argument  \
-    --GroupId lg-b7h4d02f\
-    --Force 0
+    --GroupId lg-b7h4d02f
 ```
 
 Output: 

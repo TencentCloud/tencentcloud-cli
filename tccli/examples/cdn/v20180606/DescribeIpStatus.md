@@ -1,4 +1,4 @@
-**Example 1: 查询域名节点信息**
+**Example 1: Querying domain name node information**
 
 
 
@@ -17,9 +17,9 @@ Output:
         "Ips": [
             {
                 "Ip": "1.1.1.1",
-                "District": "广东",
-                "Isp": "电信",
-                "City": "深圳",
+                "District": "Guangdong",
+                "Isp": "China Telecom",
+                "City": "Shenzhen",
                 "Status": "online"
             }
         ]

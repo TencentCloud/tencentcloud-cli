@@ -1,6 +1,6 @@
-**Example 1: 添加信任**
+**Example 1: Trusting malicious request**
 
-将恶意请求记录添加信任
+This example shows you how to trusts a malicious request.
 
 Input: 
 

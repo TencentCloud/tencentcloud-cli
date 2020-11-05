@@ -1,6 +1,6 @@
-**Example 1: 查询镜像配额**
+**Example 1: Querying image quota**
 
-用户需要知道自己账户一共可以持有多少镜像。
+This example shows you how to query your image quota.
 
 Input: 
 

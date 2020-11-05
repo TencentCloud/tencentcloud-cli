@@ -1,4 +1,4 @@
-**Example 1: 获取基础告警策略条件**
+**Example 1: Getting basic alarm policy conditions**
 
 
 
@@ -84,11 +84,11 @@ Output:
                             }
                         },
                         "MetricId": 1837,
-                        "MetricShowName": "服务器端口异常数",
-                        "MetricUnit": "个"
+                        "MetricShowName": "Number of server ports with exceptions",
+                        "MetricUnit": "Piece"
                     }
                 ],
-                "Name": "负载均衡-服务器端口(其他)-监听器维度",
+                "Name": "Cloud Load Balancer-Server port (others)-Listener level",
                 "PolicyViewName": "LB_RS_PORT_STATUS",
                 "SortId": 500,
                 "SupportDefault": false,

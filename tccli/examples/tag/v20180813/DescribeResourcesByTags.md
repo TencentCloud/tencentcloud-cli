@@ -1,4 +1,4 @@
-**Example 1: 通过标签查询资源列表**
+**Example 1: Querying resource list by tag**
 
 
 
@@ -25,7 +25,7 @@ Output:
                 "ResourceRegion": "ap-guangzhou",
                 "ServiceType": "cvm",
                 "ResourcePrefix": "instance",
-                "ResourceId": "ins-1234",
+                "ResourceId": "ins-asdfsadf",
                 "Tags": [
                     {
                         "TagKey": "key1",

@@ -1,4 +1,4 @@
-**Example 1: 修改数据库备注**
+**Example 1: Modifying database remarks**
 
 
 
@@ -8,7 +8,7 @@ Input:
 tccli sqlserver ModifyDBRemark --cli-unfold-argument  \
     --InstanceId mssql-njj2mtpl\
     --DBRemarks.0.Name db_test\
-    --DBRemarks.0.Remark 测试数据库
+    --DBRemarks.0.Remark 'Test database'
 ```
 
 Output: 

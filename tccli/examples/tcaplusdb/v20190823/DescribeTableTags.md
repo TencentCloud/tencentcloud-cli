@@ -1,6 +1,6 @@
-**Example 1: 获取表格标签**
+**Example 1: Obtaining table tags**
 
-获取表格标签
+This example shows you how to obtain table tags.
 
 Input: 
 

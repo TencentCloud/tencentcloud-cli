@@ -1,4 +1,4 @@
-**Example 1: 获取凭据明文信息**
+**Example 1: Obtaining the plaintext of a Secret**
 
 
 

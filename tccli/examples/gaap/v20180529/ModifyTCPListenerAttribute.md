@@ -1,6 +1,6 @@
-**Example 1: 修改TCP监听器配置**
+**Example 1: Modifying the TCP Listener Configuration**
 
-修改TCP监听器配置
+Modify the TCP listener configuration.
 
 Input: 
 

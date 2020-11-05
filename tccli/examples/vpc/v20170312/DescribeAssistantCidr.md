@@ -1,4 +1,4 @@
-**Example 1: 查询辅助CIDR列表**
+**Example 1: Queries a list of secondary CIDR blocks**
 
 
 

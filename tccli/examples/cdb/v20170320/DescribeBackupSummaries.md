@@ -1,4 +1,4 @@
-**Example 1: 查询备份实时统计**
+**Example 1: Querying real-time backup statistics**
 
 
 

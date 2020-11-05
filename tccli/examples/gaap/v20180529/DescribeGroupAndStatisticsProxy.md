@@ -1,6 +1,6 @@
-**Example 1: 查询统计通道组和通道信息**
+**Example 1: Querying the Information of Connections and Connection Groups from Which the Statistics Can Be Derived**
 
-查询统计通道组和通道信息
+Query the information of connections and connection groups from which the statistics can be derived.
 
 Input: 
 

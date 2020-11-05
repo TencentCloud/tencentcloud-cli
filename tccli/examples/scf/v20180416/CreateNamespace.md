@@ -1,4 +1,4 @@
-**Example 1: 创建命名空间。**
+**Example 1: Creating a Namespace**
 
 
 

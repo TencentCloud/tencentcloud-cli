@@ -1,6 +1,6 @@
-**Example 1: 查询PAI实例**
+**Example 1: Querying public address instances**
 
-通过PAI实例ID查询
+This example shows you how to query public address instances by IDs.
 
 Input: 
 

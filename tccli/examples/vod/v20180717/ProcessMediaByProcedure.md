@@ -1,6 +1,6 @@
-**Example 1: 以任务流模板名的方式发起任务**
+**Example 1: Initiating a task with task flow template name**
 
-对 fileId 为 5285485487985271487 的发起任务，使用的任务流模板名为 TranscodeAndSnapshot。
+This example shows you how to initiate a task with the task flow template named `TranscodeAndSnapshot` for `fileId` 5285485487985271487.
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: 发送自定义消息告警**
+**Example 1: Sending custom alarm notifications**
 
-发送自定义消息告警
+This example shows you how to send custom alarm notifications.
 
 Input: 
 

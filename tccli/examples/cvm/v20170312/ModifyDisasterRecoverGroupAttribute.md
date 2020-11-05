@@ -1,13 +1,13 @@
-**Example 1: 修改分散置放群组属性**
+**Example 1: Modifying spread placement group attributes**
 
-修改分散置放群组属性
+This example shows you how to modify the attributes of a spread placement group.
 
 Input: 
 
 ```
 tccli cvm ModifyDisasterRecoverGroupAttribute --cli-unfold-argument  \
     --DisasterRecoverGroupId ps-58l1hu01\
-    --Name 物理机容灾组1
+    --Name 'Physical machine disaster recovery group 1'
 ```
 
 Output: 

@@ -1,4 +1,4 @@
-**Example 1: 查询API详情**
+**Example 1: Querying API details**
 
 
 

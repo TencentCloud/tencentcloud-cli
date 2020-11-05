@@ -1,4 +1,4 @@
-**Example 1: 查询实例的可设置参数列表**
+**Example 1: Querying configurable instance parameter list**
 
 
 

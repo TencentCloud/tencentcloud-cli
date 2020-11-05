@@ -1,6 +1,6 @@
-**Example 1: 获取专业版周报列表**
+**Example 1: Getting weekly CWP Pro report list**
 
-获取专业版周报列表
+This example shows you how to get the weekly CWP Pro report list.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 解析直播流事件通知内容**
+**Example 1: Parsing a live stream event notification**
 
 
 

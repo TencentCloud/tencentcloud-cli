@@ -1,4 +1,4 @@
-**Example 1: 绑定一个安全组至多个负载均衡**
+**Example 1: Binding one security group to multiple CLB instances**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 为云数据库实例创建访问账号**
+**Example 1: Creating TencentDB instance access account**
 
 
 
@@ -10,7 +10,7 @@ tccli mariadb CreateAccount --cli-unfold-argument  \
     --UserName testuser1\
     --Host 172.17.%\
     --Password 1234qweri#\
-    --Description 测试帐号
+    --Description 'Test account'
 ```
 
 Output: 

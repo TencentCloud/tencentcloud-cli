@@ -1,4 +1,4 @@
-**Example 1: 查询启动配置和伸缩组的限制**
+**Example 1: Querying the limits on launch configurations and scaling groups**
 
 
 

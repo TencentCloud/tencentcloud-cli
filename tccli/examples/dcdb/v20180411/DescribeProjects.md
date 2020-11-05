@@ -1,4 +1,4 @@
-**Example 1: 拉取账户所拥有的项目**
+**Example 1: Pulling the projects under an account**
 
 
 
@@ -16,9 +16,9 @@ Output:
                 "AppId": 0,
                 "CreateTime": "0000-00-00 00:00:00",
                 "CreatorUin": 0,
-                "Info": "默认项目",
+                "Info": "Default project",
                 "IsDefault": 1,
-                "Name": "默认项目",
+                "Name": "Default project",
                 "OwnerUin": 0,
                 "ProjectId": 0,
                 "SrcAppId": 0,

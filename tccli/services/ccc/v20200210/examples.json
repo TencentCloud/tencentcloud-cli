@@ -8,11 +8,35 @@
         "title": "创建 SDK 登录 Token"
       }
     ],
+    "CreateStaff": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=CreateStaff\n&SdkAppId=1400000000\n&Staffs.0.Phone=联系电话\n&Staffs.0.Mail=联系人邮箱\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\"\r\n    }\r\n}",
+        "title": "创建客服示例"
+      }
+    ],
+    "DescribeChatMessages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatMessages\n<公共请求参数>\n\n{\n    \"CdrId\": \"xx\", \n    \"InstanceId\": 0\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\r\n        \"TotalCount\": 0,\r\n        \"Messages\": []\r\n    }\r\n}",
+        "title": "查询聊天记录示例"
+      }
+    ],
+    "DescribeIMCdrs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIMCdrs\n<公共请求参数>\n\n{\n    \"InstanceId\": 12, \n    \"StartTimestamp\": 1603877878,\n    \"EndTimestamp\": 1603877879\n}",
+        "output": "{\r\n\"Response\": {\r\n    \"IMCdrs\": [\r\n    ],\r\n    \"TotalCount\": 0,\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "title": "查询在线客服记录示例"
+      }
+    ],
     "DescribeTelCdr": [
       {
         "document": "",
-        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeTelCdr\n&InstanceId=11\n&StartTimeStamp=1590547606\n&EndTimeStamp=1590147606\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\r\n        \"TotalCount\": 2,\r\n        \"TelCdrs\": [\r\n            { \"Caller\": \"12345678901\", \"Callee\":\"23456789011\",\r\n              \"Time\": 1590547606, \"Direction\": 0, \"Duration\": 60,\r\n              \"RecordURL\":\"http://recorder-10018504.cos.ap-shanghai.myqcloud.com/def/month12/000-890990948-12364-58b657a6c5dd4c28b4f033b56716f686-000-157863356.mp3\", \"EndStatus\" : 1, \"SkillGroup\":\"test\",\r\n              \"SeatUser\": { \"Name\": \"zhangsan\", \"Phone\" : \"12321233455\" }\r\n            },\r\n            { \"Caller\": \"12345678902\", \"Callee\":\"23456789011\",\r\n              \"Time\": 1590547630, \"Direction\": 0, \"Duration\": 62,\r\n              \"RecordURL\":\"http://recorder-10018504.cos.ap-shanghai.myqcloud.com/def/month12/000-890990948-12364-58b657a6c5dd4c28b4f033b56716f686-000-157863357.mp3\", \"EndStatus\" : 1, \"SkillGroup\":\"test\",\r\n              \"SeatUser\": { \"Name\": \"wangwu\", \"Phone\" : \"12321233456\" }\r\n            }\r\n        ]\r\n    }\r\n}",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeTelCdr\n&SdkAppId=1400000000\n&StartTimeStamp=1590547606\n&EndTimeStamp=1590147606\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\r\n        \"TotalCount\": 2,\r\n        \"TelCdrs\": [\r\n            { \"Caller\": \"12345678901\", \"Callee\":\"23456789011\",\r\n              \"Time\": 1590547606, \"Direction\": 0, \"Duration\": 60,\r\n              \"RecordURL\":\"http://recorder-10018504.cos.ap-shanghai.myqcloud.com/def/month12/000-890990948-12364-58b657a6c5dd4c28b4f033b56716f686-000-157863356.mp3\", \"EndStatus\" : 1, \"SkillGroup\":\"test\",\r\n              \"SeatUser\": { \"Name\": \"zhangsan\", \"Phone\" : \"12321233455\" },\r\n              \"CallerLocation\": \"广东深圳\"\r\n            },\r\n\r\n            { \"Caller\": \"12345678902\", \"Callee\":\"23456789011\",\r\n              \"Time\": 1590547630, \"Direction\": 0, \"Duration\": 62,\r\n              \"RecordURL\":\"http://recorder-10018504.cos.ap-shanghai.myqcloud.com/def/month12/000-890990948-12364-58b657a6c5dd4c28b4f033b56716f686-000-157863357.mp3\", \"EndStatus\" : 1, \"SkillGroup\":\"test\",\r\n              \"SeatUser\": { \"Name\": \"wangwu\", \"Phone\" : \"12321233456\" },\r\n              \"CallerLocation\": \"广东深圳\"\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "获取电话话单示例"
       }
     ]

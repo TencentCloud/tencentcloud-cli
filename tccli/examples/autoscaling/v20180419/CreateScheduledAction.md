@@ -1,6 +1,6 @@
-**Example 1: 创建单次执行的定时任务**
+**Example 1: Creating a single-run scheduled action**
 
-创建定时任务，在指定时间（北京时间2018年8月28日23点）调整伸缩组的最大实例数、最小实例数和期望实例数至 10、4、6。
+This example shows you how to create a scheduled action to adjust the maximum, minimum, and desired capacity of the scaling group to 10, 4, and 6 respectively at 23:00, August 28, 2018 (UTC+8).
 
 Input: 
 
@@ -24,9 +24,9 @@ Output:
 }
 ```
 
-**Example 2: 创建重复执行的定时任务**
+**Example 2: Creating a recurring scheduled action**
 
-创建定时任务，从北京时间2018年8月28日开始，每天 23:00 调整伸缩组的最大实例数、最小实例数和期望实例数至 7、2、3，在北京时间2019年1月1日 00:00 后结束。
+This example shows you how to create a scheduled action to adjust the maximum, minimum, and desired capacity of a scaling group to 7, 2, and 3 respectively at 23:00 every day starting from August 28, 2018 and ending at 00:00, January 1, 2019 (UTC+8).
 
 Input: 
 

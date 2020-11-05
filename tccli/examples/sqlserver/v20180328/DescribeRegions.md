@@ -1,4 +1,4 @@
-**Example 1: 查询所有地域**
+**Example 1: Querying all regions**
 
 
 
@@ -16,55 +16,55 @@ Output:
         "RegionSet": [
             {
                 "Region": "ap-hongkong",
-                "RegionName": "中国香港",
+                "RegionName": "Hong Kong (China)",
                 "RegionId": 5,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-shanghai-fsi",
-                "RegionName": "上海金融",
+                "RegionName": "Shanghai Finance",
                 "RegionId": 7,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-shantou",
-                "RegionName": "汕头",
+                "RegionName": "Shantou",
                 "RegionId": 2,
                 "RegionState": "UNAVAILABLE"
             },
             {
                 "Region": "ap-tianjin",
-                "RegionName": "天津",
+                "RegionName": "Tianjin",
                 "RegionId": 3,
                 "RegionState": "UNAVAILABLE"
             },
             {
                 "Region": "na-toronto",
-                "RegionName": "北美",
+                "RegionName": "North America",
                 "RegionId": 6,
                 "RegionState": "UNAVAILABLE"
             },
             {
                 "Region": "ap-beijing",
-                "RegionName": "北京",
+                "RegionName": "Beijing",
                 "RegionId": 8,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-shenzhen-fsi",
-                "RegionName": "深圳金融",
+                "RegionName": "Shenzhen Finance",
                 "RegionId": 11,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-guangzhou",
-                "RegionName": "广州",
+                "RegionName": "Guangzhou",
                 "RegionId": 1,
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-shanghai",
-                "RegionName": "上海",
+                "RegionName": "Shanghai",
                 "RegionId": 4,
                 "RegionState": "AVAILABLE"
             }

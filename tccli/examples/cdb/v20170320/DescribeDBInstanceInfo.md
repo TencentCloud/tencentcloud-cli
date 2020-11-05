@@ -1,4 +1,4 @@
-**Example 1: 获取实例基本信息**
+**Example 1: Getting the basic information of instance**
 
 
 

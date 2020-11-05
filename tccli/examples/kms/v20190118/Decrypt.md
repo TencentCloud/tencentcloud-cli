@@ -1,6 +1,6 @@
-**Example 1: 解密接口示例**
+**Example 1: Decrypting**
 
-用于对密文解密
+This example shows you how to decrypt the ciphertext.
 
 Input: 
 

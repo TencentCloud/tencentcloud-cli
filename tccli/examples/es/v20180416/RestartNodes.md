@@ -1,4 +1,4 @@
-**Example 1: 重启集群节点**
+**Example 1: Restarting cluster nodes**
 
 
 

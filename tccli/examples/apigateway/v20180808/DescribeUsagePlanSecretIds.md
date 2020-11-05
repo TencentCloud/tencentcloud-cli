@@ -1,4 +1,4 @@
-**Example 1: 查询使用计划绑定的密钥**
+**Example 1: Querying key bound to usage plan**
 
 
 

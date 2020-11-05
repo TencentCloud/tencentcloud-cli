@@ -1,4 +1,4 @@
-**Example 1: 开启通道**
+**Example 1: Enabling a Connection**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 查询标签键**
+**Example 1: Querying tag keys**
 
 
 
@@ -18,12 +18,12 @@ Output:
             "test2",
             "test1",
             "0",
-            "字符串",
+            "string",
             "test",
             "abcbbbb",
             "abcaaaaa",
             "abc",
-            "测试"
+            "test"
         ],
         "RequestId": "cec4f865-bc87-4858-994e-80771644094d"
     }

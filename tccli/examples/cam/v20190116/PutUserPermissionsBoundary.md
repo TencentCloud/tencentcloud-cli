@@ -1,4 +1,4 @@
-**Example 1: 设置用户权限边界**
+**Example 1: Setting user permission boundary**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 查询某个地域某个可用区的售卖规格信息**
+**Example 1: Querying purchasable specification information in a specified AZ of a specified region**
 
 
 

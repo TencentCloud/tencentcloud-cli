@@ -1,4 +1,4 @@
-**Example 1: 开启安全策略**
+**Example 1: Enabling a Security Policy**
 
 
 

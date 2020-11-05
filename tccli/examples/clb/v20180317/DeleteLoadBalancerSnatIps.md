@@ -1,4 +1,4 @@
-**Example 1: 删除snatip**
+**Example 1: Deleting SNAT IP**
 
 
 

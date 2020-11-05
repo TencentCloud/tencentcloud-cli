@@ -1,4 +1,4 @@
-**Example 1: 获取操作日志**
+**Example 1: Getting operation logs**
 
 
 

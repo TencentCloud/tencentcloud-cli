@@ -1,6 +1,6 @@
-**Example 1: 获取端口列表**
+**Example 1: Getting port list**
 
-获取端口列表
+This example shows you how to get the port list.
 
 Input: 
 

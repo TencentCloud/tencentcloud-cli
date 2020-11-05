@@ -1,6 +1,6 @@
-**Example 1: 获取帐号变更历史列表**
+**Example 1: Getting account change history list**
 
-获取帐号变更历史列表
+This example shows you how to get the account change history list.
 
 Input: 
 

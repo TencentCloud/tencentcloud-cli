@@ -1,4 +1,4 @@
-**Example 1: 获取CC攻击事件列表**
+**Example 1: Getting CC attack event list**
 
 
 

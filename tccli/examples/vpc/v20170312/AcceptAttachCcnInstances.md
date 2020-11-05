@@ -1,4 +1,4 @@
-**Example 1: 云联网接受关联实例**
+**Example 1: Accepting instance association with a CCN**
 
 
 

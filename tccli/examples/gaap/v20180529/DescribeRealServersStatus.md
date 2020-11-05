@@ -1,6 +1,6 @@
-**Example 1: 查询源站绑定状态**
+**Example 1: Querying the Binding Status of the Origin Server**
 
-查询源站绑定状态
+Query the binding status of the origin server.
 
 Input: 
 

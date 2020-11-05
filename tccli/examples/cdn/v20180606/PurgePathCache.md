@@ -1,4 +1,4 @@
-**Example 1: 提交目录刷新任务**
+**Example 1: Submitting a directory purge task**
 
 
 

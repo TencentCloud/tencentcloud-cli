@@ -1,4 +1,4 @@
-**Example 1: 销毁按量计费的云数据库实例**
+**Example 1: Terminating a pay-as-you-go TencentDB instance**
 
 
 

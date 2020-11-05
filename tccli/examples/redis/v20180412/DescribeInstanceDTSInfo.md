@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
 
 
@@ -39,7 +39,7 @@ Output:
             "ZoneId": 100002
         },
         "Status": 10,
-        "StatusDesc": "已失败"
+        "StatusDesc": "Failed"
     }
 }
 ```

@@ -1,6 +1,6 @@
-**Example 1: 表格按主键回档**
+**Example 1: Rolling back table by primary key**
 
-表格按主键回档
+This example shows you how to roll back a table by the primary key.
 
 Input: 
 

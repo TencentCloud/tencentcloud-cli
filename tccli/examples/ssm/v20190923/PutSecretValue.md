@@ -1,4 +1,4 @@
-**Example 1: 增加新版本凭据**
+**Example 1: Adding a new Secret version**
 
 
 

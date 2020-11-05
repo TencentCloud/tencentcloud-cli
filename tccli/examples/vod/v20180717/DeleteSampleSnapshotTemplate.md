@@ -1,4 +1,4 @@
-**Example 1: 删除采样截图模板**
+**Example 1: Deleting a sampled screencapturing template**
 
 
 

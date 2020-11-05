@@ -1,4 +1,4 @@
-**Example 1: 按ID过滤查询CCN列表**
+**Example 1: Querying the CCN list by ID**
 
 
 
@@ -37,7 +37,7 @@ Output:
 }
 ```
 
-**Example 2: 按名称过滤查询CCN列表**
+**Example 2: Querying the CCN list by name**
 
 
 
@@ -93,9 +93,9 @@ Output:
 }
 ```
 
-**Example 3: 查询绑定了标签的CCN列表**
+**Example 3: Querying the list of CCNs bound to tags**
 
-查询绑定了标签键值对（env:test）的ccn。
+Query the CCNs bound to the tag key-value pair (env:test).
 
 Input: 
 

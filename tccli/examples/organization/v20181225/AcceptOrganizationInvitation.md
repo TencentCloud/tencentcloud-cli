@@ -1,4 +1,4 @@
-**Example 1: 接受企业组织邀请**
+**Example 1: Accepting an invitation to an organization**
 
 
 

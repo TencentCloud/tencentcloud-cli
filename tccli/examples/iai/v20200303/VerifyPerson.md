@@ -1,4 +1,4 @@
-**Example 1: 人脸验证接口**
+**Example 1: Verifying face**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 示例1 查询VPN网关来访IP流控带宽**
+**Example 1: Example 1: Querying QoS bandwidth limit of inbound IP flow in a VPN gateway**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 删除模板 ID 为 30 的视频内容识别模板**
+**Example 1: Deleting the video content recognition template whose template ID is 30**
 
-删除用户自定义视频内容识别模板。
+This example shows you how to delete a custom video content recognition template.
 
 Input: 
 

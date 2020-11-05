@@ -1,6 +1,6 @@
-**Example 1: 查询本用户是否在白名单中**
+**Example 1: Querying whether the current user is in the whitelist**
 
-查询本用户是否在白名单中
+Querying whether the current user is in the whitelist
 
 Input: 
 

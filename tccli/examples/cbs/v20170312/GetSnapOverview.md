@@ -1,4 +1,4 @@
-**Example 1: 查询用户的快照概览信息**
+**Example 1: Querying the snapshot overview information of the current user**
 
 
 

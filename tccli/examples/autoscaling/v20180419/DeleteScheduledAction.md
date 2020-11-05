@@ -1,4 +1,4 @@
-**Example 1: 删除定时任务**
+**Example 1: Deleting a scheduled action**
 
 
 

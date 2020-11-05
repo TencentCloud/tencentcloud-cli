@@ -1,4 +1,4 @@
-**Example 1: 获取高防IP可添加的最多7层规则数量**
+**Example 1: Getting the maximum number of layer-7 rules that can be added to an Anti-DDoS Advanced instance**
 
 
 

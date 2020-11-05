@@ -1,4 +1,4 @@
-**Example 1: 设置自动续费**
+**Example 1: Setting auto-renewal**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 修改专业版续费标识**
+**Example 1: Modifying the renewal flag of CWP Pro**
 
-修改专业版续费标识
+This example shows you how to modify the renewal flag of CWP Pro.
 
 Input: 
 

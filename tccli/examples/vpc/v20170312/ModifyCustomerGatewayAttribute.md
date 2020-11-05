@@ -1,4 +1,4 @@
-**Example 1: 修改对端网关**
+**Example 1: Modifying a customer gateway**
 
 
 

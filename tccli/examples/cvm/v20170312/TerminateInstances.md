@@ -1,4 +1,4 @@
-**Example 1: 销毁指定ID的实例**
+**Example 1: Terminating instances with the specific IDs**
 
 
 

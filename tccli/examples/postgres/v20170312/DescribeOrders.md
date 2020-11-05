@@ -1,4 +1,4 @@
-**Example 1: 获取订单信息**
+**Example 1: Getting order information**
 
 
 

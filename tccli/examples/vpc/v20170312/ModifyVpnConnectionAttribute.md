@@ -1,6 +1,6 @@
-**Example 1: 修改VPN通道**
+**Example 1: Modifying a VPN tunnel**
 
-修改VPN通道
+This example shows you how to modify a VPN tunnel.
 
 Input: 
 

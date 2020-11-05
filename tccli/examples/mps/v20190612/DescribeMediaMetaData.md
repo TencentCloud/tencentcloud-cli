@@ -1,4 +1,4 @@
-**Example 1: 获取视频信息**
+**Example 1: Getting video information**
 
 
 

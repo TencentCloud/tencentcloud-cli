@@ -1,4 +1,4 @@
-**Example 1: 查询数据库慢日志统计信息**
+**Example 1: Querying the slow log statistics of a database**
 
 
 

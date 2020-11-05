@@ -1,4 +1,4 @@
-**Example 1: 删除专线网关云联网路由**
+**Example 1: Deleting CCN routes of a Direct Connect gateway**
 
 
 

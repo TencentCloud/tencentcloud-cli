@@ -1,4 +1,4 @@
-**Example 1: 修改资源关联的标签值**
+**Example 1: Modifying resource tag values**
 
 
 

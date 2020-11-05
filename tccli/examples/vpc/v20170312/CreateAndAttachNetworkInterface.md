@@ -1,4 +1,4 @@
-**Example 1: 创建弹性网卡并绑定云服务器**
+**Example 1: Creating an ENI and binding it to a CVM**
 
 
 

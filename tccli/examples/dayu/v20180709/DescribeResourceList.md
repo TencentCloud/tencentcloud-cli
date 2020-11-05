@@ -1,4 +1,4 @@
-**Example 1: 获取资源列表**
+**Example 1: Getting resource list.**
 
 
 
@@ -83,7 +83,7 @@ Output:
                     },
                     {
                         "Key": "Name",
-                        "Value": "多少"
+                        "Value": "Quantity"
                     },
                     {
                         "Key": "OriginRegion",

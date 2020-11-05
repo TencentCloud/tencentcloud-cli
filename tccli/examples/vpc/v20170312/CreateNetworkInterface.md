@@ -1,4 +1,4 @@
-**Example 1: 创建弹性网卡**
+**Example 1: Creating an ENI**
 
 
 
@@ -33,7 +33,7 @@ Output:
             "PrivateIpAddressSet": [
                 {
                     "PrivateIpAddress": "172.16.64.13",
-                    "Primary": true,
+                    "Primary": true
                     "AddressId": "",
                     "PublicIpAddress": "",
                     "Description": "",

@@ -1,4 +1,4 @@
-**Example 1: 查询实时语音和离线语音2019-08-01至2019-08-03的用量统计**
+**Example 1: Querying the usage statistics of voice chat and voice messaging and speech-to-text between August 1 and August 3, 2019**
 
 
 

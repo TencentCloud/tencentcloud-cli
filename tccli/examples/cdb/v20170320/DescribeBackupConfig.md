@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库备份配置信息**
+**Example 1: Querying the configuration information of TencentDB instance backup**
 
 
 

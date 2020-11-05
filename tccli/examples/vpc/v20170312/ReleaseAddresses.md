@@ -1,4 +1,4 @@
-**Example 1: 释放弹性公网IP**
+**Example 1: Releasing the EIP**
 
 
 

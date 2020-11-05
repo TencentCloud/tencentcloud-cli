@@ -1,4 +1,4 @@
-**Example 1: 创建安全组**
+**Example 1: Creats a security group**
 
 
 
@@ -27,7 +27,7 @@ Output:
 }
 ```
 
-**Example 2: 创建安全组和安全组规则**
+**Example 2: Creates security groups and their policies**
 
 
 

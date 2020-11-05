@@ -1,4 +1,4 @@
-**Example 1: 解绑规则与目标组的关联关系**
+**Example 1: Unbinding rules from target groups**
 
 
 

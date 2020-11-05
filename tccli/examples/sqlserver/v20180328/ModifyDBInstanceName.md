@@ -1,4 +1,4 @@
-**Example 1: 将实例mssql-njj2mtpl名字修改为testModifyInstanceName**
+**Example 1: Renaming the instance mssql-njj2mtpl to testModifyInstanceName**
 
 
 

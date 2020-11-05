@@ -1,4 +1,4 @@
-**Example 1: 关闭通道**
+**Example 1: Disabling a Connection**
 
 
 

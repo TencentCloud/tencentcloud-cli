@@ -1,6 +1,6 @@
-**Example 1: 修改表备注信息**
+**Example 1: Modifying table remarks**
 
-修改表备注信息
+This example shows you how to modify table remarks.
 
 Input: 
 
@@ -10,7 +10,7 @@ tccli tcaplusdb ModifyTableMemos --cli-unfold-argument  \
     --TableMemos.0.TableInstanceId tcaplus-1f224454\
     --TableMemos.0.TableGroupId 101\
     --TableMemos.0.TableName tb_example\
-    --TableMemos.0.Memo pb测试表1xx
+    --TableMemos.0.Memo 'pb test table 1xx'
 ```
 
 Output: 

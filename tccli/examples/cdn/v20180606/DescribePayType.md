@@ -1,4 +1,4 @@
-**Example 1: 计费方式查询**
+**Example 1: Querying your billing method**
 
 
 

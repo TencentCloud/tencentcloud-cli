@@ -6,6 +6,24 @@
       "name": "创建 SDK 登录 Token",
       "output": "CreateSDKLoginTokenResponse"
     },
+    "CreateStaff": {
+      "document": "创建客服账号。",
+      "input": "CreateStaffRequest",
+      "name": "创建客服账号",
+      "output": "CreateStaffResponse"
+    },
+    "DescribeChatMessages": {
+      "document": "包括具体聊天内容",
+      "input": "DescribeChatMessagesRequest",
+      "name": "查询服务的聊天记录",
+      "output": "DescribeChatMessagesResponse"
+    },
+    "DescribeIMCdrs": {
+      "document": "包括全媒体和文本两种类型",
+      "input": "DescribeIMCdrsRequest",
+      "name": "查询在线客服记录",
+      "output": "DescribeIMCdrsResponse"
+    },
     "DescribeTelCdr": {
       "document": "获取电话服务记录与录音",
       "input": "DescribeTelCdrRequest",
@@ -68,17 +86,211 @@
       ],
       "type": "object"
     },
-    "DescribeTelCdrRequest": {
-      "document": "DescribeTelCdr请求参数结构体",
+    "CreateStaffRequest": {
+      "document": "CreateStaff请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "应用ID",
           "member": "int64",
-          "name": "InstanceId",
+          "name": "SdkAppId",
           "required": true,
           "type": "int"
         },
+        {
+          "default": "",
+          "document": "客服信息，个数不超过 10",
+          "member": "SeatUserInfo",
+          "name": "Staffs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStaffResponse": {
+      "document": "CreateStaff返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChatMessagesRequest": {
+      "document": "DescribeChatMessages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务记录ID",
+          "member": "string",
+          "name": "CdrId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数 最大为100默认20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录偏移 默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "1为从早到晚，2为从晚到早，默认为2",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChatMessagesResponse": {
+      "document": "DescribeChatMessages返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消息列表",
+          "member": "MessageBody",
+          "name": "Messages",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIMCdrsRequest": {
+      "document": "DescribeIMCdrs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "member": "int64",
+          "name": "EndTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数 最大为100默认20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录偏移 默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "1为全媒体，2为文本客服，不填则查询全部",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIMCdrsResponse": {
+      "document": "DescribeIMCdrs返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务记录列表",
+          "member": "IMCdrInfo",
+          "name": "IMCdrs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTelCdrRequest": {
+      "document": "DescribeTelCdr请求参数结构体",
+      "members": [
         {
           "default": "",
           "document": "起始时间戳，Unix 时间戳",
@@ -97,7 +309,7 @@
         },
         {
           "default": "",
-          "document": "返回记录条数",
+          "document": "返回记录条数，上限 100",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -109,6 +321,22 @@
           "member": "int64",
           "name": "Offset",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用ID。",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": false,
           "type": "int"
         }
       ],
@@ -139,6 +367,132 @@
         }
       ],
       "type": "object"
+    },
+    "IMCdrInfo": {
+      "document": "全媒体服务记录信息",
+      "members": [
+        {
+          "default": "",
+          "document": "服务记录ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务时长秒数",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束状态",
+          "member": "int64",
+          "name": "EndStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户昵称",
+          "member": "string",
+          "name": "Nickname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务类型 1为全媒体，2为文本客服",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客服ID",
+          "member": "string",
+          "name": "StaffId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务时间戳",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Message": {
+      "document": "单条消息",
+      "members": [
+        {
+          "default": "",
+          "document": "消息类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MessageBody": {
+      "document": "聊天消息",
+      "members": [
+        {
+          "default": "",
+          "document": "消息时间戳",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发消息的用户ID",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息列表",
+          "member": "Message",
+          "name": "Messages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SeatUserInfo": {
       "document": "坐席用户信息",

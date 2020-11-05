@@ -1,4 +1,4 @@
-**Example 1: 查看计算环境的创建信息**
+**Example 1: Viewing the creation information of the compute environment**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 弹性网卡解绑安全组**
+**Example 1: Detaches a security group from an ENI**
 
 
 

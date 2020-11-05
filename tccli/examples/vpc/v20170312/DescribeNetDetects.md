@@ -1,4 +1,4 @@
-**Example 1: 查询所有网络探测**
+**Example 1: Querying all network detection instances**
 
 
 
@@ -63,7 +63,7 @@ Output:
 }
 ```
 
-**Example 2: 根据ID查询网络探测**
+**Example 2: Querying network detection instances by ID**
 
 
 

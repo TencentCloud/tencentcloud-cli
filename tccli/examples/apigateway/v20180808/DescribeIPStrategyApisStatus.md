@@ -1,4 +1,4 @@
-**Example 1: 查询策略绑定api**
+**Example 1: Querying APIs bound to policy**
 
 
 

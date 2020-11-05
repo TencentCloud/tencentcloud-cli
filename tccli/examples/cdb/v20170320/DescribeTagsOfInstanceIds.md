@@ -1,6 +1,6 @@
-**Example 1: 获取实例标签信息**
+**Example 1: Getting instance tag information**
 
-获取实例标签信息
+This example shows you how to get the tag information of an instance.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 导出七层健康检查配置**
+**Example 1: Exporting layer-7 health check configuration**
 
 
 
@@ -19,6 +19,7 @@ Output:
         "HealthConfig": [
             {
                 "Protocol": "http",
+                "VirtualPort": 80,
                 "Enable": 1,
                 "Interval": 300,
                 "KickNum": 2,
@@ -26,7 +27,7 @@ Output:
                 "Method": "HEAD",
                 "StatusCode": 15,
                 "Url": "/index.php",
-                "Domain": "www.a.com"
+                "Status": 1
             }
         ]
     }

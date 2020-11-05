@@ -1,4 +1,4 @@
-**Example 1: 创建主题IP白名单**
+**Example 1: Creating topic IP whitelist**
 
 
 

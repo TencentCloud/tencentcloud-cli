@@ -1,4 +1,4 @@
-**Example 1: 请求例子**
+**Example 1: Example**
 
 
 
@@ -15,47 +15,47 @@ Output:
         "RegionSet": [
             {
                 "Region": "ap-beijing",
-                "RegionName": "华北地区(北京)",
+                "RegionName": "North China (Beijing)",
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-guangzhou",
-                "RegionName": "华南地区(广州)",
+                "RegionName": "South China (Guangzhou)",
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-hongkong",
-                "RegionName": "港澳台地区(中国香港)",
+                "RegionName": "Hong Kong/Macao/Taiwan (Hong Kong, China)",
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-shanghai",
-                "RegionName": "华东地区(上海)",
+                "RegionName": "East China (Shanghai)",
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-shanghai-fsi",
-                "RegionName": "华东地区(上海金融)",
+                "RegionName": "East China (Shanghai Finance)",
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-shenzhen-fsi",
-                "RegionName": "华南地区(深圳金融)",
+                "RegionName": "South China (Shenzhen Finance)",
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "ap-singapore",
-                "RegionName": "亚太东南(新加坡)",
+                "RegionName": "Southeast Asia (Singapore)",
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "na-siliconvalley",
-                "RegionName": "美国西部(硅谷)",
+                "RegionName": "Western U.S. (Silicon Valley)",
                 "RegionState": "AVAILABLE"
             },
             {
                 "Region": "na-toronto",
-                "RegionName": "北美地区(多伦多)",
+                "RegionName": "North America (Toronto)",
                 "RegionState": "AVAILABLE"
             }
         ],

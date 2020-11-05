@@ -1,4 +1,4 @@
-**Example 1: 安全组批量解绑云资源**
+**Example 1: Unbinding security groups from Tencent Cloud resource in batches**
 
 
 

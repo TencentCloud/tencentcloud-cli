@@ -1,6 +1,6 @@
-**Example 1: 修改密钥对名称**
+**Example 1: Modifying key pair name**
 
-本示例用于修改密钥对名称。
+This example shows you how to modify the key pair name.
 
 Input: 
 
@@ -19,9 +19,9 @@ Output:
 }
 ```
 
-**Example 2: 修改密钥对描述信息**
+**Example 2: Modifying key pair description**
 
-本示例用于修改密钥对描述信息。
+This example shows you how to modify the key pair description.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取消费分组信息**
+**Example 1: Getting consumer group information**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 绑定EIP到实例上**
+**Example 1: Binding an EIP to an instance**
 
 
 

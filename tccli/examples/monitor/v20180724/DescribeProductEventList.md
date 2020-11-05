@@ -1,6 +1,6 @@
-**Example 1: 获取产品事件列表**
+**Example 1: Getting the list of product events**
 
-获取产品事件列表
+This example shows you how to get the list of product events.
 
 Input: 
 
@@ -24,27 +24,27 @@ Output:
                 "Dimensions": [
                     {
                         "Key": "deviceLanIp",
-                        "Name": "内网IP",
+                        "Name": "Private IP",
                         "Value": "172.0.0.1"
                     },
                     {
                         "Key": "deviceWanIp",
-                        "Name": "外网IP",
+                        "Name": "Public IP",
                         "Value": null
                     },
                     {
                         "Key": "uniqVpcId",
-                        "Name": "私有网络ID",
+                        "Name": "VPC ID",
                         "Value": null
                     }
                 ],
-                "EventCName": "机器重启",
+                "EventCName": "Restart",
                 "EventEName": "GuestReboot",
                 "EventId": 43,
                 "EventName": "guest_reboot",
                 "InstanceId": "ins-19708ino",
                 "InstanceName": "qta_test",
-                "ProductCName": "云服务器",
+                "ProductCName": "CVM",
                 "ProductEName": "Cloud Virtual Machine",
                 "ProductName": "cvm",
                 "ProjectId": 0,
@@ -60,27 +60,27 @@ Output:
                 "Dimensions": [
                     {
                         "Key": "deviceLanIp",
-                        "Name": "内网IP",
+                        "Name": "Private IP",
                         "Value": "172.0.0.1"
                     },
                     {
                         "Key": "deviceWanIp",
-                        "Name": "外网IP",
+                        "Name": "Public IP",
                         "Value": null
                     },
                     {
                         "Key": "uniqVpcId",
-                        "Name": "私有网络ID",
+                        "Name": "VPC ID",
                         "Value": null
                     }
                 ],
-                "EventCName": "机器重启",
+                "EventCName": "Restart",
                 "EventEName": "GuestReboot",
                 "EventId": 43,
                 "EventName": "guest_reboot",
                 "InstanceId": "ins-19708ino",
                 "InstanceName": "qta_test",
-                "ProductCName": "云服务器",
+                "ProductCName": "CVM",
                 "ProductEName": "Cloud Virtual Machine",
                 "ProductName": "cvm",
                 "ProjectId": 0,
@@ -96,27 +96,27 @@ Output:
                 "Dimensions": [
                     {
                         "Key": "deviceLanIp",
-                        "Name": "内网IP",
+                        "Name": "Private IP",
                         "Value": "172.0.0.1"
                     },
                     {
                         "Key": "deviceWanIp",
-                        "Name": "外网IP",
+                        "Name": "Public IP",
                         "Value": null
                     },
                     {
                         "Key": "uniqVpcId",
-                        "Name": "私有网络ID",
+                        "Name": "VPC ID",
                         "Value": null
                     }
                 ],
-                "EventCName": "机器重启",
+                "EventCName": "Restart",
                 "EventEName": "GuestReboot",
                 "EventId": 43,
                 "EventName": "guest_reboot",
                 "InstanceId": "ins-19708ino",
                 "InstanceName": "qta_test",
-                "ProductCName": "云服务器",
+                "ProductCName": "CVM",
                 "ProductEName": "Cloud Virtual Machine",
                 "ProductName": "cvm",
                 "ProjectId": 0,
@@ -132,27 +132,27 @@ Output:
                 "Dimensions": [
                     {
                         "Key": "deviceLanIp",
-                        "Name": "内网IP",
+                        "Name": "Private IP",
                         "Value": "172.0.0.1"
                     },
                     {
                         "Key": "deviceWanIp",
-                        "Name": "外网IP",
+                        "Name": "Public IP",
                         "Value": null
                     },
                     {
                         "Key": "uniqVpcId",
-                        "Name": "私有网络ID",
+                        "Name": "VPC ID",
                         "Value": null
                     }
                 ],
-                "EventCName": "机器重启",
+                "EventCName": "Restart",
                 "EventEName": "GuestReboot",
                 "EventId": 43,
                 "EventName": "guest_reboot",
                 "InstanceId": "ins-19708ino",
                 "InstanceName": "qta_test",
-                "ProductCName": "云服务器",
+                "ProductCName": "CVM",
                 "ProductEName": "Cloud Virtual Machine",
                 "ProductName": "cvm",
                 "ProjectId": 0,
@@ -168,27 +168,27 @@ Output:
                 "Dimensions": [
                     {
                         "Key": "deviceLanIp",
-                        "Name": "内网IP",
+                        "Name": "Private IP",
                         "Value": "172.0.0.1"
                     },
                     {
                         "Key": "deviceWanIp",
-                        "Name": "外网IP",
+                        "Name": "Public IP",
                         "Value": null
                     },
                     {
                         "Key": "uniqVpcId",
-                        "Name": "私有网络ID",
+                        "Name": "VPC ID",
                         "Value": null
                     }
                 ],
-                "EventCName": "机器重启",
+                "EventCName": "Restart",
                 "EventEName": "GuestReboot",
                 "EventId": 43,
                 "EventName": "guest_reboot",
                 "InstanceId": "ins-19708ino",
                 "InstanceName": "qta_test",
-                "ProductCName": "云服务器",
+                "ProductCName": "CVM",
                 "ProductEName": "Cloud Virtual Machine",
                 "ProductName": "cvm",
                 "ProjectId": 0,
@@ -204,27 +204,27 @@ Output:
                 "Dimensions": [
                     {
                         "Key": "deviceLanIp",
-                        "Name": "内网IP",
+                        "Name": "Private IP",
                         "Value": "172.0.0.1"
                     },
                     {
                         "Key": "deviceWanIp",
-                        "Name": "外网IP",
+                        "Name": "Public IP",
                         "Value": null
                     },
                     {
                         "Key": "uniqVpcId",
-                        "Name": "私有网络ID",
+                        "Name": "VPC ID",
                         "Value": null
                     }
                 ],
-                "EventCName": "机器重启",
+                "EventCName": "Restart",
                 "EventEName": "GuestReboot",
                 "EventId": 43,
                 "EventName": "guest_reboot",
                 "InstanceId": "ins-19708ino",
                 "InstanceName": "qta_test",
-                "ProductCName": "云服务器",
+                "ProductCName": "CVM",
                 "ProductEName": "Cloud Virtual Machine",
                 "ProductName": "cvm",
                 "ProjectId": 0,

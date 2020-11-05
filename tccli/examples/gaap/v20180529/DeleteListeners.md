@@ -1,6 +1,6 @@
-**Example 1: 删除监听器**
+**Example 1: Deleting a Listener**
 
-删除监听器
+Delete a listener.
 
 Input: 
 

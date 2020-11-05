@@ -1,4 +1,4 @@
-**Example 1: 更新函数配置**
+**Example 1: Updating the Function Configuration**
 
 
 

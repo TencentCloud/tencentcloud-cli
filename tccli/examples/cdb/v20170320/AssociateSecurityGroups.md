@@ -1,4 +1,4 @@
-**Example 1: 安全组批量绑定云资源**
+**Example 1: Binding security groups to Tencent Cloud resource in batches**
 
 
 

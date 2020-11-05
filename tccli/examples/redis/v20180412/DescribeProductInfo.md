@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: Request Sample**
 
 
 
@@ -14,13 +14,13 @@ Output:
         "RegionSet": [
             {
                 "RegionId": "ap-guangzhou",
-                "RegionName": "广州",
+                "RegionName": "Guangzhou",
                 "RegionShortName": "GZ",
-                "Area": "华南地区",
+                "Area": "South China",
                 "ZoneSet": [
                     {
                         "ZoneId": "ap-guangzhou-2",
-                        "ZoneName": "广州二区",
+                        "ZoneName": "Guangzhou Zone 2",
                         "IsSaleout": false,
                         "IsDefault": false,
                         "NetWorkType": [
@@ -30,11 +30,11 @@ Output:
                         "ProductSet": [
                             {
                                 "Type": 7,
-                                "TypeName": "Redis 集群版",
+                                "TypeName": "Redis cluster edition",
                                 "MinBuyNum": 1,
                                 "MaxBuyNum": 10,
                                 "Saleout": false,
-                                "Engine": "社区版Redis",
+                                "Engine": "Redis community edition",
                                 "Version": "Redis 4.0",
                                 "TotalSize": [
                                     "12",
@@ -88,11 +88,11 @@ Output:
                             },
                             {
                                 "Type": 4,
-                                "TypeName": "CKV集群版",
+                                "TypeName": "CKV cluster edition",
                                 "MinBuyNum": 1,
                                 "MaxBuyNum": 10,
                                 "Saleout": false,
-                                "Engine": "腾讯云CKV",
+                                "Engine": "Tencent Cloud CKV",
                                 "Version": "Redis 3.2",
                                 "TotalSize": [
                                     "12",
@@ -154,11 +154,11 @@ Output:
                             },
                             {
                                 "Type": 2,
-                                "TypeName": "Redis 主从版",
+                                "TypeName": "Redis master/slave edition",
                                 "MinBuyNum": 1,
                                 "MaxBuyNum": 10,
                                 "Saleout": false,
-                                "Engine": "社区版Redis",
+                                "Engine": "Redis community edition",
                                 "Version": "Redis 2.8",
                                 "TotalSize": [
                                     "1",
@@ -201,11 +201,11 @@ Output:
                             },
                             {
                                 "Type": 5,
-                                "TypeName": "Redis 单机版",
+                                "TypeName": "Redis standalone edition",
                                 "MinBuyNum": 1,
                                 "MaxBuyNum": 10,
                                 "Saleout": false,
-                                "Engine": "社区版Redis",
+                                "Engine": "Redis community edition",
                                 "Version": "Redis 2.8",
                                 "TotalSize": [
                                     "1",
@@ -246,11 +246,11 @@ Output:
                             },
                             {
                                 "Type": 2,
-                                "TypeName": "Redis 主从版",
+                                "TypeName": "Redis master-slave edition",
                                 "MinBuyNum": 1,
                                 "MaxBuyNum": 10,
                                 "Saleout": false,
-                                "Engine": "社区版Redis",
+                                "Engine": "Redis community edition",
                                 "Version": "Redis 2.8",
                                 "TotalSize": [
                                     "1",
@@ -291,11 +291,11 @@ Output:
                             },
                             {
                                 "Type": 3,
-                                "TypeName": "CKV单机版",
+                                "TypeName": "CKV standalone edition",
                                 "MinBuyNum": 1,
                                 "MaxBuyNum": 10,
                                 "Saleout": false,
-                                "Engine": "腾讯云CKV",
+                                "Engine": "Tencent Cloud CKV",
                                 "Version": "Redis 3.2",
                                 "TotalSize": [
                                     "4",

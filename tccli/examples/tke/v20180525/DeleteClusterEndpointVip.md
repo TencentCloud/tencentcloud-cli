@@ -1,4 +1,4 @@
-**Example 1: 删除托管集群外网访问端口**
+**Example 1: Deleting managed cluster public network access port**
 
 
 

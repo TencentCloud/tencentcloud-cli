@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
 
 
@@ -19,10 +19,10 @@ Output:
         "95PeakBandwidthTime": "2019-02-01 00:00:00",
         "DataInfoList": [
             {
-                "Name": "中东/非洲",
+                "Name": "Middle East/Africa",
                 "Countrys": [
                     {
-                        "Name": "阿联酋",
+                        "Name": "United Arab Emirates",
                         "BandInfoList": [
                             {
                                 "Bandwidth": 6.95,

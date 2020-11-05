@@ -1,4 +1,4 @@
-**Example 1: 隔离云数据库实例**
+**Example 1: Isolating TencentDB instance**
 
 
 

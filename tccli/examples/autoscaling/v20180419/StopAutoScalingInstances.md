@@ -1,4 +1,4 @@
-**Example 1: 按关机不收费模式关闭伸缩组内实例**
+**Example 1: Shutting down instances in the scaling group in the manner of **No Charges When Shut Down****
 
 
 

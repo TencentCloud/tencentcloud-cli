@@ -1,16 +1,16 @@
-**Example 1: 获取临时证书**
+**Example 1: Getting temporary credentials**
 
-授权该临时证书具有以下权限：
+This example shows you how to grant temporary credentials with the following permissions:
 {"version":"2.0","statement":[{"effect":"allow","action":["name/cos:PutObject"],"resource":["qcs::cos:ap-beijing:uid/123456:prefix//123456/bucketA/*"]}]}
 
-注意，因为GET请求需要给所有参数做urlencode，所以下面示例中的Policy参数是做了两次urlencode的结果。
+Note: As the GET request url-encodes all parameters, the `Policy` parameter in the following example has been url-encoded twice.
 
 Input: 
 
 ```
 tccli sts GetFederationToken --cli-unfold-argument  \
     --Name SUN\
-    --Policy %257B%2522version%2522%3A%25222.0%2522%2C%2522statement%2522%3A%255B%257B%2522effect%2522%3A%2522allow%2522%2C%2522action%2522%3A%255B%2522name%2Fcos%3APutObject%2522%255D%2C%2522resource%2522%3A%255B%2522qcs%3A%3Acos%3Aap-beijing%3Auid%2F123456%3Aprefix%2F%2F123456%2FbucketA%2F%2A%2522%255D%257D%255D%257D
+    --Policy %7b%22version%22%3a%222.0%22%2c%22statement%22%3a%5b%7b%22action%22%3a%5b%22name%2fqcisa%3aGetInfoByFields%22%5d%2c%22resource%22%3a%5b%22qcs%3a%3aqcisa%3a%3auin%2f90000000000%3aqcisa%2fbigCustomerDetail%22%2c%22qcs%3a%3aqcisa%3a%3auin%2f90000000000%3aqcisa%2fuserDetail%22%2c%22qcs%3a%3aqcisa%3a%3auin%2f90000000000%3aqcisa%2fauthDetail%22%5d%2c%22effect%22%3a%22allow%22%7d%5d%7d
 ```
 
 Output: 

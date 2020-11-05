@@ -1,4 +1,4 @@
-**Example 1: 查询告警触发策略**
+**Example 1: Querying alarm trigger policies**
 
 
 

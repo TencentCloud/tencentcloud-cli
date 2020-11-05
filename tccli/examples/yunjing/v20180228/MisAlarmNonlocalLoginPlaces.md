@@ -1,6 +1,6 @@
-**Example 1: 误报异地登录**
+**Example 1: Setting usual login location**
 
-本接口{MisAlarmNonlocalLoginPlaces}将设置当前地点为常用登录地。
+This example shows you how to set the current location as the usual login location.
 
 Input: 
 

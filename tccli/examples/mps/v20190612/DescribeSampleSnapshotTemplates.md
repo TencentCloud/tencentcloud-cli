@@ -1,4 +1,4 @@
-**Example 1: 查询采样截图模板列表**
+**Example 1: Querying the list of sampled screencapturing templates**
 
 
 
@@ -18,7 +18,7 @@ Output:
             {
                 "Definition": 10001,
                 "Type": "Custom",
-                "Name": "采样截图模板1",
+                "Name": "Sampled screencapturing template 1",
                 "Comment": "",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",

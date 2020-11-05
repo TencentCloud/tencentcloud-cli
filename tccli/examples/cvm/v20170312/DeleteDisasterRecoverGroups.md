@@ -1,6 +1,6 @@
-**Example 1: 删除分散置放群组**
+**Example 1: Deleting a spread placement group**
 
-删除分散置放群组
+Deletes a spread placement group
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: 修改表格组名称**
+**Example 1: Renaming table group**
 
-修改表格组名称
+This example shows you how to rename a table group.
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli tcaplusdb ModifyTableGroupName --cli-unfold-argument  \
     --ClusterId 6179109757\
     --TableGroupId 1\
-    --TableGroupName tdr测试区1
+    --TableGroupName 'tdr test zone 1'
 ```
 
 Output: 

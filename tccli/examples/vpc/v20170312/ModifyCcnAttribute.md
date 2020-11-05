@@ -1,4 +1,4 @@
-**Example 1: 修改一个CCN的名称和描述**
+**Example 1: Modifying the name and description of a CCN**
 
 
 

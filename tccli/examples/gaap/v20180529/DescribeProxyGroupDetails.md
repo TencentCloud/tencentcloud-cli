@@ -1,4 +1,4 @@
-**Example 1: 查询通道组详情**
+**Example 1: Querying the Connection Group Details**
 
 
 

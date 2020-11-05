@@ -1,4 +1,4 @@
-**Example 1: 查询数据库对象信息**
+**Example 1: Querying the information of database objects**
 
 
 

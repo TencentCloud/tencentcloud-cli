@@ -1,4 +1,4 @@
-**Example 1: 批量修改目标组服务器权重**
+**Example 1: Modifies server weights of target groups in batches**
 
 
 

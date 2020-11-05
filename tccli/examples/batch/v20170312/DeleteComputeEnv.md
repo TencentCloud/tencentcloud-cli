@@ -1,4 +1,4 @@
-**Example 1: 删除计算环境**
+**Example 1: Deleting a Compute Environment**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 初始化新实例**
+**Example 1: Initializing new instance**
 
 
 

@@ -20,8 +20,7 @@ Output:
         "ServiceDesc": "https",
         "OuterSubDomain": "service-0c96l2bo-1251006373.ap-guangzhou.apigateway.myqcloud.com",
         "InnerSubDomain": "",
-        "IpVersion": "IPv4",
-        "CreatedTime": "2020-09-22T00:00:00+00:00",
+        "CreatedTime": "2018-10-30T04:24:19Z",
         "NetTypes": [
             "OUTER"
         ],

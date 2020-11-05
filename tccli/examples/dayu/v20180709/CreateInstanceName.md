@@ -1,4 +1,4 @@
-**Example 1: 资源实例重命名**
+**Example 1: Renaming an instance**
 
 
 
@@ -8,7 +8,7 @@ Input:
 tccli dayu CreateInstanceName --cli-unfold-argument  \
     --Business bgpip\
     --Id bgpip-000000xe\
-    --Name 测试
+    --Name Test
 ```
 
 Output: 

@@ -1,13 +1,13 @@
-**Example 1: 创建支持多项视频内容识别任务的模板**
+**Example 1: Creating a template that supports multiple video content recognition tasks**
 
-创建一个自定义视频内容识别模板，同时开启人脸识别任务，人脸库使用默认库，人脸识别过滤分数为 90 分。
+This example shows you how to create a custom video content recognition template and enable a face recognition task. The default face library is used, and the face recognition filter score is 90.
 
 Input: 
 
 ```
 tccli mps CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 智能识别模板\
-    --Comment 模板2\
+    --Name 'Intelligent recognition template'\
+    --Comment 'Template 2'\
     --FaceConfigure.Switch ON\
     --FaceConfigure.FaceLibrary Default\
     --FaceConfigure.Score 90
@@ -23,16 +23,16 @@ Output:
 }
 ```
 
-**Example 2: 创建支持多项识别任务的模板，同时指定截帧间隔**
+**Example 2: Creating a template that supports multiple recognition tasks and specifies the frame capturing interval**
 
-创建一个自定义视频内容识别模板，同时开启人脸识别任务，人脸库使用默认库及用户自定义库，人脸识别过滤分数为 90 分。
+This example shows you how to create a custom video content recognition template and enable a face recognition task. The default face library and custom library are used, and the face recognition filter score is 90.
 
 Input: 
 
 ```
 tccli mps CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 智能识别模板\
-    --Comment 模板3\
+    --Name 'Intelligent recognition template'\
+    --Comment 'Template 3'\
     --FaceConfigure.Switch ON\
     --FaceConfigure.FaceLibrary All
 ```

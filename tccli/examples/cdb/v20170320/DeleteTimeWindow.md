@@ -1,4 +1,4 @@
-**Example 1: 删除维护时间窗口**
+**Example 1: Deleting maintenance window**
 
 
 

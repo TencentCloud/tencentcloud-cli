@@ -1,6 +1,6 @@
-**Example 1: 枚举死信队列源队列**
+**Example 1: Enumerating the source queues of dead letter queue**
 
-枚举死信队列源队列
+This example shows you how to enumerate the source queues of a dead letter queue.
 
 Input: 
 

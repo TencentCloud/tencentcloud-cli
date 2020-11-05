@@ -1,4 +1,4 @@
-**Example 1: 查询区域可用情况**
+**Example 1: Querying the availability of a region**
 
 
 
@@ -20,7 +20,7 @@ Output:
                     {
                         "Zone": "ap-guangzhou-2",
                         "ZoneId": 100002,
-                        "ZoneCnName": "广州二区",
+                        "ZoneCnName": "Guangzhou Zone 2",
                         "Types": [
                             {
                                 "Type": "SD",
@@ -36,7 +36,7 @@ Output:
                     {
                         "Zone": "ap-guangzhou-3",
                         "ZoneId": 100003,
-                        "ZoneCnName": "广州三区",
+                        "ZoneCnName": "Guangzhou Zone 3",
                         "Types": [
                             {
                                 "Type": "SD",
@@ -52,7 +52,7 @@ Output:
                     {
                         "Zone": "ap-guangzhou-4",
                         "ZoneId": 100004,
-                        "ZoneCnName": "广州四区",
+                        "ZoneCnName": "Guangzhou Zone 4",
                         "Types": [
                             {
                                 "Type": "SD",

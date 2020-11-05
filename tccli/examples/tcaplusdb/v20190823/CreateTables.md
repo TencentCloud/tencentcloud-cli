@@ -1,6 +1,6 @@
-**Example 1: 批量创建表**
+**Example 1: Creating tables in batches**
 
-批量创建表
+This example shows you how to create tables in batches.
 
 Input: 
 

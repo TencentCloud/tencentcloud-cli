@@ -1,6 +1,6 @@
-**Example 1: 查询监听器统计数据**
+**Example 1: Querying the Listener Statistics**
 
-查询监听器统计数据
+Query the listener statistics.
 
 Input: 
 

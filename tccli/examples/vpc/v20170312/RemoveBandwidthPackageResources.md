@@ -1,4 +1,4 @@
-**Example 1: 删除带宽包资源**
+**Example 1: Deleting bandwidth package resources**
 
 
 

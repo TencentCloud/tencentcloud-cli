@@ -1,4 +1,4 @@
-**Example 1: 解除实例的密钥绑定关系**
+**Example 1: Disassociating key pairs from instances**
 
 
 

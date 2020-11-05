@@ -1,4 +1,4 @@
-**Example 1: 启用加速域名**
+**Example 1: Enabling an acceleration domain name**
 
 
 

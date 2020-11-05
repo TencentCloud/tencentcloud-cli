@@ -1,4 +1,4 @@
-**Example 1: 开始灾备同步任务**
+**Example 1: Starting a Disaster Recovery Sync Task**
 
 
 

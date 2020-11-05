@@ -1,6 +1,34 @@
-**Example 1: 创建生命周期挂钩，采用默认值**
+**Example 1: Creating a lifecycle hook to notify a CMQ topic**
 
-创建生命周期挂钩，在实例创建场景下生效。DefaultResult采用默认值，即CONTINUE。HeartbeatTimeout采用默认值，即300秒。
+This example shows you how to create a lifecycle hook that takes effect upon instance termination, where `DefaultResult` is set to `ABANDON` and `HeartbeatTimeout` is set to 120 seconds to notify the CMQ topic named `one-topic`.
+
+Input: 
+
+```
+tccli as CreateLifecycleHook --cli-unfold-argument  \
+    --AutoScalingGroupId asg-8fbozqja\
+    --DefaultResult ABANDON\
+    --HeartbeatTimeout 120\
+    --LifecycleHookName terminate-topic\
+    --LifecycleTransition INSTANCE_TERMINATING\
+    --NotificationMetadata topic\
+    --NotificationTarget.TargetType CMQ_TOPIC\
+    --NotificationTarget.TopicName one-topic
+```
+
+Output: 
+```
+{
+    "Response": {
+        "LifecycleHookId": "ash-oq76wsrx",
+        "RequestId": "cdb7670b-0412-444f-9d2f-0da9cd07c410"
+    }
+}
+```
+
+**Example 2: Creating a lifecycle hook with default values**
+
+This example shows you how to create a lifecycle hook that takes effect upon instance creation, where `DefaultResult` takes the default value `CONTINUE` and `HeartbeatTimeout` takes the default value 300 seconds.
 
 Input: 
 
@@ -21,34 +49,9 @@ Output:
 }
 ```
 
-**Example 2: 创建生命周期挂钩**
+**Example 3: Creating a lifecycle hook to notify a CMQ queue**
 
-创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为360秒。
-
-Input: 
-
-```
-tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --AutoScalingGroupId asg-8fbozqja\
-    --DefaultResult ABANDON\
-    --HeartbeatTimeout 360\
-    --LifecycleHookName one-hook\
-    --LifecycleTransition INSTANCE_LAUNCHING
-```
-
-Output: 
-```
-{
-    "Response": {
-        "LifecycleHookId": "ash-heyubibl",
-        "RequestId": "5e414011-3359-45bd-8ba4-5b503d3fd3f6"
-    }
-}
-```
-
-**Example 3: 创建生命周期挂钩，通知CMQ队列模型**
-
-创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为CONTINUE，HeartbeatTimeout设置为120秒，通知名为“one-queue”的CMQ队列模型。
+This example shows you how to create a lifecycle hook that takes effect upon instance creation, where `DefaultResult` is set to CONTINUE and `HeartbeatTimeout` is set to 120 seconds to notify the CMQ queuing model named "one-queue".
 
 Input: 
 
@@ -74,9 +77,9 @@ Output:
 }
 ```
 
-**Example 4: 创建生命周期挂钩，通知CMQ主题模型**
+**Example 4: Creating a lifecycle hook**
 
-创建生命周期挂钩，在实例销毁场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为120秒，通知名为“one-topic”的CMQ主题模型。
+This example shows you how to create a lifecycle hook that takes effect upon instance creation, where `DefaultResult` is set to ABANDON and `HeartbeatTimeout` is set to 360 seconds.
 
 Input: 
 
@@ -84,20 +87,17 @@ Input:
 tccli as CreateLifecycleHook --cli-unfold-argument  \
     --AutoScalingGroupId asg-8fbozqja\
     --DefaultResult ABANDON\
-    --HeartbeatTimeout 120\
-    --LifecycleHookName terminate-topic\
-    --LifecycleTransition INSTANCE_TERMINATING\
-    --NotificationMetadata topic\
-    --NotificationTarget.TargetType CMQ_TOPIC\
-    --NotificationTarget.TopicName one-topic
+    --HeartbeatTimeout 360\
+    --LifecycleHookName one-hook\
+    --LifecycleTransition INSTANCE_LAUNCHING
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "LifecycleHookId": "ash-oq76wsrx",
-        "RequestId": "cdb7670b-0412-444f-9d2f-0da9cd07c410"
+        "LifecycleHookId": "ash-heyubibl",
+        "RequestId": "5e414011-3359-45bd-8ba4-5b503d3fd3f6"
     }
 }
 ```

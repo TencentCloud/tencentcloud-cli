@@ -1,4 +1,4 @@
-**Example 1: 获取导入主密钥（CMK）材料的参数**
+**Example 1: Getting the parameters of the key material imported to a CMK**
 
 
 

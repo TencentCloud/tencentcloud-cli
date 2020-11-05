@@ -1,4 +1,4 @@
-**Example 1: 删除目标组**
+**Example 1: Deleting target groups**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取集群kubeconfig文件**
+**Example 1: Obtaining the cluster kubeconfig file**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取凭据详细信息列表**
+**Example 1: Obtaining the detailed information list of Secrets**
 
 
 

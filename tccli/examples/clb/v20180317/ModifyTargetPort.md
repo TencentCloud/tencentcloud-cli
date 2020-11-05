@@ -1,6 +1,6 @@
-**Example 1: 修改绑定的后端服务的端口**
+**Example 1: Modifying the port of a bound real server**
 
-将绑定到监听器lbl-d1ubsydq的云服务器ins-dm4xtz0i的端口从原来的233改为334
+This example shows you how to change the port of the CVM instance `ins-dm4xtz0i` bound to the listener `lbl-d1ubsydq` from 233 to 334.
 
 Input: 
 

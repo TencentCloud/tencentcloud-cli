@@ -1,6 +1,6 @@
-**Example 1: 删除集群中的实例**
+**Example 1: Deleting a Node in a Cluster**
 
-删除集群中的实例
+Delete a node in a cluster
 
 Input: 
 

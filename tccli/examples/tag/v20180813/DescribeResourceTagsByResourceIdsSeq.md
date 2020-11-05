@@ -1,4 +1,4 @@
-**Example 1: 查看资源关联的标签**
+**Example 1: Viewing tags associated with resource**
 
 
 
@@ -21,8 +21,8 @@ Output:
         "Limit": 15,
         "Tags": [
             {
-                "TagKey": "字符串",
-                "TagValue": "字符串",
+                "TagKey": "String",
+                "TagValue": "String",
                 "TagKeyMd5": "cc4dd1da7e1a754534215f02fb9ba85d",
                 "TagValueMd5": "cc4dd1da7e1a754534215f02fb9ba85d",
                 "ResourceId": "ins-1234"

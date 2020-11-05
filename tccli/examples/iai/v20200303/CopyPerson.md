@@ -1,4 +1,4 @@
-**Example 1: 复制人员接口**
+**Example 1: Copying person**
 
 
 
@@ -24,7 +24,7 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: Sample error**
 
 
 
@@ -42,7 +42,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation.GroupPersonMapExist",
-            "Message": "组中已包含对应的人员Id。"
+            "Message": "The ID of the corresponding person is already in the group."
         },
         "RequestId": "8ecfa566-68a9-4eb5-a6da-95ba9be26947"
     }

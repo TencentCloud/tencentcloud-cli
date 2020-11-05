@@ -1,4 +1,4 @@
-**Example 1: 修改域名对应的证书**
+**Example 1: Modifying the Certificate of a Domain Name**
 
 
 

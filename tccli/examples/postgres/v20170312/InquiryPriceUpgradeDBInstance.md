@@ -1,4 +1,4 @@
-**Example 1: 查询实例扩容价格**
+**Example 1: Query prices of upgrading DB instances**
 
 
 

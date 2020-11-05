@@ -1,4 +1,4 @@
-**Example 1: 绑定一个后端服务到传统型负载均衡**
+**Example 1: Binding a real server to a classic CLB instance**
 
 
 

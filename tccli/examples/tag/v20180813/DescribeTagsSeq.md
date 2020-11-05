@@ -1,4 +1,4 @@
-**Example 1: 查询标签**
+**Example 1: Querying tags**
 
 
 

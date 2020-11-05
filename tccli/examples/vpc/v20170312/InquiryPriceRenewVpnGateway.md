@@ -1,4 +1,4 @@
-**Example 1: 包年包月网关续费网关询价输入**
+**Example 1: Querying the price for renewing a monthly subscription gateway**
 
 
 

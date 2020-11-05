@@ -1,6 +1,6 @@
-**Example 1: 申请混流-使用模板40**
+**Example 1: Applying for stream mix — using template 40**
 
-使用混流预置模板混流。
+This example shows you how to use a preset stream mix template to mix streams.
 
 Input: 
 
@@ -24,9 +24,9 @@ Output:
 }
 ```
 
-**Example 2: 申请混流-使用自定义布局参数**
+**Example 2: Applying for stream mix — using custom layout parameters**
 
-使用自定义布局。
+This example shows you how to use a custom layout.
 
 Input: 
 
@@ -55,9 +55,9 @@ Output:
 }
 ```
 
-**Example 3: 申请混流-使用裁剪参数**
+**Example 3: Applying for stream mix — using cropping parameters**
 
-使用裁剪参数。
+This example shows you how to use cropping parameters.
 
 Input: 
 

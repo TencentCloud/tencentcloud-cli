@@ -1,4 +1,4 @@
-**Example 1: 销毁通道**
+**Example 1: Terminating a Connection**
 
 
 

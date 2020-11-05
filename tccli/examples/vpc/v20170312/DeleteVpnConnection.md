@@ -1,4 +1,4 @@
-**Example 1: 删除VPN通道**
+**Example 1: Deleting VPN tunnels**
 
 
 

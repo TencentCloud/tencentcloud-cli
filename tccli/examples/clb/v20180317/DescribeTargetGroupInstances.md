@@ -1,4 +1,4 @@
-**Example 1: 显示目标组绑定的服务器信息**
+**Example 1: Displaying the information of servers bound to target group**
 
 
 
@@ -20,7 +20,7 @@ Output:
                 "TargetGroupId": "lbtg-5xunivs0",
                 "Type": "CVM",
                 "InstanceId": "ins-197234qt",
-                "InstanceName": "未命名",
+                "InstanceName": "Not named",
                 "Port": 3333,
                 "Weight": 43,
                 "PublicIpAddresses": [],
@@ -34,7 +34,7 @@ Output:
                 "TargetGroupId": "lbtg-5xunivs0",
                 "Type": "CVM",
                 "InstanceId": "ins-197234qt",
-                "InstanceName": "未命名",
+                "InstanceName": "Not named",
                 "Port": 2222,
                 "Weight": 55,
                 "PublicIpAddresses": [],

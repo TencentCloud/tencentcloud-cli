@@ -1,4 +1,4 @@
-**Example 1: 绑定IP到高防包实例**
+**Example 1: Binding an IP to Anti-DDoS Pro instance**
 
 
 

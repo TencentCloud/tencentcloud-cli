@@ -1,6 +1,6 @@
-**Example 1: 创建一个镜像**
+**Example 1: Creating an image**
 
-使用实例ins-6pb6lrmy 创建一个镜像。当实例处于运行中时，执行软关机，软关机失败后，结束任务(默认语义)。
+This example shows you how to create an image from the instance “ins-6pb6lrmy”. If the instance is running, perform a soft shutdown. If the soft shutdown fails, the task will end (default semantics).
 
 Input: 
 

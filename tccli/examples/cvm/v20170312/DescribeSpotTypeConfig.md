@@ -1,6 +1,53 @@
-**Example 1: 查询用户可购买的竞价机型信息列表**
+**Example 1: Querying the Chinese name of an availability zone**
 
-查询用户可购买的竞价机型信息列表
+This example shows you how to query information of availability zones in the Guangzhou region. To return its Chinese name of the availability zone, you need to pass the parameter `Language=zh-CN`.
+
+Input: 
+
+```
+tccli cvm DescribeSpotTypeConfig --cli-unfold-argument  \
+    --Language zh-CN
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 4,
+        "ZoneSet": [
+            {
+                "ZoneState": "UNAVAILABLE",
+                "ZoneId": "100001",
+                "Zone": "ap-guangzhou-1",
+                "ZoneName": "Guangzhou Zone 1"
+            },
+            {
+                "ZoneState": "AVAILABLE",
+                "ZoneId": "100002",
+                "Zone": "ap-guangzhou-2",
+                "ZoneName": "Guangzhou Zone 2",
+            },
+            {
+                "ZoneState": "AVAILABLE",
+                "ZoneId": "100003",
+                "Zone": "ap-guangzhou-3",
+                "ZoneName": "Guangzhou Zone 3",
+            },
+            {
+                "ZoneState": "AVAILABLE",
+                "ZoneId": "100004",
+                "Zone": "ap-guangzhou-4",
+                "ZoneName": "Guangzhou Zone 4"
+            }
+        ],
+        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
+    }
+}
+```
+
+**Example 2: Querying the list of spot instance offering**
+
+This example shows you how to query the list of spot instances that are available for purchase.
 
 Input: 
 
@@ -29,53 +76,6 @@ Output:
             }
         ],
         "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
-    }
-}
-```
-
-**Example 2: 查询可用区信息（可用区中文名称）**
-
-查询广州地域的可用区信息。返回可用区的中文名称需要传参Language=zh-CN。
-
-Input: 
-
-```
-tccli cvm DescribeSpotTypeConfig --cli-unfold-argument  \
-    --Language zh-CN
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 4,
-        "ZoneSet": [
-            {
-                "ZoneState": "UNAVAILABLE",
-                "ZoneId": "100001",
-                "Zone": "ap-guangzhou-1",
-                "ZoneName": "广州一区"
-            },
-            {
-                "ZoneState": "AVAILABLE",
-                "ZoneId": "100002",
-                "Zone": "ap-guangzhou-2",
-                "ZoneName": "广州二区"
-            },
-            {
-                "ZoneState": "AVAILABLE",
-                "ZoneId": "100003",
-                "Zone": "ap-guangzhou-3",
-                "ZoneName": "广州三区"
-            },
-            {
-                "ZoneState": "AVAILABLE",
-                "ZoneId": "100004",
-                "Zone": "ap-guangzhou-4",
-                "ZoneName": "广州四区"
-            }
-        ],
-        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
     }
 }
 ```

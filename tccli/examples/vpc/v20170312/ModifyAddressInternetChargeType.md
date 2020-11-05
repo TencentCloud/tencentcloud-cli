@@ -1,4 +1,4 @@
-**Example 1: 调整弹性公网IP计费模式**
+**Example 1: Adjusting EIP billing method**
 
 
 

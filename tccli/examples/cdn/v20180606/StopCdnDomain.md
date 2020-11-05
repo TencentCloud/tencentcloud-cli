@@ -1,4 +1,4 @@
-**Example 1: 停用加速域名**
+**Example 1: Disabling an acceleration domain name**
 
 
 

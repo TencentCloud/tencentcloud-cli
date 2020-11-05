@@ -1,6 +1,6 @@
-**Example 1: 删除VPN网关**
+**Example 1: Deleting a VPN gateway**
 
-删除VPN网关
+This example shows you how to delete a VPN gateway.
 
 Input: 
 

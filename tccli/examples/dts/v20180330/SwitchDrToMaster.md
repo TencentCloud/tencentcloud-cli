@@ -1,4 +1,4 @@
-**Example 1: 升级灾备为主实例**
+**Example 1: Promoting a disaster recovery instance to a master instance**
 
 
 

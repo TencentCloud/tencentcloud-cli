@@ -1,4 +1,4 @@
-**Example 1: 删除CC防护的访问频率控制规则**
+**Example 1: Deleting access frequency control rule for CC protection**
 
 
 

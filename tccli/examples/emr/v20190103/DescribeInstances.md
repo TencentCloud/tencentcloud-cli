@@ -1,4 +1,4 @@
-**Example 1: 查询实例详情**
+**Example 1: Querying instance details**
 
 
 
@@ -26,7 +26,7 @@ Output:
                 "AppId": 251008830,
                 "ChargeType": 1,
                 "ClusterId": "emr-p9f700x8",
-                "ClusterName": "beckwu_包年勿删",
+                "ClusterName": "beckwu_do not delete prepaid cluster",
                 "Config": {
                     "ChargeType": 1,
                     "ComNodeSize": 0,
@@ -48,7 +48,7 @@ Output:
                         "MemSize": 8192,
                         "RootSize": 0,
                         "Spec": "CVM.S2",
-                        "SpecName": "EMR标准型S2",
+                        "SpecName": "EMR Standard S2",
                         "StorageType": 2
                     },
                     "MasterNodeSize": 1,
@@ -59,7 +59,7 @@ Output:
                         "MemSize": 8192,
                         "RootSize": 0,
                         "Spec": "CVM.S2",
-                        "SpecName": "EMR标准型S2",
+                        "SpecName": "EMR Standard S2",
                         "StorageType": 2
                     },
                     "OnCos": false,
@@ -77,19 +77,19 @@ Output:
                         "MemSize": 8192,
                         "RootSize": 0,
                         "Spec": "CVM.S2",
-                        "SpecName": "EMR标准型S2",
+                        "SpecName": "EMR Standard S2",
                         "StorageType": 2
                     }
                 },
                 "EmrVersion": "EMR-V3.0.0",
-                "Ftitle": "集群运行中",
+                "Ftitle": "Cluster is running",
                 "Id": 19541,
                 "IsTradeCluster": 0,
                 "MasterIp": "--",
                 "ProjectId": 0,
                 "RegionId": 1,
                 "ResourceOrderId": 0,
-                "RunTime": "0天2小时48分钟55秒",
+                "RunTime": "0 days 2 hours 48 minutes 55 seconds",
                 "Status": 2,
                 "SubnetId": 1230738,
                 "TradeVersion": 1,

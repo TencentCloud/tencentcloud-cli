@@ -1,6 +1,6 @@
-**Example 1: 获取平台事件列表**
+**Example 1: Getting the platform event list**
 
-获取平台事件列表
+This example shows you how to get the platform event list.
 
 Input: 
 
@@ -23,8 +23,8 @@ Output:
                     "EventStatus": 0,
                     "Region": "gz",
                     "UpdateTime": "2019-10-10T15:03:31+08:00",
-                    "AccidentTypeDesc": "云服务器运行异常",
-                    "BusinessTypeDesc": "服务问题"
+                    "AccidentTypeDesc": "CVM run exception",
+                    "BusinessTypeDesc": "Service error"
                 }
             ],
             "Total": 1

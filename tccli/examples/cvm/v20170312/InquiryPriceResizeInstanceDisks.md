@@ -1,4 +1,4 @@
-**Example 1: 按量付费实例扩容磁盘询价**
+**Example 1: Querying the price for expanding the disk capacity of a pay-as-you-go instance**
 
 
 

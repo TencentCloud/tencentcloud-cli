@@ -1,4 +1,4 @@
-**Example 1: 查询函数下的全部别名**
+**Example 1: Querying all aliases under function**
 
 
 
@@ -15,10 +15,25 @@ Output:
 {
     "Response": {
         "RequestId": "d1b93f9c-ac3a-412a-a4f3-6f0697099f72",
-        "EipUseNum": 4,
-        "EipUserQuota": 5,
-        "EipTotalUseNum": 80,
-        "EipTotalQuota": 200
+        "Aliases": [
+            {
+                "FunctionVersion": "1",
+                "Name": "al3",
+                "RoutingConfig": {
+                    "AdditionalVersionWeights": [
+                        {
+                            "Version": "3",
+                            "Weight": 0.3
+                        },
+                        {
+                            "Version": "2",
+                            "Weight": 0.2
+                        }
+                    ]
+                },
+                "Description": ""
+            }
+        ]
     }
 }
 ```

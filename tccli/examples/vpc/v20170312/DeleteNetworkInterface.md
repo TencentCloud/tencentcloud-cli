@@ -1,4 +1,4 @@
-**Example 1: 删除弹性网卡**
+**Example 1: Deleting an ENI**
 
 
 

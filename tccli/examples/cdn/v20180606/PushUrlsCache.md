@@ -1,4 +1,4 @@
-**Example 1: 预热 URL**
+**Example 1: Prefetching URLs**
 
 
 

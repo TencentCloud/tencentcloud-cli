@@ -1,6 +1,6 @@
-**Example 1: 查询TCP监听器列表**
+**Example 1: Querying a TCP Listener List**
 
-查询TCP监听器列表
+Query a TCP listener list.
 
 Input: 
 

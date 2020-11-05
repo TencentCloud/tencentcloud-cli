@@ -1,4 +1,4 @@
-**Example 1: 创建一条转发规则**
+**Example 1: Creating a forwarding rule**
 
 
 

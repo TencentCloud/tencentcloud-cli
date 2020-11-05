@@ -1,6 +1,6 @@
-**Example 1: 删除异地登录记录**
+**Example 1: Deleting unusual login location records**
 
-本接口 (DeleteNonlocalLoginPlaces) 用于删除异地登录记录。
+This example shows you how to delete unusual login location records.
 
 Input: 
 

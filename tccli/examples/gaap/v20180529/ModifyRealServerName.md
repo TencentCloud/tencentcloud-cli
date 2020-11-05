@@ -1,6 +1,6 @@
-**Example 1: 修改源站名称**
+**Example 1: Modifying an Origin Server Name**
 
-修改源站名称
+Modify an origin server name.
 
 Input: 
 

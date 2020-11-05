@@ -1,4 +1,4 @@
-**Example 1: 查询异步任务的执行结果**
+**Example 1: Querying the execution result of async task**
 
 
 
@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "Info": "删除库表成功",
+        "Info": "Dropped database table successfully",
         "Status": "SUCCESS",
         "RequestId": "faae8d6a-38fb-44de-988e-5a0e78aba4a7"
     }

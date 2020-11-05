@@ -1,4 +1,4 @@
-**Example 1: 查询安全组关联的实例统计**
+**Example 1: Querying statistics on the instances associated with the security group**
 
 
 

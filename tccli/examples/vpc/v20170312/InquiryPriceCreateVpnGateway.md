@@ -1,4 +1,4 @@
-**Example 1: 包年包月询价输入**
+**Example 1: Querying monthly subscription prices**
 
 
 
@@ -27,7 +27,7 @@ Output:
 }
 ```
 
-**Example 2: 按量计费询价输入**
+**Example 2: Querying pay-as-you-go prices**
 
 
 

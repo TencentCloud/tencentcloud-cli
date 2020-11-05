@@ -1,4 +1,4 @@
-**Example 1: 修改转动图模板**
+**Example 1: Modifying an animated image generating template**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod ModifyAnimatedGraphicsTemplate --cli-unfold-argument  \
     --Definition 10001\
-    --Name 转动图模板1\
+    --Name 'Animated image generating template 1'\
     --Width 540\
     --Height 960\
     --Fps 30

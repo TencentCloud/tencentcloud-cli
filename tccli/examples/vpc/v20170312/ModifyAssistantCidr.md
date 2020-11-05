@@ -1,6 +1,6 @@
-**Example 1: 仅修改辅助CIDR**
+**Example 1: Only modify CIDR block**
 
-添加辅助CIDR：172.16.1.0/24。
+Add secondary CIDR block: 172.16.1.0/24.
 
 Input: 
 
@@ -27,9 +27,9 @@ Output:
 }
 ```
 
-**Example 2: 修改（添加和删除）辅助CIDR**
+**Example 2: Modifies (add and delete) auxliary CIDR block**
 
-添加辅助CIDR：172.16.1.0/24，同时删除辅助CIDR：172.16.0.0/24。
+Add secondary CIDR block 172.16.1.0/24 while deleting 172.16.0.0/24.
 
 Input: 
 

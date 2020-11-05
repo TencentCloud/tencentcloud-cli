@@ -1,4 +1,4 @@
-**Example 1: 人脸检测与属性分析**
+**Example 1: Detecting face and analyzing attributes**
 
 
 

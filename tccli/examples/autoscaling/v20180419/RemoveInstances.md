@@ -1,4 +1,4 @@
-**Example 1: 从伸缩组删除实例**
+**Example 1: Removing instances from a scaling group**
 
 
 

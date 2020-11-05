@@ -1,4 +1,4 @@
-**Example 1: 人脸检测与分析接口**
+**Example 1: Detecting and analyzing face**
 
 
 
@@ -63,7 +63,7 @@ Output:
 }
 ```
 
-**Example 2: 人脸检测与分析接口-2**
+**Example 2: Detecting and analyzing face - 2**
 
 
 

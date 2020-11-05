@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库实例的字符集**
+**Example 1: Querying the character set of TencentDB instance**
 
 
 

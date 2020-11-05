@@ -1,4 +1,4 @@
-**Example 1: 恢复 CRS 实例**
+**Example 1: Restoring a Redis Instance**
 
 
 

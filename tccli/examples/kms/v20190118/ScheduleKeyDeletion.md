@@ -1,6 +1,6 @@
-**Example 1: 计划删除接口请求示例**
+**Example 1: Scheduling deletion**
 
-指定CMK于累计7天后被删除
+This example shows you how to delete a specified CMK on the 7th day upon schedule deletion.
 
 Input: 
 

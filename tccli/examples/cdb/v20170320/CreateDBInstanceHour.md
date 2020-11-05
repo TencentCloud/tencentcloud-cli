@@ -1,4 +1,4 @@
-**Example 1: 创建云数据库实例（按量计费）**
+**Example 1: Creating pay-as-you-go TencentDB instance**
 
 
 

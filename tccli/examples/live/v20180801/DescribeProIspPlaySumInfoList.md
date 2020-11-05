@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
 
 
@@ -18,7 +18,7 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "Name": "山东省",
+                "Name": "Shandong",
                 "TotalFlux": 50.0,
                 "TotalRequest": 50,
                 "AvgFluxPerSecond": 10.1

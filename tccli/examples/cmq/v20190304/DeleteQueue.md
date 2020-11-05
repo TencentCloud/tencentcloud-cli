@@ -1,6 +1,6 @@
-**Example 1: 删除队列**
+**Example 1: Deleting queue**
 
-删除队列
+This example shows you how to delete a queue.
 
 Input: 
 

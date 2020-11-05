@@ -1,4 +1,4 @@
-**Example 1: 恢复实时录制任务**
+**Example 1: Resuming a real-time recording task**
 
 
 
@@ -14,7 +14,6 @@ Output:
 ```
 {
     "Response": {
-        "Backup": "{}",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }

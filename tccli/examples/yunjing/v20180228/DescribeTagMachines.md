@@ -1,6 +1,6 @@
-**Example 1: 获取指定标签关联的服务器信息**
+**Example 1: Getting the information of servers associated with specified tag**
 
-获取指定标签关联的服务器信息
+This example shows you how to get the information of servers associated with a specified tag.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 弹性网关关联安全组**
+**Example 1: Associates an ENI with security groups**
 
 
 

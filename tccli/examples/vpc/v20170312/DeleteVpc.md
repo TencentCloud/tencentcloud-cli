@@ -1,4 +1,4 @@
-**Example 1: 删除VPC**
+**Example 1: Deleting a VPC**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 获取人员列表接口**
+**Example 1: Getting person list**
 
-
+This example shows you how to get the list of persons in a specified group.
 
 Input: 
 
@@ -21,9 +21,9 @@ Output:
                 "PersonId": "2001",
                 "Gender": 1,
                 "PersonExDescriptions": [
-                    "计算机学院",
-                    "软件工程",
-                    "15级",
+                    "School of Computing",
+                    "Software Engineering",
+                    "'15",
                     "3150108080"
                 ],
                 "FaceIds": [
@@ -40,7 +40,7 @@ Output:
 }
 ```
 
-**Example 2: 获取人员列表接口-2**
+**Example 2: Getting person list - 2**
 
 
 
@@ -63,9 +63,9 @@ Output:
                 "PersonId": "1001",
                 "Gender": 1,
                 "PersonExDescriptions": [
-                    "云与智慧产业事业群",
-                    "大数据及人工智能产品中心",
-                    "人脸识别产品组"
+                    "Cloud and Smart Industries Group",
+                    "Big Data and AI Product Center",
+                    "Face Recognition Product Team"
                 ],
                 "FaceIds": [
                     "2877242150180891493"
@@ -81,7 +81,7 @@ Output:
 }
 ```
 
-**Example 3: 错误示例**
+**Example 3: Sample error**
 
 
 
@@ -100,7 +100,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.GroupIdNotExist",
-            "Message": "人员库ID不存在。"
+            "Message": "The group ID does not exist."
         },
         "RequestId": "b7c0cd81-d621-465f-8fd6-86a6b49e67be"
     }

@@ -1,13 +1,15 @@
-**Example 1: 获取函数列表**
+**Example 1: Querying Functions Based on Tags**
 
-
+It queries functions whose status tag is `dev` and owner tag is `me`.
 
 Input: 
 
 ```
 tccli scf ListFunctions --cli-unfold-argument  \
-    --Limit 2\
-    --Order ASC
+    --Filters.0.Name tag-status\
+    --Filters.0.Values dev\
+    --Filters.1.Name tag-owner\
+    --Filters.1.Values me
 ```
 
 Output: 
@@ -30,18 +32,16 @@ Output:
 }
 ```
 
-**Example 2: 根据标签查询函数**
+**Example 2: Obtaining a Function List**
 
-查询status标签的值是dev，且owner标签的值是me的函数
+It queries functions whose status tag is dev and owner tag is me.
 
 Input: 
 
 ```
 tccli scf ListFunctions --cli-unfold-argument  \
-    --Filters.0.Name tag-status\
-    --Filters.0.Values dev\
-    --Filters.1.Name tag-owner\
-    --Filters.1.Values me
+    --Limit 2\
+    --Order ASC
 ```
 
 Output: 

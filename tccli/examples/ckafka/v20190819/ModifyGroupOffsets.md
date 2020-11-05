@@ -1,4 +1,4 @@
-**Example 1: 设置Groups 消费分组offset**
+**Example 1: Setting consumer group (Groups) offset**
 
 
 

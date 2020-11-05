@@ -1,4 +1,4 @@
-**Example 1: 创建路由规则**
+**Example 1: Creating a routing policy**
 
 
 

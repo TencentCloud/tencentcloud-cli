@@ -1,4 +1,4 @@
-**Example 1: 添加服务器到目标组中**
+**Example 1: Adding servers to target groups**
 
 
 

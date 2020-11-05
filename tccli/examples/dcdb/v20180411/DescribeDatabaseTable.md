@@ -1,4 +1,4 @@
-**Example 1: 查询数据库表中有哪些列**
+**Example 1: Querying the columns in a database table**
 
 
 

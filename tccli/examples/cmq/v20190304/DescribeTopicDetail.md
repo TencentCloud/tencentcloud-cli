@@ -1,4 +1,4 @@
-**Example 1: 查询主题详情**
+**Example 1: Querying topic details**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 查询广州三区 GN2 系列机型**
+**Example 1: Querying GN2 Series Models in Guangzhou Zone 3**
 
 
 

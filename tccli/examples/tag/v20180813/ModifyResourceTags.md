@@ -1,4 +1,4 @@
-**Example 1: 将资源关联的标签替换为输入的标签集合**
+**Example 1: Replacing Tags Associated with a Resource with Input Tags**
 
 
 
@@ -22,7 +22,7 @@ Output:
 }
 ```
 
-**Example 2: 给资源解除绑定多个标签**
+**Example 2: Unassociating Tags from a Resource**
 
 
 

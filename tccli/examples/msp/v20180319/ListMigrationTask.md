@@ -1,6 +1,6 @@
-**Example 1: 获取迁移任务列表**
+**Example 1: Obtaining migration task list**
 
-获取迁移任务列表
+This example shows you how to obtain migration task list.
 
 Input: 
 

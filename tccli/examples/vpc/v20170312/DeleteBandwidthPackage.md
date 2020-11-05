@@ -1,4 +1,4 @@
-**Example 1: 删除共享带宽包**
+**Example 1: Deleting a bandwidth package**
 
 
 

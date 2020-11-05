@@ -1,4 +1,4 @@
-**Example 1: 用户加入到用户组**
+**Example 1: Adding a User to a User Group**
 
 
 

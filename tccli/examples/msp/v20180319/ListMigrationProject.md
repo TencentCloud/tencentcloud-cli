@@ -1,6 +1,6 @@
-**Example 1: 获取迁移项目名称列表**
+**Example 1: Obtaining the list of migration project names**
 
-获取迁移项目名称列表
+This example shows you how to obtain the list of migration project names.
 
 Input: 
 
@@ -15,7 +15,7 @@ Output:
         "Projects": [
             {
                 "ProjectId": 10013,
-                "ProjectName": "test2"
+                "projectName": "test2",
             },
             {
                 "ProjectId": 10012,

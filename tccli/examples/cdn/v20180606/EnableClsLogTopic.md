@@ -1,4 +1,4 @@
-**Example 1: 启动日志主题投递**
+**Example 1: Start publishing to a log topic**
 
 
 

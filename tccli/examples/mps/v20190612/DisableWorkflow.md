@@ -1,6 +1,6 @@
-**Example 1: 禁用工作流**
+**Example 1: Disabling workflow**
 
-禁用工作流19000
+This example shows you how to disable the workflow whose ID is 19000.
 
 Input: 
 

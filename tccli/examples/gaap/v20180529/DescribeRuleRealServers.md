@@ -1,6 +1,6 @@
-**Example 1: 查询转发规则相关源站信息**
+**Example 1: Querying the Origin Server Information of Forwarding Rules**
 
-查询转发规则相关源站信息
+Query the origin server information of forwarding rules.
 
 Input: 
 

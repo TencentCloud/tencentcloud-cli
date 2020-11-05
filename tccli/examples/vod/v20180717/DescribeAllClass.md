@@ -1,4 +1,4 @@
-**Example 1: 获取视频分类层次结构**
+**Example 1: Getting video category hierarchy**
 
 
 
@@ -15,14 +15,14 @@ Output:
             {
                 "ClassId": 0,
                 "Level": 0,
-                "ClassName": "其他",
+                "ClassName": "Other",
                 "ParentId": -1,
                 "SubClassIdSet": null
             },
             {
                 "ClassId": 1,
                 "Level": 0,
-                "ClassName": "自定义一级分类",
+                "ClassName": "Custom first-level category",
                 "ParentId": -1,
                 "SubClassIdSet": [
                     2,
@@ -32,7 +32,7 @@ Output:
             {
                 "ClassId": 2,
                 "Level": 2,
-                "ClassName": "自定义二级分类",
+                "ClassName": "Custom second-level category",
                 "ParentId": 1,
                 "SubClassIdSet": [
                     4,
@@ -42,21 +42,21 @@ Output:
             {
                 "ClassId": 3,
                 "Level": 2,
-                "ClassName": "自定义二级分类",
+                "ClassName": "Custom second-level category",
                 "ParentId": 1,
                 "SubClassIdSet": null
             },
             {
                 "ClassId": 4,
                 "Level": 3,
-                "ClassName": "自定义三级分类",
+                "ClassName": "Custom third-level category",
                 "ParentId": 2,
                 "SubClassIdSet": null
             },
             {
                 "ClassId": 5,
                 "Level": 3,
-                "ClassName": "自定义三级分类",
+                "ClassName": "Custom third-level category",
                 "ParentId": 2,
                 "SubClassIdSet": null
             }

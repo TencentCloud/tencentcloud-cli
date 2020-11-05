@@ -1,4 +1,4 @@
-**Example 1: 新增加速域名**
+**Example 1: Creating an acceleration domain name**
 
 
 

@@ -1,13 +1,13 @@
-**Example 1: 请求示例**
+**Example 1: Sample request**
 
-
+>- To get the common request parameters `SecretId` and `SecretKey` (which will be used in the SDK too), please go to the [TencentCloud API Key](https://console.cloud.tencent.com/cam/capi) page.
+>- Note: because of the improved security of TencentCloud API 3.0, API authentication is more complicated. You are recommended to use the Tencent Cloud SMS service with the [SDK](https://cloud.tencent.com/document/product/382/38773#SDK).
 
 Input: 
 
 ```
 tccli sms PullSmsSendStatusByPhoneNumber --cli-unfold-argument  \
     --SendDateTime 1464624000\
-    --EndDateTime 1464624123\
     --Offset 0\
     --Limit 2\
     --PhoneNumber +8615291996666\

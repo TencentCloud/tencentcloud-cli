@@ -1,4 +1,4 @@
-**Example 1: 人脸搜索接口**
+**Example 1: Searching for face**
 
 
 
@@ -53,9 +53,9 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: Sample error**
 
-MaxFaceNum不能大于10
+`MaxFaceNum` cannot be above 10.
 
 Input: 
 
@@ -72,16 +72,16 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation.SearchFacesExceed",
-            "Message": "检索人脸个数超过限制。"
+            "Message": "The number of faces searched for exceeds the limit."
         },
         "RequestId": "f04ba2f3-532c-4207-9caa-6e818ded7fb9"
     }
 }
 ```
 
-**Example 3: 错误示例-2**
+**Example 3: Sample error - 2**
 
-图片URL错误
+Incorrect image URL.
 
 Input: 
 
@@ -97,7 +97,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation.ImageDownloadError",
-            "Message": "图片下载错误。"
+            "Message": "An error occurred while downloading the image."
         },
         "RequestId": "527ecffe-4c6a-47c9-8217-4dd2e3f018da"
     }

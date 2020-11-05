@@ -1,6 +1,6 @@
-**Example 1: 取消计划删除接口示例**
+**Example 1: Canceling schedule deletion**
 
-取消对CMK的计划删除
+This example shows you how to cancel the schedule deletion for a CMK.
 
 Input: 
 

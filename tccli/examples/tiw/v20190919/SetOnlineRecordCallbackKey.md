@@ -1,4 +1,4 @@
-**Example 1: 设置实时录制回调鉴权密钥**
+**Example 1: Setting the authentication key for the real-time recording callback**
 
 
 

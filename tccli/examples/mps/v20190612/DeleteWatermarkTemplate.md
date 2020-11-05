@@ -1,4 +1,4 @@
-**Example 1: 删除水印模板**
+**Example 1: Deleting a watermarking template**
 
 
 

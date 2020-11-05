@@ -1,4 +1,4 @@
-**Example 1: 停用指定伸缩组**
+**Example 1: Disabling the specified scaling group**
 
 
 

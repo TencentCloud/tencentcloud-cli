@@ -1,4 +1,4 @@
-**Example 1: 分配IPv6子网段**
+**Example 1: Assigning an IPv6 subnet IP range**
 
 
 

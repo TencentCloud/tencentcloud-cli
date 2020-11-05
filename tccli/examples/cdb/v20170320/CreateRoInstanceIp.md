@@ -1,4 +1,4 @@
-**Example 1: 创建云数据库只读实例的独立VIP**
+**Example 1: Creating a VIP exclusive to a TencentDB read-only instance**
 
 
 

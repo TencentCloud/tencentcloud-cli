@@ -1,4 +1,4 @@
-**Example 1: 关闭安全策略**
+**Example 1: Disabling a Security Policy**
 
 
 

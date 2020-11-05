@@ -1,4 +1,4 @@
-**Example 1: 使用计划绑定密钥**
+**Example 1: Binding key to usage plan**
 
 
 

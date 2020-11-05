@@ -1,6 +1,6 @@
-**Example 1: 删除7层监听器转发规则**
+**Example 1: Deleting a Forwarding Rule of a Layer-7 Listener**
 
-删除7层监听器转发规则
+Delete a forwarding rule of a layer-7 listener.
 
 Input: 
 

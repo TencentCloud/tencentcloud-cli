@@ -1,4 +1,4 @@
-**Example 1: 终止作业**
+**Example 1: Terminating a Job**
 
 
 

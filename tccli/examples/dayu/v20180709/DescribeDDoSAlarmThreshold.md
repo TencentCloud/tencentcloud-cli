@@ -1,4 +1,4 @@
-**Example 1: 获取DDoS告警阈值**
+**Example 1: Getting DDoS alarm threshold**
 
 
 

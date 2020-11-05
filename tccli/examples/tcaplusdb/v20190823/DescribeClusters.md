@@ -1,6 +1,6 @@
-**Example 1: 查询集群列表**
+**Example 1: Querying the cluster list**
 
-查询用户所属的集群列表
+This example shows you how to query your list of clusters.
 
 Input: 
 
@@ -18,7 +18,7 @@ Output:
                 "ApiAccessIpv6": "",
                 "ApiAccessPort": 9999,
                 "ClusterId": "5462425805",
-                "ClusterName": "gz测试应用",
+                "ClusterName": "gz test application",
                 "CreatedTime": "2019-12-04 11:28:16",
                 "IdlType": "PROTO",
                 "NetworkType": "vpc-normal",
@@ -35,7 +35,7 @@ Output:
                 "ApiAccessIpv6": "2001:3CA1:010F:001A:121B:0000:0000:0010",
                 "ApiAccessPort": 9999,
                 "ClusterId": "6032569361",
-                "ClusterName": "雷霆战机Test",
+                "ClusterName": "Thunder Fighter Test",
                 "CreatedTime": "2019-12-25 11:54:02",
                 "IdlType": "PROTO",
                 "NetworkType": "vpc-normal",

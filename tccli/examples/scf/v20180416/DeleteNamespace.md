@@ -1,4 +1,4 @@
-**Example 1: 删除命名空间**
+**Example 1: Deleting a Namespace**
 
 
 

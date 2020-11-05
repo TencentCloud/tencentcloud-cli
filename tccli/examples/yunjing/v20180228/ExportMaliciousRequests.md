@@ -1,6 +1,6 @@
-**Example 1: 导出下载恶意请求文件**
+**Example 1: Exports the malicious request file into a CSV file for download**
 
-导出下载恶意请求文件
+Exports the malicious request file into a CSV file for download
 
 Input: 
 

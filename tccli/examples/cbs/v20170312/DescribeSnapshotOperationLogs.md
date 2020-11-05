@@ -1,4 +1,4 @@
-**Example 1: 查询快照操作日志**
+**Example 1: Querying Snapshot Operation Log**
 
 
 

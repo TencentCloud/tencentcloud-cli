@@ -1,4 +1,4 @@
-**Example 1: 获取一个传统型负载均衡的后端服务信息**
+**Example 1: Getting the real server information of a classic CLB instance**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 获取主密钥列表详情**
+**Example 1: Getting CMK list details**
 
 
 

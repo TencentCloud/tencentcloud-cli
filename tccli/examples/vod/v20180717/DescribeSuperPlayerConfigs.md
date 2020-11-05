@@ -1,4 +1,4 @@
-**Example 1: 获取超级播放器配置列表**
+**Example 1: Getting the configuration list of the superplayer**
 
 
 
@@ -24,7 +24,7 @@ Output:
                 "ResolutionNameSet": [
                     {
                         "MinEdgeLength": 480,
-                        "Name": "标清"
+                        "Name": "SD"
                     },
                     {
                         "MinEdgeLength": 1440,

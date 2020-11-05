@@ -1,4 +1,4 @@
-**Example 1: 开通实例外网访问**
+**Example 1: Enabling public network access for instance**
 
 
 

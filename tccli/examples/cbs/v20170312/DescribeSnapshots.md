@@ -1,4 +1,4 @@
-**Example 1: 查询广州二区状态为NORMAL的快照**
+**Example 1: Querying Snapshots with NORMAL Status in Guangzhou Zone 2**
 
 
 

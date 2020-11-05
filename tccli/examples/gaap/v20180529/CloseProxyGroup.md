@@ -1,4 +1,4 @@
-**Example 1: 关闭通道组**
+**Example 1: Disabling connection group**
 
 
 

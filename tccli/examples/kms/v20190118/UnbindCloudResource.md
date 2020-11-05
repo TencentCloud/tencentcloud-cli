@@ -1,4 +1,4 @@
-**Example 1: 解绑CMK和云资源的关联关系**
+**Example 1: Unbinding a CMK with a Tencent Cloud resource**
 
 
 

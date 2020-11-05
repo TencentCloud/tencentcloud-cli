@@ -1,4 +1,4 @@
-**Example 1: 删除DDoS高级策略**
+**Example 1: Deleting an advanced DDoS protection policy**
 
 
 

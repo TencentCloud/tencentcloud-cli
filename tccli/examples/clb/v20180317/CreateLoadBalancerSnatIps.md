@@ -1,4 +1,4 @@
-**Example 1: 添加snatip**
+**Example 1: Adding SNAT IP**
 
 
 

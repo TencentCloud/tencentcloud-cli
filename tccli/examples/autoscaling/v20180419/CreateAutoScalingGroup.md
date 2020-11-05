@@ -1,6 +1,6 @@
-**Example 1: 创建伸缩组**
+**Example 1: Creating an auto scaling group**
 
-创建伸缩组，VPC网络，配置7层负载均衡器
+This example shows how to create an auto scaling group in a specified VPC and configure a layer-7 load balancer.
 
 Input: 
 

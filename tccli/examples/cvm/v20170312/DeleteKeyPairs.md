@@ -1,4 +1,4 @@
-**Example 1: 删除密钥对**
+**Example 1: Deleting a key pair**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 重试作业**
+**Example 1: Retrying Jobs**
 
-任务中出现部分实例失败时，仅重试失败的任务实例，已成功的任务不作处理。
+When some task instances fail in a task, only the failing instances will be retried, and the succeeding ones will not be processed.
 
 Input: 
 

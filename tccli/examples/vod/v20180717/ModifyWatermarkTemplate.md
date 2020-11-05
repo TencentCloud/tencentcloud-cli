@@ -1,4 +1,4 @@
-**Example 1: 修改水印模板**
+**Example 1: Modifying a watermarking template**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod ModifyWatermarkTemplate --cli-unfold-argument  \
     --Definition 1001\
-    --Name 模板2
+    --Name 'Template 2'
 ```
 
 Output: 

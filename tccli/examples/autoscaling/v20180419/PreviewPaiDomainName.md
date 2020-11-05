@@ -1,6 +1,6 @@
-**Example 1: 预览PAI实例域名**
+**Example 1: Previewing a public address instance domain name**
 
-预览PAI实例域名，返回一个可用于创建PAI实例的域名。
+This example shows you how to query domain name that can be used to create a public address instance.
 
 Input: 
 

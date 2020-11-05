@@ -1,4 +1,4 @@
-**Example 1: 查询共享带宽包内的资源列表**
+**Example 1: Querying resources in a bandwidth package**
 
 
 

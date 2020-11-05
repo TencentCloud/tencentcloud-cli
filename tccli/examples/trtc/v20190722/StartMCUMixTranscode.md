@@ -1,13 +1,13 @@
-**Example 1: 启动云端混流**
+**Example 1: Enabling On-Cloud MixTranscoding**
 
-启动指定房间（房间号为3560）的云端混流，同时指定各路画面按屏幕分享模板排布。
+This example shows you how to enable On-Cloud MixTranscoding for a specified room (ID: 3560) and specify the screen sharing template for the layout of each channel of video image.
 
-设置云端混流参数如下：
-- CDN直播流ID：1400188366_3560_mix。
-- 录制文件名：1400188366_3560_mix_file。
-- CDN直播流视频参数：视频宽为1280、高为720，视频码率为1560kbps，视频帧率为15，gop为2秒。
-- CDN直播流音频参数：音频采样率为48kHz，音频码率为64kbps，音频声道数为双声道。
-- 各路画面按屏幕分享模板排布，占据屏幕左侧大画面的视频流为用户(main_pc)的屏幕分享。
+Set the On-Cloud MixTranscoding parameters as follows:
+- CDN live stream ID: 1400188366_3560_mix.
+- Recording file name: 1400188366_3560_mix_file.
+- CDN live stream video parameters: set the video width to 1280, height to 720, bitrate to 1560 Kbps, frame rate to 15, and GOP to 2 seconds.
+- CDN live stream audio parameters: set the audio sample rate to 48 kHz, bitrate to 64 Kbps, and sound channel to dual-channel.
+- Each channel of video image is arranged according to the screen sharing template, and the video stream in the big image on the left of the screen is the video image shared by the `main_pc` user.
 
 Input: 
 

@@ -1,6 +1,28 @@
-**Example 1: 开启智能封面任务**
+**Example 1: Enabling one content analysis task and disabling another one at the same time**
 
-修改自定义视频内容分析模板，开启智能封面任务。
+This example shows you how to modify a custom video content analysis template to enable an intelligent tagging task and disable an intelligent cover generating task.
+
+Input: 
+
+```
+tccli mps ModifyAIAnalysisTemplate --cli-unfold-argument  \
+    --Definition 30\
+    --TagConfigure.Switch ON\
+    --CoverConfigure.Switch OFF
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    }
+}
+```
+
+**Example 2: Enabling intelligent cover generating task**
+
+This example shows you how to modify a custom video content analysis template to enable an intelligent cover generating task.
 
 Input: 
 
@@ -19,37 +41,15 @@ Output:
 }
 ```
 
-**Example 2: 关闭智能封面任务**
+**Example 3: Disabling intelligent cover generating task**
 
-修改自定义视频内容分析模板，关闭智能封面任务。
-
-Input: 
-
-```
-tccli mps ModifyAIAnalysisTemplate --cli-unfold-argument  \
-    --Definition 30\
-    --CoverConfigure.Switch OFF
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
-    }
-}
-```
-
-**Example 3: 同时开启一项和关闭一项内容分析任务**
-
-修改自定义视频内容分析模板，开启智能标签任务，关闭智能封面任务。
+This example shows you how to modify a custom video content analysis template to disable an intelligent cover generating task.
 
 Input: 
 
 ```
 tccli mps ModifyAIAnalysisTemplate --cli-unfold-argument  \
     --Definition 30\
-    --TagConfigure.Switch ON\
     --CoverConfigure.Switch OFF
 ```
 

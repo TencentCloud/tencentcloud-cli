@@ -1,4 +1,4 @@
-**Example 1: 查询实例参数列表**
+**Example 1: Querying the list of instance parameters**
 
 
 
@@ -27,7 +27,7 @@ Output:
                 ],
                 "NeedRestart": "false",
                 "ParamName": "maxmemory-policy",
-                "Tips": "当系统到达设定的最大内存值后选择内存交换的策略",
+                "Tips": "Select the memory swapping policy when the system reaches the set maximum memory value",
                 "ValueType": "enum"
             }
         ],
@@ -39,7 +39,7 @@ Output:
                 "Min": "15000",
                 "NeedRestart": "false",
                 "ParamName": "cluster-node-timeout",
-                "Tips": "集群模式下当节点在指定时间内(毫秒)不可达则被认为处于失败状态",
+                "Tips": "In cluster mode, a node is considered to fail if it is unreachable within the specified time period (in milliseconds)",
                 "ValueType": "integer"
             },
             {
@@ -49,7 +49,7 @@ Output:
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "hash-max-ziplist-entries",
-                "Tips": "当哈希元素数量没有超过指定数目，则编码为内存利用率更高的数据结构存储",
+                "Tips": "If the number of hash entries does not exceed the specified number, the hashes are encoded using a memory efficient data structure",
                 "ValueType": "integer"
             },
             {
@@ -59,7 +59,7 @@ Output:
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "hash-max-ziplist-value",
-                "Tips": "当哈希中最大项没有超过指定阈值，则编码为内存利用率更高的数据结构存储",
+                "Tips": "If the largest item in the hashes does not exceed the specified threshold, the hashes are encoded using a memory efficient data structure",
                 "ValueType": "integer"
             },
             {
@@ -69,7 +69,7 @@ Output:
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "set-max-intset-entries",
-                "Tips": "当集合中的元素全部是64位有符号十进制整数并且未超过设定阈值，则编码为整数集合存储",
+                "Tips": "If all the elements in the set are 64-bit signed decimal integers and do not exceed the set threshold, the hashes are encoded as an integer set",
                 "ValueType": "integer"
             },
             {
@@ -79,7 +79,7 @@ Output:
                 "Min": "-1",
                 "NeedRestart": "false",
                 "ParamName": "slowlog-log-slower-than",
-                "Tips": "超过指定时间的命令将会被记录，负数表示关闭该功能，零值表示强制记录所有命令的执行记录",
+                "Tips": "Commands that exceed the specified time period of execution will be logged; a negative number indicates to disable this feature, and zero indicates to compulsorily log the executions of all commands",
                 "ValueType": "integer"
             },
             {
@@ -89,7 +89,7 @@ Output:
                 "Min": "0",
                 "NeedRestart": "false",
                 "ParamName": "timeout",
-                "Tips": "客户端空闲指定时长后关闭连接，零值表示关闭该功能",
+                "Tips": "The connection is closed after the client is idle for the specified length of time, and zero indicates to disable this feature",
                 "ValueType": "integer"
             },
             {
@@ -99,7 +99,7 @@ Output:
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "zset-max-ziplist-entries",
-                "Tips": "当有序集合元素数量没有超过指定数目，则编码为内存利用率更高的数据结构存储",
+                "Tips": "If the number of ordered set elements does not exceed the specified number, the hashes are encoded using a memory efficient data structure",
                 "ValueType": "integer"
             },
             {
@@ -109,7 +109,7 @@ Output:
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "zset-max-ziplist-value",
-                "Tips": "当有序集合中最大项没有超过指定阈值，则编码为内存利用率更高的数据结构存储",
+                "Tips": "If the largest item in the ordered set does not exceed the specified threshold, the hashes are encoded using a memory efficient data structure",
                 "ValueType": "integer"
             }
         ],
@@ -132,7 +132,7 @@ Output:
                     "e",
                     "A"
                 ],
-                "Tips": "改变系统已设定客户端的键空间通知方式",
+                "Tips": "Change the notification method of the client key space set by the system",
                 "ValueType": "text"
             }
         ],

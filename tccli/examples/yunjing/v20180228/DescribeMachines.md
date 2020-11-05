@@ -1,6 +1,6 @@
-**Example 1: 获取区域主机列表**
+**Example 1: Getting the list of servers in region**
 
-本接口 (DescribeMachines) 用于获取区域主机列表。
+This example shows you how to get the list of servers in a region.
 
 Input: 
 

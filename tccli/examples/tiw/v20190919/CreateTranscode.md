@@ -1,6 +1,6 @@
-**Example 1: 创建PPT动态转码任务**
+**Example 1: Creating a PowerPoint dynamic transcoding task**
 
-创建PPT动态转码任务，并生成分辨率为960x540的缩略图
+This example shows how to create a dynamic transcoding task for a PowerPoint file and generate a 960×540 thumbnail.
 
 Input: 
 
@@ -21,9 +21,9 @@ Output:
 }
 ```
 
-**Example 2: 创建PPT静态转码任务**
+**Example 2: Creating a PowerPoint static transcoding task**
 
-创建PPT静态转码任务
+This example shows how to create a static transcoding task for a PowerPoint file.
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: 查询指定数据库的备份数据表**
+**Example 1: Querying the backup data table of specified database**
 
 
 

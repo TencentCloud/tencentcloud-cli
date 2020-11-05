@@ -1,6 +1,6 @@
-**Example 1: 替换负载均衡实例关联的服务端证书**
+**Example 1: Replacing the server certificate associated with a CLB instance**
 
-指定新证书ID，替换服务端证书
+This example shows you how to replace a server certificate by specifying a certificate ID.
 
 Input: 
 

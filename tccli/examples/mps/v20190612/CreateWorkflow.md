@@ -1,6 +1,6 @@
-**Example 1: 设置转码规则**
+**Example 1: Setting transcoding rule**
 
-对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为"trans-20-30-40"转码规则，转出20，30，40三种格式。
+This example shows you how to set a transcoding rule named "trans-20-30-40" for the `TopRankVideo-125xxx88` bucket to output in three formats of 20, 30, and 40.
 
 Input: 
 
@@ -26,9 +26,9 @@ Output:
 }
 ```
 
-**Example 2: 设置采样截图规则**
+**Example 2: Setting sampled screencapturing rule**
 
-对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为"snapshot"转码规则，转出10规格。
+This example shows you how to set a transcoding rule named "snapshot" for the `TopRankVideo-125xxx88` bucket to output in the specification of 10.
 
 Input: 
 

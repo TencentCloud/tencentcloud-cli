@@ -1,6 +1,6 @@
-**Example 1: 创建置放群组**
+**Example 1: Creating placement group**
 
-用户可以通过该接口创建置放群组
+This example shows you how to create a placement group.
 
 Input: 
 

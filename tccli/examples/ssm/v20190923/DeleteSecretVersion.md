@@ -1,4 +1,4 @@
-**Example 1: 删除指定版本的凭据**
+**Example 1: Deleting a Secret version**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: 忽略漏洞**
+**Example 1: Ignoring vulnerability**
 
-忽略漏洞
+This example shows you how to ignore a vulnerability.
 
 Input: 
 

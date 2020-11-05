@@ -1,6 +1,6 @@
-**Example 1: 获取组件列表**
+**Example 1: Getting component list**
 
-获取组件列表
+This example shows you how to get the component list.
 
 Input: 
 

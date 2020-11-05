@@ -1,6 +1,6 @@
-**Example 1: 获取漏洞列表**
+**Example 1: Gets vulnerability list**
 
-获取所有漏洞相关信息列表
+This example shows you how to get the vulnerability list.
 
 Input: 
 
@@ -19,7 +19,7 @@ Output:
         "Vuls": [
             {
                 "VulId": 4,
-                "VulName": "漏洞名称",
+                "VulName": "Vulnerability name",
                 "VulLevel": "HIGHT",
                 "VulStatus": "FIXED",
                 "LastScanTime": "2018-03-19 17:38:56",

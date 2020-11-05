@@ -1,4 +1,4 @@
-**Example 1: 封禁示例**
+**Example 1: Blocking a URL**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: 根据ID查询目标组信息**
+**Example 1: Querying target group information by ID**
 
 
 
@@ -53,7 +53,7 @@ Output:
 }
 ```
 
-**Example 2: 根据条件查询目标组信息**
+**Example 2: Querying target group information by filter**
 
 
 

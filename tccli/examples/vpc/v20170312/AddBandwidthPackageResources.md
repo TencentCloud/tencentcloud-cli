@@ -1,4 +1,4 @@
-**Example 1: 添加带宽包资源**
+**Example 1: Adding resource to a bandwidth package**
 
 
 

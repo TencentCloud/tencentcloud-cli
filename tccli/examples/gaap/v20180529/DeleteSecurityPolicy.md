@@ -1,4 +1,4 @@
-**Example 1: 删除安全策略**
+**Example 1: Deleting a Security Policy**
 
 
 

@@ -1,15 +1,16 @@
-**Example 1: 创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1**
+**Example 1: Creating a UDP listener with the default Ping health check**
 
-创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1。
+This example shows you how to create two TCP listeners which are named `lis0` and `lis1` and used to listen on ports 7569 and 7570, respectively.
 
 Input: 
 
 ```
 tccli clb CreateListener --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
-    --Protocol TCP\
-    --Ports 7569 7570\
-    --ListenerNames lis0 lis1
+    --LoadBalancerId lb-6wlxe9rj\
+    --ListenerNames lis_test\
+    --Protocol UDP\
+    --Ports 432\
+    --HealthCheck.HealthSwitch 1
 ```
 
 Output: 
@@ -17,15 +18,41 @@ Output:
 {
     "Response": {
         "ListenerIds": [
-            "lbl-d1ubsydq",
-            "lbl-4udz130k"
+            "lbl-aev333n1"
         ],
-        "RequestId": "8f272cef-14ff-458c-b67e-1bd21bd2942b"
+        "RequestId": "3b81f03e-6088-448d-abaf-8a487d4f985a"
     }
 }
 ```
 
-**Example 2: 创建TCP监听器的同时设置健康检查信息**
+**Example 2: Creating an HTTPS listener and binding an existing certificate**
+
+
+
+Input: 
+
+```
+tccli clb CreateListener --cli-unfold-argument  \
+    --LoadBalancerId lb-cuxw2rm0\
+    --Protocol HTTPS\
+    --Ports 7572\
+    --Certificate.SSLMode UNIDIRECTIONAL\
+    --Certificate.CertId MsJyaXVm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ListenerIds": [
+            "lbl-4fbxq45k"
+        ],
+        "RequestId": "db8ae69f-ebda-402b-8d02-ead459aa6ff9"
+    }
+}
+```
+
+**Example 3: Setting health check information while creating a TCP listener**
 
 
 
@@ -55,19 +82,18 @@ Output:
 }
 ```
 
-**Example 3: 创建HTTPS监听器，并绑定已有证书**
+**Example 4: Creating TCP listeners lis0 and lis1 to listen on ports 7569 and 7570 respectively**
 
-
+This example shows you how to create two TCP listeners `lis0` and `lis1` to listen on ports 7569 and 7570 respectively.
 
 Input: 
 
 ```
 tccli clb CreateListener --cli-unfold-argument  \
     --LoadBalancerId lb-cuxw2rm0\
-    --Protocol HTTPS\
-    --Ports 7572\
-    --Certificate.SSLMode UNIDIRECTIONAL\
-    --Certificate.CertId MsJyaXVm
+    --Protocol TCP\
+    --Ports 7569 7570\
+    --ListenerNames lis0 lis1
 ```
 
 Output: 
@@ -75,14 +101,15 @@ Output:
 {
     "Response": {
         "ListenerIds": [
-            "lbl-4fbxq45k"
+            "lbl-d1ubsydq",
+            "lbl-4udz130k"
         ],
-        "RequestId": "db8ae69f-ebda-402b-8d02-ead459aa6ff9"
+        "RequestId": "8f272cef-14ff-458c-b67e-1bd21bd2942b"
     }
 }
 ```
 
-**Example 4: 创建HTTPS监听器，并同时绑定新建的证书**
+**Example 5: Creating an HTTPS listener and binding a new certificate**
 
 
 
@@ -107,33 +134,6 @@ Output:
             "lbl-bzfmg9m6"
         ],
         "RequestId": "6082314c-030c-429d-9eae-2dc6b159b5b9"
-    }
-}
-```
-
-**Example 5: 创建UDP监听器，健康检查方式使用Ping（默认方式）**
-
-
-
-Input: 
-
-```
-tccli clb CreateListener --cli-unfold-argument  \
-    --LoadBalancerId lb-6wlxe9rj\
-    --ListenerNames lis_test\
-    --Protocol UDP\
-    --Ports 432\
-    --HealthCheck.HealthSwitch 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ListenerIds": [
-            "lbl-aev333n1"
-        ],
-        "RequestId": "3b81f03e-6088-448d-abaf-8a487d4f985a"
     }
 }
 ```

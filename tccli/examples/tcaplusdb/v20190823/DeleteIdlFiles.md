@@ -1,6 +1,6 @@
-**Example 1: 删除目标idl文件**
+**Example 1: Deleting target IDL file**
 
-删除目标idl文件
+This example shows you how to delete a target IDL file.
 
 Input: 
 

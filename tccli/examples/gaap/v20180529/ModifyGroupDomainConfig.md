@@ -1,4 +1,4 @@
-**Example 1: 配置通道组就近接入域名**
+**Example 1: Configuring the Nearest Access Domain Name of a Connection Group**
 
 
 

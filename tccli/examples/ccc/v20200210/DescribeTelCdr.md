@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ccc DescribeTelCdr --cli-unfold-argument  \
-    --InstanceId 11\
+    --SdkAppId 1400000000\
     --StartTimeStamp 1590547606\
     --EndTimeStamp 1590147606\
     --Limit 10\
@@ -32,7 +32,8 @@ Output:
                 "SeatUser": {
                     "Name": "zhangsan",
                     "Phone": "12321233455"
-                }
+                },
+                "CallerLocation": "广东深圳"
             },
             {
                 "Caller": "12345678902",
@@ -46,7 +47,8 @@ Output:
                 "SeatUser": {
                     "Name": "wangwu",
                     "Phone": "12321233456"
-                }
+                },
+                "CallerLocation": "广东深圳"
             }
         ]
     }

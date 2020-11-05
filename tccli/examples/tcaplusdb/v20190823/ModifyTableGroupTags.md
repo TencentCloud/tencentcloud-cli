@@ -1,6 +1,6 @@
-**Example 1: 修改表格组标签**
+**Example 1: Modifying table group tags**
 
-修改表格组标签
+This example shows you how to modify table group tags.
 
 Input: 
 

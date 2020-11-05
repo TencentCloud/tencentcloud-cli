@@ -1,4 +1,4 @@
-**Example 1: HAVIP绑定EIP**
+**Example 1: Binding an EIP to HAVIP**
 
 
 

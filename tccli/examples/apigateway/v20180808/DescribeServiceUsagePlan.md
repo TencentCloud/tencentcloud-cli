@@ -1,4 +1,4 @@
-**Example 1: 查询服务绑定的使用计划**
+**Example 1: Querying the list of usage plans bound to service**
 
 
 

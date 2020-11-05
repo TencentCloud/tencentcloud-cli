@@ -1,6 +1,6 @@
-**Example 1: 修改表结构**
+**Example 1: Modifying table structure**
 
-修改表结构
+This example shows you how to modify table structure.
 
 Input: 
 

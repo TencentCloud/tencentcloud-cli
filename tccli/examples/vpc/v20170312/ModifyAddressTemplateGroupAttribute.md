@@ -1,4 +1,4 @@
-**Example 1: 修改IP地址模板集合**
+**Example 1: Modifying an IP address template group**
 
 
 

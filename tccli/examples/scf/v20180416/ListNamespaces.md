@@ -1,4 +1,4 @@
-**Example 1: 列出命名空间列表**
+**Example 1: Displaying a Namespace List**
 
 
 
