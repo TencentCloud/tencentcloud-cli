@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli batch ModifyComputeEnv --cli-unfold-argument  \
-    --EnvId env-lcpcej85\
+    --EnvId env-lcpcej85 \
     --DesiredComputeNodeCount 2
 ```
 

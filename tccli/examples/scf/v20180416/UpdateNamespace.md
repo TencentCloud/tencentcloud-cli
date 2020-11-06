@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf UpdateNamespace --cli-unfold-argument  \
-    --Namespace test01\
+    --Namespace test01 \
     --Description fdsgfds
 ```
 

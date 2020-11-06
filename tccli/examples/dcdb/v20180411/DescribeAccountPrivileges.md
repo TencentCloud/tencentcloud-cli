@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dcdb DescribeAccountPrivileges --cli-unfold-argument  \
-    --InstanceId dcdbt-fdpjf5zh\
-    --UserName testuser1\
-    --Host 172.17.%\
-    --DbName *\
+    --InstanceId dcdbt-fdpjf5zh \
+    --UserName testuser1 \
+    --Host 172.17.% \
+    --DbName * \
     --Type *
 ```
 

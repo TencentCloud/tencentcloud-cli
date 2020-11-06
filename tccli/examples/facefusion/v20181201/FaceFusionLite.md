@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli facefusion FaceFusionLite --cli-unfold-argument  \
-    --ProjectId 100646\
-    --ModelId qc_100646_154021_9\
+    --ProjectId 100646 \
+    --ModelId qc_100646_154021_9 \
     --MergeInfos.0.Url https://test-139.cos.ap-nan.cloud.com/bk.jpeg
 ```
 
@@ -46,9 +46,9 @@ Input:
 
 ```
 tccli facefusion FaceFusionLite --cli-unfold-argument  \
-    --ProjectId 100646\
-    --ModelId qc_100646_154021_9\
-    --RspImgType url\
+    --ProjectId 100646 \
+    --ModelId qc_100646_154021_9 \
+    --RspImgType url \
     --MergeInfos.0.Url https://test-139.cos.ap-nan.cloud.com/bk.jpeg
 ```
 

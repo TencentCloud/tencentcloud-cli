@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc AuditCrossBorderCompliance --cli-unfold-argument  \
-    --ServiceProvider UNICOM\
-    --ComplianceId 10006\
+    --ServiceProvider UNICOM \
+    --ComplianceId 10006 \
     --AuditBehavior DENY
 ```
 

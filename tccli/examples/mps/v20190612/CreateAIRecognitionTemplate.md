@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mps CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 'Intelligent recognition template'\
-    --Comment 'Template 2'\
-    --FaceConfigure.Switch ON\
-    --FaceConfigure.FaceLibrary Default\
+    --Name 'Intelligent recognition template' \
+    --Comment 'Template 2' \
+    --FaceConfigure.Switch ON \
+    --FaceConfigure.FaceLibrary Default \
     --FaceConfigure.Score 90
 ```
 
@@ -31,9 +31,9 @@ Input:
 
 ```
 tccli mps CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 'Intelligent recognition template'\
-    --Comment 'Template 3'\
-    --FaceConfigure.Switch ON\
+    --Name 'Intelligent recognition template' \
+    --Comment 'Template 3' \
+    --FaceConfigure.Switch ON \
     --FaceConfigure.FaceLibrary All
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway BindSecretIds --cli-unfold-argument  \
-    --UsagePlanId usagePlan-quqxvett\
+    --UsagePlanId usagePlan-quqxvett \
     --AccessKeyIds AKIDmyE2z0gvi2p6i9lWr3bbetpTaquaxQ8s8iob
 ```
 

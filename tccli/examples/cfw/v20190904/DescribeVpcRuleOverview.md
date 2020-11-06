@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli cfw DescribeVpcRuleOverview --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --EdgeId cfws-1462d1d278
+    --EdgeId 
 ```
 
 Output: 

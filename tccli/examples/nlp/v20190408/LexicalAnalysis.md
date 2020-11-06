@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp LexicalAnalysis --cli-unfold-argument  \
-    --Text "欢迎使用腾讯知文自然语言处理"\
+    --Text "欢迎使用腾讯知文自然语言处理" \
     --Flag 1
 ```
 

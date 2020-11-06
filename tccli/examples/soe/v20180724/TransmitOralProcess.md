@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli soe TransmitOralProcess --cli-unfold-argument  \
-    --SessionId stress_test_956938\
-    --VoiceFileType 1\
-    --SeqId 1\
-    --VoiceEncodeType 1\
-    --IsEnd 0\
+    --SessionId stress_test_956938 \
+    --VoiceFileType 1 \
+    --SeqId 1 \
+    --VoiceEncodeType 1 \
+    --IsEnd 0 \
     --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5
 ```
 

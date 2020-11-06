@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli cpdp ApplyTrade --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --TradeFileId tdflid20191123023\
-    --TradeOrderId tdodid20191118021\
-    --PayerId qyfkr201911230001\
-    --PayeeName 个人收款姓名A\
-    --PayeeCountryCode CHN\
-    --TradeType GOODS\
-    --TradeTime 20191118\
-    --TradeCurrency USD\
-    --TradeAmount 10.22\
-    --TradeName 帽子\
-    --TradeCount 1\
-    --GoodsCarrier 中外运空运;MC2410918701000931505\
-    --ServiceDetail \
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --TradeFileId tdflid20191123023 \
+    --TradeOrderId tdodid20191118021 \
+    --PayerId qyfkr201911230001 \
+    --PayeeName 个人收款姓名A \
+    --PayeeCountryCode CHN \
+    --TradeType GOODS \
+    --TradeTime 20191118 \
+    --TradeCurrency USD \
+    --TradeAmount 10.22 \
+    --TradeName 帽子 \
+    --TradeCount 1 \
+    --GoodsCarrier 中外运空运;MC2410918701000931505 \
+    --ServiceDetail  \
     --ServiceTime 
 ```
 

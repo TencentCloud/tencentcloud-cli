@@ -1,4 +1,4 @@
-**Example 1: Modifying TencentDB instance account remarks**
+**Example 1: Modifying the remarks of a TencentDB instance account**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb ModifyAccountDescription --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
-    --Accounts.0.user ajnnw\
-    --Accounts.0.host 127.0.0.1\
+    --InstanceId cdb-f35wr6wj \
+    --Accounts.0.user ajnnw \
+    --Accounts.0.host 127.0.0.1 \
     --Description new
 ```
 

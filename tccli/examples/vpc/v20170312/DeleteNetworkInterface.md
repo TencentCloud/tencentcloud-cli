@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DeleteNetworkInterface --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --NetworkInterfaceId eni-m6dyj72l
 ```
 

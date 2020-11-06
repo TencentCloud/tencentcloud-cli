@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tia DescribeJob --cli-unfold-argument  \
-    --Name test-job\
+    --Name test-job \
     --Cluster ap-beijing
 ```
 

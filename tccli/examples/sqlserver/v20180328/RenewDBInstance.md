@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver RenewDBInstance --cli-unfold-argument  \
-    --InstanceId mssql-j8kv137v\
+    --InstanceId mssql-j8kv137v \
     --Period 2
 ```
 

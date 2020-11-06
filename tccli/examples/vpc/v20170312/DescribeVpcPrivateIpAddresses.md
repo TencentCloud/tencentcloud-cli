@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DescribeVpcPrivateIpAddresses --cli-unfold-argument  \
-    --VpcId vpc-rkxd3pgh\
+    --VpcId vpc-rkxd3pgh \
     --PrivateIpAddresses 10.4.2.2 10.4.2.3 10.4.2.17
 ```
 

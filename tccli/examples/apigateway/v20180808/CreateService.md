@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apigateway CreateService --cli-unfold-argument  \
-    --ServiceName test_https\
-    --ServiceDesc https\
+    --ServiceName test_https \
+    --ServiceDesc https \
     --Protocol https
 ```
 

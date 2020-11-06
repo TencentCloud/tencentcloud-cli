@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli as UpgradeLaunchConfiguration --cli-unfold-argument  \
-    --LaunchConfigurationId asc-gj14vczi\
-    --LaunchConfigurationName as_test\
-    --InstanceTypes S2.SMALL1\
+    --LaunchConfigurationId asc-gj14vczi \
+    --LaunchConfigurationName as_test \
+    --InstanceTypes S2.SMALL1 \
     --ImageId img-8toqc6s3
 ```
 
@@ -29,19 +29,19 @@ Input:
 
 ```
 tccli as UpgradeLaunchConfiguration --cli-unfold-argument  \
-    --LaunchConfigurationId asc-gj14vczi\
-    --LaunchConfigurationName as_test\
-    --ImageId img-8toqc6s3\
-    --InstanceTypes S2.SMALL1\
-    --SystemDisk.DiskType LOCAL_BASIC\
-    --SystemDisk.DiskSize 50\
-    --DataDisks.0.DiskType CLOUD_BASIC\
-    --DataDisks.0.DiskSize 100\
-    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR\
-    --InternetAccessible.InternetMaxBandwidthOut 5\
-    --InternetAccessible.PublicIpAssigned TRUE\
-    --LoginSettings.KeyIds skey-k8eypc1l\
-    --EnhancedService.SecurityService.Enabled TRUE\
+    --LaunchConfigurationId asc-gj14vczi \
+    --LaunchConfigurationName as_test \
+    --ImageId img-8toqc6s3 \
+    --InstanceTypes S2.SMALL1 \
+    --SystemDisk.DiskType LOCAL_BASIC \
+    --SystemDisk.DiskSize 50 \
+    --DataDisks.0.DiskType CLOUD_BASIC \
+    --DataDisks.0.DiskSize 100 \
+    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
+    --InternetAccessible.InternetMaxBandwidthOut 5 \
+    --InternetAccessible.PublicIpAssigned TRUE \
+    --LoginSettings.KeyIds skey-k8eypc1l \
+    --EnhancedService.SecurityService.Enabled TRUE \
     --EnhancedService.MonitorService.Enabled TRUE
 ```
 

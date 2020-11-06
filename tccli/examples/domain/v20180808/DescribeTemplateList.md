@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli domain DescribeTemplateList --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
-    --Status InAudit\
+    --Offset 0 \
+    --Limit 20 \
+    --Status InAudit \
     --Type E
 ```
 

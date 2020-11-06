@@ -63,8 +63,8 @@ Input:
 
 ```
 tccli iotexplorer GetLoRaGatewayList --cli-unfold-argument  \
-    --IsCommunity false\
-    --Limit 10\
+    --IsCommunity false \
+    --Limit 10 \
     --Offser 0
 ```
 

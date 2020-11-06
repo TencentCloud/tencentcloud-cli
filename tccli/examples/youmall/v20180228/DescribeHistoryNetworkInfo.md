@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli youmall DescribeHistoryNetworkInfo --cli-unfold-argument  \
-    --Time 1536135402\
-    --CompanyId tencent\
-    --ShopId 10086\
-    --StartDay 2018-09-04\
-    --EndDay 2018-09-05\
-    --Limit 3\
+    --Time 1536135402 \
+    --CompanyId tencent \
+    --ShopId 10086 \
+    --StartDay 2018-09-04 \
+    --EndDay 2018-09-05 \
+    --Limit 3 \
     --Offset 1
 ```
 

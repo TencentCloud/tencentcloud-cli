@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli kms CreateKey --cli-unfold-argument  \
-    --Alias mykey\
-    --KeyUsage ENCRYPT_DECRYPT\
+    --Alias mykey \
+    --KeyUsage ENCRYPT_DECRYPT \
     --Description test
 ```
 

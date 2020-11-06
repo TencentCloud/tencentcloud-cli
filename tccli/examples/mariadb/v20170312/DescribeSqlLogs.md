@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb DescribeSqlLogs --cli-unfold-argument  \
-    --InstanceId tdsql-6a0lwzzj\
+    --InstanceId tdsql-6a0lwzzj \
     --Limit 0
 ```
 
@@ -33,8 +33,8 @@ Input:
 
 ```
 tccli mariadb DescribeSqlLogs --cli-unfold-argument  \
-    --InstanceId tdsql-6a0lwzzj\
-    --Offset 53560502\
+    --InstanceId tdsql-6a0lwzzj \
+    --Offset 53560502 \
     --Limit 1
 ```
 

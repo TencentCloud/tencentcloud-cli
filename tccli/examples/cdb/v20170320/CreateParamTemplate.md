@@ -1,4 +1,4 @@
-**Example 1: Creating parameter template**
+**Example 1: Creating a parameter template**
 
 
 
@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdb CreateParamTemplate --cli-unfold-argument  \
-    --EngineVersion 5.7\
-    --Name test\
-    --ParamList.0.Name auto_increment_increment\
-    --ParamList.0.Value 1\
-    --ParamList.1.Name binlog_format\
+    --EngineVersion 5.7 \
+    --Name test \
+    --ParamList.0.Name auto_increment_increment \
+    --ParamList.0.Value 1 \
+    --ParamList.1.Name binlog_format \
     --ParamList.2.Value MIXED
 ```
 

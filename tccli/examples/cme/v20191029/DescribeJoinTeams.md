@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cme DescribeJoinTeams --cli-unfold-argument  \
-    --Platform test\
-    --TeamId 1kdk882ddd88338ddd3k3\
+    --Platform test \
+    --TeamId 1kdk882ddd88338ddd3k3 \
     --MemberId 1993939392iidkei8ei
 ```
 

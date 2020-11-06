@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli dayu DescribeBizTrend --cli-unfold-argument  \
-    --Domain xx\
-    --Statistics xx\
-    --Business xx\
-    --ProtoInfo.0.Protocol xx\
-    --ProtoInfo.0.Port 1\
-    --Period 1\
-    --StartTime 2020-09-22 00:00:00\
-    --EndTime 2020-09-22 00:00:00\
-    --Id xx\
+    --Domain xx \
+    --Statistics xx \
+    --Business xx \
+    --ProtoInfo.0.Protocol xx \
+    --ProtoInfo.0.Port 1 \
+    --Period 1 \
+    --StartTime 2020-09-22 00:00:00 \
+    --EndTime 2020-09-22 00:00:00 \
+    --Id xx \
     --MetricName xx
 ```
 

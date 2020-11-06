@@ -1,4 +1,4 @@
-**Example 1: Modifying security group bound to TencentDB instance**
+**Example 1: Modifying the security groups bound to a TencentDB instance**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb ModifyDBInstanceSecurityGroups --cli-unfold-argument  \
-    --InstanceId cdb-eb2w7dto\
+    --InstanceId cdb-eb2w7dto \
     --SecurityGroupIds sg-ajr1jzgj
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis UpgradeInstanceVersion --cli-unfold-argument  \
-    --InstanceId crs-5qlrlhux\
-    --SwitchOption 2\
+    --InstanceId crs-5qlrlhux \
+    --SwitchOption 2 \
     --TargetInstanceType 6
 ```
 

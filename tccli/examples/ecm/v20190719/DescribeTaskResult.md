@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DescribeTaskResult --cli-unfold-argument  \
-    --TaskId 123\
+    --TaskId 123 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

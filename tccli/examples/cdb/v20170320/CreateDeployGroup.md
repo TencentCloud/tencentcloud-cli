@@ -1,4 +1,4 @@
-**Example 1: Creating placement group**
+**Example 1: Creating a placement group**
 
 This example shows you how to create a placement group.
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb CreateDeployGroup --cli-unfold-argument  \
-    --DeployGroupName cdb-ezq1vzem\
+    --DeployGroupName cdb-ezq1vzem \
     --Description test
 ```
 

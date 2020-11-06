@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli es UpgradeInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
+    --InstanceId es-xxxxxxxx \
     --EsVersion 6.4.3
 ```
 

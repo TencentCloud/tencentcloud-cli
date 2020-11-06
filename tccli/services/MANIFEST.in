@@ -5,9 +5,11 @@ include tccli/services/af/v20200226/api.json
 include tccli/services/afc/v20200226/api.json
 include tccli/services/ame/v20190916/api.json
 include tccli/services/ams/v20200608/api.json
+include tccli/services/ape/v20200513/api.json
 include tccli/services/apigateway/v20180808/api.json
 include tccli/services/autoscaling/v20180419/api.json
 include tccli/services/asr/v20190614/api.json
+include tccli/services/asw/v20200722/api.json
 include tccli/services/batch/v20170312/api.json
 include tccli/services/bda/v20200324/api.json
 include tccli/services/billing/v20180709/api.json

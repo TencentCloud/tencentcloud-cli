@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo RefundStorageService --cli-unfold-argument  \
-    --ServiceId xxxxxx\
+    --ServiceId xxxxxx \
     --OrderId 111
 ```
 

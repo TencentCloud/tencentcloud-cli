@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeMediaProcessUsageData --cli-unfold-argument  \
-    --StartTime 2019-07-02T00:00:00+08:00\
+    --StartTime 2019-07-02T00:00:00+08:00 \
     --EndTime 2019-07-03T00:00:00+08:00
 ```
 

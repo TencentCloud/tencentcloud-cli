@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iot IssueDeviceControl --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
-    --DeviceName device1\
+    --ProductId iot-4e0wsxpi \
+    --DeviceName device1 \
     --ControlData {"light":"on"}
 ```
 

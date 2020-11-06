@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cme DeleteTeam --cli-unfold-argument  \
-    --Platform test\
-    --Name 测试团队名称\
+    --Platform test \
+    --Name 测试团队名称 \
     --TeamId 9aoodiiiekj899dkk99d7d6d5dff77f
 ```
 

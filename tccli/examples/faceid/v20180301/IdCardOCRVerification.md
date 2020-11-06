@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli faceid IdCardOCRVerification --cli-unfold-argument  \
-    --IdCard 360*************50\
+    --IdCard 360*************50 \
     --Name **杰
 ```
 

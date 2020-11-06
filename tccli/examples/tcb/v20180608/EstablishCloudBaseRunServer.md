@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tcb EstablishCloudBaseRunServer --cli-unfold-argument  \
-    --Remark xx\
-    --EnvId xx\
-    --IsPublic True\
-    --EsInfo.Index xx\
-    --EsInfo.Account xx\
-    --EsInfo.Ip xx\
-    --EsInfo.Id 0\
-    --EsInfo.SecretName xx\
-    --EsInfo.Password xx\
-    --EsInfo.Port 0\
-    --ServiceName xx\
+    --Remark xx \
+    --EnvId xx \
+    --IsPublic True \
+    --EsInfo.Index xx \
+    --EsInfo.Account xx \
+    --EsInfo.Ip xx \
+    --EsInfo.Id 0 \
+    --EsInfo.SecretName xx \
+    --EsInfo.Password xx \
+    --EsInfo.Port 0 \
+    --ServiceName xx \
     --ImageRepo xx
 ```
 

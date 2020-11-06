@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DescribeBackupSummaries --cli-unfold-argument  \
-    --Product mysql\
+    --Product mysql \
     --Limit 1
 ```
 

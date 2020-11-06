@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssm GetSecretValue --cli-unfold-argument  \
-    --SecretName test_secret\
+    --SecretName test_secret \
     --VersionId v1.0
 ```
 

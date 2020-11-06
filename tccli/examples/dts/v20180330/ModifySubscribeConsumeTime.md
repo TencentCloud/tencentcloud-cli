@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dts ModifySubscribeConsumeTime --cli-unfold-argument  \
-    --SubscribeId subs-ieuwi83j2e\
+    --SubscribeId subs-ieuwi83j2e \
     --ConsumeStartTime '2019-10-26 00:00:00'
 ```
 

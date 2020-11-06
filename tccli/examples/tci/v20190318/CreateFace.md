@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tci CreateFace --cli-unfold-argument  \
-    --PersonId person_xxx\
-    --LibraryId library_xxx\
+    --PersonId person_xxx \
+    --LibraryId library_xxx \
     --Urls http://xxx.jpg
 ```
 

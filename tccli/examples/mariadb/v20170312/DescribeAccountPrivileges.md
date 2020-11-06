@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mariadb DescribeAccountPrivileges --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
-    --UserName testuser1\
-    --Host 172.17.%\
-    --DbName *\
+    --InstanceId tdsql-fdpjf5zh \
+    --UserName testuser1 \
+    --Host 172.17.% \
+    --DbName * \
     --Type *
 ```
 

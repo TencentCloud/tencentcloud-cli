@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli es RestartNodes --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
+    --InstanceId es-xxxxxxxx \
     --NodeNames 159229897700074xxxx
 ```
 

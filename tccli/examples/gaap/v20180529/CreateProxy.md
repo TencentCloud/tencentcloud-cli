@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli gaap CreateProxy --cli-unfold-argument  \
-    --ProjectId 0\
-    --ProxyName test\
-    --AccessRegion SouthChina\
-    --Bandwidth 10\
-    --Concurrent 2\
+    --ProjectId 0 \
+    --ProxyName test \
+    --AccessRegion SouthChina \
+    --Bandwidth 10 \
+    --Concurrent 2 \
     --GroupId lg-xxxx
 ```
 

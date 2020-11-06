@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc DescribeSecurityGroups --cli-unfold-argument  \
-    --Limit 1\
-    --Filters.0.Name project-id\
-    --Filters.0.Values 0\
-    --Filters.1.Name security-group-name\
+    --Limit 1 \
+    --Filters.0.Name project-id \
+    --Filters.0.Values 0 \
+    --Filters.1.Name security-group-name \
     --Filters.1.Values TestGroup
 ```
 
@@ -40,7 +40,7 @@ Input:
 
 ```
 tccli vpc DescribeSecurityGroups --cli-unfold-argument  \
-    --Filters.0.Name tag:Version\
+    --Filters.0.Name tag:Version \
     --Filters.0.Values TEST
 ```
 

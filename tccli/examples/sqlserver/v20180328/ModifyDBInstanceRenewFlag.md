@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver ModifyDBInstanceRenewFlag --cli-unfold-argument  \
-    --RenewFlags.0.InstanceId mssql-j8kv137v\
+    --RenewFlags.0.InstanceId mssql-j8kv137v \
     --RenewFlags.0.RenewFlag 1
 ```
 

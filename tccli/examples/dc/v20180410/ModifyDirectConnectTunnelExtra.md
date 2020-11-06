@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dc ModifyDirectConnectTunnelExtra --cli-unfold-argument  \
-    --DirectConnectTunnelId dcx-r3sml04o\
+    --DirectConnectTunnelId dcx-r3sml04o \
     --Vlan 90
 ```
 

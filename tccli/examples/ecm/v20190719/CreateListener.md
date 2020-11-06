@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm CreateListener --cli-unfold-argument  \
-    --LoadBalancerId lb-f9zyj3kb\
-    --Ports 13001 13002 13003\
+    --LoadBalancerId lb-f9zyj3kb \
+    --Ports 13001 13002 13003 \
     --Protocol TCP
 ```
 

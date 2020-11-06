@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cpdp MigrateOrderRefund --cli-unfold-argument  \
-    --MerchantId 商户号\
-    --PayAmt 123\
-    --PayChannel 支付渠道\
-    --PayOrderId 1023232989\
-    --RefundAmt 10\
-    --RefundOrderId 9\
+    --MerchantId 商户号 \
+    --PayAmt 123 \
+    --PayChannel 支付渠道 \
+    --PayOrderId 1023232989 \
+    --RefundAmt 10 \
+    --RefundOrderId 9 \
     --ThirdChannelOrderId 123230902323899
 ```
 

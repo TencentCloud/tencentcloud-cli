@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bda CreateGroup --cli-unfold-argument  \
-    --GroupName testG3\
-    --GroupId testG3\
-    --Tag TestG3T3\
+    --GroupName testG3 \
+    --GroupId testG3 \
+    --Tag TestG3T3 \
     --BodyModelVersion 2.0
 ```
 
@@ -33,9 +33,9 @@ Input:
 
 ```
 tccli bda CreateGroup --cli-unfold-argument  \
-    --GroupName testG3\
-    --GroupId testG3\
-    --Tag TestG3T3\
+    --GroupName testG3 \
+    --GroupId testG3 \
+    --Tag TestG3T3 \
     --BodyModelVersion 1.0
 ```
 

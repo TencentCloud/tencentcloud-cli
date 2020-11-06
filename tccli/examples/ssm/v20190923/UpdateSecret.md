@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ssm UpdateSecret --cli-unfold-argument  \
-    --SecretName test\
-    --VersionId v1.0\
+    --SecretName test \
+    --VersionId v1.0 \
     --SecretString 'new value'
 ```
 

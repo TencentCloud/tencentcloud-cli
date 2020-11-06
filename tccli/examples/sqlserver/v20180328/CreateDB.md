@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver CreateDB --cli-unfold-argument  \
-    --InstanceId mssql-i1z41iwd\
-    --DBs.0.DBName test_db\
+    --InstanceId mssql-i1z41iwd \
+    --DBs.0.DBName test_db \
     --DBs.0.Charset Chinese_PRC_CI_AS
 ```
 

@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli iotexplorer ModifyLoRaGateway --cli-unfold-argument  \
-    --Description fortest3\
-    --IsPublic false\
-    --Position tfine\
-    --PositionDetails fyd\
-    --GatewayId ff00000000000003\
-    --Location.Accuracy 0\
-    --Location.Altitude 1\
-    --Location.Latitude 120\
-    --Location.Longitude 113.44\
+    --Description fortest3 \
+    --IsPublic false \
+    --Position tfine \
+    --PositionDetails fyd \
+    --GatewayId ff00000000000003 \
+    --Location.Accuracy 0 \
+    --Location.Altitude 1 \
+    --Location.Latitude 120 \
+    --Location.Longitude 113.44 \
     --Name gw3
 ```
 

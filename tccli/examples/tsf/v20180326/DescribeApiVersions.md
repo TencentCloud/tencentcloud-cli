@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribeApiVersions --cli-unfold-argument  \
-    --MicroserviceId ms-2vzprpyp\
-    --Path /facade/supplier/test\
+    --MicroserviceId ms-2vzprpyp \
+    --Path /facade/supplier/test \
     --Method POST
 ```
 

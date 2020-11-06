@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres DescribeDBSlowlogs --cli-unfold-argument  \
-    --DBInstanceId postgres-apzvwncr\
-    --StartTime '2018-06-10 17:06:38'\
+    --DBInstanceId postgres-apzvwncr \
+    --StartTime '2018-06-10 17:06:38' \
     --EndTime '2018-06-11 17:06:38'
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribePublicConfigs --cli-unfold-argument  \
-    --ConfigName global\
-    --Offset 0\
+    --ConfigName global \
+    --Offset 0 \
     --Limit 50
 ```
 

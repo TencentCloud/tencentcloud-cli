@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dayu ModifyCCLevel --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Level default\
-    --Protocol https\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Level default \
+    --Protocol https \
     --RuleId rule-0000000x
 ```
 

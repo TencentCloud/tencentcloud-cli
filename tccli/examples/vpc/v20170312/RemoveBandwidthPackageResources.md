@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc RemoveBandwidthPackageResources --cli-unfold-argument  \
-    --BandwidthPackageId bwp-pr0xbnvw\
+    --BandwidthPackageId bwp-pr0xbnvw \
     --ResourceIds eip-alfxy9c8
 ```
 

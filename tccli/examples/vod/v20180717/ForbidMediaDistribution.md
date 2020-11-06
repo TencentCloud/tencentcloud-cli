@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod ForbidMediaDistribution --cli-unfold-argument  \
-    --FileIds 7447398156998994860\
-    --SubAppId 1\
+    --FileIds 7447398156998994860 \
+    --SubAppId 1 \
     --Operation forbid
 ```
 

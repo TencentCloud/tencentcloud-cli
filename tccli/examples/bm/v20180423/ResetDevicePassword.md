@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bm ResetDevicePassword --cli-unfold-argument  \
-    --InstanceIds cpm-xxx0 cpm-xxx1 cpm-xxx2\
+    --InstanceIds cpm-xxx0 cpm-xxx1 cpm-xxx2 \
     --Password newpasswd
 ```
 

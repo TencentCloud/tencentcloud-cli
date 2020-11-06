@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyServiceTemplateAttribute --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --ServiceTemplateId ppm-529nwwj8\
+    --Version 2017-03-12 \
+    --ServiceTemplateId ppm-529nwwj8 \
     --ServiceTemplateName TestName
 ```
 

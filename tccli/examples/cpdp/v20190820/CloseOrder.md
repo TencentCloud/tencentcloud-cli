@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp CloseOrder --cli-unfold-argument  \
-    --MidasAppId your_midas_app_id\
-    --OutTradeNo your_order_no\
-    --UserId your_user_id\
-    --MidasSecretId your_midas_secret_id\
+    --MidasAppId your_midas_app_id \
+    --OutTradeNo your_order_no \
+    --UserId your_user_id \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

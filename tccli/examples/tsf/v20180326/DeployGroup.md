@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DeployGroup --cli-unfold-argument  \
-    --GroupId group-xxxxxxx\
-    --PkgId pkg-xxxxxxx\
+    --GroupId group-xxxxxxx \
+    --PkgId pkg-xxxxxxx \
     --StartupParameters -Xms128m-Xmx512m-XX:MetaspaceSize
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli yunsou DataSearch --cli-unfold-argument  \
-    --NumPerPage 10\
-    --PageId 0\
-    --ResourceId 76340002\
-    --SearchId uuunnnllliiikkkkeeee\
+    --NumPerPage 10 \
+    --PageId 0 \
+    --ResourceId 76340002 \
+    --SearchId uuunnnllliiikkkkeeee \
     --SearchQuery %E6%BC%94%E5%91%98
 ```
 

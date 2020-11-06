@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DescribeAddresses --cli-unfold-argument  \
-    --AddressIds eip-11221122\
+    --AddressIds eip-11221122 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

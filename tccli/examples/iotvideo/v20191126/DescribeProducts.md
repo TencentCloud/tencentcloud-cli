@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideo DescribeProducts --cli-unfold-argument  \
-    --ProductModel test\
-    --StartTime 1546272000\
-    --EndTime 1578298301\
-    --Limit 10\
+    --ProductModel test \
+    --StartTime 1546272000 \
+    --EndTime 1578298301 \
+    --Limit 10 \
     --Offset 0
 ```
 

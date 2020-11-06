@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1\
-    --PersonName Junly\
-    --PersonId 2001\
-    --Gender 1\
-    --Url http://test.image.myqcloud.com/testB.jpg\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0\
-    --PersonExDescriptionInfos.0.PersonExDescription 计算机学院\
-    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1\
-    --PersonExDescriptionInfos.1.PersonExDescription 软件工程\
-    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2\
-    --PersonExDescriptionInfos.2.PersonExDescription 15级\
-    --PersonExDescriptionInfos.3.PersonExDescriptionIndex 3\
-    --PersonExDescriptionInfos.3.PersonExDescription 3150808\
+    --GroupId ZhuYuanDormitoryNo1 \
+    --PersonName Junly \
+    --PersonId 2001 \
+    --Gender 1 \
+    --Url http://test.image.myqcloud.com/testB.jpg \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0 \
+    --PersonExDescriptionInfos.0.PersonExDescription 计算机学院 \
+    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
+    --PersonExDescriptionInfos.1.PersonExDescription 软件工程 \
+    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
+    --PersonExDescriptionInfos.2.PersonExDescription 15级 \
+    --PersonExDescriptionInfos.3.PersonExDescriptionIndex 3 \
+    --PersonExDescriptionInfos.3.PersonExDescription 3150808 \
     --Version 2018-03-01
 ```
 
@@ -48,17 +48,17 @@ Input:
 
 ```
 tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --PersonName evanliao\
-    --PersonId 1001\
-    --Gender 1\
-    --Url http://test.image.myqcloud.com/testA.jpg\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0\
-    --PersonExDescriptionInfos.0.PersonExDescription 云与智慧产业事业群\
-    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1\
-    --PersonExDescriptionInfos.1.PersonExDescription 人工智能产品中心\
-    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2\
-    --PersonExDescriptionInfos.2.PersonExDescription 人脸识别产品组\
+    --GroupId TencentShenZhenEmployee \
+    --PersonName evanliao \
+    --PersonId 1001 \
+    --Gender 1 \
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0 \
+    --PersonExDescriptionInfos.0.PersonExDescription 云与智慧产业事业群 \
+    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
+    --PersonExDescriptionInfos.1.PersonExDescription 人工智能产品中心 \
+    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
+    --PersonExDescriptionInfos.2.PersonExDescription 人脸识别产品组 \
     --Version 2018-03-01
 ```
 
@@ -88,11 +88,11 @@ Input:
 
 ```
 tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1\
-    --PersonName Cheng\
-    --PersonId 1001\
-    --Gender 2\
-    --Url http://test.image.myqcloud.com/testD.jpg\
+    --GroupId ZhuYuanDormitoryNo1 \
+    --PersonName Cheng \
+    --PersonId 1001 \
+    --Gender 2 \
+    --Url http://test.image.myqcloud.com/testD.jpg \
     --Version 2018-03-01
 ```
 
@@ -117,11 +117,11 @@ Input:
 
 ```
 tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId ShenZhenCitizen\
-    --PersonName Siccy\
-    --PersonId 3001\
-    --Gender 2\
-    --Url http://test.image.myqcloud.com/testC.jpg\
+    --GroupId ShenZhenCitizen \
+    --PersonName Siccy \
+    --PersonId 3001 \
+    --Gender 2 \
+    --Url http://test.image.myqcloud.com/testC.jpg \
     --Version 2018-03-01
 ```
 

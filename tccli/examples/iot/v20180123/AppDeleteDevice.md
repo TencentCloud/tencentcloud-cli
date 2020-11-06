@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iot AppDeleteDevice --cli-unfold-argument  \
-    --AccessToken xxx\
-    --ProductId iot-a8ojgbji\
+    --AccessToken xxx \
+    --ProductId iot-a8ojgbji \
     --DeviceName device
 ```
 

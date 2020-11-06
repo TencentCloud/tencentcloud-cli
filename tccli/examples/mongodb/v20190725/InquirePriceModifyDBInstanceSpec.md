@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mongodb InquirePriceModifyDBInstanceSpec --cli-unfold-argument  \
-    --InstanceId cmgo-8oij5631\
-    --Memory 8\
+    --InstanceId cmgo-8oij5631 \
+    --Memory 8 \
     --Volume 200
 ```
 

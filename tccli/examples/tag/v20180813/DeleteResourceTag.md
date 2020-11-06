@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tag DeleteResourceTag --cli-unfold-argument  \
-    --TagKey testTagKey\
+    --TagKey testTagKey \
     --Resource qcs::cvm:ap-beijing:uin/1234567:instance/ins-123
 ```
 

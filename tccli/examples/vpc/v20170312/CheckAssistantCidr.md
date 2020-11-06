@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc CheckAssistantCidr --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpcId vpc-12345678\
+    --Version 2017-03-12 \
+    --VpcId vpc-12345678 \
     --NewCidrBlocks 172.16.0.0/24
 ```
 
@@ -40,8 +40,8 @@ Input:
 
 ```
 tccli vpc CheckAssistantCidr --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpcId vpc-12345678\
+    --Version 2017-03-12 \
+    --VpcId vpc-12345678 \
     --NewCidrBlocks 172.16.0.0/24
 ```
 

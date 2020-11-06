@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp QueryBankClear --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --FunctionFlag 1\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --FunctionFlag 1 \
     --PageNum 1
 ```
 

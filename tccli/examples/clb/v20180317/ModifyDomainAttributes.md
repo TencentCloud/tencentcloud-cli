@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb ModifyDomainAttributes --cli-unfold-argument  \
-    --LoadBalancerId lb-1wvl0ejw\
-    --ListenerId lbl-n8mb2r3a\
+    --LoadBalancerId lb-1wvl0ejw \
+    --ListenerId lbl-n8mb2r3a \
     --Domain foo.net
 ```
 

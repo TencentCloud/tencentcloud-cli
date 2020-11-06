@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ecm CreateModule --cli-unfold-argument  \
-    --ModuleName 智能语音模块\
-    --DefaultBandWidth 50\
-    --DefaultImageId img-1tyt4apn\
-    --InstanceType SN3ne.2XLARGE16\
-    --DefaultSystemDiskSize 50\
+    --ModuleName 智能语音模块 \
+    --DefaultBandWidth 50 \
+    --DefaultImageId img-1tyt4apn \
+    --InstanceType SN3ne.2XLARGE16 \
+    --DefaultSystemDiskSize 50 \
     --DefaultDataDiskSize 100
 ```
 

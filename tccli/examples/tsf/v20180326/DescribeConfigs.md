@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tsf DescribeConfigs --cli-unfold-argument  \
-    --ConfigName test-driverapi-config\
-    --ApplicationId application-jy9w6lka\
-    --Offset 0\
+    --ConfigName test-driverapi-config \
+    --ApplicationId application-jy9w6lka \
+    --Offset 0 \
     --Limit 50
 ```
 

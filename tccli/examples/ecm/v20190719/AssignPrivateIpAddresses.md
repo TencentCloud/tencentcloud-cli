@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm AssignPrivateIpAddresses --cli-unfold-argument  \
-    --NetworkInterfaceId eni-12121212\
-    --SecondaryPrivateIpAddressCount 2\
+    --NetworkInterfaceId eni-12121212 \
+    --SecondaryPrivateIpAddressCount 2 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

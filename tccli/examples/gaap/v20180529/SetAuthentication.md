@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli gaap SetAuthentication --cli-unfold-argument  \
-    --ListenerId 0\
-    --Domain a.a.com\
-    --BasicAuth 1\
-    --BasicAuthConfId xxx\
-    --GaapAuth 1\
+    --ListenerId 0 \
+    --Domain a.a.com \
+    --BasicAuth 1 \
+    --BasicAuthConfId xxx \
+    --GaapAuth 1 \
     --GaapCertificateId xxx
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cbs ModifyAutoSnapshotPolicyAttribute --cli-unfold-argument  \
-    --AutoSnapshotPolicyId asp-nqu08k2l\
-    --AutoSnapshotPolicyName data_disk_auto_snapshot\
+    --AutoSnapshotPolicyId asp-nqu08k2l \
+    --AutoSnapshotPolicyName data_disk_auto_snapshot \
     --IsPermanent TRUE
 ```
 

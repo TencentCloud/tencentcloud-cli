@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai DeletePersonFromGroup --cli-unfold-argument  \
-    --PersonId 1001\
+    --PersonId 1001 \
     --GroupId TencentShenZhenEmployee
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli iai DeletePersonFromGroup --cli-unfold-argument  \
-    --PersonId 3001\
+    --PersonId 3001 \
     --GroupId ZhuYuanDormitoryNo1
 ```
 

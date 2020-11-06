@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cam AddUser --cli-unfold-argument  \
-    --Name test124\
-    --Remark test\
-    --ConsoleLogin 1\
-    --UseApi 1\
-    --Password test123456\
-    --NeedResetPassword 0\
-    --PhoneNum 10086\
-    --CountryCode 86\
+    --Name test124 \
+    --Remark test \
+    --ConsoleLogin 1 \
+    --UseApi 1 \
+    --Password test123456 \
+    --NeedResetPassword 0 \
+    --PhoneNum 10086 \
+    --CountryCode 86 \
     --Email 123%40qq.com
 ```
 

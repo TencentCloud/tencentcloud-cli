@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo ModifyVerContent --cli-unfold-argument  \
-    --ProductId 12\
+    --ProductId 12 \
     --OtaVersion 2.1
 ```
 

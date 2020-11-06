@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli youmall DescribeZoneFlowGenderInfoByZoneId --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 1\
-    --ZoneId 1\
-    --StartDate 2016-10-10\
+    --CompanyId testCompany1 \
+    --ShopId 1 \
+    --ZoneId 1 \
+    --StartDate 2016-10-10 \
     --EndDate 2017-06-01
 ```
 

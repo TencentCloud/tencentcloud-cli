@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm ModifyModuleImage --cli-unfold-argument  \
-    --ModuleId em-bvr8f24q\
+    --ModuleId em-bvr8f24q \
     --DefaultImageId img-oy9q2bql
 ```
 

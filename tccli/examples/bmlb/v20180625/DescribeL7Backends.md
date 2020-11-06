@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bmlb DescribeL7Backends --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
-    --ListenerId lbl-l6fzjsx5\
-    --DomainId dm-hg8j52ud\
-    --LocationId loc-02ywyc8b\
+    --LoadBalancerId lb-47gazeml \
+    --ListenerId lbl-l6fzjsx5 \
+    --DomainId dm-hg8j52ud \
+    --LocationId loc-02ywyc8b \
     --QueryType all
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DescribeFlowLog --cli-unfold-argument  \
-    --VpcId vpc-xxxxx\
+    --VpcId vpc-xxxxx \
     --FlowLogId fl-xxxxxx
 ```
 

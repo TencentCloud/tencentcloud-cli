@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli cfw ModifyTableStatus --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2
+    --EdgeId  \
+    --Area  \
+    --Status 2 \
+    --Direction 1
 ```
 
 Output: 
@@ -14,7 +17,7 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

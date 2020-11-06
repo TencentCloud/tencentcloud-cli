@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs AttachDisks --cli-unfold-argument  \
-    --DiskIds disk-lzrg2pwi\
+    --DiskIds disk-lzrg2pwi \
     --InstanceId ins-dyzmimrw
 ```
 

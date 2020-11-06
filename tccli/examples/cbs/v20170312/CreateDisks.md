@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cbs CreateDisks --cli-unfold-argument  \
-    --DiskType CLOUD_BASIC\
-    --DiskCount 1\
-    --DiskSize 50\
-    --Placement.Zone ap-guangzhou-2\
-    --Placement.ProjectId 0\
-    --DiskChargeType PREPAID\
-    --DiskChargePrepaid.Period 1\
+    --DiskType CLOUD_BASIC \
+    --DiskCount 1 \
+    --DiskSize 50 \
+    --Placement.Zone ap-guangzhou-2 \
+    --Placement.ProjectId 0 \
+    --DiskChargeType PREPAID \
+    --DiskChargePrepaid.Period 1 \
     --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
 ```
 
@@ -36,12 +36,12 @@ Input:
 
 ```
 tccli cbs CreateDisks --cli-unfold-argument  \
-    --DiskType CLOUD_PREMIUM\
-    --DiskCount 1\
-    --Placement.Zone ap-guangzhou-3\
-    --Placement.ProjectId 0\
-    --DiskChargeType POSTPAID_BY_HOUR\
-    --DiskName postPayDisk\
+    --DiskType CLOUD_PREMIUM \
+    --DiskCount 1 \
+    --Placement.Zone ap-guangzhou-3 \
+    --Placement.ProjectId 0 \
+    --DiskChargeType POSTPAID_BY_HOUR \
+    --DiskName postPayDisk \
     --DiskSize 100
 ```
 
@@ -65,13 +65,13 @@ Input:
 
 ```
 tccli cbs CreateDisks --cli-unfold-argument  \
-    --DiskType CLOUD_BASIC\
-    --DiskCount 1\
-    --SnapshotId snap-iepc4w3h\
-    --Placement.Zone ap-guangzhou-2\
-    --Placement.ProjectId 0\
-    --DiskChargeType PREPAID\
-    --DiskChargePrepaid.Period 1\
+    --DiskType CLOUD_BASIC \
+    --DiskCount 1 \
+    --SnapshotId snap-iepc4w3h \
+    --Placement.Zone ap-guangzhou-2 \
+    --Placement.ProjectId 0 \
+    --DiskChargeType PREPAID \
+    --DiskChargePrepaid.Period 1 \
     --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
 ```
 

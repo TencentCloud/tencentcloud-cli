@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bm ModifyPsaRegulation --cli-unfold-argument  \
-    --PsaId 123\
-    --PsaName newname\
+    --PsaId 123 \
+    --PsaName newname \
     --PsaDescription aaa
 ```
 

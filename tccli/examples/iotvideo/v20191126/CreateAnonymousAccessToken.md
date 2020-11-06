@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideo CreateAnonymousAccessToken --cli-unfold-argument  \
-    --Tid 2345345\
-    --OldAccessToken 123\
+    --Tid 2345345 \
+    --OldAccessToken 123 \
     --TtlMinutes 5
 ```
 

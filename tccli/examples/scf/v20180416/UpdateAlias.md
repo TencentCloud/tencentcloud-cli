@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli scf UpdateAlias --cli-unfold-argument  \
-    --Name <AliasName>\
-    --Namespace <Namespace>\
-    --FunctionName <FunctionName>\
-    --FunctionVersion <FunctionVersion>\
-    --RoutingConfig.AdditionalVersionWeights.0.Version <OtherVersion>\
+    --Name <AliasName> \
+    --Namespace <Namespace> \
+    --FunctionName <FunctionName> \
+    --FunctionVersion <FunctionVersion> \
+    --RoutingConfig.AdditionalVersionWeights.0.Version <OtherVersion> \
     --RoutingConfig.AdditionalVersionWeights.0.Weight <Weight>
 ```
 

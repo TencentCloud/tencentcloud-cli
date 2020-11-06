@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw SetOnlineRecordCallback --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --Callback https://example.com/online/callback
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf ModifyLane --cli-unfold-argument  \
-    --LaneId 1\
-    --LaneName 1\
+    --LaneId 1 \
+    --LaneName 1 \
     --Remark 1
 ```
 

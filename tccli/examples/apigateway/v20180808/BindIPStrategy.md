@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli apigateway BindIPStrategy --cli-unfold-argument  \
-    --StrategyId IPStrategy-0ez0c8to\
-    --EnvironmentName test\
-    --ServiceId service-ody35h5e\
+    --StrategyId IPStrategy-0ez0c8to \
+    --EnvironmentName test \
+    --ServiceId service-ody35h5e \
     --BindApiIds api-e92i2jds
 ```
 

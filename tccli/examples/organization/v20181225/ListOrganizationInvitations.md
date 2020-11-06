@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli organization ListOrganizationInvitations --cli-unfold-argument  \
-    --Invited 1\
-    --Offset 0\
+    --Invited 1 \
+    --Offset 0 \
     --Limit 10
 ```
 

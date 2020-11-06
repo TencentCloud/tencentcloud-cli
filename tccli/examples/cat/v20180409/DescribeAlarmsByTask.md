@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cat DescribeAlarmsByTask --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 2\
-    --BeginTime '2019-12-11 00:04:24'\
-    --EndTime '2019-12-12 00:04:24'\
+    --Offset 0 \
+    --Limit 2 \
+    --BeginTime '2019-12-11 00:04:24' \
+    --EndTime '2019-12-12 00:04:24' \
     --TaskId 260409
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iotvideo SetMessageQueue --cli-unfold-argument  \
-    --ProductId 12345678910\
-    --MsgQueueType 2\
-    --MsgType 0,1,2,3,4,5\
-    --Topic testTopic\
-    --Instance testInstance\
+    --ProductId 12345678910 \
+    --MsgQueueType 2 \
+    --MsgType 0,1,2,3,4,5 \
+    --Topic testTopic \
+    --Instance testInstance \
     --MsgRegion xxx
 ```
 

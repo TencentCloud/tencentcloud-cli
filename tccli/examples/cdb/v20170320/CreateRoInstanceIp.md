@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb CreateRoInstanceIp --cli-unfold-argument  \
-    --InstanceId cdbro-c1nl9rpv\
+    --InstanceId cdbro-c1nl9rpv \
     --UniqSubnetId subnet-1typ0s7d
 ```
 

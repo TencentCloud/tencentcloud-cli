@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli chdfs CreateFileSystem --cli-unfold-argument  \
-    --FileSystemName test\
-    --Description test\
+    --FileSystemName test \
+    --Description test \
     --CapacityQuota 1073741824
 ```
 

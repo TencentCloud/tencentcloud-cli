@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres DescribeServerlessDBInstances --cli-unfold-argument  \
-    --Filter []\
-    --Limit 0\
+    --Filter [] \
+    --Limit 0 \
     --Offset 1
 ```
 

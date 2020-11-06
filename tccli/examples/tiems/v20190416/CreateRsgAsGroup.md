@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tiems CreateRsgAsGroup --cli-unfold-argument  \
-    --Cluster ap-beijing\
-    --RsgId rsg-xxxxxxxx\
-    --Name asg-xxxxxxxx\
-    --MaxSize 5\
-    --MinSize 0\
+    --Cluster ap-beijing \
+    --RsgId rsg-xxxxxxxx \
+    --Name asg-xxxxxxxx \
+    --MaxSize 5 \
+    --MinSize 0 \
     --InstanceType sv_tiems_instance_8c32g1t4
 ```
 

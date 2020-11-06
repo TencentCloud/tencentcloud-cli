@@ -115,7 +115,7 @@ Input:
 
 ```
 tccli vpc DescribeIp6Translators --cli-unfold-argument  \
-    --Filters.0.Name ip6-translator-uid\
+    --Filters.0.Name ip6-translator-uid \
     --Filters.0.Values ip6-8svxwtts
 ```
 

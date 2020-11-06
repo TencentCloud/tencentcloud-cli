@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke ModifyClusterAttribute --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxx\
+    --ClusterId cls-xxxxxxx \
     --ClusterName aaa
 ```
 

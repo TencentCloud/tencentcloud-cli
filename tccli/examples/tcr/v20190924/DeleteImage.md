@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcr DeleteImage --cli-unfold-argument  \
-    --RegistryId tcr-okmj78\
-    --NamespaceName mytest\
-    --RepositoryName test\
+    --RegistryId tcr-okmj78 \
+    --NamespaceName mytest \
+    --RepositoryName test \
     --ImageVersion 1.0
 ```
 

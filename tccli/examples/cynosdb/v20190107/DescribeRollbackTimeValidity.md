@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cynosdb DescribeRollbackTimeValidity --cli-unfold-argument  \
-    --ClusterId cynosdbpg-gn65y9nk\
-    --ExpectTime 2019-01-1302:12:05\
+    --ClusterId cynosdbpg-gn65y9nk \
+    --ExpectTime 2019-01-1302:12:05 \
     --ExpectTimeThresh 0
 ```
 

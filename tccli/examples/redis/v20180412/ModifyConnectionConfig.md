@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis ModifyConnectionConfig --cli-unfold-argument  \
-    --InstanceId crs-cpz6b1fn\
-    --Bandwidth 5\
+    --InstanceId crs-cpz6b1fn \
+    --Bandwidth 5 \
     --ClientLimit 20000
 ```
 

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tsf ModifyContainerGroup --cli-unfold-argument  \
-    --GroupId group-xxxxxxx\
-    --AccessType 2\
-    --ProtocolPorts.0.Protocol TCP\
-    --ProtocolPorts.0.Port 80\
-    --ProtocolPorts.0.TargetPort 8080\
-    --UpdateType 1\
-    --UpdateIvl 5\
+    --GroupId group-xxxxxxx \
+    --AccessType 2 \
+    --ProtocolPorts.0.Protocol TCP \
+    --ProtocolPorts.0.Port 80 \
+    --ProtocolPorts.0.TargetPort 8080 \
+    --UpdateType 1 \
+    --UpdateIvl 5 \
     --SubnetId 1
 ```
 

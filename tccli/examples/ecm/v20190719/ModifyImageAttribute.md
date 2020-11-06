@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm ModifyImageAttribute --cli-unfold-argument  \
-    --ImageId img-gvbnzy6f\
-    --ImageName test_name\
+    --ImageId img-gvbnzy6f \
+    --ImageName test_name \
     --ImageDescription test_description
 ```
 

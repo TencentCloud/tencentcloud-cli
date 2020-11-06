@@ -1,4 +1,4 @@
-**Example 1: Getting the basic information of instance**
+**Example 1: Getting the basic information of an instance**
 
 
 

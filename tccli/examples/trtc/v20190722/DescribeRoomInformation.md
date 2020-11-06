@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trtc DescribeRoomInformation --cli-unfold-argument  \
-    --StartTime 1588031999\
-    --EndTime 1588034999\
+    --StartTime 1588031999 \
+    --EndTime 1588034999 \
     --SdkAppId 1400188366
 ```
 

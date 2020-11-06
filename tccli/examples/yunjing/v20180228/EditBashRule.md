@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli yunjing EditBashRule --cli-unfold-argument  \
-    --Name 规则名\
-    --Level 1\
+    --Name 规则名 \
+    --Level 1 \
     --Rule .*
 ```
 

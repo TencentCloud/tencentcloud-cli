@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai VerifyPerson --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testA.jpg\
+    --Url http://test.image.myqcloud.com/testA.jpg \
     --PersonId 11111111
 ```
 

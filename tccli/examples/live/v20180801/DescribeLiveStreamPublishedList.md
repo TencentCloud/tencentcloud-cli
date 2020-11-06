@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli live DescribeLiveStreamPublishedList --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com\
-    --AppName live\
-    --StreamName test\
-    --PageNum 1\
-    --PageSize 10\
-    --StartTime 2015-06-25T03:30:50Z\
+    --DomainName 5000.livepush.myqcloud.com \
+    --AppName live \
+    --StreamName test \
+    --PageNum 1 \
+    --PageSize 10 \
+    --StartTime 2015-06-25T03:30:50Z \
     --EndTime 2015-12-26T03:30:50Z
 ```
 

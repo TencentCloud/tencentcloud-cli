@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeDBSpaceStatus --cli-unfold-argument  \
-    --InstanceId cdb-test\
+    --InstanceId cdb-test \
     --RangeDays 5
 ```
 

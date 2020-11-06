@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb ReplaceCertForLoadBalancers --cli-unfold-argument  \
-    --OldCertificateId cuxw0123\
+    --OldCertificateId cuxw0123 \
     --Certificate.CertId cuxw4567
 ```
 

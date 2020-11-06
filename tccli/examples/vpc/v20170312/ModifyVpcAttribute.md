@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc ModifyVpcAttribute --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpcName MyTest\
-    --VpcId vpc-m7sr81gh\
+    --Version 2017-03-12 \
+    --VpcName MyTest \
+    --VpcId vpc-m7sr81gh \
     --EnableMulticast true
 ```
 

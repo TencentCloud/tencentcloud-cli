@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli as SetInstancesProtection --cli-unfold-argument  \
-    --AutoScalingGroupId asg-2umy3jbd\
-    --InstanceIds ins-b2d33ywt\
+    --AutoScalingGroupId asg-2umy3jbd \
+    --InstanceIds ins-b2d33ywt \
     --ProtectedFromScaleIn true
 ```
 

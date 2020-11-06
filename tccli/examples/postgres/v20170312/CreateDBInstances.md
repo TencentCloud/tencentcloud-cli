@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli postgres CreateDBInstances --cli-unfold-argument  \
-    --SpecCode cdb.pg.z1.2g\
-    --Storage 10\
-    --InstanceCount 1\
-    --Period 1\
-    --InstanceChargeType prepaid\
-    --Zone ap-guangzhou-2\
-    --DBVersion 9.3.5\
-    --AutoVoucher 0\
+    --SpecCode cdb.pg.z1.2g \
+    --Storage 10 \
+    --InstanceCount 1 \
+    --Period 1 \
+    --InstanceChargeType prepaid \
+    --Zone ap-guangzhou-2 \
+    --DBVersion 9.3.5 \
+    --AutoVoucher 0 \
     --AutoRenewFlag 1
 ```
 

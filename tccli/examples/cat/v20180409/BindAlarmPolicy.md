@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cat BindAlarmPolicy --cli-unfold-argument  \
-    --TaskId 260228\
-    --PolicyGroupId 3\
+    --TaskId 260228 \
+    --PolicyGroupId 3 \
     --IfBind 1
 ```
 

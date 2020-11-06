@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DescribeAllDevices --cli-unfold-argument  \
-    --Offset 0\
+    --Offset 0 \
     --Limit 100
 ```
 

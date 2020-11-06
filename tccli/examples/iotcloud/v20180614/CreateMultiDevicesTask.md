@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud CreateMultiDevicesTask --cli-unfold-argument  \
-    --ProductId ABCDE12345\
-    --ParametersType random\
+    --ProductId ABCDE12345 \
+    --ParametersType random \
     --BatchCount 1
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli faceid IdCardVerification --cli-unfold-argument  \
-    --IdCard xxxxxxxxxxxxxxxxx\
+    --IdCard xxxxxxxxxxxxxxxxx \
     --Name xxxxxxxxxxxxxxxxx
 ```
 
@@ -29,7 +29,7 @@ Input:
 
 ```
 tccli faceid IdCardVerification --cli-unfold-argument  \
-    --IdCard xxxxxxxxxxxxxxxxx\
+    --IdCard xxxxxxxxxxxxxxxxx \
     --Name xxxxxxxxxxxxxxxxx
 ```
 

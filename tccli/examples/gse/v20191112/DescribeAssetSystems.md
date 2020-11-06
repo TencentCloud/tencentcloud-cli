@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gse DescribeAssetSystems --cli-unfold-argument  \
-    --OsType Windows\
+    --OsType Windows \
     --OsBit 64
 ```
 

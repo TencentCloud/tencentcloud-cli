@@ -64,8 +64,8 @@ Input:
 
 ```
 tccli lighthouse DescribeFirewallRules --cli-unfold-argument  \
-    --InstanceId lhins-aglzynfg\
-    --Offset 0\
+    --InstanceId lhins-aglzynfg \
+    --Offset 0 \
     --Limit 1
 ```
 

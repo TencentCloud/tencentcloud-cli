@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tcr ModifyRepository --cli-unfold-argument  \
-    --RegistryId tcr-okmj78\
-    --NamespaceName mytest\
-    --RepositoryName test\
-    --Description mytest\
+    --RegistryId tcr-okmj78 \
+    --NamespaceName mytest \
+    --RepositoryName test \
+    --Description mytest \
     --BriefDescription BriefDescription
 ```
 

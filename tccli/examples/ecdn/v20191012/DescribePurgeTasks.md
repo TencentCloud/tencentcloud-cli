@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecdn DescribePurgeTasks --cli-unfold-argument  \
-    --PurgeType ur\
+    --PurgeType ur \
     --TaskId 1234567
 ```
 

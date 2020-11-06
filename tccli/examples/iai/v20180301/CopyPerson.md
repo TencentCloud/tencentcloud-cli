@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai CopyPerson --cli-unfold-argument  \
-    --PersonId 2001\
+    --PersonId 2001 \
     --GroupIds TencentShenZhenEmployee ShenZhenCitizen
 ```
 
@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli iai CopyPerson --cli-unfold-argument  \
-    --PersonId 1001\
+    --PersonId 1001 \
     --GroupIds TencentShenZhenEmployee ZhuYuanDormitoryNo1
 ```
 

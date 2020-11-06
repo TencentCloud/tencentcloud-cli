@@ -1,13 +1,13 @@
-**Example 1: Getting instance tag information**
+**Example 1: Obtaining the instance tag information**
 
-This example shows you how to get the tag information of an instance.
+This example shows you how to obtain the instance tag information.
 
 Input: 
 
 ```
 tccli cdb DescribeTagsOfInstanceIds --cli-unfold-argument  \
-    --InstanceIds cdb-uns231ns\
-    --Offset 0\
+    --InstanceIds cdb-uns231ns \
+    --Offset 0 \
     --Limit 10
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli chdfs CreateRestoreTasks --cli-unfold-argument  \
-    --FileSystemId f4mhaqkciq0\
-    --RestoreTasks.0.FilePath /test/file2\
-    --RestoreTasks.0.Type 2\
+    --FileSystemId f4mhaqkciq0 \
+    --RestoreTasks.0.FilePath /test/file2 \
+    --RestoreTasks.0.Type 2 \
     --LifeCycleRules.0.Days 7
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli npp DescribeCallBackCdr --cli-unfold-argument  \
-    --BizAppId xxx\
-    --CallId xxxx\
-    --Dst xxxx\
-    --StartTimeStamp 1577030400\
+    --BizAppId xxx \
+    --CallId xxxx \
+    --Dst xxxx \
+    --StartTimeStamp 1577030400 \
     --EndTimeStamp 1577116799
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cynosdb DescribeClusters --cli-unfold-argument  \
-    --Limit 20\
-    --Offset 0\
-    --Filters.0.Name InstanceId\
-    --Filters.0.Values cynosdbpg-ins-bzkxxrmt\
+    --Limit 20 \
+    --Offset 0 \
+    --Filters.0.Name InstanceId \
+    --Filters.0.Values cynosdbpg-ins-bzkxxrmt \
     --DbType MYSQL
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod CreateWordSamples --cli-unfold-argument  \
-    --Usages All\
-    --Words.0.Keyword Influencer\
+    --Usages All \
+    --Words.0.Keyword Influencer \
     --Words.0.Tags Entertainment
 ```
 
@@ -26,8 +26,8 @@ Input:
 
 ```
 tccli vod CreateWordSamples --cli-unfold-argument  \
-    --Usages Recognition.Ocr Review.Ocr\
-    --Words.0.Keyword Influencer\
+    --Usages Recognition.Ocr Review.Ocr \
+    --Words.0.Keyword Influencer \
     --Words.0.Tags Entertainment
 ```
 
@@ -46,8 +46,8 @@ Input:
 
 ```
 tccli vod CreateWordSamples --cli-unfold-argument  \
-    --Usages Review\
-    --Words.0.Keyword 'John Smith'\
+    --Usages Review \
+    --Words.0.Keyword 'John Smith' \
     --Words.0.Tags 'Politically sensitive'
 ```
 

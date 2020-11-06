@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DeleteVpc --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --VpcId vpc-g69ed0kj
 ```
 

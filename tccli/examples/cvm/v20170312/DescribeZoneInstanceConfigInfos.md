@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm DescribeZoneInstanceConfigInfos --cli-unfold-argument  \
-    --Filters.0.Name zone\
-    --Filters.0.Values ap-guangzhou-2\
-    --Filters.1.Name instance-charge-type\
+    --Filters.0.Name zone \
+    --Filters.0.Values ap-guangzhou-2 \
+    --Filters.1.Name instance-charge-type \
     --Filters.1.Values POSTPAID_BY_HOUR
 ```
 

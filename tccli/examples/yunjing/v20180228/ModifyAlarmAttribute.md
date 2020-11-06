@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli yunjing ModifyAlarmAttribute --cli-unfold-argument  \
-    --Attribute OFFLINE\
+    --Attribute OFFLINE \
     --Value OPEN
 ```
 

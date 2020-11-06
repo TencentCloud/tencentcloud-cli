@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu ModifyDDoSPolicyName --cli-unfold-argument  \
-    --Business bgpip\
-    --PolicyId policy-000000xe\
+    --Business bgpip \
+    --PolicyId policy-000000xe \
     --Name test
 ```
 

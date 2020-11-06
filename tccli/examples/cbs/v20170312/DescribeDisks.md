@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cbs DescribeDisks --cli-unfold-argument  \
-    --Filters.0.Name disk-usage\
-    --Filters.0.Values DATA_DISK\
-    --Filters.1.Name disk-state\
+    --Filters.0.Name disk-usage \
+    --Filters.0.Values DATA_DISK \
+    --Filters.1.Name disk-state \
     --Filters.1.Values ATTACHED
 ```
 

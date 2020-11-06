@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli vod ModifyImageSpriteTemplate --cli-unfold-argument  \
-    --Definition 10001\
-    --Name 'Image sprite generating template 1'\
-    --Width 128\
-    --Height 128\
-    --SampleType Percent\
-    --SampleInterval 10\
-    --RowCount 5\
+    --Definition 10001 \
+    --Name 'Image sprite generating template 1' \
+    --Width 128 \
+    --Height 128 \
+    --SampleType Percent \
+    --SampleInterval 10 \
+    --RowCount 5 \
     --ColumnCount 10
 ```
 

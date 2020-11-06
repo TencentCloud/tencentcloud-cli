@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp InquiryPriceOpenProVersionPrepaid --cli-unfold-argument  \
-    --ChargePrepaid.Period 1\
-    --Machines.0.MachineType CVM\
-    --Machines.0.MachineRegion ap-guangzhou\
+    --ChargePrepaid.Period 1 \
+    --Machines.0.MachineType CVM \
+    --Machines.0.MachineRegion ap-guangzhou \
     --Machines.0.Quuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5
 ```
 

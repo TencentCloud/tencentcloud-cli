@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain ModifyDomainDNSBatch --cli-unfold-argument  \
-    --Domains h101.tencent.com\
+    --Domains h101.tencent.com \
     --Dns f1g1ns2.dnspod.net f1g1ns2.dnspod.net
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc DescribeCcnAttachedInstances --cli-unfold-argument  \
-    --Filters.0.Name ccn-id\
-    --Filters.0.Values ccn-gree226l\
-    --Filters.1.Name instance-id\
+    --Filters.0.Name ccn-id \
+    --Filters.0.Values ccn-gree226l \
+    --Filters.1.Name instance-id \
     --Filters.1.Values vpc-2u0s99fx vpc-r1ckkpid vpc-3dr1zrr9 dcg-98qosdc3 dcg-ni7ps9kb
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bm ModifyLanIp --cli-unfold-argument  \
-    --InstanceId cpm-xxxxxxxx\
-    --VpcId vpc1\
-    --SubnetId subnet1\
-    --LanIp 10.12.1.2\
+    --InstanceId cpm-xxxxxxxx \
+    --VpcId vpc1 \
+    --SubnetId subnet1 \
+    --LanIp 10.12.1.2 \
     --RebootDevice 1
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dts ActivateSubscribe --cli-unfold-argument  \
-    --SubscribeId subs-ieuwi83j2e\
-    --InstanceId cdb-9dijwkkw2\
+    --SubscribeId subs-ieuwi83j2e \
+    --InstanceId cdb-9dijwkkw2 \
     --SubscribeObjectType 0
 ```
 

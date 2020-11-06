@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecdn AddEcdnDomain --cli-unfold-argument  \
-    --Domain www.test.com\
-    --Origin.Origins 2.2.2.2\
+    --Domain www.test.com \
+    --Origin.Origins 2.2.2.2 \
     --Area global
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse DescribeFleetCapacity --cli-unfold-argument  \
-    --FleetIds fleet-qp3g3caa-ay03mhdm\
-    --Offset 0\
+    --FleetIds fleet-qp3g3caa-ay03mhdm \
+    --Offset 0 \
     --Limit 10
 ```
 

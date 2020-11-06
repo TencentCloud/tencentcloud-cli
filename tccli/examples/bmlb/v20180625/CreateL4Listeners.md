@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bmlb CreateL4Listeners --cli-unfold-argument  \
-    --LoadBalancerId lb-m1i50ynj\
-    --ListenerSet.0.LoadBalancerPort 1000\
-    --ListenerSet.0.Protocol tcp\
-    --ListenerSet.0.ListenerName 1000\
+    --LoadBalancerId lb-m1i50ynj \
+    --ListenerSet.0.LoadBalancerPort 1000 \
+    --ListenerSet.0.Protocol tcp \
+    --ListenerSet.0.ListenerName 1000 \
     --ListenerSet.0.SessionExpire 0
 ```
 

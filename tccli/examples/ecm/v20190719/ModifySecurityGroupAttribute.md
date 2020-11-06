@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm ModifySecurityGroupAttribute --cli-unfold-argument  \
-    --Version 2019-07-19\
-    --SecurityGroupId esg-33ocnj9n\
-    --GroupName TestGroupNewName\
+    --Version 2019-07-19 \
+    --SecurityGroupId esg-33ocnj9n \
+    --GroupName TestGroupNewName \
     --GroupDescription test-group-desc
 ```
 

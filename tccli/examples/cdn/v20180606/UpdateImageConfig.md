@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdn UpdateImageConfig --cli-unfold-argument  \
-    --Domain test.tencent.com\
+    --Domain test.tencent.com \
     --TpgAdapter.Switch on
 ```
 

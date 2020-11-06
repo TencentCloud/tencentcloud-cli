@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis DescribeInstanceAccount --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p\
-    --Limit 10\
+    --InstanceId crs-5a4py64p \
+    --Limit 10 \
     --Offset 0
 ```
 

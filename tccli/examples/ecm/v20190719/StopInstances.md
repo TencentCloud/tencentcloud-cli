@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm StopInstances --cli-unfold-argument  \
-    --InstanceIdSet ein-496721al ein-438242bp\
-    --ForceStop false\
+    --InstanceIdSet ein-496721al ein-438242bp \
+    --ForceStop false \
     --StopType SOFT_FIRST
 ```
 

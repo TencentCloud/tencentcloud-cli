@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cpdp WithdrawCashMembership --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --TranWebName APITEST\
-    --MemberGlobalType 1\
-    --MemberGlobalId ' 433112345210255839'\
-    --TranNetMemberCode ' YAPI100015'\
-    --MemberName demo\
-    --TakeCashAcctNo ' 6230280003161991234'\
-    --OutAmtAcctName demo\
-    --Ccy RMB\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --TranWebName APITEST \
+    --MemberGlobalType 1 \
+    --MemberGlobalId ' 433112345210255839' \
+    --TranNetMemberCode ' YAPI100015' \
+    --MemberName demo \
+    --TakeCashAcctNo ' 6230280003161991234' \
+    --OutAmtAcctName demo \
+    --Ccy RMB \
     --CashAmt 33
 ```
 

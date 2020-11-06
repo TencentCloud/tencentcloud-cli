@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeTaskDetail --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --TaskId 1400-tfusion-ct0
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli chdfs DescribeAccessGroups --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 1\
-    --Filters.0.Name AccessGroupName\
-    --Filters.0.Values test\
-    --Filters.1.Name AccessGroupId\
+    --Offset 0 \
+    --Limit 1 \
+    --Filters.0.Name AccessGroupName \
+    --Filters.0.Values test \
+    --Filters.1.Name AccessGroupId \
     --Filters.1.Values ag-f8xoises
 ```
 

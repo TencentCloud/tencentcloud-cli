@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm DescribeImages --cli-unfold-argument  \
-    --Filters.0.Name image-id\
+    --Filters.0.Name image-id \
     --Filters.0.Values img-pmqg1cw7
 ```
 
@@ -40,7 +40,7 @@ Input:
 
 ```
 tccli cvm DescribeImages --cli-unfold-argument  \
-    --Filters.0.Name image-type\
+    --Filters.0.Name image-type \
     --Filters.0.Values PRIVATE_IMAGE
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb CommonServiceAPI --cli-unfold-argument  \
-    --Service ModifyEnv\
+    --Service ModifyEnv \
     --JSONData {}
 ```
 

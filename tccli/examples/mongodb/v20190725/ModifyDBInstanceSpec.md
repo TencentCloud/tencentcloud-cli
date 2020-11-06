@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mongodb ModifyDBInstanceSpec --cli-unfold-argument  \
-    --InstanceId cmgo-p8vnipr5\
-    --Memory 4\
+    --InstanceId cmgo-p8vnipr5 \
+    --Memory 4 \
     --Volume 250
 ```
 

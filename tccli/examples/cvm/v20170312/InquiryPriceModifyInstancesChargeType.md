@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm InquiryPriceModifyInstancesChargeType --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy\
-    --InstanceChargeType PREPAID\
+    --InstanceIds ins-r8hr2upy \
+    --InstanceChargeType PREPAID \
     --InstanceChargePrepaid.Period 1
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideo DescribeOtaVersions --cli-unfold-argument  \
-    --ProductId 123456789000\
-    --OtaVersion **\
-    --PubStatus 1\
-    --Offset 0\
+    --ProductId 123456789000 \
+    --OtaVersion ** \
+    --PubStatus 1 \
+    --Offset 0 \
     --Limit 10
 ```
 

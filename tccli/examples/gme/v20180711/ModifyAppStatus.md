@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gme ModifyAppStatus --cli-unfold-argument  \
-    --BizId 140000001\
+    --BizId 140000001 \
     --Status close
 ```
 

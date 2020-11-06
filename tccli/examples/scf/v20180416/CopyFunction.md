@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli scf CopyFunction --cli-unfold-argument  \
-    --Namespace default\
-    --FunctionName myfunc\
-    --TargetNamespace otherns\
-    --NewFunctionName newfunc\
-    --TargetRegion ap-shanghai\
-    --Override FALSE\
+    --Namespace default \
+    --FunctionName myfunc \
+    --TargetNamespace otherns \
+    --NewFunctionName newfunc \
+    --TargetRegion ap-shanghai \
+    --Override FALSE \
     --CopyConfiguration TRUE
 ```
 

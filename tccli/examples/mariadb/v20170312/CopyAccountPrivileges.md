@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mariadb CopyAccountPrivileges --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
-    --DstUserName testuser2\
-    --DstHost %\
-    --SrcUserName testuser1\
+    --InstanceId tdsql-fdpjf5zh \
+    --DstUserName testuser2 \
+    --DstHost % \
+    --SrcUserName testuser1 \
     --SrcHost 172.17.%
 ```
 

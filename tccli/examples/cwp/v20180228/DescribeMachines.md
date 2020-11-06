@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cwp DescribeMachines --cli-unfold-argument  \
-    --MachineType CVM\
-    --MachineRegion ap-shanghai\
-    --Filters.0.Name Keywords\
-    --Filters.0.Values 10.0.1.1\
-    --Limit 10\
+    --MachineType CVM \
+    --MachineRegion ap-shanghai \
+    --Filters.0.Name Keywords \
+    --Filters.0.Values 10.0.1.1 \
+    --Limit 10 \
     --Offset 0
 ```
 

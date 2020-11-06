@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdn UpdatePayType --cli-unfold-argument  \
-    --Area mainland\
+    --Area mainland \
     --PayType flux
 ```
 

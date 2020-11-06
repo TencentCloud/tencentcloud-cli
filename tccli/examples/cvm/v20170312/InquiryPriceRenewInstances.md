@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm InquiryPriceRenewInstances --cli-unfold-argument  \
-    --InstanceIds ins-2zvpghhc\
-    --InstanceChargePrepaid.Period 1\
+    --InstanceIds ins-2zvpghhc \
+    --InstanceChargePrepaid.Period 1 \
     --InstanceChargePrepaid.RenewFlag NOTIFY_AND_MANUAL_RENEW
 ```
 

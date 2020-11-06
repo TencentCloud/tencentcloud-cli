@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vod DescribePersonSamples --cli-unfold-argument  \
-    --PersonIds 10569\
-    --Names 'John Smith'\
-    --Tags Celebrity\
-    --Offset 0\
+    --PersonIds 10569 \
+    --Names 'John Smith' \
+    --Tags Celebrity \
+    --Offset 0 \
     --Limit 20
 ```
 

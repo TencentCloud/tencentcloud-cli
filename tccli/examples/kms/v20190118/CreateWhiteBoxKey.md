@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli kms CreateWhiteBoxKey --cli-unfold-argument  \
-    --Alias test_alias\
-    --Description test_description\
+    --Alias test_alias \
+    --Description test_description \
     --Algorithm SM4
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dts DescribeMigrateJobs --cli-unfold-argument  \
-    --Order CreateTime\
-    --OrderSeq DESC\
-    --Offset 0\
+    --Order CreateTime \
+    --OrderSeq DESC \
+    --Offset 0 \
     --Limit 2
 ```
 

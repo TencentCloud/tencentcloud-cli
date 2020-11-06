@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iotexplorer DescribeDeviceDataHistory --cli-unfold-argument  \
-    --MinTime 1548677099000\
-    --MaxTime 1548763499000\
-    --ProductId LJ0INDNU7U\
-    --DeviceName light1\
-    --FieldName color\
+    --MinTime 1548677099000 \
+    --MaxTime 1548763499000 \
+    --ProductId LJ0INDNU7U \
+    --DeviceName light1 \
+    --FieldName color \
     --Limit 5
 ```
 

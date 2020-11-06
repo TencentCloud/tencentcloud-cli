@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DeleteSecurityGroup --cli-unfold-argument  \
-    --Version 2019-07-19\
+    --Version 2019-07-19 \
     --SecurityGroupId esg-kxxx1gb1
 ```
 

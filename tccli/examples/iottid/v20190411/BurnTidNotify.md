@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iottid BurnTidNotify --cli-unfold-argument  \
-    --OrderId p8ZcXGuqus\
+    --OrderId p8ZcXGuqus \
     --Tid 000001035D0C97E3D2A46283D27BC612
 ```
 

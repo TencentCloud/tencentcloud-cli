@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bm ModifyUserCmd --cli-unfold-argument  \
-    --CmdId cmd-xxxxx\
-    --Alias 新名字\
-    --OsType linux\
+    --CmdId cmd-xxxxx \
+    --Alias 新名字 \
+    --OsType linux \
     --Content test
 ```
 

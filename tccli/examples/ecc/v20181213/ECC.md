@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ecc ECC --cli-unfold-argument  \
-    --Grade \
-    --Outline \
-    --ModelSubject \
-    --ModelContent \
-    --Title \
-    --Content 'this composition content'\
+    --Grade  \
+    --Outline  \
+    --ModelSubject  \
+    --ModelContent  \
+    --Title  \
+    --Content 'this composition content' \
     --IsAsync 0
 ```
 
@@ -122,12 +122,12 @@ Input:
 
 ```
 tccli ecc ECC --cli-unfold-argument  \
-    --Grade \
-    --Outline \
-    --ModelSubject \
-    --ModelContent \
-    --Title \
-    --Content 'this composition content'\
+    --Grade  \
+    --Outline  \
+    --ModelSubject  \
+    --ModelContent  \
+    --Title  \
+    --Content 'this composition content' \
     --IsAsync 1
 ```
 

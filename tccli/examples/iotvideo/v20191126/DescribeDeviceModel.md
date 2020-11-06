@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo DescribeDeviceModel --cli-unfold-argument  \
-    --Tid ********\
+    --Tid ******** \
     --Branch ****
 ```
 

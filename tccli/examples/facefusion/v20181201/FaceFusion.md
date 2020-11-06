@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli facefusion FaceFusion --cli-unfold-argument  \
-    --ProjectId 100646\
-    --ModelId qc_100646_154021_9\
-    --RspImgType url\
+    --ProjectId 100646 \
+    --ModelId qc_100646_154021_9 \
+    --RspImgType url \
     --Image base64_string
 ```
 
@@ -47,9 +47,9 @@ Input:
 
 ```
 tccli facefusion FaceFusion --cli-unfold-argument  \
-    --ProjectId 100646\
-    --ModelId qc_100646_154021_9\
-    --RspImgType url\
+    --ProjectId 100646 \
+    --ModelId qc_100646_154021_9 \
+    --RspImgType url \
     --Image base64_string
 ```
 

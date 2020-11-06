@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli billing DescribeCostSummaryByProduct --cli-unfold-argument  \
-    --PayerUin 909619400\
-    --BeginTime 2018-11-0100:00:00\
-    --EndTime 2018-11-3023:59:59\
-    --Offset 0\
-    --Limit 1\
+    --PayerUin 909619400 \
+    --BeginTime 2018-11-0100:00:00 \
+    --EndTime 2018-11-3023:59:59 \
+    --Offset 0 \
+    --Limit 1 \
     --NeedRecordNum 1
 ```
 

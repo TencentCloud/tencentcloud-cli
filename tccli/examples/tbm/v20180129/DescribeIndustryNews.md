@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tbm DescribeIndustryNews --cli-unfold-argument  \
-    --IndustryId qijGLCi6bE0weVWrJ7L4qgm5nxET0u0Y9XwF\
-    --StartDate 2018-02-1\
-    --EndDate 2018-02-10\
-    --Offset 1\
+    --IndustryId qijGLCi6bE0weVWrJ7L4qgm5nxET0u0Y9XwF \
+    --StartDate 2018-02-1 \
+    --EndDate 2018-02-10 \
+    --Offset 1 \
     --Limit 1
 ```
 

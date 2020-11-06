@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb AssignProject --cli-unfold-argument  \
-    --InstanceIds cmgo-eqmoa5sf\
+    --InstanceIds cmgo-eqmoa5sf \
     --ProjectId 12
 ```
 

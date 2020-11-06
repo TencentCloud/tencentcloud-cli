@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tione CreateCodeRepository --cli-unfold-argument  \
-    --CodeRepositoryName public\
-    --GitConfig.RepositoryUrl https://github.com/example/test.git\
-    --GitConfig.Branch master\
+    --CodeRepositoryName public \
+    --GitConfig.RepositoryUrl https://github.com/example/test.git \
+    --GitConfig.Branch master \
     --GitSecret.NoSecret true
 ```
 
@@ -30,9 +30,9 @@ Input:
 
 ```
 tccli tione CreateCodeRepository --cli-unfold-argument  \
-    --CodeRepositoryName private\
-    --GitConfig.RepositoryUrl https://github.com/example/test.git\
-    --GitConfig.Branch master\
+    --CodeRepositoryName private \
+    --GitConfig.RepositoryUrl https://github.com/example/test.git \
+    --GitConfig.Branch master \
     --GitSecret.Secret {"UserName":"xxx","Password":"xxx"}
 ```
 

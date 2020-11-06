@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bda GetPersonList --cli-unfold-argument  \
-    --GroupId testG10\
-    --Offset 0\
+    --GroupId testG10 \
+    --Offset 0 \
     --Limit 1001
 ```
 
@@ -32,8 +32,8 @@ Input:
 
 ```
 tccli bda GetPersonList --cli-unfold-argument  \
-    --GroupId testG10\
-    --Offset 0\
+    --GroupId testG10 \
+    --Offset 0 \
     --Limit 10
 ```
 

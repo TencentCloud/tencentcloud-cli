@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli nlp DescribeWordItems --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
+    --Offset 0 \
+    --Limit 10 \
     --DictId udf-066edc3449
 ```
 

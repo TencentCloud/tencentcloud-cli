@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cpdp QueryCommonTransferRecharge --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --FunctionFlag 0\
-    --StartDate 20191001\
-    --EndDate 20191101\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --FunctionFlag 0 \
+    --StartDate 20191001 \
+    --EndDate 20191101 \
     --PageNum 1
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli chdfs ModifyAccessGroup --cli-unfold-argument  \
-    --AccessGroupId ag-f8xoises\
-    --AccessGroupName test\
+    --AccessGroupId ag-f8xoises \
+    --AccessGroupName test \
     --Description test
 ```
 

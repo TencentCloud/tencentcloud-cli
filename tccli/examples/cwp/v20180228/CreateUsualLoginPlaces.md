@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp CreateUsualLoginPlaces --cli-unfold-argument  \
-    --Uuids add4a78a-0d59-11e8-b7ab-00e081e1a5c5\
-    --Places.0.CityId 1\
-    --Places.0.ProvinceId 1\
+    --Uuids add4a78a-0d59-11e8-b7ab-00e081e1a5c5 \
+    --Places.0.CityId 1 \
+    --Places.0.ProvinceId 1 \
     --Places.0.CountryId 1
 ```
 

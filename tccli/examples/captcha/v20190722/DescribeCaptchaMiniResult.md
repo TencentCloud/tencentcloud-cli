@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli captcha DescribeCaptchaMiniResult --cli-unfold-argument  \
-    --CaptchaType 9\
-    --Ticket xxxx\
-    --UserIp 127.0.0.1\
-    --CaptchaAppId 201111111\
+    --CaptchaType 9 \
+    --Ticket xxxx \
+    --UserIp 127.0.0.1 \
+    --CaptchaAppId 201111111 \
     --AppSecretKey xxxxxx
 ```
 

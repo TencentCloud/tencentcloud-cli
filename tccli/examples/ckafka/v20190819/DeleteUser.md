@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteUser --cli-unfold-argument  \
-    --InstanceId xxx\
+    --InstanceId xxx \
     --Name xxx
 ```
 

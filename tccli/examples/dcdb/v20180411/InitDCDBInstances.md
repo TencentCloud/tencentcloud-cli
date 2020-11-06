@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dcdb InitDCDBInstances --cli-unfold-argument  \
-    --InstanceIds dcdbt-fdpjf5zh dcdbt-avw0207d\
-    --Params.0.Param lower_case_table_names\
-    --Params.0.Value 1\
-    --Params.1.Param innodb_page_size\
-    --Params.1.Value 16384\
-    --Params.2.Param character_set_server\
+    --InstanceIds dcdbt-fdpjf5zh dcdbt-avw0207d \
+    --Params.0.Param lower_case_table_names \
+    --Params.0.Value 1 \
+    --Params.1.Param innodb_page_size \
+    --Params.1.Value 16384 \
+    --Params.2.Param character_set_server \
     --Params.2.Value utf8
 ```
 

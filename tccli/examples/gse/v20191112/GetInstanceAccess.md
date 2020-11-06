@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gse GetInstanceAccess --cli-unfold-argument  \
-    --FleetId xxx\
+    --FleetId xxx \
     --InstanceId xxx
 ```
 

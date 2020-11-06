@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli dts CreateSyncJob --cli-unfold-argument  \
-    --JobName testname\
-    --SrcDatabaseType mysql\
-    --SrcAccessType cdb\
-    --DstDatabaseType mysql\
-    --DstAccessType cdb\
-    --SyncOption.SyncObject 1\
-    --SrcInfo.Region ap-shanghai\
-    --SrcInfo.InstanceId cdb-e28hhsjt\
-    --DstInfo.Region ap-shanghai\
+    --JobName testname \
+    --SrcDatabaseType mysql \
+    --SrcAccessType cdb \
+    --DstDatabaseType mysql \
+    --DstAccessType cdb \
+    --SyncOption.SyncObject 1 \
+    --SrcInfo.Region ap-shanghai \
+    --SrcInfo.InstanceId cdb-e28hhsjt \
+    --DstInfo.Region ap-shanghai \
     --DstInfo.InstanceId cdb-mdgezf4d
 ```
 

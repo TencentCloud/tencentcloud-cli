@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bizlive RegisterIM --cli-unfold-argument  \
-    --UserId OpenIDWithSalt\
-    --Nickname somebody\
+    --UserId OpenIDWithSalt \
+    --Nickname somebody \
     --Level 0
 ```
 

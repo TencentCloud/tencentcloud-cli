@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli monitor DescribeAlarmHistories --cli-unfold-argument  \
-    --Module monitor\
-    --PageNumber 1\
-    --PageSize 100\
-    --Order DESC\
-    --StartTime 1598976507\
-    --EndTime 1599019707\
-    --AlarmObject object\
-    --MonitorTypes MT_QCE\
-    --AlarmStatus ALARM\
-    --ProjectIds 0\
-    --InstanceGroupIds 0\
-    --MetricNames mem_used\
-    --PolicyName policy\
-    --Content content\
-    --ReceiverUids 10000\
-    --ReceiverGroups 10000\
-    --Namespaces.0.MonitorType MT_QCE\
+    --Module monitor \
+    --PageNumber 1 \
+    --PageSize 100 \
+    --Order DESC \
+    --StartTime 1598976507 \
+    --EndTime 1599019707 \
+    --AlarmObject object \
+    --MonitorTypes MT_QCE \
+    --AlarmStatus ALARM \
+    --ProjectIds 0 \
+    --InstanceGroupIds 0 \
+    --MetricNames mem_used \
+    --PolicyName policy \
+    --Content content \
+    --ReceiverUids 10000 \
+    --ReceiverGroups 10000 \
+    --Namespaces.0.MonitorType MT_QCE \
     --Namespaces.0.Namespace cvm_device
 ```
 

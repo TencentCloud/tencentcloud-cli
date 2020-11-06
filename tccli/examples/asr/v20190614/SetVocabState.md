@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli asr SetVocabState --cli-unfold-argument  \
-    --VocabId aa6f402f263f12ea856fc81fbecfd0sd\
+    --VocabId aa6f402f263f12ea856fc81fbecfd0sd \
     --State 1
 ```
 

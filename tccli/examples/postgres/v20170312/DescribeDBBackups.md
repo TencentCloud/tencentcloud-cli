@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli postgres DescribeDBBackups --cli-unfold-argument  \
-    --DBInstanceId postgres-6fego161\
-    --Region ap-guangzhou\
-    --Type 1\
-    --StartTime '2018-06-10 17:06:38'\
-    --EndTime '2018-06-11 17:06:38'\
-    --Limit 20\
+    --DBInstanceId postgres-6fego161 \
+    --Region ap-guangzhou \
+    --Type 1 \
+    --StartTime '2018-06-10 17:06:38' \
+    --EndTime '2018-06-11 17:06:38' \
+    --Limit 20 \
     --Offset 0
 ```
 

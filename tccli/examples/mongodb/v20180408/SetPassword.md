@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mongodb SetPassword --cli-unfold-argument  \
-    --InstanceId cmgo-eqmoa5sf\
-    --UserName test_user\
+    --InstanceId cmgo-eqmoa5sf \
+    --UserName test_user \
     --Password test_password123
 ```
 

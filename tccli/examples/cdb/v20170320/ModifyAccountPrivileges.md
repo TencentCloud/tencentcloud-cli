@@ -1,4 +1,4 @@
-**Example 1: Modifying TencentDB instance account permission**
+**Example 1: Modifying the permissions of a TencentDB instance account**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb ModifyAccountPrivileges --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
-    --Accounts.0.user ajnnw\
-    --GlobalPrivileges SELECT\
+    --InstanceId cdb-f35wr6wj \
+    --Accounts.0.user ajnnw \
+    --GlobalPrivileges SELECT \
     --Accounts.0.host 127.0.0.1
 ```
 

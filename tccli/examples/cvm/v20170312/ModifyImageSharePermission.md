@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm ModifyImageSharePermission --cli-unfold-argument  \
-    --ImageId img-6pb6lrmy\
-    --AccountIds 1038493875\
+    --ImageId img-6pb6lrmy \
+    --AccountIds 1038493875 \
     --Permission SHARE
 ```
 

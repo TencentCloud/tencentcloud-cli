@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ModifySuperPlayerConfig --cli-unfold-argument  \
-    --Name test\
+    --Name test \
     --AdaptiveDynamicStreamingDefinition 20
 ```
 

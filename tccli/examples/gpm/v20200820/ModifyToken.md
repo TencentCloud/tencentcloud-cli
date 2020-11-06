@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gpm ModifyToken --cli-unfold-argument  \
-    --MatchCode match-58mnuqlz\
-    --MatchToken mytoken\
+    --MatchCode match-58mnuqlz \
+    --MatchToken mytoken \
     --CompatibleSpan 300
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcb CreateHostingDomain --cli-unfold-argument  \
-    --EnvId env_id\
-    --Domain domain\
+    --EnvId env_id \
+    --Domain domain \
     --CertId cert-id
 ```
 

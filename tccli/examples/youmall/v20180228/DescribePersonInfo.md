@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli youmall DescribePersonInfo --cli-unfold-argument  \
-    --CompanyId TestCompany\
-    --ShopId 1\
-    --StartPersonId 0\
-    --Offset 0\
-    --Limit 100\
-    --PersonType 1\
+    --CompanyId TestCompany \
+    --ShopId 1 \
+    --StartPersonId 0 \
+    --Offset 0 \
+    --Limit 100 \
+    --PersonType 1 \
     --PictureExpires 600
 ```
 
@@ -53,12 +53,12 @@ Input:
 
 ```
 tccli youmall DescribePersonInfo --cli-unfold-argument  \
-    --CompanyId TestCompany\
-    --ShopId 1\
-    --StartPersonId 0\
-    --Offset 0\
-    --Limit 100\
-    --PersonType 1\
+    --CompanyId TestCompany \
+    --ShopId 1 \
+    --StartPersonId 0 \
+    --Offset 0 \
+    --Limit 100 \
+    --PersonType 1 \
     --PictureExpires 600
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam AttachUserPolicy --cli-unfold-argument  \
-    --PolicyId 524497\
+    --PolicyId 524497 \
     --AttachUin 3449203261
 ```
 

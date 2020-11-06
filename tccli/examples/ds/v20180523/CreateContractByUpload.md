@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ds CreateContractByUpload --cli-unfold-argument  \
-    --Module ContractMng\
-    --Operation CreateContractByUpload\
-    --ContractFile https://cloud.tencent.com/\
-    --ContractName test\
-    --Remarks test\
-    --Initiator dcu-c33uil4ap6\
+    --Module ContractMng \
+    --Operation CreateContractByUpload \
+    --ContractFile https://cloud.tencent.com/ \
+    --ContractName test \
+    --Remarks test \
+    --Initiator dcu-c33uil4ap6 \
     --SignInfos.0.AccountResId dcu-c33uil4ap6
 ```
 

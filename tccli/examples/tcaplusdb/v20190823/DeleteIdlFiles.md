@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tcaplusdb DeleteIdlFiles --cli-unfold-argument  \
-    --ClusterId 6084038577\
-    --IdlFiles.0.FileName tb_example\
-    --IdlFiles.0.FileType PROTO\
-    --IdlFiles.0.FileExtType proto\
-    --IdlFiles.0.FileSize 266\
+    --ClusterId 6084038577 \
+    --IdlFiles.0.FileName tb_example \
+    --IdlFiles.0.FileType PROTO \
+    --IdlFiles.0.FileExtType proto \
+    --IdlFiles.0.FileSize 266 \
     --IdlFiles.0.FileId 849
 ```
 

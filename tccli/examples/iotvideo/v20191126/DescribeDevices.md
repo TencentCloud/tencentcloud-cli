@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iotvideo DescribeDevices --cli-unfold-argument  \
-    --ProductId 123456789000\
-    --ReturnModel true\
-    --Limit 10\
-    --Offset 0\
-    --OtaVersion test\
+    --ProductId 123456789000 \
+    --ReturnModel true \
+    --Limit 10 \
+    --Offset 0 \
+    --OtaVersion test \
     --DeviceName test
 ```
 

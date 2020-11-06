@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cpdp CreateTransferBatch --cli-unfold-argument  \
-    --MerchantId 129284394\
-    --MerchantAppId wxf636efh567hg4356\
-    --MerchantBatchNo plfk2020042013\
-    --BatchName 2019年1月深圳分部报销单\
-    --BatchRemark 转账说明\
-    --TotalAmount 50000\
-    --TotalNum 1\
-    --TransferDetails.0.MerchantDetailNo x23zy545Bd5436\
-    --TransferDetails.0.TransferAmount 50000\
-    --TransferDetails.0.TransferRemark 2020年4月报销\
-    --TransferDetails.0.OpenId o-MYE42l80oelYMDE34nYD456Xoy\
+    --MerchantId 129284394 \
+    --MerchantAppId wxf636efh567hg4356 \
+    --MerchantBatchNo plfk2020042013 \
+    --BatchName 2019年1月深圳分部报销单 \
+    --BatchRemark 转账说明 \
+    --TotalAmount 50000 \
+    --TotalNum 1 \
+    --TransferDetails.0.MerchantDetailNo x23zy545Bd5436 \
+    --TransferDetails.0.TransferAmount 50000 \
+    --TransferDetails.0.TransferRemark 2020年4月报销 \
+    --TransferDetails.0.OpenId o-MYE42l80oelYMDE34nYD456Xoy \
     --TransferDetails.0.UserName 张三
 ```
 
@@ -40,17 +40,17 @@ Input:
 
 ```
 tccli cpdp CreateTransferBatch --cli-unfold-argument  \
-    --MerchantId 129284394\
-    --MerchantAppId wxf636efh567hg4356\
-    --MerchantBatchNo plfk2020042013\
-    --BatchName 2019年1月深圳分部报销单\
-    --BatchRemark 转账说明\
-    --TotalAmount 50000\
-    --TotalNum 1\
-    --TransferDetails.0.MerchantDetailNo x23zy545Bd5436\
-    --TransferDetails.0.TransferAmount 20000\
-    --TransferDetails.0.TransferRemark 2020年4月报销\
-    --TransferDetails.0.OpenId o-MYE42l80oelYMDE34nYD456Xoy\
+    --MerchantId 129284394 \
+    --MerchantAppId wxf636efh567hg4356 \
+    --MerchantBatchNo plfk2020042013 \
+    --BatchName 2019年1月深圳分部报销单 \
+    --BatchRemark 转账说明 \
+    --TotalAmount 50000 \
+    --TotalNum 1 \
+    --TransferDetails.0.MerchantDetailNo x23zy545Bd5436 \
+    --TransferDetails.0.TransferAmount 20000 \
+    --TransferDetails.0.TransferRemark 2020年4月报销 \
+    --TransferDetails.0.OpenId o-MYE42l80oelYMDE34nYD456Xoy \
     --TransferDetails.0.UserName 张三
 ```
 

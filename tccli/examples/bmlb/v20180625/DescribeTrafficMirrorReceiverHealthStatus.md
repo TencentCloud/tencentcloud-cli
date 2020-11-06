@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bmlb DescribeTrafficMirrorReceiverHealthStatus --cli-unfold-argument  \
-    --TrafficMirrorId bmtm-lmep0eit\
-    --ReceiverSet.0.InstanceId tcpm-px13l9jh\
-    --ReceiverSet.0.Port 113\
-    --ReceiverSet.1.InstanceId tcpm-px13l9jh\
+    --TrafficMirrorId bmtm-lmep0eit \
+    --ReceiverSet.0.InstanceId tcpm-px13l9jh \
+    --ReceiverSet.0.Port 113 \
+    --ReceiverSet.1.InstanceId tcpm-px13l9jh \
     --ReceiverSet.1.Port 114
 ```
 

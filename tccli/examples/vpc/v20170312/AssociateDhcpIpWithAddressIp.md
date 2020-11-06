@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc AssociateDhcpIpWithAddressIp --cli-unfold-argument  \
-    --DhcpIpId dpcpip-9o233uri\
+    --DhcpIpId dpcpip-9o233uri \
     --AddressIp 119.29.93.218
 ```
 

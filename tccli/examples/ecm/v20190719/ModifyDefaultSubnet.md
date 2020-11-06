@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm ModifyDefaultSubnet --cli-unfold-argument  \
-    --EcmRegion ap-hangzhou-ecm\
-    --Zone ap-hangzhou-ecm-1\
-    --VpcId vpc-cp6wknwh\
+    --EcmRegion ap-hangzhou-ecm \
+    --Zone ap-hangzhou-ecm-1 \
+    --VpcId vpc-cp6wknwh \
     --SubnetId subnet-jxa0xg1o
 ```
 

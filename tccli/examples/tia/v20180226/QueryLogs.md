@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tia QueryLogs --cli-unfold-argument  \
-    --JobName test-job\
-    --Cluster ap-beijing\
-    --StartTime 2018-04-26+10%3A00%3A00\
-    --EndTime 2018-04-26+11%3A00%3A00\
+    --JobName test-job \
+    --Cluster ap-beijing \
+    --StartTime 2018-04-26+10%3A00%3A00 \
+    --EndTime 2018-04-26+11%3A00%3A00 \
     --Limit 2
 ```
 

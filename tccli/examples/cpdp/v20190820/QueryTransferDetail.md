@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cpdp QueryTransferDetail --cli-unfold-argument  \
-    --MerchantId 1589516661\
-    --BatchId 1030001016801203285292020080400005400005\
+    --MerchantId 1589516661 \
+    --BatchId 1030001016801203285292020080400005400005 \
     --DetailId 1040001016801203285292020080400005010006
 ```
 

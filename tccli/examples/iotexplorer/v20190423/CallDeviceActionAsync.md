@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotexplorer CallDeviceActionAsync --cli-unfold-argument  \
-    --ProductId TOIDHQ3AOQ\
-    --DeviceName TOIDHQ2AOQ\
-    --ActionId actid\
+    --ProductId TOIDHQ3AOQ \
+    --DeviceName TOIDHQ2AOQ \
+    --ActionId actid \
     --InputParams {"vol":3}
 ```
 

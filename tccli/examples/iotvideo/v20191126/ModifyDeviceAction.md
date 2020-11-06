@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideo ModifyDeviceAction --cli-unfold-argument  \
-    --Tid xxx\
-    --Wakeup true\
-    --Branch Action.takePhoto.ctlVal\
-    --Value 1\
+    --Tid xxx \
+    --Wakeup true \
+    --Branch Action.takePhoto.ctlVal \
+    --Value 1 \
     --IsNum true
 ```
 

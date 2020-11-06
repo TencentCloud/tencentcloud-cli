@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tci SubmitHighlights --cli-unfold-argument  \
-    --FileCont https%3A%2F%2Fefpoc-1255701415.cos.ap-shanghai.myqcloud.com%2Fvideos%2Fefpoc_1_27.mp4\
-    --FileType vod_url\
-    --Functions.EnableFaceDetect true\
-    --Functions.EnableFaceExpression true\
-    --Functions.EnableFaceIdent true\
-    --GistType smile\
+    --FileCont https%3A%2F%2Fefpoc-1255701415.cos.ap-shanghai.myqcloud.com%2Fvideos%2Fefpoc_1_27.mp4 \
+    --FileType vod_url \
+    --Functions.EnableFaceDetect true \
+    --Functions.EnableFaceExpression true \
+    --Functions.EnableFaceIdent true \
+    --GistType smile \
     --LibId test_lib
 ```
 

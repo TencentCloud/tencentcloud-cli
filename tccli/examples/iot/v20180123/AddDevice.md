@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot AddDevice --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
+    --ProductId iot-4e0wsxpi \
     --DeviceName aaaa
 ```
 

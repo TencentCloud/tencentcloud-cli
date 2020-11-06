@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssm DeleteSecretVersion --cli-unfold-argument  \
-    --SecretName test\
+    --SecretName test \
     --VersionId v1.0
 ```
 

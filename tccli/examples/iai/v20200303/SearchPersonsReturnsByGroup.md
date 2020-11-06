@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iai SearchPersonsReturnsByGroup --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testA.jpg\
-    --MaxFaceNum 1\
-    --MinFaceSize 40\
-    --MaxPersonNumPerGroup 5\
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --MaxFaceNum 1 \
+    --MinFaceSize 40 \
+    --MaxPersonNumPerGroup 5 \
     --GroupIds TencentShenZhenEmployee
 ```
 
@@ -58,10 +58,10 @@ Input:
 
 ```
 tccli iai SearchPersonsReturnsByGroup --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testB.jpg\
-    --MaxFaceNum 1\
-    --MinFaceSize 40\
-    --MaxPersonNumPerGroup 5\
+    --Url http://test.image.myqcloud.com/testB.jpg \
+    --MaxFaceNum 1 \
+    --MinFaceSize 40 \
+    --MaxPersonNumPerGroup 5 \
     --GroupIds TencentShenZhenEmployee
 ```
 

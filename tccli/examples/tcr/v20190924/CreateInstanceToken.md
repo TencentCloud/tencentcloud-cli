@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr CreateInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-ak9876\
+    --RegistryId tcr-ak9876 \
     --TokenType temp
 ```
 
@@ -29,8 +29,8 @@ Input:
 
 ```
 tccli tcr CreateInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-ak9876\
-    --TokenType longterm\
+    --RegistryId tcr-ak9876 \
+    --TokenType longterm \
     --Desc for-tke-cluster
 ```
 

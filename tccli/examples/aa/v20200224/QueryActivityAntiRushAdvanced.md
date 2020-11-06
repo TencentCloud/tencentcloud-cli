@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli aa QueryActivityAntiRushAdvanced --cli-unfold-argument  \
-    --BusinessSecurityData.Account.AccountAccountType 2\
-    --BusinessSecurityData.Account.WeChatAccount.WeChatOpenId "oz5I2tz55hxIIFCDxIflGfVv****"\
-    --BusinessSecurityData.OnlineScam.ContentLabel "Text"\
-    --BusinessSecurityData.OnlineScam.ContentRiskLevel 1\
-    --BusinessSecurityData.OnlineScam.ContentType 1\
-    --BusinessSecurityData.OnlineScam.FraudType 2\
-    --BusinessSecurityData.OnlineScam.FraudAccount "55277****"\
-    --BusinessSecurityData.PostTime 1590753783\
+    --BusinessSecurityData.Account.AccountAccountType 2 \
+    --BusinessSecurityData.Account.WeChatAccount.WeChatOpenId "oz5I2tz55hxIIFCDxIflGfVv****" \
+    --BusinessSecurityData.OnlineScam.ContentLabel "Text" \
+    --BusinessSecurityData.OnlineScam.ContentRiskLevel 1 \
+    --BusinessSecurityData.OnlineScam.ContentType 1 \
+    --BusinessSecurityData.OnlineScam.FraudType 2 \
+    --BusinessSecurityData.OnlineScam.FraudAccount "55277****" \
+    --BusinessSecurityData.PostTime 1590753783 \
     --BusinessSecurityData.UserIp "117.136.105.74"
 ```
 

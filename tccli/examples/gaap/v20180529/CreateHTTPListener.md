@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap CreateHTTPListener --cli-unfold-argument  \
-    --ProxyId link-cuxw2rm0\
-    --ListenerName listener-1\
+    --ProxyId link-cuxw2rm0 \
+    --ListenerName listener-1 \
     --Port 443
 ```
 

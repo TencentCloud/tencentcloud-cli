@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli as DescribeAutoScalingActivities --cli-unfold-argument  \
-    --Filters.0.Name activity-id\
+    --Filters.0.Name activity-id \
     --Filters.0.Values asa-o4v87ae9
 ```
 

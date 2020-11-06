@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cpdp ModifyAgentTaxPaymentInfo --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --BatchNum 98\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --BatchNum 98 \
     --RawElectronicCertUrl https://cloud.tencent.com/document/product/1122/40639
 ```
 

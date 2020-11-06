@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gse StartFleetActions --cli-unfold-argument  \
-    --FleetId fleet-qp3g3fn6-p6l46gnu\
+    --FleetId fleet-qp3g3fn6-p6l46gnu \
     --Actions AUTO_SCALING
 ```
 

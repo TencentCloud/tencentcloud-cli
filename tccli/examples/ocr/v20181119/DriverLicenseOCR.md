@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --CardSide FRONT
 ```
 
@@ -45,7 +45,7 @@ Input:
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --CardSide FRONT
 ```
 
@@ -86,7 +86,7 @@ Input:
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --CardSide BACK
 ```
 
@@ -121,7 +121,7 @@ Input:
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --CardSide BACK
 ```
 

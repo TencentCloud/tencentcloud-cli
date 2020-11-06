@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mgobe DismissRoom --cli-unfold-argument  \
-    --GameId "obg-hvhvbs"\
+    --GameId "obg-hvhvbs" \
     --RoomId "Sfsfdf"
 ```
 

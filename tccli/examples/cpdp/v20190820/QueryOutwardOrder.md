@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cpdp QueryOutwardOrder --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
     --TransactionId trasid201911230012
 ```
 

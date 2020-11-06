@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyAddressInternetChargeType --cli-unfold-argument  \
-    --AddressId eip-fo00aojo\
-    --InternetChargeType TRAFFIC_POSTPAID_BY_HOUR\
+    --AddressId eip-fo00aojo \
+    --InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetMaxBandwidthOut 5
 ```
 

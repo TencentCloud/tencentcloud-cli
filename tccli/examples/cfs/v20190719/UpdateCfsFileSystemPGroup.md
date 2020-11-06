@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfs UpdateCfsFileSystemPGroup --cli-unfold-argument  \
-    --FileSystemId cfs-12345\
+    --FileSystemId cfs-12345 \
     --PGroupId pgroup-12345
 ```
 

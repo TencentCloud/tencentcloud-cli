@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tdmq CreateSubscription --cli-unfold-argument  \
-    --EnvironmentId default\
-    --TopicName cloud_test\
-    --SubscriptionName cloud_sub\
-    --IsIdempotent true\
+    --EnvironmentId default \
+    --TopicName cloud_test \
+    --SubscriptionName cloud_sub \
+    --IsIdempotent true \
     --Remark 创建订阅关系
 ```
 

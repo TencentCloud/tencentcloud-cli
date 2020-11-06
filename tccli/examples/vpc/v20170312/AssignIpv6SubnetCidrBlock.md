@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc AssignIpv6SubnetCidrBlock --cli-unfold-argument  \
-    --VpcId vpc-rkxd3pgh\
-    --Ipv6SubnetCidrBlocks.0.SubnetId subnet-3s5bhzb0\
+    --VpcId vpc-rkxd3pgh \
+    --Ipv6SubnetCidrBlocks.0.SubnetId subnet-3s5bhzb0 \
     --Ipv6SubnetCidrBlocks.0.Ipv6CidrBlock 3402:4e00:20:1202::/64
 ```
 

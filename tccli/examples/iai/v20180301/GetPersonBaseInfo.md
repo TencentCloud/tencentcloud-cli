@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai GetPersonBaseInfo --cli-unfold-argument  \
-    --PersonId 1001\
+    --PersonId 1001 \
     --Version 2018-03-01
 ```
 
@@ -33,7 +33,7 @@ Input:
 
 ```
 tccli iai GetPersonBaseInfo --cli-unfold-argument  \
-    --PersonId 1002\
+    --PersonId 1002 \
     --Version 2018-03-01
 ```
 

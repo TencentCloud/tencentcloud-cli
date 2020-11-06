@@ -41,7 +41,7 @@ Input:
 
 ```
 tccli vpc DescribeIp6Addresses --cli-unfold-argument  \
-    --Filters.0.Name address-ip\
+    --Filters.0.Name address-ip \
     --Filters.0.Values 2402:4e00:1000:2d00:0:8f3f:6:9895
 ```
 

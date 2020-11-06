@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideo DeleteBinding --cli-unfold-argument  \
-    --AccessId ***********\
-    --Tid ********\
+    --AccessId *********** \
+    --Tid ******** \
     --Role owner
 ```
 

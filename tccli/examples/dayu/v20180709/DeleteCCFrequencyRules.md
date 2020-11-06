@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DeleteCCFrequencyRules --cli-unfold-argument  \
-    --Business bgpip\
+    --Business bgpip \
     --CCFrequencyRuleId ccRule-000000xe
 ```
 

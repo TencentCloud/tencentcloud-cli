@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dayu DescribeCCTrend --cli-unfold-argument  \
-    --Business bgp\
-    --Id bgp-00000010\
-    --Ip 3.3.3.3\
-    --MetricName inqps\
-    --StartTime 2018-08-2715:05:10\
-    --EndTime 2018-08-2716:05:10\
+    --Business bgp \
+    --Id bgp-00000010 \
+    --Ip 3.3.3.3 \
+    --MetricName inqps \
+    --StartTime 2018-08-2715:05:10 \
+    --EndTime 2018-08-2716:05:10 \
     --Period 3600
 ```
 

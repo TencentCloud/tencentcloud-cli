@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cws DescribeVuls --cli-unfold-argument  \
-    --Filters.0.Name Name\
+    --Filters.0.Name Name \
     --Filters.0.Values SQL
 ```
 

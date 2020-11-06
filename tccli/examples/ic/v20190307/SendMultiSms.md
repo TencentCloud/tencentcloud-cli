@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ic SendMultiSms --cli-unfold-argument  \
-    --Sdkappid 1200168178\
-    --Iccids ["89860619000013360957","89860619000013360957"]\
+    --Sdkappid 1200168178 \
+    --Iccids ["89860619000013360957","89860619000013360957"] \
     --Content ok
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli as DescribePaiInstances --cli-unfold-argument  \
-    --InstanceIds ins-6he2sztp\
+    --InstanceIds ins-6he2sztp \
     --InnstanceIds ins-0xdrree5
 ```
 

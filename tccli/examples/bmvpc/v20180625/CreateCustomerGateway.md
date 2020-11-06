@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bmvpc CreateCustomerGateway --cli-unfold-argument  \
-    --Version 2018-06-25\
-    --CustomerGatewayName test-cgw\
-    --IpAddress 58.211.1.12\
+    --Version 2018-06-25 \
+    --CustomerGatewayName test-cgw \
+    --IpAddress 58.211.1.12 \
     --Zone ap-guangzhou
 ```
 

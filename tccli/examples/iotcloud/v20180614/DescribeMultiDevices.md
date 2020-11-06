@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud DescribeMultiDevices --cli-unfold-argument  \
-    --ProductId ABCDE12345\
-    --TaskId abcdefghijklmn\
-    --Offset 0\
+    --ProductId ABCDE12345 \
+    --TaskId abcdefghijklmn \
+    --Offset 0 \
     --Limit 10
 ```
 

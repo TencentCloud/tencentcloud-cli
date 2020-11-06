@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DescribeReplicationInstanceCreateTasks --cli-unfold-argument  \
-    --ReplicationRegistryId tcr-ak9876-5\
+    --ReplicationRegistryId tcr-ak9876-5 \
     --ReplicationRegionId 5
 ```
 

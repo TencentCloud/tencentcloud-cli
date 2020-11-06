@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu ModifyResourceRenewFlag --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000x7\
+    --Business bgpip \
+    --Id bgpip-000000x7 \
     --RenewFlag 1
 ```
 

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli sms AddSmsSign --cli-unfold-argument  \
-    --SignName “test”\
-    --SignType 0\
-    --DocumentType 1\
-    --International 0\
-    --UsedMethod 1\
-    --ProofImage "xxxx"\
-    --CommissionImage "xxxx"\
+    --SignName “test” \
+    --SignType 0 \
+    --DocumentType 1 \
+    --International 0 \
+    --UsedMethod 1 \
+    --ProofImage "xxxx" \
+    --CommissionImage "xxxx" \
     --Remark xxxx
 ```
 

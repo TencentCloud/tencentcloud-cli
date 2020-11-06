@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tag ModifyResourcesTagValue --cli-unfold-argument  \
-    --ServiceType cvm\
-    --ResourceRegion ap-guangzhou\
-    --TagKey t1\
-    --TagValue v1\
-    --ResourcePrefix instance\
+    --ServiceType cvm \
+    --ResourceRegion ap-guangzhou \
+    --TagKey t1 \
+    --TagValue v1 \
+    --ResourcePrefix instance \
     --ResourceIds ins-001 ins-002
 ```
 

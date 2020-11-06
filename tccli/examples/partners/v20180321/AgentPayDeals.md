@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli partners AgentPayDeals --cli-unfold-argument  \
-    --OwnerUin 123456\
-    --AgentPay 1\
+    --OwnerUin 123456 \
+    --AgentPay 1 \
     --DealNames 20180204123456
 ```
 

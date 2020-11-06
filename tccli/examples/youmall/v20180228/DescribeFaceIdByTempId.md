@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli youmall DescribeFaceIdByTempId --cli-unfold-argument  \
-    --CompanyId tencent\
-    --ShopId 10086\
-    --TempId tencent_10086_21_20180722080857_2677813760953992720_306_271_39_39\
-    --CameraId 21\
+    --CompanyId tencent \
+    --ShopId 10086 \
+    --TempId tencent_10086_21_20180722080857_2677813760953992720_306_271_39_39 \
+    --CameraId 21 \
     --PosId test
 ```
 

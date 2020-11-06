@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cwp DescribeHistoryAccounts --cli-unfold-argument  \
-    --Uuid 6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1\
-    --Filters.0.Name MachineIp\
-    --Filters.0.Values 10.0.1.1\
-    --Limit 10\
+    --Uuid 6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1 \
+    --Filters.0.Name MachineIp \
+    --Filters.0.Values 10.0.1.1 \
+    --Limit 10 \
     --Offset 0
 ```
 

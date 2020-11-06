@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dayu DescribeDDoSNetTrend --cli-unfold-argument  \
-    --Business net\
-    --Id net-00000010\
-    --MetricName bps\
-    --StartTime '2018-08-27 15:05:10'\
-    --EndTime '2018-08-27 16:05:10'\
+    --Business net \
+    --Id net-00000010 \
+    --MetricName bps \
+    --StartTime '2018-08-27 15:05:10' \
+    --EndTime '2018-08-27 16:05:10' \
     --Period 3600
 ```
 

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cpdp RevResigterBillSupportWithdraw --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --TranNetMemberCode ' YAPI100007'\
-    --OldOrderNo ' O2019110603'\
-    --CancelAmt 5000\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --TranNetMemberCode ' YAPI100007' \
+    --OldOrderNo ' O2019110603' \
+    --CancelAmt 5000 \
     --TranFee 0.0
 ```
 

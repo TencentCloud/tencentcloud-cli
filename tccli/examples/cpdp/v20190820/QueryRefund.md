@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp QueryRefund --cli-unfold-argument  \
-    --UserId your_user_id\
-    --RefundId refund_id_00001\
-    --MidasAppId your_midas_app_id\
-    --MidasSecretId your_midas_secret_id\
+    --UserId your_user_id \
+    --RefundId refund_id_00001 \
+    --MidasAppId your_midas_app_id \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

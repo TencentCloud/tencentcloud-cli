@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmeip BindHosted --cli-unfold-argument  \
-    --EipId eip-kwn5q7mt\
+    --EipId eip-kwn5q7mt \
     --InstanceId chm-343fqw4
 ```
 

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dbbrain DescribeSlowLogTopSqls --cli-unfold-argument  \
-    --InstanceId test\
-    --SortBy QueryTime\
-    --OrderBy ASC\
-    --Limit 10\
-    --Offset 0\
-    --StartTime '2019-01-01 00:00:00'\
+    --InstanceId test \
+    --SortBy QueryTime \
+    --OrderBy ASC \
+    --Limit 10 \
+    --Offset 0 \
+    --StartTime '2019-01-01 00:00:00' \
     --EndTime '2019-01-01 01:00:00'
 ```
 

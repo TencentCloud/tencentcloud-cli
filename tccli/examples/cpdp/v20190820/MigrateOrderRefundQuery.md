@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cpdp MigrateOrderRefundQuery --cli-unfold-argument  \
-    --MerchantId 商户号\
-    --PayChannel 支付渠道\
-    --RefundOrderId refund1212112\
+    --MerchantId 商户号 \
+    --PayChannel 支付渠道 \
+    --RefundOrderId refund1212112 \
     --TradeSerialNo 106776467648827392
 ```
 

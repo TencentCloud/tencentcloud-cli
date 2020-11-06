@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu CreateBasicDDoSAlarmThreshold --cli-unfold-argument  \
-    --Business bgpip\
-    --Method set\
-    --AlarmThreshold 1000\
+    --Business bgpip \
+    --Method set \
+    --AlarmThreshold 1000 \
     --AlarmType 1
 ```
 

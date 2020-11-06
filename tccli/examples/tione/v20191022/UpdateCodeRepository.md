@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione UpdateCodeRepository --cli-unfold-argument  \
-    --CodeRepositoryName private\
+    --CodeRepositoryName private \
     --GitSecret.Secret '{"UserName":"xxx", "Password":"xxx"}'
 ```
 

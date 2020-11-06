@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam ListAttachedUserPolicies --cli-unfold-argument  \
-    --TargetUin 3449203261\
-    --Page 1\
+    --TargetUin 3449203261 \
+    --Page 1 \
     --Rp 10
 ```
 

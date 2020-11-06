@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm InquiryPriceResizeInstanceDisks --cli-unfold-argument  \
-    --InstanceId ins-fd8spnmq\
+    --InstanceId ins-fd8spnmq \
     --DataDisks.0.DiskSize 100
 ```
 

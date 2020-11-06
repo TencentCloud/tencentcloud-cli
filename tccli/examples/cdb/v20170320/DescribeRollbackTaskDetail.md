@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DescribeRollbackTaskDetail --cli-unfold-argument  \
-    --InstanceId cdb-qwer1234\
+    --InstanceId cdb-qwer1234 \
     --Limit 1
 ```
 

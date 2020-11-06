@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cbs DescribeDiskConfigQuota --cli-unfold-argument  \
-    --InquiryType INQUIRY_CVM_CONFIG\
-    --Zones ap-guangzhou-2\
+    --InquiryType INQUIRY_CVM_CONFIG \
+    --Zones ap-guangzhou-2 \
     --InstanceFamilies S3
 ```
 
@@ -74,7 +74,7 @@ Input:
 
 ```
 tccli cbs DescribeDiskConfigQuota --cli-unfold-argument  \
-    --InquiryType INQUIRY_CBS_CONFIG\
+    --InquiryType INQUIRY_CBS_CONFIG \
     --Zones ap-guangzhou-2
 ```
 

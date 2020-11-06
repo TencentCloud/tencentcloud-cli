@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tia CreateModel --cli-unfold-argument  \
-    --Name test-model\
-    --Description test\
-    --Cluster ap-beijing\
-    --Model cos://bucket-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/model:/data/model\
-    --RuntimeVersion tiaserv-1.6.0-cpu\
-    --Replicas 1\
-    --Expose external\
+    --Name test-model \
+    --Description test \
+    --Cluster ap-beijing \
+    --Model cos://bucket-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/model:/data/model \
+    --RuntimeVersion tiaserv-1.6.0-cpu \
+    --Replicas 1 \
+    --Expose external \
     --ServType 4U8G0P
 ```
 
@@ -47,11 +47,11 @@ Input:
 
 ```
 tccli tia CreateModel --cli-unfold-argument  \
-    --Name test-model\
-    --Description test\
-    --Model cos://bucket-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/model.zip\
-    --RuntimeVersion Python2.7\
-    --ServType serverless\
+    --Name test-model \
+    --Description test \
+    --Model cos://bucket-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/model.zip \
+    --RuntimeVersion Python2.7 \
+    --ServType serverless \
     --RuntimeConf Handler MemorySize Timeout
 ```
 

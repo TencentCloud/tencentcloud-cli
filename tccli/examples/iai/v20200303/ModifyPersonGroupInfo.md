@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1\
-    --PersonId 2001\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 3\
+    --GroupId ZhuYuanDormitoryNo1 \
+    --PersonId 2001 \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 3 \
     --PersonExDescriptionInfos.0.PersonExDescription 3150108080
 ```
 
@@ -29,9 +29,9 @@ Input:
 
 ```
 tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --PersonId 1001\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 1\
+    --GroupId TencentShenZhenEmployee \
+    --PersonId 1001 \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 1 \
     --PersonExDescriptionInfos.0.PersonExDescription 'Big Data and AI Product Center'
 ```
 
@@ -52,9 +52,9 @@ Input:
 
 ```
 tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --PersonId 1001\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex -1\
+    --GroupId TencentShenZhenEmployee \
+    --PersonId 1001 \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex -1 \
     --PersonExDescriptionInfos.0.PersonExDescription 'AI Lab'
 ```
 

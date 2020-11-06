@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cms CreateFileSample --cli-unfold-argument  \
-    --EvilType 20002\
-    --Label 1\
-    --FileType image\
-    --Contents.0.FileName 苍老师.jpg\
-    --Contents.0.FileUrl http://example.com/q.jpg\
+    --EvilType 20002 \
+    --Label 1 \
+    --FileType image \
+    --Contents.0.FileName 苍老师.jpg \
+    --Contents.0.FileUrl http://example.com/q.jpg \
     --Contents.0.FileMd5 9cc56fe973ec99c1f03afcc920df3a0b
 ```
 

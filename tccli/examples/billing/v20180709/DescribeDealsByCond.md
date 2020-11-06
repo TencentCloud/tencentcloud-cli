@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli billing DescribeDealsByCond --cli-unfold-argument  \
-    --StartTime '2016-01-01 00:00:00'\
-    --EndTime '2016-02-01 00:00:00'\
-    --Offset 0\
+    --StartTime '2016-01-01 00:00:00' \
+    --EndTime '2016-02-01 00:00:00' \
+    --Offset 0 \
     --Limit 20
 ```
 

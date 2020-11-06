@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeGroupProIspPlayInfoList --cli-unfold-argument  \
-    --StartTime '2019-03-29 09:00:00'\
+    --StartTime '2019-03-29 09:00:00' \
     --EndTime '2019-03-29 09:10:00'
 ```
 

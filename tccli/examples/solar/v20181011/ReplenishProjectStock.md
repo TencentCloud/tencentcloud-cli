@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli solar ReplenishProjectStock --cli-unfold-argument  \
-    --SubProjectId testsubprj-9ikt6t4ybu\
-    --PrizeId testres-86e7182dbo\
-    --PrizeNum 1\
-    --PoolIndex 1\
+    --SubProjectId testsubprj-9ikt6t4ybu \
+    --PrizeId testres-86e7182dbo \
+    --PrizeNum 1 \
+    --PoolIndex 1 \
     --PoolName 奖池1
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cpdp QueryAcctInfo --cli-unfold-argument  \
-    --MidasAppId your_midas_app_id\
-    --SubMchId your_sub_mch_id\
-    --MidasSecretId your_midas_secret_id\
+    --MidasAppId your_midas_app_id \
+    --SubMchId your_sub_mch_id \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bda ModifyGroup --cli-unfold-argument  \
-    --GroupId 12312312\
-    --GroupName testG3M3\
+    --GroupId 12312312 \
+    --GroupName testG3M3 \
     --Tag testG3M3
 ```
 
@@ -32,8 +32,8 @@ Input:
 
 ```
 tccli bda ModifyGroup --cli-unfold-argument  \
-    --GroupId testG3\
-    --GroupName testG3M3\
+    --GroupId testG3 \
+    --GroupName testG3M3 \
     --Tag testG3M3
 ```
 

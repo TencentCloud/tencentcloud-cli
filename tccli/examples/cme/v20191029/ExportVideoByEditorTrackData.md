@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
-    --Platform default_platform\
-    --Definition 10\
-    --ExportDestination VOD\
-    --TrackData []\
-    --VODExportInfo.Name 在线编辑视频\
+    --Platform default_platform \
+    --Definition 10 \
+    --ExportDestination VOD \
+    --TrackData [] \
+    --VODExportInfo.Name 在线编辑视频 \
     --Operator 16556266637489
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli clb ModifyDomain --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
-    --ListenerId lbl-d1ubsydq\
-    --Domain foo.net\
+    --LoadBalancerId lb-cuxw2rm0 \
+    --ListenerId lbl-d1ubsydq \
+    --Domain foo.net \
     --NewDomain bar.net
 ```
 

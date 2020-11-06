@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam CreateGroup --cli-unfold-argument  \
-    --GroupName test1\
+    --GroupName test1 \
     --Remark test2
 ```
 

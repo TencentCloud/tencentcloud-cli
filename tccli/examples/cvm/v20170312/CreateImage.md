@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm CreateImage --cli-unfold-argument  \
-    --InstanceId ins-6pb6lrmy\
+    --InstanceId ins-6pb6lrmy \
     --ImageName "name"
 ```
 

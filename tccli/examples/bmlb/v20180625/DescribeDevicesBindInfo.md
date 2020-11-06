@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmlb DescribeDevicesBindInfo --cli-unfold-argument  \
-    --InstanceIds cpm-buj66q9x\
+    --InstanceIds cpm-buj66q9x \
     --VpcId vpc-34cxlz7z
 ```
 

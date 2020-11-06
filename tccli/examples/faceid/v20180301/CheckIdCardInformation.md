@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli faceid CheckIdCardInformation --cli-unfold-argument  \
-    --ImageBase64 <base64字符串>\
+    --ImageBase64 <base64字符串> \
     --Config {"CopyWarn":true}
 ```
 

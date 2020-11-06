@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis ModifyNetworkConfig --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p\
+    --InstanceId crs-5a4py64p \
     --Operation changeVip
 ```
 

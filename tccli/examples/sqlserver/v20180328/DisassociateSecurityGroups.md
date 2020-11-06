@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DisassociateSecurityGroups --cli-unfold-argument  \
-    --SecurityGroupId sg-igw86yth\
+    --SecurityGroupId sg-igw86yth \
     --InstanceIdSet mssql-6f4ddx2f
 ```
 

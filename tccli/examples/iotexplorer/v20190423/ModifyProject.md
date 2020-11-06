@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotexplorer ModifyProject --cli-unfold-argument  \
-    --ProjectId prj-4r2kajtp\
-    --ProjectName name\
+    --ProjectId prj-4r2kajtp \
+    --ProjectName name \
     --ProjectDesc desc
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ame DescribePackageItems --cli-unfold-argument  \
-    --OrderId xxx\
-    --Offset xxx\
+    --OrderId xxx \
+    --Offset xxx \
     --Length xxx
 ```
 

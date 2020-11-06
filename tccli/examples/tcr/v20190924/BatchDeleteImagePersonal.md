@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr BatchDeleteImagePersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test\
+    --RepoName dockerhub/test \
     --Tags 1
 ```
 

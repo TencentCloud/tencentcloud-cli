@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli dayu ModifyDDoSSwitch --cli-unfold-argument  \
-    --Business basic\
-    --Method set\
-    --Status 0\
-    --Ip 1.1.1.1\
-    --BizType public\
-    --DeviceType cvm\
-    --InstanceId cvm-abdcasddd1\
+    --Business basic \
+    --Method set \
+    --Status 0 \
+    --Ip 1.1.1.1 \
+    --BizType public \
+    --DeviceType cvm \
+    --InstanceId cvm-abdcasddd1 \
     --IPRegion gz
 ```
 

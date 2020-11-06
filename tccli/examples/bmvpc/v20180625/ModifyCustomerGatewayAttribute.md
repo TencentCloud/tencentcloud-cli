@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc ModifyCustomerGatewayAttribute --cli-unfold-argument  \
-    --Version 2018-06-25\
-    --CustomerGatewayId bmcgw-mgp33pll\
+    --Version 2018-06-25 \
+    --CustomerGatewayId bmcgw-mgp33pll \
     --CustomerGatewayName NewName
 ```
 

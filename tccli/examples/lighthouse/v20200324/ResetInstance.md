@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lighthouse ResetInstance --cli-unfold-argument  \
-    --InstanceId lhins-ruy9d2tw\
+    --InstanceId lhins-ruy9d2tw \
     --BlueprintId lhbp-5e8807lo
 ```
 

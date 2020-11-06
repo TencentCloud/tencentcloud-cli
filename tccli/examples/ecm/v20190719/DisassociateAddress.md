@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DisassociateAddress --cli-unfold-argument  \
-    --AddressId eip-11112222\
+    --AddressId eip-11112222 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

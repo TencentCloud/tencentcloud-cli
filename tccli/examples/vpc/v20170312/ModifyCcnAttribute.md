@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyCcnAttribute --cli-unfold-argument  \
-    --CcnId ccn-gjug0kul\
-    --CcnName new+name\
+    --CcnId ccn-gjug0kul \
+    --CcnName new+name \
     --CcnDescription new+description
 ```
 

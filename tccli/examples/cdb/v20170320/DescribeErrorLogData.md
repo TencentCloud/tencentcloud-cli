@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdb DescribeErrorLogData --cli-unfold-argument  \
-    --InstanceId cdb-c1nl9rpv\
-    --StartTime 1585142640\
-    --EndTime 1585142640\
-    --KeyWords keywords0\
-    --Limit 400\
+    --InstanceId cdb-c1nl9rpv \
+    --StartTime 1585142640 \
+    --EndTime 1585142640 \
+    --KeyWords keywords0 \
+    --Limit 400 \
     --Offset 0
 ```
 

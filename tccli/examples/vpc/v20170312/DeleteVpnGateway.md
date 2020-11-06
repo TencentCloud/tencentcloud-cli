@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DeleteVpnGateway --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --VpnGatewayId vpngw-12345678
 ```
 

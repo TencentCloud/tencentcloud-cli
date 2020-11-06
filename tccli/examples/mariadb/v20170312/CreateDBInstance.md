@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli mariadb CreateDBInstance --cli-unfold-argument  \
-    --Zones ap-guangzhou-2 ap-guangzhou-2\
-    --Memory 2000\
-    --Storage 10000\
-    --NodeCount 1\
-    --Count 1\
-    --Period 1\
+    --Zones ap-guangzhou-2 ap-guangzhou-2 \
+    --Memory 2000 \
+    --Storage 10000 \
+    --NodeCount 1 \
+    --Count 1 \
+    --Period 1 \
     --AutoVoucher true
 ```
 

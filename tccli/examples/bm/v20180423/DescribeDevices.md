@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli bm DescribeDevices --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
-    --VpcId vpc-3c7b2102\
-    --DeviceClassCode PS001v1\
-    --Alias test\
-    --VagueIp 88\
-    --DeadlineStartTime '2018-01-01 18:00:00'\
-    --DeadlineEndTime '2018-12-01 18:00:00'\
-    --AutoRenewFlag 1\
-    --Tags.0.TagKey testkey\
+    --Offset 0 \
+    --Limit 20 \
+    --VpcId vpc-3c7b2102 \
+    --DeviceClassCode PS001v1 \
+    --Alias test \
+    --VagueIp 88 \
+    --DeadlineStartTime '2018-01-01 18:00:00' \
+    --DeadlineEndTime '2018-12-01 18:00:00' \
+    --AutoRenewFlag 1 \
+    --Tags.0.TagKey testkey \
     --Tags.0.TagValues testval
 ```
 

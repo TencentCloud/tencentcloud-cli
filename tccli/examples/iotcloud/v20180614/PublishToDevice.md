@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud PublishToDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345\
-    --DeviceName test_device\
-    --Port 8000\
+    --ProductId ABCDE12345 \
+    --DeviceName test_device \
+    --Port 8000 \
     --Payload hello
 ```
 

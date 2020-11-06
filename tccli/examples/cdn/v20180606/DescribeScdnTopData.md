@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdn DescribeScdnTopData --cli-unfold-argument  \
-    --Domain www.test.com\
-    --Mode waf\
-    --Filter request\
-    --Metric url\
-    --StartTime 2019-06-2600:00:00\
+    --Domain www.test.com \
+    --Mode waf \
+    --Filter request \
+    --Metric url \
+    --StartTime 2019-06-2600:00:00 \
     --EndTime 2019-06-2603:00:00
 ```
 

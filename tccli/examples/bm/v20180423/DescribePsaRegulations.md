@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli bm DescribePsaRegulations --cli-unfold-argument  \
-    --Limit 20\
-    --Offset 0\
-    --OrderField CreateTime\
-    --Order 1\
-    --PsaIds bm\
-    --Tags.0.TagKey 测试_1\
+    --Limit 20 \
+    --Offset 0 \
+    --OrderField CreateTime \
+    --Order 1 \
+    --PsaIds bm \
+    --Tags.0.TagKey 测试_1 \
     --Tags.0.TagValues 到底是范德萨
 ```
 

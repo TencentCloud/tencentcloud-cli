@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DescribeNamespaces --cli-unfold-argument  \
-    --RegistryId tcr-f7g1ir99\
-    --Limit 20\
+    --RegistryId tcr-f7g1ir99 \
+    --Limit 20 \
     --Offset 0
 ```
 

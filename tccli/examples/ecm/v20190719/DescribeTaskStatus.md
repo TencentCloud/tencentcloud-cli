@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DescribeTaskStatus --cli-unfold-argument  \
-    --TaskSet.0.Operation CreateImage\
+    --TaskSet.0.Operation CreateImage \
     --TaskSet.0.TaskId 1528600
 ```
 

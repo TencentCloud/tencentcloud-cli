@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb DescribeLoadBalancers --cli-unfold-argument  \
-    --WithRs 1\
+    --WithRs 1 \
     --BackendPrivateIps 172.26.0.11
 ```
 
@@ -196,9 +196,9 @@ Input:
 
 ```
 tccli clb DescribeLoadBalancers --cli-unfold-argument  \
-    --LoadBalancerType OPEN\
-    --ProjectId 0\
-    --LoadBalancerName test_LB\
+    --LoadBalancerType OPEN \
+    --ProjectId 0 \
+    --LoadBalancerName test_LB \
     --LoadBalancerVips 129.226.78.67
 ```
 

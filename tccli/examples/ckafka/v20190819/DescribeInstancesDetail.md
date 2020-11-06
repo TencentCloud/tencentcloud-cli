@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ckafka DescribeInstancesDetail --cli-unfold-argument  \
-    --InstanceId instance-will-s\
-    --SearchWord tre\
-    --Offset 0\
-    --Limit 10\
+    --InstanceId instance-will-s \
+    --SearchWord tre \
+    --Offset 0 \
+    --Limit 10 \
     --Status 0 1 2
 ```
 

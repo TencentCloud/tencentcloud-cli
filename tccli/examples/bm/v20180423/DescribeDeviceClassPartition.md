@@ -46,7 +46,7 @@ Input:
 
 ```
 tccli bm DescribeDeviceClassPartition --cli-unfold-argument  \
-    --DeviceClassCode 任意值\
+    --DeviceClassCode 任意值 \
     --InstanceId tcpm-xxx
 ```
 

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cr ApplyCreditAudit --cli-unfold-argument  \
-    --Module Credit\
-    --Operation Apply\
-    --InstId ins-xxx\
-    --ProductId pdt-yy\
-    --CaseId xxx\
-    --CallbackUrl aad\
+    --Module Credit \
+    --Operation Apply \
+    --InstId ins-xxx \
+    --ProductId pdt-yy \
+    --CaseId xxx \
+    --CallbackUrl aad \
     --Data 123
 ```
 

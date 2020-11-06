@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ms DescribeScanResults --cli-unfold-argument  \
-    --ItemId 1shi2e-2387hjgus\
+    --ItemId 1shi2e-2387hjgus \
     --AppMd5s dd5b29a800246d7089febf228286d901
 ```
 

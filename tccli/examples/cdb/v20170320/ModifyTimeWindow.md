@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb ModifyTimeWindow --cli-unfold-argument  \
-    --InstanceId cdb-eb2w7dto\
-    --TimeRanges 03:00-03:30\
+    --InstanceId cdb-eb2w7dto \
+    --TimeRanges 03:00-03:30 \
     --Weekdays monday
 ```
 

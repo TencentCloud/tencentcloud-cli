@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tbaas GetTransListHandler --cli-unfold-argument  \
-    --Module transaction\
-    --Operation get_trans_list\
-    --Offset 0\
-    --Limit 4\
-    --GroupPk 11_1\
+    --Module transaction \
+    --Operation get_trans_list \
+    --Offset 0 \
+    --Limit 4 \
+    --GroupPk 11_1 \
     --BlockHash 0
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli npp Get400Cdr --cli-unfold-argument  \
-    --BizAppId 65535\
+    --BizAppId 65535 \
     --StartTimeStamp 1586729400
 ```
 

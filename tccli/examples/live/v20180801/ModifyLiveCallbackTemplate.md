@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli live ModifyLiveCallbackTemplate --cli-unfold-argument  \
-    --TemplateId 1000\
-    --TemplateName testName\
-    --Description test\
-    --CallbackKey adasdas23432423\
-    --StreamBeginNotifyUrl http://www.yourdomain.com/api/notify?action\
-    --StreamEndNotifyUrl http://www.yourdomain.com/api/notify?action\
-    --RecordNotifyUrl http://www.yourdomain.com/api/notify?action\
-    --SnapshotNotifyUrl http://www.yourdomain.com/api/notify?action\
+    --TemplateId 1000 \
+    --TemplateName testName \
+    --Description test \
+    --CallbackKey adasdas23432423 \
+    --StreamBeginNotifyUrl http://www.yourdomain.com/api/notify?action \
+    --StreamEndNotifyUrl http://www.yourdomain.com/api/notify?action \
+    --RecordNotifyUrl http://www.yourdomain.com/api/notify?action \
+    --SnapshotNotifyUrl http://www.yourdomain.com/api/notify?action \
     --PornCensorshipNotifyUrl http://www.yourdomain.com/api/notify?action
 ```
 

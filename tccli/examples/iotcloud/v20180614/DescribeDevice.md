@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DescribeDevice --cli-unfold-argument  \
-    --ProductID ABCDE12345\
+    --ProductID ABCDE12345 \
     --DeviceName abc
 ```
 

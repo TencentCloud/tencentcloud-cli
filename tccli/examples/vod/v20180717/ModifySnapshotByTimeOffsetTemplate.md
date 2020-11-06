@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vod ModifySnapshotByTimeOffsetTemplate --cli-unfold-argument  \
-    --Definition 10001\
-    --Name 'Time point screencapturing template 1'\
-    --Width 540\
-    --Height 960\
+    --Definition 10001 \
+    --Name 'Time point screencapturing template 1' \
+    --Width 540 \
+    --Height 960 \
     --Format jpg
 ```
 

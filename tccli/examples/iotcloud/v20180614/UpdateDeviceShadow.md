@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud UpdateDeviceShadow --cli-unfold-argument  \
-    --ProductId ABCDE12345\
-    --DeviceName abc\
-    --State {"desired":{"color":"red"}}\
+    --ProductId ABCDE12345 \
+    --DeviceName abc \
+    --State {"desired":{"color":"red"}} \
     --ShadowVersion 1
 ```
 

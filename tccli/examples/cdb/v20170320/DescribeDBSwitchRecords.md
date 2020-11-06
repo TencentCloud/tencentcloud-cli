@@ -1,4 +1,4 @@
-**Example 1: Querying instance switch record**
+**Example 1: Querying instance switch records**
 
 
 

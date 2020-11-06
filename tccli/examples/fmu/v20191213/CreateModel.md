@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli fmu CreateModel --cli-unfold-argument  \
-    --LUTFile xxxxx\
+    --LUTFile xxxxx \
     --Description 红色
 ```
 
@@ -28,7 +28,7 @@ Input:
 
 ```
 tccli fmu CreateModel --cli-unfold-argument  \
-    --LUTFile xxxxx\
+    --LUTFile xxxxx \
     --Description 红色
 ```
 

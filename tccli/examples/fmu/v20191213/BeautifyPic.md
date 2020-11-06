@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli fmu BeautifyPic --cli-unfold-argument  \
-    --Url http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\
+    --Url http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg \
     --Version 2019-12-13
 ```
 
@@ -28,7 +28,7 @@ Input:
 
 ```
 tccli fmu BeautifyPic --cli-unfold-argument  \
-    --Url IamNotAUrl\
+    --Url IamNotAUrl \
     --Version 2019-12-13
 ```
 

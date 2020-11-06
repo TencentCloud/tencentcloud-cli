@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs ModifyDisksRenewFlag --cli-unfold-argument  \
-    --DiskIds disk-5w50lrms\
+    --DiskIds disk-5w50lrms \
     --RenewFlag NOTIFY_AND_AUTO_RENEW
 ```
 

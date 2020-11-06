@@ -139,13 +139,13 @@
     "DescribeBackupByFlowId": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupByFlowId\r\n&InstanceId=mssql-6upluvd5\r\n&FlowId=1000797\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupByFlowId\n&InstanceId=mssql-6upluvd5\n&FlowId=1000797\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"BackupName\": \"mssql-6upluvd5_202007311206\",\r\n        \"BackupWay\": 0,\r\n        \"DBs\": [\r\n            \"db1\",\r\n            \"db2\"\r\n        ],\r\n        \"EndTime\": \"2020-07-31 15:10:27\",\r\n        \"ExternalAddr\": \"https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c\",\r\n        \"FileName\": \"autoed_instance_58037_20200728011545.bak.tar\",\r\n        \"Id\": 1234568,\r\n        \"InternalAddr\": \"https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c\",\r\n        \"RequestId\": \"3f49f6d4-692b-414b-999c-55b38922e049\",\r\n        \"Size\": 1356532,\r\n        \"StartTime\": \"2020-07-31 14:28:51\",\r\n        \"Status\": 1,\r\n        \"Strategy\": 0\r\n    }\r\n}",
         "title": "流程ID查询备份详情（备份已完成）"
       },
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupByFlowId\r\n&InstanceId=mssql-6upluvd5\r\n&FlowId=1000796\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupByFlowId\n&InstanceId=mssql-6upluvd5\n&FlowId=1000796\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"BackupName\": \"mssql-6upluvd5_202007311206\",\r\n        \"BackupWay\": 0,\r\n        \"DBs\": [\r\n            \"db1\",\r\n            \"db2\"\r\n        ],\r\n        \"EndTime\": \"0000-00-00 00:00:00\",\r\n        \"ExternalAddr\": \"\",\r\n        \"FileName\": \"\",\r\n        \"Id\": 0,\r\n        \"InternalAddr\": \"\",\r\n        \"RequestId\": \"de6cf7f3-ff88-4baf-a933-4714df850efa\",\r\n        \"Size\": 0,\r\n        \"StartTime\": \"2020-07-31 14:27:33\",\r\n        \"Status\": 0,\r\n        \"Strategy\": 0\r\n    }\r\n}",
         "title": "流程ID查询备份详情（备份创建中）"
       }
@@ -369,7 +369,7 @@
     "ModifyBackupName": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyBackupName\r\n&InstanceId=mssql-6upluvd5\r\n&BackupId=1234568\r\n&BackupName=backup_name\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyBackupName\n&InstanceId=mssql-6upluvd5\n&BackupId=1234568\n&BackupName=backup_name\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"5e0b5780-d2fa-11ea-ba72-1f709d38ab3e\"\r\n    }\r\n}",
         "title": "修改备份名称"
       }

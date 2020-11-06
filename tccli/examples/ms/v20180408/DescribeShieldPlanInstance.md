@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ms DescribeShieldPlanInstance --cli-unfold-argument  \
-    --Pids 12750\
+    --Pids 12750 \
     --ResourceId jsihsih-xx
 ```
 

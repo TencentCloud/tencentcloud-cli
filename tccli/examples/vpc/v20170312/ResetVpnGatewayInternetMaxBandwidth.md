@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ResetVpnGatewayInternetMaxBandwidth --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpnGatewayId vpngw-lazly92z\
+    --Version 2017-03-12 \
+    --VpnGatewayId vpngw-lazly92z \
     --InternetMaxBandwidthOut 10
 ```
 

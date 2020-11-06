@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb CreateLoadBalancerSnatIps --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
+    --LoadBalancerId lb-cuxw2rm0 \
     --SnatIps.0.SubnetId subnet-12345678
 ```
 

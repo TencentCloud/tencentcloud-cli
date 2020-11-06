@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcaplusdb DeleteTableGroup --cli-unfold-argument  \
-    --ClusterId 6179109757\
+    --ClusterId 6179109757 \
     --TableGroupId 1
 ```
 

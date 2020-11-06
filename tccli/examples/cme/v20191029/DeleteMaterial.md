@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DeleteMaterial --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --MaterialId 123456789
 ```
 

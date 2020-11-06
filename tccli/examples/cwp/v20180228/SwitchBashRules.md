@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp SwitchBashRules --cli-unfold-argument  \
-    --Id 100\
+    --Id 100 \
     --Disabled 0
 ```
 

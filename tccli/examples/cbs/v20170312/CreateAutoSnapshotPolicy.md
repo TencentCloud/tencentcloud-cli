@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cbs CreateAutoSnapshotPolicy --cli-unfold-argument  \
-    --AutoSnapshotPolicyName backup_data_friday\
-    --Policy.0.DayOfWeek 4\
+    --AutoSnapshotPolicyName backup_data_friday \
+    --Policy.0.DayOfWeek 4 \
     --Policy.0.Hour 0
 ```
 

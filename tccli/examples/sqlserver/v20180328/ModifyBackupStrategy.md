@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli sqlserver ModifyBackupStrategy --cli-unfold-argument  \
-    --InstanceId mssql-j8kv137v\
-    --BackupType daily\
-    --BackupTime 14\
+    --InstanceId mssql-j8kv137v \
+    --BackupType daily \
+    --BackupTime 14 \
     --BackupDay 1
 ```
 

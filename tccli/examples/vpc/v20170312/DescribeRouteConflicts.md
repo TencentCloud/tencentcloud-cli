@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DescribeRouteConflicts --cli-unfold-argument  \
-    --RouteTableId rtb-q8o2z892\
+    --RouteTableId rtb-q8o2z892 \
     --DestinationCidrBlocks 192.168.0.0/24 10.11.0.0/24
 ```
 

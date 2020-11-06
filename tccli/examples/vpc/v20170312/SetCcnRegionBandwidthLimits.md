@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc SetCcnRegionBandwidthLimits --cli-unfold-argument  \
-    --CcnId ccn-gree226l\
-    --CcnRegionBandwidthLimits.0.Region ap-guangzhou\
-    --CcnRegionBandwidthLimits.0.BandwidthLimit 1000\
-    --CcnRegionBandwidthLimits.1.Region ap-guangzhou\
+    --CcnId ccn-gree226l \
+    --CcnRegionBandwidthLimits.0.Region ap-guangzhou \
+    --CcnRegionBandwidthLimits.0.BandwidthLimit 1000 \
+    --CcnRegionBandwidthLimits.1.Region ap-guangzhou \
     --CcnRegionBandwidthLimits.1.BandwidthLimit 500
 ```
 
@@ -30,13 +30,13 @@ Input:
 
 ```
 tccli vpc SetCcnRegionBandwidthLimits --cli-unfold-argument  \
-    --CcnId ccn-gree226l\
-    --CcnRegionBandwidthLimits.0.Region ap-guangzhou\
-    --CcnRegionBandwidthLimits.0.BandwidthLimit 1000\
-    --CcnRegionBandwidthLimits.0.DstRegion ap-shanghai\
-    --CcnRegionBandwidthLimits.0.DstIsBm true\
-    --CcnRegionBandwidthLimits.1.Region ap-guangzhou\
-    --CcnRegionBandwidthLimits.1.BandwidthLimit 500\
+    --CcnId ccn-gree226l \
+    --CcnRegionBandwidthLimits.0.Region ap-guangzhou \
+    --CcnRegionBandwidthLimits.0.BandwidthLimit 1000 \
+    --CcnRegionBandwidthLimits.0.DstRegion ap-shanghai \
+    --CcnRegionBandwidthLimits.0.DstIsBm true \
+    --CcnRegionBandwidthLimits.1.Region ap-guangzhou \
+    --CcnRegionBandwidthLimits.1.BandwidthLimit 500 \
     --CcnRegionBandwidthLimits.1.DstRegion ap-beijing
 ```
 

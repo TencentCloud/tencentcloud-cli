@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apigateway DemoteServiceUsagePlan --cli-unfold-argument  \
-    --UsagePlanId usagePlan-bxtnltfd\
-    --ServiceId service-ody35h5e\
+    --UsagePlanId usagePlan-bxtnltfd \
+    --ServiceId service-ody35h5e \
     --Environment test
 ```
 

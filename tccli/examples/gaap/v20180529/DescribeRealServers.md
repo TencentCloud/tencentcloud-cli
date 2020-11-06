@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap DescribeRealServers --cli-unfold-argument  \
-    --ProjectId 0\
+    --ProjectId 0 \
     --SearchValue '1.1.1.1'
 ```
 

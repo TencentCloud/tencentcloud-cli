@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm ModifyInstancesProject --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy ins-5d8a23rs\
+    --InstanceIds ins-r8hr2upy ins-5d8a23rs \
     --ProjectId 1045
 ```
 

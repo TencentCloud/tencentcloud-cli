@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tbaas Query --cli-unfold-argument  \
-    --Module transaction\
-    --Operation query\
-    --ClusterId 251005746envnew\
-    --Peers.0.PeerName peer0.neworg02.envnew\
-    --Peers.0.OrgName NewOrg02\
-    --ChannelName ch042103\
-    --ChaincodeName cc050301\
-    --FuncName queryCar\
-    --Args CAR92\
+    --Module transaction \
+    --Operation query \
+    --ClusterId 251005746envnew \
+    --Peers.0.PeerName peer0.neworg02.envnew \
+    --Peers.0.OrgName NewOrg02 \
+    --ChannelName ch042103 \
+    --ChaincodeName cc050301 \
+    --FuncName queryCar \
+    --Args CAR92 \
     --GroupName NewOrg02
 ```
 

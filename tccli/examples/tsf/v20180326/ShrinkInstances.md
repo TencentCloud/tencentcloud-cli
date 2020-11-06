@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf ShrinkInstances --cli-unfold-argument  \
-    --GroupId group-xxxxxxx\
+    --GroupId group-xxxxxxx \
     --InstanceIdList ins-xxxxxxx
 ```
 

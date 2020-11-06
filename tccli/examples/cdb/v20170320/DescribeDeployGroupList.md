@@ -1,4 +1,4 @@
-**Example 1: Querying placement group list**
+**Example 1: Querying the list of placement groups**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb DescribeDeployGroupList --cli-unfold-argument  \
-    --DeployGroupId test\
-    --DeployGroupName test\
-    --Limit 10\
+    --DeployGroupId test \
+    --DeployGroupName test \
+    --Limit 10 \
     --Offset 0
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm CreateVpc --cli-unfold-argument  \
-    --VpcName vpc名称\
-    --CidrBlock 10.10.0.0/28\
-    --EcmRegion ap-hangzhou-ecm\
+    --VpcName vpc名称 \
+    --CidrBlock 10.10.0.0/28 \
+    --EcmRegion ap-hangzhou-ecm \
     --Description vpc描述
 ```
 
@@ -49,10 +49,10 @@ Input:
 
 ```
 tccli ecm CreateVpc --cli-unfold-argument  \
-    --VpcName vpc名称\
-    --CidrBlock 192.168.0.0/18\
-    --EcmRegion ap-hangzhou-ecm\
-    --Tags.0.Key 标签键\
+    --VpcName vpc名称 \
+    --CidrBlock 192.168.0.0/18 \
+    --EcmRegion ap-hangzhou-ecm \
+    --Tags.0.Key 标签键 \
     --Tags.0.Value 标签值
 ```
 

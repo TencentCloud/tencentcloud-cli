@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli iotexplorer CreateLoRaGateway --cli-unfold-argument  \
-    --Description fortest\
-    --IsPublic true\
-    --Position tfine\
-    --PositionDetails fyd\
-    --GatewayId ff00000000000002\
-    --Location.Accuracy 0\
-    --Location.Altitude 0\
-    --Location.Latitude 0\
-    --Location.Longitude 0\
+    --Description fortest \
+    --IsPublic true \
+    --Position tfine \
+    --PositionDetails fyd \
+    --GatewayId ff00000000000002 \
+    --Location.Accuracy 0 \
+    --Location.Altitude 0 \
+    --Location.Latitude 0 \
+    --Location.Longitude 0 \
     --Name ddgws
 ```
 

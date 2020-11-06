@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb SetRenewFlag --cli-unfold-argument  \
-    --ResourceIds 123\
+    --ResourceIds 123 \
     --AutoRenewFlag 1
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mariadb DescribeDBSlowLogs --cli-unfold-argument  \
-    --InstanceId tdsql-ige1a5k3\
-    --Offset 0\
-    --Limit 20\
-    --StartTime '2017-08-06 00:00:00'\
-    --EndTime '2017-08-07 23:59:59'\
+    --InstanceId tdsql-ige1a5k3 \
+    --Offset 0 \
+    --Limit 20 \
+    --StartTime '2017-08-06 00:00:00' \
+    --EndTime '2017-08-07 23:59:59' \
     --Slave 1
 ```
 

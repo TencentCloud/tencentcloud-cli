@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf StopTaskExecute --cli-unfold-argument  \
-    --BatchId batch-12345677\
-    --ExecuteId execute-12345678\
+    --BatchId batch-12345677 \
+    --ExecuteId execute-12345678 \
     --TaskId task-12345667
 ```
 

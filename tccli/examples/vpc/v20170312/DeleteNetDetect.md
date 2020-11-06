@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DeleteNetDetect --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --NetDetectId netd-12345678
 ```
 

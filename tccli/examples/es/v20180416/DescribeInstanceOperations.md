@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli es DescribeInstanceOperations --cli-unfold-argument  \
-    --InstanceId es-f5mwm28u\
-    --StartTime '2019-01-30 20:18:03'\
-    --EndTime '2019-03-30 20:18:03'\
-    --Offset 0\
+    --InstanceId es-f5mwm28u \
+    --StartTime '2019-01-30 20:18:03' \
+    --EndTime '2019-03-30 20:18:03' \
+    --Offset 0 \
     --Limit 30
 ```
 

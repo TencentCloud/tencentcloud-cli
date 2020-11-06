@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live DropLiveStream --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com\
-    --AppName live\
+    --DomainName 5000.livepush.myqcloud.com \
+    --AppName live \
     --StreamName stream1
 ```
 

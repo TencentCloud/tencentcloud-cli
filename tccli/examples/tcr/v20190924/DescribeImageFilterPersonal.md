@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DescribeImageFilterPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test\
+    --RepoName dockerhub/test \
     --Tag test
 ```
 

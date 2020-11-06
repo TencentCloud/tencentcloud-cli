@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli yunjing EditReverseShellRule --cli-unfold-argument  \
-    --ProcessName bash\
+    --ProcessName bash \
     --HostIp 127.0.0.1
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mongodb CreateBackupDBInstance --cli-unfold-argument  \
-    --InstanceId cmgo-ayxpky6l\
-    --BackupRemark remarkInfo\
+    --InstanceId cmgo-ayxpky6l \
+    --BackupRemark remarkInfo \
     --BackupMethod 0
 ```
 

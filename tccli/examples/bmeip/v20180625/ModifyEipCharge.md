@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmeip ModifyEipCharge --cli-unfold-argument  \
-    --PayMode flow\
-    --Bandwidth 1000\
+    --PayMode flow \
+    --Bandwidth 1000 \
     --EipIds eip-68faw2do
 ```
 

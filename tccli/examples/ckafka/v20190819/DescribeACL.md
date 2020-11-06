@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka DescribeACL --cli-unfold-argument  \
-    --InstanceId xxx\
-    --ResourceType xxx\
+    --InstanceId xxx \
+    --ResourceType xxx \
     --ResourceName xxx
 ```
 

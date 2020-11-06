@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli bmvpc CreateVpcPeerConnection --cli-unfold-argument  \
-    --Version 2018-06-25\
-    --VpcId vpc-gapcv96p\
-    --PeerVpcId vpc-ac09bc8y\
-    --PeerRegion sh_bm\
-    --VpcPeerConnectionName test-peer\
+    --Version 2018-06-25 \
+    --VpcId vpc-gapcv96p \
+    --PeerVpcId vpc-ac09bc8y \
+    --PeerRegion sh_bm \
+    --VpcPeerConnectionName test-peer \
     --Bandwidth 1000
 ```
 

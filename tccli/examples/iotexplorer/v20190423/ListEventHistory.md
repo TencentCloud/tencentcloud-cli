@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iotexplorer ListEventHistory --cli-unfold-argument  \
-    --ProductId QDA1PZLBNB\
-    --DeviceName dev01\
-    --Type \
-    --EventId low_voltage\
-    --StartTime 1560355200\
-    --EndTime 1601196327\
+    --ProductId QDA1PZLBNB \
+    --DeviceName dev01 \
+    --Type  \
+    --EventId low_voltage \
+    --StartTime 1560355200 \
+    --EndTime 1601196327 \
     --Size 50
 ```
 

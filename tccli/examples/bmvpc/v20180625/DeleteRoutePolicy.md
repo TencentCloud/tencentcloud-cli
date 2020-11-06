@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteRoutePolicy --cli-unfold-argument  \
-    --RouteTableId rtb-19yps3nz\
+    --RouteTableId rtb-19yps3nz \
     --RoutePolicyId rti-xudf23xd
 ```
 

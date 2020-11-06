@@ -1,4 +1,4 @@
-**Example 1: Modifying the project to which an instance belongs**
+**Example 1: Modifying the project to which a TencentDB instance belongs**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb ModifyDBInstanceProject --cli-unfold-argument  \
-    --InstanceIds cdb-f35wr6wj\
+    --InstanceIds cdb-f35wr6wj \
     --NewProjectId 12
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm ModifyInstancesAttribute --cli-unfold-argument  \
-    --InstanceIdSet ein-353568gt\
+    --InstanceIdSet ein-353568gt \
     --InstanceName zhibodanmu
 ```
 

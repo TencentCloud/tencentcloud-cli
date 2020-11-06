@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bmlb DeleteL7Rules --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
-    --ListenerId lbl-l6fzjsx5\
-    --DomainId dm-5ugypezt\
+    --LoadBalancerId lb-47gazeml \
+    --ListenerId lbl-l6fzjsx5 \
+    --DomainId dm-5ugypezt \
     --LocationIds loc-iu47kdm3
 ```
 

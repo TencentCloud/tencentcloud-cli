@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr ModifyRepositoryInfoPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test\
+    --RepoName dockerhub/test \
     --Description mytest
 ```
 

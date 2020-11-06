@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1\
-    --PersonName Junly\
-    --PersonId 2001\
-    --Gender 1\
-    --Url http://test.image.myqcloud.com/testB.jpg\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0\
-    --PersonExDescriptionInfos.0.PersonExDescription 'School of Computing'\
-    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1\
-    --PersonExDescriptionInfos.1.PersonExDescription 'Software Engineering'\
-    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2\
-    --PersonExDescriptionInfos.2.PersonExDescription '15\
-    --PersonExDescriptionInfos.3.PersonExDescriptionIndex 3\
+    --GroupId ZhuYuanDormitoryNo1 \
+    --PersonName Junly \
+    --PersonId 2001 \
+    --Gender 1 \
+    --Url http://test.image.myqcloud.com/testB.jpg \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0 \
+    --PersonExDescriptionInfos.0.PersonExDescription 'School of Computing' \
+    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
+    --PersonExDescriptionInfos.1.PersonExDescription 'Software Engineering' \
+    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
+    --PersonExDescriptionInfos.2.PersonExDescription '15 \
+    --PersonExDescriptionInfos.3.PersonExDescriptionIndex 3 \
     --PersonExDescriptionInfos.3.PersonExDescription 3150808
 ```
 
@@ -47,16 +47,16 @@ Input:
 
 ```
 tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --PersonName evanliao\
-    --PersonId 1001\
-    --Gender 1\
-    --Url http://test.image.myqcloud.com/testA.jpg\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0\
-    --PersonExDescriptionInfos.0.PersonExDescription 'Cloud and Smart Industries Group'\
-    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1\
-    --PersonExDescriptionInfos.1.PersonExDescription 'AI Product Center'\
-    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2\
+    --GroupId TencentShenZhenEmployee \
+    --PersonName evanliao \
+    --PersonId 1001 \
+    --Gender 1 \
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0 \
+    --PersonExDescriptionInfos.0.PersonExDescription 'Cloud and Smart Industries Group' \
+    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
+    --PersonExDescriptionInfos.1.PersonExDescription 'AI Product Center' \
+    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
     --PersonExDescriptionInfos.2.PersonExDescription 'Face Recognition Product Team'
 ```
 
@@ -86,10 +86,10 @@ Input:
 
 ```
 tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1\
-    --PersonName Cheng\
-    --PersonId 1001\
-    --Gender 2\
+    --GroupId ZhuYuanDormitoryNo1 \
+    --PersonName Cheng \
+    --PersonId 1001 \
+    --Gender 2 \
     --Url http://test.image.myqcloud.com/testD.jpg
 ```
 
@@ -114,10 +114,10 @@ Input:
 
 ```
 tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId ShenZhenCitizen\
-    --PersonName Siccy\
-    --PersonId 3001\
-    --Gender 2\
+    --GroupId ShenZhenCitizen \
+    --PersonName Siccy \
+    --PersonId 3001 \
+    --Gender 2 \
     --Url http://test.image.myqcloud.com/testC.jpg
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb ModifyTargetGroupAttribute --cli-unfold-argument  \
-    --TargetGroupId lbtg-815iz538\
+    --TargetGroupId lbtg-815iz538 \
     --TargetGroupName xxxxholic
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdn DescribeReportData --cli-unfold-argument  \
-    --StartTime 2020-02-01\
-    --EndTime 2020-02-29\
-    --ReportType monthly\
+    --StartTime 2020-02-01 \
+    --EndTime 2020-02-29 \
+    --ReportType monthly \
     --Area mainland
 ```
 

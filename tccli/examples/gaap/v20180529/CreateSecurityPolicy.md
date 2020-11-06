@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap CreateSecurityPolicy --cli-unfold-argument  \
-    --ProxyId link-1234\
+    --ProxyId link-1234 \
     --DefaultAction Accept
 ```
 

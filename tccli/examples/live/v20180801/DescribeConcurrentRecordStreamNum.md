@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live DescribeConcurrentRecordStreamNum --cli-unfold-argument  \
-    --LiveType NormalLive\
-    --MainlandOrOversea Mainland\
-    --PushDomains 5000.livepush.com\
-    --StartTime '2019-03-01 00:00:00'\
+    --LiveType NormalLive \
+    --MainlandOrOversea Mainland \
+    --PushDomains 5000.livepush.com \
+    --StartTime '2019-03-01 00:00:00' \
     --EndTime '2019-03-01 12:00:00'
 ```
 

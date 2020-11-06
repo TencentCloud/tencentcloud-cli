@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli bmlb ModifyL4BackendProbePort --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
-    --ListenerId lbl-20tn33dz\
-    --InstanceId tcpm-px13l9jh\
-    --Port 333\
-    --ProbePort 666\
+    --LoadBalancerId lb-47gazeml \
+    --ListenerId lbl-20tn33dz \
+    --InstanceId tcpm-px13l9jh \
+    --Port 333 \
+    --ProbePort 666 \
     --BindType 0
 ```
 

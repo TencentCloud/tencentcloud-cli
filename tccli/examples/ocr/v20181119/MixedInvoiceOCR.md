@@ -106,7 +106,7 @@ Input:
 
 ```
 tccli ocr MixedInvoiceOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --Types 2
 ```
 

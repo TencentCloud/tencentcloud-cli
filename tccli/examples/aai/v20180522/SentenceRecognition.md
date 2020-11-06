@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli aai SentenceRecognition --cli-unfold-argument  \
-    --ProjectId 0\
-    --SubServiceType 2\
-    --EngSerViceType 8k\
-    --SourceType 0\
-    --Url http%3A%2F%2Fliqiansunvoice-1255628450.cosgz.myqcloud.com%2Fdemo.mp3\
-    --SecretId 111\
-    --Timestamp 111\
-    --VoiceFormat mp3\
-    --UsrAudioKey www\
-    --Data 00011100111\
+    --ProjectId 0 \
+    --SubServiceType 2 \
+    --EngSerViceType 8k \
+    --SourceType 0 \
+    --Url http%3A%2F%2Fliqiansunvoice-1255628450.cosgz.myqcloud.com%2Fdemo.mp3 \
+    --SecretId 111 \
+    --Timestamp 111 \
+    --VoiceFormat mp3 \
+    --UsrAudioKey www \
+    --Data 00011100111 \
     --DataLen 11111
 ```
 

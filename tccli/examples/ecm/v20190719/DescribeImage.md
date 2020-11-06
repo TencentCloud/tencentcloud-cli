@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm DescribeImage --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
-    --Filters.0.Name image-type\
+    --Offset 0 \
+    --Limit 10 \
+    --Filters.0.Name image-type \
     --Filters.0.Values PRIVATE_IMAGE
 ```
 

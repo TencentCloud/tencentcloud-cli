@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribePkgs --cli-unfold-argument  \
-    --ApplicationId application-xxxxxxxx\
-    --Offset 0\
+    --ApplicationId application-xxxxxxxx \
+    --Offset 0 \
     --Limit 20
 ```
 

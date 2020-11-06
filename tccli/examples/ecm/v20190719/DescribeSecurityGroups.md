@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ecm DescribeSecurityGroups --cli-unfold-argument  \
-    --Limit 1\
-    --Filters.0.Name security-group-id\
-    --Filters.0.Values esg-05bb4upy\
-    --Filters.1.Name security-group-name\
+    --Limit 1 \
+    --Filters.0.Name security-group-id \
+    --Filters.0.Values esg-05bb4upy \
+    --Filters.1.Name security-group-name \
     --Filters.1.Values TestGroup
 ```
 

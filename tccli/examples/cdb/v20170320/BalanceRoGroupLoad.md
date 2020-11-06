@@ -1,4 +1,4 @@
-**Example 1: Rebalancing the loads of instances in RO group**
+**Example 1: Rebalancing the loads of instances in an RO group**
 
 
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DescribeFavorRepositoryPersonal --cli-unfold-argument  \
-    --RepoName mytest/test1234\
-    --Limit 10\
+    --RepoName mytest/test1234 \
+    --Limit 10 \
     --Offset 20
 ```
 

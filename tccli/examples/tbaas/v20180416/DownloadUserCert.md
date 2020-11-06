@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tbaas DownloadUserCert --cli-unfold-argument  \
-    --Module cert_mng\
-    --Operation cert_download_for_user\
-    --CertId 171781\
-    --CertDn C\
-    --ClusterId 251005746bckuobc41mpu\
+    --Module cert_mng \
+    --Operation cert_download_for_user \
+    --CertId 171781 \
+    --CertDn C \
+    --ClusterId 251005746bckuobc41mpu \
     --GroupName youtuOrg
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotexplorer GetDeviceList --cli-unfold-argument  \
-    --ProductId ABCDE12345\
-    --Offset 0\
+    --ProductId ABCDE12345 \
+    --Offset 0 \
     --Limit 10
 ```
 

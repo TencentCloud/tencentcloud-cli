@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gme DescribeFilterResultList --cli-unfold-argument  \
-    --BizId 0\
-    --StartDate 0000-00-00\
+    --BizId 0 \
+    --StartDate 0000-00-00 \
     --EndDate 0000-00-00
 ```
 

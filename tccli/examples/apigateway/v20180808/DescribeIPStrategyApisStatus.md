@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apigateway DescribeIPStrategyApisStatus --cli-unfold-argument  \
-    --StrategyId IPStrategy-0ez0c8to\
-    --EnvironmentName test\
+    --StrategyId IPStrategy-0ez0c8to \
+    --EnvironmentName test \
     --ServiceId service-ody35h5e
 ```
 

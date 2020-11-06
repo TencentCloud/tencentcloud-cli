@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp EditTags --cli-unfold-argument  \
-    --Id 1\
-    --Name 标签名\
+    --Id 1 \
+    --Name 标签名 \
     --Quuids id1
 ```
 

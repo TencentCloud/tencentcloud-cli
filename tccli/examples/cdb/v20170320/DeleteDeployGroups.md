@@ -1,4 +1,4 @@
-**Example 1: Deleting placement groups**
+**Example 1: Deleting a placement group**
 
 
 

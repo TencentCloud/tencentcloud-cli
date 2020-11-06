@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ModifySubAppIdStatus --cli-unfold-argument  \
-    --SubAppId 1400000001\
+    --SubAppId 1400000001 \
     --Status Off
 ```
 

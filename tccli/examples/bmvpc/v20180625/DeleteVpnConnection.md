@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteVpnConnection --cli-unfold-argument  \
-    --Version 2018-06-25\
+    --Version 2018-06-25 \
     --VpnConnectionId bmvpnx-5p7vkch8
 ```
 

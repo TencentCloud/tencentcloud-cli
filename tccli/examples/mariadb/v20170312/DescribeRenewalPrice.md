@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb DescribeRenewalPrice --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
+    --InstanceId tdsql-fdpjf5zh \
     --Period 1
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb SetLoadBalancerClsLog --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2r00\
-    --LogSetId \
+    --LoadBalancerId lb-cuxw2r00 \
+    --LogSetId  \
     --LogTopicId 
 ```
 
@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli clb SetLoadBalancerClsLog --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2r00\
-    --LogSetId xxxx-xx-xx-xx-xxxxxxxx\
+    --LoadBalancerId lb-cuxw2r00 \
+    --LogSetId xxxx-xx-xx-xx-xxxxxxxx \
     --LogTopicId xxxx-xx-xx-xx-yyyyyyyy
 ```
 

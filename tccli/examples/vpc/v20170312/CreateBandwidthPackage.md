@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc CreateBandwidthPackage --cli-unfold-argument  \
-    --ChargeType TOP5_POSTPAID_BY_MONTH\
+    --ChargeType TOP5_POSTPAID_BY_MONTH \
     --NetworkType BGP
 ```
 

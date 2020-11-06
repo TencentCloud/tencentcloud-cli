@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeEnvironments --cli-unfold-argument  \
-    --EnvironmentId default\
-    --Offset 0\
+    --EnvironmentId default \
+    --Offset 0 \
     --Limit 10
 ```
 

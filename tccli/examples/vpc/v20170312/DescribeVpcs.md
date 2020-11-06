@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli vpc DescribeVpcs --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 2\
-    --Filters.0.Name is-default\
-    --Filters.0.Values false\
-    --Filters.1.Name cidr-block\
+    --Offset 0 \
+    --Limit 2 \
+    --Filters.0.Name is-default \
+    --Filters.0.Values false \
+    --Filters.1.Name cidr-block \
     --Filters.1.Values 10.8.0.0 192.168.0.0
 ```
 
@@ -49,9 +49,9 @@ Input:
 
 ```
 tccli vpc DescribeVpcs --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 2\
-    --Filters.0.Name tag:city\
+    --Offset 0 \
+    --Limit 2 \
+    --Filters.0.Name tag:city \
     --Filters.0.Values shanghai
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud UpdateDeviceAvailableState --cli-unfold-argument  \
-    --ProductId SB9OJFCJ1C\
-    --DeviceName test123\
+    --ProductId SB9OJFCJ1C \
+    --DeviceName test123 \
     --EnableState 0
 ```
 

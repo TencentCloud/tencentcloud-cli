@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ms DescribeResourceInstances --cli-unfold-argument  \
-    --Pids 12750\
-    --Offset 0\
+    --Pids 12750 \
+    --Offset 0 \
     --Limit 20
 ```
 

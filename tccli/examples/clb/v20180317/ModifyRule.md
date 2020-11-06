@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli clb ModifyRule --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
-    --ListenerId lbl-4fbxq45k\
-    --LocationId loc-9dr7bsl3\
-    --Url /bar\
-    --Scheduler LEAST_CONN\
-    --SessionExpireTime 75\
-    --HealthCheck.HealthSwitch 1\
-    --HealthCheck.IntervalTime 50\
-    --HealthCheck.HealthNum 3\
-    --HealthCheck.UnHealthNum 3\
-    --HealthCheck.HttpCode 7\
-    --HealthCheck.HttpCheckPath /check\
-    --HealthCheck.HttpCheckDomain foo.net\
+    --LoadBalancerId lb-cuxw2rm0 \
+    --ListenerId lbl-4fbxq45k \
+    --LocationId loc-9dr7bsl3 \
+    --Url /bar \
+    --Scheduler LEAST_CONN \
+    --SessionExpireTime 75 \
+    --HealthCheck.HealthSwitch 1 \
+    --HealthCheck.IntervalTime 50 \
+    --HealthCheck.HealthNum 3 \
+    --HealthCheck.UnHealthNum 3 \
+    --HealthCheck.HttpCode 7 \
+    --HealthCheck.HttpCheckPath /check \
+    --HealthCheck.HttpCheckDomain foo.net \
     --HealthCheck.HttpCheckMethod GET
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ExecuteFunction --cli-unfold-argument  \
-    --FunctionName ExampleFunc\
+    --FunctionName ExampleFunc \
     --FunctionArg XXX
 ```
 

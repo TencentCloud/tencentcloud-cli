@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam RemoveUserFromGroup --cli-unfold-argument  \
-    --Info.0.Uid 1001408\
+    --Info.0.Uid 1001408 \
     --Info.0.GroupId 2020
 ```
 

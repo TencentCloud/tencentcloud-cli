@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeBackupUrl --cli-unfold-argument  \
-    --InstanceId crs-4y9t57vt\
+    --InstanceId crs-4y9t57vt \
     --BackupId 678362566696298532848117
 ```
 

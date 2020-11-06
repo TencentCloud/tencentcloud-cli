@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc CreateNetworkAcl --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpcId vpc-12345678\
+    --Version 2017-03-12 \
+    --VpcId vpc-12345678 \
     --NetworkAclName test
 ```
 

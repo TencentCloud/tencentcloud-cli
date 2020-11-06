@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm ModifyModuleIpDirect --cli-unfold-argument  \
-    --ModuleId em-0vag13d1\
+    --ModuleId em-0vag13d1 \
     --CloseIpDirect true
 ```
 

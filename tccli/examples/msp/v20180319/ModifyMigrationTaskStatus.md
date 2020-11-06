@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli msp ModifyMigrationTaskStatus --cli-unfold-argument  \
-    --TaskId msp-1vogxxxx\
+    --TaskId msp-1vogxxxx \
     --Status unstart
 ```
 

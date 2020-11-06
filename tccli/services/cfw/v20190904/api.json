@@ -251,7 +251,7 @@
         },
         {
           "default": "",
-          "document": "NAT实例ID, Area存在的时候这个必传",
+          "document": "NAT实例ID, 参数Area存在的时候这个必传",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -280,7 +280,7 @@
       "document": "CreateAcRules返回参数结构体",
       "members": [
         {
-          "document": "状态值",
+          "document": "状态值，0:操作成功",
           "member": "int64",
           "name": "Status",
           "type": "int",
@@ -379,7 +379,7 @@
         },
         {
           "default": "",
-          "document": "边ID",
+          "document": "VPC间防火墙开关ID",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -988,7 +988,7 @@
       "document": "ModifyAcRule返回参数结构体",
       "members": [
         {
-          "document": "装填值",
+          "document": "状态值，0:操作成功",
           "member": "int64",
           "name": "Status",
           "type": "int",
@@ -1117,7 +1117,7 @@
       "document": "ModifyAllSwitchStatus返回参数结构体",
       "members": [
         {
-          "document": "修改成功与否状态值",
+          "document": "开启或者关闭成功与否状态值",
           "member": "uint64",
           "name": "Status",
           "type": "int",
@@ -1145,7 +1145,7 @@
         },
         {
           "default": "",
-          "document": "状态值",
+          "document": "状态值，0: 关闭 ,1:开启",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1223,7 +1223,7 @@
       "document": "ModifySequenceRules返回参数结构体",
       "members": [
         {
-          "document": "0: 修改成功, !0: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0: 修改成功, 其他: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Status",
           "type": "int",

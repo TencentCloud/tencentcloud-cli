@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain BatchModifyDomainInfo --cli-unfold-argument  \
-    --TemplateId tmpl-xxxxx\
+    --TemplateId tmpl-xxxxx \
     --Domains h101.tencent.com
 ```
 

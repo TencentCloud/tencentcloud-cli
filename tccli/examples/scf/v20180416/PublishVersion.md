@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf PublishVersion --cli-unfold-argument  \
-    --FunctionName <FunctionName>\
+    --FunctionName <FunctionName> \
     --Description <Description>
 ```
 

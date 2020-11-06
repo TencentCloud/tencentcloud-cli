@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tione CreateNotebookInstance --cli-unfold-argument  \
-    --NotebookInstanceName test\
-    --InstanceType TI.SMALL2.1core2g\
-    --DirectInternetAccess Enabled\
-    --RootAccess Enabled\
-    --SubnetId subnet-xxx\
-    --VolumeSizeInGB 10\
+    --NotebookInstanceName test \
+    --InstanceType TI.SMALL2.1core2g \
+    --DirectInternetAccess Enabled \
+    --RootAccess Enabled \
+    --SubnetId subnet-xxx \
+    --VolumeSizeInGB 10 \
     --LifecycleScriptsName abc
 ```
 

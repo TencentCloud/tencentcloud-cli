@@ -23,6 +23,8 @@ Output:
             "CreateTime": "2019-11-28 20:04:32",
             "BindFleetNum": 2,
             "OsType": "xx",
+            "ResourceType": "IMAGE",
+            "SharingStatus": "SHARED",
             "AssetArn": "xx",
             "ImageId": "xx"
         },

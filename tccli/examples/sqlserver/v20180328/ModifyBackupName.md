@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver ModifyBackupName --cli-unfold-argument  \
-    --InstanceId mssql-6upluvd5\
-    --BackupId 1234568\
+    --InstanceId mssql-6upluvd5 \
+    --BackupId 1234568 \
     --BackupName backup_name
 ```
 

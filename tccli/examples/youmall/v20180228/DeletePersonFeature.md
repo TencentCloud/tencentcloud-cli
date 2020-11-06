@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli youmall DeletePersonFeature --cli-unfold-argument  \
-    --CompanyId TestCompany\
-    --ShopId 1\
+    --CompanyId TestCompany \
+    --ShopId 1 \
     --PersonId 1
 ```
 
@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli youmall DeletePersonFeature --cli-unfold-argument  \
-    --CompanyId TestCompany\
-    --ShopId 1\
+    --CompanyId TestCompany \
+    --ShopId 1 \
     --PersonId 1
 ```
 

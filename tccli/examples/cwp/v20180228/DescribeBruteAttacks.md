@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp DescribeBruteAttacks --cli-unfold-argument  \
-    --Filters.0.Name Keywords\
-    --Filters.0.Values Centos\
-    --Limit 10\
+    --Filters.0.Name Keywords \
+    --Filters.0.Values Centos \
+    --Limit 10 \
     --Offset 0
 ```
 

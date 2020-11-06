@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tci CreateVocab --cli-unfold-argument  \
-    --VocabLibName testlib\
+    --VocabLibName testlib \
     --VocabList hello
 ```
 

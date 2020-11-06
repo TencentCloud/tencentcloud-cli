@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotvideo CreateDevices --cli-unfold-argument  \
-    --ProductId 123456789000\
-    --Number 1\
-    --NamePrefix test\
+    --ProductId 123456789000 \
+    --Number 1 \
+    --NamePrefix test \
     --Operator zhangsan
 ```
 

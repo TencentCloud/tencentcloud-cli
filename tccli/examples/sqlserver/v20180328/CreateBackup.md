@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver CreateBackup --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
-    --Strategy 1\
+    --InstanceId mssql-njj2mtpl \
+    --Strategy 1 \
     --DBNames db1 db2
 ```
 

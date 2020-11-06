@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live CreateLiveRecord --cli-unfold-argument  \
-    --AppName live\
-    --DomainName 5000.live.push.com\
-    --StreamName livetest\
-    --StartTime 2018-09-11+12%3a04%3a01\
+    --AppName live \
+    --DomainName 5000.live.push.com \
+    --StreamName livetest \
+    --StartTime 2018-09-11+12%3a04%3a01 \
     --EndTime 2018-09-11+12%3a08%3a01
 ```
 
@@ -31,10 +31,10 @@ Input:
 
 ```
 tccli live CreateLiveRecord --cli-unfold-argument  \
-    --AppName live\
-    --DomainName 5000.live.push.com\
-    --StreamName livetest\
-    --Highlight 1\
+    --AppName live \
+    --DomainName 5000.live.push.com \
+    --StreamName livetest \
+    --Highlight 1 \
     --EndTime 2018-09-11+12%3a08%3a01
 ```
 

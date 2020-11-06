@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli sms AddSmsTemplate --cli-unfold-argument  \
-    --TemplateName 'Tencent Cloud'\
-    --TemplateContent "xxx"\
-    --SmsType test\
-    --International 0\
+    --TemplateName 'Tencent Cloud' \
+    --TemplateContent "xxx" \
+    --SmsType test \
+    --International 0 \
     --Remark “xxx”
 ```
 

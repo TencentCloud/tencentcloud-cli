@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw DescribeOnlineRecord --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --TaskId ghucnligqtgtvk2624mb
 ```
 
@@ -80,7 +80,7 @@ Input:
 
 ```
 tccli tiw DescribeOnlineRecord --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --TaskId ghucnligqtgtvk2624mb
 ```
 

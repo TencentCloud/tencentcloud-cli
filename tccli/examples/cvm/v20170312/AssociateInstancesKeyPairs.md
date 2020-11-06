@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm AssociateInstancesKeyPairs --cli-unfold-argument  \
-    --InstanceIds ins-1e4r6y8i ins-3e56fg78\
+    --InstanceIds ins-1e4r6y8i ins-3e56fg78 \
     --KeyIds skey-4e5ty7i8
 ```
 

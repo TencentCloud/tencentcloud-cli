@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeInstanceMonitorBigKeySizeDist --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p\
+    --InstanceId crs-5a4py64p \
     --Date 2019-11-07
 ```
 

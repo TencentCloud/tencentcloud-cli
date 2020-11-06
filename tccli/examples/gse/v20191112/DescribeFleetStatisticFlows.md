@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gse DescribeFleetStatisticFlows --cli-unfold-argument  \
-    --Limit 10\
-    --EndTime 2020-09-22 00:00:00\
-    --FleetId fleet-qp3g3caa-nkeekxw6\
-    --BeginTime 2020-09-22 00:00:00\
+    --Limit 10 \
+    --EndTime 2020-09-22 00:00:00 \
+    --FleetId fleet-qp3g3caa-nkeekxw6 \
+    --BeginTime 2020-09-22 00:00:00 \
     --Offset 0
 ```
 

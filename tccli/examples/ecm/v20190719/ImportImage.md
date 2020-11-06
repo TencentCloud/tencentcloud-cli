@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm ImportImage --cli-unfold-argument  \
-    --ImageId img-pmqg1cw9\
-    --ImageDescription sampleImage\
+    --ImageId img-pmqg1cw9 \
+    --ImageDescription sampleImage \
     --SourceRegion ap-chengdu
 ```
 

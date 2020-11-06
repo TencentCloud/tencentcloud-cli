@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tci DescribePerson --cli-unfold-argument  \
-    --PersonId person_xxx\
+    --PersonId person_xxx \
     --LibraryId xxx
 ```
 

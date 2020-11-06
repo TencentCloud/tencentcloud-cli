@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli taf SendTrafficSecuritySmsMessage --cli-unfold-argument  \
-    --BspData.TaskId 4128\
+    --BspData.TaskId 4128 \
     --BspData.Mobiles 1382350**** 1382351****
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu DescribeCCFrequencyRules --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
+    --Business bgpip \
+    --Id bgpip-000000xe \
     --RuleId rule-0000001
 ```
 

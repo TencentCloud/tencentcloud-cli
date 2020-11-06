@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmlb DeleteListeners --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
+    --LoadBalancerId lb-47gazeml \
     --ListenerIds lbl-84j5v31f
 ```
 

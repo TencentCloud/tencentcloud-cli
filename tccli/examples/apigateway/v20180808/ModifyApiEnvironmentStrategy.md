@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli apigateway ModifyApiEnvironmentStrategy --cli-unfold-argument  \
-    --EnvironmentName test\
-    --ServiceId service-ody35h5e\
-    --Strategy 3\
+    --EnvironmentName test \
+    --ServiceId service-ody35h5e \
+    --Strategy 3 \
     --ApiIds api-e92i2jds
 ```
 

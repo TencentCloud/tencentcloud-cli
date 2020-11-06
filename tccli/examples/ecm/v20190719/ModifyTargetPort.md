@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ecm ModifyTargetPort --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
-    --ListenerId lbl-d1ubsydq\
-    --Targets.0.InstanceId ein-dm4xtz0i\
-    --Targets.0.Port 233\
+    --LoadBalancerId lb-cuxw2rm0 \
+    --ListenerId lbl-d1ubsydq \
+    --Targets.0.InstanceId ein-dm4xtz0i \
+    --Targets.0.Port 233 \
     --NewPort 334
 ```
 

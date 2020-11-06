@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DeleteMedia --cli-unfold-argument  \
-    --FileId 7447398156998994860\
+    --FileId 7447398156998994860 \
     --SubAppId 1
 ```
 
@@ -28,9 +28,9 @@ Input:
 
 ```
 tccli vod DeleteMedia --cli-unfold-argument  \
-    --FileId 7447398156998994860\
-    --SubAppId 1\
-    --DeleteParts.0.Type TranscodeFiles\
+    --FileId 7447398156998994860 \
+    --SubAppId 1 \
+    --DeleteParts.0.Type TranscodeFiles \
     --DeleteParts.1.Type WechatPublishFiles
 ```
 
@@ -52,11 +52,11 @@ Input:
 
 ```
 tccli vod DeleteMedia --cli-unfold-argument  \
-    --FileId 7447398156998994860\
-    --SubAppId 1\
-    --DeleteParts.0.Type TranscodeFiles\
-    --DeleteParts.0.Definition 230\
-    --DeleteParts.1.Type TranscodeFiles\
+    --FileId 7447398156998994860 \
+    --SubAppId 1 \
+    --DeleteParts.0.Type TranscodeFiles \
+    --DeleteParts.0.Definition 230 \
+    --DeleteParts.1.Type TranscodeFiles \
     --DeleteParts.1.Definition 10000
 ```
 

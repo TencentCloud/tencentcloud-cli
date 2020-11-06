@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli youmall RegisterCallback --cli-unfold-argument  \
-    --CompanyId TestCompany\
-    --BackUrl TestUrl\
+    --CompanyId TestCompany \
+    --BackUrl TestUrl \
     --Time 1529898082
 ```
 
@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli youmall RegisterCallback --cli-unfold-argument  \
-    --CompanyId TestCompany\
-    --BackUrl TestUrl\
+    --CompanyId TestCompany \
+    --BackUrl TestUrl \
     --Time 1529898082
 ```
 

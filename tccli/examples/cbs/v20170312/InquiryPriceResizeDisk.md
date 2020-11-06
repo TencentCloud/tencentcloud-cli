@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs InquiryPriceResizeDisk --cli-unfold-argument  \
-    --DiskId disk-dw0bbzws\
+    --DiskId disk-dw0bbzws \
     --DiskSize 200
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw PauseOnlineRecord --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --TaskId bj0mt2l23osdj300hl30
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: Deactivating isolated TencentDB instance**
+**Example 1: Deactivating an isolated TencentDB instance**
 
 
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live CreateLiveCallbackRule --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com\
-    --AppName live\
+    --DomainName 5000.livepush.myqcloud.com \
+    --AppName live \
     --TemplateId 1000
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iot PublishMsg --cli-unfold-argument  \
-    --Topic iot-0827lh7q/device1/test\
-    --Message test_message\
+    --Topic iot-0827lh7q/device1/test \
+    --Message test_message \
     --Qos 1
 ```
 

@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli asr CreateAsrVocab --cli-unfold-argument  \
-    --Name 词表名称\
-    --Description 词表描述\
-    --WordWeights.0.Word 智聆\
-    --WordWeights.0.Weight 1\
-    --WordWeights.1.Word 滨海大厦\
-    --WordWeights.1.Weight 6\
-    --WordWeights.2.Word 存储桶\
-    --WordWeights.2.Weight 8\
-    --WordWeights.3.Word 核保\
+    --Name 词表名称 \
+    --Description 词表描述 \
+    --WordWeights.0.Word 智聆 \
+    --WordWeights.0.Weight 1 \
+    --WordWeights.1.Word 滨海大厦 \
+    --WordWeights.1.Weight 6 \
+    --WordWeights.2.Word 存储桶 \
+    --WordWeights.2.Weight 8 \
+    --WordWeights.3.Word 核保 \
     --WordWeights.3.Weight 10
 ```
 

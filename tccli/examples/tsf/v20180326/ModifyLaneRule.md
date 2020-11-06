@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tsf ModifyLaneRule --cli-unfold-argument  \
-    --RuleId 1\
-    --RuleName 1\
-    --Remark 1\
-    --RuleTagList 1\
-    --RuleTagRelationship RELEATION_AND\
-    --LaneId lane-fdsjakhfds\
+    --RuleId 1 \
+    --RuleName 1 \
+    --Remark 1 \
+    --RuleTagList 1 \
+    --RuleTagRelationship RELEATION_AND \
+    --LaneId lane-fdsjakhfds \
     --Enable 1
 ```
 

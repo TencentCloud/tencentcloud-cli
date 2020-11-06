@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gse UpdateFleetCapacity --cli-unfold-argument  \
-    --FleetId fleet-qp3g3caa-ay03mhdm\
-    --DesiredInstances 30\
-    --MinSize 0\
+    --FleetId fleet-qp3g3caa-ay03mhdm \
+    --DesiredInstances 30 \
+    --MinSize 0 \
     --MaxSize 40
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli solar CreateSubProject --cli-unfold-argument  \
-    --ProjectId prj-ipyzubygh7\
+    --ProjectId prj-ipyzubygh7 \
     --SubProjectName 子项目3
 ```
 

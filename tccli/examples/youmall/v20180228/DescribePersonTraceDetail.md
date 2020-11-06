@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli youmall DescribePersonTraceDetail --cli-unfold-argument  \
-    --MallId 1\
-    --PersonId 1\
+    --MallId 1 \
+    --PersonId 1 \
     --TraceId 1
 ```
 

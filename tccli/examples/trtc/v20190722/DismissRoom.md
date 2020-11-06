@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trtc DismissRoom --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --RoomId 1234
 ```
 

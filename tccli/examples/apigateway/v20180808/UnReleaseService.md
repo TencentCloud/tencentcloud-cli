@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway UnReleaseService --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
+    --ServiceId service-ody35h5e \
     --EnvironmentName prepub
 ```
 

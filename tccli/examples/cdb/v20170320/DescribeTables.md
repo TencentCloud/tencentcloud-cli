@@ -1,4 +1,4 @@
-**Example 1: Querying database table**
+**Example 1: Querying database tables**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DescribeTables --cli-unfold-argument  \
-    --InstanceId cdb-c1nl9rpv\
+    --InstanceId cdb-c1nl9rpv \
     --Database mysql
 ```
 

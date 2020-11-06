@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DescribeRollbackTime --cli-unfold-argument  \
-    --InstanceId mssql-j8kv137v\
+    --InstanceId mssql-j8kv137v \
     --DBs db1
 ```
 

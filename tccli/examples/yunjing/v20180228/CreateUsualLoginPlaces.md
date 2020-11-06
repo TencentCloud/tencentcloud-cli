@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli yunjing CreateUsualLoginPlaces --cli-unfold-argument  \
-    --Uuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5\
-    --Areas.0.CityId 1\
-    --Areas.0.ProvinceId 1\
+    --Uuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5 \
+    --Areas.0.CityId 1 \
+    --Areas.0.ProvinceId 1 \
     --Areas.0.CountryId 1
 ```
 

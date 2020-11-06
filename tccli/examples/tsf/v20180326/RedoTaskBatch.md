@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf RedoTaskBatch --cli-unfold-argument  \
-    --TaskId task-qov7j8ky\
+    --TaskId task-qov7j8ky \
     --BatchId batch-12345678
 ```
 

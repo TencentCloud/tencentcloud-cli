@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap ModifyProxyGroupAttribute --cli-unfold-argument  \
-    --GroupId lg-b7h4d02f\
+    --GroupId lg-b7h4d02f \
     --GroupName newName
 ```
 

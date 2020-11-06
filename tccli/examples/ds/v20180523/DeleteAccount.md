@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ds DeleteAccount --cli-unfold-argument  \
-    --Module AccountMng\
-    --Operation DeleteAccount\
+    --Module AccountMng \
+    --Operation DeleteAccount \
     --AccountList dcu-9mxcxewm77
 ```
 

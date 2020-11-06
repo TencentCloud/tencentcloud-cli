@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli sslpod DescribeDomains --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 1000\
-    --SearchType none\
-    --Tag \
-    --Grade \
-    --Brand \
-    --Code \
+    --Offset 0 \
+    --Limit 1000 \
+    --SearchType none \
+    --Tag  \
+    --Grade  \
+    --Brand  \
+    --Code  \
     --Hash 
 ```
 

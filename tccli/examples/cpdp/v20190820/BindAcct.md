@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli cpdp BindAcct --cli-unfold-argument  \
-    --MidasAppId your_midas_app_id\
-    --SubAppId your_sub_app_id\
-    --BindType 1\
-    --SettleAcctNo encrypted_account_no\
-    --SettleAcctName encrypted_account_name\
-    --SettleAcctType 1\
-    --Mobile encrypted_mobile_no\
-    --IdType 1\
-    --IdCode encrypted_id_code\
-    --AcctBranchName 银行名称\
-    --EiconBankBranchId 分行ID\
-    --MidasSecretId your_midas_secret_id\
+    --MidasAppId your_midas_app_id \
+    --SubAppId your_sub_app_id \
+    --BindType 1 \
+    --SettleAcctNo encrypted_account_no \
+    --SettleAcctName encrypted_account_name \
+    --SettleAcctType 1 \
+    --Mobile encrypted_mobile_no \
+    --IdType 1 \
+    --IdCode encrypted_id_code \
+    --AcctBranchName 银行名称 \
+    --EiconBankBranchId 分行ID \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

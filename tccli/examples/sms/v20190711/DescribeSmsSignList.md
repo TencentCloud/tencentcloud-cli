@@ -7,7 +7,7 @@ Input:
 
 ```
 tccli sms DescribeSmsSignList --cli-unfold-argument  \
-    --SignIdSet 1110 1111\
+    --SignIdSet 1110 1111 \
     --International 0
 ```
 

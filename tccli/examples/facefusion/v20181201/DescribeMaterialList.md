@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli facefusion DescribeMaterialList --cli-unfold-argument  \
-    --ActivityId 10\
-    --MaterialId "q-materialId-000"\
-    --Limit 10\
+    --ActivityId 10 \
+    --MaterialId "q-materialId-000" \
+    --Limit 10 \
     --Offset 1
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DeleteDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345\
+    --ProductId ABCDE12345 \
     --DeviceName abc
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps ManageTask --cli-unfold-argument  \
-    --OperationType Abort\
+    --OperationType Abort \
     --TaskId 2459149217-procedure-live-xxx51da009t0
 ```
 

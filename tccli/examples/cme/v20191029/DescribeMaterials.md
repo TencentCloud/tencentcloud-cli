@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --MaterialIds 1111
 ```
 
@@ -87,7 +87,7 @@ Input:
 
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --MaterialIds 22222
 ```
 
@@ -153,7 +153,7 @@ Input:
 
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --MaterialIds 33333
 ```
 

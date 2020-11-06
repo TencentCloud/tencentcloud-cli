@@ -1,4 +1,4 @@
-**Example 1: Querying instance list**
+**Example 1: Querying the list of instances**
 
 
 

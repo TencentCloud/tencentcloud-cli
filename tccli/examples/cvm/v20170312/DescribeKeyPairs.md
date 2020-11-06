@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm DescribeKeyPairs --cli-unfold-argument  \
-    --Filters.0.Name key-name\
-    --Filters.0.Values Tencent\
-    --Offset 0\
+    --Filters.0.Name key-name \
+    --Filters.0.Values Tencent \
+    --Offset 0 \
     --Limit 20
 ```
 

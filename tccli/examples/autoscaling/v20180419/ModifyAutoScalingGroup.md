@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli as ModifyAutoScalingGroup --cli-unfold-argument  \
-    --AutoScalingGroupId asg-ka0s0q80\
-    --VpcId vpc-hy436tmc\
+    --AutoScalingGroupId asg-ka0s0q80 \
+    --VpcId vpc-hy436tmc \
     --SubnetIds subnet-3tmerl37 subnet-b0vxjhot
 ```
 
@@ -28,9 +28,9 @@ Input:
 
 ```
 tccli as ModifyAutoScalingGroup --cli-unfold-argument  \
-    --AutoScalingGroupId asg-ka0s0q80\
-    --DesiredCapacity 3\
-    --MaxSize 10\
+    --AutoScalingGroupId asg-ka0s0q80 \
+    --DesiredCapacity 3 \
+    --MaxSize 10 \
     --MinSize 1
 ```
 

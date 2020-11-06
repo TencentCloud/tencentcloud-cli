@@ -1,4 +1,4 @@
-**Example 1: Querying the permission information of TencentDB account**
+**Example 1: Querying the information of TencentDB account permissions**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb DescribeAccountPrivileges --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
-    --User ajnnw\
+    --InstanceId cdb-f35wr6wj \
+    --User ajnnw \
     --Host 127.0.0.1
 ```
 

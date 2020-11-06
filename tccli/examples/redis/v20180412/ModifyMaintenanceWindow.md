@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis ModifyMaintenanceWindow --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p\
-    --StartTime 03:00\
+    --InstanceId crs-5a4py64p \
+    --StartTime 03:00 \
     --EndTime 06:00
 ```
 

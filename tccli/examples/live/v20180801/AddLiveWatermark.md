@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live AddLiveWatermark --cli-unfold-argument  \
-    --PictureUrl http://watermark-10005041.cos.myqcloud.com/1251830167/watermark_img_Alogo.png\
-    --XPosition 80\
-    --YPosition 10\
+    --PictureUrl http://watermark-10005041.cos.myqcloud.com/1251830167/watermark_img_Alogo.png \
+    --XPosition 80 \
+    --YPosition 10 \
     --WatermarkName logo
 ```
 

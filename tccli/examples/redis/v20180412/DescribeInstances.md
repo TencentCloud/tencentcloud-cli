@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeInstances --cli-unfold-argument  \
-    --Offset 0\
+    --Offset 0 \
     --Limit 1
 ```
 

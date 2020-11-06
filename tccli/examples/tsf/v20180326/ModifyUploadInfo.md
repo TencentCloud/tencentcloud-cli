@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tsf ModifyUploadInfo --cli-unfold-argument  \
-    --ApplicationId application-xxxxxx\
-    --PkgId pkg-xxxxx0ae\
-    --Md5 663ed83xxxxxxxxxxxxxxxxx73d983f94\
-    --Size 67118957\
+    --ApplicationId application-xxxxxx \
+    --PkgId pkg-xxxxx0ae \
+    --Md5 663ed83xxxxxxxxxxxxxxxxx73d983f94 \
+    --Size 67118957 \
     --Result 0
 ```
 

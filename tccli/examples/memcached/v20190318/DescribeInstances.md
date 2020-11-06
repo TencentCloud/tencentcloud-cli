@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli memcached DescribeInstances --cli-unfold-argument  \
-    --Limit 无符号整型\
-    --OrderBy 字符串型\
-    --OrderType 有符号整型\
-    --Offset 无符号整型\
-    --SearchKeys 字符串型\
-    --ProjectIds 有符号整型\
-    --InstanceIds 有符号整型\
+    --Limit 无符号整型 \
+    --OrderBy 字符串型 \
+    --OrderType 有符号整型 \
+    --Offset 无符号整型 \
+    --SearchKeys 字符串型 \
+    --ProjectIds 有符号整型 \
+    --InstanceIds 有符号整型 \
     --InstanceNames 字符串型
 ```
 

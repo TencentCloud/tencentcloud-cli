@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dcdb RenewDCDBInstance --cli-unfold-argument  \
-    --InstanceId dcdbt-avw0207d\
-    --Period 1\
+    --InstanceId dcdbt-avw0207d \
+    --Period 1 \
     --AutoVoucher false
 ```
 

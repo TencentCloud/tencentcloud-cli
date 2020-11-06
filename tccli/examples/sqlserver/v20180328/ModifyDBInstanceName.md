@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver ModifyDBInstanceName --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
+    --InstanceId mssql-njj2mtpl \
     --InstanceName testModifyInstanceName
 ```
 

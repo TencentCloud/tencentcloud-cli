@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tav ScanFile --cli-unfold-argument  \
-    --Key d12790cf44382a3c15e4e8c63e41e74d\
-    --Sample http://10.195.2.97/download?md5\
+    --Key d12790cf44382a3c15e4e8c63e41e74d \
+    --Sample http://10.195.2.97/download?md5 \
     --Md5 0f600011f6abb02f6a117e1efb952a3c
 ```
 

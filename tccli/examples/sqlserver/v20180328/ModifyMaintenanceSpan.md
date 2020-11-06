@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli sqlserver ModifyMaintenanceSpan --cli-unfold-argument  \
-    --InstanceId mssql-6upluvd5\
-    --StartTime 00:00\
-    --Span 6\
+    --InstanceId mssql-6upluvd5 \
+    --StartTime 00:00 \
+    --Span 6 \
     --Weekly 1 2 3
 ```
 

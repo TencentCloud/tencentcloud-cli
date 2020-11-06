@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr CreateImageLifecyclePersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test\
-    --Type keep_last_days\
+    --RepoName dockerhub/test \
+    --Type keep_last_days \
     --Val 5
 ```
 

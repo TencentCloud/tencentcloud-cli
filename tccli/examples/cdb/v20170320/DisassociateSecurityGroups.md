@@ -1,4 +1,4 @@
-**Example 1: Unbinding security groups from Tencent Cloud resource in batches**
+**Example 1: Unbinding security groups in batches**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DisassociateSecurityGroups --cli-unfold-argument  \
-    --SecurityGroupId sg-ajr1jzgj\
+    --SecurityGroupId sg-ajr1jzgj \
     --InstanceIds cdb-eb2w7dto
 ```
 

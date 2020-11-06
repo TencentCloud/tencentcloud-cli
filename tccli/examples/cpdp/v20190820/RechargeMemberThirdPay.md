@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cpdp RechargeMemberThirdPay --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --TranNetMemberCode ' YAPI100000'\
-    --MemberFillAmt 2000\
-    --Commission 10\
-    --Ccy RMB\
-    --PayChannelType 0002\
-    --PayChannelAssignMerNo ' ALI0001'\
-    --PayChannelTranSeqNo ' ALIPAY2019111801'\
-    --EjzbOrderNo ' JZB2019111806'\
-    --EjzbOrderContent iPhone11Pro\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --TranNetMemberCode ' YAPI100000' \
+    --MemberFillAmt 2000 \
+    --Commission 10 \
+    --Ccy RMB \
+    --PayChannelType 0002 \
+    --PayChannelAssignMerNo ' ALI0001' \
+    --PayChannelTranSeqNo ' ALIPAY2019111801' \
+    --EjzbOrderNo ' JZB2019111806' \
+    --EjzbOrderContent iPhone11Pro \
     --MrchCode 1234
 ```
 

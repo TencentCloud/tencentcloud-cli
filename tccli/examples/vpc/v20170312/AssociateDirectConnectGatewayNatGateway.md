@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc AssociateDirectConnectGatewayNatGateway --cli-unfold-argument  \
-    --VpcId vpc-8xpno8ee\
-    --DirectConnectGatewayId dcg-fxa6gh5t\
+    --VpcId vpc-8xpno8ee \
+    --DirectConnectGatewayId dcg-fxa6gh5t \
     --NatGatewayId nat-ig8xpno8
 ```
 

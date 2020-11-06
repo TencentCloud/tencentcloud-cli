@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vpc DownloadCustomerGatewayConfiguration --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpnGatewayId vpngw-p4lmqawn\
-    --VpnConnectionId vpnx-5p7vkch8\
-    --CustomerGatewayVendor.Platform comware\
-    --CustomerGatewayVendor.SoftwareVersion V1.0\
-    --CustomerGatewayVendor.VendorName h3c\
+    --Version 2017-03-12 \
+    --VpnGatewayId vpngw-p4lmqawn \
+    --VpnConnectionId vpnx-5p7vkch8 \
+    --CustomerGatewayVendor.Platform comware \
+    --CustomerGatewayVendor.SoftwareVersion V1.0 \
+    --CustomerGatewayVendor.VendorName h3c \
     --InterfaceName eth0
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gpm CancelMatching --cli-unfold-argument  \
-    --MatchCode match_code_1\
+    --MatchCode match_code_1 \
     --MatchTicketId match_ticket_id_1
 ```
 

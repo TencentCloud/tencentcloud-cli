@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tia InstallAgent --cli-unfold-argument  \
-    --Cluster cls-xxxxxxxx\
+    --Cluster cls-xxxxxxxx \
     --TiaVersion xxxx-xx-xx
 ```
 

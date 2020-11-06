@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live DescribeLiveTranscodeDetailInfo --cli-unfold-argument  \
-    --DayTime 20190307\
-    --PageNum 1\
+    --DayTime 20190307 \
+    --PageNum 1 \
     --PageSize 20
 ```
 

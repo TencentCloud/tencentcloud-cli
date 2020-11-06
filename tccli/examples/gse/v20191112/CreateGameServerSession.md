@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gse CreateGameServerSession --cli-unfold-argument  \
-    --AliasId alias-aatest-66bb\
+    --AliasId alias-aatest-66bb \
     --MaximumPlayerSessionCount 10
 ```
 

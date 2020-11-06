@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bmvpc CreateDockerSubnetWithVlan --cli-unfold-argument  \
-    --VpcId vpc-44cxlz7z\
-    --SubnetSet.0.SubnetName ownDocker1\
-    --SubnetSet.0.CidrBlock 10.10.246.0/26\
-    --SubnetSet.1.SubnetName ownDocker2\
+    --VpcId vpc-44cxlz7z \
+    --SubnetSet.0.SubnetName ownDocker1 \
+    --SubnetSet.0.CidrBlock 10.10.246.0/26 \
+    --SubnetSet.1.SubnetName ownDocker2 \
     --SubnetSet.1.CidrBlock 10.10.246.64/26
 ```
 

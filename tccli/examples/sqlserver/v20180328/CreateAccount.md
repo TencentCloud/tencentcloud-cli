@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver CreateAccount --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
-    --Accounts.0.UserName testuser\
+    --InstanceId mssql-njj2mtpl \
+    --Accounts.0.UserName testuser \
     --Accounts.0.Password testpassword
 ```
 

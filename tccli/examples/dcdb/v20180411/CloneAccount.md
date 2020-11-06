@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dcdb CloneAccount --cli-unfold-argument  \
-    --InstanceId dcdbt-ovulpcjf\
-    --SrcUser testuser1\
-    --SrcHost 172.17.%\
-    --DstUser testuser1\
-    --DstHost 172.20.%\
+    --InstanceId dcdbt-ovulpcjf \
+    --SrcUser testuser1 \
+    --SrcHost 172.17.% \
+    --DstUser testuser1 \
+    --DstHost 172.20.% \
     --DstDesc testclone
 ```
 

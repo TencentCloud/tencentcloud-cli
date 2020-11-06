@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu ModifyCCPolicySwitch --cli-unfold-argument  \
-    --Business bgp\
-    --Id bgp-000000xe\
-    --SetId ccPolicy-000000sd\
+    --Business bgp \
+    --Id bgp-000000xe \
+    --SetId ccPolicy-000000sd \
     --Switch 0
 ```
 

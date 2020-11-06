@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc ModifyVpnGatewayAttribute --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpnGatewayId bmvpngw-9jj97wyn\
+    --Version 2017-03-12 \
+    --VpnGatewayId bmvpngw-9jj97wyn \
     --VpnGatewayName new_name
 ```
 

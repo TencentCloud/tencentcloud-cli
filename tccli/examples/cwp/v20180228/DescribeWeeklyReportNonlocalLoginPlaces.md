@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp DescribeWeeklyReportNonlocalLoginPlaces --cli-unfold-argument  \
-    --BeginDate 2018-10-08\
-    --Limit 10\
+    --BeginDate 2018-10-08 \
+    --Limit 10 \
     --Offset 0
 ```
 

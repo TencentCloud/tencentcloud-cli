@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iai GetPersonGroupInfo --cli-unfold-argument  \
-    --PersonId 2001\
-    --Offset 0\
+    --PersonId 2001 \
+    --Offset 0 \
     --Limit 10
 ```
 
@@ -41,8 +41,8 @@ Input:
 
 ```
 tccli iai GetPersonGroupInfo --cli-unfold-argument  \
-    --PersonId 1001\
-    --Offset 0\
+    --PersonId 1001 \
+    --Offset 0 \
     --Limit 10
 ```
 
@@ -75,8 +75,8 @@ Input:
 
 ```
 tccli iai GetPersonGroupInfo --cli-unfold-argument  \
-    --PersonId 1002\
-    --Offset 0\
+    --PersonId 1002 \
+    --Offset 0 \
     --Limit 10
 ```
 

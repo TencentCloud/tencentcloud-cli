@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dc DescribeDirectConnects --cli-unfold-argument  \
-    --Filters.0.Name direct-connect-name\
+    --Filters.0.Name direct-connect-name \
     --Filters.0.Values 'Direct Connect'
 ```
 

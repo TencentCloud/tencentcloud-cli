@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb CreatePostpayPackage --cli-unfold-argument  \
-    --EnvId cdnheader-v2a\
+    --EnvId cdnheader-v2a \
     --FreeQuota basic
 ```
 

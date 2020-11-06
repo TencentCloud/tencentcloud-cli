@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mdp DeleteMediaPackageChannelEndpoints --cli-unfold-argument  \
-    --Id xxx\
+    --Id xxx \
     --Urls xxx
 ```
 

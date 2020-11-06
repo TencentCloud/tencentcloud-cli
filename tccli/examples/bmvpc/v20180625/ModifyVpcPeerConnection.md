@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bmvpc ModifyVpcPeerConnection --cli-unfold-argument  \
-    --Version 2018-06-25\
-    --VpcPeerConnectionId pcx-gapcv96p\
-    --VpcPeerConnectionName test-peer\
+    --Version 2018-06-25 \
+    --VpcPeerConnectionId pcx-gapcv96p \
+    --VpcPeerConnectionName test-peer \
     --Bandwidth 1000
 ```
 

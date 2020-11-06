@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm DescribeHosts --cli-unfold-argument  \
-    --Filters.0.Name zone\
-    --Filters.0.Values ap-guangzhou-2\
-    --Offset 0\
+    --Filters.0.Name zone \
+    --Filters.0.Values ap-guangzhou-2 \
+    --Offset 0 \
     --Limit 20
 ```
 

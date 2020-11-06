@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mariadb GrantAccountPrivileges --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
-    --UserName testuser1\
-    --Host 172.17.%\
-    --DbName *\
-    --Type *\
+    --InstanceId tdsql-fdpjf5zh \
+    --UserName testuser1 \
+    --Host 172.17.% \
+    --DbName * \
+    --Type * \
     --Privileges select update
 ```
 

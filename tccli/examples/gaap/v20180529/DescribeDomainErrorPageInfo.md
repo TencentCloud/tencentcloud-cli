@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap DescribeDomainErrorPageInfo --cli-unfold-argument  \
-    --ListenerId 0\
+    --ListenerId 0 \
     --Domain a.com
 ```
 

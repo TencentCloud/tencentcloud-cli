@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dayu ModifyL4KeepTime --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --RuleId rule-000000xe\
-    --KeepEnable 1\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --RuleId rule-000000xe \
+    --KeepEnable 1 \
     --KeepTime 300
 ```
 

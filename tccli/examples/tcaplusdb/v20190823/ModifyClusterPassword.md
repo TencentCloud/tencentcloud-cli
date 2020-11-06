@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcaplusdb ModifyClusterPassword --cli-unfold-argument  \
-    --ClusterId 23311894780\
-    --OldPassword canmkdmk1215LM\
-    --NewPassword 99c59cb345c61063db\
+    --ClusterId 23311894780 \
+    --OldPassword canmkdmk1215LM \
+    --NewPassword 99c59cb345c61063db \
     --OldPasswordExpireTime 2019-08-26%2017%3A25%3A00
 ```
 

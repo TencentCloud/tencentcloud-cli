@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf ListAliases --cli-unfold-argument  \
-    --Namespace <Namespace>\
+    --Namespace <Namespace> \
     --FunctionName <FunctionName>
 ```
 

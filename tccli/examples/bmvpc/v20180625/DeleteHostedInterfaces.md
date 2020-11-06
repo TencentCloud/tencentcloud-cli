@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteHostedInterfaces --cli-unfold-argument  \
-    --InstanceId chm-xxxxxxxx\
+    --InstanceId chm-xxxxxxxx \
     --SubnetIds subnet-xxxxxxxx subnet-xxxxxxxx
 ```
 

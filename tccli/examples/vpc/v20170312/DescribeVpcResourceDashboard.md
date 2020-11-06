@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DescribeVpcResourceDashboard --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --VpcIds vpc-0akbol5v
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli faceid LivenessRecognition --cli-unfold-argument  \
-    --IdCard 11204416541220243X\
-    --Name 韦小宝\
-    --VideoBase64 <VideoBase64>\
+    --IdCard 11204416541220243X \
+    --Name 韦小宝 \
+    --VideoBase64 <VideoBase64> \
     --LivenessType SILENT
 ```
 

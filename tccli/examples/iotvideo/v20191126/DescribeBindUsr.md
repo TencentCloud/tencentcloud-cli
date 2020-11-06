@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo DescribeBindUsr --cli-unfold-argument  \
-    --AccessId -9223371585883208724\
+    --AccessId -9223371585883208724 \
     --Tid ************
 ```
 

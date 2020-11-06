@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw DescribeVideoGenerationTask --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --TaskId ghucnligqtgtvk2624mb
 ```
 

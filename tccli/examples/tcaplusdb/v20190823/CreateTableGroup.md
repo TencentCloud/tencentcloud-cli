@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcaplusdb CreateTableGroup --cli-unfold-argument  \
-    --ClusterId 6179109757\
+    --ClusterId 6179109757 \
     --TableGroupName 'tdr zone 1'
 ```
 

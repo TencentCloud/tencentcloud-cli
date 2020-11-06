@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tsf DescribeApiDetail --cli-unfold-argument  \
-    --MicroserviceId ms-2vzprpyp\
-    --Path /facade/supplier/test\
-    --Method POST\
-    --ApplicationId application-gvkw2ejv\
+    --MicroserviceId ms-2vzprpyp \
+    --Path /facade/supplier/test \
+    --Method POST \
+    --ApplicationId application-gvkw2ejv \
     --PkgVersion jenkins-prod-supplier-1
 ```
 

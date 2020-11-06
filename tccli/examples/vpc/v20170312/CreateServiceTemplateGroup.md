@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc CreateServiceTemplateGroup --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --ServiceTemplateGroupName TestName\
+    --Version 2017-03-12 \
+    --ServiceTemplateGroupName TestName \
     --ServiceTemplateIds ppm-529nwwj8 ppm-4dw6agho
 ```
 

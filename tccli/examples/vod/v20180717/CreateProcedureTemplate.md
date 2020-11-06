@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vod CreateProcedureTemplate --cli-unfold-argument  \
-    --Name 'My Task Flow'\
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20\
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30\
-    --MediaProcessTask.TranscodeTaskSet.2.Definition 40\
+    --Name 'My Task Flow' \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
     --MediaProcessTask.SampleSnapshotTaskSet.0.Definition 10
 ```
 
@@ -30,9 +30,9 @@ Input:
 
 ```
 tccli vod CreateProcedureTemplate --cli-unfold-argument  \
-    --Name 'My Task Flow'\
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20\
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30\
+    --Name 'My Task Flow' \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
     --MediaProcessTask.TranscodeTaskSet.2.Definition 40
 ```
 
@@ -53,7 +53,7 @@ Input:
 
 ```
 tccli vod CreateProcedureTemplate --cli-unfold-argument  \
-    --Name 'My Task Flow'\
+    --Name 'My Task Flow' \
     --AiContentReviewTask.Definition 10
 ```
 
@@ -74,12 +74,12 @@ Input:
 
 ```
 tccli vod CreateProcedureTemplate --cli-unfold-argument  \
-    --Name 'My Task Flow'\
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20\
-    --MediaProcessTask.TranscodeTaskSet.0.Watermarks.0.Definition 15780\
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30\
-    --MediaProcessTask.TranscodeTaskSet.1.Watermarks.0.Definition 15780\
-    --MediaProcessTask.TranscodeTaskSet.2.Definition 40\
+    --Name 'My Task Flow' \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.0.Watermarks.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.1.Watermarks.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
     --MediaProcessTask.TranscodeTaskSet.2.Watermarks.0.Definition 15780
 ```
 

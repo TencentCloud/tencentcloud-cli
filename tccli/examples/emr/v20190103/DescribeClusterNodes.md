@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli emr DescribeClusterNodes --cli-unfold-argument  \
-    --InstanceId emr-6deluvd4\
-    --NodeFlag all\
-    --Offset 0\
+    --InstanceId emr-6deluvd4 \
+    --NodeFlag all \
+    --Offset 0 \
     --Limit 10
 ```
 

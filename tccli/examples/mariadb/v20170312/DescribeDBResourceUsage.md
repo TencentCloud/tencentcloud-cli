@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mariadb DescribeDBResourceUsage --cli-unfold-argument  \
-    --InstanceId tdsql-ige1a5k3\
-    --StartTime 2018-03-19\
+    --InstanceId tdsql-ige1a5k3 \
+    --StartTime 2018-03-19 \
     --EndTime 2018-03-19
 ```
 

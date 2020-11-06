@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmlb DeleteL7Domains --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
-    --ListenerId lbl-l6fzjsx5\
+    --LoadBalancerId lb-47gazeml \
+    --ListenerId lbl-l6fzjsx5 \
     --DomainIds dm-hg8j52ud
 ```
 

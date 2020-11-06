@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu CreateNetReturn --cli-unfold-argument  \
-    --Business net\
+    --Business net \
     --Id net-0000000e
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cmq DeleteSubscribe --cli-unfold-argument  \
-    --TopicName ConnTopic\
+    --TopicName ConnTopic \
     --SubscriptionName york
 ```
 

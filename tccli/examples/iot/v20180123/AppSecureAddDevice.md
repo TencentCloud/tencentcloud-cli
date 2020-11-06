@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot AppSecureAddDevice --cli-unfold-argument  \
-    --AccessToken xxx\
+    --AccessToken xxx \
     --DeviceSignature xxx
 ```
 

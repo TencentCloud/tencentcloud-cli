@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cloudaudit ListKeyAliasByRegion --cli-unfold-argument  \
-    --KmsRegion ap-hongkong\
-    --Limit 10\
+    --KmsRegion ap-hongkong \
+    --Limit 10 \
     --Offset 0
 ```
 

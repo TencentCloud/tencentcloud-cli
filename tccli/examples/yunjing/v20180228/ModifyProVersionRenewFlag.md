@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli yunjing ModifyProVersionRenewFlag --cli-unfold-argument  \
-    --RenewFlag NOTIFY_AND_AUTO_RENEW\
+    --RenewFlag NOTIFY_AND_AUTO_RENEW \
     --Quuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5
 ```
 

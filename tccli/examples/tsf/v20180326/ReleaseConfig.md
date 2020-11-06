@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf ReleaseConfig --cli-unfold-argument  \
-    --ConfigId dcfg-zvw6kxa8\
+    --ConfigId dcfg-zvw6kxa8 \
     --GroupId group-nalqbgvq
 ```
 

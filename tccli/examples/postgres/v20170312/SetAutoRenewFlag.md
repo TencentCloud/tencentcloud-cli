@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres SetAutoRenewFlag --cli-unfold-argument  \
-    --DBInstanceIdSet [postgres-apzvwncr]\
+    --DBInstanceIdSet [postgres-apzvwncr] \
     --AutoRenewFlag 1
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cme SearchMaterial --cli-unfold-argument  \
-    --Platform test\
-    --SearchScopes.0.Owner.Id 1111\
-    --SearchScopes.0.Owner.Type PERSON\
+    --Platform test \
+    --SearchScopes.0.Owner.Id 1111 \
+    --SearchScopes.0.Owner.Type PERSON \
     --SearchScopes.0.ClassPath /a/b
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the backup data table of specified database**
+**Example 1: Querying the backed-up data tables of the specified database**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb DescribeBackupTables --cli-unfold-argument  \
-    --InstanceId cdb-c1nl9rpv\
-    --StartTime '2017-07-12 10:29:20'\
+    --InstanceId cdb-c1nl9rpv \
+    --StartTime '2017-07-12 10:29:20' \
     --DatabaseName mysql
 ```
 

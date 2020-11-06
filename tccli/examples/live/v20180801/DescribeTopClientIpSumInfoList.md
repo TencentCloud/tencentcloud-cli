@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live DescribeTopClientIpSumInfoList --cli-unfold-argument  \
-    --StartTime '2019-03-01 00:00:00'\
-    --EndTime '2019-03-01 04:00:00'\
-    --PageSize 2\
-    --PageNum 2\
+    --StartTime '2019-03-01 00:00:00' \
+    --EndTime '2019-03-01 04:00:00' \
+    --PageSize 2 \
+    --PageNum 2 \
     --OrderParam TotalFlux
 ```
 

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ecm CreateSubnet --cli-unfold-argument  \
-    --VpcId vpc-ila64qtl\
-    --SubnetName subnet_test\
-    --CidrBlock 10.0.1.0/24\
-    --Zone ap-hangzhou-ecm-1\
-    --Tags.0.Key city\
-    --Tags.0.Value hangzhou\
+    --VpcId vpc-ila64qtl \
+    --SubnetName subnet_test \
+    --CidrBlock 10.0.1.0/24 \
+    --Zone ap-hangzhou-ecm-1 \
+    --Tags.0.Key city \
+    --Tags.0.Value hangzhou \
     --EcmRegion ap-hangzhou-ecm
 ```
 

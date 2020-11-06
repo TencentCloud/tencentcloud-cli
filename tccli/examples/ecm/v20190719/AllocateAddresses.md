@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm AllocateAddresses --cli-unfold-argument  \
-    --AddressCount 1\
-    --InternetServiceProvider CTCC\
+    --AddressCount 1 \
+    --InternetServiceProvider CTCC \
     --EcmRegion ap-hangzhou-ecm
 ```
 

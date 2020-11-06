@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DescribeBackupByFlowId --cli-unfold-argument  \
-    --InstanceId mssql-6upluvd5\
+    --InstanceId mssql-6upluvd5 \
     --FlowId 1000797
 ```
 
@@ -42,7 +42,7 @@ Input:
 
 ```
 tccli sqlserver DescribeBackupByFlowId --cli-unfold-argument  \
-    --InstanceId mssql-6upluvd5\
+    --InstanceId mssql-6upluvd5 \
     --FlowId 1000796
 ```
 

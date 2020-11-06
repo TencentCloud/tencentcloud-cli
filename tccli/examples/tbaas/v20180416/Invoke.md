@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tbaas Invoke --cli-unfold-argument  \
-    --Module transaction\
-    --Operation invoke\
-    --ClusterId 251005746envnew\
-    --Peers.0.PeerName peer0.neworg02.envnew\
-    --Peers.0.OrgName NewOrg02\
-    --ChannelName ch042103\
-    --ChaincodeName cc050301\
-    --FuncName createCar\
-    --Args CAR92 Chevy Volt Black Nick\
+    --Module transaction \
+    --Operation invoke \
+    --ClusterId 251005746envnew \
+    --Peers.0.PeerName peer0.neworg02.envnew \
+    --Peers.0.OrgName NewOrg02 \
+    --ChannelName ch042103 \
+    --ChaincodeName cc050301 \
+    --FuncName createCar \
+    --Args CAR92 Chevy Volt Black Nick \
     --GroupName NewOrg02
 ```
 
@@ -37,16 +37,16 @@ Input:
 
 ```
 tccli tbaas Invoke --cli-unfold-argument  \
-    --Module transaction\
-    --Operation invoke\
-    --ClusterId 251005746envnew\
-    --Peers.0.PeerName peer0.neworg02.envnew\
-    --Peers.0.OrgName NewOrg02\
-    --ChannelName ch042103\
-    --ChaincodeName cc050301\
-    --FuncName createCar\
-    --Args CAR92 Chevy Volt Black Nick\
-    --AsyncFlag 1\
+    --Module transaction \
+    --Operation invoke \
+    --ClusterId 251005746envnew \
+    --Peers.0.PeerName peer0.neworg02.envnew \
+    --Peers.0.OrgName NewOrg02 \
+    --ChannelName ch042103 \
+    --ChaincodeName cc050301 \
+    --FuncName createCar \
+    --Args CAR92 Chevy Volt Black Nick \
+    --AsyncFlag 1 \
     --GroupName NewOrg02
 ```
 

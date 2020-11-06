@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tia DeleteModel --cli-unfold-argument  \
-    --Name test-model\
+    --Name test-model \
     --Cluster ap-beijing
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli tia DeleteModel --cli-unfold-argument  \
-    --Name test-model\
+    --Name test-model \
     --ServType serverless
 ```
 

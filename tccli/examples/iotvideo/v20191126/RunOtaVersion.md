@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideo RunOtaVersion --cli-unfold-argument  \
-    --ProductId 12345678910\
-    --OtaVersion 1.1.1\
-    --OldVersions 0.9.0 0.9.1\
-    --GrayValue 60\
+    --ProductId 12345678910 \
+    --OtaVersion 1.1.1 \
+    --OldVersions 0.9.0 0.9.1 \
+    --GrayValue 60 \
     --Operator zhangsan
 ```
 

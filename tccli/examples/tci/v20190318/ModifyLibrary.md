@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tci ModifyLibrary --cli-unfold-argument  \
-    --LibraryName xxx\
+    --LibraryName xxx \
     --LibraryId libraryid_xxx
 ```
 

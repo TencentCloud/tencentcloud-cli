@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli lp QueryLoginProtection --cli-unfold-argument  \
-    --AccountType 10004\
-    --Uid bfd81ee3ed27ad31c95ca75e21365973\
-    --LoginIp 101.231.62.66\
+    --AccountType 10004 \
+    --Uid bfd81ee3ed27ad31c95ca75e21365973 \
+    --LoginIp 101.231.62.66 \
     --LoginTime 1582029456
 ```
 

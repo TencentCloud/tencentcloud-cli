@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb DescribeLoadBalancersDetail --cli-unfold-argument  \
-    --Offset 0\
+    --Offset 0 \
     --Limit 20
 ```
 

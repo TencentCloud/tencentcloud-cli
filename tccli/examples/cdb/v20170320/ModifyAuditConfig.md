@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb ModifyAuditConfig --cli-unfold-argument  \
-    --LogExpireDay 365\
+    --LogExpireDay 365 \
     --InstanceId cdb-txcniupi
 ```
 

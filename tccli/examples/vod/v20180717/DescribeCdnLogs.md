@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod DescribeCdnLogs --cli-unfold-argument  \
-    --DomainName test.vod2.myqcloud.com\
-    --StartTime 2018-12-0116:00:00Z\
+    --DomainName test.vod2.myqcloud.com \
+    --StartTime 2018-12-0116:00:00Z \
     --EndTime 2018-12-0316:00:00Z
 ```
 

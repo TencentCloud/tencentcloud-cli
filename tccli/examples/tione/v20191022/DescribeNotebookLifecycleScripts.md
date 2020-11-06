@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tione DescribeNotebookLifecycleScripts --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
-    --SortBy created\
-    --SortOrder Descending\
-    --Filters.0.Name search-by-name\
+    --Offset 0 \
+    --Limit 10 \
+    --SortBy created \
+    --SortOrder Descending \
+    --Filters.0.Name search-by-name \
     --Filters.0.Values s
 ```
 

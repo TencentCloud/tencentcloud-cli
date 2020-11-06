@@ -15,9 +15,9 @@ Input:
 
 ```
 tccli yunsou DataManipulation --cli-unfold-argument  \
-    --OpType add\
-    --Encoding utf8\
-    --ResourceId 80680002\
+    --OpType add \
+    --Encoding utf8 \
+    --ResourceId 80680002 \
     --Contents %5b%7b%22NC%22%3a%229999%22%2c%22TD%22+%3a+%22%e4%b8%ad%e6%96%87%22%2c%22NA%22+%3a+%221000%22%2c%22NB%22+%3a+%229999%22%2c%22TA%22+%3a+%22%e4%b8%ad%e6%96%87%22%2c%22TB%22+%3a+%22abcde%22%2c%22TC%22+%3a+%22%e4%b8%ad%e6%96%87%22%2c%22TE%22%3a%22tttteeee%22%2c%22TF%22%3a%22efeefe%22%2c%22countrycode%22%3a%22cn%22%2c%22renderType%22%3a%22rrr%22%7d%5d
 ```
 
@@ -54,9 +54,9 @@ Input:
 
 ```
 tccli yunsou DataManipulation --cli-unfold-argument  \
-    --OpType del\
-    --Encoding utf8\
-    --ResourceId 80680002\
+    --OpType del \
+    --Encoding utf8 \
+    --ResourceId 80680002 \
     --Contents %5B%7B%22doc_id%22%3A%221000%22%7D%5D
 ```
 

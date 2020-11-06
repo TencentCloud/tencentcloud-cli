@@ -1,4 +1,4 @@
-**Example 1: Querying parameter template list**
+**Example 1: Querying the list of parameter templates**
 
 
 

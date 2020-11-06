@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc ModifyHaVipAttribute --cli-unfold-argument  \
-    --HaVipId havip-9o233uri\
+    --HaVipId havip-9o233uri \
     --HaVipName new+name
 ```
 

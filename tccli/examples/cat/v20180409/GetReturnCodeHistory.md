@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cat GetReturnCodeHistory --cli-unfold-argument  \
-    --TaskId 260228\
-    --BeginTime '2019-12-11 10:00:00'\
-    --EndTime '2019-12-11 20:30:00'\
+    --TaskId 260228 \
+    --BeginTime '2019-12-11 10:00:00' \
+    --EndTime '2019-12-11 20:30:00' \
     --Province beijing-1
 ```
 

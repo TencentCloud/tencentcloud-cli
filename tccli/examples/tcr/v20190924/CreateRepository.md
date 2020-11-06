@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr CreateRepository --cli-unfold-argument  \
-    --RegistryId tcr-okmju7\
-    --NamespaceName team-01\
+    --RegistryId tcr-okmju7 \
+    --NamespaceName team-01 \
     --RepositoryName nginx
 ```
 

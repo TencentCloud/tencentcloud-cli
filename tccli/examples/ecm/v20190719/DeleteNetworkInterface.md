@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DeleteNetworkInterface --cli-unfold-argument  \
-    --NetworkInterfaceId eni-12121212\
+    --NetworkInterfaceId eni-12121212 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

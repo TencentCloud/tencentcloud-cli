@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli apigateway BindEnvironment --cli-unfold-argument  \
-    --BindType SERVICE\
-    --Environment test\
-    --ServiceId service-ody35h5e\
+    --BindType SERVICE \
+    --Environment test \
+    --ServiceId service-ody35h5e \
     --UsagePlanIds usagePlan-quqxvett
 ```
 

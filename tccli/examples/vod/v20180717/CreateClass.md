@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod CreateClass --cli-unfold-argument  \
-    --ParentId -1\
-    --ClassName 'First-level Category 1'\
+    --ParentId -1 \
+    --ClassName 'First-level Category 1' \
     --SubAppId 1
 ```
 

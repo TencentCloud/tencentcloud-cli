@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs BindAutoSnapshotPolicy --cli-unfold-argument  \
-    --AutoSnapshotPolicyId asp-mrsrn243\
+    --AutoSnapshotPolicyId asp-mrsrn243 \
     --DiskIds disk-dw0bbzws
 ```
 

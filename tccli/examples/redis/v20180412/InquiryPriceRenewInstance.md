@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis InquiryPriceRenewInstance --cli-unfold-argument  \
-    --Period 1\
+    --Period 1 \
     --InstanceId crs-qkdjynur
 ```
 

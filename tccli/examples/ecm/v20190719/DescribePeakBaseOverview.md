@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DescribePeakBaseOverview --cli-unfold-argument  \
-    --StartTime 2020-09-04\
+    --StartTime 2020-09-04 \
     --EndTime 2020-09-04
 ```
 

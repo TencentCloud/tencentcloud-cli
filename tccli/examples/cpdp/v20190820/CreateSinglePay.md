@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cpdp CreateSinglePay --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --SerialNumber 20190505000000000013\
-    --PayAccountNumber 123123123\
-    --PayAccountName 测试付款账户\
-    --PayBankCnaps 321321321\
-    --Amount 1\
-    --RecvAccountNumber 123123123123\
-    --RecvAccountName 王大拿\
+    --Placement.Zone ap-guangzhou-2 \
+    --SerialNumber 20190505000000000013 \
+    --PayAccountNumber 123123123 \
+    --PayAccountName 测试付款账户 \
+    --PayBankCnaps 321321321 \
+    --Amount 1 \
+    --RecvAccountNumber 123123123123 \
+    --RecvAccountName 王大拿 \
     --RecvBankCnaps 321321321
 ```
 

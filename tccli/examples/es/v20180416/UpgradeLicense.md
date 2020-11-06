@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli es UpgradeLicense --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
+    --InstanceId es-xxxxxxxx \
     --LicenseType platinum
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfw DescribeNatRuleOverview --cli-unfold-argument  \
-    --Direction 1\
+    --Direction 1 \
     --Area ap-chongqing
 ```
 

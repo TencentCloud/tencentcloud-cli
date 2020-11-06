@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyAddressTemplateAttribute --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --AddressTemplateId ipm-mdunqeb6\
+    --Version 2017-03-12 \
+    --AddressTemplateId ipm-mdunqeb6 \
     --AddressTemplateName TestName
 ```
 

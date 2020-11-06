@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gse CreateAsset --cli-unfold-argument  \
-    --BucketKey GseLinuxServer.zip\
-    --AssetName asset-demo\
-    --AssetVersion 1.0\
-    --AssetRegion ap-shanghai\
+    --BucketKey GseLinuxServer.zip \
+    --AssetName asset-demo \
+    --AssetVersion 1.0 \
+    --AssetRegion ap-shanghai \
     --OperateSystem CentOS7.16
 ```
 

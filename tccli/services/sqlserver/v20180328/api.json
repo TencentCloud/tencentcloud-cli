@@ -2604,7 +2604,7 @@
         },
         {
           "default": "",
-          "document": "创建备份流程ID",
+          "document": "创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -3463,7 +3463,7 @@
       "members": [
         {
           "default": "",
-          "document": "项目ID。",
+          "document": "项目ID，可通过控制台项目管理中查看",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -4738,7 +4738,7 @@
         },
         {
           "default": "",
-          "document": "要修改名称的备份ID，可通过DescribeBackups 接口获取。",
+          "document": "要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。",
           "member": "uint64",
           "name": "BackupId",
           "required": true,

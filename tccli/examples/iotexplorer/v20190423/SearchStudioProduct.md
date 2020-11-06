@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotexplorer SearchStudioProduct --cli-unfold-argument  \
-    --ProjectId prj-zunfat46\
-    --ProductName testtproduct\
-    --Limit 0\
-    --Offset 0\
+    --ProjectId prj-zunfat46 \
+    --ProductName testtproduct \
+    --Limit 0 \
+    --Offset 0 \
     --DevStatus dev
 ```
 

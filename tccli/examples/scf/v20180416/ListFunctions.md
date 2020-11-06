@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli scf ListFunctions --cli-unfold-argument  \
-    --Filters.0.Name tag-status\
-    --Filters.0.Values dev\
-    --Filters.1.Name tag-owner\
+    --Filters.0.Name tag-status \
+    --Filters.0.Values dev \
+    --Filters.1.Name tag-owner \
     --Filters.1.Values me
 ```
 
@@ -40,7 +40,7 @@ Input:
 
 ```
 tccli scf ListFunctions --cli-unfold-argument  \
-    --Limit 2\
+    --Limit 2 \
     --Order ASC
 ```
 

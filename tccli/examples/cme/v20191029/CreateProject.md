@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cme CreateProject --cli-unfold-argument  \
-    --Platform test\
-    --Category VIDEO_EDIT\
-    --Name first_project\
-    --AspectRatio 16:9\
-    --Owner.Id 1111\
+    --Platform test \
+    --Category VIDEO_EDIT \
+    --Name first_project \
+    --AspectRatio 16:9 \
+    --Owner.Id 1111 \
     --Owner.Type PERSON
 ```
 
@@ -32,12 +32,12 @@ Input:
 
 ```
 tccli cme CreateProject --cli-unfold-argument  \
-    --Platform test\
-    --Category SWITCHER\
-    --Name switcher_project\
-    --AspectRatio 16:9\
-    --Owner.Id 1111\
-    --Owner.Type PERSON\
+    --Platform test \
+    --Category SWITCHER \
+    --Name switcher_project \
+    --AspectRatio 16:9 \
+    --Owner.Id 1111 \
+    --Owner.Type PERSON \
     --SwitcherProjectInput.PgmOutputConfig.TemplateId 10001
 ```
 

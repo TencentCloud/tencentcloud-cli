@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cme ListMedia --cli-unfold-argument  \
-    --Platform test\
-    --ClassPath /a/b\
-    --Owner.Id 1111\
+    --Platform test \
+    --ClassPath /a/b \
+    --Owner.Id 1111 \
     --Owner.Type PERSON
 ```
 

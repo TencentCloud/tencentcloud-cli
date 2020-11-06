@@ -6,10 +6,9 @@ Input:
 
 ```
 tccli cfw ModifyItemSwitchStatus --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId test\
-    --Id 1\
-    --Status 1
+    --Id 341 \
+    --Status 1 \
+    --Type 1
 ```
 
 Output: 
@@ -17,7 +16,7 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf RedoTaskFlowBatch --cli-unfold-argument  \
-    --FlowId flow-6g4rq8z6\
+    --FlowId flow-6g4rq8z6 \
     --FlowBatchId fbatch-6g4rq8z6
 ```
 

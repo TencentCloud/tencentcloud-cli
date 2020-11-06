@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli kms EncryptByWhiteBox --cli-unfold-argument  \
-    --KeyId 244dab8c-6dad-11ea-80c6-5254006d0810\
+    --KeyId 244dab8c-6dad-11ea-80c6-5254006d0810 \
     --PlainText UGxhaW5UZXh0
 ```
 

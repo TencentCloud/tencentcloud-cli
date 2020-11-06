@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmeip CreateEipAcl --cli-unfold-argument  \
-    --AclName acltest\
+    --AclName acltest \
     --Status 0
 ```
 

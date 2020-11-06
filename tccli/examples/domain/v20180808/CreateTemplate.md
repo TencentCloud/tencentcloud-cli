@@ -6,24 +6,24 @@ Input:
 
 ```
 tccli domain CreateTemplate --cli-unfold-argument  \
-    --ContactInfo.Province xx\
-    --ContactInfo.OrganizationNameCN xx\
-    --ContactInfo.OrganizationName xx\
-    --ContactInfo.City xx\
-    --ContactInfo.CityCN xx\
-    --ContactInfo.RegistrantName xx\
-    --ContactInfo.Telephone xx\
-    --ContactInfo.ZipCode xx\
-    --ContactInfo.RegistrantNameCN xx\
-    --ContactInfo.StreetCN xx\
-    --ContactInfo.Street xx\
-    --ContactInfo.ProvinceCN xx\
-    --ContactInfo.Country xx\
-    --ContactInfo.RegistrantType xx\
-    --ContactInfo.CountryCN xx\
-    --ContactInfo.Email xx\
-    --CertificateInfo.CertificateType xx\
-    --CertificateInfo.CertificateCode xx\
+    --ContactInfo.Province xx \
+    --ContactInfo.OrganizationNameCN xx \
+    --ContactInfo.OrganizationName xx \
+    --ContactInfo.City xx \
+    --ContactInfo.CityCN xx \
+    --ContactInfo.RegistrantName xx \
+    --ContactInfo.Telephone xx \
+    --ContactInfo.ZipCode xx \
+    --ContactInfo.RegistrantNameCN xx \
+    --ContactInfo.StreetCN xx \
+    --ContactInfo.Street xx \
+    --ContactInfo.ProvinceCN xx \
+    --ContactInfo.Country xx \
+    --ContactInfo.RegistrantType xx \
+    --ContactInfo.CountryCN xx \
+    --ContactInfo.Email xx \
+    --CertificateInfo.CertificateType xx \
+    --CertificateInfo.CertificateCode xx \
     --CertificateInfo.ImgUrl xx
 ```
 

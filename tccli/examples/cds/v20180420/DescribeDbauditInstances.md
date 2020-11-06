@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cds DescribeDbauditInstances --cli-unfold-argument  \
-    --SearchRegion app-guangzhou\
-    --Offset 1\
+    --SearchRegion app-guangzhou \
+    --Offset 1 \
     --Limit 10
 ```
 

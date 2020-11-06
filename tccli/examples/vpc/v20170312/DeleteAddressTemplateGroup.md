@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DeleteAddressTemplateGroup --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --AddressTemplateGroupId ipmg-2uw6ujo6
 ```
 

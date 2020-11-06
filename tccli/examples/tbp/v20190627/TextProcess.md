@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tbp TextProcess --cli-unfold-argument  \
-    --BotId 972445\
-    --InputText 北京\
-    --TerminalId 123\
+    --BotId 972445 \
+    --InputText 北京 \
+    --TerminalId 123 \
     --BotEnv dev
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ic DescribeCards --cli-unfold-argument  \
-    --Sdkappid 1200168178\
-    --Iccid 89860619000013360957\
-    --Offset 0\
+    --Sdkappid 1200168178 \
+    --Iccid 89860619000013360957 \
+    --Offset 0 \
     --Limit 20
 ```
 

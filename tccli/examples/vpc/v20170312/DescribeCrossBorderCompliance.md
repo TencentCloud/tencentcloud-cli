@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli vpc DescribeCrossBorderCompliance --cli-unfold-argument  \
-    --ServiceProvider UNICOM\
-    --Company 'Guangzhou Tencent Technology Co., Ltd'\
-    --UniformSocialCreditCode 91440101327598294H\
-    --LegalPerson 'Zhang Ying'\
-    --IssuingAuthority 'Guangzhou Haizhu District Administration for Market Regulation'\
-    --BusinessAddress 'Commercial Street F5-1, No. 397-72, Middle Xingang Road, Haizhu District, Guangzhou City, China'\
-    --PostCode 510320\
-    --Manager Tom\
-    --ManagerId 360732199007108888\
-    --ManagerAddress 'No. 8888, Middle Xingang Road, Haizhu District, Guangzhou City, China'\
-    --ManagerTelephone 020-81167888\
-    --Email test@tencent.com\
-    --ServiceStartDate 2020-07-29\
+    --ServiceProvider UNICOM \
+    --Company 'Guangzhou Tencent Technology Co., Ltd' \
+    --UniformSocialCreditCode 91440101327598294H \
+    --LegalPerson 'Zhang Ying' \
+    --IssuingAuthority 'Guangzhou Haizhu District Administration for Market Regulation' \
+    --BusinessAddress 'Commercial Street F5-1, No. 397-72, Middle Xingang Road, Haizhu District, Guangzhou City, China' \
+    --PostCode 510320 \
+    --Manager Tom \
+    --ManagerId 360732199007108888 \
+    --ManagerAddress 'No. 8888, Middle Xingang Road, Haizhu District, Guangzhou City, China' \
+    --ManagerTelephone 020-81167888 \
+    --Email test@tencent.com \
+    --ServiceStartDate 2020-07-29 \
     --ServiceEndDate 2021-07-29
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli asr ModifyCustomizationState --cli-unfold-argument  \
-    --ModelId aa6f402f263f12ea856fc81fbecfd0sd\
+    --ModelId aa6f402f263f12ea856fc81fbecfd0sd \
     --ToState 1
 ```
 

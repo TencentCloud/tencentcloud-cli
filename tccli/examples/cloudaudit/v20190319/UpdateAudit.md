@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cloudaudit UpdateAudit --cli-unfold-argument  \
-    --AuditName xxxxx\
-    --CosBucketName sss\
-    --CosRegion ap-hongkong\
+    --AuditName xxxxx \
+    --CosBucketName sss \
+    --CosRegion ap-hongkong \
     --LogFilePrefix wwwwww
 ```
 

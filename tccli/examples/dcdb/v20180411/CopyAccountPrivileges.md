@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dcdb CopyAccountPrivileges --cli-unfold-argument  \
-    --InstanceId dcdbt-fdpjf5zh\
-    --DstUserName testuser2\
-    --DstHost %\
-    --SrcUserName testuser1\
+    --InstanceId dcdbt-fdpjf5zh \
+    --DstUserName testuser2 \
+    --DstHost % \
+    --SrcUserName testuser1 \
     --SrcHost 172.17.%
 ```
 

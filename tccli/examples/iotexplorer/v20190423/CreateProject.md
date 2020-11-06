@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer CreateProject --cli-unfold-argument  \
-    --ProjectName TestProjectName\
+    --ProjectName TestProjectName \
     --ProjectDesc projcet_desc
 ```
 

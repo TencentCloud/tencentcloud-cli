@@ -1,4 +1,4 @@
-**Example 1: Upgrading TencentDB instance version**
+**Example 1: Upgrading the version of a TencentDB instance**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb UpgradeDBInstanceEngineVersion --cli-unfold-argument  \
-    --InstanceId cdb-8qrg9t04\
+    --InstanceId cdb-8qrg9t04 \
     --EngineVersion 5.7
 ```
 

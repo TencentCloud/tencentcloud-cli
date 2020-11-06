@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli redis ModifyAutoBackupConfig --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p\
-    --TimePeriod 00%3A00-01%3A00\
-    --AutoBackupType 1\
+    --InstanceId crs-5a4py64p \
+    --TimePeriod 00%3A00-01%3A00 \
+    --AutoBackupType 1 \
     --WeekDays Wednesday
 ```
 

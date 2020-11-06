@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyVpnConnectionAttribute --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpnConnectionId vpnx-i0f4fo4m\
+    --Version 2017-03-12 \
+    --VpnConnectionId vpnx-i0f4fo4m \
     --VpnConnectionName new_name
 ```
 

@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli tcaplusdb CreateTables --cli-unfold-argument  \
-    --ClusterId 22762983670\
-    --IdlFiles.0.FileName table_test_2_modify\
-    --IdlFiles.0.FileSize 673\
-    --IdlFiles.0.FileExtType proto\
-    --IdlFiles.0.FileId 46\
-    --IdlFiles.0.FileType PROTO\
-    --SelectedTables.0.TableIdlType PROTO\
-    --SelectedTables.0.ReservedReadQps 80\
-    --SelectedTables.0.ReservedWriteQps 26\
-    --SelectedTables.0.ReservedVolume 1\
-    --SelectedTables.0.TableGroupId 2\
-    --SelectedTables.0.TableName PLAYERONLINECNT\
-    --SelectedTables.0.TableType GENERIC\
+    --ClusterId 22762983670 \
+    --IdlFiles.0.FileName table_test_2_modify \
+    --IdlFiles.0.FileSize 673 \
+    --IdlFiles.0.FileExtType proto \
+    --IdlFiles.0.FileId 46 \
+    --IdlFiles.0.FileType PROTO \
+    --SelectedTables.0.TableIdlType PROTO \
+    --SelectedTables.0.ReservedReadQps 80 \
+    --SelectedTables.0.ReservedWriteQps 26 \
+    --SelectedTables.0.ReservedVolume 1 \
+    --SelectedTables.0.TableGroupId 2 \
+    --SelectedTables.0.TableName PLAYERONLINECNT \
+    --SelectedTables.0.TableType GENERIC \
     --SelectedTables.0.Memo test
 ```
 

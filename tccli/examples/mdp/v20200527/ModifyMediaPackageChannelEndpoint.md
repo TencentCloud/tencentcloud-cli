@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mdp ModifyMediaPackageChannelEndpoint --cli-unfold-argument  \
-    --Id XXX\
-    --Url XXX\
-    --Name XXX\
-    --AuthInfo.WhiteIpList 0.0.0.0/0\
-    --AuthInfo.BlackIpList 0.0.0.0/0\
+    --Id XXX \
+    --Url XXX \
+    --Name XXX \
+    --AuthInfo.WhiteIpList 0.0.0.0/0 \
+    --AuthInfo.BlackIpList 0.0.0.0/0 \
     --AuthInfo.AuthKey XXX
 ```
 

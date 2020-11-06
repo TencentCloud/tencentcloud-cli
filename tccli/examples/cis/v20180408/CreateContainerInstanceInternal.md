@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cis CreateContainerInstanceInternal --cli-unfold-argument  \
-    --Zone ap-chengdu-1\
-    --VpcId vpc-mjmab5g2\
-    --SubnetId subnet-bwyqjag9\
-    --InstanceName cis-dev\
-    --RestartPolicy Never\
-    --Containers.0.Name sshd\
-    --Containers.0.Image jdeathe/centos-ssh:centos-7\
-    --Containers.0.Cpu 0.25\
+    --Zone ap-chengdu-1 \
+    --VpcId vpc-mjmab5g2 \
+    --SubnetId subnet-bwyqjag9 \
+    --InstanceName cis-dev \
+    --RestartPolicy Never \
+    --Containers.0.Name sshd \
+    --Containers.0.Image jdeathe/centos-ssh:centos-7 \
+    --Containers.0.Cpu 0.25 \
     --Containers.0.Memory 0.25
 ```
 

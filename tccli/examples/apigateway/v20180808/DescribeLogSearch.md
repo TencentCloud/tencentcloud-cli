@@ -8,11 +8,11 @@ Input:
 
 ```
 tccli apigateway DescribeLogSearch --cli-unfold-argument  \
-    --StartTime '2020-05-28 22:00:00'\
-    --EndTime '2020-05-28 23:00:00'\
-    --ServiceId service-8xipv0ua\
-    --LogQuerys.0.Name api_id\
-    --LogQuerys.0.Operator \
+    --StartTime '2020-05-28 22:00:00' \
+    --EndTime '2020-05-28 23:00:00' \
+    --ServiceId service-8xipv0ua \
+    --LogQuerys.0.Name api_id \
+    --LogQuerys.0.Operator  \
     --LogQuerys.0.Value api-55rj9ide
 ```
 
@@ -57,9 +57,9 @@ Input:
 
 ```
 tccli apigateway DescribeLogSearch --cli-unfold-argument  \
-    --StartTime '2019-10-10 00:00:00'\
-    --EndTime '2019-10-10 23:59:59'\
-    --ServiceId service-8xipv0ua\
+    --StartTime '2019-10-10 00:00:00' \
+    --EndTime '2019-10-10 23:59:59' \
+    --ServiceId service-8xipv0ua \
     --Limit 101
 ```
 

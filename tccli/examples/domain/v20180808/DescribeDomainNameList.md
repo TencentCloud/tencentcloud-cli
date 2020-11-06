@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeDomainNameList --cli-unfold-argument  \
-    --Offset 0\
+    --Offset 0 \
     --Limit 20
 ```
 

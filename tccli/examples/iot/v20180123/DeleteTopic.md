@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot DeleteTopic --cli-unfold-argument  \
-    --TopicId topic-7gjao342\
+    --TopicId topic-7gjao342 \
     --ProductId iot-4e0wsxpi
 ```
 

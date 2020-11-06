@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tkgdq DescribeRelation --cli-unfold-argument  \
-    --LeftEntityName 广东省\
+    --LeftEntityName 广东省 \
     --RightEntityName 深圳市
 ```
 

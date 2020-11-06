@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DescribeHTTPSListeners --cli-unfold-argument  \
-    --ProxyId link-n9ha8jzl\
-    --Offset 0\
+    --ProxyId link-n9ha8jzl \
+    --Offset 0 \
     --Limit 20
 ```
 

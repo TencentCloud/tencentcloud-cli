@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu DescribeL7HealthConfig --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
+    --Business bgpip \
+    --Id bgpip-000000xe \
     --RuleIdList rule-00000002
 ```
 

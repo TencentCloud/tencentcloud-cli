@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot AddTopic --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
+    --ProductId iot-4e0wsxpi \
     --TopicName new-topic-1
 ```
 

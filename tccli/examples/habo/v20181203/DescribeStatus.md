@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli habo DescribeStatus --cli-unfold-argument  \
-    --Pk authkey\
+    --Pk authkey \
     --Md5 md5_of_sample
 ```
 

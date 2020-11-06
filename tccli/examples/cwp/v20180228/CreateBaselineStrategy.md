@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cwp CreateBaselineStrategy --cli-unfold-argument  \
-    --StrategyName "test"\
-    --ScanCycle 1\
-    --ScanAt "00:00:00"\
-    --CategoryIds [1,2,3]\
-    --IsGlobal 1\
-    --MachineType "CVM"\
-    --RegionCode "ab-bj"\
+    --StrategyName "test" \
+    --ScanCycle 1 \
+    --ScanAt "00:00:00" \
+    --CategoryIds [1,2,3] \
+    --IsGlobal 1 \
+    --MachineType "CVM" \
+    --RegionCode "ab-bj" \
     --Quuids ['quuid1','quuid2']
 ```
 

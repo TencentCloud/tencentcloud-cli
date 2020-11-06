@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli clb CreateRule --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
-    --ListenerId lbl-4fbxq45k\
-    --Rules.0.Domain foo.net\
+    --LoadBalancerId lb-cuxw2rm0 \
+    --ListenerId lbl-4fbxq45k \
+    --Rules.0.Domain foo.net \
     --Rules.0.Url /bar
 ```
 

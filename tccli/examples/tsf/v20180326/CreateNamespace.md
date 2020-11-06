@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf CreateNamespace --cli-unfold-argument  \
-    --ClusterId cluster-xxxxxxx\
+    --ClusterId cluster-xxxxxxx \
     --NamespaceName tsf
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cms DescribeFileSample --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
-    --OrderField CreatedAt\
-    --OrderDirection desc\
-    --Filters.0.Name Label\
+    --Offset 0 \
+    --Limit 20 \
+    --OrderField CreatedAt \
+    --OrderDirection desc \
+    --Filters.0.Name Label \
     --Filters.0.Value 1
 ```
 

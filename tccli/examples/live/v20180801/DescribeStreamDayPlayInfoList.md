@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live DescribeStreamDayPlayInfoList --cli-unfold-argument  \
-    --PlayDomain 5000.livepush.com\
-    --DayTime 2019-02-21\
-    --PageNum 1\
+    --PlayDomain 5000.livepush.com \
+    --DayTime 2019-02-21 \
+    --PageNum 1 \
     --PageSize 1000
 ```
 

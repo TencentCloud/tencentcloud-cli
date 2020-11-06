@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cis InquiryPriceCreateCis --cli-unfold-argument  \
-    --Zone ap-chengdu-1\
-    --Cpu 1.0\
+    --Zone ap-chengdu-1 \
+    --Cpu 1.0 \
     --Memory 1.0
 ```
 

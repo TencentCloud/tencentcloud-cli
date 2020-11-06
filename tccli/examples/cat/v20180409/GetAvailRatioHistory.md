@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cat GetAvailRatioHistory --cli-unfold-argument  \
-    --TaskId 260228\
+    --TaskId 260228 \
     --TimeStamp '2019-12-10 11:27:00'
 ```
 

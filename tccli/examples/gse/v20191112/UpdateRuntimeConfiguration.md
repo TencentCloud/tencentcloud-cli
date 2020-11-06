@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli gse UpdateRuntimeConfiguration --cli-unfold-argument  \
-    --FleetId fleet-pro4eunl-lmpa6tud\
-    --RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds 9\
-    --RuntimeConfiguration.MaxConcurrentGameServerSessionActivations 9\
-    --RuntimeConfiguration.ServerProcesses.0.ConcurrentExecutions 9\
-    --RuntimeConfiguration.ServerProcesses.0.LaunchPath /local/game/GameLiftLinuxServer\
+    --FleetId fleet-pro4eunl-lmpa6tud \
+    --RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds 9 \
+    --RuntimeConfiguration.MaxConcurrentGameServerSessionActivations 9 \
+    --RuntimeConfiguration.ServerProcesses.0.ConcurrentExecutions 9 \
+    --RuntimeConfiguration.ServerProcesses.0.LaunchPath /local/game/GameLiftLinuxServer \
     --RuntimeConfiguration.ServerProcesses.0.Parameters -cconf
 ```
 

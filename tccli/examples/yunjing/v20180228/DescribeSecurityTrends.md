@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli yunjing DescribeSecurityTrends --cli-unfold-argument  \
-    --BeginDate 2020-06-20\
+    --BeginDate 2020-06-20 \
     --EndDate 2020-06-22
 ```
 

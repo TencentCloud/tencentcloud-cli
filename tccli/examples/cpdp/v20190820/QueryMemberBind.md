@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cpdp QueryMemberBind --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --QueryFlag 2\
-    --SubAcctNo 12345678910\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --QueryFlag 2 \
+    --SubAcctNo 12345678910 \
     --PageNum 1
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the character set of TencentDB instance**
+**Example 1: Querying the character set of a TencentDB instance**
 
 
 

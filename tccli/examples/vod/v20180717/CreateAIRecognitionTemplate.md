@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 'Video opening and ending credits recognition task template'\
-    --Comment 'Template 1'\
+    --Name 'Video opening and ending credits recognition task template' \
+    --Comment 'Template 1' \
     --HeadTailConfigure.Switch ON
 ```
 
@@ -29,11 +29,11 @@ Input:
 
 ```
 tccli vod CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 'Intelligent recognition template'\
-    --Comment 'Template 2'\
-    --SegmentConfigure.Switch ON\
-    --FaceConfigure.Switch ON\
-    --FaceConfigure.FaceLibrary Default\
+    --Name 'Intelligent recognition template' \
+    --Comment 'Template 2' \
+    --SegmentConfigure.Switch ON \
+    --FaceConfigure.Switch ON \
+    --FaceConfigure.FaceLibrary Default \
     --FaceConfigure.Score 90
 ```
 
@@ -55,11 +55,11 @@ Input:
 
 ```
 tccli vod CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 'Intelligent recognition template'\
-    --Comment 'Template 3'\
-    --SegmentConfigure.Switch ON\
-    --FaceConfigure.Switch ON\
-    --FaceConfigure.FaceLibrary All\
+    --Name 'Intelligent recognition template' \
+    --Comment 'Template 3' \
+    --SegmentConfigure.Switch ON \
+    --FaceConfigure.Switch ON \
+    --FaceConfigure.FaceLibrary All \
     --ScreenshotInterval 1.0
 ```
 

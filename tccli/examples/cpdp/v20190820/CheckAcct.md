@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cpdp CheckAcct --cli-unfold-argument  \
-    --MidasAppId your_midas_app_id\
-    --SubAppId your_sub_app_id\
-    --BindType 1\
-    --SettleAcctNo encrypted_settle_account_no\
-    --CurrencyType RMB\
-    --CurrencyUnit 1\
-    --CurrencyAmt 10000\
-    --MidasSecretId your_midas_secret_id\
+    --MidasAppId your_midas_app_id \
+    --SubAppId your_sub_app_id \
+    --BindType 1 \
+    --SettleAcctNo encrypted_settle_account_no \
+    --CurrencyType RMB \
+    --CurrencyUnit 1 \
+    --CurrencyAmt 10000 \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature 
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl ApplyCertificate --cli-unfold-argument  \
-    --DomainName wgc.red\
+    --DomainName wgc.red \
     --DvAuthMethod DNS_AUTO
 ```
 

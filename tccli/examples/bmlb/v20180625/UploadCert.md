@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmlb UploadCert --cli-unfold-argument  \
-    --Alias testcert\
-    --CertType CA\
+    --Alias testcert \
+    --CertType CA \
     --Cert '-----BEGIN CERTIFICATE-----
 MIIDuzCCAqOgAwIBAgIJAKrX3OSLXthzMA0GCSqGSIb3DQEBBQUAMHQxCzAJBgNV
 BAYTAkNOMQswCQYDVQQIDAJHRDELMAkGA1UEBwwCU1oxDjAMBgNVBAoMBXZpaG9v
@@ -28,7 +28,7 @@ g+s95sy4RUg6pGMhK33XWQXRt3yxN58lfsD5oArR6Q5L1ovUlm2iHFAso51Esb9i
 8nSHd45fTWF8rcaPI+RDaFrNrL1FmqG5G9jFF9GaAlT1xnVX0iPzkFmL6ADdpt+K
 NX3qaukSg7IwMzofTsbjvL4JVAfedVHRu0Q1b9Bdy7qhiNw3u1j3Y/t/AvNX6qeB
 ZMSvYrwAT72wksqWW2RrnQu9Q3fnpP/jnotincr1wAfJ6eV7w8k9sYAopltsBx8s
-nZMb0Id6pHDFTl1Vafq89fi8ZF3LzsPLYDS5R9fyvpBeKTH31ZE5kTb+ZWChtZ0'\
+nZMb0Id6pHDFTl1Vafq89fi8ZF3LzsPLYDS5R9fyvpBeKTH31ZE5kTb+ZWChtZ0' \
     --Key '-----BEGIN RSA PRIVATE KEY-----
 Proc-Type: 4,ENCRYPTED
 DEK-Info: AES-256-CBC,3028819CEC6495EF2859549E0E9385EF

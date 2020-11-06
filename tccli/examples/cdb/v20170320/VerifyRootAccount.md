@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb VerifyRootAccount --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
+    --InstanceId cdb-f35wr6wj \
     --Password sxxxxxx
 ```
 

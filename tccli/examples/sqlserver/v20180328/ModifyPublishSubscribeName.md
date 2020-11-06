@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver ModifyPublishSubscribeName --cli-unfold-argument  \
-    --PublishSubscribeId 5\
+    --PublishSubscribeId 5 \
     --PublishSubscribeName Change_name
 ```
 

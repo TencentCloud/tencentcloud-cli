@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli gse UpdateFleetAttributes --cli-unfold-argument  \
-    --FleetId fleet-pro4eunl-lmpa6tud\
-    --Description Modifyfleetattr1\
-    --Name mod1\
-    --NewGameSessionProtectionPolicy FullProtection\
-    --ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator 9\
+    --FleetId fleet-pro4eunl-lmpa6tud \
+    --Description Modifyfleetattr1 \
+    --Name mod1 \
+    --NewGameSessionProtectionPolicy FullProtection \
+    --ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator 9 \
     --ResourceCreationLimitPolicy.PolicyPeriodInMinutes 9
 ```
 

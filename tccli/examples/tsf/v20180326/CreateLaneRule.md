@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tsf CreateLaneRule --cli-unfold-argument  \
-    --RuleName 111\
-    --Remark 111\
-    --RuleTagList.0.TagName 11\
-    --RuleTagList.0.TagOperator EQUAL\
-    --RuleTagList.0.TagValue 111\
-    --RuleTagRelationship RELEATION_AND\
+    --RuleName 111 \
+    --Remark 111 \
+    --RuleTagList.0.TagName 11 \
+    --RuleTagList.0.TagOperator EQUAL \
+    --RuleTagList.0.TagValue 111 \
+    --RuleTagRelationship RELEATION_AND \
     --LaneId lane-6ymrl42a
 ```
 

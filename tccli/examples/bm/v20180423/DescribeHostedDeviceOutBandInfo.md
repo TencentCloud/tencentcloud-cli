@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bm DescribeHostedDeviceOutBandInfo --cli-unfold-argument  \
-    --ZoneId ap-shanghai-bls-2\
+    --ZoneId ap-shanghai-bls-2 \
     --InstanceIds chm-xxx0 chm-xxx1
 ```
 

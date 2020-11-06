@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mariadb CreateAccount --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
-    --UserName testuser1\
-    --Host 172.17.%\
-    --Password 1234qweri#\
+    --InstanceId tdsql-fdpjf5zh \
+    --UserName testuser1 \
+    --Host 172.17.% \
+    --Password 1234qweri# \
     --Description 'Test account'
 ```
 

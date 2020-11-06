@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tione UpdateNotebookInstance --cli-unfold-argument  \
-    --NotebookInstanceName apitest\
-    --RoleArn role_name\
-    --RootAccess Enabled\
-    --VolumeSizeInGB 20\
+    --NotebookInstanceName apitest \
+    --RoleArn role_name \
+    --RootAccess Enabled \
+    --VolumeSizeInGB 20 \
     --LifecycleScriptsName aaa
 ```
 

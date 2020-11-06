@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ticm ImageModeration --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
-    --Config \
+    --ImageUrl https://xx/a.jpg \
+    --Config  \
     --Scenes PORN POLITICS TERRORISM
 ```
 
@@ -70,8 +70,8 @@ Input:
 
 ```
 tccli ticm ImageModeration --cli-unfold-argument  \
-    --ImageUrl https://porn.jpg\
-    --Config \
+    --ImageUrl https://porn.jpg \
+    --Config  \
     --Scenes PORN
 ```
 
@@ -104,8 +104,8 @@ Input:
 
 ```
 tccli ticm ImageModeration --cli-unfold-argument  \
-    --ImageUrl https://porn.jpg\
-    --Config \
+    --ImageUrl https://porn.jpg \
+    --Config  \
     --Scenes PORN
 ```
 
@@ -138,8 +138,8 @@ Input:
 
 ```
 tccli ticm ImageModeration --cli-unfold-argument  \
-    --ImageUrl https://fack.jpg\
-    --Config \
+    --ImageUrl https://fack.jpg \
+    --Config  \
     --Scenes PORN TERRORISM
 ```
 
@@ -180,8 +180,8 @@ Input:
 
 ```
 tccli ticm ImageModeration --cli-unfold-argument  \
-    --ImageUrl https://error.jpg\
-    --Config \
+    --ImageUrl https://error.jpg \
+    --Config  \
     --Scenes PORN POLITICS TERRORISM
 ```
 

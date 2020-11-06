@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm DescribeSubnets --cli-unfold-argument  \
-    --Filters.0.Name subnet-id\
-    --Filters.0.Values subnet-ae71tjp6\
+    --Filters.0.Name subnet-id \
+    --Filters.0.Values subnet-ae71tjp6 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

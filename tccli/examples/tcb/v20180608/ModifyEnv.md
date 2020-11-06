@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb ModifyEnv --cli-unfold-argument  \
-    --EnvId test-23\
+    --EnvId test-23 \
     --Alias iAmNickName
 ```
 

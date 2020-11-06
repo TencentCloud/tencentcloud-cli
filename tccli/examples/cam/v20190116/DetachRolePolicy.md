@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam DetachRolePolicy --cli-unfold-argument  \
-    --PolicyId 1\
+    --PolicyId 1 \
     --DetachRoleId 4611686018427397905
 ```
 

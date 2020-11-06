@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tci SubmitCheckAttendanceTask --cli-unfold-argument  \
-    --FileType vod_url\
-    --FileContent http://xxx.mp4\
-    --StartTime 0\
-    --EndTime 0\
-    --LibraryIds library_id\
+    --FileType vod_url \
+    --FileContent http://xxx.mp4 \
+    --StartTime 0 \
+    --EndTime 0 \
+    --LibraryIds library_id \
     --PersonIdSet person_id0
 ```
 

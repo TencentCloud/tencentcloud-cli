@@ -1,4 +1,4 @@
-**Example 1: Querying maintenance window**
+**Example 1: Querying a maintenance time window**
 
 
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vod CreateSnapshotByTimeOffsetTemplate --cli-unfold-argument  \
-    --Name 'Time point screencapturing template 1'\
-    --Width 540\
-    --Height 960\
+    --Name 'Time point screencapturing template 1' \
+    --Width 540 \
+    --Height 960 \
     --Format jpg
 ```
 

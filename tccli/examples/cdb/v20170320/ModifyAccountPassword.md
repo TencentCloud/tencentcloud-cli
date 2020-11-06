@@ -1,4 +1,4 @@
-**Example 1: Modifying TencentDB instance account password**
+**Example 1: Modifying the password of a TencentDB instance account**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb ModifyAccountPassword --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
-    --Accounts.0.user ajnnw\
-    --NewPassword Gx18ux23F^X\
+    --InstanceId cdb-f35wr6wj \
+    --Accounts.0.user ajnnw \
+    --NewPassword Gx18ux23F^X \
     --Accounts.0.host 127.0.0.1
 ```
 

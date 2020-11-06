@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iotcloud CreateProduct --cli-unfold-argument  \
-    --ProductName fruit\
-    --ProductProperties.ProductDescription test\
-    --ProductProperties.EncryptionType 1\
-    --ProductProperties.Region gz\
-    --ProductProperties.ProductType 0\
+    --ProductName fruit \
+    --ProductProperties.ProductDescription test \
+    --ProductProperties.EncryptionType 1 \
+    --ProductProperties.Region gz \
+    --ProductProperties.ProductType 0 \
     --ProductProperties.Format json
 ```
 

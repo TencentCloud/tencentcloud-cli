@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tbaas GetLatesdTransactionList --cli-unfold-argument  \
-    --Module transaction\
-    --Operation latest_transaction_list\
-    --GroupId 0\
-    --ChannelId 0\
-    --LatestBlockNumber 5\
-    --GroupName liulanOrg\
-    --ChannelName kylotst\
-    --ClusterId 251005746bc0f03q8u93j\
-    --Offset 0\
+    --Module transaction \
+    --Operation latest_transaction_list \
+    --GroupId 0 \
+    --ChannelId 0 \
+    --LatestBlockNumber 5 \
+    --GroupName liulanOrg \
+    --ChannelName kylotst \
+    --ClusterId 251005746bc0f03q8u93j \
+    --Offset 0 \
     --Limit 10
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iotcloud CreateTask --cli-unfold-argument  \
-    --TaskType UpdateShadow\
-    --ProductId ABCDE12345\
-    --DeviceNameFilter \
-    --ScheduleTimeInSeconds 0\
-    --MaxExecutionTimeInSeconds \
+    --TaskType UpdateShadow \
+    --ProductId ABCDE12345 \
+    --DeviceNameFilter  \
+    --ScheduleTimeInSeconds 0 \
+    --MaxExecutionTimeInSeconds  \
     --Tasks.UpdateShadowTask.Desired {\"color\":\"red\"}
 ```
 

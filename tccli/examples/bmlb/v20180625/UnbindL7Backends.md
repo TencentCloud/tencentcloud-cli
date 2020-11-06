@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli bmlb UnbindL7Backends --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
-    --ListenerId lbl-l6fzjsx5\
-    --DomainId dm-hg8j52ud\
-    --LocationId loc-02ywyc8b\
-    --BindType 0\
-    --BackendSet.0.Port 99\
+    --LoadBalancerId lb-47gazeml \
+    --ListenerId lbl-l6fzjsx5 \
+    --DomainId dm-hg8j52ud \
+    --LocationId loc-02ywyc8b \
+    --BindType 0 \
+    --BackendSet.0.Port 99 \
     --BackendSet.0.InstanceId tcpm-px13l9jh
 ```
 

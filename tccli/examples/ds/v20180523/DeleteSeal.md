@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ds DeleteSeal --cli-unfold-argument  \
-    --Module SealMng\
-    --Operation DeleteSeal\
-    --AccountResId dcu-c33udl4apd\
+    --Module SealMng \
+    --Operation DeleteSeal \
+    --AccountResId dcu-c33udl4apd \
     --SealResId dcs-hr6tc1vtir
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver ResetAccountPassword --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
-    --Accounts.0.UserName test_user_4\
+    --InstanceId mssql-njj2mtpl \
+    --Accounts.0.UserName test_user_4 \
     --Accounts.0.Password 1234qwer()
 ```
 

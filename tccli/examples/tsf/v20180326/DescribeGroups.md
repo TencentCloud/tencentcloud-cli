@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribeGroups --cli-unfold-argument  \
-    --ApplicationId application-xxxxxxx\
-    --Offset 0\
+    --ApplicationId application-xxxxxxx \
+    --Offset 0 \
     --Limit 10
 ```
 

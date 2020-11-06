@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dayu DescribeTransmitStatis --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000x7\
-    --Period 300\
-    --StartTime '2018-08-28 07:15:00'\
-    --EndTime '2018-08-28 10:05:00'\
+    --Business bgpip \
+    --Id bgpip-000000x7 \
+    --Period 300 \
+    --StartTime '2018-08-28 07:15:00' \
+    --EndTime '2018-08-28 10:05:00' \
     --MetricName traffic
 ```
 

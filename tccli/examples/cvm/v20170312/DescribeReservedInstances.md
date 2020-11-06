@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm DescribeReservedInstances --cli-unfold-argument  \
-    --Filters.0.Name zone\
-    --Filters.0.Values ap-guangzhou-1\
+    --Filters.0.Name zone \
+    --Filters.0.Values ap-guangzhou-1 \
     --Limit 1
 ```
 

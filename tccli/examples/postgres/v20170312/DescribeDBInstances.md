@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres DescribeDBInstances --cli-unfold-argument  \
-    --Limit 10\
+    --Limit 10 \
     --Offset 0
 ```
 
@@ -112,9 +112,9 @@ Input:
 
 ```
 tccli postgres DescribeDBInstances --cli-unfold-argument  \
-    --Limit 10\
-    --Offset 0\
-    --Filters.0.Name db-instance-id\
+    --Limit 10 \
+    --Offset 0 \
+    --Filters.0.Name db-instance-id \
     --Filters.0.Values postgres-6bwgamo3
 ```
 

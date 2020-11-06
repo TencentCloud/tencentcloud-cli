@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl ModifyCertificateAlias --cli-unfold-argument  \
-    --CertificateId abcb1234\
+    --CertificateId abcb1234 \
     --Alias others
 ```
 

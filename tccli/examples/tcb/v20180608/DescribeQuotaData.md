@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb DescribeQuotaData --cli-unfold-argument  \
-    --EnvId test-23\
+    --EnvId test-23 \
     --MetricName DbWritepkg
 ```
 

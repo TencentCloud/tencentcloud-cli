@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka CreateTopicIpWhiteList --cli-unfold-argument  \
-    --InstanceId xxxx\
-    --TopicName xxx\
+    --InstanceId xxxx \
+    --TopicName xxx \
     --IpWhiteList.n xxx
 ```
 

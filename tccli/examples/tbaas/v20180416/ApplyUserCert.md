@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tbaas ApplyUserCert --cli-unfold-argument  \
-    --Module cert_mng\
-    --Operation cert_apply_for_user\
-    --ClusterId 251005746bckuobc41mpu\
-    --GroupName youtuOrg\
-    --UserIdentity kyloz\
-    --Applicant 优图SDK\
-    --IdentityNum 123\
+    --Module cert_mng \
+    --Operation cert_apply_for_user \
+    --ClusterId 251005746bckuobc41mpu \
+    --GroupName youtuOrg \
+    --UserIdentity kyloz \
+    --Applicant 优图SDK \
+    --IdentityNum 123 \
     --CsrData -----BEGINCERTIFICATEREQUEST-----
 MIIBSTCB8AIBADCBjTELMAkGA1UEBhMCQ04xEjAQBgNVBAgMCUd1YW5nWmhvdTER
 MA8GA1UEBwwIU2hlblpoZW4xFDASBgNVBAoMC2V4YW1wbGUuY29tMQ8wDQYDVQQL
@@ -21,7 +21,7 @@ eXBlPWNsaWVudDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABMIrWeLZjivbTLwy
 z+JMfmZjPEJ8x4H8a/CnqBIwcCaJjg5cMqOi+VyFHkCM9Sv4MFOqPAK7rE62m9XF
 s4B8hfKgADAKBggqhkjOPQQDAgNIADBFAiEAtl/h0DHfRJl170U6OGpCkN34jX0a
 GGGSHbFu2KxLUHsCIAFxXa6UsQOf93vT0FQldeBodbVCbNhM8/jtVqfZ/lhB
------ENDCERTIFICATEREQUEST-----\
+-----ENDCERTIFICATEREQUEST----- \
     --Notes test
 ```
 

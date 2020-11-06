@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli sqlserver DescribePublishSubscribe --cli-unfold-argument  \
-    --InstanceId mssql-12klhrx2c\
-    --PubOrSubInstanceId mssql-hh598yjo\
-    --PubOrSubInstanceIp 10.0.1.27\
-    --PublishSubscribeId 5\
-    --PublishSubscribeName Change_name\
-    --Offset 0\
+    --InstanceId mssql-12klhrx2c \
+    --PubOrSubInstanceId mssql-hh598yjo \
+    --PubOrSubInstanceIp 10.0.1.27 \
+    --PublishSubscribeId 5 \
+    --PublishSubscribeName Change_name \
+    --Offset 0 \
     --Limit 10
 ```
 

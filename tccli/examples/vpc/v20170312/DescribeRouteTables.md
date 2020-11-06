@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli vpc DescribeRouteTables --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 1\
-    --Filters.0.Name route-table-id\
-    --Filters.0.Values rtb-l2h8d7c2\
-    --Filters.1.Name vpc-id\
-    --Filters.1.Values vpc-2at5y1pn\
-    --Filters.2.Name route-table-name\
-    --Filters.2.Values TestRouteTable\
-    --Filters.3.Name association.main\
+    --Offset 0 \
+    --Limit 1 \
+    --Filters.0.Name route-table-id \
+    --Filters.0.Values rtb-l2h8d7c2 \
+    --Filters.1.Name vpc-id \
+    --Filters.1.Values vpc-2at5y1pn \
+    --Filters.2.Name route-table-name \
+    --Filters.2.Values TestRouteTable \
+    --Filters.3.Name association.main \
     --Filters.3.Values true
 ```
 
@@ -88,9 +88,9 @@ Input:
 
 ```
 tccli vpc DescribeRouteTables --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 1\
-    --Filters.0.Name tag:city\
+    --Offset 0 \
+    --Limit 1 \
+    --Filters.0.Name tag:city \
     --Filters.0.Values shanghai
 ```
 

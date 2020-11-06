@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideo UpgradeDevice --cli-unfold-argument  \
-    --Tid *********\
-    --OtaVersion 1.0.1\
+    --Tid ********* \
+    --OtaVersion 1.0.1 \
     --UpgradeNow true
 ```
 

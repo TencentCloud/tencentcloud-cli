@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DeleteSubnet --cli-unfold-argument  \
-    --SubnetId subnet-jxa0xg1o\
+    --SubnetId subnet-jxa0xg1o \
     --EcmRegion ap-hangzhou-ecm
 ```
 

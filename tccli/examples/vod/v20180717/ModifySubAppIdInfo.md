@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod ModifySubAppIdInfo --cli-unfold-argument  \
-    --SubAppId 1400000001\
-    --Name 'Updated subapplication name'\
+    --SubAppId 1400000001 \
+    --Name 'Updated subapplication name' \
     --Description 'Updated subapplication overview'
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487\
+    --FileId 5285485487985271487 \
     --AiAnalysisTask.Definition 10
 ```
 
@@ -28,9 +28,9 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487\
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20\
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30\
+    --FileId 5285485487985271487 \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
     --MediaProcessTask.TranscodeTaskSet.2.Definition 40
 ```
 
@@ -52,7 +52,7 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487\
+    --FileId 5285485487985271487 \
     --AiRecognitionTask.Definition 10
 ```
 
@@ -74,10 +74,10 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487\
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20\
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30\
-    --MediaProcessTask.TranscodeTaskSet.2.Definition 40\
+    --FileId 5285485487985271487 \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
     --MediaProcessTask.SampleSnapshotTaskSet.0.Definition 10
 ```
 
@@ -99,12 +99,12 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487\
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20\
-    --MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.Definition 15780\
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30\
-    --MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.Definition 15780\
-    --MediaProcessTask.TranscodeTaskSet.2.Definition 40\
+    --FileId 5285485487985271487 \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
     --MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.Definition 15780
 ```
 
@@ -126,7 +126,7 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487\
+    --FileId 5285485487985271487 \
     --AiContentReviewTask.Definition 10
 ```
 

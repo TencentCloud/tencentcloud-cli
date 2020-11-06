@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmlb ReplaceCert --cli-unfold-argument  \
-    --OldCertId P2c7Itwq\
-    --NewAlias testcert\
+    --OldCertId P2c7Itwq \
+    --NewAlias testcert \
     --NewCert '-----BEGIN CERTIFICATE-----
 MIICkDCCAfmgAwIBAgIJAMyfHMSumvQVMA0GCSqGSIb3DQEBBQUAMGExCzAJBgNV
 BAYTAjExMQswCQYDVQQIDAIxMTELMAkGA1UEBwwCMTExCzAJBgNVBAoMAjExMQsw
@@ -23,7 +23,7 @@ UDBOMB0GA1UdDgQWBBRz33I/bLZd8C9/qhn4+cMFVUgWEDAfBgNVHSMEGDAWgBRz
 A4GBAAP+y8hlQ9x4pA0qCJi5//0GPMdY+CyB2pRSiiDFkYpF9GPN3KXe52VsS72z
 cVyh+k06PhRmMc5SObppUVR9Z5dP95nuhLW+wT4dQmyJlX10o0MHl3a2gzueHkst
 0YWNHaStjR174Qx1j2L9tgyyXEcvvSZgicMzERqAsZASQ6+J
------END CERTIFICATE-----'\
+-----END CERTIFICATE-----' \
     --DeleteOld 1
 ```
 

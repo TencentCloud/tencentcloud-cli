@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke AddExistedInstances --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx\
+    --ClusterId cls-xxxxxx \
     --InstanceIds ins-xxxxx
 ```
 

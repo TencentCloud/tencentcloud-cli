@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli live ModifyLiveCert --cli-unfold-argument  \
-    --CertId 1000\
-    --CertType 1\
-    --CertName name-crt\
-    --HttpsCrt XXXXX\
-    --HttpsKey YYYYYY\
+    --CertId 1000 \
+    --CertType 1 \
+    --CertName name-crt \
+    --HttpsCrt XXXXX \
+    --HttpsKey YYYYYY \
     --Description detail
 ```
 

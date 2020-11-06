@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli asr UpdateAsrVocab --cli-unfold-argument  \
-    --VocabId aa6f402f263f12ea856fc81fbecfd0sd\
-    --Name 新的词表名称\
+    --VocabId aa6f402f263f12ea856fc81fbecfd0sd \
+    --Name 新的词表名称 \
     --Description 新的词表描述
 ```
 

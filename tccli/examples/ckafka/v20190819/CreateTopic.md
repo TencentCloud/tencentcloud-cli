@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka CreateTopic --cli-unfold-argument  \
-    --InstanceId xxx\
-    --TopicName xxx\
-    --PartitionNum 1\
+    --InstanceId xxx \
+    --TopicName xxx \
+    --PartitionNum 1 \
     --ReplicaNum 2
 ```
 

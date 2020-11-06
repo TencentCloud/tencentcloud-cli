@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli chdfs CreateMountPoint --cli-unfold-argument  \
-    --MountPointName test\
-    --FileSystemId f4mnvilzmdd\
-    --AccessGroupId ag-fmfpk1hk\
-    --VpcId vpc-967aipkx\
-    --VpcType 1\
+    --MountPointName test \
+    --FileSystemId f4mnvilzmdd \
+    --AccessGroupId ag-fmfpk1hk \
+    --VpcId vpc-967aipkx \
+    --VpcType 1 \
     --MountPointStatus 1
 ```
 

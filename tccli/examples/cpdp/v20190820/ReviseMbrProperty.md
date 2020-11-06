@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp ReviseMbrProperty --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --SubAcctNo 1234000000001008\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --SubAcctNo 1234000000001008 \
     --MemberProperty SH
 ```
 

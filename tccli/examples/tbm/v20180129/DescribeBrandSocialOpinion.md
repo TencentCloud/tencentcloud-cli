@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tbm DescribeBrandSocialOpinion --cli-unfold-argument  \
-    --BrandId qijGLCi6bE0weVWgO7fjvfo4Wvo9kfzujw%3D%3D\
-    --StartDate 2018-02-01\
-    --EndDate 2018-02-10\
-    --Offset 0\
+    --BrandId qijGLCi6bE0weVWgO7fjvfo4Wvo9kfzujw%3D%3D \
+    --StartDate 2018-02-01 \
+    --EndDate 2018-02-10 \
+    --Offset 0 \
     --Limit 1
 ```
 

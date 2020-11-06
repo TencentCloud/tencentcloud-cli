@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli yunjing EditTags --cli-unfold-argument  \
-    --Id 1\
-    --Name 'tag name'\
+    --Id 1 \
+    --Name 'tag name' \
     --Quuids id1
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf RemoveInstances --cli-unfold-argument  \
-    --ClusterId cluster-xxxxxxx\
+    --ClusterId cluster-xxxxxxx \
     --InstanceIdList ins-xxxxxxxx ins-xxxxxxx
 ```
 

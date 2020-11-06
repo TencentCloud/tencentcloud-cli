@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribePodInstances --cli-unfold-argument  \
-    --GroupId group-6a73w4v5\
-    --Offset 0\
+    --GroupId group-6a73w4v5 \
+    --Offset 0 \
     --Limit 20
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cpdp DownloadBill --cli-unfold-argument  \
-    --StateDate 20191202\
-    --MidasAppId test_midas_app_id\
-    --MidasSecretId your_midas_secret_id\
+    --StateDate 20191202 \
+    --MidasAppId test_midas_app_id \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

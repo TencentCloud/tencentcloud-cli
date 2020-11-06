@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb DescribeDBLogFiles --cli-unfold-argument  \
-    --InstanceId tdsql-ow728lmc\
+    --InstanceId tdsql-ow728lmc \
     --Type 1
 ```
 

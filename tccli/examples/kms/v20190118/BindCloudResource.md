@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli kms BindCloudResource --cli-unfold-argument  \
-    --KeyId 23e80852-1e38-11e9-b129-5cb9019b4b01\
-    --ProductId ssm\
+    --KeyId 23e80852-1e38-11e9-b129-5cb9019b4b01 \
+    --ProductId ssm \
     --ResourceId resourceId
 ```
 

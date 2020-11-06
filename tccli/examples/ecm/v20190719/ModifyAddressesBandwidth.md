@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm ModifyAddressesBandwidth --cli-unfold-argument  \
-    --InternetMaxBandwidthOut 1000\
-    --AddressIds eip-11112222\
+    --InternetMaxBandwidthOut 1000 \
+    --AddressIds eip-11112222 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

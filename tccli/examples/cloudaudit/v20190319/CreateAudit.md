@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cloudaudit CreateAudit --cli-unfold-argument  \
-    --AuditName auditTest_1\
-    --CmqQueueName cmq-01\
-    --CmqRegion sh\
-    --CosBucketName cos-01\
-    --CosRegion ap-shanghai\
-    --IsCreateNewBucket 1\
-    --IsCreateNewQueue 1\
-    --IsEnableCmqNotify 1\
-    --LogFilePrefix akshsb1j\
+    --AuditName auditTest_1 \
+    --CmqQueueName cmq-01 \
+    --CmqRegion sh \
+    --CosBucketName cos-01 \
+    --CosRegion ap-shanghai \
+    --IsCreateNewBucket 1 \
+    --IsCreateNewQueue 1 \
+    --IsEnableCmqNotify 1 \
+    --LogFilePrefix akshsb1j \
     --ReadWriteAttribute 2
 ```
 

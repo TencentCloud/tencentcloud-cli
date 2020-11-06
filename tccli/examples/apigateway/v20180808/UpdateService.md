@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli apigateway UpdateService --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
-    --EnvironmentName test\
-    --VersionName 202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215\
+    --ServiceId service-ody35h5e \
+    --EnvironmentName test \
+    --VersionName 202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215 \
     --UpdateDesc test
 ```
 

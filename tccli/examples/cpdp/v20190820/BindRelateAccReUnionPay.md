@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cpdp BindRelateAccReUnionPay --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --TranNetMemberCode YAPI100015\
-    --MemberAcctNo ' 6230515000261997142'\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --TranNetMemberCode YAPI100015 \
+    --MemberAcctNo ' 6230515000261997142' \
     --MessageCheckCode 000000
 ```
 

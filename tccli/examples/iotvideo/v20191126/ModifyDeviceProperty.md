@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideo ModifyDeviceProperty --cli-unfold-argument  \
-    --Tid ********\
-    --Wakeup true\
-    --Branch ProWritable.presetPosSetting.setVal.pos1.x\
-    --Value 10\
+    --Tid ******** \
+    --Wakeup true \
+    --Branch ProWritable.presetPosSetting.setVal.pos1.x \
+    --Value 10 \
     --IsNum true
 ```
 

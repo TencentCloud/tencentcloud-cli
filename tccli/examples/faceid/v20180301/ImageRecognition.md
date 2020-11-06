@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli faceid ImageRecognition --cli-unfold-argument  \
-    --IdCard 11204416541220243X\
-    --Name 韦小宝\
+    --IdCard 11204416541220243X \
+    --Name 韦小宝 \
     --ImageBase64 <ImageBase64>
 ```
 

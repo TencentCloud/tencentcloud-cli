@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli live DescribeLiveStreamEventList --cli-unfold-argument  \
-    --DomainName yourdomain.test.com\
-    --AppName live\
-    --StreamName stream\
-    --StartTime 2019-01-04T12:00:00Z\
-    --EndTime 2019-01-04T20:00:00Z\
-    --PageNum 1\
-    --PageSize 10\
-    --IsFilter 1\
-    --IsStrict 0\
+    --DomainName yourdomain.test.com \
+    --AppName live \
+    --StreamName stream \
+    --StartTime 2019-01-04T12:00:00Z \
+    --EndTime 2019-01-04T20:00:00Z \
+    --PageNum 1 \
+    --PageSize 10 \
+    --IsFilter 1 \
+    --IsStrict 0 \
     --IsAsc 0
 ```
 

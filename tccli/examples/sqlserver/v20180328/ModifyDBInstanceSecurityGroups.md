@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver ModifyDBInstanceSecurityGroups --cli-unfold-argument  \
-    --InstanceId mssql-6f4ddx2f\
+    --InstanceId mssql-6f4ddx2f \
     --SecurityGroupIdSet sg-igw86yth
 ```
 

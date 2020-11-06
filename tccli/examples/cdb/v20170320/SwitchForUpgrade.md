@@ -1,4 +1,4 @@
-**Example 1: Switching access to new instance**
+**Example 1: Switching to a new instance**
 
 
 

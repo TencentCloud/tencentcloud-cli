@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud CreateMultiDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345\
+    --ProductId ABCDE12345 \
     --DeviceNames aaa bbb ccc
 ```
 

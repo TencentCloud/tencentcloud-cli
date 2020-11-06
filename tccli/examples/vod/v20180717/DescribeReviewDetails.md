@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeReviewDetails --cli-unfold-argument  \
-    --StartTime 2018-12-01T16:00:00Z\
+    --StartTime 2018-12-01T16:00:00Z \
     --EndTime 2018-12-03T16:00:00Z
 ```
 

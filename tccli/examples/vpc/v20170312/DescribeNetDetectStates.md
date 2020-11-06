@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DescribeNetDetectStates --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --NetDetectIds netd-12345678
 ```
 

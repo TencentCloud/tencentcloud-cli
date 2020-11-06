@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ecm BatchRegisterTargets --cli-unfold-argument  \
-    --LoadBalancerId lb-xxxx\
-    --Targets.0.ListenerId lbl-xxxx\
-    --Targets.0.InstanceId ein-xxx\
-    --Targets.0.Port 80\
+    --LoadBalancerId lb-xxxx \
+    --Targets.0.ListenerId lbl-xxxx \
+    --Targets.0.InstanceId ein-xxx \
+    --Targets.0.Port 80 \
     --Targets.0.Weight 10
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf CreatePublicConfig --cli-unfold-argument  \
-    --ConfigName testconfig\
-    --ConfigVersion 1.3\
+    --ConfigName testconfig \
+    --ConfigVersion 1.3 \
     --ConfigValue tsf.inventory.password.encrypt2:%20ENC(3M7wGw2XtFc5Y+rxOgNBLrm2spUtgodjIxa+7F3XcAo
 ```
 

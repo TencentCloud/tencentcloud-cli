@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tdmq DescribeProducers --cli-unfold-argument  \
-    --EnvironmentId default\
-    --TopicName U_TOPIC_nfa_game_push_retry_kb\
-    --Offset 0\
+    --EnvironmentId default \
+    --TopicName U_TOPIC_nfa_game_push_retry_kb \
+    --Offset 0 \
     --Limit 10
 ```
 

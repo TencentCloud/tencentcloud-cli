@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bm DescribeDevicePosition --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
-    --VpcId vpc-3c7b2102\
+    --Offset 0 \
+    --Limit 20 \
+    --VpcId vpc-3c7b2102 \
     --SubnetId subnet-6igdzaix
 ```
 

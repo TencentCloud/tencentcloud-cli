@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DeleteRepository --cli-unfold-argument  \
-    --RegistryId tcr-okmj78\
-    --NamespaceName test\
+    --RegistryId tcr-okmj78 \
+    --NamespaceName test \
     --RepositoryName mytest
 ```
 

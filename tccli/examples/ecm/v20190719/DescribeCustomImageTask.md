@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DescribeCustomImageTask --cli-unfold-argument  \
-    --Filters.0.Name task-id\
+    --Filters.0.Name task-id \
     --Filters.0.Values 21
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dts ModifySubscribeVipVport --cli-unfold-argument  \
-    --SubscribeId subs-ieuwi83j2e\
-    --DstVip 192.168.0.1\
+    --SubscribeId subs-ieuwi83j2e \
+    --DstVip 192.168.0.1 \
     --DstPort 7575
 ```
 

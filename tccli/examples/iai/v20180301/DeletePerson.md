@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai DeletePerson --cli-unfold-argument  \
-    --PersonId 2001\
+    --PersonId 2001 \
     --Version 2018-03-01
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli iai DeletePerson --cli-unfold-argument  \
-    --PersonId 3001\
+    --PersonId 3001 \
     --Version 2018-03-01
 ```
 

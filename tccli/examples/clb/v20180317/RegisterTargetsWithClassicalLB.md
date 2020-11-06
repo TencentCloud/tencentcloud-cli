@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb RegisterTargetsWithClassicalLB --cli-unfold-argument  \
-    --LoadBalancerId lb-a3u5l5zc\
-    --Targets.0.InstanceId ins-lhhn9fhk\
+    --LoadBalancerId lb-a3u5l5zc \
+    --Targets.0.InstanceId ins-lhhn9fhk \
     --Targets.0.Weight 20
 ```
 

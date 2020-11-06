@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dts SwitchDrToMaster --cli-unfold-argument  \
-    --DatabaseType mysql\
-    --DstInfo.Region ap-shanghai\
+    --DatabaseType mysql \
+    --DstInfo.Region ap-shanghai \
     --DstInfo.InstanceId cdb-mdgezf4d
 ```
 

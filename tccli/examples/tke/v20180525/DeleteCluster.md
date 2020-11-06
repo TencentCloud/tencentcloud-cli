@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DeleteCluster --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx\
+    --ClusterId cls-xxxxxxxx \
     --InstanceDeleteMode terminate
 ```
 

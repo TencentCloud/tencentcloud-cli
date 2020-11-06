@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cbs DescribeSnapshots --cli-unfold-argument  \
-    --Filters.0.Name snapshot-state\
-    --Filters.0.Values NORMAL\
-    --Filters.1.Name zone\
+    --Filters.0.Name snapshot-state \
+    --Filters.0.Values NORMAL \
+    --Filters.1.Name zone \
     --Filters.1.Values ap-guangzhou-2
 ```
 

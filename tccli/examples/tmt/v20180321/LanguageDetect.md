@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tmt LanguageDetect --cli-unfold-argument  \
-    --Text hello\
+    --Text hello \
     --ProjectId 0
 ```
 

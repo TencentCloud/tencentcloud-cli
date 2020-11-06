@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeGroupOffsets --cli-unfold-argument  \
-    --InstanceId 10\
+    --InstanceId 10 \
     --Group "group"
 ```
 

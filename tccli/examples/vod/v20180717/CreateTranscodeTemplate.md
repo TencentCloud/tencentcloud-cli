@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli vod CreateTranscodeTemplate --cli-unfold-argument  \
-    --Container mp4\
-    --Name 'Transcoding template 1'\
-    --RemoveVideo 0\
-    --RemoveAudio 0\
-    --VideoTemplate.Codec libx264\
-    --VideoTemplate.Fps 45\
-    --VideoTemplate.Bitrate 256\
-    --AudioTemplate.Codec libfdk_aac\
-    --AudioTemplate.Bitrate 200\
+    --Container mp4 \
+    --Name 'Transcoding template 1' \
+    --RemoveVideo 0 \
+    --RemoveAudio 0 \
+    --VideoTemplate.Codec libx264 \
+    --VideoTemplate.Fps 45 \
+    --VideoTemplate.Bitrate 256 \
+    --AudioTemplate.Codec libfdk_aac \
+    --AudioTemplate.Bitrate 200 \
     --AudioTemplate.SampleRate 200
 ```
 

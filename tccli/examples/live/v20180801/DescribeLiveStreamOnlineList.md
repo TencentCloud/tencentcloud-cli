@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live DescribeLiveStreamOnlineList --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com\
-    --AppName live\
-    --PageNum 1\
+    --DomainName 5000.livepush.myqcloud.com \
+    --AppName live \
+    --PageNum 1 \
     --PageSize 10
 ```
 

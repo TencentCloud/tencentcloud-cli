@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DeleteAuditLogFile --cli-unfold-argument  \
-    --InstanceId cdb-test1234\
+    --InstanceId cdb-test1234 \
     --FileName test.csv
 ```
 

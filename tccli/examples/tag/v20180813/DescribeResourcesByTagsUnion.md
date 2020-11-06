@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tag DescribeResourcesByTagsUnion --cli-unfold-argument  \
-    --ServiceType cvm\
-    --ResourcePrefix instance\
+    --ServiceType cvm \
+    --ResourcePrefix instance \
     --ResourceRegion 'ap-beijing
-"ResourceId": "ins-1234"'\
+"ResourceId": "ins-1234"' \
     --TagFilters.0.TagKey key1
 ```
 

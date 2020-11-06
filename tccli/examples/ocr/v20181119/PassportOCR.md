@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr PassportOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --Type CN
 ```
 

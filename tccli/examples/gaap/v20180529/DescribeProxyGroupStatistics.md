@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap DescribeProxyGroupStatistics --cli-unfold-argument  \
-    --GroupId lg-rfgt56hy\
-    --MetricNames InputBandwidth\
-    --StartTime '2019-03-25 12:00:00'\
-    --EndTime '2019-03-26 12:00:00'\
+    --GroupId lg-rfgt56hy \
+    --MetricNames InputBandwidth \
+    --StartTime '2019-03-25 12:00:00' \
+    --EndTime '2019-03-26 12:00:00' \
     --Granularity 300
 ```
 

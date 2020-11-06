@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vod ProcessMediaByUrl --cli-unfold-argument  \
-    --InputInfo.Url http://www.abc.com/abc.mp4\
-    --InputInfo.Name 'Major Country Diplomacy'\
-    --InputInfo.Id 872988202\
-    --OutputInfo.Region ap-guangzhou\
-    --OutputInfo.Bucket myoutputbucket-1256244234\
-    --OutputInfo.Dir /output/test/\
+    --InputInfo.Url http://www.abc.com/abc.mp4 \
+    --InputInfo.Name 'Major Country Diplomacy' \
+    --InputInfo.Id 872988202 \
+    --OutputInfo.Region ap-guangzhou \
+    --OutputInfo.Bucket myoutputbucket-1256244234 \
+    --OutputInfo.Dir /output/test/ \
     --AiAnalysisTask.Definition 10
 ```
 
@@ -33,12 +33,12 @@ Input:
 
 ```
 tccli vod ProcessMediaByUrl --cli-unfold-argument  \
-    --InputInfo.Url http://www.abc.com/abc.mp4\
-    --InputInfo.Name 'Major Country Diplomacy'\
-    --InputInfo.Id 872988202\
-    --OutputInfo.Region ap-guangzhou\
-    --OutputInfo.Bucket myoutputbucket-1256244234\
-    --OutputInfo.Dir /output/test/\
+    --InputInfo.Url http://www.abc.com/abc.mp4 \
+    --InputInfo.Name 'Major Country Diplomacy' \
+    --InputInfo.Id 872988202 \
+    --OutputInfo.Region ap-guangzhou \
+    --OutputInfo.Bucket myoutputbucket-1256244234 \
+    --OutputInfo.Dir /output/test/ \
     --AiContentReviewTask.Definition 10
 ```
 
@@ -60,12 +60,12 @@ Input:
 
 ```
 tccli vod ProcessMediaByUrl --cli-unfold-argument  \
-    --InputInfo.Url http://www.abc.com/abc.mp4\
-    --InputInfo.Name 'Major Country Diplomacy'\
-    --InputInfo.Id 872988202\
-    --OutputInfo.Region ap-guangzhou\
-    --OutputInfo.Bucket myoutputbucket-1256244234\
-    --OutputInfo.Dir /output/test/\
+    --InputInfo.Url http://www.abc.com/abc.mp4 \
+    --InputInfo.Name 'Major Country Diplomacy' \
+    --InputInfo.Id 872988202 \
+    --OutputInfo.Region ap-guangzhou \
+    --OutputInfo.Bucket myoutputbucket-1256244234 \
+    --OutputInfo.Dir /output/test/ \
     --AiRecognitionTask.Definition 10
 ```
 

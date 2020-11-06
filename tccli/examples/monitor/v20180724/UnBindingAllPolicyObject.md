@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor UnBindingAllPolicyObject --cli-unfold-argument  \
-    --Module monitor\
+    --Module monitor \
     --GroupId 11111
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteVpcPeerConnection --cli-unfold-argument  \
-    --Version 2018-06-25\
+    --Version 2018-06-25 \
     --VpcPeerConnectionId pcx-5p7vkch8
 ```
 

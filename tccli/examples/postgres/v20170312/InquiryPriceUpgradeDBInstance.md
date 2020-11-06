@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres InquiryPriceUpgradeDBInstance --cli-unfold-argument  \
-    --DBInstanceId postgres-6fego161\
-    --Memory 4\
+    --DBInstanceId postgres-6fego161 \
+    --Memory 4 \
     --Storage 500
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw CreateVideoGenerationTask --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --OnlineRecordTaskId xxxxx
 ```
 

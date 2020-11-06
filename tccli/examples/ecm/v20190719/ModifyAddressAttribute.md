@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm ModifyAddressAttribute --cli-unfold-argument  \
-    --AddressId eip-11112222\
-    --AddressName test_eip\
+    --AddressId eip-11112222 \
+    --AddressName test_eip \
     --EcmRegion ap-hangzhou-ecm
 ```
 
@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli ecm ModifyAddressAttribute --cli-unfold-argument  \
-    --AddressId eip-11112222\
-    --EipDirectConnection FALSE\
+    --AddressId eip-11112222 \
+    --EipDirectConnection FALSE \
     --EcmRegion ap-hangzhou-ecm
 ```
 

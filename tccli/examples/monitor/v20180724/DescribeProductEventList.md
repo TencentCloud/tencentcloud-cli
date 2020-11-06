@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli monitor DescribeProductEventList --cli-unfold-argument  \
-    --Module monitor\
-    --TimeOrder DESC\
-    --StartTime 1572624000\
-    --EndTime 1573228799\
-    --Offset 0\
+    --Module monitor \
+    --TimeOrder DESC \
+    --StartTime 1572624000 \
+    --EndTime 1573228799 \
+    --Offset 0 \
     --Limit 20
 ```
 

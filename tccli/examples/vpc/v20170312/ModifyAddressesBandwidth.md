@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc ModifyAddressesBandwidth --cli-unfold-argument  \
-    --InternetMaxBandwidthOut 2\
+    --InternetMaxBandwidthOut 2 \
     --AddressIds eip-alfxy9c8
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm DescribeInstancesStatus --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy ins-5d8a23rs\
-    --Offset 0\
+    --InstanceIds ins-r8hr2upy ins-5d8a23rs \
+    --Offset 0 \
     --Limit 2
 ```
 

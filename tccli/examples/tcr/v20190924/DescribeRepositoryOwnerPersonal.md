@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DescribeRepositoryOwnerPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test\
-    --Limit 20\
+    --RepoName dockerhub/test \
+    --Limit 20 \
     --Offset 0
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ecm CreateLoadBalancer --cli-unfold-argument  \
-    --EcmRegion ap-hangzhou-ecm\
-    --VpcId vpc-12345678\
-    --LoadBalancerType OPEN\
-    --LoadBalancerName testname\
-    --VipIsp CUCC\
+    --EcmRegion ap-hangzhou-ecm \
+    --VpcId vpc-12345678 \
+    --LoadBalancerType OPEN \
+    --LoadBalancerName testname \
+    --VipIsp CUCC \
     --InternetAccessible.InternetMaxBandwidthOut 2000
 ```
 

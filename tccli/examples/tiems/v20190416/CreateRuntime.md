@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tiems CreateRuntime --cli-unfold-argument  \
-    --Name test\
-    --Framework test\
-    --Image ccr.ccs.tencentyun.com/testrepo/testimage:v1\
-    --Description test\
+    --Name test \
+    --Framework test \
+    --Image ccr.ccs.tencentyun.com/testrepo/testimage:v1 \
+    --Description test \
     --HealthCheckOn false
 ```
 

@@ -9,10 +9,10 @@ Input:
 
 ```
 tccli gse SearchGameServerSessions --cli-unfold-argument  \
-    --FleetId fleet-qp3g3caa-b1adh8hq\
-    --Limit 1\
-    --NextToken nextToken-4hpp445-niuu789\
-    --FilterExpression creationTimeMillis%3d1575518668000\
+    --FleetId fleet-qp3g3caa-b1adh8hq \
+    --Limit 1 \
+    --NextToken nextToken-4hpp445-niuu789 \
+    --FilterExpression creationTimeMillis%3d1575518668000 \
     --SortExpression creationTimeMillis+ASC
 ```
 
@@ -70,10 +70,10 @@ Input:
 
 ```
 tccli gse SearchGameServerSessions --cli-unfold-argument  \
-    --FleetId fleet-qp3g3caa-b1adh8hq\
-    --Limit 1\
-    --NextToken nextToken-4hpp445-niuu789\
-    --FilterExpression (maximumSessions%3e%3d10+OR+playerSessionCount%3d0)+OR+NOT+(creationTimeMillis%3e1575518668000)+OR+(maximumSessions%3e%3d10+AND+hasAvailablePlayerSessions%3dtrue)\
+    --FleetId fleet-qp3g3caa-b1adh8hq \
+    --Limit 1 \
+    --NextToken nextToken-4hpp445-niuu789 \
+    --FilterExpression (maximumSessions%3e%3d10+OR+playerSessionCount%3d0)+OR+NOT+(creationTimeMillis%3e1575518668000)+OR+(maximumSessions%3e%3d10+AND+hasAvailablePlayerSessions%3dtrue) \
     --SortExpression creationTimeMillis+ASC
 ```
 
@@ -160,10 +160,10 @@ Input:
 
 ```
 tccli gse SearchGameServerSessions --cli-unfold-argument  \
-    --FleetId fleet-qp3g3caa-b1adh8hq\
-    --Limit 1\
-    --NextToken nextToken-4hpp445-niuu789\
-    --FilterExpression gameServerSessionProperties.Key-2aa06135-7d54-11ea-a9c1-3464a91513fe%3dValue-2aa06136-7d54-11ea-b30b-3464a91513fe\
+    --FleetId fleet-qp3g3caa-b1adh8hq \
+    --Limit 1 \
+    --NextToken nextToken-4hpp445-niuu789 \
+    --FilterExpression gameServerSessionProperties.Key-2aa06135-7d54-11ea-a9c1-3464a91513fe%3dValue-2aa06136-7d54-11ea-b30b-3464a91513fe \
     --SortExpression creationTimeMillis+ASC
 ```
 

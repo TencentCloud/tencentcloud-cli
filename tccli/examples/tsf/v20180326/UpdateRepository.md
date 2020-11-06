@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf UpdateRepository --cli-unfold-argument  \
-    --RepositoryId application-xxxxxxxx\
+    --RepositoryId application-xxxxxxxx \
     --RepositoryDesc aaa
 ```
 

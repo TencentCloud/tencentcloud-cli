@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli billing DescribeBillDetail --cli-unfold-argument  \
-    --Month 2018-07\
-    --PeriodType byPayTime\
-    --Offset 0\
-    --Limit 1\
-    --BeginTime '2018-11-01 00:00:00'\
-    --EndTime '2018-11-01 23:59:59'\
-    --NeedRecordNum 1\
+    --Month 2018-07 \
+    --PeriodType byPayTime \
+    --Offset 0 \
+    --Limit 1 \
+    --BeginTime '2018-11-01 00:00:00' \
+    --EndTime '2018-11-01 23:59:59' \
+    --NeedRecordNum 1 \
     --ResourceId ins-49zhx6z1
 ```
 

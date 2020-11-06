@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod CreateImageProcessingTemplate --cli-unfold-argument  \
-    --Operations.0.Type Scale\
-    --Operations.0.Scale.Type ShortEdgeFirst\
+    --Operations.0.Type Scale \
+    --Operations.0.Scale.Type ShortEdgeFirst \
     --Operations.0.Scale.ShortEdge 120
 ```
 
@@ -29,12 +29,12 @@ Input:
 
 ```
 tccli vod CreateImageProcessingTemplate --cli-unfold-argument  \
-    --Operations.0.Type Scale\
-    --Operations.0.Scale.Type ShortEdgeFirst\
-    --Operations.0.Scale.ShortEdge 240\
-    --Operations.1.Type CenterCut\
-    --Operations.1.CenterCut.Type Rectangle\
-    --Operations.1.CenterCut.Width 240\
+    --Operations.0.Type Scale \
+    --Operations.0.Scale.Type ShortEdgeFirst \
+    --Operations.0.Scale.ShortEdge 240 \
+    --Operations.1.Type CenterCut \
+    --Operations.1.CenterCut.Type Rectangle \
+    --Operations.1.CenterCut.Width 240 \
     --Operations.1.CenterCut.Height 240
 ```
 

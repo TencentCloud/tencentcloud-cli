@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli youmall DescribePersonArrivedMall --cli-unfold-argument  \
-    --MallId 1\
-    --PersonId 1\
-    --StartTime '2018-09-27 00:00:00'\
+    --MallId 1 \
+    --PersonId 1 \
+    --StartTime '2018-09-27 00:00:00' \
     --EndTime '2018-09-27 23:00:00'
 ```
 

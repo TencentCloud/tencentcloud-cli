@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm RenewInstances --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy\
-    --InstanceChargePrepaid.Period 1\
+    --InstanceIds ins-r8hr2upy \
+    --InstanceChargePrepaid.Period 1 \
     --InstanceChargePrepaid.RenewFlag NOTIFY_AND_MANUAL_RENEW
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc CreateCustomerGateway --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --CustomerGatewayName test-cgw\
-    --IpAddress 58.211.1.12\
-    --Tags.0.Key city\
+    --Version 2017-03-12 \
+    --CustomerGatewayName test-cgw \
+    --IpAddress 58.211.1.12 \
+    --Tags.0.Key city \
     --Tags.0.Value shanghai
 ```
 

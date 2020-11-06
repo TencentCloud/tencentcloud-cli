@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli solar DescribeProjects --cli-unfold-argument  \
-    --PageNo 1\
-    --PageSize 2\
+    --PageNo 1 \
+    --PageSize 2 \
     --Filters.Type 0
 ```
 

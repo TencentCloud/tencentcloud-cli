@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli yunjing DescribeMaliciousRequests --cli-unfold-argument  \
-    --Limit 10\
+    --Limit 10 \
     --Offset 0
 ```
 

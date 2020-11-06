@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssm DeleteSecret --cli-unfold-argument  \
-    --SecretName test\
+    --SecretName test \
     --RecoveryWindowInDays 1
 ```
 

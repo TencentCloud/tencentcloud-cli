@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecc CorrectMultiImage --cli-unfold-argument  \
-    --InputType 0\
-    --Image https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg\
+    --InputType 0 \
+    --Image https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg \
     --ServerType 0
 ```
 
@@ -35,8 +35,8 @@ Input:
 
 ```
 tccli ecc CorrectMultiImage --cli-unfold-argument  \
-    --InputType 0\
-    --Image https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg\
+    --InputType 0 \
+    --Image https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg \
     --ServerType 1
 ```
 
@@ -540,9 +540,9 @@ Input:
 
 ```
 tccli ecc CorrectMultiImage --cli-unfold-argument  \
-    --InputType 0\
-    --Image https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg\
-    --ServerType 1\
+    --InputType 0 \
+    --Image https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg \
+    --ServerType 1 \
     --IsAsync 1
 ```
 

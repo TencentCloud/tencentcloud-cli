@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr ManageImageLifecycleGlobalPersonal --cli-unfold-argument  \
-    --Type keep_last_nums\
+    --Type keep_last_nums \
     --Val 80
 ```
 

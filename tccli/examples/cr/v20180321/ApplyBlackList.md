@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cr ApplyBlackList --cli-unfold-argument  \
-    --Module account\
-    --Operation ApplyBlackList\
-    --BlackList.0.BlackType 01\
-    --BlackList.0.OperationType A\
-    --BlackList.0.BlackValue 13312345233\
+    --Module account \
+    --Operation ApplyBlackList \
+    --BlackList.0.BlackType 01 \
+    --BlackList.0.OperationType A \
+    --BlackList.0.BlackValue 13312345233 \
     --BlackList.0.BlackDescription 输入示例
 ```
 

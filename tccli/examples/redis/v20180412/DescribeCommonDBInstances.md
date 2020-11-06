@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeCommonDBInstances --cli-unfold-argument  \
-    --PayMode 0\
+    --PayMode 0 \
     --InstanceIds ["crs-nh47ubwr"]
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ccc DescribeTelCdr --cli-unfold-argument  \
-    --SdkAppId 1400000000\
-    --StartTimeStamp 1590547606\
-    --EndTimeStamp 1590147606\
-    --Limit 10\
+    --SdkAppId 1400000000 \
+    --StartTimeStamp 1590547606 \
+    --EndTimeStamp 1590147606 \
+    --Limit 10 \
     --Offset 0
 ```
 

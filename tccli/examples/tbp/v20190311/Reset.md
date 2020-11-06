@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tbp Reset --cli-unfold-argument  \
-    --BotId 972445\
-    --BotVersion dev\
+    --BotId 972445 \
+    --BotVersion dev \
     --UserId 123
 ```
 

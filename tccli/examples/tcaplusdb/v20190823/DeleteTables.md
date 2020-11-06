@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcaplusdb DeleteTables --cli-unfold-argument  \
-    --ClusterId 5674209986\
-    --SelectedTables.0.TableInstanceId tcaplus-1f224454\
-    --SelectedTables.0.TableGroupId 101\
+    --ClusterId 5674209986 \
+    --SelectedTables.0.TableInstanceId tcaplus-1f224454 \
+    --SelectedTables.0.TableGroupId 101 \
     --SelectedTables.0.TableName tb_example
 ```
 

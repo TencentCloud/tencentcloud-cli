@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli rkp GetOpenId --cli-unfold-argument  \
-    --DeviceToken aaaa\
+    --DeviceToken aaaa \
     --BusinessId 1
 ```
 

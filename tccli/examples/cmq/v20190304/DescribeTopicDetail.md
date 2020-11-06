@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cmq DescribeTopicDetail --cli-unfold-argument  \
-    --Offset 0\
+    --Offset 0 \
     --Limit 2
 ```
 

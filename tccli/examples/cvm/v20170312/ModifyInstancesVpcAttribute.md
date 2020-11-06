@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm ModifyInstancesVpcAttribute --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy ins-5d8a23rs\
-    --VirtualPrivateCloud.SubnetId subnet-dcs9x3gz\
-    --VirtualPrivateCloud.VpcId vpc-1urkhbj4\
+    --InstanceIds ins-r8hr2upy ins-5d8a23rs \
+    --VirtualPrivateCloud.SubnetId subnet-dcs9x3gz \
+    --VirtualPrivateCloud.VpcId vpc-1urkhbj4 \
     --VirtualPrivateCloud.PrivateIpAddresses 10.0.0.18 10.0.0.19
 ```
 

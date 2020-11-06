@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dcdb UpgradeDCDBInstance --cli-unfold-argument  \
-    --InstanceId dcdbt-fdpjf5zh\
-    --UpgradeType ADD\
-    --AddShardConfig.ShardCount 2\
-    --AddShardConfig.ShardMemory 2\
-    --AddShardConfig.ShardStorage 10\
+    --InstanceId dcdbt-fdpjf5zh \
+    --UpgradeType ADD \
+    --AddShardConfig.ShardCount 2 \
+    --AddShardConfig.ShardMemory 2 \
+    --AddShardConfig.ShardStorage 10 \
     --AutoVoucher false
 ```
 

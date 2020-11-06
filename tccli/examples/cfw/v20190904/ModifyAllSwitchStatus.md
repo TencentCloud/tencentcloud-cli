@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli cfw ModifyAllSwitchStatus --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId test\
-    --Status -1
+    --Status 0 \
+    --Type 2 \
+    --ChangeType 3 \
+    --Area ap-shanghai
 ```
 
 Output: 

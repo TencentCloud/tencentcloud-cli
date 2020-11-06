@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs ModifySnapshotAttribute --cli-unfold-argument  \
-    --SnapshotId snap-gybrif0z\
+    --SnapshotId snap-gybrif0z \
     --SnapshotName snap_201711301143
 ```
 

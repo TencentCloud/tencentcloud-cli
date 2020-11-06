@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "CreateFlowService": [
+      {
+        "document": "生成状态机服务",
+        "input": "https://asw.tencentcloudapi.com/?Action=CreateFlowService\n&FlowServiceName=flowservicetest\n&Definition=\"{}\"\n&IsNewRole=false\n&Type=EXPRESS\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"FlowServiceResource\": \"flowservicetest\",\r\n\t\t\"CreateDate\": \"1595227100\",\r\n\t\t\"RequestId\": \"ab1b30fc-3503-4b27-96dc-94c14d2fd43w\"\r\n\t}\r\n}",
+        "title": "生成状态机"
+      }
+    ],
+    "DescribeExecution": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeExecution\n&ExecutionResourceName=qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:1300074211:execution:bfhzs4j8:bgh9v6u1bgh9v6u2-bgh9v6u3-bgh9v6u4-bgh9v6u5\",\r\n        \"Name\": \"bgh9v6u1bgh9v6u2-bgh9v6u3-bgh9v6u4-bgh9v6u5\",\r\n        \"StartDate\": \"1596703766354\",\r\n        \"StopDate\": \"0\",\r\n        \"StateMachineResourceName\": \"qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\",\r\n        \"ExecutionDefinition\": \"{}\", \r\n        \"Status\": \"INIT\",\r\n        \"Input\": \"\",\r\n        \"Output\": \"\",\r\n        \"RequestId\": \"\"\r\n    }\r\n}",
+        "title": "查询执行详细信息"
+      }
+    ],
+    "DescribeExecutions": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeExecutions\n&StateMachineResourceName=qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\n&PageSize=100\n&PageIndex=1\n&FilterExecutionStatus=INIT\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Executions\": [\r\n            {\r\n                \"ExecutionResourceName\": \"qrn:qcs:asw:sh:1300074212:http:json:flowmachine:flowservicetest:bcrlj429\",\r\n                \"Name\": \"\",\r\n                \"StartDate\": \"20200718144016\",\r\n                \"StopDate\": \"20200718151746\",\r\n                \"StateMachineResourceName\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\",\r\n                \"Status\": \"INIT\"\r\n            },\r\n            {\r\n                \"ExecutionResourceName\": \"qrn:qcs:asw:sh:1300074211:execution:bcrlj428name-gadfaa-dhsrga\",\r\n                \"Name\": \"name-gadfaa-dhsrga\",\r\n                \"StartDate\": \"1595949070308\",\r\n                \"StopDate\": \"0\",\r\n                \"StateMachineResourceName\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\",\r\n                \"Status\": \"INIT\"\r\n            },\r\n            {\r\n                \"ExecutionResourceName\": \"qrn:qcs:asw:sh:1300074211:execution:bcrlj428bf25rh1ibf25rh1j-bf25rh1k-bf25rh1l-bf25rh1m\",\r\n                \"Name\": \"bf25rh1ibf25rh1j-bf25rh1k-bf25rh1l-bf25rh1m\",\r\n                \"StartDate\": \"1595949208853\",\r\n                \"StopDate\": \"0\",\r\n                \"StateMachineResourceName\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\",\r\n                \"Status\": \"INIT\"\r\n            },\r\n            {\r\n                \"ExecutionResourceName\": \"qrn:qcs:asw:sh:1300074211:execution:bcrlj428:bf25tfhlbf25th6b-bf25th6c-bf25th6d-bf25th6e\",\r\n                \"Name\": \"bf25tfhlbf25th6b-bf25th6c-bf25th6d-bf25th6e\",\r\n                \"StartDate\": \"1595949231671\",\r\n                \"StopDate\": \"0\",\r\n                \"StateMachineResourceName\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\",\r\n                \"Status\": \"INIT\"\r\n            },\r\n            {\r\n                \"ExecutionResourceName\": \"qrn:qcs:asw:sh:1300074211:execution:bcrlj428:bf264z61bf264z62-bf264z63-bf264z64-bf264z65\",\r\n                \"Name\": \"bf264z61bf264z62-bf264z63-bf264z64-bf264z65\",\r\n                \"StartDate\": \"1595949362952\",\r\n                \"StopDate\": \"0\",\r\n                \"StateMachineResourceName\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\",\r\n                \"Status\": \"INIT\"\r\n            },\r\n            {\r\n                \"ExecutionResourceName\": \"qrn:qcs:asw:sh:1300074211:execution:bcrlj428:bf2681ulbf2681um-bf2681un-bf2681uo-bf2681up\",\r\n                \"Name\": \"bf2681ulbf2681um-bf2681un-bf2681uo-bf2681up\",\r\n                \"StartDate\": \"1595949397912\",\r\n                \"StopDate\": \"0\",\r\n                \"StateMachineResourceName\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\",\r\n                \"Status\": \"INIT\"\r\n            },\r\n            {\r\n                \"ExecutionResourceName\": \"qrn:qcs:asw:sh:1300074211:execution:bcrlj428:bf26eu3kbf26eu3l-bf26eu3m-bf26eu3n-bf26eu3o\",\r\n                \"Name\": \"bf26eu3kbf26eu3l-bf26eu3m-bf26eu3n-bf26eu3o\",\r\n                \"StartDate\": \"1595949474267\",\r\n                \"StopDate\": \"0\",\r\n                \"StateMachineResourceName\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\",\r\n                \"Status\": \"INIT\"\r\n            }\r\n        ],\r\n        \"PageSize\": 10,\r\n        \"PageIndex\": 1,\r\n        \"TotalCount\": 7,\r\n        \"RequestId\": \"\"\r\n    }\r\n}",
+        "title": "状态机执行列表"
+      }
+    ],
+    "DescribeFlowServiceDetail": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeFlowServiceDetail\n&FlowServiceResource=qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"FlowServiceName\": \"flowservicetest\",\r\n                \"FlowServiceChineseName\": \"状态机中文名称\",\r\n\t\t\"Status\": \"Online\",\r\n\t\t\"Definition\": \"{\\\"Comment\\\":\\\"An example of the Amazon States Language using a map state to process elements of an array with a max concurrency of 2.\\\",\\\"StartAt\\\":\\\"Map\\\",\\\"States\\\":{\\\"Map\\\":{\\\"Type\\\":\\\"Map\\\",\\\"ItemsPath\\\":\\\"$.job-spec\\\",\\\"ResultPath\\\":\\\"$.array\\\",\\\"MaxConcurrency\\\":2,\\\"Next\\\":\\\"Final State\\\",\\\"Iterator\\\":{\\\"StartAt\\\":\\\"My Stage\\\",\\\"States\\\":{\\\"My Stage\\\":{\\\"Type\\\":\\\"Task\\\",\\\"Resource\\\":\\\"arn:aws:states:::lambda:invoke\\\",\\\"Parameters\\\":{\\\"FunctionName\\\":\\\"arn:aws:lambda:us-east-1:\\u003c\\u003e:function:some-lambda:$LATEST\\\",\\\"Payload\\\":{\\\"Input.$\\\":\\\"$.array\\\"}},\\\"End\\\":true}}}},\\\"Final State\\\":{\\\"Type\\\":\\\"Pass\\\",\\\"End\\\":true}}}\",\r\n\t\t\"RoleResource\": \"qrn:qcs:asw:sh:1300074211:http:qrn\",\r\n\t\t\"Type\": \"EXPRESS\",\r\n\t\t\"CreateDate\": \"1595227100\",\r\n                \"Description\":\"这是一个用来做演示的状态机\",\r\n\t\t\"RequestId\": \"ab1b30fc-3503-4b27-96dc-94c14d2fd43w\"\r\n\t}\r\n}",
+        "title": "查询状态机详情"
+      }
+    ],
+    "ModifyFlowService": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=ModifyFlowService\n&FlowServiceName=flowservicetest\n&FlowServiceResource=qrn:qcs:asw:ap-guangzhou:1300000779:http:json:flowmachine:wintest:bg0rx4qy\n&Definition=\"{}\"\n&FlowServiceChineseName=工作流中文名称\n&IsNewRole=false\n&Type=EXPRESS\n&RoleResource=qrn:qcs:asw:ap-guangzhou:1300000779:http:json\n&<公共请求参数>",
+        "output": "{\"Response\":{\"FlowServiceResource\":\"qrn:qcs:asw:ap-guangzhou:1300000779:http:json:flowmachine:wintest:bg0rx4qy\",\"UpdateDate\":\"1596628154044\",\"RequestId\":\"ab1b30fc-3503-4b27-96dc-94c14d2fd43q\"}}",
+        "title": "编辑状态机"
+      }
+    ],
+    "StartExecution": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=StartExecution\n&StateMachineResourceName=qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\n&Input={\"Bucket\":\"bilibili-1300074231\",\"Region\":\"ap-shanghai\",\"Object\":\"demo1.mp4\"}\n&Name=thaf04gr-yjs96hs-fgjsfg464-u89yjfg5\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:1300074211:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-bgi61kw1\",\r\n        \"StartDate\": \"1596716960181\",\r\n        \"RequestId\": \"hnr533hdf-yky4ye56-dhst6-jt7sdfgq552f\"\r\n    }\r\n}",
+        "title": "指定状态机启动执行"
+      }
+    ]
+  },
+  "version": "1.0"
+}

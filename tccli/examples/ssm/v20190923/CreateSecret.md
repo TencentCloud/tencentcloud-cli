@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ssm CreateSecret --cli-unfold-argument  \
-    --SecretName test_secret\
-    --VersionId v1.0\
-    --Description 'test create secret'\
+    --SecretName test_secret \
+    --VersionId v1.0 \
+    --Description 'test create secret' \
     --SecretString test
 ```
 

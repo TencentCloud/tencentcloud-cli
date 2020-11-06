@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ecdn DescribeEcdnDomainStatistics --cli-unfold-argument  \
-    --StartTime '2018-09-04 00:00:00'\
-    --EndTime '2018-09-04 12:00:00'\
-    --Metrics flux delay request bandwidth\
-    --Domains www.test.com\
+    --StartTime '2018-09-04 00:00:00' \
+    --EndTime '2018-09-04 12:00:00' \
+    --Metrics flux delay request bandwidth \
+    --Domains www.test.com \
     --Projects 0
 ```
 

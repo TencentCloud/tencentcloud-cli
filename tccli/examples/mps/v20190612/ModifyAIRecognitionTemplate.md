@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mps ModifyAIRecognitionTemplate --cli-unfold-argument  \
-    --Definition 30\
-    --OcrFullTextConfigure.Switch OFF\
+    --Definition 30 \
+    --OcrFullTextConfigure.Switch OFF \
     --OcrWordsConfigure.Switch ON
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli organization ListOrganizationNodeMembers --cli-unfold-argument  \
-    --NodeId 123\
-    --Offset 0\
+    --NodeId 123 \
+    --Offset 0 \
     --Limit 10
 ```
 

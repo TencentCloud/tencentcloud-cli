@@ -1,4 +1,4 @@
-**Example 1: Getting available TencentDB sales specs**
+**Example 1: Querying the purchasable specifications of a TencentDB instance**
 
 
 
@@ -649,7 +649,7 @@ Output:
                     },
                     {
                         "Status": 2,
-                        "ZoneName": "Guangzhou Zone 4"
+                        "ZoneName": "Guangzhou Zone 4",
                         "IsCustom": true,
                         "IsSupportDr": true,
                         "IsSupportVpc": true,

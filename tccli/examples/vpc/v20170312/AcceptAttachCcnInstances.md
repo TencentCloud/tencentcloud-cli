@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc AcceptAttachCcnInstances --cli-unfold-argument  \
-    --CcnId ccn-gree226l\
-    --Instances.0.InstanceType VPC\
-    --Instances.0.InstanceId vpc-3dr1zrr9\
+    --CcnId ccn-gree226l \
+    --Instances.0.InstanceType VPC \
+    --Instances.0.InstanceId vpc-3dr1zrr9 \
     --Instances.0.InstanceRegion ap-guangzhou
 ```
 

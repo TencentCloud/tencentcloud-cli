@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc CreateRouteTable --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --RouteTableName TestRouteTable\
-    --VpcId vpc-2at5y1pn\
-    --Tags.0.Key city\
+    --Version 2017-03-12 \
+    --RouteTableName TestRouteTable \
+    --VpcId vpc-2at5y1pn \
+    --Tags.0.Key city \
     --Tags.0.Value shanghai
 ```
 

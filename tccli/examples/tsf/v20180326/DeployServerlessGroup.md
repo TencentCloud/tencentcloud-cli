@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DeployServerlessGroup --cli-unfold-argument  \
-    --GroupId group-xxxxxxx\
+    --GroupId group-xxxxxxx \
     --PkgId  pkg-xxxx
 ```
 

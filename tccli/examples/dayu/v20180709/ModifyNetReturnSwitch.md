@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu ModifyNetReturnSwitch --cli-unfold-argument  \
-    --Business net\
-    --Id net-0000000e\
-    --Status 1\
+    --Business net \
+    --Id net-0000000e \
+    --Status 1 \
     --Hour 3
 ```
 

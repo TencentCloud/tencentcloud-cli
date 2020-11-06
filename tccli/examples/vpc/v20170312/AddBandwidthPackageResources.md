@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc AddBandwidthPackageResources --cli-unfold-argument  \
-    --BandwidthPackageId bwp-e40edw8y\
-    --ResourceType Address\
+    --BandwidthPackageId bwp-e40edw8y \
+    --ResourceType Address \
     --ResourceIds eip-pez0oibs
 ```
 

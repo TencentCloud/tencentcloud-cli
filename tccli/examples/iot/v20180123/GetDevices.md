@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iot GetDevices --cli-unfold-argument  \
-    --ProductId iot-5aawn3i8\
-    --Offset 0\
+    --ProductId iot-5aawn3i8 \
+    --Offset 0 \
     --Length 2
 ```
 

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cpdp ApplyWithdrawal --cli-unfold-argument  \
-    --MidasAppId your_midas_app_id\
-    --SubAppId your_sub_app_id\
-    --SettleAcctNo encrypted_account_no\
-    --SettleAcctName encrypted_account_name\
-    --CurrencyType RMB\
-    --CurrencyUnit 1\
-    --CurrencyAmt 10000\
-    --TranWebName 银行申请的超网号\
-    --IdType 1\
-    --IdCode encrypted_id_code\
-    --MidasSecretId your_midas_secret_id\
+    --MidasAppId your_midas_app_id \
+    --SubAppId your_sub_app_id \
+    --SettleAcctNo encrypted_account_no \
+    --SettleAcctName encrypted_account_name \
+    --CurrencyType RMB \
+    --CurrencyUnit 1 \
+    --CurrencyAmt 10000 \
+    --TranWebName 银行申请的超网号 \
+    --IdType 1 \
+    --IdCode encrypted_id_code \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

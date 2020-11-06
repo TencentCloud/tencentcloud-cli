@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vod ModifyAdaptiveDynamicStreamingTemplate --cli-unfold-argument  \
-    --Definition 10038\
-    --Name 'Adaptive bitrate streaming template 2'\
-    --Format HLS\
-    --StreamInfos.0.Video.Codec libx264\
-    --StreamInfos.0.Video.Bitrate 2000\
-    --StreamInfos.0.Audio.Codec flac\
+    --Definition 10038 \
+    --Name 'Adaptive bitrate streaming template 2' \
+    --Format HLS \
+    --StreamInfos.0.Video.Codec libx264 \
+    --StreamInfos.0.Video.Bitrate 2000 \
+    --StreamInfos.0.Audio.Codec flac \
     --StreamInfos.0.Audio.SampleRate 44100
 ```
 

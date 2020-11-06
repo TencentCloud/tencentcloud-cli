@@ -6,9 +6,14 @@ Input:
 
 ```
 tccli cfw DescribeAcLists --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId test\
-    --Direction 1
+    --EdgeId  \
+    --Protocol TCP \
+    --Strategy  \
+    --SearchValue  \
+    --Direction 1 \
+    --Limit 20 \
+    --Offset 0 \
+    --Area 
 ```
 
 Output: 

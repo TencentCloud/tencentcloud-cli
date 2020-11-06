@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmeip UnbindRsList --cli-unfold-argument  \
-    --EipRsList.0.EipId eip-pq9cuew0\
+    --EipRsList.0.EipId eip-pq9cuew0 \
     --EipRsList.0.InstanceId cpm-s1hf4voq
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mongodb ResetDBInstancePassword --cli-unfold-argument  \
-    --InstanceId cmgo-7pjedvz7\
-    --UserName rwuser\
+    --InstanceId cmgo-7pjedvz7 \
+    --UserName rwuser \
     --Password 111111
 ```
 

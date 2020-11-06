@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cmq ClearSubscriptionFilterTags --cli-unfold-argument  \
-    --TopicName ConnTopic\
+    --TopicName ConnTopic \
     --SubscriptionName Queue
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DeleteNamespace --cli-unfold-argument  \
-    --NamespaceId namespace-xxxxxxx\
+    --NamespaceId namespace-xxxxxxx \
     --ClusterId cluster-xxxxxxx
 ```
 

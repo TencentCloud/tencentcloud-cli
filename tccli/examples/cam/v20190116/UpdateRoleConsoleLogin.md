@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam UpdateRoleConsoleLogin --cli-unfold-argument  \
-    --RoleId 10000000947212312\
+    --RoleId 10000000947212312 \
     --ConsoleLogin 1
 ```
 

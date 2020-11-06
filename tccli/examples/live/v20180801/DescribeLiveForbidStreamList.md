@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeLiveForbidStreamList --cli-unfold-argument  \
-    --PageNum 1\
+    --PageNum 1 \
     --PageSize 10
 ```
 

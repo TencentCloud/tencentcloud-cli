@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DescribeCCSelfDefinePolicy --cli-unfold-argument  \
-    --Business bgp\
+    --Business bgp \
     --Id bgp-000000xe
 ```
 

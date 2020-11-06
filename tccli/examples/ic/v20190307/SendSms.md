@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ic SendSms --cli-unfold-argument  \
-    --Sdkappid 1200168178\
-    --Iccid 89860619000013360957\
+    --Sdkappid 1200168178 \
+    --Iccid 89860619000013360957 \
     --Content openok
 ```
 

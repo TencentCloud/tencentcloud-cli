@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc CreateServiceTemplate --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --ServiceTemplateName TestName\
+    --Version 2017-03-12 \
+    --ServiceTemplateName TestName \
     --Services TCP:8080 UDP:99
 ```
 

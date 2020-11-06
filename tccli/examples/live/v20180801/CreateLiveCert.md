@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live CreateLiveCert --cli-unfold-argument  \
-    --CertType 0\
-    --CertName name-crt\
-    --HttpsCrt XXXXX\
-    --HttpsKey YYYYYY\
+    --CertType 0 \
+    --CertName name-crt \
+    --HttpsCrt XXXXX \
+    --HttpsKey YYYYYY \
     --Description detail
 ```
 

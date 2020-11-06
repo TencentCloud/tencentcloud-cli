@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli billing DescribeBillResourceSummary --cli-unfold-argument  \
-    --Month 2018-08\
-    --PeriodType byPayTime\
-    --Offset 0\
-    --Limit 1\
+    --Month 2018-08 \
+    --PeriodType byPayTime \
+    --Offset 0 \
+    --Limit 1 \
     --ActionType 'Pay-as-you-go deduction'
 ```
 

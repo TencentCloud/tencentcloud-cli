@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc CreateSecurityGroup --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --GroupName TestGroup\
-    --GroupDescription test-group-desc\
-    --Tags.0.Key city\
+    --Version 2017-03-12 \
+    --GroupName TestGroup \
+    --GroupDescription test-group-desc \
+    --Tags.0.Key city \
     --Tags.0.Value shanghai
 ```
 

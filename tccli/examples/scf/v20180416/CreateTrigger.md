@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli scf CreateTrigger --cli-unfold-argument  \
-    --FunctionName <FunctionName>\
-    --TriggerName <TriggerName>\
-    --Type timer\
+    --FunctionName <FunctionName> \
+    --TriggerName <TriggerName> \
+    --Type timer \
     --TriggerDesc */2****
 ```
 

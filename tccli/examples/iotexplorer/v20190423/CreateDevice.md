@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer CreateDevice --cli-unfold-argument  \
-    --ProductId LJ0INDNU7Us\
+    --ProductId LJ0INDNU7Us \
     --DeviceName device2
 ```
 
@@ -33,12 +33,12 @@ Input:
 
 ```
 tccli iotexplorer CreateDevice --cli-unfold-argument  \
-    --ProductId LJ0INDNU7U\
-    --DeviceName light1\
-    --DevAddr 01865bd9\
-    --AppKey 00000000000000010000000000000001\
-    --DevEUI 0100000000000021\
-    --AppSKey bc97ea1ff62e7a3490135d989aae6bca\
+    --ProductId LJ0INDNU7U \
+    --DeviceName light1 \
+    --DevAddr 01865bd9 \
+    --AppKey 00000000000000010000000000000001 \
+    --DevEUI 0100000000000021 \
+    --AppSKey bc97ea1ff62e7a3490135d989aae6bca \
     --NwkSKey bc97ea1ff62e7a3490135d989aae6bca
 ```
 

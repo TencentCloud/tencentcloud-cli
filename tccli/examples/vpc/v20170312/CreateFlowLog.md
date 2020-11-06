@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vpc CreateFlowLog --cli-unfold-argument  \
-    --CloudLogId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\
-    --FlowLogDescription test-flowlog\
-    --FlowLogName test\
-    --ResourceId eni-xxxxxxxx\
-    --ResourceType NETWORKINTERFACE\
-    --TrafficType ACCEPT\
+    --CloudLogId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+    --FlowLogDescription test-flowlog \
+    --FlowLogName test \
+    --ResourceId eni-xxxxxxxx \
+    --ResourceType NETWORKINTERFACE \
+    --TrafficType ACCEPT \
     --VpcId vpc-xxxxxx
 ```
 

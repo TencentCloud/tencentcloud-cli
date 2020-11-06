@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis DescribeInstanceMonitorBigKey --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p\
-    --ReqType 1\
+    --InstanceId crs-5a4py64p \
+    --ReqType 1 \
     --Date 20191101
 ```
 

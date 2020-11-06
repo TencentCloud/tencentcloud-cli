@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc ModifyVpcAttribute --cli-unfold-argument  \
-    --VpcId vpc-ox7p0l9u\
+    --VpcId vpc-ox7p0l9u \
     --VpcIName test
 ```
 

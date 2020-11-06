@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cws CreateSitesScans --cli-unfold-argument  \
-    --SiteIds 1 2\
-    --ScannerType normal\
+    --SiteIds 1 2 \
+    --ScannerType normal \
     --RateLimit 10
 ```
 

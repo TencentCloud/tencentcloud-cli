@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tsf CreateGroup --cli-unfold-argument  \
-    --ApplicationId application-xxxxxxx\
-    --GroupName demo\
-    --NamespaceId namespace-xxxxxxx\
+    --ApplicationId application-xxxxxxx \
+    --GroupName demo \
+    --NamespaceId namespace-xxxxxxx \
     --ClusterId cluster-xxxxxxx
 ```
 

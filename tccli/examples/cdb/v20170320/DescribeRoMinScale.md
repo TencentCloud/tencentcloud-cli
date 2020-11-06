@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DescribeRoMinScale --cli-unfold-argument  \
-    --RoInstanceId cdbro-831kwfnh\
+    --RoInstanceId cdbro-831kwfnh \
     --MasterInstanceId cdb-r66ityd5
 ```
 

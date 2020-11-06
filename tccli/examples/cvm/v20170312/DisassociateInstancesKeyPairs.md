@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm DisassociateInstancesKeyPairs --cli-unfold-argument  \
-    --InstanceIds ins-w34e5rl9\
+    --InstanceIds ins-w34e5rl9 \
     --KeyIds skey-e3r6y7ji
 ```
 

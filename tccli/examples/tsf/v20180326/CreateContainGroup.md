@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tsf CreateContainGroup --cli-unfold-argument  \
-    --CpuRequest 0.25\
-    --MemRequest 128\
-    --InstanceNum 1\
-    --ApplicationId application-xxxxxxx\
-    --GroupName consumer\
-    --NamespaceId namespace-xxxxxxx\
-    --ClusterId cls-xxxxxxx\
-    --AccessType 2\
-    --ProtocolPorts.0.Protocol TCP\
-    --ProtocolPorts.0.Port 90\
+    --CpuRequest 0.25 \
+    --MemRequest 128 \
+    --InstanceNum 1 \
+    --ApplicationId application-xxxxxxx \
+    --GroupName consumer \
+    --NamespaceId namespace-xxxxxxx \
+    --ClusterId cls-xxxxxxx \
+    --AccessType 2 \
+    --ProtocolPorts.0.Protocol TCP \
+    --ProtocolPorts.0.Port 90 \
     --ProtocolPorts.0.TargetPort 90
 ```
 

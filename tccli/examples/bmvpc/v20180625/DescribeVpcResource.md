@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli bmvpc DescribeVpcResource --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 2\
-    --OrderField VpcId\
-    --OrderDirection desc\
-    --Filters.0.Name vpc-name\
+    --Offset 0 \
+    --Limit 2 \
+    --OrderField VpcId \
+    --OrderDirection desc \
+    --Filters.0.Name vpc-name \
     --Filters.0.Values yxvpc1
 ```
 

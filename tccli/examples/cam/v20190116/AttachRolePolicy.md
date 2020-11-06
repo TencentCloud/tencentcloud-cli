@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam AttachRolePolicy --cli-unfold-argument  \
-    --PolicyId 1\
+    --PolicyId 1 \
     --AttachRoleId 4611686018427397905
 ```
 

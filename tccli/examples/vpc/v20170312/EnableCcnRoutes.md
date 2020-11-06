@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc EnableCcnRoutes --cli-unfold-argument  \
-    --CcnId ccn-gree226l\
+    --CcnId ccn-gree226l \
     --RouteIds ccnr-bvipc87w ccnr-oc61so0o
 ```
 

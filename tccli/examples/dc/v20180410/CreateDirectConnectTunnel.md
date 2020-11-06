@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli dc CreateDirectConnectTunnel --cli-unfold-argument  \
-    --DirectConnectId dc-abcdefgh\
-    --DirectConnectTunnelName Test\
-    --DirectConnectOwnerAccount 240791248\
-    --NetworkType VPC\
-    --NetworkRegion ap-guangzhou\
-    --VpcId vpc-abcdefgh\
-    --DirectConnectGatewayId dcg-abcdefgh\
-    --Bandwidth 100\
-    --RouteType BGP\
-    --Vlan 100\
-    --TencentAddress 192.168.1.2/30\
-    --CustomerAddress 192.168.1.1/30\
-    --BgpPeer.Asn 65128\
+    --DirectConnectId dc-abcdefgh \
+    --DirectConnectTunnelName Test \
+    --DirectConnectOwnerAccount 240791248 \
+    --NetworkType VPC \
+    --NetworkRegion ap-guangzhou \
+    --VpcId vpc-abcdefgh \
+    --DirectConnectGatewayId dcg-abcdefgh \
+    --Bandwidth 100 \
+    --RouteType BGP \
+    --Vlan 100 \
+    --TencentAddress 192.168.1.2/30 \
+    --CustomerAddress 192.168.1.1/30 \
+    --BgpPeer.Asn 65128 \
     --BgpPeer.AuthKey abcdefg
 ```
 
@@ -42,17 +42,17 @@ Input:
 
 ```
 tccli dc CreateDirectConnectTunnel --cli-unfold-argument  \
-    --DirectConnectId dc-abcdefgh\
-    --DirectConnectTunnelName Test\
-    --NetworkType CCN\
-    --NetworkRegion ap-guangzhou\
-    --DirectConnectGatewayId dcg-abcdefgh\
-    --Bandwidth 100\
-    --RouteType BGP\
-    --Vlan 100\
-    --TencentAddress 192.168.1.2/30\
-    --CustomerAddress 192.168.1.1/30\
-    --BgpPeer.Asn 65128\
+    --DirectConnectId dc-abcdefgh \
+    --DirectConnectTunnelName Test \
+    --NetworkType CCN \
+    --NetworkRegion ap-guangzhou \
+    --DirectConnectGatewayId dcg-abcdefgh \
+    --Bandwidth 100 \
+    --RouteType BGP \
+    --Vlan 100 \
+    --TencentAddress 192.168.1.2/30 \
+    --CustomerAddress 192.168.1.1/30 \
+    --BgpPeer.Asn 65128 \
     --BgpPeer.AuthKey abcdefg
 ```
 
@@ -76,18 +76,18 @@ Input:
 
 ```
 tccli dc CreateDirectConnectTunnel --cli-unfold-argument  \
-    --DirectConnectId dc-abcdefgh\
-    --DirectConnectTunnelName Test\
-    --NetworkType BMVPC\
-    --NetworkRegion ap-guangzhou\
-    --VpcId vpc-abcdefgh\
-    --Bandwidth 100\
-    --RouteType STATIC\
-    --Vlan 100\
-    --TencentAddress 192.168.1.2/30\
-    --CustomerAddress 192.168.1.1/30\
-    --RouteFilterPrefixes.0.Cidr 192.168.0.0/24\
-    --RouteFilterPrefixes.1.Cidr 192.168.0.0/24\
+    --DirectConnectId dc-abcdefgh \
+    --DirectConnectTunnelName Test \
+    --NetworkType BMVPC \
+    --NetworkRegion ap-guangzhou \
+    --VpcId vpc-abcdefgh \
+    --Bandwidth 100 \
+    --RouteType STATIC \
+    --Vlan 100 \
+    --TencentAddress 192.168.1.2/30 \
+    --CustomerAddress 192.168.1.1/30 \
+    --RouteFilterPrefixes.0.Cidr 192.168.0.0/24 \
+    --RouteFilterPrefixes.1.Cidr 192.168.0.0/24 \
     --RouteFilterPrefixes.2.Cidr 192.168.0.0/24
 ```
 
@@ -111,18 +111,18 @@ Input:
 
 ```
 tccli dc CreateDirectConnectTunnel --cli-unfold-argument  \
-    --DirectConnectId dc-abcdefgh\
-    --DirectConnectTunnelName Test\
-    --NetworkType VPC\
-    --NetworkRegion ap-guangzhou\
-    --VpcId vpc-abcdefgh\
-    --DirectConnectGatewayId dcg-abcdefgh\
-    --Bandwidth 100\
-    --RouteType BGP\
-    --Vlan 100\
-    --TencentAddress 192.168.1.2/30\
-    --CustomerAddress 192.168.1.1/30\
-    --BgpPeer.Asn 65128\
+    --DirectConnectId dc-abcdefgh \
+    --DirectConnectTunnelName Test \
+    --NetworkType VPC \
+    --NetworkRegion ap-guangzhou \
+    --VpcId vpc-abcdefgh \
+    --DirectConnectGatewayId dcg-abcdefgh \
+    --Bandwidth 100 \
+    --RouteType BGP \
+    --Vlan 100 \
+    --TencentAddress 192.168.1.2/30 \
+    --CustomerAddress 192.168.1.1/30 \
+    --BgpPeer.Asn 65128 \
     --BgpPeer.AuthKey abcdefg
 ```
 

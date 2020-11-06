@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse DescribeFleetEvents --cli-unfold-argument  \
-    --FleetId fleet-pro4extc-kej8s8z4\
-    --Offset 0\
+    --FleetId fleet-pro4extc-kej8s8z4 \
+    --Offset 0 \
     --Limit 10
 ```
 

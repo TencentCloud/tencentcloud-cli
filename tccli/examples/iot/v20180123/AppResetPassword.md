@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iot AppResetPassword --cli-unfold-argument  \
-    --AccessToken xxx\
-    --OldPassword oldpassword\
+    --AccessToken xxx \
+    --OldPassword oldpassword \
     --NewPassword newpassword
 ```
 

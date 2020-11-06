@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DeleteAccount --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
+    --InstanceId mssql-njj2mtpl \
     --UserNames testusername
 ```
 

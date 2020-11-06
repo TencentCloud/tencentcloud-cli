@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live DescribeStreamPushInfoList --cli-unfold-argument  \
-    --StartTime '2019-06-21 12:00:00'\
-    --EndTime '2019-06-21 12:01:02'\
+    --StartTime '2019-06-21 12:00:00' \
+    --EndTime '2019-06-21 12:01:02' \
     --StreamName abcd
 ```
 

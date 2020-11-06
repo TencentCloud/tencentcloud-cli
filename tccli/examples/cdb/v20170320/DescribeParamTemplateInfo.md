@@ -1,4 +1,4 @@
-**Example 1: Querying parameter template details**
+**Example 1: Querying the parameter template details**
 
 
 

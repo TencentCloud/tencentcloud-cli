@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway DeleteIPStrategy --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
+    --ServiceId service-ody35h5e \
     --StrategyId IPStrategy-4xj4r1ou
 ```
 

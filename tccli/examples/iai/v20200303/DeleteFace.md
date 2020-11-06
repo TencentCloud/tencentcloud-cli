@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai DeleteFace --cli-unfold-argument  \
-    --PersonId 1001\
+    --PersonId 1001 \
     --FaceIds 2875186538564559728
 ```
 
@@ -31,7 +31,7 @@ Input:
 
 ```
 tccli iai DeleteFace --cli-unfold-argument  \
-    --PersonId 5001\
+    --PersonId 5001 \
     --FaceIds 2875186538564559728
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf ReleasePublicConfig --cli-unfold-argument  \
-    --ConfigId dcfg-p-4y46okga\
+    --ConfigId dcfg-p-4y46okga \
     --NamespaceId namespace-ov6l235v
 ```
 

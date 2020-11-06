@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli mariadb UpgradeDBInstance --cli-unfold-argument  \
-    --InstanceId tdsql-avw0207d\
-    --Memory 2000\
-    --Storage 20000\
+    --InstanceId tdsql-avw0207d \
+    --Memory 2000 \
+    --Storage 20000 \
     --AutoVoucher true
 ```
 

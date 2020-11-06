@@ -50,10 +50,10 @@ Input:
 
 ```
 tccli mps DescribeWordSamples --cli-unfold-argument  \
-    --Usages Recognition Review.Ocr\
-    --Keywords 'John Smith'\
-    --Tags Celebrity\
-    --Offset 0\
+    --Usages Recognition Review.Ocr \
+    --Keywords 'John Smith' \
+    --Tags Celebrity \
+    --Offset 0 \
     --Limit 20
 ```
 

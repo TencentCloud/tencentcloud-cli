@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap ModifyRealServerName --cli-unfold-argument  \
-    --RealServerName ‘namexxx’\
+    --RealServerName ‘namexxx’ \
     --RealServerId 'rsxxxx'
 ```
 

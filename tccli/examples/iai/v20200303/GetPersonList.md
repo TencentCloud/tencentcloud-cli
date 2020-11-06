@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iai GetPersonList --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1\
-    --Offset 0\
+    --GroupId ZhuYuanDormitoryNo1 \
+    --Offset 0 \
     --Limit 10
 ```
 
@@ -48,8 +48,8 @@ Input:
 
 ```
 tccli iai GetPersonList --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --Offset 0\
+    --GroupId TencentShenZhenEmployee \
+    --Offset 0 \
     --Limit 10
 ```
 
@@ -89,8 +89,8 @@ Input:
 
 ```
 tccli iai GetPersonList --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitory\
-    --Offset 0\
+    --GroupId ZhuYuanDormitory \
+    --Offset 0 \
     --Limit 10
 ```
 

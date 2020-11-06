@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tione UpdateNotebookLifecycleScript --cli-unfold-argument  \
-    --NotebookLifecycleScriptsName abc\
-    --CreateScript YWJj\
+    --NotebookLifecycleScriptsName abc \
+    --CreateScript YWJj \
     --StartScript YWJj
 ```
 

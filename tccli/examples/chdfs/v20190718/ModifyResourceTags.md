@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli chdfs ModifyResourceTags --cli-unfold-argument  \
-    --FileSystemId f1mhaqkciq0\
-    --Tags.0.Key key1\
-    --Tags.0.Value value1\
-    --Tags.1.Key key2\
+    --FileSystemId f1mhaqkciq0 \
+    --Tags.0.Key key1 \
+    --Tags.0.Value value1 \
+    --Tags.1.Key key2 \
     --Tags.1.Value value2
 ```
 

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli monitor ModifyAlarmReceivers --cli-unfold-argument  \
-    --Module monitor\
-    --GroupId 111111\
-    --ReceiverInfos.0.StartTime 61261\
-    --ReceiverInfos.0.EndTime 57599\
-    --ReceiverInfos.0.NotifyWay EMAIL SMS\
-    --ReceiverInfos.0.ReceiverType group\
+    --Module monitor \
+    --GroupId 111111 \
+    --ReceiverInfos.0.StartTime 61261 \
+    --ReceiverInfos.0.EndTime 57599 \
+    --ReceiverInfos.0.NotifyWay EMAIL SMS \
+    --ReceiverInfos.0.ReceiverType group \
     --ReceiverInfos.0.ReceiverGroupList 118074
 ```
 

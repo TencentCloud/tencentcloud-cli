@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ds DescribeTaskStatus --cli-unfold-argument  \
-    --Module CommonMng\
-    --Operation DescribeTaskStatus\
+    --Module CommonMng \
+    --Operation DescribeTaskStatus \
     --TaskId 255
 ```
 

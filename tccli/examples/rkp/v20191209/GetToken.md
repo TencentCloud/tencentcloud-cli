@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli rkp GetToken --cli-unfold-argument  \
-    --BusinessId 1\
+    --BusinessId 1 \
     --Scene 2
 ```
 

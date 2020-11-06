@@ -87,9 +87,9 @@ Input:
 
 ```
 tccli as DescribeLifecycleHooks --cli-unfold-argument  \
-    --Filters.0.Name lifecycle-hook-id\
-    --Filters.0.Values ash-oq76wsrx ash-fbjiexz7\
-    --Filters.1.Name auto-scaling-group-id\
+    --Filters.0.Name lifecycle-hook-id \
+    --Filters.0.Values ash-oq76wsrx ash-fbjiexz7 \
+    --Filters.1.Name auto-scaling-group-id \
     --Filters.1.Values asg-8fbozqja
 ```
 

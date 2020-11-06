@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DeleteProject --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --ProjectId 1112
 ```
 

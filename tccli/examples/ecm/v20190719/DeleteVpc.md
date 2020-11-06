@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DeleteVpc --cli-unfold-argument  \
-    --VpcId vpc-ila64qtl\
+    --VpcId vpc-ila64qtl \
     --EcmRegion ap-hangzhou-ecm
 ```
 

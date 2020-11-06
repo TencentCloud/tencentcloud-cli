@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli mps EditMedia --cli-unfold-argument  \
-    --FileInfos.0.Bucket TopRankVideo-125xxx88\
-    --FileInfos.0.Region ap-chongqing\
-    --FileInfos.0.Object /movie/201907/WildAnimal.mov\
-    --FileInfos.0.StartTimeOffset 60.0\
-    --FileInfos.0.EndTimeOffset 120.0\
-    --OutputStorage.Type COS\
-    --OutputStorage.CosOutputStorage.Bucket TopRankVideo-125xxx88\
-    --OutputStorage.CosOutputStorage.Region ap-chongqing\
+    --FileInfos.0.Bucket TopRankVideo-125xxx88 \
+    --FileInfos.0.Region ap-chongqing \
+    --FileInfos.0.Object /movie/201907/WildAnimal.mov \
+    --FileInfos.0.StartTimeOffset 60.0 \
+    --FileInfos.0.EndTimeOffset 120.0 \
+    --OutputStorage.Type COS \
+    --OutputStorage.CosOutputStorage.Bucket TopRankVideo-125xxx88 \
+    --OutputStorage.CosOutputStorage.Region ap-chongqing \
     --OutputObjectPath /clip_result/clip_WildAnimal.{format}
 ```
 

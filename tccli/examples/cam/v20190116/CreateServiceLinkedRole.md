@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam CreateServiceLinkedRole --cli-unfold-argument  \
-    --QCSServiceName ccs.qcloud.com\
-    --CustomSuffix forTest\
+    --QCSServiceName ccs.qcloud.com \
+    --CustomSuffix forTest \
     --Description ccsLinkedRole
 ```
 

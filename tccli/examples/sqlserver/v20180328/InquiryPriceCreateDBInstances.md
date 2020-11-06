@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli sqlserver InquiryPriceCreateDBInstances --cli-unfold-argument  \
-    --Zone ap-guangzhou-2\
-    --Memory 2\
-    --Storage 300\
-    --Period 1\
-    --GoodsNum 1\
+    --Zone ap-guangzhou-2 \
+    --Memory 2 \
+    --Storage 300 \
+    --Period 1 \
+    --GoodsNum 1 \
     --DBVersion 2008R2
 ```
 

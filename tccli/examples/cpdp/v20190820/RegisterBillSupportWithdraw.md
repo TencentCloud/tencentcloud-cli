@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cpdp RegisterBillSupportWithdraw --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --TranNetMemberCode ' YAPI100007'\
-    --OrderNo ' O2019110603'\
-    --SuspendAmt 1233\
-    --TranFee 0.0\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --TranNetMemberCode ' YAPI100007' \
+    --OrderNo ' O2019110603' \
+    --SuspendAmt 1233 \
+    --TranFee 0.0 \
     --MrchCode 1234
 ```
 

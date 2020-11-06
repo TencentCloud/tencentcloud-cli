@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli chdfs ModifyFileSystem --cli-unfold-argument  \
-    --FileSystemId f4mhaqkciq0\
-    --FileSystemName test\
-    --Description test\
+    --FileSystemId f4mhaqkciq0 \
+    --FileSystemName test \
+    --Description test \
     --CapacityQuota 1073741824
 ```
 

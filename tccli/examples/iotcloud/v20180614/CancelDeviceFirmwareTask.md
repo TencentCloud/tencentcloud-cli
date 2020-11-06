@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud CancelDeviceFirmwareTask --cli-unfold-argument  \
-    --ProductID ABCDE12345\
-    --FirmwareVersion 1.0.0\
-    --TaskId 10000\
+    --ProductID ABCDE12345 \
+    --FirmwareVersion 1.0.0 \
+    --TaskId 10000 \
     --DeviceName dev
 ```
 

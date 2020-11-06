@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse AttachCcnInstances --cli-unfold-argument  \
-    --FleetId fleet-qp3g3caa-ax4fq2wi\
-    --AccountId 1234567\
+    --FleetId fleet-qp3g3caa-ax4fq2wi \
+    --AccountId 1234567 \
     --CcnId ccn-2dsbtmo3
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli mariadb ModifyAccountDescription --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
-    --UserName testuser1\
-    --Host 172.17.%\
+    --InstanceId tdsql-fdpjf5zh \
+    --UserName testuser1 \
+    --Host 172.17.% \
     --Description 'Test account'
 ```
 

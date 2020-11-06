@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli clb DescribeListeners --cli-unfold-argument  \
-    --LoadBalancerId lb-aniq7ewx\
-    --Protocol TCP\
-    --Port 333\
+    --LoadBalancerId lb-aniq7ewx \
+    --Protocol TCP \
+    --Port 333 \
     --ListenerIds lbl-pt4dgkjn
 ```
 

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cpdp BindRelateAcctUnionPay --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --TranNetMemberCode YAPI100015\
-    --MemberName test\
-    --MemberGlobalType 1\
-    --MemberGlobalId 431100195223255123\
-    --MemberAcctNo 6235180000561997123\
-    --BankType 1\
-    --AcctOpenBranchName xx银行\
-    --EiconBankBranchId 3075322051998\
-    --Mobile 11111111111\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --TranNetMemberCode YAPI100015 \
+    --MemberName test \
+    --MemberGlobalType 1 \
+    --MemberGlobalId 431100195223255123 \
+    --MemberAcctNo 6235180000561997123 \
+    --BankType 1 \
+    --AcctOpenBranchName xx银行 \
+    --EiconBankBranchId 3075322051998 \
+    --Mobile 11111111111 \
     --MrchCode 1234
 ```
 

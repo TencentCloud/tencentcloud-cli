@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iai SearchFaces --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testA.jpg\
-    --MaxFaceNum 1\
-    --MinFaceSize 40\
-    --MaxPersonNum 5\
-    --GroupIds TencentShenZhenEmployee\
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --MaxFaceNum 1 \
+    --MinFaceSize 40 \
+    --MaxPersonNum 5 \
+    --GroupIds TencentShenZhenEmployee \
     --Version 2018-03-01
 ```
 
@@ -60,9 +60,9 @@ Input:
 
 ```
 tccli iai SearchFaces --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testA.jpg\
-    --MaxFaceNum 11\
-    --GroupIds TencentShenZhenEmployee\
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --MaxFaceNum 11 \
+    --GroupIds TencentShenZhenEmployee \
     --Version 2018-03-01
 ```
 
@@ -87,8 +87,8 @@ Input:
 
 ```
 tccli iai SearchFaces --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testA\
-    --GroupIds TencentShenZhenEmployee\
+    --Url http://test.image.myqcloud.com/testA \
+    --GroupIds TencentShenZhenEmployee \
     --Version 2018-03-01
 ```
 

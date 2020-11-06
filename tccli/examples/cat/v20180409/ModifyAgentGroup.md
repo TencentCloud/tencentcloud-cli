@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cat ModifyAgentGroup --cli-unfold-argument  \
-    --GroupId 100004185\
-    --GroupName TestModifyAgentGroup\
-    --IsDefault 0\
-    --Agents.0.Province gd\
+    --GroupId 100004185 \
+    --GroupName TestModifyAgentGroup \
+    --IsDefault 0 \
+    --Agents.0.Province gd \
     --Agents.0.Isp cmc
 ```
 

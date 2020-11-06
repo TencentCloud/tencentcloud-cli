@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyDirectConnectGatewayAttribute --cli-unfold-argument  \
-    --DirectConnectGatewayId dcg-k6cswwhx\
-    --DirectConnectGatewayName new+name\
+    --DirectConnectGatewayId dcg-k6cswwhx \
+    --DirectConnectGatewayName new+name \
     --CcnRouteType BGP
 ```
 

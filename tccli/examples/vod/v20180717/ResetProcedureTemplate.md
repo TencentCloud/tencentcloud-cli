@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vod ResetProcedureTemplate --cli-unfold-argument  \
-    --Name 'My Task Flow'\
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 220\
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 230\
+    --Name 'My Task Flow' \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 220 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 230 \
     --MediaProcessTask.TranscodeTaskSet.2.Definition 240
 ```
 

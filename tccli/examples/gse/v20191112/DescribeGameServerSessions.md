@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gse DescribeGameServerSessions --cli-unfold-argument  \
-    --AliasId a\
-    --GameServerSessionId qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-111222\
-    --Limit 1\
-    --NextToken nextToken-4hpp445-niuu789\
+    --AliasId a \
+    --GameServerSessionId qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-111222 \
+    --Limit 1 \
+    --NextToken nextToken-4hpp445-niuu789 \
     --StatusFilter ACTIVATING
 ```
 

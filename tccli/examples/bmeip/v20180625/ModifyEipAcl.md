@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli bmeip ModifyEipAcl --cli-unfold-argument  \
-    --AclId bmeipacl-s1hf4voq\
-    --Type in\
-    --Rules.0.Ip 8.8.8.8\
-    --Rules.0.Port 8080\
-    --Rules.0.Protocol tcp\
-    --Rules.0.Action accept\
+    --AclId bmeipacl-s1hf4voq \
+    --Type in \
+    --Rules.0.Ip 8.8.8.8 \
+    --Rules.0.Port 8080 \
+    --Rules.0.Protocol tcp \
+    --Rules.0.Action accept \
     --Rules.0.Description testrule
 ```
 

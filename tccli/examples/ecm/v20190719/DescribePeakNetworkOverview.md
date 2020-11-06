@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm DescribePeakNetworkOverview --cli-unfold-argument  \
-    --StartTime 2020-09-04\
-    --EndTime 2020-09-04\
-    --Filters.0.Name region\
+    --StartTime 2020-09-04 \
+    --EndTime 2020-09-04 \
+    --Filters.0.Name region \
     --Filters.0.Values ap-zhengzhou-ecm
 ```
 

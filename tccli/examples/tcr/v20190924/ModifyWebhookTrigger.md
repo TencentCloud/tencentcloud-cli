@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tcr ModifyWebhookTrigger --cli-unfold-argument  \
-    --RegistryId tcr-7s2d14fn\
-    --Namespace someNs\
-    --Trigger.Id 9\
-    --Trigger.Enabled false\
-    --Trigger.Targets.0.Address abc.local\
+    --RegistryId tcr-7s2d14fn \
+    --Namespace someNs \
+    --Trigger.Id 9 \
+    --Trigger.Enabled false \
+    --Trigger.Targets.0.Address abc.local \
     --Trigger.EventTypes pullImage
 ```
 

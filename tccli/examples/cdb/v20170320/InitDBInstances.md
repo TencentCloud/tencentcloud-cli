@@ -1,4 +1,4 @@
-**Example 1: Initializing new instance**
+**Example 1: Initializing a new instance**
 
 
 
@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdb InitDBInstances --cli-unfold-argument  \
-    --InstanceIds cdb-f35wr6wj\
-    --NewPassword Gx18ux23F^X\
-    --Parameters.0.name lower_case_table_names\
-    --Parameters.0.value 1\
-    --Parameters.1.name character_set_server\
+    --InstanceIds cdb-f35wr6wj \
+    --NewPassword Gx18ux23F^X \
+    --Parameters.0.name lower_case_table_names \
+    --Parameters.0.value 1 \
+    --Parameters.1.name character_set_server \
     --Parameters.1.value utf8
 ```
 

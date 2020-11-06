@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyGatewayFlowQos --cli-unfold-argument  \
-    --GatewayId vpngw-gree226l\
-    --Bandwidth 10\
+    --GatewayId vpngw-gree226l \
+    --Bandwidth 10 \
     --IpAddresses 10.0.0.12
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli smpn CreateSmpnEpa --cli-unfold-argument  \
-    --ResourceId test_resource_id_for_smpn_epa\
-    --RequestData.PhoneNumber 18122223554\
+    --ResourceId test_resource_id_for_smpn_epa \
+    --RequestData.PhoneNumber 18122223554 \
     --RequestData.Name 黄页名称
 ```
 

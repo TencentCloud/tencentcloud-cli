@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli dayu CreateDDoSPolicy --cli-unfold-argument  \
-    --Business bgpip\
-    --Name testpolicy\
-    --DropOptions.0.DropTcp 0\
-    --DropOptions.0.DropUdp 0\
-    --DropOptions.0.DropIcmp 1\
-    --DropOptions.0.DropOther 1\
-    --DropOptions.0.DropAbroad 1\
+    --Business bgpip \
+    --Name testpolicy \
+    --DropOptions.0.DropTcp 0 \
+    --DropOptions.0.DropUdp 0 \
+    --DropOptions.0.DropIcmp 1 \
+    --DropOptions.0.DropOther 1 \
+    --DropOptions.0.DropAbroad 1 \
     --DropOptions.0.CheckSyncConn 1
 ```
 

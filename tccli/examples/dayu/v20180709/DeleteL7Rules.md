@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu DeleteL7Rules --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xd\
+    --Business bgpip \
+    --Id bgpip-000000xd \
     --RuleIdList rule-00000001
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteVirtualIp --cli-unfold-argument  \
-    --VpcId vpc-muinpf9z\
+    --VpcId vpc-muinpf9z \
     --Ips 10.1.254.243
 ```
 

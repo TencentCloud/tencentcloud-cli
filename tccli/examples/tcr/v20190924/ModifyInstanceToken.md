@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr ModifyInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-12345\
-    --TokenId 2ab3af0d-893d-423f-91b1-27713566f95f\
+    --RegistryId tcr-12345 \
+    --TokenId 2ab3af0d-893d-423f-91b1-27713566f95f \
     --Enable true
 ```
 
@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli tcr ModifyInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-12345\
-    --TokenId 2ab3af0d-893d-423f-91b1-27713566f95f\
+    --RegistryId tcr-12345 \
+    --TokenId 2ab3af0d-893d-423f-91b1-27713566f95f \
     --Enable false
 ```
 

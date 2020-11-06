@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mongodb DescribeSlowLog --cli-unfold-argument  \
-    --InstanceId cmgo-eqmoa5sf\
-    --StartTime '2019-06-04 20:21:00'\
-    --EndTime '2019-06-04 20:22:00'\
-    --SlowMS 200\
-    --Offset 20\
+    --InstanceId cmgo-eqmoa5sf \
+    --StartTime '2019-06-04 20:21:00' \
+    --EndTime '2019-06-04 20:22:00' \
+    --SlowMS 200 \
+    --Offset 20 \
     --Limit 20
 ```
 

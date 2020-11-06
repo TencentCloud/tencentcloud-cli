@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ds CreatePersonalAccount --cli-unfold-argument  \
-    --Module AccountMng\
-    --Operation CreatePersonalAccount\
-    --Name test\
-    --IdentType 0\
-    --IdentNo 140926197802256717\
+    --Module AccountMng \
+    --Operation CreatePersonalAccount \
+    --Name test \
+    --IdentType 0 \
+    --IdentNo 140926197802256717 \
     --MobilePhone 18187654321
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cat CreateTaskEx --cli-unfold-argument  \
-    --CatTypeName http\
-    --Period 5\
-    --AgentGroupId 1510\
-    --Url www.tencent.com\
+    --CatTypeName http \
+    --Period 5 \
+    --AgentGroupId 1510 \
+    --Url www.tencent.com \
     --TaskName test_http
 ```
 

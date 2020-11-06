@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli vpc CreateNatGateway --cli-unfold-argument  \
-    --NatGatewayName test_name\
-    --VpcId vpc-abcdefgh\
-    --InternetMaxBandwidthOut 10\
-    --MaxConcurrentConnection 1000000\
-    --AddressCount 1\
-    --PublicIpAddresses 139.199.232.119\
-    --Tags.0.Key city\
+    --NatGatewayName test_name \
+    --VpcId vpc-abcdefgh \
+    --InternetMaxBandwidthOut 10 \
+    --MaxConcurrentConnection 1000000 \
+    --AddressCount 1 \
+    --PublicIpAddresses 139.199.232.119 \
+    --Tags.0.Key city \
     --Tags.0.Value shanghai
 ```
 

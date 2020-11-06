@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live DeleteLiveRecordRule --cli-unfold-argument  \
-    --DomainName yourdomain.test.com\
-    --AppName live\
+    --DomainName yourdomain.test.com \
+    --AppName live \
     --StreamName stream
 ```
 

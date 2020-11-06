@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyServiceTemplateGroupAttribute --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --ServiceTemplateGroupId ppmg-ei8hfd9a\
+    --Version 2017-03-12 \
+    --ServiceTemplateGroupId ppmg-ei8hfd9a \
     --ServiceTemplateGroupName TestName
 ```
 

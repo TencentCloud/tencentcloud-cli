@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DescribeIPProductInfo --cli-unfold-argument  \
-    --Business bgp\
+    --Business bgp \
     --IpList 1.1.1.1
 ```
 

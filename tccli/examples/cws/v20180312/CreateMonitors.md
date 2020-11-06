@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cws CreateMonitors --cli-unfold-argument  \
-    --Urls http%3A%2F%2Fwww.qcloud.com\
-    --Name 漏洞扫描监测\
-    --ScannerType normal\
-    --RateLimit 10\
-    --Crontab 24\
+    --Urls http%3A%2F%2Fwww.qcloud.com \
+    --Name 漏洞扫描监测 \
+    --ScannerType normal \
+    --RateLimit 10 \
+    --Crontab 24 \
     --FirstScanStartTime '2018-03-23 02:00:00'
 ```
 

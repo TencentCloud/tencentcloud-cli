@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideo SendOnlineMsg --cli-unfold-argument  \
-    --Tid 031400005e005a3838bd481dbe61db28\
-    --Wakeup true\
-    --WaitResp 2\
-    --MsgTopic test\
+    --Tid 031400005e005a3838bd481dbe61db28 \
+    --Wakeup true \
+    --WaitResp 2 \
+    --MsgTopic test \
     --MsgContent {"test":"test"}
 ```
 

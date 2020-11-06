@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor SendCustomAlarmMsg --cli-unfold-argument  \
-    --Module monitor\
-    --PolicyId cm-04rhwvwg\
+    --Module monitor \
+    --PolicyId cm-04rhwvwg \
     --Msg XXXX
 ```
 

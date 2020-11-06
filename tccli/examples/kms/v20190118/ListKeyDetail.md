@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli kms ListKeyDetail --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 3\
+    --Offset 0 \
+    --Limit 3 \
     --Role 0
 ```
 

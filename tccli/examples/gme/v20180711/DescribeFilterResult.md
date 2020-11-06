@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gme DescribeFilterResult --cli-unfold-argument  \
-    --BizId 0\
+    --BizId 0 \
     --FileId test_file_id
 ```
 

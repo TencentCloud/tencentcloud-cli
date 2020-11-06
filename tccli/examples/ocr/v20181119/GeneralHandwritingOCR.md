@@ -52,7 +52,7 @@ Input:
 
 ```
 tccli ocr GeneralHandwritingOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --Scene only_hw
 ```
 

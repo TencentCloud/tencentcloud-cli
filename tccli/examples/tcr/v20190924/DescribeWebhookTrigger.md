@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DescribeWebhookTrigger --cli-unfold-argument  \
-    --RegistryId tcr-7s2d14fn\
-    --Namespace someNs\
+    --RegistryId tcr-7s2d14fn \
+    --Namespace someNs \
     --Limit 1
 ```
 

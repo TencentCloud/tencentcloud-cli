@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vod ModifyContentReviewTemplate --cli-unfold-argument  \
-    --Definition 30\
-    --PornConfigure.ImgReviewInfo.Switch ON\
-    --PornConfigure.ImgReviewInfo.LabelSet sexy\
-    --PornConfigure.ImgReviewInfo.BlockConfidence 90\
+    --Definition 30 \
+    --PornConfigure.ImgReviewInfo.Switch ON \
+    --PornConfigure.ImgReviewInfo.LabelSet sexy \
+    --PornConfigure.ImgReviewInfo.BlockConfidence 90 \
     --PornConfigure.ImgReviewInfo.ReviewConfidence 60
 ```
 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli vod ModifyContentReviewTemplate --cli-unfold-argument  \
-    --Definition 30\
+    --Definition 30 \
     --PornConfigure.ImgReviewInfo.Switch ON
 ```
 
@@ -51,9 +51,9 @@ Input:
 
 ```
 tccli vod ModifyContentReviewTemplate --cli-unfold-argument  \
-    --Definition 30\
-    --PornConfigure.ImgReviewInfo.Switch ON\
-    --PornConfigure.ImgReviewInfo.BlockConfidence 90\
+    --Definition 30 \
+    --PornConfigure.ImgReviewInfo.Switch ON \
+    --PornConfigure.ImgReviewInfo.BlockConfidence 90 \
     --PornConfigure.ImgReviewInfo.ReviewConfidence 60
 ```
 

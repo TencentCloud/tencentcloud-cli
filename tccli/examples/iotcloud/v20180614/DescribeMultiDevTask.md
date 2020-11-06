@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DescribeMultiDevTask --cli-unfold-argument  \
-    --ProductId ABCDE12345\
+    --ProductId ABCDE12345 \
     --TaskId abcdefghijklmn
 ```
 

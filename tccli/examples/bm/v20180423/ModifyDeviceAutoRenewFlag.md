@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bm ModifyDeviceAutoRenewFlag --cli-unfold-argument  \
-    --InstanceIds cpm-xxx0 cpm-xxx1\
+    --InstanceIds cpm-xxx0 cpm-xxx1 \
     --AutoRenewFlag 1
 ```
 

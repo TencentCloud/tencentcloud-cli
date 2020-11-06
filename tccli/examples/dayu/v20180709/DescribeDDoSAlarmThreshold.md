@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DescribeDDoSAlarmThreshold --cli-unfold-argument  \
-    --Business bgpip\
+    --Business bgpip \
     --RsId net-0000002h
 ```
 

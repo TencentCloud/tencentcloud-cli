@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc AssignPrivateIpAddresses --cli-unfold-argument  \
-    --NetworkInterfaceId eni-afo43z61\
+    --NetworkInterfaceId eni-afo43z61 \
     --SecondaryPrivateIpAddressCount 2
 ```
 

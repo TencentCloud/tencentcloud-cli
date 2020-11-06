@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribeMsApiList --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
+    --Offset 0 \
+    --Limit 20 \
     --MicroserviceId ms-opy5kjy4
 ```
 

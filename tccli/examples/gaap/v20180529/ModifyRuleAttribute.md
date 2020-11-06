@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli gaap ModifyRuleAttribute --cli-unfold-argument  \
-    --RuleId rule-5g8dh58\
-    --ListenerId listener-8fueuc9\
-    --Path /\
-    --Scheduler rr\
-    --HealthCheck 0\
+    --RuleId rule-5g8dh58 \
+    --ListenerId listener-8fueuc9 \
+    --Path / \
+    --Scheduler rr \
+    --HealthCheck 0 \
     --CheckParam null
 ```
 

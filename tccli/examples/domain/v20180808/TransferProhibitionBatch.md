@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain TransferProhibitionBatch --cli-unfold-argument  \
-    --Domains h101.tencent.com\
+    --Domains h101.tencent.com \
     --Status True
 ```
 

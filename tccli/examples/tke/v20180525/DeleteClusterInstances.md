@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DeleteClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx\
-    --InstanceIds ins-xxxxx\
+    --ClusterId cls-xxxxxx \
+    --InstanceIds ins-xxxxx \
     --InstanceDeleteMode terminate
 ```
 

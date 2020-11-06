@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bm RunUserCmd --cli-unfold-argument  \
-    --CmdId cmd-aaaaa\
-    --UserName root\
-    --Password 123456\
-    --CmdParam xx\
+    --CmdId cmd-aaaaa \
+    --UserName root \
+    --Password 123456 \
+    --CmdParam xx \
     --InstanceIds cpm-xxx0 cpm-xxx1 cpm-xxx2
 ```
 

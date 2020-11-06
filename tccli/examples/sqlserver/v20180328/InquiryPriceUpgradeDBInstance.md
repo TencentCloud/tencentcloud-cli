@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver InquiryPriceUpgradeDBInstance --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
-    --Memory 8\
+    --InstanceId mssql-njj2mtpl \
+    --Memory 8 \
     --Storage 300
 ```
 

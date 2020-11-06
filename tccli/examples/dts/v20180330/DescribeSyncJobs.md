@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dts DescribeSyncJobs --cli-unfold-argument  \
-    --Order CreateTime\
-    --OrderSeq DESC\
-    --Offset 0\
+    --Order CreateTime \
+    --OrderSeq DESC \
+    --Offset 0 \
     --Limit 2
 ```
 

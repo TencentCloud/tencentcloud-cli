@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live StopLiveRecord --cli-unfold-argument  \
-    --StreamName test1\
+    --StreamName test1 \
     --TaskId 123
 ```
 

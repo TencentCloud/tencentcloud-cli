@@ -6,33 +6,33 @@ Input:
 
 ```
 tccli cpdp UnifiedOrder --cli-unfold-argument  \
-    --CurrencyType CNY\
-    --MidasAppId your_midas_app_id\
-    --OutTradeNo your_order_no\
-    --ProductDetail 商品详情\
-    --ProductId your_product_id\
-    --ProductName 商品名称\
-    --TotalAmt 1\
-    --UserId your_user_id\
-    --Channel wechat\
-    --Quantity 1\
-    --RealChannel bank_pingan\
-    --SubAppId your_sub_app_id\
-    --TotalMchIncome 1\
-    --TotalPlatformIncome 0\
-    --WxSubOpenId your_wx_sub_open_id\
-    --OriginalAmt 1\
-    --MidasSecretId your_midas_secret_id\
-    --MidasSignature your_midas_signature\
-    --WxAppId your_wx_app_id\
-    --WxSubAppId your_wx_sub_app_id\
-    --SubOrderList.0.SubMchIncome 1\
-    --SubOrderList.0.PlatformIncome 0\
-    --SubOrderList.0.ProductDetail 商品详情\
-    --SubOrderList.0.ProductName 商品名称\
-    --SubOrderList.0.SubAppId your_sub_app_id\
-    --SubOrderList.0.SubOutTradeNo your_sub_order_no\
-    --SubOrderList.0.Amt 1\
+    --CurrencyType CNY \
+    --MidasAppId your_midas_app_id \
+    --OutTradeNo your_order_no \
+    --ProductDetail 商品详情 \
+    --ProductId your_product_id \
+    --ProductName 商品名称 \
+    --TotalAmt 1 \
+    --UserId your_user_id \
+    --Channel wechat \
+    --Quantity 1 \
+    --RealChannel bank_pingan \
+    --SubAppId your_sub_app_id \
+    --TotalMchIncome 1 \
+    --TotalPlatformIncome 0 \
+    --WxSubOpenId your_wx_sub_open_id \
+    --OriginalAmt 1 \
+    --MidasSecretId your_midas_secret_id \
+    --MidasSignature your_midas_signature \
+    --WxAppId your_wx_app_id \
+    --WxSubAppId your_wx_sub_app_id \
+    --SubOrderList.0.SubMchIncome 1 \
+    --SubOrderList.0.PlatformIncome 0 \
+    --SubOrderList.0.ProductDetail 商品详情 \
+    --SubOrderList.0.ProductName 商品名称 \
+    --SubOrderList.0.SubAppId your_sub_app_id \
+    --SubOrderList.0.SubOutTradeNo your_sub_order_no \
+    --SubOrderList.0.Amt 1 \
     --SubOrderList.0.OriginalAmt 1
 ```
 

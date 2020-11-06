@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tbp TextReset --cli-unfold-argument  \
-    --BotId 972445\
+    --BotId 972445 \
     --TerminalId 123
 ```
 

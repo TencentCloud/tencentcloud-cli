@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmeip ModifyEipName --cli-unfold-argument  \
-    --EipId eip-68faw2do\
+    --EipId eip-68faw2do \
     --EipName test
 ```
 

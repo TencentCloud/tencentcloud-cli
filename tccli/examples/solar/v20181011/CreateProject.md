@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli solar CreateProject --cli-unfold-argument  \
-    --ProjectBudget 1000\
-    --ProjectIntroduction Demo\
-    --ProjectName Demo\
-    --ProjectOrg 质量部\
+    --ProjectBudget 1000 \
+    --ProjectIntroduction Demo \
+    --ProjectName Demo \
+    --ProjectOrg 质量部 \
     --ProjectOrgId 652462622289039360
 ```
 

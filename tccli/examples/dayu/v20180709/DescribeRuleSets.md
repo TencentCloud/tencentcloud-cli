@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DescribeRuleSets --cli-unfold-argument  \
-    --Business bgpip\
+    --Business bgpip \
     --IdList bgpip-000000xe
 ```
 

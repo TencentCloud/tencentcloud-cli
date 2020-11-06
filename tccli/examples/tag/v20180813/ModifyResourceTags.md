@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tag ModifyResourceTags --cli-unfold-argument  \
-    --Resource qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\
-    --ReplaceTags.0.TagKey testTagKey1\
-    --ReplaceTags.0.TagValue testTagValue1\
-    --ReplaceTags.1.TagKey testTagKey2\
+    --Resource qcs::cvm:ap-beijing:uin/1234567:instance/ins-123 \
+    --ReplaceTags.0.TagKey testTagKey1 \
+    --ReplaceTags.0.TagValue testTagValue1 \
+    --ReplaceTags.1.TagKey testTagKey2 \
     --ReplaceTags.1.TagValue testTagValue2
 ```
 
@@ -30,8 +30,8 @@ Input:
 
 ```
 tccli tag ModifyResourceTags --cli-unfold-argument  \
-    --Resource qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\
-    --DeleteTags.0.TagKey testTagKey1\
+    --Resource qcs::cvm:ap-beijing:uin/1234567:instance/ins-123 \
+    --DeleteTags.0.TagKey testTagKey1 \
     --DeleteTags.1.TagKey testTagKey2
 ```
 

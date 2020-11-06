@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm CreateImage --cli-unfold-argument  \
-    --InstanceId ein-93sjjr8k\
-    --ImageName test_name\
-    --ImageDescription test_description\
+    --InstanceId ein-93sjjr8k \
+    --ImageName test_name \
+    --ImageDescription test_description \
     --ForcePoweroff TRUE
 ```
 

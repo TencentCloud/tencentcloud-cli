@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli apigateway ModifySubDomain --cli-unfold-argument  \
-    --ServiceId service-19c5fnhy\
-    --SubDomain xxxxxx\
-    --CertificateId ''\
-    --IsDefaultMapping false\
-    --Protocol http\
-    --NetType OUTER\
-    --PathMappingSet.0.Path /\
+    --ServiceId service-19c5fnhy \
+    --SubDomain xxxxxx \
+    --CertificateId '' \
+    --IsDefaultMapping false \
+    --Protocol http \
+    --NetType OUTER \
+    --PathMappingSet.0.Path / \
     --PathMappingSet.0.Environment release
 ```
 

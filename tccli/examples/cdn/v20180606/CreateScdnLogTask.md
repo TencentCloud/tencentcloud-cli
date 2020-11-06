@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cdn CreateScdnLogTask --cli-unfold-argument  \
-    --Domain xx\
-    --AttackType xx\
-    --Ip xx\
-    --DefenceMode xx\
-    --Mode xx\
-    --StartTime 2020-09-22 00:00:00\
-    --Domains xx\
+    --Domain xx \
+    --AttackType xx \
+    --Ip xx \
+    --DefenceMode xx \
+    --Mode xx \
+    --StartTime 2020-09-22 00:00:00 \
+    --Domains xx \
     --EndTime 2020-09-22 23:00:00
 ```
 

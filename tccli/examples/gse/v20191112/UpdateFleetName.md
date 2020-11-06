@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gse UpdateFleetName --cli-unfold-argument  \
-    --FleetId fleet-pro4eunl-lmpa6tud\
+    --FleetId fleet-pro4eunl-lmpa6tud \
     --Name mod1
 ```
 

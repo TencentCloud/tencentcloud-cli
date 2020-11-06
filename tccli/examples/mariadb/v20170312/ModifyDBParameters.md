@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mariadb ModifyDBParameters --cli-unfold-argument  \
-    --InstanceId tdsql-ige1a5k3\
-    --Params.0.Param character_set_server\
+    --InstanceId tdsql-ige1a5k3 \
+    --Params.0.Param character_set_server \
     --Params.0.Value utf8
 ```
 

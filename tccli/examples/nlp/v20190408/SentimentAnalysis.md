@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp SentimentAnalysis --cli-unfold-argument  \
-    --Text "今天受了委屈，心情很差。"\
+    --Text "今天受了委屈，心情很差。" \
     --Flag 2
 ```
 

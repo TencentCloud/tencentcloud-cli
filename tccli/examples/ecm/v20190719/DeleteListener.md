@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DeleteListener --cli-unfold-argument  \
-    --LoadBalancerId lb-f9zyj3kb\
+    --LoadBalancerId lb-f9zyj3kb \
     --ListenerId lb-knd4jr8m
 ```
 

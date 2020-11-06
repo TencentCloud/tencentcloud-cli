@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcaplusdb ModifyClusterTags --cli-unfold-argument  \
-    --ClusterId 5674209986\
-    --ReplaceTags.0.TagKey test1\
-    --ReplaceTags.0.TagValue value1\
+    --ClusterId 5674209986 \
+    --ReplaceTags.0.TagKey test1 \
+    --ReplaceTags.0.TagValue value1 \
     --DeleteTags.0.TagKey delete1
 ```
 

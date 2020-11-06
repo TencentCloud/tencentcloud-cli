@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tsf DescribeUploadInfo --cli-unfold-argument  \
-    --PkgName test-drvier-api-1.0.0-SNAPSHOT.jar\
-    --PkgType fatjar\
-    --PkgVersion 20190529xxxxxx\
+    --PkgName test-drvier-api-1.0.0-SNAPSHOT.jar \
+    --PkgType fatjar \
+    --PkgVersion 20190529xxxxxx \
     --ApplicationId application-xxxxxx
 ```
 

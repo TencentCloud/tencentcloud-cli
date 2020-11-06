@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr ModifyNamespace --cli-unfold-argument  \
-    --RegistryId tcr-okmj78\
-    --NamespaceName mytest\
+    --RegistryId tcr-okmj78 \
+    --NamespaceName mytest \
     --IsPublic true
 ```
 

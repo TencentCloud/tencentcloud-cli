@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli cpdp DescribeChargeDetail --cli-unfold-argument  \
-    --MidasSecretId 1587005497659\
-    --MidasSignature 111\
-    --MidasAppId unibank10001\
-    --RequestType ChargeDetailQueryReq\
-    --OrderId 2020042180081\
-    --PlatformShortNumber F08872\
-    --AcquiringChannelType 04\
-    --BankAccountNumber 15000093978307\
-    --PayChannelSubId 1\
-    --PayChannel bank_pingan\
-    --MerchantCode 4087\
-    --TransSequenceNumber F088722004270543493495\
+    --MidasSecretId 1587005497659 \
+    --MidasSignature 111 \
+    --MidasAppId unibank10001 \
+    --RequestType ChargeDetailQueryReq \
+    --OrderId 2020042180081 \
+    --PlatformShortNumber F08872 \
+    --AcquiringChannelType 04 \
+    --BankAccountNumber 15000093978307 \
+    --PayChannelSubId 1 \
+    --PayChannel bank_pingan \
+    --MerchantCode 4087 \
+    --TransSequenceNumber F088722004270543493495 \
     --MidasEnvironment dev
 ```
 

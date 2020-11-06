@@ -58,7 +58,7 @@ Input:
 
 ```
 tccli tia ListModels --cli-unfold-argument  \
-    --Cluster test\
+    --Cluster test \
     --ServType serverless
 ```
 

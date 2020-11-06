@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli vpc DescribeDirectConnectGateways --cli-unfold-argument  \
-    --Filters.0.Name direct-connect-gateway-name\
-    --Filters.0.Values test\
-    --Filters.1.Name gateway-type\
-    --Filters.1.Values NORMAL\
-    --Filters.2.Name vpc-id\
+    --Filters.0.Name direct-connect-gateway-name \
+    --Filters.0.Values test \
+    --Filters.1.Name gateway-type \
+    --Filters.1.Values NORMAL \
+    --Filters.2.Name vpc-id \
     --Filters.2.Values vpc-f796it7v vpc-jkmjx7pd
 ```
 

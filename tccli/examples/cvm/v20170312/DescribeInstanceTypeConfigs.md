@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm DescribeInstanceTypeConfigs --cli-unfold-argument  \
-    --Filters.0.Name zone\
-    --Filters.0.Values ap-guangzhou-2\
-    --Filters.1.Name instance-family\
+    --Filters.0.Name zone \
+    --Filters.0.Values ap-guangzhou-2 \
+    --Filters.1.Name instance-family \
     --Filters.1.Values I1
 ```
 

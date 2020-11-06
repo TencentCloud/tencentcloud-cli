@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli monitor GetMonitorData --cli-unfold-argument  \
-    --Namespace QCE/CVM\
-    --MetricName CPUUsage\
-    --Period 300\
-    --StartTime 2018-09-22T19:51:23+08:00\
-    --EndTime 2018-09-22T20:51:23+08:00\
-    --Instances.0.Dimensions.0.Name InstanceId\
-    --Instances.0.Dimensions.0.Value ins-j0hk02zo\
-    --Instances.1.Dimensions.0.Name InstanceId\
+    --Namespace QCE/CVM \
+    --MetricName CPUUsage \
+    --Period 300 \
+    --StartTime 2018-09-22T19:51:23+08:00 \
+    --EndTime 2018-09-22T20:51:23+08:00 \
+    --Instances.0.Dimensions.0.Name InstanceId \
+    --Instances.0.Dimensions.0.Value ins-j0hk02zo \
+    --Instances.1.Dimensions.0.Name InstanceId \
     --Instances.1.Dimensions.0.Value ins-o8vv2w10
 ```
 
@@ -60,14 +60,14 @@ Input:
 
 ```
 tccli monitor GetMonitorData --cli-unfold-argument  \
-    --Namespace QCE/CDB\
-    --MetricName SlowQueries\
-    --Period 300\
-    --StartTime 2018-09-22T19:23:07+08:00\
-    --EndTime 2018-09-22T20:23:07+08:00\
-    --Instances.0.Dimensions.0.Name InstanceId\
-    --Instances.0.Dimensions.0.Value cdb-k5d6z7p0\
-    --Instances.0.Dimensions.1.Name InstanceType\
+    --Namespace QCE/CDB \
+    --MetricName SlowQueries \
+    --Period 300 \
+    --StartTime 2018-09-22T19:23:07+08:00 \
+    --EndTime 2018-09-22T20:23:07+08:00 \
+    --Instances.0.Dimensions.0.Name InstanceId \
+    --Instances.0.Dimensions.0.Value cdb-k5d6z7p0 \
+    --Instances.0.Dimensions.1.Name InstanceType \
     --Instances.0.Dimensions.1.Value 2
 ```
 
@@ -108,12 +108,12 @@ Input:
 
 ```
 tccli monitor GetMonitorData --cli-unfold-argument  \
-    --Namespace QCE/CVM\
-    --MetricName CPUUsage\
-    --Period 300\
-    --StartTime 2019-03-24T10:51:23+08:00\
-    --EndTime 2019-03-24T20:51:23+08:00\
-    --Instances.0.Dimensions.0.Name InstanceId\
+    --Namespace QCE/CVM \
+    --MetricName CPUUsage \
+    --Period 300 \
+    --StartTime 2019-03-24T10:51:23+08:00 \
+    --EndTime 2019-03-24T20:51:23+08:00 \
+    --Instances.0.Dimensions.0.Name InstanceId \
     --Instances.0.Dimensions.0.Value ins-j0hk02zo
 ```
 

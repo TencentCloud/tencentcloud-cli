@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb ModifyDBInstanceName --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
+    --InstanceId tdsql-fdpjf5zh \
     --InstanceName newname
 ```
 

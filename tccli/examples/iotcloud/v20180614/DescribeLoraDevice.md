@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DescribeLoraDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345\
+    --ProductId ABCDE12345 \
     --DeviceName test_device
 ```
 

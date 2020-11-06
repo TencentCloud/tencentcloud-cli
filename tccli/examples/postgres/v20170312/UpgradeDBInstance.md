@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres UpgradeDBInstance --cli-unfold-argument  \
-    --DBInstanceId postgres-6bwgamo3\
-    --Memory 2\
+    --DBInstanceId postgres-6bwgamo3 \
+    --Memory 2 \
     --Storage 200
 ```
 

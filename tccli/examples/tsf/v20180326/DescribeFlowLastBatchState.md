@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribeFlowLastBatchState --cli-unfold-argument  \
-    --FlowId flow-qov7j8ky\
-    --Offset 0\
+    --FlowId flow-qov7j8ky \
+    --Offset 0 \
     --Limit 10
 ```
 

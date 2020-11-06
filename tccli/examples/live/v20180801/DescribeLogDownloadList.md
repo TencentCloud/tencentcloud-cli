@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live DescribeLogDownloadList --cli-unfold-argument  \
-    --PlayDomains 5000.liveplay.com\
-    --StartTime '2019-03-12 00:00:00'\
+    --PlayDomains 5000.liveplay.com \
+    --StartTime '2019-03-12 00:00:00' \
     --EndTime '2019-03-12 12:00:00'
 ```
 

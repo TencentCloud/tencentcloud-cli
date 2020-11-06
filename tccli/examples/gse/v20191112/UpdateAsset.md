@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse UpdateAsset --cli-unfold-argument  \
-    --AssetId asset-i5gtz5l9\
-    --AssetName test-demo\
+    --AssetId asset-i5gtz5l9 \
+    --AssetName test-demo \
     --AssetVersion 1.0
 ```
 

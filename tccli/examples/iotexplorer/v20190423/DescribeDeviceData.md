@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer DescribeDeviceData --cli-unfold-argument  \
-    --ProductId LJ0INDNU7U\
+    --ProductId LJ0INDNU7U \
     --DeviceName light1
 ```
 

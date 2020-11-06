@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod ModifyAIRecognitionTemplate --cli-unfold-argument  \
-    --Definition 30\
-    --HeadTailConfigure.Switch OFF\
+    --Definition 30 \
+    --HeadTailConfigure.Switch OFF \
     --SegmentConfigure.Switch ON
 ```
 
@@ -28,7 +28,7 @@ Input:
 
 ```
 tccli vod ModifyAIRecognitionTemplate --cli-unfold-argument  \
-    --Definition 30\
+    --Definition 30 \
     --ScreenshotInterval 0.5
 ```
 
@@ -49,7 +49,7 @@ Input:
 
 ```
 tccli vod ModifyAIRecognitionTemplate --cli-unfold-argument  \
-    --Definition 30\
+    --Definition 30 \
     --HeadTailConfigure.Switch OFF
 ```
 

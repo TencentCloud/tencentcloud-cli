@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc DescribeNatGateways --cli-unfold-argument  \
-    --Filters.0.Name vpc-id\
-    --Filters.0.Values vpc-0yi4hekt\
-    --Offset 0\
+    --Filters.0.Name vpc-id \
+    --Filters.0.Values vpc-0yi4hekt \
+    --Offset 0 \
     --Limit 10
 ```
 
@@ -93,8 +93,8 @@ Input:
 
 ```
 tccli vpc DescribeNatGateways --cli-unfold-argument  \
-    --NatGatewayIds nat-3isn9hr0 nat-mxkohguo\
-    --Offset 0\
+    --NatGatewayIds nat-3isn9hr0 nat-mxkohguo \
+    --Offset 0 \
     --Limit 10
 ```
 

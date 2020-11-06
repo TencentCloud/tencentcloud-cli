@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tbaas SendTransactionHandler --cli-unfold-argument  \
-    --Module transaction\
-    --Operation send_transaction\
-    --GroupPk 11_1\
-    --ContractId 21\
-    --FuncName set\
+    --Module transaction \
+    --Operation send_transaction \
+    --GroupPk 11_1 \
+    --ContractId 21 \
+    --FuncName set \
     --FuncParam kylo
 ```
 

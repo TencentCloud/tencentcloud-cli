@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli monitor BindingPolicyObject --cli-unfold-argument  \
-    --Module monitor\
-    --GroupId 111111\
-    --Dimensions.0.Dimensions {"unInstanceId":"ins-ot3cq4bi"}\
-    --Dimensions.0.EventDimensions {"uuid":"9d51a69e-0e4a-4120-ae58-9c073c851e24"}\
-    --Dimensions.0.Region gz\
+    --Module monitor \
+    --GroupId 111111 \
+    --Dimensions.0.Dimensions {"unInstanceId":"ins-ot3cq4bi"} \
+    --Dimensions.0.EventDimensions {"uuid":"9d51a69e-0e4a-4120-ae58-9c073c851e24"} \
+    --Dimensions.0.Region gz \
     --Dimensions.0.RegionId 1
 ```
 

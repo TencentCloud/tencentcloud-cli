@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm ModifyModuleSecurityGroups --cli-unfold-argument  \
-    --SecurityGroupIdSet esg-2071nxxw esg-belgyqvu\
+    --SecurityGroupIdSet esg-2071nxxw esg-belgyqvu \
     --ModuleId em-06qmx7wa
 ```
 

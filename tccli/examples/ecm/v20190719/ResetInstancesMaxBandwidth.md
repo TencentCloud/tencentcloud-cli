@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm ResetInstancesMaxBandwidth --cli-unfold-argument  \
-    --InstanceIdSet ein-592937kl ein-958392ko\
+    --InstanceIdSet ein-592937kl ein-958392ko \
     --MaxBandwidthOut 50
 ```
 

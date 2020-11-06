@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp TextSimilarity --cli-unfold-argument  \
-    --SrcText "北京到上海的火车票"\
+    --SrcText "北京到上海的火车票" \
     --TargetText "北京到上海的飞机票" "北京到上海的高铁票" "上海到北京的火车票"
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DeleteDDoSPolicy --cli-unfold-argument  \
-    --Business bgpip\
+    --Business bgpip \
     --PolicyId policy-000000xe
 ```
 

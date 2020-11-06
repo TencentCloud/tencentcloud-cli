@@ -1,4 +1,4 @@
-**Example 1: Terminating data import task**
+**Example 1: Stopping a data import task**
 
 
 

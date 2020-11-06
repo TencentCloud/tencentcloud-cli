@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ms CreateResourceInstances --cli-unfold-argument  \
-    --Pid 12750\
-    --TimeUnit m\
-    --TimeSpan 6\
+    --Pid 12750 \
+    --TimeUnit m \
+    --TimeSpan 6 \
     --ResourceNum 10
 ```
 

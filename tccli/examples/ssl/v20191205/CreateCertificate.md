@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ssl CreateCertificate --cli-unfold-argument  \
-    --ProductId 25\
-    --DomainNum 1\
+    --ProductId 25 \
+    --DomainNum 1 \
     --TimeSpan 1
 ```
 

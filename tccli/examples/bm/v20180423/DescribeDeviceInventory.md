@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bm DescribeDeviceInventory --cli-unfold-argument  \
-    --DeviceClassCode PS100v3\
-    --Zone ap-guangzhou\
-    --VpcId vpc-xxx\
+    --DeviceClassCode PS100v3 \
+    --Zone ap-guangzhou \
+    --VpcId vpc-xxx \
     --SubnetId subnet-xxx
 ```
 

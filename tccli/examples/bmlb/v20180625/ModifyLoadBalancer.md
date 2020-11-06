@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmlb ModifyLoadBalancer --cli-unfold-argument  \
-    --LoadBalancerId lb-q7qoi8cr\
-    --LoadBalancerName abcd\
+    --LoadBalancerId lb-q7qoi8cr \
+    --LoadBalancerName abcd \
     --DomainPrefix qqq
 ```
 

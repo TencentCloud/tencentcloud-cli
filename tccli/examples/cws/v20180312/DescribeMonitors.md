@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cws DescribeMonitors --cli-unfold-argument  \
-    --Filters.0.Name Name\
-    --Filters.0.Values QQ 微信\
-    --Filters.1.Name MonitorStatus\
+    --Filters.0.Name Name \
+    --Filters.0.Values QQ 微信 \
+    --Filters.1.Name MonitorStatus \
     --Filters.1.Values 1
 ```
 

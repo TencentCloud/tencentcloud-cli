@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli redis CreateInstanceAccount --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p\
-    --AccountName test\
-    --AccountPassword 1234567a\
-    --ReadonlyPolicy master\
+    --InstanceId crs-5a4py64p \
+    --AccountName test \
+    --AccountPassword 1234567a \
+    --ReadonlyPolicy master \
     --Privilege rw
 ```
 

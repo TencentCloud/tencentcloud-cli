@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ccc CreateSDKLoginToken --cli-unfold-argument  \
-    --SdkAppId 1400000000\
+    --SdkAppId 1400000000 \
     --SeatUserId FooOrBar@tencent.com
 ```
 

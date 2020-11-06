@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli bm DescribeCustomImages --cli-unfold-argument  \
-    --Limit 3\
-    --Offset 0\
-    --SearchKey img\
-    --OrderField CreateTime\
-    --Order 0\
+    --Limit 3 \
+    --Offset 0 \
+    --SearchKey img \
+    --OrderField CreateTime \
+    --Order 0 \
     --ImageStatus 3
 ```
 

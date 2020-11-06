@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DisassociateNatGatewayAddress --cli-unfold-argument  \
-    --NatGatewayId nat-mdbjfr0y\
+    --NatGatewayId nat-mdbjfr0y \
     --PublicIpAddresses 139.199.232.212
 ```
 

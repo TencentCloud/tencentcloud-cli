@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli batch DescribeComputeEnvCreateInfos --cli-unfold-argument  \
-    --EnvIds env-lcx7qbbr\
-    --Filters.1.Name env-id\
+    --EnvIds env-lcx7qbbr \
+    --Filters.1.Name env-id \
     --Filters.1.Values env-lcpcej85
 ```
 

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tiems CreateJob --cli-unfold-argument  \
-    --Name test\
-    --Description job\
-    --WorkerCount 1\
-    --ConfigId asjcqn7wtdgrd7gt\
-    --ResourceGroupId ap-beijing\
-    --Cpu 100\
-    --Memory 100\
-    --PredictInput.InputDataFormat json\
-    --PredictInput.OutputDataFormat json\
-    --PredictInput.InputPath cos://data-test-1255502019.cos.ap-guangzhou.myqcloud.com/test/pmminput\
-    --PredictInput.OutputPath cos://data-test-1255502019.cos.ap-guangzhou.myqcloud.com/test/\
+    --Name test \
+    --Description job \
+    --WorkerCount 1 \
+    --ConfigId asjcqn7wtdgrd7gt \
+    --ResourceGroupId ap-beijing \
+    --Cpu 100 \
+    --Memory 100 \
+    --PredictInput.InputDataFormat json \
+    --PredictInput.OutputDataFormat json \
+    --PredictInput.InputPath cos://data-test-1255502019.cos.ap-guangzhou.myqcloud.com/test/pmminput \
+    --PredictInput.OutputPath cos://data-test-1255502019.cos.ap-guangzhou.myqcloud.com/test/ \
     --PredictInput.BatchSize 32
 ```
 

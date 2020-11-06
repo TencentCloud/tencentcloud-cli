@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeregisterIps --cli-unfold-argument  \
-    --VpcId vpc-q1j48dkd\
+    --VpcId vpc-q1j48dkd \
     --IpSet 10.0.0.10
 ```
 

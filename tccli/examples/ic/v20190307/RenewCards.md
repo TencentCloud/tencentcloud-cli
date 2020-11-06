@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ic RenewCards --cli-unfold-argument  \
-    --Sdkappid 1420003184\
-    --Iccids ["89860619100041768583","89860438011891822968"]\
+    --Sdkappid 1420003184 \
+    --Iccids ["89860619100041768583","89860438011891822968"] \
     --RenewNum 2
 ```
 

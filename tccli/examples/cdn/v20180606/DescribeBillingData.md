@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdn DescribeBillingData --cli-unfold-argument  \
-    --StartTime '2018-09-04 00:00:00'\
+    --StartTime '2018-09-04 00:00:00' \
     --EndTime '2018-09-04 12:00:00'
 ```
 

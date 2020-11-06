@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver ModifyDBRemark --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
-    --DBRemarks.0.Name db_test\
+    --InstanceId mssql-njj2mtpl \
+    --DBRemarks.0.Name db_test \
     --DBRemarks.0.Remark 'Test database'
 ```
 

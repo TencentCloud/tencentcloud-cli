@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse DescribeFleetStatisticSummary --cli-unfold-argument  \
-    --EndTime 2020-09-22 00:00:00\
-    --FleetId fleet-qp3g3caa-nkeekxw6\
+    --EndTime 2020-09-22 00:00:00 \
+    --FleetId fleet-qp3g3caa-nkeekxw6 \
     --BeginTime 2020-09-22 00:00:00
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc AddIp6Rules --cli-unfold-argument  \
-    --Ip6TranslatorId ip6-90pt7p9q\
-    --Ip6RuleInfos.0.Vport6 55\
-    --Ip6RuleInfos.0.Vip4 106.54.197.66\
-    --Ip6RuleInfos.0.Protocol TCP\
+    --Ip6TranslatorId ip6-90pt7p9q \
+    --Ip6RuleInfos.0.Vport6 55 \
+    --Ip6RuleInfos.0.Vip4 106.54.197.66 \
+    --Ip6RuleInfos.0.Protocol TCP \
     --Ip6RuleInfos.0.Vport 66
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the security group information of project**
+**Example 1: Querying the security group information of a project**
 
 
 

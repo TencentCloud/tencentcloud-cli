@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cpdp ApplyPayerInfo --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --PayerId qyfkr201911230006\
-    --PayerType CORPORATE\
-    --PayerName 企业名称\
-    --PayerIdType UNIFIED_CREDIT_CODE\
-    --PayerIdNo 913302127996560011\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --PayerId qyfkr201911230006 \
+    --PayerType CORPORATE \
+    --PayerName 企业名称 \
+    --PayerIdType UNIFIED_CREDIT_CODE \
+    --PayerIdNo 913302127996560011 \
     --PayerCountryCode CHN
 ```
 

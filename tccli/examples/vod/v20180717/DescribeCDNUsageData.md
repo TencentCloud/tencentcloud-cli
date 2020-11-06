@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vod DescribeCDNUsageData --cli-unfold-argument  \
-    --DomainNames 123.vod2.myqcloud.com test.a.com\
-    --StartTime 2018-12-01T00:00:00+08:00\
-    --EndTime 2018-12-03T00:00:00+08:00\
-    --DataType Bandwidth\
+    --DomainNames 123.vod2.myqcloud.com test.a.com \
+    --StartTime 2018-12-01T00:00:00+08:00 \
+    --EndTime 2018-12-03T00:00:00+08:00 \
+    --DataType Bandwidth \
     --DataInterval 5
 ```
 
@@ -45,8 +45,8 @@ Input:
 
 ```
 tccli vod DescribeCDNUsageData --cli-unfold-argument  \
-    --StartTime 2018-12-01T00:00:00+08:00\
-    --EndTime 2018-12-03T00:00:00+08:00\
+    --StartTime 2018-12-01T00:00:00+08:00 \
+    --EndTime 2018-12-03T00:00:00+08:00 \
     --DataType Flux
 ```
 
@@ -82,9 +82,9 @@ Input:
 
 ```
 tccli vod DescribeCDNUsageData --cli-unfold-argument  \
-    --StartTime 2018-12-01T00:00:00+08:00\
-    --EndTime 2018-12-03T00:00:00+08:00\
-    --DataType Bandwidth\
+    --StartTime 2018-12-01T00:00:00+08:00 \
+    --EndTime 2018-12-03T00:00:00+08:00 \
+    --DataType Bandwidth \
     --SubAppId 1
 ```
 

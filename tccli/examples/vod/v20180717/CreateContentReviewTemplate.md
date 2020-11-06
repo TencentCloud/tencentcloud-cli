@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 'Content audit template'\
-    --Comment 'Template 2'\
-    --PornConfigure.ImgReviewInfo.Switch ON\
-    --PornConfigure.ImgReviewInfo.BlockConfidence 80\
-    --PornConfigure.ImgReviewInfo.ReviewConfidence 30\
-    --ScreenshotInterval 1\
+    --Name 'Content audit template' \
+    --Comment 'Template 2' \
+    --PornConfigure.ImgReviewInfo.Switch ON \
+    --PornConfigure.ImgReviewInfo.BlockConfidence 80 \
+    --PornConfigure.ImgReviewInfo.ReviewConfidence 30 \
+    --ScreenshotInterval 1 \
     --ReviewWallSwitch OFF
 ```
 
@@ -33,9 +33,9 @@ Input:
 
 ```
 tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 'Content audit template'\
-    --Comment 'Template 1'\
-    --PornConfigure.ImgReviewInfo.Switch ON\
+    --Name 'Content audit template' \
+    --Comment 'Template 1' \
+    --PornConfigure.ImgReviewInfo.Switch ON \
     --ReviewWallSwitch OFF
 ```
 
@@ -57,11 +57,11 @@ Input:
 
 ```
 tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 'Content audit template'\
-    --Comment 'Template 3'\
-    --PornConfigure.ImgReviewInfo.Switch ON\
-    --TerrorismConfigure.ImgReviewInfo.Switch ON\
-    --PoliticalConfigure.ImgReviewInfo.Switch ON\
+    --Name 'Content audit template' \
+    --Comment 'Template 3' \
+    --PornConfigure.ImgReviewInfo.Switch ON \
+    --TerrorismConfigure.ImgReviewInfo.Switch ON \
+    --PoliticalConfigure.ImgReviewInfo.Switch ON \
     --ReviewWallSwitch OFF
 ```
 
@@ -83,10 +83,10 @@ Input:
 
 ```
 tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 'Content audit template'\
-    --Comment 'Template 1'\
-    --PornConfigure.ImgReviewInfo.Switch ON\
-    --PornConfigure.ImgReviewInfo.LabelSet porn sexy\
+    --Name 'Content audit template' \
+    --Comment 'Template 1' \
+    --PornConfigure.ImgReviewInfo.Switch ON \
+    --PornConfigure.ImgReviewInfo.LabelSet porn sexy \
     --ReviewWallSwitch OFF
 ```
 

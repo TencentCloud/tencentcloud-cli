@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu ModifyCCThreshold --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
+    --Business bgpip \
+    --Id bgpip-000000xe \
     --Threshold 1000
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway DescribeUsagePlanEnvironments --cli-unfold-argument  \
-    --UsagePlanId usagePlan-quqxvett\
+    --UsagePlanId usagePlan-quqxvett \
     --BindType API
 ```
 

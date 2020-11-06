@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb ModifyDBInstancesProject --cli-unfold-argument  \
-    --InstanceIds tdsql-fdpjf5zh\
+    --InstanceIds tdsql-fdpjf5zh \
     --ProjectId 0
 ```
 

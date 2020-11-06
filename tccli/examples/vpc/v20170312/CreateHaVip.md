@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc CreateHaVip --cli-unfold-argument  \
-    --VpcId vpc-6v2ht8q5\
-    --SubnetId subnet-qq51iwr4\
-    --HaVipName test+name\
+    --VpcId vpc-6v2ht8q5 \
+    --SubnetId subnet-qq51iwr4 \
+    --HaVipName test+name \
     --Vip 10.4.6.15
 ```
 

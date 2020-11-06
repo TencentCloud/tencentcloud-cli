@@ -6,24 +6,24 @@ Input:
 
 ```
 tccli iot UpdateProduct --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
-    --Name 名称\
-    --Description 描述\
-    --DataTemplate.0.Number.Name Temperature\
-    --DataTemplate.0.Number.Desc 温度\
-    --DataTemplate.0.Number.Mode rw\
-    --DataTemplate.0.Number.Range 0 50.1\
-    --DataTemplate.1.String.Name Message\
-    --DataTemplate.1.String.Desc 留言\
-    --DataTemplate.1.String.Mode rw\
-    --DataTemplate.1.String.Range 0 1024\
-    --DataTemplate.2.Enum.Name Weather\
-    --DataTemplate.2.Enum.Desc 天气\
-    --DataTemplate.2.Enum.Mode r\
-    --DataTemplate.2.Enum.Range Sunny Rainy\
-    --DataTemplate.3.Bool.Name Lock\
-    --DataTemplate.3.Bool.Desc 锁\
-    --DataTemplate.3.Bool.Mode rw\
+    --ProductId iot-4e0wsxpi \
+    --Name 名称 \
+    --Description 描述 \
+    --DataTemplate.0.Number.Name Temperature \
+    --DataTemplate.0.Number.Desc 温度 \
+    --DataTemplate.0.Number.Mode rw \
+    --DataTemplate.0.Number.Range 0 50.1 \
+    --DataTemplate.1.String.Name Message \
+    --DataTemplate.1.String.Desc 留言 \
+    --DataTemplate.1.String.Mode rw \
+    --DataTemplate.1.String.Range 0 1024 \
+    --DataTemplate.2.Enum.Name Weather \
+    --DataTemplate.2.Enum.Desc 天气 \
+    --DataTemplate.2.Enum.Mode r \
+    --DataTemplate.2.Enum.Range Sunny Rainy \
+    --DataTemplate.3.Bool.Name Lock \
+    --DataTemplate.3.Bool.Desc 锁 \
+    --DataTemplate.3.Bool.Mode rw \
     --DataTemplate.3.Bool.Range true false
 ```
 

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cdn DescribeDistrictIspData --cli-unfold-argument  \
-    --StartTime '2020-03-27 00:00:00'\
-    --EndTime '2020-03-27 00:00:00'\
-    --Metric bandwidth\
-    --Domains www.test.com\
-    --Districts 122\
-    --Isps 3947\
-    --Protocol http\
+    --StartTime '2020-03-27 00:00:00' \
+    --EndTime '2020-03-27 00:00:00' \
+    --Metric bandwidth \
+    --Domains www.test.com \
+    --Districts 122 \
+    --Isps 3947 \
+    --Protocol http \
     --IpProtocol ipv4
 ```
 

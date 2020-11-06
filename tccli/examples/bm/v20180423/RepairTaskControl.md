@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bm RepairTaskControl --cli-unfold-argument  \
-    --TaskId bm-repair-4zywlogv\
+    --TaskId bm-repair-4zywlogv \
     --Operate AuthorizeRepair
 ```
 

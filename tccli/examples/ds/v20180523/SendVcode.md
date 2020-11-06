@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ds SendVcode --cli-unfold-argument  \
-    --Module VerifyCode\
-    --Operation SendVcode\
-    --ContractResId dcc-79dlei3yb6\
+    --Module VerifyCode \
+    --Operation SendVcode \
+    --ContractResId dcc-79dlei3yb6 \
     --AccountResId dcu-c33uil4ap6
 ```
 

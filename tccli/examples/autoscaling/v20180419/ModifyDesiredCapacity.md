@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli as ModifyDesiredCapacity --cli-unfold-argument  \
-    --AutoScalingGroupId asg-nvnlpbb8\
+    --AutoScalingGroupId asg-nvnlpbb8 \
     --DesiredCapacity 2
 ```
 

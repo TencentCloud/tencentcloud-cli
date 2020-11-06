@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm ModifyLoadBalancerAttributes --cli-unfold-argument  \
-    --LoadBalancerId lb-6efswuxa\
+    --LoadBalancerId lb-6efswuxa \
     --LoadBalancerName newlbname
 ```
 

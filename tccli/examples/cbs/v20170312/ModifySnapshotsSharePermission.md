@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cbs ModifySnapshotsSharePermission --cli-unfold-argument  \
-    --AccountIds 123456789\
-    --Permission SHARE\
+    --AccountIds 123456789 \
+    --Permission SHARE \
     --SnapshotIds snap-cgrmci8t snap-124p95lf
 ```
 

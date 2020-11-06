@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli smpn DescribeSmpnMrl --cli-unfold-argument  \
-    --ResourceId test_resource_id_for_smpn_mrl\
+    --ResourceId test_resource_id_for_smpn_mrl \
     --RequestData.PhoneNumber 18122225555
 ```
 

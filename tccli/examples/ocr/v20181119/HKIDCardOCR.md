@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ocr HKIDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
-    --DetectFake true\
+    --ImageUrl https://xx/a.jpg \
+    --DetectFake true \
     --ReturnHeadImage false
 ```
 

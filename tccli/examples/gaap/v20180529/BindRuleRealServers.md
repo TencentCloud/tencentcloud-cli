@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap BindRuleRealServers --cli-unfold-argument  \
-    --RuleId 0\
-    --RealServerBindSet.0.RealServerId rs-i3658cdf\
-    --RealServerBindSet.0.RealServerPort 80\
-    --RealServerBindSet.0.RealServerIP 1.1.1.1\
+    --RuleId 0 \
+    --RealServerBindSet.0.RealServerId rs-i3658cdf \
+    --RealServerBindSet.0.RealServerPort 80 \
+    --RealServerBindSet.0.RealServerIP 1.1.1.1 \
     --RealServerBindSet.0.RealServerWeight 1
 ```
 

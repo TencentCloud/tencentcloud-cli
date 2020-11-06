@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc ModifyIp6Rule --cli-unfold-argument  \
-    --Ip6TranslatorId ip6-90pt7p9q\
-    --Ip6RuleId rule6-7v3vwgec\
-    --Vip 100.192.3.9\
+    --Ip6TranslatorId ip6-90pt7p9q \
+    --Ip6RuleId rule6-7v3vwgec \
+    --Vip 100.192.3.9 \
     --Vport 77
 ```
 

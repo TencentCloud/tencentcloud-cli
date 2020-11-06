@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli as CreateAutoScalingGroup --cli-unfold-argument  \
-    --AutoScalingGroupName asg-vpc-7layer-lb\
-    --DefaultCooldown 300\
-    --DesiredCapacity 0\
-    --LaunchConfigurationId asc-7vucy6ae\
-    --MaxSize 10\
-    --MinSize 0\
-    --ProjectId 0\
-    --VpcId vpc-hy436tmc\
-    --SubnetIds subnet-3tmerl37 subnet-b0vxjhot\
-    --TerminationPolicies OLDEST_INSTANCE\
-    --ForwardLoadBalancers.0.LoadBalancerId lb-23aejgcv\
-    --ForwardLoadBalancers.0.ListenerId lbl-ncw704sn\
-    --ForwardLoadBalancers.0.LocationId loc-l3hmaev9\
-    --ForwardLoadBalancers.0.Region ap-guangzhou\
-    --ForwardLoadBalancers.0.TargetAttributes.0.Port 8080\
+    --AutoScalingGroupName asg-vpc-7layer-lb \
+    --DefaultCooldown 300 \
+    --DesiredCapacity 0 \
+    --LaunchConfigurationId asc-7vucy6ae \
+    --MaxSize 10 \
+    --MinSize 0 \
+    --ProjectId 0 \
+    --VpcId vpc-hy436tmc \
+    --SubnetIds subnet-3tmerl37 subnet-b0vxjhot \
+    --TerminationPolicies OLDEST_INSTANCE \
+    --ForwardLoadBalancers.0.LoadBalancerId lb-23aejgcv \
+    --ForwardLoadBalancers.0.ListenerId lbl-ncw704sn \
+    --ForwardLoadBalancers.0.LocationId loc-l3hmaev9 \
+    --ForwardLoadBalancers.0.Region ap-guangzhou \
+    --ForwardLoadBalancers.0.TargetAttributes.0.Port 8080 \
     --ForwardLoadBalancers.0.TargetAttributes.0.Weight 10
 ```
 

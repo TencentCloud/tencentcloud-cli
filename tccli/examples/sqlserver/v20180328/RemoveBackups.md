@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver RemoveBackups --cli-unfold-argument  \
-    --InstanceId mssql-6upluvd5\
+    --InstanceId mssql-6upluvd5 \
     --BackupNames manual_instance_58001_20180702010430.bak.tar
 ```
 

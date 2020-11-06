@@ -1,4 +1,4 @@
-**Example 1: Modifying or deleting instance tag**
+**Example 1: Modifying or deleting an instance tag**
 
 This example shows you how to add, modify, or delete an instance tag.
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb ModifyInstanceTag --cli-unfold-argument  \
-    --InstanceId cdb-uns231ns\
-    --ReplaceTags.0.TagKey march1\
+    --InstanceId cdb-uns231ns \
+    --ReplaceTags.0.TagKey march1 \
     --ReplaceTags.0.TagValue marchtest1
 ```
 

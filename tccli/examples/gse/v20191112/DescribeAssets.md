@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gse DescribeAssets --cli-unfold-argument  \
-    --AssetRegion ap-shanghai\
-    --Limit 1\
-    --Offset 2\
+    --AssetRegion ap-shanghai \
+    --Limit 1 \
+    --Offset 2 \
     --Filter xxx
 ```
 
@@ -29,6 +29,8 @@ Output:
                 "BindFleetNum": 2,
                 "AssetArn": "xx",
                 "OsType": "CentOS",
+                "ResourceType": "IMAGE",
+                "SharingStatus": "SHARED",
                 "ImageId": "xx"
             }
         ],

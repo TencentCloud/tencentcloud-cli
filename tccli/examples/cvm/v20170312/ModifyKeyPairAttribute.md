@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm ModifyKeyPairAttribute --cli-unfold-argument  \
-    --KeyId skey-mv9yzyjj\
+    --KeyId skey-mv9yzyjj \
     --KeyName Tencent
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli cvm ModifyKeyPairAttribute --cli-unfold-argument  \
-    --KeyId skey-mv9yzyjj\
+    --KeyId skey-mv9yzyjj \
     --Description Tencent
 ```
 

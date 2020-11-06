@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteCustomerGateway --cli-unfold-argument  \
-    --Version 2018-06-25\
+    --Version 2018-06-25 \
     --CustomerGatewayId bmcgw-mgp33pll
 ```
 

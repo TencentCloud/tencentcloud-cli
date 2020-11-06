@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot GetRules --cli-unfold-argument  \
-    --Offset 0\
+    --Offset 0 \
     --Length 2
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb IsolateInstance --cli-unfold-argument  \
-    --ClusterId cynosdbpg-ins-bzkxxrmt\
+    --ClusterId cynosdbpg-ins-bzkxxrmt \
     --InstanceIdList cynosdbpg-ixgbd0di
 ```
 

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ams CreateBizConfig --cli-unfold-argument  \
-    --BizType 1002\
-    --BizName 音频审核模板\
-    --ModerationCategories Porn Polity Terror\
-    --MediaModeration.ImageFrequency 5\
-    --MediaModeration.AudioFrequency 60\
-    --MediaModeration.SegmentOutput.Bucket cms_segments-623322\
+    --BizType 1002 \
+    --BizName 音频审核模板 \
+    --ModerationCategories Porn Polity Terror \
+    --MediaModeration.ImageFrequency 5 \
+    --MediaModeration.AudioFrequency 60 \
+    --MediaModeration.SegmentOutput.Bucket cms_segments-623322 \
     --MediaModeration.SegmentOutput.Region ap-guangzhou
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live DescribeProvinceIspPlayInfoList --cli-unfold-argument  \
-    --PlayDomains 5000.playdomain.com\
-    --StartTime '2019-02-01 00:00:00'\
-    --EndTime '2019-02-02 00:00:00'\
-    --Granularity 1\
+    --PlayDomains 5000.playdomain.com \
+    --StartTime '2019-02-01 00:00:00' \
+    --EndTime '2019-02-02 00:00:00' \
+    --Granularity 1 \
     --StatType Bandwidth
 ```
 

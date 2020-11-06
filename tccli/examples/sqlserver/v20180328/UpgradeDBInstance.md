@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver UpgradeDBInstance --cli-unfold-argument  \
-    --InstanceId mssql-j8kv137v\
-    --Memory 4\
+    --InstanceId mssql-j8kv137v \
+    --Memory 4 \
     --Storage 400
 ```
 

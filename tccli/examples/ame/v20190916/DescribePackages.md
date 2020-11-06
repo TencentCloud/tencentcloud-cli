@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ame DescribePackages --cli-unfold-argument  \
-    --Offset xxx\
+    --Offset xxx \
     --Length xxx
 ```
 

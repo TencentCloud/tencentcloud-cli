@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc AsyncRegisterIps --cli-unfold-argument  \
-    --VpcId vpc-xxxx\
-    --SubnetId subnet-6tgv9t88\
+    --VpcId vpc-xxxx \
+    --SubnetId subnet-6tgv9t88 \
     --Ips 10.10.245.162
 ```
 

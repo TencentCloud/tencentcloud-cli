@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DescribeReplicationInstances --cli-unfold-argument  \
-    --RegistryId tcr-12345\
-    --Offset 0\
+    --RegistryId tcr-12345 \
+    --Offset 0 \
     --Limit 10
 ```
 

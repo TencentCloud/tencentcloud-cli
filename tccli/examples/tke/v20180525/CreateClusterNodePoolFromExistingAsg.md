@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke CreateClusterNodePoolFromExistingAsg --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx\
+    --ClusterId cls-xxxxxx \
     --AutoscalingGroupId asg-xxxxxxxx
 ```
 

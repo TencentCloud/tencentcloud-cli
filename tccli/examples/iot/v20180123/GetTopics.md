@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iot GetTopics --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
-    --Offset 2\
+    --ProductId iot-4e0wsxpi \
+    --Offset 2 \
     --Length 2
 ```
 

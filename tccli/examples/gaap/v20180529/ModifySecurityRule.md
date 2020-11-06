@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap ModifySecurityRule --cli-unfold-argument  \
-    --PolicyId sp-xxxx\
-    --RuleId sr-xxxx\
+    --PolicyId sp-xxxx \
+    --RuleId sr-xxxx \
     --AliasName t3
 ```
 

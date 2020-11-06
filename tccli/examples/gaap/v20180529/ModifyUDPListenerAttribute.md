@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gaap ModifyUDPListenerAttribute --cli-unfold-argument  \
-    --ProxyId link-bjkpdum1\
-    --ListenerId listener-o0f3at99\
-    --ListenerName test10\
+    --ProxyId link-bjkpdum1 \
+    --ListenerId listener-o0f3at99 \
+    --ListenerName test10 \
     --Scheduler rr
 ```
 

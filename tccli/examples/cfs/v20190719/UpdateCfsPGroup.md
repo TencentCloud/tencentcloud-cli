@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cfs UpdateCfsPGroup --cli-unfold-argument  \
-    --PGroupId pgroup-12345\
-    --Name test\
+    --PGroupId pgroup-12345 \
+    --Name test \
     --DescInfo test
 ```
 

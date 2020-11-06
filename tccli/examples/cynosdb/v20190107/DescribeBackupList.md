@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cynosdb DescribeBackupList --cli-unfold-argument  \
-    --ClusterId cynosdbpg-ilgo90hu\
-    --Offset 0\
+    --ClusterId cynosdbpg-ilgo90hu \
+    --Offset 0 \
     --Limit 10
 ```
 

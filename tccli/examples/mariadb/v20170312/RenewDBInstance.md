@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mariadb RenewDBInstance --cli-unfold-argument  \
-    --InstanceId tdsql-avw0207d\
-    --Period 1\
+    --InstanceId tdsql-avw0207d \
+    --Period 1 \
     --AutoVoucher true
 ```
 

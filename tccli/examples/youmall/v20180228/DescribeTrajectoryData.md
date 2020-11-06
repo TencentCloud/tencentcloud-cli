@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli youmall DescribeTrajectoryData --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 1\
-    --Limit 10\
-    --Gender 0\
-    --StartDate 2016-10-10\
+    --CompanyId testCompany1 \
+    --ShopId 1 \
+    --Limit 10 \
+    --Gender 0 \
+    --StartDate 2016-10-10 \
     --EndDate 2017-06-01
 ```
 

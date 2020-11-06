@@ -26,7 +26,7 @@ Input:
 
 ```
 tccli clb DeleteLoadBalancerListeners --cli-unfold-argument  \
-    --LoadBalancerId lb-db2nt5l2\
+    --LoadBalancerId lb-db2nt5l2 \
     --ListenerIds lbl-jmgysito lbl-3bgc6o9a
 ```
 

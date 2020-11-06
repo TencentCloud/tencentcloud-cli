@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live DescribeLiveDomains --cli-unfold-argument  \
-    --DomainType 1\
-    --DomainStatus 1\
-    --PageSize 10\
-    --PageNum 1\
+    --DomainType 1 \
+    --DomainStatus 1 \
+    --PageSize 10 \
+    --PageNum 1 \
     --IsDelayLive 0
 ```
 

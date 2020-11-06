@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb ModifyEndUser --cli-unfold-argument  \
-    --EnvId YourEnvId\
+    --EnvId YourEnvId \
     --UUId 8db291f521064c36943482cbd59ecd93
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam ListGroups --cli-unfold-argument  \
-    --Page 1\
+    --Page 1 \
     --Rp 20
 ```
 

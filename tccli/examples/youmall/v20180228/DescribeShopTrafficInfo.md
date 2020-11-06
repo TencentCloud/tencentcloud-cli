@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli youmall DescribeShopTrafficInfo --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 123\
-    --StartDate 2018-06-01\
-    --EndDate 2018-06-15\
-    --Offset 0\
+    --CompanyId testCompany1 \
+    --ShopId 123 \
+    --StartDate 2018-06-01 \
+    --EndDate 2018-06-15 \
+    --Offset 0 \
     --Limit 100
 ```
 
@@ -68,10 +68,10 @@ Input:
 
 ```
 tccli youmall DescribeShopTrafficInfo --cli-unfold-argument  \
-    --ShopId 123\
-    --StartDate 2018-06-01\
-    --EndDate 2018-06-15\
-    --Offset 0\
+    --ShopId 123 \
+    --StartDate 2018-06-01 \
+    --EndDate 2018-06-15 \
+    --Offset 0 \
     --Limit 100
 ```
 

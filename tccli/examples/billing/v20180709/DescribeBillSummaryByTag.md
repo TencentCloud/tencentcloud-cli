@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli billing DescribeBillSummaryByTag --cli-unfold-argument  \
-    --PayerUin 100000007615\
-    --BeginTime '9/1/2019 00:00:00'\
-    --EndTime '9/30/2019 23:59:59'\
+    --PayerUin 100000007615 \
+    --BeginTime '9/1/2019 00:00:00' \
+    --EndTime '9/30/2019 23:59:59' \
     --TagKey province
 ```
 

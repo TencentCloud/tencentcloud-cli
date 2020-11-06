@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli partners DescribeAgentSelfPayDeals --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 1\
+    --Offset 0 \
+    --Limit 1 \
     --OwnerUin 123456
 ```
 

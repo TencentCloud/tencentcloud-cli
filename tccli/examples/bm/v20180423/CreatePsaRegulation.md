@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bm CreatePsaRegulation --cli-unfold-argument  \
-    --PsaName aaa\
-    --PsaDescription bbb\
-    --RepairLimit 66\
+    --PsaName aaa \
+    --PsaDescription bbb \
+    --RepairLimit 66 \
     --TaskTypeIds 44
 ```
 

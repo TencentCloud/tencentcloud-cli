@@ -1,4 +1,4 @@
-**Example 1: Querying the information of all RO groups of TencentDB instance**
+**Example 1: Querying the information of all RO groups of a TencentDB instance**
 
 
 

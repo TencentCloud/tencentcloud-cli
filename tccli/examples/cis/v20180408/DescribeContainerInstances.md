@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cis DescribeContainerInstances --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
-    --Filters.0.Name InstanceName\
+    --Offset 0 \
+    --Limit 10 \
+    --Filters.0.Name InstanceName \
     --Filters.0.ValueList hello
 ```
 

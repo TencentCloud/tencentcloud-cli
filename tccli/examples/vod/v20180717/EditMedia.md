@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vod EditMedia --cli-unfold-argument  \
-    --InputType File\
-    --FileInfos.0.FileId 5285485487985271487\
-    --FileInfos.0.StartTimeOffset 60.0\
+    --InputType File \
+    --FileInfos.0.FileId 5285485487985271487 \
+    --FileInfos.0.StartTimeOffset 60.0 \
     --FileInfos.0.EndTimeOffset 120.0
 ```
 
@@ -30,9 +30,9 @@ Input:
 
 ```
 tccli vod EditMedia --cli-unfold-argument  \
-    --InputType Stream\
-    --StreamInfos.0.StreamId 99873\
-    --StreamInfos.1.StreamId 99874\
+    --InputType Stream \
+    --StreamInfos.0.StreamId 99873 \
+    --StreamInfos.1.StreamId 99874 \
     --StreamInfos.2.StreamId 99875
 ```
 
@@ -54,8 +54,8 @@ Input:
 
 ```
 tccli vod EditMedia --cli-unfold-argument  \
-    --InputType Stream\
-    --StreamInfos.0.StreamId 99873\
+    --InputType Stream \
+    --StreamInfos.0.StreamId 99873 \
     --StreamInfos.0.StartTime 2018-09-20T11:00:00Z
 ```
 
@@ -77,7 +77,7 @@ Input:
 
 ```
 tccli vod EditMedia --cli-unfold-argument  \
-    --InputType Stream\
+    --InputType Stream \
     --StreamInfos.0.StreamId 99873
 ```
 
@@ -99,15 +99,15 @@ Input:
 
 ```
 tccli vod EditMedia --cli-unfold-argument  \
-    --InputType File\
-    --FileInfos.0.FileId 5285485487985271487\
-    --FileInfos.0.StartTimeOffset 60.0\
-    --FileInfos.0.EndTimeOffset 120.0\
-    --FileInfos.1.FileId 5285485487985271488\
-    --FileInfos.1.StartTimeOffset 60.0\
-    --FileInfos.1.EndTimeOffset 120.0\
-    --FileInfos.2.FileId 5285485487985271489\
-    --FileInfos.2.StartTimeOffset 60.0\
+    --InputType File \
+    --FileInfos.0.FileId 5285485487985271487 \
+    --FileInfos.0.StartTimeOffset 60.0 \
+    --FileInfos.0.EndTimeOffset 120.0 \
+    --FileInfos.1.FileId 5285485487985271488 \
+    --FileInfos.1.StartTimeOffset 60.0 \
+    --FileInfos.1.EndTimeOffset 120.0 \
+    --FileInfos.2.FileId 5285485487985271489 \
+    --FileInfos.2.StartTimeOffset 60.0 \
     --FileInfos.2.EndTimeOffset 120.0
 ```
 
@@ -129,10 +129,10 @@ Input:
 
 ```
 tccli vod EditMedia --cli-unfold-argument  \
-    --InputType File\
-    --FileInfos.0.FileId 5285485487985271487\
-    --FileInfos.0.StartTimeOffset 60.0\
-    --FileInfos.0.EndTimeOffset 120.0\
+    --InputType File \
+    --FileInfos.0.FileId 5285485487985271487 \
+    --FileInfos.0.StartTimeOffset 60.0 \
+    --FileInfos.0.EndTimeOffset 120.0 \
     --ProcedureName TranscodeAndSnapshot
 ```
 
@@ -154,12 +154,12 @@ Input:
 
 ```
 tccli vod EditMedia --cli-unfold-argument  \
-    --InputType Stream\
-    --StreamInfos.0.StreamId 99873\
-    --StreamInfos.0.StartTime 2018-09-20T11:00:00Z\
-    --StreamInfos.1.StreamId 99874\
-    --StreamInfos.1.StartTime 2018-09-20T11:00:00Z\
-    --StreamInfos.2.StreamId 99875\
+    --InputType Stream \
+    --StreamInfos.0.StreamId 99873 \
+    --StreamInfos.0.StartTime 2018-09-20T11:00:00Z \
+    --StreamInfos.1.StreamId 99874 \
+    --StreamInfos.1.StartTime 2018-09-20T11:00:00Z \
+    --StreamInfos.2.StreamId 99875 \
     --StreamInfos.2.StartTime 2018-09-20T11:00:00Z
 ```
 
@@ -181,9 +181,9 @@ Input:
 
 ```
 tccli vod EditMedia --cli-unfold-argument  \
-    --InputType File\
-    --FileInfos.0.FileId 5285485487985271487\
-    --FileInfos.1.FileId 5285485487985271488\
+    --InputType File \
+    --FileInfos.0.FileId 5285485487985271487 \
+    --FileInfos.1.FileId 5285485487985271488 \
     --FileInfos.2.FileId 5285485487985271489
 ```
 

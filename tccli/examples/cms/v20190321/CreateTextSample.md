@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cms CreateTextSample --cli-unfold-argument  \
-    --Label 2\
-    --EvilType 100\
+    --Label 2 \
+    --EvilType 100 \
     --Contents 测试
 ```
 

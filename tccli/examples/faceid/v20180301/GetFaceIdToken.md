@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli faceid GetFaceIdToken --cli-unfold-argument  \
-    --IdCard xxxxxxxxxxxxxxxxx\
-    --Name xxxxxxxxxxxxxxxxx\
+    --IdCard xxxxxxxxxxxxxxxxx \
+    --Name xxxxxxxxxxxxxxxxx \
     --CompareLib BUSINESS
 ```
 

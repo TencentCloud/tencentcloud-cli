@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli billing DescribeBillList --cli-unfold-argument  \
-    --StartTime '2019-07-31 00:00:00'\
-    --EndTime '2020-07-31 00:00:00'\
-    --Offset 0\
-    --Limit 1\
-    --PayType all\
-    --SubPayType all\
+    --StartTime '2019-07-31 00:00:00' \
+    --EndTime '2020-07-31 00:00:00' \
+    --Offset 0 \
+    --Limit 1 \
+    --PayType all \
+    --SubPayType all \
     --WithZeroAmount 1
 ```
 

@@ -66,6 +66,12 @@
       "name": "获取云托管代码上传url",
       "output": "DescribeCloudBaseBuildServiceResponse"
     },
+    "DescribeCloudBaseRunServerVersion": {
+      "document": "查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize",
+      "input": "DescribeCloudBaseRunServerVersionRequest",
+      "name": "查询服务版本的详情",
+      "output": "DescribeCloudBaseRunServerVersionResponse"
+    },
     "DescribeCloudBaseRunVersionSnapshot": {
       "document": "查询版本历史",
       "input": "DescribeCloudBaseRunVersionSnapshotRequest",
@@ -1559,6 +1565,272 @@
           "name": "PackageVersion",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunServerVersionRequest": {
+      "document": "DescribeCloudBaseRunServerVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本名称",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunServerVersionResponse": {
+      "document": "DescribeCloudBaseRunServerVersion返回参数结构体",
+      "members": [
+        {
+          "document": "版本名称",
+          "member": "string",
+          "name": "VersionName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Dockefile的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DockerfilePath",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "DockerBuild的目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BuildDir",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请使用CPUSize",
+          "member": "int64",
+          "name": "Cpu",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请使用MemSize",
+          "member": "int64",
+          "name": "Mem",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "副本最小值",
+          "member": "int64",
+          "name": "MinNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "副本最大值",
+          "member": "int64",
+          "name": "MaxNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "策略类型",
+          "member": "string",
+          "name": "PolicyType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "策略阈值",
+          "member": "float",
+          "name": "PolicyThreshold",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnvParams",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdatedTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VersionIP",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "版本的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "VersionPort",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "代码包的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "代码版本的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageVersion",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "枚举（package/repository/image)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UploadType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Repo的类型(coding/gitlab/github/coding)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RepoType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Repo",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分支\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Branch",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServerName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否对于外网开放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsPublic",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子网实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CustomLogs",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "监听端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ContainerPort",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "延迟多长时间开始健康检查（单位s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ImageUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CPU 大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "CpuSize",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "MEM 大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "MemSize",
+          "type": "float",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

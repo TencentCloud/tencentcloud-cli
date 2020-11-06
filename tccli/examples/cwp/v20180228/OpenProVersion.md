@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp OpenProVersion --cli-unfold-argument  \
-    --MachineType CVM\
-    --MachineRegion ap-guangzhou\
+    --MachineType CVM \
+    --MachineRegion ap-guangzhou \
     --Quuids add4a78a-0d59-11e8-b7ab-00e081e1a5c5
 ```
 

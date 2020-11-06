@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai GetPersonListNum --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
+    --GroupId TencentShenZhenEmployee \
     --Version 2018-03-01
 ```
 
@@ -29,7 +29,7 @@ Input:
 
 ```
 tccli iai GetPersonListNum --cli-unfold-argument  \
-    --GroupId Tencent\
+    --GroupId Tencent \
     --Version 2018-03-01
 ```
 

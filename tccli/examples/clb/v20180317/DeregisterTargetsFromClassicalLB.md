@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb DeregisterTargetsFromClassicalLB --cli-unfold-argument  \
-    --LoadBalancerId lb-a3u5l5zc\
+    --LoadBalancerId lb-a3u5l5zc \
     --InstanceIds ins-odjhn6vc
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DescribeVpcs --cli-unfold-argument  \
-    --VpcIds vpc-07kqm4uj\
+    --VpcIds vpc-07kqm4uj \
     --EcmRegion ap-hangzhou-ecm
 ```
 

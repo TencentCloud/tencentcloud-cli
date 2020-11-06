@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trtc DescribeRealtimeScale --cli-unfold-argument  \
-    --SdkAppId 1400188366\
-    --StartTime 1587879309\
+    --SdkAppId 1400188366 \
+    --StartTime 1587879309 \
     --EndTime 1587882309
 ```
 

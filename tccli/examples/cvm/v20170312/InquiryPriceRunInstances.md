@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli cvm InquiryPriceRunInstances --cli-unfold-argument  \
-    --Placement.Zone ap-shanghai-2\
-    --InstanceChargeType POSTPAID_BY_HOUR\
-    --ImageId img-pmqg1cw7\
-    --InstanceType S5.16XLARGE256\
-    --SystemDisk.DiskType CLOUD_PREMIUM\
-    --SystemDisk.DiskSize 50\
-    --DataDisks.0.DiskType CLOUD_PREMIUM\
-    --DataDisks.0.DiskSize 100\
-    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR\
-    --InternetAccessible.InternetMaxBandwidthOut 10\
-    --InternetAccessible.PublicIpAssigned TRUE\
-    --InstanceName QCLOUD-TEST\
-    --LoginSettings.Password Qcloud@TestApi123++\
-    --EnhancedService.SecurityService.Enabled TRUE\
-    --EnhancedService.MonitorService.Enabled TRUE\
+    --Placement.Zone ap-shanghai-2 \
+    --InstanceChargeType POSTPAID_BY_HOUR \
+    --ImageId img-pmqg1cw7 \
+    --InstanceType S5.16XLARGE256 \
+    --SystemDisk.DiskType CLOUD_PREMIUM \
+    --SystemDisk.DiskSize 50 \
+    --DataDisks.0.DiskType CLOUD_PREMIUM \
+    --DataDisks.0.DiskSize 100 \
+    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
+    --InternetAccessible.InternetMaxBandwidthOut 10 \
+    --InternetAccessible.PublicIpAssigned TRUE \
+    --InstanceName QCLOUD-TEST \
+    --LoginSettings.Password Qcloud@TestApi123++ \
+    --EnhancedService.SecurityService.Enabled TRUE \
+    --EnhancedService.MonitorService.Enabled TRUE \
     --InstanceCount 1
 ```
 
@@ -60,7 +60,7 @@ Input:
 
 ```
 tccli cvm InquiryPriceRunInstances --cli-unfold-argument  \
-    --Placement.Zone ap-shanghai-2\
+    --Placement.Zone ap-shanghai-2 \
     --ImageId img-pmqg1cw7
 ```
 
@@ -100,23 +100,23 @@ Input:
 
 ```
 tccli cvm InquiryPriceRunInstances --cli-unfold-argument  \
-    --Placement.Zone ap-shanghai-2\
-    --InstanceChargeType PREPAID\
-    --InstanceChargePrepaid.Period 1\
-    --InstanceChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW\
-    --ImageId img-pmqg1cw7\
-    --InstanceType S5.16XLARGE256\
-    --SystemDisk.DiskType CLOUD_PREMIUM\
-    --SystemDisk.DiskSize 50\
-    --DataDisks.0.DiskType CLOUD_PREMIUM\
-    --DataDisks.0.DiskSize 100\
-    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR\
-    --InternetAccessible.InternetMaxBandwidthOut 10\
-    --InternetAccessible.PublicIpAssigned TRUE\
-    --InstanceName QCLOUD-TEST\
-    --LoginSettings.Password Qcloud@TestApi123++\
-    --EnhancedService.SecurityService.Enabled TRUE\
-    --EnhancedService.MonitorService.Enabled TRUE\
+    --Placement.Zone ap-shanghai-2 \
+    --InstanceChargeType PREPAID \
+    --InstanceChargePrepaid.Period 1 \
+    --InstanceChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
+    --ImageId img-pmqg1cw7 \
+    --InstanceType S5.16XLARGE256 \
+    --SystemDisk.DiskType CLOUD_PREMIUM \
+    --SystemDisk.DiskSize 50 \
+    --DataDisks.0.DiskType CLOUD_PREMIUM \
+    --DataDisks.0.DiskSize 100 \
+    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
+    --InternetAccessible.InternetMaxBandwidthOut 10 \
+    --InternetAccessible.PublicIpAssigned TRUE \
+    --InstanceName QCLOUD-TEST \
+    --LoginSettings.Password Qcloud@TestApi123++ \
+    --EnhancedService.SecurityService.Enabled TRUE \
+    --EnhancedService.MonitorService.Enabled TRUE \
     --InstanceCount 1
 ```
 

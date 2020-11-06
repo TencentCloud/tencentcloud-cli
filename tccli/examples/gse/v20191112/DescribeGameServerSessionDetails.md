@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse DescribeGameServerSessionDetails --cli-unfold-argument  \
-    --FleetId fleet-test00-1223\
-    --Limit 5\
+    --FleetId fleet-test00-1223 \
+    --Limit 5 \
     --NextToken nextToken-test01-tt
 ```
 

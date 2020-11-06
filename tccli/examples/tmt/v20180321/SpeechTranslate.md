@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tmt SpeechTranslate --cli-unfold-argument  \
-    --ProjectId 0\
-    --SessionUuid sid-1516105689129\
-    --Source zh\
-    --Target en\
-    --AudioFormat 83886080\
-    --Seq 0\
-    --IsEnd 1\
+    --ProjectId 0 \
+    --SessionUuid sid-1516105689129 \
+    --Source zh \
+    --Target en \
+    --AudioFormat 83886080 \
+    --Seq 0 \
+    --IsEnd 1 \
     --Data 
 ```
 

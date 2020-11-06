@@ -1,4 +1,4 @@
-**Example 1: Querying the execution result of async task**
+**Example 1: Querying the execution result of an async task**
 
 
 

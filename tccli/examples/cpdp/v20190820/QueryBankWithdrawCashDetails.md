@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cpdp QueryBankWithdrawCashDetails --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --FunctionFlag 1\
-    --SubAcctNo 1234000000006047\
-    --QueryFlag 2\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --FunctionFlag 1 \
+    --SubAcctNo 1234000000006047 \
+    --QueryFlag 2 \
     --PageNum 1
 ```
 

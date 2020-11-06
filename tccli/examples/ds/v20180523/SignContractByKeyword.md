@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli ds SignContractByKeyword --cli-unfold-argument  \
-    --Module ContractMng\
-    --Operation SignContractByKeyword\
-    --ContractResId dcc-480rzey2gw\
-    --AccountResId dcu-c33uil3apq\
-    --AuthorizationTime 20180531142255\
-    --Position 10.0.0.238\
-    --SealResId dcs-c654e84rqw\
-    --SignKeyword.Keyword (甲方)\
-    --SignKeyword.OffsetCoordX 0\
-    --SignKeyword.OffsetCoordY 20\
-    --SignKeyword.ImageHeight 150\
+    --Module ContractMng \
+    --Operation SignContractByKeyword \
+    --ContractResId dcc-480rzey2gw \
+    --AccountResId dcu-c33uil3apq \
+    --AuthorizationTime 20180531142255 \
+    --Position 10.0.0.238 \
+    --SealResId dcs-c654e84rqw \
+    --SignKeyword.Keyword (甲方) \
+    --SignKeyword.OffsetCoordX 0 \
+    --SignKeyword.OffsetCoordY 20 \
+    --SignKeyword.ImageHeight 150 \
     --SignKeyword.ImageWidth 150
 ```
 

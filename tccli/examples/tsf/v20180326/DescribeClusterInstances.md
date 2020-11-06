@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribeClusterInstances --cli-unfold-argument  \
-    --ClusterId cluster-xxxxxxx\
-    --Offset 0\
+    --ClusterId cluster-xxxxxxx \
+    --Offset 0 \
     --Limit 20
 ```
 

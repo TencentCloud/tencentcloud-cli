@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ecm DeleteSecurityGroupPolicies --cli-unfold-argument  \
-    --SecurityGroupId esg-ohuuioma\
-    --SecurityGroupPolicySet.Version 37\
-    --SecurityGroupPolicySet.Ingress.0.Port 80\
-    --SecurityGroupPolicySet.Ingress.0.Protocol tcp\
-    --SecurityGroupPolicySet.Ingress.0.CidrBlock 10.0.0.0/16\
+    --SecurityGroupId esg-ohuuioma \
+    --SecurityGroupPolicySet.Version 37 \
+    --SecurityGroupPolicySet.Ingress.0.Port 80 \
+    --SecurityGroupPolicySet.Ingress.0.Protocol tcp \
+    --SecurityGroupPolicySet.Ingress.0.CidrBlock 10.0.0.0/16 \
     --SecurityGroupPolicySet.Ingress.0.Action accept
 ```
 
@@ -31,11 +31,11 @@ Input:
 
 ```
 tccli ecm DeleteSecurityGroupPolicies --cli-unfold-argument  \
-    --SecurityGroupId esg-ohuuioma\
-    --SecurityGroupPolicySet.Version 38\
-    --SecurityGroupPolicySet.Egress.0.Protocol tcp\
-    --SecurityGroupPolicySet.Egress.0.Port 80\
-    --SecurityGroupPolicySet.Egress.0.CidrBlock 10.9.89.9/25\
+    --SecurityGroupId esg-ohuuioma \
+    --SecurityGroupPolicySet.Version 38 \
+    --SecurityGroupPolicySet.Egress.0.Protocol tcp \
+    --SecurityGroupPolicySet.Egress.0.Port 80 \
+    --SecurityGroupPolicySet.Egress.0.CidrBlock 10.9.89.9/25 \
     --SecurityGroupPolicySet.Egress.0.Action accept
 ```
 
@@ -56,9 +56,9 @@ Input:
 
 ```
 tccli ecm DeleteSecurityGroupPolicies --cli-unfold-argument  \
-    --SecurityGroupId esg-ohuuioma\
-    --SecurityGroupPolicySet.Version 39\
-    --SecurityGroupPolicySet.Ingress.0.PolicyIndex 0\
+    --SecurityGroupId esg-ohuuioma \
+    --SecurityGroupPolicySet.Version 39 \
+    --SecurityGroupPolicySet.Ingress.0.PolicyIndex 0 \
     --SecurityGroupPolicySet.Ingress.1.PolicyIndex 1
 ```
 
@@ -79,9 +79,9 @@ Input:
 
 ```
 tccli ecm DeleteSecurityGroupPolicies --cli-unfold-argument  \
-    --SecurityGroupId esg-ohuuioma\
-    --SecurityGroupPolicySet.Version 40\
-    --SecurityGroupPolicySet.Egress.0.PolicyIndex 0\
+    --SecurityGroupId esg-ohuuioma \
+    --SecurityGroupPolicySet.Version 40 \
+    --SecurityGroupPolicySet.Egress.0.PolicyIndex 0 \
     --SecurityGroupPolicySet.Egress.1.PolicyIndex 1
 ```
 

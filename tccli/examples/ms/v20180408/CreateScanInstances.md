@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ms CreateScanInstances --cli-unfold-argument  \
-    --AppInfos.0.AppUrl http://example.com/1.apk\
-    --AppInfos.0.AppMd5 dd5b29a800246d7089febf228286d901\
-    --AppInfos.0.AppSize 1024\
-    --ScanInfo.CallbackUrl http://example.com/cb\
+    --AppInfos.0.AppUrl http://example.com/1.apk \
+    --AppInfos.0.AppMd5 dd5b29a800246d7089febf228286d901 \
+    --AppInfos.0.AppSize 1024 \
+    --ScanInfo.CallbackUrl http://example.com/cb \
     --ScanInfo.ScanTypes ADSCAN VULSCAN
 ```
 

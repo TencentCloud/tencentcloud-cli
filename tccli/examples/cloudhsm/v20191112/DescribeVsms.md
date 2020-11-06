@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cloudhsm DescribeVsms --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
+    --Offset 0 \
+    --Limit 10 \
     --SearchWord xxxxxxx
 ```
 

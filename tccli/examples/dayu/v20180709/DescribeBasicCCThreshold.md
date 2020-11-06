@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dayu DescribeBasicCCThreshold --cli-unfold-argument  \
-    --BasicIp "1.1.1.1"\
-    --BasicRegion "gz"\
-    --BasicBizType "nat"\
-    --BasicDeviceType "cvm"\
-    --BasicIpInstance “aaa"\
+    --BasicIp "1.1.1.1" \
+    --BasicRegion "gz" \
+    --BasicBizType "nat" \
+    --BasicDeviceType "cvm" \
+    --BasicIpInstance “aaa" \
     --BasicIspCode 5
 ```
 

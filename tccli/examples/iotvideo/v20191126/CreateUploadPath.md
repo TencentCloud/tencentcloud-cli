@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo CreateUploadPath --cli-unfold-argument  \
-    --ProductId 12345678910\
+    --ProductId 12345678910 \
     --FileName a.zip
 ```
 

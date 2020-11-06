@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cmq ModifyTopicAttribute --cli-unfold-argument  \
-    --TopicName ConnTopic\
+    --TopicName ConnTopic \
     --Qps 20000
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione CreatePresignedNotebookInstanceUrl --cli-unfold-argument  \
-    --NotebookInstanceName test\
+    --NotebookInstanceName test \
     --SessionExpirationDurationInSeconds 1800
 ```
 

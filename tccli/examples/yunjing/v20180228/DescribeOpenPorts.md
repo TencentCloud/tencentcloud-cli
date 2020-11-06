@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli yunjing DescribeOpenPorts --cli-unfold-argument  \
-    --Port 3306\
-    --Limit 10\
+    --Port 3306 \
+    --Limit 10 \
     --Offset 0
 ```
 

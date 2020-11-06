@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live CreateLiveTranscodeRule --cli-unfold-argument  \
-    --DomainName 5000.liveplay.myqcloud.com\
-    --AppName live\
-    --StreamName stream1\
+    --DomainName 5000.liveplay.myqcloud.com \
+    --AppName live \
+    --StreamName stream1 \
     --TemplateId 1000
 ```
 

@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli vod PullUpload --cli-unfold-argument  \
-    --MediaUrl http://www.abc.com/abc.mp4\
+    --MediaUrl http://www.abc.com/abc.mp4 \
     --StorageRegion ap-chongqing
 ```
 
@@ -49,7 +49,7 @@ Input:
 
 ```
 tccli vod PullUpload --cli-unfold-argument  \
-    --MediaUrl http://www.abc.com/abc.mp4\
+    --MediaUrl http://www.abc.com/abc.mp4 \
     --StorageRegion ap-singapore
 ```
 

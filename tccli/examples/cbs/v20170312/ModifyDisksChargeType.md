@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cbs ModifyDisksChargeType --cli-unfold-argument  \
-    --DiskIds disk-jwk0zvrg\
-    --DiskChargePrepaid.Period 1\
+    --DiskIds disk-jwk0zvrg \
+    --DiskChargePrepaid.Period 1 \
     --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
 ```
 

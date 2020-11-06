@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteNatGateway --cli-unfold-argument  \
-    --NatId nat-kdm476mp\
+    --NatId nat-kdm476mp \
     --VpcId vpc-mi51u7gs
 ```
 

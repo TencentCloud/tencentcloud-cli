@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc ModifyAddressAttribute --cli-unfold-argument  \
-    --AddressId eip-p2x6wxc0\
+    --AddressId eip-p2x6wxc0 \
     --AddressName test_eip
 ```
 

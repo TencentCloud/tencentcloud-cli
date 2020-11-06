@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dcdb ModifyDBInstancesProject --cli-unfold-argument  \
-    --InstanceIds dcdbt-fdpjf5zh\
+    --InstanceIds dcdbt-fdpjf5zh \
     --ProjectId 0
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gse PutScalingPolicy --cli-unfold-argument  \
-    --FleetId fleet-qp3g3caa-ay03mhdm\
-    --Name scaling1\
-    --PolicyType TargetBased\
-    --MetricName PercentAvailableGameServerSessions\
+    --FleetId fleet-qp3g3caa-ay03mhdm \
+    --Name scaling1 \
+    --PolicyType TargetBased \
+    --MetricName PercentAvailableGameServerSessions \
     --TargetConfiguration.TargetValue 30
 ```
 

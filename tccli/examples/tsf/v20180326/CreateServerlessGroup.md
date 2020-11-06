@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tsf CreateServerlessGroup --cli-unfold-argument  \
-    --ApplicationId application-xxxxxxx\
-    --GroupName consumer\
-    --NamespaceId namespace-xxxxxxxx\
+    --ApplicationId application-xxxxxxx \
+    --GroupName consumer \
+    --NamespaceId namespace-xxxxxxxx \
     --ClusterId cluster-xxxxxxxx
 ```
 

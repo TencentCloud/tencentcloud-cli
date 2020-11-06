@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tbaas GetBlockTransactionListForUser --cli-unfold-argument  \
-    --Module transaction\
-    --Operation block_transaction_list_for_user\
-    --ClusterId 251005746bcdk3eis17qe\
-    --GroupName org1\
-    --ChannelName fronttest3\
-    --BlockId 2\
-    --Offset 0\
+    --Module transaction \
+    --Operation block_transaction_list_for_user \
+    --ClusterId 251005746bcdk3eis17qe \
+    --GroupName org1 \
+    --ChannelName fronttest3 \
+    --BlockId 2 \
+    --Offset 0 \
     --Limit 10
 ```
 

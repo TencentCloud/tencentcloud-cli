@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli bm ReloadDeviceOs --cli-unfold-argument  \
-    --InstanceId cpm-xxx\
-    --Password 123456Test\
-    --OsTypeId 1\
-    --VpcId vpc-xxxxx\
-    --SubnetId subnet-xxxxx\
-    --RaidId 2\
-    --IsZoning 1\
-    --SysRootSpace 20\
-    --SysSwaporuefiSpace 10\
-    --SysUsrlocalSpace 10\
-    --LanIp 10.88.255.6\
-    --HyperThreading 1\
-    --NeedSecurityAgent 1\
+    --InstanceId cpm-xxx \
+    --Password 123456Test \
+    --OsTypeId 1 \
+    --VpcId vpc-xxxxx \
+    --SubnetId subnet-xxxxx \
+    --RaidId 2 \
+    --IsZoning 1 \
+    --SysRootSpace 20 \
+    --SysSwaporuefiSpace 10 \
+    --SysUsrlocalSpace 10 \
+    --LanIp 10.88.255.6 \
+    --HyperThreading 1 \
+    --NeedSecurityAgent 1 \
     --NeedMonitorAgent 1
 ```
 

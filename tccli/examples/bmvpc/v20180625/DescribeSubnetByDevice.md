@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bmvpc DescribeSubnetByDevice --cli-unfold-argument  \
-    --InstanceId cpm-5im64oip\
-    --Offset 2\
-    --Limit 3\
+    --InstanceId cpm-5im64oip \
+    --Offset 2 \
+    --Limit 3 \
     --Types 7
 ```
 

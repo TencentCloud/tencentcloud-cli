@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm SyncImages --cli-unfold-argument  \
-    --ImageIds img-o3ycss2p\
+    --ImageIds img-o3ycss2p \
     --DestinationRegions ap-guangzhou
 ```
 

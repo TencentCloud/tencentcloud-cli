@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli batch DescribeTaskLogs --cli-unfold-argument  \
-    --JobId job-mawzp3ja\
-    --TaskName task\
+    --JobId job-mawzp3ja \
+    --TaskName task \
     --TaskInstanceIndexes 0 1
 ```
 

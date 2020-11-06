@@ -1,4 +1,4 @@
-**Example 1: Rolling back database table**
+**Example 1: Rolling back database tables**
 
 
 
@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cdb StartBatchRollback --cli-unfold-argument  \
-    --Instances.0.InstanceId cdb-xxxxxxxx\
-    --Instances.0.Strategy full\
-    --Instances.0.RollbackTime '2018-08-01 16:27:43'\
-    --Instances.0.Databases.0.DatabaseName old_db\
+    --Instances.0.InstanceId cdb-xxxxxxxx \
+    --Instances.0.Strategy full \
+    --Instances.0.RollbackTime '2018-08-01 16:27:43' \
+    --Instances.0.Databases.0.DatabaseName old_db \
     --Instances.0.Databases.0.NewDatabaseName new_db
 ```
 

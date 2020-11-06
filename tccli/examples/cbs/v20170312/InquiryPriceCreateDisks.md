@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cbs InquiryPriceCreateDisks --cli-unfold-argument  \
-    --DiskType CLOUD_BASIC\
-    --DiskCount 1\
-    --DiskSize 50\
-    --DiskChargeType PREPAID\
+    --DiskType CLOUD_BASIC \
+    --DiskCount 1 \
+    --DiskSize 50 \
+    --DiskChargeType PREPAID \
     --DiskChargePrepaid.Period 6
 ```
 
@@ -40,9 +40,9 @@ Input:
 
 ```
 tccli cbs InquiryPriceCreateDisks --cli-unfold-argument  \
-    --DiskType CLOUD_PREMIUM\
-    --DiskSize 100\
-    --DiskCount 1\
+    --DiskType CLOUD_PREMIUM \
+    --DiskSize 100 \
+    --DiskCount 1 \
     --DiskChargeType POSTPAID_BY_HOUR
 ```
 

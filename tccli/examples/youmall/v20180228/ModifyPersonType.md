@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli youmall ModifyPersonType --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 1\
-    --PersonId 1\
-    --PersonType 1\
+    --CompanyId testCompany1 \
+    --ShopId 1 \
+    --PersonId 1 \
+    --PersonType 1 \
     --PersonSubType 1
 ```
 
@@ -30,10 +30,10 @@ Input:
 
 ```
 tccli youmall ModifyPersonType --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 1\
-    --PersonId 1\
-    --PersonType 1\
+    --CompanyId testCompany1 \
+    --ShopId 1 \
+    --PersonId 1 \
+    --PersonType 1 \
     --PersonSubType 1
 ```
 

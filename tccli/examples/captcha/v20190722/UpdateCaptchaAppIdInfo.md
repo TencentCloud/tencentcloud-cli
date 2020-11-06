@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli captcha UpdateCaptchaAppIdInfo --cli-unfold-argument  \
-    --CaptchaAppId 2054955025\
-    --AppName 111\
-    --DomainLimit 111.com\
-    --SceneType 1\
-    --CapType 14\
-    --EvilInterceptGrade 100\
-    --SmartVerify 0\
-    --SmartEngine 0\
-    --SchemeColor #1a79ff\
-    --CaptchaLanguage 2052\
-    --MailAlarm null\
-    --TopFullScreen 0\
+    --CaptchaAppId 2054955025 \
+    --AppName 111 \
+    --DomainLimit 111.com \
+    --SceneType 1 \
+    --CapType 14 \
+    --EvilInterceptGrade 100 \
+    --SmartVerify 0 \
+    --SmartEngine 0 \
+    --SchemeColor #1a79ff \
+    --CaptchaLanguage 2052 \
+    --MailAlarm null \
+    --TopFullScreen 0 \
     --TrafficThreshold 0
 ```
 

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli dayu DescribeBaradData --cli-unfold-argument  \
-    --Business shield\
-    --Id bgpip-000000x7\
-    --Period 300\
-    --StartTime '2018-08-28 07:15:00'\
-    --EndTime '2018-08-28 10:05:00'\
-    --Statistics max\
-    --MetricName connum\
-    --ProtocolPort.0.Protocol tcp\
+    --Business shield \
+    --Id bgpip-000000x7 \
+    --Period 300 \
+    --StartTime '2018-08-28 07:15:00' \
+    --EndTime '2018-08-28 10:05:00' \
+    --Statistics max \
+    --MetricName connum \
+    --ProtocolPort.0.Protocol tcp \
     --ProtocolPort.0.Port 80
 ```
 

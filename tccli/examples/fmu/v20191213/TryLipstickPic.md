@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli fmu TryLipstickPic --cli-unfold-argument  \
-    --Image xxxxx\
-    --LipColorInfos.0.RGBA.R 200\
-    --LipColorInfos.0.RGBA.G 0\
-    --LipColorInfos.0.RGBA.B 0\
+    --Image xxxxx \
+    --LipColorInfos.0.RGBA.R 200 \
+    --LipColorInfos.0.RGBA.G 0 \
+    --LipColorInfos.0.RGBA.B 0 \
     --LipColorInfos.0.RGBA.A 50
 ```
 
@@ -31,7 +31,7 @@ Input:
 
 ```
 tccli fmu TryLipstickPic --cli-unfold-argument  \
-    --Image xxxxx\
+    --Image xxxxx \
     --LipColorInfos.0.ModelId xxx
 ```
 
@@ -53,16 +53,16 @@ Input:
 
 ```
 tccli fmu TryLipstickPic --cli-unfold-argument  \
-    --Image xxxxx\
-    --LipColorInfos.0.ModelId xxx\
-    --LipColorInfos.0.FaceRect.X 整型\
-    --LipColorInfos.0.FaceRect.Y 整型\
-    --LipColorInfos.0.FaceRect.Width 整型\
-    --LipColorInfos.0.FaceRect.Height 整型\
-    --LipColorInfos.1.ModelId xxx\
-    --LipColorInfos.1.FaceRect.X 整型\
-    --LipColorInfos.1.FaceRect.Y 整型\
-    --LipColorInfos.1.FaceRect.Width 整型\
+    --Image xxxxx \
+    --LipColorInfos.0.ModelId xxx \
+    --LipColorInfos.0.FaceRect.X 整型 \
+    --LipColorInfos.0.FaceRect.Y 整型 \
+    --LipColorInfos.0.FaceRect.Width 整型 \
+    --LipColorInfos.0.FaceRect.Height 整型 \
+    --LipColorInfos.1.ModelId xxx \
+    --LipColorInfos.1.FaceRect.X 整型 \
+    --LipColorInfos.1.FaceRect.Y 整型 \
+    --LipColorInfos.1.FaceRect.Width 整型 \
     --LipColorInfos.1.FaceRect.Height 整型
 ```
 
@@ -84,10 +84,10 @@ Input:
 
 ```
 tccli fmu TryLipstickPic --cli-unfold-argument  \
-    --Image xxxxx\
-    --LipColorInfos.0.RGBA.R 200\
-    --LipColorInfos.0.RGBA.G 0\
-    --LipColorInfos.0.RGBA.B 0\
+    --Image xxxxx \
+    --LipColorInfos.0.RGBA.R 200 \
+    --LipColorInfos.0.RGBA.G 0 \
+    --LipColorInfos.0.RGBA.B 0 \
     --LipColorInfos.0.RGBA.A 50
 ```
 

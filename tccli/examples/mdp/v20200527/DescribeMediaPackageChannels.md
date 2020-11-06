@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mdp DescribeMediaPackageChannels --cli-unfold-argument  \
-    --PageNum 1\
+    --PageNum 1 \
     --PageSize 10
 ```
 

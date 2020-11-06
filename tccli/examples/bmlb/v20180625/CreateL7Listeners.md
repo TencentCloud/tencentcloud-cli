@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bmlb CreateL7Listeners --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
-    --ListenerSet.0.LoadBalancerPort 81\
-    --ListenerSet.0.Protocol http\
+    --LoadBalancerId lb-47gazeml \
+    --ListenerSet.0.LoadBalancerPort 81 \
+    --ListenerSet.0.Protocol http \
     --ListenerSet.0.ListenerName http81
 ```
 

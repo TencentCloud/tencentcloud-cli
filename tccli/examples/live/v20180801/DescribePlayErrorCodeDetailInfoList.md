@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live DescribePlayErrorCodeDetailInfoList --cli-unfold-argument  \
-    --PlayDomains 5000.playdomain.com\
-    --StartTime '2019-03-01 00:00:00'\
-    --EndTime '2019-03-01 12:00:00'\
-    --Granularity 1\
+    --PlayDomains 5000.playdomain.com \
+    --StartTime '2019-03-01 00:00:00' \
+    --EndTime '2019-03-01 12:00:00' \
+    --Granularity 1 \
     --StatType 4xx
 ```
 

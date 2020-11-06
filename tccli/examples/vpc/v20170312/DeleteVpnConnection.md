@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc DeleteVpnConnection --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpnGatewayId vpngw-p4lmqawn\
+    --Version 2017-03-12 \
+    --VpnGatewayId vpngw-p4lmqawn \
     --VpnConnectionId vpnx-5p7vkch8
 ```
 

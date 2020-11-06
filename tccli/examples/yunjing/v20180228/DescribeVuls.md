@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli yunjing DescribeVuls --cli-unfold-argument  \
-    --VulType WEB\
-    --Limit 10\
+    --VulType WEB \
+    --Limit 10 \
     --Offset 0
 ```
 

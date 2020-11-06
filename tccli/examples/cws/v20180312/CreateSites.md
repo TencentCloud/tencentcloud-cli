@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cws CreateSites --cli-unfold-argument  \
-    --Urls http%3A%2F%2Fwww.qcloud.com\
+    --Urls http%3A%2F%2Fwww.qcloud.com \
     --UserAgent Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_13_4)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F66.0.3359.139%20Safari%2F537.36
 ```
 

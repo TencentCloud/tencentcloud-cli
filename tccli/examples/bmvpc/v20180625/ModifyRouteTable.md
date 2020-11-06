@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc ModifyRouteTable --cli-unfold-argument  \
-    --RouteTableId rtb-q1j48dkd\
+    --RouteTableId rtb-q1j48dkd \
     --RouteTableName test
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mps ModifyAIAnalysisTemplate --cli-unfold-argument  \
-    --Definition 30\
-    --TagConfigure.Switch ON\
+    --Definition 30 \
+    --TagConfigure.Switch ON \
     --CoverConfigure.Switch OFF
 ```
 
@@ -28,7 +28,7 @@ Input:
 
 ```
 tccli mps ModifyAIAnalysisTemplate --cli-unfold-argument  \
-    --Definition 30\
+    --Definition 30 \
     --CoverConfigure.Switch ON
 ```
 
@@ -49,7 +49,7 @@ Input:
 
 ```
 tccli mps ModifyAIAnalysisTemplate --cli-unfold-argument  \
-    --Definition 30\
+    --Definition 30 \
     --CoverConfigure.Switch OFF
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli scf CreateFunction --cli-unfold-argument  \
-    --FunctionName <FunctionName>\
-    --Handler <function.handler>\
-    --Code.CosBucketName <CosBucketName>\
+    --FunctionName <FunctionName> \
+    --Handler <function.handler> \
+    --Code.CosBucketName <CosBucketName> \
     --Code.CosObjectName <CosObjectName>
 ```
 

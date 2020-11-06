@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot UnassociateSubDeviceFromGatewayProduct --cli-unfold-argument  \
-    --SubDeviceProductId iot-4e0wsxpi\
+    --SubDeviceProductId iot-4e0wsxpi \
     --GatewayProductId iot-43e0wsxas
 ```
 

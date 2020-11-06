@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmeip UnbindRs --cli-unfold-argument  \
-    --EipId 字符串\
+    --EipId 字符串 \
     --InstanceId 字符串
 ```
 

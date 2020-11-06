@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iotcloud ReplaceTopicRule --cli-unfold-argument  \
-    --ModifyType 1\
-    --ActionIndex 1\
-    --TopicRulePayload.Sql U0VMRUNUIGZpZWxkMSwgZmllbGQyIEZST00gJ3NyY1Byb2R1Y3RJZC9zcmNEZXZpY2VOYW1lL2V2ZW50Jw==\
-    --TopicRulePayload.Description xx\
-    --TopicRulePayload.Actions xx\
-    --TopicRulePayload.RuleDisabled True\
+    --ModifyType 1 \
+    --ActionIndex 1 \
+    --TopicRulePayload.Sql U0VMRUNUIGZpZWxkMSwgZmllbGQyIEZST00gJ3NyY1Byb2R1Y3RJZC9zcmNEZXZpY2VOYW1lL2V2ZW50Jw== \
+    --TopicRulePayload.Description xx \
+    --TopicRulePayload.Actions xx \
+    --TopicRulePayload.RuleDisabled True \
     --RuleName testrulename
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb RenameInstance --cli-unfold-argument  \
-    --InstanceId cmgo-eqmoa5sf\
+    --InstanceId cmgo-eqmoa5sf \
     --NewName test_name
 ```
 

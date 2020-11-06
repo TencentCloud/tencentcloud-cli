@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyCcnRegionBandwidthLimitsType --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --CcnId ccn-gree226l\
+    --Version 2017-03-12 \
+    --CcnId ccn-gree226l \
     --BandwidthLimitType OUTER_REGION_LIMIT
 ```
 

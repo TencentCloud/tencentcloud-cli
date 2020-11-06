@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --AutoScalingGroupId asg-8fbozqja\
-    --DefaultResult ABANDON\
-    --HeartbeatTimeout 120\
-    --LifecycleHookName terminate-topic\
-    --LifecycleTransition INSTANCE_TERMINATING\
-    --NotificationMetadata topic\
-    --NotificationTarget.TargetType CMQ_TOPIC\
+    --AutoScalingGroupId asg-8fbozqja \
+    --DefaultResult ABANDON \
+    --HeartbeatTimeout 120 \
+    --LifecycleHookName terminate-topic \
+    --LifecycleTransition INSTANCE_TERMINATING \
+    --NotificationMetadata topic \
+    --NotificationTarget.TargetType CMQ_TOPIC \
     --NotificationTarget.TopicName one-topic
 ```
 
@@ -34,8 +34,8 @@ Input:
 
 ```
 tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --AutoScalingGroupId asg-8fbozqja\
-    --LifecycleHookName one-hook-default\
+    --AutoScalingGroupId asg-8fbozqja \
+    --LifecycleHookName one-hook-default \
     --LifecycleTransition INSTANCE_LAUNCHING
 ```
 
@@ -57,13 +57,13 @@ Input:
 
 ```
 tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --AutoScalingGroupId asg-8fbozqja\
-    --DefaultResult CONTINUE\
-    --HeartbeatTimeout 120\
-    --LifecycleHookName launch-queue\
-    --LifecycleTransition INSTANCE_LAUNCHING\
-    --NotificationMetadata queue\
-    --NotificationTarget.TargetType CMQ_QUEUE\
+    --AutoScalingGroupId asg-8fbozqja \
+    --DefaultResult CONTINUE \
+    --HeartbeatTimeout 120 \
+    --LifecycleHookName launch-queue \
+    --LifecycleTransition INSTANCE_LAUNCHING \
+    --NotificationMetadata queue \
+    --NotificationTarget.TargetType CMQ_QUEUE \
     --NotificationTarget.QueueName one-queue
 ```
 
@@ -85,10 +85,10 @@ Input:
 
 ```
 tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --AutoScalingGroupId asg-8fbozqja\
-    --DefaultResult ABANDON\
-    --HeartbeatTimeout 360\
-    --LifecycleHookName one-hook\
+    --AutoScalingGroupId asg-8fbozqja \
+    --DefaultResult ABANDON \
+    --HeartbeatTimeout 360 \
+    --LifecycleHookName one-hook \
     --LifecycleTransition INSTANCE_LAUNCHING
 ```
 

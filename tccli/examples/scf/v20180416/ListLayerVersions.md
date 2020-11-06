@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf ListLayerVersions --cli-unfold-argument  \
-    --LayerName <LayerName>\
+    --LayerName <LayerName> \
     --CompatibleRuntime <CompatibleRuntime>
 ```
 

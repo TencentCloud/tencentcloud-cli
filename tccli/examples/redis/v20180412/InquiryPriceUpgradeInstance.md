@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis InquiryPriceUpgradeInstance --cli-unfold-argument  \
-    --InstanceId crs-xjhsdjcxjd\
+    --InstanceId crs-xjhsdjcxjd \
     --MemSize 4096
 ```
 

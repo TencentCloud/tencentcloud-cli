@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf CreateApplication --cli-unfold-argument  \
-    --ApplicationName test\
-    --ApplicationType V\
+    --ApplicationName test \
+    --ApplicationType V \
     --MicroserviceType N
 ```
 

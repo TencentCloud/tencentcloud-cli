@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bmvpc DescribeVpnGateways --cli-unfold-argument  \
-    --Version 2018-06-25\
-    --Offset 0\
-    --Limit 2\
-    --Filters.0.Name zone\
+    --Version 2018-06-25 \
+    --Offset 0 \
+    --Limit 2 \
+    --Filters.0.Name zone \
     --Filters.0.Values ap-guangzhou
 ```
 

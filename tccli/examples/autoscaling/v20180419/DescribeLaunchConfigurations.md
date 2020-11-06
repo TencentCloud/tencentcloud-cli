@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli as DescribeLaunchConfigurations --cli-unfold-argument  \
-    --Filters.0.Name launch-configuration-id\
+    --Filters.0.Name launch-configuration-id \
     --Filters.0.Values asc-l7rduvv0
 ```
 

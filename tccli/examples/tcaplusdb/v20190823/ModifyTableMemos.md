@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tcaplusdb ModifyTableMemos --cli-unfold-argument  \
-    --ClusterId 5674209986\
-    --TableMemos.0.TableInstanceId tcaplus-1f224454\
-    --TableMemos.0.TableGroupId 101\
-    --TableMemos.0.TableName tb_example\
+    --ClusterId 5674209986 \
+    --TableMemos.0.TableInstanceId tcaplus-1f224454 \
+    --TableMemos.0.TableGroupId 101 \
+    --TableMemos.0.TableName tb_example \
     --TableMemos.0.Memo 'pb test table 1xx'
 ```
 

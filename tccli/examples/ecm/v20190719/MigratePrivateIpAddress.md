@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm MigratePrivateIpAddress --cli-unfold-argument  \
-    --SourceNetworkInterfaceId eni-12121212\
-    --DestinationNetworkInterfaceId eni-13131313\
-    --PrivateIpAddress 172.16.33.109\
+    --SourceNetworkInterfaceId eni-12121212 \
+    --DestinationNetworkInterfaceId eni-13131313 \
+    --PrivateIpAddress 172.16.33.109 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

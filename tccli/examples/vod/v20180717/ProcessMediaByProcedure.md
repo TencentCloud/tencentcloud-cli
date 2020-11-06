@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ProcessMediaByProcedure --cli-unfold-argument  \
-    --FileId 5285485487985271487\
+    --FileId 5285485487985271487 \
     --ProcedureName TranscodeAndSnapshot
 ```
 

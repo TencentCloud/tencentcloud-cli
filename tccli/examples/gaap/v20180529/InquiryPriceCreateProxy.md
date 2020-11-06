@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gaap InquiryPriceCreateProxy --cli-unfold-argument  \
-    --AccessRegion EastChina\
-    --RealServerRegion SouthChina\
-    --Bandwidth 10\
+    --AccessRegion EastChina \
+    --RealServerRegion SouthChina \
+    --Bandwidth 10 \
     --Concurrency 2
 ```
 

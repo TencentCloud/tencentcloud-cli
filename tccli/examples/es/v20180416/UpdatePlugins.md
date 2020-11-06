@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli es UpdatePlugins --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
+    --InstanceId es-xxxxxxxx \
     --RemovePluginList analysis-qq sql
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli es UpdatePlugins --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
+    --InstanceId es-xxxxxxxx \
     --InstallPluginList analysis-qq sql
 ```
 

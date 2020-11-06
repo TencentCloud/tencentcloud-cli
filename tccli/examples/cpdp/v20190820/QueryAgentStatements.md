@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cpdp QueryAgentStatements --cli-unfold-argument  \
-    --Date 2020-05-01\
+    --Date 2020-05-01 \
     --Type monthly
 ```
 

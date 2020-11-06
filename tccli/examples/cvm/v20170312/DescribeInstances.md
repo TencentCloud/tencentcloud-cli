@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm DescribeInstances --cli-unfold-argument  \
-    --Filters.0.Name zone\
-    --Filters.0.Values ap-guangzhou-1 ap-guangzhou-2\
-    --Offset 0\
+    --Filters.0.Name zone \
+    --Filters.0.Values ap-guangzhou-1 ap-guangzhou-2 \
+    --Offset 0 \
     --Limit 1
 ```
 
@@ -94,9 +94,9 @@ Input:
 
 ```
 tccli cvm DescribeInstances --cli-unfold-argument  \
-    --Filters.0.Name zone\
-    --Filters.0.Values ap-guangzhou-1 ap-guangzhou-2\
-    --Offset 0\
+    --Filters.0.Name zone \
+    --Filters.0.Values ap-guangzhou-1 ap-guangzhou-2 \
+    --Offset 0 \
     --Limit 1
 ```
 
@@ -182,9 +182,9 @@ Input:
 
 ```
 tccli cvm DescribeInstances --cli-unfold-argument  \
-    --Filters.0.Name tag:city\
-    --Filters.0.Values shenzhen\
-    --Offset 0\
+    --Filters.0.Name tag:city \
+    --Filters.0.Values shenzhen \
+    --Offset 0 \
     --Limit 1
 ```
 

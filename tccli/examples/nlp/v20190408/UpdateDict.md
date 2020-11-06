@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli nlp UpdateDict --cli-unfold-argument  \
-    --DictId udf-1b6b79e4cc\
-    --Name 王者荣耀人名2\
+    --DictId udf-1b6b79e4cc \
+    --Name 王者荣耀人名2 \
     --Description 5月份新增
 ```
 

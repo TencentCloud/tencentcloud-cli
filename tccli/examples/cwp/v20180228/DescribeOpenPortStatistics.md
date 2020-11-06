@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp DescribeOpenPortStatistics --cli-unfold-argument  \
-    --Filters.0.Name Port\
-    --Filters.0.Values 22\
-    --Limit 10\
+    --Filters.0.Name Port \
+    --Filters.0.Values 22 \
+    --Limit 10 \
     --Offset 0
 ```
 

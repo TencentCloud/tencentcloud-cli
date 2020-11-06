@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli faceid BankCard4EVerification --cli-unfold-argument  \
-    --Name 张三\
-    --BankCard 6222222222222222222\
-    --Phone 6222222222222222222\
+    --Name 张三 \
+    --BankCard 6222222222222222222 \
+    --Phone 6222222222222222222 \
     --IdCard 6222222222222222222
 ```
 
@@ -31,9 +31,9 @@ Input:
 
 ```
 tccli faceid BankCard4EVerification --cli-unfold-argument  \
-    --Name 张三\
-    --BankCard 6222222222222222222\
-    --Phone 6222222222222222222\
+    --Name 张三 \
+    --BankCard 6222222222222222222 \
+    --Phone 6222222222222222222 \
     --IdCard 6222222222222222222
 ```
 

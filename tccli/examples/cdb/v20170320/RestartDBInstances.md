@@ -1,4 +1,4 @@
-**Example 1: Restarting instance**
+**Example 1: Restarting an instance**
 
 
 

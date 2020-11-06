@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cr DescribeRecords --cli-unfold-argument  \
-    --Module Record\
-    --Operation List\
-    --StartBizDate 2019-03-03\
-    --EndBizDate 2019-03-13\
-    --Offset 0\
-    --Limit 10\
+    --Module Record \
+    --Operation List \
+    --StartBizDate 2019-03-03 \
+    --EndBizDate 2019-03-13 \
+    --Offset 0 \
+    --Limit 10 \
     --InstId ins-a1b2c3
 ```
 

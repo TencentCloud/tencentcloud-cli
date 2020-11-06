@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf DeleteLayerVersion --cli-unfold-argument  \
-    --LayerName <LayerName>\
+    --LayerName <LayerName> \
     --LayerVersion <LayerVersion>
 ```
 

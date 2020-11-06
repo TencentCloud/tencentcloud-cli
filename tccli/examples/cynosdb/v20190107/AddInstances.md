@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cynosdb AddInstances --cli-unfold-argument  \
-    --Zone ap-guangzhou-3\
-    --VpcId vpc-1ptuei0b\
-    --SubnetId subnet-1tmw9t4o\
-    --Cpu 2\
-    --Memory 4\
-    --Storage 100\
-    --ClusterId cynosdbmysql-6gtlgm5l\
-    --ReadOnlyCount 1\
+    --Zone ap-guangzhou-3 \
+    --VpcId vpc-1ptuei0b \
+    --SubnetId subnet-1tmw9t4o \
+    --Cpu 2 \
+    --Memory 4 \
+    --Storage 100 \
+    --ClusterId cynosdbmysql-6gtlgm5l \
+    --ReadOnlyCount 1 \
     --PayMode 0
 ```
 

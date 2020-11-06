@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeDeliverBandwidthList --cli-unfold-argument  \
-    --StartTime '2020-01-07 21:10:00'\
+    --StartTime '2020-01-07 21:10:00' \
     --EndTime '2020-01-07 21:15:00'
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl UploadRevokeLetter --cli-unfold-argument  \
-    --CertificateId a91hoLqi\
+    --CertificateId a91hoLqi \
     --RevokeLetter base64content
 ```
 

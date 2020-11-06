@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live CreateLiveWatermarkRule --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com\
-    --AppName live\
-    --StreamName stream1\
+    --DomainName 5000.livepush.myqcloud.com \
+    --AppName live \
+    --StreamName stream1 \
     --TemplateId 1000
 ```
 

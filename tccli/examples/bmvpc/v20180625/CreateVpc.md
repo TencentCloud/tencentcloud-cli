@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli bmvpc CreateVpc --cli-unfold-argument  \
-    --VpcName test\
-    --CidrBlock 10.10.0.0/16\
-    --SubnetSet.0.SubnetName ownDocker1\
-    --SubnetSet.0.CidrBlock 10.10.246.0/26\
-    --SubnetSet.0.Zone ap-test-1\
+    --VpcName test \
+    --CidrBlock 10.10.0.0/16 \
+    --SubnetSet.0.SubnetName ownDocker1 \
+    --SubnetSet.0.CidrBlock 10.10.246.0/26 \
+    --SubnetSet.0.Zone ap-test-1 \
     --Zone ap-test
 ```
 

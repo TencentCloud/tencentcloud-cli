@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdn DuplicateDomainConfig --cli-unfold-argument  \
-    --Domain www.test.com\
+    --Domain www.test.com \
     --ReferenceDomain reference.test.com
 ```
 

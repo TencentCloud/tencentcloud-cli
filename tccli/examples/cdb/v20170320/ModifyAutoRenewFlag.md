@@ -1,4 +1,4 @@
-**Example 1: Modifying the auto-renewal flag of TencentDB instance**
+**Example 1: Modifying the auto-renewal flag of a TencentDB instance**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb ModifyAutoRenewFlag --cli-unfold-argument  \
-    --InstanceIds cdb-f35wr6wj\
+    --InstanceIds cdb-f35wr6wj \
     --AutoRenew 1
 ```
 

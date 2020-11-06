@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tiems CreateServiceConfig --cli-unfold-argument  \
-    --Name test\
-    --Runtime pmml\
-    --ModelUri cos://ti-example-125550209.cos.ap-beijing.myqcloud.com/models/pmml/\
+    --Name test \
+    --Runtime pmml \
+    --ModelUri cos://ti-example-125550209.cos.ap-beijing.myqcloud.com/models/pmml/ \
     --Description test
 ```
 

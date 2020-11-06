@@ -18,7 +18,7 @@ Input:
 
 ```
 tccli gse GetUploadCredentials --cli-unfold-argument  \
-    --AssetRegion ap-shanghai\
+    --AssetRegion ap-shanghai \
     --BucketKey server.zip
 ```
 

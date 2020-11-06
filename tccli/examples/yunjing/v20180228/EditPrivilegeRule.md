@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli yunjing EditPrivilegeRule --cli-unfold-argument  \
-    --ProcessName bash\
-    --HostIp 127.0.0.1\
+    --ProcessName bash \
+    --HostIp 127.0.0.1 \
     --SMode 1
 ```
 

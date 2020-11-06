@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DeleteClass --cli-unfold-argument  \
-    --ClassId 1\
+    --ClassId 1 \
     --SubAppId 1
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli asr ModifyCustomization --cli-unfold-argument  \
-    --ModelId 413c479df72d11eaacd3c81fbecfd0bd\
-    --ModelName 修改名称\
-    --ModelType 16k\
+    --ModelId 413c479df72d11eaacd3c81fbecfd0bd \
+    --ModelName 修改名称 \
+    --ModelType 16k \
     --TextUrl http://www.download.com/test.txt
 ```
 

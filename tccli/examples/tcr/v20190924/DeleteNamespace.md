@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DeleteNamespace --cli-unfold-argument  \
-    --RegistryId tcr-okmj78\
+    --RegistryId tcr-okmj78 \
     --NamespaceName mytest
 ```
 

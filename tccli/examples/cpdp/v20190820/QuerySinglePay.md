@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cpdp QuerySinglePay --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
+    --Placement.Zone ap-guangzhou-2 \
     --SerialNumber 123123123
 ```
 

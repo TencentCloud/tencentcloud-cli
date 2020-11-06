@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc DescribeVpcInstances --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --Filters.0.Name vpc-id\
-    --Filters.0.Values vpc-12345678\
-    --Offset 0\
+    --Version 2017-03-12 \
+    --Filters.0.Name vpc-id \
+    --Filters.0.Values vpc-12345678 \
+    --Offset 0 \
     --Limit 10
 ```
 

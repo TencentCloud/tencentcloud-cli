@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw SetVideoGenerationTaskCallback --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --Callback https://example.com/videoGeneration/callback
 ```
 

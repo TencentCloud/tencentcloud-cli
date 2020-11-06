@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gse UpdateAlias --cli-unfold-argument  \
-    --AliasId alias-123-test\
+    --AliasId alias-123-test \
     --Name test
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: Querying configurable instance parameter list**
+**Example 1: Querying the list of configurable parameters for an instance**
 
 
 
@@ -117,7 +117,7 @@ Output:
                 "Name": "table_open_cache",
                 "ParamType": "integer",
                 "Default": "2000",
-                "Description": "The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.",
+                "Description": "The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.",
                 "CurrentValue": "512",
                 "NeedReboot": 0,
                 "Max": 524288,
@@ -616,7 +616,7 @@ Output:
                 "Name": "ngram_token_size",
                 "ParamType": "integer",
                 "Default": "2",
-                "Description": "ngram_token_size is set to the size of the largest token that you want to search for.",
+                "Description": "ngram_token_size is set to the size of the largest token that you want to search for.",
                 "CurrentValue": "1",
                 "NeedReboot": 1,
                 "Max": 10,

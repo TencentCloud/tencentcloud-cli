@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb DescribeCloudBaseBuildService --cli-unfold-argument  \
-    --EnvId cdnheader-v2a\
+    --EnvId cdnheader-v2a \
     --ServiceName nginx-test
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc DeleteHostedInterface --cli-unfold-argument  \
-    --VpcId vpc-34cxlz7z\
-    --SubnetId subnet-1oo8hlkg\
+    --VpcId vpc-34cxlz7z \
+    --SubnetId subnet-1oo8hlkg \
     --InstanceIds chm-343fqw4
 ```
 

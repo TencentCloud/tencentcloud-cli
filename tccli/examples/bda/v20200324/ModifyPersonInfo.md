@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bda ModifyPersonInfo --cli-unfold-argument  \
-    --PersonId 12313123\
+    --PersonId 12313123 \
     --PersonName testG10P1M1
 ```
 
@@ -31,7 +31,7 @@ Input:
 
 ```
 tccli bda ModifyPersonInfo --cli-unfold-argument  \
-    --PersonId testG10P1\
+    --PersonId testG10P1 \
     --PersonName testG10P1M1
 ```
 

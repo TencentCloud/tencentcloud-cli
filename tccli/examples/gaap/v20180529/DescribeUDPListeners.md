@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap DescribeUDPListeners --cli-unfold-argument  \
-    --ProxyId link-hwera8lq\
+    --ProxyId link-hwera8lq \
     --ListenerId listener-pbsgn7ej
 ```
 

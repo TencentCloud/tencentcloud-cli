@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli emr TerminateTasks --cli-unfold-argument  \
-    --InstanceId emr-4slr7ad7\
+    --InstanceId emr-4slr7ad7 \
     --ResourceIds emr-vm-xxx33tg
 ```
 

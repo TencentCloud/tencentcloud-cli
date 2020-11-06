@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --Names test\
-    --ClassIds 1 2\
-    --CreateTime.After 2016-09-20T10:00:00Z\
-    --CreateTime.Before 2018-10-02T10:00:00Z\
-    --SourceTypes Record\
-    --Sort.Field CreatTime\
+    --Names test \
+    --ClassIds 1 2 \
+    --CreateTime.After 2016-09-20T10:00:00Z \
+    --CreateTime.Before 2018-10-02T10:00:00Z \
+    --SourceTypes Record \
+    --Sort.Field CreatTime \
     --Sort.Order Desc
 ```
 

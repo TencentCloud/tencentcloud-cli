@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cdn ListTopData --cli-unfold-argument  \
-    --StartTime '2018-09-04 00:00:00'\
-    --EndTime '2018-09-04 12:00:00'\
-    --Metric Url\
-    --Filter flux\
+    --StartTime '2018-09-04 00:00:00' \
+    --EndTime '2018-09-04 12:00:00' \
+    --Metric Url \
+    --Filter flux \
     --Domains www.test.com www.test.com
 ```
 

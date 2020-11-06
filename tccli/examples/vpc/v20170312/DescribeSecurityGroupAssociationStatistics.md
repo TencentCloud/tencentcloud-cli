@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DescribeSecurityGroupAssociationStatistics --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --SecurityGroupIds sg-ohuuioma sg-2quou3gv
 ```
 

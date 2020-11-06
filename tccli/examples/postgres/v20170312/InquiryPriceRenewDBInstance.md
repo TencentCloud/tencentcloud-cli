@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres InquiryPriceRenewDBInstance --cli-unfold-argument  \
-    --DBInstanceId postgres-6fego161\
+    --DBInstanceId postgres-6fego161 \
     --Period 12
 ```
 

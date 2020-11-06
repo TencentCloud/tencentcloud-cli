@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideo CreateDevToken --cli-unfold-argument  \
-    --AccessId ********\
-    --TtlMinutes 10\
+    --AccessId ******** \
+    --TtlMinutes 10 \
     --Tids ********
 ```
 

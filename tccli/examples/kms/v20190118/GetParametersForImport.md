@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli kms GetParametersForImport --cli-unfold-argument  \
-    --KeyId 1ff78c0d-c54b-11e9-9cc9-5254006d0810\
-    --WrappingAlgorithm RSAES_OAEP_SHA_1\
+    --KeyId 1ff78c0d-c54b-11e9-9cc9-5254006d0810 \
+    --WrappingAlgorithm RSAES_OAEP_SHA_1 \
     --WrappingKeySpec RSA_2048
 ```
 

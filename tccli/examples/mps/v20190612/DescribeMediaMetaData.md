@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli mps DescribeMediaMetaData --cli-unfold-argument  \
-    --InputInfo.Type COS\
-    --InputInfo.CosInputInfo.Bucket TopRankVideo-125xxx88\
-    --InputInfo.CosInputInfo.Region ap-chongqing\
+    --InputInfo.Type COS \
+    --InputInfo.CosInputInfo.Bucket TopRankVideo-125xxx88 \
+    --InputInfo.CosInputInfo.Region ap-chongqing \
     --InputInfo.CosInputInfo.Object /movie/201907/WildAnimal.mov
 ```
 

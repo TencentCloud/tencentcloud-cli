@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam DetachGroupPolicy --cli-unfold-argument  \
-    --PolicyId 524497\
+    --PolicyId 524497 \
     --DetachGroupId 3449
 ```
 

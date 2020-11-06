@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmeip UnbindVpcIp --cli-unfold-argument  \
-    --EipId eip-fz3yvdzi\
-    --VpcId vpc-bjh0qd20\
+    --EipId eip-fz3yvdzi \
+    --VpcId vpc-bjh0qd20 \
     --VpcIp 10.1.0.11
 ```
 

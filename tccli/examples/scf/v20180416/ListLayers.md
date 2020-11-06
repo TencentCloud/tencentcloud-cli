@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli scf ListLayers --cli-unfold-argument  \
-    --CompatibleRuntime <CompatibleRuntime>\
-    --Limit <Limit>\
-    --Offset <Offset>\
+    --CompatibleRuntime <CompatibleRuntime> \
+    --Limit <Limit> \
+    --Offset <Offset> \
     --SearchKey <SearchKey>
 ```
 

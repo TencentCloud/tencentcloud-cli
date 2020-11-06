@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmeip BindRs --cli-unfold-argument  \
-    --EipId eip-lcwonw3s\
+    --EipId eip-lcwonw3s \
     --InstanceId cpm-9p045zd4
 ```
 

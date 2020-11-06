@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tsf DescribeMicroservices --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 1\
-    --NamespaceId namespace-xxxxxxx\
+    --Offset 0 \
+    --Limit 1 \
+    --NamespaceId namespace-xxxxxxx \
     --SearchWord ms-xxxxxxx
 ```
 

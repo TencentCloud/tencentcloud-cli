@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeBatchOperationLogs --cli-unfold-argument  \
-    --Offset 1\
+    --Offset 1 \
     --Limit 20
 ```
 

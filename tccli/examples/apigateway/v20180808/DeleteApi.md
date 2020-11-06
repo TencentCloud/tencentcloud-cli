@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway DeleteApi --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
+    --ServiceId service-ody35h5e \
     --ApiId api-e92i2jds
 ```
 

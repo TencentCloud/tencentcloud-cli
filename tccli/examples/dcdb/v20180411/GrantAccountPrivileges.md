@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dcdb GrantAccountPrivileges --cli-unfold-argument  \
-    --InstanceId dcdbt-fdpjf5zh\
-    --UserName testuser1\
-    --Host 172.17.%\
-    --DbName *\
-    --Type *\
+    --InstanceId dcdbt-fdpjf5zh \
+    --UserName testuser1 \
+    --Host 172.17.% \
+    --DbName * \
+    --Type * \
     --Privileges select update
 ```
 

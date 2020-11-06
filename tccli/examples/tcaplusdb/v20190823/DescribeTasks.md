@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcaplusdb DescribeTasks --cli-unfold-argument  \
-    --ClusterIds 5674209986\
-    --Offset 3\
+    --ClusterIds 5674209986 \
+    --Offset 3 \
     --Limit 3
 ```
 

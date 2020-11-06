@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tcaplusdb CreateCluster --cli-unfold-argument  \
-    --IdlType TDR\
-    --ClusterName 'gz test TDR'\
-    --VpcId vpc-kppg4pm1\
-    --SubnetId subnet-3sww53pa\
+    --IdlType TDR \
+    --ClusterName 'gz test TDR' \
+    --VpcId vpc-kppg4pm1 \
+    --SubnetId subnet-3sww53pa \
     --Password 84ea4cbf06573ED
 ```
 

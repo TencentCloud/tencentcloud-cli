@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli as ModifyNotificationConfiguration --cli-unfold-argument  \
-    --AutoScalingNotificationId asn-2sestqbr\
-    --NotificationTypes SCALE_IN_SUCCESSFUL SCALE_IN_FAILED\
+    --AutoScalingNotificationId asn-2sestqbr \
+    --NotificationTypes SCALE_IN_SUCCESSFUL SCALE_IN_FAILED \
     --NotificationUserGroupIds 1678
 ```
 

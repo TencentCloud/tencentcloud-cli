@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai CreateFace --cli-unfold-argument  \
-    --PersonId 1001\
+    --PersonId 1001 \
     --Urls http://test.image.myqcloud.com/testA.jpg
 ```
 
@@ -46,7 +46,7 @@ Input:
 
 ```
 tccli iai CreateFace --cli-unfold-argument  \
-    --PersonId 1001\
+    --PersonId 1001 \
     --Urls http://test.image.myqcloud.com/testB.jpg http://test.image.myqcloud.com/testC.jpg http://test.image.myqcloud.com/testD.jpg http://test.image.myqcloud.com/testE.jpg http://test.image.myqcloud.com/testF.jpg
 ```
 

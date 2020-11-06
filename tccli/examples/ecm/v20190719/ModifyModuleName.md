@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm ModifyModuleName --cli-unfold-argument  \
-    --ModuleId em-0vag13d1\
+    --ModuleId em-0vag13d1 \
     --ModuleName 视频解析模块
 ```
 

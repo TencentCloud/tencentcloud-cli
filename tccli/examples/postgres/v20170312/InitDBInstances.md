@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli postgres InitDBInstances --cli-unfold-argument  \
-    --DBInstanceIdSet postgres-6fego161\
-    --AdminName testuser\
-    --AdminPassword testuser%40123\
+    --DBInstanceIdSet postgres-6fego161 \
+    --AdminName testuser \
+    --AdminPassword testuser%40123 \
     --Charset UTF8
 ```
 
@@ -32,11 +32,11 @@ Input:
 
 ```
 tccli postgres InitDBInstances --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --Region ap-guangzhou\
-    --DBInstanceIdSet postgres-6fego161 postgres-lnp6j617\
-    --AdminName testuser\
-    --AdminPassword testuser%40123\
+    --Version 2017-03-12 \
+    --Region ap-guangzhou \
+    --DBInstanceIdSet postgres-6fego161 postgres-lnp6j617 \
+    --AdminName testuser \
+    --AdminPassword testuser%40123 \
     --Charset UTF8
 ```
 

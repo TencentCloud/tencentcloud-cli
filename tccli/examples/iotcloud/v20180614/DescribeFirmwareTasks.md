@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud DescribeFirmwareTasks --cli-unfold-argument  \
-    --ProductID ABCDE12345\
-    --FirmwareVersion 1.0.0\
-    --Offset 1\
+    --ProductID ABCDE12345 \
+    --FirmwareVersion 1.0.0 \
+    --Offset 1 \
     --Limit 5
 ```
 

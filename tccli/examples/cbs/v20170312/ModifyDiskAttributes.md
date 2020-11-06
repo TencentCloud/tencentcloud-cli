@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs ModifyDiskAttributes --cli-unfold-argument  \
-    --DiskIds disk-fyctkqsf\
+    --DiskIds disk-fyctkqsf \
     --DiskName test_data_disk
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli cbs ModifyDiskAttributes --cli-unfold-argument  \
-    --DiskIds disk-hdz4c824\
+    --DiskIds disk-hdz4c824 \
     --DiskType CLOUD_PREMIUM
 ```
 

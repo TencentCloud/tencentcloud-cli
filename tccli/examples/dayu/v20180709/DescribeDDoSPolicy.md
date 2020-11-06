@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DescribeDDoSPolicy --cli-unfold-argument  \
-    --Business bgp\
+    --Business bgp \
     --Id bgpip-000000xe
 ```
 

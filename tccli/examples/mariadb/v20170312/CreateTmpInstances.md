@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb CreateTmpInstances --cli-unfold-argument  \
-    --RollbackTime '2019-04-06 12:31:10'\
+    --RollbackTime '2019-04-06 12:31:10' \
     --InstanceIds tdsql-arryr5nt
 ```
 

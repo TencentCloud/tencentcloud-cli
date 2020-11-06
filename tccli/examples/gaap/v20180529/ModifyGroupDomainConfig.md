@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap ModifyGroupDomainConfig --cli-unfold-argument  \
-    --GroupId lg-b7h4d02f\
-    --DefaultDnsIp 1.1.1.1\
+    --GroupId lg-b7h4d02f \
+    --DefaultDnsIp 1.1.1.1 \
     --AccessRegionList []
 ```
 

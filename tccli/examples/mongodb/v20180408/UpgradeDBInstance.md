@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli mongodb UpgradeDBInstance --cli-unfold-argument  \
-    --Memory 4\
-    --Volume 250\
-    --InstanceId cmgo-f555zzzz\
+    --Memory 4 \
+    --Volume 250 \
+    --InstanceId cmgo-f555zzzz \
     --OplogSize 26
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc MigrateNetworkInterface --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --NetworkInterfaceId eni-afo43z61\
-    --SourceInstanceId ins-r8hr2upy\
+    --Version 2017-03-12 \
+    --NetworkInterfaceId eni-afo43z61 \
+    --SourceInstanceId ins-r8hr2upy \
     --DestinationInstanceId ins-s2hr8upy
 ```
 

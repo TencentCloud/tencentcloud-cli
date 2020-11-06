@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bm SetOutBandVpnAuthPassword --cli-unfold-argument  \
-    --Password 123\
+    --Password 123 \
     --Operate Create
 ```
 

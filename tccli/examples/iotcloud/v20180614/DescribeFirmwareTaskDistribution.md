@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DescribeFirmwareTaskDistribution --cli-unfold-argument  \
-    --ProductID O4CCMMZE3A\
+    --ProductID O4CCMMZE3A \
     --FirmwareVersion 1.0
 ```
 

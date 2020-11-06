@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli mps ModifyWordSample --cli-unfold-argument  \
-    --Keyword Combat\
-    --Usages Review\
-    --TagOperationInfo.Type reset\
+    --Keyword Combat \
+    --Usages Review \
+    --TagOperationInfo.Type reset \
     --TagOperation.Tags Terrorism
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli gme ScanVoice --cli-unfold-argument  \
-    --BizId 1400000000\
-    --Scenes default\
-    --Live true\
-    --Callback \
-    --Tasks.0.DataId 1400000000_test_data_id\
+    --BizId 1400000000 \
+    --Scenes default \
+    --Live true \
+    --Callback  \
+    --Tasks.0.DataId 1400000000_test_data_id \
     --Tasks.0.Url https://xxxx
 ```
 
@@ -37,11 +37,11 @@ Input:
 
 ```
 tccli gme ScanVoice --cli-unfold-argument  \
-    --BizId 1400000000\
-    --Scenes default\
-    --Live false\
-    --Callback https://0.0.0.0/user_callback\
-    --Tasks.0.DataId 1400000000_test_data_id\
+    --BizId 1400000000 \
+    --Scenes default \
+    --Live false \
+    --Callback https://0.0.0.0/user_callback \
+    --Tasks.0.DataId 1400000000_test_data_id \
     --Tasks.0.Url http://xxxx/audio_store/xxxx.mp3
 ```
 
@@ -68,11 +68,11 @@ Input:
 
 ```
 tccli gme ScanVoice --cli-unfold-argument  \
-    --BizId 1400000000\
-    --Scenes default\
-    --Live false\
-    --Callback \
-    --Tasks.0.DataId 1400000000_test_data_id\
+    --BizId 1400000000 \
+    --Scenes default \
+    --Live false \
+    --Callback  \
+    --Tasks.0.DataId 1400000000_test_data_id \
     --Tasks.0.Url http://xxx/audio_store/xxxx.mp3
 ```
 

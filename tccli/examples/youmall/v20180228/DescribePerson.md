@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli youmall DescribePerson --cli-unfold-argument  \
-    --MallId 1\
-    --Offset 0\
+    --MallId 1 \
+    --Offset 0 \
     --Limit 20
 ```
 

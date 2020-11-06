@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tione DescribeCodeRepositories --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
-    --Filters.0.Name instance-name\
+    --Offset 0 \
+    --Limit 20 \
+    --Filters.0.Name instance-name \
     --Filters.0.Values private
 ```
 

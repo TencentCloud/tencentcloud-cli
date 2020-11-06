@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DeleteDomain --cli-unfold-argument  \
-    --ListenerId 0\
-    --Domain a.a.com\
+    --ListenerId 0 \
+    --Domain a.a.com \
     --Force 1
 ```
 

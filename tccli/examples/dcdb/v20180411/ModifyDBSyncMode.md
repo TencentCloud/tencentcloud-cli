@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dcdb ModifyDBSyncMode --cli-unfold-argument  \
-    --InstanceId dcdbt-avw0207d\
+    --InstanceId dcdbt-avw0207d \
     --SyncMode 0
 ```
 

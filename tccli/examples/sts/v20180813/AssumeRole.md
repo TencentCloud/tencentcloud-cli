@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sts AssumeRole --cli-unfold-argument  \
-    --RoleArn qcs%3A%3Acam%3A%3Auin%2F2385420691%3Arole%2F4611686018427397919\
+    --RoleArn qcs%3A%3Acam%3A%3Auin%2F2385420691%3Arole%2F4611686018427397919 \
     --RoleSessionName cts
 ```
 

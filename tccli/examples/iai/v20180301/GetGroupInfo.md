@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai GetGroupInfo --cli-unfold-argument  \
-    --GroupId aaa\
+    --GroupId aaa \
     --Version 2018-03-01
 ```
 

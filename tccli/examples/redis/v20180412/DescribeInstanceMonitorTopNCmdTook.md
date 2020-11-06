@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeInstanceMonitorTopNCmdTook --cli-unfold-argument  \
-    --InstanceId crs-r34wkc1d\
+    --InstanceId crs-r34wkc1d \
     --SpanType 4
 ```
 

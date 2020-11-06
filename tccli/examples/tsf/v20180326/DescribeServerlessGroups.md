@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribeServerlessGroups --cli-unfold-argument  \
-    --ApplicationId application-6ym9kjba\
-    --Offset 0\
+    --ApplicationId application-6ym9kjba \
+    --Offset 0 \
     --Limit 20
 ```
 

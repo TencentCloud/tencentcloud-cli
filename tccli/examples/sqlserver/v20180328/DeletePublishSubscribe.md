@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver DeletePublishSubscribe --cli-unfold-argument  \
-    --PublishSubscribeId 5\
-    --DatabaseTupleSet.0.PublishDatabase test01\
+    --PublishSubscribeId 5 \
+    --DatabaseTupleSet.0.PublishDatabase test01 \
     --DatabaseTupleSet.0.SubscribeDatabase test02
 ```
 

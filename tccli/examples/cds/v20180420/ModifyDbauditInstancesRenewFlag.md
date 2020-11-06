@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cds ModifyDbauditInstancesRenewFlag --cli-unfold-argument  \
-    --InstanceId 1453498545\
+    --InstanceId 1453498545 \
     --AutoRenewFlag 1
 ```
 

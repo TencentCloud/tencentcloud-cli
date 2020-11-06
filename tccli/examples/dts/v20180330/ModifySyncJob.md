@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dts ModifySyncJob --cli-unfold-argument  \
-    --JobId sync-blj8wnt1\
-    --JobName testname3\
-    --DatabaseInfo '[{"Database": "db1"}, {"Database": "db2"}]'\
+    --JobId sync-blj8wnt1 \
+    --JobName testname3 \
+    --DatabaseInfo '[{"Database": "db1"}, {"Database": "db2"}]' \
     --SyncOption.SyncObject 2
 ```
 

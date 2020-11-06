@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli fmu BeautifyVideo --cli-unfold-argument  \
-    --Url 字符串\
-    --OutputVideoType 字符串\
-    --BeautyParam.0.WhitenLevel 整型\
-    --BeautyParam.0.SmoothingLevel 整型\
-    --BeautyParam.0.EyeEnlargeLevel 整型\
+    --Url 字符串 \
+    --OutputVideoType 字符串 \
+    --BeautyParam.0.WhitenLevel 整型 \
+    --BeautyParam.0.SmoothingLevel 整型 \
+    --BeautyParam.0.EyeEnlargeLevel 整型 \
     --BeautyParam.0.FaceShrinkLevel 整型
 ```
 

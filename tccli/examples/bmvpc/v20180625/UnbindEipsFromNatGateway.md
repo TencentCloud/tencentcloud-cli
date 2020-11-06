@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc UnbindEipsFromNatGateway --cli-unfold-argument  \
-    --NatId nat-2duawe5v\
-    --VpcId vpc-mi51u7gs\
+    --NatId nat-2duawe5v \
+    --VpcId vpc-mi51u7gs \
     --AssignedEips 139.199.40.16
 ```
 

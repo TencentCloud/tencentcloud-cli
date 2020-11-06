@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli dcdb CreateDCDBInstance --cli-unfold-argument  \
-    --ShardMemory 2\
-    --ShardStorage 10\
-    --ShardNodeCount 3\
-    --ShardCount 2\
-    --DbVersionId 5.7.17\
-    --Count 1\
-    --Period 1\
-    --Zones ap-guangzhou-2 ap-guangzhou-2\
+    --ShardMemory 2 \
+    --ShardStorage 10 \
+    --ShardNodeCount 3 \
+    --ShardCount 2 \
+    --DbVersionId 5.7.17 \
+    --Count 1 \
+    --Period 1 \
+    --Zones ap-guangzhou-2 ap-guangzhou-2 \
     --AutoVoucher true
 ```
 

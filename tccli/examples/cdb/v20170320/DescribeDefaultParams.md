@@ -1,4 +1,4 @@
-**Example 1: Querying default configurable parameter list**
+**Example 1: Querying the list of default configurable parameters**
 
 
 

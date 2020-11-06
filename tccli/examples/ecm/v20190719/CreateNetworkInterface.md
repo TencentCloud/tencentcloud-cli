@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ecm CreateNetworkInterface --cli-unfold-argument  \
-    --VpcId vpc-1111111\
-    --SubnetId subnet-22222222\
-    --NetworkInterfaceName Test\
-    --NetworkInterfaceDescription Test\
+    --VpcId vpc-1111111 \
+    --SubnetId subnet-22222222 \
+    --NetworkInterfaceName Test \
+    --NetworkInterfaceDescription Test \
     --EcmRegion ap-hangzhou-ecm
 ```
 

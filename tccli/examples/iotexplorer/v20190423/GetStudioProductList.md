@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotexplorer GetStudioProductList --cli-unfold-argument  \
-    --ProjectId prj-zunfat46\
-    --DevStatus dev\
-    --Offset 0\
+    --ProjectId prj-zunfat46 \
+    --DevStatus dev \
+    --Offset 0 \
     --Limit 0
 ```
 

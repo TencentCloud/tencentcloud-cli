@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bm DescribeDevicePriceInfo --cli-unfold-argument  \
-    --TimeUnit m\
-    --TimeSpan 12\
+    --TimeUnit m \
+    --TimeSpan 12 \
     --InstanceIds cpm-xxxxxxx1 cpm-xxxxxxx2
 ```
 

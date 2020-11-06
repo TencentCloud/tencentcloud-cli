@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai CheckSimilarPerson --cli-unfold-argument  \
-    --UniquePersonControl 1\
+    --UniquePersonControl 1 \
     --GroupIds MyGroup1 MyGroup2
 ```
 
@@ -28,7 +28,7 @@ Input:
 
 ```
 tccli iai CheckSimilarPerson --cli-unfold-argument  \
-    --UniquePersonControl 1\
+    --UniquePersonControl 1 \
     --GroupIds MyGroup11111 MyGroup22222
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp QueryReconciliationDocument --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --FileType CZ\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --FileType CZ \
     --FileDate 20191018
 ```
 

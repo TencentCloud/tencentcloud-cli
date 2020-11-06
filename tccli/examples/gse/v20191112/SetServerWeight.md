@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse SetServerWeight --cli-unfold-argument  \
-    --FleetId fleet-qp3g3caa-ay03mhdm\
-    --InstanceId ins-xxxxx\
+    --FleetId fleet-qp3g3caa-ay03mhdm \
+    --InstanceId ins-xxxxx \
     --Weight 10
 ```
 

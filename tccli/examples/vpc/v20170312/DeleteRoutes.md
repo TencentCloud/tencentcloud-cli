@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc DeleteRoutes --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --RouteTableId rtb-n0yejvje\
+    --Version 2017-03-12 \
+    --RouteTableId rtb-n0yejvje \
     --Routes.0.RouteId 16644
 ```
 

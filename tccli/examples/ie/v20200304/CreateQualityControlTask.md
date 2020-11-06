@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ie CreateQualityControlTask --cli-unfold-argument  \
-    --DownInfo.Type 0\
-    --DownInfo.UrlInfo.Url http://test.cos.ap-beijing.myqcloud.com/test.mp4\
-    --QualityControlInfo.Interval 1000\
-    --QualityControlInfo.Jitter True\
-    --QualityControlInfo.QRCode True\
-    --QualityControlInfo.QualityEvaluation True\
+    --DownInfo.Type 0 \
+    --DownInfo.UrlInfo.Url http://test.cos.ap-beijing.myqcloud.com/test.mp4 \
+    --QualityControlInfo.Interval 1000 \
+    --QualityControlInfo.Jitter True \
+    --QualityControlInfo.QRCode True \
+    --QualityControlInfo.QualityEvaluation True \
     --QualityControlInfo.Voice True
 ```
 

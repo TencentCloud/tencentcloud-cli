@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli aa ManageMarketingRisk --cli-unfold-argument  \
-    --BusinessSecurityData.Account.AccountType 2\
-    --BusinessSecurityData.Account.WeChatAccount.WeChatOpenId oz5I********************GfVv\
-    --BusinessSecurityData.PostTime 1590753783\
+    --BusinessSecurityData.Account.AccountType 2 \
+    --BusinessSecurityData.Account.WeChatAccount.WeChatOpenId oz5I********************GfVv \
+    --BusinessSecurityData.PostTime 1590753783 \
     --BusinessSecurityData.UserIp 127.0.0.1
 ```
 

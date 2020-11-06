@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli dayu DescribeResourceList --cli-unfold-argument  \
-    --Business bgpip\
-    --RegionList gz\
-    --Line 1\
-    --IdList bgpip-000000001\
-    --IpList 3.3.3.3\
-    --Name ""\
-    --Status 0 1 2\
-    --Expire 0\
-    --OderBy0.Field bandwidth\
-    --OderBy0.Order DESC\
-    --Limit 30\
+    --Business bgpip \
+    --RegionList gz \
+    --Line 1 \
+    --IdList bgpip-000000001 \
+    --IpList 3.3.3.3 \
+    --Name "" \
+    --Status 0 1 2 \
+    --Expire 0 \
+    --OderBy0.Field bandwidth \
+    --OderBy0.Order DESC \
+    --Limit 30 \
     --Offset 0
 ```
 

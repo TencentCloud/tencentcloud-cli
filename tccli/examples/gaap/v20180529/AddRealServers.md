@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap AddRealServers --cli-unfold-argument  \
-    --ProjectId 0\
-    --RealServerIP 1.1.1.1\
+    --ProjectId 0 \
+    --RealServerIP 1.1.1.1 \
     --RealServerName 'test'
 ```
 

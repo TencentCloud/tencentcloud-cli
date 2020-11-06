@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DescribeReadOnlyGroupDetails --cli-unfold-argument  \
-    --InstanceId mssql-6f4ddx2f\
+    --InstanceId mssql-6f4ddx2f \
     --ReadOnlyGroupId mssqlrg-552tyamb
 ```
 

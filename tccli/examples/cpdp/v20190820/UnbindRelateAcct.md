@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cpdp UnbindRelateAcct --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --FunctionFlag 1\
-    --TranNetMemberCode YAPI100000\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --FunctionFlag 1 \
+    --TranNetMemberCode YAPI100000 \
     --MemberAcctNo ' 6230582000059121234'
 ```
 

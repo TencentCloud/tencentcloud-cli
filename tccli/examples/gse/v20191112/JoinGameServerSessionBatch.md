@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gse JoinGameServerSessionBatch --cli-unfold-argument  \
-    --PlayerIds xx\
-    --GameServerSessionId qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\
-    --PlayerDataMap.Value xx\
+    --PlayerIds xx \
+    --GameServerSessionId qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde \
+    --PlayerDataMap.Value xx \
     --PlayerDataMap.Key xx
 ```
 

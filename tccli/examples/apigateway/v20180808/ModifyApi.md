@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli apigateway ModifyApi --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
-    --ApiId api-lqd35zzq\
-    --ApiName xxx\
-    --RequestConfig.Path /xxxx\
-    --RequestConfig.Method get\
-    --ServiceType MOCK\
+    --ServiceId service-ody35h5e \
+    --ApiId api-lqd35zzq \
+    --ApiName xxx \
+    --RequestConfig.Path /xxxx \
+    --RequestConfig.Method get \
+    --ServiceType MOCK \
     --ServiceMockReturnMessage test
 ```
 

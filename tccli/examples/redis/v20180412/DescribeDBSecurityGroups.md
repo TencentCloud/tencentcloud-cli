@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeDBSecurityGroups --cli-unfold-argument  \
-    --InstanceId crs-eb2w7dto\
+    --InstanceId crs-eb2w7dto \
     --Product redis
 ```
 

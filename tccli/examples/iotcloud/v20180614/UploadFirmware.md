@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud UploadFirmware --cli-unfold-argument  \
-    --ProductID ABCDE12345\
-    --FirmwareVersion 1.0.0\
-    --Md5sum hfshfspodkoiwuidoiwjcuie\
+    --ProductID ABCDE12345 \
+    --FirmwareVersion 1.0.0 \
+    --Md5sum hfshfspodkoiwuidoiwjcuie \
     --FileSize 1024
 ```
 

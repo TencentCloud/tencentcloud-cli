@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dts DescribeSubscribes --cli-unfold-argument  \
-    --Status isolate\
-    --Offset 0\
+    --Status isolate \
+    --Offset 0 \
     --Limit 1
 ```
 

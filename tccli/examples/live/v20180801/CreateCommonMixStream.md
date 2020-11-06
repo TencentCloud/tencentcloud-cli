@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli live CreateCommonMixStream --cli-unfold-argument  \
-    --MixStreamSessionId test_room\
-    --MixStreamTemplateId 40\
-    --OutputParams.OutputStreamName test_stream1\
-    --InputStreamList.0.InputStreamName test_stream1\
-    --InputStreamList.0.LayoutParams.ImageLayer 1\
-    --InputStreamList.1.InputStreamName test_stream2\
+    --MixStreamSessionId test_room \
+    --MixStreamTemplateId 40 \
+    --OutputParams.OutputStreamName test_stream1 \
+    --InputStreamList.0.InputStreamName test_stream1 \
+    --InputStreamList.0.LayoutParams.ImageLayer 1 \
+    --InputStreamList.1.InputStreamName test_stream2 \
     --InputStreamList.1.LayoutParams.ImageLayer 2
 ```
 
@@ -32,17 +32,17 @@ Input:
 
 ```
 tccli live CreateCommonMixStream --cli-unfold-argument  \
-    --MixStreamSessionId test_room\
-    --OutputParams.OutputStreamName test_stream1\
-    --InputStreamList.0.InputStreamName test_stream1\
-    --InputStreamList.0.LayoutParams.ImageLayer 1\
-    --InputStreamList.0.LayoutParams.ImageWidth  ' 1280'\
-    --InputStreamList.0.LayoutParams.ImageHeight ' 720'\
-    --InputStreamList.1.InputStreamName test_stream2\
-    --InputStreamList.1.LayoutParams.ImageLayer 2\
-    --InputStreamList.1.LayoutParams.ImageWidth  ' 240'\
-    --InputStreamList.1.LayoutParams.ImageHeight ' 320'\
-    --InputStreamList.1.LayoutParams.LocationX ' 100'\
+    --MixStreamSessionId test_room \
+    --OutputParams.OutputStreamName test_stream1 \
+    --InputStreamList.0.InputStreamName test_stream1 \
+    --InputStreamList.0.LayoutParams.ImageLayer 1 \
+    --InputStreamList.0.LayoutParams.ImageWidth  ' 1280' \
+    --InputStreamList.0.LayoutParams.ImageHeight ' 720' \
+    --InputStreamList.1.InputStreamName test_stream2 \
+    --InputStreamList.1.LayoutParams.ImageLayer 2 \
+    --InputStreamList.1.LayoutParams.ImageWidth  ' 240' \
+    --InputStreamList.1.LayoutParams.ImageHeight ' 320' \
+    --InputStreamList.1.LayoutParams.LocationX ' 100' \
     --InputStreamList.1.LayoutParams.LocationY ' 100'
 ```
 
@@ -63,21 +63,21 @@ Input:
 
 ```
 tccli live CreateCommonMixStream --cli-unfold-argument  \
-    --MixStreamSessionId test_room\
-    --OutputParams.OutputStreamName test_stream1\
-    --InputStreamList.0.InputStreamName test_stream1\
-    --InputStreamList.0.LayoutParams.ImageLayer 1\
-    --InputStreamList.0.LayoutParams.ImageWidth  ' 1280'\
-    --InputStreamList.0.LayoutParams.ImageHeight ' 720'\
-    --InputStreamList.1.InputStreamName test_stream2\
-    --InputStreamList.1.LayoutParams.ImageLayer 2\
-    --InputStreamList.1.LayoutParams.ImageWidth  ' 240'\
-    --InputStreamList.1.LayoutParams.ImageHeight ' 320'\
-    --InputStreamList.1.LayoutParams.LocationX ' 100'\
-    --InputStreamList.1.LayoutParams.LocationY ' 100'\
-    --InputStreamList.1.CropParams.CropWidth ' 240'\
-    --InputStreamList.1.CropParams.CropHeight ' 320'\
-    --InputStreamList.1.CropParams.CropStartLocationX ' 100'\
+    --MixStreamSessionId test_room \
+    --OutputParams.OutputStreamName test_stream1 \
+    --InputStreamList.0.InputStreamName test_stream1 \
+    --InputStreamList.0.LayoutParams.ImageLayer 1 \
+    --InputStreamList.0.LayoutParams.ImageWidth  ' 1280' \
+    --InputStreamList.0.LayoutParams.ImageHeight ' 720' \
+    --InputStreamList.1.InputStreamName test_stream2 \
+    --InputStreamList.1.LayoutParams.ImageLayer 2 \
+    --InputStreamList.1.LayoutParams.ImageWidth  ' 240' \
+    --InputStreamList.1.LayoutParams.ImageHeight ' 320' \
+    --InputStreamList.1.LayoutParams.LocationX ' 100' \
+    --InputStreamList.1.LayoutParams.LocationY ' 100' \
+    --InputStreamList.1.CropParams.CropWidth ' 240' \
+    --InputStreamList.1.CropParams.CropHeight ' 320' \
+    --InputStreamList.1.CropParams.CropStartLocationX ' 100' \
     --InputStreamList.1.CropParams.CropStartLocationY ' 100'
 ```
 

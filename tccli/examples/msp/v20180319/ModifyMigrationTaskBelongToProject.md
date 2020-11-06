@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli msp ModifyMigrationTaskBelongToProject --cli-unfold-argument  \
-    --TaskId msp-1vxxx\
+    --TaskId msp-1vxxx \
     --ProjectId 10005
 ```
 

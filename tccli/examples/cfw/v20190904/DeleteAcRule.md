@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cfw DeleteAcRule --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId test\
-    --Id 1\
-    --Direction 1
+    --Id 36069 \
+    --Direction 1 \
+    --EdgeId  \
+    --Area 
 ```
 
 Output: 
@@ -17,7 +17,8 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "Info": "",
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

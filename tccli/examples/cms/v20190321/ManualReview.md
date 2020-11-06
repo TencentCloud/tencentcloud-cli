@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cms ManualReview --cli-unfold-argument  \
-    --ReviewContent.ContentId "123456"\
-    --ReviewContent.Content "文本为Base64，其他类型提交URL"\
-    --ReviewContent.ContentType 3\
-    --ReviewContent.AutoResult 0\
-    --ReviewContent.AutoDetailCode 20001\
-    --ReviewContent.BatchId "20200419_0001"\
-    --ReviewContent.UserInfo "{}"\
-    --ReviewContent.CreateTime 130000\
-    --ReviewContent.Priority 2\
-    --ReviewContent.CallBackInfo ""\
+    --ReviewContent.ContentId "123456" \
+    --ReviewContent.Content "文本为Base64，其他类型提交URL" \
+    --ReviewContent.ContentType 3 \
+    --ReviewContent.AutoResult 0 \
+    --ReviewContent.AutoDetailCode 20001 \
+    --ReviewContent.BatchId "20200419_0001" \
+    --ReviewContent.UserInfo "{}" \
+    --ReviewContent.CreateTime 130000 \
+    --ReviewContent.Priority 2 \
+    --ReviewContent.CallBackInfo "" \
     --ReviewContent.Title ""
 ```
 

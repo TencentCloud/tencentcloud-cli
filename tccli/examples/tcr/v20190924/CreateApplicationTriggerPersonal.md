@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tcr CreateApplicationTriggerPersonal --cli-unfold-argument  \
-    --RepoName test/test123\
-    --TriggerName testtrig\
-    --InvokeMethod all\
-    --ClusterId cls-xxxxxxxx\
-    --Namespace default\
-    --WorkloadType Deployment\
-    --WorkloadName testdeploy\
-    --ContainerName nginx\
+    --RepoName test/test123 \
+    --TriggerName testtrig \
+    --InvokeMethod all \
+    --ClusterId cls-xxxxxxxx \
+    --Namespace default \
+    --WorkloadType Deployment \
+    --WorkloadName testdeploy \
+    --ContainerName nginx \
     --ClusterRegion 16
 ```
 

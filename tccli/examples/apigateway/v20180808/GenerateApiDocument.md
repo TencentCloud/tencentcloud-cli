@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apigateway GenerateApiDocument --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
-    --GenEnvironment release\
+    --ServiceId service-ody35h5e \
+    --GenEnvironment release \
     --GenLanguage Python
 ```
 

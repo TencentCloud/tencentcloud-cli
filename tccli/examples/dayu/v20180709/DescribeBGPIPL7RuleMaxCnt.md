@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DescribeBGPIPL7RuleMaxCnt --cli-unfold-argument  \
-    --Business bgpip\
+    --Business bgpip \
     --Id bgpip-0000000e
 ```
 

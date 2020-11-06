@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli partners ModifyClientRemark --cli-unfold-argument  \
-    --ClientUin 123456789\
+    --ClientUin 123456789 \
     --ClientRemark xxx
 ```
 

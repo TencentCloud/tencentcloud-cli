@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotexplorer ControlDeviceData --cli-unfold-argument  \
-    --ProductId LJ0INDNU7U\
-    --DeviceName light1\
+    --ProductId LJ0INDNU7U \
+    --DeviceName light1 \
     --Data {"brightness":1}
 ```
 
@@ -29,8 +29,8 @@ Input:
 
 ```
 tccli iotexplorer ControlDeviceData --cli-unfold-argument  \
-    --ProductId BKTTNGIQOG\
-    --DeviceName dev01\
+    --ProductId BKTTNGIQOG \
+    --DeviceName dev01 \
     --Data {"payload":"test","id":"abc"}
 ```
 

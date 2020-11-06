@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tci CreatePerson --cli-unfold-argument  \
-    --PersonName xxx\
-    --LibraryId library_id\
-    --PhoneNumber xxx\
-    --StudentNumber xxxx\
-    --JobNumber xxx\
-    --Male 1\
+    --PersonName xxx \
+    --LibraryId library_id \
+    --PhoneNumber xxx \
+    --StudentNumber xxxx \
+    --JobNumber xxx \
+    --Male 1 \
     --Mail xxx
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam SetMfaFlag --cli-unfold-argument  \
-    --OpUin 1234567\
+    --OpUin 1234567 \
     --LoginFlag.Wechat 1
 ```
 

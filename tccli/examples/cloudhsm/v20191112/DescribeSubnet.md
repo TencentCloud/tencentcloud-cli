@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cloudhsm DescribeSubnet --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
+    --Offset 0 \
+    --Limit 10 \
     --VpcId vpc-2at5y1pn
 ```
 

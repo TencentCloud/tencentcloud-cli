@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli yunjing DescribeAccounts --cli-unfold-argument  \
-    --Username nginx\
-    --Limit 10\
+    --Username nginx \
+    --Limit 10 \
     --Offset 0
 ```
 

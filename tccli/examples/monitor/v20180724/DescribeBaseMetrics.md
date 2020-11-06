@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribeBaseMetrics --cli-unfold-argument  \
-    --Namespace QCE/CVM\
+    --Namespace QCE/CVM \
     --MetricName AccOuttraffic
 ```
 
@@ -85,7 +85,7 @@ Input:
 
 ```
 tccli monitor DescribeBaseMetrics --cli-unfold-argument  \
-    --Namespace QCE/CDB\
+    --Namespace QCE/CDB \
     --MetricName BytesReceived
 ```
 

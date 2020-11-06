@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tiia CropImage --cli-unfold-argument  \
-    --ImageUrl https://test.jpg\
-    --Width 1100\
+    --ImageUrl https://test.jpg \
+    --Width 1100 \
     --Height 880
 ```
 

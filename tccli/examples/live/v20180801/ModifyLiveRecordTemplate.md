@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli live ModifyLiveRecordTemplate --cli-unfold-argument  \
-    --TemplateName templat\
-    --Description test\
-    --FlvParam.Enable 1\
-    --FlvParam.RecordInterval 1800\
-    --FlvParam.StorageTime 700\
+    --TemplateName templat \
+    --Description test \
+    --FlvParam.Enable 1 \
+    --FlvParam.RecordInterval 1800 \
+    --FlvParam.StorageTime 700 \
     --TemplateId 1000
 ```
 

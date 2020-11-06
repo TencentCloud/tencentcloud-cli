@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke CreatePrometheusDashboard --cli-unfold-argument  \
-    --InstanceId prom-xxx\
-    --DashboardName test-dashboards\
+    --InstanceId prom-xxx \
+    --DashboardName test-dashboards \
     --Contens test
 ```
 

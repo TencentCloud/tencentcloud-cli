@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli bmlb ModifyL4BackendWeight --cli-unfold-argument  \
-    --LoadBalancerId lb-dyxceyv5\
-    --ListenerId lbl-i4go349z\
-    --InstanceId cpm-buj66q9x\
-    --Port 5001\
-    --BindType 0\
+    --LoadBalancerId lb-dyxceyv5 \
+    --ListenerId lbl-i4go349z \
+    --InstanceId cpm-buj66q9x \
+    --Port 5001 \
+    --BindType 0 \
     --Weight 99
 ```
 

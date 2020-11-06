@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm InquiryPriceResetInstancesInternetMaxBandwidth --cli-unfold-argument  \
-    --InstanceIds ins-fd8spnmq\
+    --InstanceIds ins-fd8spnmq \
     --InternetAccessible.InternetMaxBandwidthOut 20
 ```
 

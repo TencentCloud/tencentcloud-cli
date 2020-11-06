@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs DescribeSnapshotOperationLogs --cli-unfold-argument  \
-    --Filters.0.Name snapshot-id\
+    --Filters.0.Name snapshot-id \
     --Filters.0.Values snap-0y61iiyj
 ```
 

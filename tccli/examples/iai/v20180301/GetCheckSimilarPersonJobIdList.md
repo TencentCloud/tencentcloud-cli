@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai GetCheckSimilarPersonJobIdList --cli-unfold-argument  \
-    --Limit 2\
+    --Limit 2 \
     --Version 2018-03-01
 ```
 
@@ -40,7 +40,7 @@ Input:
 
 ```
 tccli iai GetCheckSimilarPersonJobIdList --cli-unfold-argument  \
-    --Limit 1001\
+    --Limit 1001 \
     --Version 2018-03-01
 ```
 

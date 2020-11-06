@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli sqlserver CreatePublishSubscribe --cli-unfold-argument  \
-    --PublishSubscribeName Create_name\
-    --PublishInstanceId mssql-2cwisu23\
-    --SubscribeInstanceId mssql-hlh6yka1\
-    --DatabaseTupleSet.0.PublishDatabase db1\
+    --PublishSubscribeName Create_name \
+    --PublishInstanceId mssql-2cwisu23 \
+    --SubscribeInstanceId mssql-hlh6yka1 \
+    --DatabaseTupleSet.0.PublishDatabase db1 \
     --DatabaseTupleSet.0.SubscribeDatabase db1
 ```
 

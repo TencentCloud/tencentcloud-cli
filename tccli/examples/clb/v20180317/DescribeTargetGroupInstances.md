@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb DescribeTargetGroupInstances --cli-unfold-argument  \
-    --Filters.0.Name TargetGroupId\
+    --Filters.0.Name TargetGroupId \
     --Filters.0.Values lbtg-5xunivs0
 ```
 

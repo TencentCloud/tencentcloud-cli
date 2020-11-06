@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp QueryMerchantInfoForManagement --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --InvoicePlatformId 0\
-    --Offset 0\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --InvoicePlatformId 0 \
+    --Offset 0 \
     --Limit 10
 ```
 

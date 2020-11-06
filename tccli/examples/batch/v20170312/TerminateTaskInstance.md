@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli batch TerminateTaskInstance --cli-unfold-argument  \
-    --JobId job-rybewp57\
-    --TaskName A\
+    --JobId job-rybewp57 \
+    --TaskName A \
     --TaskInstanceIndex 0
 ```
 

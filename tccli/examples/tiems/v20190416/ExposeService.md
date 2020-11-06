@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiems ExposeService --cli-unfold-argument  \
-    --ServiceId ank95gbm4dwfhmds\
+    --ServiceId ank95gbm4dwfhmds \
     --ExposeType EXTERNAL
 ```
 

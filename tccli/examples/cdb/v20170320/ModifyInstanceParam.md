@@ -1,4 +1,4 @@
-**Example 1: Modifying instance parameter**
+**Example 1: Modifying instance parameters**
 
 
 
@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cdb ModifyInstanceParam --cli-unfold-argument  \
-    --InstanceIds cdb-atjl8gns\
-    --ParamList.0.Name auto_increment_increment\
-    --ParamList.0.CurrentValue 1\
-    --TemplateId 99\
+    --InstanceIds cdb-atjl8gns \
+    --ParamList.0.Name auto_increment_increment \
+    --ParamList.0.CurrentValue 1 \
+    --TemplateId 99 \
     --InTimeWindow true
 ```
 

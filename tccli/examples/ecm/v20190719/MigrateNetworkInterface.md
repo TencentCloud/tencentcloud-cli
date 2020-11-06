@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm MigrateNetworkInterface --cli-unfold-argument  \
-    --NetworkInterfaceId eni-12121212\
-    --SourceInstanceId ins-11221122\
-    --DestinationInstanceId ins-11331133\
+    --NetworkInterfaceId eni-12121212 \
+    --SourceInstanceId ins-11221122 \
+    --DestinationInstanceId ins-11331133 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

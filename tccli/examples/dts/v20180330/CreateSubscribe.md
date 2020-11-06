@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dts CreateSubscribe --cli-unfold-argument  \
-    --Product mysql\
+    --Product mysql \
     --PayType 1
 ```
 

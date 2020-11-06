@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp SimilarWords --cli-unfold-argument  \
-    --Text "腾讯"\
+    --Text "腾讯" \
     --WordNumber 20
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ocr VerifyBasicBizLicense --cli-unfold-argument  \
-    --RegNum xxxxx\
-    --Name xxxxx\
+    --RegNum xxxxx \
+    --Name xxxxx \
     --Address xxxxx
 ```
 
@@ -48,7 +48,7 @@ Input:
 
 ```
 tccli ocr VerifyBasicBizLicense --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --ImageConfig {"RegNum":true,"Name":true,"Address":true}
 ```
 

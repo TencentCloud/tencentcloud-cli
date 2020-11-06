@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bm CreateUserCmd --cli-unfold-argument  \
-    --Alias test\
-    --OsType linux\
+    --Alias test \
+    --OsType linux \
     --Content xx
 ```
 

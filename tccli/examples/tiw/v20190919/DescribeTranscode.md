@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw DescribeTranscode --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --TaskId g0jb42ps49vtebjshilb
 ```
 
@@ -37,7 +37,7 @@ Input:
 
 ```
 tccli tiw DescribeTranscode --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --TaskId g0jb42ps49vtebjshilb
 ```
 

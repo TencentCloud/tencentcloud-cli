@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli chdfs CreateAccessRules --cli-unfold-argument  \
-    --AccessGroupId ag-jwmfdcul\
-    --AccessRules.0.Address 127.0.0.1\
-    --AccessRules.0.AccessMode 1\
-    --AccessRules.0.Priority 1\
-    --AccessRules.1.Address 127.0.0.1\
-    --AccessRules.1.AccessMode 2\
+    --AccessGroupId ag-jwmfdcul \
+    --AccessRules.0.Address 127.0.0.1 \
+    --AccessRules.0.AccessMode 1 \
+    --AccessRules.0.Priority 1 \
+    --AccessRules.1.Address 127.0.0.1 \
+    --AccessRules.1.AccessMode 2 \
     --AccessRules.1.Priority 2
 ```
 

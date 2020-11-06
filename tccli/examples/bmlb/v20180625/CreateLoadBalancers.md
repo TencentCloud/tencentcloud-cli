@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bmlb CreateLoadBalancers --cli-unfold-argument  \
-    --GoodsNum 1\
-    --LoadBalancerType open\
-    --VpcId vpc-34cxlz7z\
+    --GoodsNum 1 \
+    --LoadBalancerType open \
+    --VpcId vpc-34cxlz7z \
     --IpProtocolType ipv4
 ```
 

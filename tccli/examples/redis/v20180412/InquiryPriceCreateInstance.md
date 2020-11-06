@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli redis InquiryPriceCreateInstance --cli-unfold-argument  \
-    --ZoneId 100002\
-    --TypeId 6\
-    --MemSize 4096\
-    --GoodsNum 1\
-    --Period 1\
+    --ZoneId 100002 \
+    --TypeId 6 \
+    --MemSize 4096 \
+    --GoodsNum 1 \
+    --Period 1 \
     --BillingMode 1
 ```
 

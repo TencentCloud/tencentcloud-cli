@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cds InquiryPriceDbauditInstance --cli-unfold-argument  \
-    --TimeSpan 1\
-    --TimeUnit m\
-    --InstanceVersion cdsaudit\
-    --InquiryType renew\
+    --TimeSpan 1 \
+    --TimeUnit m \
+    --InstanceVersion cdsaudit \
+    --InquiryType renew \
     --ServiceRegion app-guangzhou
 ```
 

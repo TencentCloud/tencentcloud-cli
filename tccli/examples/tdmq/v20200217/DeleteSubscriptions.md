@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DeleteSubscriptions --cli-unfold-argument  \
-    --SubscriptionTopicSets.0.EnvironmentId default\
-    --SubscriptionTopicSets.0.TopicName sun_topic\
+    --SubscriptionTopicSets.0.EnvironmentId default \
+    --SubscriptionTopicSets.0.TopicName sun_topic \
     --SubscriptionTopicSets.0.SubscriptionName test_2_1
 ```
 

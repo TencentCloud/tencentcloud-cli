@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iottid DeliverTids --cli-unfold-argument  \
-    --OrderId SbRTDKP1L4\
+    --OrderId SbRTDKP1L4 \
     --Quantity 1
 ```
 

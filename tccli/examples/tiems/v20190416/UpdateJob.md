@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiems UpdateJob --cli-unfold-argument  \
-    --JobId aktwbxqmfkr8g44v\
+    --JobId aktwbxqmfkr8g44v \
     --Description 123
 ```
 

@@ -61,7 +61,7 @@ Input:
 
 ```
 tccli clb DescribeTargetGroups --cli-unfold-argument  \
-    --Filters.0.Name TargetGroupVpcId\
+    --Filters.0.Name TargetGroupVpcId \
     --Filters.0.Values vpc-i1cnjuhx
 ```
 

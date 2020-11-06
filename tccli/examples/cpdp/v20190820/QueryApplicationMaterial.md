@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cpdp QueryApplicationMaterial --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
     --DeclareId dcldid201911230011
 ```
 

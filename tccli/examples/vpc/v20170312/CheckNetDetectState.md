@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc CheckNetDetectState --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --NetDetectId netd-12345678\
-    --DetectDestinationIp 10.0.0.2 10.0.0.3\
-    --NextHopType NORMAL_CVM\
+    --Version 2017-03-12 \
+    --NetDetectId netd-12345678 \
+    --DetectDestinationIp 10.0.0.2 10.0.0.3 \
+    --NextHopType NORMAL_CVM \
     --NextHopDestination 10.0.0.4
 ```
 
@@ -44,12 +44,12 @@ Input:
 
 ```
 tccli vpc CheckNetDetectState --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpcId vpc-12345678\
-    --SubnetId subnet-12345678\
-    --NetDetectName test\
-    --DetectDestinationIp 10.0.0.5 10.0.0.6\
-    --NextHopType NORMAL_CVM\
+    --Version 2017-03-12 \
+    --VpcId vpc-12345678 \
+    --SubnetId subnet-12345678 \
+    --NetDetectName test \
+    --DetectDestinationIp 10.0.0.5 10.0.0.6 \
+    --NextHopType NORMAL_CVM \
     --NextHopDestination 10.0.0.4
 ```
 

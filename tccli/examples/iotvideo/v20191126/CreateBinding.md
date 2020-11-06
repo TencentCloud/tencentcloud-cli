@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotvideo CreateBinding --cli-unfold-argument  \
-    --AccessId -9223371585883208722\
-    --Tid ********\
-    --Role owner\
+    --AccessId -9223371585883208722 \
+    --Tid ******** \
+    --Role owner \
     --ForceBind true
 ```
 

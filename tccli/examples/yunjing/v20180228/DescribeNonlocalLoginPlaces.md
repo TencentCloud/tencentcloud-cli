@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli yunjing DescribeNonlocalLoginPlaces --cli-unfold-argument  \
-    --Uuid 354f4ac3-8546-4516-8c8a-69e3ab73aa8a\
-    --Filters.0.Name Keyword\
-    --Filters.0.Values Centos\
-    --Limit 10\
+    --Uuid 354f4ac3-8546-4516-8c8a-69e3ab73aa8a \
+    --Filters.0.Name Keyword \
+    --Filters.0.Values Centos \
+    --Limit 10 \
     --Offset 0
 ```
 

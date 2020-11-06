@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb RenewDBInstance --cli-unfold-argument  \
-    --InstanceId cdb-ezq1vzem\
+    --InstanceId cdb-ezq1vzem \
     --TimeSpan 12
 ```
 

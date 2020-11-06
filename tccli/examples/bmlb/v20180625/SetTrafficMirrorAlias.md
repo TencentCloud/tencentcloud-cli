@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmlb SetTrafficMirrorAlias --cli-unfold-argument  \
-    --TrafficMirrorId bmtm-lmep0eit\
+    --TrafficMirrorId bmtm-lmep0eit \
     --Alias newTrafficMirror
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iot AppIssueDeviceControl --cli-unfold-argument  \
-    --AccessToken xxx\
-    --ProductId iot-a8ojgbji\
-    --DeviceName device\
+    --AccessToken xxx \
+    --ProductId iot-a8ojgbji \
+    --DeviceName device \
     --ControlData {"light":"on"}
 ```
 

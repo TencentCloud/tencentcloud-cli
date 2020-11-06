@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai GetGroupList --cli-unfold-argument  \
-    --Offset 0\
+    --Offset 0 \
     --Limit 10
 ```
 
@@ -51,7 +51,7 @@ Input:
 
 ```
 tccli iai GetGroupList --cli-unfold-argument  \
-    --Offset 0\
+    --Offset 0 \
     --Limit 1001
 ```
 
@@ -76,7 +76,7 @@ Input:
 
 ```
 tccli iai GetGroupList --cli-unfold-argument  \
-    --Offset -1\
+    --Offset -1 \
     --Limit 100
 ```
 

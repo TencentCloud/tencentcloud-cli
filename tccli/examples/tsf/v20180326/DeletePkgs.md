@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DeletePkgs --cli-unfold-argument  \
-    --ApplicationId application-xxxxxxxx\
+    --ApplicationId application-xxxxxxxx \
     --PkgIds pkg-xxxxxxx pkg-xxxxxxx1 pkg-xxxxxxxx pkg-xxxxxxx
 ```
 

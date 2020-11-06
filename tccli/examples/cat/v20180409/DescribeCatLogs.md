@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cat DescribeCatLogs --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 2\
+    --Offset 0 \
+    --Limit 2 \
     --TaskId 226791
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeComponentStatistics --cli-unfold-argument  \
-    --Limit 10\
+    --Limit 10 \
     --Offset 0
 ```
 

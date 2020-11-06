@@ -1,4 +1,4 @@
-**Example 1: Modifying the IP and port number of TencentDB instance**
+**Example 1: Modifying the IP and port number of a TencentDB instance**
 
 
 
@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdb ModifyDBInstanceVipVport --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
-    --DstIp 10.0.1.1\
-    --DstPort 1025\
-    --UniqVpcId 11357\
-    --UniqSubnetId 23789\
+    --InstanceId cdb-f35wr6wj \
+    --DstIp 10.0.1.1 \
+    --DstPort 1025 \
+    --UniqVpcId 11357 \
+    --UniqSubnetId 23789 \
     --ReleaseDuration 12
 ```
 

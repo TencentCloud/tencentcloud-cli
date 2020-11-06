@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iot GetDebugLog --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
-    --DeviceNames car\
-    --StartTime '2018-05-12 00:00:00'\
-    --EndTime '2018-05-12 23:59:59'\
+    --ProductId iot-4e0wsxpi \
+    --DeviceNames car \
+    --StartTime '2018-05-12 00:00:00' \
+    --EndTime '2018-05-12 23:59:59' \
     --Size 5
 ```
 

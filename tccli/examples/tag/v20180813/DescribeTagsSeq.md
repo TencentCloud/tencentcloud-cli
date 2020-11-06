@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tag DescribeTagsSeq --cli-unfold-argument  \
-    --TagKey testTagKey\
+    --TagKey testTagKey \
     --TagValue testTagValue
 ```
 

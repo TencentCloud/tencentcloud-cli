@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli youmall CreateAccount --cli-unfold-argument  \
-    --CompanyId "xx1"\
-    --Name "135652123256"\
-    --Password "1235$#1233"\
-    --Remark "管理员张三"\
+    --CompanyId "xx1" \
+    --Name "135652123256" \
+    --Password "1235$#1233" \
+    --Remark "管理员张三" \
     --ShopCode "123"
 ```
 
@@ -30,10 +30,10 @@ Input:
 
 ```
 tccli youmall CreateAccount --cli-unfold-argument  \
-    --CompanyId "xx1"\
-    --Name "1234"\
-    --Password "1235$#1233"\
-    --Remark "管理员张三"\
+    --CompanyId "xx1" \
+    --Name "1234" \
+    --Password "1235$#1233" \
+    --Remark "管理员张三" \
     --ShopCode "123"
 ```
 

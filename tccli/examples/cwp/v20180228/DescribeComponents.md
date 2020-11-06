@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp DescribeComponents --cli-unfold-argument  \
-    --ComponentId 100019\
-    --Limit 10\
+    --ComponentId 100019 \
+    --Limit 10 \
     --Offset 0
 ```
 

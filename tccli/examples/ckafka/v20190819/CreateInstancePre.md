@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ckafka CreateInstancePre --cli-unfold-argument  \
-    --InstanceName test\
-    --MsgRetentionTime 1440\
-    --InstanceType 1\
-    --ZoneId 100003\
+    --InstanceName test \
+    --MsgRetentionTime 1440 \
+    --InstanceType 1 \
+    --ZoneId 100003 \
     --Period 1m
 ```
 

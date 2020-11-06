@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mdp ModifyMediaPackageChannel --cli-unfold-argument  \
-    --Id xxx\
-    --Name xxx\
+    --Id xxx \
+    --Name xxx \
     --Protocol HLS
 ```
 

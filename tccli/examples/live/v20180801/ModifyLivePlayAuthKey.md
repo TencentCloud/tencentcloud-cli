@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live ModifyLivePlayAuthKey --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com\
-    --Enable 0\
-    --AuthKey xxxx\
-    --AuthDelta 300\
+    --DomainName 5000.livepush.myqcloud.com \
+    --Enable 0 \
+    --AuthKey xxxx \
+    --AuthDelta 300 \
     --AuthBackKey xxxx
 ```
 

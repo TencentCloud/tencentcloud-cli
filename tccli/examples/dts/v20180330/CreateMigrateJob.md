@@ -6,24 +6,24 @@ Input:
 
 ```
 tccli dts CreateMigrateJob --cli-unfold-argument  \
-    --JobName 'usertest                                    // DTS task name'\
-    --SrcDatabaseType 'mysql                           	 // Source instance type: MySQL'\
-    --SrcAccessType 'extranet                              // Migration over the public network'\
-    --DstDatabaseType 'mysql                               // Target instance type: MySQL'\
-    --DstAccessType 'cdb                                   // Target instance type: TencentDB for MySQL'\
-    --MigrateOption.RunMode '1                  			 // Immediate execution'\
-    --MigrateOption.MigrateType '3                 		 // Full + incremental migration'\
-    --MigrateOption.MigrateObject '1              		 // Entire instance'\
-    --MigrateOption.ConsistencyType '5          			 // No check'\
-    --SrcInfo.AccessKey 'cdb-powiqx8q            			 // Alibaba Cloud AccessKey'\
-    --SrcInfo.RdsInstanceId 'rm-uf546i98x6ngqjnjx		 	 // Alibaba Cloud RDS instance ID'\
-    --SrcInfo.Ip 106.13.216.14\
-    --SrcInfo.Port 3306\
-    --SrcInfo.User 'root                                   // Source instance username'\
-    --SrcInfo.Supplier 'aliyun                             // Alibaba Cloud instance migration'\
-    --SrcInfo.Password '123456                          	 // Source instance password'\
-    --SrcInfo.Region 'ap-guangzhou                  		 // Source instance region: Guangzhou'\
-    --DstInfo.InstanceId 'cdb-d0dqi8nv             		 // Target instance ID'\
+    --JobName 'usertest                                    // DTS task name' \
+    --SrcDatabaseType 'mysql                           	 // Source instance type: MySQL' \
+    --SrcAccessType 'extranet                              // Migration over the public network' \
+    --DstDatabaseType 'mysql                               // Target instance type: MySQL' \
+    --DstAccessType 'cdb                                   // Target instance type: TencentDB for MySQL' \
+    --MigrateOption.RunMode '1                  			 // Immediate execution' \
+    --MigrateOption.MigrateType '3                 		 // Full + incremental migration' \
+    --MigrateOption.MigrateObject '1              		 // Entire instance' \
+    --MigrateOption.ConsistencyType '5          			 // No check' \
+    --SrcInfo.AccessKey 'cdb-powiqx8q            			 // Alibaba Cloud AccessKey' \
+    --SrcInfo.RdsInstanceId 'rm-uf546i98x6ngqjnjx		 	 // Alibaba Cloud RDS instance ID' \
+    --SrcInfo.Ip 106.13.216.14 \
+    --SrcInfo.Port 3306 \
+    --SrcInfo.User 'root                                   // Source instance username' \
+    --SrcInfo.Supplier 'aliyun                             // Alibaba Cloud instance migration' \
+    --SrcInfo.Password '123456                          	 // Source instance password' \
+    --SrcInfo.Region 'ap-guangzhou                  		 // Source instance region: Guangzhou' \
+    --DstInfo.InstanceId 'cdb-d0dqi8nv             		 // Target instance ID' \
     --DstInfo.Region 'ap-shanghai                     	 // Target region: Shanghai'
 ```
 
@@ -45,30 +45,30 @@ Input:
 
 ```
 tccli dts CreateMigrateJob --cli-unfold-argument  \
-    --JobName 'usertest                                    // DTS task name'\
-    --SrcDatabaseType 'mysql                          	 // Source instance type: MySQL'\
-    --SrcAccessType 'dcg                                   // Migration over the public network'\
-    --DstDatabaseType 'mysql                 		         // Target instance type: MySQL'\
-    --DstAccessType 'cdb                                   // Target instance type: TencentDB for MySQL'\
-    --MigrateOption.RunMode '1              		         // Immediate execution'\
-    --MigrateOption.MigrateType '3                 		 // Full + incremental migration'\
-    --MigrateOption.MigrateObject '1         			     // Entire instance migration'\
-    --MigrateOption.ConsistencyType '3       				 // Spot check'\
-    --MigrateOption.ConsistencyParams.SelectRowsPerTable '10    // Randomly select 20% of tables and 10% of entries in each table for data content verification'\
-    --MigrateOption.ConsistencyParams.TablesSelectAll 20\
-    --MigrateOption.ConsistencyParams.TablesSelectCount '30     // Randomly select 30% of tables for record entry verification, i.e., `Select count(*)`'\
-    --MigrateOption.IsOverrideRoot '0             // Do not overwrite the target database with source database root account'\
-    --SrcInfo.UniqDcgId 'dcg-cyrjcc09              		// Direct Connect gateway ID'\
-    --SrcInfo.VpcId 'vpc-72jblfaa                       	// VPC ID'\
-    --SrcInfo.SubnetId 'subnet-7raec42a           		// Subnet ID'\
-    --SrcInfo.Ip '192.168.120.136                         // Source instance IP'\
-    --SrcInfo.Port '3307                                  // Source instance port'\
-    --SrcInfo.User 'root                                  // Source instance username'\
-    --SrcInfo.Supplier 'others                            // Non-Alibaba Cloud instance migration'\
-    --SrcInfo.Password '123456                            // Source instance password'\
-    --SrcInfo.Region 'ap-guangzhou                  		// Source instance region: Guangzhou'\
-    --DstInfo.InstanceId 'cdb-d0dqi8nv       			    // Target instance ID'\
-    --DstInfo.Region 'ap-shanghai                     		// Target region: Shanghai'\
+    --JobName 'usertest                                    // DTS task name' \
+    --SrcDatabaseType 'mysql                          	 // Source instance type: MySQL' \
+    --SrcAccessType 'dcg                                   // Migration over the public network' \
+    --DstDatabaseType 'mysql                 		         // Target instance type: MySQL' \
+    --DstAccessType 'cdb                                   // Target instance type: TencentDB for MySQL' \
+    --MigrateOption.RunMode '1              		         // Immediate execution' \
+    --MigrateOption.MigrateType '3                 		 // Full + incremental migration' \
+    --MigrateOption.MigrateObject '1         			     // Entire instance migration' \
+    --MigrateOption.ConsistencyType '3       				 // Spot check' \
+    --MigrateOption.ConsistencyParams.SelectRowsPerTable '10    // Randomly select 20% of tables and 10% of entries in each table for data content verification' \
+    --MigrateOption.ConsistencyParams.TablesSelectAll 20 \
+    --MigrateOption.ConsistencyParams.TablesSelectCount '30     // Randomly select 30% of tables for record entry verification, i.e., `Select count(*)`' \
+    --MigrateOption.IsOverrideRoot '0             // Do not overwrite the target database with source database root account' \
+    --SrcInfo.UniqDcgId 'dcg-cyrjcc09              		// Direct Connect gateway ID' \
+    --SrcInfo.VpcId 'vpc-72jblfaa                       	// VPC ID' \
+    --SrcInfo.SubnetId 'subnet-7raec42a           		// Subnet ID' \
+    --SrcInfo.Ip '192.168.120.136                         // Source instance IP' \
+    --SrcInfo.Port '3307                                  // Source instance port' \
+    --SrcInfo.User 'root                                  // Source instance username' \
+    --SrcInfo.Supplier 'others                            // Non-Alibaba Cloud instance migration' \
+    --SrcInfo.Password '123456                            // Source instance password' \
+    --SrcInfo.Region 'ap-guangzhou                  		// Source instance region: Guangzhou' \
+    --DstInfo.InstanceId 'cdb-d0dqi8nv       			    // Target instance ID' \
+    --DstInfo.Region 'ap-shanghai                     		// Target region: Shanghai' \
     --DstInfo.ReadOnly '1                                 // The target instance is read-only'
 ```
 
@@ -90,22 +90,22 @@ Input:
 
 ```
 tccli dts CreateMigrateJob --cli-unfold-argument  \
-    --JobName 'usertest                                    // DTS task name'\
-    --SrcDatabaseType 'mysql                           	 // Source instance type: MySQL'\
-    --SrcAccessType 'cdb                                   // TencentDB migration'\
-    --DstDatabaseType 'mysql                               // Target instance type: MySQL'\
-    --DstAccessType 'cdb                                   // Target instance type: TencentDB for MySQL'\
-    --MigrateOption.RunMode '1                  			 // Immediate execution'\
-    --MigrateOption.MigrateType '1                 		 // Structural migration'\
-    --MigrateOption.MigrateObject '2              		 // Migration of specified tables'\
-    --DatabaseInfo '[{"Database":"test","Table":["user","log"]}]    // Table to be migrated'\
-    --MigrateOption.ConsistencyType '5          			 // No check'\
-    --SrcInfo.InstanceId 'cdb-powiqx8q            		 // Source instance ID'\
-    --SrcInfo.User 'root                                   // Source instance username'\
-    --SrcInfo.Supplier 'others                             // Non-Alibaba Cloud instance migration'\
-    --SrcInfo.Password '123456                          	 // Source instance password'\
-    --SrcInfo.Region 'ap-guangzhou                  		 // Source instance region: Guangzhou'\
-    --DstInfo.InstanceId 'cdb-d0dqi8nv             		 // Target instance ID'\
+    --JobName 'usertest                                    // DTS task name' \
+    --SrcDatabaseType 'mysql                           	 // Source instance type: MySQL' \
+    --SrcAccessType 'cdb                                   // TencentDB migration' \
+    --DstDatabaseType 'mysql                               // Target instance type: MySQL' \
+    --DstAccessType 'cdb                                   // Target instance type: TencentDB for MySQL' \
+    --MigrateOption.RunMode '1                  			 // Immediate execution' \
+    --MigrateOption.MigrateType '1                 		 // Structural migration' \
+    --MigrateOption.MigrateObject '2              		 // Migration of specified tables' \
+    --DatabaseInfo '[{"Database":"test","Table":["user","log"]}]    // Table to be migrated' \
+    --MigrateOption.ConsistencyType '5          			 // No check' \
+    --SrcInfo.InstanceId 'cdb-powiqx8q            		 // Source instance ID' \
+    --SrcInfo.User 'root                                   // Source instance username' \
+    --SrcInfo.Supplier 'others                             // Non-Alibaba Cloud instance migration' \
+    --SrcInfo.Password '123456                          	 // Source instance password' \
+    --SrcInfo.Region 'ap-guangzhou                  		 // Source instance region: Guangzhou' \
+    --DstInfo.InstanceId 'cdb-d0dqi8nv             		 // Target instance ID' \
     --DstInfo.Region 'ap-shanghai                     	 // Target region: Shanghai'
 ```
 
@@ -127,24 +127,24 @@ Input:
 
 ```
 tccli dts CreateMigrateJob --cli-unfold-argument  \
-    --JobName 'usertest                               // DTS task name'\
-    --SrcDatabaseType 'mysql                          // Source instance type: MySQL'\
-    --SrcAccessType 'extranet                         // Migration over the public network'\
-    --DstDatabaseType 'mysql                          // Target instance type: MySQL'\
-    --DstAccessType 'cdb                                   // Target instance access type: TencentDB for MySQL'\
-    --MigrateOption.RunMode '1                        // Immediate execution'\
-    --MigrateOption.MigrateType '2  	                // Full'\
-    --MigrateOption.MigrateObject '1  	            // Entire instance migration'\
-    --MigrateOption.ConsistencyType '2    		    // Full data consistency check'\
-    --MigrateOption.IsOverrideRoot '0            // Do not overwrite the target database with source database root account'\
-    --SrcInfo.Ip '14.17.22.36                         // Public IP of source instance'\
-    --SrcInfo.Port '10301                             // Public port of source instance'\
-    --SrcInfo.User 'root                              // Source instance username'\
-    --SrcInfo.Supplier 'others                        // Non-Alibaba Cloud instance migration'\
-    --SrcInfo.Password '123456                        // Source instance password'\
-    --SrcInfo.Region 'ap-guangzhou             	    // Source instance region: Guangzhou'\
-    --DstInfo.InstanceId 'cdb-e78e0nnv            	// Target instance ID'\
-    --DstInfo.Region 'ap-shanghai                     // Target region: Shanghai'\
+    --JobName 'usertest                               // DTS task name' \
+    --SrcDatabaseType 'mysql                          // Source instance type: MySQL' \
+    --SrcAccessType 'extranet                         // Migration over the public network' \
+    --DstDatabaseType 'mysql                          // Target instance type: MySQL' \
+    --DstAccessType 'cdb                                   // Target instance access type: TencentDB for MySQL' \
+    --MigrateOption.RunMode '1                        // Immediate execution' \
+    --MigrateOption.MigrateType '2  	                // Full' \
+    --MigrateOption.MigrateObject '1  	            // Entire instance migration' \
+    --MigrateOption.ConsistencyType '2    		    // Full data consistency check' \
+    --MigrateOption.IsOverrideRoot '0            // Do not overwrite the target database with source database root account' \
+    --SrcInfo.Ip '14.17.22.36                         // Public IP of source instance' \
+    --SrcInfo.Port '10301                             // Public port of source instance' \
+    --SrcInfo.User 'root                              // Source instance username' \
+    --SrcInfo.Supplier 'others                        // Non-Alibaba Cloud instance migration' \
+    --SrcInfo.Password '123456                        // Source instance password' \
+    --SrcInfo.Region 'ap-guangzhou             	    // Source instance region: Guangzhou' \
+    --DstInfo.InstanceId 'cdb-e78e0nnv            	// Target instance ID' \
+    --DstInfo.Region 'ap-shanghai                     // Target region: Shanghai' \
     --DstInfo.ReadOnly '1                             // The target instance is read-only'
 ```
 

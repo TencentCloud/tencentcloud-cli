@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli sqlserver ModifyMigration --cli-unfold-argument  \
-    --MigrateId 2728\
-    --MigrateName 'Test API'\
-    --MigrateType 2\
-    --SourceType 5\
-    --Source.Url http://gz-oncvm-1254065710.cosgz.myqcloud.com/testdb.bak\
+    --MigrateId 2728 \
+    --MigrateName 'Test API' \
+    --MigrateType 2 \
+    --SourceType 5 \
+    --Source.Url http://gz-oncvm-1254065710.cosgz.myqcloud.com/testdb.bak \
     --Target.InstanceId mssql-si2823jyl
 ```
 

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli youmall DescribeCameraPerson --cli-unfold-argument  \
-    --CompanyId tencent\
-    --ShopId 10086\
-    --CameraId 11\
-    --PosId test\
-    --StartTime 1536743684\
-    --EndTime 1536743686\
-    --Num 4\
+    --CompanyId tencent \
+    --ShopId 10086 \
+    --CameraId 11 \
+    --PosId test \
+    --StartTime 1536743684 \
+    --EndTime 1536743686 \
+    --Num 4 \
     --IsNeedPic 0
 ```
 

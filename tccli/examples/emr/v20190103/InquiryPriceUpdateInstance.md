@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli emr InquiryPriceUpdateInstance --cli-unfold-argument  \
-    --TimeUnit s\
-    --TimeSpan 3600\
-    --Placement.Zone 100003\
-    --Currency CNY\
-    --Placement.ProjectId 0\
-    --UpdateSpec.Memory 16\
-    --UpdateSpec.CPUCores 8\
-    --UpdateSpec.ResourceId emr-vm-a0xxx9on\
+    --TimeUnit s \
+    --TimeSpan 3600 \
+    --Placement.Zone 100003 \
+    --Currency CNY \
+    --Placement.ProjectId 0 \
+    --UpdateSpec.Memory 16 \
+    --UpdateSpec.CPUCores 8 \
+    --UpdateSpec.ResourceId emr-vm-a0xxx9on \
     --PayMode 0
 ```
 

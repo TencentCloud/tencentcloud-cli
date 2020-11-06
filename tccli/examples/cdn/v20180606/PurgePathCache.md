@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdn PurgePathCache --cli-unfold-argument  \
-    --Paths http://www.test.com/test/\
+    --Paths http://www.test.com/test/ \
     --FlushType flush
 ```
 

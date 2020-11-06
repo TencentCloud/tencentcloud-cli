@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc CreateAddressTemplate --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --AddressTemplateName TestName\
+    --Version 2017-03-12 \
+    --AddressTemplateName TestName \
     --Addresses 192.168.1.0/24 192.168.2.0/24
 ```
 

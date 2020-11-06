@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli gse CreateFleet --cli-unfold-argument  \
-    --AssetId asset-eugdyx0g\
-    --Description Humandecription\
-    --InstanceType S5.SMALL2\
-    --FleetType ON_DEMAND\
-    --Name testfleet\
-    --NewGameServerSessionProtectionPolicy FullProtection\
-    --PeerVpcId Qcloud@123\
-    --ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator 0\
-    --ResourceCreationLimitPolicy.PolicyPeriodInMinutes 1\
-    --RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds 5\
-    --RuntimeConfiguration.MaxConcurrentGameServerSessionActivations 4\
-    --RuntimeConfiguration.ServerProcesses.0.ConcurrentExecutions 10\
-    --RuntimeConfiguration.ServerProcesses.0.LaunchPath /local/game/GameLiftLinuxServer\
-    --RuntimeConfiguration.ServerProcesses.0.Parameters -cconf/config.toml\
-    --InboundPermissions.0.FromPort 1900\
-    --InboundPermissions.0.IpRange 0.0.0.0/0\
-    --InboundPermissions.0.Protocol TCP\
+    --AssetId asset-eugdyx0g \
+    --Description Humandecription \
+    --InstanceType S5.SMALL2 \
+    --FleetType ON_DEMAND \
+    --Name testfleet \
+    --NewGameServerSessionProtectionPolicy FullProtection \
+    --PeerVpcId Qcloud@123 \
+    --ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator 0 \
+    --ResourceCreationLimitPolicy.PolicyPeriodInMinutes 1 \
+    --RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds 5 \
+    --RuntimeConfiguration.MaxConcurrentGameServerSessionActivations 4 \
+    --RuntimeConfiguration.ServerProcesses.0.ConcurrentExecutions 10 \
+    --RuntimeConfiguration.ServerProcesses.0.LaunchPath /local/game/GameLiftLinuxServer \
+    --RuntimeConfiguration.ServerProcesses.0.Parameters -cconf/config.toml \
+    --InboundPermissions.0.FromPort 1900 \
+    --InboundPermissions.0.IpRange 0.0.0.0/0 \
+    --InboundPermissions.0.Protocol TCP \
     --InboundPermissions.0.ToPort 2900
 ```
 

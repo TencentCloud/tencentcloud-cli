@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DescribeCertificates --cli-unfold-argument  \
-    --CertificateType 2\
-    --Offset 0\
+    --CertificateType 2 \
+    --Offset 0 \
     --Limit 1
 ```
 

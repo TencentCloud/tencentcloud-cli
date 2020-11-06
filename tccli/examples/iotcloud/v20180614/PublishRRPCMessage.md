@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud PublishRRPCMessage --cli-unfold-argument  \
-    --ProductId ASBHKN121\
-    --DeviceName dev\
+    --ProductId ASBHKN121 \
+    --DeviceName dev \
     --Payload 1234561
 ```
 

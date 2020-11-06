@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis ModifyInstance --cli-unfold-argument  \
-    --Operation rename\
-    --InstanceIds crs-r3nqjq3n crs-9bvd9b8v\
+    --Operation rename \
+    --InstanceIds crs-r3nqjq3n crs-9bvd9b8v \
     --InstanceNames newname1 newname2
 ```
 

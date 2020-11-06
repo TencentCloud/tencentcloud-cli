@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw StopOnlineRecord --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --TaskId 07b4c70bpafm1b4majmb
 ```
 

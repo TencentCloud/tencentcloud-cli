@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam ListAttachedGroupPolicies --cli-unfold-argument  \
-    --TargetGroupId 3349\
-    --Page 1\
+    --TargetGroupId 3349 \
+    --Page 1 \
     --Rp 10
 ```
 

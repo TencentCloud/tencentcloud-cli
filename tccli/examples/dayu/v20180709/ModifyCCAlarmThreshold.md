@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu ModifyCCAlarmThreshold --cli-unfold-argument  \
-    --Business bgpip\
-    --IpList 212.64.63.57 129.28.240.128\
-    --RsId net-0000002h\
+    --Business bgpip \
+    --IpList 212.64.63.57 129.28.240.128 \
+    --RsId net-0000002h \
     --AlarmThreshold 1000
 ```
 

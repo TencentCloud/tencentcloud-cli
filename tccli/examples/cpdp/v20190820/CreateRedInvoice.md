@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cpdp CreateRedInvoice --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --InvoicePlatformId 0\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --InvoicePlatformId 0 \
     --Invoices.0.OrderId test195992
 ```
 

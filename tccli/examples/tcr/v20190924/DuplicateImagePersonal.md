@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DuplicateImagePersonal --cli-unfold-argument  \
-    --SrcImage dockerhub/test:1.0\
+    --SrcImage dockerhub/test:1.0 \
     --DestImage dockerhub/test:2.0
 ```
 

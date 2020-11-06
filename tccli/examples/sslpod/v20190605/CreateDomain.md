@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli sslpod CreateDomain --cli-unfold-argument  \
-    --Domain cloud.tencent.com\
-    --Tags 123\
-    --IP 1.1.1.1\
-    --ServerType 0\
-    --Notice True\
+    --Domain cloud.tencent.com \
+    --Tags 123 \
+    --IP 1.1.1.1 \
+    --ServerType 0 \
+    --Notice True \
     --Port 443
 ```
 

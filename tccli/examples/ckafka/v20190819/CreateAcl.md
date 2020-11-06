@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ckafka CreateAcl --cli-unfold-argument  \
-    --InstanceId xxx\
-    --ResourceType xxx\
-    --ResourceName 1\
-    --Operation 2\
-    --PermissionType 2\
-    --Host 2\
+    --InstanceId xxx \
+    --ResourceType xxx \
+    --ResourceName 1 \
+    --Operation 2 \
+    --PermissionType 2 \
+    --Host 2 \
     --Principal 2
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: Querying task list for TencentDB instance**
+**Example 1: Querying the list of tasks for a TencentDB instance**
 
 
 
@@ -15,7 +15,7 @@ Output:
         "Items": [
             {
                 "Code": 9013,
-                "Message": "[Operate CDB Fail][Upgrade Service Fail!] reason: ERR#-999: lock_inst.cgi: no instance records exist for some instance IDs",
+                "Message": "[Operate CDB Fail][Upgrade Service Fail!] reason: ERR#-999: lock_inst.cgi: No instance records exist for some instance IDs",
                 "JobId": 79,
                 "AsyncRequestId": "9d21004b-3aa1896a-eeddca4b-a68f106d",
                 "Progress": 10,
@@ -29,7 +29,7 @@ Output:
             },
             {
                 "Code": 0,
-                "Message": "Set parameter successfully",
+                "Message": "Set parameters successfully",
                 "JobId": 70,
                 "AsyncRequestId": "1d564380-2e391736-f28fa246-43cea3aa",
                 "Progress": 100,

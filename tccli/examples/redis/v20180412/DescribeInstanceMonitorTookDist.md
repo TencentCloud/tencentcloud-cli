@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis DescribeInstanceMonitorTookDist --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p\
-    --Date 2019-11-07\
+    --InstanceId crs-5a4py64p \
+    --Date 2019-11-07 \
     --SpanType 4
 ```
 

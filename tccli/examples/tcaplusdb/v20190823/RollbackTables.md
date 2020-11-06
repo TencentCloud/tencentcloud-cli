@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tcaplusdb RollbackTables --cli-unfold-argument  \
-    --ClusterId 5674209986\
-    --RollbackTime '2019-08-29 10:00:00'\
-    --SelectedTables.0.TableInstanceId tcaplus-1f224454\
-    --SelectedTables.0.TableGroupId 101\
-    --SelectedTables.0.TableName tb_example\
-    --SelectedTables.0.FileName tb_example_key1\
-    --SelectedTables.0.FileExtType txt\
-    --SelectedTables.0.FileSize 40\
-    --SelectedTables.0.FileContent uin%20name%0A1%20calvin%0A2%20jacob%0A3%20matthew%0A%0A\
+    --ClusterId 5674209986 \
+    --RollbackTime '2019-08-29 10:00:00' \
+    --SelectedTables.0.TableInstanceId tcaplus-1f224454 \
+    --SelectedTables.0.TableGroupId 101 \
+    --SelectedTables.0.TableName tb_example \
+    --SelectedTables.0.FileName tb_example_key1 \
+    --SelectedTables.0.FileExtType txt \
+    --SelectedTables.0.FileSize 40 \
+    --SelectedTables.0.FileContent uin%20name%0A1%20calvin%0A2%20jacob%0A3%20matthew%0A%0A \
     --SelectedTables.0.TableIdlType PROTO
 ```
 

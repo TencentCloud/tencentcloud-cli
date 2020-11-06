@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ame DescribeStations --cli-unfold-argument  \
-    --Limit 1\
+    --Limit 1 \
     --Offset 0
 ```
 

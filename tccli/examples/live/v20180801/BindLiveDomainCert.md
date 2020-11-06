@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live BindLiveDomainCert --cli-unfold-argument  \
-    --CertId 1000\
-    --DomainName 5000.livepush.myqcloud.com\
+    --CertId 1000 \
+    --DomainName 5000.livepush.myqcloud.com \
     --Status 1
 ```
 

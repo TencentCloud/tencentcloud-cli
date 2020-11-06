@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dayu CreateL7RuleCert --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --RuleId rule-00000001\
-    --CertType 2\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --RuleId rule-00000001 \
+    --CertType 2 \
     --SSLId sslid123
 ```
 

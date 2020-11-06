@@ -1,4 +1,4 @@
-**Example 1: Querying the security group information of instance**
+**Example 1: Queries the security group information of an instance**
 
 
 

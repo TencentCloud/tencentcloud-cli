@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli faceid MinorsVerification --cli-unfold-argument  \
-    --Type 0\
+    --Type 0 \
     --Mobile 13800138000
 ```
 
@@ -30,8 +30,8 @@ Input:
 
 ```
 tccli faceid MinorsVerification --cli-unfold-argument  \
-    --Type 1\
-    --IdCard 440111199110100000\
+    --Type 1 \
+    --IdCard 440111199110100000 \
     --Name 张成年
 ```
 

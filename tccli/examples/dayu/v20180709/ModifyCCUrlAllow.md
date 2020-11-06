@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dayu ModifyCCUrlAllow --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Method add\
-    --Type white\
-    --UrlList http://www.123.com/index.html www.456.com/buy.html\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Method add \
+    --Type white \
+    --UrlList http://www.123.com/index.html www.456.com/buy.html \
     --Protocol http
 ```
 
@@ -35,13 +35,13 @@ Input:
 
 ```
 tccli dayu ModifyCCUrlAllow --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Method add\
-    --Type white\
-    --UrlList http://www.123.com/index.html www.456.com/buy.html\
-    --Protocol https\
-    --Domain test.com\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Method add \
+    --Type white \
+    --UrlList http://www.123.com/index.html www.456.com/buy.html \
+    --Protocol https \
+    --Domain test.com \
     --RuleId rule-0000001
 ```
 
@@ -66,12 +66,12 @@ Input:
 
 ```
 tccli dayu ModifyCCUrlAllow --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Method delete\
-    --Type white\
-    --UrlList http://www.123.com/index.html www.456.com/buy.html\
-    --Protocol https\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Method delete \
+    --Type white \
+    --UrlList http://www.123.com/index.html www.456.com/buy.html \
+    --Protocol https \
     --Domain test.com
 ```
 

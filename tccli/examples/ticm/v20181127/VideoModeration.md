@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ticm VideoModeration --cli-unfold-argument  \
-    --VideoUrl https://test.mp4\
-    --CBUrl http://callback.test.com\
-    --DeveloperId 123456\
+    --VideoUrl https://test.mp4 \
+    --CBUrl http://callback.test.com \
+    --DeveloperId 123456 \
     --Extra 0001
 ```
 

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli dc ModifyDirectConnectAttribute --cli-unfold-argument  \
-    --DirectConnectId dcx-abcdefgh\
-    --DirectConnectName abc\
-    --CircuitCode ABF_123\
-    --Vlan 100\
-    --TencentAddress 172.168.1.1/30\
-    --CustomerAddress 172.168.1.2/30\
-    --CustomerName 'John Smith'\
-    --CustomerContactMail 12345@qq.com\
+    --DirectConnectId dcx-abcdefgh \
+    --DirectConnectName abc \
+    --CircuitCode ABF_123 \
+    --Vlan 100 \
+    --TencentAddress 172.168.1.1/30 \
+    --CustomerAddress 172.168.1.2/30 \
+    --CustomerName 'John Smith' \
+    --CustomerContactMail 12345@qq.com \
     --CustomerContactNumber 18812345678
 ```
 

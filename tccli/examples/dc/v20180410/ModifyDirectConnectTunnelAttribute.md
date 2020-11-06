@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dc ModifyDirectConnectTunnelAttribute --cli-unfold-argument  \
-    --DirectConnectTunnelId dcx-abcdefgh\
-    --DirectConnectTunnelName Test\
-    --Bandwidth 100\
-    --TencentAddress 192.168.1.1/30\
-    --CustomerAddress 192.168.1.2/30\
-    --BgpPeer.Asn 65128\
+    --DirectConnectTunnelId dcx-abcdefgh \
+    --DirectConnectTunnelName Test \
+    --Bandwidth 100 \
+    --TencentAddress 192.168.1.1/30 \
+    --CustomerAddress 192.168.1.2/30 \
+    --BgpPeer.Asn 65128 \
     --BgpPeer.AuthKey abcdefg
 ```
 
@@ -32,13 +32,13 @@ Input:
 
 ```
 tccli dc ModifyDirectConnectTunnelAttribute --cli-unfold-argument  \
-    --DirectConnectTunnelId dcx-abcdefgh\
-    --DirectConnectTunnelName Test\
-    --Bandwidth 100\
-    --TencentAddress 192.168.1.1/30\
-    --CustomerAddress 192.168.1.2/30\
-    --RouteFilterPrefixes.0.Cidr 192.168.0.0/24\
-    --RouteFilterPrefixes.1.Cidr 192.168.1.0/24\
+    --DirectConnectTunnelId dcx-abcdefgh \
+    --DirectConnectTunnelName Test \
+    --Bandwidth 100 \
+    --TencentAddress 192.168.1.1/30 \
+    --CustomerAddress 192.168.1.2/30 \
+    --RouteFilterPrefixes.0.Cidr 192.168.0.0/24 \
+    --RouteFilterPrefixes.1.Cidr 192.168.1.0/24 \
     --RouteFilterPrefixes.2.Cidr 192.168.2.0/24
 ```
 

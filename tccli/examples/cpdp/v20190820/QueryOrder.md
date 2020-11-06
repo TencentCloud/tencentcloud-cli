@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cpdp QueryOrder --cli-unfold-argument  \
-    --MidasAppId your_midas_app_id\
-    --UserId your_user_id\
-    --Type by_order\
-    --OutTradeNo your_order_no\
-    --MidasSecretId your_midas_secret_id\
+    --MidasAppId your_midas_app_id \
+    --UserId your_user_id \
+    --Type by_order \
+    --OutTradeNo your_order_no \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

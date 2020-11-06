@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka ModifyPassword --cli-unfold-argument  \
-    --InstanceId xxx\
-    --Name xxx\
-    --Password 1\
+    --InstanceId xxx \
+    --Name xxx \
+    --Password 1 \
     --PasswordNew 2
 ```
 

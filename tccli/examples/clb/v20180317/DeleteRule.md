@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli clb DeleteRule --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
-    --ListenerId lbl-4fbxq45k\
-    --Domain foo.net\
+    --LoadBalancerId lb-cuxw2rm0 \
+    --ListenerId lbl-4fbxq45k \
+    --Domain foo.net \
     --Url /bar2
 ```
 

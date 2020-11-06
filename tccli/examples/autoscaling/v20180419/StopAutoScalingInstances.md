@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli as StopAutoScalingInstances --cli-unfold-argument  \
-    --AutoScalingGroupId asg-boz1qhnk\
-    --InstanceIds ins-cri8d02t ins-osckfnm7\
+    --AutoScalingGroupId asg-boz1qhnk \
+    --InstanceIds ins-cri8d02t ins-osckfnm7 \
     --StoppedMode STOP_CHARGING
 ```
 

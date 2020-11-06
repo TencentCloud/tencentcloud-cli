@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cws ModifyMonitorAttribute --cli-unfold-argument  \
-    --MonitorId 1\
-    --Urls http%3A%2F%2Fwww.qcloud.com\
-    --Name 漏洞扫描监测\
-    --MonitorStatus 1\
-    --ScannerType normal\
-    --RateLimit 10\
-    --Crontab 24\
+    --MonitorId 1 \
+    --Urls http%3A%2F%2Fwww.qcloud.com \
+    --Name 漏洞扫描监测 \
+    --MonitorStatus 1 \
+    --ScannerType normal \
+    --RateLimit 10 \
+    --Crontab 24 \
     --FirstScanStartTime '2018-03-23 02:00:00'
 ```
 

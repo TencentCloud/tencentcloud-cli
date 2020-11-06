@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver ModifyDBName --cli-unfold-argument  \
-    --InstanceId mssql-i1z41iwd\
-    --OldDBName test_db\
+    --InstanceId mssql-i1z41iwd \
+    --OldDBName test_db \
     --NewDBName test_db_newname
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ds CreateSeal --cli-unfold-argument  \
-    --Module SealMng\
-    --Operation CreateSeal\
-    --AccountResId dcu-c33uil4apd\
+    --Module SealMng \
+    --Operation CreateSeal \
+    --AccountResId dcu-c33uil4apd \
     --ImgUrl https://cloud.tencent.com/
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tci CheckFacePhoto --cli-unfold-argument  \
-    --FileContent https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_facea.png\
+    --FileContent https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_facea.png \
     --FileType picture_url
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer ReleaseStudioProduct --cli-unfold-argument  \
-    --ProductId BJQM4UXMKN\
+    --ProductId BJQM4UXMKN \
     --DevStatus released
 ```
 

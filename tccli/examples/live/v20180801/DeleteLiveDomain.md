@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DeleteLiveDomain --cli-unfold-argument  \
-    --DomainName www.test.com\
+    --DomainName www.test.com \
     --DomainType 0
 ```
 

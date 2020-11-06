@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli solar CopyActivityChannel --cli-unfold-argument  \
-    --ActivityId act_abc123\
-    --ChannelFrom ch_aaa\
+    --ActivityId act_abc123 \
+    --ChannelFrom ch_aaa \
     --ChannelTo ch_ccc ch_bbb
 ```
 

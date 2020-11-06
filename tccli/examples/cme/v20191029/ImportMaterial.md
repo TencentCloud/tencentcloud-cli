@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cme ImportMaterial --cli-unfold-argument  \
-    --Platform test\
-    --VodFileId  123456789\
-    --Owner.Id 1111\
-    --Owner.Type PERSON\
+    --Platform test \
+    --VodFileId  123456789 \
+    --Owner.Id 1111 \
+    --Owner.Type PERSON \
     --Name material_name
 ```
 

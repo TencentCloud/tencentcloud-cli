@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iotvideo CreateStorageService --cli-unfold-argument  \
-    --PkgId xx\
-    --ChnNum 123\
-    --EnableTime 0\
-    --OrderCount 112\
-    --AccessId xx\
-    --Tid xx\
+    --PkgId xx \
+    --ChnNum 123 \
+    --EnableTime 0 \
+    --OrderCount 112 \
+    --AccessId xx \
+    --Tid xx \
     --StorageRegion xx
 ```
 

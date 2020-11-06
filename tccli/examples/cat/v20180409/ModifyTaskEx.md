@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cat ModifyTaskEx --cli-unfold-argument  \
-    --AgentGroupId 100004185\
-    --CatTypeName http\
-    --Url http://www.baidu.com\
-    --Period 5\
-    --TaskName HelpToTestBaidu\
-    --TaskId 210837\
+    --AgentGroupId 100004185 \
+    --CatTypeName http \
+    --Url http://www.baidu.com \
+    --Period 5 \
+    --TaskName HelpToTestBaidu \
+    --TaskId 210837 \
     --Type 2
 ```
 

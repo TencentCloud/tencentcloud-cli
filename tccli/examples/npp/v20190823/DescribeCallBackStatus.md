@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli npp DescribeCallBackStatus --cli-unfold-argument  \
-    --BizAppId xxx\
+    --BizAppId xxx \
     --CallId xxxx
 ```
 

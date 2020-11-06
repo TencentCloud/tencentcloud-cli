@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdn DescribeOriginData --cli-unfold-argument  \
-    --StartTime '2018-09-04 00:00:00'\
-    --EndTime '2018-09-04 12:00:00'\
-    --Metric flux\
+    --StartTime '2018-09-04 00:00:00' \
+    --EndTime '2018-09-04 12:00:00' \
+    --Metric flux \
     --Domains www.test.com
 ```
 

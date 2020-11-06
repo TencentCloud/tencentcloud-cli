@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli mps CreateWorkflow --cli-unfold-argument  \
-    --WorkflowName trans-20-30-40\
-    --Trigger.Type CosFileUpload\
-    --Trigger.CosFileUploadTrigger.Bucket TopRankVideo-125xxx88\
-    --Trigger.CosFileUploadTrigger.Region ap-chongqing\
-    --Trigger.CosFileUploadTrigger.Dir /movie/201907/\
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20\
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30\
+    --WorkflowName trans-20-30-40 \
+    --Trigger.Type CosFileUpload \
+    --Trigger.CosFileUploadTrigger.Bucket TopRankVideo-125xxx88 \
+    --Trigger.CosFileUploadTrigger.Region ap-chongqing \
+    --Trigger.CosFileUploadTrigger.Dir /movie/201907/ \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
     --MediaProcessTask.TranscodeTaskSet.2.Definition 40
 ```
 
@@ -34,11 +34,11 @@ Input:
 
 ```
 tccli mps CreateWorkflow --cli-unfold-argument  \
-    --WorkflowName snapshot\
-    --Trigger.Type CosFileUpload\
-    --Trigger.CosFileUploadTrigger.Bucket TopRankVideo-125xxx88\
-    --Trigger.CosFileUploadTrigger.Region ap-chongqing\
-    --Trigger.CosFileUploadTrigger.Dir /movie/201907/\
+    --WorkflowName snapshot \
+    --Trigger.Type CosFileUpload \
+    --Trigger.CosFileUploadTrigger.Bucket TopRankVideo-125xxx88 \
+    --Trigger.CosFileUploadTrigger.Region ap-chongqing \
+    --Trigger.CosFileUploadTrigger.Dir /movie/201907/ \
     --MediaProcessTask.SampleSnapshotTaskSet.0.Definition 10
 ```
 

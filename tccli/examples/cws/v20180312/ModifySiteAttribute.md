@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cws ModifySiteAttribute --cli-unfold-argument  \
-    --SiteId 1\
+    --SiteId 1 \
     --Name QQ
 ```
 

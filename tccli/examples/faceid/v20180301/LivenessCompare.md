@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli faceid LivenessCompare --cli-unfold-argument  \
-    --ImageBase64 <ImageBase64>\
-    --VideoBase64 <VideoBase64>\
+    --ImageBase64 <ImageBase64> \
+    --VideoBase64 <VideoBase64> \
     --LivenessType SILENT
 ```
 

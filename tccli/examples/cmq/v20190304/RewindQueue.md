@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cmq RewindQueue --cli-unfold-argument  \
-    --QueueName test\
+    --QueueName test \
     --StartConsumeTime 1582108595
 ```
 

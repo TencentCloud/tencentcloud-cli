@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotexplorer ModifyStudioProduct --cli-unfold-argument  \
-    --ProductId 4GDIU5HTEN\
-    --ProductName testProduct\
-    --ProductDesc Pdesc\
+    --ProductId 4GDIU5HTEN \
+    --ProductName testProduct \
+    --ProductDesc Pdesc \
     --ModuleId 0
 ```
 

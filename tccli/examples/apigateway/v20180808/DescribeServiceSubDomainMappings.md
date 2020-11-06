@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway DescribeServiceSubDomainMappings --cli-unfold-argument  \
-    --ServiceId service-19c5fnhy\
+    --ServiceId service-19c5fnhy \
     --SubDomain xxxxxx
 ```
 

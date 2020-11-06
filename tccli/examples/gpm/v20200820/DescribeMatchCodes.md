@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gpm DescribeMatchCodes --cli-unfold-argument  \
-    --Offset 1\
+    --Offset 1 \
     --Limit 15
 ```
 

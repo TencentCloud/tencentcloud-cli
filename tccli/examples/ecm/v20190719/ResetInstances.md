@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm ResetInstances --cli-unfold-argument  \
-    --InstanceIdSet ein-492054ga ein-482972ao\
-    --ImageId img-q9fy0if9\
+    --InstanceIdSet ein-492054ga ein-482972ao \
+    --ImageId img-q9fy0if9 \
     --Password hpjtfgnb3nwa
 ```
 

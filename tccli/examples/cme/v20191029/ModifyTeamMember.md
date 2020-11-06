@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cme ModifyTeamMember --cli-unfold-argument  \
-    --Platform test\
-    --TeamId 1kdk882ddd88338ddd3k3\
-    --MemberId 1kd3ej3okjdije3lejjdjk99\
+    --Platform test \
+    --TeamId 1kdk882ddd88338ddd3k3 \
+    --MemberId 1kd3ej3okjdije3lejjdjk99 \
     --Remark 主编辑李四
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo DescribeStorageService --cli-unfold-argument  \
-    --ServiceId 2300001383\
+    --ServiceId 2300001383 \
     --GetFinishedOrder True
 ```
 

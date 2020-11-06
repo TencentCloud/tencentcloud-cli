@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cvm AllocateHosts --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --HostChargeType PREPAID\
-    --HostChargePrepaid.Period 1\
-    --HostChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW\
-    --HostType HS1\
+    --Placement.Zone ap-guangzhou-2 \
+    --HostChargeType PREPAID \
+    --HostChargePrepaid.Period 1 \
+    --HostChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
+    --HostType HS1 \
     --HostCount 1
 ```
 

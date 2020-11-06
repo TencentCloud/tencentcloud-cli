@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli apigateway CreateIPStrategy --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
-    --StrategyName xx\
-    --StrategyType WHITE\
+    --ServiceId service-ody35h5e \
+    --StrategyName xx \
+    --StrategyType WHITE \
     --StrategyData 1.1.1.1
 ```
 

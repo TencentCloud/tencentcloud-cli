@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu DescribePcap --cli-unfold-argument  \
-    --Business shield\
-    --Id bgp-00000001\
-    --StartTime '2018-08-28 07:15:00'\
+    --Business shield \
+    --Id bgp-00000001 \
+    --StartTime '2018-08-28 07:15:00' \
     --EndTime '2018-08-28 10:05:00'
 ```
 

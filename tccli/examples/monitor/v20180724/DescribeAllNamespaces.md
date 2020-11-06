@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli monitor DescribeAllNamespaces --cli-unfold-argument  \
-    --AppId 12312312\
-    --Uin 123123123123\
-    --SubAccountUin 12312312313\
-    --Action DescribeAllNamespaces\
-    --Version 2018-07-24\
-    --Region ap-guangzhou\
-    --Module monitor\
-    --Language zh-CN\
-    --MonitorTypes MT_QCE MT_CUSTOM\
+    --AppId 12312312 \
+    --Uin 123123123123 \
+    --SubAccountUin 12312312313 \
+    --Action DescribeAllNamespaces \
+    --Version 2018-07-24 \
+    --Region ap-guangzhou \
+    --Module monitor \
+    --Language zh-CN \
+    --MonitorTypes MT_QCE MT_CUSTOM \
     --SceneType ST_ALARM
 ```
 

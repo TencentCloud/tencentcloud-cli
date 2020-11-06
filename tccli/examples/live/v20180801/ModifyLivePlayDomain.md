@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live ModifyLivePlayDomain --cli-unfold-argument  \
-    --DomainName www.test.com\
+    --DomainName www.test.com \
     --PlayType 1
 ```
 

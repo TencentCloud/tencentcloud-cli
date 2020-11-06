@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tmt ImageTranslate --cli-unfold-argument  \
-    --SessionUuid session-00001\
-    --Scene doc\
-    --Source zh\
-    --Target en\
-    --ProjectId 0\
+    --SessionUuid session-00001 \
+    --Scene doc \
+    --Source zh \
+    --Target en \
+    --ProjectId 0 \
     --Data iVBORw0KGgoAAAANSUhEUgAAAdkAAABPCAYAAACnD7%252FoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAJ
 ......
 CCyAAAAwCQgsgAAAMAkILIAAADAJCCyAAAAwCQgsgAAAMAkILIAAADAFJblX8%252F8oMOWYN6nAAAAAElFTkSuQmCC

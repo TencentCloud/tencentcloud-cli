@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcaplusdb DescribeTableGroupTags --cli-unfold-argument  \
-    --ClusterId 5674209986\
+    --ClusterId 5674209986 \
     --TableGroupIds 1
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke CreateClusterRoute --cli-unfold-argument  \
-    --RouteTableName MANAGED_CLUSTER\
-    --DestinationCidrBlock 10.4.0.0/24\
+    --RouteTableName MANAGED_CLUSTER \
+    --DestinationCidrBlock 10.4.0.0/24 \
     --GatewayIp 10.0.0.3
 ```
 

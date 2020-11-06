@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bmlb ModifyLoadBalancerChargeMode --cli-unfold-argument  \
-    --LoadBalancerId lb-cegjj42t\
-    --PayMode flow\
-    --ListenerSet.0.ListenerId lbl-eluk9shx\
-    --ListenerSet.0.Protocol http\
+    --LoadBalancerId lb-cegjj42t \
+    --PayMode flow \
+    --ListenerSet.0.ListenerId lbl-eluk9shx \
+    --ListenerSet.0.Protocol http \
     --ListenerSet.0.Bandwidth 100
 ```
 

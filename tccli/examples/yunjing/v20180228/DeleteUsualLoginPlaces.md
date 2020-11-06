@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli yunjing DeleteUsualLoginPlaces --cli-unfold-argument  \
-    --Uuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5\
+    --Uuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5 \
     --CityIds 22 33
 ```
 

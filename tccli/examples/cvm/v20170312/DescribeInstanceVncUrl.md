@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm DescribeInstanceVncUrl --cli-unfold-argument  \
-    --Region ap-beijing\
+    --Region ap-beijing \
     --InstanceId ins-r9hr2upy
 ```
 

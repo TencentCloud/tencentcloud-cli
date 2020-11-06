@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb CreateTargetGroup --cli-unfold-argument  \
-    --TargetGroupName czhtest\
-    --VpcId vpc-i1cnjuhx\
+    --TargetGroupName czhtest \
+    --VpcId vpc-i1cnjuhx \
     --Port 80
 ```
 

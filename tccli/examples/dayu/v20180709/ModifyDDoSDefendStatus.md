@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu ModifyDDoSDefendStatus --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Status 0\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Status 0 \
     --Hour 2
 ```
 

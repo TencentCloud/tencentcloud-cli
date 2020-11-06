@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu DeleteCCSelfDefinePolicy --cli-unfold-argument  \
-    --Business bgp\
-    --Id bgp-000000xe\
+    --Business bgp \
+    --Id bgp-000000xe \
     --SetId ccPolicy-000000sd
 ```
 

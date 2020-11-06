@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli clb ModifyTargetWeight --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
-    --ListenerId lbl-d1ubsydq\
-    --Targets.0.InstanceId ins-dm4xtz0i\
-    --Targets.0.Port 334\
+    --LoadBalancerId lb-cuxw2rm0 \
+    --ListenerId lbl-d1ubsydq \
+    --Targets.0.InstanceId ins-dm4xtz0i \
+    --Targets.0.Port 334 \
     --Weight 8
 ```
 

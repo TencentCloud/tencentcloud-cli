@@ -18,6 +18,12 @@
       "name": "创建生成包",
       "output": "CreateAssetResponse"
     },
+    "CreateAssetWithImage": {
+      "document": "本接口（CreateAssetWithImage）用于创建生成包镜像信息。",
+      "input": "CreateAssetWithImageRequest",
+      "name": "创建生成包镜像信息",
+      "output": "CreateAssetWithImageResponse"
+    },
     "CreateFleet": {
       "document": "本接口（CreateFleet）用于创建服务器舰队。",
       "input": "CreateFleetRequest",
@@ -833,6 +839,110 @@
     },
     "CreateAssetResponse": {
       "document": "CreateAsset返回参数结构体",
+      "members": [
+        {
+          "document": "生成包ID",
+          "member": "string",
+          "name": "AssetId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生成包的全局唯一资源标识符",
+          "member": "string",
+          "name": "AssetArn",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAssetWithImageRequest": {
+      "document": "CreateAssetWithImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "生成包名字，最小长度为1，最大长度为64",
+          "member": "string",
+          "name": "AssetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生成包版本，最小长度为1，最大长度为64",
+          "member": "string",
+          "name": "AssetVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
+          "member": "string",
+          "name": "AssetRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生成包支持的操作系统镜像id",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统镜像包大小，比如：40GB，支持单位 KB、MB、GB",
+          "member": "string",
+          "name": "ImageSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统镜像包名称，最小长度为1，最大长度为64",
+          "member": "string",
+          "name": "ImageOs",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统镜像包类型，CentOS 或者 Windows",
+          "member": "string",
+          "name": "OsType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统镜像包类型，当前只支持 SHARED_IMAGE",
+          "member": "string",
+          "name": "ImageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统镜像包位数，32 或者 64",
+          "member": "uint64",
+          "name": "OsBit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAssetWithImageResponse": {
+      "document": "CreateAssetWithImage返回参数结构体",
       "members": [
         {
           "document": "生成包ID",

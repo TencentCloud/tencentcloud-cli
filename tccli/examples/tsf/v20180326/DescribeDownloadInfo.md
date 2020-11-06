@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DescribeDownloadInfo --cli-unfold-argument  \
-    --ApplicationId application-zxxxxxxx\
+    --ApplicationId application-zxxxxxxx \
     --PkgId pkg-xxxxxxx
 ```
 

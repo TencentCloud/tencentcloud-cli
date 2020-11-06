@@ -6,25 +6,25 @@ Input:
 
 ```
 tccli cpdp ApplyOutwardOrder --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --TransactionId trasid201911230012\
-    --PricingCurrency CNY\
-    --SourceCurrency CNY\
-    --SourceAmount 10\
-    --TargetCurrency USD\
-    --PayeeType BANK_ACCOUNT\
-    --PayeeAccount 325119780000\
-    --PayeeName TEST\
-    --PayeeAddress TEST\
-    --PayeeBankAccountType CORPORATE\
-    --PayeeCountryCode USA\
-    --PayeeBankName TEST\
-    --PayeeBankAddress TEST\
-    --PayeeBankDistrict US\
-    --PayeeBankSwiftCode CITIUS33XXX\
-    --PayeeBankType \
-    --PayeeBankCode 026009593\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --TransactionId trasid201911230012 \
+    --PricingCurrency CNY \
+    --SourceCurrency CNY \
+    --SourceAmount 10 \
+    --TargetCurrency USD \
+    --PayeeType BANK_ACCOUNT \
+    --PayeeAccount 325119780000 \
+    --PayeeName TEST \
+    --PayeeAddress TEST \
+    --PayeeBankAccountType CORPORATE \
+    --PayeeCountryCode USA \
+    --PayeeBankName TEST \
+    --PayeeBankAddress TEST \
+    --PayeeBankDistrict US \
+    --PayeeBankSwiftCode CITIUS33XXX \
+    --PayeeBankType  \
+    --PayeeBankCode 026009593 \
     --ReferenceForBeneficiary test
 ```
 

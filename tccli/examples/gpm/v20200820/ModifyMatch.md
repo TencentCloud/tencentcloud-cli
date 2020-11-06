@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli gpm ModifyMatch --cli-unfold-argument  \
-    --MatchName test\
-    --MatchDesc test\
-    --RuleCode rule-r4x6tk49\
-    --Timeout 60\
-    --NotifyUrl https://test.com\
-    --ServerType 1\
-    --ServerRegion apshanghai\
-    --ServerQueue gpmtest\
-    --CustomPushData test\
-    --ServerSessionData test\
-    --LogSwitch 1\
-    --MatchCode match-58mnuqlz\
-    --GameProperties.0.Key test\
-    --GameProperties.0.Value test\
-    --Tags.0.Key 字符串\
+    --MatchName test \
+    --MatchDesc test \
+    --RuleCode rule-r4x6tk49 \
+    --Timeout 60 \
+    --NotifyUrl https://test.com \
+    --ServerType 1 \
+    --ServerRegion apshanghai \
+    --ServerQueue gpmtest \
+    --CustomPushData test \
+    --ServerSessionData test \
+    --LogSwitch 1 \
+    --MatchCode match-58mnuqlz \
+    --GameProperties.0.Key test \
+    --GameProperties.0.Value test \
+    --Tags.0.Key 字符串 \
     --Tags.0.Value 字符串
 ```
 

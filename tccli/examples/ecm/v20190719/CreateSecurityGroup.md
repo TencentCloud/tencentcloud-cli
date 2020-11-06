@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm CreateSecurityGroup --cli-unfold-argument  \
-    --GroupName TestGroup\
-    --GroupDescription test-group-desc\
-    --Tags.0.Key city\
+    --GroupName TestGroup \
+    --GroupDescription test-group-desc \
+    --Tags.0.Key city \
     --Tags.0.Value shanghai
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cr UploadDataJson --cli-unfold-argument  \
-    --Module Data\
-    --Operation UploadJson\
-    --UploadModel repay\
+    --Module Data \
+    --Operation UploadJson \
+    --UploadModel repay \
     --Data {\"work_data\":\"o\"}
 ```
 

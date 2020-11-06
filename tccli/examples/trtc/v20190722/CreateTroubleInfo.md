@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli trtc CreateTroubleInfo --cli-unfold-argument  \
-    --SdkAppId 1400188366\
-    --RoomId 1587879309\
-    --TeacherUserId 1587882309\
-    --StudentUserId 123456\
-    --TroubleUserId 123456\
-    --TroubleType 1\
-    --TroubleTime 87654321\
+    --SdkAppId 1400188366 \
+    --RoomId 1587879309 \
+    --TeacherUserId 1587882309 \
+    --StudentUserId 123456 \
+    --TroubleUserId 123456 \
+    --TroubleType 1 \
+    --TroubleTime 87654321 \
     --TroubleMsg VoiceException
 ```
 

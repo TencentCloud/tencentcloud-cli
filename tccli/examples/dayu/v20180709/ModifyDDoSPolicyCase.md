@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dayu ModifyDDoSPolicyCase --cli-unfold-argument  \
-    --Business bgpip\
-    --SceneId scene-00000003\
-    --PlatformTypes PC TV\
-    --AppType WEB\
-    --AppProtocols tcp\
-    --TcpPortList 80,443,600-700,888\
+    --Business bgpip \
+    --SceneId scene-00000003 \
+    --PlatformTypes PC TV \
+    --AppType WEB \
+    --AppProtocols tcp \
+    --TcpPortList 80,443,600-700,888 \
     --UdpPortList 80,443,600-700,888
 ```
 

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli dayu ModifyCCFrequencyRules --cli-unfold-argument  \
-    --Business bgpip\
-    --CCFrequencyRuleId ccRule-000003h7\
-    --Uri /\
-    --Mode include\
-    --Period 60\
-    --ReqNumber 30\
-    --Act alg\
+    --Business bgpip \
+    --CCFrequencyRuleId ccRule-000003h7 \
+    --Uri / \
+    --Mode include \
+    --Period 60 \
+    --ReqNumber 30 \
+    --Act alg \
     --ExeDuration 120
 ```
 

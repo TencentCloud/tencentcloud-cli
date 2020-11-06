@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeTopicAttributes --cli-unfold-argument  \
-    --InstanceId xxx\
+    --InstanceId xxx \
     --TopicName xxx
 ```
 

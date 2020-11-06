@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DeleteImageTags --cli-unfold-argument  \
-    --ImageTags.0.RepoName tsf_410xxxxxx/test\
+    --ImageTags.0.RepoName tsf_410xxxxxx/test \
     --ImageTags.0.TagName 20190529xxxxxx
 ```
 

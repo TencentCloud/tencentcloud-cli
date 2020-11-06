@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm AssociateAddress --cli-unfold-argument  \
-    --AddressId eip-11112222\
-    --InstanceId ins-11221122\
+    --AddressId eip-11112222 \
+    --InstanceId ins-11221122 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

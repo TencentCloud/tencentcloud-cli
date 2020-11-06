@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli npp DelVirtualNum --cli-unfold-argument  \
-    --BizAppId 65535\
+    --BizAppId 65535 \
     --BindId 14b3eb00-f75a-4181-8138-1d453cca995a
 ```
 

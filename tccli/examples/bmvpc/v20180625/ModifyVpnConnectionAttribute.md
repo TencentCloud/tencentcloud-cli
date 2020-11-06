@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bmvpc ModifyVpnConnectionAttribute --cli-unfold-argument  \
-    --Version 2018-06-25\
-    --VpnConnectionId bmvpnx-qc8cz8y8\
-    --VpnConnectionName TEST_CONN\
+    --Version 2018-06-25 \
+    --VpnConnectionId bmvpnx-qc8cz8y8 \
+    --VpnConnectionName TEST_CONN \
     --VpcId vpc-q8cz9732
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dcdb DescribeDCDBRenewalPrice --cli-unfold-argument  \
-    --InstanceId dcdvt-fdpjf5zh\
+    --InstanceId dcdvt-fdpjf5zh \
     --Period 1
 ```
 

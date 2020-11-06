@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iottid DownloadTids --cli-unfold-argument  \
-    --OrderId p8ZcXGuqus\
+    --OrderId p8ZcXGuqus \
     --Quantity 1
 ```
 

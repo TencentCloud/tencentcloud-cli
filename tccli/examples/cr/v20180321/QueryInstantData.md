@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cr QueryInstantData --cli-unfold-argument  \
-    --Module Data\
-    --Operation Query\
-    --Offset 0\
-    --Limit 10\
-    --InstanceId ins-a1b2c3\
+    --Module Data \
+    --Operation Query \
+    --Offset 0 \
+    --Limit 10 \
+    --InstanceId ins-a1b2c3 \
     --Data '"{\"StartBizDate\":\"2019-03-03\", \"EndBizDate\":\"2019-03-13\"}"'
 ```
 

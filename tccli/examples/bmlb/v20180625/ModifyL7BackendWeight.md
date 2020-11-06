@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli bmlb ModifyL7BackendWeight --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
-    --ListenerId lbl-l6fzjsx5\
-    --DomainId dm-hg8j52ud\
-    --LocationId loc-02ywyc8b\
-    --BindType 0\
-    --Port 99\
-    --InstanceId tcpm-px13l9jh\
+    --LoadBalancerId lb-47gazeml \
+    --ListenerId lbl-l6fzjsx5 \
+    --DomainId dm-hg8j52ud \
+    --LocationId loc-02ywyc8b \
+    --BindType 0 \
+    --Port 99 \
+    --InstanceId tcpm-px13l9jh \
     --Weight 80
 ```
 

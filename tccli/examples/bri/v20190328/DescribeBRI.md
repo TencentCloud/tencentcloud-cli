@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bri DescribeBRI --cli-unfold-argument  \
-    --ResourceId test_resource_id_for_bri_num\
-    --RequestData.Service bri_num\
+    --ResourceId test_resource_id_for_bri_num \
+    --RequestData.Service bri_num \
     --RequestData.PhoneNumber 18122223554
 ```
 

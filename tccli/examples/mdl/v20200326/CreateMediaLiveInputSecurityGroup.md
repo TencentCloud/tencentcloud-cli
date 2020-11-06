@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mdl CreateMediaLiveInputSecurityGroup --cli-unfold-argument  \
-    --Name xxx\
+    --Name xxx \
     --Whitelist 1.1.1.1/1
 ```
 

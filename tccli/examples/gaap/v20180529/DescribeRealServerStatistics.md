@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DescribeRealServerStatistics --cli-unfold-argument  \
-    --RealServerId rs-rfgt56hy\
-    --ListenerId listener-gucvb6d\
+    --RealServerId rs-rfgt56hy \
+    --ListenerId listener-gucvb6d \
     --WithinTime 3
 ```
 

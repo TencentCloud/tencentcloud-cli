@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gme DescribeAppStatistics --cli-unfold-argument  \
-    --BizId 140000001\
-    --StartDate 2019-08-01\
-    --EndDate 2019-08-03\
+    --BizId 140000001 \
+    --StartDate 2019-08-01 \
+    --EndDate 2019-08-03 \
     --Services RealTimeSpeech VoiceMessage
 ```
 

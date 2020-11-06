@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mariadb CloneAccount --cli-unfold-argument  \
-    --InstanceId tdsql-6a0lwzzj\
-    --SrcUser testuser\
-    --SrcHost 10.10.10.%\
-    --DstUser testuser\
-    --DstHost 10.10.20.%\
+    --InstanceId tdsql-6a0lwzzj \
+    --SrcUser testuser \
+    --SrcHost 10.10.10.% \
+    --DstUser testuser \
+    --DstHost 10.10.20.% \
     --DstDesc testclone
 ```
 

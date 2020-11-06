@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli gaap CreateSecurityRules --cli-unfold-argument  \
-    --PolicyId String\
-    --RuleList.0.SourceCidr String\
-    --RuleList.0.Action String\
-    --RuleList.0.AliasName String\
-    --RuleList.0.Protocol String\
+    --PolicyId String \
+    --RuleList.0.SourceCidr String \
+    --RuleList.0.Action String \
+    --RuleList.0.AliasName String \
+    --RuleList.0.Protocol String \
     --RuleList.0.DestPortRange String
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver RestoreInstance --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
+    --InstanceId mssql-njj2mtpl \
     --BackupId 32687264876
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot GetDeviceData --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
+    --ProductId iot-4e0wsxpi \
     --DeviceName device1
 ```
 

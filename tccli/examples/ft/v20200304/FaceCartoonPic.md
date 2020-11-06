@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ft FaceCartoonPic --cli-unfold-argument  \
-    --Image xxxxx\
+    --Image xxxxx \
     --Url xxxxx
 ```
 
@@ -31,7 +31,7 @@ Input:
 
 ```
 tccli ft FaceCartoonPic --cli-unfold-argument  \
-    --Image xxxxx\
+    --Image xxxxx \
     --Url xxxxx
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai CompareFace --cli-unfold-argument  \
-    --UrlA http://test.image.myqcloud.com/testA.jpg\
+    --UrlA http://test.image.myqcloud.com/testA.jpg \
     --UrlB http://test.image.myqcloud.com/testB.jpg
 ```
 

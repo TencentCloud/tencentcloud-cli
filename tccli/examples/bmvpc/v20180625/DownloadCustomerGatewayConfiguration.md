@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc DownloadCustomerGatewayConfiguration --cli-unfold-argument  \
-    --Version 2018-06-25\
-    --VpnConnectionId vpnx-5p7vkch8\
+    --Version 2018-06-25 \
+    --VpnConnectionId vpnx-5p7vkch8 \
     --VendorName h3c
 ```
 

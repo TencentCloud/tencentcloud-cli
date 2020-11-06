@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp UnBindAcct --cli-unfold-argument  \
-    --MidasAppId your_midas_app_id\
-    --SubAppId your_sub_app_id\
-    --SettleAcctNo encrypted_account_no\
-    --MidasSecretId your_midas_secret_id\
+    --MidasAppId your_midas_app_id \
+    --SubAppId your_sub_app_id \
+    --SettleAcctNo encrypted_account_no \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

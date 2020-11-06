@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm InquiryPriceResetInstancesType --cli-unfold-argument  \
-    --InstanceIds ins-2zvpghhc\
+    --InstanceIds ins-2zvpghhc \
     --InstanceType S5.16XLARGE256
 ```
 

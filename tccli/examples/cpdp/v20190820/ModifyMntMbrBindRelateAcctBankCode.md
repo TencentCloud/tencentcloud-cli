@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cpdp ModifyMntMbrBindRelateAcctBankCode --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --SubAcctNo 1234000000006047\
-    --MemberBindAcctNo 6230551200054286369\
-    --AcctOpenBranchName 平安银行\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --SubAcctNo 1234000000006047 \
+    --MemberBindAcctNo 6230551200054286369 \
+    --AcctOpenBranchName 平安银行 \
     --EiconBankBranchId 307513207998
 ```
 

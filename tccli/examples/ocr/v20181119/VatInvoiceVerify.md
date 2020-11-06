@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ocr VatInvoiceVerify --cli-unfold-argument  \
-    --InvoiceCode 1300000000\
-    --InvoiceNo 04000000\
-    --InvoiceDate 2019-12-11\
+    --InvoiceCode 1300000000 \
+    --InvoiceNo 04000000 \
+    --InvoiceDate 2019-12-11 \
     --Additional 88.50
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps ExecuteFunction --cli-unfold-argument  \
-    --FunctionName ExampleFunc\
+    --FunctionName ExampleFunc \
     --FunctionArg XXX
 ```
 

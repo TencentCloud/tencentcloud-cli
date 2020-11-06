@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli as CreateLaunchConfiguration --cli-unfold-argument  \
-    --LaunchConfigurationName as_test\
-    --InstanceType S2.SMALL1\
+    --LaunchConfigurationName as_test \
+    --InstanceType S2.SMALL1 \
     --ImageId img-8toqc6s3
 ```
 
@@ -29,18 +29,18 @@ Input:
 
 ```
 tccli as CreateLaunchConfiguration --cli-unfold-argument  \
-    --LaunchConfigurationName as_test\
-    --ImageId img-8toqc6s3\
-    --InstanceType S2.SMALL1\
-    --SystemDisk.DiskType LOCAL_BASIC\
-    --SystemDisk.DiskSize 50\
-    --DataDisks.0.DiskType CLOUD_BASIC\
-    --DataDisks.0.DiskSize 100\
-    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR\
-    --InternetAccessible.InternetMaxBandwidthOut 5\
-    --InternetAccessible.PublicIpAssigned TRUE\
-    --LoginSettings.KeyIds skey-k8eypc1l\
-    --EnhancedService.SecurityService.Enabled TRUE\
+    --LaunchConfigurationName as_test \
+    --ImageId img-8toqc6s3 \
+    --InstanceType S2.SMALL1 \
+    --SystemDisk.DiskType LOCAL_BASIC \
+    --SystemDisk.DiskSize 50 \
+    --DataDisks.0.DiskType CLOUD_BASIC \
+    --DataDisks.0.DiskSize 100 \
+    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
+    --InternetAccessible.InternetMaxBandwidthOut 5 \
+    --InternetAccessible.PublicIpAssigned TRUE \
+    --LoginSettings.KeyIds skey-k8eypc1l \
+    --EnhancedService.SecurityService.Enabled TRUE \
     --EnhancedService.MonitorService.Enabled TRUE
 ```
 
@@ -62,17 +62,17 @@ Input:
 
 ```
 tccli as CreateLaunchConfiguration --cli-unfold-argument  \
-    --LaunchConfigurationName spot-test\
-    --InstanceType S2.MEDIUM4\
-    --ImageId img-8toqc6s3\
-    --SystemDisk.DiskType CLOUD_PREMIUM\
-    --SystemDisk.DiskSize 50\
-    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR\
-    --InternetAccessible.InternetMaxBandwidthOut 20\
-    --InternetAccessible.PublicIpAssigned true\
-    --InstanceChargeType SPOTPAID\
-    --InstanceMarketOptions.MarketType spot\
-    --InstanceMarketOptions.SpotOptions.MaxPrice 0.99\
+    --LaunchConfigurationName spot-test \
+    --InstanceType S2.MEDIUM4 \
+    --ImageId img-8toqc6s3 \
+    --SystemDisk.DiskType CLOUD_PREMIUM \
+    --SystemDisk.DiskSize 50 \
+    --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
+    --InternetAccessible.InternetMaxBandwidthOut 20 \
+    --InternetAccessible.PublicIpAssigned true \
+    --InstanceChargeType SPOTPAID \
+    --InstanceMarketOptions.MarketType spot \
+    --InstanceMarketOptions.SpotOptions.MaxPrice 0.99 \
     --InstanceMarketOptions.SpotOptions.SpotInstanceType one-time
 ```
 
@@ -94,8 +94,8 @@ Input:
 
 ```
 tccli as CreateLaunchConfiguration --cli-unfold-argument  \
-    --LaunchConfigurationName multi_instance_types\
-    --InstanceTypes S2.SMALL2 S2.SMALL4\
+    --LaunchConfigurationName multi_instance_types \
+    --InstanceTypes S2.SMALL2 S2.SMALL4 \
     --ImageId img-8toqc6s3
 ```
 

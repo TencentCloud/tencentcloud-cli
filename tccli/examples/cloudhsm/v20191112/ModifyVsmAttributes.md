@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cloudhsm ModifyVsmAttributes --cli-unfold-argument  \
-    --SgIds xx\
-    --VpcId xx\
-    --ResourceId xx\
-    --SubnetId xx\
-    --ResourceName xx\
+    --SgIds xx \
+    --VpcId xx \
+    --ResourceId xx \
+    --SubnetId xx \
+    --ResourceName xx \
     --Type xx
 ```
 

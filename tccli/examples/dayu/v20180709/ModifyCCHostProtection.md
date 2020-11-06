@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu ModifyCCHostProtection --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --RuleId rule-00000002\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --RuleId rule-00000002 \
     --Method open
 ```
 

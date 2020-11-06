@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli bm DescribeTaskInfo --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
-    --OrderField CreateTime\
-    --Order 1\
-    --StartDate 2018-07-10\
-    --EndDate 2018-07-19\
-    --TaskStatus 1\
-    --TaskIds b\
-    --InstanceIds o\
-    --Aliases -\
+    --Offset 0 \
+    --Limit 20 \
+    --OrderField CreateTime \
+    --Order 1 \
+    --StartDate 2018-07-10 \
+    --EndDate 2018-07-19 \
+    --TaskStatus 1 \
+    --TaskIds b \
+    --InstanceIds o \
+    --Aliases - \
     --TaskTypeIds 44 49
 ```
 

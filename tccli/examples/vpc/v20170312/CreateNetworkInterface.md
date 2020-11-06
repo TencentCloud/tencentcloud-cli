@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli vpc CreateNetworkInterface --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --VpcId vpc-0akbol5v\
-    --SubnetId subnet-76r802pg\
-    --NetworkInterfaceName TestNIC\
-    --NetworkInterfaceDescription TestDesc\
-    --PrivateIpAddresses.0.PrivateIpAddress 172.16.64.13\
-    --PrivateIpAddresses.0.Primary true\
-    --SecondaryPrivateIpAddressCount 1\
-    --SecurityGroupIds sg-05bb4upy\
-    --Tags.0.Key city\
+    --Version 2017-03-12 \
+    --VpcId vpc-0akbol5v \
+    --SubnetId subnet-76r802pg \
+    --NetworkInterfaceName TestNIC \
+    --NetworkInterfaceDescription TestDesc \
+    --PrivateIpAddresses.0.PrivateIpAddress 172.16.64.13 \
+    --PrivateIpAddresses.0.Primary true \
+    --SecondaryPrivateIpAddressCount 1 \
+    --SecurityGroupIds sg-05bb4upy \
+    --Tags.0.Key city \
     --Tags.0.Value shanghai
 ```
 

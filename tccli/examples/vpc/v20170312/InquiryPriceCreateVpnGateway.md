@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc InquiryPriceCreateVpnGateway --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --InstanceChargeType PREPAID\
-    --InstanceChargePrepaid.Period 1\
+    --Version 2017-03-12 \
+    --InstanceChargeType PREPAID \
+    --InstanceChargePrepaid.Period 1 \
     --InternetMaxBandwidthOut 5
 ```
 
@@ -35,8 +35,8 @@ Input:
 
 ```
 tccli vpc InquiryPriceCreateVpnGateway --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --InstanceChargeType POSTPAID_BY_HOUR\
+    --Version 2017-03-12 \
+    --InstanceChargeType POSTPAID_BY_HOUR \
     --InternetMaxBandwidthOut 5
 ```
 

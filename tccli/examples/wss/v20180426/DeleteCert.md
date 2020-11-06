@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wss DeleteCert --cli-unfold-argument  \
-    --Id cert_id\
+    --Id cert_id \
     --ModuleType ssl
 ```
 

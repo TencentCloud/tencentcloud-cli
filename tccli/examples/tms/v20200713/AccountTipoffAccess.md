@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tms AccountTipoffAccess --cli-unfold-argument  \
-    --ReportedAccount 123456789\
-    --ReportedAccountType 2\
-    --SenderAccount 987654321\
-    --SenderAccountType 2\
-    --SenderIP 127.0.0.1\
-    --EvilType 1\
+    --ReportedAccount 123456789 \
+    --ReportedAccountType 2 \
+    --SenderAccount 987654321 \
+    --SenderAccountType 2 \
+    --SenderIP 127.0.0.1 \
+    --EvilType 1 \
     --EvilContent 王者代练，入会需交费，+q：123456789
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdn CreateClsLogTopic --cli-unfold-argument  \
-    --Channel cdn\
-    --TopicName test\
+    --Channel cdn \
+    --TopicName test \
     --LogsetId 57460798-8723-45e3-9c75-a0599ef9143a
 ```
 

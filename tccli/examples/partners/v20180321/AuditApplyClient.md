@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli partners AuditApplyClient --cli-unfold-argument  \
-    --ClientUin 123456\
-    --AuditResult accept\
+    --ClientUin 123456 \
+    --AuditResult accept \
     --Note reason
 ```
 

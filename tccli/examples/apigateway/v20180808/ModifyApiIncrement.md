@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apigateway ModifyApiIncrement --cli-unfold-argument  \
-    --ServiceId "service-123"\
-    --ApiId "api-123"\
+    --ServiceId "service-123" \
+    --ApiId "api-123" \
     --BusinessType "OAUTH"
 ```
 

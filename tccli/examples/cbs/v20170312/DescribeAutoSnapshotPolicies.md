@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cbs DescribeAutoSnapshotPolicies --cli-unfold-argument  \
-    --Filters.0.Name auto-snapshot-policy-state\
-    --Filters.0.Values NORMAL\
-    --Limit 3\
+    --Filters.0.Name auto-snapshot-policy-state \
+    --Filters.0.Values NORMAL \
+    --Limit 3 \
     --Offset 0
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli mongodb KillOps --cli-unfold-argument  \
-    --InstanceId cmgo-p8vnipr5\
-    --Operations.0.ReplicaSetName cmgo-p8vnipr5_0\
-    --Operations.0.NodeName 10.108.93.135:7017:39920912\
+    --InstanceId cmgo-p8vnipr5 \
+    --Operations.0.ReplicaSetName cmgo-p8vnipr5_0 \
+    --Operations.0.NodeName 10.108.93.135:7017:39920912 \
     --Operations.0.OpId 61
 ```
 

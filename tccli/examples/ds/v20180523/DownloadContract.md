@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ds DownloadContract --cli-unfold-argument  \
-    --Module ContractMng\
-    --Operation DownloadContract\
+    --Module ContractMng \
+    --Operation DownloadContract \
     --ContractResId dcc-480rzey2ww
 ```
 

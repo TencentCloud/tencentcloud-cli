@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cfw ModifyAllRuleStatus --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --Status 1\
+    --Placement.Zone ap-guangzhou-2 \
+    --Status 1 \
     --Direction 0
 ```
 

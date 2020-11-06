@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli batch DescribeAvailableCvmInstanceTypes --cli-unfold-argument  \
-    --Filters.0.Name zone\
-    --Filters.0.Values ap-guangzhou-3\
-    --Filters.1.Name instance-family\
+    --Filters.0.Name zone \
+    --Filters.0.Values ap-guangzhou-3 \
+    --Filters.1.Name instance-family \
     --Filters.1.Values GN2
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli kms ReEncrypt --cli-unfold-argument  \
-    --DestinationKeyId 23e80852-1e38-11e9-b129-5cb9019b4b01\
+    --DestinationKeyId 23e80852-1e38-11e9-b129-5cb9019b4b01 \
     --CiphertextBlob Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL
 ```
 

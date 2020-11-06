@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm TerminateInstances --cli-unfold-argument  \
-    --TerminateDelay true\
-    --InstanceIdSet ein-197252sp ein-187232ag\
+    --TerminateDelay true \
+    --InstanceIdSet ein-197252sp ein-187232ag \
     --TerminateTime '2019-08-01 18:32:56'
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs DescribeDiskOperationLogs --cli-unfold-argument  \
-    --Filters.0.Name disk-id\
+    --Filters.0.Name disk-id \
     --Filters.0.Values disk-ou4acu4i
 ```
 

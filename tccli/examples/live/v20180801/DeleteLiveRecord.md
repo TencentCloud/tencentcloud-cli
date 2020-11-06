@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DeleteLiveRecord --cli-unfold-argument  \
-    --StreamName stream1\
+    --StreamName stream1 \
     --TaskId 123
 ```
 

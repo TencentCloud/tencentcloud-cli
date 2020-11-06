@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf ModifyContainerReplicas --cli-unfold-argument  \
-    --GroupId group-xxxxxxx\
+    --GroupId group-xxxxxxx \
     --InstanceNum 1
 ```
 

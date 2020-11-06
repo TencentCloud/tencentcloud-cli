@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf CreateTask --cli-unfold-argument  \
-    --TaskName test\
-    --TaskContent com.example.task.simpleTask\
-    --TaskArgument taskArgumentTest\
-    --ExecuteType UNICAST\
-    --TaskType JAVA\
-    --TaskRule.RuleType Cron\
-    --TaskRule.Expression 00/1****?\
-    --TimeOut 30000\
+    --TaskName test \
+    --TaskContent com.example.task.simpleTask \
+    --TaskArgument taskArgumentTest \
+    --ExecuteType UNICAST \
+    --TaskType JAVA \
+    --TaskRule.RuleType Cron \
+    --TaskRule.Expression 00/1****? \
+    --TimeOut 30000 \
     --GroupId group-12345678
 ```
 

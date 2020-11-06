@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gpm DescribeMatchingProgress --cli-unfold-argument  \
-    --MatchTicketIds.0.MatchCode match-lipp\
+    --MatchTicketIds.0.MatchCode match-lipp \
     --MatchTicketIds.0.MatchTicketId ml0urJm
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tsf CreateCluster --cli-unfold-argument  \
-    --ClusterName DEMO-DOCKER\
-    --TsfRegionId ap-guangzhou\
-    --TsfZoneId 100004\
-    --ClusterType C\
-    --VpcId vpc-xxxxxxx\
+    --ClusterName DEMO-DOCKER \
+    --TsfRegionId ap-guangzhou \
+    --TsfZoneId 100004 \
+    --ClusterType C \
+    --VpcId vpc-xxxxxxx \
     --ClusterCIDR 172.16.0.0/16
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam GetPolicyVersion --cli-unfold-argument  \
-    --PolicyId 17698703\
+    --PolicyId 17698703 \
     --VersionId 2
 ```
 

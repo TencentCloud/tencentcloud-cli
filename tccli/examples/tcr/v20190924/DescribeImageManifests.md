@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcr DescribeImageManifests --cli-unfold-argument  \
-    --RegistryId tcr-7s2d14fn\
-    --NamespaceName test\
-    --RepositoryName mytest\
+    --RegistryId tcr-7s2d14fn \
+    --NamespaceName test \
+    --RepositoryName mytest \
     --ImageVersion 1.0
 ```
 

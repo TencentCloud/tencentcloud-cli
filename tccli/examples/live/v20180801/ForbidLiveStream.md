@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live ForbidLiveStream --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com\
-    --AppName live\
-    --StreamName stream1\
+    --DomainName 5000.livepush.myqcloud.com \
+    --AppName live \
+    --StreamName stream1 \
     --ResumeTime 2018-11-24T12:00:00Z
 ```
 

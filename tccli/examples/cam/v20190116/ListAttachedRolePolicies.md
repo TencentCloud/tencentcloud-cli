@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam ListAttachedRolePolicies --cli-unfold-argument  \
-    --RoleId 4611686018427397905\
-    --Page 1\
+    --RoleId 4611686018427397905 \
+    --Page 1 \
     --Rp 10
 ```
 

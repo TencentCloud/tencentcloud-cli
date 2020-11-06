@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis ResetPassword --cli-unfold-argument  \
-    --Password zy456987\
+    --Password zy456987 \
     --InstanceId crs-5a4py64p
 ```
 

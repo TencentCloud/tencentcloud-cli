@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli ecm BatchModifyTargetWeight --cli-unfold-argument  \
-    --LoadBalancerId lb-dx98lwo0\
-    --ModifyList.0.ListenerId lbl-4b5hnc9a\
-    --ModifyList.0.Targets.0.InstanceId ein-19404pl5\
-    --ModifyList.0.Targets.0.Port 110\
-    --ModifyList.0.Targets.0.Weight 50\
-    --ModifyList.1.ListenerId lbl-20jjtaaw\
-    --ModifyList.1.Targets.0.InstanceId ein-19411tzv\
-    --ModifyList.1.Targets.0.Port 80\
+    --LoadBalancerId lb-dx98lwo0 \
+    --ModifyList.0.ListenerId lbl-4b5hnc9a \
+    --ModifyList.0.Targets.0.InstanceId ein-19404pl5 \
+    --ModifyList.0.Targets.0.Port 110 \
+    --ModifyList.0.Targets.0.Weight 50 \
+    --ModifyList.1.ListenerId lbl-20jjtaaw \
+    --ModifyList.1.Targets.0.InstanceId ein-19411tzv \
+    --ModifyList.1.Targets.0.Port 80 \
     --ModifyList.1.Targets.0.Weight 30
 ```
 

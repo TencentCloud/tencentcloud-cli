@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli nlp DeleteWordItems --cli-unfold-argument  \
-    --DictId udf-066edc3449\
-    --WordItems.0.Text 理想\
+    --DictId udf-066edc3449 \
+    --WordItems.0.Text 理想 \
     --WordItems.0.Pos nr
 ```
 

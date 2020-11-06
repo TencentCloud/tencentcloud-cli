@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ccc DescribeChatMessages --cli-unfold-argument  \
-    --CdrId xx\
+    --CdrId xx \
     --InstanceId 0
 ```
 

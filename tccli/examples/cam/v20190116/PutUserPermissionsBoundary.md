@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam PutUserPermissionsBoundary --cli-unfold-argument  \
-    --TargetUin 1234567\
+    --TargetUin 1234567 \
     --PolicyId 1234567
 ```
 

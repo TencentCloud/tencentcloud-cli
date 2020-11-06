@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli bm CreateSpotDevice --cli-unfold-argument  \
-    --ComputeType v1.c2.medium\
-    --GoodsNum 37\
-    --VpcId vpc-3c7b2102\
-    --OsTypeId 12\
-    --SubnetId subnet-34ts34da\
-    --SpotStrategy SpotWithPriceLimit\
-    --SpotPriceLimit 1000\
+    --ComputeType v1.c2.medium \
+    --GoodsNum 37 \
+    --VpcId vpc-3c7b2102 \
+    --OsTypeId 12 \
+    --SubnetId subnet-34ts34da \
+    --SpotStrategy SpotWithPriceLimit \
+    --SpotPriceLimit 1000 \
     --Zone ap-guangzhoutest-blshw-1
 ```
 

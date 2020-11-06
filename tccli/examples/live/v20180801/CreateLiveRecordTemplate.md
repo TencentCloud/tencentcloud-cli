@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli live CreateLiveRecordTemplate --cli-unfold-argument  \
-    --TemplateName templat\
-    --Description test\
-    --FlvParam.Enable 0\
-    --FlvParam.RecordInterval 1800\
-    --FlvParam.StorageTime 600\
-    --HlsParam.Enable 1\
-    --HlsParam.RecordInterval 1800\
+    --TemplateName templat \
+    --Description test \
+    --FlvParam.Enable 0 \
+    --FlvParam.RecordInterval 1800 \
+    --FlvParam.StorageTime 600 \
+    --HlsParam.Enable 1 \
+    --HlsParam.RecordInterval 1800 \
     --HlsParam.StorageTime 600
 ```
 

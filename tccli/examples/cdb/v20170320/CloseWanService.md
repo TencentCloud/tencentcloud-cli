@@ -1,4 +1,4 @@
-**Example 1: Disabling public network access for instance**
+**Example 1: Disabling public network access for an instance**
 
 
 

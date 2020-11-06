@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DeleteDirectConnectGatewayCcnRoutes --cli-unfold-argument  \
-    --DirectConnectGatewayId dcg-prpqlmg1\
+    --DirectConnectGatewayId dcg-prpqlmg1 \
     --RouteIds ccnr-bvipc87w ccnr-oc61so0o
 ```
 

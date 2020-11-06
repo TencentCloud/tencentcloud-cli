@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli yunjing DescribeImpactedHosts --cli-unfold-argument  \
-    --VulId 1001\
-    --VulType WEB\
-    --Limit 10\
+    --VulId 1001 \
+    --VulType WEB \
+    --Limit 10 \
     --Offset 0
 ```
 

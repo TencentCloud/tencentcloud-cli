@@ -1,4 +1,4 @@
-**Example 1: Querying rollback time range**
+**Example 1: Querying the time range available for rollback**
 
 
 

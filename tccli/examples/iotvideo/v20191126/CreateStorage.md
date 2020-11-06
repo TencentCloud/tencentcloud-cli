@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideo CreateStorage --cli-unfold-argument  \
-    --PkgId yc1m3d\
-    --Tid ***********\
+    --PkgId yc1m3d \
+    --Tid *********** \
     --UserTag 112233
 ```
 

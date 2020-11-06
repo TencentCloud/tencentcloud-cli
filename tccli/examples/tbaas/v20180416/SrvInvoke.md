@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tbaas SrvInvoke --cli-unfold-argument  \
-    --Module trustsql_mng\
-    --Operation SrvInvoke\
-    --Service iss\
-    --Method Iss_Append\
+    --Module trustsql_mng \
+    --Operation SrvInvoke \
+    --Service iss \
+    --Method Iss_Append \
     --Param "mch_sign":"MEQCID0FuZnQUmzTFlokvIOr0WOhraDMAKRuyolhuy2O/dX4AiBsM23VBz8eCQ50KW3cMPj/HpejQ6FL427uW9DDFdmRvw
 ```
 

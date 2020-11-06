@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyIpv6AddressesAttribute --cli-unfold-argument  \
-    --NetworkInterfaceId eni-9c8zkfev\
-    --Ipv6Addresses.0.Address 3402:4e00:20:1202::7\
+    --NetworkInterfaceId eni-9c8zkfev \
+    --Ipv6Addresses.0.Address 3402:4e00:20:1202::7 \
     --Ipv6Addresses.0.Description abc
 ```
 

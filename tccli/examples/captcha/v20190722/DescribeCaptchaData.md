@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli captcha DescribeCaptchaData --cli-unfold-argument  \
-    --CaptchaAppId 201000000\
-    --Start 201911291859\
-    --End 201911291901\
+    --CaptchaAppId 201000000 \
+    --Start 201911291859 \
+    --End 201911291901 \
     --Type 1
 ```
 

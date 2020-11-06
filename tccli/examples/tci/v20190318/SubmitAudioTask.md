@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tci SubmitAudioTask --cli-unfold-argument  \
-    --Functions.EnableKeyword true\
-    --Functions.EnableVadInfo true\
-    --Functions.EnableVolume true\
-    --Functions.EnableMuteDetect true\
-    --MuteThreshold 3\
-    --Lang 0\
-    --Url https%3A%2F%2Fefpoc-1255701415.cos.ap-shanghai.myqcloud.com%2Fvideos%2F5.mp3\
-    --VocabLibNameList praise\
-    --VoiceEncodeType 1\
+    --Functions.EnableKeyword true \
+    --Functions.EnableVadInfo true \
+    --Functions.EnableVolume true \
+    --Functions.EnableMuteDetect true \
+    --MuteThreshold 3 \
+    --Lang 0 \
+    --Url https%3A%2F%2Fefpoc-1255701415.cos.ap-shanghai.myqcloud.com%2Fvideos%2F5.mp3 \
+    --VocabLibNameList praise \
+    --VoiceEncodeType 1 \
     --VoiceFileType 3
 ```
 

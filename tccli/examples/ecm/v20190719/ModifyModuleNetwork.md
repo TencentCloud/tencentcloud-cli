@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm ModifyModuleNetwork --cli-unfold-argument  \
-    --ModuleId em-bvr8f24q\
+    --ModuleId em-bvr8f24q \
     --DefaultBandwidth 50
 ```
 

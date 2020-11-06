@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyCustomerGatewayAttribute --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --CustomerGatewayId cgw-mgp33pll\
+    --Version 2017-03-12 \
+    --CustomerGatewayId cgw-mgp33pll \
     --CustomerGatewayName NewName
 ```
 

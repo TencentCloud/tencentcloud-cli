@@ -1,4 +1,4 @@
-**Example 1: Creating pay-as-you-go TencentDB instance**
+**Example 1: Creating a pay-as-you-go TencentDB instance**
 
 
 
@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli cdb CreateDBInstanceHour --cli-unfold-argument  \
-    --Memory 1000\
-    --Volume 25\
-    --GoodsNum 1\
-    --Zone ap-guangzhou-3\
-    --UniqVpcId vpc-0akbol5v\
-    --UniqSubnetId subnet-fyrtjbqw\
-    --ProjectId 0\
-    --InstanceRole master\
-    --EngineVersion 5.6\
-    --ProtectMode 0\
-    --DeployMode 0\
-    --SlaveZone ap-guangzhou-3\
-    --ResourceTags.0.TagKey marchtest\
+    --Memory 1000 \
+    --Volume 25 \
+    --GoodsNum 1 \
+    --Zone ap-guangzhou-3 \
+    --UniqVpcId vpc-0akbol5v \
+    --UniqSubnetId subnet-fyrtjbqw \
+    --ProjectId 0 \
+    --InstanceRole master \
+    --EngineVersion 5.6 \
+    --ProtectMode 0 \
+    --DeployMode 0 \
+    --SlaveZone ap-guangzhou-3 \
+    --ResourceTags.0.TagKey marchtest \
     --ResourceTags.0.TagValue test1
 ```
 

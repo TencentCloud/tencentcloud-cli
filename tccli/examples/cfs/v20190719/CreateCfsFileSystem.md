@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cfs CreateCfsFileSystem --cli-unfold-argument  \
-    --NetInterface basic\
-    --Zone ap-beijing-1\
-    --PGroupId pgroupbasic\
+    --NetInterface basic \
+    --Zone ap-beijing-1 \
+    --PGroupId pgroupbasic \
     --FsName test_fs
 ```
 

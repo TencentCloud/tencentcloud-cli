@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli nlp SearchWordItems --cli-unfold-argument  \
-    --DictId udf-066edc3449\
-    --WordItems.0.Text 理想型\
+    --DictId udf-066edc3449 \
+    --WordItems.0.Text 理想型 \
     --WordItems.0.Pos nr
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mdl DescribeMediaLiveChannelOutputStatistics --cli-unfold-argument  \
-    --ChannelId AEAE83719CE\
-    --StartTime 2020-01-01T12:00:00Z\
+    --ChannelId AEAE83719CE \
+    --StartTime 2020-01-01T12:00:00Z \
     --EndTime 2020-01-01T14:00:00Z
 ```
 

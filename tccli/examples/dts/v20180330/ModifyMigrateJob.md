@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli dts ModifyMigrateJob --cli-unfold-argument  \
-    --JobId dts-1kl0iy0v\
-    --JobName userdts\
-    --DatabaseInfo [{"Database":"test","Table":["user","log"]}]\
-    --MigrateOption.RunMode 1\
-    --MigrateOption.MigrateType 2\
-    --MigrateOption.MigrateObject 2\
-    --MigrateOption.ConsistencyType 5\
-    --MigrateOption.IsOverrideRoot 0\
-    --DstInfo.ReadOnly 0\
+    --JobId dts-1kl0iy0v \
+    --JobName userdts \
+    --DatabaseInfo [{"Database":"test","Table":["user","log"]}] \
+    --MigrateOption.RunMode 1 \
+    --MigrateOption.MigrateType 2 \
+    --MigrateOption.MigrateObject 2 \
+    --MigrateOption.ConsistencyType 5 \
+    --MigrateOption.IsOverrideRoot 0 \
+    --DstInfo.ReadOnly 0 \
     --SrcInfo.Supplier others
 ```
 

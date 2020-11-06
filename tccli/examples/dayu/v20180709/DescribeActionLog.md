@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dayu DescribeActionLog --cli-unfold-argument  \
-    --StartTime '2018-11-23 00:00:00'\
-    --EndTime '2018-11-24 00:00:00'\
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Limit 10\
+    --StartTime '2018-11-23 00:00:00' \
+    --EndTime '2018-11-24 00:00:00' \
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Limit 10 \
     --Offset 0
 ```
 

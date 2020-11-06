@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tiems CreateService --cli-unfold-argument  \
-    --ServiceConfigId asjcqn7wtdgrd7gt\
-    --Name test\
-    --ScaleMode MANUAL\
-    --ResourceGroupId ap-beijing\
-    --Cpu 100\
-    --Memory 100\
-    --Description test\
+    --ServiceConfigId asjcqn7wtdgrd7gt \
+    --Name test \
+    --ScaleMode MANUAL \
+    --ResourceGroupId ap-beijing \
+    --Cpu 100 \
+    --Memory 100 \
+    --Description test \
     --Scaler.StartReplicas 1
 ```
 

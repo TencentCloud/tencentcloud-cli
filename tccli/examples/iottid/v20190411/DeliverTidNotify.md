@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iottid DeliverTidNotify --cli-unfold-argument  \
-    --OrderId 4BI47CqhHQ\
+    --OrderId 4BI47CqhHQ \
     --Tid 000001035D0C97E3D2A46283D27BC612
 ```
 

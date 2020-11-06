@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iot AppGetToken --cli-unfold-argument  \
-    --UserName iotappuser\
-    --Password iotappuser666!\
+    --UserName iotappuser \
+    --Password iotappuser666! \
     --Expire 86400
 ```
 

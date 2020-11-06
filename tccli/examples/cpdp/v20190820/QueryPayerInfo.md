@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cpdp QueryPayerInfo --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
     --PayerId qyfkr201911230006
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmlb DescribeL7ListenerInfo --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
+    --LoadBalancerId lb-47gazeml \
     --IfGetBackendInfo 1
 ```
 

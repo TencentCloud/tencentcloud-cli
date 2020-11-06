@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteVpnGateway --cli-unfold-argument  \
-    --Version 2018-06-25\
+    --Version 2018-06-25 \
     --VpnGatewayId bmvpngw-ab3cde
 ```
 

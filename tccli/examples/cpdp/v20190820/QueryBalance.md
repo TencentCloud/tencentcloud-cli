@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cpdp QueryBalance --cli-unfold-argument  \
-    --MidasAppId your_midas_app_id\
-    --SubAppId your_sub_app_id\
-    --QueryFlag 2\
-    --PageOffset 0\
-    --MidasSecretId your_midas_secret_id\
+    --MidasAppId your_midas_app_id \
+    --SubAppId your_sub_app_id \
+    --QueryFlag 2 \
+    --PageOffset 0 \
+    --MidasSecretId your_midas_secret_id \
     --MidasSignature your_midas_signature
 ```
 

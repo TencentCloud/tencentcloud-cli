@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cme ModifyMaterial --cli-unfold-argument  \
-    --Platform test\
-    --MaterialId 123245678\
-    --Owner.Id 1111\
-    --Owner.Type PERSON\
+    --Platform test \
+    --MaterialId 123245678 \
+    --Owner.Id 1111 \
+    --Owner.Type PERSON \
     --Name name_modify
 ```
 

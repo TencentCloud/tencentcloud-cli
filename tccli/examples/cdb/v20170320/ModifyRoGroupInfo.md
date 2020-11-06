@@ -1,4 +1,4 @@
-**Example 1: Configuring instance removal policy for RO group**
+**Example 1: Configuring the instance removal policy for an RO group**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb ModifyRoGroupInfo --cli-unfold-argument  \
-    --RoGroupId cdbrg-iup41a4t\
-    --RoGroupInfo.RoOfflineDelay 1\
-    --RoGroupInfo.RoMaxDelayTime 10\
+    --RoGroupId cdbrg-iup41a4t \
+    --RoGroupInfo.RoOfflineDelay 1 \
+    --RoGroupInfo.RoMaxDelayTime 10 \
     --RoGroupInfo.MinRoInGroup 1
 ```
 
@@ -21,7 +21,7 @@ Output:
 }
 ```
 
-**Example 2: Rebalancing the weights of instances in RO group**
+**Example 2: Rebalancing the weights of instances in an RO group**
 
 
 
@@ -29,12 +29,12 @@ Input:
 
 ```
 tccli cdb ModifyRoGroupInfo --cli-unfold-argument  \
-    --RoGroupId cdbrg-iup41a4t\
-    --RoGroupInfo.WeightMode custom\
-    --RoWeightValues.0.InstanceId cdbr0-iup41a4t\
-    --RoWeightValues.0.Weight 30\
-    --RoWeightValues.1.InstanceId cdbr0-test1234\
-    --RoWeightValues.1.Weight 70\
+    --RoGroupId cdbrg-iup41a4t \
+    --RoGroupInfo.WeightMode custom \
+    --RoWeightValues.0.InstanceId cdbr0-iup41a4t \
+    --RoWeightValues.0.Weight 30 \
+    --RoWeightValues.1.InstanceId cdbr0-test1234 \
+    --RoWeightValues.1.Weight 70 \
     --IsBalanceRoLoad 1
 ```
 

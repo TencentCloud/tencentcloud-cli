@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli sqlserver DescribeSlowlogs --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
-    --StartTime '2018-03-28 00:00:00'\
-    --EndTime '2018-04-20 00:00:00'\
-    --Limit 20\
+    --InstanceId mssql-njj2mtpl \
+    --StartTime '2018-03-28 00:00:00' \
+    --EndTime '2018-04-20 00:00:00' \
+    --Limit 20 \
     --Offset 0
 ```
 

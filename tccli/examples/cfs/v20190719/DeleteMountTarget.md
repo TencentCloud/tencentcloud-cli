@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfs DeleteMountTarget --cli-unfold-argument  \
-    --FileSystemId cfs-12345\
+    --FileSystemId cfs-12345 \
     --MountTargetId mount-12345
 ```
 

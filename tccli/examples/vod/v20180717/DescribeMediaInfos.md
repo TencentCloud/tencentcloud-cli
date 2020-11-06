@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeMediaInfos --cli-unfold-argument  \
-    --FileIds 5285485487985271487 5285485487985271488\
+    --FileIds 5285485487985271487 5285485487985271488 \
     --Filters basicInfo
 ```
 

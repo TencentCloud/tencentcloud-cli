@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmlb DescribeL7ListenersEx --cli-unfold-argument  \
-    --TrafficMirrorId bmtm-lmep0eit\
+    --TrafficMirrorId bmtm-lmep0eit \
     --VpcId vpc-muinpf9p
 ```
 

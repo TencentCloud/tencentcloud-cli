@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr ModifyRepositoryAccessPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test\
+    --RepoName dockerhub/test \
     --Public 1
 ```
 

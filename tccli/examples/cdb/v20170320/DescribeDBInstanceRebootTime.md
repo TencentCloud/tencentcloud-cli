@@ -1,4 +1,4 @@
-**Example 1: Querying the estimated restart time of TencentDB instance**
+**Example 1: Querying the estimated restart time of a TencentDB instance**
 
 
 

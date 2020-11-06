@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot AppUpdateUser --cli-unfold-argument  \
-    --NickName abc\
+    --NickName abc \
     --AccessToken xxxx
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bm CreateCustomImage --cli-unfold-argument  \
-    --InstanceId testid\
-    --ImageName aa678\
+    --InstanceId testid \
+    --ImageName aa678 \
     --ImageDescription 876aa
 ```
 

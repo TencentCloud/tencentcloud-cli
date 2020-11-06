@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dcdb ResetAccountPassword --cli-unfold-argument  \
-    --InstanceId dcdbt-fdpjf5zh\
-    --UserName testuser1\
-    --Host 172.17.%\
+    --InstanceId dcdbt-fdpjf5zh \
+    --UserName testuser1 \
+    --Host 172.17.% \
     --Password abcd8765_.
 ```
 

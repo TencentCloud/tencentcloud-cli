@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tbp CreateBot --cli-unfold-argument  \
-    --BotName "*******"\
+    --BotName "*******" \
     --BotCnName "*******"
 ```
 

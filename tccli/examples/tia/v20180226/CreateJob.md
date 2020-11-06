@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tia CreateJob --cli-unfold-argument  \
-    --Name test-job\
-    --Cluster ap-beijing\
-    --RuntimeVersion tia-1.7.0\
-    --ScaleTier CUSTOM\
-    --MasterType 1U1G0P\
-    --WorkerType 1U1G0P\
-    --ParameterServerType 1U1G0P\
-    --WorkerCount 2\
-    --ParameterServerCount 1\
-    --Debug false\
-    --PackageDir '/* nfs or cos address */'\
-    --Command python\
+    --Name test-job \
+    --Cluster ap-beijing \
+    --RuntimeVersion tia-1.7.0 \
+    --ScaleTier CUSTOM \
+    --MasterType 1U1G0P \
+    --WorkerType 1U1G0P \
+    --ParameterServerType 1U1G0P \
+    --WorkerCount 2 \
+    --ParameterServerCount 1 \
+    --Debug false \
+    --PackageDir '/* nfs or cos address */' \
+    --Command python \
     --Args mnist_saved_model.py
 ```
 

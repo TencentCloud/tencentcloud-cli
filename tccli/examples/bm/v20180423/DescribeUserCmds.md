@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bm DescribeUserCmds --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
-    --OrderField createTime\
-    --Order 1\
+    --Offset 0 \
+    --Limit 10 \
+    --OrderField createTime \
+    --Order 1 \
     --SearchKey 3
 ```
 

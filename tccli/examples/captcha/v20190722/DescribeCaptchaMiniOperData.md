@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli captcha DescribeCaptchaMiniOperData --cli-unfold-argument  \
-    --CaptchaAppId 201111111\
-    --Start 20200909\
+    --CaptchaAppId 201111111 \
+    --Start 20200909 \
     --Type 2
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iot AppGetDeviceData --cli-unfold-argument  \
-    --AccessToken xxx\
-    --ProductId iot-a8ojgbji\
+    --AccessToken xxx \
+    --ProductId iot-a8ojgbji \
     --DeviceName device
 ```
 

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli iot UpdateRule --cli-unfold-argument  \
-    --RuleId rule-osh3ckco\
-    --Name 新规则名称\
-    --Description 新规则描述\
-    --Query.Field *\
-    --Query.Topic iot-4e0wsxpi/+/new-topic-1\
-    --Query.Condition \
-    --Actions.0.Topic.Topic iot-gl9kmqrs/new-device-1/new-topic-1\
+    --RuleId rule-osh3ckco \
+    --Name 新规则名称 \
+    --Description 新规则描述 \
+    --Query.Field * \
+    --Query.Topic iot-4e0wsxpi/+/new-topic-1 \
+    --Query.Condition  \
+    --Actions.0.Topic.Topic iot-gl9kmqrs/new-device-1/new-topic-1 \
     --Actions.1.Service.Url http://abc.com
 ```
 
@@ -64,12 +64,12 @@ Input:
 
 ```
 tccli iot UpdateRule --cli-unfold-argument  \
-    --RuleId rule-46d6lldw\
-    --Query.Field *\
-    --Query.ProductId iot-4e0wsxpi\
-    --Query.Condition \
-    --Actions.0.Ckafka.Region gz\
-    --Actions.0.Ckafka.InstanceId ckafka-fsl0f3wv\
+    --RuleId rule-46d6lldw \
+    --Query.Field * \
+    --Query.ProductId iot-4e0wsxpi \
+    --Query.Condition  \
+    --Actions.0.Ckafka.Region gz \
+    --Actions.0.Ckafka.InstanceId ckafka-fsl0f3wv \
     --Actions.0.Ckafka.TopicName shadow_events
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DeletePolicyGroup --cli-unfold-argument  \
-    --Module monitor\
+    --Module monitor \
     --GroupId 11111
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb SetSecurityGroupForLoadbalancers --cli-unfold-argument  \
-    --SecurityGroup sg-12345678\
-    --OperationType ADD\
+    --SecurityGroup sg-12345678 \
+    --OperationType ADD \
     --LoadBalancerIds lb-0936o712 lb-tttt5555
 ```
 

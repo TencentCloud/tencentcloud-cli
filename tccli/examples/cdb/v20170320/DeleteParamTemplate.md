@@ -1,4 +1,4 @@
-**Example 1: Deleting parameter template**
+**Example 1: Deleting a parameter template**
 
 
 

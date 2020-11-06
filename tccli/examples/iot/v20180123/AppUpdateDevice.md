@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iot AppUpdateDevice --cli-unfold-argument  \
-    --AccessToken xxx\
-    --ProductId iot-a8ojgbji\
-    --DeviceName aaa\
+    --AccessToken xxx \
+    --ProductId iot-a8ojgbji \
+    --DeviceName aaa \
     --AliasName nick
 ```
 

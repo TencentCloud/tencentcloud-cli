@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli vpc DescribeSubnets --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --Filters.0.Name subnet-name\
-    --Filters.0.Values 'Default Guangzhou Zone 2 subnet'\
-    --Filters.1.Name vpc-id\
-    --Filters.1.Values vpc-2at5y1pn\
-    --Filters.2.Name subnet-id\
-    --Filters.2.Values subnet-otu92seu\
-    --Filters.3.Name cidr-block\
-    --Filters.3.Values 172.16.16.0\
-    --Filters.4.Name is-default\
+    --Version 2017-03-12 \
+    --Filters.0.Name subnet-name \
+    --Filters.0.Values 'Default Guangzhou Zone 2 subnet' \
+    --Filters.1.Name vpc-id \
+    --Filters.1.Values vpc-2at5y1pn \
+    --Filters.2.Name subnet-id \
+    --Filters.2.Values subnet-otu92seu \
+    --Filters.3.Name cidr-block \
+    --Filters.3.Values 172.16.16.0 \
+    --Filters.4.Name is-default \
     --Filters.4.Values true
 ```
 
@@ -54,8 +54,8 @@ Input:
 
 ```
 tccli vpc DescribeSubnets --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --Filters.0.Name tag:city\
+    --Version 2017-03-12 \
+    --Filters.0.Name tag:city \
     --Filters.0.Values shanghai
 ```
 

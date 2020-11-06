@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli gme CreateApp --cli-unfold-argument  \
-    --AppName simple_gme_application\
-    --ProjectId 10000,\
-    --RealtimeSpeechConf.Status open\
-    --RealtimeSpecchConf.Quality high\
-    --VoiceMessageConf.Status close\
+    --AppName simple_gme_application \
+    --ProjectId 10000, \
+    --RealtimeSpeechConf.Status open \
+    --RealtimeSpecchConf.Quality high \
+    --VoiceMessageConf.Status close \
     --VoiceFilterConf.Status open
 ```
 

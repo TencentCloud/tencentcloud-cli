@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cr DownloadDialogueText --cli-unfold-argument  \
-    --Module Report\
-    --Operation DownloadTextReport\
-    --InstId ins-abc123\
+    --Module Report \
+    --Operation DownloadTextReport \
+    --InstId ins-abc123 \
     --ReportDate 2018-07-15
 ```
 

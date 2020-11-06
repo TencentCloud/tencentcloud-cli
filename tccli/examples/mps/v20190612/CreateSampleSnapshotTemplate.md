@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mps CreateSampleSnapshotTemplate --cli-unfold-argument  \
-    --Name 'Sampled screencapturing template 1'\
-    --Width 540\
-    --Height 960\
-    --SampleType Percent\
-    --SampleInterval 10\
+    --Name 'Sampled screencapturing template 1' \
+    --Width 540 \
+    --Height 960 \
+    --SampleType Percent \
+    --SampleInterval 10 \
     --Format jpg
 ```
 

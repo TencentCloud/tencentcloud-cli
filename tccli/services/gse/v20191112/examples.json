@@ -24,6 +24,14 @@
         "title": "创建生成包"
       }
     ],
+    "CreateAssetWithImage": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=CreateAssetWithImage\n&AssetName=asset-demo\n&AssetVersion=1.0\n&AssetRegion=ap-shanghai\n&ImageId=img-pj8r89ch\n&ImageSize=40GB\n&ImageOs=CentOS 6.5 64bit\n&OsType=CentOS\n&ImageType=SHARED_IMAGE\n&OsBit=64\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AssetArn\": \"qcs::gse:ap-shanghai:uin/838831829:asset/asset-mds6425j\",\r\n        \"AssetId\": \"asset-mds6425j\",\r\n        \"RequestId\": \"s1604054956874940891\"\r\n    }\r\n}",
+        "title": "创建生成包镜像信息"
+      }
+    ],
     "CreateFleet": [
       {
         "document": "创建服务器舰队",
@@ -100,7 +108,7 @@
       {
         "document": "获取生成包信息",
         "input": "https://gse.tencentcloudapi.com/?Action=DescribeAsset\n&AssetId=asset-i5gtz5l9\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Asset\": {\r\n           \"AssetId\": \"build-xxxxx\",\r\n    \t   \"AssetName\": \"test\",\r\n    \t   \"AssetVersion\":  \"test\",\r\n    \t   \"OperateSystem\":  \"centos\",\r\n    \t   \"Stauts\":  1,\r\n    \t   \"Size\":  \"11M\",\r\n    \t   \"CreateTime\":  \"2019-11-28 20:04:32\",\r\n    \t   \"BindFleetNum\":  2,\r\n           \"OsType\": \"xx\",\r\n           \"AssetArn\": \"xx\", \r\n           \"ImageId\": \"xx\"\r\n        },\r\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"Asset\": {\r\n           \"AssetId\": \"build-xxxxx\",\r\n    \t   \"AssetName\": \"test\",\r\n    \t   \"AssetVersion\":  \"test\",\r\n    \t   \"OperateSystem\":  \"centos\",\r\n    \t   \"Stauts\":  1,\r\n    \t   \"Size\":  \"11M\",\r\n    \t   \"CreateTime\":  \"2019-11-28 20:04:32\",\r\n    \t   \"BindFleetNum\":  2,\r\n           \"OsType\": \"xx\",\r\n           \"ResourceType\": \"IMAGE\",\r\n           \"SharingStatus\": \"SHARED\",\r\n           \"AssetArn\": \"xx\", \r\n           \"ImageId\": \"xx\"\r\n        },\r\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n    }\r\n}",
         "title": "获取生成包信息"
       }
     ],
@@ -116,7 +124,7 @@
       {
         "document": "拉取生成包列表",
         "input": "https://gse.tencentcloudapi.com/?Action=DescribeAssets\n&AssetRegion=ap-shanghai\n&Limit=1\n&Offset=2\n&Filter=xxx\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Assets\": [\r\n           {\r\n              \"AssetId\": \"asset-xxxxx\",\r\n    \t      \"AssetName\": \"test\",\r\n    \t      \"AssetVersion\":  \"test\",\r\n    \t      \"OperateSystem\":  \"centos\",\r\n    \t      \"Stauts\":  1,\r\n    \t      \"Size\":  \"11M\",\r\n    \t      \"CreateTime\":  \"2019-11-28 20:04:32\",\r\n    \t      \"BindFleetNum\":  2,\r\n              \"AssetArn\": \"xx\",\r\n              \"OsType\": \"CentOS\", \r\n              \"ImageId\": \"xx\"\r\n           }\r\n        ],\r\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Assets\": [\r\n           {\r\n              \"AssetId\": \"asset-xxxxx\",\r\n    \t      \"AssetName\": \"test\",\r\n    \t      \"AssetVersion\":  \"test\",\r\n    \t      \"OperateSystem\":  \"centos\",\r\n    \t      \"Stauts\":  1,\r\n    \t      \"Size\":  \"11M\",\r\n    \t      \"CreateTime\":  \"2019-11-28 20:04:32\",\r\n    \t      \"BindFleetNum\":  2,\r\n              \"AssetArn\": \"xx\",\r\n              \"OsType\": \"CentOS\", \r\n              \"ResourceType\": \"IMAGE\",\r\n              \"SharingStatus\": \"SHARED\",\r\n              \"ImageId\": \"xx\"\r\n           }\r\n        ],\r\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n    }\r\n}",
         "title": "拉取生成包列表"
       }
     ],

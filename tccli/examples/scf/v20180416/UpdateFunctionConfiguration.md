@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf UpdateFunctionConfiguration --cli-unfold-argument  \
-    --FunctionName <FunctionName>\
+    --FunctionName <FunctionName> \
     --Description <Description>
 ```
 

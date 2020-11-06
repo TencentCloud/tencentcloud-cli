@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu ModifyDDoSWaterKey --cli-unfold-argument  \
-    --Business bgpip\
-    --PolicyId policy-000000xe\
-    --Method add\
+    --Business bgpip \
+    --PolicyId policy-000000xe \
+    --Method add \
     --KeyId 0
 ```
 

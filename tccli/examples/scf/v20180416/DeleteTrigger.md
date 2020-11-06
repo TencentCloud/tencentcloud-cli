@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli scf DeleteTrigger --cli-unfold-argument  \
-    --FunctionName ledDummyAPITest\
-    --TriggerName test3\
+    --FunctionName ledDummyAPITest \
+    --TriggerName test3 \
     --Type timer
 ```
 

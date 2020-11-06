@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mvj MarketingValueJudgement --cli-unfold-argument  \
-    --AccountType 4\
-    --Uid 17620430702\
-    --UserIp 117.62.203.111\
-    --PostTime 1569486063\
-    --Imei 861622010000056\
+    --AccountType 4 \
+    --Uid 17620430702 \
+    --UserIp 117.62.203.111 \
+    --PostTime 1569486063 \
+    --Imei 861622010000056 \
     --Referer 1569571332
 ```
 
@@ -37,11 +37,11 @@ Input:
 
 ```
 tccli mvj MarketingValueJudgement --cli-unfold-argument  \
-    --AccountType 4\
-    --Uid 1620430702\
-    --UserIp 117.62.203.111\
-    --PostTime 1569486063\
-    --Imei 861622010000056\
+    --AccountType 4 \
+    --Uid 1620430702 \
+    --UserIp 117.62.203.111 \
+    --PostTime 1569486063 \
+    --Imei 861622010000056 \
     --Referer 1569571332
 ```
 

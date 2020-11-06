@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmlb UnbindTrafficMirrorReceivers --cli-unfold-argument  \
-    --TrafficMirrorId bmtm-lmep0eit\
-    --ReceiverSet.0.Port 113\
+    --TrafficMirrorId bmtm-lmep0eit \
+    --ReceiverSet.0.Port 113 \
     --ReceiverSet.0.InstanceId tcpm-px13l9jh
 ```
 

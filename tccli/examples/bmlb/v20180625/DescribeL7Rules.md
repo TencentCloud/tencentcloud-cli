@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmlb DescribeL7Rules --cli-unfold-argument  \
-    --LoadBalancerId lb-47gazeml\
+    --LoadBalancerId lb-47gazeml \
     --ListenerId lbl-l6fzjsx5
 ```
 

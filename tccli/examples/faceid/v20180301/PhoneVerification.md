@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli faceid PhoneVerification --cli-unfold-argument  \
-    --IdCard 440111201903211111\
-    --Name 张三\
+    --IdCard 440111201903211111 \
+    --Name 张三 \
     --Phone 13000000000
 ```
 

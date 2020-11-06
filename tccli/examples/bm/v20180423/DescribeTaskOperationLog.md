@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bm DescribeTaskOperationLog --cli-unfold-argument  \
-    --TaskId bmj-test\
-    --OrderField OperationTime\
+    --TaskId bmj-test \
+    --OrderField OperationTime \
     --Order 0
 ```
 

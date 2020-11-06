@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb CreateAuditPolicy --cli-unfold-argument  \
-    --Name audit_policy_1\
-    --RuleId cdbrule-asdfghjk\
+    --Name audit_policy_1 \
+    --RuleId cdbrule-asdfghjk \
     --InstanceId cdb-qwerasdf
 ```
 

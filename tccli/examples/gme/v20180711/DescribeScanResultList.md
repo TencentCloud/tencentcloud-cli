@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gme DescribeScanResultList --cli-unfold-argument  \
-    --BizId 1400000000\
-    --TaskIdList xxx\
+    --BizId 1400000000 \
+    --TaskIdList xxx \
     --Limit 20
 ```
 

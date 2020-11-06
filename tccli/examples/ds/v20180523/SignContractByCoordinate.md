@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli ds SignContractByCoordinate --cli-unfold-argument  \
-    --Module ContractMng\
-    --Operation SignContractByCoordinate\
-    --ContractResId dcc-480rzey2gw\
-    --AccountResId dcu-c33uil3apq\
-    --AuthorizationTime 20180531142255\
-    --Position 10.0.0.238\
-    --SealResId dcs-c654e84rqw\
-    --SignLocations.0.SignOnPage 1\
-    --SignLocations.0.SignLocationLBX 50\
-    --SignLocations.0.SignLocationLBY 140\
-    --SignLocations.0.SignLocationRUX 110\
+    --Module ContractMng \
+    --Operation SignContractByCoordinate \
+    --ContractResId dcc-480rzey2gw \
+    --AccountResId dcu-c33uil3apq \
+    --AuthorizationTime 20180531142255 \
+    --Position 10.0.0.238 \
+    --SealResId dcs-c654e84rqw \
+    --SignLocations.0.SignOnPage 1 \
+    --SignLocations.0.SignLocationLBX 50 \
+    --SignLocations.0.SignLocationLBY 140 \
+    --SignLocations.0.SignLocationRUX 110 \
     --SignLocations.0.SignLocationRUY 200
 ```
 

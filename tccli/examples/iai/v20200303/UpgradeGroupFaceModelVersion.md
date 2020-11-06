@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai UpgradeGroupFaceModelVersion --cli-unfold-argument  \
-    --GroupId 1001\
+    --GroupId 1001 \
     --FaceModelVersion 3.0
 ```
 

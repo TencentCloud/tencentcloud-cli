@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway DescribeApi --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
+    --ServiceId service-ody35h5e \
     --ApiId api-3v4tzy3u
 ```
 

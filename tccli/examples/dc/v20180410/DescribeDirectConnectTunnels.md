@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dc DescribeDirectConnectTunnels --cli-unfold-argument  \
-    --Filters.0.Name direct-connect-tunnel-id\
-    --Filters.0.Values dcx-r3sml04o\
-    --Limit 20\
+    --Filters.0.Name direct-connect-tunnel-id \
+    --Filters.0.Values dcx-r3sml04o \
+    --Limit 20 \
     --Offset 1
 ```
 
@@ -52,9 +52,9 @@ Input:
 
 ```
 tccli dc DescribeDirectConnectTunnels --cli-unfold-argument  \
-    --Filters.0.Name direct-connect-tunnel-id\
-    --Filters.0.Values dcx-r3sml04o\
-    --Limit 20\
+    --Filters.0.Name direct-connect-tunnel-id \
+    --Filters.0.Values dcx-r3sml04o \
+    --Limit 20 \
     --Offset 2
 ```
 

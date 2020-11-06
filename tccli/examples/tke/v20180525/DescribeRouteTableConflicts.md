@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeRouteTableConflicts --cli-unfold-argument  \
-    --RouteTableCidrBlock 10.4.0.0/16\
+    --RouteTableCidrBlock 10.4.0.0/16 \
     --VpcId vpc-xxx
 ```
 

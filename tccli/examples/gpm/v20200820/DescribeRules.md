@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gpm DescribeRules --cli-unfold-argument  \
-    --PageNumber 1\
-    --PageSize 10\
-    --SearchType ruleCode\
+    --PageNumber 1 \
+    --PageSize 10 \
+    --SearchType ruleCode \
     --Keyword rule-r4x6tk49
 ```
 

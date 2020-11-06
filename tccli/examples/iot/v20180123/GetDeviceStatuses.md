@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot GetDeviceStatuses --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
+    --ProductId iot-4e0wsxpi \
     --DeviceNames device1 device2
 ```
 

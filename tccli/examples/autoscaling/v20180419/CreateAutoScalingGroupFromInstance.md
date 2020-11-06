@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli as CreateAutoScalingGroupFromInstance --cli-unfold-argument  \
-    --AutoScalingGroupName as-test\
-    --InstanceId ins-19a14o9y\
-    --MinSize 0\
-    --MaxSize 1\
-    --DesiredCapacity 0\
+    --AutoScalingGroupName as-test \
+    --InstanceId ins-19a14o9y \
+    --MinSize 0 \
+    --MaxSize 1 \
+    --DesiredCapacity 0 \
     --InheritInstanceTag False
 ```
 

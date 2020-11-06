@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli as UpgradeLifecycleHook --cli-unfold-argument  \
-    --LifecycleHookId ash-8azjzxj9\
-    --DefaultResult CONTINUE\
-    --HeartbeatTimeout 240\
-    --LifecycleHookName hook-updated\
+    --LifecycleHookId ash-8azjzxj9 \
+    --DefaultResult CONTINUE \
+    --HeartbeatTimeout 240 \
+    --LifecycleHookName hook-updated \
     --LifecycleTransition INSTANCE_LAUNCHING
 ```
 

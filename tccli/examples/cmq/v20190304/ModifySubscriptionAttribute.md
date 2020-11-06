@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cmq ModifySubscriptionAttribute --cli-unfold-argument  \
-    --TopicName test\
-    --SubscriptionName test\
+    --TopicName test \
+    --SubscriptionName test \
     --BindingKey test
 ```
 

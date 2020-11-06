@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DescribeSchedulingDomainList --cli-unfold-argument  \
-    --Limit 30\
+    --Limit 30 \
     --Offset 0
 ```
 

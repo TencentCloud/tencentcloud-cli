@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ccc DescribeIMCdrs --cli-unfold-argument  \
-    --InstanceId 12\
-    --StartTimestamp 1603877878\
+    --InstanceId 12 \
+    --StartTimestamp 1603877878 \
     --EndTimestamp 1603877879
 ```
 

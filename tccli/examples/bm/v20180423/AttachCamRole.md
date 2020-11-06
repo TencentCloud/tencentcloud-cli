@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bm AttachCamRole --cli-unfold-argument  \
-    --InstanceId cpm-xxx0\
+    --InstanceId cpm-xxx0 \
     --RoleName camrolename
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iottid UploadDeviceUniqueCode --cli-unfold-argument  \
-    --OrderId SbRTDKP1L4\
+    --OrderId SbRTDKP1L4 \
     --CodeSet 000001 000002 000003
 ```
 

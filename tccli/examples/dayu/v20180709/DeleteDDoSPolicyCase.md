@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dayu DeleteDDoSPolicyCase --cli-unfold-argument  \
-    --Business bgpip\
+    --Business bgpip \
     --SceneId scene-00000003
 ```
 

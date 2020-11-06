@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli monitor DescribeProductList --cli-unfold-argument  \
-    --Module monitor\
-    --Order DESC\
-    --Offset 0\
+    --Module monitor \
+    --Order DESC \
+    --Offset 0 \
     --Limit 5
 ```
 

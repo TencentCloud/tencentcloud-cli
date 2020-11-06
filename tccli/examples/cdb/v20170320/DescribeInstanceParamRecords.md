@@ -1,4 +1,4 @@
-**Example 1: Querying parameter modification log**
+**Example 1: Querying instance parameter modification logs**
 
 
 

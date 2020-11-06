@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sms DescribeSmsTemplateList --cli-unfold-argument  \
-    --TemplateIdSet 1110 1111\
+    --TemplateIdSet 1110 1111 \
     --International 0
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dts ModifySubscribeObjects --cli-unfold-argument  \
-    --SubscribeId subs-ieuwi83j2e\
+    --SubscribeId subs-ieuwi83j2e \
     --SubscribeObjectType 0
 ```
 

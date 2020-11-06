@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc DescribeAddressTemplates --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --Filters.0.Name address-template-name\
-    --Filters.0.Values TestName\
-    --Filters.1.Name address-template-id\
+    --Version 2017-03-12 \
+    --Filters.0.Name address-template-name \
+    --Filters.0.Values TestName \
+    --Filters.1.Name address-template-id \
     --Filters.1.Values ipm-mdunqeb6
 ```
 

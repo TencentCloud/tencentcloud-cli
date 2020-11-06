@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli sqlserver CreateMigration --cli-unfold-argument  \
-    --MigrateName 'Test API'\
-    --MigrateType 2\
-    --SourceType 5\
-    --Source.Url http://gz-oncvm-1254065710.cosgz.myqcloud.com/testdb.bak\
+    --MigrateName 'Test API' \
+    --MigrateType 2 \
+    --SourceType 5 \
+    --Source.Url http://gz-oncvm-1254065710.cosgz.myqcloud.com/testdb.bak \
     --Target.InstanceId mssql-si2823jyl
 ```
 

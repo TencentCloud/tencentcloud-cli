@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli gaap ModifyTCPListenerAttribute --cli-unfold-argument  \
-    --ProxyId link-bjkpdum1\
-    --ListenerId listener-o0f3at99\
-    --ListenerName test10\
-    --Scheduler rr\
-    --DelayLoop 30\
-    --ConnectTimeout 20\
+    --ProxyId link-bjkpdum1 \
+    --ListenerId listener-o0f3at99 \
+    --ListenerName test10 \
+    --Scheduler rr \
+    --DelayLoop 30 \
+    --ConnectTimeout 20 \
     --HealthCheck 1
 ```
 

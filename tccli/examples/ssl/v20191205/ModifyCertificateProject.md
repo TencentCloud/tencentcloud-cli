@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl ModifyCertificateProject --cli-unfold-argument  \
-    --CertificateIdList ABCD1234 ABCD1235 ABCD1236\
+    --CertificateIdList ABCD1234 ABCD1235 ABCD1236 \
     --ProjectId 12345
 ```
 

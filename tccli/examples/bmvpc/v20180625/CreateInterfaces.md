@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc CreateInterfaces --cli-unfold-argument  \
-    --VpcId vpc-q1j48dkd\
-    --SubnetId subnet-q1j48dkd\
+    --VpcId vpc-q1j48dkd \
+    --SubnetId subnet-q1j48dkd \
     --InstanceIds cpm-q1j48dkd
 ```
 

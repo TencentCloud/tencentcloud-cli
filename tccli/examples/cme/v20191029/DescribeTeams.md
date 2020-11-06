@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeTeams --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --TeamIds 1kdk882ddd88338ddd3k3 1kdk882ddd88338ddd3k4
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb DeleteListener --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
+    --LoadBalancerId lb-cuxw2rm0 \
     --ListenerId lbl-4udz130k
 ```
 

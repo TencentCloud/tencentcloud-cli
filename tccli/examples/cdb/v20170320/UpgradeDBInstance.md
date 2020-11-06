@@ -1,4 +1,4 @@
-**Example 1: Upgrading TencentDB instance**
+**Example 1: Upgrading a TencentDB instance**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb UpgradeDBInstance --cli-unfold-argument  \
-    --InstanceId cdb-6si6qy6p\
-    --Memory 1000\
+    --InstanceId cdb-6si6qy6p \
+    --Memory 1000 \
     --Volume 50
 ```
 

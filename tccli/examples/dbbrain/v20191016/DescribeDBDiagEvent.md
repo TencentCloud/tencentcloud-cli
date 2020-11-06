@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeDBDiagEvent --cli-unfold-argument  \
-    --InstanceId test\
+    --InstanceId test \
     --EventId 5
 ```
 

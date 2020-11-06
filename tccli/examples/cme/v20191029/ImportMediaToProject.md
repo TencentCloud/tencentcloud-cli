@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cme ImportMediaToProject --cli-unfold-argument  \
-    --Platform test\
-    --ProjectId user_111\
-    --VodFileId 111122\
-    --Name test\
+    --Platform test \
+    --ProjectId user_111 \
+    --VodFileId 111122 \
+    --Name test \
     --PreProcessDefinition 10
 ```
 

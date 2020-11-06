@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ms DescribeShieldInstances --cli-unfold-argument  \
-    --Filters.0.Name AppName\
-    --Filters.0.Value wechat\
-    --Filters.1.Name AppPkgName\
-    --Filters.1.Value com.tencent.mm\
-    --Offset 0\
+    --Filters.0.Name AppName \
+    --Filters.0.Value wechat \
+    --Filters.1.Name AppPkgName \
+    --Filters.1.Value com.tencent.mm \
+    --Offset 0 \
     --Limit 20
 ```
 

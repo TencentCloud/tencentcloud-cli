@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr CreateInstance --cli-unfold-argument  \
-    --RegistryName tcr-test\
+    --RegistryName tcr-test \
     --RegistryType standard
 ```
 

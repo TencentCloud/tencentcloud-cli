@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli vod CreateSampleSnapshotTemplate --cli-unfold-argument  \
-    --Name 'Screencapturing with specified width and height'\
-    --Width 540\
-    --Height 960\
-    --SampleType Percent\
-    --SampleInterval 10\
+    --Name 'Screencapturing with specified width and height' \
+    --Width 540 \
+    --Height 960 \
+    --SampleType Percent \
+    --SampleInterval 10 \
     --Format jpg
 ```
 
@@ -32,12 +32,12 @@ Input:
 
 ```
 tccli vod CreateSampleSnapshotTemplate --cli-unfold-argument  \
-    --Name 'Long side screencapturing'\
-    --Width 0\
-    --Height 0\
-    --Long 1080\
-    --SampleType Percent\
-    --SampleInterval 10\
+    --Name 'Long side screencapturing' \
+    --Width 0 \
+    --Height 0 \
+    --Long 1080 \
+    --SampleType Percent \
+    --SampleInterval 10 \
     --Format jpg
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tag CreateTag --cli-unfold-argument  \
-    --TagKey testTagKey\
+    --TagKey testTagKey \
     --TagValue testTagValue
 ```
 

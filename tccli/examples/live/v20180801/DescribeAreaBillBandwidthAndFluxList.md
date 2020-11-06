@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live DescribeAreaBillBandwidthAndFluxList --cli-unfold-argument  \
-    --PlayDomains 5000.playdomain.com\
-    --StartTime 2019-02-0100:00:00\
+    --PlayDomains 5000.playdomain.com \
+    --StartTime 2019-02-0100:00:00 \
     --EndTime 2019-02-0100:10:00
 ```
 

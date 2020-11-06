@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
-    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhhh.m3u8\
-    --StartTimeOffset 2\
+    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhhh.m3u8 \
+    --StartTimeOffset 2 \
     --EndTimeOffset -10
 ```
 
@@ -56,8 +56,8 @@ Input:
 
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
-    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8\
-    --StartTimeOffset 2\
+    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8 \
+    --StartTimeOffset 2 \
     --EndTimeOffset 10
 ```
 

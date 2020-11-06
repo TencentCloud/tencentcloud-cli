@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecc EHOCR --cli-unfold-argument  \
-    --InputType 1\
-    --Image ccc\
+    --InputType 1 \
+    --Image ccc \
     --ServerType 0
 ```
 
@@ -33,8 +33,8 @@ Input:
 
 ```
 tccli ecc EHOCR --cli-unfold-argument  \
-    --InputType 1\
-    --Image ccc\
+    --InputType 1 \
+    --Image ccc \
     --ServerType 1
 ```
 
@@ -148,8 +148,8 @@ Input:
 
 ```
 tccli ecc EHOCR --cli-unfold-argument  \
-    --InputType 1\
-    --Image ccc\
+    --InputType 1 \
+    --Image ccc \
     --IsAsync 1
 ```
 

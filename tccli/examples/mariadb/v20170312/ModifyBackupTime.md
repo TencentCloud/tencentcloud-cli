@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mariadb ModifyBackupTime --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
-    --StartBackupTime 03:00\
+    --InstanceId tdsql-fdpjf5zh \
+    --StartBackupTime 03:00 \
     --EndBackupTime 05:59
 ```
 

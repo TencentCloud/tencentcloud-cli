@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb CreateAuditLogFile --cli-unfold-argument  \
-    --InstanceId cdb-qwerasdf\
-    --StartTime '2017-07-12 10:29:20'\
+    --InstanceId cdb-qwerasdf \
+    --StartTime '2017-07-12 10:29:20' \
     --EndTime '2017-07-13 10:29:20'
 ```
 

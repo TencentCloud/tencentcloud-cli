@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli as StartAutoScalingInstances --cli-unfold-argument  \
-    --AutoScalingGroupId asg-boz1qhnk\
+    --AutoScalingGroupId asg-boz1qhnk \
     --InstanceIds ins-cri8d02t ins-osckfnm7
 ```
 

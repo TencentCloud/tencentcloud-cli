@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ccc CreateStaff --cli-unfold-argument  \
-    --SdkAppId 1400000000\
-    --Staffs.0.Phone 联系电话\
+    --SdkAppId 1400000000 \
+    --Staffs.0.Phone 联系电话 \
     --Staffs.0.Mail 联系人邮箱
 ```
 

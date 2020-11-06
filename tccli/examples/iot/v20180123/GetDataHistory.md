@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iot GetDataHistory --cli-unfold-argument  \
-    --ProductId iot-4e0wsxpi\
-    --DeviceNames dev0 dev5\
-    --StartTime '2018-03-30 00:00:00'\
-    --EndTime '2018-03-30 23:00:00'\
+    --ProductId iot-4e0wsxpi \
+    --DeviceNames dev0 dev5 \
+    --StartTime '2018-03-30 00:00:00' \
+    --EndTime '2018-03-30 23:00:00' \
     --Size 5
 ```
 

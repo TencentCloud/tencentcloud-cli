@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotvideo DeliverStorageService --cli-unfold-argument  \
-    --SrcServiceId 3452345\
-    --Tid 2345345\
-    --ChnNum 123\
+    --SrcServiceId 3452345 \
+    --Tid 2345345 \
+    --ChnNum 123 \
     --AccessId 4564545645
 ```
 

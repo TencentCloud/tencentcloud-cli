@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud UnbindDevices --cli-unfold-argument  \
-    --GatewayProductId 12345ABCDE\
-    --GatewayDeviceName test\
-    --ProductId ABCDE12345\
+    --GatewayProductId 12345ABCDE \
+    --GatewayDeviceName test \
+    --ProductId ABCDE12345 \
     --DeviceNames test0 test1
 ```
 

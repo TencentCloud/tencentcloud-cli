@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli clb ModifyBlockIPList --cli-unfold-argument  \
-    --LoadBalancerIds lb-6efswuxa\
-    --Type add_blocked\
-    --BlockIPList 1.2.3.4\
-    --ExpireTime 3000\
-    --AddStrategy fifo\
+    --LoadBalancerIds lb-6efswuxa \
+    --Type add_blocked \
+    --BlockIPList 1.2.3.4 \
+    --ExpireTime 3000 \
+    --AddStrategy fifo \
     --ClientIPField client_ip_test
 ```
 
@@ -32,8 +32,8 @@ Input:
 
 ```
 tccli clb ModifyBlockIPList --cli-unfold-argument  \
-    --LoadBalancerIds lb-6efswuxa\
-    --Type add_customized_field\
+    --LoadBalancerIds lb-6efswuxa \
+    --Type add_customized_field \
     --ClientIPField client_ip_test
 ```
 

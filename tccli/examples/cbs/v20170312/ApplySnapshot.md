@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs ApplySnapshot --cli-unfold-argument  \
-    --DiskId disk-lzrg2pwi\
+    --DiskId disk-lzrg2pwi \
     --SnapshotId snap-gybrif0z
 ```
 

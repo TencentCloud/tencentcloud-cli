@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli as CreateScheduledAction --cli-unfold-argument  \
-    --AutoScalingGroupId asg-2nr9xh8h\
-    --ScheduledActionName scheduled-action-0\
-    --MaxSize 10\
-    --MinSize 4\
-    --DesiredCapacity 6\
+    --AutoScalingGroupId asg-2nr9xh8h \
+    --ScheduledActionName scheduled-action-0 \
+    --MaxSize 10 \
+    --MinSize 4 \
+    --DesiredCapacity 6 \
     --StartTime 2018-08-28T23:00:00+08:00
 ```
 
@@ -32,13 +32,13 @@ Input:
 
 ```
 tccli as CreateScheduledAction --cli-unfold-argument  \
-    --AutoScalingGroupId asg-2nr9xh8h\
-    --ScheduledActionName scheduled-action-1\
-    --MaxSize 7\
-    --MinSize 2\
-    --DesiredCapacity 3\
-    --StartTime 2018-08-28T23:00:00+08:00\
-    --EndTime 2019-01-01T00:00:00+08:00\
+    --AutoScalingGroupId asg-2nr9xh8h \
+    --ScheduledActionName scheduled-action-1 \
+    --MaxSize 7 \
+    --MinSize 2 \
+    --DesiredCapacity 3 \
+    --StartTime 2018-08-28T23:00:00+08:00 \
+    --EndTime 2019-01-01T00:00:00+08:00 \
     --Recurrence '0 23 */1 * *'
 ```
 

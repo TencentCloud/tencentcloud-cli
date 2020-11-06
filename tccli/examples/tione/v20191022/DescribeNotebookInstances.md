@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tione DescribeNotebookInstances --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
-    --SortOrder Descending\
-    --Filters.0.Name instance-name\
+    --Offset 0 \
+    --Limit 10 \
+    --SortOrder Descending \
+    --Filters.0.Name instance-name \
     --Filters.0.Values aaaafixa1
 ```
 

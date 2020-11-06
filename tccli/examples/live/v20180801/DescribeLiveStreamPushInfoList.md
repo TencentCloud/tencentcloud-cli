@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live DescribeLiveStreamPushInfoList --cli-unfold-argument  \
-    --PushDomain 5000.pushdomain.com\
-    --AppName live\
-    --PageNum 1\
+    --PushDomain 5000.pushdomain.com \
+    --AppName live \
+    --PageNum 1 \
     --PageSize 1000
 ```
 

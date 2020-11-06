@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli sqlserver DescribeBackups --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl\
-    --StartTime 2018-03-2800:00:00\
-    --EndTime 2018-04-2000:00:00\
-    --Limit 20\
+    --InstanceId mssql-njj2mtpl \
+    --StartTime 2018-03-2800:00:00 \
+    --EndTime 2018-04-2000:00:00 \
+    --Limit 20 \
     --Offset 0
 ```
 

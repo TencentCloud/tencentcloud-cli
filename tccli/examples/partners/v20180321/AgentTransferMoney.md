@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli partners AgentTransferMoney --cli-unfold-argument  \
-    --ClientUin 125****938\
+    --ClientUin 125****938 \
     --Amount 100
 ```
 

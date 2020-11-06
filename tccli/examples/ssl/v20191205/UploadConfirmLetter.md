@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl UploadConfirmLetter --cli-unfold-argument  \
-    --CertificateId flSFd6Fh\
+    --CertificateId flSFd6Fh \
     --ConfirmLetter UEsDBBQABgAIAAAAIQCM19MmCg......
 ```
 

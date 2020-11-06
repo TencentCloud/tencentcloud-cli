@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli sts AssumeRoleWithSAML --cli-unfold-argument  \
-    --PrincipalArn qcs::cam::uin/798950673:saml-provider/OneLogin\
-    --RoleArn qcs::cam::uin/798950673:roleName/OneLogin-Role\
-    --RoleSessionName test\
+    --PrincipalArn qcs::cam::uin/798950673:saml-provider/OneLogin \
+    --RoleArn qcs::cam::uin/798950673:roleName/OneLogin-Role \
+    --RoleSessionName test \
     --SAMLAssertion c2FtbCBhc3NlcnRpb24
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli scf ListTriggers --cli-unfold-argument  \
-    --FunctionName aaa\
-    --Limit 2\
+    --FunctionName aaa \
+    --Limit 2 \
     --Order ASC
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cfs UpdateCfsRule --cli-unfold-argument  \
-    --RuleId rule-12345\
-    --PGroupId pgroup-12345\
-    --AuthClientIp 10.0.0.10\
-    --RWPermission rw\
-    --UserPermission no_root_squash\
+    --RuleId rule-12345 \
+    --PGroupId pgroup-12345 \
+    --AuthClientIp 10.0.0.10 \
+    --RWPermission rw \
+    --UserPermission no_root_squash \
     --Priority 7
 ```
 

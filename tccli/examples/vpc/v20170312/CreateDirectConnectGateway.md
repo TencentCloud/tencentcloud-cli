@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc CreateDirectConnectGateway --cli-unfold-argument  \
-    --DirectConnectGatewayName test\
-    --NetworkType CCN\
-    --NetworkInstanceId ccn-8j0phqix\
+    --DirectConnectGatewayName test \
+    --NetworkType CCN \
+    --NetworkInstanceId ccn-8j0phqix \
     --GatewayType NORMAL
 ```
 
@@ -39,9 +39,9 @@ Input:
 
 ```
 tccli vpc CreateDirectConnectGateway --cli-unfold-argument  \
-    --DirectConnectGatewayName test\
-    --NetworkType VPC\
-    --NetworkInstanceId vpc-m7sr81gh\
+    --DirectConnectGatewayName test \
+    --NetworkType VPC \
+    --NetworkInstanceId vpc-m7sr81gh \
     --GatewayType NAT
 ```
 

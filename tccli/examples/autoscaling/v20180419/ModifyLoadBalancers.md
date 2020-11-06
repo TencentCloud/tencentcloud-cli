@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli as ModifyLoadBalancers --cli-unfold-argument  \
-    --AutoScalingGroupId asg-12wjuh0s\
+    --AutoScalingGroupId asg-12wjuh0s \
     --LoadBalancerIds lb-crhgatrf
 ```
 
@@ -28,12 +28,12 @@ Input:
 
 ```
 tccli as ModifyLoadBalancers --cli-unfold-argument  \
-    --AutoScalingGroupId asg-12wjuh0s\
-    --ForwardLoadBalancers.0.LoadBalancerId lb-23aejgcv\
-    --ForwardLoadBalancers.0.ListenerId lbl-ncw704sn\
-    --ForwardLoadBalancers.0.LocationId loc-l3hmaev9\
-    --ForwardLoadBalancers.0.Region ap-guangzhou\
-    --ForwardLoadBalancers.0.TargetAttributes.0.Port 8080\
+    --AutoScalingGroupId asg-12wjuh0s \
+    --ForwardLoadBalancers.0.LoadBalancerId lb-23aejgcv \
+    --ForwardLoadBalancers.0.ListenerId lbl-ncw704sn \
+    --ForwardLoadBalancers.0.LocationId loc-l3hmaev9 \
+    --ForwardLoadBalancers.0.Region ap-guangzhou \
+    --ForwardLoadBalancers.0.TargetAttributes.0.Port 8080 \
     --ForwardLoadBalancers.0.TargetAttributes.0.Weight 10
 ```
 

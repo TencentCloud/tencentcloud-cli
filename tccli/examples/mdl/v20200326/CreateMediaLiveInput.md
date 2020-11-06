@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mdl CreateMediaLiveInput --cli-unfold-argument  \
-    --Name sdad\
-    --Type RTMP_PUSH\
-    --SecurityGroupIds 123\
-    --InputSettings.0.AppName live\
+    --Name sdad \
+    --Type RTMP_PUSH \
+    --SecurityGroupIds 123 \
+    --InputSettings.0.AppName live \
     --InputSettings.0.StreamName test
 ```
 

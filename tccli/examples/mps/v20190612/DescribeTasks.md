@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps DescribeTasks --cli-unfold-argument  \
-    --Status FINISH\
+    --Status FINISH \
     --Limit 5
 ```
 
@@ -65,7 +65,7 @@ Input:
 
 ```
 tccli mps DescribeTasks --cli-unfold-argument  \
-    --Status PROCESSING\
+    --Status PROCESSING \
     --Limit 5
 ```
 
@@ -96,8 +96,8 @@ Input:
 
 ```
 tccli mps DescribeTasks --cli-unfold-argument  \
-    --Status FINISH\
-    --Limit 5\
+    --Status FINISH \
+    --Limit 5 \
     --ScrollToken taskId6
 ```
 

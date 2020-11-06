@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tbaas GetTransByHashHandler --cli-unfold-argument  \
-    --Module transaction\
-    --Operation get_trans_by_hash\
-    --GroupPk 11_1\
+    --Module transaction \
+    --Operation get_trans_by_hash \
+    --GroupPk 11_1 \
     --TransHash 0x0b47e55c52f9b3ae60bc960809fe50042c0aa9e8207795759a6369db2997254a
 ```
 

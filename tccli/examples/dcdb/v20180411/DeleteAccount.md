@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dcdb DeleteAccount --cli-unfold-argument  \
-    --InstanceId dcdbt-fdpjf5zh\
-    --UserName testuser1\
+    --InstanceId dcdbt-fdpjf5zh \
+    --UserName testuser1 \
     --Host 172.17.%
 ```
 

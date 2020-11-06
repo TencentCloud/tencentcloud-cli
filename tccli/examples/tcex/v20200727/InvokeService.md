@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcex InvokeService --cli-unfold-argument  \
-    --ServiceId svc-bjqz2ne7\
-    --ServiceStatus 0\
+    --ServiceId svc-bjqz2ne7 \
+    --ServiceStatus 0 \
     --FileUrl 10000301996217634746281.jpg
 ```
 

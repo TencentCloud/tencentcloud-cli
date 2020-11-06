@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli batch TerminateComputeNodes --cli-unfold-argument  \
-    --EnvId env-lcx7qbbr\
+    --EnvId env-lcx7qbbr \
     --ComputeNodeId node-lcpcej85 node-lcz8jkvw
 ```
 

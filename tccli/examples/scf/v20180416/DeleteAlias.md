@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli scf DeleteAlias --cli-unfold-argument  \
-    --Namespace <Namespace>\
-    --FunctionName <FunctionName>\
+    --Namespace <Namespace> \
+    --FunctionName <FunctionName> \
     --Name <AliasName>
 ```
 

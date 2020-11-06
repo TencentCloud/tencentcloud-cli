@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc ResetVpnConnection --cli-unfold-argument  \
-    --Version 2018-06-25\
-    --VpcId vpc-p4lmqawn\
+    --Version 2018-06-25 \
+    --VpcId vpc-p4lmqawn \
     --VpnConnectionId bmvpnx-5p7vkch8
 ```
 

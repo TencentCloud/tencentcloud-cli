@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DeleteInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-12345\
+    --RegistryId tcr-12345 \
     --TokenId b671eee3-a58d-4704-b4d2-a84b6361ff0c
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp QuerySingleTransactionStatus --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --FunctionFlag 3\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --FunctionFlag 3 \
     --TranNetSeqNo U12345678910
 ```
 

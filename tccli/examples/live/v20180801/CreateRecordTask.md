@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli live CreateRecordTask --cli-unfold-argument  \
-    --AppName live\
-    --DomainName 5000.live.push.com\
-    --StreamName livetest\
-    --StartTime 1589889600\
-    --EndTime 1589904000\
+    --AppName live \
+    --DomainName 5000.live.push.com \
+    --StreamName livetest \
+    --StartTime 1589889600 \
+    --EndTime 1589904000 \
     --TemplateId 0
 ```
 

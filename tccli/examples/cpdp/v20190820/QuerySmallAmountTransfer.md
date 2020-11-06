@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cpdp QuerySmallAmountTransfer --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --OldTranSeqNo U12345678910\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --OldTranSeqNo U12345678910 \
     --TranDate 20191206
 ```
 

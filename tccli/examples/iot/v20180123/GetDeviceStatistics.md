@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot GetDeviceStatistics --cli-unfold-argument  \
-    --StartDate 2018-04-19\
+    --StartDate 2018-04-19 \
     --EndDate 2018-04-23
 ```
 

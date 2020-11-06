@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tbaas GetBlockList --cli-unfold-argument  \
-    --Module block\
-    --Operation block_list\
-    --ChannelId 0\
-    --GroupId 0\
-    --ChannelName kylotst\
-    --GroupName liulanOrg\
-    --ClusterId 251005746bc0f03q8u93j\
-    --Offset 0\
+    --Module block \
+    --Operation block_list \
+    --ChannelId 0 \
+    --GroupId 0 \
+    --ChannelName kylotst \
+    --GroupName liulanOrg \
+    --ClusterId 251005746bc0f03q8u93j \
+    --Offset 0 \
     --Limit 10
 ```
 

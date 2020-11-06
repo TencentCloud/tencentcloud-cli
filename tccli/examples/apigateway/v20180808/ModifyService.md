@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli apigateway ModifyService --cli-unfold-argument  \
-    --ServiceId service-0c96l2bo\
-    --ServiceName test_https\
-    --ServiceDesc https\
+    --ServiceId service-0c96l2bo \
+    --ServiceName test_https \
+    --ServiceDesc https \
     --Protocol https
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc AllocateIp6AddressesBandwidth --cli-unfold-argument  \
-    --Ip6Addresses 2402:4e00:1000:200:0:8d8a:60b7:87f8\
+    --Ip6Addresses 2402:4e00:1000:200:0:8d8a:60b7:87f8 \
     --InternetMaxBandwidthOut 1
 ```
 

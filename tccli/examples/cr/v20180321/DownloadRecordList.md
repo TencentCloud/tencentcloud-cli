@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cr DownloadRecordList --cli-unfold-argument  \
-    --Module Record\
-    --Operation DownloadList\
-    --InstId ins-abc123\
+    --Module Record \
+    --Operation DownloadList \
+    --InstId ins-abc123 \
     --BizDate 2019-09-16
 ```
 

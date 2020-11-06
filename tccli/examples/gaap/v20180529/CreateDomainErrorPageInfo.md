@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap CreateDomainErrorPageInfo --cli-unfold-argument  \
-    --ListenerId 0\
-    --Domain a.com\
-    --ErrorNos 501 502\
-    --NewErrorNo 400\
+    --ListenerId 0 \
+    --Domain a.com \
+    --ErrorNos 501 502 \
+    --NewErrorNo 400 \
     --Body helloword
 ```
 

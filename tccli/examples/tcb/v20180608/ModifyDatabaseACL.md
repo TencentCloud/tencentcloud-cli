@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcb ModifyDatabaseACL --cli-unfold-argument  \
-    --EnvId test-23\
-    --CollectionName testCollection\
+    --EnvId test-23 \
+    --CollectionName testCollection \
     --AclTag PRIVATE
 ```
 

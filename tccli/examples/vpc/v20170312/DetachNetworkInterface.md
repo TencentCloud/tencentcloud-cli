@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc DetachNetworkInterface --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --NetworkInterfaceId eni-afo43z61\
+    --Version 2017-03-12 \
+    --NetworkInterfaceId eni-afo43z61 \
     --InstanceId ins-ins-r8hr2upy
 ```
 

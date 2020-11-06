@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DisassociateSecurityGroups --cli-unfold-argument  \
-    --InstanceIds ein-2zvpghhc ein-915zrb0p\
+    --InstanceIds ein-2zvpghhc ein-915zrb0p \
     --SecurityGroupIds esg-9id3l839
 ```
 

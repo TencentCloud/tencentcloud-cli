@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeProjects --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --ProjectIds 1111
 ```
 

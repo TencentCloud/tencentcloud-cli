@@ -6,25 +6,25 @@ Input:
 
 ```
 tccli cpdp ExecuteMemberTransaction --cli-unfold-argument  \
-    --MidasSecretId 1587005497659\
-    --MidasSignature 111\
-    --MidasAppId unibank10001\
-    --RequestType MemberTransactionReq\
-    --MerchantCode 4087\
-    --PayChannel bank_pingan\
-    --PayChannelSubId 1\
-    --OutSubAccountName 水惠壮\
-    --InSubAccountName 水惠壮\
-    --OutSubAccountNumber 4087000000016017\
-    --InSubAccountNumber 4087000000016017\
-    --BankAccountNumber 15000093978307\
-    --CurrencyUnit 1\
-    --CurrencyType RMB\
-    --CurrencyAmount 0.03\
-    --TransSequenceNumber 1223333\
-    --OrderId 22233344\
-    --OutTransNetMemberCode 2019080500002\
-    --InTransNetMemberCode ninggyang_test\
+    --MidasSecretId 1587005497659 \
+    --MidasSignature 111 \
+    --MidasAppId unibank10001 \
+    --RequestType MemberTransactionReq \
+    --MerchantCode 4087 \
+    --PayChannel bank_pingan \
+    --PayChannelSubId 1 \
+    --OutSubAccountName 水惠壮 \
+    --InSubAccountName 水惠壮 \
+    --OutSubAccountNumber 4087000000016017 \
+    --InSubAccountNumber 4087000000016017 \
+    --BankAccountNumber 15000093978307 \
+    --CurrencyUnit 1 \
+    --CurrencyType RMB \
+    --CurrencyAmount 0.03 \
+    --TransSequenceNumber 1223333 \
+    --OrderId 22233344 \
+    --OutTransNetMemberCode 2019080500002 \
+    --InTransNetMemberCode ninggyang_test \
     --MidasEnvironment development
 ```
 

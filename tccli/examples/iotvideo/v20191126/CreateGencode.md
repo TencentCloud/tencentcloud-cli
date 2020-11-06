@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo CreateGencode --cli-unfold-argument  \
-    --ProductId 12345678910\
+    --ProductId 12345678910 \
     --Revision 1
 ```
 

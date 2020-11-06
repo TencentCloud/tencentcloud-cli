@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tbaas GetBlockListHandler --cli-unfold-argument  \
-    --Module block\
-    --Operation get_block_list\
-    --Offset 0\
-    --Limit 4\
-    --GroupPk 11_1\
+    --Module block \
+    --Operation get_block_list \
+    --Offset 0 \
+    --Limit 4 \
+    --GroupPk 11_1 \
     --BlockHash 0
 ```
 

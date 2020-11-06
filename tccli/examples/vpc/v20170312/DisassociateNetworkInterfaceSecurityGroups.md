@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DisassociateNetworkInterfaceSecurityGroups --cli-unfold-argument  \
-    --NetworkInterfaceIds eni-12345678\
+    --NetworkInterfaceIds eni-12345678 \
     --SecurityGroupIds sg-12345678
 ```
 

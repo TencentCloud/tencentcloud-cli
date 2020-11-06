@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cpdp QueryTrade --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
     --TradeFileId tdflid20191123023
 ```
 

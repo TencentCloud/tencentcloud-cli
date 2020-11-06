@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iai DetectFaceAttributes --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testA.jpg\
+    --Url http://test.image.myqcloud.com/testA.jpg \
     --FaceAttributesType eye
 ```
 

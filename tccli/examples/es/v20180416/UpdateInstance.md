@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
+    --InstanceId es-xxxxxxxx \
     --Password newPwd_123
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
+    --InstanceId es-xxxxxxxx \
     --EsConfig {"action.destructive_requires_name":"true"}
 ```
 
@@ -48,8 +48,8 @@ Input:
 
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
-    --NodeType ES.S1.MEDIUM4\
+    --InstanceId es-xxxxxxxx \
+    --NodeType ES.S1.MEDIUM4 \
     --DiskSize 150
 ```
 
@@ -70,8 +70,8 @@ Input:
 
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx\
-    --CosBackup.IsAutoBackup true\
+    --InstanceId es-xxxxxxxx \
+    --CosBackup.IsAutoBackup true \
     --CosBackup.BackupTime 23:00
 ```
 
@@ -92,14 +92,14 @@ Input:
 
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxx\
-    --NodeInfoList.0.Type hotData\
-    --NodeInfoList.0.NodeNum 2\
-    --NodeInfoList.0.NodeType ES.S1.SMALL2\
-    --NodeInfoList.0.DiskType CLOUD_SSD\
-    --NodeInfoList.0.DiskSize 100\
-    --NodeInfoList.1.Type dedicatedMaster\
-    --NodeInfoList.1.NodeNum 3\
+    --InstanceId es-xxxxxx \
+    --NodeInfoList.0.Type hotData \
+    --NodeInfoList.0.NodeNum 2 \
+    --NodeInfoList.0.NodeType ES.S1.SMALL2 \
+    --NodeInfoList.0.DiskType CLOUD_SSD \
+    --NodeInfoList.0.DiskSize 100 \
+    --NodeInfoList.1.Type dedicatedMaster \
+    --NodeInfoList.1.NodeNum 3 \
     --NodeInfoList.1.NodeType ES.S1.SMALL2
 ```
 
@@ -120,7 +120,7 @@ Input:
 
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxx\
+    --InstanceId es-xxxxxx \
     --InstanceName newName
 ```
 

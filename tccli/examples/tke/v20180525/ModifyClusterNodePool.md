@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke ModifyClusterNodePool --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx\
+    --ClusterId cls-xxxxxx \
     --NodePoolId np-xxx
 ```
 

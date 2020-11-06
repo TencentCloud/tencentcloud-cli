@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cpdp QueryBankTransactionDetails --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2\
-    --ImageId img-pmqg1cw7\
-    --MrchCode 1234\
-    --FunctionFlag 2\
-    --SubAcctNo ' 1234000000006047'\
-    --QueryFlag 1\
-    --StartDate 20191101\
-    --EndDate 20191130\
+    --Placement.Zone ap-guangzhou-2 \
+    --ImageId img-pmqg1cw7 \
+    --MrchCode 1234 \
+    --FunctionFlag 2 \
+    --SubAcctNo ' 1234000000006047' \
+    --QueryFlag 1 \
+    --StartDate 20191101 \
+    --EndDate 20191130 \
     --PageNum 1
 ```
 

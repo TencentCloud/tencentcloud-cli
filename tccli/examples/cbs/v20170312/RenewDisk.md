@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cbs RenewDisk --cli-unfold-argument  \
-    --DiskId disk-jwk0zvrg\
-    --DiskChargePrepaid.Period 1\
+    --DiskId disk-jwk0zvrg \
+    --DiskChargePrepaid.Period 1 \
     --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
 ```
 
@@ -28,9 +28,9 @@ Input:
 
 ```
 tccli cbs RenewDisk --cli-unfold-argument  \
-    --DiskId disk-jwk0zvrg\
-    --DiskChargePrepaid.Period 1\
-    --DiskChargePrepaid.CurInstanceDeadline '2018-03-30 20:15:03'\
+    --DiskId disk-jwk0zvrg \
+    --DiskChargePrepaid.Period 1 \
+    --DiskChargePrepaid.CurInstanceDeadline '2018-03-30 20:15:03' \
     --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
 ```
 

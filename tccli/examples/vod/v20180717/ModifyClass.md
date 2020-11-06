@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod ModifyClass --cli-unfold-argument  \
-    --ClassId 1\
-    --ClassName 'First-level category 2'\
+    --ClassId 1 \
+    --ClassName 'First-level category 2' \
     --SubAppId 1
 ```
 

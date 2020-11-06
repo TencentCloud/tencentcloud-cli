@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DeleteAuditPolicy --cli-unfold-argument  \
-    --PolicyId cdbpolicy-234\
+    --PolicyId cdbpolicy-234 \
     --InstanceId cdb-xxxxxxx
 ```
 

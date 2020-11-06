@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tsf DescribeImageTags --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 100\
-    --ApplicationId application-xxxxxxx\
+    --Offset 0 \
+    --Limit 100 \
+    --ApplicationId application-xxxxxxx \
     --QueryImageIdFlag 1
 ```
 

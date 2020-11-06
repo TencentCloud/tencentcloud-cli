@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb CreateAuthDomain --cli-unfold-argument  \
-    --EnvId envid\
+    --EnvId envid \
     --Domains localhost
 ```
 

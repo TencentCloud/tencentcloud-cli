@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc CreateAddressTemplateGroup --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --AddressTemplateGroupName TestName\
+    --Version 2017-03-12 \
+    --AddressTemplateGroupName TestName \
     --AddressTemplateIds ipm-88t6207k ipm-mdunqeb6
 ```
 

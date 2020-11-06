@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway DescribeServiceEnvironmentReleaseHistory --cli-unfold-argument  \
-    --ServiceId service-ody35h5e\
+    --ServiceId service-ody35h5e \
     --EnvironmentName test
 ```
 

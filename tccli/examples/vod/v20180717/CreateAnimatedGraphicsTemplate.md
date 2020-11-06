@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vod CreateAnimatedGraphicsTemplate --cli-unfold-argument  \
-    --Name 'Animated image generating template 1'\
-    --Width 540\
-    --Height 960\
-    --Format gif\
+    --Name 'Animated image generating template 1' \
+    --Width 540 \
+    --Height 960 \
+    --Format gif \
     --Fps 30
 ```
 

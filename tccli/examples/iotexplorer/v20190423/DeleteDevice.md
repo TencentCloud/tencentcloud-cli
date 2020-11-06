@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer DeleteDevice --cli-unfold-argument  \
-    --ProductId KO9JAFB9W5\
+    --ProductId KO9JAFB9W5 \
     --DeviceName dev
 ```
 

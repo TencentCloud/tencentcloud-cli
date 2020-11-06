@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DescribeNatGatewayDestinationIpPortTranslationNatRules --cli-unfold-argument  \
-    --Filters.0.Name vpc-id\
+    --Filters.0.Name vpc-id \
     --Filters.0.Values vpc-0yi4hekt
 ```
 
@@ -52,8 +52,8 @@ Input:
 
 ```
 tccli vpc DescribeNatGatewayDestinationIpPortTranslationNatRules --cli-unfold-argument  \
-    --NatGatewayIds nat-3isn9hr0\
-    --Offset 0\
+    --NatGatewayIds nat-3isn9hr0 \
+    --Offset 0 \
     --Limit 10
 ```
 

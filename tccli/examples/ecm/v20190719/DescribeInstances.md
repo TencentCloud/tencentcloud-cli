@@ -492,8 +492,8 @@ Input:
 
 ```
 tccli ecm DescribeInstances --cli-unfold-argument  \
-    --OrderByField timestamp\
-    --OrderDirection 0\
+    --OrderByField timestamp \
+    --OrderDirection 0 \
     --Limit 2
 ```
 
@@ -827,7 +827,7 @@ Input:
 
 ```
 tccli ecm DescribeInstances --cli-unfold-argument  \
-    --Filters.0.Name vpc-id\
+    --Filters.0.Name vpc-id \
     --Filters.0.Values vpc-ec3mnb4d
 ```
 

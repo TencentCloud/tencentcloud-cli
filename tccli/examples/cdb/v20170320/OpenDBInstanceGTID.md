@@ -1,4 +1,4 @@
-**Example 1: Enabling GTID for instance**
+**Example 1: Enabling GTID for an instance**
 
 
 

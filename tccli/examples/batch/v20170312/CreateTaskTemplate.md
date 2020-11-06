@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli batch CreateTaskTemplate --cli-unfold-argument  \
-    --TaskTemplateName A\
-    --TaskTemplateDescription test\
-    --TaskTemplateInfo.TaskName A\
-    --TaskTemplateInfo.TaskInstanceNum 1\
-    --TaskTemplateInfo.Application.DeliveryForm LOCAL\
-    --TaskTemplateInfo.Application.Command python-c"fib\
-    --TaskTemplateInfo.ComputeEnv.EnvType MANAGED\
-    --TaskTemplateInfo.ComputeEnv.EnvData.InstanceType S1.SMALL1\
-    --TaskTemplateInfo.ComputeEnv.EnvData.ImageId img-bd78fy2t\
-    --TaskTemplateInfo.RedirectInfo.StdoutRedirectPath cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\
+    --TaskTemplateName A \
+    --TaskTemplateDescription test \
+    --TaskTemplateInfo.TaskName A \
+    --TaskTemplateInfo.TaskInstanceNum 1 \
+    --TaskTemplateInfo.Application.DeliveryForm LOCAL \
+    --TaskTemplateInfo.Application.Command python-c"fib \
+    --TaskTemplateInfo.ComputeEnv.EnvType MANAGED \
+    --TaskTemplateInfo.ComputeEnv.EnvData.InstanceType S1.SMALL1 \
+    --TaskTemplateInfo.ComputeEnv.EnvData.ImageId img-bd78fy2t \
+    --TaskTemplateInfo.RedirectInfo.StdoutRedirectPath cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/ \
     --TaskTemplateInfo.RedirectInfo.StderrRedirectPath cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/
 ```
 

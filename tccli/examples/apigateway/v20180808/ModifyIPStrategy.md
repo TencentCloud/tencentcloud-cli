@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apigateway ModifyIPStrategy --cli-unfold-argument  \
-    --StrategyId IPStrategy-0ez0c8to\
-    --ServiceId service-ody35h5e\
+    --StrategyId IPStrategy-0ez0c8to \
+    --ServiceId service-ody35h5e \
     --StrategyData 3.3.3.3
 ```
 

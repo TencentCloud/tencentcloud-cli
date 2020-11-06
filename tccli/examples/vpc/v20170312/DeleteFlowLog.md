@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DeleteFlowLog --cli-unfold-argument  \
-    --FlowLogId fl-xxxxxx\
+    --FlowLogId fl-xxxxxx \
     --VpcId vpc-xxxxxx
 ```
 

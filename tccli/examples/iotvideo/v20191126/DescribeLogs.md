@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iotvideo DescribeLogs --cli-unfold-argument  \
-    --Tid 031400005e005a3816c529f9e82efe9b\
-    --LogType 1\
-    --StartTime 0\
-    --EndTime 1582077707\
-    --Limit 10\
-    --Offset 0\
+    --Tid 031400005e005a3816c529f9e82efe9b \
+    --LogType 1 \
+    --StartTime 0 \
+    --EndTime 1582077707 \
+    --Limit 10 \
+    --Offset 0 \
     --DataObject **
 ```
 

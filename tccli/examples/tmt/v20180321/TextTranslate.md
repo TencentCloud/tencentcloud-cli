@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tmt TextTranslate --cli-unfold-argument  \
-    --ProjectId 0\
-    --Source en\
-    --SourceText hello\
+    --ProjectId 0 \
+    --Source en \
+    --SourceText hello \
     --Target zh
 ```
 

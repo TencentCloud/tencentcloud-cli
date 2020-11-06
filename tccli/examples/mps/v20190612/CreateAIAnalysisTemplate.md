@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli mps CreateAIAnalysisTemplate --cli-unfold-argument  \
-    --Name 'Intelligent analysis template'\
-    --Comment 'Template 2'\
-    --ClassificationConfigure.Switch ON\
+    --Name 'Intelligent analysis template' \
+    --Comment 'Template 2' \
+    --ClassificationConfigure.Switch ON \
     --TagConfigure.Switch ON
 ```
 
@@ -30,11 +30,11 @@ Input:
 
 ```
 tccli mps CreateAIAnalysisTemplate --cli-unfold-argument  \
-    --Name 'Intelligent analysis template'\
-    --Comment 'Template 3'\
-    --ClassificationConfigure.Switch ON\
-    --TagConfigure.Switch ON\
-    --CoverConfigure.Switch NO\
+    --Name 'Intelligent analysis template' \
+    --Comment 'Template 3' \
+    --ClassificationConfigure.Switch ON \
+    --TagConfigure.Switch ON \
+    --CoverConfigure.Switch NO \
     --FrameTagConfigure.Switch ON
 ```
 
@@ -56,8 +56,8 @@ Input:
 
 ```
 tccli mps CreateAIAnalysisTemplate --cli-unfold-argument  \
-    --Name 'Intelligent analysis template'\
-    --Comment 'Template 1'\
+    --Name 'Intelligent analysis template' \
+    --Comment 'Template 1' \
     --ClassificationConfigure.Switch ON
 ```
 

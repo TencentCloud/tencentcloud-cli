@@ -88,6 +88,14 @@
         "title": "获取云托管代码上传url"
       }
     ],
+    "DescribeCloudBaseRunServerVersion": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunServerVersion\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&VersionName=adb\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\t\"Branch\": \"\",\r\n\t\t\t\"BuildDir\": \"\",\r\n\t\t\t\"ContainerPort\": 80,\r\n\t\t\t\"Cpu\": 1,\r\n\t\t\t\"CpuSize\": 1,\r\n\t\t\t\"CreatedTime\": \"2020-11-04 16:44:54\",\r\n\t\t\t\"CustomLogs\": \"/var/logs/data.log\",\r\n\t\t\t\"DockerfilePath\": \"\",\r\n\t\t\t\"EnvParams\": \"{}\",\r\n\t\t\t\"ImageUrl\": \"ccr.ccs.tencentyun.com/cloudbase-apolo-env-test-146d5/hello-world:v2\",\r\n\t\t\t\"InitialDelaySeconds\": 2,\r\n\t\t\t\"IsPublic\": true,\r\n\t\t\t\"MaxNum\": 50,\r\n\t\t\t\"Mem\": 1,\r\n\t\t\t\"MemSize\": 1,\r\n\t\t\t\"MinNum\": 0,\r\n\t\t\t\"PackageName\": \"\",\r\n\t\t\t\"PackageVersion\": \"\",\r\n\t\t\t\"PolicyThreshold\": 60,\r\n\t\t\t\"PolicyType\": \"cpu\",\r\n\t\t\t\"Remark\": \"\",\r\n\t\t\t\"Repo\": \"\",\r\n\t\t\t\"RepoType\": \"\",\r\n\t\t\t\"RequestId\": \"38c85c31-81ea-4d19-a1e0-99448140c4e7\",\r\n\t\t\t\"ServerName\": \"test\",\r\n\t\t\t\"Status\": \"normal\",\r\n\t\t\t\"SubnetIds\": [\"subnet-6yny6j0d\"],\r\n\t\t\t\"UpdatedTime\": \"2020-11-04 19:55:22\",\r\n\t\t\t\"UploadType\": \"image\",\r\n\t\t\t\"VersionIP\": \"10.0.192.3\",\r\n\t\t\t\"VersionName\": \"test-010\",\r\n\t\t\t\"VersionPort\": 80,\r\n\t\t\t\"VpcId\": \"vpc-rtyzm94a\",\r\n\t\t\"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\r\n\t}\r\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeCloudBaseRunVersionSnapshot": [
       {
         "document": "",

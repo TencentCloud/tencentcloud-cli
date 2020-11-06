@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli sqlserver DescribeMigrations --cli-unfold-argument  \
-    --MigrateName Test\
-    --Limit 10\
-    --Offset 0\
-    --OrderBy name\
-    --OrderByType desc\
+    --MigrateName Test \
+    --Limit 10 \
+    --Offset 0 \
+    --OrderBy name \
+    --OrderByType desc \
     --StatusSet 1 4
 ```
 

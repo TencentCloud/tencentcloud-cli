@@ -1,4 +1,4 @@
-**Example 1: Deleting maintenance window**
+**Example 1: Deleting a maintenance time window**
 
 
 

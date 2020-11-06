@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dbbrain DescribeTopSpaceTableTimeSeries --cli-unfold-argument  \
-    --InstanceId cdb-test\
-    --Limit 2\
-    --StartDate 2020-01-01\
+    --InstanceId cdb-test \
+    --Limit 2 \
+    --StartDate 2020-01-01 \
     --EndDate 2020-01-01
 ```
 

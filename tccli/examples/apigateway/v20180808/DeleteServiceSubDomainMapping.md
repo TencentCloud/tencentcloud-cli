@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apigateway DeleteServiceSubDomainMapping --cli-unfold-argument  \
-    --ServiceId service-19c5fnhy\
-    --SubDomain xxxxxxx\
+    --ServiceId service-19c5fnhy \
+    --SubDomain xxxxxxx \
     --Environment test
 ```
 

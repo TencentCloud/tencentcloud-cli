@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cme DescribeSharedSpace --cli-unfold-argument  \
-    --Platform test\
-    --Operator teamAmemberXXX\
-    --Authorizee.Type TEAM\
+    --Platform test \
+    --Operator teamAmemberXXX \
+    --Authorizee.Type TEAM \
     --Authorizee.Id teamA
 ```
 

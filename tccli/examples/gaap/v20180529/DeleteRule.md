@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DeleteRule --cli-unfold-argument  \
-    --ListenerId 0\
-    --RuleId rule-18vhg67\
+    --ListenerId 0 \
+    --RuleId rule-18vhg67 \
     --Force 1
 ```
 

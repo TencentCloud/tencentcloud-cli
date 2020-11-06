@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tcr DescribeImages --cli-unfold-argument  \
-    --RegistryId tcr-okmj78\
-    --NamespaceName team-01\
-    --RepositoryName nginx\
-    --Limit 20\
+    --RegistryId tcr-okmj78 \
+    --NamespaceName team-01 \
+    --RepositoryName nginx \
+    --Limit 20 \
     --Offset 0
 ```
 

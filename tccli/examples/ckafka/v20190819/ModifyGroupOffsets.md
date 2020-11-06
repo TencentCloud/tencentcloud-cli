@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka ModifyGroupOffsets --cli-unfold-argument  \
-    --InstanceId 10\
-    --Group "group"\
+    --InstanceId 10 \
+    --Group "group" \
     --Strategy 0
 ```
 

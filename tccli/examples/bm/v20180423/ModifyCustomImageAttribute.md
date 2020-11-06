@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bm ModifyCustomImageAttribute --cli-unfold-argument  \
-    --ImageId testid\
-    --ImageName aa678\
+    --ImageId testid \
+    --ImageName aa678 \
     --ImageDescription 876aa
 ```
 

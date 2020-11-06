@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cr DescribeTaskStatus --cli-unfold-argument  \
-    --Module Task\
-    --Operation DescribeTaskStatus\
+    --Module Task \
+    --Operation DescribeTaskStatus \
     --TaskId tad-i9yf5g5f0d
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc ResetNatGatewayConnection --cli-unfold-argument  \
-    --NatGatewayId nat-ig8xpno8\
+    --NatGatewayId nat-ig8xpno8 \
     --MaxConcurrentConnection 3000000
 ```
 

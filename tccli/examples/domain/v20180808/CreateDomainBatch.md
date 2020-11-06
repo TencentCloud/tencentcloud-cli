@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli domain CreateDomainBatch --cli-unfold-argument  \
-    --TemplateId 字符串\
-    --Period 整型\
-    --Domains 数组\
+    --TemplateId 字符串 \
+    --Period 整型 \
+    --Domains 数组 \
     --PayMode 整型
 ```
 

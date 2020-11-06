@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf CreateMicroservice --cli-unfold-argument  \
-    --NamespaceId namespace-xxxxxxx\
+    --NamespaceId namespace-xxxxxxx \
     --MicroserviceName consumer-demo1
 ```
 

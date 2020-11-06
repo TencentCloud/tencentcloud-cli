@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli sqlserver DescribeDBInstances --cli-unfold-argument  \
-    --ProjectId 0\
-    --InstanceIdSet mssql-3l3fgqn7\
-    --Status 2\
-    --Offset 0\
-    --Limit 3\
-    --PayMode 1\
-    --VpcId vpc-mknbt351\
+    --ProjectId 0 \
+    --InstanceIdSet mssql-3l3fgqn7 \
+    --Status 2 \
+    --Offset 0 \
+    --Limit 3 \
+    --PayMode 1 \
+    --VpcId vpc-mknbt351 \
     --SubnetId subnet-f72hylo6
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm ResetInstancesPassword --cli-unfold-argument  \
-    --InstanceIdSet ein-356531dd ein-583021kl\
-    --ForceStop false\
-    --UserName root\
+    --InstanceIdSet ein-356531dd ein-583021kl \
+    --ForceStop false \
+    --UserName root \
     --Password cptbtptpA@1095
 ```
 

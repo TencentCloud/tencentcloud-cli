@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka CreateUser --cli-unfold-argument  \
-    --InstanceId xxx\
-    --Name xxx\
+    --InstanceId xxx \
+    --Name xxx \
     --Password Password
 ```
 

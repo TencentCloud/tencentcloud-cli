@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb SetAutoRenew --cli-unfold-argument  \
-    --InstanceIds cmgo-8l3r6yyt\
+    --InstanceIds cmgo-8l3r6yyt \
     --AutoRenewFlag 1
 ```
 

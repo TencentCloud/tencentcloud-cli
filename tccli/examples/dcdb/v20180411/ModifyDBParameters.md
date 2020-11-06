@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dcdb ModifyDBParameters --cli-unfold-argument  \
-    --InstanceId dcdbt-ige1a5k3\
-    --Params.0.Param character_set_server\
+    --InstanceId dcdbt-ige1a5k3 \
+    --Params.0.Param character_set_server \
     --Params.0.Value utf8
 ```
 

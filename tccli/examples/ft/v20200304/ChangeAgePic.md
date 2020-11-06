@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ft ChangeAgePic --cli-unfold-argument  \
-    --Image xxxxx\
-    --AgeInfos.0.Age 10\
-    --AgeInfos.0.FaceRect.X 10\
-    --AgeInfos.0.FaceRect.Y 10\
-    --AgeInfos.0.FaceRect.Width 20\
+    --Image xxxxx \
+    --AgeInfos.0.Age 10 \
+    --AgeInfos.0.FaceRect.X 10 \
+    --AgeInfos.0.FaceRect.Y 10 \
+    --AgeInfos.0.FaceRect.Width 20 \
     --AgeInfos.0.FaceRect.Height 20
 ```
 
@@ -35,11 +35,11 @@ Input:
 
 ```
 tccli ft ChangeAgePic --cli-unfold-argument  \
-    --Image xxxxx\
-    --AgeInfos.0.Age 10\
-    --AgeInfos.0.FaceRect.X 10\
-    --AgeInfos.0.FaceRect.Y 10\
-    --AgeInfos.0.FaceRect.Width 20\
+    --Image xxxxx \
+    --AgeInfos.0.Age 10 \
+    --AgeInfos.0.FaceRect.X 10 \
+    --AgeInfos.0.FaceRect.Y 10 \
+    --AgeInfos.0.FaceRect.Width 20 \
     --AgeInfos.0.FaceRect.Height 20
 ```
 

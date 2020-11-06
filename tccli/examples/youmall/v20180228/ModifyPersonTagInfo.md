@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli youmall ModifyPersonTagInfo --cli-unfold-argument  \
-    --CompanyId tencent\
-    --ShopId 10086\
-    --Tags.0.OldType 0\
-    --Tags.0.NewType 2\
+    --CompanyId tencent \
+    --ShopId 10086 \
+    --Tags.0.OldType 0 \
+    --Tags.0.NewType 2 \
     --Tags.0.PersonId 10
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ft SwapGenderPic --cli-unfold-argument  \
-    --Image xxxxx\
-    --GenderInfos.0.Gender 1\
-    --GenderInfos.0.FaceRect.X 10\
-    --GenderInfos.0.FaceRect.Y 10\
-    --GenderInfos.0.FaceRect.Width 20\
+    --Image xxxxx \
+    --GenderInfos.0.Gender 1 \
+    --GenderInfos.0.FaceRect.X 10 \
+    --GenderInfos.0.FaceRect.Y 10 \
+    --GenderInfos.0.FaceRect.Width 20 \
     --GenderInfos.0.FaceRect.Height 20
 ```
 
@@ -35,11 +35,11 @@ Input:
 
 ```
 tccli ft SwapGenderPic --cli-unfold-argument  \
-    --Image xxxxx\
-    --GenderInfos.0.Gender 1\
-    --GenderInfos.0.FaceRect.X 10\
-    --GenderInfos.0.FaceRect.Y 10\
-    --GenderInfos.0.FaceRect.Width 20\
+    --Image xxxxx \
+    --GenderInfos.0.Gender 1 \
+    --GenderInfos.0.FaceRect.X 10 \
+    --GenderInfos.0.FaceRect.Y 10 \
+    --GenderInfos.0.FaceRect.Width 20 \
     --GenderInfos.0.FaceRect.Height 20
 ```
 

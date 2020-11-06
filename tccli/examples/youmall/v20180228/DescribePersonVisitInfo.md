@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli youmall DescribePersonVisitInfo --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 1\
-    --StartDateTime '2016-10-10 00:00:10'\
-    --EndDateTime '2017-06-01 00:00:10'\
-    --Offset 100\
-    --Limit 100\
+    --CompanyId testCompany1 \
+    --ShopId 1 \
+    --StartDateTime '2016-10-10 00:00:10' \
+    --EndDateTime '2017-06-01 00:00:10' \
+    --Offset 100 \
+    --Limit 100 \
     --PictureExpires 10
 ```
 
@@ -55,12 +55,12 @@ Input:
 
 ```
 tccli youmall DescribePersonVisitInfo --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 1\
-    --StartDateTime '2016-10-10 00:00:10'\
-    --EndDateTime '2017-06-01 00:00:10'\
-    --Offset 100\
-    --Limit 100\
+    --CompanyId testCompany1 \
+    --ShopId 1 \
+    --StartDateTime '2016-10-10 00:00:10' \
+    --EndDateTime '2017-06-01 00:00:10' \
+    --Offset 100 \
+    --Limit 100 \
     --PictureExpires 10
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: Querying database**
+**Example 1: Querying databases**
 
 
 

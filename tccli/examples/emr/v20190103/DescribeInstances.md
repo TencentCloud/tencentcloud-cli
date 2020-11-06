@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli emr DescribeInstances --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 10\
-    --ProjectId 0\
-    --OrderField clusterid\
-    --Asc 0\
-    --DisplayStrategy clusterList\
+    --Offset 0 \
+    --Limit 10 \
+    --ProjectId 0 \
+    --OrderField clusterid \
+    --Asc 0 \
+    --DisplayStrategy clusterList \
     --InstanceIds emr-p9f700x8
 ```
 

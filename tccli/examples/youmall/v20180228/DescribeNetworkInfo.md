@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli youmall DescribeNetworkInfo --cli-unfold-argument  \
-    --Time 1536139452\
-    --CompanyId tencent\
+    --Time 1536139452 \
+    --CompanyId tencent \
     --ShopId 10086
 ```
 

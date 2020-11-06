@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cws DescribeSites --cli-unfold-argument  \
-    --Filters.0.Name Name\
-    --Filters.0.Values QQ 微信\
-    --Filters.1.Name Url\
+    --Filters.0.Name Name \
+    --Filters.0.Values QQ 微信 \
+    --Filters.1.Name Url \
     --Filters.1.Values http%3A%2F%2Fdemo.aisec.cn
 ```
 

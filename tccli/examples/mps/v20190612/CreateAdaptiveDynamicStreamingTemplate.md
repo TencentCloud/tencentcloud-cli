@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mps CreateAdaptiveDynamicStreamingTemplate --cli-unfold-argument  \
-    --Name 'Adaptive bitrate streaming template 1'\
-    --Format HLS\
-    --StreamInfos.0.Video.Codec libx264\
-    --StreamInfos.0.Video.Bitrate 2000\
-    --StreamInfos.0.Audio.Codec flac\
+    --Name 'Adaptive bitrate streaming template 1' \
+    --Format HLS \
+    --StreamInfos.0.Video.Codec libx264 \
+    --StreamInfos.0.Video.Bitrate 2000 \
+    --StreamInfos.0.Audio.Codec flac \
     --StreamInfos.0.Audio.SampleRate 44100
 ```
 

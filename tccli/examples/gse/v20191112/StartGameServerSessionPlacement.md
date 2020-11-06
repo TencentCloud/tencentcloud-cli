@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse StartGameServerSessionPlacement --cli-unfold-argument  \
-    --PlacementId PlacementId-3a7d34cd-5240-11ea-b02a-3464a91513fe\
-    --GameServerSessionQueueName PlacementTwo\
+    --PlacementId PlacementId-3a7d34cd-5240-11ea-b02a-3464a91513fe \
+    --GameServerSessionQueueName PlacementTwo \
     --MaximumPlayerSessionCount 100
 ```
 

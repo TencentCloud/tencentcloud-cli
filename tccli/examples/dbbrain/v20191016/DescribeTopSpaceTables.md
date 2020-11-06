@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dbbrain DescribeTopSpaceTables --cli-unfold-argument  \
-    --InstanceId cdb-test\
-    --Limit 2\
+    --InstanceId cdb-test \
+    --Limit 2 \
     --SortBy TableRows
 ```
 

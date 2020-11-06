@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeProjectSecurityGroups --cli-unfold-argument  \
-    --ProjectId 11954\
+    --ProjectId 11954 \
     --Product redis
 ```
 

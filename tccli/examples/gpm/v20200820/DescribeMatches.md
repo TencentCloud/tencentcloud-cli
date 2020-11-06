@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gpm DescribeMatches --cli-unfold-argument  \
-    --PageNumber 1\
-    --PageSize 10\
-    --SearchType matchCode\
+    --PageNumber 1 \
+    --PageSize 10 \
+    --SearchType matchCode \
     --Keyword match-58mnuqlz
 ```
 

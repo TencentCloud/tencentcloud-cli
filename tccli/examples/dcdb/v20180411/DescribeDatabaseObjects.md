@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dcdb DescribeDatabaseObjects --cli-unfold-argument  \
-    --InstanceId dcdbt-52s53yyh\
+    --InstanceId dcdbt-52s53yyh \
     --DbName test
 ```
 

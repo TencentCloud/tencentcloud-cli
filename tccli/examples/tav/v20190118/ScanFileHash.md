@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tav ScanFileHash --cli-unfold-argument  \
-    --Key d12790cf44382a3c15e4e8c63e41e74d\
-    --Md5s 0f600011f6abb02f6a117e1efb952a3c\
-    --WithCategory 0\
+    --Key d12790cf44382a3c15e4e8c63e41e74d \
+    --Md5s 0f600011f6abb02f6a117e1efb952a3c \
+    --WithCategory 0 \
     --SensitiveLevel 10
 ```
 

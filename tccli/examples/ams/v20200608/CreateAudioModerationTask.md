@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ams CreateAudioModerationTask --cli-unfold-argument  \
-    --BizType 1001\
-    --Type AUDIO\
-    --Tasks.0.DataId test_data_1\
-    --Tasks.0.Input.Type URL\
+    --BizType 1001 \
+    --Type AUDIO \
+    --Tasks.0.DataId test_data_1 \
+    --Tasks.0.Input.Type URL \
     --Tasks.0.Input.Url https://a.com/test.mp3
 ```
 

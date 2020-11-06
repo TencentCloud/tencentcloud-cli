@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeGroupInfo --cli-unfold-argument  \
-    --InstanceId xxxx\
+    --InstanceId xxxx \
     --GroupList xx
 ```
 

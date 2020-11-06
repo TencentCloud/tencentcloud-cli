@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iai ModifyGroup --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1\
-    --GroupName 'Building Dormitory #1, Zhuyuan Campus, XX University'\
-    --Tag Graduates\
-    --GroupExDescriptionInfos.0.GroupExDescriptionIndex 0\
+    --GroupId ZhuYuanDormitoryNo1 \
+    --GroupName 'Building Dormitory #1, Zhuyuan Campus, XX University' \
+    --Tag Graduates \
+    --GroupExDescriptionInfos.0.GroupExDescriptionIndex 0 \
     --GroupExDescriptionInfos.0.GroupExDescription School
 ```
 
@@ -30,12 +30,12 @@ Input:
 
 ```
 tccli iai ModifyGroup --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --GroupName 'Current Tencent Employees in Shenzhen'\
-    --Tag 'Including interns'\
-    --GroupExDescriptionInfos.0.GroupExDescriptionIndex 1\
-    --GroupExDescriptionInfos.0.GroupExDescription Department\
-    --GroupExDescriptionInfos.1.GroupExDescriptionIndex 2\
+    --GroupId TencentShenZhenEmployee \
+    --GroupName 'Current Tencent Employees in Shenzhen' \
+    --Tag 'Including interns' \
+    --GroupExDescriptionInfos.0.GroupExDescriptionIndex 1 \
+    --GroupExDescriptionInfos.0.GroupExDescription Department \
+    --GroupExDescriptionInfos.1.GroupExDescriptionIndex 2 \
     --GroupExDescriptionInfos.1.GroupExDescription 'Project team'
 ```
 
@@ -56,8 +56,8 @@ Input:
 
 ```
 tccli iai ModifyGroup --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --GroupExDescriptionInfos.0.GroupExDescriptionIndex 0\
+    --GroupId TencentShenZhenEmployee \
+    --GroupExDescriptionInfos.0.GroupExDescriptionIndex 0 \
     --GroupExDescriptionInfos.0.GroupExDescription Department
 ```
 
@@ -82,7 +82,7 @@ Input:
 
 ```
 tccli iai ModifyGroup --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
+    --GroupId TencentShenZhenEmployee \
     --GroupName 'Building Dormitory #1, Zhuyuan Campus, XX University'
 ```
 

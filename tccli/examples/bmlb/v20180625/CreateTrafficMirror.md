@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmlb CreateTrafficMirror --cli-unfold-argument  \
-    --Alias marsinfan\
+    --Alias marsinfan \
     --VpcId vpc-muinpf9p
 ```
 

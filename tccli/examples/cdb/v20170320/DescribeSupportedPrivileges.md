@@ -1,4 +1,4 @@
-**Example 1: Querying the permission information of TencentDB instance**
+**Example 1: Querying the information of permissions supported by TencentDB instances**
 
 
 

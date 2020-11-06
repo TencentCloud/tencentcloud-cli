@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres RenewInstance --cli-unfold-argument  \
-    --DBInstanceId postgres-apzvwncr\
+    --DBInstanceId postgres-apzvwncr \
     --Period 1
 ```
 

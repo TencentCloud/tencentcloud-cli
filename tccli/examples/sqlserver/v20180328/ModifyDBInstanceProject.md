@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver ModifyDBInstanceProject --cli-unfold-argument  \
-    --InstanceIdSet mssql-j8kv137v\
+    --InstanceIdSet mssql-j8kv137v \
     --ProjectId 347
 ```
 

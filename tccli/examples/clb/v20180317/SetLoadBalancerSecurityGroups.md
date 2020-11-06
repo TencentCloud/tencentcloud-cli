@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb SetLoadBalancerSecurityGroups --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2r00\
+    --LoadBalancerId lb-cuxw2r00 \
     --SecurityGroups sg-0936o7sd
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli clb SetLoadBalancerSecurityGroups --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2r00\
+    --LoadBalancerId lb-cuxw2r00 \
     --SecurityGroups sg-0936o7sd sg-12345678
 ```
 

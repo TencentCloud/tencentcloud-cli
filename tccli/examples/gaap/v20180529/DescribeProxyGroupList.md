@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DescribeProxyGroupList --cli-unfold-argument  \
-    --ProjectId 0\
-    --Offset 0\
+    --ProjectId 0 \
+    --Offset 0 \
     --Limit 20
 ```
 

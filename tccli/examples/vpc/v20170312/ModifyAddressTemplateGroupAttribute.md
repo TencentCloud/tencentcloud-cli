@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyAddressTemplateGroupAttribute --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --AddressTemplateGroupId ipmg-2uw6ujo6\
+    --Version 2017-03-12 \
+    --AddressTemplateGroupId ipmg-2uw6ujo6 \
     --AddressTemplateGroupName TestName
 ```
 

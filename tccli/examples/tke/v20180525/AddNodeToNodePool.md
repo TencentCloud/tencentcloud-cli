@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke AddNodeToNodePool --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx\
-    --NodePoolId np-xxxxxx\
+    --ClusterId cls-xxxxxx \
+    --NodePoolId np-xxxxxx \
     --InstanceIds ins-xxx
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc DescribeVpnGateways --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --Offset 0\
-    --Limit 2\
-    --Filters.0.Name zone\
+    --Version 2017-03-12 \
+    --Offset 0 \
+    --Limit 2 \
+    --Filters.0.Name zone \
     --Filters.0.Values ap-guangzhou-2 ap-guangzhou-3
 ```
 

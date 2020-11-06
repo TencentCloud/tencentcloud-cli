@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DescribeDefaultSubnet --cli-unfold-argument  \
-    --EcmRegion ap-hangzhou-ecm\
+    --EcmRegion ap-hangzhou-ecm \
     --Zone ap-hangzhou-ecm-1
 ```
 

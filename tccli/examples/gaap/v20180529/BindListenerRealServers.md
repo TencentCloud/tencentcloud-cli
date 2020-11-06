@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap BindListenerRealServers --cli-unfold-argument  \
-    --ListenerId listener-pbsgn7ej\
-    --RealServerBindSet.0.RealServerId rs-04v3s12t\
-    --RealServerBindSet.0.RealServerIP 119.28.69.101\
-    --RealServerBindSet.0.RealServerPort 80\
+    --ListenerId listener-pbsgn7ej \
+    --RealServerBindSet.0.RealServerId rs-04v3s12t \
+    --RealServerBindSet.0.RealServerIP 119.28.69.101 \
+    --RealServerBindSet.0.RealServerPort 80 \
     --RealServerBindSet.0.RealServerWeight 1
 ```
 

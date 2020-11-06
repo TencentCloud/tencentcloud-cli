@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mdp ModifyMediaPackageChannelInputAuthInfo --cli-unfold-argument  \
-    --Id xxx\
-    --Url xxx\
+    --Id xxx \
+    --Url xxx \
     --ActionType UPDATE
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ame DescribeItems --cli-unfold-argument  \
-    --Limit 1\
-    --Offset 0\
+    --Limit 1 \
+    --Offset 0 \
     --CategoryId xxxxx
 ```
 

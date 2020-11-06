@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mps ModifyAnimatedGraphicsTemplate --cli-unfold-argument  \
-    --Definition 10001\
-    --Name 'Animated image generating template 1'\
-    --Width 540\
-    --Height 960\
+    --Definition 10001 \
+    --Name 'Animated image generating template 1' \
+    --Width 540 \
+    --Height 960 \
     --Fps 30
 ```
 

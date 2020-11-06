@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli youmall DescribePersonInfoByFacePicture --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 1\
+    --CompanyId testCompany1 \
+    --ShopId 1 \
     --Picture 8ADQW312887XV878
 ```
 

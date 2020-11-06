@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cpdp QueryTransferBatch --cli-unfold-argument  \
-    --MerchantId 1589516681\
-    --MerchantBatchNo 6695169909762424846\
-    --NeedQueryDetail true\
-    --Offset 20\
-    --Limit 100\
+    --MerchantId 1589516681 \
+    --MerchantBatchNo 6695169909762424846 \
+    --NeedQueryDetail true \
+    --Offset 20 \
+    --Limit 100 \
     --DetailStatus SUCCESS
 ```
 

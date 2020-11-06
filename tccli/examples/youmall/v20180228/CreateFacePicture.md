@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli youmall CreateFacePicture --cli-unfold-argument  \
-    --CompanyId testCompany1\
-    --ShopId 1\
-    --PersonType 1\
-    --Picture 8ADQW312887XV878\
+    --CompanyId testCompany1 \
+    --ShopId 1 \
+    --PersonType 1 \
+    --Picture 8ADQW312887XV878 \
     --PictureName test.jpg
 ```
 

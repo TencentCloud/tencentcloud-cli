@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wss UploadCert --cli-unfold-argument  \
-    --Cert -----BEGIN+CERTIFICATE-----%0D%...(省略)...0%0A-----END+CERTIFICATE-----\
-    --CertType SVR\
-    --key -----BEGIN+RSA+PRIVATE+KEY-----%0D%...(省略)...0%0A-----END+RSA+PRIVATE+KEY-----\
-    --ProjectId 1000\
+    --Cert -----BEGIN+CERTIFICATE-----%0D%...(省略)...0%0A-----END+CERTIFICATE----- \
+    --CertType SVR \
+    --key -----BEGIN+RSA+PRIVATE+KEY-----%0D%...(省略)...0%0A-----END+RSA+PRIVATE+KEY----- \
+    --ProjectId 1000 \
     --ModuleType ssl
 ```
 

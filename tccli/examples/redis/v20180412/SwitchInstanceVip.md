@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis SwitchInstanceVip --cli-unfold-argument  \
-    --SrcInstanceId crs-5a4py64p\
-    --DstInstanceId crs-1kl0iy0v\
+    --SrcInstanceId crs-5a4py64p \
+    --DstInstanceId crs-1kl0iy0v \
     --ForceSwitch 1
 ```
 

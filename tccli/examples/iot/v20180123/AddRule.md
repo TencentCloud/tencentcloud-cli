@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iot AddRule --cli-unfold-argument  \
-    --Name 规则名称\
-    --Description 规则描述\
-    --Query.Field *\
-    --Query.Topic iot-4e0wsxpi/+/new-topic-1\
-    --Query.Condition \
-    --Actions.0.Topic.Topic iot-gl9kmqrs/new-device-1/new-topic-1\
+    --Name 规则名称 \
+    --Description 规则描述 \
+    --Query.Field * \
+    --Query.Topic iot-4e0wsxpi/+/new-topic-1 \
+    --Query.Condition  \
+    --Actions.0.Topic.Topic iot-gl9kmqrs/new-device-1/new-topic-1 \
     --Actions.1.Service.Url http://abc.com
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dayu ModifyCCIpAllowDeny --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Method add\
-    --Type white\
-    --IpList 1.1.1.1 1.1.1.2\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Method add \
+    --Type white \
+    --IpList 1.1.1.1 1.1.1.2 \
     --Protocol http
 ```
 
@@ -35,13 +35,13 @@ Input:
 
 ```
 tccli dayu ModifyCCIpAllowDeny --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Method add\
-    --Type white\
-    --IpList 1.1.1.1 1.1.1.2\
-    --Protocol https\
-    --Domain test.com\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Method add \
+    --Type white \
+    --IpList 1.1.1.1 1.1.1.2 \
+    --Protocol https \
+    --Domain test.com \
     --RuleId rule-0000001
 ```
 
@@ -66,12 +66,12 @@ Input:
 
 ```
 tccli dayu ModifyCCIpAllowDeny --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Method delete\
-    --Type white\
-    --IpList 1.1.1.1 1.1.1.2\
-    --Protocol https\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Method delete \
+    --Type white \
+    --IpList 1.1.1.1 1.1.1.2 \
+    --Protocol https \
     --Domain test.com
 ```
 

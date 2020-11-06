@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmlb DescribeTrafficMirrors --cli-unfold-argument  \
-    --TrafficMirrorIds bmtm-lmep0eit\
-    --Aliases test\
+    --TrafficMirrorIds bmtm-lmep0eit \
+    --Aliases test \
     --VpcIds vpc-muinpf9p
 ```
 

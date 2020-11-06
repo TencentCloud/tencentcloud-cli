@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia DetectLabel --cli-unfold-argument  \
-    --ImageUrl https://test.jpg\
+    --ImageUrl https://test.jpg \
     --Scenes WEB CAMERA ALBUM
 ```
 

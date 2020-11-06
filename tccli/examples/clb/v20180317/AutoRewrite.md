@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb AutoRewrite --cli-unfold-argument  \
-    --LoadBalancerId lb-r6nx1iby\
-    --ListenerId lbl-lmeeyb1q\
+    --LoadBalancerId lb-r6nx1iby \
+    --ListenerId lbl-lmeeyb1q \
     --Domains www.abc.com
 ```
 

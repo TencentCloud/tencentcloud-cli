@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gaap DescribeProxies --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 1\
-    --Filters.0.Name AccessRegion\
+    --Offset 0 \
+    --Limit 1 \
+    --Filters.0.Name AccessRegion \
     --Filters.0.Values ap-hongkong
 ```
 

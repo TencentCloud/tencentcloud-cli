@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb ModifyLogFileRetentionPeriod --cli-unfold-argument  \
-    --InstanceId tdsql-ige1a5k3\
+    --InstanceId tdsql-ige1a5k3 \
     --Days 29
 ```
 

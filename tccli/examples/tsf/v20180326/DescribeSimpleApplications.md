@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DescribeSimpleApplications --cli-unfold-argument  \
-    --Offset 50\
+    --Offset 50 \
     --Limit 50
 ```
 

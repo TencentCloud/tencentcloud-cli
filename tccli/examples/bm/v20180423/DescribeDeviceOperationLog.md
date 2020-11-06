@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bm DescribeDeviceOperationLog --cli-unfold-argument  \
-    --InstanceId cpm-xxx\
-    --StartTime 2018-09-05\
-    --EndTime 2018-10-05\
-    --Offset 0\
+    --InstanceId cpm-xxx \
+    --StartTime 2018-09-05 \
+    --EndTime 2018-10-05 \
+    --Offset 0 \
     --Limit 20
 ```
 

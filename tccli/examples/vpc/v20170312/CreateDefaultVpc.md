@@ -54,7 +54,7 @@ Input:
 
 ```
 tccli vpc CreateDefaultVpc --cli-unfold-argument  \
-    --Version 2017-03-12\
+    --Version 2017-03-12 \
     --Force true
 ```
 

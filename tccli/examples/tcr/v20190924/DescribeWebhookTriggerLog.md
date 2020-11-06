@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DescribeWebhookTriggerLog --cli-unfold-argument  \
-    --RegistryId tcr-ak9876\
-    --Namespace someNs\
+    --RegistryId tcr-ak9876 \
+    --Namespace someNs \
     --Id 9
 ```
 

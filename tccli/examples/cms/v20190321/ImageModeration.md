@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cms ImageModeration --cli-unfold-argument  \
-    --FileMD5 字符串型\
-    --FileContent 字符串型\
+    --FileMD5 字符串型 \
+    --FileContent 字符串型 \
     --FileUrl https://xxx.jpg
 ```
 

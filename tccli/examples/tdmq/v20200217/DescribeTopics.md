@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tdmq DescribeTopics --cli-unfold-argument  \
-    --EnvironmentId default\
-    --TopicName \
-    --Offset 0\
+    --EnvironmentId default \
+    --TopicName  \
+    --Offset 0 \
     --Limit 10
 ```
 

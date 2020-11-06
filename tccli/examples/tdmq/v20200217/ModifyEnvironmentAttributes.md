@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq ModifyEnvironmentAttributes --cli-unfold-argument  \
-    --EnvironmentId test1\
-    --MsgTTL 3000\
+    --EnvironmentId test1 \
+    --MsgTTL 3000 \
     --Remark 修改ttl
 ```
 

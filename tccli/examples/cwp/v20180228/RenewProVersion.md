@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp RenewProVersion --cli-unfold-argument  \
-    --ChargePrepaid.Period 1\
+    --ChargePrepaid.Period 1 \
     --Quuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5
 ```
 

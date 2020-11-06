@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tag DescribeResourceTags --cli-unfold-argument  \
-    --ServiceType cvm\
-    --ResourcePrefix instance\
-    --ResourceRegion ap-beijing\
+    --ServiceType cvm \
+    --ResourcePrefix instance \
+    --ResourceRegion ap-beijing \
     --ResourceId ins-1234
 ```
 

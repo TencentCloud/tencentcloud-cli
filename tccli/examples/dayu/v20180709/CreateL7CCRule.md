@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu CreateL7CCRule --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --RuleId rule-00000001\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --RuleId rule-00000001 \
     --Method query
 ```
 

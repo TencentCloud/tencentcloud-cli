@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdn GetDisableRecords --cli-unfold-argument  \
-    --StartTime '2018-12-12 10:24:00'\
+    --StartTime '2018-12-12 10:24:00' \
     --EndTime '2018-12-14 10:24:00'
 ```
 

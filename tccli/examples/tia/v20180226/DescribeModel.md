@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tia DescribeModel --cli-unfold-argument  \
-    --Name test-model\
+    --Name test-model \
     --Cluster ap-beijing
 ```
 
@@ -42,7 +42,7 @@ Input:
 
 ```
 tccli tia DescribeModel --cli-unfold-argument  \
-    --Name scf-test-model-1\
+    --Name scf-test-model-1 \
     --ServType serverless
 ```
 

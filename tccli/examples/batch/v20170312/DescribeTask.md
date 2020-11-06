@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli batch DescribeTask --cli-unfold-argument  \
-    --JobId job-97zcl3wt\
-    --TaskName A\
-    --Filters.0.Name task-instance-state\
+    --JobId job-97zcl3wt \
+    --TaskName A \
+    --Filters.0.Name task-instance-state \
     --Filters.0.Values SUCCEED
 ```
 

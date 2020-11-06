@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc DescribeHaVips --cli-unfold-argument  \
-    --Filters.0.Name havip-name\
-    --Filters.0.Values test\
-    --Filters.1.Name vpc-id\
+    --Filters.0.Name havip-name \
+    --Filters.0.Values test \
+    --Filters.1.Name vpc-id \
     --Filters.1.Values vpc-6v2ht8q5
 ```
 

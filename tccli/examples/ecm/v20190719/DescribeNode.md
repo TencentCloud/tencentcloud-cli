@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DescribeNode --cli-unfold-argument  \
-    --Filters.0.Name InstanceFamily\
+    --Filters.0.Name InstanceFamily \
     --Filters.0.Values SN3ne
 ```
 

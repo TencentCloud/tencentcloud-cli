@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli lighthouse CreateFirewallRules --cli-unfold-argument  \
-    --InstanceId lhins-aglzynfg\
-    --FirewallRules.0.Protocol TCP\
-    --FirewallRules.0.Port 80\
-    --FirewallRules.1.Protocol UDP\
-    --FirewallRules.1.Port 22,443\
-    --FirewallRules.2.Protocol TCP\
+    --InstanceId lhins-aglzynfg \
+    --FirewallRules.0.Protocol TCP \
+    --FirewallRules.0.Port 80 \
+    --FirewallRules.1.Protocol UDP \
+    --FirewallRules.1.Port 22,443 \
+    --FirewallRules.2.Protocol TCP \
     --FirewallRules.2.Port 8000-8080
 ```
 

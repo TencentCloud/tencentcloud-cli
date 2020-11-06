@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cmq CreateSubscribe --cli-unfold-argument  \
-    --TopicName ConnTopic\
-    --SubscriptionName ConnSubQueue\
-    --Protocol queue\
+    --TopicName ConnTopic \
+    --SubscriptionName ConnSubQueue \
+    --Protocol queue \
     --Endpoint queue_sub
 ```
 

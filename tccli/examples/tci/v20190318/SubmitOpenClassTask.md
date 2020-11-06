@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tci SubmitOpenClassTask --cli-unfold-argument  \
-    --FileContent https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_vedio.mp4\
-    --FileType vod_url\
+    --FileContent https%3A%2F%2Fedu-test-1253131631.cos.ap-guangzhou.myqcloud.com%2Faieduautotest%2Fautotest_vedio.mp4 \
+    --FileType vod_url \
     --LibrarySet library_15603955264181591716
 ```
 

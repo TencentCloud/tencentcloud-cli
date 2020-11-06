@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb RenewDBInstances --cli-unfold-argument  \
-    --InstanceIds cmgo-gzo03o75\
+    --InstanceIds cmgo-gzo03o75 \
     --InstanceChargePrepaid.Period 1
 ```
 

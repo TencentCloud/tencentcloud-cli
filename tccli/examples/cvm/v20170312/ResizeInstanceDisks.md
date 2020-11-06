@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm ResizeInstanceDisks --cli-unfold-argument  \
-    --InstanceId ins-r8hr2upy\
+    --InstanceId ins-r8hr2upy \
     --DataDisks.0.DiskSize 100
 ```
 

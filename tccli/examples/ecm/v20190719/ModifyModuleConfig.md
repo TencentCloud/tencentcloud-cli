@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm ModifyModuleConfig --cli-unfold-argument  \
-    --ModuleId em-0vag13d1\
-    --InstanceType SN3ne.2XLARGE16\
+    --ModuleId em-0vag13d1 \
+    --InstanceType SN3ne.2XLARGE16 \
     --DefaultDataDiskSize 100
 ```
 

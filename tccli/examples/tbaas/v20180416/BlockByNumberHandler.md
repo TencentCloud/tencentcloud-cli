@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tbaas BlockByNumberHandler --cli-unfold-argument  \
-    --Module block\
-    --Operation block_by_number\
-    --GroupPk 11_1\
+    --Module block \
+    --Operation block_by_number \
+    --GroupPk 11_1 \
     --BlockNumber 1
 ```
 

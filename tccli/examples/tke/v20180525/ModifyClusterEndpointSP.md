@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke ModifyClusterEndpointSP --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx\
+    --ClusterId cls-xxxxxxxx \
     --SecurityPolicies 192.168.1.0/24
 ```
 

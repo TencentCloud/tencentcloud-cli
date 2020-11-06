@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tci DeleteFace --cli-unfold-argument  \
-    --PersonId person_xxx\
-    --FaceIdSet face_xxx\
+    --PersonId person_xxx \
+    --FaceIdSet face_xxx \
     --LibraryId library_xxx
 ```
 

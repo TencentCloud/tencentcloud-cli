@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam UpdateRoleDescription --cli-unfold-argument  \
-    --RoleId 4611686018427731422\
+    --RoleId 4611686018427731422 \
     --Description abc234
 ```
 

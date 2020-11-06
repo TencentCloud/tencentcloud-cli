@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr RecognizeTableOCR --cli-unfold-argument  \
-    --ImageUrl xxx\
+    --ImageUrl xxx \
     --IsPdf false
 ```
 

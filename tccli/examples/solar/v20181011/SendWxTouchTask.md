@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli solar SendWxTouchTask --cli-unfold-argument  \
-    --GroupId 123\
-    --DistinctFlag false\
-    --IsSendNow false\
-    --SendDate 0\
-    --TaskName 123\
-    --WxTouchType 123\
-    --Title 123\
-    --Content 123\
-    --NewsId 123\
-    --SmallProgramId 123\
-    --TemplateId 123\
+    --GroupId 123 \
+    --DistinctFlag false \
+    --IsSendNow false \
+    --SendDate 0 \
+    --TaskName 123 \
+    --WxTouchType 123 \
+    --Title 123 \
+    --Content 123 \
+    --NewsId 123 \
+    --SmallProgramId 123 \
+    --TemplateId 123 \
     --WxAppId 123
 ```
 

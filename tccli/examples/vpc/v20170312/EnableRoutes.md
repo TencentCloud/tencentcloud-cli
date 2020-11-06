@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc EnableRoutes --cli-unfold-argument  \
-    --RouteTableId rtb-9wzwlnhc\
+    --RouteTableId rtb-9wzwlnhc \
     --RouteIds 18292 18293
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli vpc EnableRoutes --cli-unfold-argument  \
-    --RouteTableId rtb-12345678\
+    --RouteTableId rtb-12345678 \
     --RouteItemIds rti-12345678
 ```
 

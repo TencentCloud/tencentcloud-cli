@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateSubAppId --cli-unfold-argument  \
-    --Name test\
+    --Name test \
     --Description demo
 ```
 

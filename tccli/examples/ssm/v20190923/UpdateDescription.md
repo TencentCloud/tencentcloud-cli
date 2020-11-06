@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssm UpdateDescription --cli-unfold-argument  \
-    --SecretName test\
+    --SecretName test \
     --Description 'new desc'
 ```
 

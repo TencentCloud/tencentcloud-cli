@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sslpod ModifyDomainTags --cli-unfold-argument  \
-    --AccountDomainId 15067\
+    --AccountDomainId 15067 \
     --Tags 123
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq CreateEnvironment --cli-unfold-argument  \
-    --EnvironmentId test1\
-    --MsgTTL 2000\
+    --EnvironmentId test1 \
+    --MsgTTL 2000 \
     --Remark 备注
 ```
 

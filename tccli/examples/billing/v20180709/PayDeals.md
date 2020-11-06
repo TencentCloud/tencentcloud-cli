@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli billing PayDeals --cli-unfold-argument  \
-    --OrderIds 2020111161300016142141\
+    --OrderIds 2020111161300016142141 \
     --AutoVoucher 1
 ```
 

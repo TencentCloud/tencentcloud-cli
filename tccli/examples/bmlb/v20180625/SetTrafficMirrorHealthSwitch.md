@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli bmlb SetTrafficMirrorHealthSwitch --cli-unfold-argument  \
-    --TrafficMirrorId bmtm-lmep0eit\
-    --HealthSwitch 1\
-    --HealthNum 2\
-    --UnhealthNum 3\
-    --IntervalTime 90\
-    --HttpCheckDomain a.com\
-    --HttpCheckPath /a/a\
+    --TrafficMirrorId bmtm-lmep0eit \
+    --HealthSwitch 1 \
+    --HealthNum 2 \
+    --UnhealthNum 3 \
+    --IntervalTime 90 \
+    --HttpCheckDomain a.com \
+    --HttpCheckPath /a/a \
     --HttpCodes 1
 ```
 

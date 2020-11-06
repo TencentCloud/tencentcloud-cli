@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm RemovePrivateIpAddresses --cli-unfold-argument  \
-    --NetworkInterfaceId eni-12121212\
-    --PrivateIpAddresses.0.PrivateIpAddress 172.16.32.111\
+    --NetworkInterfaceId eni-12121212 \
+    --PrivateIpAddresses.0.PrivateIpAddress 172.16.32.111 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

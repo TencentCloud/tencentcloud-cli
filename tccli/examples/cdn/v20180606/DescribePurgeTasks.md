@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdn DescribePurgeTasks --cli-unfold-argument  \
-    --PurgeType url\
-    --TaskId 1234567\
+    --PurgeType url \
+    --TaskId 1234567 \
     --Area mainland
 ```
 

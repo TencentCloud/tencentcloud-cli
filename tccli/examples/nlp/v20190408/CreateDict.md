@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp CreateDict --cli-unfold-argument  \
-    --Description 王者荣耀4月份新增英雄人名\
+    --Description 王者荣耀4月份新增英雄人名 \
     --Name 王者荣耀人名
 ```
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli clb CreateLoadBalancer --cli-unfold-argument  \
-    --LoadBalancerType OPEN\
-    --Forward 1\
-    --VpcId vpc-30xqxt9p\
-    --LoadBalancerName test\
+    --LoadBalancerType OPEN \
+    --Forward 1 \
+    --VpcId vpc-30xqxt9p \
+    --LoadBalancerName test \
     --ProjectId 0
 ```
 
@@ -33,10 +33,10 @@ Input:
 
 ```
 tccli clb CreateLoadBalancer --cli-unfold-argument  \
-    --LoadBalancerType INTERNAL\
-    --Forward 1\
-    --LoadBalancerName test_internal\
-    --VpcId vpc-30xqxt9p\
+    --LoadBalancerType INTERNAL \
+    --Forward 1 \
+    --LoadBalancerName test_internal \
+    --VpcId vpc-30xqxt9p \
     --SubnetId subnet-k57djpow
 ```
 

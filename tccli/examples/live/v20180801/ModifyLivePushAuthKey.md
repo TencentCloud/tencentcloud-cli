@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live ModifyLivePushAuthKey --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com\
-    --Enable 0\
-    --MasterAuthKey xxxx\
-    --BackupAuthKey xxx\
+    --DomainName 5000.livepush.myqcloud.com \
+    --Enable 0 \
+    --MasterAuthKey xxxx \
+    --BackupAuthKey xxx \
     --AuthDelta 300
 ```
 

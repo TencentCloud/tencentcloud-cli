@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideo DisableOtaVersion --cli-unfold-argument  \
-    --ProductId 12345678910\
-    --OtaVersion 1.1.1\
+    --ProductId 12345678910 \
+    --OtaVersion 1.1.1 \
     --Operator zhangsan
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli domain RenewDomainBatch --cli-unfold-argument  \
-    --Period 1\
-    --Domains h101.dlgslb.cn h103.dlgslb.cn\
+    --Period 1 \
+    --Domains h101.dlgslb.cn h103.dlgslb.cn \
     --PayMode 1
 ```
 

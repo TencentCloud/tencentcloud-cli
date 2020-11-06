@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bmvpc UpgradeNatGateway --cli-unfold-argument  \
-    --NatId nat-1tw1oc0t\
-    --VpcId vpc-mi51u7gs\
+    --NatId nat-1tw1oc0t \
+    --VpcId vpc-mi51u7gs \
     --MaxConcurrent 3000000
 ```
 

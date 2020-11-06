@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli cpdp DescribeOrderStatus --cli-unfold-argument  \
-    --MidasSecretId 1587005497659\
-    --MidasSignature 111\
-    --MidasAppId unibank10001\
-    --RequestType QueryOrderStatusReq\
-    --OrderId 2020042180081\
-    --PlatformShortNumber F08872\
-    --BankAccountNumber 15000093978307\
-    --PayChannelSubId 1\
-    --PayChannel bank_pingan\
-    --MerchantCode 4087\
-    --TransSequenceNumber F088722004270543493495\
-    --QueryType 1\
+    --MidasSecretId 1587005497659 \
+    --MidasSignature 111 \
+    --MidasAppId unibank10001 \
+    --RequestType QueryOrderStatusReq \
+    --OrderId 2020042180081 \
+    --PlatformShortNumber F08872 \
+    --BankAccountNumber 15000093978307 \
+    --PayChannelSubId 1 \
+    --PayChannel bank_pingan \
+    --MerchantCode 4087 \
+    --TransSequenceNumber F088722004270543493495 \
+    --QueryType 1 \
     --MidasEnvironment dev
 ```
 

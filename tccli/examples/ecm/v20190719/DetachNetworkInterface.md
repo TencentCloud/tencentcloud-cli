@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm DetachNetworkInterface --cli-unfold-argument  \
-    --NetworkInterfaceId eni-12121212\
-    --InstanceId ins-11221122\
+    --NetworkInterfaceId eni-12121212 \
+    --InstanceId ins-11221122 \
     --EcmRegion ap-hangzhou-ecm
 ```
 

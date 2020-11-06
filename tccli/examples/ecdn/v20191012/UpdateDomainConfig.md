@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecdn UpdateDomainConfig --cli-unfold-argument  \
-    --ProjectId 0\
+    --ProjectId 0 \
     --Domain www.test.com
 ```
 

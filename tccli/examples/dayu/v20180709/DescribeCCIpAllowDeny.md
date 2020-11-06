@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu DescribeCCIpAllowDeny --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Type black\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Type black \
     --Protocol http
 ```
 

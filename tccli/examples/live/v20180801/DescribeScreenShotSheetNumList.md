@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeScreenShotSheetNumList --cli-unfold-argument  \
-    --StartTime 2019-11-07T16:00:00Z\
+    --StartTime 2019-11-07T16:00:00Z \
     --EndTime 2019-11-09T15:59:00Z
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iai ModifyPersonBaseInfo --cli-unfold-argument  \
-    --PersonId 2001\
-    --PersonName JunlyWang\
+    --PersonId 2001 \
+    --PersonName JunlyWang \
     --Gender 1
 ```
 
@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli iai ModifyPersonBaseInfo --cli-unfold-argument  \
-    --PersonId 1001\
-    --PersonName EvanLiao\
+    --PersonId 1001 \
+    --PersonName EvanLiao \
     --Gender 1
 ```
 
@@ -50,7 +50,7 @@ Input:
 
 ```
 tccli iai ModifyPersonBaseInfo --cli-unfold-argument  \
-    --PersonId 1001\
+    --PersonId 1001 \
     --Gender -1
 ```
 

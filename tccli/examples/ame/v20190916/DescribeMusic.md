@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ame DescribeMusic --cli-unfold-argument  \
-    --ItemId xxxx\
-    --IdentityId xx\
+    --ItemId xxxx \
+    --IdentityId xx \
     --SubItemType MP3-64K-FTD-P
 ```
 
@@ -53,8 +53,8 @@ Input:
 
 ```
 tccli ame DescribeMusic --cli-unfold-argument  \
-    --ItemId xxxx\
-    --IdentityId xx\
+    --ItemId xxxx \
+    --IdentityId xx \
     --SubItemType MP3-64K-FTD-P
 ```
 

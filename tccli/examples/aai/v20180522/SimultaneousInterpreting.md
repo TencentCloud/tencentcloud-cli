@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli aai SimultaneousInterpreting --cli-unfold-argument  \
-    --IsEnd 0\
-    --OpenTranslate 1\
-    --ProjectId 1093177\
-    --RecEngineModelType 16k_zh\
-    --SourceLanguage zh\
-    --SubServiceType 3\
-    --TargetLanguage en\
-    --VoiceFormat 1\
-    --VoiceId 0234567890abcdef\
-    --Data ddddd\
-    --DataLen 5\
+    --IsEnd 0 \
+    --OpenTranslate 1 \
+    --ProjectId 1093177 \
+    --RecEngineModelType 16k_zh \
+    --SourceLanguage zh \
+    --SubServiceType 3 \
+    --TargetLanguage en \
+    --VoiceFormat 1 \
+    --VoiceId 0234567890abcdef \
+    --Data ddddd \
+    --DataLen 5 \
     --Seq 0
 ```
 

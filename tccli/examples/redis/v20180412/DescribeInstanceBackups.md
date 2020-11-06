@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis DescribeInstanceBackups --cli-unfold-argument  \
-    --Limit 5\
-    --Offset 0\
+    --Limit 5 \
+    --Offset 0 \
     --InstanceId crs-5a4py64p
 ```
 

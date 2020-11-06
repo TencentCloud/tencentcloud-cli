@@ -1,4 +1,4 @@
-**Example 1: Creating database backup**
+**Example 1: Creating a database backup**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb CreateBackup --cli-unfold-argument  \
-    --InstanceId cdb-c1nl9rpv\
-    --BackupMethod logical\
+    --InstanceId cdb-c1nl9rpv \
+    --BackupMethod logical \
     --BackupDBTableList '[{"Db": "db1", "Table": "tb1"}, {"Db": "db1", "Table": "tb2"}, {"Db": "db2"} ]'
 ```
 

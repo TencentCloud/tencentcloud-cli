@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr IDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --CardSide FRONT
 ```
 
@@ -36,7 +36,7 @@ Input:
 
 ```
 tccli ocr IDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --CardSide BACK
 ```
 
@@ -66,8 +66,8 @@ Input:
 
 ```
 tccli ocr IDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
-    --CardSide FRONT\
+    --ImageUrl https://xx/a.jpg \
+    --CardSide FRONT \
     --Config {"CropIdCard":true,"CropPortrait":true}
 ```
 
@@ -97,8 +97,8 @@ Input:
 
 ```
 tccli ocr IDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
-    --CardSide FRONT\
+    --ImageUrl https://xx/a.jpg \
+    --CardSide FRONT \
     --Config {"TempIdWarn":true}
 ```
 

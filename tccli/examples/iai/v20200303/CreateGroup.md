@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 'Tencent Employees in Shenzhen'\
-    --FaceModelVersion 3.0\
-    --GroupId TencentShenZhenEmployee\
-    --Tag 'Excluding interns'\
+    --GroupName 'Tencent Employees in Shenzhen' \
+    --FaceModelVersion 3.0 \
+    --GroupId TencentShenZhenEmployee \
+    --Tag 'Excluding interns' \
     --GroupExDescriptions Division 'Department name' 'Team name'
 ```
 
@@ -31,10 +31,10 @@ Input:
 
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 'Dormitory Building #1, Zhuyuan Campus, XX University'\
-    --GroupId ZhuYuanDormitoryNo1\
-    --FaceModelVersion 3.0\
-    --Tag 'All girls'\
+    --GroupName 'Dormitory Building #1, Zhuyuan Campus, XX University' \
+    --GroupId ZhuYuanDormitoryNo1 \
+    --FaceModelVersion 3.0 \
+    --Tag 'All girls' \
     --GroupExDescriptions 'School name' Major Grade 'Student ID'
 ```
 
@@ -56,7 +56,7 @@ Input:
 
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 'Tencent Employees in Shenzhen'\
+    --GroupName 'Tencent Employees in Shenzhen' \
     --GroupId TencentShenZhenEmployee
 ```
 
@@ -81,7 +81,7 @@ Input:
 
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 'Tencent Employees in Shenzhen'\
+    --GroupName 'Tencent Employees in Shenzhen' \
     --GroupId 'Tencent Employees in Shenzhen'
 ```
 

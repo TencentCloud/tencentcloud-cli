@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cwp ModifyLoginWhiteList --cli-unfold-argument  \
-    --Id 1\
-    --Rules.0.CityId 1\
-    --Rules.0.ProvinceId 1\
-    --Rules.0.CountryId 1\
-    --Rules.SrcIp 10.1.1.1\
-    --Rules.UserName admin,root\
-    --Rules.IsGlobal true\
+    --Id 1 \
+    --Rules.0.CityId 1 \
+    --Rules.0.ProvinceId 1 \
+    --Rules.0.CountryId 1 \
+    --Rules.SrcIp 10.1.1.1 \
+    --Rules.UserName admin,root \
+    --Rules.IsGlobal true \
     --Rules.HostIp 10.2.2.2
 ```
 

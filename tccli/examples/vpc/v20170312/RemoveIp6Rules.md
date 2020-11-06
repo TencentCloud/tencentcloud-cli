@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc RemoveIp6Rules --cli-unfold-argument  \
-    --Ip6TranslatorId ip6-90pt7p9q\
+    --Ip6TranslatorId ip6-90pt7p9q \
     --Ip6RuleIds rule6-k5l5hnwk
 ```
 

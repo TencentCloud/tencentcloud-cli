@@ -70,9 +70,9 @@ Input:
 
 ```
 tccli as DescribeAutoScalingGroups --cli-unfold-argument  \
-    --Filters.0.Name tag:city\
-    --Filters.0.Values shenzhen\
-    --Offset 0\
+    --Filters.0.Name tag:city \
+    --Filters.0.Values shenzhen \
+    --Offset 0 \
     --Limit 1
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli npp DeleteCallBack --cli-unfold-argument  \
-    --BizAppId xxxx\
+    --BizAppId xxxx \
     --CallId xx
 ```
 

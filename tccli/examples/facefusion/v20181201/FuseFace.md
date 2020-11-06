@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli facefusion FuseFace --cli-unfold-argument  \
-    --ProjectId 300029\
-    --ModelId qc_300029_453345_1\
-    --RspImgType url\
-    --MergeInfos.0.Image /9/242342342342\
-    --MergeInfos.0.Url http://test.image.myqcloud.com/testB.jpg\
-    --MergeInfos.0.InputImageFaceRect.X 1\
-    --MergeInfos.0.InputImageFaceRect.Y 2\
-    --MergeInfos.0.InputImageFaceRect.Width 11\
-    --MergeInfos.0.InputImageFaceRect.Height 22\
-    --MergeInfos.0.TemplateFaceID 1\
-    --FuseProfileDegree 1\
+    --ProjectId 300029 \
+    --ModelId qc_300029_453345_1 \
+    --RspImgType url \
+    --MergeInfos.0.Image /9/242342342342 \
+    --MergeInfos.0.Url http://test.image.myqcloud.com/testB.jpg \
+    --MergeInfos.0.InputImageFaceRect.X 1 \
+    --MergeInfos.0.InputImageFaceRect.Y 2 \
+    --MergeInfos.0.InputImageFaceRect.Width 11 \
+    --MergeInfos.0.InputImageFaceRect.Height 22 \
+    --MergeInfos.0.TemplateFaceID 1 \
+    --FuseProfileDegree 1 \
     --FuseFaceDegree 1
 ```
 

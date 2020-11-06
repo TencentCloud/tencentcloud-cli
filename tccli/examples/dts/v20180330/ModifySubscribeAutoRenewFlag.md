@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dts ModifySubscribeAutoRenewFlag --cli-unfold-argument  \
-    --SubscribeId subs-8392jd821u\
+    --SubscribeId subs-8392jd821u \
     --AutoRenewFlag 1
 ```
 

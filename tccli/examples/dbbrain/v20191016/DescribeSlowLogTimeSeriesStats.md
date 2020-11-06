@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dbbrain DescribeSlowLogTimeSeriesStats --cli-unfold-argument  \
-    --InstanceId test\
-    --StartTime '2019-01-01 00:00:00'\
+    --InstanceId test \
+    --StartTime '2019-01-01 00:00:00' \
     --EndTime '2019-01-01 01:00:00'
 ```
 

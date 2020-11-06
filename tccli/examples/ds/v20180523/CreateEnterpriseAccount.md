@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli ds CreateEnterpriseAccount --cli-unfold-argument  \
-    --Module AccountMng\
-    --Operation CreateEnterpriseAccount\
-    --Name test\
-    --IdentType 8\
-    --IdentNo 140926197802256717\
-    --MobilePhone 18187654321\
-    --TransactorName test1\
-    --TransactorIdentType 0\
-    --TransactorIdentNo 140926197802256717\
+    --Module AccountMng \
+    --Operation CreateEnterpriseAccount \
+    --Name test \
+    --IdentType 8 \
+    --IdentNo 140926197802256717 \
+    --MobilePhone 18187654321 \
+    --TransactorName test1 \
+    --TransactorIdentType 0 \
+    --TransactorIdentNo 140926197802256717 \
     --TransactorPhone 18287654321
 ```
 

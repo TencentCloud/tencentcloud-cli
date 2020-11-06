@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dbbrain DescribeDBDiagHistory --cli-unfold-argument  \
-    --StartTime '2019-01-01 00:00:00'\
-    --EndTime '2019-01-01 01:00:00'\
+    --StartTime '2019-01-01 00:00:00' \
+    --EndTime '2019-01-01 01:00:00' \
     --InstanceId cdb-test
 ```
 

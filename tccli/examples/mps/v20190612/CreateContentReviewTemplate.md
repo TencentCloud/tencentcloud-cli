@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mps CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 'Content audit template'\
-    --Comment 'Template 2'\
-    --PornConfigure.ImgReviewInfo.Switch ON\
-    --PornConfigure.ImgReviewInfo.BlockConfidence 80\
+    --Name 'Content audit template' \
+    --Comment 'Template 2' \
+    --PornConfigure.ImgReviewInfo.Switch ON \
+    --PornConfigure.ImgReviewInfo.BlockConfidence 80 \
     --PornConfigure.ImgReviewInfo.ReviewConfidence 30
 ```
 
@@ -31,8 +31,8 @@ Input:
 
 ```
 tccli mps CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 'Content audit template'\
-    --Comment 'Template 1'\
+    --Name 'Content audit template' \
+    --Comment 'Template 1' \
     --PornConfigure.ImgReviewInfo.Switch ON
 ```
 
@@ -54,10 +54,10 @@ Input:
 
 ```
 tccli mps CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 'Content audit template'\
-    --Comment 'Template 3'\
-    --PornConfigure.ImgReviewInfo.Switch ON\
-    --TerrorismConfigure.ImgReviewInfo.Switch ON\
+    --Name 'Content audit template' \
+    --Comment 'Template 3' \
+    --PornConfigure.ImgReviewInfo.Switch ON \
+    --TerrorismConfigure.ImgReviewInfo.Switch ON \
     --PoliticalConfigure.ImgReviewInfo.Switch ON
 ```
 
@@ -79,9 +79,9 @@ Input:
 
 ```
 tccli mps CreateContentReviewTemplate --cli-unfold-argument  \
-    --Name 'Content audit template'\
-    --Comment 'Template 1'\
-    --PornConfigure.ImgReviewInfo.Switch ON\
+    --Name 'Content audit template' \
+    --Comment 'Template 1' \
+    --PornConfigure.ImgReviewInfo.Switch ON \
     --PornConfigure.ImgReviewInfo.LabelSet porn sexy
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmlb UnbindTrafficMirrorListeners --cli-unfold-argument  \
-    --TrafficMirrorId bmtm-lmep0eit\
+    --TrafficMirrorId bmtm-lmep0eit \
     --ListenerIds lbl-3b8kycav
 ```
 

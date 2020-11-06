@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli monitor DescribeBasicAlarmList --cli-unfold-argument  \
-    --Module monitor\
-    --StartTime 1573660800\
-    --EndTime 1573919999\
-    --Limit 20\
-    --Offset 0\
-    --OccurTimeOrder DESC\
-    --ProjectIds 0\
-    --ViewNames cvm_device\
+    --Module monitor \
+    --StartTime 1573660800 \
+    --EndTime 1573919999 \
+    --Limit 20 \
+    --Offset 0 \
+    --OccurTimeOrder DESC \
+    --ProjectIds 0 \
+    --ViewNames cvm_device \
     --AlarmStatus '1
 "MetricName": "mem_used",'
 ```

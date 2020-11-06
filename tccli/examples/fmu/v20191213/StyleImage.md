@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli fmu StyleImage --cli-unfold-argument  \
-    --Image xxxxx\
-    --FilterType 2\
+    --Image xxxxx \
+    --FilterType 2 \
     --FilterDegree 80
 ```
 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli fmu StyleImage --cli-unfold-argument  \
-    --Image xxxxx\
+    --Image xxxxx \
     --FilterType -1
 ```
 

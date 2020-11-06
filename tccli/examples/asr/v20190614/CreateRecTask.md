@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli asr CreateRecTask --cli-unfold-argument  \
-    --Url http://test.cos.ap-guangzhou.myqcloud.com/test.wav\
-    --ChannelNum 1\
-    --EngineModelType 16k_zh\
-    --ResTextFormat 0\
+    --Url http://test.cos.ap-guangzhou.myqcloud.com/test.wav \
+    --ChannelNum 1 \
+    --EngineModelType 16k_zh \
+    --ResTextFormat 0 \
     --SourceType 0
 ```
 
@@ -33,10 +33,10 @@ Input:
 
 ```
 tccli asr CreateRecTask --cli-unfold-argument  \
-    --ChannelNum 1\
-    --EngineModelType 16k_zh\
-    --ResTextFormat 0\
-    --Data eGNmYXNkZmFzZmFzZGZhc2RmCg==\
+    --ChannelNum 1 \
+    --EngineModelType 16k_zh \
+    --ResTextFormat 0 \
+    --Data eGNmYXNkZmFzZmFzZGZhc2RmCg== \
     --SourceType 1
 ```
 

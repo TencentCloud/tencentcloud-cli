@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tdmq DescribeSubscriptions --cli-unfold-argument  \
-    --EnvironmentId default\
-    --TopicName sun_topic\
-    --Offset 0\
-    --Limit 10\
+    --EnvironmentId default \
+    --TopicName sun_topic \
+    --Offset 0 \
+    --Limit 10 \
     --SubscriptionName 
 ```
 

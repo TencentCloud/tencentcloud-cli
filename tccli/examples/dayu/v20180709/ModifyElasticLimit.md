@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu ModifyElasticLimit --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
+    --Business bgpip \
+    --Id bgpip-000000xe \
     --Limit 1000
 ```
 

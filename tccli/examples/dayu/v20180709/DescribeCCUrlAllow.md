@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dayu DescribeCCUrlAllow --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-000000xe\
-    --Type white\
+    --Business bgpip \
+    --Id bgpip-000000xe \
+    --Type white \
     --Protocol http
 ```
 

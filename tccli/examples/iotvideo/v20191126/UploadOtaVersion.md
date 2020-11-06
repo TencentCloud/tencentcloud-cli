@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iotvideo UploadOtaVersion --cli-unfold-argument  \
-    --ProductId 461708984329\
-    --OtaVersion 0.9.1\
-    --VersionUrl http://xx.xx.xx.xx\
-    --FileSize 3456\
-    --Md5 c4ca4238a0b923820dcc509a6f75849\
+    --ProductId 461708984329 \
+    --OtaVersion 0.9.1 \
+    --VersionUrl http://xx.xx.xx.xx \
+    --FileSize 3456 \
+    --Md5 c4ca4238a0b923820dcc509a6f75849 \
     --Operator test
 ```
 

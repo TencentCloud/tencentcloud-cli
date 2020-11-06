@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tci SubmitImageTask --cli-unfold-argument  \
-    --Functions.EnableFaceIdentify true\
-    --Functions.EnableFaceDetect true\
-    --Functions.EnableFaceExpression true\
-    --Functions.EnableGesture true\
-    --Functions.EnableStudentBodyMovements true\
-    --Functions.EnableLightJudge true\
-    --FileType picture_url\
+    --Functions.EnableFaceIdentify true \
+    --Functions.EnableFaceDetect true \
+    --Functions.EnableFaceExpression true \
+    --Functions.EnableGesture true \
+    --Functions.EnableStudentBodyMovements true \
+    --Functions.EnableLightJudge true \
+    --FileType picture_url \
     --FileContent http://xxx.jpg
 ```
 

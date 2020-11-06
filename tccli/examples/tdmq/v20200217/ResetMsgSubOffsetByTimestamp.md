@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tdmq ResetMsgSubOffsetByTimestamp --cli-unfold-argument  \
-    --EnvironmentId default\
-    --TopicName cloud_test\
-    --Subscription cloud_sub\
+    --EnvironmentId default \
+    --TopicName cloud_test \
+    --Subscription cloud_sub \
     --ToTimestamp 1585901708600
 ```
 

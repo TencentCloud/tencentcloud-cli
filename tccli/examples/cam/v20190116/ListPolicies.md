@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam ListPolicies --cli-unfold-argument  \
-    --Rp 1\
+    --Rp 1 \
     --Page 10
 ```
 

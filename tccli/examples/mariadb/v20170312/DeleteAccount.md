@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mariadb DeleteAccount --cli-unfold-argument  \
-    --InstanceId tdsql-fdpjf5zh\
-    --UserName testuser1\
+    --InstanceId tdsql-fdpjf5zh \
+    --UserName testuser1 \
     --Host 172.17.%
 ```
 

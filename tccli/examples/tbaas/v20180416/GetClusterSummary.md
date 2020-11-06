@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tbaas GetClusterSummary --cli-unfold-argument  \
-    --Module cluster_mng\
-    --Operation cluster_summary\
-    --ClusterId 251005746bc0f03q8u93j\
-    --GroupId 0\
+    --Module cluster_mng \
+    --Operation cluster_summary \
+    --ClusterId 251005746bc0f03q8u93j \
+    --GroupId 0 \
     --GroupName liulanOrg
 ```
 

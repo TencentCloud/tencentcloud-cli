@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb DeleteLoadBalancerSnatIps --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0\
+    --LoadBalancerId lb-cuxw2rm0 \
     --Ips 192.168.0.128
 ```
 

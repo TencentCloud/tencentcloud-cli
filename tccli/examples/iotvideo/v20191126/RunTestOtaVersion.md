@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotvideo RunTestOtaVersion --cli-unfold-argument  \
-    --ProductId 12345678910\
-    --OtaVersion 1.1.1\
-    --Tids xxx0 xxx1\
+    --ProductId 12345678910 \
+    --OtaVersion 1.1.1 \
+    --Tids xxx0 xxx1 \
     --Operator zhangsan
 ```
 

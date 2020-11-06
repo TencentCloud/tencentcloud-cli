@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ModifyWatermarkTemplate --cli-unfold-argument  \
-    --Definition 1001\
+    --Definition 1001 \
     --Name 'Template 2'
 ```
 

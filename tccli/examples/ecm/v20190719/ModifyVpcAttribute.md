@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ecm ModifyVpcAttribute --cli-unfold-argument  \
-    --VpcName vpc名称\
-    --VpcId vpc-vpc-q6cke2sv\
-    --EcmRegion ap-hangzhou-ecm\
+    --VpcName vpc名称 \
+    --VpcId vpc-vpc-q6cke2sv \
+    --EcmRegion ap-hangzhou-ecm \
     --Description vpc描述
 ```
 

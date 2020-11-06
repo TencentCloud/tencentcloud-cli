@@ -1,4 +1,4 @@
-**Example 1: Creating data import task**
+**Example 1: Creating a data import task**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb CreateDBImportJob --cli-unfold-argument  \
-    --InstanceId cdb-ids6j1b3\
-    --User xxxxx\
-    --Password xxxxxxxxxx\
+    --InstanceId cdb-ids6j1b3 \
+    --User xxxxx \
+    --Password xxxxxxxxxx \
     --FileName test.sql
 ```
 

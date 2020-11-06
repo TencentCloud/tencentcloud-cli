@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli bm DescribeUserCmdTaskInfo --cli-unfold-argument  \
-    --TaskId cmdtask-mi5k1oct\
-    --Offset 0\
-    --Limit 20\
-    --OrderField RunBeginTime\
-    --Order 1\
+    --TaskId cmdtask-mi5k1oct \
+    --Offset 0 \
+    --Limit 20 \
+    --OrderField RunBeginTime \
+    --Order 1 \
     --SearchKey m
 ```
 

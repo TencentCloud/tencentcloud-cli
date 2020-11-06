@@ -1,4 +1,4 @@
-**Example 1: Querying imported SQL file list**
+**Example 1: Querying the list of imported SQL files**
 
 
 

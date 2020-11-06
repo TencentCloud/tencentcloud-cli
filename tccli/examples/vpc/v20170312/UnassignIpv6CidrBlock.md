@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc UnassignIpv6CidrBlock --cli-unfold-argument  \
-    --VpcId vpc-rkxd3pgh\
+    --VpcId vpc-rkxd3pgh \
     --Ipv6CidrBlock 3402:4e00:20:1000::/56
 ```
 

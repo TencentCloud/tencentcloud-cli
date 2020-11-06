@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cat GetRespTimeTrendEx --cli-unfold-argument  \
-    --TaskId 226791\
-    --Period 1\
-    --Date 22019-12-12\
-    --MetricName availRatio\
-    --Dimensions.Province Avg\
+    --TaskId 226791 \
+    --Period 1 \
+    --Date 22019-12-12 \
+    --MetricName availRatio \
+    --Dimensions.Province Avg \
     --Dimensions.Isp Avg
 ```
 

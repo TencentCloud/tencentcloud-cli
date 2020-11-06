@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb DescribeRewrite --cli-unfold-argument  \
-    --LoadBalancerId lb-qc2iq5yc\
-    --SourceListenerIds lbl-j36caqde\
+    --LoadBalancerId lb-qc2iq5yc \
+    --SourceListenerIds lbl-j36caqde \
     --SourceLocationIds loc-5t7526km
 ```
 

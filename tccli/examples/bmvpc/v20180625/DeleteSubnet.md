@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DeleteSubnet --cli-unfold-argument  \
-    --VpcId vpc-ox7p0l9u\
+    --VpcId vpc-ox7p0l9u \
     --SubnetId subnet-jvxdy07y
 ```
 

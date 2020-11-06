@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc CreateCcn --cli-unfold-argument  \
-    --CcnName test+name\
-    --CcnDescription test+description\
-    --QosLevel PT\
-    --Tags.0.Key city\
+    --CcnName test+name \
+    --CcnDescription test+description \
+    --QosLevel PT \
+    --Tags.0.Key city \
     --Tags.0.Value shanghai
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cvm ImportImage --cli-unfold-argument  \
-    --OsType CentOS\
-    --OsVersion 6\
-    --ImageName sample\
-    --ImageDescription sampleimage\
-    --ImageUrl http://111-1251233127.cosd.myqcloud.com/Windows%20Server%202008%20R2%20x64a.vmdk\
+    --OsType CentOS \
+    --OsVersion 6 \
+    --ImageName sample \
+    --ImageDescription sampleimage \
+    --ImageUrl http://111-1251233127.cosd.myqcloud.com/Windows%20Server%202008%20R2%20x64a.vmdk \
     --Architecture x86_64
 ```
 

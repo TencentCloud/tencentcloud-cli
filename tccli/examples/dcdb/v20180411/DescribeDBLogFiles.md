@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dcdb DescribeDBLogFiles --cli-unfold-argument  \
-    --InstanceId dcdbt-2t4cf98d\
-    --ShardId shard-gdqcdn39\
+    --InstanceId dcdbt-2t4cf98d \
+    --ShardId shard-gdqcdn39 \
     --Type 1
 ```
 

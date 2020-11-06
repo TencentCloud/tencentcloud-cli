@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iot AppAddUser --cli-unfold-argument  \
-    --UserName iotappuser\
+    --UserName iotappuser \
     --Password iotappuser666!
 ```
 

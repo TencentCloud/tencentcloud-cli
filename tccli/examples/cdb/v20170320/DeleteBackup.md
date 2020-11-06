@@ -1,4 +1,4 @@
-**Example 1: Deleting TencentDB instance backup**
+**Example 1: Deleting a TencentDB instance backup**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DeleteBackup --cli-unfold-argument  \
-    --InstanceId cdb-c1nl9rpv\
+    --InstanceId cdb-c1nl9rpv \
     --BackupId 173381
 ```
 

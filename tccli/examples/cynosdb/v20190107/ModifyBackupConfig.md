@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cynosdb ModifyBackupConfig --cli-unfold-argument  \
-    --ClusterId cynosdbpg-45knmnra\
-    --BackupTimeBeg 7200\
-    --BackupTimeEnd 21600\
+    --ClusterId cynosdbpg-45knmnra \
+    --BackupTimeBeg 7200 \
+    --BackupTimeEnd 21600 \
     --ReserveDuration 604800
 ```
 

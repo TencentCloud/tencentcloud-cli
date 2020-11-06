@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ds CheckVcode --cli-unfold-argument  \
-    --Module VerifyCode\
-    --Operation CheckVcode\
-    --AccountResId dcu-c33uil4ap6\
-    --ContractResId dcc-79dlei3yb6\
+    --Module VerifyCode \
+    --Operation CheckVcode \
+    --AccountResId dcu-c33uil4ap6 \
+    --ContractResId dcc-79dlei3yb6 \
     --VerifyCode 243545
 ```
 

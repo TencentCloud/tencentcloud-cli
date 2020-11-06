@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam CreatePolicyVersion --cli-unfold-argument  \
-    --PolicyId 17698703\
-    --PolicyDocument {"version":"2.0","statement":[{"effect":"allow","action":["name/cos:*"],"resource":["*"]}]}\
+    --PolicyId 17698703 \
+    --PolicyDocument {"version":"2.0","statement":[{"effect":"allow","action":["name/cos:*"],"resource":["*"]}]} \
     --SetAsDefault 1
 ```
 

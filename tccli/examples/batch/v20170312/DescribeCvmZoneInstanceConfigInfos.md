@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli batch DescribeCvmZoneInstanceConfigInfos --cli-unfold-argument  \
-    --Filters.0.Name zone\
-    --Filters.0.Values ap-chongqing-1\
-    --Filters.1.Name instance-charge-type\
+    --Filters.0.Name zone \
+    --Filters.0.Values ap-chongqing-1 \
+    --Filters.1.Name instance-charge-type \
     --Filters.1.Values POSTPAID_BY_HOUR
 ```
 

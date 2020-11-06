@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc AllocateAddresses --cli-unfold-argument  \
-    --AddressCount 1\
+    --AddressCount 1 \
     --AddressType AnycastEIP
 ```
 
@@ -55,7 +55,7 @@ Input:
 
 ```
 tccli vpc AllocateAddresses --cli-unfold-argument  \
-    --AddressCount 1\
+    --AddressCount 1 \
     --InternetServiceProvider CTCC
 ```
 

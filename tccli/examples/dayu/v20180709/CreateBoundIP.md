@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dayu CreateBoundIP --cli-unfold-argument  \
-    --Business bgp\
-    --Id bgp-000000xe\
-    --BoundDevList.0.Ip 1.1.1.1\
-    --BoundDevList.0.BizType public\
-    --BoundDevList.0.DeviceType cvm\
-    --BoundDevList.0.InstanceId ins-f2f9ssbo\
+    --Business bgp \
+    --Id bgp-000000xe \
+    --BoundDevList.0.Ip 1.1.1.1 \
+    --BoundDevList.0.BizType public \
+    --BoundDevList.0.DeviceType cvm \
+    --BoundDevList.0.InstanceId ins-f2f9ssbo \
     --CopyPolicy yes
 ```
 

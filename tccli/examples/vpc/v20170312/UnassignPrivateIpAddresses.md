@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc UnassignPrivateIpAddresses --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --NetworkInterfaceId eni-afo43z61\
+    --Version 2017-03-12 \
+    --NetworkInterfaceId eni-afo43z61 \
     --PrivateIpAddresses.0.PrivateIpAddress 172.16.32.111
 ```
 

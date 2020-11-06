@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cr DownloadReport --cli-unfold-argument  \
-    --Module Report\
-    --Operation DownloadReport\
+    --Module Report \
+    --Operation DownloadReport \
     --ReportDate 2018-07-15
 ```
 

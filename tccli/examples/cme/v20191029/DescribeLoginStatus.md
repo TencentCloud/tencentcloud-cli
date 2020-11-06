@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeLoginStatus --cli-unfold-argument  \
-    --Platform test\
+    --Platform test \
     --UserIds 111
 ```
 

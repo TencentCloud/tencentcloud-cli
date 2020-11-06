@@ -70,8 +70,8 @@ Input:
 
 ```
 tccli vpc DescribeNetworkAcls --cli-unfold-argument  \
-    --NetworkAclIds acl-12345678\
-    --Offset 0\
+    --NetworkAclIds acl-12345678 \
+    --Offset 0 \
     --Limit 20
 ```
 

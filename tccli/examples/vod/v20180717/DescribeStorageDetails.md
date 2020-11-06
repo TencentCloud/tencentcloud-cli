@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeStorageDetails --cli-unfold-argument  \
-    --StartTime 2018-12-01T00:00:00+08:00\
+    --StartTime 2018-12-01T00:00:00+08:00 \
     --EndTime 2018-12-07T00:00:00+08:00
 ```
 

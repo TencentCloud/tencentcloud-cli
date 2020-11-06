@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli npp CreateCallBack --cli-unfold-argument  \
-    --BizAppId xxx\
-    --Src xxxx\
-    --Dst xxxx\
+    --BizAppId xxx \
+    --Src xxxx \
+    --Dst xxxx \
     --BizId xxxxx
 ```
 

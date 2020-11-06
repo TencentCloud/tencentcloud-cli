@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tbm DescribeBrandPosComments --cli-unfold-argument  \
-    --BrandId qijGLCi6bE0weVWgO7fjvfo4Wvo9kfzujw%3D%3D\
-    --StartDate 2018-01-02\
-    --EndDate 2018-01-04\
-    --Limit 10\
+    --BrandId qijGLCi6bE0weVWgO7fjvfo4Wvo9kfzujw%3D%3D \
+    --StartDate 2018-01-02 \
+    --EndDate 2018-01-04 \
+    --Limit 10 \
     --Offset 0
 ```
 

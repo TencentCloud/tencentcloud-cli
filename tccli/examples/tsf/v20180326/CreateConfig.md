@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tsf CreateConfig --cli-unfold-argument  \
-    --ApplicationId application-gyq2xry5\
-    --ConfigName test_openapi_config\
-    --ConfigVersion v1.0\
+    --ApplicationId application-gyq2xry5 \
+    --ConfigName test_openapi_config \
+    --ConfigVersion v1.0 \
     --ConfigValue 'api.invok.limit: 5000'
 ```
 

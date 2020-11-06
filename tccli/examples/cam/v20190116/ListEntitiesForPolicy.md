@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cam ListEntitiesForPolicy --cli-unfold-argument  \
-    --PolicyId 524497\
-    --Page 1\
-    --Rp 10\
+    --PolicyId 524497 \
+    --Page 1 \
+    --Rp 10 \
     --EntityFilter All
 ```
 

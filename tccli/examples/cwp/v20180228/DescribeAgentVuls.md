@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp DescribeAgentVuls --cli-unfold-argument  \
-    --Uuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5\
-    --VulType WEB\
-    --Limit 10\
+    --Uuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5 \
+    --VulType WEB \
+    --Limit 10 \
     --Offset 0
 ```
 

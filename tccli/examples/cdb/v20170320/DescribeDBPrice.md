@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdb DescribeDBPrice --cli-unfold-argument  \
-    --Zone ap-guangzhou-1\
-    --GoodsNum 1\
-    --Memory 1000\
-    --Volume 25\
-    --PayType PRE_PAID\
+    --Zone ap-guangzhou-1 \
+    --GoodsNum 1 \
+    --Memory 1000 \
+    --Volume 25 \
+    --PayType PRE_PAID \
     --Period 24
 ```
 

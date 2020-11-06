@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli vpc ModifyNatGatewayDestinationIpPortTranslationNatRule --cli-unfold-argument  \
-    --NatGatewayId nat-3isn9hr0\
-    --SourceNatRule.IpProtocol TCP\
-    --SourceNatRule.PublicIpAddress 139.199.232.238\
-    --SourceNatRule.PublicPort 8989\
-    --DestinationNatRule.IpProtocol UDP\
-    --DestinationNatRule.PublicIpAddress 139.199.232.226\
-    --DestinationNatRule.PublicPort 8586\
-    --DestinationNatRule.PrivateIpAddress 10.80.80.41\
-    --DestinationNatRule.PrivatePort 8586\
+    --NatGatewayId nat-3isn9hr0 \
+    --SourceNatRule.IpProtocol TCP \
+    --SourceNatRule.PublicIpAddress 139.199.232.238 \
+    --SourceNatRule.PublicPort 8989 \
+    --DestinationNatRule.IpProtocol UDP \
+    --DestinationNatRule.PublicIpAddress 139.199.232.226 \
+    --DestinationNatRule.PublicPort 8586 \
+    --DestinationNatRule.PrivateIpAddress 10.80.80.41 \
+    --DestinationNatRule.PrivatePort 8586 \
     --DestinationNatRule.Description test_modify
 ```
 

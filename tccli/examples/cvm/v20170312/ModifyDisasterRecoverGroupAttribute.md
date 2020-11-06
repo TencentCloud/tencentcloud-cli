@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm ModifyDisasterRecoverGroupAttribute --cli-unfold-argument  \
-    --DisasterRecoverGroupId ps-58l1hu01\
+    --DisasterRecoverGroupId ps-58l1hu01 \
     --Name 'Physical machine disaster recovery group 1'
 ```
 

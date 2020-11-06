@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli bmvpc ModifyRoutePolicy --cli-unfold-argument  \
-    --RouteTableId rtb-19yps3nz\
-    --RoutePolicy.DestinationCidrBlock 10.151.0.0/16\
-    --RoutePolicy.GatewayType CPM\
-    --RoutePolicy.GatewayId 10.1.10.2\
-    --RoutePolicy.RouteDescription test\
-    --RoutePolicy.RoutePolicyId rti-3xx8yzru\
-    --RoutePolicy.RoutePolicyType USER\
+    --RouteTableId rtb-19yps3nz \
+    --RoutePolicy.DestinationCidrBlock 10.151.0.0/16 \
+    --RoutePolicy.GatewayType CPM \
+    --RoutePolicy.GatewayId 10.1.10.2 \
+    --RoutePolicy.RouteDescription test \
+    --RoutePolicy.RoutePolicyId rti-3xx8yzru \
+    --RoutePolicy.RoutePolicyType USER \
     --RoutePolicy.Enabled true
 ```
 

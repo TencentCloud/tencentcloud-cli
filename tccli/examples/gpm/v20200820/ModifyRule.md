@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gpm ModifyRule --cli-unfold-argument  \
-    --RuleDesc test\
-    --RuleCode rule-v879tr24\
-    --RuleName test\
-    --Tags.0.Key 字符串\
+    --RuleDesc test \
+    --RuleCode rule-v879tr24 \
+    --RuleName test \
+    --Tags.0.Key 字符串 \
     --Tags.0.Value 字符串
 ```
 

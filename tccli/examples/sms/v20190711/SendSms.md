@@ -7,11 +7,11 @@ Input:
 
 ```
 tccli sms SendSms --cli-unfold-argument  \
-    --PhoneNumberSet +8618511122233 +8618511122266\
-    --TemplateID 1234\
-    --Sign 'Tencent Cloud'\
-    --TemplateParamSet 12345\
-    --SmsSdkAppid 1400006666\
+    --PhoneNumberSet +8618511122233 +8618511122266 \
+    --TemplateID 1234 \
+    --Sign 'Tencent Cloud' \
+    --TemplateParamSet 12345 \
+    --SmsSdkAppid 1400006666 \
     --SessionContext test
 ```
 

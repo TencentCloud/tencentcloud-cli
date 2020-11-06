@@ -1,4 +1,4 @@
-**Example 1: Getting physical machine monitoring information**
+**Example 1: Querying the monitoring information of the physical machine where the instance is deployed**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DescribeDeviceMonitorInfo --cli-unfold-argument  \
-    --InstanceId cdb-uns231ns\
+    --InstanceId cdb-uns231ns \
     --Count 2
 ```
 

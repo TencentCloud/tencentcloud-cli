@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mdl ModifyMediaLiveInputSecurityGroup --cli-unfold-argument  \
-    --Id ' 1111'\
+    --Id ' 1111' \
     --Name xxxx
 ```
 

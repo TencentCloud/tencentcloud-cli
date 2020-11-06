@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb CreateClsLogSet --cli-unfold-argument  \
-    --LogsetName clb_logset\
+    --LogsetName clb_logset \
     --Period 7
 ```
 

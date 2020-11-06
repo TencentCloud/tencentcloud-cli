@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tics DescribeThreatInfo --cli-unfold-argument  \
-    --Key 003143.sdyintong.com\
-    --Type domain\
+    --Key 003143.sdyintong.com \
+    --Type domain \
     --Option 0
 ```
 

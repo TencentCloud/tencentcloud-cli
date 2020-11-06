@@ -1,4 +1,4 @@
-**Example 1: Renaming TencentDB instance**
+**Example 1: Renaming a TencentDB instance**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb ModifyDBInstanceName --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
-    --InstanceName 'I am English text'
+    --InstanceId cdb-f35wr6wj \
+    --InstanceName 'I am Chinese text'
 ```
 
 Output: 

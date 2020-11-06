@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dayu DescribeDDoSDefendStatus --cli-unfold-argument  \
-    --Business base\
-    --Ip 1.1.1.1\
-    --BizType public\
-    --.DeviceType cvm\
-    --InstanceId ins-f2f9ssbo\
+    --Business base \
+    --Ip 1.1.1.1 \
+    --BizType public \
+    --.DeviceType cvm \
+    --InstanceId ins-f2f9ssbo \
     --IPRegion gz
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiw SetTranscodeCallback --cli-unfold-argument  \
-    --SdkAppId 1400000001\
+    --SdkAppId 1400000001 \
     --Callback https://example.com/transcode/callback
 ```
 

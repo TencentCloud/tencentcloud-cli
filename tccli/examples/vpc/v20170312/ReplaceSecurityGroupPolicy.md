@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli vpc ReplaceSecurityGroupPolicy --cli-unfold-argument  \
-    --Version 2017-03-12\
-    --SecurityGroupId sg-ohuuioma\
-    --SecurityGroupPolicySet.Version 20\
-    --SecurityGroupPolicySet.Egress.0.PolicyIndex 2\
-    --SecurityGroupPolicySet.Egress.0.ServiceTemplate.ServiceId ppm-f5n1f8da\
-    --SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressId ipm-2uw6ujo6\
-    --SecurityGroupPolicySet.Egress.0.Action accept\
+    --Version 2017-03-12 \
+    --SecurityGroupId sg-ohuuioma \
+    --SecurityGroupPolicySet.Version 20 \
+    --SecurityGroupPolicySet.Egress.0.PolicyIndex 2 \
+    --SecurityGroupPolicySet.Egress.0.ServiceTemplate.ServiceId ppm-f5n1f8da \
+    --SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressId ipm-2uw6ujo6 \
+    --SecurityGroupPolicySet.Egress.0.Action accept \
     --SecurityGroupPolicySet.Egress.0.PolicyDescription TestPolicy
 ```
 

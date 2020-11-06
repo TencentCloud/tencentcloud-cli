@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyNatGatewayAttribute --cli-unfold-argument  \
-    --NatGatewayId nat-ig8xpno8\
-    --NatGatewayName testnatgateway\
+    --NatGatewayId nat-ig8xpno8 \
+    --NatGatewayName testnatgateway \
     --InternetMaxBandwidthOut 500
 ```
 

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli wss DescribeCertList --cli-unfold-argument  \
-    --Page 1\
-    --Count 1\
-    --SearchKey as\
-    --ProjectId 1000\
-    --CertType CA\
-    --Id sad\
-    --WithCert 1\
-    --AltDomain asd\
+    --Page 1 \
+    --Count 1 \
+    --SearchKey as \
+    --ProjectId 1000 \
+    --CertType CA \
+    --Id sad \
+    --WithCert 1 \
+    --AltDomain asd \
     --ModuleType ssl
 ```
 

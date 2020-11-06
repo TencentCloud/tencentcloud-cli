@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dayu ModifyCCSelfDefinePolicy --cli-unfold-argument  \
-    --Business bgp\
-    --Id bgp-000000xe\
-    --SetId ccPolicy-000000sd\
-    --Policy.Name test\
-    --Policy.Smode speedlimit\
-    --Policy.Frequency 1002\
+    --Business bgp \
+    --Id bgp-000000xe \
+    --SetId ccPolicy-000000sd \
+    --Policy.Name test \
+    --Policy.Smode speedlimit \
+    --Policy.Frequency 1002 \
     --Policy.IpList 1.1.1.1
 ```
 

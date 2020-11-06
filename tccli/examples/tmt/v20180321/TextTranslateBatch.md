@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tmt TextTranslateBatch --cli-unfold-argument  \
-    --Source zh\
-    --Target en\
-    --ProjectId 0\
+    --Source zh \
+    --Target en \
+    --ProjectId 0 \
     --SourceTextList 你好 今天天气怎么样
 ```
 

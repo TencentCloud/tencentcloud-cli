@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iai DetectFace --cli-unfold-argument  \
-    --MaxFaceNum 1\
-    --MinFaceSize 40\
-    --Url http://test.image.myqcloud.com/testB.jpg\
-    --NeedFaceAttributes 0\
+    --MaxFaceNum 1 \
+    --MinFaceSize 40 \
+    --Url http://test.image.myqcloud.com/testB.jpg \
+    --NeedFaceAttributes 0 \
     --NeedQualityDetection 0
 ```
 
@@ -71,10 +71,10 @@ Input:
 
 ```
 tccli iai DetectFace --cli-unfold-argument  \
-    --MaxFaceNum 1\
-    --MinFaceSize 40\
-    --Url http://test.image.myqcloud.com/testA.jpg\
-    --NeedFaceAttributes 1\
+    --MaxFaceNum 1 \
+    --MinFaceSize 40 \
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --NeedFaceAttributes 1 \
     --NeedQualityDetection 1
 ```
 

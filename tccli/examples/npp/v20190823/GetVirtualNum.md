@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli npp GetVirtualNum --cli-unfold-argument  \
-    --BizAppId 65535\
-    --Src 008615602455708\
+    --BizAppId 65535 \
+    --Src 008615602455708 \
     --Dst 008613927437352
 ```
 

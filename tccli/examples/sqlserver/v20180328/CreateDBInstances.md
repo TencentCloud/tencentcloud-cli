@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sqlserver CreateDBInstances --cli-unfold-argument  \
-    --Zone ap-guangzhou-1\
-    --Memory 2\
+    --Zone ap-guangzhou-1 \
+    --Memory 2 \
     --Storage 100
 ```
 

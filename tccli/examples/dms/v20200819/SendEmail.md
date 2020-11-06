@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dms SendEmail --cli-unfold-argument  \
-    --FromAddress test@example.com\
-    --ToAddress to@example.com\
-    --ReplyAdress reply@example.com\
+    --FromAddress test@example.com \
+    --ToAddress to@example.com \
+    --ReplyAdress reply@example.com \
     --Subject subject
 ```
 

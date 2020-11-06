@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tci ModifyPerson --cli-unfold-argument  \
-    --PersonName xxx\
-    --PersonId personid_xxx\
-    --LibraryId library_xxx\
-    --PhoneNumber xxx\
-    --StudentNumber xxx\
-    --JobNumber xxx\
-    --Male 1\
+    --PersonName xxx \
+    --PersonId personid_xxx \
+    --LibraryId library_xxx \
+    --PhoneNumber xxx \
+    --StudentNumber xxx \
+    --JobNumber xxx \
+    --Male 1 \
     --Mail xxx
 ```
 

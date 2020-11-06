@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway UnBindSubDomain --cli-unfold-argument  \
-    --ServiceId service-19c5fnhy\
+    --ServiceId service-19c5fnhy \
     --SubDomain xxxxxxxx
 ```
 

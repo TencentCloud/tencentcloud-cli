@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb ModifyNameOrDescByDpId --cli-unfold-argument  \
-    --DeployGroupName cdb-ezq1vzem\
-    --Description test\
+    --DeployGroupName cdb-ezq1vzem \
+    --Description test \
     --DeployGroupId test
 ```
 

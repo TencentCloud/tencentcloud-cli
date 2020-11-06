@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis DescribeSlowLog --cli-unfold-argument  \
-    --InstanceId crs-asdasdas\
-    --BeginTime '2019-09-08 12:12:41'\
+    --InstanceId crs-asdasdas \
+    --BeginTime '2019-09-08 12:12:41' \
     --EndTime '2019-09-09 12:12:41'
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm ModifyHostsAttribute --cli-unfold-argument  \
-    --HostIds host-ey16rkyg\
+    --HostIds host-ey16rkyg \
     --HostName webserver
 ```
 

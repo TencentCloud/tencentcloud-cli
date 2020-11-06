@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli chdfs CreateAccessGroup --cli-unfold-argument  \
-    --AccessGroupName test\
+    --AccessGroupName test \
     --Description test
 ```
 

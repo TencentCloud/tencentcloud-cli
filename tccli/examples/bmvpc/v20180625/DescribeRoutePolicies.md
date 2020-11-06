@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DescribeRoutePolicies --cli-unfold-argument  \
-    --RouteTableId rtb-afg8md3c\
+    --RouteTableId rtb-afg8md3c \
     --RoutePolicyIds rti-q1j48dkd
 ```
 

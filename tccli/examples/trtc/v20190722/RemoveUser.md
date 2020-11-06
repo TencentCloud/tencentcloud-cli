@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trtc RemoveUser --cli-unfold-argument  \
-    --SdkAppId 1400000001\
-    --RoomId 1234\
+    --SdkAppId 1400000001 \
+    --RoomId 1234 \
     --UserIds test1 test2 test3 test4 test5 test6 test7 test8 test9 test10
 ```
 

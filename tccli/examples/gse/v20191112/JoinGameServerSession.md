@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gse JoinGameServerSession --cli-unfold-argument  \
-    --GameServerSessionId qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\
-    --PlayerData testData\
+    --GameServerSessionId qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde \
+    --PlayerData testData \
     --PlayerId testPlayer
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DeleteDB --cli-unfold-argument  \
-    --InstanceId mssql-rljoi3bf\
+    --InstanceId mssql-rljoi3bf \
     --Names test_db
 ```
 

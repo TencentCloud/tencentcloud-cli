@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bm UnbindPsaTag --cli-unfold-argument  \
-    --PsaId 123\
-    --TagKey key1\
+    --PsaId 123 \
+    --TagKey key1 \
     --TagValue value1
 ```
 

@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli cpdp RegisterBill --cli-unfold-argument  \
-    --MidasSecretId 1587005497659\
-    --MidasSignature 111\
-    --MidasAppId unibank10001\
-    --RequestType MemberRechargeThirdPayReq\
-    --OrderId 2020042180081\
-    --PlatformShortNo F08872\
-    --AcquiringChannelType 04\
-    --BankAccountNo 15000093978307\
-    --PayChannelSubId 1\
-    --PayChannel bank_pingan\
-    --MerchantCode 4087\
-    --TransSeqNo F088722004270543493495\
-    --TranNetMemberCode xxx\
-    --BankSubAccountNo xx\
-    --TranFee 0.0\
-    --OrderAmt 1\
-    --TranType 0\
+    --MidasSecretId 1587005497659 \
+    --MidasSignature 111 \
+    --MidasAppId unibank10001 \
+    --RequestType MemberRechargeThirdPayReq \
+    --OrderId 2020042180081 \
+    --PlatformShortNo F08872 \
+    --AcquiringChannelType 04 \
+    --BankAccountNo 15000093978307 \
+    --PayChannelSubId 1 \
+    --PayChannel bank_pingan \
+    --MerchantCode 4087 \
+    --TransSeqNo F088722004270543493495 \
+    --TranNetMemberCode xxx \
+    --BankSubAccountNo xx \
+    --TranFee 0.0 \
+    --OrderAmt 1 \
+    --TranType 0 \
     --MidasEnvironment dev
 ```
 

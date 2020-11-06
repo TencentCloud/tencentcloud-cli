@@ -1,4 +1,4 @@
-**Example 1: Adding maintenance window**
+**Example 1: Adding a maintenance time window**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb AddTimeWindow --cli-unfold-argument  \
-    --InstanceId cdb-eb2w7dto\
+    --InstanceId cdb-eb2w7dto \
     --Monday 02:00-03:00
 ```
 

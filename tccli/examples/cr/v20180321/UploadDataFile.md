@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cr UploadDataFile --cli-unfold-argument  \
-    --Module Data\
-    --Operation Upload\
+    --Module Data \
+    --Operation Upload \
     --FileName data_1542284923873.xlsx
 %FileUrl
 ```
@@ -30,9 +30,9 @@ Input:
 
 ```
 tccli cr UploadDataFile --cli-unfold-argument  \
-    --Module Data\
-    --Operation Upload\
-    --UploadModel repay\
+    --Module Data \
+    --Operation Upload \
+    --UploadModel repay \
     --FileName data_1542284924562.xlsx
 %FileUrl
 ```

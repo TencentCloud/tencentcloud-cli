@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdn AddCdnDomain --cli-unfold-argument  \
-    --Domain www.test.com\
-    --ServiceType web\
-    --ProjectId 0\
-    --Area mainland\
-    --Origin.Origins 1.1.1.1\
+    --Domain www.test.com \
+    --ServiceType web \
+    --ProjectId 0 \
+    --Area mainland \
+    --Origin.Origins 1.1.1.1 \
     --Origin.OriginType ip
 ```
 

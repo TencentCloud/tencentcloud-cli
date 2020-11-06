@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb DescribeBackupAccess --cli-unfold-argument  \
-    --InstanceId cmgo-f0vrx2v9\
+    --InstanceId cmgo-f0vrx2v9 \
     --BackupName cmgo-f0vrx2v9_2019-09-02_04:49
 ```
 

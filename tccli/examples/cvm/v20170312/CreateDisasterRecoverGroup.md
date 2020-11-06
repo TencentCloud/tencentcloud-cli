@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm CreateDisasterRecoverGroup --cli-unfold-argument  \
-    --Name 'Physical machine disaster recovery group'\
+    --Name 'Physical machine disaster recovery group' \
     --Type HOST
 ```
 

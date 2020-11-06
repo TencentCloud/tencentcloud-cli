@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp WordSimilarity --cli-unfold-argument  \
-    --SrcWord "腾讯"\
+    --SrcWord "腾讯" \
     --TargetWord "QQ"
 ```
 

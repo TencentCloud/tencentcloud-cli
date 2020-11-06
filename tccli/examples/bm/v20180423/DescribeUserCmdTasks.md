@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bm DescribeUserCmdTasks --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
-    --OrderField RunBeginTime\
+    --Offset 0 \
+    --Limit 20 \
+    --OrderField RunBeginTime \
     --Order 1
 ```
 

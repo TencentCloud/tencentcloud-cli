@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli batch DetachInstances --cli-unfold-argument  \
-    --EnvId env-1mekuyxs\
+    --EnvId env-1mekuyxs \
     --InstanceIds ins-kjoossv5
 ```
 

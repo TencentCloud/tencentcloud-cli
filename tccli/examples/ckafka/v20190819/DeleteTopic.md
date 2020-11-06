@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteTopic --cli-unfold-argument  \
-    --InstanceId xxx\
+    --InstanceId xxx \
     --TopicName xxx
 ```
 

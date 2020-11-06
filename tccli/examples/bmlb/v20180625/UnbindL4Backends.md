@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bmlb UnbindL4Backends --cli-unfold-argument  \
-    --LoadBalancerId lb-dyxceyv5\
-    --ListenerId lbl-i4go349z\
-    --BackendSet.0.Port 5001\
-    --BackendSet.0.InstanceId cpm-buj66q9x\
+    --LoadBalancerId lb-dyxceyv5 \
+    --ListenerId lbl-i4go349z \
+    --BackendSet.0.Port 5001 \
+    --BackendSet.0.InstanceId cpm-buj66q9x \
     --BindType 0
 ```
 

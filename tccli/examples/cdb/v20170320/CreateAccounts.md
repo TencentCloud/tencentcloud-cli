@@ -1,4 +1,4 @@
-**Example 1: Creating TencentDB account**
+**Example 1: Creating a TencentDB account**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb CreateAccounts --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
-    --Accounts.0.user xxxxx\
-    --Password fsdgfdgfd\
+    --InstanceId cdb-f35wr6wj \
+    --Accounts.0.user xxxxx \
+    --Password fsdgfdgfd \
     --Accounts.0.host 127.0.0.1
 ```
 

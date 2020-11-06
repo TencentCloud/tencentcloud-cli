@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gpm DescribeData --cli-unfold-argument  \
-    --MatchCode match-v87jcr87\
-    --StartTime 1600741736\
-    --EndTime 1601000936\
+    --MatchCode match-v87jcr87 \
+    --StartTime 1600741736 \
+    --EndTime 1601000936 \
     --TimeType 2
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm InquirePricePurchaseReservedInstancesOffering --cli-unfold-argument  \
-    --InstanceCount 2\
+    --InstanceCount 2 \
     --ReservedInstancesOfferingId noew0342-324f-f3ab-9uut-wrlnth53dcee
 ```
 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor DescribePolicyGroupList --cli-unfold-argument  \
-    --Module monitor\
-    --Limit 2\
+    --Module monitor \
+    --Limit 2 \
     --Offset 0
 ```
 

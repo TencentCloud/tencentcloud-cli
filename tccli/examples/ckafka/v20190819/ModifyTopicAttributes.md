@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka ModifyTopicAttributes --cli-unfold-argument  \
-    --InstanceId xxx\
-    --TopicName xxx\
+    --InstanceId xxx \
+    --TopicName xxx \
     --Note xxx
 ```
 

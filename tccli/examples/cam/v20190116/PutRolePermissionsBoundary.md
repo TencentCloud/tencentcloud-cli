@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam PutRolePermissionsBoundary --cli-unfold-argument  \
-    --RoleId 1234567\
+    --RoleId 1234567 \
     --PolicyId 1234567
 ```
 

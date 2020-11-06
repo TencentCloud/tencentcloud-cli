@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli mps ModifyTranscodeTemplate --cli-unfold-argument  \
-    --Definition 1008\
-    --Container mp4\
-    --VideoParam.Codec libx264\
-    --VideoParam.Fps 60\
-    --VideoParam.Bitrate 256\
-    --AudioParam.Codec libfdk_aac\
-    --AudioParam.Bitrate 200\
+    --Definition 1008 \
+    --Container mp4 \
+    --VideoParam.Codec libx264 \
+    --VideoParam.Fps 60 \
+    --VideoParam.Bitrate 256 \
+    --AudioParam.Codec libfdk_aac \
+    --AudioParam.Bitrate 200 \
     --AudioParam.SampleRate 200
 ```
 

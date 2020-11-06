@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap ModifyProxyConfiguration --cli-unfold-argument  \
-    --ProxyId link-4ftf12sb\
-    --Bandwidth 10\
+    --ProxyId link-4ftf12sb \
+    --Bandwidth 10 \
     --Concurrent 2
 ```
 

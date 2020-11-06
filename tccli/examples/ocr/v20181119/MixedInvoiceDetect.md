@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr MixedInvoiceDetect --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg\
+    --ImageUrl https://xx/a.jpg \
     --ReturnImage False
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bmvpc DescribeNatSubnets --cli-unfold-argument  \
-    --NatId nat-1tw1oc0t\
+    --NatId nat-1tw1oc0t \
     --VpcId vpc-mi51u7gs
 ```
 

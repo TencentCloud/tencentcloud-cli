@@ -1,4 +1,4 @@
-**Example 1: Deleting TencentDB account**
+**Example 1: Deleting a TencentDB account**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb DeleteAccounts --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj\
-    --Accounts.0.user ajnnw\
+    --InstanceId cdb-f35wr6wj \
+    --Accounts.0.user ajnnw \
     --Accounts.0.host 127.0.0.1
 ```
 

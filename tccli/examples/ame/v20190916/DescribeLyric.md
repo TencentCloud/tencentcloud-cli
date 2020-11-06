@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ame DescribeLyric --cli-unfold-argument  \
-    --ItemId xxxxx\
+    --ItemId xxxxx \
     --SubItemType LRC-LRC
 ```
 

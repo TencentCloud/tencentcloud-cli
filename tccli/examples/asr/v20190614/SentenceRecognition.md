@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli asr SentenceRecognition --cli-unfold-argument  \
-    --UsrAudioKey test\
-    --SubServiceType 2\
-    --Url http://tes.cos.ap-guangzhou.myqcloud.com/test.wav\
-    --ProjectId 0\
-    --EngSerViceType 8k_zh\
-    --VoiceFormat wav\
+    --UsrAudioKey test \
+    --SubServiceType 2 \
+    --Url http://tes.cos.ap-guangzhou.myqcloud.com/test.wav \
+    --ProjectId 0 \
+    --EngSerViceType 8k_zh \
+    --VoiceFormat wav \
     --SourceType 0
 ```
 
@@ -34,12 +34,12 @@ Input:
 
 ```
 tccli asr SentenceRecognition --cli-unfold-argument  \
-    --UsrAudioKey test\
-    --SubServiceType 2\
-    --ProjectId 0\
-    --EngSerViceType 8k_zh\
-    --VoiceFormat wav\
-    --Data eGNmYXNkZmFzZmFzZGZhc2RmCg==\
+    --UsrAudioKey test \
+    --SubServiceType 2 \
+    --ProjectId 0 \
+    --EngSerViceType 8k_zh \
+    --VoiceFormat wav \
+    --Data eGNmYXNkZmFzZmFzZGZhc2RmCg== \
     --SourceType 1
 ```
 

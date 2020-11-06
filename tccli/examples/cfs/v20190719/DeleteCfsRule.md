@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfs DeleteCfsRule --cli-unfold-argument  \
-    --PGroupId pgroup-12345\
+    --PGroupId pgroup-12345 \
     --RuleId rule-12345
 ```
 

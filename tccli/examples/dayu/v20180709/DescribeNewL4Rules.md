@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dayu DescribeNewL4Rules --cli-unfold-argument  \
-    --Business bgpip\
-    --Ip 192.168.1.1\
+    --Business bgpip \
+    --Ip 192.168.1.1 \
     --VirtualPort 123
 ```
 

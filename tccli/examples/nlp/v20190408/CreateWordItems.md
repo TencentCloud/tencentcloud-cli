@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli nlp CreateWordItems --cli-unfold-argument  \
-    --DictId udf-066edc3449\
-    --WordItems.0.Text 理想的目标是不再继续下跌了\
+    --DictId udf-066edc3449 \
+    --WordItems.0.Text 理想的目标是不再继续下跌了 \
     --WordItems.0.Pos nr
 ```
 

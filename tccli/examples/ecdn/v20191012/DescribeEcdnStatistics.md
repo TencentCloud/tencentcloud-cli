@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ecdn DescribeEcdnStatistics --cli-unfold-argument  \
-    --StartTime '2018-09-04 00:00:00'\
-    --EndTime '2018-09-04 12:00:00'\
-    --Metrics flux\
-    --Interval 60\
-    --Domains www.test.com\
+    --StartTime '2018-09-04 00:00:00' \
+    --EndTime '2018-09-04 12:00:00' \
+    --Metrics flux \
+    --Interval 60 \
+    --Domains www.test.com \
     --Project 0
 ```
 

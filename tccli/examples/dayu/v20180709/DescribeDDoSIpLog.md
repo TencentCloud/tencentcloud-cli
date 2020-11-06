@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dayu DescribeDDoSIpLog --cli-unfold-argument  \
-    --Business net\
-    --Id net-00000010\
-    --IpList 1.1.1.1\
-    --StartTime '2018-08-27 15:05:10'\
+    --Business net \
+    --Id net-00000010 \
+    --IpList 1.1.1.1 \
+    --StartTime '2018-08-27 15:05:10' \
     --EndTime '2018-08-27 16:05:10'
 ```
 

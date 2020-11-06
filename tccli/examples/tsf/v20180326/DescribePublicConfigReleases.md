@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf DescribePublicConfigReleases --cli-unfold-argument  \
-    --Offset 0\
-    --Limit 20\
+    --Offset 0 \
+    --Limit 20 \
     --ConfigName ebs-demo
 ```
 

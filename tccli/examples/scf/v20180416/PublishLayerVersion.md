@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli scf PublishLayerVersion --cli-unfold-argument  \
-    --LayerName <LayerName>\
-    --CompatibleRuntimes <CompatibleRuntimes>\
-    --Content <Content>\
-    --Description <Description>\
+    --LayerName <LayerName> \
+    --CompatibleRuntimes <CompatibleRuntimes> \
+    --Content <Content> \
+    --Description <Description> \
     --LicenseInfo <LicenseInfo>
 ```
 

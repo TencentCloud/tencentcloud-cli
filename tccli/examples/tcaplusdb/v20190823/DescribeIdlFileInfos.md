@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcaplusdb DescribeIdlFileInfos --cli-unfold-argument  \
-    --ClusterId 5674209986\
+    --ClusterId 5674209986 \
     --IdlFileIds 564
 ```
 

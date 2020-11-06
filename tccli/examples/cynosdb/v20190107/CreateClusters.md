@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli cynosdb CreateClusters --cli-unfold-argument  \
-    --Zone ap-guangzhou-3\
-    --ProjectId 0\
-    --VpcId vpc-1ptuei0b\
-    --SubnetId subnet-1tmw9t4o\
-    --DbType POSTGRESQL\
-    --DbVersion 10.0\
-    --Cpu 2\
-    --Memory 4\
-    --Storage 100\
-    --ClusterName newInstance\
-    --AdminPassword passwd@admin\
-    --HaCount 1\
-    --Count 1\
-    --PayMode 0\
-    --RollbackStrategy noneRollback\
+    --Zone ap-guangzhou-3 \
+    --ProjectId 0 \
+    --VpcId vpc-1ptuei0b \
+    --SubnetId subnet-1tmw9t4o \
+    --DbType POSTGRESQL \
+    --DbVersion 10.0 \
+    --Cpu 2 \
+    --Memory 4 \
+    --Storage 100 \
+    --ClusterName newInstance \
+    --AdminPassword passwd@admin \
+    --HaCount 1 \
+    --Count 1 \
+    --PayMode 0 \
+    --RollbackStrategy noneRollback \
     --StorageLimit 100
 ```
 

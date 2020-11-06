@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotcloud CreateDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345\
-    --DeviceName test_device\
-    --Attribute.Tags.0.Tag note\
-    --Attribute.Tags.0.Type 2\
+    --ProductId ABCDE12345 \
+    --DeviceName test_device \
+    --Attribute.Tags.0.Tag note \
+    --Attribute.Tags.0.Type 2 \
     --Attribute.Tags.0.Value test_note
 ```
 
@@ -36,10 +36,10 @@ Input:
 
 ```
 tccli iotcloud CreateDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345\
-    --DeviceName test_device\
-    --Attribute.Tags.0.Tag note\
-    --Attribute.Tags.0.Type 2\
+    --ProductId ABCDE12345 \
+    --DeviceName test_device \
+    --Attribute.Tags.0.Tag note \
+    --Attribute.Tags.0.Type 2 \
     --Attribute.Tags.0.Value test_note
 ```
 

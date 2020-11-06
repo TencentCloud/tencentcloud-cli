@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gse CreateAlias --cli-unfold-argument  \
-    --Name aliastest\
-    --RoutingStrategy.Type TERMINAL\
-    --RoutingStrategy.Message thisisatest\
-    --RoutingStrategy.FleetId fleet-xxxx-xxxx-xxxxx\
+    --Name aliastest \
+    --RoutingStrategy.Type TERMINAL \
+    --RoutingStrategy.Message thisisatest \
+    --RoutingStrategy.FleetId fleet-xxxx-xxxx-xxxxx \
     --Description aliastest
 ```
 

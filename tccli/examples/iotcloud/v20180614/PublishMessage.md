@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotcloud PublishMessage --cli-unfold-argument  \
-    --Topic RL0BAZKZ6V/dev1/control\
-    --Payload hahaha\
-    --ProductId RL0BAZKZ6V\
-    --DeviceName dev1\
+    --Topic RL0BAZKZ6V/dev1/control \
+    --Payload hahaha \
+    --ProductId RL0BAZKZ6V \
+    --DeviceName dev1 \
     --Qos 0
 ```
 

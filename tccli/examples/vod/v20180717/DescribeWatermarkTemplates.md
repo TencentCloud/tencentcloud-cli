@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod DescribeWatermarkTemplates --cli-unfold-argument  \
-    --Definitions 1001\
-    --Offset 0\
+    --Definitions 1001 \
+    --Offset 0 \
     --Limit 20
 ```
 

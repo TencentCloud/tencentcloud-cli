@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --PersonId 1001\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 1\
-    --PersonExDescriptionInfos.0.PersonExDescription 大数据及人工智能产品中心\
+    --GroupId TencentShenZhenEmployee \
+    --PersonId 1001 \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 1 \
+    --PersonExDescriptionInfos.0.PersonExDescription 大数据及人工智能产品中心 \
     --Version 2018-03-01
 ```
 
@@ -30,10 +30,10 @@ Input:
 
 ```
 tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1\
-    --PersonId 2001\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 3\
-    --PersonExDescriptionInfos.0.PersonExDescription 3150108080\
+    --GroupId ZhuYuanDormitoryNo1 \
+    --PersonId 2001 \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 3 \
+    --PersonExDescriptionInfos.0.PersonExDescription 3150108080 \
     --Version 2018-03-01
 ```
 
@@ -54,10 +54,10 @@ Input:
 
 ```
 tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee\
-    --PersonId 1001\
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex -1\
-    --PersonExDescriptionInfos.0.PersonExDescription 人工智能实验室\
+    --GroupId TencentShenZhenEmployee \
+    --PersonId 1001 \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex -1 \
+    --PersonExDescriptionInfos.0.PersonExDescription 人工智能实验室 \
     --Version 2018-03-01
 ```
 

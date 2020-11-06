@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cfs CreateCfsRule --cli-unfold-argument  \
-    --PGroupId pgroup-12345\
-    --RWPermission rw\
-    --UserPermission root_squash\
-    --AuthClientIp 10.1.1.10\
+    --PGroupId pgroup-12345 \
+    --RWPermission rw \
+    --UserPermission root_squash \
+    --AuthClientIp 10.1.1.10 \
     --Priority 9
 ```
 

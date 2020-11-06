@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cme ModifyTeam --cli-unfold-argument  \
-    --Platform test\
-    --TeamId 997988688\
+    --Platform test \
+    --TeamId 997988688 \
     --Name 测试团队名称
 ```
 

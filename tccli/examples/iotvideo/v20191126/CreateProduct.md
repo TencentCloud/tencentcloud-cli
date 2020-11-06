@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotvideo CreateProduct --cli-unfold-argument  \
-    --ProductModel test\
-    --ProductName TEST_001\
-    --ProductDescription TestProduct\
+    --ProductModel test \
+    --ProductName TEST_001 \
+    --ProductDescription TestProduct \
     --Features spdxth ypsxth
 ```
 

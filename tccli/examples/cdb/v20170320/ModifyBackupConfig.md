@@ -1,4 +1,4 @@
-**Example 1: Modifying database backup configuration**
+**Example 1: Modifying the database backup configuration**
 
 
 
@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cdb ModifyBackupConfig --cli-unfold-argument  \
-    --InstanceId cdb-c1nl9rpv\
-    --ExpireDays 10\
-    --BinlogExpireDays 8\
-    --StartTime 02:00-06:00\
+    --InstanceId cdb-c1nl9rpv \
+    --ExpireDays 10 \
+    --BinlogExpireDays 8 \
+    --StartTime 02:00-06:00 \
     --BackupMethod logical
 ```
 

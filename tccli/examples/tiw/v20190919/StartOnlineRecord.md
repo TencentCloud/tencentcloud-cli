@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tiw StartOnlineRecord --cli-unfold-argument  \
-    --SdkAppId 1400000001\
-    --RoomId 1203\
-    --RecordUserId tic_record_user_1203_141551\
+    --SdkAppId 1400000001 \
+    --RoomId 1203 \
+    --RecordUserId tic_record_user_1203_141551 \
     --RecordUserSig usersig_of_<tic_record_user_1203_141551>
 ```
 
@@ -30,19 +30,19 @@ Input:
 
 ```
 tccli tiw StartOnlineRecord --cli-unfold-argument  \
-    --SdkAppId 1400000001\
-    --RoomId 1203\
-    --RecordUserId tic_record_user_1203_141551\
-    --RecordUserSig usersig_of_<tic_record_user_1203_141551>\
-    --Whiteboard.Width 1280\
-    --Whiteboard.Height 960\
-    --Whiteboard.InitParam {"ratio":"16:9"}\
-    --Concat.Enabled true\
-    --Concat.Image http://background/image.jpg\
-    --MixStream.Enabled true\
-    --MixStream.DisableAudio false\
-    --MixStream.ModelId 2\
-    --MixStream.TeacherId teacher\
+    --SdkAppId 1400000001 \
+    --RoomId 1203 \
+    --RecordUserId tic_record_user_1203_141551 \
+    --RecordUserSig usersig_of_<tic_record_user_1203_141551> \
+    --Whiteboard.Width 1280 \
+    --Whiteboard.Height 960 \
+    --Whiteboard.InitParam {"ratio":"16:9"} \
+    --Concat.Enabled true \
+    --Concat.Image http://background/image.jpg \
+    --MixStream.Enabled true \
+    --MixStream.DisableAudio false \
+    --MixStream.ModelId 2 \
+    --MixStream.TeacherId teacher \
     --Extras MIX_STREAM
 ```
 

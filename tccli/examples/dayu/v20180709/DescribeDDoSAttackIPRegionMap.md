@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dayu DescribeDDoSAttackIPRegionMap --cli-unfold-argument  \
-    --Business bgpip\
-    --Id bgpip-0000000x\
-    --IpList 1.1.1.1\
-    --StartTime '2019-07-23 11:32:12'\
+    --Business bgpip \
+    --Id bgpip-0000000x \
+    --IpList 1.1.1.1 \
+    --StartTime '2019-07-23 11:32:12' \
     --EndTime '2019-07-27 13:35:16'
 ```
 

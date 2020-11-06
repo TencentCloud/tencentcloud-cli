@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli iotexplorer CreateStudioProduct --cli-unfold-argument  \
-    --ProductName name\
-    --CategoryId 10\
-    --ProductType 0\
-    --EncryptionType 1\
-    --NetType wifi\
-    --DataProtocol 1\
-    --ProductDesc desc\
+    --ProductName name \
+    --CategoryId 10 \
+    --ProductType 0 \
+    --EncryptionType 1 \
+    --NetType wifi \
+    --DataProtocol 1 \
+    --ProductDesc desc \
     --ProjectId prj-zunfat46
 ```
 

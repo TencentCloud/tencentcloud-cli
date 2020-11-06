@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl ReplaceCertificate --cli-unfold-argument  \
-    --CertificateId a91hoLqi\
+    --CertificateId a91hoLqi \
     --ValidType DNS
 ```
 

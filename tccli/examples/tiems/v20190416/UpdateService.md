@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tiems UpdateService --cli-unfold-argument  \
-    --ServiceId ank95gbm4dwfhmds\
-    --Scaler.StartReplicas 2\
+    --ServiceId ank95gbm4dwfhmds \
+    --Scaler.StartReplicas 2 \
     --Scaler.MaxReplicas 2
 ```
 

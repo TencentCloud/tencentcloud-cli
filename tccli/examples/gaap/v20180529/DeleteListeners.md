@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DeleteListeners --cli-unfold-argument  \
-    --ProxyId link-3d85gh\
-    --ListenerIds listener-o0f3at99\
+    --ProxyId link-3d85gh \
+    --ListenerIds listener-o0f3at99 \
     --Force 1
 ```
 
