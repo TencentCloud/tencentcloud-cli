@@ -1,4 +1,4 @@
-**Example 1: Deleting the HAVIP**
+**Example 1: 删除HAVIP**
 
 
 

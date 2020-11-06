@@ -1,4 +1,4 @@
-**Example 1: Submitting certificate information**
+**Example 1: 提交证书资料**
 
 
 
@@ -11,10 +11,10 @@ tccli ssl SubmitCertificateInformation --cli-unfold-argument  \
     --CertificateDomain *.test-dq342da.com \
     --OrganizationName Tencent \
     --OrganizationDivision Qcloud \
-    --OrganizationAddress 'Tencent Building, No. 10000 Shennan Road, Nanshan District' \
+    --OrganizationAddress 南山区腾讯大厦1000号 \
     --OrganizationCountry CN \
-    --OrganizationCity Shenzhen \
-    --OrganizationRegion Guangdong \
+    --OrganizationCity 深圳市 \
+    --OrganizationRegion 广东省 \
     --PhoneAreaCode 0755 \
     --PhoneNumber 86013388 \
     --AdminFirstName test \

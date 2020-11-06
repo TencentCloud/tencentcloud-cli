@@ -1,6 +1,6 @@
-**Example 1: Unbinding dead letter queue**
+**Example 1: 解绑死信队列**
 
-This example shows you how to unbind a dead letter queue.
+解绑死信队列
 
 Input: 
 

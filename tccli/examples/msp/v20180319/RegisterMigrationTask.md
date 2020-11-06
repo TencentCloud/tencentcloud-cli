@@ -1,6 +1,6 @@
-**Example 1: Registering a migration task**
+**Example 1: 注册迁移任务**
 
-This example shows you how to register a migration task.
+注册迁移任务
 
 Input: 
 

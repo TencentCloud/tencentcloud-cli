@@ -1,4 +1,4 @@
-**Example 1: Updating organization member information**
+**Example 1: 更新企业成员信息**
 
 
 

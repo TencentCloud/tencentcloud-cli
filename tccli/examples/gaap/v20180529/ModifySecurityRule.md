@@ -1,4 +1,4 @@
-**Example 1: Modifying a Rule Name**
+**Example 1: 修改规则名**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the list of permission groups**
+**Example 1: 查询权限组列表**
 
 
 
@@ -29,15 +29,15 @@ Output:
             },
             {
                 "PGroupId": "pgroup-54321",
-                "Name": "Test",
+                "Name": "测试",
                 "DescInfo": "use for test",
                 "BindCfsNum": 1,
                 "CDate": "2019-07-03 16:06:38"
             },
             {
                 "PGroupId": "pgroupbasic",
-                "Name": "Default permission group",
-                "DescInfo": "Default permission group",
+                "Name": "默认权限组",
+                "DescInfo": "默认权限组",
                 "BindCfsNum": 5,
                 "CDate": "2019-06-21 17:30:05"
             }

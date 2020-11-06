@@ -1,4 +1,4 @@
-**Example 1: Modifying cluster scaling group attributes**
+**Example 1: 修改集群伸缩组属性**
 
 
 

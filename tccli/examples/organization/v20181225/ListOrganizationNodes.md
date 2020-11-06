@@ -1,4 +1,4 @@
-**Example 1: Obtaining a list of organizational units**
+**Example 1: 获取企业组织单元列表**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the sharing information of a snapshot**
+**Example 1: 查询某个快照的分享信息**
 
 
 

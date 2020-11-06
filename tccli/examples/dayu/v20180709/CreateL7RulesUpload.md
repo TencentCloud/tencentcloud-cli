@@ -1,4 +1,4 @@
-**Example 1: Uploading layer-7 forwarding rules in batches**
+**Example 1: 批量上传L7转发规则**
 
 
 

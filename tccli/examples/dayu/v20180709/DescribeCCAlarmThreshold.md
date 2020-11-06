@@ -1,4 +1,4 @@
-**Example 1: Getting CC alarm threshold**
+**Example 1: 获取CC告警阈值**
 
 
 

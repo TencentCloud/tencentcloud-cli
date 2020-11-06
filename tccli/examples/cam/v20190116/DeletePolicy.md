@@ -1,6 +1,6 @@
-**Example 1: Deleting a Policy**
+**Example 1: 删除策略**
 
-Deleting a policy (ID: 524497)
+删除策略ID为524497的策略
 
 Input: 
 

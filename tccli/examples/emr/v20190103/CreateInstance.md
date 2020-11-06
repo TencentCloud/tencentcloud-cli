@@ -1,4 +1,4 @@
-**Example 1: Creating instance**
+**Example 1: 创建实例**
 
 
 
@@ -8,7 +8,7 @@ Input:
 tccli emr CreateInstance --cli-unfold-argument  \
     --ProductId 4 \
     --SupportHA 0 \
-    --InstanceName 'emr test' \
+    --InstanceName emr测试 \
     --PayMode 0 \
     --Placement.Zone ap-guangzhou-3 \
     --Placement.ProjectId 0 \

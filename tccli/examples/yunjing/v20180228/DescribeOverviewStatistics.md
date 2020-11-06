@@ -1,6 +1,6 @@
-**Example 1: Getting overview statistics**
+**Example 1: 获取概览统计数据**
 
-This example shows you how to get the overview statistics.
+获取概览统计数据。
 
 Input: 
 

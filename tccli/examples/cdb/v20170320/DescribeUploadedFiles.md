@@ -1,4 +1,4 @@
-**Example 1: Querying the list of imported SQL files**
+**Example 1: 查询导入SQL文件列表**
 
 
 

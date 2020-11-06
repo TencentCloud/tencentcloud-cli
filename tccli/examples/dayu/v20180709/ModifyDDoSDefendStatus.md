@@ -1,4 +1,4 @@
-**Example 1: Modifying DDoS protection status**
+**Example 1: 修改DDoS防护状态**
 
 
 

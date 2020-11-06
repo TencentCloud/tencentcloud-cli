@@ -1,4 +1,4 @@
-**Example 1: Enabling a domain name**
+**Example 1: 启用域名**
 
 
 

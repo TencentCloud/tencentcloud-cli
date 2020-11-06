@@ -1,4 +1,4 @@
-**Example 1: Submitting a URL purge task**
+**Example 1: 提交 URL 刷新任务**
 
 
 

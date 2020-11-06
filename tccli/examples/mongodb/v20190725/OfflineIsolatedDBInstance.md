@@ -1,4 +1,4 @@
-**Example 1: Deactivating isolated TencentDB instances**
+**Example 1: 下线隔离状态的云数据库实例**
 
 
 

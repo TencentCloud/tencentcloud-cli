@@ -1,4 +1,4 @@
-**Example 1: Getting the permission to download an instance backup**
+**Example 1: 获取实例备份下载授权**
 
 
 

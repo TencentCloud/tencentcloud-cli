@@ -1,6 +1,6 @@
-**Example 1: Getting hardware node information**
+**Example 1: 获取硬件节点信息**
 
-This example shows you how to get the information of a hardware node by EMR cluster ID.
+通过emr集群ID获取硬件节点信息
 
 Input: 
 
@@ -149,7 +149,7 @@ Output:
         ],
         "RequestId": "bb22bafb-d2a4-4a02-879f-6ccf54a27892",
         "TagKeys": [
-            "Test",
+            "测试一下",
             "alex_test",
             "beckwuxingjia",
             "ghghghg",

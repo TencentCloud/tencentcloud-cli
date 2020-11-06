@@ -1,4 +1,4 @@
-**Example 1: Querying the price of instance creation**
+**Example 1: 创建询价**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the VPC list**
+**Example 1: 查询VPC列表**
 
 
 
@@ -21,7 +21,7 @@ Output:
         "VpcSet": [
             {
                 "VpcId": "vpc-p5sf61yj",
-                "VpcName": "Test dhcp",
+                "VpcName": "测试dhcp",
                 "CidrBlock": "10.0.0.0/16",
                 "Ipv6CidrBlock": "3402:4e00:20:1200::/56",
                 "IsDefault": false,
@@ -41,9 +41,9 @@ Output:
 }
 ```
 
-**Example 2: Querying the list of VPCs bound to the tag**
+**Example 2: 查询绑定了标签的VPC列表**
 
-This example shows you how to query VPCs bound to a tag-key pair (city: Shanghai).
+查询绑定了标签键值对（city:shanghai）的vpc。
 
 Input: 
 
@@ -62,7 +62,7 @@ Output:
         "VpcSet": [
             {
                 "VpcId": "vpc-p5sf61yj",
-                "VpcName": "Test dhcp",
+                "VpcName": "测试dhcp",
                 "CidrBlock": "10.0.0.0/16",
                 "Ipv6CidrBlock": "3402:4e00:20:1200::/56",
                 "IsDefault": false,

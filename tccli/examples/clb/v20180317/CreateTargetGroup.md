@@ -1,4 +1,4 @@
-**Example 1: Creating a target group**
+**Example 1: 创建目标组**
 
 
 

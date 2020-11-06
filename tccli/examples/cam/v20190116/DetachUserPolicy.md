@@ -1,6 +1,6 @@
-**Example 1: Unassociating a Policy and a User**
+**Example 1: 解除绑定到用户的策略**
 
-Unassociating policy 16313162 and user 3449203261
+解除绑定到用户3449203261的策略16313162
 
 Input: 
 

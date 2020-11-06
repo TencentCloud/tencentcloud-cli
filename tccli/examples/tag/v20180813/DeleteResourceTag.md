@@ -1,4 +1,4 @@
-**Example 1: Unassociating Resources and Tags**
+**Example 1: 标签解绑资源**
 
 
 

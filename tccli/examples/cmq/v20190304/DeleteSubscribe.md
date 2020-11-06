@@ -1,4 +1,4 @@
-**Example 1: Deleting subscription**
+**Example 1: 删除订阅**
 
 
 

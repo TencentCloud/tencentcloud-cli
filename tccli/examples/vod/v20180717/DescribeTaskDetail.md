@@ -1,128 +1,4 @@
-**Example 1: Getting task details - Transcode**
-
-
-
-Input: 
-
-```
-tccli vod DescribeTaskDetail --cli-unfold-argument  \
-    --TaskId 12567683xx-transcode-58a1bc57b1c23ed1079597ec17a47666t0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TaskType": "Transcode",
-        "Status": "FINISH",
-        "CreateTime": "2019-01-22T06:50:31Z",
-        "BeginProcessTime": "2019-01-22T06:50:32Z",
-        "FinishTime": "2019-01-22T06:50:45Z",
-        "ProcedureTask": null,
-        "EditMediaTask": null,
-        "TranscodeTask": {
-            "TaskId": "12567683xx-transcode-58a1bc57b1c23ed1079597ec17a47666t0",
-            "ErrCode": 0,
-            "Message": "",
-            "FileId": "5285890784246869930",
-            "FileName": "small",
-            "Duration": 60,
-            "CoverUrl": "http://12567683xx.vod2.myqcloud.com/d042887avodtransgzp12567683xx/c643347c5285890784246869930/1546950643_4191274987.100_0.jpg",
-            "PlayInfoSet": [
-                {
-                    "Url": "http://12567683xx.vod2.myqcloud.com/1c1ae5d2vodgzp12567683xx/c643347c5285890784246869930/AtUCmy6gmIYA.mp4",
-                    "Definition": 0,
-                    "Bitrate": 1021028,
-                    "Height": 480,
-                    "Width": 640
-                },
-                {
-                    "Url": "http://12567683xx.vod2.myqcloud.com/d042887avodtransgzp12567683xx/c643347c5285890784246869930/v.f10.mp4",
-                    "Definition": 10,
-                    "Bitrate": 304695,
-                    "Height": 240,
-                    "Width": 320
-                }
-            ]
-        },
-        "SnapshotByTimeOffsetTask": null,
-        "ConcatTask": null,
-        "ClipTask": null,
-        "CreateImageSpriteTask": null,
-        "PullUploadTask": null,
-        "RequestId": "62597d15-3fad-4234-af1a-ed33602a6118"
-    }
-}
-```
-
-**Example 2: Getting task details - EditMedia**
-
-
-
-Input: 
-
-```
-tccli vod DescribeTaskDetail --cli-unfold-argument  \
-    --TaskId 12530394xx-procedurev2-61c975da05662fd9d3bf9d89a63361c0t0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TaskType": "EditMedia",
-        "Status": "FINISH",
-        "CreateTime": "2019-02-25T10:56:02Z",
-        "BeginProcessTime": "2019-02-25T10:56:02Z",
-        "FinishTime": "2019-02-25T10:56:13Z",
-        "ProcedureTask": null,
-        "EditMediaTask": {
-            "TaskId": "12530394xx-procedurev2-61c975da05662fd9d3bf9d89a63361c0t0",
-            "Status": "FINISH",
-            "ErrCode": 0,
-            "Message": "",
-            "Input": {
-                "InputType": "Stream",
-                "FileInfoSet": [
-                    {
-                        "FileId": "4565514956192708397",
-                        "StartTimeOffset": 0,
-                        "EndTimeOffset": 30
-                    },
-                    {
-                        "FileId": "4565514956192708396",
-                        "StartTimeOffset": 0,
-                        "EndTimeOffset": 30
-                    }
-                ],
-                "StreamInfoSet": [
-                    {
-                        "StreamId": "29920_stream",
-                        "StartTime": "2019-02-20T06:21:00Z",
-                        "EndTime": "2019-02-20T06:21:30Z"
-                    }
-                ]
-            },
-            "Output": {
-                "FileType": "mp4",
-                "FileId": "4565514956222184986",
-                "FileUrl": "http://12530394xx.vod2.myqcloud.com/9395476dvodcq1253039488/f0e1f8314565514956222184986/playlist.f9.mp4"
-            },
-            "ProcedureTaskId": ""
-        },
-        "WechatPublishTask": null,
-        "TranscodeTask": null,
-        "SnapshotByTimeOffsetTask": null,
-        "ConcatTask": null,
-        "ClipTask": null,
-        "CreateImageSpriteTask": null,
-        "PullUploadTask": null,
-        "RequestId": "sdfadf"
-    }
-}
-```
-
-**Example 3: Getting task details - Procedure**
+**Example 1: 获取任务详情-Procedure**
 
 
 
@@ -196,7 +72,131 @@ Output:
 }
 ```
 
-**Example 4: Getting task details - WechatMiniProgramPublish**
+**Example 2: 获取任务详情-Transcode**
+
+
+
+Input: 
+
+```
+tccli vod DescribeTaskDetail --cli-unfold-argument  \
+    --TaskId 12567683xx-transcode-58a1bc57b1c23ed1079597ec17a47666t0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskType": "Transcode",
+        "Status": "FINISH",
+        "CreateTime": "2019-01-22T06:50:31Z",
+        "BeginProcessTime": "2019-01-22T06:50:32Z",
+        "FinishTime": "2019-01-22T06:50:45Z",
+        "ProcedureTask": null,
+        "EditMediaTask": null,
+        "TranscodeTask": {
+            "TaskId": "12567683xx-transcode-58a1bc57b1c23ed1079597ec17a47666t0",
+            "ErrCode": 0,
+            "Message": "",
+            "FileId": "5285890784246869930",
+            "FileName": "small",
+            "Duration": 60,
+            "CoverUrl": "http://12567683xx.vod2.myqcloud.com/d042887avodtransgzp12567683xx/c643347c5285890784246869930/1546950643_4191274987.100_0.jpg",
+            "PlayInfoSet": [
+                {
+                    "Url": "http://12567683xx.vod2.myqcloud.com/1c1ae5d2vodgzp12567683xx/c643347c5285890784246869930/AtUCmy6gmIYA.mp4",
+                    "Definition": 0,
+                    "Bitrate": 1021028,
+                    "Height": 480,
+                    "Width": 640
+                },
+                {
+                    "Url": "http://12567683xx.vod2.myqcloud.com/d042887avodtransgzp12567683xx/c643347c5285890784246869930/v.f10.mp4",
+                    "Definition": 10,
+                    "Bitrate": 304695,
+                    "Height": 240,
+                    "Width": 320
+                }
+            ]
+        },
+        "SnapshotByTimeOffsetTask": null,
+        "ConcatTask": null,
+        "ClipTask": null,
+        "CreateImageSpriteTask": null,
+        "PullUploadTask": null,
+        "RequestId": "62597d15-3fad-4234-af1a-ed33602a6118"
+    }
+}
+```
+
+**Example 3: 获取任务详情-EditMedia**
+
+
+
+Input: 
+
+```
+tccli vod DescribeTaskDetail --cli-unfold-argument  \
+    --TaskId 12530394xx-procedurev2-61c975da05662fd9d3bf9d89a63361c0t0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskType": "EditMedia",
+        "Status": "FINISH",
+        "CreateTime": "2019-02-25T10:56:02Z",
+        "BeginProcessTime": "2019-02-25T10:56:02Z",
+        "FinishTime": "2019-02-25T10:56:13Z",
+        "ProcedureTask": null,
+        "EditMediaTask": {
+            "TaskId": "12530394xx-procedurev2-61c975da05662fd9d3bf9d89a63361c0t0",
+            "Status": "FINISH",
+            "ErrCode": 0,
+            "Message": "",
+            "Input": {
+                "InputType": "Stream",
+                "FileInfoSet": [
+                    {
+                        "FileId": "4565514956192708397",
+                        "StartTimeOffset": 0,
+                        "EndTimeOffset": 30
+                    },
+                    {
+                        "FileId": "4565514956192708396",
+                        "StartTimeOffset": 0,
+                        "EndTimeOffset": 30
+                    }
+                ],
+                "StreamInfoSet": [
+                    {
+                        "StreamId": "29920_stream",
+                        "StartTime": "2019-02-20T06:21:00Z",
+                        "EndTime": "2019-02-20T06:21:30Z"
+                    }
+                ]
+            },
+            "Output": {
+                "FileType": "mp4",
+                "FileId": "4565514956222184986",
+                "FileUrl": "http://12530394xx.vod2.myqcloud.com/9395476dvodcq1253039488/f0e1f8314565514956222184986/playlist.f9.mp4"
+            },
+            "ProcedureTaskId": ""
+        },
+        "WechatPublishTask": null,
+        "TranscodeTask": null,
+        "SnapshotByTimeOffsetTask": null,
+        "ConcatTask": null,
+        "ClipTask": null,
+        "CreateImageSpriteTask": null,
+        "PullUploadTask": null,
+        "RequestId": "sdfadf"
+    }
+}
+```
+
+**Example 4: 获取任务详情-WechatMiniProgramPublish**
 
 
 

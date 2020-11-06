@@ -1,4 +1,4 @@
-**Example 1: Deleting a white-box key**
+**Example 1: 删除白盒密钥**
 
 
 

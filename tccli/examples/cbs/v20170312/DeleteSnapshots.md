@@ -1,4 +1,4 @@
-**Example 1: Deletes a snapshot**
+**Example 1: 删除快照**
 
 
 

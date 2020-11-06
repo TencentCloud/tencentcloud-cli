@@ -1,4 +1,4 @@
-**Example 1: Setting scale-in protection for CVM instances**
+**Example 1: 为子机设置移出保护**
 
 
 

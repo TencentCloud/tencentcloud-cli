@@ -1,4 +1,4 @@
-**Example 1: Getting the List of Policies Associated with a Role**
+**Example 1: 获取角色绑定的策略列表**
 
 
 

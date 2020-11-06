@@ -1,13 +1,13 @@
-**Example 1: Modifying the attributes of a NAT gateway**
+**Example 1: 修改NAT网关的属性**
 
-Only modification of the name of the NAT gateway and its maximum public network outbound bandwidth is supported. To reset the concurrent connection cap of a NAT gateway, use the ResetNatGatewayConnection API.
+只支持修改NAT网关的名称和NAT网关最大外网出带宽。更新NAT网关并发连接上限请使用ResetNatGatewayConnection接口。
 
 Input: 
 
 ```
 tccli vpc ModifyNatGatewayAttribute --cli-unfold-argument  \
     --NatGatewayId nat-ig8xpno8 \
-    --NatGatewayName testnatgateway \
+    --NatGatewayName 测试nat网关 \
     --InternetMaxBandwidthOut 500
 ```
 

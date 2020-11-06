@@ -1,6 +1,6 @@
-**Example 1: Modifying a data migration task**
+**Example 1: 修改数据迁移任务**
 
-This example shows you how to modify the configuration of migration task "dts-1kl0iy0v".
+修改dts-1kl0iy0v迁移任务配置
 
 Input: 
 

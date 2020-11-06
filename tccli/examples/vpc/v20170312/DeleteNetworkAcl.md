@@ -1,4 +1,4 @@
-**Example 1: Deleting a network ACL**
+**Example 1: 删除网络ACL**
 
 
 

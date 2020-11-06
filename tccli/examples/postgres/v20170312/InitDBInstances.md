@@ -1,6 +1,6 @@
-**Example 1: Initializing one instance**
+**Example 1: 初始化单个实例**
 
-This example shows you how to initialize the instance whose ID is postgres-6fego161
+例如：初始化的实例Id为: postgres-6fego161
 
 Input: 
 
@@ -24,9 +24,9 @@ Output:
 }
 ```
 
-**Example 2: Initializing multiple instances**
+**Example 2: 初始化多个实例**
 
-This example shows you how to simultaneously initialize two instances whose IDs are postgres-6fego161 and postgres-lnp6j617 respectively
+例如：同时初始化2个实例，实例Id分别为：postgres-6fego161、postgres-lnp6j617
 
 Input: 
 

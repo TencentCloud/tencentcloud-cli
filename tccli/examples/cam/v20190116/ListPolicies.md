@@ -1,4 +1,4 @@
-**Example 1: Viewing policy list**
+**Example 1: 查看策略列表**
 
 
 
@@ -21,7 +21,7 @@ Output:
                 "PolicyName": "QcloudAccessForCDNRole",
                 "AddTime": "2019-04-19 10:55:31",
                 "Type": 2,
-                "Description": "Tencent Cloud Content Delivery Network (CDN) permissions include CRUD operations for CLS logsets and log topics as well as searching for, downloading, and uploading logs.",
+                "Description": "腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。",
                 "CreateMode": 2,
                 "Attachments": 0,
                 "ServiceType": "cooperator",

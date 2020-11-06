@@ -1,4 +1,4 @@
-**Example 1: Unwhitelisting unusual login location**
+**Example 1: 删除异地登录白名单**
 
 
 

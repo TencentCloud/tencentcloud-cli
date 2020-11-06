@@ -1,6 +1,6 @@
-**Example 1: Querying the health check statistics of bound origin server**
+**Example 1: 查询已绑定源站健康检查统计数据**
 
-This example shows you how to query the health check statistics of a bound origin server.
+查询已绑定源站健康检查统计数据
 
 Input: 
 

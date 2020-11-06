@@ -1,4 +1,4 @@
-**Example 1: Binding Scheduled Snapshot Policy for Single Disk**
+**Example 1: 给单块盘绑定定期快照策略**
 
 
 

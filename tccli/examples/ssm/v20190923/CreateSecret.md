@@ -1,4 +1,4 @@
-**Example 1: Creating a Secret**
+**Example 1: 创建新的凭据信息**
 
 
 

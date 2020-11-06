@@ -1,4 +1,4 @@
-**Example 1: Deleting a forwarding rule**
+**Example 1: 删除一条转发规则**
 
 
 

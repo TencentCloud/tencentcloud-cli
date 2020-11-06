@@ -1,4 +1,4 @@
-**Example 1: Replaces a single routing policy of a security group**
+**Example 1: 替换单条安全组路由规则**
 
 
 

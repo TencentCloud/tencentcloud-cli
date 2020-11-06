@@ -1,4 +1,4 @@
-**Example 1: Terminating specified live stream processing task**
+**Example 1: 终止指定的直播流处理任务**
 
 
 

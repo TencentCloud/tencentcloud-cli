@@ -1,4 +1,4 @@
-**Example 1: Adding a redirection relationship manually**
+**Example 1: 手动添加一条重定向关系**
 
 
 

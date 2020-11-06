@@ -1,4 +1,4 @@
-**Example 1: Binding layer-7 forwarding rules to target groups**
+**Example 1: 七层转发规则绑定目标组**
 
 
 

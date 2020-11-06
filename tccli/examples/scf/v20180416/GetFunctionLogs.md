@@ -1,4 +1,4 @@
-**Example 1: Obtaining the function execution log**
+**Example 1: 获取函数运行日志**
 
 
 

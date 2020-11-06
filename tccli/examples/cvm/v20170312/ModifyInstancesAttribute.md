@@ -1,6 +1,6 @@
-**Example 1: Modifying instance names**
+**Example 1: 修改实例名称**
 
-This example shows you how to modify the names of two instances.
+本示例用于修改两个实例的名称。
 
 Input: 
 

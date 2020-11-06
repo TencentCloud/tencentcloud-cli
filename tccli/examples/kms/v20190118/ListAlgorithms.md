@@ -1,4 +1,4 @@
-**Example 1: Listing encryption methods supported in the current region**
+**Example 1: 列出当前Region支持的加密方式**
 
 
 

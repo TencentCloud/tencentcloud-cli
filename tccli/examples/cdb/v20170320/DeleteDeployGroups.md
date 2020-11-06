@@ -1,4 +1,4 @@
-**Example 1: Deleting a placement group**
+**Example 1: 删除置放群组**
 
 
 

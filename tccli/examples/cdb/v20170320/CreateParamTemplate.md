@@ -1,4 +1,4 @@
-**Example 1: Creating a parameter template**
+**Example 1: 创建参数模板**
 
 
 

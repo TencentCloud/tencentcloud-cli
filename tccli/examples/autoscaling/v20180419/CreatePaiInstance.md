@@ -1,6 +1,6 @@
-**Example 1: Creating one public address instance**
+**Example 1: 创建单个PAI实例**
 
-This example shows you how to create a public address instance with specified parameters such as domain name.
+通过指定的域名等参数，创建单个PAI实例
 
 Input: 
 

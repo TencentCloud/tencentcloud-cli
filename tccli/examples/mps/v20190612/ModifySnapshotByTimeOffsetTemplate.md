@@ -1,4 +1,4 @@
-**Example 1: Modifying a time point screencapturing template**
+**Example 1: 修改指定时间点截图模板**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli mps ModifySnapshotByTimeOffsetTemplate --cli-unfold-argument  \
     --Definition 10001 \
-    --Name 'Time point screencapturing template 1' \
+    --Name 指定时间点截图模板1 \
     --Width 540 \
     --Height 960 \
     --Format jpg

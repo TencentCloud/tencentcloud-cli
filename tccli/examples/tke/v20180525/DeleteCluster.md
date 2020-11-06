@@ -1,6 +1,6 @@
-**Example 1: Deleting a Cluster**
+**Example 1: 删除集群**
 
-Delete a cluster
+删除集群
 
 Input: 
 

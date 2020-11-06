@@ -1,6 +1,6 @@
-**Example 1: Deleting the content analysis template whose template ID is 30**
+**Example 1: 删除模板 ID 为 30 的内容分析模板**
 
-This example shows you how to delete a custom video content analysis template.
+删除用户自定义视频内容分析模板。
 
 Input: 
 

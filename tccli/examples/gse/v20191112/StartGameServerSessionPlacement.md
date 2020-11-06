@@ -1,4 +1,4 @@
-**Example 1: Starting placing game server session**
+**Example 1: 开始放置游戏服务器会话**
 
 
 

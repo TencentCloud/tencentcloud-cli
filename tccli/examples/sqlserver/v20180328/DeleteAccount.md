@@ -1,4 +1,4 @@
-**Example 1: Deleting an instance account**
+**Example 1: 删除实例账号**
 
 
 

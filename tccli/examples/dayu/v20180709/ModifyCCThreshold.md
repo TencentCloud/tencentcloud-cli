@@ -1,4 +1,4 @@
-**Example 1: Modifying CC protection threshold**
+**Example 1: 修改CC的防护阈值**
 
 
 

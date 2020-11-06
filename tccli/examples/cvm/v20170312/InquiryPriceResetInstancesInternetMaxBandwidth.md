@@ -1,6 +1,6 @@
-**Example 1: Querying the price of a pay-as-you-go instance with a new bandwidth cap**
+**Example 1: 按量付费实例调整带宽上限询价**
 
-This example shows you how to query the price for changing the bandwidth of the instance “ins-fd8spnmq” to 20 Mbps.
+对实例ins-fd8spnmq调整带宽为20Mbps进行询价
 
 Input: 
 

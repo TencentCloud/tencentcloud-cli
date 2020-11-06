@@ -1,4 +1,4 @@
-**Example 1: Running a Function**
+**Example 1: 运行函数**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the CCN routes of a Direct Connect gateway**
+**Example 1: 查询专线网关云联网路由**
 
 
 

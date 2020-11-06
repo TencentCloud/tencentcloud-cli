@@ -1,4 +1,4 @@
-**Example 1: Querying domain name list**
+**Example 1: 查询域名列表**
 
 
 

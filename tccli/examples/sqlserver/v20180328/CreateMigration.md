@@ -1,4 +1,4 @@
-**Example 1: Creating a migration task**
+**Example 1: 创建迁移任务**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver CreateMigration --cli-unfold-argument  \
-    --MigrateName 'Test API' \
+    --MigrateName 测试接口 \
     --MigrateType 2 \
     --SourceType 5 \
     --Source.Url http://gz-oncvm-1254065710.cosgz.myqcloud.com/testdb.bak \

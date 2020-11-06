@@ -1,4 +1,4 @@
-**Example 1: Binding advanced DDoS policy to resource instance**
+**Example 1: 资源实例绑定DDoS高级策略**
 
 
 

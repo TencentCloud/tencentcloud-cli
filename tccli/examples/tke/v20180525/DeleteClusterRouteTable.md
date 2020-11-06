@@ -1,4 +1,4 @@
-**Example 1: Deleting a Cluster Route Table**
+**Example 1: 删除集群路由表**
 
 
 

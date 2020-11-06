@@ -1,4 +1,4 @@
-**Example 1: Querying Certificate Details.**
+**Example 1: 查询证书详情。**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Querying an image by its image ID**
+**Example 1: 按镜像ID查询镜像**
 
-This example shows you how to query the information on an image by the image ID.
+已经知道镜像ID，查询镜像相关信息。
 
 Input: 
 
@@ -21,8 +21,8 @@ Output:
                 "ImageType": "PUBLIC_IMAGE",
                 "ImageCreateTime": "1970-01-01T00:00:00+00:00",
                 "ImageStatus": "NORMAL",
-                "ImageName": "CentOS 6.6 32-bit",
-                "ImageDescription": "CentOS 6.6 32-bit",
+                "ImageName": "CentOS 6.6 32位",
+                "ImageDescription": "CentOS 6.6 32位",
                 "Creator": "PUBLIC"
             }
         ],
@@ -32,9 +32,9 @@ Output:
 }
 ```
 
-**Example 2: Querying images by image type**
+**Example 2: 按镜像类型查询镜像**
 
-This example shows you how to query all private images under an account.
+查询账户下所有私有镜像。
 
 Input: 
 
@@ -55,8 +55,8 @@ Output:
                 "ImageType": "PUBLIC_IMAGE",
                 "ImageCreateTime": "1970-01-01T00:00:00+00:00",
                 "ImageStatus": "NORMAL",
-                "ImageName": "CentOS 6.6 32-bit",
-                "ImageDescription": "CentOS 6.6 32-bit",
+                "ImageName": "CentOS 6.6 32位",
+                "ImageDescription": "CentOS 6.6 32位",
                 "Creator": "PUBLIC"
             }
         ],

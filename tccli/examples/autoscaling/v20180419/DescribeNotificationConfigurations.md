@@ -1,4 +1,4 @@
-**Example 1: Querying notifications**
+**Example 1: 查询通知**
 
 
 

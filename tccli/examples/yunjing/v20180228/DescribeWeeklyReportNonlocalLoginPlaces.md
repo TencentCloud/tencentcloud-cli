@@ -1,6 +1,6 @@
-**Example 1: Getting unusual login location data in weekly CWP Pro report**
+**Example 1: 获取专业周报异地登录数据**
 
-This example shows you how to get the unusual login location data in the weekly CWP Pro report.
+获取专业周报异地登录数据
 
 Input: 
 

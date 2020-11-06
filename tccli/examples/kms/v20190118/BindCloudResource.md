@@ -1,6 +1,6 @@
-**Example 1: Binding a key with a Tencent Cloud resource**
+**Example 1: 绑定密钥和云产品资源的使用关系**
 
-This example shows you how to bind a key with a Tencent Cloud resource.
+绑定密钥和云产品资源的使用关系
 
 Input: 
 

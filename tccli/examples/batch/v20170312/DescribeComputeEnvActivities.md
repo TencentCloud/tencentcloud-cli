@@ -1,4 +1,4 @@
-**Example 1: Querying the List of Activities in the Compute Environment**
+**Example 1: 查询计算环境的活动列表**
 
 
 

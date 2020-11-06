@@ -1,4 +1,4 @@
-**Example 1: Viewing the object list of the route table**
+**Example 1: 查看路由表对象列表**
 
 
 
@@ -80,7 +80,7 @@ Output:
 }
 ```
 
-**Example 2: Querying the list of route tables bound to the specified tag**
+**Example 2: 查询绑定了标签的路由表列表**
 
 
 

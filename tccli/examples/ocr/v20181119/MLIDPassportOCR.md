@@ -1,4 +1,4 @@
-**Example 1: Recognizing passport issued in Hong Kong/Macao/Taiwan (China) or other countries/regions ([debugging tool](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=MLIDPassportOCR))**
+**Example 1: 护照识别（港澳台地区及境外护照）示例代码[前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=MLIDPassportOCR)**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr MLIDPassportOCR --cli-unfold-argument  \
-    --ImageBase64 'Base64 encoding'
+    --ImageBase64 base64编码
 ```
 
 Output: 

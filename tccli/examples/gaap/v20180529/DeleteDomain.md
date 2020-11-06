@@ -1,4 +1,4 @@
-**Example 1: Deleting a Forwarding Rule Based on Domain Names**
+**Example 1: 根据域名删除转发规则**
 
 
 

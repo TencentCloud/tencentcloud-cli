@@ -1,6 +1,6 @@
-**Example 1: Modifying real server weights in batches**
+**Example 1: 批量修改后端服务的权重**
 
-This example shows you how to modify the weight of the real server `ins-19404pl5` (port 110) bound to the forwarding rule `loc-o8cnyw6c` under the listener `lbl-4b5hnc9a` in the CLB instance `lb-dx98lwo0` to 50, and modify the weight of the real server `ins-19411tzv` (port 80) bound to the forwarding rule `loc-8c5pdrb8` under the listener `lbl-20jjtaaw` to 30.
+针对负载均衡实例(lb-dx98lwo0)， 将其监听器 lbl-4b5hnc9a 下的转发规则 loc-o8cnyw6c 所绑定的后端服务 ins-19404pl5（端口为110）权重修改为 50，以及将监听器 lbl-20jjtaaw 下的转发规则 loc-8c5pdrb8 所绑定的后端服务 ins-19411tzv（端口为80）权重修改为 30
 
 Input: 
 
@@ -28,9 +28,9 @@ Output:
 }
 ```
 
-**Example 2: Modifying weights of servers bound to layer-4 and layer-7 listeners in batches**
+**Example 2: 批量修改四层和七层监听器绑定的服务器权重**
 
-This example shows you how to modify the weights of servers for layer-4 and layer-7 listeners under a CLB instance at the same time.
+同时对一个负载均衡下的四层和七层监听器修改所绑定的服务器权重
 
 Input: 
 

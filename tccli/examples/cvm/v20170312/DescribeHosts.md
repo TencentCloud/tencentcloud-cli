@@ -1,6 +1,6 @@
-**Example 1: Querying the list of CDH instances**
+**Example 1: 查询CDH实例列表**
 
-This example shows you how to query the details of one or more CDH instances.
+查询一个或多个CDH实例的详细信息
 
 Input: 
 

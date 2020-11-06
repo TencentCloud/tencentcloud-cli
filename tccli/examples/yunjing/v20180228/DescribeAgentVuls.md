@@ -1,6 +1,6 @@
-**Example 1: Getting the list of vulnerabilities on server**
+**Example 1: 获取主机的漏洞列表**
 
-This example shows you how to get the list of vulnerabilities on a server.
+获取主机的漏洞列表
 
 Input: 
 
@@ -22,8 +22,8 @@ Output:
                 "Id": 4,
                 "VulId": 1001,
                 "MachineIp": "10.10.120.12",
-                "Description": "Vulnerability description",
-                "VulName": "Vulnerability name",
+                "Description": "漏洞描述信息",
+                "VulName": "漏洞名称",
                 "VulLevel": "HIGHT",
                 "VulStatus": "UN_OPERATED",
                 "LastScanTime": "2018-03-19 17:38:56"

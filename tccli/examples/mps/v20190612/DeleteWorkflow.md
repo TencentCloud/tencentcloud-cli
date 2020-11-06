@@ -1,6 +1,6 @@
-**Example 1: Deleting a workflow**
+**Example 1: 删除工作流**
 
-This example shows you how to delete a workflow.
+删除工作流
 
 Input: 
 

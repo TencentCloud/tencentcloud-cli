@@ -1,4 +1,4 @@
-**Example 1: Querying real-time scale**
+**Example 1: 查询实时规模**
 
 
 

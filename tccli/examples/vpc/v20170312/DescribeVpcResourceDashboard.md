@@ -1,4 +1,4 @@
-**Example 1: Querying the VPC resource information**
+**Example 1: 查看VPC资源信息**
 
 
 

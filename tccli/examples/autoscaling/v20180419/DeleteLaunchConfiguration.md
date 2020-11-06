@@ -1,4 +1,4 @@
-**Example 1: Deleting a launch configuration**
+**Example 1: 删除启动配置**
 
 
 

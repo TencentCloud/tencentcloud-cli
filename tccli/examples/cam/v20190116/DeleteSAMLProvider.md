@@ -1,6 +1,6 @@
-**Example 1: Deleting an Identity Provider**
+**Example 1: 删除身份提供商**
 
-Deleting an identity provider
+删除身份提供商
 
 Input: 
 

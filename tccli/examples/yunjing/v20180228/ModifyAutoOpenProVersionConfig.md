@@ -1,6 +1,6 @@
-**Example 1: Setting whether to automatically activate CWP Pro for new servers**
+**Example 1: 设置新增主机自动开通专业版配置**
 
-This example shows you how to set whether to automatically activate CWP Pro for new servers.
+设置新增主机自动开通专业版配置
 
 Input: 
 

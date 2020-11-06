@@ -1,12 +1,12 @@
-**Example 1: Resetting a task flow template**
+**Example 1: 重设一个任务流模板的内容**
 
-Modify a task flow template named "My Task Flow" to change its transcoding output to three formats of 220, 230, and 240.
+修改一个名为“我的一个任务流”的任务流模板，将任务流转码输出改成220，230，240三种格式。
 
 Input: 
 
 ```
 tccli vod ResetProcedureTemplate --cli-unfold-argument  \
-    --Name 'My Task Flow' \
+    --Name 我的一个任务流 \
     --MediaProcessTask.TranscodeTaskSet.0.Definition 220 \
     --MediaProcessTask.TranscodeTaskSet.1.Definition 230 \
     --MediaProcessTask.TranscodeTaskSet.2.Definition 240

@@ -1,4 +1,4 @@
-**Example 1: Querying the execution results of the async job**
+**Example 1: 查询异步任务执行结果**
 
 
 

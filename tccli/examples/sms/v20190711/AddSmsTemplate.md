@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sms AddSmsTemplate --cli-unfold-argument  \
-    --TemplateName 'Tencent Cloud' \
+    --TemplateName 腾讯云 \
     --TemplateContent "xxx" \
     --SmsType test \
     --International 0 \

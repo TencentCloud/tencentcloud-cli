@@ -1,13 +1,13 @@
-**Example 1: Creating a task template that supports only video opening and ending credits recognition**
+**Example 1: 创建仅支持视频片头片尾识别的任务模板**
 
-This example shows you how to create a custom video content recognition template to enable only a video opening and ending credits recognition task.
+创建一个自定义视频内容识别模板，仅开启视频片头片尾识别任务。
 
 Input: 
 
 ```
 tccli vod CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 'Video opening and ending credits recognition task template' \
-    --Comment 'Template 1' \
+    --Name 视频片头片尾识别任务模板 \
+    --Comment 模板1 \
     --HeadTailConfigure.Switch ON
 ```
 
@@ -21,16 +21,16 @@ Output:
 }
 ```
 
-**Example 2: Creating a template that supports multiple video content recognition tasks**
+**Example 2: 创建支持多项视频内容识别任务的模板**
 
-This example shows you how to create a custom video content recognition template to enable a splitting task and a face recognition task. The default face library is used, and the face recognition filter score is 90.
+创建一个自定义视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库，人脸识别过滤分数为 90 分。
 
 Input: 
 
 ```
 tccli vod CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 'Intelligent recognition template' \
-    --Comment 'Template 2' \
+    --Name 智能识别模板 \
+    --Comment 模板2 \
     --SegmentConfigure.Switch ON \
     --FaceConfigure.Switch ON \
     --FaceConfigure.FaceLibrary Default \
@@ -47,16 +47,16 @@ Output:
 }
 ```
 
-**Example 3: Creating a template that supports multiple recognition tasks and specifies the frame capturing interval**
+**Example 3: 创建支持多项识别任务的模板，同时指定截帧间隔**
 
-This example shows you how to create a custom video content recognition template to enable a splitting task and a face recognition task. The default and custom face libraries are used, the face recognition filter score is 90, and the frame capturing interval is 1.0 second.
+创建一个自定义视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库及用户自定义库，人脸识别过滤分数为 90 分，指定截帧间隔为 1.0  秒。
 
 Input: 
 
 ```
 tccli vod CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 'Intelligent recognition template' \
-    --Comment 'Template 3' \
+    --Name 智能识别模板 \
+    --Comment 模板3 \
     --SegmentConfigure.Switch ON \
     --FaceConfigure.Switch ON \
     --FaceConfigure.FaceLibrary All \

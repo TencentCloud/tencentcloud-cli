@@ -1,4 +1,4 @@
-**Example 1: Upgrading ES Cluster Version**
+**Example 1: 升级ES集群版本**
 
 
 

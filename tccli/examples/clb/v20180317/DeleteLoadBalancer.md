@@ -1,4 +1,4 @@
-**Example 1: Deleting a CLB instance**
+**Example 1: 删除负载均衡实例**
 
 
 

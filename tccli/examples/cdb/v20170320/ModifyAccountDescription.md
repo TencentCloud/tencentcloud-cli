@@ -1,4 +1,4 @@
-**Example 1: Modifying the remarks of a TencentDB instance account**
+**Example 1: 修改云数据库实例账号的备注信息**
 
 
 

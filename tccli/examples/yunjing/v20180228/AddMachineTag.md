@@ -1,6 +1,6 @@
-**Example 1: Adding tag to server**
+**Example 1: 增加机器关联标签**
 
-The example shows you how to add a tag to a server.
+增加机器关联标签
 
 Input: 
 

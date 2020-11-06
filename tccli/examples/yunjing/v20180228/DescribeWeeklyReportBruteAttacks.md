@@ -1,6 +1,6 @@
-**Example 1: Getting brute force attack data in weekly CWP Pro report**
+**Example 1: 获取专业周报密码破解数据**
 
-This example shows you how to get the brute force attack data in the weekly CWP Pro report.
+获取专业周报密码破解数据。
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
-This example shows you how to query the district/ISP [mapping table](https://intl.cloud.tencent.com/document/api/267/34019?from_cn_redirect=1).
+省份和运营商 [映射表](/document/api/267/34019)。
 
 Input: 
 

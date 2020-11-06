@@ -1,6 +1,6 @@
-**Example 1: Uninstalling agent**
+**Example 1: 卸载客户端**
 
-This API is used to uninstall the CWP agent.
+本接口（DeleteMachine）用于卸载云镜客户端。
 
 Input: 
 

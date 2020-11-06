@@ -1,6 +1,6 @@
-**Example 1: Restarting instances**
+**Example 1: 重启实例**
 
-This example shows you how to restart two instances.
+本示例用于重启两个实例。
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Deleting a flow log**
+**Example 1: 删除流日志**
 
 
 

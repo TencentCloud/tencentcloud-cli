@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -20,16 +20,16 @@ Output:
         "DataInfoList": [
             {
                 "ClientIp": "119.44.7.168",
-                "CountryArea": "China",
-                "Province": "Hunan",
+                "CountryArea": "中国",
+                "Province": "湖南省",
                 "TotalFailedRequest": 4,
                 "TotalFlux": 13321.099,
                 "TotalRequest": 740
             },
             {
                 "ClientIp": "119.44.7.175",
-                "CountryArea": "China",
-                "Province": "Hunan",
+                "CountryArea": "中国",
+                "Province": "湖南省",
                 "TotalFailedRequest": 3,
                 "TotalFlux": 12566.334,
                 "TotalRequest": 2318

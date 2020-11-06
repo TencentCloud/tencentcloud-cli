@@ -1,4 +1,4 @@
-**Example 1: Deleting superplayer configuration**
+**Example 1: 删除超级播放器配置**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Deleting a routing policy**
+**Example 1: 删除路由规则**
 
 
 

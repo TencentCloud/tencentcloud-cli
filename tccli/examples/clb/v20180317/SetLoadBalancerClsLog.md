@@ -1,14 +1,14 @@
-**Example 1: Deleting a CLS topic**
+**Example 1: 设置日志服务主题**
 
-This example shows you how to delete the CLS topic of a CLB instance.
+添加，或修改负载均衡的日志服务(CLS)主题
 
 Input: 
 
 ```
 tccli clb SetLoadBalancerClsLog --cli-unfold-argument  \
     --LoadBalancerId lb-cuxw2r00 \
-    --LogSetId  \
-    --LogTopicId 
+    --LogSetId xxxx-xx-xx-xx-xxxxxxxx \
+    --LogTopicId xxxx-xx-xx-xx-yyyyyyyy
 ```
 
 Output: 
@@ -20,17 +20,17 @@ Output:
 }
 ```
 
-**Example 2: Setting a CLS topic**
+**Example 2: 删除日志服务主题**
 
-This example shows you how to add or modify the CLS topic of a CLB instance.
+删除负载均衡的日志服务(CLS)主题
 
 Input: 
 
 ```
 tccli clb SetLoadBalancerClsLog --cli-unfold-argument  \
     --LoadBalancerId lb-cuxw2r00 \
-    --LogSetId xxxx-xx-xx-xx-xxxxxxxx \
-    --LogTopicId xxxx-xx-xx-xx-yyyyyyyy
+    --LogSetId  \
+    --LogTopicId 
 ```
 
 Output: 

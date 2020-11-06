@@ -1,6 +1,6 @@
-**Example 1: Enabling workflow**
+**Example 1: 启用工作流**
 
-This example shows you how to enable the workflow whose ID is 10000.
+启用工作流10000
 
 Input: 
 

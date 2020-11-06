@@ -1,4 +1,4 @@
-**Example 1: Deleting topic**
+**Example 1: 删除主题**
 
 
 

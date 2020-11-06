@@ -1,13 +1,13 @@
-**Example 1: Creating a policy**
+**Example 1: 创建一个策略**
 
-This example shows you how to create a policy that allows all COS APIs to access all COS resources.
+以下示例将创建一个允许cos所有API访问所有的cos资源的策略
 
 Input: 
 
 ```
 tccli cam CreatePolicy --cli-unfold-argument  \
     --PolicyName test-2019-04-29 \
-    --Description 'Policy description' \
+    --Description 策略描述 \
     --PolicyDocument {"version":"2.0","statement":[{"effect":"allow","action":["name/cos:*"],"resource":["*"]}]}
 ```
 

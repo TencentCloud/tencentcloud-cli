@@ -1,6 +1,6 @@
-**Example 1: Obtaining certificate details**
+**Example 1: 获取证书详情**
 
-This example shows you how to obtain the details of a certificate which is being reviewed.
+获取审核中的证书详情
 
 Input: 
 
@@ -30,14 +30,14 @@ Output:
         "IsDv": false,
         "IsVulnerability": false,
         "CertBeginTime": null,
-        "TypeName": "Secure Site OV",
+        "TypeName": "SecureSite 企业型(OV)",
         "DvAuthDetail": null,
         "VerifyType": null,
         "StatusMsg": null,
-        "StatusName": "OV certificate, to be submitted",
+        "StatusName": "企业证书，待提交",
         "ProjectId": "0",
         "OwnerUin": "779000108",
-        "ProductZhName": "Secure Site OV",
+        "ProductZhName": "SecureSite 企业型(OV)",
         "CertEndTime": null,
         "PackageType": "6",
         "RequestId": "330979e0-fd50-4b33-86b0-c2e264d8ff52",
@@ -50,7 +50,7 @@ Output:
         "CertificateId": "aClRkC90",
         "Alias": "",
         "SubmittedData": {
-            "OrganizationCity": "Shenzhen",
+            "OrganizationCity": "深圳市",
             "CsrContent": "",
             "OrganizationName": "Tencent",
             "CertificateDomain": "test-dawd2143e21.com",
@@ -72,12 +72,12 @@ Output:
             "ContactFirstName": "test",
             "OrganizationCountry": "CN",
             "ContactPosition": "developer",
-            "OrganizationRegion": "Guangdong",
+            "OrganizationRegion": "广东省",
             "PhoneNumber": "86013388",
             "PostalCode": "",
             "AdminEmail": "test@tencent.com",
             "KeyPassword": "",
-            "OrganizationAddress": "Tencent Building, No. 10000 Shennan Road, Nanshan District"
+            "OrganizationAddress": "南山区腾讯大厦1000号"
         },
         "IsWildcard": false,
         "Deployable": false,
@@ -86,9 +86,9 @@ Output:
 }
 ```
 
-**Example 2: Obtaining certificate details-2**
+**Example 2: 获取证书详情-2**
 
-This example shows you how to obtain the details of a certificate which has been approved.
+获取已经审核通过的证书详情
 
 Input: 
 
@@ -119,14 +119,14 @@ Output:
         "IsDv": false,
         "IsVulnerability": true,
         "CertBeginTime": "2020-01-16 16:00:00",
-        "TypeName": "Secure Site EV",
+        "TypeName": "SecureSite 增强型(EV)",
         "DvAuthDetail": null,
         "VerifyType": null,
         "StatusMsg": null,
-        "StatusName": "approved",
+        "StatusName": "已通过",
         "ProjectId": "0",
         "OwnerUin": "779000108",
-        "ProductZhName": "Secure Site EV",
+        "ProductZhName": "SecureSite 增强型(EV)",
         "CertEndTime": "2020-02-14 16:00:00",
         "PackageType": "4",
         "RequestId": "658b9da1-b5e6-46b3-803c-d59a2cb60277",

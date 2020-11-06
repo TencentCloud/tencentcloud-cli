@@ -1,4 +1,4 @@
-**Example 1: Displaying the list of APIs bound to usage plan**
+**Example 1: 展示使用计划绑定的api列表**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Calling the DeleteGroup API**
+**Example 1: 删除人员库接口**
 
-This example shows you how to delete a specified group and all its members.
+删除指定人员库及包含的所有的人员
 
 Input: 
 
@@ -18,9 +18,9 @@ Output:
 }
 ```
 
-**Example 2: Sample Error**
+**Example 2: 错误示例**
 
-This example shows the error occurred when the specified group ID does not exist.
+人员库ID不存在
 
 Input: 
 
@@ -35,7 +35,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.GroupIdNotExist",
-            "Message": "The specified group ID does not exist."
+            "Message": "人员库ID不存在。"
         },
         "RequestId": "878b225f-d3a4-4aa0-a849-3df415ac61a9"
     }

@@ -1,6 +1,6 @@
-**Example 1: Enabling key rotation**
+**Example 1: 启用密钥交换示例**
 
-This example shows you how to enable key rotation for a specified CMK.
+对指定的CMK开启密钥轮换功能。
 
 Input: 
 

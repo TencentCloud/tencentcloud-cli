@@ -1,6 +1,55 @@
-**Example 1: Getting a specified number of video content recognition templates**
+**Example 1: 获取模板 ID 为 30 的视频内容识别模板**
 
-This example shows you how to get 10 video content recognition templates with the serial number starting from 0.
+
+
+Input: 
+
+```
+tccli mps DescribeAIRecognitionTemplates --cli-unfold-argument  \
+    --Definitions 30
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "AIRecognitionTemplateSet": [
+            {
+                "Definition": 30,
+                "Name": "模板1",
+                "Comment": "智能识别模板",
+                "FaceConfigure": {
+                    "Switch": "ON",
+                    "FaceLibrary": "All",
+                    "LabelSet": []
+                },
+                "OcrFullTextConfigure": {
+                    "Switch": "ON"
+                },
+                "OcrWordsConfigure": {
+                    "Switch": "OFF",
+                    "LabelSet": null
+                },
+                "AsrFullTextConfigure": {
+                    "Switch": "ON"
+                },
+                "AsrWordsConfigure": {
+                    "Switch": "OFF",
+                    "LabelSet": null
+                },
+                "CreateTime": "2019-01-01T12:00:00Z",
+                "UpdateTime": "2019-01-01T16:00:00Z"
+            }
+        ],
+        "RequestId": "19ae8d8e-dce3-4151-9d4b-5594384987a9"
+    }
+}
+```
+
+**Example 2: 获取指定个数的视频内容识别模板**
+
+获取序号从 0 开始，总共 10 个视频内容识别模板。
 
 Input: 
 
@@ -18,8 +67,8 @@ Output:
         "AIRecognitionTemplateSet": [
             {
                 "Definition": 30,
-                "Name": "Template 1",
-                "Comment": "Intelligent recognition template",
+                "Name": "模板1",
+                "Comment": "智能识别模板",
                 "FaceConfigure": {
                     "Switch": "ON",
                     "FaceLibrary": "All",
@@ -44,8 +93,8 @@ Output:
             },
             {
                 "Definition": 31,
-                "Name": "Template 2",
-                "Comment": "Intelligent recognition template",
+                "Name": "模板2",
+                "Comment": "智能识别模板",
                 "FaceConfigure": {
                     "Switch": "OFF",
                     "FaceLibrary": "All",
@@ -67,55 +116,6 @@ Output:
                 },
                 "CreateTime": "2019-01-01T11:00:00Z",
                 "UpdateTime": "2019-01-01T12:00:00Z"
-            }
-        ],
-        "RequestId": "19ae8d8e-dce3-4151-9d4b-5594384987a9"
-    }
-}
-```
-
-**Example 2: Getting the video content recognition template whose template ID is 30**
-
-This example shows you how to get 10 video content recognition templates with the serial number starting from 0.
-
-Input: 
-
-```
-tccli mps DescribeAIRecognitionTemplates --cli-unfold-argument  \
-    --Definitions 30
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 1,
-        "AIRecognitionTemplateSet": [
-            {
-                "Definition": 30,
-                "Name": "Template 1",
-                "Comment": "Intelligent recognition template",
-                "FaceConfigure": {
-                    "Switch": "ON",
-                    "FaceLibrary": "All",
-                    "LabelSet": []
-                },
-                "OcrFullTextConfigure": {
-                    "Switch": "ON"
-                },
-                "OcrWordsConfigure": {
-                    "Switch": "OFF",
-                    "LabelSet": null
-                },
-                "AsrFullTextConfigure": {
-                    "Switch": "ON"
-                },
-                "AsrWordsConfigure": {
-                    "Switch": "OFF",
-                    "LabelSet": null
-                },
-                "CreateTime": "2019-01-01T12:00:00Z",
-                "UpdateTime": "2019-01-01T16:00:00Z"
             }
         ],
         "RequestId": "19ae8d8e-dce3-4151-9d4b-5594384987a9"

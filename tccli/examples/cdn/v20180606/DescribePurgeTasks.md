@@ -1,4 +1,4 @@
-**Example 1: Describe Purge Tasks**
+**Example 1: 刷新历史查询**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying real-time quality data**
+**Example 1: 查询实时质量数据**
 
 
 

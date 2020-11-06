@@ -1,16 +1,16 @@
-**Example 1: Modifying group**
+**Example 1: 修改人员库接口**
 
-This example shows you how to modify the name, tag, and custom description field of a group.
+
 
 Input: 
 
 ```
 tccli iai ModifyGroup --cli-unfold-argument  \
     --GroupId ZhuYuanDormitoryNo1 \
-    --GroupName 'Building Dormitory #1, Zhuyuan Campus, XX University' \
-    --Tag Graduates \
+    --GroupName 某某大学竹园1号宿舍楼 \
+    --Tag 研究生入住 \
     --GroupExDescriptionInfos.0.GroupExDescriptionIndex 0 \
-    --GroupExDescriptionInfos.0.GroupExDescription School
+    --GroupExDescriptionInfos.0.GroupExDescription 学院
 ```
 
 Output: 
@@ -22,21 +22,21 @@ Output:
 }
 ```
 
-**Example 2: Modifying group - 2**
+**Example 2: 修改人员库接口-2**
 
-This example shows you how to modify the name, tag, and custom description field of a group.
+修改人员库名称、备注、自定义描述字段名称
 
 Input: 
 
 ```
 tccli iai ModifyGroup --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee \
-    --GroupName 'Current Tencent Employees in Shenzhen' \
-    --Tag 'Including interns' \
+    --GroupName 腾讯深圳在职人员库 \
+    --Tag 包含实习生 \
     --GroupExDescriptionInfos.0.GroupExDescriptionIndex 1 \
-    --GroupExDescriptionInfos.0.GroupExDescription Department \
+    --GroupExDescriptionInfos.0.GroupExDescription 部门 \
     --GroupExDescriptionInfos.1.GroupExDescriptionIndex 2 \
-    --GroupExDescriptionInfos.1.GroupExDescription 'Project team'
+    --GroupExDescriptionInfos.1.GroupExDescription 项目组
 ```
 
 Output: 
@@ -48,7 +48,7 @@ Output:
 }
 ```
 
-**Example 3: Sample error**
+**Example 3: 错误示例**
 
 
 
@@ -58,7 +58,7 @@ Input:
 tccli iai ModifyGroup --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee \
     --GroupExDescriptionInfos.0.GroupExDescriptionIndex 0 \
-    --GroupExDescriptionInfos.0.GroupExDescription Department
+    --GroupExDescriptionInfos.0.GroupExDescription 部门
 ```
 
 Output: 
@@ -67,23 +67,23 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation.DuplicatedGroupDescription",
-            "Message": "The custom description field must be unique in the group."
+            "Message": "同一人员库中自定义描述字段不可重复。"
         },
         "RequestId": "4b483679-3f08-4a7c-b827-4a6332dc030f"
     }
 }
 ```
 
-**Example 4: Sample error - 2**
+**Example 4: 错误示例-2**
 
-The group name must be unique.
+人员库名称不可重复
 
 Input: 
 
 ```
 tccli iai ModifyGroup --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee \
-    --GroupName 'Building Dormitory #1, Zhuyuan Campus, XX University'
+    --GroupName 某某大学竹园1号宿舍楼
 ```
 
 Output: 
@@ -92,7 +92,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.GroupNameAlreadyExist",
-            "Message": "The group name already exists. It must be unique."
+            "Message": "人员库名称已经存在。人员库名称不可重复。"
         },
         "RequestId": "2dcce170-30cf-4078-9b3c-309362fbad21"
     }

@@ -1,6 +1,6 @@
-**Example 1: Disabling key rotation**
+**Example 1: 禁止密钥交换示例**
 
-This example shows you how to disable key rotation for a specified CMK.
+对指定的CMK禁止密钥交换功能。
 
 Input: 
 

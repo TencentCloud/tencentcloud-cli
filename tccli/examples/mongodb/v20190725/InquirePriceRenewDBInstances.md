@@ -1,4 +1,4 @@
-**Example 1: Querying renewal price of an instance**
+**Example 1: 获取续费数据库实例价格**
 
 
 

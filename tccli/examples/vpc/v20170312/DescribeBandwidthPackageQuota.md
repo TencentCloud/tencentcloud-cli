@@ -1,4 +1,4 @@
-**Example 1: Querying the bandwidth package quota**
+**Example 1: 查询带宽包配额**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Rejecting instance association**
+**Example 1: 云联网拒绝关联实例**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Binding Forwarding Rules to the Origin Server**
+**Example 1: 转发规则绑定源站**
 
-Bind forwarding rules to an origin server.
+转发规则绑定源站
 
 Input: 
 

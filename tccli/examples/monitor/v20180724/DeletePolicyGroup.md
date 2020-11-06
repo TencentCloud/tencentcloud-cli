@@ -1,4 +1,4 @@
-**Example 1: Deleting an alarm policy group**
+**Example 1: 删除告警策略组**
 
 
 

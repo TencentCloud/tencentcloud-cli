@@ -1,4 +1,4 @@
-**Example 1: Enabling GTID for an instance**
+**Example 1: 开启实例的GTID**
 
 
 

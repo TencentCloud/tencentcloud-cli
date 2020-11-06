@@ -1,6 +1,6 @@
-**Example 1: Creating backup**
+**Example 1: 创建备份**
 
-This example shows you how to create a backup.
+创建备份
 
 Input: 
 

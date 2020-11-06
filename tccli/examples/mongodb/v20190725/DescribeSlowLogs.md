@@ -1,4 +1,4 @@
-**Example 1: Obtaining the slow log information of a database instance**
+**Example 1: 获取数据库实例慢日志信息**
 
 
 

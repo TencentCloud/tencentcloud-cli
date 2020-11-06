@@ -1,4 +1,4 @@
-**Example 1: Get sample**
+**Example 1: 获取示例**
 
 
 

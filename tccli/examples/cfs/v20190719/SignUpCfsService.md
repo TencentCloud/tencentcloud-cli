@@ -1,4 +1,4 @@
-**Example 1: Activating the CFS service**
+**Example 1: 开通CFS服务**
 
 
 

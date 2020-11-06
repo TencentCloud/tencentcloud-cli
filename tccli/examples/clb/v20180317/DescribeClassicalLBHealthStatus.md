@@ -1,4 +1,4 @@
-**Example 1: Getting the real server health status of a classic CLB instance**
+**Example 1: 获取一个传统型负载均衡的后端服务健康状态信息**
 
 
 

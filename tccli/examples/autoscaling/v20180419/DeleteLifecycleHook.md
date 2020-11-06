@@ -1,4 +1,4 @@
-**Example 1: Deleting the specified lifecycle hook**
+**Example 1: 删除指定的生命周期挂钩**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Modifying keyword sample**
+**Example 1: 修改关键词样本**
 
 
 
@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mps ModifyWordSample --cli-unfold-argument  \
-    --Keyword Combat \
+    --Keyword 格斗 \
     --Usages Review \
     --TagOperationInfo.Type reset \
-    --TagOperation.Tags Terrorism
+    --TagOperation.Tags 涉爆
 ```
 
 Output: 

@@ -1,4 +1,4 @@
-**Example 1: Getting the first two lists of basic policy alarm groups**
+**Example 1: 获取头两个基础策略告警组列表**
 
 
 
@@ -26,7 +26,7 @@ Output:
                         "CalcValue": "0",
                         "ContinueTime": 60,
                         "MetricId": 33,
-                        "MetricShowName": "CPU usage",
+                        "MetricShowName": "CPU利用率",
                         "Period": 60,
                         "RuleId": 1111111,
                         "Unit": "%"
@@ -38,12 +38,12 @@ Output:
                         "AlarmNotifyPeriod": 0,
                         "AlarmNotifyType": 0,
                         "EventId": 42,
-                        "EventShowName": "ping unreachable",
+                        "EventShowName": "ping不可达",
                         "RuleId": 1111112
                     }
                 ],
                 "GroupId": 1111111,
-                "GroupName": "Copying-test",
+                "GroupName": "复制-test",
                 "InsertTime": 1531122504,
                 "InstanceGroup": null,
                 "IsDefault": 0,
@@ -91,7 +91,7 @@ Output:
                         "CalcValue": "0.85",
                         "ContinueTime": 300,
                         "MetricId": 1220,
-                        "MetricShowName": "Disk usage",
+                        "MetricShowName": "磁盘使用百分比",
                         "Period": 60,
                         "RuleId": 1111113,
                         "Unit": ""
@@ -100,7 +100,7 @@ Output:
                 "ConditionsTemp": null,
                 "EventConditions": null,
                 "GroupId": 1111112,
-                "GroupName": "Default",
+                "GroupName": "默认",
                 "InsertTime": 1565792922,
                 "InstanceGroup": null,
                 "IsDefault": 1,

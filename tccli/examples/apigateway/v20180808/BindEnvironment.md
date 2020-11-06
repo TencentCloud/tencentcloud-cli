@@ -1,4 +1,4 @@
-**Example 1: Binding usage plan**
+**Example 1: 绑定使用计划**
 
 
 

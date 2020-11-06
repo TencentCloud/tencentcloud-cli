@@ -1,4 +1,4 @@
-**Example 1: Creating a customer gateway**
+**Example 1: 创建对端网关**
 
 
 

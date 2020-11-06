@@ -1,4 +1,4 @@
-**Example 1: Canceling an invitation to an organization**
+**Example 1: 取消企业组织邀请**
 
 
 

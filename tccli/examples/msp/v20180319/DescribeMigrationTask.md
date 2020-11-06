@@ -1,6 +1,6 @@
-**Example 1: Obtaining the specified migration task details**
+**Example 1: 获取指定迁移任务详情**
 
-This example shows you how to obtain the specified migration task details.
+获取指定迁移任务详情
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Adding URL to HTTP CC protection blacklist/whitelist**
+**Example 1: 添加HTTP协议的CC防护URL白名单**
 
 
 
@@ -27,7 +27,7 @@ Output:
 }
 ```
 
-**Example 2: Adding URL to HTTPS CC protection blacklist/whitelist**
+**Example 2: 添加HTTPS协议的CC防护URL白名单**
 
 
 
@@ -58,7 +58,7 @@ Output:
 }
 ```
 
-**Example 3: Removing URL from HTTPS CC protection blacklist/whitelist**
+**Example 3: 删除HTTPS协议的CC防护URL白名单**
 
 
 

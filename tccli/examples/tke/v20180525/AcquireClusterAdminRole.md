@@ -1,6 +1,6 @@
-**Example 1: Acquiring the admin role of a cluster**
+**Example 1: 获取集群管理员角色**
 
-When a CAM admin sub-account is granted this action permission, it can acquire the cluster admin role through this API to access resources in the Kubernetes cluster.
+CAM管理员子账户，拥有此action的权限之后，可以通过该接口获取集群管理员角色，访问kubernetes集群内资源。
 
 Input: 
 

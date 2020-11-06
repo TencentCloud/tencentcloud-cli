@@ -1,4 +1,4 @@
-**Example 1: Enabling public network access for TencentDB instance**
+**Example 1: 开通云数据库实例的外网访问**
 
 
 

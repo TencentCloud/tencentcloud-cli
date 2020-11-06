@@ -1,4 +1,4 @@
-**Example 1: Downloading SDK and API documentation**
+**Example 1: 下载sdk和api文档**
 
 
 

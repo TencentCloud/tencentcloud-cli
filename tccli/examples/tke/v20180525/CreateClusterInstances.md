@@ -1,4 +1,4 @@
-**Example 1: Extending Cluster Nodes**
+**Example 1: 扩展集群节点示例**
 
 
 
@@ -22,12 +22,12 @@ Output:
 }
 ```
 
-**Example 2: Adding cluster nodes (multiple data disks)**
+**Example 2: 添加集群节点(多块数据盘）**
 
-Adding a node with multiple data disks to a cluster
-Note 1: set DataDisks in InstanceAdvancedSettings to set the mounting information for multiple data disks. The backend will match data disks with data disk IDs based on their types and sizes and mount them to the corresponding paths.
-Note 2: set DataDisks in RunInstancePara. This parameter will be passed through to the CVM to indicate the purchase of multiple data disks.
-Note 3: `MountTarget` in InstanceAdvancedSettings initially supported single-disk configuration but is discarded in multi-disk scenarios, so it does not need to be entered here.
+添加带有多个数据盘的节点到集群
+注意1: InstanceAdvancedSettings设置DataDisks,  多盘数据盘挂载信息，后端会根据盘的类型、大小匹配数据盘ID，将对应的路径挂载
+注意2: RunInstancePara设置DataDisks, 此参数透传给CVM，购买多块数据盘
+注意3: InstanceAdvancedSettings的MountTarget早期是支持单盘的，多盘场景废弃，无需填写
 
 Input: 
 

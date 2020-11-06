@@ -1,4 +1,4 @@
-**Example 1: Enumerating ACLs**
+**Example 1: 枚举ACL**
 
 
 

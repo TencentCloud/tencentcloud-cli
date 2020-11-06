@@ -1,4 +1,4 @@
-**Example 1: Querying job details**
+**Example 1: 查询作业详细信息**
 
 
 
@@ -56,22 +56,14 @@ Output:
         "Priority": 1,
         "StateReason": "",
         "TaskInstanceMetrics": {
-            "TaskInstanceIndex": 0,
-            "TaskInstanceState": "",
-            "ExitCode": 0,
-            "StateReason": "",
-            "ComputeNodeInstanceId": "",
-            "CreateTime": "",
-            "LaunchTime": "",
-            "RunningTime": "",
-            "EndTime": "",
-            "RedirectInfo": {
-                "StdoutRedirectPath": "",
-                "StderrRedirectPath": "",
-                "StdoutRedirectFileName": "",
-                "StderrRedirectFileName": ""
-            },
-            "StateDetailedReason": ""
+            "PendingCount": 0,
+            "FailedCount": 0,
+            "StartingCount": 0,
+            "SucceedCount": 4,
+            "FailedInterruptedCount": 0,
+            "SubmittedCount": 0,
+            "RunnableCount": 0,
+            "RunningCount": 0
         },
         "EndTime": "2018-02-07T09:33:01Z",
         "DependenceSet": [
@@ -99,6 +91,7 @@ Output:
                 "Value": "batch-test-tag-job-value"
             }
         ],
+        "NextAction": "",
         "RequestId": "d1b08863-b8ee-49d4-aa08-f464499f97a0"
     }
 }

@@ -1,4 +1,4 @@
-**Example 1: Creating adaptive bitrate streaming template**
+**Example 1: 创建转自适应码流模板**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateAdaptiveDynamicStreamingTemplate --cli-unfold-argument  \
-    --Name 'Adaptive bitrate streaming template 1' \
+    --Name 转自适应码流模板1 \
     --Format HLS \
     --StreamInfos.0.Video.Codec libx264 \
     --StreamInfos.0.Video.Bitrate 2000 \

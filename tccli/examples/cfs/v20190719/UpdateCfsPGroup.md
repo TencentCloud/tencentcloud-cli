@@ -1,4 +1,4 @@
-**Example 1: Updating the information of a permission group**
+**Example 1: 更新权限组信息**
 
 
 

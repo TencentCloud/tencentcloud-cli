@@ -1,4 +1,4 @@
-**Example 1: Querying TencentDB instance backup time window configuration**
+**Example 1: 查询云数据库实例的备份时间窗口配置**
 
 
 

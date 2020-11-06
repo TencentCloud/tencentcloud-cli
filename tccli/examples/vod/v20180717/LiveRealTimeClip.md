@@ -1,4 +1,4 @@
-**Example 1: Temporary live clipping**
+**Example 1: 即时剪辑不固化**
 
 
 
@@ -23,7 +23,7 @@ Output:
 }
 ```
 
-**Example 2: Persistent live clipping**
+**Example 2: 即时剪辑并且固化**
 
 
 

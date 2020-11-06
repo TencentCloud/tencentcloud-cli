@@ -1,4 +1,4 @@
-**Example 1: Querying the status of the CFS service**
+**Example 1: 查询CFS服务状态**
 
 
 

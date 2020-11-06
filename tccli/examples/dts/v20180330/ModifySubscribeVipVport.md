@@ -1,4 +1,4 @@
-**Example 1: Modifying the IP and port number of data subscription instance**
+**Example 1: 修改数据订阅实例的IP和端口号**
 
 
 

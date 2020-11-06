@@ -1,4 +1,4 @@
-**Example 1: Deleting migration task**
+**Example 1: 删除迁移任务**
 
 
 

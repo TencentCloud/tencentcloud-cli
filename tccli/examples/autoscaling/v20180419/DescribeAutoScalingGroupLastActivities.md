@@ -1,4 +1,4 @@
-**Example 1: Querying the list of the latest activity history of a scaling group**
+**Example 1: 查询伸缩组最新一次伸缩活动列表**
 
 
 

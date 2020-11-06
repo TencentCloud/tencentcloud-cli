@@ -1,4 +1,4 @@
-**Example 1: Rejecting an application for a dedicated tunnel**
+**Example 1: 拒绝专用通道申请**
 
 
 

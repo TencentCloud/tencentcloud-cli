@@ -1,4 +1,4 @@
-**Example 1: Querying game server session placement**
+**Example 1: 查询游戏服务器会话的放置**
 
 
 

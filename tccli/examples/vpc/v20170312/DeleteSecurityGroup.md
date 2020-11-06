@@ -1,4 +1,4 @@
-**Example 1: Deleting a security group**
+**Example 1: 删除安全组**
 
 
 

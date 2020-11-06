@@ -1,4 +1,4 @@
-**Example 1: Deleting keyword sample**
+**Example 1: 删除关键词样本**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps DeleteWordSamples --cli-unfold-argument  \
-    --Keywords 'John Smith'
+    --Keywords 张三
 ```
 
 Output: 

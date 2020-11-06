@@ -1,4 +1,4 @@
-**Example 1: Querying the list of security rules based on security rule ID**
+**Example 1: 根据安全规则ID查询安全规则详情列表**
 
 
 

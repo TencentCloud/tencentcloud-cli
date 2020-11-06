@@ -1,6 +1,6 @@
-**Example 1: Migrating an instance to a VPC and specifying the instance IP**
+**Example 1: 迁移实例私有网络且指定子网IP**
 
-This example shows you how to migrate the instances `r8hr2upy` and `5d8a23rs` to the subnet `dcs9x3gz` of the VPC `1urkhbj4` and specify 10.0.0.18 as the private IP of the instance `r8hr2upy` and 10.0.0.19 as that of the instance `5d8a23rs`.
+实例 r8hr2upy 和 5d8a23rs 迁移至私有网络 1urkhbj4 子网 dcs9x3gz 中，指定实例 r8hr2upy  的私有网络IP为 10.0.0.18，实例 5d8a23rs 的私有网络IP为 10.0.0.19。
 
 Input: 
 

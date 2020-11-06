@@ -1,6 +1,6 @@
-**Example 1: Modifying table tags**
+**Example 1: 修改表格标签**
 
-This example shows you how to modify table tags.
+修改表格标签
 
 Input: 
 

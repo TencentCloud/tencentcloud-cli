@@ -1,6 +1,6 @@
-**Example 1: Querying a list of instance models**
+**Example 1: 查询实例机型列表**
 
-This example shows you how to query instance types of the family `I1` in Guangzhou Zone 2.
+查询广州二区中实例机型系列为I1的机型列表
 
 Input: 
 

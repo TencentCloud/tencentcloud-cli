@@ -1,4 +1,4 @@
-**Example 1: Unbinding the real server from a classic CLB instance**
+**Example 1: 解绑一个传统型负载均衡的后端服务**
 
 
 

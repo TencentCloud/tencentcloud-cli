@@ -1,6 +1,6 @@
-**Example 1: Obtaining the list of tags associated with a cluster**
+**Example 1: 获取集群关联的标签列表**
 
-This example shows you how to obtain the list of tags associated with a cluster.
+获取集群关联的标签列表
 
 Input: 
 

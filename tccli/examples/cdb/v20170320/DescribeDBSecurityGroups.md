@@ -1,4 +1,4 @@
-**Example 1: Queries the security group information of an instance**
+**Example 1: 查询实例安全组信息**
 
 
 

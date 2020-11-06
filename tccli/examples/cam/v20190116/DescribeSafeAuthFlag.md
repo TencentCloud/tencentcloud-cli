@@ -1,4 +1,4 @@
-**Example 1: Querying security settings**
+**Example 1: 查询安全设置**
 
 
 

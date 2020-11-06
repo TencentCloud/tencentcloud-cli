@@ -1,4 +1,4 @@
-**Example 1: Resetting account password for postgres-lnp6j6172 (failure)**
+**Example 1: 重置postgres-lnp6j6172的账户密码，失败**
 
 
 
@@ -24,7 +24,7 @@ Output:
 }
 ```
 
-**Example 2: Resetting account password for postgres-lnp6j6172 (success)**
+**Example 2: 重置postgres-lnp6j6172的账户密码，成功**
 
 
 

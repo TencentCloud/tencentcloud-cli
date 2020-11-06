@@ -1,4 +1,4 @@
-**Example 1: Querying the price of a pay-as-you-go instance with a new configuration**
+**Example 1: 按量付费实例调整配置询价**
 
 
 

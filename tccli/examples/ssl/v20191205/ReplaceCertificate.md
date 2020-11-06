@@ -1,4 +1,4 @@
-**Example 1: Reissuing a certificate**
+**Example 1: 重颁发证书**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying tags associated with resource**
+**Example 1: 通过标签查询资源列表**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Binding a direct connect gateway to a NAT Gateway**
+**Example 1: 专线网关绑定NAT网关**
 
 
 

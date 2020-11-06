@@ -1,6 +1,6 @@
-**Example 1: Enabling CMKs in batches**
+**Example 1: 批量启用主密钥示例**
 
-This example shows you how to enable the CMKs on a specified list in batches.
+对指定的CMK 列表进行批量启用。
 
 Input: 
 

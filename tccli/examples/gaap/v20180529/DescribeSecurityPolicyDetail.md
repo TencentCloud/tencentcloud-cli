@@ -1,4 +1,4 @@
-**Example 1: Obtaining the Security Policy Details**
+**Example 1: 获取安全策略详情**
 
 
 

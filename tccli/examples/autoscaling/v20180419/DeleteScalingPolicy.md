@@ -1,4 +1,4 @@
-**Example 1: Deleting an alarm policy**
+**Example 1: 删除告警策略**
 
 
 

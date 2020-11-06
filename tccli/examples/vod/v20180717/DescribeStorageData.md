@@ -1,4 +1,4 @@
-**Example 1: Querying current storage usage**
+**Example 1: 查询当前存储情况**
 
 
 

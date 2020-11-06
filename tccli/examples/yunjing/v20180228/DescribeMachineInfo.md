@@ -1,6 +1,6 @@
-**Example 1: Getting server details**
+**Example 1: 获取机器详情**
 
-This example shows you how to get server details.
+本接口（DescribeMachineInfo）用于获取机器详细情况。
 
 Input: 
 
@@ -18,7 +18,7 @@ Output:
         "InstanceId": "ins-ibqb87x3",
         "MachineWanIp": "130.111.77.111",
         "MachineIp": "10.104.248.0",
-        "MachineName": "Development server",
+        "MachineName": "开发机",
         "MachineOs": "3.10.0-327.36.3.el7.x86_64",
         "MachineStatus": "ONLINE",
         "ProtectDays": 120,

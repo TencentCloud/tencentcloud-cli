@@ -1,4 +1,4 @@
-**Example 1: Querying job information**
+**Example 1: 查询作业信息**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Modifying the auto-renewal flag of a TencentDB instance**
+**Example 1: 修改云数据库实例的自动续费标记**
 
 
 

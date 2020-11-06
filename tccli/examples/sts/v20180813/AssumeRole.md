@@ -1,4 +1,4 @@
-**Example 1: Requesting for the temporary security credentials of a role.**
+**Example 1: 申请扮演角色**
 
 
 
@@ -16,8 +16,8 @@ Output:
     "Response": {
         "Credentials": {
             "Token": "da1e9d2ee9dda83506832d5ecb903b790132dfe340001",
-            "TmpSecretId": "AKID65zyIP0mpXtaIFqt2SlWIQVMn1umNH58",
-            "TmpSecretKey": "q95K84wrzuEGocfy39zg52boxvp71yoh"
+            "TmpSecretId": "AKID65zyIP0mpXtaI******WIQVMn1umNH58",
+            "TmpSecretKey": "q95K84wrzuEGoc*******52boxvp71yoh"
         },
         "ExpiredTime": 1543914376,
         "Expiration": "2018-12-04T09:06:16Z",

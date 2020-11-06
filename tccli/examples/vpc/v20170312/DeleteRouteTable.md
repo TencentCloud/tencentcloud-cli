@@ -1,4 +1,4 @@
-**Example 1: Deleting a route table**
+**Example 1: 删除路由表**
 
 
 

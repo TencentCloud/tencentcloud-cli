@@ -1,11 +1,13 @@
-**Example 1: Querying usual login locations**
+**Example 1: 查询常用登录地**
 
-This example shows you how to query usual login locations.
+查询常用登录地
 
 Input: 
 
 ```
-tccli yunjing DescribeUsualLoginPlaces --cli-unfold-argument ```
+tccli yunjing DescribeUsualLoginPlaces --cli-unfold-argument  \
+    --Uuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5
+```
 
 Output: 
 ```

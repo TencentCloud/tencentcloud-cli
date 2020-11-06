@@ -1,15 +1,15 @@
-**Example 1: Adding usual login location**
+**Example 1: 添加常用登录地**
 
-This example shows you how to add a usual login location.
+添加常用登录地
 
 Input: 
 
 ```
 tccli yunjing CreateUsualLoginPlaces --cli-unfold-argument  \
-    --Uuid add4a78a-0d59-11e8-b7ab-00e081e1a5c5 \
-    --Areas.0.CityId 1 \
-    --Areas.0.ProvinceId 1 \
-    --Areas.0.CountryId 1
+    --Uuids add4a78a-0d59-11e8-b7ab-00e081e1a5c5 \
+    --Places.0.CityId 1 \
+    --Places.0.ProvinceId 1 \
+    --Places.0.CountryId 1
 ```
 
 Output: 

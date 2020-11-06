@@ -1,6 +1,6 @@
-**Example 1: Creating real-time process pulling task**
+**Example 1: 创建实时拉取进程任务**
 
-This example shows you how to create a real-time process pulling task.
+创建实时拉取进程任务
 
 Input: 
 

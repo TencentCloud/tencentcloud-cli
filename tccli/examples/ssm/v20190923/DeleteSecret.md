@@ -1,4 +1,4 @@
-**Example 1: Deleting a Secret**
+**Example 1: 删除凭据信息**
 
 
 

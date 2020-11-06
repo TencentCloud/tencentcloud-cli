@@ -1,4 +1,4 @@
-**Example 1: Manually terminating a pay-as-you-go TencentDB for SQL Server instance**
+**Example 1: 主动销毁云数据库SQLServer按量计费实例**
 
 
 

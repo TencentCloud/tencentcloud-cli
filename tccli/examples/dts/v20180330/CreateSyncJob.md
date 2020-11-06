@@ -1,6 +1,6 @@
-**Example 1: Creating a Disaster Recovery Syn Task**
+**Example 1: 创建灾备同步任务**
 
-After purchasing a disaster recovery instance for your master instance, you need to create a disaster recovery sync task first before proceeding to next steps.
+用户为主实例购买了灾备实例后，首先需要创建灾备同步任务，然后才能开始灾备同步的后续流程。
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Getting figure sample list**
+**Example 1: 获取人物样本列表**
 
 
 
@@ -7,8 +7,8 @@ Input:
 ```
 tccli mps DescribePersonSamples --cli-unfold-argument  \
     --PersonIds 10569 \
-    --Names 'John Smith' \
-    --Tags Celebrity \
+    --Names 张三 \
+    --Tags 明星 \
     --Offset 0 \
     --Limit 20
 ```
@@ -21,8 +21,8 @@ Output:
         "PersonSet": [
             {
                 "PersonId": "10569",
-                "Name": "John Smith",
-                "Description": "Chinese actor, director, and producer",
+                "Name": "张三",
+                "Description": "华语影视男演员、导演、制片人",
                 "FaceInfoSet": [
                     {
                         "FaceId": "10024",
@@ -30,8 +30,8 @@ Output:
                     }
                 ],
                 "TagSet": [
-                    "U.S.",
-                    "Celebrity"
+                    "美国",
+                    "明星"
                 ],
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z"

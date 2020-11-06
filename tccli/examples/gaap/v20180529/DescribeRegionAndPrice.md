@@ -1,6 +1,6 @@
-**Example 1: Getting origin server region and tiered bandwidth prices**
+**Example 1: 获取源站区域和带宽梯度价格**
 
-This example shows you how to get the origin server region and tiered bandwidth prices.
+获取源站区域和带宽梯度价格
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
         "AccessRegionSet": [
             {
                 "RegionId": "eu-moscow",
-                "RegionName": "Russia"
+                "RegionName": "俄罗斯"
             }
         ],
         "Currency": "CNY",

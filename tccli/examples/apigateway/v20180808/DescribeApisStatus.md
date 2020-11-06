@@ -1,4 +1,4 @@
-**Example 1: Querying API status**
+**Example 1: 查询API状态**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Creating a default VPC**
+**Example 1: 创建默认VPC**
 
 
 
@@ -22,7 +22,7 @@ Output:
 }
 ```
 
-**Example 2: The network attributes (DescribeAccountAttributes) of the user account support both the basic network and VPC. If a default VPC is not created as required, the returned VpcId is 0, indicating that a default VPC is not created.**
+**Example 2: 用户账号网络属性（DescribeAccountAttributes）同时支持基础网络和VPC，不强制创建默认VPC，则返回VpcId为0，表示不创建默认VPC**
 
 
 
@@ -46,7 +46,7 @@ Output:
 }
 ```
 
-**Example 3: Creating a default VPC as required**
+**Example 3: 强制生产默认VPC**
 
 
 

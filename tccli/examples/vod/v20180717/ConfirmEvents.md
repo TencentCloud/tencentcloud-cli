@@ -1,4 +1,4 @@
-**Example 1: Confirming event notifications**
+**Example 1: 确认事件通知**
 
 
 

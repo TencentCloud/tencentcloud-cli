@@ -1,4 +1,4 @@
-**Example 1: Querying basic domain name information**
+**Example 1: 查询域名基本信息**
 
 
 

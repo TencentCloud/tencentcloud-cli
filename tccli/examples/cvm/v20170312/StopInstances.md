@@ -1,6 +1,6 @@
-**Example 1: Shutting down instances**
+**Example 1: 关闭实例**
 
-This example shows you how to shut down two instances.
+本示例用于关闭两个实例。
 
 Input: 
 

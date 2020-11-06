@@ -1,6 +1,6 @@
-**Example 1: Modifying alarm settings**
+**Example 1: 修改告警设置**
 
-This example shows you how to modify alarm settings.
+修改告警设置。
 
 Input: 
 

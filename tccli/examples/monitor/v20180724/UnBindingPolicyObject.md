@@ -1,4 +1,4 @@
-**Example 1: Deleting an object that is bound to a policy**
+**Example 1: 删除策略的关联对象**
 
 
 

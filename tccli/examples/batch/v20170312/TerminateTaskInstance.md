@@ -1,4 +1,4 @@
-**Example 1: Terminating a Task Instance**
+**Example 1: 终止任务实例**
 
 
 

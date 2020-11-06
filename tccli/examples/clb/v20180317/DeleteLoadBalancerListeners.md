@@ -1,4 +1,4 @@
-**Example 1: Deleting all listeners of a CLB instance**
+**Example 1: 删除一个负载均衡下的所有监听器**
 
 
 
@@ -18,7 +18,7 @@ Output:
 }
 ```
 
-**Example 2: Deleting multiple listeners of a CLB instance**
+**Example 2: 删除负载均衡下的多个监听器**
 
 
 

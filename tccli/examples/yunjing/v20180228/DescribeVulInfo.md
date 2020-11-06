@@ -1,6 +1,6 @@
-**Example 1: Getting vulnerability details**
+**Example 1: 获取漏洞详情**
 
-This example shows you how to get vulnerability details.
+获取漏洞详情
 
 Input: 
 
@@ -15,11 +15,11 @@ Output:
     "Response": {
         "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
         "VulId": 1001,
-        "VulName": "Vulnerability name",
+        "VulName": "漏洞名称",
         "VulLevel": "HIGH",
         "VulType": "WEB",
-        "Description": "Vulnerability description",
-        "RepairPlan": "Repair plan",
+        "Description": "漏洞描述信息",
+        "RepairPlan": "修复方案",
         "CveId": "CVE-001",
         "Reference": "http://www.qcloud.com"
     }

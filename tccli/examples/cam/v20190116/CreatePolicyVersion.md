@@ -1,6 +1,6 @@
-**Example 1: Creating a policy version**
+**Example 1: 新增一个策略版本**
 
-This example shows you how to create a policy version.
+本示例将新增一个策略版本。
 
 Input: 
 

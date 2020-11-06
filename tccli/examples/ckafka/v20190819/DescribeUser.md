@@ -1,4 +1,4 @@
-**Example 1: Querying user information**
+**Example 1: 查询用户信息**
 
 
 

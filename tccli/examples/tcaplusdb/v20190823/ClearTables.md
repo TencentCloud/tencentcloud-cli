@@ -1,6 +1,6 @@
-**Example 1:  Clearing table**
+**Example 1: 清除表**
 
-This example shows you how to clear a table.
+清除表
 
 Input: 
 

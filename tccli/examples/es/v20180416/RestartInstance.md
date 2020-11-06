@@ -1,6 +1,6 @@
-**Example 1: Restarting an ES cluster instance**
+**Example 1: 重启ES集群实例**
 
-This example shows you how to perform operations such as version update.
+用以进行版本更新等操作
 
 Input: 
 

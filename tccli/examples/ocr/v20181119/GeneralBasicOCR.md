@@ -1,4 +1,4 @@
-**Example 1: Recognizing general print ([debugging tool](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralBasicOCR))**
+**Example 1: 通用印刷体识别示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralBasicOCR)**
 
 
 

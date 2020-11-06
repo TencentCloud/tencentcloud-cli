@@ -1,6 +1,6 @@
-**Example 1: Creating cluster’s scaling group**
+**Example 1: 创建集群的伸缩组**
 
-This example shows you how to create cluster’s scaling group.
+创建集群的伸缩组
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: Resetting the password of a Linux/Windows instance**
+**Example 1: 重置一个Linux/Windows实例的密码**
 
-This example shows you how to reset the password of a Linux/Windows instance, and then use the new password to log in to the instance.
+重置一个Linux/Windows实例的密码，之后您可利用此密码登录实例
 
 Input: 
 

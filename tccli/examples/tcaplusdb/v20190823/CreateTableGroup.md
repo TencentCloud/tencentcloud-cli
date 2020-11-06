@@ -1,13 +1,13 @@
-**Example 1: Creating table group**
+**Example 1: 创建表格组**
 
-This example shows you how to create a TcaplusDB table group in a cluster.
+在集群下创建TcaplusDB表格组
 
 Input: 
 
 ```
 tccli tcaplusdb CreateTableGroup --cli-unfold-argument  \
     --ClusterId 6179109757 \
-    --TableGroupName 'tdr zone 1'
+    --TableGroupName tdr区1
 ```
 
 Output: 

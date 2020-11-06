@@ -1,4 +1,4 @@
-**Example 1: Binding CVM instance or ENI**
+**Example 1: 绑定云主机或弹性网卡**
 
 
 

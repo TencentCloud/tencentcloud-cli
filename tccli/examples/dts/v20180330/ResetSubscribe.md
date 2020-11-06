@@ -1,4 +1,4 @@
-**Example 1: Resetting data subscription instance**
+**Example 1: 重置数据订阅实例**
 
 
 

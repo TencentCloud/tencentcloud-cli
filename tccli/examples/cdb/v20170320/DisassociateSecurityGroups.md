@@ -1,4 +1,4 @@
-**Example 1: Unbinding security groups in batches**
+**Example 1: 安全组批量解绑云资源**
 
 
 

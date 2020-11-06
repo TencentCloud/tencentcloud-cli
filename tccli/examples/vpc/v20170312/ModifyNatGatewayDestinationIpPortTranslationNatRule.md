@@ -1,6 +1,6 @@
-**Example 1: Modifying the port forwarding rules of a NAT**
+**Example 1: 修改NAT的端口转发规则**
 
-When modifying the forwarding rule of a NAT, SourceNatRule only needs to pass IpProtocol, PublicIpAddress, and PublicPort. All DestinationNatRule parameters can be modified.
+修改NAT的端口转发规则时，SourceNatRule只需要传递IpProtocol，PublicIpAddress，PublicPort，对于DestinationNatRule参数都可以进行修改的。
 
 Input: 
 

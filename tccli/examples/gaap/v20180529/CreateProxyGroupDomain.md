@@ -1,4 +1,4 @@
-**Example 1: Enabling a Connection Group Domain Name**
+**Example 1: 开启通道组域名**
 
 
 

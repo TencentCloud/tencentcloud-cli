@@ -1,4 +1,4 @@
-**Example 1: Accepting an application for a dedicated tunnel**
+**Example 1: 接受专用通道申请**
 
 
 

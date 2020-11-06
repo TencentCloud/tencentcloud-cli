@@ -1,4 +1,4 @@
-**Example 1: Disabling public network access for an instance**
+**Example 1: 关闭实例外网访问**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Creating person**
+**Example 1: 创建人员接口**
 
 
 
@@ -12,11 +12,11 @@ tccli iai CreatePerson --cli-unfold-argument  \
     --Gender 1 \
     --Url http://test.image.myqcloud.com/testB.jpg \
     --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0 \
-    --PersonExDescriptionInfos.0.PersonExDescription 'School of Computing' \
+    --PersonExDescriptionInfos.0.PersonExDescription 计算机学院 \
     --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
-    --PersonExDescriptionInfos.1.PersonExDescription 'Software Engineering' \
+    --PersonExDescriptionInfos.1.PersonExDescription 软件工程 \
     --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
-    --PersonExDescriptionInfos.2.PersonExDescription '15 \
+    --PersonExDescriptionInfos.2.PersonExDescription 15级 \
     --PersonExDescriptionInfos.3.PersonExDescriptionIndex 3 \
     --PersonExDescriptionInfos.3.PersonExDescription 3150808
 ```
@@ -39,9 +39,9 @@ Output:
 }
 ```
 
-**Example 2: Creating person - 2**
+**Example 2: 创建人员接口-2**
 
-This example shows you how to create a person.
+创建人员
 
 Input: 
 
@@ -53,11 +53,11 @@ tccli iai CreatePerson --cli-unfold-argument  \
     --Gender 1 \
     --Url http://test.image.myqcloud.com/testA.jpg \
     --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0 \
-    --PersonExDescriptionInfos.0.PersonExDescription 'Cloud and Smart Industries Group' \
+    --PersonExDescriptionInfos.0.PersonExDescription 云与智慧产业事业群 \
     --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
-    --PersonExDescriptionInfos.1.PersonExDescription 'AI Product Center' \
+    --PersonExDescriptionInfos.1.PersonExDescription 人工智能产品中心 \
     --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
-    --PersonExDescriptionInfos.2.PersonExDescription 'Face Recognition Product Team'
+    --PersonExDescriptionInfos.2.PersonExDescription 人脸识别产品组
 ```
 
 Output: 
@@ -78,9 +78,9 @@ Output:
 }
 ```
 
-**Example 3: Sample error**
+**Example 3: 错误示例**
 
-The person ID must be unique.
+人员ID不可重复
 
 Input: 
 
@@ -99,16 +99,16 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.PersonIdAlreadyExist",
-            "Message": "The person ID already exists. It must be unique."
+            "Message": "人员ID已经存在。人员ID不可重复。"
         },
         "RequestId": "76dedef7-af27-4a20-9064-c5ef3133926d"
     }
 }
 ```
 
-**Example 4: Sample error - 2**
+**Example 4: 错误示例-2**
 
-The group ID does not exist.
+人员库ID不存在
 
 Input: 
 
@@ -127,7 +127,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.GroupIdNotExist",
-            "Message": "The group ID does not exist."
+            "Message": "人员库ID不存在。"
         },
         "RequestId": "dfa512fc-fd07-4bf1-a292-cb497b620857"
     }

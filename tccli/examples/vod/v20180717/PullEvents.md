@@ -1,4 +1,4 @@
-**Example 1: Pulling event**
+**Example 1: 拉取事件**
 
 
 
@@ -144,8 +144,8 @@ Output:
                         "UpdateTime": "2019-01-09T16:36:24Z",
                         "ExpireTime": "9999-12-31T23:59:59Z",
                         "ClassId": 0,
-                        "ClassName": "Other",
-                        "ClassPath": "Other",
+                        "ClassName": "其他",
+                        "ClassPath": "其他",
                         "CoverUrl": "",
                         "Type": "mp4",
                         "MediaUrl": "http://123.vod2.myqcloud.com/1c1ae5d2vodgzp1256768367/9ce0cd925285890784273533167/q1BORBPQH1IA.mp4",

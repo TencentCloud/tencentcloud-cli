@@ -1,4 +1,4 @@
-**Example 1: Querying speech detection result**
+**Example 1: 查询语音检测结果**
 
 
 

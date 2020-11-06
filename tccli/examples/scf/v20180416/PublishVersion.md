@@ -1,4 +1,4 @@
-**Example 1: Releasing a New Version**
+**Example 1: 发布新版本**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Deleting an animated image generating template**
+**Example 1: 删除转动图模板**
 
 
 

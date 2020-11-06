@@ -1,4 +1,4 @@
-**Example 1: Querying reserved instance configurations**
+**Example 1: 查询预留实例机型配置**
 
 
 
@@ -19,12 +19,12 @@ Output:
         "ReservedInstanceConfigInfos": [
             {
                 "Type": "C",
-                "TypeName": "Compute",
+                "TypeName": "计算型",
                 "Order": 400,
                 "InstanceFamilies": [
                     {
                         "InstanceFamily": "C3",
-                        "TypeName": "Compute C3",
+                        "TypeName": "计算型C3",
                         "Order": 402,
                         "InstanceTypes": [
                             {

@@ -1,6 +1,6 @@
-**Example 1: Getting component information**
+**Example 1: 获取组件信息数据**
 
-This example shows you how to get component information.
+获取组件信息数据
 
 Input: 
 

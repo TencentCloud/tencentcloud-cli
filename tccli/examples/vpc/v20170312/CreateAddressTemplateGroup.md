@@ -1,4 +1,4 @@
-**Example 1: Creating an IP address template group**
+**Example 1: 创建IP地址模版集合**
 
 
 

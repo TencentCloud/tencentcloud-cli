@@ -1,6 +1,6 @@
-**Example 1: Creating a managed cluster**
+**Example 1: 创建托管集群示例**
 
-This example shows you how to create a managed cluster.
+创建托管集群
 
 Input: 
 
@@ -24,9 +24,9 @@ Output:
 }
 ```
 
-**Example 2: Creating a self-deployed cluster**
+**Example 2: 创建独立集群示例**
 
-This example shows you how to create a self-deployed cluster.
+创建独立集群
 
 Input: 
 

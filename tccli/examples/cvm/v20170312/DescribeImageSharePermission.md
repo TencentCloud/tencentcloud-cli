@@ -1,6 +1,6 @@
-**Example 1: Querying sharing information of a specified image**
+**Example 1: 查看指定镜像的分享信息**
 
-This example shows you how to query the sharing information of an image whose image ID is img-6pb6lrmy.
+查看镜像img-6pb6lrmy的分享信息。
 
 Input: 
 

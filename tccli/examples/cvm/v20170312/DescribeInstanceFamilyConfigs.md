@@ -1,6 +1,6 @@
-**Example 1: Querying supported instance model families**
+**Example 1: 查询所支持的实例机型族信息**
 
-This example shows you how to query the list of instance model families supported in the Guangzhou region.
+查询广州地域的实例机型组信息。
 
 Input: 
 
@@ -15,83 +15,83 @@ Output:
     "Response": {
         "InstanceFamilyConfigSet": [
             {
-                "InstanceFamilyName": "Standard S1",
+                "InstanceFamilyName": "标准型S1",
                 "InstanceFamily": "S1"
             },
             {
-                "InstanceFamilyName": "Network-optimized N1",
+                "InstanceFamilyName": "网络优化型N1",
                 "InstanceFamily": "N1"
             },
             {
-                "InstanceFamilyName": "High IO I1",
+                "InstanceFamilyName": "高IO型I1",
                 "InstanceFamily": "I1"
             },
             {
-                "InstanceFamilyName": "MEM-optimized M1",
+                "InstanceFamilyName": "内存型M1",
                 "InstanceFamily": "M1"
             },
             {
-                "InstanceFamilyName": "Standard S2",
+                "InstanceFamilyName": "标准型S2",
                 "InstanceFamily": "S2"
             },
             {
-                "InstanceFamilyName": "Standard SN2",
+                "InstanceFamilyName": "标准型SN2",
                 "InstanceFamily": "SN2"
             },
             {
-                "InstanceFamilyName": "High IO I2",
+                "InstanceFamilyName": "高IO型I2",
                 "InstanceFamily": "I2"
             },
             {
-                "InstanceFamilyName": "MEM-optimized M2",
+                "InstanceFamilyName": "内存型M2",
                 "InstanceFamily": "M2"
             },
             {
-                "InstanceFamilyName": "Compute C2",
+                "InstanceFamilyName": "计算型C2",
                 "InstanceFamily": "C2"
             },
             {
-                "InstanceFamilyName": "Compute CN2",
+                "InstanceFamilyName": "计算型CN2",
                 "InstanceFamily": "CN2"
             },
             {
-                "InstanceFamilyName": "Standard S3",
+                "InstanceFamilyName": "标准型S3",
                 "InstanceFamily": "S3"
             },
             {
-                "InstanceFamilyName": "Compute C3",
+                "InstanceFamilyName": "计算型C3",
                 "InstanceFamily": "C3"
             },
             {
-                "InstanceFamilyName": "FPGA FX2",
+                "InstanceFamilyName": "FPGA型FX2",
                 "InstanceFamily": "FX2"
             },
             {
-                "InstanceFamilyName": "GPU compute GN2",
+                "InstanceFamilyName": "GPU计算型GN2",
                 "InstanceFamily": "GN2"
             },
             {
-                "InstanceFamilyName": "GPU rendering GA2",
+                "InstanceFamilyName": "GPU渲染型GA2",
                 "InstanceFamily": "GA2"
             },
             {
-                "InstanceFamilyName": "GPU compute GN8",
+                "InstanceFamilyName": "GPU计算型GN8",
                 "InstanceFamily": "GN8"
             },
             {
-                "InstanceFamilyName": "Dedicated",
+                "InstanceFamilyName": "独享型",
                 "InstanceFamily": "CDH"
             },
             {
-                "InstanceFamilyName": "Shared core",
+                "InstanceFamilyName": "共享核",
                 "InstanceFamily": "SHARED"
             },
             {
-                "InstanceFamilyName": "Special models",
+                "InstanceFamilyName": "特殊机型",
                 "InstanceFamily": "SPECIAL"
             },
             {
-                "InstanceFamilyName": "Others",
+                "InstanceFamilyName": "其他",
                 "InstanceFamily": "OTHER"
             }
         ],

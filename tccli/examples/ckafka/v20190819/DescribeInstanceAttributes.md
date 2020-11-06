@@ -1,4 +1,4 @@
-**Example 1: Getting instance attributes**
+**Example 1: 获取实例属性**
 
 
 
@@ -32,7 +32,7 @@ Output:
             "VpcId": "vpc-1qkosjcb",
             "SubnetId": "subnet-lt4shnme",
             "Healthy": 1,
-            "HealthyMessage": "connections:0#disk utilization:0%#peak consumption bandwidth 0MB/s",
+            "HealthyMessage": "连接数:0#磁盘使用百分比:0%#消费峰值带宽0MB/s",
             "CreateTime": "1970-01-19 06:46:02",
             "MsgRetentionTime": "1970-01-01 08:00:05",
             "Config": {

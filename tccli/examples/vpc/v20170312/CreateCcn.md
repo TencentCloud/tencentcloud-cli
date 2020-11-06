@@ -1,4 +1,4 @@
-**Example 1: Creating a CCN**
+**Example 1: 创建一个CCN**
 
 
 
@@ -20,12 +20,14 @@ Output:
         "Ccn": {
             "CcnId": "ccn-gjug0kul",
             "CcnName": "test name",
+            "RoutePriorityFlag": false,
             "CcnDescription": "test description",
             "InstanceCount": 0,
-            "CreatedTime": "0000-00-00 00:00:00",
             "QosLevel": "PT",
+            "State": 1,
             "InstanceChargeType": "POSTPAID",
             "BandwidthLimitType": "OUTER_REGION_LIMIT",
+            "CreateTime": "2020-09-22 00:00:00",
             "TagSet": [
                 {
                     "Key": "city",

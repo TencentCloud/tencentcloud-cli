@@ -1,4 +1,4 @@
-**Example 1: Configuring certificate for layer-7 forwarding rule**
+**Example 1: 配置L7转发规则的证书**
 
 
 

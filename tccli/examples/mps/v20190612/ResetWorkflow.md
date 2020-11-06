@@ -1,6 +1,6 @@
-**Example 1: Resetting transcoding rule**
+**Example 1: 重设转码规则**
 
-This example shows you how to reset the transcoding rule whose workflow ID is 2573 to add a watermark to the transcoding output.
+重设工作流 ID 为2573的转码规则，转码输出加上水印。
 
 Input: 
 

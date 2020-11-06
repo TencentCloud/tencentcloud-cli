@@ -1,4 +1,4 @@
-**Example 1: Create an Access account for a cloud database instance**
+**Example 1: 为云数据库实例创建访问账号**
 
 
 
@@ -10,7 +10,7 @@ tccli dcdb CreateAccount --cli-unfold-argument  \
     --UserName testuser1 \
     --Host 172.17.% \
     --Password 1234qweri# \
-    --Description 'Test account'
+    --Description 测试帐号
 ```
 
 Output: 

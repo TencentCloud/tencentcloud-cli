@@ -1,4 +1,4 @@
-**Example 1: Renewing a monthly subscription instance**
+**Example 1: 续费包年包月实例**
 
 
 

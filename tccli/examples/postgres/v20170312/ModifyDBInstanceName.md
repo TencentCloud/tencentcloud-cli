@@ -1,4 +1,4 @@
-**Example 1: Renaming instance postgres-6fego161 to testModifyInstanceName**
+**Example 1: 将实例postgres-6fego161名字修改为testModifyInstanceName**
 
 
 
@@ -19,7 +19,7 @@ Output:
 }
 ```
 
-**Example 2: Renaming instance postgres-6ougo465 (failure)**
+**Example 2: 修改实例postgres-6ougo465名字，修改失败**
 
 
 

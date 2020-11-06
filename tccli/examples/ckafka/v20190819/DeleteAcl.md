@@ -1,4 +1,4 @@
-**Example 1: Deleting ACL**
+**Example 1: 删除ACL**
 
 
 

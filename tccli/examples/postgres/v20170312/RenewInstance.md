@@ -1,4 +1,4 @@
-**Example 1: Renewing instance postgres-apzvwncr**
+**Example 1: 续费实例postgres-apzvwncr**
 
 
 

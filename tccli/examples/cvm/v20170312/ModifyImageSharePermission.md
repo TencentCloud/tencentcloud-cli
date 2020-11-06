@@ -1,6 +1,6 @@
-**Example 1: Sharing an image**
+**Example 1: 共享镜像**
 
-This example shows you how to share an image whose image ID is `img-6pb6lrmy` with the account `1038493875`.
+共享镜像img-6pb6lrmy给账户1038493875
 
 Input: 
 

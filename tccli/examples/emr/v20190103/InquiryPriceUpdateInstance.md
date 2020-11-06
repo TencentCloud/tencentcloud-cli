@@ -1,4 +1,4 @@
-**Example 1: Querying the price of configuration adjustment**
+**Example 1: 变配询价**
 
 
 

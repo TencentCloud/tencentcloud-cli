@@ -1,4 +1,4 @@
-**Example 1: Deleting layer-4 forwarding rules**
+**Example 1: 删除L4转发规则**
 
 
 

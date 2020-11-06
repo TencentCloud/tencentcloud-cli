@@ -1,6 +1,6 @@
-**Example 1: Syncing an image**
+**Example 1: 同步镜像**
 
-This example shows you how to sync an image `img-o3ycss2p` to the Guangzhou region.
+同步镜像img-o3ycss2p到广州
 
 Input: 
 

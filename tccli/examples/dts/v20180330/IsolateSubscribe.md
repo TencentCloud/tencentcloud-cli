@@ -1,4 +1,4 @@
-**Example 1: Isolating subscription object**
+**Example 1: 隔离订阅对象**
 
 
 

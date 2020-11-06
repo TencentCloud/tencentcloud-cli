@@ -1,4 +1,4 @@
-**Example 1: Example 1: Adjusting QoS bandwidth limit in a VPN gateway**
+**Example 1: 示例1 调整VPN网关流控带宽**
 
 
 

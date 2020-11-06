@@ -1,6 +1,6 @@
-**Example 1: Querying the Information of Listeners and Connections from Which the Statistics Can Be Derived**
+**Example 1: 查询统计通道和监听器信息**
 
-Query the information of listeners and connections from which the statistics can be derived.
+查询统计通道和监听器信息
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the operation history of ES cluster instance**
+**Example 1: 查询ES集群实例操作记录**
 
 
 

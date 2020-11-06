@@ -1,4 +1,4 @@
-**Example 1: Modifying the IP and port number of a TencentDB instance**
+**Example 1: 修改云数据库实例的IP和端口号**
 
 
 

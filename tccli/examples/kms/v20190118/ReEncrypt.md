@@ -1,6 +1,6 @@
-**Example 1: Re-encrypting**
+**Example 1: 重加密接口示例**
 
-This example shows you how to re-encrypt the ciphertext.
+对密文进行重新加密。
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying dedicated tunnels using BGP routing**
+**Example 1: 查询BGP路由的专用通道**
 
 
 
@@ -36,7 +36,7 @@ Output:
                 "Vlan": 1321,
                 "RouteFilterPrefixes": [],
                 "NetworkType": "VPC",
-                "DirectConnectTunnelName": "Test dedicated tunnel",
+                "DirectConnectTunnelName": "测试专用通道",
                 "RouteType": "BGP"
             }
         ]
@@ -44,7 +44,7 @@ Output:
 }
 ```
 
-**Example 2: Querying dedicated tunnels using static routing**
+**Example 2: 查询STATIC路由的专用通道**
 
 
 
@@ -89,7 +89,7 @@ Output:
                     }
                 ],
                 "NetworkType": "VPC",
-                "DirectConnectTunnelName": "Test dedicated tunnel",
+                "DirectConnectTunnelName": "测试专用通道",
                 "RouteType": "STATIC"
             }
         ]

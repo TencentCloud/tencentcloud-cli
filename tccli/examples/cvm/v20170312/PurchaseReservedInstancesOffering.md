@@ -1,4 +1,4 @@
-**Example 1: Purchasing Reserved Instances**
+**Example 1: 购买预留实例计费**
 
 
 

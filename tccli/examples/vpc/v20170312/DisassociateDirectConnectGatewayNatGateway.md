@@ -1,4 +1,4 @@
-**Example 1: Unbinding a direct connect gateway from a NAT Gateway**
+**Example 1: 专线网关解绑NAT网关**
 
 
 

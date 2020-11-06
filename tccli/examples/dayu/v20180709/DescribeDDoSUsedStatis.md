@@ -1,4 +1,4 @@
-**Example 1: Getting DDoS protection usage statistics**
+**Example 1: 获取DDoS防护使用统计**
 
 
 

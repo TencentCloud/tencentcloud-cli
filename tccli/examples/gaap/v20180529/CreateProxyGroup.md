@@ -1,4 +1,4 @@
-**Example 1: Creating a Connection Group**
+**Example 1: 创建通道组**
 
 
 

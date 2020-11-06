@@ -1,4 +1,4 @@
-**Example 1: Querying customer gateways**
+**Example 1: 查询对端网关**
 
 
 

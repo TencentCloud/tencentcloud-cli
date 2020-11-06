@@ -1,4 +1,4 @@
-**Example 1: Calling the DetectLiveFaceAccurate API**
+**Example 1: 人脸静态活体检测（高精度版）接口**
 
 
 

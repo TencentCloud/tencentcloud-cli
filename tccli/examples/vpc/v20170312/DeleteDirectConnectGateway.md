@@ -1,4 +1,4 @@
-**Example 1: Deleting a direct connect gateway**
+**Example 1: 删除专线网关**
 
 
 

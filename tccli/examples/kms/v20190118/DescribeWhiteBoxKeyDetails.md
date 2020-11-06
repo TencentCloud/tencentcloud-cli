@@ -1,4 +1,4 @@
-**Example 1: Getting the white-box key list**
+**Example 1: 获取白盒密钥列表**
 
 
 

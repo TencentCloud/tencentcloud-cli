@@ -1,6 +1,6 @@
-**Example 1: Recovering table in recycle bin**
+**Example 1: 恢复回收站中的表**
 
-This example shows you how to recover a table in the recycle bin based on the specified table information.
+根据指定的表信息，恢复回收站中的表
 
 Input: 
 

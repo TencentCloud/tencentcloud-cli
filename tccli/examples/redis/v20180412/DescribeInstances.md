@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -22,7 +22,7 @@ Output:
                 "CloseTime": "0000-00-00 00:00:00",
                 "Createtime": "0000-00-00 00:00:00",
                 "DeadlineTime": "0000-00-00 00:00:00",
-                "Engine": "Redis community edition",
+                "Engine": "社区版Redis",
                 "InstanceId": "crs-7ponppu3",
                 "InstanceName": "crs-7ponppu3",
                 "InstanceNode": [],
@@ -32,11 +32,11 @@ Output:
                         "TagValue": "111"
                     }
                 ],
-                "InstanceTitle": "Instance running",
+                "InstanceTitle": "实例运行中",
                 "OfflineTime": "",
                 "Port": 6379,
                 "PriceId": 13380,
-                "ProductType": "Redis 4.0 cluster edition",
+                "ProductType": "Redis4.0集群版",
                 "ProjectId": 0,
                 "RedisReplicasNum": 1,
                 "RedisShardNum": 3,

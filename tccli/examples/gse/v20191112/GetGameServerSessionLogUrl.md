@@ -1,6 +1,6 @@
-**Example 1: Getting the log URL of game session**
+**Example 1: 获取游戏会话日志URL**
 
-This example shows you how to get the log URL of a game session.
+获取游戏会话日志URL
 
 Input: 
 
@@ -13,7 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "PreSignedUrl": "http://test/url-001"
+        "PreSignedUrl": "http://test/url-001",
+        "RequestId": "s1596161996478632139"
     }
 }
 ```

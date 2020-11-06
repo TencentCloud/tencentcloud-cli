@@ -1,6 +1,6 @@
-**Example 1: Querying ES cluster logs**
+**Example 1: 查询ES集群日志**
 
-This example shows you how to query the latest master logs of a cluster.
+查询实例最新的主日志
 
 Input: 
 

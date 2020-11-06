@@ -1,6 +1,6 @@
-**Example 1: Deleting brute force attack records**
+**Example 1: 删除暴力破解记录**
 
-This example shows you how to delete brute force attack records.
+本接口 (DeleteBruteAttacks) 用于删除暴力破解记录。
 
 Input: 
 

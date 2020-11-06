@@ -1,4 +1,4 @@
-**Example 1: Querying client connections of a TencentDB instance**
+**Example 1: 查询云数据库实例的客户端连接情况**
 
 
 

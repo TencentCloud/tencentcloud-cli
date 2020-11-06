@@ -1,4 +1,4 @@
-**Example 1: Assigning the specified IPv6 address**
+**Example 1: 分配指定IPv6地址**
 
 
 
@@ -44,7 +44,7 @@ Output:
 }
 ```
 
-**Example 2: Assigning IPv6 addresses by number automatically**
+**Example 2: 按个数自动分配IPv6地址**
 
 
 

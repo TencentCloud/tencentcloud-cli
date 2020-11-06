@@ -1,4 +1,4 @@
-**Example 1: Granting permissions to TencentDB account**
+**Example 1: 给云数据库账号赋权**
 
 
 

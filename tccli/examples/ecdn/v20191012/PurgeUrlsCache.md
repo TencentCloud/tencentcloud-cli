@@ -1,4 +1,4 @@
-**Example 1: Purging URLs**
+**Example 1: 刷新Url**
 
 
 

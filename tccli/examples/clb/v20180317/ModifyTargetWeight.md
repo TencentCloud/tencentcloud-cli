@@ -1,6 +1,6 @@
-**Example 1: Modifying the weight of the real server bound to a layer-4 listener**
+**Example 1: 修改四层监听器上绑定的后端服务的权重**
 
-This example shows you how to change the weight of the real server `ins-dm4xtz0i` (bound port: 334) bound to the listener `lbl-d1ubsydq` to 8.
+将绑定到监听器lbl-d1ubsydq的后端服务ins-dm4xtz0i（绑定端口为334）的权重修改为8
 
 Input: 
 

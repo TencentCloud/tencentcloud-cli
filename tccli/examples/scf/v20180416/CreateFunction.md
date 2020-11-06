@@ -1,4 +1,4 @@
-**Example 1: Creating a Function**
+**Example 1: 创建函数**
 
 
 

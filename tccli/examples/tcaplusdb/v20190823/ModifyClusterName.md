@@ -1,13 +1,13 @@
-**Example 1: Renaming cluster**
+**Example 1: 修改集群名称**
 
-This example shows you how to rename a cluster based on ClusterId.
+根据ClusterId修改集群名称
 
 Input: 
 
 ```
 tccli tcaplusdb ModifyClusterName --cli-unfold-argument  \
     --ClusterId 5674209986 \
-    --ClusterName 'gz test PROTO'
+    --ClusterName gz测试PROTO
 ```
 
 Output: 

@@ -1,6 +1,6 @@
-**Example 1: Deactivating isolated data subscription instance**
+**Example 1: 下线已隔离的数据订阅实例**
 
-This example shows you how to deactivate an isolated subscription instance.
+订阅实例已经在隔离中，立即发起下线任务
 
 Input: 
 

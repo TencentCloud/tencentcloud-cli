@@ -1,4 +1,4 @@
-**Example 1: Obtaining the latest 5 certificate operation logs within the latest 15 days.**
+**Example 1: 获取用户近15天前5条证书操作日志**
 
 
 
@@ -17,23 +17,23 @@ Output:
         "TotalCount": 5,
         "OperateLogs": [
             {
-                "Action": "User [uin: 1234567890] applies for certificate [id: ABC1abc1]",
+                "Action": "用户[uin: 1234567890] 申请 证书[id: ABC1abc1]",
                 "CreatedOn": "2020-01-14 15:46:38"
             },
             {
-                "Action": "User [uin: 1234567890] applies for certificate [id: ABC1abc1]",
+                "Action": "用户[uin: 1234567890] 申请 证书[id: ABC1abc1]",
                 "CreatedOn": "2020-01-14 15:45:45"
             },
             {
-                "Action": "User [uin: 1234567890] applies for certificate [id: ABC1abc1]",
+                "Action": "用户[uin: 1234567890] 申请 证书[id: ABC1abc1]",
                 "CreatedOn": "2020-01-14 14:52:19"
             },
             {
-                "Action": "User [uin: 1234567890] applies for certificate [id: ABC1abc1]",
+                "Action": "用户[uin: 1234567890] 申请 证书[id: ABC1abc1]",
                 "CreatedOn": "2020-01-14 14:50:52"
             },
             {
-                "Action": "User [uin: 1234567890] applies for certificate [id: ABC1abc1]",
+                "Action": "用户[uin: 1234567890] 申请 证书[id: ABC1abc1]",
                 "CreatedOn": "2020-01-14 14:50:21"
             }
         ],

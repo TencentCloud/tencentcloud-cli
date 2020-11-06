@@ -1,4 +1,4 @@
-**Example 1: Modifying backup log retention days**
+**Example 1: 修改备份日志保存天数**
 
 
 

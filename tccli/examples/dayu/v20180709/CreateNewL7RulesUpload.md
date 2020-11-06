@@ -1,4 +1,4 @@
-**Example 1: Adding Layer-7 forwarding rules**
+**Example 1: 添加7层转发规则**
 
 
 

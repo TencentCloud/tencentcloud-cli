@@ -1,4 +1,4 @@
-**Example 1: Configuring the instance removal policy for an RO group**
+**Example 1: 设置RO组的延迟剔除策略**
 
 
 
@@ -21,7 +21,7 @@ Output:
 }
 ```
 
-**Example 2: Rebalancing the weights of instances in an RO group**
+**Example 2: 重新均衡RO组内实例的权重**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Adding advanced DDoS protection policy**
+**Example 1: 添加DDoS高级策略**
 
 
 

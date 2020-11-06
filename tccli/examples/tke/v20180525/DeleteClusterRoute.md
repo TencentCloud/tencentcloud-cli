@@ -1,4 +1,4 @@
-**Example 1: Deleting cluster routes**
+**Example 1: 删除集群路由**
 
 
 

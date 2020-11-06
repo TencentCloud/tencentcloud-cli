@@ -1,4 +1,4 @@
-**Example 1: Disabling Read/write Separation**
+**Example 1: 关闭读写分离**
 
 
 

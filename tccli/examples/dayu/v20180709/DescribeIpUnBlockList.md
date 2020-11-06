@@ -1,4 +1,4 @@
-**Example 1: Obtaining IP address unblocking records**
+**Example 1: 获取IP解封记录**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli dayu DescribeIpUnBlockList --cli-unfold-argument  \
     --BeginTime 2018-09-0111:59:46 \
-    --EndTime" "2018-09-1011:59:46 \
+    --EndTime 2018-09-1011:59:46 \
     --Offset 0 \
     --Limit 10
 ```

@@ -1,4 +1,4 @@
-**Example 1: Querying the ENI list**
+**Example 1: 查询弹性网卡列表**
 
 
 
@@ -70,9 +70,9 @@ Output:
 }
 ```
 
-**Example 2: Querying the list of ENIs bound to the tag**
+**Example 2: 查询绑定了标签的网卡列表**
 
-Make queries using tag:tag-key.
+用tag:tag-key查询。
 
 Input: 
 

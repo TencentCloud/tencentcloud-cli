@@ -1,4 +1,4 @@
-**Example 1: Getting cost distribution over different tags**
+**Example 1: 获取按标签汇总费用分布**
 
 
 
@@ -7,8 +7,8 @@ Input:
 ```
 tccli billing DescribeBillSummaryByTag --cli-unfold-argument  \
     --PayerUin 100000007615 \
-    --BeginTime '9/1/2019 00:00:00' \
-    --EndTime '9/30/2019 23:59:59' \
+    --BeginTime '2019-09-01 00:00:00' \
+    --EndTime '2019-09-30 23:59:59' \
     --TagKey province
 ```
 
@@ -20,37 +20,37 @@ Output:
         "SummaryOverview": [
             {
                 "TagValue": "",
-                “RealTotalCost": "0.30",
+                "RealTotalCost": "0.30",
                 "RealTotalCostRatio": "17.08"
             },
             {
                 "TagValue": "shanghai",
-                “RealTotalCost": "0.26",
+                "RealTotalCost": "0.26",
                 "RealTotalCostRatio": "15.21"
             },
             {
                 "TagValue": "beijing",
-                “RealTotalCost": "0.26",
+                "RealTotalCost": "0.26",
                 "RealTotalCostRatio": "15.21"
             },
             {
                 "TagValue": "guangdong",
-                “RealTotalCost": "0.26",
+                "RealTotalCost": "0.26",
                 "RealTotalCostRatio": "15.21"
             },
             {
                 "TagValue": "xiamen",
-                “RealTotalCost": "0.22",
+                "RealTotalCost": "0.22",
                 "RealTotalCostRatio": "12.43"
             },
             {
                 "TagValue": "tianjin",
-                “RealTotalCost": "0.22",
+                "RealTotalCost": "0.22",
                 "RealTotalCostRatio": "12.43"
             },
             {
                 "TagValue": "sichuan",
-                “RealTotalCost": "0.22",
+                "RealTotalCost": "0.22",
                 "RealTotalCostRatio": "12.43"
             }
         ],

@@ -1,4 +1,4 @@
-**Example 1: Querying the referenced security group**
+**Example 1: 查询安全组被引用信息**
 
 
 

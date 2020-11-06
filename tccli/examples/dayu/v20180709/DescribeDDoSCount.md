@@ -1,4 +1,4 @@
-**Example 1: Getting DDoS attack counts**
+**Example 1: 获取DDoS攻击占比分析**
 
 
 

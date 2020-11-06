@@ -1,4 +1,4 @@
-**Example 1: Getting the collaborator list**
+**Example 1: 获取协作者列表**
 
 
 

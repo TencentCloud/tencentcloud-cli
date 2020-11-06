@@ -1,6 +1,6 @@
-**Example 1: Querying auto scaling groups**
+**Example 1: 查询伸缩组**
 
-The sample code below shows how to query an auto scaling group by ID.
+指定伸缩组ID查询伸缩组
 
 Input: 
 
@@ -46,7 +46,7 @@ Output:
                 "MinSize": 0,
                 "MaxSize": 10,
                 "VpcId": "vpc-hy436tmc",
-                "LaunchConfigurationName": "launch configuration 1",
+                "LaunchConfigurationName": "启动配置1",
                 "CreatedTime": "2018-09-27T02:01:28Z",
                 "SubnetIdSet": [
                     "subnet-3tmerl37",
@@ -62,9 +62,9 @@ Output:
 }
 ```
 
-**Example 2: Querying the auto scaling groups bound with the specified tag**
+**Example 2: 查询绑定了标签的伸缩组**
 
-This example shows how to query the auto scaling groups bound to the tag  `city:shenzhen`.
+查询绑定了标签键值对（city:shenzhen）的伸缩组。
 
 Input: 
 
@@ -113,7 +113,7 @@ Output:
                 "MinSize": 0,
                 "MaxSize": 10,
                 "VpcId": "vpc-hy436tmc",
-                "LaunchConfigurationName": "launch configuration 1",
+                "LaunchConfigurationName": "启动配置1",
                 "CreatedTime": "2018-09-27T02:01:28Z",
                 "SubnetIdSet": [
                     "subnet-3tmerl37",

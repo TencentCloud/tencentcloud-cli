@@ -1,4 +1,4 @@
-**Example 1: Modifying elastic protection threshold**
+**Example 1: 修改弹性防护阈值**
 
 
 
@@ -8,7 +8,7 @@ Input:
 tccli dayu ModifyElasticLimit --cli-unfold-argument  \
     --Business bgpip \
     --Id bgpip-000000xe \
-    --Limit 1000
+    --Limit 10000
 ```
 
 Output: 

@@ -1,4 +1,4 @@
-**Example 1: Increasing the desired capacity by one if the average CPU utilization is over 50% within 1 minute for 5 consecutive occurrences**
+**Example 1: 1分钟内，CPU平均利用率大于50%，连续发生5次，期望实例数增加1**
 
 
 
@@ -30,7 +30,7 @@ Output:
 }
 ```
 
-**Example 2: Removing 50% instances if the average memory utilization is below 35% within 1 minute for 5 consecutive occurrences**
+**Example 2: 1分钟内，内存平均利用率小于35%，连续发生5次，减少50%实例**
 
 
 

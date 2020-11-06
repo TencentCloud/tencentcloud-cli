@@ -1,4 +1,4 @@
-**Example 1: Modifying the attributes of a flow log**
+**Example 1: 修改流日志属性**
 
 
 

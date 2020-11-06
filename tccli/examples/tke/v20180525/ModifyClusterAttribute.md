@@ -1,4 +1,4 @@
-**Example 1: Modifying cluster attributes**
+**Example 1: 修改集群属性**
 
 
 

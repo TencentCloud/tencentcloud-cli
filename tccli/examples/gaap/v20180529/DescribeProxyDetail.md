@@ -1,4 +1,4 @@
-**Example 1: Querying the Connection Details**
+**Example 1: 查询通道详情**
 
 
 
@@ -22,7 +22,7 @@ Output:
             "ProjectId": 0,
             "AccessRegionInfo": {
                 "RegionId": "EastChina",
-                "RegionName": "Mainland China - East China"
+                "RegionName": "中国大陆-华东"
             },
             "RealServerRegion": "NorthChina",
             "CreateTime": "2019-03-21 21:33:45",
@@ -42,7 +42,7 @@ Output:
             "GroupId": null,
             "RealServerRegionInfo": {
                 "RegionId": "NorthChina",
-                "RegionName": "Mainland China - North China"
+                "RegionName": "中国大陆-华北"
             },
             "TagSet": [
                 {

@@ -1,4 +1,4 @@
-**Example 1: Getting resource tags based on tag keys**
+**Example 1: 根据标签键获取资源标签**
 
 
 

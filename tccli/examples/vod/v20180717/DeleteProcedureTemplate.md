@@ -1,12 +1,12 @@
-**Example 1: Deleting the task flow template with a specified name**
+**Example 1: 删除指定名字的任务流模板**
 
-This example shows you how to delete the task flow template named "My Task Flow".
+删除名为“我的一个任务流”的任务流模板。
 
 Input: 
 
 ```
 tccli vod DeleteProcedureTemplate --cli-unfold-argument  \
-    --Name 'My Task Flow'
+    --Name 我的一个任务流
 ```
 
 Output: 

@@ -1,4 +1,4 @@
-**Example 1: Querying EIP quotas**
+**Example 1: 查询弹性公网IP配额**
 
 
 

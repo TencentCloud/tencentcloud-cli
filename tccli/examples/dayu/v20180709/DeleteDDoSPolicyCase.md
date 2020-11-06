@@ -1,4 +1,4 @@
-**Example 1: Deleting a policy scenario**
+**Example 1: 删除策略场景**
 
 
 

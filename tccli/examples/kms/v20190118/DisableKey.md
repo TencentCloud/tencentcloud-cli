@@ -1,6 +1,6 @@
-**Example 1: Disabling a CMK**
+**Example 1: 禁用主密钥示例**
 
-This example shows you how to disable a specified CMK.
+禁用指定的CMK。
 
 Input: 
 

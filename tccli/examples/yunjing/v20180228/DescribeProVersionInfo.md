@@ -1,6 +1,6 @@
-**Example 1: Getting CWP Pro information**
+**Example 1: 获取专业版信息**
 
-This example shows you how to get the CWP Pro information.
+获取专业版信息
 
 Input: 
 

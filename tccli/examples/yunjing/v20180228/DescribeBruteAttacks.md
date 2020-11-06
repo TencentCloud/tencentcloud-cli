@@ -1,6 +1,6 @@
-**Example 1: Getting brute force attack event list**
+**Example 1: 获取暴力破解事件列表**
 
-This example shows you how to get the brute force attack event list.
+本接口{DescribeBruteAttacks}用于获取暴力破解事件列表。
 
 Input: 
 
@@ -22,7 +22,7 @@ Output:
                 "Id": "123",
                 "Uuid": "6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1",
                 "MachineIp": "127.0.0.1",
-                "MachineName": "Test server",
+                "MachineName": "测试机",
                 "Status": " BRUTEATTACK_SUCCESS",
                 "Username": "root",
                 "City": 1,

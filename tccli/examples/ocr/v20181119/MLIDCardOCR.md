@@ -1,4 +1,4 @@
-**Example 1: Recognizing Malaysian identity card**
+**Example 1: 马来西亚身份证识别示例代码**
 
 
 

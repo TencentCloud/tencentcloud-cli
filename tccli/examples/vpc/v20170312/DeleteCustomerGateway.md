@@ -1,4 +1,4 @@
-**Example 1: Deleting a customer gateway**
+**Example 1: 删除对端网关**
 
 
 

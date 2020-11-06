@@ -1,4 +1,4 @@
-**Example 1: Setting role permission boundary**
+**Example 1: 设置角色权限边界**
 
 
 

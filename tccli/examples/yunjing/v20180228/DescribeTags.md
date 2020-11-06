@@ -1,6 +1,6 @@
-**Example 1: Getting all server tags**
+**Example 1: 获取所有主机标签**
 
-This example shows you how to get all server tags.
+获取所有主机标签
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
         "List": [
             {
                 "Id": 2,
-                "Name": "Tag name",
+                "Name": "标签名",
                 "Count": 123
             }
         ],

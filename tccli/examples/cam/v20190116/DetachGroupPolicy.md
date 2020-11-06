@@ -1,6 +1,6 @@
-**Example 1: Unassociating a Policy and a User Group**
+**Example 1: 解除绑定到用户组的策略**
 
-Unassociating a policy (ID: 524497) and a user group (ID: 3449)
+解除绑定到组ID为3449的策略524497
 
 Input: 
 

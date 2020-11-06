@@ -1,4 +1,4 @@
-**Example 1: Stop publishing to a log topic**
+**Example 1: 停止日志主题投递**
 
 
 

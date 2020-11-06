@@ -1,4 +1,4 @@
-**Example 1: Querying file systems**
+**Example 1: 查询文件系统**
 
 
 
@@ -30,7 +30,7 @@ Output:
                 "LifeCycleState": "mounting",
                 "PGroup": {
                     "PGroupId": "pgroupbasic",
-                    "Name": "Default permission group"
+                    "Name": "默认权限组"
                 },
                 "SizeLimit": 0,
                 "BandwidthResourcePkg": "",

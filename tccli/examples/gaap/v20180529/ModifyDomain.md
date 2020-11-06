@@ -1,6 +1,6 @@
-**Example 1: Modifying the Forwarding Rule Domain Name of a Layer-7 Listener**
+**Example 1: 修改7层监听器转发规则域名**
 
-Modify the forwarding rule domain name of a layer-7 listener.
+修改7层监听器转发规则域名
 
 Input: 
 

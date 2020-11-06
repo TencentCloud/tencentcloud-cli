@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -26,7 +26,7 @@ Output:
                 "DomainName": "5000.livepush.myqcloud.com",
                 "Duration": 10,
                 "Resolution": "640*352",
-                "StopReason": "The client actively interrupts the stream",
+                "StopReason": "客户端主动断流",
                 "StreamEndTime": "2019-01-04T11:59:58Z",
                 "StreamName": "test1",
                 "StreamStartTime": "2019-01-04T11:59:58Z"

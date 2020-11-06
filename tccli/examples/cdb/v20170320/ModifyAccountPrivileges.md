@@ -1,4 +1,4 @@
-**Example 1: Modifying the permissions of a TencentDB instance account**
+**Example 1: 修改云数据库实例账号的权限**
 
 
 

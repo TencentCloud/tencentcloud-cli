@@ -1,4 +1,4 @@
-**Example 1: Modifying the name of a bandwidth package**
+**Example 1: 修改带宽包名称**
 
 
 
@@ -19,7 +19,7 @@ Output:
 }
 ```
 
-**Example 2: Modifying the billing mode of a bandwidth package**
+**Example 2: 修改带宽包计费模式**
 
 
 

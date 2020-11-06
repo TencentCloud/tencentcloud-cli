@@ -1,4 +1,4 @@
-**Example 1: Querying redirection relationship by a specified forwarding rule ID**
+**Example 1: 指定转发规则ID查询重定向关系**
 
 
 

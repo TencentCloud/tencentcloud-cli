@@ -1,6 +1,6 @@
-**Example 1: Creating a trigger**
+**Example 1: 创建新的触发器**
 
-This example shows you how to use this function to create a trigger.
+用户使用该函数创建新的触发器
 
 Input: 
 

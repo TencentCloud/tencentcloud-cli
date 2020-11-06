@@ -1,4 +1,4 @@
-**Example 1: Obtaining Country/Region Code Mapping Table**
+**Example 1: 获取国家地区编码映射表**
 
 
 

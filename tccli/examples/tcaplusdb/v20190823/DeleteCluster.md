@@ -1,6 +1,6 @@
-**Example 1: Deleting cluster**
+**Example 1: 删除集群**
 
-This example shows you how to delete a TcaplusDB cluster by specifying the cluster ID.
+指定集群ID删除TcaplusDB集群。
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Viewing policy details**
+**Example 1: 查看一个策略的详情**
 
 
 
@@ -17,10 +17,10 @@ Output:
         "UpdateTime": "2019-04-29 21:28:32",
         "AddTime": "2019-04-29 21:18:40",
         "PolicyName": "test-2019-04-29",
-        "Description": "Test policy",
+        "Description": "测试策略",
         "Type": 1,
         "RequestId": "845b309d-e531-402d-a4f6-ec124f06738b",
-        "PresetAlias": "Remarks",
+        "PresetAlias": "备注",
         "IsServiceLinkedRolePolicy": 0
     }
 }

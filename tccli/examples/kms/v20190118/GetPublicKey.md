@@ -1,4 +1,4 @@
-**Example 1: Getting the public key of an asymmetric key**
+**Example 1: 获取非对称密钥的公钥。**
 
 
 

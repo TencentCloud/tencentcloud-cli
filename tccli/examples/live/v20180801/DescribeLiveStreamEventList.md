@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -29,7 +29,7 @@ Output:
                 "DomainName": "yourdomain.test.com",
                 "Duration": 0,
                 "Resolution": "640*352",
-                "StopReason": "The client actively interrupts the stream",
+                "StopReason": "客户端主动断流",
                 "StreamEndTime": "2019-01-04T11:59:58Z",
                 "StreamName": "stream",
                 "StreamStartTime": "2019-01-04T11:59:58Z"

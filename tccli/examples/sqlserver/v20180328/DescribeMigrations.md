@@ -1,4 +1,4 @@
-**Example 1: Querying the list of migration tasks**
+**Example 1: 查询迁移任务列表**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DescribeMigrations --cli-unfold-argument  \
-    --MigrateName Test \
+    --MigrateName 测试 \
     --Limit 10 \
     --Offset 0 \
     --OrderBy name \
@@ -23,7 +23,7 @@ Output:
         "MigrateTaskSet": [
             {
                 "MigrateId": 2734,
-                "MigrateName": "Test migration",
+                "MigrateName": "测试迁移",
                 "AppId": 1251006373,
                 "Region": "ap-guangzhou",
                 "SourceType": 5,
@@ -41,7 +41,7 @@ Output:
             },
             {
                 "MigrateId": 2732,
-                "MigrateName": "Test API",
+                "MigrateName": "测试接口",
                 "AppId": 1251006373,
                 "Region": "ap-guangzhou",
                 "SourceType": 5,

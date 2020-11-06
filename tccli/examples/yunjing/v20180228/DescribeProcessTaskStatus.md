@@ -1,6 +1,6 @@
-**Example 1: Getting the status of real-time process pulling task**
+**Example 1: 获取实时拉取进程任务状态**
 
-This example shows you how to get the status of a real-time process pulling task.
+获取实时拉取进程任务状态
 
 Input: 
 

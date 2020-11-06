@@ -1,4 +1,4 @@
-**Example 1: Modifying the image, instance type and name of the specified launch configuration**
+**Example 1: 指定启动配置，修改镜像、实例类型、名称**
 
 
 
@@ -21,7 +21,7 @@ Output:
 }
 ```
 
-**Example 2: Emptying UserData**
+**Example 2: 清空UserData**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Creating an animated image generating template**
+**Example 1: 创建转动图模板**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateAnimatedGraphicsTemplate --cli-unfold-argument  \
-    --Name 'Animated image generating template 1' \
+    --Name 动图图模板1 \
     --Width 540 \
     --Height 960 \
     --Format gif \

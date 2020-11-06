@@ -1,4 +1,4 @@
-**Example 1: Terminating TencentDB for PostgreSQL instance**
+**Example 1: 销毁PostgreSQL实例**
 
 
 

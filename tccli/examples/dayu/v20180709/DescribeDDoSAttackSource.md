@@ -1,4 +1,4 @@
-**Example 1: Getting list of DDoS attack source**
+**Example 1: 获取DDoS攻击源列表**
 
 
 
@@ -24,8 +24,8 @@ Output:
         "AttackSourceList": [
             {
                 "SrcIp": "1.1.1.1",
-                "Province": "Zhejiang",
-                "Nation": "China",
+                "Province": "浙江省",
+                "Nation": "中国",
                 "PacketSum": 132124,
                 "PacketLen": 12512551
             }

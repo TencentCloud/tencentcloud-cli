@@ -1,4 +1,4 @@
-**Example 1: Stopping placing game server session**
+**Example 1: 停止放置游戏服务器会话**
 
 
 

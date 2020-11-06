@@ -1,4 +1,4 @@
-**Example 1: Obtaining the list of regions displayed on Console**
+**Example 1: 获取控制台展示region列表**
 
 
 

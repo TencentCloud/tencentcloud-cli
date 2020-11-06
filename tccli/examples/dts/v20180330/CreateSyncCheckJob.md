@@ -1,4 +1,4 @@
-**Example 1: Initiating Disaster Recovery Sync Task Check**
+**Example 1: 发起灾备同步任务校验**
 
 
 

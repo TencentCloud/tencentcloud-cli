@@ -1,4 +1,4 @@
-**Example 1: Querying prefetch history**
+**Example 1: 预热历史查询**
 
 
 

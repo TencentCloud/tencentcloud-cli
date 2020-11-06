@@ -1,4 +1,4 @@
-**Example 1: Getting custom multi-factor token information**
+**Example 1: 获取自定义多因子Token关联信息**
 
 
 

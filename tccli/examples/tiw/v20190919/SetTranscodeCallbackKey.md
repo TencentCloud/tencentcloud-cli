@@ -1,4 +1,4 @@
-**Example 1: Setting the authentication key for the document transcoding callback**
+**Example 1: 设置文档转码回调鉴权密钥**
 
 
 

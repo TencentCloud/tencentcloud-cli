@@ -1,6 +1,6 @@
-**Example 1: Querying a dynamic document transcoding task**
+**Example 1: 查询文档动态转码任务**
 
-This example shows you how to query the result of a dynamic document transcoding task.
+查询文档动态转码任务结果
 
 Input: 
 
@@ -29,9 +29,9 @@ Output:
 }
 ```
 
-**Example 2: Querying a static document transcoding task**
+**Example 2: 查询文档静态转码任务**
 
-This example shows you how to query the result of a static document transcoding task.
+查询文档静态转码任务结果
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Getting instance slow query logs**
+**Example 1: 获取实例慢查询日志**
 
 
 

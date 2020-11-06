@@ -1,4 +1,4 @@
-**Example 1: Querying the minimum specification of a read-only instance that can be purchased or upgraded to**
+**Example 1: 获取只读实例购买或升级的最小规格**
 
 
 

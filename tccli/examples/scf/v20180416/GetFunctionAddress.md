@@ -1,4 +1,4 @@
-**Example 1: Obtaining Download Address of the Function Code**
+**Example 1: 获取函数代码下载地址**
 
 
 

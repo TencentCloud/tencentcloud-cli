@@ -1,4 +1,4 @@
-**Example 1: Removing instances from the compute environment**
+**Example 1: 从计算环境移出实例**
 
 
 

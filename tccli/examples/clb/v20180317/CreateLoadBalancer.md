@@ -1,6 +1,6 @@
-**Example 1: Creating a public network CLB instance**
+**Example 1: 创建一个公网负载均衡实例**
 
-This example shows you how to create a public network CLB instance in a VPC.
+在私有网络中创建一个公网负载均衡
 
 Input: 
 
@@ -25,9 +25,9 @@ Output:
 }
 ```
 
-**Example 2: Creating a private network CLB instance**
+**Example 2: 创建一个内网负载均衡实例**
 
-This example shows you how to create a private network CLB instance in a VPC.
+在私有网络中创建一个内网负载均衡
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying purchase price of an instance**
+**Example 1: 查询新购数据库实例价格**
 
 
 

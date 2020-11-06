@@ -1,6 +1,6 @@
-**Example 1: Creating one single player session**
+**Example 1: 创建单个玩家会话**
 
-This example shows you how to create one single player session.
+创建单个玩家会话
 
 Input: 
 

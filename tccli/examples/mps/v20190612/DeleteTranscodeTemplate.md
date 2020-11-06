@@ -1,4 +1,4 @@
-**Example 1: Deleting a transcoding template**
+**Example 1: 删除转码模板**
 
 
 

@@ -1,11 +1,13 @@
-**Example 1: Queries the ENI quota by CVM instance ID**
+**Example 1: 根据CVM实例ID查询弹性网卡配额**
 
 
 
 Input: 
 
 ```
-tccli vpc DescribeNetworkInterfaceLimit --cli-unfold-argument ```
+tccli vpc DescribeNetworkInterfaceLimit --cli-unfold-argument  \
+    --InstanceId ins-1991090i
+```
 
 Output: 
 ```
@@ -18,7 +20,7 @@ Output:
 }
 ```
 
-**Example 2: Queries the ENI quota by ENI ID**
+**Example 2: 根据弹性网卡ID查询弹性网卡配额**
 
 
 

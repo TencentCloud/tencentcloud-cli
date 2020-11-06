@@ -1,6 +1,6 @@
-**Example 1: Querying the network attributes of an account**
+**Example 1: 查询账号网络属性**
 
-This example only supports VPC.
+只支持VPC
 
 Input: 
 

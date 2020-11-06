@@ -1,4 +1,4 @@
-**Example 1: Modifying the private IP attributes of an ENI**
+**Example 1: 修改弹性网卡内网IP属性**
 
 
 

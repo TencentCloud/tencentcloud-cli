@@ -1,6 +1,6 @@
-**Example 1: Querying connection statistics**
+**Example 1: 查询通道统计数据**
 
-This example shows you how to query connection statistics.
+查询通道统计数据
 
 Input: 
 

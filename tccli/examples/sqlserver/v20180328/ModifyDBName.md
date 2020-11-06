@@ -1,4 +1,4 @@
-**Example 1: Modifying a database name**
+**Example 1: 修改数据库名**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the list of databases on a TencentDB instance**
+**Example 1: 查询云数据库实例上的数据库列表**
 
 
 

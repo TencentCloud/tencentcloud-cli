@@ -1,4 +1,4 @@
-**Example 1: Sending an invitation to join an organization**
+**Example 1: 发送企业组织邀请**
 
 
 

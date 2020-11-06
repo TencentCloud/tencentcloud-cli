@@ -1,4 +1,4 @@
-**Example 1: Deleting a protocol port template group**
+**Example 1: 删除协议端口模板集合**
 
 
 

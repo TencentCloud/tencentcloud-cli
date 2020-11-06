@@ -1,6 +1,6 @@
-**Example 1: Reinstalling an instance**
+**Example 1: 重装实例**
 
-This example shows you how to reinstall an instance with the image, login password, and enhanced services specified, and expand the system disk of the instance.
+本示例用于指定镜像、登录密码和增强服务来重装实例，同时扩容实例系统盘。
 
 Input: 
 

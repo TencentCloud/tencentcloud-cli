@@ -1,4 +1,4 @@
-**Example 1: Disabling GME application 140000001**
+**Example 1: 关闭GME应用140000001**
 
 
 

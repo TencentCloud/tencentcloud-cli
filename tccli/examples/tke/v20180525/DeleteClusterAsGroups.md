@@ -1,6 +1,6 @@
-**Example 1: Deleting cluster scaling group**
+**Example 1: 删除集群伸缩组**
 
-This example shows you how to delete a cluster scaling group.
+删除集群伸缩组
 
 Input: 
 

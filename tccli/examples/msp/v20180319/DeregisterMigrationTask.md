@@ -1,6 +1,6 @@
-**Example 1: Canceling a registered migration task**
+**Example 1: 取消注册迁移任务**
 
-This example shows you how to cancel a registered migration task.
+取消注册迁移任务
 
 Input: 
 

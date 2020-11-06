@@ -1,4 +1,4 @@
-**Example 1: Rolling back the "db1" database in the "mssql-j8kv137v" instance to 11:32:29, August 7, 2018**
+**Example 1: 将实例mssql-j8kv137v中的db1回档到2018-08-07 11:32:29时刻**
 
 
 

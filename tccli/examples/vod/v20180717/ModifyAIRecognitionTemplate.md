@@ -1,6 +1,27 @@
-**Example 1: Enabling one recognition task while disabling another one**
+**Example 1: 关闭视频片头片尾识别任务**
 
-This example shows you how to modify a custom video content recognition template to disable a video opening and ending credits recognition task and enable a video splitting recognition task.
+修改自定义视频内容识别模板，关闭视频片头片尾识别任务。
+
+Input: 
+
+```
+tccli vod ModifyAIRecognitionTemplate --cli-unfold-argument  \
+    --Definition 30 \
+    --HeadTailConfigure.Switch OFF
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    }
+}
+```
+
+**Example 2: 同时关闭和开启一项识别任务**
+
+修改自定义视频内容识别模板，关闭视频片头片尾识别任务，开启视频拆条任务。
 
 Input: 
 
@@ -20,9 +41,9 @@ Output:
 }
 ```
 
-**Example 2: Modifying the frame capturing interval of content recognition**
+**Example 3: 修改内容识别截帧间隔时间**
 
-This example shows you how to modify a custom intelligent recognition template to change the frame capturing interval to 0.5 seconds.
+修改自定义智能识别模板，将截帧间隔修改为 0.5 秒。
 
 Input: 
 
@@ -30,27 +51,6 @@ Input:
 tccli vod ModifyAIRecognitionTemplate --cli-unfold-argument  \
     --Definition 30 \
     --ScreenshotInterval 0.5
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
-    }
-}
-```
-
-**Example 3: Disabling video opening and ending credits recognition task**
-
-This example shows you how to modify a custom video content recognition template to disable a video opening and ending credits recognition task.
-
-Input: 
-
-```
-tccli vod ModifyAIRecognitionTemplate --cli-unfold-argument  \
-    --Definition 30 \
-    --HeadTailConfigure.Switch OFF
 ```
 
 Output: 

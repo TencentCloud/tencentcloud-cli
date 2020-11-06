@@ -1,4 +1,4 @@
-**Example 1: Encrypting data with a white-box key**
+**Example 1: 使用白盒密钥进行加密**
 
 
 

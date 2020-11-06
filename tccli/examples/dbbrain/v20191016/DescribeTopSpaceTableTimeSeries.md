@@ -1,4 +1,4 @@
-**Example 1: Querying daily space statistics of top tables during a specified time period**
+**Example 1: 获取Top表在指定时间段内的每日空间统计信息**
 
 
 

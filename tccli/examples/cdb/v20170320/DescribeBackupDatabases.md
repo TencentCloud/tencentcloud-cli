@@ -1,4 +1,4 @@
-**Example 1: Querying the list of backed-up databases**
+**Example 1: 查询备份数据库列表**
 
 
 

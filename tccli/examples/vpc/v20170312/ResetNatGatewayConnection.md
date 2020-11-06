@@ -1,4 +1,4 @@
-**Example 1: Increasing the NAT gateway concurrent connection cap**
+**Example 1: 升级NAT网关并发连接上限**
 
 
 

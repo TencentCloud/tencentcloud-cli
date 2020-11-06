@@ -1,4 +1,4 @@
-**Example 1: Updating alias configuration**
+**Example 1: 更新别名的配置**
 
 
 

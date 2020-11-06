@@ -1,6 +1,62 @@
-**Example 1: Querying the configurations of cloud disks that are compatible with the S3 models in Guangzhou Zone 2**
+**Example 1: 查询广州二区的云硬盘配置**
 
-This example shows you how to query the compatible configurations of cloud disks for a specified instance model. If the value of `Available` is `true` in the response, the cloud disk is available; if its value is `false`, the specified resources are sold out.
+查询各可用区云盘规格配置及售罄情况，返回结果中Available为true表示当前可购买，为false表示对应规格云盘已售罄。
+
+Input: 
+
+```
+tccli cbs DescribeDiskConfigQuota --cli-unfold-argument  \
+    --InquiryType INQUIRY_CBS_CONFIG \
+    --Zones ap-guangzhou-2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "DiskConfigSet": [
+            {
+                "Available": true,
+                "DiskChargeType": "POSTPAID_BY_HOUR",
+                "Zone": "ap-guangzhou-2",
+                "InstanceFamily": null,
+                "DiskType": "CLOUD_BASIC",
+                "DeviceClass": null,
+                "DiskUsage": "DATA_DISK",
+                "MinDiskSize": 10,
+                "MaxDiskSize": 4000
+            },
+            {
+                "Available": true,
+                "DiskChargeType": "POSTPAID_BY_HOUR",
+                "Zone": "ap-guangzhou-2",
+                "InstanceFamily": null,
+                "DiskType": "CLOUD_PREMIUM",
+                "DeviceClass": null,
+                "DiskUsage": "DATA_DISK",
+                "MinDiskSize": 50,
+                "MaxDiskSize": 4000
+            },
+            {
+                "Available": false,
+                "DiskChargeType": "POSTPAID_BY_HOUR",
+                "Zone": "ap-guangzhou-2",
+                "InstanceFamily": null,
+                "DiskType": "CLOUD_SSD",
+                "DeviceClass": null,
+                "DiskUsage": "DATA_DISK",
+                "MinDiskSize": 100,
+                "MaxDiskSize": 4000
+            }
+        ],
+        "RequestId": "55db49cf-b9d7-da27-825b-5a02ba6814b2"
+    }
+}
+```
+
+**Example 2: 查询广州二区S3机型可搭配的云盘配置**
+
+查询不同实例机型可搭配的云盘配置，返回结果中Available为true表示当前可购买，为false表示对应规格云盘已售罄。
 
 Input: 
 
@@ -59,62 +115,6 @@ Output:
                 "DiskUsage": "SYSTEM_DISK",
                 "MinDiskSize": 50,
                 "DiskChargeType": "POSTPAID_BY_HOUR"
-            }
-        ],
-        "RequestId": "55db49cf-b9d7-da27-825b-5a02ba6814b2"
-    }
-}
-```
-
-**Example 2: Querying the configurations of cloud disks in Guangzhou Zone 2**
-
-This example shows you how to query the availability and configurations of cloud disks in an availability zone. If the value of `Available` is `true` in the response, there are available resources; if its value is `false`, the specified cloud disks are sold out.
-
-Input: 
-
-```
-tccli cbs DescribeDiskConfigQuota --cli-unfold-argument  \
-    --InquiryType INQUIRY_CBS_CONFIG \
-    --Zones ap-guangzhou-2
-```
-
-Output: 
-```
-{
-    "Response": {
-        "DiskConfigSet": [
-            {
-                "Available": true,
-                "DiskChargeType": "POSTPAID_BY_HOUR",
-                "Zone": "ap-guangzhou-2",
-                "InstanceFamily": null,
-                "DiskType": "CLOUD_BASIC",
-                "DeviceClass": null,
-                "DiskUsage": "DATA_DISK",
-                "MinDiskSize": 10,
-                "MaxDiskSize": 4000
-            },
-            {
-                "Available": true,
-                "DiskChargeType": "POSTPAID_BY_HOUR",
-                "Zone": "ap-guangzhou-2",
-                "InstanceFamily": null,
-                "DiskType": "CLOUD_PREMIUM",
-                "DeviceClass": null,
-                "DiskUsage": "DATA_DISK",
-                "MinDiskSize": 50,
-                "MaxDiskSize": 4000
-            },
-            {
-                "Available": false,
-                "DiskChargeType": "POSTPAID_BY_HOUR",
-                "Zone": "ap-guangzhou-2",
-                "InstanceFamily": null,
-                "DiskType": "CLOUD_SSD",
-                "DeviceClass": null,
-                "DiskUsage": "DATA_DISK",
-                "MinDiskSize": 100,
-                "MaxDiskSize": 4000
             }
         ],
         "RequestId": "55db49cf-b9d7-da27-825b-5a02ba6814b2"

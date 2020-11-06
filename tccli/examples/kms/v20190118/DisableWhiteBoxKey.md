@@ -1,4 +1,4 @@
-**Example 1: Disabling a white-box key**
+**Example 1: 禁用白盒密钥**
 
 
 

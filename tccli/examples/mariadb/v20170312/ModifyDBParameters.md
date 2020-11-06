@@ -1,4 +1,4 @@
-**Example 1: Modifying database parameters**
+**Example 1: 修改数据库参数**
 
 
 

@@ -1,57 +1,4 @@
-**Example 1: Querying listeners by port, protocol, and listener ID**
-
-
-
-Input: 
-
-```
-tccli clb DescribeListeners --cli-unfold-argument  \
-    --LoadBalancerId lb-aniq7ewx \
-    --Protocol TCP \
-    --Port 333 \
-    --ListenerIds lbl-pt4dgkjn
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Listeners": [
-            {
-                "ListenerId": "lbl-pt4dgkjn",
-                "ListenerName": "333",
-                "Protocol": "TCP",
-                "Port": 333,
-                "HealthCheck": {
-                    "HealthSwitch": 1,
-                    "TimeOut": 2,
-                    "IntervalTime": 5,
-                    "HealthNum": 3,
-                    "UnHealthNum": 3,
-                    "CheckPort": null,
-                    "CheckType": "TCP",
-                    "HttpCheckDomain": null,
-                    "HttpCheckPath": null,
-                    "HttpCheckMethod": null,
-                    "HttpVersion": null,
-                    "HttpCode": null,
-                    "ContextType": null,
-                    "SendContext": null,
-                    "RecvContext": null
-                },
-                "Certificate": null,
-                "Scheduler": "WRR",
-                "SessionExpireTime": 0,
-                "SniSwitch": 0,
-                "Rules": null
-            }
-        ],
-        "RequestId": "0dc33bce-5fe5-4ce0-9734-d8212c258d36"
-    }
-}
-```
-
-**Example 2: Querying the information of all listeners in a CLB instance**
+**Example 1: 查询负载均衡实例下的全部监听器信息**
 
 
 
@@ -149,6 +96,59 @@ Output:
             }
         ],
         "RequestId": "a031471a-332d-4c45-a123-0bc6fb212780"
+    }
+}
+```
+
+**Example 2: 按照端口、协议及监听器ID查询监听器**
+
+
+
+Input: 
+
+```
+tccli clb DescribeListeners --cli-unfold-argument  \
+    --LoadBalancerId lb-aniq7ewx \
+    --Protocol TCP \
+    --Port 333 \
+    --ListenerIds lbl-pt4dgkjn
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Listeners": [
+            {
+                "ListenerId": "lbl-pt4dgkjn",
+                "ListenerName": "333",
+                "Protocol": "TCP",
+                "Port": 333,
+                "HealthCheck": {
+                    "HealthSwitch": 1,
+                    "TimeOut": 2,
+                    "IntervalTime": 5,
+                    "HealthNum": 3,
+                    "UnHealthNum": 3,
+                    "CheckPort": null,
+                    "CheckType": "TCP",
+                    "HttpCheckDomain": null,
+                    "HttpCheckPath": null,
+                    "HttpCheckMethod": null,
+                    "HttpVersion": null,
+                    "HttpCode": null,
+                    "ContextType": null,
+                    "SendContext": null,
+                    "RecvContext": null
+                },
+                "Certificate": null,
+                "Scheduler": "WRR",
+                "SessionExpireTime": 0,
+                "SniSwitch": 0,
+                "Rules": null
+            }
+        ],
+        "RequestId": "0dc33bce-5fe5-4ce0-9734-d8212c258d36"
     }
 }
 ```

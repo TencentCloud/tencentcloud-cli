@@ -1,6 +1,6 @@
-**Example 1: Querying the Connection Group Statistics**
+**Example 1: 查询通道组统计数据**
 
-Query the connection group statistics.
+查询通道组统计数据
 
 Input: 
 

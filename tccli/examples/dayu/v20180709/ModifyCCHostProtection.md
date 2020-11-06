@@ -1,4 +1,4 @@
-**Example 1: Enabling or disabling CC domain name protection**
+**Example 1: 开启或关闭CC域名防护**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Removing user**
+**Example 1: 移出用户**
 
-This example shows you how to remove users test1 and test2 from room 1234.
+将用户test1、test2从房间1234移出。
 
 Input: 
 

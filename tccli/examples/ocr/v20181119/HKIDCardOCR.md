@@ -1,4 +1,4 @@
-**Example 1: Recognizing Hong Kong (China) identity card**
+**Example 1: 中国香港身份证识别示例代码**
 
 
 

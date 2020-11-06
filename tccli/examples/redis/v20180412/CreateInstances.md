@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例：购买按量计费的Redis4.0内存版（标准架构）实例**
 
 
 
@@ -7,20 +7,23 @@ Input:
 ```
 tccli redis CreateInstances --cli-unfold-argument  \
     --ZoneId 100002 \
-    --TypeId 2 \
+    --TypeId 6 \
     --MemSize 1024 \
     --GoodsNum 1 \
     --Period 1 \
-    --Password ******** \
-    --BillingMode 1
+    --BillingMode 0 \
+    --Password **********
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DealId": "123456",
-        "RequestId": "d4e2fd95-eac5-41ef-a7a9-7d30024d5507"
+        "RequestId": "2a836c00-175f-11eb-aeb3-db134c8d8fec",
+        "InstanceIds": [
+            "crs-kic39axx"
+        ],
+        "DealId": "22716"
     }
 }
 ```

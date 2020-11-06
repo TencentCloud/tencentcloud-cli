@@ -1,4 +1,4 @@
-**Example 1: Querying the number of rooms and users history**
+**Example 1: 查询历史房间和用户数**
 
 
 

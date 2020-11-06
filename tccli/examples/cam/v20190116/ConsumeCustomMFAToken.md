@@ -1,4 +1,4 @@
-**Example 1: Verifying custom multi-factor token**
+**Example 1: 验证自定义多因子Token**
 
 
 

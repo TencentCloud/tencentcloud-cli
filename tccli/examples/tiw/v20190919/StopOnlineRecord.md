@@ -1,6 +1,6 @@
-**Example 1: Stopping real-time recording**
+**Example 1: 停止在线录制**
 
-This example shows how to stop real-time recording.
+停止在线录制
 
 Input: 
 
@@ -14,6 +14,7 @@ Output:
 ```
 {
     "Response": {
+        "Backup": "{}",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }

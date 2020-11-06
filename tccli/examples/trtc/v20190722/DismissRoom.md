@@ -1,6 +1,6 @@
-**Example 1: Dismissing room**
+**Example 1: 解散房间**
 
-This example shows you how to dismiss room 1234.
+解散房间1234。
 
 Input: 
 

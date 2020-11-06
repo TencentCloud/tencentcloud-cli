@@ -1,4 +1,4 @@
-**Example 1: Querying the parameter template details**
+**Example 1: 查询参数模板详情**
 
 
 

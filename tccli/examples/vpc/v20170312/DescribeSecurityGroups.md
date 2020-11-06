@@ -1,4 +1,4 @@
-**Example 1: Querying security groups**
+**Example 1: 查看安全组**
 
 
 
@@ -32,9 +32,9 @@ Output:
 }
 ```
 
-**Example 2: Querying security groups bound with the tag**
+**Example 2: 查看绑定标签的安全组**
 
-Queries using tag:tag-key.
+用tag:tag-key查询。
 
 Input: 
 
@@ -52,14 +52,14 @@ Output:
             {
                 "SecurityGroupId": "sg-2got2lcz",
                 "SecurityGroupName": "test",
-                "SecurityGroupDesc": "Exposing all ports to the Internet and private network may introduce security risks",
+                "SecurityGroupDesc": "暴露全部端口到公网和内网，有一定安全风险",
                 "ProjectId": "0",
                 "IsDefault": false,
                 "CreatedTime": "2019-07-23 12:32:24",
                 "TagSet": [
                     {
-                        "Key": "Tag key",
-                        "Value": "Tag value"
+                        "Key": "中文标签键",
+                        "Value": "中文标签值"
                     },
                     {
                         "Key": "Version",

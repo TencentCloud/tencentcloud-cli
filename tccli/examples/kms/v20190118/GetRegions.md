@@ -1,4 +1,4 @@
-**Example 1: Querying the list of supported regions**
+**Example 1: 查询可用区域列表**
 
 
 

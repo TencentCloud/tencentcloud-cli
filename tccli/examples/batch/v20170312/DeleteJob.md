@@ -1,4 +1,4 @@
-**Example 1: Deleting a Job**
+**Example 1: 删除作业**
 
 
 

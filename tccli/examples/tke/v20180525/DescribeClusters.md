@@ -1,6 +1,6 @@
-**Example 1: Querying the Cluster List**
+**Example 1: 查询集群列表**
 
-Query the cluster list to obtain the cluster list
+查询集群列表，用于获取集群列表
 
 Input: 
 
@@ -15,7 +15,7 @@ Output:
         "Clusters": [
             {
                 "ClusterId": "cls-xxxxxxx",
-                "ClusterName": "Cluster",
+                "ClusterName": "集群",
                 "ClusterDescription": "",
                 "ClusterVersion": "1.10.5",
                 "ClusterOs": "ubuntu16.04.1 LTSx86_64",

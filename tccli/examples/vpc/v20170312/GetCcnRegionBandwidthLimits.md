@@ -1,6 +1,6 @@
-**Example 1: Querying the outbound bandwidth limits of a CCN**
+**Example 1: 查询CCN地域出带宽详情**
 
-This example shows you how to query the outbound bandwidth limits of a pay-as-you-go CCN, for which the `ExpireTime` and `RenewFlag` parameters can be ignored.
+该示例查询CCN地域出带宽详情，其中CCN的付费模式是后付费，后付费计费模式的云联网，用户不需要关注ExpireTime，RenewFlag参数。
 
 Input: 
 
@@ -33,9 +33,9 @@ Output:
 }
 ```
 
-**Example 2: Querying the inter-region bandwidth limits of a CCN**
+**Example 2: 查询CCN地域间带宽详情**
 
-This example shows you how to query the cross-region outbound bandwidths for monthly-subscribed CCN and obtain two instances with a cross-region bandwidth limit. The `fcr-crrnp6w4` instance has `NOTIFY_AND_MANUAL_RENEW` (no auto-renewal) for the `RenewFlag` parameter, and the `fcr-lnfsgh4y` instance has `NOTIFY_AND_AUTO_RENEW` (auto-renewal) for the `RenewFlag` parameter.
+该示例是查询CCN地域间带宽详情，云联网为预付费，其中返回两个地域间限速实力，限速实例fcr-crrnp6w4续费模式RenewFlag为NOTIFY_AND_MANUAL_RENEW（非自动续费），限速实例fcr-lnfsgh4y续费模式RenewFlag为NOTIFY_AND_AUTO_RENEW（自动续费）。
 
 Input: 
 

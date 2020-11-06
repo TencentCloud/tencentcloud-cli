@@ -1,4 +1,4 @@
-**Example 1: Restarting the database instance mssql-niycdqff**
+**Example 1: 重启数据库实例mssql-niycdqff**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying time range available for rolling back db1 in the instance mssql-j8kv137v**
+**Example 1: 查询实例mssql-j8kv137v中db1的可回档时间**
 
 
 

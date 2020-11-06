@@ -1,6 +1,6 @@
-**Example 1: Deactivates CWP Pro**
+**Example 1: 关闭专业版**
 
-This example shows you how to deactivate CWP Pro.
+关闭专业版
 
 Input: 
 

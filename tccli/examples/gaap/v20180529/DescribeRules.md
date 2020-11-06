@@ -1,4 +1,4 @@
-**Example 1: Querying the Forwarding Rule Information**
+**Example 1: 查询转发规则信息**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Deleting video category**
+**Example 1: 删除视频分类**
 
 
 

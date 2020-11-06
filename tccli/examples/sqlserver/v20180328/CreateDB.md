@@ -1,4 +1,4 @@
-**Example 1: Creating the "test_db" database**
+**Example 1: 创建数据库test_db**
 
 
 

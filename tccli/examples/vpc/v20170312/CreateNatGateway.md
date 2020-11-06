@@ -1,4 +1,4 @@
-**Example 1: Creating a NAT gateway**
+**Example 1: 创建NAT网关**
 
 
 

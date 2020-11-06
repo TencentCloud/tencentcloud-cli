@@ -1,4 +1,4 @@
-**Example 1: Deleting adaptive bitrate streaming template**
+**Example 1: 删除转自适应码流模板**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the list of instances by instance ID**
+**Example 1: 根据实例ID查询实例列表**
 
 
 
@@ -47,7 +47,7 @@ Output:
                 "Pid": 10890,
                 "PeriodEndTime": "2018-05-02 21:40:59",
                 "Uin": "20548499",
-                "TdsqlVersion": "Designed based on MariaDB 10.1.9 (compatible with MySQL 5.6)"
+                "TdsqlVersion": "基于MariaDB 10.1.9设计(兼容MySQL 5.6)"
             }
         ]
     }

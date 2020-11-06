@@ -1,4 +1,4 @@
-**Example 1: Querying whether GTID is activated for a TencentDB instance**
+**Example 1: 查询云数据实例的GTID是否开通**
 
 
 

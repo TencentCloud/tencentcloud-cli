@@ -1,4 +1,4 @@
-**Example 1: Updating a domain name configuration**
+**Example 1: 更新域名配置**
 
 
 

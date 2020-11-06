@@ -1,4 +1,4 @@
-**Example 1: Detecting liveness based on image**
+**Example 1: 人脸静态活体检测接口**
 
 
 

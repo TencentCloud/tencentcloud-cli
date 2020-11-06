@@ -1,4 +1,4 @@
-**Example 1: Creating a bandwidth package**
+**Example 1: 创建共享带宽包**
 
 
 

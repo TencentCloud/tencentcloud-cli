@@ -1,6 +1,6 @@
-**Example 1: Creating a Scheduled Snapshot Policy**
+**Example 1: 创建定期快照策略**
 
-Creates a scheduled snapshot policy. The cloud disk this scheduled snapshot policy is bound to will create a snapshot at 00:00 every Friday.
+创建一个定期快照策略，绑定该定期快照策略的云盘会在每周5的0点创建快照。
 
 Input: 
 

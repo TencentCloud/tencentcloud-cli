@@ -1,4 +1,4 @@
-**Example 1: Modifying the Trust Policy of a Role**
+**Example 1: 修改角色信任策略**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying the list of blocked IPs (blacklist) of a CLB instance**
+**Example 1: 查询一个负载均衡所封禁的IP列表（黑名单）**
 
 
 

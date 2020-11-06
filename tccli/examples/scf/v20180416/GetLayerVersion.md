@@ -1,4 +1,4 @@
-**Example 1: Getting layer version details**
+**Example 1: 获取层版本详情**
 
 
 

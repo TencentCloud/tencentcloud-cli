@@ -1,4 +1,4 @@
-**Example 1: Deleting a connection**
+**Example 1: 删除物理专线**
 
 
 

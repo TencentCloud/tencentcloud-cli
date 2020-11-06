@@ -1,6 +1,6 @@
-**Example 1: Getting the list of game session details**
+**Example 1: 获取游戏会话详情列表**
 
-This example shows you how to get the list of game session details.
+获取游戏会话详情列表
 
 Input: 
 
@@ -18,25 +18,30 @@ Output:
         "GameServerSessionDetails": [
             {
                 "GameServerSession": {
-                    "CreationTime": "2019-12-06T10:03:50Z",
-                    "CreatorId": "c1",
+                    "AvailabilityStatus": "Enable",
+                    "CreationTime": "2020-07-30T03:55:43Z",
+                    "CreatorId": "",
+                    "CurrentCustomCount": 0,
                     "CurrentPlayerSessionCount": 0,
                     "DnsName": "",
-                    "FleetId": "fleet-pro4extc-f1hiuzry",
+                    "FleetId": "fleet-qp33caaa-35555",
                     "GameProperties": [],
-                    "GameServerSessionData": "testdata",
-                    "GameServerSessionId": "qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde",
-                    "IpAddress": "0000.0.0.0",
+                    "GameServerSessionData": "",
+                    "GameServerSessionId": "qcs::gse:ap-shanghai:uin/100000010000:gameserversession/fleet-qp33caaa-35555/gssess-qtk2222-uuu",
+                    "InstanceType": "S5.LARGE8",
+                    "IpAddress": "127.0.0.1",
                     "MatchmakerData": "",
-                    "MaximumPlayerSessionCount": 10,
+                    "MaxCustomCount": 0,
+                    "MaximumPlayerSessionCount": 100,
                     "Name": "",
                     "PlayerSessionCreationPolicy": "ACCEPT_ALL",
-                    "Port": 8000,
-                    "Status": "TERMINATED",
+                    "Port": 6000,
+                    "Status": "ACTIVATING",
                     "StatusReason": "",
-                    "TerminationTime": "2019-12-08T02:53:27Z"
+                    "TerminationTime": null,
+                    "Weight": 5
                 },
-                "ProtectionPolicy": "FullProtection"
+                "ProtectionPolicy": "TimeLimitProtection"
             }
         ],
         "NextToken": "",

@@ -1,4 +1,4 @@
-**Example 1: Modifying connection attributes**
+**Example 1: 修改物理专线属性信息**
 
 
 
@@ -12,7 +12,7 @@ tccli dc ModifyDirectConnectAttribute --cli-unfold-argument  \
     --Vlan 100 \
     --TencentAddress 172.168.1.1/30 \
     --CustomerAddress 172.168.1.2/30 \
-    --CustomerName 'John Smith' \
+    --CustomerName 张三 \
     --CustomerContactMail 12345@qq.com \
     --CustomerContactNumber 18812345678
 ```

@@ -1,4 +1,4 @@
-**Example 1: Cluster-associated scaling group list**
+**Example 1: 集群关联的伸缩组列表**
 
 
 

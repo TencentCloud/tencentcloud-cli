@@ -1,4 +1,4 @@
-**Example 1: Getting the group information of person**
+**Example 1: 获取人员归属信息接口**
 
 
 
@@ -20,9 +20,9 @@ Output:
             {
                 "GroupId": "ZhuYuanDormitoryNo1",
                 "PersonExDescriptions": [
-                    "School of Computing",
-                    "Software Engineering",
-                    "'15",
+                    "计算机学院",
+                    "软件工程",
+                    "15级",
                     "3150108080"
                 ]
             }
@@ -33,7 +33,7 @@ Output:
 }
 ```
 
-**Example 2: Getting the group information of person - 2**
+**Example 2: 获取人员归属信息接口-2**
 
 
 
@@ -55,9 +55,9 @@ Output:
             {
                 "GroupId": "TencentShenZhenEmployee",
                 "PersonExDescriptions": [
-                    "Cloud and Smart Industries Group",
-                    "Big Data and AI Product Center",
-                    "Face Recognition Product Team"
+                    "云与智慧产业事业群",
+                    "大数据及人工智能产品中心",
+                    "人脸识别产品组"
                 ]
             }
         ],
@@ -67,9 +67,9 @@ Output:
 }
 ```
 
-**Example 3: Sample error**
+**Example 3: 错误示例**
 
-The person ID does not exist.
+人员ID不存在
 
 Input: 
 
@@ -86,7 +86,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.PersonIdNotExist",
-            "Message": "The person ID does not exist."
+            "Message": "人员ID不存在。"
         },
         "RequestId": "98330f25-eb2e-432a-a30c-3830774210c1"
     }

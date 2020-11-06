@@ -1,4 +1,4 @@
-**Example 1: Disabling a Secret**
+**Example 1: 停用指定凭据**
 
 
 

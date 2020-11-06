@@ -1,6 +1,6 @@
-**Example 1: Querying the HTTPS Listener Information**
+**Example 1: 查询HTTPS监听器信息**
 
-Query the HTTPS listener information.
+查询HTTPS监听器信息
 
 Input: 
 

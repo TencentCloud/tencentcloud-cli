@@ -1,4 +1,4 @@
-**Example 1: Setting topic attributes**
+**Example 1: 设置主题属性**
 
 
 

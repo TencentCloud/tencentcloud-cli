@@ -1,4 +1,4 @@
-**Example 1: Creating a logset**
+**Example 1: 创建日志集。**
 
 
 

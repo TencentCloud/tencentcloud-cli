@@ -1,6 +1,6 @@
-**Example 1: Querying an UDP Listener List**
+**Example 1: 查询UDP监听器列表**
 
-Query an UDP listener list.
+查询UDP监听器列表
 
 Input: 
 

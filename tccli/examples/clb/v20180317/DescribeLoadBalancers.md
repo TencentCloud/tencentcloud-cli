@@ -1,6 +1,6 @@
-**Example 1: Querying the CLB instance with a specified private IP of the real server bound to it**
+**Example 1: 查询后端绑定了指定内网IP的机器的负载均衡**
 
-This example shows you how to query the CLB instance bound to the real server whose private IP is 172.26.0.11.
+查询绑定了内网IP为172.26.0.11的后端服务的负载均衡实例
 
 Input: 
 
@@ -62,7 +62,7 @@ Output:
 }
 ```
 
-**Example 2: Fuzzy querying CLB instances by name, domain name, and VIP**
+**Example 2: 根据名称、域名、VIP多个字段模糊查询负载均衡实例**
 
 
 
@@ -125,7 +125,7 @@ Output:
 }
 ```
 
-**Example 3: Querying by CLB instance ID**
+**Example 3: 根据负载均衡实例ID来查询**
 
 
 
@@ -188,7 +188,7 @@ Output:
 }
 ```
 
-**Example 4: Querying by CLB instance type, project, name, and VIP**
+**Example 4: 根据负载均衡类型、所属项目、负载均衡名称、负载均衡实例的vip来查询**
 
 
 

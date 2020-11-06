@@ -1,6 +1,6 @@
-**Example 1: Starting instances with the instance IDs specified**
+**Example 1: 启动指定ID的实例**
 
-Start up two shutdown instances at a time
+同时启动2台处于关机状态的实例
 
 Input: 
 

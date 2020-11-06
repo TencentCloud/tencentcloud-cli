@@ -1,4 +1,4 @@
-**Example 1: Overwriting the device fingerprint information of a specified key**
+**Example 1: 覆盖指定密钥的设备指纹信息**
 
 
 

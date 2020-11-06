@@ -1,4 +1,4 @@
-**Example 1: Deleting a Task Template**
+**Example 1: 删除任务模板**
 
 
 

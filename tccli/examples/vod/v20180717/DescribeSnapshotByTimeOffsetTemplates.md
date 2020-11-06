@@ -1,4 +1,4 @@
-**Example 1: Getting the list of time point screencapturing templates**
+**Example 1: 获取指定时间点截图模板列表**
 
 
 
@@ -18,7 +18,7 @@ Output:
             {
                 "Definition": 10001,
                 "Type": "Custom",
-                "Name": "Time point screencapturing template 1",
+                "Name": "指定时间点截图模板1",
                 "Comment": "",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",

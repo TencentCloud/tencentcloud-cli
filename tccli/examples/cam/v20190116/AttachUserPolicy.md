@@ -1,6 +1,6 @@
-**Example 1: Associating a Policy with a User**
+**Example 1: 绑定策略到用户**
 
-Associating a policy (ID: 524497) with user 3449203261
+绑定策略ID为524497的策略到用户3449203261
 
 Input: 
 

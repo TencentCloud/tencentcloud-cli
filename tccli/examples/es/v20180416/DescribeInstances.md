@@ -1,6 +1,6 @@
-**Example 1: Querying ES cluster instances**
+**Example 1: 查询ES集群实例**
 
-This example shows you how to query eligible ES cluster instances according to the given criteria and return their details.
+根据给定条件查询符合条件的ES集群实例并返回详细信息
 
 Input: 
 

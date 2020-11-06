@@ -1,6 +1,6 @@
-**Example 1: Querying real-time network status**
+**Example 1: 查询实时网络状态**
 
-This example shows you how to query the network status for the last 24 hours, such as upstream and downstream packet losses.
+查询24小时内的网络状态，如上行丢包。下行丢包
 
 Input: 
 

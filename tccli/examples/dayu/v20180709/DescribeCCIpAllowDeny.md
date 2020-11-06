@@ -1,4 +1,4 @@
-**Example 1: Getting IP blacklist/whitelist for CC protection**
+**Example 1: 获取CC的IP黑白名单**
 
 
 

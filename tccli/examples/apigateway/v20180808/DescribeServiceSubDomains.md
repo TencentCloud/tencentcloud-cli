@@ -1,4 +1,4 @@
-**Example 1: Querying the custom domain name list of service**
+**Example 1: 查询服务自定义域名列表**
 
 
 

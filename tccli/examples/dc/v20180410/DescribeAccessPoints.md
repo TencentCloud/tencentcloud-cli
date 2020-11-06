@@ -1,6 +1,6 @@
-**Example 1: Getting the information of all access points**
+**Example 1: 获取全量接入点信息**
 
-This example shows you how to get the information of all access points, where `AVAILABLE` indicates available access points and `UNAVAILABLE` indicates the unavailable ones.
+获取全量接入点信息，其中AVAILABLE是可以使用的接入点，UNAVAILABLE是不可以使用的接入点。
 
 Input: 
 
@@ -25,8 +25,8 @@ Output:
                 "RegionId": "ap-beijing",
                 "AccessPointId": "ap-cn-beijing-hx",
                 "State": "AVAILABLE",
-                "Location": "TravelSky High-Tech Industrial Park, Houshayu Town, Shunyi District, Beijing",
-                "AccessPointName": "TravelSky"
+                "Location": "北京市顺义区后沙峪镇中国航信高科技产业园 ",
+                "AccessPointName": "北京航信"
             },
             {
                 "LineOperator": [
@@ -40,8 +40,8 @@ Output:
                 "RegionId": "ap-beijing",
                 "AccessPointId": "ap-cn-beijing-jxq",
                 "State": "AVAILABLE",
-                "Location": "BEZ IT Park, Chaoyang District, Beijing",
-                "AccessPointName": "Beijing Wanhong Road"
+                "Location": "北京朝阳区电子城IT产业园 ",
+                "AccessPointName": "北京万红路"
             },
             {
                 "LineOperator": [
@@ -55,8 +55,8 @@ Output:
                 "RegionId": "ap-beijing",
                 "AccessPointId": "ap-cn-beijing-yz",
                 "State": "UNAVAILABLE",
-                "Location": "No. 15, Middle Tongji Road, Beijing Economic-Technological Development Area, Daxing District, Beijing",
-                "AccessPointName": "Beijing 21Vianet 1"
+                "Location": "北京市大兴区亦庄开发区同济中路15号",
+                "AccessPointName": "北京世纪互联1"
             },
             {
                 "LineOperator": [
@@ -70,8 +70,8 @@ Output:
                 "RegionId": "ap-beijing",
                 "AccessPointId": "ap-cn-beijing-zj",
                 "State": "AVAILABLE",
-                "Location": "No. 1, Bo'xing 8th Road, Beijing Economic-Technological Development Area, Beijing"
-                "AccessPointName": "Beijing CICC"
+                "Location": "北京亦庄经济技术开发区博兴八路1号",
+                "AccessPointName": "北京中金"
             },
             {
                 "LineOperator": [
@@ -85,8 +85,8 @@ Output:
                 "RegionId": "ap-beijing",
                 "AccessPointId": "ap-cn-beijing-yf",
                 "State": "UNAVAILABLE",
-                "Location": "Building B4, Zone C, AT&M Park, No. 11, Middle Fenghui Road, Haidian District, Beijing",
-                "AccessPointName": "Beijing Yongfeng"
+                "Location": "北京市海淀区丰慧中路11号安泰科技园C区B4栋",
+                "AccessPointName": "北京永丰"
             },
             {
                 "LineOperator": [
@@ -100,8 +100,8 @@ Output:
                 "RegionId": "ap-beijing",
                 "AccessPointId": "ap-cn-beijing-kc",
                 "State": "AVAILABLE",
-                "Location": "No. 15, Kechuang 9th Street, Beijing Economic-Technological Development Area, Beijing",
-                "AccessPointName": "Beijing Kechuang"
+                "Location": "北京市经济技术开发区科创九街十五号",
+                "AccessPointName": "北京科创"
             }
         ],
         "RequestId": "d591e41a-f3a5-4990-abf0-acdd88f238d9"
@@ -109,9 +109,9 @@ Output:
 }
 ```
 
-**Example 2: Getting the information of access points in a specific region**
+**Example 2: 获取单地域接入点信息**
 
-This example shows you how to get the information of access points in a specific region, where `AVAILABLE` indicates available access points and `UNAVAILABLE` indicates the unavailable ones.
+获取单地域接入点信息，其中AVAILABLE是可以使用的接入点，UNAVAILABLE是不可以使用的接入点。
 
 Input: 
 
@@ -138,8 +138,8 @@ Output:
                 "RegionId": "ap-chongqing",
                 "AccessPointId": "ap-cn-chongqing-yf",
                 "State": "AVAILABLE",
-                "Location": "Chongqing China Telecom Yunfu Data Center",
-                "AccessPointName": "Chongqing Yunfu"
+                "Location": "重庆电信云福DC",
+                "AccessPointName": "重庆云福"
             },
             {
                 "LineOperator": [
@@ -153,8 +153,8 @@ Output:
                 "RegionId": "ap-chongqing",
                 "AccessPointId": "ap-cn-chongqing-yx",
                 "State": "AVAILABLE",
-                "Location": "Chongqing China Unicom Yunxiang Data Center",
-                "AccessPointName": "Chongqing Yunxiang"
+                "Location": "重庆联通云祥DC",
+                "AccessPointName": "重庆云祥"
             }
         ],
         "RequestId": "b6aa097b-3cd9-4c79-bf41-bb0d2427ffa1"

@@ -1,6 +1,6 @@
-**Example 1: Modifying the public network bandwidth cap of an instance**
+**Example 1: 调整实例公网带宽上限**
 
-This example shows you how to modify the public network bandwidth cap of an instance.
+本示例用于调整一个实例的公网带宽上限。
 
 Input: 
 

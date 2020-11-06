@@ -1,4 +1,4 @@
-**Example 1: Restoring a `PendingDelete` Secret**
+**Example 1: 恢复计划删除中的凭据**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Encrypting data**
+**Example 1: 加密接口示例**
 
-This example shows you how to use a CMK to encrypt data up to 4 KB.
+使用CMK对小于4KB的数据加密。
 
 Input: 
 

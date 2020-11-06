@@ -1,4 +1,4 @@
-**Example 1: Getting task details**
+**Example 1: 获取任务详情**
 
 
 

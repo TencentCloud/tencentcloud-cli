@@ -1,4 +1,4 @@
-**Example 1: Modifying an EIP name**
+**Example 1: 修改EIP名称**
 
 
 

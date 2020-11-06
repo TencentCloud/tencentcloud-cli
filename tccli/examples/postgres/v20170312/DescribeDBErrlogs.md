@@ -1,4 +1,4 @@
-**Example 1: Getting error logs**
+**Example 1: 获取错误日志**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Pausing a real-time recording task**
+**Example 1: 暂停实时录制**
 
 
 
@@ -14,6 +14,7 @@ Output:
 ```
 {
     "Response": {
+        "Backup": "{}",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }

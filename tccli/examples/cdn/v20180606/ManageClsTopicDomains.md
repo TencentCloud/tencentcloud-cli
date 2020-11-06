@@ -1,4 +1,4 @@
-**Example 1: Managing the list of domain names under log topic**
+**Example 1: 管理日志主题下域名列表**
 
 
 

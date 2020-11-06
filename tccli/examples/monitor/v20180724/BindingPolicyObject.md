@@ -1,4 +1,4 @@
-**Example 1: Binding a policy object**
+**Example 1: 绑定策略对象**
 
 
 

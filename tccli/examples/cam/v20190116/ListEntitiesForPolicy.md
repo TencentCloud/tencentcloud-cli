@@ -1,4 +1,4 @@
-**Example 1: Querying the list of entities associated with a policy**
+**Example 1: 查询策略关联的实体列表**
 
 
 

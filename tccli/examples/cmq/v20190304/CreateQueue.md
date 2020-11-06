@@ -1,6 +1,6 @@
-**Example 1: Creating queue**
+**Example 1: 创建队列**
 
-This example shows you how to create a queue.
+创建队列示例
 
 Input: 
 

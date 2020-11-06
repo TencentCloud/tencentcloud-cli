@@ -1,4 +1,4 @@
-**Example 1: Viewing the compute environment details**
+**Example 1: 查看计算环境详细信息**
 
 
 

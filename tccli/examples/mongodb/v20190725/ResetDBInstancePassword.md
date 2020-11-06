@@ -1,4 +1,4 @@
-**Example 1: Modifying instance password**
+**Example 1: 修改实例用户的密码**
 
 
 

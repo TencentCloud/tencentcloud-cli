@@ -1,4 +1,4 @@
-**Example 1: Querying the list of instances by instance ID**
+**Example 1: 根据实例ID查询实例列表**
 
 
 
@@ -29,7 +29,7 @@ Output:
                 "UniqueVpcId": "vpc-5rkcp0wb",
                 "UniqueSubnetId": "subnet-6ffate6q",
                 "Status": 2,
-                "StatusDesc": "Running",
+                "StatusDesc": "运行中",
                 "Vip": "172.17.0.10",
                 "Vport": 3306,
                 "WanDomain": "",

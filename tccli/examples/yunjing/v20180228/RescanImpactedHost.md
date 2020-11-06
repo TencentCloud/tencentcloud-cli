@@ -1,6 +1,6 @@
-**Example 1: Scanning for a vulnerability again**
+**Example 1: 重新检测一个漏洞**
 
-This example shows you how to scan for a vulnerability again.
+重新检测一个漏洞
 
 Input: 
 

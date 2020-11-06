@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -17,9 +17,9 @@ Output:
     "Response": {
         "ProIspInfoList": [
             {
-                "CountryAreaName": "China",
-                "ProvinceName": "Shandong",
-                "IspName": "China Mobile",
+                "CountryAreaName": "中国",
+                "ProvinceName": "山东省",
+                "IspName": "中国移动",
                 "Code2xx": 11,
                 "Code3xx": 12,
                 "Code4xx": 10,

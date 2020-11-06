@@ -1,4 +1,4 @@
-**Example 1: Enabling Read/write Separation**
+**Example 1: 启用读写分离**
 
 
 

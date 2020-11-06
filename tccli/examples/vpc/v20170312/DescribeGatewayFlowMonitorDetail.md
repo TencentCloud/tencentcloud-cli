@@ -1,4 +1,4 @@
-**Example 1: Querying the traffic monitoring details of a NAT gateway**
+**Example 1: 查询一个NAT网关流量监控明细**
 
 
 

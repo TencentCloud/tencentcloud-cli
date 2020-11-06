@@ -1,4 +1,4 @@
-**Example 1: Modifying TencentDB account password**
+**Example 1: 修改云数据库账号的密码**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Verifying the detection parameters based on the ID of a network detection instance**
+**Example 1: 根据网络探测ID验证探测参数**
 
 
 
@@ -36,7 +36,7 @@ Output:
 }
 ```
 
-**Example 2: Verifying the detection parameters based on the entered information**
+**Example 2: 根据输入信息验证探测参数**
 
 
 

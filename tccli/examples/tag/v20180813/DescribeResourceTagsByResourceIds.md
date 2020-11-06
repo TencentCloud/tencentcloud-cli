@@ -1,4 +1,4 @@
-**Example 1: Querying resource tags**
+**Example 1: 查看资源关联的标签**
 
 
 
@@ -21,8 +21,9 @@ Output:
         "Limit": 15,
         "Tags": [
             {
-                "TagKey": "string",
-                "TagValue": "string",
+                "ServiceType": "cvm",
+                "TagKey": "testKey",
+                "TagValue": "字符串",
                 "TagKeyMd5": "cc4dd1da7e1a754534215f02fb9ba85d",
                 "TagValueMd5": "cc4dd1da7e1a754534215f02fb9ba85d",
                 "ResourceId": "ins-1234"

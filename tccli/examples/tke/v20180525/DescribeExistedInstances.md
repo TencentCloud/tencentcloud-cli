@@ -1,6 +1,6 @@
-**Example 1: Querying an Existing Node**
+**Example 1: 查询已经存在的节点**
 
-Query an existing node to determine whether it can be added to a cluster
+查询已经存在的节点，判断是否可以加入集群
 
 Input: 
 
@@ -20,7 +20,7 @@ Output:
                 "UnusableReason": "",
                 "AlreadyInCluster": "",
                 "InstanceId": "ins-xxxxxxxx",
-                "InstanceName": "Not named",
+                "InstanceName": "未命名",
                 "PrivateIpAddresses": [
                     "192.168.x.x"
                 ],

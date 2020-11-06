@@ -1,4 +1,4 @@
-**Example 1: Running FlushRouterConfig on all mongos instances**
+**Example 1: 在所有Mongos上执行FlushRouterConfig**
 
 
 

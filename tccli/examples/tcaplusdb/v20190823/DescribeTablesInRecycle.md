@@ -1,6 +1,6 @@
-**Example 1: Querying the list of tables in recycle bin**
+**Example 1: 查询回收站表格列表**
 
-This example shows you how to query the list of tables in the recycle bin.
+查询回收站表格列表
 
 Input: 
 
@@ -17,7 +17,7 @@ Output:
         "TableInfos": [
             {
                 "ApiAccessId": "10",
-                "ClusterName": "gz test App",
+                "ClusterName": "gz测试App",
                 "ClusterId": "5674209986",
                 "CreatedTime": "2019-08-29 22:03:27",
                 "Error": null,

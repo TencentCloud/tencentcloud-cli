@@ -1,4 +1,4 @@
-**Example 1: Deleting the imported key material**
+**Example 1: 删除导入的密钥材料**
 
 
 

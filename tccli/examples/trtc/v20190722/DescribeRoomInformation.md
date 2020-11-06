@@ -1,4 +1,4 @@
-**Example 1: Querying the room list under a specified `SDKAppID`**
+**Example 1: 查询sdkappid下房间列表**
 
 
 

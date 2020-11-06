@@ -1,4 +1,4 @@
-**Example 1: Using policy matching to delete inbound policies of security groups**
+**Example 1: 使用规则匹配删除安全组入站规则**
 
 
 
@@ -23,7 +23,7 @@ Output:
 }
 ```
 
-**Example 2: Using policy matching to delete outbound policies of security groups**
+**Example 2: 使用规则匹配删除安全组出站规则**
 
 
 
@@ -48,7 +48,7 @@ Output:
 }
 ```
 
-**Example 3: Using index matching to delete inbound policies of security groups**
+**Example 3: 使用索引匹配删除安全组入站规则**
 
 
 
@@ -72,7 +72,7 @@ Output:
 }
 ```
 
-**Example 4: Using index matching to delete outbound policies of security groups**
+**Example 4: 使用索引匹配删除安全组出站规则**
 
 
 

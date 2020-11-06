@@ -1,4 +1,4 @@
-**Example 1: Getting user list for instance postgres-apzvwncr**
+**Example 1: 获取实例postgres-apzvwncr的用户列表**
 
 
 
@@ -19,7 +19,7 @@ Output:
             {
                 "UserName": "root",
                 "Status": 2,
-                "Remark": "(Test) this account is invalid",
+                "Remark": "（测试）这个账户是无效的",
                 "DBInstanceId": "postgres-apzvwncr",
                 "UpdateTime": "2018-06-12 17:21:57",
                 "CreateTime": "2018-06-12 17:21:54"

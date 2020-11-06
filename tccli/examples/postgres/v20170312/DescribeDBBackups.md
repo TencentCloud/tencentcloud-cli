@@ -1,4 +1,4 @@
-**Example 1: Querying backup list for instance postgres-6fego161**
+**Example 1: 查询实例postgres-6fego161备份列表**
 
 
 

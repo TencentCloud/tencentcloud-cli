@@ -1,6 +1,6 @@
-**Example 1: Calling the GetGroupList API**
+**Example 1: 获取人员库列表接口**
 
-This example shows you how to get the group list.
+获取人员库列表
 
 Input: 
 
@@ -16,27 +16,27 @@ Output:
     "Response": {
         "GroupInfos": [
             {
-                "GroupName": "Tencent Shenzhen Employees",
+                "GroupName": "腾讯深圳员工",
                 "GroupId": "TencentShenZhenEmployee",
                 "GroupExDescriptions": [
-                    "Business group",
-                    "Department name",
-                    "Group name"
+                    "事业群",
+                    "部门名",
+                    "组名"
                 ],
-                "Tag": "Excluding interns"
-                "FaceModelVersion":"3.0",
+                "Tag": "不含实习生",
+                "FaceModelVersion": "3.0",
                 "CreationTimestamp": 1592210245686
             },
             {
-                "GroupName": "Building 1, Zhuyuan Dormitory of XXX University",
+                "GroupName": "某某大学竹园宿舍楼1号楼",
                 "GroupId": "ZhuYuanDormitoryNo1",
                 "GroupExDescriptions": [
-                    "School name",
-                    "Major",
-                    "Grade",
-                    "Student ID"
+                    "学院名",
+                    "专业",
+                    "年级",
+                    "学号"
                 ],
-                "Tag": "Female only"
+                "Tag": "全是女生哦",
                 "FaceModelVersion": "3.0",
                 "CreationTimestamp": 1594552117118
             }
@@ -47,9 +47,9 @@ Output:
 }
 ```
 
-**Example 2: Sample Error**
+**Example 2: 错误示例**
 
-This example shows the error occurred when the starting number is less than 0.
+起始序号不能小于0
 
 Input: 
 
@@ -72,9 +72,9 @@ Output:
 }
 ```
 
-**Example 3: Sample Error 2**
+**Example 3: 错误示例-2**
 
-This example shows the error occurred when the number of returned results is greater than 1000.
+返回数量不能大于1000
 
 Input: 
 
@@ -90,7 +90,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.LimitExceed",
-            "Message": "Number of returned results exceeded the limit."
+            "Message": "返回数量不在合法范围内。"
         },
         "RequestId": "a6bb57de-773b-45e4-9e1c-c30ef48eba85"
     }

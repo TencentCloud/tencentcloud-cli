@@ -1,4 +1,4 @@
-**Example 1: Associating tag with multiple CVM instances in Guangzhou**
+**Example 1: 给广州地域多个云主机实例关联标签**
 
 
 

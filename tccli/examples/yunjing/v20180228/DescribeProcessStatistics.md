@@ -1,6 +1,6 @@
-**Example 1: Getting process statistics list**
+**Example 1: 获取进程统计列表数据**
 
-This example shows you how to get the process statistics list.
+获取进程统计列表数据
 
 Input: 
 

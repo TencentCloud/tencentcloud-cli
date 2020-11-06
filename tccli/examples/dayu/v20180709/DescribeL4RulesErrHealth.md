@@ -1,4 +1,4 @@
-**Example 1: Getting the exception result of layer-4 forwarding rule health check**
+**Example 1: 获取L4转发规则健康检查异常结果**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Disabling CMKs in batches**
+**Example 1: 批量禁止CMK**
 
-This example shows you how to disable the CMKs on a specified list in batches.
+对指定的CMK 列表进行批量禁止。
 
 Input: 
 

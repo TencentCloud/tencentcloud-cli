@@ -1,4 +1,4 @@
-**Example 1: Adding a domain name**
+**Example 1: 添加域名**
 
 
 

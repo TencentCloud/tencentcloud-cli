@@ -1,4 +1,4 @@
-**Example 1: Reporting metrics from a client**
+**Example 1: 客户端上报指标**
 
 
 

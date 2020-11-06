@@ -1,4 +1,4 @@
-**Example 1: Modifying the security groups bound to a TencentDB instance**
+**Example 1: 修改云数据库安全组**
 
 
 

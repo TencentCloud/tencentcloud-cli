@@ -1,6 +1,6 @@
-**Example 1: Creating an ES Cluster Instance**
+**Example 1: 创建ES集群实例**
 
-This example shows you how to create an ES cluster instance based on the input parameters
+根据输入参数创建ES集群实例
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Viewing the Configuration Information of Pay-as-you-go Models in Chongqing Zone 1**
+**Example 1: 查看重庆一区按量计费机型配置信息**
 
 
 
@@ -19,7 +19,6 @@ Output:
         "InstanceTypeQuotaSet": [
             {
                 "Status": "SELL",
-                "InstanceQuota": 1998,
                 "Zone": "ap-chongqing-1",
                 "NetworkCard": 0,
                 "Price": {
@@ -29,7 +28,7 @@ Output:
                 "InstanceFamily": "S3",
                 "Externals": {},
                 "Cpu": 1,
-                "TypeName": "Standard S3",
+                "TypeName": "标准型S3",
                 "InstanceChargeType": "POSTPAID_BY_HOUR",
                 "Memory": 1,
                 "LocalDiskTypeList": [],
@@ -37,7 +36,6 @@ Output:
             },
             {
                 "Status": "SELL",
-                "InstanceQuota": 1999,
                 "Zone": "ap-chongqing-1",
                 "NetworkCard": 0,
                 "Price": {
@@ -47,7 +45,7 @@ Output:
                 "InstanceFamily": "S3",
                 "Externals": {},
                 "Cpu": 1,
-                "TypeName": "Standard S3",
+                "TypeName": "标准型S3",
                 "InstanceChargeType": "POSTPAID_BY_HOUR",
                 "Memory": 2,
                 "LocalDiskTypeList": [],

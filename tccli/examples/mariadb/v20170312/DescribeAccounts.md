@@ -1,4 +1,4 @@
-**Example 1: Querying TencentDB account list**
+**Example 1: 查询云数据库账号列表**
 
 
 
@@ -19,7 +19,7 @@ Output:
             {
                 "UserName": "testuser1",
                 "Host": "172.17.%",
-                "Description": "Test account",
+                "Description": "测试帐号",
                 "CreateTime": "2016-07-15 18:39:47",
                 "UpdateTime": "2016-07-18 12:42:31",
                 "ReadOnly": 0,
@@ -28,7 +28,7 @@ Output:
             {
                 "UserName": "testuser2",
                 "Host": "%",
-                "Description": "Test account",
+                "Description": "测试帐号",
                 "CreateTime": "2016-07-18 11:51:33",
                 "UpdateTime": "2016-07-18 12:42:44",
                 "ReadOnly": 0,

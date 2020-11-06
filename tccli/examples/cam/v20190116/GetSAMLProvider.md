@@ -1,6 +1,6 @@
-**Example 1: Querying Identity Provider Details**
+**Example 1: 查询身份提供商详情**
 
-Querying identity provider details
+查询身份提供商详情
 
 Input: 
 

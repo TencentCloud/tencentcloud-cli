@@ -1,4 +1,4 @@
-**Example 1: Deleting a mount target**
+**Example 1: 删除挂载点**
 
 
 

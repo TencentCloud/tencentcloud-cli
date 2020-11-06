@@ -1,4 +1,4 @@
-**Example 1: Deleting a permission group**
+**Example 1: 删除权限组**
 
 
 

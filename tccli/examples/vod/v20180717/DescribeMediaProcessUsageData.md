@@ -1,4 +1,4 @@
-**Example 1: Querying video processing usage**
+**Example 1: 查询视频处理用量**
 
 
 
@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli vod DescribeMediaProcessUsageData --cli-unfold-argument  \
-    --StartTime 2019-07-02T00:00:00+08:00 \
-    --EndTime 2019-07-03T00:00:00+08:00
+    --StartTime 2020-09-07T00:00:00+08:00 \
+    --EndTime 2020-09-09T23:59:59+08:00 \
+    --Type Transcoding-TESHD
 ```
 
 Output: 
@@ -16,62 +17,62 @@ Output:
     "Response": {
         "MediaProcessDataSet": [
             {
-                "TaskType": "Transcode",
+                "TaskType": "Transcoding-TESHD",
                 "Summary": [
                     {
-                        "Time": "2019-07-02T00:00:00+08:00",
-                        "Count": 3,
-                        "Usage": 30
+                        "Time": "2020-09-07T00:00:00+08:00",
+                        "Count": 2,
+                        "Usage": 26
                     },
                     {
-                        "Time": "2019-07-03T00:00:00+08:00",
-                        "Count": 3,
-                        "Usage": 30
+                        "Time": "2020-09-08T00:00:00+08:00",
+                        "Count": 2,
+                        "Usage": 168
+                    },
+                    {
+                        "Time": "2020-09-09T00:00:00+08:00",
+                        "Count": 2,
+                        "Usage": 26
                     }
                 ],
                 "Details": [
                     {
-                        "Specification": "Audio",
+                        "Specification": "TESHD-10.H264.SD",
                         "Data": [
                             {
-                                "Time": "2019-07-02T00:00:00+08:00",
-                                "Count": 1,
-                                "Usage": 10
+                                "Time": "2020-09-07T00:00:00+08:00",
+                                "Count": 2,
+                                "Usage": 26
                             },
                             {
-                                "Time": "2019-07-03T00:00:00+08:00",
+                                "Time": "2020-09-08T00:00:00+08:00",
                                 "Count": 1,
-                                "Usage": 10
+                                "Usage": 84
+                            },
+                            {
+                                "Time": "2020-09-09T00:00:00+08:00",
+                                "Count": 2,
+                                "Usage": 26
                             }
                         ]
                     },
                     {
-                        "Specification": "Standard.H264.HD",
+                        "Specification": "TESHD-10.H264.HD",
                         "Data": [
                             {
-                                "Time": "2019-07-02T00:00:00+08:00",
-                                "Count": 1,
-                                "Usage": 10
+                                "Time": "2020-09-07T00:00:00+08:00",
+                                "Count": 0,
+                                "Usage": 0
                             },
                             {
-                                "Time": "2019-07-03T00:00:00+08:00",
+                                "Time": "2020-09-08T00:00:00+08:00",
                                 "Count": 1,
-                                "Usage": 10
-                            }
-                        ]
-                    },
-                    {
-                        "Specification": "TESHD-10.H265.4K",
-                        "Data": [
-                            {
-                                "Time": "2019-07-02T00:00:00+08:00",
-                                "Count": 1,
-                                "Usage": 10
+                                "Usage": 84
                             },
                             {
-                                "Time": "2019-07-03T00:00:00+08:00",
-                                "Count": 1,
-                                "Usage": 10
+                                "Time": "2020-09-09T00:00:00+08:00",
+                                "Count": 0,
+                                "Usage": 0
                             }
                         ]
                     }

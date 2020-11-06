@@ -1,4 +1,4 @@
-**Example 1: Enabling the specified scaling group**
+**Example 1: 启用指定伸缩组**
 
 
 

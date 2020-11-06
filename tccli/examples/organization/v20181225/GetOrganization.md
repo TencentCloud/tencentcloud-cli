@@ -1,4 +1,4 @@
-**Example 1: Obtaining organization information**
+**Example 1: 获取企业组织信息**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Exporting unusual login location records**
+**Example 1: 导出异地登录记录**
 
-This example shows you how to export unusual login location records into a CSV file.
+导出异地登录事件记录CSV文件
 
 Input: 
 

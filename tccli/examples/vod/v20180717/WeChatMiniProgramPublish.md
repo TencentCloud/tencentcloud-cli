@@ -1,6 +1,6 @@
-**Example 1: Initiating a release on WeChat Mini Program task**
+**Example 1: 发起小程序视频发布任务**
 
-This example shows you how to initiate a release on WeChat Mini Program task for the video whose `fileId` is `5285485487985271487` with transcoding template ID 10.
+对 fileId 为 5285485487985271487 的视频发起微信小程发布任务，且发布视频所对应的转码模板 ID 为 10。
 
 Input: 
 

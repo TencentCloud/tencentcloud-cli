@@ -1,4 +1,4 @@
-**Example 1: Restoring an instance**
+**Example 1: 恢复实例**
 
 
 

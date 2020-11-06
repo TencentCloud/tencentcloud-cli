@@ -1,4 +1,4 @@
-**Example 1: Creating an acceleration connection price inquiry**
+**Example 1: 创建加速通道询价**
 
 
 

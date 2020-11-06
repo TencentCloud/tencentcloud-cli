@@ -1,4 +1,4 @@
-**Example 1: Obtaining Domain Name Resolution Configuration Details of a Connection Group**
+**Example 1: 获取通道组域名解析配置详情**
 
 
 

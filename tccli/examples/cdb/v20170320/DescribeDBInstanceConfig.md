@@ -1,4 +1,4 @@
-**Example 1: Querying the configuration information of a TencentDB instance**
+**Example 1: 查询云数据库实例的配置信息**
 
 
 

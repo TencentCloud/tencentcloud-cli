@@ -1,6 +1,6 @@
-**Example 1: Querying service status**
+**Example 1: 查询服务状态**
 
-This example shows you how to query the service status.
+查询服务状态
 
 Input: 
 
@@ -13,6 +13,10 @@ Output:
     "Response": {
         "ServiceEnabled": true,
         "InvalidType": 1,
+        "UserLevel": 0,
+        "ProResourceId": "kms_pro_12345",
+        "ProRenewFlag": 1,
+        "ProExpireTime": 1603701385,
         "RequestId": "1b580852-1e38-11e9-b129-5cb9019b4b00"
     }
 }

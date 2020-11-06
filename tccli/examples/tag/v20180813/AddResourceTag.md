@@ -1,4 +1,4 @@
-**Example 1: Associating resources and tags**
+**Example 1: 给标签关联资源**
 
 
 

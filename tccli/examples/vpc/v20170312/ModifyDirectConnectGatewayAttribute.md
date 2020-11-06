@@ -1,4 +1,4 @@
-**Example 1: Modifying the attributes of a direct connect gateway**
+**Example 1: 修改专线网关属性**
 
 
 

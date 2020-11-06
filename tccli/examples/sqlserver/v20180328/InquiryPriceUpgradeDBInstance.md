@@ -1,4 +1,4 @@
-**Example 1: Querying the scaling price of instance**
+**Example 1: 查询实例扩容价格**
 
 
 

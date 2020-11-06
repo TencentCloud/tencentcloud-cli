@@ -1,6 +1,6 @@
-**Example 1: Modifying or deleting an instance tag**
+**Example 1: 修改、删除实例标签**
 
-This example shows you how to add, modify, or delete an instance tag.
+使用该接口，可以对实例标签进行添加、修改或者删除
 
 Input: 
 

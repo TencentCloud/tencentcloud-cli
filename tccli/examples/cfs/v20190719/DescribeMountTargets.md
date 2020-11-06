@@ -1,4 +1,4 @@
-**Example 1: Querying mount targets of a file system**
+**Example 1: 查询文件系统挂载点**
 
 
 

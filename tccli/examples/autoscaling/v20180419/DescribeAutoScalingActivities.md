@@ -1,4 +1,4 @@
-**Example 1: Using Filters to view the list of scaling activities**
+**Example 1: 使用Filters查看伸缩活动列表**
 
 
 
@@ -41,7 +41,7 @@ Output:
 }
 ```
 
-**Example 2: Querying the list of scaling activities by scaling activity ID**
+**Example 2: 根据伸缩活动ID查询伸缩活动列表**
 
 
 

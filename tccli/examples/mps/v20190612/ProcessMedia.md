@@ -1,6 +1,6 @@
-**Example 1: Initiating a transcoding task**
+**Example 1: 发起转码任务**
 
-This example shows you how to initiate a transcoding task for a video at a specified COS endpoint to output in three formats of 20, 30, and 40.
+对指定 COS 地址的视频发起转码任务，转出20，30，40三种格式。
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Updating a permission group rule**
+**Example 1: 更新权限组规则**
 
 
 

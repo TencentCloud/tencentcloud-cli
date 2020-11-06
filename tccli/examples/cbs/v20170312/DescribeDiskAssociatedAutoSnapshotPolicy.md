@@ -1,4 +1,4 @@
-**Example 1: Querying the Scheduled Snapshot Policies Bound to the Cloud Disk Named `disk-dw0bbzws`**
+**Example 1: 查询云盘disk-dw0bbzws绑定的定期快照策略**
 
 
 

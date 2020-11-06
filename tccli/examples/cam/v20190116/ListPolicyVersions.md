@@ -1,6 +1,6 @@
-**Example 1: Getting a list of policy versions**
+**Example 1: 获取策略版本列表**
 
-This example shows you how to get the list of policy versions.
+获取一个策略的版本列表
 
 Input: 
 

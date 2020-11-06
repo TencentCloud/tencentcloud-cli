@@ -1,4 +1,4 @@
-**Example 1: Comparing faces**
+**Example 1: 人脸比对接口**
 
 
 

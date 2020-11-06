@@ -1,4 +1,4 @@
-**Example 1: Unassociating a Policy and a Role**
+**Example 1: 解绑角色的策略**
 
 
 

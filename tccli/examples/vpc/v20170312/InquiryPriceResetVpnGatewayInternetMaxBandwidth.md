@@ -1,4 +1,4 @@
-**Example 1: Querying the price for adjusting the bandwidth cap of a VPN gateway**
+**Example 1: 调整VPN网关带宽上限询价**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Configuring data subscription**
+**Example 1: 配置数据订阅**
 
-This example shows you how to configure a data subscription.
+配置数据订阅
 
 Input: 
 
@@ -15,7 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "AsyncRequestId": "cafebabe-254f-11ea-8995-e92c139e6978"
+        "AsyncRequestId": "cafebabe-254f-11ea-8995-e92c139e6978",
+        "RequestId": "9iu7ueht-c38f-11ea-84e5-d5a93c1b919b"
     }
 }
 ```

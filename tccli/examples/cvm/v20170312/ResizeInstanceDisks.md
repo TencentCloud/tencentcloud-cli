@@ -1,4 +1,4 @@
-**Example 1: Resetting the disk size of a specific instance**
+**Example 1: 重置一块指定id的磁盘大小**
 
 
 

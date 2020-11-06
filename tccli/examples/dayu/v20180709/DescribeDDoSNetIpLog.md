@@ -1,4 +1,4 @@
-**Example 1: Getting the DDoS IP attack logs of Anti-DDoS Ultimate resource**
+**Example 1: 获取高防IP专业版资源的DDoSIP攻击日志**
 
 
 
@@ -29,7 +29,7 @@ Output:
                     },
                     {
                         "Key": "LogMessage",
-                        "Value": "3.3.1.6 (Shanghai, China Unicom) is under DDoS attack with an attack traffic bandwidth of 10,123 Mbps"
+                        "Value": "3.3.1.6(上海, 联通)受到DDoS攻击, 攻击流量达10123Mbps"
                     }
                 ]
             },
@@ -41,7 +41,7 @@ Output:
                     },
                     {
                         "Key": "LogMessage",
-                        "Value": "The DDoS attack to 3.3.1.6 (Shanghai, China Unicom) has stopped"
+                        "Value": "3.3.1.6(上海, 联通)遭受的DDoS攻击已停止"
                     }
                 ]
             }

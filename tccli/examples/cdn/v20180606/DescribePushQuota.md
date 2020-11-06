@@ -1,4 +1,4 @@
-**Example 1: Querying prefetch usage quota**
+**Example 1: 查询预热用量配额**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Renaming a TencentDB instance**
+**Example 1: 重命名云数据库实例**
 
 
 

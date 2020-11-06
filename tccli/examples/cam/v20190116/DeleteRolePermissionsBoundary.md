@@ -1,4 +1,4 @@
-**Example 1: Deleting a role permission boundary**
+**Example 1: 删除角色权限边界**
 
 
 

@@ -1,6 +1,6 @@
-**Example 1: Getting vulnerability data in weekly CWP Pro report**
+**Example 1: 获取专业版周报漏洞数据**
 
-This example shows you how to get the vulnerability data in the weekly CWP Pro report.
+获取专业版周报漏洞数据
 
 Input: 
 
@@ -17,8 +17,8 @@ Output:
         "WeeklyReportVuls": [
             {
                 "MachineIp": "10.10.10.12",
-                "VulName": "Vulnerability name",
-                "Description": "Vulnerability description",
+                "VulName": "漏洞名称",
+                "Description": "漏洞描述",
                 "VulType": "WEB",
                 "VulStatus": "FIXED",
                 "LastScanTime": "2018-10-11 12:23:22"

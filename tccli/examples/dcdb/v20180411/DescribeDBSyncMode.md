@@ -1,4 +1,4 @@
-**Example 1: Querying the sync mode of a TencentDB instance**
+**Example 1: 查询云数据库同步模式**
 
 
 

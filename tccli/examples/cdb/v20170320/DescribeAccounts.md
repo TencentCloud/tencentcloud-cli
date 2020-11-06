@@ -1,4 +1,4 @@
-**Example 1: Querying the information of all TencentDB accounts**
+**Example 1: 查询云数据库的所有账号信息**
 
 
 

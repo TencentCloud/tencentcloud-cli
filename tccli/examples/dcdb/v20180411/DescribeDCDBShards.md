@@ -1,4 +1,4 @@
-**Example 1: Querying the shard information of a TencentDB instance**
+**Example 1: 查询云数据库分片信息**
 
 
 
@@ -22,7 +22,7 @@ Output:
                 "ShardSerialId": "set_1536756357_1",
                 "ShardInstanceId": "shard-5d4efnj7",
                 "Status": 2,
-                "StatusDesc": "Running",
+                "StatusDesc": "运行中",
                 "CreateTime": "2018-09-12 20:44:47",
                 "VpcId": "vpc-5rkcp0wb",
                 "SubnetId": "subnet-6ffate6q",
@@ -42,7 +42,7 @@ Output:
                 "ShardSerialId": "set_1536756415_3",
                 "ShardInstanceId": "shard-8huhv1y9",
                 "Status": 2,
-                "StatusDesc": "Running",
+                "StatusDesc": "运行中",
                 "CreateTime": "2018-09-12 20:44:47",
                 "VpcId": "vpc-5rkcp0wb",
                 "SubnetId": "subnet-6ffate6q",

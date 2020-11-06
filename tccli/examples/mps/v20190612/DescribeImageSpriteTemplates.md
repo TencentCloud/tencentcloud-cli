@@ -1,4 +1,4 @@
-**Example 1: Getting the list of image sprite generating templates**
+**Example 1: 获取雪碧图模板列表**
 
 
 
@@ -17,7 +17,7 @@ Output:
         "ImageSpriteTemplateSet": [
             {
                 "Definition": 10001,
-                "Name": "Image sprite generating template 1",
+                "Name": "雪碧图模板1",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",
                 "Height": 540,

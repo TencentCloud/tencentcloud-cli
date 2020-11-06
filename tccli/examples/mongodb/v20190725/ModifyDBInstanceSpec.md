@@ -1,4 +1,4 @@
-**Example 1: Adjusting the configurations of a TencentDB instance**
+**Example 1: 调整云数据库实例配置**
 
 
 

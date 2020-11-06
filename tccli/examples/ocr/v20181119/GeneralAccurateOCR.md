@@ -1,4 +1,4 @@
-**Example 1: Recognizing general print (high-precision) ([debugging tool](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralAccurateOCR))**
+**Example 1: 通用印刷体识别（高精度版）示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralAccurateOCR)**
 
 
 

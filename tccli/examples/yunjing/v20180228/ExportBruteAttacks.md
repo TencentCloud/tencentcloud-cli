@@ -1,6 +1,6 @@
-**Example 1: Exporting password cracking records**
+**Example 1: 导出密码破解记录**
 
-This example shows you how to export password cracking records into a CSV file.
+导出密码破解记录成CSV文件
 
 Input: 
 

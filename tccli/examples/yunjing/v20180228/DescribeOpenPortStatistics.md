@@ -1,6 +1,6 @@
-**Example 1: Getting port statistics list**
+**Example 1: 获取端口统计列表**
 
-This example shows you how to get the port statistics list.
+获取端口统计列表
 
 Input: 
 

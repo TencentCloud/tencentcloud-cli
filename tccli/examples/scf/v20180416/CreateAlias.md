@@ -1,4 +1,4 @@
-**Example 1: Creating an alias**
+**Example 1: 创建一个别名**
 
 
 

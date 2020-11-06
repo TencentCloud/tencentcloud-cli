@@ -1,4 +1,4 @@
-**Example 1: Getting dense keypoints**
+**Example 1: 稠密关键点接口**
 
 
 

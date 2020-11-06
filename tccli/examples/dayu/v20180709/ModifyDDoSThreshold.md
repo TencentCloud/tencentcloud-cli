@@ -1,4 +1,4 @@
-**Example 1: Modifying DDoS cleansing threshold.**
+**Example 1: 修改DDoS清洗阈值**
 
 
 

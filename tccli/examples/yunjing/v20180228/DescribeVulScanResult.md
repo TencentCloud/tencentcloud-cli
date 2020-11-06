@@ -1,6 +1,6 @@
-**Example 1: Gets vulnerability detection result**
+**Example 1: 获取漏洞检测结果**
 
-Gets vulnerability detection result
+获取漏洞检测结果
 
 Input: 
 

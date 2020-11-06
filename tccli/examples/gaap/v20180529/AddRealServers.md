@@ -1,4 +1,4 @@
-**Example 1: Adding origin server**
+**Example 1: 添加源站**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Querying VPN gateway-based CCN routes**
+**Example 1: 查询VPN网关云联网路由**
 
 
 

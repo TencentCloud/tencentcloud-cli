@@ -1,4 +1,4 @@
-**Example 1: Deleting a User from a User Group**
+**Example 1: 从用户组删除用户**
 
 
 

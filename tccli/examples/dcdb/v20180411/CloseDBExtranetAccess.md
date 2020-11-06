@@ -1,4 +1,4 @@
-**Example 1: Disabling public network access for TencentDB instance**
+**Example 1: 关闭云数据库实例的外网访问**
 
 
 

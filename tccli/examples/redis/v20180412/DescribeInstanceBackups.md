@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -23,7 +23,7 @@ Output:
                 "BackupId": "2e4127f8-affe-11e8-941e-4846fb00c75d",
                 "BackupType": "0",
                 "Status": 2,
-                "Remark": "For testing",
+                "Remark": "测试使用",
                 "Locked": 0
             },
             {

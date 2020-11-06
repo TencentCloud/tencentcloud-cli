@@ -1,4 +1,4 @@
-**Example 1: Sample**
+**Example 1: 示例**
 
 
 

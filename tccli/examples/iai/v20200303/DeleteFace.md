@@ -1,6 +1,6 @@
-**Example 1: Deleting face**
+**Example 1: 删除人脸接口**
 
-This example shows you how to delete the face images of a person.
+删除一个人员下的人脸图片
 
 Input: 
 
@@ -23,9 +23,9 @@ Output:
 }
 ```
 
-**Example 2: Sample error**
+**Example 2: 错误示例**
 
-The person ID does not exist.
+人员ID不存在
 
 Input: 
 
@@ -41,7 +41,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "ResourceNotFound.ErrorPersonNotExisted",
-            "Message": "The person does not exist."
+            "Message": "个体不存在。"
         },
         "RequestId": "e2b603e5-51d0-4a8a-8319-2df026ae7518"
     }

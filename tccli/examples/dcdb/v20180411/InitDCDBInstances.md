@@ -1,4 +1,4 @@
-**Example 1: Batch initialize cloud database instances**
+**Example 1: 批量初始化云数据库实例**
 
 
 

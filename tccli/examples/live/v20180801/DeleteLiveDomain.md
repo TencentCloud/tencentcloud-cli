@@ -1,4 +1,4 @@
-**Example 1: Deleting a domain name**
+**Example 1: 删除域名**
 
 
 

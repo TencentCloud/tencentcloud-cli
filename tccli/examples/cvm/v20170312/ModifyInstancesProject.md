@@ -1,6 +1,6 @@
-**Example 1: Modifying the projects of two instances**
+**Example 1: 修改两个实例所属的项目**
 
-This example shows you how to change the projects of two instances to a specified one.
+本示例用于修改两个实例所属的项目为指定的项目。
 
 Input: 
 

@@ -1,4 +1,4 @@
-**Example 1: Creating the CCN routes of a Direct Connect gateway**
+**Example 1: 创建专线网关云联网路由**
 
 
 

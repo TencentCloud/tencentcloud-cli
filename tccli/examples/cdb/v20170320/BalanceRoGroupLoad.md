@@ -1,4 +1,4 @@
-**Example 1: Rebalancing the loads of instances in an RO group**
+**Example 1: 均衡RO组内实例的负载**
 
 
 

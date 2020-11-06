@@ -1,4 +1,4 @@
-**Example 1: Getting the List of User Groups Associated with a User**
+**Example 1: 列出用户关联的用户组**
 
 
 

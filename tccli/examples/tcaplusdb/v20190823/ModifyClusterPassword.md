@@ -1,6 +1,6 @@
-**Example 1: Changing cluster password**
+**Example 1: 修改集群密码**
 
-This example shows you how to change a cluster password.
+修改集群密码
 
 Input: 
 

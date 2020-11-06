@@ -1,6 +1,6 @@
-**Example 1: Verifying table creation file**
+**Example 1: 创建表格文件校验**
 
-This example shows you how to select an uploaded table creation IDL file and verify it.
+选中已上传的创建表格IDL文件并校验
 
 Input: 
 

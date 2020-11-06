@@ -1,4 +1,4 @@
-**Example 1: Modifying a sampled screencapturing template**
+**Example 1: 修改采样截图模板**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli mps ModifySampleSnapshotTemplate --cli-unfold-argument  \
     --Definition 10001 \
-    --Name 'Sampled screencapturing template 1' \
+    --Name 采样截图模板1 \
     --Width 540 \
     --Height 960 \
     --SampleType Percent \

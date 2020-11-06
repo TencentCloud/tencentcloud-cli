@@ -1,4 +1,4 @@
-**Example 1: Getting target group list**
+**Example 1: 获取目标组列表**
 
 
 

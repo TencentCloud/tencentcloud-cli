@@ -1,4 +1,4 @@
-**Example 1: Modifying access frequency control rule for CC protection**
+**Example 1: 修改CC防护的访问频率控制规则**
 
 
 

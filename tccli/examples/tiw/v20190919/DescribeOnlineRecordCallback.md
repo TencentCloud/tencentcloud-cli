@@ -1,6 +1,6 @@
-**Example 1: Querying the real-time recording callback address**
+**Example 1: 查询实时录制回调地址**
 
-This example shows how to query the real-time recording callback address.
+查询实时录制回调地址
 
 Input: 
 

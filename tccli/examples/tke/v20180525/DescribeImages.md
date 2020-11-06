@@ -1,4 +1,4 @@
-**Example 1: Obtaining image information**
+**Example 1: 获取镜像信息**
 
 
 

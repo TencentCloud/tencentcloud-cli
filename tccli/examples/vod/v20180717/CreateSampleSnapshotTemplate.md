@@ -1,4 +1,4 @@
-**Example 1: Creating a sampled screencapturing template (with specified width and height)**
+**Example 1: 创建采样截图模板（指定宽高）**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateSampleSnapshotTemplate --cli-unfold-argument  \
-    --Name 'Screencapturing with specified width and height' \
+    --Name 固定宽高截图 \
     --Width 540 \
     --Height 960 \
     --SampleType Percent \
@@ -24,7 +24,7 @@ Output:
 }
 ```
 
-**Example 2: Creating a sampled screencapturing template (with specified long side)**
+**Example 2: 创建采样截图模板（指定长边）**
 
 
 
@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli vod CreateSampleSnapshotTemplate --cli-unfold-argument  \
-    --Name 'Long side screencapturing' \
+    --Name 长边截图 \
     --Width 0 \
     --Height 0 \
     --Long 1080 \

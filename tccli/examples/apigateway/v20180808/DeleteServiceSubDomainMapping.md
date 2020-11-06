@@ -1,4 +1,4 @@
-**Example 1: Deleting the path mapping of custom domain name**
+**Example 1: 删除自定义域名的路径映射**
 
 
 

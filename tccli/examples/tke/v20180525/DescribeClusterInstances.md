@@ -1,6 +1,6 @@
-**Example 1: Querying Information of Instances in a Cluster**
+**Example 1: 查询集群实例信息**
 
-Query information of instances in a cluster
+查询集群实例信息
 
 Input: 
 

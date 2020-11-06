@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -13,7 +13,7 @@ tccli sms AddSmsSign --cli-unfold-argument  \
     --UsedMethod 1 \
     --ProofImage "xxxx" \
     --CommissionImage "xxxx" \
-    --Remark xxxx
+    --Remark "xxxx"
 ```
 
 Output: 

@@ -1,4 +1,4 @@
-**Example 1: Querying space statistics of top tables**
+**Example 1: 获取Top表的空间统计信息**
 
 
 
@@ -16,6 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "ed279d8b-a9d9-48d6-9429-e0fde000994a",
+        "Timestamp": 1603819881,
         "TopSpaceTables": [
             {
                 "DataFree": 0,

@@ -1,4 +1,4 @@
-**Example 1: Modifying superplayer configuration**
+**Example 1: 修改超级播放器配置**
 
 
 

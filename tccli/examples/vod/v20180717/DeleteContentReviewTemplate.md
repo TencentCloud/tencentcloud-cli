@@ -1,6 +1,6 @@
-**Example 1: Deleting the content audit template whose template ID is 30**
+**Example 1: 删除模板 ID 为 30 的内容审核模板**
 
-This example shows you how to delete a custom AI-based content audit template.
+删除用户自定义 AI 内容审核模板。
 
 Input: 
 

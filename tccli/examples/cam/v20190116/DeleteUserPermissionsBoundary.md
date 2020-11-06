@@ -1,4 +1,4 @@
-**Example 1: Deleting a user permission boundary**
+**Example 1: 删除用户权限边界**
 
 
 

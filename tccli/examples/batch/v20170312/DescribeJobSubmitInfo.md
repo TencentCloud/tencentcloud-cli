@@ -1,4 +1,4 @@
-**Example 1: Obtaining job submission information**
+**Example 1: 获取作业的提交信息**
 
 
 

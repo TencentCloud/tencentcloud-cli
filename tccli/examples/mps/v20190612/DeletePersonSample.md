@@ -1,4 +1,4 @@
-**Example 1: Deleting figure sample**
+**Example 1: 删除人物样本**
 
 
 

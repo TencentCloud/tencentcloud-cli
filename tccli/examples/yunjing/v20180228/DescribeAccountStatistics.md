@@ -1,6 +1,6 @@
-**Example 1: Getting account statistics list**
+**Example 1: 获取帐号统计列表数据**
 
-This example shows you how to get the account statistics list.
+获取帐号统计列表数据
 
 Input: 
 

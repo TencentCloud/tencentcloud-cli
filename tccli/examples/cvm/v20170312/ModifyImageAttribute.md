@@ -1,6 +1,6 @@
-**Example 1: Modifying image name**
+**Example 1: 修改镜像名称**
 
-This example shows you how to change the name of an image whose image ID is `img-6pb6lrmy` to "sample".
+修改镜像img-6pb6lrmy的名称为sample
 
 Input: 
 

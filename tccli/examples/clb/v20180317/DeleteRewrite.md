@@ -1,4 +1,4 @@
-**Example 1: Deleting redirection relationships in batches**
+**Example 1: 批量删除多对重定向关系**
 
 
 

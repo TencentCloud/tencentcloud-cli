@@ -1,4 +1,4 @@
-**Example 1: Getting watermarking templates**
+**Example 1: 获取水印模板**
 
 
 
@@ -19,8 +19,8 @@ Output:
         "WatermarkTemplateSet": {
             "Definition": 1001,
             "Type": "image",
-            "Name": "Sample structure to be improved",
-            "Comment": "Test template",
+            "Name": "示例结构体待完善",
+            "Comment": "测试模板",
             "XPos": "10%",
             "YPos": "10%",
             "ImageTemplate": {

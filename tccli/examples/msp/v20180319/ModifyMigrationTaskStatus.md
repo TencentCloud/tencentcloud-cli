@@ -1,6 +1,6 @@
-**Example 1: Updating the migration task status**
+**Example 1: 更新迁移任务状态**
 
-This example shows you how to update the migration task status.
+更新迁移任务状态
 
 Input: 
 

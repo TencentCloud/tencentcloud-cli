@@ -1,4 +1,4 @@
-**Example 1: Setting instance attributes**
+**Example 1: 设置实例属性**
 
 
 

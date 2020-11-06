@@ -1,6 +1,6 @@
-**Example 1: Deleting person**
+**Example 1: 删除人员接口**
 
-This example shows you how to delete the information of a specified person.
+删除指定人员信息
 
 Input: 
 
@@ -18,9 +18,9 @@ Output:
 }
 ```
 
-**Example 2: Sample error**
+**Example 2: 错误示例**
 
-The person ID does not exist.
+人员ID不存在
 
 Input: 
 
@@ -35,7 +35,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "ResourceNotFound.ErrorPersonNotExisted",
-            "Message": "The person does not exist."
+            "Message": "个体不存在。"
         },
         "RequestId": "4b9c1bdc-86eb-413f-8c74-15bcf4466cd5"
     }

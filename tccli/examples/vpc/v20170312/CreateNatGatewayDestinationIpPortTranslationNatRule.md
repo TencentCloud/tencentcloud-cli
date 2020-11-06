@@ -1,4 +1,4 @@
-**Example 1: Creating NAT forwarding rules**
+**Example 1: 创建NAT的转发规则**
 
 
 

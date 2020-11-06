@@ -1,4 +1,4 @@
-**Example 1: Modifying CC protection level**
+**Example 1: 修改CC防护等级**
 
 
 

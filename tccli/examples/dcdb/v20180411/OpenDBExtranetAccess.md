@@ -1,4 +1,4 @@
-**Example 1: Public network Access of Enable's cloud database instance**
+**Example 1: 开通云数据库实例的外网访问**
 
 
 

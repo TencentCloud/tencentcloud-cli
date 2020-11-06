@@ -1,4 +1,4 @@
-**Example 1: Displaying usage plan binding details**
+**Example 1: 展示使用计划绑定详情**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Disabling white-box keys in batches**
+**Example 1: 批量禁用白盒密钥**
 
 
 

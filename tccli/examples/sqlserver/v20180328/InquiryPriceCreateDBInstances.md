@@ -1,4 +1,4 @@
-**Example 1: Querying the price of the requested SQL Server instance**
+**Example 1: 查询申请SqlServer实例价格**
 
 
 

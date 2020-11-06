@@ -1,4 +1,4 @@
-**Example 1: Terminating Compute Nodes in Batches**
+**Example 1: 批量销毁计算节点**
 
 
 

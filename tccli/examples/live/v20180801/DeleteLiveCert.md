@@ -1,4 +1,4 @@
-**Example 1: Deleting certificate**
+**Example 1: 删除证书**
 
 
 

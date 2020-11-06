@@ -1,6 +1,6 @@
-**Example 1: Getting account list**
+**Example 1: 获取帐号列表**
 
-This example shows you how to get the account list.
+获取帐号列表
 
 Input: 
 

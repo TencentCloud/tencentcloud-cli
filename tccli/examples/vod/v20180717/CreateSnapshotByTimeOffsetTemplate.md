@@ -1,4 +1,4 @@
-**Example 1: Creating a time point screencapturing template**
+**Example 1: 创建指定时间点截图模板**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateSnapshotByTimeOffsetTemplate --cli-unfold-argument  \
-    --Name 'Time point screencapturing template 1' \
+    --Name 指定时间点截图模板1 \
     --Width 540 \
     --Height 960 \
     --Format jpg

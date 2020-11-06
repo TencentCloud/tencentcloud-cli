@@ -1,4 +1,4 @@
-**Example 1: Querying the log download link of a domain name**
+**Example 1: 查询域名日志下载链接**
 
 
 

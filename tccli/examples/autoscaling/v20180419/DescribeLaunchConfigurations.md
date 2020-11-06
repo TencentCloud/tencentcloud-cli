@@ -1,4 +1,4 @@
-**Example 1: Using Filters to view the list of launch configurations**
+**Example 1: 使用Filters查看启动配置列表。**
 
 
 
@@ -65,7 +65,7 @@ Output:
 }
 ```
 
-**Example 2: Querying the list of launch configurations by launch configuration ID**
+**Example 2: 根据启动配置ID查询启动配置列表**
 
 
 

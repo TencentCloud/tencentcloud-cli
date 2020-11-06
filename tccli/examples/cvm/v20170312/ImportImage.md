@@ -1,6 +1,6 @@
-**Example 1: Importing an image**
+**Example 1: 导入镜像**
 
-This example shows you how to import an image.
+用户导入镜像。
 
 Input: 
 

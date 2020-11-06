@@ -1,4 +1,4 @@
-**Example 1: Viewing backup log retention days**
+**Example 1: 查看备份日志备份天数**
 
 
 

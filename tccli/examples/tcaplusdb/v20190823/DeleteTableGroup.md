@@ -1,6 +1,6 @@
-**Example 1: Deleting table group**
+**Example 1: 删除表格组**
 
-This example shows you how to delete a table group based on cluster ID and table group ID.
+根据集群ID和表格组ID参数删除表格组
 
 Input: 
 

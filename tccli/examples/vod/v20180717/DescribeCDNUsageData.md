@@ -1,6 +1,43 @@
-**Example 1: This example shows you how to query bandwidth statistics of the `123.vod2.myqcloud.com` and `test.a.com` domain names with 5-minute granularity between December 1, 2018 to December 7, 2018.**
+**Example 1: 查询点播 CDN 的流量数据**
 
-This example shows you how to query the CDN traffic statistics between December 1, 2018 (inclusive) and December 3, 2018 (inclusive).
+查询2018年12月1日（含）到2018年12月3日（含）的 CDN 流量数据。
+
+Input: 
+
+```
+tccli vod DescribeCDNUsageData --cli-unfold-argument  \
+    --StartTime 2018-12-01T00:00:00+08:00 \
+    --EndTime 2018-12-03T00:00:00+08:00 \
+    --DataType Flux
+```
+
+Output: 
+```
+{
+    "Response": {
+        "DataInterval": 1440,
+        "Data": [
+            {
+                "Time": "2018-12-01T00:00:00+08:00",
+                "Value": 1000000
+            },
+            {
+                "Time": "2018-12-02T00:00:00+08:00",
+                "Value": 1500000
+            },
+            {
+                "Time": "2018-12-03T00:00:00+08:00",
+                "Value": 1500000
+            }
+        ],
+        "RequestId": "requestId"
+    }
+}
+```
+
+**Example 2: 查询域名123.vod2.myqcloud.com和test.a.com从2018-12-01到2018-12-07的5分钟粒度的带宽数据**
+
+
 
 Input: 
 
@@ -37,44 +74,7 @@ Output:
 }
 ```
 
-**Example 2: Querying CDN traffic statistics of VOD**
-
-This example shows you how to query the CDN traffic statistics between December 1, 2018 (inclusive) and December 3, 2018 (inclusive).
-
-Input: 
-
-```
-tccli vod DescribeCDNUsageData --cli-unfold-argument  \
-    --StartTime 2018-12-01T00:00:00+08:00 \
-    --EndTime 2018-12-03T00:00:00+08:00 \
-    --DataType Flux
-```
-
-Output: 
-```
-{
-    "Response": {
-        "DataInterval": 1440,
-        "Data": [
-            {
-                "Time": "2018-12-01T00:00:00+08:00",
-                "Value": 1000000
-            },
-            {
-                "Time": "2018-12-02T00:00:00+08:00",
-                "Value": 1500000
-            },
-            {
-                "Time": "2018-12-03T00:00:00+08:00",
-                "Value": 1500000
-            }
-        ],
-        "RequestId": "requestId"
-    }
-}
-```
-
-**Example 3: Querying bandwidth statistics of all domain names between December 1, 2018 and December 7, 2018 by an admin**
+**Example 3: 管理员查询所有域名从2018-12-01到2018-12-07的带宽数据**
 
 
 

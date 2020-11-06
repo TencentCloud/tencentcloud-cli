@@ -1,4 +1,4 @@
-**Example 1: Querying the information of supported customer gateway vendors**
+**Example 1: 查询可支持的对端网关厂商信息**
 
 
 

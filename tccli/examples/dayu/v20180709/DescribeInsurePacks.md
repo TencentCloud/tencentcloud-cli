@@ -1,4 +1,4 @@
-**Example 1: Getting guarantee package list**
+**Example 1: 获取保险包套餐列表**
 
 
 

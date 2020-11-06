@@ -1,4 +1,4 @@
-**Example 1: Starting real-time recording**
+**Example 1: 开始实时录制**
 
 
 
@@ -16,15 +16,16 @@ Output:
 ```
 {
     "Response": {
+        "Backup": "{}",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "TaskId": "bj0mt2l23osdj300hl30"
     }
 }
 ```
 
-**Example 2: Starting real-time mixed stream recording**
+**Example 2: 开始带混流的实时录制**
 
-This example shows you how to use a built-in mixed stream layout for mixed stream recording.
+使用内置混流布局进行混流录制
 
 Input: 
 
@@ -50,6 +51,7 @@ Output:
 ```
 {
     "Response": {
+        "Backup": "{}",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "TaskId": "bj0mt2l23osdj300hl30"
     }

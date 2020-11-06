@@ -1,4 +1,4 @@
-**Example 1: Binding security groups in batches**
+**Example 1: 安全组批量绑定云资源**
 
 
 

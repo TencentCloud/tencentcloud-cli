@@ -1,6 +1,6 @@
-**Example 1: Querying the Origin Server List of a Layer-4 Listener**
+**Example 1: 查询4层监听器源站列表**
 
-Query an origin server list of a layer-4 listener.
+查询4层监听器源站列表
 
 Input: 
 

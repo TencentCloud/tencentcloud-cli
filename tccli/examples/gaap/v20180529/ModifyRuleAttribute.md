@@ -1,6 +1,6 @@
-**Example 1: Modifying the Forwarding Rule Information**
+**Example 1: 修改转发规则信息**
 
-Modify the forwarding rule information.
+
 
 Input: 
 

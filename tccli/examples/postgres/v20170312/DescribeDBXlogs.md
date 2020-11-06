@@ -1,4 +1,4 @@
-**Example 1: Getting Xlog list for instance postgres-apzvwncr**
+**Example 1: 获取实例postgres-apzvwncr的Xlog列表**
 
 
 

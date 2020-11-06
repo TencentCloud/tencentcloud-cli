@@ -1,4 +1,4 @@
-**Example 1: Query the instance list**
+**Example 1: 查询实例列表**
 
 
 
@@ -24,7 +24,7 @@ Output:
                 "DeadLine": "2019-04-04 19:29:16",
                 "InstanceId": "cmgo-rw2v134z",
                 "InstanceName": "cmgo-rw2v134z",
-                "InstanceStatusDesc": "rolling back",
+                "InstanceStatusDesc": "回档中",
                 "InstanceType": 2,
                 "InstanceVer": 4,
                 "MachineType": "HIO10G",

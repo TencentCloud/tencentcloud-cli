@@ -1,4 +1,4 @@
-**Example 1: Deleting a layer version**
+**Example 1: 删除层版本**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Obtaining an invitation list**
+**Example 1: 获取邀请信息列表**
 
 
 

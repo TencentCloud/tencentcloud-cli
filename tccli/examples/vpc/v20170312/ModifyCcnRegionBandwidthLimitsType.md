@@ -1,4 +1,4 @@
-**Example 1: Changes the bandwidth limit type of a postpaid CCN instance**
+**Example 1: 后付费云联网实例修改限速类型**
 
 
 
@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc ModifyCcnRegionBandwidthLimitsType --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --CcnId ccn-gree226l \
     --BandwidthLimitType OUTER_REGION_LIMIT
 ```

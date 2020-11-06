@@ -1,4 +1,4 @@
-**Example 1: Querying origin server information**
+**Example 1: 查询源站信息**
 
 
 

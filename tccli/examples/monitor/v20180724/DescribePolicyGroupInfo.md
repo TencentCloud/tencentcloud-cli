@@ -1,4 +1,4 @@
-**Example 1: Querying policy group information**
+**Example 1: 查询策略组信息**
 
 
 
@@ -24,7 +24,7 @@ Output:
                 "CalcValue": "0",
                 "ContinueTime": 60,
                 "MetricId": 33,
-                "MetricShowName": "CPU usage",
+                "MetricShowName": "CPU利用率",
                 "Period": 60,
                 "RuleId": 200000,
                 "Unit": "%"
@@ -39,11 +39,11 @@ Output:
                 "AlarmNotifyPeriod": 86400,
                 "AlarmNotifyType": 0,
                 "EventId": 42,
-                "EventShowName": "ping unreachable",
+                "EventShowName": "ping不可达",
                 "RuleId": 200001
             }
         ],
-        "GroupName": "Policy group name test",
+        "GroupName": "策略组名称test",
         "IsDefault": 0,
         "LastEditUin": "1500000000",
         "ProjectId": 0,
@@ -69,7 +69,7 @@ Output:
         ],
         "Remark": "",
         "RequestId": "11111111-1111-1111-1111-111111111111",
-        "ShowName": "CVM-Basic monitoring",
+        "ShowName": "云服务器-基础监控",
         "UpdateTime": "2018-07-09 15:56:55",
         "ViewName": "cvm_device"
     }

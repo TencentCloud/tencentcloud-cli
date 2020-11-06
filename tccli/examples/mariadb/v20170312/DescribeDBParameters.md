@@ -1,4 +1,4 @@
-**Example 1: Getting current database parameters**
+**Example 1: 获取数据库当前参数**
 
 
 

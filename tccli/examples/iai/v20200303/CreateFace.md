@@ -1,6 +1,6 @@
-**Example 1: Adding face**
+**Example 1: 增加人脸接口**
 
-This example shows you how to add a set of face images to a person.
+将一组人脸图片添加到一个人员中
 
 Input: 
 
@@ -38,9 +38,9 @@ Output:
 }
 ```
 
-**Example 2: Sample error**
+**Example 2: 错误示例**
 
-One person can have up to 5 face images.
+一个人最多拥有5张脸
 
 Input: 
 
@@ -56,7 +56,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "InvalidParameterValue.UploadFaceNumExceed",
-            "Message": "Up to four faces can be uploaded at a time."
+            "Message": "一次最多上传四张人脸。"
         },
         "RequestId": "44506f79-2191-49bc-997b-748a566d781c"
     }

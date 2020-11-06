@@ -1,4 +1,4 @@
-**Example 1: Deleting a NAT gateway**
+**Example 1: 删除NAT网关**
 
 
 

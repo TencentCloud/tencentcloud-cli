@@ -1,4 +1,4 @@
-**Example 1: Querying CLB instance details**
+**Example 1: 查询负载均衡详细信息**
 
 
 

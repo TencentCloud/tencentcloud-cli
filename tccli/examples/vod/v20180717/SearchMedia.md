@@ -1,4 +1,4 @@
-**Example 1: Searching for media information**
+**Example 1: 搜索媒体信息**
 
 
 
@@ -30,8 +30,8 @@ Output:
                     "UpdateTime": "2017-01-23T07:25:52Z",
                     "ExpireTime": "2017-03-23T07:25:52Z",
                     "ClassId": 1,
-                    "ClassName": "Test",
-                    "ClassPath": "Test",
+                    "ClassName": "测试",
+                    "ClassPath": "测试",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",

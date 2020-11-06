@@ -1,6 +1,6 @@
-**Example 1: Modifying Scheduled Snapshot Policy Attributes**
+**Example 1: 修改定期快照策略属性**
 
-The name of the scheduled snapshot policy to be modified is `data_disk_auto_snapshot`. `IsPermanent` is set to `TRUE`. Snapshots created by this scheduled snapshot policy are retained permanently.
+修改该定期快照策略的名称为data_disk_auto_snapshot，且将IsPermanent置为TRUE，通过该定期快照策略创建的快照为永久保留的快照。
 
 Input: 
 

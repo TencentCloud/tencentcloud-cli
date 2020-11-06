@@ -1,4 +1,4 @@
-**Example 1: Deleting an alias**
+**Example 1: 删除别名**
 
 
 

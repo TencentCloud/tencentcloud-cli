@@ -1,4 +1,4 @@
-**Example 1: Querying CDN log download links**
+**Example 1: 查询CDN日志下载链接**
 
 
 

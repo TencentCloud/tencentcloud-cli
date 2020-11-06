@@ -1,4 +1,4 @@
-**Example 1: Querying purchasable subscription region**
+**Example 1: 查询可售卖订阅的地域**
 
 
 
@@ -14,9 +14,9 @@ Output:
         "TotalCount": 1,
         "Items": [
             {
-                "RegionName": "Guangzhou",
+                "RegionName": "广州",
                 "Region": "ap-guangzhou",
-                "Area": "South China",
+                "Area": "华南地区",
                 "IsDefaultRegion": 1,
                 "Status": 1
             }

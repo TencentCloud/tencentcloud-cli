@@ -1,6 +1,6 @@
-**Example 1: Getting security event statistics**
+**Example 1: 获取安全事件统计数据**
 
-This example shows you how to get the statistics of security events.
+获取安全事件统计数据。
 
 Input: 
 

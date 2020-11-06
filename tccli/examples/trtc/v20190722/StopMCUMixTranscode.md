@@ -1,6 +1,6 @@
-**Example 1: Ending On-Cloud MixTranscoding**
+**Example 1: 结束云端混流**
 
-This example shows you how to end On-Cloud MixTranscoding for the room whose ID is 3560.
+结束房间号为3560的云端混流。
 
 Input: 
 

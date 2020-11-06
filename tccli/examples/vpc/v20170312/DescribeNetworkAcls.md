@@ -1,4 +1,4 @@
-**Example 1: Example 1: Querying the network ACL list**
+**Example 1: 示例1 查询网络ACL列表**
 
 
 
@@ -62,7 +62,7 @@ Output:
 }
 ```
 
-**Example 2: Example 2: Querying the network ACL list by conditions**
+**Example 2: 示例2 根据条件查询网络ACL列表**
 
 
 

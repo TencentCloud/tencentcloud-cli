@@ -1,6 +1,6 @@
-**Example 1: Querying placement group quota**
+**Example 1: 查询用户置放群组配额**
 
-This example shows you how to query your placement group quota.
+查询用户置放群组配额
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: Querying game session list**
+**Example 1: 查询游戏会话列表**
 
-This example shows you how to query the list of game sessions.
+查询游戏会话列表
 
 Input: 
 
@@ -19,23 +19,28 @@ Output:
     "Response": {
         "GameServerSessions": [
             {
-                "CreationTime": "2019-12-05T12:04:28Z",
-                "CreatorId": "c2",
-                "CurrentPlayerSessionCount": "0",
+                "AvailabilityStatus": "Enable",
+                "CreationTime": "2020-07-30T03:55:43Z",
+                "CreatorId": "",
+                "CurrentCustomCount": 0,
+                "CurrentPlayerSessionCount": 0,
                 "DnsName": "",
-                "FleetId": "fleet-00test-a5testzz",
+                "FleetId": "fleet-qp33caaa-35555",
                 "GameProperties": [],
                 "GameServerSessionData": "",
-                "GameServerSessionId": "qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-111222",
-                "IpAddress": "0000.0.0.0",
+                "GameServerSessionId": "qcs::gse:ap-shanghai:uin/100000010000:gameserversession/fleet-qp33caaa-35555/gssess-qtk2222-uuu",
+                "InstanceType": "S5.LARGE8",
+                "IpAddress": "127.0.0.1",
                 "MatchmakerData": "",
-                "MaximumPlayerSessionCount": "10",
+                "MaxCustomCount": 0,
+                "MaximumPlayerSessionCount": 100,
                 "Name": "",
                 "PlayerSessionCreationPolicy": "ACCEPT_ALL",
-                "Port": "8000",
+                "Port": 6000,
                 "Status": "ACTIVATING",
                 "StatusReason": "",
-                "TerminationTime": "2019-12-05T04:04:28Z"
+                "TerminationTime": null,
+                "Weight": 5
             }
         ],
         "NextToken": "",

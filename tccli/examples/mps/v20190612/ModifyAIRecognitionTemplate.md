@@ -1,6 +1,6 @@
-**Example 1: Enabling one recognition task while disabling another one**
+**Example 1: 同时关闭和开启一项识别任务**
 
-This example shows you how to modify a custom video content recognition template to disable a full text recognition task and enable a text keyword recognition task.
+修改自定义视频内容识别模板，关闭文本全文识别任务，开启文本关键词识别任务。
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: Removing tag from server**
+**Example 1: 删除服务器关联的标签**
 
-This example shows you how to remove a tag from a server.
+删除服务器关联的标签
 
 Input: 
 

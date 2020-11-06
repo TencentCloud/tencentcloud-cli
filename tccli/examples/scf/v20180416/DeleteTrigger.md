@@ -1,6 +1,6 @@
-**Example 1: Deleting a Trigger**
+**Example 1: 删除触发器**
 
-You use this function to delete a trigger.
+用户使用该函数删除触发器。
 
 Input: 
 

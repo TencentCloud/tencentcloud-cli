@@ -1,6 +1,6 @@
-**Example 1: Getting alarm settings**
+**Example 1: 获取告警设置**
 
-This example shows you how to get alarm settings.
+获取告警设置
 
 Input: 
 

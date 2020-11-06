@@ -1,4 +1,4 @@
-**Example 1: Modifying alarm recipients**
+**Example 1: 修改告警接收人**
 
 
 

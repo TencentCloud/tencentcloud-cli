@@ -1,4 +1,4 @@
-**Example 1: Querying the execution status of an async IP blocking (blacklisting) task**
+**Example 1: 查询封禁IP（黑名单）异步任务的执行状态**
 
 
 

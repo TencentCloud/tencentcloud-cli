@@ -1,6 +1,6 @@
-**Example 1: Modifying subscription attributes**
+**Example 1: 修改订阅属性**
 
-This example shows you how to modify subscription attributes.
+修改订阅属性
 
 Input: 
 

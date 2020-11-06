@@ -1,4 +1,4 @@
-**Example 1: Associating multiple network instances with a CCN**
+**Example 1: 云联网关联多个网络实例**
 
 
 

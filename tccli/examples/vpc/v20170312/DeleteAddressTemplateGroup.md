@@ -1,4 +1,4 @@
-**Example 1: Deleting an IP address template group**
+**Example 1: 删除IP地址模板集合**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Unbinding tag from multiple CVM instances in Guangzhou**
+**Example 1: 解绑多个广州地域的云主机实例关联的某个标签**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Deleting a Classiclink**
+**Example 1: 删除基础网络互通**
 
 
 

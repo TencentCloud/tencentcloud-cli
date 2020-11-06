@@ -1,4 +1,4 @@
-**Example 1: Creating an image sprite generating template**
+**Example 1: 创建雪碧图模板**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps CreateImageSpriteTemplate --cli-unfold-argument  \
-    --Name 'Image sprite generating template 1' \
+    --Name 雪碧图模板1 \
     --Width 54 \
     --Height 96 \
     --SampleType Percent \

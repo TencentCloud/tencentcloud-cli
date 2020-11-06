@@ -1,4 +1,4 @@
-**Example 1: Querying the Check Result of a Disaster Recovery Sync Task**
+**Example 1: 查询灾备同步任务校验结果**
 
 
 
@@ -15,67 +15,67 @@ Output:
     "Response": {
         "Status": "finished",
         "ErrorCode": 0,
-        "ErrorMessage": "Disaster recovery check succeeded",
+        "ErrorMessage": "灾备检查成功",
         "StepInfo": [
             {
                 "StepNo": 1,
-                "StepName": "Check the parameters",
+                "StepName": "检查参数",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 2,
-                "StepName": "Check the source instance",
+                "StepName": "检查源实例",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 3,
-                "StepName": "Check the target instance",
+                "StepName": "检查目标实例",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 4,
-                "StepName": "Check the instance status",
+                "StepName": "检查实例状态",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 5,
-                "StepName": "Check the instance specification",
+                "StepName": "检查实例规格",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 6,
-                "StepName": "Check the instance version",
+                "StepName": "检查实例版本",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 7,
-                "StepName": "Check whether the target instance is empty",
+                "StepName": "检查目标实例是否为空",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 8,
-                "StepName": "Check whether encryption is enabled",
+                "StepName": "检查是否开启加密",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 9,
-                "StepName": "Check the synced table information of the instance",
+                "StepName": "检查实例同步的库表信息",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             },
             {
                 "StepNo": 10,
-                "StepName": "Check the cold backup data of the instance",
+                "StepName": "检查实例冷备数据",
                 "StepCode": 0,
-                "StepMessage": "Check succeeded"
+                "StepMessage": "校验成功"
             }
         ],
         "CheckFlag": 1,

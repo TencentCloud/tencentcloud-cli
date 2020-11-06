@@ -1,4 +1,4 @@
-**Example 1: Resettng the route table name and routing policies**
+**Example 1: 重置路由表名称和路由策略**
 
 
 

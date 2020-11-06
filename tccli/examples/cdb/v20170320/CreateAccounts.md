@@ -1,4 +1,4 @@
-**Example 1: Creating a TencentDB account**
+**Example 1: 创建云数据库的账户**
 
 
 

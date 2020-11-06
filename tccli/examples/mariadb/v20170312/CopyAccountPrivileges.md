@@ -1,4 +1,4 @@
-**Example 1: Copying TencentDB account permissions**
+**Example 1: 复制云数据库账号权限**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Empower the cloud database account**
+**Example 1: 给云数据库账号赋权**
 
 
 

@@ -1,4 +1,4 @@
-**Example 1: Getting function trigger list**
+**Example 1: 获取函数触发器列表**
 
 
 

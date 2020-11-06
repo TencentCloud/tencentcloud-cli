@@ -1,4 +1,4 @@
-**Example 1: Customer A initiates a custom video processing**
+**Example 1: A 客户发起定制的视频处理**
 
 
 

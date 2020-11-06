@@ -1,4 +1,4 @@
-**Example 1: Deleting a CCN instance**
+**Example 1: 删除一个CCN实例**
 
 
 

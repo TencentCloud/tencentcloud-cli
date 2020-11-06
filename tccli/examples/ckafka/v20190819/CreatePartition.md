@@ -1,4 +1,4 @@
-**Example 1: Adding partition in topic**
+**Example 1: 增加主题分区**
 
 
 

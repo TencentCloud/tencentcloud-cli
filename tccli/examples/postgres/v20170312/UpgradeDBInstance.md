@@ -1,4 +1,4 @@
-**Example 1: Upgrading TencentDB instance**
+**Example 1: 升级实例**
 
 
 

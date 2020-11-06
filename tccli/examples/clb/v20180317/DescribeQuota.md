@@ -1,4 +1,4 @@
-**Example 1: Querying quotas**
+**Example 1: 查询配额**
 
 
 

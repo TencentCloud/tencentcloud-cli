@@ -1,4 +1,4 @@
-**Example 1: Getting the number of rules of resource**
+**Example 1: 获取资源的规则数**
 
 
 

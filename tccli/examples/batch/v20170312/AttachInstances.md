@@ -1,4 +1,4 @@
-**Example 1: Adds instances to the compute environment**
+**Example 1: 添加实例到计算环境**
 
 
 

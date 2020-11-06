@@ -1,4 +1,4 @@
-**Example 1: Deleting multiple organization members**
+**Example 1: 批量删除企业组织成员**
 
 
 

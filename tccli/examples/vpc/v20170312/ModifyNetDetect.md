@@ -1,4 +1,4 @@
-**Example 1: Modifying network detection parameters**
+**Example 1: 修改网络探测参数**
 
 
 

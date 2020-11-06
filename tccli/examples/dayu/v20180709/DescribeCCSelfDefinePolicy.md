@@ -1,4 +1,4 @@
-**Example 1: Getting custom CC protection policy**
+**Example 1: 获取CC自定义策略**
 
 
 

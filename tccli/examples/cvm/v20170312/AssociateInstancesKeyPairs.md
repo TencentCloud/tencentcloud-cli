@@ -1,4 +1,4 @@
-**Example 1: Binding a CVM key pair**
+**Example 1: 绑定云服务器密钥对**
 
 
 

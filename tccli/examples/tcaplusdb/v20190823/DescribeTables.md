@@ -1,6 +1,6 @@
-**Example 1: Querying table list**
+**Example 1: 查询表列表**
 
-This example shows you how to query the table list.
+查询表列表
 
 Input: 
 
@@ -17,7 +17,7 @@ Output:
         "TableInfos": [
             {
                 "ApiAccessId": "10",
-                "ClusterName": "gz test App",
+                "ClusterName": "gz测试App",
                 "ClusterId": "5674209986",
                 "CreatedTime": "2019-08-29 22:03:27",
                 "Error": null,
@@ -35,7 +35,7 @@ Output:
                 "KeyStruct": null,
                 "ListElementNum": 1,
                 "TableGroupId": "101",
-                "Memo": "pb test table 1",
+                "Memo": "pb测试表1",
                 "ReservedReadQps": 80,
                 "ReservedVolume": 1,
                 "ReservedWriteQps": 26,

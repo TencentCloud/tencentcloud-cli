@@ -1,6 +1,6 @@
-**Example 1: Terminating instance**
+**Example 1: 销毁实例**
 
-This example shows you how to terminate an entire cluster.
+销毁整个集群
 
 Input: 
 

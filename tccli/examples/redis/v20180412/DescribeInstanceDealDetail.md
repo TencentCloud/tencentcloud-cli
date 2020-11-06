@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -24,7 +24,7 @@ Output:
                 "OverdueTime": "2018-11-16 21:12:05",
                 "EndTime": "2018-11-01 21:13:18",
                 "Status": 4,
-                "Description": "Successfully delivered",
+                "Description": "发货成功",
                 "Price": 91949,
                 "InstanceIds": [
                     "crs-bz8prb7x"

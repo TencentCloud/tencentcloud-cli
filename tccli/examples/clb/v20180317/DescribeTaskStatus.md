@@ -1,6 +1,6 @@
-**Example 1: Querying async task status**
+**Example 1: 查询异步任务状态**
 
-This example shows you how to query whether an async task is successfully executed if the call to the forwarding rule creating API is returned successfully and the returned `RequestId` is `55c85074-3e7f-4c6d-864f-673660d4f8de`. The `Status` value of 0 in the response indicates that the task succeeded.
+假设某次调用创建转发规则接口返回成功，且返回的 RequestId 为 55c85074-3e7f-4c6d-864f-673660d4f8de，则需要查询该异步任务最终是否执行成功。响应中，Status 为 0 表示任务执行成功。
 
 Input: 
 

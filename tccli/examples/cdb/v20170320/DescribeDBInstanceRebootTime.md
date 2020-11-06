@@ -1,4 +1,4 @@
-**Example 1: Querying the estimated restart time of a TencentDB instance**
+**Example 1: 查询云数据库实例的预期重启时间**
 
 
 

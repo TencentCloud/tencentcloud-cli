@@ -1,4 +1,4 @@
-**Example 1: Deleting an Access Rule**
+**Example 1: 删除访问规则**
 
 
 

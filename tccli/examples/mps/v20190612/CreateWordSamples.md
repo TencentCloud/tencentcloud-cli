@@ -1,54 +1,54 @@
-**Example 1: Creating keyword sample - All**
+**Example 1: 创建关键词样本-Review**
 
-If `Usages` is `All`, then this keyword can be used for OCR-based and ASR-based content recognition and audit.
-
-Input: 
-
-```
-tccli mps CreateWordSamples --cli-unfold-argument  \
-    --Usages All \
-    --Words.0.Keyword Influencer \
-    --Words.0.Tags Entertainment
-```
-
-Output: 
-```
-{
-    "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
-}
-```
-
-**Example 2: Creating keyword sample - Recognition**
-
-If `Usages` is `["Recognition.Ocr","Review.Ocr"]`, then this keyword can be used for OCR-based content recognition and audit.
-
-Input: 
-
-```
-tccli mps CreateWordSamples --cli-unfold-argument  \
-    --Usages Recognition.Ocr Review.Ocr \
-    --Words.0.Keyword Influencer \
-    --Words.0.Tags Entertainment
-```
-
-Output: 
-```
-{
-    "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
-}
-```
-
-**Example 3: Creating keyword sample - Review**
-
-If `Usages` is `Review`, then this keyword can be used for OCR-based and ASR-based content audit.
+Usages=Review，则该关键词可用于通过 OCR 技术、ASR 技术，进行内容审核。
 
 Input: 
 
 ```
 tccli mps CreateWordSamples --cli-unfold-argument  \
     --Usages Review \
-    --Words.0.Keyword 'John Smith' \
-    --Words.0.Tags 'Politically sensitive'
+    --Words.0.Keyword 张三 \
+    --Words.0.Tags 政治
+```
+
+Output: 
+```
+{
+    "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+}
+```
+
+**Example 2: 创建关键词样本-Recognition**
+
+Usages=["Recognition.Ocr","Review.Ocr"]，则该关键词可用于通过 OCR 技术，进行内容识别、内容审核。
+
+Input: 
+
+```
+tccli mps CreateWordSamples --cli-unfold-argument  \
+    --Usages Recognition.Ocr Review.Ocr \
+    --Words.0.Keyword 网红 \
+    --Words.0.Tags 娱乐
+```
+
+Output: 
+```
+{
+    "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+}
+```
+
+**Example 3: 创建关键词样本-All**
+
+Usages=All，则该关键词可用于通过 OCR 技术、ASR 技术，进行内容识别、内容审核。
+
+Input: 
+
+```
+tccli mps CreateWordSamples --cli-unfold-argument  \
+    --Usages All \
+    --Words.0.Keyword 网红 \
+    --Words.0.Tags 娱乐
 ```
 
 Output: 

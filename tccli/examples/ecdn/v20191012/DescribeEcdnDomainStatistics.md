@@ -1,4 +1,4 @@
-**Example 1: Querying domain name statistical metrics**
+**Example 1: 域名统计指标查询**
 
 
 

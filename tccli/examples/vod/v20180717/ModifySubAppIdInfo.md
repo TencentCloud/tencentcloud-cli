@@ -1,4 +1,4 @@
-**Example 1: Modifying subapplication information**
+**Example 1: 修改子应用信息**
 
 
 
@@ -7,8 +7,8 @@ Input:
 ```
 tccli vod ModifySubAppIdInfo --cli-unfold-argument  \
     --SubAppId 1400000001 \
-    --Name 'Updated subapplication name' \
-    --Description 'Updated subapplication overview'
+    --Name 更新子应用名 \
+    --Description 更新子应用简介
 ```
 
 Output: 

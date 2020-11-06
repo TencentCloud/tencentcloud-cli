@@ -1,4 +1,4 @@
-**Example 1: Searching for person with results returned by group**
+**Example 1: 人员搜索分库返回接口**
 
 
 
@@ -50,7 +50,7 @@ Output:
 }
 ```
 
-**Example 2: Sample error**
+**Example 2: 错误示例**
 
 
 
@@ -71,7 +71,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation.ImageDownloadError",
-            "Message": "An error occurred while downloading the image."
+            "Message": "图片下载错误。"
         },
         "RequestId": "527ecffe-4c6a-47c9-8217-4dd2e3f018da"
     }

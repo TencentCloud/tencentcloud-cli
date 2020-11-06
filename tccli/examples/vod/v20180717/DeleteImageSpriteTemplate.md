@@ -1,4 +1,4 @@
-**Example 1: Deleting an image sprite generating template**
+**Example 1: 删除雪碧图模板**
 
 
 

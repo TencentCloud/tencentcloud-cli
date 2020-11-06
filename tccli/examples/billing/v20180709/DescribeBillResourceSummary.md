@@ -1,4 +1,4 @@
-**Example 1: Getting the breakdown of a bill**
+**Example 1: 获取账单资源汇总**
 
 
 
@@ -10,7 +10,7 @@ tccli billing DescribeBillResourceSummary --cli-unfold-argument  \
     --PeriodType byPayTime \
     --Offset 0 \
     --Limit 1 \
-    --ActionType 'Pay-as-you-go deduction'
+    --ActionType 按量计费扣费
 ```
 
 Output: 
@@ -22,20 +22,20 @@ Output:
                 "PayerUin": "2384822478",
                 "OwnerUin": "-",
                 "OperateUin": "-",
-                "BusinessCodeName": "Cloud Virtual Machine",
+                "BusinessCodeName": "云服务器CVM",
                 "ProductCodeName": "-",
-                "PayModeName": "Pay-as-you-go",
-                "ProjectName": "Default project",
-                "RegionName": "North America (Toronto)",
-                "ZoneName": "Toronto Zone 1",
+                "PayModeName": "按量计费",
+                "ProjectName": "默认项目",
+                "RegionName": "北美地区（多伦多）",
+                "ZoneName": "多伦多一区",
                 "ResourceId": "ins-o0z91q0p",
-                "ResourceName": "Unnamed",
-                "ActionTypeName": "Pay-as-you-go deduction",
+                "ResourceName": "未命名",
+                "ActionTypeName": "按量计费扣费",
                 "OrderId": "-",
                 "PayTime": "-",
                 "FeeBeginTime": "2018-08-28 21:00:00",
                 "FeeEndTime": "2018-08-28 21:00:02",
-                "ConfigDesc": "CPU: 1 core; memory: 1GiB; system disk: 50GB; ",
+                "ConfigDesc": "CPU: 1核; 内存: 1GiB; 系统盘: 50GB; ",
                 "ExtendField1": "-",
                 "ExtendField2": "-",
                 "ExtendField3": "-",
@@ -43,7 +43,7 @@ Output:
                 "ExtendField5": "-",
                 "TotalCost": "155.04348856",
                 "Discount": "0.6",
-                "ReduceType": "Discount",
+                "ReduceType": "折扣",
                 "RealTotalCost": "93.039956",
                 "VoucherPayAmount": "0",
                 "CashPayAmount": "93.039956",

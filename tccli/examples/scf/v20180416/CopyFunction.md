@@ -1,4 +1,4 @@
-**Example 1: Replicating a Function**
+**Example 1: 复制函数**
 
 
 

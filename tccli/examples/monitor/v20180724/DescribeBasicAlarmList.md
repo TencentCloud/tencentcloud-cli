@@ -1,4 +1,4 @@
-**Example 1: Getting the basic alarm list**
+**Example 1: 获取基础告警列表**
 
 
 
@@ -14,8 +14,8 @@ tccli monitor DescribeBasicAlarmList --cli-unfold-argument  \
     --OccurTimeOrder DESC \
     --ProjectIds 0 \
     --ViewNames cvm_device \
-    --AlarmStatus '1
-"MetricName": "mem_used",'
+    --AlarmStatus 1 \
+    --MetricNames mem_used
 ```
 
 Output: 
@@ -25,8 +25,8 @@ Output:
         "Alarms": [
             {
                 "AlarmStatus": "OK",
-                "AlarmType": "Used memory",
-                "Content": "Used memory >  66666 MB",
+                "AlarmType": "内存使用量",
+                "Content": "内存使用量 >  66666 MB",
                 "Dimensions": "{\"unInstanceId\":\"ins-19a06nn8\"}",
                 "Duration": 600,
                 "FirstOccurTime": "2019-11-16T15:50:00+08:00",
@@ -49,7 +49,7 @@ Output:
                 "ObjId": "a961c198-e0e2-4989-a3b6-7b155b35ff6f",
                 "ObjName": "10.0.0.14(251008737 vm1)",
                 "ProjectId": 0,
-                "ProjectName": "Default project",
+                "ProjectName": "默认项目",
                 "Region": "gz",
                 "Status": 1,
                 "ViewName": "cvm_device",
@@ -57,8 +57,8 @@ Output:
             },
             {
                 "AlarmStatus": "OK",
-                "AlarmType": "Used memory",
-                "Content": "Used memory >=  200000 MB",
+                "AlarmType": "内存使用量",
+                "Content": "内存使用量 >=  200000 MB",
                 "Dimensions": "{\"unInstanceId\":\"ins-19a06nn8\"}",
                 "Duration": 180,
                 "FirstOccurTime": "2019-11-16T15:45:00+08:00",
@@ -82,7 +82,7 @@ Output:
                 "ObjId": "a961c198-e0e2-4989-a3b6-7b155b35ff6f",
                 "ObjName": "10.0.0.14(251008737 vm1)",
                 "ProjectId": 0,
-                "ProjectName": "Default project",
+                "ProjectName": "默认项目",
                 "Region": "gz",
                 "Status": 1,
                 "ViewName": "cvm_device",

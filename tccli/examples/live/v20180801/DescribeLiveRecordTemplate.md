@@ -1,4 +1,4 @@
-**Example 1: Sample request**
+**Example 1: 请求示例**
 
 
 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Template": {
-            "TemplateID": 1000,
+            "TemplateId": 1000,
             "TemplateName": "testName",
             "Description": "test",
             "FlvParam": {
@@ -32,7 +32,7 @@ Output:
                 "FlowContinueDuration": 60
             }
         },
-        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

@@ -1,6 +1,6 @@
-**Example 1: Obtaining certificate list**
+**Example 1: 获取证书列表**
 
-This example shows you how to obtain the certificate list.
+获取证书列表
 
 Input: 
 
@@ -25,7 +25,7 @@ Output:
                     "DomainNumber": null,
                     "RenewOrder": null
                 },
-                "StatusName": "approved",
+                "StatusName": "已通过",
                 "RenewAble": false,
                 "Status": 1,
                 "IsDv": true,
@@ -40,8 +40,8 @@ Output:
                     "ProjectCreateTime": "0000-00-00 00:00:00",
                     "ProjectId": "0",
                     "OwnerUin": 0,
-                    "ProjectResume": "Default project",
-                    "ProjectName": "Default project"
+                    "ProjectResume": "默认项目",
+                    "ProjectName": "默认项目"
                 },
                 "ProductZhName": "TrustAsia TLS RSA CA",
                 "CertEndTime": "2020-02-12 16:00:00",
@@ -52,7 +52,7 @@ Output:
                 "ValidityPeriod": "0",
                 "Domain": "wgc.red",
                 "CertificateId": "a90XEOtj",
-                "Alias": "New order for a8xHcaIs",
+                "Alias": "a8xHcaIs的重颁发订单",
                 "IsWildcard": false,
                 "PackageTypeName": "TrustAsia TLS RSA CA",
                 "VulnerabilityStatus": "INACTIVE",
