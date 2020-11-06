@@ -461,21 +461,25 @@ class Loader(object):
             all_param_list.append(tmp)
             param_list.pop()
         # basic type array
-        elif isinstance(input_param, list) and not isinstance(input_param[0], dict):
+        elif isinstance(input_param, list) and len(input_param) > 0 and not isinstance(input_param[0], dict):
             value = " ".join(["'"+str(param)+"'" if " " in str(param) else str(param) for param in input_param])
             param_list.append(value)
             tmp = copy.deepcopy(param_list)
             all_param_list.append(tmp)
             param_list.pop()
         # complex object type array
-        elif isinstance(input_param, list) and isinstance(input_param[0], dict):
+        elif isinstance(input_param, list) and len(input_param) > 0 and isinstance(input_param[0], dict):
             for idx, param in enumerate(input_param):
                 param_list.append(str(idx))
                 self._translate_post_cli_param(param, param_list, all_param_list)
                 param_list.pop()
         # complex object type
-        else:  # isinstance(input_param, dict):
+        elif isinstance(input_param, dict):
             for param in input_param:
                 param_list.append(param)
                 self._translate_post_cli_param(input_param[param], param_list, all_param_list)
                 param_list.pop()
+        # null array
+        else:
+            pass
+
