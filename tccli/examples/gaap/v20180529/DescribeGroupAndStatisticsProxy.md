@@ -20,7 +20,7 @@ Output:
                 "ProxySet": [
                     {
                         "ProxyId": "link-mmu241ob",
-                        "PorxyName": "link-test",
+                        "ProxyName": "link-test",
                         "ListenerList": [
                             {
                                 "ListenerId": "listener-lmifrrmh",

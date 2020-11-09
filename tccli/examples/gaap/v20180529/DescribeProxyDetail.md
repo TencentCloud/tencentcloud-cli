@@ -14,44 +14,43 @@ Output:
 {
     "Response": {
         "ProxyDetail": {
-            "Status": "CREATING",
-            "Domain": "",
-            "InstanceId": "link-01vm81tj",
-            "AccessRegion": "EastChina",
-            "ProxyId": "link-01vm81tj",
-            "ProjectId": 0,
             "AccessRegionInfo": {
-                "RegionId": "EastChina",
-                "RegionName": "中国大陆-华东"
+                "RegionId": "SoutheastAsia",
+                "RegionName": "新加坡"
             },
-            "RealServerRegion": "NorthChina",
-            "CreateTime": "2019-03-21 21:33:45",
-            "SupportProtocols": [
-                "TCP",
-                "UDP",
-                "HTTP",
-                "HTTPS"
-            ],
-            "Concurrent": 2,
-            "Bandwidth": 10,
-            "Version": "2.0",
+            "RelatedGlobalDomains": [],
+            "Version": "3.0",
             "PolicyId": null,
             "Scalarable": 1,
-            "IP": "",
-            "ProxyName": "fff",
-            "GroupId": null,
+            "Status": "RUNNING",
+            "ProxyType": 100,
+            "ForwardIP": "154.8.156.36;140.143.138.143;",
+            "InstanceId": "link-ibqy8dqv",
+            "RealServerRegion": "NorthChina",
+            "Concurrent": 2,
             "RealServerRegionInfo": {
                 "RegionId": "NorthChina",
-                "RegionName": "中国大陆-华北"
+                "RegionName": "中国大陆-华北大区"
             },
-            "TagSet": [
-                {
-                    "TagKey": "gaaptest",
-                    "TagValue": "www"
-                }
-            ]
+            "IP": "129.226.3.36",
+            "AccessRegion": "SoutheastAsia",
+            "ProjectId": 0,
+            "BillingType": 0,
+            "SupportProtocols": [
+                "TCP",
+                "UDP"
+            ],
+            "Domain": "link-ibqy8dqv.gaapqcloud.com",
+            "CreateTime": 1598417633,
+            "ProxyId": "link-ibqy8dqv",
+            "Bandwidth": 10,
+            "SupportSecurity": 1,
+            "TagSet": [],
+            "ProxyName": "p_weidzhao_test",
+            "ModifyConfigTime": 1598417633,
+            "GroupId": null
         },
-        "RequestId": "1c54137e-e4da-42e1-8565-1bc2d99794a3"
+        "RequestId": "2a3ba5c4-aa37-4f01-825a-04140b4b25da"
     }
 }
 ```

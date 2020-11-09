@@ -15,7 +15,6 @@ tccli gaap CreateRule --cli-unfold-argument  \
     --CheckParams.Path %2F \
     --CheckParams.Method HEAD \
     --CheckParams.ConnectTimeout 4 \
-    --Language zh-CN \
     --HealthCheck 1 \
     --Domain www.bbb.com
 ```

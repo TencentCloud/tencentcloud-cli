@@ -16,12 +16,28 @@
         "title": "增加策略组"
       }
     ],
+    "CreateServiceDiscovery": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=CreateServiceDiscovery\n&InstanceId=prom-sdfk2342a\n&KubeClusterId=cls-pwerf3k3\n&KubeType=1\n&Type=1\n&Yaml=yaml\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ServiceDiscovery\": {\r\n            \"Kind\": \"ServiceMonitor\", \r\n            \"Name\": \"name\", \r\n            \"Namespace\": \"namespace\", \r\n            \"Selector\": \"{\\\"matchLabels\\\":{\\\"k8sapp\\\":\\\"mysql-exporter\\\"}}\", \r\n            \"Yaml\": \"apiVersion: monitoring.coreos.com...\", \r\n            \"NamespaceSelector\": \"{\\\"matchNames\\\":[\\\"demo-ns\\\"]}\", \r\n            \"Endpoints\": \"[{\\\"port\\\":\\\"tcp-port\\\",\\\"path\\\":\\\"/metrics\\\",\\\"interval\\\":\\\"30s\\\",\\\"bearerTokenSecret\\\":{\\\"key\\\":\\\"\\\"}}]\"\r\n        }, \r\n        \"RequestId\": \"nrtlca1qmunlpf51noe13qp5vyvg7mq5\"\r\n    }\r\n}",
+        "title": "创建服务发现"
+      }
+    ],
     "DeletePolicyGroup": [
       {
         "document": "",
         "input": "https://monitor.tencentcloudapi.com/?Action=DeletePolicyGroup\r\n&Module=monitor\r\n&GroupId.0=11111\r\n&<公共请求参数>",
         "output": "{\"Response\":{\"RequestId\":\"0dbb66c2-b4d6-4c2c-90a9-617d80347ab5\"}}",
         "title": "删除告警策略组"
+      }
+    ],
+    "DeleteServiceDiscovery": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DeleteServiceDiscovery\n&InstanceId=prom-sdfk2342a\n&KubeClusterId=cls-pwerf3k3\n&KubeType=1\n&Type=1\n&Yaml=yaml\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\r\n    }\r\n}",
+        "title": "删除服务发现"
       }
     ],
     "DescribeAccidentEventList": [
@@ -118,6 +134,14 @@
         "title": "查询云监控产品列表"
       }
     ],
+    "DescribeServiceDiscovery": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceDiscovery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-sdfk2342a\", \n    \"KubeClusterId\": \"cls-pwerf3k3\", \n    \"KubeType\": 1\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0523dedd-1235-428d-885c-9443cf9175d1\",\r\n        \"ServiceDiscoverySet\": [\r\n            {\r\n                 \"Kind\": \"ServiceMonitor\", \r\n                 \"Name\": \"name\", \r\n                 \"Namespace\": \"namespace\", \r\n                 \"Selector\": \"{\\\"matchLabels\\\":{\\\"k8sapp\\\":\\\"mysql-exporter\\\"}}\", \r\n                 \"Yaml\": \"apiVersion: monitoring.coreos.com...\", \r\n                 \"NamespaceSelector\": \"{\\\"matchNames\\\":[\\\"demo-ns\\\"]}\", \r\n                 \"Endpoints\": \"[{\\\"port\\\":\\\"tcp-port\\\",\\\"path\\\":\\\"/metrics\\\",\\\"interval\\\":\\\"30s\\\",\\\"bearerTokenSecret\\\":{\\\"key\\\":\\\"\\\"}}]\"\r\n           }\r\n        ]\r\n    }\r\n}",
+        "title": "列出服务发现列表"
+      }
+    ],
     "GetMonitorData": [
       {
         "document": "拉取某台云服务器某段时间内统计周期为5分钟的CPU利用率监控数据",
@@ -184,6 +208,14 @@
         "input": "https://monitor.tencentcloudapi.com/?Action=UnBindingPolicyObject\n&Module=monitor\n&GroupId=11111\n&UniqueId.0=3dd5113208fd467b2e5d0c1111111111\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"0dbb66c2-1111-1111-1111-11111111111\"\r\n    }\r\n}",
         "title": "删除策略的关联对象"
+      }
+    ],
+    "UpdateServiceDiscovery": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=UpdateServiceDiscovery\n&InstanceId=prom-sdfk2342a\n&KubeClusterId=cls-pwerf3k3\n&KubeType=1\n&Type=1\n&Yaml=yaml\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ServiceDiscovery\": {\r\n            \"Kind\": \"ServiceMonitor\", \r\n            \"Name\": \"name\", \r\n            \"Namespace\": \"namespace\", \r\n            \"Selector\": \"{\\\"matchLabels\\\":{\\\"k8sapp\\\":\\\"mysql-exporter\\\"}}\", \r\n            \"Yaml\": \"apiVersion: monitoring.coreos.com...\", \r\n            \"NamespaceSelector\": \"{\\\"matchNames\\\":[\\\"demo-ns\\\"]}\", \r\n            \"Endpoints\": \"[{\\\"port\\\":\\\"tcp-port\\\",\\\"path\\\":\\\"/metrics\\\",\\\"interval\\\":\\\"30s\\\",\\\"bearerTokenSecret\\\":{\\\"key\\\":\\\"\\\"}}]\"\r\n        }, \r\n        \"RequestId\": \"nrtlca1qmunlpf51noe13qp5vyvg7mq5\"\r\n    }\r\n}",
+        "title": "更新服务发现"
       }
     ]
   },

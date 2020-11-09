@@ -91,7 +91,7 @@
     "ModifyAllRuleStatus": [
       {
         "document": "",
-        "input": "https://cfw.tencentcloudapi.com/?Action=ModifyAllRuleStatus\n&Placement.Zone=ap-guangzhou-2\n&Status=1\n&Direction=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllRuleStatus\n<公共请求参数>\n\n{\n\"EdgeId\": \"\",\n\t\t\"Status\": 1,\n\t\t\"Direction\": 1,\n\t\t\"Area\": \"\"\n}",
         "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n }",
         "title": "启用停用全部规则"
       }

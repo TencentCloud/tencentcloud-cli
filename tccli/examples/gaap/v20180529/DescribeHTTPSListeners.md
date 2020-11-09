@@ -19,7 +19,7 @@ Output:
         "ListenerSet": [
             {
                 "ForwardProtocol": "HTTPS",
-                "ClientCertificateId": null,
+                "ClientCertificateId": "123",
                 "CertificateId": "Sv8lFuYh",
                 "Protocol": "HTTPS",
                 "CertificateAlias": "lagameft01_test勿删除",
@@ -27,9 +27,15 @@ Output:
                 "ListenerId": "listener-eqq49dct",
                 "ListenerStatus": 0,
                 "ListenerName": "连通性测试httpstohttps443",
-                "ClientCertificateAlias": null,
+                "ClientCertificateAlias": "sdvadf",
                 "CreateTime": 1563340571,
-                "Port": 443
+                "Port": 443,
+                "PolyClientCertificateAliasInfo": [
+                    {
+                        "CertificateId": "123",
+                        "CertificateAlias": "alis"
+                    }
+                ]
             },
             {
                 "ForwardProtocol": "HTTPS",
@@ -43,7 +49,13 @@ Output:
                 "ListenerName": "testcert001",
                 "ClientCertificateAlias": null,
                 "CreateTime": 1564201158,
-                "Port": 1443
+                "Port": 1443,
+                "PolyClientCertificateAliasInfo": [
+                    {
+                        "CertificateId": "123",
+                        "CertificateAlias": "alis"
+                    }
+                ]
             }
         ],
         "RequestId": "db5cebe8-b79a-401c-8704-388776fae938"

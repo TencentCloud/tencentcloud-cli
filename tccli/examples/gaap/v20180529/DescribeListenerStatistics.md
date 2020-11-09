@@ -7,7 +7,7 @@ Input:
 ```
 tccli gaap DescribeListenerStatistics --cli-unfold-argument  \
     --ListenerId listener-rfgt56hy \
-    --MetricNames [InputBandwidth,OutputBandwidth] \
+    --MetricNames InputBandwidth OutputBandwidth \
     --StartTime '2019-03-25 12:00:00' \
     --EndTime '2019-03-26 12:00:00' \
     --Granularity 300

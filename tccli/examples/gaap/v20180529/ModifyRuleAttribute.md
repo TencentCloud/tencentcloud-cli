@@ -11,7 +11,12 @@ tccli gaap ModifyRuleAttribute --cli-unfold-argument  \
     --Path / \
     --Scheduler rr \
     --HealthCheck 0 \
-    --CheckParam null
+    --CheckParams.DelayLoop 1 \
+    --CheckParams.Path str \
+    --CheckParams.ConnectTimeout 12 \
+    --CheckParams.StatusCode 1 \
+    --CheckParams.Method string \
+    --CheckParams.Domain string
 ```
 
 Output: 

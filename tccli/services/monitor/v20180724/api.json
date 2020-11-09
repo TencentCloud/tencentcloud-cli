@@ -12,11 +12,23 @@
       "name": "增加策略组",
       "output": "CreatePolicyGroupResponse"
     },
+    "CreateServiceDiscovery": {
+      "document": "在腾讯云容器服务下创建 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
+      "input": "CreateServiceDiscoveryRequest",
+      "name": "创建服务发现",
+      "output": "CreateServiceDiscoveryResponse"
+    },
     "DeletePolicyGroup": {
       "document": "删除告警策略组",
       "input": "DeletePolicyGroupRequest",
       "name": "删除告警策略组",
       "output": "DeletePolicyGroupResponse"
+    },
+    "DeleteServiceDiscovery": {
+      "document": "删除在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
+      "input": "DeleteServiceDiscoveryRequest",
+      "name": "删除服务发现",
+      "output": "DeleteServiceDiscoveryResponse"
     },
     "DescribeAccidentEventList": {
       "document": "获取平台事件列表",
@@ -84,6 +96,12 @@
       "name": "查询云监控产品列表",
       "output": "DescribeProductListResponse"
     },
+    "DescribeServiceDiscovery": {
+      "document": "列出在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
+      "input": "DescribeServiceDiscoveryRequest",
+      "name": "列出服务发现列表",
+      "output": "DescribeServiceDiscoveryResponse"
+    },
     "GetMonitorData": {
       "document": "获取云产品的监控数据。传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。",
       "input": "GetMonitorDataRequest",
@@ -125,6 +143,12 @@
       "input": "UnBindingPolicyObjectRequest",
       "name": "删除策略的关联对象",
       "output": "UnBindingPolicyObjectResponse"
+    },
+    "UpdateServiceDiscovery": {
+      "document": "在腾讯云容器服务下更新 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
+      "input": "UpdateServiceDiscoveryRequest",
+      "name": "更新服务发现",
+      "output": "UpdateServiceDiscoveryResponse"
     }
   },
   "metadata": {
@@ -740,6 +764,71 @@
       ],
       "type": "object"
     },
+    "CreateServiceDiscoveryRequest": {
+      "document": "CreateServiceDiscovery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<li>类型为TKE：对应集成的腾讯云容器服务集群 ID</li>",
+          "member": "string",
+          "name": "KubeClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
+          "member": "int64",
+          "name": "KubeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务发现配置信息",
+          "member": "string",
+          "name": "Yaml",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceDiscoveryResponse": {
+      "document": "CreateServiceDiscovery返回参数结构体",
+      "members": [
+        {
+          "document": "创建成功之后，返回对应服务发现信息",
+          "member": "ServiceDiscoveryItem",
+          "name": "ServiceDiscovery",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DataPoint": {
       "document": "监控数据点",
       "members": [
@@ -797,6 +886,64 @@
     },
     "DeletePolicyGroupResponse": {
       "document": "DeletePolicyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceDiscoveryRequest": {
+      "document": "DeleteServiceDiscovery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
+          "member": "string",
+          "name": "KubeClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
+          "member": "int64",
+          "name": "KubeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务发现配置信息",
+          "member": "string",
+          "name": "Yaml",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceDiscoveryResponse": {
+      "document": "DeleteServiceDiscovery返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3872,6 +4019,55 @@
       ],
       "type": "object"
     },
+    "DescribeServiceDiscoveryRequest": {
+      "document": "DescribeServiceDiscovery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
+          "member": "string",
+          "name": "KubeClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
+          "member": "int64",
+          "name": "KubeType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceDiscoveryResponse": {
+      "document": "DescribeServiceDiscovery返回参数结构体",
+      "members": [
+        {
+          "document": "返回服务发现列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ServiceDiscoveryItem",
+          "name": "ServiceDiscoverySet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Dimension": {
       "document": "实例对象的维度组合",
       "members": [
@@ -4766,6 +4962,75 @@
       ],
       "type": "object"
     },
+    "ServiceDiscoveryItem": {
+      "document": "Prometheus 服务发现信息",
+      "members": [
+        {
+          "default": "",
+          "document": "服务发现名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务发现属于的 Namespace",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务发现类型: ServiceMonitor/PodMonitor",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Namespace 选取方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceSelector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Label 选取方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Selector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Endpoints 信息（PodMonitor 不含该参数）",
+          "member": "string",
+          "name": "Endpoints",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务发现对应的配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Yaml",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "UnBindingAllPolicyObjectRequest": {
       "document": "UnBindingAllPolicyObject请求参数结构体",
       "members": [
@@ -4841,6 +5106,71 @@
     "UnBindingPolicyObjectResponse": {
       "document": "UnBindingPolicyObject返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceDiscoveryRequest": {
+      "document": "UpdateServiceDiscovery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
+          "member": "string",
+          "name": "KubeClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
+          "member": "int64",
+          "name": "KubeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务发现配置信息",
+          "member": "string",
+          "name": "Yaml",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceDiscoveryResponse": {
+      "document": "UpdateServiceDiscovery返回参数结构体",
+      "members": [
+        {
+          "document": "更新成功之后，返回对应服务发现的信息",
+          "member": "ServiceDiscoveryItem",
+          "name": "ServiceDiscovery",
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -16,7 +16,8 @@ Output:
         "RequestId": "8d9f4d84-b825-4a4f-8c4c-3c87c559c84c",
         "ErrorPageSet": [
             {
-                "Body": null,
+                "Body": "sx",
+                "Status": 0,
                 "Domain": "test.domain",
                 "ClearHeaders": [
                     "MyClearHeader",
@@ -28,7 +29,7 @@ Output:
                     502
                 ],
                 "ErrorPageId": "errorPage-lhlnux1v",
-                "NewErrorNo": null,
+                "NewErrorNo": 4123,
                 "SetHeaders": [
                     {
                         "HeaderName": "MyName",

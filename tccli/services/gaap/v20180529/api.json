@@ -307,7 +307,7 @@
       "output": "DescribeRealServerStatisticsResponse"
     },
     "DescribeRealServers": {
-      "document": "本接口（DescribeRealServers）用于查询源站信息，可以根据项目名查询所有的源站信息，此外支持指定IP机或者域名的源站模糊查询。",
+      "document": "本接口（DescribeRealServers）用于查询源站信息，可以根据项目名查询所有的源站信息，此外支持指定IP或者域名的源站模糊查询。",
       "input": "DescribeRealServersRequest",
       "name": "查询源站信息",
       "output": "DescribeRealServersResponse"
@@ -391,7 +391,7 @@
       "output": "ModifyCertificateResponse"
     },
     "ModifyCertificateAttributes": {
-      "document": "本接口（ModifyCertificateAttributes）用于修改证书，包括证明名字以及证书内容。",
+      "document": "本接口（ModifyCertificateAttributes）用于修改证书，包括证书名字以及证书内容。",
       "input": "ModifyCertificateAttributesRequest",
       "name": "修改证书属性",
       "output": "ModifyCertificateAttributesResponse"
@@ -3686,7 +3686,7 @@
         },
         {
           "default": "",
-          "document": "统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets, 丢包率:PacketLoss, 延迟:Latency",
+          "document": "统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets, 丢包率:PacketLoss, 延迟:Latency，http请求量：HttpQPS, Https请求量：HttpsQPS",
           "member": "string",
           "name": "MetricNames",
           "required": true,

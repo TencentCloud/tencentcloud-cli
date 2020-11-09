@@ -393,6 +393,14 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据库名称数组。",
+          "member": "SchemaItem",
+          "name": "SchemaList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -753,6 +761,21 @@
         }
       ],
       "usage": "out"
+    },
+    "SchemaItem": {
+      "document": "SchemaItem数组",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SlowLogTopSqlItem": {
       "document": "慢日志TopSql",

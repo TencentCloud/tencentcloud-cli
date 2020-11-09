@@ -21,13 +21,13 @@ Output:
                 "ListenerId": "listener-pbsgn7ej",
                 "Port": 111,
                 "RealServerType": "IP",
-                "RealServerPort": null,
-                "service_status": 0,
+                "RealServerPort": 123,
                 "Scheduler": "rr",
                 "ListenerStatus": 0,
                 "ListenerName": "111",
                 "BindStatus": 0,
-                "RealServerList": [
+                "CreateTime": 123441243,
+                "RealServerSet": [
                     {
                         "RealServerWeight": 1,
                         "RealServerId": "rs-d2rwammv",

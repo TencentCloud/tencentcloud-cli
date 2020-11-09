@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli cfw ModifyAllRuleStatus --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
+    --EdgeId  \
     --Status 1 \
-    --Direction 0
+    --Direction 1 \
+    --Area 
 ```
 
 Output: 

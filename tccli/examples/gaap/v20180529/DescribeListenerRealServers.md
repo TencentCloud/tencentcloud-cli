@@ -35,7 +35,10 @@ Output:
                 "RealServerIP": "118.89.46.86",
                 "RealServerWeight": 0,
                 "RealServerPort": 80,
-                "RealBindStatus": 0
+                "DownIPList": [
+                    "1.1.1.1"
+                ],
+                "RealServerStatus": 1
             }
         ],
         "RequestId": "38fab584-8d14-4e2c-988c-4acdabbf2dff"

@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "AccessRegionSet": [
+        "DestRegionSet": [
             {
                 "RegionId": "eu-moscow",
                 "RegionName": "俄罗斯"

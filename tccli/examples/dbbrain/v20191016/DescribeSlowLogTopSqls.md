@@ -12,7 +12,8 @@ tccli dbbrain DescribeSlowLogTopSqls --cli-unfold-argument  \
     --Limit 10 \
     --Offset 0 \
     --StartTime '2019-01-01 00:00:00' \
-    --EndTime '2019-01-01 01:00:00'
+    --EndTime '2019-01-01 01:00:00' \
+    --SchemaList.0.Schema dbName
 ```
 
 Output: 
@@ -30,7 +31,7 @@ Output:
                 "LockTimeRatio": 0,
                 "LockTimeMin": 0,
                 "RowsExaminedRatio": 0,
-                "Schema": "",
+                "Schema": "dbName",
                 "SqlText": "select test from test",
                 "QueryTime": 28.17341,
                 "SqlTemplate": "select ? from ?",

@@ -16,7 +16,7 @@ Output:
         "ProxySet": [
             {
                 "ProxyId": "link-mmu241ob",
-                "PorxyName": "wegame",
+                "ProxyName": "wegame",
                 "ListenerList": [
                     {
                         "ListenerId": "listener-lmifrrmh",

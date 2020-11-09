@@ -20,17 +20,12 @@ Output:
         "RuleList": [
             {
                 "Action": "DROP",
-                "DestPortRange": null,
+                "DestPortRange": "ALL",
                 "SourceCidr": "2.2.2.2",
                 "AliasName": "test1",
-                "RuleId": "sr-bf0yxxpp"
-            },
-            {
-                "Action": "ACCEPT",
-                "DestPortRange": null,
-                "SourceCidr": "1.1.1.1",
-                "AliasName": "test2",
-                "RuleId": "sr-ivgxkdxz"
+                "RuleId": "sr-bf0yxxpp",
+                "PolicyId": "ssavdf",
+                "Protocol": "string"
             }
         ],
         "PolicyId": "sp-9scxxhdh"
