@@ -175,7 +175,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源所属业务名称",
+          "document": "资源所属业务名称（资源六段式中的第三段）",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -207,7 +207,7 @@
         },
         {
           "default": "",
-          "document": "资源所在地域，不区分地域的资源不需要传入该字段",
+          "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "member": "string",
           "name": "ResourceRegion",
           "required": false,
@@ -215,7 +215,7 @@
         },
         {
           "default": "",
-          "document": "资源前缀，cos存储桶不需要传入该字段",
+          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
           "member": "string",
           "name": "ResourcePrefix",
           "required": false,
@@ -1401,7 +1401,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源所属业务名称",
+          "document": "资源所属业务名称（资源六段式中的第三段）",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -1425,7 +1425,7 @@
         },
         {
           "default": "",
-          "document": "资源所在地域不区分地域的资源不需要传入该字段",
+          "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "member": "string",
           "name": "ResourceRegion",
           "required": false,
@@ -1433,7 +1433,7 @@
         },
         {
           "default": "",
-          "document": "资源前缀，cos存储桶不需要传入该字段",
+          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
           "member": "string",
           "name": "ResourcePrefix",
           "required": false,
@@ -1501,7 +1501,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源所属业务名称",
+          "document": "资源所属业务名称（资源六段式中的第三段）",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -1533,7 +1533,7 @@
         },
         {
           "default": "",
-          "document": "资源所在地域，不区分地域的资源不需要传入该字段",
+          "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "member": "string",
           "name": "ResourceRegion",
           "required": false,
@@ -1541,7 +1541,7 @@
         },
         {
           "default": "",
-          "document": "资源前缀，cos存储桶不需要传入该字段",
+          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
           "member": "string",
           "name": "ResourcePrefix",
           "required": false,

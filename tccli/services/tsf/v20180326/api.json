@@ -7707,6 +7707,15 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11947,6 +11956,51 @@
           "name": "DeployDesc",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "滚动发布的更新方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "UpdateType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布是否启用beta批次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "DeployBetaEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "滚动发布的批次比例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "DeployBatch",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "滚动发布的批次执行方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeployExeMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "滚动发布的每个批次的等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "DeployWaitTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

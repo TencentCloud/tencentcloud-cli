@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://ccc.tencentcloudapi.com/?Action=CreateSDKLoginToken\n&SdkAppId=1400000000\n&SeatUserId=FooOrBar@tencent.com\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\r\n        \"Token\": \"6bb56a09278740bc80c5dc6dab783eff\",\r\n        \"ExpiredTime\": 1601371974\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\r\n        \"Token\": \"6bb56a09278740bc80c5dc6dab783eff\",\r\n        \"SdkURL\": \"https://29294-22989-29805-29810.cdn-go.cn/tccc-agent-sdk/latest/\",\r\n        \"ExpiredTime\": 1601371974\r\n    }\r\n}",
         "title": "创建 SDK 登录 Token"
       }
     ],

@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://gs.tencentcloudapi.com/?Action=CreateSession\n&UserId=字符串型\n&GameId=字符串型\n&GameRegion=字符串型\n&ClientSession=字符串型\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\",\r\n        \"ServerSession\": \"xyz\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\",\r\n        \"RoleNumber\": \"Player0\", \r\n        \"ServerSession\": \"xyz\"\r\n    }\r\n}",
         "title": "CreateSession示例"
       }
     ],

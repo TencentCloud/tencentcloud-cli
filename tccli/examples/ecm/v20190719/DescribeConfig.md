@@ -53,8 +53,7 @@ Output:
             "Ubuntu Server 18.04.1 LTS 64",
             "Ubuntu 16.0 64",
             "Windows Server 2012 R2"
-        ],
-        "IPDirect": 1
+        ]
     }
 }
 ```

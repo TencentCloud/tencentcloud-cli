@@ -1012,6 +1012,14 @@
         "title": "指定Filters查询IPV6转换实例"
       }
     ],
+    "DescribeIpGeolocationDatabaseUrl": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIpGeolocationDatabaseUrl\n&Type=ipv4\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"DownLoadUrl\":\"https:\\/\\/ip-address-repo-1255852779.cos.ap-guangzhou.myqcloud.com\\/tencent_ipv4_repo.tgz?q-sign-algorithm=sha1&q-ak=AKIDb5RbYFe5PcrwtkazVpxqX2MQIRM2xfy4&q-sign-time=1578970542;1579057002&q-key-time=1578970542;1579057002&q-header-list=&q-url-param-list=&q-signature=00f8d6ad0252822e17cca6450ebcd626eadc8405\",\r\n        \"ExpiredAt\":\"2020-01-15T10:56:42+00:00\",\r\n        \"RequestId\":\"21b41e67-8c0f-48cf-8af3-de0b6e1f4a4b\"\r\n    }\r\n}",
+        "title": "获取ipv4地址库下载链接"
+      }
+    ],
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": [
       {
         "document": "用NatGatewayId数组拉取NAT网关的端口转发规则",

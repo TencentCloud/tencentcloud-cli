@@ -305,8 +305,8 @@
     "DescribeSlowlogs": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeSlowlogs\r\n&InstanceId=mssql-njj2mtpl\r\n&StartTime=2018-03-28 00:00:00\r\n&EndTime=2018-04-20 00:00:00\r\n&Limit=20\r\n&Offset=0\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"46f65a4e-dd80-4379-a91b-1fb8464e3abf\",\r\n        \"TotalCount\": 0,\r\n        \"Slowlogs\": []\r\n    }\r\n}",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeSlowlogs\n&InstanceId=mssql-9aajrcn7\n&StartTime=2018-03-28 00:00:00\n&EndTime=2020-11-20 00:00:00\n&Limit=20\n&Offset=0\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"3e166da0-1f64-11eb-98ec-533fb32c3b2c\",\r\n\t\t\"Slowlogs\": [{\r\n\t\t\t\"Count\": 5,\r\n\t\t\t\"EndTime\": \"2020-11-05 20:17:14\",\r\n\t\t\t\"ExternalAddr\": \"https://sqlserver-bucket-gz-1258415541.cos.ap-guangzhou.myqcloud.com/1251966477%2fsqlserver%2fmssql-9aajrcn7%2fslow%2fTRACE_20201105201000.trc?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDrRloa5Zdk580Xo9dCWaNE3kU3MQElsiV%26q-sign-time%3d1604580096%3b1604580996%26q-key-time%3d1604580096%3b1604580996%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d583b4db2ec94fa10e55da9b95e1e3d8943eaa386\",\r\n\t\t\t\"Id\": 30304577,\r\n\t\t\t\"InternalAddr\": \"https://sqlserver-bucket-gz-1258415541.cos.ap-guangzhou.myqcloud.com/1251966477%2fsqlserver%2fmssql-9aajrcn7%2fslow%2fTRACE_20201105201000.trc?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDrRloa5Zdk580Xo9dCWaNE3kU3MQElsiV%26q-sign-time%3d1604580096%3b1604580996%26q-key-time%3d1604580096%3b1604580996%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d583b4db2ec94fa10e55da9b95e1e3d8943eaa386\",\r\n\t\t\t\"Size\": 1024,\r\n\t\t\t\"StartTime\": \"2020-11-05 20:10:05\",\r\n\t\t\t\"Status\": 1\r\n\t\t}],\r\n\t\t\"TotalCount\": 1\r\n\t}\r\n}",
         "title": "获取慢查询记录"
       }
     ],

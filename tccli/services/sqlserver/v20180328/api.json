@@ -559,6 +559,15 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为管理员账户",
+          "member": "bool",
+          "name": "IsAdmin",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1984,7 +1993,7 @@
         },
         {
           "default": "",
-          "document": "实例高可用， 1-双机高可用，2-单机",
+          "document": "实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房",
           "member": "int64",
           "name": "Model",
           "required": true,

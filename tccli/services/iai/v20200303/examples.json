@@ -507,7 +507,7 @@
     "VerifyFace": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=VerifyFace\r\n&Url=http://test.image.myqcloud.com/testA.jpg\r\n&PersonId=11111111\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=VerifyFace\n&Url=http://test.image.myqcloud.com/testA.jpg\n&PersonId=11111111\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Score\": 100,\r\n        \"IsMatch\": true,\r\n        \"FaceModelVersion\": \"3.0\",\r\n        \"RequestId\": \"a8eb4545-a154-4f86-9510-57a8be9cae0c\"\r\n    }\r\n}",
         "title": "人脸验证接口"
       }

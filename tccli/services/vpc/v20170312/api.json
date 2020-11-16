@@ -660,6 +660,12 @@
       "name": "查询IPV6转换实例及其绑定规则信息",
       "output": "DescribeIp6TranslatorsResponse"
     },
+    "DescribeIpGeolocationDatabaseUrl": {
+      "document": "该接口用于获取ip地理位置库下载链接",
+      "input": "DescribeIpGeolocationDatabaseUrlRequest",
+      "name": "获取IP地理位置库下载链接",
+      "output": "DescribeIpGeolocationDatabaseUrlResponse"
+    },
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": {
       "document": "本接口（DescribeNatGatewayDestinationIpPortTranslationNatRules）用于查询NAT网关端口转发规则对象数组。",
       "input": "DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest",
@@ -8302,6 +8308,46 @@
           "member": "Ip6Translator",
           "name": "Ip6TranslatorSet",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpGeolocationDatabaseUrlRequest": {
+      "document": "DescribeIpGeolocationDatabaseUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ip地址库协议类型，目前支持\"ipv4\"和\"ipv6\"。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpGeolocationDatabaseUrlResponse": {
+      "document": "DescribeIpGeolocationDatabaseUrl返回参数结构体",
+      "members": [
+        {
+          "document": "IP地址库下载链接地址",
+          "member": "string",
+          "name": "DownLoadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "链接到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。",
+          "member": "datetime_iso",
+          "name": "ExpiredAt",
+          "type": "string",
           "value_allowed_null": false
         },
         {

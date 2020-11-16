@@ -355,7 +355,7 @@
     "PurgeUrlsCache": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=PurgeUrlsCache\r\n&Urls.0=http://www.test.com/1.jpg\r\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=PurgeUrlsCache\n&Urls.0=http://www.test.com/1.jpg\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\r\n\t\t\"TaskId\": \"1533045796-i60rfmzm\"\r\n\t}\r\n}",
         "title": "提交 URL 刷新任务"
       }

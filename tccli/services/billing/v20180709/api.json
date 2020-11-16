@@ -90,6 +90,12 @@
       "name": "查询订单数据",
       "output": "DescribeDealsByCondResponse"
     },
+    "DescribeDosageCosDetailByDate": {
+      "document": "获取COS产品用量明细",
+      "input": "DescribeDosageCosDetailByDateRequest",
+      "name": "获取COS产品用量明细",
+      "output": "DescribeDosageCosDetailByDateResponse"
+    },
     "DescribeDosageDetailByDate": {
       "document": "按日期获取产品用量明细",
       "input": "DescribeDosageDetailByDateRequest",
@@ -1751,6 +1757,75 @@
       ],
       "usage": "out"
     },
+    "CosDetailSets": {
+      "document": "cos产品用量明细返回数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "存储桶名称",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量开始时间",
+          "member": "string",
+          "name": "DosageBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量结束时间",
+          "member": "string",
+          "name": "DosageEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一级产品类型名称",
+          "member": "string",
+          "name": "SubProductCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级产品类型名称",
+          "member": "string",
+          "name": "BillingItemCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量",
+          "member": "string",
+          "name": "DosageValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CostComponentSet": {
       "document": "消耗组件明细",
       "members": [
@@ -2474,6 +2549,41 @@
           "document": "扣费总额，单位（分）",
           "member": "float",
           "name": "DeductAmount",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资金转入总额，单位（分）",
+          "member": "float",
+          "name": "AgentInAmount",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "垫付充值总额，单位（分）",
+          "member": "float",
+          "name": "AdvanceRechargeAmount",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "提现扣减总额，单位（分）",
+          "member": "float",
+          "name": "WithdrawAmount",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资金转出总额，单位（分）",
+          "member": "float",
+          "name": "AgentOutAmount",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "还垫付总额，单位（分）",
+          "member": "float",
+          "name": "AdvancePayAmount",
           "type": "float",
           "value_allowed_null": false
         },
@@ -3441,6 +3551,55 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDosageCosDetailByDateRequest": {
+      "document": "DescribeDosageCosDetailByDate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询用量开始时间",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询用量结束时间（与开始时间同月，不支持跨月查询）",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "COS 存储桶名称，可通过Get Service 接口是用来获取请求者名下的所有存储空间列表（Bucket list）https://tcloud-dev.oa.com/document/product/555/30925?!preview&!document=1",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDosageCosDetailByDateResponse": {
+      "document": "DescribeDosageCosDetailByDate返回参数结构体",
+      "members": [
+        {
+          "document": "用量数组",
+          "member": "CosDetailSets",
+          "name": "DetailSets",
+          "type": "list",
           "value_allowed_null": false
         },
         {

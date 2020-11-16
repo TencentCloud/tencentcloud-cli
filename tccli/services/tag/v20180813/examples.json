@@ -11,7 +11,7 @@
     "AttachResourcesTag": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=AttachResourcesTag\r\n&ServiceType=cvm&ResourceRegion=ap-guangzhou&TagKey=t1&TagValue=v1&ResourcePrefix=instance&ResourceIds.0=ins-001&ResourceIds.1=ins-002\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=AttachResourcesTag\n&ServiceType=cvm\n&ResourceRegion=ap-guangzhou\n&TagKey=t1\n&TagValue=v1\n&ResourcePrefix=instance\n&ResourceIds.0=ins-001\n&ResourceIds.1=ins-002\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"7bf7fd57-4d48-4a5a-957a-80b390dea117\"\r\n    }\r\n}",
         "title": "给广州地域多个云主机实例关联标签"
       }
@@ -131,7 +131,7 @@
     "DetachResourcesTag": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DetachResourcesTag\r\n&ServiceType=cvm&ResourceRegion=ap-guangzhou&TagKey=t1&TagValue=v1&ResourcePrefix=instance&ResourceIds.0=ins-001&ResourceIds.1=ins-002\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=DetachResourcesTag\n&ServiceType=cvm\n&ResourceRegion=ap-guangzhou\n&TagKey=t1\n&ResourcePrefix=instance\n&ResourceIds.0=ins-001\n&ResourceIds.1=ins-002\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"7bf7fd57-4d48-4a5a-957a-80b390dea667\"\r\n    }\r\n}",
         "title": "解绑多个广州地域的云主机实例关联的某个标签"
       }
@@ -153,7 +153,7 @@
     "ModifyResourcesTagValue": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=ModifyResourcesTagValue\r\n&ServiceType=cvm&ResourceRegion=ap-guangzhou&TagKey=t1&TagValue=v1&ResourcePrefix=instance&ResourceIds.0=ins-001&ResourceIds.1=ins-002\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=ModifyResourcesTagValue\n&ServiceType=cvm\n&ResourceRegion=ap-guangzhou\n&TagKey=t1\n&TagValue=v1\n&ResourcePrefix=instance\n&ResourceIds.0=ins-001\n&ResourceIds.1=ins-002\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"cc9a1529-edd3-4cf1-b2d1-4cd0ee2708cb\"\r\n    }\r\n}",
         "title": "修改广州地域多个云主机实例关联的某个标签键对应的标签值"
       }

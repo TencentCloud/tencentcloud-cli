@@ -21,10 +21,15 @@ Output:
     "Response": {
         "Total": 39,
         "ReturnAmount": 9667,
-        "DeductAmount": -7057155,
+        "DeductAmount": 7057155,
         "RechargeAmount": 2247483647,
-        "BlockAmount": -5130854,
+        "BlockAmount": 5130854,
         "UnblockAmount": 10000,
+        "AgentInAmount": 10000,
+        "AdvanceRechargeAmount": 10000,
+        "WithdrawAmount": 10000,
+        "AgentOutAmount": 10000,
+        "AdvancePayAmount": 10000,
         "TransactionList": [
             {
                 "OperationTime": "2020-07-08 15:52:30.941",

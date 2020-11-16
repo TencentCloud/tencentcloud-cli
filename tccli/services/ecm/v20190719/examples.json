@@ -3,7 +3,7 @@
     "AllocateAddresses": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=AllocateAddresses\r\n&AddressCount=1\r\n&InternetServiceProvider=CTCC\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=AllocateAddresses\n&AddressCount=1\n&InternetServiceProvider=CTCC\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"AddressSet\": [\r\n      \"eip-11112222\"\r\n    ],\r\n    \"TaskId\": \"123\",\r\n    \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\r\n  }\r\n}",
         "title": "创建EIP"
       }
@@ -267,8 +267,8 @@
     "DescribeConfig": [
       {
         "document": "获取基础配置",
-        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeConfig\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"46afa5e7-3779-477c-adc0-8241a8e96115\",\r\n    \"NetworkStorageRange\": {\r\n      \"MinBandwidth\": 25,\r\n      \"MaxBandwidth\": 3000,\r\n      \"PerBandwidth\": 1,\r\n      \"SuggestBandwidth\": 25,\r\n      \"MinSystemDiskSize\": 50,\r\n      \"MaxSystemDiskSize\": 50,\r\n      \"SuggestSystemDiskSize\": 50,\r\n      \"MinDataDiskSize\": 0,\r\n      \"MaxDataDiskSize\": 1000,\r\n      \"PerDataDisk\": 10,\r\n      \"SuggestDataDiskSize\": 0,\r\n      \"MinVcpu\": 1,\r\n      \"MaxVcpu\": 5000,\r\n      \"MaxVcpuPerReq\": 5000,\r\n      \"MaxModuleNum\": 100\r\n    },\r\n    \"ImageWhiteSet\": [\r\n      \"CentOS 6.2 64\",\r\n      \"CentOS 6.3 64\",\r\n      \"CentOS 6.8 64\",\r\n      \"CentOS 6.9 32\",\r\n      \"CentOS 6.9 64\",\r\n      \"CentOS 7.2 64\",\r\n      \"CentOS 7.3 64\",\r\n      \"CentOS 7.4 64\",\r\n      \"CentOS 7.5 64\",\r\n      \"CentOS 7.6 64\",\r\n      \"Debian 7.4 64\",\r\n      \"Debian 8.2 32\",\r\n      \"Debian 8.2 64\",\r\n      \"Debian 9.0 64\",\r\n      \"Tencent Linux Release 1.2 (tkernel2)\",\r\n      \"Tencent Linux Release 2.2 (Final)\",\r\n      \"Ubuntu Server 14.04.1 LTS 32\",\r\n      \"Ubuntu Server 14.04.1 LTS 64\",\r\n      \"Ubuntu Server 16.04.1 LTS 32\",\r\n      \"Ubuntu Server 16.04.1 LTS 64\",\r\n      \"Ubuntu Server 18.04.1 LTS 64\",\r\n      \"Ubuntu 16.0 64\",\r\n      \"Windows Server 2012 R2\"\r\n    ],\r\n    \"IPDirect\": 1\r\n  }\r\n}",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeConfig\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"46afa5e7-3779-477c-adc0-8241a8e96115\",\r\n    \"NetworkStorageRange\": {\r\n      \"MinBandwidth\": 25,\r\n      \"MaxBandwidth\": 3000,\r\n      \"PerBandwidth\": 1,\r\n      \"SuggestBandwidth\": 25,\r\n      \"MinSystemDiskSize\": 50,\r\n      \"MaxSystemDiskSize\": 50,\r\n      \"SuggestSystemDiskSize\": 50,\r\n      \"MinDataDiskSize\": 0,\r\n      \"MaxDataDiskSize\": 1000,\r\n      \"PerDataDisk\": 10,\r\n      \"SuggestDataDiskSize\": 0,\r\n      \"MinVcpu\": 1,\r\n      \"MaxVcpu\": 5000,\r\n      \"MaxVcpuPerReq\": 5000,\r\n      \"MaxModuleNum\": 100\r\n    },\r\n    \"ImageWhiteSet\": [\r\n      \"CentOS 6.2 64\",\r\n      \"CentOS 6.3 64\",\r\n      \"CentOS 6.8 64\",\r\n      \"CentOS 6.9 32\",\r\n      \"CentOS 6.9 64\",\r\n      \"CentOS 7.2 64\",\r\n      \"CentOS 7.3 64\",\r\n      \"CentOS 7.4 64\",\r\n      \"CentOS 7.5 64\",\r\n      \"CentOS 7.6 64\",\r\n      \"Debian 7.4 64\",\r\n      \"Debian 8.2 32\",\r\n      \"Debian 8.2 64\",\r\n      \"Debian 9.0 64\",\r\n      \"Tencent Linux Release 1.2 (tkernel2)\",\r\n      \"Tencent Linux Release 2.2 (Final)\",\r\n      \"Ubuntu Server 14.04.1 LTS 32\",\r\n      \"Ubuntu Server 14.04.1 LTS 64\",\r\n      \"Ubuntu Server 16.04.1 LTS 32\",\r\n      \"Ubuntu Server 16.04.1 LTS 64\",\r\n      \"Ubuntu Server 18.04.1 LTS 64\",\r\n      \"Ubuntu 16.0 64\",\r\n      \"Windows Server 2012 R2\"\r\n    ]\r\n  }\r\n}",
         "title": "获取基础配置"
       }
     ],
@@ -573,7 +573,7 @@
     "ModifyAddressesBandwidth": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyAddressesBandwidth\r\n&InternetMaxBandwidthOut=1000\r\n&AddressIds.0=eip-11112222\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyAddressesBandwidth\n&InternetMaxBandwidthOut=1000\n&AddressIds.0=eip-11112222\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"123\",\r\n    \"RequestId\": \"24cfceab-3492-482c-b86f-27f598b1b044\"\r\n  }\r\n}",
         "title": "调整EIP带宽"
       }

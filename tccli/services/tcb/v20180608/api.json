@@ -1382,6 +1382,14 @@
           "name": "EnvId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用统一域名",
+          "member": "bool",
+          "name": "EnableUnion",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

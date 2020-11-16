@@ -647,7 +647,7 @@
     "ModifyAuditConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyAuditConfig\r\n&LogExpireDay=365\r\n&InstanceId=cdb-txcniupi\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyAuditConfig\n&LogExpireDay=365\n&InstanceId=cdb-txcniupi\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\r\n    }\r\n}",
         "title": "更改审计服务配置"
       }
