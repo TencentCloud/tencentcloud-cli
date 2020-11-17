@@ -32,6 +32,14 @@
         "title": "查询状态机详情"
       }
     ],
+    "DescribeFlowServices": [
+      {
+        "document": "查询指定用户下所有状态机，以列表形式返回",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeFlowServices\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"FlowServiceSet\": [{\r\n\t\t\t\"FlowServiceResource\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bdp8sj4v\",\r\n\t\t\t\"Type\": \"EXPRESS\",\r\n\t\t\t\"FlowServiceName\": \"flowservicetest\",\r\n\t\t\t\"FlowServiceChineseName\": \"你好\",\r\n\t\t\t\"CreateDate\": \"1595227100\",\r\n\t\t\t\"ModifyDate\": \"1595227100\",\r\n\t\t\t\"Status\": \"Online\",\r\n\t\t\t\"Creator\": \"\",\r\n\t\t\t\"Modifier\": \"\",\r\n\t\t\t\"FlowServiceId\": \"svc-bdp8sj4u\",\r\n\t\t\t\"TemplateId\": \"tpl-bdp8sj4w\",\r\n                        \"Description\":\"描述\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"ab1b30fc-3503-4b27-96dc-94c14d2fd43w\"\r\n\t}\r\n}",
+        "title": "查询状态机列表"
+      }
+    ],
     "ModifyFlowService": [
       {
         "document": "",

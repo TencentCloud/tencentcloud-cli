@@ -24,6 +24,12 @@
       "name": "查询状态机详情",
       "output": "DescribeFlowServiceDetailResponse"
     },
+    "DescribeFlowServices": {
+      "document": "查询指定用户下所有状态机，以列表形式返回",
+      "input": "DescribeFlowServicesRequest",
+      "name": "查询状态机列表",
+      "output": "DescribeFlowServicesResponse"
+    },
     "ModifyFlowService": {
       "document": "该接口用于修改状态机",
       "input": "ModifyFlowServiceRequest",
@@ -361,6 +367,86 @@
       ],
       "type": "object"
     },
+    "DescribeFlowServicesRequest": {
+      "document": "DescribeFlowServices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filter.Values的上限为5。参数名字仅支持FlowServiceName， Status, Type三种情况",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowServicesResponse": {
+      "document": "DescribeFlowServices返回参数结构体",
+      "members": [
+        {
+          "document": "用户的状态机列表",
+          "member": "StateMachine",
+          "name": "FlowServiceSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户的状态机总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "模版过滤类型",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤器名字",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤器值的数组",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ModifyFlowServiceRequest": {
       "document": "ModifyFlowService请求参数结构体",
       "members": [
@@ -512,6 +598,120 @@
         }
       ],
       "type": "object"
+    },
+    "StateMachine": {
+      "document": "状态机",
+      "members": [
+        {
+          "default": "",
+          "document": "状态机资源",
+          "member": "string",
+          "name": "FlowServiceResource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态机类型。EXPRESS，STANDARD",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态机名称",
+          "member": "string",
+          "name": "FlowServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态机中文名",
+          "member": "string",
+          "name": "FlowServiceChineseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。timestamp",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间。timestamp",
+          "member": "string",
+          "name": "ModifyDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态机状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者的subAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改者的subAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Modifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态机id",
+          "member": "string",
+          "name": "FlowServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板id",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

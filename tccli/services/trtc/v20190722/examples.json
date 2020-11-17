@@ -64,12 +64,48 @@
         "title": "查询实时规模"
       }
     ],
+    "DescribeRecordStatistic": [
+      {
+        "document": "",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribeRecordStatistic\n&SdkAppId=1400123456\n&StartTime=2019-10-11\n&EndTime=2019-10-13\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"SdkAppIdUsages\": [\r\n            {\r\n                \"SdkAppId\": \"1400123456\",\r\n                \"Usages\": [\r\n                    {\r\n                        \"TimeKey\": \"2019-10-11\",\r\n                        \"Class1VideoTime\": 556026,\r\n                        \"Class2VideoTime\": 86361829,\r\n                        \"Class3VideoTime\": 0,\r\n                        \"AudioTime\": 64169044\r\n                    },\r\n                    {\r\n                        \"TimeKey\": \"2019-10-12\",\r\n                        \"Class1VideoTime\": 551103,\r\n                        \"Class2VideoTime\": 85103796,\r\n                        \"Class3VideoTime\": 0,\r\n                        \"AudioTime\": 64156599\r\n                    },\r\n                    {\r\n                        \"TimeKey\": \"2019-10-13\",\r\n                        \"Class1VideoTime\": 515249,\r\n                        \"Class2VideoTime\": 82982805,\r\n                        \"Class3VideoTime\": 0,\r\n                        \"AudioTime\": 65673394\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b24\"\r\n    }\r\n}",
+        "title": "获取录制的时长统计数据"
+      }
+    ],
     "DescribeRoomInformation": [
       {
         "document": "",
         "input": "https://trtc.tencentcloudapi.com/?Action=DescribeRoomInformation\n&StartTime=1588031999\n&EndTime=1588034999\n&SdkAppId=1400188366\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Total\": 10,\r\n        \"RoomList\": [\r\n            {\r\n                \"CommId\": \"1400188366_563398783_1587959355\",\r\n                \"RoomString\": \"113a730673fee2d86e93e26cddb25b7d\",\r\n                \"CreateTime\": 1587959355,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"mixer_113a730673fee2d86e93e26cddb25b7d\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_3791597063_1587959341\",\r\n                \"RoomString\": \"4724f5b26c36bd53ea139e7e1c3dea1e\",\r\n                \"CreateTime\": 1587959341,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"mixer_4724f5b26c36bd53ea139e7e1c3dea1e\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_15343445_1587731480\",\r\n                \"RoomString\": \"ae4e2ebc3a71d5b151efca3e1dbe32e9\",\r\n                \"CreateTime\": 1587731480,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"mixer_ae4e2ebc3a71d5b151efca3e1dbe32e9\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_1100067693_1587730962\",\r\n                \"RoomString\": \"f83dec1f40adaf92117b62d6f9e7e0b4\",\r\n                \"CreateTime\": 1587730962,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"mixer_f83dec1f40adaf92117b62d6f9e7e0b4\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_2420034035_1587723604\",\r\n                \"RoomString\": \"76f067dfad1044171dad37bf65b1cf4b\",\r\n                \"CreateTime\": 1587723604,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"mixer_76f067dfad1044171dad37bf65b1cf4b\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_2420034035_1587713998\",\r\n                \"RoomString\": \"76f067dfad1044171dad37bf65b1cf4b\",\r\n                \"CreateTime\": 1587713998,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"mixer_76f067dfad1044171dad37bf65b1cf4b\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_3501_1586952940\",\r\n                \"RoomString\": \"3501\",\r\n                \"CreateTime\": 1586952940,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"yuting\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_3015068783_1586952940\",\r\n                \"RoomString\": \"7651c9da1253981c8b842bcdcad11c3e\",\r\n                \"CreateTime\": 1586952940,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"7651c9da1253981c8b842bcdcad11c3e\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_3501_1586952865\",\r\n                \"RoomString\": \"3501\",\r\n                \"CreateTime\": 1586952865,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"yuting\"\r\n            },\r\n            {\r\n                \"CommId\": \"1400188366_3015068783_1586952865\",\r\n                \"RoomString\": \"7651c9da1253981c8b842bcdcad11c3e\",\r\n                \"CreateTime\": 1586952865,\r\n                \"DestroyTime\": 1588040628,\r\n                \"IsFinished\": false,\r\n                \"UserId\": \"7651c9da1253981c8b842bcdcad11c3e\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"83ca6fdd-cf4c-46a9-a577-74c3497ad3fa\"\r\n    }\r\n}",
         "title": "查询sdkappid下房间列表"
+      }
+    ],
+    "DescribeTrtcInteractiveTime": [
+      {
+        "document": "查询的时间区间为多日",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribeTrtcInteractiveTime\n&SdkAppId=1400123456\n&StartTime=2020-09-07\n&EndTime=2020-09-08\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Usages\": [\r\n            {\r\n                \"TotalNum\": 2,\r\n                \"SdkAppId\": \"1400243510\",\r\n                \"SdkAppIdTrtcTimeUsages\": [\r\n                    {\r\n                        \"AudioVideoTime\": 0,\r\n                        \"VideoTimeSd\": 3633229,\r\n                        \"VideoTimeHd\": 7266458,\r\n                        \"VideoTimeHdp\": 10899687,\r\n                        \"AudioTime\": 8435963,\r\n                        \"TimeKey\": \"2020-09-07\"\r\n                    },\r\n                    {\r\n                        \"AudioVideoTime\": 0,\r\n                        \"VideoTimeSd\": 8896,\r\n                        \"VideoTimeHd\": 17792,\r\n                        \"VideoTimeHdp\": 26688,\r\n                        \"AudioTime\": 30690,\r\n                        \"TimeKey\": \"2020-09-08\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b24\"\r\n    }\r\n}",
+        "title": "查询音视频互动计费时长（查询区间超过1天）"
+      },
+      {
+        "document": "",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribeTrtcInteractiveTime\n&SdkAppId=1400123456\n&StartTime=2020-09-08\n&EndTime=2020-09-08\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Usages\": [\r\n            {\r\n                \"TotalNum\": 2,\r\n                \"SdkAppId\": \"1400243510\",\r\n                \"SdkAppIdTrtcTimeUsages\": [\r\n                    {\r\n                        \"AudioVideoTime\": 14706996,\r\n                        \"VideoTimeSd\": 0,\r\n                        \"VideoTimeHd\": 0,\r\n                        \"VideoTimeHdp\": 0,\r\n                        \"AudioTime\": 0,\r\n                        \"TimeKey\": \"2020-09-07 09:50:00\"\r\n                    },\r\n                    {\r\n                        \"AudioVideoTime\": 56820,\r\n                        \"VideoTimeSd\": 0,\r\n                        \"VideoTimeHd\": 0,\r\n                        \"VideoTimeHdp\": 0,\r\n                        \"AudioTime\": 0,\r\n                        \"TimeKey\": \"2020-09-08 09:55:00\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b24\"\r\n    }\r\n}",
+        "title": "查询音视频互动计费时长（查询区间为同一天）"
+      },
+      {
+        "document": "",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribeTrtcInteractiveTime\n&StartTime=2020-09-08\n&EndTime=2020-09-08\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n            \"Usages\": [\r\n                {\r\n                    \"SdkAppId\": \"total\",\r\n                    \"SdkAppIdTrtcTimeUsages\": [\r\n                        {\r\n                            \"TimeKey\": \"2020-09-08 00:05:00\",\r\n                            \"AudioVideoTime\": 512916,\r\n                            \"VideoTimeSd\": 0,\r\n                            \"VideoTimeHd\": 0,\r\n                            \"VideoTimeHdp\": 0,\r\n                            \"AudioTime\": 0\r\n                        },\r\n                        {\r\n                            \"TimeKey\": \"2020-09-08 00:10:00\",\r\n                            \"AudioVideoTime\": 523098,\r\n                            \"VideoTimeSd\": 0,\r\n                            \"VideoTimeHd\": 0,\r\n                            \"VideoTimeHdp\": 0,\r\n                            \"AudioTime\": 0\r\n                        },\r\n                        {\r\n                            \"TimeKey\": \"2020-09-08 00:15:00\",\r\n                            \"AudioVideoTime\": 512861,\r\n                            \"VideoTimeSd\": 0,\r\n                            \"VideoTimeHd\": 0,\r\n                            \"VideoTimeHdp\": 0,\r\n                            \"AudioTime\": 0\r\n                        }\r\n                    ],\r\n                    \"TotalNum\": 3\r\n                }\r\n            ],\r\n\"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b24\"\r\n        }\r\n}",
+        "title": "查询音视频互动计费时长（不传SDKAppID时的情况）"
+      }
+    ],
+    "DescribeTrtcMcuTranscodeTime": [
+      {
+        "document": "多日查询",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribeTrtcMcuTranscodeTime\n&SdkAppId=1400123456\n&StartTime=2020-09-07\n&EndTime=2020-09-08\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Usages\": [\r\n            {\r\n                \"SdkAppId\": \"xx\",\r\n                \"TotalNum\": 1,\r\n                \"SdkAppIdTranscodeTimeUsages\": [\r\n                    {\r\n                        \"AudioTime\": 1,\r\n                        \"VideoTimeHd\": 1,\r\n                        \"VideoTimeFhd\": 1,\r\n                        \"VideoTimeSd\": 1,\r\n                        \"TimeKey\": \"xx\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询旁路转码计费时长"
       }
     ],
     "DescribeUserInformation": [
@@ -88,10 +124,26 @@
         "title": "解散房间"
       }
     ],
+    "DismissRoomByStrRoomId": [
+      {
+        "document": "解散房间abcd。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoomByStrRoomId\n&SdkAppId=1400000001\n&RoomId=abcd\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "解散房间"
+      }
+    ],
     "RemoveUser": [
       {
         "document": "将用户test1、test2从房间1234移出。",
         "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\r\n&SdkAppId=1400000001\r\n&RoomId=1234\r\n&UserIds.0=test1\r\n&UserIds.1=test2\r\n&UserIds.3=test3\r\n&UserIds.4=test4\r\n&UserIds.5=test5\r\n&UserIds.6=test6\r\n&UserIds.7=test7\r\n&UserIds.8=test8\r\n&UserIds.9=test9\r\n&UserIds.10=test10\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "移出用户"
+      }
+    ],
+    "RemoveUserByStrRoomId": [
+      {
+        "document": "将用户test1、test2从房间abcd移出。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUserByStrRoomId\n&SdkAppId=1400000001\n&RoomId=abcd\n&UserIds.0=test1\n&UserIds.1=test2\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
         "title": "移出用户"
       }

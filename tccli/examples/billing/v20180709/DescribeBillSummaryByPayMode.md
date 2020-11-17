@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli billing DescribeBillSummaryByPayMode --cli-unfold-argument  \
-    --PayerUin 909619400 \
-    --BeginTime '2018-11-01 00:00:00' \
-    --EndTime '2018-11-01 23:59:59'
+    --BeginTime 2018-11 \
+    --EndTime 2018-11
 ```
 
 Output: 

@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli billing DescribeCostSummaryByResource --cli-unfold-argument  \
-    --PayerUin 909619400 \
-    --BeginTime 2018-11-0100:00:00 \
-    --EndTime 2018-11-3023:59:59 \
+    --BeginTime 2018-11 \
+    --EndTime 2018-11 \
     --Limit 1 \
     --Offset 0
 ```
@@ -50,6 +49,7 @@ Output:
             {
                 "BusinessCode": "billVirtualId",
                 "BusinessCodeName": "月度计费精度差异",
+                "ConsumptionTypeName": "xx",
                 "ResourceId": "billVirtualId",
                 "ResourceName": "扣费精度补偿",
                 "RealTotalCost": "-0.69",
@@ -62,8 +62,6 @@ Output:
                 "ProjectName": "默认项目"
             }
         ],
-        "PageSize": 1,
-        "PageNo": 1,
         "RecordNum": 29,
         "Ready": 1,
         "RequestId": "59a408bc-5d95-4d40-bf21-58e5e8d48dd0"

@@ -13,6 +13,56 @@ from tencentcloud.trtc.v20190722 import trtc_client as trtc_client_v20190722
 from tencentcloud.trtc.v20190722 import models as models_v20190722
 
 
+def doDescribeRecordStatistic(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRecordStatisticRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeRecordStatistic(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTrtcMcuTranscodeTime(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTrtcMcuTranscodeTimeRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTrtcMcuTranscodeTime(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateTroubleInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -55,6 +105,31 @@ def doDescribeHistoryScale(args, parsed_globals):
     model = models.DescribeHistoryScaleRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeHistoryScale(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTrtcInteractiveTime(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTrtcInteractiveTimeRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTrtcInteractiveTime(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -313,6 +388,56 @@ def doStopMCUMixTranscode(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDismissRoomByStrRoomId(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DismissRoomByStrRoomIdRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DismissRoomByStrRoomId(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRemoveUserByStrRoomId(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RemoveUserByStrRoomIdRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RemoveUserByStrRoomId(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDismissRoom(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -374,8 +499,11 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeRecordStatistic": doDescribeRecordStatistic,
+    "DescribeTrtcMcuTranscodeTime": doDescribeTrtcMcuTranscodeTime,
     "CreateTroubleInfo": doCreateTroubleInfo,
     "DescribeHistoryScale": doDescribeHistoryScale,
+    "DescribeTrtcInteractiveTime": doDescribeTrtcInteractiveTime,
     "DescribeRealtimeQuality": doDescribeRealtimeQuality,
     "StartMCUMixTranscode": doStartMCUMixTranscode,
     "DescribeRealtimeScale": doDescribeRealtimeScale,
@@ -386,6 +514,8 @@ ACTION_MAP = {
     "DescribeDetailEvent": doDescribeDetailEvent,
     "DescribeAbnormalEvent": doDescribeAbnormalEvent,
     "StopMCUMixTranscode": doStopMCUMixTranscode,
+    "DismissRoomByStrRoomId": doDismissRoomByStrRoomId,
+    "RemoveUserByStrRoomId": doRemoveUserByStrRoomId,
     "DismissRoom": doDismissRoom,
     "DescribeUserInformation": doDescribeUserInformation,
 

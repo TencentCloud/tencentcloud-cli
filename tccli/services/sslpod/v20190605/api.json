@@ -226,7 +226,7 @@
       "members": [
         {
           "default": "",
-          "document": "监控的服务器类型 Enums(0,1,2,3)",
+          "document": "监控的服务器类型（0：web，1：smtp，2：imap，3：pops）",
           "member": "int64",
           "name": "ServerType",
           "required": true,
@@ -352,7 +352,7 @@
       "members": [
         {
           "default": "",
-          "document": "域名列表中的ID",
+          "document": "域名ID，可通过搜索域名接口获得",
           "member": "int64",
           "name": "DomainId",
           "required": true,
@@ -402,7 +402,7 @@
       "members": [
         {
           "default": "",
-          "document": "域名ID",
+          "document": "域名ID，可通过搜索域名接口获得",
           "member": "int64",
           "name": "DomainId",
           "required": true,
@@ -543,7 +543,7 @@
         },
         {
           "default": "",
-          "document": "标签",
+          "document": "标签，多个标签用逗号分隔",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -871,7 +871,7 @@
       "members": [
         {
           "default": "",
-          "document": "域名列表中的ID",
+          "document": "域名列表中的ID，可通过搜索域名接口获得",
           "member": "int64",
           "name": "DomainId",
           "required": true,

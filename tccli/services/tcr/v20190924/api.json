@@ -102,6 +102,12 @@
       "name": "删除个人版仓库tag",
       "output": "DeleteImagePersonalResponse"
     },
+    "DeleteInstance": {
+      "document": "删除镜像仓库企业版实例",
+      "input": "DeleteInstanceRequest",
+      "name": "删除实例",
+      "output": "DeleteInstanceResponse"
+    },
     "DeleteInstanceToken": {
       "document": "删除长期访问凭证",
       "input": "DeleteInstanceTokenRequest",
@@ -1138,6 +1144,40 @@
     },
     "DeleteImageResponse": {
       "document": "DeleteImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRequest": {
+      "document": "DeleteInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否删除存储桶，默认为false",
+          "member": "bool",
+          "name": "DeleteBucket",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceResponse": {
+      "document": "DeleteInstance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

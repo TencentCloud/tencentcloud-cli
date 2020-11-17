@@ -66,6 +66,12 @@
       "name": "获取已绑定对象列表",
       "output": "DescribeBindingPolicyObjectListResponse"
     },
+    "DescribeMonitorTypes": {
+      "document": "云监控支持多种类型的监控，此接口列出支持的所有类型",
+      "input": "DescribeMonitorTypesRequest",
+      "name": "查询监控类型",
+      "output": "DescribeMonitorTypesResponse"
+    },
     "DescribePolicyConditionList": {
       "document": "获取基础告警策略条件",
       "input": "DescribePolicyConditionListRequest",
@@ -2011,6 +2017,39 @@
           "name": "InstanceGroup",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMonitorTypesRequest": {
+      "document": "DescribeMonitorTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定值，为\"monitor\"",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMonitorTypesResponse": {
+      "document": "DescribeMonitorTypes返回参数结构体",
+      "members": [
+        {
+          "document": "监控类型",
+          "member": "string",
+          "name": "MonitorTypes",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

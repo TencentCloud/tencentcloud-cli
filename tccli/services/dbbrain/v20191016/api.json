@@ -19,7 +19,7 @@
       "output": "DescribeDBSpaceStatusResponse"
     },
     "DescribeSlowLogTimeSeriesStats": {
-      "document": "获取慢日志统计柱状图",
+      "document": "获取慢日志统计柱状图。",
       "input": "DescribeSlowLogTimeSeriesStatsRequest",
       "name": "获取慢日志统计柱状图",
       "output": "DescribeSlowLogTimeSeriesStatsResponse"
@@ -68,6 +68,14 @@
           "name": "EventId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -187,6 +195,14 @@
           "name": "EndTime",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -228,6 +244,14 @@
           "name": "RangeDays",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -297,6 +321,14 @@
           "member": "datetime",
           "name": "EndTime",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
           "type": "string"
         }
       ],
@@ -401,6 +433,14 @@
           "name": "SchemaList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -473,6 +513,14 @@
           "name": "EndDate",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -520,6 +568,14 @@
           "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize，默认为 PhysicalFileSize。",
           "member": "string",
           "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
           "required": false,
           "type": "string"
         }

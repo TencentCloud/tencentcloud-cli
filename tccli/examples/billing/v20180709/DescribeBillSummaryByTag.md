@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli billing DescribeBillSummaryByTag --cli-unfold-argument  \
-    --PayerUin 100000007615 \
-    --BeginTime '2019-09-01 00:00:00' \
-    --EndTime '2019-09-30 23:59:59' \
+    --BeginTime 2019-09 \
+    --EndTime 2019-09 \
     --TagKey province
 ```
 
@@ -54,9 +53,6 @@ Output:
                 "RealTotalCostRatio": "12.43"
             }
         ],
-        "SummaryTotal": {
-            "RealTotalCost": "1.74"
-        },
         "RequestId": "b7649c63-59e5-49d3-bbde-64292cc4174d"
     }
 }

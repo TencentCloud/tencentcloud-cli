@@ -48,11 +48,29 @@
       "name": "查询实时规模",
       "output": "DescribeRealtimeScaleResponse"
     },
+    "DescribeRecordStatistic": {
+      "document": "查询云端录制计费时长。\n\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
+      "input": "DescribeRecordStatisticRequest",
+      "name": "查询云端录制计费时长",
+      "output": "DescribeRecordStatisticResponse"
+    },
     "DescribeRoomInformation": {
       "document": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。",
       "input": "DescribeRoomInformationRequest",
       "name": "查询房间列表",
       "output": "DescribeRoomInformationResponse"
+    },
+    "DescribeTrtcInteractiveTime": {
+      "document": "查询音视频互动计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
+      "input": "DescribeTrtcInteractiveTimeRequest",
+      "name": "查询音视频互动计费时长",
+      "output": "DescribeTrtcInteractiveTimeResponse"
+    },
+    "DescribeTrtcMcuTranscodeTime": {
+      "document": "查询旁路转码计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
+      "input": "DescribeTrtcMcuTranscodeTimeRequest",
+      "name": "查询旁路转码计费时长",
+      "output": "DescribeTrtcMcuTranscodeTimeResponse"
     },
     "DescribeUserInformation": {
       "document": "查询指定时间内的用户列表，可查询14天内数据。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。",
@@ -66,11 +84,23 @@
       "name": "解散房间",
       "output": "DismissRoomResponse"
     },
+    "DismissRoomByStrRoomId": {
+      "document": "接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。",
+      "input": "DismissRoomByStrRoomIdRequest",
+      "name": "解散房间",
+      "output": "DismissRoomByStrRoomIdResponse"
+    },
     "RemoveUser": {
       "document": "接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。",
       "input": "RemoveUserRequest",
       "name": "移出用户",
       "output": "RemoveUserResponse"
+    },
+    "RemoveUserByStrRoomId": {
+      "document": "接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。",
+      "input": "RemoveUserByStrRoomIdRequest",
+      "name": "移出用户",
+      "output": "RemoveUserByStrRoomIdResponse"
     },
     "StartMCUMixTranscode": {
       "document": "接口说明：启动云端混流，并指定混流画面中各路画面的布局位置。\n\nTRTC 的一个房间中可能会同时存在多路音视频流，您可以通过此 API 接口，通知腾讯云服务端将多路视频画面合成一路，并指定每一路画面的位置，同时将多路声音进行混音，最终形成一路音视频流，以便用于录制和直播观看。\n\n您可以通过此接口实现如下目标：\n- 设置最终直播流的画质和音质，包括视频分辨率、视频码率、视频帧率、以及声音质量等。\n- 设置各路画面的位置和布局，您只需要在启动时设置一次，排版引擎会自动完成后续的画面排布。\n- 设置录制文件名，用于二次回放。\n- 设置 CDN 直播流 ID，用于在 CDN 进行直播观看。\n\n目前已经支持了如下几种布局模板：\n- 悬浮模板：第一个进入房间的用户的视频画面会铺满整个屏幕，其他用户的视频画面从左下角依次水平排列，显示为小画面，最多4行，每行4个，小画面悬浮于大画面之上。最多支持1个大画面和15个小画面，如果用户只发送音频，仍然会占用画面位置。\n- 九宫格模板：所有用户的视频画面大小一致，平分整个屏幕，人数越多，每个画面的尺寸越小。最多支持16个画面，如果用户只发送音频，仍然会占用画面位置。\n- 屏幕分享模板：适合视频会议和在线教育场景的布局，屏幕分享（或者主讲的摄像头）始终占据屏幕左侧的大画面位置，其他用户依次垂直排列于右侧，最多两列，每列最多8个小画面。最多支持1个大画面和15个小画面。若上行分辨率宽高比与画面输出宽高比不一致时，左侧大画面为了保持内容的完整性采用缩放方式处理，右侧小画面采用裁剪方式处理。\n- 画中画模板：适用于混合大小两路视频画面和其他用户混音，或者混合一路大画面和其他用户混音的场景。小画面悬浮于大画面之上，可以指定大小画面的用户以及小画面的显示位置。\n- 自定义模板：适用于在混流中指定用户的画面位置，或者预设视频画面位置的场景。当预设位置指定用户时，排版引擎会该用户预留位置；当预设位置未指定用户时，排版引擎会根据进房间顺序自动填充。用户只发送音频，仍然会占用画面位置，显示背景。预设位置填满时，不再混合其他用户的画面和声音。\n\n注意：2020年1月9号及以后创建的应用才能直接调用此接口。2020年1月9日之前创建的应用默认使用云直播的云端混流，如需切换至MCU混流，请[提交工单](https://console.cloud.tencent.com/workorder/category)寻求帮助。",
@@ -326,7 +356,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -429,7 +459,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -708,6 +738,55 @@
       ],
       "type": "object"
     },
+    "DescribeRecordStatisticRequest": {
+      "document": "DescribeRecordStatistic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始日期。",
+          "member": "date",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束日期。",
+          "member": "date",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordStatisticResponse": {
+      "document": "DescribeRecordStatistic返回参数结构体",
+      "members": [
+        {
+          "document": "应用的用量信息数组。",
+          "member": "SdkAppIdRecordUsage",
+          "name": "SdkAppIdUsages",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRoomInformationRequest": {
       "document": "DescribeRoomInformation请求参数结构体",
       "members": [
@@ -721,7 +800,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -788,6 +867,104 @@
       ],
       "type": "object"
     },
+    "DescribeTrtcInteractiveTimeRequest": {
+      "document": "DescribeTrtcInteractiveTime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "member": "date",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "member": "date",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回所有应用的合计值。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrtcInteractiveTimeResponse": {
+      "document": "DescribeTrtcInteractiveTime返回参数结构体",
+      "members": [
+        {
+          "document": "应用的用量信息数组。",
+          "member": "OneSdkAppIdUsagesInfo",
+          "name": "Usages",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrtcMcuTranscodeTimeRequest": {
+      "document": "DescribeTrtcMcuTranscodeTime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "member": "date",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "member": "date",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrtcMcuTranscodeTimeResponse": {
+      "document": "DescribeTrtcMcuTranscodeTime返回参数结构体",
+      "members": [
+        {
+          "document": "应用的用量信息数组。",
+          "member": "OneSdkAppIdTranscodeTimeUsagesInfo",
+          "name": "Usages",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserInformationRequest": {
       "document": "DescribeUserInformation请求参数结构体",
       "members": [
@@ -801,7 +978,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -867,6 +1044,40 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DismissRoomByStrRoomIdRequest": {
+      "document": "DismissRoomByStrRoomId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的SDKAppId。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DismissRoomByStrRoomIdResponse": {
+      "document": "DismissRoomByStrRoomId返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1150,6 +1361,72 @@
       ],
       "usage": "in"
     },
+    "OneSdkAppIdTranscodeTimeUsagesInfo": {
+      "document": "旁路转码时长的查询结果",
+      "members": [
+        {
+          "default": "",
+          "document": "旁路转码时长查询结果数组",
+          "member": "SdkAppIdTrtcMcuTranscodeTimeUsage",
+          "name": "SdkAppIdTranscodeTimeUsages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询记录数量",
+          "member": "uint64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OneSdkAppIdUsagesInfo": {
+      "document": "单个SdkAppId的音视频互动计费时长用量数组和数组长度。",
+      "members": [
+        {
+          "default": "",
+          "document": "该 SdkAppId 对应的用量记录数长度",
+          "member": "uint64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量数组",
+          "member": "SdkAppIdTrtcUsage",
+          "name": "SdkAppIdTrtcTimeUsages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OutputParams": {
       "document": "MCU混流的输出参数",
       "members": [
@@ -1336,6 +1613,99 @@
       ],
       "usage": "out"
     },
+    "RecordUsage": {
+      "document": "录制的使用信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "本组数据对应的时间点，格式如:2020-09-07或2020-09-07 00:05:05。",
+          "member": "string",
+          "name": "TimeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-标清SD，单位：秒。",
+          "member": "uint64",
+          "name": "Class1VideoTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-高清HD，单位：秒。",
+          "member": "uint64",
+          "name": "Class2VideoTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-超清HD，单位：秒。",
+          "member": "uint64",
+          "name": "Class3VideoTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语音时长，单位：秒。",
+          "member": "uint64",
+          "name": "AudioTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveUserByStrRoomIdRequest": {
+      "document": "RemoveUserByStrRoomId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的SDKAppId。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要移出的用户列表，最多10个。",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveUserByStrRoomIdResponse": {
+      "document": "RemoveUserByStrRoomId返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveUserRequest": {
       "document": "RemoveUser请求参数结构体",
       "members": [
@@ -1476,6 +1846,141 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SdkAppIdRecordUsage": {
+      "document": "SdkAppId级别录制时长数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "SdkAppId的值。",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计的时间点数据。",
+          "member": "RecordUsage",
+          "name": "Usages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SdkAppIdTrtcMcuTranscodeTimeUsage": {
+      "document": "查询旁路转码计费时长。\n查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "本组数据对应的时间点，格式如：2020-09-07或2020-09-07 00:05:05。",
+          "member": "string",
+          "name": "TimeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语音时长，单位：秒。",
+          "member": "uint64",
+          "name": "AudioTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-标清SD，单位：秒。",
+          "member": "uint64",
+          "name": "VideoTimeSd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-高清HD，单位：秒。",
+          "member": "uint64",
+          "name": "VideoTimeHd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-全高清FHD，单位：秒。",
+          "member": "uint64",
+          "name": "VideoTimeFhd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SdkAppIdTrtcUsage": {
+      "document": "查询音视频互动时长的输出数据。\n查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "本组数据对应的时间点，格式如：2020-09-07或2020-09-07 00:05:05。",
+          "member": "string",
+          "name": "TimeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语音时长，单位：秒。",
+          "member": "uint64",
+          "name": "AudioTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音视频时长，单位：秒。\n2019年10月11日前注册，没有变更为 [新计费模式](https://cloud.tencent.com/document/product/647/17157) 的用户才会返回此值。",
+          "member": "uint64",
+          "name": "AudioVideoTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-标清SD，单位：秒。",
+          "member": "uint64",
+          "name": "VideoTimeSd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-高清HD，单位：秒。",
+          "member": "uint64",
+          "name": "VideoTimeHd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长-超清HD，单位：秒。",
+          "member": "uint64",
+          "name": "VideoTimeHdp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -24,6 +24,14 @@
         "title": "添加诊断URL"
       }
     ],
+    "CreateEdgePackTask": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=CreateEdgePackTask\n&BlockID=0\n&CosBucket=‘edgepack-xxxxxxxx’\n&CosUriFrom=‘/apk/xxxx.apk’\n&CosUriTo=‘/out/xxxx.apk’\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n  }\r\n}",
+        "title": "动态打包任务提交"
+      }
+    ],
     "CreateScdnLogTask": [
       {
         "document": "",

@@ -1930,6 +1930,22 @@
         },
         {
           "default": "",
+          "document": "是否支持绑定跨地域/跨Vpc绑定IP的功能。",
+          "member": "bool",
+          "name": "SnatPro",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。",
+          "member": "SnatIp",
+          "name": "SnatIps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "Stgw独占集群的标签。",
           "member": "string",
           "name": "ClusterTag",

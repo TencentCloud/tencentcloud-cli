@@ -297,3 +297,5 @@ include tccli/services/yunsou/v20191115/api.json
 include tccli/services/yunsou/v20191115/examples.json
 include tccli/services/yunsou/v20180504/api.json
 include tccli/services/yunsou/v20180504/examples.json
+include tccli/services/zj/v20190121/api.json
+include tccli/services/zj/v20190121/examples.json

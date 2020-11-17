@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli billing DescribeCostSummaryByProject --cli-unfold-argument  \
-    --PayerUin 909619400 \
-    --BeginTime 2018-11-0100:00:00 \
-    --EndTime 2018-11-3023:59:59 \
+    --BeginTime 2018-11 \
+    --EndTime 2018-11 \
     --Offset 0 \
     --Limit 1 \
     --NeedRecordNum 1
@@ -31,22 +30,6 @@ Output:
                     "Value": "0.92"
                 },
                 "Business": [
-                    {
-                        "BusinessCode": "billVirtualId",
-                        "BusinessCodeName": "月度计费精度差异",
-                        "RealTotalCost": "-0.69",
-                        "Trend": {
-                            "Type": "downward"
-                        }
-                    },
-                    {
-                        "BusinessCode": "p_ai_image",
-                        "BusinessCodeName": "优图图像识别",
-                        "RealTotalCost": "0.00",
-                        "Trend": {
-                            "Type": "none"
-                        }
-                    },
                     {
                         "BusinessCode": "p_ai_image_authentication",
                         "BusinessCodeName": "",
@@ -118,18 +101,10 @@ Output:
                             "Type": "upward",
                             "Value": "0.03"
                         }
-                    },
-                    {
-                        "BusinessCode": "p_market",
-                        "BusinessCodeName": "服务市场",
-                        "RealTotalCost": "0.00",
-                        "Trend": []
                     }
                 ]
             }
         ],
-        "PageSize": 1,
-        "PageNo": 1,
         "RecordNum": 6,
         "Ready": 1,
         "RequestId": "59a408bc-5d95-4d40-bf21-58e5e8d48dd0"

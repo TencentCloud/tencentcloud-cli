@@ -2681,15 +2681,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2697,10 +2689,18 @@
         },
         {
           "default": "",
-          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2737,15 +2737,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2753,10 +2745,18 @@
         },
         {
           "default": "",
-          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2800,15 +2800,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2816,10 +2808,18 @@
         },
         {
           "default": "",
-          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2856,15 +2856,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2872,10 +2864,18 @@
         },
         {
           "default": "",
-          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2912,15 +2912,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2928,7 +2920,7 @@
         },
         {
           "default": "",
-          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2940,6 +2932,14 @@
           "member": "string",
           "name": "TagKey",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
           "type": "string"
         }
       ],
@@ -3080,15 +3080,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09-03 03:01:45，EndTime 为 2018-09-25 12:01:45，查询结果是 2018 年 9 月数据。",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -3096,7 +3088,7 @@
         },
         {
           "default": "",
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09-03 03:01:45，EndTime 为 2018-09-25 12:01:45，查询结果是 2018 年 9 月数据。",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3117,6 +3109,14 @@
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -3174,15 +3174,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09-03 03:01:45，EndTime 为 2018-09-25 12:01:45，查询结果是 2018 年 9 月数据。",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -3190,7 +3182,7 @@
         },
         {
           "default": "",
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09-03 03:01:45，EndTime 为 2018-09-25 12:01:45，查询结果是 2018 年 9 月数据。",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3211,6 +3203,14 @@
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -3268,15 +3268,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09-03 03:01:45，EndTime 为 2018-09-25 12:01:45，查询结果是 2018 年 9 月数据。",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -3284,7 +3276,7 @@
         },
         {
           "default": "",
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09-03 03:01:45，EndTime 为 2018-09-25 12:01:45，查询结果是 2018 年 9 月数据。",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3305,6 +3297,14 @@
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -3362,15 +3362,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询账单数据的用户UIN",
-          "member": "string",
-          "name": "PayerUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09-03 03:01:45，EndTime 为 2018-09-25 12:01:45，查询结果是 2018 年 9 月数据。",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -3378,7 +3370,7 @@
         },
         {
           "default": "",
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09-03 03:01:45，EndTime 为 2018-09-25 12:01:45，查询结果是 2018 年 9 月数据。",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3399,6 +3391,14 @@
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",

@@ -142,6 +142,14 @@
         "title": "个人版仓库删除tag"
       }
     ],
+    "DeleteInstance": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteInstance\n&RegistryId=tcr-abc123\n&DeleteBucket=true\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "删除企业版实例"
+      }
+    ],
     "DeleteInstanceToken": [
       {
         "document": "",

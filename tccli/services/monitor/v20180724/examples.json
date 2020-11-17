@@ -94,6 +94,14 @@
         "title": "获取已绑定对象列表"
       }
     ],
+    "DescribeMonitorTypes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorTypes\n<公共请求参数>\n\n{\"Module\":\"monitor\"}",
+        "output": "{\r\n    \"Response\": {\r\n        \"MonitorTypes\": [\r\n            \"MT_QCE\",\r\n            \"MT_CUSTOM\"\r\n        ],\r\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\r\n    }\r\n}",
+        "title": "查询所有监控类型"
+      }
+    ],
     "DescribePolicyConditionList": [
       {
         "document": "",

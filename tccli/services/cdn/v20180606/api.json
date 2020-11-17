@@ -18,6 +18,12 @@
       "name": "添加诊断URL",
       "output": "CreateDiagnoseUrlResponse"
     },
+    "CreateEdgePackTask": {
+      "document": "动态打包任务提交接口",
+      "input": "CreateEdgePackTaskRequest",
+      "name": "动态打包任务提交",
+      "output": "CreateEdgePackTaskResponse"
+    },
     "CreateScdnLogTask": {
       "document": "CreateScdnLogTask 用于创建事件日志任务",
       "input": "CreateScdnLogTaskRequest",
@@ -1966,6 +1972,56 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgePackTaskRequest": {
+      "document": "CreateEdgePackTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "apk 所在的 cos 存储桶, 如 edgepack-xxxxxxxx",
+          "member": "string",
+          "name": "CosBucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "apk 源文件的存储路径, 如 /apk/xxxx.apk",
+          "member": "string",
+          "name": "CosUriFrom",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拓展之后的 apk 目标存储路径,如 /out/xxxx.apk",
+          "member": "string",
+          "name": "CosUriTo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案",
+          "member": "uint64",
+          "name": "BlockID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgePackTaskResponse": {
+      "document": "CreateEdgePackTask返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

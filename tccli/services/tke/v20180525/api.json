@@ -747,7 +747,7 @@
         },
         {
           "default": "",
-          "document": "集群的网络代理模型",
+          "document": "集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs+bpf，此参数仅在使用ipvs+bpf模式时使用，三种网络模式的参数设置关系如下：\niptables模式：IPVS和KubeProxyMode都不设置\nipvs模式: 设置IPVS为true, KubeProxyMode不设置\nipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf\n使用ipvs-bpf的网络模式需要满足以下条件：\n1. 集群版本必须为1.14及以上；\n2. 系统镜像必须是tke定制的镜像如: ubuntu TKE-optimized、centos TKE-optimized；",
           "member": "string",
           "name": "KubeProxyMode",
           "required": false,
@@ -786,6 +786,15 @@
           "document": "区分单网卡多IP模式和独立网卡模式",
           "member": "string",
           "name": "VpcCniType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时版本",
+          "member": "string",
+          "name": "RuntimeVersion",
           "required": false,
           "type": "string",
           "value_allowed_null": false

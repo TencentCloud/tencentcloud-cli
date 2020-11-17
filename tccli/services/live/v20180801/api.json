@@ -504,6 +504,12 @@
       "name": "查询某段时间top n客户端ip汇总信息",
       "output": "DescribeTopClientIpSumInfoListResponse"
     },
+    "DescribeUploadStreamNums": {
+      "document": "直播上行路数查询",
+      "input": "DescribeUploadStreamNumsRequest",
+      "name": "直播上行路数查询",
+      "output": "DescribeUploadStreamNumsResponse"
+    },
     "DescribeVisitTopSumInfoList": {
       "document": "查询某时间段top n的域名或流id信息（暂支持top 1000）。",
       "input": "DescribeVisitTopSumInfoListRequest",
@@ -6241,6 +6247,63 @@
         {
           "document": "数据内容。",
           "member": "ClientIpPlaySumInfo",
+          "name": "DataInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUploadStreamNumsRequest": {
+      "document": "DescribeUploadStreamNums请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过31天。支持最近31天的数据查询",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "直播域名，若不填，表示总体数据。",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据粒度，支持如下粒度：\n5：5分钟粒度，（跨度不支持超过1天），\n1440：天粒度（跨度不支持超过一个月）。\n默认值：5。",
+          "member": "uint64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUploadStreamNumsResponse": {
+      "document": "DescribeUploadStreamNums返回参数结构体",
+      "members": [
+        {
+          "document": "明细数据信息",
+          "member": "ConcurrentRecordStreamNum",
           "name": "DataInfoList",
           "type": "list",
           "value_allowed_null": false
