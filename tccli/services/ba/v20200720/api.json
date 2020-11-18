@@ -1,0 +1,52 @@
+{
+  "actions": {
+    "CreateWeappQRUrl": {
+      "document": "创建渠道备案小程序二维码",
+      "input": "CreateWeappQRUrlRequest",
+      "name": "创建渠道备案小程序二维码",
+      "output": "CreateWeappQRUrlResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-07-20",
+    "api_brief": "介绍如何使用API对备案进行操作，包括提交备案、查看备案信息、创建备案授权码等。",
+    "serviceNameCN": "网站备案",
+    "serviceShortName": "ba"
+  },
+  "objects": {
+    "CreateWeappQRUrlRequest": {
+      "document": "CreateWeappQRUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "代理角色临时密钥的Token",
+          "member": "string",
+          "name": "SessionKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWeappQRUrlResponse": {
+      "document": "CreateWeappQRUrl返回参数结构体",
+      "members": [
+        {
+          "document": "渠道备案小程序二维码",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

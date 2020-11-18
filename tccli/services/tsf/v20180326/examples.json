@@ -387,8 +387,8 @@
     "DescribeGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroup\r\n&GroupId=group-oydzed8v\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"d303489f-e1a0-41d4-8044-dc8cd42a3ae6\",\r\n    \"Result\": {\r\n      \"ApplicationType\": \"V\",\r\n      \"MicroserviceType\": \"N\",\r\n      \"GroupId\": \"group-oydzed8v\",\r\n      \"ClusterId\": \"cluster-by8n8rmy\",\r\n      \"Operator\": null,\r\n      \"StartupParameters\": \"-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m\",\r\n      \"ClusterName\": \"\\u51fa\\u884c\\u6d4b\\u8bd5\\u96c6\\u7fa4\",\r\n      \"Action\": \"DescribeGroup\",\r\n      \"PackageName\": \"travel-passenger-api-1.0-SNAPSHOT.jar\",\r\n      \"RunInstanceCount\": 1,\r\n      \"ApplicationName\": \"ruqitest_travel_clientapi\",\r\n      \"NamespaceName\": \"test-connection-group\",\r\n      \"GroupDesc\": null,\r\n      \"PackageId\": \"pkg-b430b6a2\",\r\n      \"UpdateTime\": \"2019-03-11 16:52:15\",\r\n      \"PackageVersion\": \"20190529173949\",\r\n      \"GroupStatus\": \"Updating\",\r\n      \"GroupName\": \"ruqitest-clientapi-dep\",\r\n      \"CreateTime\": \"2019-03-11 16:52:15\",\r\n      \"NamespaceId\": \"namespace-6yogoqdv\",\r\n      \"InstanceCount\": 1,\r\n      \"ApplicationId\": \"application-6a7eog6y\",\r\n      \"ProjectId\": null,\r\n      \"OffInstanceCount\": 0\r\n    }\r\n  }\r\n}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroup\n&GroupId=group-oydzed8v\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d303489f-e1a0-41d4-8044-dc8cd42a3ae6\",\r\n        \"Result\": {\r\n            \"ApplicationType\": \"V\",\r\n            \"MicroserviceType\": \"N\",\r\n            \"GroupId\": \"group-oydzed8v\",\r\n            \"ClusterId\": \"cluster-by8n8rmy\",\r\n            \"StartupParameters\": \"-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m\",\r\n            \"ClusterName\": \"test\",\r\n            \"PackageName\": \"travel-passenger-api-1.0-SNAPSHOT.jar\",\r\n            \"RunInstanceCount\": 1,\r\n            \"ApplicationName\": \"ruqitest_travel_clientapi\",\r\n            \"NamespaceName\": \"test-connection-group\",\r\n            \"GroupDesc\": null,\r\n            \"PackageId\": \"pkg-b430b6a2\",\r\n            \"UpdateTime\": \"2019-03-11 16:52:15\",\r\n            \"PackageVersion\": \"20190529173949\",\r\n            \"GroupStatus\": \"Updating\",\r\n            \"GroupName\": \"ruqitest-clientapi-dep\",\r\n            \"CreateTime\": \"2019-03-11 16:52:15\",\r\n            \"NamespaceId\": \"namespace-6yogoqdv\",\r\n            \"InstanceCount\": 1,\r\n            \"ApplicationId\": \"application-6a7eog6y\",\r\n            \"OffInstanceCount\": 0,\r\n            \"UpdateType\": 1,\r\n            \"DeployBetaEnable\": false,\r\n            \"DeployBatch\": [\r\n                0.2,\r\n                0.8\r\n            ],\r\n            \"DeployExeMode\": \"auto/manual\",\r\n            \"DeployWaitTime\": 0,\r\n            \"DeployDesc\": \"desc\",\r\n            \"GroupResourceType\": \"DEF\",\r\n            \"UpdatedTime\": 1602770765000\r\n        }\r\n    }\r\n}",
         "title": "查询虚拟机部署组详情"
       }
     ],
@@ -596,7 +596,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeTaskLastStatus\n&TaskId=task-qv8kq6m7\n&<公共请求参数>",
-        "output": "{\r\n  \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\r\n  \"Response\": {\r\n      \"BatchId\": \"batch-vk8hn123g\",\r\n      \"State\": \"SUCCESS\"\r\n  }\r\n}",
+        "output": "{\r\n \r\n\"Response\": {\r\n      \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",  \r\n       \"Result\": {\r\n            \"BatchId\": \"batch-vk8hn123g\", \r\n            \"State\": \"SUCCESS\", \r\n            \"BatchLogId\": \"xx\"\r\n        }\r\n  }\r\n}",
         "title": "查看任务最近执行批次状态"
       }
     ],
@@ -620,7 +620,7 @@
       {
         "document": "停用工作流",
         "input": "https://tsf.tencentcloudapi.com/?Action=DisableTaskFlow\n&FlowId=flow-6g4rq8z6\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"Result\":  \"false\"\r\n  }\r\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"xx\",\r\n    \"Result\":  \"false\"\r\n  }\r\n}",
         "title": "停用工作流"
       }
     ],
@@ -636,7 +636,7 @@
       {
         "document": "启用工作流",
         "input": "https://tsf.tencentcloudapi.com/?Action=EnableTaskFlow\n&FlowId=flow-6g4rq8z6\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"Result\": \"FALSE\"\r\n  }\r\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"xx\",\r\n    \"Result\": \"False\"\r\n  }\r\n}",
         "title": "启用工作流"
       }
     ],
@@ -651,7 +651,7 @@
     "ExecuteTaskFlow": [
       {
         "document": "执行一次工作流",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ExecuteTaskFlow\n&FlowId=flow-6g4rq8z6\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ExecuteTaskFlow\n&FlowId=flow-6g4rq8z6\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\r\n    \"Result\": \"fbatch-6g4rq8z6\"\r\n  }\r\n}",
         "title": "执行一次工作流"
       }
@@ -731,7 +731,7 @@
     "RedoTaskFlowBatch": [
       {
         "document": "重新执行工作流批次",
-        "input": "https://tsf.tencentcloudapi.com/?Action=RedoTaskFlowBatch\n&FlowId=flow-6g4rq8z6\n&FlowBatchId=fbatch-6g4rq8z6\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=RedoTaskFlowBatch\n&FlowBatchId=fbatch-6g4rq8z6\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\r\n    \"Result\":  \"fblog-6g4rq8z6\"\r\n  }\r\n}",
         "title": "重新执行工作流批次"
       }
@@ -854,6 +854,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=TerminateTaskFlowBatch\n&FlowBatchId=fbatch-6g4rq8z6\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"Result\": \"false\"\r\n  }\r\n}",
         "title": "停止一个工作流批次"
+      }
+    ],
+    "UpdateHealthCheckSettings": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateHealthCheckSettings\n&GroupId=group-xxxxxxx\n&EnableHealthCheck=false\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"0256b547-1c06-49d6-b662-39f55122xxxx\",\r\n    \"Result\": true\r\n  }\r\n}",
+        "title": "更新健康检查配置"
       }
     ],
     "UpdateRepository": [

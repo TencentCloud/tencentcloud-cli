@@ -88,6 +88,14 @@
         "title": "获取域名价格列表"
       }
     ],
+    "DescribeTemplate": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeTemplate\n&TemplateId=模板ID\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"0c209d0e-f244-435f-8222-d86741c3edbd\",\r\n\t\t\"Template\": {\r\n\t\t\t\"AuditReason\": \"\",\r\n\t\t\t\"ContactInfo\": {\r\n\t\t\t\t\"Province\": \"hu nan sheng\",\r\n\t\t\t\t\"RegistrantType\": \"I\",\r\n\t\t\t\t\"OrganizationName\": \"ce shi\",\r\n\t\t\t\t\"OrganizationNameCN\": \"测试\",\r\n\t\t\t\t\"Country\": \"CN\",\r\n\t\t\t\t\"RegistrantName\": \"ce shi\",\r\n\t\t\t\t\"ZipCode\": \"425000\",\r\n\t\t\t\t\"Telephone\": \"155*********\",\r\n\t\t\t\t\"City\": \"ce shi\",\r\n\t\t\t\t\"RegistrantNameCN\": \"测试\",\r\n\t\t\t\t\"StreetCN\": \"咸嘉湖街道\",\r\n\t\t\t\t\"Street\": \"xian jia hu jie dao\",\r\n\t\t\t\t\"ProvinceCN\": \"湖南省\",\r\n\t\t\t\t\"CityCN\": \"长沙市\",\r\n\t\t\t\t\"CountryCN\": \"中国\",\r\n\t\t\t\t\"Email\": \"dnspod@dnspod.com\"\r\n\t\t\t},\r\n\t\t\t\"UpdatedOn\": \"2020-07-28 13:33:55\",\r\n\t\t\t\"AuditStatus\": \"InAudit\",\r\n\t\t\t\"CreatedOn\": \"2020-07-28 12:50:23\",\r\n\t\t\t\"UserUin\": \"12334********\",\r\n\t\t\t\"IsDefault\": \"no\",\r\n\t\t\t\"TemplateId\": \"tmpl-dgmgwpe2\",\r\n\t\t\t\"InvalidReason\": \"\",\r\n\t\t\t\"IsValidTemplate\": 1,\r\n\t\t\t\"CertificateInfo\": {\r\n\t\t\t\t\"CertificateType\": \"SFZ\",\r\n\t\t\t\t\"CertificateCode\": \"12345679\",\r\n\t\t\t\t\"ImgUrl\": \"https://tencentyun.com/******\"\r\n\t\t\t}\r\n\t\t}\r\n\t},\r\n\t\"ResultStatus\": true\r\n}",
+        "title": "获取模板信息"
+      }
+    ],
     "DescribeTemplateList": [
       {
         "document": "",

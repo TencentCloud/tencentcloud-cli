@@ -13,7 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "Result": "FALSE"
+        "RequestId": "xx",
+        "Result": "False"
     }
 }
 ```

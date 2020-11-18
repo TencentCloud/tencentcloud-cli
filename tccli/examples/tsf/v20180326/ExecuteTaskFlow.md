@@ -6,9 +6,7 @@ Input:
 
 ```
 tccli tsf ExecuteTaskFlow --cli-unfold-argument  \
-    --FlowId flow-6g4rq8z6 \
-    --Offset 0 \
-    --Limit 10
+    --FlowId flow-6g4rq8z6
 ```
 
 Output: 

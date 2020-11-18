@@ -66,6 +66,12 @@
       "name": "获取域名价格列表",
       "output": "DescribeDomainPriceListResponse"
     },
+    "DescribeTemplate": {
+      "document": "本接口 (DescribeTemplate) 用于获取模板信息。",
+      "input": "DescribeTemplateRequest",
+      "name": "获取模板信息",
+      "output": "DescribeTemplateResponse"
+    },
     "DescribeTemplateList": {
       "document": "本接口 (DescribeTemplateList) 用于获取模板列表。\n",
       "input": "DescribeTemplateListRequest",
@@ -965,6 +971,39 @@
       ],
       "type": "object"
     },
+    "DescribeTemplateRequest": {
+      "document": "DescribeTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateResponse": {
+      "document": "DescribeTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "模板信息",
+          "member": "TemplateInfo",
+          "name": "Template",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DomainBaseInfo": {
       "document": "获取域名基础信息",
       "members": [
@@ -1489,7 +1528,7 @@
         },
         {
           "default": "",
-          "document": "认证状态",
+          "document": "认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject",
           "member": "string",
           "name": "AuditStatus",
           "required": true,
@@ -1525,7 +1564,7 @@
         },
         {
           "default": "",
-          "document": "是否是默认模板",
+          "document": "是否是默认模板: 是:yes，否:no",
           "member": "string",
           "name": "IsDefault",
           "required": true,

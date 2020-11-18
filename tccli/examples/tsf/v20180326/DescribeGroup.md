@@ -19,10 +19,8 @@ Output:
             "MicroserviceType": "N",
             "GroupId": "group-oydzed8v",
             "ClusterId": "cluster-by8n8rmy",
-            "Operator": null,
             "StartupParameters": "-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m",
-            "ClusterName": "出行测试集群",
-            "Action": "DescribeGroup",
+            "ClusterName": "test",
             "PackageName": "travel-passenger-api-1.0-SNAPSHOT.jar",
             "RunInstanceCount": 1,
             "ApplicationName": "ruqitest_travel_clientapi",
@@ -37,8 +35,18 @@ Output:
             "NamespaceId": "namespace-6yogoqdv",
             "InstanceCount": 1,
             "ApplicationId": "application-6a7eog6y",
-            "ProjectId": null,
-            "OffInstanceCount": 0
+            "OffInstanceCount": 0,
+            "UpdateType": 1,
+            "DeployBetaEnable": false,
+            "DeployBatch": [
+                0.2,
+                0.8
+            ],
+            "DeployExeMode": "auto/manual",
+            "DeployWaitTime": 0,
+            "DeployDesc": "desc",
+            "GroupResourceType": "DEF",
+            "UpdatedTime": 1602770765000
         }
     }
 }

@@ -21,6 +21,8 @@ include tccli/services/asr/v20190614/api.json
 include tccli/services/asr/v20190614/examples.json
 include tccli/services/asw/v20200722/api.json
 include tccli/services/asw/v20200722/examples.json
+include tccli/services/ba/v20200720/api.json
+include tccli/services/ba/v20200720/examples.json
 include tccli/services/batch/v20170312/api.json
 include tccli/services/batch/v20170312/examples.json
 include tccli/services/bda/v20200324/api.json

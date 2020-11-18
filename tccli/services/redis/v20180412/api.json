@@ -929,7 +929,7 @@
       "members": [
         {
           "default": "",
-          "document": "分布阶梯",
+          "document": "分布阶梯，延时和Ladder值的对应关系：\n[0ms,1ms]: 1；\n[1ms,5ms]: 5；\n[5ms,10ms]: 10；\n[10ms,50ms]: 50；\n[50ms,200ms]: 200；\n[200ms,∞]: -1。",
           "member": "int64",
           "name": "Ladder",
           "required": true,
@@ -938,7 +938,7 @@
         },
         {
           "default": "",
-          "document": "大小",
+          "document": "延时处于当前分布阶梯的命令数量，个。",
           "member": "int64",
           "name": "Size",
           "required": true,
@@ -947,7 +947,7 @@
         },
         {
           "default": "",
-          "document": "修改时间",
+          "document": "修改时间。",
           "member": "int64",
           "name": "Updatetime",
           "required": true,

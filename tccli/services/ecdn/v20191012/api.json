@@ -1218,7 +1218,7 @@
         },
         {
           "default": "",
-          "document": "域名标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Tag",
           "name": "Tag",
           "required": true,

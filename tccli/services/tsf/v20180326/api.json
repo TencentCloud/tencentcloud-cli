@@ -642,6 +642,12 @@
       "name": "停止一个工作流批次",
       "output": "TerminateTaskFlowBatchResponse"
     },
+    "UpdateHealthCheckSettings": {
+      "document": "更新健康检查配置",
+      "input": "UpdateHealthCheckSettingsRequest",
+      "name": "更新健康检查配置",
+      "output": "UpdateHealthCheckSettingsResponse"
+    },
     "UpdateRepository": {
       "document": "更新仓库信息",
       "input": "UpdateRepositoryRequest",
@@ -4473,6 +4479,62 @@
           "name": "ForceStart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启健康检查",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "开启健康检查时，配置健康检查",
+          "member": "HealthCheckSettings",
+          "name": "HealthCheckSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "部署方式，0表示快速更新，1表示滚动更新",
+          "member": "uint64",
+          "name": "UpdateType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否启用beta批次",
+          "member": "bool",
+          "name": "DeployBetaEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "滚动发布每个批次参与的实例比率",
+          "member": "float",
+          "name": "DeployBatch",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "滚动发布的执行方式",
+          "member": "string",
+          "name": "DeployExeMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滚动发布每个批次的时间间隔",
+          "member": "uint64",
+          "name": "DeployWaitTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8304,7 +8366,7 @@
         },
         {
           "default": "",
-          "document": "NamespaceId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NamespaceId Ns ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -8313,7 +8375,7 @@
         },
         {
           "default": "",
-          "document": "InstanceZoneId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "InstanceZoneId 可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceZoneId",
           "required": true,
@@ -8322,7 +8384,7 @@
         },
         {
           "default": "",
-          "document": "InstanceImportMode\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "InstanceImportMode 导入模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceImportMode",
           "required": true,
@@ -8331,7 +8393,7 @@
         },
         {
           "default": "",
-          "document": "ApplicationType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ApplicationType应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ApplicationType",
           "required": true,
@@ -8340,7 +8402,7 @@
         },
         {
           "default": "",
-          "document": "ApplicationResourceType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ApplicationResourceType 资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ApplicationResourceType",
           "required": true,
@@ -8349,7 +8411,7 @@
         },
         {
           "default": "",
-          "document": "ServiceSidecarStatus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "sidecar状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ServiceSidecarStatus",
           "required": true,
@@ -8358,7 +8420,7 @@
         },
         {
           "default": "",
-          "document": "GroupName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署组名\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -8367,9 +8429,18 @@
         },
         {
           "default": "",
-          "document": "NamespaceName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NS名\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "NamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康检查原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Reason",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -11698,6 +11769,55 @@
       ],
       "usage": "out"
     },
+    "UpdateHealthCheckSettingsRequest": {
+      "document": "UpdateHealthCheckSettings请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "部署组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否能使健康检查",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "健康检查配置",
+          "member": "HealthCheckSettings",
+          "name": "HealthCheckSettings",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateHealthCheckSettingsResponse": {
+      "document": "UpdateHealthCheckSettings返回参数结构体",
+      "members": [
+        {
+          "document": "更新健康检查配置操作是否成功。\ntrue：操作成功。\nfalse：操作失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateRepositoryRequest": {
       "document": "UpdateRepository请求参数结构体",
       "members": [
@@ -12001,6 +12121,24 @@
           "name": "DeployWaitTime",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启了健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HealthCheckSettings",
+          "name": "HealthCheckSettings",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

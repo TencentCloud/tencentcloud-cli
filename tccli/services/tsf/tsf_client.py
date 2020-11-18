@@ -863,6 +863,31 @@ def doDescribeLanes(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeRepository(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRepositoryRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeRepository(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doExecuteTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2413,7 +2438,7 @@ def doDeleteMicroservice(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRepository(args, parsed_globals):
+def doUpdateHealthCheckSettings(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2427,9 +2452,9 @@ def doDescribeRepository(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRepositoryRequest()
+    model = models.UpdateHealthCheckSettingsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeRepository(model)
+    rsp = client.UpdateHealthCheckSettings(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2758,6 +2783,7 @@ ACTION_MAP = {
     "DescribeApplication": doDescribeApplication,
     "DescribeSimpleApplications": doDescribeSimpleApplications,
     "DescribeLanes": doDescribeLanes,
+    "DescribeRepository": doDescribeRepository,
     "ExecuteTask": doExecuteTask,
     "DescribeSimpleNamespaces": doDescribeSimpleNamespaces,
     "CreateServerlessGroup": doCreateServerlessGroup,
@@ -2820,7 +2846,7 @@ ACTION_MAP = {
     "CreateContainGroup": doCreateContainGroup,
     "DescribeServerlessGroup": doDescribeServerlessGroup,
     "DeleteMicroservice": doDeleteMicroservice,
-    "DescribeRepository": doDescribeRepository,
+    "UpdateHealthCheckSettings": doUpdateHealthCheckSettings,
     "DescribeApplicationAttribute": doDescribeApplicationAttribute,
     "RevocationConfig": doRevocationConfig,
     "DescribeLaneRules": doDescribeLaneRules,

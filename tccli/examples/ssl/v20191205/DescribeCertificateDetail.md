@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "From": "trustasia",
-        "SubjectAltName": null,
+        "SubjectAltName": [],
         "VulnerabilityReport": null,
         "CertificatePrivateKey": "-----BEGIN RSA PRIVATE KEY-----......-----END RSA PRIVATE KEY-----",
         "CertificatePublicKey": null,

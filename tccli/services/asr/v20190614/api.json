@@ -239,7 +239,7 @@
         },
         {
           "default": "",
-          "document": "识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点）",
+          "document": "识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）",
           "member": "uint64",
           "name": "ResTextFormat",
           "required": true,
@@ -251,6 +251,22 @@
           "member": "uint64",
           "name": "SourceType",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)",
+          "member": "int64",
+          "name": "SpeakerDiarization",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）\n注：话者分离目前是beta版本，请根据您的需要谨慎使用",
+          "member": "int64",
+          "name": "SpeakerNumber",
+          "required": false,
           "type": "int"
         },
         {
@@ -324,22 +340,6 @@
           "name": "Extra",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)",
-          "member": "int64",
-          "name": "SpeakerDiarization",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）\n注：话者分离目前是beta版本，请根据您的需要谨慎使用",
-          "member": "int64",
-          "name": "SpeakerNumber",
-          "required": false,
-          "type": "int"
         },
         {
           "default": "",
