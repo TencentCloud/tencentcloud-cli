@@ -28,16 +28,22 @@ Output:
                         "Dir": "/movie/201907/"
                     }
                 },
-                "MediaOutputInfo": null,
+                "OutputStorage": {
+                    "Type": "COS",
+                    "CosOutputStorage": {
+                        "Bucket": "TopRankVideo-125xxx88",
+                        "Region": "ap-chongqing"
+                    }
+                },
                 "MediaProcessTask": {
                     "TranscodeTaskSet": [
                         {
                             "Definition": 10,
-                            "WatermarkSet": [],
-                            "MediaOutputInfo": null
+                            "WatermarkSet": []
                         }
                     ]
                 },
+                "OutputDir": "/movie/201907/",
                 "AiContentReviewTask": null,
                 "AiRecognitionTask": null,
                 "AiAnalysisTask": null,

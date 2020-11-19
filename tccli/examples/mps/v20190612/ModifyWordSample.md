@@ -9,7 +9,7 @@ tccli mps ModifyWordSample --cli-unfold-argument  \
     --Keyword 格斗 \
     --Usages Review \
     --TagOperationInfo.Type reset \
-    --TagOperation.Tags 涉爆
+    --TagOperationInfo.Tags 涉暴
 ```
 
 Output: 

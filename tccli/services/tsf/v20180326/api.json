@@ -96,6 +96,12 @@
       "name": "创建任务",
       "output": "CreateTaskResponse"
     },
+    "CreateTaskFlow": {
+      "document": "创建工作流",
+      "input": "CreateTaskFlowRequest",
+      "name": "创建工作流",
+      "output": "CreateTaskFlowResponse"
+    },
     "DeleteApplication": {
       "document": "删除应用",
       "input": "DeleteApplicationRequest",
@@ -528,6 +534,12 @@
       "name": "修改微服务详情",
       "output": "ModifyMicroserviceResponse"
     },
+    "ModifyTask": {
+      "document": "修改任务",
+      "input": "ModifyTaskRequest",
+      "name": "修改任务",
+      "output": "ModifyTaskResponse"
+    },
     "ModifyUploadInfo": {
       "document": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。",
       "input": "ModifyUploadInfoRequest",
@@ -545,6 +557,12 @@
       "input": "RedoTaskBatchRequest",
       "name": "重新执行任务批次",
       "output": "RedoTaskBatchResponse"
+    },
+    "RedoTaskExecute": {
+      "document": "重新执行在某个节点上执行任务。",
+      "input": "RedoTaskExecuteRequest",
+      "name": "重新执行任务",
+      "output": "RedoTaskExecuteResponse"
     },
     "RedoTaskFlowBatch": {
       "document": "重新执行工作流批次",
@@ -3547,6 +3565,63 @@
           "name": "Result",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskFlowRequest": {
+      "document": "CreateTaskFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工作流名称",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发方式",
+          "member": "TaskRule",
+          "name": "TriggerRule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "工作流任务节点列表",
+          "member": "TaskFlowEdge",
+          "name": "FlowEdges",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作流执行超时时间",
+          "member": "uint64",
+          "name": "TimeOut",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskFlowResponse": {
+      "document": "CreateTaskFlow返回参数结构体",
+      "members": [
+        {
+          "document": "工作流 ID",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9216,6 +9291,159 @@
       ],
       "type": "object"
     },
+    "ModifyTaskRequest": {
+      "document": "ModifyTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务内容",
+          "member": "string",
+          "name": "TaskContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务执行类型",
+          "member": "string",
+          "name": "ExecuteType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发规则",
+          "member": "TaskRule",
+          "name": "TaskRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "超时时间，单位 ms",
+          "member": "uint64",
+          "name": "TimeOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分片数量",
+          "member": "int64",
+          "name": "ShardCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分片参数",
+          "member": "ShardArgument",
+          "name": "ShardArguments",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "高级设置",
+          "member": "AdvanceSettings",
+          "name": "AdvanceSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "判断任务成功的操作符 GT/GTE",
+          "member": "string",
+          "name": "SuccessOperator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "判断任务成功率的阈值",
+          "member": "int64",
+          "name": "SuccessRatio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "重试次数",
+          "member": "uint64",
+          "name": "RetryCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "重试间隔",
+          "member": "uint64",
+          "name": "RetryInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务参数，长度限制10000个字符",
+          "member": "string",
+          "name": "TaskArgument",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTaskResponse": {
+      "document": "ModifyTask返回参数结构体",
+      "members": [
+        {
+          "document": "更新是否成功",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUploadInfoRequest": {
       "document": "ModifyUploadInfo请求参数结构体",
       "members": [
@@ -10090,6 +10318,55 @@
       ],
       "type": "object"
     },
+    "RedoTaskExecuteRequest": {
+      "document": "RedoTaskExecute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务批次ID",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务执行ID",
+          "member": "string",
+          "name": "ExecuteId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RedoTaskExecuteResponse": {
+      "document": "RedoTaskExecute返回参数结构体",
+      "members": [
+        {
+          "document": "成功失败",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RedoTaskFlowBatchRequest": {
       "document": "RedoTaskFlowBatch请求参数结构体",
       "members": [
@@ -10747,7 +11024,7 @@
           "member": "ProtocolPort",
           "name": "ProtocolPorts",
           "required": true,
-          "type": "object",
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -11309,6 +11586,120 @@
         }
       ],
       "type": "object"
+    },
+    "TaskFlowEdge": {
+      "document": "工作流图中的边",
+      "members": [
+        {
+          "default": "",
+          "document": "节点 ID",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子节点 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChildNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否核心任务,Y/N\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CoreNode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "边类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EdgeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务节点类型",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "X轴坐标位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PositionX",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Y轴坐标位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PositionY",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GraphId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作流 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务历史ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskLogId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TaskFlowLastBatchState": {
       "document": "工作流最近批次的状态",

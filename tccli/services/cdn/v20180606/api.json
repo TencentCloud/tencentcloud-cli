@@ -6842,6 +6842,14 @@
           "name": "FlushType",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否对中文字符进行编码后刷新",
+          "member": "bool",
+          "name": "UrlEncode",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

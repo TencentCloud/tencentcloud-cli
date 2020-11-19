@@ -355,7 +355,7 @@
     "PurgePathCache": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=PurgePathCache\r\n&Paths.0=http://www.test.com/test/&FlushType=flush\r\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=PurgePathCache\n&Paths.0=http://www.test.com/test/\n&FlushType=flush\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\r\n\t\t\"TaskId\": \"1533045796-i60rfmzm\"\r\n\t}\r\n}",
         "title": "提交目录刷新任务"
       }

@@ -128,6 +128,14 @@
         "title": "创建任务"
       }
     ],
+    "CreateTaskFlow": [
+      {
+        "document": "创建工作流",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateTaskFlow\n&FlowName=exec-6g4rq8z6\n&TriggerRule={}\n&FlowEdges=[]\n&TimeOut=3000\n&<公共请求参数>",
+        "output": "{\r\n    \"Reponse\": {\r\n        \"Result\": \"flow-kw2sk8\" \r\n    }\r\n}",
+        "title": "创建工作流"
+      }
+    ],
     "DeleteApplication": [
       {
         "document": "",
@@ -704,6 +712,14 @@
         "title": "修改微服务详情"
       }
     ],
+    "ModifyTask": [
+      {
+        "document": "修改任务",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ModifyTask\n&TaskId=task-klwqrnlw\n&TaskName=demohaha\n&<公共请求参数>",
+        "output": "{\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\r\n    \"Response\": true\r\n}",
+        "title": "修改任务"
+      }
+    ],
     "ModifyUploadInfo": [
       {
         "document": "",
@@ -726,6 +742,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=RedoTaskBatch\n&TaskId=task-qov7j8ky\n&BatchId=batch-12345678\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\r\n    \"Result\": \"batch-123456\"\r\n  }\r\n}",
         "title": "重新执行批次"
+      }
+    ],
+    "RedoTaskExecute": [
+      {
+        "document": "在某个节点上重新执行任务",
+        "input": "https://tsf.tencentcloudapi.com/?Action=RedoTaskExecute\n&BatchId=batch-12345678\n&ExecuteId=execute-12345678\n&TaskId=task-12345678\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\r\n    \"Result\": \"batch-1234456\"\r\n  }\r\n}",
+        "title": "重新执行任务"
       }
     ],
     "RedoTaskFlowBatch": [

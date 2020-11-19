@@ -20,7 +20,7 @@ Output:
                 "Container": "mp4",
                 "Name": "模板1",
                 "Comment": null,
-                "Type": 0,
+                "Type": "Preset",
                 "RemoveVideo": 0,
                 "RemoveAudio": 0,
                 "VideoTemplate": {
@@ -30,17 +30,18 @@ Output:
                     "ResolutionAdaptive": "open",
                     "Width": 0,
                     "Height": 0,
-                    "MinGop": 1,
-                    "MaxGop": 10,
-                    "VideoProfile": "high",
-                    "ColorSpace": "yuv420p"
+                    "FillType": "black",
+                    "Vcrf": 23
                 },
                 "AudioTemplate": {
                     "Codec": "libfdk_aac",
                     "Bitrate": 48,
                     "SampleRate": 48000,
-                    "AudioChannel": 2,
-                    "AudioProfile": "aac_lc"
+                    "AudioChannel": 2
+                },
+                "TEHDConfig": {
+                    "MaxVideoBitrate": 1,
+                    "Type": "TEHD-100"
                 },
                 "ContainerType": "Video",
                 "CreateTime": "2018-10-01T10:00:00Z",

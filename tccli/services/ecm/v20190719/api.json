@@ -8037,7 +8037,7 @@
         },
         {
           "default": "",
-          "document": "公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值",
+          "document": "公网出带宽上限，单位：Mbps。\n1.如果未传该参数或者传的值为0，则使用模块下的默认值。\n2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthIn的值",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -8136,6 +8136,14 @@
           "document": "系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值",
           "member": "uint64",
           "name": "SystemDiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "公网入带宽上限，单位：Mbps。\n1.如果未传该参数或者传的值为0，则使用对应模块的默认值。\n2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthOut",
+          "member": "int64",
+          "name": "InternetMaxBandwidthIn",
           "required": false,
           "type": "int"
         }

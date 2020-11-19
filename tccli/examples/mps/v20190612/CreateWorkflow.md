@@ -1,19 +1,19 @@
 **Example 1: 设置转码规则**
 
-对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为"trans-20-30-40"转码规则，转出20，30，40三种格式。
+对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为"trans-100020-100030-100040"转码规则，转出100020，100030，100040三种格式。
 
 Input: 
 
 ```
 tccli mps CreateWorkflow --cli-unfold-argument  \
-    --WorkflowName trans-20-30-40 \
+    --WorkflowName trans-100020-100030-100040 \
     --Trigger.Type CosFileUpload \
     --Trigger.CosFileUploadTrigger.Bucket TopRankVideo-125xxx88 \
     --Trigger.CosFileUploadTrigger.Region ap-chongqing \
     --Trigger.CosFileUploadTrigger.Dir /movie/201907/ \
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
-    --MediaProcessTask.TranscodeTaskSet.2.Definition 40
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 100020 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 100030 \
+    --MediaProcessTask.TranscodeTaskSet.2.Definition 100040
 ```
 
 Output: 
@@ -28,7 +28,7 @@ Output:
 
 **Example 2: 设置采样截图规则**
 
-对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为"snapshot"转码规则，转出10规格。
+对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为"snapshot"转码规则，转出100010规格。
 
 Input: 
 
@@ -39,7 +39,7 @@ tccli mps CreateWorkflow --cli-unfold-argument  \
     --Trigger.CosFileUploadTrigger.Bucket TopRankVideo-125xxx88 \
     --Trigger.CosFileUploadTrigger.Region ap-chongqing \
     --Trigger.CosFileUploadTrigger.Dir /movie/201907/ \
-    --MediaProcessTask.SampleSnapshotTaskSet.0.Definition 10
+    --MediaProcessTask.SampleSnapshotTaskSet.0.Definition 100010
 ```
 
 Output: 

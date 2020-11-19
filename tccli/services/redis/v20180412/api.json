@@ -216,6 +216,12 @@
       "name": "查询任务列表信息",
       "output": "DescribeTaskListResponse"
     },
+    "DescribeTendisSlowLog": {
+      "document": "查询Tendis慢查询",
+      "input": "DescribeTendisSlowLogRequest",
+      "name": "查询Tendis慢查询",
+      "output": "DescribeTendisSlowLogResponse"
+    },
     "DestroyPostpaidInstance": {
       "document": "按量计费实例销毁",
       "input": "DestroyPostpaidInstanceRequest",
@@ -2927,6 +2933,86 @@
       ],
       "type": "object"
     },
+    "DescribeTendisSlowLogRequest": {
+      "document": "DescribeTendisSlowLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id：crs-ngvou0i1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间：2019-09-08 12:12:41",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间：2019-09-09 12:12:41",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "慢查询阈值（毫秒）",
+          "member": "int64",
+          "name": "MinQueryTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页面大小：20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，取Limit整数倍",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTendisSlowLogResponse": {
+      "document": "DescribeTendisSlowLog返回参数结构体",
+      "members": [
+        {
+          "document": "慢查询总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢查询详情",
+          "member": "TendisSlowLogDetail",
+          "name": "TendisSlowLogDetail",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DestroyPostpaidInstanceRequest": {
       "document": "DestroyPostpaidInstance请求参数结构体",
       "members": [
@@ -3225,7 +3311,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例所属的可用区id",
+          "document": "实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
           "member": "uint64",
           "name": "ZoneId",
           "required": true,
@@ -3233,7 +3319,7 @@
         },
         {
           "default": "",
-          "document": "实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，",
+          "document": "实例类型：2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)。",
           "member": "uint64",
           "name": "TypeId",
           "required": true,
@@ -3241,7 +3327,7 @@
         },
         {
           "default": "",
-          "document": "实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准",
+          "document": "内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。\nTypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。",
           "member": "uint64",
           "name": "MemSize",
           "required": true,
@@ -3249,7 +3335,7 @@
         },
         {
           "default": "",
-          "document": "实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准",
+          "document": "实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。",
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
@@ -3257,7 +3343,7 @@
         },
         {
           "default": "",
-          "document": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]",
+          "document": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -3273,7 +3359,7 @@
         },
         {
           "default": "",
-          "document": "实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写",
+          "document": "实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写。",
           "member": "int64",
           "name": "RedisShardNum",
           "required": false,
@@ -3281,7 +3367,7 @@
         },
         {
           "default": "",
-          "document": "实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写",
+          "document": "实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。",
           "member": "int64",
           "name": "RedisReplicasNum",
           "required": false,
@@ -3289,7 +3375,7 @@
         },
         {
           "default": "",
-          "document": "是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写",
+          "document": "是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。",
           "member": "bool",
           "name": "ReplicasReadonly",
           "required": false,
@@ -6307,6 +6393,57 @@
           "document": "节点角色",
           "member": "string",
           "name": "NodeRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TendisSlowLogDetail": {
+      "document": "Tendis慢查询详情",
+      "members": [
+        {
+          "default": "",
+          "document": "执行时间",
+          "member": "string",
+          "name": "ExecuteTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢查询耗时（毫秒）",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详细命令行信息",
+          "member": "string",
+          "name": "CommandLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点ID",
+          "member": "string",
+          "name": "Node",
           "required": true,
           "type": "string",
           "value_allowed_null": false

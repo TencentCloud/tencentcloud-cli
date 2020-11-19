@@ -988,6 +988,31 @@ def doStopContainerGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateLaneRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2088,6 +2113,31 @@ def doDeleteServerlessGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRedoTaskExecute(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RedoTaskExecuteRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RedoTaskExecute(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeFlowLastBatchState(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2155,6 +2205,31 @@ def doDeployContainerGroup(args, parsed_globals):
     model = models.DeployContainerGroupRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DeployContainerGroup(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTaskFlow(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTaskFlowRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateTaskFlow(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2788,6 +2863,7 @@ ACTION_MAP = {
     "DescribeSimpleNamespaces": doDescribeSimpleNamespaces,
     "CreateServerlessGroup": doCreateServerlessGroup,
     "StopContainerGroup": doStopContainerGroup,
+    "ModifyTask": doModifyTask,
     "CreateLaneRule": doCreateLaneRule,
     "DeleteContainerGroup": doDeleteContainerGroup,
     "ReleaseConfig": doReleaseConfig,
@@ -2832,9 +2908,11 @@ ACTION_MAP = {
     "ExecuteTaskFlow": doExecuteTaskFlow,
     "DescribeMicroservice": doDescribeMicroservice,
     "DeleteServerlessGroup": doDeleteServerlessGroup,
+    "RedoTaskExecute": doRedoTaskExecute,
     "DescribeFlowLastBatchState": doDescribeFlowLastBatchState,
     "DeleteRepository": doDeleteRepository,
     "DeployContainerGroup": doDeployContainerGroup,
+    "CreateTaskFlow": doCreateTaskFlow,
     "DeleteApplication": doDeleteApplication,
     "DescribeGroup": doDescribeGroup,
     "DescribeBasicResourceUsage": doDescribeBasicResourceUsage,

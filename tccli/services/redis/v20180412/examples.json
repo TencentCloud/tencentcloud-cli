@@ -294,6 +294,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeTendisSlowLog": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTendisSlowLog\n&InstanceId=crs-asdasdas\n&BeginTime=2019-09-08 12:12:41\n&EndTime=2019-09-09 12:12:41\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"TotalCount\":106980,\r\n        \"TendisSlowLogDetail\":[\r\n            {\r\n                \"Node\":\"833a2f6d8b402319aee8ad7f1c0fbbf7a6604337\",\r\n                \"Command\":\"hget\",\r\n                \"CommandLine\":\"hget hash_key classify_scope::default\",\r\n                \"Duration\":45,\r\n                \"ExecuteTime\":\"2019-09-08 12:13:08\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"121d5b40-d2b8-11e9-8c40-ef686158cbd6\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ],
     "DestroyPostpaidInstance": [
       {
         "document": "",
@@ -337,7 +345,7 @@
     "InquiryPriceCreateInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=InquiryPriceCreateInstance\r\n&<公共请求参数>\r\n&ZoneId=100002\r\n&TypeId=6\r\n&MemSize=4096\r\n&GoodsNum=1\r\n&Period=1\r\n&BillingMode=1",
+        "input": "https://redis.tencentcloudapi.com/?Action=InquiryPriceCreateInstance\n&ZoneId=100002\n&TypeId=6\n&MemSize=4096\n&GoodsNum=1\n&Period=1\n&BillingMode=1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Price\": 30400,\r\n        \"RequestId\": \"0115d979-2c38-4ad2-b282-bec09d5b4c0b\"\r\n    }\r\n}",
         "title": "示例"
       }
