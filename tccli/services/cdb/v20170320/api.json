@@ -429,7 +429,7 @@
     "DescribeUploadedFiles": {
       "document": "本接口(DescribeUploadedFiles)用于查询用户导入的SQL文件列表。",
       "input": "DescribeUploadedFilesRequest",
-      "name": "查询导入SQL文件列表",
+      "name": "查询导入SQL文件列表 （已废弃）",
       "output": "DescribeUploadedFilesResponse"
     },
     "DisassociateSecurityGroups": {
@@ -727,7 +727,7 @@
         },
         {
           "default": "",
-          "document": "星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；下同。",
+          "document": "星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。",
           "member": "string",
           "name": "Monday",
           "required": false,
@@ -735,7 +735,7 @@
         },
         {
           "default": "",
-          "document": "星期二的可维护时间窗口。",
+          "document": "星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。",
           "member": "string",
           "name": "Tuesday",
           "required": false,
@@ -743,7 +743,7 @@
         },
         {
           "default": "",
-          "document": "星期三的可维护时间窗口。",
+          "document": "星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。",
           "member": "string",
           "name": "Wednesday",
           "required": false,
@@ -751,7 +751,7 @@
         },
         {
           "default": "",
-          "document": "星期四的可维护时间窗口。",
+          "document": "星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。",
           "member": "string",
           "name": "Thursday",
           "required": false,
@@ -759,7 +759,7 @@
         },
         {
           "default": "",
-          "document": "星期五的可维护时间窗口。",
+          "document": "星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。",
           "member": "string",
           "name": "Friday",
           "required": false,
@@ -767,7 +767,7 @@
         },
         {
           "default": "",
-          "document": "星期六的可维护时间窗口。",
+          "document": "星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。",
           "member": "string",
           "name": "Saturday",
           "required": false,
@@ -775,7 +775,7 @@
         },
         {
           "default": "",
-          "document": "星期日的可维护时间窗口。",
+          "document": "星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。",
           "member": "string",
           "name": "Sunday",
           "required": false,

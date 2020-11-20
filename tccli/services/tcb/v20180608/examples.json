@@ -88,6 +88,14 @@
         "title": "获取云托管代码上传url"
       }
     ],
+    "DescribeCloudBaseRunResource": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunResource\n&EnvId=lotestapi100004\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"ClusterStatus\": \"succ\",\r\n\t\t\"VirtualClusterId\": \"cjd123\",\r\n\t\t\"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\",\r\n\"VpcId\": \"xx\", \r\n        \"SubnetIds\": [\r\n            {\r\n                \"Target\": \"xx\", \r\n                \"Zone\": \"xx\", \r\n                \"Region\": \"xx\", \r\n                \"Cidr\": \"xx\", \r\n                \"Type\": \"xx\", \r\n                \"Id\": \"xx\", \r\n                \"Name\": \"xx\"\r\n            }\r\n        ], \r\n        \"Region\": \"xx\"\r\n\r\n\t}\r\n}",
+        "title": "查看容器托管的资源状态"
+      }
+    ],
     "DescribeCloudBaseRunServerVersion": [
       {
         "document": "",

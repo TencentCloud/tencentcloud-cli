@@ -14,18 +14,36 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "Functions": [
             {
-                "FunctionId": "lam-xxxxxxx",
-                "Namespace": "default",
-                "FunctionName": "test",
-                "ModTime": "2018-04-08 19:02:20",
-                "AddTime": "2018-04-08 15:18:49",
-                "Runtime": "Python2.7"
+                "ModTime": "xx",
+                "Status": "xx",
+                "StatusDesc": "xx",
+                "FunctionName": "xx",
+                "TotalProvisionedConcurrencyMem": 1,
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "AddTime": "xx",
+                "Namespace": "xx",
+                "StatusReasons": [
+                    {
+                        "ErrorCode": "xx",
+                        "ErrorMessage": "xx"
+                    }
+                ],
+                "Runtime": "xx",
+                "Type": "xx",
+                "FunctionId": "xx",
+                "ReservedConcurrencyMem": 1,
+                "Description": "xx"
             }
         ],
-        "TotalCount": 1,
-        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "xx"
     }
 }
 ```
@@ -48,18 +66,36 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "Functions": [
             {
-                "FunctionId": "lam-xxxxxxx",
-                "Namespace": "default",
-                "FunctionName": "test",
-                "ModTime": "2018-04-08 19:02:20",
-                "AddTime": "2018-04-08 15:18:49",
-                "Runtime": "Python2.7"
+                "ModTime": "xx",
+                "Status": "xx",
+                "StatusDesc": "xx",
+                "FunctionName": "xx",
+                "TotalProvisionedConcurrencyMem": 1,
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "AddTime": "xx",
+                "Namespace": "xx",
+                "StatusReasons": [
+                    {
+                        "ErrorCode": "xx",
+                        "ErrorMessage": "xx"
+                    }
+                ],
+                "Runtime": "xx",
+                "Type": "xx",
+                "FunctionId": "xx",
+                "ReservedConcurrencyMem": 1,
+                "Description": "xx"
             }
         ],
-        "TotalCount": 1,
-        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "xx"
     }
 }
 ```

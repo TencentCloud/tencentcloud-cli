@@ -25,8 +25,7 @@ Output:
                 "FileName": "joellwang.sql",
                 "FileSize": 8581633,
                 "IsUploadFinished": 0,
-                "FileId": "5596d7433fe211da4b487228db4e7c57",
-                "Access_url": "http://xxxxxx-xxxxxxx.file.myqcloud.com:8080/100000983328/task.sql"
+                "FileId": "5596d7433fe211da4b487228db4e7c57"
             }
         ]
     }

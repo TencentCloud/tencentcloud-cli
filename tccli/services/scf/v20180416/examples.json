@@ -139,14 +139,14 @@
     "ListFunctions": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\r\n&Limit=2\r\n&Order=ASC\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Functions\": [\r\n            {\r\n                \"FunctionId\": \"lam-xxxxxxx\",\r\n                \"Namespace\": \"default\",\r\n                \"FunctionName\": \"test\",\r\n                \"ModTime\": \"2018-04-08 19:02:20\",\r\n                \"AddTime\": \"2018-04-08 15:18:49\",\r\n                \"Runtime\": \"Python2.7\"            \r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\n&Limit=2\n&Order=ASC\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1, \r\n        \"Functions\": [\r\n            {\r\n                \"ModTime\": \"xx\", \r\n                \"Status\": \"xx\", \r\n                \"StatusDesc\": \"xx\", \r\n                \"FunctionName\": \"xx\", \r\n                \"TotalProvisionedConcurrencyMem\": 1, \r\n                \"Tags\": [\r\n                    {\r\n                        \"Value\": \"xx\", \r\n                        \"Key\": \"xx\"\r\n                    }\r\n                ], \r\n                \"AddTime\": \"xx\", \r\n                \"Namespace\": \"xx\", \r\n                \"StatusReasons\": [\r\n                    {\r\n                        \"ErrorCode\": \"xx\", \r\n                        \"ErrorMessage\": \"xx\"\r\n                    }\r\n                ], \r\n                \"Runtime\": \"xx\", \r\n                \"Type\": \"xx\", \r\n                \"FunctionId\": \"xx\", \r\n                \"ReservedConcurrencyMem\": 1, \r\n                \"Description\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
         "title": "获取函数列表"
       },
       {
         "document": "查询status标签的值是dev，且owner标签的值是me的函数",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\r\n&Filters.0.Name=tag-status\r\n&Filters.0.Values.0=dev\r\n&Filters.1.Name=tag-owner\r\n&Filters.1.Values.0=me\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Functions\": [\r\n            {\r\n                \"FunctionId\": \"lam-xxxxxxx\",\r\n                \"Namespace\": \"default\",\r\n                \"FunctionName\": \"test\",\r\n                \"ModTime\": \"2018-04-08 19:02:20\",\r\n                \"AddTime\": \"2018-04-08 15:18:49\",\r\n                \"Runtime\": \"Python2.7\"            \r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\n&Filters.0.Name=tag-status\n&Filters.0.Values.0=dev\n&Filters.1.Name=tag-owner\n&Filters.1.Values.0=me\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1, \r\n        \"Functions\": [\r\n            {\r\n                \"ModTime\": \"xx\", \r\n                \"Status\": \"xx\", \r\n                \"StatusDesc\": \"xx\", \r\n                \"FunctionName\": \"xx\", \r\n                \"TotalProvisionedConcurrencyMem\": 1, \r\n                \"Tags\": [\r\n                    {\r\n                        \"Value\": \"xx\", \r\n                        \"Key\": \"xx\"\r\n                    }\r\n                ], \r\n                \"AddTime\": \"xx\", \r\n                \"Namespace\": \"xx\", \r\n                \"StatusReasons\": [\r\n                    {\r\n                        \"ErrorCode\": \"xx\", \r\n                        \"ErrorMessage\": \"xx\"\r\n                    }\r\n                ], \r\n                \"Runtime\": \"xx\", \r\n                \"Type\": \"xx\", \r\n                \"FunctionId\": \"xx\", \r\n                \"ReservedConcurrencyMem\": 1, \r\n                \"Description\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
         "title": "根据标签查询函数"
       }
     ],
@@ -217,7 +217,7 @@
     "UpdateFunctionCode": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=UpdateFunctionCode\r\n&FunctionName=test\r\n&Handler=index.main\r\n&CosBucketName=<CosBucketName>\r\n&CosObjectName=<CosObjectName>\r\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateFunctionCode\n&FunctionName=test\n&Handler=index.main\n&CosBucketName=<CosBucketName>\n&CosObjectName=<CosObjectName>\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
         "title": "更新函数代码"
       }

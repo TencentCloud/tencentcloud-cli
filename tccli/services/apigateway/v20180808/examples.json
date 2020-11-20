@@ -35,7 +35,7 @@
     "CreateApi": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateApi\r\n&ServiceId=service-ody35h5e\r\n&ApiName=name\r\n&ApiDesc=desc\r\n&ApiType=NORMAL\r\n&AuthType=NONE\r\n&ServiceType=MOCK\r\n&ServiceTimeout=15\r\n&Protocol=HTTP\r\n&RequestConfig.Path=/test\r\n&RequestConfig.Method=GET\r\n&EnableCORS=false\r\n&ApiBusinessType=NORMAL\r\n&ServiceMockReturnMessage=mock\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateApi\n&ServiceId=service-ody35h5e\n&ApiName=name\n&ApiDesc=desc\n&ApiType=NORMAL\n&AuthType=NONE\n&ServiceType=MOCK\n&ServiceTimeout=15\n&Protocol=HTTP\n&RequestConfig.Path=/test\n&RequestConfig.Method=GET\n&EnableCORS=false\n&ApiBusinessType=NORMAL\n&ServiceMockReturnMessage=mock\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ApiId\": \"api-61jyuvg6\",\r\n            \"Path\": \"test\",\r\n            \"Method\": \"GET\",\r\n            \"CreatedTime\": \"2020-03-23T08:59:18Z\"\r\n        },\r\n        \"RequestId\": \"96026454-d916-4035-ba88-0e900214d0f6\"\r\n    }\r\n}",
         "title": "CreateApi"
       }
@@ -75,7 +75,7 @@
     "DeleteApi": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteApi\r\n&ServiceId=service-ody35h5e\r\n&ApiId=api-e92i2jds\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteApi\n&ServiceId=service-ody35h5e\n&ApiId=api-e92i2jds\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"7787aa0e-be74-43c0-b6f6-7bf56995ce2d\"\r\n    }\r\n}",
         "title": "DeleteApi"
       }
@@ -345,7 +345,7 @@
     "ModifyApi": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyApi\r\n&ServiceId=service-ody35h5e\r\n&ApiId=api-lqd35zzq\r\n&ApiName=xxx\r\n&RequestConfig.Path=/xxxx\r\n&RequestConfig.Method=get\r\n&ServiceType=MOCK\r\n&ServiceMockReturnMessage=test\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyApi\n&ServiceId=service-ody35h5e\n&ApiId=api-lqd35zzq\n&ApiName=xxx\n&RequestConfig.Path=/xxxx\n&RequestConfig.Method=get\n&ServiceType=MOCK\n&ServiceMockReturnMessage=test\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6e00553a-8158-4f70-ad43-e1b046af1502\"\r\n    }\r\n}",
         "title": "ModifyApi"
       }

@@ -6,10 +6,6 @@ Input:
 
 ```
 tccli af QueryAntiFraud --cli-unfold-argument  \
-    --Nonce 62972 \
-    --Region all \
-    --SecretId AKIDufPRYgmsWyC8NtsRMq3t8CdkGWohJNmE \
-    --Timestamp 1467872277 \
     --AccountType 1 \
     --AppIdU 100273020 \
     --BankCardNumber 12345678 \
@@ -20,28 +16,28 @@ tccli af QueryAntiFraud --cli-unfold-argument  \
     --Imsi xxxyyzz \
     --Name %E6%9D%A8%E7%BA%A2 \
     --PhoneNumber 008613246208548 \
-    --PostTime 1436664316 \
     --Uid 00000000000000000000000033121475 \
     --UserIp 8.8.8.8 \
-    --mac 00-01-6C-06-A6-29 \
-    --WifiSSID testwifi \
-    --WifiBSSID 00-04-C3-A1-2B-22 \
-    --Signature Wn0Wuy3jkncGNvwf485XMxJaVmU%3D
+    --Mac 00-01-6C-06-A6-29 \
+    --WifiSSID test_wifi \
+    --WifiBSSID 00-04-C3-A1-2B-22
 ```
 
 Output: 
 ```
 {
-    "CodeDesc": "Success",
-    "Found": 1,
-    "IdFound": 1,
-    "PostTime": "1436664316",
-    "RiskInfo": [
-        {
-            "RiskCode": 1107
-        }
-    ],
-    "RiskScore": 70
+    "Response": {
+        "RiskInfo": [
+            {
+                "RiskCode": 1
+            }
+        ],
+        "IdFound": 1,
+        "RequestId": "07c816d7-5bc3-4e95-ba1f-32ce3e5683e5",
+        "CodeDesc": "Success",
+        "Found": 1,
+        "RiskScore": 70
+    }
 }
 ```
 
