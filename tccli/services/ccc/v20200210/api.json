@@ -24,6 +24,12 @@
       "name": "查询在线客服记录",
       "output": "DescribeIMCdrsResponse"
     },
+    "DescribeTelCallInfo": {
+      "document": "获取电话呼叫统计信息",
+      "input": "DescribeTelCallInfoRequest",
+      "name": "获取电话呼叫统计信息",
+      "output": "DescribeTelCallInfoResponse"
+    },
     "DescribeTelCdr": {
       "document": "获取电话服务记录与录音",
       "input": "DescribeTelCdrRequest",
@@ -284,6 +290,69 @@
           "member": "IMCdrInfo",
           "name": "IMCdrs",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTelCallInfoRequest": {
+      "document": "DescribeTelCallInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间戳，Unix 时间戳",
+          "member": "int64",
+          "name": "StartTimeStamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，Unix 时间戳",
+          "member": "int64",
+          "name": "EndTimeStamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用ID列表，多个ID时，返回值为多个ID使用总和",
+          "member": "int64",
+          "name": "SdkAppIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTelCallInfoResponse": {
+      "document": "DescribeTelCallInfo返回参数结构体",
+      "members": [
+        {
+          "document": "电话呼出统计分钟数",
+          "member": "int64",
+          "name": "TelCallOutCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "电话呼入统计分钟数",
+          "member": "int64",
+          "name": "TelCallInCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "坐席使用统计个数",
+          "member": "int64",
+          "name": "SeatUsedCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {

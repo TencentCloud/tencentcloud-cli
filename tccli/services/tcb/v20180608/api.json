@@ -1271,6 +1271,14 @@
           "name": "EnableUnion",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "操作备注",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3153,6 +3161,22 @@
           "document": "日志类型; es/cls",
           "member": "string",
           "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作备注",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源方（默认值：qcloud，微信侧来源miniapp)",
+          "member": "string",
+          "name": "Source",
           "required": false,
           "type": "string"
         }

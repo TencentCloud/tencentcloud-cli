@@ -48,6 +48,12 @@
       "name": "批量绑定后端目标",
       "output": "BatchRegisterTargetsResponse"
     },
+    "CreateHaVip": {
+      "document": "本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）",
+      "input": "CreateHaVipRequest",
+      "name": "创建HAVIP",
+      "output": "CreateHaVipResponse"
+    },
     "CreateImage": {
       "document": "本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。",
       "input": "CreateImageRequest",
@@ -78,6 +84,18 @@
       "name": "创建弹性网卡",
       "output": "CreateNetworkInterfaceResponse"
     },
+    "CreateRouteTable": {
+      "document": "创建了VPC后，系统会创建一个默认路由表，所有新建的子网都会关联到默认路由表。默认情况下您可以直接使用默认路由表来管理您的路由策略。当您的路由策略较多时，您可以调用创建路由表接口创建更多路由表管理您的路由策略。",
+      "input": "CreateRouteTableRequest",
+      "name": "创建路由表",
+      "output": "CreateRouteTableResponse"
+    },
+    "CreateRoutes": {
+      "document": "创建路由策略",
+      "input": "CreateRoutesRequest",
+      "name": "创建路由策略",
+      "output": "CreateRoutesResponse"
+    },
     "CreateSecurityGroup": {
       "document": "创建安全组",
       "input": "CreateSecurityGroupRequest",
@@ -101,6 +119,12 @@
       "input": "CreateVpcRequest",
       "name": "创建VPC",
       "output": "CreateVpcResponse"
+    },
+    "DeleteHaVip": {
+      "document": "用于删除高可用虚拟IP（HAVIP）",
+      "input": "DeleteHaVipRequest",
+      "name": "删除HAVIP",
+      "output": "DeleteHaVipResponse"
     },
     "DeleteImage": {
       "document": "删除镜像",
@@ -137,6 +161,18 @@
       "input": "DeleteNetworkInterfaceRequest",
       "name": "删除弹性网卡",
       "output": "DeleteNetworkInterfaceResponse"
+    },
+    "DeleteRouteTable": {
+      "document": "删除路由表",
+      "input": "DeleteRouteTableRequest",
+      "name": "删除路由表",
+      "output": "DeleteRouteTableResponse"
+    },
+    "DeleteRoutes": {
+      "document": "对某个路由表批量删除路由策略",
+      "input": "DeleteRoutesRequest",
+      "name": "删除路由策略",
+      "output": "DeleteRoutesResponse"
     },
     "DeleteSecurityGroup": {
       "document": "只有当前账号下的安全组允许被删除。\n安全组实例ID如果在其他安全组的规则中被引用，则无法直接删除。这种情况下，需要先进行规则修改，再删除安全组。\n删除的安全组无法再找回，请谨慎调用。",
@@ -197,6 +233,12 @@
       "input": "DescribeDefaultSubnetRequest",
       "name": "查询可用区的默认子网",
       "output": "DescribeDefaultSubnetResponse"
+    },
+    "DescribeHaVips": {
+      "document": "用于查询高可用虚拟IP（HAVIP）列表。",
+      "input": "DescribeHaVipsRequest",
+      "name": "查询HAVIP列表",
+      "output": "DescribeHaVipsResponse"
     },
     "DescribeImage": {
       "document": "展示镜像列表",
@@ -288,6 +330,18 @@
       "name": "获取网络峰值数据",
       "output": "DescribePeakNetworkOverviewResponse"
     },
+    "DescribeRouteConflicts": {
+      "document": "查询自定义路由策略与云联网路由策略冲突列表",
+      "input": "DescribeRouteConflictsRequest",
+      "name": "查询路由策略冲突列表",
+      "output": "DescribeRouteConflictsResponse"
+    },
+    "DescribeRouteTables": {
+      "document": "查询路由表对象列表",
+      "input": "DescribeRouteTablesRequest",
+      "name": "查询路由表对象列表",
+      "output": "DescribeRouteTablesResponse"
+    },
     "DescribeSecurityGroupAssociationStatistics": {
       "document": "查询安全组关联实例统计",
       "input": "DescribeSecurityGroupAssociationStatisticsRequest",
@@ -354,6 +408,12 @@
       "name": "弹性网卡解绑云主机",
       "output": "DetachNetworkInterfaceResponse"
     },
+    "DisableRoutes": {
+      "document": "禁用已启用的子网路由",
+      "input": "DisableRoutesRequest",
+      "name": "禁用子网路由",
+      "output": "DisableRoutesResponse"
+    },
     "DisassociateAddress": {
       "document": "解绑弹性公网IP（简称 EIP）\n只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\nEIP 如果被封堵，则不能进行解绑定操作。",
       "input": "DisassociateAddressRequest",
@@ -365,6 +425,12 @@
       "input": "DisassociateSecurityGroupsRequest",
       "name": "解绑安全组",
       "output": "DisassociateSecurityGroupsResponse"
+    },
+    "EnableRoutes": {
+      "document": "启用已禁用的子网路由。\n本接口会校验启用后，是否与已有路由冲突，如果冲突，则无法启用，失败处理。路由冲突时，需要先禁用与之冲突的路由，才能启用该路由。",
+      "input": "EnableRoutesRequest",
+      "name": "启用子网路由",
+      "output": "EnableRoutesResponse"
     },
     "ImportCustomImage": {
       "document": "导入自定义镜像，支持 RAW、VHD、QCOW2、VMDK 镜像格式",
@@ -407,6 +473,12 @@
       "input": "ModifyDefaultSubnetRequest",
       "name": "修改默认子网",
       "output": "ModifyDefaultSubnetResponse"
+    },
+    "ModifyHaVipAttribute": {
+      "document": "用于修改高可用虚拟IP（HAVIP）属性",
+      "input": "ModifyHaVipAttributeRequest",
+      "name": "修改HAVIP属性",
+      "output": "ModifyHaVipAttributeResponse"
     },
     "ModifyImageAttribute": {
       "document": "本接口（ModifyImageAttribute）用于修改镜像属性。",
@@ -468,6 +540,12 @@
       "name": "修改模块默认安全组",
       "output": "ModifyModuleSecurityGroupsResponse"
     },
+    "ModifyRouteTableAttribute": {
+      "document": "修改路由表属性",
+      "input": "ModifyRouteTableAttributeRequest",
+      "name": "修改路由表属性",
+      "output": "ModifyRouteTableAttributeResponse"
+    },
     "ModifySecurityGroupAttribute": {
       "document": "修改安全组属性",
       "input": "ModifySecurityGroupAttributeRequest",
@@ -522,6 +600,18 @@
       "name": "弹性网卡退还内网 IP",
       "output": "RemovePrivateIpAddressesResponse"
     },
+    "ReplaceRouteTableAssociation": {
+      "document": "修改子网关联的路由表，一个子网只能关联一个路由表。",
+      "input": "ReplaceRouteTableAssociationRequest",
+      "name": "替换路由表绑定关系",
+      "output": "ReplaceRouteTableAssociationResponse"
+    },
+    "ReplaceRoutes": {
+      "document": "替换路由策略",
+      "input": "ReplaceRoutesRequest",
+      "name": "替换路由策略",
+      "output": "ReplaceRoutesResponse"
+    },
     "ReplaceSecurityGroupPolicy": {
       "document": "替换单条安全组路由规则, 单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。",
       "input": "ReplaceSecurityGroupPolicyRequest",
@@ -545,6 +635,12 @@
       "input": "ResetInstancesPasswordRequest",
       "name": "重置实例密码",
       "output": "ResetInstancesPasswordResponse"
+    },
+    "ResetRoutes": {
+      "document": "对某个路由表名称和所有路由策略（Route）进行重新设置",
+      "input": "ResetRoutesRequest",
+      "name": "重置路由表名称和路由策略",
+      "output": "ResetRoutesResponse"
     },
     "RunInstances": {
       "document": "创建ECM实例",
@@ -1405,6 +1501,23 @@
       ],
       "usage": "out"
     },
+    "CreateHaVipRequest": {
+      "document": "CreateHaVip请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateHaVipResponse": {
+      "document": "CreateHaVip返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateImageRequest": {
       "document": "CreateImage请求参数结构体",
       "members": [
@@ -1842,6 +1955,103 @@
       ],
       "type": "object"
     },
+    "CreateRouteTableRequest": {
+      "document": "CreateRouteTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表名称，最大长度不能超过60个字节。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ecm地域",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRouteTableResponse": {
+      "document": "CreateRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "路由表对象",
+          "member": "RouteTable",
+          "name": "RouteTable",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutesRequest": {
+      "document": "CreateRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要创建的路由策略对象。",
+          "member": "Route",
+          "name": "Routes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutesResponse": {
+      "document": "CreateRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "新增的实例个数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "路由表对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RouteTable",
+          "name": "RouteTableSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSecurityGroupPoliciesRequest": {
       "document": "CreateSecurityGroupPolicies请求参数结构体",
       "members": [
@@ -2087,6 +2297,23 @@
       ],
       "type": "object"
     },
+    "DeleteHaVipRequest": {
+      "document": "DeleteHaVip请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteHaVipResponse": {
+      "document": "DeleteHaVip返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteImageRequest": {
       "document": "DeleteImage请求参数结构体",
       "members": [
@@ -2257,6 +2484,66 @@
     },
     "DeleteNetworkInterfaceResponse": {
       "document": "DeleteNetworkInterface返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRouteTableRequest": {
+      "document": "DeleteRouteTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRouteTableResponse": {
+      "document": "DeleteRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutesRequest": {
+      "document": "DeleteRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表唯一ID。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由策略对象。",
+          "member": "Route",
+          "name": "Routes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutesResponse": {
+      "document": "DeleteRoutes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2697,6 +2984,23 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHaVipsRequest": {
+      "document": "DescribeHaVips请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeHaVipsResponse": {
+      "document": "DescribeHaVips返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3485,6 +3789,119 @@
       ],
       "type": "object"
     },
+    "DescribeRouteConflictsRequest": {
+      "document": "DescribeRouteConflicts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要检查的与之冲突的目的端列表",
+          "member": "string",
+          "name": "DestinationCidrBlocks",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteConflictsResponse": {
+      "document": "DescribeRouteConflicts返回参数结构体",
+      "members": [
+        {
+          "document": "路由策略冲突列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RouteConflict",
+          "name": "RouteConflictSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTablesRequest": {
+      "document": "DescribeRouteTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "member": "string",
+          "name": "RouteTableIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\nroute-table-id - String - （过滤条件）路由表实例ID。\nroute-table-name - String - （过滤条件）路由表名称。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nassociation.main - String - （过滤条件）是否主路由表。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ECM 地域，传空或不传表示所有区域",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTablesResponse": {
+      "document": "DescribeRouteTables返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "路由表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RouteTable",
+          "name": "RouteTableSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSecurityGroupAssociationStatisticsRequest": {
       "document": "DescribeSecurityGroupAssociationStatistics请求参数结构体",
       "members": [
@@ -4012,6 +4429,40 @@
       ],
       "type": "object"
     },
+    "DisableRoutesRequest": {
+      "document": "DisableRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表唯一ID。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由策略ID。",
+          "member": "uint64",
+          "name": "RouteIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRoutesResponse": {
+      "document": "DisableRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisassociateAddressRequest": {
       "document": "DisassociateAddress请求参数结构体",
       "members": [
@@ -4160,6 +4611,40 @@
         }
       ],
       "usage": "out"
+    },
+    "EnableRoutesRequest": {
+      "document": "EnableRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表唯一ID。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由策略ID。",
+          "member": "uint64",
+          "name": "RouteIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableRoutesResponse": {
+      "document": "EnableRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EnhancedService": {
       "document": "增强服务",
@@ -5899,6 +6384,23 @@
       ],
       "type": "object"
     },
+    "ModifyHaVipAttributeRequest": {
+      "document": "ModifyHaVipAttribute请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyHaVipAttributeResponse": {
+      "document": "ModifyHaVipAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyImageAttributeRequest": {
       "document": "ModifyImageAttribute请求参数结构体",
       "members": [
@@ -6301,6 +6803,40 @@
     },
     "ModifyModuleSecurityGroupsResponse": {
       "document": "ModifyModuleSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRouteTableAttributeRequest": {
+      "document": "ModifyRouteTableAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表名称",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRouteTableAttributeResponse": {
+      "document": "ModifyRouteTableAttribute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7819,6 +8355,82 @@
       ],
       "type": "object"
     },
+    "ReplaceRouteTableAssociationRequest": {
+      "document": "ReplaceRouteTableAssociation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ECM 地域",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceRouteTableAssociationResponse": {
+      "document": "ReplaceRouteTableAssociation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceRoutesRequest": {
+      "document": "ReplaceRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由策略对象。",
+          "member": "Route",
+          "name": "Routes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceRoutesResponse": {
+      "document": "ReplaceRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReplaceSecurityGroupPolicyRequest": {
       "document": "ReplaceSecurityGroupPolicy请求参数结构体",
       "members": [
@@ -8002,6 +8614,252 @@
         }
       ],
       "type": "object"
+    },
+    "ResetRoutesRequest": {
+      "document": "ResetRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表名称，最大长度不能超过60个字节。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由策略。",
+          "member": "Route",
+          "name": "Routes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRoutesResponse": {
+      "document": "ResetRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Route": {
+      "document": "路由策略",
+      "members": [
+        {
+          "default": "",
+          "document": "目的IPv4网段",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳类型\nNORMAL_CVM：普通云服务器；",
+          "member": "string",
+          "name": "GatewayType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳地址\n这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址\n当 GatewayType 为 EIP 时，GatewayId 固定值 '0'",
+          "member": "string",
+          "name": "GatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由策略唯一ID",
+          "member": "string",
+          "name": "RouteItemId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由策略描述",
+          "member": "string",
+          "name": "RouteDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由类型，目前我们支持的类型有：\nUSER：用户路由；\nNETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；\nCCN：云联网路由，系统默认下发，不可编辑与删除。\n用户只能添加和操作 USER 类型的路由。",
+          "member": "string",
+          "name": "RouteType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略",
+          "member": "uint64",
+          "name": "RouteId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RouteConflict": {
+      "document": "路由冲突对象",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "要检查的与之冲突的目的端",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "冲突的路由策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Route",
+          "name": "ConflictSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RouteTable": {
+      "document": "路由表",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC实例ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表实例ID",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表名称",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表关联关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RouteTableAssociation",
+          "name": "AssociationSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IPv4路由策略集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Route",
+          "name": "RouteSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否默认路由表",
+          "member": "bool",
+          "name": "Main",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RouteTableAssociation": {
+      "document": "路由表关联关系",
+      "members": [
+        {
+          "default": "",
+          "document": "子网实例ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表实例ID",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RuleHealth": {
       "document": "转发规则及健康状态列表",

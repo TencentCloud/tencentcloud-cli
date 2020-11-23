@@ -196,6 +196,14 @@
           "name": "Tag",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "WebSocket配置",
+          "member": "WebSocket",
+          "name": "WebSocket",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1224,6 +1232,15 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "WebSocket配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "WebSocket",
+          "name": "WebSocket",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2188,6 +2205,14 @@
           "name": "Area",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "WebSocket配置",
+          "member": "WebSocket",
+          "name": "WebSocket",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2203,6 +2228,30 @@
         }
       ],
       "type": "object"
+    },
+    "WebSocket": {
+      "document": "WebSocket配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "WebSocket配置开关，on或off。",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设置超时时间，单位为秒，最大超时时间65秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

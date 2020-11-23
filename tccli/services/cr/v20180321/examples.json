@@ -72,6 +72,14 @@
         "title": "查询入催外呼数据"
       }
     ],
+    "QueryProducts": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=QueryProducts\n&Module=Products\n&Operation=QueryProducts\n&InstanceId=ins-xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\", \r\n        \"ProductList\": [\r\n            {\r\n                \"ProductCode\": \"Pxxx\", \r\n                \"SceneType\": \"A\", \r\n                \"ProductName\": \"测试产品\", \r\n                \"ProductStatus\": 0, \r\n                \"ProductId\": \"pdt-xxxxxx\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询产品列表"
+      }
+    ],
     "UploadDataFile": [
       {
         "document": "",

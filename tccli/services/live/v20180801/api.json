@@ -105,7 +105,7 @@
     "CreatePullStreamConfig": {
       "document": "创建临时拉流转推任务，目前限制添加10条任务。\n\n注意：该接口用于创建临时拉流转推任务，\n拉流源地址即 FromUrl 可以是腾讯或非腾讯数据源，\n但转推目标地址即 ToUrl 目前限制为已注册的腾讯直播域名。",
       "input": "CreatePullStreamConfigRequest",
-      "name": "添加拉流配置",
+      "name": "添加拉流配置(该接口已下线,请联系售后获取新接口)",
       "output": "CreatePullStreamConfigResponse"
     },
     "CreateRecordTask": {
@@ -195,7 +195,7 @@
     "DeletePullStreamConfig": {
       "document": "删除直播拉流配置。",
       "input": "DeletePullStreamConfigRequest",
-      "name": "删除拉流配置",
+      "name": "删除拉流配置(该接口已下线,请联系售后获取新接口)",
       "output": "DeletePullStreamConfigResponse"
     },
     "DeleteRecordTask": {
@@ -471,7 +471,7 @@
     "DescribePullStreamConfigs": {
       "document": "查询直播拉流配置。",
       "input": "DescribePullStreamConfigsRequest",
-      "name": "查询拉流配置",
+      "name": "查询拉流配置(该接口已下线,请联系售后获取新接口)",
       "output": "DescribePullStreamConfigsResponse"
     },
     "DescribeScreenShotSheetNumList": {
@@ -597,13 +597,13 @@
     "ModifyPullStreamConfig": {
       "document": "更新拉流配置。",
       "input": "ModifyPullStreamConfigRequest",
-      "name": "更新拉流配置",
+      "name": "更新拉流配置(该接口已下线,请联系售后获取新接口)",
       "output": "ModifyPullStreamConfigResponse"
     },
     "ModifyPullStreamStatus": {
       "document": "修改直播拉流配置的状态。",
       "input": "ModifyPullStreamStatusRequest",
-      "name": "修改拉流配置状态",
+      "name": "修改拉流配置状态(该接口已下线,请联系售后获取新接口)",
       "output": "ModifyPullStreamStatusResponse"
     },
     "ResumeDelayLiveStream": {

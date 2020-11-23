@@ -964,6 +964,33 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主实例信息，仅在实例为只读实例时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MasterDBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "只读实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReadOnlyInstanceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "只读实例在只读组中的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusInReadonlyGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

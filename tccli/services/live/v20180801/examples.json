@@ -157,7 +157,7 @@
     "CreatePullStreamConfig": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreatePullStreamConfig\r\n&FromUrl=rtmp://5000.liveplay.myqcloud.com/live/stream1\r\n&ToUrl=rtmp://5000.livepush.myqcloud.com/live/stream2\r\n&AreaId=1\r\n&IspId=1\r\n&StartTime=2018-12-31T11:02:00Z\r\n&EndTime=2018-12-31T12:02:00Z\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreatePullStreamConfig\n&FromUrl=rtmp://5000.liveplay.myqcloud.com/live/stream1\n&ToUrl=rtmp://5000.livepush.myqcloud.com/live/stream2\n&AreaId=1\n&IspId=1\n&StartTime=2018-12-31T11:02:00Z\n&EndTime=2018-12-31T12:02:00Z\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"ConfigId\": \"123\",\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -277,7 +277,7 @@
     "DeletePullStreamConfig": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeletePullStreamConfig\r\n&ConfigId=123\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DeletePullStreamConfig\n&ConfigId=123\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -645,7 +645,7 @@
     "DescribePullStreamConfigs": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribePullStreamConfigs\r\n&ConfigId=5674\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribePullStreamConfigs\n&ConfigId=5674\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"PullStreamConfigs\":[\r\n    {\r\n        \"ConfigId\": \"5674\",\r\n\t\"FromUrl\": \"rtmp://3737.liveplay.myqcloud.com/txlive\",\r\n\t\"ToUrl\": \"rtmp://3954.livepush2.myqcloud.com/live/3954_462724865?&txSecret=xx\",\r\n\t\"AreaName\": \"深圳\",\r\n\t\"IspName\": \"电信\",\r\n\t\"StartTime\": \"2018-07-06T14:40:23Z\",\r\n\t\"EndTime\": \"2018-07-06T18:05:23Z\",\r\n\t\"Status\": \"2\"\t\t\t\t\t\r\n    }],\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -813,7 +813,7 @@
     "ModifyPullStreamConfig": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyPullStreamConfig\r\n&ConfigId=123\r\n&FromUrl=rtmp://5000.liveplay.myqcloud.com/live/stream1\r\n&ToUrl=rtmp://5000.livepush.myqcloud.com/live/stream2\r\n&AreaId=1\r\n&IspId=1\r\n&StartTime=2018-12-31T11:02:00Z\r\n&EndTime=2018-12-31T12:02:00Z\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=ModifyPullStreamConfig\n&ConfigId=123\n&FromUrl=rtmp://5000.liveplay.myqcloud.com/live/stream1\n&ToUrl=rtmp://5000.livepush.myqcloud.com/live/stream2\n&AreaId=1\n&IspId=1\n&StartTime=2018-12-31T11:02:00Z\n&EndTime=2018-12-31T12:02:00Z\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -821,7 +821,7 @@
     "ModifyPullStreamStatus": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyPullStreamStatus\r\n&ConfigIds.0=123\r\n&ConfigIds.1=456\r\n&Status=2\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=ModifyPullStreamStatus\n&ConfigIds.0=123\n&ConfigIds.1=456\n&Status=2\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }

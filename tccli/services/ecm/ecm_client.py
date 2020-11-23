@@ -113,7 +113,7 @@ def doModifyModuleName(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBatchDeregisterTargets(args, parsed_globals):
+def doDescribeRouteTables(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -127,9 +127,59 @@ def doBatchDeregisterTargets(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BatchDeregisterTargetsRequest()
+    model = models.DescribeRouteTablesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.BatchDeregisterTargets(model)
+    rsp = client.DescribeRouteTables(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateRouteTable(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRouteTableRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateRouteTable(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReplaceRouteTableAssociation(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReplaceRouteTableAssociationRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ReplaceRouteTableAssociation(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -155,6 +205,31 @@ def doModifyInstancesAttribute(args, parsed_globals):
     model = models.ModifyInstancesAttributeRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ModifyInstancesAttribute(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetRoutes(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetRoutesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ResetRoutes(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -363,6 +438,31 @@ def doAssignPrivateIpAddresses(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doBatchDeregisterTargets(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BatchDeregisterTargetsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.BatchDeregisterTargets(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyLoadBalancerAttributes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -513,7 +613,7 @@ def doDisassociateSecurityGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteSecurityGroup(args, parsed_globals):
+def doMigrateNetworkInterface(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -527,9 +627,9 @@ def doDeleteSecurityGroup(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteSecurityGroupRequest()
+    model = models.MigrateNetworkInterfaceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteSecurityGroup(model)
+    rsp = client.MigrateNetworkInterface(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1088,7 +1188,7 @@ def doDeleteModule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyModuleIpDirect(args, parsed_globals):
+def doDescribeTargetHealth(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1102,9 +1202,59 @@ def doModifyModuleIpDirect(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyModuleIpDirectRequest()
+    model = models.DescribeTargetHealthRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyModuleIpDirect(model)
+    rsp = client.DescribeTargetHealth(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReplaceRoutes(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReplaceRoutesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ReplaceRoutes(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeRouteConflicts(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRouteConflictsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeRouteConflicts(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1130,6 +1280,31 @@ def doRemovePrivateIpAddresses(args, parsed_globals):
     model = models.RemovePrivateIpAddressesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.RemovePrivateIpAddresses(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisableRoutes(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisableRoutesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DisableRoutes(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1180,6 +1355,31 @@ def doAttachNetworkInterface(args, parsed_globals):
     model = models.AttachNetworkInterfaceRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.AttachNetworkInterface(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReleaseAddresses(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReleaseAddressesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ReleaseAddresses(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1330,6 +1530,31 @@ def doDescribeInstanceTypeConfig(args, parsed_globals):
     model = models.DescribeInstanceTypeConfigRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeInstanceTypeConfig(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteRoutes(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteRoutesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteRoutes(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1613,6 +1838,31 @@ def doDescribeInstanceVncUrl(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteRouteTable(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteRouteTableRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteRouteTable(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSecurityGroupLimits(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1763,6 +2013,31 @@ def doModifyModuleNetwork(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeHaVips(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHaVipsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeHaVips(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doImportImage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1780,6 +2055,31 @@ def doImportImage(args, parsed_globals):
     model = models.ImportImageRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ImportImage(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteHaVip(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteHaVipRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteHaVip(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2038,6 +2338,31 @@ def doCreateModule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doEnableRoutes(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EnableRoutesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.EnableRoutes(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeLoadBalancers(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2063,7 +2388,7 @@ def doDescribeLoadBalancers(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMigrateNetworkInterface(args, parsed_globals):
+def doDeleteSecurityGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2077,9 +2402,9 @@ def doMigrateNetworkInterface(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MigrateNetworkInterfaceRequest()
+    model = models.DeleteSecurityGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.MigrateNetworkInterface(model)
+    rsp = client.DeleteSecurityGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2105,6 +2430,31 @@ def doCreateListener(args, parsed_globals):
     model = models.CreateListenerRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateListener(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyRouteTableAttribute(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyRouteTableAttributeRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyRouteTableAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2163,7 +2513,7 @@ def doModifyModuleSecurityGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReleaseAddresses(args, parsed_globals):
+def doCreateRoutes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2177,9 +2527,9 @@ def doReleaseAddresses(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReleaseAddressesRequest()
+    model = models.CreateRoutesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ReleaseAddresses(model)
+    rsp = client.CreateRoutes(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2188,7 +2538,7 @@ def doReleaseAddresses(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTargetHealth(args, parsed_globals):
+def doModifyHaVipAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2202,9 +2552,59 @@ def doDescribeTargetHealth(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTargetHealthRequest()
+    model = models.ModifyHaVipAttributeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTargetHealth(model)
+    rsp = client.ModifyHaVipAttribute(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateHaVip(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateHaVipRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateHaVip(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyModuleIpDirect(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyModuleIpDirectRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyModuleIpDirect(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2238,7 +2638,7 @@ def doDescribeTargets(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyVpcAttribute(args, parsed_globals):
+def doDeleteImage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2252,9 +2652,9 @@ def doModifyVpcAttribute(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyVpcAttributeRequest()
+    model = models.DeleteImageRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyVpcAttribute(model)
+    rsp = client.DeleteImage(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2363,7 +2763,7 @@ def doCreateSecurityGroupPolicies(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImage(args, parsed_globals):
+def doModifyVpcAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2377,9 +2777,9 @@ def doDeleteImage(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImageRequest()
+    model = models.ModifyVpcAttributeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteImage(model)
+    rsp = client.ModifyVpcAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2403,8 +2803,11 @@ ACTION_MAP = {
     "DescribeConfig": doDescribeConfig,
     "DescribeTaskResult": doDescribeTaskResult,
     "ModifyModuleName": doModifyModuleName,
-    "BatchDeregisterTargets": doBatchDeregisterTargets,
+    "DescribeRouteTables": doDescribeRouteTables,
+    "CreateRouteTable": doCreateRouteTable,
+    "ReplaceRouteTableAssociation": doReplaceRouteTableAssociation,
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
+    "ResetRoutes": doResetRoutes,
     "RunInstances": doRunInstances,
     "DescribeCustomImageTask": doDescribeCustomImageTask,
     "DescribeAddresses": doDescribeAddresses,
@@ -2413,13 +2816,14 @@ ACTION_MAP = {
     "CreateImage": doCreateImage,
     "DescribeNode": doDescribeNode,
     "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
+    "BatchDeregisterTargets": doBatchDeregisterTargets,
     "ModifyLoadBalancerAttributes": doModifyLoadBalancerAttributes,
     "DescribeLoadBalanceTaskStatus": doDescribeLoadBalanceTaskStatus,
     "DescribeVpcs": doDescribeVpcs,
     "BatchModifyTargetWeight": doBatchModifyTargetWeight,
     "DescribeImage": doDescribeImage,
     "DisassociateSecurityGroups": doDisassociateSecurityGroups,
-    "DeleteSecurityGroup": doDeleteSecurityGroup,
+    "MigrateNetworkInterface": doMigrateNetworkInterface,
     "ModifyAddressesBandwidth": doModifyAddressesBandwidth,
     "CreateSubnet": doCreateSubnet,
     "ResetInstancesMaxBandwidth": doResetInstancesMaxBandwidth,
@@ -2442,16 +2846,21 @@ ACTION_MAP = {
     "ModifyTargetPort": doModifyTargetPort,
     "DeleteNetworkInterface": doDeleteNetworkInterface,
     "DeleteModule": doDeleteModule,
-    "ModifyModuleIpDirect": doModifyModuleIpDirect,
+    "DescribeTargetHealth": doDescribeTargetHealth,
+    "ReplaceRoutes": doReplaceRoutes,
+    "DescribeRouteConflicts": doDescribeRouteConflicts,
     "RemovePrivateIpAddresses": doRemovePrivateIpAddresses,
+    "DisableRoutes": doDisableRoutes,
     "DescribeBaseOverview": doDescribeBaseOverview,
     "AttachNetworkInterface": doAttachNetworkInterface,
+    "ReleaseAddresses": doReleaseAddresses,
     "DeleteSecurityGroupPolicies": doDeleteSecurityGroupPolicies,
     "ModifyModuleConfig": doModifyModuleConfig,
     "ModifySecurityGroupAttribute": doModifySecurityGroupAttribute,
     "DescribeModuleDetail": doDescribeModuleDetail,
     "DeleteLoadBalancer": doDeleteLoadBalancer,
     "DescribeInstanceTypeConfig": doDescribeInstanceTypeConfig,
+    "DeleteRoutes": doDeleteRoutes,
     "ModifySecurityGroupPolicies": doModifySecurityGroupPolicies,
     "ModifySubnetAttribute": doModifySubnetAttribute,
     "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
@@ -2463,13 +2872,16 @@ ACTION_MAP = {
     "ImportCustomImage": doImportCustomImage,
     "TerminateInstances": doTerminateInstances,
     "DescribeInstanceVncUrl": doDescribeInstanceVncUrl,
+    "DeleteRouteTable": doDeleteRouteTable,
     "DescribeSecurityGroupLimits": doDescribeSecurityGroupLimits,
     "ModifyDefaultSubnet": doModifyDefaultSubnet,
     "RebootInstances": doRebootInstances,
     "MigratePrivateIpAddress": doMigratePrivateIpAddress,
     "CreateLoadBalancer": doCreateLoadBalancer,
     "ModifyModuleNetwork": doModifyModuleNetwork,
+    "DescribeHaVips": doDescribeHaVips,
     "ImportImage": doImportImage,
+    "DeleteHaVip": doDeleteHaVip,
     "DescribeAddressQuota": doDescribeAddressQuota,
     "DeleteLoadBalancerListeners": doDeleteLoadBalancerListeners,
     "DeleteVpc": doDeleteVpc,
@@ -2480,20 +2892,24 @@ ACTION_MAP = {
     "ModifyModuleImage": doModifyModuleImage,
     "ResetInstancesPassword": doResetInstancesPassword,
     "CreateModule": doCreateModule,
+    "EnableRoutes": doEnableRoutes,
     "DescribeLoadBalancers": doDescribeLoadBalancers,
-    "MigrateNetworkInterface": doMigrateNetworkInterface,
+    "DeleteSecurityGroup": doDeleteSecurityGroup,
     "CreateListener": doCreateListener,
+    "ModifyRouteTableAttribute": doModifyRouteTableAttribute,
     "ModifyTargetWeight": doModifyTargetWeight,
     "ModifyModuleSecurityGroups": doModifyModuleSecurityGroups,
-    "ReleaseAddresses": doReleaseAddresses,
-    "DescribeTargetHealth": doDescribeTargetHealth,
+    "CreateRoutes": doCreateRoutes,
+    "ModifyHaVipAttribute": doModifyHaVipAttribute,
+    "CreateHaVip": doCreateHaVip,
+    "ModifyModuleIpDirect": doModifyModuleIpDirect,
     "DescribeTargets": doDescribeTargets,
-    "ModifyVpcAttribute": doModifyVpcAttribute,
+    "DeleteImage": doDeleteImage,
     "DescribeSecurityGroupAssociationStatistics": doDescribeSecurityGroupAssociationStatistics,
     "DescribePeakBaseOverview": doDescribePeakBaseOverview,
     "ModifyAddressAttribute": doModifyAddressAttribute,
     "CreateSecurityGroupPolicies": doCreateSecurityGroupPolicies,
-    "DeleteImage": doDeleteImage,
+    "ModifyVpcAttribute": doModifyVpcAttribute,
 
 }
 

@@ -64,6 +64,14 @@
         "title": "批量绑定后端目标"
       }
     ],
+    "CreateHaVip": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ecm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHaVip\n<公共请求参数>\n\n{\n     \"VpcId\":\"vpc-m0c2kcun\",\n     \"SubnetId\":\"subnet-rtmfkg4w\",\n     \"HaVipName\":\"irang_testHaVip\"\n}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"HaVip\": {\r\n\t\t\t\"AddressIp\": \"\",\r\n\t\t\t\"CreatedTime\": \"2020-10-29 16:54:45\",\r\n\t\t\t\"HaVipId\": \"havip-kekyk044\",\r\n\t\t\t\"HaVipName\": \"irang_testHaVip\",\r\n\t\t\t\"InstanceId\": \"\",\r\n\t\t\t\"NetworkInterfaceId\": \"\",\r\n\t\t\t\"State\": \"UNBIND\",\r\n\t\t\t\"SubnetId\": \"subnet-rtmfkg4w\",\r\n\t\t\t\"Vip\": \"172.16.0.17\",\r\n\t\t\t\"VpcId\": \"vpc-m0c2kcun\",\r\n \"Business\": \"xx\"\r\n\t\t},\r\n\t\t\"RequestId\": \"d7226510-434e-4896-bdcd-fb1234aaafdfa\"\r\n\t}\r\n}",
+        "title": "创建HAVIP"
+      }
+    ],
     "CreateImage": [
       {
         "document": "",
@@ -104,6 +112,22 @@
         "title": "创建弹性网卡"
       }
     ],
+    "CreateRouteTable": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=CreateRouteTable\n&RouteTableName=测试路由表\n&VpcId=vpc-loibq08z\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RouteTable\": {\r\n            \"VpcId\": \"vpc-loibq08z\",\r\n            \"RouteTableId\": \"rtb-dqbbc9zc\",\r\n            \"RouteTableName\": \"测试路由表\",\r\n            \"AssociationSet\": [],\r\n            \"RouteSet\": [],\r\n            \"Main\": false,\r\n            \"CreatedTime\": \"0000-00-00 00:00:00\",\r\n            \"TagSet\": null\r\n        },\r\n        \"RequestId\": \"4673c0fc-cb3a-435f-99a7-61a139a31ae4\"\r\n    }\r\n}",
+        "title": "创建路由表"
+      }
+    ],
+    "CreateRoutes": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=CreateRoutes\n&RouteTableId=rtb-n0yejvje\n&Routes.0.DestinationCidrBlock=192.168.0.0/16\n&Routes.0.GatewayType=NORMAL_CVM\n&Routes.0.GatewayId=10.212.0.13\n&Routes.0.RouteDescription=TEST-ROUTE\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RouteTableSet\": [\r\n      {\r\n        \"VpcId\": \"vpc-k23blx7p\",\r\n        \"RouteTableId\": \"rtb-n0yejvje\",\r\n        \"RouteTableName\": \"TestRoutes\",\r\n        \"AssociationSet\": [],\r\n        \"RouteSet\": [\r\n          {\r\n            \"RouteItemId\": \"rti-12345678\",\r\n            \"DestinationCidrBlock\": \"192.168.0.0/16\",\r\n            \"GatewayType\": \"NORMAL_CVM\",\r\n            \"GatewayId\": \"10.212.0.13\",\r\n            \"RouteDescription\": \"TEST-ROUTE\"\r\n          }\r\n        ],\r\n        \"Main\": false,\r\n        \"CreatedTime\": \"2020-11-11 11:11:03\",\r\n        \"Tags\": []\r\n      }\r\n    ],\r\n    \"TotalCount\": 1,\r\n    \"RequestId\": \"3f934a21-2786-44af-a421-38ee6c6e1fae\"\r\n  }\r\n}",
+        "title": "创建路由策略"
+      }
+    ],
     "CreateSecurityGroup": [
       {
         "document": "",
@@ -140,6 +164,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=CreateVpc\n&VpcName=vpc名称\n&CidrBlock=192.168.0.0/18\n&EcmRegion=ap-hangzhou-ecm\n&Tags.0.Key=标签键\n&Tags.0.Value=标签值\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n      \"RequestId\": \"23b74de1-185b-4e02-9531-a4c53010e5d8\",\r\n      \"Vpc\": {\r\n        \"EnableDhcp\": true,\r\n        \"VpcId\": \"vpc-hqhu0suj\",\r\n        \"Description\": \"\",\r\n        \"DomainName\": \"\",\r\n        \"Ipv6CidrBlock\": \"\",\r\n        \"Region\": \"ap-hangzhou-ecm\",\r\n        \"DhcpOptionsId\": \"\",\r\n        \"InstanceCount\": 0,\r\n        \"DnsServerSet\": [],\r\n        \"EnableMulticast\": false,\r\n        \"VpcName\": \"vpc名称\",\r\n        \"AssistantCidrSet\": null,\r\n        \"TagSet\": [\r\n          {\r\n            \"Value\": \"标签值\",\r\n            \"Key\": \"标签键\"\r\n          }\r\n        ],\r\n        \"SubnetCount\": 0,\r\n        \"CreatedTime\": \"2020-08-14 11:28:20\",\r\n        \"CidrBlock\": \"192.168.0.0/18\",\r\n        \"IsDefault\": false,\r\n        \"RegionName\": \"杭州一区\"\r\n      }\r\n    }\r\n  }",
         "title": "创建实例指定tag"
+      }
+    ],
+    "DeleteHaVip": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ecm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHaVip\n<公共请求参数>\n\n{\n     \"HaVipId\":\"havip-kekyk044\"\n}",
+        "output": "{\"Response\":{\"RequestId\":\"d7226510-434e-4896-bdcd-fb1234aaafdfa\"}}",
+        "title": "删除HAVIP"
       }
     ],
     "DeleteImage": [
@@ -188,6 +220,22 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=DeleteNetworkInterface\r\n&NetworkInterfaceId=eni-12121212\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\r\n  }\r\n}",
         "title": "删除弹性网卡"
+      }
+    ],
+    "DeleteRouteTable": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DeleteRouteTable\n&RouteTableId=rtb-azd4dt1c\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n  }\r\n}",
+        "title": "删除路由表"
+      }
+    ],
+    "DeleteRoutes": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DeleteRoutes\n&RouteTableId=rtb-12345678\n&Routes.0.RouteId=678\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n  }\r\n}",
+        "title": "删除路由规则"
       }
     ],
     "DeleteSecurityGroup": [
@@ -286,6 +334,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=DescribeDefaultSubnet\n&EcmRegion=ap-hangzhou-ecm\n&Zone=ap-hangzhou-ecm-1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n      \"Subnet\": {\r\n        \"NetworkAclId\": \"\",\r\n        \"RouteTableId\": \"rtb-8dq69epw\",\r\n        \"VpcId\": \"vpc-07kqm4uj\",\r\n        \"EnableBroadcast\": false,\r\n        \"Zone\": \"ap-hangzhou-ecm-1\",\r\n        \"Ipv6CidrBlock\": \"\",\r\n        \"Region\": \"ap-hangzhou-ecm\",\r\n        \"SubnetName\": \"Default-Subnet\",\r\n        \"AvailableIpAddressCount\": 4090,\r\n        \"IsRemoteVpcSnat\": false,\r\n        \"SubnetId\": \"subnet-68hie5i6\",\r\n        \"InstanceCount\": 2,\r\n        \"VpcCidrBlock\": \"172.16.0.0/16\",\r\n        \"TagSet\": null,\r\n        \"CreatedTime\": \"2020-08-12 10:44:56\",\r\n        \"ZoneName\": \"杭州一区\",\r\n        \"CidrBlock\": \"172.16.0.0/20\",\r\n        \"IsDefault\": true,\r\n        \"VpcIpv6CidrBlock\": \"\"\r\n      },\r\n      \"RequestId\": \"7d67dea3-c6ff-45ca-aa5a-477cfae6697f\"\r\n    }\r\n}",
         "title": "查询杭州一区的默认子网"
+      }
+    ],
+    "DescribeHaVips": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ecm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHaVips\n<公共请求参数>\n\n{\"HaVipIds\":[\"havip-bk4275i0\",\"havip-2kce8v4q\"]}",
+        "output": "{\r\n  \"Response\": {\r\n    \"HaVipSet\": [\r\n      {\r\n        \"HaVipId\": \"havip-2kce8v4q\",\r\n        \"HaVipName\": \"tadfafd\",\r\n        \"Vip\": \"10.3.3.15\",\r\n        \"VpcId\": \"vpc-o31qeah3\",\r\n        \"SubnetId\": \"subnet-8qywqc4y\",\r\n        \"NetworkInterfaceId\": \"\",\r\n        \"InstanceId\": \"\",\r\n        \"AddressIp\": \"\",\r\n        \"Business\": \"\",\r\n        \"State\": \"UNBOUND\",\r\n        \"CreatedTime\": \"2018-04-03 20:00:05\"\r\n      },\r\n      {\r\n        \"HaVipId\": \"havip-bk4275i0\",\r\n        \"HaVipName\": \"22\",\r\n        \"Vip\": \"10.2.0.14\",\r\n        \"VpcId\": \"vpc-2mcdauzl\",\r\n        \"SubnetId\": \"subnet-mnmm19fg\",\r\n        \"NetworkInterfaceId\": \"\",\r\n        \"InstanceId\": \"\",\r\n        \"AddressIp\": \"\",\r\n        \"Business\": \"\",\r\n        \"State\": \"UNBOUND\",\r\n        \"CreatedTime\": \"2018-04-03 20:05:33\"\r\n      }\r\n    ],\r\n    \"TotalCount\": 2,\r\n    \"RequestId\": \"1c827bf1-837f-4302-b51a-4d538b7ad249\"\r\n  }\r\n}",
+        "title": "多条件过滤查询HAVIP列表"
       }
     ],
     "DescribeImage": [
@@ -420,6 +476,22 @@
         "title": "获取网络峰值数据"
       }
     ],
+    "DescribeRouteConflicts": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeRouteConflicts\n&RouteTableId=rtb-q8o2z892\n&DestinationCidrBlocks.0=10.11.0.0/24\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RouteConflictSet\": [],\r\n    \"RequestId\": \"cf11a8a4-e7c6-42cf-a35a-649c1789868b\"\r\n  }\r\n}",
+        "title": "查询路由策略冲突列表"
+      }
+    ],
+    "DescribeRouteTables": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeRouteTables\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RouteTableSet\": [\r\n      {\r\n        \"VpcId\": \"vpc-2at5y1pn\",\r\n        \"RouteTableId\": \"rtb-l2h8d7c2\",\r\n        \"RouteTableName\": \"TestRouteTable\",\r\n        \"AssociationSet\": [],\r\n        \"RouteSet\": [\r\n          {\r\n            \"RouteItemId\": \"rti-12345678\",\r\n            \"DestinationCidrBlock\": \"169.254.64.0/23\",\r\n            \"GatewayType\": \"NORMAL_CVM\",\r\n            \"GatewayId\": \"172.16.0.25\",\r\n            \"RouteDescription\": \"\"\r\n          }\r\n        ],\r\n        \"Main\": false,\r\n        \"CreatedTime\": \"2020-11-30 19:52:03\",\r\n        \"TagSet\": []\r\n      }\r\n    ],\r\n    \"TotalCount\": 2,\r\n    \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n  }\r\n}",
+        "title": "查看路由表对象列表"
+      }
+    ],
     "DescribeSecurityGroupAssociationStatistics": [
       {
         "document": "",
@@ -508,6 +580,14 @@
         "title": "弹性网卡解绑云主机"
       }
     ],
+    "DisableRoutes": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DisableRoutes\n&RouteTableId=rtb-12345678\n&RouteIds.0=678\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\r\n  }\r\n}",
+        "title": "禁用子网路由"
+      }
+    ],
     "DisassociateAddress": [
       {
         "document": "",
@@ -522,6 +602,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=DisassociateSecurityGroups\n&InstanceIds.0=ein-2zvpghhc\n&InstanceIds.1=ein-915zrb0p\n&SecurityGroupIds.0=esg-9id3l839\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3385dcf2-e1f0-4ed8-a924-c296721ab65f\"\r\n  }\r\n}",
         "title": "解绑实例安全组"
+      }
+    ],
+    "EnableRoutes": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=EnableRoutes\n&RouteTableId=rtb-12345678\n&RouteIds.0=678\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\r\n  }\r\n}",
+        "title": "启用子网路由"
       }
     ],
     "ImportCustomImage": [
@@ -584,6 +672,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=ModifyDefaultSubnet\n&EcmRegion=ap-hangzhou-ecm\n&Zone=ap-hangzhou-ecm-1\n&VpcId=vpc-cp6wknwh\n&SubnetId=subnet-jxa0xg1o\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"7daa4e7c-7698-4cc1-8ed0-2f729462c110\"\r\n  }\r\n}",
         "title": "设置杭州一区默认子网"
+      }
+    ],
+    "ModifyHaVipAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ecm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHaVipAttribute\n<公共请求参数>\n\n{\n    \"HaVipId\":\"havip-9o233uri\",\n    \"HaVipName\":\"new+name\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\r\n  }\r\n}",
+        "title": "修改HAVIP名称"
       }
     ],
     "ModifyImageAttribute": [
@@ -666,6 +762,14 @@
         "title": "修改模块默认安全组"
       }
     ],
+    "ModifyRouteTableAttribute": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyRouteTableAttribute\n&RouteTableId=rtb-n0yejvje\n&RouteTableName=NewRouteTableName\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n  }\r\n}",
+        "title": "修改路由表属性"
+      }
+    ],
     "ModifySecurityGroupAttribute": [
       {
         "document": "",
@@ -738,6 +842,22 @@
         "title": "弹性网卡退还内网 IP"
       }
     ],
+    "ReplaceRouteTableAssociation": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ReplaceRouteTableAssociation\n&RouteTableId=rtb-n0yejvje\n&SubnetId=subnet-q2079ils\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n  }\r\n}",
+        "title": "替换路由表绑定关系"
+      }
+    ],
+    "ReplaceRoutes": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ReplaceRoutes\n&RouteTableId=rtb-n0yejvje\n&Routes.0.RouteId=678\n&Routes.0.DestinationCidrBlock=192.168.0.0/16\n&Routes.0.GatewayType=NORMAL_CVM\n&Routes.0.GatewayId=10.212.0.15\n&Routes.0.RouteDescription=TEST-ROUTE\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n  }\r\n}",
+        "title": "替换路由策略"
+      }
+    ],
     "ReplaceSecurityGroupPolicy": [
       {
         "document": "",
@@ -768,6 +888,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=ResetInstancesPassword\r\n&InstanceIdSet.0=ein-356531dd\r\n&InstanceIdSet.1=ein-583021kl\r\n&ForceStop=false\r\n&UserName=root\r\n&Password=cptbtptpA@1095\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"2b719fb1-2f5f-4a2c-bd52-a80b7ca7984c\"\r\n  }\r\n}",
         "title": "重置实例密码"
+      }
+    ],
+    "ResetRoutes": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ResetRoutes\n&RouteTableId=rtb-n0yejvje\n&RouteTableName=ResetRouteTableName\n&Routes.0.DestinationCidrBlock=192.168.0.0/16\n&Routes.0.GatewayType=NORMAL_CVM\n&Routes.0.GatewayId=172.16.16.37\n&Routes.0.RouteDescription=test-route\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n  }\r\n}",
+        "title": "重置路由表名称和路由策略"
       }
     ],
     "RunInstances": [

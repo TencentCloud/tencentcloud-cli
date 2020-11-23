@@ -3,7 +3,7 @@
     "CreateFlowService": [
       {
         "document": "生成状态机服务",
-        "input": "https://asw.tencentcloudapi.com/?Action=CreateFlowService\n&FlowServiceName=flowservicetest\n&Definition=\"{}\"\n&IsNewRole=false\n&Type=EXPRESS\n&<公共请求参数>",
+        "input": "https://asw.tencentcloudapi.com/?Action=CreateFlowService\n&FlowServiceName=FlowServiceTest\n&Definition=\"{}\"\n&IsNewRole=false\n&RoleResource=qcs%3A%3Acam%3A%3Auin%2F20103392%3AroleName%2FSomeRoleForYourStateMachine\n&Type=EXPRESS\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"FlowServiceResource\": \"flowservicetest\",\r\n\t\t\"CreateDate\": \"1595227100\",\r\n\t\t\"RequestId\": \"ab1b30fc-3503-4b27-96dc-94c14d2fd43w\"\r\n\t}\r\n}",
         "title": "生成状态机"
       }

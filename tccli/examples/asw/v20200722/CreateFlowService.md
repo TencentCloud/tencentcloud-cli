@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli asw CreateFlowService --cli-unfold-argument  \
-    --FlowServiceName flowservicetest \
+    --FlowServiceName FlowServiceTest \
     --Definition "{}" \
     --IsNewRole false \
+    --RoleResource qcs%3A%3Acam%3A%3Auin%2F20103392%3AroleName%2FSomeRoleForYourStateMachine \
     --Type EXPRESS
 ```
 

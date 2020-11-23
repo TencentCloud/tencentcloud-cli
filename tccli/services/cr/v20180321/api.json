@@ -54,6 +54,12 @@
       "name": "实时数据查询",
       "output": "QueryInstantDataResponse"
     },
+    "QueryProducts": {
+      "document": "查询产品列表",
+      "input": "QueryProductsRequest",
+      "name": "查询产品列表",
+      "output": "QueryProductsResponse"
+    },
     "UploadDataFile": {
       "document": "上传文件，接口返回数据任务ID，支持xlsx、xls、csv、zip格式。",
       "input": "UploadDataFileRequest",
@@ -708,6 +714,57 @@
       ],
       "type": "object"
     },
+    "ProductQueryInfo": {
+      "document": "QueryProducts接口对应数据结构。产品对应的相关信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "产品Id",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品状态 0 禁用 1 启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ProductStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SceneType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "QueryInstantDataRequest": {
       "document": "QueryInstantData请求参数结构体",
       "members": [
@@ -778,6 +835,55 @@
           "name": "Data",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryProductsRequest": {
+      "document": "QueryProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名。默认值（固定）：Product",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名。默认值（固定）：QueryProducts",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例Id。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryProductsResponse": {
+      "document": "QueryProducts返回参数结构体",
+      "members": [
+        {
+          "document": "产品信息。",
+          "member": "ProductQueryInfo",
+          "name": "ProductList",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

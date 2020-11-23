@@ -3,7 +3,7 @@
     "CreateFlowService": {
       "document": "该接口用于生成状态机服务",
       "input": "CreateFlowServiceRequest",
-      "name": "生成状态机服务",
+      "name": "创建状态机",
       "output": "CreateFlowServiceResponse"
     },
     "DescribeExecution": {
@@ -95,7 +95,7 @@
         },
         {
           "default": "",
-          "document": "角色资源名",
+          "document": "角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine",
           "member": "string",
           "name": "RoleResource",
           "required": false,

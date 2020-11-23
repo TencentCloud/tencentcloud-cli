@@ -32,6 +32,14 @@
         "title": "查询在线客服记录示例"
       }
     ],
+    "DescribeTelCallInfo": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeTelCallInfo\n&StartTimeStamp=0\n&EndTimeStamp=0\n&SdkAppIdList.0=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"53bccf04-0870-4520-8614-f4bdddfd68df\",\r\n        \"TelCallOutCount\":10,\r\n        \"TelCallInCount\":10,\r\n        \"SeatUsedCount\":50\r\n    }\r\n}",
+        "title": "获取电话呼叫统计信息示例"
+      }
+    ],
     "DescribeTelCdr": [
       {
         "document": "",
