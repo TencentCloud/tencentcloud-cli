@@ -3,7 +3,7 @@
     "CreateInstance": [
       {
         "document": "根据输入参数创建ES集群实例",
-        "input": "https://es.tencentcloudapi.com/?Action=CreateInstance?\r\nInstanceName=es_test\r\n&EsVersion=6.4.3\r\n&ChargeType=POSTPAID_BY_HOUR\r\n&VpcId=vpc-xxxxxx\r\n&SubnetId=subnet-xxxxxx\r\n&Zone=ap-guangzhou-3\r\n&Password=xxxxxx\r\n&NodeInfoList.0.Type=hotData\r\n&NodeInfoList.0.NodeNum=2\r\n&NodeInfoList.0.NodeType=ES.S1.SMALL2\r\n&NodeInfoList.0.DiskType=CLOUD_SSD\r\n&NodeInfoList.0.DiskSize=100\r\n&NodeInfoList.1.Type=dedicatedMaster\r\n&NodeInfoList.1.NodeNum=3\r\n&NodeInfoList.1.NodeType=ES.S1.SMALL2\r\n&<公共请求参数>",
+        "input": "https://es.tencentcloudapi.com/?Action=CreateInstance\n&InstanceName=es_test\n&EsVersion=6.4.3\n&ChargeType=POSTPAID_BY_HOUR\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxxx\n&Zone=ap-guangzhou-3\n&Password=xxxxxx\n&NodeInfoList.0.Type=hotData\n&NodeInfoList.0.NodeNum=2\n&NodeInfoList.0.NodeType=ES.S1.SMALL2\n&NodeInfoList.0.DiskType=CLOUD_SSD\n&NodeInfoList.0.DiskSize=100\n&NodeInfoList.1.Type=dedicatedMaster\n&NodeInfoList.1.NodeNum=3\n&NodeInfoList.1.NodeType=ES.S1.SMALL2\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"InstanceId\": \"es-xxxxxx\",\r\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx\"\r\n    }\r\n}",
         "title": "创建ES集群实例"
       }
@@ -48,6 +48,14 @@
         "title": "重启ES集群实例"
       }
     ],
+    "RestartKibana": [
+      {
+        "document": "重启Kibana",
+        "input": "https://es.tencentcloudapi.com/?Action=RestartKibana\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\r\n    }\r\n}",
+        "title": "重启Kibana"
+      }
+    ],
     "RestartNodes": [
       {
         "document": "",
@@ -86,12 +94,6 @@
         "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxxxx\n&NodeType=ES.S1.MEDIUM4\n&DiskSize=150\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"dd3f624d-9a72-4057-85cb-f5d32exxxxxx\"\r\n    }\r\n}",
         "title": "ES集群纵向扩缩容"
-      },
-      {
-        "document": "",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxxxx\n&CosBackup.IsAutoBackup=true\n&CosBackup.BackupTime=23:00\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"dd3f624d-9a72-4057-85cb-f5d32exxxxxx\"\r\n    }\r\n}",
-        "title": "ES设置COS自动备份"
       }
     ],
     "UpdatePlugins": [

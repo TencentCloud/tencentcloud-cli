@@ -16,7 +16,9 @@ Output:
     "Response": {
         "Username": 12345678,
         "Token": "XXXX",
-        "ExpTime": "33987631"
+        "ExpTime": "33987631",
+        "RequestId": "xx",
+        "TokenId": "xx"
     }
 }
 ```
@@ -40,7 +42,9 @@ Output:
     "Response": {
         "Username": 12345678,
         "Token": "XXXX",
-        "ExpTime": "33987631"
+        "ExpTime": "33987631",
+        "RequestId": "xx",
+        "TokenId": "1456976"
     }
 }
 ```

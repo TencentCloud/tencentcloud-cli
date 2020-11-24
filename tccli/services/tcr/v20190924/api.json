@@ -750,6 +750,13 @@
           "value_allowed_null": false
         },
         {
+          "document": "长期凭证的TokenId，短期凭证没有TokenId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TokenId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

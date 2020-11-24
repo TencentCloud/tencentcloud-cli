@@ -68,6 +68,14 @@
         "title": "新建产品"
       }
     ],
+    "CreateTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopicRule\n<公共请求参数>\n\n{\"RuleName\":\"test_create\",\"TopicRulePayload\":{\"Sql\":\"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\"Actions\":\"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\"Description\":\"test\",\"RuleDisabled\":true}}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\r\n  }\r\n}",
+        "title": "创建规则"
+      }
+    ],
     "DeleteDevice": [
       {
         "document": "删除设备",
@@ -98,6 +106,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteStudioProduct\n&ProductId=AVBRC1R7QS\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"98f624d5-922b-4b59-ba14-c498f79eee0e\"\r\n    }\r\n}",
         "title": "删除产品"
+      }
+    ],
+    "DeleteTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTopicRule\n<公共请求参数>\n\n{\"RuleName\":\"test_create\"}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\r\n  }\r\n}",
+        "title": "删除规则"
       }
     ],
     "DescribeDevice": [
@@ -148,6 +164,30 @@
         "title": "获取产品详情"
       }
     ],
+    "DescribeTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicRule\n<公共请求参数>\n\n{\"RuleName\":\"test_create\"}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\r\n\t\t\"Rule\": {\r\n\t\t\t\"RuleName\": \"test_create\",\r\n\t\t\t\"Sql\": \"SELECT * FROM '$thing/up/+/ProductId/#'\",\r\n\t\t\t\"Description\": \"test\",\r\n\t\t\t\"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1088/sub.php\\\"}}]\",\r\n\t\t\t\"RuleDisabled\": true\r\n\t\t}\r\n\t}\r\n}",
+        "title": "获取规则信息"
+      }
+    ],
+    "DisableTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableTopicRule\n<公共请求参数>\n\n{\"RuleName\":\"test_create\"}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\r\n  }\r\n}",
+        "title": "禁用规则"
+      }
+    ],
+    "EnableTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTopicRule\n<公共请求参数>\n\n{\"RuleName\":\"test_create\"}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\r\n  }\r\n}",
+        "title": "启用规则"
+      }
+    ],
     "GetDeviceList": [
       {
         "document": "根据某个产品ID获取对应的设备列表",
@@ -184,6 +224,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetStudioProductList\r\n&ProjectId=prj-zunfat46\r\n&DevStatus=dev\r\n&Offset=0\r\n&Limit=0\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Products\": [\r\n            {\r\n                \"ProductId\": \"4GDIU5HTEN\",\r\n                \"ProductName\": \"testproduct\",\r\n                \"CategoryId\": 3,\r\n                \"ProductType\": 0,\r\n                \"EncryptionType\": \"2\",\r\n                \"NetType\": \"else\",\r\n                \"DataProtocol\": 1,\r\n                \"ProductDesc\": \"desc\",\r\n                \"ProjectId\": \"prj-zunfat46\",\r\n                \"DevStatus\": \"dev\",\r\n                \"CreateTime\": 1560341825,\r\n                \"UpdateTime\": 1560341825,\r\n                \"Region\": \"gz\",\r\n                \"ModuleId\": 0\r\n            },\r\n            {\r\n                \"ProductId\": \"BJQM4UXMKN\",\r\n                \"ProductName\": \"testtproduct\",\r\n                \"CategoryId\": 3,\r\n                \"ProductType\": 0,\r\n                \"EncryptionType\": \"2\",\r\n                \"NetType\": \"else\",\r\n                \"DataProtocol\": 1,\r\n                \"ProductDesc\": \"desc\",\r\n                \"ProjectId\": \"prj-zunfat46\",\r\n                \"DevStatus\": \"dev\",\r\n                \"CreateTime\": 1560341975,\r\n                \"UpdateTime\": 1560341975,\r\n                \"Region\": \"gz\",\r\n                \"ModuleId\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"55e612b3-ed75-44fe-b141-1c1a35d9a0da\",\r\n        \"Total\": 2\r\n    }\r\n}",
         "title": "获取产品列表"
+      }
+    ],
+    "GetTopicRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTopicRuleList\n<公共请求参数>\n\n{\"PageNum\":1,\"PageSize\":10}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\r\n\t\t\"Rules\": [{\r\n\t\t\t\"RuleName\": \"test_create\",\r\n\t\t\t\"Description\": \"test\",\r\n\t\t\t\"CreatedAt\": 1599017883,\r\n\t\t\t\"RuleDisabled\": true\r\n\t\t}],\r\n\t\t\"TotalCnt\": 1\r\n\t}\r\n}",
+        "title": "获取规则列表"
       }
     ],
     "ListEventHistory": [
@@ -226,6 +274,14 @@
         "title": "修改产品"
       }
     ],
+    "ModifyTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopicRule\n<公共请求参数>\n\n{\"RuleName\":\"test_create\",\"TopicRulePayload\":{\"Sql\":\"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\"Actions\":\"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\"Description\":\"test\",\"RuleDisabled\":true}}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\r\n  }\r\n}",
+        "title": "修改规则"
+      }
+    ],
     "ReleaseStudioProduct": [
       {
         "document": "发布产品",
@@ -240,6 +296,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=SearchStudioProduct\r\n&ProjectId=prj-zunfat46\r\n&ProductName=testtproduct\r\n&Limit=0\r\n&Offset=0\r\n&DevStatus=dev\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Products\": [\r\n            {\r\n                \"ProductId\": \"BJQM4UXMKN\",\r\n                \"ProductName\": \"testtproduct\",\r\n                \"CategoryId\": 3,\r\n                \"ProductType\": 0,\r\n                \"EncryptionType\": \"2\",\r\n                \"NetType\": \"else\",\r\n                \"DataProtocol\": 1,\r\n                \"ProductDesc\": \"desc\",\r\n                \"ProjectId\": \"prj-zunfat46\",\r\n                \"DevStatus\": \"dev\",\r\n                \"CreateTime\": 1560341975,\r\n                \"UpdateTime\": 1560341975,\r\n                \"Region\": \"gz\",\r\n                \"ModuleId\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"0935a11f-a172-4bd8-8bae-f143444aaff3\",\r\n        \"Total\": 1\r\n    }\r\n}",
         "title": "搜索产品"
+      }
+    ],
+    "SearchTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTopicRule\n<公共请求参数>\n\n{\"RuleName\":\"test_create\"}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\r\n\t\t\"Rules\": [{\r\n\t\t\t\"RuleName\": \"test_create\",\r\n\t\t\t\"Description\": \"test\",\r\n\t\t\t\"CreatedAt\": 1599017883,\r\n\t\t\t\"RuleDisabled\": true\r\n\t\t}],\r\n\t\t\"TotalCnt\": 1\r\n\t}\r\n}",
+        "title": "搜索规则"
       }
     ]
   },

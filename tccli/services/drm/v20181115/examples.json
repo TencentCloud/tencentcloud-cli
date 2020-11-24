@@ -67,7 +67,7 @@
     "StartEncryption": [
       {
         "document": "演示启动一次fairplay方案的加密",
-        "input": "https://drm.tencentcloudapi.com/?Action=StartEncryption\r\n&CosEndPoint=cos.ap-hongkong.myqcloud.com\r\n&CosSecretId=your secretID\r\n&CosSecretKey=your secret key\r\n&DrmType=FAIRPLAY\r\n&SourceObject.BucketName=drm-unencrypt-1234567\r\n&SourceObject.ObjectName=in.mp4\r\n&OutputObjects.0.BucketName=drm-encrypt-1234567\r\n&OutputObjects.0.ObjectName=out.m3u8\r\n&OutputObjects.0.Para.Type=m3u8\r\n&OutputObjects.1.BucketName=drm-encrypt-1234567\r\n&OutputObjects.1.ObjectName=out.ts\r\n&OutputObjects.1.Para.Type=audio\r\n&<公共请求参数>",
+        "input": "https://drm.tencentcloudapi.com/?Action=StartEncryption\n&CosEndPoint=cos.ap-hongkong.myqcloud.com\n&CosSecretId=your secretID\n&CosSecretKey=your secret key\n&DrmType=FAIRPLAY\n&SourceObject.BucketName=drm-unencrypt-1234567\n&SourceObject.ObjectName=in.mp4\n&OutputObjects.0.BucketName=drm-encrypt-1234567\n&OutputObjects.0.ObjectName=out.m3u8\n&OutputObjects.0.Para.Type=m3u8\n&OutputObjects.1.BucketName=drm-encrypt-1234567\n&OutputObjects.1.ObjectName=out.ts\n&OutputObjects.1.Para.Type=audio\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }

@@ -24,6 +24,14 @@
         "title": "RecognizeCustomizedAudience"
       }
     ],
+    "RecognizeEffectiveFlow": [
+      {
+        "document": "",
+        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeEffectiveFlow\n&BusinessSecurityData.MsgPhone=13112345678\n&BusinessSecurityData.MsgSignature=oz5I********************GfVv\n&BusinessSecurityData.MsgContext=qw########wqer\n&BusinessSecurityData.MsgType=1\n&BusinessSecurityData.MsgSubType=1\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Data\": {\r\n\t\t\t\"Code\": 0,\r\n\t\t\t\"Message\": \"OK\",\r\n\t\t\t\"Value\": {\r\n\t\t\t\t\"Lable\": \"1\",\r\n\t\t\t\t\"Score\": 10.0\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"RequestId\": \"a6227506-5f00-43cf-9a4c-66fe931cefc9\"\r\n\t}\r\n}",
+        "title": "RecognizeEffectiveFlow"
+      }
+    ],
     "RecognizePreciseTargetAudience": [
       {
         "document": "",

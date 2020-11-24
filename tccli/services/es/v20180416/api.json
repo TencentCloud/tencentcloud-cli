@@ -36,6 +36,12 @@
       "name": "重启ES集群实例",
       "output": "RestartInstanceResponse"
     },
+    "RestartKibana": {
+      "document": "重启Kibana ",
+      "input": "RestartKibanaRequest",
+      "name": "重启Kibana",
+      "output": "RestartKibanaResponse"
+    },
     "RestartNodes": {
       "document": "用于重启集群节点",
       "input": "RestartNodesRequest",
@@ -1633,6 +1639,32 @@
       ],
       "type": "object"
     },
+    "RestartKibanaRequest": {
+      "document": "RestartKibana请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartKibanaResponse": {
+      "document": "RestartKibana返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RestartNodesRequest": {
       "document": "RestartNodes请求参数结构体",
       "members": [
@@ -1848,7 +1880,7 @@
         },
         {
           "default": "",
-          "document": "配置项（JSON格式字符串）",
+          "document": "ES配置项（JSON格式字符串）",
           "member": "string",
           "name": "EsConfig",
           "required": false,
@@ -2005,6 +2037,14 @@
           "name": "SceneType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Kibana配置项（JSON格式字符串）",
+          "member": "string",
+          "name": "KibanaConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

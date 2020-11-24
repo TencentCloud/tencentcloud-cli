@@ -978,6 +978,14 @@
           "name": "Os",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "芯片架构，只是针对操作系统为android的",
+          "member": "string",
+          "name": "ChipArch",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3307,11 +3315,11 @@
       "members": [
         {
           "default": "",
-          "document": "产品id,大于0的有符号长整型",
-          "member": "int64",
+          "document": "产品id",
+          "member": "string",
           "name": "ProductId",
           "required": true,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",

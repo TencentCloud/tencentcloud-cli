@@ -49,9 +49,9 @@
       "output": "ModifyFairPlayPemResponse"
     },
     "StartEncryption": {
-      "document": "开发者调用该接口，启动一次内容文件的DRM加密工作流",
+      "document": "开发者调用该接口，启动一次内容文件的DRM加密工作流。\n注意：该接口已下线。",
       "input": "StartEncryptionRequest",
-      "name": "启动DRM加密",
+      "name": "启动DRM加密(该接口已下线)",
       "output": "StartEncryptionResponse"
     }
   },

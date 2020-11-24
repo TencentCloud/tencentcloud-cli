@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli es CreateInstance --cli-unfold-argument  \
+    --InstanceName es_test \
     --EsVersion 6.4.3 \
     --ChargeType POSTPAID_BY_HOUR \
     --VpcId vpc-xxxxxx \

@@ -666,6 +666,12 @@
       "name": "获取IP地理位置库下载链接",
       "output": "DescribeIpGeolocationDatabaseUrlResponse"
     },
+    "DescribeIpGeolocationInfos": {
+      "document": "该接口用于查询IP地址信息，包括地理位置信息和网络信息。",
+      "input": "DescribeIpGeolocationInfosRequest",
+      "name": "查询IP地理位置信息",
+      "output": "DescribeIpGeolocationInfosResponse"
+    },
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": {
       "document": "本接口（DescribeNatGatewayDestinationIpPortTranslationNatRules）用于查询NAT网关端口转发规则对象数组。",
       "input": "DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest",
@@ -8359,6 +8365,54 @@
       ],
       "type": "object"
     },
+    "DescribeIpGeolocationInfosRequest": {
+      "document": "DescribeIpGeolocationInfos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询IP地址列表，支持IPv4和IPv6。",
+          "member": "string",
+          "name": "AddressIps",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询IP地址的字段信息，包括\"Country\",\"Province\",\"City\",\"Region\",\"Isp\",\"AsName\",\"AsId\"",
+          "member": "IpField",
+          "name": "Fields",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpGeolocationInfosResponse": {
+      "document": "DescribeIpGeolocationInfos返回参数结构体",
+      "members": [
+        {
+          "document": "IP地址信息列表",
+          "member": "IpGeolocationInfo",
+          "name": "AddressInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "IP地址信息个数",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest": {
       "document": "DescribeNatGatewayDestinationIpPortTranslationNatRules请求参数结构体",
       "members": [
@@ -11747,6 +11801,171 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IpField": {
+      "document": "IP在线查询的字段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "国家字段信息",
+          "member": "bool",
+          "name": "Country",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省、州、郡一级行政区域字段信息",
+          "member": "bool",
+          "name": "Province",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "市一级行政区域字段信息",
+          "member": "bool",
+          "name": "City",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "市内区域字段信息",
+          "member": "bool",
+          "name": "Region",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入运营商字段信息",
+          "member": "bool",
+          "name": "Isp",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "骨干运营商字段信息",
+          "member": "bool",
+          "name": "AsName",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "骨干As号",
+          "member": "bool",
+          "name": "AsId",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注释字段",
+          "member": "bool",
+          "name": "Comment",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "IpGeolocationInfo": {
+      "document": "IP地理位置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "国家信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "省、州、郡一级行政区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "市一级行政区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "市内区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入运营商信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "骨干运营商名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AsName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "骨干运营商AS号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AsId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "注释信息。目前的填充值为移动接入用户的APN值，如无APN属性则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

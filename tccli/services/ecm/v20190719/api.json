@@ -1503,12 +1503,52 @@
     },
     "CreateHaVipRequest": {
       "document": "CreateHaVip请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "HAVIP所在私有网络ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HAVIP所在子网ID。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HAVIP名称。",
+          "member": "string",
+          "name": "HaVipName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定虚拟IP地址，必须在VPC网段内且未被占用。不指定则自动分配。",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateHaVipResponse": {
       "document": "CreateHaVip返回参数结构体",
       "members": [
+        {
+          "document": "HAVIP对象。",
+          "member": "HaVip",
+          "name": "HaVip",
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2299,7 +2339,16 @@
     },
     "DeleteHaVipRequest": {
       "document": "DeleteHaVip请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "HAVIP唯一ID，形如：havip-9o233uri。",
+          "member": "string",
+          "name": "HaVipId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DeleteHaVipResponse": {
@@ -2995,12 +3044,67 @@
     },
     "DescribeHaVipsRequest": {
       "document": "DescribeHaVips请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "HAVIP数组，HAVIP唯一ID，形如：havip-9o233uri。",
+          "member": "string",
+          "name": "HaVipIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定HaVipIds和Filters。\nhavip-id - String - HAVIP唯一ID，形如：havip-9o233uri。\nhavip-name - String - HAVIP名称。\nvpc-id - String - HAVIP所在私有网络ID。\nsubnet-id - String - HAVIP所在子网ID。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Ecm 区域，不填代表全部区域。",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeHaVipsResponse": {
       "document": "DescribeHaVips返回参数结构体",
       "members": [
+        {
+          "document": "符合条件的对象数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "HAVIP对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HaVip",
+          "name": "HaVipSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4703,6 +4807,111 @@
       ],
       "usage": "in"
     },
+    "HaVip": {
+      "document": "HAVIP对象。",
+      "members": [
+        {
+          "default": "",
+          "document": "HAVIP的ID，是HAVIP的唯一标识。",
+          "member": "string",
+          "name": "HaVipId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HAVIP名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HaVipName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "虚拟IP地址。",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HAVIP所在私有网络ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HAVIP所在子网ID。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HAVIP关联弹性网卡ID。",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被绑定的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定EIP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态：\nAVAILABLE：运行中。\nUNBIND：未绑定。",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用havip的业务标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "HealthCheck": {
       "document": "负载均衡健康检查",
       "members": [
@@ -6386,7 +6595,24 @@
     },
     "ModifyHaVipAttributeRequest": {
       "document": "ModifyHaVipAttribute请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "HAVIP唯一ID，形如：havip-9o233uri。",
+          "member": "string",
+          "name": "HaVipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HAVIP名称，可任意命名，但不得超过60个字符。",
+          "member": "string",
+          "name": "HaVipName",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ModifyHaVipAttributeResponse": {

@@ -1020,6 +1020,14 @@
         "title": "获取ipv4地址库下载链接"
       }
     ],
+    "DescribeIpGeolocationInfos": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIpGeolocationInfos\n&AddressIps.0=2001:1200::\n&AddressIps.1=8.8.8.8\n&Fields.Country=True\n&Fields.Province=True\n&Fields.City=True\n&Fields.Region=True\n&Fields.Isp=True\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"Total\":2,\r\n        \"AddressInfo\":[\r\n            {\r\n                \"AddressIp\":\"2001:1200::\",\r\n                \"Country\":\"墨西哥\",\r\n                \"Province\":\"tabasco\",\r\n                \"City\":\"miguel hidalgo\",\r\n                \"Region\":\"未知\",\r\n                \"Isp\":\"protel i-next, s.a. de c.v., mx\"\r\n            },\r\n            {\r\n                \"AddressIp\":\"8.8.8.8\",\r\n                \"Country\":\"美国\",\r\n                \"Province\":\"california\",\r\n                \"City\":\"mountain view\",\r\n                \"Region\":\"未知\",\r\n                \"Isp\":\"google - google inc., us\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"6d3e1ba5-a3d0-41d4-93f7-4992a2e18b9d\"\r\n    }\r\n}",
+        "title": "查询IP地理位置信息"
+      }
+    ],
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": [
       {
         "document": "用NatGatewayId数组拉取NAT网关的端口转发规则",

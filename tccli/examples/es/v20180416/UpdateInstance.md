@@ -111,25 +111,3 @@ Output:
 }
 ```
 
-**Example 6: ES设置COS自动备份**
-
-
-
-Input: 
-
-```
-tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx \
-    --CosBackup.IsAutoBackup true \
-    --CosBackup.BackupTime 23:00
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "dd3f624d-9a72-4057-85cb-f5d32exxxxxx"
-    }
-}
-```
-

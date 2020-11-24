@@ -42,6 +42,12 @@
       "name": "新建产品",
       "output": "CreateStudioProductResponse"
     },
+    "CreateTopicRule": {
+      "document": "创建规则",
+      "input": "CreateTopicRuleRequest",
+      "name": "创建规则",
+      "output": "CreateTopicRuleResponse"
+    },
     "DeleteDevice": {
       "document": "删除设备",
       "input": "DeleteDeviceRequest",
@@ -65,6 +71,12 @@
       "input": "DeleteStudioProductRequest",
       "name": "删除产品",
       "output": "DeleteStudioProductResponse"
+    },
+    "DeleteTopicRule": {
+      "document": "删除规则",
+      "input": "DeleteTopicRuleRequest",
+      "name": "删除规则",
+      "output": "DeleteTopicRuleResponse"
     },
     "DescribeDevice": {
       "document": "用于查看某个设备的详细信息",
@@ -102,6 +114,24 @@
       "name": "获取产品详情",
       "output": "DescribeStudioProductResponse"
     },
+    "DescribeTopicRule": {
+      "document": "获取规则信息",
+      "input": "DescribeTopicRuleRequest",
+      "name": "获取规则信息",
+      "output": "DescribeTopicRuleResponse"
+    },
+    "DisableTopicRule": {
+      "document": "禁用规则",
+      "input": "DisableTopicRuleRequest",
+      "name": "禁用规则",
+      "output": "DisableTopicRuleResponse"
+    },
+    "EnableTopicRule": {
+      "document": "启用规则",
+      "input": "EnableTopicRuleRequest",
+      "name": "启用规则",
+      "output": "EnableTopicRuleResponse"
+    },
     "GetDeviceList": {
       "document": "用于查询某个产品下的设备列表",
       "input": "GetDeviceListRequest",
@@ -125,6 +155,12 @@
       "input": "GetStudioProductListRequest",
       "name": "获取产品列表",
       "output": "GetStudioProductListResponse"
+    },
+    "GetTopicRuleList": {
+      "document": "获取规则列表",
+      "input": "GetTopicRuleListRequest",
+      "name": "获取规则列表",
+      "output": "GetTopicRuleListResponse"
     },
     "ListEventHistory": {
       "document": "获取设备的历史事件",
@@ -156,6 +192,12 @@
       "name": "修改产品",
       "output": "ModifyStudioProductResponse"
     },
+    "ModifyTopicRule": {
+      "document": "修改规则",
+      "input": "ModifyTopicRuleRequest",
+      "name": "修改规则",
+      "output": "ModifyTopicRuleResponse"
+    },
     "ReleaseStudioProduct": {
       "document": "产品开发完成并测试通过后，通过发布产品将产品设置为发布状态",
       "input": "ReleaseStudioProductRequest",
@@ -167,6 +209,12 @@
       "input": "SearchStudioProductRequest",
       "name": "搜索产品",
       "output": "SearchStudioProductResponse"
+    },
+    "SearchTopicRule": {
+      "document": "搜索规则",
+      "input": "SearchTopicRuleRequest",
+      "name": "搜索规则",
+      "output": "SearchTopicRuleResponse"
     }
   },
   "metadata": {
@@ -683,6 +731,40 @@
       ],
       "type": "object"
     },
+    "CreateTopicRuleRequest": {
+      "document": "CreateTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则内容",
+          "member": "TopicRulePayload",
+          "name": "TopicRulePayload",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRuleResponse": {
+      "document": "CreateTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDeviceRequest": {
       "document": "DeleteDevice请求参数结构体",
       "members": [
@@ -799,6 +881,32 @@
     },
     "DeleteStudioProductResponse": {
       "document": "DeleteStudioProduct返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicRuleRequest": {
+      "document": "DeleteTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicRuleResponse": {
+      "document": "DeleteTopicRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1108,6 +1216,39 @@
       ],
       "type": "object"
     },
+    "DescribeTopicRuleRequest": {
+      "document": "DescribeTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称。",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicRuleResponse": {
+      "document": "DescribeTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TopicRule",
+          "name": "Rule",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeviceData": {
       "document": "DeviceData",
       "members": [
@@ -1305,6 +1446,58 @@
         }
       ],
       "usage": "out"
+    },
+    "DisableTopicRuleRequest": {
+      "document": "DisableTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableTopicRuleResponse": {
+      "document": "DisableTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableTopicRuleRequest": {
+      "document": "EnableTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableTopicRuleResponse": {
+      "document": "EnableTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EventHistoryItem": {
       "document": "设备事件的搜索结果项",
@@ -1595,6 +1788,54 @@
           "member": "int64",
           "name": "Total",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTopicRuleListRequest": {
+      "document": "GetTopicRuleList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "请求的页数",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTopicRuleListResponse": {
+      "document": "GetTopicRuleList返回参数结构体",
+      "members": [
+        {
+          "document": "规则总数量",
+          "member": "int64",
+          "name": "TotalCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则列表",
+          "member": "TopicRuleInfo",
+          "name": "Rules",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2083,6 +2324,40 @@
       ],
       "type": "object"
     },
+    "ModifyTopicRuleRequest": {
+      "document": "ModifyTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "替换的规则包体",
+          "member": "TopicRulePayload",
+          "name": "TopicRulePayload",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicRuleResponse": {
+      "document": "ModifyTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ProductEntry": {
       "document": "产品详情",
       "members": [
@@ -2509,6 +2784,181 @@
         }
       ],
       "type": "object"
+    },
+    "SearchTopicRuleRequest": {
+      "document": "SearchTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchTopicRuleResponse": {
+      "document": "SearchTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "搜索到的规则总数",
+          "member": "int64",
+          "name": "TotalCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则信息列表",
+          "member": "TopicRuleInfo",
+          "name": "Rules",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TopicRule": {
+      "document": "TopicRule结构",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称。",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "行为的JSON字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Actions",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否禁用规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "RuleDisabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicRuleInfo": {
+      "document": "规则信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "int64",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否禁用",
+          "member": "bool",
+          "name": "RuleDisabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicRulePayload": {
+      "document": "TopicRulePayload结构",
+      "members": [
+        {
+          "default": "",
+          "document": "规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行为的JSON字符串，大部分种类举例如下：\n[\n{\n\"republish\": {\n\"topic\": \"TEST/test\"\n}\n},\n{\n\"forward\": {\n\"api\": \"http://127.0.0.1:8080\"\n}\n},\n{\n\"ckafka\": {\n\"instance\": {\n\"id\": \"ckafka-test\",\n\"name\": \"\"\n},\n\"topic\": {\n\"id\": \"topic-test\",\n\"name\": \"test\"\n},\n\"region\": \"gz\"\n}\n},\n{\n\"cmqqueue\": {\n\"queuename\": \"queue-test-TEST\",\n\"region\": \"gz\"\n}\n},\n{\n\"mysql\": {\n\"instanceid\": \"cdb-test\",\n\"region\": \"gz\",\n\"username\": \"test\",\n\"userpwd\": \"*****\",\n\"dbname\": \"d_mqtt\",\n\"tablename\": \"t_test\",\n\"fieldpairs\": [\n{\n\"field\": \"test\",\n\"value\": \"test\"\n}\n],\n\"devicetype\": \"CUSTOM\"\n}\n}\n]",
+          "member": "string",
+          "name": "Actions",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否禁用规则",
+          "member": "bool",
+          "name": "RuleDisabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"
