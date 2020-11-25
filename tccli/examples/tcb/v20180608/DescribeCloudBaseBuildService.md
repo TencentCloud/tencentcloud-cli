@@ -14,15 +14,16 @@ Output:
 ```
 {
     "Response": {
-        "Headers": [
+        "RequestId": "xx",
+        "UploadHeaders": [
             {
-                "key": "Authorization",
-                "value": "Basic aaaabase64"
+                "Value": "xx",
+                "Key": "xx"
             }
         ],
-        "Url": "https://baozipi-generic.pkg.coding.net/coding_upgrade_date_SajgC/generic/hello.zip?version=1110282811",
-        "PackageName": "nginx-test",
-        "PackageVersion": "1001"
+        "PackageVersion": "xx",
+        "PackageName": "xx",
+        "UploadUrl": "xx"
     }
 }
 ```

@@ -1,7 +1,7 @@
 {
   "actions": {
     "BindDevices": {
-      "document": "本接口（BindDevices）用于网关设备批量绑定子设备",
+      "document": "本接口（BindDevices）用于网关设备批量绑定子设备 ",
       "input": "BindDevicesRequest",
       "name": "批量绑定子设备",
       "output": "BindDevicesResponse"
@@ -109,7 +109,7 @@
       "output": "DescribeDeviceResponse"
     },
     "DescribeDeviceClientKey": {
-      "document": "获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次",
+      "document": "获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次 ",
       "input": "DescribeDeviceClientKeyRequest",
       "name": "获取设备私钥",
       "output": "DescribeDeviceClientKeyResponse"
@@ -277,13 +277,13 @@
       "output": "RetryDeviceFirmwareTaskResponse"
     },
     "UnbindDevices": {
-      "document": "本接口（UnbindDevices）用于网关设备批量解绑子设备",
+      "document": "本接口（UnbindDevices）用于网关设备批量解绑子设备 ",
       "input": "UnbindDevicesRequest",
       "name": "批量解绑子设备",
       "output": "UnbindDevicesResponse"
     },
     "UpdateDeviceAvailableState": {
-      "document": "启用或者禁用设备",
+      "document": "启用或者禁用设备 ",
       "input": "UpdateDeviceAvailableStateRequest",
       "name": "切换设备可用状态",
       "output": "UpdateDeviceAvailableStateResponse"
@@ -685,7 +685,7 @@
       "members": [
         {
           "default": "",
-          "document": "产品 ID ，创建产品时腾讯云为用户分配全局唯一的 ID",
+          "document": "产品Id ，创建产品时腾讯云为用户分配全局唯一的Id",
           "member": "string",
           "name": "ProductId",
           "required": true,

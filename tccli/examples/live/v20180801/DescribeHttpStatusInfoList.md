@@ -8,7 +8,7 @@ Input:
 tccli live DescribeHttpStatusInfoList --cli-unfold-argument  \
     --PlayDomains 5000.liveplay.com \
     --StartTime '2019-03-01 00:00:00' \
-    --EndTime '2019-03-01 12:00:00'
+    --EndTime '2019-03-01 00:01:00'
 ```
 
 Output: 

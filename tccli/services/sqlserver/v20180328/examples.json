@@ -241,9 +241,9 @@
     "DescribeProductConfig": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeProductConfig\r\n&Zone=ap-guangzhou-2\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"2b384401-0537-4e81-b78d-473c80ee6f7a\",\r\n\t\t\"SpecInfoList\": [{\r\n\t\t\t\t\"CPU\": 2,\r\n\t\t\t\t\"MachineType\": \"TS85\",\r\n\t\t\t\t\"MachineTypeName\": \"高IO\",\r\n\t\t\t\t\"MaxStorage\": 3000,\r\n\t\t\t\t\"Memory\": 16000000,\r\n\t\t\t\t\"MinStorage\": 10,\r\n\t\t\t\t\"Pid\": 10908,\r\n\t\t\t\t\"QPS\": 16800,\r\n\t\t\t\t\"SpecId\": 18,\r\n\t\t\t\t\"SuitInfo\": \"独立用户数上万人的小型应用\",\r\n\t\t\t\t\"Version\": \"2008R2\",\r\n\t\t\t\t\"VersionName\": \"SQL Server 2008 Enterprise\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"CPU\": 2,\r\n\t\t\t\t\"MachineType\": \"TS85\",\r\n\t\t\t\t\"MachineTypeName\": \"高IO\",\r\n\t\t\t\t\"MaxStorage\": 3000,\r\n\t\t\t\t\"Memory\": 16000000,\r\n\t\t\t\t\"MinStorage\": 10,\r\n\t\t\t\t\"Pid\": 10908,\r\n\t\t\t\t\"QPS\": 16800,\r\n\t\t\t\t\"SpecId\": 18,\r\n\t\t\t\t\"SuitInfo\": \"独立用户数上万人的小型应用\",\r\n\t\t\t\t\"Version\": \"2012SP3\",\r\n\t\t\t\t\"VersionName\": \"SQL Server 2012 Enterprise\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"CPU\": 2,\r\n\t\t\t\t\"MachineType\": \"TS85\",\r\n\t\t\t\t\"MachineTypeName\": \"高IO\",\r\n\t\t\t\t\"MaxStorage\": 3000,\r\n\t\t\t\t\"Memory\": 16000000,\r\n\t\t\t\t\"MinStorage\": 10,\r\n\t\t\t\t\"Pid\": 10908,\r\n\t\t\t\t\"QPS\": 16800,\r\n\t\t\t\t\"SpecId\": 18,\r\n\t\t\t\t\"SuitInfo\": \"独立用户数上万人的小型应用\",\r\n\t\t\t\t\"Version\": \"2016SP1\",\r\n\t\t\t\t\"VersionName\": \"SQL Server 2016 Enterprise\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"TotalCount\": 27\r\n\t}\r\n}",
-        "title": "查询某个地域某个可用区的售卖规格信息"
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeProductConfig\n&Zone=ap-guangzhou-2\n&InstanceType=HA\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"2a91dd2e-f237-4c78-b06c-348a12b04a46\",\r\n\t\t\"SpecInfoList\": [{\r\n\t\t\t\t\"CPU\": 16,\r\n\t\t\t\t\"InstanceType\": \"HA\",\r\n\t\t\t\t\"MachineType\": \"TS85\",\r\n\t\t\t\t\"MachineTypeName\": \"高IO\",\r\n\t\t\t\t\"MaxStorage\": 3000,\r\n\t\t\t\t\"Memory\": 128,\r\n\t\t\t\t\"MinStorage\": 10,\r\n\t\t\t\t\"MultiZonesStatus\": \"ALL\",\r\n\t\t\t\t\"PayModeStatus\": \"ALL\",\r\n\t\t\t\t\"Pid\": 10908,\r\n\t\t\t\t\"PostPid\": [\r\n\t\t\t\t\t10908\r\n\t\t\t\t],\r\n\t\t\t\t\"QPS\": 61000,\r\n\t\t\t\t\"SpecId\": 22,\r\n\t\t\t\t\"SuitInfo\": \"独立用户数上千万人的大型应用\",\r\n\t\t\t\t\"Version\": \"2008R2\",\r\n\t\t\t\t\"VersionName\": \"SQL Server 2008 Enterprise\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"CPU\": 1,\r\n\t\t\t\t\"InstanceType\": \"HA\",\r\n\t\t\t\t\"MachineType\": \"TS85\",\r\n\t\t\t\t\"MachineTypeName\": \"高IO\",\r\n\t\t\t\t\"MaxStorage\": 3000,\r\n\t\t\t\t\"Memory\": 8,\r\n\t\t\t\t\"MinStorage\": 10,\r\n\t\t\t\t\"MultiZonesStatus\": \"ALL\",\r\n\t\t\t\t\"PayModeStatus\": \"ALL\",\r\n\t\t\t\t\"Pid\": 10908,\r\n\t\t\t\t\"PostPid\": [\r\n\t\t\t\t\t10908\r\n\t\t\t\t],\r\n\t\t\t\t\"QPS\": 6500,\r\n\t\t\t\t\"SpecId\": 17,\r\n\t\t\t\t\"SuitInfo\": \"独立用户数上千人的小型应用\",\r\n\t\t\t\t\"Version\": \"2012SP3\",\r\n\t\t\t\t\"VersionName\": \"SQL Server 2012 Enterprise\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"CPU\": 24,\r\n\t\t\t\t\"InstanceType\": \"HA\",\r\n\t\t\t\t\"MachineType\": \"TS85\",\r\n\t\t\t\t\"MachineTypeName\": \"高IO\",\r\n\t\t\t\t\"MaxStorage\": 3000,\r\n\t\t\t\t\"Memory\": 192,\r\n\t\t\t\t\"MinStorage\": 10,\r\n\t\t\t\t\"MultiZonesStatus\": \"ALL\",\r\n\t\t\t\t\"PayModeStatus\": \"ALL\",\r\n\t\t\t\t\"Pid\": 10908,\r\n\t\t\t\t\"PostPid\": [\r\n\t\t\t\t\t10908\r\n\t\t\t\t],\r\n\t\t\t\t\"QPS\": 234000,\r\n\t\t\t\t\"SpecId\": 34,\r\n\t\t\t\t\"SuitInfo\": \"独立用户数上亿人的大型应用\",\r\n\t\t\t\t\"Version\": \"2012SP3\",\r\n\t\t\t\t\"VersionName\": \"SQL Server 2012 Enterprise\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"CPU\": 16,\r\n\t\t\t\t\"InstanceType\": \"HA\",\r\n\t\t\t\t\"MachineType\": \"TS85\",\r\n\t\t\t\t\"MachineTypeName\": \"高IO\",\r\n\t\t\t\t\"MaxStorage\": 3000,\r\n\t\t\t\t\"Memory\": 128,\r\n\t\t\t\t\"MinStorage\": 10,\r\n\t\t\t\t\"MultiZonesStatus\": \"ALL\",\r\n\t\t\t\t\"PayModeStatus\": \"ALL\",\r\n\t\t\t\t\"Pid\": 10908,\r\n\t\t\t\t\"PostPid\": [\r\n\t\t\t\t\t10908\r\n\t\t\t\t],\r\n\t\t\t\t\"QPS\": 61000,\r\n\t\t\t\t\"SpecId\": 22,\r\n\t\t\t\t\"SuitInfo\": \"独立用户数上千万人的大型应用\",\r\n\t\t\t\t\"Version\": \"2016SP1\",\r\n\t\t\t\t\"VersionName\": \"SQL Server 2016 Enterprise\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"TotalCount\": 4\r\n\t}\r\n}",
+        "title": "查询广州二区的高可用版本售卖规格"
       }
     ],
     "DescribeProjectSecurityGroups": [
@@ -478,6 +478,14 @@
         "title": "主动回收实例"
       }
     ],
+    "RecycleReadOnlyGroup": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=RecycleReadOnlyGroup\n&InstanceId=mssql-2cwisu23\n&ReadOnlyGroupId=mssqlrg-787oxy95\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FlowId\": 1001539,\r\n        \"RequestId\": \"e092520d-86c3-46ba-a39d-dc1373b7a82d\"\r\n    }\r\n}",
+        "title": "发起主动回收只读组"
+      }
+    ],
     "RemoveBackups": [
       {
         "document": "",
@@ -561,7 +569,7 @@
     "TerminateDBInstance": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=TerminateDBInstance\r\n&InstanceIdSet.0=mssql-njj2mtpl\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=TerminateDBInstance\n&InstanceIdSet.0=mssql-njj2mtpl\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"2de52957-ebe4-4d7b-8985-4e415b3fb360\"\r\n\t}\r\n}",
         "title": "主动销毁云数据库SQLServer按量计费实例"
       }

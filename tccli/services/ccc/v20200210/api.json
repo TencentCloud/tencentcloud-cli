@@ -25,9 +25,9 @@
       "output": "DescribeIMCdrsResponse"
     },
     "DescribeTelCallInfo": {
-      "document": "获取电话呼叫统计信息",
+      "document": "按实例获取电话消耗统计",
       "input": "DescribeTelCallInfoRequest",
-      "name": "获取电话呼叫统计信息",
+      "name": "按实例获取电话消耗统计",
       "output": "DescribeTelCallInfoResponse"
     },
     "DescribeTelCdr": {
@@ -314,7 +314,7 @@
         },
         {
           "default": "",
-          "document": "结束时间戳，Unix 时间戳",
+          "document": "结束时间戳，Unix 时间戳，查询时间范围最大为90天",
           "member": "int64",
           "name": "EndTimeStamp",
           "required": true,

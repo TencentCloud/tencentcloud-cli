@@ -293,7 +293,7 @@
     "DescribeAllStreamPlayInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeAllStreamPlayInfoList\r\n&QueryTime=2019-12-12 10:00:00\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeAllStreamPlayInfoList\n&QueryTime=2019-12-12 10:00:00\n&<公共请求参数>",
         "output": "{\"Response\":{\"QueryTime\":\"2019-12-12 10:00:00\",\"DataInfoList\":[{\"Bandwidth\":1.82,\"Online\":1,\"PlayDomain\":\"domain.test1.com\",\"Protocol\":\"Hls\",\"Rate\":0,\"Request\":19,\"StreamName\":\"test1\"},{\"Bandwidth\":1.59,\"Online\":1,\"PlayDomain\":\"domain.test2.com\",\"Protocol\":\"Flv\",\"Rate\":0,\"Request\":10,\"StreamName\":\"test2\"},{\"Bandwidth\":3.60,\"Online\":2,\"PlayDomain\":\"domain.test3.com\",\"Protocol\":\"Flv\",\"Rate\":0,\"Request\":12,\"StreamName\":\"test3\"}],\"RequestId\": \"k54e3deb-f318-4147-8a68-3c959642f9ec\"}}",
         "title": "请求示例"
       }
@@ -341,7 +341,7 @@
     "DescribeHttpStatusInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeHttpStatusInfoList\r\n&PlayDomains.0=5000.liveplay.com\r\n&StartTime=2019-03-01 00:00:00\r\n&EndTime=2019-03-01 12:00:00\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeHttpStatusInfoList\n&PlayDomains.0=5000.liveplay.com\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 00:01:00\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DataInfoList\": [{\r\n\t\t\t\"Time\": \"2019-03-01 00:00:00\",\r\n\t\t\t\"HttpStatusInfoList\": [{\r\n\t\t\t\t\"HttpStatus\": \"200\",\r\n\t\t\t\t\"Num\": 100\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\r\n\t}\r\n}",
         "title": "请求示例"
       }
@@ -525,7 +525,7 @@
     "DescribeLiveStreamPublishedList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamPublishedList\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=test\r\n&PageNum=1\r\n&PageSize=10\r\n&StartTime=2015-06-25T03:30:50Z\r\n&EndTime=2015-12-26T03:30:50Z\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamPublishedList\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=test\n&PageNum=1\n&PageSize=10\n&StartTime=2015-06-25T03:30:50Z\n&EndTime=2015-12-26T03:30:50Z\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"PublishInfo\": [\r\n                  {\r\n    \t             \"AppName\": \"live\",\r\n                     \"ClientIp\": \"180.163.8.244\",\r\n                     \"DomainName\": \"5000.livepush.myqcloud.com\",\r\n                     \"Duration\": 10,\r\n                     \"Resolution\": \"640*352\",\r\n                     \"StopReason\": \"客户端主动断流\",\r\n                     \"StreamEndTime\": \"2019-01-04T11:59:58Z\",\r\n                     \"StreamName\": \"test1\",\r\n                     \"StreamStartTime\": \"2019-01-04T11:59:58Z\"\r\n                  }\r\n                 ],\r\n\t\t\"PageNum\": 1,\r\n\t\t\"PageSize\": 10,\r\n\t\t\"TotalNum\": 1,\r\n\t\t\"TotalPage\": 1,\r\n\t\t\"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\r\n\t}\r\n}",
         "title": "请求示例"
       }
@@ -613,7 +613,7 @@
     "DescribePlayErrorCodeDetailInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribePlayErrorCodeDetailInfoList\r\n&PlayDomains.0=5000.playdomain.com\r\n&StartTime=2019-03-01 00:00:00\r\n&EndTime=2019-03-01 12:00:00\r\n&Granularity=1\r\n&StatType=4xx\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribePlayErrorCodeDetailInfoList\n&PlayDomains.0=5000.playdomain.com\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 00:01:00\n&Granularity=1\n&StatType=4xx\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"HttpCodeList\": [{\r\n\t\t\t\"HttpCode\":\"4xx\",\r\n\t\t\t\"ValueList\":[{\r\n\t\t\t\t\"Time\": \"2019-03-01 00:00:00\",\r\n\t\t\t\t\"Numbers\": 20,\r\n\t\t\t\t\"Percentage\": 0.96\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"StatType\": \"4xx\",\r\n\t\t\"RequestId\": \"e6628973-db6a-48f1-9fcd-fe0b3ba54bc9\"\r\n\t}\r\n}",
         "title": "请求示例"
       }
@@ -621,7 +621,7 @@
     "DescribePlayErrorCodeSumInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribePlayErrorCodeSumInfoList\r\n&PlayDomains.0=5000.playdomain.com\r\n&StartTime=2019-03-01 00:00:00\r\n&EndTime=2019-03-01 12:00:00\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribePlayErrorCodeSumInfoList\n&PlayDomains.0=5000.playdomain.com\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 12:00:00\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"ProIspInfoList\": [{\r\n                        \"CountryAreaName\": \"中国\",\r\n\t\t\t\"ProvinceName\": \"山东省\",\r\n\t\t\t\"IspName\": \"中国移动\",\r\n                        \"Code2xx\": 11,\r\n\t\t       \"Code3xx\": 12,\r\n\t\t\t\"Code4xx\": 10,\r\n\t\t\t\"Code5xx\": 19\r\n\t\t}],\r\n\t\t\"TotalCodeList\": [{\r\n\t\t\t\"Code\": \"200\",\r\n\t\t\t\"Num\": 11\r\n\t\t},{\r\n\t\t\t\"Code\": \"302\",\r\n\t\t\t\"Num\": 12\r\n\t\t},{\r\n\t\t\t\"Code\": \"403\",\r\n\t\t\t\"Num\": 1000\r\n\t\t},{\r\n\t\t\t\"Code\": \"500\",\r\n\t\t\t\"Num\": 19\r\n\t\t}],\r\n\t\t\"TotalCodeAll\": 100,\r\n                 \"TotalCode2xx\": 11,\r\n\t\t\"TotalCode3xx\": 12,\r\n\t\t\"TotalCode4xx\": 10,\r\n\t\t\"TotalCode5xx\": 29,\r\n\t\t\"PageNum\": 1,\r\n\t\t\"PageSize\": 10,\r\n\t\t\"TotalPage\": 10,\r\n\t\t\"TotalNum\": 100,\r\n\t\t\"RequestId\": \"e6628973-db6a-48f1-9fcd-fe0b3ba54bc9\"\r\n\t}\r\n}",
         "title": "请求示例"
       }
@@ -669,7 +669,7 @@
     "DescribeStreamPlayInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeStreamPlayInfoList\r\n&PlayDomain=5000.playdomain.com\r\n&StreamName=stream1\r\n&StartTime=2019-03-01 00:00:00\r\n&EndTime=2019-03-01 00:03:00\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeStreamPlayInfoList\n&PlayDomain=5000.playdomain.com\n&StreamName=stream1\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 00:03:00\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DataInfoList\": [\r\n\t\t\t{\r\n\t\t\t\t\"Time\": \"2019-03-01 00:00:00\",\r\n\t\t\t\t\"Bandwidth\": 10.0,\r\n                                 \"Flux\": 75.0,\r\n\t\t\t\t\"Request\": 50,\r\n\t\t\t\t\"Online\":10\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Time\": \"2019-03-01 00:02:00\",\r\n\t\t\t\t\"Bandwidth\": 20.0,\r\n                                  \"Flux\": 150.0,\r\n\t\t\t\t\"Request\": 50,\r\n\t\t\t\t\"Online\": 20\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Time\": \"2019-03-01 00:03:00\",\r\n\t\t\t\t\"Bandwidth\": 30.0,\r\n                                  \"Flux\": 225.0,\r\n\t\t\t\t\"Request\": 50,\r\n\t\t\t\t\"Online\": 30\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\r\n\t}\r\n}",
         "title": "请求示例"
       }

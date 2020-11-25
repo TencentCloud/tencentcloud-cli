@@ -7,9 +7,7 @@ Input:
 ```
 tccli iotcloud DescribeFirmware --cli-unfold-argument  \
     --ProductID 7ZISKXPJVU \
-    --FirmwareVersion 1.0.3 \
-    --Md5sum xxxxxxxxxx \
-    --FileSize 1024
+    --FirmwareVersion 1.0.3
 ```
 
 Output: 

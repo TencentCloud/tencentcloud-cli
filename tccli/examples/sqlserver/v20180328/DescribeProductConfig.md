@@ -1,4 +1,4 @@
-**Example 1: 查询某个地域某个可用区的售卖规格信息**
+**Example 1: 查询广州二区的高可用版本售卖规格**
 
 
 
@@ -6,59 +6,98 @@ Input:
 
 ```
 tccli sqlserver DescribeProductConfig --cli-unfold-argument  \
-    --Zone ap-guangzhou-2
+    --Zone ap-guangzhou-2 \
+    --InstanceType HA
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2b384401-0537-4e81-b78d-473c80ee6f7a",
+        "RequestId": "2a91dd2e-f237-4c78-b06c-348a12b04a46",
         "SpecInfoList": [
             {
-                "CPU": 2,
+                "CPU": 16,
+                "InstanceType": "HA",
                 "MachineType": "TS85",
                 "MachineTypeName": "高IO",
                 "MaxStorage": 3000,
-                "Memory": 16000000,
+                "Memory": 128,
                 "MinStorage": 10,
+                "MultiZonesStatus": "ALL",
+                "PayModeStatus": "ALL",
                 "Pid": 10908,
-                "QPS": 16800,
-                "SpecId": 18,
-                "SuitInfo": "独立用户数上万人的小型应用",
+                "PostPid": [
+                    10908
+                ],
+                "QPS": 61000,
+                "SpecId": 22,
+                "SuitInfo": "独立用户数上千万人的大型应用",
                 "Version": "2008R2",
                 "VersionName": "SQL Server 2008 Enterprise"
             },
             {
-                "CPU": 2,
+                "CPU": 1,
+                "InstanceType": "HA",
                 "MachineType": "TS85",
                 "MachineTypeName": "高IO",
                 "MaxStorage": 3000,
-                "Memory": 16000000,
+                "Memory": 8,
                 "MinStorage": 10,
+                "MultiZonesStatus": "ALL",
+                "PayModeStatus": "ALL",
                 "Pid": 10908,
-                "QPS": 16800,
-                "SpecId": 18,
-                "SuitInfo": "独立用户数上万人的小型应用",
+                "PostPid": [
+                    10908
+                ],
+                "QPS": 6500,
+                "SpecId": 17,
+                "SuitInfo": "独立用户数上千人的小型应用",
                 "Version": "2012SP3",
                 "VersionName": "SQL Server 2012 Enterprise"
             },
             {
-                "CPU": 2,
+                "CPU": 24,
+                "InstanceType": "HA",
                 "MachineType": "TS85",
                 "MachineTypeName": "高IO",
                 "MaxStorage": 3000,
-                "Memory": 16000000,
+                "Memory": 192,
                 "MinStorage": 10,
+                "MultiZonesStatus": "ALL",
+                "PayModeStatus": "ALL",
                 "Pid": 10908,
-                "QPS": 16800,
-                "SpecId": 18,
-                "SuitInfo": "独立用户数上万人的小型应用",
+                "PostPid": [
+                    10908
+                ],
+                "QPS": 234000,
+                "SpecId": 34,
+                "SuitInfo": "独立用户数上亿人的大型应用",
+                "Version": "2012SP3",
+                "VersionName": "SQL Server 2012 Enterprise"
+            },
+            {
+                "CPU": 16,
+                "InstanceType": "HA",
+                "MachineType": "TS85",
+                "MachineTypeName": "高IO",
+                "MaxStorage": 3000,
+                "Memory": 128,
+                "MinStorage": 10,
+                "MultiZonesStatus": "ALL",
+                "PayModeStatus": "ALL",
+                "Pid": 10908,
+                "PostPid": [
+                    10908
+                ],
+                "QPS": 61000,
+                "SpecId": 22,
+                "SuitInfo": "独立用户数上千万人的大型应用",
                 "Version": "2016SP1",
                 "VersionName": "SQL Server 2016 Enterprise"
             }
         ],
-        "TotalCount": 27
+        "TotalCount": 4
     }
 }
 ```
