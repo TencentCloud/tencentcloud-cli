@@ -13,6 +13,31 @@ from tencentcloud.tcb.v20180608 import tcb_client as tcb_client_v20180608
 from tencentcloud.tcb.v20180608 import models as models_v20180608
 
 
+def doDescribeCloudBaseRunVersionSnapshot(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCloudBaseRunVersionSnapshotRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCloudBaseRunVersionSnapshot(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateHostingDomain(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -263,6 +288,31 @@ def doDescribeEndUserStatistic(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCloudBaseRunResourceForExtend(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCloudBaseRunResourceForExtendRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCloudBaseRunResourceForExtend(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyEndUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -280,6 +330,31 @@ def doModifyEndUser(args, parsed_globals):
     model = models.ModifyEndUserRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ModifyEndUser(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDownloadFile(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDownloadFileRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeDownloadFile(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -438,31 +513,6 @@ def doDescribeEndUserLoginStatistic(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAuthDomains(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAuthDomainsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeAuthDomains(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeQuotaData(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -530,31 +580,6 @@ def doDescribeExtraPkgBillingInfo(args, parsed_globals):
     model = models.DescribeExtraPkgBillingInfoRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeExtraPkgBillingInfo(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDownloadFile(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDownloadFileRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDownloadFile(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -663,7 +688,7 @@ def doDescribeCloudBaseBuildService(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCloudBaseRunVersionSnapshot(args, parsed_globals):
+def doDescribeAuthDomains(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -677,9 +702,9 @@ def doDescribeCloudBaseRunVersionSnapshot(args, parsed_globals):
     client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCloudBaseRunVersionSnapshotRequest()
+    model = models.DescribeAuthDomainsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeCloudBaseRunVersionSnapshot(model)
+    rsp = client.DescribeAuthDomains(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -824,6 +849,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeCloudBaseRunVersionSnapshot": doDescribeCloudBaseRunVersionSnapshot,
     "CreateHostingDomain": doCreateHostingDomain,
     "DescribeEndUsers": doDescribeEndUsers,
     "CreateAuthDomain": doCreateAuthDomain,
@@ -834,23 +860,23 @@ ACTION_MAP = {
     "DescribeCloudBaseRunResource": doDescribeCloudBaseRunResource,
     "ReinstateEnv": doReinstateEnv,
     "DescribeEndUserStatistic": doDescribeEndUserStatistic,
+    "DescribeCloudBaseRunResourceForExtend": doDescribeCloudBaseRunResourceForExtend,
     "ModifyEndUser": doModifyEndUser,
+    "DescribeDownloadFile": doDescribeDownloadFile,
     "DescribePostpayPackageFreeQuotas": doDescribePostpayPackageFreeQuotas,
     "EstablishCloudBaseRunServer": doEstablishCloudBaseRunServer,
     "CreateStaticStore": doCreateStaticStore,
     "CheckTcbService": doCheckTcbService,
     "DeleteEndUser": doDeleteEndUser,
     "DescribeEndUserLoginStatistic": doDescribeEndUserLoginStatistic,
-    "DescribeAuthDomains": doDescribeAuthDomains,
     "DescribeQuotaData": doDescribeQuotaData,
     "CreateCloudBaseRunResource": doCreateCloudBaseRunResource,
     "DescribeExtraPkgBillingInfo": doDescribeExtraPkgBillingInfo,
-    "DescribeDownloadFile": doDescribeDownloadFile,
     "ModifyEnv": doModifyEnv,
     "DescribeDatabaseACL": doDescribeDatabaseACL,
     "DestroyEnv": doDestroyEnv,
     "DescribeCloudBaseBuildService": doDescribeCloudBaseBuildService,
-    "DescribeCloudBaseRunVersionSnapshot": doDescribeCloudBaseRunVersionSnapshot,
+    "DescribeAuthDomains": doDescribeAuthDomains,
     "DestroyStaticStore": doDestroyStaticStore,
     "ModifyDatabaseACL": doModifyDatabaseACL,
     "CommonServiceAPI": doCommonServiceAPI,

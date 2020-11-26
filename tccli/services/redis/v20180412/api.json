@@ -162,6 +162,12 @@
       "name": "获取集群版实例分片信息",
       "output": "DescribeInstanceShardsResponse"
     },
+    "DescribeInstanceZoneInfo": {
+      "document": "查询Redis节点信息",
+      "input": "DescribeInstanceZoneInfoRequest",
+      "name": "查询Redis节点信息",
+      "output": "DescribeInstanceZoneInfoResponse"
+    },
     "DescribeInstances": {
       "document": "查询Redis实例列表",
       "input": "DescribeInstancesRequest",
@@ -2212,6 +2218,46 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceZoneInfoRequest": {
+      "document": "DescribeInstanceZoneInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id，如：crs-6ubhgouj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceZoneInfoResponse": {
+      "document": "DescribeInstanceZoneInfo返回参数结构体",
+      "members": [
+        {
+          "document": "实例节点组的个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例节点组列表",
+          "member": "ReplicaGroup",
+          "name": "ReplicaGroups",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5698,6 +5744,48 @@
       ],
       "usage": "out"
     },
+    "RedisNode": {
+      "document": "Redis节点的运行信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点key的个数",
+          "member": "int64",
+          "name": "Keys",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点slot分布",
+          "member": "string",
+          "name": "Slot",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点的序列ID",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点的状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RedisNodeInfo": {
       "document": "描述Redis实例的主节点或者副本节点信息",
       "members": [
@@ -5855,6 +5943,57 @@
         }
       ],
       "type": "object"
+    },
+    "ReplicaGroup": {
+      "document": "实例节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点组ID",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点组的名称，主节点为空",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点的可用区ID，比如ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点组类型，master为主节点，replica为副本节点",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点组节点列表",
+          "member": "RedisNode",
+          "name": "RedisNodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResetPasswordRequest": {
       "document": "ResetPassword请求参数结构体",

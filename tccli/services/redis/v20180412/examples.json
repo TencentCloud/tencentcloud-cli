@@ -222,6 +222,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeInstanceZoneInfo": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceZoneInfo\n&InstanceId=crs-6tl7uxxd\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"ReplicaGroups\": [\r\n      {\r\n        \"GroupId\": 125101,\r\n        \"GroupName\": \"\",\r\n        \"ZoneId\": \"ap-guangzhou-2\",\r\n        \"Role\": \"master\",\r\n        \"RedisNodes\": [\r\n          {\r\n            \"Keys\": 39,\r\n            \"Slot\": \"0-16383\",\r\n            \"Status\": \"normal\",\r\n            \"NodeId\": \"5f83a663d58f092f4791630065cb3a76c50b40a5\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"GroupId\": 125102,\r\n        \"GroupName\": \"ng-1\",\r\n        \"ZoneId\": \"ap-guangzhou-3\",\r\n        \"Role\": \"replica\",\r\n        \"RedisNodes\": [\r\n          {\r\n            \"Keys\": 0,\r\n            \"Slot\": \"\",\r\n            \"Status\": \"normal\",\r\n            \"NodeId\": \"bdc6d645f4741948cf51f93f7013edd64f44c3ba\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"e3d683fc-f2ff-43c9-980d-fae7a1166abc\",\r\n    \"TotalCount\": 2\r\n  }\r\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeInstances": [
       {
         "document": "",

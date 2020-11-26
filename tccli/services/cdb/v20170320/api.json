@@ -8545,16 +8545,18 @@
           "document": "参数名称",
           "member": "string",
           "name": "Name",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "参数值",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

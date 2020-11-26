@@ -72,6 +72,12 @@
       "name": "查看容器托管的资源状态",
       "output": "DescribeCloudBaseRunResourceResponse"
     },
+    "DescribeCloudBaseRunResourceForExtend": {
+      "document": "查看容器托管的集群状态扩展使用",
+      "input": "DescribeCloudBaseRunResourceForExtendRequest",
+      "name": "查看容器托管的资源状态扩展使用",
+      "output": "DescribeCloudBaseRunResourceForExtendResponse"
+    },
     "DescribeCloudBaseRunServerVersion": {
       "document": "查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize",
       "input": "DescribeCloudBaseRunServerVersionRequest",
@@ -1279,6 +1285,14 @@
           "name": "OperatorRemark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务路劲",
+          "member": "string",
+          "name": "ServerPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1656,6 +1670,67 @@
           "name": "PackageVersion",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunResourceForExtendRequest": {
+      "document": "DescribeCloudBaseRunResourceForExtend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunResourceForExtendResponse": {
+      "document": "DescribeCloudBaseRunResourceForExtend返回参数结构体",
+      "members": [
+        {
+          "document": "集群状态(creating/succ)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "虚拟集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VirtualClusterId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "vpc id信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CloudBaseRunVpcSubnet",
+          "name": "SubnetIds",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

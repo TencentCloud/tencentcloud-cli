@@ -19,7 +19,7 @@
     "AddLiveWatermark": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=AddLiveWatermark\r\n&PictureUrl=http://watermark-10005041.cos.myqcloud.com/1251830167/watermark_img_Alogo.png\r\n&XPosition=80\r\n&YPosition=10\r\n&WatermarkName=logo\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=AddLiveWatermark\n&PictureUrl=http://watermark-10005041.cos.myqcloud.com/1251830167/watermark_img_Alogo.png\n&XPosition=80\n&YPosition=10\n&WatermarkName=logo\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\r\n    \"WatermarkId\":123\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -869,7 +869,7 @@
     "UpdateLiveWatermark": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=UpdateLiveWatermark\r\n&WatermarkId=123\r\n&PictureUrl=http://watermark-10005041.cos.myqcloud.com/1251830167/watermark_img_Alogo.png\r\n&XPosition=80\r\n&YPosition=10\r\n&WatermarkName=logo\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=UpdateLiveWatermark\n&WatermarkId=123\n&PictureUrl=http://watermark-10005041.cos.myqcloud.com/1251830167/watermark_img_Alogo.png\n&XPosition=80\n&YPosition=10\n&WatermarkName=logo\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }

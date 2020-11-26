@@ -30,6 +30,7 @@ Output:
         "Entname": "腾讯云计算（北京）有限责任公司",
         "VerifyDom": "北京市海淀区知春路49号3层西部309",
         "Dom": "北京市海淀区知春路49号3层西部309",
+        "RegCapital": "",
         "RegNumResult": {
             "RegNum": "0",
             "Name": "0",
@@ -71,6 +72,7 @@ Output:
         "Entname": "腾讯云计算（北京）有限责任公司",
         "VerifyDom": "北京市海淀区知春路49号3层西部309",
         "Dom": "北京市海淀区知春路49号3层西部309",
+        "RegCapital": "",
         "RegNumResult": {
             "RegNum": "0",
             "Name": "-1",
