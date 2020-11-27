@@ -138,7 +138,7 @@ def doGetFaceIdToken(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMobileNetworkTimeVerification(args, parsed_globals):
+def doCheckPhoneAndName(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -152,9 +152,9 @@ def doMobileNetworkTimeVerification(args, parsed_globals):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MobileNetworkTimeVerificationRequest()
+    model = models.CheckPhoneAndNameRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.MobileNetworkTimeVerification(model)
+    rsp = client.CheckPhoneAndName(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -438,6 +438,31 @@ def doIdCardVerification(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doMobileNetworkTimeVerification(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.MobileNetworkTimeVerificationRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.MobileNetworkTimeVerification(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDetectAuth(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -579,7 +604,7 @@ ACTION_MAP = {
     "LivenessCompare": doLivenessCompare,
     "BankCard4EVerification": doBankCard4EVerification,
     "GetFaceIdToken": doGetFaceIdToken,
-    "MobileNetworkTimeVerification": doMobileNetworkTimeVerification,
+    "CheckPhoneAndName": doCheckPhoneAndName,
     "BankCardVerification": doBankCardVerification,
     "CheckIdCardInformation": doCheckIdCardInformation,
     "IdCardOCRVerification": doIdCardOCRVerification,
@@ -591,6 +616,7 @@ ACTION_MAP = {
     "Liveness": doLiveness,
     "LivenessRecognition": doLivenessRecognition,
     "IdCardVerification": doIdCardVerification,
+    "MobileNetworkTimeVerification": doMobileNetworkTimeVerification,
     "DetectAuth": doDetectAuth,
     "GetDetectInfoEnhanced": doGetDetectInfoEnhanced,
     "CheckBankCardInformation": doCheckBankCardInformation,

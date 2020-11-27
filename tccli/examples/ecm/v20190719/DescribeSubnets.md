@@ -40,7 +40,8 @@ Output:
                 "ZoneName": "杭州一区",
                 "CidrBlock": "192.168.1.0/24",
                 "IsDefault": false,
-                "VpcIpv6CidrBlock": ""
+                "VpcIpv6CidrBlock": "",
+                "IsPreferred": false
             }
         ],
         "TotalCount": 1,

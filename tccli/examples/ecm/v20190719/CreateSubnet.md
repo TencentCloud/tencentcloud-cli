@@ -43,6 +43,7 @@ Output:
             "ZoneName": "杭州一区",
             "CidrBlock": "10.0.1.0/24",
             "IsDefault": false,
+            "IsPreferred": false,
             "VpcIpv6CidrBlock": ""
         },
         "RequestId": "d0c21b3b-4c46-4ac3-a6ad-576303682731"

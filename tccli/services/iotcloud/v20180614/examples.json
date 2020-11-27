@@ -265,7 +265,7 @@
     "DescribeProducts": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProducts\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProducts\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Products\": [\r\n            {\r\n                \"ProductId\": \"ABCDEF12345\",\r\n                \"ProductName\": \"hello\",\r\n                \"ProductMetadata\": {\r\n                    \"CreationDate\": 1529049275\r\n                },\r\n                \"ProductProperties\": {\r\n                    \"ProductDescription\": \"test\",\r\n                    \"EncryptionType\": \"1\",\r\n                    \"Region\": \"gz\",\r\n                    \"ProductType\": 0,\r\n                    \"Format\": \"json\"\r\n                }\r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\r\n    }\r\n}",
         "title": "获取产品列表"
       }

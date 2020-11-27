@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli iai DetectLiveFace --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testA.jpg \
-    --Version 2018-03-01
+    --Url http://test.image.myqcloud.com/testA.jpg
 ```
 
 Output: 

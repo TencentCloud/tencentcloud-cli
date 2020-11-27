@@ -10,8 +10,7 @@ tccli iai CreateGroup --cli-unfold-argument  \
     --FaceModelVersion 3.0 \
     --GroupId TencentShenZhenEmployee \
     --Tag 不含实习生 \
-    --GroupExDescriptions 事业群 部门名 组名 \
-    --Version 2018-03-01
+    --GroupExDescriptions 事业群 部门名 组名
 ```
 
 Output: 
@@ -36,8 +35,7 @@ tccli iai CreateGroup --cli-unfold-argument  \
     --GroupId ZhuYuanDormitoryNo1 \
     --FaceModelVersion 3.0 \
     --Tag 全是女生哦 \
-    --GroupExDescriptions 学院名 专业 年级 学号 \
-    --Version 2018-03-01
+    --GroupExDescriptions 学院名 专业 年级 学号
 ```
 
 Output: 
@@ -59,8 +57,7 @@ Input:
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
     --GroupName 腾讯深圳员工库 \
-    --GroupId TencentShenZhenEmployee \
-    --Version 2018-03-01
+    --GroupId TencentShenZhenEmployee
 ```
 
 Output: 
@@ -85,8 +82,7 @@ Input:
 ```
 tccli iai CreateGroup --cli-unfold-argument  \
     --GroupName 腾讯深圳员工库 \
-    --GroupId 腾讯深圳员工库 \
-    --Version 2018-03-01
+    --GroupId 腾讯深圳员工库
 ```
 
 Output: 

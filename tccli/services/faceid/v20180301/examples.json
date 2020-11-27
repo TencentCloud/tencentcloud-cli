@@ -58,6 +58,14 @@
         "title": "使用身份证照片Base64进行验证"
       }
     ],
+    "CheckPhoneAndName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckPhoneAndName\n<公共请求参数>\n\n{\"Mobile\":\"1399999999909\",\"Name\":\"李四\"}",
+        "output": "{\r\n    \"Response\": {\r\n         \"Result\": \"0\",\r\n         \"Description\": \"验证结果一致\",\r\n        \"RequestId\": \"368a9e91-71dc-49c7-b622-c4a300ed7370\"\r\n    }\r\n}",
+        "title": "查询成功"
+      }
+    ],
     "DetectAuth": [
       {
         "document": "",

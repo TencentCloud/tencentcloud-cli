@@ -1490,6 +1490,14 @@
         "title": "HAVIP解绑EIP"
       }
     ],
+    "InquirePriceCreateDirectConnectGateway": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=InquirePriceCreateDirectConnectGateway\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCost\":10,\r\n        \"RealTotalCost\":10,\r\n         \"RequestId\":\"128826e5-2881-4c60-9168-73899331801c\"\r\n    }\r\n}",
+        "title": "创建专线网关询价输入"
+      }
+    ],
     "InquiryPriceCreateVpnGateway": [
       {
         "document": "",

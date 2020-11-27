@@ -960,6 +960,12 @@
       "name": "HAVIP解绑EIP",
       "output": "HaVipDisassociateAddressIpResponse"
     },
+    "InquirePriceCreateDirectConnectGateway": {
+      "document": "本接口（DescribePriceCreateDirectConnectGateway）用于创建专线网关询价。",
+      "input": "InquirePriceCreateDirectConnectGatewayRequest",
+      "name": "创建专线网关询价",
+      "output": "InquirePriceCreateDirectConnectGatewayResponse"
+    },
     "InquiryPriceCreateVpnGateway": {
       "document": "本接口（InquiryPriceCreateVpnGateway）用于创建VPN网关询价。",
       "input": "InquiryPriceCreateVpnGatewayRequest",
@@ -11421,6 +11427,37 @@
         }
       ],
       "usage": "in"
+    },
+    "InquirePriceCreateDirectConnectGatewayRequest": {
+      "document": "InquirePriceCreateDirectConnectGateway请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "InquirePriceCreateDirectConnectGatewayResponse": {
+      "document": "InquirePriceCreateDirectConnectGateway返回参数结构体",
+      "members": [
+        {
+          "document": "专线网关标准接入费用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCost",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "专线网关真实接入费用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RealTotalCost",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InquiryPriceCreateVpnGatewayRequest": {
       "document": "InquiryPriceCreateVpnGateway请求参数结构体",

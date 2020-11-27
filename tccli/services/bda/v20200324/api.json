@@ -12,6 +12,12 @@
       "name": "创建人员",
       "output": "CreatePersonResponse"
     },
+    "CreateSegmentationTask": {
+      "document": "本接口为离线人像分割处理接口组中的提交任务接口，可以对提交的资源进行处理视频流/图片流识别视频作品中的人像区域，进行一键抠像、背景替换、人像虚化等后期处理。",
+      "input": "CreateSegmentationTaskRequest",
+      "name": "创建视频人像分割处理任务",
+      "output": "CreateSegmentationTaskResponse"
+    },
     "CreateTrace": {
       "document": "将一个人体轨迹添加到一个人员中。一个人员最多允许包含 5 个人体轨迹。同一人的人体轨迹越多，搜索识别效果越好。\n\n>请注意：\n- 我们希望您的输入为 严格符合轨迹图片 要求的图片。如果您输入的图片不符合轨迹图片要求，会对最终效果产生较大负面影响。请您尽量保证一个Trace中的图片人体清晰、无遮挡、连贯。\n- 一个人体轨迹（Trace）可以包含1-5张人体图片。提供越多质量高的人体图片有助于提升最终识别结果。\n- 无论您在单个Trace中提供了多少张人体图片，我们都将生成一个对应的轨迹（Trace）信息。即，Trace仅和本次输入的图片序列相关，和图片的个数无关。\n- 输入的图片组中，若有部分图片输入不合法（如图片大小过大、分辨率过大、无法解码等），我们将舍弃这部分图片，确保合法图片被正确搜索。即，我们将尽可能保证请求成功，去除不合法的输入；\n- 构成人体轨迹单张图片大小限制为2M，分辨率限制为1920*1080。",
       "input": "CreateTraceRequest",
@@ -29,6 +35,12 @@
       "input": "DeletePersonRequest",
       "name": "删除人员",
       "output": "DeletePersonResponse"
+    },
+    "DescribeSegmentationTask": {
+      "document": "可以查看单条任务的处理情况，包括处理状态，处理结果。",
+      "input": "DescribeSegmentationTaskRequest",
+      "name": "查看视频人像分割处理任务信息",
+      "output": "DescribeSegmentationTaskResponse"
     },
     "DetectBody": {
       "document": "检测给定图片中的人体（Body）的位置信息及属性信息。\n",
@@ -83,6 +95,12 @@
       "input": "SegmentPortraitPicRequest",
       "name": "人像分割",
       "output": "SegmentPortraitPicResponse"
+    },
+    "TerminateSegmentationTask": {
+      "document": "终止指定视频人像分割处理任务",
+      "input": "TerminateSegmentationTaskRequest",
+      "name": "终止视频人像分割处理任务",
+      "output": "TerminateSegmentationTaskResponse"
     }
   },
   "metadata": {
@@ -571,6 +589,62 @@
       ],
       "type": "object"
     },
+    "CreateSegmentationTaskRequest": {
+      "document": "CreateSegmentationTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要分割的视频URL，可外网访问。",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "背景图片URL。 \n可以将视频背景替换为输入的图片。 \n如果不输入背景图片，则输出人像区域mask。",
+          "member": "string",
+          "name": "BackgroundImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预留字段，后期用于展示更多识别信息。",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSegmentationTaskResponse": {
+      "document": "CreateSegmentationTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务标识ID,可以用与追溯任务状态，查看任务结果",
+          "member": "string",
+          "name": "TaskID",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预估处理时间，单位为秒",
+          "member": "float",
+          "name": "EstimatedProcessingTime",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTraceRequest": {
       "document": "CreateTrace请求参数结构体",
       "members": [
@@ -676,6 +750,67 @@
     "DeletePersonResponse": {
       "document": "DeletePerson返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSegmentationTaskRequest": {
+      "document": "DescribeSegmentationTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "在提交分割任务成功时返回的任务标识ID。",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSegmentationTaskResponse": {
+      "document": "DescribeSegmentationTask返回参数结构体",
+      "members": [
+        {
+          "document": "当前任务状态：\nQUEUING 排队中\nPROCESSING 处理中\nFINISHED 处理完成",
+          "member": "string",
+          "name": "TaskStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分割后视频URL, 存储于腾讯云COS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分割后视频MD5，用于校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResultVideoMD5",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "视频基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VideoBasicInformation",
+          "name": "VideoBasicInformation",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分割任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrorMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1624,6 +1759,32 @@
       ],
       "usage": "in"
     },
+    "TerminateSegmentationTaskRequest": {
+      "document": "TerminateSegmentationTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "在提交分割任务成功时返回的任务标识ID。",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateSegmentationTaskResponse": {
+      "document": "TerminateSegmentationTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Trace": {
       "document": "人体轨迹信息",
       "members": [
@@ -1781,6 +1942,57 @@
           "name": "Probability",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoBasicInformation": {
+      "document": "视频基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频宽度",
+          "member": "int64",
+          "name": "FrameWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频高度",
+          "member": "int64",
+          "name": "FrameHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频帧速率(FPS)",
+          "member": "int64",
+          "name": "FramesPerSecond",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频帧数",
+          "member": "int64",
+          "name": "TotalFrames",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

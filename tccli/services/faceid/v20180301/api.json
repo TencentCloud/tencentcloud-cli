@@ -30,6 +30,12 @@
       "name": "身份证人像照片验真",
       "output": "CheckIdCardInformationResponse"
     },
+    "CheckPhoneAndName": {
+      "document": "本接口用于校验手机号和姓名的真实性和一致性。",
+      "input": "CheckPhoneAndNameRequest",
+      "name": "手机号二要素核验",
+      "output": "CheckPhoneAndNameResponse"
+    },
     "DetectAuth": {
       "document": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
       "input": "DetectAuthRequest",
@@ -504,6 +510,54 @@
       ],
       "type": "object"
     },
+    "CheckPhoneAndNameRequest": {
+      "document": "CheckPhoneAndName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "⼿机号",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckPhoneAndNameResponse": {
+      "document": "CheckPhoneAndName返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 验证结果一致\n1: 验证结果不一致\n不收费结果码：\n-1:查无记录\n-2:引擎未知错误\n-3:引擎服务异常",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetectAuthRequest": {
       "document": "DetectAuth请求参数结构体",
       "members": [
@@ -699,6 +753,15 @@
           "document": "本次一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Comparemsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "比对库源类型。包括：\n公安商业库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CompareLibType",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -969,6 +1032,15 @@
           "document": "手机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程最终比对库源类型。包括：\n公安商业库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CompareLibType",
           "required": true,
           "type": "string",
           "value_allowed_null": true

@@ -11,7 +11,7 @@
     "AnalyzeFace": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=AnalyzeFace\r\n&Mode=0\r\n&Url=http://test.image.myqcloud.com/testA.jpg\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=AnalyzeFace\n&Mode=0\n&Url=http://test.image.myqcloud.com/testA.jpg\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"ImageWidth\": 550,\r\n        \"ImageHeight\": 366,\r\n        \"FaceShapeSet\":[\r\n               {\r\n                     \"FaceProfile\":[{\"X\":63,\"Y\":335},{\"X\":63,\"Y\":374},{\"X\":66,\"Y\":412},{\"X\":74,\"Y\":450},{\"X\":85,\"Y\":487},{\"X\":100,\"Y\":522},{\"X\":121,\"Y\":554},{\"X\":147,\"Y\":582},{\"X\":176,\"Y\":608},{\"X\":208,\"Y\":627},{\"X\":245,\"Y\":634},{\"X\":282,\"Y\":627},{\"X\":315,\"Y\":607},{\"X\":344,\"Y\":582},{\"X\":370,\"Y\":554},{\"X\":391,\"Y\":522},{\"X\":405,\"Y\":487},{\"X\":416,\"Y\":449},{\"X\":423,\"Y\":411},{\"X\":427,\"Y\":372},{\"X\":426,\"Y\":334}],\r\n                     \"LeftEye\":[{\"X\":114,\"Y\":333},{\"X\":128,\"Y\":345},{\"X\":146,\"Y\":349},{\"X\":165,\"Y\":347},{\"X\":183,\"Y\":341},{\"X\":169,\"Y\":325},{\"X\":150,\"Y\":318},{\"X\":130,\"Y\":321}],\r\n                     \"RightEye\":[{\"X\":378,\"Y\":331},{\"X\":364,\"Y\":343},{\"X\":345,\"Y\":348},{\"X\":327,\"Y\":346},{\"X\":309,\"Y\":340},{\"X\":322,\"Y\":323},{\"X\":341,\"Y\":316},{\"X\":361,\"Y\":319}],\r\n                     \"LeftEyeBrow\":[{\"X\":79,\"Y\":280},{\"X\":108,\"Y\":275},{\"X\":138,\"Y\":274},{\"X\":168,\"Y\":277},{\"X\":198,\"Y\":279},{\"X\":173,\"Y\":256},{\"X\":139,\"Y\":251},{\"X\":105,\"Y\":256}],\r\n                     \"RightEyeBrow\":[{\"X\":410,\"Y\":277},{\"X\":380,\"Y\":273},{\"X\":350,\"Y\":272},{\"X\":320,\"Y\":275},{\"X\":290,\"Y\":277},{\"X\":315,\"Y\":255},{\"X\":349,\"Y\":249},{\"X\":384,\"Y\":254}],\r\n                     \"Mouth\":[{\"X\":173,\"Y\":522},{\"X\":193,\"Y\":541},{\"X\":217,\"Y\":554},{\"X\":244,\"Y\":558},{\"X\":272,\"Y\":554},{\"X\":297,\"Y\":541},{\"X\":317,\"Y\":522},{\"X\":291,\"Y\":517},{\"X\":264,\"Y\":512},{\"X\":245,\"Y\":517},{\"X\":225,\"Y\":512},{\"X\":199,\"Y\":517},{\"X\":196,\"Y\":528},{\"X\":220,\"Y\":532},{\"X\":244,\"Y\":535},{\"X\":269,\"Y\":532},{\"X\":293,\"Y\":528},{\"X\":293,\"Y\":525},{\"X\":269,\"Y\":527},{\"X\":245,\"Y\":530},{\"X\":221,\"Y\":528},{\"X\":197,\"Y\":525}],\r\n                    \"Nose\":[{\"X\":244,\"Y\":428},{\"X\":245,\"Y\":341},{\"X\":231,\"Y\":367},{\"X\":217,\"Y\":392},{\"X\":203,\"Y\":418},{\"X\":187,\"Y\":448},{\"X\":217,\"Y\":464},{\"X\":245,\"Y\":468},{\"X\":272,\"Y\":464},{\"X\":302,\"Y\":448},{\"X\":287,\"Y\":417},{\"X\":273,\"Y\":392},{\"X\":259,\"Y\":366}],\r\n                    \"LeftPupil\":[{\"X\":188,\"Y\":303}],\r\n                    \"RightPupil\":[{\"X\":201,\"Y\":304}]\r\n              }\r\n         ],\r\n        \"FaceModelVersion\":\"3.0\",\r\n        \"RequestId\": \"a8eb4545-a154-4f86-9510-57a8be9cae0c\"\r\n    }\r\n}",
         "title": "五官定位接口"
       }
@@ -33,8 +33,8 @@
     "CompareFace": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CompareFace\r\n&UrlA=http://test.image.myqcloud.com/testA.jpg\r\n&UrlB=http://test.image.myqcloud.com/testB.jpg\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Score\": 0.999,\r\n        \"RequestId\": \"a8eb4545-a154-4f86-9510-57a8be9cae0c\"\r\n    }\r\n}",
+        "input": "https://iai.tencentcloudapi.com/?Action=CompareFace\n&UrlA=http://test.image.myqcloud.com/testA.jpg\n&UrlB=http://test.image.myqcloud.com/testB.jpg\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Score\": 0.999,\r\n        \"RequestId\": \"a8eb4545-a154-4f86-9510-57a8be9cae0c\",\r\n        \"FaceModelVersion\":\"3.0\"\r\n    }\r\n}",
         "title": "人脸比对接口"
       }
     ],
@@ -69,25 +69,25 @@
     "CreateGroup": [
       {
         "document": "创建人员库",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\r\n&GroupName=腾讯深圳员工库\r\n&FaceModelVersion=3.0\r\n&GroupId=TencentShenZhenEmployee\r\n&Tag=不含实习生\r\n&GroupExDescriptions.0=事业群\r\n&GroupExDescriptions.1=部门名\r\n&GroupExDescriptions.2=组名\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&FaceModelVersion=3.0\n&GroupId=TencentShenZhenEmployee\n&Tag=不含实习生\n&GroupExDescriptions.0=事业群\n&GroupExDescriptions.1=部门名\n&GroupExDescriptions.2=组名\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"FaceModelVersion\": \"3.0\",\r\n        \"RequestId\": \"e53ee4ec-9099-4b35-a129-21dd4820ff85\"\r\n    }\r\n}",
         "title": "创建人员库接口-2"
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\r\n&GroupName=某某大学竹园宿舍楼1号楼\r\n&GroupId=ZhuYuanDormitoryNo1\r\n&FaceModelVersion=3.0\r\n&Tag=全是女生哦\r\n&GroupExDescriptions.0=学院名\r\n&GroupExDescriptions.1=专业\r\n&GroupExDescriptions.2=年级\r\n&GroupExDescriptions.3=学号\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=某某大学竹园宿舍楼1号楼\n&GroupId=ZhuYuanDormitoryNo1\n&FaceModelVersion=3.0\n&Tag=全是女生哦\n&GroupExDescriptions.0=学院名\n&GroupExDescriptions.1=专业\n&GroupExDescriptions.2=年级\n&GroupExDescriptions.3=学号\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"FaceModelVersion\": \"3.0\",\r\n        \"RequestId\": \"1695f3dd-b668-479e-8b87-f37de371a8ec\"\r\n    }\r\n}",
         "title": "创建人员库接口"
       },
       {
         "document": "人员库ID不可重复",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\r\n&GroupName=腾讯深圳员工库\r\n&GroupId=TencentShenZhenEmployee\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&GroupId=TencentShenZhenEmployee\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Error\": {\r\n            \"Code\": \"InvalidParameterValue.GroupIdAlreadyExist\",\r\n            \"Message\": \"人员库ID已经存在。人员库ID不可重复。\"\r\n        },\r\n        \"RequestId\": \"76ec6e41-37d6-4ab9-abef-48ef0c6ab175\"\r\n    }\r\n}",
         "title": "错误示例-2"
       },
       {
         "document": "人员库ID不支持中文",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\r\n&GroupName=腾讯深圳员工库\r\n&GroupId=腾讯深圳员工库\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&GroupId=腾讯深圳员工库\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Error\": {\r\n            \"Code\": \"InvalidParameterValue.GroupIdIllegal\",\r\n            \"Message\": \"人员库ID包含非法字符。人员库ID只支持英文、数字、-%@#&_。\"\r\n        },\r\n        \"RequestId\": \"8125dda4-2905-4e02-88bd-79a93a660ad2\"\r\n    }\r\n}",
         "title": "错误示例"
       }
@@ -177,14 +177,14 @@
     "DetectFace": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=DetectFace\r\n&MaxFaceNum=1\r\n&MinFaceSize=40\r\n&Url=http://test.image.myqcloud.com/testB.jpg\r\n&NeedFaceAttributes=0\r\n&NeedQualityDetection=0\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"ImageWidth\": 640,\r\n        \"ImageHeight\": 440,\r\n        \"FaceInfos\": [\r\n            {\r\n                \"X\": 156,\r\n                \"Y\": 129,\r\n                \"Width\": 196,\r\n                \"Height\": 196,\r\n                \"FaceAttributesInfo\": {\r\n                    \"Gender\": 0,\r\n                    \"Age\": 0,\r\n                    \"Expression\": 0,\r\n                    \"Hat\": false,\r\n                    \"Glass\": false,\r\n                    \"Mask\": false,\r\n                    \"Hair\": {\r\n                        \"Length\": 0,\r\n                        \"Bang\": 0,\r\n                        \"Color\": 0\r\n                    },\r\n                    \"Pitch\": 0,\r\n                    \"Yaw\": 0,\r\n                    \"Roll\": 0,\r\n                    \"Beauty\": 0\r\n                },\r\n                \"FaceQualityInfo\": {\r\n                    \"Score\": 0,\r\n                    \"Sharpness\": 0,\r\n                    \"Brightness\": 0,\r\n                    \"Completeness\": {\r\n                        \"Eyebrow\": 0,\r\n                        \"Eye\": 0,\r\n                        \"Nose\": 0,\r\n                        \"Cheek\": 0,\r\n                        \"Mouth\": 0,\r\n                        \"Chin\": 0\r\n                    }\r\n                }\r\n            }\r\n        ],\r\n        \"FaceModelVersion\":\"3.0\",\r\n        \"RequestId\": \"a574102d-1b86-48a7-a08b-6a741a8fedb6\"\r\n    }\r\n}",
+        "input": "https://iai.tencentcloudapi.com/?Action=DetectFace\n&MaxFaceNum=1\n&MinFaceSize=40\n&Url=http://test.image.myqcloud.com/testB.jpg\n&NeedFaceAttributes=0\n&NeedQualityDetection=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ImageWidth\": 640,\r\n        \"ImageHeight\": 440,\r\n        \"FaceInfos\": [\r\n            {\r\n                \"X\": 156,\r\n                \"Y\": 129,\r\n                \"Width\": 196,\r\n                \"Height\": 196,\r\n                \"FaceAttributesInfo\": {\r\n                    \"Gender\": 0,\r\n                    \"Age\": 0,\r\n                    \"Expression\": 0,\r\n                    \"Hat\": false,\r\n                    \"Glass\": false,\r\n                    \"EyeOpen\": true, \r\n                    \"Mask\": false,\r\n                    \"Hair\": {\r\n                        \"Length\": 0,\r\n                        \"Bang\": 0,\r\n                        \"Color\": 0\r\n                    },\r\n                    \"Pitch\": 0,\r\n                    \"Yaw\": 0,\r\n                    \"Roll\": 0,\r\n                    \"Beauty\": 0\r\n                },\r\n                \"FaceQualityInfo\": {\r\n                    \"Score\": 0,\r\n                    \"Sharpness\": 0,\r\n                    \"Brightness\": 0,\r\n                    \"Completeness\": {\r\n                        \"Eyebrow\": 0,\r\n                        \"Eye\": 0,\r\n                        \"Nose\": 0,\r\n                        \"Cheek\": 0,\r\n                        \"Mouth\": 0,\r\n                        \"Chin\": 0\r\n                    }\r\n                }\r\n            }\r\n        ],\r\n        \"FaceModelVersion\":\"3.0\",\r\n        \"RequestId\": \"a574102d-1b86-48a7-a08b-6a741a8fedb6\"\r\n    }\r\n}",
         "title": "人脸检测与分析接口"
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=DetectFace\r\n&MaxFaceNum=1\r\n&MinFaceSize=40\r\n&Url=http://test.image.myqcloud.com/testA.jpg\r\n&NeedFaceAttributes=1\r\n&NeedQualityDetection=1\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"ImageWidth\": 640,\r\n        \"ImageHeight\": 440,\r\n        \"FaceInfos\": [\r\n            {\r\n                \"X\": 156,\r\n                \"Y\": 129,\r\n                \"Width\": 196,\r\n                \"Height\": 196,\r\n                \"FaceAttributesInfo\": {\r\n                    \"Gender\": 99,\r\n                    \"Age\": 51,\r\n                    \"Expression\": 99,\r\n                    \"Hat\": false,\r\n                    \"Glass\": false,\r\n                    \"Mask\": true,\r\n                    \"Hair\": {\r\n                        \"Length\": 1,\r\n                        \"Bang\": 1,\r\n                        \"Color\": 0\r\n                    },\r\n                    \"Pitch\": 17,\r\n                    \"Yaw\": 5,\r\n                    \"Roll\": -2,\r\n                    \"Beauty\": 71\r\n                },\r\n                \"FaceQualityInfo\": {\r\n                    \"Score\": 63,\r\n                    \"Sharpness\": 73,\r\n                    \"Brightness\": 47,\r\n                    \"Completeness\": {\r\n                        \"Eyebrow\": 99,\r\n                        \"Eye\": 99,\r\n                        \"Nose\": 99,\r\n                        \"Cheek\": 52,\r\n                        \"Mouth\": 99,\r\n                        \"Chin\": 47\r\n                    }\r\n                }\r\n            }\r\n        ],\r\n        \"FaceModelVersion\":\"3.0\",\r\n        \"RequestId\": \"bcde47b5-e6d8-446e-a538-bcecffbe306a\"\r\n    }\r\n}",
+        "input": "https://iai.tencentcloudapi.com/?Action=DetectFace\n&MaxFaceNum=1\n&MinFaceSize=40\n&Url=http://test.image.myqcloud.com/testA.jpg\n&NeedFaceAttributes=1\n&NeedQualityDetection=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ImageWidth\": 640,\r\n        \"ImageHeight\": 440,\r\n        \"FaceInfos\": [\r\n            {\r\n                \"X\": 156,\r\n                \"Y\": 129,\r\n                \"Width\": 196,\r\n                \"Height\": 196,\r\n                \"FaceAttributesInfo\": {\r\n                    \"Gender\": 99,\r\n                    \"Age\": 51,\r\n                    \"Expression\": 99,\r\n                    \"Hat\": false,\r\n                    \"Glass\": false,\r\n                    \"EyeOpen\": true, \r\n                    \"Mask\": true,\r\n                    \"Hair\": {\r\n                        \"Length\": 1,\r\n                        \"Bang\": 1,\r\n                        \"Color\": 0\r\n                    },\r\n                    \"Pitch\": 17,\r\n                    \"Yaw\": 5,\r\n                    \"Roll\": -2,\r\n                    \"Beauty\": 71\r\n                },\r\n                \"FaceQualityInfo\": {\r\n                    \"Score\": 63,\r\n                    \"Sharpness\": 73,\r\n                    \"Brightness\": 47,\r\n                    \"Completeness\": {\r\n                        \"Eyebrow\": 99,\r\n                        \"Eye\": 99,\r\n                        \"Nose\": 99,\r\n                        \"Cheek\": 52,\r\n                        \"Mouth\": 99,\r\n                        \"Chin\": 47\r\n                    }\r\n                }\r\n            }\r\n        ],\r\n        \"FaceModelVersion\":\"3.0\",\r\n        \"RequestId\": \"bcde47b5-e6d8-446e-a538-bcecffbe306a\"\r\n    }\r\n}",
         "title": "人脸检测与分析接口-2"
       }
     ],
@@ -199,7 +199,7 @@
     "DetectLiveFace": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=DetectLiveFace\r\n&Url=http://test.image.myqcloud.com/testA.jpg\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=DetectLiveFace\n&Url=http://test.image.myqcloud.com/testA.jpg\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"Score\": 99,\r\n    \"IsLiveness\": true,\r\n    \"FaceModelVersion\": \"3.0\",\r\n    \"RequestId\": \"048a5eb3-f7a9-4c1f-a982-00e90b6b892c\"\r\n  }\r\n}",
         "title": "人脸静态活体检测接口"
       }

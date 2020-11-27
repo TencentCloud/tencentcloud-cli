@@ -24,6 +24,14 @@
         "title": "将集群内节点移入节点池"
       }
     ],
+    "CheckInstancesUpgradeAble": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CheckInstancesUpgradeAble\n&ClusterId=cls-xxxxxx\n&InstanceIds.0=ins-q40fqbso\n&InstanceIds.1=ins-hvldgo6w\n&InstanceIds.2=ins-hrtaxazg\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"ClusterVersion\": \"1.14.3-tk8s-v1.1-1\",\r\n    \"LatestVersion\": \"1.14.3-tk8s-v1.1-1\",\r\n    \"Total\": 3,\r\n    \"RequestId\": \"123\",\r\n    \"UpgradeAbleInstances\": [\r\n      {\r\n        \"InstanceId\": \"ins-q40fqbso\",\r\n        \"LatestVersion\": \"xx\",\r\n        \"Version\": \"1.14.3-tk8s-v1.0\"\r\n      },\r\n      {\r\n        \"InstanceId\": \"ins-hvldgo6w\",\r\n         \"LatestVersion\": \"xx\",\r\n        \"Version\": \"1.14.3-tk8s-v1.0\"\r\n      },\r\n      {\r\n        \"InstanceId\": \"ins-hrtaxazg\",\r\n         \"LatestVersion\": \"xx\",\r\n        \"Version\": \"1.14.3-tk8s-v1.0\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "title": "检查节点是否可升级"
+      }
+    ],
     "CreateCluster": [
       {
         "document": "创建托管集群",
@@ -354,6 +362,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=RemoveNodeFromNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxxxx\n&InstanceIds.0=ins-xxxxxxxx\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxx\"\r\n    }\r\n}",
         "title": "移出节点池节点"
+      }
+    ],
+    "UpgradeClusterInstances": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=UpgradeClusterInstances\n&ClusterId=cls-xxxxxx\n&UpgradeType=reset\n&Operation=create\n&InstanceIds.0=ins-xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "集群节点升级"
       }
     ]
   },

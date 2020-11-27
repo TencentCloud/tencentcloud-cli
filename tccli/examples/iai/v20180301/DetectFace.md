@@ -31,6 +31,7 @@ Output:
                     "Expression": 0,
                     "Hat": false,
                     "Glass": false,
+                    "EyeOpen": true,
                     "Mask": false,
                     "Hair": {
                         "Length": 0,
@@ -96,6 +97,7 @@ Output:
                     "Expression": 99,
                     "Hat": false,
                     "Glass": false,
+                    "EyeOpen": true,
                     "Mask": true,
                     "Hair": {
                         "Length": 1,
