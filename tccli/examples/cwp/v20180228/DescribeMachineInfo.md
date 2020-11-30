@@ -27,7 +27,11 @@ Output:
         "IsProVersion": true,
         "PayMode": "PREPAY",
         "ProVersionOpenDate": "2018-07-30 12:34:22",
-        "RequestId": "ad31cc35-8523-42a2-93e0-b733ad247daa"
+        "FreeMalwaresLeft": 1,
+        "FreeVulsLeft": 1,
+        "RequestId": "ad31cc35-8523-42a2-93e0-b733ad247daa",
+        "ProVersionDeadline": "2018-07-30 00:00:00",
+        "AgentVersion": "2.0.0.1"
     }
 }
 ```

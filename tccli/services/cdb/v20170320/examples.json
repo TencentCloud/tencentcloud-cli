@@ -78,6 +78,14 @@
         "title": "创建数据库备份"
       }
     ],
+    "CreateCloneInstance": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateCloneInstance\n&InstanceId=cdb-9303wd4x\n&SpecifiedRollbackTime=2020-08-0116:27:43\n&UniqVpcId=vpc-594gwq4l\n&UniqSubnetId=subnet-dz5pj862\n&Memory=1000\n&Volume=50\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"AsyncRequestId\":\"256117ed-efa08b54-61784d44-91781bbd\"\r\n    }\r\n}",
+        "title": "克隆实例并回档到指定时间"
+      }
+    ],
     "CreateDBImportJob": [
       {
         "document": "",
@@ -316,6 +324,14 @@
         "title": "查询二进制日志"
       }
     ],
+    "DescribeCloneList": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeCloneList\n&InstanceId=cdb-9303wd4x\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n    \"Items\": [\r\n      {\r\n        \"CloneJobId\": 80,\r\n        \"DstInstanceId\": \"cdb-9ubfzt6x\",\r\n        \"EndTime\": \"\",\r\n        \"RollbackStrategy\": \"timepoint\",\r\n        \"RollbackTargetTime\": \"2019-11-15 12:34:56\",\r\n        \"SrcInstanceId\": \"cdb-4bblpca3\",\r\n        \"StartTime\": \"2019-12-26 18:05:42\",\r\n        \"TaskStatus\": \"initial\"\r\n      },\r\n      {\r\n        \"CloneJobId\": 81,\r\n        \"DstInstanceId\": \"cdb-awbsatzq\",\r\n        \"EndTime\": \"\",\r\n        \"RollbackStrategy\": \"backupset\",\r\n        \"RollbackTargetTime\": \"2019-11-15 16:13:31\",\r\n        \"SrcInstanceId\": \"cdb-4bblpca3\",\r\n        \"StartTime\": \"2019-12-26 17:16:58\",\r\n        \"TaskStatus\": \"initial\"\r\n      }\r\n    ],\r\n    \"TotalCount\": 2\r\n  }\r\n}",
+        "title": "查询克隆列表"
+      }
+    ],
     "DescribeDBImportRecords": [
       {
         "document": "",
@@ -447,7 +463,7 @@
     "DescribeErrorLogData": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeErrorLogData\r\n&InstanceId=cdb-c1nl9rpv\r\n&StartTime=1585142640\r\n&EndTime=1585142640\r\n&KeyWords.0=keywords0\r\n&Limit=400\r\n&Offset=0\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeErrorLogData\n&InstanceId=cdb-c1nl9rpv\n&StartTime=1585142640\n&EndTime=1585142640\n&KeyWords.0=keywords0\n&Limit=400\n&Offset=0\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"TotalCount\":1,\r\n        \"Items\":[\r\n            {\r\n                \"Content\": \"show master status\",\r\n                \"Timestamp\": 1585142640\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "查询实例错误日志"
       }
@@ -527,7 +543,7 @@
     "DescribeSlowLogData": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeSlowLogData\r\n&InstanceId=cdb-c1nl9rpv\r\n&StartTime=1585142640\r\n&EndTime=1585142640\r\n&UserNames.0=usename0\r\n&DataBases.0=database0\r\n&UserHosts.0=userhosts0\r\n&SortBy=RowsSent\r\n&OrderBy=DESC\r\n&Limit=400\r\n&Offset=0\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeSlowLogData\n&InstanceId=cdb-c1nl9rpv\n&StartTime=1585142640\n&EndTime=1585142640\n&UserNames.0=usename0\n&DataBases.0=database0\n&UserHosts.0=userhosts0\n&SortBy=RowsSent\n&OrderBy=DESC\n&Limit=400\n&Offset=0\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"TotalCount\":1,\r\n        \"Items\":[\r\n            {\r\n                \"Database\": \"1231231\",\r\n                \"LockTime\": 1,\r\n                \"Md5\": \"23123123\",\r\n                \"QueryTime\": 100,\r\n                \"RowsExamined\": 0,\r\n                \"RowsSent\": 0,\r\n                \"SqlTemplate\": \"show master status111111\",\r\n                \"SqlText\": \"update order_logistics set logistics_status = 205 where logistics_id in ( select `logistics_id` from `order_info` where order_no in('15706082880074381752', '15706082880074381751'))\",\r\n                \"Timestamp\": 1585142640,\r\n                \"UserHost\": \"localhost\",\r\n                \"UserName\": \"marchzcma\"\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "通过检索条件，查询实例慢日志"
       }
@@ -824,6 +840,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=StopDBImportJob\r\n&AsyncRequestId=434e366f-beaf56d6-508b7f33-2abdb382\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\r\n    }\r\n}",
         "title": "终止数据导入任务"
+      }
+    ],
+    "StopRollback": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=StopRollback\n&InstanceId=cdb-9303wd4x\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"AsyncRequestId\":\"256117ed-efa08b54-61784d44-91781bbd\"\r\n    }\r\n}",
+        "title": "撤销回档任务"
       }
     ],
     "SwitchForUpgrade": [

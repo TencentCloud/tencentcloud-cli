@@ -65,7 +65,7 @@ def doSearchFacesReturnsByGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateGroup(args, parsed_globals):
+def doGetPersonGroupInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -79,9 +79,9 @@ def doCreateGroup(args, parsed_globals):
     client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateGroupRequest()
+    model = models.GetPersonGroupInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateGroup(model)
+    rsp = client.GetPersonGroupInfo(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -240,7 +240,7 @@ def doGetPersonListNum(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetPersonGroupInfo(args, parsed_globals):
+def doCreateGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -254,9 +254,9 @@ def doGetPersonGroupInfo(args, parsed_globals):
     client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetPersonGroupInfoRequest()
+    model = models.CreateGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetPersonGroupInfo(model)
+    rsp = client.CreateGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -557,6 +557,31 @@ def doCreatePerson(args, parsed_globals):
     model = models.CreatePersonRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreatePerson(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCompareMaskFace(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CompareMaskFaceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CompareMaskFace(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -980,14 +1005,14 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DeletePersonFromGroup": doDeletePersonFromGroup,
     "SearchFacesReturnsByGroup": doSearchFacesReturnsByGroup,
-    "CreateGroup": doCreateGroup,
+    "GetPersonGroupInfo": doGetPersonGroupInfo,
     "GetCheckSimilarPersonJobIdList": doGetCheckSimilarPersonJobIdList,
     "GetPersonBaseInfo": doGetPersonBaseInfo,
     "DetectLiveFace": doDetectLiveFace,
     "CreateFace": doCreateFace,
     "DeleteGroup": doDeleteGroup,
     "GetPersonListNum": doGetPersonListNum,
-    "GetPersonGroupInfo": doGetPersonGroupInfo,
+    "CreateGroup": doCreateGroup,
     "AnalyzeFace": doAnalyzeFace,
     "ModifyPersonBaseInfo": doModifyPersonBaseInfo,
     "SearchFaces": doSearchFaces,
@@ -1000,6 +1025,7 @@ ACTION_MAP = {
     "GetSimilarPersonResult": doGetSimilarPersonResult,
     "RevertGroupFaceModelVersion": doRevertGroupFaceModelVersion,
     "CreatePerson": doCreatePerson,
+    "CompareMaskFace": doCompareMaskFace,
     "GetUpgradeGroupFaceModelVersionJobList": doGetUpgradeGroupFaceModelVersionJobList,
     "GetGroupInfo": doGetGroupInfo,
     "DetectFace": doDetectFace,

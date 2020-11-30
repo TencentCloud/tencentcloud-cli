@@ -235,8 +235,8 @@
     "DescribeBashEvents": [
       {
         "document": "获取高危命令列表",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeBashEvents\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 10,\r\n\t\t\"List\": [{\r\n\t\t\t\"Id\": 10,\r\n\t\t\t\"Uuid\": \"0ba7f086-9d6b-11e9-a431-98be94219792\",\r\n\t\t\t\"Quuid\": \"1a01222b-6ffe-4793-9a9e-4afca2d254ec\",\r\n\t\t\t\"Hostip\": \"10.105.145.42\",\r\n\t\t\t\"User\": \"root\",\r\n\t\t\t\"Platform\": 4,\r\n\t\t\t\"BashCmd\": \"ssh root@182.254.203.129\",\r\n\t\t\t\"RuleId\": 0,\r\n\t\t\t\"RuleName\": \"\",\r\n\t\t\t\"RuleLevel\": true,\r\n\t\t\t\"Status\": 0,\r\n\t\t\t\"CreateTime\": \"2019-08-12 10:53:25\",\r\n\t\t\t\"MachineName\": \"云鼎_云镜测试机_Linux_5_weikunlin\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"bd9aa8c8-36b6-4991-8e42-d08e80313616\"\r\n\t}\r\n}",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBashEvents\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 10,\r\n\t\t\"List\": [{\r\n\t\t\t\"Id\": 10,\r\n\t\t\t\"Uuid\": \"0ba7f086-9d6b-11e9-a431-98be94219792\",\r\n\t\t\t\"Quuid\": \"1a01222b-6ffe-4793-9a9e-4afca2d254ec\",\r\n\t\t\t\"Hostip\": \"10.105.145.42\",\r\n\t\t\t\"User\": \"root\",\r\n\t\t\t\"Platform\": 4,\r\n\t\t\t\"BashCmd\": \"ssh root@182.254.203.129\",\r\n\t\t\t\"RuleId\": 0,\r\n\t\t\t\"RuleName\": \"\",\r\n\t\t\t\"RuleLevel\": 0,\r\n\t\t\t\"Status\": 0,\r\n\t\t\t\"CreateTime\": \"2019-08-12 10:53:25\",\r\n\t\t\t\"MachineName\": \"云鼎_云镜测试机_Linux_5_weikunlin\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"bd9aa8c8-36b6-4991-8e42-d08e80313616\"\r\n\t}\r\n}",
         "title": "获取高危命令列表"
       }
     ],
@@ -307,16 +307,16 @@
     "DescribeMachineInfo": [
       {
         "document": "本接口（DescribeMachineInfo）用于获取机器详细情况。",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeMachineInfo\r\n&Uuid=UUID\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n         \"MachineType\" : \"CVM\",\r\n         \"MachineRegion\" : \"ap-guangzhou\",\r\n        \"InstanceId\": \"ins-ibqb87x3\",\r\n        \"MachineWanIp\": \"130.111.77.111\",\r\n        \"MachineIp\": \"10.104.248.0\",\r\n        \"MachineName\": \"开发机\",\r\n        \"MachineOs\": \"3.10.0-327.36.3.el7.x86_64\",\r\n        \"MachineStatus\": \"ONLINE\",\r\n        \"ProtectDays\": 120,\r\n        \"Quuid\": \"56af8eea-5a2a-4f0c-81ca-47208e7cd9b2\",\r\n        \"Uuid\": \"e3fcbf68-3bd6-11e8-8954-0819a624c497\",\r\n        \"IsProVersion\": true,\r\n        \"PayMode\": \"PREPAY\",\r\n        \"ProVersionOpenDate\": \"2018-07-30 12:34:22\",\r\n        \"RequestId\": \"ad31cc35-8523-42a2-93e0-b733ad247daa\"\r\n    }\r\n}",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachineInfo\n&Uuid=UUID\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n         \"MachineType\" : \"CVM\",\r\n         \"MachineRegion\" : \"ap-guangzhou\",\r\n        \"InstanceId\": \"ins-ibqb87x3\",\r\n        \"MachineWanIp\": \"130.111.77.111\",\r\n        \"MachineIp\": \"10.104.248.0\",\r\n        \"MachineName\": \"开发机\",\r\n        \"MachineOs\": \"3.10.0-327.36.3.el7.x86_64\",\r\n        \"MachineStatus\": \"ONLINE\",\r\n        \"ProtectDays\": 120,\r\n        \"Quuid\": \"56af8eea-5a2a-4f0c-81ca-47208e7cd9b2\",\r\n        \"Uuid\": \"e3fcbf68-3bd6-11e8-8954-0819a624c497\",\r\n        \"IsProVersion\": true,\r\n        \"PayMode\": \"PREPAY\",\r\n        \"ProVersionOpenDate\": \"2018-07-30 12:34:22\",\r\n        \"FreeMalwaresLeft\": 1,\r\n        \"FreeVulsLeft\": 1,\r\n        \"RequestId\": \"ad31cc35-8523-42a2-93e0-b733ad247daa\",\r\n        \"ProVersionDeadline\":\"2018-07-30 00:00:00\",\r\n        \"AgentVersion\":\"2.0.0.1\"\r\n    }\r\n}",
         "title": "获取机器详情"
       }
     ],
     "DescribeMachines": [
       {
         "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeMachines\r\n&MachineType=CVM\r\n&MachineRegion=ap-shanghai\r\n&Filters.0.Name=Keywords\r\n&Filters.0.Values.0=10.0.1.1\r\n&Limit=10\r\n&Offset=0\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"Machines\":[\r\n            {\r\n                \"MachineName\":\"ccs_cls-i4vyo8qa_node\",\r\n                \"MachineIp\":\"172.16.0.4\",\r\n                \"MachineWanIp\":\"193.112.57.245\",\r\n                \"MachineOs\":\"ubuntu16.04.1 LTSx86_64\",\r\n                \"MachineStatus\":\"OFFLINE\",\r\n                \"Quuid\":\"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\r\n                \"Uuid\":\"\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":0,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":0,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"SAFE\"\r\n            },\r\n            {\r\n                \"MachineName\":\"piperpeng-mnet\",\r\n                \"MachineIp\":\"10.0.0.8\",\r\n                \"MachineWanIp\":\"129.204.223.122\",\r\n                \"MachineOs\":\"centos7.5x86_64\",\r\n                \"MachineStatus\":\"ONLINE\",\r\n                \"Quuid\":\"d095145f-d417-49a7-8d83-da19320fd419\",\r\n                \"Uuid\":\"ecc9dfd0-674b-11e9-950f-40f2e9f553a2\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":-1,\r\n                \"Tag\":[\r\n                    {\r\n                        \"Rid\":174,\r\n                        \"Name\":\"\\u68ee\"\r\n                    }],\r\n                \"MalwareNum\":-1,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"UNKNOWN\"\r\n            },\r\n            {\r\n                \"MachineName\":\"jaryzhou-hp\",\r\n                \"MachineIp\":\"10.104.18.25\",\r\n                \"MachineWanIp\":\"139.199.79.160\",\r\n                \"MachineOs\":\"centos7.2x86_64\",\r\n                \"MachineStatus\":\"OFFLINE\",\r\n                \"Quuid\":\"999108c2-e2a4-4ce7-b3ce-dd9c7af4c7ea\",\r\n                \"Uuid\":\"a701fb5c-35ce-11ea-80ce-5cb90191ae78\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":-1,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":2,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"UNKNOWN\"\r\n            },\r\n            {\r\n                \"MachineName\":\"\\u4e0a\\u6c7d\\u79c1\\u6709\\u4e91\\u6d4b\\u8bd5\",\r\n                \"MachineIp\":\"172.16.16.15\",\r\n                \"MachineWanIp\":\"193.112.181.15\",\r\n                \"MachineOs\":\"centos6.8x86_64\",\r\n                \"MachineStatus\":\"OFFLINE\",\r\n                \"Quuid\":\"57375249-a16c-4c9f-b210-e8c1fb4e8806\",\r\n                \"Uuid\":\"\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":0,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":0,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"SAFE\"\r\n            },\r\n            {\r\n                \"MachineName\":\"\\u6f0f\\u6d1eyhvs\\u7f16\\u8bd1\\u673a-linux\",\r\n                \"MachineIp\":\"172.16.16.32\",\r\n                \"MachineWanIp\":\"106.52.175.244\",\r\n                \"MachineOs\":\"centos7.6.0_x64\",\r\n                \"MachineStatus\":\"OFFLINE\",\r\n                \"Quuid\":\"dbf3dcd4-179a-4bc6-86e4-15439f4cc898\",\r\n                \"Uuid\":\"\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":0,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":0,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"SAFE\"\r\n            },\r\n            {\r\n                \"MachineName\":\"\\u6f0f\\u6d1eyhvs\\u7f16\\u8bd1\\u673a-win\",\r\n                \"MachineIp\":\"172.16.16.48\",\r\n                \"MachineWanIp\":\"106.52.166.61\",\r\n                \"MachineOs\":\"Xserver V8.1_64\",\r\n                \"MachineStatus\":\"OFFLINE\",\r\n                \"Quuid\":\"1cbfd259-d992-4e3f-8188-02ad59b862cc\",\r\n                \"Uuid\":\"\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":0,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":0,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"SAFE\"\r\n            },\r\n            {\r\n                \"MachineName\":\"poc\\u6d4b\\u8bd5(129.204.1.205)\",\r\n                \"MachineIp\":\"10.104.162.166\",\r\n                \"MachineWanIp\":\"129.204.1.205\",\r\n                \"MachineOs\":\"CentOS6.3-64bit\",\r\n                \"MachineStatus\":\"ONLINE\",\r\n                \"Quuid\":\"2967d5c5-730b-4b76-87a1-95565f218cd0\",\r\n                \"Uuid\":\"9e9a4f9e-165e-11ea-8f91-5cb90191ae68\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":-1,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":-1,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"UNKNOWN\"\r\n            },\r\n            {\r\n                \"MachineName\":\"poc\\u6d4b\\u8bd5(203.195.231.172)\",\r\n                \"MachineIp\":\"10.104.135.28\",\r\n                \"MachineWanIp\":\"203.195.231.172\",\r\n                \"MachineOs\":\"debian9.0.0x86_64\",\r\n                \"MachineStatus\":\"ONLINE\",\r\n                \"Quuid\":\"d42129e4-54d3-41af-944c-ec5cfa0ce942\",\r\n                \"Uuid\":\"c2972dd6-165e-11ea-95eb-40f2e9f5667a\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":-1,\r\n                \"Tag\":[\r\n                    {\r\n                        \"Rid\":285,\r\n                        \"Name\":\"\\u0026\\u2026\\u2026#\\uffe5%@%36\"\r\n                    },\r\n                    {\r\n                        \"Rid\":286,\r\n                        \"Name\":\"123\"\r\n                    },\r\n                    {\r\n                        \"Rid\":283,\r\n                        \"Name\":\"helloworld\"\r\n                    },\r\n                    {\r\n                        \"Rid\":284,\r\n                        \"Name\":\"\\u68ee\"\r\n                    }],\r\n                \"MalwareNum\":1,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"UNKNOWN\"\r\n            },\r\n            {\r\n                \"MachineName\":\"poc\\u6d4b\\u8bd5(129.204.37.89)\",\r\n                \"MachineIp\":\"10.104.35.71\",\r\n                \"MachineWanIp\":\"129.204.37.89\",\r\n                \"MachineOs\":\"centos7.6.0_x64\",\r\n                \"MachineStatus\":\"OFFLINE\",\r\n                \"Quuid\":\"d7ab00a7-4318-4e6d-9280-0618c350e5eb\",\r\n                \"Uuid\":\"b0ad0c08-1645-11ea-b872-40f2e9f5bb82\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":-1,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":-1,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"UNKNOWN\"\r\n            },\r\n            {\r\n                \"MachineName\":\"poc\\u6d4b\\u8bd5(129.204.36.227)\",\r\n                \"MachineIp\":\"10.104.14.165\",\r\n                \"MachineWanIp\":\"129.204.36.227\",\r\n                \"MachineOs\":\"ubuntu18.04.1x86_64\",\r\n                \"MachineStatus\":\"OFFLINE\",\r\n                \"Quuid\":\"b86925b4-cc36-420e-80d4-5094cb2f094b\",\r\n                \"Uuid\":\"ed629672-165e-11ea-8bcf-40f2e9f3d932\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":-1,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":0,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"UNKNOWN\"\r\n            }],\r\n        \"TotalCount\":44,\r\n        \"RequestId\":\"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\r\n    }\r\n}",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachines\n&MachineType=CVM\n&MachineRegion=ap-shanghai\n&Filters.0.Name=Keywords\n&Filters.0.Values.0=10.0.1.1\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"Machines\":[\r\n            {\r\n                \"MachineName\":\"ccs_cls-i4vyo8qa_node\",\r\n                \"MachineIp\":\"172.16.0.4\",\r\n                \"MachineWanIp\":\"193.112.57.245\",\r\n                \"MachineOs\":\"ubuntu16.04.1 LTSx86_64\",\r\n                \"MachineStatus\":\"OFFLINE\",\r\n                \"Quuid\":\"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\r\n                \"Uuid\":\"\",\r\n                \"IsProVersion\":false,\r\n                \"PayMode\":\"\",\r\n                \"VulNum\":0,\r\n                \"Tag\":[\r\n                ],\r\n                \"MalwareNum\":0,\r\n                \"BaseLineNum\":0,\r\n                \"CyberAttackNum\":0,\r\n                \"SecurityStatus\":\"SAFE\",\r\n                \"InstanceState\":\"TERMINATED_PRO_VERSION\"\r\n            }\r\n         ],\r\n        \"TotalCount\":1,\r\n        \"RequestId\":\"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\r\n    }\r\n}",
         "title": "获取区域主机列表"
       }
     ],
@@ -371,7 +371,7 @@
     "DescribeOverviewStatistics": [
       {
         "document": "获取概览统计数据。",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeOverviewStatistics\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeOverviewStatistics\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"OnlineMachineNum\":1,\r\n        \"ProVersionMachineNum\":1,\r\n        \"MalwareNum\":1,\r\n        \"NonlocalLoginNum\":1,\r\n        \"BruteAttackSuccessNum\":1,\r\n        \"VulNum\":1,\r\n        \"BaseLineNum\": 1\r\n    }\r\n}",
         "title": "获取概览统计数据"
       }
@@ -427,8 +427,8 @@
     "DescribeReverseShellEvents": [
       {
         "document": "获取反弹Shell列表",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeReverseShellEvents\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 12,\r\n\t\t\"List\": [{\r\n\t\t\t\"Id\": 12,\r\n\t\t\t\"Uuid\": \"cf59e3c0-b1cc-11e9-baac-525400ca96ee\",\r\n\t\t\t\"Quuid\": \"b9821ff5-75f0-4939-b21f-13c8d36a725c\",\r\n\t\t\t\"Hostip\": \"10.0.0.125\",\r\n\t\t\t\"DstIp\": \"139.199.79.160\",\r\n\t\t\t\"DstPort\": 8080,\r\n\t\t\t\"ProcessName\": \"bash\",\r\n\t\t\t\"FullPath\": \"/bin/bash\",\r\n\t\t\t\"CmdLine\": \"bash -i \",\r\n\t\t\t\"UserName\": \"root\",\r\n\t\t\t\"UserGroup\": \"root\",\r\n\t\t\t\"ParentProcName\": \"bash\",\r\n\t\t\t\"ParentProcUser\": \"root\",\r\n\t\t\t\"ParentProcGroup\": \"root\",\r\n\t\t\t\"ParentProcPath\": \"/bin/bash\",\r\n\t\t\t\"Status\": 0,\r\n\t\t\t\"CreateTime\": \"2019-08-14 19:52:12\",\r\n\t\t\t\"MachineName\": \"云鼎_云镜测试机_Linux_4_weikunlin\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"bd9aa8c8-36b6-4991-8e42-d08e80313616\"\r\n\t}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReverseShellEvents\n<公共请求参数>\n\n{}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 12,\r\n\t\t\"List\": [{\r\n\t\t\t\"Id\": 12,\r\n\t\t\t\"Uuid\": \"cf59e3c0-b1cc-11e9-baac-525400ca96ee\",\r\n\t\t\t\"Quuid\": \"b9821ff5-75f0-4939-b21f-13c8d36a725c\",\r\n\t\t\t\"Hostip\": \"10.0.0.125\",\r\n\t\t\t\"DstIp\": \"139.199.79.160\",\r\n\t\t\t\"DstPort\": 8080,\r\n\t\t\t\"ProcessName\": \"bash\",\r\n\t\t\t\"FullPath\": \"/bin/bash\",\r\n\t\t\t\"CmdLine\": \"bash -i \",\r\n\t\t\t\"UserName\": \"root\",\r\n\t\t\t\"UserGroup\": \"root\",\r\n\t\t\t\"ParentProcName\": \"bash\",\r\n\t\t\t\"ParentProcUser\": \"root\",\r\n\t\t\t\"ParentProcGroup\": \"root\",\r\n\t\t\t\"ParentProcPath\": \"/bin/bash\",\r\n\t\t\t\"Status\": 0,\r\n\t\t\t\"CreateTime\": \"2019-08-14 19:52:12\",\r\n\t\t\t\"MachineName\": \"云鼎_云镜测试机_Linux_4_weikunlin\",\r\n                        \"ProcTree\":\"xx\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"bd9aa8c8-36b6-4991-8e42-d08e80313616\"\r\n\t}\r\n}",
         "title": "获取反弹Shell列表"
       }
     ],
@@ -446,6 +446,14 @@
         "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeSecurityDynamics\r\n&Limit=10\r\n&Offset=0\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\" ,\r\n       \"SecurityDynamics\": [{\r\n                \"Uuid\": \"add4a78a-0d59-11e8-b7ab-00e081e1a5c5\",\r\n                \"EventTime\": \"2018-10-08 12:12:22\",\r\n                 \"EventType\": \"MALWARE\",\r\n                 \"Message\": \"发现主机10.10.10.12存在恶意文件5个\"\r\n      } ],\r\n      \"TotalCount\": 100\r\n    }\r\n}",
         "title": "获取安全事件消息数据"
+      }
+    ],
+    "DescribeSecurityEventsCnt": [
+      {
+        "document": "获取安全事件数统计数据",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeSecurityEventsCnt\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"AttackLogs\": {\r\n      \"EventCnt\": 439,\r\n      \"UuidCnt\": 1\r\n    },\r\n    \"BaseLine\": {\r\n      \"EventCnt\": 1353,\r\n      \"UuidCnt\": 11\r\n    },\r\n    \"Bash\": {\r\n      \"EventCnt\": 5911,\r\n      \"UuidCnt\": 31\r\n    },\r\n    \"BruteAttack\": {\r\n      \"EventCnt\": 52,\r\n      \"UuidCnt\": 10\r\n    },\r\n    \"EmergencyVul\": {\r\n      \"EventCnt\": 6,\r\n      \"UuidCnt\": 5\r\n    },\r\n    \"HostLogin\": {\r\n      \"EventCnt\": 169,\r\n      \"UuidCnt\": 23\r\n    },\r\n    \"Malware\": {\r\n      \"EventCnt\": 226,\r\n      \"UuidCnt\": 12\r\n    },\r\n    \"PrivilegeRules\": {\r\n      \"EventCnt\": 1,\r\n      \"UuidCnt\": 1\r\n    },\r\n    \"ReverseShell\": {\r\n      \"EventCnt\": 2,\r\n      \"UuidCnt\": 1\r\n    },\r\n    \"RiskDns\": {\r\n      \"EventCnt\": 5,\r\n      \"UuidCnt\": 2\r\n    },\r\n    \"SysVul\": {\r\n      \"EventCnt\": 25,\r\n      \"UuidCnt\": 14\r\n    },\r\n    \"WebVul\": {\r\n      \"EventCnt\": 3,\r\n      \"UuidCnt\": 2\r\n    },\r\n    \"RequestId\": \"1234567\"\r\n  }\r\n}",
+        "title": "获取安全事件数统计数据"
       }
     ],
     "DescribeSecurityTrends": [
@@ -595,15 +603,15 @@
     "ExportBashEvents": [
       {
         "document": "导出高危命令事件",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=ExportBashEvents\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"DownloadUrl\": \"http://download.url/xxx.csv\"\r\n    }\r\n}",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ExportBashEvents\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"DownloadUrl\": \"http://download.url/xxx.csv\",\r\n         \"TaskId\":\"1133345\"\r\n    }\r\n}",
         "title": "导出高危命令事件"
       }
     ],
     "ExportBruteAttacks": [
       {
         "document": "导出密码破解记录成CSV文件",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=ExportBruteAttacks\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ExportBruteAttacks\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"DownloadUrl\": \"http://download.url/xxx.csv\",\r\n        \"TaskId\":\"1596595610\"\r\n    }\r\n}",
         "title": "导出密码破解记录"
       }
@@ -619,7 +627,7 @@
     "ExportMalwares": [
       {
         "document": "导出木马记录CSV文件",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=ExportMalwares\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ExportMalwares\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"DownloadUrl\": \"http://download.url/xxx.csv\"\r\n    }\r\n}",
         "title": "导出木马记录"
       }
@@ -627,7 +635,7 @@
     "ExportNonlocalLoginPlaces": [
       {
         "document": "导出异地登录事件记录CSV文件",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=ExportNonlocalLoginPlaces\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ExportNonlocalLoginPlaces\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"DownloadUrl\": \"\",\r\n        \"TaskId\":\"1596595610\"\r\n    }\r\n}",
         "title": "导出异地登录记录"
       }
@@ -643,8 +651,8 @@
     "ExportReverseShellEvents": [
       {
         "document": "导出反弹Shell事件",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=ExportReverseShellEvents\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"DownloadUrl\": \"http://download.url/xxx.csv\"\r\n    }\r\n}",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ExportReverseShellEvents\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"DownloadUrl\": \"http://download.url/xxx.csv\",\r\n         \"TaskId\":\"\"\r\n    }\r\n}",
         "title": "导出反弹Shell事件"
       }
     ],

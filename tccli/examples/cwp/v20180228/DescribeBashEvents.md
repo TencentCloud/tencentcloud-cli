@@ -23,7 +23,7 @@ Output:
                 "BashCmd": "ssh root@182.254.203.129",
                 "RuleId": 0,
                 "RuleName": "",
-                "RuleLevel": true,
+                "RuleLevel": 0,
                 "Status": 0,
                 "CreateTime": "2019-08-12 10:53:25",
                 "MachineName": "云鼎_云镜测试机_Linux_5_weikunlin"

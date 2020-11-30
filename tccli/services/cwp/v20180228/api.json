@@ -336,6 +336,12 @@
       "name": "获取安全事件消息",
       "output": "DescribeSecurityDynamicsResponse"
     },
+    "DescribeSecurityEventsCnt": {
+      "document": "概览页抽屉侧边弹窗：安全概览“立即处理”页面中的相关事件数统计接口。",
+      "input": "DescribeSecurityEventsCntRequest",
+      "name": "获取安全事件数统计数据",
+      "output": "DescribeSecurityEventsCntResponse"
+    },
     "DescribeSecurityTrends": {
       "document": "本接口 (DescribeSecurityTrends) 用于获取安全事件统计数据。",
       "input": "DescribeSecurityTrendsRequest",
@@ -3296,6 +3302,20 @@
           "value_allowed_null": false
         },
         {
+          "document": "agent版本号",
+          "member": "string",
+          "name": "AgentVersion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "专业版到期时间(仅预付费)",
+          "member": "string",
+          "name": "ProVersionDeadline",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4255,6 +4275,107 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityEventsCntRequest": {
+      "document": "DescribeSecurityEventsCnt请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSecurityEventsCntResponse": {
+      "document": "DescribeSecurityEventsCnt返回参数结构体",
+      "members": [
+        {
+          "document": "木马文件相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "Malware",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录审计相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "HostLogin",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "密码破解相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "BruteAttack",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恶意请求相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "RiskDns",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高危命令相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "Bash",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本地提权相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "PrivilegeRules",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "反弹Shell相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "ReverseShell",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "系统组件相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "SysVul",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Web应用漏洞相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "WebVul",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应急漏洞相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "EmergencyVul",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全基线相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "BaseLine",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "攻击检测相关风险事件",
+          "member": "SecurityEventInfo",
+          "name": "AttackLogs",
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -5353,7 +5474,16 @@
     },
     "ExportBashEventsRequest": {
       "document": "ExportBashEvents请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ExportBashEventsResponse": {
@@ -5363,6 +5493,13 @@
           "document": "导出文件下载链接地址。",
           "member": "string",
           "name": "DownloadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "导出任务ID",
+          "member": "string",
+          "name": "TaskId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -5377,7 +5514,16 @@
     },
     "ExportBruteAttacksRequest": {
       "document": "ExportBruteAttacks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ExportBruteAttacksResponse": {
@@ -5387,6 +5533,13 @@
           "document": "导出文件下载链接地址。",
           "member": "string",
           "name": "DownloadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "导出任务ID",
+          "member": "string",
+          "name": "TaskId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -5425,7 +5578,32 @@
     },
     "ExportMalwaresRequest": {
       "document": "ExportMalwares请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "限制条数,默认10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量 默认0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤参数。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>FilePath - String - 是否必填：否 - 路径筛选</li>\n<li>VirusName - String - 是否必填：否 - 描述筛选</li>\n<li>CreateBeginTime - String - 是否必填：否 - 创建时间筛选-开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 创建时间筛选-结束时间</li>\n<li>Status - String - 是否必填：否 - 状态筛选</li>",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ExportMalwaresResponse": {
@@ -5449,7 +5627,16 @@
     },
     "ExportNonlocalLoginPlacesRequest": {
       "document": "ExportNonlocalLoginPlaces请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ExportNonlocalLoginPlacesResponse": {
@@ -5504,7 +5691,16 @@
     },
     "ExportReverseShellEventsRequest": {
       "document": "ExportReverseShellEvents请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ExportReverseShellEventsResponse": {
@@ -5514,6 +5710,13 @@
           "document": "导出文件下载链接地址。",
           "member": "string",
           "name": "DownloadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务id",
+          "member": "string",
+          "name": "TaskId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -5528,6 +5731,30 @@
     },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n\n* 最多只能有5个Filter\n* 同一个Filter存在多个Values，Values值数量最多不能超过5个。\n",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filters": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
         {
           "default": "",
@@ -6126,6 +6353,24 @@
           "name": "RegionInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态 TERMINATED_PRO_VERSION 已销毁",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权状态 1 授权 0 未授权",
+          "member": "uint64",
+          "name": "LicenseStatus",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7774,6 +8019,30 @@
           "name": "SecurityLevel",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityEventInfo": {
+      "document": "安全事件统计列表",
+      "members": [
+        {
+          "default": "",
+          "document": "安全事件数",
+          "member": "uint64",
+          "name": "EventCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "受影响机器数",
+          "member": "uint64",
+          "name": "UuidCnt",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

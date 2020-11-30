@@ -38,6 +38,14 @@
         "title": "人脸比对接口"
       }
     ],
+    "CompareMaskFace": [
+      {
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=CompareMaskFace\n&UrlA=http://test.image.myqcloud.com/testA.jpg\n&UrlB=http://test.image.myqcloud.com/testB.jpg\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Score\": 0.999,\r\n        \"FaceModelVersion\": \"3.0\",\r\n        \"RequestId\": \"a8eb4545-a154-4f86-9510-57a8be9cae0c\"\r\n    }\r\n}",
+        "title": "人脸比对接口"
+      }
+    ],
     "CopyPerson": [
       {
         "document": "",

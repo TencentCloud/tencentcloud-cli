@@ -1263,7 +1263,7 @@ def doDescribeAccountStatistics(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAlarmAttribute(args, parsed_globals):
+def doEditTags(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1277,9 +1277,9 @@ def doModifyAlarmAttribute(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAlarmAttributeRequest()
+    model = models.EditTagsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyAlarmAttribute(model)
+    rsp = client.EditTags(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1513,7 +1513,7 @@ def doAddMachineTag(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyProVersionRenewFlag(args, parsed_globals):
+def doModifyAlarmAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1527,9 +1527,9 @@ def doModifyProVersionRenewFlag(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyProVersionRenewFlagRequest()
+    model = models.ModifyAlarmAttributeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyProVersionRenewFlag(model)
+    rsp = client.ModifyAlarmAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1805,6 +1805,31 @@ def doDescribeProVersionInfo(args, parsed_globals):
     model = models.DescribeProVersionInfoRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeProVersionInfo(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSecurityEventsCnt(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityEventsCntRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSecurityEventsCnt(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2138,7 +2163,7 @@ def doDescribeComponentInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMachines(args, parsed_globals):
+def doModifyProVersionRenewFlag(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2152,9 +2177,9 @@ def doDescribeMachines(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMachinesRequest()
+    model = models.ModifyProVersionRenewFlagRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeMachines(model)
+    rsp = client.ModifyProVersionRenewFlag(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2438,7 +2463,7 @@ def doDescribeBashEvents(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doEditTags(args, parsed_globals):
+def doDescribeMachines(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2452,9 +2477,9 @@ def doEditTags(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EditTagsRequest()
+    model = models.DescribeMachinesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.EditTags(model)
+    rsp = client.DescribeMachines(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2574,7 +2599,7 @@ ACTION_MAP = {
     "CreateOpenPortTask": doCreateOpenPortTask,
     "CloseProVersion": doCloseProVersion,
     "DescribeAccountStatistics": doDescribeAccountStatistics,
-    "ModifyAlarmAttribute": doModifyAlarmAttribute,
+    "EditTags": doEditTags,
     "DescribeOpenPortStatistics": doDescribeOpenPortStatistics,
     "ExportBruteAttacks": doExportBruteAttacks,
     "TrustMaliciousRequest": doTrustMaliciousRequest,
@@ -2584,7 +2609,7 @@ ACTION_MAP = {
     "DescribeBruteAttacks": doDescribeBruteAttacks,
     "OpenProVersionPrepaid": doOpenProVersionPrepaid,
     "AddMachineTag": doAddMachineTag,
-    "ModifyProVersionRenewFlag": doModifyProVersionRenewFlag,
+    "ModifyAlarmAttribute": doModifyAlarmAttribute,
     "SeparateMalwares": doSeparateMalwares,
     "AddLoginWhiteList": doAddLoginWhiteList,
     "DescribeProcessStatistics": doDescribeProcessStatistics,
@@ -2596,6 +2621,7 @@ ACTION_MAP = {
     "DescribeAccounts": doDescribeAccounts,
     "DescribeWeeklyReports": doDescribeWeeklyReports,
     "DescribeProVersionInfo": doDescribeProVersionInfo,
+    "DescribeSecurityEventsCnt": doDescribeSecurityEventsCnt,
     "DescribePrivilegeEvents": doDescribePrivilegeEvents,
     "DescribeMachineInfo": doDescribeMachineInfo,
     "DescribeAlarmAttribute": doDescribeAlarmAttribute,
@@ -2609,7 +2635,7 @@ ACTION_MAP = {
     "DescribeWeeklyReportVuls": doDescribeWeeklyReportVuls,
     "DescribeWeeklyReportInfo": doDescribeWeeklyReportInfo,
     "DescribeComponentInfo": doDescribeComponentInfo,
-    "DescribeMachines": doDescribeMachines,
+    "ModifyProVersionRenewFlag": doModifyProVersionRenewFlag,
     "SetBashEventsStatus": doSetBashEventsStatus,
     "ExportReverseShellEvents": doExportReverseShellEvents,
     "DeleteAttackLogs": doDeleteAttackLogs,
@@ -2621,7 +2647,7 @@ ACTION_MAP = {
     "DescribeAttackLogInfo": doDescribeAttackLogInfo,
     "IgnoreImpactedHosts": doIgnoreImpactedHosts,
     "DescribeBashEvents": doDescribeBashEvents,
-    "EditTags": doEditTags,
+    "DescribeMachines": doDescribeMachines,
     "CreateUsualLoginPlaces": doCreateUsualLoginPlaces,
     "InquiryPriceOpenProVersionPrepaid": doInquiryPriceOpenProVersionPrepaid,
 

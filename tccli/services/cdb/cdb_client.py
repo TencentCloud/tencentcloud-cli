@@ -288,6 +288,31 @@ def doModifyDBInstanceName(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doStopRollback(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopRollbackRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.StopRollback(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doOfflineIsolatedInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -705,6 +730,31 @@ def doReleaseIsolatedDBInstances(args, parsed_globals):
     model = models.ReleaseIsolatedDBInstancesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ReleaseIsolatedDBInstances(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCloneInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCloneInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateCloneInstance(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1363,6 +1413,31 @@ def doDescribeInstanceParamRecords(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteAuditRule(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteAuditRuleRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteAuditRule(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeBackupSummaries(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1988,31 +2063,6 @@ def doDescribeAccounts(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAuditRules(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAuditRulesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeAuditRules(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doModifyRoGroupInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2188,7 +2238,7 @@ def doModifyBackupConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDBInstanceProject(args, parsed_globals):
+def doDescribeAuditRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2202,9 +2252,9 @@ def doModifyDBInstanceProject(args, parsed_globals):
     client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDBInstanceProjectRequest()
+    model = models.DescribeAuditRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyDBInstanceProject(model)
+    rsp = client.DescribeAuditRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2413,7 +2463,7 @@ def doModifyAuditRule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAuditRule(args, parsed_globals):
+def doModifyDBInstanceProject(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2427,9 +2477,9 @@ def doDeleteAuditRule(args, parsed_globals):
     client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAuditRuleRequest()
+    model = models.ModifyDBInstanceProjectRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteAuditRule(model)
+    rsp = client.ModifyDBInstanceProject(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2530,6 +2580,31 @@ def doDescribeRoGroups(args, parsed_globals):
     model = models.DescribeRoGroupsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeRoGroups(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCloneList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCloneListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCloneList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2660,6 +2735,7 @@ ACTION_MAP = {
     "DescribeTimeWindow": doDescribeTimeWindow,
     "DescribeBackupOverview": doDescribeBackupOverview,
     "ModifyDBInstanceName": doModifyDBInstanceName,
+    "StopRollback": doStopRollback,
     "OfflineIsolatedInstances": doOfflineIsolatedInstances,
     "CreateAuditLogFile": doCreateAuditLogFile,
     "OpenDBInstanceGTID": doOpenDBInstanceGTID,
@@ -2677,6 +2753,7 @@ ACTION_MAP = {
     "DescribeTables": doDescribeTables,
     "DescribeAccountPrivileges": doDescribeAccountPrivileges,
     "ReleaseIsolatedDBInstances": doReleaseIsolatedDBInstances,
+    "CreateCloneInstance": doCreateCloneInstance,
     "ModifyAuditConfig": doModifyAuditConfig,
     "ModifyTimeWindow": doModifyTimeWindow,
     "DeleteDeployGroups": doDeleteDeployGroups,
@@ -2703,6 +2780,7 @@ ACTION_MAP = {
     "UpgradeDBInstanceEngineVersion": doUpgradeDBInstanceEngineVersion,
     "DescribeAuditLogFiles": doDescribeAuditLogFiles,
     "DescribeInstanceParamRecords": doDescribeInstanceParamRecords,
+    "DeleteAuditRule": doDeleteAuditRule,
     "DescribeBackupSummaries": doDescribeBackupSummaries,
     "DescribeParamTemplateInfo": doDescribeParamTemplateInfo,
     "DescribeBinlogBackupOverview": doDescribeBinlogBackupOverview,
@@ -2728,7 +2806,6 @@ ACTION_MAP = {
     "DescribeDBSwitchRecords": doDescribeDBSwitchRecords,
     "CreateDBImportJob": doCreateDBImportJob,
     "DescribeAccounts": doDescribeAccounts,
-    "DescribeAuditRules": doDescribeAuditRules,
     "ModifyRoGroupInfo": doModifyRoGroupInfo,
     "ModifyAccountPassword": doModifyAccountPassword,
     "DescribeUploadedFiles": doDescribeUploadedFiles,
@@ -2736,7 +2813,7 @@ ACTION_MAP = {
     "DescribeSlowLogData": doDescribeSlowLogData,
     "DeleteAuditLogFile": doDeleteAuditLogFile,
     "ModifyBackupConfig": doModifyBackupConfig,
-    "ModifyDBInstanceProject": doModifyDBInstanceProject,
+    "DescribeAuditRules": doDescribeAuditRules,
     "DescribeBackupDatabases": doDescribeBackupDatabases,
     "DescribeDBPrice": doDescribeDBPrice,
     "ModifyAutoRenewFlag": doModifyAutoRenewFlag,
@@ -2745,11 +2822,12 @@ ACTION_MAP = {
     "DescribeDeviceMonitorInfo": doDescribeDeviceMonitorInfo,
     "OpenWanService": doOpenWanService,
     "ModifyAuditRule": doModifyAuditRule,
-    "DeleteAuditRule": doDeleteAuditRule,
+    "ModifyDBInstanceProject": doModifyDBInstanceProject,
     "DescribeSupportedPrivileges": doDescribeSupportedPrivileges,
     "DescribeBinlogs": doDescribeBinlogs,
     "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
     "DescribeRoGroups": doDescribeRoGroups,
+    "DescribeCloneList": doDescribeCloneList,
     "ModifyNameOrDescByDpId": doModifyNameOrDescByDpId,
     "UpgradeDBInstance": doUpgradeDBInstance,
     "CreateDeployGroup": doCreateDeployGroup,
