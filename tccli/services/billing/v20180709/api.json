@@ -370,7 +370,7 @@
         },
         {
           "default": "",
-          "document": "商品名称代码（未开放的字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "BusinessCode",
           "required": true,
@@ -379,7 +379,7 @@
         },
         {
           "default": "",
-          "document": "子商品名称代码 （未开放的字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子商品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductCode",
           "required": true,
@@ -556,7 +556,7 @@
         },
         {
           "default": "",
-          "document": "组件类型代码（未开放的字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ItemCode",
           "required": true,
@@ -565,7 +565,7 @@
         },
         {
           "default": "",
-          "document": "组件名称代码（未开放的字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ComponentCode",
           "required": true,

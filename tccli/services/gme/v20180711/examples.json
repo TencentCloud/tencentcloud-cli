@@ -46,6 +46,14 @@
         "title": "查询语音检测结果"
       }
     ],
+    "DescribeUserInAndOutTime": [
+      {
+        "document": "拉取用户在房间得进出时间",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInAndOutTime\n<公共请求参数>\n\n{\n  \"BizId\": 1400440313,\n  \"RoomId\": 12675079,\n  \"UserId\": 112675079\n}",
+        "output": "{\r\n    \"Response\": {\r\n      \"InOutList\": [\r\n        {\r\n          \"StartTime\": 1606355700701,\r\n          \"EndTime\": 1606355712545\r\n        },\r\n        {\r\n          \"StartTime\": 1606355835221,\r\n          \"EndTime\": 1606355983240\r\n        },\r\n        {\r\n          \"StartTime\": 1606356131997,\r\n          \"EndTime\": 1606356139161\r\n        },\r\n        {\r\n          \"StartTime\": 1606356140241,\r\n          \"EndTime\": 1606357417975\r\n        },\r\n        {\r\n          \"StartTime\": 1606357498484,\r\n          \"EndTime\": 1606357504722\r\n        },\r\n        {\r\n          \"StartTime\": 1606357505783,\r\n          \"EndTime\": 1606358646084\r\n        },\r\n        {\r\n          \"StartTime\": 1606358708098,\r\n          \"EndTime\": 1606358732251\r\n        }\r\n      ],\r\n      \"Duration\": 2615453,\r\n      \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "拉取用户在房间得进出时间"
+      }
+    ],
     "ModifyAppStatus": [
       {
         "document": "",

@@ -30,6 +30,12 @@
       "name": "查询语音检测结果",
       "output": "DescribeScanResultListResponse"
     },
+    "DescribeUserInAndOutTime": {
+      "document": "拉取用户在房间得进出时间",
+      "input": "DescribeUserInAndOutTimeRequest",
+      "name": "拉取用户在房间得进出时间",
+      "output": "DescribeUserInAndOutTimeResponse"
+    },
     "ModifyAppStatus": {
       "document": "本接口(ModifyAppStatus)用于修改应用总开关状态。",
       "input": "ModifyAppStatusRequest",
@@ -574,6 +580,86 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeUserInAndOutTimeRequest": {
+      "document": "DescribeUserInAndOutTime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间ID",
+          "member": "int64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "member": "int64",
+          "name": "UserId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInAndOutTimeResponse": {
+      "document": "DescribeUserInAndOutTime返回参数结构体",
+      "members": [
+        {
+          "document": "用户在房间得进出时间列表",
+          "member": "InOutTimeInfo",
+          "name": "InOutList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户在房间中总时长",
+          "member": "int64",
+          "name": "Duration",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InOutTimeInfo": {
+      "document": "用户进出房间信息",
+      "members": [
+        {
+          "default": "",
+          "document": "进入房间时间",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "退出房间时间",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ModifyAppStatusRequest": {
       "document": "ModifyAppStatus请求参数结构体",

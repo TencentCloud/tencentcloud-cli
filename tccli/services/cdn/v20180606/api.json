@@ -706,6 +706,471 @@
       ],
       "usage": "both"
     },
+    "AdvancedAuthentication": {
+      "document": "时间戳防盗链高级版配置，白名单功能",
+      "members": [
+        {
+          "default": "",
+          "document": "防盗链配置开关，on或off，开启时必须且只能配置一种模式，其余模式为null。",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间戳防盗链高级版模式A配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvancedAuthenticationTypeA",
+          "name": "TypeA",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间戳防盗链高级版模式B配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvancedAuthenticationTypeB",
+          "name": "TypeB",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间戳防盗链高级版模式C配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvancedAuthenticationTypeC",
+          "name": "TypeC",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间戳防盗链高级版模式D配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvancedAuthenticationTypeD",
+          "name": "TypeD",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间戳防盗链高级版模式E配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvancedAuthenticationTypeE",
+          "name": "TypeE",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间戳防盗链高级版模式F配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvancedAuthenticationTypeF",
+          "name": "TypeF",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedAuthenticationTypeA": {
+      "document": "时间戳防盗链高级版模式A配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。",
+          "member": "string",
+          "name": "SignParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。",
+          "member": "string",
+          "name": "TimeParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间，单位秒。",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否必须提供过期时间参数。",
+          "member": "bool",
+          "name": "ExpireTimeRequired",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Url组成格式，如：${private_key}${schema}${host}${full_uri。",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间格式，dec，hex分别表示十进制，十六进制。",
+          "member": "string",
+          "name": "TimeFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴权失败时返回的状态码。",
+          "member": "int64",
+          "name": "FailCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链接过期时返回的状态码。",
+          "member": "int64",
+          "name": "ExpireCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要鉴权的url路径列表。",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留字段。",
+          "member": "int64",
+          "name": "Transformation",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedAuthenticationTypeB": {
+      "document": "时间戳防盗链高级版模式B配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "alpha键名。",
+          "member": "string",
+          "name": "KeyAlpha",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "beta键名。",
+          "member": "string",
+          "name": "KeyBeta",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "gamma键名。",
+          "member": "string",
+          "name": "KeyGamma",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。",
+          "member": "string",
+          "name": "SignParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。",
+          "member": "string",
+          "name": "TimeParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间，单位秒。",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间格式，dec，hex分别表示十进制，十六进制。",
+          "member": "string",
+          "name": "TimeFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴权失败时返回的状态码。",
+          "member": "int64",
+          "name": "FailCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链接过期时返回的状态码。",
+          "member": "int64",
+          "name": "ExpireCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要鉴权的url路径列表。",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedAuthenticationTypeC": {
+      "document": "时间戳防盗链高级版模式C配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "访问密钥。",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴权密钥。",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedAuthenticationTypeD": {
+      "document": "时间戳防盗链高级版模式D配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份密钥，当使用SecretKey鉴权失败时会使用该密钥重新鉴权。",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。",
+          "member": "string",
+          "name": "SignParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。",
+          "member": "string",
+          "name": "TimeParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间，单位秒。",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间格式，dec，hex分别表示十进制，十六进制。",
+          "member": "string",
+          "name": "TimeFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedAuthenticationTypeE": {
+      "document": "时间戳防盗链高级版模式E配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SignParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "uri串中Acl签名的字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AclSignParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "uri串中开始时间字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StartTimeParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "uri串中过期时间字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ExpireTimeParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间格式，dec\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TimeFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedAuthenticationTypeF": {
+      "document": "时间戳防盗链高级鉴权模式TypeF配置",
+      "members": [
+        {
+          "default": "",
+          "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SignParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TimeParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "uri串中Transaction字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TransactionParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于计算签名的主密钥，只允许字母和数字，长度6-32字节。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于计算签名的备选密钥，主密钥校验失败后再次尝试备选密钥，只允许字母和数字，长度6-32字节。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AdvancedCache": {
       "document": "缓存过期配置高级版（功能灰度中，尚未全量）\n注意：该版本不支持设置首页缓存规则",
       "members": [
@@ -4212,7 +4677,7 @@
         },
         {
           "default": "",
-          "document": "Ipv6 配置（功能灰度中，敬请期待）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Ipv6 回源配置（功能灰度中，敬请期待）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Ipv6",
           "name": "Ipv6",
           "required": true,
@@ -4343,6 +4808,24 @@
           "name": "Tag",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间戳防盗链高级配置，白名单功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvancedAuthentication",
+          "name": "AdvancedAuthentication",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源鉴权高级配置，白名单功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OriginAuthentication",
+          "name": "OriginAuthentication",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -6361,7 +6844,7 @@
       "members": [
         {
           "default": "",
-          "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效",
+          "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex: 指定主页生效",
           "member": "string",
           "name": "MaxAgeType",
           "required": true,
@@ -6370,7 +6853,7 @@
         },
         {
           "default": "",
-          "document": "MaxAgeType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html",
+          "document": "MaxAgeType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /",
           "member": "string",
           "name": "MaxAgeContents",
           "required": true,
@@ -6480,6 +6963,45 @@
           "name": "PathRules",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginAuthentication": {
+      "document": "回源鉴权高级配置",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴权开关，on或off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "鉴权类型A配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OriginAuthenticationTypeA",
+          "name": "TypeA",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginAuthenticationTypeA": {
+      "document": "回源鉴权高级配置TypeA",
+      "members": [
+        {
+          "default": "",
+          "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6769,7 +7291,7 @@
         },
         {
           "default": "",
-          "document": "匹配的URL路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配的URL路径，仅支持Url路径，不支持参数。默认完全匹配，正则模式下支持通配符 *，最多支持5个通配符，最大长度1024字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -6778,7 +7300,7 @@
         },
         {
           "default": "",
-          "document": "路径匹配时的回源源站。暂不支持开了私有读写的COS源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径匹配时的回源源站。暂不支持开了私有读写的COS源。不填写时沿用默认源站。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Origin",
           "required": true,
@@ -6787,7 +7309,7 @@
         },
         {
           "default": "",
-          "document": "路径匹配时回源的Host头部。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径匹配时回源的Host头部。不填写时沿用默认ServerName。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ServerName",
           "required": true,
@@ -6796,7 +7318,7 @@
         },
         {
           "default": "",
-          "document": "源站所属区域，支持CN，OV。分别表示国内或海外。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源站所属区域，支持CN，OV。分别表示国内或海外。默认为CN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "OriginArea",
           "required": true,
@@ -6805,7 +7327,7 @@
         },
         {
           "default": "",
-          "document": "路径匹配时回源的URI路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径匹配时回源的URI路径，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ForwardUri",
           "required": false,
@@ -7530,7 +8052,7 @@
       "members": [
         {
           "default": "",
-          "document": "CacheType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CacheType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\ndefault 时填充 \"no max-age\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RulePaths",
           "required": true,
@@ -7539,7 +8061,7 @@
         },
         {
           "default": "",
-          "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页\ndefault: 源站无max-age时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RuleType",
           "required": true,
@@ -8836,6 +9358,22 @@
           "name": "AccessPort",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "时间戳防盗链高级版配置，白名单功能",
+          "member": "AdvancedAuthentication",
+          "name": "AdvancedAuthentication",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "回源鉴权高级版配置，白名单功能",
+          "member": "OriginAuthentication",
+          "name": "OriginAuthentication",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9016,7 +9554,7 @@
         },
         {
           "default": "",
-          "document": "待匹配的Url模式，支持完全路径匹配和正则匹配，最大长度1024字符。",
+          "document": "待匹配的Url，仅支持Url路径，不支持参数。默认完全匹配，支持通配符 *，最多支持5个通配符，最大长度1024字符。",
           "member": "string",
           "name": "Pattern",
           "required": true,
@@ -9025,7 +9563,7 @@
         },
         {
           "default": "",
-          "document": "目标URL，必须以“/”开头，最大长度1024字符。",
+          "document": "目标URL，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。",
           "member": "string",
           "name": "RedirectUrl",
           "required": true,

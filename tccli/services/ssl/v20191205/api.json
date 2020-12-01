@@ -2434,7 +2434,7 @@
       "members": [
         {
           "default": "",
-          "document": "证书公钥。",
+          "document": "证书内容。",
           "member": "string",
           "name": "CertificatePublicKey",
           "required": true,

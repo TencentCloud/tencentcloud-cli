@@ -487,9 +487,9 @@
       "output": "EnableTaskFlowResponse"
     },
     "ExecuteTask": {
-      "document": "执行一次任务。",
+      "document": "手动执行一次任务。",
       "input": "ExecuteTaskRequest",
-      "name": "执行一次任务。",
+      "name": "手动执行一次任务。",
       "output": "ExecuteTaskResponse"
     },
     "ExecuteTaskFlow": {
@@ -561,7 +561,7 @@
     "RedoTaskExecute": {
       "document": "重新执行在某个节点上执行任务。",
       "input": "RedoTaskExecuteRequest",
-      "name": "重新执行任务",
+      "name": "重新执行任务的一次执行",
       "output": "RedoTaskExecuteResponse"
     },
     "RedoTaskFlowBatch": {

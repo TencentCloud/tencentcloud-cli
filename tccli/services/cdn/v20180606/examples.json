@@ -403,7 +403,7 @@
     "UpdateDomainConfig": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=UpdateDomainConfig\r\n&ProjectId=0\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=UpdateDomainConfig\n&ProjectId=0\n&Domain=www.test.com\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\r\n    }\r\n}",
         "title": "更新域名配置"
       }

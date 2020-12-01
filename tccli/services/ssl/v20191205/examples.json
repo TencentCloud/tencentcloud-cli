@@ -145,7 +145,7 @@
     "UploadCertificate": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=UploadCertificate\r\n&CertificatePublicKey=CertificateContent\r\n&<公共请求参数>",
+        "input": "https://ssl.tencentcloudapi.com/?Action=UploadCertificate\n&CertificatePublicKey=CertificateContent\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"CertificateId\": \"a92b1Z1i\",\r\n        \"RequestId\": \"7ef2d2bb-f609-4e3d-a35c-04a5d3ac633b\"\r\n    }\r\n}",
         "title": "上传证书"
       }

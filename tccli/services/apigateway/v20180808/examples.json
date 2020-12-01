@@ -43,7 +43,7 @@
     "CreateApiKey": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateApiKey\r\n&SecretName=test\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateApiKey\n&SecretName=test\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"AccessKeyId\": \"AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83\",\r\n            \"AccessKeySecret\": \"9i3BQU8lMUl2dAvrF8RvL5EM6RKEG47P770du61B\",\r\n            \"AccessKeyType\": \"auto\",\r\n            \"SecretName\": \"test\",\r\n            \"Status\": 1,\r\n            \"CreatedTime\": \"2020-02-26T06:10:01Z\",\r\n            \"ModifiedTime\": \"2020-02-26T06:10:01Z\"\r\n        },\r\n        \"RequestId\": \"ad5218b4-edc3-4195-ba4d-a0ef176783ba\"\r\n    }\r\n}",
         "title": "CreateApiKey"
       }
@@ -51,7 +51,7 @@
     "CreateIPStrategy": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateIPStrategy\r\n&ServiceId=service-ody35h5e\r\n&StrategyName=xx\r\n&StrategyType=WHITE\r\n&StrategyData=1.1.1.1\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateIPStrategy\n&ServiceId=service-ody35h5e\n&StrategyName=xx\n&StrategyType=WHITE\n&StrategyData=1.1.1.1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ServiceId\": \"service-ody35h5e\",\r\n            \"StrategyId\": \"IPStrategy-4xj4r1ou\",\r\n            \"StrategyName\": \"xx\",\r\n            \"StrategyType\": \"WHITE\",\r\n            \"StrategyData\": \"1.1.1.1\",\r\n            \"CreatedTime\": \"2020-02-24T19:02:00Z\",\r\n            \"ModifiedTime\": \"2020-02-24T19:02:00Z\",\r\n            \"BindApiTotalCount\": null,\r\n            \"BindApis\": null\r\n        },\r\n        \"RequestId\": \"4336cff4-1d75-433b-8823-bcf8fa8773c6\"\r\n    }\r\n}",
         "title": "CreateIPStrategy"
       }
@@ -67,7 +67,7 @@
     "CreateUsagePlan": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateUsagePlan\r\n&UsagePlanName=xx\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateUsagePlan\n&UsagePlanName=xx\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"UsagePlanId\": \"usagePlan-quqxvett\",\r\n            \"UsagePlanName\": \"xx\",\r\n            \"UsagePlanDesc\": null,\r\n            \"InitQuota\": null,\r\n            \"MaxRequestNumPreSec\": null,\r\n            \"MaxRequestNum\": null,\r\n            \"IsHide\": 0,\r\n            \"CreatedTime\": \"2020-02-17T11:26:42Z\",\r\n            \"ModifiedTime\": \"2020-02-17T11:26:42Z\",\r\n            \"BindSecretIdTotalCount\": 0,\r\n            \"BindSecretIds\": null,\r\n            \"BindEnvironmentTotalCount\": 0,\r\n            \"BindEnvironments\": null\r\n        },\r\n        \"RequestId\": \"b30900ef-72e9-4076-a2bd-dc8caab1ef6f\"\r\n    }\r\n}",
         "title": "创建使用计划"
       }
@@ -123,7 +123,7 @@
     "DemoteServiceUsagePlan": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DemoteServiceUsagePlan\r\n&UsagePlanId=usagePlan-bxtnltfd\r\n&ServiceId=service-ody35h5e\r\n&Environment=test\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DemoteServiceUsagePlan\n&UsagePlanId=usagePlan-bxtnltfd\n&ServiceId=service-ody35h5e\n&Environment=test\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"7787aa0e-be74-43c0-b6f6-7bf56995ce2d\"\r\n    }\r\n}",
         "title": "DemoteServiceUsagePlan"
       }
@@ -147,7 +147,7 @@
     "DescribeApiKey": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeApiKey\r\n&AccessKeyId=AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeApiKey\n&AccessKeyId=AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"AccessKeyId\": \"AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD\",\r\n            \"AccessKeySecret\": \"hvhuan76de5im5Fa0bqh8aaBcOO9cy6c7yg2ywlf\",\r\n            \"AccessKeyType\": \"auto\",\r\n            \"SecretName\": \"dd\",\r\n            \"Status\": 1,\r\n            \"CreatedTime\": \"2020-02-26T06:09:44Z\",\r\n            \"ModifiedTime\": \"2020-02-26T06:45:57Z\"\r\n        },\r\n        \"RequestId\": \"ac423dbe-4e28-470d-b3f7-b8c95c614124\"\r\n    }\r\n}",
         "title": "DescribeApiKey"
       }
@@ -321,7 +321,7 @@
     "DisableApiKey": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DisableApiKey\r\n&AccessKeyId=AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DisableApiKey\n&AccessKeyId=AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"6ea68436-c37c-4887-9a2b-91ed0eb72f7a\"\r\n    }\r\n}",
         "title": "DisableApiKey"
       }
@@ -329,7 +329,7 @@
     "EnableApiKey": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=EnableApiKey\r\n&AccessKeyId=AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=EnableApiKey\n&AccessKeyId=AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"db81808c-77d5-4fc9-9ab4-de59991f9933\"\r\n    }\r\n}",
         "title": "EnableApiKey"
       }
@@ -337,7 +337,7 @@
     "GenerateApiDocument": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=GenerateApiDocument\r\n&ServiceId=service-ody35h5e\r\n&GenEnvironment=release\r\n&GenLanguage=Python\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=GenerateApiDocument\n&ServiceId=service-ody35h5e\n&GenEnvironment=release\n&GenLanguage=Python\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"DocumentURL\": \"https://apigateway-document-sdk-xxxxx\",\r\n            \"SdkURL\": \"https://apigateway-document-sdk-xxxxx\"\r\n        },\r\n        \"RequestId\": \"01c56ec2-6a40-46bc-bdf6-8b273d4bec93\"\r\n    }\r\n}",
         "title": "下载sdk和api文档"
       }
@@ -353,7 +353,7 @@
     "ModifyApiEnvironmentStrategy": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyApiEnvironmentStrategy\r\n&EnvironmentName=test\r\n&ServiceId=service-ody35h5e\r\n&Strategy=3\r\n&ApiIds.0=api-e92i2jds\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyApiEnvironmentStrategy\n&EnvironmentName=test\n&ServiceId=service-ody35h5e\n&Strategy=3\n&ApiIds.0=api-e92i2jds\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"7787aa0e-be74-43c0-b6f6-7bf56995ce2d\"\r\n    }\r\n}",
         "title": "ModifyApiEnvironmentStrategy"
       }
@@ -369,7 +369,7 @@
     "ModifyIPStrategy": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyIPStrategy\r\n&StrategyId=IPStrategy-0ez0c8to\r\n&ServiceId=service-ody35h5e\r\n&StrategyData=3.3.3.3\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyIPStrategy\n&StrategyId=IPStrategy-0ez0c8to\n&ServiceId=service-ody35h5e\n&StrategyData=3.3.3.3\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"cfbd2c3f-64f4-4266-bcca-f04568c6c9ce\"\r\n    }\r\n}",
         "title": "ModifyIPStrategy"
       }
@@ -385,7 +385,7 @@
     "ModifyServiceEnvironmentStrategy": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyServiceEnvironmentStrategy\r\n&EnvironmentNames.0=test\r\n&ServiceId=service-ody35h5e\r\n&Strategy=3\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyServiceEnvironmentStrategy\n&EnvironmentNames.0=test\n&ServiceId=service-ody35h5e\n&Strategy=3\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"7787aa0e-be74-43c0-b6f6-7bf56995ce2d\"\r\n    }\r\n}",
         "title": "ModifyServiceEnvironmentStrategy"
       }
