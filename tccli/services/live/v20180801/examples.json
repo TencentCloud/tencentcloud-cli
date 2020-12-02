@@ -43,19 +43,19 @@
     "CreateCommonMixStream": [
       {
         "document": "使用混流预置模板混流。",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateCommonMixStream\r\n&MixStreamSessionId=test_room\r\n&MixStreamTemplateId=40\r\n&OutputParams.OutputStreamName=test_stream1\r\n&InputStreamList.0.InputStreamName=test_stream1\r\n&InputStreamList.0.LayoutParams.ImageLayer=1\r\n&InputStreamList.1.InputStreamName=test_stream2\r\n&InputStreamList.1.LayoutParams.ImageLayer=2\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateCommonMixStream\n&MixStreamSessionId=test_room\n&MixStreamTemplateId=40\n&OutputParams.OutputStreamName=test_stream1\n&InputStreamList.0.InputStreamName=test_stream1\n&InputStreamList.0.LayoutParams.ImageLayer=1\n&InputStreamList.1.InputStreamName=test_stream2\n&InputStreamList.1.LayoutParams.ImageLayer=2\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "申请混流-使用模板40"
       },
       {
         "document": "使用自定义布局。",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateCommonMixStream\r\n&MixStreamSessionId=test_room\r\n&OutputParams.OutputStreamName=test_stream1\r\n&InputStreamList.0.InputStreamName=test_stream1\r\n&InputStreamList.0.LayoutParams.ImageLayer=1\r\n&InputStreamList.0.LayoutParams.ImageWidth = 1280\r\n&InputStreamList.0.LayoutParams.ImageHeight= 720\r\n&InputStreamList.1.InputStreamName=test_stream2\r\n&InputStreamList.1.LayoutParams.ImageLayer=2\r\n&InputStreamList.1.LayoutParams.ImageWidth = 240\r\n&InputStreamList.1.LayoutParams.ImageHeight= 320\r\n&InputStreamList.1.LayoutParams.LocationX= 100\r\n&InputStreamList.1.LayoutParams.LocationY= 100\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateCommonMixStream\n&MixStreamSessionId=test_room\n&OutputParams.OutputStreamName=test_stream1\n&InputStreamList.0.InputStreamName=test_stream1\n&InputStreamList.0.LayoutParams.ImageLayer=1\n&InputStreamList.0.LayoutParams.ImageWidth = 1280\n&InputStreamList.0.LayoutParams.ImageHeight= 720\n&InputStreamList.1.InputStreamName=test_stream2\n&InputStreamList.1.LayoutParams.ImageLayer=2\n&InputStreamList.1.LayoutParams.ImageWidth = 240\n&InputStreamList.1.LayoutParams.ImageHeight= 320\n&InputStreamList.1.LayoutParams.LocationX= 100\n&InputStreamList.1.LayoutParams.LocationY= 100\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "申请混流-使用自定义布局参数"
       },
       {
         "document": "使用裁剪参数。",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateCommonMixStream\r\n&MixStreamSessionId=test_room\r\n&OutputParams.OutputStreamName=test_stream1\r\n&InputStreamList.0.InputStreamName=test_stream1\r\n&InputStreamList.0.LayoutParams.ImageLayer=1\r\n&InputStreamList.0.LayoutParams.ImageWidth = 1280\r\n&InputStreamList.0.LayoutParams.ImageHeight= 720\r\n&InputStreamList.1.InputStreamName=test_stream2\r\n&InputStreamList.1.LayoutParams.ImageLayer=2\r\n&InputStreamList.1.LayoutParams.ImageWidth = 240\r\n&InputStreamList.1.LayoutParams.ImageHeight= 320\r\n&InputStreamList.1.LayoutParams.LocationX= 100\r\n&InputStreamList.1.LayoutParams.LocationY= 100\r\n&InputStreamList.1.CropParams.CropWidth= 240\r\n&InputStreamList.1.CropParams.CropHeight= 320\r\n&InputStreamList.1.CropParams.CropStartLocationX= 100\r\n&InputStreamList.1.CropParams.CropStartLocationY= 100\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateCommonMixStream\n&MixStreamSessionId=test_room\n&OutputParams.OutputStreamName=test_stream1\n&InputStreamList.0.InputStreamName=test_stream1\n&InputStreamList.0.LayoutParams.ImageLayer=1\n&InputStreamList.0.LayoutParams.ImageWidth = 1280\n&InputStreamList.0.LayoutParams.ImageHeight= 720\n&InputStreamList.1.InputStreamName=test_stream2\n&InputStreamList.1.LayoutParams.ImageLayer=2\n&InputStreamList.1.LayoutParams.ImageWidth = 240\n&InputStreamList.1.LayoutParams.ImageHeight= 320\n&InputStreamList.1.LayoutParams.LocationX= 100\n&InputStreamList.1.LayoutParams.LocationY= 100\n&InputStreamList.1.CropParams.CropWidth= 240\n&InputStreamList.1.CropParams.CropHeight= 320\n&InputStreamList.1.CropParams.CropStartLocationX= 100\n&InputStreamList.1.CropParams.CropStartLocationY= 100\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "申请混流-使用裁剪参数"
       }

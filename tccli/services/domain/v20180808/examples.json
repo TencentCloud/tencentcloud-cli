@@ -27,7 +27,7 @@
     "CreateDomainBatch": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=CreateDomainBatch\n&TemplateId=字符串\n&Period=整型\n&Domains=数组\n&PayMode=整型\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainBatch\n<公共请求参数>\n\n{\"Domains\":[\"xx\"],\"PayMode\":0,\"Period\":1,\"TemplateId\":\"xx\",\"CustomDns\":[\"xx\"]}",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"LogId\": 318,\r\n\t\t\"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\r\n\t},\r\n\t\"ResultStatus\": true\r\n}",
         "title": "批量注册域名"
       }

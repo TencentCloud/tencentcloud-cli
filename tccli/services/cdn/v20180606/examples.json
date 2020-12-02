@@ -104,6 +104,14 @@
         "title": "IP 归属查询"
       }
     ],
+    "DescribeCdnOriginIp": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCdnOriginIp\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"156bde25-56b5-4dae-9638-b7b08b08e4f6\",\r\n        \"Ips\": [\r\n            {\r\n                \"Ip\": \"101.89.13.0/24\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 1\r\n    }\r\n}",
+        "title": "查询回源节点"
+      }
+    ],
     "DescribeCertDomains": [
       {
         "document": "",

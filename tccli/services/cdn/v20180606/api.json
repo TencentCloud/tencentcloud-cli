@@ -78,6 +78,12 @@
       "name": "IP 归属查询",
       "output": "DescribeCdnIpResponse"
     },
+    "DescribeCdnOriginIp": {
+      "document": "本接口（DescribeCdnOriginIp）用于查询 CDN 回源节点的IP信息。（注：使用此接口需开启对应白名单）",
+      "input": "DescribeCdnOriginIpRequest",
+      "name": "查询回源节点",
+      "output": "DescribeCdnOriginIpResponse"
+    },
     "DescribeCertDomains": {
       "document": "DescribeCertDomains 用于校验SSL证书并提取证书中包含的域名。",
       "input": "DescribeCertDomainsRequest",
@@ -3083,6 +3089,37 @@
           "member": "CdnIp",
           "name": "Ips",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCdnOriginIpRequest": {
+      "document": "DescribeCdnOriginIp请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCdnOriginIpResponse": {
+      "document": "DescribeCdnOriginIp返回参数结构体",
+      "members": [
+        {
+          "document": "回源节点IP详情。",
+          "member": "OriginIp",
+          "name": "Ips",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回源节点IP总个数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7006,6 +7043,21 @@
         }
       ],
       "usage": "both"
+    },
+    "OriginIp": {
+      "document": "CDN回源节点IP信息",
+      "members": [
+        {
+          "default": "",
+          "document": "回源IP段/回源IP，默认返回IP段信息。",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OriginPullOptimization": {
       "document": "跨国回源优化配置，默认为关闭状态（功能灰度中，尚未全量）",

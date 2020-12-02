@@ -464,6 +464,14 @@
         "title": "获转动图模板列表"
       }
     ],
+    "DescribeCDNStatDetails": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNStatDetails\n&DomainNames.0=123.vod2.myqcloud.com\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&Area=Chinese Mainland\n&Metric=Traffic\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DataInterval\": 1440,\r\n\t\t\"Data\": [{\r\n\t\t\t\"Time\": \"2018-12-01T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1000000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-02T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-03T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}],\r\n\t\t\"RequestId\": \"requestId\"\r\n\t}\r\n}",
+        "title": "查询域名123.vod2.com中国大陆的流量数据。"
+      }
+    ],
     "DescribeCDNUsageData": [
       {
         "document": "查询2018年12月1日（含）到2018年12月3日（含）的 CDN 流量数据。",
@@ -601,15 +609,15 @@
     "DescribeStorageData": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageData\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"MediaCount\":0,\r\n        \"TotalStorage\":2000000,\r\n        \"InfrequentStorage\":0,\r\n        \"StandardStorage\":2000000,\r\n        \"RequestId\":\"12ae8d8e-dce3-4151-9d4b-5594145287s3\"\r\n    }\r\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageData\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"MediaCount\":0,\r\n        \"TotalStorage\":2000000,\r\n        \"InfrequentStorage\":0,\r\n        \"StandardStorage\":2000000,\r\n        \"StorageStat\": [\r\n            {\r\n                \"Area\":\"Chinese Mainland\",\r\n                \"TotalStorage\":1800000,\r\n                \"InfrequentStorage\":0,\r\n                \"StandardStorage\": 1800000\r\n            }, {\r\n                \"Area\":\"outside Chinese Mainland\",\r\n                \"TotalStorage\":200000,\r\n                \"InfrequentStorage\":0,\r\n                \"StandardStorage\":200000\r\n            }\r\n        ],\r\n        \"RequestId\":\"12ae8d8e-dce3-4151-9d4b-5594145287s3\"\r\n    }\r\n}",
         "title": "查询当前存储情况"
       }
     ],
     "DescribeStorageDetails": [
       {
         "document": "查询2018年12月1日（含）到2018年12月7日（含）的存储空间数据。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageDetails\r\n&StartTime=2018-12-01T00:00:00+08:00\r\n&EndTime=2018-12-07T00:00:00+08:00\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageDetails\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-07T00:00:00+08:00\n&Area=Chinese Mainland\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"Data\": [{\r\n\t\t\t\"Time\": \"2018-12-01T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1000000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-02T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-03T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-04T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-05T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t},{\r\n\t\t\t\"Time\": \"2018-12-06T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-07T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}],\r\n\t\t\"RequestId\": \"requestId\"\r\n\t}\r\n}",
         "title": "查询点播存储统计数据"
       }

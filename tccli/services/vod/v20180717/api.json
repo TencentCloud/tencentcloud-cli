@@ -258,6 +258,12 @@
       "name": "获取转动图模板列表",
       "output": "DescribeAnimatedGraphicsTemplatesResponse"
     },
+    "DescribeCDNStatDetails": {
+      "document": "该接口用于查询点播域名的 CDN 带宽、流量等统计数据。\n* 查询的起始时间和结束时间跨度不超过90天。\n* 可以查询不同服务区域的数据。\n* 中国境内的数据支持查询指定地区、运营商的统计数据。",
+      "input": "DescribeCDNStatDetailsRequest",
+      "name": "查询点播域名的 CDN 统计数据",
+      "output": "DescribeCDNStatDetailsResponse"
+    },
     "DescribeCDNUsageData": {
       "document": "该接口用于查询点播 CDN 的流量、带宽等统计数据。\n   1. 可以查询最近365天内的 CDN 用量数据。\n   2.  查询时间跨度不超过90天。\n   3. 可以指定用量数据的时间粒度，支持5分钟、1小时、1天的时间粒度。\n   4.  流量为查询时间粒度内的总流量，带宽为查询时间粒度内的峰值带宽。",
       "input": "DescribeCDNUsageDataRequest",
@@ -343,7 +349,7 @@
       "output": "DescribeStorageDataResponse"
     },
     "DescribeStorageDetails": {
-      "document": "该接口返回查询时间范围内使用的点播存储空间，单位：字节。\n   1. 可以查询最近365天内的存储空间数据；\n   2. 查询时间跨度不超过90天；\n   3. 分钟粒度查询跨度不超过5天；\n   4. 小时粒度查询跨度不超过10天。",
+      "document": "该接口返回查询时间范围内使用的点播存储空间，单位：字节。\n    1. 可以查询最近365天内的存储空间数据；\n    2. 查询时间跨度不超过90天；\n    3. 分钟粒度查询跨度不超过7天；",
       "input": "DescribeStorageDetailsRequest",
       "name": "查询存储空间数据详情",
       "output": "DescribeStorageDetailsResponse"
@@ -8009,6 +8015,110 @@
       ],
       "type": "object"
     },
+    "DescribeCDNStatDetailsRequest": {
+      "document": "DescribeCDNStatDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询指标，取值有：\n<li>Traffic：流量，单位为 Byte。</li>\n<li>Bandwidth：带宽，单位为 Bps。</li>",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名列表。一次最多查询20个域名的数据。默认返回所有域名叠加的用量数据。",
+          "member": "string",
+          "name": "DomainNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务区域，取值有：\n<li>Chinese Mainland：中国大陆。 </li>\n<li>Asia Pacific Region 1：亚太一区，包括中国香港、中国澳门、新加坡、越南、泰国。 </li>\n<li>Asia Pacific Region 2：亚太二区，包括中国台湾、日本、马来西亚、印度尼西亚、韩国。 </li>\n<li>Asia Pacific Region 3：亚太三区，包括菲律宾、印度、澳大利亚和亚太其它国家和地区。 </li>\n<li>Middle East：中东。 </li>\n<li>Europe：欧洲。</li>\n<li>North America：北美。</li>\n<li>South America：南美。</li>\n<li>Africa：非洲。</li>\n默认为中国大陆。",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户所在地区，Area 为 Chinese Mainland 时，取值为以下地区信息，当 Area 为其它值时， 忽略 Districts 参数。\n<li>Beijing：北京。</li>\n<li>Inner Mongoria：内蒙古。</li>\n<li>Shanxi：山西。</li>\n<li>Hebei：河北。</li>\n<li>Tianjin：天津。</li>\n<li>Ningxia：宁夏。</li>\n<li>Shaanxi：陕西。</li>\n<li>Gansu：甘肃。</li>\n<li>Qinghai：青海。</li>\n<li>Xinjiang：新疆。</li>\n<li>Heilongjiang：黑龙江。</li>\n<li>Jilin：吉林。</li>\n<li>Liaoning：辽宁。</li>\n<li>Fujian：福建。</li>\n<li>Jiangsu：江苏。</li>\n<li>Anhui：安徽。</li>\n<li>Shandong：山东。</li>\n<li>Shanghai：上海。</li>\n<li>Zhejiang：浙江。</li>\n<li>Henan：河南。</li>\n<li>Hubei：湖北。</li>\n<li>Jiangxi：江西。</li>\n<li>Hunan：湖南。</li>\n<li>Guizhou：贵州。</li>\n<li>Yunnan：云南。</li>\n<li>Chongqing：重庆。</li>\n<li>Sichuan：四川。</li>\n<li>Tibet：西藏。</li>\n<li>Guangdong：广东。</li>\n<li>Guangxi：广西。</li>\n<li>Hainan：海南。</li>\n<li>Hongkong Macao And Taiwan：港澳台。</li>\n<li>outside Chinese Mainland：海外。</li>\n<li>Other：其他 。</li>",
+          "member": "string",
+          "name": "Districts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户所属运营商信息，Area 为 Chinese Mainland 时，取值为以下运营商信息。当 Area 为其它值时忽略 Isps 参数。\n<li>China Telecom：中国电信。 </li>\n<li>China Unicom：中国联通。 </li>\n<li>CERNET：教育网。</li>\n<li>Great Wall Broadband Network：长城宽带。</li>\n<li>China Mobile：中国移动。</li>\n<li>China Mobile Tieton：中国铁通。</li>\n<li>ISPs outside Chinese Mainland：海外运营商。</li>\n<li>Other ISPs：其他运营商。</li>",
+          "member": "string",
+          "name": "Isps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每条数据的时间粒度，单位：分钟，取值有：\n<li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>\n<li>1440：天粒度，返回指定查询时间内1天粒度的数据。起始时间和结束时间跨度大于24小时，只支持天粒度的数据。</li>\n当 StartTime 和 EndTime 时间跨度大于24小时时，DataInterval 默认为 1440。",
+          "member": "uint64",
+          "name": "DataInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCDNStatDetailsResponse": {
+      "document": "DescribeCDNStatDetails返回参数结构体",
+      "members": [
+        {
+          "document": "每条数据的时间粒度，单位：分钟。",
+          "member": "uint64",
+          "name": "DataInterval",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CDN 用量数据。",
+          "member": "StatDataItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCDNUsageDataRequest": {
       "document": "DescribeCDNUsageData请求参数结构体",
       "members": [
@@ -8920,6 +9030,13 @@
           "value_allowed_null": false
         },
         {
+          "document": "各计费区域的存储用量。",
+          "member": "StorageStatData",
+          "name": "StorageStat",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -8933,7 +9050,7 @@
       "members": [
         {
           "default": "",
-          "document": "起始时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "document": "起始时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -8941,7 +9058,7 @@
         },
         {
           "default": "",
-          "document": "结束时间，需大于开始日期，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "document": "结束时间，需大于开始日期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -8949,7 +9066,7 @@
         },
         {
           "default": "",
-          "document": "查询时间间隔，有效值：\n<li>Minute：每分钟一个统计数据。</li>\n<li>Hour：每小时一个统计数据。</li>\n<li>Day：每天一个统计数据。</li>\n默认按时间跨度决定，小于1小时按分钟，小于等于7天按小时，大于7天按天展示。",
+          "document": "统计时间粒度，有效值：\n<li>Minute：以5分钟为粒度。</li>\n<li>Day：以天为粒度。</li>\n默认按时间跨度决定，小于等于1天以5分钟为粒度，大于1天则以天为粒度。",
           "member": "string",
           "name": "Interval",
           "required": false,
@@ -8970,6 +9087,14 @@
           "name": "SubAppId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的存储区域，有效值：\n<li>Chinese Mainland：中国境内（不包含港澳台）。</li>\n<li>outside Chinese Mainland：中国境外。</li>\n默认值为 Chinese Mainland。",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8978,7 +9103,7 @@
       "document": "DescribeStorageDetails返回参数结构体",
       "members": [
         {
-          "document": "存储统计数据，每分钟/小时/天一条数据。",
+          "document": "存储统计数据，每5分钟或每天一条数据。",
           "member": "StatDataItem",
           "name": "Data",
           "type": "list",
@@ -17907,6 +18032,48 @@
         }
       ],
       "usage": "both"
+    },
+    "StorageStatData": {
+      "document": "云点播存储用量的分区统计数据",
+      "members": [
+        {
+          "default": "",
+          "document": "点播存储的计费区域，可能值：\n<li>Chinese Mainland：中国境内（不包含港澳台）。</li>\n<li>outside Chinese Mainland：中国境外。</li>",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前总存储量，单位是字节。",
+          "member": "uint64",
+          "name": "TotalStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前低频存储量，单位是字节。",
+          "member": "uint64",
+          "name": "InfrequentStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前标准存储量，单位是字节。",
+          "member": "uint64",
+          "name": "StandardStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SubAppIdInfo": {
       "document": "子应用信息。",

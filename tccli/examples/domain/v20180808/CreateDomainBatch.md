@@ -6,10 +6,11 @@ Input:
 
 ```
 tccli domain CreateDomainBatch --cli-unfold-argument  \
-    --TemplateId 字符串 \
-    --Period 整型 \
-    --Domains 数组 \
-    --PayMode 整型
+    --Domains xx \
+    --PayMode 0 \
+    --Period 1 \
+    --TemplateId xx \
+    --CustomDns xx
 ```
 
 Output: 

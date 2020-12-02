@@ -1,5 +1,29 @@
 {
   "actions": {
+    "CreateDBDiagReportTask": {
+      "document": "创建健康报告，并可以选择是否发送邮件。",
+      "input": "CreateDBDiagReportTaskRequest",
+      "name": "创建健康报告生成任务",
+      "output": "CreateDBDiagReportTaskResponse"
+    },
+    "CreateMailProfile": {
+      "document": "创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成邮件配置）。",
+      "input": "CreateMailProfileRequest",
+      "name": "创建邮件配置",
+      "output": "CreateMailProfileResponse"
+    },
+    "DescribeAllUserContact": {
+      "document": "获取邮件发送中联系人的相关信息。",
+      "input": "DescribeAllUserContactRequest",
+      "name": "获取邮件发送中联系人信息",
+      "output": "DescribeAllUserContactResponse"
+    },
+    "DescribeAllUserGroup": {
+      "document": "获取邮件发送联系组的相关信息。",
+      "input": "DescribeAllUserGroupRequest",
+      "name": "获取邮件发送中联系组信息",
+      "output": "DescribeAllUserGroupResponse"
+    },
     "DescribeDBDiagEvent": {
       "document": "获取实例异常诊断事件的详情信息。",
       "input": "DescribeDBDiagEventRequest",
@@ -41,6 +65,12 @@
       "input": "DescribeTopSpaceTablesRequest",
       "name": "获取Top表的空间统计信息",
       "output": "DescribeTopSpaceTablesResponse"
+    },
+    "ModifyDiagDBInstanceConf": {
+      "document": "修改实例巡检开关。",
+      "input": "ModifyDiagDBInstanceConfRequest",
+      "name": "修改实例巡检开关状态",
+      "output": "ModifyDiagDBInstanceConfResponse"
     }
   },
   "metadata": {
@@ -50,6 +80,282 @@
     "serviceShortName": "dbbrain"
   },
   "objects": {
+    "ContactItem": {
+      "document": "联系人contact描述。",
+      "members": [
+        {
+          "default": "",
+          "document": "联系人id。",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人姓名。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人绑定的邮箱。",
+          "member": "string",
+          "name": "Mail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDBDiagReportTaskRequest": {
+      "document": "CreateDBDiagReportTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，如“2020-11-08T14:00:00+08:00”。",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，如“2020-11-09T14:00:00+08:00”。",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否发送邮件: 0 - 否，1 - 是。",
+          "member": "int64",
+          "name": "SendMailFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "接收邮件的联系人ID数组。",
+          "member": "int64",
+          "name": "ContactPerson",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "接收邮件的联系组ID数组。",
+          "member": "int64",
+          "name": "ContactGroup",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认值为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBDiagReportTaskResponse": {
+      "document": "CreateDBDiagReportTask返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMailProfileRequest": {
+      "document": "CreateMailProfile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "邮件配置内容。",
+          "member": "ProfileInfo",
+          "name": "ProfileInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "配置级别，支持值包括：\"User\" - 用户级别，\"Instance\" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。",
+          "member": "string",
+          "name": "ProfileLevel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名称，需要保持唯一性，数据库巡检邮件配置名称自拟；定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"schduler_cdb-test\"。",
+          "member": "string",
+          "name": "ProfileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置类型，支持值包括：\"dbScan_mail_configuration\" - 数据库巡检邮件配置，\"scheduler_mail_configuration\" - 定期生成邮件配置。",
+          "member": "string",
+          "name": "ProfileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置绑定的实例ID，当配置级别为\"Instance\"时需要传入。",
+          "member": "string",
+          "name": "BindInstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMailProfileResponse": {
+      "document": "CreateMailProfile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllUserContactRequest": {
+      "document": "DescribeAllUserContact请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人名数组，支持模糊搜索。",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllUserContactResponse": {
+      "document": "DescribeAllUserContact返回参数结构体",
+      "members": [
+        {
+          "document": "联系人的总数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "联系人的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ContactItem",
+          "name": "Contacts",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllUserGroupRequest": {
+      "document": "DescribeAllUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系组名称数组，支持模糊搜索。",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllUserGroupResponse": {
+      "document": "DescribeAllUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "组总数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "组信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GroupItem",
+          "name": "Groups",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBDiagEventRequest": {
       "document": "DescribeDBDiagEvent请求参数结构体",
       "members": [
@@ -704,6 +1010,155 @@
       ],
       "usage": "out"
     },
+    "GroupItem": {
+      "document": "描述组信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "组id。",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组成员数量。",
+          "member": "int64",
+          "name": "MemberCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceConfs": {
+      "document": "实例配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库巡检开关, Yes/No。",
+          "member": "string",
+          "name": "DailyInspection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MailConfiguration": {
+      "document": "邮件发送配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启邮件发送: 0, 否; 1, 是。",
+          "member": "int64",
+          "name": "SendMail",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域配置, 如[\"ap-guangzhou\", \"ap-shanghai\"]。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送指定的健康等级的报告, 如[\"HEALTH\", \"SUB_HEALTH\", \"RISK\", \"HIGH_RISK\"]。",
+          "member": "string",
+          "name": "HealthStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人id, 联系人/联系组不能都为空。",
+          "member": "int64",
+          "name": "ContactPerson",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系组id, 联系人/联系组不能都为空。",
+          "member": "int64",
+          "name": "ContactGroup",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyDiagDBInstanceConfRequest": {
+      "document": "ModifyDiagDBInstanceConf请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "巡检开关。",
+          "member": "InstanceConfs",
+          "name": "InstanceConfs",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "生效实例地域，取值为\"All\"，代表全地域。",
+          "member": "string",
+          "name": "Regions",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定更改巡检状态的实例ID。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiagDBInstanceConfResponse": {
+      "document": "ModifyDiagDBInstanceConf返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MonitorFloatMetric": {
       "document": "监控数据（浮点型）",
       "members": [
@@ -817,6 +1272,30 @@
         }
       ],
       "usage": "out"
+    },
+    "ProfileInfo": {
+      "document": "用户配置的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "语言, 如\"zh\"。",
+          "member": "string",
+          "name": "Language",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮件模板的内容。",
+          "member": "MailConfiguration",
+          "name": "MailConfiguration",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SchemaItem": {
       "document": "SchemaItem数组",

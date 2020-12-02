@@ -1,5 +1,37 @@
 {
   "actions": {
+    "CreateDBDiagReportTask": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=CreateDBDiagReportTask\n&InstanceId=test\n&StartTime=2019-01-01T00:00:00+08:00\n&EndTime=2019-01-02T00:00:00+08:00\n&SendMailFlag=1\n&ContactPerson.0=1\n&ContactGroup.0=1\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"AsyncRequestId\": 129632,\r\n\t\t\"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\r\n\t}\r\n}",
+        "title": "创建健康报告, 发送邮件(可选)"
+      }
+    ],
+    "CreateMailProfile": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=CreateMailProfile\n&Product=mysql\n&ProfileLevel=Instance\n&ProfileName=scheduler_cdb-test\n&ProfileType= scheduler_mail_configuration\n&BindInstanceIds.0=cdb-test\n&ProfileInfo.Language=zh\n&ProfileInfo.MailConfiguration.SendMail=1\n&ProfileInfo.MailConfiguration.Region.0=ap-guangzhou\n&ProfileInfo.MailConfiguration.HealthStatus.0=HEALTH\n&ProfileInfo.MailConfiguration.ContactPerson.0=1\n&ProfileInfo.MailConfiguration.ContactGroup.0=1\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\r\n\t}\r\n}",
+        "title": "创建定期生成/数据库巡检 的邮件发送模板"
+      }
+    ],
+    "DescribeAllUserContact": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeAllUserContact\n&Product=mysql\n&Names.0=zhangsan\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"Contacts\": [{\r\n                        \"Status\": 0, \r\n\t\t\t\"Mail\": \"zhangsan@qq.com\",\r\n\t\t\t\"Id\": 1,\r\n\t\t\t\"Name\": \"zhangsan\"\r\n\t\t}, {\r\n                        \"Status\": 0, \r\n\t\t\t\"Mail\": \"zhangsan2@qq.com\",\r\n\t\t\t\"Id\": 2,\r\n\t\t\t\"Name\": \"zhangsan2\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"b2d08895-1cfe-48bc-b7f7-87fd7cb5d6f1\"\r\n\t}\r\n}",
+        "title": "获取联系人信息"
+      }
+    ],
+    "DescribeAllUserGroup": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeAllUserGroup\n&Product=mysql\n&Names.0=group1\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"RequestId\": \"31dd9325-792f-4d76-89ad-ca8902cbe4d9\",\r\n\t\t\"Groups\": [{\r\n\t\t\t\"MemberCount\": 0,\r\n                        \"Status\": 0, \r\n\t\t\t\"Id\": 1,\r\n\t\t\t\"Name\": \"group1\"\r\n\t\t}, {\r\n\t\t\t\"MemberCount\": 2,\r\n                        \"Status\": 0, \r\n\t\t\t\"Id\": 2,\r\n\t\t\t\"Name\": \"group11\"\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "获取联系组信息"
+      }
+    ],
     "DescribeDBDiagEvent": [
       {
         "document": "",
@@ -54,6 +86,14 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeTopSpaceTables\n&InstanceId=cdb-test\n&Limit=2\n&SortBy=TableRows\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n        \"RequestId\":\"ed279d8b-a9d9-48d6-9429-e0fde000994a\",\r\n        \"Timestamp\":1603819881,\r\n        \"TopSpaceTables\": [\r\n           {\r\n                    \"DataFree\":0,\r\n                    \"TableName\":\"test\",\r\n                    \"TotalLength\":0.1,\r\n                    \"TableSchema\":\"test_bak\",\r\n                    \"FragRatio\":0,\r\n                    \"DataLength\":0.1,\r\n                    \"PhysicalFileSize\":0.1,\r\n                    \"TableRows\":9,\r\n                    \"Engine\":\"InnoDB\",\r\n                    \"IndexLength\":0  \r\n                },\r\n                {\r\n                    \"DataFree\":0,\r\n                    \"TableName\":\"test\",\r\n                    \"TotalLength\":0.1,\r\n                    \"TableSchema\":\"test_bak\",\r\n                    \"FragRatio\":0,\r\n                    \"DataLength\":0.1,\r\n                    \"PhysicalFileSize\":0.1,\r\n                    \"TableRows\":9,\r\n                    \"Engine\":\"InnoDB\",\r\n                    \"IndexLength\":0  \r\n                }\r\n        ]\r\n    }\r\n}",
         "title": "获取Top表的空间统计信息"
+      }
+    ],
+    "ModifyDiagDBInstanceConf": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=ModifyDiagDBInstanceConf\n&InstanceIds.0=cdb-fyclrp7r\n&InstanceConfs.DailyInspection=Yes\n&Regions=All\n&Product=mysql\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\r\n\t}\r\n}",
+        "title": "修改实例巡检状态"
       }
     ]
   },
