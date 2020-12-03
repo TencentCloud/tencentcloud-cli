@@ -17,8 +17,8 @@ class CliUnfoldArgument(CustomArgument):
 
     def build_action_parameters(self, args):
         parsed_args = vars(args)
-        for key, value in parsed_args.items():
-            if value is None:
+        for key in list(parsed_args.keys()):
+            if parsed_args[key] is None:
                 del parsed_args[key]
         param_dict = self.gen_param_dict(parsed_args)
         return self.merge_dict(param_dict)
