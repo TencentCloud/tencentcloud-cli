@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ecm DeleteLoadBalancer --cli-unfold-argument  \
-    --LoadBalancerId lb-f9zyj3kb
+    --LoadBalancerIds lb-f9zyj3kb
 ```
 
 Output: 

@@ -133,9 +133,9 @@
       "output": "DescribeFirmwareResponse"
     },
     "DescribeFirmwareTask": {
-      "document": "查询固件升级任务列表",
+      "document": "查询固件升级任务详情",
       "input": "DescribeFirmwareTaskRequest",
-      "name": "查询固件升级任务列表",
+      "name": "查询固件升级任务详情",
       "output": "DescribeFirmwareTaskResponse"
     },
     "DescribeFirmwareTaskDevices": {

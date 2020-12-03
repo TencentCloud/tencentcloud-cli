@@ -21,6 +21,7 @@ Output:
         "Type": 1,
         "ProductName": "门锁",
         "UpgradeMode": "originalVersion",
+        "ProductId": "ABCDE12345",
         "RequestId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     }
 }

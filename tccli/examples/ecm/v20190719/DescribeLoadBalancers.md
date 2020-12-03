@@ -27,6 +27,35 @@ Output:
                 "LoadBalancerId": "lb-a8q643wj",
                 "LoadBalancerName": "test",
                 "LoadBalancerType": "OPEN",
+                "Region": "xx",
+                "Position": {
+                    "Province": {
+                        "ProvinceId": "xx",
+                        "ProvinceName": "xx"
+                    },
+                    "City": {
+                        "CityId": "xx",
+                        "CityName": "xx"
+                    },
+                    "Area": {
+                        "AreaId": "xx",
+                        "AreaName": "xx"
+                    },
+                    "Country": {
+                        "CountryName": "xx",
+                        "CountryId": "xx"
+                    },
+                    "ZoneInfo": {
+                        "ZoneName": "xx",
+                        "Zone": "xx",
+                        "ZoneId": 0
+                    },
+                    "RegionInfo": {
+                        "Region": "xx",
+                        "RegionId": 0,
+                        "RegionName": "xx"
+                    }
+                },
                 "Tags": [
                     {
                         "TagValue": "test",

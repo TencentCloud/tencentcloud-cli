@@ -12,11 +12,41 @@
       "name": "集群导入云主机",
       "output": "AddInstancesResponse"
     },
+    "BindApiGroup": {
+      "document": "网关与API分组批量绑定",
+      "input": "BindApiGroupRequest",
+      "name": "网关与API分组批量绑定",
+      "output": "BindApiGroupResponse"
+    },
+    "ChangeApiUsableStatus": {
+      "document": "启用或禁用API",
+      "input": "ChangeApiUsableStatusRequest",
+      "name": "启用或禁用API",
+      "output": "ChangeApiUsableStatusResponse"
+    },
     "ContinueRunFailedTaskBatch": {
       "document": "对执行失败的任务批次执行续跑",
       "input": "ContinueRunFailedTaskBatchRequest",
       "name": "续跑任务批次",
       "output": "ContinueRunFailedTaskBatchResponse"
+    },
+    "CreateAllGatewayApiAsync": {
+      "document": "一键导入API分组",
+      "input": "CreateAllGatewayApiAsyncRequest",
+      "name": "一键导入API分组",
+      "output": "CreateAllGatewayApiAsyncResponse"
+    },
+    "CreateApiGroup": {
+      "document": "创建API分组",
+      "input": "CreateApiGroupRequest",
+      "name": "创建API分组",
+      "output": "CreateApiGroupResponse"
+    },
+    "CreateApiRateLimitRule": {
+      "document": "创建API限流规则",
+      "input": "CreateApiRateLimitRuleRequest",
+      "name": "创建API限流规则",
+      "output": "CreateApiRateLimitRuleResponse"
     },
     "CreateApplication": {
       "document": "创建应用",
@@ -41,6 +71,12 @@
       "input": "CreateContainGroupRequest",
       "name": "创建容器部署组",
       "output": "CreateContainGroupResponse"
+    },
+    "CreateGatewayApi": {
+      "document": "批量导入API至api分组(也支持新建API到分组)",
+      "input": "CreateGatewayApiRequest",
+      "name": "批量导入API至api分组",
+      "output": "CreateGatewayApiResponse"
     },
     "CreateGroup": {
       "document": "创建虚拟机部署组",
@@ -101,6 +137,12 @@
       "input": "CreateTaskFlowRequest",
       "name": "创建工作流",
       "output": "CreateTaskFlowResponse"
+    },
+    "DeleteApiGroup": {
+      "document": "删除Api分组",
+      "input": "DeleteApiGroupRequest",
+      "name": "删除Api分组",
+      "output": "DeleteApiGroupResponse"
     },
     "DeleteApplication": {
       "document": "删除应用",
@@ -204,6 +246,30 @@
       "name": "查询API详情",
       "output": "DescribeApiDetailResponse"
     },
+    "DescribeApiGroup": {
+      "document": "查询API分组",
+      "input": "DescribeApiGroupRequest",
+      "name": "查询API分组",
+      "output": "DescribeApiGroupResponse"
+    },
+    "DescribeApiGroups": {
+      "document": "查询API 分组信息列表",
+      "input": "DescribeApiGroupsRequest",
+      "name": "查询API 分组信息列表",
+      "output": "DescribeApiGroupsResponse"
+    },
+    "DescribeApiRateLimitRules": {
+      "document": "查询API限流规则",
+      "input": "DescribeApiRateLimitRulesRequest",
+      "name": "查询API限流规则",
+      "output": "DescribeApiRateLimitRulesResponse"
+    },
+    "DescribeApiUseDetail": {
+      "document": "查询网关API监控明细数据",
+      "input": "DescribeApiUseDetailRequest",
+      "name": "查询网关API监控明细数据",
+      "output": "DescribeApiUseDetailResponse"
+    },
     "DescribeApiVersions": {
       "document": "查询API 版本",
       "input": "DescribeApiVersionsRequest",
@@ -282,6 +348,12 @@
       "name": "容器部署组列表",
       "output": "DescribeContainerGroupsResponse"
     },
+    "DescribeCreateGatewayApiStatus": {
+      "document": "查询一键导入API分组任务的状态",
+      "input": "DescribeCreateGatewayApiStatusRequest",
+      "name": "查询一键导入API分组任务的状态",
+      "output": "DescribeCreateGatewayApiStatusResponse"
+    },
     "DescribeDownloadInfo": {
       "document": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436",
       "input": "DescribeDownloadInfoRequest",
@@ -294,17 +366,47 @@
       "name": "查询工作流最近一个批次的执行状态",
       "output": "DescribeFlowLastBatchStateResponse"
     },
+    "DescribeGatewayAllGroupApis": {
+      "document": "查询网关所有分组下Api列表",
+      "input": "DescribeGatewayAllGroupApisRequest",
+      "name": "查询网关所有分组下Api列表",
+      "output": "DescribeGatewayAllGroupApisResponse"
+    },
+    "DescribeGatewayMonitorOverview": {
+      "document": "查询网关监控概览",
+      "input": "DescribeGatewayMonitorOverviewRequest",
+      "name": "查询网关监控概览",
+      "output": "DescribeGatewayMonitorOverviewResponse"
+    },
     "DescribeGroup": {
       "document": "查询虚拟机部署组详情",
       "input": "DescribeGroupRequest",
       "name": "查询虚拟机部署组详情",
       "output": "DescribeGroupResponse"
     },
+    "DescribeGroupBindedGateways": {
+      "document": "查询某个API分组已绑定的网关部署组信息列表",
+      "input": "DescribeGroupBindedGatewaysRequest",
+      "name": "查询某个API分组已绑定的网关部署组信息列表",
+      "output": "DescribeGroupBindedGatewaysResponse"
+    },
+    "DescribeGroupGateways": {
+      "document": "查询某个网关绑定的API 分组信息列表",
+      "input": "DescribeGroupGatewaysRequest",
+      "name": "查询某个网关绑定的API 分组信息列表",
+      "output": "DescribeGroupGatewaysResponse"
+    },
     "DescribeGroupInstances": {
       "document": "查询虚拟机部署组云主机列表",
       "input": "DescribeGroupInstancesRequest",
       "name": "查询虚拟机部署组云主机列表",
       "output": "DescribeGroupInstancesResponse"
+    },
+    "DescribeGroupUseDetail": {
+      "document": "查询网关分组监控明细数据",
+      "input": "DescribeGroupUseDetailRequest",
+      "name": "查询网关分组监控明细数据",
+      "output": "DescribeGroupUseDetailResponse"
     },
     "DescribeGroups": {
       "document": "获取虚拟机部署组列表",
@@ -474,6 +576,12 @@
       "name": "停用工作流",
       "output": "DisableTaskFlowResponse"
     },
+    "DraftApiGroup": {
+      "document": "下线Api分组",
+      "input": "DraftApiGroupRequest",
+      "name": "下线Api分组",
+      "output": "DraftApiGroupResponse"
+    },
     "EnableTask": {
       "document": "启用任务",
       "input": "EnableTaskRequest",
@@ -570,6 +678,12 @@
       "name": "重新执行工作流批次",
       "output": "RedoTaskFlowBatchResponse"
     },
+    "ReleaseApiGroup": {
+      "document": "发布Api分组",
+      "input": "ReleaseApiGroupRequest",
+      "name": "发布Api分组",
+      "output": "ReleaseApiGroupResponse"
+    },
     "ReleaseConfig": {
       "document": "发布配置",
       "input": "ReleaseConfigRequest",
@@ -659,6 +773,36 @@
       "input": "TerminateTaskFlowBatchRequest",
       "name": "停止一个工作流批次",
       "output": "TerminateTaskFlowBatchResponse"
+    },
+    "UnbindApiGroup": {
+      "document": "API分组批量与网关解绑",
+      "input": "UnbindApiGroupRequest",
+      "name": "API分组批量与网关解绑",
+      "output": "UnbindApiGroupResponse"
+    },
+    "UpdateApiGroup": {
+      "document": "更新Api分组",
+      "input": "UpdateApiGroupRequest",
+      "name": "更新Api分组",
+      "output": "UpdateApiGroupResponse"
+    },
+    "UpdateApiRateLimitRule": {
+      "document": "更新API限流规则",
+      "input": "UpdateApiRateLimitRuleRequest",
+      "name": "更新API限流规则",
+      "output": "UpdateApiRateLimitRuleResponse"
+    },
+    "UpdateApiRateLimitRules": {
+      "document": "批量更新API限流规则",
+      "input": "UpdateApiRateLimitRulesRequest",
+      "name": "批量更新API限流规则",
+      "output": "UpdateApiRateLimitRulesResponse"
+    },
+    "UpdateGatewayApi": {
+      "document": "更新API",
+      "input": "UpdateGatewayApiRequest",
+      "name": "更新API",
+      "output": "UpdateGatewayApiResponse"
     },
     "UpdateHealthCheckSettings": {
       "document": "更新健康检查配置",
@@ -754,6 +898,14 @@
           "name": "OsCustomizeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像特征ID列表",
+          "member": "string",
+          "name": "FeatureIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -938,6 +1090,201 @@
       ],
       "usage": "out"
     },
+    "ApiDetailInfo": {
+      "document": "API 明细",
+      "members": [
+        {
+          "default": "",
+          "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MicroserviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MicroserviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API 请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Api 映射路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PathMapping",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UsableStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReleaseStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开启限流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RateLimitStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启mock\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MockStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReleasedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API 超时，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Api所在服务host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API类型。 ms ： 微服务API； external :外部服务Api\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Api描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ApiDetailResponse": {
       "document": "ApiDetailResponse",
       "members": [
@@ -993,6 +1340,285 @@
           "name": "Status",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiGroupInfo": {
+      "document": "API分组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Api Group Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Api Group 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组上下文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupContext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "鉴权类型。 secret： 秘钥鉴权； none:无鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AuthType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布状态, drafted: 未发布。 released: 发布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组创建时间 如:2019-06-20 15:51:28\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组更新时间 如:2019-06-20 15:51:28\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "api分组已绑定的网关部署组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GatewayDeployGroup",
+          "name": "BindedGatewayDeployGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "api 个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ApiCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "访问group的ACL类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AclMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组类型。 ms： 微服务分组； external:外部Api分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiInfo": {
+      "document": "微服务网关API信息",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间Id，若为外部API,为固定值：\"namespace-external\"",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务Id，若为外部API,为固定值：\"ms-external\"",
+          "member": "string",
+          "name": "MicroserviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API path",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Api 请求",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求映射",
+          "member": "string",
+          "name": "PathMapping",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "api所在服务host",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "api描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ApiRateLimitRule": {
+      "document": "微服务网关API限流规则",
+      "members": [
+        {
+          "default": "",
+          "document": "rule Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "限流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大限流qps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxQps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生效/禁用, enabled/disabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UsableStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Tsf Rule ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TsfRuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1084,6 +1710,39 @@
           "document": "参数描述",
           "member": "string",
           "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiUseStatisticsEntity": {
+      "document": "API 日统计数据点",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "次数",
+          "member": "string",
+          "name": "Count",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "比率",
+          "member": "string",
+          "name": "Ratio",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1261,6 +1920,80 @@
         }
       ],
       "usage": "out"
+    },
+    "BindApiGroupRequest": {
+      "document": "BindApiGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分组绑定网关列表",
+          "member": "GatewayGroupIds",
+          "name": "GroupGatewayList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindApiGroupResponse": {
+      "document": "BindApiGroup返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，成功失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeApiUsableStatusRequest": {
+      "document": "ChangeApiUsableStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API ID",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换状态，enabled/disabled",
+          "member": "string",
+          "name": "UsableStatus",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeApiUsableStatusResponse": {
+      "document": "ChangeApiUsableStatus返回参数结构体",
+      "members": [
+        {
+          "document": "API 信息",
+          "member": "ApiDetailInfo",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Cluster": {
       "document": "集群",
@@ -2579,6 +3312,161 @@
       ],
       "usage": "out"
     },
+    "CreateAllGatewayApiAsyncRequest": {
+      "document": "CreateAllGatewayApiAsync请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微服务ID",
+          "member": "string",
+          "name": "MicroserviceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAllGatewayApiAsyncResponse": {
+      "document": "CreateAllGatewayApiAsync返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiGroupRequest": {
+      "document": "CreateApiGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分组名称, 不能包含中文",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分组上下文",
+          "member": "string",
+          "name": "GroupContext",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "鉴权类型。secret： 秘钥鉴权； none:无鉴权",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分组类型,默认ms。 ms： 微服务分组； external:外部Api分组",
+          "member": "string",
+          "name": "GroupType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiGroupResponse": {
+      "document": "CreateApiGroup返回参数结构体",
+      "members": [
+        {
+          "document": "API分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiRateLimitRuleRequest": {
+      "document": "CreateApiRateLimitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Api Id",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "qps值",
+          "member": "uint64",
+          "name": "MaxQps",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开启/禁用，enabled/disabled, 不传默认开启",
+          "member": "string",
+          "name": "UsableStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiRateLimitRuleResponse": {
+      "document": "CreateApiRateLimitRule返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateApplicationRequest": {
       "document": "CreateApplication请求参数结构体",
       "members": [
@@ -3044,6 +3932,47 @@
           "member": "string",
           "name": "Result",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGatewayApiRequest": {
+      "document": "CreateGatewayApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API 分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Api信息",
+          "member": "ApiInfo",
+          "name": "ApiList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGatewayApiResponse": {
+      "document": "CreateGatewayApi返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -3766,6 +4695,39 @@
           "member": "string",
           "name": "Result",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApiGroupRequest": {
+      "document": "DeleteApiGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API 分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApiGroupResponse": {
+      "document": "DeleteApiGroup返回参数结构体",
+      "members": [
+        {
+          "document": "成功失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -4763,6 +5725,218 @@
       ],
       "type": "object"
     },
+    "DescribeApiGroupRequest": {
+      "document": "DescribeApiGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API 分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiGroupResponse": {
+      "document": "DescribeApiGroup返回参数结构体",
+      "members": [
+        {
+          "document": "API分组信息",
+          "member": "ApiGroupInfo",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiGroupsRequest": {
+      "document": "DescribeApiGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条数，默认为20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分组类型。 ms： 微服务分组； external:外部Api分组",
+          "member": "string",
+          "name": "GroupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "鉴权类型。 secret： 秘钥鉴权； none:无鉴权",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发布状态, drafted: 未发布。 released: 发布",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段：\"created_time\"或\"group_context\"",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型：0(ASC)或1(DESC)",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiGroupsResponse": {
+      "document": "DescribeApiGroups返回参数结构体",
+      "members": [
+        {
+          "document": "翻页结构体",
+          "member": "TsfPageApiGroupInfo",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiRateLimitRulesRequest": {
+      "document": "DescribeApiRateLimitRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Api ID",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiRateLimitRulesResponse": {
+      "document": "DescribeApiRateLimitRules返回参数结构体",
+      "members": [
+        {
+          "document": "限流结果",
+          "member": "ApiRateLimitRule",
+          "name": "Result",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiUseDetailRequest": {
+      "document": "DescribeApiUseDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关分组Api ID",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的日期,格式：yyyy-MM-dd HH:mm:ss",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的日期,格式：yyyy-MM-dd HH:mm:ss",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiUseDetailResponse": {
+      "document": "DescribeApiUseDetail返回参数结构体",
+      "members": [
+        {
+          "document": "日使用统计对象",
+          "member": "GroupApiUseStatistics",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApiVersionsRequest": {
       "document": "DescribeApiVersions请求参数结构体",
       "members": [
@@ -5519,6 +6693,47 @@
       ],
       "type": "object"
     },
+    "DescribeCreateGatewayApiStatusRequest": {
+      "document": "DescribeCreateGatewayApiStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "请求方法",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微服务ID",
+          "member": "string",
+          "name": "MicroserviceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCreateGatewayApiStatusResponse": {
+      "document": "DescribeCreateGatewayApiStatus返回参数结构体",
+      "members": [
+        {
+          "document": "是否已完成导入任务",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDownloadInfoRequest": {
       "document": "DescribeDownloadInfo请求参数结构体",
       "members": [
@@ -5596,6 +6811,194 @@
         {
           "document": "工作流批次最新状态",
           "member": "TaskFlowLastBatchState",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayAllGroupApisRequest": {
+      "document": "DescribeGatewayAllGroupApis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字，支持分组名称或API Path",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayAllGroupApisResponse": {
+      "document": "DescribeGatewayAllGroupApis返回参数结构体",
+      "members": [
+        {
+          "document": "网关分组和API列表信息",
+          "member": "GatewayVo",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayMonitorOverviewRequest": {
+      "document": "DescribeGatewayMonitorOverview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayMonitorOverviewResponse": {
+      "document": "DescribeGatewayMonitorOverview返回参数结构体",
+      "members": [
+        {
+          "document": "监控概览对象",
+          "member": "MonitorOverview",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupBindedGatewaysRequest": {
+      "document": "DescribeGroupBindedGateways请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API 分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页查询偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页查询每页记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupBindedGatewaysResponse": {
+      "document": "DescribeGroupBindedGateways返回参数结构体",
+      "members": [
+        {
+          "document": "翻页结构体",
+          "member": "TsfPageGatewayDeployGroup",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupGatewaysRequest": {
+      "document": "DescribeGroupGateways请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页查询偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页查询每页记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupGatewaysResponse": {
+      "document": "DescribeGroupGateways返回参数结构体",
+      "members": [
+        {
+          "document": "API分组信息",
+          "member": "TsfPageApiGroupInfo",
           "name": "Result",
           "type": "object",
           "value_allowed_null": false
@@ -5705,6 +7108,71 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupUseDetailRequest": {
+      "document": "DescribeGroupUseDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的日期,格式：yyyy-MM-dd HH:mm:ss",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的日期,格式：yyyy-MM-dd HH:mm:ss",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定top的条数,默认为10",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupUseDetailResponse": {
+      "document": "DescribeGroupUseDetail返回参数结构体",
+      "members": [
+        {
+          "document": "日使用统计对象",
+          "member": "GroupDailyUseStatistics",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7399,6 +8867,39 @@
       ],
       "type": "object"
     },
+    "DraftApiGroupRequest": {
+      "document": "DraftApiGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Api 分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DraftApiGroupResponse": {
+      "document": "DraftApiGroup返回参数结构体",
+      "members": [
+        {
+          "document": "true: 成功, false: 失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableTaskFlowRequest": {
       "document": "EnableTaskFlow请求参数结构体",
       "members": [
@@ -7596,6 +9097,300 @@
       ],
       "type": "object"
     },
+    "GatewayApiGroupVo": {
+      "document": "网关分组简单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组下API个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "GroupApiCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组API列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GatewayGroupApiVo",
+          "name": "GroupApis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GatewayDeployGroup": {
+      "document": "api分组已绑定的网关部署组",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeployGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeployGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用分类：V：虚拟机应用，C：容器应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组应用状态,取值: Running、Waiting、Paused、Updating、RollingBack、Abnormal、Unknown\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群类型，C ：容器，V：虚拟机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GatewayGroupApiVo": {
+      "document": "网关API简单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "API ID",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API 请求路径",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API 微服务名称",
+          "member": "string",
+          "name": "MicroserviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API 请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GatewayGroupIds": {
+      "document": "网关部署组ID和网关API分组ID元组",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组id",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GatewayVo": {
+      "document": "网关部署组、分组、API列表数据",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GatewayDeployGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API 分组个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "GroupNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API 分组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GatewayApiGroupVo",
+          "name": "Groups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupApiUseStatistics": {
+      "document": "API监控明细数据",
+      "members": [
+        {
+          "default": "",
+          "document": "总调用数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ApiUseStatisticsEntity",
+          "name": "TopStatusCode",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平均错误率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ApiUseStatisticsEntity",
+          "name": "TopTimeCost",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分位值对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QuantileEntity",
+          "name": "Quantile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupDailyUseStatistics": {
+      "document": "分组日使用统计对象",
+      "members": [
+        {
+          "default": "",
+          "document": "总调用数",
+          "member": "GroupUseStatisticsEntity",
+          "name": "TopReqAmount",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均错误率",
+          "member": "GroupUseStatisticsEntity",
+          "name": "TopFailureRate",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均响应耗时",
+          "member": "GroupUseStatisticsEntity",
+          "name": "TopAvgTimeCost",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GroupPod": {
       "document": "部署组实例列表",
       "members": [
@@ -7747,6 +9542,48 @@
           "name": "Content",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupUseStatisticsEntity": {
+      "document": "API分组日使用统计对象数据点",
+      "members": [
+        {
+          "default": "",
+          "document": "API 路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9518,6 +11355,66 @@
       ],
       "type": "object"
     },
+    "MonitorOverview": {
+      "document": "监控概览对象",
+      "members": [
+        {
+          "default": "",
+          "document": "近24小时调用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InvocationCountOfDay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总调用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InvocationCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "近24小时调用错误数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrorCountOfDay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总调用错误数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrorCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "近24小时调用成功率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SuccessRatioOfDay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总调用成功率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SuccessRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MsApiArray": {
       "document": "微服务API数组",
       "members": [
@@ -10277,6 +12174,48 @@
       ],
       "usage": "both"
     },
+    "QuantileEntity": {
+      "document": "分位数据模型",
+      "members": [
+        {
+          "default": "",
+          "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MaxValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MinValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "五分位值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FifthPositionValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "九分位值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NinthPositionValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RedoTaskBatchRequest": {
       "document": "RedoTaskBatch请求参数结构体",
       "members": [
@@ -10422,6 +12361,39 @@
           "member": "string",
           "name": "Result",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseApiGroupRequest": {
+      "document": "ReleaseApiGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Api 分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseApiGroupResponse": {
+      "document": "ReleaseApiGroup返回参数结构体",
+      "members": [
+        {
+          "document": "成功/失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -11872,6 +13844,30 @@
       ],
       "usage": "out"
     },
+    "TsfPageApiGroupInfo": {
+      "document": "ApiGroupInfo翻页结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API分组信息",
+          "member": "ApiGroupInfo",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TsfPageApplication": {
       "document": "应用分页信息",
       "members": [
@@ -11988,6 +13984,30 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageGatewayDeployGroup": {
+      "document": "GatewayDeployGroup 翻页对象",
+      "members": [
+        {
+          "default": "",
+          "document": "记录总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录实体列表",
+          "member": "GatewayDeployGroup",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12159,6 +14179,275 @@
         }
       ],
       "usage": "out"
+    },
+    "UnbindApiGroupRequest": {
+      "document": "UnbindApiGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分组网关id列表",
+          "member": "GatewayGroupIds",
+          "name": "GroupGatewayList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindApiGroupResponse": {
+      "document": "UnbindApiGroup返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，成功失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiGroupRequest": {
+      "document": "UpdateApiGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Api 分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Api 分组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Api 分组描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "鉴权类型",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分组上下文",
+          "member": "string",
+          "name": "GroupContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiGroupResponse": {
+      "document": "UpdateApiGroup返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，true: 成功, false: 失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiRateLimitRuleRequest": {
+      "document": "UpdateApiRateLimitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "限流规则ID",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开启/禁用，enabled/disabled",
+          "member": "string",
+          "name": "UsableStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "qps值，开启限流规则时，必填",
+          "member": "int64",
+          "name": "MaxQps",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiRateLimitRuleResponse": {
+      "document": "UpdateApiRateLimitRule返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiRateLimitRulesRequest": {
+      "document": "UpdateApiRateLimitRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API ID 列表",
+          "member": "string",
+          "name": "ApiIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "开启/禁用，enabled/disabled",
+          "member": "string",
+          "name": "UsableStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "QPS值。开启限流规则时，必填",
+          "member": "int64",
+          "name": "MaxQps",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiRateLimitRulesResponse": {
+      "document": "UpdateApiRateLimitRules返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGatewayApiRequest": {
+      "document": "UpdateGatewayApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API ID",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "API 路径",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Api 请求方法",
+          "member": "string",
+          "name": "Method",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求映射",
+          "member": "string",
+          "name": "PathMapping",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "api所在服务host",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "api描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGatewayApiResponse": {
+      "document": "UpdateGatewayApi返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，成功失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateHealthCheckSettingsRequest": {
       "document": "UpdateHealthCheckSettings请求参数结构体",

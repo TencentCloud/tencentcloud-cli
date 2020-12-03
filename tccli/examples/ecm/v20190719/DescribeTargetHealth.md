@@ -37,15 +37,6 @@ Output:
                         "Port": 13001,
                         "Protocol": "TCP",
                         "ListenerName": ""
-                    },
-                    {
-                        "Rules": [
-                            {}
-                        ],
-                        "ListenerId": "lbl-2fcyclbg",
-                        "Port": 13002,
-                        "Protocol": "TCP",
-                        "ListenerName": ""
                     }
                 ]
             }

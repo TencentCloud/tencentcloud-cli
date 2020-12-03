@@ -186,7 +186,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeFirmwareTask\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&TaskId=10000\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 1000175,\r\n        \"Status\": 3,\r\n        \"CreateTime\": 1589466879,\r\n        \"Type\": 1,\r\n        \"ProductName\":\"门锁\",\r\n        \"UpgradeMode\":\"originalVersion\",\r\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 1000175,\r\n        \"Status\": 3,\r\n        \"CreateTime\": 1589466879,\r\n        \"Type\": 1,\r\n        \"ProductName\":\"门锁\",\r\n        \"UpgradeMode\":\"originalVersion\",\r\n        \"ProductId\":\"ABCDE12345\",\r\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
         "title": "查询固件升级任务详情"
       }
     ],

@@ -564,6 +564,18 @@
       "name": "更新实例Ro组的信息",
       "output": "ModifyRoGroupInfoResponse"
     },
+    "ModifyRoReplicationDelay": {
+      "document": "修改延迟只读实例的延迟复制时间。",
+      "input": "ModifyRoReplicationDelayRequest",
+      "name": "修改延迟只读实例的延迟复制时间",
+      "output": "ModifyRoReplicationDelayResponse"
+    },
+    "ModifyRoType": {
+      "document": "修改只读实例类型，可以将普通只读实例变为延迟只读实例，或者将延迟只读实例变为普通只读实例。",
+      "input": "ModifyRoTypeRequest",
+      "name": "修改只读实例类型",
+      "output": "ModifyRoTypeResponse"
+    },
     "ModifyTimeWindow": {
       "document": "本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。",
       "input": "ModifyTimeWindowRequest",
@@ -612,11 +624,23 @@
       "name": "回档数据库表",
       "output": "StartBatchRollbackResponse"
     },
+    "StartDelayReplication": {
+      "document": "启动延迟只读实例的延迟复制。",
+      "input": "StartDelayReplicationRequest",
+      "name": "启动延迟复制",
+      "output": "StartDelayReplicationResponse"
+    },
     "StopDBImportJob": {
       "document": "本接口(StopDBImportJob)用于终止数据导入任务。",
       "input": "StopDBImportJobRequest",
       "name": "终止数据导入任务",
       "output": "StopDBImportJobResponse"
+    },
+    "StopDelayReplication": {
+      "document": "停止延迟只读实例的延迟复制。",
+      "input": "StopDelayReplicationRequest",
+      "name": "停止延迟复制",
+      "output": "StopDelayReplicationResponse"
     },
     "StopRollback": {
       "document": "本接口(StopRollback) 用于撤销实例正在进行的回档任务，该接口返回一个异步任务id。 撤销结果可以通过 DescribeRequestResult 查询任务的执行情况。",
@@ -8533,6 +8557,90 @@
       ],
       "type": "object"
     },
+    "ModifyRoReplicationDelayRequest": {
+      "document": "ModifyRoReplicationDelay请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "延迟时间（s）。最小值1，最大值259200。",
+          "member": "int64",
+          "name": "ReplicationDelay",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoReplicationDelayResponse": {
+      "document": "ModifyRoReplicationDelay返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoTypeRequest": {
+      "document": "ModifyRoType请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读实例源类型，取值 NORMAL（普通只读实例）、DELAY_REPLICATION（延迟只读实例）。",
+          "member": "string",
+          "name": "SrcRoInstType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读实例目标类型，取值 NORMAL（普通只读实例）、DELAY_REPLICATION（延迟只读实例）。",
+          "member": "string",
+          "name": "DstRoInstType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "延迟时间（s），将实例修改为延迟只读实例时必传。最小值1，最大值259200。",
+          "member": "int64",
+          "name": "ReplicationDelay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoTypeResponse": {
+      "document": "ModifyRoType返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTimeWindowRequest": {
       "document": "ModifyTimeWindow请求参数结构体",
       "members": [
@@ -10382,6 +10490,63 @@
       ],
       "type": "object"
     },
+    "StartDelayReplicationRequest": {
+      "document": "StartDelayReplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "延迟复制类型。可选值 DEFAULT（按照延迟复制时间进行复制）、GTID（回放到指定GTID）、DUE_TIME（回放到指定时间点）。",
+          "member": "string",
+          "name": "DelayReplicationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定时间点，默认为0，最大值不能超过当前时间。",
+          "member": "int64",
+          "name": "DueTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定GITD。回放到指定GTID时必传。",
+          "member": "string",
+          "name": "Gtid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartDelayReplicationResponse": {
+      "document": "StartDelayReplication返回参数结构体",
+      "members": [
+        {
+          "document": "延迟复制任务 ID。DelayReplicationType不为DEFAULT时返回，可用来查询回放任务状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopDBImportJobRequest": {
       "document": "StopDBImportJob请求参数结构体",
       "members": [
@@ -10398,6 +10563,32 @@
     },
     "StopDBImportJobResponse": {
       "document": "StopDBImportJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopDelayReplicationRequest": {
+      "document": "StopDelayReplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopDelayReplicationResponse": {
+      "document": "StopDelayReplication返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

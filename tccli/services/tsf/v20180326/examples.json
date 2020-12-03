@@ -16,12 +16,52 @@
         "title": "添加云主机节点"
       }
     ],
+    "BindApiGroup": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=BindApiGroup\n&GroupGatewayList.0.GatewayDeployGroupId=group-sdy268\n&GroupGatewayList.0.GroupId=grp-s2gf2a8\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"5d996e05507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "网关与API分组批量绑定"
+      }
+    ],
+    "ChangeApiUsableStatus": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ChangeApiUsableStatus\n&ApiId=api-d5970cd2\n&UsableStatus=enabled\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"UpdatedTime\": \"xx\", \r\n            \"PathMapping\": \"xx\", \r\n            \"MicroserviceName\": \"xx\", \r\n            \"Description\": \"xx\", \r\n            \"MicroserviceId\": \"xx\", \r\n            \"NamespaceName\": \"xx\", \r\n            \"ApiId\": \"api-d5970cd2\", \r\n            \"UsableStatus\": \"xx\", \r\n            \"ApiType\": \"xx\", \r\n            \"ReleaseStatus\": \"xx\", \r\n            \"GroupName\": \"xx\", \r\n            \"Host\": \"xx\", \r\n            \"Method\": \"POST\", \r\n            \"RateLimitStatus\": \"xx\", \r\n            \"Timeout\": 10, \r\n            \"NamespaceId\": \"xx\", \r\n            \"CreatedTime\": \"xx\", \r\n            \"Path\": \"/provider-demo/v1/echo\", \r\n            \"ReleasedTime\": \"xx\", \r\n            \"MockStatus\": \"xx\", \r\n            \"GroupId\": \"xx\"\r\n        }, \r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\"\r\n    }\r\n}",
+        "title": "启用API"
+      }
+    ],
     "ContinueRunFailedTaskBatch": [
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=ContinueRunFailedTaskBatch\n&BatchId=batch-12345678\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n     \"RequestID\": \"3c12afk-cfeg-470e-b34f-90810we1dsad\",\r\n\t \"Result\": true\r\n  }\r\n}",
         "title": "续跑执行失败的任务批次"
+      }
+    ],
+    "CreateAllGatewayApiAsync": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateAllGatewayApiAsync\n&GroupId=grp-5yk7oor1\n&MicroserviceId=ms-2vz549vp\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "一键导入微服务的网关分组API"
+      }
+    ],
+    "CreateApiGroup": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateApiGroup\n&GroupName=zuul_test_group\n&GroupContext=%2Fuser\n&AuthType=none\n&Description=test\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n       \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\r\n       \"Result\": \"grp-12345678\" \r\n    } \r\n}",
+        "title": "创建API分组"
+      }
+    ],
+    "CreateApiRateLimitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateApiRateLimitRule\n&ApiId=api-uk1098lc1\n&MaxQps=100\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "创建API限流规则"
       }
     ],
     "CreateApplication": [
@@ -54,6 +94,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=CreateContainGroup\r\n&CpuRequest=0.25\r\n&MemRequest=128\r\n&InstanceNum=1\r\n&ApplicationId=application-xxxxxxx\r\n&GroupName=consumer\r\n&NamespaceId=namespace-xxxxxxx\r\n&ClusterId=cls-xxxxxxx\r\n&AccessType=2\r\n&ProtocolPorts.0.Protocol=TCP\r\n&ProtocolPorts.0.Port=90\r\n&ProtocolPorts.0.TargetPort=90\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"39bb8e88-1ccd-4204-9f9e-56804c980a31\",\r\n    \"Result\": \"group-xxxxxxx\"\r\n  }\r\n}",
         "title": "创建容器部署组"
+      }
+    ],
+    "CreateGatewayApi": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateGatewayApi\n&GroupId=grp-5yk7oor1\n&ApiList.0.NamespaceId=ns-do1n280j\n&ApiList.0.MicroserviceId=ms-sf26d1gf1\n&ApiList.0.Path=/user/find\n&ApiList.0.Method=POST\n&ApiList.0.PathMapping=/user/find\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "批量导入API至api分组"
       }
     ],
     "CreateGroup": [
@@ -134,6 +182,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=CreateTaskFlow\n&FlowName=exec-6g4rq8z6\n&TriggerRule={}\n&FlowEdges=[]\n&TimeOut=3000\n&<公共请求参数>",
         "output": "{\r\n    \"Reponse\": {\r\n        \"Result\": \"flow-kw2sk8\" \r\n    }\r\n}",
         "title": "创建工作流"
+      }
+    ],
+    "DeleteApiGroup": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteApiGroup\n&GroupId=grp-5yk7oor1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"5d996e05507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "删除Api分组"
       }
     ],
     "DeleteApplication": [
@@ -272,6 +328,38 @@
         "title": "查询API详情"
       }
     ],
+    "DescribeApiGroup": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApiGroup\n&GroupId=grp-e42d597\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Status\": \"xx\", \r\n            \"UpdatedTime\": \"xx\", \r\n            \"AuthType\": \"secret\", \r\n            \"Description\": \"xx\", \r\n            \"BindedGatewayDeployGroups\": [\r\n                {\r\n                    \"DeployGroupId\": \"grp-fdsfds\", \r\n                    \"ApplicationName\": \"xx\", \r\n                    \"GroupStatus\": \"drafted\", \r\n                    \"ClusterType\": \"xx\", \r\n                    \"DeployGroupName\": \"xx\", \r\n                    \"ApplicationType\": \"xx\", \r\n                    \"ApplicationId\": \"xx\"\r\n                }\r\n            ], \r\n            \"GroupType\": \"ms\", \r\n            \"AclMode\": \"xx\", \r\n            \"ApiCount\": 0, \r\n            \"GroupName\": \"xx\", \r\n            \"GroupContext\": \"/xx\", \r\n            \"CreatedTime\": \"xx\", \r\n            \"GroupId\": \"grp-dasdasdas\"\r\n        }, \r\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\r\n    }\r\n}",
+        "title": "查询API分组"
+      }
+    ],
+    "DescribeApiGroups": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApiGroups\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Content\": [\r\n                {\r\n                    \"Status\": \"xx\", \r\n                    \"UpdatedTime\": \"xx\", \r\n                    \"AuthType\": \"xx\", \r\n                    \"Description\": \"xx\", \r\n                    \"BindedGatewayDeployGroups\": [\r\n                        {\r\n                            \"DeployGroupId\": \"xx\", \r\n                            \"ApplicationName\": \"xx\", \r\n                            \"GroupStatus\": \"xx\", \r\n                            \"ClusterType\": \"xx\", \r\n                            \"DeployGroupName\": \"xx\", \r\n                            \"ApplicationType\": \"xx\", \r\n                            \"ApplicationId\": \"xx\"\r\n                        }\r\n                    ], \r\n                    \"GroupType\": \"xx\", \r\n                    \"AclMode\": \"xx\", \r\n                    \"ApiCount\": 0, \r\n                    \"GroupName\": \"xx\", \r\n                    \"GroupContext\": \"xx\", \r\n                    \"CreatedTime\": \"xx\", \r\n                    \"GroupId\": \"xx\"\r\n                }\r\n            ], \r\n            \"TotalCount\": 1\r\n        }, \r\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\r\n    }\r\n}",
+        "title": "查询API 分组信息列表"
+      }
+    ],
+    "DescribeApiRateLimitRules": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApiRateLimitRules\n&ApiId=api-uk1098lc1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": [\r\n            {\r\n                \"UpdatedTime\": \"xx\", \r\n                \"MaxQps\": 1, \r\n                \"Description\": \"xx\", \r\n                \"RuleId\": \"xx\", \r\n                \"ApiId\": \"xx\", \r\n                \"TsfRuleId\": \"xx\", \r\n                \"UsableStatus\": \"enabled\", \r\n                \"RuleName\": \"xx\", \r\n                \"CreatedTime\": \"xx\", \r\n                \"RuleContent\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询API限流规则"
+      }
+    ],
+    "DescribeApiUseDetail": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApiUseDetail\n&ApiId=api-qabo8xyl\n&GatewayDeployGroupId=group-i54lzdrq\n&EndTime=2020-09-22 00:00:00\n&StartTime=2020-09-22 00:00:00\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TopStatusCode\": [\r\n                {\r\n                    \"Count\": \"2000\", \r\n                    \"Ratio\": \"0.35565\", \r\n                    \"Name\": \"2xx\"\r\n                }\r\n            ], \r\n            \"TopTimeCost\": [\r\n                {\r\n                    \"Count\": \"xx\", \r\n                    \"Ratio\": \"xx\", \r\n                    \"Name\": \"xx\"\r\n                }\r\n            ], \r\n            \"Quantile\": {\r\n                \"NinthPositionValue\": \"12.13\", \r\n                \"MinValue\": \"0.32\", \r\n                \"MaxValue\": \"0.26\", \r\n                \"FifthPositionValue\": \"1.32\"\r\n            }\r\n        }, \r\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\r\n    }\r\n}",
+        "title": "查询网关API监控明细数据"
+      }
+    ],
     "DescribeApiVersions": [
       {
         "document": "",
@@ -376,6 +464,14 @@
         "title": "查询容器部署组列表"
       }
     ],
+    "DescribeCreateGatewayApiStatus": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeCreateGatewayApiStatus\n&GroupId=grp-70cd2e25\n&MicroserviceId=test\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "DescribeCreateGatewayApiStatus"
+      }
+    ],
     "DescribeDownloadInfo": [
       {
         "document": "获取应用application-zxxxxxxx下程序包id为pkg-xxxxxxx的下载信息",
@@ -392,6 +488,22 @@
         "title": "查询工作流最近一次执行状态"
       }
     ],
+    "DescribeGatewayAllGroupApis": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGatewayAllGroupApis\n&GatewayDeployGroupId=group-zbyxk4aa\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0a1c8ed2-7a69-4a12-87f0-a6ca4b6419f8\",\r\n        \"Result\": {\r\n            \"GatewayDeployGroupId\": \"group-zbyxk4aa\",\r\n            \"GatewayDeployGroupName\": \"sean-test\",\r\n            \"GroupNum\": 1,\r\n            \"Groups\": [\r\n                {\r\n                    \"GroupId\": \"grp-aocm2u1n\",\r\n                    \"GroupName\": \"test\",\r\n                    \"GroupApiCount\": 3,\r\n                    \"GroupApis\": [\r\n                        {\r\n                            \"ApiId\": \"api-3bpjclfs\",\r\n                            \"Path\": \"/v1/user/{userId}\",\r\n                            \"Method\": \"POST\",\r\n                            \"MicroserviceName\": \"provider-demo\",\r\n                            \"NamespaceName\": \"test-ns2\"\r\n                        },\r\n                        {\r\n                            \"ApiId\": \"api-5lf5r4i3\",\r\n                            \"Path\": \"/v1/user/create/user\",\r\n                            \"Method\": \"POST\",\r\n                            \"MicroserviceName\": \"provider-demo\",\r\n                            \"NamespaceName\": \"test-ns\"\r\n                        },\r\n                        {\r\n                            \"ApiId\": \"api-3e1583de\",\r\n                            \"Path\": \"/echo/{param}\",\r\n                            \"Method\": \"GET\",\r\n                            \"MicroserviceName\": \"provider-demo\",\r\n                            \"NamespaceName\": \"test-ns\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+        "title": "查询网关下分组和API"
+      }
+    ],
+    "DescribeGatewayMonitorOverview": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGatewayMonitorOverview\n&GatewayDeployGroupId=group-spzs5mv5\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"5d996e05507e42d5970cd2e25ed5267a\",\r\n        \"Result\":{\r\n            \"InvocationCountOfDay\":\"1213\",\r\n            \"InvocationCount\":\"10987\",\r\n            \"ErrorCountOfDay\":\"123\",\r\n            \"ErrorCount\":\"8990\",\r\n            \"SuccessRatioOfDay\":\"0.18671\",\r\n            \"SuccessRatio\":\"0.35829\"\r\n        }\r\n    }\r\n}",
+        "title": "查询网关监控概览"
+      }
+    ],
     "DescribeGroup": [
       {
         "document": "",
@@ -400,12 +512,36 @@
         "title": "查询虚拟机部署组详情"
       }
     ],
+    "DescribeGroupBindedGateways": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroupBindedGateways\n&GroupId=group-s7j2sk4\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Content\": [\r\n                {\r\n                    \"DeployGroupId\": \"xx\", \r\n                    \"ApplicationName\": \"xx\", \r\n                    \"GroupStatus\": \"xx\", \r\n                    \"ClusterType\": \"xx\", \r\n                    \"DeployGroupName\": \"xx\", \r\n                    \"ApplicationType\": \"xx\", \r\n                    \"ApplicationId\": \"xx\"\r\n                }\r\n            ], \r\n            \"TotalCount\": 1\r\n        }, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询某个API分组已绑定的网关部署组信息列表"
+      }
+    ],
+    "DescribeGroupGateways": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroupGateways\n&Offset=0\n&Limit=20\n&GatewayDeployGroupId=group-fdsfdsfds\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Content\": [\r\n                {\r\n                    \"Status\": \"drafted\", \r\n                    \"UpdatedTime\": \"2019-06-20 15:51:28\", \r\n                    \"AuthType\": \"none\", \r\n                    \"Description\": \"xx\", \r\n                    \"BindedGatewayDeployGroups\": [\r\n                        {\r\n                            \"DeployGroupId\": \"xx\", \r\n                            \"ApplicationName\": \"xx\", \r\n                            \"GroupStatus\": \"xx\", \r\n                            \"ClusterType\": \"xx\", \r\n                            \"DeployGroupName\": \"xx\", \r\n                            \"ApplicationType\": \"xx\", \r\n                            \"ApplicationId\": \"xx\"\r\n                        }\r\n                    ], \r\n                    \"GroupType\": \"ms\", \r\n                    \"AclMode\": \"xx\", \r\n                    \"ApiCount\": 0, \r\n                    \"GroupName\": \"xx\", \r\n                    \"GroupContext\": \"/xx\", \r\n                    \"CreatedTime\": \"2019-06-20 15:51:28\", \r\n                    \"GroupId\": \"grp-e42d597\"\r\n                }\r\n            ], \r\n            \"TotalCount\": 1\r\n        }, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询某个网关绑定的API 分组信息列表"
+      }
+    ],
     "DescribeGroupInstances": [
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroupInstances\r\n&GroupId=group-xxxxxxx\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"26528f55-0b7e-4f9c-a122-974fbccd2ab3\",\r\n    \"Result\": {\r\n      \"TotalCount\": 1,\r\n      \"Content\": [\r\n        {\r\n          \"InstanceId\": \"ins-xxxxxxx\",\r\n          \"InstanceName\": \"test\",\r\n          \"LanIp\": \"10.3.0.9\",\r\n          \"WanIp\": \"\",\r\n          \"NamespaceId\": \"cluster-xxxxxxx\",\r\n          \"UpdateTime\": null,\r\n          \"InstanceDesc\": null,\r\n          \"ClusterId\": null,\r\n          \"ClusterName\": null,\r\n          \"InstanceStatus\": \"Running\",\r\n          \"InstanceAvailableStatus\": \"Running\",\r\n          \"ServiceInstanceStatus\": \"Running\",\r\n          \"ServiceSidecarStatus\": \"UnSupported\",\r\n          \"OperationState\": 0,\r\n          \"CountInTsf\": null,\r\n          \"GroupId\": \"group-ov6wl65y\",\r\n          \"GroupName\": null,\r\n          \"ApplicationId\": null,\r\n          \"ApplicationName\": null,\r\n          \"InstanceCreatedTime\": null,\r\n          \"InstanceExpiredTime\": null,\r\n          \"InstanceChargeType\": null,\r\n          \"InstanceTotalCpu\": null,\r\n          \"InstanceTotalMem\": null,\r\n          \"InstanceUsedCpu\": null,\r\n          \"InstanceUsedMem\": null,\r\n          \"InstanceLimitCpu\": null,\r\n          \"InstanceLimitMem\": null,\r\n          \"InstancePkgVersion\": \"20190527183200\",\r\n          \"ClusterType\": null,\r\n          \"InstanceZoneId\": null,\r\n          \"RestrictState\": null,\r\n          \"InstanceImportMode\": \"R\",\r\n          \"ApplicationType\": null\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
         "title": "查询虚拟机部署组云主机列表"
+      }
+    ],
+    "DescribeGroupUseDetail": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroupUseDetail\n&Count=10\n&GroupId=group-i54lzdrq\n&EndTime=2020-09-22 00:00:00\n&StartTime=2020-09-22 00:00:00\n&GatewayDeployGroupId=group-dasdas\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"TopReqAmount\": [\r\n                {\r\n                    \"ApiPath\": \"/v1/user/{userId}\", \r\n                    \"ServiceName\": \"provider-demo\", \r\n                    \"ApiId\": \"xx\", \r\n                    \"Value\": \"16000\"\r\n                }\r\n            ], \r\n            \"TopFailureRate\": [\r\n                {\r\n                    \"ApiPath\": \"/v1/user/{userId}\", \r\n                    \"ServiceName\": \"provider-demo\", \r\n                    \"ApiId\": \"xx\", \r\n                    \"Value\": \"0.80000\"\r\n                }\r\n            ], \r\n            \"TopAvgTimeCost\": [\r\n                {\r\n                    \"ApiPath\": \"/v1/user/{userId}\", \r\n                    \"ServiceName\": \"provider-demo\", \r\n                    \"ApiId\": \"xx\", \r\n                    \"Value\": \"0.23265\"\r\n                }\r\n            ]\r\n        }, \r\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\r\n    }\r\n}",
+        "title": "查询网关分组监控明细数据"
       }
     ],
     "DescribeGroups": [
@@ -632,6 +768,14 @@
         "title": "停用工作流"
       }
     ],
+    "DraftApiGroup": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DraftApiGroup\n&GroupId=grp-5yk7oor1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"5d996e05507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "下线Api分组"
+      }
+    ],
     "EnableTask": [
       {
         "document": "开启一个任务",
@@ -760,6 +904,14 @@
         "title": "重新执行工作流批次"
       }
     ],
+    "ReleaseApiGroup": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ReleaseApiGroup\n&GroupId=grp-5yk7oor1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"5d996e05507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "发布Api分组"
+      }
+    ],
     "ReleaseConfig": [
       {
         "document": "",
@@ -878,6 +1030,46 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=TerminateTaskFlowBatch\n&FlowBatchId=fbatch-6g4rq8z6\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"Result\": \"false\"\r\n  }\r\n}",
         "title": "停止一个工作流批次"
+      }
+    ],
+    "UnbindApiGroup": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=UnbindApiGroup\n&GroupGatewayList.0.GatewayDeployGroupId=group-qabo8xyl\n&GroupGatewayList.0.GroupId=grp-i54lzdrq\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"5d996e05507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "API分组批量与网关解绑"
+      }
+    ],
+    "UpdateApiGroup": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateApiGroup\n&GroupId=grp-grp-5yk7oor1\n&GroupName=new-name\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"5d996e05507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "更新Api分组"
+      }
+    ],
+    "UpdateApiRateLimitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateApiRateLimitRule\n&RuleId=rule-d5970cd2\n&UsableStatus=enabled\n&MaxQps=1000\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": false\r\n    }\r\n}",
+        "title": "更新API限流规则"
+      }
+    ],
+    "UpdateApiRateLimitRules": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateApiRateLimitRules\n&ApiIds.0=api-d5970cd\n&ApiIds.1=api-d5971cd\n&UsableStatus=enabled\n&MaxQps=1000\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "批量更新API限流规则"
+      }
+    ],
+    "UpdateGatewayApi": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateGatewayApi\n&ApiId=api-5yk7oor1\n&Path=/user/find\n&Method=POST\n&PathMapping=/user/find\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "更改API"
       }
     ],
     "UpdateHealthCheckSettings": [

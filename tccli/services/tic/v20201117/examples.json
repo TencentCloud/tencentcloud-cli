@@ -1,0 +1,121 @@
+{
+  "actions": {
+    "ApplyStack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyStack\n<公共请求参数>\n\n{\n    \"StackId\": \"stk-hz5vn3te\",\n    \"VersionId\": \"ver-kg8hn58h\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"EventId\": \"ent-9q83n9rg\",\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "执行Apply事件"
+      }
+    ],
+    "CreateStack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStack\n<公共请求参数>\n\n{\n    \"StackName\": \"web-service\", \n    \"TemplateUrl\": \"https://xxx.cos.ap-guangzhou.myqcloud.com/terraform.zip\", \n    \"Description\": \"an awesome mysql/go/nginx web server stack\", \n    \"StackRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\r\n\t\"Response\" : {\r\n\t\t\"StackId\": \"stk-wt1ln3to\",\r\n\t\t\"VersionId\": \"ver-kg8hn58h\",\r\n\t\t\"RequestId\" : \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n\t}\r\n}",
+        "title": "创建资源栈"
+      }
+    ],
+    "CreateStackVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStackVersion\n<公共请求参数>\n\n{\n    \"StackId\": \"stk-hz5vn3te\",\n    \"VersionName\": \"new api v1.0\",\n    \"Description\": \"awesome description\",\n    \"TemplateUrl\": \"https://hello-xxxxx.cos.ap-guangzhou.myqcloud.com/main.tf.zip\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"VersionId\": \"ver-mf7en58f\",\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "给资源栈新增一个模版版本"
+      }
+    ],
+    "DeleteStack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStack\n<公共请求参数>\n\n{\n  \"StackId\": \"stk-hz5vn3te\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "删除一个资源栈"
+      }
+    ],
+    "DeleteStackVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStackVersion\n<公共请求参数>\n\n{\n        \"VersionId\": \"ver-kg8hn58h\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "删除一个版本"
+      }
+    ],
+    "DescribeStackEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStackEvent\n<公共请求参数>\n\n{\n  \"EventId\": \"ent-spxin9pr\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"EventId\": \"ent-1armn3sg\",\r\n        \"VersionId\": \"ver-87bun57q\",\r\n        \"StackId\": \"stk-ld7ln3sh\",\r\n        \"Type\": \"apply\",\r\n        \"Status\": \"success\",\r\n        \"EventMessage\": \"Message\",\r\n        \"CreateTime\": \"2020-11-19T08:33:44.880Z\",\r\n        \"ConsoleLog\": \"{\\\"eventId\\\":11963,\\\"message\\\":\\\"get the assignment plan task(event id:11963) and start\\\",\\\"pos\\\":1,\\\"tag\\\":\\\"system\\\",\\\"time\\\":1606374002497328796}\\n{\\\"eventId\\\":11963,\\\"message\\\":\\\"the task passed the validity and completeness test\\\",\\\"pos\\\":2,\\\"tag\\\":\\\"system\\\",\\\"time\\\":1606374002533244238}\\n{\\\"eventId\\\":11963,\\\"message\\\":\\\"prepare the files needed for the task\\\",\\\"pos\\\":3,\\\"tag\\\":\\\"system\\\",\\\"time\\\":1606374002533316203}\\n{\\\"eventId\\\":11963,\\\"message\\\":\\\"\\\",\\\"pos\\\":4,\\\"tag\\\":\\\"finish\\\",\\\"time\\\":1606374005539862944}\",\r\n      \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "获取某个事件的控制台输出"
+      }
+    ],
+    "DescribeStackEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStackEvents\n<公共请求参数>\n\n{\n    \"EventIds\": [\n        \"ent-1armn3sg\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Events\": [\r\n            {\r\n                \"EventId\": \"ent-1armn3sg\",\r\n                \"VersionId\": \"ver-kg8hn58h\",\r\n                \"StackId\": \"stk-hz5vn3te\",\r\n                \"Type\": \"plan\",\r\n                \"Status\": \"success\",\r\n                \"Message\": \"Message\",\r\n                \"CreateTime\": \"2020-11-18T07:38:47.330Z\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "根据事件ID查询资源栈事件详情"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStackEvents\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Type\",\n            \"Values\": [\n                \"plan\",\n                \"apply\"\n            ]\n        },\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"success\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"Events\": [\r\n            {\r\n                \"EventId\": \"ent-1armn3sg\",\r\n                \"VersionId\": \"ver-kg8hn58h\",\r\n                \"StackId\": \"stk-hz5vn3te\",\r\n                \"Type\": \"plan\",\r\n                \"Status\": \"success\",\r\n                \"Message\": \"Message\",\r\n                \"CreateTime\": \"2020-11-18T07:38:47.330Z\"\r\n            },\r\n            {\r\n                \"EventId\": \"ent-1armn3sg\",\r\n                \"VersionId\": \"ver-87bun57q\",\r\n                \"StackId\": \"stk-ld7ln3sh\",\r\n                \"Type\": \"apply\",\r\n                \"Status\": \"success\",\r\n                \"Message\": \"Message\",\r\n                \"CreateTime\": \"2020-11-19T08:33:44.880Z\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "根据事件类型，状态查询事件列表"
+      }
+    ],
+    "DescribeStackVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStackVersions\n<公共请求参数>\n\n{\n    \"VersionIds\": [\"ver-zg5pn580\", \"ver-fc7zn57u\"],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"Versions\": [\r\n            {\r\n                \"VersionId\": \"ver-zg5pn580\",\r\n                \"VersionName\": \"awesome version name\",\r\n                \"Description\": \"a nice description\",\r\n                \"StackId\": \"stk-hz5vn3te\",\r\n                \"Status\": \"VERSION_EDITING\",\r\n                \"CreateTime\": \"2020-11-18T07:38:47.330Z\"\r\n            },\r\n            {\r\n                \"VersionId\": \"ver-fc7zn57u\",\r\n                \"VersionName\": \"awesome version name2\",\r\n                \"Description\": \"a nice description2\",\r\n                \"StackId\": \"stk-hz5vn3te\",\r\n                \"Status\": \"VERSION_EDITING\",\r\n                \"CreateTime\": \"2020-11-18T07:38:47.330Z\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "按照指定的版本ID查询版本详情"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStackVersions\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Name\",\n            \"Values\": [\n                \"awesome version name\",\n                \"awesome version name2\"\n            ]\n        },\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"VERSION_EDITING\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Versions\": [\r\n            {\r\n                \"VersionId\": \"ver-fc7zn57u\",\r\n                \"VersionName\": \"awesome version name2\",\r\n                \"Description\": \"a nice description2\",\r\n                \"StackId\": \"stk-hz5vn3te\",\r\n                \"Status\": \"VERSION_EDITING\",\r\n                \"CreateTime\": \"2020-11-18T07: 38: 47.330Z\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "按照名字和状态查询版本列表"
+      }
+    ],
+    "DescribeStacks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStacks\n<公共请求参数>\n\n{\n    \"StackIds\": [\"stk-ud52n3td\", \"stk-hz5vn3te\", \"stk-a9jwn3t3\"], \n    \"Offset\": 0, \n    \"Limit\": 10\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 3,\r\n        \"Stacks\": [\r\n            {\r\n                \"StackId\": \"stk-ud52n3td\",\r\n                \"StackName\": \"awesome stack name 1\",\r\n                \"Description\": \"a stack description\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"Status\": \"VERSION_EDITING\",\r\n                \"CreateTime\": \"2020-11-18T07:38:47.330Z\"\r\n            },\r\n            {\r\n                \"StackId\": \"stk-hz5vn3te\",\r\n                \"StackName\": \"awesome stack name 2\",\r\n                \"Description\": \"a stack description\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"Status\": \"VERSION_EDITING\",\r\n                \"CreateTime\": \"2020-11-18T07:39:47.330Z\"\r\n            },\r\n            {\r\n                \"StackId\": \"stk-a9jwn3t3\",\r\n                \"StackName\": \"awesome stack name 3\",\r\n                \"Description\": \"a stack description\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"Status\": \"VERSION_EDITING\",\r\n                \"CreateTime\": \"2020-11-18T07:40:47.330Z\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "title": "通过资源栈ID查询感兴趣的资源栈列表"
+      }
+    ],
+    "DestroyStack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyStack\n<公共请求参数>\n\n{\n    \"StackId\": \"stk-hz5vn3te\",\n    \"VersionId\": \"ver-kg8hn58h\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"EventId\": \"ent-9q83n9rg\",\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "执行Destroy事件"
+      }
+    ],
+    "PlanStack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PlanStack\n<公共请求参数>\n\n{\n    \"StackId\": \"stk-hz5vn3te\",\n    \"VersionId\": \"ver-kg8hn58h\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"EventId\": \"ent-9q83n9rg\",\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "执行Plan事件"
+      }
+    ],
+    "UpdateStack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStack\n<公共请求参数>\n\n{\n    \"StackId\": \"stk-123\", \n    \"StackName\": \"awesome web service stack\", \n    \"Description\": \"an backend web service with mysql and nginx\"\n}",
+        "output": "{\r\n\t\"Response\" : {\r\n\t\t\"RequestId\" : \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n\t}\r\n}",
+        "title": "更新资源栈"
+      }
+    ],
+    "UpdateStackVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStackVersion\n<公共请求参数>\n\n{\n    \"VersionId\": \"ver-d6bxn583\",\n    \"VersionName\": \"new api v2.0\",\n    \"Description\": \"api v2.0 backend infra template\",\n    \"TemplateUrl\": \"https://hello-xxxx.cos.ap-guangzhou.myqcloud.com/main.tf.zip\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\r\n    }\r\n}",
+        "title": "更新资源栈的某个版本"
+      }
+    ]
+  },
+  "version": "1.0"
+}

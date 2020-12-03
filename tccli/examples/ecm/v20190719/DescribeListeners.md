@@ -20,7 +20,7 @@ Output:
                 "HealthCheck": {
                     "HealthNum": 3,
                     "IntervalTime": 5,
-                    "UnHealthNum": 3,
+                    "UnHealthyNum": 3,
                     "TimeOut": 2,
                     "CheckType": "TCP",
                     "HealthSwitch": 1
@@ -37,7 +37,7 @@ Output:
                 "HealthCheck": {
                     "HealthNum": 3,
                     "IntervalTime": 5,
-                    "UnHealthNum": 3,
+                    "UnHealthyNum": 3,
                     "TimeOut": 2,
                     "CheckType": "TCP",
                     "HealthSwitch": 1
