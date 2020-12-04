@@ -15,6 +15,7 @@ Output:
         "LifecycleHookSet": [
             {
                 "LifecycleHookName": "terminate-topic",
+                "LifecycleTransitionType": "NORMAL",
                 "AutoScalingGroupId": "asg-8fbozqja",
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "topic",
@@ -30,6 +31,7 @@ Output:
             },
             {
                 "LifecycleHookName": "launch-queue",
+                "LifecycleTransitionType": "NORMAL",
                 "AutoScalingGroupId": "asg-8fbozqja",
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "queue",
@@ -45,6 +47,7 @@ Output:
             },
             {
                 "LifecycleHookName": "one-hook",
+                "LifecycleTransitionType": "NORMAL",
                 "AutoScalingGroupId": "asg-8fbozqja",
                 "HeartbeatTimeout": 360,
                 "NotificationMetadata": "",
@@ -60,6 +63,7 @@ Output:
             },
             {
                 "LifecycleHookName": "one-hook-default",
+                "LifecycleTransitionType": "NORMAL",
                 "AutoScalingGroupId": "asg-8fbozqja",
                 "HeartbeatTimeout": 300,
                 "NotificationMetadata": "",
@@ -101,6 +105,7 @@ Output:
         "LifecycleHookSet": [
             {
                 "LifecycleHookName": "terminate-topic",
+                "LifecycleTransitionType": "NORMAL",
                 "AutoScalingGroupId": "asg-8fbozqja",
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "topic",
@@ -116,6 +121,7 @@ Output:
             },
             {
                 "LifecycleHookName": "launch-queue",
+                "LifecycleTransitionType": "NORMAL",
                 "AutoScalingGroupId": "asg-8fbozqja",
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "queue",

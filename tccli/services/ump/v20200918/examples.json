@@ -8,6 +8,14 @@
         "title": "上报相机移动、遮挡等告警信息"
       }
     ],
+    "CreateCapture": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCapture\n<公共请求参数>\n\n{\n  \"Data\":\"source capture info\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"RspData\": \"source detail response info\"\r\n    }\r\n}",
+        "title": "接入层抓拍上报接口"
+      }
+    ],
     "CreateMultiBizAlert": [
       {
         "document": "",

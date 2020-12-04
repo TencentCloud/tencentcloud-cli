@@ -203,7 +203,7 @@
     "ExportVideoByEditorTrackData": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\r\n&Platform=default_platform\r\n&Definition=10\r\n&ExportDestination=VOD\r\n&TrackData=[]\r\n&VODExportInfo.Name=在线编辑视频\r\n&Operator=16556266637489\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=default_platform\n&Definition=10\n&ExportDestination=VOD\n&TrackData=[]\n&VODExportInfo.Name=在线编辑视频\n&Operator=16556266637489\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": \"125009388839-tfusion-0a54392053f84053942f9308c49404d7\",\r\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d7\"\r\n    }\r\n}",
         "title": "使用视频编辑轨道数据导出视频"
       }
@@ -211,7 +211,7 @@
     "ExportVideoEditProject": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoEditProject\r\n&Platform=test\r\n&ProjectId=1111\r\n&Definition=10\r\n&ExportDestination=CME\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoEditProject\n&Platform=test\n&ProjectId=1111\n&Definition=10\n&ExportDestination=CME\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"24820810452266399\",\r\n    \"RequestId\": \"requestId\"\r\n  }\r\n}",
         "title": "导出项目"
       }

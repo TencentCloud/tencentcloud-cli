@@ -19,7 +19,7 @@
       "output": "CreateLinkResponse"
     },
     "CreateProject": {
-      "document": "创建云剪的编辑项目，支持创建视频剪辑、直播剪辑及导播台项目。\n",
+      "document": "创建云剪的编辑项目，支持创建视频剪辑、直播剪辑、导播台项目以及视频拆条项目。\n",
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse"
@@ -528,6 +528,15 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方平台发布信息列表。",
+          "member": "ThirdPartyPublishInfo",
+          "name": "ThirdPartyPublishInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -748,7 +757,7 @@
         },
         {
           "default": "",
-          "document": "导播台信息，仅当项目类型为 SWITCHER 时有效。",
+          "document": "导播台信息，仅当项目类型为 SWITCHER 时必填。",
           "member": "SwitcherProjectInput",
           "name": "SwitcherProjectInput",
           "required": false,
@@ -764,7 +773,7 @@
         },
         {
           "default": "",
-          "document": "视频编辑信息。",
+          "document": "视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。",
           "member": "VideoEditProjectInput",
           "name": "VideoEditProjectInput",
           "required": false,
@@ -2445,6 +2454,21 @@
       ],
       "usage": "out"
     },
+    "KuaishouPublishInfo": {
+      "document": "快手视频发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频发布标题，限30个字符。",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LinkMaterial": {
       "document": "链接类型的素材信息",
       "members": [
@@ -3352,6 +3376,48 @@
       ],
       "type": "object"
     },
+    "PenguinMediaPlatformPublishInfo": {
+      "document": "企鹅号发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频发布标题。",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频发布描述信息。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频标签。",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频分类，详见企鹅号官网视频分类。",
+          "member": "int64",
+          "name": "Category",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ProjectInfo": {
       "document": "项目信息。",
       "members": [
@@ -3924,6 +3990,48 @@
       ],
       "usage": "both"
     },
+    "ThirdPartyPublishInfo": {
+      "document": "第三方平台视频发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "发布通道  ID。",
+          "member": "string",
+          "name": "ChannelMaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企鹅号发布信息，如果使用的发布通道为企鹅号时必填。",
+          "member": "PenguinMediaPlatformPublishInfo",
+          "name": "PenguinMediaPlatformPublishInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新浪微博发布信息，如果使用的发布通道为新浪微博时必填。",
+          "member": "WeiboPublishInfo",
+          "name": "WeiboPublishInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快手发布信息，如果使用的发布通道为快手时必填。",
+          "member": "KuaishouPublishInfo",
+          "name": "KuaishouPublishInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "TimeRange": {
       "document": "时间范围",
       "members": [
@@ -3968,6 +4076,15 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方平台发布信息列表。",
+          "member": "ThirdPartyPublishInfo",
+          "name": "ThirdPartyPublishInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -3977,7 +4094,16 @@
       "members": [
         {
           "default": "",
-          "document": "输入的媒体轨道列表，包括视频、音频，等素材组成的多个轨道信息，其中：<li>输入的多个轨道在时间轴上和输出媒体文件的时间轴对齐；</li><li>时间轴上相同时间点的各个轨道的素材进行重叠，视频或者图片按轨道顺序进行图像的叠加，轨道顺序高的素材叠加在上面，音频素材进行混音；</li><li>视频、音频，每一种类型的轨道最多支持10个。</li>",
+          "document": "视频编辑模板 ID ，通过模板导入项目时填写。",
+          "member": "string",
+          "name": "VideoEditTemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的媒体轨道列表，包括视频、音频，等素材组成的多个轨道信息。其中：<li>输入的多个轨道在时间轴上和输出媒体文件的时间轴对齐；</li><li>时间轴上相同时间点的各个轨道的素材进行重叠，视频或者图片按轨道顺序进行图像的叠加，轨道顺序高的素材叠加在上面，音频素材进行混音；</li><li>视频、音频，每一种类型的轨道最多支持10个。</li>\n注：当从模板导入项目时（即 VideoEditTemplateId 不为空时），该参数无效。",
           "member": "MediaTrack",
           "name": "InitTracks",
           "required": false,
@@ -4238,6 +4364,39 @@
           "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 Width 单位为像素，如 100px 表示 Width 为100像素。</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
           "member": "string",
           "name": "Width",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "WeiboPublishInfo": {
+      "document": "微博发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频发布标题。",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频发布描述信息。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微博可见性，可取值为：\n<li>Public：公开，所有人可见；</li>\n<li>Private：私有，仅自己可见。</li>\n\n默认为 Public，所有人可见。",
+          "member": "string",
+          "name": "Visible",
           "required": false,
           "type": "string",
           "value_allowed_null": false

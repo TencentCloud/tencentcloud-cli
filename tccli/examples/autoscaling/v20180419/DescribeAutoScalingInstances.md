@@ -23,6 +23,7 @@ Output:
                 "VersionNumber": 1,
                 "AddTime": "2018-08-21T12:05:12Z",
                 "CreationType": "AUTO_CREATION",
+                "AutoScalingGroupName": "asgname",
                 "AutoScalingGroupId": "asg-4o61gsxi",
                 "HealthStatus": "HEALTHY",
                 "LifeCycleState": "IN_SERVICE",

@@ -32,6 +32,7 @@ Output:
             "LiveMsg": "成功",
             "Comparestatus": 0,
             "Comparemsg": "成功",
+            "CompareLibType": "xx",
             "Sim": "76.52",
             "Location": null,
             "Mobile": null,
@@ -42,6 +43,7 @@ Output:
                     "Seq": "3d12da91-db34-4e55-81c3-993a41d7ccb7",
                     "Idcard": "440111111111111111",
                     "Name": "爱新觉罗永琪",
+                    "CompareLibType": "xx",
                     "Sim": "76.52",
                     "IsNeedCharge": true,
                     "Errcode": 0,
@@ -53,9 +55,22 @@ Output:
                 }
             ]
         },
-        "IdCardData": null,
-        "BestFrame": null,
-        "VideoData": null,
+        "IdCardData": {
+            "ProcessedBackImage": "xx",
+            "ProcessedFrontImage": "xx",
+            "OcrFront": "xx",
+            "OcrBack": "xx",
+            "Avatar": "xx"
+        },
+        "BestFrame": {
+            "BestFrame": "xx",
+            "BestFrames": [
+                "xx"
+            ]
+        },
+        "VideoData": {
+            "LivenessVideo": "xx"
+        },
         "RequestId": "f52bac9a-0aee-4fe6-8d34-7de4bce89473"
     }
 }

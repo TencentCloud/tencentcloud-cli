@@ -6,6 +6,12 @@
       "name": "上报相机告警信息",
       "output": "CreateCameraAlertsResponse"
     },
+    "CreateCapture": {
+      "document": "场内抓拍上报接口",
+      "input": "CreateCaptureRequest",
+      "name": "抓拍上报接口",
+      "output": "CreateCaptureResponse"
+    },
     "CreateMultiBizAlert": {
       "document": "集团广场的多经点位告警",
       "input": "CreateMultiBizAlertRequest",
@@ -550,6 +556,39 @@
     "CreateCameraAlertsResponse": {
       "document": "CreateCameraAlerts返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCaptureRequest": {
+      "document": "CreateCapture请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "原始抓拍报文",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCaptureResponse": {
+      "document": "CreateCapture返回参数结构体",
+      "members": [
+        {
+          "document": "原始应答报文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RspData",
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

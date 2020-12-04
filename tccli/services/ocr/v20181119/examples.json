@@ -211,8 +211,8 @@
     "HKIDCardOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=HKIDCardOCR\r\n&ImageUrl=https://xx/a.jpg &DetectFake=true&ReturnHeadImage=false\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"CnName\": \"申能\",\r\n        \"EnName\": \"SAN, Nan\",\r\n        \"TelexCode\": \"300000000000\",\r\n        \"Sex\": \"女F\",\r\n        \"Birthday\": \"01-01-2001\",\r\n        \"Permanent\": 1,\r\n        \"IdNum\": \"C000000(E)\",\r\n        \"Symbol\": \"***AZ\",\r\n        \"FirstIssueDate\": \"(09-99)\",\r\n        \"CurrentIssueDate\": \"23-09-10\",\r\n        \"FakeDetectResult\": 1,\r\n        \"WarningCode\": [ -9102, -9103 ],\r\n        \"RequestId\": \"fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875\"\r\n    }\r\n}",
+        "input": "https://ocr.tencentcloudapi.com/?Action=HKIDCardOCR\n&ImageUrl=https://xx/a.jpg\n&DetectFake=true\n&ReturnHeadImage=false\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"CnName\": \"申能\",\r\n        \"EnName\": \"SAN, Nan\",\r\n        \"TelexCode\": \"300000000000\",\r\n        \"Sex\": \"女F\",\r\n        \"Birthday\": \"01-01-2001\",\r\n        \"Permanent\": 1,\r\n        \"IdNum\": \"C000000(E)\",\r\n        \"Symbol\": \"***AZ\",\r\n        \"FirstIssueDate\": \"(09-99)\",\r\n        \"CurrentIssueDate\": \"23-09-10\",\r\n        \"FakeDetectResult\": 1,\r\n        \"WarningCode\": [ -9102, -9103 ],\r\n        \"HeadImage\": \"xx\", \r\n        \"RequestId\": \"fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875\"\r\n    }\r\n}",
         "title": "中国香港身份证识别示例代码"
       }
     ],

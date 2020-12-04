@@ -19,7 +19,7 @@
     "CheckDomain": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=CheckDomain\r\n&DomainName=字符串\r\n&<公共请求参数>",
+        "input": "https://domain.tencentcloudapi.com/?Action=CheckDomain\n&DomainName=字符串\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"Available\": true,\r\n\t\t\"Premium\": false,\r\n\t\t\"RecordSupport\": true,\r\n\t\t\"DomainName\": \"\\u7684\\u56fd\\u9632\\u751f\\u7684\\u56fd\\u9632\\u751f.show\",\r\n\t\t\"FeeTransfer\": 0,\r\n\t\t\"Describe\": \"\",\r\n\t\t\"FeeRestore\": 0,\r\n\t\t\"Period\": 1,\r\n\t\t\"Reason\": \"\",\r\n\t\t\"RequestId\": \"cc5af1aa-544c-11ea-9bcb-525400f1e866\",\r\n\t\t\"RealPrice\": 10,\r\n\t\t\"BlackWord\": false,\r\n\t\t\"Price\": 35,\r\n\t\t\"FeeRenew\": 0\r\n\t}\r\n}",
         "title": "检测域名是否可注册"
       }

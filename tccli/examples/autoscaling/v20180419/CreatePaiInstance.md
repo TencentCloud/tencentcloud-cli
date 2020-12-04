@@ -11,8 +11,6 @@ tccli as CreatePaiInstance --cli-unfold-argument  \
     --Zones ap-guangzhou-2 \
     --InstanceChargeType POSTPAID_BY_HOUR \
     --InstanceTypes S4.SMALL2 \
-    --SystemDisk.DiskType CLOUD_BASIC \
-    --SystemDisk.DiskSize 50 \
     --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetAccessible.InternetMaxBandwidthOut 10 \
     --InstanceName PAI-TEST \
