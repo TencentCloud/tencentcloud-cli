@@ -1377,7 +1377,7 @@
         },
         {
           "default": "",
-          "document": "鉴权类型。 secret： 秘钥鉴权； none:无鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "鉴权类型。 secret： 密钥鉴权； none:无鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "AuthType",
           "required": true,
@@ -1509,7 +1509,7 @@
         },
         {
           "default": "",
-          "document": "api所在服务host",
+          "document": "api所在服务host,限定外部Api填写。格式: \"http://127.0.0.1:8080\"",
           "member": "string",
           "name": "Host",
           "required": false,
@@ -3374,7 +3374,7 @@
         },
         {
           "default": "",
-          "document": "鉴权类型。secret： 秘钥鉴权； none:无鉴权",
+          "document": "鉴权类型。secret： 密钥鉴权； none:无鉴权",
           "member": "string",
           "name": "AuthType",
           "required": false,

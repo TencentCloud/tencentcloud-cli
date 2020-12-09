@@ -56,6 +56,14 @@
         "title": "请求和返回示例"
       }
     ],
+    "DescribeCaptchaMiniRiskResult": [
+      {
+        "document": "",
+        "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaMiniRiskResult\n&CaptchaType=9\n&Ticket=xxxx\n&UserIp=127.0.0.1\n&CaptchaAppId=201111111\n&AppSecretKey=xxxxxx\n&SceneCode=1\n&WeChatOpenId=xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c02af4b4-f858-4fe0-6f88-ebac4b49d13d\",\r\n        \"CaptchaCode\": 1,\r\n        \"CaptchaMsg\": \"ticket verification succeeded\",\r\n        \"ManageMarketingRiskValue\": {\r\n            \"UserId\": \"xxxxxxxxxxxxxxxxxxxxxxxx\",\r\n            \"PostTime\": 1606977595,\r\n            \"AssociateAccount\": \"\",\r\n            \"UserIp\": \"127.0.0.1\",\r\n            \"RiskLevel\": \"pass\",\r\n            \"RiskType\": []\r\n        }\r\n    }\r\n}",
+        "title": "请求和返回示例"
+      }
+    ],
     "DescribeCaptchaOperData": [
       {
         "document": "",

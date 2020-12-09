@@ -16,6 +16,10 @@ Output:
         "DomainInfo": {
             "DomainId": "domain-xxxxx",
             "DomainName": "tencent.com",
+            "NameServer": [
+                "f1g1ns1.dnspod.net",
+                "f1g1ns2.dnspod.net"
+            ],
             "RegistrarType": "epp",
             "DomainStatus": [
                 "ok"

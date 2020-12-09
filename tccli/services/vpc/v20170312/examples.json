@@ -301,14 +301,14 @@
     "CreateDirectConnectGateway": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDirectConnectGateway\r\n&<公共请求参数>\r\n&DirectConnectGatewayName=test\r\n&NetworkType=VPC\r\n&NetworkInstanceId=vpc-m7sr81gh\r\n&GatewayType=NAT",
-        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectGateway\": {\r\n      \"DirectConnectGatewayId\": \"dcg-gjug0kul\",\r\n      \"DirectConnectGatewayName\": \"test\",\r\n      \"VpcId\": \"vpc-m7sr81gh\",\r\n      \"NetworkType\": \"VPC\",\r\n      \"NetworkInstanceId\": \"vpc-m7sr81gh\",\r\n      \"GatewayType\": \"NAT\",\r\n      \"DirectConnectTunnelCount\": 8,\r\n      \"CreatedTime\": \"0000-00-00 00:00:00\"\r\n    },\r\n    \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\r\n  }\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDirectConnectGateway\n&DirectConnectGatewayName=test\n&NetworkType=VPC\n&NetworkInstanceId=vpc-m7sr81gh\n&GatewayType=NAT\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectGateway\": {\r\n      \"DirectConnectGatewayId\": \"dcg-gjug0kul\",\r\n      \"DirectConnectGatewayName\": \"test\",\r\n      \"DirectConnectGatewayIp\": \"10.21.0.5\",\r\n      \"EnableBGPCommunity\": false, \r\n      \"VpcId\": \"vpc-m7sr81gh\",\r\n      \"CcnId\": \"\", \r\n      \"EnableBGP\": false, \r\n      \"CcnRouteType\": \"BGP\", \r\n      \"NetworkType\": \"VPC\",\r\n      \"NetworkInstanceId\": \"vpc-m7sr81gh\",\r\n      \"GatewayType\": \"NAT\",\r\n       \"VXLANSupport\": [\r\n                true\r\n            ], \r\n      \"NatGatewayId\": \"nat-m7dr11gc\", \r\n      \"CreateTime\": \"2020-09-22 00:00:00\"\r\n    },\r\n    \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\r\n  }\r\n}",
         "title": "创建一个关联VPC的NAT型专线网关"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDirectConnectGateway\r\n&<公共请求参数>\r\n&DirectConnectGatewayName=test\r\n&NetworkType=CCN\r\n&NetworkInstanceId=ccn-8j0phqix\r\n&GatewayType=NORMAL",
-        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectGateway\": {\r\n      \"DirectConnectGatewayId\": \"dcg-3vwxt61v\",\r\n      \"DirectConnectGatewayName\": \"test\",\r\n      \"VpcId\": \"vpc-ilii3ejt\",\r\n      \"NetworkType\": \"CCN\",\r\n      \"NetworkInstanceId\": \"ccn-c1aopa13\",\r\n      \"GatewayType\": \"NORMAL\",\r\n      \"DirectConnectTunnelCount\": 0,\r\n      \"CreateTime\": \"0000-00-00 00:00:00\"\r\n    },\r\n    \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\r\n  }\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDirectConnectGateway\n&DirectConnectGatewayName=test\n&NetworkType=CCN\n&NetworkInstanceId=ccn-8j0phqix\n&GatewayType=NORMAL\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectGateway\": {\r\n      \"DirectConnectGatewayId\": \"dcg-3vwxt61v\",\r\n      \"DirectConnectGatewayName\": \"test\",\r\n      \"VpcId\": \"vpc-ilii3ejt\",\r\n      \"NetworkType\": \"CCN\",\r\n      \"NetworkInstanceId\": \"ccn-c1aopa13\",\r\n      \"GatewayType\": \"NORMAL\",\r\n      \"EnableBGPCommunity\": true, \r\n      \"EnableBGP\": true, \r\n      \"CcnId\": \"ccn-8j0phqix\",\r\n      \"CcnRouteType\": \"BGP\", \r\n      \"NatGatewayId\": \"\", \r\n      \"DirectConnectGatewayIp\": \"10.21.0.5\",\r\n      \"VXLANSupport\": [\r\n                true\r\n            ],\r\n      \"CreateTime\": \"0000-00-00 00:00:00\"\r\n    },\r\n    \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\r\n  }\r\n}",
         "title": "创建一个关联CCN的标准型专线网关"
       }
     ],
@@ -1647,7 +1647,7 @@
     "ModifyDirectConnectGatewayAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyDirectConnectGatewayAttribute\r\n&DirectConnectGatewayId=dcg-k6cswwhx\r\n&DirectConnectGatewayName=new+name\r\n&CcnRouteType=BGP\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyDirectConnectGatewayAttribute\n&DirectConnectGatewayId=dcg-k6cswwhx\n&DirectConnectGatewayName=new+name\n&CcnRouteType=BGP\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\r\n  }\r\n}",
         "title": "修改专线网关属性"
       }

@@ -5863,7 +5863,24 @@
     },
     "RecycleReadOnlyGroupRequest": {
       "document": "RecycleReadOnlyGroup请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "主实例的ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组的ID",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RecycleReadOnlyGroupResponse": {

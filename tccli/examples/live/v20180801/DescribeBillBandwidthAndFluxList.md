@@ -15,8 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "95PeakBandwidth": 117042.495,
-        "95PeakBandwidthTime": "2019-02-01 00:00:00",
+        "P95PeakBandwidth": 117042.495,
+        "P95PeakBandwidthTime": "2019-02-01 00:00:00",
         "DataInfoList": [
             {
                 "Bandwidth": 117042.495,

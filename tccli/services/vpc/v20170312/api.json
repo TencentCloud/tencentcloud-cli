@@ -4094,6 +4094,14 @@
           "name": "GatewayType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持`ModeType`。",
+          "member": "string",
+          "name": "ModeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10274,6 +10282,24 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专线网关是否支持VXLAN架构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "VXLANSupport",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ModeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12705,6 +12731,14 @@
           "document": "云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。",
           "member": "string",
           "name": "CcnRouteType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。",
+          "member": "string",
+          "name": "ModeType",
           "required": false,
           "type": "string"
         }

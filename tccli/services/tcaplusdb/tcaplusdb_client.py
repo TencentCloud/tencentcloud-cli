@@ -113,6 +113,31 @@ def doCreateCluster(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeMachine(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMachineRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeMachine(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeUinInWhitelist(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -430,6 +455,31 @@ def doDescribeClusters(args, parsed_globals):
     model = models.DescribeClustersRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeClusters(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyClusterMachine(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyClusterMachineRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyClusterMachine(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -903,6 +953,7 @@ ACTION_MAP = {
     "DescribeTableTags": doDescribeTableTags,
     "DescribeTasks": doDescribeTasks,
     "CreateCluster": doCreateCluster,
+    "DescribeMachine": doDescribeMachine,
     "DescribeUinInWhitelist": doDescribeUinInWhitelist,
     "DescribeTablesInRecycle": doDescribeTablesInRecycle,
     "RollbackTables": doRollbackTables,
@@ -916,6 +967,7 @@ ACTION_MAP = {
     "CreateTables": doCreateTables,
     "ModifyTableQuotas": doModifyTableQuotas,
     "DescribeClusters": doDescribeClusters,
+    "ModifyClusterMachine": doModifyClusterMachine,
     "DeleteTableGroup": doDeleteTableGroup,
     "ModifyTableGroupName": doModifyTableGroupName,
     "CreateTableGroup": doCreateTableGroup,

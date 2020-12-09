@@ -216,6 +216,12 @@
       "name": "查询实例信息",
       "output": "DescribeInstancesResponse"
     },
+    "DescribeInternalEndpoints": {
+      "document": "查询实例内网访问VPC链接",
+      "input": "DescribeInternalEndpointsRequest",
+      "name": "查询实例内网访问VPC链接",
+      "output": "DescribeInternalEndpointsResponse"
+    },
     "DescribeNamespacePersonal": {
       "document": "查询个人版命名空间信息",
       "input": "DescribeNamespacePersonalRequest",
@@ -294,6 +300,12 @@
       "name": "设置个人版全局镜像版本自动清理策略",
       "output": "ManageImageLifecycleGlobalPersonalResponse"
     },
+    "ManageInternalEndpoint": {
+      "document": "管理实例内网访问VPC链接",
+      "input": "ManageInternalEndpointRequest",
+      "name": "管理实例内网访问VPC链接",
+      "output": "ManageInternalEndpointResponse"
+    },
     "ModifyApplicationTriggerPersonal": {
       "document": "用于修改应用更新触发器",
       "input": "ModifyApplicationTriggerPersonalRequest",
@@ -362,6 +374,48 @@
     "serviceShortName": "tcr"
   },
   "objects": {
+    "AccessVpc": {
+      "document": "内网接入信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Vpc的Id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网Id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网接入状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网接入Ip",
+          "member": "string",
+          "name": "AccessIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AutoDelStrategyInfo": {
       "document": "自动删除策略信息",
       "members": [
@@ -2078,6 +2132,46 @@
       ],
       "type": "object"
     },
+    "DescribeInternalEndpointsRequest": {
+      "document": "DescribeInternalEndpoints请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternalEndpointsResponse": {
+      "document": "DescribeInternalEndpoints返回参数结构体",
+      "members": [
+        {
+          "document": "内网接入信息的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AccessVpc",
+          "name": "AccessVpcSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "内网接入总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNamespacePersonalRequest": {
       "document": "DescribeNamespacePersonal请求参数结构体",
       "members": [
@@ -2964,6 +3058,71 @@
     "ManageImageLifecycleGlobalPersonalResponse": {
       "document": "ManageImageLifecycleGlobalPersonal返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageInternalEndpointRequest": {
+      "document": "ManageInternalEndpoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Create/Delete",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要接入的用户vpcid",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要接入的用户子网id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求的地域ID",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageInternalEndpointResponse": {
+      "document": "ManageInternalEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

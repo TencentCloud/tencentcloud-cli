@@ -198,6 +198,12 @@
       "name": "根据证书ID查询负载均衡",
       "output": "DescribeLoadBalancerListByCertIdResponse"
     },
+    "DescribeLoadBalancerTraffic": {
+      "document": "查询账号下高流量负载均衡，返回前10个负载均衡。如果是子账号登录，只返回子账号有权限的负载均衡。",
+      "input": "DescribeLoadBalancerTrafficRequest",
+      "name": "查询账号下高流量负载均衡",
+      "output": "DescribeLoadBalancerTrafficResponse"
+    },
     "DescribeLoadBalancers": {
       "document": "查询一个地域的负载均衡实例列表\n",
       "input": "DescribeLoadBalancersRequest",
@@ -1914,6 +1920,14 @@
         },
         {
           "default": "",
+          "document": "带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "独占集群信息",
           "member": "ExclusiveCluster",
           "name": "ExclusiveCluster",
@@ -3060,6 +3074,39 @@
       ],
       "type": "object"
     },
+    "DescribeLoadBalancerTrafficRequest": {
+      "document": "DescribeLoadBalancerTraffic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡所在地域，不传默认返回所有地域负载均衡。",
+          "member": "string",
+          "name": "LoadBalancerRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerTrafficResponse": {
+      "document": "DescribeLoadBalancerTraffic返回参数结构体",
+      "members": [
+        {
+          "document": "按出带宽从高到低排序后的负载均衡信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LoadBalancerTraffic",
+          "name": "LoadBalancerTraffic",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoadBalancersDetailRequest": {
       "document": "DescribeLoadBalancersDetail请求参数结构体",
       "members": [
@@ -3281,7 +3328,7 @@
         },
         {
           "default": "",
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：\n<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括\"BANDWIDTH_PREPAID\",\"TRAFFIC_POSTPAID_BY_HOUR\",\"BANDWIDTH_POSTPAID_BY_HOUR\",\"BANDWIDTH_PACKAGE\"。</li>\n<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ：\"100001\" （对应的是广州一区）。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：\n<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括\"BANDWIDTH_PREPAID\",\"TRAFFIC_POSTPAID_BY_HOUR\",\"BANDWIDTH_POSTPAID_BY_HOUR\",\"BANDWIDTH_PACKAGE\"。</li>\n<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ：\"100001\" （对应的是广州一区）。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照 CLB 标签的值过滤。</li>\n<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5016,6 +5063,57 @@
       ],
       "usage": "out"
     },
+    "LoadBalancerTraffic": {
+      "document": "负载均衡流量数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡名字",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡所在地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的vip",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大出带宽，单位：Mbps",
+          "member": "float",
+          "name": "OutBandwidth",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ManualRewriteRequest": {
       "document": "ManualRewrite请求参数结构体",
       "members": [
@@ -6131,7 +6229,7 @@
         },
         {
           "default": "",
-          "document": "本规则上绑定的后端的健康检查状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本规则上绑定的后端服务的健康检查状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "TargetHealth",
           "name": "Targets",
           "required": true,

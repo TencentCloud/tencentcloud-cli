@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "https://domain.tencentcloudapi.com/?Action=DescribeDomainBaseInfo\n&Domain=域名\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"DomainInfo\": {\r\n            \"DomainId\": \"domain-xxxxx\",\r\n            \"DomainName\": \"tencent.com\",\r\n            \"RegistrarType\": \"epp\",\r\n            \"DomainStatus\": [\r\n                \"ok\"\r\n            ],\r\n            \"BuyStatus\": \"ok\",\r\n            \"RealNameAuditUnpassReason\": \"\",\r\n            \"DomainNameAuditUnpassReason\": \"\",\r\n            \"RealNameAuditStatus\": \"Approved\",\r\n            \"ExpirationDate\": \"2020-11-14\",\r\n            \"CreationDate\": \"2019-11-14\",\r\n            \"DomainNameAuditStatus\": \"Approved\"\r\n        },\r\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"DomainInfo\": {\r\n            \"DomainId\": \"domain-xxxxx\",\r\n            \"DomainName\": \"tencent.com\",\r\n            \"NameServer\":[\"f1g1ns1.dnspod.net\",\"f1g1ns2.dnspod.net\"],\r\n            \"RegistrarType\": \"epp\",\r\n            \"DomainStatus\": [\r\n                \"ok\"\r\n            ],\r\n            \"BuyStatus\": \"ok\",\r\n            \"RealNameAuditUnpassReason\": \"\",\r\n            \"DomainNameAuditUnpassReason\": \"\",\r\n            \"RealNameAuditStatus\": \"Approved\",\r\n            \"ExpirationDate\": \"2020-11-14\",\r\n            \"CreationDate\": \"2019-11-14\",\r\n            \"DomainNameAuditStatus\": \"Approved\"\r\n        },\r\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\r\n    }\r\n}",
         "title": "获取域名基础信息"
       }
     ],

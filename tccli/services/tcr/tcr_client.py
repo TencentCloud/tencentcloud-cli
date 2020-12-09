@@ -988,6 +988,31 @@ def doDescribeReplicationInstanceCreateTasks(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeInternalEndpoints(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInternalEndpointsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeInternalEndpoints(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyApplicationTriggerPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1388,6 +1413,31 @@ def doModifyRepositoryAccessPersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doManageInternalEndpoint(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ManageInternalEndpointRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ManageInternalEndpoint(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteImageLifecyclePersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1538,6 +1588,7 @@ ACTION_MAP = {
     "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
     "DeleteWebhookTrigger": doDeleteWebhookTrigger,
     "DescribeReplicationInstanceCreateTasks": doDescribeReplicationInstanceCreateTasks,
+    "DescribeInternalEndpoints": doDescribeInternalEndpoints,
     "ModifyApplicationTriggerPersonal": doModifyApplicationTriggerPersonal,
     "DescribeFavorRepositoryPersonal": doDescribeFavorRepositoryPersonal,
     "DescribeRepositoryOwnerPersonal": doDescribeRepositoryOwnerPersonal,
@@ -1554,6 +1605,7 @@ ACTION_MAP = {
     "DeleteImageLifecycleGlobalPersonal": doDeleteImageLifecycleGlobalPersonal,
     "DeleteNamespacePersonal": doDeleteNamespacePersonal,
     "ModifyRepositoryAccessPersonal": doModifyRepositoryAccessPersonal,
+    "ManageInternalEndpoint": doManageInternalEndpoint,
     "DeleteImageLifecyclePersonal": doDeleteImageLifecyclePersonal,
     "ValidateRepositoryExistPersonal": doValidateRepositoryExistPersonal,
     "DeleteImage": doDeleteImage,

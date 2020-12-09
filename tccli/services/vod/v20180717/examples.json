@@ -475,19 +475,19 @@
     "DescribeCDNUsageData": [
       {
         "document": "查询2018年12月1日（含）到2018年12月3日（含）的 CDN 流量数据。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\r\n&StartTime=2018-12-01T00:00:00+08:00\r\n&EndTime=2018-12-03T00:00:00+08:00\r\n&DataType=Flux\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&DataType=Flux\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DataInterval\": 1440,\r\n\t\t\"Data\": [{\r\n\t\t\t\"Time\": \"2018-12-01T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1000000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-02T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-03T00:00:00+08:00\",\r\n\t\t\t\"Value\": 1500000\r\n\t\t}],\r\n\t\t\"RequestId\": \"requestId\"\r\n\t}\r\n}",
         "title": "查询点播 CDN 的流量数据"
       },
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\r\n&DomainNames.0=123.vod2.myqcloud.com\r\n&DomainNames.1=test.a.com\r\n&StartTime=2018-12-01T00:00:00+08:00\r\n&EndTime=2018-12-03T00:00:00+08:00\r\n&DataType=Bandwidth\r\n&DataInterval=5\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\n&DomainNames.0=123.vod2.myqcloud.com\n&DomainNames.1=test.a.com\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&DataType=Bandwidth\n&DataInterval=5\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DataInterval\": 5,\r\n\t\t\"Data\": [{\r\n\t\t\t\"Time\": \"2018-12-01T00:00:00+08:00\",\r\n\t\t\t\"Value\": 100000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-01T05:00:00+08:00\",\r\n\t\t\t\"Value\": 200000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-01T10:00:00+08:00\",\r\n\t\t\t\"Value\": 350000\r\n\t\t}],\r\n\t\t\"RequestId\": \"requestId\"\r\n\t}\r\n}",
         "title": "查询域名123.vod2.myqcloud.com和test.a.com从2018-12-01到2018-12-07的5分钟粒度的带宽数据"
       },
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\r\n&StartTime=2018-12-01T00:00:00+08:00\r\n&EndTime=2018-12-03T00:00:00+08:00\r\n&DataType=Bandwidth\r\n&SubAppId=1\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&DataType=Bandwidth\n&SubAppId=1\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DataInterval\": 1440,\r\n\t\t\"Data\": [{\r\n\t\t\t\"Time\": \"2018-12-01T00:00:00+08:00\",\r\n\t\t\t\"Value\": 700000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-01T05:00:00+08:00\",\r\n\t\t\t\"Value\": 800000\r\n\t\t}, {\r\n\t\t\t\"Time\": \"2018-12-01T10:00:00+08:00\",\r\n\t\t\t\"Value\": 920000\r\n\t\t}],\r\n\t\t\"RequestId\": \"requestId\"\r\n\t}\r\n}",
         "title": "管理员查询所有域名从2018-12-01到2018-12-07的带宽数据"
       }
@@ -1131,14 +1131,14 @@
     "SimpleHlsClip": [
       {
         "document": "裁剪视频第 2 秒到 第 10 秒",
-        "input": "https://vod.tencentcloudapi.com/?Action=SimpleHlsClip\r\n&Url=http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8\r\n&StartTimeOffset=2\r\n&EndTimeOffset=10\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Url\": \"http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8\",\r\n\t\t\"MetaData\": {\r\n\t\t\t\"Size\": 0,\r\n\t\t\t\"Container\": \"hls\",\r\n\t\t\t\"Bitrate\": 622014,\r\n\t\t\t\"Height\": 480,\r\n\t\t\t\"Width\": 640,\r\n\t\t\t\"Duration\": 48,\r\n\t\t\t\"Rotate\": 0,\r\n\t\t\t\"VideoStreamSet\": [{\r\n\t\t\t\t\"Bitrate\": 592385,\r\n\t\t\t\t\"Height\": 480,\r\n\t\t\t\t\"Width\": 640,\r\n\t\t\t\t\"Codec\": \"h264\",\r\n\t\t\t\t\"Fps\": 25\r\n\t\t\t}],\r\n\t\t\t\"AudioStreamSet\": [{\r\n\t\t\t\t\"Bitrate\": 29629,\r\n\t\t\t\t\"SamplingRate\": 44100,\r\n\t\t\t\t\"Codec\": \"aac\"\r\n\t\t\t}],\r\n\t\t\t\"VideoDuration\": 0,\r\n\t\t\t\"AudioDuration\": 0\r\n\t\t},\r\n\t\t\"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n\t}\r\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=SimpleHlsClip\n&Url=http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8\n&StartTimeOffset=2\n&EndTimeOffset=10\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Url\": \"http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8\",\r\n                \"FileId\":\"\",\r\n\t\t\"MetaData\": {\r\n\t\t\t\"Size\": 0,\r\n\t\t\t\"Container\": \"hls\",\r\n\t\t\t\"Bitrate\": 622014,\r\n\t\t\t\"Height\": 480,\r\n\t\t\t\"Width\": 640,\r\n\t\t\t\"Duration\": 48,\r\n\t\t\t\"Rotate\": 0,\r\n\t\t\t\"VideoStreamSet\": [{\r\n\t\t\t\t\"Bitrate\": 592385,\r\n\t\t\t\t\"Height\": 480,\r\n\t\t\t\t\"Width\": 640,\r\n\t\t\t\t\"Codec\": \"h264\",\r\n\t\t\t\t\"Fps\": 25\r\n\t\t\t}],\r\n\t\t\t\"AudioStreamSet\": [{\r\n\t\t\t\t\"Bitrate\": 29629,\r\n\t\t\t\t\"SamplingRate\": 44100,\r\n\t\t\t\t\"Codec\": \"aac\"\r\n\t\t\t}],\r\n\t\t\t\"VideoDuration\": 0,\r\n\t\t\t\"AudioDuration\": 0\r\n\t\t},\r\n\t\t\"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n\t}\r\n}",
         "title": "裁剪 HLS 视频（时间偏移量均为正数）"
       },
       {
         "document": "裁剪第 2 秒开始到倒数第 10 秒",
-        "input": "https://vod.tencentcloudapi.com/?Action=SimpleHlsClip\r\n&Url=http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhhh.m3u8\r\n&StartTimeOffset=2\r\n&EndTimeOffset=-10\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Url\": \"http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8\",\r\n\t\t\"MetaData\": {\r\n\t\t\t\"Size\": 0,\r\n\t\t\t\"Container\": \"hls\",\r\n\t\t\t\"Bitrate\": 622014,\r\n\t\t\t\"Height\": 480,\r\n\t\t\t\"Width\": 640,\r\n\t\t\t\"Duration\": 48,\r\n\t\t\t\"Rotate\": 0,\r\n\t\t\t\"VideoStreamSet\": [{\r\n\t\t\t\t\"Bitrate\": 592385,\r\n\t\t\t\t\"Height\": 480,\r\n\t\t\t\t\"Width\": 640,\r\n\t\t\t\t\"Codec\": \"h264\",\r\n\t\t\t\t\"Fps\": 25\r\n\t\t\t}],\r\n\t\t\t\"AudioStreamSet\": [{\r\n\t\t\t\t\"Bitrate\": 29629,\r\n\t\t\t\t\"SamplingRate\": 44100,\r\n\t\t\t\t\"Codec\": \"aac\"\r\n\t\t\t}],\r\n\t\t\t\"VideoDuration\": 0,\r\n\t\t\t\"AudioDuration\": 0\r\n\t\t},\r\n\t\t\"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n\t}\r\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=SimpleHlsClip\n&Url=http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhhh.m3u8\n&StartTimeOffset=2.0\n&EndTimeOffset=10.0\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Url\": \"http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8\",\r\n                \"FileId\":\"\",\r\n\t\t\"MetaData\": {\r\n\t\t\t\"Size\": 0,\r\n\t\t\t\"Container\": \"hls\",\r\n\t\t\t\"Bitrate\": 622014,\r\n\t\t\t\"Height\": 480,\r\n\t\t\t\"Width\": 640,\r\n\t\t\t\"Duration\": 48,\r\n\t\t\t\"Rotate\": 0,\r\n\t\t\t\"VideoStreamSet\": [{\r\n\t\t\t\t\"Bitrate\": 592385,\r\n\t\t\t\t\"Height\": 480,\r\n\t\t\t\t\"Width\": 640,\r\n\t\t\t\t\"Codec\": \"h264\",\r\n\t\t\t\t\"Fps\": 25\r\n\t\t\t}],\r\n\t\t\t\"AudioStreamSet\": [{\r\n\t\t\t\t\"Bitrate\": 29629,\r\n\t\t\t\t\"SamplingRate\": 44100,\r\n\t\t\t\t\"Codec\": \"aac\"\r\n\t\t\t}],\r\n\t\t\t\"VideoDuration\": 0,\r\n\t\t\t\"AudioDuration\": 0\r\n\t\t},\r\n\t\t\"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n\t}\r\n}",
         "title": "裁剪 HLS 视频（时间偏移量为负数）"
       }
     ],

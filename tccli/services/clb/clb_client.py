@@ -338,6 +338,31 @@ def doAutoRewrite(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeLoadBalancerTraffic(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLoadBalancerTrafficRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeLoadBalancerTraffic(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyDomain(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -588,7 +613,7 @@ def doDisassociateTargetGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateLoadBalancerSnatIps(args, parsed_globals):
+def doDescribeTargetGroupInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -602,9 +627,9 @@ def doCreateLoadBalancerSnatIps(args, parsed_globals):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateLoadBalancerSnatIpsRequest()
+    model = models.DescribeTargetGroupInstancesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateLoadBalancerSnatIps(model)
+    rsp = client.DescribeTargetGroupInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1138,31 +1163,6 @@ def doCreateTargetGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTargetGroupInstances(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTargetGroupInstancesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTargetGroupInstances(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeTargets(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1538,6 +1538,31 @@ def doDescribeTargetHealth(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doManualRewrite(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ManualRewriteRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ManualRewrite(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyTargetGroupInstancesWeight(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1563,7 +1588,7 @@ def doModifyTargetGroupInstancesWeight(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doManualRewrite(args, parsed_globals):
+def doCreateLoadBalancerSnatIps(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1577,9 +1602,9 @@ def doManualRewrite(args, parsed_globals):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ManualRewriteRequest()
+    model = models.CreateLoadBalancerSnatIpsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ManualRewrite(model)
+    rsp = client.CreateLoadBalancerSnatIps(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1612,6 +1637,7 @@ ACTION_MAP = {
     "CreateRule": doCreateRule,
     "DescribeExclusiveClusters": doDescribeExclusiveClusters,
     "AutoRewrite": doAutoRewrite,
+    "DescribeLoadBalancerTraffic": doDescribeLoadBalancerTraffic,
     "ModifyDomain": doModifyDomain,
     "DeleteLoadBalancerListeners": doDeleteLoadBalancerListeners,
     "DeleteTargetGroups": doDeleteTargetGroups,
@@ -1622,7 +1648,7 @@ ACTION_MAP = {
     "DeleteLoadBalancer": doDeleteLoadBalancer,
     "ModifyDomainAttributes": doModifyDomainAttributes,
     "DisassociateTargetGroups": doDisassociateTargetGroups,
-    "CreateLoadBalancerSnatIps": doCreateLoadBalancerSnatIps,
+    "DescribeTargetGroupInstances": doDescribeTargetGroupInstances,
     "AssociateTargetGroups": doAssociateTargetGroups,
     "DescribeLoadBalancersDetail": doDescribeLoadBalancersDetail,
     "DeregisterTargetGroupInstances": doDeregisterTargetGroupInstances,
@@ -1644,7 +1670,6 @@ ACTION_MAP = {
     "DescribeTargetGroupList": doDescribeTargetGroupList,
     "ModifyBlockIPList": doModifyBlockIPList,
     "CreateTargetGroup": doCreateTargetGroup,
-    "DescribeTargetGroupInstances": doDescribeTargetGroupInstances,
     "DescribeTargets": doDescribeTargets,
     "DescribeRewrite": doDescribeRewrite,
     "RegisterTargetsWithClassicalLB": doRegisterTargetsWithClassicalLB,
@@ -1660,8 +1685,9 @@ ACTION_MAP = {
     "BatchModifyTargetWeight": doBatchModifyTargetWeight,
     "DescribeQuota": doDescribeQuota,
     "DescribeTargetHealth": doDescribeTargetHealth,
-    "ModifyTargetGroupInstancesWeight": doModifyTargetGroupInstancesWeight,
     "ManualRewrite": doManualRewrite,
+    "ModifyTargetGroupInstancesWeight": doModifyTargetGroupInstancesWeight,
+    "CreateLoadBalancerSnatIps": doCreateLoadBalancerSnatIps,
 
 }
 

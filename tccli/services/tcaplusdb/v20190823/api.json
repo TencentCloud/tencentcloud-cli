@@ -84,6 +84,12 @@
       "name": "查询表描述文件详情",
       "output": "DescribeIdlFileInfosResponse"
     },
+    "DescribeMachine": {
+      "document": "查询独占集群可以申请的剩余机器",
+      "input": "DescribeMachineRequest",
+      "name": "查询独占集群剩余机器",
+      "output": "DescribeMachineResponse"
+    },
     "DescribeRegions": {
       "document": "查询TcaplusDB服务支持的地域列表",
       "input": "DescribeRegionsRequest",
@@ -131,6 +137,12 @@
       "input": "DescribeUinInWhitelistRequest",
       "name": "查询本用户是否在白名单中",
       "output": "DescribeUinInWhitelistResponse"
+    },
+    "ModifyClusterMachine": {
+      "document": "修改独占集群机器",
+      "input": "ModifyClusterMachineRequest",
+      "name": "修改独占集群机器",
+      "output": "ModifyClusterMachineResponse"
     },
     "ModifyClusterName": {
       "document": "修改指定的集群名称",
@@ -403,6 +415,69 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "读CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReadCapacityUnit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "写CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "WriteCapacityUnit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独占server机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ServerDetailInfo",
+          "name": "ServerList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独占proxy机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ProxyDetailInfo",
+          "name": "ProxyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -583,6 +658,30 @@
           "document": "集群是否开启IPv6功能",
           "member": "int64",
           "name": "Ipv6Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "独占集群占用的svr机器",
+          "member": "MachineInfo",
+          "name": "ServerList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "独占集群占用的proxy机器",
+          "member": "MachineInfo",
+          "name": "ProxyList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群类型1共享2独占",
+          "member": "int64",
+          "name": "ClusterType",
           "required": false,
           "type": "int"
         }
@@ -1119,6 +1218,39 @@
           "document": "文件详情列表",
           "member": "IdlFileInfo",
           "name": "IdlFileInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineRequest": {
+      "document": "DescribeMachine请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否按ipv6过滤",
+          "member": "int64",
+          "name": "Ipv6Enable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineResponse": {
+      "document": "DescribeMachine返回参数结构体",
+      "members": [
+        {
+          "document": "独占机器资源列表",
+          "member": "PoolInfo",
+          "name": "PoolList",
           "type": "list",
           "value_allowed_null": false
         },
@@ -1788,6 +1920,87 @@
       ],
       "usage": "out"
     },
+    "MachineInfo": {
+      "document": "机器类型和数量",
+      "members": [
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器数量",
+          "member": "int64",
+          "name": "MachineNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyClusterMachineRequest": {
+      "document": "ModifyClusterMachine请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "svr占用的机器",
+          "member": "MachineInfo",
+          "name": "ServerList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "proxy占用的机器",
+          "member": "MachineInfo",
+          "name": "ProxyList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群类型1共享集群2独占集群",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterMachineResponse": {
+      "document": "ModifyClusterMachine返回参数结构体",
+      "members": [
+        {
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterNameRequest": {
       "document": "ModifyClusterName请求参数结构体",
       "members": [
@@ -2412,6 +2625,132 @@
       ],
       "usage": "out"
     },
+    "PoolInfo": {
+      "document": "center资源池中的机器信息",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一id",
+          "member": "int64",
+          "name": "PoolUid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持ipv6",
+          "member": "int64",
+          "name": "Ipv6Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余可用app",
+          "member": "int64",
+          "name": "AvailableAppCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "svr机器列表",
+          "member": "ServerMachineInfo",
+          "name": "ServerList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "proxy机器列表",
+          "member": "ProxyMachineInfo",
+          "name": "ProxyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyDetailInfo": {
+      "document": "独占的proxy详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "proxy的唯一id",
+          "member": "string",
+          "name": "ProxyUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求包速度",
+          "member": "int64",
+          "name": "ProcessSpeed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求包时延",
+          "member": "int64",
+          "name": "AverageProcessDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢处理包速度",
+          "member": "int64",
+          "name": "SlowProcessSpeed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyMachineInfo": {
+      "document": "proxy机器信息",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一id",
+          "member": "string",
+          "name": "ProxyUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RecoverRecycleTablesRequest": {
       "document": "RecoverRecycleTables请求参数结构体",
       "members": [
@@ -2766,6 +3105,90 @@
         }
       ],
       "usage": "in"
+    },
+    "ServerDetailInfo": {
+      "document": "server独占机器的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "svr唯一id",
+          "member": "string",
+          "name": "ServerUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存占用量",
+          "member": "int64",
+          "name": "MemoryRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘占用量",
+          "member": "int64",
+          "name": "DiskRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读次数",
+          "member": "int64",
+          "name": "ReadNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "写次数",
+          "member": "int64",
+          "name": "WriteNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ServerMachineInfo": {
+      "document": "svr的机器列表ServerList",
+      "members": [
+        {
+          "default": "",
+          "document": "机器唯一id",
+          "member": "string",
+          "name": "ServerUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SetTableIndexRequest": {
       "document": "SetTableIndex请求参数结构体",

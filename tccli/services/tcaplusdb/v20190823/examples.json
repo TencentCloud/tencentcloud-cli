@@ -27,7 +27,7 @@
     "CreateCluster": [
       {
         "document": "新创建TcaplusDB集群",
-        "input": "https://tcaplus.tencentcloudapi.com/?Action=CreateCluster\r\n&IdlType=TDR\r\n&ClusterName=gz测试TDR\r\n&VpcId=vpc-kppg4pm1\r\n&SubnetId=subnet-3sww53pa\r\n&Password=84ea4cbf06573ED\r\n&<公共请求参数>",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=CreateCluster\n&IdlType=TDR\n&ClusterName=gz测试TDR\n&VpcId=vpc-kppg4pm1\n&SubnetId=subnet-3sww53pa\n&Password=84ea4cbf06573ED\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"ClusterId\": \"6179109757\",\r\n        \"RequestId\": \"8f1cc454-4a80-4ed3-a6c3-b7df2b0e8ec7\"\r\n    }\r\n}",
         "title": "创建集群Cluster"
       }
@@ -99,7 +99,7 @@
     "DescribeClusters": [
       {
         "document": "查询用户所属的集群列表",
-        "input": "https://tcaplus.tencentcloudapi.com/?Action=DescribeClusters\r\n&<公共请求参数>",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=DescribeClusters\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Clusters\": [\r\n            {\r\n                \"ApiAccessId\": \"8\",\r\n                \"ApiAccessIp\": \"10.18.7.15\",\r\n                \"ApiAccessIpv6\": \"\",\r\n                \"ApiAccessPort\": 9999,\r\n                \"ClusterId\": \"5462425805\",\r\n                \"ClusterName\": \"gz测试应用\",\r\n                \"CreatedTime\": \"2019-12-04 11:28:16\",\r\n                \"IdlType\": \"PROTO\",\r\n                \"NetworkType\": \"vpc-normal\",\r\n                \"OldPasswordExpireTime\": \"\",\r\n                \"Password\": \"gz123AppTest56\",\r\n                \"PasswordStatus\": \"modifiable\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"SubnetId\": \"subnet-jq2cqev2\",\r\n                \"VpcId\": \"vpc-oezt2hwl\"\r\n            },\r\n            {\r\n                \"ApiAccessId\": \"2\",\r\n                \"ApiAccessIp\": \"10.18.7.9\",\r\n                \"ApiAccessIpv6\": \"2001:3CA1:010F:001A:121B:0000:0000:0010\",\r\n                \"ApiAccessPort\": 9999,\r\n                \"ClusterId\": \"6032569361\",\r\n                \"ClusterName\": \"雷霆战机Test\",\r\n                \"CreatedTime\": \"2019-12-25 11:54:02\",\r\n                \"IdlType\": \"PROTO\",\r\n                \"NetworkType\": \"vpc-normal\",\r\n                \"OldPasswordExpireTime\": \"\",\r\n                \"Password\": \"ltzj123123X\",\r\n                \"PasswordStatus\": \"modifiable\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"SubnetId\": \"subnet-jq2cqev2\",\r\n                \"VpcId\": \"vpc-oezt2hwl\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"34680b61-9836-44d9-bae9-e231f4b61a48\",\r\n        \"TotalCount\": 2\r\n    }\r\n}",
         "title": "查询集群列表"
       }
@@ -116,6 +116,14 @@
         "input": "https://tcaplus.tencentcloudapi.com/?Action=DescribeIdlFileInfos\r\n&ClusterId=5674209986\r\n&IdlFileIds.0=564\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"IdlFileInfos\": [\r\n            {\r\n                \"FileContent\": \"syntax%3D%22proto2%22%3Bpackage%20myTcaplusTable%3Bimport%20%22tcaplusservice.optionv1.proto%22%3Bmessage%20tb_example%7Boption%28tcaplusservice.tcaplus_primary_key%29%3D%22uin%2Cname%22%3Brequired%20int64%20uin%20%3D%201%3Brequired%20string%20name%20%3D%202%3Brequired%20int32%20gamesvrid%20%3D%203%3Boptional%20string%20logintime%20%3D%204%3B%7D\",\r\n                \"FileExtType\": \"proto\",\r\n                \"FileId\": 564,\r\n                \"FileName\": \"tb_example\",\r\n                \"FileSize\": 266,\r\n                \"FileType\": \"PROTO\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"5d592aa1-ee73-4b5e-90bf-062efcc05966\",\r\n        \"TotalCount\": 1\r\n    }\r\n}",
         "title": "指定集群ID和文件ID查询文件详情"
+      }
+    ],
+    "DescribeMachine": [
+      {
+        "document": "查询独占集群可用机器资源",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=DescribeMachine\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"PoolList\": [\r\n            {\r\n                \"PoolUid\": 1,\r\n                \"Ipv6Enable\": 0,\r\n                \"AvailableAppCount\": 100,\r\n                \"ServerList\": [\r\n                    {\r\n                         \"ServerUid\" : \"svr1\",\r\n                         \"MachineType\" : \"T1\"\r\n                    },\r\n                    {\r\n                         \"ServerUid\" : \"svr2\",\r\n                         \"MachineType\" : \"T2\"\r\n                    }\r\n                 ],\r\n                 \"ProxyList\": [\r\n                    {\r\n                         \"ProxyUid\" : \"proxy1\",\r\n                         \"MachineType\" : \"T1\"\r\n                    },\r\n                    {\r\n                         \"ProxyUid\" : \"proxy1\",\r\n                         \"MachineType\" : \"T2\"\r\n                    }\r\n                 ]\r\n            },\r\n            {\r\n                \"PoolUid\": 2,\r\n                \"Ipv6Enable\": 0,\r\n                \"AvailableAppCount\": 100,\r\n                \"ServerList\": [\r\n                    {\r\n                         \"ServerUid\" : \"svr1\",\r\n                         \"MachineType\" : \"T1\"\r\n                    },\r\n                    {\r\n                         \"ServerUid\" : \"svr2\",\r\n                         \"MachineType\" : \"T2\"\r\n                    }\r\n                 ],\r\n                 \"ProxyList\": [\r\n                    {\r\n                         \"ProxyUid\" : \"proxy1\",\r\n                         \"MachineType\" : \"T1\"\r\n                    },\r\n                    {\r\n                         \"ProxyUid\" : \"proxy1\",\r\n                         \"MachineType\" : \"T2\"\r\n                    }\r\n                 ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"34680b61-9836-44d9-bae9-e231f4b61a48\"\r\n    }\r\n}",
+        "title": "查询独占集群机器资源"
       }
     ],
     "DescribeRegions": [
@@ -180,6 +188,14 @@
         "input": "https://tcaplus.tencentcloudapi.com/?Action=DescribeUinInWhitelist\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c5401419-d469-4a9b-8317-bf844ceebb09\",\r\n        \"Result\": \"FALSE\"\r\n    }\r\n}",
         "title": "查询本用户是否在白名单中"
+      }
+    ],
+    "ModifyClusterMachine": [
+      {
+        "document": "修改集群Cluster的独占机器",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=ModifyClusterMachine\n&ClusterId=6179109757\n&ServerList.0.MachineType=T1\n&ServerList.0.MachineNum=1\n&ProxyList.0.MachineType=T1\n&ProxyList.0.MachineNum=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ClusterId\": \"6179109757\",\r\n        \"RequestId\": \"8f1cc454-4a80-4ed3-a6c3-b7df2b0e8ec7\"\r\n    }\r\n}",
+        "title": "修改集群Cluster的独占机器"
       }
     ],
     "ModifyClusterName": [

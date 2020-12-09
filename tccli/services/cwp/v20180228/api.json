@@ -5749,6 +5749,15 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模糊搜索",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

@@ -575,6 +575,39 @@
       ],
       "usage": "in"
     },
+    "CloudBaseRunVpcInfo": {
+      "document": "vpc信息",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建类型(0=继承; 1=新建; 2=指定)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CreateType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CloudBaseRunVpcSubnet": {
       "document": "子网信息",
       "members": [
@@ -3254,6 +3287,22 @@
           "name": "Source",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc信息",
+          "member": "CloudBaseRunVpcInfo",
+          "name": "VpcInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "0/1=允许公网访问;2=关闭公网访问",
+          "member": "int64",
+          "name": "PublicAccess",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

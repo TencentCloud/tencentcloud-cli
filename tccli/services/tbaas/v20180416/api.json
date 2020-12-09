@@ -1703,7 +1703,7 @@
         },
         {
           "default": "",
-          "document": "被调用的函数参数列表",
+          "document": "被调用的函数参数列表，参数列表大小总和要求小于2M",
           "member": "string",
           "name": "Args",
           "required": false,

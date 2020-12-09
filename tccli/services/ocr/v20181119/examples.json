@@ -67,25 +67,25 @@
     "DriverLicenseOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=DriverLicenseOCR\r\n&ImageUrl=https://xx/a.jpg&CardSide=FRONT\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=DriverLicenseOCR\n&ImageUrl=https://xx/a.jpg\n&CardSide=FRONT\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Name\": \"李明\",\r\n        \"Sex\": \"男\",\r\n        \"Nationality\": \"中国\",\r\n        \"Address\": \"上海市徐汇区田林路397号腾云大厦6F\",\r\n        \"DateOfBirth\": \"1987-01-01\",\r\n        \"DateOfFirstIssue\": \"2011-10-01\",\r\n        \"Class\": \"C1\",\r\n        \"StartDate\": \"2011-10-01\",\r\n        \"EndDate\": \"2017-10-01\",\r\n        \"CardCode\": \"440524198701010014\",\r\n        \"ArchivesCode\": \"\",\r\n        \"Record\": \"\",\r\n        \"RecognizeWarnCode\": [-9106],\r\n        \"RecognizeWarnMsg\": [\"WARN_DRIVER_LICENSE_PS_CARD\"],\r\n        \"RequestId\": \"4ba2958b-e7cf-41c2-aafe-fdc985307f63\"\r\n    }\r\n}",
         "title": "驾驶证识别示例代码1    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)"
       },
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=DriverLicenseOCR\r\n&ImageUrl=https://xx/a.jpg&CardSide=FRONT\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=DriverLicenseOCR\n&ImageUrl=https://xx/a.jpg\n&CardSide=FRONT\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Name\": \"李四\",\r\n        \"Sex\": \"男\",\r\n        \"Nationality\": \"中国\",\r\n        \"Address\": \"上海市徐汇区田林路397号腾云大厦3F\",\r\n        \"DateOfBirth\": \"1989-01-01\",\r\n        \"DateOfFirstIssue\": \"2012-10-01\",\r\n        \"Class\": \"C1\",\r\n        \"StartDate\": \"2011-10-01\",\r\n        \"EndDate\": \"2017-10-01\",\r\n        \"CardCode\": \"440xxxxxxxxxxx0011\",\r\n        \"ArchivesCode\": \"\",\r\n        \"Record\": \"\",\r\n        \"RecognizeWarnCode\": [-9106,-9103],\r\n        \"RecognizeWarnMsg\": [\"WARN_DRIVER_LICENSE_PS_CARD\",\"WARN_DRIVER_LICENSE_SCREENED_CARD\"],\r\n        \"RequestId\": \"4ba2958b-e7cf-41c2-aafe-fdc985307f63\"\r\n    }\r\n}",
         "title": "驾驶证识别示例代码2    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)"
       },
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=DriverLicenseOCR\r\n&ImageUrl=https://xx/a.jpg&CardSide=BACK\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=DriverLicenseOCR\n&ImageUrl=https://xx/a.jpg\n&CardSide=BACK\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Name\": \"文磊\",\r\n        \"Sex\": \"\",\r\n        \"Nationality\": \"\",\r\n        \"Address\": \"\",\r\n        \"DateOfBirth\": \"\",\r\n        \"DateOfFirstIssue\": \"\",\r\n        \"Class\": \"\",\r\n        \"StartDate\": \"\",\r\n        \"EndDate\": \"\",\r\n        \"CardCode\": \"510106197906030018\",\r\n        \"ArchivesCode\": \"510111425293\",\r\n        \"Record\": \"\",\r\n        \"RecognizeWarnCode\": [],\r\n        \"RecognizeWarnMsg\": [],\r\n        \"RequestId\": \"83e87a88-2382-4781-96ec-f8d620fffee8\"\r\n    }\r\n}",
         "title": "驾驶证识别示例代码3    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)"
       },
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=DriverLicenseOCR\r\n&ImageUrl=https://xx/a.jpg&CardSide=BACK\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=DriverLicenseOCR\n&ImageUrl=https://xx/a.jpg\n&CardSide=BACK\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Name\": \"文磊\",\r\n        \"Sex\": \"\",\r\n        \"Nationality\": \"\",\r\n        \"Address\": \"\",\r\n        \"DateOfBirth\": \"\",\r\n        \"DateOfFirstIssue\": \"\",\r\n        \"Class\": \"\",\r\n        \"StartDate\": \"\",\r\n        \"EndDate\": \"\",\r\n        \"CardCode\": \"510106197906030018\",\r\n        \"ArchivesCode\": \"510111425293\",\r\n        \"Record\": \"\",\r\n        \"RecognizeWarnCode\": [-9106,-9103],\r\n        \"RecognizeWarnMsg\": [\"WARN_DRIVER_LICENSE_PS_CARD\",\"WARN_DRIVER_LICENSE_SCREENED_CARD\"],\r\n        \"RequestId\": \"83e87a88-2382-4781-96ec-f8d620fffee8\"\r\n    }\r\n}",
         "title": "驾驶证识别示例代码4    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)"
       }
@@ -513,19 +513,19 @@
     "VehicleLicenseOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=VehicleLicenseOCR\r\n&ImageUrl=https://xx/a.jpg\r\n&CardSide=FRONT\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=VehicleLicenseOCR\n&ImageUrl=https://xx/a.jpg\n&CardSide=FRONT\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"FrontInfo\": {\r\n            \"PlateNo\": \"沪AA1234\",\r\n            \"VehicleType\": \"小型轿车\",\r\n            \"Owner\": \"李明\",\r\n            \"Address\": \"上海市徐汇区田林路397号腾云大厦6F\",\r\n            \"UseCharacter\": \"非营运\",\r\n            \"Model\": \"别克牌SGM7151LAAA\",\r\n            \"Vin\": \"ABCDEFGH123456789\",\r\n            \"EngineNo\": \"8B54321\",\r\n            \"RegisterDate\": \"2011-10-10\",\r\n            \"IssueDate\": \"\",\r\n            \"Seal\": \"上海市公安局交通警寨总队\"\r\n        },\r\n        \"BackInfo\": null,\r\n        \"RecognizeWarnCode\": [-9106],\r\n        \"RecognizeWarnMsg\": [\"WARN_DRIVER_LICENSE_PS_CARD\"],\r\n        \"RequestId\": \"820916b4-b391-40a8-9203-7ae87e3f1954\"\r\n    }\r\n}",
         "title": "行驶证主页正面识别示例代码1"
       },
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=VehicleLicenseOCR\r\n&ImageUrl=https://xx/a.jpg\r\n&CardSide=BACK\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=VehicleLicenseOCR\n&ImageUrl=https://xx/a.jpg\n&CardSide=BACK\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"FrontInfo\": null,\r\n        \"BackInfo\": {\r\n            \"PlateNo\": \"皖AC4L50\",\r\n            \"FileNo\": \"A00-00476807\",\r\n            \"AllowNum\": \"5人\",\r\n            \"TotalMass\": \"1837kg\",\r\n            \"CurbWeight\": \"1431kg\",\r\n            \"LoadQuality\": \"--\",\r\n            \"ExternalSize\": \"4620×1780×1498mm\",\r\n            \"TotalQuasiMass\": \"--\",\r\n            \"Marks\": \"\",\r\n            \"Record\": \"检验有效期至2015年11月皖A(4S)\"\r\n        },\r\n        \"RecognizeWarnCode\": [-9106],\r\n        \"RecognizeWarnMsg\": [\"WARN_DRIVER_LICENSE_PS_CARD\"],\r\n        \"RequestId\": \"e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74\"\r\n    }\r\n}",
         "title": "行驶证副页正面识别示例代码2"
       },
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=VehicleLicenseOCR\r\n&ImageUrl=https://xx/a.jpg\r\n&CardSide=BACK\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=VehicleLicenseOCR\n&ImageUrl=https://xx/a.jpg\n&CardSide=BACK\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"FrontInfo\": null,\r\n        \"BackInfo\": {\r\n            \"PlateNo\": \"皖AC4L50\",\r\n            \"FileNo\": \"A00-00476807\",\r\n            \"AllowNum\": \"5人\",\r\n            \"TotalMass\": \"1837kg\",\r\n            \"CurbWeight\": \"1431kg\",\r\n            \"LoadQuality\": \"--\",\r\n            \"ExternalSize\": \"4620×1780×1498mm\",\r\n            \"TotalQuasiMass\": \"--\",\r\n            \"Marks\": \"\",\r\n            \"Record\": \"检验有效期至2015年11月皖A(4S)\"\r\n        },\r\n        \"RecognizeWarnCode\": [-9106,-9103],\r\n        \"RecognizeWarnMsg\": [\"WARN_DRIVER_LICENSE_PS_CARD\",\"WARN_DRIVER_LICENSE_SCREENED_CARD\"],\r\n        \"RequestId\": \"e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74\"\r\n    }\r\n}",
         "title": "行驶证副页正面识别示例代码3"
       }

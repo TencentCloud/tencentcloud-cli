@@ -294,6 +294,14 @@
         "title": "查看实例列表"
       }
     ],
+    "DescribeInternalEndpoints": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInternalEndpoints\n&RegistryId=tcr-xxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AccessVpcSet\": [],\r\n         \"TotalCount\": 0,\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "获取内网接入信息的列表"
+      }
+    ],
     "DescribeNamespacePersonal": [
       {
         "document": "",
@@ -396,6 +404,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ManageImageLifecycleGlobalPersonal\r\n&Type=keep_last_nums\r\n&Val=80\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n     }\r\n}",
         "title": "设置个人版全局镜像版本清理策略"
+      }
+    ],
+    "ManageInternalEndpoint": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ManageInternalEndpoint\n&RegistryId=tcr-xxx\n&RegionId=5\n&Operation=Create\n&VpcId=xxx\n&SubnetId=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RegistryId\": \"XXXX\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "管理内网接入"
       }
     ],
     "ModifyApplicationTriggerPersonal": [

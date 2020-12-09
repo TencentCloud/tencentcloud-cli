@@ -1142,7 +1142,7 @@
         },
         {
           "default": "",
-          "document": "FRONT 为驾驶证主页正面（有红色印章的一面），\nBACK 为驾驶证副页正面（有档案编号的一面）。",
+          "document": "FRONT 为驾驶证主页正面（有红色印章的一面），\nBACK 为驾驶证副页正面（有档案编号的一面）。\n默认值为：FRONT。",
           "member": "string",
           "name": "CardSide",
           "required": false,
@@ -5392,7 +5392,7 @@
         },
         {
           "default": "",
-          "document": "文本行坐标，以四个顶点坐标表示。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本行在原图中的四点坐标。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Coord",
           "name": "Polygon",
           "required": true,
@@ -5410,7 +5410,7 @@
         },
         {
           "default": "",
-          "document": "单词在原图中的四点坐标。",
+          "document": "英文单词在原图中的四点坐标。",
           "member": "WordCoordPoint",
           "name": "WordCoordPoint",
           "required": true,
@@ -6656,7 +6656,7 @@
         },
         {
           "default": "",
-          "document": "FRONT 为行驶证主页正面（有红色印章的一面），\nBACK 为行驶证副页正面（有号码号牌的一面）。",
+          "document": "FRONT 为行驶证主页正面（有红色印章的一面），\nBACK 为行驶证副页正面（有号码号牌的一面）。\n默认值为：FRONT。",
           "member": "string",
           "name": "CardSide",
           "required": false,

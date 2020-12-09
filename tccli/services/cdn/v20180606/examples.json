@@ -432,6 +432,14 @@
         "title": "修改计费类型"
       }
     ],
+    "UpdateScdnDomain": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=UpdateScdnDomain\r\n&Domain=www.test.com\r\n&Acl.Switch=on\r\n&Acl.ScriptData.0.RuleName=test\r\n&Acl.ScriptData.0.Result=refuse\r\n&Acl.ScriptData.0.Configure.0.MatchKey=params\r\n&Acl.ScriptData.0.Configure.0.LogiOperator=exclude\r\n&Acl.ScriptData.0.Configure.0.MatchValue=www.attatck.com\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"08b287d9-6342-4b70-9ec7-201efcd93b9d\",\"Result\":\"Success\"}}",
+        "title": "SCDN域名配置变更"
+      }
+    ],
     "VerifyDomainRecord": [
       {
         "document": "正常回包",

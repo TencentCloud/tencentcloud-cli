@@ -19,12 +19,20 @@ Output:
         "DirectConnectGateway": {
             "DirectConnectGatewayId": "dcg-gjug0kul",
             "DirectConnectGatewayName": "test",
+            "DirectConnectGatewayIp": "10.21.0.5",
+            "EnableBGPCommunity": false,
             "VpcId": "vpc-m7sr81gh",
+            "CcnId": "",
+            "EnableBGP": false,
+            "CcnRouteType": "BGP",
             "NetworkType": "VPC",
             "NetworkInstanceId": "vpc-m7sr81gh",
             "GatewayType": "NAT",
-            "DirectConnectTunnelCount": 8,
-            "CreatedTime": "0000-00-00 00:00:00"
+            "VXLANSupport": [
+                true
+            ],
+            "NatGatewayId": "nat-m7dr11gc",
+            "CreateTime": "2020-09-22 00:00:00"
         },
         "RequestId": "b8351d12-3c82-4d4b-9d88-972e02ca4620"
     }
@@ -56,7 +64,15 @@ Output:
             "NetworkType": "CCN",
             "NetworkInstanceId": "ccn-c1aopa13",
             "GatewayType": "NORMAL",
-            "DirectConnectTunnelCount": 0,
+            "EnableBGPCommunity": true,
+            "EnableBGP": true,
+            "CcnId": "ccn-8j0phqix",
+            "CcnRouteType": "BGP",
+            "NatGatewayId": "",
+            "DirectConnectGatewayIp": "10.21.0.5",
+            "VXLANSupport": [
+                true
+            ],
             "CreateTime": "0000-00-00 00:00:00"
         },
         "RequestId": "b8351d12-3c82-4d4b-9d88-972e02ca4620"

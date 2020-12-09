@@ -16,6 +16,7 @@ Output:
 {
     "Response": {
         "Url": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
+        "FileId": "",
         "MetaData": {
             "Size": 0,
             "Container": "hls",
@@ -57,8 +58,8 @@ Input:
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
     --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhhh.m3u8 \
-    --StartTimeOffset 2 \
-    --EndTimeOffset -10
+    --StartTimeOffset 2.0 \
+    --EndTimeOffset 10.0
 ```
 
 Output: 
@@ -66,6 +67,7 @@ Output:
 {
     "Response": {
         "Url": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
+        "FileId": "",
         "MetaData": {
             "Size": 0,
             "Container": "hls",
