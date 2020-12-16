@@ -282,6 +282,20 @@
         "title": "修改规则"
       }
     ],
+    "PublishMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n\t\"Topic\": \"RL0BAZKZ6V/dev1/control\",\n\t\"Payload\": \"AASDFASFSADFASDF\",\n\t\"ProductId\": \"Nlasdf****ABCd\",\n\t\"DeviceName\": \"dev1\",\n\t\"Qos\": 1\n}",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "title": "透传Payload至设备"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n\t\"ProductId\": \"ZR2CxxxxMHX\",\n\t\"DeviceName\": \"test01\",\n\t\"Topic\": \"ZR2xxxxHX/texxx01/data\",\n\t\"Payload\": \"5L2g5aW977yM5LiW55WM44CC\",\n\t\"PayloadEncoding\": \"base64\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"keyixie_b4f3cb87-2224-46b2-ac2c-e28feadb61c8\"\r\n    }\r\n}",
+        "title": "将接收到的经过业务系统base64编码后的Payload进行二进制编码后下发至设备"
+      }
+    ],
     "ReleaseStudioProduct": [
       {
         "document": "发布产品",

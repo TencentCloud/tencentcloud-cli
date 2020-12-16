@@ -313,6 +313,31 @@ def doCreateSinglePay(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryTransferResult(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryTransferResultRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.QueryTransferResult(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeChargeDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -905,6 +930,31 @@ def doBindRelateAccReUnionPay(args, parsed_globals):
     model = models.BindRelateAccReUnionPayRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.BindRelateAccReUnionPay(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTransferSinglePay(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TransferSinglePayRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.TransferSinglePay(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1911,6 +1961,7 @@ ACTION_MAP = {
     "QueryMemberBind": doQueryMemberBind,
     "ModifyMntMbrBindRelateAcctBankCode": doModifyMntMbrBindRelateAcctBankCode,
     "CreateSinglePay": doCreateSinglePay,
+    "QueryTransferResult": doQueryTransferResult,
     "DescribeChargeDetail": doDescribeChargeDetail,
     "QueryMerchantBalance": doQueryMerchantBalance,
     "ReviseMbrProperty": doReviseMbrProperty,
@@ -1935,6 +1986,7 @@ ACTION_MAP = {
     "CreateInvoice": doCreateInvoice,
     "ApplyOutwardOrder": doApplyOutwardOrder,
     "BindRelateAccReUnionPay": doBindRelateAccReUnionPay,
+    "TransferSinglePay": doTransferSinglePay,
     "QueryOutwardOrder": doQueryOutwardOrder,
     "QueryPayerInfo": doQueryPayerInfo,
     "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,

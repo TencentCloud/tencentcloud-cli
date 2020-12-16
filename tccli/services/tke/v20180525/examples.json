@@ -124,6 +124,14 @@
         "title": "创建grafana面板"
       }
     ],
+    "CreatePrometheusTemplate": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreatePrometheusTemplate\n&Template.Name=t1\n&Template.Describe=一个模板\n&Template.ServiceMonitors.0.Name=s\n&Template.ServiceMonitors.0.Config=xx\n&Template.Level=cluster\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n    \"TemplateId\": \"temp-xxx\"\r\n  }\r\n}",
+        "title": "创建一个模板"
+      }
+    ],
     "DeleteCluster": [
       {
         "document": "删除集群",
@@ -186,6 +194,22 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterRouteTable\r\n&RouteTableName=MANAGED_CLUSTER\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
         "title": "删除集群路由表"
+      }
+    ],
+    "DeletePrometheusTemplate": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusTemplate\n&TemplateId=temp-xxx\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n }\r\n}",
+        "title": "删除一个模板实例"
+      }
+    ],
+    "DeletePrometheusTemplateSync": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusTemplateSync\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "解除模板同步"
       }
     ],
     "DescribeClusterAsGroupOption": [
@@ -308,6 +332,54 @@
         "title": "获取关联某集群的实例列表"
       }
     ],
+    "DescribePrometheusAgents": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAgents\n&InstanceId=prom-xxxxxx\n&Offset=0\n&Limit=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Total\": 1, \r\n        \"Agents\": [\r\n            {\r\n                \"Status\": \"xx\", \r\n                \"ClusterName\": \"xx\", \r\n                \"ClusterId\": \"xx\", \r\n                \"ClusterType\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "拉取agent信息"
+      }
+    ],
+    "DescribePrometheusAlertRule": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAlertRule\n&InstanceId=prom-xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AlertRules\": [\r\n            {\r\n                \"Name\": \"xx\", \r\n                \"Rules\": [\r\n                    {\r\n                        \"Describe\": \"xx\", \r\n                        \"Name\": \"xx\", \r\n                        \"For\": \"xx\", \r\n                        \"Labels\": [\r\n                            {\r\n                                \"Name\": \"xx\", \r\n                                \"Value\": \"xx\"\r\n                            }\r\n                        ], \r\n                        \"Rule\": \"xx\", \r\n                        \"Template\": \"xx\"\r\n                    }\r\n                ], \r\n                \"Notification\": {\r\n                    \"WebHook\": \"xx\", \r\n                    \"RepeatInterval\": \"xx\", \r\n                    \"TimeRangeStart\": \"xx\", \r\n                    \"Enabled\": true, \r\n                    \"PhoneNotifyOrder\": [\r\n                        1\r\n                    ], \r\n                    \"PhoneInnerInterval\": 0, \r\n                    \"PhoneCircleInterval\": 0, \r\n                    \"NotifyWay\": [\r\n                        \"xx\"\r\n                    ], \r\n                    \"ReceiverGroups\": [\r\n                        1\r\n                    ], \r\n                    \"PhoneArriveNotice\": true, \r\n                    \"PhoneCircleTimes\": 0, \r\n                    \"Type\": \"xx\", \r\n                    \"TimeRangeEnd\": \"xx\"\r\n                }, \r\n                \"UpdatedAt\": \"xx\", \r\n                \"TemplateId\": \"xx\", \r\n                \"Id\": \"xx\"\r\n            }\r\n        ], \r\n        \"Total\": 1, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "告警列表"
+      }
+    ],
+    "DescribePrometheusOverviews": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusOverviews\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Instances\": [\r\n            {\r\n                \"Status\": \"xx\", \r\n                \"VpcId\": \"xx\", \r\n                \"Name\": \"xx\", \r\n                \"InstanceId\": \"xx\", \r\n                \"COSBucket\": \"xx\", \r\n                \"SubnetId\": \"xx\"\r\n            }\r\n        ], \r\n        \"Total\": 1, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "拉取实例列表"
+      }
+    ],
+    "DescribePrometheusTargets": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTargets\n&InstanceId=prom-xxx\n&ClusterType=tke\n&ClusterId=cls-xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Jobs\": [\r\n            {\r\n                \"Targets\": [\r\n                    {\r\n                        \"LastScrape\": \"xx\", \r\n                        \"ScrapeDuration\": 0.0, \r\n                        \"Url\": \"xx\", \r\n                        \"Labels\": [\r\n                            {\r\n                                \"Name\": \"xx\", \r\n                                \"Value\": \"xx\"\r\n                            }\r\n                        ], \r\n                        \"State\": \"xx\", \r\n                        \"Error\": \"xx\"\r\n                    }\r\n                ], \r\n                \"Total\": 1, \r\n                \"Up\": 1, \r\n                \"JobName\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "获取targets列表"
+      }
+    ],
+    "DescribePrometheusTemplateSync": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTemplateSync\n&TemplateId=\"temp-xxx\"\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n    \"Targets\": [\r\n      {\r\n           \"Region\": \"ap-shanghai\",\r\n           \"InstanceId\": \"prom-xxx\",\r\n           \"ClusterId\": \"xxx\",\r\n           \"SyncTime\" : \"2020-02-2\"\r\n       }\r\n    ]\r\n  }\r\n}",
+        "title": "拉取同步目标"
+      }
+    ],
+    "DescribePrometheusTemplates": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTemplates\n&Filters.0.Name=Type\n&Filters.0.Values.0=ServiceMonitor\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Templates\": [\r\n            {\r\n                \"UpdateTime\": \"xx\", \r\n                \"RecordRules\": [\r\n                    {\r\n                        \"Config\": \"xx\", \r\n                        \"Name\": \"xx\"\r\n                    }\r\n                ], \r\n                \"Version\": \"xx\", \r\n                \"Name\": \"xx\", \r\n                \"Level\": \"xx\", \r\n                \"Describe\": \"xx\", \r\n                \"RawJobs\": [\r\n                    {\r\n                        \"Config\": \"xx\", \r\n                        \"Name\": \"xx\"\r\n                    }\r\n                ], \r\n                \"AlertRules\": [\r\n                    {\r\n                        \"Template\": \"xx\", \r\n                        \"Labels\": [\r\n                            {\r\n                                \"Name\": \"xx\", \r\n                                \"Value\": \"xx\"\r\n                            }\r\n                        ], \r\n                        \"For\": \"xx\", \r\n                        \"Rule\": \"xx\", \r\n                        \"Name\": \"xx\"\r\n                    }\r\n                ], \r\n                \"PodMonitors\": [\r\n                    {\r\n                        \"Config\": \"xx\", \r\n                        \"Name\": \"xx\"\r\n                    }\r\n                ], \r\n                \"TemplateId\": \"xx\", \r\n                \"IsDefault\": true, \r\n                \"ServiceMonitors\": [\r\n                    {\r\n                        \"Config\": \"xx\", \r\n                        \"Name\": \"xx\"\r\n                    }\r\n                ]\r\n            }\r\n        ], \r\n        \"Total\": 1, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "拉取模板列表"
+      }
+    ],
     "DescribeRegions": [
       {
         "document": "获取地域列表",
@@ -356,12 +428,36 @@
         "title": "编辑节点池"
       }
     ],
+    "ModifyNodePoolDesiredCapacityAboutAsg": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyNodePoolDesiredCapacityAboutAsg\n&ClusterId=cls-xxx\n&NodePoolId=np-xxx\n&DesiredCapacity=6\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n         \"RequestId\": \"xxxx\"\r\n    }\r\n}",
+        "title": "修改节点池关联伸缩组的期望实例数示例"
+      }
+    ],
+    "ModifyPrometheusTemplate": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyPrometheusTemplate\n&TemplateId=temp-xxx\n&Template.Describe=一个模板\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "修改模板描述"
+      }
+    ],
     "RemoveNodeFromNodePool": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=RemoveNodeFromNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxxxx\n&InstanceIds.0=ins-xxxxxxxx\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxx\"\r\n    }\r\n}",
         "title": "移出节点池节点"
+      }
+    ],
+    "SyncPrometheusTemplate": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=SyncPrometheusTemplate\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "同步模板到实例"
       }
     ],
     "UpgradeClusterInstances": [

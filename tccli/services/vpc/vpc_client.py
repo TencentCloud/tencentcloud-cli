@@ -1013,7 +1013,7 @@ def doRemoveBandwidthPackageResources(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquiryPriceRenewVpnGateway(args, parsed_globals):
+def doCloneSecurityGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1027,9 +1027,9 @@ def doInquiryPriceRenewVpnGateway(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InquiryPriceRenewVpnGatewayRequest()
+    model = models.CloneSecurityGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.InquiryPriceRenewVpnGateway(model)
+    rsp = client.CloneSecurityGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1130,6 +1130,31 @@ def doCreateSubnets(args, parsed_globals):
     model = models.CreateSubnetsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateSubnets(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAssociateNetworkAclSubnets(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssociateNetworkAclSubnetsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.AssociateNetworkAclSubnets(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -3363,7 +3388,7 @@ def doDescribeNetworkInterfaces(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAssociateNetworkAclSubnets(args, parsed_globals):
+def doInquiryPriceRenewVpnGateway(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3377,9 +3402,9 @@ def doAssociateNetworkAclSubnets(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AssociateNetworkAclSubnetsRequest()
+    model = models.InquiryPriceRenewVpnGatewayRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.AssociateNetworkAclSubnets(model)
+    rsp = client.InquiryPriceRenewVpnGateway(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -5664,11 +5689,12 @@ ACTION_MAP = {
     "CreateVpnConnection": doCreateVpnConnection,
     "DeleteRouteTable": doDeleteRouteTable,
     "RemoveBandwidthPackageResources": doRemoveBandwidthPackageResources,
-    "InquiryPriceRenewVpnGateway": doInquiryPriceRenewVpnGateway,
+    "CloneSecurityGroup": doCloneSecurityGroup,
     "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
     "CreateAndAttachNetworkInterface": doCreateAndAttachNetworkInterface,
     "DescribeNatGateways": doDescribeNatGateways,
     "CreateSubnets": doCreateSubnets,
+    "AssociateNetworkAclSubnets": doAssociateNetworkAclSubnets,
     "DisassociateDhcpIpWithAddressIp": doDisassociateDhcpIpWithAddressIp,
     "ReplaceRouteTableAssociation": doReplaceRouteTableAssociation,
     "DescribeTemplateLimits": doDescribeTemplateLimits,
@@ -5758,7 +5784,7 @@ ACTION_MAP = {
     "ModifySecurityGroupPolicies": doModifySecurityGroupPolicies,
     "ModifySubnetAttribute": doModifySubnetAttribute,
     "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
-    "AssociateNetworkAclSubnets": doAssociateNetworkAclSubnets,
+    "InquiryPriceRenewVpnGateway": doInquiryPriceRenewVpnGateway,
     "DisableCcnRoutes": doDisableCcnRoutes,
     "InquiryPriceCreateVpnGateway": doInquiryPriceCreateVpnGateway,
     "ResetVpnConnection": doResetVpnConnection,

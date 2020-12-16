@@ -109,7 +109,7 @@
     "CreateLiveRecordTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate\r\n&TemplateName=templat\r\n&Description=test\r\n&FlvParam.Enable=0\r\n&FlvParam.RecordInterval=1800\r\n&FlvParam.StorageTime=600\r\n&HlsParam.Enable=1\r\n&HlsParam.RecordInterval=1800\r\n&HlsParam.StorageTime=600\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate\n&TemplateName=templat\n&Description=test\n&FlvParam.Enable=0\n&FlvParam.RecordInterval=1800\n&FlvParam.StorageTime=600\n&HlsParam.Enable=1\n&HlsParam.RecordInterval=1800\n&HlsParam.StorageTime=600\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"TemplateId\": 1000,\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -789,7 +789,7 @@
     "ModifyLiveRecordTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveRecordTemplate\r\n&TemplateName=templat\r\n&Description=test\r\n&FlvParam.Enable=1\r\n&FlvParam.RecordInterval=1800\r\n&FlvParam.StorageTime=700\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveRecordTemplate\n&TemplateName=templat\n&Description=test\n&FlvParam.Enable=1\n&FlvParam.RecordInterval=1800\n&FlvParam.StorageTime=700\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }

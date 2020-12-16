@@ -844,6 +844,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的外网ipv6相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PublicIPAddressInfo",
+          "name": "PublicIPv6AddressInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5358,7 +5367,7 @@
         },
         {
           "default": "",
-          "document": "镜像描述，多层镜像按顺序传入",
+          "document": "镜像文件描述，多层镜像按顺序传入",
           "member": "ImageUrl",
           "name": "ImageUrls",
           "required": false,
@@ -5950,7 +5959,7 @@
           "document": "是否是主IP。",
           "member": "bool",
           "name": "Primary",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5959,7 +5968,7 @@
           "document": "EIP实例ID，形如：eip-hxlqja90。",
           "member": "string",
           "name": "AddressId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5968,7 +5977,7 @@
           "document": "描述信息。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5977,7 +5986,7 @@
           "document": "公网IP是否被封堵。",
           "member": "bool",
           "name": "IsWanIpBlocked",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5986,12 +5995,12 @@
           "document": "IPv6地址状态：\nPENDING：生产中\nMIGRATING：迁移中\nDELETING：删除中\nAVAILABLE：可用的",
           "member": "string",
           "name": "State",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Listener": {
       "document": "负载均衡监听器",
@@ -10665,6 +10674,15 @@
           "name": "PrivateIpAddresses",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。",
+          "member": "int64",
+          "name": "Ipv6AddressCount",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

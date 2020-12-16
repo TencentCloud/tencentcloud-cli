@@ -366,6 +366,12 @@
       "name": "智慧薪酬-通过明细单号查询批明细单",
       "output": "QueryTransferDetailResponse"
     },
+    "QueryTransferResult": {
+      "document": "智能代发-单笔代发转账查询接口",
+      "input": "QueryTransferResultRequest",
+      "name": "智能代发-单笔代发转账查询接口",
+      "output": "QueryTransferResultResponse"
+    },
     "RechargeByThirdPay": {
       "document": "会员在途充值(经第三方支付渠道)接口",
       "input": "RechargeByThirdPayRequest",
@@ -425,6 +431,12 @@
       "input": "RevokeRechargeByThirdPayRequest",
       "name": "撤销会员在途充值(经第三方支付渠道)接口",
       "output": "RevokeRechargeByThirdPayResponse"
+    },
+    "TransferSinglePay": {
+      "document": "智能代发-单笔代发转账接口",
+      "input": "TransferSinglePayRequest",
+      "name": "智能代发-单笔代发转账接口",
+      "output": "TransferSinglePayResponse"
     },
     "UnBindAcct": {
       "document": "商户解除绑定的提现银行卡",
@@ -10404,6 +10416,135 @@
       ],
       "type": "object"
     },
+    "QueryTransferResultData": {
+      "document": "智能代发-单笔代发转账查询接口返回内容",
+      "members": [
+        {
+          "default": "",
+          "document": "平台交易流水号",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单号",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易状态。\n0 处理中  \n1 提交成功 \n2 交易成功 \n3 交易失败 \n4 未知渠道异常 \n99 未知系统异常",
+          "member": "int64",
+          "name": "TradeStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryTransferResultRequest": {
+      "document": "QueryTransferResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户号",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请商户号的appid或者商户号绑定的appid",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1、 微信企业付款 \n2、 支付宝转账 \n3、 平安银企直联代发转账",
+          "member": "int64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "交易流水流水号（与 OrderId 不能同时为空）",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单号（与 TradeSerialNo 不能同时为空）",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接入环境。沙箱环境填sandbox。",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryTransferResultResponse": {
+      "document": "QueryTransferResult返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功",
+          "member": "string",
+          "name": "ErrCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息",
+          "member": "string",
+          "name": "ErrMessage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QueryTransferResultData",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RechargeByThirdPayRequest": {
       "document": "RechargeByThirdPay请求参数结构体",
       "members": [
@@ -12514,6 +12655,156 @@
         }
       ],
       "usage": "out"
+    },
+    "TransferSinglePayData": {
+      "document": "智能代发-单笔代发转账接口返回数据",
+      "members": [
+        {
+          "default": "",
+          "document": "平台交易流水号，唯一",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TransferSinglePayRequest": {
+      "document": "TransferSinglePay请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户号",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信申请商户号的appid或者商户号绑定的appid\n支付宝、平安填入MerchantId",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1、 微信企业付款 \n2、 支付宝转账 \n3、 平安银企直联代发转账",
+          "member": "int64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单流水号，唯一，不能包含特殊字符，长度最大限制64位，推荐使用字母，数字组合，\"_\",\"-\"组合",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转账金额，单位分",
+          "member": "int64",
+          "name": "TransferAmount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "收款方标识。\n微信为open_id；\n支付宝为会员alipay_user_id;\n平安为收款方银行账号",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款方姓名，微信，支付宝可选；平安模式下必传",
+          "member": "string",
+          "name": "PayeeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款方附加信息，平安接入使用。需要以JSON格式提供以下字段：\nPayeeBankName：收款人开户行名称\n CcyCode：货币类型（RMB-人民币）\n UnionFlag：行内跨行标志（1：行内转账，0：跨行转账）。",
+          "member": "string",
+          "name": "PayeeExtends",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求预留字段，原样透传返回",
+          "member": "string",
+          "name": "ReqReserved",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转账结果回调通知URL。若不填，则不进行回调。",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接入环境。沙箱环境填sandbox。",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferSinglePayResponse": {
+      "document": "TransferSinglePay返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功",
+          "member": "string",
+          "name": "ErrCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息",
+          "member": "string",
+          "name": "ErrMessage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TransferSinglePayData",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UnBindAcctRequest": {
       "document": "UnBindAcct请求参数结构体",

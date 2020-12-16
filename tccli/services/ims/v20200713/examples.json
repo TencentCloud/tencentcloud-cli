@@ -1,5 +1,21 @@
 {
   "actions": {
+    "DescribeImageStat": [
+      {
+        "document": "",
+        "input": "https://ims.tencentcloudapi.com/?Action=DescribeImageStat\n&AuditType=1\n&Filters.0.Name=xxx\n&Filters.0.Values.0=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TrendCount\": [\r\n            {\r\n                \"TotalHour\": 0, \r\n                \"EvilHour\": 0, \r\n                \"TotalCount\": 0, \r\n                \"EvilCount\": 0, \r\n                \"PassCount\": 0, \r\n                \"Date\": \"xx\", \r\n                \"PassHour\": 0, \r\n                \"SuspectHour\": 0, \r\n                \"SuspectCount\": 0\r\n            }\r\n        ], \r\n        \"Overview\": {\r\n            \"TotalHour\": 0, \r\n            \"EvilHour\": 0, \r\n            \"TotalCount\": 0, \r\n            \"EvilCount\": 0, \r\n            \"PassCount\": 0, \r\n            \"PassHour\": 0, \r\n            \"SuspectHour\": 0, \r\n            \"SuspectCount\": 0\r\n        }, \r\n        \"RequestId\": \"xx\", \r\n        \"EvilCount\": [\r\n            {\r\n                \"Count\": 0, \r\n                \"EvilType\": \"xx\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "控制台识别统计"
+      }
+    ],
+    "DescribeImsList": [
+      {
+        "document": "",
+        "input": "https://ims.tencentcloudapi.com/?Action=DescribeImsList\n&PageIndex=0\n&PageSize=0\n&Filters.0.Name=\"xx\"\n&Filters.0.Values.0=\"xx\"\n&Filters.0.Values.1=\"xx\"\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 312, \r\n        \"ImsDetailSet\": {\r\n            \"UpdateUser\": 0, \r\n            \"UpdateTime\": \"xx\", \r\n            \"ModerationTime\": 0, \r\n            \"ContentId\": 0, \r\n            \"EvilType\": 0, \r\n            \"Content\": \"xx\", \r\n            \"DataSource\": 0\r\n        }, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "机器审核详情列表"
+      }
+    ],
     "ImageModeration": [
       {
         "document": "图片内容安全检测",

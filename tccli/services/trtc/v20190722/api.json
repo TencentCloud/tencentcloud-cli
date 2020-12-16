@@ -828,7 +828,7 @@
         },
         {
           "default": "",
-          "document": "数字房间号",
+          "document": "字符串房间号",
           "member": "string",
           "name": "RoomId",
           "required": false,

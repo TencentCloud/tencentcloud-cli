@@ -138,6 +138,12 @@
       "name": "使用编辑轨道数据导出视频",
       "output": "ExportVideoByEditorTrackDataResponse"
     },
+    "ExportVideoByVideoSegmentationData": {
+      "document": "使用视频智能拆条数据导出视频，将指定的视频拆条片段导出为一个视频。",
+      "input": "ExportVideoByVideoSegmentationDataRequest",
+      "name": "使用视频智能拆条数据导出视频",
+      "output": "ExportVideoByVideoSegmentationDataResponse"
+    },
     "ExportVideoEditProject": {
       "document": "导出视频编辑项目，支持指定输出的模板。",
       "input": "ExportVideoEditProjectRequest",
@@ -149,6 +155,12 @@
       "input": "FlattenListMediaRequest",
       "name": "平铺媒体资源",
       "output": "FlattenListMediaResponse"
+    },
+    "GenerateVideoSegmentationSchemeByAi": {
+      "document": "发起视频智能拆条任务，支持智能生成和平精英集锦、王者荣耀集锦、足球集锦、篮球集锦 、人物集锦、新闻拆条等任务。",
+      "input": "GenerateVideoSegmentationSchemeByAiRequest",
+      "name": "视频智能拆条",
+      "output": "GenerateVideoSegmentationSchemeByAiResponse"
     },
     "GrantResourceAuthorization": {
       "document": "资源所属实体对目标实体授予目标资源的相应权限。",
@@ -396,7 +408,7 @@
       "members": [
         {
           "default": "",
-          "document": "音频素材来源类型。取值有：\n<ul>\n<li>VOD ：素材来源 VOD 。</li>\n<li>CME ：视频来源 CME 。</li>\n</ul>",
+          "document": "音频素材来源类型，取值有：\n<ul>\n<li>VOD ：素材来源于云点播文件 ；</li>\n<li>CME ：视频来源于制作云媒体文件 ；</li>\n<li>EXTERNAL ：视频来源于媒资绑定。</li>\n</ul>",
           "member": "string",
           "name": "SourceType",
           "required": true,
@@ -405,7 +417,7 @@
         },
         {
           "default": "",
-          "document": "音频片段的媒体素材来源，可以是：\n<li>VOD 的媒体文件 ID 。</li>\n<li>CME 的素材 ID 。</li>",
+          "document": "音频片段的媒体素材来源，可以是：\n<ul>\n<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>\n<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>\n<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>\n</ul>",
           "member": "string",
           "name": "SourceMedia",
           "required": true,
@@ -717,7 +729,7 @@
         },
         {
           "default": "",
-          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>",
+          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>",
           "member": "string",
           "name": "Category",
           "required": true,
@@ -776,6 +788,14 @@
           "document": "视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。",
           "member": "VideoEditProjectInput",
           "name": "VideoEditProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。",
+          "member": "VideoSegmentationProjectInput",
+          "name": "VideoSegmentationProjectInput",
           "required": false,
           "type": "object"
         }
@@ -1949,6 +1969,103 @@
       ],
       "type": "object"
     },
+    "ExportVideoByVideoSegmentationDataRequest": {
+      "document": "ExportVideoByVideoSegmentationData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频拆条项目 Id 。",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定需要导出的智能拆条片段的组 Id 。",
+          "member": "string",
+          "name": "SegmentGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定需要导出的智能拆条片段 Id  集合。",
+          "member": "string",
+          "name": "SegmentIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "导出目标。\n<li>CME：云剪，即导出为云剪素材；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "member": "string",
+          "name": "ExportDestination",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出的云剪素材信息。指定 ExportDestination = CME 时有效。",
+          "member": "CMEExportInfo",
+          "name": "CMEExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。",
+          "member": "VODExportInfo",
+          "name": "VODExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoByVideoSegmentationDataResponse": {
+      "document": "ExportVideoByVideoSegmentationData返回参数结构体",
+      "members": [
+        {
+          "document": "任务 Id。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ExportVideoEditProjectRequest": {
       "document": "ExportVideoEditProject请求参数结构体",
       "members": [
@@ -2091,6 +2208,55 @@
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateVideoSegmentationSchemeByAiRequest": {
+      "document": "GenerateVideoSegmentationSchemeByAi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频拆条项目 Id 。",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateVideoSegmentationSchemeByAiResponse": {
+      "document": "GenerateVideoSegmentationSchemeByAi返回参数结构体",
+      "members": [
+        {
+          "document": "视频智能拆条任务 Id 。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4233,6 +4399,21 @@
       ],
       "usage": "out"
     },
+    "VideoSegmentationProjectInput": {
+      "document": "视频拆条项目的输入信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频拆条处理模型，不填则默认为手工分割视频。取值 ：\n<li>AI.GameHighlights.PUBG：和平精英集锦 ;</li>\n<li>AI.GameHighlights.Honor OfKings：王者荣耀集锦 ;</li>\n<li>AI.SportHighlights.Football：足球集锦 </li>\n<li>AI.SportHighlights.Basketball：篮球集锦 ；</li>\n<li>AI.PersonSegmentation：人物集锦  ;</li>\n<li>AI.NewsSegmentation：新闻拆条。</li>",
+          "member": "string",
+          "name": "ProcessModel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "VideoStreamInfo": {
       "document": "视频流信息。",
       "members": [
@@ -4289,7 +4470,7 @@
       "members": [
         {
           "default": "",
-          "document": "视频素材来源类型。取值有：\n<ul>\n<li>VOD ：素材来源 VOD 。</li>\n<li>CME ：视频来源 CME 。</li>\n</ul>",
+          "document": "视频素材来源类型，取值有：\n<ul>\n<li>VOD ：素材来源于云点播文件 。</li>\n<li>CME ：视频来源制作云媒体文件。</li>\n<li>EXTERNAL ：视频来源于媒资绑定。</li>\n</ul>",
           "member": "string",
           "name": "SourceType",
           "required": true,
@@ -4298,7 +4479,7 @@
         },
         {
           "default": "",
-          "document": "视频片段的媒体素材来源，可以是：\n<li>VOD 的媒体文件 ID 。</li>\n<li>CME 的素材 ID 。</li>",
+          "document": "视频片段的媒体素材来源，取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID；</li>\n<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>\n<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>\n</ul>",
           "member": "string",
           "name": "SourceMedia",
           "required": true,
@@ -4352,7 +4533,7 @@
         },
         {
           "default": "",
-          "document": "视频片段的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%；\n</li><li>当字符串以 px 结尾，表示视频片段 Height 单位为像素，如 100px 表示 Height 为100像素。</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "document": "视频片段的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%；</li>\n<li>当字符串以 px 结尾，表示视频片段 Height 单位为像素，如 100px 表示 Height 为100像素；</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height；</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放；</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -4361,7 +4542,7 @@
         },
         {
           "default": "",
-          "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 Width 单位为像素，如 100px 表示 Width 为100像素。</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示视频片段 Width 单位为像素，如 100px 表示 Width 为100像素；</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height；</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放；</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
           "member": "string",
           "name": "Width",
           "required": false,

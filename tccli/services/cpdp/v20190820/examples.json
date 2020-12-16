@@ -494,6 +494,14 @@
         "title": "明细号查询明细单正常示例"
       }
     ],
+    "QueryTransferResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTransferResult\n<公共请求参数>\n\n{\n    \"OrderId\": \"xx\", \n    \"MerchantId\": \"xx\", \n    \"TransferType\": 0, \n    \"TradeSerialNo\": \"xx\", \n    \"MerchantAppId\": \"xx\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"ErrMessage\": \"xx\", \r\n        \"Result\": {\r\n            \"OrderId\": \"xx\", \r\n            \"Remark\": \"xx\", \r\n            \"TradeStatus\": 0, \r\n            \"TradeSerialNo\": \"xx\"\r\n        }, \r\n        \"RequestId\": \"xx\", \r\n        \"ErrCode\": \"xx\"\r\n    }\r\n}",
+        "title": "QueryTransferResult"
+      }
+    ],
     "RechargeByThirdPay": [
       {
         "document": "",
@@ -578,6 +586,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=RevokeRechargeByThirdPay\r\n&<公共请求参数>\r\n&MidasSecretId=1587005497659\r\n&MidasSignature=111\r\n&MidasAppId=unibank10001\r\n&RequestType=MemberRechargeThirdPayReq\r\n&OrderId=2020042180081\r\n&PlatformShortNumber=F08872\r\n&AcquiringChannelType=04\r\n&BankAccountNumber=15000093978307\r\n&PayChannelSubId=1\r\n&PayChannel=bank_pingan\r\n&MerchantCode=4087\r\n&TransSequenceNumber=F088722004270543493495\r\n&OldFrontSequenceNumber=F088722004270543493495\r\n&TranNetMemberCode=xxx\r\n&BankSubAccountNumber=xx\r\n&TransFee=xxx\r\n&ThirdPayChannel=0001\r\n&ThirdPayChannelOrderId=xxxx\r\n&CurrencyAmount=1\r\n&CurrencyUnit=1\r\n&CurrencyType=RMB\r\n&MidasEnvironment=dev",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2c96c4eb-ab02-4ba6-a6c6-7d97c698b127\",\r\n        \"RequestType\": \"MemberRechargeThirdPayAns\",\r\n        \"FrontSequenceNumber\": \"2005080253306846\",\r\n        \"ReservedMessage\": \"\"\r\n    }\r\n}",
         "title": "撤销在途充值"
+      }
+    ],
+    "TransferSinglePay": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferSinglePay\n<公共请求参数>\n\n{\n    \"TransferType\":3,\n    \"TransferAmount\":1,\n    \"MerchantId\":\"faryrong\",\n    \"MerchantAppId\":\"faryrong\",\n    \"OrderId\":\"123179\",\n    \"PayeeId\":\"15000100714720\",\n    \"PayeeName\":\"前端数据支持测试山西惟垂有限公司\",\n    \"PayeeExtends\":\"{\\\"PayeeBankName\\\":\\\"平安银行\\\",\\\"CcyCode\\\":\\\"RMB\\\",\\\"UnionFlag\\\":1}\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"ErrMessage\": \"xx\", \r\n        \"Result\": {\r\n            \"TradeSerialNo\": \"xx\"\r\n        }, \r\n        \"RequestId\": \"xx\", \r\n        \"ErrCode\": \"xx\"\r\n    }\r\n}",
+        "title": "TransferSinglePay"
       }
     ],
     "UnBindAcct": [

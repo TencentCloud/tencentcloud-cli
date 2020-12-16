@@ -514,6 +514,14 @@
         "title": "获取指定个数的内容审核模板"
       }
     ],
+    "DescribeDailyPlayStatFileList": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeDailyPlayStatFileList\n&StartTime=2020-12-01T00:00:00+08:00\n&EndTime=2020-12-02T00:00:00+08:00\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"PlayStatFileSet\":[\r\n            {\r\n                \"Date\":\"2020-12-01T00:00:00+08:00\",\r\n                \"Url\":\"http://xxx.test.com/playstat/2021201.csv.gz?sign=abc\"\r\n            },\r\n            {\r\n                \"Date\":\"2020-12-02T00:00:00+08:00\",\r\n                \"Url\":\"http://xxx.test.com/playstat/20201202.csv.gz?sign=abc\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"requestId\"\r\n    }\r\n}",
+        "title": "查询2020-12-0-1到2020-12-02的播放统计文件列表"
+      }
+    ],
     "DescribeEventsState": [
       {
         "document": "",
@@ -626,7 +634,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeSubAppIds\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"SubAppIdInfoSet\": [\r\n      {\r\n        \"SubAppId\": 1451123904,\r\n        \"Name\": \"子应用1\",\r\n        \"Description\": \"子应用1简介\",\r\n        \"CreateTime\": \"2018-10-01T10:00:00Z\",\r\n        \"Status\": \"On\"\r\n      },\r\n      {\r\n        \"SubAppId\": 1251123904,\r\n        \"Name\": \"主应用\",\r\n        \"Description\": \"\",\r\n        \"CreateTime\": \"2018-10-01T10:00:00Z\",\r\n        \"Status\": \"On\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n  }\r\n}",
+        "output": "{\r\n  \"Response\": {\r\n  \"TotalCount\": 2, \r\n    \"SubAppIdInfoSet\": [\r\n      {\r\n        \"SubAppId\": 1451123904,\r\n        \"Name\": \"子应用1\",\r\n        \"Description\": \"子应用1简介\",\r\n        \"CreateTime\": \"2018-10-01T10:00:00Z\",\r\n        \"Status\": \"On\"\r\n      },\r\n      {\r\n        \"SubAppId\": 1251123904,\r\n        \"Name\": \"主应用\",\r\n        \"Description\": \"\",\r\n        \"CreateTime\": \"2018-10-01T10:00:00Z\",\r\n        \"Status\": \"On\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n  }\r\n}",
         "title": "查询子应用资源列表"
       }
     ],

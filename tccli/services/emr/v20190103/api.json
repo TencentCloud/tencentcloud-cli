@@ -18,6 +18,12 @@
       "name": "查询EMR实例",
       "output": "DescribeInstancesResponse"
     },
+    "DescribeJobFlow": {
+      "document": "查询流程任务",
+      "input": "DescribeJobFlowRequest",
+      "name": "查询流程任务",
+      "output": "DescribeJobFlowResponse"
+    },
     "InquiryPriceCreateInstance": {
       "document": "创建实例询价",
       "input": "InquiryPriceCreateInstanceRequest",
@@ -41,6 +47,12 @@
       "input": "InquiryPriceUpdateInstanceRequest",
       "name": "变配询价",
       "output": "InquiryPriceUpdateInstanceResponse"
+    },
+    "RunJobFlow": {
+      "document": "创建流程作业",
+      "input": "RunJobFlowRequest",
+      "name": "创建流程作业",
+      "output": "RunJobFlowResponse"
     },
     "ScaleOutInstance": {
       "document": "实例扩容",
@@ -68,6 +80,39 @@
     "serviceShortName": "emr"
   },
   "objects": {
+    "BootstrapAction": {
+      "document": "引导脚本",
+      "members": [
+        {
+          "default": "",
+          "document": "脚本位置，支持cos上的文件，且只支持https协议。",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行时间。\nresourceAfter 表示在机器资源申请成功后执行。\nclusterBefore 表示在集群初始化前执行。\nclusterAfter 表示在集群初始化后执行。",
+          "member": "string",
+          "name": "WhenRun",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "脚本参数",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "COSSettings": {
       "document": "COS 相关配置",
       "members": [
@@ -508,6 +553,162 @@
         }
       ],
       "usage": "out"
+    },
+    "ClusterSetting": {
+      "document": "集群配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "付费方式。\nPREPAID 包年包月。\nPOSTPAID_BY_HOUR 按量计费，默认方式。",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为HA集群。",
+          "member": "bool",
+          "name": "SupportHA",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群所使用的安全组，目前仅支持一个。",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例位置。",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所在VPC。",
+          "member": "VPCSettings",
+          "name": "VPCSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例登陆配置。",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例标签。",
+          "member": "string",
+          "name": "TagSpecification",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元数据库配置。",
+          "member": "MetaDbInfo",
+          "name": "MetaDB",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例硬件配置。",
+          "member": "JobFlowResourceSpec",
+          "name": "ResourceSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否申请公网IP，默认为false。",
+          "member": "bool",
+          "name": "PublicIpAssigned",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包年包月配置，只对包年包月集群生效。",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群置放群组。",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否使用cbs加密。",
+          "member": "bool",
+          "name": "CbsEncryptFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否使用远程登陆，默认为false。",
+          "member": "bool",
+          "name": "RemoteTcpDefaultPort",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Configuration": {
+      "document": "自定义配置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "配置文件名，支持SPARK、HIVE、HDFS、YARN的部分配置文件自定义。",
+          "member": "string",
+          "name": "Classification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置参数通过KV的形式传入，部分文件支持自定义，可以通过特殊的键\"content\"传入所有内容。",
+          "member": "string",
+          "name": "Properties",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CreateInstanceRequest": {
       "document": "CreateInstance请求参数结构体",
@@ -965,6 +1166,94 @@
       ],
       "type": "object"
     },
+    "DescribeJobFlowRequest": {
+      "document": "DescribeJobFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流程任务Id，RunJobFlow接口返回的值。",
+          "member": "int64",
+          "name": "JobFlowId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobFlowResponse": {
+      "document": "DescribeJobFlow返回参数结构体",
+      "members": [
+        {
+          "document": "流程任务状态，可以为以下值：\nJobFlowInit，流程任务初始化。\nJobFlowResourceApplied，资源申请中，通常为JobFlow需要新建集群时的状态。\nJobFlowResourceReady，执行流程任务的资源就绪。\nJobFlowStepsRunning，流程任务步骤已提交。\nJobFlowStepsComplete，流程任务步骤已完成。\nJobFlowTerminating，流程任务所需资源销毁中。\nJobFlowFinish，流程任务已完成。",
+          "member": "string",
+          "name": "State",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程任务步骤结果。",
+          "member": "JobResult",
+          "name": "Details",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiskGroup": {
+      "document": "磁盘组。",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘规格。",
+          "member": "DiskSpec",
+          "name": "Spec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同类型磁盘数量。",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DiskSpec": {
+      "document": "磁盘描述。",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘类型。\nLOCAL_BASIC  本地盘。\nCLOUD_BASIC 云硬盘。\nLOCAL_SSD 本地SSD。\nCLOUD_SSD 云SSD。\nCLOUD_PREMIUM 高效云盘。\nCLOUD_HSSD 增强型云SSD。",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘大小，单位GB。",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EmrProductConfigOutter": {
       "document": "EMR产品配置",
       "members": [
@@ -1114,6 +1403,30 @@
         }
       ],
       "usage": "out"
+    },
+    "Execution": {
+      "document": "执行动作。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务类型，目前支持以下类型。\n1. “MR”，将通过hadoop jar的方式提交。\n2. \"HIVE\"，将通过hive -f的方式提交。\n3. \"SPARK\"，将通过spark-submit的方式提交。",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务参数，提供除提交指令以外的参数。",
+          "member": "string",
+          "name": "Args",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "HostVolumeContext": {
       "document": "Pod HostPath挂载方式描述",
@@ -1586,6 +1899,183 @@
       ],
       "type": "object"
     },
+    "InstanceChargePrepaid": {
+      "document": "实例预付费参数，只有在付费类型为PREPAID时生效。\n",
+      "members": [
+        {
+          "default": "",
+          "document": "包年包月时间，默认为1，单位：月。\n取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 24, 36, 48, 60。",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否自动续费，默认为否。",
+          "member": "bool",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JobFlowResource": {
+      "document": "机器资源描述。",
+      "members": [
+        {
+          "default": "",
+          "document": "机器类型描述。",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型描述，可参考CVM的该含义。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签KV对。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘描述列表。",
+          "member": "DiskGroup",
+          "name": "DiskGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JobFlowResourceSpec": {
+      "document": "流程作业资源描述",
+      "members": [
+        {
+          "default": "",
+          "document": "主节点数量。",
+          "member": "int64",
+          "name": "MasterCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主节点配置。",
+          "member": "JobFlowResource",
+          "name": "MasterResourceSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Core节点数量",
+          "member": "int64",
+          "name": "CoreCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Core节点配置。",
+          "member": "JobFlowResource",
+          "name": "CoreResourceSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Task节点数量。",
+          "member": "int64",
+          "name": "TaskCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Common节点数量。",
+          "member": "int64",
+          "name": "CommonCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Task节点配置。",
+          "member": "JobFlowResource",
+          "name": "TaskResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Common节点配置。",
+          "member": "JobFlowResource",
+          "name": "CommonResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JobResult": {
+      "document": "任务步骤结果描述",
+      "members": [
+        {
+          "default": "",
+          "document": "任务步骤名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务步骤失败时的处理策略，可以为以下值：\n\"CONTINUE\"，跳过当前失败步骤，继续后续步骤。\n“TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。\n“CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActionOnFailure",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前步骤的状态，可以为以下值：\n“JobFlowStepStatusInit”，初始化状态，等待执行。\n“JobFlowStepStatusRunning”，任务步骤正在执行。\n“JobFlowStepStatusFailed”，任务步骤执行失败。\n“JobFlowStepStatusSucceed”，任务步骤执行成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "JobState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LoginSettings": {
       "document": "登录设置",
       "members": [
@@ -1609,6 +2099,39 @@
         }
       ],
       "usage": "in"
+    },
+    "MetaDbInfo": {
+      "document": "元数据库信息",
+      "members": [
+        {
+          "default": "",
+          "document": "元数据类型。",
+          "member": "string",
+          "name": "MetaType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统一元数据库实例ID。",
+          "member": "string",
+          "name": "UnifyMetaInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自建元数据库信息。",
+          "member": "CustomMetaInfo",
+          "name": "MetaDBInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MultiDisk": {
       "document": "多云盘参数",
@@ -2699,6 +3222,143 @@
       ],
       "usage": "both"
     },
+    "RunJobFlowRequest": {
+      "document": "RunJobFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否新创建集群。\ntrue，新创建集群，则使用Instance中的参数进行集群创建。\nfalse，使用已有集群，则通过InstanceId传入。",
+          "member": "bool",
+          "name": "CreateCluster",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "作业流程执行步骤。",
+          "member": "Step",
+          "name": "Steps",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "作业流程正常完成时，集群的处理方式，可选择:\nTerminate 销毁集群。\nReserve 保留集群。",
+          "member": "string",
+          "name": "InstancePolicy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只有CreateCluster为true时生效，目前只支持EMR版本，例如EMR-2.2.0，不支持ClickHouse和Druid版本。",
+          "member": "string",
+          "name": "ProductVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只在CreateCluster为true时生效。\ntrue 表示安装kerberos，false表示不安装kerberos。",
+          "member": "bool",
+          "name": "SecurityClusterFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "只在CreateCluster为true时生效。\n新建集群时，要安装的软件列表。",
+          "member": "string",
+          "name": "Software",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "引导脚本。",
+          "member": "BootstrapAction",
+          "name": "BootstrapActions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定配置创建集群。",
+          "member": "Configuration",
+          "name": "Configurations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "作业日志保存地址。",
+          "member": "string",
+          "name": "LogUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只在CreateCluster为false时生效。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义应用角色，大数据应用访问外部服务时使用的角色，默认为\"EME_QCSRole\"。",
+          "member": "string",
+          "name": "ApplicationRole",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重入标签，用来可重入检查，防止在一段时间内，创建相同的流程作业。",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只在CreateCluster为true时生效，使用该配置创建集群。",
+          "member": "ClusterSetting",
+          "name": "Instance",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RunJobFlowResponse": {
+      "document": "RunJobFlow返回参数结构体",
+      "members": [
+        {
+          "document": "作业流程ID。",
+          "member": "int64",
+          "name": "JobFlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ScaleOutInstanceRequest": {
       "document": "ScaleOutInstance请求参数结构体",
       "members": [
@@ -2927,6 +3587,48 @@
         }
       ],
       "usage": "in"
+    },
+    "Step": {
+      "document": "执行步骤",
+      "members": [
+        {
+          "default": "",
+          "document": "执行步骤名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行动作。",
+          "member": "Execution",
+          "name": "ExecutionStep",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行失败策略。\n1. TERMINATE_CLUSTER 执行失败时退出并销毁集群。\n2. CANCEL_AND_WAIT 执行失败时阻塞等待。\n3. CONTINUE 执行失败时跳过并执行后续步骤。",
+          "member": "string",
+          "name": "ActionOnFailure",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定执行Step时的用户名，非必须，默认为hadoop。",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签",

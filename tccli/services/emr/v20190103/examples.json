@@ -24,6 +24,14 @@
         "title": "查询实例详情"
       }
     ],
+    "DescribeJobFlow": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeJobFlow\n&JobFlowId=1\n&<公共请求参数>",
+        "output": "{\"Response\":{\"State\":\"JobFlowFinish\",\"Details\":[],\"RequestId\":\"5a96d30f-a251-42a0-82e2-f85325f5b89b\"}}",
+        "title": "查询任务流程"
+      }
+    ],
     "InquiryPriceCreateInstance": [
       {
         "document": "",
@@ -54,6 +62,14 @@
         "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceUpdateInstance\r\n&TimeUnit=s\r\n&TimeSpan=3600\r\n&Placement.Zone=100003\r\n&Currency=CNY\r\n&Placement.ProjectId=0\r\n&UpdateSpec.Memory=16\r\n&UpdateSpec.CPUCores=8\r\n&UpdateSpec.ResourceId=emr-vm-a0xxx9on\r\n&PayMode=0\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"DiscountCost\": 2.01,\r\n        \"OriginalCost\": 3.04,\r\n        \"RequestId\": \"95eb9120-0883-407c-aa5a-43b4e2c250d1\",\r\n        \"TimeSpan\": 3600,\r\n        \"TimeUnit\": \"s\"\r\n    }\r\n}",
         "title": "变配询价"
+      }
+    ],
+    "RunJobFlow": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=RunJobFlow\n&Name=test\n&CreateCluster=false\n&InstancePolicy=Terminate\n&Steps.0.Name=MRtest\n&Steps.0.ExecutionStep.JobType=MR\n&Steps.0.ExecutionStep.Args.0=/usr/local/service/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.5.jar\n&Steps.0.ActionOnFailure=CONTINUE\n&Steps.0.User=hadoop\n&Steps.0.ExecutionStep.Args.1=wordcount\n&Steps.0.ExecutionStep.Args.2=cosn://testbucket/README.txt\n&Steps.0.ExecutionStep.Args.3=cosn://testbucket/output\n&<公共请求参数>",
+        "output": "{\"Response\":{\"JobFlowId\":42,\"RequestId\":\"ba25bfcf-86d6-451a-b01d-a28762c92b99\"}}",
+        "title": "创建任务流程示例"
       }
     ],
     "ScaleOutInstance": [

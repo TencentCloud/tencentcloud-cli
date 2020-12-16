@@ -669,6 +669,14 @@
           "name": "Tag",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Ipv6 访问配置",
+          "member": "Ipv6Access",
+          "name": "Ipv6Access",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4990,6 +4998,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ipv6访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Ipv6Access",
+          "name": "Ipv6Access",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6253,6 +6270,21 @@
         }
       ],
       "usage": "out"
+    },
+    "Ipv6Access": {
+      "document": "Ipv6访问配置",
+      "members": [
+        {
+          "default": "",
+          "document": "域名是否开启ipv6访问功能，on或off。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "KeyRule": {
       "document": "缓存键分路径配置",
@@ -9943,6 +9975,14 @@
           "document": "回源鉴权高级版配置，白名单功能",
           "member": "OriginAuthentication",
           "name": "OriginAuthentication",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Ipv6 访问配置",
+          "member": "Ipv6Access",
+          "name": "Ipv6Access",
           "required": false,
           "type": "object"
         }

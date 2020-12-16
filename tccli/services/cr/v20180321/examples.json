@@ -16,12 +16,36 @@
         "title": "提交信审申请"
       }
     ],
+    "CreateBotTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBotTask\n<公共请求参数>\n\n{\n  \"Module\": \"AiApi\",\n  \"Operation\": \"CreateTask\",\n  \"BotName\": \"qtest01\",\n  \"FlowId\": \"abc123456000000\",\n    \"CallTimeCollection\": {\n        \"Monday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Tuesday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Friday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Wednesday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Thursday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Sunday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Saturday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }\n    },\n  \"BanCall\": \"Y\",\n  \"StartTimeBan\": \"120000\",\n  \"EndTimeBan\": \"130000\",\n  \"PhoneCollection\": \"01ABC\",\n  \"CallCount\": 1,\n  \"CallInterval\": 5\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\"\r\n  }\r\n}",
+        "title": "创建机器人任务"
+      }
+    ],
+    "DescribeBotFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBotFlow\n<公共请求参数>\n\n{\n  \"Module\": \"AiApi\",\n  \"Operation\": \"GetFlow\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"BotFlowList\": [\r\n      {\r\n        \"BotFlowId\": \"1\",\r\n        \"BotFlowName\": \"2\",\r\n        \"PhonePoolList\": [\r\n          {\r\n            \"PoolId\": \"8\",\r\n            \"PoolName\": \"9\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\",\r\n    \"SmsSignList\": [\r\n      {\r\n        \"SignId\": \"3\",\r\n        \"SignName\": \"4\"\r\n      }\r\n    ],\r\n    \"SmsTemplateList\": [\r\n      {\r\n        \"TemplateId\": \"5\",\r\n        \"TemplateName\": \"6\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "title": "查询机器人对话流"
+      }
+    ],
     "DescribeCreditResult": [
       {
         "document": "",
         "input": "https://cr.tencentcloudapi.com/?Action=DescribeCreditResult\n&Module=Credit\n&Operation=Get\n&InstId=123\n&ProductId=123\n&CaseId=123\n&RequestDate=YYYY-MM-DD\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "获取信审结果"
+      }
+    ],
+    "DescribeFileModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileModel\n<公共请求参数>\n\n{\n  \"Module\": \"AiApi\",\n  \"Operation\": \"DescribeFileModel\",\n  \"FileType\": \"input\",\n  \"BotName\": \"测试\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"CosUrl\": \"http://qcos.com/cnc/3004/11/20/123456-csn3333-000-7e8\",\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\"\r\n  }\r\n}",
+        "title": "查询机器人文件模板"
       }
     ],
     "DescribeRecords": [
@@ -78,6 +102,14 @@
         "input": "https://cr.tencentcloudapi.com/?Action=QueryProducts\n&Module=Products\n&Operation=QueryProducts\n&InstanceId=ins-xxxxxx\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\", \r\n        \"ProductList\": [\r\n            {\r\n                \"ProductCode\": \"Pxxx\", \r\n                \"SceneType\": \"A\", \r\n                \"ProductName\": \"测试产品\", \r\n                \"ProductStatus\": 0, \r\n                \"ProductId\": \"pdt-xxxxxx\"\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "查询产品列表"
+      }
+    ],
+    "UploadBotFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadBotFile\n<公共请求参数>\n\n{\n  \"Module\": \"AiApi\",\n  \"Operation\": \"Upload\",\n  \"FileType\": \"input\",\n  \"FileUrl\": \"https://www.qq.com/a.xlsx\",\n  \"FileName\": \"abc.xlsx\",\n  \"BotName\": \"qtest01\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\"\r\n  }\r\n}",
+        "title": "上传机器人文件"
       }
     ],
     "UploadDataFile": [

@@ -1,5 +1,17 @@
 {
   "actions": {
+    "DescribeImageStat": {
+      "document": "控制台识别统计",
+      "input": "DescribeImageStatRequest",
+      "name": "识别统计",
+      "output": "DescribeImageStatResponse"
+    },
+    "DescribeImsList": {
+      "document": "图片机器审核明细",
+      "input": "DescribeImsListRequest",
+      "name": "获取图片审核明细数据",
+      "output": "DescribeImsListResponse"
+    },
     "ImageModeration": {
       "document": "图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别涉黄、涉恐、涉政、涉毒等有害内容，同时支持用户配置图片黑名单，打击自定义的违规图片。\n\n<div class=\"rno-api-explorer\" style=\"margin-bottom:20px\">\n    <div class=\"rno-api-explorer-inner\">\n        <div class=\"rno-api-explorer-hd\">\n            <div class=\"rno-api-explorer-title\">\n                关于版本迭代的描述\n            </div>\n        </div>\n        <div class=\"rno-api-explorer-body\">\n            <div class=\"rno-api-explorer-cont\">\n                <p>当前页面版本为图片内容安全2020版本，2020.11.3日前接入的图片内容安全接口为2019版本，在此时间前接入的用户可直接访问以下链接进行维护操作：<a href=\"https://cloud.tencent.com/document/product/1125/38206\" target=\"_blank\">图片内容安全-2019版本</a></p>\n                <p>2020版本相对2019版本进行了升级，支持更灵活的多场景业务策略配置以及更丰富的识别回调信息，满足不同业务的审核需求，建议按照2020版本接入指引进行接口升级；同时，2019版本也会持续维护直至用户不再使用为止。</p>\n            </div>\n        </div>\n    </div>\n</div>",
       "input": "ImageModerationRequest",
@@ -14,6 +26,117 @@
     "serviceShortName": "ims"
   },
   "objects": {
+    "DescribeImageStatRequest": {
+      "document": "DescribeImageStat请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "审核类型 1: 机器审核; 2: 人工审核",
+          "member": "int64",
+          "name": "AuditType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "member": "Filters",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageStatResponse": {
+      "document": "DescribeImageStat返回参数结构体",
+      "members": [
+        {
+          "document": "识别结果统计",
+          "member": "Overview",
+          "name": "Overview",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "识别量统计",
+          "member": "TrendCount",
+          "name": "TrendCount",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "违规数据分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EvilCount",
+          "name": "EvilCount",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImsListRequest": {
+      "document": "DescribeImsList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页 页索引",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页条数",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImsListResponse": {
+      "document": "DescribeImsList返回参数结构体",
+      "members": [
+        {
+          "document": "返回列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ImsDetail",
+          "name": "ImsDetailSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总条数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Device": {
       "document": "Device结果",
       "members": [
@@ -87,6 +210,78 @@
           "name": "IpType",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EvilCount": {
+      "document": "违规数据分布",
+      "members": [
+        {
+          "default": "",
+          "document": "违规类型：\nTerror\t24001\nPorn\t20002\nPolity\t20001\nAd\t20105\nAbuse\t20007\t\nIllegal\t20006\t\nSpam\t25001\t\nMoan\t26001",
+          "member": "string",
+          "name": "EvilType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分布类型总量",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filters": {
+      "document": "图片过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "查询字段：\n策略BizType\n子账号SubUin\n日期区间DateRange",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询值",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -257,6 +452,84 @@
         }
       ],
       "type": "object"
+    },
+    "ImsDetail": {
+      "document": "机器审核详情列表数据项",
+      "members": [
+        {
+          "default": "",
+          "document": "文本内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据方式， 0：我审，1：人审",
+          "member": "int64",
+          "name": "DataSource",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器审核结果code 100 正常, 20001 政治 20002 色情 20006 涉毒违法 20007 谩骂 24001 暴恐 21000 综合 20105 广告引流 20103 性感",
+          "member": "int64",
+          "name": "EvilType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器审核时间",
+          "member": "string",
+          "name": "ModerationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新人",
+          "member": "string",
+          "name": "UpdateUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容RequestId",
+          "member": "string",
+          "name": "ContentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自主审核结果",
+          "member": "int64",
+          "name": "OperEvilType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "LabelDetailItem": {
       "document": "分类模型命中子标签结果",
@@ -776,6 +1049,171 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Overview": {
+      "document": "识别结果统计",
+      "members": [
+        {
+          "default": "",
+          "document": "总调用量",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总调用时长",
+          "member": "int64",
+          "name": "TotalHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通过量",
+          "member": "int64",
+          "name": "PassCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通过时长",
+          "member": "int64",
+          "name": "PassHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "违规量",
+          "member": "int64",
+          "name": "EvilCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "违规时长",
+          "member": "int64",
+          "name": "EvilHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "疑似违规量",
+          "member": "int64",
+          "name": "SuspectCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "疑似违规时长",
+          "member": "int64",
+          "name": "SuspectHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrendCount": {
+      "document": "识别量统计",
+      "members": [
+        {
+          "default": "",
+          "document": "总调用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总调用时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通过量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PassCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通过时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PassHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "违规量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "EvilCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "违规时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "EvilHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "疑似违规量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SuspectCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "疑似违规时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SuspectHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

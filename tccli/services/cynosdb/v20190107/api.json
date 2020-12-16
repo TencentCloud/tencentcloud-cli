@@ -766,6 +766,46 @@
           "name": "ResourceTags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Db类型\n当DbType为MYSQL时可选(默认NORMAL)：\n<li>NORMAL</li>\n<li>SERVERLESS</li>",
+          "member": "string",
+          "name": "DbMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "member": "float",
+          "name": "MinCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "member": "float",
+          "name": "MaxCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>",
+          "member": "string",
+          "name": "AutoPause",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]",
+          "member": "int64",
+          "name": "AutoPauseDelay",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1052,6 +1092,24 @@
           "name": "ResourceTags",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Db类型(NORMAL, SERVERLESS)",
+          "member": "string",
+          "name": "DbMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当Db类型为SERVERLESS时，serverless集群状态，可选值:\nresume\npause",
+          "member": "string",
+          "name": "ServerlessStatus",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1604,6 +1662,33 @@
           "name": "RenewFlag",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "serverless实例cpu下限",
+          "member": "float",
+          "name": "MinCpu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "serverless实例cpu上限",
+          "member": "float",
+          "name": "MaxCpu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "serverless实例状态, 可选值：\nresume\npause",
+          "member": "string",
+          "name": "ServerlessStatus",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

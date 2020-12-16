@@ -24,6 +24,22 @@
         "title": "创建业务配置"
       }
     ],
+    "DescribeAmsList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAmsList\n<公共请求参数>\n\n{\n    \"PageToken\": \"xx\", \n    \"Limit\": 0, \n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ], \n            \"Name\": \"xx\"\n        }\n    ], \n    \"PageDirection\": \"xx\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"PageToken\": \"xx\", \r\n        \"AmsDetailSet\": [\r\n            {\r\n                \"Content\": \"xx\", \r\n                \"Name\": \"xx\", \r\n                \"Url\": \"xx\", \r\n                \"OperateTime\": \"xx\", \r\n                \"Label\": [\r\n                    \"xx\"\r\n                ], \r\n                \"OriginalLabel\": [\r\n                    \"xx\"\r\n                ], \r\n                \"Operator\": \"xx\", \r\n                \"DataForm\": 0, \r\n                \"DetailCount\": 0, \r\n                \"RequestId\": \"xx\", \r\n                \"TaskID\": \"xx\", \r\n                \"Duration\": 0, \r\n                \"InsertTime\": \"xx\", \r\n                \"Thumbnail\": \"xx\"\r\n            }\r\n        ], \r\n        \"Total\": 0, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "音频审核明细列表"
+      }
+    ],
+    "DescribeAudioStat": [
+      {
+        "document": "",
+        "input": "https://ams.tencentcloudapi.com/?Action=DescribeAudioStat\n&AuditType=1\n&Filters.0.Name=xxx\n&Filters.0.Values.0=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TrendCount\": [\r\n            {\r\n                \"TotalHour\": 0, \r\n                \"EvilHour\": 0, \r\n                \"TotalCount\": 0, \r\n                \"EvilCount\": 0, \r\n                \"PassCount\": 0, \r\n                \"Date\": \"xx\", \r\n                \"PassHour\": 0, \r\n                \"SuspectHour\": 0, \r\n                \"SuspectCount\": 0\r\n            }\r\n        ], \r\n        \"Overview\": {\r\n            \"TotalHour\": 0, \r\n            \"EvilHour\": 0, \r\n            \"TotalCount\": 0, \r\n            \"EvilCount\": 0, \r\n            \"PassCount\": 0, \r\n            \"PassHour\": 0, \r\n            \"SuspectHour\": 0, \r\n            \"SuspectCount\": 0\r\n        }, \r\n        \"RequestId\": \"xx\", \r\n        \"EvilCount\": [\r\n            {\r\n                \"Count\": 0, \r\n                \"EvilType\": \"xx\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "控制台识别统计"
+      }
+    ],
     "DescribeBizConfig": [
       {
         "document": "查看单个配置",

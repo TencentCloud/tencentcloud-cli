@@ -906,6 +906,14 @@
           "name": "NodeSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "购买实例绑定标签",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6043,6 +6051,30 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceTag": {
+      "document": "API购买实例绑定标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签key",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签value",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "RestoreInstanceRequest": {
       "document": "RestoreInstance请求参数结构体",

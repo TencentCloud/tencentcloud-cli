@@ -17,6 +17,7 @@ Output:
         "PullSmsSendStatusSet": [
             {
                 "UserReceiveTime": "2019-10-08 17:18:37",
+                "UserReceiveUnixTime": 1,
                 "NationCode": "86",
                 "PurePhoneNumber": "+8615291996666",
                 "PhoneNumber": "15291996666",
@@ -26,6 +27,7 @@ Output:
             },
             {
                 "UserReceiveTime": "2019-10-08 17:18:37",
+                "UserReceiveUnixTime": 1,
                 "NationCode": "86",
                 "PurePhoneNumber": "+8615291997777",
                 "PhoneNumber": "15291997777",

@@ -395,7 +395,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件\n\n# VersionId\n按照版本ID过滤，VersionId形如 ver-kg8hn58h\n类型：string\n必须：否\n\n# StackId\n按照资源栈ID过滤，StackId形如 stk-hz5vn3te\n类型：string\n必选：否\n\n# Type\n按照事件类型过滤，Type形如 plan, apply, destroy\n类型：string\n必选：否\n\n# Status\n按照事件状态过滤，Status形如 queueing, running, success, failed\n类型：string\n必选：否",
+          "document": "<li>**VersionId**</li>\n按照【**版本ID**】过滤，VersionId形如 `ver-kg8hn58h`\n类型：string\n\n<li>**StackId**</li>\n按照【**资源栈ID**】过滤，StackId形如 `stk-hz5vn3te`\n类型：string\n\n<li>**Type**</li>\n按照【**事件类型**】过滤，Type 形如 plan, apply, destroy\n类型：string\n\n<li>**Status**</li>\n按照【**事件状态**】过滤，Status形如 queueing, running, success, failed\n类型：string",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -475,7 +475,7 @@
         },
         {
           "default": "",
-          "document": "# Name\n按照名称进行过滤，可选\n类型：string\n\n# Status\n按照版本状态过滤，形如VERSION_EDITING，PLAN_IN_PROGRESS等，可选\n类型：string",
+          "document": "<li>**Name**</li>\n按照【**版本名称**】进行过滤\n类型：string\n\n<li>**Status**</li>\n按照【**版本状态**】过滤，形如`VERSION_EDITING`，`PLAN_IN_PROGRESS`等\n类型：string\n\n<li>**StackId**</li>\n按照版本所属的【**资源栈ID**】进行过滤，形如`stk-xxxxxx`\n类型：string",
           "member": "Filter",
           "name": "Filters",
           "required": false,

@@ -391,7 +391,7 @@
     "DescribeDBPrice": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDBPrice\r\n&Zone=ap-guangzhou-1\r\n&GoodsNum=1\r\n&Memory=1000\r\n&Volume=25\r\n&PayType=PRE_PAID\r\n&Period=24\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDBPrice\n&Zone=ap-guangzhou-1\n&GoodsNum=1\n&Memory=1000\n&Volume=25\n&PayType=PRE_PAID\n&Period=24\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"Price\":48000,\r\n        \"OriginalPrice\":460800\r\n    }\r\n}",
         "title": "查询数据库实例价格"
       }
@@ -623,7 +623,7 @@
     "InquiryPriceUpgradeInstances": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=InquiryPriceUpgradeInstances\r\n&InstanceId=cdb-6si6qy6p\r\n&Memory=1000\r\n&Volume=50\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=InquiryPriceUpgradeInstances\n&InstanceId=cdb-6si6qy6p\n&Memory=1000\n&Volume=50\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"Price\":48000,\r\n        \"OriginalPrice\":460800\r\n    }\r\n}",
         "title": "查询数据库升级价格"
       }

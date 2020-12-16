@@ -208,6 +208,20 @@
         "title": "使用视频编辑轨道数据导出视频"
       }
     ],
+    "ExportVideoByVideoSegmentationData": [
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByVideoSegmentationData\n&Platform=default_platform\n&ProjectId=cmepid_5fd1dfaf0e1b530001f5d9b0\n&SegmentGroupId=5fd6e20b0e1b530001f5daed\n&SegmentIds.0=seg_5fd6e20b0e1b530001f5daee\n&Definition=10\n&ExportDestination=VOD\n&VODExportInfo.Name=在线编辑视频\n&Operator=16556266637489\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": \"125009388839-tfusion-0a54392053f84053942f9308c49404d7\",\r\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d7\"\r\n    }\r\n}",
+        "title": "使用视频智能拆条数据导出视频到VOD"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByVideoSegmentationData\n&Platform=default_platform\n&ProjectId=cmepid_5fd1dfaf0e1b530001f5d9b0\n&SegmentGroupId=5fd6e20b0e1b530001f5daed\n&SegmentIds.0=seg_5fd6e20b0e1b530001f5daee\n&SegmentIds.1=seg_5fd6e2100e1b530001f5daef\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Name=在线编辑视频\n&CMEExportInfo.ClassPath=/媒资/视频\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=08f06c7c1fdddbea083f899b932c4987\n&Operator=16556266637489\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": \"125009388839-tfusion-0a54392053f84053942f9308c49404d7\",\r\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d7\"\r\n    }\r\n}",
+        "title": "使用视频智能拆条数据导出视频到CME"
+      }
+    ],
     "ExportVideoEditProject": [
       {
         "document": "",
@@ -222,6 +236,14 @@
         "input": "https://cme.tencentcloudapi.com/?Action=FlattenListMedia\r\n&Platform=test\r\n&ClassPath=/a/b\r\n&Owner.Id=1111\r\n&Owner.Type=PERSON\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"TotalCount\":1,\r\n        \"MaterialInfoSet\":[\r\n            {\r\n                \"BasicInfo\":{\r\n                    \"MaterialId\":\"281921553743710210\",\r\n                    \"MaterialType\":\"VIDEO\",\r\n                    \"Name\":\"9Qvacao2r7EA\",\r\n                    \"CreateTime\":\"2019-12-31T03:59:14Z\",\r\n                    \"UpdateTime\":\"2019-12-31T03:59:14Z\",\r\n                    \"ClassPath\":\"/a/b\",\r\n                    \"TagSet\":null,\r\n                    \"PreviewUrl\":\"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\r\n                    \"Owner\":{\r\n                        \"Type\":\"PERSON\",\r\n                        \"Id\":\"1111\"\r\n                    }\r\n                }\r\n            }\r\n        ],\r\n        \"RequestId\":\"requestId\"\r\n    }\r\n}",
         "title": "平铺媒体资源"
+      }
+    ],
+    "GenerateVideoSegmentationSchemeByAi": [
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=GenerateVideoSegmentationSchemeByAi\n&Platform=test\n&ProjectId=1111\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"5f16967b64436100015fb025\",\r\n    \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\r\n  }\r\n}",
+        "title": "智能拆条"
       }
     ],
     "GrantResourceAuthorization": [

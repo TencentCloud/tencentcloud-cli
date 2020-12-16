@@ -282,6 +282,12 @@
       "name": "获取视频内容审核模板列表",
       "output": "DescribeContentReviewTemplatesResponse"
     },
+    "DescribeDailyPlayStatFileList": {
+      "document": "该接口用于查询播放统计文件的下载地址。\n* 可以查询最近30天的播放统计文件下载地址。\n* 云点播每天对前一天的 CDN 请求日志进行分析处理，生成播放统计文件。\n* 播放统计文件内容包含媒体文件的播放次数、播放流量等统计信息。\n* 播放次数统计说明：\n    1. HLS 文件：访问M3U8 文件时统计播放次数；访问TS 文件不统计播放次数。\n    2. 其它文件文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。\n* 播放设备的统计：播放请求带了 UserAgent 参数，并且 UserAgent 包含 Android 或者 iPhone 等标识，会统计为移动端播放次数，否则统计为 PC 端播放次数。",
+      "input": "DescribeDailyPlayStatFileListRequest",
+      "name": "查询播放统计文件下载列表",
+      "output": "DescribeDailyPlayStatFileListResponse"
+    },
     "DescribeEventsState": {
       "document": "* 该接口用于业务服务器获取 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 事件通知的状态。\n",
       "input": "DescribeEventsStateRequest",
@@ -8534,6 +8540,55 @@
       ],
       "type": "object"
     },
+    "DescribeDailyPlayStatFileListRequest": {
+      "document": "DescribeDailyPlayStatFileList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDailyPlayStatFileListResponse": {
+      "document": "DescribeDailyPlayStatFileList返回参数结构体",
+      "members": [
+        {
+          "document": "播放统计文件列表。",
+          "member": "PlayStatFileInfo",
+          "name": "PlayStatFileSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEventsStateRequest": {
       "document": "DescribeEventsState请求参数结构体",
       "members": [
@@ -9330,6 +9385,22 @@
       "members": [
         {
           "default": "",
+          "document": "分页拉取的最大返回结果数。默认值：200；最大值：200。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页拉取的起始偏移量。默认值：0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "标签信息，查询指定标签的子应用列表。",
           "member": "ResourceTag",
           "name": "Tags",
@@ -9347,6 +9418,13 @@
           "member": "SubAppIdInfo",
           "name": "SubAppIdInfoSet",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子应用总数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -13416,6 +13494,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转码进度，取值范围 [0-100] 。",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15647,6 +15734,30 @@
         }
       ],
       "type": "object"
+    },
+    "PlayStatFileInfo": {
+      "document": "播放统计文件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "播放统计数据所属日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放统计文件的 URL 地址。播放统计文件内容为：\n<li> date：播放日期。</li>\n<li> file_id：视频文件 ID。</li>\n<li> ip_count：去重后的客户端 IP 数。</li>\n<li> flux：播放流量，单位：字节。</li>\n<li> play_times：总的播放次数。</li>\n<li> pc_play_times：PC 端播放次数。</li>\n<li> mobile_play_times：移动端播放次数。</li>\n<li> iphone_play_times：iPhone 端播放次数。</li>\n<li> android_play_times：Android 端播放次数。</li>\n<li> host_name\t域名。</li>",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PlayerConfig": {
       "document": "播放器配置详情",

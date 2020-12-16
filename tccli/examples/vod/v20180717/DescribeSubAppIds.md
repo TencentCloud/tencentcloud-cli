@@ -11,6 +11,7 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 2,
         "SubAppIdInfoSet": [
             {
                 "SubAppId": 1451123904,

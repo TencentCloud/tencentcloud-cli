@@ -18,6 +18,18 @@
       "name": "创建业务配置",
       "output": "CreateBizConfigResponse"
     },
+    "DescribeAmsList": {
+      "document": "音频审核明细列表",
+      "input": "DescribeAmsListRequest",
+      "name": "获取音频审核明细数据",
+      "output": "DescribeAmsListResponse"
+    },
+    "DescribeAudioStat": {
+      "document": "控制台识别统计",
+      "input": "DescribeAudioStatRequest",
+      "name": "识别统计",
+      "output": "DescribeAudioStatResponse"
+    },
     "DescribeBizConfig": {
       "document": "查看单个配置",
       "input": "DescribeBizConfigRequest",
@@ -38,6 +50,138 @@
     "serviceShortName": "ams"
   },
   "objects": {
+    "AmsDetailInfo": {
+      "document": "机器审核详情列表数据项",
+      "members": [
+        {
+          "default": "",
+          "document": "标签",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时长(秒/s)",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务ID，创建任务后返回的TaskId字段",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插入时间",
+          "member": "string",
+          "name": "InsertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据来源 0机审，其他为自主审核",
+          "member": "int64",
+          "name": "DataForm",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作人",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原始命中标签",
+          "member": "string",
+          "name": "OriginalLabel",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作时间",
+          "member": "string",
+          "name": "OperateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频原始地址",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封面图地址",
+          "member": "string",
+          "name": "Thumbnail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短音频内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短音频个数",
+          "member": "int64",
+          "name": "DetailCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频审核的请求 id",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AudioResult": {
       "document": "音频输出参数",
       "members": [
@@ -512,6 +656,132 @@
       ],
       "type": "object"
     },
+    "DescribeAmsListRequest": {
+      "document": "DescribeAmsList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页码",
+          "member": "string",
+          "name": "PageToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询方向",
+          "member": "string",
+          "name": "PageDirection",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAmsListResponse": {
+      "document": "DescribeAmsList返回参数结构体",
+      "members": [
+        {
+          "document": "返回列表数据",
+          "member": "AmsDetailInfo",
+          "name": "AmsDetailSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分页 token",
+          "member": "string",
+          "name": "PageToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAudioStatRequest": {
+      "document": "DescribeAudioStat请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "审核类型 1: 机器审核; 2: 人工审核",
+          "member": "int64",
+          "name": "AuditType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "member": "Filters",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAudioStatResponse": {
+      "document": "DescribeAudioStat返回参数结构体",
+      "members": [
+        {
+          "document": "识别结果统计",
+          "member": "Overview",
+          "name": "Overview",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "识别量统计",
+          "member": "TrendCount",
+          "name": "TrendCount",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "违规数据分布",
+          "member": "EvilCount",
+          "name": "EvilCount",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBizConfigRequest": {
       "document": "DescribeBizConfig请求参数结构体",
       "members": [
@@ -726,6 +996,30 @@
       ],
       "type": "object"
     },
+    "EvilCount": {
+      "document": "违规数据分布",
+      "members": [
+        {
+          "default": "",
+          "document": "违规类型：\nTerror\t24001\nPorn\t20002\nPolity\t20001\nAd\t20105\nAbuse\t20007\t\nIllegal\t20006\t\nSpam\t25001\t\nMoan\t26001",
+          "member": "string",
+          "name": "EvilType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分布类型总量",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FileOutput": {
       "document": "Cos FileOutput ",
       "members": [
@@ -754,6 +1048,54 @@
           "name": "ObjectPrefix",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filters": {
+      "document": "音频过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "查询字段：\n策略BizType\n子账号SubUin\n日期区间DateRange",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询值",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1221,6 +1563,84 @@
       ],
       "usage": "in"
     },
+    "Overview": {
+      "document": "识别结果统计",
+      "members": [
+        {
+          "default": "",
+          "document": "总调用量",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总调用时长",
+          "member": "int64",
+          "name": "TotalHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通过量",
+          "member": "int64",
+          "name": "PassCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通过时长",
+          "member": "int64",
+          "name": "PassHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "违规量",
+          "member": "int64",
+          "name": "EvilCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "违规时长",
+          "member": "int64",
+          "name": "EvilHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "疑似违规量",
+          "member": "int64",
+          "name": "SuspectCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "疑似违规时长",
+          "member": "int64",
+          "name": "SuspectHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "StorageInfo": {
       "document": " 数据存储信息",
       "members": [
@@ -1358,6 +1778,93 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TrendCount": {
+      "document": "识别量统计",
+      "members": [
+        {
+          "default": "",
+          "document": "总调用量",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总调用时长",
+          "member": "int64",
+          "name": "TotalHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通过量",
+          "member": "int64",
+          "name": "PassCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通过时长",
+          "member": "int64",
+          "name": "PassHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "违规量",
+          "member": "int64",
+          "name": "EvilCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "违规时长",
+          "member": "int64",
+          "name": "EvilHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "疑似违规量",
+          "member": "int64",
+          "name": "SuspectCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "疑似违规时长",
+          "member": "int64",
+          "name": "SuspectHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日期",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

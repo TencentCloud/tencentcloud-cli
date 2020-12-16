@@ -8,6 +8,14 @@
         "title": "关联云联网实例"
       }
     ],
+    "CopyFleet": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=CopyFleet\n&FleetId=fleet-qp3g3caa-2m6pzf4g\n&AssetId=asset-qrdiw1a9\n&Description=Human description\n&InstanceType=S5.SMALL2\n&FleetType=ON_DEMAND\n&Name=testfleet\n&NewGameServerSessionProtectionPolicy=TimeLimitProtection\n&ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator=2\n&ResourceCreationLimitPolicy.PolicyPeriodInMinutes=0\n&RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds=5\n&RuntimeConfiguration.MaxConcurrentGameServerSessionActivations=5\n&RuntimeConfiguration.ServerProcesses.0.ConcurrentExecutions=10\n&RuntimeConfiguration.ServerProcesses.0.LaunchPath=/local/game/GameLiftLinuxServer\n&InboundPermissions.0.FromPort=1900\n&InboundPermissions.0.IpRange=0.0.0.0/0\n&InboundPermissions.0.Protocol=TCP\n&InboundPermissions.0.ToPort=2900\n&SelectedScalingType=SCALING_UNSELECTED\n&SelectedCcnType=CCN_UNSELECTED\n&CopyNumber=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FleetAttributes\": [\r\n            {\r\n                \"AssetId\": \"asset-qrdiw1a9\",\r\n                \"BillingStatus\": \"BILLING_ACTIVATED\",\r\n                \"CreationTime\": \"2020-11-18T04:01:03Z\",\r\n                \"Description\": \"Human description test update\",\r\n                \"FleetArn\": \"qcs::gse:ap-shanghai:uin/838831829:fleet/fleet-qp3g3caa-95z2gimq\",\r\n                \"FleetId\": \"fleet-qp3g3caa-95z2gimq\",\r\n                \"FleetType\": \"ON_DEMAND\",\r\n                \"GameServerSessionProtectionTimeLimit\": 60,\r\n                \"InstanceType\": \"S5.LARGE8\",\r\n                \"Name\": \"frederickli-test-fleet\",\r\n                \"NewGameServerSessionProtectionPolicy\": \"TimeLimitProtection\",\r\n                \"OperatingSystem\": \"CentOS 7.16 64\\u4f4d\",\r\n                \"ResourceCreationLimitPolicy\": {\r\n                    \"NewGameServerSessionsPerCreator\": 2,\r\n                    \"PolicyPeriodInMinutes\": 3\r\n                },\r\n                \"Status\": \"NEW\",\r\n                \"StoppedActions\": [],\r\n                \"TerminationTime\": null\r\n            }\r\n        ],\r\n        \"RequestId\": \"s1605672063311364390\",\r\n        \"TotalCount\": 1\r\n    }\r\n}",
+        "title": "复制服务器舰队"
+      }
+    ],
     "CreateAlias": [
       {
         "document": "",

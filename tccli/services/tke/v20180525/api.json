@@ -84,6 +84,12 @@
       "name": "创建grafana监控面板",
       "output": "CreatePrometheusDashboardResponse"
     },
+    "CreatePrometheusTemplate": {
+      "document": "创建一个云原生Prometheus模板实例",
+      "input": "CreatePrometheusTemplateRequest",
+      "name": "创建模板",
+      "output": "CreatePrometheusTemplateResponse"
+    },
     "DeleteCluster": {
       "document": "删除集群(YUNAPI V3版本)",
       "input": "DeleteClusterRequest",
@@ -131,6 +137,18 @@
       "input": "DeleteClusterRouteTableRequest",
       "name": "删除集群路由表",
       "output": "DeleteClusterRouteTableResponse"
+    },
+    "DeletePrometheusTemplate": {
+      "document": "删除一个云原生Promehtheus配置模板",
+      "input": "DeletePrometheusTemplateRequest",
+      "name": "删除模板",
+      "output": "DeletePrometheusTemplateResponse"
+    },
+    "DeletePrometheusTemplateSync": {
+      "document": "取消模板同步，这将会删除目标中该模板所生产的配置",
+      "input": "DeletePrometheusTemplateSyncRequest",
+      "name": "取消模板同步",
+      "output": "DeletePrometheusTemplateSyncResponse"
     },
     "DescribeClusterAsGroupOption": {
       "document": "集群弹性伸缩配置",
@@ -222,6 +240,42 @@
       "name": "获取关联目标集群的实例列表",
       "output": "DescribePrometheusAgentInstancesResponse"
     },
+    "DescribePrometheusAgents": {
+      "document": "获取被关联集群列表",
+      "input": "DescribePrometheusAgentsRequest",
+      "name": "获取被关联集群列表",
+      "output": "DescribePrometheusAgentsResponse"
+    },
+    "DescribePrometheusAlertRule": {
+      "document": "获取告警规则列表",
+      "input": "DescribePrometheusAlertRuleRequest",
+      "name": "获取告警规则列表",
+      "output": "DescribePrometheusAlertRuleResponse"
+    },
+    "DescribePrometheusOverviews": {
+      "document": "获取实例列表",
+      "input": "DescribePrometheusOverviewsRequest",
+      "name": "获取实例列表",
+      "output": "DescribePrometheusOverviewsResponse"
+    },
+    "DescribePrometheusTargets": {
+      "document": "获取targets信息",
+      "input": "DescribePrometheusTargetsRequest",
+      "name": "获取targets信息",
+      "output": "DescribePrometheusTargetsResponse"
+    },
+    "DescribePrometheusTemplateSync": {
+      "document": "获取模板同步信息",
+      "input": "DescribePrometheusTemplateSyncRequest",
+      "name": "获取模板同步信息",
+      "output": "DescribePrometheusTemplateSyncResponse"
+    },
+    "DescribePrometheusTemplates": {
+      "document": "拉取模板列表，默认模板将总是在最前面",
+      "input": "DescribePrometheusTemplatesRequest",
+      "name": "模板列表",
+      "output": "DescribePrometheusTemplatesResponse"
+    },
     "DescribeRegions": {
       "document": "获取容器服务支持的所有地域",
       "input": "DescribeRegionsRequest",
@@ -258,11 +312,29 @@
       "name": "编辑节点池",
       "output": "ModifyClusterNodePoolResponse"
     },
+    "ModifyNodePoolDesiredCapacityAboutAsg": {
+      "document": "修改节点池关联伸缩组的期望实例数",
+      "input": "ModifyNodePoolDesiredCapacityAboutAsgRequest",
+      "name": "修改节点池关联伸缩组的期望实例数",
+      "output": "ModifyNodePoolDesiredCapacityAboutAsgResponse"
+    },
+    "ModifyPrometheusTemplate": {
+      "document": "修改模板内容",
+      "input": "ModifyPrometheusTemplateRequest",
+      "name": "修改模板",
+      "output": "ModifyPrometheusTemplateResponse"
+    },
     "RemoveNodeFromNodePool": {
       "document": "移出节点池节点，但保留在集群内",
       "input": "RemoveNodeFromNodePoolRequest",
       "name": "移出节点池节点",
       "output": "RemoveNodeFromNodePoolResponse"
+    },
+    "SyncPrometheusTemplate": {
+      "document": "同步模板到实例或者集群",
+      "input": "SyncPrometheusTemplateRequest",
+      "name": "同步模板到实例或者集群",
+      "output": "SyncPrometheusTemplateResponse"
     },
     "UpgradeClusterInstances": {
       "document": "给集群的一批work节点进行升级 ",
@@ -1938,6 +2010,39 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusTemplateRequest": {
+      "document": "CreatePrometheusTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板设置",
+          "member": "PrometheusTemplate",
+          "name": "Template",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusTemplateResponse": {
+      "document": "CreatePrometheusTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "模板Id",
+          "member": "string",
+          "name": "TemplateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DataDisk": {
       "document": "描述了k8s节点数据盘相关配置与信息。",
       "members": [
@@ -2304,6 +2409,66 @@
     },
     "DeleteClusterRouteTableResponse": {
       "document": "DeleteClusterRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTemplateRequest": {
+      "document": "DeletePrometheusTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板id",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTemplateResponse": {
+      "document": "DeletePrometheusTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTemplateSyncRequest": {
+      "document": "DeletePrometheusTemplateSync请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板id",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "取消同步的对象列表",
+          "member": "PrometheusTemplateSyncTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTemplateSyncResponse": {
+      "document": "DeletePrometheusTemplateSync返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3052,6 +3217,328 @@
           "name": "Instances",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAgentsRequest": {
+      "document": "DescribePrometheusAgents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于分页",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于分页",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAgentsResponse": {
+      "document": "DescribePrometheusAgents返回参数结构体",
+      "members": [
+        {
+          "document": "被关联集群信息",
+          "member": "PrometheusAgentOverview",
+          "name": "Agents",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被关联集群总量",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAlertRuleRequest": {
+      "document": "DescribePrometheusAlertRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤\n支持ID，Name",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAlertRuleResponse": {
+      "document": "DescribePrometheusAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "告警详情",
+          "member": "PrometheusAlertRuleDetail",
+          "name": "AlertRules",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusOverviewsRequest": {
+      "document": "DescribePrometheusOverviews请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分页",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于分页",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤实例，目前支持：\nID: 通过实例ID来过滤 \nName: 通过实例名称来过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusOverviewsResponse": {
+      "document": "DescribePrometheusOverviews返回参数结构体",
+      "members": [
+        {
+          "document": "实例列表",
+          "member": "PrometheusInstanceOverview",
+          "name": "Instances",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTargetsRequest": {
+      "document": "DescribePrometheusTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，当前支持\nName=state\nValue=up, down, unknown",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTargetsResponse": {
+      "document": "DescribePrometheusTargets返回参数结构体",
+      "members": [
+        {
+          "document": "所有Job的targets信息",
+          "member": "PrometheusJobTargets",
+          "name": "Jobs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTemplateSyncRequest": {
+      "document": "DescribePrometheusTemplateSync请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTemplateSyncResponse": {
+      "document": "DescribePrometheusTemplateSync返回参数结构体",
+      "members": [
+        {
+          "document": "同步目标详情",
+          "member": "PrometheusTemplateSyncTarget",
+          "name": "Targets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTemplatesRequest": {
+      "document": "DescribePrometheusTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模糊过滤条件，支持\nLevel 按模板级别过滤\nName 按名称过滤\nDescribe 按描述过滤\nID 按templateId过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页偏移",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "总数限制",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTemplatesResponse": {
+      "document": "DescribePrometheusTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "模板列表",
+          "member": "PrometheusTemplate",
+          "name": "Templates",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4013,6 +4500,82 @@
       ],
       "type": "object"
     },
+    "ModifyNodePoolDesiredCapacityAboutAsgRequest": {
+      "document": "ModifyNodePoolDesiredCapacityAboutAsg请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池id",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池所关联的伸缩组的期望实例数",
+          "member": "int64",
+          "name": "DesiredCapacity",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNodePoolDesiredCapacityAboutAsgResponse": {
+      "document": "ModifyNodePoolDesiredCapacityAboutAsg返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusTemplateRequest": {
+      "document": "ModifyPrometheusTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改内容",
+          "member": "PrometheusTemplateModify",
+          "name": "Template",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusTemplateResponse": {
+      "document": "ModifyPrometheusTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NodeCountSummary": {
       "document": "节点统计列表",
       "members": [
@@ -4159,6 +4722,765 @@
         }
       ],
       "usage": "out"
+    },
+    "PrometheusAgentOverview": {
+      "document": "托管prometheus agent概览",
+      "members": [
+        {
+          "default": "",
+          "document": "集群类型",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "agent状态\nnormal = 正常\nabnormal = 异常",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusAlertRule": {
+      "document": "Prometheus告警规则",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "prometheus语句",
+          "member": "string",
+          "name": "Rule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外标签",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警发送模板",
+          "member": "string",
+          "name": "Template",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "持续时间",
+          "member": "string",
+          "name": "For",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该条规则的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusAlertRuleDetail": {
+      "document": "托管prometheus告警配置实例",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则列表",
+          "member": "PrometheusAlertRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后修改时间",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警渠道",
+          "member": "PrometheusNotification",
+          "name": "Notification",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警 id",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该告警来至模板下发，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusConfigItem": {
+      "document": "prometheus配置",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置内容",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于出参，如果该配置来至模板，则为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusInstanceOverview": {
+      "document": "托管prometheus实例概览",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例vpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例子网Id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例当前的状态\nprepare_env = 初始化环境\ninstall_suit = 安装组件\nrunning = 运行中",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS桶存储",
+          "member": "string",
+          "name": "COSBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusJobTargets": {
+      "document": "prometheus一个job的targets",
+      "members": [
+        {
+          "default": "",
+          "document": "该Job的targets列表",
+          "member": "PrometheusTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "job的名称",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "targets总数",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康的target总数",
+          "member": "uint64",
+          "name": "Up",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusNotification": {
+      "document": "amp告警渠道配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否启用",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收敛时间",
+          "member": "string",
+          "name": "RepeatInterval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效起始时间",
+          "member": "string",
+          "name": "TimeRangeStart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效结束时间",
+          "member": "string",
+          "name": "TimeRangeEnd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。\n分别代表：短信、邮件、电话、微信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NotifyWay",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警接收组（用户组）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ReceiverGroups",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警顺序。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "PhoneNotifyOrder",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警次数。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PhoneCircleTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警轮内间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PhoneInnerInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警轮外间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PhoneCircleInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警触达通知\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "PhoneArriveNotice",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通道类型，默认为amp，支持以下\namp\nwebhook\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "如果Type为webhook, 则该字段为必填项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WebHook",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusTarget": {
+      "document": "prometheus一个抓取目标的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "抓取目标的URL",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "target当前状态,当前支持\nup = 健康\ndown = 不健康\nunknown = 未知",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "target的元label",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次抓取的时间",
+          "member": "string",
+          "name": "LastScrape",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次抓取的耗时，单位是s",
+          "member": "float",
+          "name": "ScrapeDuration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次抓取如果错误，该字段存储错误信息",
+          "member": "string",
+          "name": "Error",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusTemplate": {
+      "document": "模板实例",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板维度，支持以下类型\ninstance 实例级别\ncluster 集群级别",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为instance时有效，\n模板中的告警配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusAlertRule",
+          "name": "AlertRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusConfigItem",
+          "name": "RecordRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板的ID, 用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近更新时间，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前版本，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否系统提供的默认模板，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为instance时有效，\n模板中的告警配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusAlertRuleDetail",
+          "name": "AlertDetailRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusTemplateModify": {
+      "document": "云原生Prometheus模板可修改项",
+      "members": [
+        {
+          "default": "",
+          "document": "修改名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改内容，只有当模板类型是Alert时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusAlertRule",
+          "name": "AlertRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusConfigItem",
+          "name": "RecordRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改内容，只有当模板类型是Alert时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusAlertRuleDetail",
+          "name": "AlertDetailRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusTemplateSyncTarget": {
+      "document": "云原生Prometheus模板同步目标",
+      "members": [
+        {
+          "default": "",
+          "document": "目标所在地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标实例",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群id，只有当采集模板的Level为cluster的时候需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一次同步时间， 用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SyncTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前使用的模板版本，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群类型，只有当采集模板的Level为cluster的时候需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于出参，实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于出参，集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RegionInstance": {
       "document": "地域属性信息",
@@ -4455,6 +5777,40 @@
         }
       ],
       "usage": "both"
+    },
+    "SyncPrometheusTemplateRequest": {
+      "document": "SyncPrometheusTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "同步目标",
+          "member": "PrometheusTemplateSyncTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncPrometheusTemplateResponse": {
+      "document": "SyncPrometheusTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Tag": {
       "document": "标签绑定的资源类型，当前支持类型：\"cluster\"",

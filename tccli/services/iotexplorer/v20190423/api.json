@@ -198,6 +198,12 @@
       "name": "修改规则",
       "output": "ModifyTopicRuleResponse"
     },
+    "PublishMessage": {
+      "document": "本接口（PublishMessage）用于使用自定义透传协议进行设备远控",
+      "input": "PublishMessageRequest",
+      "name": "设备透传指令控制",
+      "output": "PublishMessageResponse"
+    },
     "ReleaseStudioProduct": {
       "document": "产品开发完成并测试通过后，通过发布产品将产品设置为发布状态",
       "input": "ReleaseStudioProductRequest",
@@ -1900,7 +1906,7 @@
         },
         {
           "default": "",
-          "document": "单次获取的历史数据项目的最大数量",
+          "document": "单次获取的历史数据项目的最大数量, 缺省10",
           "member": "int64",
           "name": "Size",
           "required": false,
@@ -2678,6 +2684,72 @@
         }
       ],
       "usage": "out"
+    },
+    "PublishMessageRequest": {
+      "document": "PublishMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息发往的主题",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云端下发到设备的控制报文",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息服务质量等级，取值为0或1",
+          "member": "uint64",
+          "name": "Qos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Payload的内容编码格式，取值为base64或空。base64表示云端将接收到的base64编码后的报文再转换成二进制报文下发至设备，为空表示不作转换，透传下发至设备",
+          "member": "string",
+          "name": "PayloadEncoding",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishMessageResponse": {
+      "document": "PublishMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReleaseStudioProductRequest": {
       "document": "ReleaseStudioProduct请求参数结构体",

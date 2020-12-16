@@ -8,6 +8,22 @@
         "title": "账号举报"
       }
     ],
+    "DescribeTextLib": [
+      {
+        "document": "",
+        "input": "https://tms.tencentcloudapi.com/?Action=DescribeTextLib\n&StrategyType=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TextLib\": [\r\n            {\r\n                \"LibId\": 1, \r\n                \"LibName\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "控制台获取用户词库列表"
+      }
+    ],
+    "DescribeTextStat": [
+      {
+        "document": "",
+        "input": "https://tms.tencentcloudapi.com/?Action=DescribeTextStat\n&AuditType=1\n&Filters.0.Name=xxx\n&Filters.0.Values.0=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TrendCount\": [\r\n            {\r\n                \"TotalHour\": 0, \r\n                \"EvilHour\": 0, \r\n                \"TotalCount\": 0, \r\n                \"EvilCount\": 0, \r\n                \"PassCount\": 0, \r\n                \"Date\": \"xx\", \r\n                \"PassHour\": 0, \r\n                \"SuspectHour\": 0, \r\n                \"SuspectCount\": 0\r\n            }\r\n        ], \r\n        \"Overview\": {\r\n            \"TotalHour\": 0, \r\n            \"EvilHour\": 0, \r\n            \"TotalCount\": 0, \r\n            \"EvilCount\": 0, \r\n            \"PassCount\": 0, \r\n            \"PassHour\": 0, \r\n            \"SuspectHour\": 0, \r\n            \"SuspectCount\": 0\r\n        }, \r\n        \"RequestId\": \"xx\", \r\n        \"EvilCount\": [\r\n            {\r\n                \"Count\": 0, \r\n                \"EvilType\": \"xx\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "控制台识别统计"
+      }
+    ],
     "TextModeration": [
       {
         "document": "",

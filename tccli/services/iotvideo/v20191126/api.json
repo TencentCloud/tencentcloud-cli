@@ -144,6 +144,12 @@
       "name": "将已购买的云存服务转移到另一设备",
       "output": "DeliverStorageServiceResponse"
     },
+    "DescribeAccountBalance": {
+      "document": "客户可通过本接口获取账户余额信息, 默认接口请求频率限制：1次/秒",
+      "input": "DescribeAccountBalanceRequest",
+      "name": "查询账户余额",
+      "output": "DescribeAccountBalanceResponse"
+    },
     "DescribeBindDev": {
       "document": "本接口（DescribeBindDev）用于查询终端用户绑定的设备列表。",
       "input": "DescribeBindDevRequest",
@@ -239,6 +245,12 @@
       "input": "DescribePubVersionsRequest",
       "name": "获取某一产品发布过的全部固件版本",
       "output": "DescribePubVersionsResponse"
+    },
+    "DescribeRechargeRecords": {
+      "document": "客户可通过本接口获取充值记录信息, 一次最多返回50条记录。",
+      "input": "DescribeRechargeRecordsRequest",
+      "name": "查询充值记录",
+      "output": "DescribeRechargeRecordsResponse"
     },
     "DescribeRegistrationStatus": {
       "document": "本接口（DescribeRegistrationStatus）用于查询终端用户的注册状态。",
@@ -1692,6 +1704,60 @@
       ],
       "type": "object"
     },
+    "DescribeAccountBalanceRequest": {
+      "document": "DescribeAccountBalance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账户类型 1:设备接入 2:云存",
+          "member": "int64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountBalanceResponse": {
+      "document": "DescribeAccountBalance返回参数结构体",
+      "members": [
+        {
+          "document": "账户类型 1=设备接入;2=云存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AccountType",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Balance",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "账户状态，1=正常；8=冻结；9=销户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "State",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最后修改时间，UTC值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LastUpdateTime",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBindDevRequest": {
       "document": "DescribeBindDev请求参数结构体",
       "members": [
@@ -2403,6 +2469,62 @@
           "document": "历史发布的版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "OtaPubHistory",
           "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRechargeRecordsRequest": {
+      "document": "DescribeRechargeRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账户类型 1:设备接入 2:云存",
+          "member": "int64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "从第几条记录开始显示",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "总共查询多少条记录",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRechargeRecordsResponse": {
+      "document": "DescribeRechargeRecords返回参数结构体",
+      "members": [
+        {
+          "document": "账户类型 1:设备接入 2:云存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AccountType",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "充值记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RechargeRecord",
+          "name": "Records",
           "type": "list",
           "value_allowed_null": true
         },
@@ -3690,6 +3812,48 @@
           "name": "Os",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RechargeRecord": {
+      "document": "充值记录列表",
+      "members": [
+        {
+          "default": "",
+          "document": "流水记录号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "WaterId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "充值前的余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "BalanceBeforeRecharge",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "充值金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Money",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "充值时间, UTC值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "OperateTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

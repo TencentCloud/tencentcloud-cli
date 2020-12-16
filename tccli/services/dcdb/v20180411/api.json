@@ -1251,6 +1251,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
