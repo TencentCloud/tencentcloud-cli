@@ -59,6 +59,9 @@ Output:
             "TasksPriority": 0,
             "TasksNotifyMode": ""
         },
+        "ComposeMediaTask": null,
+        "SplitMediaTask": null,
+        "WechatMiniProgramPublishTask": null,
         "EditMediaTask": null,
         "WechatPublishTask": null,
         "TranscodeTask": null,
@@ -119,7 +122,11 @@ Output:
                 }
             ]
         },
+        "ComposeMediaTask": null,
+        "WechatMiniProgramPublishTask": null,
+        "SplitMediaTask": null,
         "SnapshotByTimeOffsetTask": null,
+        "WechatPublishTask": null,
         "ConcatTask": null,
         "ClipTask": null,
         "CreateImageSpriteTask": null,
@@ -184,6 +191,9 @@ Output:
             },
             "ProcedureTaskId": ""
         },
+        "ComposeMediaTask": null,
+        "SplitMediaTask": null,
+        "WechatMiniProgramPublishTask": null,
         "WechatPublishTask": null,
         "TranscodeTask": null,
         "SnapshotByTimeOffsetTask": null,
@@ -230,6 +240,7 @@ Output:
             "SourceDefinition": 0,
             "PublishResult": "Pass"
         },
+        "SplitMediaTask": null,
         "TranscodeTask": null,
         "SnapshotByTimeOffsetTask": null,
         "ConcatTask": null,

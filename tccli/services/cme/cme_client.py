@@ -338,6 +338,31 @@ def doExportVideoByEditorTrackData(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeClass(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClassRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeClass(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeTaskDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -688,7 +713,7 @@ def doDescribeMaterials(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClass(args, parsed_globals):
+def doDescribePlatforms(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -702,9 +727,9 @@ def doDescribeClass(args, parsed_globals):
     client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClassRequest()
+    model = models.DescribePlatformsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeClass(model)
+    rsp = client.DescribePlatforms(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -987,6 +1012,7 @@ ACTION_MAP = {
     "DescribeResourceAuthorization": doDescribeResourceAuthorization,
     "ImportMaterial": doImportMaterial,
     "ExportVideoByEditorTrackData": doExportVideoByEditorTrackData,
+    "DescribeClass": doDescribeClass,
     "DescribeTaskDetail": doDescribeTaskDetail,
     "CreateLink": doCreateLink,
     "ModifyTeam": doModifyTeam,
@@ -1001,7 +1027,7 @@ ACTION_MAP = {
     "DescribeProjects": doDescribeProjects,
     "DescribeLoginStatus": doDescribeLoginStatus,
     "DescribeMaterials": doDescribeMaterials,
-    "DescribeClass": doDescribeClass,
+    "DescribePlatforms": doDescribePlatforms,
     "CreateTeam": doCreateTeam,
     "ModifyProject": doModifyProject,
     "ModifyMaterial": doModifyMaterial,

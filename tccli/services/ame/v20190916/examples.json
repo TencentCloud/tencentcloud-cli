@@ -65,7 +65,7 @@
     "ReportData": [
       {
         "document": "",
-        "input": "https://ame.tencentcloudapi.com/?Action=ReportData\r\n&ReportData=1f8b08000000000000007xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://ame.tencentcloudapi.com/?Action=ReportData\n&ReportData=1f8b08000000000000007xxxxxxx\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"s1578300559628971903\"\r\n\t}\r\n}",
         "title": "上报歌曲播放数据"
       }

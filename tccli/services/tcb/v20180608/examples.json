@@ -64,6 +64,14 @@
         "title": "创建静态托管资源"
       }
     ],
+    "DeleteCloudBaseProjectLatestVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudBaseProjectLatestVersion\n<公共请求参数>\n\n{\"EnvId\":\"alic-test01\",\"ProjectName\":\"Express-Starter\"}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "删除云开发项目"
+      }
+    ],
     "DeleteEndUser": [
       {
         "document": "",

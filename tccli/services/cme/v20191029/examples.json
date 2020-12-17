@@ -138,6 +138,20 @@
         "title": "获取图片素材详情"
       }
     ],
+    "DescribePlatforms": [
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribePlatforms\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"PlatformInfoSet\": [\r\n      {\r\n        \"Platform\": \"1112\",\r\n        \"Description\": \"test\",\r\n        \"VodSubAppId\": 140000303,\r\n        \"LicenseId\": \"cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e\",\r\n        \"CreateTime\": \"2018-12-01T13:00:00Z\",\r\n        \"UpdateTime\": \"2018-12-01T13:00:00Z\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\r\n  }\r\n}",
+        "title": "获取所有创建的平台列表"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribePlatforms\n&LicenseIds.0=cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"PlatformInfoSet\": [\r\n      {\r\n        \"Platform\": \"1112\",\r\n        \"Description\": \"test\",\r\n        \"VodSubAppId\": 140000303,\r\n        \"LicenseId\": \"cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e\",\r\n        \"CreateTime\": \"2018-12-01T13:00:00Z\",\r\n        \"UpdateTime\": \"2018-12-01T13:00:00Z\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\r\n  }\r\n}",
+        "title": "指定绑定的 license Id 获取平台列表"
+      }
+    ],
     "DescribeProjects": [
       {
         "document": "",

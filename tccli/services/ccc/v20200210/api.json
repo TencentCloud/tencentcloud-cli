@@ -24,6 +24,12 @@
       "name": "查询在线客服记录",
       "output": "DescribeIMCdrsResponse"
     },
+    "DescribePSTNActiveSessionList": {
+      "document": "获取 PSTN 活动会话列表。",
+      "input": "DescribePSTNActiveSessionListRequest",
+      "name": "获取 PSTN 活动会话列表",
+      "output": "DescribePSTNActiveSessionListResponse"
+    },
     "DescribeTelCallInfo": {
       "document": "按实例获取电话消耗统计",
       "input": "DescribeTelCallInfoRequest",
@@ -301,6 +307,62 @@
       ],
       "type": "object"
     },
+    "DescribePSTNActiveSessionListRequest": {
+      "document": "DescribePSTNActiveSessionList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用 ID",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回的数据条数，最大 25",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePSTNActiveSessionListResponse": {
+      "document": "DescribePSTNActiveSessionList返回参数结构体",
+      "members": [
+        {
+          "document": "列表总条数",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表内容",
+          "member": "PSTNSessionInfo",
+          "name": "Sessions",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTelCallInfoRequest": {
       "document": "DescribeTelCallInfo请求参数结构体",
       "members": [
@@ -565,6 +627,111 @@
           "name": "Messages",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PSTNSessionInfo": {
+      "document": "PSTN 会话信息",
+      "members": [
+        {
+          "default": "",
+          "document": "会话 ID",
+          "member": "string",
+          "name": "SessionID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话临时房间 ID",
+          "member": "string",
+          "name": "RoomID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主叫",
+          "member": "string",
+          "name": "Caller",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被叫",
+          "member": "string",
+          "name": "Callee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间，Unix 时间戳",
+          "member": "string",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接听时间，Unix 时间戳",
+          "member": "string",
+          "name": "AcceptTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席邮箱",
+          "member": "string",
+          "name": "StaffEmail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席工号",
+          "member": "string",
+          "name": "StaffNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席状态 inProgress 进行中",
+          "member": "string",
+          "name": "SessionStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话呼叫方向， 0 呼入 | 1 - 呼出",
+          "member": "int64",
+          "name": "Direction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "振铃时间，Unix 时间戳",
+          "member": "int64",
+          "name": "RingTimestamp",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

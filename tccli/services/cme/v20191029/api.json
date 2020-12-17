@@ -90,6 +90,12 @@
       "name": "获取素材详情列表",
       "output": "DescribeMaterialsResponse"
     },
+    "DescribePlatforms": {
+      "document": "<li>支持获取所创建的所有平台列表信息；</li>\n<li>支持获取指定的平台列表信息。</li>\n\n",
+      "input": "DescribePlatformsRequest",
+      "name": "获取平台列表",
+      "output": "DescribePlatformsResponse"
+    },
     "DescribeProjects": {
       "document": "支持根据多种条件过滤出项目列表。",
       "input": "DescribeProjectsRequest",
@@ -1337,6 +1343,70 @@
           "document": "素材列表信息。",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformsRequest": {
+      "document": "DescribePlatforms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台集合。",
+          "member": "string",
+          "name": "Platforms",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "平台绑定的 license Id 集合。",
+          "member": "string",
+          "name": "LicenseIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：10。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformsResponse": {
+      "document": "DescribePlatforms返回参数结构体",
+      "members": [
+        {
+          "document": "符合搜索条件的记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台信息列表。",
+          "member": "PlatformInfo",
+          "name": "PlatformInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
@@ -3583,6 +3653,66 @@
         }
       ],
       "usage": "in"
+    },
+    "PlatformInfo": {
+      "document": "平台信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台描述。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播子应用 Id。",
+          "member": "uint64",
+          "name": "VodSubAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台绑定的 license Id。",
+          "member": "string",
+          "name": "LicenseId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，格式按照 ISO 8601 标准表示。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间，格式按照 ISO 8601 标准表示。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProjectInfo": {
       "document": "项目信息。",

@@ -2012,6 +2012,14 @@
           "name": "InternetChargeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

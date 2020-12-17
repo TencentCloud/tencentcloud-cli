@@ -583,6 +583,14 @@
           "name": "PayMode",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动续费开关。有两个可选值：\n0 表示关闭，不自动续费（默认值）\n1 表示开启，将自动续费",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1466,6 +1474,14 @@
           "name": "PayMode",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动续费开关。有三个可选值：\n0 表示关闭，不自动续费\n1 表示开启，将自动续费\n2 表示不处理，保留域名原有状态（默认值）",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1661,6 +1677,14 @@
           "member": "int64",
           "name": "PayMode",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动续费开关。有两个可选值：\n0 表示关闭，不自动续费（默认值）\n1 表示开启，将自动续费",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
           "type": "int"
         }
       ],

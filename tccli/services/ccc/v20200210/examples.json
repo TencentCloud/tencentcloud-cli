@@ -32,6 +32,14 @@
         "title": "查询在线客服记录示例"
       }
     ],
+    "DescribePSTNActiveSessionList": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribePSTNActiveSessionList\n&SdkAppId=1400000000\n&Offset=0\n&Limit=25\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"53bccf04-0870-4520-8614-f4bdddfd68df\",\r\n        \"Total\":1,\r\n        \"Sessions\":[\r\n            {\r\n                \"SessionID\":\"0cf5be1b-de75-4445-a0c4-8dff3fa4b68b\",\r\n                \"RoomID\":\"32929373\",\r\n                \"Caller\":\"00864009282737\",\r\n                \"Callee\":\"00864001783747\",\r\n                \"StartTimestamp\":1607702199,\r\n                \"RingTimestamp\":1607702299,\r\n                \"AcceptTimestamp\":1607702329,\r\n                \"StaffEmail\":\"foo@tencent.com\",\r\n                \"StaffNumber\":\"1007\",\r\n                \"SessionStatus\":\"inProgress\",\r\n                \"Direction\": 1\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取 PSTN 活动会话列表示例"
+      }
+    ],
     "DescribeTelCallInfo": [
       {
         "document": "",

@@ -88,7 +88,7 @@
   "metadata": {
     "apiVersion": "2020-09-18",
     "api_brief": "基于优图ReID算法能力，通过灵活的设备配置平台，实现购物中心&品牌门店数字化",
-    "serviceNameCN": "腾讯优mall自研产品",
+    "serviceNameCN": "客流数字化平台",
     "serviceShortName": "ump"
   },
   "objects": {

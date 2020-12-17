@@ -6,6 +6,12 @@
       "name": "创建弹性公网IP",
       "output": "AllocateAddressesResponse"
     },
+    "AssignIpv6Addresses": {
+      "document": "本接口（AssignIpv6Addresses）用于弹性网卡申请IPv6地址。",
+      "input": "AssignIpv6AddressesRequest",
+      "name": "分配IPv6地址",
+      "output": "AssignIpv6AddressesResponse"
+    },
     "AssignPrivateIpAddresses": {
       "document": "弹性网卡申请内网 IP",
       "input": "AssignPrivateIpAddressesRequest",
@@ -492,6 +498,12 @@
       "name": "修改实例属性",
       "output": "ModifyInstancesAttributeResponse"
     },
+    "ModifyIpv6AddressesAttribute": {
+      "document": "本接口（ModifyIpv6AddressesAttribute）用于修改弹性网卡IPv6地址属性。",
+      "input": "ModifyIpv6AddressesAttributeRequest",
+      "name": "修改弹性网卡IPv6地址属性",
+      "output": "ModifyIpv6AddressesAttributeResponse"
+    },
     "ModifyListener": {
       "document": "修改负载均衡监听器属性。",
       "input": "ModifyListenerRequest",
@@ -593,6 +605,12 @@
       "input": "ReleaseAddressesRequest",
       "name": "释放弹性公网IP",
       "output": "ReleaseAddressesResponse"
+    },
+    "ReleaseIpv6Addresses": {
+      "document": "本接口（UnassignIpv6Addresses）用于释放弹性网卡IPv6地址。",
+      "input": "ReleaseIpv6AddressesRequest",
+      "name": "释放IPv6地址",
+      "output": "ReleaseIpv6AddressesResponse"
     },
     "RemovePrivateIpAddresses": {
       "document": "弹性网卡退还内网 IP。\n退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。",
@@ -976,6 +994,63 @@
         }
       ],
       "usage": "out"
+    },
+    "AssignIpv6AddressesRequest": {
+      "document": "AssignIpv6Addresses请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ECM 地域",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性网卡实例ID，形如：eni-1snva0vd。目前只支持主网卡上分配。",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定的IPv6地址列表，单次最多指定10个。与入参Ipv6AddressCount合并计算配额。与Ipv6AddressCount必填一个。",
+          "member": "Ipv6Address",
+          "name": "Ipv6Addresses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自动分配IPv6地址个数，内网IP地址个数总和不能超过配数。与入参Ipv6Addresses合并计算配额。与Ipv6Addresses必填一个。",
+          "member": "int64",
+          "name": "Ipv6AddressCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIpv6AddressesResponse": {
+      "document": "AssignIpv6Addresses返回参数结构体",
+      "members": [
+        {
+          "document": "分配给弹性网卡的IPv6地址列表。",
+          "member": "Ipv6Address",
+          "name": "Ipv6AddressSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AssignPrivateIpAddressesRequest": {
       "document": "AssignPrivateIpAddresses请求参数结构体",
@@ -6720,6 +6795,48 @@
       ],
       "type": "object"
     },
+    "ModifyIpv6AddressesAttributeRequest": {
+      "document": "ModifyIpv6AddressesAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ECM 地域",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性网卡实例ID，形如：eni-m6dyj72l。",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定的IPv6地址信息。",
+          "member": "Ipv6Address",
+          "name": "Ipv6Addresses",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpv6AddressesAttributeResponse": {
+      "document": "ModifyIpv6AddressesAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyListenerRequest": {
       "document": "ModifyListener请求参数结构体",
       "members": [
@@ -8537,6 +8654,55 @@
           "member": "string",
           "name": "TaskId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseIpv6AddressesRequest": {
+      "document": "ReleaseIpv6Addresses请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ECM 地域",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性网卡实例ID，形如：eni-m6dyj72l。",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定的IPv6地址列表，单次最多指定10个。",
+          "member": "Ipv6Address",
+          "name": "Ipv6Addresses",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseIpv6AddressesResponse": {
+      "document": "ReleaseIpv6Addresses返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID，可以通过DescribeTaskResult查询任务状态",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
           "value_allowed_null": false
         },
         {

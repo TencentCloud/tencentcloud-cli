@@ -1188,6 +1188,31 @@ def doDeleteModule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doReleaseIpv6Addresses(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReleaseIpv6AddressesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ReleaseIpv6Addresses(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeTargetHealth(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1305,6 +1330,31 @@ def doDisableRoutes(args, parsed_globals):
     model = models.DisableRoutesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DisableRoutes(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyIpv6AddressesAttribute(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyIpv6AddressesAttributeRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyIpv6AddressesAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1930,6 +1980,31 @@ def doRebootInstances(args, parsed_globals):
     model = models.RebootInstancesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.RebootInstances(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAssignIpv6Addresses(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssignIpv6AddressesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.AssignIpv6Addresses(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2846,11 +2921,13 @@ ACTION_MAP = {
     "ModifyTargetPort": doModifyTargetPort,
     "DeleteNetworkInterface": doDeleteNetworkInterface,
     "DeleteModule": doDeleteModule,
+    "ReleaseIpv6Addresses": doReleaseIpv6Addresses,
     "DescribeTargetHealth": doDescribeTargetHealth,
     "ReplaceRoutes": doReplaceRoutes,
     "DescribeRouteConflicts": doDescribeRouteConflicts,
     "RemovePrivateIpAddresses": doRemovePrivateIpAddresses,
     "DisableRoutes": doDisableRoutes,
+    "ModifyIpv6AddressesAttribute": doModifyIpv6AddressesAttribute,
     "DescribeBaseOverview": doDescribeBaseOverview,
     "AttachNetworkInterface": doAttachNetworkInterface,
     "ReleaseAddresses": doReleaseAddresses,
@@ -2876,6 +2953,7 @@ ACTION_MAP = {
     "DescribeSecurityGroupLimits": doDescribeSecurityGroupLimits,
     "ModifyDefaultSubnet": doModifyDefaultSubnet,
     "RebootInstances": doRebootInstances,
+    "AssignIpv6Addresses": doAssignIpv6Addresses,
     "MigratePrivateIpAddress": doMigratePrivateIpAddress,
     "CreateLoadBalancer": doCreateLoadBalancer,
     "ModifyModuleNetwork": doModifyModuleNetwork,

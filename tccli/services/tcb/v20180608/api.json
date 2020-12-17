@@ -48,6 +48,12 @@
       "name": "创建静态托管资源",
       "output": "CreateStaticStoreResponse"
     },
+    "DeleteCloudBaseProjectLatestVersion": {
+      "document": "删除云项目",
+      "input": "DeleteCloudBaseProjectLatestVersionRequest",
+      "name": "删除云项目",
+      "output": "DeleteCloudBaseProjectLatestVersionResponse"
+    },
     "DeleteEndUser": {
       "document": "删除终端用户",
       "input": "DeleteEndUserRequest",
@@ -1575,6 +1581,40 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteCloudBaseProjectLatestVersionRequest": {
+      "document": "DeleteCloudBaseProjectLatestVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目名",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudBaseProjectLatestVersionResponse": {
+      "document": "DeleteCloudBaseProjectLatestVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteEndUserRequest": {
       "document": "DeleteEndUser请求参数结构体",

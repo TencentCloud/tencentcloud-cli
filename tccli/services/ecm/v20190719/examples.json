@@ -8,6 +8,14 @@
         "title": "创建EIP"
       }
     ],
+    "AssignIpv6Addresses": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=AssignIpv6Addresses\n&EcmRegion=ap-xian-ecm\n&NetworkInterfaceId=eni-1snva0vd\n&Ipv6AddressCount=1\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n     \"Ipv6AddressSet\": [\r\n      {\r\n        \"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\",\r\n        \"AddressId\": \"\",\r\n        \"Primary\": false,\r\n        \"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\",\r\n        \"Description\": \"\",\r\n        \"IsWanIpBlocked\": false,\r\n        \"State\": \"PENDING\"\r\n      }],\r\n    \"RequestId\": \"4a8d6fc0-bc48-4394-b1f7-2818a217359a\"\r\n  }\r\n}",
+        "title": "按个数自动分配IPv6地址"
+      }
+    ],
     "AssignPrivateIpAddresses": [
       {
         "document": "",
@@ -698,6 +706,14 @@
         "title": "修改实例属性"
       }
     ],
+    "ModifyIpv6AddressesAttribute": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyIpv6AddressesAttribute\n&EcmRegion=ap-guangzhou-ecm-cu2\n&NetworkInterfaceId=eni-9c8zkfev\n&Ipv6Addresses.0.Address=3402:4e00:20:1202::7\n&Ipv6Addresses.0.Description=abc\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"57065a05-9d50-476b-9cd6-97b0ddf03766\"\r\n  }\r\n}",
+        "title": "修改弹性网卡IPv6地址属性"
+      }
+    ],
     "ModifyListener": [
       {
         "document": "",
@@ -832,6 +848,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=ReleaseAddresses\r\n&AddressIds.0=eip-11112222\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"123\",\r\n    \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\r\n  }\r\n}",
         "title": "释放弹性公网IP"
+      }
+    ],
+    "ReleaseIpv6Addresses": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ReleaseIpv6Addresses\n&NetworkInterfaceId=eni-9c8zkfev\n&EcmRegion=ap-xian-ecm \n&Ipv6Addresses.0.Address=3402:4e00:20:1202:0:8d01:ee9c:3e22\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"75221557-b667-440a-8cfe-ccd1bde2a234\",\r\n\t\t\"TaskId\": 3082\r\n\t}\r\n}",
+        "title": "释放IPv6地址"
       }
     ],
     "RemovePrivateIpAddresses": [
