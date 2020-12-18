@@ -201,7 +201,7 @@
         },
         {
           "default": "",
-          "document": "动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution\n\n静态转码这个参数不起作用",
+          "document": "动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution",
           "member": "string",
           "name": "ThumbnailResolution",
           "required": false,

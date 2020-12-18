@@ -723,7 +723,7 @@
     "DescribeSimpleGroups": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleGroups\r\n&Offset=0\r\n&Limit=20\r\n&ApplicationId=application-xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleGroups\n&Offset=0\n&Limit=20\n&ApplicationId=application-xxxxxxx\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f92318c2-55c5-479f-b73e-f63683bee456\",\r\n    \"Result\": {\r\n      \"TotalCount\": 1,\r\n      \"Content\": [\r\n        {\r\n          \"GroupId\": \"group-xxxxxxx\",\r\n          \"GroupName\": \"test\",\r\n          \"ClusterId\": \"cls-xxxxxxx\",\r\n          \"ClusterName\": \"test\",\r\n          \"ClusterType\": \"C\",\r\n          \"NamespaceId\": \"namespace-xxxxxxx\",\r\n          \"NamespaceName\": \"test\",\r\n          \"ApplicationId\": \"application-xxxxxxx\",\r\n          \"ApplicationName\": \"test\",\r\n          \"ApplicationType\": \"C\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
         "title": "查询简单部署组列表"
       }

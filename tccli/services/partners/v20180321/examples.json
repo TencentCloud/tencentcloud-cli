@@ -3,7 +3,7 @@
     "AgentPayDeals": [
       {
         "document": "",
-        "input": "https://partners.tencentcloudapi.com/?Action=AgentPayDeals\r\n&OwnerUin=123456\r\n&AgentPay=1\r\n&DealNames.0=20180204123456\r\n&<公共请求参数>",
+        "input": "https://partners.tencentcloudapi.com/?Action=AgentPayDeals\n&OwnerUin=123456\n&AgentPay=1\n&DealNames.0=20180204123456\n&<公共请求参数>",
         "output": "{\"Response\":{\"RequestId\":\"3c140219-cfe9-470e-b241-907877d6fb03\"}}",
         "title": "支付订单"
       }

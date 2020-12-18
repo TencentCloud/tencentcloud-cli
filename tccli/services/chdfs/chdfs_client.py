@@ -9,6 +9,8 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.chdfs.v20201112 import chdfs_client as chdfs_client_v20201112
+from tencentcloud.chdfs.v20201112 import models as models_v20201112
 from tencentcloud.chdfs.v20190718 import chdfs_client as chdfs_client_v20190718
 from tencentcloud.chdfs.v20190718 import models as models_v20190718
 
@@ -113,6 +115,31 @@ def doModifyAccessRules(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAccessRules(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAccessRulesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAccessRules(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteMountPoint(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -188,7 +215,7 @@ def doDeleteAccessRules(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeResourceTags(args, parsed_globals):
+def doModifyAccessGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -202,9 +229,9 @@ def doDescribeResourceTags(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeResourceTagsRequest()
+    model = models.ModifyAccessGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeResourceTags(model)
+    rsp = client.ModifyAccessGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -288,6 +315,31 @@ def doDescribeAccessGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDisassociateAccessGroups(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisassociateAccessGroupsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DisassociateAccessGroups(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteFileSystem(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -363,7 +415,7 @@ def doDeleteAccessGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAccessRules(args, parsed_globals):
+def doDescribeAccessGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -377,9 +429,9 @@ def doDescribeAccessRules(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAccessRulesRequest()
+    model = models.DescribeAccessGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeAccessRules(model)
+    rsp = client.DescribeAccessGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -413,7 +465,7 @@ def doDeleteLifeCycleRules(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAccessGroup(args, parsed_globals):
+def doCreateAccessRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -427,9 +479,9 @@ def doCreateAccessGroup(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAccessGroupRequest()
+    model = models.CreateAccessRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateAccessGroup(model)
+    rsp = client.CreateAccessRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -455,6 +507,31 @@ def doModifyFileSystem(args, parsed_globals):
     model = models.ModifyFileSystemRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ModifyFileSystem(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAssociateAccessGroups(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssociateAccessGroupsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.AssociateAccessGroups(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -513,7 +590,7 @@ def doDescribeMountPoints(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAccessGroup(args, parsed_globals):
+def doDescribeResourceTags(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -527,9 +604,9 @@ def doModifyAccessGroup(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAccessGroupRequest()
+    model = models.DescribeResourceTagsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyAccessGroup(model)
+    rsp = client.DescribeResourceTags(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -638,7 +715,7 @@ def doCreateFileSystem(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAccessRules(args, parsed_globals):
+def doCreateAccessGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -652,9 +729,9 @@ def doCreateAccessRules(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAccessRulesRequest()
+    model = models.CreateAccessGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateAccessRules(model)
+    rsp = client.CreateAccessGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -664,11 +741,13 @@ def doCreateAccessRules(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20201112": chdfs_client_v20201112,
     "v20190718": chdfs_client_v20190718,
 
 }
 
 MODELS_MAP = {
+    "v20201112": models_v20201112,
     "v20190718": models_v20190718,
 
 }
@@ -678,32 +757,36 @@ ACTION_MAP = {
     "CreateLifeCycleRules": doCreateLifeCycleRules,
     "ModifyMountPoint": doModifyMountPoint,
     "ModifyAccessRules": doModifyAccessRules,
+    "DescribeAccessRules": doDescribeAccessRules,
     "DeleteMountPoint": doDeleteMountPoint,
     "DescribeMountPoint": doDescribeMountPoint,
     "DeleteAccessRules": doDeleteAccessRules,
-    "DescribeResourceTags": doDescribeResourceTags,
+    "ModifyAccessGroup": doModifyAccessGroup,
     "CreateMountPoint": doCreateMountPoint,
     "ModifyLifeCycleRules": doModifyLifeCycleRules,
     "DescribeAccessGroups": doDescribeAccessGroups,
+    "DisassociateAccessGroups": doDisassociateAccessGroups,
     "DeleteFileSystem": doDeleteFileSystem,
     "DescribeFileSystem": doDescribeFileSystem,
     "DeleteAccessGroup": doDeleteAccessGroup,
-    "DescribeAccessRules": doDescribeAccessRules,
+    "DescribeAccessGroup": doDescribeAccessGroup,
     "DeleteLifeCycleRules": doDeleteLifeCycleRules,
-    "CreateAccessGroup": doCreateAccessGroup,
+    "CreateAccessRules": doCreateAccessRules,
     "ModifyFileSystem": doModifyFileSystem,
+    "AssociateAccessGroups": doAssociateAccessGroups,
     "DescribeFileSystems": doDescribeFileSystems,
     "DescribeMountPoints": doDescribeMountPoints,
-    "ModifyAccessGroup": doModifyAccessGroup,
+    "DescribeResourceTags": doDescribeResourceTags,
     "DescribeRestoreTasks": doDescribeRestoreTasks,
     "ModifyResourceTags": doModifyResourceTags,
     "DescribeLifeCycleRules": doDescribeLifeCycleRules,
     "CreateFileSystem": doCreateFileSystem,
-    "CreateAccessRules": doCreateAccessRules,
+    "CreateAccessGroup": doCreateAccessGroup,
 
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20201112",
     "v20190718",
 
 ]

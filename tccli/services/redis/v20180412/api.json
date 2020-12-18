@@ -6770,6 +6770,14 @@
           "name": "RedisReplicasNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "多AZ实例增加副本时的附带信息，非多AZ实例不需要传此参数。多AZ增加副本时此参数为必传参数，传入要增加的副本的信息，包括副本的可用区和副本的类型（NodeType为1）",
+          "member": "RedisNodeInfo",
+          "name": "NodeSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

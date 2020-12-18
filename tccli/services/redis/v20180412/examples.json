@@ -297,7 +297,7 @@
     "DescribeTaskList": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTaskList\r\n&InstanceId=crs-opcazbrb\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTaskList\n&InstanceId=crs-opcazbrb\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"19a7fb07-8e21-4827-88dd-fee57f38e8cd\",\r\n        \"Tasks\": [\r\n            {\r\n                \"EndTime\": \"2019-11-15 14:25:46\",\r\n                \"InstanceId\": \"crs-opcazbrb\",\r\n                \"InstanceName\": \"multidbccbugfix11153\",\r\n                \"Progress\": 1,\r\n                \"ProjectId\": 0,\r\n                \"Result\": 2,\r\n                \"StartTime\": \"2019-11-15 14:25:37\",\r\n                \"TaskId\": 42372,\r\n                \"TaskType\": \"037\"\r\n            },\r\n            {\r\n                \"EndTime\": \"2019-11-15 14:25:25\",\r\n                \"InstanceId\": \"crs-opcazbrb\",\r\n                \"InstanceName\": \"multidbccbugfix11153\",\r\n                \"Progress\": 1,\r\n                \"ProjectId\": 0,\r\n                \"Result\": 2,\r\n                \"StartTime\": \"2019-11-15 14:25:16\",\r\n                \"TaskId\": 42371,\r\n                \"TaskType\": \"037\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 2\r\n    }\r\n}",
         "title": "请求示例"
       }

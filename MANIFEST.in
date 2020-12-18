@@ -61,6 +61,8 @@ include tccli/services/cfs/v20190719/api.json
 include tccli/services/cfs/v20190719/examples.json
 include tccli/services/cfw/v20190904/api.json
 include tccli/services/cfw/v20190904/examples.json
+include tccli/services/chdfs/v20201112/api.json
+include tccli/services/chdfs/v20201112/examples.json
 include tccli/services/chdfs/v20190718/api.json
 include tccli/services/chdfs/v20190718/examples.json
 include tccli/services/cim/v20190318/api.json

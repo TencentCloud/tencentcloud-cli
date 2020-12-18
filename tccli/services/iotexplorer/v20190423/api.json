@@ -584,6 +584,14 @@
           "name": "IsPublic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "频点ID",
+          "member": "string",
+          "name": "FrequencyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2055,6 +2063,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "频点ID",
+          "member": "string",
+          "name": "FrequencyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2157,6 +2174,14 @@
           "document": "位置详情",
           "member": "string",
           "name": "PositionDetails",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "频点ID",
+          "member": "string",
+          "name": "FrequencyId",
           "required": false,
           "type": "string"
         }

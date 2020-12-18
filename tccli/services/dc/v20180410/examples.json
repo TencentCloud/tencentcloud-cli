@@ -25,25 +25,25 @@
     "CreateDirectConnectTunnel": [
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\r\n&DirectConnectId=dc-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&NetworkType=VPC\r\n&NetworkRegion=ap-guangzhou\r\n&VpcId=vpc-abcdefgh\r\n&DirectConnectGatewayId=dcg-abcdefgh\r\n&Bandwidth=100\r\n&RouteType=BGP\r\n&Vlan=100\r\n&TencentAddress=192.168.1.2/30\r\n&CustomerAddress=192.168.1.1/30\r\n&BgpPeer.Asn=65128\r\n&BgpPeer.AuthKey=abcdefg\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\n&DirectConnectId=dc-abcdefgh\n&DirectConnectTunnelName=Test\n&NetworkType=VPC\n&NetworkRegion=ap-guangzhou\n&VpcId=vpc-abcdefgh\n&DirectConnectGatewayId=dcg-abcdefgh\n&Bandwidth=100\n&RouteType=BGP\n&Vlan=100\n&TencentAddress=192.168.1.2/30\n&CustomerAddress=192.168.1.1/30\n&BgpPeer.Asn=65128\n&BgpPeer.AuthKey=abcdefg\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectTunnelIdSet\": [\r\n      \"dcx-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}",
         "title": "BGP路由模式和私有网络VPC的专用通道"
       },
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\r\n&DirectConnectId=dc-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&NetworkType=BMVPC\r\n&NetworkRegion=ap-guangzhou\r\n&VpcId=vpc-abcdefgh\r\n&Bandwidth=100\r\n&RouteType=STATIC\r\n&Vlan=100\r\n&TencentAddress=192.168.1.2/30\r\n&CustomerAddress=192.168.1.1/30\r\n&RouteFilterPrefixes.0.Cidr=192.168.0.0/24\r\n&RouteFilterPrefixes.1.Cidr=192.168.0.0/24\r\n&RouteFilterPrefixes.2.Cidr=192.168.0.0/24\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\n&DirectConnectId=dc-abcdefgh\n&DirectConnectTunnelName=Test\n&NetworkType=BMVPC\n&NetworkRegion=ap-guangzhou\n&VpcId=vpc-abcdefgh\n&Bandwidth=100\n&RouteType=STATIC\n&Vlan=100\n&TencentAddress=192.168.1.2/30\n&CustomerAddress=192.168.1.1/30\n&RouteFilterPrefixes.0.Cidr=192.168.0.0/24\n&RouteFilterPrefixes.1.Cidr=192.168.0.0/24\n&RouteFilterPrefixes.2.Cidr=192.168.0.0/24\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectTunnelIdSet\": [\r\n      \"dcx-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}",
         "title": "STATIC路由模式和黑石VPC的专用通道"
       },
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\r\n&DirectConnectId=dc-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&DirectConnectOwnerAccount=240791248\r\n&NetworkType=VPC\r\n&NetworkRegion=ap-guangzhou\r\n&VpcId=vpc-abcdefgh\r\n&DirectConnectGatewayId=dcg-abcdefgh\r\n&Bandwidth=100\r\n&RouteType=BGP\r\n&Vlan=100\r\n&TencentAddress=192.168.1.2/30\r\n&CustomerAddress=192.168.1.1/30\r\n&BgpPeer.Asn=65128\r\n&BgpPeer.AuthKey=abcdefg\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\n&DirectConnectId=dc-abcdefgh\n&DirectConnectTunnelName=Test\n&DirectConnectOwnerAccount=240791248\n&NetworkType=VPC\n&NetworkRegion=ap-guangzhou\n&VpcId=vpc-abcdefgh\n&DirectConnectGatewayId=dcg-abcdefgh\n&Bandwidth=100\n&RouteType=BGP\n&Vlan=100\n&TencentAddress=192.168.1.2/30\n&CustomerAddress=192.168.1.1/30\n&BgpPeer.Asn=65128\n&BgpPeer.AuthKey=abcdefg\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectTunnelIdSet\": [\r\n      \"dcx-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}",
         "title": "BGP路由模式和共享专线的专用通道"
       },
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\r\n&DirectConnectId=dc-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&NetworkType=CCN\r\n&NetworkRegion=ap-guangzhou\r\n&DirectConnectGatewayId=dcg-abcdefgh\r\n&Bandwidth=100\r\n&RouteType=BGP\r\n&Vlan=100\r\n&TencentAddress=192.168.1.2/30\r\n&CustomerAddress=192.168.1.1/30\r\n&BgpPeer.Asn=65128\r\n&BgpPeer.AuthKey=abcdefg\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\n&DirectConnectId=dc-abcdefgh\n&DirectConnectTunnelName=Test\n&NetworkType=CCN\n&NetworkRegion=ap-guangzhou\n&DirectConnectGatewayId=dcg-abcdefgh\n&Bandwidth=100\n&RouteType=BGP\n&Vlan=100\n&TencentAddress=192.168.1.2/30\n&CustomerAddress=192.168.1.1/30\n&BgpPeer.Asn=65128\n&BgpPeer.AuthKey=abcdefg\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectTunnelIdSet\": [\r\n      \"dcx-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}",
         "title": "BGP路由模式和云联网专用通道"
       }
@@ -89,13 +89,13 @@
     "DescribeDirectConnectTunnels": [
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnectTunnels\r\n&Filters.0.Name=direct-connect-tunnel-id\r\n&Filters.0.Values.0=dcx-r3sml04o\r\n&Limit=20\r\n&Offset=1\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnectTunnels\n&Filters.0.Name=direct-connect-tunnel-id\n&Filters.0.Values.0=dcx-r3sml04o\n&Limit=20\n&Offset=1\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DirectConnectTunnelSet\": [{\r\n\t\t\t\"DirectConnectOwnerAccount\": \"2407912486\",\r\n\t\t\t\"DirectConnectGatewayId\": \"dcg-r70hz833\",\r\n\t\t\t\"BgpPeer\": {\r\n\t\t\t\t\"AuthKey\": \"tencent\",\r\n\t\t\t\t\"Asn\": 65139\r\n\t\t\t},\r\n\t\t\t\"OwnerAccount\": \"2407912486\",\r\n\t\t\t\"DirectConnectId\": \"dc-9s5kpgyp\",\r\n\t\t\t\"State\": \"PENDING\",\r\n\t\t\t\"TencentAddress\": \"169.254.64.1/30\",\r\n\t\t\t\"CreatedTime\": \"2018-06-01 14:59:16\",\r\n\t\t\t\"DirectConnectTunnelId\": \"dcx-r3sml04o\",\r\n\t\t\t\"NetworkRegion\": \"ap-guangzhou\",\r\n\t\t\t\"VpcId\": \"vpc-aipqhdez\",\r\n\t\t\t\"CustomerAddress\": \"169.254.64.2/30\",\r\n\t\t\t\"Vlan\": 1321,\r\n\t\t\t\"RouteFilterPrefixes\": [],\r\n\t\t\t\"NetworkType\": \"VPC\",\r\n\t\t\t\"DirectConnectTunnelName\": \"测试专用通道\",\r\n\t\t\t\"RouteType\": \"BGP\"\r\n\t\t}]\r\n\t}\r\n}",
         "title": "查询BGP路由的专用通道"
       },
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnectTunnels\r\n&Filters.0.Name=direct-connect-tunnel-id\r\n&Filters.0.Values.0=dcx-r3sml04o\r\n&Limit=20\r\n&Offset=2\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnectTunnels\n&Filters.0.Name=direct-connect-tunnel-id\n&Filters.0.Values.0=dcx-r3sml04o\n&Limit=20\n&Offset=2\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DirectConnectTunnelSet\": [{\r\n\t\t\t\"DirectConnectOwnerAccount\": \"2407912486\",\r\n\t\t\t\"DirectConnectGatewayId\": \"dcg-r70hz833\",\r\n\t\t\t\"BgpPeer\": {\r\n\t\t\t\t\"AuthKey\": \"\",\r\n\t\t\t\t\"Asn\": -1\r\n\t\t\t},\r\n\t\t\t\"OwnerAccount\": \"2407912486\",\r\n\t\t\t\"DirectConnectId\": \"dc-9s5kpgyp\",\r\n\t\t\t\"State\": \"PENDING\",\r\n\t\t\t\"TencentAddress\": \"169.254.64.1/30\",\r\n\t\t\t\"CreatedTime\": \"2018-06-01 14:59:16\",\r\n\t\t\t\"DirectConnectTunnelId\": \"dcx-r3sml04o\",\r\n\t\t\t\"NetworkRegion\": \"ap-guangzhou\",\r\n\t\t\t\"VpcId\": \"vpc-aipqhdez\",\r\n\t\t\t\"CustomerAddress\": \"169.254.64.2/30\",\r\n\t\t\t\"Vlan\": 1321,\r\n\t\t\t\"RouteFilterPrefixes\": [{\r\n\t\t\t\t\"Cidr\": \"172.18.27.6/32\"\r\n\t\t\t}, {\r\n\t\t\t\t\"Cidr\": \"172.18.27.0/24\"\r\n\t\t\t}],\r\n\t\t\t\"NetworkType\": \"VPC\",\r\n\t\t\t\"DirectConnectTunnelName\": \"测试专用通道\",\r\n\t\t\t\"RouteType\": \"STATIC\"\r\n\t\t}]\r\n\t}\r\n}",
         "title": "查询STATIC路由的专用通道"
       }

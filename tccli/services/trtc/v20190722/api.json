@@ -857,7 +857,7 @@
       "document": "DescribeRoomInformation返回参数结构体",
       "members": [
         {
-          "document": "返回的数据总条数",
+          "document": "返回当页数据总数",
           "member": "int64",
           "name": "Total",
           "type": "int",
