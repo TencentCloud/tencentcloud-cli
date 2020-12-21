@@ -72,6 +72,22 @@
         "title": "删除命名空间"
       }
     ],
+    "DeleteProvisionedConcurrencyConfig": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteProvisionedConcurrencyConfig\n&FunctionName=test\n&Qualifier=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "删除预置并发"
+      }
+    ],
+    "DeleteReservedConcurrencyConfig": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteReservedConcurrencyConfig\n&FunctionName=test\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "删除函数保留并发"
+      }
+    ],
     "DeleteTrigger": [
       {
         "document": "用户使用该函数删除触发器。",
@@ -118,6 +134,22 @@
         "input": "https://scf.tencentcloudapi.com/?Action=GetLayerVersion\r\n&LayerName=<LayerName>\r\n&LayerVersion=<LayerVersion>\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"Active\",\r\n        \"LayerVersion\": 1,\r\n        \"CodeSha256\": \"c7c8bda601817ce4faab4c4fb3e73b9a32040e0e9f31f7a649d84d4bdde9e4a5\",\r\n        \"Description\": \"desc\",\r\n        \"LicenseInfo\": \"\",\r\n        \"AddTime\": \"2019-11-26 16:15:33\",\r\n        \"Location\": \"https://lambdalayerin-1253665819.cos.ap-mumbai.myqcloud.com/1253970226/layer3/1/1253970226_layer3_1.zip?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDqbBtfGe4eSSK8CExGjmC0e8Qcnswv6yj%26q-sign-time%3D1582083327%3B1582093387%26q-key-time%3D1582083327%3B1582093387%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D255d3e5aaa6c7224396b39f857e134a0dfb27c89&response-content-type=application/octet-stream\",\r\n         \"CompatibleRuntimes\": [\"Nodejs8.9\", \"Nodejs6.10\"],\r\n         \"LayerName\": \"layer3\",\r\n         \"RequestId\": \"6c7578ed-b816-4e50-930a-54e855452b8b\"\r\n    }\r\n}",
         "title": "获取层版本详情"
+      }
+    ],
+    "GetProvisionedConcurrencyConfig": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetProvisionedConcurrencyConfig\n&FunctionName=test\n&Qualifier=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"UnallocatedConcurrencyNum\": 1, \r\n        \"Allocated\": [\r\n            {\r\n                \"Status\": \"xx\", \r\n                \"AllocatedProvisionedConcurrencyNum\": 1, \r\n                \"AvailableProvisionedConcurrencyNum\": 1, \r\n                \"Qualifier\": \"xx\", \r\n                \"StatusReason\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "获取函数预置并发详情"
+      }
+    ],
+    "GetReservedConcurrencyConfig": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetReservedConcurrencyConfig\n&FunctionName=test\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"ReservedMem\": 128 \r\n    }\r\n}",
+        "title": "获取函数预置并发详情"
       }
     ],
     "Invoke": [
@@ -204,6 +236,30 @@
         "input": "https://scf.tencentcloudapi.com/?Action=PublishVersion\r\n&FunctionName=<FunctionName>\r\n&Description=<Description>\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Namespace\": \"default\",\r\n        \"Description\": \"dummytut\",\r\n        \"CodeSize\": 45686,\r\n        \"MemorySize\": 256,\r\n        \"Handler\": \"scfredis.main_handler\",\r\n        \"RequestId\": \"68c9669c-9e2c-47b0-9a01-e8406a41be59\",\r\n        \"Timeout\": 3,\r\n        \"Runtime\": \"Python2.7\",\r\n        \"FunctionVersion\": \"4\"\r\n    }\r\n}",
         "title": "发布新版本"
+      }
+    ],
+    "PutProvisionedConcurrencyConfig": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=PutProvisionedConcurrencyConfig\n&FunctionName=test\n&Qualifier=1\n&VersionProvisionedConcurrencyNum=10\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "设置预置并发"
+      }
+    ],
+    "PutReservedConcurrencyConfig": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=PutReservedConcurrencyConfig\n&FunctionName=test\n&ReservedConcurrencyMem=12800\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "设置保留并发"
+      }
+    ],
+    "PutTotalConcurrencyConfig": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=PutTotalConcurrencyConfig\n&TotalConcurrencyMem=128000\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "设置用户并发内存配额"
       }
     ],
     "UpdateAlias": [

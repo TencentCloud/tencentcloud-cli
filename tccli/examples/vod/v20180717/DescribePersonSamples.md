@@ -1,4 +1,4 @@
-**Example 1: 获取人物样本列表**
+**Example 1: 获取素材样本列表**
 
 
 
@@ -23,6 +23,9 @@ Output:
                 "PersonId": "10569",
                 "Name": "张三",
                 "Description": "华语影视男演员、导演、制片人",
+                "UsageSet": [
+                    "Recognition"
+                ],
                 "FaceInfoSet": [
                     {
                         "FaceId": "10024",

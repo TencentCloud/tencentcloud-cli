@@ -45,7 +45,7 @@
   },
   "metadata": {
     "apiVersion": "2020-06-08",
-    "api_brief": "介绍如何使用API对音频内容检测进行操作，包括识别音频中的违规内容等。",
+    "api_brief": "介绍如何使用API对音频内容检测进行操作，包括识别音频中的不适宜内容等。",
     "serviceNameCN": "音频内容检测",
     "serviceShortName": "ams"
   },
@@ -196,7 +196,7 @@
         },
         {
           "default": "",
-          "document": "命中的标签\nPorn 色情\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\nMoan 呻吟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -205,7 +205,7 @@
         },
         {
           "default": "",
-          "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -259,7 +259,7 @@
         },
         {
           "default": "",
-          "document": "文本审核结果",
+          "document": "文本识别结果",
           "member": "AudioResultDetailTextResult",
           "name": "TextResults",
           "required": true,
@@ -268,7 +268,7 @@
         },
         {
           "default": "",
-          "document": "音频呻吟审核结果",
+          "document": "音频呻吟检测结果",
           "member": "AudioResultDetailMoanResult",
           "name": "MoanResults",
           "required": true,
@@ -277,7 +277,7 @@
         },
         {
           "default": "",
-          "document": "音频语种检测结果",
+          "document": "音频语言检测结果",
           "member": "AudioResultDetailLanguageResult",
           "name": "LanguageResults",
           "required": true,
@@ -292,7 +292,7 @@
       "members": [
         {
           "default": "",
-          "document": "语种\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语言信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -343,7 +343,7 @@
       "members": [
         {
           "default": "",
-          "document": "固定为Moan\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固定为Moan（呻吟）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -698,7 +698,7 @@
       "document": "DescribeAmsList返回参数结构体",
       "members": [
         {
-          "document": "返回列表数据",
+          "document": "返回列表数据----非必选，该参数暂未对外开放",
           "member": "AmsDetailInfo",
           "name": "AmsDetailSet",
           "type": "list",
@@ -1001,7 +1001,7 @@
       "members": [
         {
           "default": "",
-          "document": "违规类型：\nTerror\t24001\nPorn\t20002\nPolity\t20001\nAd\t20105\nAbuse\t20007\t\nIllegal\t20006\t\nSpam\t25001\t\nMoan\t26001",
+          "document": "----非必选，该参数功能暂未对外开放",
           "member": "string",
           "name": "EvilType",
           "required": true,
@@ -1115,21 +1115,21 @@
         },
         {
           "default": "",
-          "document": "命中的标签\nPorn 色情\nSexy 性感\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Label",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
           "member": "string",
           "name": "Suggestion",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -1175,7 +1175,7 @@
       "members": [
         {
           "default": "",
-          "document": "场景\nPorn 色情\nSexy 性感\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景\nPorn 色情\nSexy 性感\nAbuse 谩骂\nAd 广告\n等多个识别场景\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Scene",
           "required": true,
@@ -1193,7 +1193,7 @@
         },
         {
           "default": "",
-          "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -1499,6 +1499,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缩略图",
+          "member": "string",
+          "name": "Thumbnail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1712,7 +1721,7 @@
       "members": [
         {
           "default": "",
-          "document": "命中的标签\nPorn 色情\nSexy 性感\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -1721,7 +1730,7 @@
         },
         {
           "default": "",
-          "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Suggestion",
           "required": true,

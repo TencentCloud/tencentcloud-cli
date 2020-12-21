@@ -19,22 +19,24 @@ Output:
                     "明星",
                     "艺人"
                 ],
-                "Usages": [
+                "UsageSet": [
                     "Recognition.Ocr",
                     "Recognition.Asr"
                 ],
-                "CreateTime": "2018-10-01T10:00:00Z"
+                "CreateTime": "2018-10-01T10:00:00Z",
+                "UpdateTime": "2018-10-01T10:00:00Z"
             },
             {
                 "Keyword": "李四",
                 "TagSet": [
                     "总统"
                 ],
-                "Usages": [
+                "UsageSet": [
                     "Review.Ocr",
                     "Review.Asr"
                 ],
-                "CreateTime": "2018-10-01T10:00:00Z"
+                "CreateTime": "2018-10-01T10:00:00Z",
+                "UpdateTime": "2018-10-01T10:00:00Z"
             }
         ],
         "RequestId": "46311b39-10ce-47eb-b2b6-7ce82bb4476d"
@@ -69,11 +71,12 @@ Output:
                     "明星",
                     "艺人"
                 ],
-                "Usages": [
+                "UsageSet": [
                     "Recognition.Ocr",
                     "Recognition.Asr"
                 ],
-                "CreateTime": "2018-10-01T10:00:00Z"
+                "CreateTime": "2018-10-01T10:00:00Z",
+                "UpdateTime": "2018-10-01T10:00:00Z"
             }
         ],
         "RequestId": "46311b39-10ce-47eb-b2b6-7ce82bb4476d"

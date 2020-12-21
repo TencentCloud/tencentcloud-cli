@@ -6,6 +6,12 @@
       "name": "创建编辑理解任务",
       "output": "CreateEditingTaskResponse"
     },
+    "CreateMediaProcessTask": {
+      "document": "用于创建编辑处理任务，如媒体截取、媒体编辑、媒体拼接、媒体字幕。",
+      "input": "CreateMediaProcessTaskRequest",
+      "name": "创建编辑处理任务",
+      "output": "CreateMediaProcessTaskResponse"
+    },
     "CreateMediaQualityRestorationTask": {
       "document": "创建画质重生任务，对视频进行转码、去噪、去划痕、去毛刺、超分、细节增强和色彩增强。",
       "input": "CreateMediaQualityRestorationTaskRequest",
@@ -24,6 +30,12 @@
       "name": "获取编辑理解任务结果",
       "output": "DescribeEditingTaskResultResponse"
     },
+    "DescribeMediaProcessTaskResult": {
+      "document": "用于获取编辑处理任务的结果。",
+      "input": "DescribeMediaProcessTaskResultRequest",
+      "name": "获取编辑处理任务结果",
+      "output": "DescribeMediaProcessTaskResultResponse"
+    },
     "DescribeMediaQualityRestorationTaskRusult": {
       "document": "获取画质重生任务结果，查看结束后的文件信息",
       "input": "DescribeMediaQualityRestorationTaskRusultRequest",
@@ -35,6 +47,12 @@
       "input": "DescribeQualityControlTaskResultRequest",
       "name": "获取媒体质检任务结果",
       "output": "DescribeQualityControlTaskResultResponse"
+    },
+    "StopMediaProcessTask": {
+      "document": "用于停止正在进行中的编辑处理任务。",
+      "input": "StopMediaProcessTaskRequest",
+      "name": "停止编辑处理任务",
+      "output": "StopMediaProcessTaskResponse"
     },
     "StopMediaQualityRestorationTask": {
       "document": "删除正在进行的画质重生任务",
@@ -536,6 +554,63 @@
       ],
       "type": "object"
     },
+    "CreateMediaProcessTaskRequest": {
+      "document": "CreateMediaProcessTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务参数。",
+          "member": "MediaProcessInfo",
+          "name": "MediaProcessInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "编辑处理任务输入源列表。",
+          "member": "MediaSourceInfo",
+          "name": "SourceInfoSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "结果存储信息，对于涉及存储的请求必选。部子任务支持数组备份写，具体以对应任务文档为准。",
+          "member": "SaveInfo",
+          "name": "SaveInfoSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务结果回调地址信息。部子任务支持数组备份回调，具体以对应任务文档为准。",
+          "member": "CallbackInfo",
+          "name": "CallbackInfoSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMediaProcessTaskResponse": {
+      "document": "CreateMediaProcessTask返回参数结构体",
+      "members": [
+        {
+          "document": "编辑任务 ID，可以通过该 ID 查询任务状态和结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMediaQualityRestorationTaskRequest": {
       "document": "CreateMediaQualityRestorationTask请求参数结构体",
       "members": [
@@ -713,6 +788,39 @@
           "name": "TaskResult",
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaProcessTaskResultRequest": {
+      "document": "DescribeMediaProcessTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务ID。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaProcessTaskResultResponse": {
+      "document": "DescribeMediaProcessTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "任务处理结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaProcessTaskResult",
+          "name": "TaskResult",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1209,6 +1317,30 @@
       ],
       "usage": "out"
     },
+    "IntervalTime": {
+      "document": "周期时间点信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "间隔周期，单位ms",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间点，单位ms",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "LowLightEnhance": {
       "document": "低光照增强参数",
       "members": [
@@ -1223,6 +1355,315 @@
         }
       ],
       "usage": "in"
+    },
+    "MediaCuttingInfo": {
+      "document": "编辑处理/剪切任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "截取时间信息。",
+          "member": "MediaCuttingTimeInfo",
+          "name": "TimeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出结果信息。",
+          "member": "MediaTargetInfo",
+          "name": "TargetInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截取结果形式信息。",
+          "member": "MediaCuttingOutForm",
+          "name": "OutForm",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列表文件形式，存储到用户存储服务中，可选值：\nUseSaveInfo：默认，结果列表和结果存储同一位置；\nNoListFile：不存储结果列表。",
+          "member": "string",
+          "name": "ResultListSaveType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaCuttingOutForm": {
+      "document": "编辑处理/剪切任务/输出形式信息",
+      "members": [
+        {
+          "default": "",
+          "document": "输出类型，可选值：\nStatic：静态图；\nDynamic：动态图；\nSprite：雪碧图；\nVideo：视频。\n\n注1：不同类型时，对应的 TargetInfo.Format 格式支持如下：\nStatic：jpg、png；\nDynamic：gif；\nSprite：jpg、png；\nVideo：mp4。\n\n注2：当 Type=Sprite时，TargetInfo指定的尺寸表示小图的大小，最终结果尺寸以输出为准。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "背景填充方式，可选值：\nWhite：白色填充；\nBlack：黑色填充；\nStretch：拉伸；\nGaussian：高斯模糊；\n默认White。",
+          "member": "string",
+          "name": "FillType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type=Sprite时有效，表示雪碧图行数，范围为 [1,200]，默认100。",
+          "member": "int64",
+          "name": "SpriteRowCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type=Sprite时有效，表示雪碧图列数，范围为 [1,200]，默认100。",
+          "member": "int64",
+          "name": "SpriteColumnCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaCuttingTaskResult": {
+      "document": "编辑处理/剪切任务/处理结果",
+      "members": [
+        {
+          "default": "",
+          "document": "如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskResultFile",
+          "name": "ListFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结果个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ResultCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第一个结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskResultFile",
+          "name": "FirstFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一个结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskResultFile",
+          "name": "LastFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaCuttingTimeInfo": {
+      "document": "编辑处理/剪切任务/时间信息",
+      "members": [
+        {
+          "default": "",
+          "document": "时间类型，可选值：\nPointSet：时间点集合；\nIntervalPoint：周期采样点；\nSectionSet：时间片段集合。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截取时间点集合，单位毫秒，Type=PointSet时必选。",
+          "member": "int64",
+          "name": "PointSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "周期采样点信息，Type=IntervalPoint时必选。",
+          "member": "IntervalTime",
+          "name": "IntervalPoint",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间区间集合信息，Type=SectionSet时必选。",
+          "member": "SectionTime",
+          "name": "SectionSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaJoiningInfo": {
+      "document": "编辑处理/拼接任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "输出目标信息，拼接只采用FileName和Format，用于指定目标文件名和格式。\n其中Format只支持mp4.",
+          "member": "MediaTargetInfo",
+          "name": "TargetInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaJoiningTaskResult": {
+      "document": "编辑处理/拼接任务/处理结果",
+      "members": [
+        {
+          "default": "",
+          "document": "拼接结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskResultFile",
+          "name": "File",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaProcessInfo": {
+      "document": "编辑处理/任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务类型，可选值：\nMediaEditing：媒体编辑（待上线）；\nMediaCutting：媒体剪切；\nMediaJoining：媒体拼接。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频剪切任务参数，Type=MediaCutting时必选。",
+          "member": "MediaCuttingInfo",
+          "name": "MediaCuttingInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频拼接任务参数，Type=MediaJoining时必选。",
+          "member": "MediaJoiningInfo",
+          "name": "MediaJoiningInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaProcessTaskResult": {
+      "document": "编辑处理/任务处理结果",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编辑处理任务类型，取值：\nMediaEditing：视频编辑（待上线）；\nMediaCutting：视频剪切；\nMediaJoining：视频拼接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处理进度，范围：[0,100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态：\n1100：等待中；\n1200：执行中；\n2000：成功；\n5000：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剪切任务处理结果，当Type=MediaCutting时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaCuttingTaskResult",
+          "name": "MediaCuttingTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "拼接任务处理结果，当Type=MediaJoining时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaJoiningTaskResult",
+          "name": "MediaJoiningTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MediaQualityRestorationTaskResult": {
       "document": "画质重生任务结果",
@@ -1247,6 +1688,81 @@
         }
       ],
       "usage": "out"
+    },
+    "MediaSourceInfo": {
+      "document": "编辑处理的媒体源",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体源资源下载信息。",
+          "member": "DownInfo",
+          "name": "DownInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体源ID标记，用于多个输入源时，请内媒体源的定位，对于多输入的任务，一般要求必选。",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体源类型，具体类型如下：\nVideo：视频\nImage：图片\nAudio：音频",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaTargetInfo": {
+      "document": "目标媒体信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。\n\n注1：部分子服务支持站位符，形式为： {parameter}\n预设parameter：\nindex：序号；",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体封装格式，最长5字符，具体格式支持根据子任务确定。",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流信息。",
+          "member": "TargetVideoInfo",
+          "name": "TargetVideoInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "【不再使用】 对于多输出任务，部分子服务推荐结果信息以列表文件形式，存储到用户存储服务中，可选值：\nUseSaveInfo：默认，结果列表和结果存储同一位置；\nNoListFile：不存储结果列表。",
+          "member": "string",
+          "name": "ResultListSaveType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "MuxInfo": {
       "document": "流封装信息",
@@ -1872,6 +2388,30 @@
       ],
       "usage": "in"
     },
+    "SectionTime": {
+      "document": "时间区间。",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间点，单位ms",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间区间时长，单位ms",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SegmentInfo": {
       "document": "输出文件切片信息",
       "members": [
@@ -1928,6 +2468,32 @@
         }
       ],
       "usage": "in"
+    },
+    "StopMediaProcessTaskRequest": {
+      "document": "StopMediaProcessTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务ID。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMediaProcessTaskResponse": {
+      "document": "StopMediaProcessTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StopMediaQualityRestorationTaskRequest": {
       "document": "StopMediaQualityRestorationTask请求参数结构体",
@@ -2314,6 +2880,54 @@
         }
       ],
       "usage": "in"
+    },
+    "TargetVideoInfo": {
+      "document": "目标视频信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频宽度，单位像素",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频高度，单位像素",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频帧率，范围在1到120之间",
+          "member": "int64",
+          "name": "FrameRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskResultFile": {
+      "document": "任务结果文件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文件链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "UrlInfo": {
       "document": "任务视频Url形式下载信息。",

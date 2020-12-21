@@ -54,6 +54,18 @@
       "name": "删除命名空间",
       "output": "DeleteNamespaceResponse"
     },
+    "DeleteProvisionedConcurrencyConfig": {
+      "document": "删除函数版本的预置并发配置。",
+      "input": "DeleteProvisionedConcurrencyConfigRequest",
+      "name": "删除预置并发",
+      "output": "DeleteProvisionedConcurrencyConfigResponse"
+    },
+    "DeleteReservedConcurrencyConfig": {
+      "document": "删除函数的保留并发配置。",
+      "input": "DeleteReservedConcurrencyConfigRequest",
+      "name": "删除函数保留并发",
+      "output": "DeleteReservedConcurrencyConfigResponse"
+    },
     "DeleteTrigger": {
       "document": "该接口根据参数传入删除已有的触发方式。",
       "input": "DeleteTriggerRequest",
@@ -89,6 +101,18 @@
       "input": "GetLayerVersionRequest",
       "name": "获取层版本详细信息",
       "output": "GetLayerVersionResponse"
+    },
+    "GetProvisionedConcurrencyConfig": {
+      "document": "获取函数或函数某一版本的预置并发详情。",
+      "input": "GetProvisionedConcurrencyConfigRequest",
+      "name": "获取函数预置并发详情",
+      "output": "GetProvisionedConcurrencyConfigResponse"
+    },
+    "GetReservedConcurrencyConfig": {
+      "document": "获取函数的保留并发详情。",
+      "input": "GetReservedConcurrencyConfigRequest",
+      "name": "获取函数保留并发详情",
+      "output": "GetReservedConcurrencyConfigResponse"
     },
     "Invoke": {
       "document": "该接口用于运行函数。",
@@ -149,6 +173,24 @@
       "input": "PublishVersionRequest",
       "name": "发布新版本",
       "output": "PublishVersionResponse"
+    },
+    "PutProvisionedConcurrencyConfig": {
+      "document": "设置函数某一非$LATEST版本的预置并发。",
+      "input": "PutProvisionedConcurrencyConfigRequest",
+      "name": "设置预置并发",
+      "output": "PutProvisionedConcurrencyConfigResponse"
+    },
+    "PutReservedConcurrencyConfig": {
+      "document": "设置函数保留并发",
+      "input": "PutReservedConcurrencyConfigRequest",
+      "name": "设置保留并发",
+      "output": "PutReservedConcurrencyConfigResponse"
+    },
+    "PutTotalConcurrencyConfig": {
+      "document": "修改账号并发限制配额",
+      "input": "PutTotalConcurrencyConfigRequest",
+      "name": "修改账号并发限制配额",
+      "output": "PutTotalConcurrencyConfigResponse"
     },
     "UpdateAlias": {
       "document": "更新别名的配置",
@@ -1124,6 +1166,82 @@
     },
     "DeleteNamespaceResponse": {
       "document": "DeleteNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProvisionedConcurrencyConfigRequest": {
+      "document": "DeleteProvisionedConcurrencyConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除预置并发的函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的版本号",
+          "member": "string",
+          "name": "Qualifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间，默认为default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProvisionedConcurrencyConfigResponse": {
+      "document": "DeleteProvisionedConcurrencyConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReservedConcurrencyConfigRequest": {
+      "document": "DeleteReservedConcurrencyConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除预置并发的函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间，默认为default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReservedConcurrencyConfigResponse": {
+      "document": "DeleteReservedConcurrencyConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2301,6 +2419,103 @@
       ],
       "type": "object"
     },
+    "GetProvisionedConcurrencyConfigRequest": {
+      "document": "GetProvisionedConcurrencyConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要获取预置并发详情的函数名称。",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所在的命名空间，默认为default。",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数版本号，不传则返回函数所有版本的预置并发信息。",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetProvisionedConcurrencyConfigResponse": {
+      "document": "GetProvisionedConcurrencyConfig返回参数结构体",
+      "members": [
+        {
+          "document": "该函数剩余可配置的预置并发数。",
+          "member": "uint64",
+          "name": "UnallocatedConcurrencyNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数已预置的并发配置详情。",
+          "member": "VersionProvisionedConcurrencyInfo",
+          "name": "Allocated",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetReservedConcurrencyConfigRequest": {
+      "document": "GetReservedConcurrencyConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要获取预置并发详情的函数名称。",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所在的命名空间，默认为default。",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetReservedConcurrencyConfigResponse": {
+      "document": "GetReservedConcurrencyConfig返回参数结构体",
+      "members": [
+        {
+          "document": "该函数的保留并发内存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ReservedMem",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InvokeRequest": {
       "document": "Invoke请求参数结构体",
       "members": [
@@ -3306,6 +3521,132 @@
       ],
       "type": "object"
     },
+    "PutProvisionedConcurrencyConfigRequest": {
+      "document": "PutProvisionedConcurrencyConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要设置预置并发的函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的版本号，注：$LATEST版本不支持预置并发",
+          "member": "string",
+          "name": "Qualifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预置并发数量，注：所有版本的预置并发数总和存在上限限制，当前的上限是：函数最大并发配额 - 100",
+          "member": "uint64",
+          "name": "VersionProvisionedConcurrencyNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间，默认为default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutProvisionedConcurrencyConfigResponse": {
+      "document": "PutProvisionedConcurrencyConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutReservedConcurrencyConfigRequest": {
+      "document": "PutReservedConcurrencyConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要设置预置并发的函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数保留并发内存，注：函数的保留并发内存总和上限：用户总并发内存配额 - 12800",
+          "member": "uint64",
+          "name": "ReservedConcurrencyMem",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间，默认为default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutReservedConcurrencyConfigResponse": {
+      "document": "PutReservedConcurrencyConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutTotalConcurrencyConfigRequest": {
+      "document": "PutTotalConcurrencyConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号并发内存配额，注：账号并发内存配额下限：用户已用并发内存总额 + 12800",
+          "member": "uint64",
+          "name": "TotalConcurrencyMem",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "命名空间，默认为default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutTotalConcurrencyConfigResponse": {
+      "document": "PutTotalConcurrencyConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Result": {
       "document": "运行函数的返回",
       "members": [
@@ -4108,6 +4449,57 @@
         }
       ],
       "usage": "both"
+    },
+    "VersionProvisionedConcurrencyInfo": {
+      "document": "函数版本的预置并发信息，包括设置预置并发数、已完成预置的并发数和预置任务状态。",
+      "members": [
+        {
+          "default": "",
+          "document": "设置的预置并发数。",
+          "member": "uint64",
+          "name": "AllocatedProvisionedConcurrencyNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前已完成预置的并发数。",
+          "member": "uint64",
+          "name": "AvailableProvisionedConcurrencyNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预置任务状态，Done表示已完成，InProgress表示进行中，Failed表示部分或全部失败。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对预置任务状态Status的说明。",
+          "member": "string",
+          "name": "StatusReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数版本号",
+          "member": "string",
+          "name": "Qualifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VersionWeight": {
       "document": "带有权重的函数版本",

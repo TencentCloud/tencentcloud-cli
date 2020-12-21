@@ -38,6 +38,31 @@ def doDescribeMediaQualityRestorationTaskRusult(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateMediaProcessTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateMediaProcessTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateMediaProcessTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doStopMediaQualityRestorationTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -55,6 +80,31 @@ def doStopMediaQualityRestorationTask(args, parsed_globals):
     model = models.StopMediaQualityRestorationTaskRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.StopMediaQualityRestorationTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMediaProcessTaskResult(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMediaProcessTaskResultRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeMediaProcessTaskResult(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -105,6 +155,31 @@ def doDescribeEditingTaskResult(args, parsed_globals):
     model = models.DescribeEditingTaskResultRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeEditingTaskResult(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStopMediaProcessTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopMediaProcessTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.StopMediaProcessTask(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -200,9 +275,12 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeMediaQualityRestorationTaskRusult": doDescribeMediaQualityRestorationTaskRusult,
+    "CreateMediaProcessTask": doCreateMediaProcessTask,
     "StopMediaQualityRestorationTask": doStopMediaQualityRestorationTask,
+    "DescribeMediaProcessTaskResult": doDescribeMediaProcessTaskResult,
     "CreateMediaQualityRestorationTask": doCreateMediaQualityRestorationTask,
     "DescribeEditingTaskResult": doDescribeEditingTaskResult,
+    "StopMediaProcessTask": doStopMediaProcessTask,
     "DescribeQualityControlTaskResult": doDescribeQualityControlTaskResult,
     "CreateQualityControlTask": doCreateQualityControlTask,
     "CreateEditingTask": doCreateEditingTask,

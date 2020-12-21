@@ -8,6 +8,14 @@
         "title": "创建智能编辑任务"
       }
     ],
+    "CreateMediaProcessTask": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=CreateMediaProcessTask\n&MediaProcessInfo.Type=MediaCutting\n&MediaProcessInfo.MediaCuttingInfo.TimeInfo.Type=IntervalPoint\n&MediaProcessInfo.MediaCuttingInfo.TimeInfo.IntervalPoint.StartTime=20000\n&MediaProcessInfo.MediaCuttingInfo.TimeInfo.IntervalPoint.Interval=5000\n&MediaProcessInfo.MediaCuttingInfo.TargetInfo.FileName=dstfile-{index|:5|4:x}\n&MediaProcessInfo.MediaCuttingInfo.TargetInfo.Format=jpg\n&MediaProcessInfo.MediaCuttingInfo.TargetInfo.TargetVideoInfo.Width=800\n&MediaProcessInfo.MediaCuttingInfo.TargetInfo.TargetVideoInfo.Height=800\n&MediaProcessInfo.MediaCuttingInfo.OutForm.Type=Static\n&MediaProcessInfo.MediaCuttingInfo.OutForm.FillType=Gaussian\n&MediaProcessInfo.MediaCuttingInfo.ResultListSaveType=UseSaveInfo\n&SourceInfoSet.0.Id=source_video\n&SourceInfoSet.0.Type=Video\n&SourceInfoSet.0.DownInfo.Type=1\n&SourceInfoSet.0.DownInfo.CosInfo.Region=ap-beijing\n&SourceInfoSet.0.DownInfo.CosInfo.Bucket=shortvideo-1251820392\n&SourceInfoSet.0.DownInfo.CosInfo.Path=/video/sar_dar/sar_dar.mov\n&SourceInfoSet.0.DownInfo.CosInfo.CosAuthMode.Type=1\n&SourceInfoSet.0.DownInfo.CosInfo.CosAuthMode.HostedId=internal_test\n&SaveInfoSet.0.Type=1\n&SaveInfoSet.0.CosInfo.Region=ap-beijing\n&SaveInfoSet.0.CosInfo.Bucket=shortvideo-1251820392\n&SaveInfoSet.0.CosInfo.Path=/video_cutting/test_res/1012_test_sec_video\n&SaveInfoSet.0.CosInfo.CosAuthMode.Type=1\n&SaveInfoSet.0.CosInfo.CosAuthMode.HostedId=internal_test\n&CallbackInfoSet.0.Url=http://qq.com\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"12001326083614739554304\",\r\n    \"RequestId\": \"5z1993x8-05y9-14a8-ab55-192ff22297c9\"\r\n  }\r\n}",
+        "title": "创建编辑处理/剪切任务"
+      }
+    ],
     "CreateMediaQualityRestorationTask": [
       {
         "document": "对视频进行转码、去噪、去划痕、去毛刺、超分、细节增强和色彩增强。",
@@ -32,6 +40,14 @@
         "title": "获取智能编辑任务结果"
       }
     ],
+    "DescribeMediaProcessTaskResult": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=DescribeMediaProcessTaskResult\n&TaskId=12001326083614739554304\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskResult\": {\r\n            \"ErrCode\": 100,\r\n            \"ErrMsg\": \"Task is under processing.\",\r\n            \"MediaCuttingTaskResult\": null,\r\n            \"Progress\": 24,\r\n            \"Status\": 1200,\r\n            \"TaskId\": \"12001331787046041444352\",\r\n            \"Type\": \"MediaCutting\"\r\n        },\r\n        \"RequestId\": \"e4de90c2-2836-44d4-8513-f4ff06596fe9\"\r\n    }\r\n}",
+        "title": "查询编辑处理任务结果"
+      }
+    ],
     "DescribeMediaQualityRestorationTaskRusult": [
       {
         "document": "",
@@ -46,6 +62,14 @@
         "input": "https://ie.tencentcloudapi.com/?Action=DescribeQualityControlTaskResult\n&TaskId=1260170830789492736\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"TaskResult\": {\r\n      \"TaskId\": \"488022239\",\r\n      \"Status\": 2,\r\n      \"ErrCode\": 0,\r\n      \"ErrMsg\": \"\",\r\n      \"Progress\": 100,\r\n      \"UsedTime\": 51,\r\n      \"Duration\": 150,\r\n      \"QualityEvaluationScore\": 74,\r\n      \"JitterResults\": [\r\n        {\r\n          \"QualityControlItems\": [\r\n            {\r\n              \"StartTimeOffset\": 93.92,\r\n              \"EndTimeOffset\": 111.16,\r\n              \"Confidence\": 100\r\n            },\r\n            {\r\n              \"StartTimeOffset\": 113.16,\r\n              \"EndTimeOffset\": 130.248,\r\n              \"Confidence\": 100\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"RequestId\": \"request_id_query\"\r\n  }\r\n}",
         "title": "查询媒体质检任务结果"
+      }
+    ],
+    "StopMediaProcessTask": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=StopMediaProcessTask\n&TaskId=12001326083614739554304\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"5d199208-24c9-44a3-ab55-192ff22207c9\"\r\n    }\r\n}",
+        "title": "停止编辑处理/剪切任务"
       }
     ],
     "StopMediaQualityRestorationTask": [

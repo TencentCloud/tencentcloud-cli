@@ -726,6 +726,30 @@
       ],
       "usage": "both"
     },
+    "AdvanceConfig": {
+      "document": "高级配置集合",
+      "members": [
+        {
+          "default": "",
+          "document": "高级配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持高级配置，\non：支持\noff：不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AdvancedAuthentication": {
       "document": "时间戳防盗链高级版配置，白名单功能",
       "members": [
@@ -2700,6 +2724,22 @@
           "document": "指定域名查询, 与 Domain 参数同时有值时使用 Domains 参数，不填默认查询全部域名，指定域名查询时最多支持同时选择 5 个域名查询",
           "member": "string",
           "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定攻击类型查询, 与 AttackType 参数同时有值时使用 AttackTypes 参数，不填默认查询全部攻击类型",
+          "member": "string",
+          "name": "AttackTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "member": "ScdnEventLogConditions",
+          "name": "Conditions",
           "required": false,
           "type": "list"
         }
@@ -5006,6 +5046,15 @@
           "name": "Ipv6Access",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高级配置集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvanceConfig",
+          "name": "AdvanceSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -8674,6 +8723,39 @@
       ],
       "usage": "both"
     },
+    "ScdnEventLogConditions": {
+      "document": "SCDN 事件日志查询条件",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配关键字，ip, attack_location",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "逻辑操作符，取值 exclude, include",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配值，允许使用通配符(*)查询，匹配零个、单个、多个字符，例如 1.2.*",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ScdnLogTaskDetail": {
       "document": "SCDN日志事件详细信息",
       "members": [
@@ -8766,6 +8848,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ScdnEventLogConditions",
+          "name": "Conditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -19,7 +19,7 @@
       "output": "DescribeTextStatResponse"
     },
     "TextModeration": {
-      "document": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。",
+      "document": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别可能令人反感、不安全或不适宜的文本内容，同时支持用户配置词库黑白名单，打击自定义识别类型的图片。",
       "input": "TextModerationRequest",
       "name": "文本内容安全",
       "output": "TextModerationResponse"
@@ -27,7 +27,7 @@
   },
   "metadata": {
     "apiVersion": "2020-07-13",
-    "api_brief": "介绍如何使用API对文本内容检测进行操作，包括识别文本中的违规内容等。",
+    "api_brief": "介绍如何使用API对文本内容检测进行操作，包括识别文本中的不适宜内容等。",
     "serviceNameCN": "文本内容检测",
     "serviceShortName": "tms"
   },
@@ -206,7 +206,7 @@
       "members": [
         {
           "default": "",
-          "document": "恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -215,7 +215,7 @@
         },
         {
           "default": "",
-          "document": "建议值,Block：打击,Review：待复审,Pass：正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -242,7 +242,7 @@
         },
         {
           "default": "",
-          "document": "仅当Lable为Custom自定义关键词时有效，表示自定义关键词库类型，1:黑白库，2：自定义库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅当Label为Custom自定义关键词时有效，表示自定义关键词库类型，1:黑白库，2：自定义库\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "LibType",
           "required": true,
@@ -251,7 +251,7 @@
         },
         {
           "default": "",
-          "document": "仅当Lable为Custom自定义关键词时有效，表示自定义库id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅当Label为Custom自定义关键词时有效，表示自定义库id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LibId",
           "required": true,
@@ -260,7 +260,7 @@
         },
         {
           "default": "",
-          "document": "仅当Lable为Custom自定义关键词时有效，表示自定义库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅当Labe为Custom自定义关键词时有效，表示自定义库名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LibName",
           "required": true,
@@ -344,7 +344,7 @@
       "members": [
         {
           "default": "",
-          "document": "违规类型：\nTerror\t24001\nPorn\t20002\nPolity\t20001\nAd\t20105\nAbuse\t20007\t\nIllegal\t20006\t\nSpam\t25001\t\nMoan\t26001",
+          "document": "----非必选，该参数功能暂未对外开放",
           "member": "string",
           "name": "EvilType",
           "required": true,
@@ -526,17 +526,17 @@
         },
         {
           "default": "",
-          "document": "数据ID，英文字母、下划线、-组成，不超过64个字符",
+          "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。",
           "member": "string",
-          "name": "DataId",
+          "name": "BizType",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。",
+          "document": "数据ID，英文字母、下划线、-组成，不超过64个字符",
           "member": "string",
-          "name": "BizType",
+          "name": "DataId",
           "required": false,
           "type": "string"
         },
@@ -577,14 +577,14 @@
           "value_allowed_null": false
         },
         {
-          "document": "机器识别后判断违规所属类型。\nNormal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。",
           "member": "string",
           "name": "Label",
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "建议您拿到判断结果后的执行操作。\nBlock：建议打击，Review：建议复审，Normal：建议通过。",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
           "member": "string",
           "name": "Suggestion",
           "type": "string",
@@ -622,6 +622,13 @@
           "document": "扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Extra",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求参数中的DataId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DataId",
           "type": "string",
           "value_allowed_null": true
         },

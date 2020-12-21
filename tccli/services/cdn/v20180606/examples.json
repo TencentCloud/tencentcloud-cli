@@ -35,8 +35,8 @@
     "CreateScdnLogTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScdnLogTask\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\", \n    \"AttackType\": \"xx\", \n    \"Ip\": \"xx\", \n    \"DefenceMode\": \"xx\", \n    \"Mode\": \"xx\", \n    \"StartTime\": \"2020-09-22 00:00:00\", \n    \"Domains\": [\n        \"xx\"\n    ], \n    \"EndTime\": \"2020-09-22 23:00:00\"\n}",
-        "output": "{\r\n    \"Result\": \"xx\"\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScdnLogTask\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\", \n    \"AttackType\": \"xx\", \n    \"Ip\": \"xx\", \n    \"AttackTypes\": [\n        \"xx\"\n    ], \n    \"DefenceMode\": \"xx\", \n    \"Mode\": \"xx\", \n    \"StartTime\": \"2020-09-22 00:00:00\", \n    \"Domains\": [\n        \"xx\"\n    ], \n    \"EndTime\": \"2020-09-22 00:00:00\", \n    \"Conditions\": [\n        {\n            \"Operator\": \"xx\", \n            \"Value\": \"xx\", \n            \"Key\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"xx\", \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
         "title": "创建scdn日志事件任务"
       }
     ],

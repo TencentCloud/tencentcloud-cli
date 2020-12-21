@@ -1,6 +1,6 @@
-**Example 1: 创建关键词样本-Review**
+**Example 1: 创建关键词素材-Review**
 
-Usages=Review，则该关键词可用于通过 OCR 技术、ASR 技术，进行内容审核。
+Usages=Review，则该关键词可用于通过 OCR 技术、ASR 技术，进行不适宜内容识别。
 
 Input: 
 
@@ -14,13 +14,15 @@ tccli vod CreateWordSamples --cli-unfold-argument  \
 Output: 
 ```
 {
-    "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    "Response": {
+        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    }
 }
 ```
 
-**Example 2: 创建关键词样本-Recognition**
+**Example 2: 创建关键词素材-Recognition**
 
-Usages=["Recognition.Ocr","Review.Ocr"]，则该关键词可用于通过 OCR 技术，进行内容识别、内容审核。
+Usages=["Recognition.Ocr","Review.Ocr"]，则该关键词可用于通过 OCR 技术，进行内容识别、不适宜内容识别。
 
 Input: 
 
@@ -34,13 +36,15 @@ tccli vod CreateWordSamples --cli-unfold-argument  \
 Output: 
 ```
 {
-    "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    "Response": {
+        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    }
 }
 ```
 
-**Example 3: 创建关键词样本-All**
+**Example 3: 创建关键词素材-All**
 
-Usages=All，则该关键词可用于通过 OCR 技术、ASR 技术，进行内容识别、内容审核。
+Usages=All，则该关键词可用于通过 OCR 技术、ASR 技术，进行内容识别、不适宜内容识别。
 
 Input: 
 
@@ -54,7 +58,9 @@ tccli vod CreateWordSamples --cli-unfold-argument  \
 Output: 
 ```
 {
-    "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    "Response": {
+        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+    }
 }
 ```
 

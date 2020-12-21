@@ -1,4 +1,4 @@
-**Example 1: 获取人物样本列表**
+**Example 1: 获取素材样本列表**
 
 
 
@@ -28,6 +28,9 @@ Output:
                         "FaceId": "10024",
                         "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/face.jpeg"
                     }
+                ],
+                "UsageSet": [
+                    "Recognition"
                 ],
                 "TagSet": [
                     "美国",

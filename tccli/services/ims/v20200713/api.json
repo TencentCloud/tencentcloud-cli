@@ -21,7 +21,7 @@
   },
   "metadata": {
     "apiVersion": "2020-07-13",
-    "api_brief": "介绍如何使用API对图片内容检测进行操作，包括识别图片中的违规内容等。",
+    "api_brief": "介绍如何使用API对图片内容检测进行操作，包括识别图片中的不适宜内容等。",
     "serviceNameCN": "图片内容检测",
     "serviceShortName": "ims"
   },
@@ -115,7 +115,7 @@
       "document": "DescribeImsList返回参数结构体",
       "members": [
         {
-          "document": "返回列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回列表数据----非必选，该参数暂未对外开放\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ImsDetail",
           "name": "ImsDetailSet",
           "type": "list",
@@ -220,7 +220,7 @@
       "members": [
         {
           "default": "",
-          "document": "违规类型：\nTerror\t24001\nPorn\t20002\nPolity\t20001\nAd\t20105\nAbuse\t20007\t\nIllegal\t20006\t\nSpam\t25001\t\nMoan\t26001",
+          "document": "----非必选，该参数功能暂未对外开放",
           "member": "string",
           "name": "EvilType",
           "required": true,
@@ -485,7 +485,7 @@
         },
         {
           "default": "",
-          "document": "机器审核结果code 100 正常, 20001 政治 20002 色情 20006 涉毒违法 20007 谩骂 24001 暴恐 21000 综合 20105 广告引流 20103 性感",
+          "document": "----非必选，该参数暂未对外开放",
           "member": "int64",
           "name": "EvilType",
           "required": true,

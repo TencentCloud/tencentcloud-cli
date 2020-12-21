@@ -1731,7 +1731,7 @@
     "ModifyNatGatewayAttribute": [
       {
         "document": "只支持修改NAT网关的名称和NAT网关最大外网出带宽。更新NAT网关并发连接上限请使用ResetNatGatewayConnection接口。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNatGatewayAttribute\r\n&NatGatewayId=nat-ig8xpno8\r\n&NatGatewayName=测试nat网关\r\n&InternetMaxBandwidthOut=500\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNatGatewayAttribute\n&NatGatewayId=nat-ig8xpno8\n&NatGatewayName=测试nat网关\n&InternetMaxBandwidthOut=500\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e5c289dc-bf4b-4828-8093-3c434d1f0886\"\r\n    }\r\n}",
         "title": "修改NAT网关的属性"
       }

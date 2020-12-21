@@ -13,48 +13,48 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "46f504df-d9ac-4fc0-899f-58020d8abd19",
-        "BizType": "11",
-        "EvilFlag": 1,
-        "Label": "Custom",
-        "Suggestion": "Block",
-        "Keywords": [
-            "加我微信"
-        ],
-        "Score": 87,
-        "DetailResults": [
-            {
-                "Label": "Ads",
-                "Suggestion": "Block",
-                "Keywords": [
-                    "加我微信",
-                    "扫码分享领红包",
-                    "购买链接：xxxxxxx"
-                ],
-                "Score": 72
-            },
-            {
-                "Label": "Custom",
-                "Suggestion": "Block",
-                "Keywords": [
-                    "手机号码xxxxxxxxxxx"
-                ],
-                "Score": 0,
-                "LibType": 2,
-                "LibId": "20548499",
-                "LibName": "priavte"
-            }
-        ],
+        "DataId": "123",
+        "Extra": "xx",
+        "BizType": "0",
         "RiskDetails": [
             {
-                "Lable": "RiskAccount",
-                "Level": 2
+                "Level": 2,
+                "Label": "RiskAccount"
             }
         ],
-        "Extra": "{\"KeywordsInfo\":[{\"HitInfo\":\"加微信\",\"Label\":\"Ad\",\"LabelCode\":\"20105\",\"SubLabelCode\":\"20105201\"}]}"
-    },
-    "retcode": 0,
-    "retmsg": ""
+        "DetailResults": [
+            {
+                "LibName": "Porn",
+                "Score": 72,
+                "Label": "Porn",
+                "LibId": "12",
+                "Suggestion": "Review",
+                "Keywords": [
+                    "色情"
+                ],
+                "LibType": 0
+            },
+            {
+                "LibName": "Porn",
+                "Score": 0,
+                "Label": "",
+                "LibId": "1",
+                "Suggestion": "Block",
+                "Keywords": [
+                    "色情"
+                ],
+                "LibType": 2
+            }
+        ],
+        "Label": "Ad",
+        "EvilFlag": 1,
+        "Score": 87,
+        "RequestId": "x2123-123123-123",
+        "Suggestion": "Block",
+        "Keywords": [
+            "加我好友，给你发优惠券"
+        ]
+    }
 }
 ```
 

@@ -55,9 +55,9 @@
       "output": "CreateClassResponse"
     },
     "CreateContentReviewTemplate": {
-      "document": "创建用户自定义视频内容审核模板，数量上限：50。",
+      "document": "创建用户自定义视频内容智能识别模板，数量上限：50。",
       "input": "CreateContentReviewTemplateRequest",
-      "name": "创建视频内容审核模板",
+      "name": "创建视频内容智能识别模板",
       "output": "CreateContentReviewTemplateResponse"
     },
     "CreateImageProcessingTemplate": {
@@ -73,9 +73,9 @@
       "output": "CreateImageSpriteTemplateResponse"
     },
     "CreatePersonSample": {
-      "document": "该接口用于创建人物样本，用于通过人脸识别等技术，进行内容识别、内容审核等视频处理。",
+      "document": "该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、不适宜视频识别等视频处理。",
       "input": "CreatePersonSampleRequest",
-      "name": "创建人物样本",
+      "name": "创建素材样本",
       "output": "CreatePersonSampleResponse"
     },
     "CreateProcedureTemplate": {
@@ -121,7 +121,7 @@
       "output": "CreateWatermarkTemplateResponse"
     },
     "CreateWordSamples": {
-      "document": "该接口用于批量创建关键词样本，样本用于通过OCR、ASR技术，进行内容审核、内容识别等视频处理。",
+      "document": "该接口用于批量创建关键词样本，样本用于通过OCR、ASR技术，进行不适宜内容识别、内容识别等视频处理。",
       "input": "CreateWordSamplesRequest",
       "name": "创建关键词样本",
       "output": "CreateWordSamplesResponse"
@@ -157,9 +157,9 @@
       "output": "DeleteClassResponse"
     },
     "DeleteContentReviewTemplate": {
-      "document": "删除用户自定义视频内容审核模板。",
+      "document": "删除用户自定义视频内容智能识别模板。",
       "input": "DeleteContentReviewTemplateRequest",
-      "name": "删除视频内容审核模板",
+      "name": "删除视频内容智能识别模板",
       "output": "DeleteContentReviewTemplateResponse"
     },
     "DeleteImageProcessingTemplate": {
@@ -181,9 +181,9 @@
       "output": "DeleteMediaResponse"
     },
     "DeletePersonSample": {
-      "document": "该接口用于根据人物 ID，删除人物样本。",
+      "document": "该接口用于根据人物 ID，删除素材样本。",
       "input": "DeletePersonSampleRequest",
-      "name": "删除人物样本",
+      "name": "删除素材样本",
       "output": "DeletePersonSampleResponse"
     },
     "DeleteProcedureTemplate": {
@@ -277,9 +277,9 @@
       "output": "DescribeCdnLogsResponse"
     },
     "DescribeContentReviewTemplates": {
-      "document": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。",
+      "document": "根据视频内容智能识别模板唯一标识，获取视频内容智能识别模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容智能识别模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。",
       "input": "DescribeContentReviewTemplatesRequest",
-      "name": "获取视频内容审核模板列表",
+      "name": "获取视频内容智能识别模板列表",
       "output": "DescribeContentReviewTemplatesResponse"
     },
     "DescribeDailyPlayStatFileList": {
@@ -319,9 +319,9 @@
       "output": "DescribeMediaProcessUsageDataResponse"
     },
     "DescribePersonSamples": {
-      "document": "该接口用于查询人物样本信息，支持根据人物 ID、名称、标签，分页查询。",
+      "document": "该接口用于查询素材样本信息，支持根据素材 ID、名称、标签，分页查询。",
       "input": "DescribePersonSamplesRequest",
-      "name": "获取人物样本列表",
+      "name": "获取素材样本列表",
       "output": "DescribePersonSamplesResponse"
     },
     "DescribeProcedureTemplates": {
@@ -331,9 +331,9 @@
       "output": "DescribeProcedureTemplatesResponse"
     },
     "DescribeReviewDetails": {
-      "document": "<b>本接口已不推荐使用，用 [DescribeMediaProcessUsageData](/document/product/266/41464) 替代</b>\n\n该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。\n\n1. 可以查询最近365天内的视频内容审核时长统计数据。\n2. 查询时间跨度不超过90天。",
+      "document": "<b>本接口已不推荐使用，用 [DescribeMediaProcessUsageData](/document/product/266/41464) 替代</b>\n\n该接口返回查询时间范围内每天使用的视频内容智能识别时长数据，单位： 秒。\n\n1. 可以查询最近365天内的视频内容智能识别时长统计数据。\n2. 查询时间跨度不超过90天。",
       "input": "DescribeReviewDetailsRequest",
-      "name": "查询内容审核详情",
+      "name": "查询内容智能识别详情",
       "output": "DescribeReviewDetailsResponse"
     },
     "DescribeSampleSnapshotTemplates": {
@@ -457,9 +457,9 @@
       "output": "ModifyClassResponse"
     },
     "ModifyContentReviewTemplate": {
-      "document": "修改用户自定义视频内容审核模板。",
+      "document": "修改用户自定义视频内容智能识别模板。",
       "input": "ModifyContentReviewTemplateRequest",
-      "name": "修改视频内容审核模板",
+      "name": "修改视频内容智能识别模板",
       "output": "ModifyContentReviewTemplateResponse"
     },
     "ModifyImageSpriteTemplate": {
@@ -475,9 +475,9 @@
       "output": "ModifyMediaInfoResponse"
     },
     "ModifyPersonSample": {
-      "document": "该接口用于根据人物 ID，修改人物样本信息，包括名称、描述的修改，以及人脸、标签的添加、删除、重置操作。人脸删除操作需保证至少剩余 1 张图片，否则，请使用重置操作。",
+      "document": "该接口用于根据素材 ID，修改素材样本信息，包括名称、描述的修改，以及五官、标签的添加、删除、重置操作。五官删除操作需保证至少剩余 1 张图片，否则，请使用重置操作。",
       "input": "ModifyPersonSampleRequest",
-      "name": "修改人物样本",
+      "name": "修改素材样本",
       "output": "ModifyPersonSampleResponse"
     },
     "ModifySampleSnapshotTemplate": {
@@ -6257,7 +6257,7 @@
       "members": [
         {
           "default": "",
-          "document": "审核结果是否进入审核墙（对审核结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
+          "document": "智能识别结果是否进入智能识别墙（对识别结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
           "member": "string",
           "name": "ReviewWallSwitch",
           "required": true,
@@ -6265,7 +6265,7 @@
         },
         {
           "default": "",
-          "document": "内容审核模板名称，长度限制：64 个字符。",
+          "document": "内容智能识别模板名称，长度限制：64 个字符。",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6273,7 +6273,7 @@
         },
         {
           "default": "",
-          "document": "内容审核模板描述信息，长度限制：256 个字符。",
+          "document": "内容智能识别模板描述信息，长度限制：256 个字符。",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -6281,7 +6281,7 @@
         },
         {
           "default": "",
-          "document": "鉴黄控制参数。",
+          "document": "令人反感的信息的控制参数。",
           "member": "PornConfigureInfo",
           "name": "PornConfigure",
           "required": false,
@@ -6289,7 +6289,7 @@
         },
         {
           "default": "",
-          "document": "鉴恐控制参数。",
+          "document": "令人不安全的信息的控制参数。",
           "member": "TerrorismConfigureInfo",
           "name": "TerrorismConfigure",
           "required": false,
@@ -6297,7 +6297,7 @@
         },
         {
           "default": "",
-          "document": "鉴政控制参数。",
+          "document": "令人不适宜的控制参数。",
           "member": "PoliticalConfigureInfo",
           "name": "PoliticalConfigure",
           "required": false,
@@ -6313,7 +6313,7 @@
         },
         {
           "default": "",
-          "document": "用户自定义内容审核控制参数。",
+          "document": "用户自定义内容智能识别控制参数。",
           "member": "UserDefineConfigureInfo",
           "name": "UserDefineConfigure",
           "required": false,
@@ -6342,7 +6342,7 @@
       "document": "CreateContentReviewTemplate返回参数结构体",
       "members": [
         {
-          "document": "内容审核模板唯一标识。",
+          "document": "内容智能识别模板唯一标识。",
           "member": "int64",
           "name": "Definition",
           "type": "int",
@@ -6610,7 +6610,7 @@
       "members": [
         {
           "default": "",
-          "document": "人物名称，长度限制：20 个字符。",
+          "document": "素材名称，长度限制：20 个字符。",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6618,7 +6618,7 @@
         },
         {
           "default": "",
-          "document": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。",
+          "document": "素材应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容不适宜，等价于 Review.Face。\n3. All：包含以上全部，等价于 1+2。",
           "member": "string",
           "name": "Usages",
           "required": true,
@@ -6626,7 +6626,7 @@
         },
         {
           "default": "",
-          "document": "人物描述，长度限制：1024 个字符。",
+          "document": "素材描述，长度限制：1024 个字符。",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -6634,7 +6634,7 @@
         },
         {
           "default": "",
-          "document": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。",
+          "document": "素材图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像五官较清晰的照片，像素不低于 200*200。",
           "member": "string",
           "name": "FaceContents",
           "required": false,
@@ -6642,7 +6642,7 @@
         },
         {
           "default": "",
-          "document": "人物标签\n<li>数组长度限制：20 个标签；</li>\n<li>单个标签长度限制：128 个字符。</li>",
+          "document": "素材标签\n<li>数组长度限制：20 个标签；</li>\n<li>单个标签长度限制：128 个字符。</li>",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -6663,14 +6663,14 @@
       "document": "CreatePersonSample返回参数结构体",
       "members": [
         {
-          "document": "人物信息。",
+          "document": "素材信息。",
           "member": "AiSamplePerson",
           "name": "Person",
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "处理失败的人脸信息。",
+          "document": "处理失败的五官定位信息。",
           "member": "AiSampleFailFaceInfo",
           "name": "FailFaceInfoSet",
           "type": "list",
@@ -7306,7 +7306,7 @@
       "members": [
         {
           "default": "",
-          "document": "<b>关键词应用场景，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n7. All：通过光学字符识别技术、语音识别技术，进行内容识别、内容审核，等价于 1+2+3+4。",
+          "document": "<b>关键词应用场景，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过音频识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行不适宜内容识别；\n4. Review.Asr：通过音频识别技术，进行不适宜内容识别；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、音频识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、音频识别技术，进行不适宜内容识别，等价于 3+4；\n7. All：通过光学字符识别技术、音频识别技术，进行内容识别、不适宜内容识别，等价于 1+2+3+4。",
           "member": "string",
           "name": "Usages",
           "required": true,
@@ -7518,7 +7518,7 @@
       "members": [
         {
           "default": "",
-          "document": "内容审核模板唯一标识。",
+          "document": "内容智能识别模板唯一标识。",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -7662,7 +7662,7 @@
       "members": [
         {
           "default": "",
-          "document": "人物 ID。",
+          "document": "素材 ID。",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -8487,7 +8487,7 @@
       "members": [
         {
           "default": "",
-          "document": "内容审核模板唯一标识过滤条件，数组长度限制：100。",
+          "document": "内容智能识别模板唯一标识过滤条件，数组长度限制：100。",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -8531,7 +8531,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "内容审核模板详情列表。",
+          "document": "内容智能识别模板详情列表。",
           "member": "ContentReviewTemplateItem",
           "name": "ContentReviewTemplateSet",
           "type": "list",
@@ -8890,7 +8890,7 @@
       "members": [
         {
           "default": "",
-          "document": "拉取的人物类型，可选值：\n<li>UserDefine：用户自定义人物库；</li>\n<li>Default：系统默认人物库。</li>\n\n默认值：UserDefine，拉取用户自定义人物库人物。\n说明：如果是拉取系统默认人物库，只能使用人物名字或者人物 ID + 人物名字的方式进行拉取，且人脸图片只返回一张。",
+          "document": "拉取的素材类型，可选值：\n<li>UserDefine：用户自定义素材库；</li>\n<li>Default：系统默认素材库。</li>\n\n默认值：UserDefine，拉取用户自定义素材库素材。\n说明：如果是拉取系统默认素材库，只能使用素材名字或者素材 ID + 素材名字的方式进行拉取，且五官图片只返回一张。",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -8898,7 +8898,7 @@
         },
         {
           "default": "",
-          "document": "人物 ID，数组长度限制：100。",
+          "document": "素材 ID，数组长度限制：100。",
           "member": "string",
           "name": "PersonIds",
           "required": false,
@@ -8906,7 +8906,7 @@
         },
         {
           "default": "",
-          "document": "人物名称，数组长度限制：20。",
+          "document": "素材名称，数组长度限制：20。",
           "member": "string",
           "name": "Names",
           "required": false,
@@ -8914,7 +8914,7 @@
         },
         {
           "default": "",
-          "document": "人物标签，数组长度限制：20。",
+          "document": "素材标签，数组长度限制：20。",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -9079,21 +9079,21 @@
       "document": "DescribeReviewDetails返回参数结构体",
       "members": [
         {
-          "document": "发起内容审核次数。",
+          "document": "发起内容智能识别次数。",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "内容审核总时长。",
+          "document": "内容智能识别总时长。",
           "member": "int64",
           "name": "TotalDuration",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "内容审核时长统计数据，每天一个数据。",
+          "document": "内容智能识别时长统计数据，每天一个数据。",
           "member": "StatDataItem",
           "name": "Data",
           "type": "list",
@@ -9904,7 +9904,7 @@
       "members": [
         {
           "default": "",
-          "document": "<b>关键词应用场景过滤条件，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n可多选，元素间关系为 or，即关键词的应用场景包含该字段集合中任意元素的记录，均符合该条件。",
+          "document": "<b>关键词应用场景过滤条件，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过音频识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行不适宜的内容识别；\n4. Review.Asr：通过音频识别技术，进行不适宜的内容识别；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、音频识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、音频识别技术，进行不适宜的内容识别，等价于 3+4；\n可多选，元素间关系为 or，即关键词的应用场景包含该字段集合中任意元素的记录，均符合该条件。",
           "member": "string",
           "name": "Usages",
           "required": false,
@@ -14409,7 +14409,7 @@
       "members": [
         {
           "default": "",
-          "document": "内容审核模板唯一标识。",
+          "document": "内容智能识别模板唯一标识。",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -14417,7 +14417,7 @@
         },
         {
           "default": "",
-          "document": "内容审核模板名称，长度限制：64 个字符。",
+          "document": "内容智能识别模板名称，长度限制：64 个字符。",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -14425,7 +14425,7 @@
         },
         {
           "default": "",
-          "document": "内容审核模板描述信息，长度限制：256 个字符。",
+          "document": "内容智能识别模板描述信息，长度限制：256 个字符。",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -14433,15 +14433,7 @@
         },
         {
           "default": "",
-          "document": "鉴黄控制参数。",
-          "member": "PornConfigureInfoForUpdate",
-          "name": "PornConfigure",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "鉴恐控制参数。",
+          "document": "令人不安全的信息的控制参数。",
           "member": "TerrorismConfigureInfoForUpdate",
           "name": "TerrorismConfigure",
           "required": false,
@@ -14449,7 +14441,15 @@
         },
         {
           "default": "",
-          "document": "鉴政控制参数。",
+          "document": "令人反感的信息的控制参数。",
+          "member": "PornConfigureInfoForUpdate",
+          "name": "PornConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "令人不适宜的信息控制参数。",
           "member": "PoliticalConfigureInfoForUpdate",
           "name": "PoliticalConfigure",
           "required": false,
@@ -14465,7 +14465,7 @@
         },
         {
           "default": "",
-          "document": "用户自定义内容审核控制参数。",
+          "document": "用户自定义内容智能识别控制参数。",
           "member": "UserDefineConfigureInfoForUpdate",
           "name": "UserDefineConfigure",
           "required": false,
@@ -14481,7 +14481,7 @@
         },
         {
           "default": "",
-          "document": "审核结果是否进入审核墙（对审核结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
+          "document": "智能识别结果是否进入智能识别墙（对智能识别结果进行人工识别）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
           "member": "string",
           "name": "ReviewWallSwitch",
           "required": false,
@@ -14758,7 +14758,7 @@
       "members": [
         {
           "default": "",
-          "document": "人物 ID。",
+          "document": "素材 ID。",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -14782,7 +14782,7 @@
         },
         {
           "default": "",
-          "document": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。",
+          "document": "素材应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于不适宜的内容识别，等价于 Review.Face。\n3. All：用于内容识别、不适宜的内容识别，等价于 1+2。",
           "member": "string",
           "name": "Usages",
           "required": false,
@@ -14790,7 +14790,7 @@
         },
         {
           "default": "",
-          "document": "人脸操作信息。",
+          "document": "五官操作信息。",
           "member": "AiSampleFaceOperation",
           "name": "FaceOperationInfo",
           "required": false,
@@ -14819,14 +14819,14 @@
       "document": "ModifyPersonSample返回参数结构体",
       "members": [
         {
-          "document": "人物信息。",
+          "document": "素材信息。",
           "member": "AiSamplePerson",
           "name": "Person",
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "处理失败的人脸信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理失败的五官信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "AiSampleFailFaceInfo",
           "name": "FailFaceInfoSet",
           "type": "list",
@@ -15427,7 +15427,7 @@
         },
         {
           "default": "",
-          "document": "<b>关键词应用场景，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n7. All：通过光学字符识别技术、语音识别技术，进行内容识别、内容审核，等价于 1+2+3+4。",
+          "document": "<b>关键词应用场景，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过音频识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行不适宜的内容识别；\n4. Review.Asr：通过音频识别技术，进行不适宜的内容识别；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、音频识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、音频识别技术，进行不适宜的内容识别，等价于 3+4；\n7. All：包含以上全部，等价于 1+2+3+4。",
           "member": "string",
           "name": "Usages",
           "required": false,

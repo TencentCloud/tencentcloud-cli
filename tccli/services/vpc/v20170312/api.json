@@ -13156,6 +13156,22 @@
           "name": "InternetMaxBandwidthOut",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否修改NAT网关绑定的安全组。",
+          "member": "bool",
+          "name": "ModifySecurityGroup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14004,6 +14020,15 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NAT网关绑定的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecurityGroupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
