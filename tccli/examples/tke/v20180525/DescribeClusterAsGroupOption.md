@@ -13,7 +13,22 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "82f2fe9c-c5fa-4077-9236-f1341180a696"
+        "ClusterAsGroupOption": {
+            "ScaleDownUnreadyTime": 0,
+            "ScaleDownDelay": 0,
+            "ScaleDownUtilizationThreshold": 0,
+            "MaxTotalUnreadyPercentage": 0,
+            "IsScaleDownEnabled": true,
+            "OkTotalUnreadyCount": 0,
+            "SkipNodesWithSystemPods": true,
+            "MaxEmptyBulkDelete": 0,
+            "UnregisteredNodeRemovalTime": 0,
+            "SkipNodesWithLocalStorage": true,
+            "IgnoreDaemonSetsUtilization": true,
+            "Expander": "xxx",
+            "ScaleDownUnneededTime": 0
+        },
+        "RequestId": "xxx"
     }
 }
 ```

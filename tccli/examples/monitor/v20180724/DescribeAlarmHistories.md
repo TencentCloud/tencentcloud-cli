@@ -7,88 +7,86 @@ Input:
 ```
 tccli monitor DescribeAlarmHistories --cli-unfold-argument  \
     --Module monitor \
-    --PageNumber 1 \
-    --PageSize 100 \
-    --Order DESC \
-    --StartTime 1598976507 \
-    --EndTime 1599019707 \
-    --AlarmObject object \
-    --MonitorTypes MT_QCE \
-    --AlarmStatus ALARM \
-    --ProjectIds 0 \
-    --InstanceGroupIds 0 \
-    --MetricNames mem_used \
     --PolicyName policy \
-    --Content content \
-    --ReceiverUids 10000 \
-    --ReceiverGroups 10000 \
-    --Namespaces.0.MonitorType MT_QCE \
-    --Namespaces.0.Namespace cvm_device
+    --PageNumber 1 \
+    --PageSize 10 \
+    --StartTime 1598976507 \
+    --EndTime 1599019707
 ```
 
 Output: 
 ```
 {
-    "TotalCount": 2,
-    "Histories": [
-        {
-            "AlarmId": "g34jgh3-t3cc3c23-cv23vc234c",
-            "MonitorType": "MT_QCE_METRIC",
-            "Namespace": "cvm_device",
-            "AlarmObject": "9.142.151.35",
-            "Content": "CPU 利用率 >= 99.99%",
-            "FirstOccurTime": 1597240790,
-            "LastOccurTime": 1597250790,
-            "AlarmStatus": "ALARM",
-            "PolicyId": "195491",
-            "PolicyName": "告警策略",
-            "VPC": "-",
-            "ProjectId": 0,
-            "ProjectName": "默认项目",
-            "InstanceGroup": [
-                {
-                    "Id": 123,
-                    "Name": "我是一个实例组"
-                }
-            ],
-            "ReceiverUids": [
-                1451455,
-                125151,
-                616677
-            ],
-            "ReceiverGroups": [],
-            "NoticeWays": [
-                "SMS",
-                "EMAIL"
-            ],
-            "OriginId": "100"
-        },
-        {
-            "AlarmId": "g34jgh3-t3cc3c23-ag4hg3y3h2",
-            "MonitorType": "MT_CUSTOM",
-            "Namespace": "custom_test_space",
-            "AlarmObject": "host = 127.0.0.1",
-            "Content": "告警",
-            "FirstOccurTime": 1597240790,
-            "LastOccurTime": 1597250790,
-            "AlarmStatus": "ALARM",
-            "PolicyId": "195492",
-            "PolicyName": "告警策略",
-            "VPC": "-",
-            "ProjectId": -1,
-            "ProjectName": "-",
-            "InstanceGroup": [],
-            "ReceiverUids": [],
-            "ReceiverGroups": [
-                12345,
-                56789
-            ],
-            "NoticeWays": [
-                "CALL"
-            ],
-            "OriginId": "policy-msjftixf"
-        }
-    ]
+    "Response": {
+        "Histories": [
+            {
+                "AlarmId": "c36494f8-ae38-45cb-8089-e14006bcfc67",
+                "MonitorType": "MT_QCE",
+                "Namespace": "cvm_device",
+                "AlarmObject": "10.104.126.8 (内)  | 同环比告警1 | 基础网络",
+                "Content": "CPU利用率 >0%",
+                "FirstOccurTime": 1603117860,
+                "LastOccurTime": 1603162964,
+                "AlarmStatus": "ALARM",
+                "PolicyId": "bd010610-cfd1-4bdd-9e2d-83421ce2f3ce",
+                "PolicyName": "gao",
+                "VPC": "0",
+                "ProjectId": 0,
+                "ProjectName": "默认项目",
+                "InstanceGroup": [
+                    {
+                        "Id": 430,
+                        "Name": "test-instance-group"
+                    }
+                ],
+                "ReceiverUids": [],
+                "ReceiverGroups": [
+                    1544
+                ],
+                "NoticeWays": [
+                    "SMS",
+                    "EMAIL",
+                    "WECHAT"
+                ],
+                "EventId": 0,
+                "AlarmType": "METRIC",
+                "OriginId": "1278441",
+                "Region": "test-master",
+                "PolicyExists": 1
+            },
+            {
+                "AlarmId": "779d129a-40a1-4acf-b226-d9c2ae26e63b",
+                "MonitorType": "MT_QCE",
+                "Namespace": "cvm_device",
+                "AlarmObject": "10.104.126.8 (内)  | 同环比告警1 | 基础网络",
+                "Content": "CPU利用率 >0%",
+                "FirstOccurTime": 1603117860,
+                "LastOccurTime": 1603162964,
+                "AlarmStatus": "ALARM",
+                "PolicyId": "91cd9e02-4846-4f90-a04e-ff0343798063",
+                "PolicyName": "迁移测试2",
+                "VPC": "0",
+                "ProjectId": 0,
+                "ProjectName": "默认项目",
+                "InstanceGroup": [
+                    {
+                        "Id": 430,
+                        "Name": "test-instance-group"
+                    }
+                ],
+                "ReceiverUids": [],
+                "ReceiverGroups": [],
+                "NoticeWays": [],
+                "EventId": 0,
+                "AlarmType": "METRIC",
+                "OriginId": "1276973",
+                "Region": "test-master",
+                "PolicyExists": 1
+            }
+        ],
+        "RequestId": "4bzogxhgsgs95hgmxne5ei6y9jjxvi1f",
+        "TotalCount": 486
+    }
 }
 ```
 

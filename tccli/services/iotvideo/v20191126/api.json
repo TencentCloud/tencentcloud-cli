@@ -325,7 +325,7 @@
       "output": "ModifyVerContentResponse"
     },
     "RefundStorageService": {
-      "document": "退订已购买的云存服务",
+      "document": "本接口（RefundStorageService）用于退订已购买的云存服务。\n退订时，云存服务对应订单的处理方式 : \n1. 未开始的订单自动回到已付费订单池\n2. 已开始的订单自动失效\n3. 购买云存接口,优先从已付费订单池中分配订单",
       "input": "RefundStorageServiceRequest",
       "name": "退订已购买的云存服务",
       "output": "RefundStorageServiceResponse"
@@ -1722,28 +1722,28 @@
       "document": "DescribeAccountBalance返回参数结构体",
       "members": [
         {
-          "document": "账户类型 1=设备接入;2=云存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账户类型 1=设备接入;2=云存。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "AccountType",
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "document": "余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "余额, 单位 : 分(人民币)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Balance",
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "document": "账户状态，1=正常；8=冻结；9=销户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账户状态，1=正常；8=冻结；9=销户。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "State",
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "document": "最后修改时间，UTC值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后修改时间，UTC值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "LastUpdateTime",
           "type": "int",
@@ -3822,7 +3822,7 @@
       "members": [
         {
           "default": "",
-          "document": "流水记录号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流水记录号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "WaterId",
           "required": true,
@@ -3831,7 +3831,7 @@
         },
         {
           "default": "",
-          "document": "充值前的余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "充值前的余额，单位0.01元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "BalanceBeforeRecharge",
           "required": true,
@@ -3840,7 +3840,7 @@
         },
         {
           "default": "",
-          "document": "充值金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "充值金额，单位0.01元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Money",
           "required": true,
@@ -3849,7 +3849,7 @@
         },
         {
           "default": "",
-          "document": "充值时间, UTC值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "充值时间, UTC值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "OperateTime",
           "required": true,

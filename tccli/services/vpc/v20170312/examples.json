@@ -285,27 +285,27 @@
     "CreateDefaultSecurityGroup": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultSecurityGroup\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestID\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n\t\t\"SecurityGroup\": {\r\n\t\t\t\"SecurityGroupId\": \"sg-12345678\",\r\n\t\t\t\"SecurityGroupName\": \"test\",\r\n\t\t\t\"SecurityGroupDesc\": \"test\",\r\n\t\t\t\"ProjectId\": \"0\",\r\n\t\t\t\"CreateTime\": \"2018-01-13 19:26:33\"\r\n\t\t}\r\n\t}\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultSecurityGroup\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"SecurityGroup\": {\r\n      \"SecurityGroupId\": \"sg-r0g2kty7\",\r\n      \"SecurityGroupName\": \"default\",\r\n      \"SecurityGroupDesc\": \"System created security group\",\r\n      \"ProjectId\": 0,\r\n      \"CreatedTime\": \"2020-01-10 11:37:52\"\r\n    },\r\n    \"RequestId\": \"727a8ab6-e15e-45db-8b8a-a95cb636a812\"\r\n  }\r\n}",
         "title": "创建默认安全组"
       }
     ],
     "CreateDefaultVpc": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\r\n&Version=2017-03-12\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"Vpc\": {\r\n      \"VpcId\": \"vpc-pin7sxcd\",\r\n      \"SubnetId\": \"subnet-ixzf2m42\"\r\n    },\r\n    \"RequestId\": \"a2353d77-5c08-49c4-a28a-632a8af5e294\"\r\n  }\r\n}",
         "title": "创建默认VPC"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\r\n&Version=2017-03-12\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Vpc\": {\r\n            \"VpcId\": \"0\",\r\n            \"SubnetId\": \"0\"\r\n        },\r\n        \"RequestId\": \"c52dda11-9e53-440f-b034-6292f2144dd0\"\r\n    }\r\n}",
         "title": "用户账号网络属性（DescribeAccountAttributes）同时支持基础网络和VPC，不强制创建默认VPC，则返回VpcId为0，表示不创建默认VPC"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\r\n&Version=2017-03-12\r\n&Force=true\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&Force=true\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"Vpc\": {\r\n      \"VpcId\": \"vpc-8mpwlbdv\",\r\n      \"SubnetId\": \"subnet-l9emqwnw\"\r\n    },\r\n    \"RequestId\": \"91348b0a-6846-49ff-822b-a21eef848c9f\"\r\n  }\r\n}",
         "title": "强制生产默认VPC"
       }
@@ -491,8 +491,8 @@
     "CreateVpc": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpc\r\n&Version=2017-03-12\r\n&VpcName=TestVPC\r\n&CidrBlock=10.8.0.0/16\r\n&Tags.0.Key=city\r\n&Tags.0.Value=shanghai\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n\t\t\"Vpc\": {\r\n\t\t\t\"VpcId\": \"vpc-4tboefn3\",\r\n\t\t\t\"VpcName\": \"TestVPC\",\r\n\t\t\t\"EnableMulticast\": false,\r\n\t\t\t\"CidrBlock\": \"10.8.0.0/16\",\r\n                        \"TagSet\": [\r\n                           {\r\n                              \"Key\": \"city\",\r\n                              \"Value\": \"shanghai\"\r\n                          }\r\n                      ]\r\n\t\t}\r\n\t}\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpc\n&VpcName=TestVPC\n&CidrBlock=10.8.0.0/16\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Vpc\": \r\n      {\r\n        \"VpcId\": \"vpc-4tboefn3\",\r\n        \"VpcName\": \"TestVPC\",\r\n        \"CidrBlock\": \"10.8.0.0/16\",\r\n        \"Ipv6CidrBlock\": \"\",\r\n        \"IsDefault\": false,\r\n        \"EnableMulticast\": false,\r\n        \"CreatedTime\": \"2020-09-24 15:57:39\",\r\n        \"EnableDhcp\": true,\r\n        \"DhcpOptionsId\": \"dopt-5f5lzouo\",\r\n        \"DnsServerSet\": [\r\n          \"183.60.82.98\",\r\n          \"183.60.83.1\"\r\n        ],\r\n        \"DomainName\": \"\",\r\n        \"TagSet\": [],\r\n        \"AssistantCidrSet\": [\r\n          {\r\n            \"CidrBlock\": \"172.16.0.0/16\",\r\n            \"AssistantType\": 0,\r\n            \"SubnetSet\": []\r\n          }\r\n        ]\r\n      },\r\n   \r\n\r\n    \"RequestId\": \"680f4013-31a3-440a-bc09-fd9348a90900\"\r\n  }\r\n}",
         "title": "创建VPC"
       }
     ],
@@ -507,14 +507,14 @@
     "CreateVpnGateway": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGateway\r\n&Version=2017-03-12\r\n&VpcId=vpc-ngenl4az\r\n&VpnGatewayName=TEST_POSTPAID_VPNGW\r\n&InstanceChargeType=POSTPAID_BY_HOUR\r\n&InternetMaxBandwidthOut=5\r\n&Tags.0.Key=city\r\n&Tags.0.Value=shanghai\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"VpnGateway\": {\r\n            \"VpnGatewayId\": \"vpngw-rn2yn85v\",\r\n            \"VpcId\": \"vpc-ngenl4az\",\r\n            \"VpnGatewayName\": \"TEST_POSTPAID_VPNGW\",\r\n            \"State\": \"Pending\",\r\n            \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\r\n            \"Type\": \"IPSEC\"\r\n        },\r\n        \"RequestId\": \"1dede54a-bbad-4d7b-9110-c7cb1ed7c152\"\r\n    }\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGateway\n&VpcId=vpc-ngenl4az\n&VpnGatewayName=TEST_POSTPAID_VPNGW\n&InstanceChargeType=POSTPAID_BY_HOUR\n&InternetMaxBandwidthOut=5\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"VpnGateway\": {\r\n      \"VpcId\": \"vpc-ngenl4az\",\r\n      \"VpnGatewayId\": \"vpngw-test1234\",\r\n      \"VpnGatewayName\": \"TEST_POSTPAID_VPNGW\",\r\n      \"Type\": \"IPSEC\",\r\n      \"State\": \"AVAILABLE\",\r\n      \"PublicIpAddress\": \"xxx.xxx.xxx.xxx\",\r\n      \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\r\n      \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\r\n      \"InternetMaxBandwidthOut\": 5,\r\n      \"CreatedTime\": \"2020-10-13 19:03:26\",\r\n      \"ExpiredTime\": \"2020-12-13 19:04:54\",\r\n      \"IsAddressBlocked\": false,\r\n      \"NewPurchasePlan\": \"\",\r\n      \"RestrictState\": \"NORMAL\",\r\n      \"Zone\": \"ap-shanghai-1\",\r\n      \"Version\": \"ver2.0\",\r\n      \"NetworkInstanceId\": \"vpc-i9otxqn5\",\r\n      \"VpnGatewayQuotaSet\": [\r\n        {\r\n          \"Bandwidth\": 5,\r\n          \"Cname\": \"微小型\",\r\n          \"Name\": \"qcmini\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 50,\r\n          \"Cname\": \"大型\",\r\n          \"Name\": \"qclarge\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 200,\r\n          \"Cname\": \"超大型2\",\r\n          \"Name\": \"qcsuperLarge2\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 100,\r\n          \"Cname\": \"超大型\",\r\n          \"Name\": \"qcsuperLarge\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 500,\r\n          \"Cname\": \"超大型3\",\r\n          \"Name\": \"qcsuperLarge3\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 10,\r\n          \"Cname\": \"小型\",\r\n          \"Name\": \"qcsmall\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 20,\r\n          \"Cname\": \"中型\",\r\n          \"Name\": \"qcmiddle\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 1000,\r\n          \"Cname\": \"超大型4\",\r\n          \"Name\": \"qcsuperLarge4\"\r\n        }\r\n      ]\r\n    },\r\n    \"RequestId\": \"ea4bc0de-5093-423e-96ae-08f0fd4889be\"\r\n  }\r\n}",
         "title": "创建按量计费网关"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGateway\r\n&Version=2017-03-12\r\n&VpcId=vpc-5rkcp0wb\r\n&VpnGatewayName=TEST_PREPAID_VPNGW\r\n&InstanceChargeType=PREPAID\r\n&InternetMaxBandwidthOut=5\r\n&InstanceChargePrepaid.Period=1\r\n&Tags.0.Key=city\r\n&Tags.0.Value=shanghai\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"VpnGateway\": {\r\n            \"VpnGatewayId\": \"vpngw-97yhzme3\",\r\n            \"VpcId\": \"vpc-5rkcp0wb\",\r\n            \"VpnGatewayName\": \"TEST_PREPAID_VPNGW\",\r\n            \"State\": \"Pending\",\r\n            \"InstanceChargeType\": \"PREPAID\",\r\n            \"Type\": \"IPSEC\"\r\n        },\r\n        \"RequestId\": \"7e553bb7-5603-4b79-a9f5-ecfe37d9eb27\"\r\n    }\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGateway\n&VpcId=vpc-5rkcp0wb\n&VpnGatewayName=TEST_PREPAID_VPNGW\n&InstanceChargeType=PREPAID\n&InternetMaxBandwidthOut=5\n&InstanceChargePrepaid.Period=1\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"VpnGateway\": {\r\n      \"VpcId\": \"vpc-5rkcp0wb\",\r\n      \"VpnGatewayId\": \"vpngw-test1234\",\r\n      \"VpnGatewayName\": \"TEST_PREPAID_VPNGW\",\r\n      \"Type\": \"IPSEC\",\r\n      \"State\": \"AVAILABLE\",\r\n      \"PublicIpAddress\": \"xxx.xxx.xxx.xxx\",\r\n      \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\r\n      \"InstanceChargeType\": \"PREPAID\",\r\n      \"InternetMaxBandwidthOut\": 5,\r\n      \"CreatedTime\": \"2020-10-13 19:03:26\",\r\n      \"ExpiredTime\": \"2020-12-13 19:04:54\",\r\n      \"IsAddressBlocked\": false,\r\n      \"NewPurchasePlan\": \"\",\r\n      \"RestrictState\": \"NORMAL\",\r\n      \"Zone\": \"ap-shanghai-1\",\r\n      \"Version\": \"ver2.0\",\r\n      \"NetworkInstanceId\": \"vpc-i9otxqn5\",\r\n      \"VpnGatewayQuotaSet\": [\r\n        {\r\n          \"Bandwidth\": 5,\r\n          \"Cname\": \"微小型\",\r\n          \"Name\": \"qcmini\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 50,\r\n          \"Cname\": \"大型\",\r\n          \"Name\": \"qclarge\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 200,\r\n          \"Cname\": \"超大型2\",\r\n          \"Name\": \"qcsuperLarge2\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 100,\r\n          \"Cname\": \"超大型\",\r\n          \"Name\": \"qcsuperLarge\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 500,\r\n          \"Cname\": \"超大型3\",\r\n          \"Name\": \"qcsuperLarge3\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 10,\r\n          \"Cname\": \"小型\",\r\n          \"Name\": \"qcsmall\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 20,\r\n          \"Cname\": \"中型\",\r\n          \"Name\": \"qcmiddle\"\r\n        },\r\n        {\r\n          \"Bandwidth\": 1000,\r\n          \"Cname\": \"超大型4\",\r\n          \"Name\": \"qcsuperLarge4\"\r\n        }\r\n      ]\r\n    },\r\n    \"RequestId\": \"ea4bc0de-5093-423e-96ae-08f0fd4889be\"\r\n  }\r\n}",
         "title": "创建包年包月网关"
       }
     ],
@@ -969,7 +969,7 @@
     "DescribeGatewayFlowMonitorDetail": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGatewayFlowMonitorDetail\r\n&TimePoint=2019-02-28 18:15:20\r\n&NatId=nat-lz6rjk7n\r\n&Limit=5\r\n&OrderField=OutTraffic\r\n&OrderDirection=DESC\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGatewayFlowMonitorDetail\n&TimePoint=2019-02-28 18:15:20\n&NatId=nat-lz6rjk7n\n&Limit=5\n&OrderField=OutTraffic\n&OrderDirection=DESC\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"GatewayFlowMonitorDetailSet\": [\r\n      {\r\n        \"PrivateIpAddress\": \"172.20.65.74\",\r\n        \"InPkg\": 182,\r\n        \"OutPkg\": 263,\r\n        \"InTraffic\": 17316,\r\n        \"OutTraffic\": 35269\r\n      },\r\n      {\r\n        \"PrivateIpAddress\": \"172.20.65.63\",\r\n        \"InPkg\": 0,\r\n        \"OutPkg\": 20,\r\n        \"InTraffic\": 0,\r\n        \"OutTraffic\": 1960\r\n      },\r\n      {\r\n        \"PrivateIpAddress\": \"172.20.65.70\",\r\n        \"InPkg\": 0,\r\n        \"OutPkg\": 20,\r\n        \"InTraffic\": 0,\r\n        \"OutTraffic\": 1960\r\n      },\r\n      {\r\n        \"PrivateIpAddress\": \"172.20.65.172\",\r\n        \"InPkg\": 0,\r\n        \"OutPkg\": 20,\r\n        \"InTraffic\": 0,\r\n        \"OutTraffic\": 1960\r\n      },\r\n      {\r\n        \"PrivateIpAddress\": \"172.20.65.249\",\r\n        \"InPkg\": 0,\r\n        \"OutPkg\": 20,\r\n        \"InTraffic\": 0,\r\n        \"OutTraffic\": 1960\r\n      }\r\n    ],\r\n    \"TotalCount\": 261,\r\n    \"RequestId\": \"0fc9884d-7aa1-4d95-95d3-7945108d2b10\"\r\n  }\r\n}",
         "title": "查询一个NAT网关流量监控明细"
       }
@@ -1037,7 +1037,7 @@
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIpGeolocationDatabaseUrl\n&Type=ipv4\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"DownLoadUrl\":\"https:\\/\\/ip-address-repo-1255852779.cos.ap-guangzhou.myqcloud.com\\/tencent_ipv4_repo.tgz?q-sign-algorithm=sha1&q-ak=AKIDb5RbYFe5PcrwtkazVpxqX2MQIRM2xfy4&q-sign-time=1578970542;1579057002&q-key-time=1578970542;1579057002&q-header-list=&q-url-param-list=&q-signature=00f8d6ad0252822e17cca6450ebcd626eadc8405\",\r\n        \"ExpiredAt\":\"2020-01-15T10:56:42+00:00\",\r\n        \"RequestId\":\"21b41e67-8c0f-48cf-8af3-de0b6e1f4a4b\"\r\n    }\r\n}",
-        "title": "获取ipv4地址库下载链接"
+        "title": "获取ipv4地理位置库下载链接"
       }
     ],
     "DescribeIpGeolocationInfos": [
@@ -1383,13 +1383,13 @@
     "DisableRoutes": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DisableRoutes\r\n&<公共请求参数>\r\n&RouteTableId=rtb-9wzwlnhc\r\n&RouteIds.0=18292\r\n&RouteIds.1=18293",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DisableRoutes\n&RouteTableId=rtb-9wzwlnhc\n&RouteIds.0=18292\n&RouteIds.1=18293\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\r\n  }\r\n}",
         "title": "禁用子网路由"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DisableRoutes\r\n&<公共请求参数>\r\n&RouteTableId=rtb-12345678\r\n&RouteItemIds.0=rti-12345678",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DisableRoutes\n&RouteTableId=rtb-12345678\n&RouteItemIds.0=rti-12345678\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\r\n  }\r\n}",
         "title": "根据唯一ID禁用子网路由"
       }
@@ -1469,13 +1469,13 @@
     "EnableRoutes": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=EnableRoutes\r\n&<公共请求参数>\r\n&RouteTableId=rtb-9wzwlnhc\r\n&RouteIds.0=18292\r\n&RouteIds.1=18293",
+        "input": "https://vpc.tencentcloudapi.com/?Action=EnableRoutes\n&RouteTableId=rtb-9wzwlnhc\n&RouteIds.0=18292\n&RouteIds.1=18293\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\r\n  }\r\n}",
         "title": "启用子网路由"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=EnableRoutes\r\n&<公共请求参数>\r\n&RouteTableId=rtb-12345678\r\n&RouteItemIds.0=rti-12345678",
+        "input": "https://vpc.tencentcloudapi.com/?Action=EnableRoutes\n&RouteTableId=rtb-12345678\n&RouteItemIds.0=rti-12345678\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\r\n  }\r\n}",
         "title": "按照唯一ID启用子网路由"
       }
@@ -1607,14 +1607,14 @@
     "ModifyAssistantCidr": [
       {
         "document": "添加辅助CIDR：172.16.1.0/24。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAssistantCidr\r\n&Version=2017-03-12\r\n&VpcId=vpc-12345678\r\n&NewCidrBlocks.0=172.16.0.0/24\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"AssistantCidrSet\": [\r\n            {\r\n                \"VpcId\": \"vpc-12345678\",\r\n                \"CidrBlock\": \"172.16.0.0/24\",\r\n                \"AssistantType\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\r\n    }\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"AssistantCidrSet\": [\r\n      {\r\n        \"VpcId\": \"vpc-12345678\",\r\n        \"CidrBlock\": \"172.16.0.0/24\",\r\n        \"AssistantType\": 0,\r\n        \"SubnetSet\": [\r\n          {\r\n            \"VpcId\": \"vpc-12345678\",\r\n            \"SubnetId\": \"subnet-12345678\",\r\n            \"SubnetName\": \"xxx\",\r\n            \"CidrBlock\": \"10.0.4.0/24\",\r\n            \"Ipv6CidrBlock\": \"\",\r\n            \"IsDefault\": false,\r\n            \"IsRemoteVpcSnat\": false,\r\n            \"EnableBroadcast\": false,\r\n            \"Zone\": \"xx\",\r\n            \"RouteTableId\": \"rtb-xx\",\r\n            \"NetworkAclId\": \"\",\r\n            \"TotalIpAddressCount\": \"xx\",\r\n            \"AvailableIpAddressCount\": \"xx\",\r\n            \"CreatedTime\": \"xxxx-xx-xx xx:xx:xx\",\r\n            \"TagSet\": []\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\r\n  }\r\n}",
         "title": "仅修改辅助CIDR"
       },
       {
         "document": "添加辅助CIDR：172.16.1.0/24，同时删除辅助CIDR：172.16.0.0/24。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAssistantCidr\r\n&Version=2017-03-12\r\n&VpcId=vpc-12345678\r\n&NewCidrBlocks.0=172.16.1.0/24\r\n&OldCidrBlocks.0=172.16.0.0/24\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"AssistantCidrSet\": [\r\n            {\r\n                \"VpcId\": \"vpc-12345678\",\r\n                \"CidrBlock\": \"172.16.1.0/24\",\r\n                \"AssistantType\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\r\n    }\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.1.0/24\n&OldCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"AssistantCidrSet\": [\r\n      {\r\n        \"VpcId\": \"vpc-12345678\",\r\n        \"CidrBlock\": \"172.16.1.0/24\",\r\n        \"AssistantType\": 0,\r\n        \"SubnetSet\": [\r\n          {\r\n            \"VpcId\": \"vpc-12345678\",\r\n            \"SubnetId\": \"subnet-12345678\",\r\n            \"SubnetName\": \"xxx\",\r\n            \"CidrBlock\": \"10.0.4.0/24\",\r\n            \"Ipv6CidrBlock\": \"\",\r\n            \"IsDefault\": false,\r\n            \"IsRemoteVpcSnat\": false,\r\n            \"EnableBroadcast\": false,\r\n            \"Zone\": \"xx\",\r\n            \"RouteTableId\": \"rtb-xx\",\r\n            \"NetworkAclId\": \"\",\r\n            \"TotalIpAddressCount\": \"xx\",\r\n            \"AvailableIpAddressCount\": \"xx\",\r\n            \"CreatedTime\": \"xxxx-xx-xx xx:xx:xx\",\r\n            \"TagSet\": []\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\r\n  }\r\n}",
         "title": "修改（添加和删除）辅助CIDR"
       }
     ],

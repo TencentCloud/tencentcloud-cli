@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc CreateVpc --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --VpcName TestVPC \
     --CidrBlock 10.8.0.0/16 \
     --Tags.0.Key city \
@@ -17,19 +16,31 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
         "Vpc": {
             "VpcId": "vpc-4tboefn3",
             "VpcName": "TestVPC",
-            "EnableMulticast": false,
             "CidrBlock": "10.8.0.0/16",
-            "TagSet": [
+            "Ipv6CidrBlock": "",
+            "IsDefault": false,
+            "EnableMulticast": false,
+            "CreatedTime": "2020-09-24 15:57:39",
+            "EnableDhcp": true,
+            "DhcpOptionsId": "dopt-5f5lzouo",
+            "DnsServerSet": [
+                "183.60.82.98",
+                "183.60.83.1"
+            ],
+            "DomainName": "",
+            "TagSet": [],
+            "AssistantCidrSet": [
                 {
-                    "Key": "city",
-                    "Value": "shanghai"
+                    "CidrBlock": "172.16.0.0/16",
+                    "AssistantType": 0,
+                    "SubnetSet": []
                 }
             ]
-        }
+        },
+        "RequestId": "680f4013-31a3-440a-bc09-fd9348a90900"
     }
 }
 ```

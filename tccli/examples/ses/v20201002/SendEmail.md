@@ -9,7 +9,7 @@ tccli ses SendEmail --cli-unfold-argument  \
     --FromEmailAddress QCLOUDTEAM <noreply@mail.qcloud.com> \
     --ReplyToAddresses qcloud@tencent.com \
     --Destination user@example.com \
-    --Simple.Text HelloWorld \
+    --Simple.Text aGVsbG8gd29ybGQ= \
     --Subject YourTestSubject
 ```
 
@@ -34,8 +34,8 @@ tccli ses SendEmail --cli-unfold-argument  \
     --FromEmailAddress QCLOUDTEAM <noreply@mail.qcloud.com> \
     --ReplyToAddresses qcloud@tencent.com \
     --Destination user@example.com \
-    --Simple.Html <html><div>HelloWorld</div></html> \
-    --Simple.Text HelloWorld \
+    --Simple.Html PGh0bWw+PGRpdj5IZWxsb1dvcmxkPC9kaXY+PC9odG1sPg== \
+    --Simple.Text aGVsbG8gd29ybGQ= \
     --Subject YourTestSubject
 ```
 

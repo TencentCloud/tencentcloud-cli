@@ -14,8 +14,7 @@ Output:
 {
     "Response": {
         "MonitorTypes": [
-            "MT_QCE",
-            "MT_CUSTOM"
+            "MT_QCE"
         ],
         "RequestId": "d96ec542-6547-4af2-91ac-fee85c1b8b85"
     }

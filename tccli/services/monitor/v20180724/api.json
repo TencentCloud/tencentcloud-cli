@@ -6,6 +6,18 @@
       "name": "绑定策略对象",
       "output": "BindingPolicyObjectResponse"
     },
+    "CreateAlarmNotice": {
+      "document": "云监控告警创建告警通知模板",
+      "input": "CreateAlarmNoticeRequest",
+      "name": "创建告警通知模板",
+      "output": "CreateAlarmNoticeResponse"
+    },
+    "CreateAlarmPolicy": {
+      "document": "创建告警策略",
+      "input": "CreateAlarmPolicyRequest",
+      "name": "创建告警策略",
+      "output": "CreateAlarmPolicyResponse"
+    },
     "CreatePolicyGroup": {
       "document": "增加策略组",
       "input": "CreatePolicyGroupRequest",
@@ -17,6 +29,18 @@
       "input": "CreateServiceDiscoveryRequest",
       "name": "创建服务发现",
       "output": "CreateServiceDiscoveryResponse"
+    },
+    "DeleteAlarmNotices": {
+      "document": "云监控告警删除告警通知模板",
+      "input": "DeleteAlarmNoticesRequest",
+      "name": "删除告警通知模板（批量）",
+      "output": "DeleteAlarmNoticesResponse"
+    },
+    "DeleteAlarmPolicy": {
+      "document": "删除告警策略",
+      "input": "DeleteAlarmPolicyRequest",
+      "name": "删除告警策略",
+      "output": "DeleteAlarmPolicyResponse"
     },
     "DeletePolicyGroup": {
       "document": "删除告警策略组",
@@ -36,11 +60,53 @@
       "name": "获取平台事件列表",
       "output": "DescribeAccidentEventListResponse"
     },
+    "DescribeAlarmEvents": {
+      "document": "查询告警事件列表",
+      "input": "DescribeAlarmEventsRequest",
+      "name": "查询告警事件列表",
+      "output": "DescribeAlarmEventsResponse"
+    },
     "DescribeAlarmHistories": {
-      "document": "告警2.0-告警历史列表",
+      "document": "告警历史列表",
       "input": "DescribeAlarmHistoriesRequest",
-      "name": "告警2.0-告警历史列表",
+      "name": "告警历史列表",
       "output": "DescribeAlarmHistoriesResponse"
+    },
+    "DescribeAlarmMetrics": {
+      "document": "查询告警指标列表",
+      "input": "DescribeAlarmMetricsRequest",
+      "name": "查询告警指标列表",
+      "output": "DescribeAlarmMetricsResponse"
+    },
+    "DescribeAlarmNotice": {
+      "document": "云监控告警获取告警通知模板详情",
+      "input": "DescribeAlarmNoticeRequest",
+      "name": "获取告警通知模板详情",
+      "output": "DescribeAlarmNoticeResponse"
+    },
+    "DescribeAlarmNoticeCallbacks": {
+      "document": "云监控告警获取告警通知模板所有回调URL",
+      "input": "DescribeAlarmNoticeCallbacksRequest",
+      "name": "获取账号下所有回调URL列表",
+      "output": "DescribeAlarmNoticeCallbacksResponse"
+    },
+    "DescribeAlarmNotices": {
+      "document": "云监控告警查询告警通知模板列表",
+      "input": "DescribeAlarmNoticesRequest",
+      "name": "查询告警通知模板列表",
+      "output": "DescribeAlarmNoticesResponse"
+    },
+    "DescribeAlarmPolicies": {
+      "document": "告警策略列表",
+      "input": "DescribeAlarmPoliciesRequest",
+      "name": "告警策略列表",
+      "output": "DescribeAlarmPoliciesResponse"
+    },
+    "DescribeAlarmPolicy": {
+      "document": "告警策略详情",
+      "input": "DescribeAlarmPolicyRequest",
+      "name": "告警策略详情",
+      "output": "DescribeAlarmPolicyResponse"
     },
     "DescribeAllNamespaces": {
       "document": "拉取所有名字空间",
@@ -114,6 +180,42 @@
       "name": "拉取指标监控数据",
       "output": "GetMonitorDataResponse"
     },
+    "ModifyAlarmNotice": {
+      "document": "云监控告警编辑告警通知模板",
+      "input": "ModifyAlarmNoticeRequest",
+      "name": "编辑告警通知模板",
+      "output": "ModifyAlarmNoticeResponse"
+    },
+    "ModifyAlarmPolicyCondition": {
+      "document": "编辑告警策略触发条件",
+      "input": "ModifyAlarmPolicyConditionRequest",
+      "name": "编辑告警策略触发条件",
+      "output": "ModifyAlarmPolicyConditionResponse"
+    },
+    "ModifyAlarmPolicyInfo": {
+      "document": "告警2.0编辑告警策略基本信息，包括策略名、备注",
+      "input": "ModifyAlarmPolicyInfoRequest",
+      "name": "编辑告警策略基本信息",
+      "output": "ModifyAlarmPolicyInfoResponse"
+    },
+    "ModifyAlarmPolicyNotice": {
+      "document": "云监控告警修改告警策略绑定的告警通知模板",
+      "input": "ModifyAlarmPolicyNoticeRequest",
+      "name": "修改告警策略绑定的告警通知模板",
+      "output": "ModifyAlarmPolicyNoticeResponse"
+    },
+    "ModifyAlarmPolicyStatus": {
+      "document": "修改告警策略的启停状态",
+      "input": "ModifyAlarmPolicyStatusRequest",
+      "name": "修改告警策略状态",
+      "output": "ModifyAlarmPolicyStatusResponse"
+    },
+    "ModifyAlarmPolicyTasks": {
+      "document": "云监控告警修改告警策略的触发任务，TriggerTasks字段放触发任务列表，TriggerTasks传空数组时，代表解绑该策略的所有触发任务。",
+      "input": "ModifyAlarmPolicyTasksRequest",
+      "name": "修改告警策略的触发任务",
+      "output": "ModifyAlarmPolicyTasksResponse"
+    },
     "ModifyAlarmReceivers": {
       "document": "修改告警接收人",
       "input": "ModifyAlarmReceiversRequest",
@@ -137,6 +239,12 @@
       "input": "SendCustomAlarmMsgRequest",
       "name": "发送自定义消息告警",
       "output": "SendCustomAlarmMsgResponse"
+    },
+    "SetDefaultAlarmPolicy": {
+      "document": "设置一个策略为该告警策略类型、该项目的默认告警策略。\n同一项目下相同的告警策略类型，就会被设置为非默认。",
+      "input": "SetDefaultAlarmPolicyRequest",
+      "name": "设为默认告警策略",
+      "output": "SetDefaultAlarmPolicyResponse"
     },
     "UnBindingAllPolicyObject": {
       "document": "删除全部的关联对象",
@@ -164,6 +272,39 @@
     "serviceShortName": "monitor"
   },
   "objects": {
+    "AlarmEvent": {
+      "document": "告警事件",
+      "members": [
+        {
+          "default": "",
+          "document": "事件名",
+          "member": "string",
+          "name": "EventName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "展示的事件名",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警策略类型",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AlarmHistory": {
       "document": "告警历史数据",
       "members": [
@@ -355,9 +496,564 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略是否存在 0=不存在 1=存在",
+          "member": "int64",
+          "name": "PolicyExists",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "AlarmNotice": {
+      "document": "告警通知模板详情",
+      "members": [
+        {
+          "default": "",
+          "document": "告警通知模板 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警通知模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上次修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedBy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NoticeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UserNotice",
+          "name": "UserNotices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回调通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "URLNotice",
+          "name": "URLNotices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是系统预设通知模板 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsPreset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知语言 zh-CN=中文 en-US=英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NoticeLanguage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警通知模板绑定的告警策略ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmPolicy": {
+      "document": "告警策略详情",
+      "members": [
+        {
+          "default": "",
+          "document": "告警策略 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监控类型 MT_QCE=云产品监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启停状态 0=停用 1=启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略组绑定的实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "UseSum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目 Id -1=无项目 0=默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发条件模板 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConditionTemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmPolicyCondition",
+          "name": "Condition",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmPolicyEventCondition",
+          "name": "EventCondition",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知规则 id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NoticeIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知规则 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmNotice",
+          "name": "Notices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmPolicyTriggerTask",
+          "name": "TriggerTasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板策略组\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConditionsTemp",
+          "name": "ConditionsTemp",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后编辑的用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastEditUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InsertTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "namespace显示名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceShowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否默认策略，1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsDefault",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "能否设置默认策略，1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CanSetDefault",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InstanceGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例分组总实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InstanceSum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发条件类型 STATIC=静态阈值 DYNAMIC=动态类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于实例、实例组绑定和解绑接口（BindingPolicyObject、UnBindingAllPolicyObject、UnBindingPolicyObject）的策略 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmPolicyCondition": {
+      "document": "告警策略指标触发条件",
+      "members": [
+        {
+          "default": "",
+          "document": "指标触发与或条件，0=或，1=与\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsUnionRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警触发条件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmPolicyRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmPolicyEventCondition": {
+      "document": "告警策略事件触发条件",
+      "members": [
+        {
+          "default": "",
+          "document": "告警触发条件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmPolicyRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmPolicyFilter": {
+      "document": "告警策略过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件类型 DIMENSION=使用 Dimensions 做过滤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Dimensions",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmPolicyRule": {
+      "document": "告警策略触发条件",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "秒数 统计周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "英文运算符\nintelligent=无阈值智能检测\neq=等于\nge=大于等于\ngt=大于\nle=小于等于\nlt=小于\nne=不等于\nday_increase=天同比增长\nday_decrease=天同比下降\nday_wave=天同比波动\nweek_increase=周同比增长\nweek_decrease=周同比下降\nweek_wave=周同比波动\ncycle_increase=环比增长\ncycle_decrease=环比下降\ncycle_wave=环比波动\nre=正则匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "周期数 持续通知周期 1=持续1个周期 2=持续2个周期...\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ContinuePeriod",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "NoticeFrequency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警频率是否指数增长 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsPowerNotice",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对于单个触发规则的过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmPolicyFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标展示名，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单位，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Unit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmPolicyTriggerTask": {
+      "document": "告警策略触发任务",
+      "members": [
+        {
+          "default": "",
+          "document": "触发任务类型 AS=弹性伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用 json 表示配置信息 {\"Key1\":\"Value1\",\"Key2\":\"Value2\"}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BindingPolicyObjectDimension": {
       "document": "策略绑定实例维度信息",
@@ -528,6 +1224,232 @@
         }
       ],
       "usage": "out"
+    },
+    "ConditionsTemp": {
+      "document": "告警条件模版",
+      "members": [
+        {
+          "default": "",
+          "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmPolicyCondition",
+          "name": "Condition",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AlarmPolicyEventCondition",
+          "name": "EventCondition",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateAlarmNoticeRequest": {
+      "document": "CreateAlarmNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通知模板名称 60字符以内",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
+          "member": "string",
+          "name": "NoticeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通知语言 zh-CN=中文 en-US=英文",
+          "member": "string",
+          "name": "NoticeLanguage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户通知 最多5个",
+          "member": "UserNotice",
+          "name": "UserNotices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "回调通知 最多3个",
+          "member": "URLNotice",
+          "name": "URLNotices",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmNoticeResponse": {
+      "document": "CreateAlarmNotice返回参数结构体",
+      "members": [
+        {
+          "document": "告警通知模板ID",
+          "member": "string",
+          "name": "NoticeId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmPolicyRequest": {
+      "document": "CreateAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定值，为\"monitor\"",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略名称，不超过20字符",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监控类型 MT_QCE=云产品监控",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注，不超过100字符，仅支持中英文、数字、下划线、-",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用 0=停用 1=启用，可不传 默认为1",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目 Id -1=无项目 0=默认项目，可不传 默认为-1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指标触发条件",
+          "member": "AlarmPolicyCondition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "事件触发条件",
+          "member": "AlarmPolicyEventCondition",
+          "name": "EventCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "通知规则 Id 列表，由 DescribeAlarmNotices 获得",
+          "member": "string",
+          "name": "NoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "触发任务列表",
+          "member": "AlarmPolicyTriggerTask",
+          "name": "TriggerTasks",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmPolicyResponse": {
+      "document": "CreateAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "告警策略 ID",
+          "member": "string",
+          "name": "PolicyId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用于实例、实例组绑定和解绑接口（BindingPolicyObject、UnBindingAllPolicyObject、UnBindingPolicyObject）的策略 ID",
+          "member": "string",
+          "name": "OriginId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreatePolicyGroupCondition": {
       "document": "创建策略传入的阈值告警条件",
@@ -868,6 +1790,74 @@
       ],
       "usage": "out"
     },
+    "DeleteAlarmNoticesRequest": {
+      "document": "DeleteAlarmNotices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警通知模板id列表",
+          "member": "string",
+          "name": "NoticeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmNoticesResponse": {
+      "document": "DeleteAlarmNotices返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmPolicyRequest": {
+      "document": "DeleteAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定值 monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略 ID 列表",
+          "member": "string",
+          "name": "PolicyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmPolicyResponse": {
+      "document": "DeleteAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePolicyGroupRequest": {
       "document": "DeletePolicyGroup请求参数结构体",
       "members": [
@@ -1166,6 +2156,47 @@
       ],
       "type": "object"
     },
+    "DescribeAlarmEventsRequest": {
+      "document": "DescribeAlarmEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定值 monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmEventsResponse": {
+      "document": "DescribeAlarmEvents返回参数结构体",
+      "members": [
+        {
+          "document": "告警事件列表",
+          "member": "AlarmEvent",
+          "name": "Events",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAlarmHistoriesRequest": {
       "document": "DescribeAlarmHistories请求参数结构体",
       "members": [
@@ -1219,7 +2250,7 @@
         },
         {
           "default": "",
-          "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控 \"MT_CUSTOM\"=自定义监控 \"MT_PROME\"=prometheus监控",
+          "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控 \"",
           "member": "string",
           "name": "MonitorTypes",
           "required": false,
@@ -1243,7 +2274,7 @@
         },
         {
           "default": "",
-          "document": "根据项目ID过滤，-1=“-“项目 0=默认项目",
+          "document": "根据项目ID过滤，-1=无项目 0=默认项目",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -1342,6 +2373,434 @@
       ],
       "type": "object"
     },
+    "DescribeAlarmMetricsRequest": {
+      "document": "DescribeAlarmMetrics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定值，为\"monitor\"",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监控类型过滤 \"MT_QCE\"=云产品监控",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmMetricsResponse": {
+      "document": "DescribeAlarmMetrics返回参数结构体",
+      "members": [
+        {
+          "document": "告警指标列表",
+          "member": "Metric",
+          "name": "Metrics",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNoticeCallbacksRequest": {
+      "document": "DescribeAlarmNoticeCallbacks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNoticeCallbacksResponse": {
+      "document": "DescribeAlarmNoticeCallbacks返回参数结构体",
+      "members": [
+        {
+          "document": "告警回调通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "URLNotice",
+          "name": "URLNotices",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNoticeRequest": {
+      "document": "DescribeAlarmNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警通知模板 id",
+          "member": "string",
+          "name": "NoticeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNoticeResponse": {
+      "document": "DescribeAlarmNotice返回参数结构体",
+      "members": [
+        {
+          "document": "告警通知模板详细信息",
+          "member": "AlarmNotice",
+          "name": "Notice",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNoticesRequest": {
+      "document": "DescribeAlarmNotices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页码 最小为1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小 1～200",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按更新时间排序方式 ASC=正序 DESC=倒序",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主账号 uid 用于创建预设通知",
+          "member": "int64",
+          "name": "OwnerUid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警通知模板名称 用来模糊搜索",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据接收人过滤告警通知模板需要选定通知用户类型 USER=用户 GROUP=用户组 传空=不按接收人过滤",
+          "member": "string",
+          "name": "ReceiverType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接收对象列表",
+          "member": "int64",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "接收组列表",
+          "member": "int64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNoticesResponse": {
+      "document": "DescribeAlarmNotices返回参数结构体",
+      "members": [
+        {
+          "document": "告警通知模板总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警通知模板列表",
+          "member": "AlarmNotice",
+          "name": "Notices",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmPoliciesRequest": {
+      "document": "DescribeAlarmPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定值，为\"monitor\"",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页数，从 1 开始计数，默认 1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页的数量，取值1~100，默认20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按策略名称模糊搜索",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控",
+          "member": "string",
+          "name": "MonitorTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据命名空间过滤",
+          "member": "string",
+          "name": "Namespaces",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警对象列表",
+          "member": "string",
+          "name": "Dimensions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据接收人搜索",
+          "member": "int64",
+          "name": "ReceiverUids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据接收组搜索",
+          "member": "int64",
+          "name": "ReceiverGroups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "member": "string",
+          "name": "Field",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序顺序：升序：ASC  降序：DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目id数组",
+          "member": "int64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警通知id列表",
+          "member": "string",
+          "name": "NoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略",
+          "member": "string",
+          "name": "RuleTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "启停，1：启用   0：停止",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmPoliciesResponse": {
+      "document": "DescribeAlarmPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "策略总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "策略数组",
+          "member": "AlarmPolicy",
+          "name": "Policies",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmPolicyRequest": {
+      "document": "DescribeAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定值，为\"monitor\"",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略ID",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmPolicyResponse": {
+      "document": "DescribeAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "策略详情",
+          "member": "AlarmPolicy",
+          "name": "Policy",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAllNamespacesRequest": {
       "document": "DescribeAllNamespaces请求参数结构体",
       "members": [
@@ -1363,7 +2822,7 @@
         },
         {
           "default": "",
-          "document": "根据监控类型过滤 不填默认查所有类型 \"MT_QCE\"=云产品监控 \"MT_CUSTOM\"=自定义监控",
+          "document": "根据监控类型过滤 不填默认查所有类型 \"MT_QCE\"=云产品监控",
           "member": "string",
           "name": "MonitorTypes",
           "required": false,
@@ -1384,17 +2843,31 @@
       "document": "DescribeAllNamespaces返回参数结构体",
       "members": [
         {
-          "document": "云产品的名字空间",
+          "document": "云产品的告警策略类型，已废弃",
           "member": "CommonNamespace",
           "name": "QceNamespaces",
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "自定义监控的命名空间",
+          "document": "其他告警策略类型，已废弃",
           "member": "CommonNamespace",
           "name": "CustomNamespaces",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云产品的告警策略类型",
+          "member": "CommonNamespace",
+          "name": "QceNamespacesNew",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "其他告警策略类型，暂不支持",
+          "member": "CommonNamespace",
+          "name": "CustomNamespacesNew",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2032,7 +3505,7 @@
       "members": [
         {
           "default": "",
-          "document": "固定值，为\"monitor\"",
+          "document": "模块名，固定值 monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -2045,7 +3518,7 @@
       "document": "DescribeMonitorTypes返回参数结构体",
       "members": [
         {
-          "document": "监控类型",
+          "document": "监控类型，云产品监控为 MT_QCE",
           "member": "string",
           "name": "MonitorTypes",
           "type": "list",
@@ -4310,6 +5783,117 @@
       ],
       "usage": "out"
     },
+    "Metric": {
+      "document": "指标，可用于设置告警、查询数据",
+      "members": [
+        {
+          "default": "",
+          "document": "告警策略类型",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标名",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标展示名",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小值",
+          "member": "float",
+          "name": "Min",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大值",
+          "member": "float",
+          "name": "Max",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度列表",
+          "member": "string",
+          "name": "Dimensions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MetricConfig",
+          "name": "MetricConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MetricConfig": {
+      "document": "指标配置",
+      "members": [
+        {
+          "default": "",
+          "document": "允许使用的运算符",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许配置的数据周期，以秒为单位",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许配置的持续周期个数",
+          "member": "int64",
+          "name": "ContinuePeriod",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MetricDatum": {
       "document": "指标名称和值的封装",
       "members": [
@@ -4435,6 +6019,306 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyAlarmNoticeRequest": {
+      "document": "ModifyAlarmNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警通知规则名称 60字符以内",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
+          "member": "string",
+          "name": "NoticeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通知语言 zh-CN=中文 en-US=英文",
+          "member": "string",
+          "name": "NoticeLanguage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警通知模板 ID",
+          "member": "string",
+          "name": "NoticeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户通知 最多5个",
+          "member": "UserNotice",
+          "name": "UserNotices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "回调通知 最多3个",
+          "member": "URLNotice",
+          "name": "URLNotices",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmNoticeResponse": {
+      "document": "ModifyAlarmNotice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyConditionRequest": {
+      "document": "ModifyAlarmPolicyCondition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定值 monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略 ID",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标触发条件",
+          "member": "AlarmPolicyCondition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "事件触发条件",
+          "member": "AlarmPolicyEventCondition",
+          "name": "EventCondition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyConditionResponse": {
+      "document": "ModifyAlarmPolicyCondition返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyInfoRequest": {
+      "document": "ModifyAlarmPolicyInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略 ID",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的字段 NAME=策略名称 REMARK=策略备注",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改后的值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyInfoResponse": {
+      "document": "ModifyAlarmPolicyInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyNoticeRequest": {
+      "document": "ModifyAlarmPolicyNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略 ID",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警通知模板 ID 列表",
+          "member": "string",
+          "name": "NoticeIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyNoticeResponse": {
+      "document": "ModifyAlarmPolicyNotice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyStatusRequest": {
+      "document": "ModifyAlarmPolicyStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定值 monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略 ID",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启停状态 0=停用 1=启用",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyStatusResponse": {
+      "document": "ModifyAlarmPolicyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyTasksRequest": {
+      "document": "ModifyAlarmPolicyTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，这里填“monitor”",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略 ID",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略触发任务列表，空数据代表解绑",
+          "member": "AlarmPolicyTriggerTask",
+          "name": "TriggerTasks",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyTasksResponse": {
+      "document": "ModifyAlarmPolicyTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyAlarmReceiversRequest": {
       "document": "ModifyAlarmReceivers请求参数结构体",
@@ -5070,6 +6954,73 @@
       ],
       "usage": "out"
     },
+    "SetDefaultAlarmPolicyRequest": {
+      "document": "SetDefaultAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定值 monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略 ID",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetDefaultAlarmPolicyResponse": {
+      "document": "SetDefaultAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "URLNotice": {
+      "document": "云监控告警通知模板 - 回调通知详情",
+      "members": [
+        {
+          "default": "",
+          "document": "回调 url（限长256字符）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否通过验证 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsValid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "验证码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ValidationCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "UnBindingAllPolicyObjectRequest": {
       "document": "UnBindingAllPolicyObject请求参数结构体",
       "members": [
@@ -5218,6 +7169,111 @@
         }
       ],
       "type": "object"
+    },
+    "UserNotice": {
+      "document": "云监控告警通知模板 - 用户通知详情",
+      "members": [
+        {
+          "default": "",
+          "document": "接收者类型 USER=用户 GROUP=用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReceiverType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知开始时间 00:00:00 开始的秒数（取值范围0-86399）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知结束时间 00:00:00 开始的秒数（取值范围0-86399）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NoticeWay",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户 uid 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "UserIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户组 group id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话轮询列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PhoneOrder",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话轮询次数 （取值范围1-5）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PhoneCircleTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单次轮询内拨打间隔 秒数 （取值范围60-900）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PhoneInnerInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "两次轮询间隔 秒数（取值范围60-900）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PhoneCircleInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否需要触达通知 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "NeedPhoneArriveNotice",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

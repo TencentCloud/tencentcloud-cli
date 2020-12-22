@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "eac6b30c-a32x-493c-8e36-83b295459397",
+        "PackageBillMode": 201,
         "LivePackageInfoList": [
             {
                 "Id": "17",

@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli vpc CreateDefaultVpc --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc CreateDefaultVpc --cli-unfold-argument ```
 
 Output: 
 ```
@@ -29,9 +27,7 @@ Output:
 Input: 
 
 ```
-tccli vpc CreateDefaultVpc --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc CreateDefaultVpc --cli-unfold-argument ```
 
 Output: 
 ```
@@ -54,7 +50,6 @@ Input:
 
 ```
 tccli vpc CreateDefaultVpc --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --Force true
 ```
 

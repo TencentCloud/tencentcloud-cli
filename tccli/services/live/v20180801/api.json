@@ -2385,7 +2385,7 @@
       "members": [
         {
           "default": "",
-          "document": "模板名称，例：900 900p 仅支持字母和数字的组合。\n长度限制：\n  标准转码：1-10个字符\n  极速高清转码：3-10个字符",
+          "document": "模板名称，例： 900p 仅支持字母和数字的组合。\n长度限制：\n  标准转码：1-10个字符\n  极速高清转码：3-10个字符",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -4258,7 +4258,7 @@
       "members": [
         {
           "default": "",
-          "document": "包类型，可选值：\n0：流量包；\n1：转码包。",
+          "document": "包类型，可选值：\n0：流量包；\n1：转码包。\n2: 连麦包。",
           "member": "int64",
           "name": "PackageType",
           "required": true,
@@ -4275,6 +4275,13 @@
           "member": "LivePackageInfo",
           "name": "LivePackageInfoList",
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "套餐包当前计费方式:\n-1: 无计费方式或获取失败\n0: 无计费方式\n201: 月结带宽\n202: 月结流量\n203: 日结带宽\n204: 日结流量\n205: 日结时长\n206: 月结时长\n304: 日结流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PackageBillMode",
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -7095,7 +7102,7 @@
         },
         {
           "default": "",
-          "document": "使用量。\n注意：当为流量包时单位为字节。\n当为转码包时单位为分钟。",
+          "document": "使用量。\n注意：当为流量包时单位为字节。\n当为转码包时单位为分钟。\n当为连麦包时单位为小时。",
           "member": "int64",
           "name": "Used",
           "required": true,
@@ -7104,7 +7111,7 @@
         },
         {
           "default": "",
-          "document": "剩余量。\n注意：当为流量包时单位为字节。\n当为转码包时单位为分钟。",
+          "document": "剩余量。\n注意：当为流量包时单位为字节。\n当为转码包时单位为分钟。\n当为连麦包时单位为小时。",
           "member": "int64",
           "name": "Left",
           "required": true,
@@ -7131,7 +7138,7 @@
         },
         {
           "default": "",
-          "document": "包类型，可选值:\n0: 流量包。\n1: 普通转码包。\n2: 极速高清包。",
+          "document": "包类型，可选值:\n0: 流量包。\n1: 普通转码包。\n2: 极速高清包。\n3: 连麦包。",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -7140,7 +7147,7 @@
         },
         {
           "default": "",
-          "document": "包状态，可选值:\n0: 未使用。\n1: 使用中。\n2: 已过期。",
+          "document": "包状态，可选值:\n0: 未使用。\n1: 使用中。\n2: 已过期。\n3: 已冻结。\n4: 已耗尽。\n5: 已退款",
           "member": "int64",
           "name": "Status",
           "required": true,

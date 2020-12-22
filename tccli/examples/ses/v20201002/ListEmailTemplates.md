@@ -21,6 +21,7 @@ Output:
                 "TemplateID": 10091,
                 "CreatedTimestamp": 1607512575,
                 "TemplateName": "Test Template",
+                "ReviewReason": "通过",
                 "TemplateStatus": 0
             }
         ]

@@ -6,15 +6,8 @@ Input:
 
 ```
 tccli monitor DescribeAllNamespaces --cli-unfold-argument  \
-    --AppId 12312312 \
-    --Uin 123123123123 \
-    --SubAccountUin 12312312313 \
-    --Action DescribeAllNamespaces \
-    --Version 2018-07-24 \
-    --Region ap-guangzhou \
     --Module monitor \
-    --Language zh-CN \
-    --MonitorTypes MT_QCE MT_CUSTOM \
+    --MonitorTypes MT_QCE \
     --SceneType ST_ALARM
 ```
 
@@ -22,7 +15,17 @@ Output:
 ```
 {
     "Response": {
-        "QceNamespace": [
+        "QceNamespaces": {
+            "Id": "",
+            "Name": "",
+            "ProductName": "",
+            "Value": "",
+            "Config": "",
+            "AvailableRegions": [],
+            "DashboardId": "",
+            "SortId": 0
+        },
+        "QceNamespacesNew": [
             {
                 "Id": "xxxxxxx",
                 "Name": "专线接入-专用通道",
@@ -37,7 +40,17 @@ Output:
                 "SortId": 500
             }
         ],
-        "CustomNamespace": [
+        "CustomNamespaces": {
+            "Id": "",
+            "Name": "",
+            "ProductName": "",
+            "Value": "",
+            "Config": "",
+            "AvailableRegions": [],
+            "DashboardId": "",
+            "SortId": 0
+        },
+        "CustomNamespacesNew": [
             {
                 "Id": "=wenlong_sidecar",
                 "Name": "=wenlong_sidecar",

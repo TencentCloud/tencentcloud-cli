@@ -5777,6 +5777,15 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "强制跳转时是否返回增加的头部。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CarryHeaders",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7229,7 +7238,7 @@
         },
         {
           "default": "",
-          "document": "分路径回源配置规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回源路径重写规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PathRule",
           "name": "PathRules",
           "required": false,

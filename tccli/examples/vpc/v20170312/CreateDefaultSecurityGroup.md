@@ -11,14 +11,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestID": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
         "SecurityGroup": {
-            "SecurityGroupId": "sg-12345678",
-            "SecurityGroupName": "test",
-            "SecurityGroupDesc": "test",
-            "ProjectId": "0",
-            "CreateTime": "2018-01-13 19:26:33"
-        }
+            "SecurityGroupId": "sg-r0g2kty7",
+            "SecurityGroupName": "default",
+            "SecurityGroupDesc": "System created security group",
+            "ProjectId": 0,
+            "CreatedTime": "2020-01-10 11:37:52"
+        },
+        "RequestId": "727a8ab6-e15e-45db-8b8a-a95cb636a812"
     }
 }
 ```

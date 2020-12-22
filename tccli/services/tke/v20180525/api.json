@@ -294,6 +294,12 @@
       "name": "修改集群伸缩组属性",
       "output": "ModifyClusterAsGroupAttributeResponse"
     },
+    "ModifyClusterAsGroupOptionAttribute": {
+      "document": "修改集群弹性伸缩属性",
+      "input": "ModifyClusterAsGroupOptionAttributeRequest",
+      "name": "修改集群弹性伸缩属性",
+      "output": "ModifyClusterAsGroupOptionAttributeResponse"
+    },
     "ModifyClusterAttribute": {
       "document": "修改集群属性",
       "input": "ModifyClusterAttributeRequest",
@@ -389,7 +395,7 @@
         },
         {
           "default": "",
-          "document": "实例列表",
+          "document": "实例列表，不支持竞价实例",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -434,6 +440,14 @@
           "name": "HostName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池选项",
+          "member": "NodePoolOption",
+          "name": "NodePool",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4313,6 +4327,40 @@
       ],
       "type": "object"
     },
+    "ModifyClusterAsGroupOptionAttributeRequest": {
+      "document": "ModifyClusterAsGroupOptionAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群弹性伸缩属性",
+          "member": "ClusterAsGroupOption",
+          "name": "ClusterAsGroupOption",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterAsGroupOptionAttributeResponse": {
+      "document": "ModifyClusterAsGroupOptionAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterAttributeRequest": {
       "document": "ModifyClusterAttribute请求参数结构体",
       "members": [
@@ -4484,6 +4532,22 @@
           "name": "EnableAutoscale",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "操作系统名称",
+          "member": "string",
+          "name": "OsName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)",
+          "member": "string",
+          "name": "OsCustomizeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4722,6 +4786,39 @@
         }
       ],
       "usage": "out"
+    },
+    "NodePoolOption": {
+      "document": "加入存量节点时的节点池选项",
+      "members": [
+        {
+          "default": "",
+          "document": "是否加入节点池",
+          "member": "bool",
+          "name": "AddToNodePool",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点池id",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否继承节点池相关配置",
+          "member": "bool",
+          "name": "InheritConfigurationFromNodePool",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "PrometheusAgentOverview": {
       "document": "托管prometheus agent概览",

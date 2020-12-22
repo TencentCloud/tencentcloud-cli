@@ -437,8 +437,8 @@
     "DescribeLivePackageInfo": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLivePackageInfo\r\n&PackageType=0\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"eac6b30c-a32x-493c-8e36-83b295459397\",\r\n        \"LivePackageInfoList\":[\r\n            {\r\n                \"Id\":\"17\",\r\n                \"Total\":10000,\r\n                \"Used\":3000,\r\n                \"Left\":7000,\r\n                \"Status\":1,\r\n                \"BuyTime\":\"2019-12-17 17:36:20\",\r\n                \"ExpireTime\":\"2020-12-17 17:36:20\",\r\n                \"Type\": 0\r\n            }\r\n        ]\r\n    }\r\n}",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLivePackageInfo\n&PackageType=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"eac6b30c-a32x-493c-8e36-83b295459397\",\r\n        \"PackageBillMode\": 201,\r\n        \"LivePackageInfoList\":[\r\n            {\r\n                \"Id\":\"17\",\r\n                \"Total\":10000,\r\n                \"Used\":3000,\r\n                \"Left\":7000,\r\n                \"Status\":1,\r\n                \"BuyTime\":\"2019-12-17 17:36:20\",\r\n                \"ExpireTime\":\"2020-12-17 17:36:20\",\r\n                \"Type\": 0\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "查询直播套餐包信息"
       }
     ],

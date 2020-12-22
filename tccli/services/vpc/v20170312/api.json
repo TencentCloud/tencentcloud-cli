@@ -181,7 +181,7 @@
       "output": "CreateCustomerGatewayResponse"
     },
     "CreateDefaultSecurityGroup": {
-      "document": "本接口（CreateDefaultSecurityGroup）用于创建（如果项目下未存在默认安全组，则创建；已存在则获取。）默认安全组（SecurityGroup）。\n* 每个账户下每个地域的每个项目的<a href=\"https://cloud.tencent.com/document/product/213/12453\">安全组数量限制</a>。\n* 新建的安全组的入站和出站规则默认都是全部拒绝，在创建后通常您需要再调用CreateSecurityGroupPolicies将安全组的规则设置为需要的规则。\n* 创建安全组同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
+      "document": "本接口（CreateDefaultSecurityGroup）用于创建（如果项目下未存在默认安全组，则创建；已存在则获取。）默认安全组（SecurityGroup）。\n* 每个账户下每个地域的每个项目的<a href=\"https://cloud.tencent.com/document/product/213/12453\">安全组数量限制</a>。\n* 默认安全组会放通所有IPv4规则，在创建后通常您需要再调用CreateSecurityGroupPolicies将安全组的规则设置为需要的规则。\n* 创建安全组同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
       "input": "CreateDefaultSecurityGroupRequest",
       "name": "创建默认安全组",
       "output": "CreateDefaultSecurityGroupResponse"
@@ -313,7 +313,7 @@
       "output": "CreateSubnetsResponse"
     },
     "CreateVpc": {
-      "document": "本接口(CreateVpc)用于创建私有网络(VPC)。\n* 用户可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）,如果规划VPC网段请参见VPC网段规划说明。\n* 同一个地域能创建的VPC资源个数也是有限制的，详见 <a href=\"https://cloud.tencent.com/doc/product/215/537\" title=\"VPC使用限制\">VPC使用限制</a>,如果需要扩充请联系在线客服。\n* 创建VPC同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
+      "document": "本接口(CreateVpc)用于创建私有网络(VPC)。\n* 用户可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址），如果需要规划VPC网段请参见[网络规划](https://cloud.tencent.com/document/product/215/30313)。\n* 同一个地域能创建的VPC资源个数也是有限制的，详见 <a href=\"https://cloud.tencent.com/doc/product/215/537\" title=\"VPC使用限制\">VPC使用限制</a>，如果需要申请更多资源，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。\n* 创建VPC同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
       "input": "CreateVpcRequest",
       "name": "创建VPC",
       "output": "CreateVpcResponse"
@@ -631,7 +631,7 @@
       "output": "DescribeFlowLogsResponse"
     },
     "DescribeGatewayFlowMonitorDetail": {
-      "document": "本接口（DescribeGatewayFlowMonitorDetail）用于查询网关流量监控明细。\n* 只支持单个网关实例查询。即入参 `VpnId` `DirectConnectGatewayId` `PeeringConnectionId` `NatId` 最多只支持传一个，且必须传一个。\n* 如果网关有流量，但调用本接口没有返回数据，请在控制台对应网关详情页确认是否开启网关流量监控。",
+      "document": "本接口（DescribeGatewayFlowMonitorDetail）用于查询网关流量监控明细。\n* 只支持单个网关实例查询。即入参 `VpnId`、 `DirectConnectGatewayId`、 `PeeringConnectionId`、 `NatId` 最多只支持传一个，且必须传一个。\n* 如果网关有流量，但调用本接口没有返回数据，请在控制台对应网关详情页确认是否开启网关流量监控。",
       "input": "DescribeGatewayFlowMonitorDetailRequest",
       "name": "查询网关流量监控明细",
       "output": "DescribeGatewayFlowMonitorDetailResponse"
@@ -667,7 +667,7 @@
       "output": "DescribeIp6TranslatorsResponse"
     },
     "DescribeIpGeolocationDatabaseUrl": {
-      "document": "该接口用于获取ip地理位置库下载链接",
+      "document": "本接口（DescribeIpGeolocationDatabaseUrl）用于获取IP地理位置库下载链接。",
       "input": "DescribeIpGeolocationDatabaseUrlRequest",
       "name": "获取IP地理位置库下载链接",
       "output": "DescribeIpGeolocationDatabaseUrlResponse"
@@ -4012,7 +4012,7 @@
       "members": [
         {
           "default": "",
-          "document": "子网所在的可用区ID，不指定将随机选择可用区",
+          "document": "子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -4020,7 +4020,7 @@
         },
         {
           "default": "",
-          "document": "是否强制返回默认VPC",
+          "document": "是否强制返回默认VPC。",
           "member": "bool",
           "name": "Force",
           "required": false,
@@ -5202,7 +5202,7 @@
         },
         {
           "default": "",
-          "document": "vpc的cidr，只能为10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。",
+          "document": "vpc的cidr，仅能在10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
@@ -5218,7 +5218,7 @@
         },
         {
           "default": "",
-          "document": "DNS地址，最多支持4个",
+          "document": "DNS地址，最多支持4个。",
           "member": "string",
           "name": "DnsServers",
           "required": false,
@@ -5226,7 +5226,7 @@
         },
         {
           "default": "",
-          "document": "域名",
+          "document": "DHCP使用的域名。",
           "member": "string",
           "name": "DomainName",
           "required": false,
@@ -5234,7 +5234,7 @@
         },
         {
           "default": "",
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -5364,7 +5364,7 @@
       "members": [
         {
           "default": "",
-          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -8085,7 +8085,7 @@
           "type": "int"
         },
         {
-          "default": "OutTraffic",
+          "default": "",
           "document": "排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。",
           "member": "string",
           "name": "OrderField",
@@ -8093,7 +8093,7 @@
           "type": "string"
         },
         {
-          "default": "DESC",
+          "default": "",
           "document": "排序方法。顺序：`ASC`，倒序：`DESC`。",
           "member": "string",
           "name": "OrderDirection",
@@ -8423,7 +8423,7 @@
       "members": [
         {
           "default": "",
-          "document": "ip地址库协议类型，目前支持\"ipv4\"和\"ipv6\"。",
+          "document": "IP地理位置库协议类型，目前支持\"ipv4\"和\"ipv6\"。",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -8436,7 +8436,7 @@
       "document": "DescribeIpGeolocationDatabaseUrl返回参数结构体",
       "members": [
         {
-          "document": "IP地址库下载链接地址",
+          "document": "IP地理位置库下载链接地址。",
           "member": "string",
           "name": "DownLoadUrl",
           "type": "string",
@@ -10489,7 +10489,7 @@
         },
         {
           "default": "",
-          "document": "路由策略ID。不能和RouteItemIds同时使用。",
+          "document": "路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
           "member": "uint64",
           "name": "RouteIds",
           "required": false,
@@ -10497,7 +10497,7 @@
         },
         {
           "default": "",
-          "document": "路由策略唯一ID。不能和RouteIds同时使用。",
+          "document": "路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
           "member": "string",
           "name": "RouteItemIds",
           "required": false,
@@ -10859,7 +10859,7 @@
         },
         {
           "default": "",
-          "document": "路由策略ID。不能和RouteItemIds同时使用。",
+          "document": "路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
           "member": "uint64",
           "name": "RouteIds",
           "required": false,
@@ -10867,7 +10867,7 @@
         },
         {
           "default": "",
-          "document": "路由策略唯一ID。不能和RouteIds同时使用。",
+          "document": "路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
           "member": "string",
           "name": "RouteItemIds",
           "required": false,
@@ -12564,7 +12564,7 @@
         },
         {
           "default": "",
-          "document": "待添加的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]",
+          "document": "待添加的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]，入参NewCidrBlocks和OldCidrBlocks至少需要其一。",
           "member": "string",
           "name": "NewCidrBlocks",
           "required": false,
@@ -12572,7 +12572,7 @@
         },
         {
           "default": "",
-          "document": "待删除的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]",
+          "document": "待删除的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]，入参NewCidrBlocks和OldCidrBlocks至少需要其一。",
           "member": "string",
           "name": "OldCidrBlocks",
           "required": false,
@@ -16215,7 +16215,7 @@
         },
         {
           "default": "",
-          "document": "数据库实例数。",
+          "document": "MySQL数据库实例数。",
           "member": "uint64",
           "name": "CDB",
           "required": true,
