@@ -314,6 +314,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeCallbackRecordsList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallbackRecordsList\n<公共请求参数>\n\n{\"StreamName\": \"57ac8fa12d1c165827d56ecba292673\",\"StartTime\":\"2020-10-12 00:00:00\",\"EndTime\":\"2020-10-12 00:10:00\",\"PageNum\": 1,\"PageSize\": 10}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"PageNum\": 1,\r\n\t\t\"PageSize\": 10,\r\n\t\t\"TotalNum\": 11,\r\n\t\t\"TotalPage\": 2,\r\n                \"RequestId\": \"xx\", \r\n\t\t\"DataInfoList\": [{\r\n\t\t\t\"EventTime\": \"2020-10-12 00:32:10\",\r\n\t\t\t\"EventType\": 0,\r\n\t\t\t\"Request\": \"opensso++server%3D10.12.1.1%3A\",\r\n\t\t\t\"Response\": \"status+code%3A200%2C+content%3DSuccess\",\r\n\t\t\t\"ResponseTime\": \"2020-10-12 00:32:11\",\r\n\t\t\t\"ResultCode\": 0,\r\n\t\t\t\"StreamId\": \"57ac8fa12d1c165827d56ecba292673\"\r\n\t\t}, {\r\n\t\t\t\"EventTime\": \"2020-10-12 00:30:35\",\r\n\t\t\t\"EventType\": 0,\r\n\t\t\t\"Request\": \"opensso++server%3D10.12.6.7%3A\",\r\n\t\t\t\"Response\": \"status+code%3A200%2C+content%3DSuccess\",\r\n\t\t\t\"ResponseTime\": \"2020-10-12 00:30:36\",\r\n\t\t\t\"ResultCode\": 0,\r\n\t\t\t\"StreamId\": \"57ac8fa12d1c165827d56ecba292673\"\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeConcurrentRecordStreamNum": [
       {
         "document": "",

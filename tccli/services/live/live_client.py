@@ -2063,6 +2063,31 @@ def doDescribeLiveDomainPlayInfoList(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCallbackRecordsList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCallbackRecordsListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCallbackRecordsList(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateLiveRecordRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2781,6 +2806,7 @@ ACTION_MAP = {
     "AddLiveDomain": doAddLiveDomain,
     "DescribeDeliverBandwidthList": doDescribeDeliverBandwidthList,
     "DescribeLiveDomainPlayInfoList": doDescribeLiveDomainPlayInfoList,
+    "DescribeCallbackRecordsList": doDescribeCallbackRecordsList,
     "CreateLiveRecordRule": doCreateLiveRecordRule,
     "DescribeLiveWatermark": doDescribeLiveWatermark,
     "DescribeLiveTranscodeTemplates": doDescribeLiveTranscodeTemplates,

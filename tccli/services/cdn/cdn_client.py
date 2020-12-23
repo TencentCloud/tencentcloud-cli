@@ -388,6 +388,31 @@ def doCreateVerifyRecord(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeScdnConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeScdnConfigRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeScdnConfig(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSearchClsLog(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -480,6 +505,31 @@ def doDuplicateDomainConfig(args, parsed_globals):
     model = models.DuplicateDomainConfigRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DuplicateDomainConfig(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStopScdnDomain(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopScdnDomainRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.StopScdnDomain(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -805,6 +855,31 @@ def doDescribeCdnIp(args, parsed_globals):
     model = models.DescribeCdnIpRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeCdnIp(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStartScdnDomain(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StartScdnDomainRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.StartScdnDomain(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1313,6 +1388,31 @@ def doEnableClsLogTopic(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doListScdnDomains(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListScdnDomainsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ListScdnDomains(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeReportData(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1439,10 +1539,12 @@ ACTION_MAP = {
     "DisableCaches": doDisableCaches,
     "DescribeDomains": doDescribeDomains,
     "CreateVerifyRecord": doCreateVerifyRecord,
+    "DescribeScdnConfig": doDescribeScdnConfig,
     "SearchClsLog": doSearchClsLog,
     "CreateDiagnoseUrl": doCreateDiagnoseUrl,
     "StartCdnDomain": doStartCdnDomain,
     "DuplicateDomainConfig": doDuplicateDomainConfig,
+    "StopScdnDomain": doStopScdnDomain,
     "DescribeDiagnoseReport": doDescribeDiagnoseReport,
     "ListDiagnoseReport": doListDiagnoseReport,
     "DescribePurgeQuota": doDescribePurgeQuota,
@@ -1456,6 +1558,7 @@ ACTION_MAP = {
     "ListTopData": doListTopData,
     "DescribeOriginData": doDescribeOriginData,
     "DescribeCdnIp": doDescribeCdnIp,
+    "StartScdnDomain": doStartScdnDomain,
     "PurgePathCache": doPurgePathCache,
     "DescribeUrlViolations": doDescribeUrlViolations,
     "PurgeUrlsCache": doPurgeUrlsCache,
@@ -1476,6 +1579,7 @@ ACTION_MAP = {
     "UpdateScdnDomain": doUpdateScdnDomain,
     "DescribePushTasks": doDescribePushTasks,
     "EnableClsLogTopic": doEnableClsLogTopic,
+    "ListScdnDomains": doListScdnDomains,
     "DescribeReportData": doDescribeReportData,
     "DescribeDistrictIspData": doDescribeDistrictIspData,
     "UpdatePayType": doUpdatePayType,

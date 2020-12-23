@@ -180,6 +180,12 @@
       "name": "查询报表数据",
       "output": "DescribeReportDataResponse"
     },
+    "DescribeScdnConfig": {
+      "document": "DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置",
+      "input": "DescribeScdnConfigRequest",
+      "name": "SCDN域名配置",
+      "output": "DescribeScdnConfigResponse"
+    },
     "DescribeScdnTopData": {
       "document": "获取SCDN的Top数据",
       "input": "DescribeScdnTopDataRequest",
@@ -252,6 +258,12 @@
       "name": "获取诊断任务列表",
       "output": "ListDiagnoseReportResponse"
     },
+    "ListScdnDomains": {
+      "document": "ListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息",
+      "input": "ListScdnDomainsRequest",
+      "name": "查询SCDN域名列表",
+      "output": "ListScdnDomainsResponse"
+    },
     "ListScdnLogTasks": {
       "document": "ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息",
       "input": "ListScdnLogTasksRequest",
@@ -300,11 +312,23 @@
       "name": "启用加速域名",
       "output": "StartCdnDomainResponse"
     },
+    "StartScdnDomain": {
+      "document": "StartScdnDomain 用于开启域名的安全防护配置",
+      "input": "StartScdnDomainRequest",
+      "name": "启动SCDN域名安全防护",
+      "output": "StartScdnDomainResponse"
+    },
     "StopCdnDomain": {
       "document": "StopCdnDomain 用于停止域名的加速服务。\n注意：停止加速服务后，访问至加速节点的请求将会直接返回 404。为避免对您的业务造成影响，请在停止加速服务前将解析切走。",
       "input": "StopCdnDomainRequest",
       "name": "停用加速域名",
       "output": "StopCdnDomainResponse"
+    },
+    "StopScdnDomain": {
+      "document": "StopScdnDomain 用于关闭域名的安全防护配置",
+      "input": "StopScdnDomainRequest",
+      "name": "停止SCDN域名安全防护",
+      "output": "StopScdnDomainResponse"
     },
     "UpdateDomainConfig": {
       "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。",
@@ -4358,6 +4382,67 @@
       ],
       "type": "object"
     },
+    "DescribeScdnConfigRequest": {
+      "document": "DescribeScdnConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScdnConfigResponse": {
+      "document": "DescribeScdnConfig返回参数结构体",
+      "members": [
+        {
+          "document": "自定义防护策略配置",
+          "member": "ScdnAclConfig",
+          "name": "Acl",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Web 攻击防护（WAF）配置",
+          "member": "ScdnWafConfig",
+          "name": "Waf",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CC 防护配置",
+          "member": "ScdnConfig",
+          "name": "CC",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DDOS 防护配置",
+          "member": "ScdnDdosConfig",
+          "name": "Ddos",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "BOT 防护配置",
+          "member": "ScdnBotConfig",
+          "name": "Bot",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScdnTopDataRequest": {
       "document": "DescribeScdnTopData请求参数结构体",
       "members": [
@@ -6576,6 +6661,54 @@
       ],
       "type": "object"
     },
+    "ListScdnDomainsRequest": {
+      "document": "ListScdnDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页起始地址",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "列表分页记录条数，最大1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListScdnDomainsResponse": {
+      "document": "ListScdnDomains返回参数结构体",
+      "members": [
+        {
+          "document": "域名列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ScdnDomain",
+          "name": "DomainList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "域名的总条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListScdnLogTasksRequest": {
       "document": "ListScdnLogTasks请求参数结构体",
       "members": [],
@@ -8708,6 +8841,93 @@
       ],
       "usage": "both"
     },
+    "ScdnDomain": {
+      "document": "聚合了SCDN域名的基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前状态，取值online | offline | process",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Waf 状态默认为‘/’，取值 close | intercept | observe",
+          "member": "string",
+          "name": "Waf",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Acl 状态默认为‘/’，取值 close | open",
+          "member": "string",
+          "name": "Acl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CC 状态默认为‘/’，取值 close | open",
+          "member": "string",
+          "name": "CC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ddos 状态默认为‘/’，取值 close | open",
+          "member": "string",
+          "name": "Ddos",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Acl 规则数",
+          "member": "uint64",
+          "name": "AclRuleNumbers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Bot 状态默认为‘/’，取值 close | open",
+          "member": "string",
+          "name": "Bot",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ScdnErrorPage": {
       "document": "acl的错误页面",
       "members": [
@@ -9440,6 +9660,39 @@
       ],
       "type": "object"
     },
+    "StartScdnDomainRequest": {
+      "document": "StartScdnDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartScdnDomainResponse": {
+      "document": "StartScdnDomain返回参数结构体",
+      "members": [
+        {
+          "document": "开启结果，Success表示成功",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StatusCodeCache": {
       "document": "状态码缓存过期配置，默认情况下会对 404 状态码缓存 10 秒",
       "members": [
@@ -9505,6 +9758,39 @@
     "StopCdnDomainResponse": {
       "document": "StopCdnDomain返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopScdnDomainRequest": {
+      "document": "StopScdnDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopScdnDomainResponse": {
+      "document": "StopScdnDomain返回参数结构体",
+      "members": [
+        {
+          "document": "关闭结果，Success表示成功",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

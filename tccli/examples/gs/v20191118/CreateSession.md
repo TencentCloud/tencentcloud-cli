@@ -16,9 +16,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4eb17e58-68da-4e9a-b298-0894723c9022",
-        "RoleNumber": "Player0",
-        "ServerSession": "xyz"
+        "RoleNumber": "xx",
+        "ServerSession": "xx",
+        "Role": "xx",
+        "RequestId": "xx",
+        "PlayersMax": 1
     }
 }
 ```

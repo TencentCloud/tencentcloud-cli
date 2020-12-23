@@ -7257,6 +7257,14 @@
           "name": "GroupResourceTypeList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "部署组状态过滤字段",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

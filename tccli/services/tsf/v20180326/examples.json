@@ -547,7 +547,7 @@
     "DescribeGroups": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroups\r\n&ApplicationId=application-xxxxxxx\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroups\n&ApplicationId=application-xxxxxxx\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"4bf8bc01-2786-4341-be2b-c6610556026e\",\r\n    \"Result\": {\r\n      \"TotalCount\": 1,\r\n      \"Content\": [\r\n        {\r\n          \"ApplicationType\": \"V\",\r\n          \"MicroserviceType\": \"N\",\r\n          \"GroupId\": \"group-xxxxxxx\",\r\n          \"ClusterId\": \"cluster-xxxxxxx\",\r\n          \"Operator\": null,\r\n          \"StartupParameters\": \"-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m\",\r\n          \"ClusterName\": \"test\",\r\n          \"Action\": \"DescribeGroups\",\r\n          \"ApplicationName\": \"test1\",\r\n          \"NamespaceName\": \"test2\",\r\n          \"GroupDesc\": null,\r\n          \"UpdateTime\": \"2019-03-11 16:51:55\",\r\n          \"GroupName\": \"test\",\r\n          \"NamespaceId\": \"namespace-xxxxxxx\",\r\n          \"CreateTime\": \"2019-03-11 16:51:55\",\r\n          \"ApplicationId\": \"application-xxxxxxx\",\r\n          \"ProjectId\": null\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
         "title": "获取虚拟机部署组列表"
       }

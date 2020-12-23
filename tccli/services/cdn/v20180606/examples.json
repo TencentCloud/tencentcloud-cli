@@ -240,6 +240,14 @@
         "title": "查询报表数据"
       }
     ],
+    "DescribeScdnConfig": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnConfig\n&Domain=www.test.com\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"CC\": {\r\n            \"Rules\": [\r\n                {\r\n                    \"FrequencyLimit\": 1, \r\n                    \"RuleType\": \"xx\", \r\n                    \"DetectionTime\": 1, \r\n                    \"RuleValue\": [\r\n                        \"xx\"\r\n                    ], \r\n                    \"PunishmentTime\": 1, \r\n                    \"RedirectUrl\": \"xx\", \r\n                    \"Action\": \"xx\", \r\n                    \"Qps\": 1, \r\n                    \"PunishmentSwitch\": \"xx\"\r\n                }\r\n            ], \r\n            \"Switch\": \"xx\"\r\n        }, \r\n        \"Waf\": {\r\n            \"Rules\": [\r\n                {\r\n                    \"Operate\": \"xx\", \r\n                    \"AttackType\": \"xx\"\r\n                }\r\n            ], \r\n            \"WebShellSwitch\": \"xx\", \r\n            \"Switch\": \"xx\", \r\n            \"ErrorPage\": {\r\n                \"RedirectUrl\": \"xx\", \r\n                \"RedirectCode\": 0\r\n            }, \r\n            \"Mode\": \"xx\"\r\n        }, \r\n        \"Bot\": {\r\n            \"Switch\": \"xx\", \r\n            \"BotJavaScript\": [\r\n                {\r\n                    \"RuleType\": \"xx\", \r\n                    \"RuleValue\": [\r\n                        \"xx\"\r\n                    ], \r\n                    \"UpdateTime\": \"2020-09-22 00:00:00\", \r\n                    \"RedirectUrl\": \"xx\", \r\n                    \"Switch\": \"xx\", \r\n                    \"Action\": \"xx\"\r\n                }\r\n            ], \r\n            \"BotCookie\": [\r\n                {\r\n                    \"RuleType\": \"xx\", \r\n                    \"RuleValue\": [\r\n                        \"xx\"\r\n                    ], \r\n                    \"UpdateTime\": \"2020-09-22 00:00:00\", \r\n                    \"RedirectUrl\": \"xx\", \r\n                    \"Switch\": \"xx\", \r\n                    \"Action\": \"xx\"\r\n                }\r\n            ]\r\n        }, \r\n        \"Acl\": {\r\n            \"Switch\": \"xx\", \r\n            \"ScriptData\": [\r\n                {\r\n                    \"Status\": \"xx\", \r\n                    \"Configure\": [\r\n                        {\r\n                            \"MatchKey\": \"xx\", \r\n                            \"MatchValue\": \"xx\", \r\n                            \"LogiOperator\": \"xx\"\r\n                        }\r\n                    ], \r\n                    \"Result\": \"xx\", \r\n                    \"RuleName\": \"xx\"\r\n                }\r\n            ], \r\n            \"ErrorPage\": {\r\n                \"RedirectUrl\": \"xx\", \r\n                \"RedirectCode\": 0\r\n            }\r\n        }, \r\n        \"Ddos\": {\r\n            \"Switch\": \"xx\"\r\n        }, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询SCDN域名配置"
+      }
+    ],
     "DescribeScdnTopData": [
       {
         "document": "",
@@ -336,6 +344,14 @@
         "title": "获取诊断任务列表"
       }
     ],
+    "ListScdnDomains": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnDomains\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"123\",\r\n    \"DomainList\": [\r\n      {\r\n        \"Domain\": \"www.test.com\",\r\n        \"Status\": \"online\",\r\n        \"Waf\": \"/\",\r\n        \"Acl\": \"yes\",\r\n        \"Cc\": \"no\",\r\n        \"Dddos\": \"close\"\r\n      }\r\n    ],\r\n\"TotalCount\":11\r\n  }\r\n}",
+        "title": "查询SCDN域名列表"
+      }
+    ],
     "ListScdnLogTasks": [
       {
         "document": "",
@@ -400,12 +416,28 @@
         "title": "启用加速域名"
       }
     ],
+    "StartScdnDomain": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=StartScdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"oe5xr2grk86h86sd842tq\",\"Result\":\"Success\"}}",
+        "title": "开启域名安全防护"
+      }
+    ],
     "StopCdnDomain": [
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=StopCdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fa8b845-ca93-457a-a776-ea7915695648\"\r\n    }\r\n}",
         "title": "停用加速域名"
+      }
+    ],
+    "StopScdnDomain": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=StopScdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"oe5xr2grk86h86sd842tq\",\"Result\":\"Success\"}}",
+        "title": "关闭域名安全防护"
       }
     ],
     "UpdateDomainConfig": [

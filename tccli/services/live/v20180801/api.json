@@ -222,6 +222,12 @@
       "name": "直播计费带宽和流量数据查询",
       "output": "DescribeBillBandwidthAndFluxListResponse"
     },
+    "DescribeCallbackRecordsList": {
+      "document": "回调事件查询",
+      "input": "DescribeCallbackRecordsListRequest",
+      "name": "回调事件查询",
+      "output": "DescribeCallbackRecordsListResponse"
+    },
     "DescribeConcurrentRecordStreamNum": {
       "document": "查询并发录制路数，对慢直播和普通直播适用。",
       "input": "DescribeConcurrentRecordStreamNumRequest",
@@ -1135,6 +1141,75 @@
           "document": "回调的鉴权 key。",
           "member": "string",
           "name": "CallbackKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CallbackEventInfo": {
+      "document": "回调事件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "事件时间",
+          "member": "string",
+          "name": "EventTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型",
+          "member": "uint64",
+          "name": "EventType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回调请求",
+          "member": "string",
+          "name": "Request",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回调响应",
+          "member": "string",
+          "name": "Response",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户接口响应时间",
+          "member": "string",
+          "name": "ResponseTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回调结果",
+          "member": "uint64",
+          "name": "ResultCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流名称",
+          "member": "string",
+          "name": "StreamId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3569,6 +3644,115 @@
           "member": "BillDataInfo",
           "name": "DataInfoList",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallbackRecordsListRequest": {
+      "document": "DescribeCallbackRecordsList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过1天。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流名称，精确匹配。",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条数",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "事件类型。\n0: \"断流\",\n1: \"推流\",\n100: \"录制\"",
+          "member": "uint64",
+          "name": "EventType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "回调结果。0为成功，其他为失败",
+          "member": "uint64",
+          "name": "ResultCode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallbackRecordsListResponse": {
+      "document": "DescribeCallbackRecordsList返回参数结构体",
+      "members": [
+        {
+          "document": "回调事件列表",
+          "member": "CallbackEventInfo",
+          "name": "DataInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "页码",
+          "member": "uint64",
+          "name": "PageNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页条数",
+          "member": "uint64",
+          "name": "PageSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总页数",
+          "member": "uint64",
+          "name": "TotalPage",
+          "type": "int",
           "value_allowed_null": false
         },
         {

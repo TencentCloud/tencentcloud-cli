@@ -87,7 +87,7 @@
         },
         {
           "default": "",
-          "document": "【将废弃】资源池编号，比如1表示正式，2表示测试",
+          "document": "【废弃】资源池编号",
           "member": "uint64",
           "name": "SetNo",
           "required": false,
@@ -171,9 +171,16 @@
           "value_allowed_null": false
         },
         {
-          "document": "【多人游戏】角色编号；比如Player1、Player2、Viewer1",
+          "document": "【多人游戏】角色编号；比如1、2、3、4",
           "member": "string",
           "name": "RoleNumber",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "【多人云游】角色；Player表示玩家；Viewer表示观察者",
+          "member": "string",
+          "name": "Role",
           "type": "string",
           "value_allowed_null": false
         },
@@ -199,7 +206,7 @@
         },
         {
           "default": "",
-          "document": "用于多人游戏，游戏主机用户ID",
+          "document": "【多人游戏】游戏主机用户ID",
           "member": "string",
           "name": "HostUserId",
           "required": false,
@@ -241,7 +248,7 @@
         },
         {
           "default": "",
-          "document": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等",
+          "document": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器",
           "member": "string",
           "name": "GameRegion",
           "required": false,
@@ -249,7 +256,7 @@
         },
         {
           "default": "",
-          "document": "资源池编号，1表示共用，2表示测试",
+          "document": "【废弃】资源池编号",
           "member": "uint64",
           "name": "SetNo",
           "required": false,
