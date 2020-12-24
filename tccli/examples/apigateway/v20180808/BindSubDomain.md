@@ -11,8 +11,10 @@ tccli apigateway BindSubDomain --cli-unfold-argument  \
     --SubDomain xxx.com \
     --NetSubDomain service-1w9ekbwo-1259027407.gz.apigw.tencentcs.com \
     --IsDefaultMapping TRUE \
-    --PathMappingSet [] \
-    --Protocol http
+    --PathMappingSet.0.Environment release \
+    --PathMappingSet.0.Path / \
+    --Protocol http \
+    --IsForcedHttps TRUE
 ```
 
 Output: 

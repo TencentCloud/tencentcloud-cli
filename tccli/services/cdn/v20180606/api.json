@@ -8035,6 +8035,14 @@
           "name": "Layer",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否递归解析m3u8文件中的ts分片预热\n注意事项：\n1. 该功能要求m3u8索引文件能直接请求获取\n2. 当前只支持递归解析一级索引和子索引中的ts分片，递归深度不超过3层\n3. 解析获取的ts分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热",
+          "member": "bool",
+          "name": "ParseM3U8",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

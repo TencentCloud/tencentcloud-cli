@@ -4730,6 +4730,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "月活设备数，当月第一天开始有上线的设备数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "AliveInMonthCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

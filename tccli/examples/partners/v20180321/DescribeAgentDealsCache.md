@@ -42,7 +42,14 @@ Output:
                 "SalesUin": "",
                 "DealStatus": "已过期",
                 "ActionType": "purchase",
-                "ActivityId": "222"
+                "ActivityId": "222",
+                "ProductInfo": [
+                    {
+                        "Name": "xx",
+                        "Value": "xx"
+                    }
+                ],
+                "OverdueTime": "2019-05-21 11:24:05"
             }
         ],
         "TotalCount": 401321

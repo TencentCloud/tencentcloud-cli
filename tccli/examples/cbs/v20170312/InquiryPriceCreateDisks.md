@@ -1,4 +1,4 @@
-**Example 1: 查询购买6个月50G普通云盘的价格**
+**Example 1: 查询购买1个月500G TSSD 带100M额外性能询价**
 
 
 
@@ -6,11 +6,12 @@ Input:
 
 ```
 tccli cbs InquiryPriceCreateDisks --cli-unfold-argument  \
-    --DiskType CLOUD_BASIC \
+    --DiskType CLOUD_TSSD \
     --DiskCount 1 \
-    --DiskSize 50 \
+    --DiskSize 500 \
     --DiskChargeType PREPAID \
-    --DiskChargePrepaid.Period 6
+    --DiskChargePrepaid.Period 1 \
+    --ThroughputPerformance 100
 ```
 
 Output: 
@@ -19,14 +20,15 @@ Output:
     "Response": {
         "RequestId": "55e84d71-26f1-4b7c-8dc4-6bc2611d0a2411",
         "DiskPrice": {
-            "DiscountPrice": 90.0,
+            "DiscountPrice": 800.0,
             "UnitPriceHigh": null,
-            "OriginalPriceHigh": "90",
-            "OriginalPrice": 90.0,
+            "OriginalPriceHigh": "800",
+            "OriginalPrice": 800.0,
             "UnitPriceDiscount": null,
             "UnitPriceDiscountHigh": null,
-            "DiscountPriceHigh": "90",
-            "UnitPrice": null
+            "DiscountPriceHigh": "800",
+            "UnitPrice": null,
+            "ChargeUnit": null
         }
     }
 }

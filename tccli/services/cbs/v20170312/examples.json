@@ -173,9 +173,9 @@
     "InquiryPriceCreateDisks": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceCreateDisks\n&DiskType=CLOUD_BASIC\n&DiskCount=1\n&DiskSize=50\n&DiskChargeType=PREPAID\n&DiskChargePrepaid.Period=6\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"55e84d71-26f1-4b7c-8dc4-6bc2611d0a2411\",\r\n    \"DiskPrice\": {\r\n      \"DiscountPrice\": 90.0,\r\n      \"UnitPriceHigh\": null,\r\n      \"OriginalPriceHigh\": \"90\",\r\n      \"OriginalPrice\": 90.0,\r\n      \"UnitPriceDiscount\": null,\r\n      \"UnitPriceDiscountHigh\": null,\r\n      \"DiscountPriceHigh\": \"90\",\r\n      \"UnitPrice\": null\r\n    }\r\n  }\r\n}",
-        "title": "查询购买6个月50G普通云盘的价格"
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceCreateDisks\n&DiskType=CLOUD_TSSD\n&DiskCount=1\n&DiskSize=500\n&DiskChargeType=PREPAID\n&DiskChargePrepaid.Period=1\n&ThroughputPerformance=100\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"55e84d71-26f1-4b7c-8dc4-6bc2611d0a2411\",\r\n    \"DiskPrice\": {\r\n      \"DiscountPrice\": 800.0,\r\n      \"UnitPriceHigh\": null,\r\n      \"OriginalPriceHigh\": \"800\",\r\n      \"OriginalPrice\": 800.0,\r\n      \"UnitPriceDiscount\": null,\r\n      \"UnitPriceDiscountHigh\": null,\r\n      \"DiscountPriceHigh\": \"800\",\r\n      \"UnitPrice\": null,\r\n      \"ChargeUnit\": null\r\n    }\r\n  }\r\n}",
+        "title": "查询购买1个月500G TSSD 带100M额外性能询价"
       },
       {
         "document": "查询购买一块大小100GB，云盘类型为高性能云硬盘，计费类型为按小时后付费的价格。",

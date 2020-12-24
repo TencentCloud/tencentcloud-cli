@@ -41,7 +41,15 @@ Output:
                 "SalesUin": "100009339379",
                 "DealStatus": "分配完成",
                 "ActionType": "purchase",
-                "activityId": "111"
+                "PayerMode": "xx",
+                "ActivityId": "111",
+                "ProductInfo": [
+                    {
+                        "Name": "xx",
+                        "Value": "xx"
+                    }
+                ],
+                "OverdueTime": "2019-05-21 11:24:05"
             }
         ],
         "TotalCount": 1

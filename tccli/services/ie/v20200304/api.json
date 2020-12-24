@@ -130,6 +130,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频降噪信息",
+          "member": "Denoise",
+          "name": "Denoise",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -727,6 +736,21 @@
           "name": "FillMode",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Denoise": {
+      "document": "音频降噪",
+      "members": [
+        {
+          "default": "",
+          "document": "音频降噪强度，可选项：\n1. weak\n2.normal，\n3.strong\n默认为weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

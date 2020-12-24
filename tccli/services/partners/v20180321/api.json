@@ -700,6 +700,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ProductInfoElem",
+          "name": "ProductInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1791,6 +1800,30 @@
         }
       ],
       "type": "object"
+    },
+    "ProductInfoElem": {
+      "document": "产品详情",
+      "members": [
+        {
+          "default": "",
+          "document": "产品属性",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品属性值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RebateInfoElem": {
       "document": "返佣信息定义",

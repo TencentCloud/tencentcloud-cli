@@ -227,6 +227,8 @@ include tccli/services/solar/v20181011/api.json
 include tccli/services/solar/v20181011/examples.json
 include tccli/services/sqlserver/v20180328/api.json
 include tccli/services/sqlserver/v20180328/examples.json
+include tccli/services/ssa/v20180608/api.json
+include tccli/services/ssa/v20180608/examples.json
 include tccli/services/ssl/v20191205/api.json
 include tccli/services/ssl/v20191205/examples.json
 include tccli/services/sslpod/v20190605/api.json

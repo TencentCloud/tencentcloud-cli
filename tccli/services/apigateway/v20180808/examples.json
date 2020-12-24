@@ -27,7 +27,7 @@
     "BindSubDomain": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=BindSubDomain\r\n&ServiceId=service-1w9ekbwo\r\n&NetType=OUTER\r\n&SubDomain=xxx.com\r\n&NetSubDomain=service-1w9ekbwo-1259027407.gz.apigw.tencentcs.com\r\n&IsDefaultMapping=TRUE\r\n&PathMappingSet=[]\r\n&Protocol=http\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=BindSubDomain\n&ServiceId=service-1w9ekbwo\n&NetType=OUTER\n&SubDomain=xxx.com\n&NetSubDomain=service-1w9ekbwo-1259027407.gz.apigw.tencentcs.com\n&IsDefaultMapping=TRUE\n&PathMappingSet.0.Environment=release\n&PathMappingSet.0.Path=/\n&Protocol=http\n&IsForcedHttps=TRUE\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"6e00553a-8158-4f70-ad43-e1b046af1502\"\r\n    }\r\n}",
         "title": "绑定自定义域名"
       }
@@ -393,7 +393,7 @@
     "ModifySubDomain": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifySubDomain\r\n&ServiceId=service-19c5fnhy\r\n&SubDomain=xxxxxx\r\n&CertificateId=''\r\n&IsDefaultMapping=false\r\n&Protocol=http\r\n&NetType=OUTER\r\n&PathMappingSet.0.Path=/\r\n&PathMappingSet.0.Environment=release\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifySubDomain\n&ServiceId=service-19c5fnhy\n&SubDomain=xxxxxx\n&CertificateId=''\n&IsDefaultMapping=false\n&Protocol=http\n&NetType=OUTER\n&PathMappingSet.0.Path=/\n&PathMappingSet.0.Environment=release\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": true,\r\n        \"RequestId\": \"d7f6116b-8184-4bdd-8fbe-1ecbcfa1ea30\"\r\n    }\r\n}",
         "title": "服务修改自定义域名"
       }

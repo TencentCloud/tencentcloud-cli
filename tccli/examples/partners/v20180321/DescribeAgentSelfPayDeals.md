@@ -44,7 +44,13 @@ Output:
                 "DealStatus": "分配完成",
                 "ActionType": "purchase",
                 "ActivityId": "",
-                "OverdueTime": "2017-03-31 16:00:06"
+                "OverdueTime": "2017-03-31 16:00:06",
+                "ProductInfo": [
+                    {
+                        "Name": "xx",
+                        "Value": "xx"
+                    }
+                ]
             }
         ],
         "TotalCount": 1

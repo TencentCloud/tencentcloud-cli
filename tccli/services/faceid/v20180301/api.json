@@ -78,6 +78,18 @@
       "name": "获取数字验证码",
       "output": "GetLiveCodeResponse"
     },
+    "GetRealNameAuthResult": {
+      "document": "获取微信实名认证结果",
+      "input": "GetRealNameAuthResultRequest",
+      "name": "获取微信实名认证结果",
+      "output": "GetRealNameAuthResultResponse"
+    },
+    "GetRealNameAuthToken": {
+      "document": "微信实名认证授权",
+      "input": "GetRealNameAuthTokenRequest",
+      "name": "微信实名认证授权",
+      "output": "GetRealNameAuthTokenResponse"
+    },
     "IdCardOCRVerification": {
       "document": "本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。",
       "input": "IdCardOCRVerificationRequest",
@@ -1422,6 +1434,95 @@
           "document": "数字验证码，如：1234",
           "member": "string",
           "name": "LiveCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRealNameAuthResultRequest": {
+      "document": "GetRealNameAuthResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实名认证凭证",
+          "member": "string",
+          "name": "AuthToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRealNameAuthResultResponse": {
+      "document": "GetRealNameAuthResult返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下：\n\n收费码：\n0:  姓名和身份证号一致\n-1: 姓名和身份证号不一致\n-2: 姓名和微信实名姓名不一致\n\n不收费码：\n-3: 微信号未实名",
+          "member": "string",
+          "name": "ResultType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRealNameAuthTokenRequest": {
+      "document": "GetRealNameAuthToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证号",
+          "member": "string",
+          "name": "IDCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方",
+          "member": "string",
+          "name": "CallbackURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRealNameAuthTokenResponse": {
+      "document": "GetRealNameAuthToken返回参数结构体",
+      "members": [
+        {
+          "document": "查询实名认证结果的唯一凭证",
+          "member": "string",
+          "name": "AuthToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权",
+          "member": "string",
+          "name": "RedirectURL",
           "type": "string",
           "value_allowed_null": false
         },
