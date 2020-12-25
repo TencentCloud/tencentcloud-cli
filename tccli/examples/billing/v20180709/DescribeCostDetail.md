@@ -8,8 +8,8 @@ Input:
 tccli billing DescribeCostDetail --cli-unfold-argument  \
     --Offset 0 \
     --Limit 10 \
-    --BeginTime 2018-11-0100:00:00 \
-    --EndTime 2018-11-0123:59:59 \
+    --BeginTime '2018-11-01 00:00:00' \
+    --EndTime '2018-11-01 23:59:59' \
     --NeedRecordNum 1
 ```
 

@@ -114,6 +114,12 @@
       "name": "获取快照概览信息",
       "output": "GetSnapOverviewResponse"
     },
+    "InquirePriceModifyDiskExtraPerformance": {
+      "document": "本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。",
+      "input": "InquirePriceModifyDiskExtraPerformanceRequest",
+      "name": "调整云硬盘额外性能询价",
+      "output": "InquirePriceModifyDiskExtraPerformanceResponse"
+    },
     "InquiryPriceCreateDisks": {
       "document": "本接口（InquiryPriceCreateDisks）用于创建云硬盘询价。\n\n* 支持查询创建多块云硬盘的价格，此时返回结果为总价格。",
       "input": "InquiryPriceCreateDisksRequest",
@@ -143,6 +149,12 @@
       "input": "ModifyDiskAttributesRequest",
       "name": "修改云硬盘属性",
       "output": "ModifyDiskAttributesResponse"
+    },
+    "ModifyDiskExtraPerformance": {
+      "document": "本接口（ModifyDiskExtraPerformance）用于调整云硬盘额外的性能。\n\n* 目前仅支持极速型SSD云硬盘（CLOUD_TSSD）和高性能SSD云硬盘(CLOUD_HSSD)。",
+      "input": "ModifyDiskExtraPerformanceRequest",
+      "name": "调整云硬盘额外性能",
+      "output": "ModifyDiskExtraPerformanceResponse"
     },
     "ModifyDisksChargeType": {
       "document": "接口请求域名： cbs.tencentcloudapi.com 。\n\n本接口 (ModifyDisksChargeType) 用于切换云盘的计费模式。\n\n只支持从 POSTPAID_BY_HOUR 计费模式切换为PREPAID计费模式。\n非弹性云盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云盘一起转换。\n默认接口请求频率限制：10次/秒。\n",
@@ -524,7 +536,7 @@
       "members": [
         {
           "default": "",
-          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
           "member": "string",
           "name": "DiskType",
           "required": true,
@@ -617,6 +629,14 @@
           "name": "Shareable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1890,6 +1910,47 @@
       ],
       "usage": "out"
     },
+    "InquirePriceModifyDiskExtraPerformanceRequest": {
+      "document": "InquirePriceModifyDiskExtraPerformance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "额外购买的云硬盘性能值，单位MB/s。",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyDiskExtraPerformanceResponse": {
+      "document": "InquirePriceModifyDiskExtraPerformance返回参数结构体",
+      "members": [
+        {
+          "document": "描述了调整云盘额外性能时对应的价格。",
+          "member": "Price",
+          "name": "DiskPrice",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InquiryPriceCreateDisksRequest": {
       "document": "InquiryPriceCreateDisks请求参数结构体",
       "members": [
@@ -2199,6 +2260,40 @@
     },
     "ModifyDiskAttributesResponse": {
       "document": "ModifyDiskAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskExtraPerformanceRequest": {
+      "document": "ModifyDiskExtraPerformance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "额外购买的云硬盘性能值，单位MB/s。",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskExtraPerformanceResponse": {
+      "document": "ModifyDiskExtraPerformance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

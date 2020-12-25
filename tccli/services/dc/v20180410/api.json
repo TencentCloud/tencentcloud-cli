@@ -6,6 +6,12 @@
       "name": "接受专用通道申请",
       "output": "AcceptDirectConnectTunnelResponse"
     },
+    "ApplyInternetAddress": {
+      "document": "申请互联网CIDR地址",
+      "input": "ApplyInternetAddressRequest",
+      "name": "申请互联网地址",
+      "output": "ApplyInternetAddressResponse"
+    },
     "CreateDirectConnect": {
       "document": "申请物理专线接入。\n调用该接口时，请注意：\n账号要进行实名认证，否则不允许申请物理专线；\n若账户下存在欠费状态的物理专线，则不能申请更多的物理专线。",
       "input": "CreateDirectConnectRequest",
@@ -54,11 +60,41 @@
       "name": "查询物理专线列表",
       "output": "DescribeDirectConnectsResponse"
     },
+    "DescribeInternetAddress": {
+      "document": "获取用户互联网公网地址信息",
+      "input": "DescribeInternetAddressRequest",
+      "name": "获取用户互联网公网地址信息",
+      "output": "DescribeInternetAddressResponse"
+    },
+    "DescribeInternetAddressQuota": {
+      "document": "获取用户互联网公网地址配额",
+      "input": "DescribeInternetAddressQuotaRequest",
+      "name": "获取互联网公网地址配额",
+      "output": "DescribeInternetAddressQuotaResponse"
+    },
+    "DescribeInternetAddressStatistics": {
+      "document": "获取用户互联网公网地址分配统计信息",
+      "input": "DescribeInternetAddressStatisticsRequest",
+      "name": "获取用户互联网公网地址统计信息",
+      "output": "DescribeInternetAddressStatisticsResponse"
+    },
     "DescribePublicDirectConnectTunnelRoutes": {
       "document": "本接口（DescribePublicDirectConnectTunnelRoutes）用于查询互联网通道路由列表",
       "input": "DescribePublicDirectConnectTunnelRoutesRequest",
       "name": "查询互联网通道路由列表",
       "output": "DescribePublicDirectConnectTunnelRoutesResponse"
+    },
+    "DisableInternetAddress": {
+      "document": "停用用户申请的公网互联网地址",
+      "input": "DisableInternetAddressRequest",
+      "name": "停用公网互联网地址",
+      "output": "DisableInternetAddressResponse"
+    },
+    "EnableInternetAddress": {
+      "document": "启用已停用的互联网公网地址",
+      "input": "EnableInternetAddressRequest",
+      "name": "启用互联网公网地址",
+      "output": "EnableInternetAddressResponse"
     },
     "ModifyDirectConnectAttribute": {
       "document": "修改物理专线的属性。",
@@ -83,6 +119,12 @@
       "input": "RejectDirectConnectTunnelRequest",
       "name": "拒绝专用通道申请",
       "output": "RejectDirectConnectTunnelResponse"
+    },
+    "ReleaseInternetAddress": {
+      "document": "释放已申请的互联网地址",
+      "input": "ReleaseInternetAddressRequest",
+      "name": "释放互联网地址",
+      "output": "ReleaseInternetAddressResponse"
     }
   },
   "metadata": {
@@ -186,6 +228,55 @@
         }
       ],
       "usage": "out"
+    },
+    "ApplyInternetAddressRequest": {
+      "document": "ApplyInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CIDR地址掩码长度",
+          "member": "int64",
+          "name": "MaskLen",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0:BGP类型地址\n1：中国电信\n2：中国移动\n3：中国联通",
+          "member": "int64",
+          "name": "AddrType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0：IPv4\n1:IPv6",
+          "member": "int64",
+          "name": "AddrProto",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyInternetAddressResponse": {
+      "document": "ApplyInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "互联网公网地址ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BFDInfo": {
       "document": "BFD配置信息",
@@ -838,6 +929,145 @@
           "member": "bool",
           "name": "AllSignLaw",
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetAddressQuotaRequest": {
+      "document": "DescribeInternetAddressQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInternetAddressQuotaResponse": {
+      "document": "DescribeInternetAddressQuota返回参数结构体",
+      "members": [
+        {
+          "document": "IPv6互联网公网允许的最小前缀长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv6PrefixLen",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "BGP类型IPv4互联网地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv4BgpQuota",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "非BGP类型IPv4互联网地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv4OtherQuota",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "BGP类型IPv4互联网地址已使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv4BgpNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "非BGP类型互联网地址已使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv4OtherNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetAddressRequest": {
+      "document": "DescribeInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件：\n<li>AddrType, 地址类型。0：BGP 1; 1: 电信， 2：移动， 3：联通</li>\n<li>AddrProto地址类型。0：IPv4 1:IPv6</li>\n<li>Status 地址状态。 0：使用中， 1：已停用， 2：已退还</li>\n<li>Subnet 互联网公网地址，数组</li>\n<InstanceIds>互联网公网地址ID，数组</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetAddressResponse": {
+      "document": "DescribeInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "互联网公网地址数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "互联网公网地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InternetAddressDetail",
+          "name": "Subnets",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetAddressStatisticsRequest": {
+      "document": "DescribeInternetAddressStatistics请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInternetAddressStatisticsResponse": {
+      "document": "DescribeInternetAddressStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "互联网公网地址统计信息数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "互联网公网地址统计信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InternetAddressStatistics",
+          "name": "InternetAddressStatistics",
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -1746,6 +1976,51 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IPv6Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "腾讯侧互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TencentIPv6Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备用互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TencentBackupIPv6Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "BGPv6状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BGPStatus",
+          "name": "BgpIPv6Status",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户侧互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CustomerIPv6Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1810,6 +2085,58 @@
       ],
       "usage": "out"
     },
+    "DisableInternetAddressRequest": {
+      "document": "DisableInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "公网互联网地址ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableInternetAddressResponse": {
+      "document": "DisableInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableInternetAddressRequest": {
+      "document": "EnableInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "互联网公网地址ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableInternetAddressResponse": {
+      "document": "EnableInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "用于条件过滤查询",
       "members": [
@@ -1833,6 +2160,144 @@
         }
       ],
       "usage": "in"
+    },
+    "InternetAddressDetail": {
+      "document": "互联网地址详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "互联网地址ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "互联网网络地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Subnet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络地址掩码长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaskLen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:BGP\n1:电信\n2:移动\n3:联通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AddrType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:使用中\n1:已停用\n2:已退还",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "停用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StopTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "退还时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReleaseTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:IPv4 1:IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AddrProto",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "释放状态的IP地址保留的天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReserveTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternetAddressStatistics": {
+      "document": "互联网公网地址统计",
+      "members": [
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "互联网公网地址数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SubnetNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ModifyDirectConnectAttributeRequest": {
       "document": "ModifyDirectConnectAttribute请求参数结构体",
@@ -2136,6 +2601,14 @@
           "name": "NqaInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "0：停用IPv6\n1: 启用IPv6",
+          "member": "int64",
+          "name": "IPv6Enable",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2201,6 +2674,32 @@
     },
     "RejectDirectConnectTunnelResponse": {
       "document": "RejectDirectConnectTunnel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseInternetAddressRequest": {
+      "document": "ReleaseInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "公网互联网地址ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseInternetAddressResponse": {
+      "document": "ReleaseInternetAddress返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

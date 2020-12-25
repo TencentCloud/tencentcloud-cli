@@ -585,33 +585,25 @@
         },
         {
           "default": "",
-          "document": "Cpu核数",
-          "member": "int64",
-          "name": "Cpu",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "内存",
-          "member": "int64",
-          "name": "Memory",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "存储上限，单位GB",
-          "member": "int64",
-          "name": "StorageLimit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "所属项目ID",
           "member": "int64",
           "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "普通实例Cpu核数",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "普通实例内存",
+          "member": "int64",
+          "name": "Memory",
           "required": false,
           "type": "int"
         },
@@ -705,6 +697,14 @@
         },
         {
           "default": "",
+          "document": "普通实例存储上限，单位GB",
+          "member": "int64",
+          "name": "StorageLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "实例数量",
           "member": "int64",
           "name": "InstanceCount",
@@ -777,7 +777,7 @@
         },
         {
           "default": "",
-          "document": "当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "document": "当DbMode为SEVERLESS时必填\ncpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
           "member": "float",
           "name": "MinCpu",
           "required": false,
@@ -785,7 +785,7 @@
         },
         {
           "default": "",
-          "document": "当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "document": "当DbMode为SEVERLESS时必填：\ncpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
           "member": "float",
           "name": "MaxCpu",
           "required": false,
@@ -793,7 +793,7 @@
         },
         {
           "default": "",
-          "document": "当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>",
+          "document": "当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>\n默认值:yes",
           "member": "string",
           "name": "AutoPause",
           "required": false,
@@ -801,7 +801,7 @@
         },
         {
           "default": "",
-          "document": "当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]",
+          "document": "当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]\n默认值:600",
           "member": "int64",
           "name": "AutoPauseDelay",
           "required": false,
@@ -828,14 +828,14 @@
           "value_allowed_null": true
         },
         {
-          "document": "资源ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResourceIds",
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "document": "集群ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ClusterIds",
           "type": "list",

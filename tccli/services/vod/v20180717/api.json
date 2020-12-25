@@ -426,6 +426,12 @@
       "name": "直播即时剪辑",
       "output": "LiveRealTimeClipResponse"
     },
+    "ManageTask": {
+      "document": "对已发起的任务进行管理。",
+      "input": "ManageTaskRequest",
+      "name": "任务管理",
+      "output": "ManageTaskResponse"
+    },
     "ModifyAIAnalysisTemplate": {
       "document": "修改用户自定义视频内容分析模板。\n\n注意：模板 ID 10000 以下的为系统预置模板，不允许修改。",
       "input": "ModifyAIAnalysisTemplateRequest",
@@ -11570,6 +11576,48 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageTaskRequest": {
+      "document": "ManageTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "视频处理的任务 ID。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型，取值范围：\n<li>Abort：终止任务。只能终止已发起且状态为等待中（WAITING）的任务。</li>",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageTaskResponse": {
+      "document": "ManageTask返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

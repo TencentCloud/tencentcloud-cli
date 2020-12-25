@@ -30,6 +30,12 @@
       "name": "查询ES集群实例",
       "output": "DescribeInstancesResponse"
     },
+    "GetRequestTargetNodeTypes": {
+      "document": "获取接收客户端请求的节点类型",
+      "input": "GetRequestTargetNodeTypesRequest",
+      "name": "获取接收客户端请求的节点类型",
+      "output": "GetRequestTargetNodeTypesResponse"
+    },
     "RestartInstance": {
       "document": "重启ES集群实例(用于系统版本更新等操作) ",
       "input": "RestartInstanceRequest",
@@ -59,6 +65,12 @@
       "input": "UpdatePluginsRequest",
       "name": "变更插件列表",
       "output": "UpdatePluginsResponse"
+    },
+    "UpdateRequestTargetNodeTypes": {
+      "document": "更新接收客户端请求的节点类型",
+      "input": "UpdateRequestTargetNodeTypesRequest",
+      "name": "更新接收客户端请求的节点类型",
+      "output": "UpdateRequestTargetNodeTypesResponse"
     },
     "UpgradeInstance": {
       "document": "升级ES集群版本",
@@ -782,6 +794,39 @@
         }
       ],
       "usage": "in"
+    },
+    "GetRequestTargetNodeTypesRequest": {
+      "document": "GetRequestTargetNodeTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRequestTargetNodeTypesResponse": {
+      "document": "GetRequestTargetNodeTypes返回参数结构体",
+      "members": [
+        {
+          "document": "接收请求的目标节点类型列表",
+          "member": "string",
+          "name": "TargetNodeTypes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InstanceInfo": {
       "document": "实例详细信息",
@@ -2101,6 +2146,40 @@
     },
     "UpdatePluginsResponse": {
       "document": "UpdatePlugins返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRequestTargetNodeTypesRequest": {
+      "document": "UpdateRequestTargetNodeTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接收请求的目标节点类型列表",
+          "member": "string",
+          "name": "TargetNodeTypes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRequestTargetNodeTypesResponse": {
+      "document": "UpdateRequestTargetNodeTypes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

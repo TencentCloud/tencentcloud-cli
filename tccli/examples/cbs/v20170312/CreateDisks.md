@@ -6,14 +6,15 @@ Input:
 
 ```
 tccli cbs CreateDisks --cli-unfold-argument  \
-    --DiskType CLOUD_BASIC \
+    --DiskType CLOUD_HSSD \
     --DiskCount 1 \
-    --DiskSize 50 \
+    --DiskSize 500 \
     --Placement.Zone ap-guangzhou-2 \
     --Placement.ProjectId 0 \
     --DiskChargeType PREPAID \
     --DiskChargePrepaid.Period 1 \
-    --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
+    --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
+    --ThroughputPerformance 100
 ```
 
 Output: 

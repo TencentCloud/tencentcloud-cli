@@ -35,7 +35,7 @@
     "CreateDisks": [
       {
         "document": "新购云盘具体配置如下：云盘所在位置为广州二区，云盘大小50GB，云盘类型为普通云盘，所属项目ID为0，付费模式为预付费，购买时长1个月，通知过期且自动续费。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=CreateDisks\n&DiskType=CLOUD_BASIC\n&DiskCount=1\n&DiskSize=50\n&Placement.Zone=ap-guangzhou-2\n&Placement.ProjectId=0\n&DiskChargeType=PREPAID\n&DiskChargePrepaid.Period=1\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=CreateDisks\n&DiskType=CLOUD_HSSD\n&DiskCount=1\n&DiskSize=500\n&Placement.Zone=ap-guangzhou-2\n&Placement.ProjectId=0\n&DiskChargeType=PREPAID\n&DiskChargePrepaid.Period=1\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&ThroughputPerformance=100\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskIdSet\": [\r\n\t\t\t\"disk-lzrg2pwi\"\r\n\t\t],\r\n\t\"RequestId\":  \"6a57da9a-2049-7182-2de3-5a1f8014ccfd\"\r\n\t}\r\n}",
         "title": "使用基本参数购买"
       },
@@ -170,6 +170,14 @@
         "title": "查询用户的快照概览信息"
       }
     ],
+    "InquirePriceModifyDiskExtraPerformance": [
+      {
+        "document": "",
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquirePriceModifyDiskExtraPerformance\n&DiskId=disk-dritwhhm\n&ThroughputPerformance=200\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"55db49cf-b9d7-da27-825b-3232332eeewezxdsdrdew\",\r\n    \"DiskPrice\": {\r\n      \"DiscountPrice\": -192.06,\r\n      \"UnitPrice\": null,\r\n      \"UnitPriceHigh\": null,\r\n      \"OriginalPriceHigh\": null,\r\n      \"OriginalPrice\": -192.06,\r\n      \"UnitPriceDiscount\": null,\r\n      \"UnitPriceDiscountHigh\": null,\r\n      \"DiscountPriceHigh\": null,\r\n      \"ChargeUnit\": null\r\n    }\r\n  }\r\n}",
+        "title": "500G HSSD 额外购买200M性能询价"
+      }
+    ],
     "InquiryPriceCreateDisks": [
       {
         "document": "",
@@ -226,6 +234,14 @@
         "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\r\n&DiskIds.0=disk-hdz4c824\r\n&DiskType=CLOUD_PREMIUM\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"d010c751-3edb-4388-878c-1de0891aa1fd\"\r\n  }\r\n}",
         "title": "修改云盘类型"
+      }
+    ],
+    "ModifyDiskExtraPerformance": [
+      {
+        "document": "",
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskExtraPerformance\n&DiskId=disk-dritwhhm\n&ThroughputPerformance=300\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"d010c751-3edb-4388-878c-123fe111d1111owngrade400\"\r\n  }\r\n}",
+        "title": "500G TSSD 额外购买300M性能"
       }
     ],
     "ModifyDisksChargeType": [

@@ -40,6 +40,14 @@
         "title": "查询ES集群实例"
       }
     ],
+    "GetRequestTargetNodeTypes": [
+      {
+        "document": "对于冷热分离的集群，可以通过该接口获取到当前集群用于接收客户端请求的节点类型",
+        "input": "https://es.tencentcloudapi.com/?Action=GetRequestTargetNodeTypes\n&InstanceId=es-xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8fd57721-808b-4f21-8f6b-51bca79ff1xx\",\r\n        \"TargetNodeTypes\":[\"hot\",\"warm\"]\r\n    }\r\n}",
+        "title": "获取接收客户端请求的节点类型"
+      }
+    ],
     "RestartInstance": [
       {
         "document": "用以进行版本更新等操作",
@@ -108,6 +116,14 @@
         "input": "https://es.tencentcloudapi.com/?Action=UpdatePlugins\r\n&InstanceId=es-xxxxxxxx\r\n&RemovePluginList.0=analysis-qq\r\n&RemovePluginList.1=sql\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\r\n    }\r\n}",
         "title": "批量卸载插件"
+      }
+    ],
+    "UpdateRequestTargetNodeTypes": [
+      {
+        "document": "对于冷热分离的集群，在温节点节点规格比较小的情况下，可以把来自客户端的请求只发送到热节点上，只让热节点承担协调节点的功能。",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateRequestTargetNodeTypes\n&InstanceId=es-xxxxxx\n&TargetNodeTypes.0=hot\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8fd57721-808b-4f21-8f6b-51bca79ff1xx\"\r\n    }\r\n}",
+        "title": "更新接收客户端请求的节点类型"
       }
     ],
     "UpgradeInstance": [

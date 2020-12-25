@@ -802,6 +802,14 @@
         "title": "即时剪辑并且固化"
       }
     ],
+    "ManageTask": [
+      {
+        "document": "正在执行中的直播流处理任务，调用接口终止。",
+        "input": "https://vod.tencentcloudapi.com/?Action=ManageTask\n&TaskId=251000333-procedure-c27bdf65ea06646171e714f25f5aac6\n&OperationType=Abort\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"510f4d68-09c9-44a3-ab55-192ff22297c9\"\r\n  }\r\n}",
+        "title": "终止正在执行中的直播流处理任务示例"
+      }
+    ],
     "ModifyAIAnalysisTemplate": [
       {
         "document": "修改自定义视频内容分析模板，开启智能封面任务。",

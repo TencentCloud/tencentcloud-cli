@@ -7,9 +7,9 @@
       "output": "BindingPolicyObjectResponse"
     },
     "CreateAlarmNotice": {
-      "document": "云监控告警创建告警通知模板",
+      "document": "创建通知模板",
       "input": "CreateAlarmNoticeRequest",
-      "name": "创建告警通知模板",
+      "name": "创建通知模板",
       "output": "CreateAlarmNoticeResponse"
     },
     "CreateAlarmPolicy": {
@@ -67,9 +67,9 @@
       "output": "DescribeAlarmEventsResponse"
     },
     "DescribeAlarmHistories": {
-      "document": "告警历史列表",
+      "document": "查询告警历史",
       "input": "DescribeAlarmHistoriesRequest",
-      "name": "告警历史列表",
+      "name": "查询告警历史",
       "output": "DescribeAlarmHistoriesResponse"
     },
     "DescribeAlarmMetrics": {
@@ -79,39 +79,39 @@
       "output": "DescribeAlarmMetricsResponse"
     },
     "DescribeAlarmNotice": {
-      "document": "云监控告警获取告警通知模板详情",
+      "document": "查询单个通知模板的详情",
       "input": "DescribeAlarmNoticeRequest",
-      "name": "获取告警通知模板详情",
+      "name": "查询单个通知模板的详情",
       "output": "DescribeAlarmNoticeResponse"
     },
     "DescribeAlarmNoticeCallbacks": {
       "document": "云监控告警获取告警通知模板所有回调URL",
       "input": "DescribeAlarmNoticeCallbacksRequest",
-      "name": "获取账号下所有回调URL列表",
+      "name": "查询账号下所有回调URL列表",
       "output": "DescribeAlarmNoticeCallbacksResponse"
     },
     "DescribeAlarmNotices": {
-      "document": "云监控告警查询告警通知模板列表",
+      "document": "查询通知模板列表",
       "input": "DescribeAlarmNoticesRequest",
-      "name": "查询告警通知模板列表",
+      "name": "查询通知模板列表",
       "output": "DescribeAlarmNoticesResponse"
     },
     "DescribeAlarmPolicies": {
-      "document": "告警策略列表",
+      "document": "查询告警策略列表",
       "input": "DescribeAlarmPoliciesRequest",
-      "name": "告警策略列表",
+      "name": "查询告警策略列表",
       "output": "DescribeAlarmPoliciesResponse"
     },
     "DescribeAlarmPolicy": {
-      "document": "告警策略详情",
+      "document": "获取单个告警策略详情",
       "input": "DescribeAlarmPolicyRequest",
-      "name": "告警策略详情",
+      "name": "获取单个告警策略详情",
       "output": "DescribeAlarmPolicyResponse"
     },
     "DescribeAllNamespaces": {
-      "document": "拉取所有名字空间",
+      "document": "查询所有名字空间",
       "input": "DescribeAllNamespacesRequest",
-      "name": "拉取所有名字空间",
+      "name": "查询所有名字空间",
       "output": "DescribeAllNamespacesResponse"
     },
     "DescribeBaseMetrics": {
@@ -183,7 +183,7 @@
     "ModifyAlarmNotice": {
       "document": "云监控告警编辑告警通知模板",
       "input": "ModifyAlarmNoticeRequest",
-      "name": "编辑告警通知模板",
+      "name": "修改通知模板",
       "output": "ModifyAlarmNoticeResponse"
     },
     "ModifyAlarmPolicyCondition": {
@@ -205,9 +205,9 @@
       "output": "ModifyAlarmPolicyNoticeResponse"
     },
     "ModifyAlarmPolicyStatus": {
-      "document": "修改告警策略的启停状态",
+      "document": "启停告警策略",
       "input": "ModifyAlarmPolicyStatusRequest",
-      "name": "修改告警策略状态",
+      "name": "启停告警策略",
       "output": "ModifyAlarmPolicyStatusResponse"
     },
     "ModifyAlarmPolicyTasks": {
@@ -5624,7 +5624,7 @@
       "members": [
         {
           "default": "",
-          "document": "命名空间，各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档",
+          "document": "命名空间，如QCE/CVM。各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -5632,7 +5632,7 @@
         },
         {
           "default": "",
-          "document": "指标名称，各个云产品的详细指标说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档",
+          "document": "指标名称，如CPUUsage。各个云产品的详细指标说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的指标英文名即为MetricName",
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -5640,7 +5640,7 @@
         },
         {
           "default": "",
-          "document": "实例对象的维度组合",
+          "document": "实例对象的维度组合，格式为key-value键值对形式的集合。如[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key,value为key对应的值",
           "member": "Instance",
           "name": "Instances",
           "required": true,
@@ -5648,7 +5648,7 @@
         },
         {
           "default": "",
-          "document": "监控统计周期。默认为取值为300，单位为s",
+          "document": "监控统计周期，如60。默认为取值为300，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的统计周期列即为支持的统计周期",
           "member": "uint64",
           "name": "Period",
           "required": false,
@@ -5664,7 +5664,7 @@
         },
         {
           "default": "",
-          "document": "结束时间，默认为当前时间。 EndTime不能小于StartTime",
+          "document": "结束时间，如2018-09-22T20:51:23+08:00，默认为当前时间。 EndTime不能小于StartTime",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,

@@ -461,7 +461,7 @@
     "ManageTask": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ManageTask\r\n&OperationType=Abort\r\n&TaskId=2459149217-procedure-live-xxx51da009t0\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ManageTask\n&OperationType=Abort\n&TaskId=2459149217-procedure-live-xxx51da009t0\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"335bdaa3-db0e-46ce-9946-51941d9cb0f5\"\r\n\t}\r\n}",
         "title": "终止指定的直播流处理任务"
       }

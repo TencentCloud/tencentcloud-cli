@@ -85,7 +85,7 @@
       "output": "GetRealNameAuthResultResponse"
     },
     "GetRealNameAuthToken": {
-      "document": "微信实名认证授权",
+      "document": "输入姓名和身份证号验证与微信实名的信息是否一致",
       "input": "GetRealNameAuthTokenRequest",
       "name": "微信实名认证授权",
       "output": "GetRealNameAuthTokenResponse"
