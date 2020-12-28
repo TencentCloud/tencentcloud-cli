@@ -94,6 +94,7 @@ Output:
                 "RedirectCode": 0
             }
         },
+        "Status": "online",
         "Ddos": {
             "Switch": "xx"
         },

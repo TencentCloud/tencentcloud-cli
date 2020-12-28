@@ -31,6 +31,7 @@ Output:
                 "ProductCode": "sp_cvm_sa2",
                 "PayModeName": "包年包月",
                 "ProjectName": "默认项目",
+                "ProjectId": "0",
                 "RegionName": "西南地区（成都）",
                 "RegionId": "16",
                 "ZoneName": "成都一区",

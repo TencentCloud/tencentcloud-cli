@@ -403,6 +403,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目ID:资源所属项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2408,6 +2417,14 @@
           "name": "ActionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID:资源所属项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

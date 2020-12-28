@@ -2486,7 +2486,7 @@
       "members": [
         {
           "default": "",
-          "document": "账户类型 1:设备接入 2:云存",
+          "document": "账户类型 1:设备接入 2:云存。",
           "member": "int64",
           "name": "AccountType",
           "required": true,
@@ -2494,7 +2494,7 @@
         },
         {
           "default": "",
-          "document": "从第几条记录开始显示",
+          "document": "从第几条记录开始显示, 默认值为0。",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2502,7 +2502,7 @@
         },
         {
           "default": "",
-          "document": "总共查询多少条记录",
+          "document": "总共查询多少条记录，默认为值50。",
           "member": "int64",
           "name": "Limit",
           "required": false,

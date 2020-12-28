@@ -4435,6 +4435,13 @@
           "value_allowed_null": false
         },
         {
+          "document": "当前状态，取值online | offline\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6679,6 +6686,14 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名信息",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

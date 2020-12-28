@@ -1307,6 +1307,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Kibana配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KibanaConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
