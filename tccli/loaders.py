@@ -369,6 +369,9 @@ class Loader(object):
                     document = res["document"]
                     break
 
+            if len([item for item in param if item.isdigit() and int(item) > 0]) > 0:
+                required = "Optional"
+
             unfold_param[".".join(param)]["type"] = param_type
             unfold_param[".".join(param)]["type_name"] = type_name
             unfold_param[".".join(param)]["required"] = required
