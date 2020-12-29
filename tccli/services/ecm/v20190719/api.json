@@ -522,6 +522,12 @@
       "name": "修改模块配置",
       "output": "ModifyModuleConfigResponse"
     },
+    "ModifyModuleDisableWanIp": {
+      "document": "修改模块是否禁止分配外网ip的属性。",
+      "input": "ModifyModuleDisableWanIpRequest",
+      "name": "修改模块是否禁止分配外网ip",
+      "output": "ModifyModuleDisableWanIpResponse"
+    },
     "ModifyModuleImage": {
       "document": "修改模块的默认镜像",
       "input": "ModifyModuleImageRequest",
@@ -1959,6 +1965,14 @@
           "name": "DefaultBandWidthIn",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否禁止分配外网IP",
+          "member": "bool",
+          "name": "DisableWanIp",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6977,6 +6991,40 @@
     },
     "ModifyModuleConfigResponse": {
       "document": "ModifyModuleConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModuleDisableWanIpRequest": {
+      "document": "ModifyModuleDisableWanIp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块ID",
+          "member": "string",
+          "name": "ModuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否禁止分配外网ip",
+          "member": "bool",
+          "name": "DisableWanIp",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModuleDisableWanIpResponse": {
+      "document": "ModifyModuleDisableWanIp返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

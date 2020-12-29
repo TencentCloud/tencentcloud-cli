@@ -3,7 +3,7 @@
     "AddTeamMember": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=AddTeamMember\r\n&Platform=test\r\n&TeamId=1kdk882ddd88338ddd3k3\r\n&TeamMembers.0.MemberId=1kd3ej3okjdije3lejjdjk99\r\n&TeamMembers.0.Remark=编辑张三\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=AddTeamMember\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&TeamMembers.0.MemberId=1kd3ej3okjdije3lejjdjk99\n&TeamMembers.0.Remark=编辑张三\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\r\n  }\r\n}",
         "title": "将一个成员添加到团队"
       }
@@ -209,8 +209,8 @@
     "DescribeTeams": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeams\r\n&Platform=test\r\n&TeamIds.0=1kdk882ddd88338ddd3k3\r\n&TeamIds.1=1kdk882ddd88338ddd3k4\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"TeamSet\":[\r\n            {\r\n                \"TeamId\":\"1kdk882ddd88338ddd3k3\",\r\n                \"Name\":\"工作室1\",\r\n                \"MemberCount\":30,\r\n                \"CreateTime\":\"\",\r\n                \"UpdateTime\":\"\"\r\n            },\r\n            {\r\n                \"TeamId\":\"1kdk882ddd88338ddd3k4\",\r\n                \"Name\":\"工作室2\",\r\n                \"MemberCount\":10,\r\n                \"CreateTime\":\"\",\r\n                \"UpdateTime\":\"\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\r\n    }\r\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeams\n&Platform=test\n&TeamIds.0=1kdk882ddd88338ddd3k3\n&TeamIds.1=1kdk882ddd88338ddd3k4\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"TotalCount\": 2, \r\n        \"TeamSet\":[\r\n            {\r\n                \"TeamId\":\"1kdk882ddd88338ddd3k3\",\r\n                \"Name\":\"工作室1\",\r\n                \"MemberCount\":30,\r\n                \"CreateTime\":\"\",\r\n                \"UpdateTime\":\"\"\r\n            },\r\n            {\r\n                \"TeamId\":\"1kdk882ddd88338ddd3k4\",\r\n                \"Name\":\"工作室2\",\r\n                \"MemberCount\":10,\r\n                \"CreateTime\":\"\",\r\n                \"UpdateTime\":\"\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\r\n    }\r\n}",
         "title": "获取团队信息"
       }
     ],
@@ -271,17 +271,17 @@
     "ImportMaterial": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\r\n&Platform=test\r\n&VodFileId =123456789\r\n&Owner.Id=1111\r\n&Owner.Type=PERSON\r\n&Name=material_name\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&VodFileId=123456789\n&Owner.Id=1111\n&Owner.Type=PERSON\n&Name=material_name\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"requestId\",\r\n   \"MaterialId\":\"materialId\",\r\n   \"PreProcessTaskId\":\"taskId\"\r\n  }\r\n}",
-        "title": "导入素材"
+        "title": "导入媒体"
       }
     ],
     "ImportMediaToProject": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMediaToProject\r\n&Platform=test\r\n&ProjectId=user_111\r\n&VodFileId=111122\r\n&Name=test\r\n&PreProcessDefinition=10\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMediaToProject\n&Platform=test\n&ProjectId=user_111\n&VodFileId=111122\n&Name=test\n&PreProcessDefinition=10\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"MaterialId\": \"248208104522663991\",\r\n    \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\",\r\n    \"RequestId\": \"requestid\"\r\n  }\r\n}",
-        "title": "导入项目素材"
+        "title": "在项目中导入媒体"
       }
     ],
     "ListMedia": [

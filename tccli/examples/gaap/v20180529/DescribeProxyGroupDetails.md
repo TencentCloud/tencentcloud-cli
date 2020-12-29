@@ -22,6 +22,8 @@ Output:
             "OwnerUin": "2186969362",
             "GroupId": "lg-mh4k07v5",
             "GroupName": "t4",
+            "Version": "1.0",
+            "PolicyId": "vdsw",
             "RealServerRegionInfo": {
                 "RegionId": "EastChina",
                 "RegionName": "EastChina"

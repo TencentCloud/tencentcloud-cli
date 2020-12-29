@@ -85,7 +85,7 @@
       "output": "GetRealNameAuthResultResponse"
     },
     "GetRealNameAuthToken": {
-      "document": "输入姓名和身份证号验证与微信实名的信息是否一致",
+      "document": "该接口仅限微信公众号中使用，传入姓名和身份证号获取回调URL，在微信公众号中打开验证姓名和身份证号与微信实名的信息是否一致。\n",
       "input": "GetRealNameAuthTokenRequest",
       "name": "微信实名认证授权",
       "output": "GetRealNameAuthTokenResponse"
@@ -1500,7 +1500,7 @@
         },
         {
           "default": "",
-          "document": "回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方",
+          "document": "回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方。仅支持http或https协议。",
           "member": "string",
           "name": "CallbackURL",
           "required": true,
@@ -1520,7 +1520,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权",
+          "document": "实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权，仅能在微信环境下打开。",
           "member": "string",
           "name": "RedirectURL",
           "type": "string",

@@ -17,46 +17,53 @@ Output:
 {
     "Response": {
         "ProxyDailyPrice": 80.64,
+        "FlowUnitPrice": 0.0,
+        "Currency": "xx",
         "DiscountProxyDailyPrice": 56.84,
-        "Currency": "CNY",
+        "RequestId": "xx",
+        "DiscountFlowUnitPrice": 0.0,
         "BandwidthUnitPrice": [
             {
                 "BandwidthRange": [
                     0,
                     20
                 ],
-                "BandwidthUnitPrice": 130
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             },
             {
                 "BandwidthRange": [
                     20,
                     100
                 ],
-                "BandwidthUnitPrice": 90
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             },
             {
                 "BandwidthRange": [
                     100,
                     500
                 ],
-                "BandwidthUnitPrice": 70
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             },
             {
                 "BandwidthRange": [
                     500,
                     2000
                 ],
-                "BandwidthUnitPrice": 60
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             },
             {
                 "BandwidthRange": [
                     2000,
-                    -1
+                    0
                 ],
-                "BandwidthUnitPrice": 50
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             }
-        ],
-        "RequestId": "81370460-5826-4c6f-a864-9b825a4a04b9"
+        ]
     }
 }
 ```

@@ -2559,6 +2559,69 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘或快照预支费用的原价，单位：元",
+          "member": "string",
+          "name": "OriginalPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘或快照预支费用的折扣价，单位：元",
+          "member": "string",
+          "name": "DiscountPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnitPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChargeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnitPriceDiscount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度后付费云盘原单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnitPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度后付费云盘折扣单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnitPriceDiscountHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

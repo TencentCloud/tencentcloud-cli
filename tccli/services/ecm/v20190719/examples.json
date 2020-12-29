@@ -738,6 +738,14 @@
         "title": "修改模块配置"
       }
     ],
+    "ModifyModuleDisableWanIp": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyModuleDisableWanIp\n&ModuleId=em-0vag13d1\n&DisableWanIp=true\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"42c0f8c7-a1fb-4ba5-9e5d-fa3447331a12\"\r\n\t}\r\n}",
+        "title": "修改模块是否禁止分配外网ip"
+      }
+    ],
     "ModifyModuleImage": [
       {
         "document": "修改模块默认镜像",

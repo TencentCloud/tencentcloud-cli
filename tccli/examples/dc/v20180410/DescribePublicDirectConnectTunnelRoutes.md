@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dc DescribePublicDirectConnectTunnelRoutes --cli-unfold-argument  \
-    --DirectConnectId dcx-6mqd6t9j
+    --DirectConnectTunnelId dcx-6mqd6t9j
 ```
 
 Output: 
@@ -22,7 +22,8 @@ Output:
                     "58835"
                 ],
                 "RouteType": "STATIC",
-                "RouteId": "dcxr-mtb4iw15"
+                "RouteId": "dcxr-mtb4iw15",
+                "NextHop": ""
             },
             {
                 "Status": "ENABLE",
@@ -32,7 +33,8 @@ Output:
                     "58835"
                 ],
                 "RouteType": "BGP",
-                "RouteId": "dcxr-rjt3luud"
+                "RouteId": "dcxr-rjt3luud",
+                "NextHop": ""
             },
             {
                 "Status": "ENABLE",
@@ -42,7 +44,8 @@ Output:
                     "58835"
                 ],
                 "RouteType": "BGP",
-                "RouteId": "dcxr-eeinewg5"
+                "RouteId": "dcxr-eeinewg5",
+                "NextHop": ""
             }
         ],
         "TotalCount": 3,

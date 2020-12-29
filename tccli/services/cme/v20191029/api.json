@@ -133,7 +133,7 @@
       "output": "DescribeTeamMembersResponse"
     },
     "DescribeTeams": {
-      "document": "获取指定团队的信息。",
+      "document": "获取指定团队的信息，拉取团队信息列表。",
       "input": "DescribeTeamsRequest",
       "name": "获取团队信息",
       "output": "DescribeTeamsResponse"
@@ -175,15 +175,15 @@
       "output": "GrantResourceAuthorizationResponse"
     },
     "ImportMaterial": {
-      "document": "将云点播媒资文件导入到云剪素材库。",
+      "document": "将云点播媒资文件导入到云剪媒体资源库。",
       "input": "ImportMaterialRequest",
-      "name": "导入到素材库",
+      "name": "导入媒体",
       "output": "ImportMaterialResponse"
     },
     "ImportMediaToProject": {
-      "document": "将云点播中的媒资添加到素材库中，供后续视频编辑使用。",
+      "document": "将云点播中的媒资或者用户自有媒资文件添加到媒体库中，供后续视频编辑使用。",
       "input": "ImportMediaToProjectRequest",
-      "name": "导入项目素材",
+      "name": "在项目中导入媒体",
       "output": "ImportMediaToProjectResponse"
     },
     "ListMedia": {
@@ -259,6 +259,15 @@
           "document": "团队成员备注。",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队成员角色，不填则默认添加普通成员。可选值：\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
+          "member": "string",
+          "name": "Role",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1894,8 +1903,24 @@
           "document": "团队 ID 列表，限30个。",
           "member": "string",
           "name": "TeamIds",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：20，最大值：30。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1903,6 +1928,13 @@
     "DescribeTeamsResponse": {
       "document": "DescribeTeams返回参数结构体",
       "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "团队列表。",
           "member": "TeamInfo",
@@ -2209,6 +2241,30 @@
       ],
       "type": "object"
     },
+    "ExternalMediaInfo": {
+      "document": "媒资绑定资源信息，包含媒资绑定模板 ID 和文件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资绑定模板 ID。",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资绑定媒体路径或文件 ID。",
+          "member": "string",
+          "name": "MediaKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "FlattenListMediaRequest": {
       "document": "FlattenListMedia请求参数结构体",
       "members": [
@@ -2477,15 +2533,7 @@
         },
         {
           "default": "",
-          "document": "云点播媒资 FileId。",
-          "member": "string",
-          "name": "VodFileId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "素材归属者。",
+          "document": "媒体归属者，团队或个人。",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -2493,7 +2541,7 @@
         },
         {
           "default": "",
-          "document": "素材名称，不能超过30个字符。",
+          "document": "媒体名称，不能超过30个字符。",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2501,7 +2549,31 @@
         },
         {
           "default": "",
-          "document": "素材分类路径，形如：\"/a/b\"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。",
+          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n注意：如果不填默认为云点播文件。",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云点播媒资 FileId，仅当 SourceType 为 VOD 时有效。",
+          "member": "string",
+          "name": "VodFileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。",
+          "member": "ExternalMediaInfo",
+          "name": "ExternalMediaInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "媒体分类路径，形如：\"/a/b\"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。",
           "member": "string",
           "name": "ClassPath",
           "required": false,
@@ -2509,7 +2581,7 @@
         },
         {
           "default": "",
-          "document": "素材预处理任务模板 ID。取值：\n<li>10：进行编辑预处理。</li>",
+          "document": "媒体预处理任务模板 ID。取值：\n<li>10：进行编辑预处理。</li>",
           "member": "int64",
           "name": "PreProcessDefinition",
           "required": false,
@@ -2573,15 +2645,31 @@
         },
         {
           "default": "",
-          "document": "云点播媒资 FileId。",
+          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n注意：如果不填默认为云点播文件。",
           "member": "string",
-          "name": "VodFileId",
-          "required": true,
+          "name": "SourceType",
+          "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "素材名称，不能超过30个字符。",
+          "document": "云点播媒资文件Id，当 SourceType 取值 VOD 或者缺省的时候必填。",
+          "member": "string",
+          "name": "VodFileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。",
+          "member": "ExternalMediaInfo",
+          "name": "ExternalMediaInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "媒体名称，不能超过30个字符。",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2589,7 +2677,7 @@
         },
         {
           "default": "",
-          "document": "素材预处理任务模板 ID，取值：\n<li>10：进行编辑预处理。</li>\n注意：如果填0则不进行处理。",
+          "document": "媒体预处理任务模板 ID，取值：\n<li>10：进行编辑预处理。</li>\n注意：如果填0则不进行处理。",
           "member": "int64",
           "name": "PreProcessDefinition",
           "required": false,

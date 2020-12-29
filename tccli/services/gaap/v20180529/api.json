@@ -4049,6 +4049,22 @@
           "name": "RuleId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为1000。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4840,6 +4856,15 @@
           "name": "PolyRealServerCertificateAliasInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名的状态。\n0表示运行中，\n1表示变更中，\n2表示删除中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "DomainStatus",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -6789,7 +6814,7 @@
         },
         {
           "default": "",
-          "document": "通道类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道类型，104表示新的银牌质量通道类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ProxyType",
           "required": true,
@@ -7088,6 +7113,33 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站服务失败统计频率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "FailedCountInter",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站健康性检查阀值，超过该阀值会屏蔽服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "FailedThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站健康性检测超出阀值后，屏蔽的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "BlockInter",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

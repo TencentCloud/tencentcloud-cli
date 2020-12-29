@@ -14,6 +14,7 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 2,
         "TeamSet": [
             {
                 "TeamId": "1kdk882ddd88338ddd3k3",

@@ -1,4 +1,4 @@
-**Example 1: 导入素材**
+**Example 1: 导入媒体**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli cme ImportMaterial --cli-unfold-argument  \
     --Platform test \
-    --VodFileId  123456789 \
+    --VodFileId 123456789 \
     --Owner.Id 1111 \
     --Owner.Type PERSON \
     --Name material_name
