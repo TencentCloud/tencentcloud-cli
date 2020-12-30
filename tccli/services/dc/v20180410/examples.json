@@ -3,7 +3,7 @@
     "AcceptDirectConnectTunnel": [
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=AcceptDirectConnectTunnel\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=AcceptDirectConnectTunnel\n&DirectConnectTunnelId=dcx-abcdefgh\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "接受专用通道申请"
       }
@@ -67,7 +67,7 @@
     "DeleteDirectConnectTunnel": [
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=DeleteDirectConnectTunnel\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=DeleteDirectConnectTunnel\n&DirectConnectTunnelId=dcx-abcdefgh\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "删除专用通道"
       }
@@ -181,13 +181,13 @@
     "ModifyDirectConnectTunnelAttribute": [
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectTunnelAttribute\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&Bandwidth=100\r\n&TencentAddress=192.168.1.1/30\r\n&CustomerAddress=192.168.1.2/30\r\n&BgpPeer.Asn=65128\r\n&BgpPeer.AuthKey=abcdefg\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectTunnelAttribute\n&DirectConnectTunnelId=dcx-abcdefgh\n&DirectConnectTunnelName=Test\n&Bandwidth=100\n&TencentAddress=192.168.1.1/30\n&CustomerAddress=192.168.1.2/30\n&BgpPeer.Asn=65128\n&BgpPeer.AuthKey=abcdefg\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "修改路由模式是BGP的专用通道"
       },
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectTunnelAttribute\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&Bandwidth=100\r\n&TencentAddress=192.168.1.1/30\r\n&CustomerAddress=192.168.1.2/30\r\n&RouteFilterPrefixes.0.Cidr=192.168.0.0/24\r\n&RouteFilterPrefixes.1.Cidr=192.168.1.0/24\r\n&RouteFilterPrefixes.2.Cidr=192.168.2.0/24\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectTunnelAttribute\n&DirectConnectTunnelId=dcx-abcdefgh\n&DirectConnectTunnelName=Test\n&Bandwidth=100\n&TencentAddress=192.168.1.1/30\n&CustomerAddress=192.168.1.2/30\n&RouteFilterPrefixes.0.Cidr=192.168.0.0/24\n&RouteFilterPrefixes.1.Cidr=192.168.1.0/24\n&RouteFilterPrefixes.2.Cidr=192.168.2.0/24\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "修改路由模式是STATIC的专用通道"
       }
@@ -203,7 +203,7 @@
     "RejectDirectConnectTunnel": [
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=RejectDirectConnectTunnel\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=RejectDirectConnectTunnel\n&DirectConnectTunnelId=dcx-abcdefgh\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "拒绝专用通道申请"
       }

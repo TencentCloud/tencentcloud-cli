@@ -3,7 +3,7 @@
     "CreateTroubleInfo": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=CreateTroubleInfo\r\n&SdkAppId=1400188366\r\n&RoomId=1587879309\r\n&TeacherUserId=1587882309\r\n&StudentUserId=123456\r\n&TroubleUserId=123456\r\n&TroubleType=1\r\n&TroubleTime=87654321\r\n&TroubleMsg=VoiceException\r\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=CreateTroubleInfo\n&SdkAppId=1400188366\n&RoomId=1587879309\n&TeacherUserId=1587882309\n&StudentUserId=123456\n&TroubleUserId=123456\n&TroubleType=1\n&TroubleTime=87654321\n&TroubleMsg=VoiceException\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"56b89272-cdff-46a3-a399-87ec6f209b53\"\r\n    }\r\n}",
         "title": "创建异常信息"
       }
@@ -119,7 +119,7 @@
     "DismissRoom": [
       {
         "document": "解散房间1234。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoom\r\n&SdkAppId=1400000001\r\n&RoomId=1234\r\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoom\n&SdkAppId=1400000001\n&RoomId=1234\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
         "title": "解散房间"
       }
@@ -167,7 +167,7 @@
     "StopMCUMixTranscode": [
       {
         "document": "结束房间号为3560的云端混流。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscode\r\n&SdkAppId=1400188366\r\n&RoomId=3560\r\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscode\n&SdkAppId=1400188366\n&RoomId=3560\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
         "title": "结束云端混流"
       }

@@ -149,7 +149,7 @@
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=GetReservedConcurrencyConfig\n&FunctionName=test\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"ReservedMem\": 128 \r\n    }\r\n}",
-        "title": "获取函数预置并发详情"
+        "title": "获取函数保留并发详情"
       }
     ],
     "Invoke": [

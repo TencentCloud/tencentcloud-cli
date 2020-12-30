@@ -169,8 +169,8 @@
     "SentimentAnalysis": [
       {
         "document": "",
-        "input": "https://nlp.tencentcloudapi.com/?Action=SentimentAnalysis\n&Text=\"今天受了委屈，心情很差。\"\n&Flag=2\n&<公共请求参数>",
-        "output": "{\n     \"Response\":{\n         \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n         \"Neutral\": null,\n         \"Sentiment\": \"negative\",\n         \"Positive\": 0.03649453,\n         \"Negative\": 0.96350545\n     }\n }",
+        "input": "https://nlp.tencentcloudapi.com/?Action=SentimentAnalysis\n&Text=\"今天受了委屈，心情很差。\"\n&Mode=\"3class\"\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"Neutral\": 0.00009115,\n    \"Negative\": 0.99992788,\n    \"RequestId\": \"2d938c8b-d4cf-4b4e-9c1b-b587eb56d602\",\n    \"Positive\": 0.00001098,\n    \"Sentiment\": \"negative\"\n  }\n}",
         "title": "情感分析示例"
       }
     ],
