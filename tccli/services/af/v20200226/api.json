@@ -248,7 +248,7 @@
       "members": [
         {
           "default": "",
-          "document": "风险码",
+          "document": "风险码 参数详细定义请加微信：TYXGJ-01",
           "member": "uint64",
           "name": "RiskCode",
           "required": true,

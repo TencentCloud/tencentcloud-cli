@@ -71,7 +71,7 @@
     "DeleteSnapshots": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DeleteSnapshots\r\n&SnapshotIds.0=snap-gybrif0z\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=DeleteSnapshots\n&SnapshotIds.0=snap-gybrif0z\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"b4770576-d9eb-4689-0866-5a1f8200a722\"\r\n\t}\r\n}",
         "title": "删除快照"
       }

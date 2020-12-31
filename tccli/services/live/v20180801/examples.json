@@ -645,7 +645,7 @@
     "DescribeProvinceIspPlayInfoList": [
       {
         "document": "省份和运营商 [映射表](/document/api/267/34019)。",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeProvinceIspPlayInfoList\r\n&PlayDomains.0=5000.playdomain.com\r\n&StartTime=2019-02-01 00:00:00\r\n&EndTime=2019-02-02 00:00:00\r\n&Granularity=1\r\n&StatType=Bandwidth\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeProvinceIspPlayInfoList\n&PlayDomains.0=5000.playdomain.com\n&StartTime=2019-02-01 00:00:00\n&EndTime=2019-02-02 00:00:00\n&Granularity=1\n&StatType=Bandwidth\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n    \"DataInfoList\": [\r\n\t\t\t{\r\n\t\t\t\t\"Time\": \"2019-02-01 00:00:00\",\r\n\t\t\t\t\"Value\": 500.0\r\n\t\t\t}\r\n\t\t],\r\n    \"StatType\":\"Bandwidth\",\r\n    \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\r\n\t}\r\n}",
         "title": "请求示例"
       }

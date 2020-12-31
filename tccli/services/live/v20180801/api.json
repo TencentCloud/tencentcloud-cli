@@ -5984,6 +5984,14 @@
           "name": "MainlandOrOversea",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ip类型：\n“Ipv6”：Ipv6数据\n如果为空，查询总的数据；",
+          "member": "string",
+          "name": "IpType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

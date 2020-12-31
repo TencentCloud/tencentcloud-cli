@@ -225,7 +225,7 @@
     "TerminateComputeNode": [
       {
         "document": "",
-        "input": "https://batch.tencentcloudapi.com/?Action=TerminateComputeNode\r\n&EnvId=env-lcx7qbbr\r\n&ComputeNodeId=node-lcpcej85\r\n&<公共请求参数>",
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateComputeNode\n&EnvId=env-lcx7qbbr\n&ComputeNodeId=node-lcpcej85\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c50bfbf1-d214-4e41-90f6-39270dc9f071\"\r\n    }\r\n}",
         "title": "销毁计算节点"
       }
