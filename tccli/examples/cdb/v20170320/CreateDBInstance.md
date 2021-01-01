@@ -49,11 +49,11 @@ tccli cdb CreateDBInstance --cli-unfold-argument  \
     --Memory 4000 \
     --Volume 100 \
     --InstanceRole ro \
-    --RoGroup.roGroupMode allinone \
-    --RoGroup.roGroupName jersey_test \
-    --RoGroup.roOfflineDelay 1 \
-    --RoGroup.roMaxDelayTime 5 \
-    --RoGroup.minRoInGroup 1
+    --RoGroup.RoGroupMode allinone \
+    --RoGroup.RoGroupName jersey_test \
+    --RoGroup.RoOfflineDelay 1 \
+    --RoGroup.RoMaxDelayTime 5 \
+    --RoGroup.MinRoInGroup 1
 ```
 
 Output: 

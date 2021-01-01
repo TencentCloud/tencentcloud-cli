@@ -88,6 +88,14 @@
         "title": "报告下载"
       }
     ],
+    "ExportBotData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportBotData\n<公共请求参数>\n\n{\n  \"Module\": \"AiApi\",\n  \"Operation\": \"ExportBotData\",\n  \"BizDate\": \"2020-12-20\",\n  \"BotName\": \"测试\",\n   \"BotId\": \"xx\"\n}",
+        "output": "{\"Response\":{\r\n\"RequestId\":\"xxxx\",\r\n\"Data\":[ {\r\n\"FileType\":\"A\",\r\n\"CosUrl\":\"https://aaa\"\r\n}]\r\n}}",
+        "title": "查询机器人文件模板"
+      }
+    ],
     "QueryInstantData": [
       {
         "document": "",

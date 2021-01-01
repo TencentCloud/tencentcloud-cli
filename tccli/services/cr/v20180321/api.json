@@ -66,6 +66,12 @@
       "name": "报告下载",
       "output": "DownloadReportResponse"
     },
+    "ExportBotData": {
+      "document": "导出机器人数据",
+      "input": "ExportBotDataRequest",
+      "name": "导出机器人数据",
+      "output": "ExportBotDataResponse"
+    },
     "QueryInstantData": {
       "document": "实时数据查询",
       "input": "QueryInstantDataRequest",
@@ -240,6 +246,30 @@
         }
       ],
       "type": "object"
+    },
+    "BotFileData": {
+      "document": "机器人文件结构",
+      "members": [
+        {
+          "default": "",
+          "document": "文件类型 A 拨打结果 T 记录详情",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件地址",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BotFlow": {
       "document": "机器人对话流信息",
@@ -1112,6 +1142,71 @@
           "name": "CallbackDetailReportUrl",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportBotDataRequest": {
+      "document": "ExportBotData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名。默认值（固定）：AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名。默认值（固定）：ExportBotData",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务日期。YYYY-MM-DD",
+          "member": "date",
+          "name": "BizDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID，二者必填一个",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称，二者必填一个",
+          "member": "string",
+          "name": "BotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportBotDataResponse": {
+      "document": "ExportBotData返回参数结构体",
+      "members": [
+        {
+          "document": "导出文件列表",
+          "member": "BotFileData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

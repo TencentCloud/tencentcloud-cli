@@ -103,7 +103,7 @@
       },
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDBInstance\n&MasterInstanceId=cdb-fn3f9xpx\n&Period=1\n&GoodsNum=1\n&Memory=4000\n&Volume=100\n&InstanceRole=ro\n&RoGroup.roGroupMode=allinone\n&RoGroup.roGroupName=jersey_test\n&RoGroup.roOfflineDelay=1\n&RoGroup.roMaxDelayTime=5\n&RoGroup.minRoInGroup=1\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDBInstance\n&MasterInstanceId=cdb-fn3f9xpx\n&Period=1\n&GoodsNum=1\n&Memory=4000\n&Volume=100\n&InstanceRole=ro\n&RoGroup.RoGroupMode=allinone\n&RoGroup.RoGroupName=jersey_test\n&RoGroup.RoOfflineDelay=1\n&RoGroup.RoMaxDelayTime=5\n&RoGroup.MinRoInGroup=1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"DealIds\": [\"20171205110051\"],\r\n        \"InstanceIds\": [\"cdbro-hlpl4ik9\"]\r\n    }\r\n}",
         "title": "购买只读实例"
       }
