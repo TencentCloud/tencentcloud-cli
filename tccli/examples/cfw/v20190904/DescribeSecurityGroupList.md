@@ -36,11 +36,10 @@ Output:
                 "Detail": "添加规则test",
                 "PrivateIp": "172.27.0.17",
                 "PublicIp": "119.27.187.24",
-                "InstanceId": "ins-1kub1g5f",
                 "OrderIndex": 1,
                 "SubnetId": "subnet-9qs6catf",
                 "Cidr": "",
-                "Strategy": "ins-1kub1g5f",
+                "Strategy": 1,
                 "InstanceName": "成都多协议-勿删（勿删勿删勿删勿删）",
                 "Id": 1,
                 "BothWay": 1

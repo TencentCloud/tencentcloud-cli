@@ -354,6 +354,12 @@
       "name": "更新触发器",
       "output": "ModifyWebhookTriggerResponse"
     },
+    "RenewInstance": {
+      "document": "预付费实例续费，同时支持按量计费转包年包月",
+      "input": "RenewInstanceRequest",
+      "name": "续费实例",
+      "output": "RenewInstanceResponse"
+    },
     "ValidateNamespaceExistPersonal": {
       "document": "查询个人版用户命名空间是否存在",
       "input": "ValidateNamespaceExistPersonalRequest",
@@ -726,6 +732,14 @@
           "name": "TagSpecification",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型，0表示按量计费，1表示预付费，当前版本只支持后付费，默认为按量计费",
+          "member": "int64",
+          "name": "RegistryChargeType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3707,9 +3721,60 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例过期时间（预付费）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ExpiredAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例付费类型，0表示后付费，1表示预付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PayMod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "RegistryChargePrepaid": {
+      "document": "实例预付费模式",
+      "members": [
+        {
+          "default": "",
+          "document": "购买实例的时长，单位：月",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标识，0：手动续费，1：自动续费，2：不续费并且不通知",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "RegistryCondition": {
       "document": "实例创建过程",
@@ -3776,6 +3841,55 @@
         }
       ],
       "usage": "out"
+    },
+    "RenewInstanceRequest": {
+      "document": "RenewInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费自动续费标识和购买时长",
+          "member": "RegistryChargePrepaid",
+          "name": "RegistryChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "0 续费， 1按量转包年包月",
+          "member": "int64",
+          "name": "Flag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewInstanceResponse": {
+      "document": "RenewInstance返回参数结构体",
+      "members": [
+        {
+          "document": "企业版实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReplicationRegistry": {
       "document": "企业版复制实例",

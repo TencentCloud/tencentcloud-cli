@@ -333,7 +333,7 @@
         },
         {
           "default": "",
-          "document": "0：添加，1：插入",
+          "document": "0：添加（默认），1：插入",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -478,7 +478,7 @@
       "members": [
         {
           "default": "",
-          "document": "id值",
+          "document": "删除规则对应的id值 669872",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -486,7 +486,7 @@
         },
         {
           "default": "",
-          "document": "出站还是入站",
+          "document": "方向，0：出站，1：入站",
           "member": "uint64",
           "name": "Direction",
           "required": true,
@@ -494,7 +494,7 @@
         },
         {
           "default": "",
-          "document": "EdgeId值",
+          "document": "EdgeId值两个vpc间的边id",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -515,7 +515,7 @@
       "document": "DeleteAcRule返回参数结构体",
       "members": [
         {
-          "document": "状态值",
+          "document": "状态值 0: 删除成功, !0: 删除失败",
           "member": "int64",
           "name": "Status",
           "type": "int",
@@ -542,7 +542,7 @@
       "members": [
         {
           "default": "",
-          "document": "方向，0：出站，1：入站",
+          "document": "方向，0：出站，1：入站  默认值是 0",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -550,7 +550,7 @@
         },
         {
           "default": "",
-          "document": "VPC间防火墙开关ID",
+          "document": "VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -558,7 +558,7 @@
         },
         {
           "default": "",
-          "document": "nat地域",
+          "document": "nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -571,14 +571,14 @@
       "document": "DeleteAllAccessControlRule返回参数结构体",
       "members": [
         {
-          "document": "状态值",
+          "document": "状态值 0: 修改成功, !0: 修改失败",
           "member": "int64",
           "name": "Status",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "返回多余信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除了几条访问控制规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Info",
           "type": "int",
@@ -932,7 +932,7 @@
       "members": [
         {
           "default": "",
-          "document": "方向，0：出站，1：入站",
+          "document": "方向，0：出站，1：入站 默认值：0",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -940,7 +940,7 @@
         },
         {
           "default": "",
-          "document": "NAT地域",
+          "document": "NAT地域  这个是必填项，填入相关的英文，'ap-beijing-fsi': '北京金融',\n        'ap-beijing': '北京',\n        'ap-changsha-ec': '长沙EC',\n        'ap-chengdu': '成都',\n        'ap-chongqing': '重庆',\n        'ap-fuzhou-ec': '福州EC',\n        'ap-guangzhou-open': '广州Open',\n        'ap-guangzhou': '广州',\n        'ap-hangzhou-ec': '杭州EC',\n        'ap-jinan-ec': '济南EC',\n        'ap-nanjing': '南京',\n        'ap-shanghai-fsi': '上海金融',\n        'ap-shanghai': '上海',\n        'ap-shenzhen-fsi': '深圳金融',\n        'ap-shenzhen': '深圳',\n        'ap-wuhan-ec': '武汉EC'",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -988,7 +988,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "访问规则剩余条数",
+          "document": "访问控制规则剩余配额",
           "member": "int64",
           "name": "RemainNum",
           "type": "int",
@@ -1091,7 +1091,7 @@
         },
         {
           "default": "",
-          "document": "腾讯云地域的英文简写",
+          "document": "地域代码（例: ap-guangzhou),支持腾讯云全部地域",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -1144,7 +1144,7 @@
       "document": "DescribeSecurityGroupList返回参数结构体",
       "members": [
         {
-          "document": "总条数",
+          "document": "列表当前规则总条数",
           "member": "uint64",
           "name": "Total",
           "type": "int",
@@ -1185,7 +1185,7 @@
       "members": [
         {
           "default": "",
-          "document": "防火墙状态",
+          "document": "防火墙状态  0: 关闭，1：开启",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -1193,7 +1193,7 @@
         },
         {
           "default": "",
-          "document": "资产类型",
+          "document": "资产类型 CVM/NAT/VPN/CLB/其它",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -1201,7 +1201,7 @@
         },
         {
           "default": "",
-          "document": "地域",
+          "document": "地域 上海/重庆/广州，等等",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -1209,7 +1209,7 @@
         },
         {
           "default": "",
-          "document": "搜索值",
+          "document": "搜索值  例子：\"{\"common\":\"106.54.189.45\"}\"",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -1217,7 +1217,7 @@
         },
         {
           "default": "",
-          "document": "条数",
+          "document": "条数  默认值:10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1225,7 +1225,7 @@
         },
         {
           "default": "",
-          "document": "偏移值",
+          "document": "偏移值 默认值: 0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1241,7 +1241,7 @@
         },
         {
           "default": "",
-          "document": "排序字段",
+          "document": "排序字段 PortTimes(风险端口数)",
           "member": "string",
           "name": "By",
           "required": false,
@@ -1315,7 +1315,7 @@
       "document": "DescribeSyncAssetStatus返回参数结构体",
       "members": [
         {
-          "document": "0：同步成功，1：资产更新中，2：后台同步调用失败",
+          "document": "1-更新中 2-更新完成 3、4-更新失败",
           "member": "int64",
           "name": "Status",
           "type": "int",
@@ -1335,7 +1335,7 @@
       "members": [
         {
           "default": "",
-          "document": "EdgeId值",
+          "document": "EdgeId值两个vpc间的边id vpc填Edgeid，不要填Area；",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -1343,7 +1343,7 @@
         },
         {
           "default": "",
-          "document": "状态值，0：检查表的状态",
+          "document": "状态值，0：检查表的状态 确实只有一个默认值",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -1351,7 +1351,7 @@
         },
         {
           "default": "",
-          "document": "Nat所在地域",
+          "document": "Nat所在地域 NAT填Area，不要填Edgeid；",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -1359,7 +1359,7 @@
         },
         {
           "default": "",
-          "document": "方向，0：出站，1：入站",
+          "document": "方向，0：出站，1：入站 默认值为 0",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -1392,7 +1392,7 @@
       "members": [
         {
           "default": "",
-          "document": "边id",
+          "document": "EdgeId值两个vpc间的边id  不是必填项可以为空，就是所有vpc间的访问控制规则",
           "member": "string",
           "name": "EdgeId",
           "required": true,
@@ -1469,7 +1469,7 @@
       "document": "ModifyAcRule返回参数结构体",
       "members": [
         {
-          "document": "状态值，0:操作成功",
+          "document": "状态值，0:操作成功，非0：操作失败",
           "member": "int64",
           "name": "Status",
           "type": "int",
@@ -1561,7 +1561,7 @@
         },
         {
           "default": "",
-          "document": "0: 边界防火墙开关，1：vpc防火墙开关",
+          "document": "0: 互联网边界防火墙开关，1：vpc防火墙开关",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -1598,7 +1598,7 @@
       "document": "ModifyAllSwitchStatus返回参数结构体",
       "members": [
         {
-          "document": "开启或者关闭成功与否状态值",
+          "document": "修改成功与否的状态值 0：修改成功，非 0：修改失败",
           "member": "uint64",
           "name": "Status",
           "type": "int",
@@ -1634,7 +1634,7 @@
         },
         {
           "default": "",
-          "document": "0: 边界防火墙开关，1：vpc防火墙开关",
+          "document": "0: 互联网边界边界防火墙开关，1：vpc防火墙开关",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -1647,7 +1647,7 @@
       "document": "ModifyItemSwitchStatus返回参数结构体",
       "members": [
         {
-          "document": "修改成功与否状态值",
+          "document": "修改成功与否状态值 0：修改成功，非 0：修改失败",
           "member": "int64",
           "name": "Status",
           "type": "int",
@@ -1667,7 +1667,7 @@
       "members": [
         {
           "default": "",
-          "document": "状态，0：全部停用，1：全部启用",
+          "document": "列表规则状态，0：全部停用，1：全部启用",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -1748,7 +1748,7 @@
         },
         {
           "default": "",
-          "document": "0：出向，1：入向",
+          "document": "方向，0：出向，1：入向",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -1761,7 +1761,7 @@
       "document": "ModifySequenceRules返回参数结构体",
       "members": [
         {
-          "document": "0: 修改成功, 其他: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0: 修改成功, 非0: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Status",
           "type": "int",
@@ -1781,7 +1781,7 @@
       "members": [
         {
           "default": "",
-          "document": "EdgeId值",
+          "document": "EdgeId值两个vpc间的边id",
           "member": "string",
           "name": "EdgeId",
           "required": false,

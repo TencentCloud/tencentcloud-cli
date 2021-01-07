@@ -1965,6 +1965,14 @@
           "name": "ClusterTag",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP",
+          "member": "string",
+          "name": "EipAddressId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

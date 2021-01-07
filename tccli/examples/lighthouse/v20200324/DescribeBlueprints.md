@@ -24,7 +24,9 @@ Output:
                 "Platform": "CENTOS",
                 "PlatformType": "LINUX_UNIX",
                 "BlueprintType": "APP_OS",
-                "ImageUrl": "http://www.wordpress.com/image"
+                "ImageUrl": "http://www.wordpress.com/image",
+                "RequiredSystemDiskSize": 50,
+                "BlueprintState": "NORMAL"
             }
         ],
         "RequestId": "3df9cd92-cec1-4864-a2a1-358084f41551"

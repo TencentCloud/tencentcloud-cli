@@ -6,11 +6,23 @@
       "name": "创建会话",
       "output": "CreateSessionResponse"
     },
+    "SaveGameArchive": {
+      "document": "保存游戏存档",
+      "input": "SaveGameArchiveRequest",
+      "name": "保存游戏存档",
+      "output": "SaveGameArchiveResponse"
+    },
     "StopGame": {
       "document": "强制退出游戏",
       "input": "StopGameRequest",
       "name": "强制退出游戏",
       "output": "StopGameResponse"
+    },
+    "SwitchGameArchive": {
+      "document": "切换游戏存档",
+      "input": "SwitchGameArchiveRequest",
+      "name": "切换游戏存档",
+      "output": "SwitchGameArchiveResponse"
     },
     "TrylockWorker": {
       "document": "尝试锁定机器",
@@ -193,6 +205,40 @@
       ],
       "type": "object"
     },
+    "SaveGameArchiveRequest": {
+      "document": "SaveGameArchive请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏ID",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveGameArchiveResponse": {
+      "document": "SaveGameArchive返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopGameRequest": {
       "document": "StopGame请求参数结构体",
       "members": [
@@ -217,6 +263,56 @@
     },
     "StopGameResponse": {
       "document": "StopGame返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchGameArchiveRequest": {
+      "document": "SwitchGameArchive请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏ID",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏存档Url",
+          "member": "string",
+          "name": "GameArchiveUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏相关参数",
+          "member": "string",
+          "name": "GameContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchGameArchiveResponse": {
+      "document": "SwitchGameArchive返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

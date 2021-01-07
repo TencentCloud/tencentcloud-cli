@@ -20,7 +20,7 @@
       {
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeBlueprints\n&BlueprintIds.0=lhbp-5e8807sc\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"BlueprintSet\": [\r\n            {\r\n                \"BlueprintId\": \"lhbp-5e8807sc\",\r\n                \"DisplayTitle\": \"wordpress\",\r\n                \"DisplayVersion\": \"5.3.2\",\r\n                \"Description\": \"个人blog建站\",\r\n                \"OsName\": \"CentOS-7.6-64bit\",\r\n                \"Platform\": \"CENTOS\",\r\n                \"PlatformType\": \"LINUX_UNIX\",\r\n                \"BlueprintType\": \"APP_OS\",\r\n                \"ImageUrl\": \"http://www.wordpress.com/image\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"3df9cd92-cec1-4864-a2a1-358084f41551\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"BlueprintSet\": [\r\n            {\r\n                \"BlueprintId\": \"lhbp-5e8807sc\",\r\n                \"DisplayTitle\": \"wordpress\",\r\n                \"DisplayVersion\": \"5.3.2\",\r\n                \"Description\": \"个人blog建站\",\r\n                \"OsName\": \"CentOS-7.6-64bit\",\r\n                \"Platform\": \"CENTOS\",\r\n                \"PlatformType\": \"LINUX_UNIX\",\r\n                \"BlueprintType\": \"APP_OS\",\r\n                \"ImageUrl\": \"http://www.wordpress.com/image\",\r\n                \"RequiredSystemDiskSize\": 50,\r\n                \"BlueprintState\": \"NORMAL\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"3df9cd92-cec1-4864-a2a1-358084f41551\"\r\n    }\r\n}",
         "title": "查询镜像信息"
       }
     ],

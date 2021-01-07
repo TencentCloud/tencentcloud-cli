@@ -288,6 +288,12 @@
       "name": "查询用户组关联的用户列表",
       "output": "ListUsersForGroupResponse"
     },
+    "ListWeChatWorkSubAccounts": {
+      "document": "获取企业微信子用户列表",
+      "input": "ListWeChatWorkSubAccountsRequest",
+      "name": "获取企业微信子用户列表",
+      "output": "ListWeChatWorkSubAccountsResponse"
+    },
     "PutRolePermissionsBoundary": {
       "document": "设置角色权限边界",
       "input": "PutRolePermissionsBoundaryRequest",
@@ -3060,6 +3066,54 @@
       ],
       "type": "object"
     },
+    "ListWeChatWorkSubAccountsRequest": {
+      "document": "ListWeChatWorkSubAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListWeChatWorkSubAccountsResponse": {
+      "document": "ListWeChatWorkSubAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "企业微信子用户列表。",
+          "member": "WeChatWorkSubAccount",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数目。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LoginActionFlag": {
       "document": "登录和敏感操作flag",
       "members": [
@@ -3774,6 +3828,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4134,6 +4197,102 @@
         }
       ],
       "type": "object"
+    },
+    "WeChatWorkSubAccount": {
+      "document": "企业微信子用户",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户用户 ID",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户用户名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户 UID",
+          "member": "uint64",
+          "name": "Uid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户能否登录控制台",
+          "member": "uint64",
+          "name": "ConsoleLogin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区号",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业微信UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WeChatWorkUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

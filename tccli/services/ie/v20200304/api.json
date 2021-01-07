@@ -1191,6 +1191,87 @@
       ],
       "usage": "out"
     },
+    "FrameTagItem": {
+      "document": "帧标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签起始时间戳PTS(ms)",
+          "member": "uint64",
+          "name": "StartPts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语句结束时间戳PTS(ms)",
+          "member": "uint64",
+          "name": "EndPts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符串形式的起始结束时间",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签数组",
+          "member": "TagItem",
+          "name": "TagItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FrameTagRec": {
+      "document": "帧标签任务参数",
+      "members": [
+        {
+          "default": "",
+          "document": "标签类型：\n\"Common\": 通用类型\n\"Game\":游戏类型",
+          "member": "string",
+          "name": "TagType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "游戏具体类型:\n\"HonorOfKings_AnchorViews\":王者荣耀主播视角\n\"HonorOfKings_GameViews\":王者荣耀比赛视角\n\"LOL_AnchorViews\":英雄联盟主播视角\n\"LOL_GameViews\":英雄联盟比赛视角\n\"PUBG_AnchorViews\":和平精英主播视角\n\"PUBG_GameViews\":和平精英比赛视角",
+          "member": "string",
+          "name": "GameExtendType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FrameTagResult": {
+      "document": "帧标签结果",
+      "members": [
+        {
+          "default": "",
+          "document": "帧标签结果数组",
+          "member": "FrameTagItem",
+          "name": "FrameTagItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "HighlightsEditingInfo": {
       "document": "智能集锦任务参数信息",
       "members": [
@@ -1583,7 +1664,7 @@
       "members": [
         {
           "default": "",
-          "document": "编辑处理任务类型，可选值：\nMediaEditing：媒体编辑（待上线）；\nMediaCutting：媒体剪切；\nMediaJoining：媒体拼接。",
+          "document": "编辑处理任务类型，可选值：\nMediaEditing：媒体编辑（待上线）；\nMediaCutting：媒体剪切；\nMediaJoining：媒体拼接。\nMediaRecognition: 媒体识别。",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1607,6 +1688,15 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体识别任务参数，Type=MediaRecognition时必选",
+          "member": "MediaRecognitionInfo",
+          "name": "MediaRecognitionInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1625,7 +1715,7 @@
         },
         {
           "default": "",
-          "document": "编辑处理任务类型，取值：\nMediaEditing：视频编辑（待上线）；\nMediaCutting：视频剪切；\nMediaJoining：视频拼接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编辑处理任务类型，取值：\nMediaEditing：视频编辑（待上线）；\nMediaCutting：视频剪切；\nMediaJoining：视频拼接。\nMediaRecognition：媒体识别；\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1685,6 +1775,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体识别任务处理结果，当Type=MediaRecognition时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaRecognitionTaskResult",
+          "name": "MediaRecognitionTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1709,6 +1808,54 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaRecognitionInfo": {
+      "document": "媒体识别任务参数",
+      "members": [
+        {
+          "default": "",
+          "document": "帧标签识别",
+          "member": "FrameTagRec",
+          "name": "FrameTagRec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语音字幕识别",
+          "member": "SubtitleRec",
+          "name": "SubtitleRec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaRecognitionTaskResult": {
+      "document": "媒体识别任务处理结果",
+      "members": [
+        {
+          "default": "",
+          "document": "帧标签识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FrameTagResult",
+          "name": "FrameTagResults",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语音字幕识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SubtitleResult",
+          "name": "SubtitleResults",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1751,7 +1898,7 @@
       "members": [
         {
           "default": "",
-          "document": "目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。\n\n注1：部分子服务支持站位符，形式为： {parameter}\n预设parameter：\nindex：序号；",
+          "document": "目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。\n\n注1：部分子服务支持占位符，形式为： {parameter}\n预设parameter有：\nindex：序号；",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -2791,6 +2938,132 @@
       ],
       "usage": "in"
     },
+    "SubtitleItem": {
+      "document": "语音字幕识别项",
+      "members": [
+        {
+          "default": "",
+          "document": "语音识别结果",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中文翻译结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "英文翻译结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "En",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语句起始时间戳PTS(ms)",
+          "member": "uint64",
+          "name": "StartPts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语句结束时间戳PTS(ms)",
+          "member": "uint64",
+          "name": "EndPts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符串形式的起始结束时间",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果的置信度（百分制）",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前语句是否结束",
+          "member": "bool",
+          "name": "EndFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语句分割时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PuncEndTs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubtitleRec": {
+      "document": "语音字幕任务参数",
+      "members": [
+        {
+          "default": "",
+          "document": "语音识别：\nzh：中文\nen：英文",
+          "member": "string",
+          "name": "AsrDst",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译识别：\nzh：中文\nen：英文",
+          "member": "string",
+          "name": "TransDst",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SubtitleResult": {
+      "document": "语音字幕识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "语音字幕数组",
+          "member": "SubtitleItem",
+          "name": "SubtitleItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TagEditingInfo": {
       "document": "视频标签识别任务参数信息",
       "members": [
@@ -2814,6 +3087,48 @@
         }
       ],
       "usage": "in"
+    },
+    "TagItem": {
+      "document": "标签项",
+      "members": [
+        {
+          "default": "",
+          "document": "标签内容",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果的置信度（百分制）",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分级数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Categorys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TagTaskResult": {
       "document": "视频标签识别结果信息",

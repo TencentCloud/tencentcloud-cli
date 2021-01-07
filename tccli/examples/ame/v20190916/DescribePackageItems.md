@@ -1,4 +1,4 @@
-**Example 1: 查询曲库包已核验歌曲列表接口**
+**Example 1: 获取曲库包已核验歌曲列表**
 
 
 
@@ -7,8 +7,8 @@ Input:
 ```
 tccli ame DescribePackageItems --cli-unfold-argument  \
     --OrderId xxx \
-    --Offset xxx \
-    --Length xxx
+    --Offset 0 \
+    --Length 20
 ```
 
 Output: 

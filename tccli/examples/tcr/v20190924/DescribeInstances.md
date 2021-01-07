@@ -20,7 +20,10 @@ Output:
                 "RegistryType": "standard",
                 "PublicDomain": "mytest.tencentcloudcr.com",
                 "CreateTime": "2019-08-09",
-                "InternalEndpoint": "8.9.10.9"
+                "InternalEndpoint": "8.9.10.9",
+                "ExpiredAt": "2020-09-10",
+                "PayMod": 1,
+                "RenewFlag": 1
             }
         ],
         "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"

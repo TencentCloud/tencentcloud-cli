@@ -231,7 +231,7 @@
     "PublishAsDevice": {
       "document": "模拟lora类型的设备端向服务器端发送消息",
       "input": "PublishAsDeviceRequest",
-      "name": "模拟设备发送消息",
+      "name": "模拟lora设备发送消息",
       "output": "PublishAsDeviceResponse"
     },
     "PublishBroadcastMessage": {
@@ -255,7 +255,7 @@
     "PublishToDevice": {
       "document": "服务器端下发消息给lora类型的设备",
       "input": "PublishToDeviceRequest",
-      "name": "服务下发消息到设备",
+      "name": "服务下发消息到lora设备",
       "output": "PublishToDeviceResponse"
     },
     "ReplaceTopicRule": {
@@ -3687,6 +3687,14 @@
           "name": "Qos",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备",
+          "member": "string",
+          "name": "PayloadEncoding",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -929,7 +929,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例ID(该字段灰度中，部分地域不可见)",
+          "document": "实例ID",
           "member": "string",
           "name": "InstanceIds",
           "type": "list",

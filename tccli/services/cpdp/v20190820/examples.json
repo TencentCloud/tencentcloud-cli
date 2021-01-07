@@ -342,6 +342,14 @@
         "title": "QueryBankWithdrawCashDetails"
       }
     ],
+    "QueryBillDownloadURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryBillDownloadURL\n<公共请求参数>\n\n{\n    \"TransferType\":3,\n    \"BillDate\":\"2020-12-18\",\n    \"MerchantId\":\"faryrong\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"CPDP-1609296532884\",\r\n        \"ErrMessage\": \"成功\",\r\n        \"ErrCode\": \"SUCCESS\",\r\n        \"Result\": {\r\n            \"OriginalBillDownloadURL\": \"http://cpdp-transfer-1258344699.cos.ap-nanjing.myqcloud.com/transfer/faryrong/2020-12-18.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDxiQKyTvz1pRJ1UtxvdCZooZ72pTwoE4f%26q-sign-time%3D1609296546%3B1609300146%26q-key-time%3D1609296546%3B1609300146%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D272b429cdd2a0127ea8ce377a155df13655b6ef9\",\r\n            \"BillDownloadURL\": \"http://cpdp-transfer-1258344699.cos.ap-nanjing.myqcloud.com/smart_transfer/pingan/gen/faryrong_2020-12-18.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDxiQKyTvz1pRJ1UtxvdCZooZ72pTwoE4f%26q-sign-time%3D1609296548%3B1609300148%26q-key-time%3D1609296548%3B1609300148%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D29d65b284e5d3d80c7326e02760e66848dead104\"\r\n        }\r\n    }\r\n}",
+        "title": "QueryBillDownloadURL"
+      }
+    ],
     "QueryCommonTransferRecharge": [
       {
         "document": "",

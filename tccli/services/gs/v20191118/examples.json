@@ -8,12 +8,28 @@
         "title": "CreateSession示例"
       }
     ],
+    "SaveGameArchive": [
+      {
+        "document": "",
+        "input": "https://gs.tencentcloudapi.com/?Action=SaveGameArchive\n&UserId=字符串型\n&GameId=字符串型\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "SaveGameArchive示例"
+      }
+    ],
     "StopGame": [
       {
         "document": "",
         "input": "https://gs.tencentcloudapi.com/?Action=StopGame\n&UserId=字符串型\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"72864dc3-9537-432c-8f01-78b4d35ea18a\"\r\n    }\r\n}",
         "title": "StopGame示例"
+      }
+    ],
+    "SwitchGameArchive": [
+      {
+        "document": "",
+        "input": "https://gs.tencentcloudapi.com/?Action=SwitchGameArchive\n&UserId=字符串型\n&GameId=字符串型\n&GameArchiveUrl=字符串型\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "SwitchGameArchive示例"
       }
     ],
     "TrylockWorker": [

@@ -13,10 +13,17 @@ Output:
 ```
 {
     "Response": {
-        "CardNo": "6225760088888888",
         "BankInfo": "招商银行(03080000)",
-        "ValidDate": "08/2022",
-        "RequestId": "46ab2e62-11e3-4d04-9fab-0abe18e7c927"
+        "ValidDate": "07/2023",
+        "CardType": "贷记卡",
+        "CardName": "招商银行信用卡",
+        "BorderCutImage": null,
+        "CardNoImage": null,
+        "WarningCode": [
+            -9110
+        ],
+        "CardNo": "6225768888888888",
+        "RequestId": "68f8fcbf-6004-0111a-ac18-6f1a9308fs100mab"
     }
 }
 ```

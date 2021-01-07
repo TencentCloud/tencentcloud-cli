@@ -4919,12 +4919,12 @@
         },
         {
           "default": "",
-          "document": "HAVIP名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HAVIP名称。",
           "member": "string",
           "name": "HaVipName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -4964,21 +4964,21 @@
         },
         {
           "default": "",
-          "document": "被绑定的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被绑定的实例ID。",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "绑定EIP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定EIP。",
           "member": "string",
           "name": "AddressIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -5000,12 +5000,12 @@
         },
         {
           "default": "",
-          "document": "使用havip的业务标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用havip的业务标识。",
           "member": "string",
           "name": "Business",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

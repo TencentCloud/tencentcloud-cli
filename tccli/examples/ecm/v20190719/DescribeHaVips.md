@@ -18,27 +18,27 @@ Output:
                 "HaVipId": "havip-2kce8v4q",
                 "HaVipName": "tadfafd",
                 "Vip": "10.3.3.15",
-                "VpcId": "vpc-o31qeah3",
-                "SubnetId": "subnet-8qywqc4y",
-                "NetworkInterfaceId": "",
-                "InstanceId": "",
+                "VpcId": "vpc-11111111",
+                "SubnetId": "subnet-11111111",
+                "NetworkInterfaceId": "eni-7tqc2xgl",
+                "InstanceId": "ein-1kb08tq6",
                 "AddressIp": "",
+                "State": "AVAILABLE",
                 "Business": "",
-                "State": "UNBOUND",
-                "CreatedTime": "2018-04-03 20:00:05"
+                "CreatedTime": "2020-04-03 20:00:05"
             },
             {
                 "HaVipId": "havip-bk4275i0",
                 "HaVipName": "22",
                 "Vip": "10.2.0.14",
-                "VpcId": "vpc-2mcdauzl",
-                "SubnetId": "subnet-mnmm19fg",
+                "VpcId": "vpc-22222222",
+                "SubnetId": "subnet-22222222",
                 "NetworkInterfaceId": "",
                 "InstanceId": "",
                 "AddressIp": "",
                 "Business": "",
-                "State": "UNBOUND",
-                "CreatedTime": "2018-04-03 20:05:33"
+                "State": "UNBIND",
+                "CreatedTime": "2020-04-03 20:05:33"
             }
         ],
         "TotalCount": 2,

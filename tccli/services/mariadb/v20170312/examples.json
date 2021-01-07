@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AssociateSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=AssociateSecurityGroups\n&Product=mariadb\n&SecurityGroupId=sg-xxxxxx\n&InstanceIds.0=tdsql-xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\"\r\n    }\r\n}",
+        "title": "无"
+      }
+    ],
     "CloneAccount": [
       {
         "document": "",
@@ -144,6 +152,14 @@
         "title": "查看实例资源使用详情"
       }
     ],
+    "DescribeDBSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&Product=mariadb\n&InstanceId=tdsql-eb2w7dto\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\r\n\t\t\"Groups\": [{\r\n\t\t\t\"ProjectId\": 0,\r\n\t\t\t\"CreateTime\": \"\",\r\n\t\t\t\"Inbound\": [{\r\n\t\t\t\t\"Action\": \"\",\r\n\t\t\t\t\"CidrIp\": \"\",\r\n\t\t\t\t\"PortRange\": \"\",\r\n\t\t\t\t\"IpProtocol\": \"\"\r\n\t\t\t}],\r\n\t\t\t\"Outbound\": [{\r\n\t\t\t\t\"Action\": \"\",\r\n\t\t\t\t\"CidrIp\": \"\",\r\n\t\t\t\t\"PortRange\": \"\",\r\n\t\t\t\t\"IpProtocol\": \"\"\r\n\t\t\t}],\r\n\t\t\t\"SecurityGroupId\": \"\",\r\n\t\t\t\"SecurityGroupName\": \"\",\r\n\t\t\t\"SecurityGroupRemark\": \"mariadb\"\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "示例1 查询实例安全组信息"
+      }
+    ],
     "DescribeDBSlowLogs": [
       {
         "document": "",
@@ -192,6 +208,14 @@
         "title": "查询新购云数据库实例的价格"
       }
     ],
+    "DescribeProjectSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeProjectSecurityGroups\n&Product=mariadb\n&ProjectId=11988\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\r\n\t\t\"Groups\": [{\r\n\t\t\t\"ProjectId\": 11988,\r\n\t\t\t\"CreateTime\": \"2017-04-13 15:00:06\",\r\n\t\t\t\"Inbound\": [{\r\n\t\t\t\t\"Action\": \"\",\r\n\t\t\t\t\"CidrIp\": \"\",\r\n\t\t\t\t\"PortRange\": \"\",\r\n\t\t\t\t\"IpProtocol\": \"\"\r\n\t\t\t}],\r\n\t\t\t\"Outbound\": [{\r\n\t\t\t\t\"Action\": \"\",\r\n\t\t\t\t\"CidrIp\": \"\",\r\n\t\t\t\t\"PortRange\": \"\",\r\n\t\t\t\t\"IpProtocol\": \"\"\r\n\t\t\t}],\r\n\t\t\t\"SecurityGroupId\": \"sg-ajr1jzgj\",\r\n\t\t\t\"SecurityGroupName\": \"mariadb\",\r\n\t\t\t\"SecurityGroupRemark\": \"\"\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "示例1 查询项目安全组信息"
+      }
+    ],
     "DescribeRenewalPrice": [
       {
         "document": "",
@@ -228,6 +252,14 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeUpgradePrice\r\n&InstanceId=tdsql-fdpjf5zh\r\n&Memory=2000\r\n&Storage=20000\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\",\r\n        \"OriginalPrice\": 720,\r\n        \"Price\": 720\r\n    }\r\n}",
         "title": "查询扩容云数据库实例的价格"
+      }
+    ],
+    "DisassociateSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DisassociateSecurityGroups\n&Product=mariadb\n&SecurityGroupId=sg-xxxxxx\n&InstanceIds.0=tdsql-xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\"\r\n    }\r\n}",
+        "title": "无"
       }
     ],
     "FlushBinlog": [
@@ -276,6 +308,14 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyDBInstanceName\r\n&InstanceId=tdsql-fdpjf5zh\r\n&InstanceName=newname\r\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"6a6b0cc7-c183-4e50-bf19-b83aa9fe77fc\",\r\n\t\t\"InstanceId\": \"tdsql-fdpjf5zh\"\r\n\t}\r\n}",
         "title": "修改实例名称"
+      }
+    ],
+    "ModifyDBInstanceSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyDBInstanceSecurityGroups\n&Product=mariadb\n&InstanceId=tdsql-eb2w7dto\n&SecurityGroupIds.0=sg-ajr1jzgj\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\"\r\n\t}\r\n}",
+        "title": "示例1 修改云数据库安全组"
       }
     ],
     "ModifyDBInstancesProject": [

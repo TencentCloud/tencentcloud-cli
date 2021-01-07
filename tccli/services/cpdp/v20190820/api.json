@@ -252,6 +252,12 @@
       "name": "云鉴-查询银行时间段内清分提现明细",
       "output": "QueryBankWithdrawCashDetailsResponse"
     },
+    "QueryBillDownloadURL": {
+      "document": "获取单笔代发转账对账单下载URL",
+      "input": "QueryBillDownloadURLRequest",
+      "name": "智能代发-单笔代发转账对账单下载接口",
+      "output": "QueryBillDownloadURLResponse"
+    },
     "QueryCommonTransferRecharge": {
       "document": "查询普通转账充值明细。接口用于查询会员主动转账进资金汇总账户的明细情况。若会员使用绑定账号转入，则直接入账到会员子账户。若未使用绑定账号转入，则系统无法自动清分到对应子账户，则转入挂账子账户由平台自行清分。若是 “见证+收单充值”T0充值记录时备注Note为“见证+收单充值,订单号” 此接口可以查到T0到账的“见证+收单充值”充值记录。",
       "input": "QueryCommonTransferRechargeRequest",
@@ -7143,6 +7149,93 @@
           "member": "string",
           "name": "ReservedMsg",
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryBillDownloadURLData": {
+      "document": "智能代发-单笔代发转账对账单返回数据",
+      "members": [
+        {
+          "default": "",
+          "document": "统一对账单下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BillDownloadURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道原始对账单下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OriginalBillDownloadURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryBillDownloadURLRequest": {
+      "document": "QueryBillDownloadURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户号",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代发类型：\n1、 微信企业付款 \n2、 支付宝转账 \n3、 平安银企直联代发转账",
+          "member": "int64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "账单日期，格式yyyy-MM-dd",
+          "member": "string",
+          "name": "BillDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryBillDownloadURLResponse": {
+      "document": "QueryBillDownloadURL返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功",
+          "member": "string",
+          "name": "ErrCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息",
+          "member": "string",
+          "name": "ErrMessage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QueryBillDownloadURLData",
+          "name": "Result",
+          "type": "object",
           "value_allowed_null": true
         },
         {

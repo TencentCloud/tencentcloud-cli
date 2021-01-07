@@ -160,7 +160,7 @@
         },
         {
           "default": "",
-          "document": "镜像所需系统盘大小",
+          "document": "镜像所需系统盘大小。",
           "member": "int64",
           "name": "RequiredSystemDiskSize",
           "required": true,
@@ -169,7 +169,7 @@
         },
         {
           "default": "",
-          "document": "镜像状态，取值：ONLINE、OFFLINE",
+          "document": "镜像状态。",
           "member": "string",
           "name": "BlueprintState",
           "required": true,
@@ -295,6 +295,15 @@
           "document": "套餐类型。\n取值范围：\n<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>",
           "member": "string",
           "name": "BundleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐展示标签.\n取值范围:\n\"ACTIVITY\": 活动套餐,\n\"NORMAL\": 普通套餐",
+          "member": "string",
+          "name": "BundleDisplayLabel",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1265,7 +1274,7 @@
         },
         {
           "default": "",
-          "document": "流量包生效周期内的总流量，单位字节。",
+          "document": "流量包生效周期内已使用流量，单位字节。",
           "member": "int64",
           "name": "TrafficUsed",
           "required": true,

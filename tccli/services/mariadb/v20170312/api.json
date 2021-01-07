@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AssociateSecurityGroups": {
+      "document": "本接口 (AssociateSecurityGroups) 用于安全组批量绑定云资源。",
+      "input": "AssociateSecurityGroupsRequest",
+      "name": "安全组批量绑定云资源",
+      "output": "AssociateSecurityGroupsResponse"
+    },
     "CloneAccount": {
       "document": "本接口（CloneAccount）用于克隆实例账户。",
       "input": "CloneAccountRequest",
@@ -108,6 +114,12 @@
       "name": "查看实例资源使用详情",
       "output": "DescribeDBResourceUsageDetailsResponse"
     },
+    "DescribeDBSecurityGroups": {
+      "document": "本接口（DescribeDBSecurityGroups）用于查询实例安全组信息",
+      "input": "DescribeDBSecurityGroupsRequest",
+      "name": "查询实例安全组信息",
+      "output": "DescribeDBSecurityGroupsResponse"
+    },
     "DescribeDBSlowLogs": {
       "document": "本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。",
       "input": "DescribeDBSlowLogsRequest",
@@ -144,6 +156,12 @@
       "name": "新购实例询价",
       "output": "DescribePriceResponse"
     },
+    "DescribeProjectSecurityGroups": {
+      "document": "本接口（DescribeProjectSecurityGroups）用于查询项目安全组信息",
+      "input": "DescribeProjectSecurityGroupsRequest",
+      "name": "查询项目安全组信息",
+      "output": "DescribeProjectSecurityGroupsResponse"
+    },
     "DescribeRenewalPrice": {
       "document": "本接口（DescribeRenewalPrice）用于在续费云数据库实例时，查询续费的价格。",
       "input": "DescribeRenewalPriceRequest",
@@ -167,6 +185,12 @@
       "input": "DescribeUpgradePriceRequest",
       "name": "扩容实例询价",
       "output": "DescribeUpgradePriceResponse"
+    },
+    "DisassociateSecurityGroups": {
+      "document": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。",
+      "input": "DisassociateSecurityGroupsRequest",
+      "name": "安全组批量解绑云资源",
+      "output": "DisassociateSecurityGroupsResponse"
     },
     "FlushBinlog": {
       "document": "相当于在mysqld中执行flush logs，完成切分的binlog将展示在实例控制台binlog列表里。",
@@ -203,6 +227,12 @@
       "input": "ModifyDBInstanceNameRequest",
       "name": "修改实例名称",
       "output": "ModifyDBInstanceNameResponse"
+    },
+    "ModifyDBInstanceSecurityGroups": {
+      "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组",
+      "input": "ModifyDBInstanceSecurityGroupsRequest",
+      "name": "修改云数据库安全组",
+      "output": "ModifyDBInstanceSecurityGroupsResponse"
     },
     "ModifyDBInstancesProject": {
       "document": "本接口（ModifyDBInstancesProject）用于修改云数据库实例所属项目。",
@@ -260,6 +290,48 @@
     "serviceShortName": "mariadb"
   },
   "objects": {
+    "AssociateSecurityGroupsRequest": {
+      "document": "AssociateSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库引擎名称，本接口取值：mariadb。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要绑定的安全组ID，类似sg-efil73jd。",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被绑定的实例ID，类似tdsql-lesecurk，支持指定多个实例。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateSecurityGroupsResponse": {
+      "document": "AssociateSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CloneAccountRequest": {
       "document": "CloneAccount请求参数结构体",
       "members": [
@@ -2308,6 +2380,47 @@
       ],
       "type": "object"
     },
+    "DescribeDBSecurityGroupsRequest": {
+      "document": "DescribeDBSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库引擎名称，本接口取值：mariadb。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSecurityGroupsResponse": {
+      "document": "DescribeDBSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "安全组详情。",
+          "member": "SecurityGroup",
+          "name": "Groups",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBSlowLogsRequest": {
       "document": "DescribeDBSlowLogs请求参数结构体",
       "members": [
@@ -2674,6 +2787,47 @@
       ],
       "type": "object"
     },
+    "DescribeProjectSecurityGroupsRequest": {
+      "document": "DescribeProjectSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库引擎名称，本接口取值：mariadb。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectSecurityGroupsResponse": {
+      "document": "DescribeProjectSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "安全组详情。",
+          "member": "SecurityGroup",
+          "name": "Groups",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRenewalPriceRequest": {
       "document": "DescribeRenewalPrice请求参数结构体",
       "members": [
@@ -2877,6 +3031,48 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateSecurityGroupsRequest": {
+      "document": "DisassociateSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库引擎名称，本接口取值：mariadb。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组Id。",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID列表，一个或者多个实例Id组成的数组。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateSecurityGroupsResponse": {
+      "document": "DisassociateSecurityGroups返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3237,6 +3433,48 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSecurityGroupsRequest": {
+      "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库引擎名称，本接口取值：mariadb。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSecurityGroupsResponse": {
+      "document": "ModifyDBInstanceSecurityGroups返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3908,6 +4146,117 @@
         }
       ],
       "type": "object"
+    },
+    "SecurityGroup": {
+      "document": "安全组详情",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组ID",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组名称",
+          "member": "string",
+          "name": "SecurityGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组备注",
+          "member": "string",
+          "name": "SecurityGroupRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入站规则",
+          "member": "SecurityGroupBound",
+          "name": "Inbound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出站规则",
+          "member": "SecurityGroupBound",
+          "name": "Outbound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityGroupBound": {
+      "document": "安全出入口规则",
+      "members": [
+        {
+          "default": "",
+          "document": "策略，ACCEPT 或者 DROP",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源 IP 或 IP 段，例如192.168.0.0/16",
+          "member": "string",
+          "name": "CidrIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "member": "string",
+          "name": "PortRange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络协议，支持 UDP、TCP 等",
+          "member": "string",
+          "name": "IpProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SlowLogData": {
       "document": "慢查询条目信息",

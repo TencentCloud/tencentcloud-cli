@@ -1,5 +1,23 @@
 {
   "actions": {
+    "DescribeAuthInfo": {
+      "document": "获取授权项目信息列表",
+      "input": "DescribeAuthInfoRequest",
+      "name": "获取授权项目列表",
+      "output": "DescribeAuthInfoResponse"
+    },
+    "DescribeCloudMusic": {
+      "document": "获取云音乐播放信息接口",
+      "input": "DescribeCloudMusicRequest",
+      "name": "获取云音乐播放信息",
+      "output": "DescribeCloudMusicResponse"
+    },
+    "DescribeCloudMusicPurchased": {
+      "document": "获取授权项目下已购云音乐列表",
+      "input": "DescribeCloudMusicPurchasedRequest",
+      "name": "获取授权项目已购云音乐列表",
+      "output": "DescribeCloudMusicPurchasedResponse"
+    },
     "DescribeItemById": {
       "document": "根据歌曲ID查询歌曲信息",
       "input": "DescribeItemByIdRequest",
@@ -7,7 +25,7 @@
       "output": "DescribeItemByIdResponse"
     },
     "DescribeItems": {
-      "document": "分类内容下歌曲列表获取，根据CategoryID或CategoryCode",
+      "document": "该服务后续会停用，不再建议使用",
       "input": "DescribeItemsRequest",
       "name": "获取分类内容下歌曲列表",
       "output": "DescribeItemsResponse"
@@ -19,25 +37,25 @@
       "output": "DescribeLyricResponse"
     },
     "DescribeMusic": {
-      "document": "根据接口的模式及歌曲ID来取得对应权限的歌曲播放地址等信息。",
+      "document": "获取曲库包歌曲播放信息接口",
       "input": "DescribeMusicRequest",
-      "name": "获取歌曲播放信息",
+      "name": "获取曲库包歌曲播放信息",
       "output": "DescribeMusicResponse"
     },
     "DescribePackageItems": {
-      "document": "查询曲库包已核验歌曲列表接口",
+      "document": "获取曲库包下已核销歌曲列表接口",
       "input": "DescribePackageItemsRequest",
-      "name": "查询曲库包已核验歌曲列表接口",
+      "name": "获取曲库包已核销歌曲列表",
       "output": "DescribePackageItemsResponse"
     },
     "DescribePackages": {
-      "document": "查询已购曲库包列表接口",
+      "document": "获取已购曲库包列表接口",
       "input": "DescribePackagesRequest",
-      "name": "查询已购曲库包列表接口",
+      "name": "获取已购曲库包列表",
       "output": "DescribePackagesResponse"
     },
     "DescribeStations": {
-      "document": "获取素材库列表时使用",
+      "document": "该服务后续会停用，不再建议使用",
       "input": "DescribeStationsRequest",
       "name": "获取分类内容（Station）列表",
       "output": "DescribeStationsResponse"
@@ -95,6 +113,84 @@
       ],
       "usage": "out"
     },
+    "AuthInfo": {
+      "document": "AuthInfo集合",
+      "members": [
+        {
+          "default": "",
+          "document": "主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用场景",
+          "member": "int64",
+          "name": "AppScene",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用地域",
+          "member": "int64",
+          "name": "AppRegion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权时间",
+          "member": "int64",
+          "name": "AuthPeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可商业化",
+          "member": "int64",
+          "name": "Commercialization",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可跨平台",
+          "member": "int64",
+          "name": "Platform",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密后Id",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DataInfo": {
       "document": "数据信息",
       "members": [
@@ -145,6 +241,171 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAuthInfoRequest": {
+      "document": "DescribeAuthInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量：Offset=Offset+Limit",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据条数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthInfoResponse": {
+      "document": "DescribeAuthInfo返回参数结构体",
+      "members": [
+        {
+          "document": "授权项目列表",
+          "member": "AuthInfo",
+          "name": "AuthInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudMusicPurchasedRequest": {
+      "document": "DescribeCloudMusicPurchased请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "授权项目Id",
+          "member": "string",
+          "name": "AuthInfoId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudMusicPurchasedResponse": {
+      "document": "DescribeCloudMusicPurchased返回参数结构体",
+      "members": [
+        {
+          "document": "云音乐列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MusicOpenDetail",
+          "name": "MusicOpenDetail",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudMusicRequest": {
+      "document": "DescribeCloudMusic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲Id",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "歌曲类型，请填写：MP3-320K-FTD",
+          "member": "string",
+          "name": "MusicType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudMusicResponse": {
+      "document": "DescribeCloudMusic返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲Id",
+          "member": "string",
+          "name": "MusicId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "歌曲名称",
+          "member": "string",
+          "name": "MusicName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "歌曲时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Duration",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "歌曲链接",
+          "member": "string",
+          "name": "MusicUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "歌曲图片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MusicImageUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "歌手列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Singers",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeItemByIdRequest": {
       "document": "DescribeItemById请求参数结构体",
@@ -326,7 +587,7 @@
         },
         {
           "default": "",
-          "document": "基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。\n高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。",
+          "document": "MP3-64K-FTD-P  为获取64kbps歌曲热门片段。\nMP3-320K-FTD 为获取320kbps已核验歌曲完整资源。",
           "member": "string",
           "name": "SubItemType",
           "required": false,
@@ -367,7 +628,7 @@
       "members": [
         {
           "default": "",
-          "document": "订单id",
+          "document": "订单id，从获取已购曲库包列表中获取",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -375,7 +636,7 @@
         },
         {
           "default": "",
-          "document": "默认0",
+          "document": "默认0，Offset=Offset+Length",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -396,7 +657,7 @@
       "document": "DescribePackageItems返回参数结构体",
       "members": [
         {
-          "document": "歌曲信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已核销歌曲信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PackageItem",
           "name": "PackageItems",
           "type": "list",
@@ -416,7 +677,7 @@
       "members": [
         {
           "default": "",
-          "document": "默认0",
+          "document": "默认0，Offset=Offset+Length",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -437,7 +698,7 @@
       "document": "DescribePackages返回参数结构体",
       "members": [
         {
-          "document": "已购曲库包数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已购曲库包列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Package",
           "name": "Packages",
           "type": "list",
@@ -465,7 +726,7 @@
         },
         {
           "default": "",
-          "document": "offset (Default = 0)，(当前页-1) * Limit",
+          "document": "offset (Default = 0)，Offset=Offset+Limit",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -685,6 +946,93 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MusicOpenDetail": {
+      "document": "对外开放信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音乐Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专辑名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlbumName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专辑图片路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlbumImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音乐名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MusicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音乐图片路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MusicImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "歌手\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Singers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "播放时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "歌词url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LyricUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

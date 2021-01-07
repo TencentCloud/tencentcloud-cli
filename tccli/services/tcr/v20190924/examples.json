@@ -35,7 +35,7 @@
     "CreateInstance": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateInstance\r\n&<公共请求参数>\r\n&RegistryName=tcr-test\r\n&RegistryType=standard",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateInstance\n&RegistryName=tcr-test\n&RegistryType=standard\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RegistryId\": \"XXXX\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
         "title": "创建企业版实例"
       }
@@ -289,8 +289,8 @@
     "DescribeInstances": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInstances\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Registries\": [\r\n            {\r\n                \"RegistryId\": \"cls-xxxxxxx\",\r\n                \"RegistryName\": \"aaa\",\r\n                \"Status\": \"Running\",\r\n                \"RegistryType\": \"standard\",\r\n                \"PublicDomain\": \"mytest.tencentcloudcr.com\",\r\n                \"CreateTime\": \"2019-08-09\",\r\n                \"InternalEndpoint\": \"8.9.10.9\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInstances\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Registries\": [\r\n            {\r\n                \"RegistryId\": \"cls-xxxxxxx\",\r\n                \"RegistryName\": \"aaa\",\r\n                \"Status\": \"Running\",\r\n                \"RegistryType\": \"standard\",\r\n                \"PublicDomain\": \"mytest.tencentcloudcr.com\",\r\n                \"CreateTime\": \"2019-08-09\",\r\n                \"InternalEndpoint\": \"8.9.10.9\",\r\n                \"ExpiredAt\": \"2020-09-10\",\r\n                \"PayMod\": 1,\r\n                \"RenewFlag\": 1\r\n            }\r\n        ],\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
         "title": "查看实例列表"
       }
     ],
@@ -482,6 +482,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyWebhookTrigger\r\n&<公共请求参数>\r\n&RegistryId=tcr-7s2d14fn\r\n&Namespace=someNs\r\n&Trigger.Id=9\r\n&Trigger.Enabled=false\r\n&Trigger.Targets.0.Address=abc.local\r\n&Trigger.EventTypes.0=pullImage",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3c33da0e-5a85-4fdc-841c-5ca47454a117\"\r\n    }\r\n}",
         "title": "更新触发器"
+      }
+    ],
+    "RenewInstance": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=RenewInstance\n&RegistryId=tcr-12345\n&RegistryChargePrepaid.Period=1\n&RegistryChargePrepaid.RenewFlag=1\n&Flag=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RegistryId\": \"tcr-12345\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "续费企业版预付费实例"
       }
     ],
     "ValidateNamespaceExistPersonal": [
