@@ -168,6 +168,14 @@
           "name": "Role",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏相关参数",
+          "member": "string",
+          "name": "GameContext",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

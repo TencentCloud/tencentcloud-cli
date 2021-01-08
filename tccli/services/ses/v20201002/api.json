@@ -54,6 +54,12 @@
       "name": "获取模板详情",
       "output": "GetEmailTemplateResponse"
     },
+    "GetSendEmailStatus": {
+      "document": "获取邮件发送状态。仅支持查询90天之内的数据",
+      "input": "GetSendEmailStatusRequest",
+      "name": "获取邮件发送的状态",
+      "output": "GetSendEmailStatusResponse"
+    },
     "GetStatisticsReport": {
       "document": "获取近期发送的统计情况，包含发送量、送达率、打开率、退信率等一系列数据。最大跨度为14天。",
       "input": "GetStatisticsReportRequest",
@@ -550,6 +556,71 @@
       ],
       "type": "object"
     },
+    "GetSendEmailStatusRequest": {
+      "document": "GetSendEmailStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发送的日期，必填。仅支持查询某个日期，不支持范围查询。",
+          "member": "date",
+          "name": "RequestDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量。默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拉取最大条数，最多 100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "SendMail接口返回的MessageId字段。",
+          "member": "string",
+          "name": "MessageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收件人邮箱。",
+          "member": "string",
+          "name": "ToEmailAddress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSendEmailStatusResponse": {
+      "document": "GetSendEmailStatus返回参数结构体",
+      "members": [
+        {
+          "document": "邮件发送状态列表",
+          "member": "SendEmailStatus",
+          "name": "EmailStatusList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetStatisticsReportRequest": {
       "document": "GetStatisticsReport请求参数结构体",
       "members": [
@@ -862,6 +933,120 @@
         }
       ],
       "type": "object"
+    },
+    "SendEmailStatus": {
+      "document": "描述邮件发送状态",
+      "members": [
+        {
+          "default": "",
+          "document": "SendEmail返回的MessageId",
+          "member": "string",
+          "name": "MessageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件人邮箱",
+          "member": "string",
+          "name": "ToEmailAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发件人邮箱",
+          "member": "string",
+          "name": "FromEmailAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云处理状态\n0: 处理成功\n1001: 内部系统异常\n1002: 内部系统异常\n1003: 内部系统异常\n1003: 内部系统异常\n1004: 发信超时\n1005: 内部系统异常\n1006: 触发频率控制，短时间内对同一地址发送过多邮件\n1007: 邮件地址在黑名单中\n1009: 内部系统异常\n1010: 超出了每日发送限制\n1011: 无发送自定义内容权限，必须使用模板\n2001: 找不到相关记录\n3007: 模板ID无效或者不可用\n3008: 模板状态异常\n3009: 无权限使用该模板\n3010: TemplateData字段格式不正确 \n3014: 发件域名没有经过认证，无法发送\n3020: 收件方邮箱类型在黑名单\n3024: 邮箱地址格式预检查失败\n3030: 退信率过高，临时限制发送\n3033: 余额不足，账号欠费等",
+          "member": "int64",
+          "name": "SendStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件方处理状态\n0: 请求成功被腾讯云接受，进入发送队列\n1: 邮件递送成功，DeliverTime表示递送成功的时间\n2: 邮件因某种原因被丢弃，DeliverMessage表示丢弃原因\n3: 收件方ESP拒信，一般原因为邮箱地址不存在，或其它原因\n8: 邮件被ESP因某些原因延迟递送，DeliverMessage表示延迟原因",
+          "member": "int64",
+          "name": "DeliverStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件方处理状态描述",
+          "member": "string",
+          "name": "DeliverMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求到达腾讯云时间戳",
+          "member": "int64",
+          "name": "RequestTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云执行递送时间戳",
+          "member": "int64",
+          "name": "DeliverTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否打开该邮件",
+          "member": "bool",
+          "name": "UserOpened",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否点击该邮件中的链接",
+          "member": "bool",
+          "name": "UserClicked",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否取消该发送者的订阅",
+          "member": "bool",
+          "name": "UserUnsubscribed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否举报该发送者",
+          "member": "bool",
+          "name": "UserComplainted",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Simple": {
       "document": "邮件发送的内容，可以是纯文本(TEXT)，也可以是纯代码(HTML)，或者纯文本+HTML的组合(建议方式)",

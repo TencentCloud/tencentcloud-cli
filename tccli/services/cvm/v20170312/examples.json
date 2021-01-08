@@ -546,13 +546,13 @@
         "title": "最简单参数的购买"
       },
       {
-        "document": "实例所在位置为上海二区，付费模式为包年包月，购买一个月，到期自动续费，镜像ID为：img-pmqg1cw7，选择机型为：64C128G标准型(S5.16XLARGE256)，50G大小高性能云系统盘，挂载100G大小高性能云数据盘，私有网络，公网付费模式为流量按小时后付费，外网带宽上限10Mbps，分配公网IP，实例命名为QCLOUD-TEST，设置登录密码为Qcloud@TestApi123++，安装云监控云安全，购买数量为1台。",
+        "document": "实例所在位置为上海二区，付费模式为包年包月，购买一个月，到期自动续费，镜像ID为：img-pmqg1cw7，选择机型为：64C256G标准型(S5.16XLARGE256)，50G大小高性能云系统盘，挂载100G大小高性能云数据盘，私有网络，公网付费模式为流量按小时后付费，外网带宽上限10Mbps，分配公网IP，实例命名为QCLOUD-TEST，设置登录密码为Qcloud@TestApi123++，安装云监控云安全，购买数量为1台。",
         "input": "https://cvm.tencentcloudapi.com/?Action=RunInstances\n&Placement.Zone=ap-shanghai-2\n&InstanceChargeType=PREPAID\n&InstanceChargePrepaid.Period=1\n&InstanceChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&ImageId=img-pmqg1cw7\n&InstanceType=S5.16XLARGE256\n&SystemDisk.DiskType=CLOUD_PREMIUM\n&SystemDisk.DiskSize=50\n&DataDisks.0.DiskType=CLOUD_PREMIUM\n&DataDisks.0.DiskSize=100\n&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=10\n&InternetAccessible.PublicIpAssigned=TRUE\n&InstanceName=QCLOUD-TEST\n&LoginSettings.Password=Qcloud@TestApi123++\n&EnhancedService.SecurityService.Enabled=TRUE\n&EnhancedService.MonitorService.Enabled=TRUE\n&InstanceCount=1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"InstanceIdSet\": [\r\n            \"ins-bfw5zq3y\"\r\n        ],\r\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
         "title": "包年包月实例购买"
       },
       {
-        "document": "实例所在位置为上海二区，付费模式为按小时后付费，镜像ID为：img-pmqg1cw7，选择机型为：64C128G标准型(S5.16XLARGE256)，50G大小高性能云系统盘，挂载100G大小高性能云数据盘，私有网络，公网付费模式为流量按小时后付费，外网带宽上限10Mbps，分配公网IP，实例命名为QCLOUD-TEST，设置登录密码为Qcloud@TestApi123++，安装云监控云安全，购买数量为1台。",
+        "document": "实例所在位置为上海二区，付费模式为按小时后付费，镜像ID为：img-pmqg1cw7，选择机型为：64C256G标准型(S5.16XLARGE256)，50G大小高性能云系统盘，挂载100G大小高性能云数据盘，私有网络，公网付费模式为流量按小时后付费，外网带宽上限10Mbps，分配公网IP，实例命名为QCLOUD-TEST，设置登录密码为Qcloud@TestApi123++，安装云监控云安全，购买数量为1台。",
         "input": "https://cvm.tencentcloudapi.com/?Action=RunInstances\n&Placement.Zone=ap-shanghai-2\n&InstanceChargeType=POSTPAID_BY_HOUR\n&ImageId=img-pmqg1cw7\n&InstanceType=S5.16XLARGE256\n&SystemDisk.DiskType=CLOUD_PREMIUM\n&SystemDisk.DiskSize=50\n&DataDisks.0.DiskType=CLOUD_PREMIUM\n&DataDisks.0.DiskSize=100\n&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=10\n&InternetAccessible.PublicIpAssigned=TRUE\n&InstanceName=QCLOUD-TEST\n&LoginSettings.Password=Qcloud@TestApi123++\n&EnhancedService.SecurityService.Enabled=TRUE\n&EnhancedService.MonitorService.Enabled=TRUE\n&InstanceCount=1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"InstanceIdSet\": [\r\n            \"ins-32kcaqoa\"\r\n        ],\r\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
         "title": "按小时后付费实例购买"
@@ -564,7 +564,7 @@
         "title": "独享子机购买"
       },
       {
-        "document": "实例所在位置为上海二区，付费模式为按小时后付费，镜像ID为：img-dkwyg6sr，选择机型为：64C128G标准型(S5.16XLARGE256)，50G大小高性能云系统盘，私有网络，vpcId为1urkhbj4，子网ID为dcs9x3gz，指定私有网络ip为10.0.0.18，10.0.0.19，购买数量为2台。",
+        "document": "实例所在位置为上海二区，付费模式为按小时后付费，镜像ID为：img-dkwyg6sr，选择机型为：64C256G标准型(S5.16XLARGE256)，50G大小高性能云系统盘，私有网络，vpcId为1urkhbj4，子网ID为dcs9x3gz，指定私有网络ip为10.0.0.18，10.0.0.19，购买数量为2台。",
         "input": "https://cvm.tencentcloudapi.com/?Action=RunInstances\n&InstanceType=S5.16XLARGE256\n&SystemDisk.DiskType=CLOUD_PREMIUM\n&SystemDisk.DiskSize=50\n&Placement.Zone=ap-shanghai-2\n&ImageId=img-dkwyg6sr\n&VirtualPrivateCloud.SubnetId=subnet-dcs9x3gz\n&VirtualPrivateCloud.VpcId=vpc-1urkhbj4\n&VirtualPrivateCloud.PrivateIpAddresses.0=10.0.0.18\n&VirtualPrivateCloud.PrivateIpAddresses.1=10.0.0.19\n&InstanceCount=2\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"InstanceIdSet\": [\r\n            \"ins-0s7wsh5x\",\r\n            \"ins-03lw8hok\"\r\n        ],\r\n        \"RequestId\": \"3c14def19-cfes-470e-b241-90787u6jf5uj\"\r\n    }\r\n}",
         "title": "指定私有网络ip创建实例"

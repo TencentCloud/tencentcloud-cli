@@ -78,6 +78,20 @@
         "title": "获取模板内容"
       }
     ],
+    "GetSendEmailStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSendEmailStatus\n<公共请求参数>\n\n{\n    \"Limit\": 10, \n    \"Offset\": 0, \n    \"RequestDate\": \"2020-09-22\", \n    \"MessageId\": \"qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n\"EmailStatusList\": [\r\n            {\r\n                \"UserOpened\": true, \r\n                \"UserUnsubscribed\": true, \r\n                \"RequestTime\": 1609831698, \r\n                \"UserComplainted\": true, \r\n                \"ToEmailAddress\": \"example@cloud.com\", \r\n                \"FromEmailAddress\": \"noreply@tencent.com\", \r\n                \"UserClicked\": true, \r\n                \"DeliverTime\": 1609831698, \r\n                \"DeliverMessage\": \"\", \r\n                \"MessageId\": \"qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1\", \r\n                \"SendStatus\": 0, \r\n                \"DeliverStatus\": 0\r\n            }\r\n        ], \r\n    \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\r\n    }\r\n}",
+        "title": "根据MessageId查询发送结果"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSendEmailStatus\n<公共请求参数>\n\n{\n    \"Limit\": 10, \n    \"Offset\": 0, \n    \"RequestDate\": \"2020-09-22\", \n    \"ToEmailAddress\": \"example@cloud.com\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n\"EmailStatusList\": [\r\n            {\r\n                \"UserOpened\": true, \r\n                \"UserUnsubscribed\": true, \r\n                \"RequestTime\": 1609831698, \r\n                \"UserComplainted\": true, \r\n                \"ToEmailAddress\": \"example@cloud.com\", \r\n                \"FromEmailAddress\": \"noreply@tencent.com\", \r\n                \"UserClicked\": true, \r\n                \"DeliverTime\": 1609831698, \r\n                \"DeliverMessage\": \"\", \r\n                \"MessageId\": \"qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1\", \r\n                \"SendStatus\": 0, \r\n                \"DeliverStatus\": 0\r\n            }\r\n        ], \r\n    \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\r\n    }\r\n}",
+        "title": "根据收件人查询发送结果"
+      }
+    ],
     "GetStatisticsReport": [
       {
         "document": "",
