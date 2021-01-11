@@ -87,8 +87,6 @@ class Utils(object):
         file_dir = os.path.split(filename)[0]
         if not os.path.isdir(file_dir):
             os.makedirs(file_dir)
-        if not os.path.exists(filename):
-            os.system(r'touch %s' % filename)
         with open(filename, "w") as f:
             json.dump(data, f,
                       indent=2,
