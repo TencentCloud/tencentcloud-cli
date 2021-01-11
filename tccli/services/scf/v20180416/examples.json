@@ -209,7 +209,7 @@
     "ListTriggers": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListTriggers&FunctionName=aaa\r\n&Limit=2\r\n&Order=ASC\r\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListTriggers\n&FunctionName=aaa\n&Limit=2\n&Order=ASC\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Triggers\": [\r\n        ],\r\n        \"TotalCount\": 0,\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
         "title": "获取函数触发器列表"
       }

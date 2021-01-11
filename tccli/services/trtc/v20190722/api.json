@@ -1586,6 +1586,30 @@
       ],
       "usage": "in"
     },
+    "PublishCdnParams": {
+      "document": "第三方CDN转推参数",
+      "members": [
+        {
+          "default": "",
+          "document": "腾讯云直播BizId。",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方CDN转推的目的地址，同时只支持转推一个第三方CDN地址。",
+          "member": "string",
+          "name": "PublishCdnUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "QualityData": {
       "document": "Es返回的质量数据",
       "members": [
@@ -2126,6 +2150,14 @@
           "name": "LayoutParams",
           "required": true,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "第三方CDN转推参数。",
+          "member": "PublishCdnParams",
+          "name": "PublishCdnParams",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2183,6 +2215,14 @@
           "member": "LayoutParams",
           "name": "LayoutParams",
           "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "第三方CDN转推参数。",
+          "member": "PublishCdnParams",
+          "name": "PublishCdnParams",
+          "required": false,
           "type": "object"
         }
       ],
