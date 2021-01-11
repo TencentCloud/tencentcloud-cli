@@ -4,6 +4,7 @@ import os
 import copy
 import json
 from tccli import __version__
+from tccli.services import SERVICE_VERSIONS
 from collections import OrderedDict
 
 BASE_TYPE = ["int64", "uint64", "string", "float", "bool", "date", "datetime", "datetime_iso", "binary"]
@@ -113,21 +114,7 @@ class Loader(object):
         return version[1:5] + "-" + version[5:7] + "-" + version[7:9]
 
     def get_available_services(self):
-        services = {}
-        services_path = self.get_services_path()
-        for module in sorted(os.listdir(services_path)):
-            if module.startswith("_"):
-                continue
-            module_path = os.path.join(services_path, module)
-            if not os.path.isdir(module_path):
-                continue
-            services[module] = []
-            for version in sorted(os.listdir(module_path), reverse=True):
-                version_path = os.path.join(module_path, version)
-                if os.path.isdir(version_path) and version.startswith('v'):
-                    version = self._version_transform(version)
-                    services[module].append(version)
-        return services
+        return SERVICE_VERSIONS
 
     def get_service_default_version(self, service):
         return self.get_available_services()[service][0]
