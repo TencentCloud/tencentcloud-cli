@@ -874,7 +874,7 @@
         },
         {
           "default": "",
-          "document": "收信人邮箱地址",
+          "document": "收信人邮箱地址，最多支持群发50人。",
           "member": "string",
           "name": "Destination",
           "required": true,

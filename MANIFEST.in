@@ -283,6 +283,8 @@ include tccli/services/tke/v20180525/api.json
 include tccli/services/tke/v20180525/examples.json
 include tccli/services/tkgdq/v20190411/api.json
 include tccli/services/tkgdq/v20190411/examples.json
+include tccli/services/tms/v20201229/api.json
+include tccli/services/tms/v20201229/examples.json
 include tccli/services/tms/v20200713/api.json
 include tccli/services/tms/v20200713/examples.json
 include tccli/services/tmt/v20180321/api.json
@@ -295,6 +297,10 @@ include tccli/services/tts/v20190823/api.json
 include tccli/services/tts/v20190823/examples.json
 include tccli/services/ump/v20200918/api.json
 include tccli/services/ump/v20200918/examples.json
+include tccli/services/vm/v20201229/api.json
+include tccli/services/vm/v20201229/examples.json
+include tccli/services/vm/v20200709/api.json
+include tccli/services/vm/v20200709/examples.json
 include tccli/services/vms/v20200902/api.json
 include tccli/services/vms/v20200902/examples.json
 include tccli/services/vod/v20180717/api.json

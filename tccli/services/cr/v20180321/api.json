@@ -72,6 +72,12 @@
       "name": "导出机器人数据",
       "output": "ExportBotDataResponse"
     },
+    "QueryBotList": {
+      "document": "查询机器人任务状态列表",
+      "input": "QueryBotListRequest",
+      "name": "查询机器人任务状态列表",
+      "output": "QueryBotListResponse"
+    },
     "QueryInstantData": {
       "document": "实时数据查询",
       "input": "QueryInstantDataRequest",
@@ -83,6 +89,18 @@
       "input": "QueryProductsRequest",
       "name": "查询产品列表",
       "output": "QueryProductsResponse"
+    },
+    "QueryRecordList": {
+      "document": "查询录音列表",
+      "input": "QueryRecordListRequest",
+      "name": "查询录音列表",
+      "output": "QueryRecordListResponse"
+    },
+    "UploadBotData": {
+      "document": "上传机器人任务数据",
+      "input": "UploadBotDataRequest",
+      "name": "上传机器人任务数据",
+      "output": "UploadBotDataResponse"
     },
     "UploadBotFile": {
       "document": "上传机器人文件",
@@ -299,6 +317,39 @@
           "name": "PhonePoolList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotInfo": {
+      "document": "机器人列表",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人ID",
+          "member": "string",
+          "name": "BotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器人名称",
+          "member": "string",
+          "name": "BotName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器人状态。0-停用 1-启用 2-待审核",
+          "member": "string",
+          "name": "BotStatus",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1292,6 +1343,47 @@
       ],
       "usage": "out"
     },
+    "QueryBotListRequest": {
+      "document": "QueryBotList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名：AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名：QueryBotList",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryBotListResponse": {
+      "document": "QueryBotList返回参数结构体",
+      "members": [
+        {
+          "document": "任务列表。",
+          "member": "BotInfo",
+          "name": "BotList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryInstantDataRequest": {
       "document": "QueryInstantData请求参数结构体",
       "members": [
@@ -1420,6 +1512,188 @@
         }
       ],
       "type": "object"
+    },
+    "QueryRecordListRequest": {
+      "document": "QueryRecordList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名。AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名。QueryRecordList",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移值",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移位移，最大20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务ID，二者必填一个",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称，二者必填一个",
+          "member": "string",
+          "name": "BotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被叫号码",
+          "member": "string",
+          "name": "CalledPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始日期",
+          "member": "date",
+          "name": "StartBizDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束日期",
+          "member": "date",
+          "name": "EndBizDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryRecordListResponse": {
+      "document": "QueryRecordList返回参数结构体",
+      "members": [
+        {
+          "document": "录音列表。",
+          "member": "RecordInfo",
+          "name": "RecordList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecordInfo": {
+      "document": "录音文件详情",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id",
+          "member": "string",
+          "name": "BotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "BotName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务日期",
+          "member": "date",
+          "name": "BizDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被叫号码",
+          "member": "string",
+          "name": "CalledPhone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始通话时间",
+          "member": "datetime",
+          "name": "CallStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通话时长",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录音文件地址",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对话日志。JSON格式",
+          "member": "string",
+          "name": "DialogueLog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SingleBlackApply": {
       "document": "黑名单申请信息",
@@ -1597,6 +1871,64 @@
         }
       ],
       "usage": "out"
+    },
+    "UploadBotDataRequest": {
+      "document": "UploadBotData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名。默认值（固定）：AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名。默认值（固定）：UploadData",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务数据。JSON格式",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID，二者必填一个",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称，二者必填一个",
+          "member": "string",
+          "name": "BotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadBotDataResponse": {
+      "document": "UploadBotData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UploadBotFileRequest": {
       "document": "UploadBotFile请求参数结构体",

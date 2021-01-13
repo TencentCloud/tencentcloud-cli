@@ -13363,6 +13363,14 @@
           "name": "WxSubAppId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付通知地址",
+          "member": "string",
+          "name": "PaymentNotifyUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -96,6 +96,14 @@
         "title": "查询机器人文件模板"
       }
     ],
+    "QueryBotList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryBotList\n<公共请求参数>\n\n{\n    \"Operation\": \"QueryBotList\", \n    \"Module\": \"AiApi\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"BotList\": [],\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
+        "title": "查询机器人状态列表"
+      }
+    ],
     "QueryInstantData": [
       {
         "document": "",
@@ -110,6 +118,22 @@
         "input": "https://cr.tencentcloudapi.com/?Action=QueryProducts\n&Module=Products\n&Operation=QueryProducts\n&InstanceId=ins-xxxxxx\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\", \r\n        \"ProductList\": [\r\n            {\r\n                \"ProductCode\": \"Pxxx\", \r\n                \"SceneType\": \"A\", \r\n                \"ProductName\": \"测试产品\", \r\n                \"ProductStatus\": 0, \r\n                \"ProductId\": \"pdt-xxxxxx\"\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "查询产品列表"
+      }
+    ],
+    "QueryRecordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRecordList\n<公共请求参数>\n\n{\n    \"EndBizDate\": \"2020-09-22\", \n    \"CalledPhone\": \"xx\", \n    \"BotId\": \"xx\", \n    \"Module\": \"xx\", \n    \"Limit\": 0, \n    \"Offset\": 0, \n    \"Operation\": \"xx\", \n    \"StartBizDate\": \"2020-09-22\", \n    \"BotName\": \"xx\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RecordList\": [\r\n            {\r\n                \"CallStartTime\": \"2020-09-22 00:00:00\", \r\n                \"DialogueLog\": \"xx\", \r\n                \"CalledPhone\": \"xx\", \r\n                \"BotId\": \"xx\", \r\n                \"BizDate\": \"2020-09-22\", \r\n                \"Duration\": 0, \r\n                \"CosUrl\": \"xx\", \r\n                \"BotName\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\", \r\n        \"TotalCount\": 0\r\n    }\r\n}",
+        "title": "查询录音列表"
+      }
+    ],
+    "UploadBotData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadBotData\n<公共请求参数>\n\n{\n  \"Module\": \"AiApi\",\n  \"Operation\": \"UploadData\",\n  \"Data\": \"\",\n \"BotId\": \"xx\", \n  \"BotName\": \"qtest01\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\"\r\n  }\r\n}",
+        "title": "上传机器人任务数据"
       }
     ],
     "UploadBotFile": [

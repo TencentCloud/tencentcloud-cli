@@ -25,16 +25,17 @@ Output:
                 "MonthlyTraffic": 1,
                 "Price": {
                     "InstancePrice": {
-                        "OriginalBundlePrice": 60.0,
-                        "OriginalPrice": 60.0,
+                        "OriginalBundlePrice": 60,
+                        "OriginalPrice": 60,
                         "Discount": 65,
-                        "DiscountPrice": 39.0
+                        "DiscountPrice": 39
                     }
                 },
                 "SupportLinuxUnixPlatform": true,
                 "SupportWindowsPlatform": false,
+                "BundleType": "GENERAL_BUNDLE",
                 "BundleSalesState": "AVAILABLE",
-                "BundleType": "GENERAL_BUNDLE"
+                "BundleDisplayLabel": "NORMAL"
             },
             {
                 "BundleId": "bundle_ntp_small1_500",
@@ -47,20 +48,21 @@ Output:
                 "MonthlyTraffic": 500,
                 "Price": {
                     "InstancePrice": {
-                        "OriginalBundlePrice": 90.0,
-                        "OriginalPrice": 90.0,
+                        "OriginalBundlePrice": 90,
+                        "OriginalPrice": 90,
                         "Discount": 65,
                         "DiscountPrice": 58.5
                     }
                 },
                 "SupportLinuxUnixPlatform": true,
                 "SupportWindowsPlatform": true,
+                "BundleType": "GENERAL_BUNDLE",
                 "BundleSalesState": "AVAILABLE",
-                "BundleType": "GENERAL_BUNDLE"
+                "BundleDisplayLabel": "NORMAL"
             }
         ],
         "TotalCount": 2,
-        "RequestId": "4f05e47f-9d54-49a9-8d03-bca50b32dbc5"
+        "RequestId": "6d4c966d-bc42-4425-8c98-a39f36c7ad1b"
     }
 }
 ```

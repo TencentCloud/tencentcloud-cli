@@ -33,7 +33,9 @@ tccli cpdp UnifiedOrder --cli-unfold-argument  \
     --SubOrderList.0.SubAppId your_sub_app_id \
     --SubOrderList.0.SubOutTradeNo your_sub_order_no \
     --SubOrderList.0.Amt 1 \
-    --SubOrderList.0.OriginalAmt 1
+    --SubOrderList.0.OriginalAmt 1 \
+    --SubOrderList.0.Metadata xxx \
+    --PaymentNotifyUrl http://cloud.tencent.com
 ```
 
 Output: 

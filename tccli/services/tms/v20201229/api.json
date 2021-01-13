@@ -1,0 +1,371 @@
+{
+  "actions": {
+    "TextModeration": {
+      "document": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别可能令人反感、不安全或不适宜的文本内容，同时支持用户配置词库黑白名单，打击自定义识别类型的图片。",
+      "input": "TextModerationRequest",
+      "name": "文本内容安全",
+      "output": "TextModerationResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-29",
+    "api_brief": "介绍如何使用API对文本内容检测进行操作，包括识别文本中的不适宜内容等。",
+    "serviceNameCN": "文本内容检测",
+    "serviceShortName": "tms"
+  },
+  "objects": {
+    "DetailResults": {
+      "document": "文本返回的详细结果",
+      "members": [
+        {
+          "default": "",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及其他令人反感、不安全或不适宜的内容类型。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该标签下命中的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Keywords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该标签模型命中的分值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仅当Label为Custom自定义关键词时有效，表示自定义关键词库类型，1:黑白库，2：自定义库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LibType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仅当Label为Custom自定义关键词时有效，表示自定义库id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LibId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仅当Labe为Custom自定义关键词时有效，表示自定义库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LibName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Device": {
+      "document": "设备信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户IP",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Mac地址",
+          "member": "string",
+          "name": "Mac",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备指纹Token",
+          "member": "string",
+          "name": "TokenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备指纹ID",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备序列号",
+          "member": "string",
+          "name": "IMEI",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IOS设备，Identifier For Advertising（广告标识符）",
+          "member": "string",
+          "name": "IDFA",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）",
+          "member": "string",
+          "name": "IDFV",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RiskDetails": {
+      "document": "账号风险检测结果",
+      "members": [
+        {
+          "default": "",
+          "document": "风险类别，RiskAccount，RiskIP, RiskIMEI",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险等级，1:疑似，2：恶意",
+          "member": "int64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TextModerationRequest": {
+      "document": "TextModeration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据ID，英文字母、下划线、-组成，不超过64个字符",
+          "member": "string",
+          "name": "DataId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号相关信息字段，填入后可识别违规风险账号。",
+          "member": "User",
+          "name": "User",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "设备相关信息字段，填入后可识别违规风险设备。",
+          "member": "Device",
+          "name": "Device",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "TextModerationResponse": {
+      "document": "TextModeration返回参数结构体",
+      "members": [
+        {
+          "document": "您在入参时所填入的Biztype参数。 -- 该字段暂未开放。",
+          "member": "string",
+          "name": "BizType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及其他令人反感、不安全或不适宜的内容类型。",
+          "member": "string",
+          "name": "Label",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
+          "member": "string",
+          "name": "Suggestion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文本命中的关键词信息，用于提示您文本违规的具体原因，可能会返回多个命中的关键词。（如：加我微信）\n如返回值为空，Score不为空，即识别结果（Label）是来自于语义模型判断的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Keywords",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。\n（如：色情 99.99，则该样本属于色情的置信度非常高。）",
+          "member": "int64",
+          "name": "Score",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "接口识别样本后返回的详细结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetailResults",
+          "name": "DetailResults",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "接口识别样本中存在违规账号风险的检测结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RiskDetails",
+          "name": "RiskDetails",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Extra",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求参数中的DataId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DataId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "User": {
+      "document": "用户相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户昵称",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号类别，\"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string\"",
+          "member": "int64",
+          "name": "AccountType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "性别 默认0 未知 1 男性 2 女性",
+          "member": "int64",
+          "name": "Gender",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "年龄 默认0 未知",
+          "member": "int64",
+          "name": "Age",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户等级，默认0 未知 1 低 2 中 3 高",
+          "member": "int64",
+          "name": "Level",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

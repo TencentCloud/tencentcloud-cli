@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "CancelTask": [
+      {
+        "document": "取消任务",
+        "input": "https://vm.tencentcloudapi.com/?Action=CancelTask\r\n&TaskId=123\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n         \"RequestId\":\"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n    }\r\n}",
+        "title": "取消任务"
+      }
+    ],
+    "CreateBizConfig": [
+      {
+        "document": "创建业务配置，1个账号最多可以创建20个配置",
+        "input": "https://vm.tencentcloudapi.com/?Action=CreateBizConfig\n&BizType=1002\n&BizName=视频审核模板\n&ModerationCategories.0=Porn\n&ModerationCategories.1=Polity\n&ModerationCategories.2=Terror\n&MediaModeration.ImageFrequency=5\n&MediaModeration.AudioFrequency=60\n&MediaModeration.SegmentOutput.Bucket=cms_segments-623322\n&MediaModeration.SegmentOutput.Region=ap-guangzhou\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n  }\r\n}",
+        "title": "创建业务配置"
+      }
+    ],
+    "CreateVideoModerationTask": [
+      {
+        "document": "创建视频审核任务",
+        "input": "https://vm.tencentcloudapi.com/?Action=CreateVideoModerationTask\n&BizType=1001\n&Type=VIDEO\n&Tasks.0.DataId=test_data_1\n&Tasks.0.Input.Type=URL\n&Tasks.0.Input.Url=https://v.com/test.mp4\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Results\": [\r\n      {\r\n        \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\r\n        \"TaskId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\",\r\n        \"Code\": \"OK\",\r\n        \"Message\": \"Success\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n  }\r\n}",
+        "title": "创建视频审核任务"
+      }
+    ],
+    "DescribeTaskDetail": [
+      {
+        "document": "在创建任务后，可以通过TaskId查看任务详情",
+        "input": "https://vm.tencentcloudapi.com/?Action=DescribeTaskDetail\n&TaskId=task-video-Xw0mjnmaiu-Uv1fs\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"task-video-XwxJtbkKXWgCt8AZ\",\r\n    \"DataId\": \"data_test_01\",\r\n    \"BizType\": \"1001\",\r\n    \"Name\": \"\",\r\n    \"Status\": \"FINISH\",\r\n    \"Type\": \"VIDEO\",\r\n    \"Suggestion\": \"Block\",\r\n    \"Labels\": [\r\n      {\r\n        \"Label\": \"Porn\",\r\n        \"Suggestion\": \"Block\",\r\n        \"Score\": 99\r\n      },\r\n      {\r\n        \"Label\": \"Hot\",\r\n        \"Suggestion\": \"Block\",\r\n        \"Score\": 70\r\n      }\r\n    ],\r\n    \"MediaInfo\": {\r\n      \"Codecs\": \"h264 aac\",\r\n      \"Duration\": 36,\r\n      \"Width\": 352,\r\n      \"Height\": 640\r\n    },\r\n    \"InputInfo\": {\r\n      \"Type\": \"URL\",\r\n      \"Url\": \"https://cms-video-segments-1256309736.cos.ap-guangzhou.myqcloud.co/huang.mp4\",\r\n      \"BucketInfo\": null\r\n    },\r\n    \"CreatedAt\": \"2020-07-13T11:47:01.925Z\",\r\n    \"UpdatedAt\": \"2020-07-13T11:47:25.840Z\",\r\n    \"TryInSeconds\": 0,\r\n    \"ImageSegments\": [\r\n      {\r\n        \"Result\": {\r\n          \"HitFlag\": 1,\r\n          \"Label\": \"Porn\",\r\n          \"Suggestion\": \"Block\",\r\n          \"Score\": 85,\r\n          \"Results\": [\r\n            {\r\n              \"Scene\": \"Porn\",\r\n              \"HitFlag\": 1,\r\n              \"Suggestion\": \"Block\",\r\n              \"Label\": \"Porn\",\r\n              \"SubLabel\": \"\",\r\n              \"Score\": 85,\r\n              \"Names\": [],\r\n              \"Text\": \"\",\r\n              \"Details\": []\r\n            }\r\n          ],\r\n          \"Url\": \"https://cos.ap-zhou.myqcloud.com/c019/image_1.jpg\"\r\n        },\r\n        \"OffsetTime\": \"1\"\r\n      },\r\n      {\r\n        \"Result\": {\r\n          \"HitFlag\": 1,\r\n          \"Label\": \"Porn\",\r\n          \"Suggestion\": \"Block\",\r\n          \"Score\": 77,\r\n          \"Results\": [\r\n            {\r\n              \"Scene\": \"Porn\",\r\n              \"HitFlag\": 1,\r\n              \"Suggestion\": \"Block\",\r\n              \"Label\": \"Porn\",\r\n              \"SubLabel\": \"\",\r\n              \"Score\": 77,\r\n              \"Names\": [],\r\n              \"Text\": \"\",\r\n              \"Details\": []\r\n            }\r\n          ],\r\n          \"Url\": \"https://cos.ap-guau.myqcloud.com/cc49b5b90a5d6802b7c019/image_2.jpg\"\r\n        },\r\n        \"OffsetTime\": \"2\"\r\n      }\r\n    ],\r\n    \"AudioSegments\": [\r\n      {\r\n        \"Result\": {\r\n          \"HitFlag\": 0,\r\n          \"Label\": \"Normal\",\r\n          \"Suggestion\": \"Pass\",\r\n          \"Score\": 0,\r\n          \"Text\": \"Breaking har gre a king har Mo ni ou。来给生活比个月。更多的承诺。\",\r\n          \"Url\": \"https://xxx.com/7c019/audio_0.mp3\",\r\n          \"Duration\": \"36398\",\r\n          \"DataId\": \"\",\r\n          \"Results\": [],\r\n          \"CreatedAt\": null,\r\n          \"UpdatedAt\": null\r\n        },\r\n        \"OffsetTime\": \"0\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"8d3e4765-48db-40b5-8fdb-aaf1d7225a60\"\r\n  }\r\n}",
+        "title": "查看任务详情"
+      }
+    ],
+    "DescribeVideoStat": [
+      {
+        "document": "",
+        "input": "https://vm.tencentcloudapi.com/?Action=DescribeVideoStat\n&AuditType=1\n&Filters.0.Name=xxx\n&Filters.0.Values.0=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TrendCount\": [\r\n            {\r\n                \"TotalHour\": 0, \r\n                \"EvilHour\": 0, \r\n                \"TotalCount\": 0, \r\n                \"EvilCount\": 0, \r\n                \"PassCount\": 0, \r\n                \"Date\": \"xx\", \r\n                \"PassHour\": 0, \r\n                \"SuspectHour\": 0, \r\n                \"SuspectCount\": 0\r\n            }\r\n        ], \r\n        \"Overview\": {\r\n            \"TotalHour\": 0, \r\n            \"EvilHour\": 0, \r\n            \"TotalCount\": 0, \r\n            \"EvilCount\": 0, \r\n            \"PassCount\": 0, \r\n            \"PassHour\": 0, \r\n            \"SuspectHour\": 0, \r\n            \"SuspectCount\": 0\r\n        }, \r\n        \"RequestId\": \"xx\", \r\n        \"EvilCount\": [\r\n            {\r\n                \"Count\": 0, \r\n                \"EvilType\": \"xx\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "控制台识别统计"
+      }
+    ]
+  },
+  "version": "1.0"
+}

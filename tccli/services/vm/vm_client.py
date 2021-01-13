@@ -9,13 +9,13 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tms.v20201229 import tms_client as tms_client_v20201229
-from tencentcloud.tms.v20201229 import models as models_v20201229
-from tencentcloud.tms.v20200713 import tms_client as tms_client_v20200713
-from tencentcloud.tms.v20200713 import models as models_v20200713
+from tencentcloud.vm.v20201229 import vm_client as vm_client_v20201229
+from tencentcloud.vm.v20201229 import models as models_v20201229
+from tencentcloud.vm.v20200709 import vm_client as vm_client_v20200709
+from tencentcloud.vm.v20200709 import models as models_v20200709
 
 
-def doDescribeTextStat(args, parsed_globals):
+def doCreateVideoModerationTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -26,12 +26,12 @@ def doDescribeTextStat(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.VmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTextStatRequest()
+    model = models.CreateVideoModerationTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTextStat(model)
+    rsp = client.CreateVideoModerationTask(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -40,7 +40,7 @@ def doDescribeTextStat(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAccountTipoffAccess(args, parsed_globals):
+def doCreateBizConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -51,12 +51,12 @@ def doAccountTipoffAccess(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.VmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AccountTipoffAccessRequest()
+    model = models.CreateBizConfigRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.AccountTipoffAccess(model)
+    rsp = client.CreateBizConfig(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -65,7 +65,7 @@ def doAccountTipoffAccess(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTextModeration(args, parsed_globals):
+def doDescribeTaskDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -76,12 +76,12 @@ def doTextModeration(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.VmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextModerationRequest()
+    model = models.DescribeTaskDetailRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.TextModeration(model)
+    rsp = client.DescribeTaskDetail(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -90,7 +90,7 @@ def doTextModeration(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTextLib(args, parsed_globals):
+def doDescribeTasks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -101,12 +101,62 @@ def doDescribeTextLib(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.VmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTextLibRequest()
+    model = models.DescribeTasksRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTextLib(model)
+    rsp = client.DescribeTasks(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCancelTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CancelTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVideoStat(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVideoStatRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeVideoStat(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -116,28 +166,30 @@ def doDescribeTextLib(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20201229": tms_client_v20201229,
-    "v20200713": tms_client_v20200713,
+    "v20201229": vm_client_v20201229,
+    "v20200709": vm_client_v20200709,
 
 }
 
 MODELS_MAP = {
     "v20201229": models_v20201229,
-    "v20200713": models_v20200713,
+    "v20200709": models_v20200709,
 
 }
 
 ACTION_MAP = {
-    "DescribeTextStat": doDescribeTextStat,
-    "AccountTipoffAccess": doAccountTipoffAccess,
-    "TextModeration": doTextModeration,
-    "DescribeTextLib": doDescribeTextLib,
+    "CreateVideoModerationTask": doCreateVideoModerationTask,
+    "CreateBizConfig": doCreateBizConfig,
+    "DescribeTaskDetail": doDescribeTaskDetail,
+    "DescribeTasks": doDescribeTasks,
+    "CancelTask": doCancelTask,
+    "DescribeVideoStat": doDescribeVideoStat,
 
 }
 
 AVAILABLE_VERSION_LIST = [
     "v20201229",
-    "v20200713",
+    "v20200709",
 
 ]
 
@@ -195,11 +247,11 @@ def parse_global_arg(parsed_globals):
         if g_param[OptionsDefine.ServiceVersion]:
             g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
         else:
-            version = conf["tms"][OptionsDefine.Version]
+            version = conf["vm"][OptionsDefine.Version]
             g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if g_param[OptionsDefine.Endpoint] is None:
-            g_param[OptionsDefine.Endpoint] = conf["tms"][OptionsDefine.Endpoint]
+            g_param[OptionsDefine.Endpoint] = conf["vm"][OptionsDefine.Endpoint]
     except Exception as err:
         raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
 

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "TextModeration": [
+      {
+        "document": "",
+        "input": "https://tms.tencentcloudapi.com/?Action=TextModeration\n&Content=57uY5aOw57uY6Imy\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DataId\": \"123\", \r\n        \"Extra\": \"xx\", \r\n        \"BizType\": \"0\", \r\n        \"RiskDetails\": [\r\n            {\r\n                \"Level\": 2, \r\n                \"Label\": \"RiskAccount\"\r\n            }\r\n        ], \r\n        \"DetailResults\": [\r\n            {\r\n                \"LibName\": \"Porn\", \r\n                \"Score\": 72, \r\n                \"Label\": \"Porn\", \r\n                \"LibId\": \"12\", \r\n                \"Suggestion\": \"Review\", \r\n                \"Keywords\": [\r\n                    \"色情\"\r\n                ], \r\n                \"LibType\": 0\r\n            }, \r\n            {\r\n                \"LibName\": \"Porn\", \r\n                \"Score\": 0, \r\n                \"Label\": \"\", \r\n                \"LibId\": \"1\", \r\n                \"Suggestion\": \"Block\", \r\n                \"Keywords\": [\r\n                    \"色情\"\r\n                ], \r\n                \"LibType\": 2\r\n            }\r\n        ], \r\n        \"Label\": \"Ad\",  \r\n        \"Score\": 87, \r\n        \"RequestId\": \"x2123-123123-123\", \r\n        \"Suggestion\": \"Block\", \r\n        \"Keywords\": [\r\n            \"加我好友，给你发优惠券\"\r\n        ]\r\n    }\r\n}",
+        "title": "文本内容安全"
+      }
+    ]
+  },
+  "version": "1.0"
+}

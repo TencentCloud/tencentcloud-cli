@@ -11678,10 +11678,10 @@
         {
           "default": "",
           "document": "实例注册id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
+          "member": "string",
           "name": "RegistrationId",
           "required": true,
-          "type": "int",
+          "type": "string",
           "value_allowed_null": true
         },
         {
