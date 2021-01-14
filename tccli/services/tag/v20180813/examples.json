@@ -75,7 +75,7 @@
     "DescribeResourcesByTags": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourcesByTags\r\n&ServiceType=cvm\r\n&ResourcePrefix=instance\r\n&ResourceRegion=ap-beijing\r\n&ResourceId=ins-1234\r\n&TagFilters.0.TagKey=key1\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourcesByTags\n&ServiceType=cvm\n&ResourcePrefix=instance\n&ResourceRegion=ap-beijing\n&ResourceId=ins-1234\n&TagFilters.0.TagKey=key1\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"Offset\": 0,\r\n    \"Limit\": 15,\r\n    \"Rows\": [\r\n      {\r\n        \"ResourceRegion\": \"ap-guangzhou\",\r\n        \"ServiceType\": \"cvm\",\r\n        \"ResourcePrefix\": \"instance\",\r\n        \"ResourceId\": \"ins-1234\",\r\n        \"Tags\": [\r\n          {\r\n            \"TagKey\": \"key1\",\r\n            \"TagValue\": \"value1\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"5024400f-ae5c-4080-b3ca-f45bf9dae21a\"\r\n  }\r\n}",
         "title": "通过标签查询资源列表"
       }
@@ -123,7 +123,7 @@
     "DescribeTagsSeq": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagsSeq\r\n&TagKey=testTagKey\r\n&TagValue=testTagValue\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagsSeq\n&TagKey=testTagKey\n&TagValue=testTagValue\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Offset\": 0,\r\n        \"Limit\": 15,\r\n        \"Tags\": [\r\n            {\r\n                \"TagKey\": \"abc\",\r\n                \"TagValue\": \"123\",\r\n                \"CanDelete\": 1\r\n            }\r\n        ],\r\n        \"RequestId\": \"0eebf6af-7ae1-44ec-9cae-3752e8bb911a\"\r\n    }\r\n}",
         "title": "查询标签"
       }

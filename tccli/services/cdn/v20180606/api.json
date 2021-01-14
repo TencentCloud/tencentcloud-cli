@@ -10199,6 +10199,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量包生效区域，目前仅支持mainland",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量包生命周期月数",
+          "member": "int64",
+          "name": "LifeTimeMonth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量包是否支持续订",
+          "member": "bool",
+          "name": "ExtensionAvailable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量包是否支持退费",
+          "member": "bool",
+          "name": "RefundAvailable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

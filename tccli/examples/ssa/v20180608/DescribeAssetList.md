@@ -46,7 +46,19 @@ Output:
                     "AssetVpcName": "",
                     "ClusterType": 0,
                     "NameSpace": "tstsec",
-                    "IsNew": false
+                    "IsNew": false,
+                    "LoadBalancerType": "xx",
+                    "LoadBalancerVips": [
+                        "xx",
+                        "xx"
+                    ],
+                    "AssetIpv6": [
+                        "xx",
+                        "xx"
+                    ],
+                    "SSHRisk": "xx",
+                    "RDPRisk": "xx",
+                    "EventRisk": "xx"
                 }
             ]
         },

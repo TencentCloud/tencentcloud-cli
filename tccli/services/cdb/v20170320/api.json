@@ -5515,6 +5515,14 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。",
+          "member": "string",
+          "name": "InstType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6033,6 +6041,14 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。",
+          "member": "string",
+          "name": "InstType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

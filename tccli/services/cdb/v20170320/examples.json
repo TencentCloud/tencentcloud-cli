@@ -35,7 +35,7 @@
     "CreateAccounts": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateAccounts\n&InstanceId=cdb-f35wr6wj\n&Accounts.0.user=xxxxx\n&Password=fsdgfdgfd\n&Accounts.0.host=127.0.0.1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\", \n    \"Password\": \"fsdgfdgfd\", \n    \"Accounts\": [\n        {\n            \"Host\": \"127.0.0.1\", \n            \"User\": \"test_user\"\n        }\n    ], \n    \"Description\": \"test description\"\n}",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"AsyncRequestId\":\"256117ed-efa08b54-61784d44-91781bbd\"\r\n    }\r\n}",
         "title": "创建云数据库的账户"
       }
@@ -216,7 +216,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAccounts\n&InstanceId=cdb-f35wr6wj\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"TotalCount\":2,\r\n        \"Items\":[\r\n            {\r\n                \"Notes\":\"\",\r\n                \"Host\":\"localhost\",\r\n                \"User\":\"\",\r\n                \"ModifyTime\":\"\",\r\n                \"ModifyPasswordTime\":\"\",\r\n                \"CreateTime\":\"\"\r\n            },\r\n            {\r\n                \"Notes\":\"\",\r\n                \"Host\":\"localhost\",\r\n                \"User\":\"root\",\r\n                \"ModifyTime\":\"\",\r\n                \"ModifyPasswordTime\":\"\",\r\n                \"CreateTime\":\"\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"Items\": [{\r\n\t\t\t\t\"Notes\": \"test\",\r\n\t\t\t\t\"Host\": \"localhost\",\r\n\t\t\t\t\"User\": \"test_user\",\r\n\t\t\t\t\"ModifyTime\": \"2020-11-10 01:00:00\",\r\n\t\t\t\t\"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\r\n\t\t\t\t\"CreateTime\": \"2020-11-10 01:00:00\"\r\n\t\t\t}, {\r\n\t\t\t\t\"Notes\": \"test2\",\r\n\t\t\t\t\"Host\": \"localhost\",\r\n\t\t\t\t\"User\": \"root\",\r\n\t\t\t\t\"ModifyTime\": \"2020-11-10 01:00:00\",\r\n\t\t\t\t\"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\r\n\t\t\t\t\"CreateTime\": \"2020-11-10 01:00:00\"\r\n\t\t\t}\r\n\t\t]\r\n\t}\r\n}",
         "title": "查询云数据库的所有账号信息"
       }
     ],

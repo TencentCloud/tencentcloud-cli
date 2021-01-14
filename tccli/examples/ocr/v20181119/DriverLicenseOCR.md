@@ -19,6 +19,7 @@ Output:
         "Nationality": "中国",
         "Address": "上海市徐汇区田林路397号腾云大厦6F",
         "DateOfBirth": "1987-01-01",
+        "IssuingAuthority": "上海市公安局交通警察总队",
         "DateOfFirstIssue": "2011-10-01",
         "Class": "C1",
         "StartDate": "2011-10-01",
@@ -64,6 +65,7 @@ Output:
         "EndDate": "2017-10-01",
         "CardCode": "440xxxxxxxxxxx0011",
         "ArchivesCode": "",
+        "IssuingAuthority": "上海市公安局交通警察总队",
         "Record": "",
         "RecognizeWarnCode": [
             -9106,
@@ -106,6 +108,7 @@ Output:
         "CardCode": "510106197906030018",
         "ArchivesCode": "510111425293",
         "Record": "",
+        "IssuingAuthority": "",
         "RecognizeWarnCode": [],
         "RecognizeWarnMsg": [],
         "RequestId": "83e87a88-2382-4781-96ec-f8d620fffee8"
@@ -141,6 +144,7 @@ Output:
         "CardCode": "510106197906030018",
         "ArchivesCode": "510111425293",
         "Record": "",
+        "IssuingAuthority": "",
         "RecognizeWarnCode": [
             -9106,
             -9103

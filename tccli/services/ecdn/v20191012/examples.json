@@ -60,7 +60,7 @@
       {
         "document": "",
         "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeIpStatus\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b6e9964d-26a3-49d0-adab-993e17d2f950\",\r\n        \"Ips\": [\r\n            {\r\n                \"Ip\": \"1.1.1.1\",\r\n                \"District\": \"广东\",\r\n                \"Isp\": \"电信\",\r\n                \"City\": \"深圳\",\r\n                \"Status\": \"online\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 0\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b6e9964d-26a3-49d0-adab-993e17d2f950\",\r\n        \"Ips\": [\r\n            {\r\n                \"Ip\": \"1.1.1.1\",\r\n                \"District\": \"广东\",\r\n                \"Isp\": \"电信\",\r\n                \"City\": \"深圳\",\r\n                \"Status\": \"online\",\r\n                \"CreateTime\":\"2019-10-12 00:00:00\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 0\r\n    }\r\n}",
         "title": "查询域名节点信息"
       }
     ],

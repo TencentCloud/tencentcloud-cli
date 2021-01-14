@@ -30,6 +30,12 @@
       "name": "云安全配置检查项详情",
       "output": "DescribeCheckConfigDetailResponse"
     },
+    "DescribeComplianceAssetList": {
+      "document": "合规管理-资产列表",
+      "input": "DescribeComplianceAssetListRequest",
+      "name": "合规管理-资产列表",
+      "output": "DescribeComplianceAssetListResponse"
+    },
     "DescribeComplianceDetail": {
       "document": "合规管理检查项详情",
       "input": "DescribeComplianceDetailRequest",
@@ -65,6 +71,12 @@
       "input": "DescribeSafetyEventListRequest",
       "name": "获取安全事件列表",
       "output": "DescribeSafetyEventListResponse"
+    },
+    "DescribeVulDetail": {
+      "document": "漏洞列表页，获取漏洞详情信息",
+      "input": "DescribeVulDetailRequest",
+      "name": "漏洞列表-漏洞详情",
+      "output": "DescribeVulDetailResponse"
     },
     "DescribeVulList": {
       "document": "漏洞管理页，获取漏洞列表",
@@ -964,6 +976,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注内容",
+          "member": "string",
+          "name": "Remarks",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1564,6 +1585,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remarks",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1713,6 +1743,15 @@
           "name": "AssetTotal",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "忽略内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remarks",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2253,6 +2292,78 @@
       ],
       "type": "object"
     },
+    "DescribeComplianceAssetListRequest": {
+      "document": "DescribeComplianceAssetList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页码",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检查项uuid",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceAssetListResponse": {
+      "document": "DescribeComplianceAssetList返回参数结构体",
+      "members": [
+        {
+          "document": "资产组列表",
+          "member": "CheckAssetItem",
+          "name": "CheckAssetsList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资产组列表总数",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeComplianceDetailRequest": {
       "document": "DescribeComplianceDetail请求参数结构体",
       "members": [
@@ -2589,6 +2700,187 @@
           "name": "Total",
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulDetailRequest": {
+      "document": "DescribeVulDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞唯一标识符",
+          "member": "string",
+          "name": "UniqId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查看详情来源",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulDetailResponse": {
+      "document": "DescribeVulDetail返回参数结构体",
+      "members": [
+        {
+          "document": "漏洞类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "VulType",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞子类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubVulType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cvss分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CvssScore",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cvss值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Cvss",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cve编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Cve",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cnvd编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Cnvd",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cnnvd编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Cnnvd",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Desc",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "参考\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Reference",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "修复意见\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Repair",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "披露时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReleaseTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Level",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "受影响资产唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ImpactAsset",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "受影响资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ImpactAssetName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "受影响资产是否已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsAssetDeleted",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Source",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VulUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产归属\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SsaAssetCategory",
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -49,7 +49,7 @@
       "output": "ClassifyDetectOCRResponse"
     },
     "DriverLicenseOCR": {
-      "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限。\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。",
+      "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。",
       "input": "DriverLicenseOCRRequest",
       "name": "驾驶证识别",
       "output": "DriverLicenseOCRResponse"
@@ -1258,14 +1258,14 @@
           "value_allowed_null": false
         },
         {
-          "document": "出生日期",
+          "document": "出生日期（YYYY-MM-DD）",
           "member": "string",
           "name": "DateOfBirth",
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "初次领证日期",
+          "document": "初次领证日期（YYYY-MM-DD）",
           "member": "string",
           "name": "DateOfFirstIssue",
           "type": "string",
@@ -1279,14 +1279,14 @@
           "value_allowed_null": false
         },
         {
-          "document": "有效期开始时间",
+          "document": "有效期开始时间（YYYY-MM-DD）",
           "member": "string",
           "name": "StartDate",
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "有效期截止时间",
+          "document": "有效期截止时间（YYYY-MM-DD）",
           "member": "string",
           "name": "EndDate",
           "type": "string",
@@ -1325,6 +1325,13 @@
           "member": "string",
           "name": "RecognizeWarnMsg",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发证单位",
+          "member": "string",
+          "name": "IssuingAuthority",
+          "type": "string",
           "value_allowed_null": false
         },
         {

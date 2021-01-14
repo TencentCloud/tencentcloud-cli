@@ -17,20 +17,20 @@ Output:
         "TotalCount": 2,
         "Items": [
             {
-                "Notes": "",
+                "Notes": "test",
                 "Host": "localhost",
-                "User": "",
-                "ModifyTime": "",
-                "ModifyPasswordTime": "",
-                "CreateTime": ""
+                "User": "test_user",
+                "ModifyTime": "2020-11-10 01:00:00",
+                "ModifyPasswordTime": "2020-11-10 01:00:00",
+                "CreateTime": "2020-11-10 01:00:00"
             },
             {
-                "Notes": "",
+                "Notes": "test2",
                 "Host": "localhost",
                 "User": "root",
-                "ModifyTime": "",
-                "ModifyPasswordTime": "",
-                "CreateTime": ""
+                "ModifyTime": "2020-11-10 01:00:00",
+                "ModifyPasswordTime": "2020-11-10 01:00:00",
+                "CreateTime": "2020-11-10 01:00:00"
             }
         ]
     }
