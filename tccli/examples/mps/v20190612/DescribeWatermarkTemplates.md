@@ -27,7 +27,8 @@ Output:
                 "ImageTemplate": {
                     "ImageUrl": "http://1256768367.vts2.myqcloud.com/8b0dd2b5vtscq1256768367/4d27b39f5285890783754292994/aa.jpeg",
                     "Width": "80%",
-                    "Height": "80%"
+                    "Height": "80%",
+                    "RepeatType": "repeat"
                 },
                 "TextTemplate": {
                     "FontType": "arial.ttf",

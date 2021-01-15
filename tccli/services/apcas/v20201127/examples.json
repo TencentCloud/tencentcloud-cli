@@ -1,0 +1,61 @@
+{
+  "actions": {
+    "GetTaskDetail": [
+      {
+        "document": "",
+        "input": "https://apcas.tencentcloudapi.com/?Action=GetTaskDetail\n&Id=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\", \r\n        \"TaskDetailDataList\": [\r\n            {\r\n                \"TagId\": 1, \r\n                \"TagDesc\": \"xx\", \r\n                \"LabelDetailDataList\": [\r\n                    {\r\n                        \"Value\": {\r\n                            \"Tgi\": 0.0, \r\n                            \"Proportion\": 0.0, \r\n                            \"Market\": 0.0\r\n                        }, \r\n                        \"Label\": \"xx\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询画像洞察任务详情"
+      }
+    ],
+    "GetTaskList": [
+      {
+        "document": "查询当前账号AppId下任务列表",
+        "input": "https://apcas.tencentcloudapi.com/?Action=GetTaskList\n&PageNumber=0\n&PageSize=10\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"xxx\",\r\n\t\t\"TaskListData\": {\r\n\t\t\t\"PageNumber\": 0,\r\n\t\t\t\"PageSize\": 10,\r\n\t\t\t\"TotalCount\": 4,\r\n\t\t\t\"TaskList\": [{\r\n\t\t\t\t\"ID\": 2,\r\n\t\t\t\t\"TaskName\": \"测试222\",\r\n\t\t\t\t\"StartTime\": 1608799481159,\r\n\t\t\t\t\"Status\": 2,\r\n\t\t\t\t\"Available\": 99973,\r\n\t\t\t\t\"ErrMsg\": \"\"\r\n\t\t\t}, {\r\n\t\t\t\t\"ID\": 1,\r\n\t\t\t\t\"TaskName\": \"测试111\",\r\n\t\t\t\t\"StartTime\": 1608798649057,\r\n\t\t\t\t\"Status\": 3,\r\n\t\t\t\t\"Available\": 0,\r\n\t\t\t\t\"ErrMsg\": \"available people should greater than 1000, now is 5\"\r\n\t\t\t}]\r\n\t\t}\r\n\t}\r\n}",
+        "title": "查询任务列表"
+      }
+    ],
+    "PredictRating": [
+      {
+        "document": "以MD5 IMEI号为参数获取购车意向评分",
+        "input": "https://apcas.tencentcloudapi.com/?Action=PredictRating\n&Type=8\n&Id=9aa40fe5e32938e34f767cc0f9f58702\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xx\",\r\n        \"RatingData\":{\r\n            \"Rank\":1\r\n    }\r\n}\r\n}",
+        "title": "获取购车意向评级"
+      }
+    ],
+    "QueryCallDetails": [
+      {
+        "document": "",
+        "input": "https://apcas.tencentcloudapi.com/?Action=QueryCallDetails\n&Type=1\n&StartTime=1602470155000\n&EndTime=1602470355000\n&PageNumber=1\n&PageSize=100\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xx\",\r\n        \"CallDetails\":{\r\n            \"TotalCount\":2,\r\n            \"CallDetailSet\":[\r\n                {\r\n                    \"DataType\":1,\r\n                    \"ValidAmount\":3000,\r\n                    \"Date\":\"2020-09-04 18:00:00\"\r\n                },\r\n                {\r\n                    \"DataType\":3,\r\n                    \"ValidAmount\":6380,\r\n                    \"Date\":\"2020-09-05 17:00:00\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+        "title": "查询调用统计"
+      }
+    ],
+    "QueryCallStat": [
+      {
+        "document": "",
+        "input": "https://apcas.tencentcloudapi.com/?Action=QueryCallStat\n&Type=1\n&StartTime=1602470155000\n&EndTime=1602470355000\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xx\",\r\n        \"CallSet\":[\r\n            {\r\n                \"Date\":\"2020-08-30 00:00:00\",\r\n                \"Amount\":2400\r\n            },\r\n            {\r\n                \"Date\":\"2020-09-01 00:00:00\",\r\n                \"Amount\":2400\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取调用量统计"
+      }
+    ],
+    "QueryGeneralStat": [
+      {
+        "document": "通过Type=1获取特征洞察统计",
+        "input": "https://apcas.tencentcloudapi.com/?Action=QueryGeneralStat\n&Type=1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"xx\",\r\n        \"GeneralStat\":{\r\n            \"TodayAmount\":122222,\r\n            \"WeekAmount\":2222,\r\n            \"MonthAmount\":299333,\r\n            \"TotalAmount\":10000\r\n        }\r\n    }\r\n}",
+        "title": "获取特征洞察统计"
+      }
+    ],
+    "UploadId": [
+      {
+        "document": "",
+        "input": "https://apcas.tencentcloudapi.com/?Action=UploadId\n&Type=0\n&TaskName=Test123\n&IdListBase64=MzUxOTUyMDgwODk1MjQzCjg2OTcwNzAzOTE0MzczMAo4Njc5NzkwNDg0MjY5MjUKODY5MjQ3MDM1OTYyMTE0Cjg2MTI0MzA0MTU3MTk2Mw==\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xxx\",\r\n        \"TaskData\": {\r\n            \"Id\": 0\r\n        }\r\n    }\r\n}",
+        "title": "画像洞察导入IMEI列表（base64编码）"
+      }
+    ]
+  },
+  "version": "1.0"
+}

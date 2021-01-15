@@ -5982,6 +5982,38 @@
           "name": "PolicyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全规则动作",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则关联地址，格式需要满足CIDR网络地址规范",
+          "member": "string",
+          "name": "SourceCidr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议类型",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "端口范围，支持以下格式\n单个端口: 80\n多个端口: 80,443\n连续端口: 3306-20000\n所有端口: ALL",
+          "member": "string",
+          "name": "DestPortRange",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

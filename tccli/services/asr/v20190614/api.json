@@ -6,6 +6,12 @@
       "name": "创建热词表",
       "output": "CreateAsrVocabResponse"
     },
+    "CreateAsyncRecognitionTask": {
+      "document": "本接口用于对语音流进行准实时识别，通过异步回调来返回识别结果。\n<br>• 支持rtmp、hls、rtsp等流媒体协议，以及各类基于http协议的直播流\n<br>• 音频流时长无限制，服务会自动拉取音频流数据，若连续10分钟拉不到流数据时，服务会终止识别任务\n<br>• 服务通过回调的方式来提供识别结果，用户需要提供CallbackUrl\n<br>• 签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>• 默认单账号限制并发数为20路，如您有提高并发限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "input": "CreateAsyncRecognitionTaskRequest",
+      "name": "语音流异步识别任务创建",
+      "output": "CreateAsyncRecognitionTaskResponse"
+    },
     "CreateCustomization": {
       "document": "用户使用该接口可以创建自学习模型，以供识别调用",
       "input": "CreateCustomizationRequest",
@@ -29,6 +35,12 @@
       "input": "DeleteCustomizationRequest",
       "name": "删除自学习模型",
       "output": "DeleteCustomizationResponse"
+    },
+    "DescribeAsyncRecognitionTasks": {
+      "document": "本接口用于查询当前在运行的语音流异步识别任务列表。\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。",
+      "input": "DescribeAsyncRecognitionTasksRequest",
+      "name": "语音流异步识别任务列表",
+      "output": "DescribeAsyncRecognitionTasksResponse"
     },
     "DescribeTaskStatus": {
       "document": "在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。\n<br>• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://cloud.tencent.com/document/product/1093/37139#callback)。\n<br>• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n",
@@ -104,6 +116,45 @@
     "serviceShortName": "asr"
   },
   "objects": {
+    "AsyncRecognitionTaskInfo": {
+      "document": "音频流异步识别任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流Url",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AsyncRecognitionTasks": {
+      "document": "音频流异步识别任务列表",
+      "members": [
+        {
+          "default": "",
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AsyncRecognitionTaskInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAsrVocabRequest": {
       "document": "CreateAsrVocab请求参数结构体",
       "members": [
@@ -150,6 +201,111 @@
           "member": "string",
           "name": "VocabId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAsyncRecognitionTaskRequest": {
+      "document": "CreateAsyncRecognitionTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "引擎模型类型。\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语音流地址，支持rtmp、hls、rtsp等流媒体协议，以及各类基于http协议的直播流",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持HTTP和HTTPS协议，用于接收识别结果，您需要自行搭建公网可调用的服务。回调格式&内容详见：[语音流异步识别回调说明](https://github.com/yunjianfei/qcloud-documents/blob/master/product/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8EAI/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%20API%202017/%E8%AF%AD%E9%9F%B3%E6%B5%81%E5%BC%82%E6%AD%A5%E8%AF%86%E5%88%AB%E5%9B%9E%E8%B0%83%E8%AF%B4%E6%98%8E.md)",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于生成回调通知中的签名",
+          "member": "string",
+          "name": "SignToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0",
+          "member": "int64",
+          "name": "FilterDirty",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0",
+          "member": "int64",
+          "name": "FilterModal",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0",
+          "member": "int64",
+          "name": "FilterPunc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1",
+          "member": "int64",
+          "name": "ConvertNumMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认为0",
+          "member": "int64",
+          "name": "WordInfo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
+          "member": "string",
+          "name": "HotwordId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAsyncRecognitionTaskResponse": {
+      "document": "CreateAsyncRecognitionTask返回参数结构体",
+      "members": [
+        {
+          "document": "请求返回结果，包含本次的任务ID(TaskId)",
+          "member": "Task",
+          "name": "Data",
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -414,6 +570,30 @@
     "DeleteCustomizationResponse": {
       "document": "DeleteCustomization返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsyncRecognitionTasksRequest": {
+      "document": "DescribeAsyncRecognitionTasks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAsyncRecognitionTasksResponse": {
+      "document": "DescribeAsyncRecognitionTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AsyncRecognitionTasks",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

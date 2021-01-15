@@ -11,6 +11,8 @@ include tccli/services/ame/v20190916/api.json
 include tccli/services/ame/v20190916/examples.json
 include tccli/services/ams/v20200608/api.json
 include tccli/services/ams/v20200608/examples.json
+include tccli/services/apcas/v20201127/api.json
+include tccli/services/apcas/v20201127/examples.json
 include tccli/services/ape/v20200513/api.json
 include tccli/services/ape/v20200513/examples.json
 include tccli/services/apigateway/v20180808/api.json
@@ -199,6 +201,8 @@ include tccli/services/nlp/v20190408/api.json
 include tccli/services/nlp/v20190408/examples.json
 include tccli/services/npp/v20190823/api.json
 include tccli/services/npp/v20190823/examples.json
+include tccli/services/oceanus/v20190422/api.json
+include tccli/services/oceanus/v20190422/examples.json
 include tccli/services/ocr/v20181119/api.json
 include tccli/services/ocr/v20181119/examples.json
 include tccli/services/organization/v20181225/api.json
@@ -219,6 +223,8 @@ include tccli/services/ses/v20201002/api.json
 include tccli/services/ses/v20201002/examples.json
 include tccli/services/smpn/v20190822/api.json
 include tccli/services/smpn/v20190822/examples.json
+include tccli/services/sms/v20210111/api.json
+include tccli/services/sms/v20210111/examples.json
 include tccli/services/sms/v20190711/api.json
 include tccli/services/sms/v20190711/examples.json
 include tccli/services/soe/v20180724/api.json

@@ -109,7 +109,7 @@
       "output": "FormulaOCRResponse"
     },
     "GeneralAccurateOCR": {
-      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于文字较多、版式复杂、对识别准召率要求较高的场景，如试卷试题、网络图片、街景店招牌、法律卷宗等场景。\n\n产品优势：与通用印刷体识别相比，提供更高精度的文字识别服务，在文字较多、长串数字、小字、模糊字、倾斜文本等困难场景下，高精度版的准确率和召回率更高。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th >【荐】通用印刷体识别（高精度版）</th>\n          <th style=\"width:200px\"><a href=\"https://cloud.tencent.com/document/product/866/33526\">【荐】通用印刷体识别</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/37831\">通用印刷体识别（精简版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>99%</td>\n          <td>96%</td>\n          <td>91%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>高</td>\n          <td>中</td>\n          <td>低</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  \n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>  \n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，不支持角度返回</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于文字较多、版式复杂、对识别准召率要求较高的场景，如试卷试题、网络图片、街景店招牌、法律卷宗等场景。\n\n产品优势：与通用印刷体识别相比，提供更高精度的文字识别服务，在文字较多、长串数字、小字、模糊字、倾斜文本等困难场景下，高精度版的准确率和召回率更高。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th >【荐】通用印刷体识别（高精度版）</th>\n          <th style=\"width:200px\"><a href=\"https://cloud.tencent.com/document/product/866/33526\">【荐】通用印刷体识别</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/37831\">通用印刷体识别（精简版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>99%</td>\n          <td>96%</td>\n          <td>91%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>高</td>\n          <td>中</td>\n          <td>低</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  \n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>  \n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>",
       "input": "GeneralAccurateOCRRequest",
       "name": "通用印刷体识别（高精度版）",
       "output": "GeneralAccurateOCRResponse"
@@ -253,7 +253,7 @@
       "output": "QuotaInvoiceOCRResponse"
     },
     "RecognizeTableOCR": {
-      "document": "本接口支持图片/ PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持对0度至180度旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
+      "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
       "input": "RecognizeTableOCRRequest",
       "name": "表格识别（V2)",
       "output": "RecognizeTableOCRResponse"
@@ -1492,7 +1492,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1500,7 +1500,7 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1533,6 +1533,13 @@
           "member": "TextDetectionEn",
           "name": "TextDetections",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "member": "float",
+          "name": "Angel",
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -2010,7 +2017,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。",
+          "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
           "member": "float",
           "name": "Angel",
           "type": "float",
@@ -2227,7 +2234,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -2235,7 +2242,7 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -2268,6 +2275,13 @@
           "member": "TextGeneralHandwriting",
           "name": "TextDetections",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "member": "float",
+          "name": "Angel",
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -4397,6 +4411,14 @@
           "name": "PdfPageNumber",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "语言，zh：中英文（默认）jap：日文",
+          "member": "string",
+          "name": "TableLanguage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4423,6 +4445,13 @@
           "member": "int64",
           "name": "PdfPageSize",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片旋转角度（角度制），文本的水平\n方向为 0°；顺时针为正，逆时针为负",
+          "member": "float",
+          "name": "Angle",
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -5102,6 +5131,24 @@
           "document": "表格标题\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "TableTitle",
           "name": "Titles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图像中的文本块类型，0 为非表格文本，\n1 为有线表格，2 为无线表格\n（接口暂不支持日文无线表格识别，若传入日文无线表格，返回0）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格主体四个顶点坐标（依次为左上角，\n右上角，右下角，左下角）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Coord",
+          "name": "TableCoordPoint",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -6513,7 +6560,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片/PDF的 Base64 值。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经Base64编码后不超过 3M。文件下载时间不超过 3 秒。\n输入参数 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片/PDF的 Base64 值。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经Base64编码后不超过 7M。文件下载时间不超过 3 秒。\n输入参数 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -6521,7 +6568,7 @@
         },
         {
           "default": "",
-          "document": "图片/PDF的 Url 地址。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经 Base64 编码后不超过 3M。文件下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片/PDF的 Url 地址。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经 Base64 编码后不超过 7M。文件下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -6568,6 +6615,13 @@
           "member": "int64",
           "name": "PdfPageSize",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "member": "float",
+          "name": "Angle",
+          "type": "float",
           "value_allowed_null": false
         },
         {

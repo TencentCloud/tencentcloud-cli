@@ -152,6 +152,14 @@
           "name": "TemplateId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "true： 开启60天内禁止转移注册商锁定\nfalse：关闭60天内禁止转移注册商锁定\n默认 true",
+          "member": "bool",
+          "name": "LockTransfer",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -810,6 +818,13 @@
           "value_allowed_null": false
         },
         {
+          "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Uin",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1121,6 +1136,24 @@
           "name": "NameServer",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "true：开启锁定\nfalse：关闭锁定",
+          "member": "bool",
+          "name": "LockTransfer",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "锁定结束时间",
+          "member": "string",
+          "name": "LockEndTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1686,6 +1719,14 @@
           "name": "AutoRenewFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "true： 开启60天内禁止转移注册商锁定\nfalse：关闭60天内禁止转移注册商锁定\n默认 true",
+          "member": "bool",
+          "name": "LockTransfer",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

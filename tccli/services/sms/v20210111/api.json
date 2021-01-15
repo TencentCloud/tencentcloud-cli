@@ -1,0 +1,120 @@
+{
+  "actions": {
+    "DescribeSmsTemplateList": {
+      "document": "⚠️注意：个人认证用户不支持使用 API 查询短信正文模版，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "input": "DescribeSmsTemplateListRequest",
+      "name": "短信模板状态查询",
+      "output": "DescribeSmsTemplateListResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-01-11",
+    "api_brief": "介绍如何使用API对短信进行操作，包括短信签名、发送短信、短信统计等。",
+    "serviceNameCN": "短信",
+    "serviceShortName": "sms"
+  },
+  "objects": {
+    "DescribeSmsTemplateListRequest": {
+      "document": "DescribeSmsTemplateList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板 ID 数组。",
+          "member": "uint64",
+          "name": "TemplateIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsTemplateListResponse": {
+      "document": "DescribeSmsTemplateList返回参数结构体",
+      "members": [
+        {
+          "document": "获取短信模板信息响应",
+          "member": "DescribeTemplateListStatus",
+          "name": "DescribeTemplateStatusSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateListStatus": {
+      "document": "获取短信模板信息响应",
+      "members": [
+        {
+          "default": "",
+          "document": "模板Id",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请签名状态。其中：\n0：表示审核通过。\n1：表示审核中。\n-1：表示审核未通过或审核失败。",
+          "member": "int64",
+          "name": "StatusCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
+          "member": "string",
+          "name": "ReviewReply",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板名称。",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交审核时间，UNIX 时间戳（单位：秒）。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1108,7 +1108,7 @@
       "members": [
         {
           "default": "",
-          "document": "策略分组Id",
+          "document": "策略组id，如传入PolicyId则该字段可传入任意值",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -1137,6 +1137,14 @@
           "name": "Dimensions",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警策略ID，使用此字段时GroupId可传入任意值",
+          "member": "string",
+          "name": "PolicyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1727,7 +1735,7 @@
         },
         {
           "default": "",
-          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>",
+          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = JobMonitor</li>",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -1927,7 +1935,7 @@
         },
         {
           "default": "",
-          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>",
+          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = PodMonitor</li>",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -7255,11 +7263,19 @@
         },
         {
           "default": "",
-          "document": "策略组id",
+          "document": "策略组id，如传入PolicyId则该字段可传入任意值",
           "member": "int64",
           "name": "GroupId",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警策略ID，使用此字段时GroupId可传入任意值",
+          "member": "string",
+          "name": "PolicyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7289,7 +7305,7 @@
         },
         {
           "default": "",
-          "document": "策略组id",
+          "document": "策略组id，如传入PolicyId则该字段可传入任意值",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -7310,6 +7326,14 @@
           "name": "InstanceGroupId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警策略ID，使用此字段时GroupId可传入任意值",
+          "member": "string",
+          "name": "PolicyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7355,7 +7379,7 @@
         },
         {
           "default": "",
-          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>",
+          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = JobMonitor</li>",
           "member": "int64",
           "name": "Type",
           "required": true,

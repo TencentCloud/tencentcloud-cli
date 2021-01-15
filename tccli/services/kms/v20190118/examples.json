@@ -51,8 +51,8 @@
     "CreateKey": [
       {
         "document": "创建用户管理数据密钥的主密钥CMK（Custom Master Key），通过CMK后续可以调用其他接口诸如创建数据密钥、加解密等操作。",
-        "input": "https://kms.tencentcloudapi.com/?Action=CreateKey\r\n&Alias=mykey\r\n&KeyUsage=ENCRYPT_DECRYPT\r\n&Description=test\r\n&<公共请求参数>",
-        "output": "{\r\n\"Response\" : {\r\n        \"KeyId\": \"9999aed0-4956-11e9-bc70-5254005e86b4\",\r\n        \"Alias\": \"alias-0001\",\r\n        \"CreateTime\": 1552897190,\r\n        \"Description\": \"test cmk\",\r\n        \"KeyState\": \"Enabled\",\r\n        \"KeyUsage\": \"ENCRYPT_DECRYPT\",\r\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\r\n  }\r\n}",
+        "input": "https://kms.tencentcloudapi.com/?Action=CreateKey\n&Alias=mykey\n&KeyUsage=ENCRYPT_DECRYPT\n&Description=test\n&<公共请求参数>",
+        "output": "{\r\n\"Response\" : {\r\n        \"KeyId\": \"9999aed0-4956-11e9-bc70-5254005e86b4\",\r\n        \"Alias\": \"alias-0001\",\r\n        \"CreateTime\": 1552897190,\r\n        \"Description\": \"test cmk\",\r\n        \"TagMsg\": \"Success\", \r\n        \"TagCode\": 1, \r\n        \"KeyState\": \"Enabled\",\r\n        \"KeyUsage\": \"ENCRYPT_DECRYPT\",\r\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\r\n  }\r\n}",
         "title": "创建主密钥示例"
       }
     ],
@@ -313,8 +313,8 @@
     "ListAlgorithms": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=ListAlgorithms\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"460fe7ff-f4db-4509-9b20-208badcfb915\",\r\n        \"SymmetricAlgorithms\":[\r\n            {\r\n                \"KeyUsage\":\"ENCRYPT_DECRYPT\",\r\n                \"Algorithm\":\"SM4\"\r\n            }\r\n        ],\r\n        \"AsymmetricAlgorithms\":[\r\n            {\r\n                \"KeyUsage\":\"ASYMMETRIC_DECRYPT_SM2\",\r\n                \"Algorithm\":\"SM2\"\r\n            },\r\n            {\r\n                \"KeyUsage\":\"ASYMMETRIC_DECRYPT_RSA_2048\",\r\n                \"Algorithm\":\"RSA_2048\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "input": "https://kms.tencentcloudapi.com/?Action=ListAlgorithms\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"460fe7ff-f4db-4509-9b20-208badcfb915\",\r\n        \"SymmetricAlgorithms\":[\r\n            {\r\n                \"KeyUsage\":\"ENCRYPT_DECRYPT\",\r\n                \"Algorithm\":\"SM4\"\r\n            }\r\n        ],\r\n        \"AsymmetricAlgorithms\":[\r\n            {\r\n                \"KeyUsage\":\"ASYMMETRIC_DECRYPT_SM2\",\r\n                \"Algorithm\":\"SM2\"\r\n            },\r\n            {\r\n                \"KeyUsage\":\"ASYMMETRIC_DECRYPT_RSA_2048\",\r\n                \"Algorithm\":\"RSA_2048\"\r\n            }\r\n        ],\r\n        \"AsymmetricSignVerifyAlgorithms\":[\r\n            {\r\n                \"KeyUsage\":\"ASYMMETRIC_SIGN_VERIFY_SM2\",\r\n                \"Algorithm\":\"SM2\"\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "列出当前Region支持的加密方式"
       }
     ],
@@ -358,6 +358,14 @@
         "title": "计划删除接口请求示例"
       }
     ],
+    "SignByAsymmetricKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=SignByAsymmetricKey\n&Algorithm=SM2DSA\n&Message=Zsfw9GLu7dnR8tRr3BDk4kFnxIdc8veiKX2gK49LqOA%3D\n&KeyId=6cdf26d1-44ff-11eb-841c-5254006d0810\n&MessageType=DIGEST\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e86d6131-2830-4e1c-9d03-d421affd646c\",\r\n        \"Signature\": \"MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg302fbTBr02IxHO1aCr0Zr41t4hi6yTG8=\"\r\n    }\r\n}",
+        "title": "非对称密钥签名"
+      }
+    ],
     "UnbindCloudResource": [
       {
         "document": "",
@@ -380,6 +388,14 @@
         "input": "https://kms.tencentcloudapi.com/?Action=UpdateKeyDescription\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&Description=NewDescription\r\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\r\n\t}\r\n}",
         "title": "修改主密钥描述信息示例"
+      }
+    ],
+    "VerifyByAsymmetricKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=VerifyByAsymmetricKey\n&Algorithm=SM2DSA\n&Message=Zsfw9GLu7dnR8tRr3BDk4kFnxIdc8veiKX2gK49LqOA%3D\n&KeyId=6cdf26d1-44ff-11eb-841c-5254006d0810\n&MessageType=DIGEST\n&SignatureValue=MEUCIQDeO1wB%2F5dEfprulvh9Zw06UJylDt9R8MQY5qRMjzhXJgIgPKO2kKicFKemwOft8SgniUA692ORrqVEabS3kcbPL8U%3D\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3e634985-c311-4790-953a-44990f7bec6b\",\r\n        \"SignatureValid\": true\r\n    }\r\n}",
+        "title": "使用非对称密钥验签"
       }
     ]
   },

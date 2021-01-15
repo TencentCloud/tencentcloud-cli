@@ -8,6 +8,14 @@
         "title": "创建热词表"
       }
     ],
+    "CreateAsyncRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateAsyncRecognitionTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\"EngineType\": \"16k_zh\", \"Url\": \"http://tes.cos.ap-guangzhou.myqcloud.com/test.wav\", \"CallbackUrl\": \"http://test.com/callback\", \"SignToken\": \"\"}",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"fabc2d63-a1b7-40a0-b4c3-640f78974919\",\r\n        \"Data\":{\r\n            \"TaskId\":1000000007\r\n        }\r\n    }\r\n}",
+        "title": "请求示例1"
+      }
+    ],
     "CreateCustomization": [
       {
         "document": "",
@@ -44,6 +52,14 @@
         "input": "https://asr.tencentcloudapi.com/?Action=DeleteCustomization\n&ModelId=f3520776f31211ea9d26c81fbecfd0bd\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"7cc30534-edde-4969-b281-7a30c5cbf806\"\r\n    }\r\n}",
         "title": "删除自学习模型"
+      }
+    ],
+    "DescribeAsyncRecognitionTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeAsyncRecognitionTasks\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{}",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"8824366f-0e8f-4bd4-8924-af5e84127caa\",\r\n        \"Data\":{\r\n            \"Tasks\":[\r\n                {\r\n                    \"TaskId\":9266418,\r\n                    \"Url\":\"\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+        "title": "查询运行中的任务列表"
       }
     ],
     "DescribeTaskStatus": [

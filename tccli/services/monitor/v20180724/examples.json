@@ -3,7 +3,7 @@
     "BindingPolicyObject": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=BindingPolicyObject\r\n&Module=monitor\r\n&GroupId=111111\r\n&Dimensions.0.Dimensions={\"unInstanceId\":\"ins-ot3cq4bi\"}\r\n&Dimensions.0.EventDimensions={\"uuid\":\"9d51a69e-0e4a-4120-ae58-9c073c851e24\"}\r\n&Dimensions.0.Region=gz\r\n&Dimensions.0.RegionId=1\r\n&<公共请求参数>",
+        "input": "https://monitor.tencentcloudapi.com/?Action=BindingPolicyObject\n&Module=monitor\n&GroupId=111111\n&Dimensions.0.Dimensions={\"unInstanceId\":\"ins-ot3cq4bi\"}\n&Dimensions.0.EventDimensions={\"uuid\":\"9d51a69e-0e4a-4120-ae58-9c073c851e24\"}\n&Dimensions.0.Region=gz\n&Dimensions.0.RegionId=1\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"78345016-ff97-4360-839a-82f3d96430e8\"\r\n  }\r\n}",
         "title": "绑定策略对象"
       }
@@ -357,7 +357,7 @@
     "UnBindingAllPolicyObject": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=UnBindingAllPolicyObject\r\n&Module=monitor\r\n&GroupId=11111\r\n&<公共请求参数>",
+        "input": "https://monitor.tencentcloudapi.com/?Action=UnBindingAllPolicyObject\n&Module=monitor\n&GroupId=11111\n&<公共请求参数>",
         "output": "{\"Response\":{\"RequestId\":\"0dbb66c2-b4d6-4c2c-90a9-617d80347ab5\"}}",
         "title": "删除全部的关联对象"
       }

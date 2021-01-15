@@ -48,6 +48,12 @@
       "name": "获取任务状态",
       "output": "DescribeTaskStatusResponse"
     },
+    "DownloadBotRecord": {
+      "document": "下载任务录音与文本，第二天12点后可使用此接口获取对应的录音与文本",
+      "input": "DownloadBotRecordRequest",
+      "name": "下载任务录音与文本",
+      "output": "DownloadBotRecordResponse"
+    },
     "DownloadDialogueText": {
       "document": "用于获取指定案件的对话文本内容，次日早上8:00后可查询前日对话文本内容。",
       "input": "DownloadDialogueTextRequest",
@@ -987,6 +993,62 @@
           "name": "TaskFileUrl",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadBotRecordRequest": {
+      "document": "DownloadBotRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块：AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作：DownloadRecord",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务日期",
+          "member": "date",
+          "name": "BizDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadBotRecordResponse": {
+      "document": "DownloadBotRecord返回参数结构体",
+      "members": [
+        {
+          "document": "录音地址。请求后30分钟内有效",
+          "member": "string",
+          "name": "RecordCosUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文本地址。请求后30分钟内有效",
+          "member": "string",
+          "name": "TextCosUrl",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

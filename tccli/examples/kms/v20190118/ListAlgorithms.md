@@ -27,6 +27,12 @@ Output:
                 "KeyUsage": "ASYMMETRIC_DECRYPT_RSA_2048",
                 "Algorithm": "RSA_2048"
             }
+        ],
+        "AsymmetricSignVerifyAlgorithms": [
+            {
+                "KeyUsage": "ASYMMETRIC_SIGN_VERIFY_SM2",
+                "Algorithm": "SM2"
+            }
         ]
     }
 }

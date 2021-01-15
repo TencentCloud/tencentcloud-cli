@@ -102,11 +102,23 @@
       "name": "开始实时录制",
       "output": "StartOnlineRecordResponse"
     },
+    "StartWhiteboardPush": {
+      "document": "发起一个白板推流任务",
+      "input": "StartWhiteboardPushRequest",
+      "name": "开始白板推流",
+      "output": "StartWhiteboardPushResponse"
+    },
     "StopOnlineRecord": {
       "document": "停止实时录制",
       "input": "StopOnlineRecordRequest",
       "name": "停止实时录制",
       "output": "StopOnlineRecordResponse"
+    },
+    "StopWhiteboardPush": {
+      "document": "停止白板推流任务",
+      "input": "StopWhiteboardPushRequest",
+      "name": "结束白板推流",
+      "output": "StopWhiteboardPushResponse"
     }
   },
   "metadata": {
@@ -1360,6 +1372,118 @@
       ],
       "type": "object"
     },
+    "StartWhiteboardPushRequest": {
+      "document": "StartWhiteboardPush请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户的SdkAppId",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要推流白板的房间号，取值范围: (1, 4294967295)",
+          "member": "int64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于白板推流服务进房进行推流的用户ID，\n该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。",
+          "member": "string",
+          "name": "PushUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "与PushUserId对应的签名",
+          "member": "string",
+          "name": "PushUserSig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "白板参数，例如白板宽高、背景颜色等",
+          "member": "Whiteboard",
+          "name": "Whiteboard",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自动停止推流超时时间，单位秒，取值范围[300, 259200], 默认值为1800秒。\n\n当白板超过设定时间没有操作的时候，白板推流服务会自动停止白板推流。",
+          "member": "int64",
+          "name": "AutoStopTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "对主白板推流任务进行操作时，是否同时同步操作备份任务",
+          "member": "bool",
+          "name": "AutoManageBackup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "备份白板推流相关参数。\n\n指定了备份参数的情况下，白板推流服务会在房间内新增一路白板画面视频流，即同一个房间内会有两路白板画面推流。",
+          "member": "WhiteboardPushBackupParam",
+          "name": "Backup",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "在实时音视频云端录制模式选择为 `指定用户录制` 模式的时候是否自动录制白板推流。\n\n默认在实时音视频的云端录制模式选择为 `指定用户录制` 模式的情况下，不会自动进行白板推流录制，如果希望进行白板推流录制，请将此参数设置为true。\n\n如果实时音视频的云端录制模式选择为 `全局自动录制` 模式，可忽略此参数。",
+          "member": "bool",
+          "name": "AutoRecord",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "内部参数，不需要关注此参数",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartWhiteboardPushResponse": {
+      "document": "StartWhiteboardPush返回参数结构体",
+      "members": [
+        {
+          "document": "推流任务Id",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备份任务结果参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Backup",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopOnlineRecordRequest": {
       "document": "StopOnlineRecord请求参数结构体",
       "members": [
@@ -1385,6 +1509,47 @@
     "StopOnlineRecordResponse": {
       "document": "StopOnlineRecord返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWhiteboardPushRequest": {
+      "document": "StopWhiteboardPush请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户的SdkAppId",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要停止的白板推流任务 Id",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWhiteboardPushResponse": {
+      "document": "StopWhiteboardPush返回参数结构体",
+      "members": [
+        {
+          "document": "备份任务相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Backup",
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1601,6 +1766,30 @@
           "member": "string",
           "name": "InitParam",
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "WhiteboardPushBackupParam": {
+      "document": "白板推流备份相关请求参数",
+      "members": [
+        {
+          "default": "",
+          "document": "用于白板推流服务进房的用户ID，\n该ID必须是一个单独的未在SDK中使用的ID，白板推流服务将使用这个用户ID进入房间进行白板推流，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常推流。",
+          "member": "string",
+          "name": "PushUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与PushUserId对应的签名",
+          "member": "string",
+          "name": "PushUserSig",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }

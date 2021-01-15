@@ -264,6 +264,12 @@
       "name": "CMK计划删除接口",
       "output": "ScheduleKeyDeletionResponse"
     },
+    "SignByAsymmetricKey": {
+      "document": "非对称密钥签名。\n注意：只有成功创建了KeyUsage= ASYMMETRIC_SIGN_VERIFY_SM2 的密钥才可以使用签名功能",
+      "input": "SignByAsymmetricKeyRequest",
+      "name": "签名",
+      "output": "SignByAsymmetricKeyResponse"
+    },
     "UnbindCloudResource": {
       "document": "删除指定（key, 资源，云产品）的记录，以表明：指定的云产品的资源已不再使用当前的key。",
       "input": "UnbindCloudResourceRequest",
@@ -281,6 +287,12 @@
       "input": "UpdateKeyDescriptionRequest",
       "name": "修改主密钥描述信息",
       "output": "UpdateKeyDescriptionResponse"
+    },
+    "VerifyByAsymmetricKey": {
+      "document": "使用非对称密钥验签",
+      "input": "VerifyByAsymmetricKeyRequest",
+      "name": "验证签名",
+      "output": "VerifyByAsymmetricKeyResponse"
     }
   },
   "metadata": {
@@ -566,7 +578,7 @@
         },
         {
           "default": "",
-          "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥",
+          "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥, “ASYMMETRIC_SIGN_VERIFY_SM2” 表示创建用于签名验签的SM2非对称密钥,",
           "member": "string",
           "name": "KeyUsage",
           "required": false,
@@ -1945,7 +1957,7 @@
         },
         {
           "default": "",
-          "document": "CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2",
+          "document": "CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2",
           "member": "string",
           "name": "KeyUsage",
           "required": true,
@@ -2059,6 +2071,13 @@
           "value_allowed_null": false
         },
         {
+          "document": "本地区支持的非对称签名验签算法",
+          "member": "AlgorithmInfo",
+          "name": "AsymmetricSignVerifyAlgorithms",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2128,7 +2147,7 @@
         },
         {
           "default": "",
-          "document": "根据CMK的KeyUsage筛选，ALL表示筛选全部，可使用的参数为：ALL 或 ENCRYPT_DECRYPT 或 ASYMMETRIC_DECRYPT_RSA_2048 或 ASYMMETRIC_DECRYPT_SM2，为空则默认筛选ENCRYPT_DECRYPT类型",
+          "document": "根据CMK的KeyUsage筛选，ALL表示筛选全部，可使用的参数为：ALL 或 ENCRYPT_DECRYPT 或 ASYMMETRIC_DECRYPT_RSA_2048 或 ASYMMETRIC_DECRYPT_SM2 或 ASYMMETRIC_SIGN_VERIFY_SM2，为空则默认筛选ENCRYPT_DECRYPT类型",
           "member": "string",
           "name": "KeyUsage",
           "required": false,
@@ -2387,6 +2406,63 @@
       ],
       "type": "object"
     },
+    "SignByAsymmetricKeyRequest": {
+      "document": "SignByAsymmetricKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "签名算法，支持的算法：SM2DSA",
+          "member": "string",
+          "name": "Algorithm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，SM2签名算法的消息摘要长度（Base64编码前的长度）必须等于32字节",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "密钥的唯一标识",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。",
+          "member": "string",
+          "name": "MessageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignByAsymmetricKeyResponse": {
+      "document": "SignByAsymmetricKey返回参数结构体",
+      "members": [
+        {
+          "document": "签名，Base64编码",
+          "member": "string",
+          "name": "Signature",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Tag": {
       "document": "标签键和标签值",
       "members": [
@@ -2536,6 +2612,71 @@
     "UpdateKeyDescriptionResponse": {
       "document": "UpdateKeyDescription返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyByAsymmetricKeyRequest": {
+      "document": "VerifyByAsymmetricKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "密钥的唯一标识",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名值，通过调用KMS签名接口生成",
+          "member": "string",
+          "name": "SignatureValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，SM2签名算法的消息摘要长度（Base64编码前的长度）必须等于32字节",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名算法，支持的算法：SM2DSA",
+          "member": "string",
+          "name": "Algorithm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。",
+          "member": "string",
+          "name": "MessageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyByAsymmetricKeyResponse": {
+      "document": "VerifyByAsymmetricKey返回参数结构体",
+      "members": [
+        {
+          "document": "签名是否\b\b有效",
+          "member": "bool",
+          "name": "SignatureValid",
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

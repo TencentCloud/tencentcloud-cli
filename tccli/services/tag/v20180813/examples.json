@@ -44,8 +44,14 @@
       {
         "document": "",
         "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTags\n&ServiceType=cvm\n&ResourcePrefix=instance\n&ResourceRegion=ap-beijing\n&ResourceId=ins-1234\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"Offset\": 0,\r\n    \"Limit\": 15,\r\n    \"Rows\": [\r\n      {\r\n        \"ServiceType\": \"cvm\",\r\n        \"TagKey\": \"instance\",\r\n        \"TagKeyMd5\": \"abced\",\r\n        \"TagValue\": \"ins-asdfsadf\",\r\n        \"TagValueMd5\": \"abced\",\r\n        \"ResourceId\": \"ins-asdfsadf\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"5024400f-ae5c-4080-b3ca-f45bf9dae21a\"\r\n  }\r\n}",
-        "title": "通过标签查询资源列表"
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"Offset\": 0,\r\n    \"Limit\": 15,\r\n    \"Rows\": [\r\n      {\r\n        \"ServiceType\": \"cvm\",\r\n        \"TagKey\": \"testkey\",\r\n        \"TagKeyMd5\": \"abced\",\r\n        \"TagValue\": \"testvalue\",\r\n        \"TagValueMd5\": \"abced\",\r\n        \"ResourceId\": \"ins-1234\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"5024400f-ae5c-4080-b3ca-f45bf9dae21a\"\r\n  }\r\n}",
+        "title": "查询资源关联的列表"
+      },
+      {
+        "document": "cos的resourceId格式为bucketname-appId",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTags\n&ServiceType=cos\n&ResourceRegion=ap-beijing\n&ResourceId=testbucket-1250000\n&CosResourceId=1\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"Offset\": 0,\r\n    \"Limit\": 15,\r\n    \"Rows\": [\r\n      {\r\n        \"ServiceType\": \"cos\",\r\n        \"TagKey\": \"testkey\",\r\n        \"TagKeyMd5\": \"abced\",\r\n        \"TagValue\": \"testvalue\",\r\n        \"TagValueMd5\": \"abced\",\r\n        \"ResourceId\": \"testbucket-1250000\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"5024400f-ae5c-4080-b3ca-f45bf9dae21a\"\r\n  }\r\n}",
+        "title": "查询COS资源关联的列表"
       }
     ],
     "DescribeResourceTagsByResourceIds": [

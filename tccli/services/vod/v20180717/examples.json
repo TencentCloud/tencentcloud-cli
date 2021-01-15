@@ -703,8 +703,8 @@
     "DescribeWatermarkTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeWatermarkTemplates\r\n&Definitions.0=1001\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"WatermarkTemplateSet\": {\r\n      \"Definition\": 1001,\r\n      \"Type\": \"image\",\r\n      \"Name\": \"示例结构体待完善\",\r\n      \"Comment\": \"测试模板\",\r\n      \"XPos\": \"10%\",\r\n      \"YPos\": \"10%\",\r\n      \"ImageTemplate\": {\r\n        \"ImageUrl\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/aa.jpeg\",\r\n        \"Width\": \"80%\",\r\n        \"Height\": \"80%\"\r\n      },\r\n      \"TextTemplate\": {\r\n        \"FontType\": \"arial.ttf\",\r\n        \"FontSize\": \"16px\",\r\n        \"FontColor\": \"0xFF0000\",\r\n        \"FontAlpha\": 1\r\n      },\r\n      \"CreateTime\": \"2018-10-01T10:00:00Z\",\r\n      \"UpdateTime\": \"2018-10-01T10:00:00Z\"\r\n    },\r\n    \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n  }\r\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeWatermarkTemplates\n&Definitions.0=1001\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"WatermarkTemplateSet\": {\r\n      \"Definition\": 1001,\r\n      \"Type\": \"image\",\r\n      \"Name\": \"示例结构体待完善\",\r\n      \"Comment\": \"测试模板\",\r\n      \"XPos\": \"10%\",\r\n      \"YPos\": \"10%\",\r\n      \"ImageTemplate\": {\r\n        \"ImageUrl\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/aa.jpeg\",\r\n        \"Width\": \"80%\",\r\n        \"Height\": \"80%\",\r\n        \"RepeatType\": \"repeat\"\r\n      },\r\n      \"TextTemplate\": {\r\n        \"FontType\": \"arial.ttf\",\r\n        \"FontSize\": \"16px\",\r\n        \"FontColor\": \"0xFF0000\",\r\n        \"FontAlpha\": 1\r\n      },\r\n      \"CreateTime\": \"2018-10-01T10:00:00Z\",\r\n      \"UpdateTime\": \"2018-10-01T10:00:00Z\"\r\n    },\r\n    \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n  }\r\n}",
         "title": "获取水印模板"
       }
     ],
@@ -1005,7 +1005,7 @@
     "ModifyWatermarkTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyWatermarkTemplate\r\n&Definition=1001\r\n&Name=模板2\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyWatermarkTemplate\n&Definition=1001\n&Name=模板2\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"ImageUrl\": null,\r\n    \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n  }\r\n}",
         "title": "修改水印模板"
       }

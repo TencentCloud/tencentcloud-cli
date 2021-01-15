@@ -64,6 +64,14 @@
         "title": "获取任务状态"
       }
     ],
+    "DownloadBotRecord": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=DownloadBotRecord\n&Module=AiApi\n&Operation=DownloadRecord\n&BizDate=2020-12-12\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RecordCosUrl\": \"\" ,\r\n    \"TextCosUrl\": \"\",\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
+        "title": "下载任务录音与文本"
+      }
+    ],
     "DownloadDialogueText": [
       {
         "document": "",

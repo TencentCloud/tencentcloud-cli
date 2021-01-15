@@ -7346,6 +7346,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印重复类型。使用场景：水印为动态图像。取值范围：\n<li>once：动态水印播放完后，不再出现；</li>\n<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>\n<li>repeat：水印循环播放，直到视频结束（默认值）。</li>",
+          "member": "string",
+          "name": "RepeatType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -7379,6 +7388,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印重复类型。使用场景：水印为动态图像。取值范围：\n<li>once：动态水印播放完后，不再出现；</li>\n<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>\n<li>repeat：水印循环播放，直到视频结束。</li>",
+          "member": "string",
+          "name": "RepeatType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -7409,6 +7427,15 @@
           "document": "水印的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素；</li>\n0px：表示 Height 按照 Width 对视频宽度的比例缩放。",
           "member": "string",
           "name": "Height",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印重复类型。使用场景：水印为动态图像。取值范围：\n<li>once：动态水印播放完后，不再出现；</li>\n<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>\n<li>repeat：水印循环播放，直到视频结束。</li>",
+          "member": "string",
+          "name": "RepeatType",
           "required": true,
           "type": "string",
           "value_allowed_null": false

@@ -39,6 +39,7 @@ Output:
                 "WordPolygon": []
             }
         ],
+        "Angel": 0,
         "RequestId": "a57e40af-a73c-4844-ae7e-344f06efb9e5"
     }
 }
@@ -85,6 +86,7 @@ Output:
                 "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}"
             }
         ],
+        "Angel": 0,
         "RequestId": "b57e40af-a73c-4844-ae7e-344f06efb9e5"
     }
 }

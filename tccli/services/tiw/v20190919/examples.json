@@ -160,12 +160,28 @@
         "title": "开始带混流的实时录制"
       }
     ],
+    "StartWhiteboardPush": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=StartWhiteboardPush\n&SdkAppId=1400000001\n&RoomId=1203\n&PushUserId=tic_push_user_1203_141551\n&PushUserSig=usersig_of_<tic_push_user_1203_141551>\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Backup\": \"{\\\"RequestId\\\":\\\"8e9b2bc4-ec7f-46cd-823b-66676e2375f8\\\",\\\"TaskId\\\":\\\"052lfmu5uc3lp0rrqvvb\\\"}\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\r\n    }\r\n}",
+        "title": "开始白板推流"
+      }
+    ],
     "StopOnlineRecord": [
       {
         "document": "停止在线录制",
         "input": "https://tiw.tencentcloudapi.com/?Action=StopOnlineRecord\n&SdkAppId=1400000001\n&TaskId=07b4c70bpafm1b4majmb\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Backup\": \"{}\", \r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
         "title": "停止在线录制"
+      }
+    ],
+    "StopWhiteboardPush": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=StopWhiteboardPush\n&SdkAppId=1400000001\n&TaskId=07b4c70bpafm1b4majmb\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Backup\": \"{\\\"RequestId\\\":\\\"87c334b8-dbf6-4013-8d65-9a9ea60eff27\\\"}\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "停止白板推流"
       }
     ]
   },

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeSmsTemplateList": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=DescribeSmsTemplateList\n&TemplateIdSet.0=1110\n&TemplateIdSet.1=1111\n&International=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DescribeTemplateStatusSet\": [\r\n            {\r\n                \"TemplateName\": \"xx\", \r\n                \"TemplateId\": 1, \r\n                \"International\": 1, \r\n                \"ReviewReply\": \"xx\", \r\n                \"CreateTime\": 1, \r\n                \"StatusCode\": 0\r\n            }, \r\n            {\r\n                \"TemplateName\": \"xx\", \r\n                \"TemplateId\": 1, \r\n                \"International\": 1, \r\n                \"ReviewReply\": \"xx\", \r\n                \"CreateTime\": 1, \r\n                \"StatusCode\": 0\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "请求示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

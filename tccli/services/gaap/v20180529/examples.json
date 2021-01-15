@@ -611,7 +611,7 @@
     "ModifySecurityRule": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifySecurityRule\n&PolicyId=sp-xxxx\n&RuleId=sr-xxxx\n&AliasName=t3\n&<公共请求参数>",
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifySecurityRule\n&PolicyId=sp-xxxx\n&RuleId=sr-xxxx\n&AliasName=t3\n&Protocol=TCP\n&SourceCidr=180.180.180.180/8\n&RuleAction=ACCEPT\n&DestPortRange=ALL\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\"\r\n    }\r\n}",
         "title": "修改规则名"
       }

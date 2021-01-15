@@ -116,6 +116,30 @@
     "serviceShortName": "ses"
   },
   "objects": {
+    "Attachment": {
+      "document": "附件结构，包含附件名和base之后的附件内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "附件名称，最大支持255个字符长度，不支持部分附件类型，详情请参考[附件类型](https://cloud.tencent.com/document/product/1288/51951)。",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "base64之后的附件内容，您可以发送的附件大小上限为5 MB。 注意：腾讯云api目前要求请求包大小不得超过10 MB。如果您要发送多个附件，那么这些附件的总大小不能超过10 MB。",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "BlackEmailAddress": {
       "document": "邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间",
       "members": [
@@ -145,7 +169,7 @@
       "members": [
         {
           "default": "",
-          "document": "您的发信地址，上限为10个",
+          "document": "您的发信地址（发信地址总数上限为10个）",
           "member": "string",
           "name": "EmailAddress",
           "required": true,
@@ -389,7 +413,7 @@
       "members": [
         {
           "default": "",
-          "document": "删除发信模版",
+          "document": "模版ID",
           "member": "uint64",
           "name": "TemplateID",
           "required": true,
@@ -690,7 +714,7 @@
       "members": [
         {
           "default": "",
-          "document": "开始日期",
+          "document": "开始日期，格式为YYYY-MM-DD",
           "member": "date",
           "name": "StartDate",
           "required": true,
@@ -698,7 +722,7 @@
         },
         {
           "default": "",
-          "document": "结束日期",
+          "document": "结束日期，格式为YYYY-MM-DD",
           "member": "date",
           "name": "EndDate",
           "required": true,
@@ -714,7 +738,7 @@
         },
         {
           "default": "",
-          "document": "规范，配合Limit使用",
+          "document": "规范，配合Limit使用，Limit最大取值为100",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -874,7 +898,7 @@
         },
         {
           "default": "",
-          "document": "收信人邮箱地址，最多支持群发50人。",
+          "document": "收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。",
           "member": "string",
           "name": "Destination",
           "required": true,
@@ -890,7 +914,7 @@
         },
         {
           "default": "",
-          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。",
+          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。",
           "member": "string",
           "name": "ReplyToAddresses",
           "required": false,
@@ -911,6 +935,14 @@
           "name": "Simple",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要发送附件时，填写附件相关参数。",
+          "member": "Attachment",
+          "name": "Attachments",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -919,7 +951,7 @@
       "document": "SendEmail返回参数结构体",
       "members": [
         {
-          "document": "接受消息时生成的消息的唯一标识符。",
+          "document": "接受消息生成的唯一消息标识符。",
           "member": "string",
           "name": "MessageId",
           "type": "string",
