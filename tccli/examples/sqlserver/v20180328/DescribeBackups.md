@@ -7,8 +7,8 @@ Input:
 ```
 tccli sqlserver DescribeBackups --cli-unfold-argument  \
     --InstanceId mssql-njj2mtpl \
-    --StartTime 2018-03-2800:00:00 \
-    --EndTime 2018-04-2000:00:00 \
+    --StartTime '2018-03-28 00:00:00' \
+    --EndTime '2018-04-20 00:00:00' \
     --Limit 20 \
     --Offset 0
 ```
@@ -29,6 +29,7 @@ Output:
                 "Size": 192,
                 "Strategy": 0,
                 "Status": 1,
+                "BackupWay": 0,
                 "DBs": [
                     "testdbvictornew"
                 ],
@@ -44,6 +45,7 @@ Output:
                 "Size": 192,
                 "Strategy": 0,
                 "Status": 1,
+                "BackupWay": 0,
                 "DBs": [
                     "testdbvictornew"
                 ],

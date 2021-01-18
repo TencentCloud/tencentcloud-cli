@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CloseAsyncRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CloseAsyncRecognitionTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\"TaskId\": 1013279283}",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"fabc2d63-a1b7-40a0-b4c3-640f78974919\"\r\n    }\r\n}",
+        "title": "请求示例1"
+      }
+    ],
     "CreateAsrVocab": [
       {
         "document": "用户通过上传词权重数组方式创建热词表",

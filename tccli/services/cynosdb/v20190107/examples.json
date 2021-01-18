@@ -112,6 +112,14 @@
         "title": "查询项目安全组信息"
       }
     ],
+    "DescribeResourcesByDealName": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeResourcesByDealName\n&DealName=xxx\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"BillingResourceInfos\": [\r\n      {\r\n        \"ClusterId\": \"cynosdbmysql-r8ewihg4\",\r\n        \"InstanceIds\": [\r\n          \"cynosdbmysql-ins-pecl0drs\"\r\n        ]\r\n      },\r\n      {\r\n        \"ClusterId\": \"cynosdbmysql-hjosrxhu\",\r\n        \"InstanceIds\": [\r\n          \"cynosdbmysql-ins-7f59pahg\"\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"005b862f-f408-4a95-a7e7-26f3e672e081\"\r\n  }\r\n}",
+        "title": "查询订单id关联的资源信息"
+      }
+    ],
     "DescribeRollbackTimeRange": [
       {
         "document": "",

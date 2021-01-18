@@ -442,7 +442,7 @@
       "members": [
         {
           "default": "",
-          "document": "请求类型:1,人群特征洞察统计 2购车意向预测统计",
+          "document": "请求类型 1:人群特征洞察统计 2:购车意向预测统计",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -458,7 +458,7 @@
         },
         {
           "default": "",
-          "document": "结束时间戳(毫秒）",
+          "document": "结束时间戳（毫秒）",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -507,7 +507,7 @@
       "members": [
         {
           "default": "",
-          "document": "请求类型:1,人群特征洞察统计 2购车意向预测统计",
+          "document": "请求类型 1:人群特征洞察统计 2:购车意向预测统计",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -523,7 +523,7 @@
         },
         {
           "default": "",
-          "document": "结束时间戳(毫秒）",
+          "document": "结束时间戳（毫秒）",
           "member": "uint64",
           "name": "EndTime",
           "required": true,

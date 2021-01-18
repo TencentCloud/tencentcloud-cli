@@ -118,6 +118,14 @@
         "title": "成功示例"
       }
     ],
+    "DescribeUnbindClientList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnbindClientList\n<公共请求参数>\n\n{\n    \"Status\": 1, \n    \"UnbindUin\": \"xx\", \n    \"ApplyTimeEnd\": \"2020-09-22\", \n    \"Limit\": 1, \n    \"Offset\": 1, \n    \"ApplyTimeStart\": \"2020-09-22\"\n}",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"78b52639-8471-41c1-a05a-1ea787a605e0\",\r\n        \"TotalCount\":1,\r\n        \"UnbindClientList\":[\r\n            {\r\n                \"Uin\":12345678,\r\n                \"Name\":\"xxx\",\r\n                \"Status\":1,\r\n                \"ApplyTime\":\"2020-09-22 00:00:00\",\r\n                \"ActionTime\":\"2020-09-22 00:00:00\"\r\n             }\r\n         ]\r\n    }\r\n}",
+        "title": "获取某代理商的解绑客户列表"
+      }
+    ],
     "ModifyClientRemark": [
       {
         "document": "代理商对其名下某代客，修改备注名称为xxx",

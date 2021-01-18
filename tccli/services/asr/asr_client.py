@@ -13,6 +13,31 @@ from tencentcloud.asr.v20190614 import asr_client as asr_client_v20190614
 from tencentcloud.asr.v20190614 import models as models_v20190614
 
 
+def doCloseAsyncRecognitionTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CloseAsyncRecognitionTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CloseAsyncRecognitionTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetAsrVocabList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -30,31 +55,6 @@ def doGetAsrVocabList(args, parsed_globals):
     model = models.GetAsrVocabListRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.GetAsrVocabList(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteAsrVocab(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAsrVocabRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteAsrVocab(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -88,7 +88,7 @@ def doCreateRecTask(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCustomizationState(args, parsed_globals):
+def doDescribeTaskStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -102,9 +102,9 @@ def doModifyCustomizationState(args, parsed_globals):
     client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCustomizationStateRequest()
+    model = models.DescribeTaskStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyCustomizationState(model)
+    rsp = client.DescribeTaskStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -163,7 +163,7 @@ def doGetAsrVocab(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSetVocabState(args, parsed_globals):
+def doModifyCustomizationState(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -177,9 +177,9 @@ def doSetVocabState(args, parsed_globals):
     client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetVocabStateRequest()
+    model = models.ModifyCustomizationStateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.SetVocabState(model)
+    rsp = client.ModifyCustomizationState(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -205,6 +205,31 @@ def doUpdateAsrVocab(args, parsed_globals):
     model = models.UpdateAsrVocabRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.UpdateAsrVocab(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSetVocabState(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetVocabStateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SetVocabState(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -363,7 +388,7 @@ def doDeleteCustomization(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTaskStatus(args, parsed_globals):
+def doDeleteAsrVocab(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -377,9 +402,9 @@ def doDescribeTaskStatus(args, parsed_globals):
     client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskStatusRequest()
+    model = models.DeleteAsrVocabRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTaskStatus(model)
+    rsp = client.DeleteAsrVocab(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -474,21 +499,22 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "CloseAsyncRecognitionTask": doCloseAsyncRecognitionTask,
     "GetAsrVocabList": doGetAsrVocabList,
-    "DeleteAsrVocab": doDeleteAsrVocab,
     "CreateRecTask": doCreateRecTask,
-    "ModifyCustomizationState": doModifyCustomizationState,
+    "DescribeTaskStatus": doDescribeTaskStatus,
     "GetCustomizationList": doGetCustomizationList,
     "GetAsrVocab": doGetAsrVocab,
-    "SetVocabState": doSetVocabState,
+    "ModifyCustomizationState": doModifyCustomizationState,
     "UpdateAsrVocab": doUpdateAsrVocab,
+    "SetVocabState": doSetVocabState,
     "CreateAsyncRecognitionTask": doCreateAsyncRecognitionTask,
     "CreateAsrVocab": doCreateAsrVocab,
     "DownloadAsrVocab": doDownloadAsrVocab,
     "CreateCustomization": doCreateCustomization,
     "DescribeAsyncRecognitionTasks": doDescribeAsyncRecognitionTasks,
     "DeleteCustomization": doDeleteCustomization,
-    "DescribeTaskStatus": doDescribeTaskStatus,
+    "DeleteAsrVocab": doDeleteAsrVocab,
     "ModifyCustomization": doModifyCustomization,
     "SentenceRecognition": doSentenceRecognition,
     "DownloadCustomization": doDownloadCustomization,

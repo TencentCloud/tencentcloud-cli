@@ -545,6 +545,75 @@
       ],
       "usage": "in"
     },
+    "CloudBaseRunSideSpec": {
+      "document": "CloudBaseRun 的 Side 描述定义",
+      "members": [
+        {
+          "default": "",
+          "document": "容器镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContainerImage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ContainerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContainerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kv的json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnvVar",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "InitialDelaySeconds 延迟多长时间启动健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CPU大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存大小（单位：M）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Mem",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CloudBaseRunVolumeMount": {
       "document": "cfs挂载点",
       "members": [
@@ -1338,6 +1407,22 @@
           "name": "ServerPath",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像复用的key",
+          "member": "string",
+          "name": "ImageReuseKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器的描述文件",
+          "member": "CloudBaseRunSideSpec",
+          "name": "SidecarSpecs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -46,7 +46,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=CheckBankCardInformation\n&BankCard=xxxxxxxxxx\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"查询成功\",\r\n        \"AccountBank\": \"深圳前海微众银行\",\r\n        \"AccountType\": 1,\r\n        \"RequestId\": \"8695c53f-776f-4ff5-a66d-84e67b352d20\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"查询成功\",\r\n        \"AccountBank\": \"中国工商银行\",\r\n        \"AccountType\": 1,\r\n        \"RequestId\": \"8695c53f-776f-4ff5-a66d-84e67b352d20\"\r\n    }\r\n}",
         "title": "查询成功"
       }
     ],

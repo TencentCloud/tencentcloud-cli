@@ -84,6 +84,12 @@
       "name": "查询项目安全组信息",
       "output": "DescribeProjectSecurityGroupsResponse"
     },
+    "DescribeResourcesByDealName": {
+      "document": "根据计费订单id查询资源列表",
+      "input": "DescribeResourcesByDealNameRequest",
+      "name": "根据订单id查询资源信息",
+      "output": "DescribeResourcesByDealNameResponse"
+    },
     "DescribeRollbackTimeRange": {
       "document": "查询指定集群有效回滚时间范围",
       "input": "DescribeRollbackTimeRangeRequest",
@@ -457,6 +463,30 @@
           "name": "SnapshotTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillingResourceInfo": {
+      "document": "计费资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2702,6 +2732,39 @@
           "document": "安全组详情",
           "member": "SecurityGroup",
           "name": "Groups",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesByDealNameRequest": {
+      "document": "DescribeResourcesByDealName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "计费订单id",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesByDealNameResponse": {
+      "document": "DescribeResourcesByDealName返回参数结构体",
+      "members": [
+        {
+          "document": "计费资源id信息数组",
+          "member": "BillingResourceInfo",
+          "name": "BillingResourceInfos",
           "type": "list",
           "value_allowed_null": false
         },

@@ -212,6 +212,14 @@
         "title": "解除模板同步"
       }
     ],
+    "DescribeAvailableClusterVersion": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeAvailableClusterVersion\n&ClusterId=cls-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Clusters\": [\r\n            {\r\n                \"ClusterId\": \"xx\", \r\n                \"Versions\": [\r\n                    \"xx\"\r\n                ]\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\", \r\n        \"Versions\": [\r\n            \"1.8.13\"\r\n        ]\r\n    }\r\n}",
+        "title": "获取集群可以升级的版本"
+      }
+    ],
     "DescribeClusterAsGroupOption": [
       {
         "document": "集群弹性伸缩配置",
@@ -396,6 +404,14 @@
         "title": "查询路由表冲突列表"
       }
     ],
+    "GetUpgradeInstanceProgress": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=GetUpgradeInstanceProgress\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"LifeState\": \"xx\", \r\n        \"Instances\": [\r\n            {\r\n                \"StartAt\": \"xx\", \r\n                \"InstanceID\": \"xx\", \r\n                \"Detail\": [\r\n                    {\r\n                        \"StartAt\": \"xx\", \r\n                        \"Step\": \"xx\", \r\n                        \"LifeState\": \"xx\", \r\n                        \"EndAt\": \"xx\", \r\n                        \"FailedMsg\": \"xx\"\r\n                    }, \r\n                    {\r\n                        \"LifeState\": \"xx\", \r\n                        \"Step\": \"xx\", \r\n                        \"StartAt\": \"xx\", \r\n                        \"EndAt\": \"xx\", \r\n                        \"FailedMsg\": \"xx\"\r\n                    }, \r\n                    {\r\n                        \"LifeState\": \"xx\", \r\n                        \"Step\": \"xx\", \r\n                        \"StartAt\": \"xx\", \r\n                        \"EndAt\": \"xx\", \r\n                        \"FailedMsg\": \"xx\"\r\n                    }, \r\n                    {\r\n                        \"LifeState\": \"xx\", \r\n                        \"Step\": \"xx\", \r\n                        \"StartAt\": \"xx\", \r\n                        \"EndAt\": \"xx\", \r\n                        \"FailedMsg\": \"xx\"\r\n                    }\r\n                ], \r\n                \"EndAt\": \"xx\", \r\n                \"CheckResult\": {\r\n                    \"Items\": [\r\n                        {\r\n                            \"WorkLoadKind\": \"xx\", \r\n                            \"After\": 1, \r\n                            \"Namespace\": \"xx\", \r\n                            \"WorkLoadName\": \"xx\", \r\n                            \"Pods\": [\r\n                                \"xx\"\r\n                            ], \r\n                            \"Before\": 1\r\n                        }\r\n                    ], \r\n                    \"CheckPass\": true, \r\n                    \"SinglePods\": [\r\n                        \"xx\"\r\n                    ]\r\n                }, \r\n                \"LifeState\": \"xx\"\r\n            }\r\n        ], \r\n        \"Done\": 1, \r\n        \"RequestId\": \"xx\", \r\n        \"ClusterStatus\": {\r\n            \"PodTotal\": 0, \r\n            \"NotReadyPod\": 0\r\n        }, \r\n        \"Total\": 3\r\n    }\r\n}",
+        "title": "查询升级状态"
+      }
+    ],
     "ModifyClusterAsGroupAttribute": [
       {
         "document": "",
@@ -466,6 +482,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=SyncPrometheusTemplate\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
         "title": "同步模板到实例"
+      }
+    ],
+    "UpdateClusterVersion": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=UpdateClusterVersion\n&ClusterId=cls-xxxxxxxx\n&DstVersion=1.8.13\n&<公共请求参数>",
+        "output": "{\r\n   \"Response\" : {\r\n      \"RequestId\" : \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\r\n   }\r\n}",
+        "title": "升级集群到指定版本"
       }
     ],
     "UpgradeClusterInstances": [

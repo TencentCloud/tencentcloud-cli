@@ -150,6 +150,12 @@
       "name": "取消模板同步",
       "output": "DeletePrometheusTemplateSyncResponse"
     },
+    "DescribeAvailableClusterVersion": {
+      "document": "获取集群可以升级的所有版本",
+      "input": "DescribeAvailableClusterVersionRequest",
+      "name": "获取集群可以升级的所有版本",
+      "output": "DescribeAvailableClusterVersionResponse"
+    },
     "DescribeClusterAsGroupOption": {
       "document": "集群弹性伸缩配置",
       "input": "DescribeClusterAsGroupOptionRequest",
@@ -288,6 +294,12 @@
       "name": "查询路由表冲突列表",
       "output": "DescribeRouteTableConflictsResponse"
     },
+    "GetUpgradeInstanceProgress": {
+      "document": "获得节点升级当前的进度 ",
+      "input": "GetUpgradeInstanceProgressRequest",
+      "name": "获得节点升级当前的进度",
+      "output": "GetUpgradeInstanceProgressResponse"
+    },
     "ModifyClusterAsGroupAttribute": {
       "document": "修改集群伸缩组属性",
       "input": "ModifyClusterAsGroupAttributeRequest",
@@ -341,6 +353,12 @@
       "input": "SyncPrometheusTemplateRequest",
       "name": "同步模板到实例或者集群",
       "output": "SyncPrometheusTemplateResponse"
+    },
+    "UpdateClusterVersion": {
+      "document": "升级集群 Master 组件到指定版本",
+      "input": "UpdateClusterVersionRequest",
+      "name": "升级集群",
+      "output": "UpdateClusterVersionResponse"
     },
     "UpgradeClusterInstances": {
       "document": "给集群的一批work节点进行升级 ",
@@ -1459,6 +1477,30 @@
       ],
       "usage": "both"
     },
+    "ClusterVersion": {
+      "document": "集群版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群主版本号列表，例如1.18.4",
+          "member": "string",
+          "name": "Versions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateClusterAsGroupRequest": {
       "document": "CreateClusterAsGroup请求参数结构体",
       "members": [
@@ -2484,6 +2526,54 @@
     "DeletePrometheusTemplateSyncResponse": {
       "document": "DeletePrometheusTemplateSync返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableClusterVersionRequest": {
+      "document": "DescribeAvailableClusterVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 Id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群 Id 列表",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableClusterVersionResponse": {
+      "document": "DescribeAvailableClusterVersion返回参数结构体",
+      "members": [
+        {
+          "document": "可升级的集群版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Versions",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClusterVersion",
+          "name": "Clusters",
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3939,6 +4029,83 @@
       ],
       "usage": "in"
     },
+    "GetUpgradeInstanceProgressRequest": {
+      "document": "GetUpgradeInstanceProgress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最多获取多少个节点的进度",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "从第几个节点开始获取进度",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUpgradeInstanceProgressResponse": {
+      "document": "GetUpgradeInstanceProgress返回参数结构体",
+      "members": [
+        {
+          "document": "升级节点总数",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已升级节点总数",
+          "member": "int64",
+          "name": "Done",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "升级任务生命周期\nprocess 运行中\npaused 已停止\npauing 正在停止\ndone  已完成\ntimeout 已超时\naborted 已取消",
+          "member": "string",
+          "name": "LifeState",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各节点升级进度详情",
+          "member": "InstanceUpgradeProgressItem",
+          "name": "Instances",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群当前状态",
+          "member": "InstanceUpgradeClusterStatus",
+          "name": "ClusterStatus",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ImageInstance": {
       "document": "镜像信息",
       "members": [
@@ -4193,6 +4360,183 @@
         }
       ],
       "usage": "both"
+    },
+    "InstanceUpgradeClusterStatus": {
+      "document": "节点升级过程中集群当前状态",
+      "members": [
+        {
+          "default": "",
+          "document": "pod总数",
+          "member": "int64",
+          "name": "PodTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NotReady pod总数",
+          "member": "int64",
+          "name": "NotReadyPod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceUpgradePreCheckResult": {
+      "document": "某个节点升级前检查结果",
+      "members": [
+        {
+          "default": "",
+          "document": "检查是否通过",
+          "member": "bool",
+          "name": "CheckPass",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查项数组",
+          "member": "InstanceUpgradePreCheckResultItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本节点独立pod列表",
+          "member": "string",
+          "name": "SinglePods",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceUpgradePreCheckResultItem": {
+      "document": "节点升级检查项结果",
+      "members": [
+        {
+          "default": "",
+          "document": "工作负载的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作负载类型",
+          "member": "string",
+          "name": "WorkLoadKind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作负载名称",
+          "member": "string",
+          "name": "WorkLoadName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "驱逐节点前工作负载running的pod数目",
+          "member": "uint64",
+          "name": "Before",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "驱逐节点后工作负载running的pod数目",
+          "member": "uint64",
+          "name": "After",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作负载在本节点上的pod列表",
+          "member": "string",
+          "name": "Pods",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceUpgradeProgressItem": {
+      "document": "某个节点的升级进度",
+      "members": [
+        {
+          "default": "",
+          "document": "节点instanceID",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务生命周期\nprocess 运行中\npaused 已停止\npauing 正在停止\ndone  已完成\ntimeout 已超时\naborted 已取消\npending 还未开始",
+          "member": "string",
+          "name": "LifeState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "升级开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StartAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "升级结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EndAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "升级前检查结果",
+          "member": "InstanceUpgradePreCheckResult",
+          "name": "CheckResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "升级步骤详情",
+          "member": "TaskStepInfo",
+          "name": "Detail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Label": {
       "document": "k8s中标签，一般以数组的方式存在",
@@ -6016,6 +6360,107 @@
         }
       ],
       "usage": "in"
+    },
+    "TaskStepInfo": {
+      "document": "任务步骤信息",
+      "members": [
+        {
+          "default": "",
+          "document": "步骤名称",
+          "member": "string",
+          "name": "Step",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生命周期\npending : 步骤未开始\nrunning: 步骤执行中\nsuccess: 步骤成功完成\nfailed: 步骤失败",
+          "member": "string",
+          "name": "LifeState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "步骤开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StartAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "步骤结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EndAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "若步骤生命周期为failed,则此字段显示错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FailedMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateClusterVersionRequest": {
+      "document": "UpdateClusterVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 Id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要升级到的版本",
+          "member": "string",
+          "name": "DstVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可容忍的最大不可用pod数目",
+          "member": "float",
+          "name": "MaxNotReadyPercent",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "是否跳过预检查阶段",
+          "member": "bool",
+          "name": "SkipPreCheck",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateClusterVersionResponse": {
+      "document": "UpdateClusterVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpgradeAbleInstancesItem": {
       "document": "可升级节点信息",

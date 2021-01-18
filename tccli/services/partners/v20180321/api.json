@@ -84,6 +84,12 @@
       "name": "代理商业务员查询接口",
       "output": "DescribeSalesmansResponse"
     },
+    "DescribeUnbindClientList": {
+      "document": "代理商名下客户解绑记录查询接口",
+      "input": "DescribeUnbindClientListRequest",
+      "name": "代理商名下客户解绑记录查询接口",
+      "output": "DescribeUnbindClientListResponse"
+    },
     "ModifyClientRemark": {
       "document": "代理商可以对名下客户添加备注、修改备注",
       "input": "ModifyClientRemarkRequest",
@@ -1767,6 +1773,94 @@
       ],
       "type": "object"
     },
+    "DescribeUnbindClientListRequest": {
+      "document": "DescribeUnbindClientList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "解绑状态：0:所有,1:审核中,2已解绑",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "解绑账号ID",
+          "member": "string",
+          "name": "UnbindUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解绑申请时间范围起始点",
+          "member": "date",
+          "name": "ApplyTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解绑申请时间范围终止点",
+          "member": "date",
+          "name": "ApplyTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对申请时间的升序降序，值：asc，desc",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnbindClientListResponse": {
+      "document": "DescribeUnbindClientList返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的解绑客户数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的解绑客户列表",
+          "member": "UnbindClientElem",
+          "name": "UnbindClientList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClientRemarkRequest": {
       "document": "ModifyClientRemark请求参数结构体",
       "members": [
@@ -1904,6 +1998,57 @@
         }
       ],
       "type": "object"
+    },
+    "UnbindClientElem": {
+      "document": "解绑客户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "解绑账号ID",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态：0:审核中；1：已解绑；2：已撤销 3：关联撤销 4: 已驳回",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "解绑/撤销时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "ActionTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"
