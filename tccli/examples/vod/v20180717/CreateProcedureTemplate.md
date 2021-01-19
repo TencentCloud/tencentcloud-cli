@@ -31,11 +31,23 @@ Input:
 tccli vod CreateProcedureTemplate --cli-unfold-argument  \
     --Name 我的一个任务流 \
     --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
-    --MediaProcessTask.TranscodeTaskSet.0.Watermarks.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.EndTimeOffset 0.0 \
+    --MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.StartTimeOffset 0.0 \
+    --MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.TextContent  \
+    --MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.SvgContent  \
     --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
-    --MediaProcessTask.TranscodeTaskSet.1.Watermarks.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.EndTimeOffset 0.0 \
+    --MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.StartTimeOffset 0.0 \
+    --MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.TextContent  \
+    --MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.SvgContent  \
     --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
-    --MediaProcessTask.TranscodeTaskSet.2.Watermarks.0.Definition 15780
+    --MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.Definition 15780 \
+    --MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.EndTimeOffset 0.0 \
+    --MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.StartTimeOffset 0.0 \
+    --MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.TextContent  \
+    --MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.SvgContent 
 ```
 
 Output: 

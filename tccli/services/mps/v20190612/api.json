@@ -378,6 +378,12 @@
       "name": "发起视频处理",
       "output": "ProcessMediaResponse"
     },
+    "RecognizeMediaForZhiXue": {
+      "document": "智能媒体识别，包含表情和动作识别。仅用于智学，其他调用无效。",
+      "input": "RecognizeMediaForZhiXueRequest",
+      "name": "智学智能媒体识别",
+      "output": "RecognizeMediaForZhiXueResponse"
+    },
     "ResetWorkflow": {
       "document": "重新设置一个已经存在且处于禁用状态的工作流。",
       "input": "ResetWorkflowRequest",
@@ -574,6 +580,21 @@
         }
       ],
       "usage": "out"
+    },
+    "ActionConfigInfo": {
+      "document": "动作识别参数配置",
+      "members": [
+        {
+          "default": "",
+          "document": "动作识别任务开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AdaptiveDynamicStreamingInfoItem": {
       "document": "转自适应码流信息",
@@ -7002,6 +7023,21 @@
       ],
       "type": "object"
     },
+    "ExpressionConfigInfo": {
+      "document": "表情识别参数配置",
+      "members": [
+        {
+          "default": "",
+          "document": "表情识别任务开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FaceConfigureInfo": {
       "document": "人脸识别任务控制参数",
       "members": [
@@ -12285,6 +12321,55 @@
         }
       ],
       "usage": "both"
+    },
+    "RecognizeMediaForZhiXueRequest": {
+      "document": "RecognizeMediaForZhiXue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "输入媒体文件存储信息。",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "表情识别参数配置。默认开启。",
+          "member": "ExpressionConfigInfo",
+          "name": "ExpressionConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "动作识别参数配置。默认开启。",
+          "member": "ActionConfigInfo",
+          "name": "ActionConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeMediaForZhiXueResponse": {
+      "document": "RecognizeMediaForZhiXue返回参数结构体",
+      "members": [
+        {
+          "document": "任务 ID，可以通过该 ID 查询任务状态和结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResetWorkflowRequest": {
       "document": "ResetWorkflow请求参数结构体",

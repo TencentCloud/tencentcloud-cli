@@ -636,6 +636,14 @@
         "title": "发起转码任务"
       }
     ],
+    "RecognizeMediaForZhiXue": [
+      {
+        "document": "默认开启全部识别功能。",
+        "input": "https://mps.tencentcloudapi.com/?Action=RecognizeMediaForZhiXue\n&InputInfo.Type=COS\n&InputInfo.CosInputInfo.Bucket=TopRankVideo-125xxx88\n&InputInfo.CosInputInfo.Region=ap-chongqing\n&InputInfo.CosInputInfo.Object=/movie/201907/WildAnimal.mov\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"TaskId\": \"125xxx65-RecognizeMediaForZhiXue-bffb15f07530b57bc1aabb01fac74bca\",\r\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\r\n    }\r\n}",
+        "title": "发起媒体智能识别"
+      }
+    ],
     "ResetWorkflow": [
       {
         "document": "重设工作流 ID 为2573的转码规则，转码输出加上水印。",

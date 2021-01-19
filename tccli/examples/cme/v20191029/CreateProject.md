@@ -1,4 +1,4 @@
-**Example 1: 创建项目**
+**Example 1: 创建普通剪辑项目**
 
 
 
@@ -9,9 +9,9 @@ tccli cme CreateProject --cli-unfold-argument  \
     --Platform test \
     --Category VIDEO_EDIT \
     --Name first_project \
-    --AspectRatio 16:9 \
     --Owner.Id 1111 \
-    --Owner.Type PERSON
+    --Owner.Type PERSON \
+    --VideoEditProjectInput.AspectRatio 16:9
 ```
 
 Output: 
@@ -35,7 +35,6 @@ tccli cme CreateProject --cli-unfold-argument  \
     --Platform test \
     --Category SWITCHER \
     --Name switcher_project \
-    --AspectRatio 16:9 \
     --Owner.Id 1111 \
     --Owner.Type PERSON \
     --SwitcherProjectInput.PgmOutputConfig.TemplateId 10001

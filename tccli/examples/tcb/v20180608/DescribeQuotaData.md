@@ -16,7 +16,8 @@ Output:
     "Response": {
         "MetricName": "DbWritepkg",
         "RequestId": "548c46c8-a177-4e39-820a-b544b3fd48c6",
-        "Value": 0
+        "Value": 0,
+        "SubValue": "100"
     }
 }
 ```

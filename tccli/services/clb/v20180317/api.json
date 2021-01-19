@@ -531,6 +531,22 @@
           "name": "Domains",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "重定向状态码，可取值301,302,307",
+          "member": "int64",
+          "name": "RewriteCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "重定向是否携带匹配的url",
+          "member": "bool",
+          "name": "TakeUrls",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6117,6 +6133,33 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重定向状态码，可取值301,302,307",
+          "member": "int64",
+          "name": "RewriteCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重定向是否携带匹配的url，配置RewriteCode时必填",
+          "member": "bool",
+          "name": "TakeUrl",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填",
+          "member": "string",
+          "name": "SourceDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -6138,6 +6181,33 @@
           "document": "重定向目标的转发规则ID\n注意：此字段可能返回 null，表示无重定向。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TargetLocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重定向状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RewriteCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重定向是否携带匹配的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "TakeUrl",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重定向类型，Manual: 手动重定向，Auto:  自动重定向\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RewriteType",
           "required": true,
           "type": "string",
           "value_allowed_null": true

@@ -882,6 +882,14 @@
         "title": "撤销回档任务"
       }
     ],
+    "SwitchDBInstanceMasterSlave": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=SwitchDBInstanceMasterSlave\n&InstanceId=cdb-xxxxxxxx\n&DstSlave=second\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"faae8d6a-38fb-44de-988e-5a0e78aba4a7\", \r\n        \"AsyncRequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\r\n    }\r\n}",
+        "title": "切换实例主从角色"
+      }
+    ],
     "SwitchForUpgrade": [
       {
         "document": "",

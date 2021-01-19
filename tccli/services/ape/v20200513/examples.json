@@ -43,7 +43,7 @@
     "DescribeImages": [
       {
         "document": "",
-        "input": "https://ape.tencentcloudapi.com/?Action=DescribeImages\n&Keyword=关键字\n&Offset=0\n&Limit=30\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ape.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImages\n<公共请求参数>\n\n{\n    \"Orientation\": \"horizontal\", \n    \"Keyword\": \"关键字\", \n    \"LayeredGalleryIds\": [\n        0\n    ], \n    \"Limit\": 0, \n    \"Offset\": 0, \n    \"ImageSenseType\": \"插画\"\n}",
         "output": "{\r\n    \"Response\": {\r\n        \"Items\": [\r\n            {\r\n                \"ThumbUrl\": \"http://test.com/11.jpg\", \r\n                \"Vendor\": \"xx\", \r\n                \"Description\": \"xx\", \r\n                \"Title\": \"xx\", \r\n                \"ImageId\": 111, \r\n                \"PreviewUrl\": \"http://test.com/11.jpg\"\r\n            }\r\n        ], \r\n        \"Limit\": 0, \r\n        \"HaveMore\": true, \r\n        \"Offset\": 30, \r\n        \"Total\": 400, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
         "title": "根据关键字搜索图片"
       }

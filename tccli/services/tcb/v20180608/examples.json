@@ -220,7 +220,7 @@
       {
         "document": "",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeQuotaData\n&EnvId=test-23\n&MetricName=DbWritepkg\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"MetricName\": \"DbWritepkg\",\r\n\t\t\"RequestId\": \"548c46c8-a177-4e39-820a-b544b3fd48c6\",\r\n\t\t\"Value\": 0\r\n\t}\r\n}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"MetricName\": \"DbWritepkg\",\r\n\t\t\"RequestId\": \"548c46c8-a177-4e39-820a-b544b3fd48c6\",\r\n\t\t\"Value\": 0,\r\n            \"SubValue\": \"100\"\r\n\t}\r\n}",
         "title": "查询指定指标的配额使用量"
       }
     ],

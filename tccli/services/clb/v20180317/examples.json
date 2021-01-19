@@ -11,7 +11,7 @@
     "AutoRewrite": [
       {
         "document": "lbl-lmeeyb1q 是一个HTTPS:443监听器，www.abc.com 是此监听器下转发规则的域名。",
-        "input": "https://clb.tencentcloudapi.com/?Action=AutoRewrite\r\n&LoadBalancerId=lb-r6nx1iby\r\n&ListenerId=lbl-lmeeyb1q\r\n&Domains.0=www.abc.com\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=AutoRewrite\n&LoadBalancerId=lb-r6nx1iby\n&ListenerId=lbl-lmeeyb1q\n&Domains.0=www.abc.com\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e351bfdb-147a-4648-b9fe-bbcacff68789\"\r\n    }\r\n}",
         "title": "自动生成一条重定向关系"
       }
@@ -441,7 +441,7 @@
     "ManualRewrite": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ManualRewrite\r\n&LoadBalancerId=lb-r6nx1iby\r\n&SourceListenerId=lbl-cy6akv52\r\n&TargetListenerId=lbl-cy6ak123\r\n&RewriteInfos.0.SourceLocationId=loc-2jkimjn0\r\n&RewriteInfos.0.TargetLocationId=loc-eu15yo84\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=ManualRewrite\n&LoadBalancerId=lb-r6nx1iby\n&SourceListenerId=lbl-cy6akv52\n&TargetListenerId=lbl-cy6ak123\n&RewriteInfos.0.SourceLocationId=loc-2jkimjn0\n&RewriteInfos.0.TargetLocationId=loc-eu15yo84\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fc0ed756-c311-41c8-a22d-64f88a346951\"\r\n    }\r\n}",
         "title": "手动添加一条重定向关系"
       }

@@ -463,6 +463,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -586,6 +595,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -872,6 +890,14 @@
           "name": "SelectedCcnType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -928,6 +954,14 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1001,6 +1035,14 @@
           "name": "ImageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1233,6 +1275,14 @@
           "name": "GameServerSessionProtectionTimeLimit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1290,6 +1340,14 @@
           "name": "TimeoutInSeconds",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3230,6 +3288,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3902,6 +3969,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5736,6 +5812,30 @@
         }
       ],
       "type": "object"
+    },
+    "Tag": {
+      "document": "标签结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键，最大长度127字节",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值，最大长度255字节",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TargetConfiguration": {
       "document": "基于规则的动态扩缩容配置项",

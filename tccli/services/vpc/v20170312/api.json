@@ -17404,6 +17404,42 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持健康状态探测",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本端探测ip",
+          "member": "string",
+          "name": "HealthCheckLocalIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端探测ip",
+          "member": "string",
+          "name": "HealthCheckRemoteIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象",
+          "member": "string",
+          "name": "HealthCheckStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -6,9 +6,12 @@ Input:
 
 ```
 tccli ape DescribeImages --cli-unfold-argument  \
+    --Orientation horizontal \
     --Keyword 关键字 \
+    --LayeredGalleryIds 0 \
+    --Limit 0 \
     --Offset 0 \
-    --Limit 30
+    --ImageSenseType 插画
 ```
 
 Output: 

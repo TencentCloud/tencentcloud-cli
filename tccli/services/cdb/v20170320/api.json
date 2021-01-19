@@ -648,6 +648,12 @@
       "name": "撤销回档任务",
       "output": "StopRollbackResponse"
     },
+    "SwitchDBInstanceMasterSlave": {
+      "document": "该接口 (SwitchDBInstanceMasterSlave) 支持用户主动切换实例主从角色。",
+      "input": "SwitchDBInstanceMasterSlaveRequest",
+      "name": "切换实例主从角色",
+      "output": "SwitchDBInstanceMasterSlaveResponse"
+    },
     "SwitchForUpgrade": {
       "document": "本接口(SwitchForUpgrade)用于切换访问新实例，针对主升级中的实例处于待切换状态时，用户可主动发起该流程。",
       "input": "SwitchForUpgradeRequest",
@@ -10634,6 +10640,63 @@
       "members": [
         {
           "document": "执行请求的异步任务ID",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDBInstanceMasterSlaveRequest": {
+      "document": "SwitchDBInstanceMasterSlave请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板从实例。可选值：\"first\" - 第一备机；\"second\" - 第二备机。默认值为 \"first\"，仅多可用区实例支持设置为 \"second\"。",
+          "member": "string",
+          "name": "DstSlave",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。",
+          "member": "bool",
+          "name": "ForceSwitch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。",
+          "member": "bool",
+          "name": "WaitSwitch",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDBInstanceMasterSlaveResponse": {
+      "document": "SwitchDBInstanceMasterSlave返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务 ID。",
           "member": "string",
           "name": "AsyncRequestId",
           "type": "string",
