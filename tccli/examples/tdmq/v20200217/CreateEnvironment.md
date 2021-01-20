@@ -1,4 +1,4 @@
-**Example 1: 创建一个环境**
+**Example 1: 创建环境**
 
 
 
@@ -7,18 +7,19 @@ Input:
 ```
 tccli tdmq CreateEnvironment --cli-unfold-argument  \
     --EnvironmentId test1 \
-    --MsgTTL 2000 \
-    --Remark 备注
+    --MsgTTL 100 \
+    --ClusterId pulsar-xxxxxxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "MsgTTL": 2000,
         "EnvironmentId": "test1",
-        "Remark": "备注",
-        "RequestId": "3f4dc986-6563-4092-aeba-4bfe8f9cbc68"
+        "NamespaceId": "namespace-8893gp3428",
+        "MsgTTL": 100,
+        "Remark": "",
+        "RequestId": "0843ea4f-d6ba-463b-952c-75708a7e8901"
     }
 }
 ```

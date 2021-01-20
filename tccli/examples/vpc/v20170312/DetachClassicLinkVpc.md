@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc DetachClassicLinkVpc --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --VpcId vpc-gjui0b5t \
     --InstanceIds ins-0x5msjda
 ```

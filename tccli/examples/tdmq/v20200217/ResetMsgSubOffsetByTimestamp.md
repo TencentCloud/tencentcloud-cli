@@ -17,7 +17,6 @@ Output:
 {
     "Response": {
         "Result": true,
-        "MsgId": "50169152:0:0:-1",
         "RequestId": "3593f784-fcfb-4f23-b3dd-4751cba3aec7"
     }
 }

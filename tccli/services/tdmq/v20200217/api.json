@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateCluster": {
+      "document": "创建用户的集群",
+      "input": "CreateClusterRequest",
+      "name": "创建集群",
+      "output": "CreateClusterResponse"
+    },
     "CreateEnvironment": {
       "document": "用于在用户账户下创建消息队列 Tdmq环境（命名空间）",
       "input": "CreateEnvironmentRequest",
@@ -18,6 +24,12 @@
       "name": "新增主题",
       "output": "CreateTopicResponse"
     },
+    "DeleteCluster": {
+      "document": "删除集群",
+      "input": "DeleteClusterRequest",
+      "name": "删除集群",
+      "output": "DeleteClusterResponse"
+    },
     "DeleteEnvironments": {
       "document": "批量删除租户下的环境",
       "input": "DeleteEnvironmentsRequest",
@@ -35,6 +47,30 @@
       "input": "DeleteTopicsRequest",
       "name": "删除主题",
       "output": "DeleteTopicsResponse"
+    },
+    "DescribeBindClusters": {
+      "document": "获取用户绑定的专享集群列表",
+      "input": "DescribeBindClustersRequest",
+      "name": "获取专享集群列表",
+      "output": "DescribeBindClustersResponse"
+    },
+    "DescribeBindVpcs": {
+      "document": "获取租户VPC绑定关系",
+      "input": "DescribeBindVpcsRequest",
+      "name": "获取租户VPC绑定关系",
+      "output": "DescribeBindVpcsResponse"
+    },
+    "DescribeClusterDetail": {
+      "document": "获取集群的详细信息",
+      "input": "DescribeClusterDetailRequest",
+      "name": "获取集群详情",
+      "output": "DescribeClusterDetailResponse"
+    },
+    "DescribeClusters": {
+      "document": "获取集群列表",
+      "input": "DescribeClustersRequest",
+      "name": "获取集群列表",
+      "output": "DescribeClustersResponse"
     },
     "DescribeEnvironmentAttributes": {
       "document": "获取指定环境的属性",
@@ -72,6 +108,12 @@
       "name": "查询主题列表",
       "output": "DescribeTopicsResponse"
     },
+    "ModifyCluster": {
+      "document": "更新集群信息",
+      "input": "ModifyClusterRequest",
+      "name": "更新集群信息",
+      "output": "ModifyClusterResponse"
+    },
     "ModifyEnvironmentAttributes": {
       "document": "修改指定环境的属性值",
       "input": "ModifyEnvironmentAttributesRequest",
@@ -98,6 +140,144 @@
     "serviceShortName": "tdmq"
   },
   "objects": {
+    "BindCluster": {
+      "document": "用户专享集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "物理集群的名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Cluster": {
+      "document": "集群信息集合",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明信息。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "\b接入点数量",
+          "member": "int64",
+          "name": "EndPointNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群是否健康，1表示健康，0表示异常",
+          "member": "int64",
+          "name": "Healthy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群健康信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HealthyInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群状态，0:创建中，1:正常，2:删除中，3:已删除，5:创建失败，6: 删除失败",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大命名空间数量",
+          "member": "int64",
+          "name": "MaxNamespaceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大Topic数量",
+          "member": "int64",
+          "name": "MaxTopicNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大QPS",
+          "member": "int64",
+          "name": "MaxQps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息保留时间",
+          "member": "int64",
+          "name": "MessageRetentionTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大存储容量",
+          "member": "int64",
+          "name": "MaxStorageCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Connection": {
       "document": "生产者连接实例",
       "members": [
@@ -269,6 +449,63 @@
       ],
       "usage": "out"
     },
+    "CreateClusterRequest": {
+      "document": "CreateCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户\b专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。",
+          "member": "uint64",
+          "name": "BindClusterId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "说明，128个字符以内。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群的标签列表",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterResponse": {
+      "document": "CreateCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEnvironmentRequest": {
       "document": "CreateEnvironment请求参数结构体",
       "members": [
@@ -295,6 +532,14 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -303,7 +548,7 @@
       "document": "CreateEnvironment返回参数结构体",
       "members": [
         {
-          "document": "环境（命名空间）名称。",
+          "document": "命名空间名称。",
           "member": "string",
           "name": "EnvironmentId",
           "type": "string",
@@ -322,6 +567,13 @@
           "name": "Remark",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "命名空间ID",
+          "member": "string",
+          "name": "NamespaceId",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -374,6 +626,22 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动创建死信和重试主题，True 表示创建，False表示不创建，默认自动创建死信和重试主题。",
+          "member": "bool",
+          "name": "AutoCreatePolicyTopic",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -439,6 +707,14 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -490,6 +766,39 @@
       ],
       "type": "object"
     },
+    "DeleteClusterRequest": {
+      "document": "DeleteCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id，传入需要删除的集群Id。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterResponse": {
+      "document": "DeleteCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteEnvironmentsRequest": {
       "document": "DeleteEnvironments请求参数结构体",
       "members": [
@@ -500,6 +809,14 @@
           "name": "EnvironmentIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -533,6 +850,22 @@
           "name": "SubscriptionTopicSets",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "pulsar集群Id。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -566,6 +899,22 @@
           "name": "TopicSets",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "pulsar集群Id。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -589,6 +938,174 @@
       ],
       "type": "object"
     },
+    "DescribeBindClustersRequest": {
+      "document": "DescribeBindClusters请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBindClustersResponse": {
+      "document": "DescribeBindClusters返回参数结构体",
+      "members": [
+        {
+          "document": "专享集群的数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "专享集群的列表",
+          "member": "BindCluster",
+          "name": "ClusterSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBindVpcsRequest": {
+      "document": "DescribeBindVpcs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始下标，不填默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBindVpcsResponse": {
+      "document": "DescribeBindVpcs返回参数结构体",
+      "members": [
+        {
+          "document": "记录数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Vpc集合。",
+          "member": "VpcBindRecord",
+          "name": "VpcSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterDetailRequest": {
+      "document": "DescribeClusterDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterDetailResponse": {
+      "document": "DescribeClusterDetail返回参数结构体",
+      "members": [
+        {
+          "document": "集群的详细信息",
+          "member": "Cluster",
+          "name": "ClusterSet",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始下标，不填默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群列表数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群信息列表",
+          "member": "Cluster",
+          "name": "ClusterSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEnvironmentAttributesRequest": {
       "document": "DescribeEnvironmentAttributes请求参数结构体",
       "members": [
@@ -598,6 +1115,14 @@
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -679,7 +1204,7 @@
           "document": "环境（命名空间）",
           "member": "string",
           "name": "EnvironmentId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -697,6 +1222,22 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -825,6 +1366,14 @@
           "name": "ProducerName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -905,6 +1454,14 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -977,6 +1534,14 @@
           "name": "TopicType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1008,11 +1573,11 @@
       "type": "object"
     },
     "Environment": {
-      "document": "环境信息",
+      "document": "命名空间信息",
       "members": [
         {
           "default": "",
-          "document": "环境（命名空间）名称",
+          "document": "命名空间名称",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1051,6 +1616,24 @@
           "document": "最近修改时间",
           "member": "datetime",
           "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间ID",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "NamespaceName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1151,6 +1734,55 @@
       ],
       "usage": "in"
     },
+    "ModifyClusterRequest": {
+      "document": "ModifyCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id，需要更新的集群Id。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新后的集群名称。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "说明信息。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterResponse": {
+      "document": "ModifyCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEnvironmentAttributesRequest": {
       "document": "ModifyEnvironmentAttributes请求参数结构体",
       "members": [
@@ -1177,6 +1809,14 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1185,7 +1825,7 @@
       "document": "ModifyEnvironmentAttributes返回参数结构体",
       "members": [
         {
-          "document": "环境（命名空间）名称。",
+          "document": "命名空间名称。",
           "member": "string",
           "name": "EnvironmentId",
           "type": "string",
@@ -1202,6 +1842,13 @@
           "document": "备注，字符串最长不超过128。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Remark",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceId",
           "type": "string",
           "value_allowed_null": true
         },
@@ -1246,6 +1893,14 @@
           "document": "备注，128字符以内。",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
           "required": false,
           "type": "string"
         }
@@ -1477,6 +2132,14 @@
           "name": "ToTimestamp",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1692,6 +2355,30 @@
       ],
       "usage": "both"
     },
+    "Tag": {
+      "document": "标签的key/value的类型",
+      "members": [
+        {
+          "default": "",
+          "document": "标签的key的值",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签的Value的值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Topic": {
       "document": "主题实例",
       "members": [
@@ -1892,6 +2579,66 @@
         }
       ],
       "usage": "both"
+    },
+    "VpcBindRecord": {
+      "document": "vcp绑定记录",
+      "members": [
+        {
+          "default": "",
+          "document": "租户Vpc Id",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "租户Vpc子网Id",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由Id",
+          "member": "string",
+          "name": "RouterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpc的Id",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpc的Port",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明，128个字符以内\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

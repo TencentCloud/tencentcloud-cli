@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli vpc DescribeAccountAttributes --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc DescribeAccountAttributes --cli-unfold-argument ```
 
 Output: 
 ```

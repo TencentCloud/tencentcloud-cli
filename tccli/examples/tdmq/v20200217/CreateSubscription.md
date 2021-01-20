@@ -10,6 +10,7 @@ tccli tdmq CreateSubscription --cli-unfold-argument  \
     --TopicName cloud_test \
     --SubscriptionName cloud_sub \
     --IsIdempotent true \
+    --AutoCreatePolicyTopic true \
     --Remark 创建订阅关系
 ```
 

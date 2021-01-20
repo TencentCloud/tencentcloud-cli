@@ -1,4 +1,4 @@
-**Example 1: 修改环境属性**
+**Example 1: 修改指定环境的属性值**
 
 
 
@@ -6,19 +6,20 @@ Input:
 
 ```
 tccli tdmq ModifyEnvironmentAttributes --cli-unfold-argument  \
-    --EnvironmentId test1 \
-    --MsgTTL 3000 \
-    --Remark 修改ttl
+    --EnvironmentId test \
+    --ClusterId pulsar-xxxxxxxx \
+    --MsgTTL 100
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "MsgTTL": 3000,
-        "EnvironmentId": "test1",
-        "Remark": "修改ttl",
-        "RequestId": "e5079063-ae7b-45f7-b21f-530cb583cff4"
+        "EnvironmentId": "test",
+        "NamespaceId": "namespace-5r59xen74x",
+        "MsgTTL": 100,
+        "Remark": "",
+        "RequestId": "7db00a30-933c-4f6f-bba9-79cdf6be7d8c"
     }
 }
 ```

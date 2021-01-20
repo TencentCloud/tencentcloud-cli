@@ -838,6 +838,31 @@ def doDescribeApplication(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeletePathRewrites(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeletePathRewritesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeletePathRewrites(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeGroupUseDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1938,6 +1963,31 @@ def doDescribePublicConfigs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePathRewrite(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePathRewriteRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePathRewrite(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doEnableTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2163,7 +2213,7 @@ def doDescribeGatewayMonitorOverview(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeployGroup(args, parsed_globals):
+def doDescribePathRewrites(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2177,9 +2227,9 @@ def doDeployGroup(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeployGroupRequest()
+    model = models.DescribePathRewritesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeployGroup(model)
+    rsp = client.DescribePathRewrites(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2405,6 +2455,31 @@ def doCreateApplication(args, parsed_globals):
     model = models.CreateApplicationRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateApplication(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyPathRewrite(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyPathRewriteRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyPathRewrite(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2838,7 +2913,7 @@ def doDescribeBasicResourceUsage(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteConfig(args, parsed_globals):
+def doDeployGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2852,9 +2927,9 @@ def doDeleteConfig(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteConfigRequest()
+    model = models.DeployGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteConfig(model)
+    rsp = client.DeployGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -3005,6 +3080,31 @@ def doCreateContainGroup(args, parsed_globals):
     model = models.CreateContainGroupRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateContainGroup(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteConfigRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteConfig(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -3363,6 +3463,31 @@ def doShrinkGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreatePathRewrites(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreatePathRewritesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreatePathRewrites(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doStartGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3457,6 +3582,7 @@ ACTION_MAP = {
     "UpdateRepository": doUpdateRepository,
     "DescribeGroupBindedGateways": doDescribeGroupBindedGateways,
     "DescribeApplication": doDescribeApplication,
+    "DeletePathRewrites": doDeletePathRewrites,
     "DescribeGroupUseDetail": doDescribeGroupUseDetail,
     "DescribeSimpleApplications": doDescribeSimpleApplications,
     "DescribeLanes": doDescribeLanes,
@@ -3501,6 +3627,7 @@ ACTION_MAP = {
     "DescribeGatewayAllGroupApis": doDescribeGatewayAllGroupApis,
     "DeletePkgs": doDeletePkgs,
     "DescribePublicConfigs": doDescribePublicConfigs,
+    "DescribePathRewrite": doDescribePathRewrite,
     "EnableTask": doEnableTask,
     "ReleaseApiGroup": doReleaseApiGroup,
     "RemoveInstances": doRemoveInstances,
@@ -3510,7 +3637,7 @@ ACTION_MAP = {
     "DescribeConfigReleases": doDescribeConfigReleases,
     "CreateLane": doCreateLane,
     "DescribeGatewayMonitorOverview": doDescribeGatewayMonitorOverview,
-    "DeployGroup": doDeployGroup,
+    "DescribePathRewrites": doDescribePathRewrites,
     "UpdateApiGroup": doUpdateApiGroup,
     "ModifyLane": doModifyLane,
     "CreateMicroservice": doCreateMicroservice,
@@ -3520,6 +3647,7 @@ ACTION_MAP = {
     "DescribeMsApiList": doDescribeMsApiList,
     "DeleteApiGroup": doDeleteApiGroup,
     "CreateApplication": doCreateApplication,
+    "ModifyPathRewrite": doModifyPathRewrite,
     "RedoTaskBatch": doRedoTaskBatch,
     "DescribePublicConfigReleaseLogs": doDescribePublicConfigReleaseLogs,
     "StopContainerGroup": doStopContainerGroup,
@@ -3537,13 +3665,14 @@ ACTION_MAP = {
     "DescribeApiRateLimitRules": doDescribeApiRateLimitRules,
     "DeleteNamespace": doDeleteNamespace,
     "DescribeBasicResourceUsage": doDescribeBasicResourceUsage,
-    "DeleteConfig": doDeleteConfig,
+    "DeployGroup": doDeployGroup,
     "ReleasePublicConfig": doReleasePublicConfig,
     "DraftApiGroup": doDraftApiGroup,
     "ContinueRunFailedTaskBatch": doContinueRunFailedTaskBatch,
     "DescribeApiVersions": doDescribeApiVersions,
     "DescribeGroup": doDescribeGroup,
     "CreateContainGroup": doCreateContainGroup,
+    "DeleteConfig": doDeleteConfig,
     "DescribeServerlessGroup": doDescribeServerlessGroup,
     "DeleteMicroservice": doDeleteMicroservice,
     "UpdateHealthCheckSettings": doUpdateHealthCheckSettings,
@@ -3558,6 +3687,7 @@ ACTION_MAP = {
     "UpdateGatewayApi": doUpdateGatewayApi,
     "StopGroup": doStopGroup,
     "ShrinkGroup": doShrinkGroup,
+    "CreatePathRewrites": doCreatePathRewrites,
     "StartGroup": doStartGroup,
     "ModifyContainerGroup": doModifyContainerGroup,
 

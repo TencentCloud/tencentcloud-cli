@@ -1,4 +1,4 @@
-**Example 1: 获取指定主题的订阅和消费者**
+**Example 1: 消费订阅列表**
 
 
 
@@ -6,11 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeSubscriptions --cli-unfold-argument  \
-    --EnvironmentId default \
-    --TopicName sun_topic \
-    --Offset 0 \
-    --Limit 10 \
-    --SubscriptionName 
+    --EnvironmentId test1 \
+    --TopicName test
 ```
 
 Output: 
@@ -20,42 +17,64 @@ Output:
         "TotalCount": 1,
         "SubscriptionSets": [
             {
-                "EnvironmentId": "default",
-                "TopicName": "rc_price_statis_test",
+                "EnvironmentId": "test1",
+                "TopicName": "test",
                 "ConnectedSince": "",
                 "ConsumerAddr": "",
-                "ConsumerCount": "1",
+                "ConsumerCount": "6",
                 "ConsumerName": "",
-                "MsgBacklog": "0",
+                "MsgBacklog": "1087",
                 "MsgRateExpired": "0.0",
                 "MsgRateOut": "0.0",
                 "MsgThroughputOut": "0.0",
-                "SubscriptionName": "rc_price_statis_test",
+                "SubscriptionName": "test",
                 "Remark": "",
-                "CreateTime": "2020-06-17 12:00:22",
-                "UpdateTime": "2020-06-17 12:00:22",
+                "CreateTime": "2020-09-18 14:32:41",
+                "UpdateTime": "2021-01-13 15:23:35",
                 "IsOnline": true,
                 "ConsumerSets": [
                     {
-                        "ConnectedSince": "2020-06-19 12:07:00",
-                        "ConsumerAddr": "9.88.10.221:43911",
-                        "ConsumerName": "e2796",
-                        "ClientVersion": "2.5.0"
+                        "ConnectedSince": "2021-01-13T15:19:21.03+08:00",
+                        "ConsumerAddr": "/9.219.234.200:9056",
+                        "ConsumerName": "axjoy",
+                        "ClientVersion": ""
+                    },
+                    {
+                        "ConnectedSince": "2021-01-13T15:22:20.197+08:00",
+                        "ConsumerAddr": "/9.219.234.202:6374",
+                        "ConsumerName": "dkhtb",
+                        "ClientVersion": ""
+                    },
+                    {
+                        "ConnectedSince": "2021-01-13T15:22:50.282+08:00",
+                        "ConsumerAddr": "/9.219.237.139:57322",
+                        "ConsumerName": "ejbij",
+                        "ClientVersion": ""
+                    },
+                    {
+                        "ConnectedSince": "2021-01-13T15:18:50.927+08:00",
+                        "ConsumerAddr": "/9.219.233.137:62564",
+                        "ConsumerName": "hijsf",
+                        "ClientVersion": ""
+                    },
+                    {
+                        "ConnectedSince": "2021-01-13T15:21:50.227+08:00",
+                        "ConsumerAddr": "/9.219.234.202:11554",
+                        "ConsumerName": "nbcra",
+                        "ClientVersion": ""
+                    },
+                    {
+                        "ConnectedSince": "2021-01-13T15:19:51.032+08:00",
+                        "ConsumerAddr": "/9.219.232.202:19345",
+                        "ConsumerName": "vjmts",
+                        "ClientVersion": ""
                     }
                 ],
                 "ConsumersScheduleSets": [
                     {
-                        "NumberOfEntries": 12,
+                        "NumberOfEntries": 4642,
                         "Partitions": 0,
-                        "MsgBacklog": 0,
-                        "MsgRateOut": "0.0",
-                        "MsgThroughputOut": "0.0",
-                        "MsgRateExpired": "0.0"
-                    },
-                    {
-                        "NumberOfEntries": 12,
-                        "Partitions": 0,
-                        "MsgBacklog": 0,
+                        "MsgBacklog": 1087,
                         "MsgRateOut": "0.0",
                         "MsgThroughputOut": "0.0",
                         "MsgRateExpired": "0.0"
@@ -63,7 +82,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "2d937237-7bd9-4bb2-9e78-86d0518e4d74"
+        "RequestId": "39ab02af-30c8-41d4-9ac4-46cb519ceac0"
     }
 }
 ```

@@ -12,6 +12,12 @@
       "name": "批量删除个人版仓库",
       "output": "BatchDeleteRepositoryPersonalResponse"
     },
+    "CheckInstanceName": {
+      "document": "检查待创建的实例名称是否符合规范",
+      "input": "CheckInstanceNameRequest",
+      "name": "检查待创建的实例名称是否符合规范",
+      "output": "CheckInstanceNameResponse"
+    },
     "CreateApplicationTriggerPersonal": {
       "document": "用于创建应用更新触发器",
       "input": "CreateApplicationTriggerPersonalRequest",
@@ -557,6 +563,39 @@
     "BatchDeleteRepositoryPersonalResponse": {
       "document": "BatchDeleteRepositoryPersonal返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckInstanceNameRequest": {
+      "document": "CheckInstanceName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待创建的实例名称",
+          "member": "string",
+          "name": "RegistryName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckInstanceNameResponse": {
+      "document": "CheckInstanceName返回参数结构体",
+      "members": [
+        {
+          "document": "检查结果，true为合法，false为非法",
+          "member": "bool",
+          "name": "IsValidated",
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

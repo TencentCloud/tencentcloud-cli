@@ -108,6 +108,12 @@
       "name": "创建命名空间",
       "output": "CreateNamespaceResponse"
     },
+    "CreatePathRewrites": {
+      "document": "创建路径重写",
+      "input": "CreatePathRewritesRequest",
+      "name": "创建路径重写",
+      "output": "CreatePathRewritesResponse"
+    },
     "CreatePublicConfig": {
       "document": "创建公共配置项",
       "input": "CreatePublicConfigRequest",
@@ -191,6 +197,12 @@
       "input": "DeleteNamespaceRequest",
       "name": "删除命名空间",
       "output": "DeleteNamespaceResponse"
+    },
+    "DeletePathRewrites": {
+      "document": "删除路径重写",
+      "input": "DeletePathRewritesRequest",
+      "name": "删除路径重写",
+      "output": "DeletePathRewritesResponse"
     },
     "DeletePkgs": {
       "document": "从软件仓库批量删除程序包。\n一次最多支持删除1000个包，数量超过1000，返回UpperDeleteLimit错误。",
@@ -456,6 +468,18 @@
       "name": "查询服务API列表",
       "output": "DescribeMsApiListResponse"
     },
+    "DescribePathRewrite": {
+      "document": "查询路径重写",
+      "input": "DescribePathRewriteRequest",
+      "name": "查询路径重写",
+      "output": "DescribePathRewriteResponse"
+    },
+    "DescribePathRewrites": {
+      "document": "查询路径重写列表",
+      "input": "DescribePathRewritesRequest",
+      "name": "查询路径重写列表",
+      "output": "DescribePathRewritesResponse"
+    },
     "DescribePkgs": {
       "document": "无",
       "input": "DescribePkgsRequest",
@@ -641,6 +665,12 @@
       "input": "ModifyMicroserviceRequest",
       "name": "修改微服务详情",
       "output": "ModifyMicroserviceResponse"
+    },
+    "ModifyPathRewrite": {
+      "document": "修改路径重写",
+      "input": "ModifyPathRewriteRequest",
+      "name": "修改路径重写",
+      "output": "ModifyPathRewriteResponse"
     },
     "ModifyTask": {
       "document": "修改任务",
@@ -906,6 +936,22 @@
           "name": "FeatureIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例额外需要设置参数信息",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "部署组ID",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -955,6 +1001,15 @@
           "document": "添加集群超时的节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TimeoutInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败的节点的失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FailedReasons",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -1286,7 +1341,7 @@
       "usage": "out"
     },
     "ApiDetailResponse": {
-      "document": "ApiDetailResponse",
+      "document": "ApiDetailResponse描述",
       "members": [
         {
           "default": "",
@@ -1340,6 +1395,15 @@
           "name": "Status",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API 描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1914,6 +1978,15 @@
           "document": "Apigateway的serviceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ApigatewayServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用备注名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationRemarkName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3525,6 +3598,14 @@
           "name": "ApplicationRuntimeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要绑定的数据集ID",
+          "member": "string",
+          "name": "ProgramId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3620,6 +3701,30 @@
           "document": "集群版本",
           "member": "string",
           "name": "ClusterVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。",
+          "member": "uint64",
+          "name": "MaxNodePodNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。",
+          "member": "uint64",
+          "name": "MaxClusterServiceNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要绑定的数据集ID",
+          "member": "string",
+          "name": "ProgramId",
           "required": false,
           "type": "string"
         }
@@ -4278,6 +4383,14 @@
           "name": "IsHaEnable",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要绑定的数据集ID",
+          "member": "string",
+          "name": "ProgramId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4291,6 +4404,39 @@
           "name": "Result",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePathRewritesRequest": {
+      "document": "CreatePathRewrites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路径重写列表",
+          "member": "PathRewriteCreateObject",
+          "name": "PathRewrites",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePathRewritesResponse": {
+      "document": "CreatePathRewrites返回参数结构体",
+      "members": [
+        {
+          "document": "true/false",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5021,6 +5167,39 @@
       "members": [
         {
           "document": "删除命名空间是否成功。\ntrue：删除成功。\nfalse：删除失败。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePathRewritesRequest": {
+      "document": "DeletePathRewrites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路径重写规则IDs",
+          "member": "string",
+          "name": "PathRewriteIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePathRewritesResponse": {
+      "document": "DeletePathRewrites返回参数结构体",
+      "members": [
+        {
+          "document": "true/false",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -7682,6 +7861,96 @@
         {
           "document": "相应结果",
           "member": "TsfApiListResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePathRewriteRequest": {
+      "document": "DescribePathRewrite请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路径重写规则ID",
+          "member": "string",
+          "name": "PathRewriteId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePathRewriteResponse": {
+      "document": "DescribePathRewrite返回参数结构体",
+      "members": [
+        {
+          "document": "路径重写规则对象",
+          "member": "PathRewrite",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePathRewritesRequest": {
+      "document": "DescribePathRewrites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据正则表达式或替换的内容模糊查询",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页数量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePathRewritesResponse": {
+      "document": "DescribePathRewrites返回参数结构体",
+      "members": [
+        {
+          "document": "路径重写翻页对象",
+          "member": "PathRewritePage",
           "name": "Result",
           "type": "object",
           "value_allowed_null": false
@@ -10368,6 +10637,30 @@
       ],
       "usage": "out"
     },
+    "InstanceAdvancedSettings": {
+      "document": "容器导入实例高级设置",
+      "members": [
+        {
+          "default": "",
+          "document": "数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。\n注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MountTarget",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "dockerd --graph 指定值, 默认为 /var/lib/docker\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DockerGraphPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LaneGroup": {
       "document": "泳道部署组",
       "members": [
@@ -11122,6 +11415,71 @@
       "members": [
         {
           "document": "修改微服务详情是否成功。\ntrue：操作成功。\nfalse：操作失败。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPathRewriteRequest": {
+      "document": "ModifyPathRewrite请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路径重写规则ID",
+          "member": "string",
+          "name": "PathRewriteId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "正则表达式",
+          "member": "string",
+          "name": "Regex",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "替换的内容",
+          "member": "string",
+          "name": "Replacement",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否屏蔽映射后路径，Y: 是 N: 否",
+          "member": "string",
+          "name": "Blocked",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则顺序，越小优先级越高",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPathRewriteResponse": {
+      "document": "ModifyPathRewrite返回参数结构体",
+      "members": [
+        {
+          "document": "true/false",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -11941,6 +12299,141 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PathRewrite": {
+      "document": "路径重写",
+      "members": [
+        {
+          "default": "",
+          "document": "路径重写规则ID",
+          "member": "string",
+          "name": "PathRewriteId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正则表达式",
+          "member": "string",
+          "name": "Regex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换的内容",
+          "member": "string",
+          "name": "Replacement",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否屏蔽映射后路径，Y: 是 N: 否",
+          "member": "string",
+          "name": "Blocked",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则顺序，越小优先级越高",
+          "member": "int64",
+          "name": "Order",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PathRewriteCreateObject": {
+      "document": "路径重写创建对象",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "member": "string",
+          "name": "GatewayGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正则表达式",
+          "member": "string",
+          "name": "Regex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换的内容",
+          "member": "string",
+          "name": "Replacement",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否屏蔽映射后路径，Y: 是 N: 否",
+          "member": "string",
+          "name": "Blocked",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则顺序，越小优先级越高",
+          "member": "int64",
+          "name": "Order",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PathRewritePage": {
+      "document": "路径重写翻页对象",
+      "members": [
+        {
+          "default": "",
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路径重写规则列表",
+          "member": "PathRewrite",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

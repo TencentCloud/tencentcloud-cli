@@ -915,7 +915,7 @@
     "DisassociateNetworkAclSubnets": {
       "document": "本接口（DisassociateNetworkAclSubnets）用于网络ACL解关联vpc下的子网。",
       "input": "DisassociateNetworkAclSubnetsRequest",
-      "name": "网络ACl解关联子网",
+      "name": "网络ACL解关联子网",
       "output": "DisassociateNetworkAclSubnetsResponse"
     },
     "DisassociateNetworkInterfaceSecurityGroups": {
@@ -3769,7 +3769,7 @@
       "members": [
         {
           "default": "",
-          "document": "带宽包类型，包括'BGP'，'SINGLEISP'，'ANYCAST'",
+          "document": "带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'",
           "member": "string",
           "name": "NetworkType",
           "required": false,
@@ -3801,7 +3801,7 @@
         },
         {
           "default": "",
-          "document": "带宽包限速大小。单位：Mbps，-1表示不限速。",
+          "document": "带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。",
           "member": "int64",
           "name": "InternetMaxBandwidth",
           "required": false,
@@ -5267,7 +5267,7 @@
       "members": [
         {
           "default": "",
-          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5336,6 +5336,30 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否支持隧道内健康检查",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "健康检查本端地址",
+          "member": "string",
+          "name": "HealthCheckLocalIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "健康检查对端地址",
+          "member": "string",
+          "name": "HealthCheckRemoteIp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8423,7 +8447,7 @@
       "members": [
         {
           "default": "",
-          "document": "IP地理位置库协议类型，目前支持\"ipv4\"和\"ipv6\"。",
+          "document": "IP地理位置库协议类型，目前仅支持\"ipv4\"。",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -13800,6 +13824,30 @@
           "name": "IPSECOptionsSpecification",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否启用通道健康检查",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "本端通道探测ip",
+          "member": "string",
+          "name": "HealthCheckLocalIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对端通道探测ip",
+          "member": "string",
+          "name": "HealthCheckRemoteIp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

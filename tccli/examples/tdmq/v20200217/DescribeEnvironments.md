@@ -18,11 +18,13 @@ Output:
         "TotalCount": 1,
         "EnvironmentSet": [
             {
-                "EnvironmentId": "default",
+                "EnvironmentId": "xx",
+                "Remark": "xx",
+                "NamespaceName": "xx",
+                "UpdateTime": "2020-09-22 00:00:00",
+                "NamespaceId": "xx",
                 "MsgTTL": 0,
-                "Remark": "",
-                "CreateTime": "2020-06-15 17:12:49",
-                "UpdateTime": "2020-06-16 10:25:19"
+                "CreateTime": "2020-09-22 00:00:00"
             }
         ],
         "RequestId": "2235829c-2c9d-44b0-bce4-0ce0a147cce0"

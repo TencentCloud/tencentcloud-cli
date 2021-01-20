@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli vpc DescribeAssistantCidr --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc DescribeAssistantCidr --cli-unfold-argument ```
 
 Output: 
 ```

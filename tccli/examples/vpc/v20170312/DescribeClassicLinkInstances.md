@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc DescribeClassicLinkInstances --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --Filters.0.Name vpc-id \
     --Filters.0.Values vpc-gjui0b5t \
     --Filters.1.Name vm-ip \

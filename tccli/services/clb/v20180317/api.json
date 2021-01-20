@@ -4774,6 +4774,15 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CLB是否为NFV，空：不是，l7nfv：七层是NFV。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NfvInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5047,6 +5056,24 @@
           "document": "0：表示未被隔离，1：表示被隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Isolation",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡绑定的安全组列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡安全组上移特性是否开启标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "LoadBalancerPassToTarget",
           "required": true,
           "type": "int",
           "value_allowed_null": true

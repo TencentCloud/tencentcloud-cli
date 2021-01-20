@@ -16,6 +16,14 @@
         "title": "批量删除个人版仓库"
       }
     ],
+    "CheckInstanceName": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CheckInstanceName\n&RegistryName=registryName123\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"IsValidated\": true,\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "检查待创建的实例名称是否符合规范"
+      }
+    ],
     "CreateApplicationTriggerPersonal": [
       {
         "document": "",

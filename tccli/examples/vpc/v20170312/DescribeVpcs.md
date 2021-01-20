@@ -27,12 +27,15 @@ Output:
                 "IsDefault": false,
                 "EnableMulticast": false,
                 "CreatedTime": "2018-04-25 10:26:26",
+                "EnableDhcp": true,
                 "DhcpOptionsId": "dopt-8g7k5qfq",
                 "DnsServerSet": [
                     "10.0.0.1",
                     "183.60.82.98"
                 ],
-                "DomainName": "aa.bb.cc"
+                "DomainName": "aa.bb.cc",
+                "TagSet": [],
+                "AssistantCidrSet": []
             }
         ],
         "TotalCount": 1,

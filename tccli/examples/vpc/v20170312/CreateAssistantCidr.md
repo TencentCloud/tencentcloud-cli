@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc CreateAssistantCidr --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --VpcId vpc-12345678 \
     --CidrBlocks 172.16.0.0/24
 ```

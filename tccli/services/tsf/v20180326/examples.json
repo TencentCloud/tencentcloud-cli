@@ -67,7 +67,7 @@
     "CreateApplication": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateApplication\r\n&ApplicationName=test\r\n&ApplicationType=V\r\n&MicroserviceType=N\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateApplication\n&ApplicationName=test\n&ApplicationType=V\n&MicroserviceType=N\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\r\n    \"Result\": \"application-xxxxxxx\"\r\n  }\r\n}",
         "title": "创建应用示例"
       }
@@ -75,7 +75,7 @@
     "CreateCluster": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateCluster\r\n&ClusterName=DEMO-DOCKER\r\n&TsfRegionId=ap-guangzhou\r\n&TsfZoneId=100004\r\n&ClusterType=C\r\n&VpcId=vpc-xxxxxxx\r\n&ClusterCIDR=172.16.0.0/16\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateCluster\n&ClusterName=DEMO-DOCKER\n&TsfRegionId=ap-guangzhou\n&TsfZoneId=100004\n&ClusterType=C\n&VpcId=vpc-xxxxxxx\n&ClusterCIDR=172.16.0.0/16\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"c33a0bd5-f41a-4ac5-8480-e31fa972ec7e\",\r\n    \"Result\": true\r\n  }\r\n}",
         "title": "创建集群"
       }
@@ -142,6 +142,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=CreateNamespace\n&ClusterId=cluster-xxxxxxx\n&NamespaceName=tsf\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\r\n    \"Result\": true\r\n  }\r\n}",
         "title": "创建命名空间示例"
+      }
+    ],
+    "CreatePathRewrites": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePathRewrites\n<公共请求参数>\n\n{\n    \"PathRewrites\": {\n        \"Regex\": \"xx\", \n        \"GatewayGroupId\": \"xx\", \n        \"Blocked\": \"xx\", \n        \"Order\": 0, \n        \"Replacement\": \"xx\"\n    }\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "创建路径重写"
       }
     ],
     "CreatePublicConfig": [
@@ -254,6 +262,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DeleteNamespace\r\n&NamespaceId=namespace-xxxxxxx\r\n&ClusterId=cluster-xxxxxxx\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f8ba3919-a33e-49c2-afdb-c2d9a4162130\",\r\n    \"Result\": true\r\n  }\r\n}",
         "title": "删除命名空间示例"
+      }
+    ],
+    "DeletePathRewrites": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeletePathRewrites\n&PathRewriteIds.0=rewrite-l6ymbvgd\n&PathRewriteIds.1=rewrite-s7j2kkh39\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "删除路径重写"
       }
     ],
     "DeletePkgs": [
@@ -608,6 +624,22 @@
         "title": "查询服务API列表"
       }
     ],
+    "DescribePathRewrite": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePathRewrite\n&PathRewriteId=rewrite-l6ymbvgd\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Regex\": \"^(.*)^\", \r\n            \"PathRewriteId\": \"rewrite-l6ymbvgd\", \r\n            \"GatewayGroupId\": \"group-123\", \r\n            \"Replacement\": \"/s/ns/ms/$1\", \r\n            \"Order\": 0, \r\n            \"Blocked\": \"xx\"\r\n        }, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询路径重写"
+      }
+    ],
+    "DescribePathRewrites": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePathRewrites\n&GatewayGroupId=group-12345\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"Content\": [\r\n                {\r\n                    \"Regex\": \"^(.*)$\", \r\n                    \"PathRewriteId\": \"xx\", \r\n                    \"GatewayGroupId\": \"xx\", \r\n                    \"Replacement\": \"/s/ns/ms/$1\", \r\n                    \"Order\": 0, \r\n                    \"Blocked\": \"xx\"\r\n                }\r\n            ], \r\n            \"TotalCount\": 1\r\n        }, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询路径重写列表"
+      }
+    ],
     "DescribePkgs": [
       {
         "document": "获取应用application-jy9w6lka下的程序包信息",
@@ -854,6 +886,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=ModifyMicroservice\r\n&MicroserviceId=ms-xxxxxxx\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"4304b189-8663-453d-8863-1f238f6c4fb0\",\r\n    \"Result\": true\r\n  }\r\n}",
         "title": "修改微服务详情"
+      }
+    ],
+    "ModifyPathRewrite": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ModifyPathRewrite\n&PathRewriteId=rewrite-l6ymbvgd\n&Order=100\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\r\n        \"Result\": true\r\n    }\r\n}",
+        "title": "修改路径重写顺序"
       }
     ],
     "ModifyTask": [
