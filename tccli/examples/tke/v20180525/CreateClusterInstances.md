@@ -33,11 +33,6 @@ Input:
 
 ```
 tccli tke CreateClusterInstances --cli-unfold-argument  \
-    --Action CreateClusterInstances \
-    --ApiModule tke \
-    --AppId 123 \
-    --ClientIp 127.0.0.1 \
-    --ClusterId cls-qxxxxxx \
     --InstanceAdvancedSettings.DataDisks.0.AutoFormatAndMount True \
     --InstanceAdvancedSettings.DataDisks.0.DiskSize 50 \
     --InstanceAdvancedSettings.DataDisks.0.DiskType CLOUD_PREMIUM \
@@ -62,16 +57,9 @@ tccli tke CreateClusterInstances --cli-unfold-argument  \
     --InstanceAdvancedSettings.MountTarget /var/lib/docker \
     --InstanceAdvancedSettings.Unschedulable 0 \
     --InstanceAdvancedSettings.UserScript  \
-    --Language zh-CN \
-    --Region ap-chongqing \
-    --RequestId 76a8bf8c-c039-4f52-ab31-5be5cafc53e3 \
-    --RequestSource MC \
-    --RunInstancePara {"InstanceChargeType":"POSTPAID_BY_HOUR","Placement":{"Zone":"ap-chongqing-1","ProjectId":0},"InstanceType":"S3.SMALL1","SystemDisk":{"DiskType":"CLOUD_PREMIUM","DiskSize":50},"DataDisks":[{"DiskType":"CLOUD_PREMIUM","DiskSize":50},{"DiskType":"CLOUD_PREMIUM","DiskSize":120},{"DiskType":"CLOUD_PREMIUM","DiskSize":100},{"DiskType":"CLOUD_PREMIUM","DiskSize":50}],"VirtualPrivateCloud":{"VpcId":"vpc-d5ivotej","SubnetId":"subnet-qh3ax3mo","AsVpcGateway":false},"InternetAccessible":{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":1,"PublicIpAssigned":true},"InstanceCount":1,"ImageId":"img-xxxxxx","InstanceName":"tke_cls-xxx_worker","LoginSettings":{"KeyIds":["skey-cxxxx"]},"SecurityGroupIds":["sg-nxxxxxx"],"EnhancedService":{"SecurityService":{"Enabled":true},"MonitorService":{"Enabled":true}}} \
-    --SubAccountUin 123 \
-    --Timestamp 1574854507 \
-    --Token  \
-    --Uin 12345678 \
-    --Version 2018-05-25
+    --SkipValidateOptions GlobalRouteCIDRCheck VpcCniCIDRCheck \
+    --RunInstancePara xx \
+    --ClusterId cls-xxxxx
 ```
 
 Output: 

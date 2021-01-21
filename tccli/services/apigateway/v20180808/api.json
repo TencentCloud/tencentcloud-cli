@@ -1033,6 +1033,33 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启Base64编码，只有后端为scf时才会生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsBase64Encoded",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启Base64编码的header触发，只有后端为scf时才会生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsBase64Trigger",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Header触发规则，总规则数量不超过10。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Base64EncodedTriggerRule",
+          "name": "Base64EncodedTriggerRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1342,6 +1369,30 @@
         }
       ],
       "usage": "out"
+    },
+    "Base64EncodedTriggerRule": {
+      "document": "Base64编码的header触发规则",
+      "members": [
+        {
+          "default": "",
+          "document": "进行编码触发的header，可选值 \"Accept\"和\"Content_Type\" 对应实际数据流请求header中的Accept和 Content-Type。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进行编码触发的header的可选值数组, 数组元素的字符串最大长度为40，元素可以包括数字，英文字母以及特殊字符，特殊字符的可选值为： `.`    `+`    `*`   `-`   `/`  `_` \n\n例如 [\n    \"application/x-vpeg005\",\n    \"application/xhtml+xml\",\n    \"application/vnd.ms-project\",\n    \"application/vnd.rn-rn_music_package\"\n] 等都是合法的。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "BindEnvironmentRequest": {
       "document": "BindEnvironment请求参数结构体",
@@ -2064,6 +2115,14 @@
           "name": "UserType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否打开Base64编码，只有后端是scf时才会生效。",
+          "member": "bool",
+          "name": "IsBase64Encoded",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2998,6 +3057,7 @@
         {
           "default": "",
           "document": "API 所在的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -3006,6 +3066,7 @@
         {
           "default": "",
           "document": "API 接口唯一 ID。",
+          "example": "api-3v4tzy3u",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -3019,6 +3080,7 @@
       "members": [
         {
           "document": "API 详情。",
+          "example": " 见输出示例",
           "member": "ApiInfo",
           "name": "Result",
           "type": "object",
@@ -5374,6 +5436,30 @@
           "document": "用户自定义错误码配置。",
           "member": "ResponseErrorCodeReq",
           "name": "ResponseErrorCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启Base64编码，只有后端为scf时才会生效。",
+          "member": "bool",
+          "name": "IsBase64Encoded",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启Base64编码的header触发，只有后端为scf时才会生效。",
+          "member": "bool",
+          "name": "IsBase64Trigger",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "Header触发规则，总规则数不能超过10。",
+          "member": "Base64EncodedTriggerRule",
+          "name": "Base64EncodedTriggerRules",
           "required": false,
           "type": "list"
         }

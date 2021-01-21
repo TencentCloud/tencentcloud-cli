@@ -566,6 +566,14 @@
         "title": "营业执照识别及核验详细版示例代码（输入关键字段进行核验）"
       }
     ],
+    "VerifyOfdVatInvoiceOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=VerifyOfdVatInvoiceOCR\n&OfdFileUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Note\": \"xx\", \r\n        \"GoodsInfos\": [\r\n            {\r\n                \"TaxAmount\": \"xx\", \r\n                \"Specification\": \"xx\", \r\n                \"MeasurementDimension\": \"xx\", \r\n                \"Item\": \"xx\", \r\n                \"Amount\": \"xx\", \r\n                \"TaxScheme\": \"xx\", \r\n                \"Price\": \"xx\", \r\n                \"Quantity\": \"xx\"\r\n            }\r\n        ], \r\n        \"InvoiceClerk\": \"xx\", \r\n        \"InvoiceCode\": \"xx\", \r\n        \"Type\": \"xx\", \r\n        \"TaxExclusiveTotalAmount\": \"xx\", \r\n        \"TaxTotalAmount\": \"xx\", \r\n        \"Seller\": {\r\n            \"AddrTel\": \"xx\", \r\n            \"Name\": \"xx\", \r\n            \"FinancialAccount\": \"xx\", \r\n            \"TaxId\": \"xx\"\r\n        }, \r\n        \"TaxInclusiveTotalAmount\": \"xx\", \r\n        \"Payee\": \"xx\", \r\n        \"Checker\": \"xx\", \r\n        \"RequestId\": \"xx\", \r\n        \"TaxControlCode\": \"xx\", \r\n        \"Buyer\": {\r\n            \"AddrTel\": \"xx\", \r\n            \"Name\": \"xx\", \r\n            \"FinancialAccount\": \"xx\", \r\n            \"TaxId\": \"xx\"\r\n        }, \r\n        \"IssueDate\": \"xx\", \r\n        \"InvoiceNumber\": \"xx\", \r\n        \"InvoiceCheckCode\": \"xx\", \r\n        \"MachineNumber\": \"xx\"\r\n    }\r\n}",
+        "title": "OFD发票识别示例代码"
+      }
+    ],
     "VinOCR": [
       {
         "document": "",

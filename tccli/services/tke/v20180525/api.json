@@ -406,6 +406,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-berpx5vg",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -414,6 +415,7 @@
         {
           "default": "",
           "document": "实例列表，不支持竞价实例",
+          "example": "[]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -422,6 +424,7 @@
         {
           "default": "",
           "document": "实例额外需要设置参数信息",
+          "example": "{}",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
@@ -430,6 +433,7 @@
         {
           "default": "",
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。",
+          "example": "{}",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -438,6 +442,7 @@
         {
           "default": "",
           "document": "节点登录信息（目前仅支持使用Password或者单个KeyIds）",
+          "example": "{}",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -445,15 +450,8 @@
         },
         {
           "default": "",
-          "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）",
-          "member": "string",
-          "name": "SecurityGroupIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)",
+          "example": "\"\"",
           "member": "string",
           "name": "HostName",
           "required": false,
@@ -461,11 +459,30 @@
         },
         {
           "default": "",
+          "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）",
+          "example": "[]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "节点池选项",
+          "example": "{}",
           "member": "NodePoolOption",
           "name": "NodePool",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）",
+          "example": "[]",
+          "member": "string",
+          "name": "SkipValidateOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -475,6 +492,7 @@
       "members": [
         {
           "document": "失败的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[",
           "member": "string",
           "name": "FailedInstanceIds",
           "type": "list",
@@ -482,6 +500,7 @@
         },
         {
           "document": "成功的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[",
           "member": "string",
           "name": "SuccInstanceIds",
           "type": "list",
@@ -489,6 +508,7 @@
         },
         {
           "document": "超时未返回出来节点的ID(可能失败，也可能成功)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[",
           "member": "string",
           "name": "TimeoutInstanceIds",
           "type": "list",
@@ -496,6 +516,7 @@
         },
         {
           "document": "失败的节点的失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[",
           "member": "string",
           "name": "FailedReasons",
           "type": "list",
@@ -1662,6 +1683,7 @@
         {
           "default": "",
           "document": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段",
+          "example": "cls-berpx5vg",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1670,6 +1692,7 @@
         {
           "default": "",
           "document": "CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。",
+          "example": "{}",
           "member": "string",
           "name": "RunInstancePara",
           "required": true,
@@ -1678,10 +1701,20 @@
         {
           "default": "",
           "document": "实例额外需要设置参数信息",
+          "example": "{}",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）",
+          "example": "[",
+          "member": "string",
+          "name": "SkipValidateOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1691,6 +1724,7 @@
       "members": [
         {
           "document": "节点实例ID",
+          "example": "[",
           "member": "string",
           "name": "InstanceIdSet",
           "type": "list",
@@ -5299,6 +5333,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "实例告警",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5308,6 +5343,7 @@
         {
           "default": "",
           "document": "规则列表",
+          "example": "无",
           "member": "PrometheusAlertRule",
           "name": "Rules",
           "required": true,
@@ -5317,6 +5353,7 @@
         {
           "default": "",
           "document": "最后修改时间",
+          "example": "无",
           "member": "string",
           "name": "UpdatedAt",
           "required": false,
@@ -5326,6 +5363,7 @@
         {
           "default": "",
           "document": "告警渠道",
+          "example": "无",
           "member": "PrometheusNotification",
           "name": "Notification",
           "required": false,
@@ -5335,6 +5373,7 @@
         {
           "default": "",
           "document": "告警 id",
+          "example": "alert-xxx",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -5344,8 +5383,19 @@
         {
           "default": "",
           "document": "如果该告警来至模板下发，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "temp-xxx",
           "member": "string",
           "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30s",
+          "member": "string",
+          "name": "Interval",
           "required": false,
           "type": "string",
           "value_allowed_null": true

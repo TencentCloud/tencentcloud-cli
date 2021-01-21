@@ -101,7 +101,7 @@
     "CreateLiveRecordRule": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveRecordRule\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveRecordRule\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -117,7 +117,7 @@
     "CreateLiveSnapshotRule": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveSnapshotRule\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveSnapshotRule\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -133,7 +133,7 @@
     "CreateLiveTranscodeRule": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveTranscodeRule\r\n&DomainName=5000.liveplay.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveTranscodeRule\n&DomainName=5000.liveplay.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }
@@ -149,7 +149,7 @@
     "CreateLiveWatermarkRule": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveWatermarkRule\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveWatermarkRule\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "请求示例"
       }

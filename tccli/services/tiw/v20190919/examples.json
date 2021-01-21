@@ -82,6 +82,28 @@
         "title": "查询录制视频生成回调地址"
       }
     ],
+    "DescribeWhiteboardPush": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPush\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ExceptionCnt\": 0,\r\n        \"FinishReason\": \"USER_CALL\",\r\n        \"GroupId\": \"880528\",\r\n        \"IMSyncTime\": 0,\r\n        \"PushStartTime\": 1610591726,\r\n        \"PushStopTime\": 1610591759,\r\n        \"PushUserId\": \"tic_push_user_880528_test1\",\r\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\r\n        \"RoomId\": 880528,\r\n        \"Status\": \"STOPPED\",\r\n        \"Backup\": \"\",\r\n        \"TaskId\": \"g42lfmu5uc3lpoqrqvvb\"\r\n    }\r\n}",
+        "title": "查询白板推流任务"
+      },
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPush\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Error\": {\r\n            \"Code\": \"FailedOperation.WhiteboardPush\",\r\n            \"Message\": \"code: 40006, msg: 2021-01-13 22:34:42, TRTC onError, code: -70003, msg: The UserSig in use is illegal. Please regenerate UserSig through official API. (FYI: https://cloud.tencent.com/document/product/269/32688 )\\n\"\r\n        },\r\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\r\n    }\r\n}",
+        "title": "查询推流失败的白板推流任务"
+      }
+    ],
+    "DescribeWhiteboardPushCallback": [
+      {
+        "document": "查询白板推流回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPushCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Callback\": \"https://example.com/online/callback\",\r\n        \"CallbackKey\": \"6vg9G7Fd\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "查询白板推流回调地址"
+      }
+    ],
     "PauseOnlineRecord": [
       {
         "document": "",
@@ -144,6 +166,22 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=SetVideoGenerationTaskCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
         "title": "设置视频生成回调鉴权密钥"
+      }
+    ],
+    "SetWhiteboardPushCallback": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetWhiteboardPushCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/online/callback\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "设置白板推流回调地址"
+      }
+    ],
+    "SetWhiteboardPushCallbackKey": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetWhiteboardPushCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "设置白板推流回调鉴权密钥"
       }
     ],
     "StartOnlineRecord": [

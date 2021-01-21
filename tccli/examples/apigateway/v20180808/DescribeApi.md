@@ -65,7 +65,20 @@ Output:
             "ServiceTsfHealthCheckConf": null,
             "AuthRequired": false,
             "EnableCORS": false,
-            "Tags": []
+            "Tags": [],
+            "Environments": [],
+            "IsBase64Encoded": false,
+            "IsBase64Trigger": false,
+            "Base64EncodedTriggerRules": [
+                {
+                    "Name": "Accept",
+                    "Value": []
+                },
+                {
+                    "Name": "Content_Type",
+                    "Value": []
+                }
+            ]
         },
         "RequestId": "b1fb681f-fc43-41cc-a8bc-c3400270c2f9"
     }

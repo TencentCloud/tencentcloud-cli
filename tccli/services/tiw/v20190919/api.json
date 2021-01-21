@@ -48,6 +48,18 @@
       "name": "查询录制视频生成回调地址",
       "output": "DescribeVideoGenerationTaskCallbackResponse"
     },
+    "DescribeWhiteboardPush": {
+      "document": "查询推流任务状态与结果",
+      "input": "DescribeWhiteboardPushRequest",
+      "name": "查询白板推流任务",
+      "output": "DescribeWhiteboardPushResponse"
+    },
+    "DescribeWhiteboardPushCallback": {
+      "document": "查询白板推流回调地址",
+      "input": "DescribeWhiteboardPushCallbackRequest",
+      "name": "查询回调地址",
+      "output": "DescribeWhiteboardPushCallbackResponse"
+    },
     "PauseOnlineRecord": {
       "document": "暂停实时录制",
       "input": "PauseOnlineRecordRequest",
@@ -95,6 +107,18 @@
       "input": "SetVideoGenerationTaskCallbackKeyRequest",
       "name": "设置录制视频生成回调密钥",
       "output": "SetVideoGenerationTaskCallbackKeyResponse"
+    },
+    "SetWhiteboardPushCallback": {
+      "document": "设置白板推流回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+      "input": "SetWhiteboardPushCallbackRequest",
+      "name": "设置回调地址",
+      "output": "SetWhiteboardPushCallbackResponse"
+    },
+    "SetWhiteboardPushCallbackKey": {
+      "document": "设置白板推流回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+      "input": "SetWhiteboardPushCallbackKeyRequest",
+      "name": "设置白板推流回调密钥",
+      "output": "SetWhiteboardPushCallbackKeyResponse"
     },
     "StartOnlineRecord": {
       "document": "发起一个实时录制任务",
@@ -226,6 +250,14 @@
           "name": "CompressFileType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "内部参数",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -299,6 +331,14 @@
           "name": "RecordControl",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "内部参数",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -785,6 +825,170 @@
       ],
       "type": "object"
     },
+    "DescribeWhiteboardPushCallbackRequest": {
+      "document": "DescribeWhiteboardPushCallback请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用的SdkAppId",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWhiteboardPushCallbackResponse": {
+      "document": "DescribeWhiteboardPushCallback返回参数结构体",
+      "members": [
+        {
+          "document": "白板推流事件回调地址，如果未设置回调地址，该字段为空字符串",
+          "member": "string",
+          "name": "Callback",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "白板推流回调鉴权密钥",
+          "member": "string",
+          "name": "CallbackKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWhiteboardPushRequest": {
+      "document": "DescribeWhiteboardPush请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "白板推流任务Id",
+          "example": "ghucnligqtgtvk2624mb",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWhiteboardPushResponse": {
+      "document": "DescribeWhiteboardPush返回参数结构体",
+      "members": [
+        {
+          "document": "推流结束原因，\n- AUTO: 房间内长时间没有音视频上行及白板操作导致自动停止推流\n- USER_CALL: 主动调用了停止推流接口\n- EXCEPTION: 推流异常结束",
+          "example": "USER_CALL",
+          "member": "string",
+          "name": "FinishReason",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "需要查询结果的白板推流任务Id",
+          "example": "ghucnligqtgtvk2624mb",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "推流任务状态\n- PREPARED: 表示推流正在准备中（进房/启动推流服务等操作）\n- PUSHING: 表示推流已开始\n- STOPPED: 表示推流已停止",
+          "example": "STOPPED",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间号",
+          "example": "12345",
+          "member": "int64",
+          "name": "RoomId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "白板的群组 Id",
+          "example": "12345",
+          "member": "string",
+          "name": "GroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "推流用户Id",
+          "example": "tic_push_user_12345_abcde",
+          "member": "string",
+          "name": "PushUserId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实际开始推流时间，Unix 时间戳，单位秒",
+          "example": "1611128339",
+          "member": "int64",
+          "name": "PushStartTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实际停止推流时间，Unix 时间戳，单位秒",
+          "example": "1611128339",
+          "member": "int64",
+          "name": "PushStopTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "推流过程中出现异常的次数",
+          "example": "0",
+          "member": "int64",
+          "name": "ExceptionCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "白板推流首帧对应的IM时间戳，可用于录制回放时IM聊天消息与白板推流视频进行同步对时。",
+          "example": "0",
+          "member": "int64",
+          "name": "IMSyncTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备份推流任务结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "Backup",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LayoutParams": {
       "document": "自定义混流配置布局参数",
       "members": [
@@ -1243,6 +1447,74 @@
       ],
       "type": "object"
     },
+    "SetWhiteboardPushCallbackKeyRequest": {
+      "document": "SetWhiteboardPushCallbackKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用的SdkAppId",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设置白板推流回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥。回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+          "member": "string",
+          "name": "CallbackKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetWhiteboardPushCallbackKeyResponse": {
+      "document": "SetWhiteboardPushCallbackKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetWhiteboardPushCallbackRequest": {
+      "document": "SetWhiteboardPushCallback请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户的SdkAppId",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "白板推流任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头。回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+          "member": "string",
+          "name": "Callback",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetWhiteboardPushCallbackResponse": {
+      "document": "SetWhiteboardPushCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartOnlineRecordRequest": {
       "document": "StartOnlineRecord请求参数结构体",
       "members": [
@@ -1347,6 +1619,14 @@
           "document": "聊天群组ID，此字段仅适用于`视频生成模式`\n\n在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。",
           "member": "string",
           "name": "ChatGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "内部参数",
+          "member": "string",
+          "name": "ExtraData",
           "required": false,
           "type": "string"
         }

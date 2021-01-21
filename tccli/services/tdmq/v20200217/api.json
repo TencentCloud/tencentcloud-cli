@@ -7,9 +7,9 @@
       "output": "CreateClusterResponse"
     },
     "CreateEnvironment": {
-      "document": "用于在用户账户下创建消息队列 Tdmq环境（命名空间）",
+      "document": "用于在用户账户下创建消息队列 Tdmq 命名空间",
       "input": "CreateEnvironmentRequest",
-      "name": "创建环境",
+      "name": "创建命名空间",
       "output": "CreateEnvironmentResponse"
     },
     "CreateSubscription": {
@@ -31,9 +31,9 @@
       "output": "DeleteClusterResponse"
     },
     "DeleteEnvironments": {
-      "document": "批量删除租户下的环境",
+      "document": "批量删除租户下的命名空间",
       "input": "DeleteEnvironmentsRequest",
-      "name": "删除环境",
+      "name": "删除命名空间",
       "output": "DeleteEnvironmentsResponse"
     },
     "DeleteSubscriptions": {
@@ -73,21 +73,21 @@
       "output": "DescribeClustersResponse"
     },
     "DescribeEnvironmentAttributes": {
-      "document": "获取指定环境的属性",
+      "document": "获取指定命名空间的属性",
       "input": "DescribeEnvironmentAttributesRequest",
-      "name": "获取环境属性",
+      "name": "获取命名空间属性",
       "output": "DescribeEnvironmentAttributesResponse"
     },
     "DescribeEnvironmentRoles": {
-      "document": "获取环境角色列表",
+      "document": "获取命名空间角色列表",
       "input": "DescribeEnvironmentRolesRequest",
-      "name": "获取环境角色列表",
+      "name": "获取命名空间角色列表",
       "output": "DescribeEnvironmentRolesResponse"
     },
     "DescribeEnvironments": {
-      "document": "获取租户下环境列表",
+      "document": "获取租户下命名空间列表",
       "input": "DescribeEnvironmentsRequest",
-      "name": "获取环境列表",
+      "name": "获取命名空间列表",
       "output": "DescribeEnvironmentsResponse"
     },
     "DescribeProducers": {
@@ -115,9 +115,9 @@
       "output": "ModifyClusterResponse"
     },
     "ModifyEnvironmentAttributes": {
-      "document": "修改指定环境的属性值",
+      "document": "修改指定命名空间的属性值",
       "input": "ModifyEnvironmentAttributesRequest",
-      "name": "修改环境属性",
+      "name": "修改命名空间属性",
       "output": "ModifyEnvironmentAttributesResponse"
     },
     "ModifyTopic": {
@@ -455,6 +455,7 @@
         {
           "default": "",
           "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。",
+          "example": "default",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -462,7 +463,8 @@
         },
         {
           "default": "",
-          "document": "用户\b专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。",
+          "document": "用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。",
+          "example": "NULL",
           "member": "uint64",
           "name": "BindClusterId",
           "required": false,
@@ -471,6 +473,7 @@
         {
           "default": "",
           "document": "说明，128个字符以内。",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -479,6 +482,7 @@
         {
           "default": "",
           "document": "集群的标签列表",
+          "example": "NULL",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -492,6 +496,7 @@
       "members": [
         {
           "document": "集群ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "type": "string",
@@ -512,6 +517,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -520,6 +526,7 @@
         {
           "default": "",
           "document": "未消费消息过期时间，单位：秒，最小60，最大1296000，（15天）。",
+          "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
           "required": true,
@@ -528,6 +535,7 @@
         {
           "default": "",
           "document": "说明，128个字符以内。",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -536,6 +544,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -548,7 +557,8 @@
       "document": "CreateEnvironment返回参数结构体",
       "members": [
         {
-          "document": "命名空间名称。",
+          "document": "环境（命名空间）名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "type": "string",
@@ -556,6 +566,7 @@
         },
         {
           "document": "未消费消息过期时间，单位：秒。",
+          "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
           "type": "int",
@@ -563,6 +574,7 @@
         },
         {
           "document": "说明，128个字符以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "type": "string",
@@ -570,6 +582,7 @@
         },
         {
           "document": "命名空间ID",
+          "example": "namespace-ak7jexmrz2",
           "member": "string",
           "name": "NamespaceId",
           "type": "string",
@@ -772,6 +785,7 @@
         {
           "default": "",
           "document": "集群Id，传入需要删除的集群Id。",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -785,6 +799,7 @@
       "members": [
         {
           "document": "集群的ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "type": "string",
@@ -805,6 +820,7 @@
         {
           "default": "",
           "document": "环境（命名空间）数组，每次最多删除20个。",
+          "example": "[test1,test2]",
           "member": "string",
           "name": "EnvironmentIds",
           "required": true,
@@ -813,6 +829,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -826,6 +843,7 @@
       "members": [
         {
           "document": "成功删除的环境（命名空间）数组。",
+          "example": "[test1,test2]",
           "member": "string",
           "name": "EnvironmentIds",
           "type": "list",
@@ -948,6 +966,7 @@
       "members": [
         {
           "document": "专享集群的数量",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
@@ -955,6 +974,7 @@
         },
         {
           "document": "专享集群的列表",
+          "example": "[]",
           "member": "BindCluster",
           "name": "ClusterSet",
           "type": "list",
@@ -1031,6 +1051,7 @@
         {
           "default": "",
           "document": "集群的ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1044,6 +1065,7 @@
       "members": [
         {
           "document": "集群的详细信息",
+          "example": "NULL",
           "member": "Cluster",
           "name": "ClusterSet",
           "type": "object",
@@ -1112,6 +1134,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1120,6 +1143,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -1133,6 +1157,7 @@
       "members": [
         {
           "document": "未消费消息过期时间，单位：秒，最大1296000（15天）。",
+          "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
           "type": "int",
@@ -1140,6 +1165,7 @@
         },
         {
           "document": "消费速率限制，单位：byte/秒，0：不限速。",
+          "example": "0",
           "member": "uint64",
           "name": "RateInByte",
           "type": "int",
@@ -1147,6 +1173,7 @@
         },
         {
           "document": "消费速率限制，单位：个数/秒，0：不限速。",
+          "example": "0",
           "member": "uint64",
           "name": "RateInSize",
           "type": "int",
@@ -1154,6 +1181,7 @@
         },
         {
           "document": "已消费消息保存策略，单位：小时，0：消费完马上删除。",
+          "example": "0",
           "member": "uint64",
           "name": "RetentionHours",
           "type": "int",
@@ -1161,6 +1189,7 @@
         },
         {
           "document": "已消费消息保存策略，单位：G，0：消费完马上删除。",
+          "example": "0",
           "member": "uint64",
           "name": "RetentionSize",
           "type": "int",
@@ -1168,6 +1197,7 @@
         },
         {
           "document": "环境（命名空间）名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "type": "string",
@@ -1175,6 +1205,7 @@
         },
         {
           "document": "副本数。",
+          "example": "2",
           "member": "uint64",
           "name": "Replicas",
           "type": "int",
@@ -1182,6 +1213,7 @@
         },
         {
           "document": "备注。",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "type": "string",
@@ -1201,7 +1233,8 @@
       "members": [
         {
           "default": "",
-          "document": "环境（命名空间）",
+          "document": "环境（命名空间）名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -1210,6 +1243,7 @@
         {
           "default": "",
           "document": "起始下标，不填默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1218,6 +1252,7 @@
         {
           "default": "",
           "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1226,6 +1261,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -1234,6 +1270,7 @@
         {
           "default": "",
           "document": "角色名称",
+          "example": "role",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -1247,13 +1284,15 @@
       "members": [
         {
           "document": "记录数。",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "环境角色集合。",
+          "document": "命名空间角色集合。",
+          "example": "[]",
           "member": "EnvironmentRole",
           "name": "EnvironmentRoleSets",
           "type": "list",
@@ -1273,7 +1312,8 @@
       "members": [
         {
           "default": "",
-          "document": "环境（命名空间）名称，模糊搜索。",
+          "document": "命名空间名称，模糊搜索。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -1282,6 +1322,7 @@
         {
           "default": "",
           "document": "起始下标，不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1290,10 +1331,20 @@
         {
           "default": "",
           "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "5",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1302,14 +1353,16 @@
       "document": "DescribeEnvironments返回参数结构体",
       "members": [
         {
-          "document": "环境（命名空间）记录数。",
+          "document": "命名空间记录数。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "环境（命名空间）集合数组。",
+          "document": "命名空间集合数组。",
+          "example": "[]",
           "member": "Environment",
           "name": "EnvironmentSet",
           "type": "list",
@@ -1739,7 +1792,8 @@
       "members": [
         {
           "default": "",
-          "document": "集群Id，需要更新的集群Id。",
+          "document": "Pulsar 集群的ID，需要更新的集群Id。",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1748,6 +1802,7 @@
         {
           "default": "",
           "document": "更新后的集群名称。",
+          "example": "test",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -1756,6 +1811,7 @@
         {
           "default": "",
           "document": "说明信息。",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1768,7 +1824,8 @@
       "document": "ModifyCluster返回参数结构体",
       "members": [
         {
-          "document": "集群的ID",
+          "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "type": "string",
@@ -1788,7 +1845,8 @@
       "members": [
         {
           "default": "",
-          "document": "环境（命名空间）名称。",
+          "document": "命名空间名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1797,6 +1855,7 @@
         {
           "default": "",
           "document": "未消费消息过期时间，单位：秒，最大1296000。",
+          "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
           "required": true,
@@ -1805,6 +1864,7 @@
         {
           "default": "",
           "document": "备注，字符串最长不超过128。",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1812,7 +1872,8 @@
         },
         {
           "default": "",
-          "document": "Pulsar 集群的ID",
+          "document": "集群ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -1826,6 +1887,7 @@
       "members": [
         {
           "document": "命名空间名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "type": "string",
@@ -1833,6 +1895,7 @@
         },
         {
           "document": "未消费消息过期时间，单位：秒。",
+          "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
           "type": "int",
@@ -1840,6 +1903,7 @@
         },
         {
           "document": "备注，字符串最长不超过128。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "type": "string",
@@ -1847,6 +1911,7 @@
         },
         {
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "namespace-ak27qjs68x",
           "member": "string",
           "name": "NamespaceId",
           "type": "string",
@@ -2103,7 +2168,8 @@
       "members": [
         {
           "default": "",
-          "document": "环境（命名空间）名称。",
+          "document": "命名空间名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -2112,6 +2178,7 @@
         {
           "default": "",
           "document": "主题名称。",
+          "example": "topic",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -2120,6 +2187,7 @@
         {
           "default": "",
           "document": "订阅者名称。",
+          "example": "subscription",
           "member": "string",
           "name": "Subscription",
           "required": true,
@@ -2128,6 +2196,7 @@
         {
           "default": "",
           "document": "时间戳，精确到毫秒。",
+          "example": "1611050113 ",
           "member": "uint64",
           "name": "ToTimestamp",
           "required": true,
@@ -2136,6 +2205,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -2149,6 +2219,7 @@
       "members": [
         {
           "document": "结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",

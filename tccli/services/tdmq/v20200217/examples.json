@@ -13,7 +13,7 @@
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=CreateEnvironment\n&EnvironmentId=test1\n&MsgTTL=100\n&ClusterId=pulsar-xxxxxxxx\n&<公共请求参数>",
         "output": "{\r\n        \"Response\":{\r\n            \"EnvironmentId\":\"test1\",\r\n            \"NamespaceId\":\"namespace-8893gp3428\",\r\n            \"MsgTTL\":100,\r\n            \"Remark\":\"\",\r\n            \"RequestId\":\"0843ea4f-d6ba-463b-952c-75708a7e8901\"\r\n        }\r\n}",
-        "title": "创建环境"
+        "title": "创建命名空间"
       }
     ],
     "CreateSubscription": [
@@ -45,7 +45,7 @@
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DeleteEnvironments\n&EnvironmentIds.0=test1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"EnvironmentIds\": [\r\n            \"test1\"\r\n        ],\r\n        \"RequestId\": \"db8bd520-496e-4e7c-a4a1-e7414d3c315c\"\r\n    }\r\n}",
-        "title": "删除环境"
+        "title": "删除命名空间"
       }
     ],
     "DeleteSubscriptions": [
@@ -101,7 +101,7 @@
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeEnvironmentAttributes\n&EnvironmentId=test1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"MsgTTL\": 2000,\r\n        \"RateInByte\": 0,\r\n        \"RateInSize\": 0,\r\n        \"Replicas\": 2,\r\n        \"RetentionHours\": 0,\r\n        \"RetentionSize\": 0,\r\n        \"EnvironmentId\": \"test1\",\r\n        \"Remark\": \"备注\",\r\n        \"RequestId\": \"dec113a8-599a-4e70-b143-14425d48ffc4\"\r\n    }\r\n}",
-        "title": "列出指定环境属性"
+        "title": "列出指定命名空间属性"
       }
     ],
     "DescribeEnvironmentRoles": [
@@ -109,7 +109,7 @@
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeEnvironmentRoles\n&EnvironmentId=default\n&<公共请求参数>",
         "output": "{\"Response\": {\"TotalCount\": 1, \"EnvironmentRoleSets\": [{\"EnvironmentId\": \"default\", \"RoleName\": \"test_role\", \"Permissions\": [\"produce\", \"consume\"], \"RoleDescribe\": \"Remark1\", \"CreateTime\": \"2020-08-03 19:46:37\", \"UpdateTime\": \"2020-08-04 15:59:29\"}], \"RequestId\": \"gggxxxx\"}}",
-        "title": "获取环境角色列表"
+        "title": "获取命名空间角色列表"
       }
     ],
     "DescribeEnvironments": [
@@ -117,7 +117,7 @@
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeEnvironments\n&EnvironmentId=default\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"EnvironmentSet\": [\r\n            {\r\n                \"EnvironmentId\": \"xx\", \r\n                \"Remark\": \"xx\", \r\n                \"NamespaceName\": \"xx\", \r\n                \"UpdateTime\": \"2020-09-22 00:00:00\", \r\n                \"NamespaceId\": \"xx\", \r\n                \"MsgTTL\": 0, \r\n                \"CreateTime\": \"2020-09-22 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"2235829c-2c9d-44b0-bce4-0ce0a147cce0\"\r\n\r\n    }\r\n}",
-        "title": "获取环境列表"
+        "title": "获取命名空间列表"
       }
     ],
     "DescribeProducers": [
@@ -157,7 +157,7 @@
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=ModifyEnvironmentAttributes\n&EnvironmentId=test\n&ClusterId=pulsar-xxxxxxxx\n&MsgTTL=100\n&<公共请求参数>",
         "output": "{\r\n        \"Response\":{\r\n            \"EnvironmentId\":\"test\",\r\n            \"NamespaceId\":\"namespace-5r59xen74x\",\r\n            \"MsgTTL\":100,\r\n            \"Remark\":\"\",\r\n            \"RequestId\":\"7db00a30-933c-4f6f-bba9-79cdf6be7d8c\"\r\n        }\r\n}",
-        "title": "修改指定环境的属性值"
+        "title": "修改指定命名空间的属性值"
       }
     ],
     "ModifyTopic": [

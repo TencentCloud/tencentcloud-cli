@@ -366,6 +366,12 @@
       "name": "营业执照识别及核验（详细版）",
       "output": "VerifyBizLicenseResponse"
     },
+    "VerifyOfdVatInvoiceOCR": {
+      "document": "本接口支持OFD格式的增值税电子普通发票和增值税电子专用发票的识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。",
+      "input": "VerifyOfdVatInvoiceOCRRequest",
+      "name": "OFD发票识别",
+      "output": "VerifyOfdVatInvoiceOCRResponse"
+    },
     "VinOCR": {
       "document": "本接口支持图片内车辆识别代号（VIN）的检测和识别。",
       "input": "VinOCRRequest",
@@ -6468,6 +6474,92 @@
       ],
       "usage": "out"
     },
+    "VatInvoiceGoodsInfo": {
+      "document": "发票商品",
+      "members": [
+        {
+          "default": "",
+          "document": "项目名称",
+          "example": "大米",
+          "member": "string",
+          "name": "Item",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格型号",
+          "example": "个",
+          "member": "string",
+          "name": "Specification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位",
+          "example": "次",
+          "member": "string",
+          "name": "MeasurementDimension",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "价格",
+          "example": "5",
+          "member": "string",
+          "name": "Price",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数量",
+          "example": "1",
+          "member": "string",
+          "name": "Quantity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "金额",
+          "example": "5",
+          "member": "string",
+          "name": "Amount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税率(如6%、免税)",
+          "example": "免税",
+          "member": "string",
+          "name": "TaxScheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税额",
+          "example": "0",
+          "member": "string",
+          "name": "TaxAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VatInvoiceItem": {
       "document": "增值税发票项目明细",
       "members": [
@@ -6632,6 +6724,52 @@
         }
       ],
       "type": "object"
+    },
+    "VatInvoiceUserInfo": {
+      "document": "发票人员信息",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "XXX公司",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "纳税人识别号",
+          "example": "110101201801010XXX",
+          "member": "string",
+          "name": "TaxId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地 址、电 话",
+          "example": "XXXX 136XXXXXXXXXXXX",
+          "member": "string",
+          "name": "AddrTel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开户行及账号",
+          "example": "XX银行 621281240200999XXXXX",
+          "member": "string",
+          "name": "FinancialAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VatInvoiceVerifyRequest": {
       "document": "VatInvoiceVerify请求参数结构体",
@@ -7392,6 +7530,178 @@
           "member": "BizLicenseVerifyResult",
           "name": "RegNumResult",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyOfdVatInvoiceOCRRequest": {
+      "document": "VerifyOfdVatInvoiceOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "OFD文件的 Url 地址。",
+          "example": "http://test.ofd",
+          "member": "string",
+          "name": "OfdFileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "OFD文件的 Base64 值。\nOfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBase64。",
+          "example": "base64",
+          "member": "string",
+          "name": "OfdFileBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyOfdVatInvoiceOCRResponse": {
+      "document": "VerifyOfdVatInvoiceOCR返回参数结构体",
+      "members": [
+        {
+          "document": "发票类型\n026:增值税电子普通发票\n028:增值税电子专用发票",
+          "example": "026",
+          "member": "string",
+          "name": "Type",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发票代码",
+          "example": "111000010001",
+          "member": "string",
+          "name": "InvoiceCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发票号码",
+          "example": "46564400",
+          "member": "string",
+          "name": "InvoiceNumber",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开票日期",
+          "example": "2020年05月28日",
+          "member": "string",
+          "name": "IssueDate",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证码",
+          "example": "00403507329116165625",
+          "member": "string",
+          "name": "InvoiceCheckCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机器编号",
+          "example": "016000002977",
+          "member": "string",
+          "name": "MachineNumber",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "密码区",
+          "example": "00<9501<4//7+<+012+-XXXX",
+          "member": "string",
+          "name": "TaxControlCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "购买方",
+          "example": "Buyer",
+          "member": "VatInvoiceUserInfo",
+          "name": "Buyer",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "销售方",
+          "example": "Seller",
+          "member": "VatInvoiceUserInfo",
+          "name": "Seller",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "价税合计",
+          "example": "10",
+          "member": "string",
+          "name": "TaxInclusiveTotalAmount",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开票人",
+          "example": "张三",
+          "member": "string",
+          "name": "InvoiceClerk",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "收款人",
+          "example": "李四",
+          "member": "string",
+          "name": "Payee",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "复核人",
+          "example": "王五",
+          "member": "string",
+          "name": "Checker",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "税额",
+          "example": "10",
+          "member": "string",
+          "name": "TaxTotalAmount",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "不含税金额",
+          "example": "20",
+          "member": "string",
+          "name": "TaxExclusiveTotalAmount",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "货物或服务清单",
+          "example": "GoodsInfos",
+          "member": "VatInvoiceGoodsInfo",
+          "name": "GoodsInfos",
+          "type": "list",
           "value_allowed_null": false
         },
         {

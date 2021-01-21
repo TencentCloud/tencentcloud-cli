@@ -4219,11 +4219,20 @@
         },
         {
           "default": "",
-          "document": "是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "KeepaliveEnable",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仅支持Nat64 CLB TCP监听器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Toa",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
