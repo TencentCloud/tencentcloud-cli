@@ -1815,8 +1815,8 @@
     "ModifySecurityGroupPolicies": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifySecurityGroupPolicies\r\n&Version=2017-03-12\r\n&SecurityGroupId=sg-ohuuioma\r\n&SecurityGroupPolicySet.Egress.0.ServiceTemplate.ServiceId=ppm-f5n1f8da\r\n&SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressId=ipm-2uw6ujo6\r\n&SecurityGroupPolicySet.Egress.0.Action=accept\r\n&SecurityGroupPolicySet.Egress.0.PolicyDescription=TestPolicy\r\n&SecurityGroupPolicySet.Ingress.0.ServiceTemplate.ServiceId=ppm-f5n1f8da\r\n&SecurityGroupPolicySet.Ingress.0.AddressTemplate.AddressId=ipm-2uw6ujo6\r\n&SecurityGroupPolicySet.Ingress.0.Action=accept\r\n&SecurityGroupPolicySet.Ingress.0.PolicyDescription=Test\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestID\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifySecurityGroupPolicies\n&SecurityGroupId=sg-ohuuioma\n&SecurityGroupPolicySet.Egress.0.ServiceTemplate.ServiceId=ppm-f5n1f8da\n&SecurityGroupPolicySet.Egress.0.ServiceTemplate.ServiceGroupId=ppmg-f5n1f8da\n&SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressId=ipm-2uw6ujo6\n&SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressGroupId=ipmg-2uw6ujo6\n&SecurityGroupPolicySet.Egress.0.Action=accept\n&SecurityGroupPolicySet.Egress.0.PolicyDescription=TestPolicy\n&SecurityGroupPolicySet.Ingress.0.ServiceTemplate.ServiceId=ppm-f5n1f8da\n&SecurityGroupPolicySet.Ingress.0.ServiceTemplate.ServiceGroupId=ppmg-f5n1f8da\n&SecurityGroupPolicySet.Ingress.0.AddressTemplate.AddressId=ipm-2uw6ujo6\n&SecurityGroupPolicySet.Ingress.0.AddressTemplate.AddressGroupId=ipmg-2uw6ujo6\n&SecurityGroupPolicySet.Ingress.0.Action=accept\n&SecurityGroupPolicySet.Ingress.0.PolicyDescription=Test\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
         "title": "修改安全组出站和入站规则"
       }
     ],

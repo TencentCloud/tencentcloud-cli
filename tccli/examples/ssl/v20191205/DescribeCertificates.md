@@ -56,7 +56,13 @@ Output:
                 "IsWildcard": false,
                 "PackageTypeName": "TrustAsia TLS RSA CA",
                 "VulnerabilityStatus": "INACTIVE",
-                "Deployable": true
+                "Deployable": true,
+                "Tags": [
+                    {
+                        "TagKey": "testtag",
+                        "TagValue": "testtag"
+                    }
+                ]
             }
         ],
         "TotalCount": 12,

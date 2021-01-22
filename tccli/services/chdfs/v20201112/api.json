@@ -12,17 +12,65 @@
       "name": "创建权限组",
       "output": "CreateAccessGroupResponse"
     },
+    "CreateAccessRules": {
+      "document": "批量创建权限规则，权限规则ID和创建时间无需填写。",
+      "input": "CreateAccessRulesRequest",
+      "name": "批量创建权限规则",
+      "output": "CreateAccessRulesResponse"
+    },
     "CreateFileSystem": {
       "document": "创建文件系统（异步）。",
       "input": "CreateFileSystemRequest",
       "name": "创建文件系统",
       "output": "CreateFileSystemResponse"
     },
+    "CreateLifeCycleRules": {
+      "document": "批量创建生命周期规则，生命周期规则ID和创建时间无需填写。",
+      "input": "CreateLifeCycleRulesRequest",
+      "name": "批量创建生命周期规则",
+      "output": "CreateLifeCycleRulesResponse"
+    },
     "CreateMountPoint": {
       "document": "创建文件系统挂载点，仅限于创建成功的文件系统。",
       "input": "CreateMountPointRequest",
       "name": "创建挂载点",
       "output": "CreateMountPointResponse"
+    },
+    "CreateRestoreTasks": {
+      "document": "批量创建回热任务，回热任务ID、状态和创建时间无需填写。",
+      "input": "CreateRestoreTasksRequest",
+      "name": "批量创建回热任务",
+      "output": "CreateRestoreTasksResponse"
+    },
+    "DeleteAccessGroup": {
+      "document": "删除权限组。",
+      "input": "DeleteAccessGroupRequest",
+      "name": "删除权限组",
+      "output": "DeleteAccessGroupResponse"
+    },
+    "DeleteAccessRules": {
+      "document": "批量删除权限规则。",
+      "input": "DeleteAccessRulesRequest",
+      "name": "批量删除权限规则",
+      "output": "DeleteAccessRulesResponse"
+    },
+    "DeleteFileSystem": {
+      "document": "删除文件系统，不允许删除非空文件系统。",
+      "input": "DeleteFileSystemRequest",
+      "name": "删除文件系统",
+      "output": "DeleteFileSystemResponse"
+    },
+    "DeleteLifeCycleRules": {
+      "document": "批量删除生命周期规则。",
+      "input": "DeleteLifeCycleRulesRequest",
+      "name": "批量删除生命周期规则",
+      "output": "DeleteLifeCycleRulesResponse"
+    },
+    "DeleteMountPoint": {
+      "document": "删除挂载点。",
+      "input": "DeleteMountPointRequest",
+      "name": "删除挂载点",
+      "output": "DeleteMountPointResponse"
     },
     "DescribeAccessGroup": {
       "document": "查看权限组详细信息。",
@@ -54,6 +102,12 @@
       "name": "查看文件系统列表",
       "output": "DescribeFileSystemsResponse"
     },
+    "DescribeLifeCycleRules": {
+      "document": "通过文件系统ID查看生命周期规则列表。",
+      "input": "DescribeLifeCycleRulesRequest",
+      "name": "查看生命周期规则列表",
+      "output": "DescribeLifeCycleRulesResponse"
+    },
     "DescribeMountPoint": {
       "document": "查看挂载点详细信息。",
       "input": "DescribeMountPointRequest",
@@ -65,6 +119,18 @@
       "input": "DescribeMountPointsRequest",
       "name": "查看挂载点列表",
       "output": "DescribeMountPointsResponse"
+    },
+    "DescribeResourceTags": {
+      "document": "通过文件系统ID查看资源标签列表。",
+      "input": "DescribeResourceTagsRequest",
+      "name": "查看资源标签列表",
+      "output": "DescribeResourceTagsResponse"
+    },
+    "DescribeRestoreTasks": {
+      "document": "通过文件系统ID查看回热任务列表。",
+      "input": "DescribeRestoreTasksRequest",
+      "name": "查看回热任务列表",
+      "output": "DescribeRestoreTasksResponse"
     },
     "DisassociateAccessGroups": {
       "document": "给挂载点解绑多个权限组。",
@@ -78,11 +144,23 @@
       "name": "修改权限组属性",
       "output": "ModifyAccessGroupResponse"
     },
+    "ModifyAccessRules": {
+      "document": "批量修改权限规则属性，需要指定权限规则ID，支持修改权限规则地址、访问模式和优先级。",
+      "input": "ModifyAccessRulesRequest",
+      "name": "批量修改权限规则属性",
+      "output": "ModifyAccessRulesResponse"
+    },
     "ModifyFileSystem": {
       "document": "修改文件系统属性，仅限于创建成功的文件系统。",
       "input": "ModifyFileSystemRequest",
       "name": "修改文件系统属性",
       "output": "ModifyFileSystemResponse"
+    },
+    "ModifyLifeCycleRules": {
+      "document": "批量修改生命周期规则属性，需要指定生命周期规则ID，支持修改生命周期规则名称、路径、转换列表和状态。",
+      "input": "ModifyLifeCycleRulesRequest",
+      "name": "批量修改生命周期规则属性",
+      "output": "ModifyLifeCycleRulesResponse"
     },
     "ModifyMountPoint": {
       "document": "修改挂载点属性。",
@@ -306,6 +384,42 @@
       ],
       "type": "object"
     },
+    "CreateAccessRulesRequest": {
+      "document": "CreateAccessRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个权限规则，上限为10",
+          "example": "无",
+          "member": "AccessRule",
+          "name": "AccessRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "权限组ID",
+          "example": "ag-jwmfdcul",
+          "member": "string",
+          "name": "AccessGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccessRulesResponse": {
+      "document": "CreateAccessRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFileSystemRequest": {
       "document": "CreateFileSystem请求参数结构体",
       "members": [
@@ -387,6 +501,42 @@
       ],
       "type": "object"
     },
+    "CreateLifeCycleRulesRequest": {
+      "document": "CreateLifeCycleRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "多个生命周期规则，上限为10",
+          "example": "无",
+          "member": "LifeCycleRule",
+          "name": "LifeCycleRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLifeCycleRulesResponse": {
+      "document": "CreateLifeCycleRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMountPointRequest": {
       "document": "CreateMountPoint请求参数结构体",
       "members": [
@@ -427,6 +577,177 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRestoreTasksRequest": {
+      "document": "CreateRestoreTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "多个回热任务，上限为10",
+          "example": "无",
+          "member": "RestoreTask",
+          "name": "RestoreTasks",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRestoreTasksResponse": {
+      "document": "CreateRestoreTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessGroupRequest": {
+      "document": "DeleteAccessGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组ID",
+          "example": "ag-f8xoises",
+          "member": "string",
+          "name": "AccessGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessGroupResponse": {
+      "document": "DeleteAccessGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessRulesRequest": {
+      "document": "DeleteAccessRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个权限规则ID，上限为10",
+          "example": "[13001, 13002]",
+          "member": "uint64",
+          "name": "AccessRuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessRulesResponse": {
+      "document": "DeleteAccessRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFileSystemRequest": {
+      "document": "DeleteFileSystem请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFileSystemResponse": {
+      "document": "DeleteFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLifeCycleRulesRequest": {
+      "document": "DeleteLifeCycleRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个生命周期规则ID，上限为10",
+          "example": "[1, 2]",
+          "member": "uint64",
+          "name": "LifeCycleRuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLifeCycleRulesResponse": {
+      "document": "DeleteLifeCycleRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMountPointRequest": {
+      "document": "DeleteMountPoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "挂载点ID",
+          "example": "f4mnvilzmdd-fj7A",
+          "member": "string",
+          "name": "MountPointId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMountPointResponse": {
+      "document": "DeleteMountPoint返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -614,6 +935,41 @@
       ],
       "type": "object"
     },
+    "DescribeLifeCycleRulesRequest": {
+      "document": "DescribeLifeCycleRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLifeCycleRulesResponse": {
+      "document": "DescribeLifeCycleRules返回参数结构体",
+      "members": [
+        {
+          "document": "生命周期规则列表",
+          "example": "无",
+          "member": "LifeCycleRule",
+          "name": "LifeCycleRules",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMountPointRequest": {
       "document": "DescribeMountPoint请求参数结构体",
       "members": [
@@ -684,6 +1040,76 @@
           "document": "挂载点列表",
           "member": "MountPoint",
           "name": "MountPoints",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsRequest": {
+      "document": "DescribeResourceTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsResponse": {
+      "document": "DescribeResourceTags返回参数结构体",
+      "members": [
+        {
+          "document": "资源标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRestoreTasksRequest": {
+      "document": "DescribeRestoreTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRestoreTasksResponse": {
+      "document": "DescribeRestoreTasks返回参数结构体",
+      "members": [
+        {
+          "document": "回热任务列表",
+          "example": "无",
+          "member": "RestoreTask",
+          "name": "RestoreTasks",
           "type": "list",
           "value_allowed_null": false
         },
@@ -835,6 +1261,72 @@
       ],
       "usage": "out"
     },
+    "LifeCycleRule": {
+      "document": "生命周期规则",
+      "members": [
+        {
+          "default": "",
+          "document": "生命周期规则ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "LifeCycleRuleId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生命周期规则名称",
+          "example": "test",
+          "member": "string",
+          "name": "LifeCycleRuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生命周期规则路径（目录或文件）",
+          "example": "/test",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生命周期规则转换列表",
+          "example": "无",
+          "member": "Transition",
+          "name": "Transitions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生命周期规则状态（1：打开；2：关闭）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2019-07-30T16:24:38+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyAccessGroupRequest": {
       "document": "ModifyAccessGroup请求参数结构体",
       "members": [
@@ -867,6 +1359,33 @@
     },
     "ModifyAccessGroupResponse": {
       "document": "ModifyAccessGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessRulesRequest": {
+      "document": "ModifyAccessRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个权限规则，上限为10",
+          "example": "无",
+          "member": "AccessRule",
+          "name": "AccessRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessRulesResponse": {
+      "document": "ModifyAccessRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -933,6 +1452,33 @@
     },
     "ModifyFileSystemResponse": {
       "document": "ModifyFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLifeCycleRulesRequest": {
+      "document": "ModifyLifeCycleRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个生命周期规则，上限为10",
+          "example": "无",
+          "member": "LifeCycleRule",
+          "name": "LifeCycleRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLifeCycleRulesResponse": {
+      "document": "ModifyLifeCycleRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1079,6 +1625,72 @@
       ],
       "usage": "out"
     },
+    "RestoreTask": {
+      "document": "回热任务",
+      "members": [
+        {
+          "default": "",
+          "document": "回热任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "RestoreTaskId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回热任务文件路径",
+          "example": "/test/file0",
+          "member": "string",
+          "name": "FilePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回热任务类型（1：标准；2：极速；3：批量）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定恢复出的临时副本的有效时长（单位天）",
+          "example": "7",
+          "member": "uint64",
+          "name": "Days",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2019-07-30T16:24:38+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Tag": {
       "document": "资源标签。",
       "members": [
@@ -1098,6 +1710,32 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Transition": {
+      "document": "生命周期规则转换属性",
+      "members": [
+        {
+          "default": "",
+          "document": "触发时间（单位天）",
+          "example": "7",
+          "member": "uint64",
+          "name": "Days",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转换类型（1：归档；2：删除）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

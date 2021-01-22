@@ -1111,6 +1111,57 @@
       ],
       "usage": "out"
     },
+    "ImageRect": {
+      "document": "图像坐标信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "左上角横坐标。",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "左上角纵坐标。",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人体宽度。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人体高度。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分割选项名称。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "KeyPointInfo": {
       "document": "人体关键点信息",
       "members": [
@@ -1466,6 +1517,7 @@
         {
           "default": "",
           "document": "此参数为分割选项，请根据需要选择自己所想从图片中分割的部分。注意所有选项均为非必选，如未选择则值默认为false, 但是必须要保证多于一个选项的描述为true。",
+          "example": "{",
           "member": "SegmentationOptions",
           "name": "SegmentationOptions",
           "required": true,
@@ -1474,6 +1526,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n图片分辨率须小于2000*2000。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "base64",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -1482,6 +1535,7 @@
         {
           "default": "",
           "document": "图片的 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片分辨率须小于2000*2000 ，图片 base64 编码后大小不可超过5M。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "test.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1495,6 +1549,7 @@
       "members": [
         {
           "document": "根据指定标签分割输出的透明背景人像图片的 base64 数据。",
+          "example": "base64",
           "member": "string",
           "name": "PortraitImage",
           "type": "string",
@@ -1502,10 +1557,19 @@
         },
         {
           "document": "指定标签处理后的Mask。一个通过 Base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）",
+          "example": "base64",
           "member": "string",
           "name": "MaskImage",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "坐标信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{",
+          "member": "ImageRect",
+          "name": "ImageRects",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

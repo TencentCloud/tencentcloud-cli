@@ -78,6 +78,12 @@
       "name": "创建集群路由表",
       "output": "CreateClusterRouteTableResponse"
     },
+    "CreateEKSCluster": {
+      "document": "创建弹性集群",
+      "input": "CreateEKSClusterRequest",
+      "name": "创建弹性集群",
+      "output": "CreateEKSClusterResponse"
+    },
     "CreatePrometheusDashboard": {
       "document": "创建grafana监控面板",
       "input": "CreatePrometheusDashboardRequest",
@@ -137,6 +143,12 @@
       "input": "DeleteClusterRouteTableRequest",
       "name": "删除集群路由表",
       "output": "DeleteClusterRouteTableResponse"
+    },
+    "DeleteEKSCluster": {
+      "document": "删除弹性集群(yunapiv3)",
+      "input": "DeleteEKSClusterRequest",
+      "name": "删除弹性集群",
+      "output": "DeleteEKSClusterResponse"
     },
     "DeletePrometheusTemplate": {
       "document": "删除一个云原生Promehtheus配置模板",
@@ -227,6 +239,18 @@
       "input": "DescribeClustersRequest",
       "name": "查询集群列表",
       "output": "DescribeClustersResponse"
+    },
+    "DescribeEKSClusterCredential": {
+      "document": "获取弹性容器集群的接入认证信息",
+      "input": "DescribeEKSClusterCredentialRequest",
+      "name": "获取弹性容器集群的认证信息",
+      "output": "DescribeEKSClusterCredentialResponse"
+    },
+    "DescribeEKSClusters": {
+      "document": "查询弹性集群列表",
+      "input": "DescribeEKSClustersRequest",
+      "name": "查询弹性集群列表",
+      "output": "DescribeEKSClustersResponse"
     },
     "DescribeExistedInstances": {
       "document": "查询已经存在的节点，判断是否可以加入集群",
@@ -359,6 +383,12 @@
       "input": "UpdateClusterVersionRequest",
       "name": "升级集群",
       "output": "UpdateClusterVersionResponse"
+    },
+    "UpdateEKSCluster": {
+      "document": "修改弹性集群名称等属性 ",
+      "input": "UpdateEKSClusterRequest",
+      "name": "修改弹性集群",
+      "output": "UpdateEKSClusterResponse"
     },
     "UpgradeClusterInstances": {
       "document": "给集群的一批work节点进行升级 ",
@@ -1396,6 +1426,30 @@
       ],
       "usage": "in"
     },
+    "ClusterCredential": {
+      "document": "接入k8s 的认证信息",
+      "members": [
+        {
+          "default": "",
+          "document": "CA 根证书",
+          "member": "string",
+          "name": "CACert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证用的Token",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClusterExtraArgs": {
       "document": "集群master自定义参数",
       "members": [
@@ -1428,6 +1482,30 @@
         }
       ],
       "usage": "both"
+    },
+    "ClusterInternalLB": {
+      "document": "弹性容器集群内网访问LB信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启内网访问LB",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网访问LB关联的子网Id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ClusterNetworkSettings": {
       "document": "集群网络相关的参数",
@@ -1497,6 +1575,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ClusterPublicLB": {
+      "document": "弹性容器集群公网访问负载均衡信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启公网访问LB",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许访问的来源CIDR列表",
+          "example": "[]",
+          "member": "string",
+          "name": "AllowFromCidrs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
+          "example": "[]",
+          "member": "string",
+          "name": "SecurityPolicies",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ClusterVersion": {
       "document": "集群版本信息",
@@ -2058,6 +2172,113 @@
       ],
       "type": "object"
     },
+    "CreateEKSClusterRequest": {
+      "document": "CreateEKSCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "k8s版本号。可为1.14.4, 1.12.8。",
+          "example": "1.12.8",
+          "member": "string",
+          "name": "K8SVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc 的Id",
+          "example": "vpc-2d1oi031",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网Id 列表",
+          "example": "[",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群描述信息",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Serivce 所在子网Id",
+          "example": "subnet-i9sqn2mq",
+          "member": "string",
+          "name": "ServiceSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群自定义的Dns服务器信息",
+          "example": "{aa}",
+          "member": "DnsServerConf",
+          "name": "DnsServers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扩展参数。须是map[string]string 的json 格式。",
+          "example": "{aa}",
+          "member": "string",
+          "name": "ExtraParam",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否在用户集群内开启Dns。默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableVpcCoreDNS",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEKSClusterResponse": {
+      "document": "CreateEKSCluster返回参数结构体",
+      "members": [
+        {
+          "document": "弹性集群Id",
+          "example": "cls-hofqp2ie",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusDashboardRequest": {
       "document": "CreatePrometheusDashboard请求参数结构体",
       "members": [
@@ -2499,6 +2720,33 @@
     },
     "DeleteClusterRouteTableResponse": {
       "document": "DeleteClusterRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEKSClusterRequest": {
+      "document": "DeleteEKSCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "弹性集群Id",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEKSClusterResponse": {
+      "document": "DeleteEKSCluster返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3213,6 +3461,135 @@
       ],
       "type": "object"
     },
+    "DescribeEKSClusterCredentialRequest": {
+      "document": "DescribeEKSClusterCredential请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEKSClusterCredentialResponse": {
+      "document": "DescribeEKSClusterCredential返回参数结构体",
+      "members": [
+        {
+          "document": "集群的接入地址信息",
+          "example": "{}",
+          "member": "IPAddress",
+          "name": "Addresses",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的认证信息",
+          "example": "{}",
+          "member": "ClusterCredential",
+          "name": "Credential",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的公网访问信息",
+          "example": "{}",
+          "member": "ClusterPublicLB",
+          "name": "PublicLB",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的内网访问信息",
+          "example": "{}",
+          "member": "ClusterInternalLB",
+          "name": "InternalLB",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEKSClustersRequest": {
+      "document": "DescribeEKSClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID列表(为空时，\n表示获取账号下所有集群)",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大输出条数，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件,当前只支持按照单个条件ClusterName进行过滤",
+          "example": "cls-xxxxxx",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEKSClustersResponse": {
+      "document": "DescribeEKSClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群总个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群信息列表",
+          "example": "{}",
+          "member": "EksCluster",
+          "name": "Clusters",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExistedInstancesRequest": {
       "document": "DescribeExistedInstances请求参数结构体",
       "members": [
@@ -3766,6 +4143,144 @@
       ],
       "type": "object"
     },
+    "DnsServerConf": {
+      "document": "Eks 自定义域名服务器 配置",
+      "members": [
+        {
+          "default": "",
+          "document": "域名。空字符串表示所有域名。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "dns 服务器地址列表。地址格式 ip:port",
+          "member": "string",
+          "name": "DnsServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EksCluster": {
+      "document": "弹性集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpc Id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网列表",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "k8s 版本号",
+          "member": "string",
+          "name": "K8SVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群描述信息",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群创建时间",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Service 子网Id",
+          "member": "string",
+          "name": "ServiceSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群的自定义dns 服务器信息",
+          "member": "DnsServerConf",
+          "name": "DnsServers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "将来删除集群时是否要删除cbs。默认为 FALSE",
+          "member": "bool",
+          "name": "NeedDeleteCbs",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否在用户集群内开启Dns。默认为TRUE",
+          "member": "bool",
+          "name": "EnableVpcCoreDNS",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EnhancedService": {
       "document": "描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent",
       "members": [
@@ -4139,6 +4654,39 @@
         }
       ],
       "type": "object"
+    },
+    "IPAddress": {
+      "document": "IP 地址",
+      "members": [
+        {
+          "default": "",
+          "document": "Ip 地址的类型。可为 advertise, public 等",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ip 地址",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络端口",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ImageInstance": {
       "document": "镜像信息",
@@ -6502,6 +7050,114 @@
     },
     "UpdateClusterVersionResponse": {
       "document": "UpdateClusterVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEKSClusterRequest": {
+      "document": "UpdateEKSCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "弹性集群Id",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性集群名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性集群描述信息",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网Id 列表",
+          "example": "[subnet-xxxx]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "弹性容器集群公网访问LB信息",
+          "example": "{}",
+          "member": "ClusterPublicLB",
+          "name": "PublicLB",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "弹性容器集群内网访问LB信息",
+          "example": "{}",
+          "member": "ClusterInternalLB",
+          "name": "InternalLB",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Service 子网Id",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "ServiceSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群自定义的dns 服务器信息",
+          "example": "{}",
+          "member": "DnsServerConf",
+          "name": "DnsServers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否清空自定义dns 服务器设置。为1 表示 是。其他表示 否。",
+          "example": "1",
+          "member": "string",
+          "name": "ClearDnsServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "将来删除集群时是否要删除cbs。默认为 FALSE",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteCbs",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEKSClusterResponse": {
+      "document": "UpdateEKSCluster返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

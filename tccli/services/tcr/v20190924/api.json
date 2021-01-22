@@ -751,6 +751,7 @@
         {
           "default": "",
           "document": "企业版实例名称",
+          "example": "tcr-test",
           "member": "string",
           "name": "RegistryName",
           "required": true,
@@ -758,7 +759,8 @@
         },
         {
           "default": "",
-          "document": "企业版实例类型",
+          "document": "企业版实例类型（basic 基础版；standard 标准版；premium 高级版）",
+          "example": "basic",
           "member": "string",
           "name": "RegistryType",
           "required": true,
@@ -767,6 +769,7 @@
         {
           "default": "",
           "document": "云标签描述",
+          "example": "test",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -775,6 +778,7 @@
         {
           "default": "",
           "document": "实例计费类型，0表示按量计费，1表示预付费，当前版本只支持后付费，默认为按量计费",
+          "example": "1",
           "member": "int64",
           "name": "RegistryChargeType",
           "required": false,
@@ -788,6 +792,7 @@
       "members": [
         {
           "document": "企业版实例Id",
+          "example": "tcr-123456",
           "member": "string",
           "name": "RegistryId",
           "type": "string",

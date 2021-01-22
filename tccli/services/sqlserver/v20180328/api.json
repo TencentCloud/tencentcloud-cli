@@ -288,6 +288,12 @@
       "name": "修改实例名字",
       "output": "ModifyDBInstanceNameResponse"
     },
+    "ModifyDBInstanceNetwork": {
+      "document": "本接口（ModifyDBInstanceNetwork）用于修改运行中实例的网络，仅支持从VPC网络到VPC网络的转换",
+      "input": "ModifyDBInstanceNetworkRequest",
+      "name": "修改实例网络",
+      "output": "ModifyDBInstanceNetworkResponse"
+    },
     "ModifyDBInstanceProject": {
       "document": "本接口（ModifyDBInstanceProject）用于修改数据库实例所属项目。",
       "input": "ModifyDBInstanceProjectRequest",
@@ -1140,6 +1146,14 @@
           "name": "Span",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新建实例绑定的标签集合",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1317,6 +1331,14 @@
           "name": "MultiZones",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "新建实例绑定的标签集合",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1678,6 +1700,14 @@
           "document": "代金券ID数组，目前单个订单只能使用一张",
           "member": "string",
           "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "新建实例绑定的标签集合",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
           "required": false,
           "type": "list"
         }
@@ -2139,6 +2169,15 @@
           "name": "HAFlag",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -2940,6 +2979,54 @@
           "document": "实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。",
           "member": "string",
           "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例内网地址列表，格式如：172.1.0.12",
+          "member": "string",
+          "name": "VipSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例名称列表，模糊查询",
+          "member": "string",
+          "name": "InstanceNameSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例版本代号列表，格式如：2008R2，2012SP3等",
+          "member": "string",
+          "name": "VersionSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例可用区，格式如：ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例标签列表",
+          "member": "string",
+          "name": "TagKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模糊查询关键字，支持实例id、实例名、内网ip",
+          "member": "string",
+          "name": "SearchKey",
           "required": false,
           "type": "string"
         }
@@ -4896,6 +4983,63 @@
       ],
       "type": "object"
     },
+    "ModifyDBInstanceNetworkRequest": {
+      "document": "ModifyDBInstanceNetwork请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新VPC网络Id",
+          "member": "string",
+          "name": "NewVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新子网Id",
+          "member": "string",
+          "name": "NewSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原vip保留时长，单位小时，默认为0，代表立即回收，最大为168小时",
+          "member": "int64",
+          "name": "OldIpRetainTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceNetworkResponse": {
+      "document": "ModifyDBInstanceNetwork返回参数结构体",
+      "members": [
+        {
+          "document": "实例转网流程id，可通过[DescribeFlowStatus](https://cloud.tencent.com/document/product/238/19967)接口查询流程状态",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceProjectRequest": {
       "document": "ModifyDBInstanceProject请求参数结构体",
       "members": [
@@ -6134,6 +6278,30 @@
       ],
       "type": "object"
     },
+    "ResourceTag": {
+      "document": "实例绑定的标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签key",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签value",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RestartDBInstanceRequest": {
       "document": "RestartDBInstance请求参数结构体",
       "members": [
@@ -6819,7 +6987,7 @@
           "document": "实例升级后内存大小，单位GB，其值不能小于当前实例内存大小",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -6827,7 +6995,7 @@
           "document": "实例升级后磁盘大小，单位GB，其值不能小于当前实例磁盘大小",
           "member": "int64",
           "name": "Storage",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -6853,6 +7021,30 @@
           "name": "Cpu",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本",
+          "member": "string",
+          "name": "DBVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构",
+          "member": "string",
+          "name": "HAType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区",
+          "member": "string",
+          "name": "MultiZones",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

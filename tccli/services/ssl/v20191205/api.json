@@ -339,6 +339,7 @@
         {
           "default": "",
           "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -348,6 +349,7 @@
         {
           "default": "",
           "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -357,6 +359,7 @@
         {
           "default": "",
           "document": "证书来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "From",
           "required": true,
@@ -366,6 +369,7 @@
         {
           "default": "",
           "document": "证书套餐类型：1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PackageType",
           "required": true,
@@ -375,6 +379,7 @@
         {
           "default": "",
           "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CertificateType",
           "required": true,
@@ -384,6 +389,7 @@
         {
           "default": "",
           "document": "颁发者。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ProductZhName",
           "required": true,
@@ -393,6 +399,7 @@
         {
           "default": "",
           "document": "主域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -402,6 +409,7 @@
         {
           "default": "",
           "document": "备注名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -411,6 +419,7 @@
         {
           "default": "",
           "document": "状态值 0：审核中，1：已通过，2：审核失败，3：已过期，4：已添加 DNS 解析记录，5：OV/EV 证书，待提交资料，6：订单取消中，7：已取消，8：已提交资料， 待上传确认函。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -420,6 +429,7 @@
         {
           "default": "",
           "document": "证书扩展信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CertificateExtra",
           "name": "CertificateExtra",
           "required": true,
@@ -429,6 +439,7 @@
         {
           "default": "",
           "document": "漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VulnerabilityStatus",
           "required": true,
@@ -438,6 +449,7 @@
         {
           "default": "",
           "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "StatusMsg",
           "required": true,
@@ -447,6 +459,7 @@
         {
           "default": "",
           "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，EMAIL = 邮件验证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VerifyType",
           "required": true,
@@ -456,6 +469,7 @@
         {
           "default": "",
           "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CertBeginTime",
           "required": true,
@@ -465,6 +479,7 @@
         {
           "default": "",
           "document": "证书过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CertEndTime",
           "required": true,
@@ -474,6 +489,7 @@
         {
           "default": "",
           "document": "证书有效期，单位（月）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ValidityPeriod",
           "required": true,
@@ -483,6 +499,7 @@
         {
           "default": "",
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InsertTime",
           "required": true,
@@ -492,6 +509,7 @@
         {
           "default": "",
           "document": "证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -501,6 +519,7 @@
         {
           "default": "",
           "document": "证书包含的多个域名（包含主域名）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SubjectAltName",
           "required": true,
@@ -510,6 +529,7 @@
         {
           "default": "",
           "document": "证书类型名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PackageTypeName",
           "required": true,
@@ -519,6 +539,7 @@
         {
           "default": "",
           "document": "状态名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "StatusName",
           "required": true,
@@ -528,6 +549,7 @@
         {
           "default": "",
           "document": "是否为 VIP 客户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "IsVip",
           "required": true,
@@ -537,6 +559,7 @@
         {
           "default": "",
           "document": "是否为 DV 版证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "IsDv",
           "required": true,
@@ -546,6 +569,7 @@
         {
           "default": "",
           "document": "是否为泛域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "IsWildcard",
           "required": true,
@@ -555,6 +579,7 @@
         {
           "default": "",
           "document": "是否启用了漏洞扫描功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "IsVulnerability",
           "required": true,
@@ -564,6 +589,7 @@
         {
           "default": "",
           "document": "是否可重颁发证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "RenewAble",
           "required": true,
@@ -573,6 +599,7 @@
         {
           "default": "",
           "document": "项目信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ProjectInfo",
           "name": "ProjectInfo",
           "required": true,
@@ -582,6 +609,7 @@
         {
           "default": "",
           "document": "关联的云资源，暂不可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "BoundResource",
           "required": true,
@@ -591,6 +619,7 @@
         {
           "default": "",
           "document": "是否可部署。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "Deployable",
           "required": true,
@@ -1386,6 +1415,7 @@
         {
           "default": "",
           "document": "分页偏移量，从0开始。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1394,6 +1424,7 @@
         {
           "default": "",
           "document": "每页数量，默认20。",
+          "example": "11",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1402,6 +1433,7 @@
         {
           "default": "",
           "document": "搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。",
+          "example": "string",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -1410,6 +1442,7 @@
         {
           "default": "",
           "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。",
+          "example": "CA",
           "member": "string",
           "name": "CertificateType",
           "required": false,
@@ -1418,6 +1451,7 @@
         {
           "default": "",
           "document": "项目 ID。",
+          "example": "1",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -1426,6 +1460,7 @@
         {
           "default": "",
           "document": "按到期时间排序：DESC = 降序， ASC = 升序。",
+          "example": "DESC ",
           "member": "string",
           "name": "ExpirationSort",
           "required": false,
@@ -1434,6 +1469,7 @@
         {
           "default": "",
           "document": "证书状态。",
+          "example": "1",
           "member": "uint64",
           "name": "CertificateStatus",
           "required": false,
@@ -1442,6 +1478,7 @@
         {
           "default": "",
           "document": "是否可部署，可选值：1 = 可部署，0 =  不可部署。",
+          "example": "1",
           "member": "uint64",
           "name": "Deployable",
           "required": false,
@@ -1455,6 +1492,7 @@
       "members": [
         {
           "document": "总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -1462,6 +1500,7 @@
         },
         {
           "document": "列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "Certificates",
           "name": "Certificates",
           "type": "list",

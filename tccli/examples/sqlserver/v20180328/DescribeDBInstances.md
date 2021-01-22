@@ -9,11 +9,17 @@ tccli sqlserver DescribeDBInstances --cli-unfold-argument  \
     --ProjectId 0 \
     --InstanceIdSet mssql-3l3fgqn7 \
     --Status 2 \
+    --VipSet 172.1.0.12 \
+    --InstanceNameSet 数仓 \
+    --VersionSet 2008R2 \
+    --Zone ap-guangzhou-2 \
+    --TagKeys 测试tag \
     --Offset 0 \
     --Limit 3 \
     --PayMode 1 \
     --VpcId vpc-mknbt351 \
-    --SubnetId subnet-f72hylo6
+    --SubnetId subnet-f72hylo6 \
+    --SearchKey 172.17.0.12
 ```
 
 Output: 
@@ -47,13 +53,23 @@ Output:
                 "UsedStorage": 0,
                 "Version": "2008R2",
                 "VersionName": "SQL Server 2008 Enterprise",
-                "Vip": "",
+                "Vip": "172.17.0.12",
                 "VpcId": 14,
                 "Vport": 1433,
                 "Zone": "ap-guangzhou-2",
                 "ZoneId": 100002,
                 "UniqVpcId": "vpc-mknbt351",
-                "UniqSubnetId": "subnet-f72hylo6"
+                "UniqSubnetId": "subnet-f72hylo6",
+                "IsolateOperator": "",
+                "SubFlag": "",
+                "ROFlag": "",
+                "HAFlag": "MIRROR",
+                "ResourceTags": [
+                    {
+                        "TagKey": "测试tag",
+                        "TagValue": "测试tagValue"
+                    }
+                ]
             }
         ],
         "RequestId": "9c65fec1-8bce-4be9-b0fd-5f559553b546",

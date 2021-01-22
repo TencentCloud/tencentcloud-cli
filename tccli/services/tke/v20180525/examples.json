@@ -116,6 +116,14 @@
         "title": "创建集群路由表"
       }
     ],
+    "CreateEKSCluster": [
+      {
+        "document": "创建托管集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateEKSCluster\n&K8SVersion=1.12.4\n&VpcId=vpc-xxx\n&ClusterName=for_test\n&SubnetIds.0=subnet-xxxx\n&ClusterDesc=my_test_cluster\n&ServiceSubnetId=subnet-xxxx\n&DnsServers.0.Domain=exam.com\n&DnsServers.0.DnsServers.0=10.2.2.88:53\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"ClusterId\": \"cls-xxx\",\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "创建弹性集群示例"
+      }
+    ],
     "CreatePrometheusDashboard": [
       {
         "document": "",
@@ -194,6 +202,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterRouteTable\r\n&RouteTableName=MANAGED_CLUSTER\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
         "title": "删除集群路由表"
+      }
+    ],
+    "DeleteEKSCluster": [
+      {
+        "document": "删除弹性集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEKSCluster\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "删除弹性集群"
       }
     ],
     "DeletePrometheusTemplate": [
@@ -314,6 +330,22 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusters\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Clusters\": [\r\n            {\r\n                \"ClusterId\": \"cls-xxxxxxx\",\r\n                \"ClusterName\": \"集群\",\r\n                \"ClusterDescription\": \"\",\r\n                \"ClusterVersion\": \"1.10.5\",\r\n                \"ClusterOs\": \"ubuntu16.04.1 LTSx86_64\",\r\n                \"ClusterType\": \"INDEPENDENT_CLUSTER\",\r\n                \"ClusterNetworkSettings\": {\r\n                    \"ClusterCIDR\": \"10.211.0.0/16\",\r\n                    \"IgnoreClusterCIDRConflict\": false,\r\n                    \"MaxNodePodNum\": 256,\r\n                    \"MaxClusterServiceNum\": 256,\r\n                    \"Ipvs\": false,\r\n                    \"VpcId\": \"vpc-xxxxxx\"\r\n                },\r\n                \"ClusterNodeNum\": 3\r\n            }\r\n        ],\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
         "title": "查询集群列表"
+      }
+    ],
+    "DescribeEKSClusterCredential": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEKSClusterCredential\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {        \r\n        \"Addresses\": [\r\n          {\r\n            \"Type\": \"advertise\",\r\n            \"Ip\": \"169.254.128.200\",\r\n            \"Port\": 60002\r\n          },\r\n          {\r\n            \"Type\": \"public\",\r\n            \"Ip\": \"100.98.109.15\",\r\n            \"Port\": 11126\r\n          }\r\n        ],\r\n        \"InternalLB\": {\r\n            \"SubnetId\": \"xx\", \r\n            \"Enabled\": true\r\n        }, \r\n        \"PublicLB\": {\r\n            \"SecurityPolicies\": [\r\n                \"xx\"\r\n            ], \r\n            \"Enabled\": true, \r\n            \"AllowFromCidrs\": [\r\n                \"xx\"\r\n            ]\r\n        }, \r\n        \"Credential\": {\r\n          \"CACert\": \"LS0tLS1CRUdJTiBDRVJUSUZJQ0FULQo=\",\r\n          \"Token\": \"WBnCe69iqui0HuEZJ0Yac2hvwxQ1jG0j\"\r\n        },\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "获取弹性容器集群的接入认证信息"
+      }
+    ],
+    "DescribeEKSClusters": [
+      {
+        "document": "查询集群列表，用于获取集群列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEKSClusters\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"Clusters\": [\r\n      {\r\n        \"ClusterId\": \"cls-xxxxxxx\",\r\n        \"ClusterName\": \"集群AA\",\r\n        \"K8SVersion\": \"1.10.5\",\r\n        \"VpcId\": \"vpc-xxxxx\",\r\n        \"SubnetIds\": [\"subnet-xxxxx\"],\r\n        \"Status\": \"running\",\r\n        \"CreatedTime\": \"2019-08-16T04:31:26Z\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n  }\r\n}",
+        "title": "集群信息列表"
       }
     ],
     "DescribeExistedInstances": [
@@ -490,6 +522,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=UpdateClusterVersion\n&ClusterId=cls-xxxxxxxx\n&DstVersion=1.8.13\n&<公共请求参数>",
         "output": "{\r\n   \"Response\" : {\r\n      \"RequestId\" : \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\r\n   }\r\n}",
         "title": "升级集群到指定版本"
+      }
+    ],
+    "UpdateEKSCluster": [
+      {
+        "document": "修改弹性集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=UpdateEKSCluster\n&ClusterId=cls-xxxxxx\n&ClusterName=test_cluster1\n&SubnetIds.0=subnet-xxxx\n&ClusterDesc=my_test_cluster888\n&ServiceSubnetId=subnet-xxxx\n&DnsServers.0.Domain=exam.com\n&DnsServers.0.DnsServers.0=10.2.2.88:53\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "修改弹性集群"
       }
     ],
     "UpgradeClusterInstances": [

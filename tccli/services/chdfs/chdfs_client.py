@@ -215,7 +215,7 @@ def doDeleteAccessRules(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAccessGroup(args, parsed_globals):
+def doDescribeResourceTags(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -229,9 +229,9 @@ def doModifyAccessGroup(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAccessGroupRequest()
+    model = models.DescribeResourceTagsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyAccessGroup(model)
+    rsp = client.DescribeResourceTags(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -390,7 +390,7 @@ def doDescribeFileSystem(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAccessGroup(args, parsed_globals):
+def doCreateFileSystem(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -404,9 +404,9 @@ def doDeleteAccessGroup(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAccessGroupRequest()
+    model = models.CreateFileSystemRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteAccessGroup(model)
+    rsp = client.CreateFileSystem(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -590,7 +590,7 @@ def doDescribeMountPoints(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeResourceTags(args, parsed_globals):
+def doModifyAccessGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -604,9 +604,9 @@ def doDescribeResourceTags(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeResourceTagsRequest()
+    model = models.ModifyAccessGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeResourceTags(model)
+    rsp = client.ModifyAccessGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -690,7 +690,7 @@ def doDescribeLifeCycleRules(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateFileSystem(args, parsed_globals):
+def doDeleteAccessGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -704,9 +704,9 @@ def doCreateFileSystem(args, parsed_globals):
     client = mod.ChdfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateFileSystemRequest()
+    model = models.DeleteAccessGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateFileSystem(model)
+    rsp = client.DeleteAccessGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -761,14 +761,14 @@ ACTION_MAP = {
     "DeleteMountPoint": doDeleteMountPoint,
     "DescribeMountPoint": doDescribeMountPoint,
     "DeleteAccessRules": doDeleteAccessRules,
-    "ModifyAccessGroup": doModifyAccessGroup,
+    "DescribeResourceTags": doDescribeResourceTags,
     "CreateMountPoint": doCreateMountPoint,
     "ModifyLifeCycleRules": doModifyLifeCycleRules,
     "DescribeAccessGroups": doDescribeAccessGroups,
     "DisassociateAccessGroups": doDisassociateAccessGroups,
     "DeleteFileSystem": doDeleteFileSystem,
     "DescribeFileSystem": doDescribeFileSystem,
-    "DeleteAccessGroup": doDeleteAccessGroup,
+    "CreateFileSystem": doCreateFileSystem,
     "DescribeAccessGroup": doDescribeAccessGroup,
     "DeleteLifeCycleRules": doDeleteLifeCycleRules,
     "CreateAccessRules": doCreateAccessRules,
@@ -776,11 +776,11 @@ ACTION_MAP = {
     "AssociateAccessGroups": doAssociateAccessGroups,
     "DescribeFileSystems": doDescribeFileSystems,
     "DescribeMountPoints": doDescribeMountPoints,
-    "DescribeResourceTags": doDescribeResourceTags,
+    "ModifyAccessGroup": doModifyAccessGroup,
     "DescribeRestoreTasks": doDescribeRestoreTasks,
     "ModifyResourceTags": doModifyResourceTags,
     "DescribeLifeCycleRules": doDescribeLifeCycleRules,
-    "CreateFileSystem": doCreateFileSystem,
+    "DeleteAccessGroup": doDeleteAccessGroup,
     "CreateAccessGroup": doCreateAccessGroup,
 
 }
