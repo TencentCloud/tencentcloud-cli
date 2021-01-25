@@ -6514,6 +6514,7 @@
         {
           "default": "",
           "document": "通道组id",
+          "example": "lg-xx",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -6523,6 +6524,7 @@
         {
           "default": "",
           "document": "通道组域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lg-xx.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6532,6 +6534,7 @@
         {
           "default": "",
           "document": "通道组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test\"",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -6541,6 +6544,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "10000",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -6550,6 +6554,7 @@
         {
           "default": "",
           "document": "目标地域",
+          "example": "无",
           "member": "RegionDetail",
           "name": "RealServerRegionInfo",
           "required": true,
@@ -6559,6 +6564,7 @@
         {
           "default": "",
           "document": "通道组状态。\n其中，\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nMOVING表示通道迁移中。",
+          "example": "0",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -6568,6 +6574,7 @@
         {
           "default": "",
           "document": "标签列表。",
+          "example": "无",
           "member": "TagPair",
           "name": "TagSet",
           "required": true,
@@ -6577,6 +6584,7 @@
         {
           "default": "",
           "document": "通道组版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -6586,6 +6594,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
@@ -6595,6 +6604,7 @@
         {
           "default": "",
           "document": "通道组是否包含微软通道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "ProxyType",
           "required": true,

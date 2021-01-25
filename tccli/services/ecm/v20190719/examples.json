@@ -938,6 +938,22 @@
         "title": "创建实例"
       }
     ],
+    "SetLoadBalancerSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-mov2697v\n&SecurityGroups.0=esg-0t3h9lmk\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"88487432-ee86-4e5d-861b-774374123f89\"}}",
+        "title": "购买负载均衡实例"
+      }
+    ],
+    "SetSecurityGroupForLoadbalancers": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=SetSecurityGroupForLoadbalancers\n&LoadBalancerIds.0=lb-mov2697v\n&SecurityGroup=esg-0t3h9lmk\n&OperationType=ADD\n&<公共请求参数>",
+        "output": "{\"Response\":{\"RequestId\":\"88487432-ee86-4e5d-861b-774374121234\"}}",
+        "title": "购买负载均衡实例"
+      }
+    ],
     "StartInstances": [
       {
         "document": "实例开机",

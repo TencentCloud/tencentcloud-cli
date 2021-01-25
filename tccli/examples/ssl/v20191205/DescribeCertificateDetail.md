@@ -81,7 +81,17 @@ Output:
         },
         "IsWildcard": false,
         "Deployable": false,
-        "VulnerabilityStatus": "INACTIVE"
+        "VulnerabilityStatus": "INACTIVE",
+        "Tags": [
+            {
+                "TagKey": "责任人",
+                "TagValue": "yaxinliu"
+            },
+            {
+                "TagKey": "部门",
+                "TagValue": "IT部"
+            }
+        ]
     }
 }
 ```
@@ -141,7 +151,17 @@ Output:
         "SubmittedData": null,
         "IsWildcard": false,
         "Deployable": true,
-        "VulnerabilityStatus": "INACTIVE"
+        "VulnerabilityStatus": "INACTIVE",
+        "Tags": [
+            {
+                "TagKey": "责任人",
+                "TagValue": "yaxinliu"
+            },
+            {
+                "TagKey": "部门",
+                "TagValue": "IT部"
+            }
+        ]
     }
 }
 ```

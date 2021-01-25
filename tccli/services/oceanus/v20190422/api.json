@@ -68,6 +68,7 @@
         {
           "default": "",
           "document": "作业Id",
+          "example": "cql-abcdefg",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -76,6 +77,7 @@
         {
           "default": "",
           "document": "主类",
+          "example": "com.tencent.cloud.test.WordCount",
           "member": "string",
           "name": "EntrypointClass",
           "required": false,
@@ -84,6 +86,7 @@
         {
           "default": "",
           "document": "主类入参",
+          "example": "--conf Key=Value",
           "member": "string",
           "name": "ProgramArgs",
           "required": false,
@@ -92,6 +95,7 @@
         {
           "default": "",
           "document": "备注",
+          "example": "example",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -100,6 +104,7 @@
         {
           "default": "",
           "document": "资源引用数组",
+          "example": "[]",
           "member": "ResourceRef",
           "name": "ResourceRefs",
           "required": false,
@@ -108,6 +113,7 @@
         {
           "default": "",
           "document": "作业默认并行度",
+          "example": "2",
           "member": "uint64",
           "name": "DefaultParallelism",
           "required": false,
@@ -116,6 +122,7 @@
         {
           "default": "",
           "document": "系统参数",
+          "example": "[]",
           "member": "Property",
           "name": "Properties",
           "required": false,
@@ -124,6 +131,7 @@
         {
           "default": "",
           "document": "1: 作业配置达到上限之后，自动删除可删除的最早版本",
+          "example": "1",
           "member": "int64",
           "name": "AutoDelete",
           "required": false,
@@ -132,6 +140,7 @@
         {
           "default": "",
           "document": "作业使用的 COS 存储桶名",
+          "example": "example-oceanus-1257058918",
           "member": "string",
           "name": "COSBucket",
           "required": false,
@@ -145,8 +154,10 @@
       "members": [
         {
           "document": "作业配置版本号",
+          "example": "1",
           "member": "uint64",
           "name": "Version",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -409,6 +420,7 @@
         {
           "default": "",
           "document": "按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。",
+          "example": "[]",
           "member": "string",
           "name": "JobIds",
           "required": false,
@@ -417,6 +429,7 @@
         {
           "default": "",
           "document": "过滤条件，详见作业过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定JobIds和Filters。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -425,6 +438,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -433,6 +447,7 @@
         {
           "default": "",
           "document": "分页大小，默认为20，最大值为100",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -446,6 +461,7 @@
       "members": [
         {
           "document": "作业总数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
@@ -453,6 +469,7 @@
         },
         {
           "document": "作业列表",
+          "example": "[]",
           "member": "JobV1",
           "name": "JobSet",
           "type": "list",
@@ -796,6 +813,15 @@
           "document": "作业所在集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "SchedulerType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业所在集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ClusterStatus",
           "required": true,
           "type": "int",
           "value_allowed_null": true

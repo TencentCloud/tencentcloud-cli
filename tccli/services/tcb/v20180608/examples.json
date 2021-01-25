@@ -224,6 +224,14 @@
         "title": "查询指定指标的配额使用量"
       }
     ],
+    "DescribeSmsQuotas": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeSmsQuotas\n&EnvId=tnt-j715s5gda\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"SmsFreeQuotaList\": [\r\n            {\r\n                \"FreeQuota\": 1000,\r\n                \"UsedQuota\": 500,\r\n                \"CycleStart\": \"2020-01-01 23:59:59\",\r\n                \"CycleEnd\": \"2020-02-01 23:59:59\",\r\n                \"TodayUsedQuota\":0\r\n            }\r\n        ],\r\n        \"RequestId\": \"a1b9ccf2-86a7-490d-9769-a5fb6b856192\"\r\n    }\r\n}",
+        "title": "查询免费量"
+      }
+    ],
     "DestroyEnv": [
       {
         "document": "",

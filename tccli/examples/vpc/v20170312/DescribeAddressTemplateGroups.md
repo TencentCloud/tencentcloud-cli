@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc DescribeAddressTemplateGroups --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --Filters.0.Name address-template-group-name \
     --Filters.0.Values TestName \
     --Filters.1.Name address-template-group-id \
@@ -18,23 +17,23 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
+        "RequestId": "xx",
         "AddressTemplateGroupSet": [
             {
-                "AddressTemplateGroupName": "TestName",
-                "AddressTemplateGroupId": "ipmg-2uw6ujo6",
+                "CreatedTime": "2020-12-03 16:12:15",
+                "AddressTemplateGroupName": "测试1",
                 "AddressTemplateIdSet": [
                     "ipm-mdunqeb6"
                 ],
                 "AddressTemplateSet": [
                     {
-                        "AddressTemplateId": "ipm-mdunqeb6",
-                        "AddressTemplateName": "test"
+                        "To": "10.1.1.2/22",
+                        "From": "10.1.1.3/22"
                     }
                 ],
-                "CreatedTime": "2017-12-31 14:09:13"
+                "AddressTemplateGroupId": "ipmg-ivrc58q8"
             }
-        ],
-        "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239"
+        ]
     }
 }
 ```

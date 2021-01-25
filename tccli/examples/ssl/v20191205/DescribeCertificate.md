@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "From": "trustasia",
-        "SubjectAltName": null,
+        "SubjectAltName": [],
         "VulnerabilityReport": null,
         "StatusName": "已通过",
         "CertificateExtra": {
@@ -48,7 +48,18 @@ Output:
         "SubmittedData": null,
         "IsWildcard": false,
         "PackageTypeName": "TrustAsia TLS RSA CA",
-        "VulnerabilityStatus": "INACTIVE"
+        "VulnerabilityStatus": "INACTIVE",
+        "Deployable": true,
+        "Tags": [
+            {
+                "TagKey": "责任人",
+                "TagValue": "yaxinliu"
+            },
+            {
+                "TagKey": "部门",
+                "TagValue": "IT部"
+            }
+        ]
     }
 }
 ```

@@ -313,7 +313,7 @@
       "output": "DescribeDataBackupOverviewResponse"
     },
     "DescribeDatabases": {
-      "document": "本接口(DescribeDatabases)用于查询云数据库实例的数据库信息。",
+      "document": "本接口(DescribeDatabases)用于查询云数据库实例的数据库信息，仅支持主实例和灾备实例，不支持只读实例。",
       "input": "DescribeDatabasesRequest",
       "name": "查询数据库",
       "output": "DescribeDatabasesResponse"
@@ -415,7 +415,7 @@
       "output": "DescribeSupportedPrivilegesResponse"
     },
     "DescribeTables": {
-      "document": "本接口(DescribeTables)用于查询云数据库实例的数据库表信息。",
+      "document": "本接口(DescribeTables)用于查询云数据库实例的数据库表信息，仅支持主实例和灾备实例，不支持只读实例。",
       "input": "DescribeTablesRequest",
       "name": "查询数据库表",
       "output": "DescribeTablesResponse"
@@ -5247,6 +5247,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5255,6 +5256,7 @@
         {
           "default": "",
           "document": "偏移量，最小值为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5263,6 +5265,7 @@
         {
           "default": "",
           "document": "单次请求数量，默认值为20，最小值为1，最大值为100。",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5271,6 +5274,7 @@
         {
           "default": "",
           "document": "匹配数据库库名的正则表达式。",
+          "example": "test",
           "member": "string",
           "name": "DatabaseRegexp",
           "required": false,
@@ -5284,15 +5288,19 @@
       "members": [
         {
           "document": "符合查询条件的实例总数。",
+          "example": "7",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的实例信息。",
+          "example": "[             \"information_schema\",             \"mysql\",        ",
           "member": "string",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6201,6 +6209,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6209,6 +6218,7 @@
         {
           "default": "",
           "document": "数据库的名称。",
+          "example": "test_data_base",
           "member": "string",
           "name": "Database",
           "required": true,
@@ -6217,6 +6227,7 @@
         {
           "default": "",
           "document": "记录偏移量，默认值为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6225,6 +6236,7 @@
         {
           "default": "",
           "document": "单次请求返回的数量，默认值为20，最大值为2000。",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6233,6 +6245,7 @@
         {
           "default": "",
           "document": "匹配数据库表名的正则表达式，规则同 MySQL 官网",
+          "example": "test",
           "member": "string",
           "name": "TableRegexp",
           "required": false,
@@ -6246,15 +6259,19 @@
       "members": [
         {
           "document": "符合查询条件的数据库表总数。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的数据库表信息。",
+          "example": ":[             \"CHARACTER_SETS\",             \"COLLATIONS\",      ",
           "member": "string",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

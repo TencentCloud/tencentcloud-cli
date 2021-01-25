@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc MigratePrivateIpAddress --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --SourceNetworkInterfaceId eni-afo43z61 \
     --DestinationNetworkInterfaceId eni-g0n2axhd \
     --PrivateIpAddress 172.16.33.109

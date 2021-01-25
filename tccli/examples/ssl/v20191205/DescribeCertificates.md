@@ -61,6 +61,10 @@ Output:
                     {
                         "TagKey": "testtag",
                         "TagValue": "testtag"
+                    },
+                    {
+                        "TagKey": "x",
+                        "TagValue": "testtag"
                     }
                 ]
             }

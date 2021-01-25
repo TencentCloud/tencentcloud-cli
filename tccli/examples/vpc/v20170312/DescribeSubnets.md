@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc DescribeSubnets --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --Filters.0.Name subnet-name \
     --Filters.0.Values 默认广州二区子网 \
     --Filters.1.Name vpc-id \
@@ -25,23 +24,30 @@ Output:
     "Response": {
         "SubnetSet": [
             {
-                "VpcId": "vpc-2at5y1pn",
-                "SubnetId": "subnet-otu92seu",
-                "SubnetName": "默认广州二区子网",
-                "CidrBlock": "172.16.16.0/20",
-                "Ipv6CidrBlock": "3402:4e00:20:1201::/64",
-                "IsDefault": true,
-                "IsRemoteVpcSnat": false,
+                "NetworkAclId": "",
+                "RouteTableId": "rtb-n0yr460a",
+                "VpcId": "vpc-n0yr460a",
                 "EnableBroadcast": false,
-                "Zone": "ap-guangzhou-dev-2",
-                "RouteTableId": "rtb-l2h8d7c2",
-                "TotalIpAddressCount": 4093,
-                "AvailableIpAddressCount": 4002,
-                "CreatedTime": "2017-04-20 11:30:48"
+                "Zone": "ap-guangzhou",
+                "Ipv6CidrBlock": "",
+                "AvailableIpAddressCount": 1,
+                "IsRemoteVpcSnat": false,
+                "SubnetName": "子网1",
+                "TotalIpAddressCount": 1,
+                "TagSet": [
+                    {
+                        "Value": "ck",
+                        "Key": "kc"
+                    }
+                ],
+                "CreatedTime": "2020-05-25 20:09:07",
+                "SubnetId": "subnet-bthucmmy",
+                "CidrBlock": "10.0.0.0/16",
+                "IsDefault": true
             }
         ],
         "TotalCount": 1,
-        "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239"
+        "RequestId": "cccb2665-5d02-4d87-b9e7-757bb06e5beb"
     }
 }
 ```
@@ -54,7 +60,6 @@ Input:
 
 ```
 tccli vpc DescribeSubnets --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --Filters.0.Name tag:city \
     --Filters.0.Values shanghai
 ```
@@ -65,29 +70,30 @@ Output:
     "Response": {
         "SubnetSet": [
             {
-                "VpcId": "vpc-2at5y1pn",
-                "SubnetId": "subnet-otu92seu",
-                "SubnetName": "默认广州二区子网",
-                "CidrBlock": "172.16.16.0/20",
-                "Ipv6CidrBlock": "3402:4e00:20:1201::/64",
-                "IsDefault": true,
-                "IsRemoteVpcSnat": false,
+                "NetworkAclId": "",
+                "RouteTableId": "rtb-n0yr460a",
+                "VpcId": "vpc-n0yr460a",
                 "EnableBroadcast": false,
-                "Zone": "ap-guangzhou-dev-2",
-                "RouteTableId": "rtb-l2h8d7c2",
-                "TotalIpAddressCount": 4093,
-                "AvailableIpAddressCount": 4002,
+                "Zone": "ap-guangzhou",
+                "Ipv6CidrBlock": "xx",
+                "AvailableIpAddressCount": 1,
+                "IsRemoteVpcSnat": false,
+                "SubnetName": "子网2",
+                "TotalIpAddressCount": 1,
                 "TagSet": [
                     {
-                        "Key": "city",
-                        "Value": "shanghai"
+                        "Value": "gt",
+                        "Key": "ku"
                     }
                 ],
-                "CreatedTime": "2017-04-20 11:30:48"
+                "CreatedTime": "2020-05-25 20:09:07",
+                "SubnetId": "subnet-bthucmmy",
+                "CidrBlock": "10.0.0.0/16",
+                "IsDefault": true
             }
         ],
         "TotalCount": 1,
-        "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239"
+        "RequestId": "cccb2665-5d02-4d87-b9e7-757bb06e5beb"
     }
 }
 ```

@@ -16,10 +16,24 @@ Output:
         "Angle": 0,
         "QuestionBlockInfos": [
             {
+                "QuestionBboxCoord": {
+                    "Y": 0,
+                    "X": 0,
+                    "Width": 0,
+                    "Height": 0
+                },
                 "QuestionArr": [
                     {
                         "QuestionTextNo": "",
                         "QuestionTextType": 3,
+                        "QuestionImageCoords": [
+                            {
+                                "Y": 0,
+                                "X": 0,
+                                "Width": 0,
+                                "Height": 0
+                            }
+                        ],
                         "QuestionText": "题型4:已知函数的单调性求参数的取值范围",
                         "QuestionOptions": "[{\"option\":[]}]",
                         "QuestionSubquestion": "[]"
@@ -27,10 +41,24 @@ Output:
                 ]
             },
             {
+                "QuestionBboxCoord": {
+                    "Y": 0,
+                    "X": 0,
+                    "Width": 0,
+                    "Height": 0
+                },
                 "QuestionArr": [
                     {
                         "QuestionTextNo": "[例9]",
                         "QuestionTextType": 3,
+                        "QuestionImageCoords": [
+                            {
+                                "Y": 0,
+                                "X": 0,
+                                "Width": 0,
+                                "Height": 0
+                            }
+                        ],
                         "QuestionText": "(★★★)已知函数f(x)=\\frac{ax+1}{x+2}在区间(-2,+∞)上是增函数,试求a的取值范围.",
                         "QuestionOptions": "[{\"option\":[]}]",
                         "QuestionSubquestion": "[]"
@@ -38,10 +66,24 @@ Output:
                 ]
             },
             {
+                "QuestionBboxCoord": {
+                    "Y": 0,
+                    "X": 0,
+                    "Width": 0,
+                    "Height": 0
+                },
                 "QuestionArr": [
                     {
                         "QuestionTextNo": "[例10]",
                         "QuestionTextType": 1,
+                        "QuestionImageCoords": [
+                            {
+                                "Y": 0,
+                                "X": 0,
+                                "Width": 0,
+                                "Height": 0
+                            }
+                        ],
                         "QuestionText": "(★★★★)已知函数,若f(x)=\\left\\lbrace\\begin{array}{l}{(2a-1)x+a,}&{x\\geq1}\\\\{\\log_{a}x,}&{x&lt1}\\end{array}\\right.在(0,+∞)上单调递减，则a的取值范围为##{()}##",
                         "QuestionOptions": "[{\"option\":[\"$${\\\\quad(0,\\\\frac{1}{2})}$$\",\"$${\\\\quad(0,\\\\frac{1}{3}\\\\rbrack}$$\",\"$${\\\\quad\\\\lbrack\\\\frac{1}{3},\\\\frac{1}{2})}$$\",\"$${\\\\quad(\\\\frac{1}{2},1)}$$\"]}]",
                         "QuestionSubquestion": "[]"
@@ -49,10 +91,24 @@ Output:
                 ]
             },
             {
+                "QuestionBboxCoord": {
+                    "Y": 0,
+                    "X": 0,
+                    "Width": 0,
+                    "Height": 0
+                },
                 "QuestionArr": [
                     {
                         "QuestionTextNo": "[例11]",
                         "QuestionTextType": 1,
+                        "QuestionImageCoords": [
+                            {
+                                "Y": 0,
+                                "X": 0,
+                                "Width": 0,
+                                "Height": 0
+                            }
+                        ],
                         "QuestionText": "(★★★★★)设f(x)=\\left\\lbrace\\begin{array}{l}{a^{x},}&{x&lt0}\\\\{(a-3)x+4a,x\\geq0}\\end{array}\\right.，对任意的.x_{1}\\neqx_{2}都有\\frac{f(x_{1})-f(x_{2})}{x_{1}-x_{2}}&lt0成立，则a的取值范围是##{()}##",
                         "QuestionOptions": "[{\"option\":[\"$${\\\\quad(0,\\\\frac{1}{4}\\\\rbrack}$$\",\"(0,1)\",\"$${\\\\quad\\\\lbrack\\\\frac{1}{4},1)}$$\",\"(0,3)\"]}]",
                         "QuestionSubquestion": "[]"

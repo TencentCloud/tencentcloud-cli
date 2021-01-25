@@ -168,6 +168,12 @@
       "name": "查询环境的配额使用量",
       "output": "DescribeQuotaDataResponse"
     },
+    "DescribeSmsQuotas": {
+      "document": "查询后付费短信资源量\n1 有免费包的返回SmsFreeQuota结构所有字段\n2 没有免费包，有付费包，付费返回复用SmsFreeQuota结构，其中只有 TodayUsedQuota 字段有效\n3 都没有返回为空数组",
+      "input": "DescribeSmsQuotasRequest",
+      "name": "查询后付费短信资源量",
+      "output": "DescribeSmsQuotasResponse"
+    },
     "DestroyEnv": {
       "document": "销毁环境",
       "input": "DestroyEnvRequest",
@@ -1155,6 +1161,7 @@
         {
           "default": "",
           "document": "环境ID",
+          "example": "dsdx-demo-4gkfdf588ce6e585",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -1163,6 +1170,7 @@
         {
           "default": "",
           "document": "枚举（package/repository/image)",
+          "example": "image",
           "member": "string",
           "name": "UploadType",
           "required": true,
@@ -1171,6 +1179,7 @@
         {
           "default": "",
           "document": "流量占比",
+          "example": "0",
           "member": "int64",
           "name": "FlowRatio",
           "required": true,
@@ -1179,6 +1188,7 @@
         {
           "default": "",
           "document": "Cpu的大小，单位：核",
+          "example": "1",
           "member": "float",
           "name": "Cpu",
           "required": true,
@@ -1187,6 +1197,7 @@
         {
           "default": "",
           "document": "Mem的大小，单位：G",
+          "example": "1",
           "member": "float",
           "name": "Mem",
           "required": true,
@@ -1195,6 +1206,7 @@
         {
           "default": "",
           "document": "最小副本数，最小值：0",
+          "example": "0",
           "member": "int64",
           "name": "MinNum",
           "required": true,
@@ -1203,6 +1215,7 @@
         {
           "default": "",
           "document": "副本最大数，最大值：50",
+          "example": "3",
           "member": "int64",
           "name": "MaxNum",
           "required": true,
@@ -1211,6 +1224,7 @@
         {
           "default": "",
           "document": "策略类型(枚举值：比如cpu)",
+          "example": "cpu",
           "member": "string",
           "name": "PolicyType",
           "required": true,
@@ -1219,6 +1233,7 @@
         {
           "default": "",
           "document": "策略阈值",
+          "example": "60",
           "member": "int64",
           "name": "PolicyThreshold",
           "required": true,
@@ -1227,6 +1242,7 @@
         {
           "default": "",
           "document": "服务端口",
+          "example": "80",
           "member": "int64",
           "name": "ContainerPort",
           "required": true,
@@ -1235,6 +1251,7 @@
         {
           "default": "",
           "document": "服务名称",
+          "example": "demo",
           "member": "string",
           "name": "ServerName",
           "required": true,
@@ -1243,6 +1260,7 @@
         {
           "default": "",
           "document": "repository的类型(coding/gitlab/github/coding)",
+          "example": "coding",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -1251,6 +1269,7 @@
         {
           "default": "",
           "document": "Dockerfile地址",
+          "example": "./",
           "member": "string",
           "name": "DockerfilePath",
           "required": false,
@@ -1259,6 +1278,7 @@
         {
           "default": "",
           "document": "构建目录",
+          "example": "./",
           "member": "string",
           "name": "BuildDir",
           "required": false,
@@ -1267,6 +1287,7 @@
         {
           "default": "",
           "document": "环境变量",
+          "example": "{‘cpu’:'1'}",
           "member": "string",
           "name": "EnvParams",
           "required": false,
@@ -1275,6 +1296,7 @@
         {
           "default": "",
           "document": "repository地址",
+          "example": "test",
           "member": "string",
           "name": "Repository",
           "required": false,
@@ -1283,6 +1305,7 @@
         {
           "default": "",
           "document": "分支",
+          "example": "master",
           "member": "string",
           "name": "Branch",
           "required": false,
@@ -1291,6 +1314,7 @@
         {
           "default": "",
           "document": "版本备注",
+          "example": "test",
           "member": "string",
           "name": "VersionRemark",
           "required": false,
@@ -1299,6 +1323,7 @@
         {
           "default": "",
           "document": "代码包名字",
+          "example": "std-we",
           "member": "string",
           "name": "PackageName",
           "required": false,
@@ -1307,6 +1332,7 @@
         {
           "default": "",
           "document": "代码包的版本",
+          "example": "dsd-we",
           "member": "string",
           "name": "PackageVersion",
           "required": false,
@@ -1315,6 +1341,7 @@
         {
           "default": "",
           "document": "Image的详情",
+          "example": "无",
           "member": "CloudBaseRunImageInfo",
           "name": "ImageInfo",
           "required": false,
@@ -1323,6 +1350,7 @@
         {
           "default": "",
           "document": "Github等拉取代码的详情",
+          "example": "无",
           "member": "CloudBaseCodeRepoDetail",
           "name": "CodeDetail",
           "required": false,
@@ -1331,6 +1359,7 @@
         {
           "default": "",
           "document": "私有镜像秘钥信息",
+          "example": "无",
           "member": "CloudBaseRunImageSecretInfo",
           "name": "ImageSecretInfo",
           "required": false,
@@ -1339,6 +1368,7 @@
         {
           "default": "",
           "document": "私有镜像 认证名称",
+          "example": "dsd-ds",
           "member": "string",
           "name": "ImagePullSecret",
           "required": false,
@@ -1347,6 +1377,7 @@
         {
           "default": "",
           "document": "用户自定义采集日志路径",
+          "example": "stdout",
           "member": "string",
           "name": "CustomLogs",
           "required": false,
@@ -1355,6 +1386,7 @@
         {
           "default": "",
           "document": "延迟多长时间开始健康检查（单位s）",
+          "example": "2",
           "member": "int64",
           "name": "InitialDelaySeconds",
           "required": false,
@@ -1363,6 +1395,7 @@
         {
           "default": "",
           "document": "cfs挂载信息",
+          "example": "无",
           "member": "CloudBaseRunVolumeMount",
           "name": "MountVolumeInfo",
           "required": false,
@@ -1371,6 +1404,7 @@
         {
           "default": "",
           "document": "4 代表只能微信链路访问",
+          "example": "2",
           "member": "int64",
           "name": "AccessType",
           "required": false,
@@ -1379,6 +1413,7 @@
         {
           "default": "",
           "document": "es信息",
+          "example": "无",
           "member": "CloudBaseEsInfo",
           "name": "EsInfo",
           "required": false,
@@ -1387,6 +1422,7 @@
         {
           "default": "",
           "document": "是否使用统一域名",
+          "example": "false",
           "member": "bool",
           "name": "EnableUnion",
           "required": false,
@@ -1395,6 +1431,7 @@
         {
           "default": "",
           "document": "操作备注",
+          "example": "test",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
@@ -1402,7 +1439,8 @@
         },
         {
           "default": "",
-          "document": "服务路劲",
+          "document": "服务路径",
+          "example": "test-demo",
           "member": "string",
           "name": "ServerPath",
           "required": false,
@@ -1411,6 +1449,7 @@
         {
           "default": "",
           "document": "镜像复用的key",
+          "example": "sdsd",
           "member": "string",
           "name": "ImageReuseKey",
           "required": false,
@@ -1419,6 +1458,7 @@
         {
           "default": "",
           "document": "容器的描述文件",
+          "example": "无",
           "member": "CloudBaseRunSideSpec",
           "name": "SidecarSpecs",
           "required": false,
@@ -1432,6 +1472,7 @@
       "members": [
         {
           "document": "状态(creating/succ)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
           "member": "string",
           "name": "Result",
           "type": "string",
@@ -1439,6 +1480,7 @@
         },
         {
           "document": "版本名称（只有Result为succ的时候，才会返回VersionName)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "VersionName",
           "type": "string",
@@ -2878,6 +2920,41 @@
       ],
       "type": "object"
     },
+    "DescribeSmsQuotasRequest": {
+      "document": "DescribeSmsQuotas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "env-xxxxxxxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsQuotasResponse": {
+      "document": "DescribeSmsQuotas返回参数结构体",
+      "members": [
+        {
+          "document": "短信免费量信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SmsFreeQuota",
+          "name": "SmsFreeQuotaList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DestroyEnvRequest": {
       "document": "DestroyEnv请求参数结构体",
       "members": [
@@ -4065,6 +4142,62 @@
         }
       ],
       "type": "object"
+    },
+    "SmsFreeQuota": {
+      "document": "短信免费量",
+      "members": [
+        {
+          "default": "",
+          "document": "免费量总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FreeQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "共计已使用总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalUsedQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "免费周期起点，0000-00-00 00:00:00 形式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CycleStart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "免费周期终点，0000-00-00 00:00:00 形式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CycleEnd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "今天已使用总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TodayUsedQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "StaticStorageInfo": {
       "document": "静态CDN资源信息",

@@ -263,7 +263,7 @@ def doRunInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCustomImageTask(args, parsed_globals):
+def doImportImage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -277,9 +277,9 @@ def doDescribeCustomImageTask(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCustomImageTaskRequest()
+    model = models.ImportImageRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeCustomImageTask(model)
+    rsp = client.ImportImage(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -413,7 +413,7 @@ def doDescribeNode(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAssignPrivateIpAddresses(args, parsed_globals):
+def doDescribeCustomImageTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -427,9 +427,9 @@ def doAssignPrivateIpAddresses(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AssignPrivateIpAddressesRequest()
+    model = models.DescribeCustomImageTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.AssignPrivateIpAddresses(model)
+    rsp = client.DescribeCustomImageTask(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -788,7 +788,7 @@ def doDeleteListener(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDisassociateAddress(args, parsed_globals):
+def doSetSecurityGroupForLoadbalancers(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -802,9 +802,9 @@ def doDisassociateAddress(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DisassociateAddressRequest()
+    model = models.SetSecurityGroupForLoadbalancersRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DisassociateAddress(model)
+    rsp = client.SetSecurityGroupForLoadbalancers(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -955,6 +955,31 @@ def doDeleteSubnet(args, parsed_globals):
     model = models.DeleteSubnetRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DeleteSubnet(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifySecurityGroupAttribute(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySecurityGroupAttributeRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifySecurityGroupAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1513,7 +1538,7 @@ def doModifyModuleConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySecurityGroupAttribute(args, parsed_globals):
+def doSetLoadBalancerSecurityGroups(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1527,9 +1552,9 @@ def doModifySecurityGroupAttribute(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySecurityGroupAttributeRequest()
+    model = models.SetLoadBalancerSecurityGroupsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifySecurityGroupAttribute(model)
+    rsp = client.SetLoadBalancerSecurityGroups(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1963,6 +1988,31 @@ def doDescribeSecurityGroupLimits(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDisassociateAddress(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisassociateAddressRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DisassociateAddress(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyDefaultSubnet(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2138,7 +2188,7 @@ def doDescribeHaVips(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doImportImage(args, parsed_globals):
+def doAssignPrivateIpAddresses(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2152,9 +2202,9 @@ def doImportImage(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImportImageRequest()
+    model = models.AssignPrivateIpAddressesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ImportImage(model)
+    rsp = client.AssignPrivateIpAddresses(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2909,13 +2959,13 @@ ACTION_MAP = {
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "ResetRoutes": doResetRoutes,
     "RunInstances": doRunInstances,
-    "DescribeCustomImageTask": doDescribeCustomImageTask,
+    "ImportImage": doImportImage,
     "DescribeAddresses": doDescribeAddresses,
     "DescribeDefaultSubnet": doDescribeDefaultSubnet,
     "DescribeListeners": doDescribeListeners,
     "CreateImage": doCreateImage,
     "DescribeNode": doDescribeNode,
-    "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
+    "DescribeCustomImageTask": doDescribeCustomImageTask,
     "BatchDeregisterTargets": doBatchDeregisterTargets,
     "ModifyLoadBalancerAttributes": doModifyLoadBalancerAttributes,
     "DescribeLoadBalanceTaskStatus": doDescribeLoadBalanceTaskStatus,
@@ -2930,13 +2980,14 @@ ACTION_MAP = {
     "DescribeModule": doDescribeModule,
     "StartInstances": doStartInstances,
     "DeleteListener": doDeleteListener,
-    "DisassociateAddress": doDisassociateAddress,
+    "SetSecurityGroupForLoadbalancers": doSetSecurityGroupForLoadbalancers,
     "CreateVpc": doCreateVpc,
     "AllocateAddresses": doAllocateAddresses,
     "ModifyModuleDisableWanIp": doModifyModuleDisableWanIp,
     "ModifyListener": doModifyListener,
     "AssociateAddress": doAssociateAddress,
     "DeleteSubnet": doDeleteSubnet,
+    "ModifySecurityGroupAttribute": doModifySecurityGroupAttribute,
     "BatchRegisterTargets": doBatchRegisterTargets,
     "DescribeInstancesDeniedActions": doDescribeInstancesDeniedActions,
     "CreateNetworkInterface": doCreateNetworkInterface,
@@ -2959,7 +3010,7 @@ ACTION_MAP = {
     "ReleaseAddresses": doReleaseAddresses,
     "DeleteSecurityGroupPolicies": doDeleteSecurityGroupPolicies,
     "ModifyModuleConfig": doModifyModuleConfig,
-    "ModifySecurityGroupAttribute": doModifySecurityGroupAttribute,
+    "SetLoadBalancerSecurityGroups": doSetLoadBalancerSecurityGroups,
     "DescribeModuleDetail": doDescribeModuleDetail,
     "DeleteLoadBalancer": doDeleteLoadBalancer,
     "DescribeInstanceTypeConfig": doDescribeInstanceTypeConfig,
@@ -2977,6 +3028,7 @@ ACTION_MAP = {
     "DescribeInstanceVncUrl": doDescribeInstanceVncUrl,
     "DeleteRouteTable": doDeleteRouteTable,
     "DescribeSecurityGroupLimits": doDescribeSecurityGroupLimits,
+    "DisassociateAddress": doDisassociateAddress,
     "ModifyDefaultSubnet": doModifyDefaultSubnet,
     "RebootInstances": doRebootInstances,
     "AssignIpv6Addresses": doAssignIpv6Addresses,
@@ -2984,7 +3036,7 @@ ACTION_MAP = {
     "CreateLoadBalancer": doCreateLoadBalancer,
     "ModifyModuleNetwork": doModifyModuleNetwork,
     "DescribeHaVips": doDescribeHaVips,
-    "ImportImage": doImportImage,
+    "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
     "DeleteHaVip": doDeleteHaVip,
     "DescribeAddressQuota": doDescribeAddressQuota,
     "DeleteLoadBalancerListeners": doDeleteLoadBalancerListeners,

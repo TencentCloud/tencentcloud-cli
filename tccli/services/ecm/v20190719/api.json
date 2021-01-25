@@ -672,6 +672,18 @@
       "name": "创建实例",
       "output": "RunInstancesResponse"
     },
+    "SetLoadBalancerSecurityGroups": {
+      "document": "设置负载均衡实例的安全组。",
+      "input": "SetLoadBalancerSecurityGroupsRequest",
+      "name": "设置负载均衡实例的安全组",
+      "output": "SetLoadBalancerSecurityGroupsResponse"
+    },
+    "SetSecurityGroupForLoadbalancers": {
+      "document": "绑定或解绑一个安全组到多个负载均衡实例。",
+      "input": "SetSecurityGroupForLoadbalancersRequest",
+      "name": "绑定或解绑一个安全组到多个负载均衡实例",
+      "output": "SetSecurityGroupForLoadbalancersResponse"
+    },
     "StartInstances": {
       "document": "只有状态为STOPPED的实例才可以进行此操作；接口调用成功时，实例会进入STARTING状态；启动实例成功时，实例会进入RUNNING状态。",
       "input": "StartInstancesRequest",
@@ -1799,7 +1811,7 @@
       "members": [
         {
           "default": "",
-          "document": "区域。",
+          "document": "ECM区域，形如ap-xian-ecm。",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -1858,6 +1870,14 @@
           "document": "标签。",
           "member": "TagInfo",
           "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全组。",
+          "member": "string",
+          "name": "SecurityGroups",
           "required": false,
           "type": "list"
         }
@@ -3647,6 +3667,14 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全组。",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6390,6 +6418,24 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecureGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端机器是否放通来自ELB的流量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "LoadBalancerPassToTarget",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6943,6 +6989,14 @@
           "name": "InternetChargeInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。",
+          "member": "bool",
+          "name": "LoadBalancerPassToTarget",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9891,6 +9945,82 @@
         }
       ],
       "usage": "both"
+    },
+    "SetLoadBalancerSecurityGroupsRequest": {
+      "document": "SetLoadBalancerSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ID构成的数组，一个负载均衡实例最多可绑定5个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组",
+          "member": "string",
+          "name": "SecurityGroups",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetLoadBalancerSecurityGroupsResponse": {
+      "document": "SetLoadBalancerSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetSecurityGroupForLoadbalancersRequest": {
+      "document": "SetSecurityGroupForLoadbalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID数组",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全组ID，如 esg-12345678",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ADD 绑定安全组；\nDEL 解绑安全组",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetSecurityGroupForLoadbalancersResponse": {
+      "document": "SetSecurityGroupForLoadbalancers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SimpleModule": {
       "document": "Module的简要信息",

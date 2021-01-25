@@ -12,6 +12,12 @@
       "name": "获取应用用量统计数据",
       "output": "DescribeAppStatisticsResponse"
     },
+    "DescribeApplicationData": {
+      "document": "本接口(DescribeApplicationData)用于获取数据详情信息，最多可拉取最近90天的数据。",
+      "input": "DescribeApplicationDataRequest",
+      "name": "获取数据详情",
+      "output": "DescribeApplicationDataResponse"
+    },
     "DescribeFilterResult": {
       "document": "根据应用ID和文件ID查询识别结果",
       "input": "DescribeFilterResultRequest",
@@ -99,6 +105,129 @@
           "name": "Date",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationDataStatistics": {
+      "document": "应用统计数据",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Dau统计项数目",
+          "member": "uint64",
+          "name": "DauDataNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大陆地区Dau统计数据，单位人",
+          "member": "StatisticsItem",
+          "name": "DauDataMainland",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "海外地区Dau统计数据，单位人",
+          "member": "StatisticsItem",
+          "name": "DauDataOversea",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大陆和海外地区Dau统计数据汇总，单位人",
+          "member": "StatisticsItem",
+          "name": "DauDataSum",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时语音时长统计项数目",
+          "member": "uint64",
+          "name": "DurationDataNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大陆地区实时语音时长统计数据，单位分钟",
+          "member": "StatisticsItem",
+          "name": "DurationDataMainland",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "海外地区实时语音时长统计数据，单位分钟",
+          "member": "StatisticsItem",
+          "name": "DurationDataOversea",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大陆和海外地区实时语音时长统计数据汇总，单位分钟",
+          "member": "StatisticsItem",
+          "name": "DurationDataSum",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Pcu统计项数目",
+          "member": "uint64",
+          "name": "PcuDataNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大陆地区Pcu统计数据，单位人",
+          "member": "StatisticsItem",
+          "name": "PcuDataMainland",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "海外地区Pcu统计数据，单位人",
+          "member": "StatisticsItem",
+          "name": "PcuDataOversea",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大陆和海外地区Pcu统计数据汇总，单位人",
+          "member": "StatisticsItem",
+          "name": "PcuDataSum",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -304,6 +433,60 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeApplicationDataRequest": {
+      "document": "DescribeApplicationData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "140000001",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据开始时间，格式为 年-月-日，如: 2018-07-13",
+          "example": "2018-07-13",
+          "member": "date",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据结束时间，格式为 年-月-日，如: 2018-07-13",
+          "example": "2018-08-13",
+          "member": "date",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationDataResponse": {
+      "document": "DescribeApplicationData返回参数结构体",
+      "members": [
+        {
+          "document": "应用统计数据",
+          "example": "[]",
+          "member": "ApplicationDataStatistics",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeFilterResultListRequest": {
       "document": "DescribeFilterResultList请求参数结构体",
@@ -1022,6 +1205,30 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StatisticsItem": {
+      "document": "用量数据单元",
+      "members": [
+        {
+          "default": "",
+          "document": "日期，格式为年-月-日，如2018-07-13",
+          "member": "date",
+          "name": "StatDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计值",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

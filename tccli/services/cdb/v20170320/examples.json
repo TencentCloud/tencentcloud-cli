@@ -431,7 +431,7 @@
     "DescribeDatabases": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDatabases\r\n&InstanceId=cdb-f35wr6wj\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDatabases\n&InstanceId=cdb-f35wr6wj\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"TotalCount\":7,\r\n        \"Items\":[\r\n            \"information_schema\",\r\n            \"mysql\",\r\n            \"performance_schema\",\r\n            \"test\",\r\n            \"trsf1\",\r\n            \"trsf2\",\r\n            \"trsf3\"\r\n        ]\r\n    }\r\n}",
         "title": "查询数据库"
       }
@@ -567,7 +567,7 @@
     "DescribeTables": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeTables\r\n&InstanceId=cdb-c1nl9rpv\r\n&Database=mysql\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeTables\n&InstanceId=cdb-c1nl9rpv\n&Database=mysql\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"TotalCount\":10,\r\n        \"Items\":[\r\n            \"CHARACTER_SETS\",\r\n            \"COLLATIONS\",\r\n            \"COLLATION_CHARACTER_SET_APPLICABILITY\",\r\n            \"COLUMNS\",\r\n            \"COLUMN_PRIVILEGES\",\r\n            \"ENGINES\",\r\n            \"EVENTS\",\r\n            \"FILES\",\r\n            \"GLOBAL_STATUS\",\r\n            \"GLOBAL_VARIABLES\"\r\n        ]\r\n    }\r\n}",
         "title": "查询数据库表"
       }
