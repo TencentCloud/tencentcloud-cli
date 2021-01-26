@@ -538,6 +538,31 @@ def doDescribeReverseShellRules(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doExportTasks(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ExportTasksRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ExportTasks(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRecoverMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1138,6 +1163,31 @@ def doDeleteMalwares(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeMachineList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMachineListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeMachineList(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeWeeklyReportNonlocalLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1155,6 +1205,31 @@ def doDescribeWeeklyReportNonlocalLoginPlaces(args, parsed_globals):
     model = models.DescribeWeeklyReportNonlocalLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeWeeklyReportNonlocalLoginPlaces(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeScanMalwareSchedule(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeScanMalwareScheduleRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeScanMalwareSchedule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1255,6 +1330,31 @@ def doDescribeAccountStatistics(args, parsed_globals):
     model = models.DescribeAccountStatisticsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeAccountStatistics(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeExportMachines(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeExportMachinesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeExportMachines(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1605,6 +1705,31 @@ def doDescribeProcessStatistics(args, parsed_globals):
     model = models.DescribeProcessStatisticsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeProcessStatistics(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMalwareInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMalwareInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeMalwareInfo(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2138,6 +2263,31 @@ def doDescribeWeeklyReportInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyMalwareTimingScanSettings(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyMalwareTimingScanSettingsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyMalwareTimingScanSettings(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeComponentInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2570,6 +2720,7 @@ ACTION_MAP = {
     "DeleteBashEvents": doDeleteBashEvents,
     "DeleteMaliciousRequests": doDeleteMaliciousRequests,
     "DescribeReverseShellRules": doDescribeReverseShellRules,
+    "ExportTasks": doExportTasks,
     "RecoverMalwares": doRecoverMalwares,
     "DeleteReverseShellRules": doDeleteReverseShellRules,
     "DeleteBruteAttacks": doDeleteBruteAttacks,
@@ -2594,11 +2745,14 @@ ACTION_MAP = {
     "DeleteReverseShellEvents": doDeleteReverseShellEvents,
     "DeletePrivilegeRules": doDeletePrivilegeRules,
     "DeleteMalwares": doDeleteMalwares,
+    "DescribeMachineList": doDescribeMachineList,
     "DescribeWeeklyReportNonlocalLoginPlaces": doDescribeWeeklyReportNonlocalLoginPlaces,
+    "DescribeScanMalwareSchedule": doDescribeScanMalwareSchedule,
     "DeleteLoginWhiteList": doDeleteLoginWhiteList,
     "CreateOpenPortTask": doCreateOpenPortTask,
     "CloseProVersion": doCloseProVersion,
     "DescribeAccountStatistics": doDescribeAccountStatistics,
+    "DescribeExportMachines": doDescribeExportMachines,
     "EditTags": doEditTags,
     "DescribeOpenPortStatistics": doDescribeOpenPortStatistics,
     "ExportBruteAttacks": doExportBruteAttacks,
@@ -2613,6 +2767,7 @@ ACTION_MAP = {
     "SeparateMalwares": doSeparateMalwares,
     "AddLoginWhiteList": doAddLoginWhiteList,
     "DescribeProcessStatistics": doDescribeProcessStatistics,
+    "DescribeMalwareInfo": doDescribeMalwareInfo,
     "DescribeMaliciousRequests": doDescribeMaliciousRequests,
     "DeleteBashRules": doDeleteBashRules,
     "DescribeReverseShellEvents": doDescribeReverseShellEvents,
@@ -2634,6 +2789,7 @@ ACTION_MAP = {
     "UntrustMalwares": doUntrustMalwares,
     "DescribeWeeklyReportVuls": doDescribeWeeklyReportVuls,
     "DescribeWeeklyReportInfo": doDescribeWeeklyReportInfo,
+    "ModifyMalwareTimingScanSettings": doModifyMalwareTimingScanSettings,
     "DescribeComponentInfo": doDescribeComponentInfo,
     "ModifyProVersionRenewFlag": doModifyProVersionRenewFlag,
     "SetBashEventsStatus": doSetBashEventsStatus,

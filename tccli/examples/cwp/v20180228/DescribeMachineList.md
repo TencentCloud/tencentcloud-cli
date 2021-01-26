@@ -5,13 +5,9 @@
 Input: 
 
 ```
-tccli cwp DescribeMachines --cli-unfold-argument  \
+tccli cwp DescribeMachineList --cli-unfold-argument  \
     --MachineType CVM \
-    --MachineRegion ap-shanghai \
-    --Filters.0.Name Keywords \
-    --Filters.0.Values 10.0.1.1 \
-    --Limit 10 \
-    --Offset 0
+    --MachineRegion ap-guangzhou
 ```
 
 Output: 
@@ -36,7 +32,7 @@ Output:
                 "CyberAttackNum": 0,
                 "SecurityStatus": "SAFE",
                 "InstanceState": "TERMINATED_PRO_VERSION",
-                "ProjectId": 1
+                "LincenseStatus": 0
             }
         ],
         "TotalCount": 1,

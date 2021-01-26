@@ -126,6 +126,12 @@
       "name": "获取别名列表",
       "output": "ListAliasesResponse"
     },
+    "ListAsyncEvents": {
+      "document": "拉取函数异步事件列表",
+      "input": "ListAsyncEventsRequest",
+      "name": "拉取函数异步事件列表",
+      "output": "ListAsyncEventsResponse"
+    },
     "ListFunctions": {
       "document": "该接口根据传入的查询参数返回相关函数信息。",
       "input": "ListFunctionsRequest",
@@ -191,6 +197,12 @@
       "input": "PutTotalConcurrencyConfigRequest",
       "name": "修改账号并发限制配额",
       "output": "PutTotalConcurrencyConfigResponse"
+    },
+    "TerminateAsyncEvent": {
+      "document": "终止正在运行中的函数异步事件",
+      "input": "TerminateAsyncEventRequest",
+      "name": "终止函数异步事件",
+      "output": "TerminateAsyncEventResponse"
     },
     "UpdateAlias": {
       "document": "更新别名的配置",
@@ -307,6 +319,66 @@
         }
       ],
       "usage": "both"
+    },
+    "AsyncEvent": {
+      "document": "异步事件",
+      "members": [
+        {
+          "default": "",
+          "document": "调用请求id",
+          "member": "string",
+          "name": "InvokeRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用类型",
+          "member": "string",
+          "name": "InvokeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数版本",
+          "member": "string",
+          "name": "Qualifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用开始时间，格式: \"%Y-%m-%d %H:%M:%S.%f\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用结束时间，格式: \"%Y-%m-%d %H:%M:%S.%f\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CfsConfig": {
       "document": "文件系统(cfs)配置描述",
@@ -2762,6 +2834,150 @@
       ],
       "type": "object"
     },
+    "ListAsyncEventsRequest": {
+      "document": "ListAsyncEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "example": "helloworld",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，函数版本",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，调用类型列表",
+          "example": "[COS]",
+          "member": "string",
+          "name": "InvokeType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，事件状态列表",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，开始执行时间左闭右开区间",
+          "example": "无",
+          "member": "TimeInterval",
+          "name": "StartTimeInterval",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，结束执行时间左闭右开区间",
+          "example": "无",
+          "member": "TimeInterval",
+          "name": "EndTimeInterval",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "可选值 ASC 和 DESC，默认 DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选值 StartTime 和 EndTime，默认值 StartTime",
+          "example": "StartTime",
+          "member": "string",
+          "name": "Orderby",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认值为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据长度，默认值为 20，最大值 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，事件调用请求id",
+          "example": "5f825fd3-a59d-4879-aa28-3ac967c128885f825fd3-a59d-4879-aa28-3ac9",
+          "member": "string",
+          "name": "InvokeRequestId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAsyncEventsResponse": {
+      "document": "ListAsyncEvents返回参数结构体",
+      "members": [
+        {
+          "document": "满足过滤条件的事件总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异步事件列表",
+          "example": "无",
+          "member": "AsyncEvent",
+          "name": "EventList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListFunctionsRequest": {
       "document": "ListFunctions请求参数结构体",
       "members": [
@@ -3796,6 +4012,75 @@
         }
       ],
       "usage": "both"
+    },
+    "TerminateAsyncEventRequest": {
+      "document": "TerminateAsyncEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "example": "helloworld",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终止的调用请求id",
+          "example": "5f825fd3-a59d-4879-aa28-3ac967c128885f825fd3-a59d-4879-aa28-3ac9",
+          "member": "string",
+          "name": "InvokeRequestId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateAsyncEventResponse": {
+      "document": "TerminateAsyncEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TimeInterval": {
+      "document": "左闭右开时间区间，包括起始时间和结束时间，格式为\"%Y-%m-%d %H:%M:%S\"",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间（包括在内），格式\"%Y-%m-%d %H:%M:%S\"",
+          "member": "string",
+          "name": "Start",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间（不包括在内），格式\"%Y-%m-%d %H:%M:%S\"",
+          "member": "string",
+          "name": "End",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Trigger": {
       "document": "触发器类型",

@@ -16,6 +16,22 @@
         "title": "修改房间玩家自定义状态"
       }
     ],
+    "DescribePlayer": [
+      {
+        "document": "查询房间信息",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=DescribePlayer\n&GameId=obg-fr4vwil4\n&PlayerId=joe123455\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Player\": \r\n        {\r\n          \"OpenId\": \"joe123455\",\r\n          \"Name\": \"xx\",\r\n          \"CustomProfile\": \"worker\",\r\n          \"IsRobot\": false,\r\n          \"PlayerId\": \"joe123455\",\r\n          \"CustomPlayerStatus\": 1,\r\n          \"TeamId\": \"xx\"\r\n        },\r\n      \r\n    \"RequestId\": \"xx\"\r\n  }\r\n}",
+        "title": "查询房间信息"
+      }
+    ],
+    "DescribeRoom": [
+      {
+        "document": "查询房间信息",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=DescribeRoom\n&GameId=obg-fr4vwil4\n&PlayerId=joe123455\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Room\": {\r\n      \"Name\": \"xx\",\r\n      \"IsForbidJoin\": false,\r\n      \"StartGameTime\": 0,\r\n      \"Owner\": \"xx\",\r\n      \"FrameRate\": 15,\r\n      \"MaxPlayers\": 2,\r\n      \"Teams\": [\r\n        {\r\n          \"MinPlayers\": 1,\r\n          \"Id\": \"xx\",\r\n          \"MaxPlayers\": 1,\r\n          \"Name\": \"xx\"\r\n        },\r\n        {\r\n          \"MinPlayers\": 1,\r\n          \"Id\": \"xx\",\r\n          \"MaxPlayers\": 1,\r\n          \"Name\": \"xx\"\r\n        }\r\n      ],\r\n      \"Players\": [\r\n        {\r\n          \"OpenId\": \"joe123455\",\r\n          \"Name\": \"xx\",\r\n          \"CustomProfile\": \"worker\",\r\n          \"IsRobot\": false,\r\n          \"PlayerId\": \"joe123455\",\r\n          \"CustomPlayerStatus\": 1,\r\n          \"TeamId\": \"xx\"\r\n        },\r\n        {\r\n          \"OpenId\": \"xx\",\r\n          \"Name\": \"xx\",\r\n          \"CustomProfile\": \"xx\",\r\n          \"IsRobot\": false,\r\n          \"PlayerId\": \"xx\",\r\n          \"CustomPlayerStatus\": 1,\r\n          \"TeamId\": \"xx\"\r\n        }\r\n      ],\r\n      \"CreateTime\": 1578494768,\r\n      \"FrameSyncState\": 0,\r\n      \"CreateType\": 2,\r\n      \"CustomProperties\": \"xx\",\r\n      \"IsPrivate\": true,\r\n      \"OwnerOpenId\": \"xx\",\r\n      \"RouteId\": \"xx\",\r\n      \"Type\": \"xx\",\r\n      \"Id\": \"xx\"\r\n    },\r\n    \"RequestId\": \"xx\"\r\n  }\r\n}",
+        "title": "查询房间信息"
+      }
+    ],
     "DismissRoom": [
       {
         "document": "通过game_id、room_id解散房间",

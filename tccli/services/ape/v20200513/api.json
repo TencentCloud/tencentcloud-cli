@@ -447,6 +447,7 @@
         {
           "default": "",
           "document": "图片ID",
+          "example": "3038506",
           "member": "uint64",
           "name": "ImageId",
           "required": true,
@@ -456,6 +457,7 @@
         {
           "default": "",
           "document": "图片标题",
+          "example": "天空",
           "member": "string",
           "name": "Title",
           "required": true,
@@ -465,6 +467,7 @@
         {
           "default": "",
           "document": "图片描述",
+          "example": "白色塑料卷上的透明线程",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -474,6 +477,7 @@
         {
           "default": "",
           "document": "图片预览链接",
+          "example": "https://cdc-material.gtimg.com/ewesion_hdd/WS-IMAGE-01/WS0100186",
           "member": "string",
           "name": "PreviewUrl",
           "required": true,
@@ -483,6 +487,7 @@
         {
           "default": "",
           "document": "图片缩略图",
+          "example": "https://cdc-material.gtimg.com/ewesion_hdd/WS-IMAGE-01/WS0100186",
           "member": "string",
           "name": "ThumbUrl",
           "required": true,
@@ -492,8 +497,19 @@
         {
           "default": "",
           "document": "图片供应商",
+          "example": "XXX科技有限公司",
           "member": "string",
           "name": "Vendor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片关键词",
+          "example": "纱线卷，纱线，帘线，",
+          "member": "string",
+          "name": "Keywords",
           "required": true,
           "type": "string",
           "value_allowed_null": false

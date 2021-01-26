@@ -156,6 +156,12 @@
       "name": "日志搜索服务",
       "output": "DescribeLogSearchResponse"
     },
+    "DescribePlugins": {
+      "document": "展示插件列表和详情，支持分页，支持按照插件类型查询，支持按照插件ID批量查询，支持按照插件名称查询。",
+      "input": "DescribePluginsRequest",
+      "name": "查询插件列表和详情",
+      "output": "DescribePluginsResponse"
+    },
     "DescribeService": {
       "document": "本接口（DescribeService）用于查询一个服务的详细信息、包括服务的描述、域名、协议、创建时间、发布情况等信息。",
       "input": "DescribeServiceRequest",
@@ -3499,6 +3505,79 @@
       ],
       "type": "object"
     },
+    "DescribePluginsRequest": {
+      "document": "DescribePlugins请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的插件列表。",
+          "member": "string",
+          "name": "PluginIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要查询的插件名称。",
+          "member": "string",
+          "name": "PluginName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的插件类型。",
+          "member": "string",
+          "name": "PluginType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。预留字段，目前不支持过滤。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginsResponse": {
+      "document": "DescribePlugins返回参数结构体",
+      "members": [
+        {
+          "document": "插件详情。",
+          "member": "PluginSummary",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServiceEnvironmentListRequest": {
       "document": "DescribeServiceEnvironmentList请求参数结构体",
       "members": [
@@ -5844,6 +5923,99 @@
         }
       ],
       "usage": "in"
+    },
+    "Plugin": {
+      "document": "API网关插件详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "插件ID。",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件名称。",
+          "member": "string",
+          "name": "PluginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件类型。",
+          "member": "string",
+          "name": "PluginType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件定义语句。",
+          "member": "string",
+          "name": "PluginData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "插件创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PluginSummary": {
+      "document": "插件列表详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "插件个数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件详情。",
+          "member": "Plugin",
+          "name": "PluginSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ReleaseService": {
       "document": "发布服务返回",

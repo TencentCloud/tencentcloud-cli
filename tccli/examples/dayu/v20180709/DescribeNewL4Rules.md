@@ -30,6 +30,7 @@ Output:
                 "SourceType": 2,
                 "LbType": 1,
                 "KeepTime": 0,
+                "KeepEnable": 1,
                 "ModifyTime": "2020-03-09 21:37:25",
                 "SourceList": [
                     {
@@ -38,18 +39,18 @@ Output:
                     }
                 ]
             }
+        ],
+        "Healths": [
+            {
+                "Enable": 1,
+                "RuleId": "xx",
+                "Interval": 1,
+                "AliveNum": 1,
+                "KickNum": 1,
+                "TimeOut": 1
+            }
         ]
-    },
-    "Healths": [
-        {
-            "RuleId": "rule-000002uq",
-            "Enable": 0,
-            "TimeOut": 6,
-            "Interval": 15,
-            "KickNum": 5,
-            "AliveNum": 5
-        }
-    ]
+    }
 }
 ```
 

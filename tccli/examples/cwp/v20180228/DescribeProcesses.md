@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeProcesses --cli-unfold-argument  \
+    --Uuid xxx \
     --Limit 10 \
     --Offset 0
 ```
@@ -17,7 +18,7 @@ Output:
         "Processes": [
             {
                 "Id": 1,
-                "Uuid": "6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1",
+                "Uuid": "xxx",
                 "MachineIp": "10.12.13.22",
                 "MachineName": "machine-name",
                 "Pid": 14456,

@@ -1161,6 +1161,7 @@
         {
           "default": "",
           "document": "作业ID",
+          "example": "job-f5da1edl",
           "member": "string",
           "name": "JobId",
           "required": true,

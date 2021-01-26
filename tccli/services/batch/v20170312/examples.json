@@ -43,7 +43,7 @@
     "DeleteJob": [
       {
         "document": "",
-        "input": "https://batch.tencentcloudapi.com/?Action=DeleteJob\r\n&JobId=job-f5da1edl\r\n&<公共请求参数>",
+        "input": "https://batch.tencentcloudapi.com/?Action=DeleteJob\n&JobId=job-f5da1edl\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0ffc9347-a47a-43a6-a64a-aa77fda7ea13\"\r\n    }\r\n}",
         "title": "删除作业"
       }

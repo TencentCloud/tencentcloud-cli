@@ -2638,6 +2638,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "cme_platform",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2646,6 +2647,7 @@
         {
           "default": "",
           "document": "项目 Id。",
+          "example": "600aae0bb1cc1c000129214b",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -2654,6 +2656,7 @@
         {
           "default": "",
           "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n注意：如果不填默认为云点播文件。",
+          "example": "VOD",
           "member": "string",
           "name": "SourceType",
           "required": false,
@@ -2662,6 +2665,7 @@
         {
           "default": "",
           "document": "云点播媒资文件 Id，当 SourceType 取值 VOD 或者缺省的时候必填。",
+          "example": "5285890813075978720",
           "member": "string",
           "name": "VodFileId",
           "required": false,
@@ -2670,6 +2674,7 @@
         {
           "default": "",
           "document": "原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。",
+          "example": "无",
           "member": "ExternalMediaInfo",
           "name": "ExternalMediaInfo",
           "required": false,
@@ -2678,6 +2683,7 @@
         {
           "default": "",
           "document": "媒体名称，不能超过30个字符。",
+          "example": "测试",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2686,6 +2692,7 @@
         {
           "default": "",
           "document": "媒体预处理任务模板 ID，取值：\n<li>10：进行编辑预处理。</li>\n注意：如果填0则不进行处理。",
+          "example": "10",
           "member": "int64",
           "name": "PreProcessDefinition",
           "required": false,
@@ -2694,6 +2701,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验项目和媒体文件访问权限。",
+          "example": "abf00b8b-9482-4c34-b72c-bea5da0a27ce",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2707,15 +2715,19 @@
       "members": [
         {
           "document": "媒体 Id。",
+          "example": "600a2c94e5c6aa0001b9ef78",
           "member": "string",
           "name": "MaterialId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "媒体预处理任务 ID，如果未指定发起预处理任务则为空。",
+          "example": "1900001191-tfusion-5e299c12c63f6af4c95f34159f19137345t0",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

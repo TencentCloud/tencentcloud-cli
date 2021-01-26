@@ -214,6 +214,14 @@
         "title": "请求失败"
       }
     ],
+    "DescribePlugins": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribePlugins\n&PluginIds.0=Plugin-23sdcda\n&PluginName=myplugin\n&PluginType=IPControl\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Result\": {\r\n      \"TotalCount\": 1,\r\n      \"PluginSet\": [\r\n        {\r\n          \"PluginId\": \"Plugin-23sdcda\",\r\n          \"PluginName\": \"myplugin\",\r\n          \"PluginType\": \"IPControl\",\r\n          \"Description\": \"my first plugin\",\r\n          \"PluginData\": \"{\\\"unit\\\":\\\"MINUTE\\\",\\\"apiDefault\\\":20}\",\r\n          \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\r\n          \"CreatedTime\": \"2020-09-22T00:00:00+00:00\"\r\n        }\r\n      ]\r\n    },\r\n    \"RequestId\": \"bb85842c-c0d2-4543-8f4d-396a193babe8\"\r\n  }\r\n}",
+        "title": "DescribePlugins"
+      }
+    ],
     "DescribeService": [
       {
         "document": "",

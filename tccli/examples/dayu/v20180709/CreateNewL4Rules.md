@@ -1,4 +1,4 @@
-**Example 1: 添加L4转发规则**
+**Example 1: 添加四层转发规则**
 
 
 
@@ -19,7 +19,8 @@ tccli dayu CreateNewL4Rules --cli-unfold-argument  \
     --Rules.0.SourceList.0.Source 1.1.1.10 \
     --Rules.0.SourceList.0.Weight 100 \
     --Rules.0.SourceList.1.Source 1.1.1.20 \
-    --Rules.0.SourceList.1.Weight 100
+    --Rules.0.SourceList.1.Weight 100 \
+    --Rules.0.KeepEnable 0
 ```
 
 Output: 

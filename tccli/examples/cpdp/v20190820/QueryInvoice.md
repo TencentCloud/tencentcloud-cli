@@ -6,8 +6,6 @@ Input:
 
 ```
 tccli cpdp QueryInvoice --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
-    --ImageId img-pmqg1cw7 \
     --InvoicePlatformId 0 \
     --OrderId test195992
 ```
@@ -18,22 +16,47 @@ Output:
     "Response": {
         "RequestId": "CPDP-1584287242140",
         "Result": {
-            "code": 0,
-            "data": {
-                "tax_amount": "",
-                "is_red_washed": 0,
-                "amount_without_tax": "",
-                "ticket_code": "",
-                "ticket_date": "",
-                "check_code": "",
-                "pdf_url": "",
-                "message": "SUCCESS",
-                "ticket_sn": "",
-                "order_sn": "",
-                "status": 5,
-                "amount_with_tax": ""
+            "Code": 0,
+            "Data": {
+                "TaxAmount": "",
+                "IsRedWashed": 0,
+                "AmountWithoutTax": "",
+                "TicketCode": "",
+                "TicketDate": "",
+                "CheckCode": "",
+                "PdfUrl": "",
+                "Message": "SUCCESS",
+                "TicketSn": "",
+                "OrderSn": "",
+                "OrderId": "",
+                "Status": 5,
+                "AmountWithTax": ""
             },
-            "message": "success"
+            "Message": "success",
+            "Order": {
+                "OrderId": "xx",
+                "Name": "xx",
+                "Items": [
+                    {
+                        "Status": "xx",
+                        "TaxCode": "xx",
+                        "Name": "xx",
+                        "Models": "xx",
+                        "Price": 0.0,
+                        "AmountHasTax": 0.0,
+                        "Discount": 0.0,
+                        "Total": 0,
+                        "Unit": "xx"
+                    }
+                ],
+                "SellerName": "xx",
+                "Amount": 0.0,
+                "AmountHasTax": 0.0,
+                "Discount": 0.0,
+                "InvoiceType": 0,
+                "StoreNo": "xx",
+                "OrderDate": "xx"
+            }
         }
     }
 }

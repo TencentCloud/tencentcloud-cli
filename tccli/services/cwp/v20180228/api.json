@@ -210,6 +210,12 @@
       "name": "获取组件列表",
       "output": "DescribeComponentsResponse"
     },
+    "DescribeExportMachines": {
+      "document": "本接口 (DescribeExportMachines) 用于导出区域主机列表。",
+      "input": "DescribeExportMachinesRequest",
+      "name": "导出区域主机列表",
+      "output": "DescribeExportMachinesResponse"
+    },
     "DescribeHistoryAccounts": {
       "document": "本接口 (DescribeHistoryAccounts) 用于获取帐号变更历史列表数据。",
       "input": "DescribeHistoryAccountsRequest",
@@ -234,6 +240,12 @@
       "name": "获取机器详情",
       "output": "DescribeMachineInfoResponse"
     },
+    "DescribeMachineList": {
+      "document": "本接口 (DescribeMachineList) 用于网页防篡改获取区域主机列表。",
+      "input": "DescribeMachineListRequest",
+      "name": "网页防篡改获取区域主机列表",
+      "output": "DescribeMachineListResponse"
+    },
     "DescribeMachines": {
       "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
       "input": "DescribeMachinesRequest",
@@ -245,6 +257,12 @@
       "input": "DescribeMaliciousRequestsRequest",
       "name": "获取恶意请求数据",
       "output": "DescribeMaliciousRequestsResponse"
+    },
+    "DescribeMalwareInfo": {
+      "document": "查看恶意文件详情",
+      "input": "DescribeMalwareInfoRequest",
+      "name": "查看恶意文件详情",
+      "output": "DescribeMalwareInfoResponse"
     },
     "DescribeMalwares": {
       "document": "本接口（DescribeMalwares）用于获取木马事件列表。",
@@ -329,6 +347,12 @@
       "input": "DescribeReverseShellRulesRequest",
       "name": "获取反弹Shell规则列表",
       "output": "DescribeReverseShellRulesResponse"
+    },
+    "DescribeScanMalwareSchedule": {
+      "document": "查询木马扫描进度",
+      "input": "DescribeScanMalwareScheduleRequest",
+      "name": "查询木马扫描进度",
+      "output": "DescribeScanMalwareScheduleResponse"
     },
     "DescribeSecurityDynamics": {
       "document": "本接口 (DescribeSecurityDynamics) 用于获取安全事件消息数据。",
@@ -492,6 +516,12 @@
       "name": "导出反弹Shell事件",
       "output": "ExportReverseShellEventsResponse"
     },
+    "ExportTasks": {
+      "document": "用于异步导出数据量大的日志文件",
+      "input": "ExportTasksRequest",
+      "name": "异步导出任务",
+      "output": "ExportTasksResponse"
+    },
     "IgnoreImpactedHosts": {
       "document": "本接口 (IgnoreImpactedHosts) 用于忽略漏洞。",
       "input": "IgnoreImpactedHostsRequest",
@@ -527,6 +557,12 @@
       "input": "ModifyLoginWhiteListRequest",
       "name": "编辑白名单规则",
       "output": "ModifyLoginWhiteListResponse"
+    },
+    "ModifyMalwareTimingScanSettings": {
+      "document": "定时扫描设置",
+      "input": "ModifyMalwareTimingScanSettingsRequest",
+      "name": "定时扫描设置",
+      "output": "ModifyMalwareTimingScanSettingsResponse"
     },
     "ModifyProVersionRenewFlag": {
       "document": "本接口 (ModifyProVersionRenewFlag) 用于修改专业版包年包月续费标识。",
@@ -878,6 +914,39 @@
         }
       ],
       "usage": "out"
+    },
+    "AssetFilters": {
+      "document": "容器安全\n描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否模糊查询",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "BashEvent": {
       "document": "高危命令数据",
@@ -1442,6 +1511,7 @@
         {
           "default": "",
           "document": "策略名称",
+          "example": "test",
           "member": "string",
           "name": "StrategyName",
           "required": true,
@@ -1450,6 +1520,7 @@
         {
           "default": "",
           "document": "检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.",
+          "example": "2",
           "member": "uint64",
           "name": "ScanCycle",
           "required": true,
@@ -1458,6 +1529,7 @@
         {
           "default": "",
           "document": "定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测",
+          "example": "1",
           "member": "string",
           "name": "ScanAt",
           "required": true,
@@ -1466,6 +1538,7 @@
         {
           "default": "",
           "document": "该策略下选择的基线id数组. 示例: [1,3,5,7]",
+          "example": "1",
           "member": "uint64",
           "name": "CategoryIds",
           "required": true,
@@ -1474,6 +1547,7 @@
         {
           "default": "",
           "document": "扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机",
+          "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
           "required": true,
@@ -1482,6 +1556,7 @@
         {
           "default": "",
           "document": "云主机类型：“CVM”：虚拟主机，\"BMS\"：裸金属，\"ECM\"：边缘计算主机",
+          "example": "CVM",
           "member": "string",
           "name": "MachineType",
           "required": true,
@@ -1490,6 +1565,7 @@
         {
           "default": "",
           "document": "主机地域. 示例: \"ap-bj\"",
+          "example": "ap-bj",
           "member": "string",
           "name": "RegionCode",
           "required": true,
@@ -1498,6 +1574,7 @@
         {
           "default": "",
           "document": "主机id数组. 示例: [\"quuid1\",\"quuid2\"]",
+          "example": "[",
           "member": "string",
           "name": "Quuids",
           "required": false,
@@ -1975,10 +2052,26 @@
       "members": [
         {
           "default": "",
-          "document": "异地登录事件ID数组。",
+          "document": "删除异地登录事件的方式，可选值：\"Ids\"、\"Ip\"、\"All\"，默认为Ids",
+          "member": "string",
+          "name": "DelType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异地登录事件ID数组。DelType为Ids或DelType未填时此项必填",
           "member": "uint64",
           "name": "Ids",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "异地登录事件的Ip。DelType为Ip时必填",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
           "type": "list"
         }
       ],
@@ -2988,6 +3081,79 @@
       ],
       "type": "object"
     },
+    "DescribeExportMachinesRequest": {
+      "document": "DescribeExportMachines请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "member": "string",
+          "name": "MachineRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "机器所属业务ID列表",
+          "member": "uint64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportMachinesResponse": {
+      "document": "DescribeExportMachines返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHistoryAccountsRequest": {
       "document": "DescribeHistoryAccounts请求参数结构体",
       "members": [
@@ -3058,22 +3224,25 @@
         {
           "default": "",
           "document": "漏洞种类ID。",
+          "example": "1",
           "member": "uint64",
           "name": "VulId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "10",
+          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3082,6 +3251,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED：待处理 | FIXED：已修复）</li>",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3095,6 +3265,7 @@
       "members": [
         {
           "document": "记录总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -3102,6 +3273,7 @@
         },
         {
           "document": "漏洞影响机器列表数组",
+          "example": "[]",
           "member": "ImpactedHost",
           "name": "ImpactedHosts",
           "type": "list",
@@ -3324,6 +3496,78 @@
       ],
       "type": "object"
     },
+    "DescribeMachineListRequest": {
+      "document": "DescribeMachineList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "member": "string",
+          "name": "MachineRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineListResponse": {
+      "document": "DescribeMachineList返回参数结构体",
+      "members": [
+        {
+          "document": "主机列表",
+          "member": "Machine",
+          "name": "Machines",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMachinesRequest": {
       "document": "DescribeMachines请求参数结构体",
       "members": [
@@ -3364,6 +3608,14 @@
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
           "member": "Filter",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "机器所属业务ID列表",
+          "member": "uint64",
+          "name": "ProjectIds",
           "required": false,
           "type": "list"
         }
@@ -3449,6 +3701,39 @@
           "member": "MaliciousRequest",
           "name": "MaliciousRequests",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMalwareInfoRequest": {
+      "document": "DescribeMalwareInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一ID",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMalwareInfoResponse": {
+      "document": "DescribeMalwareInfo返回参数结构体",
+      "members": [
+        {
+          "document": "恶意文件详情信息",
+          "member": "MalwareInfo",
+          "name": "MalwareInfo",
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -4060,6 +4345,7 @@
         {
           "default": "",
           "document": "云镜客户端唯一Uuid。Uuid和ProcessName必填其一，使用Uuid表示，查询该主机列表信息。",
+          "example": "xxx",
           "member": "string",
           "name": "Uuid",
           "required": false,
@@ -4068,6 +4354,7 @@
         {
           "default": "",
           "document": "进程名。Uuid和ProcessName必填其一，使用ProcessName表示，查询该进程列表信息。",
+          "example": "test",
           "member": "string",
           "name": "ProcessName",
           "required": false,
@@ -4076,6 +4363,7 @@
         {
           "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4084,6 +4372,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4092,6 +4381,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4105,6 +4395,7 @@
       "members": [
         {
           "document": "进程列表记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -4112,6 +4403,7 @@
         },
         {
           "document": "进程列表数据数组。",
+          "example": "[]",
           "member": "Process",
           "name": "Processes",
           "type": "list",
@@ -4226,6 +4518,51 @@
           "document": "总条数",
           "member": "uint64",
           "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanMalwareScheduleRequest": {
+      "document": "DescribeScanMalwareSchedule请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeScanMalwareScheduleResponse": {
+      "document": "DescribeScanMalwareSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "扫描进度",
+          "member": "int64",
+          "name": "Schedule",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "风险文件数,当进度满了以后才有该值",
+          "member": "int64",
+          "name": "RiskFileNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否正在扫描中",
+          "member": "bool",
+          "name": "IsSchedule",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0 从未扫描过、 1 扫描中、 2扫描完成、 3停止中、 4停止完成",
+          "member": "uint64",
+          "name": "ScanStatus",
           "type": "int",
           "value_allowed_null": false
         },
@@ -4497,6 +4834,7 @@
         {
           "default": "",
           "document": "标签ID",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -4510,8 +4848,10 @@
       "members": [
         {
           "document": "列表数据",
+          "example": "[]",
           "member": "TagMachine",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4690,6 +5030,7 @@
       "members": [
         {
           "document": "漏洞数量。",
+          "example": "1",
           "member": "uint64",
           "name": "VulNum",
           "type": "int",
@@ -4697,6 +5038,7 @@
         },
         {
           "document": "专业版机器数。",
+          "example": "2",
           "member": "uint64",
           "name": "ProVersionNum",
           "type": "int",
@@ -4704,6 +5046,7 @@
         },
         {
           "document": "受影响的专业版主机数。",
+          "example": "3",
           "member": "uint64",
           "name": "ImpactedHostNum",
           "type": "int",
@@ -4711,6 +5054,7 @@
         },
         {
           "document": "主机总数。",
+          "example": "4",
           "member": "uint64",
           "name": "HostNum",
           "type": "int",
@@ -4718,6 +5062,7 @@
         },
         {
           "document": "基础版机器数。",
+          "example": "5",
           "member": "uint64",
           "name": "BasicVersionNum",
           "type": "int",
@@ -5405,6 +5750,7 @@
         {
           "default": "",
           "document": "标签名",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5413,6 +5759,7 @@
         {
           "default": "",
           "document": "标签ID",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -5421,6 +5768,7 @@
         {
           "default": "",
           "document": "CVM主机ID",
+          "example": "[]",
           "member": "string",
           "name": "Quuids",
           "required": false,
@@ -5443,7 +5791,17 @@
     },
     "ExportAttackLogsRequest": {
       "document": "ExportAttackLogs请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ExportAttackLogsResponse": {
@@ -5451,6 +5809,7 @@
       "members": [
         {
           "document": "导出文件下载链接地址。",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
           "type": "string",
@@ -5458,6 +5817,7 @@
         },
         {
           "document": "导出任务ID",
+          "example": "123456",
           "member": "string",
           "name": "TaskId",
           "type": "string",
@@ -5554,7 +5914,17 @@
     },
     "ExportMaliciousRequestsRequest": {
       "document": "ExportMaliciousRequests请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ExportMaliciousRequestsResponse": {
@@ -5562,6 +5932,7 @@
       "members": [
         {
           "document": "导出文件下载链接地址。",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
           "type": "string",
@@ -5617,6 +5988,13 @@
           "value_allowed_null": false
         },
         {
+          "document": "任务id",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5667,7 +6045,17 @@
     },
     "ExportPrivilegeEventsRequest": {
       "document": "ExportPrivilegeEvents请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ExportPrivilegeEventsResponse": {
@@ -5675,8 +6063,17 @@
       "members": [
         {
           "document": "导出文件下载链接地址。",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "导出任务ID",
+          "example": "1596595610",
+          "member": "string",
+          "name": "TaskId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -5729,12 +6126,53 @@
       ],
       "type": "object"
     },
+    "ExportTasksRequest": {
+      "document": "ExportTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportTasksResponse": {
+      "document": "ExportTasks返回参数结构体",
+      "members": [
+        {
+          "document": "PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下载链接",
+          "member": "string",
+          "name": "DownloadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n\n* 最多只能有5个Filter\n* 同一个Filter存在多个Values，Values值数量最多不能超过5个。\n",
       "members": [
         {
           "default": "",
           "document": "过滤键的名称。",
+          "example": "Keywords",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5744,6 +6182,7 @@
         {
           "default": "",
           "document": "一个或者多个过滤值。",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -5753,6 +6192,7 @@
         {
           "default": "",
           "document": "模糊搜索",
+          "example": "false",
           "member": "bool",
           "name": "ExactMatch",
           "required": false,
@@ -5781,6 +6221,15 @@
           "name": "Values",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否模糊匹配，前端框架会带上，可以不管",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -6381,6 +6830,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6646,6 +7104,183 @@
       ],
       "usage": "out"
     },
+    "MalwareInfo": {
+      "document": "恶意文件详情",
+      "members": [
+        {
+          "default": "",
+          "document": "病毒名称",
+          "member": "string",
+          "name": "VirusName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件MD5",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件地址",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次运行时间",
+          "member": "string",
+          "name": "FileCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次运行时间",
+          "member": "string",
+          "name": "FileModifierTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "危害描述",
+          "member": "string",
+          "name": "HarmDescribe",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建议方案",
+          "member": "string",
+          "name": "SuggestScheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "member": "string",
+          "name": "ServersName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器IP",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程名称",
+          "member": "string",
+          "name": "ProcessName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程ID",
+          "member": "string",
+          "name": "ProcessID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签特性",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "影响广度 // 暂时不提供\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Breadth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "查询热度 // 暂时不提供\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Heat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "唯一ID",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名称",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次发现时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近扫描时间",
+          "member": "string",
+          "name": "LatestScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MisAlarmNonlocalLoginPlacesRequest": {
       "document": "MisAlarmNonlocalLoginPlaces请求参数结构体",
       "members": [
@@ -6678,6 +7313,7 @@
         {
           "default": "",
           "document": "告警项目。\n<li>Offline：防护软件离线</li>\n<li>Malware：发现木马文件</li>\n<li>NonlocalLogin：发现异地登录行为</li>\n<li>CrackSuccess：被暴力破解成功</li>",
+          "example": "CrackSuccess",
           "member": "string",
           "name": "Attribute",
           "required": true,
@@ -6686,6 +7322,7 @@
         {
           "default": "",
           "document": "告警项目属性。\n<li>CLOSE：关闭</li>\n<li>OPEN：打开</li>",
+          "example": "OPEN",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -6748,6 +7385,96 @@
     },
     "ModifyLoginWhiteListResponse": {
       "document": "ModifyLoginWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMalwareTimingScanSettingsRequest": {
+      "document": "ModifyMalwareTimingScanSettings请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "检测模式 0 全盘检测  1快速检测",
+          "member": "uint64",
+          "name": "CheckPattern",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检测周期 开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "检测周期 超时结束时间",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否全部服务器 1 全部 2 自选",
+          "member": "uint64",
+          "name": "IsGlobal",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定时检测开关 0 关闭 1开启",
+          "member": "uint64",
+          "name": "EnableScan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监控模式 0 标准 1深度",
+          "member": "uint64",
+          "name": "MonitoringPattern",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扫描周期 默认每天 1",
+          "member": "uint64",
+          "name": "Cycle",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实时监控 0 关闭 1开启",
+          "member": "uint64",
+          "name": "RealTimeMonitoring",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自选服务器时必须 主机quuid的string数组",
+          "member": "string",
+          "name": "QuuidList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMalwareTimingScanSettingsResponse": {
+      "document": "ModifyMalwareTimingScanSettings返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

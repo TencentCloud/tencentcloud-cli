@@ -188,7 +188,7 @@ def doCopyFunction(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTrigger(args, parsed_globals):
+def doGetFunctionLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -202,9 +202,9 @@ def doDeleteTrigger(args, parsed_globals):
     client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTriggerRequest()
+    model = models.GetFunctionLogsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteTrigger(model)
+    rsp = client.GetFunctionLogs(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -463,7 +463,7 @@ def doPutTotalConcurrencyConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetFunctionLogs(args, parsed_globals):
+def doTerminateAsyncEvent(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -477,9 +477,9 @@ def doGetFunctionLogs(args, parsed_globals):
     client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetFunctionLogsRequest()
+    model = models.TerminateAsyncEventRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetFunctionLogs(model)
+    rsp = client.TerminateAsyncEvent(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -580,6 +580,31 @@ def doListLayers(args, parsed_globals):
     model = models.ListLayersRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ListLayers(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListAsyncEvents(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListAsyncEventsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ListAsyncEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -788,6 +813,31 @@ def doDeleteProvisionedConcurrencyConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteTrigger(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTriggerRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteTrigger(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetFunctionAddress(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -931,7 +981,7 @@ ACTION_MAP = {
     "CreateTrigger": doCreateTrigger,
     "CreateNamespace": doCreateNamespace,
     "CopyFunction": doCopyFunction,
-    "DeleteTrigger": doDeleteTrigger,
+    "GetFunctionLogs": doGetFunctionLogs,
     "ListAliases": doListAliases,
     "DeleteNamespace": doDeleteNamespace,
     "GetProvisionedConcurrencyConfig": doGetProvisionedConcurrencyConfig,
@@ -942,11 +992,12 @@ ACTION_MAP = {
     "GetFunction": doGetFunction,
     "DeleteAlias": doDeleteAlias,
     "PutTotalConcurrencyConfig": doPutTotalConcurrencyConfig,
-    "GetFunctionLogs": doGetFunctionLogs,
+    "TerminateAsyncEvent": doTerminateAsyncEvent,
     "CreateAlias": doCreateAlias,
     "PutProvisionedConcurrencyConfig": doPutProvisionedConcurrencyConfig,
     "ListVersionByFunction": doListVersionByFunction,
     "ListLayers": doListLayers,
+    "ListAsyncEvents": doListAsyncEvents,
     "ListLayerVersions": doListLayerVersions,
     "GetReservedConcurrencyConfig": doGetReservedConcurrencyConfig,
     "ListFunctions": doListFunctions,
@@ -955,6 +1006,7 @@ ACTION_MAP = {
     "PublishLayerVersion": doPublishLayerVersion,
     "DeleteReservedConcurrencyConfig": doDeleteReservedConcurrencyConfig,
     "DeleteProvisionedConcurrencyConfig": doDeleteProvisionedConcurrencyConfig,
+    "DeleteTrigger": doDeleteTrigger,
     "GetFunctionAddress": doGetFunctionAddress,
     "GetAlias": doGetAlias,
     "CreateFunction": doCreateFunction,

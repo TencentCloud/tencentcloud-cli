@@ -1900,6 +1900,7 @@
         {
           "default": "",
           "document": "cluster id",
+          "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1908,6 +1909,7 @@
         {
           "default": "",
           "document": "AutoScalingGroupPara AS组参数",
+          "example": "{\\\"AutoScalingGroupName\\\":\\\"\\\",\\\"MaxSize\\\":1,\\\"MinSize\\\":0,\\\"Des",
           "member": "string",
           "name": "AutoScalingGroupPara",
           "required": true,
@@ -1916,6 +1918,7 @@
         {
           "default": "",
           "document": "LaunchConfigurePara 运行参数",
+          "example": "{\\\"LaunchConfigurationName\\\":\\\"\\\",\\\"InstanceType\\\":\\\"S3.SMALL1\\\"",
           "member": "string",
           "name": "LaunchConfigurePara",
           "required": true,
@@ -1924,6 +1927,7 @@
         {
           "default": "",
           "document": "InstanceAdvancedSettings 示例参数",
+          "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": true,
@@ -1932,6 +1936,7 @@
         {
           "default": "",
           "document": "是否启用自动伸缩",
+          "example": "true",
           "member": "bool",
           "name": "EnableAutoscale",
           "required": true,
@@ -1940,6 +1945,7 @@
         {
           "default": "",
           "document": "节点池名称",
+          "example": "测试集群",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1948,6 +1954,7 @@
         {
           "default": "",
           "document": "Labels标签",
+          "example": "无",
           "member": "Label",
           "name": "Labels",
           "required": false,
@@ -1956,10 +1963,29 @@
         {
           "default": "",
           "document": "Taints互斥",
+          "example": "无",
           "member": "Taint",
           "name": "Taints",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "节点池os",
+          "example": "ubuntu18.04.1x86_64",
+          "member": "string",
+          "name": "NodePoolOs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器的镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)",
+          "example": "GENERAL",
+          "member": "string",
+          "name": "OsCustomizeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1969,8 +1995,10 @@
       "members": [
         {
           "document": "节点池id",
+          "example": "np-xxxxxxxx",
           "member": "string",
           "name": "NodePoolId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

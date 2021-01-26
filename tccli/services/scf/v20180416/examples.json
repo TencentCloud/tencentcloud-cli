@@ -168,6 +168,14 @@
         "title": "查询函数下的全部别名"
       }
     ],
+    "ListAsyncEvents": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListAsyncEvents\n&FunctionName=test\n&Qualifier=1\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"EventList\": [],\r\n        \"RequestId\": \"26c5f1a9-ebd4-407e-83d7-ae8001cca644\"\r\n    }\r\n}",
+        "title": "拉取函数异步事件列表"
+      }
+    ],
     "ListFunctions": [
       {
         "document": "",
@@ -260,6 +268,14 @@
         "input": "https://scf.tencentcloudapi.com/?Action=PutTotalConcurrencyConfig\n&TotalConcurrencyMem=128000\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
         "title": "设置用户并发内存配额"
+      }
+    ],
+    "TerminateAsyncEvent": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=TerminateAsyncEvent\n&Namespace=default\n&FunctionName=test\n&InvokeRequestId=abc\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"ee33a89b-3825-4d2f-bd88-35a8fa27aae1\"\r\n    }\r\n}",
+        "title": "示例0"
       }
     ],
     "UpdateAlias": [

@@ -11,10 +11,12 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
-        "VulNum": 10,
-        "ProVersionNum": 55,
-        "ImpactedHostNum": 20
+        "ImpactedHostNum": 1,
+        "BasicVersionNum": 1,
+        "ProVersionNum": 1,
+        "RequestId": "xx",
+        "HostNum": 1,
+        "VulNum": 1
     }
 }
 ```

@@ -12,6 +12,18 @@
       "name": "修改玩家自定义状态",
       "output": "ChangeRoomPlayerStatusResponse"
     },
+    "DescribePlayer": {
+      "document": "该接口用于查询玩家信息。支持两种用法，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。",
+      "input": "DescribePlayerRequest",
+      "name": "查询玩家信息",
+      "output": "DescribePlayerResponse"
+    },
+    "DescribeRoom": {
+      "document": "该接口用于查询房间信息。支持两种用法，当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，玩家Id可不传，按照房间Id查询房间信息。",
+      "input": "DescribeRoomRequest",
+      "name": "查询房间信息",
+      "output": "DescribeRoomResponse"
+    },
     "DismissRoom": {
       "document": "通过game_id、room_id解散房间",
       "input": "DismissRoomRequest",
@@ -124,6 +136,114 @@
           "document": "房间信息",
           "member": "Room",
           "name": "Room",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlayerRequest": {
+      "document": "DescribePlayer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏资源Id。",
+          "example": "obg-fr4vwil4",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家OpenId。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家PlayerId，由后台分配，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。",
+          "example": "joe123455das",
+          "member": "string",
+          "name": "PlayerId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlayerResponse": {
+      "document": "DescribePlayer返回参数结构体",
+      "members": [
+        {
+          "document": "玩家信息。",
+          "example": "无",
+          "member": "Player",
+          "name": "Player",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomRequest": {
+      "document": "DescribeRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏资源Id。",
+          "example": "obg-fr4vwil4",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家Id。当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，优先按照房间Id查询房间信息。",
+          "example": "joe123455das",
+          "member": "string",
+          "name": "PlayerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间Id。",
+          "example": "xxsdsdasdas",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomResponse": {
+      "document": "DescribeRoom返回参数结构体",
+      "members": [
+        {
+          "document": "房间信息。",
+          "example": "无",
+          "member": "Room",
+          "name": "Room",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

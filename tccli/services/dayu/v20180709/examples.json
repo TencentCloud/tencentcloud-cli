@@ -123,9 +123,9 @@
     "CreateNewL4Rules": [
       {
         "document": "",
-        "input": "https://dayu.tencentcloudapi.com/?Action=CreateNewL4Rules\r\n&Business=bgpip\r\n&IdList.0=bgpip-0000011t\r\n&VipList.0=129.28.240.44\r\n&Rules.0.RuleName=test\r\n&Rules.0.Protocol=TCP\r\n&Rules.0.VirtualPort=18888\r\n&Rules.0.SourcePort=18888\r\n&Rules.0.SourceType=2\r\n&Rules.0.LbType=1\r\n&Rules.0.KeepTime=300\r\n&Rules.0.SourceList.0.Source=1.1.1.10\r\n&Rules.0.SourceList.0.Weight=100\r\n&Rules.0.SourceList.1.Source=1.1.1.20\r\n&Rules.0.SourceList.1.Weight=100\r\n&<公共请求参数>",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateNewL4Rules\n&Business=bgpip\n&IdList.0=bgpip-0000011t\n&VipList.0=129.28.240.44\n&Rules.0.RuleName=test\n&Rules.0.Protocol=TCP\n&Rules.0.VirtualPort=18888\n&Rules.0.SourcePort=18888\n&Rules.0.SourceType=2\n&Rules.0.LbType=1\n&Rules.0.KeepTime=300\n&Rules.0.SourceList.0.Source=1.1.1.10\n&Rules.0.SourceList.0.Weight=100\n&Rules.0.SourceList.1.Source=1.1.1.20\n&Rules.0.SourceList.1.Weight=100\n&Rules.0.KeepEnable=0\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"Success\": {\r\n            \"Code\": \"Success\",\r\n            \"Message\": \"Success\"\r\n        }\r\n    }\r\n}",
-        "title": "添加L4转发规则"
+        "title": "添加四层转发规则"
       }
     ],
     "CreateNewL7Rules": [
@@ -203,7 +203,7 @@
     "DeleteNewL4Rules": [
       {
         "document": "",
-        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteNewL4Rules\r\n&Business=bgpip\r\n&Rule.0.Id=bgpip-000001\r\n&Rule.0.Ip=192.168.1.1\r\n&Rule.0.RuleIdList.0=rule-000002uq\r\n&<公共请求参数>",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteNewL4Rules\n&Business=bgpip\n&Rule.0.Id=bgpip-000001\n&Rule.0.Ip=192.168.1.1\n&Rule.0.RuleIdList.0=rule-000002uq\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"Success\": {\r\n            \"Code\": \"Success\",\r\n            \"Message\": \"Success\"\r\n        }\r\n    }\r\n}",
         "title": "删除L4转发规则"
       }
@@ -211,7 +211,7 @@
     "DeleteNewL7Rules": [
       {
         "document": "",
-        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteNewL7Rules\r\n&Business=bgpip\r\n&Rule.0.Id=bgpip-0000001\r\n&Rule.0.Ip=11.11.11.11\r\n&Rule.0.RuleIdList.0=rule-000004qq\r\n&<公共请求参数>",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteNewL7Rules\n&Business=bgpip\n&Rule.0.Id=bgpip-0000001\n&Rule.0.Ip=11.11.11.11\n&Rule.0.RuleIdList.0=rule-000004qq\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"Success\": {\r\n            \"Code\": \"Success\",\r\n            \"Message\": \"Success\"\r\n        }\r\n    }\r\n}",
         "title": "删除L7转发规则"
       }
@@ -507,15 +507,15 @@
     "DescribeNewL4Rules": [
       {
         "document": "",
-        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeNewL4Rules\r\n&Business=bgpip\r\n&Ip=192.168.1.1\r\n&VirtualPort=123\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"Total\": 1,\r\n        \"Rules\": [\r\n            {\r\n                \"Region\": 1,\r\n                \"Ip\": \"192.168.1.1\",\r\n                \"Id\":\"bgpip-0000011t\",\r\n                \"RuleId\": \"rule-000002uq\",\r\n                \"RuleName\": \"test\",\r\n                \"Protocol\": \"TCP\",\r\n                \"VirtualPort\": 123,\r\n                \"SourcePort\": 123,\r\n                \"SourceType\": 2,\r\n                \"LbType\": 1,\r\n                \"KeepTime\": 0,\r\n                \"ModifyTime\":\"2020-03-09 21:37:25\",\r\n                \"SourceList\": [\r\n                    {\r\n                        \"Source\": \"119.29.205.248\",\r\n                        \"Weight\": 100\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n\"Healths\": [\r\n  {\r\n   \"RuleId\": \"rule-000002uq\",\r\n   \"Enable\": 0,\r\n   \"TimeOut\": 6,\r\n   \"Interval\": 15,\r\n   \"KickNum\": 5,\r\n   \"AliveNum\": 5\r\n  }\r\n ]\r\n}",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeNewL4Rules\n&Business=bgpip\n&Ip=192.168.1.1\n&VirtualPort=123\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"Total\": 1,\r\n        \"Rules\": [\r\n            {\r\n                \"Region\": 1,\r\n                \"Ip\": \"192.168.1.1\",\r\n                \"Id\":\"bgpip-0000011t\",\r\n                \"RuleId\": \"rule-000002uq\",\r\n                \"RuleName\": \"test\",\r\n                \"Protocol\": \"TCP\",\r\n                \"VirtualPort\": 123,\r\n                \"SourcePort\": 123,\r\n                \"SourceType\": 2,\r\n                \"LbType\": 1,\r\n                \"KeepTime\": 0,\r\n                \"KeepEnable\": 1, \r\n                \"ModifyTime\":\"2020-03-09 21:37:25\",\r\n                \"SourceList\": [\r\n                    {\r\n                        \"Source\": \"119.29.205.248\",\r\n                        \"Weight\": 100\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n\"Healths\": [\r\n            {\r\n                \"Enable\": 1, \r\n                \"RuleId\": \"xx\", \r\n                \"Interval\": 1, \r\n                \"AliveNum\": 1, \r\n                \"KickNum\": 1, \r\n                \"TimeOut\": 1\r\n            }\r\n        ]\r\n}\r\n}",
         "title": "获取L4转发规则"
       }
     ],
     "DescribeNewL4RulesErrHealth": [
       {
         "document": "",
-        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeNewL4RulesErrHealth\r\n&Business=bgpip\r\n&<公共请求参数>",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeNewL4RulesErrHealth\n&Business=bgpip\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"Total\": 1,\r\n        \"ErrHealths\": [{\r\n            \"Key\": \"rule-00000001\",\r\n            \"Value\": \"1.1.1.1,2.2.2.2\"\r\n        }]\r\n}\r\n}",
         "title": "获取L4转发规则健康检查异常结果"
       }
@@ -635,8 +635,8 @@
     "DescribleNewL7Rules": [
       {
         "document": "",
-        "input": "https://dayu.tencentcloudapi.com/?Action=DescribleNewL7Rules\r\n&Business=bgpip\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\r\n        \"Total\": 1,\r\n        \"Rules\": [\r\n            {\r\n                \"Region\":1,\r\n                \"Id\":\"bgpip-0000011t\",\r\n                \"Ip\":\"1.1.1.1\",\r\n                \"ModifyTime\":\"2019-12-10 15:15:11\",\r\n                \"RuleId\": \"rule-00000002\",\r\n                \"RuleName\": \"test\",\r\n                \"Protocol\": \"http\",\r\n                \"VirtualPort\": 80,\r\n                \"SourcePort\": 80,\r\n                \"SourceType\": 2,\r\n                \"LbType\": 1,\r\n                \"KeepTime\": 300,\r\n                \"SourceList\": [\r\n                    {\r\n                        \"Source\": \"2.1.1.1\",\r\n                        \"Weight\": 50\r\n                    },\r\n                    {\r\n                        \"Source\": \"2.1.1.2\",\r\n                        \"Weight\": 50\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n\"Healths\": [\r\n  {\r\n   \"RuleId\": \"rule-00000001\",\r\n   \"Enable\": 1,\r\n   \"Interval\": 300,\r\n   \"KickNum\": 2,\r\n   \"AliveNum\": 2,\r\n   \"Method\": \"HEAD\",\r\n   \"StatusCode\": 15,\r\n   \"Url\": \"/index.php\",\r\n   \"Status\": 1\r\n  }\r\n ]\r\n}",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribleNewL7Rules\n&Business=bgpip\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Rules\": [\r\n            {\r\n                \"KeepTime\": 1, \r\n                \"HttpsToHttpEnable\": 1, \r\n                \"Status\": 1, \r\n                \"LbType\": 1, \r\n                \"CCLevel\": \"xx\", \r\n                \"CCEnable\": 1, \r\n                \"CCThreshold\": 1, \r\n                \"Region\": 1, \r\n                \"VirtualPort\": 1, \r\n                \"SourceList\": [\r\n                    {\r\n                        \"Source\": \"xx\", \r\n                        \"Weight\": 1\r\n                    }, \r\n                    {\r\n                        \"Source\": \"xx\", \r\n                        \"Weight\": 1\r\n                    }\r\n                ], \r\n                \"Cert\": \"xx\", \r\n                \"KeepEnable\": 1, \r\n                \"ModifyTime\": \"2020-09-22 00:00:00\", \r\n                \"Domain\": \"xx\", \r\n                \"Protocol\": \"xx\", \r\n                \"SourceType\": 1, \r\n                \"RuleId\": \"xx\", \r\n                \"Ip\": \"xx\", \r\n                \"PrivateKey\": \"xx\", \r\n                \"CertType\": 1, \r\n                \"RuleName\": \"xx\", \r\n                \"CCStatus\": 1, \r\n                \"SSLId\": \"xx\", \r\n                \"Id\": \"xx\"\r\n            }\r\n        ], \r\n        \"Healths\": [\r\n            {\r\n                \"Status\": 1, \r\n                \"Enable\": 1, \r\n                \"RuleId\": \"xx\", \r\n                \"Url\": \"xx\", \r\n                \"Interval\": 1, \r\n                \"AliveNum\": 1, \r\n                \"KickNum\": 1, \r\n                \"Method\": \"xx\", \r\n                \"StatusCode\": 1\r\n            }\r\n        ], \r\n        \"Total\": 1, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
         "title": "获取7层规则"
       }
     ],

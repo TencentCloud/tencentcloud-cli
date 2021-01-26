@@ -219,6 +219,7 @@
         {
           "default": "",
           "document": "游戏用户ID",
+          "example": "1621578692",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -227,6 +228,7 @@
         {
           "default": "",
           "document": "游戏ID",
+          "example": "game-a7l8c3ab",
           "member": "string",
           "name": "GameId",
           "required": true,
@@ -287,6 +289,7 @@
         {
           "default": "",
           "document": "游戏用户ID",
+          "example": "161394323449",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -295,6 +298,7 @@
         {
           "default": "",
           "document": "游戏ID",
+          "example": "game-av2bl5r5",
           "member": "string",
           "name": "GameId",
           "required": true,
@@ -303,6 +307,7 @@
         {
           "default": "",
           "document": "游戏存档Url",
+          "example": "http://archive.cdn.com/user123.zip",
           "member": "string",
           "name": "GameArchiveUrl",
           "required": false,
@@ -311,6 +316,7 @@
         {
           "default": "",
           "document": "游戏相关参数",
+          "example": "{\\\"ArchiveEnv\\\":\\\"tcg\\\",\\\"ArchiveCategoryId\\\":\\\"393\\\",\\\"ArchiveG",
           "member": "string",
           "name": "GameContext",
           "required": false,

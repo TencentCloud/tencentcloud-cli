@@ -190,6 +190,22 @@
         "title": "查询本用户是否在白名单中"
       }
     ],
+    "DisableRestProxy": [
+      {
+        "document": "制定clusterid，关闭restful api",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=DisableRestProxy\n&ClusterId=5674209986\n&<公共请求参数>",
+        "output": "{\r\n \"Response\": {\r\n  \"RestProxyStatus\": 3, \r\n  \"RequestId\": \"request-xxx123\", \r\n  \"TaskId\": \"838418134-44\"\r\n }\r\n}",
+        "title": "关闭restful api"
+      }
+    ],
+    "EnableRestProxy": [
+      {
+        "document": "制定clusterid，开启restful api",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=EnableRestProxy\n&ClusterId=5674209986\n&<公共请求参数>",
+        "output": "{\r\n \"Response\": {\r\n  \"RestProxyStatus\": 1, \r\n  \"RequestId\": \"request-xxx123\", \r\n  \"TaskId\": \"838418134-44\"\r\n }\r\n}",
+        "title": "开启restful api"
+      }
+    ],
     "ModifyClusterMachine": [
       {
         "document": "修改集群Cluster的独占机器",

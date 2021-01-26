@@ -138,6 +138,18 @@
       "name": "查询本用户是否在白名单中",
       "output": "DescribeUinInWhitelistResponse"
     },
+    "DisableRestProxy": {
+      "document": "当restful api为关闭状态时，可以通过此接口关闭restful api",
+      "input": "DisableRestProxyRequest",
+      "name": "关闭restful api",
+      "output": "DisableRestProxyResponse"
+    },
+    "EnableRestProxy": {
+      "document": "当restful api为关闭状态时，可以通过此接口开启restful apu",
+      "input": "EnableRestProxyRequest",
+      "name": "开启restful api",
+      "output": "EnableRestProxyResponse"
+    },
     "ModifyClusterMachine": {
       "document": "修改独占集群机器",
       "input": "ModifyClusterMachineRequest",
@@ -1698,6 +1710,86 @@
           "document": "查询结果：`FALSE` 否；`TRUE` 是",
           "member": "string",
           "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRestProxyRequest": {
+      "document": "DisableRestProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对应appid",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRestProxyResponse": {
+      "document": "DisableRestProxy返回参数结构体",
+      "members": [
+        {
+          "document": "RestProxy的状态，0为关闭，1为开启中，2为开启，3为关闭中",
+          "member": "uint64",
+          "name": "RestProxyStatus",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableRestProxyRequest": {
+      "document": "EnableRestProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对应于appid",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableRestProxyResponse": {
+      "document": "EnableRestProxy返回参数结构体",
+      "members": [
+        {
+          "document": "RestProxy的状态，0为关闭，1为开启中，2为开启，3为关闭中",
+          "member": "uint64",
+          "name": "RestProxyStatus",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
+          "member": "string",
+          "name": "TaskId",
           "type": "string",
           "value_allowed_null": false
         },

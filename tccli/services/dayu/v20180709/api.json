@@ -93,7 +93,7 @@
     "CreateNewL4Rules": {
       "document": "添加L4转发规则",
       "input": "CreateNewL4RulesRequest",
-      "name": "添加L4转发规则",
+      "name": "添加四层转发规则",
       "output": "CreateNewL4RulesResponse"
     },
     "CreateNewL7Rules": {
@@ -153,13 +153,13 @@
     "DeleteNewL4Rules": {
       "document": "删除L4转发规则",
       "input": "DeleteNewL4RulesRequest",
-      "name": "删除L4转发规则",
+      "name": "删除四层转发规则",
       "output": "DeleteNewL4RulesResponse"
     },
     "DeleteNewL7Rules": {
       "document": "删除L7转发规则",
       "input": "DeleteNewL7RulesRequest",
-      "name": "删除L7转发规则",
+      "name": "删除七层转发规则",
       "output": "DeleteNewL7RulesResponse"
     },
     "DescribeActionLog": {
@@ -381,13 +381,13 @@
     "DescribeNewL4Rules": {
       "document": "获取L4转发规则",
       "input": "DescribeNewL4RulesRequest",
-      "name": "获取L4转发规则",
+      "name": "获取四层转发规则",
       "output": "DescribeNewL4RulesResponse"
     },
     "DescribeNewL4RulesErrHealth": {
       "document": "获取L4转发规则健康检查异常结果",
       "input": "DescribeNewL4RulesErrHealthRequest",
-      "name": "获取L4转发规则健康检查异常结果",
+      "name": "获取四层转发规则健康检查异常结果",
       "output": "DescribeNewL4RulesErrHealthResponse"
     },
     "DescribeNewL7RulesErrHealth": {

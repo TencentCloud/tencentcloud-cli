@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli cwp DeleteNonlocalLoginPlaces --cli-unfold-argument  \
+    --DelType Id \
     --Ids 123 456
 ```
 

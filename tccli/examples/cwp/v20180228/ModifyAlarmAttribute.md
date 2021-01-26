@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp ModifyAlarmAttribute --cli-unfold-argument  \
-    --Attribute OFFLINE \
+    --Attribute Offline \
     --Value OPEN
 ```
 

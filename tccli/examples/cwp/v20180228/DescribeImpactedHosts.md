@@ -7,7 +7,6 @@ Input:
 ```
 tccli cwp DescribeImpactedHosts --cli-unfold-argument  \
     --VulId 1001 \
-    --VulType WEB \
     --Limit 10 \
     --Offset 0
 ```
@@ -19,6 +18,7 @@ Output:
         "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
         "ImpactedHosts": [
             {
+                "IsProVersion": true,
                 "Id": 4,
                 "VulId": 1001,
                 "MachineIp": "10.10.12.12",
