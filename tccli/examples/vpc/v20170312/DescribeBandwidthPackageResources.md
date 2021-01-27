@@ -13,17 +13,17 @@ Output:
 ```
 {
     "Response": {
-        "totalCount": 2,
+        "TotalCount": 2,
         "ResourceSet": [
             {
                 "ResourceType": "Address",
                 "ResourceId": "eip-60z7i46d",
-                "AddressIp": "139.199.232.191"
+                "AddressIp": "139.199.XX.XX"
             },
             {
                 "ResourceType": "Address",
                 "ResourceId": "eip-d97psd1o",
-                "AddressIp": "139.199.232.214"
+                "AddressIp": "139.198.XX.XX"
             }
         ],
         "RequestId": "ecaa7a90-a2fd-4fa3-8bf8-7d0723c95a99"

@@ -977,6 +977,7 @@
         {
           "default": "",
           "document": "被邀请账户UIN",
+          "example": "100005229292",
           "member": "uint64",
           "name": "InviteUin",
           "required": true,
@@ -985,6 +986,7 @@
         {
           "default": "",
           "document": "名称",
+          "example": "testAccount",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -993,6 +995,7 @@
         {
           "default": "",
           "document": "备注",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": true,

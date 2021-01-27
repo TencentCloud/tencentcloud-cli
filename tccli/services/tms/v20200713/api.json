@@ -28,7 +28,7 @@
   "metadata": {
     "apiVersion": "2020-07-13",
     "api_brief": "介绍如何使用API对文本内容检测进行操作，包括识别文本中的不适宜内容等。",
-    "serviceNameCN": "文本内容检测",
+    "serviceNameCN": "文本内容安全",
     "serviceShortName": "tms"
   },
   "objects": {

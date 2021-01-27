@@ -2753,6 +2753,7 @@
         {
           "default": "",
           "document": "当前计费用量，单位为 Mbps",
+          "example": "15",
           "member": "uint64",
           "name": "BandwidthUsage",
           "required": true,
@@ -6951,6 +6952,7 @@
         {
           "default": "",
           "document": "后付费共享带宽包的唯一ID",
+          "example": "bwp-pply3nak",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": true,
@@ -6964,8 +6966,10 @@
       "members": [
         {
           "document": "当前计费用量",
+          "example": "无",
           "member": "BandwidthPackageBillBandwidth",
           "name": "BandwidthPackageBillBandwidthSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7008,6 +7012,7 @@
         {
           "default": "",
           "document": "标识 共享带宽包 的唯一 ID 列表。共享带宽包 唯一 ID 形如：`bwp-11112222`。",
+          "example": "bwp-7umnal1o",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": true,
@@ -7016,6 +7021,7 @@
         {
           "default": "",
           "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> resource-id - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 的唯一 ID 过滤。共享带宽包内资源 唯一 ID 形如：eip-11112222。</li>\n<li> resource-type - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 类型过滤，目前仅支持 弹性IP 和 负载均衡 两种类型，可选值为 Address 和 LoadBalance。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -7024,6 +7030,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7032,6 +7039,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7045,15 +7053,19 @@
       "members": [
         {
           "document": "符合条件的 共享带宽包内资源 数量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "共享带宽包内资源 详细信息列表。",
+          "example": "无",
           "member": "Resource",
           "name": "ResourceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10948,6 +10960,7 @@
         {
           "default": "",
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "example": "tag-key",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -10957,6 +10970,7 @@
         {
           "default": "",
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "example": "无",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -15585,8 +15599,9 @@
       "document": "描述带宽包资源信息的结构",
       "members": [
         {
-          "default": "无",
+          "default": "",
           "document": "带宽包资源类型，包括'Address'和'LoadBalance'",
+          "example": "Address",
           "member": "string",
           "name": "ResourceType",
           "required": true,
@@ -15594,8 +15609,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "无",
+          "default": "",
           "document": "带宽包资源Id，形如'eip-xxxx', 'lb-xxxx'",
+          "example": "eip-d97psd1o",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -15603,8 +15619,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "无",
+          "default": "",
           "document": "带宽包资源Ip",
+          "example": "139.199.XX.XX",
           "member": "string",
           "name": "AddressIp",
           "required": true,

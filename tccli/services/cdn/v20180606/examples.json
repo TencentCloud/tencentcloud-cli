@@ -363,7 +363,7 @@
     "ListTopData": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopData\r\n&StartTime=2018-09-04 00:00:00\r\n&EndTime=2018-09-04 12:00:00\r\n&Metric=Url\r\n&Filter=flux\r\n&Domains.0=www.test.com\r\n&Domains.1=www.test.com\r\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=Url\n&Filter=flux\n&Domains.0=www.test.com\n&Domains.1=www.test.com\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"www.test1.com\",\r\n\t\t\t\"DetailData\": [{\r\n\t\t\t\t\"Name\": \"www.test1.com/1.jpg?abc=123\",\r\n\t\t\t\t\"Value\": 13838\r\n\t\t\t}]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Resource\": \"www.test2.com\",\r\n\t\t\t\"DetailData\": [{\r\n\t\t\t\t\"Name\": \"http://www.test2.com/1.jpg?abc=123\",\r\n\t\t\t\t\"Value\": 2501\r\n\t\t\t}]\r\n\t\t}]\r\n\t}\r\n}",
         "title": "查询Top Url访问数据"
       }

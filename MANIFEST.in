@@ -211,6 +211,8 @@ include tccli/services/partners/v20180321/api.json
 include tccli/services/partners/v20180321/examples.json
 include tccli/services/postgres/v20170312/api.json
 include tccli/services/postgres/v20170312/examples.json
+include tccli/services/rce/v20201103/api.json
+include tccli/services/rce/v20201103/examples.json
 include tccli/services/redis/v20180412/api.json
 include tccli/services/redis/v20180412/examples.json
 include tccli/services/rkp/v20191209/api.json

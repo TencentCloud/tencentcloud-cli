@@ -798,7 +798,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeBandwidthPackageBillUsage\n&BandwidthPackageId=bwp-pply3nak\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"BandwidthPackageBillBandwidthSet\":[\r\n            {\r\n                \"BandwidthUsage\":1.0\r\n            }\r\n        ],\r\n        \"RequestId\":\"f30a042c-0234-4474-99e5-2f16be243be5\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\":{\r\n        \"BandwidthPackageBillBandwidthSet\":[\r\n            {\r\n                \"BandwidthUsage\":1\r\n            }\r\n        ],\r\n        \"RequestId\":\"f30a042c-0234-4474-99e5-2f16be243be5\"\r\n    }\r\n}",
         "title": "查询共享带宽包的当前计费用量"
       }
     ],
@@ -814,7 +814,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeBandwidthPackageResources\n&BandwidthPackageId=bwp-7umnal1o\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"totalCount\":2,\r\n        \"ResourceSet\":[\r\n            {\r\n                \"ResourceType\":\"Address\",\r\n                \"ResourceId\":\"eip-60z7i46d\",\r\n                \"AddressIp\":\"139.199.232.191\"\r\n            },\r\n            {\r\n                \"ResourceType\":\"Address\",\r\n                \"ResourceId\":\"eip-d97psd1o\",\r\n                \"AddressIp\":\"139.199.232.214\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"ecaa7a90-a2fd-4fa3-8bf8-7d0723c95a99\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\":{\r\n        \"TotalCount\":2,\r\n        \"ResourceSet\":[\r\n            {\r\n                \"ResourceType\":\"Address\",\r\n                \"ResourceId\":\"eip-60z7i46d\",\r\n                \"AddressIp\":\"139.199.XX.XX\"\r\n            },\r\n            {\r\n                \"ResourceType\":\"Address\",\r\n                \"ResourceId\":\"eip-d97psd1o\",\r\n                \"AddressIp\":\"139.198.XX.XX\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"ecaa7a90-a2fd-4fa3-8bf8-7d0723c95a99\"\r\n    }\r\n}",
         "title": "查询共享带宽包内的资源列表"
       }
     ],

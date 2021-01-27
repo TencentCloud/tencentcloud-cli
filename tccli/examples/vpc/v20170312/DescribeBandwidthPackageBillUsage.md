@@ -15,7 +15,7 @@ Output:
     "Response": {
         "BandwidthPackageBillBandwidthSet": [
             {
-                "BandwidthUsage": 1.0
+                "BandwidthUsage": 1
             }
         ],
         "RequestId": "f30a042c-0234-4474-99e5-2f16be243be5"

@@ -139,8 +139,8 @@
     "SendOrganizationInvitation": [
       {
         "document": "",
-        "input": "https://organization.tencentcloudapi.com/?Action=SendOrganizationInvitation\r\n&InviteUin=123\r\n&Name=\"test\"\r\n&Remark=\"test\"\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n  }\r\n}",
+        "input": "https://organization.tencentcloudapi.com/?Action=SendOrganizationInvitation\n&InviteUin=123\n&Name=\"test\"\n&Remark=\"test\"\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214959\"\r\n  }\r\n}",
         "title": "发送企业组织邀请"
       }
     ],

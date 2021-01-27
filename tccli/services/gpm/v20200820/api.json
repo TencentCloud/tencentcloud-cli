@@ -495,6 +495,14 @@
           "name": "Limit",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索的字符串",
+          "member": "string",
+          "name": "MatchCode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -872,7 +880,7 @@
       "type": "object"
     },
     "MTicket": {
-      "document": "matchCode和TicketId组合结构",
+      "document": "matchCode和匹配票据 ID组合结构",
       "members": [
         {
           "default": "",
@@ -885,7 +893,7 @@
         },
         {
           "default": "",
-          "document": "请求TicketId",
+          "document": "匹配票据 ID",
           "member": "string",
           "name": "MatchTicketId",
           "required": true,
@@ -927,7 +935,7 @@
         },
         {
           "default": "",
-          "document": "字符串属性值 长度 1024 默认 \"\"",
+          "document": "字符串属性值 长度 128 默认 \"\"",
           "member": "string",
           "name": "StringValue",
           "required": false,
@@ -1202,11 +1210,11 @@
       "usage": "both"
     },
     "MatchTicket": {
-      "document": "匹配请求信息",
+      "document": "匹配票据信息",
       "members": [
         {
           "default": "",
-          "document": "MatchTicketId 长度 128 [a-zA-Z0-9-\\.]*",
+          "document": "匹配票据 ID长度 128 [a-zA-Z0-9-\\.]*",
           "member": "string",
           "name": "Id",
           "required": true,

@@ -59,8 +59,8 @@
     "DescribeMatchCodes": [
       {
         "document": "",
-        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeMatchCodes\n&Offset=1\n&Limit=15\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"MatchCodes\": [],\r\n        \"RequestId\": \"eefe26e0-fc8a-41e4-a9be-69694662c6cc\",\r\n        \"TotalCount\": 0\r\n    }\r\n}",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeMatchCodes\n&Offset=1\n&Limit=15\n&MatchCode=match-rzsfvf\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"MatchCodes\": [\"match-rzsfvf\"],\r\n        \"RequestId\": \"eefe26e0-fc8a-41e4-a9be-69694662c6cc\",\r\n        \"TotalCount\": 0\r\n    }\r\n}",
         "title": "分页查询匹配code"
       }
     ],
