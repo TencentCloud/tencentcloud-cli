@@ -2461,6 +2461,7 @@
         {
           "default": "",
           "document": "查询范围的起始时间（包含）",
+          "example": "2020-01-01",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -2469,6 +2470,7 @@
         {
           "default": "",
           "document": "查询范围的结束时间（包含）",
+          "example": "2020-01-02",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2477,6 +2479,7 @@
         {
           "default": "",
           "document": "翻页偏移量，初始值为0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2485,6 +2488,7 @@
         {
           "default": "",
           "document": "每页的限制数量",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2493,6 +2497,7 @@
         {
           "default": "",
           "document": "交易类型： all所有交易类型，recharge充值，return退款，unblock解冻，agentin资金转入，advanced垫付，cash提现，deduct扣费，block冻结，agentout资金转出，repay垫付回款，repayment还款(仅国际信用账户)，adj_refund调增(仅国际信用账户)，adj_deduct调减(仅国际信用账户)",
+          "example": "['deduct']",
           "member": "string",
           "name": "PayType",
           "required": false,
@@ -2501,6 +2506,7 @@
         {
           "default": "",
           "document": "扣费模式，当所选的交易类型中包含扣费deduct时有意义： all所有扣费类型，trade预付费支付，hour_h按量小时结，hour_d按量日结，hour_m按量月结，decompensate调账扣费，other其他扣费",
+          "example": "all",
           "member": "string",
           "name": "SubPayType",
           "required": false,
@@ -2509,6 +2515,7 @@
         {
           "default": "",
           "document": "是否返回0元交易金额的交易项，取值：0-不返回，1-返回。不传该参数则不返回",
+          "example": "1",
           "member": "uint64",
           "name": "WithZeroAmount",
           "required": false,
@@ -2522,85 +2529,109 @@
       "members": [
         {
           "document": "收支明细列表",
+          "example": "[]",
           "member": "BillTransactionInfo",
           "name": "TransactionList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "总条数",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "退费总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "ReturnAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "充值总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "RechargeAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "冻结总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "BlockAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "解冻总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "UnblockAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "扣费总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "DeductAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "资金转入总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "AgentInAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "垫付充值总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "AdvanceRechargeAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "提现扣减总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "WithdrawAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "资金转出总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "AgentOutAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "还垫付总额，单位（分）",
+          "example": "1",
           "member": "float",
           "name": "AdvancePayAmount",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },

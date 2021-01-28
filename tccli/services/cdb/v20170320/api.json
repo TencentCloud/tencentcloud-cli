@@ -654,6 +654,12 @@
       "name": "切换实例主从角色",
       "output": "SwitchDBInstanceMasterSlaveResponse"
     },
+    "SwitchDrInstanceToMaster": {
+      "document": "本接口(SwitchDrInstanceToMaster)用于将云数据库灾备实例切换为主实例，注意请求必须发到灾备实例所在的地域。",
+      "input": "SwitchDrInstanceToMasterRequest",
+      "name": "云数据库灾备实例切换为主实例",
+      "output": "SwitchDrInstanceToMasterResponse"
+    },
     "SwitchForUpgrade": {
       "document": "本接口(SwitchForUpgrade)用于切换访问新实例，针对主升级中的实例处于待切换状态时，用户可主动发起该流程。",
       "input": "SwitchForUpgradeRequest",
@@ -10716,6 +10722,42 @@
           "document": "异步任务 ID。",
           "member": "string",
           "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDrInstanceToMasterRequest": {
+      "document": "SwitchDrInstanceToMaster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "灾备实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cdb-***",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDrInstanceToMasterResponse": {
+      "document": "SwitchDrInstanceToMaster返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务的请求ID，可使用此ID查询异步任务的执行结果。",
+          "example": "be9f64a6-fa652dc6-f5c878b6-a6a50746",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

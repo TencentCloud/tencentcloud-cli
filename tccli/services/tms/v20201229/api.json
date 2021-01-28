@@ -182,6 +182,7 @@
         {
           "default": "",
           "document": "文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。",
+          "example": "111",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -190,6 +191,7 @@
         {
           "default": "",
           "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。",
+          "example": "111",
           "member": "string",
           "name": "BizType",
           "required": false,
@@ -198,6 +200,7 @@
         {
           "default": "",
           "document": "数据ID，英文字母、下划线、-组成，不超过64个字符",
+          "example": "1111",
           "member": "string",
           "name": "DataId",
           "required": false,
@@ -206,6 +209,7 @@
         {
           "default": "",
           "document": "账号相关信息字段，填入后可识别违规风险账号。",
+          "example": "111",
           "member": "User",
           "name": "User",
           "required": false,
@@ -214,6 +218,7 @@
         {
           "default": "",
           "document": "设备相关信息字段，填入后可识别违规风险设备。",
+          "example": "1111",
           "member": "Device",
           "name": "Device",
           "required": false,
@@ -227,64 +232,82 @@
       "members": [
         {
           "document": "您在入参时所填入的Biztype参数。 -- 该字段暂未开放。",
+          "example": "111",
           "member": "string",
           "name": "BizType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及其他令人反感、不安全或不适宜的内容类型。",
+          "example": "111",
           "member": "string",
           "name": "Label",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
+          "example": "11",
           "member": "string",
           "name": "Suggestion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "文本命中的关键词信息，用于提示您文本违规的具体原因，可能会返回多个命中的关键词。（如：加我微信）\n如返回值为空，Score不为空，即识别结果（Label）是来自于语义模型判断的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
           "member": "string",
           "name": "Keywords",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。\n（如：色情 99.99，则该样本属于色情的置信度非常高。）",
+          "example": "11",
           "member": "int64",
           "name": "Score",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "接口识别样本后返回的详细结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
           "member": "DetailResults",
           "name": "DetailResults",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "接口识别样本中存在违规账号风险的检测结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
           "member": "RiskDetails",
           "name": "RiskDetails",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
           "member": "string",
           "name": "Extra",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "请求参数中的DataId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
           "member": "string",
           "name": "DataId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

@@ -166,6 +166,7 @@
         {
           "default": "",
           "document": "接入点的名称。",
+          "example": "成都-A-西区",
           "member": "string",
           "name": "AccessPointName",
           "required": true,
@@ -175,6 +176,7 @@
         {
           "default": "",
           "document": "接入点唯一ID。",
+          "example": "ap-chengdu-a-xq",
           "member": "string",
           "name": "AccessPointId",
           "required": true,
@@ -184,6 +186,7 @@
         {
           "default": "",
           "document": "接入点的状态。可用，不可用。",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "State",
           "required": true,
@@ -193,6 +196,7 @@
         {
           "default": "",
           "document": "接入点的位置。",
+          "example": "成都电信西区803DC",
           "member": "string",
           "name": "Location",
           "required": true,
@@ -202,6 +206,7 @@
         {
           "default": "",
           "document": "接入点支持的运营商列表。",
+          "example": "[\"ChinaTelecom\"]",
           "member": "string",
           "name": "LineOperator",
           "required": true,
@@ -211,6 +216,7 @@
         {
           "default": "",
           "document": "接入点管理的大区ID。",
+          "example": "cd",
           "member": "string",
           "name": "RegionId",
           "required": true,
@@ -220,10 +226,31 @@
         {
           "default": "",
           "document": "接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1000BASE-T\", \"1000BASE-LX\"]",
           "member": "string",
           "name": "AvailablePortType",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入点经纬度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Lat\": \"0.0\", \"Lng\": \"0.0\"}",
+          "member": "Coordinate",
+          "name": "Coordinate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入点所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成都",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -349,6 +376,30 @@
         }
       ],
       "usage": "in"
+    },
+    "Coordinate": {
+      "document": "坐标，经维度描述",
+      "members": [
+        {
+          "default": "",
+          "document": "纬度",
+          "member": "float",
+          "name": "Lat",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经度",
+          "member": "float",
+          "name": "Lng",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateDirectConnectRequest": {
       "document": "CreateDirectConnect请求参数结构体",

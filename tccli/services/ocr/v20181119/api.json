@@ -1135,6 +1135,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "\"\"",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1143,6 +1144,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "\"\"",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1151,6 +1153,7 @@
         {
           "default": "",
           "document": "可以指定要识别的票证类型,指定后不出现在此列表的票证将不返回类型。不指定时默认返回所有支持类别票证的识别信息。\n\n以下是当前支持的类型：\nIDCardFront: 身份证正面识别\nIDCardBack: 身份证背面识别\nPassport: 护照\nBusinessCard: 名片识别\nBankCard: 银行卡识别\nVehicleLicenseFront: 行驶证主页识别\nVehicleLicenseBack: 行驶证副页识别\nDriverLicenseFront: 驾驶证主页识别\nDriverLicenseBack: 驾驶证副页识别\nPermitFront: 港澳台通行证正面\nResidenceBooklet: 户口本资料页\nMainlandPermitFront: 港澳台来往内地通行证正面\nHmtResidentPermitFront: 港澳台居住证正面\nHmtResidentPermitBack: 港澳台居住证背面\nEstateCert: 不动产证\nBizLicense: 营业执照",
+          "example": "\"\"",
           "member": "string",
           "name": "DiscernType",
           "required": false,
@@ -1164,8 +1167,10 @@
       "members": [
         {
           "document": "智能卡证分类结果。当图片类型不支持分类识别或者识别出的类型不在请求参数DiscernType指定的范围内时，返回结果中的Type字段将为空字符串，Name字段将返回\"其它\"",
+          "example": "\"\"",
           "member": "ClassifyDetectInfo",
           "name": "ClassifyDetectInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

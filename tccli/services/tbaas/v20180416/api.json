@@ -1640,6 +1640,7 @@
         {
           "default": "",
           "document": "模块名，固定字段：transaction",
+          "example": "transaction",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -1648,6 +1649,7 @@
         {
           "default": "",
           "document": "操作名，固定字段：invoke",
+          "example": "invoke",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -1656,6 +1658,7 @@
         {
           "default": "",
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "example": "251005746envnew",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1664,6 +1667,7 @@
         {
           "default": "",
           "document": "业务所属智能合约名称，可在智能合约详情或列表中获取",
+          "example": "cc050301",
           "member": "string",
           "name": "ChaincodeName",
           "required": true,
@@ -1672,6 +1676,7 @@
         {
           "default": "",
           "document": "业务所属通道名称，可在通道详情或列表中获取",
+          "example": "ch042103",
           "member": "string",
           "name": "ChannelName",
           "required": true,
@@ -1679,7 +1684,8 @@
         },
         {
           "default": "",
-          "document": "对该笔交易进行背书的节点列表（包括节点名称和节点所属组织名称，详见数据结构一节），可以在通道详情中获取该通道上的节点名称极其所属组织名称",
+          "document": "对该笔交易进行背书的节点列表（包括节点名称和节点所属组织名称，详见数据结构一节），可以在通道详情中获取该通道上的节点名称及其所属组织名称",
+          "example": "peer0.neworg02.envnew",
           "member": "PeerSet",
           "name": "Peers",
           "required": true,
@@ -1688,6 +1694,7 @@
         {
           "default": "",
           "document": "该笔交易需要调用的智能合约中的函数名称",
+          "example": "createCar",
           "member": "string",
           "name": "FuncName",
           "required": true,
@@ -1696,6 +1703,7 @@
         {
           "default": "",
           "document": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "example": "NewOrg02",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1704,6 +1712,7 @@
         {
           "default": "",
           "document": "被调用的函数参数列表，参数列表大小总和要求小于2M",
+          "example": "CAR92",
           "member": "string",
           "name": "Args",
           "required": false,
@@ -1712,6 +1721,7 @@
         {
           "default": "",
           "document": "同步调用标识，可选参数，值为0或者不传表示使用同步方法调用，调用后会等待交易执行后再返回执行结果；值为1时表示使用异步方式调用Invoke，执行后会立即返回交易对应的Txid，后续需要通过GetInvokeTx这个API查询该交易的执行结果。（对于逻辑较为简单的交易，可以使用同步模式；对于逻辑较为复杂的交易，建议使用异步模式，否则容易导致API因等待时间过长，返回等待超时）",
+          "example": "0",
           "member": "uint64",
           "name": "AsyncFlag",
           "required": false,
@@ -1725,15 +1735,19 @@
       "members": [
         {
           "document": "交易ID",
+          "example": "myOrgpeer0.myorg.envnew:VALID",
           "member": "string",
           "name": "Txid",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "交易执行结果",
+          "example": "280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c",
           "member": "string",
           "name": "Events",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1776,6 +1790,7 @@
         {
           "default": "",
           "document": "模块名，固定字段：transaction",
+          "example": "transaction",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -1784,6 +1799,7 @@
         {
           "default": "",
           "document": "操作名，固定字段：query",
+          "example": "query",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -1792,6 +1808,7 @@
         {
           "default": "",
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "example": "251005746envnew",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1800,6 +1817,7 @@
         {
           "default": "",
           "document": "业务所属智能合约名称，可在智能合约详情或列表中获取",
+          "example": "cc050301",
           "member": "string",
           "name": "ChaincodeName",
           "required": true,
@@ -1808,6 +1826,7 @@
         {
           "default": "",
           "document": "业务所属通道名称，可在通道详情或列表中获取",
+          "example": "ch042103",
           "member": "string",
           "name": "ChannelName",
           "required": true,
@@ -1815,7 +1834,8 @@
         },
         {
           "default": "",
-          "document": "执行该查询交易的节点列表（包括节点名称和节点所属组织名称，详见数据结构一节），可以在通道详情中获取该通道上的节点名称极其所属组织名称",
+          "document": "执行该查询交易的节点列表（包括节点名称和节点所属组织名称，详见数据结构一节），可以在通道详情中获取该通道上的节点名称及其所属组织名称",
+          "example": "peer0.neworg02.envnew",
           "member": "PeerSet",
           "name": "Peers",
           "required": true,
@@ -1824,6 +1844,7 @@
         {
           "default": "",
           "document": "该笔交易查询需要调用的智能合约中的函数名称",
+          "example": "queryCar",
           "member": "string",
           "name": "FuncName",
           "required": true,
@@ -1832,6 +1853,7 @@
         {
           "default": "",
           "document": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "example": "NewOrg02",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1840,6 +1862,7 @@
         {
           "default": "",
           "document": "被调用的函数参数列表",
+          "example": "CAR92",
           "member": "string",
           "name": "Args",
           "required": false,
@@ -1853,8 +1876,10 @@
       "members": [
         {
           "document": "查询结果数据",
+          "example": "{\\\"make\\\":\\\"Chevy\\\",\\\"model\\\":\\\"Volt\\\",\\\"colour\\\":\\\"Black\\\",\\\"ow",
           "member": "string",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

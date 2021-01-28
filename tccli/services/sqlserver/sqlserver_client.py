@@ -288,6 +288,31 @@ def doInquiryPriceCreateDBInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCloneDB(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CloneDBRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CloneDB(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeCrossRegionZone(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -405,31 +430,6 @@ def doDescribeBackups(args, parsed_globals):
     model = models.DescribeBackupsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeBackups(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDBSecurityGroups(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBSecurityGroupsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDBSecurityGroups(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -588,7 +588,7 @@ def doModifyDBInstanceName(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteDB(args, parsed_globals):
+def doTerminateDBInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -602,9 +602,9 @@ def doDeleteDB(args, parsed_globals):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteDBRequest()
+    model = models.TerminateDBInstanceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteDB(model)
+    rsp = client.TerminateDBInstance(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -813,7 +813,7 @@ def doRenewDBInstance(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTerminateDBInstance(args, parsed_globals):
+def doDescribeReadOnlyGroupList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -827,9 +827,9 @@ def doTerminateDBInstance(args, parsed_globals):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateDBInstanceRequest()
+    model = models.DescribeReadOnlyGroupListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.TerminateDBInstance(model)
+    rsp = client.DescribeReadOnlyGroupList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1363,6 +1363,31 @@ def doDescribeRollbackTime(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteDB(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDBRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteDB(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doStartMigrationCheck(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1438,7 +1463,7 @@ def doCreateDB(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeReadOnlyGroupList(args, parsed_globals):
+def doDescribeDBSecurityGroups(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1452,9 +1477,9 @@ def doDescribeReadOnlyGroupList(args, parsed_globals):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeReadOnlyGroupListRequest()
+    model = models.DescribeDBSecurityGroupsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeReadOnlyGroupList(model)
+    rsp = client.DescribeDBSecurityGroups(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1860,19 +1885,19 @@ ACTION_MAP = {
     "ResetAccountPassword": doResetAccountPassword,
     "ModifyDBName": doModifyDBName,
     "InquiryPriceCreateDBInstances": doInquiryPriceCreateDBInstances,
+    "CloneDB": doCloneDB,
     "DescribeCrossRegionZone": doDescribeCrossRegionZone,
     "ModifyDBInstanceProject": doModifyDBInstanceProject,
     "DescribeSlowlogs": doDescribeSlowlogs,
     "DescribePublishSubscribe": doDescribePublishSubscribe,
     "DescribeBackups": doDescribeBackups,
-    "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
     "ModifyPublishSubscribeName": doModifyPublishSubscribeName,
     "ModifyBackupStrategy": doModifyBackupStrategy,
     "ModifyAccountRemark": doModifyAccountRemark,
     "ModifyAccountPrivilege": doModifyAccountPrivilege,
     "RestartDBInstance": doRestartDBInstance,
     "ModifyDBInstanceName": doModifyDBInstanceName,
-    "DeleteDB": doDeleteDB,
+    "TerminateDBInstance": doTerminateDBInstance,
     "CreateBackup": doCreateBackup,
     "CreateDBInstances": doCreateDBInstances,
     "RollbackInstance": doRollbackInstance,
@@ -1881,7 +1906,7 @@ ACTION_MAP = {
     "DescribeZones": doDescribeZones,
     "ModifyDBRemark": doModifyDBRemark,
     "RenewDBInstance": doRenewDBInstance,
-    "TerminateDBInstance": doTerminateDBInstance,
+    "DescribeReadOnlyGroupList": doDescribeReadOnlyGroupList,
     "DescribeProjectSecurityGroups": doDescribeProjectSecurityGroups,
     "CreateBasicDBInstances": doCreateBasicDBInstances,
     "CreateAccount": doCreateAccount,
@@ -1903,10 +1928,11 @@ ACTION_MAP = {
     "CompleteExpansion": doCompleteExpansion,
     "DescribeMaintenanceSpan": doDescribeMaintenanceSpan,
     "DescribeRollbackTime": doDescribeRollbackTime,
+    "DeleteDB": doDeleteDB,
     "StartMigrationCheck": doStartMigrationCheck,
     "RemoveBackups": doRemoveBackups,
     "CreateDB": doCreateDB,
-    "DescribeReadOnlyGroupList": doDescribeReadOnlyGroupList,
+    "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
     "DescribeMigrationDetail": doDescribeMigrationDetail,
     "RestoreInstance": doRestoreInstance,
     "DeleteAccount": doDeleteAccount,

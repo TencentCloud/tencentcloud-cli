@@ -890,6 +890,14 @@
         "title": "切换实例主从角色"
       }
     ],
+    "SwitchDrInstanceToMaster": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=SwitchDrInstanceToMaster\n&InstanceId=cdb-9kq0g26l\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"AsyncRequestId\":\"be9f64a6-fa652dc6-f5c878b6-a6a50746\"\r\n    }\r\n}",
+        "title": "云数据库灾备实例切换为主实例"
+      }
+    ],
     "SwitchForUpgrade": [
       {
         "document": "",

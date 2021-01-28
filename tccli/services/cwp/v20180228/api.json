@@ -2856,7 +2856,7 @@
           "type": "list"
         },
         {
-          "default": "10",
+          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3757,7 +3757,7 @@
           "type": "string"
         },
         {
-          "default": "10",
+          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3765,7 +3765,7 @@
           "type": "int"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3821,7 +3821,7 @@
           "type": "string"
         },
         {
-          "default": "10",
+          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3829,7 +3829,7 @@
           "type": "int"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -5089,7 +5089,7 @@
           "type": "string"
         },
         {
-          "default": "10",
+          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -5097,7 +5097,7 @@
           "type": "int"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",

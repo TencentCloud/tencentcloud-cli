@@ -8,6 +8,14 @@
         "title": "安全组批量绑定云资源"
       }
     ],
+    "CloneDB": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=CloneDB\n&InstanceId=mssql-njj2mtpl\n&RenameRestore.0.OldName=db1\n&RenameRestore.0.NewName=clone_db1\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\",\r\n        \"FlowId\":3546\r\n    }\r\n}",
+        "title": "克隆数据库"
+      }
+    ],
     "CompleteExpansion": [
       {
         "document": "立即完成实例状态为“升级待切换”的升级操作。",

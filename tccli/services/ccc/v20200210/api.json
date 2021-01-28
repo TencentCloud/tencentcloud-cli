@@ -30,6 +30,12 @@
       "name": "获取 PSTN 活动会话列表",
       "output": "DescribePSTNActiveSessionListResponse"
     },
+    "DescribeSeatUserList": {
+      "document": "获取坐席用户列表",
+      "input": "DescribeSeatUserListRequest",
+      "name": "获取坐席用户列表",
+      "output": "DescribeSeatUserListResponse"
+    },
     "DescribeTelCallInfo": {
       "document": "按实例获取电话消耗统计",
       "input": "DescribeTelCallInfoRequest",
@@ -363,6 +369,69 @@
       ],
       "type": "object"
     },
+    "DescribeSeatUserListRequest": {
+      "document": "DescribeSeatUserList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "12",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSeatUserListResponse": {
+      "document": "DescribeSeatUserList返回参数结构体",
+      "members": [
+        {
+          "document": "此实例的坐席用户总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "坐席用户信息列表",
+          "example": "0",
+          "member": "SeatUserInfo",
+          "name": "SeatUsers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTelCallInfoRequest": {
       "document": "DescribeTelCallInfo请求参数结构体",
       "members": [
@@ -432,6 +501,7 @@
         {
           "default": "",
           "document": "起始时间戳，Unix 时间戳",
+          "example": "1611631881",
           "member": "int64",
           "name": "StartTimeStamp",
           "required": true,
@@ -440,6 +510,7 @@
         {
           "default": "",
           "document": "结束时间戳，Unix 时间戳",
+          "example": "1611631881",
           "member": "int64",
           "name": "EndTimeStamp",
           "required": true,
@@ -447,7 +518,8 @@
         },
         {
           "default": "",
-          "document": "返回记录条数，上限 100",
+          "document": "返回数据条数，上限（deprecated）",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -455,7 +527,8 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移（deprecated）",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -463,7 +536,8 @@
         },
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "实例 ID（deprecated）",
+          "example": "11",
           "member": "int64",
           "name": "InstanceId",
           "required": false,
@@ -471,9 +545,28 @@
         },
         {
           "default": "",
-          "document": "应用ID。",
+          "document": "应用 ID",
+          "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页尺寸，上限 100",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
           "required": false,
           "type": "int"
         }
@@ -485,15 +578,19 @@
       "members": [
         {
           "document": "话单记录总数",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "话单记录",
+          "example": "0",
           "member": "TelCdrInfo",
           "name": "TelCdrs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -571,6 +668,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IVRKeyPressedElement": {
+      "document": "ivr 按键信息",
+      "members": [
+        {
+          "default": "",
+          "document": "按键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "按键关联的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "非常满意",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -743,6 +866,7 @@
         {
           "default": "",
           "document": "坐席名称",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -752,6 +876,7 @@
         {
           "default": "",
           "document": "坐席邮箱",
+          "example": "foo@tencent.com",
           "member": "string",
           "name": "Mail",
           "required": false,
@@ -760,7 +885,8 @@
         },
         {
           "default": "",
-          "document": "坐席电话号码",
+          "document": "坐席电话号码（带0086前缀）",
+          "example": "008613012345678",
           "member": "string",
           "name": "Phone",
           "required": false,
@@ -770,6 +896,7 @@
         {
           "default": "",
           "document": "坐席昵称",
+          "example": "三三",
           "member": "string",
           "name": "Nick",
           "required": false,
@@ -779,6 +906,7 @@
         {
           "default": "",
           "document": "用户ID",
+          "example": "foo@tencent.com",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -788,6 +916,7 @@
         {
           "default": "",
           "document": "坐席关联的技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "SkillGroupNameList",
           "required": false,
@@ -797,6 +926,7 @@
         {
           "default": "",
           "document": "工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "007",
           "member": "string",
           "name": "StaffNumber",
           "required": false,
@@ -806,12 +936,179 @@
       ],
       "usage": "both"
     },
+    "ServeParticipant": {
+      "document": "参与者信息",
+      "members": [
+        {
+          "default": "",
+          "document": "坐席邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "Mail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "坐席电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "008613012345678",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "振铃时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "RingTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接听时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "AcceptTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631891",
+          "member": "int64",
+          "name": "EndedTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "录音 ID，能够索引到坐席侧的录音\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参与者类型，\"staffSeat\", \"outboundSeat\", \"staffPhoneSeat\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "staffSeat",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转接来源坐席信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bar@tencent.com",
+          "member": "string",
+          "name": "TransferFrom",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转接去向坐席信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "san@tencent.com",
+          "member": "string",
+          "name": "TransferTo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转接去向参与者类型，取值与 Type 一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "staffSeat",
+          "member": "string",
+          "name": "TransferToType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "技能组 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1101",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok unconnected seatGiveUp seatForward outboundForward ivrGiveUp ",
+          "member": "string",
+          "name": "EndStatusString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "录音 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxxxxx",
+          "member": "string",
+          "name": "RecordURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参与者序号，从 0 开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Sequence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tel",
+          "member": "string",
+          "name": "SkillGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TelCdrInfo": {
       "document": "电话话单信息",
       "members": [
         {
           "default": "",
           "document": "主叫号码",
+          "example": "008613012345678",
           "member": "string",
           "name": "Caller",
           "required": true,
@@ -821,6 +1118,7 @@
         {
           "default": "",
           "document": "被叫号码",
+          "example": "008613012345670",
           "member": "string",
           "name": "Callee",
           "required": true,
@@ -830,6 +1128,7 @@
         {
           "default": "",
           "document": "呼叫发起时间戳，Unix 时间戳",
+          "example": "1611631881",
           "member": "int64",
           "name": "Time",
           "required": true,
@@ -839,6 +1138,7 @@
         {
           "default": "",
           "document": "呼入呼出方向 0 呼入 1 呼出",
+          "example": "0",
           "member": "int64",
           "name": "Direction",
           "required": true,
@@ -848,6 +1148,7 @@
         {
           "default": "",
           "document": "通话时长",
+          "example": "120",
           "member": "int64",
           "name": "Duration",
           "required": true,
@@ -857,6 +1158,7 @@
         {
           "default": "",
           "document": "录音信息",
+          "example": "https://xxxxx",
           "member": "string",
           "name": "RecordURL",
           "required": true,
@@ -866,6 +1168,7 @@
         {
           "default": "",
           "document": "坐席信息",
+          "example": "0",
           "member": "SeatUserInfo",
           "name": "SeatUser",
           "required": true,
@@ -875,6 +1178,7 @@
         {
           "default": "",
           "document": "结束状态 0 未知 1 正常通话 2 未接通",
+          "example": "1",
           "member": "int64",
           "name": "EndStatus",
           "required": true,
@@ -883,7 +1187,8 @@
         },
         {
           "default": "",
-          "document": "技能组",
+          "document": "技能组名称",
+          "example": "tel",
           "member": "string",
           "name": "SkillGroup",
           "required": true,
@@ -893,11 +1198,142 @@
         {
           "default": "",
           "document": "主叫归属地",
+          "example": "广东深圳",
           "member": "string",
           "name": "CallerLocation",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IVR 阶段耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "IVRDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "振铃时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "RingTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接听时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "AcceptTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "EndedTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IVR 按键信息 ，e.g. [\"1\",\"2\",\"3\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\",\"2\",\"3\"]",
+          "member": "string",
+          "name": "IVRKeyPressed",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "挂机方 seat 坐席 user 用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "HungUpSide",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务参与者列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "ServeParticipant",
+          "name": "ServeParticipants",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "技能组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ok 正常结束 \nunconnected\t未接通\nseatGiveUp\t坐席未接\nseatForward\t坐席转接\nivrGiveUp\tIVR期间用户放弃\nwaitingGiveUp\t会话排队期间用户放弃\nringingGiveUp\t会话振铃期间用户放弃\nerror\t系统错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
+          "member": "string",
+          "name": "EndStatusString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "会话开始时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631891",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进入排队时间，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631891",
+          "member": "int64",
+          "name": "QueuedTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后置IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "IVRKeyPressedElement",
+          "name": "PostIVRKeyPressed",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "排队技能组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110",
+          "member": "int64",
+          "name": "QueuedSkillGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

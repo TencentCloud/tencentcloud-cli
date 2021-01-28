@@ -7,8 +7,7 @@ Input:
 ```
 tccli ocr ClassifyDetectOCR --cli-unfold-argument  \
     --ImageUrl https://xx/a.jpg \
-    --DiscernType BankCard IDCardFront \
-    --DiscernType.N xxx
+    --DiscernType BankCard
 ```
 
 Output: 

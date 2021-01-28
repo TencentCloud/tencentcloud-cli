@@ -9,8 +9,10 @@ tccli ccc DescribeTelCdr --cli-unfold-argument  \
     --SdkAppId 1400000000 \
     --StartTimeStamp 1590547606 \
     --EndTimeStamp 1590147606 \
-    --Limit 10 \
-    --Offset 0
+    --Limit 0 \
+    --Offset 0 \
+    --PageSize 10 \
+    --PageNumber 0
 ```
 
 Output: 
@@ -33,7 +35,36 @@ Output:
                     "Name": "zhangsan",
                     "Phone": "12321233455"
                 },
-                "CallerLocation": "广东深圳"
+                "CallerLocation": "广东深圳",
+                "StartTimestamp": 1590547606,
+                "AcceptTimestamp": 1590547606,
+                "EndedTimestamp": 1590547606,
+                "RingTimestamp": 1590547606,
+                "HungUpSide": "user",
+                "ServeParticipants": {
+                    "Mail": "foo@tencent.com",
+                    "Phone": "008615793909390",
+                    "UserId": "bar@tencent.com",
+                    "RingTimestamp": 1610627284,
+                    "AcceptTimestamp": 1610627284,
+                    "EndedTimestamp": 1610627284,
+                    "RecordId": "1610622284",
+                    "Type": "staffPhoneSeat"
+                },
+                "IVRDuration": 5,
+                "IVRKeyPressed": [
+                    "5"
+                ],
+                "SkillGroupId": 100,
+                "EndStatusString": "ok",
+                "QueuedSkillGroupId": 100,
+                "QueuedTimestamp": 1610627284,
+                "PostIVRKeyPressed": [
+                    {
+                        "Key": "1",
+                        "Label": "非常满意"
+                    }
+                ]
             },
             {
                 "Caller": "12345678902",
@@ -48,7 +79,27 @@ Output:
                     "Name": "wangwu",
                     "Phone": "12321233456"
                 },
-                "CallerLocation": "广东深圳"
+                "CallerLocation": "广东深圳",
+                "StartTimestamp": 1590547630,
+                "AcceptTimestamp": 1590547606,
+                "EndedTimestamp": 1590547606,
+                "RingTimestamp": 1590547606,
+                "HungUpSide": "user",
+                "ServeParticipants": [],
+                "IVRDuration": 5,
+                "IVRKeyPressed": [
+                    "5"
+                ],
+                "SkillGroupId": 100,
+                "EndStatusString": "ok",
+                "QueuedSkillGroupId": 100,
+                "QueuedTimestamp": 1610627284,
+                "PostIVRKeyPressed": [
+                    {
+                        "Key": "1",
+                        "Label": "非常满意"
+                    }
+                ]
             }
         ]
     }

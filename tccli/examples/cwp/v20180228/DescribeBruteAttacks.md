@@ -16,24 +16,27 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
+        "TotalCount": 1,
         "BruteAttacks": [
             {
-                "Id": "123",
-                "Uuid": "6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1",
-                "MachineIp": "127.0.0.1",
-                "MachineName": "测试机",
-                "Status": " BRUTEATTACK_SUCCESS",
-                "Username": "root",
+                "Status": "xx",
+                "UserName": "xx",
+                "IsProVersion": true,
+                "MachineIp": "xx",
+                "Uuid": "xx",
                 "City": 1,
+                "BanStatus": "xx",
                 "Country": 1,
-                "Province": 1,
-                "SrcIp": "127.0.0.1",
-                "Count": 10,
-                "CreateTime": "2018-01-01 12 :16:09"
+                "Id": 1,
+                "Count": 1,
+                "Quuid": "xx",
+                "MachineName": "xx",
+                "SrcIp": "xx",
+                "CreateTime": "2020-09-22 00:00:00",
+                "Province": 1
             }
         ],
-        "TotalCount": 100
+        "RequestId": "xx"
     }
 }
 ```

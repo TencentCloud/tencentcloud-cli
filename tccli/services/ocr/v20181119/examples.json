@@ -59,7 +59,7 @@
     "ClassifyDetectOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=ClassifyDetectOCR\r\n&ImageUrl=https://xx/a.jpg&DiscernType.0=BankCard&DiscernType.1=IDCardFront&DiscernType.N=xxx\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=ClassifyDetectOCR\n&ImageUrl=https://xx/a.jpg\n&DiscernType.0=BankCard\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"ClassifyDetectInfos\": [\r\n            {\r\n                \"Name\": \"银行卡\",\r\n                \"Type\": \"BankCard\",\r\n                \"Rect\": {\r\n                    \"X\": 0,\r\n                    \"Y\": 0,\r\n                    \"Width\": 750,\r\n                    \"Height\": 520\r\n                }\r\n            }\r\n        ],\r\n        \"RequestId\": \"46ab2e62-11e3-4d04-9fab-0abe18e7c927\"\r\n    }\r\n}",
         "title": "智能卡证分类示例代码"
       }
