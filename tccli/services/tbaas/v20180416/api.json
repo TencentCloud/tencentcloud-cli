@@ -12,6 +12,12 @@
       "name": "按块高查询区块信息",
       "output": "BlockByNumberHandlerResponse"
     },
+    "CreateChaincodeAndInstallForUser": {
+      "document": "创建并安装合约",
+      "input": "CreateChaincodeAndInstallForUserRequest",
+      "name": "创建并安装合约",
+      "output": "CreateChaincodeAndInstallForUserResponse"
+    },
     "DeployDynamicContractHandler": {
       "document": "动态部署合约",
       "input": "DeployDynamicContractHandlerRequest",
@@ -42,6 +48,36 @@
       "name": "获取区块内的交易列表",
       "output": "GetBlockTransactionListForUserResponse"
     },
+    "GetChaincodeCompileLogForUser": {
+      "document": "获取合约编译日志",
+      "input": "GetChaincodeCompileLogForUserRequest",
+      "name": "获取合约编译日志",
+      "output": "GetChaincodeCompileLogForUserResponse"
+    },
+    "GetChaincodeInitializeResultForUser": {
+      "document": "实例化结果查询",
+      "input": "GetChaincodeInitializeResultForUserRequest",
+      "name": "实例化结果查询",
+      "output": "GetChaincodeInitializeResultForUserResponse"
+    },
+    "GetChaincodeLogForUser": {
+      "document": "获取合约容器日志",
+      "input": "GetChaincodeLogForUserRequest",
+      "name": "获取合约容器日志",
+      "output": "GetChaincodeLogForUserResponse"
+    },
+    "GetChannelListForUser": {
+      "document": "获取通道列表",
+      "input": "GetChannelListForUserRequest",
+      "name": "获取通道列表",
+      "output": "GetChannelListForUserResponse"
+    },
+    "GetClusterListForUser": {
+      "document": "获取该用户的网络列表。网络信息中包含组织信息，但仅包含该用户所在组织的信息。",
+      "input": "GetClusterListForUserRequest",
+      "name": "获取网络列表",
+      "output": "GetClusterListForUserResponse"
+    },
     "GetClusterSummary": {
       "document": "获取区块链网络概要",
       "input": "GetClusterSummaryRequest",
@@ -60,6 +96,12 @@
       "name": "获取最新交易列表",
       "output": "GetLatesdTransactionListResponse"
     },
+    "GetPeerLogForUser": {
+      "document": "获取节点日志",
+      "input": "GetPeerLogForUserRequest",
+      "name": "获取节点日志",
+      "output": "GetPeerLogForUserResponse"
+    },
     "GetTransByHashHandler": {
       "document": "Bcos根据交易哈希查看交易详细信息",
       "input": "GetTransByHashHandlerRequest",
@@ -77,6 +119,12 @@
       "input": "GetTransactionDetailForUserRequest",
       "name": "获取交易详情",
       "output": "GetTransactionDetailForUserResponse"
+    },
+    "InitializeChaincodeForUser": {
+      "document": "实例化合约",
+      "input": "InitializeChaincodeForUserRequest",
+      "name": "实例化合约",
+      "output": "InitializeChaincodeForUserResponse"
     },
     "Invoke": {
       "document": "新增交易",
@@ -466,6 +514,162 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDetailForUser": {
+      "document": "通道详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "通道名称",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前组织加入通道的节点列表",
+          "member": "PeerDetailForUser",
+          "name": "PeerList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterDetailForUser": {
+      "document": "网络详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组织列表",
+          "member": "GroupDetailForUser",
+          "name": "GroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateChaincodeAndInstallForUserRequest": {
+      "document": "CreateChaincodeAndInstallForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，本接口取值：chaincode_mng",
+          "example": "chaincode_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，本接口取值：chaincode_create_and_install_for_user",
+          "example": "chaincode_create_and_install_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "example": "251005746envnew",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "example": "hellorog",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约安装节点名称，可以在通道详情中获取该通道上的节点名称",
+          "example": "peer0-neworg02.envnew",
+          "member": "string",
+          "name": "PeerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "智能合约名称，格式说明：以小写字母开头，由2-12位数字或小写字母组成",
+          "example": "query",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "智能合约版本，格式说明：由1-12位数字、小写字母、特殊符号(“.”)组成，如v1.0",
+          "example": "v1.0",
+          "member": "string",
+          "name": "ChaincodeVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "智能合约代码文件类型，支持类型：\n1. \"go\"：.go合约文件\n2. \"gozip\"：go合约工程zip包，要求压缩目录为代码根目录\n3. \"javazip\"：java合约工程zip包，要求压缩目录为代码根目录\n4. \"nodezip\"：nodejs合约工程zip包，要求压缩目录为代码根目录",
+          "example": "gozip",
+          "member": "string",
+          "name": "ChaincodeFileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约内容，合约文件或压缩包内容的base64编码，大小要求小于等于5M",
+          "example": "UEsDBBQAAAAIAFNT+UzceGQ3CAkAAJgf",
+          "member": "string",
+          "name": "Chaincode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChaincodeAndInstallForUserResponse": {
+      "document": "CreateChaincodeAndInstallForUser返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -947,6 +1151,473 @@
       ],
       "type": "object"
     },
+    "GetChaincodeCompileLogForUserRequest": {
+      "document": "GetChaincodeCompileLogForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，本接口取值：chaincode_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，本接口取值：chaincode_compile_log_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约名称",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约版本",
+          "member": "string",
+          "name": "ChaincodeVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约安装节点名称，可以在通道详情中获取该通道上的节点名称",
+          "member": "string",
+          "name": "PeerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数据项数，本接口默认取值：10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据起始偏移，本接口默认取值：0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetChaincodeCompileLogForUserResponse": {
+      "document": "GetChaincodeCompileLogForUser返回参数结构体",
+      "members": [
+        {
+          "document": "日志总行数，上限2000条日志",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志列表",
+          "member": "LogDetailForUser",
+          "name": "CompileLogList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetChaincodeInitializeResultForUserRequest": {
+      "document": "GetChaincodeInitializeResultForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，本接口取值：chaincode_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，本接口取值：chaincode_init_result_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属通道名称",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属合约名称",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约版本",
+          "member": "string",
+          "name": "ChaincodeVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例化任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetChaincodeInitializeResultForUserResponse": {
+      "document": "GetChaincodeInitializeResultForUser返回参数结构体",
+      "members": [
+        {
+          "document": "实例化结果：0，实例化中；1，实例化成功；2，实例化失败",
+          "member": "uint64",
+          "name": "InitResult",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例化信息",
+          "member": "string",
+          "name": "InitMessage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetChaincodeLogForUserRequest": {
+      "document": "GetChaincodeLogForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，本接口取值：chaincode_mng",
+          "example": "chaincode_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，本接口取值：chaincode_log_for_user",
+          "example": "chaincode_log_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "example": "251005746envnew",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称",
+          "example": "hellorog",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约名称",
+          "example": "cc050301",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约版本",
+          "example": "v1.0",
+          "member": "string",
+          "name": "ChaincodeVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约安装节点名称，可以在通道详情中获取该通道上的节点名称",
+          "example": "peer0-neworg02.envnew",
+          "member": "string",
+          "name": "PeerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志开始时间，如\"2020-11-24 19:49:25\"",
+          "example": "2020-11-24 19:49:25",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回日志行数的最大值，系统设定该参数最大为1000，且一行日志的最大字节数是500，即最大返回50万个字节数的日志数据",
+          "example": "10",
+          "member": "int64",
+          "name": "RowNum",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetChaincodeLogForUserResponse": {
+      "document": "GetChaincodeLogForUser返回参数结构体",
+      "members": [
+        {
+          "document": "返回日志总行数，不会超过入参的RowNum",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志列表",
+          "example": "{}",
+          "member": "LogDetailForUser",
+          "name": "ChaincodeLogList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetChannelListForUserRequest": {
+      "document": "GetChannelListForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，本接口取值：channel_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，本接口取值：channel_list_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数据项数，本接口默认取值：10，上限取值：20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据起始偏移，本接口默认取值：0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetChannelListForUserResponse": {
+      "document": "GetChannelListForUser返回参数结构体",
+      "members": [
+        {
+          "document": "通道总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "通道列表",
+          "member": "ChannelDetailForUser",
+          "name": "ChannelList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetClusterListForUserRequest": {
+      "document": "GetClusterListForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，本接口取值：cluster_mng",
+          "example": "cluster_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，本接口取值：cluster_list_for_user",
+          "example": "cluster_list_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数据项数，本接口默认取值：10，上限取值：20",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据起始偏移，本接口默认取值：0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetClusterListForUserResponse": {
+      "document": "GetClusterListForUser返回参数结构体",
+      "members": [
+        {
+          "document": "网络总数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络列表",
+          "example": "{}",
+          "member": "ClusterDetailForUser",
+          "name": "ClusterList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetClusterSummaryRequest": {
       "document": "GetClusterSummary请求参数结构体",
       "members": [
@@ -1325,6 +1996,105 @@
       ],
       "type": "object"
     },
+    "GetPeerLogForUserRequest": {
+      "document": "GetPeerLogForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，本接口取值：peer_mng",
+          "example": "peer_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，本接口取值：peer_log_for_user",
+          "example": "peer_log_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "example": "251005746envnew",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称",
+          "example": "hellorog",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点名称",
+          "example": "peer0-neworg02.envnew",
+          "member": "string",
+          "name": "PeerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志开始时间，如\"2020-11-24 19:49:25\"",
+          "example": "2020-11-24 19:49:25",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回日志行数的最大值，系统设定该参数最大为1000，且一行日志的最大字节数是500，即最大返回50万个字节数的日志数据",
+          "example": "10",
+          "member": "int64",
+          "name": "RowNum",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPeerLogForUserResponse": {
+      "document": "GetPeerLogForUser返回参数结构体",
+      "members": [
+        {
+          "document": "返回日志总行数，不会超过入参的RowNum",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志列表",
+          "example": "{}",
+          "member": "LogDetailForUser",
+          "name": "PeerLogList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetTransByHashHandlerRequest": {
       "document": "GetTransByHashHandler请求参数结构体",
       "members": [
@@ -1634,6 +2404,127 @@
       ],
       "type": "object"
     },
+    "GroupDetailForUser": {
+      "document": "组织详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "组织名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组织MSP Identity",
+          "member": "string",
+          "name": "GroupMSPId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InitializeChaincodeForUserRequest": {
+      "document": "InitializeChaincodeForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，本接口取值：chaincode_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，本接口取值：chaincode_init_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约名称",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约版本",
+          "member": "string",
+          "name": "ChaincodeVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属通道名称",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约实例化节点名称，可以在通道详情中获取该通道上的节点名称",
+          "member": "string",
+          "name": "PeerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例化的函数参数列表",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InitializeChaincodeForUserResponse": {
+      "document": "InitializeChaincodeForUser返回参数结构体",
+      "members": [
+        {
+          "document": "实例化任务ID，用于查询实例化结果",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InvokeRequest": {
       "document": "Invoke请求参数结构体",
       "members": [
@@ -1759,6 +2650,45 @@
         }
       ],
       "type": "object"
+    },
+    "LogDetailForUser": {
+      "document": "日志详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志行号",
+          "member": "uint64",
+          "name": "LineNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志详情",
+          "member": "string",
+          "name": "LogMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PeerDetailForUser": {
+      "document": "节点详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点名称",
+          "member": "string",
+          "name": "PeerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PeerSet": {
       "document": "PeerSet",

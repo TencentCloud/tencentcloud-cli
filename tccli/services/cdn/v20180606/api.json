@@ -5369,7 +5369,8 @@
       "members": [
         {
           "default": "",
-          "document": "需要禁用的 URL 列表\n每次最多可提交 100 条，每日最多可提交 3000 条",
+          "document": "禁用的 URL 列表（分协议生效，必须包含http://或https://）\n每次最多可提交 100 条，每日最多可提交 3000 条",
+          "example": "http://www.test.com/1.txt",
           "member": "string",
           "name": "Urls",
           "required": true,
@@ -5383,8 +5384,10 @@
       "members": [
         {
           "document": "提交结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CacheOptResult",
           "name": "CacheOptResult",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

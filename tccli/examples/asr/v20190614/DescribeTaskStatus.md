@@ -13,12 +13,44 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "8824366f-0e8f-4bd4-8924-af5e84127caa",
+        "RequestId": "a73b14a6-5044-41cb-bf32-e735d5bd69de",
         "Data": {
-            "TaskId": 522931820,
+            "TaskId": 9266418,
             "Status": 2,
             "StatusStr": "success",
-            "Result": "[0:0.000,0:2.260,0]  腾讯云语音识别欢迎您。\n",
+            "Result": "[0:0.020,0:2.380]  腾讯云语音识别欢迎您。\n",
+            "ResultDetail": [
+                {
+                    "FinalSentence": "腾讯云语音识别欢迎您。",
+                    "SliceSentence": "腾讯云 语音识别 欢迎 您",
+                    "StartMs": 20,
+                    "EndMs": 2380,
+                    "SpeechSpeed": 5.9,
+                    "WordsNum": 4,
+                    "Words": [
+                        {
+                            "OffsetStartMs": 120,
+                            "OffsetEndMs": 780,
+                            "Word": "腾讯云"
+                        },
+                        {
+                            "OffsetStartMs": 780,
+                            "OffsetEndMs": 1530,
+                            "Word": "语音识别"
+                        },
+                        {
+                            "OffsetStartMs": 1530,
+                            "OffsetEndMs": 1860,
+                            "Word": "欢迎"
+                        },
+                        {
+                            "OffsetStartMs": 1860,
+                            "OffsetEndMs": 2250,
+                            "Word": "您"
+                        }
+                    ]
+                }
+            ],
             "ErrorMsg": ""
         }
     }
@@ -46,7 +78,8 @@ Output:
             "Status": 0,
             "StatusStr": "waiting",
             "Result": "",
-            "ErrorMsg": ""
+            "ErrorMsg": "",
+            "ResultDetail": []
         }
     }
 }

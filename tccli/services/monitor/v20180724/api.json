@@ -865,6 +865,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagInstance",
+          "name": "TagInstances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2620,6 +2629,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -2628,6 +2638,7 @@
         {
           "default": "",
           "document": "页数，从 1 开始计数，默认 1",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -2636,6 +2647,7 @@
         {
           "default": "",
           "document": "每页的数量，取值1~100，默认20",
+          "example": "20",
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -2644,6 +2656,7 @@
         {
           "default": "",
           "document": "按策略名称模糊搜索",
+          "example": "policy-24sxe890",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -2652,6 +2665,7 @@
         {
           "default": "",
           "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控",
+          "example": "[MT_QCE]",
           "member": "string",
           "name": "MonitorTypes",
           "required": false,
@@ -2660,6 +2674,7 @@
         {
           "default": "",
           "document": "根据命名空间过滤",
+          "example": "[cvm]",
           "member": "string",
           "name": "Namespaces",
           "required": false,
@@ -2668,6 +2683,7 @@
         {
           "default": "",
           "document": "告警对象列表",
+          "example": "Region",
           "member": "string",
           "name": "Dimensions",
           "required": false,
@@ -2676,6 +2692,7 @@
         {
           "default": "",
           "document": "根据接收人搜索",
+          "example": "[9989]",
           "member": "int64",
           "name": "ReceiverUids",
           "required": false,
@@ -2684,6 +2701,7 @@
         {
           "default": "",
           "document": "根据接收组搜索",
+          "example": "[1112]",
           "member": "int64",
           "name": "ReceiverGroups",
           "required": false,
@@ -2692,6 +2710,7 @@
         {
           "default": "",
           "document": "根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略",
+          "example": "[DEFAULT]",
           "member": "string",
           "name": "PolicyType",
           "required": false,
@@ -2700,6 +2719,7 @@
         {
           "default": "",
           "document": "排序字段",
+          "example": "PolicyId",
           "member": "string",
           "name": "Field",
           "required": false,
@@ -2708,6 +2728,7 @@
         {
           "default": "",
           "document": "排序顺序：升序：ASC  降序：DESC",
+          "example": "DESC",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -2716,6 +2737,7 @@
         {
           "default": "",
           "document": "项目id数组",
+          "example": "[1]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -2724,6 +2746,7 @@
         {
           "default": "",
           "document": "告警通知id列表",
+          "example": "[1,2]",
           "member": "string",
           "name": "NoticeIds",
           "required": false,
@@ -2732,6 +2755,7 @@
         {
           "default": "",
           "document": "根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略",
+          "example": "[STATIC]",
           "member": "string",
           "name": "RuleTypes",
           "required": false,
@@ -2740,10 +2764,20 @@
         {
           "default": "",
           "document": "启停，1：启用   0：停止",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否未配置通知规则，1：未配置，0：配置",
+          "example": "1",
+          "member": "int64",
+          "name": "NotBindingNoticeRule",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2753,15 +2787,19 @@
       "members": [
         {
           "document": "策略总数",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "策略数组",
+          "example": "无",
           "member": "AlarmPolicy",
           "name": "Policies",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5043,6 +5081,7 @@
         {
           "default": "",
           "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
           "member": "int64",
           "name": "EventId",
           "required": true,
@@ -5052,6 +5091,7 @@
         {
           "default": "",
           "document": "事件中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ping不可达",
           "member": "string",
           "name": "EventCName",
           "required": true,
@@ -5061,6 +5101,7 @@
         {
           "default": "",
           "document": "事件英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ping_unreachable",
           "member": "string",
           "name": "EventEName",
           "required": true,
@@ -5070,6 +5111,7 @@
         {
           "default": "",
           "document": "事件简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ping_unreachable",
           "member": "string",
           "name": "EventName",
           "required": true,
@@ -5079,6 +5121,7 @@
         {
           "default": "",
           "document": "产品中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm",
           "member": "string",
           "name": "ProductCName",
           "required": true,
@@ -5088,6 +5131,7 @@
         {
           "default": "",
           "document": "产品英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm",
           "member": "string",
           "name": "ProductEName",
           "required": true,
@@ -5097,6 +5141,7 @@
         {
           "default": "",
           "document": "产品简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -5106,6 +5151,7 @@
         {
           "default": "",
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-3xdfd90",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5115,6 +5161,7 @@
         {
           "default": "",
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-3xdfd90",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -5124,6 +5171,7 @@
         {
           "default": "",
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -5133,6 +5181,7 @@
         {
           "default": "",
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -5142,6 +5191,7 @@
         {
           "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -5151,6 +5201,7 @@
         {
           "default": "",
           "document": "是否支持告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "SupportAlarm",
           "required": true,
@@ -5160,6 +5211,7 @@
         {
           "default": "",
           "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -5169,6 +5221,7 @@
         {
           "default": "",
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611560738",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -5178,6 +5231,7 @@
         {
           "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611560790",
           "member": "int64",
           "name": "UpdateTime",
           "required": true,
@@ -5187,6 +5241,7 @@
         {
           "default": "",
           "document": "实例对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeProductEventListEventsDimensions",
           "name": "Dimensions",
           "required": true,
@@ -5196,6 +5251,7 @@
         {
           "default": "",
           "document": "实例对象附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeProductEventListEventsDimensions",
           "name": "AdditionMsg",
           "required": true,
@@ -5205,6 +5261,7 @@
         {
           "default": "",
           "document": "是否配置告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "IsAlarmConfig",
           "required": true,
@@ -5214,10 +5271,21 @@
         {
           "default": "",
           "document": "策略信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeProductEventListEventsGroupInfo",
           "name": "GroupInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "显示名称ViewName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm/device",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -7216,6 +7284,75 @@
         }
       ],
       "type": "object"
+    },
+    "TagInstance": {
+      "document": "策略列表详情标签返回体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InstanceSum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品类型，如：cvm\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定状态，2：绑定成功，1：绑定中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "BindingStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签状态，2：标签存在，1：标签不存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TagStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "URLNotice": {
       "document": "云监控告警通知模板 - 回调通知详情",

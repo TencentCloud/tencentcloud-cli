@@ -487,7 +487,8 @@
       "members": [
         {
           "default": "",
-          "document": "对象存储桶名称",
+          "document": "对象存储桶名称（填写存储桶名称自定义部分，不包含-appid）",
+          "example": "BucketName",
           "member": "string",
           "name": "CosBucketName",
           "required": false,
@@ -497,6 +498,7 @@
         {
           "default": "",
           "document": "对象存储对象路径",
+          "example": "ObjectName",
           "member": "string",
           "name": "CosObjectName",
           "required": false,
@@ -506,6 +508,7 @@
         {
           "default": "",
           "document": "包含函数代码文件及其依赖项的 zip 格式文件，使用该接口时要求将 zip 文件的内容转成 base64 编码，最大支持20M",
+          "example": "base64编码",
           "member": "string",
           "name": "ZipFile",
           "required": false,
@@ -515,6 +518,7 @@
         {
           "default": "",
           "document": "对象存储的地域，地域为北京时需要传入ap-beijing,北京一区时需要传递ap-beijing-1，其他的地域不需要传递。",
+          "example": "ap-chongqing",
           "member": "string",
           "name": "CosBucketRegion",
           "required": false,
@@ -524,6 +528,7 @@
         {
           "default": "",
           "document": "如果是通过Demo创建的话，需要传入DemoId",
+          "example": "Demo的Id",
           "member": "string",
           "name": "DemoId",
           "required": false,
@@ -533,6 +538,7 @@
         {
           "default": "",
           "document": "如果是从TempCos创建的话，需要传入TempCosObjectName",
+          "example": "TempCosObjectName",
           "member": "string",
           "name": "TempCosObjectName",
           "required": false,
@@ -542,6 +548,7 @@
         {
           "default": "",
           "document": "Git地址",
+          "example": "Git地址",
           "member": "string",
           "name": "GitUrl",
           "required": false,
@@ -551,6 +558,7 @@
         {
           "default": "",
           "document": "Git用户名",
+          "example": "Git用户名",
           "member": "string",
           "name": "GitUserName",
           "required": false,
@@ -560,6 +568,7 @@
         {
           "default": "",
           "document": "Git密码",
+          "example": "Git密码",
           "member": "string",
           "name": "GitPassword",
           "required": false,
@@ -569,6 +578,7 @@
         {
           "default": "",
           "document": "加密后的Git密码，一般无需指定",
+          "example": "加密后的Git密码",
           "member": "string",
           "name": "GitPasswordSecret",
           "required": false,
@@ -578,6 +588,7 @@
         {
           "default": "",
           "document": "Git分支",
+          "example": "Git分支",
           "member": "string",
           "name": "GitBranch",
           "required": false,
@@ -587,6 +598,7 @@
         {
           "default": "",
           "document": "代码在Git仓库中的路径",
+          "example": "代码在Git仓库中的路径",
           "member": "string",
           "name": "GitDirectory",
           "required": false,
@@ -596,6 +608,7 @@
         {
           "default": "",
           "document": "指定要拉取的版本",
+          "example": "Git拉取的版本",
           "member": "string",
           "name": "GitCommitId",
           "required": false,
@@ -605,6 +618,7 @@
         {
           "default": "",
           "document": "加密后的Git用户名，一般无需指定",
+          "example": "加密后的Git用户名",
           "member": "string",
           "name": "GitUserNameSecret",
           "required": false,

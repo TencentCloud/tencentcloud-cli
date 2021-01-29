@@ -32,8 +32,6 @@ Input:
 
 ```
 tccli postgres InitDBInstances --cli-unfold-argument  \
-    --Version 2017-03-12 \
-    --Region ap-guangzhou \
     --DBInstanceIdSet postgres-6fego161 postgres-lnp6j617 \
     --AdminName testuser \
     --AdminPassword testuser%40123 \

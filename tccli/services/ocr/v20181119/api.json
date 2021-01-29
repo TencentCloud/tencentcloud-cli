@@ -7,7 +7,7 @@
       "output": "AdvertiseOCRResponse"
     },
     "ArithmeticOCR": {
-      "document": "本接口支持作业算式题目的自动识别，目前覆盖 K12 学力范围内的 14 种题型，包括加减乘除四则运算、分数四则运算、竖式四则运算、脱式计算等。",
+      "document": "本接口支持作业算式题目的自动识别和判分，目前覆盖 K12 学力范围内的 11 种题型，包括加减乘除四则、加减乘除已知结果求运算因子、判断大小、约等于估算、带余数除法、分数四则运算、单位换算、竖式加减法、竖式乘除法、脱式计算和解方程，平均识别精度达到93%以上。",
       "input": "ArithmeticOCRRequest",
       "name": "算式识别",
       "output": "ArithmeticOCRResponse"
@@ -481,6 +481,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "string",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -489,10 +490,65 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "string",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于选择是否支持横屏拍摄。打开则支持横屏拍摄图片角度判断，角度信息在返回参数的angle中，默认值为true",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportHorizontalImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否拒绝非速算图，打开则拒绝非速算图(注：非速算图是指风景人物等明显不是速算图片的图片)，默认值为false",
+          "example": "true",
+          "member": "bool",
+          "name": "RejectNonArithmeticPic",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否展开耦合算式中的竖式计算，默认值为false",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDispRelatedVertical",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否展示竖式算式的中间结果和格式控制字符，默认值为false",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDispMidResult",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启pdf识别，默认值为true",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePdfRecognize",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "pdf页码，从0开始，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageIndex",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -502,9 +558,20 @@
       "members": [
         {
           "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "example": "{}",
           "member": "TextArithmetic",
           "name": "TextDetections",
+          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片横屏的角度(90度或270度)",
+          "example": "0",
+          "member": "float",
+          "name": "Angle",
+          "required": true,
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -5389,6 +5456,7 @@
         {
           "default": "",
           "document": "识别出的文本行内容",
+          "example": "\"\"",
           "member": "string",
           "name": "DetectedText",
           "required": true,
@@ -5397,7 +5465,8 @@
         },
         {
           "default": "",
-          "document": "算式运算结果",
+          "document": "算式运算结果，true-正确   false-错误或非法参数",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
@@ -5407,6 +5476,7 @@
         {
           "default": "",
           "document": "保留字段，暂不支持",
+          "example": "0",
           "member": "int64",
           "name": "Confidence",
           "required": true,
@@ -5416,6 +5486,7 @@
         {
           "default": "",
           "document": "原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "Coord",
           "name": "Polygon",
           "required": true,
@@ -5425,6 +5496,7 @@
         {
           "default": "",
           "document": "保留字段，暂不支持",
+          "example": "\"\"",
           "member": "string",
           "name": "AdvancedInfo",
           "required": true,
@@ -5434,6 +5506,7 @@
         {
           "default": "",
           "document": "文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）",
+          "example": "{}",
           "member": "ItemCoord",
           "name": "ItemCoord",
           "required": true,
@@ -5443,8 +5516,19 @@
         {
           "default": "",
           "document": "算式题型编号：\n‘1’: 加减乘除四则\n‘2’: 加减乘除已知结果求运算因子\n‘3’: 判断大小\n‘4’: 约等于估算\n‘5’: 带余数除法\n‘6’: 分数四则运算\n‘7’: 单位换算\n‘8’: 竖式加减法\n‘9’: 竖式乘除法\n‘10’: 脱式计算\n‘11’: 解方程",
+          "example": "\"\"",
           "member": "string",
           "name": "ExpressionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错题推荐答案，算式运算结果正确返回为\"\"，算式运算结果错误返回推荐答案 (注：暂不支持多个关系运算符（如1<10<7）、无关系运算符（如frac(1,2)+frac(2,3)）、单位换算（如1元=100角）错题的推荐答案返回)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Answer",
           "required": true,
           "type": "string",
           "value_allowed_null": false

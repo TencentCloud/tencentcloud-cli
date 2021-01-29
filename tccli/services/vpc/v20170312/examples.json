@@ -380,6 +380,14 @@
         "title": "创建NAT的转发规则"
       }
     ],
+    "CreateNatGatewaySourceIpTranslationNatRule": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateNatGatewaySourceIpTranslationNatRule\n&NatGatewayId=nat-3isn9hr0\n&SourceIpTranslationNatRules.0.ResourceId=cvm-24796297\n&SourceIpTranslationNatRules.0.ResourceType=NETWORKINTERFACE\n&SourceIpTranslationNatRules.0.PrivateIpAddress=10.80.80.41\n&SourceIpTranslationNatRules.0.PublicIpAddresses.0=180.12.59.43\n&SourceIpTranslationNatRules.0.Description=test_snat\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"14f7ea4e-8452-4742-84b5-5a4aee304968\"\r\n    }\r\n}",
+        "title": "创建NAT网关的SNAT规则"
+      }
+    ],
     "CreateNetDetect": [
       {
         "document": "",
@@ -624,6 +632,14 @@
         "title": "删除NAT的端口转发规则"
       }
     ],
+    "DeleteNatGatewaySourceIpTranslationNatRule": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNatGatewaySourceIpTranslationNatRule\n&NatGatewayId=nat-3isn9hr0\n&NatGatewaySnatIds.0=snat-3ixd0hr0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"14f7ea4e-8452-4742-84b5-5a4aee304968\"\r\n    }\r\n}",
+        "title": "删除NAT网关的SNAT转发规则"
+      }
+    ],
     "DeleteNetDetect": [
       {
         "document": "",
@@ -659,8 +675,8 @@
     "DeleteRoutes": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteRoutes\r\n&Version=2017-03-12\r\n&RouteTableId=rtb-n0yejvje\r\n&Routes.0.RouteId=16644\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoutes\n<公共请求参数>\n\n{\n    \"Routes\": [\n        {\n            \"DestinationCidrBlock\": \"10.0.0.0/16\", \n            \"Enabled\": true, \n            \"RouteId\": 364153, \n            \"GatewayType\": \"EIP\", \n            \"GatewayId\": \"vpc-b1qdfp5v\"\n        }\n    ], \n    \"RouteTableId\": \"rtb-m1xkaxvq\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RouteSet\": [\r\n            {\r\n                \"DestinationCidrBlock\": \"10.0.0.0/16\", \r\n                \"RouteTableId\": \"rtb-m1xkaxvq\", \r\n                \"GatewayType\": \"EIP\", \r\n                \"GatewayId\": \"vpc-b1qdfp5v\", \r\n                \"DestinationIpv6CidrBlock\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
         "title": "删除路由规则"
       }
     ],
@@ -1054,6 +1070,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGatewayDestinationIpPortTranslationNatRules\r\n&Filters.0.Name=vpc-id\r\n&Filters.0.Values.0=vpc-0yi4hekt\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"NatGatewayDestinationIpPortTranslationNatRuleSet\": [\r\n            {\r\n                \"IpProtocol\": \"TCP\",\r\n                \"PublicIpAddress\": \"139.199.232.238\",\r\n                \"PublicPort\": 8989,\r\n                \"PrivateIpAddress\": \"10.80.80.41\",\r\n                \"PrivatePort\": 8989,\r\n                \"Description\": \"test_dnapt\",\r\n                \"CreatedTime\": \"2019-05-04 13:42:11\",\r\n                \"NatGatewayId\": \"nat-3isn9hr0\",\r\n                \"VpcId\": \"vpc-0yi4hekt\"\r\n            },\r\n            {\r\n                \"IpProtocol\": \"UDP\",\r\n                \"PublicIpAddress\": \"139.199.232.238\",\r\n                \"PublicPort\": 8989,\r\n                \"PrivateIpAddress\": \"10.80.80.41\",\r\n                \"PrivatePort\": 8989,\r\n                \"Description\": \"test_dnapt\",\r\n                \"CreatedTime\": \"2019-05-04 13:20:20\",\r\n                \"NatGatewayId\": \"nat-3isn9hr0\",\r\n                \"VpcId\": \"vpc-0yi4hekt\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"eb203971-a7a0-45c1-9c72-36ad86688590\"\r\n    }\r\n}",
         "title": "查询NAT网关端口转发规则"
+      }
+    ],
+    "DescribeNatGatewaySourceIpTranslationNatRules": [
+      {
+        "document": "用Filter数组拉取NAT网关的SNAT转发规则",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGatewaySourceIpTranslationNatRules\n&NatGatewayId=nat-3isn9hr0\n&Filters.0.Name=resource-id\n&Filters.0.Values.0=subnet-0yi4hekt\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"SourceIpTranslationNatRuleSet\": [\r\n            {\r\n                \"NatGatewaySnatId\": \"subnet-0yi4hekt\",\r\n                \"ResourceId\": \"subnet-0yi4hekt\",\r\n                \"ResourceType\": \"SUBNET\",\r\n                \"PublicIpAddresses\": [\"139.199.232.238\"],\r\n                \"PrivateIpAddress\": \"10.80.80.0/24\",\r\n                \"Description\": \"test_snat\",\r\n                \"CreatedTime\": \"2019-05-04 13:42:11\",\r\n                \"NatGatewayId\": \"nat-3isn9hr0\",\r\n                \"VpcId\": \"vpc-0yi4hekt\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"eb203971-a7a0-45c1-9c72-36ad86688590\"\r\n    }\r\n}",
+        "title": "查询NAT网关SNAT转发规则"
       }
     ],
     "DescribeNatGateways": [
@@ -1738,6 +1762,14 @@
         "title": "修改NAT的端口转发规则"
       }
     ],
+    "ModifyNatGatewaySourceIpTranslationNatRule": [
+      {
+        "document": "修改NAT的SNAT转发规则时，SourceIpTranslationNatRule只需要传递NatGatewaySnatId，PublicIpAddresses，Description。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNatGatewaySourceIpTranslationNatRule\n&NatGatewayId=nat-3isn9hr0\n&SourceIpTranslationNatRule.NatGatewaySnatId=snat-4cnwed83\n&SourceIpTranslationNatRule.ResourceId=cvm-24796297\n&SourceIpTranslationNatRule.ResourceType=NETWORKINTERFACE\n&SourceIpTranslationNatRule.PrivateIpAddress=10.80.80.41\n&SourceIpTranslationNatRule.PublicIpAddresses.0=180.12.59.43\n&SourceIpTranslationNatRule.Description=test_snat\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\r\n    }\r\n}",
+        "title": "修改NAT的SNAT转发规则"
+      }
+    ],
     "ModifyNetDetect": [
       {
         "document": "",
@@ -1868,6 +1900,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyVpnGatewayCcnRoutes\r\n&VpnGatewayId=vpngw-qol17bjx\r\n&Routes.0.RouteId=xxx-xxxxxxxx\r\n&Routes.0.DestinationCidrBlock=10.2.2.0/24\r\n&Routes.0.Status=ENABLE\r\n&Routes.1.RouteId=xxx-xxxxxxxx\r\n&Routes.1.DestinationCidrBlock=10.2.3.0/24\r\n&Routes.1.Status=DISABLE\r\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\r\n  }\r\n}",
         "title": "修改VPN网关云联网路由"
+      }
+    ],
+    "NotifyRoutes": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=NotifyRoutes\n&RouteTableId=rtb-9wzwlnhc\n&RouteItemIds.0=rti-i8bap903\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\r\n  }\r\n}",
+        "title": "发布路由至云联网"
       }
     ],
     "RejectAttachCcnInstances": [
@@ -2056,6 +2096,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=UnassignPrivateIpAddresses\r\n&Version=2017-03-12\r\n&NetworkInterfaceId=eni-afo43z61\r\n&PrivateIpAddresses.0.PrivateIpAddress=172.16.32.111\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\r\n    }\r\n}",
         "title": "弹性网卡退还内网 IP"
+      }
+    ],
+    "WithdrawNotifyRoutes": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=WithdrawNotifyRoutes\n&RouteTableId=rtb-9wzwlnhc\n&RouteItemIds.0=rti-i8bap903\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\r\n  }\r\n}",
+        "title": "从云联网撤销"
       }
     ]
   },

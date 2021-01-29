@@ -16,6 +16,14 @@
         "title": "示例"
       }
     ],
+    "CreateAndDeployCloudBaseProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndDeployCloudBaseProject\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\", \n    \"Name\": \"xx\", \n    \"Parameters\": [\n        {\n            \"Value\": \"xx\", \n            \"Key\": \"xx\"\n        }\n    ], \n    \"Tags\": [\n        \"xx\"\n    ], \n    \"RcJson\": \"xx\", \n    \"FreeQuota\": \"xx\", \n    \"NetworkConfig\": \"xx\", \n    \"Source\": {\n        \"CodingPackageVersion\": \"xx\", \n        \"WorkDir\": \"xx\", \n        \"Name\": \"xx\", \n        \"Url\": \"xx\", \n        \"RawCode\": \"xx\", \n        \"Type\": \"xx\", \n        \"CodingPackageName\": \"xx\"\n    }, \n    \"AddonConfig\": \"xx\", \n    \"EnvAlias\": \"xx\", \n    \"Type\": \"xx\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"EnvId\": \"xx\", \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "创建云开发项目"
+      }
+    ],
     "CreateAuthDomain": [
       {
         "document": "",
@@ -94,6 +102,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseBuildService\n&EnvId=cdnheader-v2a\n&ServiceName=nginx-test\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\", \r\n        \"UploadHeaders\": [\r\n            {\r\n                \"Value\": \"xx\", \r\n                \"Key\": \"xx\"\r\n            }\r\n        ], \r\n        \"PackageVersion\": \"xx\", \r\n        \"PackageName\": \"xx\", \r\n        \"UploadUrl\": \"xx\"\r\n    }\r\n}",
         "title": "获取云托管代码上传url"
+      }
+    ],
+    "DescribeCloudBaseProjectLatestVersionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseProjectLatestVersionList\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\", \n    \"ProjectType\": \"xx\", \n    \"PageSize\": 0, \n    \"Tags\": [\n        \"xx\"\n    ], \n    \"ProjectName\": \"xx\", \n    \"Offset\": 0\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"ProjectList\": [\r\n            {\r\n                \"Status\": \"xx\", \r\n                \"UpdateTime\": \"xx\", \r\n                \"EnvId\": \"xx\", \r\n                \"Name\": \"xx\", \r\n                \"Sam\": \"xx\", \r\n                \"Tags\": [\r\n                    \"xx\"\r\n                ], \r\n                \"RcJson\": \"xx\", \r\n                \"CDId\": \"xx\", \r\n                \"NetworkConfig\": \"xx\", \r\n                \"Parameters\": [\r\n                    {\r\n                        \"Value\": \"xx\", \r\n                        \"Key\": \"xx\"\r\n                    }\r\n                ], \r\n                \"Source\": {\r\n                    \"CodingPackageVersion\": \"xx\", \r\n                    \"WorkDir\": \"xx\", \r\n                    \"Name\": \"xx\", \r\n                    \"Url\": \"xx\", \r\n                    \"Headers\": \"xx\", \r\n                    \"Type\": \"xx\", \r\n                    \"CodingPackageName\": \"xx\"\r\n                }, \r\n                \"FailReason\": \"xx\", \r\n                \"AddonConfig\": \"xx\", \r\n                \"VersionNum\": 0, \r\n                \"CIId\": \"xx\", \r\n                \"Type\": \"xx\", \r\n                \"CreateTime\": \"xx\"\r\n            }\r\n        ], \r\n        \"TotalCount\": 1, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "获取云开发项目列表"
       }
     ],
     "DescribeCloudBaseRunResource": [

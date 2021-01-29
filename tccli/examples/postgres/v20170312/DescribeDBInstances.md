@@ -21,10 +21,13 @@ Output:
                 "Region": "ap-guangzhou",
                 "Zone": "ap-guangzhou-2",
                 "AppId": 251000710,
+                "Uid": 1000001,
                 "ProjectId": 0,
                 "VpcId": "",
                 "SubnetId": "",
+                "AutoRenew": 1,
                 "DBInstanceId": "postgres-6bwgamo3",
+                "MasterDBInstanceId": "",
                 "DBInstanceName": "test",
                 "DBInstanceStatus": "running",
                 "DBInstanceMemory": 4,
@@ -56,16 +59,28 @@ Output:
                 "ExpireTime": "2018-01-28 19:23:23",
                 "IsolatedTime": "0000-00-00 00:00:00",
                 "PayType": "prepaid",
-                "AutoRenew": false
+                "SupportIpv6": 1,
+                "ReadOnlyInstanceNum": 1,
+                "StatusInReadonlyGroup": "running",
+                "Type": 1,
+                "TagList": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ]
             },
             {
                 "Region": "ap-guangzhou",
                 "Zone": "ap-guangzhou-2",
                 "AppId": 251000710,
                 "ProjectId": 0,
+                "Uid": 1000002,
                 "VpcId": "",
                 "SubnetId": "",
+                "AutoRenew": 1,
                 "DBInstanceId": "postgres-1e2srvtt",
+                "MasterDBInstanceId": "",
                 "DBInstanceName": "未命名",
                 "DBInstanceStatus": "running",
                 "DBInstanceMemory": 4,
@@ -97,7 +112,16 @@ Output:
                 "ExpireTime": "2018-01-28 19:50:17",
                 "IsolatedTime": "0000-00-00 00:00:00",
                 "PayType": "prepaid",
-                "AutoRenew": false
+                "SupportIpv6": 1,
+                "ReadOnlyInstanceNum": 1,
+                "StatusInReadonlyGroup": "running",
+                "Type": 1,
+                "TagList": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ]
             }
         ]
     }
@@ -129,10 +153,13 @@ Output:
                 "Region": "ap-guangzhou",
                 "Zone": "ap-guangzhou-2",
                 "AppId": 100000000,
+                "Uid": 1000001,
                 "ProjectId": 0,
                 "VpcId": "",
                 "SubnetId": "",
+                "Type": 1,
                 "DBInstanceId": "postgres-6bwgamo3",
+                "MasterDBInstanceId": "",
                 "DBInstanceName": "test",
                 "DBInstanceStatus": "running",
                 "DBInstanceMemory": 4,
@@ -163,8 +190,17 @@ Output:
                 "UpdateTime": "2018-01-18 15:54:32",
                 "ExpireTime": "2018-01-28 19:23:23",
                 "IsolatedTime": "0000-00-00 00:00:00",
+                "StatusInReadonlyGroup": "ruuning",
+                "ReadOnlyInstanceNum": 1,
                 "PayType": "prepaid",
-                "AutoRenew": false
+                "AutoRenew": 1,
+                "SupportIpv6": 0,
+                "TagList": [
+                    {
+                        "TagKey": "tag1",
+                        "TagValue": "v1"
+                    }
+                ]
             }
         ]
     }

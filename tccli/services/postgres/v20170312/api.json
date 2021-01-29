@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AddDBInstanceToReadOnlyGroup": {
+      "document": "本接口（AddDBInstanceToReadOnlyGroup）用于添加只读实例到只读组",
+      "input": "AddDBInstanceToReadOnlyGroupRequest",
+      "name": "添加只读实例到只读组",
+      "output": "AddDBInstanceToReadOnlyGroupResponse"
+    },
     "CloseDBExtranetAccess": {
       "document": "本接口（CloseDBExtranetAccess）用于关闭实例外网链接。",
       "input": "CloseDBExtranetAccessRequest",
@@ -18,11 +24,29 @@
       "name": "创建DB实例",
       "output": "CreateDBInstancesResponse"
     },
+    "CreateReadOnlyDBInstance": {
+      "document": "本接口(CreateReadOnlyDBInstance)用于创建只读实例",
+      "input": "CreateReadOnlyDBInstanceRequest",
+      "name": "创建只读实例",
+      "output": "CreateReadOnlyDBInstanceResponse"
+    },
+    "CreateReadOnlyGroup": {
+      "document": "本接口（CreateReadOnlyGroup）用于创建只读组",
+      "input": "CreateReadOnlyGroupRequest",
+      "name": "创建只读组",
+      "output": "CreateReadOnlyGroupResponse"
+    },
     "CreateServerlessDBInstance": {
       "document": "本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
       "input": "CreateServerlessDBInstanceRequest",
       "name": "创建ServerlessDB实例",
       "output": "CreateServerlessDBInstanceResponse"
+    },
+    "DeleteReadOnlyGroup": {
+      "document": "本接口(DeleteReadOnlyGroup)用于删除指定的只读组",
+      "input": "DeleteReadOnlyGroupRequest",
+      "name": "删除只读组",
+      "output": "DeleteReadOnlyGroupResponse"
     },
     "DeleteServerlessDBInstance": {
       "document": "本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
@@ -90,6 +114,12 @@
       "name": "查询售卖规格配置",
       "output": "DescribeProductConfigResponse"
     },
+    "DescribeReadOnlyGroups": {
+      "document": "本接口(DescribeReadOnlyGroups)用于查询用户输入指定实例的只读组",
+      "input": "DescribeReadOnlyGroupsRequest",
+      "name": "查询只读组信息",
+      "output": "DescribeReadOnlyGroupsResponse"
+    },
     "DescribeRegions": {
       "document": "本接口 (DescribeRegions) 用于查询售卖地域信息。",
       "input": "DescribeRegionsRequest",
@@ -109,7 +139,7 @@
       "output": "DescribeZonesResponse"
     },
     "DestroyDBInstance": {
-      "document": "本接口 (DestroyDBInstance) 用于销毁指定DBInstanceId对应的实例。",
+      "document": "本接口 (DestroyDBInstance) 用于销毁指定DBInstanceId对应的实例。当前仅适用于按量计费实例。",
       "input": "DestroyDBInstanceRequest",
       "name": "销毁实例",
       "output": "DestroyDBInstanceResponse"
@@ -150,11 +180,23 @@
       "name": "修改实例名字",
       "output": "ModifyDBInstanceNameResponse"
     },
+    "ModifyDBInstanceReadOnlyGroup": {
+      "document": "本接口（ModifyDBInstanceReadOnlyGroup）用于修改实例所属的只读组",
+      "input": "ModifyDBInstanceReadOnlyGroupRequest",
+      "name": "修改实例所属的只读组",
+      "output": "ModifyDBInstanceReadOnlyGroupResponse"
+    },
     "ModifyDBInstancesProject": {
       "document": "本接口（ModifyDBInstancesProject）用于将实例转至其他项目。",
       "input": "ModifyDBInstancesProjectRequest",
       "name": "将实例转至其他项目",
       "output": "ModifyDBInstancesProjectResponse"
+    },
+    "ModifyReadOnlyGroupConfig": {
+      "document": "本接口(ModifyReadOnlyGroupConfig)用于更新只读组配置信息",
+      "input": "ModifyReadOnlyGroupConfigRequest",
+      "name": "修改只读组配置",
+      "output": "ModifyReadOnlyGroupConfigResponse"
     },
     "OpenDBExtranetAccess": {
       "document": "本接口（OpenDBExtranetAccess）用于开通外网。",
@@ -167,6 +209,18 @@
       "input": "OpenServerlessDBExtranetAccessRequest",
       "name": "开通serverlessDB实例外网",
       "output": "OpenServerlessDBExtranetAccessResponse"
+    },
+    "RebalanceReadOnlyGroup": {
+      "document": "本接口(RebalanceReadOnlyGroup)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。",
+      "input": "RebalanceReadOnlyGroupRequest",
+      "name": "均衡只读组内实例的负载",
+      "output": "RebalanceReadOnlyGroupResponse"
+    },
+    "RemoveDBInstanceFromReadOnlyGroup": {
+      "document": "本接口（RemoveDBInstanceFromReadOnlyGroup）用户将只读实例从只读组中移除",
+      "input": "RemoveDBInstanceFromReadOnlyGroupRequest",
+      "name": "将只读实例从只读组中移除",
+      "output": "RemoveDBInstanceFromReadOnlyGroupResponse"
     },
     "RenewInstance": {
       "document": "本接口（RenewInstance）用于续费实例。",
@@ -265,6 +319,51 @@
         }
       ],
       "usage": "out"
+    },
+    "AddDBInstanceToReadOnlyGroupRequest": {
+      "document": "AddDBInstanceToReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "DBInstanceId",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddDBInstanceToReadOnlyGroupResponse": {
+      "document": "AddDBInstanceToReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CloseDBExtranetAccessRequest": {
       "document": "CloseDBExtranetAccess请求参数结构体",
@@ -506,6 +605,348 @@
           "name": "DBInstanceIdSet",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyDBInstanceRequest": {
+      "document": "CreateReadOnlyDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "example": "SpecCode",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本，目前强制和主实例保持一致",
+          "example": "DBVersion",
+          "member": "string",
+          "name": "DBVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例容量大小，单位：GB。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一次性购买的实例数量。取值1-100",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "只读实例的主实例ID",
+          "example": "MasterDBInstanceId",
+          "member": "string",
+          "name": "MasterDBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "example": "InstanceChargeType",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费标记：0-正常续费（默认）；1-自动续费；",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID。",
+          "example": "VpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络子网ID。",
+          "example": "SubnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "优惠活动ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例名(后续支持)",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要支持Ipv6，1：是，0：否",
+          "example": "1",
+          "member": "uint64",
+          "name": "NeedSupportIpv6",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "只读组ID。",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例需要绑定的Tag信息，默认为空",
+          "example": "空",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyDBInstanceResponse": {
+      "document": "CreateReadOnlyDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单号列表。每个实例对应一个订单号",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结流水号",
+          "example": "BillId",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建成功的实例ID集合，只在后付费情景下有返回值",
+          "example": "[\"BillId\"]",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyGroupRequest": {
+      "document": "CreateReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例ID",
+          "example": "MasterDBInstanceId",
+          "member": "string",
+          "name": "MasterDBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组名称",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "example": "VpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "SubnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "延迟时间大小开关：0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplayLagEliminate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟空间大小开关： 0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplayLatencyEliminate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟时间大小阈值，单位ms",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxReplayLag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟空间大小阈值，单位MB",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxReplayLatency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟剔除最小保留实例数",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinDelayEliminateReserve",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyGroupResponse": {
+      "document": "CreateReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1046,6 +1487,42 @@
       ],
       "usage": "out"
     },
+    "DeleteReadOnlyGroupRequest": {
+      "document": "DeleteReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReadOnlyGroupResponse": {
+      "document": "DeleteReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteServerlessDBInstanceRequest": {
       "document": "DeleteServerlessDBInstance请求参数结构体",
       "members": [
@@ -1374,7 +1851,7 @@
         },
         {
           "default": "",
-          "document": "分页序号，从0开始。",
+          "document": "数据偏移量，从0开始。",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1687,6 +2164,78 @@
           "document": "售卖规格列表。",
           "member": "SpecInfo",
           "name": "SpecInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReadOnlyGroupsRequest": {
+      "document": "DescribeReadOnlyGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件，必须传入主实例ID进行过滤，否则返回值将为空，过滤参数为：db-master-instance-id",
+          "example": "[{\"Name\": \"db-master-instance-id\", \"Value\": \"aa\"}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询每一页的条数，默认为10",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的页码，默认为1",
+          "example": "10",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询排序依据，目前支持:ROGroupId,CreateTime,Name",
+          "example": "ROGroupId",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询排序依据类型，目前支持:desc,asc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReadOnlyGroupsResponse": {
+      "document": "DescribeReadOnlyGroups返回参数结构体",
+      "members": [
+        {
+          "document": "只读组列表",
+          "example": "空",
+          "member": "ReadOnlyGroup",
+          "name": "ReadOnlyGroupList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2256,6 +2805,60 @@
       ],
       "type": "object"
     },
+    "ModifyDBInstanceReadOnlyGroupRequest": {
+      "document": "ModifyDBInstanceReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "DBInstanceId",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前实例所在只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例修改的目标只读组ID",
+          "example": "NewReadOnlyGroupId",
+          "member": "string",
+          "name": "NewReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceReadOnlyGroupResponse": {
+      "document": "ModifyDBInstanceReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstancesProjectRequest": {
       "document": "ModifyDBInstancesProject请求参数结构体",
       "members": [
@@ -2288,6 +2891,96 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReadOnlyGroupConfigRequest": {
+      "document": "ModifyReadOnlyGroupConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组名称",
+          "example": "ReadOnlyGroupName",
+          "member": "string",
+          "name": "ReadOnlyGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "延迟时间配置开关：0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplayLagEliminate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟日志大小配置开关：0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplayLatencyEliminate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟日志大小阈值，单位MB",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxReplayLatency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟时间大小阈值，单位ms",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxReplayLag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动负载均衡开关：0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rebalance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟剔除最小保留实例数",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinDelayEliminateReserve",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReadOnlyGroupConfigResponse": {
+      "document": "ModifyReadOnlyGroupConfig返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2573,43 +3266,292 @@
       ],
       "usage": "out"
     },
+    "ReadOnlyGroup": {
+      "document": "只读组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "只读组标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "只读组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReadOnlyGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MasterDBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小保留实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MinDelayEliminateReserve",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟空间大小阈值",
+          "member": "int64",
+          "name": "MaxReplayLatency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟大小开关",
+          "member": "int64",
+          "name": "ReplayLatencyEliminate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟时间大小阈值",
+          "member": "float",
+          "name": "MaxReplayLag",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟时间开关",
+          "member": "int64",
+          "name": "ReplayLagEliminate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟网络id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域id",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地区id",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例详细信息",
+          "member": "DBInstance",
+          "name": "ReadOnlyDBInstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动负载均衡开关",
+          "member": "int64",
+          "name": "Rebalance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络信息",
+          "member": "DBInstanceNetInfo",
+          "name": "DBInstanceNetInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RebalanceReadOnlyGroupRequest": {
+      "document": "RebalanceReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebalanceReadOnlyGroupResponse": {
+      "document": "RebalanceReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegionInfo": {
       "document": "描述地域的编码和状态等信息",
       "members": [
         {
           "default": "",
           "document": "该地域对应的英文名称",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "该地域对应的中文名称",
+          "example": "广州",
           "member": "string",
           "name": "RegionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "该地域对应的数字编号",
+          "example": "1",
           "member": "uint64",
           "name": "RegionId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该地域是否支持国际站售卖，0：不支持，1：支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SupportInternational",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveDBInstanceFromReadOnlyGroupRequest": {
+      "document": "RemoveDBInstanceFromReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "DBInstanceId",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
           "required": true,
           "type": "string"
         }
       ],
-      "usage": "out"
+      "type": "object"
+    },
+    "RemoveDBInstanceFromReadOnlyGroupResponse": {
+      "document": "RemoveDBInstanceFromReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RenewInstanceRequest": {
       "document": "RenewInstance请求参数结构体",

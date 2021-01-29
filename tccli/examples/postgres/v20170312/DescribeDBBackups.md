@@ -7,7 +7,6 @@ Input:
 ```
 tccli postgres DescribeDBBackups --cli-unfold-argument  \
     --DBInstanceId postgres-6fego161 \
-    --Region ap-guangzhou \
     --Type 1 \
     --StartTime '2018-06-10 17:06:38' \
     --EndTime '2018-06-11 17:06:38' \
@@ -27,7 +26,9 @@ Output:
                 "StartTime": "2018-06-22 01:56:01.181971",
                 "ExternalAddr": "https://gz-dl-postgres.cloud.tencent.com/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=",
                 "Strategy": 1,
-                "DbList": null,
+                "DbList": [
+                    "db1"
+                ],
                 "Way": 1,
                 "EndTime": "2018-06-22 01:56:55.071181",
                 "Type": 1,
@@ -40,7 +41,9 @@ Output:
                 "StartTime": "2018-06-21 01:55:04.199169",
                 "ExternalAddr": "https://gz-dl-postgres.cloud.tencent.com/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=",
                 "Strategy": 1,
-                "DbList": null,
+                "DbList": [
+                    "db2"
+                ],
                 "Way": 1,
                 "EndTime": "2018-06-21 01:55:58.477232",
                 "Type": 1,

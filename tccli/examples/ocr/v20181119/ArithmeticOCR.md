@@ -15,627 +15,648 @@ Output:
     "Response": {
         "TextDetections": [
             {
-                "DetectedText": "40*40=1600",
-                "Result": true,
-                "Confidence": 0,
-                "ItemCoord": {
-                    "X": 92,
-                    "Y": 146,
-                    "Width": 201,
-                    "Height": 38
-                },
+                "AdvancedInfo": "xx",
                 "Polygon": [
                     {
-                        "X": -1,
-                        "Y": -1
+                        "Y": 0,
+                        "X": 0
                     },
                     {
-                        "X": -1,
-                        "Y": -1
+                        "Y": 0,
+                        "X": 0
                     },
                     {
-                        "X": -1,
-                        "Y": -1
+                        "Y": 0,
+                        "X": 0
                     },
                     {
-                        "X": -1,
-                        "Y": -1
+                        "Y": 0,
+                        "X": 0
                     }
                 ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "ExpressionType": "xx",
+                "Confidence": 0,
+                "DetectedText": "xx",
+                "ItemCoord": {
+                    "Y": 146,
+                    "X": 92,
+                    "Height": 38,
+                    "Width": 201
+                },
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "90-60+50=80",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 374,
                     "Y": 147,
+                    "X": 374,
                     "Width": 195,
                     "Height": 37
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "30+22=52",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 102,
                     "Y": 214,
+                    "X": 102,
                     "Width": 172,
                     "Height": 38
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "54-2+30=82",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 366,
                     "Y": 216,
+                    "X": 366,
                     "Width": 212,
                     "Height": 38
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "46-20+9=17",
-                "Result": false,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 383,
                     "Y": 282,
+                    "X": 383,
                     "Width": 193,
                     "Height": 44
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": false
             },
             {
-                "DetectedText": "43+9=52",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 107,
                     "Y": 284,
+                    "X": 107,
                     "Width": 174,
                     "Height": 40
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "48-20=28",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 105,
                     "Y": 353,
+                    "X": 105,
                     "Width": 172,
                     "Height": 36
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "22+(37+3)=62",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 380,
                     "Y": 351,
+                    "X": 380,
                     "Width": 210,
                     "Height": 40
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "96+3=99",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 112,
                     "Y": 421,
+                    "X": 112,
                     "Width": 160,
                     "Height": 46
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "20-(13-6)=13",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 379,
                     "Y": 420,
+                    "X": 379,
                     "Width": 206,
                     "Height": 43
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "50+40=90",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 107,
                     "Y": 491,
+                    "X": 107,
                     "Width": 177,
                     "Height": 41
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "45-(17-10)=38",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 385,
                     "Y": 492,
+                    "X": 385,
                     "Width": 206,
                     "Height": 38
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "34-(16+4)=14",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 387,
                     "Y": 561,
+                    "X": 387,
                     "Width": 213,
                     "Height": 40
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "78-23=25",
-                "Result": false,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 115,
                     "Y": 567,
+                    "X": 115,
                     "Width": 156,
                     "Height": 38
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": false
             },
             {
-                "DetectedText": "48-31=17",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 121,
                     "Y": 634,
+                    "X": 121,
                     "Width": 136,
                     "Height": 40
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "60-(2+18)=40",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 382,
                     "Y": 631,
+                    "X": 382,
                     "Width": 217,
                     "Height": 38
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "78+(32-18)=92",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 382,
                     "Y": 699,
+                    "X": 382,
                     "Width": 222,
                     "Height": 37
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "36+28=64",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 125,
                     "Y": 707,
+                    "X": 125,
                     "Width": 157,
                     "Height": 41
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             },
             {
-                "DetectedText": "40-(28-30)=38",
-                "Result": false,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 375,
                     "Y": 769,
+                    "X": 375,
                     "Width": 235,
                     "Height": 40
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": false
             },
             {
-                "DetectedText": "25-10=15",
-                "Result": true,
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    },
+                    {
+                        "Y": 0,
+                        "X": 0
+                    }
+                ],
+                "ExpressionType": "xx",
                 "Confidence": 0,
+                "DetectedText": "xx",
                 "ItemCoord": {
-                    "X": 124,
                     "Y": 779,
+                    "X": 124,
                     "Width": 158,
                     "Height": 41
                 },
-                "Polygon": [
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    },
-                    {
-                        "X": -1,
-                        "Y": -1
-                    }
-                ],
-                "ExpressionType": "1",
-                "AdvancedInfo": ""
+                "Answer": "xx",
+                "Result": true
             }
         ],
-        "RequestId": "f3c5fbb6-151d-4f93-98d8-4e3980212dd6"
+        "Angle": 0.0,
+        "RequestId": "xx"
     }
 }
 ```

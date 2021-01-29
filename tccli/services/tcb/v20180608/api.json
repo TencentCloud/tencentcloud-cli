@@ -12,6 +12,12 @@
       "name": "TCB云API统一入口",
       "output": "CommonServiceAPIResponse"
     },
+    "CreateAndDeployCloudBaseProject": {
+      "document": "创建云开发项目",
+      "input": "CreateAndDeployCloudBaseProjectRequest",
+      "name": "创建云开发项目",
+      "output": "CreateAndDeployCloudBaseProjectResponse"
+    },
     "CreateAuthDomain": {
       "document": "增加安全域名",
       "input": "CreateAuthDomainRequest",
@@ -71,6 +77,12 @@
       "input": "DescribeCloudBaseBuildServiceRequest",
       "name": "获取云托管代码上传url",
       "output": "DescribeCloudBaseBuildServiceResponse"
+    },
+    "DescribeCloudBaseProjectLatestVersionList": {
+      "document": "获取云开发项目列表",
+      "input": "DescribeCloudBaseProjectLatestVersionListRequest",
+      "name": "获取云开发项目列表",
+      "output": "DescribeCloudBaseProjectLatestVersionListResponse"
     },
     "DescribeCloudBaseRunResource": {
       "document": "查看容器托管的集群状态",
@@ -424,6 +436,202 @@
         }
       ],
       "usage": "both"
+    },
+    "CloudBaseProjectVersion": {
+      "document": "云开发项目版本",
+      "members": [
+        {
+          "default": "",
+          "document": "项目名",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SAM json\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Sam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "来源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "CodeSource",
+          "name": "Source",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间, unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611838208",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间 ,unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611838208",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目状态, 枚举值: \n        \"creatingEnv\"-创建环境中\n\t\"createEnvFail\"-创建环境失败\n\t\"building\"-构建中\n\t\"buildFail\"-构建失败\n\t\"deploying\"-部署中\n\t \"deployFail\"-部署失败\n\t \"success\"-部署成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "KVPair",
+          "name": "Parameters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目类型, 枚举值:\n\"framework-oneclick\" 控制台一键部署\n\"framework-local-oneclick\" cli本地一键部署\n\"qci-extension-cicd\" 内网coding ci cd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "framework-oneclick",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ci的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "72a6e144-40f9-4777-a1bd-db02c1bbadf3",
+          "member": "string",
+          "name": "CIId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cd的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cool",
+          "member": "string",
+          "name": "CDId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "envcool",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611838208",
+          "member": "int64",
+          "name": "VersionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bad",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "rc.json内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "RcJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "插件配置内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "AddonConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"hot\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扩展id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "feeiild",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UserError",
+          "member": "string",
+          "name": "FailType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CloudBaseRunImageInfo": {
       "document": "CloudBaseRun 镜像信息",
@@ -1031,6 +1239,82 @@
       ],
       "usage": "both"
     },
+    "CodeSource": {
+      "document": "云开发项目来源",
+      "members": [
+        {
+          "default": "",
+          "document": "类型, 可能的枚举: \"coding\",\"package\",\"package_url\",\"github\",\"gitlab\",\"gitee\",\"rawcode\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "coding",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://github.com/cool/vue",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vue",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "starter",
+          "member": "string",
+          "name": "WorkDir",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "code包名, type为coding的时候需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "CodingPackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "coding版本名, type为coding的时候需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "CodingPackageVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "RawCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CommonServiceAPIRequest": {
       "document": "CommonServiceAPI请求参数结构体",
       "members": [
@@ -1062,6 +1346,132 @@
           "name": "JSONResp",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndDeployCloudBaseProjectRequest": {
+      "document": "CreateAndDeployCloudBaseProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目名",
+          "example": "vue",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "https://github.com/myrepo/vue",
+          "member": "CodeSource",
+          "name": "Source",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "envcool",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目类型, 枚举值为: framework-oneclick,qci-extension-cicd",
+          "example": "framework-oneclick",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境变量",
+          "example": "[]",
+          "member": "KVPair",
+          "name": "Parameters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "环境别名",
+          "example": "cool",
+          "member": "string",
+          "name": "EnvAlias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "rc.json的内容",
+          "example": "{}",
+          "member": "string",
+          "name": "RcJson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "插件配置内容",
+          "example": "{}",
+          "member": "string",
+          "name": "AddonConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "[\"hot\",\"sexy\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "网络配置",
+          "example": "{}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "免费额度的\"basic\", 不使用的用\"\"",
+          "example": "basic",
+          "member": "string",
+          "name": "FreeQuota",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndDeployCloudBaseProjectResponse": {
+      "document": "CreateAndDeployCloudBaseProject返回参数结构体",
+      "members": [
+        {
+          "document": "环境Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "envcool-212i1i21",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1876,6 +2286,96 @@
           "name": "PackageVersion",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseProjectLatestVersionListRequest": {
+      "document": "DescribeCloudBaseProjectLatestVersionList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "个数",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境id, 非必填",
+          "example": "envcool",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目名称, 非必填",
+          "example": "vue",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目类型: framework-oneclick,qci-extension-cicd",
+          "example": "framework-oneclick",
+          "member": "string",
+          "name": "ProjectType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "[\"hot\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseProjectLatestVersionListResponse": {
+      "document": "DescribeCloudBaseProjectLatestVersionList返回参数结构体",
+      "members": [
+        {
+          "document": "项目列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[     {         \"AddonConfig\": \"xx\",         \"CDId\": \"xx\",      ",
+          "member": "CloudBaseProjectVersion",
+          "name": "ProjectList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

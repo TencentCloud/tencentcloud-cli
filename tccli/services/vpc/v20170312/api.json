@@ -240,6 +240,12 @@
       "name": "创建NAT网关端口转发规则",
       "output": "CreateNatGatewayDestinationIpPortTranslationNatRuleResponse"
     },
+    "CreateNatGatewaySourceIpTranslationNatRule": {
+      "document": "本接口(CreateNatGatewaySourceIpTranslationNatRule)用于创建NAT网关SNAT规则",
+      "input": "CreateNatGatewaySourceIpTranslationNatRuleRequest",
+      "name": "创建NAT网关SNAT规则",
+      "output": "CreateNatGatewaySourceIpTranslationNatRuleResponse"
+    },
     "CreateNetDetect": {
       "document": "本接口(CreateNetDetect)用于创建网络探测。",
       "input": "CreateNetDetectRequest",
@@ -413,6 +419,12 @@
       "input": "DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest",
       "name": "删除NAT网关端口转发规则",
       "output": "DeleteNatGatewayDestinationIpPortTranslationNatRuleResponse"
+    },
+    "DeleteNatGatewaySourceIpTranslationNatRule": {
+      "document": "本接口（DeleteNatGatewaySourceIpTranslationNatRule）用于删除NAT网关端口SNAT转发规则。",
+      "input": "DeleteNatGatewaySourceIpTranslationNatRuleRequest",
+      "name": "删除NAT网关的SNAT转发规则",
+      "output": "DeleteNatGatewaySourceIpTranslationNatRuleResponse"
     },
     "DeleteNetDetect": {
       "document": "本接口(DeleteNetDetect)用于删除网络探测实例。",
@@ -683,6 +695,12 @@
       "input": "DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest",
       "name": "查询NAT网关端口转发规则",
       "output": "DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse"
+    },
+    "DescribeNatGatewaySourceIpTranslationNatRules": {
+      "document": "本接口（DescribeNatGatewaySourceIpTranslationNatRules）用于查询NAT网关SNAT转发规则对象数组。",
+      "input": "DescribeNatGatewaySourceIpTranslationNatRulesRequest",
+      "name": "查询NAT网关SNAT转发规则",
+      "output": "DescribeNatGatewaySourceIpTranslationNatRulesResponse"
     },
     "DescribeNatGateways": {
       "document": "本接口（DescribeNatGateways）用于查询 NAT 网关。",
@@ -1128,6 +1146,12 @@
       "name": "修改NAT网关端口转发规则",
       "output": "ModifyNatGatewayDestinationIpPortTranslationNatRuleResponse"
     },
+    "ModifyNatGatewaySourceIpTranslationNatRule": {
+      "document": "本接口（ModifyNatGatewaySourceIpTranslationNatRule）用于修改NAT网关SNAT转发规则。",
+      "input": "ModifyNatGatewaySourceIpTranslationNatRuleRequest",
+      "name": "修改NAT网关SNAT转发规则",
+      "output": "ModifyNatGatewaySourceIpTranslationNatRuleResponse"
+    },
     "ModifyNetDetect": {
       "document": "本接口(ModifyNetDetect)用于修改网络探测参数。",
       "input": "ModifyNetDetectRequest",
@@ -1217,6 +1241,12 @@
       "input": "ModifyVpnGatewayCcnRoutesRequest",
       "name": "修改VPN网关云联网路由",
       "output": "ModifyVpnGatewayCcnRoutesResponse"
+    },
+    "NotifyRoutes": {
+      "document": "路由表列表页操作增加“发布到云联网”，用于发布路由到云联网。",
+      "input": "NotifyRoutesRequest",
+      "name": "发布路由至云联网",
+      "output": "NotifyRoutesResponse"
     },
     "RejectAttachCcnInstances": {
       "document": "本接口（RejectAttachCcnInstances）用于跨账号关联实例时，云联网所有者拒绝关联操作。\n",
@@ -1349,6 +1379,12 @@
       "input": "UnassignPrivateIpAddressesRequest",
       "name": "弹性网卡退还内网 IP",
       "output": "UnassignPrivateIpAddressesResponse"
+    },
+    "WithdrawNotifyRoutes": {
+      "document": "路由表列表页操作增加“从云联网撤销”，用于撤销已发布到云联网的路由。",
+      "input": "WithdrawNotifyRoutesRequest",
+      "name": "从云联网撤销路由",
+      "output": "WithdrawNotifyRoutesResponse"
     }
   },
   "metadata": {
@@ -3403,6 +3439,32 @@
       ],
       "type": "object"
     },
+    "CidrForCcn": {
+      "document": "用于发布云联网的cidr信息",
+      "members": [
+        {
+          "default": "",
+          "document": "local cidr值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "Cidr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否发布到了云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "PublishedToVbc",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ClassicLinkInstance": {
       "document": "私有网络和基础网络互通设备",
       "members": [
@@ -4540,6 +4602,40 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatGatewaySourceIpTranslationNatRuleRequest": {
+      "document": "CreateNatGatewaySourceIpTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关的ID，形如：\"nat-df45454\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT网关的SNAT转换规则",
+          "member": "SourceIpTranslationNatRule",
+          "name": "SourceIpTranslationNatRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatGatewaySourceIpTranslationNatRuleResponse": {
+      "document": "CreateNatGatewaySourceIpTranslationNatRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6292,6 +6388,40 @@
       ],
       "type": "object"
     },
+    "DeleteNatGatewaySourceIpTranslationNatRuleRequest": {
+      "document": "DeleteNatGatewaySourceIpTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT网关的SNAT ID列表，形如：`snat-df43254`。",
+          "member": "string",
+          "name": "NatGatewaySnatIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNatGatewaySourceIpTranslationNatRuleResponse": {
+      "document": "DeleteNatGatewaySourceIpTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNetDetectRequest": {
       "document": "DeleteNetDetect请求参数结构体",
       "members": [
@@ -6409,7 +6539,7 @@
         },
         {
           "default": "",
-          "document": "路由策略对象。",
+          "document": "路由策略对象，删除路由策略时，仅需使用Route的RouteId字段。",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -6421,6 +6551,13 @@
     "DeleteRoutesResponse": {
       "document": "DeleteRoutes返回参数结构体",
       "members": [
+        {
+          "document": "已删除的路由策略详情。",
+          "member": "Route",
+          "name": "RouteSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8611,6 +8748,70 @@
         {
           "document": "符合条件的NAT网关端口转发规则对象数目。",
           "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewaySourceIpTranslationNatRulesRequest": {
+      "document": "DescribeNatGatewaySourceIpTranslationNatRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关统一 ID，形如：`nat-123xx454`。",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件:\n<li> resource-id，Subnet的ID或者Cvm ID，如`subnet-0yi4hekt`</li>\n<li> public-ip-address，弹性IP，如`139.199.232.238`</li>\n<li>description，规则描述。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewaySourceIpTranslationNatRulesResponse": {
+      "document": "DescribeNatGatewaySourceIpTranslationNatRules返回参数结构体",
+      "members": [
+        {
+          "document": "NAT网关SNAT规则对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SourceIpTranslationNatRule",
+          "name": "SourceIpTranslationNatRuleSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "符合条件的NAT网关端口转发规则对象数目。",
+          "member": "int64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
@@ -13321,6 +13522,40 @@
       ],
       "type": "object"
     },
+    "ModifyNatGatewaySourceIpTranslationNatRuleRequest": {
+      "document": "ModifyNatGatewaySourceIpTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关的ID，形如：`nat-df453454`。",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT网关的SNAT转换规则。",
+          "member": "SourceIpTranslationNatRule",
+          "name": "SourceIpTranslationNatRule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatGatewaySourceIpTranslationNatRuleResponse": {
+      "document": "ModifyNatGatewaySourceIpTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNetDetectRequest": {
       "document": "ModifyNetDetect请求参数结构体",
       "members": [
@@ -14814,6 +15049,40 @@
       ],
       "usage": "out"
     },
+    "NotifyRoutesRequest": {
+      "document": "NotifyRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表唯一ID。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由策略唯一ID。",
+          "member": "string",
+          "name": "RouteItemIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "NotifyRoutesResponse": {
+      "document": "NotifyRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Price": {
       "document": "价格",
       "members": [
@@ -16021,6 +16290,7 @@
         {
           "default": "",
           "document": "目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。",
+          "example": "-",
           "member": "string",
           "name": "DestinationCidrBlock",
           "required": true,
@@ -16030,6 +16300,7 @@
         {
           "default": "",
           "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nSSLVPN：sslvpn网关；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nCCN：云联网。",
+          "example": "-",
           "member": "string",
           "name": "GatewayType",
           "required": true,
@@ -16039,6 +16310,7 @@
         {
           "default": "",
           "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。\n特别注意：当 GatewayType 为 EIP 时，GatewayId 固定值 '0'",
+          "example": "-",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -16048,6 +16320,7 @@
         {
           "default": "",
           "document": "路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略。",
+          "example": "-",
           "member": "uint64",
           "name": "RouteId",
           "required": false,
@@ -16057,6 +16330,7 @@
         {
           "default": "",
           "document": "路由策略描述。",
+          "example": "-",
           "member": "string",
           "name": "RouteDescription",
           "required": false,
@@ -16066,6 +16340,7 @@
         {
           "default": "",
           "document": "是否启用",
+          "example": "-",
           "member": "bool",
           "name": "Enabled",
           "required": false,
@@ -16075,6 +16350,7 @@
         {
           "default": "",
           "document": "路由类型，目前我们支持的类型有：\nUSER：用户路由；\nNETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；\nCCN：云联网路由，系统默认下发，不可编辑与删除。\n用户只能添加和操作 USER 类型的路由。",
+          "example": "-",
           "member": "string",
           "name": "RouteType",
           "required": false,
@@ -16084,6 +16360,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "-",
           "member": "string",
           "name": "RouteTableId",
           "required": false,
@@ -16093,6 +16370,7 @@
         {
           "default": "",
           "document": "目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。",
+          "example": "-",
           "member": "string",
           "name": "DestinationIpv6CidrBlock",
           "required": false,
@@ -16102,11 +16380,22 @@
         {
           "default": "",
           "document": "路由唯一策略ID。",
+          "example": "-",
           "member": "string",
           "name": "RouteItemId",
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由策略是否发布到云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "PublishedToVbc",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -16150,6 +16439,7 @@
         {
           "default": "",
           "document": "VPC实例ID。",
+          "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -16159,6 +16449,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-32kbqgtm",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -16168,6 +16459,7 @@
         {
           "default": "",
           "document": "路由表名称。",
+          "example": "ruby",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -16177,6 +16469,7 @@
         {
           "default": "",
           "document": "路由表关联关系。",
+          "example": "10.0.0.0/16",
           "member": "RouteTableAssociation",
           "name": "AssociationSet",
           "required": true,
@@ -16186,6 +16479,7 @@
         {
           "default": "",
           "document": "IPv4路由策略集合。",
+          "example": "-",
           "member": "Route",
           "name": "RouteSet",
           "required": true,
@@ -16195,6 +16489,7 @@
         {
           "default": "",
           "document": "是否默认路由表。",
+          "example": "True",
           "member": "bool",
           "name": "Main",
           "required": true,
@@ -16204,6 +16499,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "2010-11-21",
           "member": "string",
           "name": "CreatedTime",
           "required": false,
@@ -16213,11 +16509,22 @@
         {
           "default": "",
           "document": "标签键值对。",
+          "example": "-",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "local路由是否发布云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "CidrForCcn",
+          "name": "LocalCidrForCcn",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -16745,6 +17052,93 @@
         }
       ],
       "type": "object"
+    },
+    "SourceIpTranslationNatRule": {
+      "document": "NAT的SNAT规则",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源类型，目前包含SUBNET、NETWORKINTERFACE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源IP/网段",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性IP地址池",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Snat规则ID",
+          "member": "string",
+          "name": "NatGatewaySnatId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NAT网关的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "私有网络VPC的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "NAT网关SNAT规则创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Subnet": {
       "document": "子网对象",
@@ -17789,6 +18183,40 @@
         }
       ],
       "usage": "both"
+    },
+    "WithdrawNotifyRoutesRequest": {
+      "document": "WithdrawNotifyRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表唯一ID。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由策略唯一ID。",
+          "member": "string",
+          "name": "RouteItemIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "WithdrawNotifyRoutesResponse": {
+      "document": "WithdrawNotifyRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

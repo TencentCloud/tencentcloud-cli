@@ -18,19 +18,22 @@ Output:
                 "Zone": "ap-guangzhou-2",
                 "ZoneName": "广州二区",
                 "ZoneId": 100002,
-                "ZoneState": "AVAILABLE"
+                "ZoneState": "AVAILABLE",
+                "ZoneSupportIpv6": 0
             },
             {
                 "Zone": "ap-guangzhou-3",
                 "ZoneName": "广州三区",
                 "ZoneId": 100003,
-                "ZoneState": "AVAILABLE"
+                "ZoneState": "AVAILABLE",
+                "ZoneSupportIpv6": 0
             },
             {
                 "Zone": "ap-guangzhou-4",
                 "ZoneName": "广州四区",
                 "ZoneId": 100004,
-                "ZoneState": "AVAILABLE"
+                "ZoneState": "AVAILABLE",
+                "ZoneSupportIpv6": 0
             }
         ]
     }

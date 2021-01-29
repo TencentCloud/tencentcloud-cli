@@ -275,7 +275,7 @@
     "DisableCaches": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DisableCaches\r\n&Urls.0=http://example.com/path/to.jpg\r\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DisableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"f13cf55b-69e6-4937-8856-bd8965beea8c\",\r\n        \"CacheOptResult\":{\r\n            \"SuccessUrls\":[\"http://example.com/path/to.jpg\"],\r\n            \"FailUrls\":[]\r\n        }\r\n    }\r\n}",
         "title": "封禁示例"
       }
