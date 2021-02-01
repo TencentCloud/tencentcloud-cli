@@ -348,6 +348,18 @@
       "name": "修改生成包信息",
       "output": "UpdateAssetResponse"
     },
+    "UpdateBucketAccelerateOpt": {
+      "document": "本接口（UpdateBucketAccelerateOpt）用于开启cos全球加速。",
+      "input": "UpdateBucketAccelerateOptRequest",
+      "name": "cos设置全球加速",
+      "output": "UpdateBucketAccelerateOptResponse"
+    },
+    "UpdateBucketCORSOpt": {
+      "document": "本接口（UpdateBucketCORSOpt）用于设置cos跨域访问。",
+      "input": "UpdateBucketCORSOptRequest",
+      "name": "设置cos跨域访问",
+      "output": "UpdateBucketCORSOptResponse"
+    },
     "UpdateFleetAttributes": {
       "document": "本接口（UpdateFleetAttributes）用于更新服务器舰队属性。",
       "input": "UpdateFleetAttributesRequest",
@@ -5941,6 +5953,90 @@
     },
     "UpdateAssetResponse": {
       "document": "UpdateAsset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBucketAccelerateOptRequest": {
+      "document": "UpdateBucketAccelerateOpt请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "true为开启全球加速，false为关闭",
+          "member": "bool",
+          "name": "Allowed",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBucketAccelerateOptResponse": {
+      "document": "UpdateBucketAccelerateOpt返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBucketCORSOptRequest": {
+      "document": "UpdateBucketCORSOpt请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "允许的访问来源;具体参见 [cos文档](https://cloud.tencent.com/document/product/436/8279)",
+          "member": "string",
+          "name": "AllowedOrigins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "允许的 HTTP 操作方法;可以配置多个:PUT、GET、POST、HEAD。[cos文档](https://cloud.tencent.com/document/product/436/8279)",
+          "member": "string",
+          "name": "AllowedMethods",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用于指定允许浏览器发送 CORS 请求时携带的自定义 HTTP 请求头部;可以配置*，代表允许所有头部，为了避免遗漏，推荐配置为*。[cos文档](https://cloud.tencent.com/document/product/436/8279)",
+          "member": "string",
+          "name": "AllowedHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "跨域资源共享配置的有效时间，单位为秒。[cos文档](https://cloud.tencent.com/document/product/436/8279)",
+          "member": "int64",
+          "name": "MaxAgeSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "允许浏览器获取的 CORS 请求响应中的头部，不区分大小写；默认情况下浏览器只能访问简单响应头部：Cache-Control、Content-Type、Expires、Last-Modified，如果需要访问其他响应头部，需要添加 ExposeHeader 配置。[cos文档](https://cloud.tencent.com/document/product/436/8279)",
+          "member": "string",
+          "name": "ExposeHeaders",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBucketCORSOptResponse": {
+      "document": "UpdateBucketCORSOpt返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

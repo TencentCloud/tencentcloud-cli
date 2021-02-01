@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "CancelTask": [
+      {
+        "document": "取消任务",
+        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-audio-XwxJtbkKXWgCt8AZ\"\n}",
+        "output": "{\r\n    \"Response\":{\r\n         \"RequestId\":\"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n    }\r\n}",
+        "title": "取消任务"
+      }
+    ],
+    "CreateAudioModerationTask": [
+      {
+        "document": "创建音频审核任务",
+        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioModerationTask\n<公共请求参数>\n\n{\n    \"Type\": \"AUDIO\",\n    \"Tasks\": [\n      {\n        \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\n        \"Input\": {\n          \"Url\": \"https://test.myqcloud.com/test.mp3\"\n        }\n      }\n    ]\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"Results\": [\r\n      {\r\n        \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\r\n        \"TaskId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\",\r\n        \"Code\": \"OK\",\r\n        \"Message\": \"Success\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n  }\r\n}",
+        "title": "创建音频审核任务"
+      },
+      {
+        "document": "当用户在创建审核任务时配置了Seed，我们则会在回调当时候加入签名参数，以保证数据的安全性。\n签名方法：返回的HTTP头部，添加 `X-Signature` 的字段，值为： `seed ` +  `body ` 的 sha256 编码和Hex字符串。\n\n例如：\n假设用户 CallbackUrl 是：http://example.com, Seed 是： `dedb6dcc1cb7c63fde8fa5abfd57`，我们返回的回调的数据是： \n```{\"TaskId\": \"task-video-X0zpcRUMzVidxj20\",\"DataId\":\"test\",\"Suggestion\": \"Block\"}```,\n则，审核完成后，我们会在调用 http://example.com 的时候，在HTTP 头部 传入`X-Signature` 的值为：\n`74f0ae6d1f1e4eb1ffe4162da480a812f8a4dc19fe5a52bacbcd2c862d3edcfd`\n\n> 备注： 回调Body格式请参考查询任务详情接口，回调Body格式和查询任务详情接口一致。",
+        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioModerationTask\n<公共请求参数>\n\n{\n  \"Type\": \"AUDIO\",\n  \"CallbackUrl\":\"https://apis.example.com/callback/audio\",\n  \"Seed\":\"dedb6dcc1cb7c63fde8fa5abfd57\",\n  \"Tasks\": [\n    {\n      \"DataId\": \"test\",\n      \"Input\": {\n        \"Url\": \"https://test.myqcloud.com/test.mp3\"\n      }\n    }\n  ]\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"Results\": [\r\n      {\r\n        \"DataId\": \"test\",\r\n        \"TaskId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\",\r\n        \"Code\": \"OK\",\r\n        \"Message\": \"Success\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\r\n  }\r\n}",
+        "title": "回调签名示例"
+      }
+    ],
+    "DescribeTaskDetail": [
+      {
+        "document": "在创建任务后，可以通过TaskId查看任务详情",
+        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-video-XwxJtbkKXWgCt8AZ\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"w-audio-X_Qnzci_GulDQ01r\",\r\n    \"DataId\": \"\",\r\n    \"BizType\": \"202012161\",\r\n    \"Name\": \"\",\r\n    \"Status\": \"FINISH\",\r\n    \"Type\": \"AUDIO\",\r\n    \"Suggestion\": \"Review\",\r\n    \"Labels\": [\r\n      {\r\n        \"Label\": \"Abuse\",\r\n        \"Suggestion\": \"Review\",\r\n        \"Score\": 0\r\n      }\r\n    ],\r\n    \"InputInfo\": {\r\n      \"Type\": \"URL\",\r\n      \"Url\": \"https://test.cos.ap-guangzhou.myqcloud.com/porn5.mp3\"\r\n    },\r\n    \"AudioText\": \"音频文本\",\r\n    \"AudioSegments\": [\r\n      {\r\n        \"Result\": {\r\n          \"HitFlag\": 0,\r\n          \"Url\": \"https://cos.ap-guangzhou.myqcloud.com/0.mp3\",\r\n          \"Suggestion\": \"Pass\",\r\n          \"Label\": \"Normal\",\r\n          \"Text\": \"\",\r\n          \"TextResults\": [],\r\n          \"MoanResults\": [],\r\n          \"LanguageResults\": [],\r\n          \"Duration\": \"60000\",\r\n          \"Score\": 0,\r\n          \"Extra\": \"\",\r\n          \"SpeakerResults\": []\r\n        },\r\n        \"OffsetTime\": \"0\"\r\n      }\r\n    ],\r\n    \"ErrorType\": \"\",\r\n    \"ErrorDescription\": \"\",\r\n    \"CreatedAt\": \"2021-01-05T08:48:13.069Z\",\r\n    \"UpdatedAt\": \"2021-01-05T08:49:31.421Z\",\r\n    \"RequestId\": \"34785328532523\"\r\n  }\r\n}",
+        "title": "查看任务详情"
+      }
+    ],
+    "DescribeTasks": [
+      {
+        "document": "查看审核任务列表",
+        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Filter\": {\n         \"Type\": \"AUDIO\"\n    }\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"Total\": \"1\",\r\n    \"Data\": [\r\n      {\r\n        \"TaskId\": \"task-video-XwxJtbkKXWgCt8AZ\",\r\n        \"DataId\": \"data_test_01\",\r\n        \"BizType\": \"1001\",\r\n        \"Name\": \"测试视频\",\r\n        \"Status\": \"FINISH\",\r\n        \"Type\": \"VIDEO\",\r\n        \"Suggestion\": \"Block\",\r\n        \"Labels\": [\r\n          {\r\n            \"Label\": \"Porn\",\r\n            \"Suggestion\": \"Block\",\r\n            \"Score\": 99\r\n          },\r\n          {\r\n            \"Label\": \"Hot\",\r\n            \"Suggestion\": \"Block\",\r\n            \"Score\": 70\r\n          }\r\n        ],\r\n        \"MediaInfo\": {\r\n          \"Codecs\": \"h264 aac\",\r\n          \"Duration\": 36,\r\n          \"Width\": 352,\r\n          \"Height\": 640\r\n        },\r\n        \"InputInfo\": {\r\n          \"Type\": \"URL\",\r\n          \"Url\": \"https://cms.myqcloud.com/video/test.mp3\",\r\n          \"BucketInfo\": null\r\n        },\r\n        \"CreatedAt\": \"2020-07-13T11:47:01.925Z\",\r\n        \"UpdatedAt\": \"2020-07-13T11:47:25.840Z\"\r\n      }\r\n    ],\r\n    \"PageToken\": \"4765-48dXwxJtbkKXW8d3eb\",\r\n    \"RequestId\": \"8d3e4765-48db-40b5-8fdb-aaf1d7225a60\"\r\n  }\r\n}",
+        "title": "查看审核任务列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

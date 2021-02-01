@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli batch CreateCpmComputeEnv --cli-unfold-argument  \
+    --ComputeEnv.EnvName cpm-env-win \
     --ComputeEnv.EnvData.Zones ap-chongqing-bls-1 \
     --ComputeEnv.EnvData.InstanceTypes PI100v2 \
     --ComputeEnv.EnvData.TimeUnit m \

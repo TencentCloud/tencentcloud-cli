@@ -902,6 +902,7 @@
         {
           "default": "",
           "document": "计算环境信息",
+          "example": "无",
           "member": "NamedComputeEnv",
           "name": "ComputeEnv",
           "required": true,
@@ -910,6 +911,7 @@
         {
           "default": "",
           "document": "位置信息",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -918,6 +920,7 @@
         {
           "default": "",
           "document": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -931,8 +934,10 @@
       "members": [
         {
           "document": "计算环境ID",
+          "example": "无",
           "member": "string",
           "name": "EnvId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -951,6 +956,7 @@
         {
           "default": "",
           "document": "计算环境信息",
+          "example": "无",
           "member": "NamedCpmComputeEnv",
           "name": "ComputeEnv",
           "required": true,
@@ -959,6 +965,7 @@
         {
           "default": "",
           "document": "位置信息",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": false,
@@ -967,6 +974,7 @@
         {
           "default": "",
           "document": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -980,8 +988,10 @@
       "members": [
         {
           "document": "计算环境ID",
+          "example": "无",
           "member": "string",
           "name": "EnvId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

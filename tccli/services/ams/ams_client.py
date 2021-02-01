@@ -9,6 +9,8 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.ams.v20201229 import ams_client as ams_client_v20201229
+from tencentcloud.ams.v20201229 import models as models_v20201229
 from tencentcloud.ams.v20200608 import ams_client as ams_client_v20200608
 from tencentcloud.ams.v20200608 import models as models_v20200608
 
@@ -113,6 +115,31 @@ def doDescribeTaskDetail(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTasks(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTasksRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTasks(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCancelTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -189,11 +216,13 @@ def doDescribeAmsList(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20201229": ams_client_v20201229,
     "v20200608": ams_client_v20200608,
 
 }
 
 MODELS_MAP = {
+    "v20201229": models_v20201229,
     "v20200608": models_v20200608,
 
 }
@@ -203,6 +232,7 @@ ACTION_MAP = {
     "DescribeBizConfig": doDescribeBizConfig,
     "CreateBizConfig": doCreateBizConfig,
     "DescribeTaskDetail": doDescribeTaskDetail,
+    "DescribeTasks": doDescribeTasks,
     "CancelTask": doCancelTask,
     "CreateAudioModerationTask": doCreateAudioModerationTask,
     "DescribeAmsList": doDescribeAmsList,
@@ -210,6 +240,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20201229",
     "v20200608",
 
 ]

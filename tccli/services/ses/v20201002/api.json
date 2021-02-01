@@ -117,11 +117,12 @@
   },
   "objects": {
     "Attachment": {
-      "document": "附件结构，包含附件名和base之后的附件内容。",
+      "document": "附件结构，包含附件名和base64之后的附件内容。",
       "members": [
         {
           "default": "",
           "document": "附件名称，最大支持255个字符长度，不支持部分附件类型，详情请参考[附件类型](https://cloud.tencent.com/document/product/1288/51951)。",
+          "example": "example.txt",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -131,6 +132,7 @@
         {
           "default": "",
           "document": "base64之后的附件内容，您可以发送的附件大小上限为5 MB。 注意：腾讯云api目前要求请求包大小不得超过10 MB。如果您要发送多个附件，那么这些附件的总大小不能超过10 MB。",
+          "example": "dGhpcyBpcyBhIGV4YW1wbGU=",
           "member": "string",
           "name": "Content",
           "required": true,

@@ -97,7 +97,7 @@
       "output": "ModifyCustomizationStateResponse"
     },
     "SentenceRecognition": {
-      "document": "本接口用于对60秒之内的短音频文件进行识别。\n<br>•   支持中文普通话、英语、粤语、日语、上海话方言。\n<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s。\n<br>•   音频格式支持wav、mp3；采样率支持8000Hz或者16000Hz；采样精度支持16bits；声道支持单声道。\n<br>•   当音频文件通过请求中body内容上传时，请求大小不能超过3MB。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。",
+      "document": "本接口用于对60秒之内的短音频文件进行识别。\n<br>•   支持中文普通话、英语、粤语、日语、上海话方言。\n<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s。\n<br>•   音频格式支持wav、mp3；采样率支持8000Hz或者16000Hz；采样精度支持16bits；声道支持单声道。\n<br>•   当音频文件通过请求中body内容上传时，请求大小不能超过3MB。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>•   默认接口请求频率限制：25次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
       "input": "SentenceRecognitionRequest",
       "name": "一句话识别",
       "output": "SentenceRecognitionResponse"
@@ -411,7 +411,7 @@
       "members": [
         {
           "default": "",
-          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_wuu-SH：16k 上海话方言；",
+          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_wuu-SH：16k 上海话方言；\n• 16k_zh_edu 中文教育；\n• 16k_en_edu 英文教育；\n• 16k_zh_medical  医疗；\n• 16k_th 泰语；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineModelType",
@@ -465,7 +465,7 @@
         },
         {
           "default": "",
-          "document": "回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。回调格式&内容详见：[录音识别回调说明](https://github.com/yunjianfei/qcloud-documents/blob/master/product/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8EAI/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%20API%202017/%E5%BD%95%E9%9F%B3%E8%AF%86%E5%88%AB%E5%9B%9E%E8%B0%83%E8%AF%B4%E6%98%8E.md)",
+          "document": "回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。回调格式&内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)",
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
@@ -528,7 +528,7 @@
         },
         {
           "default": "",
-          "document": "是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为 1。",
+          "document": "是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。",
           "example": "0",
           "member": "int64",
           "name": "ConvertNumMode",
@@ -1217,6 +1217,7 @@
         {
           "default": "",
           "document": "腾讯云项目 ID，可填 0，总长度不超过 1024 字节。",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -1225,6 +1226,7 @@
         {
           "default": "",
           "document": "子服务类型。2： 一句话识别。",
+          "example": "2",
           "member": "uint64",
           "name": "SubServiceType",
           "required": true,
@@ -1232,7 +1234,8 @@
         },
         {
           "default": "",
-          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n•16k_wuu-SH：16k 上海话方言。",
+          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n•16k_wuu-SH：16k 上海话方言；\n•16k_zh_medical：16k 医疗。",
+          "example": "16k_en",
           "member": "string",
           "name": "EngSerViceType",
           "required": true,
@@ -1241,6 +1244,7 @@
         {
           "default": "",
           "document": "语音数据来源。0：语音 URL；1：语音数据（post body）。",
+          "example": "1",
           "member": "uint64",
           "name": "SourceType",
           "required": true,
@@ -1249,6 +1253,7 @@
         {
           "default": "",
           "document": "识别音频的音频格式。mp3、wav。",
+          "example": "wav",
           "member": "string",
           "name": "VoiceFormat",
           "required": true,
@@ -1257,6 +1262,7 @@
         {
           "default": "",
           "document": "用户端对此任务的唯一标识，用户自助生成，用于用户查找识别结果。",
+          "example": "d4ce3bb438dd0743",
           "member": "string",
           "name": "UsrAudioKey",
           "required": true,
@@ -1265,6 +1271,7 @@
         {
           "default": "",
           "document": "语音 URL，公网可下载。当 SourceType 值为 0（语音 URL上传） 时须填写该字段，为 1 时不填；URL 的长度大于 0，小于 2048，需进行urlencode编码。音频时间长度要小于60s。",
+          "example": "http://test.voice.com/test.wav",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1273,6 +1280,7 @@
         {
           "default": "",
           "document": "语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。数据长度要小于3MB（Base64后）。",
+          "example": "无",
           "member": "string",
           "name": "Data",
           "required": false,
@@ -1281,6 +1289,7 @@
         {
           "default": "",
           "document": "数据长度，单位为字节。当 SourceType 值为1（本地语音数据上传）时必须填写，当 SourceType 值为0（语音 URL上传）可不写（此数据长度为数据未进行base64编码时的数据长度）。",
+          "example": "6400",
           "member": "int64",
           "name": "DataLen",
           "required": false,
@@ -1289,6 +1298,7 @@
         {
           "default": "",
           "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
+          "example": "966ecea2abd537c8",
           "member": "string",
           "name": "HotwordId",
           "required": false,
@@ -1297,6 +1307,7 @@
         {
           "default": "",
           "document": "是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。",
+          "example": "0",
           "member": "int64",
           "name": "FilterDirty",
           "required": false,
@@ -1305,6 +1316,7 @@
         {
           "default": "",
           "document": "是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。",
+          "example": "0",
           "member": "int64",
           "name": "FilterModal",
           "required": false,
@@ -1313,6 +1325,7 @@
         {
           "default": "",
           "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "FilterPunc",
           "required": false,
@@ -1321,6 +1334,7 @@
         {
           "default": "",
           "document": "是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1",
+          "example": "0",
           "member": "int64",
           "name": "ConvertNumMode",
           "required": false,
@@ -1329,6 +1343,7 @@
         {
           "default": "",
           "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH",
+          "example": "0",
           "member": "int64",
           "name": "WordInfo",
           "required": false,
@@ -1342,29 +1357,37 @@
       "members": [
         {
           "document": "识别结果。",
+          "example": "测试输出结果",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "请求的音频时长，单位为ms",
+          "example": "1500",
           "member": "int64",
           "name": "AudioDuration",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "词时间戳列表的长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "WordSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "词时间戳列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "array",
           "member": "SentenceWord",
           "name": "WordList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

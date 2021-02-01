@@ -1,0 +1,1090 @@
+{
+  "actions": {
+    "CancelTask": {
+      "document": "取消任务",
+      "input": "CancelTaskRequest",
+      "name": "取消任务",
+      "output": "CancelTaskResponse"
+    },
+    "CreateAudioModerationTask": {
+      "document": "本接口（Audio Moderation）用于提交音频内容（包括音频文件或流地址）进行智能审核任务，使用前请您登陆控制台开通音频内容安全服务。\n\n### 功能使用说明：\n- 前往“内容安全控制台-音频内容安全”开启使用音频内容安全服务，首次开通可获得20小时免费调用时长\n\n### 接口功能说明：\n- 支持对音频流或音频文件进行检测，判断其中是否包含违规内容；\n- 支持设置回调地址 Callback 获取检测结果，或通过接口(查询音频检测结果)主动轮询获取检测结果；\n- 支持识别违规内容，包括：低俗、谩骂、色情、涉政、广告等场景；\n- 支持批量提交检测任务。检测任务列表最多支持10个；\n\n### 音频文件调用说明：\n- 音频文件大小支持：文件 < 500M；\n- 音频文件时长支持：< 1小时；\n- 音频码率类型支持：128 Kbps - 256 Kbps ；\n- 音频文件支持格式：wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape；\n- 支持音视频文件分离并对音频文件进行独立识别；\n\n### 音频流调用说明：\n- 音频流时长支持：< 3小时；\n- 音频码率类型支持：128 Kbps - 256 Kbps ；\n- 音频流支持的传输协议：RTMP、HTTP、HTTPS；\n- 音频流格式支持的类型：rtp、srtp、rtmp、rtmps、mmsh、 mmst、hls、http、tcp、https、m3u8；\n- 支持音视频流分离并对音频流进行独立识别；",
+      "input": "CreateAudioModerationTaskRequest",
+      "name": "创建音频审核任务",
+      "output": "CreateAudioModerationTaskResponse"
+    },
+    "DescribeTaskDetail": {
+      "document": "查看任务详情",
+      "input": "DescribeTaskDetailRequest",
+      "name": "查看任务详情",
+      "output": "DescribeTaskDetailResponse"
+    },
+    "DescribeTasks": {
+      "document": "查看审核任务列表",
+      "input": "DescribeTasksRequest",
+      "name": "查看审核任务列表",
+      "output": "DescribeTasksResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-29",
+    "api_brief": "介绍如何使用API对音频内容检测进行操作，包括识别音频中的不适宜内容等。",
+    "serviceNameCN": "音频内容检测",
+    "serviceShortName": "ams"
+  },
+  "objects": {
+    "AudioResult": {
+      "document": "音频输出参数",
+      "members": [
+        {
+          "default": "",
+          "document": "是否命中\n0 未命中\n1 命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "HitFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "得分，0-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频ASR文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频片段存储URL，有效期为1天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频时长",
+          "member": "string",
+          "name": "Duration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拓展字段",
+          "member": "string",
+          "name": "Extra",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本识别结果",
+          "member": "AudioResultDetailTextResult",
+          "name": "TextResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频呻吟检测结果",
+          "member": "AudioResultDetailMoanResult",
+          "name": "MoanResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频语言检测结果",
+          "member": "AudioResultDetailLanguageResult",
+          "name": "LanguageResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioResultDetailLanguageResult": {
+      "document": "音频小语种检测结果",
+      "members": [
+        {
+          "default": "",
+          "document": "语言信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "得分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "StartTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "EndTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子标签码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubLabelCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioResultDetailMoanResult": {
+      "document": "音频呻吟审核结果",
+      "members": [
+        {
+          "default": "",
+          "document": "固定为Moan（呻吟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分数",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "member": "float",
+          "name": "StartTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "member": "float",
+          "name": "EndTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子标签码",
+          "member": "string",
+          "name": "SubLabelCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioResultDetailTextResult": {
+      "document": "音频ASR文本审核结果",
+      "members": [
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命中的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Keywords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命中的LibId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LibId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命中的LibName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LibName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "得分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审核建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "词库类型 1 黑白库 2 自定义库",
+          "member": "int64",
+          "name": "LibType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioSegments": {
+      "document": "声音段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "截帧时间, 单位：秒\n点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10\n直播流：该值为时间戳，例如：1594650717\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OffsetTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结果集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AudioResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BucketInfo": {
+      "document": "文件桶信息\n参考腾讯云存储相关说明 https://cloud.tencent.com/document/product/436/44352",
+      "members": [
+        {
+          "default": "",
+          "document": "腾讯云对象存储，存储桶名称",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对象Key",
+          "member": "string",
+          "name": "Object",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CancelTaskRequest": {
+      "document": "CancelTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelTaskResponse": {
+      "document": "CancelTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAudioModerationTaskRequest": {
+      "document": "CreateAudioModerationTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "输入的任务信息，最多可以同时创建10个任务",
+          "example": "[]",
+          "member": "TaskInput",
+          "name": "Tasks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "默认为：default，客户可以在音频审核控制台配置自己的BizType",
+          "example": "default",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "审核类型，这里可选：AUDIO (点播音频)和 LIVE_AUDIO（直播音频），默认为 AUDIIO",
+          "example": "AUDIO",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "（可选）回调签名key，具体可以查看 回调签名示例",
+          "example": "seed",
+          "member": "string",
+          "name": "Seed",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接收审核信息回调地址，如果设置，则审核过程中产生的违规音频片段和画面截帧发送此接口",
+          "example": "https://example.com/url",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAudioModerationTaskResponse": {
+      "document": "CreateAudioModerationTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务创建结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TaskResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailRequest": {
+      "document": "DescribeTaskDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID，创建任务后返回的TaskId字段",
+          "example": "w-audio-YBJzazmYs4vO27p2",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否展示所有分片，默认只展示命中规则的分片",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowAllSegments",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailResponse": {
+      "document": "DescribeTaskDetail返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "w-audio-YBJzazmYs4vO27p2",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "审核时传入的数据Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "azmYs4vO27p2",
+          "member": "string",
+          "name": "DataId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务类型，用户可以在控制台查看自己配置的BizType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "BizType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询内容审核任务的状态，可选值：\nFINISH 已完成\nPENDING 等待中\nRUNNING 进行中\nERROR 出错\nCANCELLED 已取消\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FINISH",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUDIO",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "智能审核服务对于内容违规类型的等级，可选值：\nPass 建议通过；\nReveiw 建议复审；\nBlock 建议屏蔽；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pass",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "智能审核服务对于内容违规类型的判断，详见返回值列表\n如：Label：Porn（色情）；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "TaskLabel",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "输入的媒体信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "InputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音频文本，备注：这里的文本最大只返回前1000个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "the text",
+          "member": "string",
+          "name": "AudioText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音频片段审核信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "AudioSegments",
+          "name": "AudioSegments",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误类型，如果任务状态为Error，则该字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "URL_ERROR",
+          "member": "string",
+          "name": "ErrorType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误描述，如果任务状态为Error，则该字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "the url is request is 404",
+          "member": "string",
+          "name": "ErrorDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务创建时间，格式为 ISO 8601\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-28T08:20:25.759Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务最后更新时间，格式为 ISO 8601\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-28T08:20:25.759Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每页展示多少条。（默认展示10条）",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤参数",
+          "member": "TaskFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "翻页token，在向前或向后翻页时需要",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间。默认是最近3天。",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间。默认为空",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务总量，为 int 字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Total",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前页数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "翻页Token，当已经到最后一页时，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PageToken",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InputInfo": {
+      "document": "输入信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "传入的类型可选：URL，COS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Url地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "桶信息。当输入当时COS时，该字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BucketInfo",
+          "name": "BucketInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaInfo": {
+      "document": "媒体类型",
+      "members": [
+        {
+          "default": "",
+          "document": "编码格式",
+          "member": "string",
+          "name": "Codecs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流检测时分片时长\n注意：此字段可能返回 0，表示取不到有效值。",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宽，单位为像素",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高，单位为像素",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缩略图",
+          "member": "string",
+          "name": "Thumbnail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StorageInfo": {
+      "document": " 数据存储信息",
+      "members": [
+        {
+          "default": "",
+          "document": "类型 可选：\nURL 资源链接类型\nCOS 腾讯云对象存储类型",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源链接",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云存储桶信息",
+          "member": "BucketInfo",
+          "name": "BucketInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskData": {
+      "document": "任务数据",
+      "members": [
+        {
+          "default": "",
+          "document": "输入的数据ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DataId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BizType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建议。可选：Pass，Block，Review\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaInfo",
+          "name": "MediaInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务违规标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskLabel",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间（ iso 8601 格式）",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间（ iso 8601 格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskFilter": {
+      "document": "任务筛选器",
+      "members": [
+        {
+          "default": "",
+          "document": "任务业务类型",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型，可选：VIDEO，AUDIO， LIVE_VIDEO, LIVE_AUDIO",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建议，可选：Pass, Review,Block",
+          "member": "string",
+          "name": "Suggestion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskInput": {
+      "document": "音视频任务结构",
+      "members": [
+        {
+          "default": "",
+          "document": "数据ID",
+          "member": "string",
+          "name": "DataId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务输入",
+          "member": "StorageInfo",
+          "name": "Input",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskLabel": {
+      "document": "任务输出标签",
+      "members": [
+        {
+          "default": "",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "得分，分数是 0 ～ 100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskResult": {
+      "document": "创建任务时的返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "请求时传入的DataId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DataId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TaskId，任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误码。如果code为OK，则表示创建成功，其他则参考公共错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "如果错误，该字段表示错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

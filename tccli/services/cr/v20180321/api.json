@@ -6,11 +6,29 @@
       "name": "提交黑名单申请",
       "output": "ApplyBlackListResponse"
     },
+    "ApplyBlackListData": {
+      "document": "提交机器人黑名单申请",
+      "input": "ApplyBlackListDataRequest",
+      "name": "提交机器人黑名单申请",
+      "output": "ApplyBlackListDataResponse"
+    },
     "ApplyCreditAudit": {
       "document": "提交信审外呼申请，返回当次请求日期。",
       "input": "ApplyCreditAuditRequest",
       "name": "提交信审申请",
       "output": "ApplyCreditAuditResponse"
+    },
+    "ChangeBotCallStatus": {
+      "document": "更新机器人任务作业状态",
+      "input": "ChangeBotCallStatusRequest",
+      "name": "更新机器人任务作业状态",
+      "output": "ChangeBotCallStatusResponse"
+    },
+    "ChangeBotTaskStatus": {
+      "document": "更新机器人任务状态",
+      "input": "ChangeBotTaskStatusRequest",
+      "name": "更新机器人任务状态",
+      "output": "ChangeBotTaskStatusResponse"
     },
     "CreateBotTask": {
       "document": "创建机器人任务",
@@ -84,6 +102,12 @@
       "name": "查询机器人任务状态列表",
       "output": "QueryBotListResponse"
     },
+    "QueryCallList": {
+      "document": "机器人任务查询",
+      "input": "QueryCallListRequest",
+      "name": "机器人任务查询",
+      "output": "QueryCallListResponse"
+    },
     "QueryInstantData": {
       "document": "实时数据查询",
       "input": "QueryInstantDataRequest",
@@ -101,6 +125,12 @@
       "input": "QueryRecordListRequest",
       "name": "查询录音列表",
       "output": "QueryRecordListResponse"
+    },
+    "UpdateBotTask": {
+      "document": "更新机器人任务",
+      "input": "UpdateBotTaskRequest",
+      "name": "更新机器人任务",
+      "output": "UpdateBotTaskResponse"
     },
     "UploadBotData": {
       "document": "上传机器人任务数据",
@@ -140,6 +170,51 @@
     "serviceShortName": "cr"
   },
   "objects": {
+    "ApplyBlackListDataRequest": {
+      "document": "ApplyBlackListData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，AiApi",
+          "example": "AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，ApplyBlackListData",
+          "example": "ApplyBlackListData",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "黑名单列表",
+          "example": "[{         \"BlackType\": \"xx\",          \"BlackValue\": \"xx\",     ]",
+          "member": "BlackListData",
+          "name": "BlackList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyBlackListDataResponse": {
+      "document": "ApplyBlackListData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ApplyBlackListRequest": {
       "document": "ApplyBlackList请求参数结构体",
       "members": [
@@ -271,6 +346,82 @@
       ],
       "type": "object"
     },
+    "BlackListData": {
+      "document": "黑名单申请信息",
+      "members": [
+        {
+          "default": "",
+          "document": "黑名单类型，01代表手机号码。",
+          "example": "01",
+          "member": "string",
+          "name": "BlackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型，A为新增，D为删除。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "A",
+          "member": "string",
+          "name": "OperType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "黑名单值，BlackType为01时，填写11位手机号码。",
+          "example": "13111111111",
+          "member": "string",
+          "name": "BlackValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试",
+          "member": "string",
+          "name": "BlackDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "黑名单生效截止日期，格式为YYYY-MM-DD，不填默认为永久。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-23",
+          "member": "date",
+          "name": "BlackValidDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "黑名单加入日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-23",
+          "member": "date",
+          "name": "BlackAddDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0-生效 1-失效",
+          "example": "0",
+          "member": "string",
+          "name": "BlackStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BotFileData": {
       "document": "机器人文件结构",
       "members": [
@@ -361,69 +512,142 @@
       ],
       "usage": "out"
     },
+    "CallInfo": {
+      "document": "作业信息",
+      "members": [
+        {
+          "default": "",
+          "document": "业务日期",
+          "example": "2020-12-23",
+          "member": "date",
+          "name": "BizDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态 WAIT：待执行；DOING：执行中；ERROR：执行错误；DONE：已完成；",
+          "example": "DOWN",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成功总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件类型 I：呼叫文件 R：停拨文件",
+          "example": "i",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作业唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "090000",
+          "member": "string",
+          "name": "CallId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CallTimeDict": {
       "document": "产品拨打时间集合",
       "members": [
         {
           "default": "",
           "document": "周一",
+          "example": "{}",
           "member": "CallTimeInfo",
           "name": "Monday",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "周二",
+          "example": "{}",
           "member": "CallTimeInfo",
           "name": "Tuesday",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "周三",
+          "example": "{}",
           "member": "CallTimeInfo",
           "name": "Wednesday",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "周四",
+          "example": "{}",
           "member": "CallTimeInfo",
           "name": "Thursday",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "周五",
+          "example": "{}",
           "member": "CallTimeInfo",
           "name": "Friday",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "周六",
+          "example": "{}",
           "member": "CallTimeInfo",
           "name": "Saturday",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "周日",
+          "example": "{}",
           "member": "CallTimeInfo",
           "name": "Sunday",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         }
@@ -435,24 +659,170 @@
       "members": [
         {
           "default": "",
-          "document": "产品开始拨打时间，HHmmss格式",
+          "document": "产品开始拨打时间，HHmmss格式,默认090000",
+          "example": "090000",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "产品结束拨打时间，HHmmss格式",
+          "document": "产品结束拨打时间，HHmmss格式.默认200000",
+          "example": "200000",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
       "usage": "in"
+    },
+    "ChangeBotCallStatusRequest": {
+      "document": "ChangeBotCallStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名。默认值（固定）：AiApi",
+          "example": "AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名。默认值（固定）：ChangeBotCallStatus",
+          "example": "QueryCallList",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作业变更状态\nSUSPEND：暂停；EXECUTE：恢复；",
+          "example": "SUSPEND",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作业唯一标识",
+          "example": "090000",
+          "member": "string",
+          "name": "CallId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务日期",
+          "example": "2020-12-23",
+          "member": "date",
+          "name": "BizDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID，二者必填一个",
+          "example": "yyy",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称，二者必填一个",
+          "example": "xxx",
+          "member": "string",
+          "name": "BotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeBotCallStatusResponse": {
+      "document": "ChangeBotCallStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeBotTaskStatusRequest": {
+      "document": "ChangeBotTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名。默认值（固定）：AiApi",
+          "example": "AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名。默认值（固定）：ChangeBotTaskStatus",
+          "example": "QueryCallList",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作业变更状态\nSUSPEND：暂停；EXECUTE：恢复；",
+          "example": "SUSPEND",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID，二者必填一个",
+          "example": "yyy",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称，二者必填一个",
+          "example": "xxx",
+          "member": "string",
+          "name": "BotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeBotTaskStatusResponse": {
+      "document": "ChangeBotTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateBotTaskRequest": {
       "document": "CreateBotTask请求参数结构体",
@@ -460,6 +830,7 @@
         {
           "default": "",
           "document": "模块名。默认值（固定）：AiApi",
+          "example": "AiApi",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -468,6 +839,7 @@
         {
           "default": "",
           "document": "操作名。默认值（固定）：CreateTask",
+          "example": "CreateTask",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -476,6 +848,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "xx",
           "member": "string",
           "name": "BotName",
           "required": true,
@@ -484,6 +857,7 @@
         {
           "default": "",
           "document": "对话流ID",
+          "example": "123",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -491,15 +865,8 @@
         },
         {
           "default": "",
-          "document": "产品拨打时间集合",
-          "member": "CallTimeDict",
-          "name": "CallTimeCollection",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "是否禁止拨打",
+          "document": "是否禁止拨打，默认Y",
+          "example": "Y",
           "member": "string",
           "name": "BanCall",
           "required": true,
@@ -507,23 +874,8 @@
         },
         {
           "default": "",
-          "document": "禁止拨打起始时间",
-          "member": "string",
-          "name": "StartTimeBan",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "禁止拨打结束时间",
-          "member": "string",
-          "name": "EndTimeBan",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "拨打线路集合",
+          "example": "1",
           "member": "string",
           "name": "PhoneCollection",
           "required": true,
@@ -531,7 +883,35 @@
         },
         {
           "default": "",
+          "document": "产品拨打时间集合",
+          "example": "{}",
+          "member": "CallTimeDict",
+          "name": "CallTimeCollection",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "禁止拨打起始时间。默认130000",
+          "example": "130000",
+          "member": "string",
+          "name": "StartTimeBan",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "禁止拨打结束时间。默认140000",
+          "example": "140000",
+          "member": "string",
+          "name": "EndTimeBan",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "重播方式，NON：未接通、LABEL：意向分级，可多选，用竖线分隔：NON|LABEL",
+          "example": "NON",
           "member": "string",
           "name": "CodeType",
           "required": false,
@@ -540,6 +920,7 @@
         {
           "default": "",
           "document": "重播值集合，A：强意向、B：中意向、C：低意向、D：无意向、E：在忙、F：未接通、G：无效号码，可多选，用竖线分隔：A|B|C|D|E|F|G",
+          "example": "A",
           "member": "string",
           "name": "CodeCollection",
           "required": false,
@@ -548,6 +929,7 @@
         {
           "default": "",
           "document": "继续拨打次数",
+          "example": "1",
           "member": "int64",
           "name": "CallCount",
           "required": false,
@@ -556,6 +938,7 @@
         {
           "default": "",
           "document": "拨打间隔",
+          "example": "10",
           "member": "int64",
           "name": "CallInterval",
           "required": false,
@@ -564,6 +947,7 @@
         {
           "default": "",
           "document": "未接通引用短信签名ID",
+          "example": "Test",
           "member": "string",
           "name": "SmsSignId",
           "required": false,
@@ -572,8 +956,36 @@
         {
           "default": "",
           "document": "未接通引用短信模板ID",
+          "example": "XXX",
           "member": "string",
           "name": "SmsTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨打方式。NORMAL - 正常拨打；TIMER - 定时拨打",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "CallType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨打开始日期。CallType=TIMER时有值，yyyy-MM-dd",
+          "example": "2020-12-23",
+          "member": "string",
+          "name": "CallStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨打结束日期。CallType=PERIOD 时有值，yyyy-MM-dd",
+          "example": "2020-12-23",
+          "member": "string",
+          "name": "CallEndDate",
           "required": false,
           "type": "string"
         }
@@ -583,6 +995,15 @@
     "CreateBotTaskResponse": {
       "document": "CreateBotTask返回参数结构体",
       "members": [
+        {
+          "document": "机器人任务Id",
+          "example": "XXX",
+          "member": "string",
+          "name": "BotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1446,6 +1867,87 @@
       ],
       "type": "object"
     },
+    "QueryCallListRequest": {
+      "document": "QueryCallList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名。默认值（固定）：AiApi",
+          "example": "AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名。默认值（固定）：QueryCallList",
+          "example": "QueryCallList",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务日期",
+          "example": "2020-11-22",
+          "member": "date",
+          "name": "BizDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID，二者必填一个",
+          "example": "yyy",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称，二者必填一个",
+          "example": "xxx",
+          "member": "string",
+          "name": "BotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通过API或平台上传的文件完整名称",
+          "example": "A.xlsx",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCallListResponse": {
+      "document": "QueryCallList返回参数结构体",
+      "members": [
+        {
+          "document": "任务作业状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CallInfo",
+          "name": "CallList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryInstantDataRequest": {
       "document": "QueryInstantData请求参数结构体",
       "members": [
@@ -1685,6 +2187,7 @@
         {
           "default": "",
           "document": "任务Id",
+          "example": "xxx",
           "member": "string",
           "name": "BotId",
           "required": true,
@@ -1694,6 +2197,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "ab",
           "member": "string",
           "name": "BotName",
           "required": true,
@@ -1703,6 +2207,7 @@
         {
           "default": "",
           "document": "任务日期",
+          "example": "2020-12-23",
           "member": "date",
           "name": "BizDate",
           "required": true,
@@ -1712,6 +2217,7 @@
         {
           "default": "",
           "document": "被叫号码",
+          "example": "13111111111",
           "member": "string",
           "name": "CalledPhone",
           "required": true,
@@ -1721,6 +2227,7 @@
         {
           "default": "",
           "document": "开始通话时间",
+          "example": "2020-12-23 20:11:22",
           "member": "datetime",
           "name": "CallStartTime",
           "required": true,
@@ -1730,6 +2237,7 @@
         {
           "default": "",
           "document": "通话时长",
+          "example": "20",
           "member": "int64",
           "name": "Duration",
           "required": true,
@@ -1739,6 +2247,7 @@
         {
           "default": "",
           "document": "录音文件地址",
+          "example": "http://123/xxx",
           "member": "string",
           "name": "CosUrl",
           "required": true,
@@ -1748,8 +2257,19 @@
         {
           "default": "",
           "document": "对话日志。JSON格式",
+          "example": "\"\"",
           "member": "string",
           "name": "DialogueLog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录音文件名",
+          "example": "test.zip",
+          "member": "string",
+          "name": "CosFileName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1933,6 +2453,159 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateBotTaskRequest": {
+      "document": "UpdateBotTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名。默认值（固定）：AiApi",
+          "example": "AiApi",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名。默认值（固定）：UpdateTask",
+          "example": "CreateTask",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "example": "xx",
+          "member": "string",
+          "name": "BotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "123",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品拨打时间集合",
+          "example": "{}",
+          "member": "CallTimeDict",
+          "name": "CallTimeCollection",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否禁止拨打，默认Y",
+          "example": "Y",
+          "member": "string",
+          "name": "BanCall",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "禁止拨打起始时间。默认130000",
+          "example": "130000",
+          "member": "string",
+          "name": "StartTimeBan",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "禁止拨打结束时间。默认140000",
+          "example": "140000",
+          "member": "string",
+          "name": "EndTimeBan",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨打线路集合",
+          "example": "1",
+          "member": "string",
+          "name": "PhoneCollection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重播方式，NON：未接通、LABEL：意向分级，可多选，用竖线分隔：NON|LABEL",
+          "example": "NON",
+          "member": "string",
+          "name": "CodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重播值集合，A：强意向、B：中意向、C：低意向、D：无意向、E：在忙、F：未接通、G：无效号码，可多选，用竖线分隔：A|B|C|D|E|F|G",
+          "example": "A",
+          "member": "string",
+          "name": "CodeCollection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "继续拨打次数",
+          "example": "1",
+          "member": "int64",
+          "name": "CallCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨打间隔",
+          "example": "10",
+          "member": "int64",
+          "name": "CallInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "未接通引用短信签名ID",
+          "example": "Test",
+          "member": "string",
+          "name": "SmsSignId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "未接通引用短信模板ID",
+          "example": "XXX",
+          "member": "string",
+          "name": "SmsTemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBotTaskResponse": {
+      "document": "UpdateBotTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UploadBotDataRequest": {
       "document": "UploadBotData请求参数结构体",

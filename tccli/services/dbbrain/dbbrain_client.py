@@ -38,6 +38,31 @@ def doDescribeSlowLogTimeSeriesStats(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSecurityAuditLogDownloadUrls(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityAuditLogDownloadUrlsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSecurityAuditLogDownloadUrls(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDBDiagEvent(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -213,6 +238,31 @@ def doModifyDiagDBInstanceConf(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateSecurityAuditLogExportTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateSecurityAuditLogExportTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateSecurityAuditLogExportTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSlowLogTopSqls(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -230,6 +280,31 @@ def doDescribeSlowLogTopSqls(args, parsed_globals):
     model = models.DescribeSlowLogTopSqlsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeSlowLogTopSqls(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteSecurityAuditLogExportTasks(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSecurityAuditLogExportTasksRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteSecurityAuditLogExportTasks(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -313,6 +388,31 @@ def doDescribeAllUserContact(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSecurityAuditLogExportTasks(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityAuditLogExportTasksRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSecurityAuditLogExportTasks(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20191016": dbbrain_client_v20191016,
 
@@ -325,6 +425,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeSlowLogTimeSeriesStats": doDescribeSlowLogTimeSeriesStats,
+    "DescribeSecurityAuditLogDownloadUrls": doDescribeSecurityAuditLogDownloadUrls,
     "DescribeDBDiagEvent": doDescribeDBDiagEvent,
     "DescribeDBDiagHistory": doDescribeDBDiagHistory,
     "DescribeDBSpaceStatus": doDescribeDBSpaceStatus,
@@ -332,10 +433,13 @@ ACTION_MAP = {
     "CreateDBDiagReportTask": doCreateDBDiagReportTask,
     "CreateMailProfile": doCreateMailProfile,
     "ModifyDiagDBInstanceConf": doModifyDiagDBInstanceConf,
+    "CreateSecurityAuditLogExportTask": doCreateSecurityAuditLogExportTask,
     "DescribeSlowLogTopSqls": doDescribeSlowLogTopSqls,
+    "DeleteSecurityAuditLogExportTasks": doDeleteSecurityAuditLogExportTasks,
     "DescribeTopSpaceTableTimeSeries": doDescribeTopSpaceTableTimeSeries,
     "DescribeAllUserGroup": doDescribeAllUserGroup,
     "DescribeAllUserContact": doDescribeAllUserContact,
+    "DescribeSecurityAuditLogExportTasks": doDescribeSecurityAuditLogExportTasks,
 
 }
 

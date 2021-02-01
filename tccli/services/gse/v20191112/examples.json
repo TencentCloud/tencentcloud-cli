@@ -482,6 +482,22 @@
         "title": "修改生成包信息"
       }
     ],
+    "UpdateBucketAccelerateOpt": [
+      {
+        "document": "设置cos全球加速",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateBucketAccelerateOpt\n&Allowed=true\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"s1609299213222354000\"\r\n    }\r\n}",
+        "title": "设置cos全球加速"
+      }
+    ],
+    "UpdateBucketCORSOpt": [
+      {
+        "document": "设置cos跨域请求",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateBucketCORSOpt\n&AllowedOrigins.0=*\n&AllowedMethods.0=GET\n&AllowedHeaders.0=x-cos-meta-test\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"s1609831145190946000\"\r\n    }\r\n}",
+        "title": "设置cos跨域请求"
+      }
+    ],
     "UpdateFleetAttributes": [
       {
         "document": "更新服务器舰队属性",

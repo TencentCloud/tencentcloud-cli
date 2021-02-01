@@ -8,6 +8,14 @@
         "title": "提交黑名单申请"
       }
     ],
+    "ApplyBlackListData": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=ApplyBlackListData\n&Module=account\n&Operation=ApplyBlackList\n&BlackList.0.BlackType=01\n&BlackList.0.OperType=A\n&BlackList.0.BlackValue=13312345233\n&BlackList.0.BlackDescription=输入示例\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"13ca0b60-ff5g-43e2-9123-b9361bf0f93e\"\r\n  }\r\n}",
+        "title": "提交黑名单申请"
+      }
+    ],
     "ApplyCreditAudit": [
       {
         "document": "",
@@ -16,11 +24,27 @@
         "title": "提交信审申请"
       }
     ],
+    "ChangeBotCallStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeBotCallStatus\n<公共请求参数>\n\n{\n    \"Status\": \"xx\", \n    \"CallId\": \"xx\", \n    \"BotId\": \"xx\", \n    \"Module\": \"xx\", \n    \"BizDate\": \"2020-09-22\", \n    \"Operation\": \"xx\", \n    \"BotName\": \"xx\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\"\r\n  }\r\n}",
+        "title": "更新机器人任务作业状态"
+      }
+    ],
+    "ChangeBotTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeBotTaskStatus\n<公共请求参数>\n\n{\n    \"Status\": \"xx\", \n    \"BotId\": \"xx\", \n    \"Module\": \"xx\", \n    \"Operation\": \"xx\", \n    \"BotName\": \"xx\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\"\r\n  }\r\n}",
+        "title": "更新机器人任务状态"
+      }
+    ],
     "CreateBotTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBotTask\n<公共请求参数>\n\n{\n  \"Module\": \"AiApi\",\n  \"Operation\": \"CreateTask\",\n  \"BotName\": \"qtest01\",\n  \"FlowId\": \"abc123456000000\",\n    \"CallTimeCollection\": {\n        \"Monday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Tuesday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Friday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Wednesday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Thursday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Sunday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Saturday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }\n    },\n  \"BanCall\": \"Y\",\n  \"StartTimeBan\": \"120000\",\n  \"EndTimeBan\": \"130000\",\n  \"PhoneCollection\": \"01ABC\",\n  \"CallCount\": 1,\n  \"CallInterval\": 5\n}",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\"\r\n  }\r\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\",\r\n\"BotId\":\"zc\"\r\n  }\r\n}",
         "title": "创建机器人任务"
       }
     ],
@@ -112,6 +136,14 @@
         "title": "查询机器人状态列表"
       }
     ],
+    "QueryCallList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCallList\n<公共请求参数>\n\n{\n    \"BotId\": \"xx\", \n    \"Module\": \"xx\", \n    \"FileName\": \"xx\", \n    \"BizDate\": \"2020-09-22\", \n    \"Operation\": \"xx\", \n    \"BotName\": \"xx\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"CallList\": [\r\n            {\r\n                \"Status\": \"xx\", \r\n                \"CallId\": \"xx\", \r\n                \"FileType\": \"xx\", \r\n                \"FileName\": \"xx\", \r\n                \"TotalCount\": 0, \r\n                \"BizDate\": \"2020-09-22\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "机器人任务查询"
+      }
+    ],
     "QueryInstantData": [
       {
         "document": "",
@@ -134,6 +166,14 @@
         "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRecordList\n<公共请求参数>\n\n{\n    \"EndBizDate\": \"2020-09-22\", \n    \"CalledPhone\": \"xx\", \n    \"BotId\": \"xx\", \n    \"Module\": \"xx\", \n    \"Limit\": 0, \n    \"Offset\": 0, \n    \"Operation\": \"xx\", \n    \"StartBizDate\": \"2020-09-22\", \n    \"BotName\": \"xx\"\n}",
         "output": "{\r\n    \"Response\": {\r\n        \"RecordList\": [\r\n            {\r\n                \"CallStartTime\": \"2020-09-22 00:00:00\", \r\n                \"DialogueLog\": \"xx\", \r\n                \"CalledPhone\": \"xx\", \r\n                \"BotId\": \"xx\", \r\n                \"BizDate\": \"2020-09-22\", \r\n                \"Duration\": 0, \r\n                \"CosUrl\": \"xx\", \r\n                \"BotName\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\", \r\n        \"TotalCount\": 0\r\n    }\r\n}",
         "title": "查询录音列表"
+      }
+    ],
+    "UpdateBotTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateBotTask\n<公共请求参数>\n\n{\n  \"Module\": \"AiApi\",\n  \"Operation\": \"CreateTask\",\n  \"BotName\": \"qtest01\",\n  \"BotId\": \"abc123456000000\",\n    \"CallTimeCollection\": {\n        \"Monday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Tuesday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Friday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Wednesday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Thursday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Sunday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }, \n        \"Saturday\": {\n            \"EndTime\": \"160000\", \n            \"StartTime\": \"080000\"\n        }\n    },\n  \"BanCall\": \"Y\",\n  \"StartTimeBan\": \"120000\",\n  \"EndTimeBan\": \"130000\",\n  \"PhoneCollection\": \"01ABC\",\n  \"CallCount\": 1,\n  \"CallInterval\": 5\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12345-6789-test-from-rest4api\"\r\n  }\r\n}",
+        "title": "更新机器人任务"
       }
     ],
     "UploadBotData": [

@@ -9,6 +9,8 @@ include tccli/services/afc/v20200226/api.json
 include tccli/services/afc/v20200226/examples.json
 include tccli/services/ame/v20190916/api.json
 include tccli/services/ame/v20190916/examples.json
+include tccli/services/ams/v20201229/api.json
+include tccli/services/ams/v20201229/examples.json
 include tccli/services/ams/v20200608/api.json
 include tccli/services/ams/v20200608/examples.json
 include tccli/services/apcas/v20201127/api.json

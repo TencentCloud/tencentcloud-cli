@@ -12,6 +12,18 @@
       "name": "创建邮件配置",
       "output": "CreateMailProfileResponse"
     },
+    "CreateSecurityAuditLogExportTask": {
+      "document": "创建安全审计日志导出任务。",
+      "input": "CreateSecurityAuditLogExportTaskRequest",
+      "name": "创建安全审计日志导出任务",
+      "output": "CreateSecurityAuditLogExportTaskResponse"
+    },
+    "DeleteSecurityAuditLogExportTasks": {
+      "document": "删除安全审计日志导出任务。",
+      "input": "DeleteSecurityAuditLogExportTasksRequest",
+      "name": "删除安全审计日志导出任务",
+      "output": "DeleteSecurityAuditLogExportTasksResponse"
+    },
     "DescribeAllUserContact": {
       "document": "获取邮件发送中联系人的相关信息。",
       "input": "DescribeAllUserContactRequest",
@@ -41,6 +53,18 @@
       "input": "DescribeDBSpaceStatusRequest",
       "name": "获取指定时间段内的实例空间使用概览",
       "output": "DescribeDBSpaceStatusResponse"
+    },
+    "DescribeSecurityAuditLogDownloadUrls": {
+      "document": "查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。",
+      "input": "DescribeSecurityAuditLogDownloadUrlsRequest",
+      "name": "查询安全审计日志导出文件下载链接",
+      "output": "DescribeSecurityAuditLogDownloadUrlsResponse"
+    },
+    "DescribeSecurityAuditLogExportTasks": {
+      "document": "查询安全审计日志导出任务列表。",
+      "input": "DescribeSecurityAuditLogExportTasksRequest",
+      "name": "查询安全审计日志导出任务列表",
+      "output": "DescribeSecurityAuditLogExportTasksResponse"
     },
     "DescribeSlowLogTimeSeriesStats": {
       "document": "获取慢日志统计柱状图。",
@@ -250,6 +274,123 @@
     },
     "CreateMailProfileResponse": {
       "document": "CreateMailProfile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityAuditLogExportTaskRequest": {
+      "document": "CreateSecurityAuditLogExportTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全审计组Id。",
+          "example": "sag-01z37k3f",
+          "member": "string",
+          "name": "SecAuditGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出日志开始时间，例如2020-12-28 00:00:00。",
+          "example": "2020-12-28 00:00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出日志结束时间，例如2020-12-28 01:00:00。",
+          "example": "2020-12-28 01:00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志风险等级列表，支持值包括：0 无风险；1 低风险；2 中风险；3 高风险。",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "DangerLevels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityAuditLogExportTaskResponse": {
+      "document": "CreateSecurityAuditLogExportTask返回参数结构体",
+      "members": [
+        {
+          "document": "日志导出任务Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityAuditLogExportTasksRequest": {
+      "document": "DeleteSecurityAuditLogExportTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全审计组Id。",
+          "example": "sag-01z37k3f",
+          "member": "string",
+          "name": "SecAuditGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出任务Id列表，接口会忽略不存在或已删除的任务Id。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AsyncRequestIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值： \"mysql\" - 云数据库 MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityAuditLogExportTasksResponse": {
+      "document": "DeleteSecurityAuditLogExportTasks返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -590,6 +731,141 @@
           "document": "预计可用天数。",
           "member": "int64",
           "name": "AvailableDays",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAuditLogDownloadUrlsRequest": {
+      "document": "DescribeSecurityAuditLogDownloadUrls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全审计组Id。",
+          "example": "sag-01z37k3f",
+          "member": "string",
+          "name": "SecAuditGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异步任务Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAuditLogDownloadUrlsResponse": {
+      "document": "DescribeSecurityAuditLogDownloadUrls返回参数结构体",
+      "members": [
+        {
+          "document": "导出结果的COS链接列表。当结果集很大时，可能会切分为多个url下载。",
+          "example": "[\"https://xxx\"]",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAuditLogExportTasksRequest": {
+      "document": "DescribeSecurityAuditLogExportTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全审计组Id。",
+          "example": "sag-01z37k3f",
+          "member": "string",
+          "name": "SecAuditGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出任务Id列表。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AsyncRequestIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认20。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAuditLogExportTasksResponse": {
+      "document": "DescribeSecurityAuditLogExportTasks返回参数结构体",
+      "members": [
+        {
+          "document": "安全审计日志导出任务列表。",
+          "example": "无",
+          "member": "SecLogExportTaskInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全审计日志导出任务总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1311,6 +1587,112 @@
         }
       ],
       "usage": "in"
+    },
+    "SecLogExportTaskInfo": {
+      "document": "安全审计日志导出任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "异步任务Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-06 13:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-06 13:00:02",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务创建时间。",
+          "example": "2019-06-06 12:50:02",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态。",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行进度。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出日志开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-06 12:00:00",
+          "member": "datetime",
+          "name": "LogStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "导出日志结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-06 13:00:00",
+          "member": "datetime",
+          "name": "LogEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志文件总大小，单位KB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "DangerLevels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SlowLogTopSqlItem": {
       "document": "慢日志TopSql",

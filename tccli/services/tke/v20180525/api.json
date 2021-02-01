@@ -4260,7 +4260,7 @@
         },
         {
           "default": "",
-          "document": "集群状态",
+          "document": "集群状态(running运行中，initializing 初始化中，failed异常)",
           "example": "Running",
           "member": "string",
           "name": "Status",

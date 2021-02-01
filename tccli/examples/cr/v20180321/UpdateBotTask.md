@@ -1,15 +1,15 @@
-**Example 1: 创建机器人任务**
+**Example 1: 更新机器人任务**
 
 
 
 Input: 
 
 ```
-tccli cr CreateBotTask --cli-unfold-argument  \
+tccli cr UpdateBotTask --cli-unfold-argument  \
     --Module AiApi \
     --Operation CreateTask \
     --BotName qtest01 \
-    --FlowId abc123456000000 \
+    --BotId abc123456000000 \
     --CallTimeCollection.Monday.EndTime 160000 \
     --CallTimeCollection.Monday.StartTime 080000 \
     --CallTimeCollection.Tuesday.EndTime 160000 \
@@ -36,8 +36,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "12345-6789-test-from-rest4api",
-        "BotId": "zc"
+        "RequestId": "12345-6789-test-from-rest4api"
     }
 }
 ```

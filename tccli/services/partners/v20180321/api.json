@@ -116,6 +116,7 @@
         {
           "default": "",
           "document": "代理商账号ID",
+          "example": "10000",
           "member": "string",
           "name": "Uin",
           "required": true,
@@ -125,6 +126,7 @@
         {
           "default": "",
           "document": "代客账号ID",
+          "example": "10000",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -134,6 +136,7 @@
         {
           "default": "",
           "document": "代客审核通过时间戳",
+          "example": "0",
           "member": "string",
           "name": "AgentTime",
           "required": true,
@@ -143,6 +146,7 @@
         {
           "default": "",
           "document": "代客类型，可能值为a/b/c",
+          "example": "b",
           "member": "string",
           "name": "ClientFlag",
           "required": true,
@@ -152,6 +156,7 @@
         {
           "default": "",
           "document": "代客备注",
+          "example": "腾讯",
           "member": "string",
           "name": "ClientRemark",
           "required": true,
@@ -161,6 +166,7 @@
         {
           "default": "",
           "document": "代客名称（首选实名认证名称）",
+          "example": "腾讯",
           "member": "string",
           "name": "ClientName",
           "required": true,
@@ -170,6 +176,7 @@
         {
           "default": "",
           "document": "认证类型, 0：个人，1：企业；其他：未认证",
+          "example": "0",
           "member": "string",
           "name": "AuthType",
           "required": true,
@@ -179,6 +186,7 @@
         {
           "default": "",
           "document": "代客APPID",
+          "example": "0",
           "member": "string",
           "name": "AppId",
           "required": true,
@@ -188,6 +196,7 @@
         {
           "default": "",
           "document": "上月消费金额",
+          "example": "0",
           "member": "int64",
           "name": "LastMonthAmt",
           "required": true,
@@ -197,6 +206,7 @@
         {
           "default": "",
           "document": "本月消费金额",
+          "example": "0",
           "member": "int64",
           "name": "ThisMonthAmt",
           "required": true,
@@ -206,6 +216,7 @@
         {
           "default": "",
           "document": "是否欠费,0：不欠费；1：欠费",
+          "example": "0",
           "member": "uint64",
           "name": "HasOverdueBill",
           "required": true,
@@ -214,7 +225,8 @@
         },
         {
           "default": "",
-          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/空",
+          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/direct(直销)/direct_newopp(直销(新商机))/空",
+          "example": "old",
           "member": "string",
           "name": "ClientType",
           "required": true,
@@ -224,6 +236,7 @@
         {
           "default": "",
           "document": "项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空",
+          "example": "self",
           "member": "string",
           "name": "ProjectType",
           "required": true,
@@ -233,6 +246,7 @@
         {
           "default": "",
           "document": "业务员ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10002",
           "member": "string",
           "name": "SalesUin",
           "required": true,
@@ -242,6 +256,7 @@
         {
           "default": "",
           "document": "业务员姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯",
           "member": "string",
           "name": "SalesName",
           "required": true,
@@ -251,6 +266,7 @@
         {
           "default": "",
           "document": "代客邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000***@qq.com",
           "member": "string",
           "name": "Mail",
           "required": true,

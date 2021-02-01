@@ -19,9 +19,32 @@ Output:
 ```
 {
     "Response": {
-        "Result": "张先生，您好。那个为了规范保险从业人员的销售行为，也为了更好的保护您的合法权益。",
-        "AudioDuration": 15000,
-        "RequestId": "8984d9a9-343f-4c67-8fd9-5c79510a12da"
+        "RequestId": "41ed9283-0c09-46fb-917b-0b83fa95f0be",
+        "Result": "腾讯云语音识别欢迎您。",
+        "AudioDuration": 2430,
+        "WordSize": 4,
+        "WordList": [
+            {
+                "Word": "腾讯云",
+                "StartTime": 120,
+                "EndTime": 810
+            },
+            {
+                "Word": "语音识别",
+                "StartTime": 810,
+                "EndTime": 1530
+            },
+            {
+                "Word": "欢迎",
+                "StartTime": 1530,
+                "EndTime": 1890
+            },
+            {
+                "Word": "您",
+                "StartTime": 1890,
+                "EndTime": 2250
+            }
+        ]
     }
 }
 ```
@@ -47,9 +70,32 @@ Output:
 ```
 {
     "Response": {
-        "Result": "张先生，您好。那个为了规范保险从业人员的销售行为，也为了更好的保护您的合法权益。",
-        "AudioDuration": 15000,
-        "RequestId": "8984d9a9-343f-4c67-8fd9-5c79510a12da"
+        "RequestId": "41ed9283-0c09-46fb-917b-0b83fa95f0be",
+        "Result": "腾讯云语音识别欢迎您。",
+        "AudioDuration": 2430,
+        "WordSize": 4,
+        "WordList": [
+            {
+                "Word": "腾讯云",
+                "StartTime": 120,
+                "EndTime": 810
+            },
+            {
+                "Word": "语音识别",
+                "StartTime": 810,
+                "EndTime": 1530
+            },
+            {
+                "Word": "欢迎",
+                "StartTime": 1530,
+                "EndTime": 1890
+            },
+            {
+                "Word": "您",
+                "StartTime": 1890,
+                "EndTime": 2250
+            }
+        ]
     }
 }
 ```

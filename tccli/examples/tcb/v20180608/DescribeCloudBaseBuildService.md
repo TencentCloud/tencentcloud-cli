@@ -14,16 +14,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "DownloadHeaders": [
+            {
+                "Value": "xx",
+                "Key": "xx"
+            }
+        ],
         "UploadHeaders": [
             {
                 "Value": "xx",
                 "Key": "xx"
             }
         ],
+        "UploadUrl": "xx",
+        "DownloadUrl": "xx",
+        "RequestId": "xx",
         "PackageVersion": "xx",
-        "PackageName": "xx",
-        "UploadUrl": "xx"
+        "PackageName": "xx"
     }
 }
 ```

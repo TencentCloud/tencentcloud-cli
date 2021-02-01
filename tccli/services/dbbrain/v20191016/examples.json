@@ -16,6 +16,22 @@
         "title": "创建定期生成/数据库巡检 的邮件发送模板"
       }
     ],
+    "CreateSecurityAuditLogExportTask": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=CreateSecurityAuditLogExportTask\n&SecAuditGroupId=sag-01z37k3f\n&Product=mysql\n&StartTime=2019-01-01T00:00:00+00:00\n&EndTime=2019-01-02T00:00:00+00:00\n&DangerLevels.0=1\n&DangerLevels.1=2\n&DangerLevels.2=3\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"AsyncRequestId\": 1,\r\n        \"RequestId\": \"0c4959d0-5abb-11eb-862f-653dd83af000\"\r\n    }\r\n}",
+        "title": "创建安全审计日志导出任务"
+      }
+    ],
+    "DeleteSecurityAuditLogExportTasks": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DeleteSecurityAuditLogExportTasks\n&SecAuditGroupId=sag-01z37k3f\n&AsyncRequestIds.0=1\n&Product=mysql\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"5fdab910-5c9e-11eb-a610-8717ee1b1000\"\r\n  }\r\n}",
+        "title": "删除安全审计日志导出任务"
+      }
+    ],
     "DescribeAllUserContact": [
       {
         "document": "",
@@ -54,6 +70,22 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBSpaceStatus\n&InstanceId=cdb-test\n&RangeDays=5\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n               \"Remain\": 23224,\r\n               \"RequestId\": \"78cf7bb1-0608-11ea-a9ef-2736f0f7f829\",\r\n               \"Growth\": 231,\r\n               \"Total\": 50000,\r\n               \"AvailableDays\": 35\r\n\t}\r\n}",
         "title": "获取指定时间段内的实例空间使用概览"
+      }
+    ],
+    "DescribeSecurityAuditLogDownloadUrls": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSecurityAuditLogDownloadUrls\n&SecAuditGroupId=sag-01z37k3f\n&Product=mysql\n&AsyncRequestId=1\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"6ad536b0-5ee2-11eb-bc9a-9357e9eb1000\",\r\n\t\t\"Urls\": [\"https://xxx\"]\r\n\t}\r\n}",
+        "title": "查询安全审计日志导出文件下载链接"
+      }
+    ],
+    "DescribeSecurityAuditLogExportTasks": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSecurityAuditLogExportTasks\n&SecAuditGroupId=sag-01z37k3f\n&Product=mysql\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Tasks\": [{\r\n            \"Status\": \"finished\",\r\n            \"LogStartTime\": \"2021-01-21 00:00:00\",\r\n            \"Progress\": 100,\r\n            \"AsyncRequestId\": 1,\r\n            \"DangerLevels\": [1, 2, 3],\r\n            \"EndTime\": \"2021-01-22 08:39:22\",\r\n            \"CreateTime\": \"2021-01-22 08:39:21\",\r\n            \"StartTime\": \"2021-01-22 08:39:22\",\r\n            \"LogEndTime\": \"2021-01-21 23:59:59\",\r\n            \"TotalSize\": 1\r\n        }],\r\n        \"RequestId\": \"5fdab910-5c9e-11eb-a610-8717ee1b1000\"\r\n    }\r\n}",
+        "title": "查询安全审计日志导出任务列表"
       }
     ],
     "DescribeSlowLogTimeSeriesStats": [

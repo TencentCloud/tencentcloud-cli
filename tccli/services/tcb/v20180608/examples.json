@@ -100,7 +100,7 @@
       {
         "document": "通过环境id,获得云托管代码上传url, 用来上传代码",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseBuildService\n&EnvId=cdnheader-v2a\n&ServiceName=nginx-test\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xx\", \r\n        \"UploadHeaders\": [\r\n            {\r\n                \"Value\": \"xx\", \r\n                \"Key\": \"xx\"\r\n            }\r\n        ], \r\n        \"PackageVersion\": \"xx\", \r\n        \"PackageName\": \"xx\", \r\n        \"UploadUrl\": \"xx\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"DownloadHeaders\": [\r\n            {\r\n                \"Value\": \"xx\", \r\n                \"Key\": \"xx\"\r\n            }\r\n        ], \r\n        \"UploadHeaders\": [\r\n            {\r\n                \"Value\": \"xx\", \r\n                \"Key\": \"xx\"\r\n            }\r\n        ], \r\n        \"UploadUrl\": \"xx\", \r\n        \"DownloadUrl\": \"xx\", \r\n        \"RequestId\": \"xx\", \r\n        \"PackageVersion\": \"xx\", \r\n        \"PackageName\": \"xx\"\r\n    }\r\n}",
         "title": "获取云托管代码上传url"
       }
     ],

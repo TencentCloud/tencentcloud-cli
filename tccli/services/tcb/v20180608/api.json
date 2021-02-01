@@ -75,7 +75,7 @@
     "DescribeCloudBaseBuildService": {
       "document": "获取云托管代码上传url",
       "input": "DescribeCloudBaseBuildServiceRequest",
-      "name": "获取云托管代码上传url",
+      "name": "获取云托管代码上传和下载url",
       "output": "DescribeCloudBaseBuildServiceResponse"
     },
     "DescribeCloudBaseProjectLatestVersionList": {
@@ -319,6 +319,32 @@
         }
       ],
       "type": "object"
+    },
+    "CloudBaseCapabilities": {
+      "document": "cloudrun安全特性能力\n\n",
+      "members": [
+        {
+          "default": "",
+          "document": "启用安全能力项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "net-admin",
+          "member": "string",
+          "name": "Add",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "禁用安全能力向列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "net-admin",
+          "member": "string",
+          "name": "Drop",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CloudBaseCodeRepoDetail": {
       "document": "代码仓库里 Repo的信息描述",
@@ -732,6 +758,7 @@
         {
           "default": "",
           "document": "NFS挂载Server",
+          "example": "test",
           "member": "string",
           "name": "Server",
           "required": false,
@@ -741,6 +768,7 @@
         {
           "default": "",
           "document": "Server路径",
+          "example": "test",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -750,8 +778,29 @@
         {
           "default": "",
           "document": "是否只读",
+          "example": "false",
           "member": "bool",
           "name": "ReadOnly",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "secret名称",
+          "example": "test",
+          "member": "string",
+          "name": "SecretName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "临时目录",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableEmptyDirVolume",
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -765,6 +814,7 @@
         {
           "default": "",
           "document": "容器镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ContainerImage",
           "required": false,
@@ -774,6 +824,7 @@
         {
           "default": "",
           "document": "容器端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
           "member": "int64",
           "name": "ContainerPort",
           "required": false,
@@ -783,6 +834,7 @@
         {
           "default": "",
           "document": "容器的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
           "member": "string",
           "name": "ContainerName",
           "required": false,
@@ -792,6 +844,7 @@
         {
           "default": "",
           "document": "kv的json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "EnvVar",
           "required": false,
@@ -801,6 +854,7 @@
         {
           "default": "",
           "document": "InitialDelaySeconds 延迟多长时间启动健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "InitialDelaySeconds",
           "required": false,
@@ -810,6 +864,7 @@
         {
           "default": "",
           "document": "CPU大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "Cpu",
           "required": false,
@@ -819,10 +874,21 @@
         {
           "default": "",
           "document": "内存大小（单位：M）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4096",
           "member": "int64",
           "name": "Mem",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseSecurityContext",
+          "name": "Security",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -834,6 +900,7 @@
         {
           "default": "",
           "document": "资源名",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -843,6 +910,7 @@
         {
           "default": "",
           "document": "挂载路径",
+          "example": "test",
           "member": "string",
           "name": "MountPath",
           "required": false,
@@ -852,6 +920,7 @@
         {
           "default": "",
           "document": "是否只读",
+          "example": "true",
           "member": "bool",
           "name": "ReadOnly",
           "required": false,
@@ -861,6 +930,7 @@
         {
           "default": "",
           "document": "Nfs挂载信息",
+          "example": "无",
           "member": "CloudBaseRunNfsVolumeSource",
           "name": "NfsVolumes",
           "required": false,
@@ -971,6 +1041,22 @@
         }
       ],
       "usage": "out"
+    },
+    "CloudBaseSecurityContext": {
+      "document": "cloudrun安全特性\n\n",
+      "members": [
+        {
+          "default": "",
+          "document": "安全特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Add\":\"net-admin\"}",
+          "member": "CloudBaseCapabilities",
+          "name": "Capabilities",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CloudRunServiceSimpleVersionSnapshot": {
       "document": "CloudRunServiceSimpleVersionSnapshot 信息",
@@ -1873,6 +1959,15 @@
           "name": "SidecarSpecs",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全特性",
+          "example": "无",
+          "member": "CloudBaseSecurityContext",
+          "name": "Security",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1885,6 +1980,7 @@
           "example": "succ",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1893,6 +1989,7 @@
           "example": "test",
           "member": "string",
           "name": "VersionName",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2232,6 +2329,7 @@
         {
           "default": "",
           "document": "环境id",
+          "example": "xx",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -2240,6 +2338,7 @@
         {
           "default": "",
           "document": "服务名",
+          "example": "xx",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -2248,8 +2347,18 @@
         {
           "default": "",
           "document": "build类型,枚举值有: cloudbaserun, framework-ci",
+          "example": "xx",
           "member": "string",
           "name": "CIBusiness",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务版本",
+          "example": "xx",
+          "member": "string",
+          "name": "ServiceVersion",
           "required": false,
           "type": "string"
         }
@@ -2261,31 +2370,57 @@
       "members": [
         {
           "document": "上传url",
+          "example": "xxx",
           "member": "string",
           "name": "UploadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "heder",
+          "document": "上传heder",
+          "example": "xxx",
           "member": "KVPair",
           "name": "UploadHeaders",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "包名",
+          "example": "xxx",
           "member": "string",
           "name": "PackageName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "包版本",
+          "example": "xxx",
           "member": "string",
           "name": "PackageVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "下载Httpheader\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "KVPair",
+          "name": "DownloadHeaders",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

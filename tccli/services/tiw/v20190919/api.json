@@ -1538,7 +1538,7 @@
         },
         {
           "default": "",
-          "document": "用于录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。\n该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。",
+          "document": "用于录制服务进房的用户ID，最大长度不能大于60个字节，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。\n该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。",
           "example": "tic_record_user_880528_1258",
           "member": "string",
           "name": "RecordUserId",
@@ -1683,6 +1683,7 @@
         {
           "default": "",
           "document": "客户的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -1691,6 +1692,7 @@
         {
           "default": "",
           "document": "需要推流白板的房间号，取值范围: (1, 4294967295)",
+          "example": "12345",
           "member": "int64",
           "name": "RoomId",
           "required": true,
@@ -1698,7 +1700,8 @@
         },
         {
           "default": "",
-          "document": "用于白板推流服务进房进行推流的用户ID，\n该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。",
+          "document": "用于白板推流服务进房进行推流的用户ID，最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。",
+          "example": "tic_push_12345_xxx",
           "member": "string",
           "name": "PushUserId",
           "required": true,
@@ -1707,6 +1710,7 @@
         {
           "default": "",
           "document": "与PushUserId对应的签名",
+          "example": "eJwtjb0OgjAAhN*lK4a0tcVC4iDGkIg-g7K4NEiLViLUUsFgfHcRmS733eXuDY6b",
           "member": "string",
           "name": "PushUserSig",
           "required": true,
@@ -1715,6 +1719,7 @@
         {
           "default": "",
           "document": "白板参数，例如白板宽高、背景颜色等",
+          "example": "无",
           "member": "Whiteboard",
           "name": "Whiteboard",
           "required": false,
@@ -1723,6 +1728,7 @@
         {
           "default": "",
           "document": "自动停止推流超时时间，单位秒，取值范围[300, 259200], 默认值为1800秒。\n\n当白板超过设定时间没有操作的时候，白板推流服务会自动停止白板推流。",
+          "example": "300",
           "member": "int64",
           "name": "AutoStopTimeout",
           "required": false,
@@ -1731,6 +1737,7 @@
         {
           "default": "",
           "document": "对主白板推流任务进行操作时，是否同时同步操作备份任务",
+          "example": "false",
           "member": "bool",
           "name": "AutoManageBackup",
           "required": false,
@@ -1739,6 +1746,7 @@
         {
           "default": "",
           "document": "备份白板推流相关参数。\n\n指定了备份参数的情况下，白板推流服务会在房间内新增一路白板画面视频流，即同一个房间内会有两路白板画面推流。",
+          "example": "无",
           "member": "WhiteboardPushBackupParam",
           "name": "Backup",
           "required": false,
@@ -1747,6 +1755,7 @@
         {
           "default": "",
           "document": "在实时音视频云端录制模式选择为 `指定用户录制` 模式的时候是否自动录制白板推流。\n\n默认在实时音视频的云端录制模式选择为 `指定用户录制` 模式的情况下，不会自动进行白板推流录制，如果希望进行白板推流录制，请将此参数设置为true。\n\n如果实时音视频的云端录制模式选择为 `全局自动录制` 模式，可忽略此参数。",
+          "example": "false",
           "member": "bool",
           "name": "AutoRecord",
           "required": false,
@@ -1755,6 +1764,7 @@
         {
           "default": "",
           "document": "内部参数，不需要关注此参数",
+          "example": "无",
           "member": "string",
           "name": "ExtraData",
           "required": false,
@@ -1768,15 +1778,19 @@
       "members": [
         {
           "document": "推流任务Id",
+          "example": "0c69baivvc3lp8t4f80b",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "备份任务结果参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Backup",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
