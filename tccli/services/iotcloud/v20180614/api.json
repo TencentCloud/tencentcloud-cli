@@ -1674,6 +1674,14 @@
           "name": "DeviceName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备是否启用，0禁用状态1启用状态，默认不区分",
+          "member": "uint64",
+          "name": "EnableState",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

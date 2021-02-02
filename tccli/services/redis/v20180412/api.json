@@ -4589,6 +4589,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户端最大连接数可设置的最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ClientLimitMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户端最大连接数可设置的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ClientLimitMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的节点详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RedisNodeInfo",
+          "name": "NodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所在的地域信息，比如ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

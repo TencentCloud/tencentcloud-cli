@@ -16,36 +16,54 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "RequestId": "xx",
         "Devices": [
             {
+                "EnableState": 1,
+                "LastOfflineTime": 1,
+                "Version": "xx",
+                "CertState": 1,
+                "Online": 1,
+                "FirmwareUpdateTime": 1,
+                "DeviceName": "xx",
                 "Tags": [
                     {
-                        "Tag": "category",
-                        "Type": 2,
-                        "Value": "hello"
+                        "Tag": "xx",
+                        "Type": 1,
+                        "Name": "xx",
+                        "Value": "xx"
                     },
                     {
-                        "Tag": "note",
-                        "Type": 2,
-                        "Value": ""
+                        "Tag": "xx",
+                        "Type": 1,
+                        "Name": "xx",
+                        "Value": "xx"
                     }
                 ],
-                "DeviceName": "test",
-                "DeviceCert": "",
-                "Online": 0,
-                "ConnIP": 0,
-                "LoginTime": 0,
-                "Version": "1.0.0",
-                "LastUpdateTime": 0,
-                "DevicePsk": "",
-                "DeviceType": 0,
-                "Imei": "",
-                "Isp": 0,
-                "NbiotDeviceID": ""
+                "LogLevel": 1,
+                "FirstOnlineTime": 1,
+                "DeviceCert": "xx",
+                "Imei": "xx",
+                "ClientIP": "xx",
+                "DevicePsk": "xx",
+                "Isp": 1,
+                "NbiotDeviceID": "xx",
+                "LoraDevEui": "xx",
+                "DeviceType": 1,
+                "LoginTime": 1,
+                "ConnIP": 1,
+                "LastUpdateTime": 1,
+                "Labels": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "CreateTime": 1,
+                "LoraMoteType": 1
             }
-        ],
-        "TotalCount": 1,
-        "RequestId": "c81cf0fd-18bd-4f7a-845e-4f852645de2b"
+        ]
     }
 }
 ```

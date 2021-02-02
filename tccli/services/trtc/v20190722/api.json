@@ -1310,6 +1310,7 @@
         {
           "default": "",
           "document": "混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板;4为自定义模板。",
+          "example": "0",
           "member": "uint64",
           "name": "Template",
           "required": false,
@@ -1319,6 +1320,7 @@
         {
           "default": "",
           "document": "屏幕分享模板、悬浮模板、画中画模板中有效，代表大画面对应的用户ID。",
+          "example": "\"main_video_user\"",
           "member": "string",
           "name": "MainVideoUserId",
           "required": false,
@@ -1328,6 +1330,7 @@
         {
           "default": "",
           "document": "屏幕分享模板、悬浮模板、画中画模板中有效，代表大画面对应的流类型，0为摄像头，1为屏幕分享。左侧大画面为web用户时此值填0。",
+          "example": "0",
           "member": "uint64",
           "name": "MainVideoStreamType",
           "required": false,
@@ -1337,6 +1340,7 @@
         {
           "default": "",
           "document": "画中画模板中有效，代表小画面的布局参数。",
+          "example": "SmallVideoLayoutParams",
           "member": "SmallVideoLayoutParams",
           "name": "SmallVideoLayoutParams",
           "required": false,
@@ -1346,6 +1350,7 @@
         {
           "default": "",
           "document": "屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "MainVideoRightAlign",
           "required": false,
@@ -1355,6 +1360,7 @@
         {
           "default": "",
           "document": "悬浮模板、九宫格、屏幕分享模板有效。设置此参数后，输出流混合此参数中包含用户的音视频，以及其他用户的纯音频。最多可设置16个用户。",
+          "example": "[\"1234\",\"5678\"]",
           "member": "string",
           "name": "MixVideoUids",
           "required": false,
@@ -1364,6 +1370,7 @@
         {
           "default": "",
           "document": "自定义模板中有效，指定用户视频在混合画面中的位置。",
+          "example": "PresetLayoutConfig",
           "member": "PresetLayoutConfig",
           "name": "PresetLayoutConfig",
           "required": false,
@@ -1373,8 +1380,19 @@
         {
           "default": "",
           "document": "自定义模板中有效，设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。",
+          "example": "0",
           "member": "uint64",
           "name": "PlaceHolderMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "悬浮模板、九宫格、屏幕分享模板生效，用于控制纯音频上行是否占用画面布局位置。设置为0是代表后台默认处理方式，悬浮小画面占布局位置，九宫格画面占布局位置、屏幕分享小画面不占布局位置；设置为1时代表纯音频上行占布局位置；设置为2时代表纯音频上行不占布局位置。默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PureAudioHoldPlaceMode",
           "required": false,
           "type": "int",
           "value_allowed_null": false

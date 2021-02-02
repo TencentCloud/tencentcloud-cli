@@ -10683,6 +10683,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "\"cdb-xxx\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10690,7 +10691,8 @@
         },
         {
           "default": "",
-          "document": "模板从实例。可选值：\"first\" - 第一备机；\"second\" - 第二备机。默认值为 \"first\"，仅多可用区实例支持设置为 \"second\"。",
+          "document": "目标从实例。可选值：\"first\" - 第一备机；\"second\" - 第二备机。默认值为 \"first\"，仅多可用区实例支持设置为 \"second\"。",
+          "example": "\"first\"",
           "member": "string",
           "name": "DstSlave",
           "required": false,
@@ -10699,6 +10701,7 @@
         {
           "default": "",
           "document": "是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。",
+          "example": "false",
           "member": "bool",
           "name": "ForceSwitch",
           "required": false,
@@ -10707,6 +10710,7 @@
         {
           "default": "",
           "document": "是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。",
+          "example": "false",
           "member": "bool",
           "name": "WaitSwitch",
           "required": false,
@@ -10720,8 +10724,10 @@
       "members": [
         {
           "document": "异步任务 ID。",
+          "example": "\"\"",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

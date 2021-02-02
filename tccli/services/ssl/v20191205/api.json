@@ -42,6 +42,12 @@
       "name": "删除证书",
       "output": "DeleteCertificateResponse"
     },
+    "DeleteManager": {
+      "document": "删除管理人",
+      "input": "DeleteManagerRequest",
+      "name": "删除管理人",
+      "output": "DeleteManagerResponse"
+    },
     "DescribeCertificate": {
       "document": "本接口（DescribeCertificate）用于获取证书信息。",
       "input": "DescribeCertificateRequest",
@@ -65,6 +71,18 @@
       "input": "DescribeCertificatesRequest",
       "name": "获取证书列表",
       "output": "DescribeCertificatesResponse"
+    },
+    "DescribeManagerDetail": {
+      "document": "查询管理人详情",
+      "input": "DescribeManagerDetailRequest",
+      "name": "查询管理人详情",
+      "output": "DescribeManagerDetailResponse"
+    },
+    "DescribeManagers": {
+      "document": "查询管理人列表",
+      "input": "DescribeManagersRequest",
+      "name": "查询管理人列表",
+      "output": "DescribeManagersResponse"
     },
     "DownloadCertificate": {
       "document": "本接口（DownloadCertificate）用于下载证书。",
@@ -96,6 +114,12 @@
       "name": "吊销证书",
       "output": "RevokeCertificateResponse"
     },
+    "SubmitAuditManager": {
+      "document": "重新提交审核管理人",
+      "input": "SubmitAuditManagerRequest",
+      "name": "重新提交审核管理人",
+      "output": "SubmitAuditManagerResponse"
+    },
     "SubmitCertificateInformation": {
       "document": "提交证书资料。输入参数信息可以分多次提交，但提交的证书资料应最低限度保持完整。",
       "input": "SubmitCertificateInformationRequest",
@@ -119,6 +143,12 @@
       "input": "UploadRevokeLetterRequest",
       "name": "上传证书吊销确认函",
       "output": "UploadRevokeLetterResponse"
+    },
+    "VerifyManager": {
+      "document": "重新核验管理人",
+      "input": "VerifyManagerRequest",
+      "name": "重新核验管理人",
+      "output": "VerifyManagerResponse"
     }
   },
   "metadata": {
@@ -739,6 +769,75 @@
       ],
       "type": "object"
     },
+    "CompanyInfo": {
+      "document": "公司信息",
+      "members": [
+        {
+          "default": "",
+          "document": "公司名称",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司ID",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司所在国家",
+          "member": "string",
+          "name": "CompanyCountry",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司所在省份",
+          "member": "string",
+          "name": "CompanyProvince",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司所在城市",
+          "member": "string",
+          "name": "CompanyCity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司所在详细地址",
+          "member": "string",
+          "name": "CompanyAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司电话",
+          "member": "string",
+          "name": "CompanyPhone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CompleteCertificateRequest": {
       "document": "CompleteCertificate请求参数结构体",
       "members": [
@@ -850,6 +949,39 @@
           "member": "bool",
           "name": "DeleteResult",
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteManagerRequest": {
+      "document": "DeleteManager请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "管理人ID",
+          "member": "int64",
+          "name": "ManagerId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteManagerResponse": {
+      "document": "DeleteManager返回参数结构体",
+      "members": [
+        {
+          "document": "管理人ID",
+          "member": "int64",
+          "name": "ManagerId",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1688,6 +1820,303 @@
       ],
       "type": "object"
     },
+    "DescribeManagerDetailRequest": {
+      "document": "DescribeManagerDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "管理人ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ManagerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页每页数量",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeManagerDetailResponse": {
+      "document": "DescribeManagerDetail返回参数结构体",
+      "members": [
+        {
+          "document": "状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerFirstName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人邮箱",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerMail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "联系人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ContactFirstName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerLastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "联系人职位",
+          "example": "无",
+          "member": "string",
+          "name": "ContactPosition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人职位",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerPosition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核验通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核验过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "联系人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ContactLastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人电话",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerPhone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "联系人电话",
+          "example": "无",
+          "member": "string",
+          "name": "ContactPhone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "联系人邮箱",
+          "example": "无",
+          "member": "string",
+          "name": "ContactMail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人所属部门",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerDepartment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人所属公司信息",
+          "example": "无",
+          "member": "CompanyInfo",
+          "name": "CompanyInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人公司ID",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理人ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ManagerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeManagersRequest": {
+      "document": "DescribeManagers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "公司ID",
+          "example": "12",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页每页数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "管理人姓名",
+          "example": "腾讯",
+          "member": "string",
+          "name": "ManagerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模糊查询管理人邮箱",
+          "example": "tencent@tencent.com",
+          "member": "string",
+          "name": "ManagerMail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据管理人状态进行筛选，取值有\n'none' 未提交审核\n'audit', 亚信审核中\n'CAaudit' CA审核中\n'ok' 已审核\n'invalid'  审核失败\n'expiring'  即将过期\n'expired' 已过期",
+          "example": "audit",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeManagersResponse": {
+      "document": "DescribeManagers返回参数结构体",
+      "members": [
+        {
+          "document": "公司管理人列表",
+          "example": "无",
+          "member": "ManagerInfo",
+          "name": "Managers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公司管理人总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DownloadCertificateRequest": {
       "document": "DownloadCertificate请求参数结构体",
       "members": [
@@ -1841,6 +2270,152 @@
           "document": "DV 认证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DvAuthVerifyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ManagerInfo": {
+      "document": "管理人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerFirstName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerLastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理人职位",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerPosition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理人电话",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerPhone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理人邮箱",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerMail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理人所属部门",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerDepartment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管理人域名数量",
+          "example": "无",
+          "member": "int64",
+          "name": "DomainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理人证书数量",
+          "example": "无",
+          "member": "int64",
+          "name": "CertCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理人ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ManagerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核有效到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近一次提交审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubmitAuditTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审核通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2176,6 +2751,39 @@
         }
       ],
       "usage": "out"
+    },
+    "SubmitAuditManagerRequest": {
+      "document": "SubmitAuditManager请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "管理人ID",
+          "member": "int64",
+          "name": "ManagerId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitAuditManagerResponse": {
+      "document": "SubmitAuditManager返回参数结构体",
+      "members": [
+        {
+          "document": "管理人ID",
+          "member": "int64",
+          "name": "ManagerId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubmitCertificateInformationRequest": {
       "document": "SubmitCertificateInformation请求参数结构体",
@@ -2671,6 +3279,7 @@
         {
           "default": "",
           "document": "证书内容。",
+          "example": "无",
           "member": "string",
           "name": "CertificatePublicKey",
           "required": true,
@@ -2679,6 +3288,7 @@
         {
           "default": "",
           "document": "私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。",
+          "example": "无",
           "member": "string",
           "name": "CertificatePrivateKey",
           "required": false,
@@ -2687,6 +3297,7 @@
         {
           "default": "",
           "document": "证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。",
+          "example": "无",
           "member": "string",
           "name": "CertificateType",
           "required": false,
@@ -2695,6 +3306,7 @@
         {
           "default": "",
           "document": "备注名称。",
+          "example": "无",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -2703,10 +3315,20 @@
         {
           "default": "",
           "document": "项目 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateUse",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2716,8 +3338,10 @@
       "members": [
         {
           "document": "证书 ID。",
+          "example": "无",
           "member": "string",
           "name": "CertificateId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2815,6 +3439,39 @@
           "member": "bool",
           "name": "IsSuccess",
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyManagerRequest": {
+      "document": "VerifyManager请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "管理人ID",
+          "member": "int64",
+          "name": "ManagerId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyManagerResponse": {
+      "document": "VerifyManager返回参数结构体",
+      "members": [
+        {
+          "document": "管理人ID",
+          "member": "int64",
+          "name": "ManagerId",
+          "type": "int",
           "value_allowed_null": false
         },
         {

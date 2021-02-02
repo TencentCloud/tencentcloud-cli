@@ -9,7 +9,7 @@ tccli gse CopyFleet --cli-unfold-argument  \
     --FleetId fleet-qp3g3caa-2m6pzf4g \
     --AssetId asset-qrdiw1a9 \
     --Description 'Human description' \
-    --InstanceType S5.SMALL2 \
+    --InstanceType S5.LARGE8 \
     --FleetType ON_DEMAND \
     --Name testfleet \
     --NewGameServerSessionProtectionPolicy TimeLimitProtection \
@@ -25,7 +25,12 @@ tccli gse CopyFleet --cli-unfold-argument  \
     --InboundPermissions.0.ToPort 2900 \
     --SelectedScalingType SCALING_UNSELECTED \
     --SelectedCcnType CCN_UNSELECTED \
-    --CopyNumber 1
+    --SelectedTimerType TIMER_UNSELECTED \
+    --CopyNumber 1 \
+    --DataDiskInfo.0.DiskType CLOUD_PREMIUM \
+    --DataDiskInfo.0.DiskSize 50 \
+    --SystemDiskInfo.DiskType CLOUD_PREMIUM \
+    --SystemDiskInfo.DiskSize 50
 ```
 
 Output: 
@@ -52,7 +57,17 @@ Output:
                 },
                 "Status": "NEW",
                 "StoppedActions": [],
-                "TerminationTime": null
+                "TerminationTime": null,
+                "DataDiskInfo": [
+                    {
+                        "DiskType": "CLOUD_PREMIUM",
+                        "DiskSize": 50
+                    }
+                ],
+                "SystemDiskInfo": {
+                    "DiskType": "CLOUD_PREMIUM",
+                    "DiskSize": 50
+                }
             }
         ],
         "RequestId": "s1605672063311364390",

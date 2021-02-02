@@ -1,9 +1,9 @@
 {
   "actions": {
     "AddLoginWhiteList": {
-      "document": "本接口（AddLoginWhiteList）用于添加白名单规则",
+      "document": "本接口用于新增异地登录白名单规则。",
       "input": "AddLoginWhiteListRequest",
-      "name": "新增白名单规则",
+      "name": "新增异地登录白名单规则",
       "output": "AddLoginWhiteListResponse"
     },
     "AddMachineTag": {
@@ -67,9 +67,9 @@
       "output": "DeleteBruteAttacksResponse"
     },
     "DeleteLoginWhiteList": {
-      "document": "删除白名单规则",
+      "document": "本接口用于删除异地登录白名单规则。",
       "input": "DeleteLoginWhiteListRequest",
-      "name": "删除白名单规则",
+      "name": "删除异地登录白名单规则",
       "output": "DeleteLoginWhiteListResponse"
     },
     "DeleteMachine": {
@@ -553,9 +553,9 @@
       "output": "ModifyAutoOpenProVersionConfigResponse"
     },
     "ModifyLoginWhiteList": {
-      "document": "编辑白名单规则",
+      "document": "本接口用于编辑异地登录白名单规则。",
       "input": "ModifyLoginWhiteListRequest",
-      "name": "编辑白名单规则",
+      "name": "编辑异地登录白名单规则",
       "output": "ModifyLoginWhiteListResponse"
     },
     "ModifyMalwareTimingScanSettings": {
@@ -767,6 +767,7 @@
         {
           "default": "",
           "document": "白名单规则",
+          "example": "{}",
           "member": "LoginWhiteListsRule",
           "name": "Rules",
           "required": true,
@@ -1923,6 +1924,7 @@
         {
           "default": "",
           "document": "白名单ID",
+          "example": "[]",
           "member": "uint64",
           "name": "Ids",
           "required": true,
@@ -7375,6 +7377,7 @@
         {
           "default": "",
           "document": "白名单规则",
+          "example": "xxx",
           "member": "LoginWhiteListsRule",
           "name": "Rules",
           "required": true,

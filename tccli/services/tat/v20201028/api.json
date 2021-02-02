@@ -1,0 +1,1251 @@
+{
+  "actions": {
+    "CreateCommand": {
+      "document": "此接口用于创建命令。",
+      "input": "CreateCommandRequest",
+      "name": "创建命令",
+      "output": "CreateCommandResponse"
+    },
+    "DeleteCommand": {
+      "document": "此接口用于删除命令。",
+      "input": "DeleteCommandRequest",
+      "name": "删除命令",
+      "output": "DeleteCommandResponse"
+    },
+    "DescribeAutomationAgentStatus": {
+      "document": "此接口用于查询自动化助手客户端的状态。",
+      "input": "DescribeAutomationAgentStatusRequest",
+      "name": "查询客户端状态",
+      "output": "DescribeAutomationAgentStatusResponse"
+    },
+    "DescribeCommands": {
+      "document": "此接口用于查询命令详情。",
+      "input": "DescribeCommandsRequest",
+      "name": "查询命令详情",
+      "output": "DescribeCommandsResponse"
+    },
+    "DescribeInvocationTasks": {
+      "document": "此接口用于查询执行任务详情。",
+      "input": "DescribeInvocationTasksRequest",
+      "name": "查询执行任务",
+      "output": "DescribeInvocationTasksResponse"
+    },
+    "DescribeInvocations": {
+      "document": "此接口用于查询执行活动详情。",
+      "input": "DescribeInvocationsRequest",
+      "name": "查询执行活动",
+      "output": "DescribeInvocationsResponse"
+    },
+    "DescribeRegions": {
+      "document": "此接口用于查询地域列表",
+      "input": "DescribeRegionsRequest",
+      "name": "查询地域列表",
+      "output": "DescribeRegionsResponse"
+    },
+    "InvokeCommand": {
+      "document": "在指定的实例上触发命令，调用成功返回执行活动ID（inv-xxxxxxxx），每个执行活动内部有一个或多个执行任务（invt-xxxxxxxx），每个执行任务代表命令在一台 CVM 或一台 Lighthouse 上的执行记录。\n\n* 如果指定实例未安装 agent，或 agent 不在线，返回失败\n* 如果命令类型与 agent 运行环境不符，返回失败\n* 指定的实例需要处于 VPC 网络\n* 指定的实例需要处于 RUNNING 状态\n* 不可同时指定 CVM 和 Lighthouse",
+      "input": "InvokeCommandRequest",
+      "name": "触发命令",
+      "output": "InvokeCommandResponse"
+    },
+    "ModifyCommand": {
+      "document": "此接口用于修改命令。",
+      "input": "ModifyCommandRequest",
+      "name": "修改命令",
+      "output": "ModifyCommandResponse"
+    },
+    "RunCommand": {
+      "document": "执行命令，调用成功返回执行活动ID（inv-xxxxxxxx），每个执行活动内部有一个或多个执行任务（invt-xxxxxxxx），每个执行任务代表命令在一台 CVM 或一台 Lighthouse 上的执行记录。\n\n* 如果指定实例未安装 agent，或 agent 不在线，返回失败\n* 如果命令类型与 agent 运行环境不符，返回失败\n* 指定的实例需要处于 VPC 网络\n* 指定的实例需要处于 `RUNNING` 状态\n* 不可同时指定 CVM 和 Lighthouse",
+      "input": "RunCommandRequest",
+      "name": "执行命令",
+      "output": "RunCommandResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-10-28",
+    "api_brief": "介绍腾讯云自动化助手的API，例如使用API创建命令，触发命令，查询指令执行结果等。",
+    "serviceNameCN": "腾讯云自动化助手",
+    "serviceShortName": "tat"
+  },
+  "objects": {
+    "AutomationAgentInfo": {
+      "document": "自动化助手客户端信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Agent 版本号。",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上次心跳时间",
+          "member": "datetime_iso",
+          "name": "LastHeartbeatTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Agent状态，取值范围：\n<li> Online：在线\n<li> Offline：离线",
+          "member": "string",
+          "name": "AgentStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Agent运行环境",
+          "member": "string",
+          "name": "Environment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Command": {
+      "document": "命令详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "命令ID。",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令名称。",
+          "member": "string",
+          "name": "CommandName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令描述。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Base64编码后的命令内容。",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令类型。",
+          "member": "string",
+          "name": "CommandType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行路径。",
+          "member": "string",
+          "name": "WorkingDirectory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令超时时间。",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令创建时间。",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令更新时间。",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CommandDocument": {
+      "document": "命令执行详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "Base64 编码后的执行命令。",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令类型。",
+          "member": "string",
+          "name": "CommandType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超时时间。",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行路径。",
+          "member": "string",
+          "name": "WorkingDirectory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateCommandRequest": {
+      "document": "CreateCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Base64编码后的命令内容，长度不可超过64KB。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令描述。不超过120字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令类型，目前仅支持取值：SHELL。默认：SHELL。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令执行路径，默认：/root。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkingDirectory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令超时时间，默认60秒。取值范围[1, 86400]。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCommandResponse": {
+      "document": "CreateCommand返回参数结构体",
+      "members": [
+        {
+          "document": "命令ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCommandRequest": {
+      "document": "DeleteCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的命令ID。",
+          "example": "cmd-7efujjs6",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCommandResponse": {
+      "document": "DeleteCommand返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutomationAgentStatusRequest": {
+      "document": "DescribeAutomationAgentStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询的实例ID列表。",
+          "example": "[\"lhins-ar5wyn4x\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。<br> <li> agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。<br> <li> environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux。<br> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutomationAgentStatusResponse": {
+      "document": "DescribeAutomationAgentStatus返回参数结构体",
+      "members": [
+        {
+          "document": "Agent 信息列表。",
+          "example": "无",
+          "member": "AutomationAgentInfo",
+          "name": "AutomationAgentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的 Agent 总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCommandsRequest": {
+      "document": "DescribeCommands请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命令ID列表，每次请求的上限为100。参数不支持同时指定 `CommandIds` 和 `Filters` 。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。<br> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。<br> <li> command-name - String - 是否必填：否 -（过滤条件）按照命令名称过滤。 <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `CommandIds` 和 `Filters` 。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCommandsResponse": {
+      "document": "DescribeCommands返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的命令总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命令详情列表。",
+          "example": "无",
+          "member": "Command",
+          "name": "CommandSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationTasksRequest": {
+      "document": "DescribeInvocationTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行任务ID列表，每次请求的上限为100。参数不支持同时指定 `InvocationTaskIds` 和 `Filters`。",
+          "example": "无",
+          "member": "string",
+          "name": "InvocationTaskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。<br> <li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。<br> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。<br> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否隐藏输出，取值范围：<br><li>True：隐藏输出 <br><li>False：不隐藏 <br>默认为 True。",
+          "example": "false",
+          "member": "bool",
+          "name": "HideOutput",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationTasksResponse": {
+      "document": "DescribeInvocationTasks返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的执行任务总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行任务列表。",
+          "example": "无",
+          "member": "InvocationTask",
+          "name": "InvocationTaskSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationsRequest": {
+      "document": "DescribeInvocations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行活动ID列表，每次请求的上限为100。参数不支持同时指定 `InvocationIds` 和 `Filters`。",
+          "example": "无",
+          "member": "string",
+          "name": "InvocationIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。<br> <li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。<br> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。 <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationIds` 和 `Filters` 。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationsResponse": {
+      "document": "DescribeInvocations返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的执行活动总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行活动列表。",
+          "example": "无",
+          "member": "Invocation",
+          "name": "InvocationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsRequest": {
+      "document": "DescribeRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRegionsResponse": {
+      "document": "DescribeRegions返回参数结构体",
+      "members": [
+        {
+          "document": "地域数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域信息列表",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州一区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
+      "members": [
+        {
+          "default": "",
+          "document": "需要过滤的字段。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Invocation": {
+      "document": "执行活动详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "执行活动ID。",
+          "member": "string",
+          "name": "InvocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令ID。",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行活动状态。",
+          "member": "string",
+          "name": "InvocationStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务信息列表。",
+          "member": "InvocationTaskBasicInfo",
+          "name": "InvocationTaskBasicInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行活动描述。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行活动开始时间。",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行活动结束时间。",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行活动创建时间。",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行活动更新时间。",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InvocationTask": {
+      "document": "执行任务。",
+      "members": [
+        {
+          "default": "",
+          "document": "执行活动ID。",
+          "member": "string",
+          "name": "InvocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务ID。",
+          "member": "string",
+          "name": "InvocationTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令ID。",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> DELIVERING：下发中\n<li> DELIVER_DELAYED：延时下发 \n<li> DELIVER_FAILED：下发失败\n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令失败\n<li> TIMEOUT：命令超时\n<li> TASK_TIMEOUT：执行任务超时",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行结果。",
+          "member": "TaskResult",
+          "name": "TaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务开始时间。",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务结束时间。",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间。",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务所执行的命令详情。",
+          "member": "CommandDocument",
+          "name": "CommandDocument",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InvocationTaskBasicInfo": {
+      "document": "执行活动任务简介。",
+      "members": [
+        {
+          "default": "",
+          "document": "执行任务ID。",
+          "member": "string",
+          "name": "InvocationTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> DELIVERING：下发中\n<li> DELIVER_DELAYED：延时下发 \n<li> DELIVER_FAILED：下发失败\n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令失败\n<li> TIMEOUT：命令超时\n<li> TASK_TIMEOUT：执行任务超时",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InvokeCommandRequest": {
+      "document": "InvokeCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待触发的命令ID。",
+          "example": "cmd-ffxdx79i",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待执行命令的实例ID列表。",
+          "example": "[\"lhins-ar5wyn40\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeCommandResponse": {
+      "document": "InvokeCommand返回参数结构体",
+      "members": [
+        {
+          "document": "执行活动ID。",
+          "example": "inv-8xgjrytm",
+          "member": "string",
+          "name": "InvocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCommandRequest": {
+      "document": "ModifyCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命令ID。",
+          "example": "cmd-7efujjs6",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令描述。不超过120字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Base64编码后的命令内容，长度不可超过64KB。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令类型，目前仅支持取值：SHELL。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令执行路径，默认：`/root`。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkingDirectory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令超时时间，默认60秒。取值范围[1, 86400]。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCommandResponse": {
+      "document": "ModifyCommand返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegionInfo": {
+      "document": "描述单个地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域名称，例如，ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域描述，例如: 广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域是否可用状态",
+          "member": "string",
+          "name": "RegionState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunCommandRequest": {
+      "document": "RunCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Base64编码后的命令内容，长度不可超过64KB。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待执行命令的实例ID列表。 支持实例类型：\n<li> CVM\n<li> LIGHTHOUSE",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令描述。不超过120字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令类型，目前仅支持取值：SHELL。默认：SHELL。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令执行路径，默认：/root。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkingDirectory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令超时时间，默认60秒。取值范围[1, 86400]。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否保存命令，取值范围：\n<li> True：保存\n<li> False：不保存\n默认为 False。",
+          "example": "无",
+          "member": "bool",
+          "name": "SaveCommand",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RunCommandResponse": {
+      "document": "RunCommand返回参数结构体",
+      "members": [
+        {
+          "document": "命令ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行活动ID。",
+          "example": "无",
+          "member": "string",
+          "name": "InvocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TaskResult": {
+      "document": "任务结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "命令执行ExitCode。",
+          "member": "int64",
+          "name": "ExitCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Base64编码后的命令输出。最大长度24KB。",
+          "member": "string",
+          "name": "Output",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行开始时间。",
+          "member": "datetime_iso",
+          "name": "ExecStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行结束时间。",
+          "member": "datetime_iso",
+          "name": "ExecEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

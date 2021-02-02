@@ -4459,9 +4459,37 @@
         {
           "default": "",
           "document": "包类型，可选值：\n0：流量包；\n1：转码包。\n2: 连麦包。",
+          "example": "1",
           "member": "int64",
           "name": "PackageType",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序规则:\n1. BuyTimeDesc： 最新购买的排在最前面\n2. BuyTimeAsc： 最老购买的排在最前面\n3. ExpireTimeDesc： 最后过期的排在最前面\n4. ExpireTimeAsc：最先过期的排在最前面\n\n注意：\n1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序",
+          "example": "BuyTime desc",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "取得第几页的数据，和 PageSize 同时传递才会生效。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，和 PageNum 同时传递才会生效。\n取值：10 ～ 100 之间的任意整数",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
           "type": "int"
         }
       ],
@@ -4472,15 +4500,55 @@
       "members": [
         {
           "document": "套餐包信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "LivePackageInfo",
           "name": "LivePackageInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "套餐包当前计费方式:\n-1: 无计费方式或获取失败\n0: 无计费方式\n201: 月结带宽\n202: 月结流量\n203: 日结带宽\n204: 日结流量\n205: 日结时长\n206: 月结时长\n304: 日结流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201",
           "member": "int64",
           "name": "PackageBillMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalPage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "95",
+          "member": "int64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前每页数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6170,6 +6238,22 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据，\n默认：查询国内+国外的数据。",
+          "member": "string",
+          "name": "MainlandOrOversea",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6261,6 +6345,14 @@
           "document": "推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。\n若不填，则为查询总体播放数据。\n注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。",
           "member": "string",
           "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。",
+          "member": "string",
+          "name": "ServiceName",
           "required": false,
           "type": "string"
         }

@@ -9,6 +9,8 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.ims.v20201229 import ims_client as ims_client_v20201229
+from tencentcloud.ims.v20201229 import models as models_v20201229
 from tencentcloud.ims.v20200713 import ims_client as ims_client_v20200713
 from tencentcloud.ims.v20200713 import models as models_v20200713
 
@@ -30,6 +32,31 @@ def doImageModeration(args, parsed_globals):
     model = models.ImageModerationRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ImageModeration(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doImageRecognition(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ImsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ImageRecognitionRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ImageRecognition(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -89,23 +116,27 @@ def doDescribeImageStat(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20201229": ims_client_v20201229,
     "v20200713": ims_client_v20200713,
 
 }
 
 MODELS_MAP = {
+    "v20201229": models_v20201229,
     "v20200713": models_v20200713,
 
 }
 
 ACTION_MAP = {
     "ImageModeration": doImageModeration,
+    "ImageRecognition": doImageRecognition,
     "DescribeImsList": doDescribeImsList,
     "DescribeImageStat": doDescribeImageStat,
 
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20201229",
     "v20200713",
 
 ]

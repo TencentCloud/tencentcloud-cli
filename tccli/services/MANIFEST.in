@@ -157,6 +157,8 @@ include tccli/services/ie/v20200304/api.json
 include tccli/services/ie/v20200304/examples.json
 include tccli/services/iir/v20200417/api.json
 include tccli/services/iir/v20200417/examples.json
+include tccli/services/ims/v20201229/api.json
+include tccli/services/ims/v20201229/examples.json
 include tccli/services/ims/v20200713/api.json
 include tccli/services/ims/v20200713/examples.json
 include tccli/services/iot/v20180123/api.json
@@ -251,6 +253,8 @@ include tccli/services/taf/v20200210/api.json
 include tccli/services/taf/v20200210/examples.json
 include tccli/services/tag/v20180813/api.json
 include tccli/services/tag/v20180813/examples.json
+include tccli/services/tat/v20201028/api.json
+include tccli/services/tat/v20201028/examples.json
 include tccli/services/tav/v20190118/api.json
 include tccli/services/tav/v20190118/examples.json
 include tccli/services/tbaas/v20180416/api.json

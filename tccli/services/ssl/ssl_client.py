@@ -13,56 +13,6 @@ from tencentcloud.ssl.v20191205 import ssl_client as ssl_client_v20191205
 from tencentcloud.ssl.v20191205 import models as models_v20191205
 
 
-def doDownloadCertificate(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DownloadCertificateRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DownloadCertificate(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeCertificateOperateLogs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCertificateOperateLogsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeCertificateOperateLogs(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeCertificates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -80,81 +30,6 @@ def doDescribeCertificates(args, parsed_globals):
     model = models.DescribeCertificatesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeCertificates(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeCertificate(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCertificateRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeCertificate(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateCertificate(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCertificateRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateCertificate(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSubmitCertificateInformation(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SubmitCertificateInformationRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.SubmitCertificateInformation(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -188,6 +63,31 @@ def doUploadRevokeLetter(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteManager(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteManagerRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteManager(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doUploadConfirmLetter(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -213,7 +113,7 @@ def doUploadConfirmLetter(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteCertificate(args, parsed_globals):
+def doSubmitAuditManager(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -227,9 +127,9 @@ def doDeleteCertificate(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteCertificateRequest()
+    model = models.SubmitAuditManagerRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteCertificate(model)
+    rsp = client.SubmitAuditManager(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -238,7 +138,7 @@ def doDeleteCertificate(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doApplyCertificate(args, parsed_globals):
+def doSubmitCertificateInformation(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,9 +152,9 @@ def doApplyCertificate(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplyCertificateRequest()
+    model = models.SubmitCertificateInformationRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ApplyCertificate(model)
+    rsp = client.SubmitCertificateInformation(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -263,7 +163,7 @@ def doApplyCertificate(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCompleteCertificate(args, parsed_globals):
+def doVerifyManager(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -277,84 +177,9 @@ def doCompleteCertificate(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CompleteCertificateRequest()
+    model = models.VerifyManagerRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CompleteCertificate(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeCertificateDetail(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCertificateDetailRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeCertificateDetail(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCommitCertificateInformation(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CommitCertificateInformationRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CommitCertificateInformation(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doReplaceCertificate(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReplaceCertificateRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ReplaceCertificate(model)
+    rsp = client.VerifyManager(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -388,7 +213,7 @@ def doCancelCertificateOrder(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRevokeCertificate(args, parsed_globals):
+def doDownloadCertificate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -402,9 +227,9 @@ def doRevokeCertificate(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RevokeCertificateRequest()
+    model = models.DownloadCertificateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RevokeCertificate(model)
+    rsp = client.DownloadCertificate(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -413,7 +238,7 @@ def doRevokeCertificate(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCertificateAlias(args, parsed_globals):
+def doDeleteCertificate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -427,9 +252,9 @@ def doModifyCertificateAlias(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCertificateAliasRequest()
+    model = models.DeleteCertificateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyCertificateAlias(model)
+    rsp = client.DeleteCertificate(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -438,7 +263,7 @@ def doModifyCertificateAlias(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCheckCertificateChain(args, parsed_globals):
+def doCompleteCertificate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -452,34 +277,9 @@ def doCheckCertificateChain(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckCertificateChainRequest()
+    model = models.CompleteCertificateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CheckCertificateChain(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyCertificateProject(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCertificateProjectRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyCertificateProject(model)
+    rsp = client.CompleteCertificate(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -513,6 +313,331 @@ def doUploadCertificate(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCheckCertificateChain(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CheckCertificateChainRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CheckCertificateChain(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCertificate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCertificateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCertificate(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCertificateDetail(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCertificateDetailRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCertificateDetail(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeManagerDetail(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeManagerDetailRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeManagerDetail(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCertificateProject(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCertificateProjectRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyCertificateProject(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCertificateAlias(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCertificateAliasRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyCertificateAlias(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCertificate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCertificateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateCertificate(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCommitCertificateInformation(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CommitCertificateInformationRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CommitCertificateInformation(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCertificateOperateLogs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCertificateOperateLogsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCertificateOperateLogs(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReplaceCertificate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReplaceCertificateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ReplaceCertificate(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doApplyCertificate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ApplyCertificateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ApplyCertificate(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRevokeCertificate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RevokeCertificateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RevokeCertificate(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeManagers(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeManagersRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeManagers(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20191205": ssl_client_v20191205,
 
@@ -524,26 +649,31 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DownloadCertificate": doDownloadCertificate,
-    "DescribeCertificateOperateLogs": doDescribeCertificateOperateLogs,
     "DescribeCertificates": doDescribeCertificates,
-    "DescribeCertificate": doDescribeCertificate,
-    "CreateCertificate": doCreateCertificate,
-    "SubmitCertificateInformation": doSubmitCertificateInformation,
     "UploadRevokeLetter": doUploadRevokeLetter,
+    "DeleteManager": doDeleteManager,
     "UploadConfirmLetter": doUploadConfirmLetter,
-    "DeleteCertificate": doDeleteCertificate,
-    "ApplyCertificate": doApplyCertificate,
-    "CompleteCertificate": doCompleteCertificate,
-    "DescribeCertificateDetail": doDescribeCertificateDetail,
-    "CommitCertificateInformation": doCommitCertificateInformation,
-    "ReplaceCertificate": doReplaceCertificate,
+    "SubmitAuditManager": doSubmitAuditManager,
+    "SubmitCertificateInformation": doSubmitCertificateInformation,
+    "VerifyManager": doVerifyManager,
     "CancelCertificateOrder": doCancelCertificateOrder,
-    "RevokeCertificate": doRevokeCertificate,
-    "ModifyCertificateAlias": doModifyCertificateAlias,
-    "CheckCertificateChain": doCheckCertificateChain,
-    "ModifyCertificateProject": doModifyCertificateProject,
+    "DownloadCertificate": doDownloadCertificate,
+    "DeleteCertificate": doDeleteCertificate,
+    "CompleteCertificate": doCompleteCertificate,
     "UploadCertificate": doUploadCertificate,
+    "CheckCertificateChain": doCheckCertificateChain,
+    "DescribeCertificate": doDescribeCertificate,
+    "DescribeCertificateDetail": doDescribeCertificateDetail,
+    "DescribeManagerDetail": doDescribeManagerDetail,
+    "ModifyCertificateProject": doModifyCertificateProject,
+    "ModifyCertificateAlias": doModifyCertificateAlias,
+    "CreateCertificate": doCreateCertificate,
+    "CommitCertificateInformation": doCommitCertificateInformation,
+    "DescribeCertificateOperateLogs": doDescribeCertificateOperateLogs,
+    "ReplaceCertificate": doReplaceCertificate,
+    "ApplyCertificate": doApplyCertificate,
+    "RevokeCertificate": doRevokeCertificate,
+    "DescribeManagers": doDescribeManagers,
 
 }
 

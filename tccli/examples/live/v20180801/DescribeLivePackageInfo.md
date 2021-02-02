@@ -15,6 +15,10 @@ Output:
     "Response": {
         "RequestId": "eac6b30c-a32x-493c-8e36-83b295459397",
         "PackageBillMode": 201,
+        "TotalPage": 0,
+        "TotalNum": 0,
+        "PageNum": 0,
+        "PageSize": 0,
         "LivePackageInfoList": [
             {
                 "Id": "17",

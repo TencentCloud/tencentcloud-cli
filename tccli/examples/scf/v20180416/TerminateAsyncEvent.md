@@ -1,4 +1,4 @@
-**Example 1: 示例0**
+**Example 1: 终止异步事件**
 
 
 
@@ -7,8 +7,8 @@ Input:
 ```
 tccli scf TerminateAsyncEvent --cli-unfold-argument  \
     --Namespace default \
-    --FunctionName test \
-    --InvokeRequestId abc
+    --FunctionName helloworld \
+    --InvokeRequestId b379787f-8487-4bac-bd8c-17a20a9ce40e
 ```
 
 Output: 

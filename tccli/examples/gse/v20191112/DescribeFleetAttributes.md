@@ -33,7 +33,17 @@ Output:
                 },
                 "Status": "ACTIVE",
                 "StoppedActions": [],
-                "TerminationTime": null
+                "TerminationTime": null,
+                "DataDiskInfo": [
+                    {
+                        "DiskType": "CLOUD_PREMIUM",
+                        "DiskSize": 50
+                    }
+                ],
+                "SystemDiskInfo": {
+                    "DiskType": "CLOUD_PREMIUM",
+                    "DiskSize": 50
+                }
             }
         ],
         "RequestId": "s1602557884795276136",

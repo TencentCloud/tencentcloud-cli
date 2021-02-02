@@ -1,0 +1,91 @@
+{
+  "actions": {
+    "CreateCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCommand\n<公共请求参数>\n\n{\n    \"CommandName\": \"hello-command\",\n    \"Description\": \"hello world\",\n    \"Content\": \"bHM=\",\n    \"CommandType\": \"SHELL\",\n    \"WorkingDirectory\": \"/\",\n    \"Timeout\": 60\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"9bea970a-0bab-495f-b0dd-de5eedfdf611\",\r\n    \"CommandId\": \"cmd-7efujjs6\"\r\n  }\r\n}",
+        "title": "创建命令"
+      }
+    ],
+    "DeleteCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCommand\n<公共请求参数>\n\n{\n    \"CommandId\": \"cmd-7efujjs6\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"7f79b764-bc0f-471b-89c1-ca1b93cf7e8d\"\r\n  }\r\n}",
+        "title": "删除命令"
+      }
+    ],
+    "DescribeAutomationAgentStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutomationAgentStatus\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-ar5wyn4x\"\n    ]\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"520e7b93-904d-44de-a2dd-8e4c545be4ce\",\r\n    \"AutomationAgentSet\": [\r\n      {\r\n        \"InstanceId\": \"lhins-ar5wyn4x\",\r\n        \"Version\": \"0.1.0\",\r\n        \"LastHeartbeatTime\": \"2020-11-16T12:05:44+00:00\",\r\n        \"AgentStatus\": \"Online\",\r\n        \"Environment\": \"Linux\"\r\n      }\r\n    ],\r\n    \"TotalCount\": 1\r\n  }\r\n}",
+        "title": "查询客户端状态"
+      }
+    ],
+    "DescribeCommands": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCommands\n<公共请求参数>\n\n{\n    \"CommandIds\": [\"cmd-dvstpcyy\"],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eb973a12-71e3-4c0c-b1d8-4b863e5f5daf\",\r\n    \"TotalCount\": 1,\r\n    \"CommandSet\": [\r\n      {\r\n        \"CommandId\": \"cmd-dvstpcyy\",\r\n        \"CommandName\": \"run-command\",\r\n        \"Description\": \"whoami\",\r\n        \"Content\": \"d2hvYW1p\",\r\n        \"CommandType\": \"SHELL\",\r\n        \"WorkingDirectory\": \"/root/\",\r\n        \"Timeout\": 60,\r\n        \"CreatedTime\": \"2020-11-02T02:48:11+00:00\",\r\n        \"UpdatedTime\": \"2020-11-02T02:48:11+00:00\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "title": "使用 CommandId 查询命令"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCommands\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"command-name\",\n            \"Values\": [\n                \"second-command\",\n                \"first-command\"\n            ]\n        }\n    ]\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6b215093-e1f6-4803-b84a-a230849e88d1\",\r\n    \"TotalCount\": 2,\r\n    \"CommandSet\": [\r\n      {\r\n        \"CommandId\": \"cmd-hb2q34lk\",\r\n        \"CommandName\": \"second-command\",\r\n        \"Description\": \"ps\",\r\n        \"Content\": \"cHM=\",\r\n        \"CommandType\": \"SHELL\",\r\n        \"WorkingDirectory\": \"/root/\",\r\n        \"Timeout\": 60,\r\n        \"CreatedTime\": \"2020-10-30T07:19:52+00:00\",\r\n        \"UpdatedTime\": \"2020-10-30T07:19:52+00:00\"\r\n      },\r\n      {\r\n        \"CommandId\": \"cmd-63usjhmq\",\r\n        \"CommandName\": \"first-command\",\r\n        \"Description\": \"hello world!\",\r\n        \"Content\": \"cHM=\",\r\n        \"CommandType\": \"SHELL\",\r\n        \"WorkingDirectory\": \"/\",\r\n        \"Timeout\": 600,\r\n        \"CreatedTime\": \"2020-10-26T11:26:07+00:00\",\r\n        \"UpdatedTime\": \"2020-11-09T08:12:45+00:00\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "title": "使用 command-name Filter 查询"
+      }
+    ],
+    "DescribeInvocationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvocationTasks\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"HideOutput\": false,\n    \"Filters\": [\n        {\n            \"Name\": \"invocation-id\",\n            \"Values\": [\n                \"inv-1vll7hda\"\n            ]\n        }\n    ]\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1df9725-51c6-466d-a038-4c86461a8e26\",\r\n        \"TotalCount\": 3,\r\n        \"InvocationTaskSet\": [\r\n            {\r\n                \"CommandId\": \"cmd-13axrtuq\",\r\n                \"CommandDocument\": {\r\n                    \"Content\": \"d2hvYW1p\", \r\n                    \"CommandType\": \"SHELL\", \r\n                    \"Timeout\": 1, \r\n                    \"WorkingDirectory\": \"/root/\"\r\n                },\r\n                \"InvocationId\": \"inv-1vll7hda\",\r\n                \"InvocationTaskId\": \"invt-afwuqts2\",\r\n                \"TaskStatus\": \"SUCCESS\",\r\n                \"InstanceId\": \"ins-zj0f57ev\",\r\n                \"TaskResult\": {\r\n                    \"ExitCode\": 0,\r\n                    \"Output\": \"cm9vdAo=\",\r\n                    \"ExecStartTime\": \"2020-11-05T07:49:58+00:00\",\r\n                    \"ExecEndTime\": \"2020-11-05T07:50:04+00:00\"\r\n                },\r\n                \"StartTime\": \"2020-11-05T07:49:58+00:00\",\r\n                \"EndTime\": \"2020-11-05T07:50:04+00:00\",\r\n                \"CreatedTime\": \"2020-11-05T07:49:56+00:00\",\r\n                \"UpdatedTime\": \"2020-11-05T07:50:06+00:00\"\r\n            },\r\n            {\r\n                \"CommandId\": \"cmd-13axrtuq\",\r\n                \"CommandDocument\": {\r\n                    \"Content\": \"d2hvYW1p\", \r\n                    \"CommandType\": \"SHELL\", \r\n                    \"Timeout\": 1, \r\n                    \"WorkingDirectory\": \"/root/\"\r\n                },\r\n                \"InvocationId\": \"inv-1vll7hda\",\r\n                \"InvocationTaskId\": \"invt-08oe5fe2\",\r\n                \"TaskStatus\": \"SUCCESS\",\r\n                \"InstanceId\": \"ins-zj0f57ex\",\r\n                \"TaskResult\": {\r\n                    \"ExitCode\": 0,\r\n                    \"Output\": \"cm9vdAo=\",\r\n                    \"ExecStartTime\": \"2020-11-05T07:49:58+00:00\",\r\n                    \"ExecEndTime\": \"2020-11-05T07:50:04+00:00\"\r\n                },\r\n                \"StartTime\": \"2020-11-05T07:49:58+00:00\",\r\n                \"EndTime\": \"2020-11-05T07:50:04+00:00\",\r\n                \"CreatedTime\": \"2020-11-05T07:49:56+00:00\",\r\n                \"UpdatedTime\": \"2020-11-05T07:50:06+00:00\"\r\n            },\r\n            {\r\n                \"CommandId\": \"cmd-13axrtuq\",\r\n                \"CommandDocument\": {\r\n                    \"Content\": \"d2hvYW1p\", \r\n                    \"CommandType\": \"SHELL\", \r\n                    \"Timeout\": 1, \r\n                    \"WorkingDirectory\": \"/root/\"\r\n                },\r\n                \"InvocationId\": \"inv-1vll7hda\",\r\n                \"InvocationTaskId\": \"invt-91cpqs22\",\r\n                \"TaskStatus\": \"SUCCESS\",\r\n                \"InstanceId\": \"ins-zj0f57ew\",\r\n                \"TaskResult\": {\r\n                    \"ExitCode\": 0,\r\n                    \"Output\": \"cm9vdAo=\",\r\n                    \"ExecStartTime\": \"2020-11-05T07:49:58+00:00\",\r\n                    \"ExecEndTime\": \"2020-11-05T07:50:04+00:00\"\r\n                },\r\n                \"StartTime\": \"2020-11-05T07:49:58+00:00\",\r\n                \"EndTime\": \"2020-11-05T07:50:04+00:00\",\r\n                \"CreatedTime\": \"2020-11-05T07:49:56+00:00\",\r\n                \"UpdatedTime\": \"2020-11-05T07:50:06+00:00\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "根据执行活动ID查询所有执行任务详情"
+      }
+    ],
+    "DescribeInvocations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvocations\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"InvocationIds\": [\n        \"inv-q4zp60g0\"\n    ]\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"958a3603-d0c3-4c97-a37d-6bc24eacddac\",\r\n    \"TotalCount\": 1,\r\n    \"InvocationSet\": [\r\n      {\r\n        \"CommandId\": \"cmd-9dxzty3m\",\r\n        \"InvocationId\": \"inv-q4zp60g0\",\r\n        \"InvocationStatus\": \"SUCCESS\",\r\n        \"Description\": \"Test Invocation\",\r\n        \"InvocationTaskBasicInfoSet\": [\r\n          {\r\n            \"InvocationTaskId\": \"invt-kakne8h2\",\r\n            \"TaskStatus\": \"SUCCESS\",\r\n            \"InstanceId\": \"ins-zj0f57ew\"\r\n          },\r\n          {\r\n            \"InvocationTaskId\": \"invt-jc2onrxm\",\r\n            \"TaskStatus\": \"SUCCESS\",\r\n            \"InstanceId\": \"ins-zj0f57ex\"\r\n          },\r\n          {\r\n            \"InvocationTaskId\": \"invt-6xmuisyq\",\r\n            \"TaskStatus\": \"SUCCESS\",\r\n            \"InstanceId\": \"ins-zj0f57ev\"\r\n          }\r\n        ],\r\n        \"StartTime\": \"2020-11-09T07:21:59+00:00\",\r\n        \"EndTime\": \"2020-11-09T07:22:08+00:00\",\r\n        \"CreatedTime\": \"2020-11-09T07:21:59+00:00\",\r\n        \"UpdatedTime\": \"2020-11-09T07:22:08+00:00\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "title": "查询执行活动"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 4,\r\n    \"RegionSet\": [\r\n      {\r\n        \"Region\": \"ap-guangzhou\",\r\n        \"RegionName\": \"广州\",\r\n        \"RegionState\": \"AVAILABLE\"\r\n      },\r\n      {\r\n        \"Region\": \"ap-shanghai\",\r\n        \"RegionName\": \"上海\",\r\n        \"RegionState\": \"AVAILABLE\"\r\n      },\r\n      {\r\n        \"Region\": \"ap-hongkong\",\r\n        \"RegionName\": \"中国香港\",\r\n        \"RegionState\": \"AVAILABLE\"\r\n      },\r\n      {\r\n        \"Region\": \"ap-beijing\",\r\n        \"RegionName\": \"北京\",\r\n        \"RegionState\": \"AVAILABLE\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"3863868a-ab4b-4185-9e48-e6f4ec11d296\"\r\n  }\r\n}",
+        "title": "查询地域列表"
+      }
+    ],
+    "InvokeCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeCommand\n<公共请求参数>\n\n{\n    \"CommandId\": \"cmd-ffxdx79i\",\n    \"InstanceIds\": [\n        \"lhins-ar5wyn40\"\n    ]\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"41417f50-51b5-4c8d-85b7-f6c508cb228f\",\r\n    \"InvocationId\": \"inv-8xgjrytm\"\r\n  }\r\n}",
+        "title": "在 Lighthouse 触发命令"
+      }
+    ],
+    "ModifyCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCommand\n<公共请求参数>\n\n{\n    \"CommandName\": \"second-command\",\n    \"Description\": \"hello world!\",\n    \"Content\": \"cHM=\",\n    \"CommandType\": \"SHELL\",\n    \"WorkingDirectory\": \"/\",\n    \"Timeout\": 600,\n    \"CommandId\": \"cmd-63usjhmq\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"9bea970a-0bab-495f-b0dd-de5eedfdf611\"\r\n  }\r\n}",
+        "title": "修改命令"
+      }
+    ],
+    "RunCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunCommand\n<公共请求参数>\n\n{\n    \"CommandName\": \"run-command\",\n    \"SaveCommand\": false,\n    \"Description\": \"whoami\",\n    \"Content\": \"d2hvYW1p\",\n    \"CommandType\": \"SHELL\",\n    \"WorkingDirectory\": \"/root/\",\n    \"Timeout\": 60,\n    \"InstanceIds\": [\n        \"ins-zj0f57ew\",\n        \"ins-zj0f57ex\",\n        \"ins-zj0f57ev\"\n    ]\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f3e3a951-56b1-4042-af23-ba50223a8f60\",\r\n    \"CommandId\": \"cmd-5oa8jajm\",\r\n    \"InvocationId\": \"inv-mp6m9vmu\"\r\n  }\r\n}",
+        "title": "在 CVM 批量执行命令"
+      }
+    ]
+  },
+  "version": "1.0"
+}

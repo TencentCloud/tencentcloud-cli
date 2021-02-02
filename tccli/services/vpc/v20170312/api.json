@@ -14863,6 +14863,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，例如：eni-f1xjkw1b。",
+          "example": "-",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -14872,6 +14873,7 @@
         {
           "default": "",
           "document": "弹性网卡名称。",
+          "example": "-",
           "member": "string",
           "name": "NetworkInterfaceName",
           "required": true,
@@ -14881,6 +14883,7 @@
         {
           "default": "",
           "document": "弹性网卡描述。",
+          "example": "-",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": false,
@@ -14890,6 +14893,7 @@
         {
           "default": "",
           "document": "子网实例ID。",
+          "example": "-",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -14899,6 +14903,7 @@
         {
           "default": "",
           "document": "VPC实例ID。",
+          "example": "-",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -14908,6 +14913,7 @@
         {
           "default": "",
           "document": "绑定的安全组。",
+          "example": "-",
           "member": "string",
           "name": "GroupSet",
           "required": false,
@@ -14917,6 +14923,7 @@
         {
           "default": "",
           "document": "是否是主网卡。",
+          "example": "-",
           "member": "bool",
           "name": "Primary",
           "required": false,
@@ -14926,6 +14933,7 @@
         {
           "default": "",
           "document": "MAC地址。",
+          "example": "-",
           "member": "string",
           "name": "MacAddress",
           "required": true,
@@ -14935,6 +14943,7 @@
         {
           "default": "",
           "document": "弹性网卡状态：\n<li>`PENDING`：创建中</li>\n<li>`AVAILABLE`：可用的</li>\n<li>`ATTACHING`：绑定中</li>\n<li>`DETACHING`：解绑中</li>\n<li>`DELETING`：删除中</li>",
+          "example": "-",
           "member": "string",
           "name": "State",
           "required": true,
@@ -14944,6 +14953,7 @@
         {
           "default": "",
           "document": "内网IP信息。",
+          "example": "-",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
           "required": true,
@@ -14953,6 +14963,7 @@
         {
           "default": "",
           "document": "绑定的云服务器对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "NetworkInterfaceAttachment",
           "name": "Attachment",
           "required": false,
@@ -14962,6 +14973,7 @@
         {
           "default": "",
           "document": "可用区。",
+          "example": "-",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -14971,6 +14983,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "-",
           "member": "string",
           "name": "CreatedTime",
           "required": false,
@@ -14980,6 +14993,7 @@
         {
           "default": "",
           "document": "`IPv6`地址列表。",
+          "example": "-",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
           "required": true,
@@ -14989,6 +15003,7 @@
         {
           "default": "",
           "document": "标签键值对。",
+          "example": "-",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
@@ -14998,11 +15013,22 @@
         {
           "default": "",
           "document": "网卡类型。0 - 弹性网卡；1 - evm弹性网卡。",
+          "example": "-",
           "member": "uint64",
           "name": "EniType",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网卡绑定的子机类型：cvm，eks。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

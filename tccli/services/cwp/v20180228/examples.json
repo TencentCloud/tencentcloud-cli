@@ -3,9 +3,9 @@
     "AddLoginWhiteList": [
       {
         "document": "",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=AddLoginWhiteList\r\n&Rules.0.CityId=1\r\n&Rules.0.ProvinceId=1\r\n&Rules.0.CountryId=1\r\n&Rules.SrcIp=10.1.1.1\r\n&Rules.UserName=admin\r\n&Rules.IsGlobal=false\r\n&Rules.HostIp=10.2.2.2\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=AddLoginWhiteList\n&Rules.SrcIp=10.1.1.1\n&Rules.UserName=admin\n&Rules.IsGlobal=false\n&Rules.HostIp=10.2.2.2\n&Rules.StartTime=\"xxx\"\n&Rules.EndTime=\"xxx\"\n&Rules.Id=1\n&Rules.Places.0.CityId=1\n&Rules.Places.0.CountryId=1\n&Rules.Places.0.ProvinceId=1\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"  \r\n    }\r\n}",
-        "title": "添加异地登录白名单"
+        "title": "新增异地登录白名单规则"
       }
     ],
     "AddMachineTag": [
@@ -93,7 +93,7 @@
         "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=DeleteLoginWhiteList\n&Ids.0=1\n&Ids.1=2\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"  \r\n    }\r\n}",
-        "title": "删除异地登录白名单"
+        "title": "删除异地登录白名单规则"
       }
     ],
     "DeleteMachine": [
@@ -741,7 +741,7 @@
         "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=ModifyLoginWhiteList\n&Rules.Places.0.CityId=1\n&Rules.Places.0.ProvinceId=1\n&Rules.Places.0.CountryId=1\n&Rules.SrcIp=10.1.1.1\n&Rules.UserName=admin,root\n&Rules.IsGlobal=true\n&Rules.HostIp=10.2.2.2\n&Rules.EndTime=\"\"\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"  \r\n    }\r\n}",
-        "title": "编辑异地登录白名单"
+        "title": "编辑异地登录白名单规则"
       }
     ],
     "ModifyMalwareTimingScanSettings": [

@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "ImageModeration": [
+      {
+        "document": "图片内容安全识别",
+        "input": "https://ims.tencentcloudapi.com/?Action=ImageModeration\n&FileUrl=https://xxx.jpg\n&DataId=1213\n&BizType=test_1001\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"RequestId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\r\n    \"DataId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\r\n    \"BizType\": \"test_1001\",\r\n    \"Suggestion\": \"Block\",\r\n    \"Label\": \"Porn\",\r\n    \"SubLabel\": \"SexBehavior\",\r\n    \"Score\": 90,\r\n    \"LabelResult\": [\r\n        {\r\n            \"Scene\": \"Porn\",\r\n            \"Suggestion\": \"Block\",\r\n            \"Label\": \"Porn\",\r\n            \"SubLabel\": \"SexBehavior\",\r\n            \"Score\": 90,\r\n            \"Details\": []\r\n        }\r\n    ],\r\n    \"ObjectResults\": [\r\n        {\r\n            \"Scene\": \"QrCode\",\r\n            \"Suggestion\": \"Block\",\r\n            \"Label\": \"Ad\",\r\n            \"SubLabel\": \"\",\r\n            \"Score\": 100,\r\n            \"Names\": [\r\n                \"QRCODE\"\r\n            ],\r\n            \"Details\": [\r\n                {\r\n                    \"Id\": 0,\r\n                    \"Name\": \"QRCODE\",\r\n                    \"Text\": \"https://test.com/test\",\r\n                    \"Score\": 100,\r\n                    \"Location\": {\r\n                        \"X\": 155.01746,\r\n                        \"Y\": 396.01746,\r\n                        \"Width\": 769.9824,\r\n                        \"Height\": 769.98254,\r\n                        \"Rotate\": 0\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"OcrResults\": [],\r\n    \"Extra\": \"\"\r\n}\r\n}",
+        "title": "图片内容识别"
+      }
+    ],
+    "ImageRecognition": [
+      {
+        "document": "图片内容安全识别",
+        "input": "https://ims.tencentcloudapi.com/?Action=ImageRecognition\n&FileUrl=https://xxx.jpg\n&DataId=1213\n&BizType=test_1001\n&Interval=1\n&MaxFrames=1\n&Channel=1\n&CustomAppId=123456\n&CustomUin=123456\n&CustomSubAccountUin=123456\n&<公共请求参数>",
+        "output": "{\r\n\"Response\": {\r\n    \"RequestId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\r\n    \"DataId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\r\n    \"BizType\": \"test_1001\",\r\n    \"Suggestion\": \"Block\",\r\n    \"Label\": \"Porn\",\r\n    \"SubLabel\": \"SexBehavior\",\r\n    \"Score\": 90,\r\n    \"LabelResult\": [\r\n        {\r\n            \"Scene\": \"Porn\",\r\n            \"Suggestion\": \"Block\",\r\n            \"Label\": \"Porn\",\r\n            \"SubLabel\": \"SexBehavior\",\r\n            \"Score\": 90,\r\n            \"Details\": []\r\n        }\r\n    ],\r\n    \"ObjectResults\": [\r\n        {\r\n            \"Scene\": \"QrCode\",\r\n            \"Suggestion\": \"Block\",\r\n            \"Label\": \"Ad\",\r\n            \"SubLabel\": \"\",\r\n            \"Score\": 100,\r\n            \"Names\": [\r\n                \"QRCODE\"\r\n            ],\r\n            \"Details\": [\r\n                {\r\n                    \"Id\": 0,\r\n                    \"Name\": \"QRCODE\",\r\n                    \"Text\": \"https://test.com/test\",\r\n                    \"Score\": 100,\r\n                    \"Location\": {\r\n                        \"X\": 155.01746,\r\n                        \"Y\": 396.01746,\r\n                        \"Width\": 769.9824,\r\n                        \"Height\": 769.98254,\r\n                        \"Rotate\": 0\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"OcrResults\": [],\r\n    \"Extra\": \"\"\r\n}\r\n}",
+        "title": "图片内容识别"
+      }
+    ]
+  },
+  "version": "1.0"
+}

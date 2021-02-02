@@ -8,11 +8,11 @@ Input:
 tccli gse CreateFleet --cli-unfold-argument  \
     --AssetId asset-eugdyx0g \
     --Description Humandecription \
-    --InstanceType S5.SMALL2 \
+    --InstanceType S5.LARGE8 \
     --FleetType ON_DEMAND \
     --Name testfleet \
     --NewGameServerSessionProtectionPolicy FullProtection \
-    --PeerVpcId Qcloud@123 \
+    --PeerVpcId null \
     --ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator 0 \
     --ResourceCreationLimitPolicy.PolicyPeriodInMinutes 1 \
     --RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds 5 \
@@ -23,7 +23,11 @@ tccli gse CreateFleet --cli-unfold-argument  \
     --InboundPermissions.0.FromPort 1900 \
     --InboundPermissions.0.IpRange 0.0.0.0/0 \
     --InboundPermissions.0.Protocol TCP \
-    --InboundPermissions.0.ToPort 2900
+    --InboundPermissions.0.ToPort 2900 \
+    --DataDiskInfo.0.DiskType CLOUD_PREMIUM \
+    --DataDiskInfo.0.DiskSize 50 \
+    --SystemDiskInfo.DiskType CLOUD_PREMIUM \
+    --SystemDiskInfo.DiskSize 50
 ```
 
 Output: 
@@ -38,7 +42,7 @@ Output:
             "FleetId": "fleet-pro4eunl-0l1exqxf",
             "FleetType": "ON_DEMAND",
             "GameServerSessionProtectionTimeLimit": 5,
-            "InstanceType": "t2.micro",
+            "InstanceType": "S5.LARGE8",
             "Name": "test fleet",
             "NewGameServerSessionProtectionPolicy": "TimeLimitProtection",
             "OperatingSystem": "centos",
@@ -48,7 +52,17 @@ Output:
             },
             "Status": "NEW",
             "StoppedActions": [],
-            "TerminationTime": null
+            "TerminationTime": null,
+            "DataDiskInfo": [
+                {
+                    "DiskType": "CLOUD_PREMIUM",
+                    "DiskSize": 50
+                }
+            ],
+            "SystemDiskInfo": {
+                "DiskType": "CLOUD_PREMIUM",
+                "DiskSize": 50
+            }
         },
         "RequestId": "4520ba54-982e-46e2-9a0b-63c963c34fc6"
     }

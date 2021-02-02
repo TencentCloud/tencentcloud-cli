@@ -78,6 +78,12 @@
       "name": "删除扩缩容配置",
       "output": "DeleteScalingPolicyResponse"
     },
+    "DeleteTimerScalingPolicy": {
+      "document": "本接口（DeleteTimerScalingPolicy）用于删除fleet下的定时器。\n",
+      "input": "DeleteTimerScalingPolicyRequest",
+      "name": "删除定时器",
+      "output": "DeleteTimerScalingPolicyResponse"
+    },
     "DescribeAlias": {
       "document": "本接口（DescribeAlias）用于获取别名详情。",
       "input": "DescribeAliasRequest",
@@ -222,6 +228,12 @@
       "name": "查询扩缩容配置",
       "output": "DescribeScalingPoliciesResponse"
     },
+    "DescribeTimerScalingPolicies": {
+      "document": "本接口（DescribeTimerScalingPolicies）用于查询fleet下的定时器列表。可以通过fleetid，定时器名称分页查询。\n",
+      "input": "DescribeTimerScalingPoliciesRequest",
+      "name": "查询定时器列表",
+      "output": "DescribeTimerScalingPoliciesResponse"
+    },
     "DescribeUserQuota": {
       "document": "本接口（DescribeUserQuota）获取用户单个模块配额。",
       "input": "DescribeUserQuotaRequest",
@@ -294,6 +306,12 @@
       "name": "设置扩缩容策略",
       "output": "PutScalingPolicyResponse"
     },
+    "PutTimerScalingPolicy": {
+      "document": "本接口（PutTimerScalingPolicy）用于给fleet创建或更新定时器。\n\n填写字段timer_id，表示更新；不填字段timer_id表示新增。\n",
+      "input": "PutTimerScalingPolicyRequest",
+      "name": "创建或更新定时器",
+      "output": "PutTimerScalingPolicyResponse"
+    },
     "ResolveAlias": {
       "document": "本接口（ResolveAlias）用于获取别名当前指向的fleetId。",
       "input": "ResolveAliasRequest",
@@ -305,6 +323,12 @@
       "input": "SearchGameServerSessionsRequest",
       "name": "搜索游戏服务器会话列表",
       "output": "SearchGameServerSessionsResponse"
+    },
+    "SetServerReserved": {
+      "document": "本接口（SetServerReserved）用于将异常的实例标记为保留，用于问题排查。\n\n字段ReserveValue：0默认值，不保留；1 保留\n",
+      "input": "SetServerReservedRequest",
+      "name": "设置实例保留",
+      "output": "SetServerReservedResponse"
     },
     "SetServerWeight": {
       "document": "本接口（SetServerWeight）用于设置服务器权重。",
@@ -794,6 +818,7 @@
         {
           "default": "",
           "document": "服务器舰队 Id",
+          "example": "fleet-qp3g3caa-2m6pzf4g",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -802,6 +827,7 @@
         {
           "default": "",
           "document": "复制数量，最小值1，最大值为剩余配额，可以根据[获取用户配额](https://cloud.tencent.com/document/product/1165/48732)接口获取。",
+          "example": "2",
           "member": "int64",
           "name": "CopyNumber",
           "required": true,
@@ -810,6 +836,7 @@
         {
           "default": "",
           "document": "生成包 Id",
+          "example": "asset-qrdiw1a9",
           "member": "string",
           "name": "AssetId",
           "required": false,
@@ -818,6 +845,7 @@
         {
           "default": "",
           "document": "描述，最小长度0，最大长度100",
+          "example": "Human description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -826,6 +854,7 @@
         {
           "default": "",
           "document": "网络配置",
+          "example": "无",
           "member": "InboundPermission",
           "name": "InboundPermissions",
           "required": false,
@@ -834,6 +863,7 @@
         {
           "default": "",
           "document": "服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。",
+          "example": "S5.LARGE8",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -842,6 +872,7 @@
         {
           "default": "",
           "document": "服务器舰队类型，目前只支持ON_DEMAND类型",
+          "example": "ON_DEMAND",
           "member": "string",
           "name": "FleetType",
           "required": false,
@@ -850,6 +881,7 @@
         {
           "default": "",
           "document": "服务器舰队名称，最小长度1，最大长度50",
+          "example": "testfleet",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -858,6 +890,7 @@
         {
           "default": "",
           "document": "保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection",
+          "example": "NoProtection",
           "member": "string",
           "name": "NewGameServerSessionProtectionPolicy",
           "required": false,
@@ -866,6 +899,7 @@
         {
           "default": "",
           "document": "资源创建限制策略",
+          "example": "无",
           "member": "ResourceCreationLimitPolicy",
           "name": "ResourceCreationLimitPolicy",
           "required": false,
@@ -874,6 +908,7 @@
         {
           "default": "",
           "document": "进程配置",
+          "example": "无",
           "member": "RuntimeConfiguration",
           "name": "RuntimeConfiguration",
           "required": false,
@@ -882,6 +917,7 @@
         {
           "default": "",
           "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效",
+          "example": "61",
           "member": "int64",
           "name": "GameServerSessionProtectionTimeLimit",
           "required": false,
@@ -890,6 +926,7 @@
         {
           "default": "",
           "document": "是否选择扩缩容：SCALING_SELECTED 或者 SCALING_UNSELECTED；默认是 SCALING_UNSELECTED",
+          "example": "SCALING_SELECTED",
           "member": "string",
           "name": "SelectedScalingType",
           "required": false,
@@ -898,6 +935,7 @@
         {
           "default": "",
           "document": "是否选择云联网：CCN_SELECTED 或者 CCN_UNSELECTED；默认是 CCN_UNSELECTED",
+          "example": "CCN_SELECTED",
           "member": "string",
           "name": "SelectedCcnType",
           "required": false,
@@ -906,10 +944,38 @@
         {
           "default": "",
           "document": "标签列表，最大长度50组",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位",
+          "example": "无",
+          "member": "DiskInfo",
+          "name": "SystemDiskInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位",
+          "example": "无",
+          "member": "DiskInfo",
+          "name": "DataDiskInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否选择复制定时器策略：TIMER_SELECTED 或者 TIMER_UNSELECTED；默认是 TIMER_UNSELECTED",
+          "example": "TIMER_UNSELECTED",
+          "member": "string",
+          "name": "SelectedTimerType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -919,15 +985,19 @@
       "members": [
         {
           "document": "服务器舰队属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FleetAttributes",
           "name": "FleetAttributes",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "服务器舰队数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1195,6 +1265,7 @@
         {
           "default": "",
           "document": "生成包 Id",
+          "example": "asset-eugdyx0g",
           "member": "string",
           "name": "AssetId",
           "required": false,
@@ -1203,6 +1274,7 @@
         {
           "default": "",
           "document": "描述，最小长度0，最大长度100",
+          "example": "Humandecription",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1211,6 +1283,7 @@
         {
           "default": "",
           "document": "网络配置",
+          "example": "无",
           "member": "InboundPermission",
           "name": "InboundPermissions",
           "required": false,
@@ -1219,6 +1292,7 @@
         {
           "default": "",
           "document": "服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。",
+          "example": "S5.LARGE8",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -1227,6 +1301,7 @@
         {
           "default": "",
           "document": "服务器舰队类型，目前只支持ON_DEMAND类型",
+          "example": "ON_DEMAND",
           "member": "string",
           "name": "FleetType",
           "required": false,
@@ -1235,6 +1310,7 @@
         {
           "default": "",
           "document": "服务器舰队名称，最小长度1，最大长度50",
+          "example": "testfleet",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1243,6 +1319,7 @@
         {
           "default": "",
           "document": "保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection",
+          "example": "FullProtection",
           "member": "string",
           "name": "NewGameServerSessionProtectionPolicy",
           "required": false,
@@ -1251,6 +1328,7 @@
         {
           "default": "",
           "document": "VPC 网络 Id，对等连接已不再使用",
+          "example": "null",
           "member": "string",
           "name": "PeerVpcId",
           "required": false,
@@ -1259,6 +1337,7 @@
         {
           "default": "",
           "document": "资源创建限制策略",
+          "example": "无",
           "member": "ResourceCreationLimitPolicy",
           "name": "ResourceCreationLimitPolicy",
           "required": false,
@@ -1267,6 +1346,7 @@
         {
           "default": "",
           "document": "进程配置",
+          "example": "无",
           "member": "RuntimeConfiguration",
           "name": "RuntimeConfiguration",
           "required": false,
@@ -1275,6 +1355,7 @@
         {
           "default": "",
           "document": "VPC 子网，对等连接已不再使用",
+          "example": "null",
           "member": "string",
           "name": "SubNetId",
           "required": false,
@@ -1283,6 +1364,7 @@
         {
           "default": "",
           "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效",
+          "example": "5",
           "member": "int64",
           "name": "GameServerSessionProtectionTimeLimit",
           "required": false,
@@ -1291,8 +1373,27 @@
         {
           "default": "",
           "document": "标签列表，最大长度50组",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位",
+          "example": "无",
+          "member": "DiskInfo",
+          "name": "SystemDiskInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位",
+          "example": "无",
+          "member": "DiskInfo",
+          "name": "DataDiskInfo",
           "required": false,
           "type": "list"
         }
@@ -1304,8 +1405,10 @@
       "members": [
         {
           "document": "服务器舰队属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FleetAttributes",
           "name": "FleetAttributes",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1642,6 +1745,51 @@
       ],
       "type": "object"
     },
+    "DeleteTimerScalingPolicyRequest": {
+      "document": "DeleteTimerScalingPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "定时器ID, 进行encode",
+          "example": "timerId-oc80v5zp",
+          "member": "string",
+          "name": "TimerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩缩容配置服务器舰队ID",
+          "example": "fleet-qp3g3caa-mg4w88ho",
+          "member": "string",
+          "name": "FleetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定时器名称",
+          "example": "testDay",
+          "member": "string",
+          "name": "TimerName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTimerScalingPolicyResponse": {
+      "document": "DeleteTimerScalingPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAliasRequest": {
       "document": "DescribeAlias请求参数结构体",
       "members": [
@@ -1867,6 +2015,7 @@
         {
           "default": "",
           "document": "服务器舰队 Ids",
+          "example": "[\"fleet-qp3g3caa-nkeekxw6\"]",
           "member": "string",
           "name": "FleetIds",
           "required": false,
@@ -1875,6 +2024,7 @@
         {
           "default": "",
           "document": "结果返回最大数量，默认值20，最大值100",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1883,6 +2033,7 @@
         {
           "default": "",
           "document": "返回结果偏移，最小值0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1896,15 +2047,19 @@
       "members": [
         {
           "document": "服务器舰队属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FleetAttributes",
           "name": "FleetAttributes",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "服务器舰队总数，最小值0",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2641,6 +2796,7 @@
         {
           "default": "",
           "document": "服务器舰队ID",
+          "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -2649,6 +2805,7 @@
         {
           "default": "",
           "document": "返回结果偏移，最小值0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -2657,6 +2814,7 @@
         {
           "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -2670,15 +2828,19 @@
       "members": [
         {
           "document": "实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "InstanceExtend",
           "name": "Instances",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "梳理信息总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2697,6 +2859,7 @@
         {
           "default": "",
           "document": "服务器舰队ID",
+          "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -2705,6 +2868,7 @@
         {
           "default": "",
           "document": "CVM实例ID",
+          "example": "ins-a8205ykp",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -2713,6 +2877,7 @@
         {
           "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2721,6 +2886,7 @@
         {
           "default": "",
           "document": "返回结果偏移，最小值0",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2734,15 +2900,19 @@
       "members": [
         {
           "document": "实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Instance",
           "name": "Instances",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "结果返回最大数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2932,6 +3102,96 @@
       ],
       "type": "object"
     },
+    "DescribeTimerScalingPoliciesRequest": {
+      "document": "DescribeTimerScalingPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "扩缩容配置服务器舰队ID",
+          "example": "fleet-qp3g3caa-mg4w88ho",
+          "member": "string",
+          "name": "FleetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定时器名称",
+          "example": "timer01",
+          "member": "string",
+          "name": "TimerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定时器开始时间",
+          "example": "2021-01-14T14:04:29.496Z",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定时器结束时间",
+          "example": "2021-01-15T14:09:29.496Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimerScalingPoliciesResponse": {
+      "document": "DescribeTimerScalingPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "定时器扩缩容策略配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimerScalingPolicy",
+          "name": "TimerScalingPolicies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "定时器总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserQuotaRequest": {
       "document": "DescribeUserQuota请求参数结构体",
       "members": [
@@ -3045,6 +3305,32 @@
         }
       ],
       "type": "object"
+    },
+    "DiskInfo": {
+      "document": "磁盘存储信息",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘类型，支持：高性能云硬盘（CLOUD_PREMIUM）、SSD云硬盘（CLOUD_SSD）",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统盘：可选硬盘容量，50-500GB，数字以1为单位，数据盘：可选硬盘容量：10-32000GB，数字以10为单位；当磁盘类型为SSD云硬盘（CLOUD_SSD）最小大小为 100GB",
+          "example": "300",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Event": {
       "document": "事件对象",
@@ -3308,6 +3594,24 @@
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DiskInfo",
+          "name": "DataDiskInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DiskInfo",
+          "name": "SystemDiskInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -4184,6 +4488,7 @@
         {
           "default": "",
           "document": "起始端口号，最小值1025",
+          "example": "1026",
           "member": "uint64",
           "name": "FromPort",
           "required": false,
@@ -4193,6 +4498,7 @@
         {
           "default": "",
           "document": "IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0",
+          "example": "0.0.0.0/0",
           "member": "string",
           "name": "IpRange",
           "required": false,
@@ -4202,6 +4508,7 @@
         {
           "default": "",
           "document": "协议类型：TCP或者UDP",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -4211,6 +4518,7 @@
         {
           "default": "",
           "document": "终止端口号，最大值60000",
+          "example": "60000",
           "member": "uint64",
           "name": "ToPort",
           "required": false,
@@ -4310,6 +4618,7 @@
         {
           "default": "",
           "document": "服务部署ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -4319,6 +4628,7 @@
         {
           "default": "",
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-o5ns8y4r",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4328,6 +4638,7 @@
         {
           "default": "",
           "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "121.4.186.193",
           "member": "string",
           "name": "IpAddress",
           "required": true,
@@ -4337,6 +4648,7 @@
         {
           "default": "",
           "document": "dns\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "DnsName",
           "required": true,
@@ -4346,6 +4658,7 @@
         {
           "default": "",
           "document": "操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CentOS 7.4 64位",
           "member": "string",
           "name": "OperatingSystem",
           "required": true,
@@ -4355,6 +4668,7 @@
         {
           "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4364,6 +4678,7 @@
         {
           "default": "",
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S5.LARGE8",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -4373,10 +4688,31 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-28T13:17:02Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例是否保留, 1-保留，0-不保留,默认\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReserveValue",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5196,6 +5532,33 @@
       ],
       "type": "object"
     },
+    "PutTimerScalingPolicyRequest": {
+      "document": "PutTimerScalingPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "定时器策略消息",
+          "example": "无",
+          "member": "TimerScalingPolicy",
+          "name": "TimerScalingPolicy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PutTimerScalingPolicyResponse": {
+      "document": "PutTimerScalingPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QuotaResource": {
       "document": "配额资源",
       "members": [
@@ -5277,6 +5640,7 @@
         {
           "default": "",
           "document": "创建数量，最小值1，默认2",
+          "example": "2",
           "member": "uint64",
           "name": "NewGameServerSessionsPerCreator",
           "required": false,
@@ -5286,6 +5650,7 @@
         {
           "default": "",
           "document": "单位时间，最小值1，默认3，单位分钟",
+          "example": "3",
           "member": "uint64",
           "name": "PolicyPeriodInMinutes",
           "required": false,
@@ -5334,6 +5699,7 @@
         {
           "default": "",
           "document": "游戏会话进程超时，最小值1，最大值600，单位秒",
+          "example": "500",
           "member": "uint64",
           "name": "GameServerSessionActivationTimeoutSeconds",
           "required": false,
@@ -5343,6 +5709,7 @@
         {
           "default": "",
           "document": "最大游戏会话数，最小值1，最大值2147483647",
+          "example": "210",
           "member": "uint64",
           "name": "MaxConcurrentGameServerSessionActivations",
           "required": false,
@@ -5352,6 +5719,7 @@
         {
           "default": "",
           "document": "服务进程配置，至少有一个进程配置",
+          "example": "无",
           "member": "ServerProcesse",
           "name": "ServerProcesses",
           "required": false,
@@ -5552,6 +5920,7 @@
         {
           "default": "",
           "document": "并发执行数量，所有进程并发执行总数最小值1，最大值50",
+          "example": "2",
           "member": "uint64",
           "name": "ConcurrentExecutions",
           "required": false,
@@ -5561,6 +5930,7 @@
         {
           "default": "",
           "document": "启动路径：Linux路径/local/game/ 或WIndows路径C:\\game\\，最小长度1，最大长度1024",
+          "example": "105",
           "member": "string",
           "name": "LaunchPath",
           "required": false,
@@ -5570,6 +5940,7 @@
         {
           "default": "",
           "document": "启动参数，最小长度0，最大长度1024",
+          "example": "30",
           "member": "string",
           "name": "Parameters",
           "required": false,
@@ -5578,6 +5949,51 @@
         }
       ],
       "usage": "in"
+    },
+    "SetServerReservedRequest": {
+      "document": "SetServerReserved请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "扩缩容配置服务器舰队ID",
+          "example": "fleet-qp3g3caa-mg4w88ho",
+          "member": "string",
+          "name": "FleetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ins-3g57621x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例是否保留, 1-保留，0-不保留,默认",
+          "example": "0",
+          "member": "int64",
+          "name": "ReserveValue",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetServerReservedResponse": {
+      "document": "SetServerReserved返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SetServerWeightRequest": {
       "document": "SetServerWeight请求参数结构体",
@@ -5831,6 +6247,7 @@
         {
           "default": "",
           "document": "标签键，最大长度127字节",
+          "example": "tag1",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -5840,6 +6257,7 @@
         {
           "default": "",
           "document": "标签值，最大长度255字节",
+          "example": "tagvalue",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -5857,12 +6275,232 @@
           "document": "预留存率\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "TargetValue",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
+    },
+    "TimerConfiguration": {
+      "document": "重复周期配置",
+      "members": [
+        {
+          "default": "",
+          "document": "定时器重复周期类型（未定义0，单次1、按天2、按月3、按周4）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimerType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时器取值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimerValue",
+          "name": "TimerValue",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时器开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-14T03:36:35Z",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时器结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-15T03:36:35Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TimerFleetCapacity": {
+      "document": "定时器弹性伸缩策略",
+      "members": [
+        {
+          "default": "",
+          "document": "扩缩容配置服务器舰队ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fleet-qp3g3caa-mg4w88ho",
+          "member": "string",
+          "name": "FleetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "期望实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "DesiredInstances",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "伸缩容间隔，单位：分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ScalingInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扩缩容类型（手动1，自动2、未定义0）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ScalingType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "基于目标的扩展策略的设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetConfiguration",
+          "name": "TargetConfiguration",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TimerScalingPolicy": {
+      "document": "定时器策略消息",
+      "members": [
+        {
+          "default": "",
+          "document": "定时器ID，进行encode，填写时更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "timerId-oc80v5zp",
+          "member": "string",
+          "name": "TimerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testonce1",
+          "member": "string",
+          "name": "TimerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时器状态(未定义0、未生效1、生效中2、已停止3、已过期4)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimerStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时器弹性伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimerFleetCapacity",
+          "name": "TimerFleetCapacity",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重复周期配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimerConfiguration",
+          "name": "TimerConfiguration",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TimerValue": {
+      "document": "定时器取值配置",
+      "members": [
+        {
+          "default": "",
+          "document": "每X天，执行一次(重复周期-按天/单次)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Day",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每月从第x天，执行一次(重复周期-按月)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FromDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每月到第x天，执行一次(重复周期-按月)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ToDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重复周期-按周，周几（多个值,取值周一(1,2,3,4,5,6,7)周日）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "WeekDays",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UpdateAliasRequest": {
       "document": "UpdateAlias请求参数结构体",
