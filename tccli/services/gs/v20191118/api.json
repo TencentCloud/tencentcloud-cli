@@ -6,6 +6,12 @@
       "name": "创建会话",
       "output": "CreateSessionResponse"
     },
+    "DescribeInstancesCount": {
+      "document": "获取实例总数和运行数",
+      "input": "DescribeInstancesCountRequest",
+      "name": "获取实例总数和运行数",
+      "output": "DescribeInstancesCountResponse"
+    },
     "SaveGameArchive": {
       "document": "保存游戏存档",
       "input": "SaveGameArchiveRequest",
@@ -202,6 +208,60 @@
           "member": "string",
           "name": "Role",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesCountRequest": {
+      "document": "DescribeInstancesCount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏ID",
+          "example": "game-abcd1234",
+          "member": "string",
+          "name": "GameId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例分组ID",
+          "example": "cgg-1234abcd",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesCountResponse": {
+      "document": "DescribeInstancesCount返回参数结构体",
+      "members": [
+        {
+          "document": "客户的实例总数",
+          "example": "590",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户的实例运行数",
+          "example": "480",
+          "member": "uint64",
+          "name": "Running",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

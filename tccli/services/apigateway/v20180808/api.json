@@ -1376,6 +1376,84 @@
       ],
       "usage": "out"
     },
+    "AttachedApiInfo": {
+      "document": "插件绑定的API信息",
+      "members": [
+        {
+          "default": "",
+          "document": "API所在服务ID。",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API所在服务名称。",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API所在服务描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API ID。",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API名称。",
+          "member": "string",
+          "name": "ApiName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "插件绑定API的环境。",
+          "member": "string",
+          "name": "Environment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件和API绑定时间。",
+          "member": "datetime_iso",
+          "name": "AttachedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Base64EncodedTriggerRule": {
       "document": "Base64编码的header触发规则",
       "members": [
@@ -5930,6 +6008,7 @@
         {
           "default": "",
           "document": "插件ID。",
+          "example": "plugin-2nuhovb7",
           "member": "string",
           "name": "PluginId",
           "required": true,
@@ -5939,6 +6018,7 @@
         {
           "default": "",
           "document": "插件名称。",
+          "example": "myplugin",
           "member": "string",
           "name": "PluginName",
           "required": true,
@@ -5948,6 +6028,7 @@
         {
           "default": "",
           "document": "插件类型。",
+          "example": "IPControl",
           "member": "string",
           "name": "PluginType",
           "required": true,
@@ -5957,6 +6038,7 @@
         {
           "default": "",
           "document": "插件定义语句。",
+          "example": "{\\",
           "member": "string",
           "name": "PluginData",
           "required": true,
@@ -5966,6 +6048,7 @@
         {
           "default": "",
           "document": "插件描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPControl",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -5975,6 +6058,7 @@
         {
           "default": "",
           "document": "插件创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2021-01-25T10:15:21Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -5984,11 +6068,32 @@
         {
           "default": "",
           "document": "插件修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2021-01-25T10:15:21Z",
           "member": "datetime_iso",
           "name": "ModifiedTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件绑定的API总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AttachedApiTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "插件绑定的API信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttachedApiInfo",
+          "name": "AttachedApis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

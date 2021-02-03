@@ -145,6 +145,15 @@
           "name": "COSBucket",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否采集作业日志",
+          "example": "true",
+          "member": "bool",
+          "name": "LogCollect",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

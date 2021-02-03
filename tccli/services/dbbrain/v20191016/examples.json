@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddUserContact": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=AddUserContact\n&Name=张三\n&ContactInfo=test@qq.com\n&Product=mysql\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Id\": 1,\r\n\t\t\"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\r\n\t}\r\n}",
+        "title": "添加邮件发送联系人信息"
+      }
+    ],
     "CreateDBDiagReportTask": [
       {
         "document": "",
@@ -14,6 +22,14 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=CreateMailProfile\n&Product=mysql\n&ProfileLevel=Instance\n&ProfileName=scheduler_cdb-test\n&ProfileType= scheduler_mail_configuration\n&BindInstanceIds.0=cdb-test\n&ProfileInfo.Language=zh\n&ProfileInfo.MailConfiguration.SendMail=1\n&ProfileInfo.MailConfiguration.Region.0=ap-guangzhou\n&ProfileInfo.MailConfiguration.HealthStatus.0=HEALTH\n&ProfileInfo.MailConfiguration.ContactPerson.0=1\n&ProfileInfo.MailConfiguration.ContactGroup.0=1\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\r\n\t}\r\n}",
         "title": "创建定期生成/数据库巡检 的邮件发送模板"
+      }
+    ],
+    "CreateSchedulerMailProfile": [
+      {
+        "document": "该接口用于创建定期生成健康报告并邮件发送的配置，将健康报告的定期生成时间作为参数传入（周一至周日），用于设置健康报告的定期生成时间，同时保存相应的定期邮件发送的配置。",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=CreateSchedulerMailProfile\n&WeekConfiguration.0=1\n&Product=mysql\n&ProfileName=scheduler_cdb-test\n&BindInstanceId=cdb-test\n&ProfileInfo.Language=zh\n&ProfileInfo.MailConfiguration.SendMail=1\n&ProfileInfo.MailConfiguration.Region.0=ap-guangzhou\n&ProfileInfo.MailConfiguration.HealthStatus.0=HEALTH\n&ProfileInfo.MailConfiguration.ContactPerson.0=1\n&ProfileInfo.MailConfiguration.ContactGroup.0=1\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\r\n\t}\r\n}",
+        "title": "创建定期生成的邮件发送配置"
       }
     ],
     "CreateSecurityAuditLogExportTask": [
@@ -70,6 +86,36 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBSpaceStatus\n&InstanceId=cdb-test\n&RangeDays=5\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n               \"Remain\": 23224,\r\n               \"RequestId\": \"78cf7bb1-0608-11ea-a9ef-2736f0f7f829\",\r\n               \"Growth\": 231,\r\n               \"Total\": 50000,\r\n               \"AvailableDays\": 35\r\n\t}\r\n}",
         "title": "获取指定时间段内的实例空间使用概览"
+      }
+    ],
+    "DescribeDiagDBInstances": [
+      {
+        "document": "获取实例信息列表，支持按实例ID，实例名称，地域来查询实例相关信息。",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDiagDBInstances\n&IsSupported=true\n&Offset=0\n&Limit=50\n&Product=mysql\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"DbScanStatus\": 1,\r\n        \"Items\": [\r\n            {\r\n                \"GroupName\": \"4个地域一个组\",\r\n                \"EventCount\": 0,\r\n                \"Memory\": 4000,\r\n                \"Product\": \"MySQL\",\r\n                \"Cpu\": 2,\r\n                \"Source\": \"TENCENT_CLOUD\",\r\n                \"UniqSubnetId\": \"subnet-test\",\r\n                \"DeployMode\": \"CUSTOM\",\r\n                \"InstanceType\": 1,\r\n                \"AuditRunningStatus\": \"normal\",\r\n                \"Status\": 1,\r\n                \"EngineVersion\": \"5.6\",\r\n                \"InstanceId\": \"cdb-test\",\r\n                \"Vport\": 63492,\r\n                \"InitFlag\": 1,\r\n                \"TaskStatus\": 0,\r\n                \"UniqVpcId\": \"vpc-fstest\",\r\n                \"GroupId\": \"dg-0ttest\",\r\n                \"InstanceName\": \"长期监控\",\r\n                \"HealthScore\": 100,\r\n                \"InstanceConf\": {\r\n                    \"OverviewDisplay\": \"Yes\",\r\n                    \"DailyInspection\": \"Yes\"\r\n                },\r\n                \"AuditPolicyStatus\": \"UNBOUND\",\r\n                \"Volume\": 100,\r\n                \"DeadlineTime\": \"2021-02-25 16:33:26\",\r\n                \"SecAuditStatus\": \"ON\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"Vip\": \"10.5.0.9\",\r\n                \"IsSupported\": true\r\n            }],\r\n\t\t\"RequestId\": \"b2d08895-1cfe-48bc-b7f7-87fd7cb5d6f1\"\r\n\t}\r\n}",
+        "title": "获取实例信息列表"
+      }
+    ],
+    "DescribeHealthScore": [
+      {
+        "document": "通过实例ID获取健康得分，以及异常扣分项。",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeHealthScore\n&InstanceId=test\n&Time=2019-01-01T00:00:00+08:00\n&Product=mysql\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"8b307450-6118-11eb-88ad-93c053da68c6\",\r\n        \"Data\": {\r\n            \"IssueTypes\": [\r\n                {\r\n                    \"TotalCount\": 0,\r\n                    \"Events\": [],\r\n                    \"IssueType\": \"AVAILABILITY\"\r\n                },\r\n                {\r\n                    \"TotalCount\": 0,\r\n                    \"Events\": [],\r\n                    \"IssueType\": \"MAINTAINABILITY\"\r\n                },\r\n                {\r\n                    \"TotalCount\": 1,\r\n                    \"Events\": [\r\n                        {\r\n                            \"DiagType\": \"高并发/压力请求\",\r\n                            \"ScoreLost\": 6,\r\n                            \"EndTime\": \"2021-01-28 11:20:42\",\r\n                            \"StartTime\": \"2021-01-28 11:00:00\",\r\n                            \"EventId\": 780019530,\r\n                            \"Outline\": \"监控指标 \\\"cpu_use_rate\\\" 告警，当前值 100\",\r\n                            \"Severity\": 1,\r\n                            \"Metric\": \"cpu_use_rate\",\r\n                            \"Count\": 1\r\n                        }\r\n                    ],\r\n                    \"IssueType\": \"PERFORMANCE\"\r\n                },\r\n                {\r\n                    \"TotalCount\": 3,\r\n                    \"Events\": [\r\n                        {\r\n                            \"DiagType\": \"复制\",\r\n                            \"ScoreLost\": 10,\r\n                            \"EndTime\": \"2021-01-28 11:21:17\",\r\n                            \"StartTime\": \"2021-01-28 11:20:25\",\r\n                            \"EventId\": 780018741,\r\n                            \"Outline\": \"复制IO线程中断\",\r\n                            \"Severity\": 1,\r\n                            \"Metric\": \"slave_io_running\",\r\n                            \"Count\": 1\r\n                        },\r\n                        {\r\n                            \"DiagType\": \"复制\",\r\n                            \"ScoreLost\": 10,\r\n                            \"EndTime\": \"2021-01-28 11:09:37\",\r\n                            \"StartTime\": \"2021-01-28 11:09:32\",\r\n                            \"EventId\": 779984938,\r\n                            \"Outline\": \"复制IO线程中断\",\r\n                            \"Severity\": 1,\r\n                            \"Metric\": \"slave_io_running\",\r\n                            \"Count\": 1\r\n                        },\r\n                        {\r\n                            \"DiagType\": \"复制\",\r\n                            \"ScoreLost\": 8,\r\n                            \"EndTime\": \"2021-01-28 11:20:00\",\r\n                            \"StartTime\": \"2021-01-28 11:20:00\",\r\n                            \"EventId\": 780021648,\r\n                            \"Outline\": \"复制延迟\",\r\n                            \"Severity\": 2,\r\n                            \"Metric\": \"slave_io_running\",\r\n                            \"Count\": 1\r\n                        }\r\n                    ],\r\n                    \"IssueType\": \"RELIABILITY\"\r\n                }\r\n            ],\r\n            \"EventsTotalCount\": 4,\r\n            \"Value\": 74,\r\n            \"Metric\": \"health_score\",\r\n            \"HealthLevel\": \"RISK\",\r\n            \"Unit\": \"分\"\r\n        }\r\n\t}\r\n}",
+        "title": "获取健康得分"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthScore\n<公共请求参数>\n\n{\n    \"InstanceId\":\"cdb-8jawylhf\",\n    \"Product\":\"mysql\",\n    \"Time\":\"2021-02-01 14:30:00\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0736b315-a9be-4991-92e6-28eccf3d31e3\",\r\n        \"Data\": {\r\n            \"IssueTypes\": [\r\n                {\r\n                    \"TotalCount\": 0,\r\n                    \"Events\": [],\r\n                    \"IssueType\": \"AVAILABILITY\"\r\n                },\r\n                {\r\n                    \"TotalCount\": 0,\r\n                    \"Events\": [],\r\n                    \"IssueType\": \"MAINTAINABILITY\"\r\n                },\r\n                {\r\n                    \"TotalCount\": 0,\r\n                    \"Events\": [],\r\n                    \"IssueType\": \"PERFORMANCE\"\r\n                },\r\n                {\r\n                    \"TotalCount\": 0,\r\n                    \"Events\": [],\r\n                    \"IssueType\": \"RELIABILITY\"\r\n                }\r\n            ],\r\n            \"HealthScore\": 100,\r\n            \"EventsTotalCount\": 0,\r\n            \"HealthLevel\": \"HEALTH\"\r\n        }\r\n    }\r\n}",
+        "title": "请求健康得分"
+      }
+    ],
+    "DescribeMailProfile": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeMailProfile\n&Product=mysql\n&ProfileType=scheduler_mail_configuration\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"c7324330-5fc8-11eb-a3f4-96666666\",\r\n        \"ProfileList\": [\r\n            {\r\n                \"ProfileId\": \"12345\",\r\n                \"ProfileType\": \"dbScan_mail_configuration\",\r\n                \"ProfileLevel\": \"User\",\r\n                \"UpdateTime\": \"2021-01-15 16:06:05\",\r\n                \"ProfileName\": \"测试uin\",\r\n                \"ProfileInfo\": {\r\n                    \"MailConfiguration\": {\r\n                        \"HealthStatus\": [\r\n                            \"HEALTH\",\r\n                            \"SUB_HEALTH\",\r\n                            \"RISK\",\r\n                            \"HIGH_RISK\"\r\n                        ],\r\n                        \"Region\": [\r\n                            \"eu-moscow\"\r\n                        ],\r\n                        \"ContactGroup\": [],\r\n                        \"SendMail\": 0,\r\n                        \"ContactPerson\": [\r\n                            123\r\n                        ]\r\n                    },\r\n                    \"Language\": \"zh\",\r\n                    \"UinName\": \"test\",\r\n                    \"Product\": \"mysql\",\r\n                    \"Uin\": \"123456\",\r\n                    \"OwnerUin\": \"123456\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取邮件配置"
       }
     ],
     "DescribeSecurityAuditLogDownloadUrls": [

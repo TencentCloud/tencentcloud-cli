@@ -1948,7 +1948,8 @@
       "members": [
         {
           "default": "",
-          "document": "函数的名称",
+          "document": "函数的名称。\n- 为保证[获取函数运行日志](https://cloud.tencent.com/document/product/583/18583)接口`GetFunctionLogs`兼容性，输入参数`FunctionName`仍为非必填项，但建议填写该参数，否则可能导致日志获取失败。\n- 函数关联日志服务后，建议使用[日志服务](https://cloud.tencent.com/document/product/614/16875)相关接口以获得最佳日志检索体验。",
+          "example": "helloworld-demo",
           "member": "string",
           "name": "FunctionName",
           "required": false,
@@ -1957,6 +1958,7 @@
         {
           "default": "",
           "document": "数据的偏移量，Offset+Limit不能大于10000",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1965,6 +1967,7 @@
         {
           "default": "",
           "document": "返回数据的长度，Offset+Limit不能大于10000",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1973,6 +1976,7 @@
         {
           "default": "",
           "document": "以升序还是降序的方式对日志进行排序，可选值 desc和 asc",
+          "example": "desc",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -1981,6 +1985,7 @@
         {
           "default": "",
           "document": "根据某个字段排序日志,支持以下字段：function_name, duration, mem_usage, start_time",
+          "example": "function_name",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1989,6 +1994,7 @@
         {
           "default": "",
           "document": "日志过滤条件。可用来区分正确和错误日志，filter.RetCode=not0 表示只返回错误日志，filter.RetCode=is0 表示只返回正确日志，不传，则返回所有日志",
+          "example": "not0",
           "member": "LogFilter",
           "name": "Filter",
           "required": false,
@@ -1997,6 +2003,7 @@
         {
           "default": "",
           "document": "函数的命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -2005,6 +2012,7 @@
         {
           "default": "",
           "document": "函数的版本",
+          "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
           "required": false,
@@ -2013,6 +2021,7 @@
         {
           "default": "",
           "document": "执行该函数对应的requestId",
+          "example": "d1922633-55cf-443a-a6cc-0788ce93df06",
           "member": "string",
           "name": "FunctionRequestId",
           "required": false,
@@ -2021,6 +2030,7 @@
         {
           "default": "",
           "document": "查询的具体日期，例如：2017-05-16 20:00:00，只能与endtime相差一天之内",
+          "example": "2017-05-16 20:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": false,
@@ -2029,6 +2039,7 @@
         {
           "default": "",
           "document": "查询的具体日期，例如：2017-05-16 20:59:59，只能与startTime相差一天之内",
+          "example": "2017-05-16 20:59:59",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -2037,6 +2048,7 @@
         {
           "default": "",
           "document": "该字段已下线",
+          "example": "无",
           "member": "LogSearchContext",
           "name": "SearchContext",
           "required": false,
@@ -2050,22 +2062,28 @@
       "members": [
         {
           "document": "函数日志的总数",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数日志信息",
+          "example": "无",
           "member": "FunctionLog",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "该字段已下线",
+          "example": "无",
           "member": "LogSearchContext",
           "name": "SearchContext",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

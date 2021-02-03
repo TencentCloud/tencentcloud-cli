@@ -866,7 +866,8 @@
       "members": [
         {
           "default": "",
-          "document": "人体图片 Base64 数据。\n图片 base64 编码后大小不可超过5M。\n图片分辨率不得超过 2048*2048。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "人体图片 Base64 数据。\n图片 base64 编码后大小不可超过5M。\n图片分辨率不得超过 1920 * 1080 。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "image",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -874,15 +875,8 @@
         },
         {
           "default": "",
-          "document": "人体图片 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片 base64 编码后大小不可超过5M。 \n图片分辨率不得超过 2048*2048。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "member": "string",
-          "name": "Url",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxBodyNum",
           "required": false,
@@ -890,7 +884,17 @@
         },
         {
           "default": "",
+          "document": "人体图片 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片 base64 编码后大小不可超过5M。 \n图片分辨率不得超过 1920 * 1080 。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "url",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "是否返回年龄、性别、朝向等属性。 \n可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  \n如果此参数为空则为不需要返回。 \n需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 \n关于各属性的详细描述，参见下文出参。 \n最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。",
+          "example": "test",
           "member": "AttributesOptions",
           "name": "AttributesOptions",
           "required": false,
@@ -904,15 +908,19 @@
       "members": [
         {
           "document": "图中检测出来的人体框。",
+          "example": "[]",
           "member": "BodyDetectResult",
           "name": "BodyDetectResults",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "人体识别所用的算法模型版本。",
+          "example": "1.0",
           "member": "string",
           "name": "BodyModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

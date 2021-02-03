@@ -8,6 +8,14 @@
         "title": "CreateSession示例"
       }
     ],
+    "DescribeInstancesCount": [
+      {
+        "document": "",
+        "input": "https://gs.tencentcloudapi.com/?Action=DescribeInstancesCount\n&GameId=game-zasfwedr\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\",\r\n        \"Total\": 590,\r\n        \"Running\": 480\r\n    }\r\n}",
+        "title": "获取实例总数和运行数"
+      }
+    ],
     "SaveGameArchive": [
       {
         "document": "",

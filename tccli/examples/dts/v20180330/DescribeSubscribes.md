@@ -30,7 +30,6 @@ Output:
                 "PayType": 1,
                 "Product": "mysql",
                 "Region": "ap-guangzhou",
-                "RequestId": "e580eac0-26c7-11ea-8e66-910ac0afe95e",
                 "SdkConsumedTime": "0000-00-00 00:00:00",
                 "Status": "normal",
                 "SubsStatus": "configured",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli hcm Evaluation --cli-unfold-argument  \
-    --SessionId stress_test_956938 \
+    --SessionId s_1596611058609_2868392 \
     --Url https%3a%2f%2fhcm-test-1255701415.cos.ap-guangzhou.myqcloud.com%2ffcffd312dfa63b06376d0c6fa34a205c.jpg%3fq-sign-algorithm%3dsha1%26q-ak%3dAKIDtU0Z6XdMq136HtP1NQYS4DEcn3JNEoKs%26q-sign-time%3d1547438152%3b1547439952%26q-key-time%3d1547438152%3b1547439952%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d779baa6631bc3ceff42c580678bb5866c2591dbe%26x-cos-security-token%3d673ee4f1d5791b6e65ac0efec0b692983cef672210001
 ```
 
@@ -14,21 +14,39 @@ Output:
 ```
 {
     "Response": {
-        "SessionId": "1112asdfasdf1",
+        "SessionId": "s_1596611058609_2868392",
         "Items": [
             {
                 "Item": "YES",
-                "ItemString": "99+201=300",
+                "ItemString": "600*5=6*500",
+                "ItemConf": 0,
                 "ItemCoord": {
-                    "Height": 181,
-                    "Width": 873,
-                    "X": 450,
-                    "Y": 546
-                }
+                    "Height": 130,
+                    "Width": 531,
+                    "X": 1135,
+                    "Y": 953
+                },
+                "Answer": "",
+                "ExpressionType": "1",
+                "QuestionId": ""
+            },
+            {
+                "Item": "YES",
+                "ItemString": "4厘米=(40)毫米",
+                "ItemConf": 0,
+                "ItemCoord": {
+                    "Height": 125,
+                    "Width": 579,
+                    "X": 1489,
+                    "Y": 800
+                },
+                "Answer": "",
+                "ExpressionType": "7",
+                "QuestionId": ""
             }
         ],
-        "TaskId": "",
-        "RequestId": "55ad4928-fa5-415c-2cb-868d5e3171431"
+        "RequestId": "17c1a0ba-0b66-4b28-892f-f248dcc5f548",
+        "TaskId": ""
     }
 }
 ```

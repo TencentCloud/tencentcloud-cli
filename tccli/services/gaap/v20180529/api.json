@@ -1741,6 +1741,7 @@
         {
           "default": "",
           "document": "通道组所属项目ID",
+          "example": "1000",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -1749,6 +1750,7 @@
         {
           "default": "",
           "document": "通道组别名",
+          "example": "test",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1757,6 +1759,7 @@
         {
           "default": "",
           "document": "源站地域，参考接口DescribeDestRegions 返回参数RegionDetail中的RegionId",
+          "example": "EastChina",
           "member": "string",
           "name": "RealServerRegion",
           "required": true,
@@ -1765,6 +1768,7 @@
         {
           "default": "",
           "document": "标签列表",
+          "example": "无",
           "member": "TagPair",
           "name": "TagSet",
           "required": false,
@@ -1773,6 +1777,7 @@
         {
           "default": "",
           "document": "加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。",
+          "example": "无",
           "member": "AccessConfiguration",
           "name": "AccessRegionSet",
           "required": false,
@@ -1786,6 +1791,7 @@
       "members": [
         {
           "document": "通道组ID",
+          "example": "lg-xxx",
           "member": "string",
           "name": "GroupId",
           "type": "string",
@@ -6364,6 +6370,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "1234",
           "member": "int64",
           "name": "CreateTime",
           "required": true,
@@ -6373,6 +6380,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "1000",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -6382,6 +6390,7 @@
         {
           "default": "",
           "document": "通道组中通道数量",
+          "example": "1",
           "member": "int64",
           "name": "ProxyNum",
           "required": true,
@@ -6391,6 +6400,7 @@
         {
           "default": "",
           "document": "通道组状态：\n0表示正常运行；\n1表示创建中；\n4表示销毁中；\n11表示迁移中；",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -6400,6 +6410,7 @@
         {
           "default": "",
           "document": "归属Uin",
+          "example": "100100",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -6409,6 +6420,7 @@
         {
           "default": "",
           "document": "创建Uin",
+          "example": "100100",
           "member": "string",
           "name": "CreateUin",
           "required": true,
@@ -6418,6 +6430,7 @@
         {
           "default": "",
           "document": "通道名称",
+          "example": "Test",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -6427,6 +6440,7 @@
         {
           "default": "",
           "document": "通道组域名解析默认IP",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "DnsDefaultIp",
           "required": true,
@@ -6436,6 +6450,7 @@
         {
           "default": "",
           "document": "通道组域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "link-test.gaapqcloud.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6445,6 +6460,7 @@
         {
           "default": "",
           "document": "目标地域",
+          "example": "EastChina",
           "member": "RegionDetail",
           "name": "RealServerRegionInfo",
           "required": true,
@@ -6454,6 +6470,7 @@
         {
           "default": "",
           "document": "是否老通道组，2018-08-03之前创建的通道组为老通道组",
+          "example": "false",
           "member": "bool",
           "name": "IsOldGroup",
           "required": true,
@@ -6463,6 +6480,7 @@
         {
           "default": "",
           "document": "通道组ID",
+          "example": "\"\"",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -6472,6 +6490,7 @@
         {
           "default": "",
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "TagPair",
           "name": "TagSet",
           "required": true,
@@ -6481,6 +6500,7 @@
         {
           "default": "",
           "document": "安全策略ID，当设置了安全策略时，存在该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -6490,6 +6510,7 @@
         {
           "default": "",
           "document": "通道组版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.0\"",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -6499,6 +6520,7 @@
         {
           "default": "",
           "document": "通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ClientIPMethod",
           "required": true,
