@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "CreateStructureTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStructureTask\n<公共请求参数>\n\n{\n    \"PolicyId\": \"20201212001\",\n    \"CustomerId\": \"c001\",\n    \"CustomerName\": \"xx保险\",\n    \"TaskType\":\"HealthReport\",\n    \"Year\": \"2020\",\n    \"FileList\": [\"original_upload_dir/report.pdf\"]\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\r\n        \"TaskId\": \"37835597617481728\"\r\n    }\r\n}",
+        "title": "创建结构化任务接口示例"
+      }
+    ],
+    "DescribeStructCompareData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStructCompareData\n<公共请求参数>\n\n{\n\t\"TaskId\": \"37778536980168704\"\n}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"9317f6e4-6636-41a0-bf24-89ad9e4877f2\",\r\n\t\t\"PolicyId\": \"100001\",\r\n\t\t\"TaskId\": \"37778536980168704\",\r\n\t\t\"CustomerId\": \"100001\",\r\n\t\t\"CustomerName\": \"张三\",\r\n\t\t\"ReviewTime\": \"2020-12-19 18:43:37\",\r\n\t\t\"MachineResult\": \"{...}\",\r\n\t\t\"ManualResult\": \"{...}\",\r\n                \"NewItems\":\"\",\r\n                \"ModifyItems\":\"\",\r\n\t\t\"Metrics\": {\r\n\t\t\t\"ShortStructAccuracy\": \"95\",\r\n\t\t\t\"ShortStructRecall\": \"11\",\r\n\t\t\t\"LongStructAccuracy\": \"93\",\r\n\t\t\t\"LongStructRecall\": \"14\",\r\n\t\t\t\"LongContentAccuracy\": \"94\",\r\n\t\t\t\"LongContentRecall\": \"14\"\r\n\t\t}\r\n\t}\r\n}",
+        "title": "结构化对比查询接口示例"
+      }
+    ],
+    "DescribeStructureTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStructureTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"37835597617481728\"\n}",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\r\n\t\t\"Status\": \"0\",\r\n\t\t\"Results\": [{\r\n\t\t\t\"Quality\": 0.72,\r\n\t\t\t\"StructureResult\": \"xxxxxx\"\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "获取结构化结果接口示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

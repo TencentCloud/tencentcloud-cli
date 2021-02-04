@@ -19,7 +19,8 @@ Output:
             {
                 "VpcName": "xxxx",
                 "VpcId": "xxxxx",
-                "CreatedTime": "2019-11-12 00:00:00"
+                "CreatedTime": "2019-11-12 00:00:00",
+                "IsDefault": false
             }
         ],
         "RequestId": "6010cd3d-a85a-4e00-b37b-22606d017420"

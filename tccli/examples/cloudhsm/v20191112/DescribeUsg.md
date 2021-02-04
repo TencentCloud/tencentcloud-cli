@@ -7,7 +7,8 @@ Input:
 ```
 tccli cloudhsm DescribeUsg --cli-unfold-argument  \
     --Offset 0 \
-    --Limit 10
+    --Limit 10 \
+    --SearchWord xxxx
 ```
 
 Output: 
@@ -18,7 +19,9 @@ Output:
         "SgList": [
             {
                 "SgId": "SgIdxxxxx",
-                "SgName": "SgNamexxxxxx"
+                "SgName": "SgNamexxxxxx",
+                "SgRemark": "xxxxxxxx",
+                "CreateTime": "xxxxxxxx"
             }
         ],
         "RequestId": "6010cd3d-a85a-4e00-b37b-22606d017420"

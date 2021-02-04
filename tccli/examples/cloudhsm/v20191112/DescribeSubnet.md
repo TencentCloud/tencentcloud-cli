@@ -23,7 +23,9 @@ Output:
                 "CidrBlock": "172.16.16.0/24",
                 "Ipv6CidrBlock": "3402:4e00:20:1201::/64",
                 "AvailableIpAddressCount": 2,
-                "CreatedTime": "2017-04-20 11:30:48"
+                "CreatedTime": "2017-04-20 11:30:48",
+                "TotalIpAddressCount": 254,
+                "IsDefault": false
             }
         ],
         "TotalCount": 1,

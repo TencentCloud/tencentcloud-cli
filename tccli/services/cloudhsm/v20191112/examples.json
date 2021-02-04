@@ -20,15 +20,15 @@
       {
         "document": "查询子网列表",
         "input": "https://cloudhsm.tencentcloudapi.com/?Action=DescribeSubnet\n&Offset=0\n&Limit=10\n&VpcId=vpc-2at5y1pn\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"SubnetList\": [\r\n      {\r\n        \"VpcId\": \"vpc-2at5y1pn\",\r\n        \"SubnetId\": \"subnet-otu92seu\",\r\n        \"SubnetName\": \"默认广州二区子网\",\r\n        \"CidrBlock\": \"172.16.16.0/24\",\r\n        \"Ipv6CidrBlock\": \"3402:4e00:20:1201::/64\",\r\n        \"AvailableIpAddressCount\": 2,\r\n        \"CreatedTime\": \"2017-04-20 11:30:48\"\r\n      }\r\n    ],\r\n    \"TotalCount\": 1,\r\n    \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\r\n  }\r\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"SubnetList\": [\r\n      {\r\n        \"VpcId\": \"vpc-2at5y1pn\",\r\n        \"SubnetId\": \"subnet-otu92seu\",\r\n        \"SubnetName\": \"默认广州二区子网\",\r\n        \"CidrBlock\": \"172.16.16.0/24\",\r\n        \"Ipv6CidrBlock\": \"3402:4e00:20:1201::/64\",\r\n        \"AvailableIpAddressCount\": 2,\r\n        \"CreatedTime\": \"2017-04-20 11:30:48\",\r\n        \"TotalIpAddressCount\":254,\r\n        \"IsDefault\":false\r\n      }\r\n    ],\r\n    \"TotalCount\": 1,\r\n    \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\r\n  }\r\n}",
         "title": "查询子网列表"
       }
     ],
     "DescribeUsg": [
       {
         "document": "获取用户安全组列表",
-        "input": "https://cloudhsm.tencentcloudapi.com/?Action=DescribeUsg\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\":1,\r\n            \"SgList\":[{\r\n                    \"SgId\":\"SgIdxxxxx\",\r\n                    \"SgName\":\"SgNamexxxxxx\"\r\n                 }\r\n            ],\r\n        \"RequestId\": \"6010cd3d-a85a-4e00-b37b-22606d017420\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cloudhsm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsg\n<公共请求参数>\n\n\n{\n\"Offset\": 0,\n\"Limit\": 10,\n\"SearchWord\": \"xxxx\"\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\":1,\r\n            \"SgList\":[{\r\n                    \"SgId\":\"SgIdxxxxx\",\r\n                    \"SgName\":\"SgNamexxxxxx\",\r\n                    \"SgRemark\":\"xxxxxxxx\",\r\n                    \"CreateTime\":\"xxxxxxxx\"\r\n                 }\r\n            ],\r\n        \"RequestId\": \"6010cd3d-a85a-4e00-b37b-22606d017420\"\r\n    }\r\n}",
         "title": "获取用户安全组列表"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "document": "获取Vpc列表",
         "input": "https://cloudhsm.tencentcloudapi.com/?Action=DescribeVpc\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\":1,\r\n        \"VpcList\": [{\r\n            \"VpcName\":\"xxxx\",\r\n            \"VpcId\":\"xxxxx\",\r\n            \"CreatedTime\":\"2019-11-12 00:00:00\"\r\n        }],\r\n        \"RequestId\": \"6010cd3d-a85a-4e00-b37b-22606d017420\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\":1,\r\n        \"VpcList\": [{\r\n            \"VpcName\":\"xxxx\",\r\n            \"VpcId\":\"xxxxx\",\r\n            \"CreatedTime\":\"2019-11-12 00:00:00\",\r\n            \"IsDefault\": false\r\n        }],\r\n        \"RequestId\": \"6010cd3d-a85a-4e00-b37b-22606d017420\"\r\n    }\r\n}",
         "title": "获取Vpc列表"
       }
     ],
@@ -60,7 +60,7 @@
       {
         "document": "",
         "input": "https://cloudhsm.tencentcloudapi.com/?Action=DescribeVsms\n&Offset=0\n&Limit=10\n&SearchWord=xxxxxxx\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\":1,\r\n        \"VsmList\": {\r\n            \"ResourceId\":\"xxxx\",\r\n            \"ResourceName\":\"xxxxx\",\r\n            \"Status\":1,\r\n            \"Vip\":\"1.2.3.4\",\r\n            \"VpcId\":\"xxxxx\",\r\n            \"SubnetId\":\"xxxxxx\",\r\n            \"Model\":\"SJJ1528\",\r\n            \"VsmType\":17,\r\n            \"RegionId\":1,\r\n            \"RegionName\":\"ap-guangzhou\",\r\n            \"ZoneName\":\"上海四区\",\r\n            \"ZoneId\":1,\r\n            \"ExpireTime\":1234567890,\r\n            \"SgList\":[{\r\n                    \"SgId\":\"SgIdxxxxx\",\r\n                    \"SgName\":\"SgNamexxxxxx\"\r\n                 }\r\n            ]\r\n        },\r\n        \"RequestId\": \"6010cd3d-a85a-4e00-b37b-22606d017420\"\r\n    }\r\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\":1,\r\n        \"VsmList\": {\r\n            \"ResourceId\":\"xxxx\",\r\n            \"ResourceName\":\"xxxxx\",\r\n            \"Status\":1,\r\n            \"Vip\":\"1.2.3.4\",\r\n            \"VpcId\":\"xxxxx\",\r\n            \"SubnetId\":\"xxxxxx\",\r\n            \"Model\":\"SJJ1528\",\r\n            \"VsmType\":17,\r\n            \"RegionId\":1,\r\n            \"RegionName\":\"广州\",\r\n            \"ZoneName\":\"广州三区\",\r\n            \"ZoneId\":1,\r\n            \"ExpireTime\":1234567890,\r\n            \"SgList\":[{\r\n                    \"SgId\":\"SgIdxxxxx\",\r\n                    \"SgName\":\"SgNamexxxxxx\"\r\n                 }\r\n            ]\r\n        },\r\n        \"RequestId\": \"6010cd3d-a85a-4e00-b37b-22606d017420\"\r\n    }\r\n}",
         "title": "获取用户VSM列表"
       }
     ],

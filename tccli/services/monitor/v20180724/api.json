@@ -317,6 +317,7 @@
         {
           "default": "",
           "document": "告警历史Id",
+          "example": "01e1f33f-b4ec-43db-8fd0-6f7e163e6ca5",
           "member": "string",
           "name": "AlarmId",
           "required": true,
@@ -326,6 +327,7 @@
         {
           "default": "",
           "document": "监控类型",
+          "example": "MT_QCE",
           "member": "string",
           "name": "MonitorType",
           "required": true,
@@ -335,6 +337,7 @@
         {
           "default": "",
           "document": "策略类型",
+          "example": "cvm_device",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -344,6 +347,7 @@
         {
           "default": "",
           "document": "告警对象",
+          "example": "ins-abcdef",
           "member": "string",
           "name": "AlarmObject",
           "required": true,
@@ -353,6 +357,7 @@
         {
           "default": "",
           "document": "告警内容",
+          "example": "CPU 使用率 > 80%",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -362,6 +367,7 @@
         {
           "default": "",
           "document": "时间戳，首次出现时间",
+          "example": "1611700000",
           "member": "int64",
           "name": "FirstOccurTime",
           "required": true,
@@ -371,6 +377,7 @@
         {
           "default": "",
           "document": "时间戳，最后出现时间",
+          "example": "1611734567",
           "member": "int64",
           "name": "LastOccurTime",
           "required": true,
@@ -380,6 +387,7 @@
         {
           "default": "",
           "document": "告警状态，ALARM=未恢复 OK=已恢复 NO_CONF=已失效 NO_DATA=数据不足",
+          "example": "ALARM",
           "member": "string",
           "name": "AlarmStatus",
           "required": true,
@@ -389,6 +397,7 @@
         {
           "default": "",
           "document": "告警策略 Id",
+          "example": "policy-abcdef",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -398,6 +407,7 @@
         {
           "default": "",
           "document": "策略名称",
+          "example": "云服务器告警策略",
           "member": "string",
           "name": "PolicyName",
           "required": true,
@@ -407,6 +417,7 @@
         {
           "default": "",
           "document": "基础产品告警的告警对象所属网络",
+          "example": "0",
           "member": "string",
           "name": "VPC",
           "required": true,
@@ -416,6 +427,7 @@
         {
           "default": "",
           "document": "项目 Id",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -425,6 +437,7 @@
         {
           "default": "",
           "document": "项目名字",
+          "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -434,6 +447,7 @@
         {
           "default": "",
           "document": "告警对象所属实例组",
+          "example": "无",
           "member": "InstanceGroups",
           "name": "InstanceGroup",
           "required": true,
@@ -443,6 +457,7 @@
         {
           "default": "",
           "document": "接收人列表",
+          "example": "无",
           "member": "int64",
           "name": "ReceiverUids",
           "required": true,
@@ -452,6 +467,7 @@
         {
           "default": "",
           "document": "接收组列表",
+          "example": "无",
           "member": "int64",
           "name": "ReceiverGroups",
           "required": true,
@@ -461,6 +477,7 @@
         {
           "default": "",
           "document": "告警渠道列表 SMS=短信 EMAIL=邮件 CALL=电话 WECHAT=微信",
+          "example": "无",
           "member": "string",
           "name": "NoticeWays",
           "required": true,
@@ -470,6 +487,7 @@
         {
           "default": "",
           "document": "兼容告警1.0策略组 Id",
+          "example": "12345",
           "member": "string",
           "name": "OriginId",
           "required": true,
@@ -479,6 +497,7 @@
         {
           "default": "",
           "document": "告警类型",
+          "example": "METRIC",
           "member": "string",
           "name": "AlarmType",
           "required": true,
@@ -488,6 +507,7 @@
         {
           "default": "",
           "document": "事件Id",
+          "example": "0",
           "member": "int64",
           "name": "EventId",
           "required": true,
@@ -497,6 +517,7 @@
         {
           "default": "",
           "document": "地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -506,6 +527,7 @@
         {
           "default": "",
           "document": "策略是否存在 0=不存在 1=存在",
+          "example": "1",
           "member": "int64",
           "name": "PolicyExists",
           "required": true,
@@ -2226,6 +2248,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -2234,6 +2257,7 @@
         {
           "default": "",
           "document": "页数，从 1 开始计数，默认 1",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -2242,6 +2266,7 @@
         {
           "default": "",
           "document": "每页的数量，取值1~100，默认20",
+          "example": "20",
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -2250,6 +2275,7 @@
         {
           "default": "",
           "document": "默认按首次出现时间倒序排列 \"ASC\"=正序 \"DESC\"=逆序",
+          "example": "DESC",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -2258,6 +2284,7 @@
         {
           "default": "",
           "document": "起始时间，默认一天前的时间戳",
+          "example": "1611600000",
           "member": "int64",
           "name": "StartTime",
           "required": false,
@@ -2266,6 +2293,7 @@
         {
           "default": "",
           "document": "结束时间，默认当前时间戳",
+          "example": "1611650000",
           "member": "int64",
           "name": "EndTime",
           "required": false,
@@ -2274,6 +2302,7 @@
         {
           "default": "",
           "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控 \"",
+          "example": "MT_QCE",
           "member": "string",
           "name": "MonitorTypes",
           "required": false,
@@ -2282,6 +2311,7 @@
         {
           "default": "",
           "document": "根据告警对象过滤 字符串模糊搜索",
+          "example": "无",
           "member": "string",
           "name": "AlarmObject",
           "required": false,
@@ -2290,6 +2320,7 @@
         {
           "default": "",
           "document": "根据告警状态过滤 ALARM=未恢复 OK=已恢复 NO_CONF=已失效 NO_DATA=数据不足，不选默认查所有",
+          "example": "ALARM",
           "member": "string",
           "name": "AlarmStatus",
           "required": false,
@@ -2298,6 +2329,7 @@
         {
           "default": "",
           "document": "根据项目ID过滤，-1=无项目 0=默认项目",
+          "example": "无",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -2306,6 +2338,7 @@
         {
           "default": "",
           "document": "根据实例组ID过滤",
+          "example": "无",
           "member": "int64",
           "name": "InstanceGroupIds",
           "required": false,
@@ -2314,6 +2347,7 @@
         {
           "default": "",
           "document": "根据策略类型过滤",
+          "example": "cvm_device",
           "member": "MonitorTypeNamespace",
           "name": "Namespaces",
           "required": false,
@@ -2322,6 +2356,7 @@
         {
           "default": "",
           "document": "根据指标名过滤",
+          "example": "CpuUsage",
           "member": "string",
           "name": "MetricNames",
           "required": false,
@@ -2330,6 +2365,7 @@
         {
           "default": "",
           "document": "根据策略名称模糊搜索",
+          "example": "无",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -2338,6 +2374,7 @@
         {
           "default": "",
           "document": "根据告警内容模糊搜索",
+          "example": "无",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -2346,6 +2383,7 @@
         {
           "default": "",
           "document": "根据接收人搜索",
+          "example": "无",
           "member": "int64",
           "name": "ReceiverUids",
           "required": false,
@@ -2354,6 +2392,7 @@
         {
           "default": "",
           "document": "根据接收组搜索",
+          "example": "无",
           "member": "int64",
           "name": "ReceiverGroups",
           "required": false,
@@ -2362,6 +2401,7 @@
         {
           "default": "",
           "document": "根据告警策略 Id 列表搜索",
+          "example": "policy-abcedf",
           "member": "string",
           "name": "PolicyIds",
           "required": false,
@@ -2375,15 +2415,19 @@
       "members": [
         {
           "document": "总数",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "告警历史列表",
+          "example": "无",
           "member": "AlarmHistory",
           "name": "Histories",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

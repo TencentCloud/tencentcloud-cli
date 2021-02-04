@@ -26,8 +26,8 @@ Output:
             "Model": "SJJ1528",
             "VsmType": 17,
             "RegionId": 1,
-            "RegionName": "ap-guangzhou",
-            "ZoneName": "上海四区",
+            "RegionName": "广州",
+            "ZoneName": "广州三区",
             "ZoneId": 1,
             "ExpireTime": 1234567890,
             "SgList": [

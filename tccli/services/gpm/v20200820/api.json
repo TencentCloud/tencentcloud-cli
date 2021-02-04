@@ -147,7 +147,7 @@
         },
         {
           "default": "",
-          "document": "要取消的匹配请求 Id",
+          "document": "要取消的匹配匹配票据 ID",
           "member": "string",
           "name": "MatchTicketId",
           "required": true,
@@ -671,7 +671,8 @@
       "members": [
         {
           "default": "",
-          "document": "请求 id 列表, 列表长度 128。",
+          "document": "匹配票据 ID列表, 列表长度 12。",
+          "example": "无",
           "member": "MTicket",
           "name": "MatchTicketIds",
           "required": true,
@@ -684,16 +685,20 @@
       "document": "DescribeMatchingProgress返回参数结构体",
       "members": [
         {
-          "document": "请求结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配票据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MatchTicket",
           "name": "MatchTickets",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "ErrCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1927,7 +1932,7 @@
         },
         {
           "default": "",
-          "document": "请求 Id 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -",
+          "document": "匹配票据 ID 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -",
           "member": "string",
           "name": "MatchTicketId",
           "required": false,
@@ -1947,7 +1952,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "请求 id 长度 128。",
+          "document": "匹配票据 ID长度 128。",
           "member": "string",
           "name": "MatchTicketId",
           "type": "string",

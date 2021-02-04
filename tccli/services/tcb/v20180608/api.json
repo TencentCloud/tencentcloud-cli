@@ -890,6 +890,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "挂载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseRunVolumeMount",
+          "name": "VolumeMountInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1320,6 +1330,52 @@
           "name": "Status",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudRunServiceVolume": {
+      "document": "服务的volume",
+      "members": [
+        {
+          "default": "",
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "NFS的挂载方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseRunNfsVolumeSource",
+          "name": "NFS",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "secret名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "SecretName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启临时目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableEmptyDirVolume",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -1968,6 +2024,15 @@
           "name": "Security",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "服务磁盘挂载",
+          "example": "无",
+          "member": "CloudRunServiceVolume",
+          "name": "ServiceVolumes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

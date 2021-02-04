@@ -559,7 +559,8 @@
       "members": [
         {
           "default": "",
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "document": "服务产品类型，固定值：mysql。",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -568,6 +569,7 @@
         {
           "default": "",
           "document": "联系人名数组，支持模糊搜索。",
+          "example": "zhangsan",
           "member": "string",
           "name": "Names",
           "required": false,
@@ -581,15 +583,19 @@
       "members": [
         {
           "document": "联系人的总数量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "联系人的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "ContactItem",
           "name": "Contacts",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -607,7 +613,8 @@
       "members": [
         {
           "default": "",
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "document": "服务产品类型，固定值：mysql。",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -616,6 +623,7 @@
         {
           "default": "",
           "document": "联系组名称数组，支持模糊搜索。",
+          "example": "group1",
           "member": "string",
           "name": "Names",
           "required": false,
@@ -629,15 +637,19 @@
       "members": [
         {
           "document": "组总数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "组信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "GroupItem",
           "name": "Groups",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

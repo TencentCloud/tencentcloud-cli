@@ -69,6 +69,8 @@ include tccli/services/chdfs/v20201112/api.json
 include tccli/services/chdfs/v20201112/examples.json
 include tccli/services/chdfs/v20190718/api.json
 include tccli/services/chdfs/v20190718/examples.json
+include tccli/services/cii/v20201210/api.json
+include tccli/services/cii/v20201210/examples.json
 include tccli/services/cim/v20190318/api.json
 include tccli/services/cim/v20190318/examples.json
 include tccli/services/cis/v20180408/api.json
@@ -307,6 +309,8 @@ include tccli/services/trtc/v20190722/api.json
 include tccli/services/trtc/v20190722/examples.json
 include tccli/services/tsf/v20180326/api.json
 include tccli/services/tsf/v20180326/examples.json
+include tccli/services/tsw/v20200924/api.json
+include tccli/services/tsw/v20200924/examples.json
 include tccli/services/tts/v20190823/api.json
 include tccli/services/tts/v20190823/examples.json
 include tccli/services/ump/v20200918/api.json

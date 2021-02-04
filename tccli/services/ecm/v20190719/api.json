@@ -5954,6 +5954,7 @@
         {
           "default": "",
           "document": "机型族配置信息",
+          "example": "无",
           "member": "InstanceFamilyConfig",
           "name": "InstanceFamilyConfig",
           "required": true,
@@ -5963,6 +5964,7 @@
         {
           "default": "",
           "document": "机型",
+          "example": "VIS.16XLARGE128",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -5972,6 +5974,7 @@
         {
           "default": "",
           "document": "CPU核数",
+          "example": "2",
           "member": "int64",
           "name": "Vcpu",
           "required": true,
@@ -5981,6 +5984,7 @@
         {
           "default": "",
           "document": "内存大小",
+          "example": "4",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -5990,6 +5994,7 @@
         {
           "default": "",
           "document": "主频",
+          "example": "2.5 GHz",
           "member": "string",
           "name": "Frequency",
           "required": true,
@@ -5999,6 +6004,7 @@
         {
           "default": "",
           "document": "处理器型号",
+          "example": "Intel Xeon Skylake 6133",
           "member": "string",
           "name": "CpuModelName",
           "required": true,
@@ -6008,6 +6014,7 @@
         {
           "default": "",
           "document": "机型族类别配置信息",
+          "example": "无",
           "member": "InstanceFamilyTypeConfig",
           "name": "InstanceFamilyTypeConfig",
           "required": true,
@@ -6017,8 +6024,29 @@
         {
           "default": "",
           "document": "机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{\"dataDiskSize\":3200,\"systemDiskSize\":60, \"systemDiskSizeShow\":\"系统盘默认60G\",\"dataDiskSizeShow\":\"本地NVMe SSD 硬盘3200 GB\"}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "Vgpu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NVDIA Tesla T4",
+          "member": "string",
+          "name": "GpuModelName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
