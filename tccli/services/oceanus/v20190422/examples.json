@@ -40,6 +40,14 @@
         "title": "删除作业表配置"
       }
     ],
+    "DescribeJobConfigs": [
+      {
+        "document": "",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeJobConfigs\n&JobId=cql-fktse6bt\n&JobConfigVersions.0=1\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"JobConfigSet\": [{\r\n\t\t\t\"JobId\": \"cql-fktse6bt\",\r\n\t\t\t\"EntrypointClass\": \"\",\r\n\t\t\t\"ProgramArgs\": \"\",\r\n\t\t\t\"DefaultParallelism\": 2,\r\n\t\t\t\"Version\": 1,\r\n\t\t\t\"CreateTime\": \"2019-06-05 15:05:50\",\r\n\t\t\t\"Remark\": \"\",\r\n\t\t\t\"Properties\": []\r\n\t\t}],\r\n\t\t\"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\r\n\t}\r\n}",
+        "title": "查询作业配置列表示例"
+      }
+    ],
     "DescribeJobs": [
       {
         "document": "",
