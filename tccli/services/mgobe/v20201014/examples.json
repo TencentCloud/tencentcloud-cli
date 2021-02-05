@@ -18,10 +18,10 @@
     ],
     "DescribePlayer": [
       {
-        "document": "查询房间信息",
+        "document": "查询玩家信息",
         "input": "https://mgobe.tencentcloudapi.com/?Action=DescribePlayer\n&GameId=obg-fr4vwil4\n&PlayerId=joe123455\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"Player\": \r\n        {\r\n          \"OpenId\": \"joe123455\",\r\n          \"Name\": \"xx\",\r\n          \"CustomProfile\": \"worker\",\r\n          \"IsRobot\": false,\r\n          \"PlayerId\": \"joe123455\",\r\n          \"CustomPlayerStatus\": 1,\r\n          \"TeamId\": \"xx\"\r\n        },\r\n      \r\n    \"RequestId\": \"xx\"\r\n  }\r\n}",
-        "title": "查询房间信息"
+        "title": "查询玩家信息"
       }
     ],
     "DescribeRoom": [

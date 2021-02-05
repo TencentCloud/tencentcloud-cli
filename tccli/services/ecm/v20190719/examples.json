@@ -43,7 +43,7 @@
     "AttachNetworkInterface": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=AttachNetworkInterface\r\n&NetworkInterfaceId=eni-12121212\r\n&InstanceId=ins-ins-11221122\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=AttachNetworkInterface\n&NetworkInterfaceId=eni-12121212\n&InstanceId=ins-ins-11221122\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\r\n  }\r\n}",
         "title": "弹性网卡绑定云主机"
       }
@@ -115,7 +115,7 @@
     "CreateNetworkInterface": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=CreateNetworkInterface\r\n&VpcId=vpc-1111111\r\n&SubnetId=subnet-22222222\r\n&NetworkInterfaceName=Test\r\n&NetworkInterfaceDescription=Test\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=CreateNetworkInterface\n&VpcId=vpc-1111111\n&SubnetId=subnet-22222222\n&NetworkInterfaceName=Test\n&NetworkInterfaceDescription=Test\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"NetworkInterface\": {\r\n      \"NetworkInterfaceId\": \"eni-12121212\",\r\n      \"VpcId\": \"vpc-1111111\",\r\n      \"SubnetId\": \"subnet-22222222\",\r\n      \"NetworkInterfaceName\": \"Test\",\r\n      \"NetworkInterfaceDescription\": \"Test\",\r\n      \"MacAddress\": \"20:90:6F:62:33:E2\",\r\n      \"PrivateIpAddressSet\": [\r\n        {\r\n          \"PrivateIpAddress\": \"172.16.64.13\",\r\n          \"Primary\": true,\r\n          \"AddressId\": \"\",\r\n          \"PublicIpAddress\": \"\",\r\n          \"Description\": \"\",\r\n          \"IsWanIpBlocked\": false,\r\n          \"State\": \"PENDING\"\r\n        }\r\n      ],\r\n      \"Attachment\": null,\r\n      \"GroupSet\": [],\r\n      \"Primary\": false,\r\n      \"State\": \"PENDING\",\r\n      \"Zone\": \"ap-hangzhou-ecm-1\",\r\n      \"CreatedTime\": \"\",\r\n      \"Ipv6AddressSet\": []\r\n    },\r\n    \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\r\n  }\r\n}",
         "title": "创建弹性网卡"
       }
@@ -583,7 +583,7 @@
     "DetachNetworkInterface": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=DetachNetworkInterface\r\n&NetworkInterfaceId=eni-12121212\r\n&InstanceId=ins-11221122\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DetachNetworkInterface\n&NetworkInterfaceId=eni-12121212\n&InstanceId=ins-11221122\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\r\n  }\r\n}",
         "title": "弹性网卡解绑云主机"
       }
@@ -599,7 +599,7 @@
     "DisassociateAddress": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=DisassociateAddress\r\n&AddressId=eip-11112222\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DisassociateAddress\n&AddressId=eip-11112222\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"TaskId\": \"123\",\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}",
         "title": "解绑 EIP"
       }
@@ -784,6 +784,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=ModifyModuleSecurityGroups\n&SecurityGroupIdSet.0=esg-2071nxxw\n&SecurityGroupIdSet.1=esg-belgyqvu\n&ModuleId=em-06qmx7wa\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"0f092f2e-0ea2-4c20-9f22-ef4b629c99fa\"\r\n  }\r\n}",
         "title": "修改模块默认安全组"
+      }
+    ],
+    "ModifyPrivateIpAddressesAttribute": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyPrivateIpAddressesAttribute\n&NetworkInterfaceId=eni-pwbqma5d\n&PrivateIpAddresses.0.PrivateIpAddress=192.168.2.7\n&PrivateIpAddresses.0.Description=new-name\n&EcmRegion=\"ap-guangzhou-ecm\"\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\r\n  }\r\n}",
+        "title": "修改弹性网卡内网IP属性"
       }
     ],
     "ModifyRouteTableAttribute": [

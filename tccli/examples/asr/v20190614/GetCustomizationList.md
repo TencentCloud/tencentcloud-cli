@@ -12,6 +12,7 @@ Output:
 {
     "Response": {
         "RequestId": "5f44d72be3a308c9b62158b0",
+        "TotalCount": 2,
         "Data": [
             {
                 "ModelName": "dd",

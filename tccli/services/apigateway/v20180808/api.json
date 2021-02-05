@@ -97,7 +97,7 @@
       "output": "DemoteServiceUsagePlanResponse"
     },
     "DescribeApi": {
-      "document": "本接口（DescribeApi）用于查询用户部署于 API 网关的 API 接口的详细信息。​",
+      "document": "本接口（DescribeApi）用于查询用户 API 网关的 API 接口的详细信息。​",
       "input": "DescribeApiRequest",
       "name": "查询API详情",
       "output": "DescribeApiResponse"
@@ -3589,6 +3589,7 @@
         {
           "default": "",
           "document": "要查询的插件列表。",
+          "example": "plugin-2nuhovb7",
           "member": "string",
           "name": "PluginIds",
           "required": false,
@@ -3597,6 +3598,7 @@
         {
           "default": "",
           "document": "要查询的插件名称。",
+          "example": "myplugin",
           "member": "string",
           "name": "PluginName",
           "required": false,
@@ -3605,6 +3607,7 @@
         {
           "default": "",
           "document": "要查询的插件类型。",
+          "example": "IPControl",
           "member": "string",
           "name": "PluginType",
           "required": false,
@@ -3613,6 +3616,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3621,6 +3625,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3629,6 +3634,7 @@
         {
           "default": "",
           "document": "过滤条件。预留字段，目前不支持过滤。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3642,8 +3648,10 @@
       "members": [
         {
           "document": "插件详情。",
+          "example": "无",
           "member": "PluginSummary",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

@@ -558,6 +558,12 @@
       "name": "修改模块默认安全组",
       "output": "ModifyModuleSecurityGroupsResponse"
     },
+    "ModifyPrivateIpAddressesAttribute": {
+      "document": "用于修改弹性网卡内网IP属性。",
+      "input": "ModifyPrivateIpAddressesAttributeRequest",
+      "name": "修改弹性网卡内网IP信息",
+      "output": "ModifyPrivateIpAddressesAttributeResponse"
+    },
     "ModifyRouteTableAttribute": {
       "document": "修改路由表属性",
       "input": "ModifyRouteTableAttributeRequest",
@@ -923,6 +929,7 @@
         {
           "default": "",
           "document": "ECM 地域",
+          "example": "无",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -931,6 +938,7 @@
         {
           "default": "",
           "document": "EIP数量。默认值：1。",
+          "example": "无",
           "member": "uint64",
           "name": "AddressCount",
           "required": false,
@@ -939,6 +947,7 @@
         {
           "default": "",
           "document": "CMCC：中国移动\nCTCC：中国电信\nCUCC：中国联通",
+          "example": "无",
           "member": "string",
           "name": "InternetServiceProvider",
           "required": false,
@@ -947,6 +956,7 @@
         {
           "default": "",
           "document": "1 Mbps 至 5000 Mbps，默认值：1 Mbps。",
+          "example": "无",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -955,10 +965,38 @@
         {
           "default": "",
           "document": "需要关联的标签列表。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要绑定的实例 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要绑定的内网 IP。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIpAddress ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIpAddress 是指定的 NetworkInterfaceId 上的一个内网 IP。指定弹性网卡的内网 IP 可通过DescribeNetworkInterfaces接口返回值中的privateIpAddress获取。",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -968,15 +1006,19 @@
       "members": [
         {
           "document": "申请到的 EIP 的唯一 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AddressSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "异步任务TaskId。可以使用DescribeTaskResult接口查询任务状态。",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1289,7 +1331,7 @@
         },
         {
           "default": "",
-          "document": "ECM 地域",
+          "document": "ECM 地域，形如ap-xian-ecm。",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -2045,7 +2087,7 @@
         },
         {
           "default": "",
-          "document": "ECM 地域",
+          "document": "ECM 地域，形如ap-xian-ecm。",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -3823,6 +3865,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。",
+          "example": "无",
           "member": "string",
           "name": "NetworkInterfaceIds",
           "required": false,
@@ -3831,6 +3874,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nsubnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。\nnetwork-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。\nattachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。\ngroups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。\nnetwork-interface-name - String - （过滤条件）网卡实例名称。\nnetwork-interface-description - String - （过滤条件）网卡实例描述。\naddress-ip - String - （过滤条件）内网IPv4地址。\ntag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2\ntag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。\nis-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；次过滤参数为提供时，同时过滤主网卡和辅助网卡。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3839,6 +3883,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3847,6 +3892,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3854,7 +3900,8 @@
         },
         {
           "default": "",
-          "document": "ECM 地域",
+          "document": "ECM 地域，形如ap-xian-ecm。",
+          "example": "无",
           "member": "string",
           "name": "EcmRegion",
           "required": false,
@@ -3868,15 +3915,19 @@
       "members": [
         {
           "document": "符合条件的实例数量。",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterfaceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4638,7 +4689,7 @@
         },
         {
           "default": "",
-          "document": "ECM 地域",
+          "document": "ECM 地域，形如ap-xian-ecm。",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -7096,7 +7147,7 @@
         },
         {
           "default": "",
-          "document": "是否禁止分配外网ip",
+          "document": "是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.",
           "member": "bool",
           "name": "DisableWanIp",
           "required": true,
@@ -7285,6 +7336,48 @@
     },
     "ModifyModuleSecurityGroupsResponse": {
       "document": "ModifyModuleSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateIpAddressesAttributeRequest": {
+      "document": "ModifyPrivateIpAddressesAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定的内网IP信息。",
+          "member": "PrivateIpAddressSpecification",
+          "name": "PrivateIpAddresses",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "ECM 节点Region信息，形如ap-xian-ecm。",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateIpAddressesAttributeResponse": {
+      "document": "ModifyPrivateIpAddressesAttribute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9428,6 +9521,7 @@
         {
           "default": "",
           "document": "需要创建实例的可用区及创建数目及运营商的列表。在单次请求的过程中，单个region下的请求创建实例数上限为100",
+          "example": "无",
           "member": "ZoneInstanceCountISP",
           "name": "ZoneInstanceCountISPSet",
           "required": true,
@@ -9436,6 +9530,7 @@
         {
           "default": "",
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\nLinux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & - + = | { } [ ] : ; ' , . ? / ]中的特殊符。Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & - + = | { } [ ] : ; ' , . ? /]中的特殊符号。",
+          "example": "无",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -9444,6 +9539,7 @@
         {
           "default": "",
           "document": "公网出带宽上限，单位：Mbps。\n1.如果未传该参数或者传的值为0，则使用模块下的默认值。\n2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthIn的值",
+          "example": "无",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -9452,6 +9548,7 @@
         {
           "default": "",
           "document": "模块ID。如果未传该参数，则必须传ImageId，InstanceType，DataDiskSize，InternetMaxBandwidthOut参数",
+          "example": "无",
           "member": "string",
           "name": "ModuleId",
           "required": false,
@@ -9460,6 +9557,7 @@
         {
           "default": "",
           "document": "镜像ID。如果未传该参数或者传的值为空，则使用模块下的默认值",
+          "example": "无",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -9468,6 +9566,7 @@
         {
           "default": "",
           "document": "实例显示名称。\n不指定实例显示名称则默认显示‘未命名’。\n购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server\\_{R:3}，购买1台时，实例显示名称为server\\_3；购买2台时，实例显示名称分别为server\\_3，server\\_4。\n支持指定多个模式串{R:x}。\n购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server\\_1，server\\_2。\n如果购买的实例属于不同的地域或运营商，则上述规则在每个地域和运营商内独立计数。\n最多支持60个字符（包含模式串）。",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -9476,6 +9575,7 @@
         {
           "default": "",
           "document": "主机名称\n点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。\nWindows 实例：名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。\n其他类型（Linux 等）实例：字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。",
+          "example": "无",
           "member": "string",
           "name": "HostName",
           "required": false,
@@ -9484,6 +9584,7 @@
         {
           "default": "",
           "document": "用于保证请求幂等性的字符串。目前为保留参数，请勿使用。",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -9492,6 +9593,7 @@
         {
           "default": "",
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认公共镜像开启云监控、云安全服务",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -9500,6 +9602,7 @@
         {
           "default": "",
           "document": "标签列表",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -9508,6 +9611,7 @@
         {
           "default": "",
           "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB",
+          "example": "无",
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -9516,6 +9620,7 @@
         {
           "default": "",
           "document": "机型。如果未传该参数或者传的值为空，则使用模块下的默认值",
+          "example": "无",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -9524,6 +9629,7 @@
         {
           "default": "",
           "document": "数据盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值",
+          "example": "无",
           "member": "int64",
           "name": "DataDiskSize",
           "required": false,
@@ -9532,6 +9638,7 @@
         {
           "default": "",
           "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -9540,6 +9647,7 @@
         {
           "default": "",
           "document": "系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值",
+          "example": "无",
           "member": "uint64",
           "name": "SystemDiskSize",
           "required": false,
@@ -9548,6 +9656,7 @@
         {
           "default": "",
           "document": "公网入带宽上限，单位：Mbps。\n1.如果未传该参数或者传的值为0，则使用对应模块的默认值。\n2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthOut",
+          "example": "无",
           "member": "int64",
           "name": "InternetMaxBandwidthIn",
           "required": false,
@@ -9561,8 +9670,10 @@
       "members": [
         {
           "document": "创建中的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10703,6 +10814,7 @@
         {
           "default": "",
           "document": "待销毁的实例ID列表。",
+          "example": "无",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -10711,6 +10823,7 @@
         {
           "default": "",
           "document": "是否定时销毁，默认为否。",
+          "example": "无",
           "member": "bool",
           "name": "TerminateDelay",
           "required": false,
@@ -10719,10 +10832,20 @@
         {
           "default": "",
           "document": "定时销毁的时间，格式形如：\"2019-08-05 12:01:30\"，若非定时销毁，则此参数被忽略。",
+          "example": "无",
           "member": "string",
           "name": "TerminateTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否关联删除已绑定的弹性网卡和弹性IP，默认为true。\n当为true时，一并删除弹性网卡和弹性IP；\n当为false时，只销毁主机，保留弹性网卡和弹性IP。",
+          "example": "无",
+          "member": "bool",
+          "name": "AssociatedResourceDestroy",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

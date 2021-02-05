@@ -49,7 +49,7 @@
       "output": "DescribeAsyncRecognitionTasksResponse"
     },
     "DescribeTaskStatus": {
-      "document": "在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。\n<br>• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://github.com/yunjianfei/qcloud-documents/blob/master/product/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8EAI/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%20API%202017/%E5%BD%95%E9%9F%B3%E8%AF%86%E5%88%AB%E5%9B%9E%E8%B0%83%E8%AF%B4%E6%98%8E.md)。\n<br>• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>•   默认接口请求频率限制：50次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。\n<br>• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://cloud.tencent.com/document/product/1093/52632)。\n<br>• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>•   默认接口请求频率限制：50次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
       "input": "DescribeTaskStatusRequest",
       "name": "录音文件识别结果查询",
       "output": "DescribeTaskStatusResponse"
@@ -167,6 +167,7 @@
         {
           "default": "",
           "document": "语音流异步识别任务的唯一标识，在创建任务时会返回",
+          "example": "9000254964",
           "member": "int64",
           "name": "TaskId",
           "required": true,
@@ -250,6 +251,7 @@
         {
           "default": "",
           "document": "引擎模型类型。\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；",
+          "example": "16k_zh",
           "member": "string",
           "name": "EngineType",
           "required": true,
@@ -258,6 +260,7 @@
         {
           "default": "",
           "document": "语音流地址，支持rtmp、hls、rtsp等流媒体协议，以及各类基于http协议的直播流",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -265,7 +268,8 @@
         },
         {
           "default": "",
-          "document": "支持HTTP和HTTPS协议，用于接收识别结果，您需要自行搭建公网可调用的服务。回调格式&内容详见：[语音流异步识别回调说明](https://github.com/yunjianfei/qcloud-documents/blob/master/product/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8EAI/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%20API%202017/%E8%AF%AD%E9%9F%B3%E6%B5%81%E5%BC%82%E6%AD%A5%E8%AF%86%E5%88%AB%E5%9B%9E%E8%B0%83%E8%AF%B4%E6%98%8E.md)",
+          "document": "支持HTTP和HTTPS协议，用于接收识别结果，您需要自行搭建公网可调用的服务。回调格式&内容详见：[语音流异步识别回调说明](https://cloud.tencent.com/document/product/1093/52633)",
+          "example": "无",
           "member": "string",
           "name": "CallbackUrl",
           "required": true,
@@ -274,6 +278,7 @@
         {
           "default": "",
           "document": "用于生成回调通知中的签名",
+          "example": "无",
           "member": "string",
           "name": "SignToken",
           "required": false,
@@ -282,6 +287,7 @@
         {
           "default": "",
           "document": "是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0",
+          "example": "0",
           "member": "int64",
           "name": "FilterDirty",
           "required": false,
@@ -290,6 +296,7 @@
         {
           "default": "",
           "document": "是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0",
+          "example": "0",
           "member": "int64",
           "name": "FilterModal",
           "required": false,
@@ -298,6 +305,7 @@
         {
           "default": "",
           "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0",
+          "example": "0",
           "member": "int64",
           "name": "FilterPunc",
           "required": false,
@@ -306,6 +314,7 @@
         {
           "default": "",
           "document": "是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1",
+          "example": "1",
           "member": "int64",
           "name": "ConvertNumMode",
           "required": false,
@@ -314,6 +323,7 @@
         {
           "default": "",
           "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认为0",
+          "example": "0",
           "member": "int64",
           "name": "WordInfo",
           "required": false,
@@ -322,6 +332,7 @@
         {
           "default": "",
           "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
+          "example": "无",
           "member": "string",
           "name": "HotwordId",
           "required": false,
@@ -335,8 +346,10 @@
       "members": [
         {
           "document": "请求返回结果，包含本次的任务ID(TaskId)",
+          "example": "无",
           "member": "Task",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -355,6 +368,7 @@
         {
           "default": "",
           "document": "自学习模型名称，需在1-20字符之间",
+          "example": "无",
           "member": "string",
           "name": "ModelName",
           "required": true,
@@ -363,6 +377,7 @@
         {
           "default": "",
           "document": "文本文件的下载地址，服务会从该地址下载文件， 以训练模型，目前仅支持腾讯云cos",
+          "example": "无",
           "member": "string",
           "name": "TextUrl",
           "required": true,
@@ -371,6 +386,7 @@
         {
           "default": "",
           "document": "自学习模型类型，填写8k或者16k",
+          "example": "无",
           "member": "string",
           "name": "ModelType",
           "required": true,
@@ -379,6 +395,7 @@
         {
           "default": "",
           "document": "标签信息",
+          "example": "无",
           "member": "string",
           "name": "TagInfos",
           "required": false,
@@ -392,8 +409,10 @@
       "members": [
         {
           "document": "模型ID",
+          "example": "无",
           "member": "string",
           "name": "ModelId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -609,6 +628,7 @@
         {
           "default": "",
           "document": "要删除的模型ID",
+          "example": "无",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -735,6 +755,7 @@
         {
           "default": "",
           "document": "自学习模型ID",
+          "example": "无",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -748,8 +769,10 @@
       "members": [
         {
           "document": "下载地址",
+          "example": "无",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -899,6 +922,7 @@
         {
           "default": "",
           "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
+          "example": "无",
           "member": "string",
           "name": "TagInfos",
           "required": false,
@@ -907,6 +931,7 @@
         {
           "default": "",
           "document": "分页大小",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -915,6 +940,7 @@
         {
           "default": "",
           "document": "分页offset",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -928,15 +954,19 @@
       "members": [
         {
           "document": "自学习模型数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Model",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "自学习模型总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1057,6 +1087,7 @@
         {
           "default": "",
           "document": "要修改的模型ID",
+          "example": "无",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -1065,6 +1096,7 @@
         {
           "default": "",
           "document": "要修改的模型名称，长度需在1-20个字符之间",
+          "example": "无",
           "member": "string",
           "name": "ModelName",
           "required": false,
@@ -1073,6 +1105,7 @@
         {
           "default": "",
           "document": "要修改的模型类型，为8k或者16k",
+          "example": "无",
           "member": "string",
           "name": "ModelType",
           "required": false,
@@ -1081,6 +1114,7 @@
         {
           "default": "",
           "document": "要修改的模型语料的下载地址，目前仅支持腾讯云cos",
+          "example": "无",
           "member": "string",
           "name": "TextUrl",
           "required": false,
@@ -1107,6 +1141,7 @@
         {
           "default": "",
           "document": "自学习模型ID",
+          "example": "无",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -1115,6 +1150,7 @@
         {
           "default": "",
           "document": "想要变换的模型状态，-1代表下线，1代表上线",
+          "example": "无",
           "member": "int64",
           "name": "ToState",
           "required": true,
@@ -1128,8 +1164,10 @@
       "members": [
         {
           "document": "自学习模型ID",
+          "example": "无",
           "member": "string",
           "name": "ModelId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

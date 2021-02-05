@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway DescribePlugins --cli-unfold-argument  \
-    --PluginIds Plugin-23sdcda \
+    --PluginIds plugin-2nuhovb7 \
     --PluginName myplugin \
     --PluginType IPControl
 ```
@@ -19,17 +19,30 @@ Output:
             "TotalCount": 1,
             "PluginSet": [
                 {
-                    "PluginId": "Plugin-23sdcda",
+                    "PluginId": "plugin-2nuhovb7",
                     "PluginName": "myplugin",
                     "PluginType": "IPControl",
-                    "Description": "my first plugin",
-                    "PluginData": "{\"unit\":\"MINUTE\",\"apiDefault\":20}",
-                    "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                    "CreatedTime": "2020-09-22T00:00:00+00:00"
+                    "Description": "IPControl",
+                    "PluginData": "{\"blocks\":\"1.1.1.12\",\"type\":\"black_list\"}",
+                    "CreatedTime": "2021-01-25T10:15:21Z",
+                    "ModifiedTime": "2021-01-25T10:15:21Z",
+                    "AttachedApiTotalCount": 1,
+                    "AttachedApis": [
+                        {
+                            "ServiceId": "service-jzo37opy",
+                            "ServiceName": "clareplugin",
+                            "ServiceDesc": "",
+                            "ApiId": "api-buz84890",
+                            "ApiName": "mock",
+                            "ApiDesc": "",
+                            "Environment": "release",
+                            "AttachedTime": "2021-01-25T12:50:32Z"
+                        }
+                    ]
                 }
             ]
         },
-        "RequestId": "bb85842c-c0d2-4543-8f4d-396a193babe8"
+        "RequestId": "e2cc60e0-c1d9-4b11-97f9-d772ab3b0b6c"
     }
 }
 ```

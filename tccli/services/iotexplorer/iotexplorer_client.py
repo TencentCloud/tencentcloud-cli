@@ -63,31 +63,6 @@ def doDeleteStudioProduct(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeStudioProduct(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeStudioProductRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeStudioProduct(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeDeviceData(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -163,7 +138,7 @@ def doCreateStudioProduct(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doEnableTopicRule(args, parsed_globals):
+def doDescribeDevice(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -177,9 +152,9 @@ def doEnableTopicRule(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EnableTopicRuleRequest()
+    model = models.DescribeDeviceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.EnableTopicRule(model)
+    rsp = client.DescribeDevice(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -263,7 +238,7 @@ def doDescribeTopicRule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetProjectList(args, parsed_globals):
+def doCreateLoRaFrequency(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -277,9 +252,34 @@ def doGetProjectList(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetProjectListRequest()
+    model = models.CreateLoRaFrequencyRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetProjectList(model)
+    rsp = client.CreateLoRaFrequency(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCallDeviceActionAsync(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CallDeviceActionAsyncRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CallDeviceActionAsync(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -338,7 +338,7 @@ def doModifyTopicRule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListEventHistory(args, parsed_globals):
+def doGetProjectList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -352,9 +352,9 @@ def doListEventHistory(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListEventHistoryRequest()
+    model = models.GetProjectListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ListEventHistory(model)
+    rsp = client.GetProjectList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -413,7 +413,7 @@ def doCallDeviceActionSync(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteDevice(args, parsed_globals):
+def doDescribeStudioProduct(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -427,9 +427,9 @@ def doDeleteDevice(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteDeviceRequest()
+    model = models.DescribeStudioProductRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteDevice(model)
+    rsp = client.DescribeStudioProduct(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -455,6 +455,56 @@ def doModifyProject(args, parsed_globals):
     model = models.ModifyProjectRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ModifyProject(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteLoRaFrequency(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteLoRaFrequencyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteLoRaFrequency(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteDevice(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDeviceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteDevice(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -563,6 +613,31 @@ def doGetLoRaGatewayList(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doControlDeviceData(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ControlDeviceDataRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ControlDeviceData(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doReleaseStudioProduct(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -580,6 +655,56 @@ def doReleaseStudioProduct(args, parsed_globals):
     model = models.ReleaseStudioProductRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ReleaseStudioProduct(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyLoRaFrequency(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyLoRaFrequencyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyLoRaFrequency(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLoRaFrequency(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLoRaFrequencyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeLoRaFrequency(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -788,7 +913,7 @@ def doModifyLoRaGateway(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDevice(args, parsed_globals):
+def doEnableTopicRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -802,9 +927,9 @@ def doDescribeDevice(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeviceRequest()
+    model = models.EnableTopicRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDevice(model)
+    rsp = client.EnableTopicRule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -838,7 +963,7 @@ def doDeleteProject(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doControlDeviceData(args, parsed_globals):
+def doListEventHistory(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -852,34 +977,9 @@ def doControlDeviceData(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ControlDeviceDataRequest()
+    model = models.ListEventHistoryRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ControlDeviceData(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCallDeviceActionAsync(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CallDeviceActionAsyncRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CallDeviceActionAsync(model)
+    rsp = client.ListEventHistory(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -951,27 +1051,32 @@ MODELS_MAP = {
 ACTION_MAP = {
     "ModifyStudioProduct": doModifyStudioProduct,
     "DeleteStudioProduct": doDeleteStudioProduct,
-    "DescribeStudioProduct": doDescribeStudioProduct,
     "DescribeDeviceData": doDescribeDeviceData,
     "DeleteLoRaGateway": doDeleteLoRaGateway,
     "CreateStudioProduct": doCreateStudioProduct,
-    "EnableTopicRule": doEnableTopicRule,
+    "DescribeDevice": doDescribeDevice,
     "CreateLoRaGateway": doCreateLoRaGateway,
     "CreateTopicRule": doCreateTopicRule,
     "DescribeTopicRule": doDescribeTopicRule,
-    "GetProjectList": doGetProjectList,
+    "CreateLoRaFrequency": doCreateLoRaFrequency,
+    "CallDeviceActionAsync": doCallDeviceActionAsync,
     "SearchStudioProduct": doSearchStudioProduct,
     "ModifyTopicRule": doModifyTopicRule,
-    "ListEventHistory": doListEventHistory,
+    "GetProjectList": doGetProjectList,
     "DescribeDeviceDataHistory": doDescribeDeviceDataHistory,
     "CallDeviceActionSync": doCallDeviceActionSync,
-    "DeleteDevice": doDeleteDevice,
+    "DescribeStudioProduct": doDescribeStudioProduct,
     "ModifyProject": doModifyProject,
+    "DeleteLoRaFrequency": doDeleteLoRaFrequency,
+    "DeleteDevice": doDeleteDevice,
     "CreateDevice": doCreateDevice,
     "PublishMessage": doPublishMessage,
     "GetDeviceList": doGetDeviceList,
     "GetLoRaGatewayList": doGetLoRaGatewayList,
+    "ControlDeviceData": doControlDeviceData,
     "ReleaseStudioProduct": doReleaseStudioProduct,
+    "ModifyLoRaFrequency": doModifyLoRaFrequency,
+    "DescribeLoRaFrequency": doDescribeLoRaFrequency,
     "SearchTopicRule": doSearchTopicRule,
     "GetTopicRuleList": doGetTopicRuleList,
     "ModifyModelDefinition": doModifyModelDefinition,
@@ -980,10 +1085,9 @@ ACTION_MAP = {
     "CreateProject": doCreateProject,
     "DisableTopicRule": doDisableTopicRule,
     "ModifyLoRaGateway": doModifyLoRaGateway,
-    "DescribeDevice": doDescribeDevice,
+    "EnableTopicRule": doEnableTopicRule,
     "DeleteProject": doDeleteProject,
-    "ControlDeviceData": doControlDeviceData,
-    "CallDeviceActionAsync": doCallDeviceActionAsync,
+    "ListEventHistory": doListEventHistory,
     "GetStudioProductList": doGetStudioProductList,
     "DeleteTopicRule": doDeleteTopicRule,
 

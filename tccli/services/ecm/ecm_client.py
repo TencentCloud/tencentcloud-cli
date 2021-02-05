@@ -238,6 +238,31 @@ def doResetRoutes(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSecurityGroupPolicies(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityGroupPoliciesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSecurityGroupPolicies(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRunInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2388,7 +2413,7 @@ def doDescribeSecurityGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSecurityGroupPolicies(args, parsed_globals):
+def doModifyPrivateIpAddressesAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2402,9 +2427,9 @@ def doDescribeSecurityGroupPolicies(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSecurityGroupPoliciesRequest()
+    model = models.ModifyPrivateIpAddressesAttributeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSecurityGroupPolicies(model)
+    rsp = client.ModifyPrivateIpAddressesAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2958,6 +2983,7 @@ ACTION_MAP = {
     "ReplaceRouteTableAssociation": doReplaceRouteTableAssociation,
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "ResetRoutes": doResetRoutes,
+    "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
     "RunInstances": doRunInstances,
     "ImportImage": doImportImage,
     "DescribeAddresses": doDescribeAddresses,
@@ -3044,7 +3070,7 @@ ACTION_MAP = {
     "DescribeSubnets": doDescribeSubnets,
     "DescribeInstances": doDescribeInstances,
     "DescribeSecurityGroups": doDescribeSecurityGroups,
-    "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
+    "ModifyPrivateIpAddressesAttribute": doModifyPrivateIpAddressesAttribute,
     "ModifyModuleImage": doModifyModuleImage,
     "ResetInstancesPassword": doResetInstancesPassword,
     "CreateModule": doCreateModule,
