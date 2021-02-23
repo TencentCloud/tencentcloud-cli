@@ -828,6 +828,7 @@
         {
           "default": "",
           "document": "伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超55个字节。",
+          "example": "asgname",
           "member": "string",
           "name": "AutoScalingGroupName",
           "required": true,
@@ -836,6 +837,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "ins-aaaabbbb",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -844,6 +846,7 @@
         {
           "default": "",
           "document": "最小实例数，取值范围为0-2000。",
+          "example": "1",
           "member": "int64",
           "name": "MinSize",
           "required": true,
@@ -852,6 +855,7 @@
         {
           "default": "",
           "document": "最大实例数，取值范围为0-2000。",
+          "example": "1",
           "member": "int64",
           "name": "MaxSize",
           "required": true,
@@ -860,6 +864,7 @@
         {
           "default": "",
           "document": "期望实例数，大小介于最小实例数和最大实例数之间。",
+          "example": "1",
           "member": "int64",
           "name": "DesiredCapacity",
           "required": false,
@@ -868,6 +873,7 @@
         {
           "default": "",
           "document": "是否继承实例标签，默认值为False",
+          "example": "False",
           "member": "bool",
           "name": "InheritInstanceTag",
           "required": false,
@@ -881,8 +887,10 @@
       "members": [
         {
           "document": "伸缩组ID",
+          "example": "asg-aaaabbbb",
           "member": "string",
           "name": "AutoScalingGroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -901,6 +909,7 @@
         {
           "default": "",
           "document": "伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超55个字节。",
+          "example": "asgname",
           "member": "string",
           "name": "AutoScalingGroupName",
           "required": true,
@@ -909,6 +918,7 @@
         {
           "default": "",
           "document": "启动配置ID",
+          "example": "asc-aaaabbbb",
           "member": "string",
           "name": "LaunchConfigurationId",
           "required": true,
@@ -917,6 +927,7 @@
         {
           "default": "",
           "document": "最大实例数，取值范围为0-2000。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxSize",
           "required": true,
@@ -925,6 +936,7 @@
         {
           "default": "",
           "document": "最小实例数，取值范围为0-2000。",
+          "example": "1",
           "member": "uint64",
           "name": "MinSize",
           "required": true,
@@ -933,6 +945,7 @@
         {
           "default": "",
           "document": "VPC ID，基础网络则填空字符串",
+          "example": "vpc-aaaabbbb",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -941,6 +954,7 @@
         {
           "default": "",
           "document": "默认冷却时间，单位秒，默认值为300",
+          "example": "300",
           "member": "uint64",
           "name": "DefaultCooldown",
           "required": false,
@@ -949,6 +963,7 @@
         {
           "default": "",
           "document": "期望实例数，大小介于最小实例数和最大实例数之间",
+          "example": "1",
           "member": "uint64",
           "name": "DesiredCapacity",
           "required": false,
@@ -957,6 +972,7 @@
         {
           "default": "",
           "document": "传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
+          "example": "[\"lb-aaaabbbb\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": false,
@@ -965,6 +981,7 @@
         {
           "default": "",
           "document": "伸缩组内实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的`projectId`字段来获取。不填为默认项目。",
+          "example": "1",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -973,6 +990,7 @@
         {
           "default": "",
           "document": "应用型负载均衡器列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
+          "example": "无",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancers",
           "required": false,
@@ -981,6 +999,7 @@
         {
           "default": "",
           "document": "子网ID列表，VPC场景下必须指定子网。多个子网以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。",
+          "example": "[\"subnet-xxxxbbbb\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -989,6 +1008,7 @@
         {
           "default": "",
           "document": "销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。\n<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。\n<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。",
+          "example": "无",
           "member": "string",
           "name": "TerminationPolicies",
           "required": false,
@@ -997,6 +1017,7 @@
         {
           "default": "",
           "document": "可用区列表，基础网络场景下必须指定可用区。多个可用区以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。",
+          "example": "[\"ap-beijing-1\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -1005,6 +1026,7 @@
         {
           "default": "",
           "document": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。",
+          "example": "IMMEDIATE_RETRY",
           "member": "string",
           "name": "RetryPolicy",
           "required": false,
@@ -1013,6 +1035,7 @@
         {
           "default": "",
           "document": "可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。\n\n可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。\n如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。",
+          "example": "ALL",
           "member": "string",
           "name": "ZonesCheckPolicy",
           "required": false,
@@ -1021,6 +1044,7 @@
         {
           "default": "",
           "document": "标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例。每个伸缩组最多支持30个标签。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1029,6 +1053,7 @@
         {
           "default": "",
           "document": "服务设置，包括云监控不健康替换等服务设置。",
+          "example": "无",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "required": false,
@@ -1037,6 +1062,7 @@
         {
           "default": "",
           "document": "实例具有IPv6地址数量的配置，取值包括 0、1，默认值为0。",
+          "example": "1",
           "member": "int64",
           "name": "Ipv6AddressCount",
           "required": false,
@@ -1045,6 +1071,7 @@
         {
           "default": "",
           "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY，默认为 PRIORITY。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。\n\n与本策略相关的注意点：\n<br><li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。\n<br><li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。\n<br><li> 创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3（按照PRIORITY策略），会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。\n<br><li> 无论使用哪种策略，单次伸缩活动总是优先保持使用一种具体配置（机型 * 可用区/子网）。",
+          "example": "PRIORITY ",
           "member": "string",
           "name": "MultiZoneSubnetPolicy",
           "required": false,
@@ -1058,8 +1085,10 @@
       "members": [
         {
           "document": "伸缩组ID",
+          "example": "asg-aaaaqqqq",
           "member": "string",
           "name": "AutoScalingGroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3565,6 +3594,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-aaaabbbb",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -3573,6 +3603,7 @@
         {
           "default": "",
           "document": "伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超55个字节。",
+          "example": "asgname",
           "member": "string",
           "name": "AutoScalingGroupName",
           "required": false,
@@ -3581,6 +3612,7 @@
         {
           "default": "",
           "document": "默认冷却时间，单位秒，默认值为300",
+          "example": "300",
           "member": "uint64",
           "name": "DefaultCooldown",
           "required": false,
@@ -3589,6 +3621,7 @@
         {
           "default": "",
           "document": "期望实例数，大小介于最小实例数和最大实例数之间",
+          "example": "1",
           "member": "uint64",
           "name": "DesiredCapacity",
           "required": false,
@@ -3597,6 +3630,7 @@
         {
           "default": "",
           "document": "启动配置ID",
+          "example": "asc-aaaabbbb",
           "member": "string",
           "name": "LaunchConfigurationId",
           "required": false,
@@ -3605,6 +3639,7 @@
         {
           "default": "",
           "document": "最大实例数，取值范围为0-2000。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxSize",
           "required": false,
@@ -3613,6 +3648,7 @@
         {
           "default": "",
           "document": "最小实例数，取值范围为0-2000。",
+          "example": "1",
           "member": "uint64",
           "name": "MinSize",
           "required": false,
@@ -3621,6 +3657,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "1",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -3629,6 +3666,7 @@
         {
           "default": "",
           "document": "子网ID列表",
+          "example": "[\"subnet-aaaabbbb\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -3637,6 +3675,7 @@
         {
           "default": "",
           "document": "销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE。\n<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。\n<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。",
+          "example": "[\"OLDEST_INSTANCE\"]",
           "member": "string",
           "name": "TerminationPolicies",
           "required": false,
@@ -3645,6 +3684,7 @@
         {
           "default": "",
           "document": "VPC ID，基础网络则填空字符串。修改为具体VPC ID时，需指定相应的SubnetIds；修改为基础网络时，需指定相应的Zones。",
+          "example": "vpc-aaaabbbb",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -3653,6 +3693,7 @@
         {
           "default": "",
           "document": "可用区列表",
+          "example": "[\"ap-beijing-1\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -3661,6 +3702,7 @@
         {
           "default": "",
           "document": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。",
+          "example": "IMMEDIATE_RETRY",
           "member": "string",
           "name": "RetryPolicy",
           "required": false,
@@ -3669,6 +3711,7 @@
         {
           "default": "",
           "document": "可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。在伸缩组实际变更资源相关字段时（启动配置、可用区、子网）发挥作用。\n<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。\n\n可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。\n如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。",
+          "example": "ALL",
           "member": "string",
           "name": "ZonesCheckPolicy",
           "required": false,
@@ -3677,6 +3720,7 @@
         {
           "default": "",
           "document": "服务设置，包括云监控不健康替换等服务设置。",
+          "example": "无",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "required": false,
@@ -3685,6 +3729,7 @@
         {
           "default": "",
           "document": "实例具有IPv6地址数量的配置，取值包括0、1。",
+          "example": "1",
           "member": "int64",
           "name": "Ipv6AddressCount",
           "required": false,
@@ -3693,6 +3738,7 @@
         {
           "default": "",
           "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。\n\n与本策略相关的注意点：\n<br><li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。\n<br><li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。\n<br><li> 创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3（按照PRIORITY策略），会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。\n<br><li> 无论使用哪种策略，单次伸缩活动总是优先保持使用一种具体配置（机型 * 可用区/子网）。",
+          "example": "无",
           "member": "string",
           "name": "MultiZoneSubnetPolicy",
           "required": false,

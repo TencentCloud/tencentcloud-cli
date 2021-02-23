@@ -249,7 +249,7 @@
     "GrantAccountPrivileges": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=GrantAccountPrivileges\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&DbName=*\r\n&Type=*\r\n&Privileges.0=select\r\n&Privileges.1=update\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=GrantAccountPrivileges\n&InstanceId=dcdbt-fdpjf5zh\n&UserName=testuser1\n&Host=172.17.%\n&DbName=*\n&Type=*\n&Privileges.0=select\n&Privileges.1=update\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"87201772-351f-4fb5-9164-fe757fbadb79\"\r\n\t}\r\n}",
         "title": "给云数据库账号赋权"
       }

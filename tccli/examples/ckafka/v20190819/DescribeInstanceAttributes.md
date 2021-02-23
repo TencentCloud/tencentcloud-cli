@@ -34,7 +34,7 @@ Output:
             "Healthy": 1,
             "HealthyMessage": "连接数:0#磁盘使用百分比:0%#消费峰值带宽0MB/s",
             "CreateTime": "1970-01-19 06:46:02",
-            "MsgRetentionTime": "1970-01-01 08:00:05",
+            "MsgRetentionTime": 1440,
             "Config": {
                 "AutoCreateTopicsEnable": true,
                 "NumPartitions": 3,
@@ -43,7 +43,13 @@ Output:
             "RemainderPartitions": 45,
             "RemainderTopics": 17,
             "CreatedPartitions": 0,
-            "CreatedTopics": 0
+            "CreatedTopics": 0,
+            "RetentionTimeConfig": {
+                "Enable": 0,
+                "DiskQuotaPercentage": 90,
+                "StepForwardPercentage": 10,
+                "BottomRetention": 360
+            }
         },
         "RequestId": "33a2224e-156d-4f23-9ffe-3c66d545c59c"
     }

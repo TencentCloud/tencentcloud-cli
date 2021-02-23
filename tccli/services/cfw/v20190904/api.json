@@ -478,7 +478,8 @@
       "members": [
         {
           "default": "",
-          "document": "删除规则对应的id值 669872",
+          "document": "删除规则对应的id值, 对应获取规则列表接口的Id 值",
+          "example": "669872",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -487,6 +488,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
+          "example": "0",
           "member": "uint64",
           "name": "Direction",
           "required": true,
@@ -495,6 +497,7 @@
         {
           "default": "",
           "document": "EdgeId值两个vpc间的边id",
+          "example": "无",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -502,7 +505,8 @@
         },
         {
           "default": "",
-          "document": "NAT地域",
+          "document": "NAT地域， 如ap-shanghai/ap-guangzhou/ap-chongqing等",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -516,15 +520,19 @@
       "members": [
         {
           "document": "状态值 0: 删除成功, !0: 删除失败",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回多余的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Info",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

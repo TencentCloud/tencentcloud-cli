@@ -8246,6 +8246,7 @@
         {
           "default": "",
           "document": "查询指标，取值有：\n<li>Traffic：流量，单位为 Byte。</li>\n<li>Bandwidth：带宽，单位为 Bps。</li>",
+          "example": "无",
           "member": "string",
           "name": "Metric",
           "required": true,
@@ -8254,6 +8255,7 @@
         {
           "default": "",
           "document": "起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -8262,6 +8264,7 @@
         {
           "default": "",
           "document": "结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -8270,6 +8273,7 @@
         {
           "default": "",
           "document": "域名列表。一次最多查询20个域名的数据。默认返回所有域名叠加的用量数据。",
+          "example": "无",
           "member": "string",
           "name": "DomainNames",
           "required": false,
@@ -8278,6 +8282,7 @@
         {
           "default": "",
           "document": "服务区域，取值有：\n<li>Chinese Mainland：中国大陆。 </li>\n<li>Asia Pacific Region 1：亚太一区，包括中国香港、中国澳门、新加坡、越南、泰国。 </li>\n<li>Asia Pacific Region 2：亚太二区，包括中国台湾、日本、马来西亚、印度尼西亚、韩国。 </li>\n<li>Asia Pacific Region 3：亚太三区，包括菲律宾、印度、澳大利亚和亚太其它国家和地区。 </li>\n<li>Middle East：中东。 </li>\n<li>Europe：欧洲。</li>\n<li>North America：北美。</li>\n<li>South America：南美。</li>\n<li>Africa：非洲。</li>\n默认为中国大陆。",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -8286,6 +8291,7 @@
         {
           "default": "",
           "document": "用户所在地区，Area 为 Chinese Mainland 时，取值为以下地区信息，当 Area 为其它值时， 忽略 Districts 参数。\n<li>Beijing：北京。</li>\n<li>Inner Mongolia：内蒙古。</li>\n<li>Shanxi：山西。</li>\n<li>Hebei：河北。</li>\n<li>Tianjin：天津。</li>\n<li>Ningxia：宁夏。</li>\n<li>Shaanxi：陕西。</li>\n<li>Gansu：甘肃。</li>\n<li>Qinghai：青海。</li>\n<li>Xinjiang：新疆。</li>\n<li>Heilongjiang：黑龙江。</li>\n<li>Jilin：吉林。</li>\n<li>Liaoning：辽宁。</li>\n<li>Fujian：福建。</li>\n<li>Jiangsu：江苏。</li>\n<li>Anhui：安徽。</li>\n<li>Shandong：山东。</li>\n<li>Shanghai：上海。</li>\n<li>Zhejiang：浙江。</li>\n<li>Henan：河南。</li>\n<li>Hubei：湖北。</li>\n<li>Jiangxi：江西。</li>\n<li>Hunan：湖南。</li>\n<li>Guizhou：贵州。</li>\n<li>Yunnan：云南。</li>\n<li>Chongqing：重庆。</li>\n<li>Sichuan：四川。</li>\n<li>Tibet：西藏。</li>\n<li>Guangdong：广东。</li>\n<li>Guangxi：广西。</li>\n<li>Hainan：海南。</li>\n<li>Hong Kong, Macao and Taiwan：港澳台。</li>\n<li>Outside Chinese Mainland：海外。</li>\n<li>Other：其他 。</li>",
+          "example": "无",
           "member": "string",
           "name": "Districts",
           "required": false,
@@ -8294,6 +8300,7 @@
         {
           "default": "",
           "document": "用户所属运营商信息，Area 为 Chinese Mainland 时，取值为以下运营商信息。当 Area 为其它值时忽略 Isps 参数。\n<li>China Telecom：中国电信。 </li>\n<li>China Unicom：中国联通。 </li>\n<li>CERNET：教育网。</li>\n<li>Great Wall Broadband Network：长城宽带。</li>\n<li>China Mobile：中国移动。</li>\n<li>China Mobile Tietong：中国铁通。</li>\n<li>ISPs outside Chinese Mainland：海外运营商。</li>\n<li>Other ISPs：其他运营商。</li>",
+          "example": "无",
           "member": "string",
           "name": "Isps",
           "required": false,
@@ -8302,6 +8309,7 @@
         {
           "default": "",
           "document": "每条数据的时间粒度，单位：分钟，取值有：\n<li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>\n<li>1440：天粒度，返回指定查询时间内1天粒度的数据。起始时间和结束时间跨度大于24小时，只支持天粒度的数据。</li>\n当 StartTime 和 EndTime 时间跨度大于24小时时，DataInterval 默认为 1440。",
+          "example": "无",
           "member": "uint64",
           "name": "DataInterval",
           "required": false,
@@ -8310,6 +8318,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -8323,15 +8332,19 @@
       "members": [
         {
           "document": "每条数据的时间粒度，单位：分钟。",
+          "example": "无",
           "member": "uint64",
           "name": "DataInterval",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "CDN 用量数据。",
+          "example": "无",
           "member": "StatDataItem",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

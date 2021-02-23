@@ -1,0 +1,2911 @@
+{
+  "actions": {
+    "CheckForwardAuth": {
+      "document": "判断是否开启的转发的权限",
+      "input": "CheckForwardAuthRequest",
+      "name": "判断是否开启的转发的权限",
+      "output": "CheckForwardAuthResponse"
+    },
+    "CreateBatch": {
+      "document": "创建批次",
+      "input": "CreateBatchRequest",
+      "name": "创建批次",
+      "output": "CreateBatchResponse"
+    },
+    "CreateForwardRule": {
+      "document": "创建转发规则",
+      "input": "CreateForwardRuleRequest",
+      "name": "创建转发规则",
+      "output": "CreateForwardRuleResponse"
+    },
+    "CreateProduct": {
+      "document": "创建产品",
+      "input": "CreateProductRequest",
+      "name": "创建产品",
+      "output": "CreateProductResponse"
+    },
+    "DeleteDevice": {
+      "document": "删除设备",
+      "input": "DeleteDeviceRequest",
+      "name": "删除设备",
+      "output": "DeleteDeviceResponse"
+    },
+    "DeleteForwardRule": {
+      "document": "删除转发规则",
+      "input": "DeleteForwardRuleRequest",
+      "name": "删除转发规则",
+      "output": "DeleteForwardRuleResponse"
+    },
+    "DeleteProduct": {
+      "document": "删除产品",
+      "input": "DeleteProductRequest",
+      "name": "删除产品",
+      "output": "DeleteProductResponse"
+    },
+    "DescribeBatch": {
+      "document": "获取批次详情",
+      "input": "DescribeBatchRequest",
+      "name": "获取批次详情",
+      "output": "DescribeBatchResponse"
+    },
+    "DescribeBatchs": {
+      "document": "获取批次列表",
+      "input": "DescribeBatchsRequest",
+      "name": "获取批次列表",
+      "output": "DescribeBatchsResponse"
+    },
+    "DescribeCategory": {
+      "document": "获取Category详情",
+      "input": "DescribeCategoryRequest",
+      "name": "获取Category详情",
+      "output": "DescribeCategoryResponse"
+    },
+    "DescribeDevice": {
+      "document": "查看设备详情",
+      "input": "DescribeDeviceRequest",
+      "name": "查看设备详情",
+      "output": "DescribeDeviceResponse"
+    },
+    "DescribeDeviceActionHistory": {
+      "document": "为用户提供获取动作历史的能力。",
+      "input": "DescribeDeviceActionHistoryRequest",
+      "name": "获取设备动作历史",
+      "output": "DescribeDeviceActionHistoryResponse"
+    },
+    "DescribeDeviceCommLog": {
+      "document": "获取设备在指定时间范围内的通讯日志",
+      "input": "DescribeDeviceCommLogRequest",
+      "name": "获取设备通讯日志",
+      "output": "DescribeDeviceCommLogResponse"
+    },
+    "DescribeDeviceData": {
+      "document": "获取设备属性数据",
+      "input": "DescribeDeviceDataRequest",
+      "name": "获取设备属性数据",
+      "output": "DescribeDeviceDataResponse"
+    },
+    "DescribeDeviceDataHistory": {
+      "document": "获取设备在指定时间范围内上报的历史数据。",
+      "input": "DescribeDeviceDataHistoryRequest",
+      "name": "获取设备历史数据",
+      "output": "DescribeDeviceDataHistoryResponse"
+    },
+    "DescribeDeviceEventHistory": {
+      "document": "获取设备的历史事件",
+      "input": "DescribeDeviceEventHistoryRequest",
+      "name": "获取设备的历史事件",
+      "output": "DescribeDeviceEventHistoryResponse"
+    },
+    "DescribeDevices": {
+      "document": "获取设备列表",
+      "input": "DescribeDevicesRequest",
+      "name": "获取设备列表",
+      "output": "DescribeDevicesResponse"
+    },
+    "DescribeForwardRule": {
+      "document": "获取产品转发规则",
+      "input": "DescribeForwardRuleRequest",
+      "name": "获取产品转发规则",
+      "output": "DescribeForwardRuleResponse"
+    },
+    "DescribeModelDefinition": {
+      "document": "查询产品配置的数据模板信息",
+      "input": "DescribeModelDefinitionRequest",
+      "name": "查询产品数据模板",
+      "output": "DescribeModelDefinitionResponse"
+    },
+    "DescribeProduct": {
+      "document": "获取产品详情",
+      "input": "DescribeProductRequest",
+      "name": "获取产品详情",
+      "output": "DescribeProductResponse"
+    },
+    "DescribeProducts": {
+      "document": "获取产品列表",
+      "input": "DescribeProductsRequest",
+      "name": "获取产品列表",
+      "output": "DescribeProductsResponse"
+    },
+    "ImportModelDefinition": {
+      "document": "导入其它产品的数据模板，覆盖现有数据模板的物模型和产品分类信息",
+      "input": "ImportModelDefinitionRequest",
+      "name": "导入其它产品的数据模板",
+      "output": "ImportModelDefinitionResponse"
+    },
+    "ModifyDevice": {
+      "document": "修改设备信息",
+      "input": "ModifyDeviceRequest",
+      "name": "修改设备信息",
+      "output": "ModifyDeviceResponse"
+    },
+    "ModifyForwardRule": {
+      "document": "修改转发规则",
+      "input": "ModifyForwardRuleRequest",
+      "name": "修改转发规则",
+      "output": "ModifyForwardRuleResponse"
+    },
+    "ModifyModelDefinition": {
+      "document": "提供修改产品的数据模板的能力",
+      "input": "ModifyModelDefinitionRequest",
+      "name": "修改产品数据模板",
+      "output": "ModifyModelDefinitionResponse"
+    },
+    "ModifyProduct": {
+      "document": "修改产品信息",
+      "input": "ModifyProductRequest",
+      "name": "修改产品信息",
+      "output": "ModifyProductResponse"
+    },
+    "SetForwardAuth": {
+      "document": "设置转发权限",
+      "input": "SetForwardAuthRequest",
+      "name": "设置转发权限",
+      "output": "SetForwardAuthResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-15",
+    "api_brief": "介绍如何使用API对物联网智能视频服务进行操作，包括终端管理、OTA固件管理等。",
+    "serviceNameCN": "物联网智能视频服务",
+    "serviceShortName": "iotvideo"
+  },
+  "objects": {
+    "ActionHistory": {
+      "document": "查询设备历史",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名称",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作Id",
+          "member": "string",
+          "name": "ActionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作名称",
+          "member": "string",
+          "name": "ActionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求时间",
+          "member": "uint64",
+          "name": "ReqTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "响应时间",
+          "member": "uint64",
+          "name": "RspTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InputParams",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OutputParams",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调用方式",
+          "member": "string",
+          "name": "Calling",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用Id",
+          "member": "string",
+          "name": "ClientToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CheckForwardAuthRequest": {
+      "document": "CheckForwardAuth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "控制台Skey",
+          "example": "safawef",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckForwardAuthResponse": {
+      "document": "CheckForwardAuth返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯云账号",
+          "example": "1242345132",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果",
+          "example": "0",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品ID",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "Productid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchRequest": {
+      "document": "CreateBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批次创建的设备数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "DevNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "批次创建的设备前缀。不超过24个字符",
+          "example": "test",
+          "member": "string",
+          "name": "DevPre",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchResponse": {
+      "document": "CreateBatch返回参数结构体",
+      "members": [
+        {
+          "document": "批次ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "BatchId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateForwardRuleRequest": {
+      "document": "CreateForwardRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "MsgType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "控制台Skey",
+          "example": "xrnWgKu0fCz7q8JIQYFiNP",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列区域",
+          "example": "gz",
+          "member": "string",
+          "name": "QueueRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "临时密钥",
+          "example": "safawef",
+          "member": "string",
+          "name": "Consecretid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ins-epc65t7i",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "hub_test_ins",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列或主题ID",
+          "example": "topic-epc65t7i",
+          "member": "string",
+          "name": "QueueID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列或主题名称",
+          "example": "hub_test_topic",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateForwardRuleResponse": {
+      "document": "CreateForwardRule返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯云账号",
+          "example": "1242345132",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列名",
+          "example": "hub_test_topic",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品ID",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消息类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "MsgType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果",
+          "example": "1",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色名称",
+          "example": "role-test",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色ID",
+          "example": "1212523451",
+          "member": "uint64",
+          "name": "RoleID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列区",
+          "example": "gz",
+          "member": "string",
+          "name": "QueueRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消息队列的类型。 0：CMQ，1：CKafaka",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例id， 目前只有Ckafaka会用到",
+          "example": "ins-epc65t7i",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例名称，目前只有Ckafaka会用到",
+          "example": "hub_test_ins",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProductRequest": {
+      "document": "CreateProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品名称",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品设备类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeviceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品有效期",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProductVaildYears",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备功能码",
+          "example": "无",
+          "member": "string",
+          "name": "Features",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设备操作系统",
+          "example": "linux",
+          "member": "string",
+          "name": "ChipOs",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "芯片厂商id",
+          "example": "x86",
+          "member": "string",
+          "name": "ChipManufactureId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "芯片id",
+          "example": "chip1",
+          "member": "string",
+          "name": "ChipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品描述信息",
+          "example": "test",
+          "member": "string",
+          "name": "ProductDescription",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "认证方式。2 PSK",
+          "example": "2",
+          "member": "uint64",
+          "name": "EncryptionType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProductResponse": {
+      "document": "CreateProduct返回参数结构体",
+      "members": [
+        {
+          "document": "产品详情",
+          "example": "无",
+          "member": "VideoProduct",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceRequest": {
+      "document": "DeleteDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID。",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称。",
+          "example": "test1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceResponse": {
+      "document": "DeleteDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteForwardRuleRequest": {
+      "document": "DeleteForwardRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "PV1674YINM",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "控制台Skey",
+          "example": "xrnWgKu0fCz7q8JIQYFiNP",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "队列名称",
+          "example": "iot_hub_test",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteForwardRuleResponse": {
+      "document": "DeleteForwardRule返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯云账号",
+          "example": "100004557990",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列名称",
+          "example": "queue-1facaw",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品ID",
+          "example": "TDCZ2WD29Z",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "删除结果",
+          "example": "0",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductRequest": {
+      "document": "DeleteProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductResponse": {
+      "document": "DeleteProduct返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchRequest": {
+      "document": "DescribeBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批次ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "BatchId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchResponse": {
+      "document": "DescribeBatch返回参数结构体",
+      "members": [
+        {
+          "document": "批次详情",
+          "example": "无",
+          "member": "VideoBatch",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchsRequest": {
+      "document": "DescribeBatchs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页的大小，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchsResponse": {
+      "document": "DescribeBatchs返回参数结构体",
+      "members": [
+        {
+          "document": "批次数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "批次列表详情",
+          "example": "无",
+          "member": "VideoBatch",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCategoryRequest": {
+      "document": "DescribeCategory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Category ID。",
+          "example": "113",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCategoryResponse": {
+      "document": "DescribeCategory返回参数结构体",
+      "members": [
+        {
+          "document": "Category详情",
+          "example": "无",
+          "member": "ProductTemplate",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceActionHistoryRequest": {
+      "document": "DescribeDeviceActionHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品Id",
+          "example": "TDCZ2WD29Z",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "autotest_33842121_13",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始范围的 unix 毫秒时间戳",
+          "example": "1612235884839",
+          "member": "uint64",
+          "name": "MinTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束范围的 unix 毫秒时间戳",
+          "example": "1612237684839",
+          "member": "uint64",
+          "name": "MaxTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "动作Id",
+          "example": "action1",
+          "member": "string",
+          "name": "ActionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "游标，标识查询位置。",
+          "example": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAgnMbFnZpOEh2MVNWUm95SjdoYTNGUGtGR1EA",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceActionHistoryResponse": {
+      "document": "DescribeDeviceActionHistory返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCounts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动作历史\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ActionHistory",
+          "name": "ActionHistories",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用于标识查询结果的上下文，翻页用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAgnMbFnZpOEh2MVNWUm95SjdoYTNGUGtGR1EA",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "搜索结果是否已经结束。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceCommLogRequest": {
+      "document": "DescribeDeviceCommLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1612235855834",
+          "member": "uint64",
+          "name": "MinTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1612237655834",
+          "member": "uint64",
+          "name": "MaxTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "TDCZ2WD29Z",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "DoNotDelete_34082530_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检索上下文",
+          "example": "xrnWgKu0fCz7q8JIQYFiNP",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型：shadow 下行，device 上行",
+          "example": "shadow",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceCommLogResponse": {
+      "document": "DescribeDeviceCommLog返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否已全部返回，true 表示数据全部返回，false 表示还有数据待返回，可将 Context 作为入参，继续查询返回结果。",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "检索上下文，当 ListOver 为false时，可以用此上下文，继续读取后续数据",
+          "example": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAk0zFFnBpdzE2UUE4UlZ1UnFtTjhIeV81THcA",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志数据结果数组，返回对应时间点及取值。",
+          "example": "无",
+          "member": "DeviceCommLogItem",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceDataHistoryRequest": {
+      "document": "DescribeDeviceDataHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "区间开始时间（Unix 时间戳，毫秒级）",
+          "example": "1612235965943",
+          "member": "uint64",
+          "name": "MinTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "区间结束时间（Unix 时间戳，毫秒级）",
+          "example": "1612237765943",
+          "member": "uint64",
+          "name": "MaxTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "TDCZ2WD29Z",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "DoNotDelete_34082530_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "属性字段名称，对应数据模板中功能属性的标识符",
+          "example": "tencent_handsome",
+          "member": "string",
+          "name": "FieldName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "检索上下文",
+          "example": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAk0zcFnBpdzE2UUE4UlZ1UnFtTjhIeV81THcA",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceDataHistoryResponse": {
+      "document": "DescribeDeviceDataHistory返回参数结构体",
+      "members": [
+        {
+          "document": "属性字段名称，对应数据模板中功能属性的标识符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tencent_handsome",
+          "member": "string",
+          "name": "FieldName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据是否已全部返回，true 表示数据全部返回，false 表示还有数据待返回，可将 Context 作为入参，继续查询返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "检索上下文，当 ListOver 为false时，可以用此上下文，继续读取后续数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAk0zcFnBpdzE2UUE4UlZ1UnFtTjhIeV81THcA",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "历史数据结果数组，返回对应时间点及取值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceDataHistoryItem",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceDataRequest": {
+      "document": "DescribeDeviceData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceDataResponse": {
+      "document": "DescribeDeviceData返回参数结构体",
+      "members": [
+        {
+          "document": "设备数据",
+          "example": "{}",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceEventHistoryRequest": {
+      "document": "DescribeDeviceEventHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "QDA1PZLBNB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev01",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件",
+          "example": "alert",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h",
+          "example": "1560355200",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间（Unix 时间戳，秒级）, 为0 表示当前时间",
+          "example": "1601196327",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索上下文, 用作查询游标",
+          "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单次获取的历史数据项目的最大数量, 缺省10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。",
+          "example": "low_voltage",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceEventHistoryResponse": {
+      "document": "DescribeDeviceEventHistory返回参数结构体",
+      "members": [
+        {
+          "document": "搜索上下文, 用作查询游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "搜索结果数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "搜索结果是否已经结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "搜集结果集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventHistoryItem",
+          "name": "EventHistory",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceRequest": {
+      "document": "DescribeDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "test1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceResponse": {
+      "document": "DescribeDevice返回参数结构体",
+      "members": [
+        {
+          "document": "设备名",
+          "example": "test1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备是否在线，0不在线，1在线，2获取失败，3未激活",
+          "example": "1",
+          "member": "uint64",
+          "name": "Online",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备最后上线时间",
+          "example": "1608880525",
+          "member": "uint64",
+          "name": "LoginTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备密钥",
+          "example": "2172b7d1-9a49",
+          "member": "string",
+          "name": "DevicePsk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备启用状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备过期时间",
+          "example": "1608880525",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicesRequest": {
+      "document": "DescribeDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查看设备列表的产品 ID",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要过滤的设备名称",
+          "example": "test1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicesResponse": {
+      "document": "DescribeDevices返回参数结构体",
+      "members": [
+        {
+          "document": "设备总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备详细信息列表",
+          "example": "无",
+          "member": "DeviceInfo",
+          "name": "Devices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeForwardRuleRequest": {
+      "document": "DescribeForwardRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "控制台Skey",
+          "example": "safaweffawef",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列类型，0：CMQ，1：Ckafka",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "临时密钥",
+          "example": "safawef",
+          "member": "string",
+          "name": "Consecretid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeForwardRuleResponse": {
+      "document": "DescribeForwardRule返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯云账号",
+          "example": "1242345132",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列名称",
+          "example": "topic-fawe",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品ID",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消息类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "MsgType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果",
+          "example": "1",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色名",
+          "example": "role",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "RoleID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列区域",
+          "example": "gz",
+          "member": "string",
+          "name": "QueueRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列类型，0：CMQ，1：Ckafka",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例id， 目前只有Ckafaka会用到",
+          "example": "kafka-f123fasef",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例名称，目前只有Ckafaka会用到",
+          "example": "kafka-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelDefinitionRequest": {
+      "document": "DescribeModelDefinition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelDefinitionResponse": {
+      "document": "DescribeModelDefinition返回参数结构体",
+      "members": [
+        {
+          "document": "产品数据模板",
+          "example": "无",
+          "member": "ProductModelDefinition",
+          "name": "Model",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductRequest": {
+      "document": "DescribeProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品id",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductResponse": {
+      "document": "DescribeProduct返回参数结构体",
+      "members": [
+        {
+          "document": "产品详情",
+          "example": "无",
+          "member": "VideoProduct",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsRequest": {
+      "document": "DescribeProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页的大小，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsResponse": {
+      "document": "DescribeProducts返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品详情列表",
+          "example": "无",
+          "member": "VideoProduct",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeviceCommLogItem": {
+      "document": "设备通讯日志查询返回条目",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志类型，device 设备上行，shadow 服务端下行。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通讯数据。",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceDataHistoryItem": {
+      "document": "设备历史数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "时间点，毫秒时间戳",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段取值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceInfo": {
+      "document": "设备详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备是否在线，0不在线，1在线，2获取失败，3未激活",
+          "member": "uint64",
+          "name": "Online",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备最后上线时间",
+          "member": "uint64",
+          "name": "LoginTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备密钥",
+          "member": "string",
+          "name": "DevicePsk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备启用状态",
+          "member": "uint64",
+          "name": "EnableState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备过期时间",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EventHistoryItem": {
+      "document": "设备事件的搜索结果项",
+      "members": [
+        {
+          "default": "",
+          "document": "事件的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件的产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件的设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件的标识符ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImportModelDefinitionRequest": {
+      "document": "ImportModelDefinition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据模板定义",
+          "example": "{\"model\":\"schema\"}",
+          "member": "string",
+          "name": "ModelSchema",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportModelDefinitionResponse": {
+      "document": "ImportModelDefinition返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceRequest": {
+      "document": "ModifyDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备所属产品id",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要设置的设备状态，1为启用，0为禁用",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableState",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceResponse": {
+      "document": "ModifyDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyForwardRuleRequest": {
+      "document": "ModifyForwardRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "PV1674YINM",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "MsgType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "控制台Skey",
+          "example": "xrnWgKu0fCz7q8JIQYFiNP",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列区域",
+          "example": "gz",
+          "member": "string",
+          "name": "QueueRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "临时密钥",
+          "example": "XpyaziljFvrQg4A",
+          "member": "string",
+          "name": "Consecretid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ckafka-cy614eit",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "iot_test_no_delete",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列或主题ID",
+          "example": "ins-queue-f1fva1",
+          "member": "string",
+          "name": "QueueID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列或主题名称",
+          "example": "iot_hub_test",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyForwardRuleResponse": {
+      "document": "ModifyForwardRule返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯云账号",
+          "example": "100004557990",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品ID",
+          "example": "PV1674YINM",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果",
+          "example": "0",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelDefinitionRequest": {
+      "document": "ModifyModelDefinition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据模板定义",
+          "example": "{}",
+          "member": "string",
+          "name": "ModelSchema",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelDefinitionResponse": {
+      "document": "ModifyModelDefinition返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProductRequest": {
+      "document": "ModifyProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品id",
+          "example": "37MFSSRMZY",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的产品名称",
+          "example": "测试",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的产品描述",
+          "example": "test",
+          "member": "string",
+          "name": "ProductDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProductResponse": {
+      "document": "ModifyProduct返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProductModelDefinition": {
+      "document": "产品模型定义",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型定义",
+          "member": "string",
+          "name": "ModelDefine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间，秒级时间戳",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，秒级时间戳",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品所属分类的模型快照（产品创建时刻的）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CategoryModel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品的连接类型的模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NetTypeModel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductTemplate": {
+      "document": "产品分类实体",
+      "members": [
+        {
+          "default": "",
+          "document": "实体ID",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类字段",
+          "member": "string",
+          "name": "CategoryKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类名称",
+          "member": "string",
+          "name": "CategoryName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上层实体ID",
+          "member": "int64",
+          "name": "ParentId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物模型",
+          "member": "string",
+          "name": "ModelTemplate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排列顺序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ListOrder",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分类图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IconUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "九宫格图片地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IconUrlGrid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SetForwardAuthRequest": {
+      "document": "SetForwardAuth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "控制台Skey",
+          "example": "xrnWgKu0fCz7q8JIQYFiNP",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息队列类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetForwardAuthResponse": {
+      "document": "SetForwardAuth返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯云账号",
+          "example": "100011064235",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果",
+          "example": "0",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色名",
+          "example": "ckafkaIoTCloud_QCSRole",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色ID",
+          "example": "1724847",
+          "member": "uint64",
+          "name": "RoleID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消息队列类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VideoBatch": {
+      "document": "批次元数据",
+      "members": [
+        {
+          "default": "",
+          "document": "批次ID",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态：1：待创建设备 2：创建中 3：已完成",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备前缀",
+          "member": "string",
+          "name": "DevPre",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备数量",
+          "member": "uint64",
+          "name": "DevNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已创建设备数量",
+          "member": "uint64",
+          "name": "DevNumCreated",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批次下载地址",
+          "member": "string",
+          "name": "BatchURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。unix时间戳",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间。unix时间戳",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoProduct": {
+      "document": "video产品元数据",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品设备类型（普通设备)\t1.普通设备",
+          "member": "uint64",
+          "name": "DeviceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证方式：2：PSK",
+          "member": "uint64",
+          "name": "EncryptionType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备功能码",
+          "member": "string",
+          "name": "Features",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "member": "string",
+          "name": "ChipOs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "芯片厂商id",
+          "member": "string",
+          "name": "ChipManufactureId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "芯片id",
+          "member": "string",
+          "name": "ChipId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品描述信息",
+          "member": "string",
+          "name": "ProductDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间unix时间戳",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间unix时间戳",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

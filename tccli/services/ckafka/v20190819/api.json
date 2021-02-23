@@ -2020,6 +2020,48 @@
       ],
       "type": "object"
     },
+    "DynamicRetentionTime": {
+      "document": "动态消息保留时间配置",
+      "members": [
+        {
+          "default": "",
+          "document": "动态消息保留时间配置开关（0: 关闭，1: 开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘配额百分比触发条件，即消息达到此值触发消息保留时间变更事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskQuotaPercentage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每次向前调整消息保留时间百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "StepForwardPercentage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "保底时长，单位分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "BottomRetention",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "查询过滤器\n>描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n",
       "members": [
@@ -2589,7 +2631,7 @@
         },
         {
           "default": "",
-          "document": "售卖类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "售卖类型,0:标准版,1:专业版\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Cvm",
           "required": true,
@@ -2612,6 +2654,15 @@
           "name": "Features",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动态消息保留策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DynamicRetentionTime",
+          "name": "RetentionTimeConfig",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -2656,6 +2707,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "1",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2665,6 +2717,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "1",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -2674,6 +2727,7 @@
         {
           "default": "",
           "document": "访问实例的vip 信息",
+          "example": "1",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -2683,6 +2737,7 @@
         {
           "default": "",
           "document": "访问实例的端口信息",
+          "example": "1",
           "member": "string",
           "name": "Vport",
           "required": true,
@@ -2692,6 +2747,7 @@
         {
           "default": "",
           "document": "虚拟IP列表",
+          "example": "1",
           "member": "VipEntity",
           "name": "VipList",
           "required": true,
@@ -2701,6 +2757,7 @@
         {
           "default": "",
           "document": "实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -2710,6 +2767,7 @@
         {
           "default": "",
           "document": "实例带宽，单位Mbps",
+          "example": "1",
           "member": "int64",
           "name": "Bandwidth",
           "required": true,
@@ -2719,6 +2777,7 @@
         {
           "default": "",
           "document": "实例的存储大小，单位GB",
+          "example": "1",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
@@ -2728,6 +2787,7 @@
         {
           "default": "",
           "document": "可用区域ID",
+          "example": "1",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -2737,6 +2797,7 @@
         {
           "default": "",
           "document": "vpcId，如果为空，说明是基础网络",
+          "example": "1",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -2746,6 +2807,7 @@
         {
           "default": "",
           "document": "子网id",
+          "example": "1",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -2755,6 +2817,7 @@
         {
           "default": "",
           "document": "实例是否续费，int  枚举值：1表示自动续费，2表示明确不自动续费",
+          "example": "1",
           "member": "int64",
           "name": "RenewFlag",
           "required": true,
@@ -2764,6 +2827,7 @@
         {
           "default": "",
           "document": "实例状态 int：0表示健康，1表示告警，2 表示实例状态异常",
+          "example": "1",
           "member": "int64",
           "name": "Healthy",
           "required": true,
@@ -2773,6 +2837,7 @@
         {
           "default": "",
           "document": "实例状态信息",
+          "example": "1",
           "member": "string",
           "name": "HealthyMessage",
           "required": true,
@@ -2782,6 +2847,7 @@
         {
           "default": "",
           "document": "实例创建时间时间",
+          "example": "1",
           "member": "int64",
           "name": "CreateTime",
           "required": true,
@@ -2791,6 +2857,7 @@
         {
           "default": "",
           "document": "实例过期时间",
+          "example": "1",
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
@@ -2800,6 +2867,7 @@
         {
           "default": "",
           "document": "是否为内部客户。值为1 表示内部客户",
+          "example": "1",
           "member": "int64",
           "name": "IsInternal",
           "required": true,
@@ -2809,6 +2877,7 @@
         {
           "default": "",
           "document": "Topic个数",
+          "example": "1",
           "member": "int64",
           "name": "TopicNum",
           "required": true,
@@ -2818,6 +2887,7 @@
         {
           "default": "",
           "document": "标识tag",
+          "example": "1",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -2827,6 +2897,7 @@
         {
           "default": "",
           "document": "kafka版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -2836,6 +2907,7 @@
         {
           "default": "",
           "document": "跨可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ZoneIds",
           "required": true,
@@ -2845,10 +2917,61 @@
         {
           "default": "",
           "document": "ckafka售卖类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Cvm",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ckafka实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前规格最大Topic数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxTopicNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前规格最大Partition数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxPartitionNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计划升级配置时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "'yyyy-MM-dd HH:mm:ss'",
+          "member": "string",
+          "name": "RebalanceTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3091,6 +3214,22 @@
           "name": "Config",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "动态消息保留策略配置",
+          "member": "DynamicRetentionTime",
+          "name": "DynamicRetentionConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "修改升配置rebalance时间",
+          "member": "int64",
+          "name": "RebalanceTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3692,6 +3831,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息保留时间配置(用于动态配置变更记录)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TopicRetentionTimeConfigRsp",
+          "name": "RetentionTimeConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3779,6 +3927,39 @@
           "document": "符合条件的 topic 数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicRetentionTimeConfigRsp": {
+      "document": "Topic消息保留时间配置返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "期望值，即用户配置的Topic消息保留时间(单位分钟)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Expect",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前值，即当前生效值(可能存在动态调整，单位分钟)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Current",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ModTimeStamp",
           "required": true,
           "type": "int",
           "value_allowed_null": true

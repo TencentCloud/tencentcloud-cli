@@ -296,6 +296,7 @@
         {
           "default": "",
           "document": "数据库引擎名称，本接口取值：mariadb。",
+          "example": "mariadb",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -304,6 +305,7 @@
         {
           "default": "",
           "document": "要绑定的安全组ID，类似sg-efil73jd。",
+          "example": "sg-efil73jd",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -312,6 +314,7 @@
         {
           "default": "",
           "document": "被绑定的实例ID，类似tdsql-lesecurk，支持指定多个实例。",
+          "example": "[\"tdsql-lesecurk\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2793,6 +2796,7 @@
         {
           "default": "",
           "document": "数据库引擎名称，本接口取值：mariadb。",
+          "example": "mariadb",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -2801,6 +2805,7 @@
         {
           "default": "",
           "document": "项目ID。",
+          "example": "1",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -2814,8 +2819,10 @@
       "members": [
         {
           "document": "安全组详情。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3114,6 +3121,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-ow728lmc",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3122,6 +3130,7 @@
         {
           "default": "",
           "document": "登录用户名。",
+          "example": "username",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -3130,6 +3139,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
+          "example": "10.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -3138,6 +3148,7 @@
         {
           "default": "",
           "document": "数据库名。如果为 \\*，表示设置全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数。当DbName不为\\*时，需要传入参 Type。",
+          "example": "*",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -3146,6 +3157,7 @@
         {
           "default": "",
           "document": "全局权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER，SHOW DATABASES \n库权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER \n表/视图权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE VIEW，SHOW VIEW，TRIGGER \n存储过程/函数权限： ALTER ROUTINE，EXECUTE \n字段权限： INSERT，REFERENCES，SELECT，UPDATE",
+          "example": "[\"SELECT\",\"INSERT\"]",
           "member": "string",
           "name": "Privileges",
           "required": true,
@@ -3154,6 +3166,7 @@
         {
           "default": "",
           "document": "类型,可以填入 table 、 view 、 proc 、 func 和 \\*。当 DbName 为具体数据库名，Type为 \\* 时，表示设置该数据库权限（即db.\\*），此时忽略 Object 参数",
+          "example": "*",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -3162,6 +3175,7 @@
         {
           "default": "",
           "document": "具体的 Type 的名称，例如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空",
+          "example": "无",
           "member": "string",
           "name": "Object",
           "required": false,
@@ -3170,6 +3184,7 @@
         {
           "default": "",
           "document": "当 Type=table 时，ColName 为 \\* 表示对表授权，如果为具体字段名，表示对字段授权",
+          "example": "无",
           "member": "string",
           "name": "ColName",
           "required": false,

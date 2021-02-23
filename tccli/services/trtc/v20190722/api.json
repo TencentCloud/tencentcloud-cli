@@ -464,6 +464,7 @@
         {
           "default": "",
           "document": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）",
+          "example": "1400188366_3568_1588055615",
           "member": "string",
           "name": "CommId",
           "required": true,
@@ -472,6 +473,7 @@
         {
           "default": "",
           "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
+          "example": "1588055615",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -480,6 +482,7 @@
         {
           "default": "",
           "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "example": "1588055615",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -488,6 +491,7 @@
         {
           "default": "",
           "document": "用户id",
+          "example": "user_66319581",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -496,6 +500,7 @@
         {
           "default": "",
           "document": "房间号",
+          "example": "1711",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -509,8 +514,10 @@
       "members": [
         {
           "document": "返回的事件列表",
+          "example": "\"Data\": [             {                 \"Content\": [            ",
           "member": "EventList",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2132,6 +2139,7 @@
         {
           "default": "",
           "document": "TRTC的SDKAppId。",
+          "example": "1400188366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2140,6 +2148,7 @@
         {
           "default": "",
           "document": "字符串房间号。",
+          "example": "3560",
           "member": "string",
           "name": "StrRoomId",
           "required": true,
@@ -2148,6 +2157,7 @@
         {
           "default": "",
           "document": "混流输出控制参数。",
+          "example": "OutputParams",
           "member": "OutputParams",
           "name": "OutputParams",
           "required": true,
@@ -2156,6 +2166,7 @@
         {
           "default": "",
           "document": "混流输出编码参数。",
+          "example": "EncodeParams",
           "member": "EncodeParams",
           "name": "EncodeParams",
           "required": true,
@@ -2164,6 +2175,7 @@
         {
           "default": "",
           "document": "混流输出布局参数。",
+          "example": "LayoutParams",
           "member": "LayoutParams",
           "name": "LayoutParams",
           "required": true,
@@ -2172,6 +2184,7 @@
         {
           "default": "",
           "document": "第三方CDN转推参数。",
+          "example": "PublishCdnParams",
           "member": "PublishCdnParams",
           "name": "PublishCdnParams",
           "required": false,
@@ -2198,6 +2211,7 @@
         {
           "default": "",
           "document": "TRTC的SDKAppId。",
+          "example": "1400188366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2206,6 +2220,7 @@
         {
           "default": "",
           "document": "房间号。",
+          "example": "3560",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -2214,6 +2229,7 @@
         {
           "default": "",
           "document": "混流输出控制参数。",
+          "example": "OutputParams",
           "member": "OutputParams",
           "name": "OutputParams",
           "required": true,
@@ -2222,6 +2238,7 @@
         {
           "default": "",
           "document": "混流输出编码参数。",
+          "example": "EncodeParams",
           "member": "EncodeParams",
           "name": "EncodeParams",
           "required": true,
@@ -2230,6 +2247,7 @@
         {
           "default": "",
           "document": "混流输出布局参数。",
+          "example": "LayoutParams",
           "member": "LayoutParams",
           "name": "LayoutParams",
           "required": true,
@@ -2238,6 +2256,7 @@
         {
           "default": "",
           "document": "第三方CDN转推参数。",
+          "example": "PublishCdnParams",
           "member": "PublishCdnParams",
           "name": "PublishCdnParams",
           "required": false,

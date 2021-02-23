@@ -4801,6 +4801,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "ins-xxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4810,6 +4811,7 @@
         {
           "default": "",
           "document": "节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER",
+          "example": "WORKER",
           "member": "string",
           "name": "InstanceRole",
           "required": true,
@@ -4819,6 +4821,7 @@
         {
           "default": "",
           "document": "实例异常(或者处于初始化中)的原因",
+          "example": "=Ready:True",
           "member": "string",
           "name": "FailedReason",
           "required": true,
@@ -4828,6 +4831,7 @@
         {
           "default": "",
           "document": "实例的状态（running 运行中，initializing 初始化中，failed 异常）",
+          "example": "running",
           "member": "string",
           "name": "InstanceState",
           "required": true,
@@ -4837,6 +4841,7 @@
         {
           "default": "",
           "document": "实例是否封锁状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "drained",
           "member": "string",
           "name": "DrainStatus",
           "required": true,
@@ -4846,6 +4851,7 @@
         {
           "default": "",
           "document": "节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"MountTarget\":\"\",\"DataDiskPartition\":null,\"DockerGraphPath\":\"\",",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": true,
@@ -4855,6 +4861,7 @@
         {
           "default": "",
           "document": "添加时间",
+          "example": "2021-02-22T07:14:11Z",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -4864,6 +4871,7 @@
         {
           "default": "",
           "document": "节点内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "LanIP",
           "required": true,
@@ -4873,6 +4881,7 @@
         {
           "default": "",
           "document": "资源池ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "np-xxxxxxxx",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -4882,6 +4891,7 @@
         {
           "default": "",
           "document": "自动伸缩组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asg-xxxxxxxx",
           "member": "string",
           "name": "AutoscalingGroupId",
           "required": true,

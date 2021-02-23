@@ -173,7 +173,7 @@
     "DeleteRewrite": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DeleteRewrite\r\n&LoadBalancerId=lb-r6nx1iby\r\n&SourceListenerId=lbl-cy6akv52\r\n&TargetListenerId=lbl-g14o899k\r\n&RewriteInfos.0.SourceLocationId=loc-2jkimjn0\r\n&RewriteInfos.0.TargetLocationId=loc-bmsddozm\r\n&RewriteInfos.1.SourceLocationId=loc-eu15yo84\r\n&RewriteInfos.1.TargetLocationId=loc-bmsddozm\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=DeleteRewrite\n&LoadBalancerId=lb-r6nx1iby\n&SourceListenerId=lbl-cy6akv52\n&TargetListenerId=lbl-g14o899k\n&RewriteInfos.0.SourceLocationId=loc-2jkimjn0\n&RewriteInfos.0.TargetLocationId=loc-bmsddozm\n&RewriteInfos.1.SourceLocationId=loc-eu15yo84\n&RewriteInfos.1.TargetLocationId=loc-bmsddozm\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4fcf51ca-fde7-4064-beff-cc46dd151f73\"\r\n    }\r\n}",
         "title": "批量删除多对重定向关系"
       }

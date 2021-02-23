@@ -29,6 +29,11 @@ Output:
                     "ForwardInterval": 0,
                     "Config": {
                         "Retention": 300000000
+                    },
+                    "RetentionTimeConfig": {
+                        "Expect": 1440,
+                        "Current": 480,
+                        "ModTimeStamp": 1561637447
                     }
                 }
             ],

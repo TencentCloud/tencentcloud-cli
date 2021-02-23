@@ -19,7 +19,7 @@
       "output": "AssignPrivateIpAddressesResponse"
     },
     "AssociateAddress": {
-      "document": "将弹性公网IP（简称 EIP）绑定到实例或弹性网卡的指定内网 IP 上。\n将 EIP 绑定到实例（ECM）上，其本质是将 EIP 绑定到实例上主网卡的主内网 IP 上。\n将 EIP 绑定到主网卡的主内网IP上，绑定过程会把其上绑定的普通公网 IP 自动解绑并释放。\n将 EIP 绑定到指定网卡的内网 IP上（非主网卡的主内网IP），则必须先解绑该 EIP，才能再绑定新的。\n将 EIP 绑定到NAT网关，请使用接口EipBindNatGateway\nEIP 如果欠费或被封堵，则不能被绑定。\n只有状态为 UNBIND 的 EIP 才能够被绑定。",
+      "document": "将弹性公网IP（简称 EIP）绑定到实例或弹性网卡的指定内网 IP 上。\n将 EIP 绑定到实例（ECM）上，其本质是将 EIP 绑定到实例上主网卡的主内网 IP 上。\n将 EIP 绑定到指定网卡的内网 IP上，内网IP已经绑定了EIP或普通公网IP，则反馈失败。必须先解绑该 EIP，才能再绑定新的。\n只有状态为 UNBIND 的 EIP 才能够绑定内网IP。",
       "input": "AssociateAddressRequest",
       "name": "绑定弹性公网IP",
       "output": "AssociateAddressResponse"
@@ -3106,9 +3106,16 @@
           "value_allowed_null": false
         },
         {
-          "document": "镜像操作系统白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像操作系统白名单。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ImageWhiteSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "网络限额信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InstanceNetworkLimitConfig",
+          "name": "InstanceNetworkLimitConfigs",
           "type": "list",
           "value_allowed_null": true
         },
@@ -4513,6 +4520,7 @@
         {
           "default": "",
           "document": "ECM 地域",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -4521,6 +4529,7 @@
         {
           "default": "",
           "document": "异步任务ID。",
+          "example": "1528600",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4534,15 +4543,19 @@
       "members": [
         {
           "document": "异步任务ID。",
+          "example": "1528600",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "执行结果，包括\"SUCCESS\", \"FAILED\", \"RUNNING\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4561,6 +4574,7 @@
         {
           "default": "",
           "document": "任务描述",
+          "example": "无",
           "member": "TaskInput",
           "name": "TaskSet",
           "required": true,
@@ -4574,8 +4588,10 @@
       "members": [
         {
           "document": "任务描述",
+          "example": "无",
           "member": "TaskOutput",
           "name": "TaskSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5946,6 +5962,48 @@
           "name": "Primary",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceNetworkLimitConfig": {
+      "document": "机器网络资源限制",
+      "members": [
+        {
+          "default": "",
+          "document": "cpu核数",
+          "member": "int64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网卡数量限制",
+          "member": "int64",
+          "name": "NetworkInterfaceLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每张网卡内网ip数量限制",
+          "member": "int64",
+          "name": "InnerIpPerNetworkInterface",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每个实例的外网ip限制",
+          "member": "int64",
+          "name": "PublicIpPerInstance",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

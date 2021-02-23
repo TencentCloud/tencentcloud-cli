@@ -543,6 +543,7 @@
         {
           "default": "",
           "document": "告警通知模板 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -552,6 +553,7 @@
         {
           "default": "",
           "document": "告警通知模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认通知",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -561,6 +563,7 @@
         {
           "default": "",
           "document": "上次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-11-16 13:56:56",
           "member": "string",
           "name": "UpdatedAt",
           "required": true,
@@ -570,6 +573,7 @@
         {
           "default": "",
           "document": "上次修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1500000688",
           "member": "string",
           "name": "UpdatedBy",
           "required": true,
@@ -579,6 +583,7 @@
         {
           "default": "",
           "document": "告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL",
           "member": "string",
           "name": "NoticeType",
           "required": true,
@@ -588,6 +593,7 @@
         {
           "default": "",
           "document": "用户通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
           "required": true,
@@ -597,6 +603,7 @@
         {
           "default": "",
           "document": "回调通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
           "required": true,
@@ -606,6 +613,7 @@
         {
           "default": "",
           "document": "是否是系统预设通知模板 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "IsPreset",
           "required": true,
@@ -615,6 +623,7 @@
         {
           "default": "",
           "document": "通知语言 zh-CN=中文 en-US=英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
           "required": true,
@@ -624,6 +633,7 @@
         {
           "default": "",
           "document": "告警通知模板绑定的告警策略ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PolicyIds",
           "required": true,
@@ -1309,6 +1319,7 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -1317,6 +1328,7 @@
         {
           "default": "",
           "document": "通知模板名称 60字符以内",
+          "example": "默认通知模版",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1325,6 +1337,7 @@
         {
           "default": "",
           "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
+          "example": "ALL",
           "member": "string",
           "name": "NoticeType",
           "required": true,
@@ -1333,6 +1346,7 @@
         {
           "default": "",
           "document": "通知语言 zh-CN=中文 en-US=英文",
+          "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
           "required": true,
@@ -1341,6 +1355,7 @@
         {
           "default": "",
           "document": "用户通知 最多5个",
+          "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
           "required": false,
@@ -1349,6 +1364,7 @@
         {
           "default": "",
           "document": "回调通知 最多3个",
+          "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
           "required": false,
@@ -1362,8 +1378,10 @@
       "members": [
         {
           "document": "告警通知模板ID",
+          "example": "notice-abcdef",
           "member": "string",
           "name": "NoticeId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6343,6 +6361,7 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -6351,6 +6370,7 @@
         {
           "default": "",
           "document": "告警通知规则名称 60字符以内",
+          "example": "默认通知模版",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6359,6 +6379,7 @@
         {
           "default": "",
           "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
+          "example": "ALL",
           "member": "string",
           "name": "NoticeType",
           "required": true,
@@ -6367,6 +6388,7 @@
         {
           "default": "",
           "document": "通知语言 zh-CN=中文 en-US=英文",
+          "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
           "required": true,
@@ -6375,6 +6397,7 @@
         {
           "default": "",
           "document": "告警通知模板 ID",
+          "example": "notice-xxx",
           "member": "string",
           "name": "NoticeId",
           "required": true,
@@ -6383,6 +6406,7 @@
         {
           "default": "",
           "document": "用户通知 最多5个",
+          "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
           "required": false,
@@ -6391,6 +6415,7 @@
         {
           "default": "",
           "document": "回调通知 最多3个",
+          "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
           "required": false,

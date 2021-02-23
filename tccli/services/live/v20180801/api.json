@@ -2473,6 +2473,7 @@
         {
           "default": "",
           "document": "模板名称，例： 900p 仅支持字母和数字的组合。\n长度限制：\n  标准转码：1-10个字符\n  极速高清转码：3-10个字符",
+          "example": "无",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -2481,6 +2482,7 @@
         {
           "default": "",
           "document": "视频码率。范围：0kbps - 8000kbps。\n0为保持原始码率。\n注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。",
+          "example": "无",
           "member": "int64",
           "name": "VideoBitrate",
           "required": true,
@@ -2489,6 +2491,7 @@
         {
           "default": "",
           "document": "音频编码：aac，默认aac。\n注意：当前该参数未生效，待后续支持！",
+          "example": "无",
           "member": "string",
           "name": "Acodec",
           "required": false,
@@ -2497,6 +2500,7 @@
         {
           "default": "",
           "document": "音频码率，默认0。\n范围：0-500。",
+          "example": "无",
           "member": "int64",
           "name": "AudioBitrate",
           "required": false,
@@ -2505,6 +2509,7 @@
         {
           "default": "",
           "document": "视频编码：h264/h265/origin，默认origin。\n\norigin: 保持原始编码格式",
+          "example": "无",
           "member": "string",
           "name": "Vcodec",
           "required": false,
@@ -2513,6 +2518,7 @@
         {
           "default": "",
           "document": "模板描述。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2520,15 +2526,8 @@
         },
         {
           "default": "",
-          "document": "宽，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始宽度",
-          "member": "int64",
-          "name": "Width",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "是否保留视频，0：否，1：是。默认1。",
+          "example": "无",
           "member": "int64",
           "name": "NeedVideo",
           "required": false,
@@ -2536,7 +2535,17 @@
         },
         {
           "default": "",
+          "document": "宽，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始宽度",
+          "example": "无",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "是否保留音频，0：否，1：是。默认1。",
+          "example": "无",
           "member": "int64",
           "name": "NeedAudio",
           "required": false,
@@ -2544,7 +2553,8 @@
         },
         {
           "default": "",
-          "document": "高，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始宽度",
+          "document": "高，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始高度。",
+          "example": "无",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -2553,6 +2563,7 @@
         {
           "default": "",
           "document": "帧率，默认0。\n范围0-60fps",
+          "example": "无",
           "member": "int64",
           "name": "Fps",
           "required": false,
@@ -2561,6 +2572,7 @@
         {
           "default": "",
           "document": "关键帧间隔，单位：秒。\n默认原始的间隔\n范围2-6",
+          "example": "无",
           "member": "int64",
           "name": "Gop",
           "required": false,
@@ -2569,6 +2581,7 @@
         {
           "default": "",
           "document": "旋转角度，默认0。\n可取值：0，90，180，270",
+          "example": "无",
           "member": "int64",
           "name": "Rotate",
           "required": false,
@@ -2577,6 +2590,7 @@
         {
           "default": "",
           "document": "编码质量：\nbaseline/main/high。默认baseline",
+          "example": "无",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -2585,6 +2599,7 @@
         {
           "default": "",
           "document": "当设置的码率>原始码率时，是否以原始码率为准。\n0：否， 1：是\n默认 0。",
+          "example": "无",
           "member": "int64",
           "name": "BitrateToOrig",
           "required": false,
@@ -2593,6 +2608,7 @@
         {
           "default": "",
           "document": "当设置的高度>原始高度时，是否以原始高度为准。\n0：否， 1：是\n默认 0。",
+          "example": "无",
           "member": "int64",
           "name": "HeightToOrig",
           "required": false,
@@ -2601,6 +2617,7 @@
         {
           "default": "",
           "document": "当设置的帧率>原始帧率时，是否以原始帧率为准。\n0：否， 1：是\n默认 0。",
+          "example": "无",
           "member": "int64",
           "name": "FpsToOrig",
           "required": false,
@@ -2609,6 +2626,7 @@
         {
           "default": "",
           "document": "是否是极速高清模板，0：否，1：是。默认0。",
+          "example": "无",
           "member": "int64",
           "name": "AiTransCode",
           "required": false,
@@ -2617,6 +2635,7 @@
         {
           "default": "",
           "document": "极速高清视频码率压缩比。\n极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)\n\n取值范围：0.0到0.5",
+          "example": "无",
           "member": "float",
           "name": "AdaptBitratePercent",
           "required": false,
@@ -2625,6 +2644,7 @@
         {
           "default": "",
           "document": "是否以短边作为高度，0：否，1：是。默认0。",
+          "example": "无",
           "member": "int64",
           "name": "ShortEdgeAsHeight",
           "required": false,
@@ -2638,8 +2658,10 @@
       "members": [
         {
           "document": "模板Id。",
+          "example": "无",
           "member": "int64",
           "name": "TemplateId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
