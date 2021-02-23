@@ -4,6 +4,7 @@ import sys
 from tccli.style import Document
 from tccli.loaders import Loader
 from tccli.document_handler import CLIDocumentHandler, ServiceDocumentHandler, ActionDocumentHandler
+from tccli.exceptions import UnknownArgumentError
 
 
 class BaseHelpCommand(object):
@@ -29,8 +30,8 @@ class BaseHelpCommand(object):
             self._version = version
 
     def __call__(self, args, parsed_globals):
-        #if args:
-        #    raise UnknownArgumentError("Unknown options: %s" % ', '.join(args))
+        if args:
+            raise UnknownArgumentError("Unknown options: %s" % ', '.join(args))
 
         self._get_service_version(parsed_globals)
         document_handle = self._get_document_handler()

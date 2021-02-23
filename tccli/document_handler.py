@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-from tccli.loaders import *
+from tccli.loaders import Loader, BASE_TYPE, CLI_BASE_TYPE
 
 
 class BaseDocumentHandler(object):

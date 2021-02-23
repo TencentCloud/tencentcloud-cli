@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from tccli.argument import CustomArgument
+from tccli.exceptions import UnknownArgumentError
 
 
 class CliUnfoldArgument(CustomArgument):
@@ -20,13 +21,52 @@ class CliUnfoldArgument(CustomArgument):
         for key in list(parsed_args.keys()):
             if parsed_args[key] is None:
                 del parsed_args[key]
+        params_set = {}
+        for key, value in parsed_args.items():
+            self.convert_to_dict(params_set, key, value)
+        return self.handle_array(params_set, "--")
+
+    def convert_to_dict(self, params_set, key, value):
+        if "." in key:
+            sub_key, sub_value = key.split(".", 1)
+            if sub_key not in params_set:
+                params_set[sub_key] = {}
+            self.convert_to_dict(params_set[sub_key], sub_value, value)
+        else:
+            params_set[key] = value
+
+    def handle_array(self, params, parent_key):
+        if not isinstance(params, dict):
+            return params
+        if any(x.isdigit() for x in params.keys()):
+            keys = params.keys()
+            formal_keys = list(map(str, xrange(len(keys))))
+            if set(keys) != set(formal_keys):
+                raise UnknownArgumentError(
+                    "The index of the array parameter: %s must start from 0, "
+                    "and the step size is 1" % parent_key)
+            params = list(params.values())
+            for idx, item in enumerate(params):
+                prefix_param = parent_key+str(idx) if parent_key == "--" else parent_key+"."+str(idx)
+                params[idx] = self.handle_array(item, prefix_param)
+        else:
+            for k in params.keys():
+                prefix_param = parent_key+k if parent_key == "--" else parent_key+"."+k
+                params[k] = self.handle_array(params[k], prefix_param)
+        return params
+
+    def build_action_parameters_old(self, args):
+        parsed_args = vars(args)
+        for key in list(parsed_args.keys()):
+            if parsed_args[key] is None:
+                del parsed_args[key]
         param_dict = self.gen_param_dict(parsed_args)
         return self.merge_dict(param_dict)
 
     def gen_param_dict(self, cli_param):
         param_list = []
         for key, value in cli_param.items():
-            param = key.split('.')
+            param = list(map(lambda x: int(x) if x.isdigit() else x, key.split('.')))
             param.append(value)
             param_list.append(param)
 
@@ -34,7 +74,7 @@ class CliUnfoldArgument(CustomArgument):
         param_list = sorted(param_list, reverse=True)
         for param in param_list:
             param_dict = {}
-            self._gen_param_dict(param, param_dict)
+            self._gen_param_dict(list(map(str, param)), param_dict)
             all_param_list.append(param_dict)
         return all_param_list
 

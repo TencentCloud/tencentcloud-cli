@@ -35,6 +35,9 @@ class CLICommand(BaseCommand):
         if args is None:
             args = sys.argv[1:]
 
+        if len(args) > 0 and args[0] == "as":
+            args[0] = "autoscaling"
+
         command_map = self._get_command_map()
         parser = self._create_parser(command_map)
 
@@ -203,6 +206,7 @@ class ActionCommand(BaseCommand):
         self.generate_cli_skeleton_argument = GenerateCliSkeletonArgument(service_name, version, action_name)
         self.cli_input_argument = CliInputJSONArgument()
         self.cli_unfold_argument = CliUnfoldArgument()
+        self.profile = "default"
 
     @property
     def argument_map(self):
@@ -213,7 +217,7 @@ class ActionCommand(BaseCommand):
     def _get_param_model(self):
         if self._call_mode == Options_define.CliUnfoldArgument:
             return self._cli_data.get_unfold_param_info(
-                self._service_name, self._version, self._action_name, param_array=True)
+                self._service_name, self._version, self._action_name, profile=self.profile, param_array=True)
         else:
             return self._cli_data.get_param_info(self._service_name, self._version, self._action_name)
 
@@ -240,6 +244,7 @@ class ActionCommand(BaseCommand):
     def __call__(self, args, parsed_globals):
 
         self._call_mode = self._get_call_mode(parsed_globals)
+        self._get_profile(parsed_globals)
 
         action_parser = self._create_action_parser(self.argument_map)
         action_parser.add_argument('help', nargs='?')
@@ -277,6 +282,12 @@ class ActionCommand(BaseCommand):
                 value = parsed_args[name]
                 argument_object.add_to_params(action_params, value)
         return action_params
+
+    def _get_profile(self, parsed_globals):
+        if getattr(parsed_globals, Options_define.Profile):
+            self.profile = getattr(parsed_globals, Options_define.Profile)
+        else:
+            self.profile = "default"
 
     def _get_call_mode(self, parsed_globals):
         if getattr(parsed_globals, Options_define.GenerateCliSkeleton.replace('-', '_'), None):

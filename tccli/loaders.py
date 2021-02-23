@@ -3,6 +3,7 @@
 import os
 import copy
 import json
+from tccli.utils import Utils
 from tccli import __version__
 from tccli.services import SERVICE_VERSIONS
 from collections import OrderedDict
@@ -282,7 +283,7 @@ class Loader(object):
         param_model = service_model["objects"]
         return self._generate_param_skeleton(param_model[action + "Request"]["members"], param_model)
 
-    def get_unfold_param_info(self, service, version, action, param_array=False):
+    def get_unfold_param_info(self, service, version, action, profile="default", param_array=False):
         service_model = self.get_service_model(service, version)
         object_model = service_model["objects"]
         all_param_list = []
@@ -291,16 +292,22 @@ class Loader(object):
             self._get_unfold_param_info(object_model, all_param_list, param_list, para)
 
         if param_array:
-            all_param_list = self._add_array_item(all_param_list)
+            all_param_list = self._add_array_item(all_param_list, profile)
 
         return self._filling_unfold_param_info(all_param_list, service, version, action)
 
-    def _add_array_item(self, param_list):
+    def _add_array_item(self, param_list, profile):
+        is_conf_exist, conf_path = Utils.file_existed(os.path.join(os.path.expanduser("~"), ".tccli"),
+                                                      profile + ".configure")
+        if is_conf_exist:
+            array_count = Utils.load_json_msg(conf_path).get("arrayCount", 10)
+        else:
+            array_count = 10
         all_param_list = param_list
         for para in param_list:
             for idx, item in enumerate(para):
                 if item == '0':
-                    for i in range(1, 11):
+                    for i in range(1, int(array_count)):
                         tmp = copy.deepcopy(para)
                         tmp[idx] = str(i)
                         all_param_list.append(tmp)
