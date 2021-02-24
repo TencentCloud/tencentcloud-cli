@@ -29,6 +29,7 @@ Output:
         "UploadUrl": "xx",
         "DownloadUrl": "xx",
         "RequestId": "xx",
+        "OutDate": true,
         "PackageVersion": "xx",
         "PackageName": "xx"
     }

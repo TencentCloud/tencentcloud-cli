@@ -966,6 +966,7 @@
         {
           "default": "",
           "document": "管理人ID",
+          "example": "无",
           "member": "int64",
           "name": "ManagerId",
           "required": true,
@@ -979,8 +980,10 @@
       "members": [
         {
           "document": "管理人ID",
+          "example": "无",
           "member": "int64",
           "name": "ManagerId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2758,6 +2761,7 @@
         {
           "default": "",
           "document": "管理人ID",
+          "example": "无",
           "member": "int64",
           "name": "ManagerId",
           "required": true,
@@ -2771,8 +2775,10 @@
       "members": [
         {
           "document": "管理人ID",
+          "example": "无",
           "member": "int64",
           "name": "ManagerId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

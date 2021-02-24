@@ -563,6 +563,7 @@
         {
           "default": "",
           "document": "模板ID。详情请查看：[获取模板列表](https://cloud.tencent.com/document/product/242/48940)",
+          "example": "tmpl-xxxxxx",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -571,6 +572,7 @@
         {
           "default": "",
           "document": "购买域名的年限，可选值：[1-10]",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -579,6 +581,7 @@
         {
           "default": "",
           "document": "批量购买的域名,最多为4000个",
+          "example": "qq.com",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -587,6 +590,7 @@
         {
           "default": "",
           "document": "付费模式 0手动在线付费，1使用余额付费",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
           "required": true,
@@ -595,6 +599,7 @@
         {
           "default": "",
           "document": "自动续费开关。有两个可选值：\n0 表示关闭，不自动续费（默认值）\n1 表示开启，将自动续费",
+          "example": "无",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -608,8 +613,10 @@
       "members": [
         {
           "document": "批量日志ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "318",
           "member": "int64",
           "name": "LogId",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

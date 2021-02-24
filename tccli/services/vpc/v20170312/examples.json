@@ -1223,13 +1223,13 @@
     "DescribeSecurityGroups": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroups\r\n&Limit=1\r\n&Filters.0.Name=project-id\r\n&Filters.0.Values.0=0\r\n&Filters.1.Name=security-group-name\r\n&Filters.1.Values.0=TestGroup\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"SecurityGroupSet\": [{\r\n\t\t\t\"SecurityGroupId\": \"sg-05bb4upy\",\r\n\t\t\t\"SecurityGroupName\": \"TestGroup\",\r\n\t\t\t\"SecurityGroupDesc\": \"test-group-desc\",\r\n\t\t\t\"ProjectId\": \"0\",\r\n\t\t\t\"CreateTime\": \"2017-04-18 21:02:30\"\r\n\t\t}],\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n\t}\r\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroups\n&Limit=1\n&Filters.0.Name=project-id\n&Filters.0.Values.0=0\n&Filters.1.Name=security-group-name\n&Filters.1.Values.0=TestGroup\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"SecurityGroupSet\": [\r\n      {\r\n        \"SecurityGroupId\": \"sg-05bb4upy\",\r\n        \"SecurityGroupName\": \"TestGroup\",\r\n        \"SecurityGroupDesc\": \"test-group-desc\",\r\n        \"ProjectId\": \"0\",\r\n        \"IsDefault\": true,\r\n        \"CreatedTime\": \"2017-04-18 21:02:30\"\r\n      }\r\n    ],\r\n    \"TotalCount\": 1,\r\n    \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n  }\r\n}",
         "title": "查看安全组"
       },
       {
         "document": "用tag:tag-key查询。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroups\r\n&Filters.0.Name=tag:Version\r\n&Filters.0.Values.0=TEST\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroups\n&Filters.0.Name=tag:Version\n&Filters.0.Values.0=TEST\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"SecurityGroupSet\": [{\r\n\t\t\t\"SecurityGroupId\": \"sg-2got2lcz\",\r\n\t\t\t\"SecurityGroupName\": \"test\",\r\n\t\t\t\"SecurityGroupDesc\": \"暴露全部端口到公网和内网，有一定安全风险\",\r\n\t\t\t\"ProjectId\": \"0\",\r\n\t\t\t\"IsDefault\": false,\r\n\t\t\t\"CreatedTime\": \"2019-07-23 12:32:24\",\r\n\t\t\t\"TagSet\": [{\r\n\t\t\t\t\t\"Key\": \"中文标签键\",\r\n\t\t\t\t\t\"Value\": \"中文标签值\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Key\": \"Version\",\r\n\t\t\t\t\t\"Value\": \"TEST\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Key\": \"Version\",\r\n\t\t\t\t\t\"Value\": \"DEV\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}],\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"RequestId\": \"85cda7d1-6608-4eca-8d02-19937c12dd84\"\r\n\t}\r\n}",
         "title": "查看绑定标签的安全组"
       }

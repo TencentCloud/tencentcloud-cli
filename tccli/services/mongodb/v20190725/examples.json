@@ -115,7 +115,7 @@
     "FlushInstanceRouterConfig": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=FlushInstanceRouterConfig\r\n&InstanceId=cmgo-a3bm93hf\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=FlushInstanceRouterConfig\n&InstanceId=cmgo-a3bm93hf\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0ad9f471-fb8f-402a-aa78-b1640c6670c4\"\r\n    }\r\n}",
         "title": "在所有Mongos上执行FlushRouterConfig"
       }

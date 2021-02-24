@@ -128,6 +128,14 @@
         "title": "查询机器人文件模板"
       }
     ],
+    "QueryBlackListData": [
+      {
+        "document": "",
+        "input": "https://cr.tencentcloudapi.com/?Action=QueryBlackListData\n&Module=AiApi\n&Operation=QueryBlackListData\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1, \r\n        \"Data\": [\r\n            {\r\n                \"OperType\": \"xx\", \r\n                \"BlackValidDate\": \"2020-09-22\", \r\n                \"BlackDescription\": \"xx\", \r\n                \"BlackType\": \"xx\", \r\n                \"BlackValue\": \"xx\", \r\n                \"BlackAddDate\": \"2020-09-22\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询黑名单文件列表"
+      }
+    ],
     "QueryBotList": [
       {
         "document": "",

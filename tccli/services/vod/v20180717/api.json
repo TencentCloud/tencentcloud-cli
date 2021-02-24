@@ -5348,6 +5348,7 @@
         {
           "default": "",
           "document": "任务 ID。",
+          "example": "12530xxx-procedurev2-xxx",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5357,6 +5358,7 @@
         {
           "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -5366,6 +5368,7 @@
         {
           "default": "",
           "document": "错误码\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -5375,6 +5378,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -5384,6 +5388,7 @@
         {
           "default": "",
           "document": "制作媒体文件任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ComposeMediaTaskInput",
           "name": "Input",
           "required": true,
@@ -5393,8 +5398,19 @@
         {
           "default": "",
           "document": "制作媒体文件任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ComposeMediaTaskOutput",
           "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -5441,6 +5457,7 @@
         {
           "default": "",
           "document": "文件类型，例如 mp4、mp3 等。",
+          "example": "mp4",
           "member": "string",
           "name": "FileType",
           "required": true,
@@ -5450,6 +5467,7 @@
         {
           "default": "",
           "document": "媒体文件 ID。",
+          "example": "523xxx",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -5459,6 +5477,7 @@
         {
           "default": "",
           "document": "媒体文件播放地址。",
+          "example": "http://125xxx.vod2.myqcloud.com/xxx/xxx/xx.mp4",
           "member": "string",
           "name": "FileUrl",
           "required": true,
@@ -5468,6 +5487,7 @@
         {
           "default": "",
           "document": "文件名称，最长 64 个字符。",
+          "example": "fileName",
           "member": "string",
           "name": "MediaName",
           "required": true,
@@ -5477,6 +5497,7 @@
         {
           "default": "",
           "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
           "member": "int64",
           "name": "ClassId",
           "required": true,
@@ -5486,6 +5507,7 @@
         {
           "default": "",
           "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "9999-12-31T23:59:59Z",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
@@ -10268,6 +10290,7 @@
         {
           "default": "",
           "document": "任务 ID。",
+          "example": "12530xxx-procedurev2-xxx",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -10277,6 +10300,7 @@
         {
           "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -10286,6 +10310,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -10295,6 +10320,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "“”",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -10304,6 +10330,7 @@
         {
           "default": "",
           "document": "视频编辑任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EditMediaTaskInput",
           "name": "Input",
           "required": true,
@@ -10313,6 +10340,7 @@
         {
           "default": "",
           "document": "视频编辑任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EditMediaTaskOutput",
           "name": "Output",
           "required": true,
@@ -10322,6 +10350,7 @@
         {
           "default": "",
           "document": "若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。",
+          "example": "12530xxx-procedurev2-xxx",
           "member": "string",
           "name": "ProcedureTaskId",
           "required": true,
@@ -10331,6 +10360,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "example",
           "member": "string",
           "name": "SessionContext",
           "required": true,
@@ -10340,10 +10370,21 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "example",
           "member": "string",
           "name": "SessionId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原始视频的元信息。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -10388,6 +10429,7 @@
         {
           "default": "",
           "document": "文件类型，例如 mp4、flv 等。",
+          "example": "mp4",
           "member": "string",
           "name": "FileType",
           "required": true,
@@ -10397,6 +10439,7 @@
         {
           "default": "",
           "document": "媒体文件播放地址。",
+          "example": "http://125xxx.vod2.myqcloud.com/xxx/xxx/xx.mp4",
           "member": "string",
           "name": "FileUrl",
           "required": true,
@@ -10406,6 +10449,7 @@
         {
           "default": "",
           "document": "媒体文件 ID。",
+          "example": "523xxx",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -10415,6 +10459,7 @@
         {
           "default": "",
           "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "fileName",
           "member": "string",
           "name": "MediaName",
           "required": true,
@@ -10424,6 +10469,7 @@
         {
           "default": "",
           "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
           "member": "int64",
           "name": "ClassId",
           "required": true,
@@ -10433,6 +10479,7 @@
         {
           "default": "",
           "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "9999-12-31T23:59:59Z",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
@@ -17472,6 +17519,7 @@
         {
           "default": "",
           "document": "转拉上传任务 ID。",
+          "example": "12530xxx",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -17481,6 +17529,7 @@
         {
           "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -17490,6 +17539,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -17499,6 +17549,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -17508,6 +17559,7 @@
         {
           "default": "",
           "document": "转拉上传完成后生成的视频 ID。",
+          "example": "825xxx",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -17517,6 +17569,7 @@
         {
           "default": "",
           "document": "转拉完成后生成的媒体文件基础信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaBasicInfo",
           "name": "MediaBasicInfo",
           "required": true,
@@ -17525,7 +17578,18 @@
         },
         {
           "default": "",
+          "document": "原始视频的元信息。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "转拉上传完成后生成的播放地址。",
+          "example": "http://125xxx.vod2.myqcloud.com/xxx/xxx/xxx.mp4",
           "member": "string",
           "name": "FileUrl",
           "required": true,
@@ -17535,6 +17599,7 @@
         {
           "default": "",
           "document": "若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。",
+          "example": "12530xxx",
           "member": "string",
           "name": "ProcedureTaskId",
           "required": true,
@@ -17544,6 +17609,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "abcd",
           "member": "string",
           "name": "SessionContext",
           "required": true,
@@ -17553,6 +17619,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "abcd",
           "member": "string",
           "name": "SessionId",
           "required": true,

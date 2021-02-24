@@ -23,7 +23,8 @@ Output:
                 "SecurityGroupName": "TestGroup",
                 "SecurityGroupDesc": "test-group-desc",
                 "ProjectId": "0",
-                "CreateTime": "2017-04-18 21:02:30"
+                "IsDefault": true,
+                "CreatedTime": "2017-04-18 21:02:30"
             }
         ],
         "TotalCount": 1,

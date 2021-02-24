@@ -1604,6 +1604,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "cmgo-a3bm9xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,

@@ -9,8 +9,7 @@ tccli domain CreateDomainBatch --cli-unfold-argument  \
     --Domains xx \
     --PayMode 0 \
     --Period 1 \
-    --TemplateId xx \
-    --CustomDns xx
+    --TemplateId xx
 ```
 
 Output: 

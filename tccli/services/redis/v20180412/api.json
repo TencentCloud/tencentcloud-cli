@@ -3926,6 +3926,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4673,6 +4682,15 @@
           "document": "执行时间",
           "member": "string",
           "name": "ExecuteTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点ID",
+          "member": "string",
+          "name": "Node",
           "required": true,
           "type": "string",
           "value_allowed_null": false

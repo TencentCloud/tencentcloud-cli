@@ -61,7 +61,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteManager\n<公共请求参数>\n\n{\"ManagerId\": 23}",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\r\n        \"ManagerId\": 23\r\n    }\r\n}",
-        "title": "查询管理人详情"
+        "title": "删除管理人"
       }
     ],
     "DescribeCertificate": [
@@ -163,7 +163,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitAuditManager\n<公共请求参数>\n\n{\"ManagerId\": 23}",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\r\n        \"ManagerId\": 23\r\n    }\r\n}",
-        "title": "查询管理人详情"
+        "title": "重新提交审核管理人"
       }
     ],
     "SubmitCertificateInformation": [

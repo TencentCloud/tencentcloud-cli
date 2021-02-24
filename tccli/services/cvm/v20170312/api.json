@@ -842,6 +842,7 @@
         {
           "default": "",
           "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
+          "example": "无",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
@@ -851,6 +852,7 @@
         {
           "default": "",
           "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。",
+          "example": "无",
           "member": "string",
           "name": "DiskType",
           "required": false,
@@ -860,6 +862,7 @@
         {
           "default": "",
           "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。",
+          "example": "无",
           "member": "string",
           "name": "DiskId",
           "required": false,
@@ -869,6 +872,7 @@
         {
           "default": "",
           "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘\n<li>FALSE：子机销毁时，保留数据盘<br>\n默认取值：TRUE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "DeleteWithInstance",
           "required": false,
@@ -878,6 +882,7 @@
         {
           "default": "",
           "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SnapshotId",
           "required": false,
@@ -887,6 +892,7 @@
         {
           "default": "",
           "document": "数据盘是加密。取值范围：\n<li>TRUE：加密\n<li>FALSE：不加密<br>\n默认取值：FALSE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "Encrypt",
           "required": false,
@@ -896,6 +902,7 @@
         {
           "default": "",
           "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "KmsKeyId",
           "required": false,
@@ -905,10 +912,21 @@
         {
           "default": "",
           "document": "云硬盘性能，单位：MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ThroughputPerformance",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6374,6 +6392,7 @@
         {
           "default": "",
           "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><br>默认取值：当前有库存的硬盘类型。",
+          "example": "无",
           "member": "string",
           "name": "DiskType",
           "required": false,
@@ -6383,6 +6402,7 @@
         {
           "default": "",
           "document": "系统盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。",
+          "example": "无",
           "member": "string",
           "name": "DiskId",
           "required": false,
@@ -6392,10 +6412,21 @@
         {
           "default": "",
           "document": "系统盘大小，单位：GB。默认值为 50",
+          "example": "无",
           "member": "int64",
           "name": "DiskSize",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属的独享集群ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
