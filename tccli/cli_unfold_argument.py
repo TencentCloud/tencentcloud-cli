@@ -40,7 +40,7 @@ class CliUnfoldArgument(CustomArgument):
             return params
         if any(x.isdigit() for x in params.keys()):
             keys = params.keys()
-            formal_keys = list(map(str, xrange(len(keys))))
+            formal_keys = list(map(str, range(len(keys))))
             if set(keys) != set(formal_keys):
                 raise UnknownArgumentError(
                     "The index of the array parameter: %s must start from 0, "
