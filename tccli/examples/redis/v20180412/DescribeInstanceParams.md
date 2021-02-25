@@ -28,7 +28,8 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "maxmemory-policy",
                 "Tips": "当系统到达设定的最大内存值后选择内存交换的策略",
-                "ValueType": "enum"
+                "ValueType": "enum",
+                "Status": 2
             }
         ],
         "InstanceIntegerParam": [
@@ -40,7 +41,9 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "cluster-node-timeout",
                 "Tips": "集群模式下当节点在指定时间内(毫秒)不可达则被认为处于失败状态",
-                "ValueType": "integer"
+                "ValueType": "integer",
+                "Status": 2,
+                "Unit": ""
             },
             {
                 "CurrentValue": "511",
@@ -50,7 +53,9 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "hash-max-ziplist-entries",
                 "Tips": "当哈希元素数量没有超过指定数目，则编码为内存利用率更高的数据结构存储",
-                "ValueType": "integer"
+                "ValueType": "integer",
+                "Status": 2,
+                "Unit": ""
             },
             {
                 "CurrentValue": "61",
@@ -60,7 +65,9 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "hash-max-ziplist-value",
                 "Tips": "当哈希中最大项没有超过指定阈值，则编码为内存利用率更高的数据结构存储",
-                "ValueType": "integer"
+                "ValueType": "integer",
+                "Status": 2,
+                "Unit": ""
             },
             {
                 "CurrentValue": "511",
@@ -70,7 +77,9 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "set-max-intset-entries",
                 "Tips": "当集合中的元素全部是64位有符号十进制整数并且未超过设定阈值，则编码为整数集合存储",
-                "ValueType": "integer"
+                "ValueType": "integer",
+                "Status": 2,
+                "Unit": ""
             },
             {
                 "CurrentValue": "10001",
@@ -80,7 +89,9 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "slowlog-log-slower-than",
                 "Tips": "超过指定时间的命令将会被记录，负数表示关闭该功能，零值表示强制记录所有命令的执行记录",
-                "ValueType": "integer"
+                "ValueType": "integer",
+                "Status": 2,
+                "Unit": ""
             },
             {
                 "CurrentValue": "4",
@@ -90,7 +101,9 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "timeout",
                 "Tips": "客户端空闲指定时长后关闭连接，零值表示关闭该功能",
-                "ValueType": "integer"
+                "ValueType": "integer",
+                "Status": 2,
+                "Unit": ""
             },
             {
                 "CurrentValue": "121",
@@ -100,7 +113,9 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "zset-max-ziplist-entries",
                 "Tips": "当有序集合元素数量没有超过指定数目，则编码为内存利用率更高的数据结构存储",
-                "ValueType": "integer"
+                "ValueType": "integer",
+                "Status": 2,
+                "Unit": ""
             },
             {
                 "CurrentValue": "61",
@@ -110,7 +125,9 @@ Output:
                 "NeedRestart": "false",
                 "ParamName": "zset-max-ziplist-value",
                 "Tips": "当有序集合中最大项没有超过指定阈值，则编码为内存利用率更高的数据结构存储",
-                "ValueType": "integer"
+                "ValueType": "integer",
+                "Status": 2,
+                "Unit": ""
             }
         ],
         "InstanceTextParam": [
@@ -133,7 +150,28 @@ Output:
                     "A"
                 ],
                 "Tips": "改变系统已设定客户端的键空间通知方式",
-                "ValueType": "text"
+                "ValueType": "text",
+                "Status": 2
+            }
+        ],
+        "InstanceMultiParam": [
+            {
+                "CurrentValue": "\"\"",
+                "DefaultValue": "\"\"",
+                "EnumValue": [
+                    "flushall",
+                    "flushdb",
+                    "keys",
+                    "hgetall",
+                    "eval",
+                    "evalsha",
+                    "script"
+                ],
+                "NeedRestart": "false",
+                "ParamName": "disable-command-list",
+                "Status": 2,
+                "Tips": "commands in such config will not be allowed to run in this instance,you can config multi commands like this 'flushdb,keys'",
+                "ValueType": "multi"
             }
         ],
         "RequestId": "e546784b-709c-401d-aba6-73037eb4e522",

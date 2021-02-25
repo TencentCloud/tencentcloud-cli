@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli cdn DescribePurgeTasks --cli-unfold-argument  \
-    --PurgeType url \
     --TaskId 1234567 \
     --Area mainland
 ```
@@ -16,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "4d5a83f8-a61f-445b-8036-5636be640bef",
-        "PushLogs": [
+        "PurgeLogs": [
             {
                 "TaskId": "153303185323131331",
                 "Url": "http://www.test.com/",

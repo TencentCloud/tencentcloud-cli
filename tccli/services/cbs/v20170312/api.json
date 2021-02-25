@@ -7,7 +7,7 @@
       "output": "ApplySnapshotResponse"
     },
     "AttachDisks": {
-      "document": "本接口（AttachDisks）用于挂载云硬盘。\n \n* 支持批量操作，将多块云盘挂载到同一云主机。如果多个云盘存在不允许挂载的云盘，则操作不执行，以返回特定的错误码返回。\n* 本接口为异步接口，当挂载云盘的请求成功返回时，表示后台已发起挂载云盘的操作，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHING”变为“ATTACHED”，则为挂载成功。",
+      "document": "本接口（AttachDisks）用于挂载云硬盘。\n \n* 支持批量操作，将多块云盘挂载到同一云主机。如果多个云盘中存在不允许挂载的云盘，则操作不执行，返回特定的错误码。\n* 本接口为异步接口，当挂载云盘的请求成功返回时，表示后台已发起挂载云盘的操作，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHING”变为“ATTACHED”，则为挂载成功。",
       "input": "AttachDisksRequest",
       "name": "挂载云硬盘",
       "output": "AttachDisksResponse"
@@ -103,9 +103,9 @@
       "output": "DescribeSnapshotsResponse"
     },
     "DetachDisks": {
-      "document": "本接口（DetachDisks）用于解挂云硬盘。\n\n* 支持批量操作，解挂挂载在同一主机上的多块云盘。如果多块云盘存在不允许解挂载的云盘，则操作不执行，以返回特定的错误码返回。\n* 本接口为异步接口，当请求成功返回时，云盘并未立即从主机解挂载，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHED”变为“UNATTACHED”，则为解挂载成功。",
+      "document": "本接口（DetachDisks）用于卸载云硬盘。\n\n* 支持批量操作，卸载挂载在同一主机上的多块云盘。如果多块云盘中存在不允许卸载的云盘，则操作不执行，返回特定的错误码。\n* 本接口为异步接口，当请求成功返回时，云盘并未立即从主机卸载，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHED”变为“UNATTACHED”，则为卸载成功。",
       "input": "DetachDisksRequest",
-      "name": "解挂云硬盘",
+      "name": "卸载云硬盘",
       "output": "DetachDisksResponse"
     },
     "GetSnapOverview": {
@@ -218,6 +218,7 @@
         {
           "default": "",
           "document": "快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。",
+          "example": "snap-3xvkxxmp",
           "member": "string",
           "name": "SnapshotId",
           "required": true,
@@ -226,6 +227,7 @@
         {
           "default": "",
           "document": "快照原云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-ouxaxxt2",
           "member": "string",
           "name": "DiskId",
           "required": true,
@@ -285,6 +287,7 @@
         {
           "default": "",
           "document": "将要被挂载的弹性云盘ID。通过[DescribeDisks](/document/product/362/16315)接口查询。单次最多可挂载10块弹性云盘。",
+          "example": "[\"disk-l7mxexxc\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -293,6 +296,7 @@
         {
           "default": "",
           "document": "云服务器实例ID。云盘将被挂载到此云服务器上，通过[DescribeInstances](/document/product/213/15728)接口查询。",
+          "example": "ins-9oxguxa",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -301,6 +305,7 @@
         {
           "default": "",
           "document": "可选参数，不传该参数则仅执行挂载操作。传入`True`时，会在挂载成功后将云硬盘设置为随云主机销毁模式，仅对按量计费云硬盘有效。",
+          "example": "TRUE",
           "member": "bool",
           "name": "DeleteWithInstance",
           "required": false,
@@ -423,6 +428,7 @@
         {
           "default": "",
           "document": "要绑定的定期快照策略ID。",
+          "example": "asp-6xtxct37",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "required": true,
@@ -431,6 +437,7 @@
         {
           "default": "",
           "document": "要绑定的云硬盘ID列表，一次请求最多绑定80块云盘。",
+          "example": "[\"disk-l7mxexxc\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -666,6 +673,7 @@
         {
           "default": "",
           "document": "需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-l7mxexxc",
           "member": "string",
           "name": "DiskId",
           "required": true,
@@ -674,6 +682,7 @@
         {
           "default": "",
           "document": "快照名称，不传则新快照名称默认为“未命名”。",
+          "example": "test",
           "member": "string",
           "name": "SnapshotName",
           "required": false,
@@ -682,6 +691,7 @@
         {
           "default": "",
           "document": "快照的到期时间，到期后该快照将会自动删除",
+          "example": "2020-08-01 00:00:00",
           "member": "datetime_iso",
           "name": "Deadline",
           "required": false,
@@ -695,8 +705,10 @@
       "members": [
         {
           "document": "新创建的快照ID。",
+          "example": "snap-3xvkxyxp",
           "member": "string",
           "name": "SnapshotId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1307,7 +1319,8 @@
       "members": [
         {
           "default": "",
-          "document": "将要解挂的云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询，单次请求最多可解挂10块弹性云盘。",
+          "document": "将要卸载的云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询，单次请求最多可卸载10块弹性云盘。",
+          "example": "[\"disk-l7mxexxc\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -1315,7 +1328,8 @@
         },
         {
           "default": "",
-          "document": "对于非共享型云盘，会忽略该参数；对于共享型云盘，该参数表示要从哪个CVM实例上解挂云盘。",
+          "document": "对于非共享型云盘，会忽略该参数；对于共享型云盘，该参数表示要从哪个CVM实例上卸载云盘。",
+          "example": "ins-arxix3xm",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -2081,6 +2095,7 @@
         {
           "default": "",
           "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-l9mxezxc",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -2089,6 +2104,7 @@
         {
           "default": "",
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。",
+          "example": "无",
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaids",
           "required": false,
@@ -2097,6 +2113,7 @@
         {
           "default": "",
           "document": "指定云盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。",
+          "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "NewDeadline",
           "required": false,
@@ -2105,6 +2122,7 @@
         {
           "default": "",
           "document": "云盘所属项目ID。 如传入则仅用于鉴权。",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -2118,8 +2136,10 @@
       "members": [
         {
           "document": "描述了续费云盘的价格。",
+          "example": "无",
           "member": "PrepayPrice",
           "name": "DiskPrice",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2253,6 +2273,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。",
+          "example": "[\"disk-l7mxexxc\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -2261,6 +2282,7 @@
         {
           "default": "",
           "document": "新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -2269,6 +2291,7 @@
         {
           "default": "",
           "document": "新的云硬盘名称。",
+          "example": "test",
           "member": "string",
           "name": "DiskName",
           "required": false,
@@ -2277,6 +2300,7 @@
         {
           "default": "",
           "document": "是否为弹性云盘，FALSE表示非弹性云盘，TRUE表示弹性云盘。仅支持非弹性云盘修改为弹性云盘。",
+          "example": "TRUE",
           "member": "bool",
           "name": "Portable",
           "required": false,
@@ -2285,6 +2309,7 @@
         {
           "default": "",
           "document": "成功挂载到云主机后该云硬盘是否随云主机销毁，TRUE表示随云主机销毁，FALSE表示不随云主机销毁。仅支持按量计费云硬盘数据盘。",
+          "example": "FALSE",
           "member": "bool",
           "name": "DeleteWithInstance",
           "required": false,
@@ -2293,6 +2318,7 @@
         {
           "default": "",
           "document": "变更云盘类型时，可传入该参数，表示变更的目标类型，取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘。<br>当前不支持批量变更类型，即传入DiskType时，DiskIds仅支持传入一块云盘；<br>变更云盘类型时不支持同时变更其他属性。",
+          "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
           "required": false,
@@ -2805,6 +2831,7 @@
         {
           "default": "",
           "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-l7mxexxc",
           "member": "string",
           "name": "DiskId",
           "required": true,
@@ -2813,6 +2840,7 @@
         {
           "default": "",
           "document": "云硬盘扩容后的大小，单位为GB，必须大于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
+          "example": "100",
           "member": "uint64",
           "name": "DiskSize",
           "required": true,
@@ -3124,6 +3152,7 @@
         {
           "default": "",
           "document": "需退还的云盘ID列表。",
+          "example": "[\"disk-l7mxexxc\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,

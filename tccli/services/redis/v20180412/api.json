@@ -452,6 +452,7 @@
         {
           "default": "",
           "document": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。",
+          "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -460,6 +461,7 @@
         {
           "default": "",
           "document": "要绑定的安全组ID，类似sg-efil73jd。",
+          "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -468,6 +470,7 @@
         {
           "default": "",
           "document": "被绑定的实例ID，类似ins-lesecurk，支持指定多个实例。",
+          "example": "crs-eb2w7dto",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -758,6 +761,7 @@
         {
           "default": "",
           "document": "实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
+          "example": "100002",
           "member": "uint64",
           "name": "ZoneId",
           "required": true,
@@ -766,6 +770,7 @@
         {
           "default": "",
           "document": "实例类型：2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)。",
+          "example": "6",
           "member": "uint64",
           "name": "TypeId",
           "required": true,
@@ -774,6 +779,7 @@
         {
           "default": "",
           "document": "内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。\nTypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。",
+          "example": "4096",
           "member": "uint64",
           "name": "MemSize",
           "required": true,
@@ -782,6 +788,7 @@
         {
           "default": "",
           "document": "实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。",
+          "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
@@ -790,6 +797,7 @@
         {
           "default": "",
           "document": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "example": "1",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -798,6 +806,7 @@
         {
           "default": "",
           "document": "付费方式:0-按量计费，1-包年包月。",
+          "example": "0",
           "member": "int64",
           "name": "BillingMode",
           "required": true,
@@ -806,6 +815,7 @@
         {
           "default": "",
           "document": "实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填参数。\n当实例类型TypeId为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头；\n当实例类型TypeId为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字 且 不包含其他字符。",
+          "example": "123456MyP@ssword",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -814,6 +824,7 @@
         {
           "default": "",
           "document": "私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk。",
+          "example": "vpc-pxyzim13",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -822,6 +833,7 @@
         {
           "default": "",
           "document": "基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2。",
+          "example": "subnet-7jbabche",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -830,6 +842,7 @@
         {
           "default": "",
           "document": "项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -838,6 +851,7 @@
         {
           "default": "",
           "document": "自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费。",
+          "example": "0",
           "member": "uint64",
           "name": "AutoRenew",
           "required": false,
@@ -846,6 +860,7 @@
         {
           "default": "",
           "document": "安全组id数组。",
+          "example": "[\"sg-bmadczm1\"]",
           "member": "string",
           "name": "SecurityGroupIdList",
           "required": false,
@@ -854,6 +869,7 @@
         {
           "default": "",
           "document": "用户自定义的端口 不填则默认为6379，范围[1024,65535]。",
+          "example": "6378",
           "member": "uint64",
           "name": "VPort",
           "required": false,
@@ -862,6 +878,7 @@
         {
           "default": "",
           "document": "实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]。",
+          "example": "1",
           "member": "int64",
           "name": "RedisShardNum",
           "required": false,
@@ -870,6 +887,7 @@
         {
           "default": "",
           "document": "实例副本数量，Redis 2.8标准版、CKV标准版只支持1副本，4.0、5.0标准版和集群版支持1-5个副本。",
+          "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
           "required": false,
@@ -878,6 +896,7 @@
         {
           "default": "",
           "document": "是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2。",
+          "example": "true",
           "member": "bool",
           "name": "ReplicasReadonly",
           "required": false,
@@ -886,6 +905,7 @@
         {
           "default": "",
           "document": "实例名称，长度小于60的中文/英文/数字/\"-\"/\"_\"。",
+          "example": "MyInstanceName",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -894,6 +914,7 @@
         {
           "default": "",
           "document": "是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例，仅VPC网络的实例支持免密码访问。",
+          "example": "false",
           "member": "bool",
           "name": "NoAuth",
           "required": false,
@@ -902,6 +923,7 @@
         {
           "default": "",
           "document": "实例的节点信息，目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。",
+          "example": "无",
           "member": "RedisNodeInfo",
           "name": "NodeSet",
           "required": false,
@@ -910,6 +932,7 @@
         {
           "default": "",
           "document": "购买实例绑定标签",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -923,15 +946,19 @@
       "members": [
         {
           "document": "交易的ID",
+          "example": "199878234",
           "member": "string",
           "name": "DealId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "实例ID",
+          "example": "crs-3sz5wdav",
           "member": "string",
           "name": "InstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1255,6 +1282,7 @@
         {
           "default": "",
           "document": "数据库引擎名称，本接口取值：redis。",
+          "example": "crs-eb2w7dto",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -1263,6 +1291,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "example": "redis",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1276,8 +1305,10 @@
       "members": [
         {
           "document": "安全组规则",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2101,6 +2132,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2114,36 +2146,46 @@
       "members": [
         {
           "document": "实例参数个数",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例枚举类型参数",
+          "example": "无",
           "member": "InstanceEnumParam",
           "name": "InstanceEnumParam",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "实例整型参数",
+          "example": "无",
           "member": "InstanceIntegerParam",
           "name": "InstanceIntegerParam",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "实例字符型参数",
+          "example": "无",
           "member": "InstanceTextParam",
           "name": "InstanceTextParam",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "实例多选项型参数",
+          "example": "无",
           "member": "InstanceMultiParam",
           "name": "InstanceMultiParam",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2668,6 +2710,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "crs-nujgp1vw",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2676,6 +2719,7 @@
         {
           "default": "",
           "document": "开始时间",
+          "example": "2021-02-23 11:06:01",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2684,6 +2728,7 @@
         {
           "default": "",
           "document": "结束时间",
+          "example": "2021-02-23 11:08:01",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2692,6 +2737,7 @@
         {
           "default": "",
           "document": "慢查询阈值（单位：毫秒）",
+          "example": "100",
           "member": "int64",
           "name": "MinQueryTime",
           "required": false,
@@ -2700,6 +2746,7 @@
         {
           "default": "",
           "document": "页面大小",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2708,6 +2755,7 @@
         {
           "default": "",
           "document": "偏移量，取Limit整数倍",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2721,15 +2769,19 @@
       "members": [
         {
           "document": "慢查询总数",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "慢查询详情",
+          "example": "无",
           "member": "InstanceProxySlowlogDetail",
           "name": "InstanceProxySlowLogDetail",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2748,6 +2800,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "crs-asdasdas",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2756,6 +2809,7 @@
         {
           "default": "",
           "document": "开始时间",
+          "example": "2019-09-08 12:12:41",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2764,6 +2818,7 @@
         {
           "default": "",
           "document": "结束时间",
+          "example": "2019-09-09 12:12:41",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2772,6 +2827,7 @@
         {
           "default": "",
           "document": "慢查询阈值（单位：微秒）",
+          "example": "100",
           "member": "int64",
           "name": "MinQueryTime",
           "required": false,
@@ -2780,6 +2836,7 @@
         {
           "default": "",
           "document": "页面大小",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2788,6 +2845,7 @@
         {
           "default": "",
           "document": "偏移量，取Limit整数倍",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2801,15 +2859,19 @@
       "members": [
         {
           "document": "慢查询总数",
+          "example": "30",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "慢查询详情",
+          "example": "无",
           "member": "InstanceSlowlogDetail",
           "name": "InstanceSlowlogDetail",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4896,6 +4958,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4904,6 +4967,7 @@
         {
           "default": "",
           "document": "日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday",
+          "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
           "name": "WeekDays",
           "required": true,
@@ -4912,14 +4976,16 @@
         {
           "default": "",
           "document": "时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00",
+          "example": "04:00-05:00",
           "member": "string",
           "name": "TimePeriod",
           "required": true,
           "type": "string"
         },
         {
-          "default": "1",
+          "default": "",
           "document": "自动备份类型： 1 “定时回档”",
+          "example": "1",
           "member": "int64",
           "name": "AutoBackupType",
           "required": false,
@@ -4933,22 +4999,28 @@
       "members": [
         {
           "document": "自动备份类型： 1 “定时回档”",
+          "example": "1",
           "member": "int64",
           "name": "AutoBackupType",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "日期Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。",
+          "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
           "name": "WeekDays",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00",
+          "example": "04:00-05:00",
           "member": "string",
           "name": "TimePeriod",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6796,6 +6868,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "crs-5qlrlhux",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6804,6 +6877,7 @@
         {
           "default": "",
           "document": "分片大小 单位 MB",
+          "example": "3096",
           "member": "uint64",
           "name": "MemSize",
           "required": true,
@@ -6812,6 +6886,7 @@
         {
           "default": "",
           "document": "分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写",
+          "example": "3",
           "member": "uint64",
           "name": "RedisShardNum",
           "required": false,
@@ -6820,6 +6895,7 @@
         {
           "default": "",
           "document": "副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写",
+          "example": "2",
           "member": "uint64",
           "name": "RedisReplicasNum",
           "required": false,
@@ -6828,6 +6904,7 @@
         {
           "default": "",
           "document": "多AZ实例增加副本时的附带信息，非多AZ实例不需要传此参数。多AZ增加副本时此参数为必传参数，传入要增加的副本的信息，包括副本的可用区和副本的类型（NodeType为1）",
+          "example": "无",
           "member": "RedisNodeInfo",
           "name": "NodeSet",
           "required": false,
@@ -6841,8 +6918,10 @@
       "members": [
         {
           "document": "订单ID",
+          "example": "200010798",
           "member": "string",
           "name": "DealId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

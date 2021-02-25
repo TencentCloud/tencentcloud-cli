@@ -23,6 +23,7 @@ Output:
                 "Pixel": "100w",
                 "CameraIp": "ip",
                 "CameraState": 0,
+                "RTSP": "rtsp://192.168.1.1/av0_0",
                 "Zones": [
                     {
                         "ZoneId": 1,

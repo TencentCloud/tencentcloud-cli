@@ -3,7 +3,7 @@
     "ApplySnapshot": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ApplySnapshot\r\n&DiskId=disk-lzrg2pwi\r\n&SnapshotId=snap-gybrif0z\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=ApplySnapshot\n&DiskId=disk-lzrg2pwi\n&SnapshotId=snap-gybrif0z\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"cc96242e-566c-ae6a-b74a-5a1f823683b2\"\r\n\t}\r\n}",
         "title": "创建快照"
       }
@@ -11,7 +11,7 @@
     "AttachDisks": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=AttachDisks\r\n&DiskIds.0=disk-lzrg2pwi\r\n&InstanceId=ins-dyzmimrw\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=AttachDisks\n&DiskIds.0=disk-lzrg2pwi\n&InstanceId=ins-dyzmimrw\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"e0f140e5-14d6-c4a1-91e0-5a1f7f05a68a\"\r\n\t}\r\n}",
         "title": "挂载云硬盘"
       }
@@ -19,7 +19,7 @@
     "BindAutoSnapshotPolicy": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=BindAutoSnapshotPolicy\r\n&AutoSnapshotPolicyId=asp-mrsrn243\r\n&DiskIds.0=disk-dw0bbzws\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=BindAutoSnapshotPolicy\n&AutoSnapshotPolicyId=asp-mrsrn243\n&DiskIds.0=disk-dw0bbzws\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"bda8bd1a-754d-d71b-8300-5a1fa45c237f\"\r\n\t}\r\n}",
         "title": "给单块盘绑定定期快照策略"
       }
@@ -157,7 +157,7 @@
     "DetachDisks": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DetachDisks\r\n&DiskIds.0=disk-lzrg2pwi\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=DetachDisks\n&DiskIds.0=disk-lzrg2pwi\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"aafa71a0-ed62-0fac-3ebf-5a1f808d1085\"\r\n\t}\r\n}",
         "title": "卸载单块云硬盘"
       }
@@ -195,14 +195,14 @@
     "InquiryPriceRenewDisks": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceRenewDisks\r\n&DiskIds.0=disk-jwk0zvrg\r\n&DiskChargePrepaids.0.Period=1\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 33.26,\r\n\t\t\t\"OriginalPrice\": 37.80\r\n\t\t},\r\n\t\t\"RequestId\": \"7269a7c9-daa0-48aa-372a-5a1f8029a4f4\"\r\n\t}\r\n}",
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceRenewDisks\n&DiskIds.0=disk-jwk0zvrg\n&DiskChargePrepaids.0.Period=1\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"86f40e10-8b5e-4085-8aea-6188283e38de\",\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 7,\r\n\t\t\t\"UnitPrice\": null,\r\n\t\t\t\"UnitPriceHigh\": null,\r\n\t\t\t\"OriginalPriceHigh\": \"7\",\r\n\t\t\t\"OriginalPrice\": 7,\r\n\t\t\t\"UnitPriceDiscount\": null,\r\n\t\t\t\"UnitPriceDiscountHigh\": null,\r\n\t\t\t\"DiscountPriceHigh\": \"7\",\r\n\t\t\t\"ChargeUnit\": null\r\n\t\t}\r\n\t}\r\n}",
         "title": "查询云盘续费1个月的价格"
       },
       {
         "document": "实例当前到期时间为：2018-03-17 15:15:03，需续费一个月，调用本接口续费实例挂载的预付费云盘，使云盘与实例的到期时间对齐。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceRenewDisks\r\n&DiskIds.0=disk-jwk0zvrg\r\n&DiskChargePrepaids.0.Period=1\r\n&DiskChargePrepaids.0.CurInstanceDeadline=2018-03-17 15:15:03\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"f31302ca-7e60-412c-9d84-0675e09db295\",\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 6.0,\r\n\t\t\t\"OriginalPrice\": 6.0\r\n\t\t}\r\n\t}\r\n}",
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceRenewDisks\n&DiskIds.0=disk-jwk0zvrg\n&DiskChargePrepaids.0.Period=1\n&DiskChargePrepaids.0.CurInstanceDeadline=2018-03-17 15:15:03\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"86f40e10-8b5e-4085-8aea-6188283e38de\",\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 7,\r\n\t\t\t\"UnitPrice\": null,\r\n\t\t\t\"UnitPriceHigh\": null,\r\n\t\t\t\"OriginalPriceHigh\": \"7\",\r\n\t\t\t\"OriginalPrice\": 7,\r\n\t\t\t\"UnitPriceDiscount\": null,\r\n\t\t\t\"UnitPriceDiscountHigh\": null,\r\n\t\t\t\"DiscountPriceHigh\": \"7\",\r\n\t\t\t\"ChargeUnit\": null\r\n\t\t}\r\n\t}\r\n}",
         "title": "续费实例时，需续费挂载的预付费云盘，使云盘与实例的到期时间对齐。"
       }
     ],
@@ -225,13 +225,13 @@
     "ModifyDiskAttributes": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\r\n&DiskIds.0=disk-fyctkqsf\r\n&DiskName=test_data_disk\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\n&DiskIds.0=disk-fyctkqsf\n&DiskName=test_data_disk\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"bf84fb00-6949-c0f6-aea8-5a1f806401c2\"\r\n\t}\r\n}",
         "title": "修改云硬盘名称"
       },
       {
         "document": "将一块弹性数据盘，付费模式为预付费，从普通云盘升级为高性能云盘，云盘大小 100G，当前未挂载。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\r\n&DiskIds.0=disk-hdz4c824\r\n&DiskType=CLOUD_PREMIUM\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\n&DiskIds.0=disk-hdz4c824\n&DiskType=CLOUD_PREMIUM\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"d010c751-3edb-4388-878c-1de0891aa1fd\"\r\n  }\r\n}",
         "title": "修改云盘类型"
       }
@@ -301,7 +301,7 @@
     "TerminateDisks": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=TerminateDisks\r\n&DiskIds.0=disk-lzrg2pwi\r\n&DiskIds.1=disk-g27hqeo2\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=TerminateDisks\n&DiskIds.0=disk-lzrg2pwi\n&DiskIds.1=disk-g27hqeo2\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"52c965d2-5deb-459a-8b5a-b3b9a1376544\"\r\n\t}\r\n}",
         "title": "批量退还云硬盘"
       }

@@ -13,6 +13,56 @@ from tencentcloud.ump.v20200918 import ump_client as ump_client_v20200918
 from tencentcloud.ump.v20200918 import models as models_v20200918
 
 
+def doReportServiceRegister(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.UmpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReportServiceRegisterRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ReportServiceRegister(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyMultiBizConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.UmpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyMultiBizConfigRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyMultiBizConfig(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateCameraAlerts(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -130,6 +180,31 @@ def doDescribeCameras(args, parsed_globals):
     model = models.DescribeCamerasRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeCameras(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCameraState(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.UmpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCameraStateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateCameraState(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -374,11 +449,14 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "ReportServiceRegister": doReportServiceRegister,
+    "ModifyMultiBizConfig": doModifyMultiBizConfig,
     "CreateCameraAlerts": doCreateCameraAlerts,
     "DescribeConfig": doDescribeConfig,
     "CreateMultiBizAlert": doCreateMultiBizAlert,
     "DeleteMultiBizAlert": doDeleteMultiBizAlert,
     "DescribeCameras": doDescribeCameras,
+    "CreateCameraState": doCreateCameraState,
     "DeleteTask": doDeleteTask,
     "CreateProgramState": doCreateProgramState,
     "DescribeTasks": doDescribeTasks,

@@ -372,6 +372,14 @@
         "title": "查询云存服务"
       }
     ],
+    "DescribeStream": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=DescribeStream\n&Tid=******\n&AccessId=******\n&Protocol=******\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"43348837-xxxx-xxxx-xxxx-77c333c1b96e\",\r\n        \"Data\": {\r\n            \"Protocol\": \"RTSP\",\r\n            \"URI\": \"xxxxxxxxxxxxxxx\",\r\n            \"ExpireTime\": 1602589211,\r\n            \"VideoCodec\": \"H265\",\r\n            \"AudioCodec\": \"G711\"\r\n        }\r\n    }\r\n}",
+        "title": "获取音视频流地址"
+      }
+    ],
     "DescribeTraceIds": [
       {
         "document": "",

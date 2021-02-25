@@ -42,6 +42,12 @@
       "name": "创建实例访问凭证",
       "output": "CreateInstanceTokenResponse"
     },
+    "CreateInternalEndpointDns": {
+      "document": "创建tcr内网私有域名解析",
+      "input": "CreateInternalEndpointDnsRequest",
+      "name": "创建私有域名解析",
+      "output": "CreateInternalEndpointDnsResponse"
+    },
     "CreateNamespace": {
       "document": "用于在企业版中创建命名空间",
       "input": "CreateNamespaceRequest",
@@ -119,6 +125,12 @@
       "input": "DeleteInstanceTokenRequest",
       "name": "删除长期访问凭证",
       "output": "DeleteInstanceTokenResponse"
+    },
+    "DeleteInternalEndpointDns": {
+      "document": "删除tcr内网私有域名解析",
+      "input": "DeleteInternalEndpointDnsRequest",
+      "name": "删除私有域名解析",
+      "output": "DeleteInternalEndpointDnsResponse"
     },
     "DeleteNamespace": {
       "document": "删除命名空间",
@@ -221,6 +233,12 @@
       "input": "DescribeInstancesRequest",
       "name": "查询实例信息",
       "output": "DescribeInstancesResponse"
+    },
+    "DescribeInternalEndpointDnsStatus": {
+      "document": "批量查询vpc是否已经添加私有域名解析",
+      "input": "DescribeInternalEndpointDnsStatusRequest",
+      "name": "查询私有域名解析状态",
+      "output": "DescribeInternalEndpointDnsStatusResponse"
     },
     "DescribeInternalEndpoints": {
       "document": "查询实例内网访问VPC链接",
@@ -877,6 +895,60 @@
       ],
       "type": "object"
     },
+    "CreateInternalEndpointDnsRequest": {
+      "document": "CreateInternalEndpointDns请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tcr实例id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络id",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "tcr内网访问链路ip",
+          "example": "10.1.1.3",
+          "member": "string",
+          "name": "EniLBIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "true：use instance name as subdomain\nfalse: use instancename+\"-vpc\" as subdomain",
+          "example": "true",
+          "member": "bool",
+          "name": "UsePublicDomain",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInternalEndpointDnsResponse": {
+      "document": "CreateInternalEndpointDns返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNamespacePersonalRequest": {
       "document": "CreateNamespacePersonal请求参数结构体",
       "members": [
@@ -1331,6 +1403,60 @@
     },
     "DeleteInstanceTokenResponse": {
       "document": "DeleteInstanceToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInternalEndpointDnsRequest": {
+      "document": "DeleteInternalEndpointDns请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tcr实例id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络id",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "tcr内网访问链路ip",
+          "example": "10.1.1.1",
+          "member": "string",
+          "name": "EniLBIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "true：use instance name as subdomain\nfalse: use instancename+\"-vpc\" as subdomain",
+          "example": "true",
+          "member": "bool",
+          "name": "UsePublicDomain",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInternalEndpointDnsResponse": {
+      "document": "DeleteInternalEndpointDns返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2178,6 +2304,42 @@
           "document": "实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Registry",
           "name": "Registries",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternalEndpointDnsStatusRequest": {
+      "document": "DescribeInternalEndpointDnsStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc列表",
+          "example": "无",
+          "member": "VpcAndDomainInfo",
+          "name": "VpcSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternalEndpointDnsStatusResponse": {
+      "document": "DescribeInternalEndpointDnsStatus返回参数结构体",
+      "members": [
+        {
+          "document": "vpc私有域名解析状态列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcPrivateDomainStatus",
+          "name": "VpcSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5140,6 +5302,81 @@
         }
       ],
       "type": "object"
+    },
+    "VpcAndDomainInfo": {
+      "document": "vpc和domain信息",
+      "members": [
+        {
+          "default": "",
+          "document": "tcr实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "tcr内网访问链路ip",
+          "member": "string",
+          "name": "EniLBIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "true：use instance name as subdomain\nfalse: use instancename+\"-vpc\" as subdomain",
+          "member": "bool",
+          "name": "UsePublicDomain",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VpcPrivateDomainStatus": {
+      "document": "vpc私有域名解析状态",
+      "members": [
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "unique vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "WebhookTarget": {
       "document": "触发器目标",

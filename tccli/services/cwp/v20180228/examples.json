@@ -288,6 +288,14 @@
         "title": "导出获取区域主机列表"
       }
     ],
+    "DescribeGeneralStat": [
+      {
+        "document": "",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeGeneralStat\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"MachinesAll\":87,\r\n        \"MachinesUninstalled\":37,\r\n        \"AgentsAll\":50,\r\n        \"AgentsOnline\":7,\r\n        \"AgentsOffline\":43,\r\n        \"AgentsPro\":12,\r\n        \"AgentsBasic\":38,\r\n        \"AgentsProExpireWithInSevenDays\":1,\r\n        \"RiskMachine\":0,\r\n        \"RequestId\":\"cf25fc07-0e89-b71f-cb9a-c3fc030ccfd4\"\r\n    }\r\n}",
+        "title": "获取主机安全相关统计"
+      }
+    ],
     "DescribeHistoryAccounts": [
       {
         "document": "获取帐号变更历史列表",

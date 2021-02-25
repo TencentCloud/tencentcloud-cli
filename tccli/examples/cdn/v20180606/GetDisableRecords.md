@@ -14,6 +14,7 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 2,
         "RequestId": "f13cf55b-69e6-4937-8856-bd8965beea8c",
         "UrlRecordList": [
             {

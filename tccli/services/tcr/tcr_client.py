@@ -38,6 +38,31 @@ def doModifyNamespace(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateInternalEndpointDns(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInternalEndpointDnsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateInternalEndpointDns(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeImageFilterPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1138,6 +1163,31 @@ def doDescribeRepositoryOwnerPersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteInternalEndpointDns(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteInternalEndpointDnsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteInternalEndpointDns(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeNamespaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1230,6 +1280,31 @@ def doBatchDeleteRepositoryPersonal(args, parsed_globals):
     model = models.BatchDeleteRepositoryPersonalRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.BatchDeleteRepositoryPersonal(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteImage(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteImageRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteImage(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1538,7 +1613,7 @@ def doValidateRepositoryExistPersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImage(args, parsed_globals):
+def doDescribeInternalEndpointDnsStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1552,9 +1627,9 @@ def doDeleteImage(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImageRequest()
+    model = models.DescribeInternalEndpointDnsStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteImage(model)
+    rsp = client.DescribeInternalEndpointDnsStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1600,6 +1675,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "ModifyNamespace": doModifyNamespace,
+    "CreateInternalEndpointDns": doCreateInternalEndpointDns,
     "DescribeImageFilterPersonal": doDescribeImageFilterPersonal,
     "CreateImageLifecyclePersonal": doCreateImageLifecyclePersonal,
     "BatchDeleteImagePersonal": doBatchDeleteImagePersonal,
@@ -1644,10 +1720,12 @@ ACTION_MAP = {
     "ModifyApplicationTriggerPersonal": doModifyApplicationTriggerPersonal,
     "DescribeFavorRepositoryPersonal": doDescribeFavorRepositoryPersonal,
     "DescribeRepositoryOwnerPersonal": doDescribeRepositoryOwnerPersonal,
+    "DeleteInternalEndpointDns": doDeleteInternalEndpointDns,
     "DescribeNamespaces": doDescribeNamespaces,
     "DescribeInstanceStatus": doDescribeInstanceStatus,
     "CreateRepositoryPersonal": doCreateRepositoryPersonal,
     "BatchDeleteRepositoryPersonal": doBatchDeleteRepositoryPersonal,
+    "DeleteImage": doDeleteImage,
     "DuplicateImagePersonal": doDuplicateImagePersonal,
     "DescribeRepositoryFilterPersonal": doDescribeRepositoryFilterPersonal,
     "ValidateNamespaceExistPersonal": doValidateNamespaceExistPersonal,
@@ -1660,7 +1738,7 @@ ACTION_MAP = {
     "ManageInternalEndpoint": doManageInternalEndpoint,
     "DeleteImageLifecyclePersonal": doDeleteImageLifecyclePersonal,
     "ValidateRepositoryExistPersonal": doValidateRepositoryExistPersonal,
-    "DeleteImage": doDeleteImage,
+    "DescribeInternalEndpointDnsStatus": doDescribeInternalEndpointDnsStatus,
     "DescribeApplicationTriggerPersonal": doDescribeApplicationTriggerPersonal,
 
 }

@@ -18,7 +18,7 @@ Output:
         "Data": [
             {
                 "Resource": "all",
-                "CdnData": [
+                "BillingData": [
                     {
                         "Metric": "flux",
                         "DetailData": [

@@ -270,6 +270,12 @@
       "name": "查询云存服务",
       "output": "DescribeStorageServiceResponse"
     },
+    "DescribeStream": {
+      "document": "请求设备直播流地址",
+      "input": "DescribeStreamRequest",
+      "name": "请求设备直播流地址",
+      "output": "DescribeStreamResponse"
+    },
     "DescribeTraceIds": {
       "document": "本接口（DescribeTraceIds）用于查询设备日志跟踪白名单。",
       "input": "DescribeTraceIdsRequest",
@@ -1343,6 +1349,62 @@
         }
       ],
       "type": "object"
+    },
+    "Data": {
+      "document": "接口DescribeStream输出参数",
+      "members": [
+        {
+          "default": "",
+          "document": "直播协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RTSP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流媒体播放地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxxxxxxxxxx",
+          "member": "string",
+          "name": "URI",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流媒体地址过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1602589211",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "H265",
+          "member": "string",
+          "name": "VideoCodec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "G711",
+          "member": "string",
+          "name": "AudioCodec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DeleteAppUsrRequest": {
       "document": "DeleteAppUsr请求参数结构体",
@@ -2690,6 +2752,78 @@
           "name": "Data",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamRequest": {
+      "document": "DescribeStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备TID",
+          "example": "xxxxxxxx",
+          "member": "string",
+          "name": "Tid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端用户ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "AccessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "直播协议, 可选值：RTSP、RTMP、HLS、HLS-fmp4",
+          "example": "RTMP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "音视频流地址",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备访问token，访问用户未绑定的设备时，需提供该参数",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "AccessToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamResponse": {
+      "document": "DescribeStream返回参数结构体",
+      "members": [
+        {
+          "document": "返回参数结构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Data",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

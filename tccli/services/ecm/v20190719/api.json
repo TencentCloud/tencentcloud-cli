@@ -3953,6 +3953,7 @@
         {
           "default": "",
           "document": "过滤条件，name取值为： InstanceFamily-实例系列",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3966,15 +3967,19 @@
       "members": [
         {
           "document": "节点详细信息的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Node",
           "name": "NodeSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "所有的节点数量。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

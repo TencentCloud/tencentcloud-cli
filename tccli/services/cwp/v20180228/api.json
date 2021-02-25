@@ -216,6 +216,12 @@
       "name": "导出区域主机列表",
       "output": "DescribeExportMachinesResponse"
     },
+    "DescribeGeneralStat": {
+      "document": "获取主机安全相关统计",
+      "input": "DescribeGeneralStatRequest",
+      "name": "获取主机安全相关统计",
+      "output": "DescribeGeneralStatResponse"
+    },
     "DescribeHistoryAccounts": {
       "document": "本接口 (DescribeHistoryAccounts) 用于获取帐号变更历史列表数据。",
       "input": "DescribeHistoryAccountsRequest",
@@ -3145,6 +3151,123 @@
           "member": "string",
           "name": "TaskId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGeneralStatRequest": {
+      "document": "DescribeGeneralStat请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "MachineRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGeneralStatResponse": {
+      "document": "DescribeGeneralStat返回参数结构体",
+      "members": [
+        {
+          "document": "云主机总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "MachinesAll",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云主机没有安装主机安全客户端的总数",
+          "example": "3",
+          "member": "uint64",
+          "name": "MachinesUninstalled",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机安全客户端总数的总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "AgentsAll",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机安全客户端在线的总数",
+          "example": "8",
+          "member": "uint64",
+          "name": "AgentsOnline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机安全客户端离线的总数",
+          "example": "4",
+          "member": "uint64",
+          "name": "AgentsOffline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机安全客户端专业版的总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "AgentsPro",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机安全客户端基础版的总数",
+          "example": "15",
+          "member": "uint64",
+          "name": "AgentsBasic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "7天内到期的预付费专业版总数",
+          "example": "27",
+          "member": "uint64",
+          "name": "AgentsProExpireWithInSevenDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "风险主机总数",
+          "example": "6",
+          "member": "uint64",
+          "name": "RiskMachine",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

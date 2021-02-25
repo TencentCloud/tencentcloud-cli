@@ -163,7 +163,7 @@
       "output": "FlattenListMediaResponse"
     },
     "GenerateVideoSegmentationSchemeByAi": {
-      "document": "发起视频智能拆条任务，支持智能生成和平精英集锦、王者荣耀集锦、足球集锦、篮球集锦 、人物集锦、新闻拆条等任务。",
+      "document": "<li>发起视频智能拆条任务，支持智能生成和平精英集锦、王者荣耀集锦、足球集锦、篮球集锦 、人物集锦、新闻拆条等任务。</li>\n<li>和平精英集锦和王者荣耀集锦根据击杀场景进行拆条，足球集锦和篮球集锦根据进球场景进行拆条，人物集锦根据人物人脸特征进行拆条，新闻拆条根据导播进行拆条。</li>\n<li>【本接口内测中，暂不建议使用】</li>",
       "input": "GenerateVideoSegmentationSchemeByAiRequest",
       "name": "视频智能拆条",
       "output": "GenerateVideoSegmentationSchemeByAiResponse"
@@ -2359,6 +2359,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2367,6 +2368,7 @@
         {
           "default": "",
           "document": "视频拆条项目 Id 。",
+          "example": "60336ab29997a50001942xxx",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -2375,6 +2377,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "user_id",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2388,8 +2391,10 @@
       "members": [
         {
           "document": "视频智能拆条任务 Id 。",
+          "example": "1400xxx8-procxxx",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

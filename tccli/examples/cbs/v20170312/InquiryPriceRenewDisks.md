@@ -14,11 +14,18 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "86f40e10-8b5e-4085-8aea-6188283e38de",
         "DiskPrice": {
-            "DiscountPrice": 33.26,
-            "OriginalPrice": 37.8
-        },
-        "RequestId": "7269a7c9-daa0-48aa-372a-5a1f8029a4f4"
+            "DiscountPrice": 7,
+            "UnitPrice": null,
+            "UnitPriceHigh": null,
+            "OriginalPriceHigh": "7",
+            "OriginalPrice": 7,
+            "UnitPriceDiscount": null,
+            "UnitPriceDiscountHigh": null,
+            "DiscountPriceHigh": "7",
+            "ChargeUnit": null
+        }
     }
 }
 ```
@@ -40,10 +47,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "f31302ca-7e60-412c-9d84-0675e09db295",
+        "RequestId": "86f40e10-8b5e-4085-8aea-6188283e38de",
         "DiskPrice": {
-            "DiscountPrice": 6.0,
-            "OriginalPrice": 6.0
+            "DiscountPrice": 7,
+            "UnitPrice": null,
+            "UnitPriceHigh": null,
+            "OriginalPriceHigh": "7",
+            "OriginalPrice": 7,
+            "UnitPriceDiscount": null,
+            "UnitPriceDiscountHigh": null,
+            "DiscountPriceHigh": "7",
+            "ChargeUnit": null
         }
     }
 }

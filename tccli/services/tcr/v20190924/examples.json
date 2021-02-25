@@ -62,6 +62,14 @@
         "title": "获取长期实例访问凭证"
       }
     ],
+    "CreateInternalEndpointDns": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateInternalEndpointDns\n&InstanceId=tcr-xxx\n&VpcId=vpc-xxx\n&EniLBIp=1.1.1.1\n&UsePublicDomain=false\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxx\"\r\n    }\r\n}",
+        "title": "创建私有域名解析"
+      }
+    ],
     "CreateNamespace": [
       {
         "document": "",
@@ -164,6 +172,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DeleteInstanceToken\r\n&<公共请求参数>\r\n&RegistryId=tcr-12345\r\n&TokenId=b671eee3-a58d-4704-b4d2-a84b6361ff0c",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
         "title": "删除长期访问凭证"
+      }
+    ],
+    "DeleteInternalEndpointDns": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteInternalEndpointDns\n&InstanceId=tcr-xxx\n&VpcId=vpc-xxx\n&EniLBIp=1.1.1.1\n&UsePublicDomain=false\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxx\"\r\n    }\r\n}",
+        "title": "删除私有域名解析"
       }
     ],
     "DeleteNamespace": [
@@ -300,6 +316,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInstances\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Registries\": [\r\n            {\r\n                \"RegistryId\": \"cls-xxxxxxx\",\r\n                \"RegistryName\": \"aaa\",\r\n                \"Status\": \"Running\",\r\n                \"RegistryType\": \"standard\",\r\n                \"PublicDomain\": \"mytest.tencentcloudcr.com\",\r\n                \"CreateTime\": \"2019-08-09\",\r\n                \"InternalEndpoint\": \"8.9.10.9\",\r\n                \"ExpiredAt\": \"2020-09-10\",\r\n                \"PayMod\": 1,\r\n                \"RenewFlag\": 1\r\n            }\r\n        ],\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}",
         "title": "查看实例列表"
+      }
+    ],
+    "DescribeInternalEndpointDnsStatus": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInternalEndpointDnsStatus\n&VpcSet.0.InstanceId=tcr-xxx\n&VpcSet.0.VpcId=vpc-xxx\n&VpcSet.0.EniLBIp=1.1.1.1\n&VpcSet.0.UsePublicDomain=true\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxx\",\r\n        \"VpcSet\":[\r\n            {\r\n                \"Region\":\"ap-guangzhou\",\r\n                \"VpcId\":\"vpc-xxx\",\r\n                \"Status\":\"ENABLED\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询私有域名解析状态"
       }
     ],
     "DescribeInternalEndpoints": [
