@@ -48,6 +48,14 @@
         "title": "创建备份"
       }
     ],
+    "CreateBackupMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateBackupMigration\n&InstanceId=mssql-rdc0gajn\n&RecoveryType=FULL\n&UploadType=COS_UPLOAD\n&MigrationName=字符串\n&BackupFiles.0=db1.bak\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"BackupMigrationId\": \"mssql-backup-migration-cg0ffgqt\",\r\n        \"RequestId\": \"4e2f2093-9cde-44ec-b64b-edfcc2f911d4\"\r\n    }\r\n}",
+        "title": "创建备份文件导入任务"
+      }
+    ],
     "CreateBasicDBInstances": [
       {
         "document": "",
@@ -70,6 +78,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateDBInstances\n&Zone=ap-guangzhou-1\n&Memory=2\n&Storage=100\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DealName\": \"20200318114212\",\r\n\t\t\"DealNames\": [\"20200318114212\"],\r\n\t\t\"RequestId\": \"2b6f7e2a-e909-4753-84b7-0db3e6099877\"\r\n\t}\r\n}",
         "title": "创建实例"
+      }
+    ],
+    "CreateIncrementalMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateIncrementalMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IsRecovery=NO\n&BackupFiles.0=db_cvm_1_20200927204209_2log2_2noreconvery2.bak\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"IncrementalMigrationId\": \"mssql-incremental-migration-kp7bgv8p\",\r\n        \"RequestId\": \"1e3d890b-1ff7-44ba-808d-633f11c873d8\"\r\n    }\r\n}",
+        "title": "创建增量迁移任务"
       }
     ],
     "CreateMigration": [
@@ -104,6 +120,14 @@
         "title": "删除实例账号"
       }
     ],
+    "DeleteBackupMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteBackupMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"f0c186aa-b171-4a96-b176-b8e8ff23994d\"\r\n    }\r\n}",
+        "title": "删除全量备份导入任务"
+      }
+    ],
     "DeleteDB": [
       {
         "document": "",
@@ -118,6 +142,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteDBInstance\r\n&InstanceId=mssql-ms2m7vut\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5098dad3-077b-4a3b-9c7d-fb1b0415027b\"\r\n    }\r\n}",
         "title": "删除SQL server实例"
+      }
+    ],
+    "DeleteIncrementalMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteIncrementalMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IncrementalMigrationId=mssql-incremental-migration-67q4wy87\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6ed62412-c476-4714-8042-241f50b2aedf\"\r\n    }\r\n}",
+        "title": "删除增量导入任务"
       }
     ],
     "DeleteMigration": [
@@ -156,6 +188,48 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupByFlowId\n&InstanceId=mssql-6upluvd5\n&FlowId=1000796\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"BackupName\": \"mssql-6upluvd5_202007311206\",\r\n        \"BackupWay\": 0,\r\n        \"DBs\": [\r\n            \"db1\",\r\n            \"db2\"\r\n        ],\r\n        \"EndTime\": \"0000-00-00 00:00:00\",\r\n        \"ExternalAddr\": \"\",\r\n        \"FileName\": \"\",\r\n        \"Id\": 0,\r\n        \"InternalAddr\": \"\",\r\n        \"RequestId\": \"de6cf7f3-ff88-4baf-a933-4714df850efa\",\r\n        \"Size\": 0,\r\n        \"StartTime\": \"2020-07-31 14:27:33\",\r\n        \"Status\": 0,\r\n        \"Strategy\": 0\r\n    }\r\n}",
         "title": "流程ID查询备份详情（备份创建中）"
+      }
+    ],
+    "DescribeBackupCommand": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupCommand\n&BackupFileType=FULL\n&DataBaseName=db1\n&IsRecovery=YES\n&LocalPath=E:/\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Command\": \"BACKUP DATABASE db1 TO DISK='E:/db1.bak' WITH INIT\",\r\n        \"RequestId\": \"1de3aea3-5fef-4891-b8b0-faeb4e3b5543\"\r\n    }\r\n}",
+        "title": "查询创建全量备份的命令"
+      },
+      {
+        "document": "在需要事务日志做增量导入时使用，此时获取的是不恢复的全量备份。\n命令中\\\\\\\\n为换行符。",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupCommand\n&BackupFileType=FULL_LOG\n&DataBaseName=db1\n&IsRecovery=NO\n&LocalPath=E:/\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Command\": \"declare @dbname varchar(100)\\\\\\\\ndeclare @localtime varchar(20)\\\\\\\\ndeclare @str varchar(8000)\\\\\\\\nset @dbname='db1'\\\\\\\\nset @localtime =replace(replace(replace(CONVERT(varchar, getdate(), 120 ),'-',''),' ',''),':','')\\\\\\\\nset @str='BACKUP DATABASE [' + @dbname + '] TO  DISK = N''E:/' + @dbname + '_' + @localtime + '_2full2_2noreconvery2.bak'' WITH INIT'\\\\\\\\nexec(@str)\\\\\\\\ngo\",\r\n        \"RequestId\": \"03199d88-9dda-49eb-a045-7c69eb4d3591\"\r\n    }\r\n}",
+        "title": "查询创建全量备份+日志增量的命令"
+      },
+      {
+        "document": "在需要事务日志做增量导入时使用，此时获取的是恢复的事务日志增量备份。\n命令中\\\\\\\\n为换行符。",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupCommand\n&BackupFileType=LOG\n&DataBaseName=db1\n&IsRecovery=YES\n&LocalPath=E:/\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Command\": \"declare @dbname varchar(100)\\\\\\\\ndeclare @localtime varchar(20)\\\\\\\\ndeclare @str varchar(8000)\\\\\\\\nset @dbname='db1'\\\\\\\\nset @localtime =replace(replace(replace(CONVERT(varchar, getdate(), 120 ),'-',''),' ',''),':','')\\\\\\\\nset @str='BACKUP LOG [' + @dbname + '] TO  DISK = N''E:/' + @dbname + '_' + @localtime + '_2log2_2reconvery2.bak'' WITH FORMAT, INIT'\\\\\\\\nexec(@str)\\\\\\\\ngo\",\r\n        \"RequestId\": \"8d53700f-b80b-415a-8738-0c340eff2057\"\r\n    }\r\n}",
+        "title": "查询创建日志增量的命令"
+      }
+    ],
+    "DescribeBackupMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupMigration\n&BackupMigrationId=mssql-backup-migration-kpl74n9l\n&MigrationName=字符串\n&BackupFileName=db1\n&RecoveryType=FULL\n&UploadType=COS_UPLOAD\n&Limit=100\n&Offset=0\n&OrderBy=createTime\n&OrderByType=desc\n&StatusSet.0=2\n&InstanceId=mssql-rdc0gajn\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"BackupMigrationSet\": [\r\n            {\r\n                \"Action\": {\r\n                    \"AllAction\": [\r\n                        \"start\",\r\n                        \"delete\",\r\n                        \"incremental\",\r\n                        \"modify\",\r\n                        \"view\",\r\n                        \"upload\"\r\n                    ],\r\n                    \"AllowedAction\": [\r\n                        \"view\",\r\n                        \"modify\",\r\n                        \"delete\",\r\n                        \"upload\",\r\n                        \"start\"\r\n                    ]\r\n                },\r\n                \"AppId\": 251006279,\r\n                \"BackupFiles\": [\r\n                    \"db1.bak\"\r\n                ],\r\n                \"CreateTime\": \"2020-09-27 16:23:47\",\r\n                \"Detail\": {\r\n                    \"Progress\": 0,\r\n                    \"StepAll\": 0,\r\n                    \"StepInfo\": [],\r\n                    \"StepNow\": 0\r\n                },\r\n                \"EndTime\": \"0000-00-00 00:00:00\",\r\n                \"InstanceId\": \"mssql-rdc0gajn\",\r\n                \"IsRecovery\": \"\",\r\n                \"Message\": \"\",\r\n                \"MigrationId\": \"mssql-backup-migration-kpl74n9l\",\r\n                \"MigrationName\": \"字符串\",\r\n                \"RecoveryType\": \"FULL\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"Status\": 2,\r\n                \"UploadType\": \"COS_UPLOAD\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"cf4b1509-8029-4daf-b7b1-e504ff82cbba\",\r\n        \"TotalCount\": 1\r\n    }\r\n}",
+        "title": "查询全量备份导入任务"
+      }
+    ],
+    "DescribeBackupUploadSize": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupUploadSize\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-kpl74n9l\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"CosUploadBackupFileSet\": [\r\n            {\r\n                \"FileName\": \"db1.bak\",\r\n                \"Size\": 172032\r\n            }\r\n        ],\r\n        \"RequestId\": \"15455085-fe18-4c19-a463-5494451fb0f0\"\r\n    }\r\n}",
+        "title": "查询已上传的全量备份文件列表"
+      },
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupUploadSize\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IncrementalMigrationId=mssql-incremental-migration-kp7bgv8p\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"CosUploadBackupFileSet\": [\r\n            {\r\n                \"FileName\": \"db_cvm_1_20200927204209_2log2_2noreconvery2.bak\",\r\n                \"Size\": 28672\r\n            },\r\n            {\r\n                \"FileName\": \"db_cvm_3_20200927204219_2log2_2noreconvery2.bak\",\r\n                \"Size\": 40960\r\n            }\r\n        ],\r\n        \"RequestId\": \"08218621-158d-49df-8366-dfa7958a1ffd\"\r\n    }\r\n}",
+        "title": "查询已上传的增量备份文件列表"
       }
     ],
     "DescribeBackups": [
@@ -204,6 +278,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeFlowStatus\r\n&FlowId=30403\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\",\r\n        \"Status\": 0\r\n    }\r\n}",
         "title": "查询流程状态"
+      }
+    ],
+    "DescribeIncrementalMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeIncrementalMigration\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&BackupFileName=cvm\n&Limit=100\n&Offset=0\n&OrderBy=createTime\n&OrderByType=desc\n&IncrementalMigrationId=mssql-incremental-migration-kp7bgv8p\n&StatusSet.0=2\n&InstanceId=mssql-rdc0gajn\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"IncrementalMigrationSet\": [\r\n            {\r\n                \"Action\": {\r\n                    \"AllAction\": [\r\n                        \"start\",\r\n                        \"delete\",\r\n                        \"incremental\",\r\n                        \"modify\",\r\n                        \"view\",\r\n                        \"upload\"\r\n                    ],\r\n                    \"AllowedAction\": [\r\n                        \"view\",\r\n                        \"modify\",\r\n                        \"delete\",\r\n                        \"upload\",\r\n                        \"start\"\r\n                    ]\r\n                },\r\n                \"AppId\": 251006279,\r\n                \"BackupFiles\": [\r\n                    \"db_cvm_1_20200927204209_2log2_2noreconvery2.bak\"\r\n                ],\r\n                \"CreateTime\": \"2020-09-27 20:44:59\",\r\n                \"Detail\": {\r\n                    \"Progress\": 0,\r\n                    \"StepAll\": 0,\r\n                    \"StepInfo\": [],\r\n                    \"StepNow\": 0\r\n                },\r\n                \"EndTime\": \"0000-00-00 00:00:00\",\r\n                \"InstanceId\": \"mssql-rdc0gajn\",\r\n                \"IsRecovery\": \"NO\",\r\n                \"Message\": \"\",\r\n                \"MigrationId\": \"mssql-incremental-migration-kp7bgv8p\",\r\n                \"MigrationName\": \"\",\r\n                \"RecoveryType\": \"FULL_LOG\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"Status\": 2,\r\n                \"UploadType\": \"COS_UPLOAD\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"6dc136cb-e2e8-42b7-babc-2fc3b6f50d3d\",\r\n        \"TotalCount\": 1\r\n    }\r\n}",
+        "title": "查询增量迁移任务"
       }
     ],
     "DescribeMaintenanceSpan": [
@@ -318,6 +400,22 @@
         "title": "获取慢查询记录"
       }
     ],
+    "DescribeUploadBackupInfo": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeUploadBackupInfo\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-kpl74n9l\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"BucketName\": \"cosbacktest-1254065710\",\r\n        \"ExpiredTime\": \"1601205149\",\r\n        \"Path\": \"251006279/sqlserver/mssql-rdc0gajn/migration/backup/mssql-backup-migration-kpl74n9l/\",\r\n        \"Region\": \"ap-guangzhou\",\r\n        \"RequestId\": \"6ce2010c-a9c2-474d-860e-f2c8581304eb\",\r\n        \"StartTime\": \"1601204649\",\r\n        \"TmpSecretId\": \"AKID44fDXXXXXXXXXXXXXXXXXXXXXXXXX\",\r\n        \"TmpSecretKey\": \"2jWOoltcvf21JIsNUaXXXXXXXXXXXXXXXXXXXXXXXXX\",\r\n        \"XCosSecurityToken\": \"J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX\"\r\n    }\r\n}",
+        "title": "查询全量备份上传密钥"
+      }
+    ],
+    "DescribeUploadIncrementalInfo": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeUploadIncrementalInfo\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IncrementalMigrationId=mssql-incremental-migration-kp7bgv8p\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"BucketName\": \"cosbacktest-1254065710\",\r\n        \"ExpiredTime\": \"1601211711\",\r\n        \"Path\": \"251006279/sqlserver/mssql-rdc0gajn/migration/backup/mssql-backup-migration-cg0ffgqt/increment/mssql-incremental-migration-kp7bgv8p/\",\r\n        \"Region\": \"ap-guangzhou\",\r\n        \"RequestId\": \"8498f427-5b9b-42c8-b587-74fad369f27c\",\r\n        \"StartTime\": \"1601211211\",\r\n        \"TmpSecretId\": \"AKIDOxJelHkinofTdXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\r\n        \"TmpSecretKey\": \"gzfh3Olpe5HKiviXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\r\n        \"XCosSecurityToken\": \"S0niafv9wK40qvkDv2OjmEc2J7DAJRRa7b8c49fac8faf31d51469d4c639c866eKiE4vy8Y1d36neOhi1yg4RD4q9J4MeUyVSNsdiEt1z8X5zVFLGvGayDCfuA2uNuA5aoUSytd3CZzviKkGN-_Nq4OrIdSMzfeM-SrY3OEkV9TRItcig0PtpUYocSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\"\r\n    }\r\n}",
+        "title": "查询上传增量备份信息"
+      }
+    ],
     "DescribeZones": [
       {
         "document": "",
@@ -372,6 +470,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyAccountRemark\r\n&InstanceId=mssql-j8kv137v\r\n&Accounts.0.UserName=test\r\n&Accounts.0.Remark=testRemark\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\"\r\n    }\r\n}",
         "title": "修改账户备注"
+      }
+    ],
+    "ModifyBackupMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyBackupMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-kpl74n9l\n&MigrationName=字符串\n&RecoveryType=FULL\n&UploadType=COS_UPLOAD\n&BackupFiles.0=db1.bak\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"BackupMigrationId\": \"mssql-backup-migration-kpl74n9l\",\r\n        \"RequestId\": \"836a10d3-cd1f-4ac1-96a9-f2e642333f0b\"\r\n    }\r\n}",
+        "title": "修改全量备份导入任务"
       }
     ],
     "ModifyBackupName": [
@@ -444,6 +550,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDBRemark\r\n&InstanceId=mssql-njj2mtpl\r\n&DBRemarks.0.Name=db_test\r\n&DBRemarks.0.Remark=测试数据库\r\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\r\n    }\r\n}",
         "title": "修改数据库备注"
+      }
+    ],
+    "ModifyIncrementalMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyIncrementalMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IncrementalMigrationId=mssql-incremental-migration-kp7bgv8p\n&IsRecovery=YES\n&BackupFiles.0=db_cvm_1_20200927204209_2log2_2reconvery2.bak\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"IncrementalMigrationId\": \"mssql-incremental-migration-kp7bgv8p\",\r\n        \"RequestId\": \"dab70669-594b-4610-981b-5bfeef7182bb\"\r\n    }\r\n}",
+        "title": "修改增量迁移任务"
       }
     ],
     "ModifyMaintenanceSpan": [
@@ -564,6 +678,22 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=RunMigration\r\n&MigrateId=2729\r\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba35\",\r\n\t\t\"FlowId\": 30530\r\n\t}\r\n}",
         "title": "执行迁移任务"
+      }
+    ],
+    "StartBackupMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=StartBackupMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-kpl74n9l\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FlowId\": 1001399,\r\n        \"RequestId\": \"551b4694-5f0b-43e7-a62d-94afb2af4d3d\"\r\n    }\r\n}",
+        "title": "启动全量迁移任务"
+      }
+    ],
+    "StartIncrementalMigration": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=StartIncrementalMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IncrementalMigrationId=mssql-incremental-migration-kp7bgv8p\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FlowId\": 1001403,\r\n        \"RequestId\": \"6f2b5d2b-a3c1-426d-8e1c-325a69ccb694\"\r\n    }\r\n}",
+        "title": "启动增量导入任务"
       }
     ],
     "StartMigrationCheck": [

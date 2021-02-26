@@ -16,8 +16,7 @@ Output:
         "StatType": "sum",
         "BillingCycle": "day",
         "RegionType": "all",
-        "CurrentPayType": "flux",
-        "IsVip": 0
+        "CurrentPayType": "flux"
     }
 }
 ```

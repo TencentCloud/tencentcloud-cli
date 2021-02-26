@@ -36,6 +36,12 @@
       "name": "创建备份",
       "output": "CreateBackupResponse"
     },
+    "CreateBackupMigration": {
+      "document": "本接口（CreateBackupMigration）用于创建备份导入任务。",
+      "input": "CreateBackupMigrationRequest",
+      "name": "创建备份导入任务",
+      "output": "CreateBackupMigrationResponse"
+    },
     "CreateBasicDBInstances": {
       "document": "本接口（CreateBasicDBInstances）用于创建SQL server基础版实例。",
       "input": "CreateBasicDBInstancesRequest",
@@ -53,6 +59,12 @@
       "input": "CreateDBInstancesRequest",
       "name": "创建实例",
       "output": "CreateDBInstancesResponse"
+    },
+    "CreateIncrementalMigration": {
+      "document": "本接口（CreateIncrementalMigration）用于创建增量备份导入任务。",
+      "input": "CreateIncrementalMigrationRequest",
+      "name": "创建增量备份导入任务",
+      "output": "CreateIncrementalMigrationResponse"
     },
     "CreateMigration": {
       "document": "本接口（CreateMigration）作用是创建一个迁移任务",
@@ -78,6 +90,12 @@
       "name": "删除实例账号",
       "output": "DeleteAccountResponse"
     },
+    "DeleteBackupMigration": {
+      "document": "本接口（DeleteBackupMigration）用于删除备份导入任务。",
+      "input": "DeleteBackupMigrationRequest",
+      "name": "删除备份导入任务",
+      "output": "DeleteBackupMigrationResponse"
+    },
     "DeleteDB": {
       "document": "本接口(DeleteDB)用于删除数据库。",
       "input": "DeleteDBRequest",
@@ -89,6 +107,12 @@
       "input": "DeleteDBInstanceRequest",
       "name": "删除SQL server实例",
       "output": "DeleteDBInstanceResponse"
+    },
+    "DeleteIncrementalMigration": {
+      "document": "本接口（DeleteIncrementalMigration）用于删除增量备份导入任务。",
+      "input": "DeleteIncrementalMigrationRequest",
+      "name": "删除增量备份导入任务",
+      "output": "DeleteIncrementalMigrationResponse"
     },
     "DeleteMigration": {
       "document": "本接口（DeleteMigration）用于删除迁移任务",
@@ -113,6 +137,24 @@
       "input": "DescribeBackupByFlowIdRequest",
       "name": "根据流程ID查询备份信息",
       "output": "DescribeBackupByFlowIdResponse"
+    },
+    "DescribeBackupCommand": {
+      "document": "本接口（DescribeBackupCommand）用于查询以规范的格式创建备份的命令。",
+      "input": "DescribeBackupCommandRequest",
+      "name": "查询创建备份命令",
+      "output": "DescribeBackupCommandResponse"
+    },
+    "DescribeBackupMigration": {
+      "document": "本接口（DescribeBackupMigration）用于创建增量备份导入任务。",
+      "input": "DescribeBackupMigrationRequest",
+      "name": "查询备份导入任务",
+      "output": "DescribeBackupMigrationResponse"
+    },
+    "DescribeBackupUploadSize": {
+      "document": "本接口（DescribeBackupUploadSize）用于查询上传的备份文件大小。在备份上传类型是COS_UPLOAD(备份放在业务的对象存储上)时有效。",
+      "input": "DescribeBackupUploadSizeRequest",
+      "name": "查询上传的备份文件大小",
+      "output": "DescribeBackupUploadSizeResponse"
     },
     "DescribeBackups": {
       "document": "本接口(DescribeBackups)用于查询备份列表。",
@@ -149,6 +191,12 @@
       "input": "DescribeFlowStatusRequest",
       "name": "查询流程状态",
       "output": "DescribeFlowStatusResponse"
+    },
+    "DescribeIncrementalMigration": {
+      "document": "本接口（DescribeIncrementalMigration）用于查询增量备份导入任务。",
+      "input": "DescribeIncrementalMigrationRequest",
+      "name": "查询增量备份导入任务",
+      "output": "DescribeIncrementalMigrationResponse"
     },
     "DescribeMaintenanceSpan": {
       "document": "本接口（DescribeMaintenanceSpan）根据实例ID查询该实例的可维护时间窗。",
@@ -234,6 +282,18 @@
       "name": "获取慢查询日志文件信息",
       "output": "DescribeSlowlogsResponse"
     },
+    "DescribeUploadBackupInfo": {
+      "document": "本接口（DescribeUploadBackupInfo）用于查询备份上传权限。",
+      "input": "DescribeUploadBackupInfoRequest",
+      "name": "查询备份上传权限",
+      "output": "DescribeUploadBackupInfoResponse"
+    },
+    "DescribeUploadIncrementalInfo": {
+      "document": "本接口（DescribeUploadIncrementalInfo）用于查询增量备份上传权限。",
+      "input": "DescribeUploadIncrementalInfoRequest",
+      "name": "查询增量备份上传权限",
+      "output": "DescribeUploadIncrementalInfoResponse"
+    },
     "DescribeZones": {
       "document": "本接口 (DescribeZones) 用于查询当前可售卖的可用区信息。",
       "input": "DescribeZonesRequest",
@@ -275,6 +335,12 @@
       "input": "ModifyAccountRemarkRequest",
       "name": "修改账户备注",
       "output": "ModifyAccountRemarkResponse"
+    },
+    "ModifyBackupMigration": {
+      "document": "本接口（ModifyBackupMigration）用于修改备份导入任务。",
+      "input": "ModifyBackupMigrationRequest",
+      "name": "修改备份导入任务",
+      "output": "ModifyBackupMigrationResponse"
     },
     "ModifyBackupName": {
       "document": "本接口(ModifyBackupName)用于修改备份名称。",
@@ -329,6 +395,12 @@
       "input": "ModifyDBRemarkRequest",
       "name": "修改数据库备注",
       "output": "ModifyDBRemarkResponse"
+    },
+    "ModifyIncrementalMigration": {
+      "document": "本接口（ModifyIncrementalMigration）用于修改增量备份导入任务。",
+      "input": "ModifyIncrementalMigrationRequest",
+      "name": "修改增量备份导入任务",
+      "output": "ModifyIncrementalMigrationResponse"
     },
     "ModifyMaintenanceSpan": {
       "document": "本接口（ModifyMaintenanceSpan）用于修改实例的可维护时间窗",
@@ -419,6 +491,18 @@
       "input": "RunMigrationRequest",
       "name": "执行迁移任务",
       "output": "RunMigrationResponse"
+    },
+    "StartBackupMigration": {
+      "document": "本接口（StartBackupMigration）用于启动备份导入任务。",
+      "input": "StartBackupMigrationRequest",
+      "name": "启动备份导入任务",
+      "output": "StartBackupMigrationResponse"
+    },
+    "StartIncrementalMigration": {
+      "document": "本接口（StartIncrementalMigration）用于启动增量备份导入任务。",
+      "input": "StartIncrementalMigrationRequest",
+      "name": "启动增量备份导入任务",
+      "output": "StartIncrementalMigrationResponse"
     },
     "StartMigrationCheck": {
       "document": "本接口（StartMigrationCheck）的作用是启动一个迁移前的校验任务，适用于迁移源的类型为TencentDB for SQLServer 的迁移方式",
@@ -945,6 +1029,30 @@
       ],
       "type": "object"
     },
+    "CosUploadBackupFile": {
+      "document": "查询已经上传的备份文件大小。",
+      "members": [
+        {
+          "default": "",
+          "document": "备份名称",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份大小",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAccountRequest": {
       "document": "CreateAccount请求参数结构体",
       "members": [
@@ -975,6 +1083,71 @@
           "member": "int64",
           "name": "FlowId",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupMigrationRequest": {
+      "document": "CreateBackupMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "迁移任务恢复类型，FULL-全量备份恢复，FULL_LOG-全量备份+事务日志恢复，FULL_DIFF-全量备份+差异备份恢复",
+          "member": "string",
+          "name": "RecoveryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，需要用户上传。",
+          "member": "string",
+          "name": "UploadType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "MigrationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UploadType是COS_URL时这里填URL，COS_UPLOAD这里填备份文件的名字。只支持1个备份文件，但1个备份文件内可包含多个库",
+          "member": "string",
+          "name": "BackupFiles",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupMigrationResponse": {
+      "document": "CreateBackupMigration返回参数结构体",
+      "members": [
+        {
+          "document": "备份导入任务ID",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1450,6 +1623,63 @@
           "member": "int64",
           "name": "FlowId",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIncrementalMigrationRequest": {
+      "document": "CreateIncrementalMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增量备份文件，全量备份任务UploadType是COS_URL时这里填URL，是COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
+          "member": "string",
+          "name": "BackupFiles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否需要恢复，NO-不需要，YES-需要，默认不需要",
+          "member": "string",
+          "name": "IsRecovery",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIncrementalMigrationResponse": {
+      "document": "CreateIncrementalMigration返回参数结构体",
+      "members": [
+        {
+          "document": "增量备份导入任务ID",
+          "member": "string",
+          "name": "IncrementalMigrationId",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2506,6 +2736,40 @@
       ],
       "type": "object"
     },
+    "DeleteBackupMigrationRequest": {
+      "document": "DeleteBackupMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标实例ID，由DescribeBackupMigration接口返回",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由DescribeBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackupMigrationResponse": {
+      "document": "DeleteBackupMigration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDBInstanceRequest": {
       "document": "DeleteDBInstance请求参数结构体",
       "members": [
@@ -2564,6 +2828,48 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIncrementalMigrationRequest": {
+      "document": "DeleteIncrementalMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增量备份导入任务ID",
+          "member": "string",
+          "name": "IncrementalMigrationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIncrementalMigrationResponse": {
+      "document": "DeleteIncrementalMigration返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2803,6 +3109,232 @@
           "member": "string",
           "name": "ExternalAddr",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupCommandRequest": {
+      "document": "DescribeBackupCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "备份文件类型，FULL-全量备份，FULL_LOG-全量备份需要日志增量，FULL_DIFF-全量备份需要差异增量，LOG-日志备份，DIFF-差异备份",
+          "member": "string",
+          "name": "BackupFileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名称",
+          "member": "string",
+          "name": "DataBaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要恢复，NO-不需要，YES-需要",
+          "member": "string",
+          "name": "IsRecovery",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份文件保存的路径；如果不填则默认在D:\\\\",
+          "member": "string",
+          "name": "LocalPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupCommandResponse": {
+      "document": "DescribeBackupCommand返回参数结构体",
+      "members": [
+        {
+          "document": "创建备份命令",
+          "member": "string",
+          "name": "Command",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupMigrationRequest": {
+      "document": "DescribeBackupMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导入任务名称",
+          "member": "string",
+          "name": "MigrationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份文件名称",
+          "member": "string",
+          "name": "BackupFileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导入任务状态集合",
+          "member": "int64",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导入任务恢复类型，FULL,FULL_LOG,FULL_DIFF",
+          "member": "string",
+          "name": "RecoveryType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
+          "member": "string",
+          "name": "UploadType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页，页大小",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页，页数",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，name,createTime,startTime,endTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc,asc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupMigrationResponse": {
+      "document": "DescribeBackupMigration返回参数结构体",
+      "members": [
+        {
+          "document": "迁移任务总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "迁移任务集合",
+          "member": "Migration",
+          "name": "BackupMigrationSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupUploadSizeRequest": {
+      "document": "DescribeBackupUploadSize请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增量导入任务ID",
+          "member": "string",
+          "name": "IncrementalMigrationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupUploadSizeResponse": {
+      "document": "DescribeBackupUploadSize返回参数结构体",
+      "members": [
+        {
+          "document": "已上传的备份的信息",
+          "member": "CosUploadBackupFile",
+          "name": "CosUploadBackupFileSet",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3221,6 +3753,110 @@
           "member": "int64",
           "name": "Status",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIncrementalMigrationRequest": {
+      "document": "DescribeIncrementalMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份文件名称",
+          "member": "string",
+          "name": "BackupFileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导入任务状态集合",
+          "member": "int64",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页，页大小",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页，页数",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，name,createTime,startTime,endTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc,asc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增量备份导入任务ID",
+          "member": "string",
+          "name": "IncrementalMigrationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIncrementalMigrationResponse": {
+      "document": "DescribeIncrementalMigration返回参数结构体",
+      "members": [
+        {
+          "document": "增量导入任务总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "增量导入任务集合",
+          "member": "Migration",
+          "name": "IncrementalMigrationSet",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4183,6 +4819,194 @@
       ],
       "type": "object"
     },
+    "DescribeUploadBackupInfoRequest": {
+      "document": "DescribeUploadBackupInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUploadBackupInfoResponse": {
+      "document": "DescribeUploadBackupInfo返回参数结构体",
+      "members": [
+        {
+          "document": "存储桶名称",
+          "member": "string",
+          "name": "BucketName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储桶地域信息",
+          "member": "string",
+          "name": "Region",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储路径",
+          "member": "string",
+          "name": "Path",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥ID",
+          "member": "string",
+          "name": "TmpSecretId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥Key",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥Token",
+          "member": "string",
+          "name": "XCosSecurityToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥到期时间",
+          "member": "string",
+          "name": "ExpiredTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUploadIncrementalInfoRequest": {
+      "document": "DescribeUploadIncrementalInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增量导入任务ID",
+          "member": "string",
+          "name": "IncrementalMigrationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUploadIncrementalInfoResponse": {
+      "document": "DescribeUploadIncrementalInfo返回参数结构体",
+      "members": [
+        {
+          "document": "存储桶名称",
+          "member": "string",
+          "name": "BucketName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储桶地域信息",
+          "member": "string",
+          "name": "Region",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储路径",
+          "member": "string",
+          "name": "Path",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥ID",
+          "member": "string",
+          "name": "TmpSecretId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥Key",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥Token",
+          "member": "string",
+          "name": "XCosSecurityToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥到期时间",
+          "member": "string",
+          "name": "ExpiredTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
       "members": [],
@@ -4819,6 +5643,264 @@
       ],
       "usage": "out"
     },
+    "Migration": {
+      "document": "冷备迁移导入",
+      "members": [
+        {
+          "default": "",
+          "document": "备份导入任务ID 或 增量导入任务ID",
+          "member": "string",
+          "name": "MigrationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份导入名称，增量导入任务该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MigrationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移任务恢复类型",
+          "member": "string",
+          "name": "RecoveryType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份用户上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
+          "member": "string",
+          "name": "UploadType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件列表，UploadType确定，COS_URL则保存URL，COS_UPLOAD则保存备份名称",
+          "member": "string",
+          "name": "BackupFiles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移任务状态，",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移任务创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移任务开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移任务结束时间",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明信息",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移细节",
+          "member": "MigrationDetail",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前状态允许的操作",
+          "member": "MigrationAction",
+          "name": "Action",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是最终恢复，全量导入任务该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IsRecovery",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrationAction": {
+      "document": "冷备导入任务允许的操作",
+      "members": [
+        {
+          "default": "",
+          "document": "支持的所有操作，值包括：view(查看任务) ，modify(修改任务)， start(启动任务)，incremental(创建增量任务)，delete(删除任务)，upload(获取上传权限)。",
+          "member": "string",
+          "name": "AllAction",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前状态允许的操作，AllAction的子集,为空表示禁止所有操作",
+          "member": "string",
+          "name": "AllowedAction",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrationDetail": {
+      "document": "冷备导入任务迁移细节",
+      "members": [
+        {
+          "default": "",
+          "document": "总步骤数",
+          "member": "int64",
+          "name": "StepAll",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前步骤",
+          "member": "int64",
+          "name": "StepNow",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总进度,如：\"30\"表示30%",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "步骤信息，null表示还未开始迁移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MigrationStep",
+          "name": "StepInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrationStep": {
+      "document": "冷备导入任务迁移步骤细节",
+      "members": [
+        {
+          "default": "",
+          "document": "步骤序列",
+          "member": "int64",
+          "name": "StepNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "步骤展现名称",
+          "member": "string",
+          "name": "StepName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "英文ID标识",
+          "member": "string",
+          "name": "StepId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAccountPrivilegeRequest": {
       "document": "ModifyAccountPrivilege请求参数结构体",
       "members": [
@@ -4885,6 +5967,79 @@
     "ModifyAccountRemarkResponse": {
       "document": "ModifyAccountRemark返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupMigrationRequest": {
+      "document": "ModifyBackupMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "MigrationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "迁移任务恢复类型，FULL,FULL_LOG,FULL_DIFF",
+          "member": "string",
+          "name": "RecoveryType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
+          "member": "string",
+          "name": "UploadType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UploadType是COS_URL时这里时URL，COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
+          "member": "string",
+          "name": "BackupFiles",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupMigrationResponse": {
+      "document": "ModifyBackupMigration返回参数结构体",
+      "members": [
+        {
+          "document": "备份导入任务ID",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5273,6 +6428,71 @@
     "ModifyDBRemarkResponse": {
       "document": "ModifyDBRemark返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIncrementalMigrationRequest": {
+      "document": "ModifyIncrementalMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增量导入任务ID",
+          "member": "string",
+          "name": "IncrementalMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要恢复，NO-不需要，YES-需要",
+          "member": "string",
+          "name": "IsRecovery",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UploadType是COS_URL时这里时URL，COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
+          "member": "string",
+          "name": "BackupFiles",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIncrementalMigrationResponse": {
+      "document": "ModifyIncrementalMigration返回参数结构体",
+      "members": [
+        {
+          "document": "增量备份导入任务ID",
+          "member": "string",
+          "name": "IncrementalMigrationId",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6898,6 +8118,96 @@
         }
       ],
       "usage": "out"
+    },
+    "StartBackupMigrationRequest": {
+      "document": "StartBackupMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartBackupMigrationResponse": {
+      "document": "StartBackupMigration返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "member": "uint64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartIncrementalMigrationRequest": {
+      "document": "StartIncrementalMigration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入目标实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "member": "string",
+          "name": "BackupMigrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增量备份导入任务ID",
+          "member": "string",
+          "name": "IncrementalMigrationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartIncrementalMigrationResponse": {
+      "document": "StartIncrementalMigration返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "member": "uint64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StartMigrationCheckRequest": {
       "document": "StartMigrationCheck请求参数结构体",

@@ -15,6 +15,7 @@ tccli cdb CreateDBInstance --cli-unfold-argument  \
     --UniqSubnetId subnet-fyrtjbqw \
     --ProjectId 0 \
     --InstanceRole master \
+    --InstanceNodes 2 \
     --EngineVersion 5.6 \
     --ResourceTags.0.TagKey marchtest \
     --ResourceTags.0.TagValue test1

@@ -597,7 +597,7 @@
     "TerminateInstances": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=TerminateInstances\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=TerminateInstances\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\r\n    }\r\n}",
         "title": "销毁指定ID的实例"
       }

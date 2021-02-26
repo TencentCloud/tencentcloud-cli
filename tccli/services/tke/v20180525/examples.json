@@ -380,6 +380,14 @@
         "title": "拉取agent信息"
       }
     ],
+    "DescribePrometheusAlertHistory": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAlertHistory\n&InstanceId=prom-xxx\n&RuleName=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Items\": [\r\n            {\r\n                \"Content\": \"xx\", \r\n                \"StartTime\": \"xx\", \r\n                \"RuleName\": \"xx\"\r\n            }\r\n        ], \r\n        \"Total\": 1, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询告警历史"
+      }
+    ],
     "DescribePrometheusAlertRule": [
       {
         "document": "",

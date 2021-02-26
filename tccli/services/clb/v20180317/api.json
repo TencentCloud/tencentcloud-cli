@@ -1704,6 +1704,7 @@
         {
           "default": "",
           "document": "负载均衡实例 ID",
+          "example": "lb-cuxw2rm0",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -1712,6 +1713,7 @@
         {
           "default": "",
           "document": "要将监听器创建到哪些端口，每个端口对应一个新的监听器",
+          "example": "[\"7569\\n\",\"7570\\n\"]",
           "member": "int64",
           "name": "Ports",
           "required": true,
@@ -1720,6 +1722,7 @@
         {
           "default": "",
           "document": "监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -1728,6 +1731,7 @@
         {
           "default": "",
           "document": "要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数",
+          "example": "[\"lis0\\n\",\"lis1\\n\"]",
           "member": "string",
           "name": "ListenerNames",
           "required": false,
@@ -1736,6 +1740,7 @@
         {
           "default": "",
           "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -1744,6 +1749,7 @@
         {
           "default": "",
           "document": "证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。",
+          "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
@@ -1752,6 +1758,7 @@
         {
           "default": "",
           "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。",
+          "example": "60",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
@@ -1760,6 +1767,7 @@
         {
           "default": "",
           "document": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。",
+          "example": "WRR",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -1768,6 +1776,7 @@
         {
           "default": "",
           "document": "是否开启SNI特性，此参数仅适用于HTTPS监听器。",
+          "example": "1",
           "member": "int64",
           "name": "SniSwitch",
           "required": false,
@@ -1776,6 +1785,7 @@
         {
           "default": "",
           "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。",
+          "example": "NODE",
           "member": "string",
           "name": "TargetType",
           "required": false,
@@ -1784,6 +1794,7 @@
         {
           "default": "",
           "document": "会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。",
+          "example": "NORMAL",
           "member": "string",
           "name": "SessionType",
           "required": false,
@@ -1792,8 +1803,18 @@
         {
           "default": "",
           "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭",
+          "example": "0",
           "member": "int64",
           "name": "KeepaliveEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建端口段监听器时必须传入此参数，用以标识结束端口。同时，入参Ports只允许传入一个成员，用以标识开始端口。【如果您需要体验端口段功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "EndPort",
           "required": false,
           "type": "int"
         }
@@ -1805,8 +1826,10 @@
       "members": [
         {
           "document": "创建的监听器的唯一标识数组",
+          "example": "[\"lbl-d1ubsydq\",\"lbl-4udz130k\"]",
           "member": "string",
           "name": "ListenerIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

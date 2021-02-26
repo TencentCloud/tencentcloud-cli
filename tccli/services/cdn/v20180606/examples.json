@@ -195,8 +195,8 @@
     "DescribePayType": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribePayType\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\",\r\n        \"PayType\": \"flux\",\r\n        \"StatType\": \"sum\",\r\n        \"BillingCycle\": \"day\",\r\n        \"RegionType\": \"all\",\r\n        \"CurrentPayType\": \"flux\",\r\n        \"IsVip\": 0\r\n    }\r\n}",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribePayType\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\",\r\n        \"PayType\": \"flux\",\r\n        \"StatType\": \"sum\",\r\n        \"BillingCycle\": \"day\",\r\n        \"RegionType\": \"all\",\r\n        \"CurrentPayType\": \"flux\"\r\n    }\r\n}",
         "title": "计费方式查询"
       }
     ],
@@ -451,7 +451,7 @@
     "UpdateImageConfig": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=UpdateImageConfig\r\n&Domain=test.tencent.com\r\n&TpgAdapter.Switch=on\r\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=UpdateImageConfig\n&Domain=test.tencent.com\n&TpgAdapter.Switch=on\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"XXXXXXX\"\r\n    }\r\n}",
         "title": "开启Tpg图片优化"
       }

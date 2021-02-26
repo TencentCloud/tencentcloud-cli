@@ -563,6 +563,7 @@
         {
           "default": "",
           "document": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。以 kms- 作为前缀的用于云产品使用，Alias 不可重复。",
+          "example": "test",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -571,6 +572,7 @@
         {
           "default": "",
           "document": "CMK 的描述，最大1024字节",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -578,7 +580,8 @@
         },
         {
           "default": "",
-          "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥, “ASYMMETRIC_SIGN_VERIFY_SM2” 表示创建用于签名验签的SM2非对称密钥,",
+          "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥, “ASYMMETRIC_SIGN_VERIFY_SM2” 表示创建用于签名验签的SM2非对称密钥, “ASYMMETRIC_SIGN_VERIFY_ECC” 表示创建用于签名验签的ECC非对称密钥, “ASYMMETRIC_SIGN_VERIFY_RSA_2048” 表示创建用于签名验签的RSA_2048非对称密钥",
+          "example": "ASYMMETRIC_DECRYPT_SM2",
           "member": "string",
           "name": "KeyUsage",
           "required": false,
@@ -587,6 +590,7 @@
         {
           "default": "",
           "document": "指定key类型，默认为1，1表示默认类型，由KMS创建CMK密钥，2 表示EXTERNAL 类型，该类型需要用户导入密钥材料，参考 GetParametersForImport 和 ImportKeyMaterial 接口",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -595,6 +599,7 @@
         {
           "default": "",
           "document": "标签列表",
+          "example": "tags",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -608,57 +613,73 @@
       "members": [
         {
           "document": "CMK的全局唯一标识符",
+          "example": "9999aed0-4956-11e9-bc70-5254005e86b4",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "作为密钥更容易辨识，更容易被人看懂的别名",
+          "example": "test",
           "member": "string",
           "name": "Alias",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "密钥创建时间，unix时间戳",
+          "example": "1552897190",
           "member": "uint64",
           "name": "CreateTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "CMK的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "CMK的状态",
+          "example": "Enabled",
           "member": "string",
           "name": "KeyState",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "CMK的用途",
+          "example": "ENCRYPT_DECRYPT",
           "member": "string",
           "name": "KeyUsage",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "TagCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "标签操作的返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
           "member": "string",
           "name": "TagMsg",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1913,6 +1934,7 @@
         {
           "default": "",
           "document": "CMK的全局唯一标识",
+          "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1922,6 +1944,7 @@
         {
           "default": "",
           "document": "作为密钥更容易辨识，更容易被人看懂的别名",
+          "example": "test",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -1931,6 +1954,7 @@
         {
           "default": "",
           "document": "密钥创建时间",
+          "example": "11",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
@@ -1940,6 +1964,7 @@
         {
           "default": "",
           "document": "CMK的描述",
+          "example": "desc",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1949,6 +1974,7 @@
         {
           "default": "",
           "document": "CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived",
+          "example": "PendingDelete",
           "member": "string",
           "name": "KeyState",
           "required": true,
@@ -1957,7 +1983,8 @@
         },
         {
           "default": "",
-          "document": "CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2",
+          "document": "CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC",
+          "example": "ASYMMETRIC_DECRYPT_RSA_2048",
           "member": "string",
           "name": "KeyUsage",
           "required": true,
@@ -1967,6 +1994,7 @@
         {
           "default": "",
           "document": "CMK类型，2 表示符合FIPS标准，4表示符合国密标准",
+          "example": "3",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -1976,6 +2004,7 @@
         {
           "default": "",
           "document": "创建者",
+          "example": "12345678",
           "member": "uint64",
           "name": "CreatorUin",
           "required": true,
@@ -1985,6 +2014,7 @@
         {
           "default": "",
           "document": "是否开启了密钥轮换功能",
+          "example": "true",
           "member": "bool",
           "name": "KeyRotationEnabled",
           "required": true,
@@ -1994,6 +2024,7 @@
         {
           "default": "",
           "document": "CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名",
+          "example": "user",
           "member": "string",
           "name": "Owner",
           "required": true,
@@ -2003,6 +2034,7 @@
         {
           "default": "",
           "document": "在密钥轮换开启状态下，下次轮换的时间",
+          "example": "1234567",
           "member": "uint64",
           "name": "NextRotateTime",
           "required": true,
@@ -2012,6 +2044,7 @@
         {
           "default": "",
           "document": "计划删除的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
           "member": "uint64",
           "name": "DeletionDate",
           "required": true,
@@ -2021,6 +2054,7 @@
         {
           "default": "",
           "document": "CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXTERNAL",
           "member": "string",
           "name": "Origin",
           "required": true,
@@ -2030,6 +2064,7 @@
         {
           "default": "",
           "document": "在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
           "member": "uint64",
           "name": "ValidTo",
           "required": true,
@@ -2039,6 +2074,7 @@
         {
           "default": "",
           "document": "资源ID，格式：creatorUin/$creatorUin/$keyId",
+          "example": "creatorUin/12345/6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -2092,6 +2128,7 @@
         {
           "default": "",
           "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2100,6 +2137,7 @@
         {
           "default": "",
           "document": "含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2108,6 +2146,7 @@
         {
           "default": "",
           "document": "根据创建者角色筛选，默认 0 表示用户自己创建的cmk， 1 表示授权其它云产品自动创建的cmk",
+          "example": "0",
           "member": "uint64",
           "name": "Role",
           "required": false,
@@ -2116,6 +2155,7 @@
         {
           "default": "",
           "document": "根据CMK创建时间排序， 0 表示按照降序排序，1表示按照升序排序",
+          "example": "0",
           "member": "uint64",
           "name": "OrderType",
           "required": false,
@@ -2124,6 +2164,7 @@
         {
           "default": "",
           "document": "根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK，5 表示查询 Archived 状态的 CMK",
+          "example": "0",
           "member": "uint64",
           "name": "KeyState",
           "required": false,
@@ -2132,6 +2173,7 @@
         {
           "default": "",
           "document": "根据KeyId或者Alias进行模糊匹配查询",
+          "example": "test",
           "member": "string",
           "name": "SearchKeyAlias",
           "required": false,
@@ -2140,6 +2182,7 @@
         {
           "default": "",
           "document": "根据CMK类型筛选， \"TENCENT_KMS\" 表示筛选密钥材料由KMS创建的CMK， \"EXTERNAL\" 表示筛选密钥材料需要用户导入的 EXTERNAL类型CMK，\"ALL\" 或者不设置表示两种类型都查询，大小写敏感。",
+          "example": "ALL",
           "member": "string",
           "name": "Origin",
           "required": false,
@@ -2147,7 +2190,8 @@
         },
         {
           "default": "",
-          "document": "根据CMK的KeyUsage筛选，ALL表示筛选全部，可使用的参数为：ALL 或 ENCRYPT_DECRYPT 或 ASYMMETRIC_DECRYPT_RSA_2048 或 ASYMMETRIC_DECRYPT_SM2 或 ASYMMETRIC_SIGN_VERIFY_SM2，为空则默认筛选ENCRYPT_DECRYPT类型",
+          "document": "根据CMK的KeyUsage筛选，ALL表示筛选全部，可使用的参数为：ALL 或 ENCRYPT_DECRYPT 或 ASYMMETRIC_DECRYPT_RSA_2048 或 ASYMMETRIC_DECRYPT_SM2 或 ASYMMETRIC_SIGN_VERIFY_SM2 或 ASYMMETRIC_SIGN_VERIFY_RSA_2048 或 ASYMMETRIC_SIGN_VERIFY_ECC，为空则默认筛选ENCRYPT_DECRYPT类型",
+          "example": "ASYMMETRIC_SIGN_VERIFY_RSA_2048",
           "member": "string",
           "name": "KeyUsage",
           "required": false,
@@ -2156,6 +2200,7 @@
         {
           "default": "",
           "document": "标签过滤条件",
+          "example": "test",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -2169,15 +2214,19 @@
       "members": [
         {
           "document": "CMK的总数量",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的属性信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "KeyMetadata",
           "name": "KeyMetadatas",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2411,7 +2460,8 @@
       "members": [
         {
           "default": "",
-          "document": "签名算法，支持的算法：SM2DSA",
+          "document": "签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256",
+          "example": "SM2DSA",
           "member": "string",
           "name": "Algorithm",
           "required": true,
@@ -2419,7 +2469,8 @@
         },
         {
           "default": "",
-          "document": "消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，SM2签名算法的消息摘要长度（Base64编码前的长度）必须等于32字节",
+          "document": "消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，消息摘要长度（Base64编码前的长度）必须等于32字节",
+          "example": "abc",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2428,6 +2479,7 @@
         {
           "default": "",
           "document": "密钥的唯一标识",
+          "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -2436,6 +2488,7 @@
         {
           "default": "",
           "document": "消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。",
+          "example": "RAW",
           "member": "string",
           "name": "MessageType",
           "required": false,
@@ -2449,8 +2502,10 @@
       "members": [
         {
           "document": "签名，Base64编码",
+          "example": "MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg3",
           "member": "string",
           "name": "Signature",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2627,6 +2682,7 @@
         {
           "default": "",
           "document": "密钥的唯一标识",
+          "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -2635,6 +2691,7 @@
         {
           "default": "",
           "document": "签名值，通过调用KMS签名接口生成",
+          "example": "MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg3",
           "member": "string",
           "name": "SignatureValue",
           "required": true,
@@ -2642,7 +2699,8 @@
         },
         {
           "default": "",
-          "document": "消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，SM2签名算法的消息摘要长度（Base64编码前的长度）必须等于32字节",
+          "document": "消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节",
+          "example": "abc",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2650,7 +2708,8 @@
         },
         {
           "default": "",
-          "document": "签名算法，支持的算法：SM2DSA",
+          "document": "签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256",
+          "example": "SM2DSA",
           "member": "string",
           "name": "Algorithm",
           "required": true,
@@ -2659,6 +2718,7 @@
         {
           "default": "",
           "document": "消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。",
+          "example": "RAW",
           "member": "string",
           "name": "MessageType",
           "required": false,
@@ -2671,9 +2731,11 @@
       "document": "VerifyByAsymmetricKey返回参数结构体",
       "members": [
         {
-          "document": "签名是否\b\b有效",
+          "document": "签名是否有效。true：签名有效，false：签名无效。",
+          "example": "true",
           "member": "bool",
           "name": "SignatureValid",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },

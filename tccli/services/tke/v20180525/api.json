@@ -276,6 +276,12 @@
       "name": "获取被关联集群列表",
       "output": "DescribePrometheusAgentsResponse"
     },
+    "DescribePrometheusAlertHistory": {
+      "document": "获取告警历史",
+      "input": "DescribePrometheusAlertHistoryRequest",
+      "name": "获取告警历史",
+      "output": "DescribePrometheusAlertHistoryResponse"
+    },
     "DescribePrometheusAlertRule": {
       "document": "获取告警规则列表",
       "input": "DescribePrometheusAlertRuleRequest",
@@ -3875,6 +3881,105 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusAlertHistoryRequest": {
+      "document": "DescribePrometheusAlertHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-02-19 16:51:44",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-02-19 16:51:44",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "label集合",
+          "example": "a",
+          "member": "string",
+          "name": "Labels",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分片",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分片",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAlertHistoryResponse": {
+      "document": "DescribePrometheusAlertHistory返回参数结构体",
+      "members": [
+        {
+          "document": "告警历史",
+          "example": "无",
+          "member": "PrometheusAlertHistoryItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusAlertRuleRequest": {
       "document": "DescribePrometheusAlertRule请求参数结构体",
       "members": [
@@ -5930,6 +6035,39 @@
         }
       ],
       "usage": "out"
+    },
+    "PrometheusAlertHistoryItem": {
+      "document": "prometheus告警历史",
+      "members": [
+        {
+          "default": "",
+          "document": "告警名称",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PrometheusAlertRule": {
       "document": "Prometheus告警规则",
