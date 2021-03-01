@@ -1272,6 +1272,52 @@
       ],
       "usage": "out"
     },
+    "HiddenMarkInfo": {
+      "document": "数字水印",
+      "members": [
+        {
+          "default": "",
+          "document": "数字水印路径,，如果不从Cos拉取水印，则必填",
+          "example": "https://aidata-1251820392.cos.ap-guangzhou.myqcloud.com/logo.png",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字水印频率，可选值：[1,256]，默认值为30",
+          "example": "30",
+          "member": "int64",
+          "name": "Frequency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字水印强度，可选值：[32,128]，默认值为64",
+          "example": "64",
+          "member": "int64",
+          "name": "Strength",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字水印的Cos 信息，从Cos上拉取图片水印时必填。",
+          "example": "无",
+          "member": "CosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "HighlightsEditingInfo": {
       "document": "智能集锦任务参数信息",
       "members": [
@@ -3394,6 +3440,7 @@
         {
           "default": "",
           "document": "视频帧率，取值范围：[0, 60]，单位：Hz。\n注意：当取值为 0，表示帧率和原始视频保持一致。",
+          "example": "25",
           "member": "int64",
           "name": "Fps",
           "required": false,
@@ -3403,6 +3450,7 @@
         {
           "default": "",
           "document": "宽度，取值范围：0 和 [128, 4096]\n注意：\n当 Width、Height 均为 0，则分辨率同源；\n当 Width 为 0，Height 非 0，则 Width 按比例缩放；\n当 Width 非 0，Height 为 0，则 Height 按比例缩放；\n当 Width、Height 均非 0，则分辨率按用户指定。",
+          "example": "1280",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -3412,6 +3460,7 @@
         {
           "default": "",
           "document": "高度，取值范围：0 和 [128, 4096]\n注意：\n当 Width、Height 均为 0，则分辨率同源；\n当 Width 为 0，Height 非 0，则 Width 按比例缩放；\n当 Width 非 0，Height 为 0，则 Height 按比例缩放；\n当 Width、Height 均非 0，则分辨率按用户指定。",
+          "example": "720",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -3421,6 +3470,7 @@
         {
           "default": "",
           "document": "长边分辨率，取值范围：0 和 [128, 4096]\n注意：\n当 LongSide、ShortSide 均为 0，则分辨率按照Width，Height；\n当 LongSide 为 0，ShortSide 非 0，则 LongSide 按比例缩放；\n当 LongSide非 0，ShortSide为 0，则 ShortSide 按比例缩放；\n当 LongSide、ShortSide 均非 0，则分辨率按用户指定。\n长短边优先级高于Weight,Height,设置长短边则忽略宽高。",
+          "example": "1280",
           "member": "int64",
           "name": "LongSide",
           "required": false,
@@ -3430,6 +3480,7 @@
         {
           "default": "",
           "document": "短边分辨率，取值范围：0 和 [128, 4096]\n注意：\n当 LongSide、ShortSide 均为 0，则分辨率按照Width，Height；\n当 LongSide 为 0，ShortSide 非 0，则 LongSide 按比例缩放；\n当 LongSide非 0，ShortSide为 0，则 ShortSide 按比例缩放；\n当 LongSide、ShortSide 均非 0，则分辨率按用户指定。\n长短边优先级高于Weight,Height,设置长短边则忽略宽高。",
+          "example": "720",
           "member": "int64",
           "name": "ShortSide",
           "required": false,
@@ -3439,6 +3490,7 @@
         {
           "default": "",
           "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。当取值为 0，表示视频码率和原始视频保持一致。",
+          "example": "20000",
           "member": "int64",
           "name": "Bitrate",
           "required": false,
@@ -3448,6 +3500,7 @@
         {
           "default": "",
           "document": "固定I帧之间，视频帧数量，取值范围： [25, 2500]，如果不填，使用编码默认最优序列。",
+          "example": "25",
           "member": "int64",
           "name": "Gop",
           "required": false,
@@ -3457,6 +3510,7 @@
         {
           "default": "",
           "document": "编码器支持选项，可选值：\nh264,\nh265,\nav1\n。\n不填默认h264。",
+          "example": "h264",
           "member": "string",
           "name": "VideoCodec",
           "required": false,
@@ -3466,6 +3520,7 @@
         {
           "default": "",
           "document": "图片水印。",
+          "example": "无",
           "member": "PicMarkInfoItem",
           "name": "PicMarkInfo",
           "required": false,
@@ -3475,6 +3530,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。",
+          "example": "无",
           "member": "DarInfo",
           "name": "DarInfo",
           "required": false,
@@ -3484,6 +3540,7 @@
         {
           "default": "",
           "document": "支持hdr,可选项：\nhdr10,\nhlg。\n此时，VideoCodec会强制设置为h265, 编码位深为10",
+          "example": "hdr10",
           "member": "string",
           "name": "Hdr",
           "required": false,
@@ -3493,8 +3550,19 @@
         {
           "default": "",
           "document": "画质增强参数信息。",
+          "example": "无",
           "member": "VideoEnhance",
           "name": "VideoEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字水印参数信息。",
+          "example": "无",
+          "member": "HiddenMarkInfo",
+          "name": "HiddenMarkInfo",
           "required": false,
           "type": "object",
           "value_allowed_null": false

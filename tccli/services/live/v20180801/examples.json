@@ -541,7 +541,7 @@
     "DescribeLiveStreamPushInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamPushInfoList\r\n&PushDomain=5000.pushdomain.com\r\n&AppName=live\r\n&PageNum=1\r\n&PageSize=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamPushInfoList\n&PushDomain=5000.pushdomain.com\n&AppName=live\n&PageNum=1\n&PageSize=1000\n&<公共请求参数>",
         "output": "{\r\n\t\"Response\": {\r\n\t\t\"DataInfoList\": [\r\n\t\t\t{\r\n\t\t\t\t\"StreamName\": \"test1\",\r\n\t\t\t\t\"AppName\": \"live\",\r\n\t\t\t\t\"ClientIp\": \"127.0.0.1\",\r\n\t\t\t\t\"ServerIp\": \"127.0.0.1\",\r\n\t\t\t\t\"VideoFps\": 100,\r\n\t\t\t\t\"VideoSpeed\": 100,\r\n\t\t\t\t\"AudioFps\":   40,\r\n\t\t\t\t\"AudioSpeed\": 40,\r\n                                \"AsampleRate\": 48000,\r\n\t\t\t\t\"PushDomain\": \"5000.pushdomain.com\",\r\n\t\t\t\t\"BeginPushTime\": \"2019-02-01 00:00:00\",\r\n\t\t\t\t\"Acodec\": \"AAC\",\r\n\t\t\t\t\"Vcodec\": \"H264\",\r\n\t\t\t\t\"Resolution\": \"350*350\",\r\n                                \"MetaAudioSpeed\": 22,\r\n                                \"MetaFps\": 30,\r\n                                \"MetaVideoSpeed\": 4885\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"PageNum\": 1,\r\n\t\t\"PageSize\": 1000,\r\n\t\t\"TotalNum\": 1,\r\n\t\t\"TotalPage\": 1,\r\n\t\t\"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\r\n\t}\r\n}",
         "title": "请求示例"
       }

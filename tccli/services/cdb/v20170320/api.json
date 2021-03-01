@@ -6953,6 +6953,7 @@
         {
           "default": "",
           "document": "灾备实例状态",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -6962,6 +6963,7 @@
         {
           "default": "",
           "document": "可用区信息",
+          "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -6971,6 +6973,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "cdb-***",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6980,6 +6983,7 @@
         {
           "default": "",
           "document": "地域信息",
+          "example": "ap-beijing",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -6989,6 +6993,7 @@
         {
           "default": "",
           "document": "实例同步状态。可能的返回值为：\n0 - 灾备未同步；\n1 - 灾备同步中；\n2 - 灾备同步成功；\n3 - 灾备同步失败；\n4 - 灾备同步修复中。",
+          "example": "2",
           "member": "int64",
           "name": "SyncStatus",
           "required": true,
@@ -6998,6 +7003,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "******",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -7007,6 +7013,7 @@
         {
           "default": "",
           "document": "实例类型",
+          "example": "2",
           "member": "int64",
           "name": "InstanceType",
           "required": true,
@@ -7361,6 +7368,7 @@
         {
           "default": "",
           "document": "外网状态，可能的返回值为：0-未开通外网；1-已开通外网；2-已关闭外网",
+          "example": "0",
           "member": "int64",
           "name": "WanStatus",
           "required": true,
@@ -7370,6 +7378,7 @@
         {
           "default": "",
           "document": "可用区信息",
+          "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -7379,6 +7388,7 @@
         {
           "default": "",
           "document": "初始化标志，可能的返回值为：0-未初始化；1-已初始化",
+          "example": "1",
           "member": "int64",
           "name": "InitFlag",
           "required": true,
@@ -7388,6 +7398,7 @@
         {
           "default": "",
           "document": "只读vip信息。单独开通只读实例访问的只读实例才有该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
           "member": "RoVipInfo",
           "name": "RoVipInfo",
           "required": true,
@@ -7397,6 +7408,7 @@
         {
           "default": "",
           "document": "内存容量，单位为 MB",
+          "example": "1000",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -7406,6 +7418,7 @@
         {
           "default": "",
           "document": "实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -7415,6 +7428,7 @@
         {
           "default": "",
           "document": "私有网络 ID，例如：51102",
+          "example": "51102",
           "member": "int64",
           "name": "VpcId",
           "required": true,
@@ -7424,6 +7438,7 @@
         {
           "default": "",
           "document": "备机信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
           "member": "SlaveInfo",
           "name": "SlaveInfo",
           "required": true,
@@ -7433,6 +7448,7 @@
         {
           "default": "",
           "document": "实例 ID",
+          "example": "cdb-***",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7442,6 +7458,7 @@
         {
           "default": "",
           "document": "硬盘容量，单位为 GB",
+          "example": "50",
           "member": "int64",
           "name": "Volume",
           "required": true,
@@ -7451,6 +7468,7 @@
         {
           "default": "",
           "document": "自动续费标志，可能的返回值：0-未开通自动续费；1-已开通自动续费；2-已关闭自动续费",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenew",
           "required": true,
@@ -7460,6 +7478,7 @@
         {
           "default": "",
           "document": "数据复制方式。0 - 异步复制；1 - 半同步复制；2 - 强同步复制",
+          "example": "0",
           "member": "int64",
           "name": "ProtectMode",
           "required": true,
@@ -7469,6 +7488,7 @@
         {
           "default": "",
           "document": "只读组详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "RoGroup",
           "name": "RoGroups",
           "required": true,
@@ -7478,6 +7498,7 @@
         {
           "default": "",
           "document": "子网 ID，例如：2333",
+          "example": "2333",
           "member": "int64",
           "name": "SubnetId",
           "required": true,
@@ -7487,6 +7508,7 @@
         {
           "default": "",
           "document": "实例类型，可能的返回值：1-主实例；2-灾备实例；3-只读实例",
+          "example": "1",
           "member": "int64",
           "name": "InstanceType",
           "required": true,
@@ -7496,6 +7518,7 @@
         {
           "default": "",
           "document": "项目 ID",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -7505,6 +7528,7 @@
         {
           "default": "",
           "document": "地域信息",
+          "example": "ap-beijing",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -7514,6 +7538,7 @@
         {
           "default": "",
           "document": "实例到期时间",
+          "example": "2020-09-29 08:37:33",
           "member": "datetime",
           "name": "DeadlineTime",
           "required": true,
@@ -7523,6 +7548,7 @@
         {
           "default": "",
           "document": "可用区部署方式。可能的值为：0 - 单可用区；1 - 多可用区",
+          "example": "0",
           "member": "int64",
           "name": "DeployMode",
           "required": true,
@@ -7532,6 +7558,7 @@
         {
           "default": "",
           "document": "实例任务状态。0 - 没有任务 ,1 - 升级中,2 - 数据导入中,3 - 开放Slave中,4 - 外网访问开通中,5 - 批量操作执行中,6 - 回档中,7 - 外网访问关闭中,8 - 密码修改中,9 - 实例名修改中,10 - 重启中,12 - 自建迁移中,13 - 删除库表中,14 - 灾备实例创建同步中,15 - 升级待切换,16 - 升级切换中,17 - 升级切换完成",
+          "example": "0",
           "member": "int64",
           "name": "TaskStatus",
           "required": true,
@@ -7541,6 +7568,7 @@
         {
           "default": "",
           "document": "主实例详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
           "member": "MasterInfo",
           "name": "MasterInfo",
           "required": false,
@@ -7550,6 +7578,7 @@
         {
           "default": "",
           "document": "实例类型",
+          "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
           "required": true,
@@ -7559,6 +7588,7 @@
         {
           "default": "",
           "document": "内核版本",
+          "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
           "required": true,
@@ -7568,6 +7598,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "******",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -7577,6 +7608,7 @@
         {
           "default": "",
           "document": "灾备实例详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "DrInfo",
           "name": "DrInfo",
           "required": true,
@@ -7586,6 +7618,7 @@
         {
           "default": "",
           "document": "外网域名",
+          "example": "''",
           "member": "string",
           "name": "WanDomain",
           "required": true,
@@ -7595,6 +7628,7 @@
         {
           "default": "",
           "document": "外网端口号",
+          "example": "0",
           "member": "int64",
           "name": "WanPort",
           "required": true,
@@ -7604,6 +7638,7 @@
         {
           "default": "",
           "document": "付费类型，可能的返回值：0-包年包月；1-按量计费",
+          "example": "1",
           "member": "int64",
           "name": "PayType",
           "required": true,
@@ -7613,6 +7648,7 @@
         {
           "default": "",
           "document": "实例创建时间",
+          "example": "2020-08-29 08:37:33",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -7622,6 +7658,7 @@
         {
           "default": "",
           "document": "实例 IP",
+          "example": "1.2.3.4",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -7631,6 +7668,7 @@
         {
           "default": "",
           "document": "端口号",
+          "example": "3306",
           "member": "int64",
           "name": "Vport",
           "required": true,
@@ -7640,6 +7678,7 @@
         {
           "default": "",
           "document": "是否锁定标记",
+          "example": "0",
           "member": "int64",
           "name": "CdbError",
           "required": true,
@@ -7649,6 +7688,7 @@
         {
           "default": "",
           "document": "私有网络描述符，例如：“vpc-5v8wn9mg”",
+          "example": "vpc-5v8wn9mg",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -7658,6 +7698,7 @@
         {
           "default": "",
           "document": "子网描述符，例如：“subnet-1typ0s7d”",
+          "example": "subnet-1typ0s7d",
           "member": "string",
           "name": "UniqSubnetId",
           "required": true,
@@ -7667,6 +7708,7 @@
         {
           "default": "",
           "document": "物理 ID",
+          "example": "''",
           "member": "string",
           "name": "PhysicalId",
           "required": true,
@@ -7676,6 +7718,7 @@
         {
           "default": "",
           "document": "核心数",
+          "example": "1",
           "member": "int64",
           "name": "Cpu",
           "required": true,
@@ -7685,6 +7728,7 @@
         {
           "default": "",
           "document": "每秒查询数量",
+          "example": "1000",
           "member": "int64",
           "name": "Qps",
           "required": true,
@@ -7694,6 +7738,7 @@
         {
           "default": "",
           "document": "可用区中文名称",
+          "example": "北京三区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -7703,6 +7748,7 @@
         {
           "default": "",
           "document": "物理机型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "‘’",
           "member": "string",
           "name": "DeviceClass",
           "required": true,
@@ -7712,6 +7758,7 @@
         {
           "default": "",
           "document": "置放群组 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "‘’",
           "member": "string",
           "name": "DeployGroupId",
           "required": true,
@@ -7721,8 +7768,19 @@
         {
           "default": "",
           "document": "可用区 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "800003",
           "member": "int64",
           "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceNodes",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -7829,6 +7887,7 @@
         {
           "default": "",
           "document": "地域信息",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -7838,6 +7897,7 @@
         {
           "default": "",
           "document": "地域ID",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "required": true,
@@ -7847,6 +7907,7 @@
         {
           "default": "",
           "document": "可用区ID",
+          "example": "100003",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -7856,6 +7917,7 @@
         {
           "default": "",
           "document": "可用区信息",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -7865,6 +7927,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "cdb-***",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7874,6 +7937,7 @@
         {
           "default": "",
           "document": "实例长ID",
+          "example": "''",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -7883,6 +7947,7 @@
         {
           "default": "",
           "document": "实例状态",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -7892,6 +7957,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "***",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -7901,6 +7967,7 @@
         {
           "default": "",
           "document": "实例类型",
+          "example": "1",
           "member": "int64",
           "name": "InstanceType",
           "required": true,
@@ -7910,6 +7977,7 @@
         {
           "default": "",
           "document": "任务状态",
+          "example": "0",
           "member": "int64",
           "name": "TaskStatus",
           "required": true,
@@ -7919,6 +7987,7 @@
         {
           "default": "",
           "document": "内存容量",
+          "example": "1000",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -7928,6 +7997,7 @@
         {
           "default": "",
           "document": "硬盘容量",
+          "example": "50",
           "member": "int64",
           "name": "Volume",
           "required": true,
@@ -7937,6 +8007,7 @@
         {
           "default": "",
           "document": "实例机型",
+          "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
           "required": true,
@@ -7946,6 +8017,7 @@
         {
           "default": "",
           "document": "每秒查询数",
+          "example": "1000",
           "member": "int64",
           "name": "Qps",
           "required": true,
@@ -7955,6 +8027,7 @@
         {
           "default": "",
           "document": "私有网络ID",
+          "example": "1533",
           "member": "int64",
           "name": "VpcId",
           "required": true,
@@ -7964,6 +8037,7 @@
         {
           "default": "",
           "document": "子网ID",
+          "example": "12364",
           "member": "int64",
           "name": "SubnetId",
           "required": true,
@@ -7973,6 +8047,7 @@
         {
           "default": "",
           "document": "独享集群ID",
+          "example": "''",
           "member": "string",
           "name": "ExClusterId",
           "required": true,
@@ -7982,6 +8057,7 @@
         {
           "default": "",
           "document": "独享集群名称",
+          "example": "''",
           "member": "string",
           "name": "ExClusterName",
           "required": true,
@@ -10478,6 +10554,7 @@
         {
           "default": "",
           "document": "端口号",
+          "example": "3306",
           "member": "int64",
           "name": "Vport",
           "required": true,
@@ -10487,6 +10564,7 @@
         {
           "default": "",
           "document": "地域信息",
+          "example": "ap-beijing",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -10496,6 +10574,7 @@
         {
           "default": "",
           "document": "虚拟 IP 信息",
+          "example": "1.2.3.4",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -10505,6 +10584,7 @@
         {
           "default": "",
           "document": "可用区信息",
+          "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
           "required": true,

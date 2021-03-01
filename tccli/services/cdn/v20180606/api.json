@@ -4427,7 +4427,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询起始时间：yyyy-MM-dd",
+          "document": "查询起始时间：yyyy-MM-dd\n当报表类型为daily，起始时间和结束时间必须为同一天\n当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日\n当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天",
           "example": "2021-02-01",
           "member": "date",
           "name": "StartTime",
@@ -4436,7 +4436,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间：yyyy-MM-dd",
+          "document": "查询结束时间：yyyy-MM-dd\n当报表类型为daily，起始时间和结束时间必须为同一天\n当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日\n当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天",
           "example": "2021-02-01",
           "member": "date",
           "name": "EndTime",

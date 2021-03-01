@@ -11,7 +11,7 @@ tccli cme CreateProject --cli-unfold-argument  \
     --Name first_project \
     --Owner.Id 1111 \
     --Owner.Type PERSON \
-    --VideoEditProjectInput.AspectRatio 16:9
+    --AspectRatio 16:9
 ```
 
 Output: 

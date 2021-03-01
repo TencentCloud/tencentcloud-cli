@@ -470,6 +470,7 @@
         {
           "default": "",
           "document": "任务ID，创建任务后返回的TaskId字段",
+          "example": "task-video-XwxJtbkKXWgCt8AZ",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -478,6 +479,7 @@
         {
           "default": "",
           "document": "是否展示所有分片，默认只展示命中规则的分片",
+          "example": "无",
           "member": "bool",
           "name": "ShowAllSegments",
           "required": false,
@@ -491,113 +493,145 @@
       "members": [
         {
           "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "task-video-XwxJtbkKXWgCt8AZ",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "审核时传入的数据Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "data_test_01",
           "member": "string",
           "name": "DataId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "业务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
           "member": "string",
           "name": "BizType",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "状态，可选值：\nFINISH 已完成\nPENDING 等待中\nRUNNING 进行中\nERROR 出错\nCANCELLED 已取消\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VIDEO",
           "member": "string",
           "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "审核建议\n可选：\nPass 通过\nReveiw 建议复审\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Block",
           "member": "string",
           "name": "Suggestion",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "审核结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskLabel",
           "name": "Labels",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "媒体解码信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "InputInfo",
           "name": "InputInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "创建时间，格式为 ISO 8601\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-07-13T11:47:01.925Z",
           "member": "string",
           "name": "CreatedAt",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "更新时间，格式为 ISO 8601\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-07-13T11:47:25.840Z",
           "member": "string",
           "name": "UpdatedAt",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "document": "图片结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频中截帧审核的结果。\n数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ImageSegments",
           "name": "ImageSegments",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "document": "音频结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频中音频审核的结果。\n数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AudioSegments",
           "name": "AudioSegments",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "如果返回的状态为ERROR，该字段会标记错误类型。\n可选值：：\nDECODE_ERROR: 解码失败。（输入资源中可能包含无法解码的视频）\nURL_ERROR：下载地址验证失败。\nTIMEOUT_ERROR：处理超时。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ErrorType",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "审核任务错误日志。当Error不为空时，会展示该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ErrorDescription",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

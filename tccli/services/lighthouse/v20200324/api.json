@@ -79,7 +79,8 @@
       "members": [
         {
           "default": "",
-          "document": "镜像 ID  ，是 blueprint 的唯一标识。",
+          "document": "镜像 ID  ，是 Blueprint 的唯一标识。",
+          "example": "lhbp-5exe07sc",
           "member": "string",
           "name": "BlueprintId",
           "required": true,
@@ -89,6 +90,7 @@
         {
           "default": "",
           "document": "镜像对外展示标题。",
+          "example": "Discuz! Q",
           "member": "string",
           "name": "DisplayTitle",
           "required": true,
@@ -98,6 +100,7 @@
         {
           "default": "",
           "document": "镜像对外展示版本。",
+          "example": "1.0.0",
           "member": "string",
           "name": "DisplayVersion",
           "required": true,
@@ -107,6 +110,7 @@
         {
           "default": "",
           "document": "镜像描述信息。",
+          "example": "discuzq",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -116,6 +120,7 @@
         {
           "default": "",
           "document": "操作系统名称。",
+          "example": "CentOS 7.6 64bit",
           "member": "string",
           "name": "OsName",
           "required": true,
@@ -125,6 +130,7 @@
         {
           "default": "",
           "document": "操作系统平台。",
+          "example": "CENTOS",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -134,6 +140,7 @@
         {
           "default": "",
           "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
+          "example": "LINUX_UNIX",
           "member": "string",
           "name": "PlatformType",
           "required": true,
@@ -142,7 +149,8 @@
         },
         {
           "default": "",
-          "document": "镜像类型，如 APP_OS、PURE_OS。",
+          "document": "镜像类型，如 APP_OS、PURE_OS、PRIVATE。",
+          "example": "APP_OS",
           "member": "string",
           "name": "BlueprintType",
           "required": true,
@@ -152,6 +160,7 @@
         {
           "default": "",
           "document": "镜像图片 URL。",
+          "example": "无",
           "member": "string",
           "name": "ImageUrl",
           "required": true,
@@ -161,6 +170,7 @@
         {
           "default": "",
           "document": "镜像所需系统盘大小。",
+          "example": "20",
           "member": "int64",
           "name": "RequiredSystemDiskSize",
           "required": true,
@@ -170,10 +180,41 @@
         {
           "default": "",
           "document": "镜像状态。",
+          "example": "NORMAL",
           "member": "string",
           "name": "BlueprintState",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-02T09:16:16Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像名称。",
+          "example": "discuzq",
+          "member": "string",
+          "name": "BlueprintName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像是否支持自动化助手。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportAutomationTools",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -385,6 +426,7 @@
         {
           "default": "",
           "document": "镜像 ID 列表。",
+          "example": "[\"lhbp-aaaabbbb\"]",
           "member": "string",
           "name": "BlueprintIds",
           "required": false,
@@ -393,6 +435,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -401,6 +444,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -408,7 +452,8 @@
         },
         {
           "default": "",
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（预置应用的系统 ）；PURE_OS（纯净的 OS 系统）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（预置应用的系统 ）；PURE_OS（纯净的 OS 系统）；PRIVATE（自定义镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
+          "example": " [         {             \"Name\": \"blueprint-type\",             \"",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -422,6 +467,7 @@
       "members": [
         {
           "document": "符合条件的镜像数量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
@@ -429,6 +475,7 @@
         },
         {
           "document": "镜像详细信息列表。",
+          "example": " [             {                 \"BlueprintId\": \"lhbp-5e8807sc\",",
           "member": "Blueprint",
           "name": "BlueprintSet",
           "type": "list",

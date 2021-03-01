@@ -45,7 +45,7 @@
     "CreateProject": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=VIDEO_EDIT\n&Name=first_project\n&Owner.Id=1111\n&Owner.Type=PERSON\n&VideoEditProjectInput.AspectRatio=16:9\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=VIDEO_EDIT\n&Name=first_project\n&Owner.Id=1111\n&Owner.Type=PERSON\n&AspectRatio=16:9\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"ProjectId\": \"cmepid_5f16967b64436100015fb025\",\r\n    \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\r\n  }\r\n}",
         "title": "创建普通剪辑项目"
       },

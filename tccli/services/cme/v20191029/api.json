@@ -737,6 +737,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -745,6 +746,7 @@
         {
           "default": "",
           "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>",
+          "example": "VIDEO_EDIT",
           "member": "string",
           "name": "Category",
           "required": true,
@@ -753,6 +755,7 @@
         {
           "default": "",
           "document": "项目名称，不可超过30个字符。",
+          "example": "新建项目",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -761,6 +764,7 @@
         {
           "default": "",
           "document": "项目归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -768,7 +772,8 @@
         },
         {
           "default": "",
-          "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16。</li>\n该字段即将废弃，当项目类型为 VIDEO_EDIT 时，请在 VideoEditProjectInput 信息中填写该值；当项目类型为 VIDEO_SEGMENTATION 时，请在VideoSegmentationProjectInput 中填写该值。其他项目类型可不填。",
+          "document": "画布宽高比。\n该字段已经废弃，请使用具体项目输入中的 AspectRatio 字段。",
+          "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
           "required": false,
@@ -777,6 +782,7 @@
         {
           "default": "",
           "document": "项目描述信息。",
+          "example": "新建",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -785,6 +791,7 @@
         {
           "default": "",
           "document": "导播台信息，仅当项目类型为 SWITCHER 时必填。",
+          "example": "无",
           "member": "SwitcherProjectInput",
           "name": "SwitcherProjectInput",
           "required": false,
@@ -793,6 +800,7 @@
         {
           "default": "",
           "document": "直播剪辑信息，暂未开放，请勿使用。",
+          "example": "无",
           "member": "LiveStreamClipProjectInput",
           "name": "LiveStreamClipProjectInput",
           "required": false,
@@ -801,6 +809,7 @@
         {
           "default": "",
           "document": "视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。",
+          "example": "无",
           "member": "VideoEditProjectInput",
           "name": "VideoEditProjectInput",
           "required": false,
@@ -809,6 +818,7 @@
         {
           "default": "",
           "document": "视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。",
+          "example": "无",
           "member": "VideoSegmentationProjectInput",
           "name": "VideoSegmentationProjectInput",
           "required": false,
@@ -822,8 +832,10 @@
       "members": [
         {
           "document": "项目 Id。",
+          "example": "60336ab29997a500019xxx",
           "member": "string",
           "name": "ProjectId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4511,7 +4523,18 @@
       "members": [
         {
           "default": "",
+          "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16；</li>\n<li>2:1。</li>\n默认值 16:9 。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "视频编辑模板媒体 ID ，通过模板媒体导入项目轨道数据时填写。",
+          "example": "无",
           "member": "string",
           "name": "VideoEditTemplateId",
           "required": false,
@@ -4521,6 +4544,7 @@
         {
           "default": "",
           "document": "输入的媒体轨道列表，包括视频、音频，等媒体组成的多个轨道信息。其中：<li>输入的多个轨道在时间轴上和输出媒体文件的时间轴对齐；</li><li>时间轴上相同时间点的各个轨道的素材进行重叠，视频或者图片按轨道顺序进行图像的叠加，轨道顺序高的素材叠加在上面，音频素材进行混音；</li><li>视频、音频，每一种类型的轨道最多支持10个。</li>\n注：当从模板导入项目时（即 VideoEditTemplateId 不为空时），该参数无效。",
+          "example": "无",
           "member": "MediaTrack",
           "name": "InitTracks",
           "required": false,
@@ -4655,7 +4679,18 @@
       "members": [
         {
           "default": "",
+          "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16；</li>\n<li>2:1。</li>\n默认值 16:9 。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "视频拆条处理模型，不填则默认为手工分割视频。取值 ：\n<li>AI.GameHighlights.PUBG：和平精英集锦 ;</li>\n<li>AI.GameHighlights.Honor OfKings：王者荣耀集锦 ;</li>\n<li>AI.SportHighlights.Football：足球集锦 </li>\n<li>AI.SportHighlights.Basketball：篮球集锦 ；</li>\n<li>AI.PersonSegmentation：人物集锦  ;</li>\n<li>AI.NewsSegmentation：新闻拆条。</li>",
+          "example": "无",
           "member": "string",
           "name": "ProcessModel",
           "required": false,
