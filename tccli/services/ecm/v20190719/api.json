@@ -4039,6 +4039,7 @@
         {
           "default": "",
           "document": "开始时间（xxxx-xx-xx）如2019-08-14，默认为一周之前的日期，不应与当前日期间隔超过30天。",
+          "example": "2019-08-14",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -4047,6 +4048,7 @@
         {
           "default": "",
           "document": "结束时间（xxxx-xx-xx）如2019-08-14，默认为昨天，不应与当前日期间隔超过30天。当开始与结束间隔不超过1天时会返回1分钟粒度的数据，不超过7天时返回5分钟粒度的数据，否则返回1小时粒度的数据。",
+          "example": "2019-08-14",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -4055,10 +4057,20 @@
         {
           "default": "",
           "document": "过滤条件。\n\nregion    String      是否必填：否     （过滤条件）按照region过滤，不支持模糊匹配。注意 region 填上需要查询ecm region才能返回数据。\narea       String      是否必填：否     （过滤条件）按照大区过滤，不支持模糊匹配。大区包括：china-central、china-east等等，可以通过DescribeNode获得所有大区；也可使用ALL_REGION表示所有地区。\nisp         String      是否必填：否     （过滤条件）按照运营商过滤大区流量，运营商包括CTCC、CUCC和CMCC。只和area同时使用，且一次只能指定一种运营商。\n\nregion和area只应填写一个。",
+          "example": "Filters",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "统计周期，单位秒。取值60/300。",
+          "example": "30",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4068,8 +4080,10 @@
       "members": [
         {
           "document": "网络峰值数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PeakNetworkRegionSet",
           "member": "PeakNetworkRegionInfo",
           "name": "PeakNetworkRegionSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8565,6 +8579,7 @@
         {
           "default": "",
           "document": "记录时间。",
+          "example": "2020-02-01 00:02:00",
           "member": "string",
           "name": "RecordTime",
           "required": true,
@@ -8574,6 +8589,7 @@
         {
           "default": "",
           "document": "入带宽数据。",
+          "example": "100.0",
           "member": "string",
           "name": "PeakInNetwork",
           "required": true,
@@ -8583,8 +8599,19 @@
         {
           "default": "",
           "document": "出带宽数据。",
+          "example": "100.0",
           "member": "string",
           "name": "PeakOutNetwork",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费带宽。单位bps",
+          "example": "100.0",
+          "member": "string",
+          "name": "ChargeNetwork",
           "required": true,
           "type": "string",
           "value_allowed_null": false

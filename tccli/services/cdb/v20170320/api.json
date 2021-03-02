@@ -856,6 +856,7 @@
         {
           "default": "",
           "document": "安全组 ID。",
+          "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -864,10 +865,20 @@
         {
           "default": "",
           "document": "实例 ID 列表，一个或者多个实例 ID 组成的数组。",
+          "example": "[\"cdb-eb2w7dto\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True",
+          "example": "False",
+          "member": "bool",
+          "name": "ForReadonlyInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2628,6 +2639,15 @@
           "name": "Cpu",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoSyncFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2941,6 +2961,15 @@
           "example": "1",
           "member": "int64",
           "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoSyncFlag",
           "required": false,
           "type": "int"
         }
@@ -5224,10 +5253,20 @@
         {
           "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True",
+          "example": "False",
+          "member": "bool",
+          "name": "ForReadonlyInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5237,8 +5276,10 @@
       "members": [
         {
           "document": "安全组详情。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6919,6 +6960,7 @@
         {
           "default": "",
           "document": "安全组 ID。",
+          "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -6927,10 +6969,20 @@
         {
           "default": "",
           "document": "实例 ID 列表，一个或者多个实例 ID 组成的数组。",
+          "example": "[\"cdb-eb2w7dto\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True",
+          "example": "False",
+          "member": "bool",
+          "name": "ForReadonlyInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7163,6 +7215,7 @@
         {
           "default": "",
           "document": "策略，ACCEPT 或者 DROP",
+          "example": "ACCEPT",
           "member": "string",
           "name": "Action",
           "required": false,
@@ -7172,6 +7225,7 @@
         {
           "default": "",
           "document": "来源 IP 或 IP 段，例如192.168.0.0/16",
+          "example": "192.168.0.0/16",
           "member": "string",
           "name": "CidrIp",
           "required": false,
@@ -7181,6 +7235,7 @@
         {
           "default": "",
           "document": "端口",
+          "example": "ALL",
           "member": "string",
           "name": "PortRange",
           "required": false,
@@ -7190,6 +7245,7 @@
         {
           "default": "",
           "document": "网络协议，支持 UDP、TCP 等",
+          "example": "ALL",
           "member": "string",
           "name": "IpProtocol",
           "required": false,
@@ -7199,9 +7255,20 @@
         {
           "default": "",
           "document": "规则限定的方向，进站规则为 INPUT",
+          "example": "‘’",
           "member": "string",
           "name": "Dir",
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "放通内网",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8512,6 +8579,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8520,10 +8588,20 @@
         {
           "default": "",
           "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
+          "example": "[\"sg-ajr1jzgj\\r\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True",
+          "example": "False",
+          "member": "bool",
+          "name": "ForReadonlyInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9078,6 +9156,7 @@
         {
           "default": "",
           "document": "策略，ACCEPT 或者 DROP",
+          "example": "ACCEPT",
           "member": "string",
           "name": "Action",
           "required": false,
@@ -9087,6 +9166,7 @@
         {
           "default": "",
           "document": "目的 IP 或 IP 段，例如172.16.0.0/12",
+          "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrIp",
           "required": false,
@@ -9096,6 +9176,7 @@
         {
           "default": "",
           "document": "端口或者端口范围",
+          "example": "ALL",
           "member": "string",
           "name": "PortRange",
           "required": false,
@@ -9105,6 +9186,7 @@
         {
           "default": "",
           "document": "网络协议，支持 UDP、TCP等",
+          "example": "ALL",
           "member": "string",
           "name": "IpProtocol",
           "required": false,
@@ -9114,9 +9196,20 @@
         {
           "default": "",
           "document": "规则限定的方向，进站规则为 OUTPUT",
+          "example": "‘’",
           "member": "string",
           "name": "Dir",
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "放通内网",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }

@@ -800,6 +800,7 @@
         {
           "default": "",
           "document": "云服务器ID",
+          "example": "quuid",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -808,6 +809,7 @@
         {
           "default": "",
           "document": "标签ID",
+          "example": "1",
           "member": "uint64",
           "name": "TagId",
           "required": true,
@@ -816,6 +818,7 @@
         {
           "default": "",
           "document": "云服务器地区",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "MRegion",
           "required": true,
@@ -824,6 +827,7 @@
         {
           "default": "",
           "document": "云服务器类型(CVM|BM)",
+          "example": "CVM",
           "member": "string",
           "name": "MArea",
           "required": true,

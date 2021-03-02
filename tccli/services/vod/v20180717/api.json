@@ -282,6 +282,18 @@
       "name": "获取视频内容智能识别模板列表",
       "output": "DescribeContentReviewTemplatesResponse"
     },
+    "DescribeDailyMediaPlayStat": {
+      "document": "该接口用于查询指定日期范围内每天的播放统计数据。\n* 可以查询最近30天的播放统计数据。",
+      "input": "DescribeDailyMediaPlayStatRequest",
+      "name": "查询媒体文件的播放统计数据",
+      "output": "DescribeDailyMediaPlayStatResponse"
+    },
+    "DescribeDailyMostPlayedStat": {
+      "document": "该接口用于查询每日播放Top100 的媒体文件的播放统计数据。\n* 可以查询最近30天的播放统计数据。\n* 可以按播放次数或者播放流量查询。\n* 播放次数统计说明：\n    1. HLS 文件：访问 M3U8 文件时统计播放次数；访问 TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。",
+      "input": "DescribeDailyMostPlayedStatRequest",
+      "name": "查询每日播放 Top100的媒体文件的播放统计数据",
+      "output": "DescribeDailyMostPlayedStatResponse"
+    },
     "DescribeDailyPlayStatFileList": {
       "document": "该接口用于查询播放统计文件的下载地址。\n* 可以查询最近30天的播放统计文件下载地址。\n* 云点播每天对前一天的 CDN 请求日志进行分析处理，生成播放统计文件。\n* 播放统计文件内容包含媒体文件的播放次数、播放流量等统计信息。\n* 播放次数统计说明：\n    1. HLS 文件：访问M3U8 文件时统计播放次数；访问TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。\n* 播放设备的统计：播放请求带了 UserAgent 参数，并且 UserAgent 包含 Android 或者 iPhone 等标识，会统计为移动端播放次数，否则统计为 PC 端播放次数。",
       "input": "DescribeDailyPlayStatFileListRequest",
@@ -7126,6 +7138,7 @@
         {
           "default": "",
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
           "required": true,
@@ -7134,6 +7147,7 @@
         {
           "default": "",
           "document": "转码模板名称，长度限制：64 个字符。",
+          "example": "转码模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7142,6 +7156,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "自定义模板1",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -7150,6 +7165,7 @@
         {
           "default": "",
           "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
           "required": false,
@@ -7158,6 +7174,7 @@
         {
           "default": "",
           "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
           "required": false,
@@ -7166,6 +7183,7 @@
         {
           "default": "",
           "document": "视频流配置参数，当 RemoveVideo 为 0，该字段必填。",
+          "example": "无",
           "member": "VideoTemplateInfo",
           "name": "VideoTemplate",
           "required": false,
@@ -7174,6 +7192,7 @@
         {
           "default": "",
           "document": "音频流配置参数，当 RemoveAudio 为 0，该字段必填。",
+          "example": "无",
           "member": "AudioTemplateInfo",
           "name": "AudioTemplate",
           "required": false,
@@ -7182,6 +7201,7 @@
         {
           "default": "",
           "document": "极速高清转码参数。",
+          "example": "无",
           "member": "TEHDConfig",
           "name": "TEHDConfig",
           "required": false,
@@ -7190,6 +7210,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -7203,8 +7224,10 @@
       "members": [
         {
           "document": "转码模板唯一标识。",
+          "example": "1008",
           "member": "int64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7370,6 +7393,52 @@
         }
       ],
       "type": "object"
+    },
+    "DailyPlayStatInfo": {
+      "document": "播放统计信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件ID。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放次数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PlayTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放流量，单位：字节。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Traffic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeleteAIAnalysisTemplateRequest": {
       "document": "DeleteAIAnalysisTemplate请求参数结构体",
@@ -8575,6 +8644,132 @@
           "document": "内容智能识别模板详情列表。",
           "member": "ContentReviewTemplateItem",
           "name": "ContentReviewTemplateSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDailyMediaPlayStatRequest": {
+      "document": "DescribeDailyMediaPlayStat请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID 。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。该参数仅日期部分有效。",
+          "example": "无",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。该参数仅日期部分有效。",
+          "example": "无",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDailyMediaPlayStatResponse": {
+      "document": "DescribeDailyMediaPlayStat返回参数结构体",
+      "members": [
+        {
+          "document": "播放统计数据。",
+          "example": "无",
+          "member": "DailyPlayStatInfo",
+          "name": "DailyPlayStatInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDailyMostPlayedStatRequest": {
+      "document": "DescribeDailyMostPlayedStat请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。该参数仅日期部分有效。",
+          "example": "无",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名。查询该域名播放 Top100 的媒体文件的统计数据。默认查询所有域名的播放统计数据。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Top 数据的统计指标，取值有：\n<li>Traffic：播放流量，按播放流量统计 Top100 的数据。</li>\n<li>PlayTimes：播放次数，按播放次数统计播放 Top100 的数据。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Metric",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDailyMostPlayedStatResponse": {
+      "document": "DescribeDailyMostPlayedStat返回参数结构体",
+      "members": [
+        {
+          "document": "媒体文件播放统计信息。",
+          "example": "无",
+          "member": "DailyPlayStatInfo",
+          "name": "DailyPlayStatInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15376,6 +15571,7 @@
         {
           "default": "",
           "document": "转码模板唯一标识。",
+          "example": "1008",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -15384,6 +15580,7 @@
         {
           "default": "",
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
           "required": false,
@@ -15392,6 +15589,7 @@
         {
           "default": "",
           "document": "转码模板名称，长度限制：64 个字符。",
+          "example": "转码模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -15400,6 +15598,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "自定义模板1",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -15408,6 +15607,7 @@
         {
           "default": "",
           "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
           "required": false,
@@ -15416,6 +15616,7 @@
         {
           "default": "",
           "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
           "required": false,
@@ -15424,6 +15625,7 @@
         {
           "default": "",
           "document": "视频流配置参数。",
+          "example": "无",
           "member": "VideoTemplateInfoForUpdate",
           "name": "VideoTemplate",
           "required": false,
@@ -15432,6 +15634,7 @@
         {
           "default": "",
           "document": "音频流配置参数。",
+          "example": "无",
           "member": "AudioTemplateInfoForUpdate",
           "name": "AudioTemplate",
           "required": false,
@@ -15440,6 +15643,7 @@
         {
           "default": "",
           "document": "极速高清转码参数。",
+          "example": "无",
           "member": "TEHDConfigForUpdate",
           "name": "TEHDConfig",
           "required": false,
@@ -15448,6 +15652,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,

@@ -514,6 +514,22 @@
         "title": "获取指定个数的内容智能识别模板"
       }
     ],
+    "DescribeDailyMediaPlayStat": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeDailyMediaPlayStat\n&FileId=5285485487985271487\n&StartDate=2021-01-01T00:00:00+08:00\n&EndDate=2021-01-10T00:00:00+08:00\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"DailyPlayStatInfoSet\":[\r\n            {\r\n                 \"FileId\":\"5285485487985271487\",\r\n                \"Date\":\"2021-01-01T00:00:00+08:00\",\r\n                \"PlayTimes\":13,\r\n                \"Traffic\":23434\r\n            },\r\n            {\r\n                \"FileId\":\"5285485487985271487\",\r\n                \"Date\":\"2021-01-02T00:00:00+08:00\",\r\n                \"PlayTimes\":3,\r\n                \"Traffic\":2334\r\n            }\r\n        ],\r\n        \"RequestId\":\"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\r\n    }\r\n}",
+        "title": "查询从2021-01-01到2021-01-02的媒体文件5285485487985271487的播放统计数据"
+      }
+    ],
+    "DescribeDailyMostPlayedStat": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeDailyMostPlayedStat\n&Date=2021-01-01T00:00:00+08:00\n&Metric=PlayTimes\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"DailyPlayStatInfoSet\": [{\r\n            \"Date\": \"2021-01-01T00:00:00+08:00\", \r\n            \"PlayTimes\": 1, \r\n            \"Traffic\": 1234, \r\n            \"FileId\": \"5285485487985271487\"\r\n        }], \r\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\r\n    }\r\n}",
+        "title": "查询20201-01-01 播放次数 Top100 的播放统计数据"
+      }
+    ],
     "DescribeDailyPlayStatFileList": [
       {
         "document": "",
@@ -997,7 +1013,7 @@
     "ModifyTranscodeTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyTranscodeTemplate\n&Definition=1008\n&Container=mp4\n&VideoParam.Codec=libx264\n&VideoParam.Fps=60\n&VideoParam.Bitrate=256\n&AudioParam.Codec=libfdk_aac\n&AudioParam.Bitrate=200\n&AudioParam.SampleRate=200\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyTranscodeTemplate\n&Definition=1008\n&Container=mp4\n&VideoTemplate.Codec=libx264\n&VideoTemplate.Fps=60\n&VideoTemplate.Bitrate=256\n&AudioTemplate.Codec=libfdk_aac\n&AudioTemplate.Bitrate=200\n&AudioTemplate.SampleRate=200\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\r\n  }\r\n}",
         "title": "修改转码模板"
       }

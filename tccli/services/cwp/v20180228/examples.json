@@ -11,7 +11,7 @@
     "AddMachineTag": [
       {
         "document": "增加机器关联标签",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=AddMachineTag\r\n&Quuid=2b6e5770-8e4d-11e9-8127-98be94219792\r\n&TagId=12\r\n&MRegion=ap-guangzhou\r\n&MArea=CVM\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=AddMachineTag\n&Quuid=2b6e5770-8e4d-11e9-8127-98be94219792\n&TagId=12\n&MRegion=ap-guangzhou\n&MArea=CVM\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"  \r\n    }\r\n}",
         "title": "增加机器关联标签"
       }

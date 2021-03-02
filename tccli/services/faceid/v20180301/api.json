@@ -31,7 +31,7 @@
       "output": "CheckIdCardInformationResponse"
     },
     "CheckPhoneAndName": {
-      "document": "本接口用于校验手机号和姓名的真实性和一致性。",
+      "document": "手机号二要素核验接口用于校验手机号和姓名的真实性和一致性，支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。\n",
       "input": "CheckPhoneAndNameRequest",
       "name": "手机号二要素核验",
       "output": "CheckPhoneAndNameResponse"
@@ -145,7 +145,7 @@
       "output": "MobileStatusResponse"
     },
     "PhoneVerification": {
-      "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。",
+      "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
       "input": "PhoneVerificationRequest",
       "name": "手机号三要素核验",
       "output": "PhoneVerificationResponse"
@@ -528,6 +528,7 @@
         {
           "default": "",
           "document": "⼿机号",
+          "example": "1399999999909",
           "member": "string",
           "name": "Mobile",
           "required": true,
@@ -536,6 +537,7 @@
         {
           "default": "",
           "document": "姓名",
+          "example": "李四",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -549,15 +551,19 @@
       "members": [
         {
           "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 验证结果一致\n1: 验证结果不一致\n不收费结果码：\n-1:查无记录\n-2:引擎未知错误\n-3:引擎服务异常",
+          "example": "0",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "业务结果描述",
+          "example": "验证结果一致",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2218,6 +2224,7 @@
         {
           "default": "",
           "document": "身份证号",
+          "example": "1234561999010112345",
           "member": "string",
           "name": "IdCard",
           "required": true,
@@ -2226,6 +2233,7 @@
         {
           "default": "",
           "document": "姓名",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2234,6 +2242,7 @@
         {
           "default": "",
           "document": "手机号",
+          "example": "12345678965",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -2242,6 +2251,7 @@
         {
           "default": "",
           "document": "有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。",
+          "example": "iyuhfafhsad72bd",
           "member": "string",
           "name": "CiphertextBlob",
           "required": false,
@@ -2250,6 +2260,7 @@
         {
           "default": "",
           "document": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个",
+          "example": "[IdCard]",
           "member": "string",
           "name": "EncryptList",
           "required": false,
@@ -2258,6 +2269,7 @@
         {
           "default": "",
           "document": "有加密需求的用户，传入CBC加密的初试向量",
+          "example": "ihds8d0s9fhs8fud0f",
           "member": "string",
           "name": "Iv",
           "required": false,
@@ -2271,15 +2283,19 @@
       "members": [
         {
           "document": "认证结果码:\n收费结果码\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n-5: 手机号未实名\n不收费结果码\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "example": "0",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "业务结果描述。",
+          "example": "认证通过",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

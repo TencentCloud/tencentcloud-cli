@@ -251,7 +251,7 @@
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=PhoneVerification\n&IdCard=440111201903211111\n&Name=张三\n&Phone=13000000000\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"认证通过\",\r\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\r\n    }\r\n}",
-        "title": "认证通过示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=PhoneVerification&SignVe"
+        "title": "认证通过示例"
       }
     ]
   },

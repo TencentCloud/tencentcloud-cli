@@ -11,7 +11,7 @@
     "AssociateSecurityGroups": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=AssociateSecurityGroups\r\n&SecurityGroupId=sg-ajr1jzgj\r\n&InstanceIds.0=cdb-eb2w7dto\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=AssociateSecurityGroups\n&SecurityGroupId=sg-ajr1jzgj\n&InstanceIds.0=cdb-eb2w7dto\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"1a42feb9-82087f71-6a0031ac-699a92a8\"\r\n    }\r\n}",
         "title": "安全组批量绑定云资源"
       }
@@ -399,7 +399,7 @@
     "DescribeDBSecurityGroups": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\r\n&InstanceId=cdb-eb2w7dto\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&InstanceId=cdb-eb2w7dto\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"Groups\":[\r\n            {\r\n                \"Outbound\":[],\r\n                \"SecurityGroupName\":\"CDB\",\r\n                \"Inbound\":[],\r\n                \"ProjectId\":0,\r\n                \"SecurityGroupId\":\"sg-ajr1jzgj\",\r\n                \"SecurityGroupRemark\":\"\",\r\n                \"CreateTime\":\"2017-04-13 15:00:06\"\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "查询实例安全组信息"
       }
@@ -607,7 +607,7 @@
     "DisassociateSecurityGroups": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DisassociateSecurityGroups\r\n&SecurityGroupId=sg-ajr1jzgj\r\n&InstanceIds.0=cdb-eb2w7dto\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DisassociateSecurityGroups\n&SecurityGroupId=sg-ajr1jzgj\n&InstanceIds.0=cdb-eb2w7dto\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"1a42feb9-82087f71-6a0031ac-699a92a8\"\r\n    }\r\n}",
         "title": "安全组批量解绑云资源"
       }
@@ -711,7 +711,7 @@
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceSecurityGroups\r\n&InstanceId=cdb-eb2w7dto\r\n&SecurityGroupIds.0=sg-ajr1jzgj\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceSecurityGroups\n&InstanceId=cdb-eb2w7dto\n&SecurityGroupIds.0=sg-ajr1jzgj\n&<公共请求参数>",
         "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"1a42feb9-82087f71-6a0031ac-699a92a8\"\r\n    }\r\n}",
         "title": "修改云数据库安全组"
       }

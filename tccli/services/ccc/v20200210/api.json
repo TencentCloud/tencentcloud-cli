@@ -36,6 +36,18 @@
       "name": "获取坐席用户列表",
       "output": "DescribeSeatUserListResponse"
     },
+    "DescribeSkillGroupInfoList": {
+      "document": "获取技能组信息列表",
+      "input": "DescribeSkillGroupInfoListRequest",
+      "name": "获取技能组信息列表",
+      "output": "DescribeSkillGroupInfoListResponse"
+    },
+    "DescribeStaffInfoList": {
+      "document": "获取坐席信息列表",
+      "input": "DescribeStaffInfoListRequest",
+      "name": "获取坐席信息列表",
+      "output": "DescribeStaffInfoListResponse"
+    },
     "DescribeTelCallInfo": {
       "document": "按实例获取电话消耗统计",
       "input": "DescribeTelCallInfoRequest",
@@ -419,6 +431,168 @@
           "example": "0",
           "member": "SeatUserInfo",
           "name": "SeatUsers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillGroupInfoListRequest": {
+      "document": "DescribeSkillGroupInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页尺寸，上限 100",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "技能组ID，查询单个技能组时使用",
+          "example": "12",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询修改时间大于等于ModifiedTime的技能组时使用",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillGroupInfoListResponse": {
+      "document": "DescribeSkillGroupInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "技能组总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "技能组信息列表",
+          "example": "无",
+          "member": "SkillGroupInfoItem",
+          "name": "SkillGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaffInfoListRequest": {
+      "document": "DescribeStaffInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页尺寸，上限 100",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "坐席账号，查询单个坐席时使用",
+          "example": "102992@qq.com",
+          "member": "string",
+          "name": "StaffMail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询修改时间大于等于ModifiedTime的坐席时使用",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaffInfoListResponse": {
+      "document": "DescribeStaffInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "坐席用户总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "坐席用户信息列表",
+          "example": "无",
+          "member": "StaffInfo",
+          "name": "StaffList",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1097,6 +1271,204 @@
           "name": "SkillGroupName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillGroupInfoItem": {
+      "document": "技能组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "技能组ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "技能组名称",
+          "example": "Test",
+          "member": "string",
+          "name": "SkillGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型：IM、TEL、ALL（全媒体）",
+          "example": "IM",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话分配策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fifo",
+          "member": "string",
+          "name": "RoutePolicy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "会话分配是否优先上次服务坐席\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsingLastSeat",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单客服最大并发数（电话类型默认1）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "LastModifyTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillGroupItem": {
+      "document": "技能组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "技能组ID",
+          "example": "101",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "技能组名称",
+          "example": "Test",
+          "member": "string",
+          "name": "SkillGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型：IM、TEL、ALL（全媒体）",
+          "example": "IM",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StaffInfo": {
+      "document": "带有技能组优先级的坐席信息",
+      "members": [
+        {
+          "default": "",
+          "document": "坐席名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xiaowang",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "坐席邮箱",
+          "example": "10982291@qq.com",
+          "member": "string",
+          "name": "Mail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18092226822",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "坐席昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xiaohong",
+          "member": "string",
+          "name": "Nick",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "坐席工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101",
+          "member": "string",
+          "name": "StaffNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "SkillGroupItem",
+          "name": "SkillGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1614149408",
+          "member": "int64",
+          "name": "LastModifyTimestamp",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

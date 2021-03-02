@@ -4722,6 +4722,7 @@
         {
           "default": "",
           "document": "任务名称，任务长度64字符",
+          "example": "test",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -4730,6 +4731,7 @@
         {
           "default": "",
           "document": "任务内容，长度限制65536个字节",
+          "example": "com.example.task.simpleTask",
           "member": "string",
           "name": "TaskContent",
           "required": true,
@@ -4738,6 +4740,7 @@
         {
           "default": "",
           "document": "执行类型，UNICAST/BROADCAST",
+          "example": "UNICAST",
           "member": "string",
           "name": "ExecuteType",
           "required": true,
@@ -4746,6 +4749,7 @@
         {
           "default": "",
           "document": "任务类型",
+          "example": "JAVA",
           "member": "string",
           "name": "TaskType",
           "required": true,
@@ -4754,6 +4758,7 @@
         {
           "default": "",
           "document": "任务超时时间， 时间单位 ms",
+          "example": "30000",
           "member": "uint64",
           "name": "TimeOut",
           "required": true,
@@ -4762,6 +4767,7 @@
         {
           "default": "",
           "document": "部署组ID",
+          "example": "group-12345678",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -4770,6 +4776,7 @@
         {
           "default": "",
           "document": "触发规则",
+          "example": "无",
           "member": "TaskRule",
           "name": "TaskRule",
           "required": false,
@@ -4778,6 +4785,7 @@
         {
           "default": "",
           "document": "重试次数，0 <= RetryCount<= 10",
+          "example": "0",
           "member": "uint64",
           "name": "RetryCount",
           "required": false,
@@ -4786,6 +4794,7 @@
         {
           "default": "",
           "document": "重试间隔， 0 <= RetryInterval <= 600000， 时间单位 ms",
+          "example": "0",
           "member": "uint64",
           "name": "RetryInterval",
           "required": false,
@@ -4794,6 +4803,7 @@
         {
           "default": "",
           "document": "分片数量",
+          "example": "0",
           "member": "int64",
           "name": "ShardCount",
           "required": false,
@@ -4802,6 +4812,7 @@
         {
           "default": "",
           "document": "分片参数",
+          "example": "无",
           "member": "ShardArgument",
           "name": "ShardArguments",
           "required": false,
@@ -4810,6 +4821,7 @@
         {
           "default": "",
           "document": "判断任务成功的操作符",
+          "example": "GTE",
           "member": "string",
           "name": "SuccessOperator",
           "required": false,
@@ -4817,7 +4829,8 @@
         },
         {
           "default": "",
-          "document": "判断任务成功率的阈值，如99.99",
+          "document": "判断任务成功率的阈值，如100",
+          "example": "100",
           "member": "string",
           "name": "SuccessRatio",
           "required": false,
@@ -4826,6 +4839,7 @@
         {
           "default": "",
           "document": "高级设置",
+          "example": "无",
           "member": "AdvanceSettings",
           "name": "AdvanceSettings",
           "required": false,
@@ -4834,6 +4848,7 @@
         {
           "default": "",
           "document": "任务参数，长度限制10000个字符",
+          "example": "taskArgumentTest",
           "member": "string",
           "name": "TaskArgument",
           "required": false,
@@ -4847,8 +4862,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "task-12345678",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14270,6 +14287,7 @@
         {
           "default": "",
           "document": "触发规则类型, Cron/Repeat",
+          "example": "Cron",
           "member": "string",
           "name": "RuleType",
           "required": true,
@@ -14279,6 +14297,7 @@
         {
           "default": "",
           "document": "Cron类型规则，cron表达式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0 0/1 * * * ?",
           "member": "string",
           "name": "Expression",
           "required": false,
@@ -14288,14 +14307,15 @@
         {
           "default": "",
           "document": "时间间隔， 单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "RepeatInterval",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TerminateTaskFlowBatchRequest": {
       "document": "TerminateTaskFlowBatch请求参数结构体",

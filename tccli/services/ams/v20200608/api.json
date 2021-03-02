@@ -1527,6 +1527,7 @@
         {
           "default": "",
           "document": "音频截帧频率。默认一分钟",
+          "example": "0",
           "member": "int64",
           "name": "AudioFrequency",
           "required": true,
@@ -1536,6 +1537,7 @@
         {
           "default": "",
           "document": "图片取帧频率, 单位（秒/帧），默认 5， 可选 1 ～ 300",
+          "example": "0",
           "member": "int64",
           "name": "ImageFrequency",
           "required": false,
@@ -1545,6 +1547,7 @@
         {
           "default": "",
           "document": "异步回调地址。",
+          "example": "0",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -1554,6 +1557,7 @@
         {
           "default": "",
           "document": "临时文件存储位置",
+          "example": "0",
           "member": "FileOutput",
           "name": "SegmentOutput",
           "required": false,
@@ -1563,6 +1567,7 @@
         {
           "default": "",
           "document": "是否使用OCR，默认为true",
+          "example": "0",
           "member": "bool",
           "name": "UseOCR",
           "required": false,
@@ -1572,6 +1577,7 @@
         {
           "default": "",
           "document": "是否使用音频。（音频场景下，该值永远为true）",
+          "example": "0",
           "member": "bool",
           "name": "UseAudio",
           "required": false,

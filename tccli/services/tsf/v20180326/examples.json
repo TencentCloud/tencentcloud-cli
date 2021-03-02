@@ -179,7 +179,7 @@
     "CreateTask": [
       {
         "document": "创建任务",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateTask\n&TaskName=test\n&TaskContent=com.example.task.simpleTask\n&TaskArgument=taskArgumentTest\n&ExecuteType=UNICAST\n&TaskType=JAVA\n&TaskRule.RuleType=Cron\n&TaskRule.Expression=00/1****?\n&TimeOut=30000\n&GroupId=group-12345678\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateTask\n&TaskName=test\n&TaskContent=com.example.task.simpleTask\n&TaskArgument=taskArgumentTest\n&ExecuteType=UNICAST\n&TaskType=JAVA\n&TaskRule.RuleType=Cron\n&TaskRule.RepeatInterval=0\n&TaskRule.Expression=00/1****?\n&TimeOut=30000\n&GroupId=group-12345678\n&<公共请求参数>",
         "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\r\n    \"Result\": \"task-12345678\"\r\n  }\r\n}",
         "title": "创建任务"
       }

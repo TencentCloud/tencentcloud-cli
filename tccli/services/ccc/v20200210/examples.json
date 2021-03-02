@@ -48,6 +48,22 @@
         "title": "获取坐席用户列表示例"
       }
     ],
+    "DescribeSkillGroupInfoList": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeSkillGroupInfoList\n&SdkAppId=1400000000\n&SkillGroupId=12\n&ModifiedTime=1590147606\n&PageSize=10\n&PageNumber=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\r\n        \"TotalCount\":2,\r\n        \"SkillGroupList\":[\r\n            {\r\n                \"SkillGroupId\":1115,\r\n                \"SkillGroupName\":\"luluttt\",\r\n                \"Type\":\"TEL\",\r\n                \"RoutePolicy\":\"firstCreate\",\r\n                \"UsingLastSeat\":0,\r\n                \"MaxConcurrency\":1,\r\n                \"LastModifyTimestamp\":1613976392\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取技能组列表示例"
+      }
+    ],
+    "DescribeStaffInfoList": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeStaffInfoList\n&SdkAppId=1400000000\n&StaffMail=“121223@qq.com”\n&ModifiedTime=1590147606\n&PageSize=10\n&PageNumber=0\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\r\n        \"TotalCount\":602,\r\n        \"StaffList\":[\r\n            {\r\n                \"Name\":\"xiao\",\r\n                \"Mail\":\"1000273@qq.com\",\r\n                \"Phone\":\"008617636049517\",\r\n                \"Nick\":\"测试3\",\r\n                \"StaffNumber\":\"125\",\r\n                \"SkillGroupList\":[\r\n                    {\r\n                        \"SkillGroupId\":53,\r\n                        \"SkillGroupName\":\"ALL-dingoding-测试\",\r\n                        \"Priority\":3,\r\n                        \"Type\":\"ALL\"\r\n                    },\r\n                    {\r\n                        \"SkillGroupId\":82,\r\n                        \"SkillGroupName\":\"uu\",\r\n                        \"Priority\":1,\r\n                        \"Type\":\"IM\"\r\n                    }\r\n                ],\r\n                \"LastModifyTimestamp\":1613988825\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取坐席列表示例"
+      }
+    ],
     "DescribeTelCallInfo": [
       {
         "document": "",
