@@ -248,6 +248,14 @@
         "title": "查询备机的容灾地域和可用区"
       }
     ],
+    "DescribeDBCharsets": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeDBCharsets\n&InstanceId=mssql-njj2mtpl\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DatabaseCharsets\": [\"SQL_EBCDIC1141_CP1_CS_AS\", \"SQL_EBCDIC277_2_CP1_CS_AS\", \"SQL_Ukrainian_CP1251_CI_AS\", \"SQL_Ukrainian_CP1251_CS_AS\"],\r\n\t\t\"RequestId\": \"b28ec299-0063-4195-9273-ebac5cdc485c\"\r\n\t}\r\n}",
+        "title": "查询数据库字符集"
+      }
+    ],
     "DescribeDBInstances": [
       {
         "document": "",

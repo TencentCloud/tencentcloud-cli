@@ -168,6 +168,12 @@
       "name": "查询备机的容灾地域和可用区",
       "output": "DescribeCrossRegionZoneResponse"
     },
+    "DescribeDBCharsets": {
+      "document": "本接口（DescribeDBCharsets）用于查询实例支持的数据库字符集。",
+      "input": "DescribeDBCharsetsRequest",
+      "name": "查询数据库字符集",
+      "output": "DescribeDBCharsetsResponse"
+    },
     "DescribeDBInstances": {
       "document": "本接口(DescribeDBInstances)用于查询实例列表。",
       "input": "DescribeDBInstancesRequest",
@@ -3487,6 +3493,42 @@
           "member": "string",
           "name": "Zone",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCharsetsRequest": {
+      "document": "DescribeDBCharsets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如mssql-j8kv137v",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCharsetsResponse": {
+      "document": "DescribeDBCharsets返回参数结构体",
+      "members": [
+        {
+          "document": "数据库字符集列表",
+          "example": "[\"SQL_EBCDIC1141_CP1_CS_AS\"]",
+          "member": "string",
+          "name": "DatabaseCharsets",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

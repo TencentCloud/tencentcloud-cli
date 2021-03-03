@@ -12,6 +12,12 @@
       "name": "查询执行详细信息",
       "output": "DescribeExecutionResponse"
     },
+    "DescribeExecutionHistory": {
+      "document": "一次执行会有很多步骤，经过很多节点，这个接口描述某一次执行的事件的历史",
+      "input": "DescribeExecutionHistoryRequest",
+      "name": "查询执行的事件历史",
+      "output": "DescribeExecutionHistoryResponse"
+    },
     "DescribeExecutions": {
       "document": "对状态机的执行历史进行描述.",
       "input": "DescribeExecutionsRequest",
@@ -127,6 +133,42 @@
           "member": "string",
           "name": "CreateDate",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionHistoryRequest": {
+      "document": "DescribeExecutionHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行资源名",
+          "example": "qrn:qcs:asw:ap-guangzhou:12345:http:json:flowmachine:bfhzs4j8",
+          "member": "string",
+          "name": "ExecutionResourceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionHistoryResponse": {
+      "document": "DescribeExecutionHistory返回参数结构体",
+      "members": [
+        {
+          "document": "执行的事件列表",
+          "example": "无",
+          "member": "ExecutionEvent",
+          "name": "Events",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -422,6 +464,84 @@
         }
       ],
       "type": "object"
+    },
+    "ExecutionEvent": {
+      "document": "执行的事件历史",
+      "members": [
+        {
+          "default": "",
+          "document": "执行资源名",
+          "member": "string",
+          "name": "ExecutionResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自增序号",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型",
+          "member": "string",
+          "name": "EventCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "步骤节点名称",
+          "member": "string",
+          "name": "StepName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该步骤引用的资源名",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该事件发生时间，毫秒",
+          "member": "string",
+          "name": "Timestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Exception",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "模版过滤类型",

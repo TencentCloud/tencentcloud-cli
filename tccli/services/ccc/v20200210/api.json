@@ -31,9 +31,9 @@
       "output": "DescribePSTNActiveSessionListResponse"
     },
     "DescribeSeatUserList": {
-      "document": "获取坐席用户列表",
+      "document": "获取坐席用户列表（废弃）",
       "input": "DescribeSeatUserListRequest",
-      "name": "获取坐席用户列表",
+      "name": "获取坐席用户列表（废弃）",
       "output": "DescribeSeatUserListResponse"
     },
     "DescribeSkillGroupInfoList": {
@@ -428,7 +428,7 @@
         },
         {
           "document": "坐席用户信息列表",
-          "example": "0",
+          "example": "无",
           "member": "SeatUserInfo",
           "name": "SeatUsers",
           "required": true,

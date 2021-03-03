@@ -5974,7 +5974,7 @@
         {
           "default": "",
           "document": "实例是否保留, 1-保留，0-不保留,默认",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "ReserveValue",
           "required": false,

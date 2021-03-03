@@ -1081,6 +1081,42 @@
       ],
       "usage": "out"
     },
+    "Encryption": {
+      "document": "敏感数据加密",
+      "members": [
+        {
+          "default": "",
+          "document": "有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。",
+          "example": "null",
+          "member": "string",
+          "name": "CiphertextBlob",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段",
+          "example": "null",
+          "member": "string",
+          "name": "EncryptList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有加密需求的用户，传入CBC加密的初始向量",
+          "example": "null",
+          "member": "string",
+          "name": "Iv",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "GetActionSequenceRequest": {
       "document": "GetActionSequence请求参数结构体",
       "members": [
@@ -2059,6 +2095,7 @@
         {
           "default": "",
           "document": "参与校验的参数类型。\n0：使用手机号进行校验；\n1：使用姓名与身份证号进行校验。",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -2067,6 +2104,7 @@
         {
           "default": "",
           "document": "手机号，11位数字，\n特别提示：\n手机号验证只限制在腾讯健康守护可信模型覆盖的数据范围内，与手机号本身在运营商是否实名无关联，不在范围会提示“手机号未实名”，建议客户与传入姓名和身份证号信息组合使用。",
+          "example": "无",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -2075,6 +2113,7 @@
         {
           "default": "",
           "document": "身份证号码。",
+          "example": "无",
           "member": "string",
           "name": "IdCard",
           "required": false,
@@ -2083,10 +2122,20 @@
         {
           "default": "",
           "document": "姓名。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2096,22 +2145,28 @@
       "members": [
         {
           "document": "结果码，收费情况如下。\n收费结果码：\n0: 成年\n-1: 未成年\n-3: 姓名和身份证号不一致\n\n不收费结果码：\n-2: 未查询到手机号信息\n-4: 非法身份证号（长度、校验位等不正确）\n-5: 非法姓名（长度、格式等不正确）\n-6: 权威数据源服务异常\n-7: 未查询到身份信息\n-8: 权威数据源升级中，请稍后再试",
+          "example": "无",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "业务结果描述。",
+          "example": "无",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "该字段的值为年龄区间。格式为[a,b)，\n[0,8)表示年龄小于8周岁区间，不包括8岁；\n[8,16)表示年龄8-16周岁区间，不包括16岁；\n[16,18)表示年龄16-18周岁区间，不包括18岁；\n[18,+)表示年龄大于18周岁。",
+          "example": "无",
           "member": "string",
           "name": "AgeRange",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

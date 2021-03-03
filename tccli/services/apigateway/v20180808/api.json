@@ -2278,6 +2278,7 @@
         {
           "default": "",
           "document": "服务的唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -2286,6 +2287,7 @@
         {
           "default": "",
           "document": "用户自定义的策略名称。",
+          "example": "xx",
           "member": "string",
           "name": "StrategyName",
           "required": true,
@@ -2294,6 +2296,7 @@
         {
           "default": "",
           "document": "策略类型。支持WHITE（白名单）和BLACK（黑名单）。",
+          "example": "WHITE",
           "member": "string",
           "name": "StrategyType",
           "required": true,
@@ -2301,7 +2304,8 @@
         },
         {
           "default": "",
-          "document": "策略详情。",
+          "document": "策略详情，多个ip 使用\\n 分隔符分开。",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "StrategyData",
           "required": true,
@@ -2315,8 +2319,10 @@
       "members": [
         {
           "document": "新建的IP策略详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IPStrategy",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

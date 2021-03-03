@@ -51,8 +51,8 @@
     "CreateIPStrategy": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateIPStrategy\n&ServiceId=service-ody35h5e\n&StrategyName=xx\n&StrategyType=WHITE\n&StrategyData=1.1.1.1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ServiceId\": \"service-ody35h5e\",\r\n            \"StrategyId\": \"IPStrategy-4xj4r1ou\",\r\n            \"StrategyName\": \"xx\",\r\n            \"StrategyType\": \"WHITE\",\r\n            \"StrategyData\": \"1.1.1.1\",\r\n            \"CreatedTime\": \"2020-02-24T19:02:00Z\",\r\n            \"ModifiedTime\": \"2020-02-24T19:02:00Z\",\r\n            \"BindApiTotalCount\": null,\r\n            \"BindApis\": null\r\n        },\r\n        \"RequestId\": \"4336cff4-1d75-433b-8823-bcf8fa8773c6\"\r\n    }\r\n}",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateIPStrategy\n&ServiceId=service-ody35h5e\n&StrategyName=xx\n&StrategyType=WHITE\n&StrategyData=1.1.1.1\\n2.2.2.2\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ServiceId\": \"service-ody35h5e\",\r\n            \"StrategyId\": \"IPStrategy-4xj4r1ou\",\r\n            \"StrategyName\": \"xx\",\r\n            \"StrategyType\": \"WHITE\",\r\n            \"StrategyData\": \"1.1.1.1\\n2.2.2.2\",\r\n            \"CreatedTime\": \"2020-02-24T19:02:00Z\",\r\n            \"ModifiedTime\": \"2020-02-24T19:02:00Z\",\r\n            \"BindApiTotalCount\": null,\r\n            \"BindApis\": null\r\n        },\r\n        \"RequestId\": \"4336cff4-1d75-433b-8823-bcf8fa8773c6\"\r\n    }\r\n}",
         "title": "CreateIPStrategy"
       }
     ],

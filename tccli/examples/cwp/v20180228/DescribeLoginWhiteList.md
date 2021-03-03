@@ -14,49 +14,55 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": "2",
+        "TotalCount": 1,
+        "RequestId": "xx",
         "LoginWhiteLists": [
             {
-                "Id": 1,
-                "Uuid": "d2973ed0-6334-11e8-87cc-92be94217eaa",
+                "UserName": "xx",
+                "Uuid": "xx",
                 "Places": [
                     {
-                        "CountryId": "1",
-                        "ProvinceId": "1",
-                        "CityId": "1"
+                        "CityId": 1,
+                        "CountryId": 1,
+                        "ProvinceId": 1
                     },
                     {
-                        "CountryId": "1",
-                        "ProvinceId": "2",
-                        "CityId": "2"
+                        "CityId": 1,
+                        "CountryId": 1,
+                        "ProvinceId": 1
                     }
                 ],
-                "CreateTime": "2019-09-09 11:00:02",
-                "ModifyTime": "2019-09-09 15:37:31",
-                "UserName": "guest, abc, 123",
-                "SrcIp": "8.8.8.8, 192.168.0.1/24",
-                "Quuid": "910c95a5-04b1-4d99-aa3c-a261e51b81bf",
-                "IsGlobal": true
+                "MachineName": "xx",
+                "HostIp": "xx",
+                "IsGlobal": true,
+                "CreateTime": "2020-09-22 00:00:00",
+                "StartTime": "xx",
+                "ModifyTime": "2020-09-22 00:00:00",
+                "SrcIp": "xx",
+                "EndTime": "xx",
+                "Id": 1
             },
             {
-                "Id": 2,
-                "Uuid": "fb8c1b1a-5e2c-11e8-bb3b-00e021e1b24b",
+                "UserName": "xx",
+                "Uuid": "xx",
                 "Places": [
                     {
-                        "CountryId": "1",
-                        "ProvinceId": "1",
-                        "CityId": "1"
+                        "CityId": 1,
+                        "CountryId": 1,
+                        "ProvinceId": 1
                     }
                 ],
-                "CreateTime": "2019-09-09 11:00:02",
-                "ModifyTime": "2019-09-09 11:00:02",
-                "UserName": "guest",
-                "SrcIp": "10.1.1.1, 192.168.0.1/24",
-                "Quuid": "910c95a5-04b1-4d99-aa3c-a261e51b81bf",
-                "IsGlobal": true
+                "MachineName": "xx",
+                "ModifyTime": "2020-09-22 00:00:00",
+                "IsGlobal": true,
+                "Id": 1,
+                "StartTime": "xx",
+                "HostIp": "xx",
+                "SrcIp": "xx",
+                "EndTime": "xx",
+                "CreateTime": "2020-09-22 00:00:00"
             }
-        ],
-        "RequestId": "8bcb699a-5ba3-ebcf-f569-d5f5e5271414"
+        ]
     }
 }
 ```

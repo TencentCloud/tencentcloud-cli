@@ -1038,6 +1038,31 @@ def doDescribeOverviewStatistics(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAttackVulTypeList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAttackVulTypeListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAttackVulTypeList(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeOpenPortTaskStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1688,7 +1713,7 @@ def doAddLoginWhiteList(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeProcessStatistics(args, parsed_globals):
+def doExportNonlocalLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1702,9 +1727,9 @@ def doDescribeProcessStatistics(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeProcessStatisticsRequest()
+    model = models.ExportNonlocalLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeProcessStatistics(model)
+    rsp = client.ExportNonlocalLoginPlaces(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2138,7 +2163,7 @@ def doDescribeHistoryAccounts(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doExportNonlocalLoginPlaces(args, parsed_globals):
+def doDescribeProcessStatistics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2152,9 +2177,9 @@ def doExportNonlocalLoginPlaces(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ExportNonlocalLoginPlacesRequest()
+    model = models.DescribeProcessStatisticsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ExportNonlocalLoginPlaces(model)
+    rsp = client.DescribeProcessStatistics(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2765,6 +2790,7 @@ ACTION_MAP = {
     "DescribeNonlocalLoginPlaces": doDescribeNonlocalLoginPlaces,
     "ExportPrivilegeEvents": doExportPrivilegeEvents,
     "DescribeOverviewStatistics": doDescribeOverviewStatistics,
+    "DescribeAttackVulTypeList": doDescribeAttackVulTypeList,
     "DescribeOpenPortTaskStatus": doDescribeOpenPortTaskStatus,
     "DescribeSecurityDynamics": doDescribeSecurityDynamics,
     "DeleteReverseShellEvents": doDeleteReverseShellEvents,
@@ -2791,7 +2817,7 @@ ACTION_MAP = {
     "ModifyAlarmAttribute": doModifyAlarmAttribute,
     "SeparateMalwares": doSeparateMalwares,
     "AddLoginWhiteList": doAddLoginWhiteList,
-    "DescribeProcessStatistics": doDescribeProcessStatistics,
+    "ExportNonlocalLoginPlaces": doExportNonlocalLoginPlaces,
     "DescribeMalwareInfo": doDescribeMalwareInfo,
     "DescribeMaliciousRequests": doDescribeMaliciousRequests,
     "DeleteBashRules": doDeleteBashRules,
@@ -2809,7 +2835,7 @@ ACTION_MAP = {
     "DescribeLoginWhiteList": doDescribeLoginWhiteList,
     "DescribeVulScanResult": doDescribeVulScanResult,
     "DescribeHistoryAccounts": doDescribeHistoryAccounts,
-    "ExportNonlocalLoginPlaces": doExportNonlocalLoginPlaces,
+    "DescribeProcessStatistics": doDescribeProcessStatistics,
     "DescribeWeeklyReportBruteAttacks": doDescribeWeeklyReportBruteAttacks,
     "UntrustMalwares": doUntrustMalwares,
     "DescribeWeeklyReportVuls": doDescribeWeeklyReportVuls,

@@ -14,147 +14,67 @@ Output:
 ```
 {
     "Response": {
-        "Malware": [
+        "ReverseShells": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 301
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 301
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 311
-            }
-        ],
-        "NonLocalLogin": [
-            {
-                "Date": "2020-06-20",
-                "EventNum": 1
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 1
-            },
-            {
-                "Date": "2020-06-22",
+                "Date": "2020-09-22",
                 "EventNum": 1
             }
         ],
-        "BruteattackSuccess": [
+        "NonLocalLoginPlaces": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 0
+                "Date": "2020-09-22",
+                "EventNum": 1
             }
         ],
-        "Vul": [
+        "MaliciousRequests": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 0
+                "Date": "2020-09-22",
+                "EventNum": 1
             }
         ],
-        "Baseline": [
+        "Vuls": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 8
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 8
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 8
+                "Date": "2020-09-22",
+                "EventNum": 1
             }
         ],
-        "MaliciousRequest": [
+        "PrivilegeEscalations": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 0
+                "Date": "2020-09-22",
+                "EventNum": 1
             }
         ],
-        "HighRiskBash": [
+        "Malwares": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 0
+                "Date": "2020-09-22",
+                "EventNum": 1
             }
         ],
-        "ReverseShell": [
+        "RequestId": "xx",
+        "BruteAttacks": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 0
+                "Date": "2020-09-22",
+                "EventNum": 1
             }
         ],
-        "PrivilegeEscalation": [
+        "BaseLines": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 0
+                "Date": "2020-09-22",
+                "EventNum": 1
             }
         ],
-        "CyberAttack": [
+        "CyberAttacks": [
             {
-                "Date": "2020-06-20",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-21",
-                "EventNum": 0
-            },
-            {
-                "Date": "2020-06-22",
-                "EventNum": 0
+                "Date": "2020-09-22",
+                "EventNum": 1
             }
         ],
-        "RequestId": "64643b63-303d-e52c-d262-38222e7dba8f"
+        "HighRiskBashs": [
+            {
+                "Date": "2020-09-22",
+                "EventNum": 1
+            }
+        ]
     }
 }
 ```
