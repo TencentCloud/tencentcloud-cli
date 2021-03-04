@@ -75,7 +75,7 @@
     "AppGetDeviceStatuses": [
       {
         "document": "批量获取绑定绑定设备状态",
-        "input": "https://iot.tencentcloudapi.com/?Action=AppGetDeviceStatuses\r\n&AccessToken=xxx\r\n&DeviceIds.0=ap-guangzhou/iot-a8ojgbji&/abc\r\n&DeviceIds.1=ap-guangzhou/iot-a8ojgbji&/aaa\r\n&<公共请求参数>",
+        "input": "https://iot.tencentcloudapi.com/?Action=AppGetDeviceStatuses\n&AccessToken=xxx\n&DeviceIds.0=ap-guangzhou/iot-a8ojgbji/abc\n&DeviceIds.1=ap-guangzhou/iot-a8ojgbji/aaa\n&<公共请求参数>",
         "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3fa7d395-c1ff-4ede-beec-59afdeded8e9\",\r\n        \"DeviceStatuses\": [\r\n            {\r\n                \"DeviceId\": \"ap-guangzhou/iot-a8ojgbji&/abc\",\r\n                \"Status\": \"offline\"\r\n            },\r\n            {\r\n                \"DeviceId\": \"ap-guangzhou/iot-a8ojgbji&/aaa\",\r\n                \"Status\": \"online\"\r\n            }\r\n        ]\r\n    }\r\n}",
         "title": "批量获取绑定绑定设备状态"
       }

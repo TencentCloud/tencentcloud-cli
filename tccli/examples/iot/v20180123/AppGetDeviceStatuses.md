@@ -7,7 +7,7 @@ Input:
 ```
 tccli iot AppGetDeviceStatuses --cli-unfold-argument  \
     --AccessToken xxx \
-    --DeviceIds ap-guangzhou/iot-a8ojgbji ap-guangzhou/iot-a8ojgbji
+    --DeviceIds ap-guangzhou/iot-a8ojgbji/abc ap-guangzhou/iot-a8ojgbji/aaa
 ```
 
 Output: 
