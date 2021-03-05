@@ -28,7 +28,6 @@ Output:
                     "CpuRequest": "",
                     "MemLimit": "4096.00",
                     "GroupName": "test",
-                    "Reponame": "tsf_410xxxxxxx/test",
                     "CreateTime": "",
                     "NamespaceId": "namespace-xxxxxxx",
                     "MemRequest": "",

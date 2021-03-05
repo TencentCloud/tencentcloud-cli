@@ -16,7 +16,6 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "OriginalInstanceTypePrice": 0.15,
                 "UnitPrice": 0.2,
                 "UnitPriceThirdStep": 0.1,
                 "Discount": 40,
@@ -73,7 +72,6 @@ Output:
         "Price": {
             "InstancePrice": {
                 "DiscountPrice": 1804.9,
-                "OriginalInstanceTypePrice": 8832,
                 "OriginalPrice": 8884.5,
                 "Discount": 20
             },
@@ -121,7 +119,6 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "OriginalInstanceTypePrice": 15.95,
                 "UnitPrice": 16.09,
                 "UnitPriceThirdStep": 16.09,
                 "Discount": 21,

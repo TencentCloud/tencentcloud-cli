@@ -998,7 +998,6 @@ Output:
                     "CoverUrl": "",
                     "Type": "png",
                     "MediaUrl": "http://xxx.com/Tmf3xphxGoUA.png",
-                    "IntranetMediaUrl": "",
                     "TagSet": [],
                     "StorageRegion": "ap-shanghai",
                     "SourceInfo": {
@@ -1033,7 +1032,6 @@ Output:
                     "CoverUrl": "",
                     "Type": "png",
                     "MediaUrl": "http://xxx/uAgVpElena0A.png",
-                    "IntranetMediaUrl": "",
                     "TagSet": [],
                     "StorageRegion": "ap-shanghai",
                     "SourceInfo": {

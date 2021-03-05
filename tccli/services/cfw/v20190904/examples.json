@@ -3,40 +3,40 @@
     "CreateAcRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcRules\n<公共请求参数>\n\n{\n   \t\t\"Data\": [{\n\t\t\t\"OrderIndex\": 17,\n\t\t\t\"SourceIp\": \"0.0.0.0/0\",\n\t\t\t\"TargetIp\": \"0.0.0.0/0\",\n\t\t\t\"Protocol\": \"TCP\",\n\t\t\t\"Port\": \"-1/-1\",\n\t\t\t\"Strategy\": \"0\",\n\t\t\t\"Detail\": \"test\",\n\t\t\t\"CloudCode\": \"\",\n\t\t\t\"SourceType\": 1,\n\t\t\t\"TargetType\": 1,\n\t\t\t\"Direction\": 1,\n\t\t\t\"IsRegion\": 0,\n\t\t\t\"Country\": 0,\n\t\t\t\"City\": 0,\n\t\t\t\"CityName\": \"\",\n\t\t\t\"CountryName\": \"\"\n\t\t}],\n\t\t\"Type\": 0,\n\t\t\"EdgeId\": \"\",\n\t\t\"InstanceId\": \"\",\n\t\t\"Area\": \"\",\n\t\t\"Enable\": 1\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"Info\":\"\",\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcRules\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"OrderIndex\": 17,\n            \"SourceIp\": \"0.0.0.0/0\",\n            \"TargetIp\": \"0.0.0.0/0\",\n            \"Protocol\": \"TCP\",\n            \"Port\": \"-1/-1\",\n            \"Strategy\": \"0\",\n            \"Detail\": \"test\",\n            \"CloudCode\": \"\",\n            \"SourceType\": 1,\n            \"TargetType\": 1,\n            \"Direction\": 1,\n            \"IsRegion\": 0,\n            \"Country\": 0,\n            \"City\": 0,\n            \"CityName\": \"\",\n            \"CountryName\": \"\"\n        }\n    ],\n    \"Type\": 0,\n    \"EdgeId\": \"\",\n    \"InstanceId\": \"\",\n    \"Area\": \"\",\n    \"Enable\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建规则"
       }
     ],
     "CreateSecurityGroupApiRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupApiRules\n<公共请求参数>\n\n{\n   \t\t\"Data\": [{\n\t\t\t\"SourceId\": \"0.0.0.0/0\",\n\t\t\t\"TargetId\": \"119.29.186.197\",\n\t\t\t\"Protocol\": \"ANY\",\n\t\t\t\"Port\": \"-1/-1\",\n\t\t\t\"Strategy\": \"1\",\n\t\t\t\"Detail\": \"test\",\n                        \"RuleType\": 1\n\t\t}],\n\t\t\"Type\": 0,\n\t\t\"Area\": \"\",\n\t\t\"Direction\": 1\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupApiRules\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"SourceId\": \"0.0.0.0/0\",\n            \"TargetId\": \"119.29.186.197\",\n            \"Protocol\": \"ANY\",\n            \"Port\": \"-1/-1\",\n            \"Strategy\": \"1\",\n            \"Detail\": \"test\",\n            \"RuleType\": 1\n        }\n    ],\n    \"Type\": 0,\n    \"Area\": \"\",\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建安全组API规则"
       }
     ],
     "DeleteAcRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAcRule\n<公共请求参数>\n\n{\n\"Id\": 36069,\n\t\t\"Direction\": 1,\n\t\t\"EdgeId\": \"\",\n\t\t\"Area\": \"\"\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n\"Info\": \"\",\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAcRule\n<公共请求参数>\n\n{\n    \"Id\": 36069,\n    \"Direction\": 1,\n    \"EdgeId\": \"\",\n    \"Area\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除规则"
       }
     ],
     "DeleteAllAccessControlRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAllAccessControlRule\n<公共请求参数>\n\n{\n\"Area\":\"\",\n\"EdgeId\":\"\",\n\"Direction\":\"0\"\n}",
-        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n\"Info\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n    }",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAllAccessControlRule\n<公共请求参数>\n\n{\n    \"Area\": \"\",\n    \"EdgeId\": \"\",\n    \"Direction\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "全部删除规则"
       }
     ],
     "DeleteSecurityGroupAllRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupAllRule\n<公共请求参数>\n\n{\n    \"Area\":\"ap-guangzhou\",\n    \"Direction\":\"0\"\n}",
-        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"Info\": \"\",\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n    }",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupAllRule\n<公共请求参数>\n\n{\n    \"Area\": \"ap-guangzhou\",\n    \"Direction\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "删除全部安全组规则"
       }
     ],
@@ -44,23 +44,23 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupRule\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Area\": \"ap-guangzhou\",\n    \"Direction\": 0,\n    \"IsDelReverse\": 0\n}",
-        "output": "{\r\n    \"Response\": {\r\n        \"Status\": 0,\r\n         \"Info\": \"\",\r\n         \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除安全组规则"
       }
     ],
     "DescribeAcLists": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcLists\n<公共请求参数>\n\n{\n\t\"EdgeId\": \"\",\n\t\"Protocol\": \"TCP\",\n\t\"Strategy\": \"\",\n\t\"SearchValue\": \"\",\n\t\"Direction\": 1,\n\t\"Limit\": 20,\n\t\"Offset\": 0,\n\t\"Area\": \"\"\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Total\": 0,\r\n    \"AllTotal\": 0,\r\n    \"Enable\":1,\r\n    \"Data\": [],\r\n    \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcLists\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\",\n    \"Protocol\": \"TCP\",\n    \"Strategy\": \"\",\n    \"SearchValue\": \"\",\n    \"Direction\": 1,\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"Area\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"AllTotal\": 0,\n        \"Enable\": 1,\n        \"Data\": []\n    }\n}",
         "title": "访问控制列表"
       }
     ],
     "DescribeAssociatedInstanceList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssociatedInstanceList\n<公共请求参数>\n\n{\n\t\"SearchValue\": \"\",\n\t\"Offset\": 0,\n\t\"Limit\": 10,\n\t\"SecurityGroupId\": \"\",\n\t\"Type\": \"\",\n\t\"By\": \"\",\n\t\"Order\": \"\",\n\t\"Area\": \"ap-beijing\"\n}",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Data\": [{\r\n\t\t\t\t\"InstanceId\": \"eni-4ymwnaoe\",\r\n\t\t\t\t\"InstanceName\": \"test-private\",\r\n\t\t\t\t\"Type\": 5,\r\n\t\t\t\t\"VpcId\": \"vpc-406waega\",\r\n\t\t\t\t\"VpcName\": \"vpc---\",\r\n\t\t\t\t\"PublicIp\": \"\",\r\n\t\t\t\t\"Ip\": \"192.168.0.13,192.168.0.3\",\r\n\t\t\t\t\"SecurityGroupCount\": 1\r\n\t\t\t}, {\r\n\t\t\t\t\"InstanceId\": \"eni-oskydbvm\",\r\n\t\t\t\t\"InstanceName\": \"privat-test\",\r\n\t\t\t\t\"Type\": 5,\r\n\t\t\t\t\"VpcId\": \"vpc-dvc0qmmm\",\r\n\t\t\t\t\"VpcName\": \"Dno\",\r\n\t\t\t\t\"PublicIp\": \"\",\r\n\t\t\t\t\"Ip\": \"172.21.0.12\",\r\n\t\t\t\t\"SecurityGroupCount\": 0\r\n\t\t\t}],\r\n\t\t\t\"Total\": 2,\r\n\t\t\"RequestId\": \"8f563b4d-8151-4db0-a822-9bde279d2079\"\r\n\t}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssociatedInstanceList\n<公共请求参数>\n\n{\n    \"SearchValue\": \"\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"SecurityGroupId\": \"\",\n    \"Type\": \"\",\n    \"By\": \"\",\n    \"Order\": \"\",\n    \"Area\": \"ap-beijing\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"InstanceId\": \"eni-4ymwnaoe\",\n                \"InstanceName\": \"test-private\",\n                \"Type\": 5,\n                \"VpcId\": \"vpc-406waega\",\n                \"VpcName\": \"vpc---\",\n                \"PublicIp\": \"\",\n                \"Ip\": \"192.168.0.13,192.168.0.3\",\n                \"SecurityGroupCount\": 1\n            },\n            {\n                \"InstanceId\": \"eni-oskydbvm\",\n                \"InstanceName\": \"privat-test\",\n                \"Type\": 5,\n                \"VpcId\": \"vpc-dvc0qmmm\",\n                \"VpcName\": \"Dno\",\n                \"PublicIp\": \"\",\n                \"Ip\": \"172.21.0.12\",\n                \"SecurityGroupCount\": 0\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"8f563b4d-8151-4db0-a822-9bde279d2079\"\n    }\n}",
         "title": "查询安全组关联实例列表"
       }
     ],
@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "https://cfw.tencentcloudapi.com/?Action=DescribeNatRuleOverview\n&Direction=1\n&Area=ap-chongqing\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"InstanceId\": \"cfwnat-f3250045\",\r\n\t\t\"InstanceName\": \"nat-name\",\r\n\t\t\"EipList\": [\"192.168.0.1\", \"10.10.10.10\"],\r\n\t\t\"DnatNum\": 10,\r\n\t\t\"TotalNum\": 100,\r\n\t\t\"RemainNum\": 4900,\r\n\t\t\"BlockNum\": 50,\r\n\t\t\"EnableNum\": 10,\r\n\t\t\"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"cfwnat-f3250045\",\n        \"InstanceName\": \"nat-name\",\n        \"EipList\": [\n            \"192.168.0.1\",\n            \"10.10.10.10\"\n        ],\n        \"DnatNum\": 10,\n        \"TotalNum\": 100,\n        \"RemainNum\": 4900,\n        \"BlockNum\": 50,\n        \"EnableNum\": 10,\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
         "title": "nat规则列表概况"
       }
     ],
@@ -76,23 +76,23 @@
       {
         "document": "",
         "input": "https://cfw.tencentcloudapi.com/?Action=DescribeRuleOverview\n&Placement.Zone=ap-guangzhou-2\n&<公共请求参数>",
-        "output": "{\r\n        \"Response\": {\r\n            \"AllTotal\": 100,\r\n            \"StrategyNum\": 70,\r\n            \"StartRuleNum\": 70,\r\n            \"StopRuleNum\":  30,\r\n            \"RemainingNum\":  30,\r\n            \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\r\n        }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotal\": 100,\n        \"StrategyNum\": 70,\n        \"StartRuleNum\": 70,\n        \"StopRuleNum\": 30,\n        \"RemainingNum\": 30,\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
         "title": "查询规则列表概况"
       }
     ],
     "DescribeSecurityGroupList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupList\n<公共请求参数>\n\n{\n\t\"SearchValue\": \"\",\n\t\"Direction\": 1,\n\t\"Limit\": 20,\n\t\"Offset\": 0,\n        \"Filter\": 0,\n        \"Status\": \"\",\n\t\"Area\": \"ap-guangzhou\"\n}",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Total\": 0,\r\n\t\t\"AllTotal\": 0,\r\n\t\t\"Enable\":1,\r\n\t\t\"Data\": [\r\n\t\t\t{\r\n\t\t\t\t\"Status\": 1, \r\n\t\t\t\t\"TargetType\": 1, \r\n\t\t\t\t\"VpcId\": \"vpc-khmhp1co1\", \r\n\t\t\t\t\"Protocol\": \"ANY\", \r\n\t\t\t\t\"SourceType\": 1, \r\n\t\t\t\t\"IsNew\": 1, \r\n\t\t\t\t\"SourceId\": \"ins-1kub1g5f\", \r\n\t\t\t\t\"Port\": \"-1/-1\", \r\n\t\t\t\t\"TargetId\": \"0.0.0.0/0\", \r\n\t\t\t\t\"Detail\": \"添加规则test\", \r\n\t\t\t\t\"PrivateIp\": \"172.27.0.17\", \r\n\t\t\t\t\"PublicIp\": \"119.27.187.24\", \r\n\t\t\t\t\"OrderIndex\": 1, \r\n\t\t\t\t\"SubnetId\": \"subnet-9qs6catf\", \r\n\t\t\t\t\"Cidr\": \"\", \r\n\t\t\t\t\"Strategy\": 1, \r\n\t\t\t\t\"InstanceName\": \"成都多协议-勿删（勿删勿删勿删勿删）\", \r\n\t\t\t\t\"Id\": 1, \r\n\t\t\t\t\"BothWay\": 1\r\n\t\t\t}\t\t\t\r\n\t\t],\r\n\t\t\"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n\t}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupList\n<公共请求参数>\n\n{\n    \"SearchValue\": \"\",\n    \"Direction\": 1,\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"Filter\": 0,\n    \"Status\": \"\",\n    \"Area\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"AllTotal\": 0,\n        \"Enable\": 1,\n        \"Data\": [\n            {\n                \"Status\": 1,\n                \"TargetType\": 1,\n                \"VpcId\": \"vpc-khmhp1co1\",\n                \"Protocol\": \"ANY\",\n                \"SourceType\": 1,\n                \"IsNew\": 1,\n                \"SourceId\": \"ins-1kub1g5f\",\n                \"Port\": \"-1/-1\",\n                \"TargetId\": \"0.0.0.0/0\",\n                \"Detail\": \"添加规则test\",\n                \"PrivateIp\": \"172.27.0.17\",\n                \"PublicIp\": \"119.27.187.24\",\n                \"OrderIndex\": 1,\n                \"SubnetId\": \"subnet-9qs6catf\",\n                \"Cidr\": \"\",\n                \"Strategy\": 1,\n                \"InstanceName\": \"成都多协议-勿删（勿删勿删勿删勿删）\",\n                \"Id\": 1,\n                \"BothWay\": 1\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询安全组规则列表"
       }
     ],
     "DescribeSwitchLists": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSwitchLists\n<公共请求参数>\n\n{\n\"SearchValue\": \"\",\n\t\t\"Status\": -1,\n\t\t\"Type\": \"\",\n\t\t\"Area\": \"\",\n\t\t\"Limit\": 10,\n\t\t\"Offset\": 0,\n\t\t\"Order\": \"\",\n\t\t\"By\": \"\"\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Total\": 110,\r\n    \"Data\": [],\r\n    \"AreaLists\": [],\r\n   \"OffNum\": 10,\r\n   \"OnNum\": 10,\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSwitchLists\n<公共请求参数>\n\n{\n    \"SearchValue\": \"\",\n    \"Status\": -1,\n    \"Type\": \"\",\n    \"Area\": \"\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"\",\n    \"By\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 110,\n        \"Data\": [],\n        \"AreaLists\": [],\n        \"OffNum\": 10,\n        \"OnNum\": 10,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "防火墙开关列表"
       }
     ],
@@ -100,79 +100,79 @@
       {
         "document": "",
         "input": "https://cfw.tencentcloudapi.com/?Action=DescribeSyncAssetStatus\n&Type=1\n&<公共请求参数>",
-        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n    }",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "同步资产状态查询-互联网&VPC"
       }
     ],
     "DescribeTableStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableStatus\n<公共请求参数>\n\n{\n    \"Status\": 0, \n    \"Direction\": 0, \n    \"EdgeId\": \"\", \n    \"Area\": \"\"\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableStatus\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"Direction\": 0,\n    \"EdgeId\": \"\",\n    \"Area\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询规则表状态"
       }
     ],
     "DescribeVpcRuleOverview": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcRuleOverview\n<公共请求参数>\n\n{\n\"EdgeId\": \"\"\n}",
-        "output": "{\r\n        \"Response\": {\r\n            \"StrategyNum\": 70,\r\n             \"StartRuleNum\": 70,\r\n            \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\r\n        }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcRuleOverview\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StrategyNum\": 70,\n        \"StartRuleNum\": 70,\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
         "title": "vpc规则列表概况"
       }
     ],
     "ModifyAcRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcRule\n<公共请求参数>\n\n{\n\"Data\": [{\n\t\t\t\"OrderIndex\": 4,\n\t\t\t\"Id\": 36064,\n\t\t\t\"SourceIp\": \"0.0.0.0/0\",\n\t\t\t\"TargetIp\": \"0.0.0.0/0\",\n\t\t\t\"Protocol\": \"TCP\",\n\t\t\t\"Port\": \"-1/-1\",\n\t\t\t\"Strategy\": \"0\",\n\t\t\t\"Detail\": \"333\",\n\t\t\t\"IsRegion\": 0,\n\t\t\t\"Country\": 0,\n\t\t\t\"City\": 0,\n\t\t\t\"CloudCode\": \"\",\n\t\t\t\"SourceType\": 1,\n\t\t\t\"TargetType\": 1,\n\t\t\t\"Direction\": 1,\n\t\t\t\"CityName\": \"\",\n\t\t\t\"CountryName\": \"\"\n\t\t}],\n\t\t\"EdgeId\": \"\",\n\t\t\"Enable\": 1,\n\t\t\"Area\": \"\"\n}",
-        "output": "{\r\n\"Response\":{\r\n\"Status\": 0,\r\n\"Info\": \"\",\r\n\"RequestId\": \"5cdfff8d-bd3b-4411-91be-2117d4205f0f\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcRule\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"OrderIndex\": 4,\n            \"Id\": 36064,\n            \"SourceIp\": \"0.0.0.0/0\",\n            \"TargetIp\": \"0.0.0.0/0\",\n            \"Protocol\": \"TCP\",\n            \"Port\": \"-1/-1\",\n            \"Strategy\": \"0\",\n            \"Detail\": \"333\",\n            \"IsRegion\": 0,\n            \"Country\": 0,\n            \"City\": 0,\n            \"CloudCode\": \"\",\n            \"SourceType\": 1,\n            \"TargetType\": 1,\n            \"Direction\": 1,\n            \"CityName\": \"\",\n            \"CountryName\": \"\"\n        }\n    ],\n    \"EdgeId\": \"\",\n    \"Enable\": 1,\n    \"Area\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"5cdfff8d-bd3b-4411-91be-2117d4205f0f\"\n    }\n}",
         "title": "修改规则"
       }
     ],
     "ModifyAllRuleStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllRuleStatus\n<公共请求参数>\n\n{\n\"EdgeId\": \"\",\n\t\t\"Status\": 1,\n\t\t\"Direction\": 1,\n\t\t\"Area\": \"\"\n}",
-        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n }",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllRuleStatus\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\",\n    \"Status\": 1,\n    \"Direction\": 1,\n    \"Area\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "启用停用全部规则"
       }
     ],
     "ModifyAllSwitchStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllSwitchStatus\n<公共请求参数>\n\n{\n\t\"Ids\": [],\n\t\"Status\": 0,\n\t\"Type\": 2,\n\t\"ChangeType\": 3,\n\t\"Area\": \"ap-shanghai\"\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllSwitchStatus\n<公共请求参数>\n\n{\n    \"Ids\": [],\n    \"Status\": 0,\n    \"Type\": 2,\n    \"ChangeType\": 3,\n    \"Area\": \"ap-shanghai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "一键开启和关闭"
       }
     ],
     "ModifyItemSwitchStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyItemSwitchStatus\n<公共请求参数>\n\n{\n\t\"Id\": 341,\n\t\"Status\": 1,\n\t\"Type\": 1\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyItemSwitchStatus\n<公共请求参数>\n\n{\n    \"Id\": 341,\n    \"Status\": 1,\n    \"Type\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改单个防火墙开关"
       }
     ],
     "ModifySecurityGroupAllRuleStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupAllRuleStatus\n<公共请求参数>\n\n{\n\"EdgeId\": \"\",\n\t\t\"Status\": 1,\n\t\t\"Direction\": 1,\n\t\t\"Area\": \"\"\n}",
-        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n }",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupAllRuleStatus\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\",\n    \"Status\": 1,\n    \"Direction\": 1,\n    \"Area\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "启用停用全部安全组规则"
       }
     ],
     "ModifySequenceRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySequenceRules\n<公共请求参数>\n\n{\n\"Data\": [{\n\t\t\t\"Id\": 36114,\n\t\t\t\"OrderIndex\": 8,\n\t\t\t\"NewOrderIndex\": 7\n\t\t}, {\n\t\t\t\"Id\": 36068,\n\t\t\t\"OrderIndex\": 7,\n\t\t\t\"NewOrderIndex\": 8\n\t\t}],\n\t\t\"EdgeId\": \"\",\n\t\t\"Direction\": 1,\n\t\t\"Area\": \"\"\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Status\":0,\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySequenceRules\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"Id\": 36114,\n            \"OrderIndex\": 8,\n            \"NewOrderIndex\": 7\n        },\n        {\n            \"Id\": 36068,\n            \"OrderIndex\": 7,\n            \"NewOrderIndex\": 8\n        }\n    ],\n    \"EdgeId\": \"\",\n    \"Direction\": 1,\n    \"Area\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改规则执行顺序"
       }
     ],
     "ModifyTableStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTableStatus\n<公共请求参数>\n\n{\n\"EdgeId\": \"\",\n\t\t\"Area\": \"\",\n\t\t\"Status\": 2,\n\t\t\"Direction\": 1\n}",
-        "output": "{\r\n\"Response\": {\r\n    \"Status\": 0,\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n}\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTableStatus\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\",\n    \"Area\": \"\",\n    \"Status\": 2,\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改规则表状态"
       }
     ],
@@ -180,7 +180,7 @@
       {
         "document": "",
         "input": "https://cfw.tencentcloudapi.com/?Action=RunSyncAsset\n&Type=1\n&<公共请求参数>",
-        "output": "{\r\n        \"Response\": {\r\n            \"Status\": 0,\r\n            \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\r\n        }\r\n    }",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "同步资产-互联网&VPC"
       }
     ]

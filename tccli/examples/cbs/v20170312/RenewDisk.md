@@ -38,11 +38,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "55db49cf-b9d7-da27-825b-5a02ba6884ca",
-        "DiskPrice": {
-            "DiscountPrice": 9.0,
-            "OriginalPrice": 9.0
-        }
+        "RequestId": "55db49cf-b9d7-da27-825b-5a02ba6884ca"
     }
 }
 ```

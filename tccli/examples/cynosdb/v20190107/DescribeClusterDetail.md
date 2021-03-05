@@ -15,7 +15,6 @@ Output:
     "Response": {
         "Detail": {
             "UsedStorage": 129417216,
-            "RWSplitVport": 5432,
             "VpcId": "vpc-1ptuei0b",
             "SubnetId": "subnet-1tmw9t4o",
             "Vport": 5432,
@@ -23,17 +22,12 @@ Output:
             "DbType": "POSTGRESQL",
             "SubnetName": "cynosdb-test",
             "CreateTime": "2018-12-03 17:04:07",
-            "WanPort": 0,
             "Charset": "UTF8",
             "Vip": "10.0.1.5",
             "Region": "ap-guangzhou",
             "ClusterName": "funnyTest",
             "StatusDesc": "运行中",
-            "Uin": "3374998458",
-            "WanDomain": "",
-            "RWSplitVip": "10.0.1.5",
             "DbVersion": "10.0",
-            "AppId": 1251006243,
             "Status": "running",
             "InstanceSet": [
                 {

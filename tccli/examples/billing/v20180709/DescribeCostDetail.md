@@ -29,7 +29,6 @@ Output:
             "ActionTypeName": "月结",
             "OrderId": "201907",
             "BillId": "20190612020000003179923224518398",
-            "PayTime": "2019-06-12 14:56:05",
             "FeeBeginTime": "2019-06-01 00:00:00",
             "FeeEndTime": "2019-06-30 23:59:59",
             "ProductCode": "sp_ai_image_huiyan_idbankcard",

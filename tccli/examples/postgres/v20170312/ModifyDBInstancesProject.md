@@ -36,11 +36,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "08fdf411-5d39-44f2-8e1d-a58ee60b237d",
-        "Error": {
-            "Message": "Failed to get instance",
-            "Code": "InternalError.DBError"
-        }
+        "RequestId": "08fdf411-5d39-44f2-8e1d-a58ee60b237d"
     }
 }
 ```

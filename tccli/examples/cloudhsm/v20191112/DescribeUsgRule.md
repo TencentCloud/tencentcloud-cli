@@ -16,8 +16,6 @@ Output:
         "SgRules": [
             {
                 "Version": 0,
-                "UsgId": "UsgIdxxxxx",
-                "UsgName": "UsgNamexxxxxx",
                 "InBound": {
                     "Ip": "xxxxx",
                     "Id": "xxxxxxx",

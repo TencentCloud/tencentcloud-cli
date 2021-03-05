@@ -15,9 +15,7 @@ tccli iotcloud UploadFirmware --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {
-        "RequestID": "xxxxxxxxxxxxxxxxxxxxxxx"
-    }
+    "Response": {}
 }
 ```
 

@@ -28,8 +28,7 @@ Output:
                     "ServerName": null,
                     "OriginPullProtocol": "http",
                     "BackupOrigins": [],
-                    "BackupOriginType": null,
-                    "BackupServerName": null
+                    "BackupOriginType": null
                 },
                 "ProjectId": 0,
                 "Readonly": "normal",

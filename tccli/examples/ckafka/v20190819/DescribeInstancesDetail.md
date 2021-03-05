@@ -23,7 +23,6 @@ Output:
                 {
                     "InstanceId": "instance-will-s",
                     "InstanceName": "treTest",
-                    "IfCommunity": true,
                     "Status": 1
                 }
             ]

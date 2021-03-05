@@ -18,7 +18,6 @@ Output:
             "Ingress": [
                 {
                     "PolicyIndex": 0,
-                    "Direction": "INGRESS",
                     "ServiceTemplate": {
                         "ServiceId": "ppm-f5n1f8da"
                     },
@@ -31,7 +30,6 @@ Output:
                 },
                 {
                     "PolicyIndex": 1,
-                    "Direction": "INGRESS",
                     "ServiceTemplate": {
                         "ServiceId": "ppm-f5n1f8da"
                     },
@@ -46,7 +44,6 @@ Output:
             "Egress": [
                 {
                     "PolicyIndex": 0,
-                    "Direction": "EGRESS",
                     "ServiceTemplate": {
                         "ServiceId": "ppm-f5n1f8da"
                     },

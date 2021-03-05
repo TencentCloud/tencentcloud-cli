@@ -24,7 +24,6 @@ Output:
                 "UpdatedOn": "2020-06-10 20:08:50",
                 "CreatedOn": "2020-06-10 20:08:44",
                 "Reason": "",
-                "Action": "new",
                 "Id": 1
             }
         ]

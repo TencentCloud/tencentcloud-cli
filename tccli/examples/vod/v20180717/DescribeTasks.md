@@ -17,35 +17,30 @@ Output:
         "TaskSet": [
             {
                 "TaskId": "taskId1",
-                "Type": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
             },
             {
                 "TaskId": "taskId2",
-                "Type": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
             },
             {
                 "TaskId": "taskId3",
-                "Type": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
             },
             {
                 "TaskId": "taskId4",
-                "Type": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
             },
             {
                 "TaskId": "taskId5",
-                "Type": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -77,7 +72,6 @@ Output:
         "TaskSet": [
             {
                 "TaskId": "taskId6",
-                "Type": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -108,7 +102,6 @@ Output:
         "TaskSet": [
             {
                 "TaskId": "taskId7",
-                "Type": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": null

@@ -33,10 +33,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.ModelIdNotFound",
-            "Message": "未查找到素材id。"
-        },
         "RequestId": "9208c1e0-d2e2-493f-9a46-299c02824625"
     }
 }

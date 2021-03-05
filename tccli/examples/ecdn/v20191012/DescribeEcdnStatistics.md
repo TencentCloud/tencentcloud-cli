@@ -24,10 +24,6 @@ Output:
                 "Resource": "www.test.com",
                 "EcdnData": [
                     {
-                        "Metric": [
-                            "flux",
-                            "request"
-                        ],
                         "DetailData": [
                             {
                                 "Time": "2019-12-13 00:00:00",

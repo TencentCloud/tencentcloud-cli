@@ -16,25 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "2d4387ee-2011-449e-a32b-87f9366f3ef4",
-        "TotalCount": 2,
-        "RedisBackupSet": [
-            {
-                "StartTime": "2018-09-04 12:51:21",
-                "BackupId": "2e4127f8-affe-11e8-941e-4846fb00c75d",
-                "BackupType": "0",
-                "Status": 2,
-                "Remark": "测试使用",
-                "Locked": 0
-            },
-            {
-                "StartTime": "2018-09-04 12:53:06",
-                "BackupId": "6cbbf53a-affe-11e8-905b-4846fb00c75d",
-                "BackupType": "0",
-                "Status": 2,
-                "Remark": "xxx",
-                "Locked": 0
-            }
-        ]
+        "TotalCount": 2
     }
 }
 ```

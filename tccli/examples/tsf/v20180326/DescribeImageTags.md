@@ -36,7 +36,6 @@ Output:
                 }
             ],
             "TotalCount": 1,
-            "Reponame": "tsf_10000617xxxx/test",
             "Server": "ccr.ccs.tencentyun.com"
         }
     }

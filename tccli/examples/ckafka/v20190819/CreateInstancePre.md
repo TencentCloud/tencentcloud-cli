@@ -16,19 +16,7 @@ tccli ckafka CreateInstancePre --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {
-        "Result": {
-            "ReturnCode": "0",
-            "ReturnMessage": "ok",
-            "Data": {
-                "FlowId": 0,
-                "DealNames": [
-                    "1111111111"
-                ]
-            }
-        },
-        "RequestId": "1ba4ac83-1e9e-497b-b3e1-4c10872a4068"
-    }
+    "Response": {}
 }
 ```
 

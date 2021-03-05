@@ -16,10 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c7b1680d-db03-4f20-8684-a865ce7bcd38",
-        "InstanceId": "tdsql-fdpjf5zh",
-        "UserName": "testuser1",
-        "Host": "172.17.%"
+        "RequestId": "c7b1680d-db03-4f20-8684-a865ce7bcd38"
     }
 }
 ```

@@ -31,11 +31,8 @@ Output:
                     "Protocol": "HTTP",
                     "IsDebugAfterCharge": false,
                     "AuthType": "NONE",
-                    "ApiBuniessType": "NORMAL",
                     "AuthRelationApiId": "",
-                    "AuthRequired": true,
                     "OauthConfig": null,
-                    "TokenLocation": null,
                     "RelationBuniessApiIds": null,
                     "Tags": []
                 }

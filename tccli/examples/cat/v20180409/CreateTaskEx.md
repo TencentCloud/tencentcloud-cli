@@ -18,8 +18,7 @@ Output:
 {
     "Response": {
         "ResultId": 28330,
-        "TaskId": 24454,
-        "RequestID": "6de91190-a148-97a4-a935-f44cf51e1d61"
+        "TaskId": 24454
     }
 }
 ```

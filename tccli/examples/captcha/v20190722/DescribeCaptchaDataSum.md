@@ -22,9 +22,7 @@ Output:
         "VfySuccSum": 112,
         "VfySum": 110,
         "AttackSum": 13,
-        "CheckTicketSum": 100,
-        "TicketThroughputSum": 90,
-        "TicketInterceptSum": 10
+        "CheckTicketSum": 100
     }
 }
 ```

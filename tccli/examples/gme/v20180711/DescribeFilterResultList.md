@@ -21,80 +21,70 @@ Output:
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             },
             {
                 "BizId": 0,
                 "Data": [],
                 "FileId": "test_file_id",
                 "FileName": "test_file_name",
-                "OpenId": "",
-                "TimeStamp": "0000-00-00 00:00:00"
+                "OpenId": ""
             }
         ],
         "RequestId": "xxxxx",

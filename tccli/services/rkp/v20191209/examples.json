@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://rkp.tencentcloudapi.com/?Action=GetOpenId&DeviceToken=aaaa&BusinessId=1&\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n               \"OpenId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n                \"RiskInfo\": []\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"OpenId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"RiskInfo\": []\n    }\n}",
         "title": "probeTokenQ"
       }
     ],
@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "https://rkp.tencentcloudapi.com/?Action=RPGetToken&BusinessId=1&Scene=2\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n                \"Token\": \"fafdafldsf;jds\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Token\": \"fafdafldsf;jds\"\n    }\n}",
         "title": "RPGetToken"
       }
     ],
@@ -20,7 +20,7 @@
       {
         "document": "",
         "input": "https://rkp.tencentcloudapi.com/?Action=QueryDevAndRisk&DevType=0\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\r\n                \"Found\": -1\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Found\": -1\n    }\n}",
         "title": "DevQ接口"
       }
     ]

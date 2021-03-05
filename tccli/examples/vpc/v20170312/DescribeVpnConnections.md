@@ -43,8 +43,6 @@ Output:
                 "IPSECOptionsSpecification": {
                     "EncryptAlgorithm": "3DES-CBC",
                     "IntegrityAlgorith": "MD5",
-                    "EncapMode": "TUNNEL",
-                    "SecurityProto": "ESP",
                     "PfsDhGroup": "NULL",
                     "IPSECSaLifetimeSeconds": "3600",
                     "IPSECSaLifetimeTraffic": "1843200"

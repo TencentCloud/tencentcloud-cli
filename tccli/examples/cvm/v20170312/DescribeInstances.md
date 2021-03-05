@@ -36,11 +36,6 @@ Output:
                 ],
                 "Tags": [],
                 "InstanceId": "ins-9bxebleo",
-                "PhysicalPosition": {
-                    "PosId": "48C7C7A369705E6F3FE45126D39F2915",
-                    "SwitchId": "A5A6ACC7CB106C396E3CF7477C883FB4",
-                    "RackId": "DFE8AC9E645197818BE0B55AEAF0DD17"
-                },
                 "ImageId": "img-9qabwvbn",
                 "StopChargingMode": "NOT_APPLICABLE",
                 "InstanceChargeType": "PREPAID",
@@ -66,7 +61,6 @@ Output:
                 ],
                 "InstanceName": "测试实例",
                 "DataDisks": null,
-                "IsolatedSource": "NOTISOLATED",
                 "VirtualPrivateCloud": {
                     "SubnetId": "subnet-a2676p0e",
                     "AsVpcGateway": false,
@@ -124,18 +118,11 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "tagKey": "city",
                         "Value": "shenzhen",
-                        "tagValue": "shenzhen",
                         "Key": "city"
                     }
                 ],
                 "InstanceId": "ins-9bxebleo",
-                "PhysicalPosition": {
-                    "PosId": "48C7C7A369705E6F3FE45126D39F2915",
-                    "SwitchId": "A5A6ACC7CB106C396E3CF7477C883FB4",
-                    "RackId": "DFE8AC9E645197818BE0B55AEAF0DD17"
-                },
                 "ImageId": "img-9qabwvbn",
                 "StopChargingMode": "NOT_APPLICABLE",
                 "InstanceChargeType": "PREPAID",
@@ -161,7 +148,6 @@ Output:
                 ],
                 "InstanceName": "测试实例",
                 "DataDisks": null,
-                "IsolatedSource": "NOTISOLATED",
                 "VirtualPrivateCloud": {
                     "SubnetId": "subnet-a2676p0e",
                     "AsVpcGateway": false,
@@ -219,11 +205,6 @@ Output:
                 ],
                 "Tags": [],
                 "InstanceId": "ins-9bxebleo",
-                "PhysicalPosition": {
-                    "PosId": "48C7C7A369705E6F3FE45126D39F2915",
-                    "SwitchId": "A5A6ACC7CB106C396E3CF7477C883FB4",
-                    "RackId": "DFE8AC9E645197818BE0B55AEAF0DD17"
-                },
                 "ImageId": "img-9qabwvbn",
                 "StopChargingMode": "NOT_APPLICABLE",
                 "InstanceChargeType": "PREPAID",
@@ -249,7 +230,6 @@ Output:
                 ],
                 "InstanceName": "测试实例",
                 "DataDisks": null,
-                "IsolatedSource": "NOTISOLATED",
                 "VirtualPrivateCloud": {
                     "SubnetId": "subnet-a2676p0e",
                     "AsVpcGateway": false,

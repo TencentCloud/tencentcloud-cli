@@ -31,8 +31,7 @@ Output:
         ],
         "OutputDataConfig": {
             "CosOutputBucket": "ti-ap-guangzhou-100005457260-1256633383",
-            "CosOutputKeyPrefix": "",
-            "FileSystemOutputPath": ""
+            "CosOutputKeyPrefix": ""
         },
         "StoppingCondition": {
             "MaxRuntimeInSeconds": 86400

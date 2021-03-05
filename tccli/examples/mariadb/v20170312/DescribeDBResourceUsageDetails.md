@@ -43,15 +43,6 @@ Output:
                 ],
                 "StartTime": "2018-03-24 00:00:00"
             },
-            "MemHitRate": {
-                "EndTime": "2018-03-24 23:59:59",
-                "Data": [
-                    1,
-                    1,
-                    1
-                ],
-                "StartTime": "2018-03-24 00:00:00"
-            },
             "DataDiskAvailable": {
                 "EndTime": "2018-03-24 23:59:59",
                 "Data": [
@@ -82,15 +73,6 @@ Output:
                 "StartTime": "2018-03-24 00:00:00"
             },
             "MemAvailable": {
-                "EndTime": "2018-03-24 23:59:59",
-                "Data": [
-                    1,
-                    1,
-                    1
-                ],
-                "StartTime": "2018-03-24 00:00:00"
-            },
-            "MemHitRate": {
                 "EndTime": "2018-03-24 23:59:59",
                 "Data": [
                     1,

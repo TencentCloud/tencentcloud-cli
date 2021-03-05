@@ -78,10 +78,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation.PABankError",
-            "Message": "E90006:%E6%97%A0%E5%8C%B9%E9%85%8D%E7%9A%84%E4%BC%9A%E5%91%98%E5%AD%90%E8%B4%A6%E6%88%B7%E6%88%96%E4%BC%9A%E5%91%98%E5%AD%90%E8%B4%A6%E6%88%B7%E5%B7%B2%E5%A4%B1%E6%95%88"
-        },
         "RequestType": "MemberRechargeThirdPayAns",
         "RequestId": "67257811-59c6-4f19-acf3-51b388a2f9f5"
     }

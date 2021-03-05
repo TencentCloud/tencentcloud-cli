@@ -36,10 +36,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation.GroupLostFaces",
-            "Message": "人员库中人脸图片丢失，详情可参见https://iaiface-upgradegroup-failedface-1254418846.cos.ap-guangzhou.myqcloud.com/1253657503/1002.json"
-        },
         "RequestId": "3ad7ccb4-29b5-46b4-adcd-69fd6728d530"
     }
 }

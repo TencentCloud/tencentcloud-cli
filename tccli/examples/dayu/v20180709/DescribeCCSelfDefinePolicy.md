@@ -19,13 +19,10 @@ Output:
         "Policys": [
             {
                 "SetId": 1262,
-                "Business": "bgp",
-                "Rsid": "bgp-000000xe",
                 "Name": "12434",
                 "Smode": "matching",
                 "Frequency": 0,
                 "ExeMode": "drop",
-                "ExeDuration": "0",
                 "Switch": 1,
                 "CreateTime": "2019-04-24 12:32:12",
                 "RuleList": [

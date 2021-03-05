@@ -37,7 +37,6 @@ Output:
             "MsgRetentionTime": 1440,
             "Config": {
                 "AutoCreateTopicsEnable": true,
-                "NumPartitions": 3,
                 "DefaultReplicationFactor": 2
             },
             "RemainderPartitions": 45,

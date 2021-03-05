@@ -41,10 +41,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.PersonIdNotExist",
-            "Message": "人员ID不存在。"
-        },
         "RequestId": "98b4a0bc-802b-4764-9701-bc0c6c544395"
     }
 }

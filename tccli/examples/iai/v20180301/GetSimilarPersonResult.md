@@ -35,10 +35,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation.JobIdNotExist",
-            "Message": "人员查重记录不存在。"
-        },
         "RequestId": "b0b17778-2f4a-4286-9896-5b1732513c71"
     }
 }

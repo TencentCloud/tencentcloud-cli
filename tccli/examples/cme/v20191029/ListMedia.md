@@ -30,7 +30,6 @@ Output:
                         "Type": "PERSON"
                     },
                     "PreviewUrl": "",
-                    "TagSet": null,
                     "UpdateTime": "2019-11-20T02:43:29Z"
                 }
             }

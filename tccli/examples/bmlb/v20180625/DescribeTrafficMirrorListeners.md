@@ -22,10 +22,8 @@ Output:
                 "Bandwidth": 0,
                 "MaxBandwidth": 0,
                 "ListenerType": "L7Listener",
-                "SSLMode": 0,
                 "CertId": "",
                 "CertCaId": "",
-                "Status": 1,
                 "AddTimestamp": "2018-10-11 15:29:42",
                 "LoadBalancerId": "lb-gdr96fc7",
                 "VpcName": "cassiehe",
@@ -33,8 +31,7 @@ Output:
                 "LoadBalancerVips": [
                     "115.159.240.85"
                 ],
-                "LoadBalancerName": "5c1-LB",
-                "BindTrafficMirror": 0
+                "LoadBalancerName": "5c1-LB"
             }
         ],
         "TotalCount": 1,

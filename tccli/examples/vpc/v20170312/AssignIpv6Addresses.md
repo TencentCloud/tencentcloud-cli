@@ -24,7 +24,6 @@ Output:
                 "Address": "3402:4e00:20:1202::1",
                 "AddressId": "",
                 "Primary": false,
-                "PublicIpAddress": "3402:4e00:20:1202::1",
                 "Description": "test1",
                 "IsWanIpBlocked": false,
                 "State": "PENDING"
@@ -33,7 +32,6 @@ Output:
                 "Address": "3402:4e00:20:1202::2",
                 "AddressId": "",
                 "Primary": false,
-                "PublicIpAddress": "3402:4e00:20:1202::2",
                 "Description": "test2",
                 "IsWanIpBlocked": false,
                 "State": "PENDING"
@@ -65,7 +63,6 @@ Output:
                 "Address": "3402:4e00:20:1202:0:8d05:c272:f514",
                 "AddressId": "",
                 "Primary": false,
-                "PublicIpAddress": "3402:4e00:20:1202:0:8d05:c272:f514",
                 "Description": "",
                 "IsWanIpBlocked": false,
                 "State": "PENDING"
@@ -74,7 +71,6 @@ Output:
                 "Address": "3402:4e00:20:1202:0:8d05:c272:f559",
                 "AddressId": "",
                 "Primary": false,
-                "PublicIpAddress": "3402:4e00:20:1202:0:8d05:c272:f559",
                 "Description": "",
                 "IsWanIpBlocked": false,
                 "State": "PENDING"

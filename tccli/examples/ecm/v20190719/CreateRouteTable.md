@@ -22,8 +22,7 @@ Output:
             "AssociationSet": [],
             "RouteSet": [],
             "Main": false,
-            "CreatedTime": "0000-00-00 00:00:00",
-            "TagSet": null
+            "CreatedTime": "0000-00-00 00:00:00"
         },
         "RequestId": "4673c0fc-cb3a-435f-99a7-61a139a31ae4"
     }

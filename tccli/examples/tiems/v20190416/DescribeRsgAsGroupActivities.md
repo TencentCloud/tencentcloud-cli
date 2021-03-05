@@ -26,7 +26,6 @@ Output:
                 "StartTime": "2019-12-30T10:11:26+08:00",
                 "EndTime": "2019-12-30T10:11:27+08:00",
                 "CreateTime": "2019-12-30T10:11:26+08:00",
-                "RsgAsActivityRelatedInstanceSet": [],
                 "StatusMessageSimplified": "云主机售罄"
             }
         ],

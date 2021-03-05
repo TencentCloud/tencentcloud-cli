@@ -18,7 +18,6 @@ Output:
             {
                 "AddressId": "eip-lrhy2lpe",
                 "AddressIp": "2402:4e00:1000:2d00:0:8f3f:6:9895",
-                "UnVpcId": "vpc-lbnntf2j",
                 "AddressStatus": "BIND",
                 "InstanceId": "ins-190087yw",
                 "NetworkInterfaceId": "eni-rw4fh3gn",
@@ -54,7 +53,6 @@ Output:
             {
                 "AddressId": "eip-lrhy2lpe",
                 "AddressIp": "2402:4e00:1000:2d00:0:8f3f:6:9895",
-                "UnVpcId": "vpc-lbnntf2j",
                 "AddressStatus": "BIND",
                 "InstanceId": "ins-190087yw",
                 "NetworkInterfaceId": "eni-rw4fh3gn",

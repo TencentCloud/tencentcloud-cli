@@ -19,7 +19,6 @@ Output:
                 "Status": "Running",
                 "RegistryType": "standard",
                 "PublicDomain": "mytest.tencentcloudcr.com",
-                "CreateTime": "2019-08-09",
                 "InternalEndpoint": "8.9.10.9",
                 "ExpiredAt": "2020-09-10",
                 "PayMod": 1,

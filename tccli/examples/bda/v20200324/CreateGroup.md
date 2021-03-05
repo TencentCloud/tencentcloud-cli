@@ -16,10 +16,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.BodyModelVersionIllegal",
-            "Message": "算法模型版本不合法。"
-        },
         "RequestId": "e1d5929c-5d72-4b2a-b354-2767056a6929"
     }
 }

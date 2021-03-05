@@ -16,10 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fd590936-acd7-440c-9ac5-b698bc0a5af0",
-        "SubAppId": "sub_app_id_used_for_payment",
-        "SubAcctNo": "sub_account_no_from_bank",
-        "其他": "参考文档"
+        "RequestId": "fd590936-acd7-440c-9ac5-b698bc0a5af0"
     }
 }
 ```

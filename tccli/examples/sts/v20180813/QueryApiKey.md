@@ -13,13 +13,6 @@ Output:
 ```
 {
     "Response": {
-        "idKeys": [
-            {
-                "secretId": "xxxxxx",
-                "createTime": 1575517111,
-                "status": 1
-            }
-        ],
         "RequestId": ""
     }
 }

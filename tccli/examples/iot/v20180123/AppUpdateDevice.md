@@ -21,8 +21,7 @@ Output:
             "AliasName": "nick",
             "Region": "ap-guangzhou",
             "ProductId": "iot-a8ojgbji",
-            "DeviceName": "aaa",
-            "Id": "ap-guangzhou/iot-a8ojgbji/aaa"
+            "DeviceName": "aaa"
         }
     }
 }

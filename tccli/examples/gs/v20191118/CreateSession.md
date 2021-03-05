@@ -19,8 +19,7 @@ Output:
         "RoleNumber": "xx",
         "ServerSession": "xx",
         "Role": "xx",
-        "RequestId": "xx",
-        "PlayersMax": 1
+        "RequestId": "xx"
     }
 }
 ```

@@ -17,11 +17,9 @@ Output:
         "RequestId": "3fa7d395-c1ff-4ede-beec-59afdeded8e9",
         "DeviceStatuses": [
             {
-                "DeviceId": "ap-guangzhou/iot-a8ojgbji&/abc",
                 "Status": "offline"
             },
             {
-                "DeviceId": "ap-guangzhou/iot-a8ojgbji&/aaa",
                 "Status": "online"
             }
         ]

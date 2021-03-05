@@ -86,10 +86,7 @@ Output:
                 }
             ],
             "EventsTotalCount": 4,
-            "Value": 74,
-            "Metric": "health_score",
-            "HealthLevel": "RISK",
-            "Unit": "分"
+            "HealthLevel": "RISK"
         }
     }
 }

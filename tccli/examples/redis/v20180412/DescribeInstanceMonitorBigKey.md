@@ -21,7 +21,6 @@ Output:
                 "Key": "&lth1>",
                 "Size": 56,
                 "Type": "string",
-                "TypeInDB": 1,
                 "Updatetime": 1572577196
             },
             {
@@ -29,7 +28,6 @@ Output:
                 "Key": "new",
                 "Size": 56,
                 "Type": "string",
-                "TypeInDB": 1,
                 "Updatetime": 1572577196
             },
             {
@@ -37,7 +35,6 @@ Output:
                 "Key": "newb",
                 "Size": 56,
                 "Type": "string",
-                "TypeInDB": 1,
                 "Updatetime": 1572577196
             },
             {
@@ -45,7 +42,6 @@ Output:
                 "Key": "cloud1",
                 "Size": 64,
                 "Type": "string",
-                "TypeInDB": 1,
                 "Updatetime": 1572577196
             },
             {
@@ -53,7 +49,6 @@ Output:
                 "Key": "tencent",
                 "Size": 64,
                 "Type": "string",
-                "TypeInDB": 1,
                 "Updatetime": 1572577196
             },
             {
@@ -61,7 +56,6 @@ Output:
                 "Key": "what",
                 "Size": 64,
                 "Type": "string",
-                "TypeInDB": 1,
                 "Updatetime": 1572577196
             },
             {
@@ -69,7 +63,6 @@ Output:
                 "Key": "db1",
                 "Size": 64,
                 "Type": "string",
-                "TypeInDB": 1,
                 "Updatetime": 1572577196
             },
             {
@@ -77,7 +70,6 @@ Output:
                 "Key": "ThisIsALongKeyThatIWantToSet",
                 "Size": 88,
                 "Type": "string",
-                "TypeInDB": 1,
                 "Updatetime": 1572577196
             }
         ],

@@ -23,9 +23,7 @@ Output:
                 "NetworkCard": 0,
                 "Price": {
                     "UnitPrice": 0.15,
-                    "DiscountThirdStep": "100.000000",
                     "UnitPriceThirdStep": 0.05,
-                    "DiscountSecondStep": "100.000000",
                     "Discount": "100.000000",
                     "UnitPriceDiscountThirdStep": 0.05,
                     "UnitPriceSecondStep": 0.07,

@@ -19,7 +19,6 @@ Output:
 {
     "Response": {
         "RequestId": "1e74e824-6d2b-495d-b347-5250cdf8e964",
-        "InstanceId": "tdsql-ige1a5k3",
         "Data": [
             {
                 "CheckSum": "14090621765287179955",

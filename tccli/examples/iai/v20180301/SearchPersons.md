@@ -114,10 +114,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation.ImageDownloadError",
-            "Message": "图片下载错误。"
-        },
         "RequestId": "527ecffe-4c6a-47c9-8217-4dd2e3f018da"
     }
 }

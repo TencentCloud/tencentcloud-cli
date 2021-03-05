@@ -22,8 +22,6 @@ Output:
                 },
                 "CcnId": "ccn-1pdchck1",
                 "RegionFlowControlId": "fcr-krx0mfoi",
-                "CreateTime": "2020-05-20 16:29:44",
-                "ExpireTime": "2020-05-20 16:29:44",
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW"
             }
         ],
@@ -59,8 +57,6 @@ Output:
                 },
                 "CcnId": "ccn-2gxeenq2",
                 "RegionFlowControlId": "fcr-crrnp6w4",
-                "CreateTime": "2020-06-10 14:48:13",
-                "ExpireTime": "2020-07-10 15:47:05",
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW"
             },
             {
@@ -73,8 +69,6 @@ Output:
                 },
                 "CcnId": "ccn-2gxeenq2",
                 "RegionFlowControlId": "fcr-lnfsgh4y",
-                "CreateTime": "2020-06-10 15:55:29",
-                "ExpireTime": "2020-07-10 15:55:29",
                 "RenewFlag": "NOTIFY_AND_AUTO_RENEW"
             }
         ],

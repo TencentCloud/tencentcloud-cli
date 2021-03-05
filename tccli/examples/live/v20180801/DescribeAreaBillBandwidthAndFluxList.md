@@ -15,8 +15,6 @@ Output:
 ```
 {
     "Response": {
-        "95PeakBandwidth": 117042.495,
-        "95PeakBandwidthTime": "2019-02-01 00:00:00",
         "DataInfoList": [
             {
                 "Name": "中东/非洲",

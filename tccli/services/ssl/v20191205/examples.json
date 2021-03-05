@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=ApplyCertificate\n&DomainName=wgc.red\n&DvAuthMethod=DNS_AUTO\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"CertificateId\": \"a9TsmZkL\",\r\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"a9TsmZkL\",\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\n    }\n}",
         "title": "免费证书申请"
       }
     ],
@@ -12,15 +12,15 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=CancelCertificateOrder\r\n&CertificateId=abcb1234\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"CertificateId\":\"abcb1234\",\r\n        \"RequestId\":\"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"abcb1234\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "取消证书订单"
       }
     ],
     "CheckCertificateChain": [
       {
         "document": "对证书链完整性进行检查",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificateChain\n<公共请求参数>\n\n{\"CertificateChain\":\"-----BEGIN CERTIFICATE-----MIIFrDCCBJSgAwIBA.................BJSgAwIBA-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----MIIErjCCA5agAwIB.................DCCBJSg-----END CERTIFICATE-----\"}",
-        "output": "{\r\n    \"Response\": {\r\n        \"IsValid\": true, \r\n        \"IsTrustedCA\": true, \r\n        \"Chains\": [\r\n            \"qcloud.com\", \r\n            \"WoTrus DV Server CA  [Run by the Issuer]\"\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificateChain\n<公共请求参数>\n\n{\n    \"CertificateChain\": \"-----BEGIN CERTIFICATE-----MIIFrDCCBJSgAwIBA.................BJSgAwIBA-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----MIIErjCCA5agAwIB.................DCCBJSg-----END CERTIFICATE-----\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsValid\": true,\n        \"IsTrustedCA\": true,\n        \"Chains\": [\n            \"qcloud.com\",\n            \"WoTrus DV Server CA  [Run by the Issuer]\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "对证书链进行检查"
       }
     ],
@@ -28,15 +28,15 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=CommitCertificateInformation\n&CertificateId=abcb1234\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"OrderId\": \"SO8zRv29\",\r\n        \"Status\": 8,\r\n        \"RequestId\":\"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"SO8zRv29\",\n        \"Status\": 8,\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "提交证书订单"
       }
     ],
     "CompleteCertificate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteCertificate\n<公共请求参数>\n\n{\"CertificateId\":\"gdLGWRev\"}",
-        "output": "{\r\n    \"Response\": {\r\n        \"CertificateId\": \"gdLGWRev\",\r\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"gdLGWRev\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"gdLGWRev\",\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\n    }\n}",
         "title": "主动触发证书验证"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "document": "购买付费证书",
         "input": "https://ssl.tencentcloudapi.com/?Action=CreateCertificate\n&ProductId=25\n&DomainNum=1\n&TimeSpan=1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"CertificateIds\": [\r\n            \"gf16kv3A\"\r\n        ],\r\n        \"DealIds\": [\r\n            \"20200923877000003022941\"\r\n        ],\r\n        \"RequestId\": \"5a3d8310-3d7e-42d3-923a-b81407fe495e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateIds\": [\n            \"gf16kv3A\"\n        ],\n        \"DealIds\": [\n            \"20200923877000003022941\"\n        ],\n        \"RequestId\": \"5a3d8310-3d7e-42d3-923a-b81407fe495e\"\n    }\n}",
         "title": "创建证书"
       }
     ],
@@ -52,15 +52,15 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=DeleteCertificate\n&CertificateId=CertificateId\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"DeleteResult\": true,\r\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteResult\": true,\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\n    }\n}",
         "title": "删除证书"
       }
     ],
     "DeleteManager": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteManager\n<公共请求参数>\n\n{\"ManagerId\": 23}",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\r\n        \"ManagerId\": 23\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteManager\n<公共请求参数>\n\n{\n    \"ManagerId\": 23\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\n        \"ManagerId\": 23\n    }\n}",
         "title": "删除管理人"
       }
     ],
@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=DescribeCertificate\n&CertificateId=CertificateId\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"From\": \"trustasia\",\r\n        \"SubjectAltName\": [],\r\n        \"VulnerabilityReport\": null,\r\n        \"StatusName\": \"已通过\",\r\n        \"CertificateExtra\": {\r\n            \"OriginCertificateId\": null,\r\n            \"ReplacedBy\": null,\r\n            \"ReplacedFor\": \"a8xHcaIs\",\r\n            \"DomainNumber\": null\r\n        },\r\n        \"RenewAble\": false,\r\n        \"Status\": 1,\r\n        \"IsDv\": true,\r\n        \"CertBeginTime\": \"2020-01-14 16:00:00\",\r\n        \"IsVulnerability\": false,\r\n        \"DvAuthDetail\": null,\r\n        \"VerifyType\": \"DNS\",\r\n        \"StatusMsg\": null,\r\n        \"ProjectId\": \"0\",\r\n        \"OwnerUin\": \"20548499\",\r\n        \"ProductZhName\": \"TrustAsia TLS RSA CA\",\r\n        \"CertEndTime\": \"2020-02-12 16:00:00\",\r\n        \"PackageType\": \"2\",\r\n        \"RequestId\": \"6209102a-0f05-411d-a05c-c841431cb636\",\r\n        \"InsertTime\": \"2020-01-14 10:54:47\",\r\n        \"CertificateType\": \"SVR\",\r\n        \"IsVip\": false,\r\n        \"ValidityPeriod\": \"0\",\r\n        \"OrderId\": \"TBD8NHC9J_01\",\r\n        \"Domain\": \"wgc.red\",\r\n        \"CertificateId\": \"a90XEOtj\",\r\n        \"Alias\": \"a8xHcaIs的重颁发订单\",\r\n        \"SubmittedData\": null,\r\n        \"IsWildcard\": false,\r\n        \"PackageTypeName\": \"TrustAsia TLS RSA CA\",\r\n        \"VulnerabilityStatus\": \"INACTIVE\",\r\n        \"Deployable\": true,\r\n        \"Tags\": [\r\n            {\r\n                \"TagKey\": \"责任人\",\r\n                \"TagValue\": \"yaxinliu\"\r\n            },\r\n            {\r\n                \"TagKey\": \"部门\",\r\n                \"TagValue\": \"IT部\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"From\": \"trustasia\",\n        \"SubjectAltName\": [],\n        \"VulnerabilityReport\": null,\n        \"StatusName\": \"已通过\",\n        \"CertificateExtra\": {\n            \"OriginCertificateId\": null,\n            \"ReplacedBy\": null,\n            \"ReplacedFor\": \"a8xHcaIs\",\n            \"DomainNumber\": null\n        },\n        \"RenewAble\": false,\n        \"Status\": 1,\n        \"IsDv\": true,\n        \"CertBeginTime\": \"2020-01-14 16:00:00\",\n        \"IsVulnerability\": false,\n        \"DvAuthDetail\": null,\n        \"VerifyType\": \"DNS\",\n        \"StatusMsg\": null,\n        \"ProjectId\": \"0\",\n        \"OwnerUin\": \"20548499\",\n        \"ProductZhName\": \"TrustAsia TLS RSA CA\",\n        \"CertEndTime\": \"2020-02-12 16:00:00\",\n        \"PackageType\": \"2\",\n        \"RequestId\": \"6209102a-0f05-411d-a05c-c841431cb636\",\n        \"InsertTime\": \"2020-01-14 10:54:47\",\n        \"CertificateType\": \"SVR\",\n        \"IsVip\": false,\n        \"ValidityPeriod\": \"0\",\n        \"OrderId\": \"TBD8NHC9J_01\",\n        \"Domain\": \"wgc.red\",\n        \"CertificateId\": \"a90XEOtj\",\n        \"Alias\": \"a8xHcaIs的重颁发订单\",\n        \"SubmittedData\": null,\n        \"IsWildcard\": false,\n        \"PackageTypeName\": \"TrustAsia TLS RSA CA\",\n        \"VulnerabilityStatus\": \"INACTIVE\",\n        \"Deployable\": true,\n        \"Tags\": [\n            {\n                \"TagKey\": \"责任人\",\n                \"TagValue\": \"yaxinliu\"\n            },\n            {\n                \"TagKey\": \"部门\",\n                \"TagValue\": \"IT部\"\n            }\n        ]\n    }\n}",
         "title": "获取证书信息"
       }
     ],
@@ -76,13 +76,13 @@
       {
         "document": "获取审核中的证书详情",
         "input": "https://ssl.tencentcloudapi.com/?Action=DescribeCertificateDetail\n&CertificateId=aClRkC90\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"From\": \"trustasia\",\r\n        \"SubjectAltName\":[],\r\n        \"VulnerabilityReport\": null,\r\n        \"CertificatePrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----......-----END RSA PRIVATE KEY-----\",\r\n        \"CertificatePublicKey\": null,\r\n        \"CertificateExtra\": {\r\n            \"OriginCertificateId\": null,\r\n            \"ReplacedBy\": null,\r\n            \"ReplacedFor\": null,\r\n            \"DomainNumber\": \"3\",\r\n            \"RenewOrder\": null\r\n        },\r\n        \"RenewAble\": false,\r\n        \"Status\": 5,\r\n        \"IsDv\": false,\r\n        \"IsVulnerability\": false,\r\n        \"CertBeginTime\": null,\r\n        \"TypeName\": \"SecureSite 企业型(OV)\",\r\n        \"DvAuthDetail\": null,\r\n        \"VerifyType\": null,\r\n        \"StatusMsg\": null,\r\n        \"StatusName\": \"企业证书，待提交\",\r\n        \"ProjectId\": \"0\",\r\n        \"OwnerUin\": \"779000108\",\r\n        \"ProductZhName\": \"SecureSite 企业型(OV)\",\r\n        \"CertEndTime\": null,\r\n        \"PackageType\": \"6\",\r\n        \"RequestId\": \"330979e0-fd50-4b33-86b0-c2e264d8ff52\",\r\n        \"InsertTime\": \"2020-01-16 19:26:20\",\r\n        \"CertificateType\": \"SVR\",\r\n        \"IsVip\": true,\r\n        \"ValidityPeriod\": \"12\",\r\n        \"OrderId\": null,\r\n        \"Domain\": \"\",\r\n        \"CertificateId\": \"aClRkC90\",\r\n        \"Alias\": \"\",\r\n        \"SubmittedData\": {\r\n            \"OrganizationCity\": \"深圳市\",\r\n            \"CsrContent\": \"\",\r\n            \"OrganizationName\": \"Tencent\",\r\n            \"CertificateDomain\": \"test-dawd2143e21.com\",\r\n            \"AdminPhoneNum\": \"12345678901\",\r\n            \"AdminPosition\": \"developer\",\r\n            \"OrganizationDivision\": \"Qcloud\",\r\n            \"DomainList\": [\r\n                \"test-11111111111111.com\",\r\n                \"test-222222222222.com\"\r\n            ],\r\n            \"AdminFirstName\": \"test\",\r\n            \"ContactLastName\": \"test\",\r\n            \"ContactEmail\": \"test@tencent.com\",\r\n            \"ContactNumber\": \"12345678901\",\r\n            \"CsrType\": \"online\",\r\n            \"PhoneAreaCode\": \"0755\",\r\n            \"VerifyType\": \"\",\r\n            \"AdminLastName\": \"test\",\r\n            \"ContactFirstName\": \"test\",\r\n            \"OrganizationCountry\": \"CN\",\r\n            \"ContactPosition\": \"developer\",\r\n            \"OrganizationRegion\": \"广东省\",\r\n            \"PhoneNumber\": \"86013388\",\r\n            \"PostalCode\": \"\",\r\n            \"AdminEmail\": \"test@tencent.com\",\r\n            \"KeyPassword\": \"\",\r\n            \"OrganizationAddress\": \"南山区腾讯大厦1000号\"\r\n        },\r\n        \"IsWildcard\": false,\r\n        \"Deployable\":false,\r\n        \"VulnerabilityStatus\": \"INACTIVE\",\r\n        \"Tags\": [\r\n            {\r\n                \"TagKey\": \"责任人\",\r\n                \"TagValue\": \"yaxinliu\"\r\n            },\r\n            {\r\n                \"TagKey\": \"部门\",\r\n                \"TagValue\": \"IT部\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"From\": \"trustasia\",\n        \"SubjectAltName\": [],\n        \"VulnerabilityReport\": null,\n        \"CertificatePrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----......-----END RSA PRIVATE KEY-----\",\n        \"CertificatePublicKey\": null,\n        \"CertificateExtra\": {\n            \"OriginCertificateId\": null,\n            \"ReplacedBy\": null,\n            \"ReplacedFor\": null,\n            \"DomainNumber\": \"3\",\n            \"RenewOrder\": null\n        },\n        \"RenewAble\": false,\n        \"Status\": 5,\n        \"IsDv\": false,\n        \"IsVulnerability\": false,\n        \"CertBeginTime\": null,\n        \"TypeName\": \"SecureSite 企业型(OV)\",\n        \"DvAuthDetail\": null,\n        \"VerifyType\": null,\n        \"StatusMsg\": null,\n        \"StatusName\": \"企业证书，待提交\",\n        \"ProjectId\": \"0\",\n        \"OwnerUin\": \"779000108\",\n        \"ProductZhName\": \"SecureSite 企业型(OV)\",\n        \"CertEndTime\": null,\n        \"PackageType\": \"6\",\n        \"RequestId\": \"330979e0-fd50-4b33-86b0-c2e264d8ff52\",\n        \"InsertTime\": \"2020-01-16 19:26:20\",\n        \"CertificateType\": \"SVR\",\n        \"IsVip\": true,\n        \"ValidityPeriod\": \"12\",\n        \"OrderId\": null,\n        \"Domain\": \"\",\n        \"CertificateId\": \"aClRkC90\",\n        \"Alias\": \"\",\n        \"SubmittedData\": {\n            \"OrganizationCity\": \"深圳市\",\n            \"CsrContent\": \"\",\n            \"OrganizationName\": \"Tencent\",\n            \"CertificateDomain\": \"test-dawd2143e21.com\",\n            \"AdminPhoneNum\": \"12345678901\",\n            \"AdminPosition\": \"developer\",\n            \"OrganizationDivision\": \"Qcloud\",\n            \"DomainList\": [\n                \"test-11111111111111.com\",\n                \"test-222222222222.com\"\n            ],\n            \"AdminFirstName\": \"test\",\n            \"ContactLastName\": \"test\",\n            \"ContactEmail\": \"test@tencent.com\",\n            \"ContactNumber\": \"12345678901\",\n            \"CsrType\": \"online\",\n            \"PhoneAreaCode\": \"0755\",\n            \"VerifyType\": \"\",\n            \"AdminLastName\": \"test\",\n            \"ContactFirstName\": \"test\",\n            \"OrganizationCountry\": \"CN\",\n            \"ContactPosition\": \"developer\",\n            \"OrganizationRegion\": \"广东省\",\n            \"PhoneNumber\": \"86013388\",\n            \"PostalCode\": \"\",\n            \"AdminEmail\": \"test@tencent.com\",\n            \"KeyPassword\": \"\",\n            \"OrganizationAddress\": \"南山区腾讯大厦1000号\"\n        },\n        \"IsWildcard\": false,\n        \"Deployable\": false,\n        \"VulnerabilityStatus\": \"INACTIVE\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"责任人\",\n                \"TagValue\": \"yaxinliu\"\n            },\n            {\n                \"TagKey\": \"部门\",\n                \"TagValue\": \"IT部\"\n            }\n        ]\n    }\n}",
         "title": "获取证书详情"
       },
       {
         "document": "获取已经审核通过的证书详情",
         "input": "https://ssl.tencentcloudapi.com/?Action=DescribeCertificateDetail\n&CertificateId=aCMEQWHt\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"From\": \"trustasia\",\r\n        \"SubjectAltName\": [\r\n            \"test-ev-dawe23r243qfa.com\"\r\n        ],\r\n        \"VulnerabilityReport\": null,\r\n        \"CertificatePrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----......-----END RSA PRIVATE KEY-----\",\r\n        \"CertificateExtra\": {\r\n            \"OriginCertificateId\": null,\r\n            \"ReplacedBy\": null,\r\n            \"ReplacedFor\": null,\r\n            \"DomainNumber\": \"2\",\r\n            \"RenewOrder\": null\r\n        },\r\n        \"RenewAble\": true,\r\n        \"Status\": 1,\r\n        \"IsDv\": false,\r\n        \"IsVulnerability\": true,\r\n        \"CertBeginTime\": \"2020-01-16 16:00:00\",\r\n        \"TypeName\": \"SecureSite 增强型(EV)\",\r\n        \"DvAuthDetail\": null,\r\n        \"VerifyType\": null,\r\n        \"StatusMsg\": null,\r\n        \"StatusName\": \"已通过\",\r\n        \"ProjectId\": \"0\",\r\n        \"OwnerUin\": \"779000108\",\r\n        \"ProductZhName\": \"SecureSite 增强型(EV)\",\r\n        \"CertEndTime\": \"2020-02-14 16:00:00\",\r\n        \"PackageType\": \"4\",\r\n        \"RequestId\": \"658b9da1-b5e6-46b3-803c-d59a2cb60277\",\r\n        \"InsertTime\": \"2020-01-16 13:19:10\",\r\n        \"CertificateType\": \"SVR\",\r\n        \"IsVip\": true,\r\n        \"ValidityPeriod\": \"12\",\r\n        \"OrderId\": \"SE8PUhGU\",\r\n        \"Domain\": \"test-ev-dae23r32fd.com\",\r\n        \"CertificateId\": \"aCMEQWHt\",\r\n        \"Alias\": \"\",\r\n        \"SubmittedData\": null,\r\n        \"IsWildcard\": false,\r\n        \"Deployable\":true,\r\n        \"VulnerabilityStatus\": \"INACTIVE\",\r\n        \"Tags\": [\r\n            {\r\n                \"TagKey\": \"责任人\",\r\n                \"TagValue\": \"yaxinliu\"\r\n            },\r\n            {\r\n                \"TagKey\": \"部门\",\r\n                \"TagValue\": \"IT部\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"From\": \"trustasia\",\n        \"SubjectAltName\": [\n            \"test-ev-dawe23r243qfa.com\"\n        ],\n        \"VulnerabilityReport\": null,\n        \"CertificatePrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----......-----END RSA PRIVATE KEY-----\",\n        \"CertificateExtra\": {\n            \"OriginCertificateId\": null,\n            \"ReplacedBy\": null,\n            \"ReplacedFor\": null,\n            \"DomainNumber\": \"2\",\n            \"RenewOrder\": null\n        },\n        \"RenewAble\": true,\n        \"Status\": 1,\n        \"IsDv\": false,\n        \"IsVulnerability\": true,\n        \"CertBeginTime\": \"2020-01-16 16:00:00\",\n        \"TypeName\": \"SecureSite 增强型(EV)\",\n        \"DvAuthDetail\": null,\n        \"VerifyType\": null,\n        \"StatusMsg\": null,\n        \"StatusName\": \"已通过\",\n        \"ProjectId\": \"0\",\n        \"OwnerUin\": \"779000108\",\n        \"ProductZhName\": \"SecureSite 增强型(EV)\",\n        \"CertEndTime\": \"2020-02-14 16:00:00\",\n        \"PackageType\": \"4\",\n        \"RequestId\": \"658b9da1-b5e6-46b3-803c-d59a2cb60277\",\n        \"InsertTime\": \"2020-01-16 13:19:10\",\n        \"CertificateType\": \"SVR\",\n        \"IsVip\": true,\n        \"ValidityPeriod\": \"12\",\n        \"OrderId\": \"SE8PUhGU\",\n        \"Domain\": \"test-ev-dae23r32fd.com\",\n        \"CertificateId\": \"aCMEQWHt\",\n        \"Alias\": \"\",\n        \"SubmittedData\": null,\n        \"IsWildcard\": false,\n        \"Deployable\": true,\n        \"VulnerabilityStatus\": \"INACTIVE\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"责任人\",\n                \"TagValue\": \"yaxinliu\"\n            },\n            {\n                \"TagKey\": \"部门\",\n                \"TagValue\": \"IT部\"\n            }\n        ]\n    }\n}",
         "title": "获取证书详情-2"
       }
     ],
@@ -90,7 +90,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=DescribeCertificateOperateLogs\r\n&Limit=5\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"AllTotal\":31,\r\n        \"TotalCount\":5,\r\n        \"OperateLogs\":[\r\n            {\r\n                \"Action\":\"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\r\n                \"CreatedOn\":\"2020-01-14 15:46:38\"\r\n            },\r\n            {\r\n                \"Action\":\"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\r\n                \"CreatedOn\":\"2020-01-14 15:45:45\"\r\n            },\r\n            {\r\n                \"Action\":\"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\r\n                \"CreatedOn\":\"2020-01-14 14:52:19\"\r\n            },\r\n            {\r\n                \"Action\":\"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\r\n                \"CreatedOn\":\"2020-01-14 14:50:52\"\r\n            },\r\n            {\r\n                \"Action\":\"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\r\n                \"CreatedOn\":\"2020-01-14 14:50:21\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotal\": 31,\n        \"TotalCount\": 5,\n        \"OperateLogs\": [\n            {\n                \"Action\": \"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\n                \"CreatedOn\": \"2020-01-14 15:46:38\"\n            },\n            {\n                \"Action\": \"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\n                \"CreatedOn\": \"2020-01-14 15:45:45\"\n            },\n            {\n                \"Action\": \"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\n                \"CreatedOn\": \"2020-01-14 14:52:19\"\n            },\n            {\n                \"Action\": \"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\n                \"CreatedOn\": \"2020-01-14 14:50:52\"\n            },\n            {\n                \"Action\": \"用户[uin: 1234567890] 申请 证书[id: ABC1abc1]\",\n                \"CreatedOn\": \"2020-01-14 14:50:21\"\n            }\n        ],\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "获取用户近15天前5条证书操作日志"
       }
     ],
@@ -98,23 +98,23 @@
       {
         "document": "获取证书列表",
         "input": "https://ssl.tencentcloudapi.com/?Action=DescribeCertificates\n&Limit=1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Certificates\": [\r\n            {\r\n                \"From\": \"trustasia\",\r\n                \"SubjectAltName\": null,\r\n                \"BoundResource\": [],\r\n                \"CertificateExtra\": {\r\n                    \"OriginCertificateId\": null,\r\n                    \"ReplacedBy\": null,\r\n                    \"ReplacedFor\": \"a8xHcaIs\",\r\n                    \"DomainNumber\": null,\r\n                    \"RenewOrder\": null\r\n                },\r\n                \"StatusName\": \"已通过\",\r\n                \"RenewAble\": false,\r\n                \"Status\": 1,\r\n                \"IsDv\": true,\r\n                \"CertBeginTime\": \"2020-01-14 16:00:00\",\r\n                \"IsVulnerability\": false,\r\n                \"VerifyType\": \"DNS\",\r\n                \"StatusMsg\": null,\r\n                \"ProjectId\": \"0\",\r\n                \"OwnerUin\": \"20548499\",\r\n                \"ProjectInfo\": {\r\n                    \"ProjectCreatorUin\": 0,\r\n                    \"ProjectCreateTime\": \"0000-00-00 00:00:00\",\r\n                    \"ProjectId\": \"0\",\r\n                    \"OwnerUin\": 0,\r\n                    \"ProjectResume\": \"默认项目\",\r\n                    \"ProjectName\": \"默认项目\"\r\n                },\r\n                \"ProductZhName\": \"TrustAsia TLS RSA CA\",\r\n                \"CertEndTime\": \"2020-02-12 16:00:00\",\r\n                \"PackageType\": \"2\",\r\n                \"InsertTime\": \"2020-01-14 10:54:47\",\r\n                \"CertificateType\": \"SVR\",\r\n                \"IsVip\": false,\r\n                \"ValidityPeriod\": \"0\",\r\n                \"Domain\": \"wgc.red\",\r\n                \"CertificateId\": \"a90XEOtj\",\r\n                \"Alias\": \"a8xHcaIs的重颁发订单\",\r\n                \"IsWildcard\": false,\r\n                \"PackageTypeName\": \"TrustAsia TLS RSA CA\",\r\n                \"VulnerabilityStatus\": \"INACTIVE\",\r\n                \"Deployable\": true,\r\n                \"Tags\": [\r\n                    {\r\n                        \"TagKey\": \"testtag\",\r\n                        \"TagValue\": \"testtag\"\r\n                    },\r\n                    {\r\n                        \"TagKey\": \"x\",\r\n                        \"TagValue\": \"testtag\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"TotalCount\": 12,\r\n        \"RequestId\": \"43b82119-c648-4230-8d38-5be63f039549\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Certificates\": [\n            {\n                \"From\": \"trustasia\",\n                \"SubjectAltName\": null,\n                \"BoundResource\": [],\n                \"CertificateExtra\": {\n                    \"OriginCertificateId\": null,\n                    \"ReplacedBy\": null,\n                    \"ReplacedFor\": \"a8xHcaIs\",\n                    \"DomainNumber\": null,\n                    \"RenewOrder\": null\n                },\n                \"StatusName\": \"已通过\",\n                \"RenewAble\": false,\n                \"Status\": 1,\n                \"IsDv\": true,\n                \"CertBeginTime\": \"2020-01-14 16:00:00\",\n                \"IsVulnerability\": false,\n                \"VerifyType\": \"DNS\",\n                \"StatusMsg\": null,\n                \"ProjectId\": \"0\",\n                \"OwnerUin\": \"20548499\",\n                \"ProjectInfo\": {\n                    \"ProjectCreatorUin\": 0,\n                    \"ProjectCreateTime\": \"0000-00-00 00:00:00\",\n                    \"ProjectId\": \"0\",\n                    \"OwnerUin\": 0,\n                    \"ProjectResume\": \"默认项目\",\n                    \"ProjectName\": \"默认项目\"\n                },\n                \"ProductZhName\": \"TrustAsia TLS RSA CA\",\n                \"CertEndTime\": \"2020-02-12 16:00:00\",\n                \"PackageType\": \"2\",\n                \"InsertTime\": \"2020-01-14 10:54:47\",\n                \"CertificateType\": \"SVR\",\n                \"IsVip\": false,\n                \"ValidityPeriod\": \"0\",\n                \"Domain\": \"wgc.red\",\n                \"CertificateId\": \"a90XEOtj\",\n                \"Alias\": \"a8xHcaIs的重颁发订单\",\n                \"IsWildcard\": false,\n                \"PackageTypeName\": \"TrustAsia TLS RSA CA\",\n                \"VulnerabilityStatus\": \"INACTIVE\",\n                \"Deployable\": true,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"testtag\",\n                        \"TagValue\": \"testtag\"\n                    },\n                    {\n                        \"TagKey\": \"x\",\n                        \"TagValue\": \"testtag\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 12,\n        \"RequestId\": \"43b82119-c648-4230-8d38-5be63f039549\"\n    }\n}",
         "title": "获取证书列表"
       }
     ],
     "DescribeManagerDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeManagerDetail\n<公共请求参数>\n\n{\"ManagerId\": 23}",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\r\n        \"Status\": \"ok\",\r\n        \"ManagerFirstName\": \"xx\",\r\n        \"ManagerPhone\": \"xx\",\r\n        \"ManagerPosition\": \"xx\",\r\n        \"ManagerLastName\": \"xx\",\r\n        \"ManagerMail\": \"xx\",\r\n        \"ContactFirstName\": \"xx\",\r\n        \"ContactPhone\": \"xx\",\r\n        \"ContactPosition\": \"xx\",\r\n        \"ContactLastName\": \"xx\",\r\n        \"ContactMail\": \"xx\",\r\n        \"ManagerDepartment\": \"xx\",\r\n        \"CompanyInfo\": {\r\n            \"CompanyCity\": \"xx\", \r\n            \"CompanyId\": 0, \r\n            \"CompanyAddress\": \"xx\", \r\n            \"CompanyName\": \"xx\", \r\n            \"CompanyCountry\": \"xx\", \r\n            \"CompanyProvince\": \"xx\", \r\n            \"CompanyPhone\": \"xx\"\r\n        }, \r\n        \"VerifyTime\": \"xx\",\r\n        \"ExpireTime\": \"xx\",\r\n        \"CompanyId\": 0, \r\n        \"ManagerId\": 23, \r\n        \"CreateTime\": \"xx\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeManagerDetail\n<公共请求参数>\n\n{\n    \"ManagerId\": 23\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\n        \"Status\": \"ok\",\n        \"ManagerFirstName\": \"xx\",\n        \"ManagerPhone\": \"xx\",\n        \"ManagerPosition\": \"xx\",\n        \"ManagerLastName\": \"xx\",\n        \"ManagerMail\": \"xx\",\n        \"ContactFirstName\": \"xx\",\n        \"ContactPhone\": \"xx\",\n        \"ContactPosition\": \"xx\",\n        \"ContactLastName\": \"xx\",\n        \"ContactMail\": \"xx\",\n        \"ManagerDepartment\": \"xx\",\n        \"CompanyInfo\": {\n            \"CompanyCity\": \"xx\",\n            \"CompanyId\": 0,\n            \"CompanyAddress\": \"xx\",\n            \"CompanyName\": \"xx\",\n            \"CompanyCountry\": \"xx\",\n            \"CompanyProvince\": \"xx\",\n            \"CompanyPhone\": \"xx\"\n        },\n        \"VerifyTime\": \"xx\",\n        \"ExpireTime\": \"xx\",\n        \"CompanyId\": 0,\n        \"ManagerId\": 23,\n        \"CreateTime\": \"xx\"\n    }\n}",
         "title": "查询管理人详情"
       }
     ],
     "DescribeManagers": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeManagers\n<公共请求参数>\n\n{\n    \"Offset\": 0, \n    \"ManagerName\": \"xx\", \n    \"Limit\": 0, \n    \"CompanyId\": 0\n}",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1, \r\n        \"Managers\": [\r\n            {\r\n                \"Status\": \"xx\", \r\n                \"ManagerFirstName\": \"xx\", \r\n                \"ManagerPhone\": \"xx\", \r\n                \"ManagerLastName\": \"xx\", \r\n                \"SubmitAuditTime\": \"xx\", \r\n                \"CertCount\": 2, \r\n                \"ManagerPosition\": \"xx\", \r\n                \"VerifyTime\": \"xx\", \r\n                \"ManagerId\": 22, \r\n                \"ExpireTime\": \"xx\", \r\n                \"ManagerMail\": \"xx\", \r\n                \"DomainCount\": 2, \r\n                \"ManagerDepartment\": \"xx\", \r\n                \"CreateTime\": \"xx\"\r\n            }\r\n        ], \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeManagers\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"ManagerName\": \"xx\",\n    \"Limit\": 0,\n    \"CompanyId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Managers\": [\n            {\n                \"Status\": \"xx\",\n                \"ManagerFirstName\": \"xx\",\n                \"ManagerPhone\": \"xx\",\n                \"ManagerLastName\": \"xx\",\n                \"SubmitAuditTime\": \"xx\",\n                \"CertCount\": 2,\n                \"ManagerPosition\": \"xx\",\n                \"VerifyTime\": \"xx\",\n                \"ManagerId\": 22,\n                \"ExpireTime\": \"xx\",\n                \"ManagerMail\": \"xx\",\n                \"DomainCount\": 2,\n                \"ManagerDepartment\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询管理人列表"
       }
     ],
@@ -122,7 +122,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=DownloadCertificate\r\n&CertificateId=CertificateId\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Content\": \"UEsD......vAAA\",\r\n        \"ContentType\": \"application/zip\",\r\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"UEsD......vAAA\",\n        \"ContentType\": \"application/zip\",\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
         "title": "下载证书"
       }
     ],
@@ -130,7 +130,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=ModifyCertificateAlias\r\n&CertificateId=abcb1234\r\n&Alias=others\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"CertificateId\":\"abcb1234\",\r\n        \"RequestId\":\"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"abcb1234\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "修改证书备注"
       }
     ],
@@ -138,7 +138,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=ModifyCertificateProject\r\n&CertificateIdList.0=ABCD1234&CertificateIdList.1=ABCD1235&CertificateIdList.2=ABCD1236\r\n&ProjectId=12345\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"FailCertificates\": [],\r\n        \"SuccessCertificates\": [\r\n            \"ABCD1234\",\r\n            \"ABCD1235\",\r\n            \"ABCD1236\"\r\n        ],\r\n        \"RequestId\": \"95adbcc1-a0bb-4b9c-acf6-5c4e514b945f\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"FailCertificates\": [],\n        \"SuccessCertificates\": [\n            \"ABCD1234\",\n            \"ABCD1235\",\n            \"ABCD1236\"\n        ],\n        \"RequestId\": \"95adbcc1-a0bb-4b9c-acf6-5c4e514b945f\"\n    }\n}",
         "title": "修改证书所属项目"
       }
     ],
@@ -146,7 +146,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=ReplaceCertificate\n&CertificateId=a91hoLqi\n&ValidType=DNS\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"CertificateId\": \"a91hoLqo\",\r\n        \"RequestId\": \"91afa3b6-5b67-43e1-b312-9d3b9bf0f410\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"a91hoLqo\",\n        \"RequestId\": \"91afa3b6-5b67-43e1-b312-9d3b9bf0f410\"\n    }\n}",
         "title": "重颁发证书"
       }
     ],
@@ -154,15 +154,15 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=RevokeCertificate\n&CertificateId=a91hoLqi\n&Reason=revoke\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RevokeDomainValidateAuths\": [{\r\n\t\t\t\"DomainValidateAuthPath\": \"/.well-known/pki-validation/\",\r\n\t\t\t\"DomainValidateAuthKey\": \"fileauth.txt\",\r\n\t\t\t\"DomainValidateAuthValue\": \"2020091410184....fvkw2nv1z283lzfi66n\",\r\n\t\t\t\"DomainValidateAuthDomain\": \"abc.com\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"91afa3b6-5b67-43e1-b312-9d3b9bf0f410\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RevokeDomainValidateAuths\": [\n            {\n                \"DomainValidateAuthPath\": \"/.well-known/pki-validation/\",\n                \"DomainValidateAuthKey\": \"fileauth.txt\",\n                \"DomainValidateAuthValue\": \"2020091410184....fvkw2nv1z283lzfi66n\",\n                \"DomainValidateAuthDomain\": \"abc.com\"\n            }\n        ],\n        \"RequestId\": \"91afa3b6-5b67-43e1-b312-9d3b9bf0f410\"\n    }\n}",
         "title": "吊销证书"
       }
     ],
     "SubmitAuditManager": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitAuditManager\n<公共请求参数>\n\n{\"ManagerId\": 23}",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\r\n        \"ManagerId\": 23\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitAuditManager\n<公共请求参数>\n\n{\n    \"ManagerId\": 23\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\n        \"ManagerId\": 23\n    }\n}",
         "title": "重新提交审核管理人"
       }
     ],
@@ -170,7 +170,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=SubmitCertificateInformation\n&CertificateId=abcb1234\n&CsrType=online\n&CertificateDomain=*.test-dq342da.com\n&OrganizationName=Tencent\n&OrganizationDivision=Qcloud\n&OrganizationAddress=南山区腾讯大厦1000号\n&OrganizationCountry=CN\n&OrganizationCity=深圳市\n&OrganizationRegion=广东省\n&PhoneAreaCode=0755\n&PhoneNumber=86013388\n&AdminFirstName=test\n&AdminLastName=test\n&AdminPhoneNum=12345678901\n&AdminEmail=test@tencent.com\n&AdminPosition=developer\n&ContactFirstName=test\n&ContactLastName=test\n&ContactEmail=test@tencent.com\n&ContactNumber=12345678901\n&ContactPosition=developer\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"CertificateId\": \"abcb1234\",\r\n    \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"abcb1234\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "提交证书资料"
       }
     ],
@@ -178,15 +178,15 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=UploadCertificate\n&CertificatePublicKey=CertificateContent\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"CertificateId\": \"a92b1Z1i\",\r\n        \"RequestId\": \"7ef2d2bb-f609-4e3d-a35c-04a5d3ac633b\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"a92b1Z1i\",\n        \"RequestId\": \"7ef2d2bb-f609-4e3d-a35c-04a5d3ac633b\"\n    }\n}",
         "title": "上传证书"
       }
     ],
     "UploadConfirmLetter": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadConfirmLetter\n<公共请求参数>\n\n{\"CertificateId\":\"flSFd6Fh\",\"ConfirmLetter\":\"UEsDBBQABgAIAAAAIQCM19MmCg......\"}",
-        "output": "{\"Response\":{\"RequestId\": \"15dc3823-4089-4fd6-81a6-ec8baf5ec330\",\"CertificateId\":\"flSFd6Fh\",\"IsSuccess\":true}}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadConfirmLetter\n<公共请求参数>\n\n{\n    \"CertificateId\": \"flSFd6Fh\",\n    \"ConfirmLetter\": \"UEsDBBQABgAIAAAAIQCM19MmCg......\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15dc3823-4089-4fd6-81a6-ec8baf5ec330\",\n        \"CertificateId\": \"flSFd6Fh\",\n        \"IsSuccess\": true\n    }\n}",
         "title": "上传证书确认函"
       }
     ],
@@ -194,15 +194,15 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=UploadRevokeLetter\n&CertificateId=a91hoLqi\n&RevokeLetter=base64content\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\": \"15dc3823-4089-4fd6-81a6-ec8baf5ec330\",\"CertificateId\":\"flSFd6Fh\",\"IsSuccess\":true}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15dc3823-4089-4fd6-81a6-ec8baf5ec330\",\n        \"CertificateId\": \"flSFd6Fh\",\n        \"IsSuccess\": true\n    }\n}",
         "title": "上传证书吊销确认函"
       }
     ],
     "VerifyManager": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyManager\n<公共请求参数>\n\n{\"ManagerId\": 23}",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\r\n        \"ManagerId\": 23\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyManager\n<公共请求参数>\n\n{\n    \"ManagerId\": 23\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d0a1dc1-2782-4456-8f30-901f59f46242\",\n        \"ManagerId\": 23\n    }\n}",
         "title": "查询管理人详情"
       }
     ]

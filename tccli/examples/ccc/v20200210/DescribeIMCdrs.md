@@ -16,8 +16,7 @@ Output:
 {
     "Response": {
         "IMCdrs": [],
-        "TotalCount": 0,
-        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "TotalCount": 0
     }
 }
 ```

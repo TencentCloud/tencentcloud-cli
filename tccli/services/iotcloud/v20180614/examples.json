@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=BindDevices\n&GatewayProductId=12345ABCDE\n&GatewayDeviceName=test\n&ProductId=ABCDE12345\n&DeviceNames.0=test0\n&DeviceNames.1=test1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
         "title": "批量绑定子设备"
       }
     ],
@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CancelDeviceFirmwareTask\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&TaskId=10000\n&DeviceName=dev\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "查询固件升级任务详情"
       }
     ],
@@ -20,7 +20,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CancelTask\n&Id=5ad5aa513332ea4cb86e9ad5\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "取消任务"
       }
     ],
@@ -28,13 +28,13 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateDevice\r\n&ProductId=ABCDE12345\r\n&DeviceName=test_device\r\n&Attribute.Tags.0.Tag=note\r\n&Attribute.Tags.0.Type=2\r\n&Attribute.Tags.0.Value=test_note\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"DeviceName\": \"test_device\",\r\n        \"DevicePsk\": \"\",\r\n        \"DeviceCert\": \"xxxxxxxxxxxxxxxxxxxx\",\r\n        \"DevicePrivateKey\": \"xxxxxxxxxxxxxxxxxxxxxxx\",\r\n        \"LoraDevEui\": \"\",\r\n        \"LoraMoteType\": \"\",\r\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceName\": \"test_device\",\n        \"DevicePsk\": \"\",\n        \"DeviceCert\": \"xxxxxxxxxxxxxxxxxxxx\",\n        \"DevicePrivateKey\": \"xxxxxxxxxxxxxxxxxxxxxxx\",\n        \"LoraDevEui\": \"\",\n        \"LoraMoteType\": \"\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "创建设备（采用非对称加密）"
       },
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateDevice\r\n&ProductId=ABCDE12345\r\n&DeviceName=test_device\r\n&Attribute.Tags.0.Tag=note\r\n&Attribute.Tags.0.Type=2\r\n&Attribute.Tags.0.Value=test_note\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"DeviceName\": \"test_device\",\r\n        \"DevicePsk\": \"xxxxxxxxxxxxx\",\r\n        \"DeviceCert\": \"\",\r\n        \"DevicePrivateKey\": \"\",\r\n        \"LoraDevEui\": \"\",\r\n         \"LoraMoteType\": \"\",\r\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceName\": \"test_device\",\n        \"DevicePsk\": \"xxxxxxxxxxxxx\",\n        \"DeviceCert\": \"\",\n        \"DevicePrivateKey\": \"\",\n        \"LoraDevEui\": \"\",\n        \"LoraMoteType\": \"\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "创建设备（采用对称加密）"
       }
     ],
@@ -42,7 +42,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateLoraDevice\n&ProductId=ABCDE12345\n&DeviceName=test_device\n&AppEui=0000000000000001\n&DeviceEui=ffffff100000a680\n&AppKey=98929b92f09e2daf676d646d0f61d258\n&DeviceType=A\n&AuthKey=009edbf44ec1a36cd72663973761e615\n&Memo=memotext\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"AppEui\": \"0000000000000001\",\r\n        \"DeviceEui\": \"ffffff100000a680\",\r\n        \"ClassType\": \"A\",\r\n        \"DeviceName\": \"test_device\",\r\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"AppEui\": \"0000000000000001\",\n        \"DeviceEui\": \"ffffff100000a680\",\n        \"ClassType\": \"A\",\n        \"DeviceName\": \"test_device\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "创建lora类型的设备"
       }
     ],
@@ -50,7 +50,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateMultiDevice\r\n&ProductId=ABCDE12345\r\n&DeviceNames.0=aaa\r\n&DeviceNames.1=bbb\r\n&DeviceNames.2=ccc\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"TaskId\":\"abcdedf123456789\",\r\n        \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abcdedf123456789\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "创建多个设备"
       }
     ],
@@ -58,7 +58,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateMultiDevicesTask\n&ProductId=ABCDE12345\n&ParametersType=random\n&BatchCount=1\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Id\": 1000001,\r\n                \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1000001,\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "创建批量创建设备任务示例"
       }
     ],
@@ -66,7 +66,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateProduct\n&ProductName=fruit\n&ProductProperties.ProductDescription=test\n&ProductProperties.EncryptionType=1\n&ProductProperties.Region=gz\n&ProductProperties.ProductType=0\n&ProductProperties.Format=json\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"ProductId\": \"ABCDE12345\",\r\n        \"ProductName\": \"fruit\",\r\n        \"ProductProperties\": {\r\n              \"ProductDescription\":\"test\",\r\n              \"EncryptionType\": 1,\r\n               \"Region\": \"gz\",\r\n               \"ProductType\": 0,\r\n               \"Format\": \"json\",\r\n               \"Platform\": \"DEFAULT\",\r\n                \"Appeui\": \"\"\r\n         },\r\n        \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"ProductId\": \"ABCDE12345\",\n        \"ProductName\": \"fruit\",\n        \"ProductProperties\": {\n            \"ProductDescription\": \"test\",\n            \"EncryptionType\": 1,\n            \"Region\": \"gz\",\n            \"ProductType\": 0,\n            \"Format\": \"json\",\n            \"Platform\": \"DEFAULT\",\n            \"Appeui\": \"\"\n        },\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "创建产品"
       }
     ],
@@ -74,7 +74,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateTask\r\n&TaskType=UpdateShadow\r\n&ProductId=ABCDE12345\r\n&DeviceNameFilter=\r\n&ScheduleTimeInSeconds=0\r\n&MaxExecutionTimeInSeconds=\r\n&Tasks.UpdateShadowTask.Desired={\\\"color\\\":\\\"red\\\"}\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"TaskId\":\"dsaudhuisadhada\",\r\n        \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"dsaudhuisadhada\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "创建任务"
       }
     ],
@@ -82,7 +82,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateTaskFileUrl\n&ProductId=ABCDE12345\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Url\": \"https://iothub-tasktest-****\",\r\n\t\t\"FileName\": \"111111_ABCDE12345_1586228400\",\r\n\t\t\"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"https://iothub-tasktest-****\",\n        \"FileName\": \"111111_ABCDE12345_1586228400\",\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "获取任务文件上传链接示例"
       }
     ],
@@ -90,15 +90,15 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateTopicPolicy\r\n&ProductID=ABCDE12345\r\n&TopicName=abc\r\n&Privilege=2\r\n&BrokerSubscribe.ProductId=11LAWZ3J2D\r\n&BrokerSubscribe.DeviceName=device1\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "创建Topic示例"
       }
     ],
     "CreateTopicRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotcloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopicRule\n<公共请求参数>\n\n{\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUIGZpZWxkMSwgZmllbGQyIEZST00gJ3NyY1Byb2R1Y3RJZC9zcmNEZXZpY2VOYW1lL2V2ZW50Jw==\", \n        \"Description\": \"xx\", \n        \"Actions\": \"[]\", \n        \"RuleDisabled\": true\n    }, \n    \"RuleName\": \"testrulename\"\n}",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: iotcloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopicRule\n<公共请求参数>\n\n{\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUIGZpZWxkMSwgZmllbGQyIEZST00gJ3NyY1Byb2R1Y3RJZC9zcmNEZXZpY2VOYW1lL2V2ZW50Jw==\",\n        \"Description\": \"xx\",\n        \"Actions\": \"[]\",\n        \"RuleDisabled\": true\n    },\n    \"RuleName\": \"testrulename\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "创建规则示例"
       }
     ],
@@ -106,7 +106,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteDevice\n&ProductId=ABCDE12345\n&DeviceName=abc\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "删除设备"
       }
     ],
@@ -114,7 +114,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteLoraDevice\n&ProductId=ABCDE12345\n&DeviceName=test_device\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "删除lora类型的设备"
       }
     ],
@@ -122,7 +122,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteProduct\r\n&ProductId=ABCDE12345\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n         \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "删除产品"
       }
     ],
@@ -130,7 +130,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteTopicRule\r\n&RuleName=test\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "删除规则示例"
       }
     ],
@@ -138,7 +138,7 @@
       {
         "document": "查询所有的设备列表",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeAllDevices\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"liusentest\",\r\n        \"TotalCount\": 8,\r\n        \"Devices\": [\r\n            {\r\n                \"ProductId\": \"4LLJS0PKW1\",\r\n                \"ProductName\": \"prj-daygjcf5_auto_product_001\",\r\n                \"DeviceName\": \"device001\",\r\n                \"ResourceId\": \"productid/4LLJS0PKW1/devicename/device001\"\r\n            },\r\n            {\r\n                \"ProductId\": \"4Y3Y58TQKV\",\r\n                \"ProductName\": \"km11opp8_test_event\",\r\n                \"DeviceName\": \"device001\",\r\n                \"ResourceId\": \"productid/4Y3Y58TQKV/devicename/device001\"\r\n            },\r\n            {\r\n                \"DeviceName\": \"device_property001\",\r\n                \"ResourceId\": \"productid/9UJRWHESG4/devicename/device_property001\",\r\n                \"ProductId\": \"9UJRWHESG4\",\r\n                \"ProductName\": \"km11opp8_test_scf\"\r\n            },\r\n            {\r\n                \"ProductName\": \"km11opp8_scf_test\",\r\n                \"DeviceName\": \"device_property001\",\r\n                \"ResourceId\": \"productid/LRRZ586YRL/devicename/device_property001\",\r\n                \"ProductId\": \"LRRZ586YRL\"\r\n            },\r\n            {\r\n                \"ResourceId\": \"productid/US2CP696OM/devicename/device001\",\r\n                \"ProductId\": \"US2CP696OM\",\r\n                \"ProductName\": \"prj-tm7z2z5k_auto_product_001\",\r\n                \"DeviceName\": \"device001\"\r\n            },\r\n            {\r\n                \"DeviceName\": \"device001\",\r\n                \"ResourceId\": \"productid/A4XGYDGCVC/devicename/device001\",\r\n                \"ProductId\": \"A4XGYDGCVC\",\r\n                \"ProductName\": \"km11opp8_testaaa\"\r\n            },\r\n            {\r\n                \"ResourceId\": \"productid/LH6LISP663/devicename/device001\",\r\n                \"ProductId\": \"LH6LISP663\",\r\n                \"ProductName\": \"km11opp8_wepay_test\",\r\n                \"DeviceName\": \"device001\"\r\n            },\r\n            {\r\n                \"ResourceId\": \"productid/9UJRWHESG4/devicename/device001\",\r\n                \"ProductId\": \"9UJRWHESG4\",\r\n                \"ProductName\": \"km11opp8_test_scf\",\r\n                \"DeviceName\": \"device001\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"liusentest\",\n        \"TotalCount\": 8,\n        \"Devices\": [\n            {\n                \"ProductId\": \"4LLJS0PKW1\",\n                \"ProductName\": \"prj-daygjcf5_auto_product_001\",\n                \"DeviceName\": \"device001\",\n                \"ResourceId\": \"productid/4LLJS0PKW1/devicename/device001\"\n            },\n            {\n                \"ProductId\": \"4Y3Y58TQKV\",\n                \"ProductName\": \"km11opp8_test_event\",\n                \"DeviceName\": \"device001\",\n                \"ResourceId\": \"productid/4Y3Y58TQKV/devicename/device001\"\n            },\n            {\n                \"DeviceName\": \"device_property001\",\n                \"ResourceId\": \"productid/9UJRWHESG4/devicename/device_property001\",\n                \"ProductId\": \"9UJRWHESG4\",\n                \"ProductName\": \"km11opp8_test_scf\"\n            },\n            {\n                \"ProductName\": \"km11opp8_scf_test\",\n                \"DeviceName\": \"device_property001\",\n                \"ResourceId\": \"productid/LRRZ586YRL/devicename/device_property001\",\n                \"ProductId\": \"LRRZ586YRL\"\n            },\n            {\n                \"ResourceId\": \"productid/US2CP696OM/devicename/device001\",\n                \"ProductId\": \"US2CP696OM\",\n                \"ProductName\": \"prj-tm7z2z5k_auto_product_001\",\n                \"DeviceName\": \"device001\"\n            },\n            {\n                \"DeviceName\": \"device001\",\n                \"ResourceId\": \"productid/A4XGYDGCVC/devicename/device001\",\n                \"ProductId\": \"A4XGYDGCVC\",\n                \"ProductName\": \"km11opp8_testaaa\"\n            },\n            {\n                \"ResourceId\": \"productid/LH6LISP663/devicename/device001\",\n                \"ProductId\": \"LH6LISP663\",\n                \"ProductName\": \"km11opp8_wepay_test\",\n                \"DeviceName\": \"device001\"\n            },\n            {\n                \"ResourceId\": \"productid/9UJRWHESG4/devicename/device001\",\n                \"ProductId\": \"9UJRWHESG4\",\n                \"ProductName\": \"km11opp8_test_scf\",\n                \"DeviceName\": \"device001\"\n            }\n        ]\n    }\n}",
         "title": "查询所有的设备列表"
       }
     ],
@@ -146,7 +146,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDevice\r\n&ProductID=ABCDE12345\r\n&DeviceName=abc\r\n&<公共请求参数>",
-        "output": "{\r\n      \"Response\": {\r\n        \"Tags\": [\r\n          { \"Tag\": \"category\", \"Type\": 2, \"Value\": \"\" },\r\n          { \"Tag\": \"note\", \"Type\": 2, \"Value\": \"\" }\r\n        ],\r\n        \"DeviceName\": \"\",\r\n        \"DeviceCert\": \"-----BEGIN CERTIFICATE-----\\nIIDS...Fw==\\n-----END CERTIFICATE-----\\n\",\r\n        \"Online\": 0,\r\n        \"ConnIP\": 0,\r\n        \"LoginTime\": 0,\r\n        \"Version\": \"\",\r\n        \"LastUpdateTime\": 0,\r\n        \"DevicePsk\": \"\",\r\n        \"DeviceType\": 3,\r\n        \"Imei\": \"\",\r\n        \"Isp\": 0,\r\n        \"NbiotDeviceID\": \"\",\r\n        \"LoraDevEui\": \"\",\r\n        \"LoraMoteType\": 0,\r\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n      }\r\n    }",
+        "output": "{\n    \"Response\": {\n        \"Tags\": [\n            {\n                \"Tag\": \"category\",\n                \"Type\": 2,\n                \"Value\": \"\"\n            },\n            {\n                \"Tag\": \"note\",\n                \"Type\": 2,\n                \"Value\": \"\"\n            }\n        ],\n        \"DeviceName\": \"\",\n        \"DeviceCert\": \"-----BEGIN CERTIFICATE-----\\nIIDS...Fw==\\n-----END CERTIFICATE-----\\n\",\n        \"Online\": 0,\n        \"ConnIP\": 0,\n        \"LoginTime\": 0,\n        \"Version\": \"\",\n        \"LastUpdateTime\": 0,\n        \"DevicePsk\": \"\",\n        \"DeviceType\": 3,\n        \"Imei\": \"\",\n        \"Isp\": 0,\n        \"NbiotDeviceID\": \"\",\n        \"LoraDevEui\": \"\",\n        \"LoraMoteType\": 0,\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "查看设备详情示例"
       }
     ],
@@ -154,7 +154,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceClientKey\n&ProductId=ABCDE12345\n&DeviceName=abc\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"ClientKey\": \"----------BEGIN PRIVATE KEY-----\\nIIDS...Fw==\\n-----END PRIVATE KEY-----\\n\",\r\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientKey\": \"----------BEGIN PRIVATE KEY-----\\nIIDS...Fw==\\n-----END PRIVATE KEY-----\\n\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "获取设备密钥"
       }
     ],
@@ -162,7 +162,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceShadow\n&ProductId=ABCDE12345\n&DeviceName=abc\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"Data\":\"{\\\"payload\\\":{\\\"state\\\": {\\\"reported\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"reported\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"get\\\"}\",\r\n        \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"payload\\\":{\\\"state\\\": {\\\"reported\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"reported\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"get\\\"}\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "获取设备影子"
       }
     ],
@@ -170,7 +170,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDevices\n&ProductId=ABCDE12345\n&Offset=0\n&Limit=10\n&FirmwareVersion=1.0.0\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1, \r\n        \"RequestId\": \"xx\", \r\n        \"Devices\": [\r\n            {\r\n                \"EnableState\": 1, \r\n                \"LastOfflineTime\": 1, \r\n                \"Version\": \"xx\", \r\n                \"CertState\": 1, \r\n                \"Online\": 1, \r\n                \"FirmwareUpdateTime\": 1, \r\n                \"DeviceName\": \"xx\", \r\n                \"Tags\": [\r\n                    {\r\n                        \"Tag\": \"xx\", \r\n                        \"Type\": 1, \r\n                        \"Name\": \"xx\", \r\n                        \"Value\": \"xx\"\r\n                    }, \r\n                    {\r\n                        \"Tag\": \"xx\", \r\n                        \"Type\": 1, \r\n                        \"Name\": \"xx\", \r\n                        \"Value\": \"xx\"\r\n                    }\r\n                ], \r\n                \"LogLevel\": 1, \r\n                \"FirstOnlineTime\": 1, \r\n                \"DeviceCert\": \"xx\", \r\n                \"Imei\": \"xx\", \r\n                \"ClientIP\": \"xx\", \r\n                \"DevicePsk\": \"xx\", \r\n                \"Isp\": 1, \r\n                \"NbiotDeviceID\": \"xx\", \r\n                \"LoraDevEui\": \"xx\", \r\n                \"DeviceType\": 1, \r\n                \"LoginTime\": 1, \r\n                \"ConnIP\": 1, \r\n                \"LastUpdateTime\": 1, \r\n                \"Labels\": [\r\n                    {\r\n                        \"Value\": \"xx\", \r\n                        \"Key\": \"xx\"\r\n                    }\r\n                ], \r\n                \"CreateTime\": 1, \r\n                \"LoraMoteType\": 1\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Devices\": [\n            {\n                \"EnableState\": 1,\n                \"LastOfflineTime\": 1,\n                \"Version\": \"xx\",\n                \"CertState\": 1,\n                \"Online\": 1,\n                \"FirmwareUpdateTime\": 1,\n                \"DeviceName\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Tag\": \"xx\",\n                        \"Type\": 1,\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    },\n                    {\n                        \"Tag\": \"xx\",\n                        \"Type\": 1,\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"LogLevel\": 1,\n                \"FirstOnlineTime\": 1,\n                \"DeviceCert\": \"xx\",\n                \"Imei\": \"xx\",\n                \"ClientIP\": \"xx\",\n                \"DevicePsk\": \"xx\",\n                \"Isp\": 1,\n                \"NbiotDeviceID\": \"xx\",\n                \"LoraDevEui\": \"xx\",\n                \"DeviceType\": 1,\n                \"LoginTime\": 1,\n                \"ConnIP\": 1,\n                \"LastUpdateTime\": 1,\n                \"Labels\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": 1,\n                \"LoraMoteType\": 1\n            }\n        ]\n    }\n}",
         "title": "获取设备列表"
       }
     ],
@@ -178,7 +178,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeFirmware\n&ProductID=7ZISKXPJVU\n&FirmwareVersion=1.0.3\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Description\": \"desc\",\r\n        \"Md5sum\": \"md5\",\r\n        \"Createtime\": 1597047368,\r\n        \"RequestId\": \"xxxxxxxxxx\",\r\n        \"Version\": \"1.0.3\",\r\n        \"ProductId\": \"7ZISKXPJVU\",\r\n        \"Name\": \"name\",\r\n        \"ProductName\":\"ABC\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"desc\",\n        \"Md5sum\": \"md5\",\n        \"Createtime\": 1597047368,\n        \"RequestId\": \"xxxxxxxxxx\",\n        \"Version\": \"1.0.3\",\n        \"ProductId\": \"7ZISKXPJVU\",\n        \"Name\": \"name\",\n        \"ProductName\": \"ABC\"\n    }\n}",
         "title": "查询固件信息"
       }
     ],
@@ -186,7 +186,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeFirmwareTask\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&TaskId=10000\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 1000175,\r\n        \"Status\": 3,\r\n        \"CreateTime\": 1589466879,\r\n        \"Type\": 1,\r\n        \"ProductName\":\"门锁\",\r\n        \"UpgradeMode\":\"originalVersion\",\r\n        \"ProductId\":\"ABCDE12345\",\r\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1000175,\n        \"Status\": 3,\n        \"CreateTime\": 1589466879,\n        \"Type\": 1,\n        \"ProductName\": \"门锁\",\n        \"UpgradeMode\": \"originalVersion\",\n        \"ProductId\": \"ABCDE12345\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "查询固件升级任务详情"
       }
     ],
@@ -194,7 +194,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeFirmwareTaskDevices\n&ProductID=O4CCMMZE3A\n&FirmwareVersion=1.0\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Total\": 0,\r\n        \"Devices\": [\r\n            {\r\n                \"DeviceName\": \"123\",\r\n                \"LastProcessTime\": 1597141763,\r\n                \"Status\": 5,\r\n                \"ErrMsg\": \"\",\r\n                \"DstVersion\": \"1.0\",\r\n                \"Retcode\": 0,\r\n                \"Percent\": 0,\r\n                \"OriVersion\": \"0.1\"\r\n            },\r\n            {\r\n                \"OriVersion\": \"0.1\",\r\n                \"DeviceName\": \"abc\",\r\n                \"LastProcessTime\": 1597140525,\r\n                \"Status\": 0,\r\n                \"ErrMsg\": \"\",\r\n                \"DstVersion\": \"1.0\",\r\n                \"Retcode\": 0,\r\n                \"Percent\": 0\r\n            },\r\n            {\r\n                \"LastProcessTime\": 1597141811,\r\n                \"Status\": 6,\r\n                \"ErrMsg\": \"\",\r\n                \"DstVersion\": \"1.0\",\r\n                \"Retcode\": 0,\r\n                \"Percent\": 0,\r\n                \"OriVersion\": \"0.1\",\r\n                \"DeviceName\": \"123\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Devices\": [\n            {\n                \"DeviceName\": \"123\",\n                \"LastProcessTime\": 1597141763,\n                \"Status\": 5,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0,\n                \"OriVersion\": \"0.1\"\n            },\n            {\n                \"OriVersion\": \"0.1\",\n                \"DeviceName\": \"abc\",\n                \"LastProcessTime\": 1597140525,\n                \"Status\": 0,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0\n            },\n            {\n                \"LastProcessTime\": 1597141811,\n                \"Status\": 6,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0,\n                \"OriVersion\": \"0.1\",\n                \"DeviceName\": \"123\"\n            }\n        ],\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\n    }\n}",
         "title": "查询固件升级任务的设备列表"
       }
     ],
@@ -202,7 +202,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeFirmwareTaskDistribution\n&ProductID=O4CCMMZE3A\n&FirmwareVersion=1.0\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"StatusInfos\": [\r\n            {\r\n                \"Total\": 1,\r\n                \"Status\": 0\r\n            },\r\n            {\r\n                \"Status\": 5,\r\n                \"Total\": 1\r\n            },\r\n            {\r\n                \"Total\": 1,\r\n                \"Status\": 6\r\n            }\r\n        ],\r\n        \"RequestId\": \"25a4a01b-8146-4388-90f9-2d8ca18bbb1f\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"StatusInfos\": [\n            {\n                \"Total\": 1,\n                \"Status\": 0\n            },\n            {\n                \"Status\": 5,\n                \"Total\": 1\n            },\n            {\n                \"Total\": 1,\n                \"Status\": 6\n            }\n        ],\n        \"RequestId\": \"25a4a01b-8146-4388-90f9-2d8ca18bbb1f\"\n    }\n}",
         "title": "查询固件升级任务状态分布"
       }
     ],
@@ -210,7 +210,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeFirmwareTaskStatistics\n&ProductID=O4CCMMZE3A\n&FirmwareVersion=1.0\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"SuccessTotal\": 1,\r\n        \"FailureTotal\": 0,\r\n        \"UpgradingTotal\": 1,\r\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessTotal\": 1,\n        \"FailureTotal\": 0,\n        \"UpgradingTotal\": 1,\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\n    }\n}",
         "title": "查询固件升级任务统计信息"
       }
     ],
@@ -218,7 +218,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeFirmwareTasks\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&Offset=1\n&Limit=5\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Total\": 53,\r\n        \"TaskInfos\": [\r\n            {\r\n                \"TaskId\": 1000175,\r\n                \"Status\": 3,\r\n                \"CreateTime\": 1589466879,\r\n                \"Type\": 1\r\n            },\r\n            {\r\n                \"TaskId\": 1000176,\r\n                \"Status\": 3,\r\n                \"CreateTime\": 1589467049,\r\n                \"Type\": 1\r\n            },\r\n            {\r\n                \"Status\": 3,\r\n                \"CreateTime\": 1589467138,\r\n                \"Type\": 1,\r\n                \"TaskId\": 1000179\r\n            },\r\n            {\r\n                \"TaskId\": 1000180,\r\n                \"Status\": 3,\r\n                \"CreateTime\": 1589467139,\r\n                \"Type\": 1\r\n            },\r\n            {\r\n                \"Type\": 1,\r\n                \"TaskId\": 1000182,\r\n                \"Status\": 3,\r\n                \"CreateTime\": 1589467141\r\n            }\r\n        ],\r\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 53,\n        \"TaskInfos\": [\n            {\n                \"TaskId\": 1000175,\n                \"Status\": 3,\n                \"CreateTime\": 1589466879,\n                \"Type\": 1\n            },\n            {\n                \"TaskId\": 1000176,\n                \"Status\": 3,\n                \"CreateTime\": 1589467049,\n                \"Type\": 1\n            },\n            {\n                \"Status\": 3,\n                \"CreateTime\": 1589467138,\n                \"Type\": 1,\n                \"TaskId\": 1000179\n            },\n            {\n                \"TaskId\": 1000180,\n                \"Status\": 3,\n                \"CreateTime\": 1589467139,\n                \"Type\": 1\n            },\n            {\n                \"Type\": 1,\n                \"TaskId\": 1000182,\n                \"Status\": 3,\n                \"CreateTime\": 1589467141\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "查询固件升级任务列表"
       }
     ],
@@ -226,7 +226,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeLoraDevice\n&ProductId=ABCDE12345\n&DeviceName=test_device\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"AppEui\": \"0000000000000001\",\r\n        \"DeviceEui\": \"ffffff100000a680\",\r\n        \"ClassType\": \"A\",\r\n        \"AppKey\": \"98929b92f09e2daf676d646d0f61d258\",\r\n        \"ProductId\": \"ABCDE12345\",\r\n        \"DeviceName\": \"test_device\",\r\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"AppEui\": \"0000000000000001\",\n        \"DeviceEui\": \"ffffff100000a680\",\n        \"ClassType\": \"A\",\n        \"AppKey\": \"98929b92f09e2daf676d646d0f61d258\",\n        \"ProductId\": \"ABCDE12345\",\n        \"DeviceName\": \"test_device\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "获取lora设备详情"
       }
     ],
@@ -234,7 +234,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeMultiDevTask\r\n&ProductId=ABCDE12345\r\n&TaskId=abcdefghijklmn\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"TaskId\":\"abcdefghijklmn\",\r\n        \"TaskStatus\":1,\r\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abcdefghijklmn\",\n        \"TaskStatus\": 1,\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "获取创建多设备任务状态"
       }
     ],
@@ -242,7 +242,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeMultiDevices\r\n&ProductId=ABCDE12345\r\n&TaskId=abcdefghijklmn\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"TaskId\":\"abcdedf123456789\",\r\n        \"TotalDevNum\":2,\r\n        \"DevicesInfo\":[\r\n             {\r\n                \"DeviceName\":\"test_device1\",\r\n                \"DeviceCert\":\"-----BEGIN CERTIFICATE-----\\n-----END CERTIFICATE-----\",\r\n                \"DevicePrivateKey\":\"-----BEGIN PRIVATE KEY-----\\n-----END PRIVATE KEY-----\\n\",\r\n                \"Result\":0\r\n              },\r\n             {\r\n                \"DeviceName\":\"test_device2\",\r\n                \"Result\":2001\r\n              }\r\n          ],\r\n        \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abcdedf123456789\",\n        \"TotalDevNum\": 2,\n        \"DevicesInfo\": [\n            {\n                \"DeviceName\": \"test_device1\",\n                \"DeviceCert\": \"-----BEGIN CERTIFICATE-----\\n-----END CERTIFICATE-----\",\n                \"DevicePrivateKey\": \"-----BEGIN PRIVATE KEY-----\\n-----END PRIVATE KEY-----\\n\",\n                \"Result\": 0\n            },\n            {\n                \"DeviceName\": \"test_device2\",\n                \"Result\": 2001\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "获取创建多设备结果"
       }
     ],
@@ -250,7 +250,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProductTask\n&ProductId=ABCDE12345\n&TaskId=1\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TaskInfo\": {\r\n\t\t\t\"ResultType\": \"cosfile\",\r\n\t\t\t\"Type\": 0,\r\n\t\t\t\"Parameters\": \"{\\\"filename\\\":\\\"input.csv\\\",\\\"productType\\\":0,\\\"productEncryption\\\":1}\",\r\n\t\t\t\"Result\": \"https://iothub-tasktest-****\",\r\n\t\t\t\"BatchOffset\": 2,\r\n\t\t\t\"UpdateTime\": 1585826608,\r\n\t\t\t\"State\": 5,\r\n\t\t\t\"ParametersType\": \"cosfile\",\r\n\t\t\t\"CreateTime\": 1585626105,\r\n\t\t\t\"Id\": 1,\r\n\t\t\t\"CompleteTime\": 1585626105,\r\n\t\t\t\"BatchCount\": 2\r\n\t\t},\r\n\t\t\"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskInfo\": {\n            \"ResultType\": \"cosfile\",\n            \"Type\": 0,\n            \"Parameters\": \"{\\\"filename\\\":\\\"input.csv\\\",\\\"productType\\\":0,\\\"productEncryption\\\":1}\",\n            \"Result\": \"https://iothub-tasktest-****\",\n            \"BatchOffset\": 2,\n            \"UpdateTime\": 1585826608,\n            \"State\": 5,\n            \"ParametersType\": \"cosfile\",\n            \"CreateTime\": 1585626105,\n            \"Id\": 1,\n            \"CompleteTime\": 1585626105,\n            \"BatchCount\": 2\n        },\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "查看产品任务详情示例"
       }
     ],
@@ -258,7 +258,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProductTasks\n&ProductId=ABCDE12345\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 3,\r\n\t\t\"TaskInfos\": [{\r\n\t\t\t\"BatchCount\": 2,\r\n\t\t\t\"ResultType\": \"cosfile\",\r\n\t\t\t\"Id\": 1,\r\n\t\t\t\"BatchOffset\": 2,\r\n\t\t\t\"CompleteTime\": 1585626105,\r\n\t\t\t\"Result\": \"https://iothub-tasktest-****\",\r\n\t\t\t\"CreateTime\": 1585626105,\r\n\t\t\t\"UpdateTime\": 1585826608,\r\n\t\t\t\"ParametersType\": \"cosfile\",\r\n\t\t\t\"Type\": 0,\r\n\t\t\t\"State\": 5,\r\n\t\t\t\"Parameters\": \"{\\\"filename\\\":\\\"input1.csv\\\",\\\"productType\\\":0,\\\"productEncryption\\\":1}\"\r\n\t\t}, {\r\n\t\t\t\"CompleteTime\": 1586228643,\r\n\t\t\t\"ParametersType\": \"random\",\r\n\t\t\t\"BatchCount\": 1,\r\n\t\t\t\"Id\": 1000000,\r\n\t\t\t\"Parameters\": \"{\\\"batchNum\\\":1,\\\"productEncryption\\\":21,\\\"productType\\\":0}\",\r\n\t\t\t\"BatchOffset\": 1,\r\n\t\t\t\"CreateTime\": 1586228643,\r\n\t\t\t\"Type\": 0,\r\n\t\t\t\"ResultType\": \"cosfile\",\r\n\t\t\t\"UpdateTime\": 1586228649,\r\n\t\t\t\"Result\": \"https://iothub-tasktest-*****\",\r\n\t\t\t\"State\": 5\r\n\t\t}, {\r\n\t\t\t\"Result\": \"https://iothub-tasktest-*****\",\r\n\t\t\t\"ParametersType\": \"random\",\r\n\t\t\t\"BatchCount\": 1,\r\n\t\t\t\"BatchOffset\": 1,\r\n\t\t\t\"State\": 5,\r\n\t\t\t\"UpdateTime\": 1586228669,\r\n\t\t\t\"Type\": 0,\r\n\t\t\t\"CompleteTime\": 1586228663,\r\n\t\t\t\"Parameters\": \"{\\\"batchNum\\\":1,\\\"productEncryption\\\":21,\\\"productType\\\":0}\",\r\n\t\t\t\"CreateTime\": 1586228663,\r\n\t\t\t\"ResultType\": \"cosfile\",\r\n\t\t\t\"Id\": 1000001\r\n\t\t}],\r\n\t\t\"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"TaskInfos\": [\n            {\n                \"BatchCount\": 2,\n                \"ResultType\": \"cosfile\",\n                \"Id\": 1,\n                \"BatchOffset\": 2,\n                \"CompleteTime\": 1585626105,\n                \"Result\": \"https://iothub-tasktest-****\",\n                \"CreateTime\": 1585626105,\n                \"UpdateTime\": 1585826608,\n                \"ParametersType\": \"cosfile\",\n                \"Type\": 0,\n                \"State\": 5,\n                \"Parameters\": \"{\\\"filename\\\":\\\"input1.csv\\\",\\\"productType\\\":0,\\\"productEncryption\\\":1}\"\n            },\n            {\n                \"CompleteTime\": 1586228643,\n                \"ParametersType\": \"random\",\n                \"BatchCount\": 1,\n                \"Id\": 1000000,\n                \"Parameters\": \"{\\\"batchNum\\\":1,\\\"productEncryption\\\":21,\\\"productType\\\":0}\",\n                \"BatchOffset\": 1,\n                \"CreateTime\": 1586228643,\n                \"Type\": 0,\n                \"ResultType\": \"cosfile\",\n                \"UpdateTime\": 1586228649,\n                \"Result\": \"https://iothub-tasktest-*****\",\n                \"State\": 5\n            },\n            {\n                \"Result\": \"https://iothub-tasktest-*****\",\n                \"ParametersType\": \"random\",\n                \"BatchCount\": 1,\n                \"BatchOffset\": 1,\n                \"State\": 5,\n                \"UpdateTime\": 1586228669,\n                \"Type\": 0,\n                \"CompleteTime\": 1586228663,\n                \"Parameters\": \"{\\\"batchNum\\\":1,\\\"productEncryption\\\":21,\\\"productType\\\":0}\",\n                \"CreateTime\": 1586228663,\n                \"ResultType\": \"cosfile\",\n                \"Id\": 1000001\n            }\n        ],\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "获取产品级任务列表示例"
       }
     ],
@@ -266,7 +266,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProducts\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Products\": [\r\n            {\r\n                \"ProductId\": \"ABCDEF12345\",\r\n                \"ProductName\": \"hello\",\r\n                \"ProductMetadata\": {\r\n                    \"CreationDate\": 1529049275\r\n                },\r\n                \"ProductProperties\": {\r\n                    \"ProductDescription\": \"test\",\r\n                    \"EncryptionType\": \"1\",\r\n                    \"Region\": \"gz\",\r\n                    \"ProductType\": 0,\r\n                    \"Format\": \"json\"\r\n                }\r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"ABCDEF12345\",\n                \"ProductName\": \"hello\",\n                \"ProductMetadata\": {\n                    \"CreationDate\": 1529049275\n                },\n                \"ProductProperties\": {\n                    \"ProductDescription\": \"test\",\n                    \"EncryptionType\": \"1\",\n                    \"Region\": \"gz\",\n                    \"ProductType\": 0,\n                    \"Format\": \"json\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
         "title": "获取产品列表"
       }
     ],
@@ -274,7 +274,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeTask\n&Id=5ad5aa513332ea4cb86e9ad5\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n       \"Type\": \"PublishMessage\",\r\n       \"Id\": \"5ad5b9a53332ea3de678ea52\",\r\n       \"ProductId\": \"ABCDE12345\",\r\n       \"Status\": 3,\r\n       \"CreateTime\": 1523956133,\r\n       \"UpdateTime\": 1523958284,\r\n       \"DoneTime\": 1523956134,\r\n       \"ScheduleTime\": 1523956133,\r\n       \"RetCode\": 0,\r\n       \"ErrMsg\": \"\",\r\n       \"Percent\": 0,\r\n       \"AllDeviceCnt\": 2,\r\n       \"DoneDeviceCnt\": 2,\r\n       \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"PublishMessage\",\n        \"Id\": \"5ad5b9a53332ea3de678ea52\",\n        \"ProductId\": \"ABCDE12345\",\n        \"Status\": 3,\n        \"CreateTime\": 1523956133,\n        \"UpdateTime\": 1523958284,\n        \"DoneTime\": 1523956134,\n        \"ScheduleTime\": 1523956133,\n        \"RetCode\": 0,\n        \"ErrMsg\": \"\",\n        \"Percent\": 0,\n        \"AllDeviceCnt\": 2,\n        \"DoneDeviceCnt\": 2,\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "获取任务详情"
       }
     ],
@@ -282,7 +282,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeTasks\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"TotalCount\":1,\r\n        \"Tasks\":[\r\n             {\r\n                 \"Type\": \"PublishMessage\",\r\n                 \"Id\": \"5ad5b9a53332ea3de678ea52\",\r\n                 \"ProductId\": \"ABCDE12345\",\r\n                 \"Status\": 3,\r\n                 \"CreateTime\": 1523956133,\r\n                 \"UpdateTime\": 1523958284,\r\n                 \"RetCode\": 0,\r\n                 \"ErrMsg\": \"\"\r\n             }\r\n         ],\r\n        \"RequestId\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"Type\": \"PublishMessage\",\n                \"Id\": \"5ad5b9a53332ea3de678ea52\",\n                \"ProductId\": \"ABCDE12345\",\n                \"Status\": 3,\n                \"CreateTime\": 1523956133,\n                \"UpdateTime\": 1523958284,\n                \"RetCode\": 0,\n                \"ErrMsg\": \"\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "获取任务列表"
       }
     ],
@@ -290,7 +290,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DisableTopicRule\n&RuleName=test\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "禁用接口示例"
       }
     ],
@@ -298,7 +298,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=EditFirmware\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&FirmwareName=name\n&FirmwareDescription=desc\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "编辑固件信息"
       }
     ],
@@ -306,7 +306,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=EnableTopicRule\n&RuleName=test\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "启用规则示例"
       }
     ],
@@ -314,7 +314,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=PublishAsDevice\n&ProductId=ABCDE12345\n&DeviceName=test_device\n&Port=8000\n&Payload=hello\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "模拟lora类型的设备向服务器发送消息"
       }
     ],
@@ -322,7 +322,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=PublishBroadcastMessage\n&ProductId=ASBHKN121\n&Payload=123456\n&Qos=1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\",\r\n        \"TaskId\": 1000523\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\",\n        \"TaskId\": 1000523\n    }\n}",
         "title": "发布广播消息"
       }
     ],
@@ -330,7 +330,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=PublishMessage\n&Topic=RL0BAZKZ6V/dev1/control\n&Payload=hahaha\n&ProductId=RL0BAZKZ6V\n&DeviceName=dev1\n&Qos=0\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "发布消息"
       }
     ],
@@ -338,7 +338,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=PublishRRPCMessage\n&ProductId=ASBHKN121\n&DeviceName=dev\n&Payload=1234561\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"MessageId\": 74,\r\n        \"PayloadBase64\": \"QUJDRA==\",\r\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"MessageId\": 74,\n        \"PayloadBase64\": \"QUJDRA==\",\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "发布RRPC消息"
       }
     ],
@@ -346,15 +346,15 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=PublishToDevice\n&ProductId=ABCDE12345\n&DeviceName=test_device\n&Port=8000\n&Payload=hello\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "服务下发消息到lora设备"
       }
     ],
     "ReplaceTopicRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotcloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceTopicRule\n<公共请求参数>\n\n{\n    \"ModifyType\": 1, \n    \"ActionIndex\": 1, \n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUIGZpZWxkMSwgZmllbGQyIEZST00gJ3NyY1Byb2R1Y3RJZC9zcmNEZXZpY2VOYW1lL2V2ZW50Jw==\", \n        \"Description\": \"xx\", \n        \"Actions\": \"xx\", \n        \"RuleDisabled\": true\n    }, \n    \"RuleName\": \"testrulename\"\n}",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: iotcloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceTopicRule\n<公共请求参数>\n\n{\n    \"ModifyType\": 1,\n    \"ActionIndex\": 1,\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUIGZpZWxkMSwgZmllbGQyIEZST00gJ3NyY1Byb2R1Y3RJZC9zcmNEZXZpY2VOYW1lL2V2ZW50Jw==\",\n        \"Description\": \"xx\",\n        \"Actions\": \"xx\",\n        \"RuleDisabled\": true\n    },\n    \"RuleName\": \"testrulename\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "替换规则示例"
       }
     ],
@@ -362,7 +362,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=ResetDeviceState\n&ProductId=ABCDE12345\n&DeviceNames.0=test_device1\n&DeviceNames.1=test_device2\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\",\r\n\t\t\"SuccessCount\": 1,\r\n\t\t\"ResetDeviceResults\": [{\r\n\t\t\t\"DeviceName\": \"test_device1\",\r\n\t\t\t\"Success\": true,\r\n\t\t\t\"Reason\": \"\"\r\n\t\t}, {\r\n\t\t\t\"DeviceName\": \"test_device2\",\r\n\t\t\t\"Success\": false,\r\n\t\t\t\"Reason\": \"device not exists\"\r\n\t\t}]\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\",\n        \"SuccessCount\": 1,\n        \"ResetDeviceResults\": [\n            {\n                \"DeviceName\": \"test_device1\",\n                \"Success\": true,\n                \"Reason\": \"\"\n            },\n            {\n                \"DeviceName\": \"test_device2\",\n                \"Success\": false,\n                \"Reason\": \"device not exists\"\n            }\n        ]\n    }\n}",
         "title": "重置设备连接状态"
       }
     ],
@@ -370,7 +370,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=RetryDeviceFirmwareTask\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&TaskId=10000\n&DeviceName=dev\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "查询固件升级任务详情"
       }
     ],
@@ -378,7 +378,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UnbindDevices\n&GatewayProductId=12345ABCDE\n&GatewayDeviceName=test\n&ProductId=ABCDE12345\n&DeviceNames.0=test0\n&DeviceNames.1=test1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
         "title": "批量解绑子设备"
       }
     ],
@@ -386,7 +386,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateDeviceAvailableState\n&ProductId=SB9OJFCJ1C\n&DeviceName=test123\n&EnableState=0\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
         "title": "UpdateDeviceAvailableState"
       }
     ],
@@ -394,7 +394,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateDeviceShadow\n&ProductId=ABCDE12345\n&DeviceName=abc\n&State={\"desired\":{\"color\":\"red\"}}\n&ShadowVersion=1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"Data\":\"{\\\"payload\\\":{\\\"state\\\": {\\\"desired\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"desired\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"update\\\"}\",\r\n        \"RequestId\":\"9e574269-093f-4a7f-bf90-24ef80b6528a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"payload\\\":{\\\"state\\\": {\\\"desired\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"desired\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"update\\\"}\",\n        \"RequestId\": \"9e574269-093f-4a7f-bf90-24ef80b6528a\"\n    }\n}",
         "title": "更新设备影子"
       }
     ],
@@ -402,7 +402,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateTopicPolicy\r\n&ProductID=ABCDE12345\r\n&TopicName=abc\r\n&NewTopicName=ABC\r\n&Privilege=2\r\n&BrokerSubscribe.ProductId=11LAWZ3J2D\r\n&BrokerSubscribe.DeviceName=device1\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"Requestd\":\"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {}\n}",
         "title": "更新Topic示例"
       }
     ],
@@ -410,7 +410,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UploadFirmware\r\n&ProductID=ABCDE12345\r\n&FirmwareVersion=1.0.0\r\n&Md5sum=hfshfspodkoiwuidoiwjcuie\r\n&FileSize=1024\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestID\":\"xxxxxxxxxxxxxxxxxxxxxxx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {}\n}",
         "title": "上传固件信息示例"
       }
     ]

@@ -20,7 +20,6 @@ Output:
                 "TrafficMirrorId": "bmtm-lmep0eit",
                 "Alias": "test",
                 "VpcId": "vpc-muinpf9p",
-                "LBType": 0,
                 "HealthSwitch": 0,
                 "HealthNum": 3,
                 "UnhealthNum": 3,

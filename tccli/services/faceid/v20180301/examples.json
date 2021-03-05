@@ -4,13 +4,13 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCard2EVerification\r\n&Name=张三\r\n&BankCard=6222222222222222222\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"认证通过\",\r\n        \"RequestId\": \"c6daaf7f-dbdc-4a9d-a20b-9a14ffdd8328\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"c6daaf7f-dbdc-4a9d-a20b-9a14ffdd8328\"\n    }\n}",
         "title": "认证通过示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCard2EVerification&S"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCard2EVerification\r\n&Name=张三\r\n&BankCard=6222222222222222222\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"-4\",\r\n        \"Description\": \"持卡人信息有误\",\r\n        \"RequestId\": \"d668328c-7847-42d7-bdce-215ebadffd9b\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"-4\",\n        \"Description\": \"持卡人信息有误\",\n        \"RequestId\": \"d668328c-7847-42d7-bdce-215ebadffd9b\"\n    }\n}",
         "title": "认证不通过示例  [前往调试工具] (https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCard2EVerificatio"
       }
     ],
@@ -18,13 +18,13 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCard4EVerification\n&Name=张三\n&BankCard=6222222222222222222\n&Phone=6222222222222222222\n&IdCard=6222222222222222222\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"认证通过\",\r\n        \"RequestId\": \"74e742e8-f91d-49c3-9744-c20f3baca117\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"74e742e8-f91d-49c3-9744-c20f3baca117\"\n    }\n}",
         "title": "认证通过示例"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCard4EVerification\n&Name=张三\n&BankCard=6222222222222222222\n&Phone=6222222222222222222\n&IdCard=6222222222222222222\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"-6\",\r\n        \"Description\": \"持卡人信息有误\",\r\n        \"RequestId\": \"24fe7851-49e9-4a4a-ac1e-3bd5c09323fd\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"-6\",\n        \"Description\": \"持卡人信息有误\",\n        \"RequestId\": \"24fe7851-49e9-4a4a-ac1e-3bd5c09323fd\"\n    }\n}",
         "title": "认证不通过示例"
       }
     ],
@@ -32,13 +32,13 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCardVerification\n&IdCard=440111201903211111\n&Name=张三\n&BankCard=6222222222222222222\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"认证通过\",\r\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
         "title": "认证通过示例 [前往调试工具]（https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCardVerification&Sig"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCardVerification\n&IdCard=440111201903211111\n&Name=张三\n&BankCard=6222222222222222222\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"-1\",\r\n        \"Description\": \"认证未通过\",\r\n        \"RequestId\": \"89f695b2-18fd-44b6-bffc-96972052666f\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"-1\",\n        \"Description\": \"认证未通过\",\n        \"RequestId\": \"89f695b2-18fd-44b6-bffc-96972052666f\"\n    }\n}",
         "title": "认证失败示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCardVerification&Sig"
       }
     ],
@@ -46,7 +46,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=CheckBankCardInformation\n&BankCard=xxxxxxxxxx\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"查询成功\",\r\n        \"AccountBank\": \"中国工商银行\",\r\n        \"AccountType\": 1,\r\n        \"RequestId\": \"8695c53f-776f-4ff5-a66d-84e67b352d20\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"查询成功\",\n        \"AccountBank\": \"中国工商银行\",\n        \"AccountType\": 1,\n        \"RequestId\": \"8695c53f-776f-4ff5-a66d-84e67b352d20\"\n    }\n}",
         "title": "查询成功"
       }
     ],
@@ -54,15 +54,15 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=CheckIdCardInformation\n&ImageBase64=<base64字符串>\n&Config={\"CopyWarn\":true}\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Address\": \"广东省xxxxxxxxxxxx\",\r\n        \"Birth\": \"1995/8/6\",\r\n        \"Description\": \"成功\",\r\n        \"IdNum\": \"xxxxxxx\",\r\n        \"Name\": \"洪**\",\r\n        \"Nation\": \"汉\",\r\n        \"RequestId\": \"eb10******579b9a\",\r\n        \"Result\": \"FailedOperation.OcrWarningOccurred\",\r\n        \"Sex\": \"男\",\r\n        \"Sim\": 98.819999694824,\r\n        \"Portrait\":\"zok/tK7k2bLjyJE\",\r\n        \"Warnings\":\"-9101|-9106|-9104\",\r\n        \"Quality\": 0.0\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Address\": \"广东省xxxxxxxxxxxx\",\n        \"Birth\": \"1995/8/6\",\n        \"Description\": \"成功\",\n        \"IdNum\": \"xxxxxxx\",\n        \"Name\": \"洪**\",\n        \"Nation\": \"汉\",\n        \"RequestId\": \"eb10******579b9a\",\n        \"Result\": \"FailedOperation.OcrWarningOccurred\",\n        \"Sex\": \"男\",\n        \"Sim\": 98.819999694824,\n        \"Portrait\": \"zok/tK7k2bLjyJE\",\n        \"Warnings\": \"-9101|-9106|-9104\",\n        \"Quality\": 0.0\n    }\n}",
         "title": "使用身份证照片Base64进行验证"
       }
     ],
     "CheckPhoneAndName": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckPhoneAndName\n<公共请求参数>\n\n{\"Mobile\":\"1399999999909\",\"Name\":\"李四\"}",
-        "output": "{\r\n    \"Response\": {\r\n         \"Result\": \"0\",\r\n         \"Description\": \"验证结果一致\",\r\n        \"RequestId\": \"368a9e91-71dc-49c7-b622-c4a300ed7370\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckPhoneAndName\n<公共请求参数>\n\n{\n    \"Mobile\": \"1399999999909\",\n    \"Name\": \"李四\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"验证结果一致\",\n        \"RequestId\": \"368a9e91-71dc-49c7-b622-c4a300ed7370\"\n    }\n}",
         "title": "查询成功"
       }
     ],
@@ -70,7 +70,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=DetectAuth\n&RuleId=0\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"BizToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\",\r\n    \"Url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2cca36a86d5035ae&redirect_uri=http%3A%2F%2Fopen.faceid.qq.com%2Fv1%2Fapi%2FgetCode%3FbizRedirect%3Dhttp%253A%252F%252Ffaceid.qq.com%252Fapi%252Fauth%252FgetOpenidAndSaveToken%253Ftoken%253DCE661F1A-0F1E-45BD-BE13-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirect\",\r\n    \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"BizToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\",\n        \"Url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2cca36a86d5035ae&redirect_uri=http%3A%2F%2Fopen.faceid.qq.com%2Fv1%2Fapi%2FgetCode%3FbizRedirect%3Dhttp%253A%252F%252Ffaceid.qq.com%252Fapi%252Fauth%252FgetOpenidAndSaveToken%253Ftoken%253DCE661F1A-0F1E-45BD-BE13-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirect\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "鉴权操作 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=DetectAuth&SignVersion=)"
       }
     ],
@@ -78,7 +78,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetActionSequence\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n   \"ActionSequence\":\"1,2\",\r\n   \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"ActionSequence\": \"1,2\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "获取动作顺序"
       }
     ],
@@ -86,13 +86,13 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetDetectInfo\n&RuleId=0\n&BizToken=CE661F1A-0F1E-45BD-BE13-34C05CEA7681\n&InfoType=0\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"DetectInfo\": \"{\\\"Text\\\":{\\\"ErrCode\\\":null,\\\"ErrMsg\\\":null,\\\"IdCard\\\":\\\"\\\",\\\"Name\\\":\\\"\\\",\\\"OcrNation\\\":null,\\\"OcrAddress\\\":null,\\\"OcrBirth\\\":null,\\\"OcrAuthority\\\":null,\\\"OcrValidDate\\\":null,\\\"OcrName\\\":null,\\\"OcrIdCard\\\":null,\\\"OcrGender\\\":null,\\\"LiveStatus\\\":null,\\\"LiveMsg\\\":null,\\\"Comparestatus\\\":null,\\\"Comparemsg\\\":null,\\\"Extra\\\":\\\"\\\",\\\"Detail\\\":{\\\"LivenessData\\\":[]}},\\\"IdCardData\\\":{\\\"OcrFront\\\":null,\\\"OcrBack\\\":null},\\\"BestFrame\\\":{\\\"BestFrame\\\":null},\\\"VideoData\\\":{\\\"LivenessVideo\\\":null}}\",\r\n    \"RequestId\": \"0f96cf39-a183-485c-ab29-8427ab81f9ae\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"DetectInfo\": \"{\\\"Text\\\":{\\\"ErrCode\\\":null,\\\"ErrMsg\\\":null,\\\"IdCard\\\":\\\"\\\",\\\"Name\\\":\\\"\\\",\\\"OcrNation\\\":null,\\\"OcrAddress\\\":null,\\\"OcrBirth\\\":null,\\\"OcrAuthority\\\":null,\\\"OcrValidDate\\\":null,\\\"OcrName\\\":null,\\\"OcrIdCard\\\":null,\\\"OcrGender\\\":null,\\\"LiveStatus\\\":null,\\\"LiveMsg\\\":null,\\\"Comparestatus\\\":null,\\\"Comparemsg\\\":null,\\\"Extra\\\":\\\"\\\",\\\"Detail\\\":{\\\"LivenessData\\\":[]}},\\\"IdCardData\\\":{\\\"OcrFront\\\":null,\\\"OcrBack\\\":null},\\\"BestFrame\\\":{\\\"BestFrame\\\":null},\\\"VideoData\\\":{\\\"LivenessVideo\\\":null}}\",\n        \"RequestId\": \"0f96cf39-a183-485c-ab29-8427ab81f9ae\"\n    }\n}",
         "title": "获取所有类型的信息"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetDetectInfo\n&RuleId=0\n&BizToken=CE661F1A-0F1E-45BD-BE13-34C05CEA7681\n&InfoType=12\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"DetectInfo\": \"{\\\"Text\\\":{\\\"ErrCode\\\":null,\\\"ErrMsg\\\":null,\\\"IdCard\\\":\\\"\\\",\\\"Name\\\":\\\"\\\",\\\"OcrNation\\\":null,\\\"OcrAddress\\\":null,\\\"OcrBirth\\\":null,\\\"OcrAuthority\\\":null,\\\"OcrValidDate\\\":null,\\\"OcrName\\\":null,\\\"OcrIdCard\\\":null,\\\"OcrGender\\\":null,\\\"LiveStatus\\\":null,\\\"LiveMsg\\\":null,\\\"Comparestatus\\\":null,\\\"Comparemsg\\\":null,\\\"Extra\\\":\\\"\\\",\\\"Detail\\\":{\\\"LivenessData\\\":[]}},\\\"IdCardData\\\":{\\\"OcrFront\\\":null,\\\"OcrBack\\\":null}}\",\r\n    \"RequestId\": \"7be0c0e4-57f5-44c4-b471-21390ca88fb2\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"DetectInfo\": \"{\\\"Text\\\":{\\\"ErrCode\\\":null,\\\"ErrMsg\\\":null,\\\"IdCard\\\":\\\"\\\",\\\"Name\\\":\\\"\\\",\\\"OcrNation\\\":null,\\\"OcrAddress\\\":null,\\\"OcrBirth\\\":null,\\\"OcrAuthority\\\":null,\\\"OcrValidDate\\\":null,\\\"OcrName\\\":null,\\\"OcrIdCard\\\":null,\\\"OcrGender\\\":null,\\\"LiveStatus\\\":null,\\\"LiveMsg\\\":null,\\\"Comparestatus\\\":null,\\\"Comparemsg\\\":null,\\\"Extra\\\":\\\"\\\",\\\"Detail\\\":{\\\"LivenessData\\\":[]}},\\\"IdCardData\\\":{\\\"OcrFront\\\":null,\\\"OcrBack\\\":null}}\",\n        \"RequestId\": \"7be0c0e4-57f5-44c4-b471-21390ca88fb2\"\n    }\n}",
         "title": "仅获取文本与身份证照片类型的信息"
       }
     ],
@@ -100,7 +100,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetDetectInfoEnhanced\n&RuleId=0\n&BizToken=CE661F1A-0F1E-45BD-BE13-34C05CEA7681\n&InfoType=1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Text\": {\r\n            \"ErrCode\": 0,\r\n            \"ErrMsg\": \"成功\",\r\n            \"IdCard\": \"440111111111111111\",\r\n            \"Name\": \"爱新觉罗永琪\",\r\n            \"OcrNation\": null,\r\n            \"OcrAddress\": null,\r\n            \"OcrBirth\": null,\r\n            \"OcrAuthority\": null,\r\n            \"OcrValidDate\": null,\r\n            \"OcrName\": \"爱新觉罗永琪\",\r\n            \"OcrIdCard\": \"440111111111111111\",\r\n            \"OcrGender\": null,\r\n            \"LiveStatus\": 0,\r\n            \"LiveMsg\": \"成功\",\r\n            \"Comparestatus\": 0,\r\n            \"Comparemsg\": \"成功\",\r\n            \"CompareLibType\": \"xx\", \r\n            \"Sim\": \"76.52\",\r\n            \"Location\": null,\r\n            \"Mobile\": null,\r\n            \"Extra\": \"\",\r\n            \"LivenessDetail\": [\r\n                {\r\n                    \"ReqTime\": \"1577179388135\",\r\n                    \"Seq\": \"3d12da91-db34-4e55-81c3-993a41d7ccb7\",\r\n                    \"Idcard\": \"440111111111111111\",\r\n                    \"Name\": \"爱新觉罗永琪\",\r\n                    \"CompareLibType\": \"xx\", \r\n                    \"Sim\": \"76.52\",\r\n                    \"IsNeedCharge\": true,\r\n                    \"Errcode\": 0,\r\n                    \"Errmsg\": \"成功\",\r\n                    \"Livestatus\": 0,\r\n                    \"Livemsg\": \"成功\",\r\n                    \"Comparestatus\": 0,\r\n                    \"Comparemsg\": \"成功\"\r\n                }\r\n            ]\r\n        },\r\n        \"IdCardData\":  {\r\n            \"ProcessedBackImage\": \"xx\", \r\n            \"ProcessedFrontImage\": \"xx\", \r\n            \"OcrFront\": \"xx\", \r\n            \"OcrBack\": \"xx\", \r\n            \"Avatar\": \"xx\"\r\n        },\r\n        \"BestFrame\": {\r\n            \"BestFrame\": \"xx\", \r\n            \"BestFrames\": [\r\n                \"xx\"\r\n            ]\r\n        },\r\n        \"VideoData\": {\r\n            \"LivenessVideo\": \"xx\"\r\n        },\r\n        \"RequestId\": \"f52bac9a-0aee-4fe6-8d34-7de4bce89473\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Text\": {\n            \"ErrCode\": 0,\n            \"ErrMsg\": \"成功\",\n            \"IdCard\": \"440111111111111111\",\n            \"Name\": \"爱新觉罗永琪\",\n            \"OcrNation\": null,\n            \"OcrAddress\": null,\n            \"OcrBirth\": null,\n            \"OcrAuthority\": null,\n            \"OcrValidDate\": null,\n            \"OcrName\": \"爱新觉罗永琪\",\n            \"OcrIdCard\": \"440111111111111111\",\n            \"OcrGender\": null,\n            \"LiveStatus\": 0,\n            \"LiveMsg\": \"成功\",\n            \"Comparestatus\": 0,\n            \"Comparemsg\": \"成功\",\n            \"CompareLibType\": \"xx\",\n            \"Sim\": \"76.52\",\n            \"Location\": null,\n            \"Mobile\": null,\n            \"Extra\": \"\",\n            \"LivenessDetail\": [\n                {\n                    \"ReqTime\": \"1577179388135\",\n                    \"Seq\": \"3d12da91-db34-4e55-81c3-993a41d7ccb7\",\n                    \"Idcard\": \"440111111111111111\",\n                    \"Name\": \"爱新觉罗永琪\",\n                    \"CompareLibType\": \"xx\",\n                    \"Sim\": \"76.52\",\n                    \"IsNeedCharge\": true,\n                    \"Errcode\": 0,\n                    \"Errmsg\": \"成功\",\n                    \"Livestatus\": 0,\n                    \"Livemsg\": \"成功\",\n                    \"Comparestatus\": 0,\n                    \"Comparemsg\": \"成功\"\n                }\n            ]\n        },\n        \"IdCardData\": {\n            \"ProcessedBackImage\": \"xx\",\n            \"ProcessedFrontImage\": \"xx\",\n            \"OcrFront\": \"xx\",\n            \"OcrBack\": \"xx\",\n            \"Avatar\": \"xx\"\n        },\n        \"BestFrame\": {\n            \"BestFrame\": \"xx\",\n            \"BestFrames\": [\n                \"xx\"\n            ]\n        },\n        \"VideoData\": {\n            \"LivenessVideo\": \"xx\"\n        },\n        \"RequestId\": \"f52bac9a-0aee-4fe6-8d34-7de4bce89473\"\n    }\n}",
         "title": "获取所有类型的信息"
       }
     ],
@@ -108,7 +108,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetFaceIdResult\n&FaceIdToken=CE661F1A-0F1E-45BD-BE13-34C05CEA7681\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"Result\": \"0\",\r\n    \"Description\":\"成功\",\r\n    \"IdCard\":\"23232323232\",\r\n    \"Name\":\"王五\",\r\n    \"Similarity\":97.7,\r\n    \"RequestId\": \"0f96cf39-a183-485c-ab29-8427ab81f9ae\", \r\n    \"Extra\": \"xx\",\r\n    \"VideoBase64\": \"xx\", \r\n    \"BestFrameBase64\": \"xx\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"IdCard\": \"23232323232\",\n        \"Name\": \"王五\",\n        \"Similarity\": 97.7,\n        \"RequestId\": \"0f96cf39-a183-485c-ab29-8427ab81f9ae\",\n        \"Extra\": \"xx\",\n        \"VideoBase64\": \"xx\",\n        \"BestFrameBase64\": \"xx\"\n    }\n}",
         "title": "获取结果成功时"
       }
     ],
@@ -116,7 +116,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetFaceIdToken\n&IdCard=xxxxxxxxxxxxxxxxx\n&Name=xxxxxxxxxxxxxxxxx\n&CompareLib=BUSINESS\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"FaceIdToken\": \"asdasdadasdasd\",\r\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"asdasdadasdasd\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
         "title": "获取token成功"
       }
     ],
@@ -124,7 +124,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetLiveCode\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n   \"LiveCode\":\"4392\",\r\n   \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveCode\": \"4392\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "获取数字验证码"
       }
     ],
@@ -132,7 +132,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetRealNameAuthResult\n&AuthToken=XXX\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"714a3f78-3aba-11eb-90a1-5254004cf974\",\r\n        \"ResultType\": \"0\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"714a3f78-3aba-11eb-90a1-5254004cf974\",\n        \"ResultType\": \"0\"\n    }\n}",
         "title": "获取微信实名认证结果"
       }
     ],
@@ -140,7 +140,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetRealNameAuthToken\n&Name=XXX\n&IDCard=XXX\n&CallbackURL=https://xxxxx\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"AuthToken\": \"4ad3f260-44f8-0000-88ca-5254001a1560\",\r\n        \"RedirectURL\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=xxx&redirect_uri=xxx&response_type=code&scope=snsapi_base&state=&component_appid=xxx#wechat_redirect\",\r\n        \"RequestId\": \"97a8fcbf-9998-4e95-ac38-6f1a2308a021\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthToken\": \"4ad3f260-44f8-0000-88ca-5254001a1560\",\n        \"RedirectURL\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=xxx&redirect_uri=xxx&response_type=code&scope=snsapi_base&state=&component_appid=xxx#wechat_redirect\",\n        \"RequestId\": \"97a8fcbf-9998-4e95-ac38-6f1a2308a021\"\n    }\n}",
         "title": "微信实名认证鉴权"
       }
     ],
@@ -148,19 +148,19 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=IdCardOCRVerification\n&IdCard=360*************50\n&Name=**杰\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"姓名和身份证号一致\",\r\n        \"Name\": \"**杰\",\r\n        \"IdCard\": \"360*************50\",\r\n        \"Sex\": \"\",\r\n        \"Nation\": \"\",\r\n        \"Birth\": \"\",\r\n        \"Address\": \"\",\r\n        \"RequestId\": \"945c69ad-d86c-47ea-ba33-419b1dc4d242\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"姓名和身份证号一致\",\n        \"Name\": \"**杰\",\n        \"IdCard\": \"360*************50\",\n        \"Sex\": \"\",\n        \"Nation\": \"\",\n        \"Birth\": \"\",\n        \"Address\": \"\",\n        \"RequestId\": \"945c69ad-d86c-47ea-ba33-419b1dc4d242\"\n    }\n}",
         "title": "使用姓名身份证号进行验证"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=IdCardOCRVerification\n&ImageUrl=https://qq.com/a.jpg\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"姓名和身份证号一致\",\r\n        \"Name\": \"**杰\",\r\n        \"IdCard\": \"360*************50\",\r\n        \"Sex\": \"男\",\r\n        \"Nation\": \"汉\",\r\n        \"Birth\": \"1986/11/13\",\r\n        \"Address\": \"江西省九江市庐山河南路57号01室\",\r\n        \"RequestId\": \"a62f567c-1eea-4ef3-b51a-a9eb9bd84cd9\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"姓名和身份证号一致\",\n        \"Name\": \"**杰\",\n        \"IdCard\": \"360*************50\",\n        \"Sex\": \"男\",\n        \"Nation\": \"汉\",\n        \"Birth\": \"1986/11/13\",\n        \"Address\": \"江西省九江市庐山河南路57号01室\",\n        \"RequestId\": \"a62f567c-1eea-4ef3-b51a-a9eb9bd84cd9\"\n    }\n}",
         "title": "使用照片URL进行核验"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=IdCardOCRVerification\n&ImageBase64=<base64字符串>\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"姓名和身份证号一致\",\r\n        \"Name\": \"**杰\",\r\n        \"IdCard\": \"360*************50\",\r\n        \"Sex\": \"男\",\r\n        \"Nation\": \"汉\",\r\n        \"Birth\": \"1986/11/13\",\r\n        \"Address\": \"江西省九江市庐山河南路57号01室\",\r\n        \"RequestId\": \"022ffdd2-67a2-4177-8946-97bc1c4b3347\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"姓名和身份证号一致\",\n        \"Name\": \"**杰\",\n        \"IdCard\": \"360*************50\",\n        \"Sex\": \"男\",\n        \"Nation\": \"汉\",\n        \"Birth\": \"1986/11/13\",\n        \"Address\": \"江西省九江市庐山河南路57号01室\",\n        \"RequestId\": \"022ffdd2-67a2-4177-8946-97bc1c4b3347\"\n    }\n}",
         "title": "使用照片Base64进行核验"
       }
     ],
@@ -168,13 +168,13 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=IdCardVerification\n&IdCard=xxxxxxxxxxxxxxxxx\n&Name=xxxxxxxxxxxxxxxxx\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"姓名和身份证号一致\",\r\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"姓名和身份证号一致\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
         "title": "姓名和身份证号一致"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=IdCardVerification\n&IdCard=xxxxxxxxxxxxxxxxx\n&Name=xxxxxxxxxxxxxxxxx\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"-1\",\r\n        \"Description\": \"姓名和身份证号不一致\",\r\n        \"RequestId\": \"80c7abb8-4563-4636-98c3-0499f1611a33\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"-1\",\n        \"Description\": \"姓名和身份证号不一致\",\n        \"RequestId\": \"80c7abb8-4563-4636-98c3-0499f1611a33\"\n    }\n}",
         "title": "姓名和身份证号不一致"
       }
     ],
@@ -182,7 +182,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=ImageRecognition\n&IdCard=11204416541220243X\n&Name=韦小宝\n&ImageBase64=<ImageBase64>\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n   \"Result\":\"Success\",\r\n   \"Description\":\"成功\",\r\n   \"Sim\":\"89.88\",\r\n    \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"Sim\": \"89.88\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "照片人脸核身 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ImageRecognition&SignVer"
       }
     ],
@@ -190,7 +190,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=Liveness\n&VideoBase64=<VideoBase64>\n&LivenessType=SILENT\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n   \"Result\":\"Success\",\r\n   \"Description\":\"成功\",\r\n   \"BestFrameBase64\":\"<Imagebase64>\",\r\n    \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"<Imagebase64>\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "活体检测 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=Liveness&SignVersion=)"
       }
     ],
@@ -198,7 +198,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=LivenessCompare\n&ImageBase64=<ImageBase64>\n&VideoBase64=<VideoBase64>\n&LivenessType=SILENT\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n   \"Result\":\"Success\",\r\n   \"Description\":\"成功\",\r\n   \"BestFrameBase64\":\"Imagebase64\",\r\n   \"BestFrameList\": [\"Imagebase64\"],\r\n   \"Sim\":89.88,\r\n    \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"Imagebase64\",\n        \"BestFrameList\": [\n            \"Imagebase64\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "静默活体人脸比对"
       }
     ],
@@ -206,7 +206,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=LivenessRecognition\r\n&IdCard=11204416541220243X\r\n&Name=韦小宝\r\n&VideoBase64=<VideoBase64>\r\n&LivenessType=SILENT\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n   \"Result\":\"Success\",\r\n   \"Description\":\"成功\",\r\n   \"BestFrameBase64\":\"<Imagebase64>\",\r\n   \"Sim\":\"89.88\",\r\n    \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"<Imagebase64>\",\n        \"Sim\": \"89.88\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "静默活体人脸核身"
       }
     ],
@@ -214,13 +214,13 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=MinorsVerification\n&Type=0\n&Mobile=13800138000\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"-1\",\r\n        \"Description\": \"未成年\",\r\n        \"AgeRange\": \"[0,8)\",\r\n        \"RequestId\": \"c163d210-ed9e-44d0-a4c4-d6bbc1bf6f27\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"-1\",\n        \"Description\": \"未成年\",\n        \"AgeRange\": \"[0,8)\",\n        \"RequestId\": \"c163d210-ed9e-44d0-a4c4-d6bbc1bf6f27\"\n    }\n}",
         "title": "使用手机号进行检查"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=MinorsVerification\n&Type=1\n&IdCard=440111199110100000\n&Name=张成年\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"成年\",\r\n        \"AgeRange\": \"[18,+)\",\r\n        \"RequestId\": \"7f03975b-957d-47e5-a346-02d7c4b330c6\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成年\",\n        \"AgeRange\": \"[18,+)\",\n        \"RequestId\": \"7f03975b-957d-47e5-a346-02d7c4b330c6\"\n    }\n}",
         "title": "使用姓名身份证号进行检查"
       }
     ],
@@ -228,13 +228,13 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=MobileNetworkTimeVerification\n&Mobile=13800138000\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"成功\",\r\n        \"Range\": \"(24,+]\",\r\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"Range\": \"(24,+]\",\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\n    }\n}",
         "title": "核验成功"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=MobileNetworkTimeVerification\n&Mobile=11111111111\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"-2\",\r\n        \"Description\": \"手机号不存在\",\r\n        \"Range\": \"\",\r\n        \"RequestId\": \"3151331a-277e-4317-891d-0ef4e0afdd3e\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"-2\",\n        \"Description\": \"手机号不存在\",\n        \"Range\": \"\",\n        \"RequestId\": \"3151331a-277e-4317-891d-0ef4e0afdd3e\"\n    }\n}",
         "title": "核验失败"
       }
     ],
@@ -242,7 +242,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=MobileStatus\n&Mobile=13800138000\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"成功\",\r\n        \"StatusCode\": 1,\r\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"StatusCode\": 1,\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\n    }\n}",
         "title": "核验成功"
       }
     ],
@@ -250,7 +250,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=PhoneVerification\n&IdCard=440111201903211111\n&Name=张三\n&Phone=13000000000\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"0\",\r\n        \"Description\": \"认证通过\",\r\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
         "title": "认证通过示例"
       }
     ]

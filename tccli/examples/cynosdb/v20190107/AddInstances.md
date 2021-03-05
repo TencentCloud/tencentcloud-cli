@@ -21,12 +21,6 @@ Output:
 ```
 {
     "Response": {
-        "Instances": [
-            {
-                "InstanceId": "cynosdbpg-ins-n8497zx8"
-            }
-        ],
-        "FlowId": 734,
         "RequestId": "ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb"
     }
 }

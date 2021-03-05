@@ -27,12 +27,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5db16324-2c31-4848-adde-d45ea658fbbb",
-        "Error": {
-            "Message": "[ERR130] 无此交易调用权限",
-            "CnsmrSeqNo": "",
-            "Code": "FailedOperation.BackendError"
-        }
+        "RequestId": "5db16324-2c31-4848-adde-d45ea658fbbb"
     }
 }
 ```

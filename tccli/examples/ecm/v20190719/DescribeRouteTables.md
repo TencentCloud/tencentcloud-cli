@@ -30,8 +30,7 @@ Output:
                     }
                 ],
                 "Main": false,
-                "CreatedTime": "2020-11-30 19:52:03",
-                "TagSet": []
+                "CreatedTime": "2020-11-30 19:52:03"
             }
         ],
         "TotalCount": 2,

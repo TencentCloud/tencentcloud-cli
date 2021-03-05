@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentShell\n<公共请求参数>\n\n{}",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"ByShellAccess\": \"xx\", \r\n            \"Token\": \"xx\", \r\n            \"EtlPort\": \"xx\", \r\n            \"ByHandAccess\": \"xx\", \r\n            \"EtlIp\": \"xx\"\r\n        }, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ByShellAccess\": \"xx\",\n            \"Token\": \"xx\",\n            \"EtlPort\": \"xx\",\n            \"ByHandAccess\": \"xx\",\n            \"EtlIp\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取服务接入信息"
       }
     ]

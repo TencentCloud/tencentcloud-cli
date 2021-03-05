@@ -20,7 +20,6 @@ Output:
             "UserName": "username",
             "CreateTime": "2018-05-01 20:38:20",
             "NickName": "昵称",
-            "Devices": [],
             "UpdateTime": "2018-05-01 20:58:48"
         }
     }

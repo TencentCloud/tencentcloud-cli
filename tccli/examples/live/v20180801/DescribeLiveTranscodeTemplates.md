@@ -15,7 +15,6 @@ Output:
             {
                 "Vcodec": "h265",
                 "VideoBitrate": 30,
-                "Avodec": "aac",
                 "AudioBitrate": 15,
                 "Width": 250,
                 "Height": 250,
@@ -25,7 +24,6 @@ Output:
                 "Profile": "main",
                 "BitrateToOrig": 0,
                 "HeightToOrig": 0,
-                "FpsToOirg": 0,
                 "NeedVideo": 1,
                 "NeedAudio": 1,
                 "TemplateId": 1000,

@@ -21,13 +21,11 @@ Output:
             {
                 "WaterId": 919,
                 "BalanceBeforeRecharge": 10367808782,
-                "Recharge": 80,
                 "OperateTime": 1602764840
             },
             {
                 "WaterId": 920,
                 "BalanceBeforeRecharge": 10367807918,
-                "Recharge": 1024,
                 "OperateTime": 1602765531
             }
         ]

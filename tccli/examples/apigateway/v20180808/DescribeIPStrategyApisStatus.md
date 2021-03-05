@@ -15,18 +15,6 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "ApiIdStatusSet": [
-            {
-                "ApiId": "api-e92i2jds",
-                "ApiName": "test2",
-                "ApiType": "NORMAL",
-                "Path": "/users",
-                "Method": "POST",
-                "OtherIPStrategyId": "",
-                "OtherEnvironmentName": ""
-            }
-        ],
         "RequestId": "cd0add5f-e7df-4087-8ccf-e07adca8e5a9"
     }
 }

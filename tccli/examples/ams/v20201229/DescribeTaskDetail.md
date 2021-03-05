@@ -45,8 +45,7 @@ Output:
                     "LanguageResults": [],
                     "Duration": "60000",
                     "Score": 0,
-                    "Extra": "",
-                    "SpeakerResults": []
+                    "Extra": ""
                 },
                 "OffsetTime": "0"
             }

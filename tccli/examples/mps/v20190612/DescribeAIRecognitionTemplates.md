@@ -21,8 +21,7 @@ Output:
                 "Comment": "智能识别模板",
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "FaceLibrary": "All",
-                    "LabelSet": []
+                    "FaceLibrary": "All"
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
@@ -71,8 +70,7 @@ Output:
                 "Comment": "智能识别模板",
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "FaceLibrary": "All",
-                    "LabelSet": []
+                    "FaceLibrary": "All"
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
@@ -97,8 +95,7 @@ Output:
                 "Comment": "智能识别模板",
                 "FaceConfigure": {
                     "Switch": "OFF",
-                    "FaceLibrary": "All",
-                    "LabelSet": []
+                    "FaceLibrary": "All"
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "OFF"

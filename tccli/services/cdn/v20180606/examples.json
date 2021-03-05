@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=AddCdnDomain\n&Domain=www.test.com\n&ServiceType=web\n&ProjectId=0\n&Area=mainland\n&Origin.Origins.0=1.1.1.1\n&Origin.OriginType=ip\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\"\n    }\n}",
         "title": "新增加速域名"
       }
     ],
@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=CreateClsLogTopic\n&Channel=cdn\n&TopicName=test\n&LogsetId=57460798-8723-45e3-9c75-a0599ef9143a\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\":\"57460798-8723-45e3-9c75-a0599ef9143a\", \"TopicId\": \"123-456-789\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\",\n        \"TopicId\": \"123-456-789\"\n    }\n}",
         "title": "创建日志主题"
       }
     ],
@@ -20,7 +20,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=CreateDiagnoseUrl\n&Url=http://www.test.com/test.txt\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\r\n        \"DiagnoseLink\":\"http://cdn.cloud.tencent.com/self_diagnose/a49ecccd\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\n        \"DiagnoseLink\": \"http://cdn.cloud.tencent.com/self_diagnose/a49ecccd\"\n    }\n}",
         "title": "添加诊断URL"
       }
     ],
@@ -28,15 +28,15 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=CreateEdgePackTask\n&BlockID=0\n&CosBucket=‘edgepack-xxxxxxxx’\n&CosUriFrom=‘/apk/xxxx.apk’\n&CosUriTo=‘/out/xxxx.apk’\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "动态打包任务提交"
       }
     ],
     "CreateScdnLogTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScdnLogTask\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\", \n    \"AttackType\": \"xx\", \n    \"Ip\": \"xx\", \n    \"AttackTypes\": [\n        \"xx\"\n    ], \n    \"DefenceMode\": \"xx\", \n    \"Mode\": \"xx\", \n    \"StartTime\": \"2020-09-22 00:00:00\", \n    \"Domains\": [\n        \"xx\"\n    ], \n    \"EndTime\": \"2020-09-22 00:00:00\", \n    \"Conditions\": [\n        {\n            \"Operator\": \"xx\", \n            \"Value\": \"xx\", \n            \"Key\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\r\n    \"Response\": {\r\n        \"Result\": \"xx\", \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScdnLogTask\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"AttackType\": \"xx\",\n    \"Ip\": \"xx\",\n    \"AttackTypes\": [\n        \"xx\"\n    ],\n    \"DefenceMode\": \"xx\",\n    \"Mode\": \"xx\",\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Conditions\": [\n        {\n            \"Operator\": \"xx\",\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建scdn日志事件任务"
       }
     ],
@@ -52,7 +52,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DeleteCdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2346602a-0bbf-409b-922c-ae3071c27594\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2346602a-0bbf-409b-922c-ae3071c27594\"\n    }\n}",
         "title": "删除加速域名"
       }
     ],
@@ -60,7 +60,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DeleteClsLogTopic\n&Channel=cdn\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=6d04373b-ba59-4a4f-a96e-242424\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\":\"6d04373b-ba59-4a4f-a96e-9fe53b59a536\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\"\n    }\n}",
         "title": "删除日志主题"
       }
     ],
@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DeleteScdnDomain\n&Domain='www.test.com'\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\":\"123\",\"Result\":\"Success\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Result\": \"Success\"\n    }\n}",
         "title": "删除SCDN域名"
       }
     ],
@@ -76,7 +76,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeBillingData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n                \"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"all\",\r\n\t\t\t\"BillingData\": [{\r\n\t\t\t\t\"Metric\": \"flux\",\r\n\t\t\t\t\"DetailData\": [{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:00:00\",\r\n\t\t\t\t\t\"Value\": 10\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:05:00\",\r\n\t\t\t\t\t\"Value\": 20\r\n\t\t\t\t}],\r\n\t\t\t\t\"SummarizedData\": {\r\n\t\t\t\t\t\"Name\": \"sum\",\r\n\t\t\t\t\t\"Value\": 30\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"Interval\": \"5min\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"BillingData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
         "title": "计费数据查询"
       }
     ],
@@ -84,7 +84,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCdnData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=flux\n&Domains.0=www.test.com\n&Project=0\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n                \"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"www.test.com\",\r\n\t\t\t\"CdnData\": [{\r\n\t\t\t\t\"Metric\": \"flux\",\r\n\t\t\t\t\"DetailData\": [{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:00:00\",\r\n\t\t\t\t\t\"Value\": 10\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:05:00\",\r\n\t\t\t\t\t\"Value\": 20\r\n\t\t\t\t}],\r\n\t\t\t\t\"SummarizedData\": {\r\n\t\t\t\t\t\"Name\": \"sum\",\r\n\t\t\t\t\t\"Value\": 30\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"Interval\": \"5min\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test.com\",\n                \"CdnData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
         "title": "查询Cdn访问数据"
       }
     ],
@@ -92,7 +92,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCdnDomainLogs\n&StartTime=2019-09-04 00:00:00\n&EndTime=2019-09-04 12:00:00\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"123\",\r\n        \"DomainLogs\":[\r\n            {\r\n                \"Area\":\"mainland\",\r\n                \"StartTime\":\"2019-09-04 23:00:00\",\r\n                \"EndTime\":\"2019-09-04 23:59:59\",\r\n                \"LogPath\":\"http://www.test.qcloud.com/20190904/23/201909042300-www.test.com.gz?st=hGzJr0QFpo3jYM2uj7kkjA&e=3135214538\",\r\n                \"LogName\": \"2019090423\"\r\n            }\r\n        ],\r\n        \"TotalCount\":300\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"DomainLogs\": [\n            {\n                \"Area\": \"mainland\",\n                \"StartTime\": \"2019-09-04 23:00:00\",\n                \"EndTime\": \"2019-09-04 23:59:59\",\n                \"LogPath\": \"http://www.test.qcloud.com/20190904/23/201909042300-www.test.com.gz?st=hGzJr0QFpo3jYM2uj7kkjA&e=3135214538\",\n                \"LogName\": \"2019090423\"\n            }\n        ],\n        \"TotalCount\": 300\n    }\n}",
         "title": "日志下载链接查询"
       }
     ],
@@ -100,7 +100,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCdnIp\n&Ips.0=1.1.1.1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"156bde25-56b5-4dae-9638-b7b08b08e4f6\",\r\n        \"Ips\": [\r\n            {\r\n                \"Ip\": \"1.1.1.1\",\r\n                \"Platform\": \"no\",\r\n                \"Location\": \"unknown\",\r\n                \"Area\": \"unknown\",\r\n                \"History\": []\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"156bde25-56b5-4dae-9638-b7b08b08e4f6\",\n        \"Ips\": [\n            {\n                \"Ip\": \"1.1.1.1\",\n                \"Platform\": \"no\",\n                \"Location\": \"unknown\",\n                \"Area\": \"unknown\",\n                \"History\": []\n            }\n        ]\n    }\n}",
         "title": "IP 归属查询"
       }
     ],
@@ -108,7 +108,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCdnOriginIp\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"156bde25-56b5-4dae-9638-b7b08b08e4f6\",\r\n        \"Ips\": [\r\n            {\r\n                \"Ip\": \"101.89.13.0/24\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 1\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"156bde25-56b5-4dae-9638-b7b08b08e4f6\",\n        \"Ips\": [\n            {\n                \"Ip\": \"101.89.13.0/24\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询回源节点"
       }
     ],
@@ -116,7 +116,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCertDomains\n&Cert=XXXXX\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"xxxxx-xxxxx-xxxxx-xxxxx-xxxxx\",\r\n        \"Domains\":[\r\n            \"test.tencentyun.com\",\r\n            \"httpstest.tencentyun.com\"\r\n        ],\r\n        \"CertifiedDomains\":[\r\n           \"httpstest.tencentyun.com\"\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx-xxxxx-xxxxx-xxxxx-xxxxx\",\n        \"Domains\": [\n            \"test.tencentyun.com\",\n            \"httpstest.tencentyun.com\"\n        ],\n        \"CertifiedDomains\": [\n            \"httpstest.tencentyun.com\"\n        ]\n    }\n}",
         "title": "提取SSL证书中的可配置域名"
       }
     ],
@@ -124,7 +124,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeDiagnoseReport\n&ReportId=123\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\r\n        \"BaskInfo\":{\r\n            \"Data\":[\r\n                {\r\n                    \"Key\":\"report_id\",\r\n                    \"KeyText\":\"报告ID\",\r\n                    \"Value\":\"123\",\r\n                    \"ValueText\":\"123\"\r\n                },\r\n                {\r\n                    \"Key\":\"diagnose_url\",\r\n                    \"KeyText\":\"诊断URL\",\r\n                    \"Value\":\"http://www.test.com/1.txt\",\r\n                    \"ValueText\":\"http://www.test.com/1.txt\"\r\n                },\r\n                {\r\n                    \"Key\":\"diagnose_time\",\r\n                    \"KeyText\":\"诊断时间\",\r\n                    \"Value\":\"2020-09-21 12:00:16\",\r\n                    \"ValueText\":\"2020-09-21 12:00:16\"\r\n                }\r\n            ],\r\n            \"Status\":\"ok\"\r\n        },\r\n        \"CnameInfo\":{\r\n            \"Status\":\"ok\",\r\n            \"Data\":[\r\n                {\r\n                    \"Key\":\"cname\",\r\n                    \"KeyText\":\"解析配置\",\r\n                    \"Value\":\"CNAME www.test.com.cdn.dnsv1.com<br>\",\r\n                    \"ValueText\":\"CNAME www.test.com.cdn.dnsv1.com<br>\"\r\n                }\r\n            ]\r\n        },\r\n        \"ClientInfo\":{\r\n            \"Status\":\"ok\",\r\n            \"Data\":[\r\n                {\r\n                    \"Key\":\"ip\",\r\n                    \"KeyText\":\"客户端IP\",\r\n                    \"Value\":\"1.1.1.1\",\r\n                    \"ValueText\":\"1.1.1.1\"\r\n                },\r\n                {\r\n                    \"Key\":\"prov_isp\",\r\n                    \"KeyText\":\"所在区域\",\r\n                    \"Value\":\"广东省-中国电信\",\r\n                    \"ValueText\":\"广东省-中国电信\"\r\n                },\r\n                {\r\n                    \"Key\":\"request\",\r\n                    \"KeyText\":\"请求详情\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                }\r\n            ]\r\n        },\r\n        \"DnsInfo\":{\r\n            \"Data\":[\r\n                {\r\n                    \"Key\":\"dns\",\r\n                    \"KeyText\":\"DNS IP\",\r\n                    \"Value\":\"183.3.229.15 广东省-中国电信<br>219.133.40.12 广东省-中国电信<br>\",\r\n                    \"ValueText\":\"183.3.229.15 广东省-中国电信<br>219.133.40.12 广东省-中国电信<br>\"\r\n                }\r\n            ],\r\n            \"Status\":\"ok\"\r\n        },\r\n        \"NetworkInfo\":{\r\n            \"Status\":\"ok\",\r\n            \"Data\":[\r\n                {\r\n                    \"Key\":\"network\",\r\n                    \"KeyText\":\"探测延迟\",\r\n                    \"Value\":\"123ms\",\r\n                    \"ValueText\":\"123ms\"\r\n                }\r\n            ]\r\n        },\r\n        \"OcNodeInfo\":{\r\n            \"Status\":\"error\",\r\n            \"Data\":[\r\n                {\r\n                    \"Key\":\"ip\",\r\n                    \"KeyText\":\"节点IP\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"area\",\r\n                    \"KeyText\":\"所在区域\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"code\",\r\n                    \"KeyText\":\"状态码\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"md5\",\r\n                    \"KeyText\":\"文件MD5\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"hit\",\r\n                    \"KeyText\":\"命中情况\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"solution\",\r\n                    \"KeyText\":\"解决方案\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                }\r\n            ]\r\n        },\r\n        \"MidNodeInfo\":{\r\n            \"Data\":[\r\n                {\r\n                    \"Key\":\"ip\",\r\n                    \"KeyText\":\"节点IP\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"area\",\r\n                    \"KeyText\":\"所在区域\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"hit\",\r\n                    \"KeyText\":\"命中情况\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                }\r\n            ],\r\n            \"Status\":\"initial\"\r\n        },\r\n        \"OriginInfo\":{\r\n            \"Status\":\"initial\",\r\n            \"Data\":[\r\n                {\r\n                    \"Key\":\"ip\",\r\n                    \"KeyText\":\"源站IP\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"area\",\r\n                    \"KeyText\":\"所在区域\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"fwd_host\",\r\n                    \"KeyText\":\"回源host\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"code\",\r\n                    \"KeyText\":\"状态码\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                },\r\n                {\r\n                    \"Key\":\"md5\",\r\n                    \"KeyText\":\"文件MD5\",\r\n                    \"Value\":\"--\",\r\n                    \"ValueText\":\"--\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\n        \"BaskInfo\": {\n            \"Data\": [\n                {\n                    \"Key\": \"report_id\",\n                    \"KeyText\": \"报告ID\",\n                    \"Value\": \"123\",\n                    \"ValueText\": \"123\"\n                },\n                {\n                    \"Key\": \"diagnose_url\",\n                    \"KeyText\": \"诊断URL\",\n                    \"Value\": \"http://www.test.com/1.txt\",\n                    \"ValueText\": \"http://www.test.com/1.txt\"\n                },\n                {\n                    \"Key\": \"diagnose_time\",\n                    \"KeyText\": \"诊断时间\",\n                    \"Value\": \"2020-09-21 12:00:16\",\n                    \"ValueText\": \"2020-09-21 12:00:16\"\n                }\n            ],\n            \"Status\": \"ok\"\n        },\n        \"CnameInfo\": {\n            \"Status\": \"ok\",\n            \"Data\": [\n                {\n                    \"Key\": \"cname\",\n                    \"KeyText\": \"解析配置\",\n                    \"Value\": \"CNAME www.test.com.cdn.dnsv1.com<br>\",\n                    \"ValueText\": \"CNAME www.test.com.cdn.dnsv1.com<br>\"\n                }\n            ]\n        },\n        \"ClientInfo\": {\n            \"Status\": \"ok\",\n            \"Data\": [\n                {\n                    \"Key\": \"ip\",\n                    \"KeyText\": \"客户端IP\",\n                    \"Value\": \"1.1.1.1\",\n                    \"ValueText\": \"1.1.1.1\"\n                },\n                {\n                    \"Key\": \"prov_isp\",\n                    \"KeyText\": \"所在区域\",\n                    \"Value\": \"广东省-中国电信\",\n                    \"ValueText\": \"广东省-中国电信\"\n                },\n                {\n                    \"Key\": \"request\",\n                    \"KeyText\": \"请求详情\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                }\n            ]\n        },\n        \"DnsInfo\": {\n            \"Data\": [\n                {\n                    \"Key\": \"dns\",\n                    \"KeyText\": \"DNS IP\",\n                    \"Value\": \"183.3.229.15 广东省-中国电信<br>219.133.40.12 广东省-中国电信<br>\",\n                    \"ValueText\": \"183.3.229.15 广东省-中国电信<br>219.133.40.12 广东省-中国电信<br>\"\n                }\n            ],\n            \"Status\": \"ok\"\n        },\n        \"NetworkInfo\": {\n            \"Status\": \"ok\",\n            \"Data\": [\n                {\n                    \"Key\": \"network\",\n                    \"KeyText\": \"探测延迟\",\n                    \"Value\": \"123ms\",\n                    \"ValueText\": \"123ms\"\n                }\n            ]\n        },\n        \"OcNodeInfo\": {\n            \"Status\": \"error\",\n            \"Data\": [\n                {\n                    \"Key\": \"ip\",\n                    \"KeyText\": \"节点IP\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"area\",\n                    \"KeyText\": \"所在区域\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"code\",\n                    \"KeyText\": \"状态码\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"md5\",\n                    \"KeyText\": \"文件MD5\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"hit\",\n                    \"KeyText\": \"命中情况\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"solution\",\n                    \"KeyText\": \"解决方案\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                }\n            ]\n        },\n        \"MidNodeInfo\": {\n            \"Data\": [\n                {\n                    \"Key\": \"ip\",\n                    \"KeyText\": \"节点IP\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"area\",\n                    \"KeyText\": \"所在区域\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"hit\",\n                    \"KeyText\": \"命中情况\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                }\n            ],\n            \"Status\": \"initial\"\n        },\n        \"OriginInfo\": {\n            \"Status\": \"initial\",\n            \"Data\": [\n                {\n                    \"Key\": \"ip\",\n                    \"KeyText\": \"源站IP\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"area\",\n                    \"KeyText\": \"所在区域\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"fwd_host\",\n                    \"KeyText\": \"回源host\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"code\",\n                    \"KeyText\": \"状态码\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"md5\",\n                    \"KeyText\": \"文件MD5\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                }\n            ]\n        }\n    }\n}",
         "title": "获取诊断报告"
       }
     ],
@@ -132,7 +132,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeDistrictIspData\n&StartTime=2020-03-27 00:00:00\n&EndTime=2020-03-27 00:00:00\n&Metric=bandwidth\n&Domains.0=www.test.com\n&Districts.0=122\n&Isps.0=3947\n&Protocol=http\n&IpProtocol=ipv4\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"abcd-efgh-ijkl-mnop\",\r\n    \"Data\": [\r\n            {\r\n                \"Domain\": \"www.test.com\",\r\n                \"Protocol\": \"http\",\r\n                \"IpProtocol\": \"ipv4\",\r\n                \"StartTime\": \"2020-03-27 00:00:00\",\r\n                \"EndTime\": \"2020-03-27 00:00:00\",\r\n                \"Interval\": 5,\r\n                \"Metric\": \"bandwidth\",\r\n                \"District\": 122,\r\n                \"Isp\": 3947,\r\n                \"DataPoints\": [\r\n                    0\r\n                ],\r\n                \"DistrictName\": \"山东\",\r\n                \"IspName\": \"中国铁通\"\r\n            }\r\n   ]\r\n}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd-efgh-ijkl-mnop\",\n        \"Data\": [\n            {\n                \"Domain\": \"www.test.com\",\n                \"Protocol\": \"http\",\n                \"IpProtocol\": \"ipv4\",\n                \"StartTime\": \"2020-03-27 00:00:00\",\n                \"EndTime\": \"2020-03-27 00:00:00\",\n                \"Interval\": 5,\n                \"Metric\": \"bandwidth\",\n                \"District\": 122,\n                \"Isp\": 3947,\n                \"DataPoints\": [\n                    0\n                ],\n                \"DistrictName\": \"山东\",\n                \"IspName\": \"中国铁通\"\n            }\n        ]\n    }\n}",
         "title": "查询CDN地区运营商明细日志数据"
       }
     ],
@@ -140,7 +140,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeDomains\n&Offset=0\n&Limit=1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"64085ba1-4f77-437c-824d-55a188ab1386\",\r\n        \"Domains\": [\r\n            {\r\n                \"Area\": \"mainland\",\r\n                \"Cname\": \"www.test.com.cdn.dnsv1.com\",\r\n                \"CreateTime\": \"2019-11-15 15:20:46\",\r\n                \"Disable\": \"normal\",\r\n                \"Domain\": \"www.test.com\",\r\n                \"Origin\": {\r\n                    \"Origins\": [\r\n                        \"test-1251000004.cos.ap-chengdu.myqcloud.com\"\r\n                    ],\r\n                    \"OriginType\": \"cos\",\r\n                    \"ServerName\": \"test-1251000004.cos.ap-chengdu.myqcloud.com\",\r\n                    \"CosPrivateAccess\": \"off\",\r\n                    \"OriginPullProtocol\": \"http\",\r\n                    \"BackupOrigins\": [],\r\n                    \"BackupOriginType\": null,\r\n                    \"BackupServerName\": null\r\n                },\r\n                \"ProjectId\": 0,\r\n                \"Readonly\": \"normal\",\r\n                \"ResourceId\": \"cdn-knocwo77\",\r\n                \"ServiceType\": \"web\",\r\n                \"Status\": \"offline\",\r\n                \"UpdateTime\": \"2019-12-04 11:13:09\"\r\n            }\r\n        ],\r\n        \"TotalNumber\": 201\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64085ba1-4f77-437c-824d-55a188ab1386\",\n        \"Domains\": [\n            {\n                \"Area\": \"mainland\",\n                \"Cname\": \"www.test.com.cdn.dnsv1.com\",\n                \"CreateTime\": \"2019-11-15 15:20:46\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"www.test.com\",\n                \"Origin\": {\n                    \"Origins\": [\n                        \"test-1251000004.cos.ap-chengdu.myqcloud.com\"\n                    ],\n                    \"OriginType\": \"cos\",\n                    \"ServerName\": \"test-1251000004.cos.ap-chengdu.myqcloud.com\",\n                    \"CosPrivateAccess\": \"off\",\n                    \"OriginPullProtocol\": \"http\",\n                    \"BackupOrigins\": [],\n                    \"BackupOriginType\": null,\n                    \"BackupServerName\": null\n                },\n                \"ProjectId\": 0,\n                \"Readonly\": \"normal\",\n                \"ResourceId\": \"cdn-knocwo77\",\n                \"ServiceType\": \"web\",\n                \"Status\": \"offline\",\n                \"UpdateTime\": \"2019-12-04 11:13:09\"\n            }\n        ],\n        \"TotalNumber\": 201\n    }\n}",
         "title": "查询域名基本信息"
       }
     ],
@@ -148,7 +148,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeDomainsConfig\n&Offset=0\n&Limit=1\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"ba516c05-42d9-49c7-b275-7775be0475ba\",\r\n        \"Domains\": [\r\n            {\r\n                \"Area\": \"mainland\",\r\n                \"Authentication\": {\r\n                    \"Switch\": \"off\",\r\n                    \"TypeA\": null,\r\n                    \"TypeB\": null,\r\n                    \"TypeC\": null,\r\n                    \"TypeD\": null\r\n                },\r\n                \"BandwidthAlert\": {\r\n                    \"Switch\": \"off\",\r\n                    \"BpsThreshold\": 10000000000,\r\n                    \"CounterMeasure\": \"RETURN_404\",\r\n                    \"LastTriggerTime\": null\r\n                },\r\n                \"Cache\": {\r\n                    \"SimpleCache\": {\r\n                        \"CacheRules\": [\r\n                            {\r\n                                \"CacheType\": \"all\",\r\n                                \"CacheContents\": [\r\n                                    \"*\"\r\n                                ],\r\n                                \"CacheTime\": 2592000\r\n                            }\r\n                        ],\r\n                        \"IgnoreCacheControl\": \"off\",\r\n                        \"IgnoreSetCookie\": \"off\",\r\n                        \"CompareMaxAge\": \"off\",\r\n                        \"FollowOrigin\": \"off\"\r\n                    },\r\n                    \"AdvancedCache\": null\r\n                },\r\n                \"CacheKey\": {\r\n                    \"FullUrlCache\": \"on\"\r\n                },\r\n                \"Cname\": \"www.test.com.cdn.dnsv1.com\",\r\n                \"Compatibility\": {\r\n                    \"Code\": 0\r\n                },\r\n                \"Compression\": {\r\n                    \"Switch\": \"off\",\r\n                    \"CompressionRules\": [\r\n                        {\r\n                            \"Compress\": true,\r\n                            \"FileExtensions\": [\r\n                                \"js\",\r\n                                \"html\",\r\n                                \"css\",\r\n                                \"xml\",\r\n                                \"json\",\r\n                                \"shtml\",\r\n                                \"htm\"\r\n                            ],\r\n                            \"MinLength\": 256,\r\n                            \"MaxLength\": 2097152,\r\n                            \"Algorithms\": [\r\n                                \"gzip\"\r\n                            ]\r\n                        }\r\n                    ]\r\n                },\r\n                \"CreateTime\": \"2019-11-15 15:20:46\",\r\n                \"Disable\": \"normal\",\r\n                \"Domain\": \"www.test.com\",\r\n                \"DownstreamCapping\": {\r\n                    \"Switch\": \"off\",\r\n                    \"CappingRules\": []\r\n                },\r\n                \"ErrorPage\": {\r\n                    \"PageRules\": [],\r\n                    \"Switch\": \"off\"\r\n                },\r\n                \"FollowRedirect\": {\r\n                    \"Switch\": \"on\"\r\n                },\r\n                \"ForceRedirect\": {\r\n                    \"Switch\": \"off\",\r\n                    \"RedirectType\": \"http\",\r\n                    \"RedirectStatusCode\": 302\r\n                },\r\n                \"Https\": {\r\n                    \"Switch\": \"off\",\r\n                    \"Http2\": \"off\",\r\n                    \"Spdy\": \"off\",\r\n                    \"OcspStapling\": \"off\",\r\n                    \"VerifyClient\": \"off\",\r\n                    \"CertInfo\": null,\r\n                    \"ClientCertInfo\": null,\r\n                    \"SslStatus\": \"closed\"\r\n                },\r\n                \"IpFilter\": {\r\n                    \"Switch\": \"off\",\r\n                    \"FilterType\": \"blacklist\",\r\n                    \"Filters\": []\r\n                },\r\n                \"IpFreqLimit\": {\r\n                    \"Switch\": \"off\",\r\n                    \"Qps\": null\r\n                },\r\n                \"Ipv6\": {\r\n                    \"Switch\": \"off\"\r\n                },\r\n                \"MaxAge\": {\r\n                    \"MaxAgeRules\": [],\r\n                    \"Switch\": \"off\"\r\n                },\r\n                \"Origin\": {\r\n                    \"Origins\": [\r\n                        \"test-1251000004.cos.ap-chengdu.myqcloud.com\"\r\n                    ],\r\n                    \"OriginType\": \"cos\",\r\n                    \"ServerName\": \"test-1251000004.cos.ap-chengdu.myqcloud.com\",\r\n                    \"CosPrivateAccess\": \"off\",\r\n                    \"OriginPullProtocol\": \"http\",\r\n                    \"BackupOrigins\": [],\r\n                    \"BackupOriginType\": null,\r\n                    \"BackupServerName\": null\r\n                },\r\n                \"OriginPullOptimization\": {\r\n                    \"Switch\": \"off\",\r\n                    \"OptimizationType\": \"\"\r\n                },\r\n                \"ProjectId\": 0,\r\n                \"RangeOriginPull\": {\r\n                    \"Switch\": \"on\"\r\n                },\r\n                \"Readonly\": \"normal\",\r\n                \"Referer\": {\r\n                    \"Switch\": \"off\",\r\n                    \"RefererRules\": []\r\n                },\r\n                \"RequestHeader\": {\r\n                    \"HeaderRules\": [],\r\n                    \"Switch\": \"off\"\r\n                },\r\n                \"ResourceId\": \"cdn-knocwo77\",\r\n                \"ResponseHeader\": {\r\n                    \"HeaderRules\": [],\r\n                    \"Switch\": \"off\"\r\n                },\r\n                \"ResponseHeaderCache\": {\r\n                    \"Switch\": \"off\"\r\n                },\r\n                \"Seo\": {\r\n                    \"Switch\": \"off\"\r\n                },\r\n                \"ServiceType\": \"web\",\r\n                \"SpecificConfig\": {\r\n                    \"Mainland\": null,\r\n                    \"Overseas\": null\r\n                },\r\n                \"Status\": \"offline\",\r\n                \"StatusCodeCache\": {\r\n                    \"CacheRules\": [\r\n                        {\r\n                            \"StatusCode\": \"404\",\r\n                            \"CacheTime\": 10\r\n                        }\r\n                    ],\r\n                    \"Switch\": \"on\"\r\n                },\r\n                \"UpdateTime\": \"2019-12-04 11:13:09\",\r\n                \"VideoSeek\": {\r\n                    \"Switch\": \"off\"\r\n                }\r\n            }\r\n        ],\r\n        \"TotalNumber\": 201\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba516c05-42d9-49c7-b275-7775be0475ba\",\n        \"Domains\": [\n            {\n                \"Area\": \"mainland\",\n                \"Authentication\": {\n                    \"Switch\": \"off\",\n                    \"TypeA\": null,\n                    \"TypeB\": null,\n                    \"TypeC\": null,\n                    \"TypeD\": null\n                },\n                \"BandwidthAlert\": {\n                    \"Switch\": \"off\",\n                    \"BpsThreshold\": 10000000000,\n                    \"CounterMeasure\": \"RETURN_404\",\n                    \"LastTriggerTime\": null\n                },\n                \"Cache\": {\n                    \"SimpleCache\": {\n                        \"CacheRules\": [\n                            {\n                                \"CacheType\": \"all\",\n                                \"CacheContents\": [\n                                    \"*\"\n                                ],\n                                \"CacheTime\": 2592000\n                            }\n                        ],\n                        \"IgnoreCacheControl\": \"off\",\n                        \"IgnoreSetCookie\": \"off\",\n                        \"CompareMaxAge\": \"off\",\n                        \"FollowOrigin\": \"off\"\n                    },\n                    \"AdvancedCache\": null\n                },\n                \"CacheKey\": {\n                    \"FullUrlCache\": \"on\"\n                },\n                \"Cname\": \"www.test.com.cdn.dnsv1.com\",\n                \"Compatibility\": {\n                    \"Code\": 0\n                },\n                \"Compression\": {\n                    \"Switch\": \"off\",\n                    \"CompressionRules\": [\n                        {\n                            \"Compress\": true,\n                            \"FileExtensions\": [\n                                \"js\",\n                                \"html\",\n                                \"css\",\n                                \"xml\",\n                                \"json\",\n                                \"shtml\",\n                                \"htm\"\n                            ],\n                            \"MinLength\": 256,\n                            \"MaxLength\": 2097152,\n                            \"Algorithms\": [\n                                \"gzip\"\n                            ]\n                        }\n                    ]\n                },\n                \"CreateTime\": \"2019-11-15 15:20:46\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"www.test.com\",\n                \"DownstreamCapping\": {\n                    \"Switch\": \"off\",\n                    \"CappingRules\": []\n                },\n                \"ErrorPage\": {\n                    \"PageRules\": [],\n                    \"Switch\": \"off\"\n                },\n                \"FollowRedirect\": {\n                    \"Switch\": \"on\"\n                },\n                \"ForceRedirect\": {\n                    \"Switch\": \"off\",\n                    \"RedirectType\": \"http\",\n                    \"RedirectStatusCode\": 302\n                },\n                \"Https\": {\n                    \"Switch\": \"off\",\n                    \"Http2\": \"off\",\n                    \"Spdy\": \"off\",\n                    \"OcspStapling\": \"off\",\n                    \"VerifyClient\": \"off\",\n                    \"CertInfo\": null,\n                    \"ClientCertInfo\": null,\n                    \"SslStatus\": \"closed\"\n                },\n                \"IpFilter\": {\n                    \"Switch\": \"off\",\n                    \"FilterType\": \"blacklist\",\n                    \"Filters\": []\n                },\n                \"IpFreqLimit\": {\n                    \"Switch\": \"off\",\n                    \"Qps\": null\n                },\n                \"Ipv6\": {\n                    \"Switch\": \"off\"\n                },\n                \"MaxAge\": {\n                    \"MaxAgeRules\": [],\n                    \"Switch\": \"off\"\n                },\n                \"Origin\": {\n                    \"Origins\": [\n                        \"test-1251000004.cos.ap-chengdu.myqcloud.com\"\n                    ],\n                    \"OriginType\": \"cos\",\n                    \"ServerName\": \"test-1251000004.cos.ap-chengdu.myqcloud.com\",\n                    \"CosPrivateAccess\": \"off\",\n                    \"OriginPullProtocol\": \"http\",\n                    \"BackupOrigins\": [],\n                    \"BackupOriginType\": null,\n                    \"BackupServerName\": null\n                },\n                \"OriginPullOptimization\": {\n                    \"Switch\": \"off\",\n                    \"OptimizationType\": \"\"\n                },\n                \"ProjectId\": 0,\n                \"RangeOriginPull\": {\n                    \"Switch\": \"on\"\n                },\n                \"Readonly\": \"normal\",\n                \"Referer\": {\n                    \"Switch\": \"off\",\n                    \"RefererRules\": []\n                },\n                \"RequestHeader\": {\n                    \"HeaderRules\": [],\n                    \"Switch\": \"off\"\n                },\n                \"ResourceId\": \"cdn-knocwo77\",\n                \"ResponseHeader\": {\n                    \"HeaderRules\": [],\n                    \"Switch\": \"off\"\n                },\n                \"ResponseHeaderCache\": {\n                    \"Switch\": \"off\"\n                },\n                \"Seo\": {\n                    \"Switch\": \"off\"\n                },\n                \"ServiceType\": \"web\",\n                \"SpecificConfig\": {\n                    \"Mainland\": null,\n                    \"Overseas\": null\n                },\n                \"Status\": \"offline\",\n                \"StatusCodeCache\": {\n                    \"CacheRules\": [\n                        {\n                            \"StatusCode\": \"404\",\n                            \"CacheTime\": 10\n                        }\n                    ],\n                    \"Switch\": \"on\"\n                },\n                \"UpdateTime\": \"2019-12-04 11:13:09\",\n                \"VideoSeek\": {\n                    \"Switch\": \"off\"\n                }\n            }\n        ],\n        \"TotalNumber\": 201\n    }\n}",
         "title": "查询域名详细配置"
       }
     ],
@@ -156,7 +156,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeImageConfig\r\n&Domain=test.tencent.com\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n    \t\"WebpAdapter\":{\"Switch\":\"on/off\"},\r\n    \t\"TpgAdapter\":{\"Switch\":\"on/off\"},\r\n    \t\"GuetzliAdapter\":{\"Switch\":\"on/off\"},\r\n        \"RequestId\":\"29699aac-9898-4baf-b645-7cc31d972674\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"WebpAdapter\": {\n            \"Switch\": \"on/off\"\n        },\n        \"TpgAdapter\": {\n            \"Switch\": \"on/off\"\n        },\n        \"GuetzliAdapter\": {\n            \"Switch\": \"on/off\"\n        },\n        \"RequestId\": \"29699aac-9898-4baf-b645-7cc31d972674\"\n    }\n}",
         "title": "获取图片优化的配置"
       }
     ],
@@ -164,7 +164,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeIpStatus\r\n&Domain=www.test.com\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b6e9964d-26a3-49d0-adab-993e17d2f950\",\r\n        \"Ips\": [\r\n            {\r\n                \"Ip\": \"1.1.1.1\",\r\n                \"District\": \"广东\",\r\n                \"Isp\": \"电信\",\r\n                \"City\": \"深圳\",\r\n                \"Status\": \"online\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6e9964d-26a3-49d0-adab-993e17d2f950\",\n        \"Ips\": [\n            {\n                \"Ip\": \"1.1.1.1\",\n                \"District\": \"广东\",\n                \"Isp\": \"电信\",\n                \"City\": \"深圳\",\n                \"Status\": \"online\"\n            }\n        ]\n    }\n}",
         "title": "查询域名节点信息"
       }
     ],
@@ -172,7 +172,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeIpVisit\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Domains.0=www.test.com\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n                \"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"multiDomains\",\r\n\t\t\t\"CdnData\": [{\r\n\t\t\t\t\"Metric\": \"ipVisit\",\r\n\t\t\t\t\"DetailData\": [{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:00:00\",\r\n\t\t\t\t\t\"Value\": 10\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:05:00\",\r\n\t\t\t\t\t\"Value\": 20\r\n\t\t\t\t}],\r\n\t\t\t\t\"SummarizedData\": {\r\n\t\t\t\t\t\"Name\": \"sum\",\r\n\t\t\t\t\t\"Value\": 30\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"Interval\": 5\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"multiDomains\",\n                \"CdnData\": [\n                    {\n                        \"Metric\": \"ipVisit\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": 5\n    }\n}",
         "title": "查询活跃IP详情"
       }
     ],
@@ -180,7 +180,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeMapInfo\r\n&Name=isp\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fcd7aded-1866-467e-a9f6-d8d00b09557e\",\r\n        \"MapInfoList\": [\r\n            {\r\n                \"Id\": 3947,\r\n                \"Name\": \"中国铁通\"\r\n            }\r\n        ],\r\n        \"ServerRegionRelation\": null,\r\n        \"ClientRegionRelation\": null\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcd7aded-1866-467e-a9f6-d8d00b09557e\",\n        \"MapInfoList\": [\n            {\n                \"Id\": 3947,\n                \"Name\": \"中国铁通\"\n            }\n        ],\n        \"ServerRegionRelation\": null,\n        \"ClientRegionRelation\": null\n    }\n}",
         "title": "查询省份/运营商映射关系"
       }
     ],
@@ -188,7 +188,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeOriginData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=flux\n&Domains.0=www.test.com\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n                \"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"www.test.com\",\r\n\t\t\t\"OriginData\": [{\r\n\t\t\t\t\"Metric\": \"flux\",\r\n\t\t\t\t\"DetailData\": [{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:00:00\",\r\n\t\t\t\t\t\"Value\": 10\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:05:00\",\r\n\t\t\t\t\t\"Value\": 20\r\n\t\t\t\t}],\r\n\t\t\t\t\"SummarizedData\": {\r\n\t\t\t\t\t\"Name\": \"sum\",\r\n\t\t\t\t\t\"Value\": 30\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"Interval\": 5\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test.com\",\n                \"OriginData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": 5\n    }\n}",
         "title": "查询Cdn回源数据"
       }
     ],
@@ -196,7 +196,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePayType\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\",\r\n        \"PayType\": \"flux\",\r\n        \"StatType\": \"sum\",\r\n        \"BillingCycle\": \"day\",\r\n        \"RegionType\": \"all\",\r\n        \"CurrentPayType\": \"flux\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\",\n        \"PayType\": \"flux\",\n        \"StatType\": \"sum\",\n        \"BillingCycle\": \"day\",\n        \"RegionType\": \"all\",\n        \"CurrentPayType\": \"flux\"\n    }\n}",
         "title": "计费方式查询"
       }
     ],
@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePurgeQuota\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"aee6dbe4-f790-417e-8801-5a1894e8fdba\",\r\n        \"UrlPurge\":[\r\n            {\r\n                \"Area\":\"mainland\",\r\n                \"Batch\":1000,\r\n                \"Total\":10000,\r\n                \"Available\":10000\r\n            },\r\n            {\r\n                \"Area\":\"overseas\",\r\n                \"Batch\":1000,\r\n                \"Total\":10000,\r\n                \"Available\":10000\r\n            }\r\n        ],\r\n        \"PathPurge\":[\r\n            {\r\n                \"Area\":\"mainland\",\r\n                \"Batch\":39,\r\n                \"Total\":100,\r\n                \"Available\":100\r\n            },\r\n            {\r\n                \"Area\":\"overseas\",\r\n                \"Batch\":20,\r\n                \"Total\":100,\r\n                \"Available\":100\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aee6dbe4-f790-417e-8801-5a1894e8fdba\",\n        \"UrlPurge\": [\n            {\n                \"Area\": \"mainland\",\n                \"Batch\": 1000,\n                \"Total\": 10000,\n                \"Available\": 10000\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Batch\": 1000,\n                \"Total\": 10000,\n                \"Available\": 10000\n            }\n        ],\n        \"PathPurge\": [\n            {\n                \"Area\": \"mainland\",\n                \"Batch\": 39,\n                \"Total\": 100,\n                \"Available\": 100\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Batch\": 20,\n                \"Total\": 100,\n                \"Available\": 100\n            }\n        ]\n    }\n}",
         "title": "查询刷新用量配额"
       }
     ],
@@ -212,7 +212,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePurgeTasks\n&TaskId=1234567\n&Area=mainland\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\r\n\t\t\"PurgeLogs\": [{\r\n\t\t\t\"TaskId\": \"153303185323131331\",\r\n\t\t\t\"Url\": \"http://www.test.com/\",\r\n\t\t\t\"Status\": \"Done\",\r\n                        \"PurgeType\": \"url\",\r\n                        \"FlushType\": \"flush\",\r\n\t\t\t\"CreateTime\": \"2018-07-30 18:10:53\"\r\n\t\t}],\r\n                \"TotalCount\": 1\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"PurgeLogs\": [\n            {\n                \"TaskId\": \"153303185323131331\",\n                \"Url\": \"http://www.test.com/\",\n                \"Status\": \"Done\",\n                \"PurgeType\": \"url\",\n                \"FlushType\": \"flush\",\n                \"CreateTime\": \"2018-07-30 18:10:53\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "刷新历史查询"
       }
     ],
@@ -220,7 +220,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePushQuota\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6f5a231e-f629-42fa-a9f0-5a9ebc127c04\",\r\n        \"UrlPush\": [{\r\n            \"Batch\": 1000,\r\n            \"Total\": 10000,\r\n            \"Available\": 10000,\r\n            \"Area\":\"mainland\"\r\n        }]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f5a231e-f629-42fa-a9f0-5a9ebc127c04\",\n        \"UrlPush\": [\n            {\n                \"Batch\": 1000,\n                \"Total\": 10000,\n                \"Available\": 10000,\n                \"Area\": \"mainland\"\n            }\n        ]\n    }\n}",
         "title": "查询预热用量配额"
       }
     ],
@@ -228,7 +228,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePushTasks\n&TaskId=1533031853231313311\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\r\n\t\t\"PushLogs\": [{\r\n\t\t\t\"TaskId\": \"1533031853231313311\",\r\n\t\t\t\"Url\": \"http://www.test.com/\",\r\n\t\t\t\"Status\": \"Done\",\r\n\t\t\t\"Percent\": 100,\r\n\t\t\t\"CreateTime\": \"2018-07-30 18:10:53\",\r\n                        \"Area\": \"mainland\"\r\n\t\t}],\r\n                \"TotalCount\": 20\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"PushLogs\": [\n            {\n                \"TaskId\": \"1533031853231313311\",\n                \"Url\": \"http://www.test.com/\",\n                \"Status\": \"Done\",\n                \"Percent\": 100,\n                \"CreateTime\": \"2018-07-30 18:10:53\",\n                \"Area\": \"mainland\"\n            }\n        ],\n        \"TotalCount\": 20\n    }\n}",
         "title": "预热历史查询"
       }
     ],
@@ -236,7 +236,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeReportData\n&StartTime=2020-02-01\n&EndTime=2020-02-29\n&ReportType=monthly\n&Area=mainland\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"8aa8eb8d-d704-45a9-ae81-9606243193cb\",\r\n        \"DomainReport\":[\r\n            {\r\n                \"Resource\":\"www.test1.com\",\r\n                \"ResourceId\":\"cdn-8km12345\",\r\n                \"Value\":100,\r\n                \"Percentage\":50,\r\n                \"BillingValue\":100,\r\n                \"BillingPercentage\":50\r\n            },\r\n            {\r\n                \"Resource\":\"www.test2.com\",\r\n                \"ResourceId\":\"cdn-rl523456\",\r\n                \"Value\":100,\r\n                \"Percentage\":50,\r\n                \"BillingValue\":100,\r\n                \"BillingPercentage\":50\r\n            }\r\n        ],\r\n        \"ProjectReport\":[\r\n            {\r\n                \"Resource\":\"p1\",\r\n                \"ResourceId\":\"123\",\r\n                \"Value\":100,\r\n                \"Percentage\":10,\r\n                \"BillingValue\":100,\r\n                \"BillingPercentage\":10\r\n            },\r\n            {\r\n                \"Resource\":\"默认项目\",\r\n                \"ResourceId\":\"0\",\r\n                \"Value\":900,\r\n                \"Percentage\":90,\r\n                \"BillingValue\":900,\r\n                \"BillingPercentage\":90\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8aa8eb8d-d704-45a9-ae81-9606243193cb\",\n        \"DomainReport\": [\n            {\n                \"Resource\": \"www.test1.com\",\n                \"ResourceId\": \"cdn-8km12345\",\n                \"Value\": 100,\n                \"Percentage\": 50,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 50\n            },\n            {\n                \"Resource\": \"www.test2.com\",\n                \"ResourceId\": \"cdn-rl523456\",\n                \"Value\": 100,\n                \"Percentage\": 50,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 50\n            }\n        ],\n        \"ProjectReport\": [\n            {\n                \"Resource\": \"p1\",\n                \"ResourceId\": \"123\",\n                \"Value\": 100,\n                \"Percentage\": 10,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 10\n            },\n            {\n                \"Resource\": \"默认项目\",\n                \"ResourceId\": \"0\",\n                \"Value\": 900,\n                \"Percentage\": 90,\n                \"BillingValue\": 900,\n                \"BillingPercentage\": 90\n            }\n        ]\n    }\n}",
         "title": "查询报表数据"
       }
     ],
@@ -244,7 +244,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnConfig\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"CC\": {\r\n            \"Rules\": [\r\n                {\r\n                    \"FrequencyLimit\": 1, \r\n                    \"RuleType\": \"xx\", \r\n                    \"DetectionTime\": 1, \r\n                    \"RuleValue\": [\r\n                        \"xx\"\r\n                    ], \r\n                    \"PunishmentTime\": 1, \r\n                    \"RedirectUrl\": \"xx\", \r\n                    \"Action\": \"xx\", \r\n                    \"Qps\": 1, \r\n                    \"PunishmentSwitch\": \"xx\"\r\n                }\r\n            ], \r\n            \"Switch\": \"xx\"\r\n        }, \r\n        \"Waf\": {\r\n            \"Rules\": [\r\n                {\r\n                    \"Operate\": \"xx\", \r\n                    \"AttackType\": \"xx\"\r\n                }\r\n            ], \r\n            \"WebShellSwitch\": \"xx\", \r\n            \"Switch\": \"xx\", \r\n            \"ErrorPage\": {\r\n                \"RedirectUrl\": \"xx\", \r\n                \"RedirectCode\": 0\r\n            }, \r\n            \"Mode\": \"xx\"\r\n        }, \r\n        \"Bot\": {\r\n            \"Switch\": \"xx\", \r\n            \"BotJavaScript\": [\r\n                {\r\n                    \"RuleType\": \"xx\", \r\n                    \"RuleValue\": [\r\n                        \"xx\"\r\n                    ], \r\n                    \"UpdateTime\": \"2020-09-22 00:00:00\", \r\n                    \"RedirectUrl\": \"xx\", \r\n                    \"Switch\": \"xx\", \r\n                    \"Action\": \"xx\"\r\n                }\r\n            ], \r\n            \"BotCookie\": [\r\n                {\r\n                    \"RuleType\": \"xx\", \r\n                    \"RuleValue\": [\r\n                        \"xx\"\r\n                    ], \r\n                    \"UpdateTime\": \"2020-09-22 00:00:00\", \r\n                    \"RedirectUrl\": \"xx\", \r\n                    \"Switch\": \"xx\", \r\n                    \"Action\": \"xx\"\r\n                }\r\n            ]\r\n        }, \r\n        \"Acl\": {\r\n            \"Switch\": \"xx\", \r\n            \"ScriptData\": [\r\n                {\r\n                    \"Status\": \"xx\", \r\n                    \"Configure\": [\r\n                        {\r\n                            \"MatchKey\": \"xx\", \r\n                            \"MatchValue\": \"xx\", \r\n                            \"LogiOperator\": \"xx\"\r\n                        }\r\n                    ], \r\n                    \"Result\": \"xx\", \r\n                    \"RuleName\": \"xx\"\r\n                }\r\n            ], \r\n            \"ErrorPage\": {\r\n                \"RedirectUrl\": \"xx\", \r\n                \"RedirectCode\": 0\r\n            }\r\n        }, \r\n        \"Status\": \"online\",\r\n        \"Ddos\": {\r\n            \"Switch\": \"xx\"\r\n        }, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"CC\": {\n            \"Rules\": [\n                {\n                    \"FrequencyLimit\": 1,\n                    \"RuleType\": \"xx\",\n                    \"DetectionTime\": 1,\n                    \"RuleValue\": [\n                        \"xx\"\n                    ],\n                    \"PunishmentTime\": 1,\n                    \"RedirectUrl\": \"xx\",\n                    \"Action\": \"xx\",\n                    \"Qps\": 1,\n                    \"PunishmentSwitch\": \"xx\"\n                }\n            ],\n            \"Switch\": \"xx\"\n        },\n        \"Waf\": {\n            \"Rules\": [\n                {\n                    \"Operate\": \"xx\",\n                    \"AttackType\": \"xx\"\n                }\n            ],\n            \"WebShellSwitch\": \"xx\",\n            \"Switch\": \"xx\",\n            \"ErrorPage\": {\n                \"RedirectUrl\": \"xx\",\n                \"RedirectCode\": 0\n            },\n            \"Mode\": \"xx\"\n        },\n        \"Bot\": {\n            \"Switch\": \"xx\",\n            \"BotJavaScript\": [\n                {\n                    \"RuleType\": \"xx\",\n                    \"RuleValue\": [\n                        \"xx\"\n                    ],\n                    \"UpdateTime\": \"2020-09-22 00:00:00\",\n                    \"RedirectUrl\": \"xx\",\n                    \"Switch\": \"xx\",\n                    \"Action\": \"xx\"\n                }\n            ],\n            \"BotCookie\": [\n                {\n                    \"RuleType\": \"xx\",\n                    \"RuleValue\": [\n                        \"xx\"\n                    ],\n                    \"UpdateTime\": \"2020-09-22 00:00:00\",\n                    \"RedirectUrl\": \"xx\",\n                    \"Switch\": \"xx\",\n                    \"Action\": \"xx\"\n                }\n            ]\n        },\n        \"Acl\": {\n            \"Switch\": \"xx\",\n            \"ScriptData\": [\n                {\n                    \"Status\": \"xx\",\n                    \"Configure\": [\n                        {\n                            \"MatchKey\": \"xx\",\n                            \"MatchValue\": \"xx\",\n                            \"LogiOperator\": \"xx\"\n                        }\n                    ],\n                    \"Result\": \"xx\",\n                    \"RuleName\": \"xx\"\n                }\n            ],\n            \"ErrorPage\": {\n                \"RedirectUrl\": \"xx\",\n                \"RedirectCode\": 0\n            }\n        },\n        \"Status\": \"online\",\n        \"Ddos\": {\n            \"Switch\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询SCDN域名配置"
       }
     ],
@@ -252,7 +252,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnTopData\n&Domain=www.test.com\n&Mode=waf\n&Filter=request\n&Metric=url\n&StartTime=2019-06-2600:00:00\n&EndTime=2019-06-2603:00:00\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4f1bb066-524f-4857-87f4-0ae56439179b\",\r\n        \"TopTypeData\": [\r\n            {\r\n                \"AttackType\": \"xss\",\r\n                \"Value\": 20\r\n            },\r\n            {\r\n                \"AttackType\": \"sql\",\r\n                \"Value\": 831\r\n            }\r\n        ],\r\n        \"TopURLData\": [\r\n            {\r\n                \"Url\": \"xxx.xxx.com\",\r\n                \"Value\": 20,\r\n                \"Time\": \"2019-06-26 05:42:56\"\r\n            },\r\n            {\r\n                \"Url\": \"yyy.yyy.com\",\r\n                \"Value\": 20,\r\n                \"Time\": \"2019-06-26 05:42:56\"\r\n            }\r\n        ],\r\n        \"TopIpData\": [\r\n            {\r\n                \"Time\": \"2019-06-26 05:42:56\",\r\n                \"Value\": 18,\r\n                \"Area\": \"江苏\",\r\n                \"Isp\": \"中国电信\",\r\n                \"Ip\": \"222.186.20.85\"\r\n            }\r\n        ],\r\n        \"Mode\": \"waf\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f1bb066-524f-4857-87f4-0ae56439179b\",\n        \"TopTypeData\": [\n            {\n                \"AttackType\": \"xss\",\n                \"Value\": 20\n            },\n            {\n                \"AttackType\": \"sql\",\n                \"Value\": 831\n            }\n        ],\n        \"TopIpData\": [\n            {\n                \"Time\": \"2019-06-26 05:42:56\",\n                \"Value\": 18,\n                \"Isp\": \"中国电信\",\n                \"Ip\": \"222.186.20.85\"\n            }\n        ],\n        \"Mode\": \"waf\"\n    }\n}",
         "title": "获取SCDN的Top数据"
       }
     ],
@@ -260,7 +260,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeTrafficPackages\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bc7df980-c745-4f80-854e-1a49295b0d5f\",\r\n        \"TrafficPackages\": [\r\n            {\r\n                \"Id\": 123,\r\n                \"Type\": \"新手流量包\",\r\n                \"Bytes\": 50000000000,\r\n                \"BytesUsed\": 0,\r\n                \"Status\": \"expired\",\r\n                \"CreateTime\": \"2017-07-31 09:28:14\",\r\n                \"EnableTime\": \"2017-07-01 00:00:00\",\r\n                \"ExpireTime\": \"2017-08-01 00:00:00\",\r\n                \"ContractExtension\": false,\r\n                \"AutoExtension\": false,\r\n                \"Channel\": \"cdn\",\r\n                \"Area\": \"mainland\",\r\n                \"LifeTimeMonth\": 1,\r\n                \"ExtensionAvailable\": false\r\n            }\r\n        ],\r\n        \"TotalCount\": 40,\r\n        \"ExpiringCount\": 0,\r\n        \"EnabledCount\": 40\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc7df980-c745-4f80-854e-1a49295b0d5f\",\n        \"TrafficPackages\": [\n            {\n                \"Id\": 123,\n                \"Type\": \"新手流量包\",\n                \"Bytes\": 50000000000,\n                \"BytesUsed\": 0,\n                \"Status\": \"expired\",\n                \"CreateTime\": \"2017-07-31 09:28:14\",\n                \"EnableTime\": \"2017-07-01 00:00:00\",\n                \"ExpireTime\": \"2017-08-01 00:00:00\",\n                \"ContractExtension\": false,\n                \"AutoExtension\": false,\n                \"Channel\": \"cdn\",\n                \"Area\": \"mainland\",\n                \"LifeTimeMonth\": 1,\n                \"ExtensionAvailable\": false\n            }\n        ],\n        \"TotalCount\": 40,\n        \"ExpiringCount\": 0,\n        \"EnabledCount\": 40\n    }\n}",
         "title": "境内流量包查询"
       }
     ],
@@ -268,7 +268,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeUrlViolations\r\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\":\"ptplrss8qqf9x7534noql6\",\"UrlRecordList\":[{\"Id\":2256186,\"RealUrl\":\"http:\\/\\/www.test.com\\/a.jpeg\",\"DownloadUrl\":\"2019-11-18\\/2019-11-18-18-26-08-1794844604-29-21-a.jpeg\",\"UrlStatus\":\"forbid\",\"CreateTime\":\"2019-11-17 18:25:47\",\"UpdateTime\":\"2019-11-18 18:06:47\"}],\"TotalCount\":10}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ptplrss8qqf9x7534noql6\",\n        \"UrlRecordList\": [\n            {\n                \"Id\": 2256186,\n                \"RealUrl\": \"http://www.test.com/a.jpeg\",\n                \"DownloadUrl\": \"2019-11-18/2019-11-18-18-26-08-1794844604-29-21-a.jpeg\",\n                \"UrlStatus\": \"forbid\",\n                \"CreateTime\": \"2019-11-17 18:25:47\",\n                \"UpdateTime\": \"2019-11-18 18:06:47\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
         "title": "违规历史查询"
       }
     ],
@@ -276,7 +276,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DisableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"f13cf55b-69e6-4937-8856-bd8965beea8c\",\r\n        \"CacheOptResult\":{\r\n            \"SuccessUrls\":[\"http://example.com/path/to.jpg\"],\r\n            \"FailUrls\":[]\r\n        }\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f13cf55b-69e6-4937-8856-bd8965beea8c\",\n        \"CacheOptResult\": {\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ],\n            \"FailUrls\": []\n        }\n    }\n}",
         "title": "封禁示例"
       }
     ],
@@ -284,7 +284,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DisableClsLogTopic\n&Channel=cdn\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=d2256449-c6ff-421b-93ef-aa3a7dde2de2\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\":\"57460798-8723-45e3-9c75-a0599ef9143a\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\"\n    }\n}",
         "title": "停止日志主题投递"
       }
     ],
@@ -292,7 +292,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DuplicateDomainConfig\n&Domain=www.test.com\n&ReferenceDomain=reference.test.com\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\"\n    }\n}",
         "title": "拷贝参考域名的配置至新域名"
       }
     ],
@@ -300,7 +300,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=EnableCaches\r\n&Urls.0=http://example.com/path/to.jpg\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"asdasdascsa721d8ha8chsa\",\r\n        \"CacheOptResult\":{\r\n            \"FailUrls\":[],\r\n            \"SuccessUrls\":[\"http://example.com/path/to.jpg\"]\r\n        }\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdasdascsa721d8ha8chsa\",\n        \"CacheOptResult\": {\n            \"FailUrls\": [],\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ]\n        }\n    }\n}",
         "title": "解封示例"
       }
     ],
@@ -308,7 +308,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=EnableClsLogTopic\n&Channel=cdn\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=d2256449-c6ff-421b-93ef-aa3a7dde2de2\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n         \"RequestId\":\"57460798-8723-45e3-9c75-a0599ef9143a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\"\n    }\n}",
         "title": "启动日志主题投递"
       }
     ],
@@ -316,7 +316,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=GetDisableRecords\n&StartTime=2018-12-12 10:24:00\n&EndTime=2018-12-14 10:24:00\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"TotalCount\": 2, \r\n        \"RequestId\":\"f13cf55b-69e6-4937-8856-bd8965beea8c\",\r\n        \"UrlRecordList\":[\r\n            {\"Status\":\"enable\",\"RealUrl\":\"https://www.example.com/7349199.txt\",\"CreateTime\":\"2018-12-13 12:25:07\",\"UpdateTime\":\"2018-12-13 12:25:07\"},\r\n            {\"Status\":\"disable\",\"RealUrl\":\"http://www.example.com/v1/example1.jpg\",\"CreateTime\":\"2018-12-13 14:40:59\",\"UpdateTime\":\"2018-12-13 14:40:59\"}\r\n         ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"f13cf55b-69e6-4937-8856-bd8965beea8c\",\n        \"UrlRecordList\": [\n            {\n                \"Status\": \"enable\",\n                \"RealUrl\": \"https://www.example.com/7349199.txt\",\n                \"CreateTime\": \"2018-12-13 12:25:07\",\n                \"UpdateTime\": \"2018-12-13 12:25:07\"\n            },\n            {\n                \"Status\": \"disable\",\n                \"RealUrl\": \"http://www.example.com/v1/example1.jpg\",\n                \"CreateTime\": \"2018-12-13 14:40:59\",\n                \"UpdateTime\": \"2018-12-13 14:40:59\"\n            }\n        ]\n    }\n}",
         "title": "获取示例"
       }
     ],
@@ -324,7 +324,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListClsLogTopics\n&Channel=cdn\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"1313131-092c-4a4a-971e-07d9e536ccc3\",\r\n    \"Logset\": {\r\n      \"AppId\": 1242424252,\r\n      \"Channel\": \"cdn\",\r\n      \"Region\": \"ap-shanghai\", \r\n      \"LogsetId\": \"44d5b2d4-092c-4a4a-971e-07d9e536ccc3\",\r\n      \"LogsetName\": \"cdn_logset\",\r\n      \"IsDefault\": 1,\r\n      \"LogsetSavePeriod\": 7,\r\n      \"CreateTime\": \"2020-09-22 00:00:00\"\r\n    },\r\n    \"Topics\": [\r\n      {\r\n        \"TopicId\": \"def811bf-867e-405c-bbc2-2a3aea45be21\",\r\n        \"TopicName\": \"cdn_topic\",\r\n        \"Enabled\": 1,\r\n        \"CreateTime\": \"2020-09-22 00:00:00\"\r\n      },\r\n      {\r\n        \"TopicId\": \"e0f6809f-026f-4287-b33f-8041a82188cf\",\r\n        \"TopicName\": \"cdn_topic2\",\r\n        \"Enabled\": 1,\r\n        \"CreateTime\": \"2020-09-22 00:00:00\"\r\n      },\r\n      {\r\n        \"TopicId\": \"fcfb346d-100d-454c-adc6-bdf2a2af0515\",\r\n        \"TopicName\": \"cdn_topic1\",\r\n        \"Enabled\": 1,\r\n        \"CreateTime\": \"2020-09-22 00:00:00\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1313131-092c-4a4a-971e-07d9e536ccc3\",\n        \"Logset\": {\n            \"AppId\": 1242424252,\n            \"Channel\": \"cdn\",\n            \"Region\": \"ap-shanghai\",\n            \"LogsetId\": \"44d5b2d4-092c-4a4a-971e-07d9e536ccc3\",\n            \"LogsetName\": \"cdn_logset\",\n            \"IsDefault\": 1,\n            \"LogsetSavePeriod\": 7,\n            \"CreateTime\": \"2020-09-22 00:00:00\"\n        },\n        \"Topics\": [\n            {\n                \"TopicId\": \"def811bf-867e-405c-bbc2-2a3aea45be21\",\n                \"TopicName\": \"cdn_topic\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            },\n            {\n                \"TopicId\": \"e0f6809f-026f-4287-b33f-8041a82188cf\",\n                \"TopicName\": \"cdn_topic2\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            },\n            {\n                \"TopicId\": \"fcfb346d-100d-454c-adc6-bdf2a2af0515\",\n                \"TopicName\": \"cdn_topic1\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
         "title": "显示日志主题列表"
       }
     ],
@@ -332,7 +332,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListClsTopicDomains\n&Channel=cdn\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=d2256449-c6ff-421b-93ef-aa3a7dde2de2\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TopicId\": \"d2256449-c6ff-421b-93ef-aa3a7dde2de2\",\r\n        \"UpdateTime\": \"2020-09-22 00:00:00\", \r\n        \"TopicName\": \"xx\", \r\n        \"DomainAreaConfigs\": [\r\n            {\r\n                \"Domain\": \"a.b.com\",\r\n                \"Area\": [\r\n                    \"mainland\"\r\n                ]\r\n            }\r\n        ], \r\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\",\r\n        \"AppId\": 12345678901,\r\n        \"LogsetId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\",\r\n        \"Channel\": \"cdn\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"d2256449-c6ff-421b-93ef-aa3a7dde2de2\",\n        \"UpdateTime\": \"2020-09-22 00:00:00\",\n        \"TopicName\": \"xx\",\n        \"DomainAreaConfigs\": [\n            {\n                \"Domain\": \"a.b.com\",\n                \"Area\": [\n                    \"mainland\"\n                ]\n            }\n        ],\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\",\n        \"AppId\": 12345678901,\n        \"LogsetId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\",\n        \"Channel\": \"cdn\"\n    }\n}",
         "title": "获取主题下绑定的域名列表"
       }
     ],
@@ -340,7 +340,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListDiagnoseReport\n&KeyWords=test.com/\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\r\n        \"Data\":[\r\n            \r\n            {\r\n                \"DiagnoseUrl\":\"http://www.test.com/2.txt\",\r\n                \"DiagnoseLink\":\"http://cdn.cloud.tencent.com/self_diagnose/xx2\",\r\n                \"CreateTime\":\"2020-09-21 12:00:08\",\r\n                \"ExpireDate\":\"2020-09-22 12:00:08\",\r\n                \"VisitCount\":9,\r\n                \"ClientList\":[\r\n                    {\r\n                        \"CreateTime\":\"2020-09-21 12:00:16\",\r\n                        \"ReportId\":\"1\",\r\n                        \"DiagnoseTag\":\"xx2\",\r\n                        \"ClientInfo\":[\r\n                            {\r\n                                \"ProvName\":\"广东省\",\r\n                                \"Country\":\"中国\",\r\n                                \"IspName\":\"中国电信\",\r\n                                \"Ip\":\"1.1.1.1\"\r\n                            }\r\n                        ],\r\n                        \"FinalDiagnose\":2\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\n        \"Data\": [\n            {\n                \"DiagnoseUrl\": \"http://www.test.com/2.txt\",\n                \"DiagnoseLink\": \"http://cdn.cloud.tencent.com/self_diagnose/xx2\",\n                \"CreateTime\": \"2020-09-21 12:00:08\",\n                \"ExpireDate\": \"2020-09-22 12:00:08\",\n                \"VisitCount\": 9,\n                \"ClientList\": [\n                    {\n                        \"CreateTime\": \"2020-09-21 12:00:16\",\n                        \"ReportId\": \"1\",\n                        \"DiagnoseTag\": \"xx2\",\n                        \"ClientInfo\": [\n                            {\n                                \"ProvName\": \"广东省\",\n                                \"Country\": \"中国\",\n                                \"IspName\": \"中国电信\",\n                                \"Ip\": \"1.1.1.1\"\n                            }\n                        ],\n                        \"FinalDiagnose\": 2\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "获取诊断任务列表"
       }
     ],
@@ -348,7 +348,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnDomains\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"123\",\r\n    \"DomainList\": [\r\n      {\r\n        \"Domain\": \"www.test.com\",\r\n        \"Status\": \"online\",\r\n        \"Waf\": \"/\",\r\n        \"Acl\": \"yes\",\r\n        \"Cc\": \"no\",\r\n        \"Dddos\": \"close\"\r\n      }\r\n    ],\r\n\"TotalCount\":11\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"DomainList\": [\n            {\n                \"Domain\": \"www.test.com\",\n                \"Status\": \"online\",\n                \"Waf\": \"/\",\n                \"Acl\": \"yes\"\n            }\n        ],\n        \"TotalCount\": 11\n    }\n}",
         "title": "查询SCDN域名列表"
       }
     ],
@@ -356,7 +356,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnLogTasks\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"123\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "查询SCDN事件日志下载任务列表"
       }
     ],
@@ -364,7 +364,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListTopData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=Url\n&Filter=flux\n&Domains.0=www.test.com\n&Domains.1=www.test.com\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"www.test1.com\",\r\n\t\t\t\"DetailData\": [{\r\n\t\t\t\t\"Name\": \"www.test1.com/1.jpg?abc=123\",\r\n\t\t\t\t\"Value\": 13838\r\n\t\t\t}]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Resource\": \"www.test2.com\",\r\n\t\t\t\"DetailData\": [{\r\n\t\t\t\t\"Name\": \"http://www.test2.com/1.jpg?abc=123\",\r\n\t\t\t\t\"Value\": 2501\r\n\t\t\t}]\r\n\t\t}]\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test1.com\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"www.test1.com/1.jpg?abc=123\",\n                        \"Value\": 13838\n                    }\n                ]\n            },\n            {\n                \"Resource\": \"www.test2.com\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"http://www.test2.com/1.jpg?abc=123\",\n                        \"Value\": 2501\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询Top Url访问数据"
       }
     ],
@@ -372,7 +372,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ManageClsTopicDomains\n&Channel=cdn\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=d2256449-c6ff-421b-93ef-aa3a7dde2de2\n&DomainAreaConfigs.0.Domain=a.b.com\n&DomainAreaConfigs.0.Area.0=mainland\n&DomainAreaConfigs.0.Area.1=overseas\n&<公共请求参数>",
-        "output": "{\r\n   \"Response\":{\r\n        \"RequestId\":\"57460798-8723-45e3-9c75-a0599ef9143a\"\r\n   } \r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\"\n    }\n}",
         "title": "管理日志主题下域名列表"
       }
     ],
@@ -380,7 +380,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=PurgePathCache\n&Paths.0=http://www.test.com/test/\n&FlushType=flush\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\r\n\t\t\"TaskId\": \"1533045796-i60rfmzm\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
         "title": "提交目录刷新任务"
       }
     ],
@@ -388,7 +388,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=PurgeUrlsCache\n&Urls.0=http://www.test.com/1.jpg\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\r\n\t\t\"TaskId\": \"1533045796-i60rfmzm\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
         "title": "提交 URL 刷新任务"
       }
     ],
@@ -396,7 +396,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=PushUrlsCache\n&Urls.0=http://www.test.com/1.jpg\n&<公共请求参数>",
-        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"123\",\r\n\t\t\"TaskId\": \"15475444535871929928456\"\r\n\t}\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"TaskId\": \"15475444535871929928456\"\n    }\n}",
         "title": "预热 URL"
       }
     ],
@@ -404,7 +404,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=SearchClsLog\n&Channel=cdn\n&LogsetId=4242424-8723-45e3-9c75-a0599ef9143a\n&TopicIds=57460798-8723-45e3-9c75-a0599ef9143a,57460798-8723-45e3-9c75-22242141\n&StartTime=2019-11-18 00:00:00\n&EndTime=2019-11-18 02:00:00\n&Query=abc\n&Limit=10\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"242144aeff-8723-45e3-9c75-a0599ef9143a\",\r\n    \"Logs\": {\r\n      \"Context\": \"2e1414\",\r\n      \"Listover\": false,\r\n      \"Results\": [{\r\n           \"TopicId\": \"57460798-8723-45e3-9c75-a0599ef9143a\",\r\n           \"TopicName\": \"test_topic\",\r\n           \"Timestamp\": \"2019-11-18 00:00:00\",\r\n           \"Content\": \"abcdafaf\",\r\n            \"Filename\": \"\",\r\n            \"Source\": \"\"\r\n      }]\r\n    }\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"242144aeff-8723-45e3-9c75-a0599ef9143a\",\n        \"Logs\": {\n            \"Context\": \"2e1414\",\n            \"Listover\": false,\n            \"Results\": [\n                {\n                    \"TopicId\": \"57460798-8723-45e3-9c75-a0599ef9143a\",\n                    \"TopicName\": \"test_topic\",\n                    \"Timestamp\": \"2019-11-18 00:00:00\",\n                    \"Content\": \"abcdafaf\",\n                    \"Filename\": \"\",\n                    \"Source\": \"\"\n                }\n            ]\n        }\n    }\n}",
         "title": "搜索日志"
       }
     ],
@@ -412,7 +412,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=StartCdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9c2b0178-6fb5-421d-bdf5-e0bde1c2818a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c2b0178-6fb5-421d-bdf5-e0bde1c2818a\"\n    }\n}",
         "title": "启用加速域名"
       }
     ],
@@ -420,7 +420,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=StartScdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\":\"oe5xr2grk86h86sd842tq\",\"Result\":\"Success\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"oe5xr2grk86h86sd842tq\",\n        \"Result\": \"Success\"\n    }\n}",
         "title": "开启域名安全防护"
       }
     ],
@@ -428,7 +428,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=StopCdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fa8b845-ca93-457a-a776-ea7915695648\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fa8b845-ca93-457a-a776-ea7915695648\"\n    }\n}",
         "title": "停用加速域名"
       }
     ],
@@ -436,7 +436,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=StopScdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\":\"oe5xr2grk86h86sd842tq\",\"Result\":\"Success\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"oe5xr2grk86h86sd842tq\",\n        \"Result\": \"Success\"\n    }\n}",
         "title": "关闭域名安全防护"
       }
     ],
@@ -444,7 +444,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=UpdateDomainConfig\n&ProjectId=0\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\n    }\n}",
         "title": "更新域名配置"
       }
     ],
@@ -452,7 +452,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=UpdateImageConfig\n&Domain=test.tencent.com\n&TpgAdapter.Switch=on\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\":\"XXXXXXX\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"XXXXXXX\"\n    }\n}",
         "title": "开启Tpg图片优化"
       }
     ],
@@ -460,7 +460,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=UpdatePayType\n&Area=mainland\n&PayType=flux\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\"\n    }\n}",
         "title": "修改计费类型"
       }
     ],
@@ -468,7 +468,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=UpdateScdnDomain\r\n&Domain=www.test.com\r\n&Acl.Switch=on\r\n&Acl.ScriptData.0.RuleName=test\r\n&Acl.ScriptData.0.Result=refuse\r\n&Acl.ScriptData.0.Configure.0.MatchKey=params\r\n&Acl.ScriptData.0.Configure.0.LogiOperator=exclude\r\n&Acl.ScriptData.0.Configure.0.MatchValue=www.attatck.com\r\n&<公共请求参数>",
-        "output": "{\"Response\":{\"RequestId\":\"08b287d9-6342-4b70-9ec7-201efcd93b9d\",\"Result\":\"Success\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08b287d9-6342-4b70-9ec7-201efcd93b9d\",\n        \"Result\": \"Success\"\n    }\n}",
         "title": "SCDN域名配置变更"
       }
     ],
@@ -476,13 +476,13 @@
       {
         "document": "正常回包",
         "input": "https://cdn.tencentcloudapi.com/?Action=VerifyDomainRecord\n&Domain=www.qq.com\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b6926bb2-d0b5-42bc-b17f-e4402bdb9e9b\",\r\n    \"Result\": \"ok\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6926bb2-d0b5-42bc-b17f-e4402bdb9e9b\",\n        \"Result\": \"ok\"\n    }\n}",
         "title": "验证解析记录-2"
       },
       {
         "document": "异常返回",
         "input": "https://cdn.tencentcloudapi.com/?Action=VerifyDomainRecord\n&Domain=www.qq.com\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"UnauthorizedOperation.CdnTxtRecordValueNotMatch\",\r\n      \"Message\": \"cdn txt record value not match(txt record value not match)\"\r\n    },\r\n    \"RequestId\": \"2424\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2424\"\n    }\n}",
         "title": "验证解析记录"
       }
     ]

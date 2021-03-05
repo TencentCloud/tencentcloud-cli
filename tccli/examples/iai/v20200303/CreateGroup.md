@@ -64,10 +64,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.GroupIdAlreadyExist",
-            "Message": "人员库ID已经存在。人员库ID不可重复。"
-        },
         "RequestId": "76ec6e41-37d6-4ab9-abef-48ef0c6ab175"
     }
 }
@@ -89,10 +85,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.GroupIdIllegal",
-            "Message": "人员库ID包含非法字符。人员库ID只支持英文、数字、-%@#&_。"
-        },
         "RequestId": "8125dda4-2905-4e02-88bd-79a93a660ad2"
     }
 }

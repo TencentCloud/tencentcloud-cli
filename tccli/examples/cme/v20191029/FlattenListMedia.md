@@ -26,7 +26,6 @@ Output:
                     "CreateTime": "2019-12-31T03:59:14Z",
                     "UpdateTime": "2019-12-31T03:59:14Z",
                     "ClassPath": "/a/b",
-                    "TagSet": null,
                     "PreviewUrl": "http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg",
                     "Owner": {
                         "Type": "PERSON",

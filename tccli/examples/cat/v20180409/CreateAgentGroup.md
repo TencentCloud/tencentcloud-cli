@@ -18,8 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "GroupId": 28330,
-        "RequestID": "6de91190-a148-97a4-a935-f44cf51e1d61"
+        "GroupId": 28330
     }
 }
 ```

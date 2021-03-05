@@ -33,8 +33,7 @@ Output:
                     }
                 ],
                 "Main": false,
-                "CreatedTime": "2020-11-11 11:11:03",
-                "Tags": []
+                "CreatedTime": "2020-11-11 11:11:03"
             }
         ],
         "TotalCount": 1,

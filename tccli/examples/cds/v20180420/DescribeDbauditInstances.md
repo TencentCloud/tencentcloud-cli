@@ -25,7 +25,6 @@ Output:
                 "ProjectId": 0,
                 "RenewFlag": 1,
                 "Region": "app-guangzhou",
-                "ZoneId": 0,
                 "Status": 1,
                 "PayMode": 1,
                 "IsolatedTimestamp": "0000-00-00 00:00:00",

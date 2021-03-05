@@ -28,16 +28,6 @@ Output:
         "Label": "Porn",
         "SubLabel": "SexBehavior",
         "Score": 90,
-        "LabelResult": [
-            {
-                "Scene": "Porn",
-                "Suggestion": "Block",
-                "Label": "Porn",
-                "SubLabel": "SexBehavior",
-                "Score": 90,
-                "Details": []
-            }
-        ],
         "ObjectResults": [
             {
                 "Scene": "QrCode",
@@ -52,7 +42,6 @@ Output:
                     {
                         "Id": 0,
                         "Name": "QRCODE",
-                        "Text": "https://test.com/test",
                         "Score": 100,
                         "Location": {
                             "X": 155.01746,

@@ -27,8 +27,7 @@ Output:
                 },
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "FaceLibrary": "All",
-                    "LabelSet": []
+                    "FaceLibrary": "All"
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
@@ -87,8 +86,7 @@ Output:
                 },
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "FaceLibrary": "All",
-                    "LabelSet": []
+                    "FaceLibrary": "All"
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
@@ -123,8 +121,7 @@ Output:
                 },
                 "FaceConfigure": {
                     "Switch": "OFF",
-                    "FaceLibrary": "All",
-                    "LabelSet": []
+                    "FaceLibrary": "All"
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "OFF"

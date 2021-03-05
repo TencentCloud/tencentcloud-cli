@@ -70,10 +70,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation.SearchFacesExceed",
-            "Message": "检索人脸个数超过限制。"
-        },
         "RequestId": "f04ba2f3-532c-4207-9caa-6e818ded7fb9"
     }
 }
@@ -96,10 +92,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation.ImageDownloadError",
-            "Message": "图片下载错误。"
-        },
         "RequestId": "527ecffe-4c6a-47c9-8217-4dd2e3f018da"
     }
 }

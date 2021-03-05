@@ -22,8 +22,7 @@ Output:
                                 "Url": "/",
                                 "Domain": "www.123.com",
                                 "LocationId": "loc-5t7526km",
-                                "Targets": [],
-                                "FunctionTargets": []
+                                "Targets": []
                             }
                         ],
                         "Port": 666,
@@ -50,8 +49,7 @@ Output:
                                         "TargetId": "ins-19425y2y",
                                         "Port": 80
                                     }
-                                ],
-                                "FunctionTargets": []
+                                ]
                             }
                         ],
                         "Port": 789,
@@ -65,8 +63,7 @@ Output:
                                 "Url": "/",
                                 "Domain": "www.456.com",
                                 "LocationId": "loc-8gdc4qcq",
-                                "Targets": [],
-                                "FunctionTargets": []
+                                "Targets": []
                             }
                         ],
                         "Port": 777,

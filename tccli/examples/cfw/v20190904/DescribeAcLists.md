@@ -23,8 +23,7 @@ Output:
         "Total": 0,
         "AllTotal": 0,
         "Enable": 1,
-        "Data": [],
-        "RequestID": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "Data": []
     }
 }
 ```

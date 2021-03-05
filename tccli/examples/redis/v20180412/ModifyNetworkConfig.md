@@ -14,11 +14,6 @@ Output:
 ```
 {
     "Response": {
-        "status": true,
-        "vip": "192.168.1.1",
-        "vport": 6379,
-        "vpcId": 7678,
-        "subnetId": 3545,
         "RequestId": "f1b5aabe-806a-4886-b839-9907baa24c85"
     }
 }

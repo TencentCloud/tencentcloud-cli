@@ -17,10 +17,6 @@ Output:
         "ImageWidth": 550,
         "ImageHeight": 366,
         "DenseFaceShapeSet": [],
-        "X": 375,
-        "Y": 37,
-        "Width": 63,
-        "Height": 82,
         "RequestId": "e2242360-f30e-4103-b861-e8ba63eacadc"
     }
 }

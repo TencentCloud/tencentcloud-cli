@@ -88,20 +88,6 @@ Output:
                                 "ErrorPosition": [
                                     8,
                                     8
-                                ],
-                                "ErrorCoordinate": [
-                                    {
-                                        "Coordinate": [
-                                            424,
-                                            360,
-                                            459,
-                                            359,
-                                            459,
-                                            386,
-                                            424,
-                                            387
-                                        ]
-                                    }
                                 ]
                             },
                             {
@@ -113,20 +99,6 @@ Output:
                                 "ErrorPosition": [
                                     8,
                                     8
-                                ],
-                                "ErrorCoordinate": [
-                                    {
-                                        "Coordinate": [
-                                            424,
-                                            360,
-                                            459,
-                                            359,
-                                            459,
-                                            386,
-                                            424,
-                                            387
-                                        ]
-                                    }
                                 ]
                             }
                         ]

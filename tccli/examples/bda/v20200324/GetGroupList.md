@@ -14,10 +14,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameter",
-            "Message": "The value type of parameter `Offset` is not valid."
-        },
         "RequestId": "78ec7830-a1c7-42be-bd65-6d0fa25f6fab"
     }
 }

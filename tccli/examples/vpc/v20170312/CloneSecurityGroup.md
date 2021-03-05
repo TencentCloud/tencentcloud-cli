@@ -18,8 +18,7 @@ Output:
             "SecurityGroupId": "sg-12341234",
             "SecurityGroupName": "TestGroup",
             "SecurityGroupDesc": "test-group-desc",
-            "ProjectId": "0",
-            "CreateTime": "2018-01-13 19:26:33"
+            "ProjectId": "0"
         }
     }
 }
@@ -47,8 +46,7 @@ Output:
             "SecurityGroupId": "sg-12341256",
             "SecurityGroupName": "test",
             "SecurityGroupDesc": "test",
-            "ProjectId": "0",
-            "CreateTime": "2018-01-13 19:26:33"
+            "ProjectId": "0"
         }
     }
 }
@@ -75,8 +73,7 @@ Output:
             "SecurityGroupId": "sg-12341278",
             "SecurityGroupName": "TestGroup",
             "SecurityGroupDesc": "test-group-desc",
-            "ProjectId": "1001",
-            "CreateTime": "2018-01-13 19:26:33"
+            "ProjectId": "1001"
         }
     }
 }

@@ -65,10 +65,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameter",
-            "Message": "The value type of parameter `PersonExDescriptionInfos.0.PersonExDescriptionIndex` is not valid."
-        },
         "RequestId": "f944657d-6260-4a2e-a4d8-9c1845f39e56"
     }
 }

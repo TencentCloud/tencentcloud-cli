@@ -28,19 +28,7 @@ Output:
                 "Scheduler": "rr",
                 "ListenerStatus": 0,
                 "ListenerName": "111",
-                "ConnectTimeout": 2,
-                "RealServerList": [
-                    {
-                        "RealServerWeight": 1,
-                        "RealServerId": "rs-d2rwammv",
-                        "RealServerPort": 111,
-                        "RealServerIP": "a.a.com",
-                        "RealServerStatus": -1,
-                        "DownIPList": [
-                            "11.11.11.11:111"
-                        ]
-                    }
-                ]
+                "ConnectTimeout": 2
             }
         ],
         "RequestId": "38fab584-8d14-4e2c-988c-4acdabbf2dff"

@@ -24,7 +24,6 @@ Output:
                 "UserIp": "127.0.0.1",
                 "PostTime": 1590753783,
                 "AssociateAccount": "",
-                "Level": "reject",
                 "RiskType": [
                     101,
                     1,

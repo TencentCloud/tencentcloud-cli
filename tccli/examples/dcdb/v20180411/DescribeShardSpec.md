@@ -18,8 +18,6 @@ Output:
                     {
                         "SuitInfo": "日独立用户数上百万人的中型应用",
                         "Pid": 10820,
-                        "Machine": "TS85",
-                        "TypeName": "标准版",
                         "MaxStorage": 3000000,
                         "Memory": 64000,
                         "NodeCount": 3,
@@ -29,8 +27,6 @@ Output:
                     {
                         "SuitInfo": "日独立用户数上百万人的中型应用",
                         "Pid": 10890,
-                        "Machine": "TS85",
-                        "TypeName": "标准版",
                         "MaxStorage": 3000000,
                         "Memory": 64000,
                         "NodeCount": 2,

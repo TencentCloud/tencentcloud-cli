@@ -24,7 +24,6 @@ Output:
 ```
 {
     "Response": {
-        "MerchantId": "1589516661",
         "MerchantBatchNo": "6695169909762424836",
         "BatchId": "1030001016801203285292020080100005190005",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
@@ -58,11 +57,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "41f4cac5-8a76-47ea-ae6e-913855f0df5c",
-        "Error": {
-            "Code": "InvalidParameter",
-            "Message": "批次金额必须等于明细金额和"
-        }
+        "RequestId": "41f4cac5-8a76-47ea-ae6e-913855f0df5c"
     }
 }
 ```

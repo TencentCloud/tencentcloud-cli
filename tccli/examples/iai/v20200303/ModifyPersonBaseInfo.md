@@ -58,10 +58,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.PersonGenderIllegal",
-            "Message": "人员性别设置出错。0代表未填写，1代表男性，2代表女性。"
-        },
         "RequestId": "f40bf659-0283-4773-abe8-945f643d5015"
     }
 }

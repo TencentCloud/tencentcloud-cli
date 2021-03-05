@@ -65,10 +65,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation.DuplicatedGroupDescription",
-            "Message": "同一人员库中自定义描述字段不可重复。"
-        },
         "RequestId": "4b483679-3f08-4a7c-b827-4a6332dc030f"
     }
 }
@@ -90,10 +86,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.GroupNameAlreadyExist",
-            "Message": "人员库名称已经存在。人员库名称不可重复。"
-        },
         "RequestId": "2dcce170-30cf-4078-9b3c-309362fbad21"
     }
 }

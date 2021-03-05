@@ -29,23 +29,10 @@ Output:
                 "Value": 831
             }
         ],
-        "TopURLData": [
-            {
-                "Url": "xxx.xxx.com",
-                "Value": 20,
-                "Time": "2019-06-26 05:42:56"
-            },
-            {
-                "Url": "yyy.yyy.com",
-                "Value": 20,
-                "Time": "2019-06-26 05:42:56"
-            }
-        ],
         "TopIpData": [
             {
                 "Time": "2019-06-26 05:42:56",
                 "Value": 18,
-                "Area": "江苏",
                 "Isp": "中国电信",
                 "Ip": "222.186.20.85"
             }

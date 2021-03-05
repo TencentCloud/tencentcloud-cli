@@ -88,7 +88,6 @@ Output:
         "NetworkStorageRange": {
             "PerBandwidth": 1,
             "MaxDataDiskSize": 1024,
-            "Ipv6Supported": false,
             "SuggestSystemDiskSize": 50,
             "MinDataDiskSize": 50,
             "MaxVcpuPerReq": 100,

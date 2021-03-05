@@ -36,10 +36,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.GroupIdNotExist",
-            "Message": "人员库ID不存在。"
-        },
         "RequestId": "f08f36f9-671f-4448-a973-dae899aaeb10"
     }
 }

@@ -19,9 +19,7 @@ tccli ecm CreateSecurityGroupPolicies --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {
-        "RequestID": "53ee3ed3-c9ed-48ba-8a57-8624b9c0d3b8"
-    }
+    "Response": {}
 }
 ```
 

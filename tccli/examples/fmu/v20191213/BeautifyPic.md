@@ -36,10 +36,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.UrlIllegal",
-            "Message": "URL格式不合法。"
-        },
         "RequestId": "897d8a3d-6677-4c41-b647-f0a19a6dc13f"
     }
 }

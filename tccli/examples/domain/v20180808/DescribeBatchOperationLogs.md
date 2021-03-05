@@ -18,7 +18,6 @@ Output:
         "DomainBatchLogSet": [
             {
                 "LogId": 318,
-                "Action": "new",
                 "CreatedOn": "2020-06-10 20:08:43",
                 "Number": 12,
                 "Status": "doing"

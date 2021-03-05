@@ -23,7 +23,6 @@ Output:
                 "RuleName": "test",
                 "Protocol": "http",
                 "VirtualPort": 80,
-                "SourcePort": 80,
                 "SourceType": 2,
                 "LbType": 1,
                 "KeepTime": 300,

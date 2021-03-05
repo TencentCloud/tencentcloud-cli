@@ -17,9 +17,7 @@ tccli iotcloud UpdateTopicPolicy --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {
-        "Requestd": "be69a7a3-7315-40a7-9532-3316e4a3e97e"
-    }
+    "Response": {}
 }
 ```
 

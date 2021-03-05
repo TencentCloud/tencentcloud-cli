@@ -20,8 +20,7 @@ Output:
         "CustomerGateway": {
             "CustomerGatewayId": "cgw-mgp33pll",
             "IpAddress": "58.211.1.12",
-            "CustomerGatewayName": "test-cgw",
-            "CreateTime": "2018-04-18 10:00:00"
+            "CustomerGatewayName": "test-cgw"
         },
         "RequestId": "5bd98433-263a-47b6-9a1c-84aa613a8ff6"
     }

@@ -76,14 +76,6 @@ Output:
                 },
                 "ProhibitedConfigure": null,
                 "UserDefineConfigure": {
-                    "ImgReviewInfo": {
-                        "Switch": "ON",
-                        "LabelSet": [
-                            "politician"
-                        ],
-                        "BlockConfidence": 80,
-                        "ReviewConfidence": 30
-                    },
                     "AsrReviewInfo": {
                         "Switch": "ON",
                         "LabelSet": [],
@@ -185,14 +177,6 @@ Output:
                 },
                 "ProhibitedConfigure": null,
                 "UserDefineConfigure": {
-                    "ImgReviewInfo": {
-                        "Switch": "ON",
-                        "LabelSet": [
-                            "politician"
-                        ],
-                        "BlockConfidence": 80,
-                        "ReviewConfidence": 30
-                    },
                     "AsrReviewInfo": {
                         "Switch": "ON",
                         "LabelSet": [],
@@ -261,14 +245,6 @@ Output:
                 },
                 "ProhibitedConfigure": null,
                 "UserDefineConfigure": {
-                    "ImgReviewInfo": {
-                        "Switch": "ON",
-                        "LabelSet": [
-                            "politician"
-                        ],
-                        "BlockConfidence": 80,
-                        "ReviewConfidence": 30
-                    },
                     "AsrReviewInfo": {
                         "Switch": "ON",
                         "LabelSet": [],

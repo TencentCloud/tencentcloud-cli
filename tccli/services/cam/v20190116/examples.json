@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=AddUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&UseApi=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Uid\": 5648765,\r\n        \"Uin\": 100000546533,\r\n        \"Name\": \"test124\",\r\n        \"Password\": \"test123456\",\r\n        \"SecretId\": \"faweffewagwaegawe\",\r\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "添加子用户"
       }
     ],
@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=AddUserToGroup\r\n&Info.0.Uid=1001408\r\n&Info.0.GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"47c4a570-17fa-44a3-8ff6-fe006170c104\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47c4a570-17fa-44a3-8ff6-fe006170c104\"\n    }\n}",
         "title": "用户加入到用户组"
       }
     ],
@@ -20,7 +20,7 @@
       {
         "document": "绑定策略ID为524497的策略到组ID为3449的用户组",
         "input": "https://cam.tencentcloudapi.com/?Action=AttachGroupPolicy\r\n&PolicyId=524497\r\n&AttachGroupId=3449\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\n    }\n}",
         "title": "绑定策略到用户"
       }
     ],
@@ -28,7 +28,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=AttachRolePolicy\r\n&PolicyId=1\r\n&AttachRoleId=4611686018427397905\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0b55ef5b-36b1-4649-8bb9-1aca465f17fb\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b55ef5b-36b1-4649-8bb9-1aca465f17fb\"\n    }\n}",
         "title": "绑定权限策略到角色"
       }
     ],
@@ -36,7 +36,7 @@
       {
         "document": "绑定策略ID为524497的策略到用户3449203261",
         "input": "https://cam.tencentcloudapi.com/?Action=AttachUserPolicy\r\n&PolicyId=524497\r\n&AttachUin=3449203261\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\n    }\n}",
         "title": "绑定策略到用户"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ConsumeCustomMFAToken\r\n&MFAToken=abc123\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"f8914327-5a9f-4016-8b2e-00f8b8901121\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f8914327-5a9f-4016-8b2e-00f8b8901121\"\n    }\n}",
         "title": "验证自定义多因子Token"
       }
     ],
@@ -52,7 +52,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=CreateGroup\r\n&GroupName=test1\r\n&Remark=test2\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"GroupId\": 2020,\r\n        \"RequestId\": \"f36a5d34-0d51-4b91-b9fc-af5d02571656\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": 2020,\n        \"RequestId\": \"f36a5d34-0d51-4b91-b9fc-af5d02571656\"\n    }\n}",
         "title": "创建用户组"
       }
     ],
@@ -60,7 +60,7 @@
       {
         "document": "以下示例将创建一个允许cos所有API访问所有的cos资源的策略",
         "input": "https://cam.tencentcloudapi.com/?Action=CreatePolicy\r\n&PolicyName=test-2019-04-29\r\n&Description=策略描述\r\n&PolicyDocument={\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:*\"],\"resource\":[\"*\"]}]}\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"PolicyId\": 17698703,\r\n        \"RequestId\": \"89360f78-b1dd-4e43-aa91-ecb2c8b8f282\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 17698703,\n        \"RequestId\": \"89360f78-b1dd-4e43-aa91-ecb2c8b8f282\"\n    }\n}",
         "title": "创建一个策略"
       }
     ],
@@ -68,7 +68,7 @@
       {
         "document": "本示例将新增一个策略版本。",
         "input": "https://cam.tencentcloudapi.com/?Action=CreatePolicyVersion\r\n&PolicyId=17698703\r\n&PolicyDocument={\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:*\"],\"resource\":[\"*\"]}]}\r\n&SetAsDefault=1\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"VersionId\": \"4\",\r\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionId\": \"4\",\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\n    }\n}",
         "title": "新增一个策略版本"
       }
     ],
@@ -76,7 +76,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\n&RoleName=test_1234544\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\n&Description=abc\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RoleId\":123456789,\r\n        \"RequestId\":\"0bac591a-6cc7-4e9d-8d01-74618f1a9611\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleId\": 123456789,\n        \"RequestId\": \"0bac591a-6cc7-4e9d-8d01-74618f1a9611\"\n    }\n}",
         "title": "创建角色"
       }
     ],
@@ -84,7 +84,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=CreateSAMLProvider\r\n&Name=testName\r\n&Description=testProvider\r\n&SAMLMetadataDocument=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48bWQ6RW50aXR5RGVzY3JpcHRvciBlbnRpdHlJRD0iaHR0cDovL3d3dy5va3RhLmNvbS9leGsxa3F4bWNqUW1HQURNeTM1NyIgeG1sbnM6bWQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDptZXRhZGF0YSI%2BPG1kOklEUFNTT0Rlc2NyaXB0b3IgV2FudEF1dGhuUmVxdWVzdHNTaWduZWQ9ImZhbHNlIiBwcm90b2NvbFN1cHBvcnRFbnVtZXJhdGlvbj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnB%3D%3D&Signature=bmqyzCmdLxEFbsI6pu40V%2BEbWNo%3D\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2a44e8e5-7438-4aa0-8bd2-584dde56caab\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a44e8e5-7438-4aa0-8bd2-584dde56caab\"\n    }\n}",
         "title": "创建身份提供商"
       }
     ],
@@ -92,7 +92,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=CreateServiceLinkedRole\r\n&QCSServiceName.0=ccs.qcloud.com\r\n&CustomSuffix=forTest\r\n&Description=ccsLinkedRole\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RoleId\":\"4611686018427411525\",\r\n        \"RequestId\":\"c3da1c1c-df35-467d-9335-99c68d993e0a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleId\": \"4611686018427411525\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "创建服务相关角色"
       }
     ],
@@ -100,7 +100,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DeleteGroup\r\n&GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "删除用户组"
       }
     ],
@@ -108,7 +108,7 @@
       {
         "document": "删除策略ID为524497的策略",
         "input": "https://cam.tencentcloudapi.com/?Action=DeletePolicy\r\n&PolicyId.0=524497\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\n    }\n}",
         "title": "删除策略"
       }
     ],
@@ -116,7 +116,7 @@
       {
         "document": "本示例将删除一个策略的一个策略版本。",
         "input": "https://cam.tencentcloudapi.com/?Action=DeletePolicyVersion\r\n&PolicyId=17698703\r\n&VersionId=1\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\n    }\n}",
         "title": "删除一个策略的策略版本"
       }
     ],
@@ -124,7 +124,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DeleteRole\r\n&RoleId=4611686018427844696\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"dc9759b5-5345-490e-b276-a3a0dd45004c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc9759b5-5345-490e-b276-a3a0dd45004c\"\n    }\n}",
         "title": "删除角色"
       }
     ],
@@ -132,7 +132,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DeleteRolePermissionsBoundary\r\n&RoleId=1234567\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "删除角色权限边界"
       }
     ],
@@ -140,7 +140,7 @@
       {
         "document": "删除身份提供商",
         "input": "https://cam.tencentcloudapi.com/?Action=DeleteSAMLProvider\r\n&Name=name\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"538a3409-bdbf-43d8-9847-6e2e9c411504\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"538a3409-bdbf-43d8-9847-6e2e9c411504\"\n    }\n}",
         "title": "删除身份提供商"
       }
     ],
@@ -148,7 +148,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DeleteServiceLinkedRole\n&RoleName=Qcs_Role\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"DeletionTaskId\":\"100\",\r\n        \"RequestId\":\"c3da1c1c-df35-467d-9335-99c68d993e0a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"DeletionTaskId\": \"100\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "删除服务相关角色"
       }
     ],
@@ -156,7 +156,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DeleteUser\r\n&Name=test124\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "删除子用户"
       }
     ],
@@ -164,7 +164,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DeleteUserPermissionsBoundary\r\n&TargetUin=1234567\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "删除用户权限边界"
       }
     ],
@@ -172,7 +172,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DescribeRoleList\r\n&Page=1\r\n&Rp=5\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"List\": [\r\n            {\r\n                \"RoleId\": \"4611686018427757165\",\r\n                \"RoleName\": \"CloudAudit_QCSRole\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\"]}}]}\",\r\n                \"Description\": \"云审计服务(CA)创建跟踪集功能操作权限含查询和创建对象存储桶(COS)；含查询和创建消息队列CMQ等权限，用以将云审计跟踪日志投递到COS和进行CMQ通知。\",\r\n                \"AddTime\": \"2019-05-17 11:35:02\",\r\n                \"UpdateTime\": \"2019-05-17 11:35:02\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427733635\",\r\n                \"RoleName\": \"testk8u8732u\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/909619400:root\\\"}},{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/2385420691:root\\\"}}]}\",\r\n                \"Description\": \"1gfdg4\",\r\n                \"AddTime\": \"2019-04-24 16:09:38\",\r\n                \"UpdateTime\": \"2019-04-24 16:09:38\",\r\n                \"ConsoleLogin\": 1\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427731422\",\r\n                \"RoleName\": \"fewfewgcc44\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/3374997817:root\\\"}}]}\",\r\n                \"Description\": \"34\",\r\n                \"AddTime\": \"2019-04-22 15:25:40\",\r\n                \"UpdateTime\": \"2019-04-22 15:25:40\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427445962\",\r\n                \"RoleName\": \"BK_QcsRole\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"principal\\\":{\\\"service\\\":\\\"blueking.cloud.tencent.com\\\"}}]}\",\r\n                \"Description\": \"蓝鲸自动化运维平台（BlueKing）对您的腾讯云资源进行访问操作，含查询主机信息。\",\r\n                \"AddTime\": \"2018-08-24 22:38:39\",\r\n                \"UpdateTime\": \"2018-08-24 22:38:39\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427424559\",\r\n                \"RoleName\": \"testroleName_1263\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":[\\\"name/sts:AssumeRole\\\"],\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":[\\\"qcs::cam::uin/2385420691:root\\\"]}}]}\",\r\n                \"Description\": \"testiujjc\",\r\n                \"AddTime\": \"2018-08-20 16:30:46\",\r\n                \"UpdateTime\": \"2019-04-18 10:37:59\",\r\n                \"ConsoleLogin\": 1\r\n            }\r\n        ],\r\n        \"TotalNum\": 14,\r\n        \"RequestId\": \"a786b78c-ef8b-4331-b1e5-f287c8b41743\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"RoleId\": \"4611686018427757165\",\n                \"RoleName\": \"CloudAudit_QCSRole\",\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\"]}}]}\",\n                \"Description\": \"云审计服务(CA)创建跟踪集功能操作权限含查询和创建对象存储桶(COS)；含查询和创建消息队列CMQ等权限，用以将云审计跟踪日志投递到COS和进行CMQ通知。\",\n                \"AddTime\": \"2019-05-17 11:35:02\",\n                \"UpdateTime\": \"2019-05-17 11:35:02\",\n                \"ConsoleLogin\": 0\n            },\n            {\n                \"RoleId\": \"4611686018427733635\",\n                \"RoleName\": \"testk8u8732u\",\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/909619400:root\\\"}},{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/2385420691:root\\\"}}]}\",\n                \"Description\": \"1gfdg4\",\n                \"AddTime\": \"2019-04-24 16:09:38\",\n                \"UpdateTime\": \"2019-04-24 16:09:38\",\n                \"ConsoleLogin\": 1\n            },\n            {\n                \"RoleId\": \"4611686018427731422\",\n                \"RoleName\": \"fewfewgcc44\",\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/3374997817:root\\\"}}]}\",\n                \"Description\": \"34\",\n                \"AddTime\": \"2019-04-22 15:25:40\",\n                \"UpdateTime\": \"2019-04-22 15:25:40\",\n                \"ConsoleLogin\": 0\n            },\n            {\n                \"RoleId\": \"4611686018427445962\",\n                \"RoleName\": \"BK_QcsRole\",\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"principal\\\":{\\\"service\\\":\\\"blueking.cloud.tencent.com\\\"}}]}\",\n                \"Description\": \"蓝鲸自动化运维平台（BlueKing）对您的腾讯云资源进行访问操作，含查询主机信息。\",\n                \"AddTime\": \"2018-08-24 22:38:39\",\n                \"UpdateTime\": \"2018-08-24 22:38:39\",\n                \"ConsoleLogin\": 0\n            },\n            {\n                \"RoleId\": \"4611686018427424559\",\n                \"RoleName\": \"testroleName_1263\",\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":[\\\"name/sts:AssumeRole\\\"],\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":[\\\"qcs::cam::uin/2385420691:root\\\"]}}]}\",\n                \"Description\": \"testiujjc\",\n                \"AddTime\": \"2018-08-20 16:30:46\",\n                \"UpdateTime\": \"2019-04-18 10:37:59\",\n                \"ConsoleLogin\": 1\n            }\n        ],\n        \"TotalNum\": 14,\n        \"RequestId\": \"a786b78c-ef8b-4331-b1e5-f287c8b41743\"\n    }\n}",
         "title": "获取角色列表"
       }
     ],
@@ -180,7 +180,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DescribeSafeAuthFlag\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"LoginFlag\": {\r\n            \"Phone\": 1,\r\n            \"Token\": 0,\r\n            \"Stoken\": 0,\r\n            \"Wechat\": 0,\r\n            \"Custom\": 0\r\n        },\r\n        \"ActionFlag\": {\r\n            \"Phone\": 0,\r\n            \"Token\": 0,\r\n            \"Stoken\": 0,\r\n            \"Wechat\": 0,\r\n            \"Custom\": 0\r\n        },\r\n        \"OffsiteFlag\": {\r\n            \"VerifyFlag\": 0,\r\n            \"NotifyPhone\": 1,\r\n            \"NotifyEmail\": 1,\r\n            \"NotifyWechat\": 1,\r\n            \"Tips\": 0\r\n        },\r\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"LoginFlag\": {\n            \"Phone\": 1,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"ActionFlag\": {\n            \"Phone\": 0,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"OffsiteFlag\": {\n            \"VerifyFlag\": 0,\n            \"NotifyPhone\": 1,\n            \"NotifyEmail\": 1,\n            \"NotifyWechat\": 1,\n            \"Tips\": 0\n        },\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\n    }\n}",
         "title": "查询安全设置"
       }
     ],
@@ -188,7 +188,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DescribeSafeAuthFlagColl\n&SubUin=1234567\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"LoginFlag\": {\r\n            \"Phone\": 1,\r\n            \"Token\": 0,\r\n            \"Stoken\": 0,\r\n            \"Wechat\": 0,\r\n            \"Custom\": 0\r\n        },\r\n        \"ActionFlag\": {\r\n            \"Phone\": 0,\r\n            \"Token\": 0,\r\n            \"Stoken\": 0,\r\n            \"Wechat\": 0,\r\n            \"Custom\": 0\r\n        },\r\n        \"OffsiteFlag\": {\r\n            \"VerifyFlag\": 0,\r\n            \"NotifyPhone\": 1,\r\n            \"NotifyEmail\": 1,\r\n            \"NotifyWechat\": 1,\r\n            \"Tips\": 0\r\n        },\r\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"LoginFlag\": {\n            \"Phone\": 1,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"ActionFlag\": {\n            \"Phone\": 0,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"OffsiteFlag\": {\n            \"VerifyFlag\": 0,\n            \"NotifyPhone\": 1,\n            \"NotifyEmail\": 1,\n            \"NotifyWechat\": 1,\n            \"Tips\": 0\n        },\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\n    }\n}",
         "title": "查询安全设置"
       }
     ],
@@ -196,7 +196,7 @@
       {
         "document": "解除绑定到组ID为3449的策略524497",
         "input": "https://cam.tencentcloudapi.com/?Action=DetachGroupPolicy\r\n&PolicyId=524497\r\n&DetachGroupId=3449\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\n    }\n}",
         "title": "解除绑定到用户组的策略"
       }
     ],
@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DetachRolePolicy\r\n&PolicyId=1\r\n&DetachRoleId=4611686018427397905\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"62c57079-8c81-469a-9112-9c5f2025b0b0\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62c57079-8c81-469a-9112-9c5f2025b0b0\"\n    }\n}",
         "title": "解绑角色的策略"
       }
     ],
@@ -212,7 +212,7 @@
       {
         "document": "解除绑定到用户3449203261的策略16313162",
         "input": "https://cam.tencentcloudapi.com/?Action=DetachUserPolicy\r\n&PolicyId=16313162\r\n&DetachUin=3449203261\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\n    }\n}",
         "title": "解除绑定到用户的策略"
       }
     ],
@@ -220,7 +220,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetCustomMFATokenInfo\r\n&MFAToken=abc123\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"Uin\":12345678,\r\n    \"RequestId\": \"f8914327-5a9f-4016-8b2e-00f8b8901121\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 12345678,\n        \"RequestId\": \"f8914327-5a9f-4016-8b2e-00f8b8901121\"\n    }\n}",
         "title": "获取自定义多因子Token关联信息"
       }
     ],
@@ -228,7 +228,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetGroup\r\n&GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"GroupId\": 2020,\r\n        \"GroupName\": \"test1\",\r\n        \"GroupNum\": 1,\r\n        \"Remark\": \"test2\",\r\n        \"CreateTime\": \"2019-04-03 15:11:34\",\r\n        \"UserInfo\": [\r\n            {\r\n                \"Uid\": 1001408,\r\n                \"Uin\": 100000545998,\r\n                \"Name\": \"testName\",\r\n                \"PhoneNum\": \"\",\r\n                \"CountryCode\": \"86\",\r\n                \"PhoneFlag\": 0,\r\n                \"Email\": \"\",\r\n                \"EmailFlag\": 0,\r\n                \"UserType\": 3,\r\n                \"CreateTime\": \"2018-04-24 15:36:26\",\r\n                \"IsReceiverOwner\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"4a00d281-862a-4699-9d71-387d9fc2c36a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": 2020,\n        \"GroupName\": \"test1\",\n        \"GroupNum\": 1,\n        \"Remark\": \"test2\",\n        \"CreateTime\": \"2019-04-03 15:11:34\",\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"testName\",\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"4a00d281-862a-4699-9d71-387d9fc2c36a\"\n    }\n}",
         "title": "查询用户组详情"
       }
     ],
@@ -236,7 +236,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetPolicy\r\n&PolicyId=17698703\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\r\n        \"UpdateTime\": \"2019-04-29 21:28:32\",\r\n        \"AddTime\": \"2019-04-29 21:18:40\",\r\n        \"PolicyName\": \"test-2019-04-29\",\r\n        \"Description\": \"测试策略\",\r\n        \"Type\": 1, \r\n        \"RequestId\": \"845b309d-e531-402d-a4f6-ec124f06738b\",\r\n        \"PresetAlias\": \"备注\",\r\n        \"IsServiceLinkedRolePolicy\": 0\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\n        \"UpdateTime\": \"2019-04-29 21:28:32\",\n        \"AddTime\": \"2019-04-29 21:18:40\",\n        \"PolicyName\": \"test-2019-04-29\",\n        \"Description\": \"测试策略\",\n        \"Type\": 1,\n        \"RequestId\": \"845b309d-e531-402d-a4f6-ec124f06738b\",\n        \"PresetAlias\": \"备注\",\n        \"IsServiceLinkedRolePolicy\": 0\n    }\n}",
         "title": "查看一个策略的详情"
       }
     ],
@@ -244,7 +244,7 @@
       {
         "document": "查询一个策略版本详情",
         "input": "https://cam.tencentcloudapi.com/?Action=GetPolicyVersion\r\n&PolicyId=17698703\r\n&VersionId=2\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"PolicyVersion\": {\r\n            \"VersionId\": 2,\r\n            \"CreateDate\": \"2019-08-09T10:31:47Z\",\r\n            \"IsDefaultVersion\": 1,\r\n            \"Document\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\"\r\n        },\r\n        \"RequestId\": \"8a0668c1-2d9b-40a5-acc6-151ea3c844e7\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyVersion\": {\n            \"VersionId\": 2,\n            \"CreateDate\": \"2019-08-09T10:31:47Z\",\n            \"IsDefaultVersion\": 1,\n            \"Document\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\"\n        },\n        \"RequestId\": \"8a0668c1-2d9b-40a5-acc6-151ea3c844e7\"\n    }\n}",
         "title": "查询策略版本详情"
       }
     ],
@@ -252,13 +252,13 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetRole\r\n&RoleId=4611686018427844696\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RoleInfo\": {\r\n            \"RoleId\": \"4611686018427844696\",\r\n            \"RoleName\": \"test_1234544\",\r\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\",\\\"cls.cloud.tencent.com\\\"]}}]}\",\r\n            \"Description\": \"abc\",\r\n            \"AddTime\": \"2019-07-10 11:22:27\",\r\n            \"UpdateTime\": \"2019-07-10 11:22:27\",\r\n            \"ConsoleLogin\": 0\r\n        },\r\n        \"RequestId\": \"87fb9770-0fca-4c5a-b985-1c36b05a95cb\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427844696\",\n            \"RoleName\": \"test_1234544\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\",\\\"cls.cloud.tencent.com\\\"]}}]}\",\n            \"Description\": \"abc\",\n            \"AddTime\": \"2019-07-10 11:22:27\",\n            \"UpdateTime\": \"2019-07-10 11:22:27\",\n            \"ConsoleLogin\": 0\n        },\n        \"RequestId\": \"87fb9770-0fca-4c5a-b985-1c36b05a95cb\"\n    }\n}",
         "title": "获取角色详情"
       },
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetRole\r\n&RoleId=4611686018427411642\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RoleInfo\": {\r\n            \"RoleId\": \"4611686018427411642\",\r\n            \"RoleName\": \"byron3214_QcsRole\",\r\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"ccslinked.qcloud.com\\\"]}}]}\",\r\n            \"Description\": \"role222\",\r\n            \"AddTime\": \"2020-03-25 11:03:00\",\r\n            \"UpdateTime\": \"2020-03-25 11:03:00\",\r\n            \"ConsoleLogin\": 0,\r\n            \"RoleType\": \"service_linked\",\r\n            \"SessionDuration\": 43200,\r\n            \"DeletionTaskId\": \"114\"\r\n        },\r\n        \"RequestId\": \"1fb826eb-6d21-42f3-8f6e-9f51360f585d\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427411642\",\n            \"RoleName\": \"byron3214_QcsRole\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"ccslinked.qcloud.com\\\"]}}]}\",\n            \"Description\": \"role222\",\n            \"AddTime\": \"2020-03-25 11:03:00\",\n            \"UpdateTime\": \"2020-03-25 11:03:00\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"service_linked\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\"\n        },\n        \"RequestId\": \"1fb826eb-6d21-42f3-8f6e-9f51360f585d\"\n    }\n}",
         "title": "获取服务相关角色详情"
       }
     ],
@@ -266,7 +266,7 @@
       {
         "document": "查询身份提供商详情",
         "input": "https://cam.tencentcloudapi.com/?Action=GetSAMLProvider\r\n&Name=okta\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Name\": \"okta\",\r\n        \"Description\": \"okta\",\r\n        \"CreateTime\": \"2018-09-17 17:18:03\",\r\n        \"ModifyTime\": \"2018-09-17 17:18:03\",\r\n        \"SAMLMetadata\": \"U0FNTE1ldGFkYXRh\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"okta\",\n        \"Description\": \"okta\",\n        \"CreateTime\": \"2018-09-17 17:18:03\",\n        \"ModifyTime\": \"2018-09-17 17:18:03\",\n        \"SAMLMetadata\": \"U0FNTE1ldGFkYXRh\"\n    }\n}",
         "title": "查询身份提供商详情"
       }
     ],
@@ -274,7 +274,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetServiceLinkedRoleDeletionStatus\r\n&DeletionTaskId=100\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"Status\":\"SUCCEEDED\",\r\n        \"ServiceType\":\"cam\",\r\n        \"ServiceName\":\"访问管理\",\r\n        \"Reason\":\"{}\",\r\n        \"RequestId\":\"c3da1c1c-df35-467d-9335-99c68d993e0a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCEEDED\",\n        \"ServiceType\": \"cam\",\n        \"ServiceName\": \"访问管理\",\n        \"Reason\": \"{}\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "获取服务相关角色删除状态"
       }
     ],
@@ -282,7 +282,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetUser\r\n&Name=test124\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Uin\": 100000546533,\r\n        \"Name\": \"test124\",\r\n        \"Uid\": 1001774,\r\n        \"Remark\": \"test\",\r\n        \"ConsoleLogin\": 1,\r\n        \"PhoneNum\": \"10086\",\r\n        \"CountryCode\": \"86\",\r\n        \"Email\": \"123@qq.com\",\r\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Uid\": 1001774,\n        \"Remark\": \"test\",\n        \"ConsoleLogin\": 1,\n        \"PhoneNum\": \"10086\",\n        \"CountryCode\": \"86\",\n        \"Email\": \"123@qq.com\",\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
         "title": "查询子用户"
       }
     ],
@@ -290,7 +290,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAccessKeys\r\n&TargetUin=123456\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"AccessKeys\": [\r\n            {\r\n                \"AccessKeyId\": \"WERDlOp351234hlczDqKDvRjsvmQsJQWEaYK\",\r\n                \"Status\": \"Active\",\r\n                \"CreateTime\": \"2019-12-25 14:53:03\"\r\n            },\r\n            {\r\n                \"AccessKeyId\": \"A2342hOvQQQWvNdgXHrFQOHySnzb5OVP7dv8\",\r\n                \"Status\": \"Active\",\r\n                \"CreateTime\": \"2020-03-03 16:51:21\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"bbc4c6b1-ee32-416a-9135-68de318c54f2\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessKeys\": [\n            {\n                \"AccessKeyId\": \"WERDlOp351234hlczDqKDvRjsvmQsJQWEaYK\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2019-12-25 14:53:03\"\n            },\n            {\n                \"AccessKeyId\": \"A2342hOvQQQWvNdgXHrFQOHySnzb5OVP7dv8\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2020-03-03 16:51:21\"\n            }\n        ],\n        \"RequestId\": \"bbc4c6b1-ee32-416a-9135-68de318c54f2\"\n    }\n}",
         "title": "列出访问密钥"
       }
     ],
@@ -298,7 +298,7 @@
       {
         "document": "查询用户组3349关联的策略列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedGroupPolicies\r\n&TargetGroupId=3349\r\n&Page=1\r\n&Rp=10\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"PolicyId\": 1,\r\n        \"PolicyName\": \"AdministratorAccess\",\r\n        \"AddTime\": \"2018-04-09 16:31:19\",\r\n        \"CreateMode\": 2,\r\n        \"PolicyType\": \"User\"\r\n      }\r\n    ],\r\n    \"TotalNum\": 1,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 1,\n                \"PolicyName\": \"AdministratorAccess\",\n                \"AddTime\": \"2018-04-09 16:31:19\",\n                \"CreateMode\": 2,\n                \"PolicyType\": \"User\"\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\n    }\n}",
         "title": "查询用户组关联的策略列表"
       }
     ],
@@ -306,7 +306,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedRolePolicies\r\n&RoleId=4611686018427397905\r\n&Page=1\r\n&Rp=10\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"List\": [\r\n            {\r\n                \"PolicyId\": 13847366,\r\n                \"PolicyName\": \"QcloudAccessForASRole\",\r\n                \"AddTime\": \"2019-07-10 11:17:41\",\r\n                \"CreateMode\": 2,\r\n                \"PolicyType\": \"QCS\"\r\n            }\r\n        ],\r\n        \"TotalNum\": 1,\r\n        \"RequestId\": \"60dc7f3f-5d8b-45e9-b703-5feefac9960c\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 13847366,\n                \"PolicyName\": \"QcloudAccessForASRole\",\n                \"AddTime\": \"2019-07-10 11:17:41\",\n                \"CreateMode\": 2,\n                \"PolicyType\": \"QCS\"\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"60dc7f3f-5d8b-45e9-b703-5feefac9960c\"\n    }\n}",
         "title": "获取角色绑定的策略列表"
       }
     ],
@@ -314,7 +314,7 @@
       {
         "document": "查询绑定到子账号3449203261的策略列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedUserPolicies\r\n&TargetUin=3449203261\r\n&Page=1\r\n&Rp=10\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"PolicyId\": 1,\r\n        \"PolicyName\": \"AdministratorAccess\",\r\n        \"AddTime\": \"2018-04-09 16:31:19\",\r\n        \"CreateMode\": 2,\r\n        \"PolicyType\": \"User\"\r\n      }\r\n    ],\r\n    \"TotalNum\": 1,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 1,\n                \"PolicyName\": \"AdministratorAccess\",\n                \"AddTime\": \"2018-04-09 16:31:19\",\n                \"CreateMode\": 2,\n                \"PolicyType\": \"User\"\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\n    }\n}",
         "title": "查询子账号关联的策略列表"
       }
     ],
@@ -322,7 +322,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListCollaborators\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 1,\r\n        \"Data\": [\r\n            {\r\n                \"Uin\": 10000000001,\r\n                \"Name\": \"test\",\r\n                \"Uid\": 1000001,\r\n                \"Remark\": \"\",\r\n                \"ConsoleLogin\": 0,\r\n                \"PhoneNum\": \"16166666661\",\r\n                \"CountryCode\": \"86\",\r\n                \"Email\": \" \"\r\n            }\r\n        ],\r\n        \"RequestId\": \"93ea219e-7dbe-4b76-ad63-baef14b31a3a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"Data\": [\n            {\n                \"Uin\": 10000000001,\n                \"Name\": \"test\",\n                \"Uid\": 1000001,\n                \"Remark\": \"\",\n                \"ConsoleLogin\": 0,\n                \"PhoneNum\": \"16166666661\",\n                \"CountryCode\": \"86\",\n                \"Email\": \" \"\n            }\n        ],\n        \"RequestId\": \"93ea219e-7dbe-4b76-ad63-baef14b31a3a\"\n    }\n}",
         "title": "获取协作者列表"
       }
     ],
@@ -330,7 +330,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListEntitiesForPolicy\r\n&PolicyId=524497\r\n&Page=1\r\n&Rp=10\r\n&EntityFilter=All\r\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"Id\": \"1133398\",\r\n        \"RelatedType\": 1,\r\n        \"Uin\": 3449203261,\r\n        \"Name\": \"test1\"\r\n      }\r\n    ],\r\n    \"TotalNum\": 1,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": \"1133398\",\n                \"RelatedType\": 1,\n                \"Uin\": 3449203261,\n                \"Name\": \"test1\"\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\n    }\n}",
         "title": "查询策略关联的实体列表"
       }
     ],
@@ -338,7 +338,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListGroups\r\n&Page=1\r\n&Rp=20\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 2,\r\n        \"GroupInfo\": [\r\n            {\r\n                \"GroupId\": 2021,\r\n                \"GroupName\": \"test2\",\r\n                \"CreateTime\": \"2019-04-03 15:15:18\",\r\n                \"Remark\": \"test2\"\r\n            },\r\n            {\r\n                \"GroupId\": 2020,\r\n                \"GroupName\": \"test1\",\r\n                \"CreateTime\": \"2019-04-03 15:11:34\",\r\n                \"Remark\": \"test2\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"dbb91d87-5e3f-42b4-8cc9-ad9f16600370\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 2,\n        \"GroupInfo\": [\n            {\n                \"GroupId\": 2021,\n                \"GroupName\": \"test2\",\n                \"CreateTime\": \"2019-04-03 15:15:18\",\n                \"Remark\": \"test2\"\n            },\n            {\n                \"GroupId\": 2020,\n                \"GroupName\": \"test1\",\n                \"CreateTime\": \"2019-04-03 15:11:34\",\n                \"Remark\": \"test2\"\n            }\n        ],\n        \"RequestId\": \"dbb91d87-5e3f-42b4-8cc9-ad9f16600370\"\n    }\n}",
         "title": "查询用户组列表"
       }
     ],
@@ -346,7 +346,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListGroupsForUser\r\n&Uid=1001408\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 1,\r\n        \"GroupInfo\": [\r\n            {\r\n                \"GroupId\": 2020,\r\n                \"GroupName\": \"test1\",\r\n                \"CreateTime\": \"2019-04-03 15:11:34\",\r\n                \"Remark\": \"test2\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a614c392-3079-4dab-b819-0ab0563a32f0\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"GroupInfo\": [\n            {\n                \"GroupId\": 2020,\n                \"GroupName\": \"test1\",\n                \"CreateTime\": \"2019-04-03 15:11:34\",\n                \"Remark\": \"test2\"\n            }\n        ],\n        \"RequestId\": \"a614c392-3079-4dab-b819-0ab0563a32f0\"\n    }\n}",
         "title": "列出用户关联的用户组"
       }
     ],
@@ -354,7 +354,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListPolicies\r\n&Rp=1\r\n&Page=10\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"ServiceTypeList\": [],\r\n        \"List\": [\r\n            {\r\n                \"PolicyId\": 16313162,\r\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\r\n                \"AddTime\": \"2019-04-19 10:55:31\",\r\n                \"Type\": 2,\r\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\r\n                \"CreateMode\": 2,\r\n                \"Attachments\": 0,\r\n                \"ServiceType\": \"cooperator\",\r\n                \"IsAttached\": 1,\r\n                \"Deactived\": 1,\r\n                \"DeactivedDetail\": [\"cvm\"],\r\n                \"IsServiceLinkedPolicy\": 1\r\n            }\r\n        ],\r\n        \"TotalNum\": 239,\r\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceTypeList\": [],\n        \"List\": [\n            {\n                \"PolicyId\": 16313162,\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\n                \"AddTime\": \"2019-04-19 10:55:31\",\n                \"Type\": 2,\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\n                \"CreateMode\": 2,\n                \"Attachments\": 0,\n                \"ServiceType\": \"cooperator\",\n                \"IsAttached\": 1,\n                \"Deactived\": 1,\n                \"DeactivedDetail\": [\n                    \"cvm\"\n                ],\n                \"IsServiceLinkedPolicy\": 1\n            }\n        ],\n        \"TotalNum\": 239,\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\n    }\n}",
         "title": "查看策略列表"
       }
     ],
@@ -362,7 +362,7 @@
       {
         "document": "获取一个策略的版本列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListPolicyVersions\r\n&PolicyId=17698703\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"Versions\": [\r\n            {\r\n                \"VersionId\": 2,\r\n                \"CreateDate\": \"2019-08-09T10:31:47Z\",\r\n                \"IsDefaultVersion\": 1\r\n            },\r\n            {\r\n                \"VersionId\": 3,\r\n                \"CreateDate\": \"2019-08-09T10:31:47Z\",\r\n                \"IsDefaultVersion\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"13567bf0-a52b-49af-a3ce-ea934ef33c57\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            {\n                \"VersionId\": 2,\n                \"CreateDate\": \"2019-08-09T10:31:47Z\",\n                \"IsDefaultVersion\": 1\n            },\n            {\n                \"VersionId\": 3,\n                \"CreateDate\": \"2019-08-09T10:31:47Z\",\n                \"IsDefaultVersion\": 0\n            }\n        ],\n        \"RequestId\": \"13567bf0-a52b-49af-a3ce-ea934ef33c57\"\n    }\n}",
         "title": "获取策略版本列表"
       }
     ],
@@ -370,7 +370,7 @@
       {
         "document": "查询身份提供商列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListSAMLProviders\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 6,\r\n        \"SAMLProviderSet\": [\r\n            {\r\n                \"Name\": \"saml-sdk\",\r\n                \"Description\": \"sdk\",\r\n                \"CreateTime\": \"2018-12-17 16:33:35\",\r\n                \"ModifyTime\": \"2019-02-26 13:34:58\"\r\n            },\r\n            {\r\n                \"Name\": \"TestSAML\",\r\n                \"Description\": \"111\",\r\n                \"CreateTime\": \"2018-11-08 19:27:27\",\r\n                \"ModifyTime\": \"2019-04-30 11:23:12\"\r\n            },\r\n            {\r\n                \"Name\": \"OneLogin\",\r\n                \"Description\": \"ONeLogin\",\r\n                \"CreateTime\": \"2018-11-04 20:36:41\",\r\n                \"ModifyTime\": \"2018-11-23 23:56:09\"\r\n            },\r\n            {\r\n                \"Name\": \"Azure_AD\",\r\n                \"Description\": \"Azure AD\",\r\n                \"CreateTime\": \"2018-11-04 16:44:25\",\r\n                \"ModifyTime\": \"2019-02-14 10:38:27\"\r\n            },\r\n            {\r\n                \"Name\": \"api-test\",\r\n                \"Description\": \"API测试\",\r\n                \"CreateTime\": \"2018-10-30 11:40:19\",\r\n                \"ModifyTime\": \"2018-10-30 11:40:19\"\r\n            },\r\n            {\r\n                \"Name\": \"okta\",\r\n                \"Description\": \"okta\",\r\n                \"CreateTime\": \"2018-09-17 17:18:03\",\r\n                \"ModifyTime\": \"2018-09-17 17:18:03\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"d644fa50-7e54-4448-84d8-64cb4dd9f737\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"SAMLProviderSet\": [\n            {\n                \"Name\": \"saml-sdk\",\n                \"Description\": \"sdk\",\n                \"CreateTime\": \"2018-12-17 16:33:35\",\n                \"ModifyTime\": \"2019-02-26 13:34:58\"\n            },\n            {\n                \"Name\": \"TestSAML\",\n                \"Description\": \"111\",\n                \"CreateTime\": \"2018-11-08 19:27:27\",\n                \"ModifyTime\": \"2019-04-30 11:23:12\"\n            },\n            {\n                \"Name\": \"OneLogin\",\n                \"Description\": \"ONeLogin\",\n                \"CreateTime\": \"2018-11-04 20:36:41\",\n                \"ModifyTime\": \"2018-11-23 23:56:09\"\n            },\n            {\n                \"Name\": \"Azure_AD\",\n                \"Description\": \"Azure AD\",\n                \"CreateTime\": \"2018-11-04 16:44:25\",\n                \"ModifyTime\": \"2019-02-14 10:38:27\"\n            },\n            {\n                \"Name\": \"api-test\",\n                \"Description\": \"API测试\",\n                \"CreateTime\": \"2018-10-30 11:40:19\",\n                \"ModifyTime\": \"2018-10-30 11:40:19\"\n            },\n            {\n                \"Name\": \"okta\",\n                \"Description\": \"okta\",\n                \"CreateTime\": \"2018-09-17 17:18:03\",\n                \"ModifyTime\": \"2018-09-17 17:18:03\"\n            }\n        ],\n        \"RequestId\": \"d644fa50-7e54-4448-84d8-64cb4dd9f737\"\n    }\n}",
         "title": "查询身份提供商列表"
       }
     ],
@@ -378,7 +378,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListUsers\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": { \r\n        \"Data\" : [ {\r\n            \"Uin\": 100000546533,\r\n            \"Name\": \"test124\",\r\n            \"Uid\": 1001774,\r\n            \"Remark\": \"test\",\r\n            \"ConsoleLogin\": 1,\r\n            \"PhoneNum\": \"10086\",\r\n            \"CountryCode\": \"86\",\r\n            \"Email\": \"123@qq.com\",\r\n            \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\r\n        } ]\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Uin\": 100000546533,\n                \"Name\": \"test124\",\n                \"Uid\": 1001774,\n                \"Remark\": \"test\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"10086\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"123@qq.com\"\n            }\n        ]\n    }\n}",
         "title": "拉取子用户"
       }
     ],
@@ -386,7 +386,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListUsersForGroup\r\n&GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 1,\r\n        \"UserInfo\": [\r\n            {\r\n                \"Uid\": 1001408,\r\n                \"Uin\": 100000545998,\r\n                \"Name\": \"testName\",\r\n                \"PhoneNum\": \"\",\r\n                \"CountryCode\": \"86\",\r\n                \"PhoneFlag\": 0,\r\n                \"Email\": \"\",\r\n                \"EmailFlag\": 0,\r\n                \"UserType\": 3,\r\n                \"CreateTime\": \"2018-04-24 15:36:26\",\r\n                \"IsReceiverOwner\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"576e68f4-49cf-451b-b717-a584cb68910a\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"testName\",\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"576e68f4-49cf-451b-b717-a584cb68910a\"\n    }\n}",
         "title": "查询用户组关联的用户列表"
       }
     ],
@@ -394,7 +394,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListWeChatWorkSubAccounts\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": { \r\n        \"TotalCount\":100,\r\n        \"Data\" : [ {\r\n            \"Uin\": 100000546533,\r\n            \"Name\": \"test124\",\r\n            \"Uid\": 1001774,\r\n            \"Remark\": \"test\",\r\n            \"ConsoleLogin\": 1,\r\n            \"PhoneNum\": \"10086\",\r\n            \"CountryCode\": \"86\",\r\n            \"Email\": \"123@qq.com\",\r\n            \"WeChatWorkUserId\": \"xxx\",\r\n            \"CreateTime\": \"2020-10-10 00:00:00\"\r\n        } ],\r\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 100,\n        \"Data\": [\n            {\n                \"Uin\": 100000546533,\n                \"Name\": \"test124\",\n                \"Uid\": 1001774,\n                \"Remark\": \"test\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"10086\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"123@qq.com\",\n                \"WeChatWorkUserId\": \"xxx\",\n                \"CreateTime\": \"2020-10-10 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
         "title": "拉取企业微信子用户"
       }
     ],
@@ -402,7 +402,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=PutRolePermissionsBoundary\r\n&RoleId=1234567\r\n&PolicyId=1234567\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "设置角色权限边界"
       }
     ],
@@ -410,7 +410,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=PutUserPermissionsBoundary\r\n&TargetUin=1234567\r\n&PolicyId=1234567\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "设置用户权限边界"
       }
     ],
@@ -418,7 +418,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=RemoveUserFromGroup\r\n&Info.0.Uid=1001408\r\n&Info.0.GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "从用户组删除用户"
       }
     ],
@@ -426,7 +426,7 @@
       {
         "document": "本示例将设置一个策略生效的策略版本。",
         "input": "https://cam.tencentcloudapi.com/?Action=SetDefaultPolicyVersion\r\n&PolicyId=17698703\r\n&VersionId=1\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\n    }\n}",
         "title": "设置一个策略生效的策略版本"
       }
     ],
@@ -434,7 +434,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=SetMfaFlag\r\n&OpUin=1234567&LoginFlag.Wechat=1\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"cf75531d-b72d-4dcb-b0ed-d1c029a37f38\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf75531d-b72d-4dcb-b0ed-d1c029a37f38\"\n    }\n}",
         "title": "设置登录保护校验方式为微信"
       }
     ],
@@ -442,7 +442,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateAssumeRolePolicy\n&RoleId=4611686018427731422\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"69103fca-ec49-40c9-8986-788b57421501\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69103fca-ec49-40c9-8986-788b57421501\"\n    }\n}",
         "title": "修改角色信任策略"
       }
     ],
@@ -450,7 +450,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateGroup\r\n&GroupId=2020\r\n&GroupName=2020test\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "更新用户组"
       }
     ],
@@ -458,7 +458,7 @@
       {
         "document": "本示例将更新一个策略为允许用户以任何cos的API访问任何cos的资源",
         "input": "https://cam.tencentcloudapi.com/?Action=UpdatePolicy\r\n&PolicyId=17698703\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\n    }\n}",
         "title": "更新一个策略"
       }
     ],
@@ -466,7 +466,7 @@
       {
         "document": "使用角色ID",
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleConsoleLogin\r\n&RoleId=10000000947212312\r\n&ConsoleLogin=1\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"59e72a7a-1e49-4a73-a2db-8993c0334c57\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"59e72a7a-1e49-4a73-a2db-8993c0334c57\"\n    }\n}",
         "title": "修改角色是否可登录"
       }
     ],
@@ -474,7 +474,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleDescription\r\n&RoleId=4611686018427731422\r\n&Description=abc234\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"405af400-30ec-4c78-8955-ef4da843bde2\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"405af400-30ec-4c78-8955-ef4da843bde2\"\n    }\n}",
         "title": "修改角色描述信息"
       }
     ],
@@ -482,7 +482,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateSAMLProvider\r\n&Name=testName\r\n&Description=testProvider\r\n&SAMLMetadataDocument=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48bWQ6RW50aXR5RGVzY3JpcHRvciBlbnRpdHlJRD0iaHR0cDovL3d3dy5va3RhLmNvbS9leGsxa3F4bWNqUW1HQURNeTM1NyIgeG1sbnM6bWQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDptZXRhZGF0YSI%2BPG1kOklEUFNTT0Rlc2NyaXB0b3IgV2FudEF1dGhuUmVxdWVzdHNTaWduZWQ9ImZhbHNlIiBwcm90b2NvbFN1cHBvcnRFbnVtZXJhdGlvbj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnB%3D%3D&Signature=bmqyzCmdLxEFbsI6pu40V%2BEbWNo%3D\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1e44e8e5-7878-4aa0-8bd2-555dde56cddb\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e44e8e5-7878-4aa0-8bd2-555dde56cddb\"\n    }\n}",
         "title": "更新身份提供商"
       }
     ],
@@ -490,7 +490,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<公共请求参数>",
-        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "更新子用户"
       }
     ]

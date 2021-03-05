@@ -18,27 +18,6 @@ Output:
             {
                 "Name": "我的任务流A",
                 "Type": "Custom",
-                "MediaPrcoessTask": {
-                    "TranscodeTaskSet": [
-                        {
-                            "Definition": 20,
-                            "WatermarkSet": null
-                        },
-                        {
-                            "Definition": 30,
-                            "WatermarkSet": null
-                        },
-                        {
-                            "Definition": 40,
-                            "WatermarkSet": null
-                        }
-                    ],
-                    "AnimatedGraphicTaskSet": null,
-                    "SnapshotByTimeOffsetTaskSet": null,
-                    "SampleSnapshotTaskSet": null,
-                    "ImageSpriteTaskSet": null,
-                    "CoverBySnapshotTaskSet": null
-                },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
                 "AiRecognitionTask": null,
@@ -68,27 +47,6 @@ Output:
             {
                 "Name": "我的任务流A",
                 "Type": "Custom",
-                "MediaPrcoessTask": {
-                    "TranscodeTaskSet": [
-                        {
-                            "Definition": 20,
-                            "WatermarkSet": null
-                        },
-                        {
-                            "Definition": 30,
-                            "WatermarkSet": null
-                        },
-                        {
-                            "Definition": 40,
-                            "WatermarkSet": null
-                        }
-                    ],
-                    "AnimatedGraphicTaskSet": null,
-                    "SnapshotByTimeOffsetTaskSet": null,
-                    "SampleSnapshotTaskSet": null,
-                    "ImageSpriteTaskSet": null,
-                    "CoverBySnapshotTaskSet": null
-                },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
                 "AiRecognitionTask": null,
@@ -97,42 +55,6 @@ Output:
             {
                 "Name": "我的任务流B",
                 "Type": "Custom",
-                "MediaPrcoessTask": {
-                    "TranscodeTaskSet": [
-                        {
-                            "Definition": 20,
-                            "WatermarkSet": [
-                                {
-                                    "Definition": 15780,
-                                    "TextContent": null
-                                }
-                            ]
-                        },
-                        {
-                            "Definition": 30,
-                            "WatermarkSet": [
-                                {
-                                    "Definition": 15780,
-                                    "TextContent": null
-                                }
-                            ]
-                        },
-                        {
-                            "Definition": 40,
-                            "WatermarkSet": [
-                                {
-                                    "Definition": 15780,
-                                    "TextContent": null
-                                }
-                            ]
-                        }
-                    ],
-                    "AnimatedGraphicTaskSet": null,
-                    "SnapshotByTimeOffsetTaskSet": null,
-                    "SampleSnapshotTaskSet": null,
-                    "ImageSpriteTaskSet": null,
-                    "CoverBySnapshotTaskSet": null
-                },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
                 "AiRecognitionTask": null,
@@ -141,7 +63,6 @@ Output:
             {
                 "Name": "我的任务流C",
                 "Type": "Custom",
-                "MediaPrcoessTask": null,
                 "AiContentReviewTask": {
                     "Definition": 10
                 },

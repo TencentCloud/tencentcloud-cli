@@ -36,10 +36,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.PermissionDenied",
-            "Message": "Tid pro [001000005d3eabdb5e14103e8b542d21] current status is not burned"
-        },
         "RequestId": "fb65e97b-8913-4259-82a3-7a618a3abda5"
     }
 }

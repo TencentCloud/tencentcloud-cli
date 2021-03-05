@@ -28,7 +28,6 @@ Output:
                 "ProjectId": 0,
                 "ProjectName": "",
                 "Namespace": "cvm_device",
-                "PolicyExpression": "",
                 "ConditionTemplateId": "",
                 "Condition": {
                     "IsUnionRule": 0,
@@ -44,7 +43,6 @@ Output:
                             "IsPowerNotice": 0,
                             "Filter": {
                                 "Type": "",
-                                "Expression": "",
                                 "Dimensions": "[]"
                             }
                         }
@@ -94,7 +92,6 @@ Output:
                 "TriggerTasks": [],
                 "OriginId": "1314081",
                 "ConditionsTemp": {
-                    "ConditionId": 0,
                     "TemplateName": "",
                     "Condition": null,
                     "EventCondition": null

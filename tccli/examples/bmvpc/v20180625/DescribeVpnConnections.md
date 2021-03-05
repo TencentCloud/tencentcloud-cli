@@ -24,7 +24,6 @@ Output:
                 "CustomerGatewayId": "cgw-l4rblw63",
                 "PreShareKey": "123456",
                 "VpnProto": "IPSEC",
-                "EncryptProto": "IKE",
                 "IKEOptionsSpecification": {
                     "PropoAuthenAlgorithm": "MD5",
                     "PropoEncryAlgorithm": "3DES-CBC",

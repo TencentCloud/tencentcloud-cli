@@ -22,11 +22,7 @@ Output:
         ],
         "Tags": [],
         "Intelligences": [
-            {
-                "source": "inner_ddos_gj",
-                "stamp": "ddostarget",
-                "time": 1529395201
-            }
+            {}
         ],
         "Context": "",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"

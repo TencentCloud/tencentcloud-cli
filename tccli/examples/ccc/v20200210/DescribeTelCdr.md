@@ -44,7 +44,6 @@ Output:
                 "ServeParticipants": {
                     "Mail": "foo@tencent.com",
                     "Phone": "008615793909390",
-                    "UserId": "bar@tencent.com",
                     "RingTimestamp": 1610627284,
                     "AcceptTimestamp": 1610627284,
                     "EndedTimestamp": 1610627284,

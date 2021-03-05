@@ -19,15 +19,13 @@ Output:
                 "AliasName": "",
                 "Region": "ap-guangzhou",
                 "ProductId": "iot-a8ojgbji",
-                "DeviceName": "ccc",
-                "Id": "ap-guangzhou/iot-a8ojgbji/ccc"
+                "DeviceName": "ccc"
             },
             {
                 "AliasName": "",
                 "Region": "ap-guangzhou",
                 "ProductId": "iot-a8ojgbji",
-                "DeviceName": "aaa",
-                "Id": "ap-guangzhou/iot-a8ojgbji/aaa"
+                "DeviceName": "aaa"
             }
         ]
     }

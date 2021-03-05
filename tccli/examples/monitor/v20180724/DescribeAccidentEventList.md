@@ -16,7 +16,6 @@ Output:
         "Alarms": [
             {
                 "OccurTime": "2019-10-10T15:03:31+08:00",
-                "AccidentType": 23,
                 "BusinessID": 1,
                 "AffectResource": "ins-19708ino",
                 "EventStatus": 0,

@@ -35,10 +35,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "ResourceNotFound.ErrorPersonNotExisted",
-            "Message": "个体不存在。"
-        },
         "RequestId": "4b9c1bdc-86eb-413f-8c74-15bcf4466cd5"
     }
 }

@@ -33,15 +33,9 @@ Output:
             "UserName": "",
             "Password": "",
             "Ip": "",
-            "Port": 0,
-            "url": [
-                "http://gz-oncvm-1254065710.cosgz.myqcloud.com/test4_20180724021516.bak",
-                "http://gz-oncvm-1254065710.cosgz.myqcloud.com/testdb.bak"
-            ],
-            "urlPassword": ""
+            "Port": 0
         },
         "Target": {
-            "InstanceId ": "mssql-dr5843bdy",
             "UserName": "",
             "Password": ""
         },

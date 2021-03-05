@@ -23,8 +23,6 @@ Output:
                 "Height": 540,
                 "SampleType": "Percent",
                 "SampleInterval": 10,
-                "Row": 10,
-                "Col": 5,
                 "Width": 960
             }
         ],

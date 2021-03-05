@@ -17,9 +17,7 @@ Output:
                 "Domain": "www.test.com",
                 "Status": "online",
                 "Waf": "/",
-                "Acl": "yes",
-                "Cc": "no",
-                "Dddos": "close"
+                "Acl": "yes"
             }
         ],
         "TotalCount": 11

@@ -21,7 +21,6 @@ Output:
                 "StartTime": "2019-03-01 01:00",
                 "EndTime": "2019-03-01 04:00",
                 "Duration": 8,
-                "MoudleCodec": "liveprocessor_H264",
                 "Bitrate": 120,
                 "Type": "混流",
                 "PushDomain": "5000.livepush.com",

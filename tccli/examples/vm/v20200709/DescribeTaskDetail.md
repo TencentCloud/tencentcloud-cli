@@ -103,11 +103,7 @@ Output:
                     "Score": 0,
                     "Text": "Breaking har gre a king har Mo ni ou。来给生活比个月。更多的承诺。",
                     "Url": "https://xxx.com/7c019/audio_0.mp3",
-                    "Duration": "36398",
-                    "DataId": "",
-                    "Results": [],
-                    "CreatedAt": null,
-                    "UpdatedAt": null
+                    "Duration": "36398"
                 },
                 "OffsetTime": "0"
             }

@@ -19,18 +19,10 @@ Output:
                 "Definition": 1008,
                 "Operations": [
                     {
-                        "Type": "CenterCut",
-                        "ImageCenterCut": {
-                            "Type": "Circle",
-                            "Radius": 30
-                        }
+                        "Type": "CenterCut"
                     },
                     {
-                        "Type": "Scale",
-                        "ImageScale": {
-                            "Type": "ShortEdgeFirst",
-                            "ShortEdge": 100
-                        }
+                        "Type": "Scale"
                     }
                 ]
             },
@@ -38,11 +30,7 @@ Output:
                 "Definition": 1009,
                 "Operations": [
                     {
-                        "Type": "Scale",
-                        "ImageScale": {
-                            "Type": "WidthFirst",
-                            "Width": 200
-                        }
+                        "Type": "Scale"
                     }
                 ]
             }

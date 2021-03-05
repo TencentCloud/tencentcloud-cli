@@ -23,7 +23,6 @@ Output:
                 "ProfileId": "12345",
                 "ProfileType": "dbScan_mail_configuration",
                 "ProfileLevel": "User",
-                "UpdateTime": "2021-01-15 16:06:05",
                 "ProfileName": "测试uin",
                 "ProfileInfo": {
                     "MailConfiguration": {
@@ -42,11 +41,7 @@ Output:
                             123
                         ]
                     },
-                    "Language": "zh",
-                    "UinName": "test",
-                    "Product": "mysql",
-                    "Uin": "123456",
-                    "OwnerUin": "123456"
+                    "Language": "zh"
                 }
             }
         ]

@@ -22,9 +22,7 @@ Output:
                 "SecurityGroupId": "esg-05bb4upy",
                 "SecurityGroupName": "TestGroup",
                 "SecurityGroupDesc": "test-group-desc",
-                "ProjectId": "0",
                 "IsDefault": "true",
-                "CreateTime": "2017-04-18 21:02:30",
                 "TagSet": []
             }
         ],

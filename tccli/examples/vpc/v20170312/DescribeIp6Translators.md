@@ -22,8 +22,7 @@ Output:
                 "IspName": "",
                 "TranslatorStatus": "CREATING",
                 "CreatedTime": "2019-01-10T06:05:37Z",
-                "Ip6RuleCount": 0,
-                "Ip6RuleSet": []
+                "Ip6RuleCount": 0
             },
             {
                 "Ip6TranslatorId": "ip6-90pt7p9q",
@@ -32,64 +31,7 @@ Output:
                 "IspName": "",
                 "TranslatorStatus": "RUNNING",
                 "CreatedTime": "2019-01-10T01:33:32Z",
-                "Ip6RuleCount": 5,
-                "Ip6RuleSet": [
-                    {
-                        "Ip6RuleId": "rule6-c1rvcaoa",
-                        "Ip6RuleName": "未命名",
-                        "Vip6": "2402:4e00:20:100::2:1011",
-                        "Vport6": 0,
-                        "Protocol": "tcp",
-                        "Vip": "",
-                        "Vport": 0,
-                        "RuleStatus": "CREATING",
-                        "CreatedTime": "2019-01-10T04:26:38Z"
-                    },
-                    {
-                        "Ip6RuleId": "rule6-r92oxfhm",
-                        "Ip6RuleName": "未命名",
-                        "Vip6": "2402:4e00:20:100::2:1011",
-                        "Vport6": 1,
-                        "Protocol": "tcp",
-                        "Vip": "100.100.1.1",
-                        "Vport": 2,
-                        "RuleStatus": "RUNNING",
-                        "CreatedTime": "2019-01-10T07:59:02Z"
-                    },
-                    {
-                        "Ip6RuleId": "rule6-kxlgqufa",
-                        "Ip6RuleName": "未命名",
-                        "Vip6": "2402:4e00:20:100::2:1011",
-                        "Vport6": 0,
-                        "Protocol": "tcp",
-                        "Vip": "",
-                        "Vport": 0,
-                        "RuleStatus": "CREATING",
-                        "CreatedTime": "2019-01-10T07:59:02Z"
-                    },
-                    {
-                        "Ip6RuleId": "rule6-k5l5hnwk",
-                        "Ip6RuleName": "未命名",
-                        "Vip6": "2402:4e00:20:100::2:1011",
-                        "Vport6": 0,
-                        "Protocol": "tcp",
-                        "Vip": "",
-                        "Vport": 0,
-                        "RuleStatus": "CREATING",
-                        "CreatedTime": "2019-01-10T08:12:27Z"
-                    },
-                    {
-                        "Ip6RuleId": "rule6-7v3vwgec",
-                        "Ip6RuleName": "未命名",
-                        "Vip6": "2402:4e00:20:100::2:1011",
-                        "Vport6": 0,
-                        "Protocol": "tcp",
-                        "Vip": "",
-                        "Vport": 0,
-                        "RuleStatus": "CREATING",
-                        "CreatedTime": "2019-01-10T08:12:27Z"
-                    }
-                ]
+                "Ip6RuleCount": 5
             },
             {
                 "Ip6TranslatorId": "ip6-8svxwtts",
@@ -98,8 +40,7 @@ Output:
                 "IspName": "",
                 "TranslatorStatus": "CREATING",
                 "CreatedTime": "2019-01-09T13:50:06Z",
-                "Ip6RuleCount": 0,
-                "Ip6RuleSet": []
+                "Ip6RuleCount": 0
             }
         ],
         "RequestId": "fb44e0a1-1827-4d3d-abde-9514e884dbeb"
@@ -132,8 +73,7 @@ Output:
                 "IspName": "",
                 "TranslatorStatus": "CREATING",
                 "CreatedTime": "2019-01-09T13:50:06Z",
-                "Ip6RuleCount": 0,
-                "Ip6RuleSet": []
+                "Ip6RuleCount": 0
             }
         ],
         "RequestId": "cbf8a954-d135-4b52-9935-89e9ec88b536"

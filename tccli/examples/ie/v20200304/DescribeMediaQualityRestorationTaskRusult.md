@@ -31,7 +31,6 @@ Output:
                         "VideoInfoResult": [
                             {
                                 "Stream": 0,
-                                "FileSize": 3840,
                                 "Height": 2160,
                                 "Bitrate": 7975062,
                                 "Fps": "25/1",

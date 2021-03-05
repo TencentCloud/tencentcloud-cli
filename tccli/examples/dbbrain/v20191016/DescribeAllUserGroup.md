@@ -19,13 +19,11 @@ Output:
         "Groups": [
             {
                 "MemberCount": 0,
-                "Status": 0,
                 "Id": 1,
                 "Name": "group1"
             },
             {
                 "MemberCount": 2,
-                "Status": 0,
                 "Id": 2,
                 "Name": "group11"
             }

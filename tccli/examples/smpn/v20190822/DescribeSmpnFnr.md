@@ -15,9 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "a3e252b4-1209-4a50-b3c0-465116f20d75",
-        "ResponseData": {
-            "Name": "FNR Test"
-        }
+        "ResponseData": {}
     }
 }
 ```

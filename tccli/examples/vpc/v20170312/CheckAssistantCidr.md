@@ -42,7 +42,6 @@ Output:
                 "SourceItem": "172.16.0.0/24",
                 "ConflictItemSet": [
                     {
-                        "ConflictId": "pcx-12345678",
                         "DestinationItem": "172.16.0.0/16"
                     }
                 ]

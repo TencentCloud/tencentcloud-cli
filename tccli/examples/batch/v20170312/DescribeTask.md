@@ -26,7 +26,6 @@ Output:
                     "StderrRedirectPath": "cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/"
                 },
                 "RunningTime": "2018-02-07T09:29:55Z",
-                "StateIfCreateCvmFailed": "FAILED",
                 "LaunchTime": "2018-02-07T09:29:09Z",
                 "StateReason": "",
                 "ComputeNodeInstanceId": null,
@@ -44,7 +43,6 @@ Output:
                     "StderrRedirectPath": "cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/"
                 },
                 "RunningTime": "2018-02-07T09:30:02Z",
-                "StateIfCreateCvmFailed": "FAILED",
                 "LaunchTime": "2018-02-07T09:29:09Z",
                 "StateReason": "",
                 "ComputeNodeInstanceId": null,

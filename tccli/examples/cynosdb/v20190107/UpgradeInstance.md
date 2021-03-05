@@ -16,8 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "165202",
-        "TaskId": "1021"
+        "RequestId": "165202"
     }
 }
 ```

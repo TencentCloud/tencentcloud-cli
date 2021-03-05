@@ -34,8 +34,6 @@ Output:
                         "Description": "CPU利用率",
                         "Unit": "%",
                         "Period": 60,
-                        "AggregateType": "",
-                        "AggregationDimensions": null,
                         "Operator": "gt",
                         "Value": "0",
                         "ContinuePeriod": 1,
@@ -43,7 +41,6 @@ Output:
                         "IsPowerNotice": 0,
                         "Filter": {
                             "Type": "",
-                            "Expression": "",
                             "Dimensions": "[]"
                         },
                         "RuleType": ""
@@ -91,7 +88,6 @@ Output:
             "TriggerTasks": [],
             "OriginId": "1319514",
             "ConditionsTemp": {
-                "ConditionId": 0,
                 "TemplateName": "",
                 "Condition": null,
                 "EventCondition": null

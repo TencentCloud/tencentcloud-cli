@@ -24,10 +24,8 @@ Output:
                     "MicroserviceType": "N",
                     "GroupId": "group-xxxxxxx",
                     "ClusterId": "cluster-xxxxxxx",
-                    "Operator": null,
                     "StartupParameters": "-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m",
                     "ClusterName": "test",
-                    "Action": "DescribeGroups",
                     "ApplicationName": "test1",
                     "NamespaceName": "test2",
                     "GroupDesc": null,
@@ -35,8 +33,7 @@ Output:
                     "GroupName": "test",
                     "NamespaceId": "namespace-xxxxxxx",
                     "CreateTime": "2019-03-11 16:51:55",
-                    "ApplicationId": "application-xxxxxxx",
-                    "ProjectId": null
+                    "ApplicationId": "application-xxxxxxx"
                 }
             ]
         }

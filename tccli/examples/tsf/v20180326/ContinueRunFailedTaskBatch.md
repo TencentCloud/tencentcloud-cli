@@ -13,7 +13,6 @@ Output:
 ```
 {
     "Response": {
-        "RequestID": "3c12afk-cfeg-470e-b34f-90810we1dsad",
         "Result": true
     }
 }

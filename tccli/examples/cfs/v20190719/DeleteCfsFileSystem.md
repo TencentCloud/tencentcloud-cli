@@ -12,9 +12,7 @@ tccli cfs DeleteCfsFileSystem --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {
-        "RequestID": "fjo8aejo-fjei-32eu-2je9-fhue83nd81"
-    }
+    "Response": {}
 }
 ```
 

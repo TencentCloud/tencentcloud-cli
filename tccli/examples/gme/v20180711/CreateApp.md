@@ -12,27 +12,7 @@ tccli gme CreateApp --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {
-        "Data": {
-            "AppName": "simple_gme_application",
-            "CreateTime": 1568945078,
-            "ProjectId": 0,
-            "BizId": 140000001,
-            "SecretKey": "abcdefghijklmnop",
-            "RealtimeSpeechConf": {
-                "Status": "open",
-                "quality": "ordinary"
-            },
-            "VoiceMessageConf": {
-                "Status": "close",
-                "language": "cnen"
-            },
-            "VoiceFilterConf": {
-                "Status": "close"
-            }
-        },
-        "RequestId": "e2900289-f21e-43a8-a3bf-0b439cdbbbb8"
-    }
+    "Response": {}
 }
 ```
 
@@ -55,27 +35,7 @@ tccli gme CreateApp --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {
-        "Data": {
-            "AppName": "simple_gme_application",
-            "CreateTime": 1568945078,
-            "ProjectId": 10000,
-            "BizId": 140000002,
-            "SecretKey": "abcdefghijklmnop",
-            "RealtimeSpeechConf": {
-                "Status": "open",
-                "Quality": "high"
-            },
-            "VoiceMessageConf": {
-                "Status": "open",
-                "Language": "cnen"
-            },
-            "VoiceFilterConf": {
-                "Status": "open"
-            }
-        },
-        "RequestId": "d61be8ca-f010-11e9-af81-fa163ee00eb7"
-    }
+    "Response": {}
 }
 ```
 

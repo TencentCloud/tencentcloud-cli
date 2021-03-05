@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli monitor DescribeAlarmNotices --cli-unfold-argument  \
-    --Action DescribeAlarmNotices \
     --OwnerUid 1234567 \
     --Name  \
     --ReceiverType  \

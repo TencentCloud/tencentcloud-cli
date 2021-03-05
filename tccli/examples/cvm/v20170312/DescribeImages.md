@@ -17,13 +17,9 @@ Output:
         "ImageSet": [
             {
                 "ImageId": "img-pmqg1cw7",
-                "ImageOsName": "centos6.6x86_32",
                 "ImageType": "PUBLIC_IMAGE",
-                "ImageCreateTime": "1970-01-01T00:00:00+00:00",
-                "ImageStatus": "NORMAL",
                 "ImageName": "CentOS 6.6 32位",
-                "ImageDescription": "CentOS 6.6 32位",
-                "Creator": "PUBLIC"
+                "ImageDescription": "CentOS 6.6 32位"
             }
         ],
         "TotalCount": 1,
@@ -51,13 +47,9 @@ Output:
         "ImageSet": [
             {
                 "ImageId": "img-pmqg1cw7",
-                "ImageOsName": "centos6.6x86_32",
                 "ImageType": "PUBLIC_IMAGE",
-                "ImageCreateTime": "1970-01-01T00:00:00+00:00",
-                "ImageStatus": "NORMAL",
                 "ImageName": "CentOS 6.6 32位",
-                "ImageDescription": "CentOS 6.6 32位",
-                "Creator": "PUBLIC"
+                "ImageDescription": "CentOS 6.6 32位"
             }
         ],
         "TotalCount": 1,

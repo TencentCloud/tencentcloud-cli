@@ -26,7 +26,6 @@ Output:
             "Profile": "main",
             "BitrateToOrig": 0,
             "HeightToOrig": 0,
-            "FpsToOirg": 0,
             "NeedVideo": 1,
             "NeedAudio": 1,
             "TemplateId": 1000,

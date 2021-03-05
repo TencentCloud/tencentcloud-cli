@@ -113,8 +113,7 @@ Output:
                     "ServerName": null,
                     "OriginPullProtocol": "http",
                     "BackupOrigins": [],
-                    "BackupOriginType": null,
-                    "BackupServerName": null
+                    "BackupOriginType": null
                 },
                 "ProjectId": 0,
                 "Readonly": "normal",
@@ -124,7 +123,6 @@ Output:
                     "Switch": "off"
                 },
                 "Status": "processing",
-                "StrategyWeight": null,
                 "UpdateTime": "2019-12-03 15:23:50"
             }
         ],

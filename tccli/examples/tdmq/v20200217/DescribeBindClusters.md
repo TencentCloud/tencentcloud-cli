@@ -14,7 +14,6 @@ Output:
         "TotalCount": 1,
         "ClusterSet": [
             {
-                "ClusterId": 12,
                 "ClusterName": "xxx"
             }
         ],

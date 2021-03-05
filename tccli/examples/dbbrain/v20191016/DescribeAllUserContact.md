@@ -17,13 +17,11 @@ Output:
         "TotalCount": 2,
         "Contacts": [
             {
-                "Status": 0,
                 "Mail": "zhangsan@qq.com",
                 "Id": 1,
                 "Name": "zhangsan"
             },
             {
-                "Status": 0,
                 "Mail": "zhangsan2@qq.com",
                 "Id": 2,
                 "Name": "zhangsan2"

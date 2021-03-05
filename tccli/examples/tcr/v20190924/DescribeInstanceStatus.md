@@ -16,7 +16,6 @@ Output:
         "RegistryStatusSet": [
             {
                 "Status": "Runing",
-                "Conditons": [],
                 "RegistryId": "tcr-ak9876"
             }
         ],

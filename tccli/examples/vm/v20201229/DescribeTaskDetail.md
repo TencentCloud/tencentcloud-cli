@@ -33,10 +33,7 @@ Output:
             }
         ],
         "MediaInfo": {
-            "Codecs": "h264 aac",
-            "Duration": 36,
-            "Width": 352,
-            "Height": 640
+            "Duration": 36
         },
         "InputInfo": {
             "Type": "URL",
@@ -102,11 +99,7 @@ Output:
                     "Score": 0,
                     "Text": "测试音频文本",
                     "Url": "https://xxx.com/7c019/audio_0.mp3",
-                    "Duration": "36398",
-                    "DataId": "",
-                    "Results": [],
-                    "CreatedAt": null,
-                    "UpdatedAt": null
+                    "Duration": "36398"
                 },
                 "OffsetTime": "0"
             }

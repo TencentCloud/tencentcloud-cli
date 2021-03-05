@@ -16,7 +16,6 @@ Output:
 ```
 {
     "Response": {
-        "Backup": "{}",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "TaskId": "bj0mt2l23osdj300hl30"
     }
@@ -51,7 +50,6 @@ Output:
 ```
 {
     "Response": {
-        "Backup": "{}",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "TaskId": "bj0mt2l23osdj300hl30"
     }

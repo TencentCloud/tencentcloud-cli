@@ -26,7 +26,6 @@ Output:
                 "NotebookInstanceName": "aaaafixa1",
                 "NotebookInstanceStatus": "Inservice",
                 "InstanceType": "MEDIUM4",
-                "Url": null,
                 "InstanceId": "notebook-jq5r1whsjl"
             }
         ]

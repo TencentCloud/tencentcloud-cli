@@ -16,7 +16,6 @@ Output:
         "TemplateId": 233,
         "Name": "test",
         "EngineVersion": "5.7",
-        "Description": "test",
         "TotalCount": 72,
         "Items": [
             {

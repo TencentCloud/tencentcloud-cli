@@ -13,7 +13,6 @@ Output:
     "Response": {
         "Namespaces": [
             {
-                "Namespaces": "python",
                 "Description": "test",
                 "AddTime": "2018-11-27 12:02:25",
                 "ModTime": "2018-11-27 12:02:25",

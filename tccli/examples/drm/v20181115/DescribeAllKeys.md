@@ -31,7 +31,6 @@ Output:
         ],
         "SessionKey": "l2XuCkQx288LFBlbDeKuQ1tfW5LOC2mbRfcAvhD8byFmIq8sqTQ+KA/UMrJyk1lImqgodiOuv+fmVTNbb06IY9vILtBDaN3Ek5/x2c0HUJ3k+kL4gMxOvKmAe/F0+qr0Kbl9CVx6YRntXWcWqD+IJ18D76+tQD1aBP8tS5pwV6Q=",
         "ContentId": "test",
-        "Pssh": "",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }

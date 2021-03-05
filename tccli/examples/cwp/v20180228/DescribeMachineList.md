@@ -28,11 +28,9 @@ Output:
                 "VulNum": 0,
                 "Tag": [],
                 "MalwareNum": 0,
-                "BaseLineNum": 0,
                 "CyberAttackNum": 0,
                 "SecurityStatus": "SAFE",
-                "InstanceState": "TERMINATED_PRO_VERSION",
-                "LincenseStatus": 0
+                "InstanceState": "TERMINATED_PRO_VERSION"
             }
         ],
         "TotalCount": 1,

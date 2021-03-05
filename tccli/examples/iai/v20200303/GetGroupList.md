@@ -63,10 +63,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameter",
-            "Message": "The value type of parameter `Offset` is not valid."
-        },
         "RequestId": "9c987f11-f5d0-4aa7-aa13-3d8c1b4b3042"
     }
 }
@@ -88,10 +84,6 @@ Output:
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.LimitExceed",
-            "Message": "返回数量不在合法范围内。"
-        },
         "RequestId": "a6bb57de-773b-45e4-9e1c-c30ef48eba85"
     }
 }

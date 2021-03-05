@@ -28,8 +28,7 @@ Output:
                     "DocAbs": "",
                     "DocId": "122",
                     "DocMeta": "{\"NC\":\"9999\",\"TD\" : \"中文\",\"NA\" : \"1000\",\"NB\" : \"9999\",\"TA\" : \"中文\",\"TB\" : \"abcde\",\"TC\" : \"中文\",\"TE\":\"tttteeee\",\"TF\":\"efeefe\",\"countrycode\":\"cn\",\"renderType\":\"rrr\"}\n",
-                    "L2Score": 0,
-                    "SearchDebugInfo": ""
+                    "L2Score": 0
                 }
             ],
             "ResultNum": 1,

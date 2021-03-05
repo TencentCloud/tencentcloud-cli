@@ -35,7 +35,6 @@ Output:
         "SuccessNum": 1,
         "FailAmount": 0,
         "FailNum": 0,
-        "TransferDetailList": null,
         "RequestId": "555"
     }
 }

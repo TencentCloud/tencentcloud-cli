@@ -25,8 +25,7 @@ Output:
                 "CodeRepositoryName": "private",
                 "GitConfig": {
                     "Branch": "master",
-                    "RepositoryUrl": "https://github.com/example/test.git",
-                    "KeyId": ""
+                    "RepositoryUrl": "https://github.com/example/test.git"
                 }
             }
         ]

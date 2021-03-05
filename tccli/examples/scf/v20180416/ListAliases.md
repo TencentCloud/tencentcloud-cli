@@ -14,11 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d1b93f9c-ac3a-412a-a4f3-6f0697099f72",
-        "EipUseNum": 4,
-        "EipUserQuota": 5,
-        "EipTotalUseNum": 80,
-        "EipTotalQuota": 200
+        "RequestId": "d1b93f9c-ac3a-412a-a4f3-6f0697099f72"
     }
 }
 ```

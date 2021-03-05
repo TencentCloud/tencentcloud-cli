@@ -24,7 +24,6 @@ Output:
                 "InstanceFamilies": [
                     {
                         "InstanceFamily": "C3",
-                        "TypeName": "计算型C3",
                         "Order": 402,
                         "InstanceTypes": [
                             {

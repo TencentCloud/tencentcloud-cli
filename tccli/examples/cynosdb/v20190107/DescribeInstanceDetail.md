@@ -37,7 +37,6 @@ Output:
             "WanDomain": "",
             "ClusterName": "cynosdbpg-cluster-5ne6bjyx",
             "InstanceRole": "master",
-            "WanPort": 0,
             "Uin": "3374998458",
             "DbType": "POSTGRESQL",
             "Vip": "10.0.1.2",

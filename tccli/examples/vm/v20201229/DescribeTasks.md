@@ -36,15 +36,7 @@ Output:
                     }
                 ],
                 "MediaInfo": {
-                    "Codecs": "h264 aac",
-                    "Duration": 36,
-                    "Width": 352,
-                    "Height": 640
-                },
-                "InputInfo": {
-                    "Type": "URL",
-                    "Url": "https://cms.myqcloud.com/video/test.mp3",
-                    "BucketInfo": null
+                    "Duration": 36
                 },
                 "CreatedAt": "2020-07-13T11:47:01.925Z",
                 "UpdatedAt": "2020-07-13T11:47:25.840Z"
