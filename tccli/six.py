@@ -186,7 +186,7 @@ class _SixMetaPathImporter(object):
 
         Required, if is_package is implemented"""
         self.__get_module(fullname)  # eventually raises ImportError
-        return None
+
     get_source = get_code  # same as get_code
 
 _importer = _SixMetaPathImporter(__name__)
