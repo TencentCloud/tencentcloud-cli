@@ -86,6 +86,7 @@
         {
           "default": "",
           "document": "账号信息。",
+          "example": "AccountInfo.AccountType=4",
           "member": "AccountInfo",
           "name": "Account",
           "required": true,
@@ -94,7 +95,8 @@
         },
         {
           "default": "",
-          "document": "场景code",
+          "document": "场景code;\ne_activity_antirush；活动防刷场景e_login_protection；登陆保护场景e_register_protection：注册保护场景",
+          "example": "e_activity_antirush",
           "member": "string",
           "name": "SceneCode",
           "required": true,
@@ -104,6 +106,7 @@
         {
           "default": "",
           "document": "登录来源的外网IP",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "UserIp",
           "required": true,
@@ -113,6 +116,7 @@
         {
           "default": "",
           "document": "用户操作时间戳，单位秒（格林威治时间精确到秒，如1501590972）。",
+          "example": "1615211954",
           "member": "uint64",
           "name": "PostTime",
           "required": true,
@@ -122,6 +126,7 @@
         {
           "default": "",
           "document": "用户唯一标识。",
+          "example": "asdfgqj",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -131,6 +136,7 @@
         {
           "default": "",
           "document": "设备指纹token。",
+          "example": "dsadsasadasd",
           "member": "string",
           "name": "DeviceToken",
           "required": false,
@@ -140,6 +146,7 @@
         {
           "default": "",
           "document": "设备指纹BusinessId",
+          "example": "124277865452425",
           "member": "int64",
           "name": "DeviceBusinessId",
           "required": false,
@@ -149,6 +156,7 @@
         {
           "default": "",
           "document": "业务ID。网站或应用在多个业务中使用此服务，通过此ID区分统计数据。",
+          "example": "12",
           "member": "uint64",
           "name": "BusinessId",
           "required": false,
@@ -158,6 +166,7 @@
         {
           "default": "",
           "document": "昵称，UTF-8 编码。",
+          "example": "sadsad",
           "member": "string",
           "name": "Nickname",
           "required": false,
@@ -167,6 +176,7 @@
         {
           "default": "",
           "document": "用户邮箱地址（非系统自动生成）。",
+          "example": "dsadsa",
           "member": "string",
           "name": "EmailAddress",
           "required": false,
@@ -176,6 +186,7 @@
         {
           "default": "",
           "document": "是否识别设备异常：\n0：不识别。\n1：识别。",
+          "example": "1",
           "member": "int64",
           "name": "CheckDevice",
           "required": false,
@@ -185,6 +196,7 @@
         {
           "default": "",
           "document": "用户HTTP请求中的Cookie进行2次hash的值，只要保证相同Cookie的hash值一致即可。",
+          "example": "fa5805903fb6b1f7e36bb1c2fd59e47684b8d180",
           "member": "string",
           "name": "CookieHash",
           "required": false,
@@ -194,6 +206,7 @@
         {
           "default": "",
           "document": "用户HTTP请求的Referer值。",
+          "example": "fa5805903fb6b1f7e36bb1c2fd59e47684b8d180",
           "member": "string",
           "name": "Referer",
           "required": false,
@@ -203,6 +216,7 @@
         {
           "default": "",
           "document": "用户HTTP请求的User-Agent值。",
+          "example": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, ",
           "member": "string",
           "name": "UserAgent",
           "required": false,
@@ -212,6 +226,7 @@
         {
           "default": "",
           "document": "用户HTTP请求的X-Forwarded-For值。",
+          "example": "qewqeqwe",
           "member": "string",
           "name": "XForwardedFor",
           "required": false,
@@ -221,6 +236,7 @@
         {
           "default": "",
           "document": "MAC地址或设备唯一标识。",
+          "example": "dasdasdasd",
           "member": "string",
           "name": "MacAddress",
           "required": false,
@@ -230,6 +246,7 @@
         {
           "default": "",
           "document": "手机制造商ID，如果手机注册，请带上此信息。",
+          "example": "huaweiMate10pro",
           "member": "string",
           "name": "VendorId",
           "required": false,
@@ -239,6 +256,7 @@
         {
           "default": "",
           "document": "设备类型：\n1：Android\n2：IOS",
+          "example": "1",
           "member": "int64",
           "name": "DeviceType",
           "required": false,
@@ -247,7 +265,8 @@
         },
         {
           "default": "",
-          "document": "详细信息",
+          "document": "详细信息\nFieldName 清单\nAndroid serial_number String 否 设备序列号\nAndroid carrier String 否 运营商；-1: 获取失败，0: 其他，1: 移动，2: 联通，3: 电信，4: 铁通\nAndroid mcc_mnc String 否 netOperator MCC+MNC\nAndroid model String 否 手机型号\nAndroid os_system String 否 操作系统\nAndroid vendor_id String 否 设备品牌 “华为”“oppo”“小米”\nAndroid device_version String 否 设备版本\nAndroid android_api_level String 否 安卓API等级\nAndroid phone_chip_info String 否 手机芯片信息\nAndroid resolution_w String 否 屏幕分辨率宽，保留整数\nAndroid resolution_h String 否 屏幕分辨率高，保留整数\nAndroid brightness String 否 屏幕亮度\nAndroid bluetooth_address String 否 蓝牙地址\nAndroid baseband_version String 否 基带版本\nAndroid kernel_version String 否 kernel 版本\nAndroid cpu_core String 否 CPU 核数\nAndroid cpu_model String 否 CPU 型号\nAndroid memory String 否 内存容量，单位转换为 GB\nAndroid storage String 否 存储容量，单位转换为 GB\nAndroid volume String 否 手机音量\nAndroid battery_power String 否 电池电量\nAndroid language String 否 语言\nAndroid package_name String 否 软件包名\nAndroid app_version String 否 app 版本号\nAndroid app_name String 否 app 显示名称\nAndroid is_debug String 否 是否 debug；0 为正常模式，1 为 debug 模式；其他值无效\nAndroid is_root String 否 是否越狱；0 为正常，1 为越狱；其他值无效\nAndroid is_proxy String 否 是否启动代理；0 为未开启，1 为开启；其他值无效\nAndroid is_emulator String 否 是否模拟器；0 为未开启，1 为开启；其他值无效\nAndroid charge_status String 否 充电状态；1-不在充电，2-USB充电，3-电源充电\nAndroid network_type String 否 网络类型：2G/3G/4G/5G/WiFi/WWAN/other\nAndroid wifi_mac String 否 WiFi MAC地址\nIOS model String 否 机器型号 iPhone11\nIOS memory String 否 内存容量，单位转换为 GB\nIOS os_system String 否 操作系统\nIOS device_version String 否 设备版本\nIOS phone_chip_info String 否 手机芯片信息\nIOS device_name String 否 设备名称 \"xxx 的 iPhone\"，\"xxx's IPhone\" 等等\nIOS uptime String 否 开机时间\nIOS language String 否 系统语言\nIOS carrier String 否 运营商\nIOS cpu_model String 否 CPU 型号\nIOS cpu_core String 否 CPU 个数\nIOS volume String 否 手机音量\nIOS battery_power String 否 电池电量\nIOS resolution_w String 否 屏幕分辨率宽，保留整数\nIOS resolution_h String 否 屏幕分辨率高，保留整数\nIOS package_name String 否 app 包名\nIOS app_version String 否 app 版本号\nIOS app_name String 否 app 显示名称\nIOS is_debug String 否 是否 debug；0 为正常模式，1 为 debug 模式；其他值无效\nIOS is_root String 否 是否越狱；0 为正常，1 为越狱；其他值无效\nIOS is_proxy String 否 是否启动代理；0 为未开启，1 为开启；其他值无效\nIOS is_emulator String 否 是否模拟器；0 为未开启，1 为开启；其他值无效\nIOS charge_status String 否 充电状态；1-不在充电，2-USB充电，3-电源充电\nIOS network_type String 否 网络类型：2G/3G/4G/5G/WiFi/WWAN/other\nIOS wifi_mac String 否 WiFi MAC地址\n其他 os_system String 否 操作系统\n其他 browser String 否 浏览器信息\n其他 from_url String 否 来源链接",
+          "example": "Details.1.FieldName='os_system'",
           "member": "InputDetails",
           "name": "Details",
           "required": false,
@@ -257,6 +276,7 @@
         {
           "default": "",
           "document": "可选填写。详情请跳转至SponsorInfo查看。",
+          "example": "Sponsor.SponsorOpenId='otg-dasndasjdasldsalkjdlksad'",
           "member": "SponsorInfo",
           "name": "Sponsor",
           "required": false,
@@ -266,6 +286,7 @@
         {
           "default": "",
           "document": "可选填写。详情请跳转至OnlineScamInfo查看。",
+          "example": "OnlineScam.ContentLabel = '诈骗'",
           "member": "OnlineScamInfo",
           "name": "OnlineScam",
           "required": false,
@@ -440,6 +461,7 @@
         {
           "default": "",
           "document": "账号ID。对应输入参数：\nAccountType是1时，对应QQ的OpenID。\nAccountType是2时，对应微信的OpenID/UnionID。\nAccountType是4时，对应手机号。\nAccountType是8时，对应imei、idfa、imeiMD5或者idfaMD5。\nAccountType是0时，对应账号信息。\nAccountType是10004时，对应手机号的MD5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13112345678",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -449,6 +471,7 @@
         {
           "default": "",
           "document": "操作时间戳，单位秒（对应输入参数）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1614760549",
           "member": "uint64",
           "name": "PostTime",
           "required": true,
@@ -458,6 +481,7 @@
         {
           "default": "",
           "document": "对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录后关联业务自身的账号ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13112345678",
           "member": "string",
           "name": "AssociateAccount",
           "required": true,
@@ -467,6 +491,7 @@
         {
           "default": "",
           "document": "操作来源的外网IP（对应输入参数）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14.1.2.3",
           "member": "string",
           "name": "UserIp",
           "required": true,
@@ -476,6 +501,7 @@
         {
           "default": "",
           "document": "风险值\npass : 无恶意\nreview：需要人工审核\nreject：拒绝，高风险恶意\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reject",
           "member": "string",
           "name": "RiskLevel",
           "required": true,
@@ -484,7 +510,8 @@
         },
         {
           "default": "",
-          "document": "风险类型，请参考官网风险类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险类型，请参考官网风险类型\n账号风险 \n1 账号信用低,账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素\n11 疑似 低活跃账号,账号活跃度与正常用户有差异\n2 垃圾账号 疑似批量注册小号，近期存在严重违规或大量举报\n21 疑似小号 账号有疑似线上养号，小号等行为\n22 疑似违规账号 账号曾有违规行为、曾被举报过、曾因违规被处罚过等\n3 无效账号 送检账号参数无法成功解析，请检查微信 openid 是否有误/QQopenid是否与QQ开发平台的appid关联，手机号是否为中国大陆手机号 。\n4 黑名单 该账号在业务侧有过拉黑记录\n5 白名单 业务自行有添加过白名单记录\n行为风险 \n101 批量操作 存在 ip/设备/环境等因素的聚集性异常\n1011 疑似 IP 属性聚集，出现 IP 聚集\n1012 疑似 设备属性聚集 出现设备聚集\n102 自动机 疑似自动机批量请求\n103 恶意行为-网赚 疑似网赚\n104 微信登录态无效 检查 WeChatAccessToken 参数，是否已经失效；\n201 环境风险 环境异常 操作 ip/设备/环境存在异常。当前 ip 为非常用 ip 或恶意 ip 段\n2011 疑似 非常用IP 请求 当前请求 IP 非该账号常用 IP\n2012 疑似 IP 异常 使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip 等\n205 非公网有效ip 传进来的 IP 地址为内网 ip 地址或者 ip 保留地址；\n设备风险\n206  设备异常 该设备存在异常的使用行为\n2061 疑似 非常用设备 当前请求的设备非该账号常用设备\n2062 疑似 虚拟设备 请求设备为模拟器、脚本、云设备等虚拟设备\n2063 疑似 群控设备 请求设备为猫池、手机墙等群控设备\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[101,201]",
           "member": "int64",
           "name": "RiskType",
           "required": true,

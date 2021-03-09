@@ -768,6 +768,14 @@
         "title": "查询简单命名空间列表"
       }
     ],
+    "DescribeTaskDetail": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeTaskDetail\n&TaskId=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"RetryInterval\": 0,\n            \"TriggerType\": \"xx\",\n            \"TimeOut\": 0,\n            \"TaskRule\": {\n                \"RepeatInterval\": 1,\n                \"RuleType\": \"xx\",\n                \"Expression\": \"xx\"\n            },\n            \"TaskState\": \"xx\",\n            \"SuccessRatio\": 0,\n            \"TaskContent\": \"xx\",\n            \"TaskArgument\": \"xx\",\n            \"AdvanceSettings\": {\n                \"SubTaskConcurrency\": 0\n            },\n            \"RetryCount\": 0,\n            \"SuccessOperator\": \"xx\",\n            \"TaskId\": \"xx\",\n            \"TaskType\": \"xx\",\n            \"ShardCount\": 0,\n            \"ExecuteType\": \"xx\",\n            \"TaskName\": \"xx\",\n            \"ShardArguments\": [\n                {\n                    \"ShardValue\": \"xx\",\n                    \"ShardKey\": 1\n                }\n            ],\n            \"GroupId\": \"xx\",\n            \"TaskLogId\": \"xx\",\n            \"BelongFlowIds\": [\n                \"xx\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询任务详情"
+      }
+    ],
     "DescribeTaskLastStatus": [
       {
         "document": "",

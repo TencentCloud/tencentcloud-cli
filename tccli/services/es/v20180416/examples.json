@@ -107,13 +107,13 @@
     "UpdatePlugins": [
       {
         "document": "",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdatePlugins\r\n&InstanceId=es-xxxxxxxx\r\n&InstallPluginList.0=analysis-qq\r\n&InstallPluginList.1=sql\r\n&<公共请求参数>",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdatePlugins\n&InstanceId=es-xxxxxxxx\n&InstallPluginList.0=analysis-qq\n&InstallPluginList.1=sql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "批量安装插件"
       },
       {
         "document": "",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdatePlugins\r\n&InstanceId=es-xxxxxxxx\r\n&RemovePluginList.0=analysis-qq\r\n&RemovePluginList.1=sql\r\n&<公共请求参数>",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdatePlugins\n&InstanceId=es-xxxxxxxx\n&RemovePluginList.0=analysis-qq\n&RemovePluginList.1=sql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "批量卸载插件"
       }

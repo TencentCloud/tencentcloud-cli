@@ -1108,6 +1108,7 @@
         {
           "default": "",
           "document": "地域名",
+          "example": "gz",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1117,6 +1118,7 @@
         {
           "default": "",
           "document": "地域ID",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "required": false,
@@ -1125,7 +1127,8 @@
         },
         {
           "default": "",
-          "document": "维度信息",
+          "document": "实例的维度信息，格式为\n{\"unInstanceId\":\"ins-00jvv9mo\"}。不同云产品的维度信息不同，详见\n[产品策略类型和命名空间](https://cloud.tencent.com/document/product/248/50397)",
+          "example": "{\"unInstanceId\":\"ins-00jvv9mo\"}",
           "member": "string",
           "name": "Dimensions",
           "required": false,
@@ -1135,6 +1138,7 @@
         {
           "default": "",
           "document": "事件维度信息",
+          "example": "{\"uuid\":\"c734cd0d-d050-44bd-8d17-f6381039b4b6\"}",
           "member": "string",
           "name": "EventDimensions",
           "required": false,
@@ -5458,6 +5462,7 @@
         {
           "default": "",
           "document": "接口模块名，固定值\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -5466,6 +5471,7 @@
         {
           "default": "",
           "document": "产品类型过滤，比如\"cvm\"表示云服务器",
+          "example": "cvm",
           "member": "string",
           "name": "ProductName",
           "required": false,
@@ -5474,6 +5480,7 @@
         {
           "default": "",
           "document": "事件名称过滤，比如\"guest_reboot\"表示机器重启",
+          "example": "guest_reboot",
           "member": "string",
           "name": "EventName",
           "required": false,
@@ -5481,7 +5488,8 @@
         },
         {
           "default": "",
-          "document": "影响对象，比如ins-19708ino",
+          "document": "影响对象，比如\"ins-19708ino\"",
+          "example": "ins-19708ino",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -5490,6 +5498,7 @@
         {
           "default": "",
           "document": "维度过滤，比如外网IP:10.0.0.1",
+          "example": "无",
           "member": "DescribeProductEventListDimensions",
           "name": "Dimensions",
           "required": false,
@@ -5497,7 +5506,8 @@
         },
         {
           "default": "",
-          "document": "地域过滤，比如gz",
+          "document": "产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)",
+          "example": "gz",
           "member": "string",
           "name": "RegionList",
           "required": false,
@@ -5506,6 +5516,7 @@
         {
           "default": "",
           "document": "事件类型过滤，取值范围[\"status_change\",\"abnormal\"]，分别表示状态变更、异常事件",
+          "example": "abnormal",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -5514,6 +5525,7 @@
         {
           "default": "",
           "document": "事件状态过滤，取值范围[\"recover\",\"alarm\",\"-\"]，分别表示已恢复、未恢复、无状态",
+          "example": "recover",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -5522,6 +5534,7 @@
         {
           "default": "",
           "document": "项目ID过滤",
+          "example": "0",
           "member": "string",
           "name": "Project",
           "required": false,
@@ -5530,6 +5543,7 @@
         {
           "default": "",
           "document": "告警状态配置过滤，1表示已配置，0表示未配置",
+          "example": "1",
           "member": "int64",
           "name": "IsAlarmConfig",
           "required": false,
@@ -5538,6 +5552,7 @@
         {
           "default": "",
           "document": "按更新时间排序，ASC表示升序，DESC表示降序，默认DESC",
+          "example": "DESC",
           "member": "string",
           "name": "TimeOrder",
           "required": false,
@@ -5546,6 +5561,7 @@
         {
           "default": "",
           "document": "起始时间，默认一天前的时间戳",
+          "example": "1572624000",
           "member": "int64",
           "name": "StartTime",
           "required": false,
@@ -5554,6 +5570,7 @@
         {
           "default": "",
           "document": "结束时间，默认当前时间戳",
+          "example": "1573228799",
           "member": "int64",
           "name": "EndTime",
           "required": false,
@@ -5562,6 +5579,7 @@
         {
           "default": "",
           "document": "页偏移量，默认0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5570,6 +5588,7 @@
         {
           "default": "",
           "document": "每页返回的数量，默认20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5583,22 +5602,28 @@
       "members": [
         {
           "document": "事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeProductEventListEvents",
           "name": "Events",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "事件统计",
+          "example": "无",
           "member": "DescribeProductEventListOverView",
           "name": "OverView",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "事件总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

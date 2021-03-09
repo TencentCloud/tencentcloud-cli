@@ -17,16 +17,13 @@ Output:
             {
                 "EnvId": "cdnheader-v2",
                 "PackageId": "tcb_pkg_hosting_add_2",
-                "AutoRenew": true,
                 "Status": "normal",
                 "PayMode": "prepayment",
                 "IsolatedTime": "0000-00-00 00:00:00",
                 "ExpireTime": "2020-05-16 23:59:59",
                 "CreateTime": "2020-04-16 18:50:10",
                 "UpdateTime": "2020-05-14 16:00:42",
-                "AlwaysFree": false,
                 "IsAutoRenew": "true",
-                "BillTime": "2020-03-16 12:34:56",
                 "PaymentChannel": "qcloud"
             }
         ],

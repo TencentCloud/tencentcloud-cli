@@ -21,7 +21,6 @@ tccli tcb CreateCloudBaseRunServerVersion --cli-unfold-argument  \
     --ImageInfo.ServerAddr xx \
     --ImageInfo.TagName xx \
     --EnvParams xx \
-    --AddIntranetDns True \
     --BuildDir xx \
     --Repository xx \
     --Mem 0.0 \

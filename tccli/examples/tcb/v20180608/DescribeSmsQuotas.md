@@ -16,7 +16,6 @@ Output:
         "SmsFreeQuotaList": [
             {
                 "FreeQuota": 1000,
-                "UsedQuota": 500,
                 "CycleStart": "2020-01-01 23:59:59",
                 "CycleEnd": "2020-02-01 23:59:59",
                 "TodayUsedQuota": 0

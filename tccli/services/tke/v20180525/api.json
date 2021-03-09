@@ -459,7 +459,7 @@
         },
         {
           "default": "",
-          "document": "实例额外需要设置参数信息",
+          "document": "实例额外需要设置参数信息(默认值)",
           "example": "{}",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
@@ -531,6 +531,7 @@
           "example": "[",
           "member": "string",
           "name": "FailedInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -539,6 +540,7 @@
           "example": "[",
           "member": "string",
           "name": "SuccInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -547,6 +549,7 @@
           "example": "[",
           "member": "string",
           "name": "TimeoutInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -555,6 +558,7 @@
           "example": "[",
           "member": "string",
           "name": "FailedReasons",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

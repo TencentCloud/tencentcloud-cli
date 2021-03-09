@@ -1058,6 +1058,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "OCR文本识别置信度",
+          "member": "uint64",
+          "name": "Rate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

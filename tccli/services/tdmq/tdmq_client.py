@@ -113,6 +113,31 @@ def doModifyTopic(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSendBatchMessages(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SendBatchMessagesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SendBatchMessages(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteCluster(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -413,6 +438,31 @@ def doDescribeTopics(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSendMessages(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SendMessagesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SendMessages(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyCluster(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -578,6 +628,7 @@ ACTION_MAP = {
     "DescribeBindVpcs": doDescribeBindVpcs,
     "CreateCluster": doCreateCluster,
     "ModifyTopic": doModifyTopic,
+    "SendBatchMessages": doSendBatchMessages,
     "DeleteCluster": doDeleteCluster,
     "DescribeEnvironmentRoles": doDescribeEnvironmentRoles,
     "DeleteTopics": doDeleteTopics,
@@ -590,6 +641,7 @@ ACTION_MAP = {
     "CreateEnvironment": doCreateEnvironment,
     "DescribeProducers": doDescribeProducers,
     "DescribeTopics": doDescribeTopics,
+    "SendMessages": doSendMessages,
     "ModifyCluster": doModifyCluster,
     "ModifyEnvironmentAttributes": doModifyEnvironmentAttributes,
     "CreateSubscription": doCreateSubscription,

@@ -2217,7 +2217,7 @@
         },
         {
           "default": "",
-          "document": "实例Cpu核数，需要不低于克隆源实例。",
+          "document": "实例Cpu核数，需要不低于克隆源实例，默认和源实例相同。",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -4515,6 +4515,7 @@
         {
           "default": "",
           "document": "查询指定源实例的克隆任务列表。",
+          "example": "cdb-9303wd4x",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4522,7 +4523,8 @@
         },
         {
           "default": "",
-          "document": "分页查询时的偏移量。",
+          "document": "分页查询时的偏移量，默认值为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4530,7 +4532,8 @@
         },
         {
           "default": "",
-          "document": "分页查询时的每页条目数。",
+          "document": "分页查询时的每页条目数，默认值为20。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4544,15 +4547,19 @@
       "members": [
         {
           "document": "满足条件的条目数。",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "克隆任务列表。",
+          "example": "无",
           "member": "CloneItem",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

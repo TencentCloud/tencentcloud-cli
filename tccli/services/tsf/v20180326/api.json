@@ -576,6 +576,12 @@
       "name": "查询简单命名空间列表",
       "output": "DescribeSimpleNamespacesResponse"
     },
+    "DescribeTaskDetail": {
+      "document": "查询任务详情",
+      "input": "DescribeTaskDetailRequest",
+      "name": "查询任务详情",
+      "output": "DescribeTaskDetailResponse"
+    },
     "DescribeTaskLastStatus": {
       "document": "查询任务最近一次执行状态",
       "input": "DescribeTaskLastStatusRequest",
@@ -8990,6 +8996,51 @@
       ],
       "type": "object"
     },
+    "DescribeTaskDetailRequest": {
+      "document": "DescribeTaskDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "task-12345678",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务历史ID",
+          "example": "tlog-12345678",
+          "member": "string",
+          "name": "TaskLogId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailResponse": {
+      "document": "DescribeTaskDetail返回参数结构体",
+      "members": [
+        {
+          "document": "任务详情",
+          "example": "无",
+          "member": "TaskRecord",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskLastStatusRequest": {
       "document": "DescribeTaskLastStatus请求参数结构体",
       "members": [
@@ -11526,6 +11577,7 @@
         {
           "default": "",
           "document": "任务ID",
+          "example": "task-klwqrnlw",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -11534,6 +11586,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "demohaha",
           "member": "string",
           "name": "TaskName",
           "required": false,
@@ -11542,6 +11595,7 @@
         {
           "default": "",
           "document": "任务类型",
+          "example": "JAVA",
           "member": "string",
           "name": "TaskType",
           "required": false,
@@ -11550,6 +11604,7 @@
         {
           "default": "",
           "document": "任务内容",
+          "example": "com.tencent.task.example.SimpleTask",
           "member": "string",
           "name": "TaskContent",
           "required": false,
@@ -11558,6 +11613,7 @@
         {
           "default": "",
           "document": "任务执行类型",
+          "example": "Unicast",
           "member": "string",
           "name": "ExecuteType",
           "required": false,
@@ -11566,6 +11622,7 @@
         {
           "default": "",
           "document": "触发规则",
+          "example": "无",
           "member": "TaskRule",
           "name": "TaskRule",
           "required": false,
@@ -11574,6 +11631,7 @@
         {
           "default": "",
           "document": "超时时间，单位 ms",
+          "example": "60000",
           "member": "uint64",
           "name": "TimeOut",
           "required": false,
@@ -11582,6 +11640,7 @@
         {
           "default": "",
           "document": "分组ID",
+          "example": "group-1234545",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -11590,6 +11649,7 @@
         {
           "default": "",
           "document": "分片数量",
+          "example": "1",
           "member": "int64",
           "name": "ShardCount",
           "required": false,
@@ -11598,14 +11658,16 @@
         {
           "default": "",
           "document": "分片参数",
+          "example": "无",
           "member": "ShardArgument",
           "name": "ShardArguments",
           "required": false,
-          "type": "object"
+          "type": "list"
         },
         {
           "default": "",
           "document": "高级设置",
+          "example": "无",
           "member": "AdvanceSettings",
           "name": "AdvanceSettings",
           "required": false,
@@ -11614,6 +11676,7 @@
         {
           "default": "",
           "document": "判断任务成功的操作符 GT/GTE",
+          "example": "GTE",
           "member": "string",
           "name": "SuccessOperator",
           "required": false,
@@ -11622,6 +11685,7 @@
         {
           "default": "",
           "document": "判断任务成功率的阈值",
+          "example": "100",
           "member": "int64",
           "name": "SuccessRatio",
           "required": false,
@@ -11630,6 +11694,7 @@
         {
           "default": "",
           "document": "重试次数",
+          "example": "0",
           "member": "uint64",
           "name": "RetryCount",
           "required": false,
@@ -11638,6 +11703,7 @@
         {
           "default": "",
           "document": "重试间隔",
+          "example": "0",
           "member": "uint64",
           "name": "RetryInterval",
           "required": false,
@@ -11646,6 +11712,7 @@
         {
           "default": "",
           "document": "任务参数，长度限制10000个字符",
+          "example": "0",
           "member": "string",
           "name": "TaskArgument",
           "required": false,
@@ -11659,8 +11726,10 @@
       "members": [
         {
           "document": "更新是否成功",
+          "example": "true",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13543,7 +13612,8 @@
       "members": [
         {
           "default": "",
-          "document": "分片参数 KEY，整形",
+          "document": "分片参数 KEY，整形, 范围 [1,1000]",
+          "example": "1",
           "member": "uint64",
           "name": "ShardKey",
           "required": true,
@@ -13553,6 +13623,7 @@
         {
           "default": "",
           "document": "分片参数 VALUE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
           "member": "string",
           "name": "ShardValue",
           "required": true,
@@ -14274,6 +14345,192 @@
           "document": "批次历史ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "BatchLogId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskRecord": {
+      "document": "任务定义",
+      "members": [
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行类型",
+          "member": "string",
+          "name": "ExecuteType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务内容，长度限制65535字节",
+          "member": "string",
+          "name": "TaskContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超时时间",
+          "member": "int64",
+          "name": "TimeOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RetryCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重试间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RetryInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发规则",
+          "member": "TaskRule",
+          "name": "TaskRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用任务,ENABLED/DISABLED",
+          "member": "string",
+          "name": "TaskState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "判断任务成功的操作符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SuccessOperator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "判断任务成功的阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SuccessRatio",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分片数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ShardCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AdvanceSettings",
+          "name": "AdvanceSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分片参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ShardArgument",
+          "name": "ShardArguments",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BelongFlowIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务历史ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskLogId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TriggerType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务参数，长度限制10000个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskArgument",
           "required": true,
           "type": "string",
           "value_allowed_null": true

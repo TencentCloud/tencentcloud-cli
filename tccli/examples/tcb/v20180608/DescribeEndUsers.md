@@ -23,16 +23,11 @@ Output:
                 "QQOpenId": "",
                 "Phone": "",
                 "Email": "",
-                "IsGrant": false,
                 "NickName": "",
                 "Gender": "",
-                "Country": "",
-                "Province": "",
-                "City": "",
                 "AvatarUrl": "",
                 "UpdateTime": "",
                 "CreateTime": "2020-03-04 18:08:13",
-                "CustomUserId": "",
                 "IsAnonymous": true,
                 "IsDisabled": false
             }

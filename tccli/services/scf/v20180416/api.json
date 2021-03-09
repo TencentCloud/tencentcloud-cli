@@ -72,6 +72,12 @@
       "name": "删除触发器",
       "output": "DeleteTriggerResponse"
     },
+    "GetAccount": {
+      "document": "获取账户信息",
+      "input": "GetAccountRequest",
+      "name": "获取账户信息",
+      "output": "GetAccountResponse"
+    },
     "GetAlias": {
       "document": "获取别名的详细信息，包括名称、描述、版本、路由信息等。",
       "input": "GetAliasRequest",
@@ -1803,6 +1809,41 @@
       ],
       "usage": "both"
     },
+    "GetAccountRequest": {
+      "document": "GetAccount请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetAccountResponse": {
+      "document": "GetAccount返回参数结构体",
+      "members": [
+        {
+          "document": "命名空间已使用的信息",
+          "example": "无",
+          "member": "UsageInfo",
+          "name": "AccountUsage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命名空间限制的信息",
+          "example": "无",
+          "member": "LimitsInfo",
+          "name": "AccountLimit",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetAliasRequest": {
       "document": "GetAlias请求参数结构体",
       "members": [
@@ -2794,6 +2835,30 @@
       ],
       "usage": "both"
     },
+    "LimitsInfo": {
+      "document": "限制信息",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间个数限制",
+          "member": "int64",
+          "name": "NamespacesCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间限制信息",
+          "member": "NamespaceLimit",
+          "name": "Namespace",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ListAliasesRequest": {
       "document": "ListAliases请求参数结构体",
       "members": [
@@ -3558,6 +3623,135 @@
       ],
       "usage": "out"
     },
+    "NamespaceLimit": {
+      "document": "命名空间限制",
+      "members": [
+        {
+          "default": "",
+          "document": "函数总数",
+          "member": "int64",
+          "name": "FunctionsCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Trigger信息",
+          "member": "TriggerCount",
+          "name": "Trigger",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Namespace名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "并发量",
+          "member": "int64",
+          "name": "ConcurrentExecutions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Timeout限制",
+          "member": "int64",
+          "name": "TimeoutLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "测试事件限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TestModelLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "初始化超时限制",
+          "member": "int64",
+          "name": "InitTimeoutLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异步重试次数限制",
+          "member": "int64",
+          "name": "RetryNumLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异步重试消息保留时间下限",
+          "member": "int64",
+          "name": "MinMsgTTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异步重试消息保留时间上限",
+          "member": "int64",
+          "name": "MaxMsgTTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NamespaceUsage": {
+      "document": "名称空间已使用信息",
+      "members": [
+        {
+          "default": "",
+          "document": "函数数组",
+          "member": "string",
+          "name": "Functions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间函数个数",
+          "member": "int64",
+          "name": "FunctionsCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PublicNetConfigIn": {
       "document": "公网访问配置",
       "members": [
@@ -4228,6 +4422,111 @@
       ],
       "usage": "out"
     },
+    "TriggerCount": {
+      "document": "TriggerCount描述不同类型触发器的数量",
+      "members": [
+        {
+          "default": "",
+          "document": "Cos触发器数量",
+          "member": "int64",
+          "name": "Cos",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Timer触发器数量",
+          "member": "int64",
+          "name": "Timer",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cmq触发器数量",
+          "member": "int64",
+          "name": "Cmq",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器总数",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ckafka触发器数量",
+          "member": "int64",
+          "name": "Ckafka",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Apigw触发器数量",
+          "member": "int64",
+          "name": "Apigw",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cls触发器数量",
+          "member": "int64",
+          "name": "Cls",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Clb触发器数量",
+          "member": "int64",
+          "name": "Clb",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Mps触发器数量",
+          "member": "int64",
+          "name": "Mps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cm触发器数量",
+          "member": "int64",
+          "name": "Cm",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vod触发器数量",
+          "member": "int64",
+          "name": "Vod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TriggerInfo": {
       "document": "触发器信息",
       "members": [
@@ -4709,6 +5008,57 @@
         }
       ],
       "type": "object"
+    },
+    "UsageInfo": {
+      "document": "已使用的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间个数",
+          "member": "int64",
+          "name": "NamespacesCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间详情",
+          "member": "NamespaceUsage",
+          "name": "Namespace",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前地域用户并发内存配额上限",
+          "member": "int64",
+          "name": "TotalConcurrencyMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前地域用户已配置并发内存额度",
+          "member": "int64",
+          "name": "TotalAllocatedConcurrencyMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户实际配置的账号并发配额",
+          "member": "int64",
+          "name": "UserConcurrencyMemLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Variable": {
       "document": "变量参数",

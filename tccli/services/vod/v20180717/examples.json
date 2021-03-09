@@ -806,15 +806,15 @@
     ],
     "LiveRealTimeClip": [
       {
-        "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=LiveRealTimeClip\r\n&StreamId=record-stream\r\n&StartTime=2018-09-20T10:00:00Z\r\n&EndTime=2018-09-20T11:00:00Z\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Url\": \"http://video.com/playlist.m3u8\",\n        \"FileId\": \"\",\n        \"VodTaskId\": \"\",\n        \"MetaData\": null\n    }\n}",
+        "document": "对直播码为 record-stream 和域名为 example.com 的直播流发起即时剪辑，起始时间为 2018-09-20T10:00:00Z，结束时间为 2018-09-20T11:00:00Z，并且不固化。假设该直播流在 2018-09-20T10:30:00Z 到 2018-09-20T10:40:00Z 存在过断流的情况，持续时间为10分钟，那么输出参数 SegmentSet 将包含两个片段信息，可以得到剪辑后的视频实际时长为50分钟。",
+        "input": "https://vod.tencentcloudapi.com/?Action=LiveRealTimeClip\n&StreamId=record-stream\n&StartTime=2018-09-20T10:00:00Z\n&EndTime=2018-09-20T11:00:00Z\n&Host=example.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"http://example.com/playlist.m3u8\",\n        \"FileId\": \"\",\n        \"VodTaskId\": \"\",\n        \"MetaData\": null,\n        \"SegmentSet\": [\n            {\n                \"StartTime\": \"2018-09-20T10:00:00Z\",\n                \"EndTime\": \"2018-09-20T10:30:00Z\"\n            },\n            {\n                \"StartTime\": \"2018-09-20T10:40:00Z\",\n                \"EndTime\": \"2018-09-20T11:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"6ca31e3a-6b8e-xxxx-9256-fdc700064ef3\"\n    }\n}",
         "title": "即时剪辑不固化"
       },
       {
-        "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=LiveRealTimeClip\r\n&StreamId=record-stream\r\n&StartTime=2018-09-20T10:00:00Z\r\n&EndTime=2018-09-20T11:00:00Z\r\n&IsPersistence=1\r\n&Procedure=SomeProcedure\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Url\": \"http://video.com/playlist.m3u8\",\n        \"FileId\": \"\",\n        \"VodTaskId\": \"\",\n        \"MetaData\": null,\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "document": "对直播码为 record-stream 和域名为 example.com 的直播流发起即时剪辑，起始时间为 2018-09-20T12:00:00Z，结束时间为 2018-09-20T13:00:00Z，并且进行固化和发起任务流处理。",
+        "input": "https://vod.tencentcloudapi.com/?Action=LiveRealTimeClip\n&StreamId=record-stream\n&StartTime=2018-09-20T12:00:00Z\n&EndTime=2018-09-20T13:00:00Z\n&Host=example.com\n&IsPersistence=1\n&Procedure=SomeProcedure\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"http://example.com/playlist.m3u8\",\n        \"FileId\": \"5285890xxxxxx199336\",\n        \"VodTaskId\": \"125xxxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\",\n        \"MetaData\": null,\n        \"SegmentSet\": [\n            {\n                \"StartTime\": \"2018-09-20T12:00:00Z\",\n                \"EndTime\": \"2018-09-20T13:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"6ca31e3a-6b8e-xxxx-9256-fdc700064ef3\"\n    }\n}",
         "title": "即时剪辑并且固化"
       }
     ],

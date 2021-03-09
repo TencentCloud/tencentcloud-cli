@@ -175,6 +175,22 @@
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
         "title": "回溯消息"
       }
+    ],
+    "SendBatchMessages": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendBatchMessages\n&Topic=persistent://tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&StringToken=xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageId\": \"71:12:0:0\",\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "title": "成功发送多条消息"
+      }
+    ],
+    "SendMessages": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendMessages\n&Topic=persistent://tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&StringToken=xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageId\": \"71:11:0:0\",\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "title": "成功发送单条消息"
+      }
     ]
   },
   "version": "1.0"

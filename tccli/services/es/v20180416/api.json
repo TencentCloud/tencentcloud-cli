@@ -2149,6 +2149,14 @@
           "name": "ForceRestart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否重新安装",
+          "member": "bool",
+          "name": "ForceUpdate",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

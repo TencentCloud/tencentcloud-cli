@@ -147,8 +147,8 @@
     "CreateSecurityGroupPolicies": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=CreateSecurityGroupPolicies\r\n&SecurityGroupId=esg-ohuuioma\r\n&SecurityGroupPolicySet.Version=1\r\n&SecurityGroupPolicySet.Egress.0.PolicyIndex=1\r\n&SecurityGroupPolicySet.Egress.0.Protocol=TCP\r\n&SecurityGroupPolicySet.Egress.0.Port=80\r\n&SecurityGroupPolicySet.Egress.0.Action=accept\r\n&SecurityGroupPolicySet.Egress.0.CidrBlock=10.0.0.0/16\r\n&SecurityGroupPolicySet.Egress.0.PolicyDescription=TestPolicy\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://ecm.tencentcloudapi.com/?Action=CreateSecurityGroupPolicies\n&SecurityGroupId=esg-ohuuioma\n&SecurityGroupPolicySet.Version=1\n&SecurityGroupPolicySet.Egress.0.PolicyIndex=1\n&SecurityGroupPolicySet.Egress.0.Protocol=TCP\n&SecurityGroupPolicySet.Egress.0.Port=80\n&SecurityGroupPolicySet.Egress.0.Action=accept\n&SecurityGroupPolicySet.Egress.0.CidrBlock=10.0.0.0/16\n&SecurityGroupPolicySet.Egress.0.PolicyDescription=TestPolicy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53ee3ed3-c9ed-48ba-8a57-8624b9c0d3b8\"\n    }\n}",
         "title": "安全组添加出站规则"
       }
     ],

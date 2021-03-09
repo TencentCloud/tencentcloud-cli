@@ -42,7 +42,6 @@ Output:
                     "WorkDir": "xx",
                     "Name": "xx",
                     "Url": "xx",
-                    "Headers": "xx",
                     "Type": "xx",
                     "CodingPackageName": "xx"
                 },

@@ -1549,7 +1549,7 @@
         },
         {
           "default": "",
-          "document": "结束状态 0 未知 1 正常通话 2 未接通",
+          "document": "结束状态\n0\t错误\n1\t正常结束\n2\t未接通\n17\t坐席未接\n100\t黑名单\n101\t坐席转接\n102\tIVR 期间用户放弃\n103\t会话排队期间用户放弃\n104\t会话振铃期间用户放弃\n105\t无坐席在线\n106\t非工作时间\n107\tIVR后直接结束\n201\t未知状态\n202\t未接听\n203\t拒接挂断\n204\t关机\n205\t空号\n206\t通话中\n207\t欠费\n208\t运营商线路异常\n209\t主叫取消\n210\t不在服务区",
           "example": "1",
           "member": "int64",
           "name": "EndStatus",
@@ -1659,7 +1659,7 @@
         },
         {
           "default": "",
-          "document": "ok 正常结束 \nunconnected\t未接通\nseatGiveUp\t坐席未接\nseatForward\t坐席转接\nivrGiveUp\tIVR期间用户放弃\nwaitingGiveUp\t会话排队期间用户放弃\nringingGiveUp\t会话振铃期间用户放弃\nerror\t系统错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "error                   错误\nok                       正常结束\nunconnected      未接通\nseatGiveUp         坐席未接\nblackList             黑名单\nseatForward       坐席转接\nivrGiveUp           IVR 期间用户放弃\nwaitingGiveUp   会话排队期间用户放弃\nringingGiveUp   会话振铃期间用户放弃\nnoSeatOnline     无坐席在线\nnotWorkTime     非工作时间\nivrEnd                 IVR后直接结束\nunknown            未知状态\nnotAnswer          未接听\nuserReject          拒接挂断\npowerOff            关机\nnumberNotExist  空号\nbusy                    通话中\noutOfCredit        欠费\noperatorError     运营商线路异常\ncallerCancel        主叫取消\nnotInService       不在服务区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok",
           "member": "string",
           "name": "EndStatusString",
