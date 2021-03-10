@@ -115,6 +115,9 @@ tccli configure set cvm.endpoint cvm.ap-guangzhou.tencentcloudapi.com
 tccli cvm DescribeZones --endpoint cvm.ap-guangzhou.tencentcloudapi.com
 ```
 ## 返回结果过滤
+
+TCCLI 支持 [JMESPath](https://jmespath.org/examples.html) ，以下仅为部分示例，全部过滤能力请参考 JMESPath 官方文档。
+
 1. 不加任何过滤时的输出(以cvm DescribeZones接口的返回为例)。
 ```bash
 [root@VM_180_248_centos ~]# tccli cvm DescribeZones
@@ -197,7 +200,7 @@ tccli cvm DescribeZones --endpoint cvm.ap-guangzhou.tencentcloudapi.com
     }
 ]
 ```
-6. 高级过滤。CVM 的 DescribeInstances 接口，返回结构体中 InstanceSet 是一个数组，里面每个元素都是一个实例的信息。我们想要获取每个实例的唯一标识符 InstanceId，实例名称 InstanceName，并且过滤特定标签。标签是一个数组，里面每个元素是一个字典，键值 Key 是标签名，键值 Value 是标签值，我们想要获取标签名是`app`的标签值。最后结果打印文本。注意，过滤的标签值实际为数组，我们只取第一个，确保不会因为是数组而导致换行。此外，复杂的命令行语句编写困难，维护不便，建议使用 SDK 封装为程序调用更为合理。
+6. 高级过滤。CVM 的 DescribeInstances 接口，返回结构体中 InstanceSet 是一个数组，里面每个元素都是一个实例的信息。假设我们想要获取中国香港地域每个实例的唯一标识符 InstanceId，实例名称 InstanceName，并且过滤特定标签。标签是一个数组，里面每个元素是一个字典，键值 Key 是标签名，键值 Value 是标签值，我们想要获取标签名是`app`的标签值。最后结果打印文本。注意，过滤的标签值实际为数组，我们只取第一个，确保不会因为是数组而导致换行。此外，复杂的命令行语句编写困难，维护不便，建议使用 SDK 封装为程序调用更为合理。
 ```
 tccli cvm DescribeInstances --region ap-hongkong --filter 'InstanceSet[].[InstanceId,InstanceName,Tags[?Key==`app`].Value|[0]]' --output text
 ins-6xe51ktg    未命名  elastic-search
