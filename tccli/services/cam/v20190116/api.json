@@ -144,6 +144,12 @@
       "name": "查询安全设置",
       "output": "DescribeSafeAuthFlagCollResponse"
     },
+    "DescribeSubAccounts": {
+      "document": "通过子用户UIN列表查询子用户",
+      "input": "DescribeSubAccountsRequest",
+      "name": "通过子用户UIN列表查询子用户",
+      "output": "DescribeSubAccountsResponse"
+    },
     "DetachGroupPolicy": {
       "document": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。",
       "input": "DetachGroupPolicyRequest",
@@ -1640,6 +1646,42 @@
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubAccountsRequest": {
+      "document": "DescribeSubAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户UIN列表，最多支持50个UIN",
+          "example": "[12,23,34]",
+          "member": "uint64",
+          "name": "FilterSubAccountUin",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubAccountsResponse": {
+      "document": "DescribeSubAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "子用户列表",
+          "example": "[]",
+          "member": "SubAccountUser",
+          "name": "SubAccounts",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3837,6 +3879,72 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubAccountUser": {
+      "document": "子用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户用户 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户用户名",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户 UID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Uid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-02-01 08:00:00",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户类型(1:主账号;2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)",
+          "example": "1",
+          "member": "uint64",
+          "name": "UserType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

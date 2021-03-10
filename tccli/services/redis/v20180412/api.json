@@ -49,7 +49,7 @@
       "output": "DescribeBackupUrlResponse"
     },
     "DescribeCommonDBInstances": {
-      "document": "查询Redis实例列表信息",
+      "document": "查询Redis实例列表信息。该接口已废弃。",
       "input": "DescribeCommonDBInstancesRequest",
       "name": "查询Redis实例列表信息",
       "output": "DescribeCommonDBInstancesResponse"

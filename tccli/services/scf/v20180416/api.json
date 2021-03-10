@@ -2143,6 +2143,7 @@
         {
           "default": "",
           "document": "需要获取详情的函数名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -2151,6 +2152,7 @@
         {
           "default": "",
           "document": "函数的版本号",
+          "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
           "required": false,
@@ -2159,6 +2161,7 @@
         {
           "default": "",
           "document": "函数所属命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -2167,6 +2170,7 @@
         {
           "default": "",
           "document": "是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示",
+          "example": "TRUE",
           "member": "string",
           "name": "ShowCode",
           "required": false,
@@ -2180,281 +2184,361 @@
       "members": [
         {
           "document": "函数的最后修改时间",
+          "example": "2018-06-07 09:52:23",
           "member": "datetime",
           "name": "ModTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的代码",
+          "example": "无",
           "member": "string",
           "name": "CodeInfo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的描述信息",
+          "example": "这是一个云函数",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的触发器列表",
+          "example": "无",
           "member": "Trigger",
           "name": "Triggers",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "函数的入口",
+          "example": "scfredis.main_handler",
           "member": "string",
           "name": "Handler",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数代码大小",
+          "example": "0",
           "member": "int64",
           "name": "CodeSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数的超时时间",
+          "example": "3",
           "member": "int64",
           "name": "Timeout",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数的版本",
+          "example": "$LATEST",
           "member": "string",
           "name": "FunctionVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的最大可用内存",
+          "example": "128",
           "member": "int64",
           "name": "MemorySize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数的运行环境",
+          "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的名称",
+          "example": "ledDummyAPITest",
           "member": "string",
           "name": "FunctionName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的私有网络",
+          "example": "无",
           "member": "VpcConfig",
           "name": "VpcConfig",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "是否使用GPU",
+          "example": "FALSE",
           "member": "string",
           "name": "UseGpu",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的环境变量",
+          "example": "无",
           "member": "Environment",
           "name": "Environment",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "代码是否正确",
+          "example": "failed",
           "member": "string",
           "name": "CodeResult",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "代码错误信息",
+          "example": "无",
           "member": "string",
           "name": "CodeError",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "代码错误码",
+          "example": "0",
           "member": "int64",
           "name": "ErrNo",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数的命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数绑定的角色",
+          "example": "无",
           "member": "string",
           "name": "Role",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否自动安装依赖",
+          "example": "FALSE",
           "member": "string",
           "name": "InstallDependency",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)",
+          "example": "Active",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "状态描述",
+          "example": "无",
           "member": "string",
           "name": "StatusDesc",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "日志投递到的Cls日志集",
+          "example": "5354061a-dcaa-46be-8359-fe5gt56075c0",
           "member": "string",
           "name": "ClsLogsetId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "日志投递到的Cls Topic",
+          "example": "5354061a-dcaa-46be-jydw-fe51e56075c0",
           "member": "string",
           "name": "ClsTopicId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数ID",
+          "example": "lam-bcrxav2w",
           "member": "string",
           "name": "FunctionId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的标签列表",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "EipConfig配置",
+          "example": "无",
           "member": "EipOutConfig",
           "name": "EipConfig",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "域名信息",
+          "example": "无",
           "member": "AccessInfo",
           "name": "AccessInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "函数类型，取值为HTTP或者Event",
+          "example": "无",
           "member": "string",
           "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否启用L5",
+          "example": "无",
           "member": "string",
           "name": "L5Enable",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数关联的Layer版本信息",
+          "example": "无",
           "member": "LayerVersionInfo",
           "name": "Layers",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "函数关联的死信队列信息",
+          "example": "无",
           "member": "DeadLetterConfig",
           "name": "DeadLetterConfig",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "函数创建回见",
+          "example": "无",
           "member": "datetime",
           "name": "AddTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "公网访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PublicNetConfigOut",
           "name": "PublicNetConfig",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "是否启用Ons\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "OnsEnable",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "文件系统配置参数，用于云函数挂载文件系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CfsConfig",
           "name": "CfsConfig",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Available",
           "member": "string",
           "name": "AvailableStatus",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "函数版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "函数初始化超时时间",
+          "example": "无",
           "member": "int64",
           "name": "InitTimeout",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数状态失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "StatusReason",
           "name": "StatusReasons",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -32,6 +32,14 @@
         "title": "动态打包任务提交"
       }
     ],
+    "CreateScdnFailedLogTask": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=CreateScdnFailedLogTask\n&TaskId=835cac73-c7f5-4ef9-a52d-1a50bf11d2bd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Result\": \"Success\"\n    }\n}",
+        "title": "重新创建SCDN事件日志任务"
+      }
+    ],
     "CreateScdnLogTask": [
       {
         "document": "",
@@ -355,8 +363,8 @@
     "ListScdnLogTasks": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnLogTasks\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnLogTasks\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"TaskList\": []\n    }\n}",
         "title": "查询SCDN事件日志下载任务列表"
       }
     ],

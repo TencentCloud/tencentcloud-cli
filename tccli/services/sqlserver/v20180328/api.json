@@ -2026,6 +2026,7 @@
         {
           "default": "",
           "document": "数据库名",
+          "example": "DBName",
           "member": "string",
           "name": "DBName",
           "required": true,
@@ -2034,28 +2035,31 @@
         },
         {
           "default": "",
-          "document": "字符集。可选值包括：Chinese_PRC_CI_AS, Chinese_PRC_CS_AS, Chinese_PRC_BIN, Chinese_Taiwan_Stroke_CI_AS, SQL_Latin1_General_CP1_CI_AS, SQL_Latin1_General_CP1_CS_AS。不填默认为Chinese_PRC_CI_AS",
+          "document": "字符集。可通过接口DescribeDBCharsets查到支持的字符集，不填默认为Chinese_PRC_CI_AS。",
+          "example": "Chinese_PRC_CI_AS",
           "member": "string",
           "name": "Charset",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "数据库账号权限信息",
+          "example": "Accounts",
           "member": "AccountPrivilege",
           "name": "Accounts",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "备注",
+          "example": "Remark",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5691,6 +5695,7 @@
         {
           "default": "",
           "document": "备份导入任务ID 或 增量导入任务ID",
+          "example": "mssql-incremental-migration-kp7bgv8p",
           "member": "string",
           "name": "MigrationId",
           "required": true,
@@ -5700,6 +5705,7 @@
         {
           "default": "",
           "document": "备份导入名称，增量导入任务该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MigrationName",
           "member": "string",
           "name": "MigrationName",
           "required": true,
@@ -5709,6 +5715,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "251006279",
           "member": "uint64",
           "name": "AppId",
           "required": true,
@@ -5718,6 +5725,7 @@
         {
           "default": "",
           "document": "地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -5727,6 +5735,7 @@
         {
           "default": "",
           "document": "迁移目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5736,6 +5745,7 @@
         {
           "default": "",
           "document": "迁移任务恢复类型",
+          "example": "FULL_LOG",
           "member": "string",
           "name": "RecoveryType",
           "required": true,
@@ -5745,6 +5755,7 @@
         {
           "default": "",
           "document": "备份用户上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
+          "example": "COS_UPLOAD",
           "member": "string",
           "name": "UploadType",
           "required": true,
@@ -5754,6 +5765,7 @@
         {
           "default": "",
           "document": "备份文件列表，UploadType确定，COS_URL则保存URL，COS_UPLOAD则保存备份名称",
+          "example": "db_cvm_1_20200927204209_2log2_2noreconvery2.bak",
           "member": "string",
           "name": "BackupFiles",
           "required": true,
@@ -5762,7 +5774,8 @@
         },
         {
           "default": "",
-          "document": "迁移任务状态，",
+          "document": "迁移任务状态，2-创建完成，7-全量导入中，8-等待增量，9-导入成功，10-导入失败，12-增量导入中",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -5772,6 +5785,7 @@
         {
           "default": "",
           "document": "迁移任务创建时间",
+          "example": "2020-09-27 20:44:59",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -5781,6 +5795,7 @@
         {
           "default": "",
           "document": "迁移任务开始时间",
+          "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -5790,6 +5805,7 @@
         {
           "default": "",
           "document": "迁移任务结束时间",
+          "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -5799,6 +5815,7 @@
         {
           "default": "",
           "document": "说明信息",
+          "example": "Message",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -5808,6 +5825,7 @@
         {
           "default": "",
           "document": "迁移细节",
+          "example": "Detail",
           "member": "MigrationDetail",
           "name": "Detail",
           "required": true,
@@ -5817,6 +5835,7 @@
         {
           "default": "",
           "document": "当前状态允许的操作",
+          "example": "Action",
           "member": "MigrationAction",
           "name": "Action",
           "required": true,
@@ -5826,6 +5845,7 @@
         {
           "default": "",
           "document": "是否是最终恢复，全量导入任务该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NO",
           "member": "string",
           "name": "IsRecovery",
           "required": true,

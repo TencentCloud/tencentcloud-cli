@@ -1127,7 +1127,7 @@
         },
         {
           "default": "",
-          "document": "实例的维度信息，格式为\n{\"unInstanceId\":\"ins-00jvv9mo\"}。不同云产品的维度信息不同，详见\n[产品策略类型和命名空间](https://cloud.tencent.com/document/product/248/50397)",
+          "document": "实例的维度信息，格式为\n{\"unInstanceId\":\"ins-00jvv9mo\"}。不同云产品的维度信息不同，详见\n[指标维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)",
           "example": "{\"unInstanceId\":\"ins-00jvv9mo\"}",
           "member": "string",
           "name": "Dimensions",
@@ -2739,7 +2739,7 @@
         },
         {
           "default": "",
-          "document": "根据命名空间过滤",
+          "document": "根据命名空间过滤，不同策略类型的值详见\n[策略类型列表](https://cloud.tencent.com/document/product/248/50397)",
           "example": "[cvm]",
           "member": "string",
           "name": "Namespaces",
@@ -2748,7 +2748,7 @@
         },
         {
           "default": "",
-          "document": "告警对象列表",
+          "document": "告警对象列表，外层数组，对应多个实例\n内层数组，每个数组对应一个实例，里面的object对应的是这个实例的维度信息。格式为\n[\n\t[{\"name\":\"unInstanceId\",\"value\":\"ins-qr888845g\"}],\n\t[{\"name\":\"unInstanceId\",\"value\":\"ins-qr8d555g\"}]\n\t...\n]\n不同云产品参数示例详见\n[维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)",
           "example": "Region",
           "member": "string",
           "name": "Dimensions",
@@ -2757,7 +2757,7 @@
         },
         {
           "default": "",
-          "document": "根据接收人搜索",
+          "document": "根据接收人的uid搜索，需要调用访问管理的api查询。详见\n[拉取子用户](https://cloud.tencent.com/document/product/598/34587)",
           "example": "[9989]",
           "member": "int64",
           "name": "ReceiverUids",
@@ -2766,7 +2766,7 @@
         },
         {
           "default": "",
-          "document": "根据接收组搜索",
+          "document": "根据接收组的uid搜索，需要调用访问管理的api查询，详见\n[查询用户组列表](https://cloud.tencent.com/document/product/598/34589)",
           "example": "[1112]",
           "member": "int64",
           "name": "ReceiverGroups",
@@ -2784,7 +2784,7 @@
         },
         {
           "default": "",
-          "document": "排序字段",
+          "document": "排序字段，例如按照最后修改时间排序，Field: \"UpdateTime\"",
           "example": "PolicyId",
           "member": "string",
           "name": "Field",
@@ -2802,7 +2802,7 @@
         },
         {
           "default": "",
-          "document": "项目id数组",
+          "document": "策略所属项目的id数组，可在此页面查看\n[项目管理](https://console.cloud.tencent.com/project)",
           "example": "[1]",
           "member": "int64",
           "name": "ProjectIds",
@@ -2811,7 +2811,7 @@
         },
         {
           "default": "",
-          "document": "告警通知id列表",
+          "document": "通知模版的id列表，可查询通知模版列表获取。\n[查询通知模板列表](https://cloud.tencent.com/document/product/248/51280)",
           "example": "[1,2]",
           "member": "string",
           "name": "NoticeIds",
@@ -2829,7 +2829,7 @@
         },
         {
           "default": "",
-          "document": "启停，1：启用   0：停止",
+          "document": "告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]",
           "example": "1",
           "member": "int64",
           "name": "Enable",

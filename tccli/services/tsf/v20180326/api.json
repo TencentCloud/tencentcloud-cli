@@ -13579,7 +13579,8 @@
       "members": [
         {
           "default": "",
-          "document": "0:公网 1:集群内访问 2：NodePort\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "AccessType",
           "required": true,
@@ -13589,6 +13590,7 @@
         {
           "default": "",
           "document": "容器端口映射\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "ProtocolPort",
           "name": "ProtocolPorts",
           "required": true,
@@ -13598,6 +13600,7 @@
         {
           "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-d15zonly",
           "member": "string",
           "name": "SubnetId",
           "required": true,

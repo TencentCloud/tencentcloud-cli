@@ -24,6 +24,12 @@
       "name": "动态打包任务提交",
       "output": "CreateEdgePackTaskResponse"
     },
+    "CreateScdnFailedLogTask": {
+      "document": "CreateScdnFailedLogTask 用于重试创建失败的事件日志任务",
+      "input": "CreateScdnFailedLogTaskRequest",
+      "name": "重试创建事件日志任务",
+      "output": "CreateScdnFailedLogTaskResponse"
+    },
     "CreateScdnLogTask": {
       "document": "CreateScdnLogTask 用于创建事件日志任务",
       "input": "CreateScdnLogTaskRequest",
@@ -2737,12 +2743,58 @@
       ],
       "type": "object"
     },
+    "CreateScdnFailedLogTaskRequest": {
+      "document": "CreateScdnFailedLogTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "重试失败任务的taskID",
+          "example": "1111",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域：mainland或overseas",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScdnFailedLogTaskResponse": {
+      "document": "CreateScdnFailedLogTask返回参数结构体",
+      "members": [
+        {
+          "document": "创建结果, \n\"0\" -> 创建成功",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateScdnLogTaskRequest": {
       "document": "CreateScdnLogTask请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "防护类型\nMode 映射如下：\n  waf = \"Web攻击\"\n  cc = \"CC攻击\"\n  bot = \"Bot攻击\"",
+          "example": "waf",
           "member": "string",
           "name": "Mode",
           "required": true,
@@ -2751,6 +2803,7 @@
         {
           "default": "",
           "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间",
+          "example": "2018-09-04 10:40:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -2759,6 +2812,7 @@
         {
           "default": "",
           "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间",
+          "example": "2018-09-04 10:40:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -2767,6 +2821,7 @@
         {
           "default": "",
           "document": "指定域名查询, 不填默认查询全部域名",
+          "example": "www.cdn.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -2775,6 +2830,7 @@
         {
           "default": "",
           "document": "指定攻击类型, 不填默认查询全部攻击类型\nAttackType 映射如下:\n  other = '未知类型'\n  malicious_scan = \"恶意扫描\"\n  sql_inject = \"SQL注入攻击\"\n  xss = \"XSS攻击\"\n  cmd_inject = \"命令注入攻击\"\n  ldap_inject = \"LDAP注入攻击\"\n  ssi_inject = \"SSI注入攻击\"\n  xml_inject = \"XML注入攻击\"\n  web_service = \"WEB服务漏洞攻击\"\n  web_app = \"WEB应用漏洞攻击\"\n  path_traversal = \"路径跨越攻击\"\n  illegal_access_core_file = \"核心文件非法访问\"\n  trojan_horse = \"木马后门攻击\"\n  csrf = \"CSRF攻击\"\n  malicious_file_upload= '恶意文件上传'\n  js = \"JS主动探测\"\n  cookie = \"Cookie指纹\"",
+          "example": "xss",
           "member": "string",
           "name": "AttackType",
           "required": false,
@@ -2783,6 +2839,7 @@
         {
           "default": "",
           "document": "指定执行动作, 不填默认查询全部执行动作\nDefenceMode 映射如下：\n  observe = '观察模式'\n  intercept = '拦截模式'\n  captcha = \"验证码\"\n  redirect = \"重定向\"",
+          "example": "observe",
           "member": "string",
           "name": "DefenceMode",
           "required": false,
@@ -2791,6 +2848,7 @@
         {
           "default": "",
           "document": "不填为全部ip",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -2799,6 +2857,7 @@
         {
           "default": "",
           "document": "指定域名查询, 与 Domain 参数同时有值时使用 Domains 参数，不填默认查询全部域名，指定域名查询时最多支持同时选择 5 个域名查询",
+          "example": "[\"1.com\",\"2.com\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -2807,6 +2866,7 @@
         {
           "default": "",
           "document": "指定攻击类型查询, 与 AttackType 参数同时有值时使用 AttackTypes 参数，不填默认查询全部攻击类型",
+          "example": "[\"a\",\"b\"]",
           "member": "string",
           "name": "AttackTypes",
           "required": false,
@@ -2815,10 +2875,29 @@
         {
           "default": "",
           "document": "查询条件",
+          "example": "[{}]",
           "member": "ScdnEventLogConditions",
           "name": "Conditions",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "来源产品 cdn ecdn",
+          "example": "cdn",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域：mainland 或 overseas",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2828,8 +2907,10 @@
       "members": [
         {
           "document": "创建结果, \n\"0\" -> 创建成功",
+          "example": "123123123",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7014,7 +7095,26 @@
     },
     "ListScdnLogTasksRequest": {
       "document": "ListScdnLogTasks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "产品来源 cdn/ecdn",
+          "example": "cdn",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域：mainland 或 overseas 为空表示查询所有地域",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ListScdnLogTasksResponse": {
@@ -7022,15 +7122,19 @@
       "members": [
         {
           "document": "日志下载任务详情",
+          "example": "{}",
           "member": "ScdnLogTaskDetail",
           "name": "TaskList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "查询到的下载任务的总数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9301,6 +9405,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -9310,6 +9415,7 @@
         {
           "default": "",
           "document": "当前状态，取值online | offline | process",
+          "example": "online",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9319,6 +9425,7 @@
         {
           "default": "",
           "document": "Waf 状态默认为‘/’，取值 close | intercept | observe",
+          "example": "close",
           "member": "string",
           "name": "Waf",
           "required": true,
@@ -9328,6 +9435,7 @@
         {
           "default": "",
           "document": "Acl 状态默认为‘/’，取值 close | open",
+          "example": "close",
           "member": "string",
           "name": "Acl",
           "required": true,
@@ -9337,6 +9445,7 @@
         {
           "default": "",
           "document": "CC 状态默认为‘/’，取值 close | open",
+          "example": "close",
           "member": "string",
           "name": "CC",
           "required": true,
@@ -9346,6 +9455,7 @@
         {
           "default": "",
           "document": "Ddos 状态默认为‘/’，取值 close | open",
+          "example": "close",
           "member": "string",
           "name": "Ddos",
           "required": true,
@@ -9355,6 +9465,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "0",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -9364,6 +9475,7 @@
         {
           "default": "",
           "document": "Acl 规则数",
+          "example": "3",
           "member": "uint64",
           "name": "AclRuleNumbers",
           "required": true,
@@ -9373,11 +9485,22 @@
         {
           "default": "",
           "document": "Bot 状态默认为‘/’，取值 close | open",
+          "example": "close",
           "member": "string",
           "name": "Bot",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名加速区域，取值global | mainland |  overseas\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "global",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9388,6 +9511,7 @@
         {
           "default": "",
           "document": "状态码",
+          "example": "301",
           "member": "int64",
           "name": "RedirectCode",
           "required": true,
@@ -9397,6 +9521,7 @@
         {
           "default": "",
           "document": "重定向url",
+          "example": "http://test.com/",
           "member": "string",
           "name": "RedirectUrl",
           "required": true,
@@ -9445,6 +9570,7 @@
         {
           "default": "",
           "document": "scdn域名",
+          "example": "无",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -9454,6 +9580,7 @@
         {
           "default": "",
           "document": "防护类型",
+          "example": "无",
           "member": "string",
           "name": "Mode",
           "required": true,
@@ -9463,6 +9590,7 @@
         {
           "default": "",
           "document": "查询任务开始时间",
+          "example": "无",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -9472,6 +9600,7 @@
         {
           "default": "",
           "document": "查询任务结束时间",
+          "example": "无",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -9481,6 +9610,7 @@
         {
           "default": "",
           "document": "任务创建时间",
+          "example": "无",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -9490,6 +9620,7 @@
         {
           "default": "",
           "document": "日志包下载链接\n成功返回下载链接，其他情况返回'-'\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DownloadUrl",
           "required": true,
@@ -9499,6 +9630,7 @@
         {
           "default": "",
           "document": "任务状态\ncreated->任务已经创建\nprocessing->任务正在执行\ndone->任务执行成功\nfailed->任务执行失败\nno-log->没有日志产生",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9508,6 +9640,7 @@
         {
           "default": "",
           "document": "日志任务唯一id",
+          "example": "无",
           "member": "string",
           "name": "TaskID",
           "required": true,
@@ -9517,6 +9650,7 @@
         {
           "default": "",
           "document": "攻击类型, 可以为\"all\"\nAttackType映射如下:\n  other = '未知类型'\n  malicious_scan = \"恶意扫描\"\n  sql_inject = \"SQL注入攻击\"\n  xss = \"XSS攻击\"\n  cmd_inject = \"命令注入攻击\"\n  ldap_inject = \"LDAP注入攻击\"\n  ssi_inject = \"SSI注入攻击\"\n  xml_inject = \"XML注入攻击\"\n  web_service = \"WEB服务漏洞攻击\"\n  web_app = \"WEB应用漏洞攻击\"\n  path_traversal = \"路径跨越攻击\"\n  illegal_access_core_file = \"核心文件非法访问\"\n  file_upload = \"文件上传攻击\"\n  trojan_horse = \"木马后门攻击\"\n  csrf = \"CSRF攻击\"\n  custom_policy = \"自定义策略\"\n  ai_engine= 'AI引擎检出'\n  malicious_file_upload= '恶意文件上传'",
+          "example": "无",
           "member": "string",
           "name": "AttackType",
           "required": true,
@@ -9526,6 +9660,7 @@
         {
           "default": "",
           "document": "防御模式,可以为\"all\"\nDefenceMode映射如下：\n  observe = '观察模式'\n  intercept = '防御模式'",
+          "example": "无",
           "member": "string",
           "name": "DefenceMode",
           "required": true,
@@ -9535,10 +9670,21 @@
         {
           "default": "",
           "document": "查询条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ScdnEventLogConditions",
           "name": "Conditions",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "mainland或overseas\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9667,6 +9813,7 @@
         {
           "default": "",
           "document": "on|off",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -9676,6 +9823,7 @@
         {
           "default": "",
           "document": "intercept|observe，默认intercept\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "intercept",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -9685,6 +9833,7 @@
         {
           "default": "",
           "document": "重定向的错误页面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "见子类型",
           "member": "ScdnErrorPage",
           "name": "ErrorPage",
           "required": false,
@@ -9694,6 +9843,7 @@
         {
           "default": "",
           "document": "webshell拦截开关，on|off，默认off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "string",
           "name": "WebShellSwitch",
           "required": false,
@@ -9703,8 +9853,29 @@
         {
           "default": "",
           "document": "类型拦截规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "见子类型",
           "member": "ScdnWafRule",
           "name": "Rules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "waf规则等级，可取100|200|300\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Level",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "waf子规则开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "见子类型",
+          "member": "WafSubRuleStatus",
+          "name": "SubRuleSwitch",
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11406,6 +11577,32 @@
         }
       ],
       "usage": "out"
+    },
+    "WafSubRuleStatus": {
+      "document": "门神子规则开关状态",
+      "members": [
+        {
+          "default": "",
+          "document": "子规则状态，on|off",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则id列表",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "SubIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "WebpAdapter": {
       "document": "图片优化-WebpAdapter配置",

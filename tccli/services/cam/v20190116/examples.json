@@ -192,6 +192,14 @@
         "title": "查询安全设置"
       }
     ],
+    "DescribeSubAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubAccounts\n<公共请求参数>\n\n{\n    \"FilterSubAccountUin\": [\n        \"200000548558\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SubAccounts\": [\n            {\n                \"Remark\": \"xx\",\n                \"Uid\": 1,\n                \"Uin\": 1,\n                \"UserType\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Name\": \"xx\"\n            },\n            {\n                \"Remark\": \"xx\",\n                \"Name\": \"xx\",\n                \"Uin\": 1,\n                \"UserType\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Uid\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "通过子用户UIN列表查询子用户"
+      }
+    ],
     "DetachGroupPolicy": [
       {
         "document": "解除绑定到组ID为3449的策略524497",

@@ -73,7 +73,7 @@
     "DescribeCommonDBInstances": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeCommonDBInstances\n&PayMode=0\n&InstanceIds=[\"crs-nh47ubwr\"]\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeCommonDBInstances\n&PayMode=0\n&InstanceIds.0=crs-nh47ubwr\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceDetails\": [\n            {\n                \"AppId\": 251006366,\n                \"Createtime\": \"2020-05-06 19:38:19\",\n                \"InstanceId\": \"crs-nh47ubwr\",\n                \"InstanceName\": \"crs-nh47ubwr\",\n                \"NetType\": 1,\n                \"PayMode\": 1,\n                \"ProjectId\": 1075668,\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"1\",\n                \"SubnetId\": 1210162,\n                \"Vips\": [\n                    \"172.16.1.84\"\n                ],\n                \"VpcId\": \"79963\",\n                \"Vport\": 6379,\n                \"Zone\": \"\"\n            }\n        ],\n        \"RequestId\": \"e306be36-f01b-477a-bdfb-e63d9b16d0a5\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "请求示例"
       }
