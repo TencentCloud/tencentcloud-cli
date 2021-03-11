@@ -1331,6 +1331,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "PKRXJVL39S",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1344,8 +1345,10 @@
       "members": [
         {
           "document": "产品数据模板",
+          "example": "无",
           "member": "ProductModelDefinition",
           "name": "Model",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2980,6 +2983,15 @@
           "document": "产品所属分类的模型快照（产品创建时刻的）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CategoryModel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品的连接类型的模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NetTypeModel",
           "required": true,
           "type": "string",
           "value_allowed_null": true

@@ -8237,6 +8237,7 @@
         {
           "default": "",
           "document": "网络带宽上限",
+          "example": "无",
           "member": "int64",
           "name": "MaxBandwidth",
           "required": true,
@@ -8246,6 +8247,7 @@
         {
           "default": "",
           "document": "数据盘上限",
+          "example": "无",
           "member": "int64",
           "name": "MaxSystemDiskSize",
           "required": true,
@@ -8255,6 +8257,7 @@
         {
           "default": "",
           "document": "网络带宽下限",
+          "example": "无",
           "member": "int64",
           "name": "MinBandwidth",
           "required": true,
@@ -8264,6 +8267,7 @@
         {
           "default": "",
           "document": "数据盘下限",
+          "example": "无",
           "member": "int64",
           "name": "MinSystemDiskSize",
           "required": true,
@@ -8273,6 +8277,7 @@
         {
           "default": "",
           "document": "最大数据盘大小",
+          "example": "无",
           "member": "int64",
           "name": "MaxDataDiskSize",
           "required": true,
@@ -8282,6 +8287,7 @@
         {
           "default": "",
           "document": "最小数据盘大小",
+          "example": "无",
           "member": "int64",
           "name": "MinDataDiskSize",
           "required": true,
@@ -8291,6 +8297,7 @@
         {
           "default": "",
           "document": "建议带宽",
+          "example": "无",
           "member": "int64",
           "name": "SuggestBandwidth",
           "required": true,
@@ -8300,6 +8307,7 @@
         {
           "default": "",
           "document": "建议硬盘大小",
+          "example": "无",
           "member": "int64",
           "name": "SuggestDataDiskSize",
           "required": true,
@@ -8309,6 +8317,7 @@
         {
           "default": "",
           "document": "建议系统盘大小",
+          "example": "无",
           "member": "int64",
           "name": "SuggestSystemDiskSize",
           "required": true,
@@ -8318,6 +8327,7 @@
         {
           "default": "",
           "document": "Cpu核数峰值",
+          "example": "无",
           "member": "int64",
           "name": "MaxVcpu",
           "required": true,
@@ -8327,6 +8337,7 @@
         {
           "default": "",
           "document": "Cpu核最小值",
+          "example": "无",
           "member": "int64",
           "name": "MinVcpu",
           "required": true,
@@ -8336,6 +8347,7 @@
         {
           "default": "",
           "document": "单次请求最大cpu核数",
+          "example": "无",
           "member": "int64",
           "name": "MaxVcpuPerReq",
           "required": true,
@@ -8345,6 +8357,7 @@
         {
           "default": "",
           "document": "带宽步长",
+          "example": "无",
           "member": "int64",
           "name": "PerBandwidth",
           "required": true,
@@ -8354,6 +8367,7 @@
         {
           "default": "",
           "document": "数据盘步长",
+          "example": "无",
           "member": "int64",
           "name": "PerDataDisk",
           "required": true,
@@ -8363,6 +8377,7 @@
         {
           "default": "",
           "document": "总模块数量",
+          "example": "无",
           "member": "int64",
           "name": "MaxModuleNum",
           "required": true,
