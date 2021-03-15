@@ -262,6 +262,14 @@
         "title": "批量初始化云数据库实例"
       }
     ],
+    "KillSession": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=KillSession\n&InstanceId=tdsqlshard-2gk4nxyz\n&ShardId=shard-ljilb4st\n&SessionId.0=1111\n&SessionId.1=2222\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"TaskId\": 11\n    }\n}",
+        "title": "杀死指定会话"
+      }
+    ],
     "ModifyAccountDescription": [
       {
         "document": "",

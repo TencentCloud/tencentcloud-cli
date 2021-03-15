@@ -1,0 +1,75 @@
+{
+  "actions": {
+    "AddCustomRule": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=AddCustomRule\n&Name=test\n&SortId=100\n&Redirect=/\n&ExpireTime=\"\"\n&Strategies.0.Field=COOKIE\n&Strategies.0.CompareFunc=null\n&Strategies.0.Content=\"\"\n&Strategies.0.Arg=\"\"\n&Domain=www.test.com\n&ActionType=1\n&Edition=clb-waf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a16a333-76ac-42f5-8066-c0ea93cc8dc7\",\n        \"RuleId\": 7025,\n        \"Success\": {\n            \"Message\": \"Success\",\n            \"Code\": \"Success\"\n        }\n    }\n}",
+        "title": "增加自定义规则"
+      }
+    ],
+    "CreateAttackDownloadTask": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=CreateAttackDownloadTask\n&FromTime=2019-12-30 00:00:00\n&ToTime=2019-12-30 23:59:59\n&Domain=abc.qcloudwaf.com\n&Name=d0wnload\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Flow\": \"XXXX-XXXX-XXXX\",\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
+        "title": "创建攻击日志下载任务"
+      }
+    ],
+    "DeleteAttackDownloadRecord": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DeleteAttackDownloadRecord\n&Id=60001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
+        "title": "删除攻击日志下载任务记录"
+      }
+    ],
+    "DeleteDownloadRecord": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DeleteDownloadRecord\n&Flow=xxxxxx-xxxxxx-xxxxxx \n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
+        "title": "删除下载记录"
+      }
+    ],
+    "DeleteSession": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DeleteSession\n&Domain=test.com\n&Edition=clb-waf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"0746a563-2597-43ec-8aaf-d3267b093efa\"\n    }\n}",
+        "title": "Waf  会话定义 Delete接口"
+      }
+    ],
+    "DescribeCustomRules": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeCustomRules\n&Domain=www.test.com\n&Edition=clb-waf\n&Paging.Offset=0\n&Paging.Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"1\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "title": "获取自定义规则列表"
+      },
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeCustomRules\n&Domain=www.test.com\n&Edition=clb-waf\n&Paging.Offset=0\n&Paging.Limit=10\n&Search=\"1\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d54d3c1-f60b-4766-bf2e-cb29738ed13d\",\n        \"RuleList\": [],\n        \"TotalCount\": \"0\"\n    }\n}",
+        "title": "带过滤参数返回结果为0的场景"
+      }
+    ],
+    "DescribeUserClbWafRegions": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeUserClbWafRegions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"ap-guangzhou\",\n            \"ap-shanghai\"\n        ],\n        \"RequestId\": \"4c8827fc-839c-4ecc-8ac5-d39456d163b9\"\n    }\n}",
+        "title": "获取对客户已经开放的负载均衡型WAF的地域"
+      }
+    ],
+    "ModifyCustomRuleStatus": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=ModifyCustomRuleStatus\n&Domain=\"test.qlcoud.com\"\n&RuleId=12\n&Status=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c30f037-a684-4d5b-b0a8-0bc0acc668d1\",\n        \"Success\": {\n            \"Message\": \"Success\",\n            \"Code\": \"Success\"\n        }\n    }\n}",
+        "title": "切换自定义规则的开关"
+      }
+    ]
+  },
+  "version": "1.0"
+}

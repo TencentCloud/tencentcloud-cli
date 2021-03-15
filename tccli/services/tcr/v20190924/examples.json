@@ -430,6 +430,14 @@
         "title": "复制个人版仓库镜像tag"
       }
     ],
+    "ManageExternalEndpoint": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ManageExternalEndpoint\n&RegistryId=xxx\n&Operation=Create\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"XXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "管理实例公网访问"
+      }
+    ],
     "ManageImageLifecycleGlobalPersonal": [
       {
         "document": "",

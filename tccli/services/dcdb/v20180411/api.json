@@ -192,6 +192,12 @@
       "name": "初始化实例",
       "output": "InitDCDBInstancesResponse"
     },
+    "KillSession": {
+      "document": "本接口（KillSession）用于杀死指定会话。",
+      "input": "KillSessionRequest",
+      "name": "杀死指定会话",
+      "output": "KillSessionResponse"
+    },
     "ModifyAccountDescription": {
       "document": "本接口（ModifyAccountDescription）用于修改云数据库账号备注。\n注意：相同用户名，不同Host是不同的账号。",
       "input": "ModifyAccountDescriptionRequest",
@@ -3314,6 +3320,60 @@
           "member": "string",
           "name": "InstanceIds",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KillSessionRequest": {
+      "document": "KillSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsqlshard-2gk4nxyz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话ID列表",
+          "example": "[1111,2222]",
+          "member": "int64",
+          "name": "SessionId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分片ID",
+          "example": "shard-ljilb4st",
+          "member": "string",
+          "name": "ShardId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KillSessionResponse": {
+      "document": "KillSession返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "11",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
