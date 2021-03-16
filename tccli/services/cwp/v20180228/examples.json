@@ -480,6 +480,14 @@
         "title": "获取反弹Shell规则列表"
       }
     ],
+    "DescribeRiskDnsList": [
+      {
+        "document": "入侵检测-获取恶意请求列表",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeRiskDnsList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\"\n    }\n}",
+        "title": "获取恶意请求列表"
+      }
+    ],
     "DescribeScanMalwareSchedule": [
       {
         "document": "",
@@ -523,7 +531,7 @@
     "DescribeTags": [
       {
         "document": "获取所有主机标签",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeTags\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeTags\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 2,\n                \"Name\": \"标签名\",\n                \"Count\": 123\n            }\n        ],\n        \"RequestId\": \"b12a5e5a-9393-453f-a4d9-b42de0b2bcec\"\n    }\n}",
         "title": "获取所有主机标签"
       }
@@ -539,7 +547,7 @@
     "DescribeVulInfo": [
       {
         "document": "获取漏洞详情",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeVulInfo\r\n&VulId=1001\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVulInfo\n&VulId=1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"VulId\": 1001,\n        \"VulName\": \"漏洞名称\",\n        \"VulLevel\": \"HIGH\",\n        \"VulType\": \"WEB\",\n        \"Description\": \"漏洞描述信息\",\n        \"RepairPlan\": \"修复方案\",\n        \"CveId\": \"CVE-001\",\n        \"Reference\": \"http://www.qcloud.com\"\n    }\n}",
         "title": "获取漏洞详情"
       }
@@ -563,15 +571,15 @@
     "DescribeWeeklyReportBruteAttacks": [
       {
         "document": "获取专业周报密码破解数据。",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeWeeklyReportBruteAttacks\r\n&BeginDate=2018-10-08\r\n&Limit=10\r\n&Offset=0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TotalCount\": 100\n    }\n}",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeWeeklyReportBruteAttacks\n&BeginDate=2018-10-08\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"WeeklyReportBruteAttacks\": [\n            {\n                \"Username\": \"xx\",\n                \"SrcIp\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"AttackTime\": \"2020-09-22 00:00:00\",\n                \"Count\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取专业周报密码破解数据"
       }
     ],
     "DescribeWeeklyReportInfo": [
       {
         "document": "获取专业周报详情。",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeWeeklyReportInfo\r\n&BeginDate=2018-10-08\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeWeeklyReportInfo\n&BeginDate=2018-10-08\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"CompanyName\": \"组件名称\",\n        \"MachineNum\": 100,\n        \"OnlineMachineNum\": 80,\n        \"OfflineMachineNum\": 20,\n        \"ProVersionMachineNum\": 30,\n        \"MalwareNum\": 11,\n        \"NonlocalLoginNum\": 11,\n        \"BruteAttackSuccessNum\": 11,\n        \"VulNum\": 11,\n        \"DownloadUrl\": \"http://download-url.com/xxx.xlsx\",\n        \"Level\": \"LOW\",\n        \"BeginDate\": \"2018-10-08\",\n        \"EndDate\": \"2018-10-13\"\n    }\n}",
         "title": "获取专业周报详情"
       }
@@ -579,7 +587,7 @@
     "DescribeWeeklyReportMalwares": [
       {
         "document": "获取专业周报木马数据",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeWeeklyReportMalwares\r\n&BeginDate=2018-10-08\r\n&Limit=10\r\n&Offset=0\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeWeeklyReportMalwares\n&BeginDate=2018-10-08\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"WeeklyReportMalwares\": [\n            {\n                \"MachineIp\": \"10.10.10.12\",\n                \"FilePath\": \"/data/www/webshell.php\",\n                \"Md5\": \"a70e8beeddcf2d87c5df2d5524b4ca50\",\n                \"FindTime\": \"2018-10-11 12:12:22\",\n                \"Status\": \"UN_OPERATED\"\n            }\n        ],\n        \"TotalCount\": 100\n    }\n}",
         "title": "获取专业周报木马数据"
       }
@@ -587,7 +595,7 @@
     "DescribeWeeklyReportNonlocalLoginPlaces": [
       {
         "document": "获取专业周报异地登录数据",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeWeeklyReportNonlocalLoginPlaces\r\n&BeginDate=2018-10-08\r\n&Limit=10\r\n&Offset=0\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeWeeklyReportNonlocalLoginPlaces\n&BeginDate=2018-10-08\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"WeeklyReportNonlocalLoginPlaces\": [\n            {\n                \"MachineIp\": \"10.10.10.12\",\n                \"Username\": \"root\",\n                \"SrcIp\": \"139.12.12.12\",\n                \"Country\": 1,\n                \"Province\": 1,\n                \"City\": 1,\n                \"LoginTime\": \"2018-10-11 12:12:22\"\n            }\n        ],\n        \"TotalCount\": 100\n    }\n}",
         "title": "获取专业周报异地登录数据"
       }
@@ -595,7 +603,7 @@
     "DescribeWeeklyReportVuls": [
       {
         "document": "获取专业版周报漏洞数据",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeWeeklyReportVuls\r\n&BeginDate=2018-10-08\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeWeeklyReportVuls\n&BeginDate=2018-10-08\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"WeeklyReportVuls\": [\n            {\n                \"MachineIp\": \"10.10.10.12\",\n                \"VulName\": \"漏洞名称\",\n                \"Description\": \"漏洞描述\",\n                \"VulType\": \"WEB\",\n                \"VulStatus\": \"FIXED\",\n                \"LastScanTime\": \"2018-10-11 12:23:22\"\n            }\n        ],\n        \"TotalCount\": 100\n    }\n}",
         "title": "获取专业版周报漏洞数据"
       }
@@ -603,7 +611,7 @@
     "DescribeWeeklyReports": [
       {
         "document": "获取专业版周报列表",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=DescribeWeeklyReports\r\n&Limit=10\r\n&Offset=0\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeWeeklyReports\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"WeeklyReports\": [\n            {\n                \"BeginDate\": \"2018-10-08\",\n                \"EndDate\": \"2018-10-14\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
         "title": "获取专业版周报列表"
       }
@@ -611,7 +619,7 @@
     "EditBashRule": [
       {
         "document": "新增/修改高危命令规则",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=EditBashRule&Name=规则名&Level=1&Rule=.*\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=EditBashRule\n&Name=规则名\n&Level=1\n&Rule=.*\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "新增/修改高危命令规则"
       }
@@ -619,7 +627,7 @@
     "EditPrivilegeRule": [
       {
         "document": "新增/修改本地提权规则",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=EditPrivilegeRule&ProcessName=bash&HostIp=127.0.0.1&SMode=1\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=EditPrivilegeRule\n&Id=1\n&ProcessName=bash\n&Uuid=\"\"\n&Hostip=127.0.0.1\n&SMode=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "新增/修改本地提权规则"
       }
@@ -627,7 +635,7 @@
     "EditReverseShellRule": [
       {
         "document": "编辑反弹Shell规则",
-        "input": "https://yunjing.tencentcloudapi.com/?Action=EditReverseShellRule&ProcessName=bash&HostIp=127.0.0.1&ProcessName=bash\r\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=EditReverseShellRule\n&Uuid=\"xx\"\n&ProcessName=bash\n&IsGlobal=1\n&Id=1\n&DestIp=127.0.0.1\n&Hostip=127.0.0.1\n&DestPort=123\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "编辑反弹Shell规则"
       }
@@ -870,6 +878,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=UntrustMalwares\n&Ids.0=123\n&Ids.1=456\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "取消信任木马"
+      }
+    ],
+    "UpdateBaselineStrategy": [
+      {
+        "document": "根据基线策略id更新策略信息",
+        "input": "https://cwp.tencentcloudapi.com/?Action=UpdateBaselineStrategy\n&StrategyName=\"test\"\n&ScanCycle=1\n&ScanAt=\"00:00:00\"\n&CategoryIds.0=1\n&IsGlobal=1\n&MachineType=\"CVM\"\n&RegionCode=\"ab-bj\"\n&Quuids.0=\"123\"\n&StrategyId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-566234234\"\n    }\n}",
+        "title": "更新基线策略信息"
       }
     ]
   },

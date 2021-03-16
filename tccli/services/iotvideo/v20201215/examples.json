@@ -16,6 +16,14 @@
         "title": "创建批次"
       }
     ],
+    "CreateCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"3day5year\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "CreateCloudStorage"
+      }
+    ],
     "CreateForwardRule": [
       {
         "document": "",
@@ -78,6 +86,46 @@
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCategory\n<公共请求参数>\n\n{\n    \"Id\": 113\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CategoryName\": \"video\",\n            \"CategoryKey\": \"video\",\n            \"ListOrder\": 1,\n            \"IconUrl\": \"url\",\n            \"IconUrlGrid\": \"grid\",\n            \"ParentId\": 0,\n            \"ModelTemplate\": \"{}\",\n            \"Id\": 113\n        },\n        \"RequestId\": \"d8de3a44\"\n    }\n}",
         "title": "获取Category详情"
+      }
+    ],
+    "DescribeCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f889deee-70ec-4391-9b91-bb0f3f09b5a4\",\n        \"Status\": 1,\n        \"Type\": 1,\n        \"ExpireTime\": 1614670782,\n        \"ShiftDuration\": 86400\n    }\n}",
+        "title": "获取设备云存服务详情"
+      }
+    ],
+    "DescribeCloudStorageDate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageDate\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"p2p_32731213_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77d90d07-e48c-4cf0-bec5-afe5b137f80e\",\n        \"Data\": [\n            \"2021-01-14\"\n        ]\n    }\n}",
+        "title": "获取具有云存的日期"
+      }
+    ],
+    "DescribeCloudStorageEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageEvents\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"sp01_32820237_10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd3ad0f6-5b9f-47cd-83db-223356926772\",\n        \"Total\": 13,\n        \"Events\": [\n            {\n                \"StartTime\": 842084401,\n                \"EndTime\": 842084401,\n                \"Thumbnail\": \"\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 842084401,\n                \"EndTime\": 842084401,\n                \"Thumbnail\": \"\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 842084401,\n                \"EndTime\": 842084401,\n                \"Thumbnail\": \"\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            }\n        ],\n        \"Context\": \"DnF1ZXJ5VGhlbkZldGNoKAAAAAABxjxlFmlDUHBXME5XVE55eUdHMDUwZTV4WWcAAAAAAcaq9BZFeGQwTXM5X1RvNnFRMFNhRm1MNTlRAAAAAAHGqvYWRXhkME1zOV9UbzZxUTBTYUZtTDU5UQAAAAABxk0BFnN5Q1hWNUp0UjcyZkZma2licmF3SmcAAAAAAcaq9RZFeGQwTXM5X1RvNnFRMFNhRm1MNTlRAAAAAAHGhvUWTzl2c3FBNVdUWnFSWXh4d012MGlzdwAAAAABxjxmFmlDUHBXME5XVE55eUdHMDUwZTV4WWcAAAAAAcaG9xZPOXZzcUE1V1RacVJZeHh3TXYwaXN3AAAAAAHGVbkWTVBJSndzX0VReVNoU3JOb2pWUm40UQAAAAABxk0AFnN5Q1hWNUp0UjcyZkZma2licmF3SmcAAAAAAcaG-BZPOXZzcUE1V1RacVJZeHh3TXYwaXN3AAAAAAHGqvgWRXhkME1zOV9UbzZxUTBTYUZtTDU5UQAAAAABxkfDFjdNdGYtaTR5UTBPNmFFcHkyUmlUVHcAAAAAAcY88hZOVnkwbjNfNFRqV2YwSWk1LWczc2V3AAAAAAHGhvYWTzl2c3FBNVdUWnFSWXh4d012MGlzdwAAAAABxqr3FkV4ZDBNczlfVG82cVEwU2FGbUw1OVEAAAAAAcaG-RZPOXZzcUE1V1RacVJZeHh3TXYwaXN3AAAAAAHGR8IWN010Zi1pNHlRME82YUVweTJSaVRUdwAAAAABxquSFnJKTjhzbk5mUmZxMVVCcVhpVUNTZFEAAAAAAcY8ZxZpQ1BwVzBOV1ROeXlHRzA1MGU1eFlnAAAAAAHGehEWTTRRa1JkRDhUek9qem1CSmNFbHhUZwAAAAABxqr5FkV4ZDBNczlfVG82cVEwU2FGbUw1OVEAAAAAAcZNBBZzeUNYVjVKdFI3MmZGZmtpYnJhd0pnAAAAAAHGVboWTVBJSndzX0VReVNoU3JOb2pWUm40UQAAAAABxnoQFk00UWtSZEQ4VHpPanptQkpjRWx4VGcAAAAAAcarkxZySk44c25OZlJmcTFVQnFYaVVDU2RRAAAAAAHGTQIWc3lDWFY1SnRSNzJmRmZraWJyYXdKZwAAAAABxpZ4Fno4eVNTTDlLUVUyblVfMFFFcnhramcAAAAAAcY88xZOVnkwbjNfNFRqV2YwSWk1LWczc2V3AAAAAAHGTQMWc3lDWFY1SnRSNzJmRmZraWJyYXdKZwAAAAABxkfEFjdNdGYtaTR5UTBPNmFFcHkyUmlUVHcAAAAAAcarlBZySk44c25OZlJmcTFVQnFYaVVDU2RRAAAAAAHGqvoWRXhkME1zOV9UbzZxUTBTYUZtTDU5UQAAAAABxpZ6Fno4eVNTTDlLUVUyblVfMFFFcnhramcAAAAAAcZHxRY3TXRmLWk0eVEwTzZhRXB5MlJpVFR3AAAAAAHGVbsWTVBJSndzX0VReVNoU3JOb2pWUm40UQAAAAABxpZ5Fno4eVNTTDlLUVUyblVfMFFFcnhramcAAAAAAcY8aBZpQ1BwVzBOV1ROeXlHRzA1MGU1eFlnAAAAAAHGqvsWRXhkME1zOV9UbzZxUTBTYUZtTDU5UQAAAAABxpZ7Fno4eVNTTDlLUVUyblVfMFFFcnhramc=\",\n        \"Listover\": false\n    }\n}",
+        "title": "拉取云存事件列表"
+      }
+    ],
+    "DescribeCloudStorageThumbnail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageThumbnail\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"sp01_32820237_5\",\n    \"Thumbnail\": \"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c299d2c9-805f-41a5-853d-db32ba1a16b5\",\n        \"ThumbnailURL\": \"https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100008401725%2FAQTV2839QJ%2Fsp01_32820237_5%2Fevents%2F1614908216.jpg?q-sign-algorithm=sha1&q-ak=AKIDAbqpXyZb6KJ6dtvwkRwAqLbfNvIZlYJp&q-sign-time=1614909378%3B1614912978&q-key-time=1614909378%3B1614912978&q-header-list=host&q-url-param-list=&q-signature=59cfa8d69bb77980ba757cb111de62fc6c4880f5\"\n    }\n}",
+        "title": "拉取云存事件缩略图"
+      }
+    ],
+    "DescribeCloudStorageTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageTime\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"p2p_32731213_1\",\n    \"Date\": \"2021-01-14\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac74ecca-b866-4ab1-87e0-18b92816fb20\",\n        \"Data\": {\n            \"VideoURL\": \"47b9d579-9088-4cc2-a16e-2b8cf245319b\",\n            \"TimeList\": [\n                {\n                    \"StartTime\": 1610607600,\n                    \"EndTime\": 1610608200\n                },\n                {\n                    \"StartTime\": 1610607600,\n                    \"EndTime\": 1610608200\n                },\n                {\n                    \"StartTime\": 1610607600,\n                    \"EndTime\": 1610608200\n                },\n                {\n                    \"StartTime\": 1610607600,\n                    \"EndTime\": 1610608200\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取某一天云存时间轴"
       }
     ],
     "DescribeDevice": [

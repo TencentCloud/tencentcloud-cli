@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcaplusdb ModifyClusterName --cli-unfold-argument  \
-    --ClusterId 5674209986 \
-    --ClusterName gz测试PROTO
+    --ClusterName gz测试PROTO \
+    --ClusterId 5674209986
 ```
 
 Output: 

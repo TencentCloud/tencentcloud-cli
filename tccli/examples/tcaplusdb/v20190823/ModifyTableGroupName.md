@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcaplusdb ModifyTableGroupName --cli-unfold-argument  \
-    --ClusterId 6179109757 \
     --TableGroupId 1 \
+    --ClusterId 6179109757 \
     --TableGroupName tdr测试区1
 ```
 

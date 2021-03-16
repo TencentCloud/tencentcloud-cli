@@ -360,6 +360,12 @@
       "name": "获取反弹Shell规则列表",
       "output": "DescribeReverseShellRulesResponse"
     },
+    "DescribeRiskDnsList": {
+      "document": "入侵检测，获取恶意请求列表",
+      "input": "DescribeRiskDnsListRequest",
+      "name": "获取恶意请求列表",
+      "output": "DescribeRiskDnsListResponse"
+    },
     "DescribeScanMalwareSchedule": {
       "document": "查询木马扫描进度",
       "input": "DescribeScanMalwareScheduleRequest",
@@ -653,6 +659,12 @@
       "input": "UntrustMalwaresRequest",
       "name": "取消信任木马",
       "output": "UntrustMalwaresResponse"
+    },
+    "UpdateBaselineStrategy": {
+      "document": "根据基线策略id更新策略信息",
+      "input": "UpdateBaselineStrategyRequest",
+      "name": "更新基线策略信息",
+      "output": "UpdateBaselineStrategyResponse"
     }
   },
   "metadata": {
@@ -4849,6 +4861,69 @@
       ],
       "type": "object"
     },
+    "DescribeRiskDnsListRequest": {
+      "document": "DescribeRiskDnsList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Url - String - 是否必填：否 - Url筛选</li>\n<li>Status - String - 是否必填：否 - 状态筛选0:待处理；2:信任；3:不信任</li>\n<li>MergeBeginTime - String - 是否必填：否 - 最近访问开始时间</li>\n<li>MergeEndTime - String - 是否必填：否 - 最近访问结束时间</li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "AccessCount",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskDnsListResponse": {
+      "document": "DescribeRiskDnsList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScanMalwareScheduleRequest": {
       "document": "DescribeScanMalwareSchedule请求参数结构体",
       "members": [],
@@ -5217,6 +5292,7 @@
         {
           "default": "",
           "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
+          "example": "CVM",
           "member": "string",
           "name": "MachineType",
           "required": false,
@@ -5225,10 +5301,20 @@
         {
           "default": "",
           "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字(机器名称/机器IP </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装 | SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5238,8 +5324,10 @@
       "members": [
         {
           "document": "列表信息",
+          "example": "[]",
           "member": "Tag",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5291,6 +5379,7 @@
         {
           "default": "",
           "document": "漏洞种类ID。",
+          "example": "1",
           "member": "uint64",
           "name": "VulId",
           "required": true,
@@ -5304,57 +5393,73 @@
       "members": [
         {
           "document": "漏洞种类ID。",
+          "example": "1",
           "member": "uint64",
           "name": "VulId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "漏洞名称。",
+          "example": "Redis",
           "member": "string",
           "name": "VulName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "漏洞等级。",
+          "example": "1",
           "member": "string",
           "name": "VulLevel",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "漏洞类型。",
+          "example": "1",
           "member": "string",
           "name": "VulType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "漏洞描述。",
+          "example": "描述",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "修复方案。",
+          "example": "修复方案",
           "member": "string",
           "name": "RepairPlan",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "漏洞CVE。",
+          "example": "CVE",
           "member": "string",
           "name": "CveId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "参考链接。",
+          "example": "url",
           "member": "string",
           "name": "Reference",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5494,6 +5599,7 @@
         {
           "default": "",
           "document": "专业周报开始时间。",
+          "example": "2018-01-01",
           "member": "date",
           "name": "BeginDate",
           "required": true,
@@ -5502,6 +5608,7 @@
         {
           "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5510,6 +5617,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5523,15 +5631,19 @@
       "members": [
         {
           "document": "专业周报密码破解数组。",
+          "example": "[]",
           "member": "WeeklyReportBruteAttack",
           "name": "WeeklyReportBruteAttacks",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "记录总数。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5550,6 +5662,7 @@
         {
           "default": "",
           "document": "专业周报开始时间。",
+          "example": "2018-01-01",
           "member": "date",
           "name": "BeginDate",
           "required": true,
@@ -5563,92 +5676,118 @@
       "members": [
         {
           "document": "账号所属公司或个人名称。",
+          "example": "Tencent",
           "member": "string",
           "name": "CompanyName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "机器总数。",
+          "example": "1",
           "member": "uint64",
           "name": "MachineNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "云镜客户端在线数。",
+          "example": "1",
           "member": "uint64",
           "name": "OnlineMachineNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "云镜客户端离线数。",
+          "example": "0",
           "member": "uint64",
           "name": "OfflineMachineNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "开通云镜专业版数量。",
+          "example": "0",
           "member": "uint64",
           "name": "ProVersionMachineNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "周报开始时间。",
+          "example": "2018-01-01",
           "member": "date",
           "name": "BeginDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "周报结束时间。",
+          "example": "2018-01-07",
           "member": "date",
           "name": "EndDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "安全等级。\n<li>HIGH：高</li>\n<li>MIDDLE：中</li>\n<li>LOW：低</li>",
+          "example": "HIGH",
           "member": "string",
           "name": "Level",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "木马记录数。",
+          "example": "0",
           "member": "uint64",
           "name": "MalwareNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "异地登录数。",
+          "example": "0",
           "member": "uint64",
           "name": "NonlocalLoginNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "密码破解成功数。",
+          "example": "0",
           "member": "uint64",
           "name": "BruteAttackSuccessNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "漏洞数。",
+          "example": "0",
           "member": "uint64",
           "name": "VulNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "导出文件下载地址。",
+          "example": "url",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5667,22 +5806,25 @@
         {
           "default": "",
           "document": "专业周报开始时间。",
+          "example": "2018-01-01",
           "member": "date",
           "name": "BeginDate",
           "required": true,
           "type": "string"
         },
         {
-          "default": "10",
+          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5696,15 +5838,19 @@
       "members": [
         {
           "document": "专业周报木马数据。",
+          "example": "[]",
           "member": "WeeklyReportMalware",
           "name": "WeeklyReportMalwares",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "记录总数。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5723,6 +5869,7 @@
         {
           "default": "",
           "document": "专业周报开始时间。",
+          "example": "2018-01-01",
           "member": "date",
           "name": "BeginDate",
           "required": true,
@@ -5731,6 +5878,7 @@
         {
           "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5739,6 +5887,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5752,15 +5901,19 @@
       "members": [
         {
           "document": "专业周报异地登录数据。",
+          "example": "[]",
           "member": "WeeklyReportNonlocalLoginPlace",
           "name": "WeeklyReportNonlocalLoginPlaces",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "记录总数。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5779,22 +5932,25 @@
         {
           "default": "",
           "document": "专业版周报开始时间。",
+          "example": "2018-01-01",
           "member": "date",
           "name": "BeginDate",
           "required": true,
           "type": "string"
         },
         {
-          "default": "10",
+          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5808,15 +5964,19 @@
       "members": [
         {
           "document": "专业周报漏洞数据数组。",
+          "example": "[]",
           "member": "WeeklyReportVul",
           "name": "WeeklyReportVuls",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "记录总数。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5833,16 +5993,18 @@
       "document": "DescribeWeeklyReports请求参数结构体",
       "members": [
         {
-          "default": "10",
+          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5856,15 +6018,19 @@
       "members": [
         {
           "document": "专业周报列表数组。",
+          "example": "[]",
           "member": "WeeklyReport",
           "name": "WeeklyReports",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "记录总数。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5883,6 +6049,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "Rule",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5891,6 +6058,7 @@
         {
           "default": "",
           "document": "危险等级(1: 高危 2:中危 3: 低危)",
+          "example": "1",
           "member": "uint64",
           "name": "Level",
           "required": true,
@@ -5899,6 +6067,7 @@
         {
           "default": "",
           "document": "正则表达式",
+          "example": "*",
           "member": "string",
           "name": "Rule",
           "required": true,
@@ -5907,6 +6076,7 @@
         {
           "default": "",
           "document": "规则ID(新增时不填)",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -5914,7 +6084,8 @@
         },
         {
           "default": "",
-          "document": "客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)",
+          "document": "客户端ID(IsGlobal为0时，Uuid或Hostip必填一个)",
+          "example": "uuid",
           "member": "string",
           "name": "Uuid",
           "required": false,
@@ -5922,7 +6093,8 @@
         },
         {
           "default": "",
-          "document": "主机IP(IsGlobal为1时，Uuid或Hostip必填一个)",
+          "document": "主机IP(IsGlobal为0时，Uuid或Hostip必填一个)",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Hostip",
           "required": false,
@@ -5931,6 +6103,7 @@
         {
           "default": "",
           "document": "是否全局规则(默认否)",
+          "example": "0",
           "member": "uint64",
           "name": "IsGlobal",
           "required": false,
@@ -5957,6 +6130,7 @@
         {
           "default": "",
           "document": "规则ID(新增时请留空)",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -5965,6 +6139,7 @@
         {
           "default": "",
           "document": "客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)",
+          "example": "uuid",
           "member": "string",
           "name": "Uuid",
           "required": false,
@@ -5973,6 +6148,7 @@
         {
           "default": "",
           "document": "主机IP(IsGlobal为1时，Uuid或Hostip必填一个)",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Hostip",
           "required": false,
@@ -5981,6 +6157,7 @@
         {
           "default": "",
           "document": "进程名",
+          "example": "Nginx",
           "member": "string",
           "name": "ProcessName",
           "required": false,
@@ -5989,6 +6166,7 @@
         {
           "default": "",
           "document": "是否S权限进程",
+          "example": "1",
           "member": "uint64",
           "name": "SMode",
           "required": false,
@@ -5997,6 +6175,7 @@
         {
           "default": "",
           "document": "是否全局规则(默认否)",
+          "example": "0",
           "member": "uint64",
           "name": "IsGlobal",
           "required": false,
@@ -6023,6 +6202,7 @@
         {
           "default": "",
           "document": "规则ID(新增时请留空)",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -6031,6 +6211,7 @@
         {
           "default": "",
           "document": "客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)",
+          "example": "uuid",
           "member": "string",
           "name": "Uuid",
           "required": false,
@@ -6039,6 +6220,7 @@
         {
           "default": "",
           "document": "主机IP(IsGlobal为1时，Uuid或Hostip必填一个)",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Hostip",
           "required": false,
@@ -6047,6 +6229,7 @@
         {
           "default": "",
           "document": "目标IP",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "DestIp",
           "required": false,
@@ -6055,6 +6238,7 @@
         {
           "default": "",
           "document": "目标端口",
+          "example": "80",
           "member": "string",
           "name": "DestPort",
           "required": false,
@@ -6063,6 +6247,7 @@
         {
           "default": "",
           "document": "进程名",
+          "example": "Nginx",
           "member": "string",
           "name": "ProcessName",
           "required": false,
@@ -6071,6 +6256,7 @@
         {
           "default": "",
           "document": "是否全局规则(默认否)",
+          "example": "0",
           "member": "uint64",
           "name": "IsGlobal",
           "required": false,
@@ -9480,6 +9666,105 @@
     },
     "UntrustMalwaresResponse": {
       "document": "UntrustMalwares返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBaselineStrategyRequest": {
+      "document": "UpdateBaselineStrategy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略id",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "检测周期",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScanCycle",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定期检测时间，该时间下发扫描",
+          "example": "xxx",
+          "member": "string",
+          "name": "ScanAt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该策略下选择的基线id数组",
+          "example": "[]",
+          "member": "string",
+          "name": "CategoryIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsGlobal",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云主机类型：cvm：虚拟主机，bms：裸金属，ecm：边缘计算主机",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机地域",
+          "example": "xxx",
+          "member": "string",
+          "name": "RegionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机id数组",
+          "example": "[]",
+          "member": "string",
+          "name": "Quuids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBaselineStrategyResponse": {
+      "document": "UpdateBaselineStrategy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

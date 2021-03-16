@@ -96,6 +96,12 @@
       "name": "获取函数代码下载地址",
       "output": "GetFunctionAddressResponse"
     },
+    "GetFunctionEventInvokeConfig": {
+      "document": "获取函数异步重试配置，包括重试次数和消息保留时间",
+      "input": "GetFunctionEventInvokeConfigRequest",
+      "name": "获取函数异步重试配置",
+      "output": "GetFunctionEventInvokeConfigResponse"
+    },
     "GetFunctionLogs": {
       "document": "该接口根据指定的日志查询条件返回函数运行日志。",
       "input": "GetFunctionLogsRequest",
@@ -227,6 +233,12 @@
       "input": "UpdateFunctionConfigurationRequest",
       "name": "更新函数配置",
       "output": "UpdateFunctionConfigurationResponse"
+    },
+    "UpdateFunctionEventInvokeConfig": {
+      "document": "更新函数的异步重试配置，包括重试次数和消息保留时间",
+      "input": "UpdateFunctionEventInvokeConfigRequest",
+      "name": "更新函数异步重试配置",
+      "output": "UpdateFunctionEventInvokeConfigResponse"
     },
     "UpdateNamespace": {
       "document": "更新命名空间",
@@ -385,6 +397,30 @@
         }
       ],
       "usage": "out"
+    },
+    "AsyncTriggerConfig": {
+      "document": "函数的异步重试配置详情",
+      "members": [
+        {
+          "default": "",
+          "document": "用户错误的异步重试重试配置",
+          "member": "RetryConfig",
+          "name": "RetryConfig",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息保留时间",
+          "member": "int64",
+          "name": "MsgTTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CfsConfig": {
       "document": "文件系统(cfs)配置描述",
@@ -1973,6 +2009,60 @@
           "member": "string",
           "name": "CodeSha256",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionEventInvokeConfigRequest": {
+      "document": "GetFunctionEventInvokeConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "example": "Unzip-1609933864",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间，默认为default",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数版本，默认为$LATEST",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionEventInvokeConfigResponse": {
+      "document": "GetFunctionEventInvokeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "异步重试配置信息",
+          "example": "无",
+          "member": "AsyncTriggerConfig",
+          "name": "AsyncTriggerConfig",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -4251,6 +4341,21 @@
       ],
       "usage": "out"
     },
+    "RetryConfig": {
+      "document": "异步重试配置",
+      "members": [
+        {
+          "default": "",
+          "document": "重试次数",
+          "member": "int64",
+          "name": "RetryNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RoutingConfig": {
       "document": "别名的版本路由配置",
       "members": [
@@ -5049,6 +5154,51 @@
     },
     "UpdateFunctionConfigurationResponse": {
       "document": "UpdateFunctionConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionEventInvokeConfigRequest": {
+      "document": "UpdateFunctionEventInvokeConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "异步重试配置信息",
+          "example": "无",
+          "member": "AsyncTriggerConfig",
+          "name": "AsyncTriggerConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数名称",
+          "example": "FunctionName",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间，默认为default",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionEventInvokeConfigResponse": {
+      "document": "UpdateFunctionEventInvokeConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

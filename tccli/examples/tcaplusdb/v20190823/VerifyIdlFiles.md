@@ -6,13 +6,20 @@ Input:
 
 ```
 tccli tcaplusdb VerifyIdlFiles --cli-unfold-argument  \
-    --ClusterId 5674209986 \
-    --TableGroupId 101 \
-    --ExistingIdlFiles.0.FileName tb_example \
-    --ExistingIdlFiles.0.FileSize 261 \
     --ExistingIdlFiles.0.FileExtType proto \
-    --ExistingIdlFiles.0.FileId 551 \
-    --ExistingIdlFiles.0.FileType PROTO
+    --ExistingIdlFiles.0.FileType PROTO \
+    --ExistingIdlFiles.0.FileName tb_example \
+    --ExistingIdlFiles.0.FileSize 0 \
+    --ExistingIdlFiles.0.FileContent xx \
+    --ExistingIdlFiles.0.FileId 0 \
+    --TableGroupId 101 \
+    --NewIdlFiles.0.FileExtType xx \
+    --NewIdlFiles.0.FileType xx \
+    --NewIdlFiles.0.FileName xx \
+    --NewIdlFiles.0.FileSize 0 \
+    --NewIdlFiles.0.FileContent xx \
+    --NewIdlFiles.0.FileId 0 \
+    --ClusterId 5674209986
 ```
 
 Output: 

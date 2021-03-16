@@ -6,7 +6,11 @@ Input:
 
 ```
 tccli tcaplusdb DescribeIdlFileInfos --cli-unfold-argument  \
-    --ClusterId 5674209986
+    --TableGroupIds xx \
+    --ClusterId 5674209986 \
+    --Limit 0 \
+    --IdlFileIds xx \
+    --Offset 0
 ```
 
 Output: 
@@ -133,8 +137,11 @@ Input:
 
 ```
 tccli tcaplusdb DescribeIdlFileInfos --cli-unfold-argument  \
+    --TableGroupIds xx \
     --ClusterId 5674209986 \
-    --IdlFileIds 564
+    --Limit 0 \
+    --IdlFileIds 564 \
+    --Offset 0
 ```
 
 Output: 

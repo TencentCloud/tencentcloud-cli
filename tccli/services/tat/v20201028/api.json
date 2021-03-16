@@ -718,6 +718,7 @@
         {
           "default": "",
           "document": "执行活动ID。",
+          "example": "无",
           "member": "string",
           "name": "InvocationId",
           "required": true,
@@ -727,6 +728,7 @@
         {
           "default": "",
           "document": "命令ID。",
+          "example": "无",
           "member": "string",
           "name": "CommandId",
           "required": true,
@@ -735,7 +737,8 @@
         },
         {
           "default": "",
-          "document": "执行活动状态。",
+          "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令失败\n<li> TIMEOUT：命令超时\n<li> PARTIAL_FAILED：命令部分失败",
+          "example": "无",
           "member": "string",
           "name": "InvocationStatus",
           "required": true,
@@ -745,6 +748,7 @@
         {
           "default": "",
           "document": "执行任务信息列表。",
+          "example": "无",
           "member": "InvocationTaskBasicInfo",
           "name": "InvocationTaskBasicInfoSet",
           "required": true,
@@ -754,6 +758,7 @@
         {
           "default": "",
           "document": "执行活动描述。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -763,6 +768,7 @@
         {
           "default": "",
           "document": "执行活动开始时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -772,6 +778,7 @@
         {
           "default": "",
           "document": "执行活动结束时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -781,6 +788,7 @@
         {
           "default": "",
           "document": "执行活动创建时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -790,6 +798,7 @@
         {
           "default": "",
           "document": "执行活动更新时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "required": true,

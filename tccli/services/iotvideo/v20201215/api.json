@@ -12,6 +12,12 @@
       "name": "创建批次",
       "output": "CreateBatchResponse"
     },
+    "CreateCloudStorage": {
+      "document": "开通云存服务",
+      "input": "CreateCloudStorageRequest",
+      "name": "开通云存服务",
+      "output": "CreateCloudStorageResponse"
+    },
     "CreateForwardRule": {
       "document": "创建转发规则",
       "input": "CreateForwardRuleRequest",
@@ -59,6 +65,36 @@
       "input": "DescribeCategoryRequest",
       "name": "获取Category详情",
       "output": "DescribeCategoryResponse"
+    },
+    "DescribeCloudStorage": {
+      "document": "获取设备云存服务详情",
+      "input": "DescribeCloudStorageRequest",
+      "name": "获取设备云存服务详情",
+      "output": "DescribeCloudStorageResponse"
+    },
+    "DescribeCloudStorageDate": {
+      "document": "获取具有云存的日期",
+      "input": "DescribeCloudStorageDateRequest",
+      "name": "获取具有云存的日期",
+      "output": "DescribeCloudStorageDateResponse"
+    },
+    "DescribeCloudStorageEvents": {
+      "document": "拉取云存事件列表",
+      "input": "DescribeCloudStorageEventsRequest",
+      "name": "拉取云存事件列表",
+      "output": "DescribeCloudStorageEventsResponse"
+    },
+    "DescribeCloudStorageThumbnail": {
+      "document": "拉取云存事件缩略图",
+      "input": "DescribeCloudStorageThumbnailRequest",
+      "name": "拉取云存事件缩略图",
+      "output": "DescribeCloudStorageThumbnailResponse"
+    },
+    "DescribeCloudStorageTime": {
+      "document": "获取某一天云存时间轴",
+      "input": "DescribeCloudStorageTimeRequest",
+      "name": "获取某一天云存时间轴",
+      "output": "DescribeCloudStorageTimeResponse"
     },
     "DescribeDevice": {
       "document": "查看设备详情",
@@ -347,6 +383,100 @@
       ],
       "type": "object"
     },
+    "CloudStorageEvent": {
+      "document": "云存事件",
+      "members": [
+        {
+          "default": "",
+          "document": "事件起始时间（Unix 时间戳，秒级",
+          "example": "1560355200",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件结束时间（Unix 时间戳，秒级",
+          "example": "1601196327",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件缩略图",
+          "example": "/100008401725/AQTV2839QJ/sp01_328202375/events/123.jpg",
+          "member": "string",
+          "name": "Thumbnail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件ID",
+          "example": "low_power",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudStorageTimeData": {
+      "document": "云存时间轴接口返回数据",
+      "members": [
+        {
+          "default": "",
+          "document": "云存时间轴信息列表",
+          "member": "CloudStorageTimeInfo",
+          "name": "TimeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放地址",
+          "member": "string",
+          "name": "VideoURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudStorageTimeInfo": {
+      "document": "云存时间轴信息",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateBatchRequest": {
       "document": "CreateBatch请求参数结构体",
       "members": [
@@ -392,6 +522,51 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudStorageRequest": {
+      "document": "CreateCloudStorage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云存套餐ID",
+          "example": "3day5year",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudStorageResponse": {
+      "document": "CreateCloudStorage返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1008,6 +1183,348 @@
           "document": "Category详情",
           "example": "无",
           "member": "ProductTemplate",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageDateRequest": {
+      "document": "DescribeCloudStorageDate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AQTV2839QJ",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "p2p_32731213_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageDateResponse": {
+      "document": "DescribeCloudStorageDate返回参数结构体",
+      "members": [
+        {
+          "document": "云存日期数组，[\"2021-01-05\",\"2021-01-06\"]",
+          "example": "[\"2021-01-14\"]",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageEventsRequest": {
+      "document": "DescribeCloudStorageEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "QDA1PZLBNB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev01",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h",
+          "example": "1560355200",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间（Unix 时间戳，秒级）, 为0 表示当前时间",
+          "example": "1601196327",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求上下文, 用作查询游标",
+          "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单次获取的历史数据项目的最大数量, 缺省10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。",
+          "example": "low_voltage",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageEventsResponse": {
+      "document": "DescribeCloudStorageEvents返回参数结构体",
+      "members": [
+        {
+          "document": "云存事件列表",
+          "example": "无",
+          "member": "CloudStorageEvent",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请求上下文, 用作查询游标",
+          "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "拉取结果是否已经结束",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "拉取结果数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageRequest": {
+      "document": "DescribeCloudStorage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageResponse": {
+      "document": "DescribeCloudStorage返回参数结构体",
+      "members": [
+        {
+          "document": "云存开启状态，1为开启，0为未开启或已过期",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存类型，1为全时云存，2为事件云存",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存套餐过期时间",
+          "example": "1606963491",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存回看时长",
+          "example": "86400",
+          "member": "uint64",
+          "name": "ShiftDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageThumbnailRequest": {
+      "document": "DescribeCloudStorageThumbnail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "缩略图文件名",
+          "example": "/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg",
+          "member": "string",
+          "name": "Thumbnail",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageThumbnailResponse": {
+      "document": "DescribeCloudStorageThumbnail返回参数结构体",
+      "members": [
+        {
+          "document": "缩略图访问地址",
+          "example": "https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100",
+          "member": "string",
+          "name": "ThumbnailURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageTimeRequest": {
+      "document": "DescribeCloudStorageTime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AQTV2839QJ",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "p2p_32731213_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云存日期，例如\"2020-01-05\"",
+          "example": "2021-01-14",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageTimeResponse": {
+      "document": "DescribeCloudStorageTime返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回数据",
+          "example": "无",
+          "member": "CloudStorageTimeData",
           "name": "Data",
           "required": true,
           "type": "object",

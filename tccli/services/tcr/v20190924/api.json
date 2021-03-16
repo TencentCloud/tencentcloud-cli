@@ -174,6 +174,12 @@
       "name": "查询应用更新触发器",
       "output": "DescribeApplicationTriggerPersonalResponse"
     },
+    "DescribeExternalEndpointStatus": {
+      "document": "查询实例公网访问入口状态",
+      "input": "DescribeExternalEndpointStatusRequest",
+      "name": "查询实例公网访问入口状态",
+      "output": "DescribeExternalEndpointStatusResponse"
+    },
     "DescribeFavorRepositoryPersonal": {
       "document": "查询个人收藏仓库",
       "input": "DescribeFavorRepositoryPersonalRequest",
@@ -1803,6 +1809,51 @@
           "name": "Data",
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalEndpointStatusRequest": {
+      "document": "DescribeExternalEndpointStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalEndpointStatusResponse": {
+      "document": "DescribeExternalEndpointStatus返回参数结构体",
+      "members": [
+        {
+          "document": "开启公网访问状态，包括开启中，开启成功以及关闭和更新失败等",
+          "example": "Opened",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

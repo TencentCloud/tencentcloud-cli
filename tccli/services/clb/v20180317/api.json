@@ -1848,6 +1848,7 @@
         {
           "default": "",
           "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。",
+          "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
           "required": true,
@@ -1855,7 +1856,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1",
+          "document": "负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。",
+          "example": "1",
           "member": "int64",
           "name": "Forward",
           "required": false,
@@ -1864,6 +1866,7 @@
         {
           "default": "",
           "document": "负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-60 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。",
+          "example": "test",
           "member": "string",
           "name": "LoadBalancerName",
           "required": false,
@@ -1872,6 +1875,7 @@
         {
           "default": "",
           "document": "负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（\"0\"）。",
+          "example": "vpc-30xq****",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1880,6 +1884,7 @@
         {
           "default": "",
           "document": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。",
+          "example": "subnet-dva8****",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -1888,6 +1893,7 @@
         {
           "default": "",
           "document": "负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -1896,6 +1902,7 @@
         {
           "default": "",
           "document": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。",
+          "example": "IPV4",
           "member": "string",
           "name": "AddressIPVersion",
           "required": false,
@@ -1904,6 +1911,7 @@
         {
           "default": "",
           "document": "创建负载均衡的个数，默认值 1。",
+          "example": "1",
           "member": "uint64",
           "name": "Number",
           "required": false,
@@ -1912,6 +1920,7 @@
         {
           "default": "",
           "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "MasterZoneId",
           "required": false,
@@ -1919,7 +1928,8 @@
         },
         {
           "default": "",
-          "document": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1",
+          "document": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "ZoneId",
           "required": false,
@@ -1928,6 +1938,7 @@
         {
           "default": "",
           "document": "仅适用于公网负载均衡。负载均衡的网络计费模式。",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -1936,6 +1947,7 @@
         {
           "default": "",
           "document": "仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。",
+          "example": "CMCC",
           "member": "string",
           "name": "VipIsp",
           "required": false,
@@ -1943,7 +1955,8 @@
         },
         {
           "default": "",
-          "document": "购买负载均衡同时，给负载均衡打上标签",
+          "document": "购买负载均衡同时，给负载均衡打上标签。",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
@@ -1951,7 +1964,8 @@
         },
         {
           "default": "",
-          "document": "指定Vip申请负载均衡",
+          "document": "指定Vip申请负载均衡。",
+          "example": "139.X.X.X",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -1959,7 +1973,8 @@
         },
         {
           "default": "",
-          "document": "带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）",
+          "document": "带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）。",
+          "example": "bwp-pnbe****",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": false,
@@ -1967,7 +1982,8 @@
         },
         {
           "default": "",
-          "document": "独占集群信息",
+          "document": "独占集群信息。",
+          "example": "无",
           "member": "ExclusiveCluster",
           "name": "ExclusiveCluster",
           "required": false,
@@ -1976,6 +1992,7 @@
         {
           "default": "",
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "23494*****",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -1984,6 +2001,7 @@
         {
           "default": "",
           "document": "是否支持绑定跨地域/跨Vpc绑定IP的功能。",
+          "example": "true",
           "member": "bool",
           "name": "SnatPro",
           "required": false,
@@ -1992,6 +2010,7 @@
         {
           "default": "",
           "document": "开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。",
+          "example": "无",
           "member": "SnatIp",
           "name": "SnatIps",
           "required": false,
@@ -2000,6 +2019,7 @@
         {
           "default": "",
           "document": "Stgw独占集群的标签。",
+          "example": "test",
           "member": "string",
           "name": "ClusterTag",
           "required": false,
@@ -2007,7 +2027,8 @@
         },
         {
           "default": "",
-          "document": "EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP",
+          "document": "EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。",
+          "example": "eip-1111****",
           "member": "string",
           "name": "EipAddressId",
           "required": false,
@@ -2021,8 +2042,10 @@
       "members": [
         {
           "document": "由负载均衡实例唯一 ID 组成的数组。",
+          "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

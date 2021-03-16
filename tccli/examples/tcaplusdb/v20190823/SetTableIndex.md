@@ -7,20 +7,20 @@ Input:
 ```
 tccli tcaplusdb SetTableIndex --cli-unfold-argument  \
     --ClusterId 5674209986 \
-    --SelectedTables.0.TableInstanceId tcaplus-1f224454 \
-    --SelectedTables.0.TableGroupId 101 \
-    --SelectedTables.0.TableName tb_example \
+    --SelectedTables.0.ShardNum 1 \
     --SelectedTables.0.TableIdlType PROTO \
+    --SelectedTables.0.TableGroupId 101 \
+    --SelectedTables.0.TableInstanceId tcaplus-1f224454 \
+    --SelectedTables.0.TableName tb_example \
     --SelectedTables.0.TableType GENERIC \
-    --SelectedTables.0.ShardNum 3 \
-    --SelectedTables.0.SelectedFields.0.FieldName name \
-    --SelectedTables.0.SelectedFields.0.IsPrimaryKey Yes \
-    --SelectedTables.0.SelectedFields.0.FieldType string \
-    --SelectedTables.0.SelectedFields.0.FieldSize 64 \
-    --SelectedTables.0.SelectedFields.1.FieldName id \
-    --SelectedTables.0.SelectedFields.1.IsPrimaryKey No \
-    --SelectedTables.0.SelectedFields.1.FieldType int32 \
-    --SelectedTables.0.SelectedFields.1.FieldSize 4
+    --SelectedTables.0.SelectedFields.0.IsPrimaryKey No \
+    --SelectedTables.0.SelectedFields.0.FieldName id \
+    --SelectedTables.0.SelectedFields.0.FieldType int32 \
+    --SelectedTables.0.SelectedFields.0.FieldSize 0 \
+    --SelectedTables.0.SelectedFields.1.IsPrimaryKey Yes \
+    --SelectedTables.0.SelectedFields.1.FieldName name \
+    --SelectedTables.0.SelectedFields.1.FieldType string \
+    --SelectedTables.0.SelectedFields.1.FieldSize 0
 ```
 
 Output: 

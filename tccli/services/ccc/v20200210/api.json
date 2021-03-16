@@ -1706,6 +1706,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "会话 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c2b303a5-7814-42f4-ab7d-573b7f195d30",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

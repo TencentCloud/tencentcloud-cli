@@ -88,6 +88,31 @@ def doListTriggers(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetFunctionEventInvokeConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetFunctionEventInvokeConfigRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.GetFunctionEventInvokeConfig(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetLayerVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -463,31 +488,6 @@ def doPutTotalConcurrencyConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTerminateAsyncEvent(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateAsyncEventRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.TerminateAsyncEvent(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateAlias(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -513,7 +513,7 @@ def doCreateAlias(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doPutProvisionedConcurrencyConfig(args, parsed_globals):
+def doTerminateAsyncEvent(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -527,9 +527,34 @@ def doPutProvisionedConcurrencyConfig(args, parsed_globals):
     client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PutProvisionedConcurrencyConfigRequest()
+    model = models.TerminateAsyncEventRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.PutProvisionedConcurrencyConfig(model)
+    rsp = client.TerminateAsyncEvent(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateFunctionEventInvokeConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateFunctionEventInvokeConfigRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UpdateFunctionEventInvokeConfig(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -888,6 +913,31 @@ def doGetFunctionAddress(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doPutProvisionedConcurrencyConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PutProvisionedConcurrencyConfigRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.PutProvisionedConcurrencyConfig(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetAlias(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1002,6 +1052,7 @@ ACTION_MAP = {
     "DeleteFunction": doDeleteFunction,
     "UpdateAlias": doUpdateAlias,
     "ListTriggers": doListTriggers,
+    "GetFunctionEventInvokeConfig": doGetFunctionEventInvokeConfig,
     "GetLayerVersion": doGetLayerVersion,
     "CreateTrigger": doCreateTrigger,
     "CreateNamespace": doCreateNamespace,
@@ -1017,9 +1068,9 @@ ACTION_MAP = {
     "GetFunction": doGetFunction,
     "DeleteAlias": doDeleteAlias,
     "PutTotalConcurrencyConfig": doPutTotalConcurrencyConfig,
-    "TerminateAsyncEvent": doTerminateAsyncEvent,
     "CreateAlias": doCreateAlias,
-    "PutProvisionedConcurrencyConfig": doPutProvisionedConcurrencyConfig,
+    "TerminateAsyncEvent": doTerminateAsyncEvent,
+    "UpdateFunctionEventInvokeConfig": doUpdateFunctionEventInvokeConfig,
     "ListVersionByFunction": doListVersionByFunction,
     "ListLayers": doListLayers,
     "ListAsyncEvents": doListAsyncEvents,
@@ -1034,6 +1085,7 @@ ACTION_MAP = {
     "DeleteProvisionedConcurrencyConfig": doDeleteProvisionedConcurrencyConfig,
     "DeleteTrigger": doDeleteTrigger,
     "GetFunctionAddress": doGetFunctionAddress,
+    "PutProvisionedConcurrencyConfig": doPutProvisionedConcurrencyConfig,
     "GetAlias": doGetAlias,
     "CreateFunction": doCreateFunction,
     "ListNamespaces": doListNamespaces,

@@ -128,6 +128,14 @@
         "title": "获取函数代码下载地址"
       }
     ],
+    "GetFunctionEventInvokeConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunctionEventInvokeConfig\n<公共请求参数>\n\n{\n    \"FunctionName\": \"Unzip-1609933864\",\n    \"Namespace\": \"default\",\n    \"Qualifier\": \"$LATEST\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncTriggerConfig\": {\n            \"MsgTTL\": 3600,\n            \"RetryConfig\": [\n                {\n                    \"RetryNum\": 1\n                },\n                {\n                    \"RetryNum\": -1\n                }\n            ]\n        },\n        \"RequestId\": \"435fbf8e-d512-4f03-baf3-9cf1688f6c98\"\n    }\n}",
+        "title": "获取异步配置请求示例"
+      }
+    ],
     "GetFunctionLogs": [
       {
         "document": "",
@@ -308,6 +316,14 @@
         "input": "https://scf.tencentcloudapi.com/?Action=UpdateFunctionConfiguration\n&FunctionName=<FunctionName>\n&Description=<Description>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新函数配置"
+      }
+    ],
+    "UpdateFunctionEventInvokeConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionEventInvokeConfig\n<公共请求参数>\n\n{\n    \"FunctionName\": \"FunctionName\",\n    \"Namespace\": \"default\",\n    \"AsyncTriggerConfig\": {\n        \"MsgTTL\": 3600,\n        \"RetryConfig\": [\n            {\n                \"RetryNum\": 1\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"XXXXXX\"\n    }\n}",
+        "title": "异步重试配置请求示例"
       }
     ],
     "UpdateNamespace": [

@@ -6,8 +6,10 @@ Input:
 
 ```
 tccli cwp EditPrivilegeRule --cli-unfold-argument  \
+    --Id 1 \
     --ProcessName bash \
-    --HostIp 127.0.0.1 \
+    --Uuid "" \
+    --Hostip 127.0.0.1 \
     --SMode 1
 ```
 

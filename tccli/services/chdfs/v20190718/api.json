@@ -1,157 +1,157 @@
 {
   "actions": {
     "CreateAccessGroup": {
-      "document": "创建权限组。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n创建权限组。",
       "input": "CreateAccessGroupRequest",
       "name": "创建权限组",
       "output": "CreateAccessGroupResponse"
     },
     "CreateAccessRules": {
-      "document": "批量创建权限规则，权限规则ID和创建时间无需填写。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量创建权限规则，权限规则ID和创建时间无需填写。",
       "input": "CreateAccessRulesRequest",
       "name": "批量创建权限规则",
       "output": "CreateAccessRulesResponse"
     },
     "CreateFileSystem": {
-      "document": "创建文件系统（异步）。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n创建文件系统（异步）。",
       "input": "CreateFileSystemRequest",
       "name": "创建文件系统",
       "output": "CreateFileSystemResponse"
     },
     "CreateLifeCycleRules": {
-      "document": "批量创建生命周期规则，生命周期规则ID和创建时间无需填写。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量创建生命周期规则，生命周期规则ID和创建时间无需填写。",
       "input": "CreateLifeCycleRulesRequest",
       "name": "批量创建生命周期规则",
       "output": "CreateLifeCycleRulesResponse"
     },
     "CreateMountPoint": {
-      "document": "创建文件系统挂载点，仅限于创建成功的文件系统。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n创建文件系统挂载点，仅限于创建成功的文件系统。",
       "input": "CreateMountPointRequest",
       "name": "创建挂载点",
       "output": "CreateMountPointResponse"
     },
     "CreateRestoreTasks": {
-      "document": "批量创建回热任务，回热任务ID、状态和创建时间无需填写。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量创建回热任务，回热任务ID、状态和创建时间无需填写。",
       "input": "CreateRestoreTasksRequest",
       "name": "批量创建回热任务",
       "output": "CreateRestoreTasksResponse"
     },
     "DeleteAccessGroup": {
-      "document": "删除权限组。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n删除权限组。",
       "input": "DeleteAccessGroupRequest",
       "name": "删除权限组",
       "output": "DeleteAccessGroupResponse"
     },
     "DeleteAccessRules": {
-      "document": "批量删除权限规则。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量删除权限规则。",
       "input": "DeleteAccessRulesRequest",
       "name": "批量删除权限规则",
       "output": "DeleteAccessRulesResponse"
     },
     "DeleteFileSystem": {
-      "document": "删除文件系统，不允许删除非空文件系统。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n删除文件系统，不允许删除非空文件系统。",
       "input": "DeleteFileSystemRequest",
       "name": "删除文件系统",
       "output": "DeleteFileSystemResponse"
     },
     "DeleteLifeCycleRules": {
-      "document": "批量删除生命周期规则。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量删除生命周期规则。",
       "input": "DeleteLifeCycleRulesRequest",
       "name": "批量删除生命周期规则",
       "output": "DeleteLifeCycleRulesResponse"
     },
     "DeleteMountPoint": {
-      "document": "删除挂载点。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n删除挂载点。",
       "input": "DeleteMountPointRequest",
       "name": "删除挂载点",
       "output": "DeleteMountPointResponse"
     },
     "DescribeAccessGroups": {
-      "document": "查看权限组列表。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n查看权限组列表。",
       "input": "DescribeAccessGroupsRequest",
       "name": "查看权限组列表",
       "output": "DescribeAccessGroupsResponse"
     },
     "DescribeAccessRules": {
-      "document": "通过权限组ID查看权限规则列表。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过权限组ID查看权限规则列表。",
       "input": "DescribeAccessRulesRequest",
       "name": "查看权限规则列表",
       "output": "DescribeAccessRulesResponse"
     },
     "DescribeFileSystem": {
-      "document": "查看文件系统详细信息。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n查看文件系统详细信息。",
       "input": "DescribeFileSystemRequest",
       "name": "查看文件系统详细信息",
       "output": "DescribeFileSystemResponse"
     },
     "DescribeFileSystems": {
-      "document": "查看文件系统列表。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n查看文件系统列表。",
       "input": "DescribeFileSystemsRequest",
       "name": "查看文件系统列表",
       "output": "DescribeFileSystemsResponse"
     },
     "DescribeLifeCycleRules": {
-      "document": "通过文件系统ID查看生命周期规则列表。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过文件系统ID查看生命周期规则列表。",
       "input": "DescribeLifeCycleRulesRequest",
       "name": "查看生命周期规则列表",
       "output": "DescribeLifeCycleRulesResponse"
     },
     "DescribeMountPoint": {
-      "document": "查看挂载点详细信息。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n查看挂载点详细信息。",
       "input": "DescribeMountPointRequest",
       "name": "查看挂载点详细信息",
       "output": "DescribeMountPointResponse"
     },
     "DescribeMountPoints": {
-      "document": "通过文件系统ID或者权限组ID查看挂载点列表。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过文件系统ID或者权限组ID查看挂载点列表。",
       "input": "DescribeMountPointsRequest",
       "name": "查看挂载点列表",
       "output": "DescribeMountPointsResponse"
     },
     "DescribeResourceTags": {
-      "document": "通过文件系统ID查看资源标签列表。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过文件系统ID查看资源标签列表。",
       "input": "DescribeResourceTagsRequest",
       "name": "查看资源标签列表",
       "output": "DescribeResourceTagsResponse"
     },
     "DescribeRestoreTasks": {
-      "document": "通过文件系统ID查看回热任务列表。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过文件系统ID查看回热任务列表。",
       "input": "DescribeRestoreTasksRequest",
       "name": "查看回热任务列表",
       "output": "DescribeRestoreTasksResponse"
     },
     "ModifyAccessGroup": {
-      "document": "修改权限组属性。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n修改权限组属性。",
       "input": "ModifyAccessGroupRequest",
       "name": "修改权限组属性",
       "output": "ModifyAccessGroupResponse"
     },
     "ModifyAccessRules": {
-      "document": "批量修改权限规则属性，需要指定权限规则ID，支持修改权限规则地址、访问模式和优先级。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量修改权限规则属性，需要指定权限规则ID，支持修改权限规则地址、访问模式和优先级。",
       "input": "ModifyAccessRulesRequest",
       "name": "批量修改权限规则属性",
       "output": "ModifyAccessRulesResponse"
     },
     "ModifyFileSystem": {
-      "document": "修改文件系统属性，仅限于创建成功的文件系统。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n修改文件系统属性，仅限于创建成功的文件系统。",
       "input": "ModifyFileSystemRequest",
       "name": "修改文件系统属性",
       "output": "ModifyFileSystemResponse"
     },
     "ModifyLifeCycleRules": {
-      "document": "批量修改生命周期规则属性，需要指定生命周期规则ID，支持修改生命周期规则名称、路径、转换列表和状态。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量修改生命周期规则属性，需要指定生命周期规则ID，支持修改生命周期规则名称、路径、转换列表和状态。",
       "input": "ModifyLifeCycleRulesRequest",
       "name": "批量修改生命周期规则属性",
       "output": "ModifyLifeCycleRulesResponse"
     },
     "ModifyMountPoint": {
-      "document": "修改挂载点属性。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n修改挂载点属性。",
       "input": "ModifyMountPointRequest",
       "name": "修改挂载点属性",
       "output": "ModifyMountPointResponse"
     },
     "ModifyResourceTags": {
-      "document": "修改资源标签列表，全量覆盖。",
+      "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n修改资源标签列表，全量覆盖。",
       "input": "ModifyResourceTagsRequest",
       "name": "修改资源标签列表",
       "output": "ModifyResourceTagsResponse"

@@ -7,9 +7,20 @@ Input:
 ```
 tccli tcaplusdb RecoverRecycleTables --cli-unfold-argument  \
     --ClusterId 5674209986 \
-    --SelectedTables.0.TableInstanceId tcaplus-1f224454 \
+    --SelectedTables.0.TableIdlType xx \
     --SelectedTables.0.TableGroupId 101 \
-    --SelectedTables.0.TableName tb_example
+    --SelectedTables.0.FileExtType xx \
+    --SelectedTables.0.TableInstanceId tcaplus-1f224454 \
+    --SelectedTables.0.Memo xx \
+    --SelectedTables.0.TableName tb_example \
+    --SelectedTables.0.ReservedReadQps 0 \
+    --SelectedTables.0.ListElementNum 0 \
+    --SelectedTables.0.ReservedVolume 0 \
+    --SelectedTables.0.ReservedWriteQps 0 \
+    --SelectedTables.0.FileSize 0 \
+    --SelectedTables.0.FileContent xx \
+    --SelectedTables.0.FileName xx \
+    --SelectedTables.0.TableType xx
 ```
 
 Output: 

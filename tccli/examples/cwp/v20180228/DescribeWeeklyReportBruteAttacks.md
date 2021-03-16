@@ -15,8 +15,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
-        "TotalCount": 100
+        "WeeklyReportBruteAttacks": [
+            {
+                "Username": "xx",
+                "SrcIp": "xx",
+                "MachineIp": "xx",
+                "AttackTime": "2020-09-22 00:00:00",
+                "Count": 1
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "xx"
     }
 }
 ```

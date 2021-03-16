@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam DeletePolicyVersion --cli-unfold-argument  \
-    --PolicyId 17698703 \
-    --VersionId 1
+    --VersionId 1 \
+    --PolicyId 1
 ```
 
 Output: 

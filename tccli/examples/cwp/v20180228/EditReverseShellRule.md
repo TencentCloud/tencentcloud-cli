@@ -6,8 +6,13 @@ Input:
 
 ```
 tccli cwp EditReverseShellRule --cli-unfold-argument  \
+    --Uuid "xx" \
     --ProcessName bash \
-    --HostIp 127.0.0.1
+    --IsGlobal 1 \
+    --Id 1 \
+    --DestIp 127.0.0.1 \
+    --Hostip 127.0.0.1 \
+    --DestPort 123
 ```
 
 Output: 

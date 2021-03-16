@@ -6,8 +6,12 @@ Input:
 
 ```
 tccli rkp GetToken --cli-unfold-argument  \
-    --BusinessId 1 \
-    --Scene 2
+    --BusinessId 0 \
+    --Scene 0 \
+    --ExpireTime 0 \
+    --AppClientIp xx \
+    --BusinessUserId xx \
+    --OldToken xx
 ```
 
 Output: 

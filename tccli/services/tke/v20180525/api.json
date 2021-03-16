@@ -3696,6 +3696,7 @@
         {
           "default": "",
           "document": "集群 ID，请填写查询集群列表 接口中返回的 ClusterId 字段（仅通过ClusterId获取需要过滤条件中的VPCID。节点状态比较时会使用该地域下所有集群中的节点进行比较。参数不支持同时指定InstanceIds和ClusterId。",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -3704,6 +3705,7 @@
         {
           "default": "",
           "document": "按照一个或者多个实例ID查询。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API简介的id.N一节）。每次请求的实例的上限为100。参数不支持同时指定InstanceIds和Filters。",
+          "example": "[\"ins-xxxxxxxx\",\"ins-yyyyyyyy\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -3712,6 +3714,7 @@
         {
           "default": "",
           "document": "过滤条件,字段和详见[CVM查询实例](https://cloud.tencent.com/document/api/213/15728)如果设置了ClusterId，会附加集群的VPCID作为查询字段，在此情况下如果在Filter中指定了\"vpc-id\"作为过滤字段，指定的VPCID必须与集群的VPCID相同。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3720,6 +3723,7 @@
         {
           "default": "",
           "document": "实例IP进行过滤(同时支持内网IP和外网IP)",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "VagueIpAddress",
           "required": false,
@@ -3728,6 +3732,7 @@
         {
           "default": "",
           "document": "实例名称进行过滤",
+          "example": "worker",
           "member": "string",
           "name": "VagueInstanceName",
           "required": false,
@@ -3736,6 +3741,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3744,10 +3750,20 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据多个实例IP进行过滤",
+          "example": "[\"10.0.0.1\",\"10.0.0.2\"]",
+          "member": "string",
+          "name": "IpAddresses",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3757,15 +3773,19 @@
       "members": [
         {
           "document": "已经存在的实例信息数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ExistedInstance",
           "name": "ExistedInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6059,6 +6079,7 @@
         {
           "default": "",
           "document": "告警名称",
+          "example": "alert",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -6068,6 +6089,7 @@
         {
           "default": "",
           "document": "告警开始时间",
+          "example": "s",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -6077,11 +6099,52 @@
         {
           "default": "",
           "document": "告警内容",
+          "example": "s",
           "member": "string",
           "name": "Content",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "firing",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发的规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "RuleItem",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警渠道的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-x",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警渠道的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prom-xx-default-topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

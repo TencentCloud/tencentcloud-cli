@@ -6,7 +6,12 @@ Input:
 
 ```
 tccli tcaplusdb DescribeTablesInRecycle --cli-unfold-argument  \
-    --ClusterId 5674209986
+    --TableGroupIds xx \
+    --ClusterId 5674209986 \
+    --Limit 0 \
+    --Filters.0.Name xx \
+    --Filters.0.Value xx \
+    --Offset 0
 ```
 
 Output: 

@@ -6,7 +6,21 @@ Input:
 
 ```
 tccli bmeip DescribeEips --cli-unfold-argument  \
-    --EipIds eip-lcwonw3s
+    --SearchKey xx \
+    --Status 0 \
+    --VpcId xx \
+    --ExclusiveTag 0 \
+    --BindTypes 0 \
+    --AclId xx \
+    --EipIds eip-lcwonw3s \
+    --PayMode xx \
+    --Eips xx \
+    --Limit 0 \
+    --OrderField xx \
+    --Offset 0 \
+    --BindAcl 0 \
+    --Order 0 \
+    --InstanceIds xx
 ```
 
 Output: 

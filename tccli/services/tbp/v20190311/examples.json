@@ -3,7 +3,7 @@
     "CreateBot": [
       {
         "document": "",
-        "input": "https://chatbot.tencentcloudapi.com/?Action=CreateBot\r\n&BotName=\"*******\"\r\n&BotCnName=\"*******\"\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tbp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBot\n<公共请求参数>\n\n{\n    \"BotCnName\": \"xx\",\n    \"BotName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"*******\",\n        \"TaskRequestId\": \"*******\",\n        \"RequestId\": \"*******\"\n    }\n}",
         "title": "创建机器人"
       }
