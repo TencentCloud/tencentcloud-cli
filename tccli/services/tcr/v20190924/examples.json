@@ -242,7 +242,7 @@
       {
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeExternalEndpointStatus\n&RegistryId=tcr-xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"Opened\",\n        \"Reason\": \"Error\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"Opened\",\n        \"Reason\": \"\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "查询开启公网实例的状态"
       }
     ],

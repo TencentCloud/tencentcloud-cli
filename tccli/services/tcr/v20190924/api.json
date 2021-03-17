@@ -1838,7 +1838,7 @@
       "document": "DescribeExternalEndpointStatus返回参数结构体",
       "members": [
         {
-          "document": "开启公网访问状态，包括开启中，开启成功以及关闭和更新失败等",
+          "document": "开启公网访问状态，开启中（Opening）、已开启（Opened）、关闭（Closed）",
           "example": "Opened",
           "member": "string",
           "name": "Status",

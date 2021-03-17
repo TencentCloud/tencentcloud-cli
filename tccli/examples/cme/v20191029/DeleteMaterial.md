@@ -1,4 +1,4 @@
-**Example 1: 删除素材**
+**Example 1: 删除媒体**
 
 
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "requestId"
+        "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a05"
     }
 }
 ```

@@ -9,7 +9,7 @@ tccli cme DescribeTeamMembers --cli-unfold-argument  \
     --Platform test \
     --TeamId 1kdk882ddd88338ddd3k3 \
     --Offset 0 \
-    --TLimit 10
+    --Limit 10
 ```
 
 Output: 

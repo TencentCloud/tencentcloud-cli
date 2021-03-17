@@ -516,6 +516,14 @@
         "title": "移出节点池节点"
       }
     ],
+    "SetNodePoolNodeProtection": [
+      {
+        "document": "当触发缩容时（包括手动和自动），节点不会被伸缩组从集群中移除",
+        "input": "https://tke.tencentcloudapi.com/?Action=SetNodePoolNodeProtection\n&ClusterId=cls-xxx\n&NodePoolId=np-xxx\n&InstanceIds.0=ins-xxx\n&ProtectedFromScaleIn=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
+        "title": "给节点池中的节点设置移出保护"
+      }
+    ],
     "SyncPrometheusTemplate": [
       {
         "document": "",

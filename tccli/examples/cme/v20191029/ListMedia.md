@@ -1,6 +1,6 @@
-**Example 1: 浏览媒体资源**
+**Example 1: 浏览媒体**
 
-无目录
+浏览媒体
 
 Input: 
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "ClassInfoSet": null,
+        "ClassInfoSet": [],
         "MaterialInfoSet": [
             {
                 "BasicInfo": {
@@ -30,6 +30,7 @@ Output:
                         "Type": "PERSON"
                     },
                     "PreviewUrl": "",
+                    "TagSet": [],
                     "UpdateTime": "2019-11-20T02:43:29Z"
                 }
             }

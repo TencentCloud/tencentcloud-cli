@@ -8,8 +8,7 @@ Input:
 tccli cme ModifyProject --cli-unfold-argument  \
     --Platform test \
     --ProjectId 1111 \
-    --Name first_project \
-    --AspectRatio 16:9
+    --Name first_project
 ```
 
 Output: 

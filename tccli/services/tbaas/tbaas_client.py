@@ -13,6 +13,56 @@ from tencentcloud.tbaas.v20180416 import tbaas_client as tbaas_client_v20180416
 from tencentcloud.tbaas.v20180416 import models as models_v20180416
 
 
+def doInvokeBcosTrans(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InvokeBcosTransRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.InvokeBcosTrans(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetBcosBlockByNumber(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetBcosBlockByNumberRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.GetBcosBlockByNumber(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetChaincodeLogForUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -30,6 +80,56 @@ def doGetChaincodeLogForUser(args, parsed_globals):
     model = models.GetChaincodeLogForUserRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.GetChaincodeLogForUser(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetBcosTransByHash(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetBcosTransByHashRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.GetBcosTransByHash(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetBlockTransactionListForUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetBlockTransactionListForUserRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.GetBlockTransactionListForUser(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -63,7 +163,7 @@ def doGetClusterListForUser(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetTransactionDetailForUser(args, parsed_globals):
+def doGetBcosBlockList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,9 +177,9 @@ def doGetTransactionDetailForUser(args, parsed_globals):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTransactionDetailForUserRequest()
+    model = models.GetBcosBlockListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetTransactionDetailForUser(model)
+    rsp = client.GetBcosBlockList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -88,7 +188,7 @@ def doGetTransactionDetailForUser(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSrvInvoke(args, parsed_globals):
+def doGetBlockListHandler(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -102,9 +202,59 @@ def doSrvInvoke(args, parsed_globals):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SrvInvokeRequest()
+    model = models.GetBlockListHandlerRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.SrvInvoke(model)
+    rsp = client.GetBlockListHandler(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeployDynamicContractHandler(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeployDynamicContractHandlerRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeployDynamicContractHandler(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInvoke(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InvokeRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.Invoke(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -163,6 +313,31 @@ def doGetPeerLogForUser(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeployDynamicBcosContract(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeployDynamicBcosContractRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeployDynamicBcosContract(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDownloadUserCert(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -213,7 +388,7 @@ def doCreateChaincodeAndInstallForUser(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetTransByHashHandler(args, parsed_globals):
+def doGetLatesdTransactionList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -227,34 +402,9 @@ def doGetTransByHashHandler(args, parsed_globals):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTransByHashHandlerRequest()
+    model = models.GetLatesdTransactionListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetTransByHashHandler(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetTransListHandler(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTransListHandlerRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.GetTransListHandler(model)
+    rsp = client.GetLatesdTransactionList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -413,7 +563,7 @@ def doInitializeChaincodeForUser(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeployDynamicContractHandler(args, parsed_globals):
+def doGetTransactionDetailForUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -427,9 +577,9 @@ def doDeployDynamicContractHandler(args, parsed_globals):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeployDynamicContractHandlerRequest()
+    model = models.GetTransactionDetailForUserRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeployDynamicContractHandler(model)
+    rsp = client.GetTransactionDetailForUser(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -438,7 +588,7 @@ def doDeployDynamicContractHandler(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInvoke(args, parsed_globals):
+def doSrvInvoke(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -452,9 +602,34 @@ def doInvoke(args, parsed_globals):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InvokeRequest()
+    model = models.SrvInvokeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.Invoke(model)
+    rsp = client.SrvInvoke(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetBcosTransList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetBcosTransListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.GetBcosTransList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -538,7 +713,7 @@ def doGetChaincodeCompileLogForUser(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetBlockTransactionListForUser(args, parsed_globals):
+def doGetTransListHandler(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -552,9 +727,9 @@ def doGetBlockTransactionListForUser(args, parsed_globals):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetBlockTransactionListForUserRequest()
+    model = models.GetTransListHandlerRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetBlockTransactionListForUser(model)
+    rsp = client.GetTransListHandler(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -613,7 +788,7 @@ def doQuery(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetLatesdTransactionList(args, parsed_globals):
+def doGetTransByHashHandler(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -627,34 +802,9 @@ def doGetLatesdTransactionList(args, parsed_globals):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetLatesdTransactionListRequest()
+    model = models.GetTransByHashHandlerRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetLatesdTransactionList(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetBlockListHandler(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetBlockListHandlerRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.GetBlockListHandler(model)
+    rsp = client.GetTransByHashHandler(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -674,32 +824,38 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "InvokeBcosTrans": doInvokeBcosTrans,
+    "GetBcosBlockByNumber": doGetBcosBlockByNumber,
     "GetChaincodeLogForUser": doGetChaincodeLogForUser,
+    "GetBcosTransByHash": doGetBcosTransByHash,
+    "GetBlockTransactionListForUser": doGetBlockTransactionListForUser,
     "GetClusterListForUser": doGetClusterListForUser,
-    "GetTransactionDetailForUser": doGetTransactionDetailForUser,
-    "SrvInvoke": doSrvInvoke,
+    "GetBcosBlockList": doGetBcosBlockList,
+    "GetBlockListHandler": doGetBlockListHandler,
+    "DeployDynamicContractHandler": doDeployDynamicContractHandler,
+    "Invoke": doInvoke,
     "GetClusterSummary": doGetClusterSummary,
     "GetPeerLogForUser": doGetPeerLogForUser,
+    "DeployDynamicBcosContract": doDeployDynamicBcosContract,
     "DownloadUserCert": doDownloadUserCert,
     "CreateChaincodeAndInstallForUser": doCreateChaincodeAndInstallForUser,
-    "GetTransByHashHandler": doGetTransByHashHandler,
-    "GetTransListHandler": doGetTransListHandler,
+    "GetLatesdTransactionList": doGetLatesdTransactionList,
     "ApplyUserCert": doApplyUserCert,
     "BlockByNumberHandler": doBlockByNumberHandler,
     "GetInvokeTx": doGetInvokeTx,
     "GetChaincodeInitializeResultForUser": doGetChaincodeInitializeResultForUser,
     "GetChannelListForUser": doGetChannelListForUser,
     "InitializeChaincodeForUser": doInitializeChaincodeForUser,
-    "DeployDynamicContractHandler": doDeployDynamicContractHandler,
-    "Invoke": doInvoke,
+    "GetTransactionDetailForUser": doGetTransactionDetailForUser,
+    "SrvInvoke": doSrvInvoke,
+    "GetBcosTransList": doGetBcosTransList,
     "TransByDynamicContractHandler": doTransByDynamicContractHandler,
     "SendTransactionHandler": doSendTransactionHandler,
     "GetChaincodeCompileLogForUser": doGetChaincodeCompileLogForUser,
-    "GetBlockTransactionListForUser": doGetBlockTransactionListForUser,
+    "GetTransListHandler": doGetTransListHandler,
     "GetBlockList": doGetBlockList,
     "Query": doQuery,
-    "GetLatesdTransactionList": doGetLatesdTransactionList,
-    "GetBlockListHandler": doGetBlockListHandler,
+    "GetTransByHashHandler": doGetTransByHashHandler,
 
 }
 

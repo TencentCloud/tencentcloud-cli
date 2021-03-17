@@ -24,7 +24,10 @@ Output:
                 "Owner": {
                     "Type": "PERSON",
                     "Id": "user_1233"
-                }
+                },
+                "UpdateTime": "2020-11-13T06:41:34.808Z",
+                "CreateTime": "2020-11-13T06:41:34.808Z",
+                "CoverUrl": ""
             }
         ],
         "RequestId": "requestId"

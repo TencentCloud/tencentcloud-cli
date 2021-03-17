@@ -3338,6 +3338,7 @@
         {
           "default": "",
           "document": "视频暴恐评分，分值为0到100。",
+          "example": "20",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3347,6 +3348,7 @@
         {
           "default": "",
           "document": "暴恐结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "pass",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3355,7 +3357,8 @@
         },
         {
           "default": "",
-          "document": "视频暴恐结果标签，取值范围：\n<li>guns：武器枪支。</li>\n<li>crowd：人群聚集。</li>\n<li>police：警察部队。</li>\n<li>bloody：血腥画面。</li>\n<li>banners：暴恐旗帜。</li>\n<li>militant：武装分子。</li>\n<li>explosion：爆炸火灾。</li>\n<li>terrorists：暴恐人物。</li>",
+          "document": "视频暴恐结果标签，取值范围：\n<li>guns：武器枪支。</li>\n<li>crowd：人群聚集。</li>\n<li>police：警察部队。</li>\n<li>bloody：血腥画面。</li>\n<li>banners：暴恐旗帜。</li>\n<li>militant：武装分子。</li>\n<li>explosion：爆炸火灾。</li>\n<li>terrorists：暴恐人物。</li>\n<li>scenario：暴恐画面。</li>",
+          "example": "crowd",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -3365,6 +3368,7 @@
         {
           "default": "",
           "document": "有暴恐嫌疑的视频片段列表。",
+          "example": "[]",
           "member": "MediaContentReviewSegmentItem",
           "name": "SegmentSet",
           "required": true,
@@ -4563,6 +4567,7 @@
         {
           "default": "",
           "document": "内容智能识别模板名称，长度限制：64 个字符。",
+          "example": "内容智能识别模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4571,6 +4576,7 @@
         {
           "default": "",
           "document": "内容智能识别模板描述信息，长度限制：256 个字符。",
+          "example": "模板1",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -4579,6 +4585,7 @@
         {
           "default": "",
           "document": "令人反感的信息的控制参数。",
+          "example": "无",
           "member": "PornConfigureInfo",
           "name": "PornConfigure",
           "required": false,
@@ -4587,6 +4594,7 @@
         {
           "default": "",
           "document": "令人不安全的信息的控制参数。",
+          "example": "无",
           "member": "TerrorismConfigureInfo",
           "name": "TerrorismConfigure",
           "required": false,
@@ -4595,6 +4603,7 @@
         {
           "default": "",
           "document": "令人不适宜的信息的控制参数。",
+          "example": "无",
           "member": "PoliticalConfigureInfo",
           "name": "PoliticalConfigure",
           "required": false,
@@ -4603,6 +4612,7 @@
         {
           "default": "",
           "document": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>\n注意：此参数尚未支持。",
+          "example": "无",
           "member": "ProhibitedConfigureInfo",
           "name": "ProhibitedConfigure",
           "required": false,
@@ -4611,6 +4621,7 @@
         {
           "default": "",
           "document": "用户自定义内容智能识别控制参数。",
+          "example": "无",
           "member": "UserDefineConfigureInfo",
           "name": "UserDefineConfigure",
           "required": false,
@@ -4624,8 +4635,10 @@
       "members": [
         {
           "document": "内容智能识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5909,6 +5922,7 @@
         {
           "default": "",
           "document": "内容智能识别模板唯一标识过滤条件，数组长度限制：50。",
+          "example": "无",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -5917,6 +5931,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5925,6 +5940,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：50。",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5938,15 +5954,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "内容审核模板详情列表。",
+          "example": "无",
           "member": "ContentReviewTemplateItem",
           "name": "ContentReviewTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10176,6 +10196,7 @@
         {
           "default": "",
           "document": "内容智能识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -10184,6 +10205,7 @@
         {
           "default": "",
           "document": "内容智能识别模板名称，长度限制：64 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10192,6 +10214,7 @@
         {
           "default": "",
           "document": "内容智能识别模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -10200,6 +10223,7 @@
         {
           "default": "",
           "document": "令人反感的信息的控制参数。",
+          "example": "无",
           "member": "PornConfigureInfoForUpdate",
           "name": "PornConfigure",
           "required": false,
@@ -10208,6 +10232,7 @@
         {
           "default": "",
           "document": "令人不安全的信息的控制参数。",
+          "example": "无",
           "member": "TerrorismConfigureInfoForUpdate",
           "name": "TerrorismConfigure",
           "required": false,
@@ -10216,6 +10241,7 @@
         {
           "default": "",
           "document": "令人不适宜的控制参数。",
+          "example": "无",
           "member": "PoliticalConfigureInfoForUpdate",
           "name": "PoliticalConfigure",
           "required": false,
@@ -10224,6 +10250,7 @@
         {
           "default": "",
           "document": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>\n注意：此参数尚未支持。",
+          "example": "无",
           "member": "ProhibitedConfigureInfoForUpdate",
           "name": "ProhibitedConfigure",
           "required": false,
@@ -10232,6 +10259,7 @@
         {
           "default": "",
           "document": "用户自定义内容智能识别控制参数。",
+          "example": "无",
           "member": "UserDefineConfigureInfoForUpdate",
           "name": "UserDefineConfigure",
           "required": false,
@@ -13131,6 +13159,7 @@
         {
           "default": "",
           "document": "画面鉴恐任务开关，可选值：\n<li>ON：开启画面鉴恐任务；</li>\n<li>OFF：关闭画面鉴恐任务。</li>",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -13139,7 +13168,8 @@
         },
         {
           "default": "",
-          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物。</li>",
+          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物；</li>\n<li>scenario：暴恐画面。</li>",
+          "example": "bloody",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -13149,6 +13179,7 @@
         {
           "default": "",
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。",
+          "example": "95",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -13158,6 +13189,7 @@
         {
           "default": "",
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 80 分。取值范围：0~100。",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -13173,6 +13205,7 @@
         {
           "default": "",
           "document": "画面鉴恐任务开关，可选值：\n<li>ON：开启画面鉴恐任务；</li>\n<li>OFF：关闭画面鉴恐任务。</li>",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -13181,7 +13214,8 @@
         },
         {
           "default": "",
-          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物。</li>",
+          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物；</li>\n<li>scenario：暴恐画面。</li>",
+          "example": "guns",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -13191,6 +13225,7 @@
         {
           "default": "",
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "95",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -13200,6 +13235,7 @@
         {
           "default": "",
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,

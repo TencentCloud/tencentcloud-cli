@@ -201,6 +201,7 @@ Output:
                 "Definition": 31,
                 "Name": "模板2",
                 "Comment": "内容审核模板",
+                "ReviewWallSwitch": "ON",
                 "PornConfigure": {
                     "ImgReviewInfo": {
                         "Switch": "OFF"

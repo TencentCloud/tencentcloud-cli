@@ -43,9 +43,9 @@
       "output": "DeleteLoginStatusResponse"
     },
     "DeleteMaterial": {
-      "document": "根据素材 Id 删除素材。",
+      "document": "根据媒体 Id 删除媒体。",
       "input": "DeleteMaterialRequest",
-      "name": "删除素材",
+      "name": "删除媒体",
       "output": "DeleteMaterialResponse"
     },
     "DeleteProject": {
@@ -85,9 +85,9 @@
       "output": "DescribeLoginStatusResponse"
     },
     "DescribeMaterials": {
-      "document": "根据素材 Id 批量获取素材详情。",
+      "document": "根据媒体 Id 批量获取媒体详情。",
       "input": "DescribeMaterialsRequest",
-      "name": "获取素材详情列表",
+      "name": "获取媒体详情",
       "output": "DescribeMaterialsResponse"
     },
     "DescribePlatforms": {
@@ -109,7 +109,7 @@
       "output": "DescribeResourceAuthorizationResponse"
     },
     "DescribeSharedSpace": {
-      "document": "获取共享空间。当实体A对实体B授权某资源以后，实体B的共享空间就会增加实体A。",
+      "document": "获取共享空间。当个人或团队A对个人或团队B授权某资源以后，个人或团队B的共享空间就会增加个人或团队A。",
       "input": "DescribeSharedSpaceRequest",
       "name": "获取共享空间",
       "output": "DescribeSharedSpaceResponse"
@@ -157,9 +157,9 @@
       "output": "ExportVideoEditProjectResponse"
     },
     "FlattenListMedia": {
-      "document": "平铺分类路径下及其子分类下的所有素材。",
+      "document": "平铺分类路径下及其子分类下的所有媒体基础信息。",
       "input": "FlattenListMediaRequest",
-      "name": "平铺媒体资源",
+      "name": "平铺浏览媒体",
       "output": "FlattenListMediaResponse"
     },
     "GenerateVideoSegmentationSchemeByAi": {
@@ -169,9 +169,9 @@
       "output": "GenerateVideoSegmentationSchemeByAiResponse"
     },
     "GrantResourceAuthorization": {
-      "document": "资源所属实体对目标实体授予目标资源的相应权限。",
+      "document": "资源归属者对目标个人或团队授予目标资源的相应权限。",
       "input": "GrantResourceAuthorizationRequest",
-      "name": "授权资源权限",
+      "name": "发起媒资授权",
       "output": "GrantResourceAuthorizationResponse"
     },
     "ImportMaterial": {
@@ -187,15 +187,15 @@
       "output": "ImportMediaToProjectResponse"
     },
     "ListMedia": {
-      "document": " 浏览当前分类路径下的资源，包括素材和子分类。",
+      "document": " 浏览当前分类路径下的资源，包括媒体文件和子分类，返回媒资基础信息和分类信息。",
       "input": "ListMediaRequest",
-      "name": "浏览媒体资源",
+      "name": "浏览媒体",
       "output": "ListMediaResponse"
     },
     "ModifyMaterial": {
-      "document": "修改素材信息，支持修改素材名称、分类路径、标签等信息。",
+      "document": "修改媒体信息，支持修改媒体名称、分类路径、标签等信息。",
       "input": "ModifyMaterialRequest",
-      "name": "修改素材",
+      "name": "修改媒体信息",
       "output": "ModifyMaterialResponse"
     },
     "ModifyProject": {
@@ -217,10 +217,16 @@
       "output": "ModifyTeamMemberResponse"
     },
     "MoveClass": {
-      "document": "移动某一个分类到另外一个分类下，也可用于分类重命名。\n<li>如果 SourceClassPath = /素材/视频/NBA，DestinationClassPath = /素材/视频/篮球，当 DestinationClassPath 不存在时候，操作结果为重命名 ClassPath，如果 DestinationClassPath 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA。</li>",
+      "document": "移动某一个分类到另外一个分类下，也可用于分类重命名。\n如果 SourceClassPath = /素材/视频/NBA，DestinationClassPath = /素材/视频/篮球\n<li>当 DestinationClassPath 不存在时候，操作结果为重命名 ClassPath；</li>\n<li>当 DestinationClassPath 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA</li>",
       "input": "MoveClassRequest",
       "name": "移动分类",
       "output": "MoveClassResponse"
+    },
+    "MoveResource": {
+      "document": "移动资源，支持跨个人或团队移动媒体以及分类。如果填写了Operator，则需要校验用户对媒体和分类资源的访问以及写权限。\n<li>当原始资源为媒体时，该接口效果为将该媒体移动到目标分类下面；</li>\n<li>当原始资源为分类时，该接口效果为将原始分类移动到目标分类或者是重命名。</li>\n 如果 SourceResource.Resource.Id = /素材/视频/NBA，DestinationResource.Resource.Id= /素材/视频/篮球 \n<li>当 DestinationResource.Resource.Id 不存在时候且原始资源与目标资源归属相同，操作结果为重命名原始分类；</li>\n<li>当 DestinationResource.Resource.Id 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA</li>\n",
+      "input": "MoveResourceRequest",
+      "name": "移动资源",
+      "output": "MoveResourceResponse"
     },
     "RevokeResourceAuthorization": {
       "document": " 资源所属实体对目标实体回收目标资源的相应权限，若原本没有相应权限则不产生变更。",
@@ -229,9 +235,9 @@
       "output": "RevokeResourceAuthorizationResponse"
     },
     "SearchMaterial": {
-      "document": "根据检索条件搜索素材，返回素材的基本信息。",
+      "document": "根据检索条件搜索媒体，返回媒体的基本信息。",
       "input": "SearchMaterialRequest",
-      "name": "搜索素材",
+      "name": "搜索媒体",
       "output": "SearchMaterialResponse"
     }
   },
@@ -621,7 +627,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验分类创建权限。",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1003,6 +1009,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1010,7 +1017,8 @@
         },
         {
           "default": "",
-          "document": "素材 Id。",
+          "document": "媒体 Id。",
+          "example": "123456789",
           "member": "string",
           "name": "MaterialId",
           "required": true,
@@ -1018,7 +1026,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。",
+          "example": "user_id",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1056,6 +1065,14 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
           "type": "string"
         }
       ],
@@ -1332,7 +1349,7 @@
         },
         {
           "default": "",
-          "document": "素材 ID 列表，N 从 0 开始取值，最大 19。",
+          "document": "媒体 ID 列表，N 从 0 开始取值，最大 19。",
           "member": "string",
           "name": "MaterialIds",
           "required": true,
@@ -1348,7 +1365,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1361,7 +1378,7 @@
       "document": "DescribeMaterials返回参数结构体",
       "members": [
         {
-          "document": "素材列表信息。",
+          "document": "媒体列表信息。",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
           "type": "list",
@@ -1469,7 +1486,7 @@
         },
         {
           "default": "",
-          "document": "项目类别集合。",
+          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>",
           "member": "string",
           "name": "CategorySet",
           "required": false,
@@ -1506,6 +1523,14 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1613,7 +1638,7 @@
         },
         {
           "default": "",
-          "document": "被授权目标实体。",
+          "document": "被授权目标,，个人或团队。",
           "member": "Entity",
           "name": "Authorizee",
           "required": true,
@@ -1673,6 +1698,14 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
           "type": "string"
         }
       ],
@@ -1789,6 +1822,14 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1840,7 +1881,7 @@
         },
         {
           "default": "",
-          "document": "成员 ID 列表，限指定30个指定成员。",
+          "document": "成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。",
           "member": "string",
           "name": "MemberIds",
           "required": false,
@@ -1912,7 +1953,7 @@
         },
         {
           "default": "",
-          "document": "团队 ID 列表，限30个。",
+          "document": "团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。",
           "member": "string",
           "name": "TeamIds",
           "required": false,
@@ -2291,6 +2332,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2298,7 +2340,8 @@
         },
         {
           "default": "",
-          "document": "素材分类路径，例如填写\"/a/b\"，则代表平铺该分类路径下及其子分类路径下的素材信息。",
+          "document": "媒体分类路径，例如填写\"/a/b\"，则代表平铺该分类路径下及其子分类路径下的媒体信息。",
+          "example": "/a/b",
           "member": "string",
           "name": "ClassPath",
           "required": true,
@@ -2306,7 +2349,8 @@
         },
         {
           "default": "",
-          "document": "素材路径的归属者。",
+          "document": "媒体分类的归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -2315,6 +2359,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2323,6 +2368,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：50。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2330,7 +2376,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。",
+          "example": "user_id",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2344,15 +2391,19 @@
       "members": [
         {
           "document": "符合条件的记录总数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "该分类路径下及其子分类下的所有素材。",
+          "document": "该分类路径下及其子分类下的所有媒体基础信息列表。",
+          "example": "无",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2432,7 +2483,7 @@
         },
         {
           "default": "",
-          "document": "资源所属实体。",
+          "document": "资源归属者，个人或者团队。",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -2448,7 +2499,7 @@
         },
         {
           "default": "",
-          "document": "被授权目标实体。",
+          "document": "被授权目标，个人或者团队。",
           "member": "Entity",
           "name": "Authorizees",
           "required": true,
@@ -2456,7 +2507,7 @@
         },
         {
           "default": "",
-          "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
+          "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
           "member": "string",
           "name": "Permissions",
           "required": true,
@@ -2928,6 +2979,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2935,7 +2987,8 @@
         },
         {
           "default": "",
-          "document": "素材分类路径，例如填写\"/a/b\"，则代表浏览该分类路径下的素材和子分类信息。",
+          "document": "媒体分类路径，例如填写\"/a/b\"，则代表浏览该分类路径下的媒体和子分类信息。",
+          "example": "/a/b",
           "member": "string",
           "name": "ClassPath",
           "required": true,
@@ -2943,7 +2996,8 @@
         },
         {
           "default": "",
-          "document": "素材和分类的归属者。",
+          "document": "媒体和分类的归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -2952,6 +3006,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2960,6 +3015,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：50。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2967,7 +3023,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验对媒体的访问权限。",
+          "example": "user_id",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2980,23 +3037,29 @@
       "document": "ListMedia返回参数结构体",
       "members": [
         {
-          "document": "符合条件的素材记录总数。",
+          "document": "符合条件的媒体记录总数。",
+          "example": "1",
           "member": "int64",
           "name": "MaterialTotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "浏览分类路径下的素材列表信息。",
+          "document": "浏览分类路径下的媒体列表信息。",
+          "example": "无",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "浏览分类路径下的一级子类。",
+          "example": "无",
           "member": "ClassInfo",
           "name": "ClassInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3058,11 +3121,12 @@
       "usage": "out"
     },
     "MaterialBasicInfo": {
-      "document": "素材基本信息。",
+      "document": "媒体基本信息。",
       "members": [
         {
           "default": "",
-          "document": "素材 Id。",
+          "document": "媒体 Id。",
+          "example": "无",
           "member": "string",
           "name": "MaterialId",
           "required": true,
@@ -3071,7 +3135,8 @@
         },
         {
           "default": "",
-          "document": "素材类型，取值为：音频（AUDIO）、视频（VIDEO）、图片（IMAGE）、链接（LINK）、字幕 （SUBTITLE）、转场（TRANSITION）、滤镜（FILTER）、文本文字（TEXT）、图文动效（TEXT_IMAGE）。",
+          "document": "媒体类型，取值为：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片;</li>\n<li> LINK  :链接.</li>\n<li> OTHER : 其他.</li>",
+          "example": "无",
           "member": "string",
           "name": "MaterialType",
           "required": true,
@@ -3080,7 +3145,8 @@
         },
         {
           "default": "",
-          "document": "素材归属实体。",
+          "document": "媒体归属实体。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -3089,7 +3155,8 @@
         },
         {
           "default": "",
-          "document": "素材名称。",
+          "document": "媒体名称。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3098,7 +3165,8 @@
         },
         {
           "default": "",
-          "document": "素材文件的创建时间，使用 ISO 日期格式。",
+          "document": "媒体文件的创建时间，使用 ISO 日期格式。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -3107,7 +3175,8 @@
         },
         {
           "default": "",
-          "document": "素材文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。",
+          "document": "媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -3116,7 +3185,8 @@
         },
         {
           "default": "",
-          "document": "素材的分类目录路径。",
+          "document": "媒体的分类路径。",
+          "example": "无",
           "member": "string",
           "name": "ClassPath",
           "required": true,
@@ -3125,31 +3195,54 @@
         },
         {
           "default": "",
-          "document": "素材绑定的标签信息列表 。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "MaterialTagInfo",
-          "name": "TagInfoSet",
+          "document": "预置标签列表。",
+          "example": "无",
+          "member": "PresetTagInfo",
+          "name": "PresetTagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "素材媒体文件的预览图。",
+          "document": "人工标签列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件的预览图。",
+          "example": "无",
           "member": "string",
           "name": "PreviewUrl",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体绑定的标签信息列表 。\n该字段已废弃。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialTagInfo",
+          "name": "TagInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
     },
     "MaterialInfo": {
-      "document": "素材详情信息",
+      "document": "媒体详情信息",
       "members": [
         {
           "default": "",
-          "document": "素材基本信息。",
+          "document": "媒体基本信息。",
+          "example": "无",
           "member": "MaterialBasicInfo",
           "name": "BasicInfo",
           "required": true,
@@ -3158,7 +3251,8 @@
         },
         {
           "default": "",
-          "document": "视频素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VideoMaterial",
           "name": "VideoMaterial",
           "required": true,
@@ -3167,7 +3261,8 @@
         },
         {
           "default": "",
-          "document": "音频素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AudioMaterial",
           "name": "AudioMaterial",
           "required": true,
@@ -3176,7 +3271,8 @@
         },
         {
           "default": "",
-          "document": "图片素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ImageMaterial",
           "name": "ImageMaterial",
           "required": true,
@@ -3185,9 +3281,20 @@
         },
         {
           "default": "",
-          "document": "链接素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "链接媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LinkMaterial",
           "name": "LinkMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他类型媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OtherMaterial",
+          "name": "OtherMaterial",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -3453,6 +3560,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3460,7 +3568,8 @@
         },
         {
           "default": "",
-          "document": "素材 Id。",
+          "document": "媒体 Id。",
+          "example": "123245678",
           "member": "string",
           "name": "MaterialId",
           "required": true,
@@ -3468,15 +3577,17 @@
         },
         {
           "default": "",
-          "document": "素材归属。",
+          "document": "媒体或分类路径归属。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
           "default": "",
-          "document": "素材名称，不能超过30个字符。",
+          "document": "媒体名称，不能超过30个字符。",
+          "example": "name_modify",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -3484,7 +3595,8 @@
         },
         {
           "default": "",
-          "document": "素材分类路径，例如填写\"/a/b\"，则代表该素材存储的路径为\"/a/b\"。",
+          "document": "媒体分类路径，例如填写\"/a/b\"，则代表该媒体存储的路径为\"/a/b\"。若修改分类路径，则 Owner 字段必填。",
+          "example": "/a/b",
           "member": "string",
           "name": "ClassPath",
           "required": false,
@@ -3493,6 +3605,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "user_id",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -3550,7 +3663,7 @@
         },
         {
           "default": "",
-          "document": "归属者。",
+          "document": "项目归属者。",
           "member": "Entity",
           "name": "Owner",
           "required": false,
@@ -3745,6 +3858,86 @@
       ],
       "type": "object"
     },
+    "MoveResourceRequest": {
+      "document": "MoveResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "your_platform",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待移动的原始资源信息，包含原始媒体或分类资源，以及资源归属。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "SourceResource",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "目标信息，包含分类及归属，仅支持移动资源到分类。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "DestinationResource",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验资源访问以及写权限。",
+          "example": "user_id",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveResourceResponse": {
+      "document": "MoveResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OtherMaterial": {
+      "document": "其他类型素材",
+      "members": [
+        {
+          "default": "",
+          "document": "素材媒体文件的播放 URL 地址。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播媒资 FileId。",
+          "example": "无",
+          "member": "string",
+          "name": "VodFileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PenguinMediaPlatformPublishInfo": {
       "document": "企鹅号发布信息。",
       "members": [
@@ -3846,6 +4039,39 @@
         }
       ],
       "usage": "out"
+    },
+    "PresetTagInfo": {
+      "document": "预置标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签 Id 。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父级预设 Id。",
+          "member": "string",
+          "name": "ParentTagId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ProjectInfo": {
       "document": "项目信息。",
@@ -3949,6 +4175,32 @@
       ],
       "usage": "both"
     },
+    "ResourceInfo": {
+      "document": "资源信息，包含资源以及归属信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资和分类资源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Resource",
+          "name": "Resource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源归属，个人或团队。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "RevokeResourceAuthorizationRequest": {
       "document": "RevokeResourceAuthorization请求参数结构体",
       "members": [
@@ -4021,6 +4273,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -4029,6 +4282,7 @@
         {
           "default": "",
           "document": "指定搜索空间，数组长度不得超过5。",
+          "example": "无",
           "member": "SearchScope",
           "name": "SearchScopes",
           "required": true,
@@ -4036,7 +4290,8 @@
         },
         {
           "default": "",
-          "document": "素材类型，取值：\n<li>AUDIO：音频；</li>\n<li>VIDEO：视频 ；</li>\n<li>IMAGE：图片。</li>",
+          "document": "媒体类型，取值：\n<li>AUDIO：音频；</li>\n<li>VIDEO：视频 ；</li>\n<li>IMAGE：图片。</li>",
+          "example": "无",
           "member": "string",
           "name": "MaterialTypes",
           "required": false,
@@ -4044,7 +4299,8 @@
         },
         {
           "default": "",
-          "document": "搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。",
+          "document": "搜索文本，模糊匹配媒体名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。",
+          "example": "综艺",
           "member": "string",
           "name": "Text",
           "required": false,
@@ -4053,6 +4309,7 @@
         {
           "default": "",
           "document": "按画质检索，取值为：LD/SD/HD/FHD/2K/4K。",
+          "example": "无",
           "member": "string",
           "name": "Resolution",
           "required": false,
@@ -4060,7 +4317,8 @@
         },
         {
           "default": "",
-          "document": "按素材时长检索，单位s。",
+          "document": "按媒体时长检索，单位s。",
+          "example": "无",
           "member": "IntegerRange",
           "name": "DurationRange",
           "required": false,
@@ -4068,7 +4326,8 @@
         },
         {
           "default": "",
-          "document": "按照素材创建时间检索。",
+          "document": "按照媒体创建时间检索。",
+          "example": "无",
           "member": "TimeRange",
           "name": "CreateTimeRange",
           "required": false,
@@ -4077,6 +4336,7 @@
         {
           "default": "",
           "document": "按标签检索，填入检索的标签名。",
+          "example": "无",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -4085,6 +4345,7 @@
         {
           "default": "",
           "document": "排序方式。Sort.Field 可选值：CreateTime。指定 Text 搜索时，将根据匹配度排序，该字段无效。",
+          "example": "无",
           "member": "SortBy",
           "name": "Sort",
           "required": false,
@@ -4093,6 +4354,7 @@
         {
           "default": "",
           "document": "偏移量。默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4101,6 +4363,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：50。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4108,7 +4371,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。",
+          "example": "user_id",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -4122,15 +4386,19 @@
       "members": [
         {
           "document": "符合记录总条数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "素材信息，仅返回基础信息。",
+          "document": "媒体信息，仅返回基础信息。",
+          "example": "无",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

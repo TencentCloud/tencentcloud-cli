@@ -67,7 +67,7 @@
     "CreatePolicyVersion": [
       {
         "document": "本示例将新增一个策略版本。",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicyVersion\n<公共请求参数>\n\n{\n    \"PolicyDocument\": \"{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:*\"],\"resource\":[\"*\"]}]}\",\n    \"SetAsDefault\": true,\n    \"PolicyId\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicyVersion\n<公共请求参数>\n\n{\n    \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\n    \"SetAsDefault\": true,\n    \"PolicyId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"VersionId\": \"4\",\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\n    }\n}",
         "title": "新增一个策略版本"
       }

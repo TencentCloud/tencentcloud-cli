@@ -43,7 +43,7 @@
     "CreateDCDBInstance": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=CreateDCDBInstance\r\n&ShardMemory=2\r\n&ShardStorage=10\r\n&ShardNodeCount=3\r\n&ShardCount=2\r\n&DbVersionId=5.7.17\r\n&Count=1\r\n&Period=1\r\n&Zones.0=ap-guangzhou-2\r\n&Zones.1=ap-guangzhou-2\r\n&AutoVoucher=true\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CreateDCDBInstance\n&ShardMemory=2\n&ShardStorage=10\n&ShardNodeCount=3\n&ShardCount=2\n&DbVersionId=5.7.17\n&Count=1\n&Period=1\n&Zones.0=ap-guangzhou-2\n&Zones.1=ap-guangzhou-2\n&AutoVoucher=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"DealName\": \"20181103110163\",\n        \"InstanceIds\": [\n            \"dcdbt-avw0207d\"\n        ]\n    }\n}",
         "title": "创建包年包月的分布式数据库实例"
       }

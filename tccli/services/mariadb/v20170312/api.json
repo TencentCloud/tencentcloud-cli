@@ -659,6 +659,7 @@
         {
           "default": "",
           "document": "实例节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。",
+          "example": "[\"ap-guangzhou-2\\r\\n\",\"ap-guangzhou-2\\r\\n\"]",
           "member": "string",
           "name": "Zones",
           "required": true,
@@ -667,6 +668,7 @@
         {
           "default": "",
           "document": "节点个数大小，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得。",
+          "example": "1",
           "member": "int64",
           "name": "NodeCount",
           "required": true,
@@ -675,6 +677,7 @@
         {
           "default": "",
           "document": "内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得。",
+          "example": "2000",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -683,6 +686,7 @@
         {
           "default": "",
           "document": "存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。",
+          "example": "10000",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -691,6 +695,7 @@
         {
           "default": "",
           "document": "欲购买的时长，单位：月。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -699,6 +704,7 @@
         {
           "default": "",
           "document": "欲购买的数量，默认查询购买1个实例的价格。",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": false,
@@ -707,6 +713,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券进行支付，默认不使用。",
+          "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -715,6 +722,7 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "无",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -723,6 +731,7 @@
         {
           "default": "",
           "document": "虚拟私有网络 ID，不传表示创建为基础网络",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -731,6 +740,7 @@
         {
           "default": "",
           "document": "虚拟私有网络子网 ID，VpcId 不为空时必填",
+          "example": "无",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -739,6 +749,7 @@
         {
           "default": "",
           "document": "项目 ID，可以通过查看项目列表获取，不传则关联到默认项目",
+          "example": "无",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -746,7 +757,8 @@
         },
         {
           "default": "",
-          "document": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。如果不传的话，默认为 Mariadb 10.1.9。",
+          "document": "数据库引擎版本，当前可选：8.0.18，10.1.9，5.7.17。如果不传的话，默认为 Percona 5.7.17。",
+          "example": "无",
           "member": "string",
           "name": "DbVersionId",
           "required": false,
@@ -755,6 +767,7 @@
         {
           "default": "",
           "document": "实例名称， 可以通过该字段自主的设置实例的名字",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -763,6 +776,7 @@
         {
           "default": "",
           "document": "安全组ID列表",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -771,6 +785,7 @@
         {
           "default": "",
           "document": "自动续费标志，1:自动续费，2:不自动续费",
+          "example": "无",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -779,6 +794,7 @@
         {
           "default": "",
           "document": "是否支持IPv6",
+          "example": "无",
           "member": "int64",
           "name": "Ipv6Flag",
           "required": false,
@@ -787,6 +803,7 @@
         {
           "default": "",
           "document": "标签键值对数组",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -800,15 +817,19 @@
       "members": [
         {
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
+          "example": "20171103110163",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订单对应的实例 ID 列表，如果此处没有返回实例 ID，可以通过订单查询接口获取。还可通过实例查询接口查询实例是否创建完成。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

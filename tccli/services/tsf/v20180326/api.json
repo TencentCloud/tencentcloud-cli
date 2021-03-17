@@ -1892,6 +1892,7 @@
         {
           "default": "",
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -1901,6 +1902,7 @@
         {
           "default": "",
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationName",
           "required": true,
@@ -1910,6 +1912,7 @@
         {
           "default": "",
           "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationDesc",
           "required": true,
@@ -1919,6 +1922,7 @@
         {
           "default": "",
           "document": "应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationType",
           "required": true,
@@ -1928,6 +1932,7 @@
         {
           "default": "",
           "document": "微服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceType",
           "required": true,
@@ -1937,6 +1942,7 @@
         {
           "default": "",
           "document": "编程语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ProgLang",
           "required": true,
@@ -1946,6 +1952,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -1955,6 +1962,7 @@
         {
           "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -1964,6 +1972,7 @@
         {
           "default": "",
           "document": "应用资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationResourceType",
           "required": true,
@@ -1973,6 +1982,7 @@
         {
           "default": "",
           "document": "应用runtime类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationRuntimeType",
           "required": true,
@@ -1982,6 +1992,7 @@
         {
           "default": "",
           "document": "Apigateway的serviceId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApigatewayServiceId",
           "required": true,
@@ -1991,10 +2002,21 @@
         {
           "default": "",
           "document": "应用备注名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationRemarkName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务配置信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceConfig",
+          "name": "ServiceConfigList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3561,6 +3583,7 @@
         {
           "default": "",
           "document": "应用名称",
+          "example": "无",
           "member": "string",
           "name": "ApplicationName",
           "required": true,
@@ -3569,6 +3592,7 @@
         {
           "default": "",
           "document": "应用类型，V：虚拟机应用；C：容器应用；S：serverless应用",
+          "example": "无",
           "member": "string",
           "name": "ApplicationType",
           "required": true,
@@ -3577,6 +3601,7 @@
         {
           "default": "",
           "document": "应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceType",
           "required": true,
@@ -3585,6 +3610,7 @@
         {
           "default": "",
           "document": "应用描述",
+          "example": "无",
           "member": "string",
           "name": "ApplicationDesc",
           "required": false,
@@ -3593,6 +3619,7 @@
         {
           "default": "",
           "document": "应用日志配置项，废弃参数",
+          "example": "无",
           "member": "string",
           "name": "ApplicationLogConfig",
           "required": false,
@@ -3601,6 +3628,7 @@
         {
           "default": "",
           "document": "应用资源类型，废弃参数",
+          "example": "无",
           "member": "string",
           "name": "ApplicationResourceType",
           "required": false,
@@ -3609,6 +3637,7 @@
         {
           "default": "",
           "document": "应用runtime类型",
+          "example": "无",
           "member": "string",
           "name": "ApplicationRuntimeType",
           "required": false,
@@ -3617,10 +3646,20 @@
         {
           "default": "",
           "document": "需要绑定的数据集ID",
+          "example": "无",
           "member": "string",
           "name": "ProgramId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务配置信息列表",
+          "example": "无",
+          "member": "ServiceConfig",
+          "name": "ServiceConfigList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3630,8 +3669,10 @@
       "members": [
         {
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5691,6 +5732,7 @@
         {
           "default": "",
           "document": "部署组ID",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -5699,6 +5741,7 @@
         {
           "default": "",
           "document": "程序包ID",
+          "example": "无",
           "member": "string",
           "name": "PkgId",
           "required": true,
@@ -5707,6 +5750,7 @@
         {
           "default": "",
           "document": "部署组启动参数",
+          "example": "无",
           "member": "string",
           "name": "StartupParameters",
           "required": false,
@@ -5715,6 +5759,7 @@
         {
           "default": "",
           "document": "部署应用描述信息",
+          "example": "无",
           "member": "string",
           "name": "DeployDesc",
           "required": false,
@@ -5723,6 +5768,7 @@
         {
           "default": "",
           "document": "是否允许强制启动",
+          "example": "无",
           "member": "bool",
           "name": "ForceStart",
           "required": false,
@@ -5731,6 +5777,7 @@
         {
           "default": "",
           "document": "是否开启健康检查",
+          "example": "无",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
@@ -5739,6 +5786,7 @@
         {
           "default": "",
           "document": "开启健康检查时，配置健康检查",
+          "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
           "required": false,
@@ -5747,6 +5795,7 @@
         {
           "default": "",
           "document": "部署方式，0表示快速更新，1表示滚动更新",
+          "example": "无",
           "member": "uint64",
           "name": "UpdateType",
           "required": false,
@@ -5755,6 +5804,7 @@
         {
           "default": "",
           "document": "是否启用beta批次",
+          "example": "无",
           "member": "bool",
           "name": "DeployBetaEnable",
           "required": false,
@@ -5763,6 +5813,7 @@
         {
           "default": "",
           "document": "滚动发布每个批次参与的实例比率",
+          "example": "无",
           "member": "float",
           "name": "DeployBatch",
           "required": false,
@@ -5771,6 +5822,7 @@
         {
           "default": "",
           "document": "滚动发布的执行方式",
+          "example": "无",
           "member": "string",
           "name": "DeployExeMode",
           "required": false,
@@ -5779,10 +5831,29 @@
         {
           "default": "",
           "document": "滚动发布每个批次的时间间隔",
+          "example": "无",
           "member": "uint64",
           "name": "DeployWaitTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "启动脚本 base64编码",
+          "example": "无",
+          "member": "string",
+          "name": "StartScript",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "停止脚本 base64编码",
+          "example": "无",
+          "member": "string",
+          "name": "StopScript",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5792,8 +5863,10 @@
       "members": [
         {
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskId",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8002,6 +8075,7 @@
         {
           "default": "",
           "document": "应用ID（只传入应用ID，返回该应用下所有软件包信息）",
+          "example": "无",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -8010,6 +8084,7 @@
         {
           "default": "",
           "document": "查询关键字（支持根据包ID，包名，包版本号搜索）",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -8018,6 +8093,7 @@
         {
           "default": "",
           "document": "排序关键字（默认为\"UploadTime\"：上传时间）",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -8026,6 +8102,7 @@
         {
           "default": "",
           "document": "升序：0/降序：1（默认降序）",
+          "example": "无",
           "member": "uint64",
           "name": "OrderType",
           "required": false,
@@ -8034,6 +8111,7 @@
         {
           "default": "",
           "document": "查询起始偏移",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8042,6 +8120,7 @@
         {
           "default": "",
           "document": "返回数量限制",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -8050,6 +8129,7 @@
         {
           "default": "",
           "document": "程序包仓库类型",
+          "example": "无",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -8058,10 +8138,20 @@
         {
           "default": "",
           "document": "程序包仓库id",
+          "example": "无",
           "member": "string",
           "name": "RepositoryId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "程序包类型数组支持（fatjar jar war tar.gz zip）",
+          "example": "无",
+          "member": "string",
+          "name": "PackageTypeList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8071,8 +8161,10 @@
       "members": [
         {
           "document": "符合查询程序包信息列表",
+          "example": "无",
           "member": "PkgList",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9326,6 +9418,7 @@
         {
           "default": "",
           "document": "环境变量名称",
+          "example": "foo",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -9334,7 +9427,8 @@
         },
         {
           "default": "",
-          "document": "服务端口",
+          "document": "环境变量值",
+          "example": "bar",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -9943,6 +10037,21 @@
       ],
       "usage": "out"
     },
+    "HealthCheckConfig": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "default": "",
+          "document": "健康检查路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "HealthCheckSetting": {
       "document": "健康检查配置信息，若不指定该参数，则默认不设置健康检查。",
       "members": [
@@ -10381,6 +10490,7 @@
         {
           "default": "",
           "document": "机器实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10390,6 +10500,7 @@
         {
           "default": "",
           "document": "机器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -10399,6 +10510,7 @@
         {
           "default": "",
           "document": "机器内网地址IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LanIp",
           "required": true,
@@ -10408,6 +10520,7 @@
         {
           "default": "",
           "document": "机器外网地址IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "WanIp",
           "required": true,
@@ -10417,6 +10530,7 @@
         {
           "default": "",
           "document": "机器描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceDesc",
           "required": true,
@@ -10426,6 +10540,7 @@
         {
           "default": "",
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -10435,6 +10550,7 @@
         {
           "default": "",
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -10444,6 +10560,7 @@
         {
           "default": "",
           "document": "VM的状态 虚机：虚机的状态 容器：Pod所在虚机的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceStatus",
           "required": true,
@@ -10453,6 +10570,7 @@
         {
           "default": "",
           "document": "VM的可使用状态 虚机：虚机是否能够作为资源使用 容器：虚机是否能够作为资源部署POD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceAvailableStatus",
           "required": true,
@@ -10462,6 +10580,7 @@
         {
           "default": "",
           "document": "服务下的服务实例的状态 虚机：应用是否可用 + Agent状态 容器：Pod状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceInstanceStatus",
           "required": true,
@@ -10471,6 +10590,7 @@
         {
           "default": "",
           "document": "标识此instance是否已添加在tsf中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "CountInTsf",
           "required": true,
@@ -10480,6 +10600,7 @@
         {
           "default": "",
           "document": "机器所属部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -10489,6 +10610,7 @@
         {
           "default": "",
           "document": "机器所属应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -10498,6 +10620,7 @@
         {
           "default": "",
           "document": "机器所属应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationName",
           "required": true,
@@ -10507,6 +10630,7 @@
         {
           "default": "",
           "document": "机器实例在CVM的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceCreatedTime",
           "required": true,
@@ -10516,6 +10640,7 @@
         {
           "default": "",
           "document": "机器实例在CVM的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceExpiredTime",
           "required": true,
@@ -10525,6 +10650,7 @@
         {
           "default": "",
           "document": "机器实例在CVM的计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -10534,6 +10660,7 @@
         {
           "default": "",
           "document": "机器实例总CPU信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "InstanceTotalCpu",
           "required": true,
@@ -10543,6 +10670,7 @@
         {
           "default": "",
           "document": "机器实例总内存信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "InstanceTotalMem",
           "required": true,
@@ -10552,6 +10680,7 @@
         {
           "default": "",
           "document": "机器实例使用的CPU信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "InstanceUsedCpu",
           "required": true,
@@ -10561,6 +10690,7 @@
         {
           "default": "",
           "document": "机器实例使用的内存信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "InstanceUsedMem",
           "required": true,
@@ -10570,6 +10700,7 @@
         {
           "default": "",
           "document": "机器实例Limit CPU信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "InstanceLimitCpu",
           "required": true,
@@ -10579,6 +10710,7 @@
         {
           "default": "",
           "document": "机器实例Limit 内存信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "InstanceLimitMem",
           "required": true,
@@ -10588,6 +10720,7 @@
         {
           "default": "",
           "document": "包版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstancePkgVersion",
           "required": true,
@@ -10597,6 +10730,7 @@
         {
           "default": "",
           "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -10606,6 +10740,7 @@
         {
           "default": "",
           "document": "机器实例业务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RestrictState",
           "required": true,
@@ -10615,6 +10750,7 @@
         {
           "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -10624,6 +10760,7 @@
         {
           "default": "",
           "document": "实例执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "OperationState",
           "required": true,
@@ -10633,6 +10770,7 @@
         {
           "default": "",
           "document": "NamespaceId Ns ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -10642,6 +10780,7 @@
         {
           "default": "",
           "document": "InstanceZoneId 可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceZoneId",
           "required": true,
@@ -10651,6 +10790,7 @@
         {
           "default": "",
           "document": "InstanceImportMode 导入模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceImportMode",
           "required": true,
@@ -10660,6 +10800,7 @@
         {
           "default": "",
           "document": "ApplicationType应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationType",
           "required": true,
@@ -10669,6 +10810,7 @@
         {
           "default": "",
           "document": "ApplicationResourceType 资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationResourceType",
           "required": true,
@@ -10678,6 +10820,7 @@
         {
           "default": "",
           "document": "sidecar状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceSidecarStatus",
           "required": true,
@@ -10687,6 +10830,7 @@
         {
           "default": "",
           "document": "部署组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -10696,6 +10840,7 @@
         {
           "default": "",
           "document": "NS名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -10705,8 +10850,19 @@
         {
           "default": "",
           "document": "健康检查原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "agent版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentVersion",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12695,6 +12851,30 @@
       ],
       "usage": "out"
     },
+    "Ports": {
+      "document": "服务端口",
+      "members": [
+        {
+          "default": "",
+          "document": "服务端口",
+          "member": "uint64",
+          "name": "TargetPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PropertyField": {
       "document": "属性字段",
       "members": [
@@ -13573,6 +13753,39 @@
         }
       ],
       "usage": "out"
+    },
+    "ServiceConfig": {
+      "document": "服务配置",
+      "members": [
+        {
+          "default": "",
+          "document": "服务名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口信息列表",
+          "member": "Ports",
+          "name": "Ports",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HealthCheckConfig",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ServiceSetting": {
       "document": "容器网络设置。",
@@ -15335,6 +15548,7 @@
         {
           "default": "",
           "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -15344,6 +15558,7 @@
         {
           "default": "",
           "document": "部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -15353,6 +15568,7 @@
         {
           "default": "",
           "document": "部署组状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupStatus",
           "required": true,
@@ -15362,6 +15578,7 @@
         {
           "default": "",
           "document": "程序包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PackageId",
           "required": true,
@@ -15371,6 +15588,7 @@
         {
           "default": "",
           "document": "程序包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PackageName",
           "required": true,
@@ -15380,6 +15598,7 @@
         {
           "default": "",
           "document": "程序包版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PackageVersion",
           "required": true,
@@ -15389,6 +15608,7 @@
         {
           "default": "",
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -15398,6 +15618,7 @@
         {
           "default": "",
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -15407,6 +15628,7 @@
         {
           "default": "",
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -15416,6 +15638,7 @@
         {
           "default": "",
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -15425,6 +15648,7 @@
         {
           "default": "",
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -15434,6 +15658,7 @@
         {
           "default": "",
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationName",
           "required": true,
@@ -15443,6 +15668,7 @@
         {
           "default": "",
           "document": "部署组机器数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "InstanceCount",
           "required": true,
@@ -15452,6 +15678,7 @@
         {
           "default": "",
           "document": "部署组运行中机器数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "RunInstanceCount",
           "required": true,
@@ -15461,6 +15688,7 @@
         {
           "default": "",
           "document": "部署组启动参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "StartupParameters",
           "required": true,
@@ -15470,6 +15698,7 @@
         {
           "default": "",
           "document": "部署组创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -15479,6 +15708,7 @@
         {
           "default": "",
           "document": "部署组更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -15488,6 +15718,7 @@
         {
           "default": "",
           "document": "部署组停止机器数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "OffInstanceCount",
           "required": true,
@@ -15497,6 +15728,7 @@
         {
           "default": "",
           "document": "部署组描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupDesc",
           "required": true,
@@ -15506,6 +15738,7 @@
         {
           "default": "",
           "document": "微服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceType",
           "required": true,
@@ -15515,6 +15748,7 @@
         {
           "default": "",
           "document": "应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationType",
           "required": true,
@@ -15524,6 +15758,7 @@
         {
           "default": "",
           "document": "部署组资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupResourceType",
           "required": true,
@@ -15533,6 +15768,7 @@
         {
           "default": "",
           "document": "部署组更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "UpdatedTime",
           "required": true,
@@ -15542,6 +15778,7 @@
         {
           "default": "",
           "document": "部署应用描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DeployDesc",
           "required": true,
@@ -15551,6 +15788,7 @@
         {
           "default": "",
           "document": "滚动发布的更新方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "UpdateType",
           "required": true,
@@ -15560,6 +15798,7 @@
         {
           "default": "",
           "document": "发布是否启用beta批次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "DeployBetaEnable",
           "required": true,
@@ -15569,6 +15808,7 @@
         {
           "default": "",
           "document": "滚动发布的批次比例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "DeployBatch",
           "required": true,
@@ -15578,6 +15818,7 @@
         {
           "default": "",
           "document": "滚动发布的批次执行方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DeployExeMode",
           "required": true,
@@ -15587,6 +15828,7 @@
         {
           "default": "",
           "document": "滚动发布的每个批次的等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "DeployWaitTime",
           "required": true,
@@ -15596,6 +15838,7 @@
         {
           "default": "",
           "document": "是否开启了健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": true,
@@ -15605,10 +15848,41 @@
         {
           "default": "",
           "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "程序包类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启动脚本 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartScript",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "停止脚本 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StopScript",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

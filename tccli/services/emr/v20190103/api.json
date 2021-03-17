@@ -12,6 +12,12 @@
       "name": "查询硬件节点信息",
       "output": "DescribeClusterNodesResponse"
     },
+    "DescribeInstanceRenewNodes": {
+      "document": "预付费集群隔离后续费资源查询",
+      "input": "DescribeInstanceRenewNodesRequest",
+      "name": "预付费集群隔离后续费资源查询",
+      "output": "DescribeInstanceRenewNodesResponse"
+    },
     "DescribeInstances": {
       "document": "查询EMR实例",
       "input": "DescribeInstancesRequest",
@@ -23,6 +29,12 @@
       "input": "DescribeJobFlowRequest",
       "name": "查询流程任务",
       "output": "DescribeJobFlowResponse"
+    },
+    "InquirePriceRenewEmr": {
+      "document": "集群续费询价。",
+      "input": "InquirePriceRenewEmrRequest",
+      "name": "集群续费询价",
+      "output": "InquirePriceRenewEmrResponse"
     },
     "InquiryPriceCreateInstance": {
       "document": "创建实例询价",
@@ -1071,6 +1083,60 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceRenewNodesRequest": {
+      "document": "DescribeInstanceRenewNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID,实例ID形如: emr-xxxxxxxx",
+          "example": "emr-6deluvd4",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRenewNodesResponse": {
+      "document": "DescribeInstanceRenewNodes返回参数结构体",
+      "members": [
+        {
+          "document": "查询到的节点总数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RenewInstancesInfo",
+          "name": "NodeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户所有的标签键列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\\u6d4b\\u8bd5\\u4e00\\u4e0b\",\"alex_test\",\"beckwuxingjia\",\"ghghghg\",\"tag_auth_test\",\"test\",\"beckwu\",\"emr\",\"lg\",\"bk\"]",
+          "member": "string",
+          "name": "MetaInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstancesRequest": {
       "document": "DescribeInstances请求参数结构体",
       "members": [
@@ -1442,6 +1508,114 @@
         }
       ],
       "usage": "both"
+    },
+    "InquirePriceRenewEmrRequest": {
+      "document": "InquirePriceRenewEmr请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "待续费集群ID列表。",
+          "example": "emr-vm-jv1s4",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。此处只支持取值为1，表示包年包月。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewEmrResponse": {
+      "document": "InquirePriceRenewEmr返回参数结构体",
+      "members": [
+        {
+          "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "898.9",
+          "member": "float",
+          "name": "OriginalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "596.54",
+          "member": "float",
+          "name": "DiscountCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例续费的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InquiryPriceCreateInstanceRequest": {
       "document": "InquiryPriceCreateInstance请求参数结构体",
@@ -3104,6 +3278,102 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RenewInstancesInfo": {
+      "document": "集群续费实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点资源ID",
+          "example": "emr-vm-wwwe2",
+          "member": "string",
+          "name": "EmrResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点类型。0:common节点；1:master节点\n；2:core节点；3:task节点",
+          "example": "1",
+          "member": "int64",
+          "name": "Flag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网IP",
+          "example": "192.182.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点内存描述",
+          "example": "8G",
+          "member": "string",
+          "name": "MemDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点核数",
+          "example": "4",
+          "member": "int64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘大小",
+          "example": "100G",
+          "member": "string",
+          "name": "DiskSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "2021-02-01",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点规格",
+          "example": "CVM.S2",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘类型",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

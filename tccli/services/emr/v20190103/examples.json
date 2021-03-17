@@ -16,6 +16,14 @@
         "title": "获取硬件节点信息"
       }
     ],
+    "DescribeInstanceRenewNodes": [
+      {
+        "document": "预付费集群隔离后续费资源查询",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeInstanceRenewNodes\n&InstanceId=emr-6deluvd4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCnt\": 3,\n        \"NodeList\": [\n            {\n                \"ExpireTime\": \"xx\",\n                \"EmrResourceId\": \"xx\",\n                \"MemDesc\": \"xx\",\n                \"StorageType\": 5,\n                \"Ip\": \"xx\",\n                \"CpuNum\": 8,\n                \"Flag\": 1,\n                \"DiskSize\": \"xx\",\n                \"Spec\": \"xx\"\n            },\n            {\n                \"CpuNum\": 8,\n                \"EmrResourceId\": \"xx\",\n                \"MemDesc\": \"xx\",\n                \"StorageType\": 5,\n                \"Ip\": \"xx\",\n                \"ExpireTime\": \"xx\",\n                \"Flag\": 2,\n                \"DiskSize\": \"xx\",\n                \"Spec\": \"xx\"\n            },\n            {\n                \"CpuNum\": 8,\n                \"EmrResourceId\": \"xx\",\n                \"MemDesc\": \"xx\",\n                \"StorageType\": 5,\n                \"Ip\": \"xx\",\n                \"ExpireTime\": \"xx\",\n                \"Flag\": 2,\n                \"DiskSize\": \"xx\",\n                \"Spec\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"MetaInfo\": [\n            \"xx\"\n        ]\n    }\n}",
+        "title": "预付费集群隔离后续费资源查询"
+      }
+    ],
     "DescribeInstances": [
       {
         "document": "",
@@ -30,6 +38,14 @@
         "input": "https://emr.tencentcloudapi.com/?Action=DescribeJobFlow\n&JobFlowId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"State\": \"JobFlowFinish\",\n        \"Details\": [],\n        \"RequestId\": \"5a96d30f-a251-42a0-82e2-f85325f5b89b\"\n    }\n}",
         "title": "查询任务流程"
+      }
+    ],
+    "InquirePriceRenewEmr": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=InquirePriceRenewEmr\n&TimeUnit=m\n&TimeSpan=1\n&Currency=CNY\n&PayMode=1\n&InstanceId=emr-vm-jv1s4zas\n&Placement.ProjectId=0\n&Placement.Zone=ap-guangzhou-4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DiscountCost\": 596.54,\n        \"OriginalCost\": 898.9,\n        \"RequestId\": \"223c838e-ce27-4adf-9a41-89661fe7ad21\",\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"m\"\n    }\n}",
+        "title": "续费询价示例"
       }
     ],
     "InquiryPriceCreateInstance": [

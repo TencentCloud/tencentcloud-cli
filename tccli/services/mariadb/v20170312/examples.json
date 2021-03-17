@@ -43,7 +43,7 @@
     "CreateDBInstance": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=CreateDBInstance\r\n&Zones.0=ap-guangzhou-2\r\n&Zones.1=ap-guangzhou-2\r\n&Memory=2000\r\n&Storage=10000\r\n&NodeCount=1\r\n&Count=1\r\n&Period=1\r\n&AutoVoucher=true\r\n&<公共请求参数>",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=CreateDBInstance\n&Zones.0=ap-guangzhou-2\n&Zones.1=ap-guangzhou-2\n&Memory=2000\n&Storage=10000\n&NodeCount=1\n&Count=1\n&Period=1\n&AutoVoucher=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"DealName\": \"20171103110163\",\n        \"InstanceIds\": null\n    }\n}",
         "title": "创建包年包月的云数据库实例"
       }

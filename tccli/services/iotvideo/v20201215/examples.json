@@ -1,5 +1,21 @@
 {
   "actions": {
+    "BatchUpdateFirmware": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchUpdateFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"2.0.0\",\n    \"FirmwareOriVersion\": \"1.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "批量更新固件"
+      }
+    ],
+    "CancelDeviceFirmwareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelDeviceFirmwareTask\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"TaskId\": 10000,\n    \"DeviceName\": \"dev\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "取消设备升级任务"
+      }
+    ],
     "CheckForwardAuth": [
       {
         "document": "",
@@ -40,12 +56,28 @@
         "title": "创建产品"
       }
     ],
+    "CreateTaskFileUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskFileUrl\n<公共请求参数>\n\n{\n    \"ProductId\": \"ABCDE12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"https://iothub-tasktest-****\",\n        \"FileName\": \"111111_ABCDE12345_1586228400\",\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "获取任务文件上传链接"
+      }
+    ],
     "DeleteDevice": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevice\n<公共请求参数>\n\n{\n    \"ProductId\": \"WYILLHRQ4O\",\n    \"DeviceName\": \"test1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"216abff3-4465-4a70-82bd-4b98504d9fea\"\n    }\n}",
         "title": "删除设备"
+      }
+    ],
+    "DeleteFirmware": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"2.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "删除固件"
       }
     ],
     "DeleteForwardRule": [
@@ -184,6 +216,54 @@
         "title": "获取设备列表"
       }
     ],
+    "DescribeFirmware": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"7ZISKXPJVU\",\n    \"FirmwareVersion\": \"1.0.3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"desc\",\n        \"Md5sum\": \"md5\",\n        \"Createtime\": 1597047368,\n        \"RequestId\": \"xxxxxxxxxx\",\n        \"Version\": \"1.0.3\",\n        \"ProductId\": \"7ZISKXPJVU\",\n        \"Name\": \"name\",\n        \"ProductName\": \"ABC\"\n    }\n}",
+        "title": "查询固件信息"
+      }
+    ],
+    "DescribeFirmwareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTask\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"TaskId\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1000175,\n        \"Status\": 3,\n        \"CreateTime\": 1589466879,\n        \"Type\": 1,\n        \"ProductName\": \"门锁\",\n        \"OriginalVersion\": \"xx\",\n        \"UpgradeMode\": \"originalVersion\",\n        \"ProductId\": \"ABCDE12345\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询固件升级任务详情"
+      }
+    ],
+    "DescribeFirmwareTaskDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTaskDevices\n<公共请求参数>\n\n{\n    \"ProductID\": \"O4CCMMZE3A\",\n    \"FirmwareVersion\": \"1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Devices\": [\n            {\n                \"TaskId\": 1,\n                \"DeviceName\": \"123\",\n                \"LastProcessTime\": 1597141763,\n                \"Status\": 5,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0,\n                \"OriVersion\": \"0.1\"\n            },\n            {\n                \"TaskId\": 2,\n                \"OriVersion\": \"0.1\",\n                \"DeviceName\": \"abc\",\n                \"LastProcessTime\": 1597140525,\n                \"Status\": 0,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0\n            },\n            {\n                \"TaskId\": 3,\n                \"LastProcessTime\": 1597141811,\n                \"Status\": 6,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0,\n                \"OriVersion\": \"0.1\",\n                \"DeviceName\": \"123\"\n            }\n        ],\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\n    }\n}",
+        "title": "查询固件升级任务的设备列表"
+      }
+    ],
+    "DescribeFirmwareTaskDistribution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTaskDistribution\n<公共请求参数>\n\n{\n    \"ProductID\": \"O4CCMMZE3A\",\n    \"FirmwareVersion\": \"1.0\",\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"StatusInfos\": [\n            {\n                \"Total\": 1,\n                \"Status\": 0\n            },\n            {\n                \"Status\": 5,\n                \"Total\": 1\n            },\n            {\n                \"Total\": 1,\n                \"Status\": 6\n            }\n        ],\n        \"RequestId\": \"25a4a01b-8146-4388-90f9-2d8ca18bbb1f\"\n    }\n}",
+        "title": "查询固件升级任务状态分布"
+      }
+    ],
+    "DescribeFirmwareTaskStatistics": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=DescribeFirmwareTaskStatistics\n&ProductID=O4CCMMZE3A\n&FirmwareVersion=1.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SuccessTotal\": 1,\n        \"FailureTotal\": 0,\n        \"UpgradingTotal\": 1,\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\n    }\n}",
+        "title": "查询固件升级任务统计信息"
+      }
+    ],
+    "DescribeFirmwareTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTasks\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"Offset\": 1,\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 53,\n        \"TaskInfos\": [\n            {\n                \"TaskId\": 1000175,\n                \"Status\": 3,\n                \"CreateTime\": 1589466879,\n                \"Type\": 1\n            },\n            {\n                \"TaskId\": 1000176,\n                \"Status\": 3,\n                \"CreateTime\": 1589467049,\n                \"Type\": 1\n            },\n            {\n                \"Status\": 3,\n                \"CreateTime\": 1589467138,\n                \"Type\": 1,\n                \"TaskId\": 1000179\n            },\n            {\n                \"TaskId\": 1000180,\n                \"Status\": 3,\n                \"CreateTime\": 1589467139,\n                \"Type\": 1\n            },\n            {\n                \"Type\": 1,\n                \"TaskId\": 1000182,\n                \"Status\": 3,\n                \"CreateTime\": 1589467141\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询固件升级任务列表"
+      }
+    ],
     "DescribeForwardRule": [
       {
         "document": "",
@@ -216,12 +296,44 @@
         "title": "获取产品列表"
       }
     ],
+    "EditFirmware": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=EditFirmware\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&FirmwareName=name\n&FirmwareDescription=desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "编辑固件信息"
+      }
+    ],
+    "GetAllFirmwareVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAllFirmwareVersion\n<公共请求参数>\n\n{\n    \"ProductID\": \"asdfbasd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Version\": [\n            \"1.0.0\",\n            \"1.0.1\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取所有版本列表"
+      }
+    ],
+    "GetFirmwareURL": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=GetFirmwareURL\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取固件下载地址"
+      }
+    ],
     "ImportModelDefinition": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportModelDefinition\n<公共请求参数>\n\n{\n    \"ModelSchema\": \"{}\",\n    \"ProductId\": \"TDCZ2WD29Z\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8de3a44\"\n    }\n}",
         "title": "导入其它产品的数据模板"
+      }
+    ],
+    "ListFirmwares": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListFirmwares\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Firmwares\": [\n            {\n                \"Name\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"ProductId\": \"xx\",\n                \"Description\": \"xx\",\n                \"Version\": \"1.0.0\",\n                \"Md5sum\": \"ahbdjshfuisdfoisjfos\",\n                \"CreateTime\": \"147873872173\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "获取固件列表"
       }
     ],
     "ModifyDevice": [
@@ -256,12 +368,28 @@
         "title": "修改产品信息"
       }
     ],
+    "RetryDeviceFirmwareTask": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=RetryDeviceFirmwareTask\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&TaskId=10000\n&DeviceName=dev\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "重试设备升级任务"
+      }
+    ],
     "SetForwardAuth": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetForwardAuth\n<公共请求参数>\n\n{\n    \"Skey\": \"xrnWgKu0fCz7q8JIQYFiNP-XpyaziljFvrQg4A*Cidc_\",\n    \"QueueType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMsg\": \"\",\n        \"RoleName\": \"ckafkaIoTCloud_QCSRole\",\n        \"RoleID\": 1724847,\n        \"RequestId\": \"6e85b1e5-6bbe-4731-8902-df7b6c308fda\",\n        \"QueueType\": 1,\n        \"Endpoint\": \"100011064235\",\n        \"Result\": 0\n    }\n}",
         "title": "设置转发权限"
+      }
+    ],
+    "UploadFirmware": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=UploadFirmware\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&Md5sum=hfshfspodkoiwuidoiwjcuie\n&FileSize=1024\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "上传固件信息"
       }
     ]
   },

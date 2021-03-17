@@ -1,6 +1,6 @@
-**Example 1: 获取视频素材详情**
+**Example 1: 获取视媒体材详情**
 
-视频素材
+视频媒体
 
 Input: 
 
@@ -23,12 +23,18 @@ Output:
                     "CreateTime": "2019-12-31T03:59:14Z",
                     "UpdateTime": "2019-12-31T03:59:14Z",
                     "ClassPath": "/",
+                    "TagSet": [],
+                    "TagInfoSet": [],
+                    "PresetTagSet": [],
                     "PreviewUrl": "http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg",
                     "Owner": {
                         "Type": "PERSON",
                         "Id": "6b6ef043-85f3-4614-b735-768bb466ae5b"
                     }
                 },
+                "ImageMaterial": null,
+                "LinkMaterial": null,
+                "AudioMaterial": null,
                 "VideoMaterial": {
                     "MaterialStatus": {
                         "EditorUsableStatus": "NORMAL"
@@ -78,9 +84,9 @@ Output:
 }
 ```
 
-**Example 2: 获取音频素材详情**
+**Example 2: 获取音频媒体详情**
 
-音频素材
+音频媒体
 
 Input: 
 
@@ -131,6 +137,9 @@ Output:
                         "Type": "PERSON"
                     },
                     "PreviewUrl": "",
+                    "TagSet": [],
+                    "TagInfoSet": [],
+                    "PresetTagSet": [],
                     "UpdateTime": "2019-10-29T09:37:29Z"
                 },
                 "ImageMaterial": null,
@@ -143,7 +152,7 @@ Output:
 }
 ```
 
-**Example 3: 获取图片素材详情**
+**Example 3: 获取图片媒体详情**
 
 
 
@@ -173,6 +182,9 @@ Output:
                         "Type": "PERSON"
                     },
                     "PreviewUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png",
+                    "TagSet": [],
+                    "TagInfoSet": [],
+                    "PresetTagSet": [],
                     "UpdateTime": "2019-10-28T12:10:25Z"
                 },
                 "ImageMaterial": {

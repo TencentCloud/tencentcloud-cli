@@ -4091,6 +4091,7 @@
         {
           "default": "",
           "document": "视频暴恐评分，分值为0到100。",
+          "example": "20",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -4100,6 +4101,7 @@
         {
           "default": "",
           "document": "暴恐结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": " pass",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -4108,7 +4110,8 @@
         },
         {
           "default": "",
-          "document": "视频暴恐结果标签，取值范围：\n<li>guns：武器枪支。</li>\n<li>crowd：人群聚集。</li>\n<li>police：警察部队。</li>\n<li>bloody：血腥画面。</li>\n<li>banners：暴恐旗帜。</li>\n<li>militant：武装分子。</li>\n<li>explosion：爆炸火灾。</li>\n<li>terrorists：暴恐人物。</li>",
+          "document": "视频暴恐结果标签，取值范围：\n<li>guns：武器枪支。</li>\n<li>crowd：人群聚集。</li>\n<li>police：警察部队。</li>\n<li>bloody：血腥画面。</li>\n<li>banners：暴恐旗帜。</li>\n<li>militant：武装分子。</li>\n<li>explosion：爆炸火灾。</li>\n<li>terrorists：暴恐人物。</li>\n<li>scenario：暴恐画面。</li>",
+          "example": " crowd",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -4118,6 +4121,7 @@
         {
           "default": "",
           "document": "有暴恐嫌疑的视频片段列表。",
+          "example": "[]",
           "member": "MediaContentReviewSegmentItem",
           "name": "SegmentSet",
           "required": true,
@@ -6298,6 +6302,7 @@
         {
           "default": "",
           "document": "智能识别结果是否进入智能识别墙（对识别结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
+          "example": "OFF",
           "member": "string",
           "name": "ReviewWallSwitch",
           "required": true,
@@ -6306,6 +6311,7 @@
         {
           "default": "",
           "document": "内容智能识别模板名称，长度限制：64 个字符。",
+          "example": "内容智能识别模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6314,6 +6320,7 @@
         {
           "default": "",
           "document": "内容智能识别模板描述信息，长度限制：256 个字符。",
+          "example": "模板1",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -6322,6 +6329,7 @@
         {
           "default": "",
           "document": "令人反感的信息的控制参数。",
+          "example": "无",
           "member": "PornConfigureInfo",
           "name": "PornConfigure",
           "required": false,
@@ -6330,6 +6338,7 @@
         {
           "default": "",
           "document": "令人不安全的信息的控制参数。",
+          "example": "无",
           "member": "TerrorismConfigureInfo",
           "name": "TerrorismConfigure",
           "required": false,
@@ -6338,6 +6347,7 @@
         {
           "default": "",
           "document": "令人不适宜的控制参数。",
+          "example": "无",
           "member": "PoliticalConfigureInfo",
           "name": "PoliticalConfigure",
           "required": false,
@@ -6346,6 +6356,7 @@
         {
           "default": "",
           "document": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>",
+          "example": "无",
           "member": "ProhibitedConfigureInfo",
           "name": "ProhibitedConfigure",
           "required": false,
@@ -6354,6 +6365,7 @@
         {
           "default": "",
           "document": "用户自定义内容智能识别控制参数。",
+          "example": "无",
           "member": "UserDefineConfigureInfo",
           "name": "UserDefineConfigure",
           "required": false,
@@ -6362,6 +6374,7 @@
         {
           "default": "",
           "document": "截帧间隔，单位为秒。当不填时，默认截帧间隔为 1 秒，最小值为 0.5 秒。",
+          "example": "无",
           "member": "float",
           "name": "ScreenshotInterval",
           "required": false,
@@ -6370,6 +6383,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -6383,8 +6397,10 @@
       "members": [
         {
           "document": "内容智能识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8598,6 +8614,7 @@
         {
           "default": "",
           "document": "内容智能识别模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "无",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -8606,6 +8623,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8614,6 +8632,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -8622,6 +8641,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -8635,15 +8655,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "内容智能识别模板详情列表。",
+          "example": "无",
           "member": "ContentReviewTemplateItem",
           "name": "ContentReviewTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9769,6 +9793,7 @@
         {
           "default": "",
           "document": "视频处理任务的任务 ID。",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -9777,6 +9802,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9790,120 +9816,154 @@
       "members": [
         {
           "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务。</li>\n\n兼容 2017 版的任务类型：\n<li>Transcode：视频转码任务；</li>\n<li>SnapshotByTimeOffset：视频截图任务；</li>\n<li>Concat：视频拼接任务；</li>\n<li>Clip：视频剪辑任务；</li>\n<li>ImageSprites：截取雪碧图任务。</li>",
+          "example": "Procedure",
           "member": "string",
           "name": "TaskType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务状态，取值：\n<li>WAITING：等待中；</li>\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2019-02-21T08:27:42Z",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2019-02-21T08:27:43Z",
           "member": "string",
           "name": "BeginProcessTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2019-02-21T08:27:44Z",
           "member": "string",
           "name": "FinishTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "视频处理任务信息，仅当 TaskType 为 Procedure，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ProcedureTask",
           "name": "ProcedureTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "视频编辑任务信息，仅当 TaskType 为 EditMedia，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "微信发布任务信息，仅当 TaskType 为 WechatPublish，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WechatPublishTask",
           "name": "WechatPublishTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ComposeMediaTask",
           "name": "ComposeMediaTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "视频拆条任务信息，仅当 TaskType 为 SplitMedia，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SplitMediaTask",
           "name": "SplitMediaTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WechatMiniProgramPublishTask",
           "name": "WechatMiniProgramPublishTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PullUploadTask",
           "name": "PullUploadTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TranscodeTask2017",
           "name": "TranscodeTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "视频拼接任务信息，仅当 TaskType 为 Concat，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ConcatTask2017",
           "name": "ConcatTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "视频剪辑任务信息，仅当 TaskType 为 Clip，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClipTask2017",
           "name": "ClipTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "截取雪碧图任务信息，仅当 TaskType 为 ImageSprite，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CreateImageSpriteTask2017",
           "name": "CreateImageSpriteTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "视频指定时间点截图任务信息，仅当 TaskType 为 SnapshotByTimeOffset，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SnapshotByTimeOffsetTask2017",
           "name": "SnapshotByTimeOffsetTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -14817,6 +14877,7 @@
         {
           "default": "",
           "document": "内容智能识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -14825,6 +14886,7 @@
         {
           "default": "",
           "document": "内容智能识别模板名称，长度限制：64 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -14833,6 +14895,7 @@
         {
           "default": "",
           "document": "内容智能识别模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -14841,6 +14904,7 @@
         {
           "default": "",
           "document": "令人不安全的信息的控制参数。",
+          "example": "无",
           "member": "TerrorismConfigureInfoForUpdate",
           "name": "TerrorismConfigure",
           "required": false,
@@ -14849,6 +14913,7 @@
         {
           "default": "",
           "document": "令人反感的信息的控制参数。",
+          "example": "无",
           "member": "PornConfigureInfoForUpdate",
           "name": "PornConfigure",
           "required": false,
@@ -14857,6 +14922,7 @@
         {
           "default": "",
           "document": "令人不适宜的信息控制参数。",
+          "example": "无",
           "member": "PoliticalConfigureInfoForUpdate",
           "name": "PoliticalConfigure",
           "required": false,
@@ -14865,6 +14931,7 @@
         {
           "default": "",
           "document": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>",
+          "example": "无",
           "member": "ProhibitedConfigureInfoForUpdate",
           "name": "ProhibitedConfigure",
           "required": false,
@@ -14873,6 +14940,7 @@
         {
           "default": "",
           "document": "用户自定义内容智能识别控制参数。",
+          "example": "无",
           "member": "UserDefineConfigureInfoForUpdate",
           "name": "UserDefineConfigure",
           "required": false,
@@ -14881,6 +14949,7 @@
         {
           "default": "",
           "document": "截帧间隔，单位为秒，最小值为 0.5 秒。",
+          "example": "无",
           "member": "float",
           "name": "ScreenshotInterval",
           "required": false,
@@ -14889,6 +14958,7 @@
         {
           "default": "",
           "document": "智能识别结果是否进入智能识别墙（对智能识别结果进行人工识别）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
+          "example": "无",
           "member": "string",
           "name": "ReviewWallSwitch",
           "required": false,
@@ -14897,6 +14967,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -17615,6 +17686,7 @@
         {
           "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -17623,6 +17695,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -17636,8 +17709,10 @@
       "members": [
         {
           "document": "事件列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EventContent",
           "name": "EventSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -19716,6 +19791,7 @@
         {
           "default": "",
           "document": "画面鉴恐任务开关，可选值：\n<li>ON：开启画面鉴恐任务；</li>\n<li>OFF：关闭画面鉴恐任务。</li>",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -19724,7 +19800,8 @@
         },
         {
           "default": "",
-          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物。</li>",
+          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物；</li>\n<li>scenario：暴恐画面。</li>",
+          "example": "guns",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -19732,8 +19809,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "90",
+          "default": "",
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。",
+          "example": "95",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -19741,8 +19819,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "80",
+          "default": "",
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 80 分。取值范围：0~100。",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -19758,6 +19837,7 @@
         {
           "default": "",
           "document": "画面鉴恐任务开关，可选值：\n<li>ON：开启画面鉴恐任务；</li>\n<li>OFF：关闭画面鉴恐任务。</li>",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -19766,7 +19846,8 @@
         },
         {
           "default": "",
-          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物。</li>",
+          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物；</li>\n<li>scenario：暴恐画面。</li>",
+          "example": "bloody",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -19776,6 +19857,7 @@
         {
           "default": "",
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "95",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -19785,6 +19867,7 @@
         {
           "default": "",
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,

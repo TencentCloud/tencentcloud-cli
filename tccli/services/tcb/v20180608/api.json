@@ -162,6 +162,12 @@
       "name": "获取环境列表",
       "output": "DescribeEnvsResponse"
     },
+    "DescribeExtensionUploadInfo": {
+      "document": "描述扩展上传文件信息",
+      "input": "DescribeExtensionUploadInfoRequest",
+      "name": "描述扩展上传文件信息",
+      "output": "DescribeExtensionUploadInfoResponse"
+    },
     "DescribeExtraPkgBillingInfo": {
       "document": "获取增值包计费相关信息",
       "input": "DescribeExtraPkgBillingInfoRequest",
@@ -3849,6 +3855,42 @@
       ],
       "type": "object"
     },
+    "DescribeExtensionUploadInfoRequest": {
+      "document": "DescribeExtensionUploadInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待上传的文件",
+          "example": "无",
+          "member": "ExtensionFile",
+          "name": "ExtensionFiles",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtensionUploadInfoResponse": {
+      "document": "DescribeExtensionUploadInfo返回参数结构体",
+      "members": [
+        {
+          "document": "待上传文件的信息数组",
+          "example": "无",
+          "member": "ExtensionFileInfo",
+          "name": "FilesData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExtraPkgBillingInfoRequest": {
       "document": "DescribeExtraPkgBillingInfo请求参数结构体",
       "members": [
@@ -4672,6 +4714,74 @@
         }
       ],
       "type": "object"
+    },
+    "ExtensionFile": {
+      "document": "扩展文件",
+      "members": [
+        {
+          "default": "",
+          "document": "文件类型。枚举值\n<li>FUNCTION：函数代码</li>\n<li>STATIC：静态托管代码</li>\n<li>SMS：短信文件</li>",
+          "example": "SMS",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名，长度不超过24",
+          "example": "abc.csv",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ExtensionFileInfo": {
+      "document": "扩展文件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "模板里使用的地址",
+          "member": "string",
+          "name": "CodeUri",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传文件的临时地址，含签名",
+          "member": "string",
+          "name": "UploadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义密钥。如果为空，则表示不需要加密",
+          "member": "string",
+          "name": "CustomKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小限制，单位M，客户端上传前需要主动检查文件大小，超过限制的文件会被删除。",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FreequotaInfo": {
       "document": "后付费资源免费量信息",

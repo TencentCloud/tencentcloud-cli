@@ -15,32 +15,47 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "28b080e7-xxxx-xxxx-xxxx-ba8ea7f50be3",
         "Result": {
             "Content": [
                 {
-                    "PkgId": "pkg-xxxxxxxx",
-                    "PkgName": "test-1.0.0-SNAPSHOT.jar",
-                    "PkgType": "fatjar",
-                    "PkgVersion": "20190529xxxxxx",
-                    "PkgDesc": "",
-                    "UploadTime": "2019-05-29 15:xx:xx",
-                    "Md5": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-                    "PkgPubStatus": 1
+                    "PkgId": "xx",
+                    "PkgType": "xx",
+                    "UploadTime": "xx",
+                    "PkgName": "xx",
+                    "PkgDesc": "xx",
+                    "PkgBindInfo": [
+                        {
+                            "ApplicationId": "xx",
+                            "GroupId": "xx"
+                        }
+                    ],
+                    "PkgVersion": "xx",
+                    "PkgPubStatus": 1,
+                    "Md5": "xx"
                 },
                 {
-                    "PkgId": "pkg-xxxxxxxx",
-                    "PkgName": "test1-1.0.0-SNAPSHOT.jar",
-                    "PkgType": "fatjar",
-                    "PkgVersion": "20190529xxxxxx",
-                    "PkgDesc": "",
-                    "UploadTime": "2019-05-29 13:xx:xx",
-                    "Md5": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-                    "PkgPubStatus": 1
+                    "PkgId": "xx",
+                    "PkgType": "xx",
+                    "UploadTime": "xx",
+                    "PkgName": "xx",
+                    "PkgDesc": "xx",
+                    "PkgBindInfo": [
+                        {
+                            "ApplicationId": "xx",
+                            "GroupId": "xx"
+                        }
+                    ],
+                    "PkgVersion": "xx",
+                    "PkgPubStatus": 1,
+                    "Md5": "xx"
                 }
             ],
-            "TotalCount": 2
-        }
+            "TotalCount": 2,
+            "RepositoryType": "xx",
+            "RepositoryName": "xx",
+            "RepositoryId": "xx"
+        },
+        "RequestId": "xx"
     }
 }
 ```

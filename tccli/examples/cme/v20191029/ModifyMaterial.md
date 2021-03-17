@@ -1,4 +1,4 @@
-**Example 1: 修改素材信息**
+**Example 1: 修改媒体信息**
 
 
 
@@ -8,8 +8,6 @@ Input:
 tccli cme ModifyMaterial --cli-unfold-argument  \
     --Platform test \
     --MaterialId 123245678 \
-    --Owner.Id 1111 \
-    --Owner.Type PERSON \
     --Name name_modify
 ```
 
@@ -17,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "requestId"
+        "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a05"
     }
 }
 ```

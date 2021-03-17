@@ -378,6 +378,12 @@
       "name": "移出节点池节点",
       "output": "RemoveNodeFromNodePoolResponse"
     },
+    "SetNodePoolNodeProtection": {
+      "document": "仅能设置节点池中处于伸缩组的节点",
+      "input": "SetNodePoolNodeProtectionRequest",
+      "name": "节点池节点设置移出保护",
+      "output": "SetNodePoolNodeProtectionResponse"
+    },
     "SyncPrometheusTemplate": {
       "document": "同步模板到实例或者集群",
       "input": "SyncPrometheusTemplateRequest",
@@ -7177,6 +7183,23 @@
         }
       ],
       "usage": "both"
+    },
+    "SetNodePoolNodeProtectionRequest": {
+      "document": "SetNodePoolNodeProtection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SetNodePoolNodeProtectionResponse": {
+      "document": "SetNodePoolNodeProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SyncPrometheusTemplateRequest": {
       "document": "SyncPrometheusTemplate请求参数结构体",

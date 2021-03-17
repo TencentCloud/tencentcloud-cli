@@ -85,6 +85,7 @@ Output:
                 "PublicIpPerInstance": 4
             }
         ],
+        "DefaultIPDirect": true,
         "NetworkStorageRange": {
             "PerBandwidth": 1,
             "MaxDataDiskSize": 1024,
@@ -143,9 +144,6 @@ Output:
             "Ubuntu Server 20.04",
             "Tencent Linux release 2.6"
         ]
-    },
-    "ImageLimits": {
-        "MaxImageSize": 50
     }
 }
 ```
