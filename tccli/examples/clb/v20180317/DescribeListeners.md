@@ -13,40 +13,40 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 3,
         "Listeners": [
             {
-                "ListenerId": "lbl-mdam9r0l",
-                "ListenerName": "ds",
-                "Protocol": "HTTPS",
-                "Port": 1,
+                "ListenerId": "lbl-2ytsji1u",
+                "ListenerName": "555",
+                "CreateTime": "2020-12-31 11:36:18",
+                "Protocol": "HTTP",
+                "Port": 555,
+                "EndPort": 0,
                 "HealthCheck": null,
-                "Certificate": {
-                    "SSLMode": "UNIDIRECTIONAL",
-                    "CertId": "V0ODELy7",
-                    "CertCaId": ""
-                },
+                "Certificate": null,
                 "Scheduler": null,
                 "SessionExpireTime": null,
                 "SniSwitch": 0,
                 "Rules": [
                     {
-                        "ListenerId": "lbl-mdam9r0l",
-                        "LocationId": "loc-33laioar",
-                        "Domain": "4.com",
-                        "Url": "/df",
+                        "ListenerId": "lbl-2ytsji1u",
+                        "LocationId": "loc-nq5fuotq",
+                        "Domain": "www.123.com",
+                        "Url": "/123",
+                        "CreateTime": "2020-12-31 11:36:48",
                         "Certificate": null,
                         "HealthCheck": {
                             "HealthSwitch": 1,
-                            "TimeOut": 2,
+                            "TimeOut": 5,
                             "IntervalTime": 5,
                             "HealthNum": 3,
                             "UnHealthNum": 3,
                             "HttpCode": 15,
                             "HttpCheckPath": "/",
-                            "HttpCheckDomain": "4.com",
+                            "HttpCheckDomain": "www.123.com",
                             "HttpCheckMethod": "get",
                             "CheckPort": null,
-                            "CheckType": null,
+                            "CheckType": "TCP",
                             "HttpVersion": null,
                             "ContextType": null,
                             "SendContext": null,
@@ -54,48 +54,99 @@ Output:
                         },
                         "RewriteTarget": {
                             "TargetListenerId": null,
-                            "TargetLocationId": null
+                            "TargetLocationId": null,
+                            "RewriteCode": null,
+                            "TakeUrl": null,
+                            "RewriteType": null
                         },
                         "SessionExpireTime": 0,
                         "Scheduler": "WRR",
                         "HttpGzip": true,
                         "BeAutoCreated": false,
-                        "DefaultServer": false,
+                        "DefaultServer": true,
                         "Http2": false,
-                        "ForwardType": "HTTP"
+                        "ForwardType": "HTTP",
+                        "TargetType": "NODE",
+                        "TargetGroup": null,
+                        "WafDomainId": "",
+                        "TrpcCallee": "",
+                        "TrpcFunc": "",
+                        "QuicStatus": "OFF"
                     }
-                ]
+                ],
+                "TargetType": null,
+                "TargetGroup": null,
+                "KeepaliveEnable": 0,
+                "SessionType": "NORMAL",
+                "Toa": false
             },
             {
-                "ListenerId": "lbl-pt4dgkjn",
-                "ListenerName": "333",
-                "Protocol": "TCP",
-                "Port": 333,
-                "HealthCheck": {
-                    "HealthSwitch": 1,
-                    "TimeOut": 2,
-                    "IntervalTime": 5,
-                    "HealthNum": 3,
-                    "UnHealthNum": 3,
-                    "CheckPort": null,
-                    "CheckType": "TCP",
-                    "HttpCheckDomain": null,
-                    "HttpCheckPath": null,
-                    "HttpCheckMethod": null,
-                    "HttpVersion": null,
-                    "HttpCode": null,
-                    "ContextType": null,
-                    "SendContext": null,
-                    "RecvContext": null
-                },
+                "ListenerId": "lbl-a459zzae",
+                "ListenerName": "222",
+                "CreateTime": "2020-12-10 20:26:54",
+                "Protocol": "HTTP",
+                "Port": 222,
+                "EndPort": 0,
+                "HealthCheck": null,
                 "Certificate": null,
-                "Scheduler": "WRR",
-                "SessionExpireTime": 0,
+                "Scheduler": null,
+                "SessionExpireTime": null,
                 "SniSwitch": 0,
-                "Rules": null
+                "Rules": [
+                    {
+                        "ListenerId": "lbl-a459zzae",
+                        "LocationId": "loc-7pbxg3d4",
+                        "Domain": "www.123.com",
+                        "Url": "/",
+                        "CreateTime": "2020-12-10 20:33:14",
+                        "Certificate": null,
+                        "HealthCheck": {
+                            "HealthSwitch": 1,
+                            "TimeOut": 5,
+                            "IntervalTime": 5,
+                            "HealthNum": 3,
+                            "UnHealthNum": 3,
+                            "HttpCode": 15,
+                            "HttpCheckPath": "/",
+                            "HttpCheckDomain": "www.123.com",
+                            "HttpCheckMethod": "get",
+                            "CheckPort": null,
+                            "CheckType": "TCP",
+                            "HttpVersion": null,
+                            "ContextType": null,
+                            "SendContext": null,
+                            "RecvContext": null
+                        },
+                        "RewriteTarget": {
+                            "TargetListenerId": null,
+                            "TargetLocationId": null,
+                            "RewriteCode": null,
+                            "TakeUrl": null,
+                            "RewriteType": null
+                        },
+                        "SessionExpireTime": 0,
+                        "Scheduler": "WRR",
+                        "HttpGzip": true,
+                        "BeAutoCreated": false,
+                        "DefaultServer": true,
+                        "Http2": false,
+                        "ForwardType": "HTTP",
+                        "TargetType": "NODE",
+                        "TargetGroup": null,
+                        "WafDomainId": "",
+                        "TrpcCallee": "",
+                        "TrpcFunc": "",
+                        "QuicStatus": "OFF"
+                    }
+                ],
+                "TargetType": null,
+                "TargetGroup": null,
+                "KeepaliveEnable": 0,
+                "SessionType": "NORMAL",
+                "Toa": false
             }
         ],
-        "RequestId": "a031471a-332d-4c45-a123-0bc6fb212780"
+        "RequestId": "2682e290-3f8c-4766-98fa-716610e2d351"
     }
 }
 ```
@@ -111,19 +162,22 @@ tccli clb DescribeListeners --cli-unfold-argument  \
     --LoadBalancerId lb-aniq7ewx \
     --Protocol TCP \
     --Port 333 \
-    --ListenerIds lbl-pt4dgkjn
+    --ListenerIds lbl-hd9nfp6o
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "Listeners": [
             {
-                "ListenerId": "lbl-pt4dgkjn",
-                "ListenerName": "333",
+                "ListenerId": "lbl-hd9nfp6o",
+                "ListenerName": "12345",
+                "CreateTime": "2020-12-31 12:03:36",
                 "Protocol": "TCP",
                 "Port": 333,
+                "EndPort": 0,
                 "HealthCheck": {
                     "HealthSwitch": 1,
                     "TimeOut": 2,
@@ -145,10 +199,15 @@ Output:
                 "Scheduler": "WRR",
                 "SessionExpireTime": 0,
                 "SniSwitch": 0,
-                "Rules": null
+                "Rules": null,
+                "TargetType": "NODE",
+                "TargetGroup": null,
+                "KeepaliveEnable": null,
+                "SessionType": "NORMAL",
+                "Toa": false
             }
         ],
-        "RequestId": "0dc33bce-5fe5-4ce0-9734-d8212c258d36"
+        "RequestId": "3ddae670-4a89-4919-af6e-0d6bf195c92e"
     }
 }
 ```

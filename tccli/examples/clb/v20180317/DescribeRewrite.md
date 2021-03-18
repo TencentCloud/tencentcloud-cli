@@ -17,6 +17,7 @@ Output:
     "Response": {
         "RewriteSet": [
             {
+                "TargetType": "Node",
                 "ListenerId": "lbl-j36caqde",
                 "LocationId": "loc-5t7526km",
                 "Domain": "www.123.com",
@@ -42,7 +43,14 @@ Output:
                 "HttpGzip": true,
                 "BeAutoCreated": false,
                 "DefaultServer": false,
-                "Http2": false
+                "Http2": false,
+                "ForwardType": "HTTP",
+                "TrpcCallee": "",
+                "QuicStatus": "OFF",
+                "TargetGroup": null,
+                "WafDomainId": "",
+                "TrpcFunc": "",
+                "CreateTime": "2020-06-18 19:51:13"
             }
         ],
         "RequestId": "6b4b80ba-12f6-4b7c-9eba-c9203b3bbf1e"

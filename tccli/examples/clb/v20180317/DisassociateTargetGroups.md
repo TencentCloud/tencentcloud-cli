@@ -8,7 +8,8 @@ Input:
 tccli clb DisassociateTargetGroups --cli-unfold-argument  \
     --Associations.0.LoadBalancerId lb-phbx2420 \
     --Associations.0.ListenerId lbl-m2q6sp9m \
-    --Associations.0.LocationId loc-jjqr0ric
+    --Associations.0.LocationId loc-jjqr0ric \
+    --Associations.0.TargetGroupId lbtg-xxqr0ric
 ```
 
 Output: 

@@ -37,7 +37,7 @@
       "output": "DescribeEcdnDomainStatisticsResponse"
     },
     "DescribeEcdnStatistics": {
-      "document": "DescribeEcdnStatistics用于查询 ECDN 实时访问监控数据，支持以下指标查询：\n\n+ 流量（单位为 byte）\n+ 带宽（单位为 bps）\n+ 请求数（单位为 次）\n+ 响应时间（单位为ms）\n+ 状态码 2xx 汇总及各 2 开头状态码明细（单位为 个）\n+ 状态码 3xx 汇总及各 3 开头状态码明细（单位为 个）\n+ 状态码 4xx 汇总及各 4 开头状态码明细（单位为 个）\n+ 状态码 5xx 汇总及各 5 开头状态码明细（单位为 个）",
+      "document": "DescribeEcdnStatistics用于查询 ECDN 实时访问监控数据，支持以下指标查询：\n\n+ 流量（单位为 byte）\n+ 带宽（单位为 bps）\n+ 请求数（单位为 次）\n+ 状态码 2xx 汇总及各 2 开头状态码明细（单位为 个）\n+ 状态码 3xx 汇总及各 3 开头状态码明细（单位为 个）\n+ 状态码 4xx 汇总及各 4 开头状态码明细（单位为 个）\n+ 状态码 5xx 汇总及各 5 开头状态码明细（单位为 个）",
       "input": "DescribeEcdnStatisticsRequest",
       "name": "访问数据查询",
       "output": "DescribeEcdnStatisticsResponse"
@@ -558,6 +558,7 @@
         {
           "default": "",
           "document": "查询起始时间，如：2019-12-13 00:00:00。\n起止时间不超过90天。",
+          "example": "2018-09-04 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -566,6 +567,7 @@
         {
           "default": "",
           "document": "查询结束时间，如：2019-12-13 23:59:59。\n起止时间不超过90天。",
+          "example": "2018-09-04 12:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -573,7 +575,8 @@
         },
         {
           "default": "",
-          "document": "统计指标名称。flux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次\ndelay：响应时间，单位为ms\nstatic_request ： 静态请求数，单位为 次\nstatic_flux：静态流量，单位为 byte\nstatic_bandwidth ： 静态带宽，单位为 bps\ndynamic_request：动态请求数，单位为 次\ndynamic_flux：动态流量，单位为 byte\ndynamic_bandwidth：动态带宽，单位为 bps",
+          "document": "统计指标名称:\nflux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次",
+          "example": "[\"flux\\n\",\"delay\\n\",\"request\\n\",\"bandwidth\\n\"]",
           "member": "string",
           "name": "Metrics",
           "required": true,
@@ -582,6 +585,7 @@
         {
           "default": "",
           "document": "指定查询域名列表",
+          "example": "[\"www.test.com\\n\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -590,6 +594,7 @@
         {
           "default": "",
           "document": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主",
+          "example": "[\"0\\n\"]",
           "member": "int64",
           "name": "Projects",
           "required": false,
@@ -598,6 +603,7 @@
         {
           "default": "",
           "document": "列表分页起始地址，默认0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -606,10 +612,20 @@
         {
           "default": "",
           "document": "列表分页记录条数，默认1000，最大3000。",
+          "example": "1000",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计区域:\nmainland: 境内\noversea: 境外\nglobal: 全部\n默认 global",
+          "example": "global",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -619,15 +635,19 @@
       "members": [
         {
           "document": "域名数据",
+          "example": "无",
           "member": "DomainData",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "数量",
+          "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -646,6 +666,7 @@
         {
           "default": "",
           "document": "查询起始时间，如：2019-12-13 00:00:00",
+          "example": "2018-09-04 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -654,6 +675,7 @@
         {
           "default": "",
           "document": "查询结束时间，如：2019-12-13 23:59:59",
+          "example": "2018-09-04 12:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -661,7 +683,8 @@
         },
         {
           "default": "",
-          "document": "指定查询指标，支持的类型有：\nflux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次\ndelay：响应时间，单位为ms\n2xx：返回 2xx 状态码汇总或者 2 开头状态码数据，单位为 个\n3xx：返回 3xx 状态码汇总或者 3 开头状态码数据，单位为 个\n4xx：返回 4xx 状态码汇总或者 4 开头状态码数据，单位为 个\n5xx：返回 5xx 状态码汇总或者 5 开头状态码数据，单位为 个\nstatic_request ： 静态请求数，单位为 次\nstatic_flux：静态流量，单位为 byte\nstatic_bandwidth ： 静态带宽，单位为 bps\ndynamic_request：动态请求数，单位为 次\ndynamic_flux：动态流量，单位为 byte\ndynamic_bandwidth：动态带宽，单位为 bps",
+          "document": "指定查询指标，支持的类型有：\nflux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次\n2xx：返回 2xx 状态码汇总或者 2 开头状态码数据，单位为 个\n3xx：返回 3xx 状态码汇总或者 3 开头状态码数据，单位为 个\n4xx：返回 4xx 状态码汇总或者 4 开头状态码数据，单位为 个\n5xx：返回 5xx 状态码汇总或者 5 开头状态码数据，单位为 个",
+          "example": "[\"flux\\n\"]",
           "member": "string",
           "name": "Metrics",
           "required": true,
@@ -670,6 +693,7 @@
         {
           "default": "",
           "document": "时间粒度，支持以下几种模式：\n1 天\t 1，5，15，30，60，120，240，1440 \n2 ~ 3 天\t15，30，60，120，240，1440\n4 ~ 7 天\t30，60，120，240，1440\n8 ~ 90 天\t 60，120，240，1440",
+          "example": "60",
           "member": "int64",
           "name": "Interval",
           "required": true,
@@ -678,6 +702,7 @@
         {
           "default": "",
           "document": "指定查询域名列表\n\n最多可一次性查询30个加速域名。",
+          "example": "[\"www.test.com\\n\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -686,10 +711,20 @@
         {
           "default": "",
           "document": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主",
+          "example": "[\"0\\n\"]",
           "member": "int64",
           "name": "Projects",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "统计区域:\nmainland: 境内\noversea: 境外\nglobal: 全部\n默认 global",
+          "example": "global",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -699,8 +734,10 @@
       "members": [
         {
           "document": "指定条件查询得到的数据明细",
+          "example": "无",
           "member": "ResourceData",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

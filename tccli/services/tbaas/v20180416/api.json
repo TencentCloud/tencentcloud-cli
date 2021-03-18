@@ -7,7 +7,7 @@
       "output": "ApplyUserCertResponse"
     },
     "BlockByNumberHandler": {
-      "document": "Bcos根据块高查询区块信息",
+      "document": "版本升级\n\nBcos根据块高查询区块信息",
       "input": "BlockByNumberHandlerRequest",
       "name": "按块高查询区块信息",
       "output": "BlockByNumberHandlerResponse"
@@ -25,7 +25,7 @@
       "output": "DeployDynamicBcosContractResponse"
     },
     "DeployDynamicContractHandler": {
-      "document": "动态部署合约",
+      "document": "版本升级\n\n动态部署合约",
       "input": "DeployDynamicContractHandlerRequest",
       "name": "动态部署合约",
       "output": "DeployDynamicContractHandlerResponse"
@@ -67,7 +67,7 @@
       "output": "GetBlockListResponse"
     },
     "GetBlockListHandler": {
-      "document": "Bcos分页查询当前群组下的区块列表",
+      "document": "版本升级\n\nBcos分页查询当前群组下的区块列表",
       "input": "GetBlockListHandlerRequest",
       "name": "查询区块列表",
       "output": "GetBlockListHandlerResponse"
@@ -133,13 +133,13 @@
       "output": "GetPeerLogForUserResponse"
     },
     "GetTransByHashHandler": {
-      "document": "Bcos根据交易哈希查看交易详细信息",
+      "document": "版本升级\n\nBcos根据交易哈希查看交易详细信息",
       "input": "GetTransByHashHandlerRequest",
       "name": "根据交易哈希查询交易信息",
       "output": "GetTransByHashHandlerResponse"
     },
     "GetTransListHandler": {
-      "document": "Bcos分页查询当前群组的交易信息列表",
+      "document": "版本升级\n\nBcos分页查询当前群组的交易信息列表",
       "input": "GetTransListHandlerRequest",
       "name": "查询交易列表",
       "output": "GetTransListHandlerResponse"
@@ -175,7 +175,7 @@
       "output": "QueryResponse"
     },
     "SendTransactionHandler": {
-      "document": "Bcos发送交易",
+      "document": "版本升级\n\nBcos发送交易",
       "input": "SendTransactionHandlerRequest",
       "name": "发送交易",
       "output": "SendTransactionHandlerResponse"
@@ -187,7 +187,7 @@
       "output": "SrvInvokeResponse"
     },
     "TransByDynamicContractHandler": {
-      "document": "根据动态部署的合约发送交易",
+      "document": "版本升级\n\n根据动态部署的合约发送交易",
       "input": "TransByDynamicContractHandlerRequest",
       "name": "根据动态部署的合约发送交易",
       "output": "TransByDynamicContractHandlerResponse"

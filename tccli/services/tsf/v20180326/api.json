@@ -6402,6 +6402,14 @@
           "name": "ApplicationResourceTypeList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IdList",
+          "member": "string",
+          "name": "ApplicationIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7899,6 +7907,14 @@
           "name": "Status",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IdList",
+          "member": "string",
+          "name": "MicroserviceIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8183,6 +8199,7 @@
         {
           "default": "",
           "document": "实例所属groupId",
+          "example": "group-df3fsd23",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -8191,6 +8208,7 @@
         {
           "default": "",
           "document": "偏移量，取值从0开始",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -8199,10 +8217,20 @@
         {
           "default": "",
           "document": "分页个数，默认为20， 取值应为1~50",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤字段",
+          "example": "[\"test-consume-88f4974c9-gz8gk\"]",
+          "member": "string",
+          "name": "PodNameList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8212,8 +8240,10 @@
       "members": [
         {
           "document": "查询的权限数据对象",
+          "example": "无",
           "member": "GroupPodResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

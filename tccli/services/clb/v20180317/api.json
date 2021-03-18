@@ -31,9 +31,9 @@
       "output": "BatchRegisterTargetsResponse"
     },
     "CreateClsLogSet": {
-      "document": "创建clb专有日志集，此日志集用于存储clb的日志。",
+      "document": "创建CLB专有日志集，此日志集用于存储CLB的日志。",
       "input": "CreateClsLogSetRequest",
-      "name": "创建clb专有日志集",
+      "name": "创建CLB专有日志集",
       "output": "CreateClsLogSetResponse"
     },
     "CreateListener": {
@@ -49,7 +49,7 @@
       "output": "CreateLoadBalancerResponse"
     },
     "CreateLoadBalancerSnatIps": {
-      "document": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启",
+      "document": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启。",
       "input": "CreateLoadBalancerSnatIpsRequest",
       "name": "添加SnatIp",
       "output": "CreateLoadBalancerSnatIpsResponse"
@@ -67,7 +67,7 @@
       "output": "CreateTargetGroupResponse"
     },
     "CreateTopic": {
-      "document": "创建主题，默认开启全文索引和键值索引。如果不存在clb专有日志集，则创建失败。",
+      "document": "创建主题，默认开启全文索引和键值索引。如果不存在CLB专有日志集，则创建失败。",
       "input": "CreateTopicRequest",
       "name": "创建主题",
       "output": "CreateTopicResponse"
@@ -91,7 +91,7 @@
       "output": "DeleteLoadBalancerListenersResponse"
     },
     "DeleteLoadBalancerSnatIps": {
-      "document": "对于SnatPro的负载均衡，这个接口用于删除SnatIp",
+      "document": "这个接口用于删除SnatPro的负载均衡的SnatIp。",
       "input": "DeleteLoadBalancerSnatIpsRequest",
       "name": "删除SnatIp",
       "output": "DeleteLoadBalancerSnatIpsResponse"
@@ -115,7 +115,7 @@
       "output": "DeleteTargetGroupsResponse"
     },
     "DeregisterTargetGroupInstances": {
-      "document": "将服务器从目标组中解绑。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "从目标组中解绑服务器。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "DeregisterTargetGroupInstancesRequest",
       "name": "解绑目标组服务器",
       "output": "DeregisterTargetGroupInstancesResponse"
@@ -127,7 +127,7 @@
       "output": "DeregisterTargetsResponse"
     },
     "DeregisterTargetsFromClassicalLB": {
-      "document": "DeregisterTargetsFromClassicalLB 接口用于解绑负载均衡后端服务。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "DeregisterTargetsFromClassicalLB 接口用于解绑负载均衡后端服务。本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "DeregisterTargetsFromClassicalLBRequest",
       "name": "解绑传统型负载均衡的后端服务器",
       "output": "DeregisterTargetsFromClassicalLBResponse"
@@ -145,7 +145,7 @@
       "output": "DescribeBlockIPTaskResponse"
     },
     "DescribeClassicalLBByInstanceId": {
-      "document": "DescribeClassicalLBByInstanceId用于通过后端实例ID获取传统型负载均衡ID列表",
+      "document": "DescribeClassicalLBByInstanceId用于通过后端实例ID获取传统型负载均衡ID列表。",
       "input": "DescribeClassicalLBByInstanceIdRequest",
       "name": "通过后端主机反向查找其绑定的传统型负载均衡",
       "output": "DescribeClassicalLBByInstanceIdResponse"
@@ -163,19 +163,19 @@
       "output": "DescribeClassicalLBListenersResponse"
     },
     "DescribeClassicalLBTargets": {
-      "document": "DescribeClassicalLBTargets用于获取传统型负载均衡绑定的后端服务",
+      "document": "DescribeClassicalLBTargets用于获取传统型负载均衡绑定的后端服务。",
       "input": "DescribeClassicalLBTargetsRequest",
       "name": "获取传统型负载均衡绑定的后端服务器列表",
       "output": "DescribeClassicalLBTargetsResponse"
     },
     "DescribeClsLogSet": {
-      "document": "获取用户的clb专有日志集",
+      "document": "获取用户的CLB专有日志集。",
       "input": "DescribeClsLogSetRequest",
-      "name": "获取用户的clb专有日志集",
+      "name": "获取用户的CLB专有日志集",
       "output": "DescribeClsLogSetResponse"
     },
     "DescribeClusterResources": {
-      "document": "查询独占集群中资源列表，支持按集群ID、vip、负载均衡ID、是否闲置为过滤条件检索",
+      "document": "查询独占集群中的资源列表，支持按集群ID、VIP、负载均衡ID、是否闲置为过滤条件检索。",
       "input": "DescribeClusterResourcesRequest",
       "name": "查询集群中资源列表",
       "output": "DescribeClusterResourcesResponse"
@@ -199,7 +199,7 @@
       "output": "DescribeLoadBalancerListByCertIdResponse"
     },
     "DescribeLoadBalancerTraffic": {
-      "document": "查询账号下高流量负载均衡，返回前10个负载均衡。如果是子账号登录，只返回子账号有权限的负载均衡。",
+      "document": "查询账号下的高流量负载均衡，返回前10个负载均衡。如果是子账号登录，只返回子账号有权限的负载均衡。",
       "input": "DescribeLoadBalancerTrafficRequest",
       "name": "查询账号下高流量负载均衡",
       "output": "DescribeLoadBalancerTrafficResponse"
@@ -355,7 +355,7 @@
       "output": "RegisterTargetsResponse"
     },
     "RegisterTargetsWithClassicalLB": {
-      "document": "RegisterTargetsWithClassicalLB 接口用于绑定后端服务到传统型负载均衡。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "RegisterTargetsWithClassicalLB 接口用于绑定后端服务到传统型负载均衡。本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "RegisterTargetsWithClassicalLBRequest",
       "name": "绑定后端服务到传统型负载均衡",
       "output": "RegisterTargetsWithClassicalLBResponse"
@@ -397,7 +397,8 @@
       "members": [
         {
           "default": "",
-          "document": "绑定的关系数组",
+          "document": "绑定的关系数组。",
+          "example": "无",
           "member": "TargetGroupAssociation",
           "name": "Associations",
           "required": true,
@@ -511,6 +512,7 @@
         {
           "default": "",
           "document": "负载均衡实例ID。",
+          "example": "lb-r6nx1iby",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -519,6 +521,7 @@
         {
           "default": "",
           "document": "HTTPS:443监听器的ID。",
+          "example": "lbl-lmeeyb1q",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -526,7 +529,8 @@
         },
         {
           "default": "",
-          "document": "HTTPS:443监听器下需要重定向的域名，若不填，对HTTPS:443监听器下的所有域名都设置重定向。",
+          "document": "HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。",
+          "example": "[\"www.abc.com\\n\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -534,7 +538,8 @@
         },
         {
           "default": "",
-          "document": "重定向状态码，可取值301,302,307",
+          "document": "重定向状态码，可取值301,302,307。",
+          "example": "301",
           "member": "int64",
           "name": "RewriteCodes",
           "required": false,
@@ -542,7 +547,8 @@
         },
         {
           "default": "",
-          "document": "重定向是否携带匹配的url",
+          "document": "重定向是否携带匹配的URL。",
+          "example": "true",
           "member": "bool",
           "name": "TakeUrls",
           "required": false,
@@ -679,7 +685,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡ID",
+          "document": "负载均衡ID。",
+          "example": "lb-xxxx",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -687,7 +694,8 @@
         },
         {
           "default": "",
-          "document": "解绑目标",
+          "document": "解绑目标。",
+          "example": "无",
           "member": "BatchTarget",
           "name": "Targets",
           "required": true,
@@ -700,9 +708,11 @@
       "document": "BatchDeregisterTargets返回参数结构体",
       "members": [
         {
-          "document": "解绑失败的监听器ID",
+          "document": "解绑失败的监听器ID。",
+          "example": "[]",
           "member": "string",
           "name": "FailListenerIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -720,7 +730,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-dx98lwo0",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -728,7 +739,8 @@
         },
         {
           "default": "",
-          "document": "要批量修改权重的列表",
+          "document": "要批量修改权重的列表。",
+          "example": "无",
           "member": "RsWeightRule",
           "name": "ModifyList",
           "required": true,
@@ -754,7 +766,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡ID",
+          "document": "负载均衡ID。",
+          "example": "lb-xxxx",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -762,7 +775,8 @@
         },
         {
           "default": "",
-          "document": "绑定目标",
+          "document": "绑定目标。",
+          "example": "无",
           "member": "BatchTarget",
           "name": "Targets",
           "required": true,
@@ -776,8 +790,10 @@
       "members": [
         {
           "document": "绑定失败的监听器ID，如为空表示全部绑定成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "string",
           "name": "FailListenerIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1663,6 +1679,7 @@
         {
           "default": "",
           "document": "日志集的保存周期，单位：天，最大 90。",
+          "example": "7",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -1671,6 +1688,7 @@
         {
           "default": "",
           "document": "日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。",
+          "example": "clb_logset",
           "member": "string",
           "name": "LogsetName",
           "required": false,
@@ -1684,8 +1702,10 @@
       "members": [
         {
           "document": "日志集的 ID。",
+          "example": "578dd0ad-2e7c-488b-b5fe-0b23da3537eb",
           "member": "string",
           "name": "LogsetId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1703,8 +1723,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
-          "example": "lb-cuxw2rm0",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -1712,7 +1732,7 @@
         },
         {
           "default": "",
-          "document": "要将监听器创建到哪些端口，每个端口对应一个新的监听器",
+          "document": "要将监听器创建到哪些端口，每个端口对应一个新的监听器。",
           "example": "[\"7569\\n\",\"7570\\n\"]",
           "member": "int64",
           "name": "Ports",
@@ -1721,7 +1741,7 @@
         },
         {
           "default": "",
-          "document": "监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）",
+          "document": "监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -1730,7 +1750,7 @@
         },
         {
           "default": "",
-          "document": "要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数",
+          "document": "要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数。",
           "example": "[\"lis0\\n\",\"lis1\\n\"]",
           "member": "string",
           "name": "ListenerNames",
@@ -1739,7 +1759,7 @@
         },
         {
           "default": "",
-          "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器",
+          "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。",
           "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
@@ -1802,7 +1822,7 @@
         },
         {
           "default": "",
-          "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭",
+          "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。",
           "example": "0",
           "member": "int64",
           "name": "KeepaliveEnable",
@@ -1825,7 +1845,7 @@
       "document": "CreateListener返回参数结构体",
       "members": [
         {
-          "document": "创建的监听器的唯一标识数组",
+          "document": "创建的监听器的唯一标识数组。",
           "example": "[\"lbl-d1ubsydq\",\"lbl-4udz130k\"]",
           "member": "string",
           "name": "ListenerIds",
@@ -2063,7 +2083,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡唯一性Id，如lb-12345678",
+          "document": "负载均衡唯一性ID，例如：lb-12345678。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2071,7 +2092,8 @@
         },
         {
           "default": "",
-          "document": "添加SnatIp信息，可指定Ip申请，或者指定子网自动申请",
+          "document": "添加SnatIp信息，可指定IP申请，或者指定子网自动申请。",
+          "example": "无",
           "member": "SnatIp",
           "name": "SnatIps",
           "required": true,
@@ -2097,7 +2119,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2105,7 +2128,8 @@
         },
         {
           "default": "",
-          "document": "监听器 ID",
+          "document": "监听器 ID。",
+          "example": "lbl-4fbx*****",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -2113,7 +2137,8 @@
         },
         {
           "default": "",
-          "document": "新建转发规则的信息",
+          "document": "新建转发规则的信息。",
+          "example": "无",
           "member": "RuleInput",
           "name": "Rules",
           "required": true,
@@ -2126,9 +2151,11 @@
       "document": "CreateRule返回参数结构体",
       "members": [
         {
-          "document": "创建的转发规则的唯一标识数组",
+          "document": "创建的转发规则的唯一标识数组。",
+          "example": "[\"loc-ho6lvh8m\"]",
           "member": "string",
           "name": "LocationIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2147,6 +2174,7 @@
         {
           "default": "",
           "document": "目标组名称，限定50个字符",
+          "example": "czhtest",
           "member": "string",
           "name": "TargetGroupName",
           "required": false,
@@ -2155,6 +2183,7 @@
         {
           "default": "",
           "document": "目标组的vpcid属性，不填则使用默认vpc",
+          "example": "vpc-i1cnjuhx",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2163,6 +2192,7 @@
         {
           "default": "",
           "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口",
+          "example": "80",
           "member": "uint64",
           "name": "Port",
           "required": false,
@@ -2171,6 +2201,7 @@
         {
           "default": "",
           "document": "目标组绑定的后端服务器",
+          "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
           "required": false,
@@ -2184,8 +2215,10 @@
       "members": [
         {
           "document": "创建目标组后生成的id",
+          "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2203,7 +2236,8 @@
       "members": [
         {
           "default": "",
-          "document": "日志主题的名字",
+          "document": "日志主题的名称。",
+          "example": "clb-topic",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -2211,7 +2245,8 @@
         },
         {
           "default": "",
-          "document": "主题分区 partition个数，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。",
+          "document": "主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。",
+          "example": "3",
           "member": "uint64",
           "name": "PartitionCount",
           "required": false,
@@ -2224,9 +2259,11 @@
       "document": "CreateTopic返回参数结构体",
       "members": [
         {
-          "document": "日志主题的 ID",
+          "document": "日志主题的 ID。",
+          "example": "b046ae5f-00cf-4e90-880c-215e5ae7b6xy",
           "member": "string",
           "name": "TopicId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2244,7 +2281,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2252,7 +2290,8 @@
         },
         {
           "default": "",
-          "document": "要删除的监听器 ID",
+          "document": "要删除的监听器ID。",
+          "example": "lbl-4udz****",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -2278,7 +2317,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-db2n****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2286,7 +2326,8 @@
         },
         {
           "default": "",
-          "document": "指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器",
+          "document": "指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器。",
+          "example": "无",
           "member": "string",
           "name": "ListenerIds",
           "required": false,
@@ -2312,7 +2353,8 @@
       "members": [
         {
           "default": "",
-          "document": "要删除的负载均衡实例 ID数组，数组大小最大支持20",
+          "document": "要删除的负载均衡实例 ID数组，数组大小最大支持20。",
+          "example": "[\"lb-hsb93u5o\\r\\n\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -2338,7 +2380,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡唯一Id，如lb-12345678",
+          "document": "负载均衡唯一ID，例如：lb-12345678。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2346,7 +2389,8 @@
         },
         {
           "default": "",
-          "document": "删除SnatIp地址数组",
+          "document": "删除SnatIp地址数组。",
+          "example": "[\"192.168.0.128\\r\\n\"]",
           "member": "string",
           "name": "Ips",
           "required": true,
@@ -2372,8 +2416,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例ID",
-          "example": "无",
+          "document": "负载均衡实例ID。",
+          "example": "lb-51jj****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2381,8 +2425,8 @@
         },
         {
           "default": "",
-          "document": "源监听器ID",
-          "example": "无",
+          "document": "源监听器ID。",
+          "example": "lbl-r4ia****",
           "member": "string",
           "name": "SourceListenerId",
           "required": true,
@@ -2390,8 +2434,8 @@
         },
         {
           "default": "",
-          "document": "目标监听器ID",
-          "example": "无",
+          "document": "目标监听器ID。",
+          "example": "lbl-0non****",
           "member": "string",
           "name": "TargetListenerId",
           "required": true,
@@ -2399,7 +2443,7 @@
         },
         {
           "default": "",
-          "document": "转发规则之间的重定向关系",
+          "document": "转发规则之间的重定向关系。",
           "example": "无",
           "member": "RewriteLocationMap",
           "name": "RewriteInfos",
@@ -2426,7 +2470,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-cuxw2rm0",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2434,7 +2479,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器ID。",
+          "example": "lbl-4fbxq45k",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -2442,7 +2488,8 @@
         },
         {
           "default": "",
-          "document": "要删除的转发规则的ID组成的数组",
+          "document": "要删除的转发规则的ID组成的数组。",
+          "example": "无",
           "member": "string",
           "name": "LocationIds",
           "required": false,
@@ -2450,7 +2497,8 @@
         },
         {
           "default": "",
-          "document": "要删除的转发规则的域名，已提供LocationIds参数时本参数不生效",
+          "document": "要删除的转发规则的域名，已提供LocationIds参数时本参数不生效。",
+          "example": "foo.net",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -2458,7 +2506,8 @@
         },
         {
           "default": "",
-          "document": "要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效",
+          "document": "要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效。",
+          "example": "/bar2",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -2467,6 +2516,7 @@
         {
           "default": "",
           "document": "监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。",
+          "example": "www.default.example.com",
           "member": "string",
           "name": "NewDefaultServerDomain",
           "required": false,
@@ -2492,7 +2542,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标组的ID数组",
+          "document": "目标组的ID数组。",
+          "example": "[\"lbtg-f1phe5j6\\r\\n\"]",
           "member": "string",
           "name": "TargetGroupIds",
           "required": true,
@@ -2518,7 +2569,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标组ID",
+          "document": "目标组ID。",
+          "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -2526,7 +2578,8 @@
         },
         {
           "default": "",
-          "document": "待解绑的服务器信息",
+          "document": "待解绑的服务器信息。",
+          "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
           "required": true,
@@ -2552,7 +2605,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-a3u5****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2560,7 +2614,8 @@
         },
         {
           "default": "",
-          "document": "后端服务的实例ID列表",
+          "document": "后端服务的实例ID列表。",
+          "example": "[\"ins-odjhn6vc\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2586,7 +2641,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID，格式如 lb-12345678",
+          "document": "负载均衡实例 ID，格式如 lb-12345678。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2594,7 +2650,8 @@
         },
         {
           "default": "",
-          "document": "监听器 ID，格式如 lbl-12345678",
+          "document": "监听器 ID，格式如 lbl-12345678。",
+          "example": "lbl-d1ub****",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -2602,7 +2659,8 @@
         },
         {
           "default": "",
-          "document": "要解绑的后端服务列表，数组长度最大支持20",
+          "document": "要解绑的后端服务列表，数组长度最大支持20。",
+          "example": "无",
           "member": "Target",
           "name": "Targets",
           "required": true,
@@ -2610,7 +2668,8 @@
         },
         {
           "default": "",
-          "document": "转发规则的ID，格式如 loc-12345678，当从七层转发规则解绑机器时，必须提供此参数或Domain+Url两者之一",
+          "document": "转发规则的ID，格式如 loc-12345678，当从七层转发规则解绑机器时，必须提供此参数或Domain+URL两者之一。",
+          "example": "loc-1234****",
           "member": "string",
           "name": "LocationId",
           "required": false,
@@ -2618,7 +2677,8 @@
         },
         {
           "default": "",
-          "document": "目标规则的域名，提供LocationId参数时本参数不生效",
+          "document": "目标规则的域名，提供LocationId参数时本参数不生效。",
+          "example": "www.aaa.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -2626,7 +2686,8 @@
         },
         {
           "default": "",
-          "document": "目标规则的URL，提供LocationId参数时本参数不生效",
+          "document": "目标规则的URL，提供LocationId参数时本参数不生效。",
+          "example": "/test",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -2748,7 +2809,8 @@
       "members": [
         {
           "default": "",
-          "document": "后端实例ID列表",
+          "document": "后端实例ID列表。",
+          "example": "[\"ins-odjhn6vc\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2761,9 +2823,11 @@
       "document": "DescribeClassicalLBByInstanceId返回参数结构体",
       "members": [
         {
-          "document": "负载均衡相关信息列表",
+          "document": "负载均衡相关信息列表。",
+          "example": "无",
           "member": "ClassicalLoadBalancerInfo",
           "name": "LoadBalancerInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2781,7 +2845,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-a3u5****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2789,7 +2854,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器ID",
+          "document": "负载均衡监听器ID。",
+          "example": "lbl-0non****",
           "member": "string",
           "name": "ListenerId",
           "required": false,
@@ -2802,9 +2868,11 @@
       "document": "DescribeClassicalLBHealthStatus返回参数结构体",
       "members": [
         {
-          "document": "后端健康状态列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端健康状态列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClassicalHealth",
           "name": "HealthList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2822,7 +2890,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-a3u5****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2830,7 +2899,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器ID列表",
+          "document": "负载均衡监听器ID列表。",
+          "example": "无",
           "member": "string",
           "name": "ListenerIds",
           "required": false,
@@ -2838,7 +2908,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听的协议, 'TCP', 'UDP', 'HTTP', 'HTTPS'",
+          "document": "负载均衡监听的协议：'TCP', 'UDP', 'HTTP', 'HTTPS'。",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -2846,7 +2917,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听端口， 范围[1-65535]",
+          "document": "负载均衡监听端口，范围为[1-65535]。",
+          "example": "22",
           "member": "int64",
           "name": "ListenerPort",
           "required": false,
@@ -2854,7 +2926,8 @@
         },
         {
           "default": "",
-          "document": "监听器的状态，0 表示创建中，1 表示运行中",
+          "document": "监听器的状态，0：创建中，1：运行中。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -2867,9 +2940,11 @@
       "document": "DescribeClassicalLBListeners返回参数结构体",
       "members": [
         {
-          "document": "监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClassicalListener",
           "name": "Listeners",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2887,7 +2962,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-a3u5l5zc",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2900,9 +2976,11 @@
       "document": "DescribeClassicalLBTargets返回参数结构体",
       "members": [
         {
-          "document": "后端服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClassicalTarget",
           "name": "Targets",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2925,8 +3003,10 @@
       "members": [
         {
           "document": "日志集的 ID。",
+          "example": "b046ae5f-00cf-4e90-880c-215e5ae7b624",
           "member": "string",
           "name": "LogsetId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2944,7 +3024,8 @@
       "members": [
         {
           "default": "",
-          "document": "返回集群中资源列表数目，默认20，最大值100",
+          "document": "返回集群中资源列表数目，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2952,7 +3033,8 @@
         },
         {
           "default": "",
-          "document": "返回集群中资源列表起始偏移量，默认0",
+          "document": "返回集群中资源列表起始偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2961,6 +3043,7 @@
         {
           "default": "",
           "document": "查询集群中资源列表条件，详细的过滤条件如下：\n<li> cluster-id - String - 是否必填：否 - （过滤条件）按照 集群 的唯一ID过滤，如 ：\"tgw-12345678\",\"stgw-12345678\",\"vpcgw-12345678\"。</li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照vip过滤。</li>\n<li> loadblancer-id - String - 是否必填：否 - （过滤条件）按照负载均衡唯一ID过滤。</li>\n<li> idle - String 是否必填：否 - （过滤条件）按照是否闲置过滤，如\"True\",\"False\"。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2973,16 +3056,20 @@
       "document": "DescribeClusterResources返回参数结构体",
       "members": [
         {
-          "document": "集群中资源列表",
+          "document": "集群中资源列表。",
+          "example": "无",
           "member": "ClusterResource",
           "name": "ClusterResourceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "集群中资源总数",
+          "document": "集群中资源总数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3000,7 +3087,8 @@
       "members": [
         {
           "default": "",
-          "document": "返回集群列表数目，默认20，最大值100",
+          "document": "返回集群列表数目，默认值为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3008,7 +3096,8 @@
         },
         {
           "default": "",
-          "document": "返回集群列表起始偏移量，默认0",
+          "document": "返回集群列表起始偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3017,6 +3106,7 @@
         {
           "default": "",
           "document": "查询集群列表条件，详细的过滤条件如下：\n<li> cluster-type - String - 是否必填：否 - （过滤条件）按照 集群 的类型过滤，包括\"TGW\",\"STGW\",\"VPCGW\"。</li>\n<li> cluster-id - String - 是否必填：否 - （过滤条件）按照 集群 的唯一ID过滤，如 ：\"tgw-12345678\",\"stgw-12345678\",\"vpcgw-12345678\"。</li>\n<li> cluster-name - String - 是否必填：否 - （过滤条件）按照 集群 的名称过滤。</li>\n<li> cluster-tag - String - 是否必填：否 - （过滤条件）按照 集群 的标签过滤。（只有TGW/STGW集群有集群标签） </li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照 集群 内的vip过滤。</li>\n<li> loadblancer-id - String - 是否必填：否 - （过滤条件）按照 集群 内的负载均衡唯一ID过滤。</li>\n<li> network - String - 是否必填：否 - （过滤条件）按照 集群 的网络类型过滤，如：\"Public\",\"Private\"。</li>\n<li> zone - String - 是否必填：否 - （过滤条件）按照 集群 所在可用区过滤，如：\"ap-guangzhou-1\"（广州一区）。</li>\n<li> isp -- String - 是否必填：否 - （过滤条件）按照TGW集群的 Isp 类型过滤，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\",\"INTERNAL\"。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3029,16 +3119,20 @@
       "document": "DescribeExclusiveClusters返回参数结构体",
       "members": [
         {
-          "document": "集群列表",
+          "document": "集群列表。",
+          "example": "无",
           "member": "Cluster",
           "name": "ClusterSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "集群总数目",
+          "document": "集群总数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3056,7 +3150,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-aniq****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -3064,7 +3159,8 @@
         },
         {
           "default": "",
-          "document": "要查询的负载均衡监听器 ID数组",
+          "document": "要查询的负载均衡监听器ID数组。",
+          "example": "无",
           "member": "string",
           "name": "ListenerIds",
           "required": false,
@@ -3072,7 +3168,8 @@
         },
         {
           "default": "",
-          "document": "要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL",
+          "document": "要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -3080,7 +3177,8 @@
         },
         {
           "default": "",
-          "document": "要查询的监听器的端口",
+          "document": "要查询的监听器的端口。",
+          "example": "23",
           "member": "int64",
           "name": "Port",
           "required": false,
@@ -3093,16 +3191,20 @@
       "document": "DescribeListeners返回参数结构体",
       "members": [
         {
-          "document": "监听器列表",
+          "document": "监听器列表。",
+          "example": "无",
           "member": "Listener",
           "name": "Listeners",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "总的监听器个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总的监听器个数（根据端口、协议、监听器ID过滤后）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3154,6 +3256,7 @@
         {
           "default": "",
           "document": "负载均衡所在地域，不传默认返回所有地域负载均衡。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "LoadBalancerRegion",
           "required": false,
@@ -3166,9 +3269,11 @@
       "document": "DescribeLoadBalancerTraffic返回参数结构体",
       "members": [
         {
-          "document": "按出带宽从高到低排序后的负载均衡信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按出带宽从高到低排序后的负载均衡信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LoadBalancerTraffic",
           "name": "LoadBalancerTraffic",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3187,6 +3292,7 @@
         {
           "default": "",
           "document": "返回负载均衡列表数目，默认20，最大值100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3194,7 +3300,8 @@
         },
         {
           "default": "",
-          "document": "返回负载均衡列表起始偏移量，默认0",
+          "document": "返回负载均衡列表起始偏移量，默认0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3203,6 +3310,7 @@
         {
           "default": "",
           "document": "选择返回的Fields列表，默认添加LoadBalancerId和LoadBalancerName。",
+          "example": "无",
           "member": "string",
           "name": "Fields",
           "required": false,
@@ -3211,6 +3319,7 @@
         {
           "default": "",
           "document": "当Fields包含TargetId、TargetAddress、TargetPort、TargetWeight等Fields时，必选选择导出目标组的Target或者非目标组Target，值范围NODE、GROUP。",
+          "example": "NODE",
           "member": "string",
           "name": "TargetType",
           "required": false,
@@ -3219,6 +3328,7 @@
         {
           "default": "",
           "document": "查询负载均衡详细信息列表条件，详细的过滤条件如下：\n<li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 负载均衡ID 过滤，如：\"lb-12345678\"。</li>\n<li> project-id - String - 是否必填：否 - （过滤条件）按照 项目ID 过滤，如：\"0\",\"123\"。</li>\n<li> network - String - 是否必填：否 - （过滤条件）按照 负载均衡网络类型 过滤，如：\"Public\",\"Private\"。</li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip 过滤，如：\"1.1.1.1\",\"2204::22:3\"。</li>\n<li> target-ip - String - 是否必填：否 - （过滤条件）按照 后端目标内网Ip 过滤，如：\"1.1.1.1\",\"2203::214:4\"。</li>\n<li> vpcid - String - 是否必填：否 - （过滤条件）按照 负载均衡所属vpcId 过滤，如：\"vpc-12345678\"。</li>\n<li> zone - String - 是否必填：否 - （过滤条件）按照 负载均衡所属的可用区 过滤，如：\"ap-guangzhou-1\"。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 负载均衡标签的标签键 过滤，如：\"name\"。</li>\n<li> tag:* - String - 是否必填：否 - （过滤条件）按照 负载均衡的标签 过滤，':' 后面跟的是标签键。如：过滤标签键name，标签值zhangsan,lisi，{\"Name\": \"tag:name\",\"Values\": [\"zhangsan\", \"lisi\"]}。</li>\n<li> fuzzy-search - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip，负载均衡名称 模糊搜索，如：\"1.1\"。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3232,15 +3342,19 @@
       "members": [
         {
           "document": "负载均衡详情列表总数。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "负载均衡详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LoadBalancerDetail",
           "name": "LoadBalancerDetailSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3489,7 +3603,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-qc2i****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -3497,7 +3612,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器ID数组",
+          "document": "负载均衡监听器ID数组。",
+          "example": "[\"lbl-j36caqde\\r\\n\"]",
           "member": "string",
           "name": "SourceListenerIds",
           "required": false,
@@ -3505,7 +3621,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡转发规则的ID数组",
+          "document": "负载均衡转发规则的ID数组。",
+          "example": "[\"loc-5t7526km\\r\\n\"]",
           "member": "string",
           "name": "SourceLocationIds",
           "required": false,
@@ -3518,9 +3635,11 @@
       "document": "DescribeRewrite返回参数结构体",
       "members": [
         {
-          "document": "重定向转发规则构成的数组，若无重定向规则，则返回空数组",
+          "document": "重定向转发规则构成的数组，若无重定向规则，则返回空数组。",
+          "example": "无",
           "member": "RuleOutput",
           "name": "RewriteSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3601,7 +3720,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标组ID数组",
+          "document": "目标组ID数组。",
+          "example": "无",
           "member": "string",
           "name": "TargetGroupIds",
           "required": false,
@@ -3609,7 +3729,8 @@
         },
         {
           "default": "",
-          "document": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID，",
+          "document": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3617,7 +3738,8 @@
         },
         {
           "default": "",
-          "document": "显示的偏移起始量",
+          "document": "显示的偏移起始量。",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3625,7 +3747,8 @@
         },
         {
           "default": "",
-          "document": "显示条数限制，默认为20",
+          "document": "显示条数限制，默认为20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3638,16 +3761,20 @@
       "document": "DescribeTargetGroupList返回参数结构体",
       "members": [
         {
-          "document": "显示的结果数量",
+          "document": "显示的结果数量。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "显示的目标组信息集合",
+          "document": "显示的目标组信息集合。",
+          "example": "无",
           "member": "TargetGroupInfo",
           "name": "TargetGroupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3665,7 +3792,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标组ID，与Filters互斥",
+          "document": "目标组ID，与Filters互斥。",
+          "example": "[\"lbtg-5xunivs0\\r\\n\"]",
           "member": "string",
           "name": "TargetGroupIds",
           "required": false,
@@ -3673,7 +3801,8 @@
         },
         {
           "default": "",
-          "document": "显示条数限制，默认为20",
+          "document": "显示条数限制，默认为20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3681,7 +3810,8 @@
         },
         {
           "default": "",
-          "document": "显示的偏移起始量",
+          "document": "显示的偏移起始量。",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3689,7 +3819,8 @@
         },
         {
           "default": "",
-          "document": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName",
+          "document": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3702,16 +3833,20 @@
       "document": "DescribeTargetGroups返回参数结构体",
       "members": [
         {
-          "document": "显示的结果数量",
+          "document": "显示的结果数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "显示的目标组信息集合",
+          "document": "显示的目标组信息集合。",
+          "example": "无",
           "member": "TargetGroupInfo",
           "name": "TargetGroupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3729,7 +3864,8 @@
       "members": [
         {
           "default": "",
-          "document": "要查询的负载均衡实例 ID列表",
+          "document": "要查询的负载均衡实例ID列表。",
+          "example": "[\"lb-qc2iq5yc\\n\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -3742,9 +3878,11 @@
       "document": "DescribeTargetHealth返回参数结构体",
       "members": [
         {
-          "document": "负载均衡实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LoadBalancerHealth",
           "name": "LoadBalancers",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3762,7 +3900,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-10iq9lou",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -3770,7 +3909,8 @@
         },
         {
           "default": "",
-          "document": "监听器 ID列表",
+          "document": "监听器ID列表。",
+          "example": "无",
           "member": "string",
           "name": "ListenerIds",
           "required": false,
@@ -3778,7 +3918,8 @@
         },
         {
           "default": "",
-          "document": "监听器协议类型",
+          "document": "监听器协议类型。",
+          "example": "HTTP",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -3786,7 +3927,8 @@
         },
         {
           "default": "",
-          "document": "监听器端口",
+          "document": "监听器端口。",
+          "example": "80",
           "member": "int64",
           "name": "Port",
           "required": false,
@@ -3799,9 +3941,11 @@
       "document": "DescribeTargets返回参数结构体",
       "members": [
         {
-          "document": "监听器后端绑定的机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器后端绑定的机器信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ListenerBackend",
           "name": "Listeners",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3819,7 +3963,8 @@
       "members": [
         {
           "default": "",
-          "document": "请求ID，即接口返回的 RequestId 参数",
+          "document": "请求ID，即接口返回的 RequestId 参数。",
+          "example": "55c85074-3e7f-4c6d-864f-673660d4f8de",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -3833,8 +3978,10 @@
       "members": [
         {
           "document": "任务的当前状态。 0：成功，1：失败，2：进行中。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3852,7 +3999,8 @@
       "members": [
         {
           "default": "",
-          "document": "待解绑的规则关系数组",
+          "document": "待解绑的规则关系数组。",
+          "example": "无",
           "member": "TargetGroupAssociation",
           "name": "Associations",
           "required": true,
@@ -5252,8 +5400,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例ID",
-          "example": "无",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-51jj****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -5261,8 +5409,8 @@
         },
         {
           "default": "",
-          "document": "源监听器ID",
-          "example": "无",
+          "document": "源监听器 ID。",
+          "example": "lbl-0non****",
           "member": "string",
           "name": "SourceListenerId",
           "required": true,
@@ -5270,8 +5418,8 @@
         },
         {
           "default": "",
-          "document": "目标监听器ID",
-          "example": "无",
+          "document": "目标监听器 ID。",
+          "example": "lbl-r4ia****",
           "member": "string",
           "name": "TargetListenerId",
           "required": true,
@@ -5279,7 +5427,7 @@
         },
         {
           "default": "",
-          "document": "转发规则之间的重定向关系",
+          "document": "转发规则之间的重定向关系。",
           "example": "无",
           "member": "RewriteLocationMap",
           "name": "RewriteInfos",
@@ -5379,7 +5527,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-1wvl****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -5387,7 +5536,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器ID。",
+          "example": "lbl-n8mb****",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -5395,7 +5545,8 @@
         },
         {
           "default": "",
-          "document": "域名（必须是已经创建的转发规则下的域名）",
+          "document": "域名（必须是已经创建的转发规则下的域名）。",
+          "example": "foo.net",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5403,7 +5554,8 @@
         },
         {
           "default": "",
-          "document": "要修改的新域名",
+          "document": "要修改的新域名。",
+          "example": "www.new.example.com",
           "member": "string",
           "name": "NewDomain",
           "required": false,
@@ -5412,6 +5564,7 @@
         {
           "default": "",
           "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用。",
+          "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
@@ -5420,6 +5573,7 @@
         {
           "default": "",
           "document": "是否开启Http2，注意，只有HTTPS域名才能开启Http2。",
+          "example": "true",
           "member": "bool",
           "name": "Http2",
           "required": false,
@@ -5428,6 +5582,7 @@
         {
           "default": "",
           "document": "是否设为默认域名，注意，一个监听器下只能设置一个默认域名。",
+          "example": "true",
           "member": "bool",
           "name": "DefaultServer",
           "required": false,
@@ -5436,6 +5591,7 @@
         {
           "default": "",
           "document": "监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。",
+          "example": "www.qcloud.example.com",
           "member": "string",
           "name": "NewDefaultServerDomain",
           "required": false,
@@ -5511,7 +5667,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -5519,7 +5676,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器ID。",
+          "example": "lbl-d1ub****",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -5527,7 +5685,8 @@
         },
         {
           "default": "",
-          "document": "新的监听器名称",
+          "document": "新的监听器名称。",
+          "example": "newlis",
           "member": "string",
           "name": "ListenerName",
           "required": false,
@@ -5536,6 +5695,7 @@
         {
           "default": "",
           "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。",
+          "example": "120",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
@@ -5543,7 +5703,8 @@
         },
         {
           "default": "",
-          "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器",
+          "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -5551,7 +5712,8 @@
         },
         {
           "default": "",
-          "document": "证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器",
+          "document": "证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。",
+          "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
@@ -5560,6 +5722,7 @@
         {
           "default": "",
           "document": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。",
+          "example": "LEAST_CONN",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -5567,7 +5730,8 @@
         },
         {
           "default": "",
-          "document": "是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI",
+          "document": "是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。",
+          "example": "0",
           "member": "int64",
           "name": "SniSwitch",
           "required": false,
@@ -5575,7 +5739,8 @@
         },
         {
           "default": "",
-          "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器",
+          "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。",
+          "example": "0",
           "member": "int64",
           "name": "KeepaliveEnable",
           "required": false,
@@ -5602,6 +5767,7 @@
         {
           "default": "",
           "document": "负载均衡的唯一ID",
+          "example": "lb-6efswuxa",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -5610,6 +5776,7 @@
         {
           "default": "",
           "document": "负载均衡实例名称",
+          "example": "newlbname",
           "member": "string",
           "name": "LoadBalancerName",
           "required": false,
@@ -5618,6 +5785,7 @@
         {
           "default": "",
           "document": "负载均衡绑定的后端服务的地域信息",
+          "example": "无",
           "member": "TargetRegionInfo",
           "name": "TargetRegionInfo",
           "required": false,
@@ -5626,6 +5794,7 @@
         {
           "default": "",
           "document": "网络计费相关参数",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetChargeInfo",
           "required": false,
@@ -5634,6 +5803,7 @@
         {
           "default": "",
           "document": "Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。",
+          "example": "true",
           "member": "bool",
           "name": "LoadBalancerPassToTarget",
           "required": false,
@@ -5642,6 +5812,7 @@
         {
           "default": "",
           "document": "是否开启SnatPro",
+          "example": "false",
           "member": "bool",
           "name": "SnatPro",
           "required": false,
@@ -5655,8 +5826,10 @@
       "members": [
         {
           "document": "切换负载均衡计费方式时，可用此参数查询切换任务是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5674,7 +5847,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-cuxw2rm0",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -5682,7 +5856,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器 ID。",
+          "example": "lbl-4fbxq45k",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -5691,6 +5866,7 @@
         {
           "default": "",
           "document": "要修改的转发规则的 ID。",
+          "example": "loc-9dr7bsl3",
           "member": "string",
           "name": "LocationId",
           "required": true,
@@ -5698,7 +5874,8 @@
         },
         {
           "default": "",
-          "document": "转发规则的新的转发路径，如不需修改Url，则不需提供此参数",
+          "document": "转发规则的新的转发路径，如不需修改Url，则不需提供此参数。",
+          "example": "/bar",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -5706,7 +5883,8 @@
         },
         {
           "default": "",
-          "document": "健康检查信息",
+          "document": "健康检查信息。",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -5715,6 +5893,7 @@
         {
           "default": "",
           "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
+          "example": "LEAST_CONN",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -5722,7 +5901,8 @@
         },
         {
           "default": "",
-          "document": "会话保持时间",
+          "document": "会话保持时间。",
+          "example": "75",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
@@ -5730,7 +5910,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC",
+          "document": "负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。",
+          "example": "HTTP",
           "member": "string",
           "name": "ForwardType",
           "required": false,
@@ -5738,7 +5919,8 @@
         },
         {
           "default": "",
-          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填",
+          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填。",
+          "example": "xyz",
           "member": "string",
           "name": "TrpcCallee",
           "required": false,
@@ -5746,7 +5928,8 @@
         },
         {
           "default": "",
-          "document": "TRPC调用服务接口，ForwardType为TRPC时必填",
+          "document": "TRPC调用服务接口，ForwardType为TRPC时必填。",
+          "example": "abc",
           "member": "string",
           "name": "TrpcFunc",
           "required": false,
@@ -5772,7 +5955,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标组的ID",
+          "document": "目标组的ID。",
+          "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -5780,7 +5964,8 @@
         },
         {
           "default": "",
-          "document": "目标组的新名称",
+          "document": "目标组的新名称。",
+          "example": "xxxxholic",
           "member": "string",
           "name": "TargetGroupName",
           "required": false,
@@ -5788,7 +5973,8 @@
         },
         {
           "default": "",
-          "document": "目标组的新默认端口",
+          "document": "目标组的新默认端口。",
+          "example": "22",
           "member": "uint64",
           "name": "Port",
           "required": false,
@@ -5814,7 +6000,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标组ID",
+          "document": "目标组ID。",
+          "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -5822,7 +6009,8 @@
         },
         {
           "default": "",
-          "document": "待修改端口的服务器数组",
+          "document": "待修改端口的服务器数组。",
+          "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
           "required": true,
@@ -5848,7 +6036,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标组ID",
+          "document": "目标组ID。",
+          "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -5856,7 +6045,8 @@
         },
         {
           "default": "",
-          "document": "待修改权重的服务器数组",
+          "document": "待修改权重的服务器数组。",
+          "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
           "required": true,
@@ -5882,7 +6072,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -5890,7 +6081,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器ID。",
+          "example": "lbl-d1ub****",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -5898,7 +6090,8 @@
         },
         {
           "default": "",
-          "document": "要修改端口的后端服务列表",
+          "document": "要修改端口的后端服务列表。",
+          "example": "无",
           "member": "Target",
           "name": "Targets",
           "required": true,
@@ -5906,7 +6099,8 @@
         },
         {
           "default": "",
-          "document": "后端服务绑定到监听器或转发规则的新端口",
+          "document": "后端服务绑定到监听器或转发规则的新端口。",
+          "example": "334",
           "member": "int64",
           "name": "NewPort",
           "required": true,
@@ -5914,7 +6108,8 @@
         },
         {
           "default": "",
-          "document": "转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一",
+          "document": "转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一。",
+          "example": "loc-fi8g****",
           "member": "string",
           "name": "LocationId",
           "required": false,
@@ -5922,7 +6117,8 @@
         },
         {
           "default": "",
-          "document": "目标规则的域名，提供LocationId参数时本参数不生效",
+          "document": "目标规则的域名，提供LocationId参数时本参数不生效。",
+          "example": "www.qcloud.example.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -5930,7 +6126,8 @@
         },
         {
           "default": "",
-          "document": "目标规则的URL，提供LocationId参数时本参数不生效",
+          "document": "目标规则的URL，提供LocationId参数时本参数不生效。",
+          "example": "/index",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -5956,7 +6153,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -5964,7 +6162,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器ID。",
+          "example": "lbl-d1ub****",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -5972,7 +6171,8 @@
         },
         {
           "default": "",
-          "document": "转发规则的ID，当绑定机器到七层转发规则时，必须提供此参数或Domain+Url两者之一",
+          "document": "转发规则的ID，当绑定机器到七层转发规则时，必须提供此参数或Domain+Url两者之一。",
+          "example": "loc-fi8g****",
           "member": "string",
           "name": "LocationId",
           "required": false,
@@ -5980,7 +6180,8 @@
         },
         {
           "default": "",
-          "document": "目标规则的域名，提供LocationId参数时本参数不生效",
+          "document": "目标规则的域名，提供LocationId参数时本参数不生效。",
+          "example": "www.new.example.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -5988,7 +6189,8 @@
         },
         {
           "default": "",
-          "document": "目标规则的URL，提供LocationId参数时本参数不生效",
+          "document": "目标规则的URL，提供LocationId参数时本参数不生效。",
+          "example": "/index",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -5996,7 +6198,8 @@
         },
         {
           "default": "",
-          "document": "要修改权重的后端服务列表",
+          "document": "要修改权重的后端服务列表。",
+          "example": "无",
           "member": "Target",
           "name": "Targets",
           "required": false,
@@ -6005,6 +6208,7 @@
         {
           "default": "",
           "document": "后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。",
+          "example": "8",
           "member": "int64",
           "name": "Weight",
           "required": false,
@@ -6064,6 +6268,7 @@
         {
           "default": "",
           "document": "目标组ID",
+          "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -6072,6 +6277,7 @@
         {
           "default": "",
           "document": "服务器实例数组",
+          "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
           "required": true,
@@ -6097,7 +6303,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -6105,7 +6312,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器ID。",
+          "example": "lbl-d1ub****",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -6113,7 +6321,8 @@
         },
         {
           "default": "",
-          "document": "待绑定的后端服务列表，数组长度最大支持20",
+          "document": "待绑定的后端服务列表，数组长度最大支持20。",
+          "example": "无",
           "member": "Target",
           "name": "Targets",
           "required": true,
@@ -6121,7 +6330,8 @@
         },
         {
           "default": "",
-          "document": "转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一",
+          "document": "转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一。",
+          "example": "loc-fi8g****",
           "member": "string",
           "name": "LocationId",
           "required": false,
@@ -6129,7 +6339,8 @@
         },
         {
           "default": "",
-          "document": "目标转发规则的域名，提供LocationId参数时本参数不生效",
+          "document": "目标转发规则的域名，提供LocationId参数时本参数不生效。",
+          "example": "www.qcloud.example.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -6137,7 +6348,8 @@
         },
         {
           "default": "",
-          "document": "目标转发规则的URL，提供LocationId参数时本参数不生效",
+          "document": "目标转发规则的URL，提供LocationId参数时本参数不生效。",
+          "example": "/index",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -6163,7 +6375,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例ID。",
+          "example": "lb-a3u5****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -6171,7 +6384,8 @@
         },
         {
           "default": "",
-          "document": "后端服务信息",
+          "document": "后端服务信息。",
+          "example": "无",
           "member": "ClassicalTargetInfo",
           "name": "Targets",
           "required": true,

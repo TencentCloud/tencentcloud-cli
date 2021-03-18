@@ -403,7 +403,7 @@
     "DescribeApplications": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApplications\r\n&Offset=0\r\n&Limit=20\r\n&SearchWord=driverapi\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApplications\n&Offset=0\n&Limit=20\n&SearchWord=driverapi\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"efa09114-e0c3-43ec-8347-5f4454696c61\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"ApplicationId\": \"application-xxxxxxx\",\n                    \"ApplicationName\": \"test\",\n                    \"ApplicationDesc\": null,\n                    \"ApplicationType\": \"V\",\n                    \"MicroserviceType\": \"N\",\n                    \"ProgLang\": \"J\",\n                    \"CreateTime\": \"2019-05-17 14:26:38\",\n                    \"UpdateTime\": \"2019-05-17 14:26:38\"\n                }\n            ]\n        }\n    }\n}",
         "title": "查询应用列表示例"
       }
@@ -611,7 +611,7 @@
     "DescribeMicroservices": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeMicroservices\r\n&Offset=0\r\n&Limit=1\r\n&NamespaceId=namespace-xxxxxxx\r\n&SearchWord=ms-xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeMicroservices\n&Offset=0\n&Limit=1\n&NamespaceId=namespace-xxxxxxx\n&SearchWord=ms-xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3eab4695-2d7e-4f78-a8d2-ea93bab87dfd\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"MicroserviceId\": \"ms-xxxxxxx\",\n                    \"NamespaceId\": \"namespace-xxxxxxx\",\n                    \"MicroserviceName\": \"consumer-demo\",\n                    \"MicroserviceDesc\": null,\n                    \"CreateTime\": 1553673084000,\n                    \"UpdateTime\": 1553673084000,\n                    \"RunInstanceCount\": 1\n                }\n            ]\n        }\n    }\n}",
         "title": "获取微服务列表"
       }
@@ -651,8 +651,8 @@
     "DescribePodInstances": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePodInstances\r\n&GroupId=group-6a73w4v5\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c78ccfd-c990-4182-bc53-2a9f417696cf\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"Reason\": \"\",\n                    \"RestartCount\": 0,\n                    \"Ip\": \"172.18.1.27\",\n                    \"NodeIp\": \"10.2.12.141\",\n                    \"Runtime\": \"7d 20h\",\n                    \"InstanceStatus\": null,\n                    \"CreatedAt\": \"2019-05-21 20:46:06\",\n                    \"InstanceAvailableStatus\": null,\n                    \"ServiceInstanceStatus\": \"Running\",\n                    \"ReadyCount\": 2,\n                    \"PodName\": \"prod-pay-center-a-2345103634-4x151\",\n                    \"PodId\": \"6646495c-7bc6-11e9-b713-86e5a1f74de4\",\n                    \"Status\": \"Running\"\n                }\n            ]\n        }\n    }\n}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePodInstances\n&GroupId=group-6a73w4v5\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"Status\": \"xx\",\n                    \"ReadyCount\": 2,\n                    \"RestartCount\": 0,\n                    \"ServiceInstanceStatus\": \"xx\",\n                    \"PodId\": \"xx\",\n                    \"Ip\": \"xx\",\n                    \"Reason\": \"xx\",\n                    \"InstanceAvailableStatus\": \"xx\",\n                    \"PodName\": \"xx\",\n                    \"InstanceStatus\": \"xx\",\n                    \"NodeIp\": \"xx\",\n                    \"Runtime\": \"xx\",\n                    \"NodeInstanceId\": \"xx\",\n                    \"CreatedAt\": \"xx\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DescribePodInstances"
       }
     ],

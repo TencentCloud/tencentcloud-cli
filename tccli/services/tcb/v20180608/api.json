@@ -5074,6 +5074,7 @@
         {
           "default": "",
           "document": "环境ID",
+          "example": "test-23",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -5082,6 +5083,7 @@
         {
           "default": "",
           "document": "环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "example": "iAmNickName",
           "member": "string",
           "name": "Alias",
           "required": false,

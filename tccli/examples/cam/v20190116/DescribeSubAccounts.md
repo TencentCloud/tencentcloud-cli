@@ -20,15 +20,9 @@ Output:
                 "Uin": 1,
                 "UserType": 1,
                 "CreateTime": "2020-09-22 00:00:00",
-                "Name": "xx"
-            },
-            {
-                "Remark": "xx",
                 "Name": "xx",
-                "Uin": 1,
-                "UserType": 1,
-                "CreateTime": "2020-09-22 00:00:00",
-                "Uid": 1
+                "LastLoginIp": "",
+                "LastLoginTime": null
             }
         ],
         "RequestId": "xx"

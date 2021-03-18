@@ -1,0 +1,93 @@
+{
+  "actions": {
+    "CreateDatabase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"DatabaseInfo\": {\n        \"Comment\": \"xx\",\n        \"Properties\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"DatabaseName\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "demon-1"
+      }
+    ],
+    "CreateScript": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScript\n<公共请求参数>\n\n{\n    \"ScriptDesc\": \"xx\",\n    \"ScriptName\": \"xx\",\n    \"DatabaseName\": \"xx\",\n    \"SQLStatement\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建sql查询"
+      }
+    ],
+    "CreateTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTable\n<公共请求参数>\n\n{\n    \"TableInfo\": {\n        \"Columns\": [\n            {\n                \"Comment\": \"xx\",\n                \"Type\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"DataFormat\": {\n            \"CSV\": {\n                \"HeadLines\": 0,\n                \"CodeCompress\": \"xx\",\n                \"Format\": \"xx\",\n                \"CSVSerde\": {\n                    \"Quote\": \"xx\",\n                    \"Separator\": \"xx\",\n                    \"Escape\": \"xx\"\n                }\n            },\n            \"AVRO\": {\n                \"Format\": \"xx\"\n            },\n            \"Json\": {\n                \"Format\": \"xx\"\n            },\n            \"Parquet\": {\n                \"Format\": \"xx\"\n            },\n            \"TextFile\": {\n                \"Regex\": \"xx\",\n                \"Format\": \"xx\"\n            },\n            \"ORC\": {\n                \"Format\": \"xx\"\n            }\n        },\n        \"Location\": \"xx\",\n        \"TableBaseInfo\": {\n            \"TableName\": \"xx\",\n            \"DatabaseName\": \"xx\"\n        },\n        \"Partitions\": [\n            {\n                \"Comment\": \"xx\",\n                \"Type\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "建表"
+      }
+    ],
+    "CreateTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"Task\": {\n        \"SQLTask\": {\n            \"SQL\": \"xx\"\n        }\n    },\n    \"DatabaseName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "创建sql任务"
+      }
+    ],
+    "DeleteScript": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScript\n<公共请求参数>\n\n{\n    \"ScriptIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ScriptsAffected\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除sql查询"
+      }
+    ],
+    "DescribeDatabases": [
+      {
+        "document": "查询数据库列表",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DatabaseList\": [\n            {\n                \"Comment\": \"xx\",\n                \"ModifiedTime\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"DatabaseName\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeScripts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScripts\n<公共请求参数>\n\n{\n    \"Sorting\": \"xx\",\n    \"Limit\": 0,\n    \"SortBy\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Scripts\": [\n            {\n                \"UpdateTime\": 0,\n                \"DatabaseName\": \"xx\",\n                \"ScriptName\": \"xx\",\n                \"ScriptDesc\": \"xx\",\n                \"SQLStatement\": \"xx\",\n                \"ScriptId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取所有sql查询"
+      }
+    ],
+    "DescribeTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTable\n<公共请求参数>\n\n{\n    \"DatabaseName\": \"database-test\",\n    \"TableName\": \"table-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Table\": {\n            \"InputFormat\": \"xx\",\n            \"ModifiedTime\": \"xx\",\n            \"TableBaseInfo\": {\n                \"TableName\": \"xx\",\n                \"DatabaseName\": \"xx\"\n            },\n            \"CreateTime\": \"xx\",\n            \"Location\": \"xx\",\n            \"Properties\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ],\n            \"Columns\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"Partitions\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeTables": [
+      {
+        "document": "查询数据表列表。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTables\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"database-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TableList\": [\n            {\n                \"InputFormat\": \"xx\",\n                \"ModifiedTime\": \"xx\",\n                \"TableBaseInfo\": {\n                    \"TableName\": \"xx\",\n                    \"DatabaseName\": \"xx\"\n                },\n                \"CreateTime\": \"xx\",\n                \"Location\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Columns\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Partitions\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskList\": [\n            {\n                \"DataSet\": \"xx\",\n                \"Id\": \"xx\",\n                \"DatabaseName\": \"xx\",\n                \"OutputMessage\": \"xx\",\n                \"SQL\": \"xx\",\n                \"ResultExpired\": true,\n                \"OutputPath\": \"xx\",\n                \"State\": 0,\n                \"UsedTime\": 0,\n                \"DataAmount\": 0,\n                \"Error\": \"xx\",\n                \"Percentage\": 0,\n                \"SQLType\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"RowAffectInfo\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询任务列表"
+      }
+    ],
+    "DescribeViews": [
+      {
+        "document": "查询数据表列表。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeViews\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"database-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ViewList\": [\n            {\n                \"ModifiedTime\": \"xx\",\n                \"ViewBaseInfo\": {\n                    \"ViewName\": \"xx\",\n                    \"DatabaseName\": \"xx\"\n                },\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Columns\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "示例1"
+      }
+    ]
+  },
+  "version": "1.0"
+}

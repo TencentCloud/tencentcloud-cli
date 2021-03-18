@@ -1,0 +1,1644 @@
+{
+  "actions": {
+    "CreateDatabase": {
+      "document": "本接口（CreateDatabase）用于生成建库SQL语句。",
+      "input": "CreateDatabaseRequest",
+      "name": "生成建库SQL语句",
+      "output": "CreateDatabaseResponse"
+    },
+    "CreateScript": {
+      "document": "该接口（CreateScript）用于创建sql脚本。",
+      "input": "CreateScriptRequest",
+      "name": "创建sql脚本",
+      "output": "CreateScriptResponse"
+    },
+    "CreateTable": {
+      "document": "本接口（CreateTable）用于生成建表SQL。",
+      "input": "CreateTableRequest",
+      "name": "生成建表SQL",
+      "output": "CreateTableResponse"
+    },
+    "CreateTask": {
+      "document": "本接口（CreateTask）用于创建sql查询任务。",
+      "input": "CreateTaskRequest",
+      "name": "任务创建",
+      "output": "CreateTaskResponse"
+    },
+    "DeleteScript": {
+      "document": "该接口（DeleteScript）用于删除sql脚本。",
+      "input": "DeleteScriptRequest",
+      "name": "删除sql脚本",
+      "output": "DeleteScriptResponse"
+    },
+    "DescribeDatabases": {
+      "document": "本接口（DescribeDatabases）用于查询数据库列表。",
+      "input": "DescribeDatabasesRequest",
+      "name": "查询数据库列表",
+      "output": "DescribeDatabasesResponse"
+    },
+    "DescribeScripts": {
+      "document": "该接口（DescribeScripts）用于获取所有SQL查询。",
+      "input": "DescribeScriptsRequest",
+      "name": "查询script列表",
+      "output": "DescribeScriptsResponse"
+    },
+    "DescribeTable": {
+      "document": "查询单个表的详细信息。",
+      "input": "DescribeTableRequest",
+      "name": "查询表详情",
+      "output": "DescribeTableResponse"
+    },
+    "DescribeTables": {
+      "document": "本接口（DescribleTables）用于查询数据表列表。",
+      "input": "DescribeTablesRequest",
+      "name": "查询数据表列表",
+      "output": "DescribeTablesResponse"
+    },
+    "DescribeTasks": {
+      "document": "该接口（DescribleTasks）用于查询任务列表",
+      "input": "DescribeTasksRequest",
+      "name": "查询任务列表",
+      "output": "DescribeTasksResponse"
+    },
+    "DescribeViews": {
+      "document": "本接口（DescribeViews）用于查询数据视图列表。",
+      "input": "DescribeViewsRequest",
+      "name": "查询视图列表",
+      "output": "DescribeViewsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-01-25",
+    "api_brief": "介绍如何通过API接口创/删数据库及表，提交SQL作业分析数据等",
+    "serviceNameCN": "数据湖计算",
+    "serviceShortName": "dlc"
+  },
+  "objects": {
+    "CSV": {
+      "document": "CSV类型数据格式",
+      "members": [
+        {
+          "default": "",
+          "document": "压缩格式，[\"Snappy\", \"Gzip\", \"None\"选一]。",
+          "example": "Snappy",
+          "member": "string",
+          "name": "CodeCompress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CSV序列化及反序列化数据结构。",
+          "example": "无",
+          "member": "CSVSerde",
+          "name": "CSVSerde",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标题行，默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "HeadLines",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "格式，默认值为CSV\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CSV",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "CSVSerde": {
+      "document": "CSV序列化及反序列化数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "CSV序列化转义符，默认为\"\\\\\"，最长8个字符，如 Escape: \"/\\\"",
+          "example": "\\\\",
+          "member": "string",
+          "name": "Escape",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CSV序列化字段域符，默认为\"'\"，最长8个字符, 如 Quote: \"\\\"\"",
+          "example": "\"",
+          "member": "string",
+          "name": "Quote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CSV序列化分隔符，默认为\"\\t\"，最长8个字符, 如 Separator: \"\\t\"",
+          "example": ",",
+          "member": "string",
+          "name": "Separator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Column": {
+      "document": "数据表列信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "列名称，不区分大小写，最大支持25个字符。",
+          "example": "col1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列类型，支持如下类型定义:\nstring|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array<data_type>|map<primitive_type, data_type>|struct<col_name : data_type [COMMENT col_comment], ...>|uniontype<data_type, data_type, ...>。",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对该类的注释。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "create by zhangsan",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateDatabaseRequest": {
+      "document": "CreateDatabase请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库基础信息",
+          "example": "无",
+          "member": "DatabaseInfo",
+          "name": "DatabaseInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatabaseResponse": {
+      "document": "CreateDatabase返回参数结构体",
+      "members": [
+        {
+          "document": "生成的建库执行语句对象。",
+          "example": "无",
+          "member": "Execution",
+          "name": "Execution",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScriptRequest": {
+      "document": "CreateScript请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "脚本名称，最大不能超过255个字符。",
+          "example": "Script1",
+          "member": "string",
+          "name": "ScriptName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "base64编码后的sql语句",
+          "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
+          "member": "string",
+          "name": "SQLStatement",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "脚本描述,",
+          "example": "create by zhangsan",
+          "member": "string",
+          "name": "ScriptDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScriptResponse": {
+      "document": "CreateScript返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTableRequest": {
+      "document": "CreateTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据表配置信息",
+          "example": "无",
+          "member": "TableInfo",
+          "name": "TableInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTableResponse": {
+      "document": "CreateTable返回参数结构体",
+      "members": [
+        {
+          "document": "生成的建表执行语句对象。",
+          "example": "无",
+          "member": "Execution",
+          "name": "Execution",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskRequest": {
+      "document": "CreateTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "计算任务，该参数中包含任务类型及其相关配置信息",
+          "example": "无",
+          "member": "Task",
+          "name": "Task",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据库名称。任务在执行前均会USE该数据库， 除了首次建库时，其他情况建议均添加上。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskResponse": {
+      "document": "CreateTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataFormat": {
+      "document": "数据表数据格式。",
+      "members": [
+        {
+          "default": "",
+          "document": "文本格式，TextFile。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextFile",
+          "name": "TextFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本格式，CSV。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CSV",
+          "name": "CSV",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本格式，Json。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Other",
+          "name": "Json",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Parquet格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Other",
+          "name": "Parquet",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ORC格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Other",
+          "name": "ORC",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "AVRO格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Other",
+          "name": "AVRO",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DatabaseInfo": {
+      "document": "数据库对象",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库描述信息，长度 0~256。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "create by zhangsan",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库属性列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DatabaseResponseInfo": {
+      "document": "数据库对象",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库描述信息，长度 0~256。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "create by zhangsan",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库属性列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库创建时间戳，单位：s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611646963",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库更新时间戳，单位：s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611646963",
+          "member": "string",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteScriptRequest": {
+      "document": "DeleteScript请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "脚本id，其可以通过DescribeScripts接口提取",
+          "example": "[\"89570c65-49de-4bbd-ac0a-a67c724fc80f\"]",
+          "member": "string",
+          "name": "ScriptIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScriptResponse": {
+      "document": "DeleteScript返回参数结构体",
+      "members": [
+        {
+          "document": "删除的脚本数量",
+          "example": "0",
+          "member": "int64",
+          "name": "ScriptsAffected",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesRequest": {
+      "document": "DescribeDatabases请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，从0开始，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模糊匹配，库名关键字。",
+          "example": "\"data\"",
+          "member": "string",
+          "name": "KeyWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesResponse": {
+      "document": "DescribeDatabases返回参数结构体",
+      "members": [
+        {
+          "document": "数据库对象列表。",
+          "example": "无",
+          "member": "DatabaseResponseInfo",
+          "name": "DatabaseList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例总数。",
+          "example": "21",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScriptsRequest": {
+      "document": "DescribeScripts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按字段爱旭，支持如下字段类型，update-time",
+          "example": "update-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc表示正序，asc表示反序",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为其一\nscript-id - String - （过滤条件）script-id取值形如：157de0d1-26b4-4df2-a2d0-b64afc406c25。\nscript-name-keyword - String - （过滤条件）数据表名称,形如：script-test。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScriptsResponse": {
+      "document": "DescribeScripts返回参数结构体",
+      "members": [
+        {
+          "document": "Script列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Script",
+          "name": "Scripts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例总数",
+          "example": "21",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableRequest": {
+      "document": "DescribeTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询对象表名称",
+          "example": "table1",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询表所在的数据库名称。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableResponse": {
+      "document": "DescribeTable返回参数结构体",
+      "members": [
+        {
+          "document": "数据表对象",
+          "example": "无",
+          "member": "TableResponseInfo",
+          "name": "Table",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesRequest": {
+      "document": "DescribeTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "列出该数据库下所属数据表。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，从0开始，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为其一\ntable-name - String - （过滤条件）数据表名称,形如：table-001。\ntable-id - String - （过滤条件）table id形如：12342。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesResponse": {
+      "document": "DescribeTables返回参数结构体",
+      "members": [
+        {
+          "document": "数据表对象列表。",
+          "example": "无",
+          "member": "TableResponseInfo",
+          "name": "TableList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例总数。",
+          "example": "21",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,每个过滤参数支持的过滤值不超过5个。\ntask-id - String - （任务ID过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字）取值形如：DROP TABLE。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持如下字段类型，create-time",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc表示正序，asc表示反序",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-01-21 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。",
+          "example": "2019-01-22 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务对象列表。",
+          "example": "无",
+          "member": "TaskResponseInfo",
+          "name": "TaskList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例总数。",
+          "example": "21",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeViewsRequest": {
+      "document": "DescribeViews请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "列出该数据库下所属数据表。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，从0开始，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为其一\nview-name - String - （过滤条件）数据表名称,形如：view-001。\nview-id - String - （过滤条件）view id形如：12342。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeViewsResponse": {
+      "document": "DescribeViews返回参数结构体",
+      "members": [
+        {
+          "document": "视图对象列表。",
+          "example": "无",
+          "member": "ViewResponseInfo",
+          "name": "ViewList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例总数。",
+          "example": "21",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Execution": {
+      "document": "SQL语句对象",
+      "members": [
+        {
+          "default": "",
+          "document": "自动生成SQL语句。",
+          "example": "CREATE DATABASE `test`;;",
+          "member": "string",
+          "name": "SQL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "查询列表过滤条件参数",
+      "members": [
+        {
+          "default": "",
+          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。",
+          "example": "task-id",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Other": {
+      "document": "数据格式其它类型。",
+      "members": [
+        {
+          "default": "",
+          "document": "枚举类型，默认值为Json，可选值为[Json, Parquet, ORC, AVRD]之一。",
+          "example": "Json",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Partition": {
+      "document": "数据表分块信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "分区列名。",
+          "example": "col1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区类型。",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对分区的描述。",
+          "example": "create by zhangsan",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Property": {
+      "document": "数据库和数据表属性信息",
+      "members": [
+        {
+          "default": "",
+          "document": "属性key名称。",
+          "example": "owner",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性key对应的value。",
+          "example": "create by zhangsan",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SQLTask": {
+      "document": " SQL查询任务",
+      "members": [
+        {
+          "default": "",
+          "document": "base64加密后的SQL语句",
+          "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
+          "member": "string",
+          "name": "SQL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Script": {
+      "document": "script实例。",
+      "members": [
+        {
+          "default": "",
+          "document": "脚本Id，长度36字节。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
+          "member": "string",
+          "name": "ScriptId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "脚本名称，长度0-25。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ScriptName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "脚本描述，长度0-50。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "create by zhangsan",
+          "member": "string",
+          "name": "ScriptDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认关联数据库。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQL描述，长度0-10000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
+          "member": "string",
+          "name": "SQLStatement",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间戳， 单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611646962000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableBaseInfo": {
+      "document": "数据表配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "该数据表所属数据库名字",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据表名字",
+          "example": "table",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TableInfo": {
+      "document": "返回数据表的相关信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "数据表配置信息。",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据表格式。每次入参可选如下其一的KV结构，[TextFile，CSV，Json, Parquet, ORC, AVRD]。",
+          "example": "无",
+          "member": "DataFormat",
+          "name": "DataFormat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据表列信息。",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据表分块信息。",
+          "example": "无",
+          "member": "Partition",
+          "name": "Partitions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据存储路径。当前仅支持cos路径，格式如下：cosn://bucket-name/filepath。",
+          "example": "cosn://test-bucket-1123423/csvdata/",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TableResponseInfo": {
+      "document": "查询表信息对象",
+      "members": [
+        {
+          "default": "",
+          "document": "数据表基本信息。",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据表列信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据表分块信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Partition",
+          "name": "Partitions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据存储路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://test-bucket-123242/csvdata/",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据表属性信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据表更新时间, 单位: ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611579344000",
+          "member": "string",
+          "name": "ModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据表创建时间,单位: ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611579344000",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+          "member": "string",
+          "name": "InputFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Task": {
+      "document": "任务类型，任务如SQL查询等。",
+      "members": [
+        {
+          "default": "",
+          "document": "SQL查询任务",
+          "example": "无",
+          "member": "SQLTask",
+          "name": "SQLTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskResponseInfo": {
+      "document": "任务实例。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务所属Database的名称。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务数据量。",
+          "example": "1024",
+          "member": "int64",
+          "name": "DataAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务Id。",
+          "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计算时长，单位： ms。",
+          "example": "60000",
+          "member": "int64",
+          "name": "UsedTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务输出路径。",
+          "example": "cosn://test-bucket-123434324234/result/",
+          "member": "string",
+          "name": "OutputPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间。",
+          "example": "1611646962000",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态, 0 初始化， 1 执行中， 2 执行成功，3 数据写入中，-1 执行失败。",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务SQL类型，DDL|DML等",
+          "example": "DDL",
+          "member": "string",
+          "name": "SQLType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务SQL语句",
+          "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
+          "member": "string",
+          "name": "SQL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果是否过期。",
+          "example": "false",
+          "member": "bool",
+          "name": "ResultExpired",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据影响统计信息。",
+          "example": "500 rows selected (0.077 seconds)",
+          "member": "string",
+          "name": "RowAffectInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务结果数据表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Schema\":[\"name\",\"age\"],\"Data\":[{\"name\":\"29\",\"age\":\"Michael\"}]}",
+          "member": "string",
+          "name": "DataSet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败信息, 例如：errorMessage。该字段已废弃。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Error",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行进度num/100(%)",
+          "example": "100",
+          "member": "int64",
+          "name": "Percentage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行输出信息。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OutputMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TextFile": {
+      "document": "文本格式",
+      "members": [
+        {
+          "default": "",
+          "document": "文本类型，本参数取值为TextFile。",
+          "example": "TextFile",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理文本用的正则表达式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"(\\\"[^\\]]*\\\") (\\\"[0-9]*\\\") (-|[^ ]*)\" ",
+          "member": "string",
+          "name": "Regex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ViewBaseInfo": {
+      "document": "视图基本配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "该视图所属数据库名字",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视图名称",
+          "example": "view-test",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ViewResponseInfo": {
+      "document": "查询视图信息对象",
+      "members": [
+        {
+          "default": "",
+          "document": "视图基本信息。",
+          "example": "无",
+          "member": "ViewBaseInfo",
+          "name": "ViewBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视图列信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视图属性信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视图创建时间。",
+          "example": "1611646962",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视图更新时间。",
+          "example": "1611646962",
+          "member": "string",
+          "name": "ModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}
