@@ -16463,6 +16463,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路由策略创建时间",
+          "example": "2021-03-02 14:41:15",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

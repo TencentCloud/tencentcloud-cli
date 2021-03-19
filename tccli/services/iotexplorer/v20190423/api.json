@@ -108,6 +108,12 @@
       "name": "获取设备历史数据",
       "output": "DescribeDeviceDataHistoryResponse"
     },
+    "DescribeFirmwareTask": {
+      "document": "查询固件升级任务列表",
+      "input": "DescribeFirmwareTaskRequest",
+      "name": "查询固件升级任务列表",
+      "output": "DescribeFirmwareTaskResponse"
+    },
     "DescribeLoRaFrequency": {
       "document": "提供查询LoRa自定义频点详情的能力",
       "input": "DescribeLoRaFrequencyRequest",
@@ -186,6 +192,12 @@
       "name": "获取设备的历史事件",
       "output": "ListEventHistoryResponse"
     },
+    "ListFirmwares": {
+      "document": "本接口（ListFirmwares）用于获取固件列表 ",
+      "input": "ListFirmwaresRequest",
+      "name": "获取固件列表",
+      "output": "ListFirmwaresResponse"
+    },
     "ModifyLoRaFrequency": {
       "document": "修改LoRa自定义频点",
       "input": "ModifyLoRaFrequencyRequest",
@@ -245,6 +257,18 @@
       "input": "SearchTopicRuleRequest",
       "name": "搜索规则",
       "output": "SearchTopicRuleResponse"
+    },
+    "UpdateFirmware": {
+      "document": "本接口（UpdateFirmware）用于对指定设备发起固件升级请求 ",
+      "input": "UpdateFirmwareRequest",
+      "name": "更新设备固件",
+      "output": "UpdateFirmwareResponse"
+    },
+    "UploadFirmware": {
+      "document": "本接口（UploadFirmware）用于上传设备固件至平台",
+      "input": "UploadFirmwareRequest",
+      "name": "上传设备固件",
+      "output": "UploadFirmwareResponse"
     }
   },
   "metadata": {
@@ -1289,6 +1313,123 @@
       ],
       "type": "object"
     },
+    "DescribeFirmwareTaskRequest": {
+      "document": "DescribeFirmwareTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件任务ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskResponse": {
+      "document": "DescribeFirmwareTask返回参数结构体",
+      "members": [
+        {
+          "document": "固件任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000175",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件任务创建时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1589466879",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件任务升级类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "门锁",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "originalVersion",
+          "member": "string",
+          "name": "UpgradeMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "OriginalVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoRaFrequencyRequest": {
       "document": "DescribeLoRaFrequency请求参数结构体",
       "members": [
@@ -1770,6 +1911,75 @@
       ],
       "usage": "out"
     },
+    "FirmwareInfo": {
+      "document": "设备固件详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "固件版本",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "固件MD5值",
+          "member": "string",
+          "name": "Md5sum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "固件创建时间",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "GetDeviceListRequest": {
       "document": "GetDeviceList请求参数结构体",
       "members": [
@@ -2166,6 +2376,78 @@
           "name": "EventHistory",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFirmwaresRequest": {
+      "document": "ListFirmwares请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "获取的页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索过滤条件",
+          "example": "无",
+          "member": "SearchKeyword",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFirmwaresResponse": {
+      "document": "ListFirmwares返回参数结构体",
+      "members": [
+        {
+          "document": "固件总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "固件列表",
+          "example": "无",
+          "member": "FirmwareInfo",
+          "name": "Firmwares",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3246,6 +3528,30 @@
       ],
       "type": "object"
     },
+    "SearchKeyword": {
+      "document": "搜索关键词",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索条件的Key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "搜索条件的值",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SearchStudioProductRequest": {
       "document": "SearchStudioProduct请求参数结构体",
       "members": [
@@ -3492,6 +3798,141 @@
         }
       ],
       "usage": "in"
+    },
+    "UpdateFirmwareRequest": {
+      "document": "UpdateFirmware请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件新的版本号",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件原版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareOriVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件升级方式；0 静默升级 1 用户确认升级   不填默认静默升级",
+          "example": "0",
+          "member": "uint64",
+          "name": "UpgradeMethod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFirmwareResponse": {
+      "document": "UpdateFirmware返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFirmwareRequest": {
+      "document": "UploadFirmware请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件的MD5值",
+          "example": "hfshfspodkoiwuidoiwjcuie",
+          "member": "string",
+          "name": "Md5sum",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件的大小",
+          "example": "1024",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "固件名称",
+          "example": "dev_firmwarev1.0",
+          "member": "string",
+          "name": "FirmwareName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件描述",
+          "example": "version1.0固件",
+          "member": "string",
+          "name": "FirmwareDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFirmwareResponse": {
+      "document": "UploadFirmware返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

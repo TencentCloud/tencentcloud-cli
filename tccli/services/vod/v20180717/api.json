@@ -5002,6 +5002,7 @@
         {
           "default": "",
           "document": "日志所属日期， 格式为：yyyy-MM-dd ，如2018-03-01。",
+          "example": "无",
           "member": "string",
           "name": "Date",
           "required": true,
@@ -5011,6 +5012,7 @@
         {
           "default": "",
           "document": "日志名称，格式为：日期小时-域名\n如 2018120101-test.vod2.mqcloud.com。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5020,8 +5022,29 @@
         {
           "default": "",
           "document": "日志下载链接，24小时内下载有效。",
+          "example": "无",
           "member": "string",
           "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8550,6 +8573,7 @@
         {
           "default": "",
           "document": "域名。",
+          "example": "test.vod2.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -8558,6 +8582,7 @@
         {
           "default": "",
           "document": "获取日志起始时间点，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "2018-12-0116:00:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -8566,6 +8591,7 @@
         {
           "default": "",
           "document": "结束时间需大于起始时间；使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "2018-12-0316:00:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -8573,7 +8599,26 @@
         },
         {
           "default": "",
+          "document": "分页拉取的最大返回结果数。默认值：100；最大值：1000。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页拉取的起始偏移量。默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -8586,16 +8631,29 @@
       "document": "DescribeCdnLogs返回参数结构体",
       "members": [
         {
-          "document": "国内CDN节点的日志下载列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "CdnLogInfo",
-          "name": "DomesticCdnLogs",
-          "type": "list",
+          "document": "日志下载链接总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CdnLogInfo",
           "name": "OverseaCdnLogs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "国内CDN节点的日志下载列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CdnLogInfo",
+          "name": "DomesticCdnLogs",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -7806,6 +7806,7 @@
         {
           "default": "",
           "document": "微服务ID",
+          "example": "ms-xxx",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -7814,6 +7815,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7822,10 +7824,20 @@
         {
           "default": "",
           "document": "分页个数",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可选，根据部署组ID进行过滤",
+          "example": "[\"group-xxx\",\"group-xxx\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7835,8 +7847,10 @@
       "members": [
         {
           "document": "微服务详情实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "TsfPageMsInstance",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

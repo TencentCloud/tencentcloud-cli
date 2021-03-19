@@ -3142,6 +3142,7 @@
         {
           "default": "",
           "document": "只读实例ID，格式如：cdbro-3i70uj0k，与云数据库控制台页面中显示的只读实例ID相同。",
+          "example": "cdbro-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3150,6 +3151,7 @@
         {
           "default": "",
           "document": "子网描述符，例如：subnet-1typ0s7d。",
+          "example": "subnet-1typ0s7d",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -3157,7 +3159,8 @@
         },
         {
           "default": "",
-          "document": "vpc描述符，例如：vpc-xxx,如果传了该字段则UniqSubnetId必传",
+          "document": "vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传",
+          "example": "vpc-a23yt67j",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -3171,29 +3174,37 @@
       "members": [
         {
           "document": "只读实例的私有网络的ID。",
+          "example": "511512",
           "member": "int64",
           "name": "RoVpcId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "只读实例的子网ID。",
+          "example": "115839",
           "member": "int64",
           "name": "RoSubnetId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "只读实例的内网IP地址。",
+          "example": "172.0.0.1",
           "member": "string",
           "name": "RoVip",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读实例的内网端口号。",
+          "example": "3306",
           "member": "int64",
           "name": "RoVport",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

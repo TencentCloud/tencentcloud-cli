@@ -13,45 +13,43 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 7,
         "FirewallRuleSet": [
             {
+                "Action": "DROP",
+                "AppType": "自定义",
+                "CidrBlock": "0.0.0.0/0",
+                "FirewallRuleDescription": "",
+                "Port": "22,88",
+                "Protocol": "TCP"
+            },
+            {
+                "Action": "ACCEPT",
+                "AppType": "自定义",
+                "CidrBlock": "0.0.0.0/0",
+                "FirewallRuleDescription": "test",
+                "Port": "88",
+                "Protocol": "TCP"
+            },
+            {
+                "Action": "ACCEPT",
                 "AppType": "HTTP(80)",
-                "Protocol": "TCP",
-                "Port": "80"
+                "CidrBlock": "0.0.0.0/0",
+                "FirewallRuleDescription": "test",
+                "Port": "80",
+                "Protocol": "TCP"
             },
             {
+                "Action": "ACCEPT",
                 "AppType": "HTTPS(443)",
-                "Protocol": "TCP",
-                "Port": "443"
-            },
-            {
-                "AppType": "Linux登录(22)",
-                "Protocol": "TCP",
-                "Port": "22"
-            },
-            {
-                "AppType": "Windows登录(3389)",
-                "Protocol": "TCP",
-                "Port": "3389"
-            },
-            {
-                "AppType": "自定义",
-                "Protocol": "TCP",
-                "Port": "300"
-            },
-            {
-                "AppType": "自定义",
-                "Protocol": "TCP",
-                "Port": "84-90"
-            },
-            {
-                "AppType": "自定义",
-                "Protocol": "TCP",
-                "Port": "85,92"
+                "CidrBlock": "0.0.0.0/0",
+                "FirewallRuleDescription": "放通Web服务HTTPS(443)，如 Apache、Nginx",
+                "Port": "443",
+                "Protocol": "TCP"
             }
         ],
-        "RequestId": "a41e2048-82c8-4d43-826a-9f6a5b23d3e5"
+        "FirewallVersion": 1,
+        "RequestId": "afa0c876-336a-4ed6-ad01-89b3b2632207",
+        "TotalCount": 4
     }
 }
 ```
@@ -73,15 +71,19 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 7,
         "FirewallRuleSet": [
             {
-                "AppType": "HTTP(80)",
-                "Protocol": "TCP",
-                "Port": "80"
+                "Action": "DROP",
+                "AppType": "自定义",
+                "CidrBlock": "0.0.0.0/0",
+                "FirewallRuleDescription": "",
+                "Port": "22,88",
+                "Protocol": "TCP"
             }
         ],
-        "RequestId": "28308810-42e6-4ee4-98d7-14471ae149a4"
+        "FirewallVersion": 1,
+        "RequestId": "31522fb9-fef8-4190-9080-deba504c36ae",
+        "TotalCount": 4
     }
 }
 ```

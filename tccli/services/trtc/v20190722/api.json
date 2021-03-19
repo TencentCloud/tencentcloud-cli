@@ -1155,7 +1155,7 @@
         },
         {
           "default": "",
-          "document": "混流-输出流音频码率。取值范围[8,500]，单位为Kbps。",
+          "document": "混流-输出流音频码率。取值范围[8,500]，单位为kbps。",
           "example": "64",
           "member": "uint64",
           "name": "AudioBitrate",
@@ -1195,7 +1195,7 @@
         },
         {
           "default": "",
-          "document": "混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。",
+          "document": "混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。",
           "example": "512",
           "member": "uint64",
           "name": "VideoBitrate",
@@ -1225,7 +1225,7 @@
         },
         {
           "default": "",
-          "document": "混流-输出流背景色。",
+          "document": "混流-输出流背景色，取值是十进制整数。常用的颜色有：\n红色：0xff0000，对应的十进制整数是16724736。\n黄色：0xffff00。对应的十进制整数是16776960。\n绿色：0x33cc00。对应的十进制整数是3394560。\n蓝色：0x0066ff。对应的十进制整数是26367。\n黑色：0x000000。对应的十进制整数是0。\n白色：0xFFFFFF。对应的十进制整数是16777215。\n灰色：0x999999。对应的十进制整数是10066329。",
           "example": "0",
           "member": "uint64",
           "name": "BackgroundColor",
@@ -1239,6 +1239,16 @@
           "example": "0",
           "member": "uint64",
           "name": "BackgroundImageId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流音频编码类型，取值范围[0,1, 2]，0为LC-AAC，1为HE-AAC，2为HE-AACv2。默认值为0。当音频编码设置为HE-AACv2时，只支持输出流音频声道数为双声道。HE-AAC和HE-AACv2支持的输出流音频采样率范围为[48000, 44100, 32000, 24000, 16000]",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudioCodec",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1489,6 +1499,7 @@
         {
           "default": "",
           "document": "直播流 ID，由用户自定义设置，该流 ID 不能与用户旁路的流 ID 相同。",
+          "example": "mix_stream",
           "member": "string",
           "name": "StreamId",
           "required": true,
@@ -1498,6 +1509,7 @@
         {
           "default": "",
           "document": "取值范围[0,1]， 填0：直播流为音视频(默认); 填1：直播流为纯音频",
+          "example": "0",
           "member": "uint64",
           "name": "PureAudioStream",
           "required": false,
@@ -1506,7 +1518,8 @@
         },
         {
           "default": "",
-          "document": "自定义录制文件名。请先在实时音视频控制台开通录制功能，https://cloud.tencent.com/document/product/647/50768",
+          "document": "自定义录制文件名称前缀。请先在实时音视频控制台开通录制功能，https://cloud.tencent.com/document/product/647/50768",
+          "example": "mix_stream_record",
           "member": "string",
           "name": "RecordId",
           "required": false,
@@ -1516,6 +1529,7 @@
         {
           "default": "",
           "document": "取值范围[0,1]，填0无实际含义; 填1：指定录制文件格式为mp3",
+          "example": "0",
           "member": "uint64",
           "name": "RecordAudioOnly",
           "required": false,

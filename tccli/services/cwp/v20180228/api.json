@@ -258,6 +258,12 @@
       "name": "网页防篡改获取区域主机列表",
       "output": "DescribeMachineListResponse"
     },
+    "DescribeMachineOsList": {
+      "document": "查询可筛选操作系统列表.",
+      "input": "DescribeMachineOsListRequest",
+      "name": "查询机器操作系统列表",
+      "output": "DescribeMachineOsListResponse"
+    },
     "DescribeMachines": {
       "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
       "input": "DescribeMachinesRequest",
@@ -2235,6 +2241,7 @@
         {
           "default": "",
           "document": "标签ID",
+          "example": "[]",
           "member": "uint64",
           "name": "Ids",
           "required": true,
@@ -3848,12 +3855,38 @@
       ],
       "type": "object"
     },
+    "DescribeMachineOsListRequest": {
+      "document": "DescribeMachineOsList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMachineOsListResponse": {
+      "document": "DescribeMachineOsList返回参数结构体",
+      "members": [
+        {
+          "document": "操作系统列表",
+          "example": "[]",
+          "member": "OsName",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMachinesRequest": {
       "document": "DescribeMachines请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
+          "example": "CVM",
           "member": "string",
           "name": "MachineType",
           "required": true,
@@ -3862,6 +3895,7 @@
         {
           "default": "",
           "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
           "required": true,
@@ -3870,6 +3904,7 @@
         {
           "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3878,6 +3913,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3885,7 +3921,8 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3894,6 +3931,7 @@
         {
           "default": "",
           "document": "机器所属业务ID列表",
+          "example": "1",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
@@ -3907,15 +3945,19 @@
       "members": [
         {
           "document": "主机列表",
+          "example": "[]",
           "member": "Machine",
           "name": "Machines",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "主机数量",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7216,6 +7258,7 @@
         {
           "default": "",
           "document": "主机名称。",
+          "example": "test",
           "member": "string",
           "name": "MachineName",
           "required": true,
@@ -7225,6 +7268,7 @@
         {
           "default": "",
           "document": "主机系统。",
+          "example": "centos",
           "member": "string",
           "name": "MachineOs",
           "required": true,
@@ -7233,7 +7277,8 @@
         },
         {
           "default": "",
-          "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>MACHINE_STOPPED: 已关机</li>",
+          "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>SHUTDOWN: 已关机</li>",
+          "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
           "required": true,
@@ -7243,6 +7288,7 @@
         {
           "default": "",
           "document": "云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。",
+          "example": "xx",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -7252,6 +7298,7 @@
         {
           "default": "",
           "document": "CVM或BM机器唯一Uuid。",
+          "example": "xx",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -7261,6 +7308,7 @@
         {
           "default": "",
           "document": "漏洞数。",
+          "example": "2",
           "member": "int64",
           "name": "VulNum",
           "required": true,
@@ -7270,6 +7318,7 @@
         {
           "default": "",
           "document": "主机IP。",
+          "example": "10.0.0.2",
           "member": "string",
           "name": "MachineIp",
           "required": true,
@@ -7279,6 +7328,7 @@
         {
           "default": "",
           "document": "是否是专业版。\n<li>true： 是</li>\n<li>false：否</li>",
+          "example": "false",
           "member": "bool",
           "name": "IsProVersion",
           "required": true,
@@ -7288,6 +7338,7 @@
         {
           "default": "",
           "document": "主机外网IP。",
+          "example": "114.11.12.13",
           "member": "string",
           "name": "MachineWanIp",
           "required": true,
@@ -7297,6 +7348,7 @@
         {
           "default": "",
           "document": "主机状态。\n<li>POSTPAY: 表示后付费，即按量计费  </li>\n<li>PREPAY: 表示预付费，即包年包月</li>",
+          "example": "PREPAY",
           "member": "string",
           "name": "PayMode",
           "required": true,
@@ -7306,6 +7358,7 @@
         {
           "default": "",
           "document": "木马数。",
+          "example": "1",
           "member": "int64",
           "name": "MalwareNum",
           "required": true,
@@ -7315,6 +7368,7 @@
         {
           "default": "",
           "document": "标签信息",
+          "example": "[]",
           "member": "MachineTag",
           "name": "Tag",
           "required": true,
@@ -7324,6 +7378,7 @@
         {
           "default": "",
           "document": "基线风险数。",
+          "example": "2",
           "member": "int64",
           "name": "BaselineNum",
           "required": true,
@@ -7333,6 +7388,7 @@
         {
           "default": "",
           "document": "网络风险数。",
+          "example": "2",
           "member": "int64",
           "name": "CyberAttackNum",
           "required": true,
@@ -7342,6 +7398,7 @@
         {
           "default": "",
           "document": "风险状态。\n<li>SAFE：安全</li>\n<li>RISK：风险</li>\n<li>UNKNOWN：未知</li>",
+          "example": "RISK",
           "member": "string",
           "name": "SecurityStatus",
           "required": true,
@@ -7351,6 +7408,7 @@
         {
           "default": "",
           "document": "入侵事件数",
+          "example": "1",
           "member": "int64",
           "name": "InvasionNum",
           "required": true,
@@ -7360,6 +7418,7 @@
         {
           "default": "",
           "document": "地域信息",
+          "example": "{}",
           "member": "RegionInfo",
           "name": "RegionInfo",
           "required": true,
@@ -7369,6 +7428,7 @@
         {
           "default": "",
           "document": "实例状态 TERMINATED_PRO_VERSION 已销毁",
+          "example": "TERMINATED_PRO_VERSION",
           "member": "string",
           "name": "InstanceState",
           "required": true,
@@ -7378,6 +7438,7 @@
         {
           "default": "",
           "document": "授权状态 1 授权 0 未授权",
+          "example": "1",
           "member": "uint64",
           "name": "LicenseStatus",
           "required": true,
@@ -7387,8 +7448,19 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "1",
           "member": "int64",
           "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有资产扫描接口，0无，1有",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasAssetScan",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8379,6 +8451,32 @@
         }
       ],
       "type": "object"
+    },
+    "OsName": {
+      "document": "操作系统名称",
+      "members": [
+        {
+          "default": "",
+          "document": "系统名称",
+          "example": "Linux",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统类型枚举值",
+          "example": "1",
+          "member": "uint64",
+          "name": "MachineOSType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Place": {
       "document": "登录地信息",

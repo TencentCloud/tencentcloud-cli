@@ -495,8 +495,8 @@
     "DescribeCdnLogs": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCdnLogs\n&DomainName=test.vod2.myqcloud.com\n&StartTime=2018-12-0116:00:00Z\n&EndTime=2018-12-0316:00:00Z\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DomesticCdnLogs\": [\n            {\n                \"Date\": \"2018-12-02\",\n                \"Name\": \"2018120213-test.vod2.myqcloud.com\",\n                \"Url\": \"http: //test.log.cdn/2018120213-test.vod2.myqcloud.com.tar.gz\"\n            }\n        ],\n        \"OverseaCdnLogs\": null,\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCdnLogs\n&DomainName=test.vod2.myqcloud.com\n&StartTime=2021-03-01T00:00:00+08:00\n&EndTime=2021-03-02T00:00:00+08:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 202,\n        \"DomesticCdnLogs\": [\n            {\n                \"Date\": \"2021-03-01\",\n                \"Name\": \"2018120213-test.vod2.myqcloud.com\",\n                \"Url\": \"http: //test.log.cdn/2018120213-test.vod2.myqcloud.com.tar.gz\",\n                \"StartTime\": \"2021-03-01T15:00:00+08:00\",\n                \"EndTime\": \"2021-03-01T15:59:59+08:00\"\n            }\n        ],\n        \"OverseaCdnLogs\": [],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "查询CDN日志下载链接"
       }
     ],

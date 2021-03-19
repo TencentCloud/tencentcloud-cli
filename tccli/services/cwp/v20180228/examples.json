@@ -344,11 +344,19 @@
         "title": "获取区域主机列表"
       }
     ],
+    "DescribeMachineOsList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMachineOsList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Name\": \"Linux\",\n                \"MachineOSType\": 1\n            }\n        ],\n        \"RequestId\": \"ec6c0e16-465e-4d40-8926-823b26bd6b8s\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeMachines": [
       {
         "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachines\n&MachineType=CVM\n&MachineRegion=ap-shanghai\n&Filters.0.Name=Keywords\n&Filters.0.Values.0=10.0.1.1\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Machines\": [\n            {\n                \"MachineName\": \"ccs_cls-i4vyo8qa_node\",\n                \"MachineIp\": \"172.16.0.4\",\n                \"MachineWanIp\": \"193.112.57.245\",\n                \"MachineOs\": \"ubuntu16.04.1 LTSx86_64\",\n                \"MachineStatus\": \"OFFLINE\",\n                \"Quuid\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n                \"Uuid\": \"\",\n                \"IsProVersion\": false,\n                \"PayMode\": \"\",\n                \"VulNum\": 0,\n                \"Tag\": [],\n                \"MalwareNum\": 0,\n                \"CyberAttackNum\": 0,\n                \"SecurityStatus\": \"SAFE\",\n                \"InstanceState\": \"TERMINATED_PRO_VERSION\",\n                \"ProjectId\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Machines\": [\n            {\n                \"MachineName\": \"ccs_cls-i4vyo8qa_node\",\n                \"MachineIp\": \"172.16.0.4\",\n                \"MachineWanIp\": \"193.112.57.245\",\n                \"MachineOs\": \"ubuntu16.04.1 LTSx86_64\",\n                \"MachineStatus\": \"OFFLINE\",\n                \"Quuid\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n                \"Uuid\": \"\",\n                \"IsProVersion\": false,\n                \"PayMode\": \"\",\n                \"VulNum\": 0,\n                \"Tag\": [],\n                \"MalwareNum\": 0,\n                \"CyberAttackNum\": 0,\n                \"SecurityStatus\": \"SAFE\",\n                \"InstanceState\": \"TERMINATED_PRO_VERSION\",\n                \"ProjectId\": 1,\n                \"HasAssetScan\": 1,\n                \"LicenseStatus\": 0,\n                \"InvasionNum\": 0,\n                \"BaselineNum\": 0,\n                \"RegionInfo\": {\n                    \"RegionCode\": \"gz\",\n                    \"Region\": \"ap-guangzhuo\",\n                    \"RegionId\": 1,\n                    \"RegionName\": \"广州\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\n    }\n}",
         "title": "获取区域主机列表"
       }
     ],

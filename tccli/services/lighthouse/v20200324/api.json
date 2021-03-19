@@ -1,13 +1,13 @@
 {
   "actions": {
     "CreateFirewallRules": {
-      "document": "本接口（CreateFirewallRules）用于在实例上添加防火墙规则。\n\n* Protocol 字段支持输入 TCP，UDP，或 ALL。\n\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。",
+      "document": "本接口（CreateFirewallRules）用于在实例上添加防火墙规则。\n\n\n* FirewallVersion 为防火墙版本号，用户每次更新防火墙规则版本会自动加1，防止您更新的规则已过期，不填不考虑冲突。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "CreateFirewallRulesRequest",
       "name": "添加防火墙规则",
       "output": "CreateFirewallRulesResponse"
     },
     "DeleteFirewallRules": {
-      "document": "本接口（DeleteFirewallRules）用于删除实例的防火墙规则。\n\n* Protocol 字段支持输入 TCP，UDP，或 ALL。\n\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。",
+      "document": "本接口（DeleteFirewallRules）用于删除实例的防火墙规则。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接删除指定的规则。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "DeleteFirewallRulesRequest",
       "name": "删除防火墙规则",
       "output": "DeleteFirewallRulesResponse"
@@ -216,6 +216,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像所需内存大小, 单位: GB",
+          "example": "1",
+          "member": "int64",
+          "name": "RequiredMemorySize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -358,6 +368,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "lhins-aglzynfg",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -366,10 +377,20 @@
         {
           "default": "",
           "document": "防火墙规则列表。",
+          "example": "无",
           "member": "FirewallRule",
           "name": "FirewallRules",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FirewallVersion",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -392,6 +413,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "lhins-aglzynfg",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -400,10 +422,20 @@
         {
           "default": "",
           "document": "防火墙规则列表。",
+          "example": "无",
           "member": "FirewallRule",
           "name": "FirewallRules",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FirewallVersion",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -568,6 +600,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "lhins-aglzynfg",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -576,6 +609,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -584,6 +618,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -597,16 +632,29 @@
       "members": [
         {
           "document": "符合条件的防火墙规则数量。",
+          "example": "7",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "防火墙规则详细信息列表。",
+          "example": "无",
           "member": "FirewallRuleInfo",
           "name": "FirewallRuleSet",
+          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "防火墙版本号。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FirewallVersion",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -769,7 +817,8 @@
       "members": [
         {
           "default": "",
-          "document": "协议，取值：TCP，UDP，ALL。",
+          "document": "协议，取值：TCP，UDP，ICMP，ALL。",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -779,8 +828,39 @@
         {
           "default": "",
           "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
+          "example": "80",
           "member": "string",
           "name": "Port",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值：ACCEPT，DROP。默认为 ACCEPT。",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防火墙规则描述。",
+          "example": "''",
+          "member": "string",
+          "name": "FirewallRuleDescription",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -793,7 +873,8 @@
       "members": [
         {
           "default": "",
-          "document": "应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，ALL。",
+          "document": "应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。",
+          "example": "HTTP(80)",
           "member": "string",
           "name": "AppType",
           "required": true,
@@ -802,7 +883,8 @@
         },
         {
           "default": "",
-          "document": "协议，取值：TCP，UDP，ALL。",
+          "document": "协议，取值：TCP，UDP，ICMP，ALL。",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -812,8 +894,39 @@
         {
           "default": "",
           "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
+          "example": "80",
           "member": "string",
           "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值：ACCEPT，DROP。默认为 ACCEPT。",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防火墙规则描述。",
+          "example": "''",
+          "member": "string",
+          "name": "FirewallRuleDescription",
           "required": true,
           "type": "string",
           "value_allowed_null": false

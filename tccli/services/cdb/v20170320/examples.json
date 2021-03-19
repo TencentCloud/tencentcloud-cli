@@ -135,7 +135,7 @@
     "CreateRoInstanceIp": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateRoInstanceIp\r\n&InstanceId=cdbro-c1nl9rpv\r\n&UniqSubnetId=subnet-1typ0s7d\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateRoInstanceIp\n&InstanceId=cdbro-c1nl9rpv\n&UniqSubnetId=subnet-1typ0s7d\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RoVpcId\": 511512,\n        \"RoSubnetId\": 115839,\n        \"RoVip\": \"172.0.0.1\",\n        \"RoVport\": 3306,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "创建云数据库只读实例的独立VIP"
       }

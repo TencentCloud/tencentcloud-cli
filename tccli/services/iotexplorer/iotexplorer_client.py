@@ -63,6 +63,31 @@ def doDeleteStudioProduct(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeStudioProduct(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeStudioProductRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeStudioProduct(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDeviceData(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -263,6 +288,56 @@ def doCreateLoRaFrequency(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateDevice(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDeviceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateDevice(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUploadFirmware(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UploadFirmwareRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UploadFirmware(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCallDeviceActionAsync(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -413,7 +488,7 @@ def doCallDeviceActionSync(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeStudioProduct(args, parsed_globals):
+def doDeleteDevice(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -427,9 +502,9 @@ def doDescribeStudioProduct(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeStudioProductRequest()
+    model = models.DeleteDeviceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeStudioProduct(model)
+    rsp = client.DeleteDevice(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -488,7 +563,7 @@ def doDeleteLoRaFrequency(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteDevice(args, parsed_globals):
+def doListFirmwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -502,9 +577,9 @@ def doDeleteDevice(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteDeviceRequest()
+    model = models.ListFirmwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteDevice(model)
+    rsp = client.ListFirmwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -513,7 +588,7 @@ def doDeleteDevice(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDevice(args, parsed_globals):
+def doUpdateFirmware(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -527,9 +602,9 @@ def doCreateDevice(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDeviceRequest()
+    model = models.UpdateFirmwareRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateDevice(model)
+    rsp = client.UpdateFirmware(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -763,6 +838,31 @@ def doGetTopicRuleList(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doEnableTopicRule(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EnableTopicRuleRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.EnableTopicRule(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyModelDefinition(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -913,7 +1013,7 @@ def doModifyLoRaGateway(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doEnableTopicRule(args, parsed_globals):
+def doDescribeFirmwareTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -927,9 +1027,9 @@ def doEnableTopicRule(args, parsed_globals):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EnableTopicRuleRequest()
+    model = models.DescribeFirmwareTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.EnableTopicRule(model)
+    rsp = client.DescribeFirmwareTask(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1051,6 +1151,7 @@ MODELS_MAP = {
 ACTION_MAP = {
     "ModifyStudioProduct": doModifyStudioProduct,
     "DeleteStudioProduct": doDeleteStudioProduct,
+    "DescribeStudioProduct": doDescribeStudioProduct,
     "DescribeDeviceData": doDescribeDeviceData,
     "DeleteLoRaGateway": doDeleteLoRaGateway,
     "CreateStudioProduct": doCreateStudioProduct,
@@ -1059,17 +1160,19 @@ ACTION_MAP = {
     "CreateTopicRule": doCreateTopicRule,
     "DescribeTopicRule": doDescribeTopicRule,
     "CreateLoRaFrequency": doCreateLoRaFrequency,
+    "CreateDevice": doCreateDevice,
+    "UploadFirmware": doUploadFirmware,
     "CallDeviceActionAsync": doCallDeviceActionAsync,
     "SearchStudioProduct": doSearchStudioProduct,
     "ModifyTopicRule": doModifyTopicRule,
     "GetProjectList": doGetProjectList,
     "DescribeDeviceDataHistory": doDescribeDeviceDataHistory,
     "CallDeviceActionSync": doCallDeviceActionSync,
-    "DescribeStudioProduct": doDescribeStudioProduct,
+    "DeleteDevice": doDeleteDevice,
     "ModifyProject": doModifyProject,
     "DeleteLoRaFrequency": doDeleteLoRaFrequency,
-    "DeleteDevice": doDeleteDevice,
-    "CreateDevice": doCreateDevice,
+    "ListFirmwares": doListFirmwares,
+    "UpdateFirmware": doUpdateFirmware,
     "PublishMessage": doPublishMessage,
     "GetDeviceList": doGetDeviceList,
     "GetLoRaGatewayList": doGetLoRaGatewayList,
@@ -1079,13 +1182,14 @@ ACTION_MAP = {
     "DescribeLoRaFrequency": doDescribeLoRaFrequency,
     "SearchTopicRule": doSearchTopicRule,
     "GetTopicRuleList": doGetTopicRuleList,
+    "EnableTopicRule": doEnableTopicRule,
     "ModifyModelDefinition": doModifyModelDefinition,
     "DescribeProject": doDescribeProject,
     "DescribeModelDefinition": doDescribeModelDefinition,
     "CreateProject": doCreateProject,
     "DisableTopicRule": doDisableTopicRule,
     "ModifyLoRaGateway": doModifyLoRaGateway,
-    "EnableTopicRule": doEnableTopicRule,
+    "DescribeFirmwareTask": doDescribeFirmwareTask,
     "DeleteProject": doDeleteProject,
     "ListEventHistory": doListEventHistory,
     "GetStudioProductList": doGetStudioProductList,

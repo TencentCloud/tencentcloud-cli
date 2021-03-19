@@ -35,7 +35,17 @@ Output:
                 "CyberAttackNum": 0,
                 "SecurityStatus": "SAFE",
                 "InstanceState": "TERMINATED_PRO_VERSION",
-                "ProjectId": 1
+                "ProjectId": 1,
+                "HasAssetScan": 1,
+                "LicenseStatus": 0,
+                "InvasionNum": 0,
+                "BaselineNum": 0,
+                "RegionInfo": {
+                    "RegionCode": "gz",
+                    "Region": "ap-guangzhuo",
+                    "RegionId": 1,
+                    "RegionName": "广州"
+                }
             }
         ],
         "TotalCount": 1,

@@ -11579,7 +11579,7 @@
       "usage": "out"
     },
     "WafSubRuleStatus": {
-      "document": "门神子规则开关状态",
+      "document": "Waf子规则开关状态",
       "members": [
         {
           "default": "",
