@@ -113,7 +113,7 @@ def doCreateImageLifecyclePersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBatchDeleteImagePersonal(args, parsed_globals):
+def doCreateSecurityPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -127,9 +127,34 @@ def doBatchDeleteImagePersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BatchDeleteImagePersonalRequest()
+    model = models.CreateSecurityPolicyRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.BatchDeleteImagePersonal(model)
+    rsp = client.CreateSecurityPolicy(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteSecurityPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSecurityPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteSecurityPolicy(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -288,7 +313,7 @@ def doModifyRepository(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteRepositoryPersonal(args, parsed_globals):
+def doDeleteNamespace(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -302,9 +327,9 @@ def doDeleteRepositoryPersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteRepositoryPersonalRequest()
+    model = models.DeleteNamespaceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteRepositoryPersonal(model)
+    rsp = client.DeleteNamespace(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -380,6 +405,31 @@ def doDescribeInstances(args, parsed_globals):
     model = models.DescribeInstancesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeInstances(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doBatchDeleteImagePersonal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BatchDeleteImagePersonalRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.BatchDeleteImagePersonal(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -488,7 +538,7 @@ def doDescribeNamespacePersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteNamespace(args, parsed_globals):
+def doDeleteRepositoryPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -502,9 +552,9 @@ def doDeleteNamespace(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteNamespaceRequest()
+    model = models.DeleteRepositoryPersonalRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteNamespace(model)
+    rsp = client.DeleteRepositoryPersonal(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -938,6 +988,31 @@ def doCreateApplicationTriggerPersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSecurityPolicies(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityPoliciesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSecurityPolicies(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeImageLifecycleGlobalPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1363,6 +1438,31 @@ def doDuplicateImagePersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifySecurityPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySecurityPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifySecurityPolicy(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeRepositoryFilterPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1728,22 +1828,24 @@ ACTION_MAP = {
     "CreateInternalEndpointDns": doCreateInternalEndpointDns,
     "DescribeImageFilterPersonal": doDescribeImageFilterPersonal,
     "CreateImageLifecyclePersonal": doCreateImageLifecyclePersonal,
-    "BatchDeleteImagePersonal": doBatchDeleteImagePersonal,
+    "CreateSecurityPolicy": doCreateSecurityPolicy,
+    "DeleteSecurityPolicy": doDeleteSecurityPolicy,
     "CreateNamespace": doCreateNamespace,
     "DescribeImagePersonal": doDescribeImagePersonal,
     "DescribeImageLifecyclePersonal": doDescribeImageLifecyclePersonal,
     "DescribeImages": doDescribeImages,
     "DeleteInstance": doDeleteInstance,
     "ModifyRepository": doModifyRepository,
-    "DeleteRepositoryPersonal": doDeleteRepositoryPersonal,
+    "DeleteNamespace": doDeleteNamespace,
     "DeleteRepository": doDeleteRepository,
     "DescribeRepositories": doDescribeRepositories,
     "DescribeInstances": doDescribeInstances,
+    "BatchDeleteImagePersonal": doBatchDeleteImagePersonal,
     "ModifyRepositoryInfoPersonal": doModifyRepositoryInfoPersonal,
     "DescribeRepositoryPersonal": doDescribeRepositoryPersonal,
     "CheckInstanceName": doCheckInstanceName,
     "DescribeNamespacePersonal": doDescribeNamespacePersonal,
-    "DeleteNamespace": doDeleteNamespace,
+    "DeleteRepositoryPersonal": doDeleteRepositoryPersonal,
     "DescribeWebhookTriggerLog": doDescribeWebhookTriggerLog,
     "DescribeImageManifests": doDescribeImageManifests,
     "DescribeInstanceToken": doDescribeInstanceToken,
@@ -1761,6 +1863,7 @@ ACTION_MAP = {
     "DescribeReplicationInstances": doDescribeReplicationInstances,
     "CreateWebhookTrigger": doCreateWebhookTrigger,
     "CreateApplicationTriggerPersonal": doCreateApplicationTriggerPersonal,
+    "DescribeSecurityPolicies": doDescribeSecurityPolicies,
     "DescribeImageLifecycleGlobalPersonal": doDescribeImageLifecycleGlobalPersonal,
     "CreateInstanceToken": doCreateInstanceToken,
     "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
@@ -1778,6 +1881,7 @@ ACTION_MAP = {
     "BatchDeleteRepositoryPersonal": doBatchDeleteRepositoryPersonal,
     "DeleteImage": doDeleteImage,
     "DuplicateImagePersonal": doDuplicateImagePersonal,
+    "ModifySecurityPolicy": doModifySecurityPolicy,
     "DescribeRepositoryFilterPersonal": doDescribeRepositoryFilterPersonal,
     "ValidateNamespaceExistPersonal": doValidateNamespaceExistPersonal,
     "CreateRepository": doCreateRepository,

@@ -267,7 +267,7 @@
     "DescribeInstances": [
       {
         "document": "",
-        "input": "https://gse.tencentcloudapi.com/?Action=DescribeInstances\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeInstances\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&IpAddress=1.1.1.1\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"CreateTime\": \"2020-04-09T11:30:03Z\",\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-qp3g3caa-dglymksw\",\n                \"InstanceId\": \"ins-1d6i1mzp\",\n                \"IpAddress\": \"1.1.1.1\",\n                \"OperatingSystem\": \"CentOS7.16\",\n                \"Status\": \"RUNNING\",\n                \"Type\": \"S5.SMALL2\"\n            },\n            {\n                \"CreateTime\": \"2020-04-09T11:20:20Z\",\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-qp3g3caa-ckyp9do4\",\n                \"InstanceId\": \"ins-gsua7xs9\",\n                \"IpAddress\": \"1.1.1.2\",\n                \"OperatingSystem\": \"CentOS7.16\",\n                \"Status\": \"RUNNING\",\n                \"Type\": \"S5.SMALL2\"\n            }\n        ],\n        \"RequestId\": \"e8ab591f-9a69-466d-a27b-a587556856bc\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询实例列表"
       }
@@ -275,7 +275,7 @@
     "DescribeInstancesExtend": [
       {
         "document": "",
-        "input": "https://gse.tencentcloudapi.com/?Action=DescribeInstancesExtend\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeInstancesExtend\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&IpAddress=1.1.1.1\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"ActiveProcessCnt\": 1,\n                \"GameSessionCnt\": 0,\n                \"HealthyProcessCnt\": 1,\n                \"Instance\": {\n                    \"CreateTime\": \"2020-02-26T03:31:17Z\",\n                    \"DnsName\": \"\",\n                    \"FleetId\": \"fleet-qp3g3caa-19tzbzao\",\n                    \"InstanceId\": \"ins-242yfav7\",\n                    \"IpAddress\": \"129.211.106.166\",\n                    \"OperatingSystem\": \"CentOS7.16\",\n                    \"Status\": \"RUNNING\",\n                    \"Type\": \"S5.SMALL2\"\n                },\n                \"MaxGameSessionCnt\": 0,\n                \"MaxPlayerSessionCnt\": 0,\n                \"PlayerSessionCnt\": 0,\n                \"State\": \"Active\"\n            }\n        ],\n        \"RequestId\": \"d47e19b5-12b7-43e9-b25f-a48344efb199\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询实例及其扩展信息"
       }

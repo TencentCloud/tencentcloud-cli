@@ -102,6 +102,14 @@
         "title": "创建个人版镜像仓库"
       }
     ],
+    "CreateSecurityPolicy": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateSecurityPolicy\n&RegistryId=tcr-test123\n&CidrBlock=192.168.0.0/24\n&Description=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建实例公网访问白名单策略"
+      }
+    ],
     "CreateUserPersonal": [
       {
         "document": "",
@@ -212,6 +220,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DeleteRepositoryPersonal\r\n&RepoName=dockerhub/test\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除个人版镜像仓库"
+      }
+    ],
+    "DeleteSecurityPolicy": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteSecurityPolicy\n&RegistryId=tcr-test123\n&PolicyIndex=1\n&PolicyVersion=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除实例公网访问白名单策略"
       }
     ],
     "DeleteWebhookTrigger": [
@@ -406,6 +422,14 @@
         "title": "查询个人版仓库信息"
       }
     ],
+    "DescribeSecurityPolicies": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeSecurityPolicies\n&RegistryId=tcr-test123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SecurityPolicySet\": [\n            {\n                \"PolicyIndex\": 0,\n                \"CidrBlock\": \"127.0.0.1/24\",\n                \"Description\": \"test\",\n                \"PolicyVersion\": \"1\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看实例安全策略"
+      }
+    ],
     "DescribeUserQuotaPersonal": [
       {
         "document": "",
@@ -514,6 +538,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyRepositoryInfoPersonal\r\n&RepoName=dockerhub/test\r\n&Description=mytest\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新个人版镜像仓库描述"
+      }
+    ],
+    "ModifySecurityPolicy": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifySecurityPolicy\n&RegistryId=tcr-test123\n&CidrBlock=192.168.0.0/24\n&Description=test\n&PolicyIndex=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "更新实例外网白名单"
       }
     ],
     "ModifyUserPasswordPersonal": [

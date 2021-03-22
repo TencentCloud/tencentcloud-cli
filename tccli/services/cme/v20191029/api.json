@@ -144,6 +144,12 @@
       "name": "使用视频合成协议导出视频",
       "output": "ExportVideoByEditorTrackDataResponse"
     },
+    "ExportVideoByTemplate": {
+      "document": "使用视频编辑模板直接导出视频。",
+      "input": "ExportVideoByTemplateRequest",
+      "name": "使用视频编辑模板导出视频",
+      "output": "ExportVideoByTemplateResponse"
+    },
     "ExportVideoByVideoSegmentationData": {
       "document": "使用视频智能拆条数据导出视频，将指定的视频拆条片段导出为一个视频。",
       "input": "ExportVideoByVideoSegmentationDataRequest",
@@ -2124,6 +2130,105 @@
       ],
       "type": "object"
     },
+    "ExportVideoByTemplateRequest": {
+      "document": "ExportVideoByTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频编辑模板  Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "导出目标，可取值为：\n<li>CME：云剪，即导出为云剪媒体；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "example": "VOD",
+          "member": "string",
+          "name": "ExportDestination",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要替换的素材信息。",
+          "example": "无",
+          "member": "SlotReplacementInfo",
+          "name": "SlotReplacements",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出的云剪媒体信息。指定 ExportDestination = CME 时有效。",
+          "example": "无",
+          "member": "CMEExportInfo",
+          "name": "CMEExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。",
+          "example": "无",
+          "member": "VODExportInfo",
+          "name": "VODExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoByTemplateResponse": {
+      "document": "ExportVideoByTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "导出任务 Id。",
+          "example": "1250000000-tfusion-32f87637061242508eb10d6e4ecd0cd6",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ExportVideoByVideoSegmentationDataRequest": {
       "document": "ExportVideoByVideoSegmentationData请求参数结构体",
       "members": [
@@ -3488,6 +3593,32 @@
       ],
       "usage": "out"
     },
+    "MediaReplacementInfo": {
+      "document": "媒体替换信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "素材 ID。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换媒体选取的开始时间，单位为秒，默认为 0。",
+          "example": "0",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "MediaTrack": {
       "document": "轨道信息",
       "members": [
@@ -4430,6 +4561,42 @@
           "name": "ClassPath",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SlotReplacementInfo": {
+      "document": "卡槽替换信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "卡槽 Id。",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换类型，可取值有：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片。</li>\n注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。",
+          "example": "VIDEO",
+          "member": "string",
+          "name": "ReplacementType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体替换信息，仅当要替换的媒体类型为音频、视频、图片时有效。",
+          "example": " 无",
+          "member": "MediaReplacementInfo",
+          "name": "MediaReplacementInfo",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

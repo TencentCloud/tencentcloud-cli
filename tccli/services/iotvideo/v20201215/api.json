@@ -803,8 +803,8 @@
         },
         {
           "default": "",
-          "document": "云存套餐ID",
-          "example": "3day5year",
+          "document": "云存套餐ID：\nyc1m3d：全时3天存储月套餐。\nye1m3d：事件3天存储套餐。",
+          "example": "yc1m3d",
           "member": "string",
           "name": "PackageId",
           "required": true,

@@ -8,7 +8,7 @@ Input:
 tccli iotvideo CreateCloudStorage --cli-unfold-argument  \
     --ProductId H541SOP191 \
     --DeviceName event_36502632_1 \
-    --PackageId 3day5year
+    --PackageId yc1m3d
 ```
 
 Output: 

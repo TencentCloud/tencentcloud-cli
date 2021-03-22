@@ -72,6 +72,12 @@
       "name": "创建个人版镜像仓库",
       "output": "CreateRepositoryPersonalResponse"
     },
+    "CreateSecurityPolicy": {
+      "document": "创建实例公网访问白名单策略",
+      "input": "CreateSecurityPolicyRequest",
+      "name": "创建实例公网访问白名单策略",
+      "output": "CreateSecurityPolicyResponse"
+    },
     "CreateUserPersonal": {
       "document": "创建个人用户",
       "input": "CreateUserPersonalRequest",
@@ -155,6 +161,12 @@
       "input": "DeleteRepositoryPersonalRequest",
       "name": "删除个人版镜像仓库",
       "output": "DeleteRepositoryPersonalResponse"
+    },
+    "DeleteSecurityPolicy": {
+      "document": "删除实例公网访问白名单策略",
+      "input": "DeleteSecurityPolicyRequest",
+      "name": "删除实例公网访问白名单策略",
+      "output": "DeleteSecurityPolicyResponse"
     },
     "DeleteWebhookTrigger": {
       "document": "删除触发器",
@@ -300,6 +312,12 @@
       "name": "查询个人版仓库信息",
       "output": "DescribeRepositoryPersonalResponse"
     },
+    "DescribeSecurityPolicies": {
+      "document": "查询实例公网访问白名单策略",
+      "input": "DescribeSecurityPoliciesRequest",
+      "name": "查询实例公网访问白名单策略",
+      "output": "DescribeSecurityPoliciesResponse"
+    },
     "DescribeUserQuotaPersonal": {
       "document": "查询个人用户配额",
       "input": "DescribeUserQuotaPersonalRequest",
@@ -377,6 +395,12 @@
       "input": "ModifyRepositoryInfoPersonalRequest",
       "name": "更新个人版镜像仓库描述",
       "output": "ModifyRepositoryInfoPersonalResponse"
+    },
+    "ModifySecurityPolicy": {
+      "document": "更新实例公网访问白名单",
+      "input": "ModifySecurityPolicyRequest",
+      "name": "更新实例公网访问白名单",
+      "output": "ModifySecurityPolicyResponse"
     },
     "ModifyUserPasswordPersonal": {
       "document": "修改个人用户登录密码",
@@ -1129,6 +1153,60 @@
       ],
       "type": "object"
     },
+    "CreateSecurityPolicyRequest": {
+      "document": "CreateSecurityPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "192.168.0.0/24",
+          "example": "192.168.0.0/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityPolicyResponse": {
+      "document": "CreateSecurityPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUserPersonalRequest": {
       "document": "CreateUserPersonal请求参数结构体",
       "members": [
@@ -1598,6 +1676,60 @@
     "DeleteRepositoryResponse": {
       "document": "DeleteRepository返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityPolicyRequest": {
+      "document": "DeleteSecurityPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "白名单Id",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "白名单版本",
+          "example": "10",
+          "member": "string",
+          "name": "PolicyVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityPolicyResponse": {
+      "document": "DeleteSecurityPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2893,6 +3025,42 @@
       ],
       "type": "object"
     },
+    "DescribeSecurityPoliciesRequest": {
+      "document": "DescribeSecurityPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityPoliciesResponse": {
+      "document": "DescribeSecurityPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "实例安全策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityPolicy",
+          "name": "SecurityPolicySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserQuotaPersonalRequest": {
       "document": "DescribeUserQuotaPersonal请求参数结构体",
       "members": [],
@@ -3770,6 +3938,69 @@
       ],
       "type": "object"
     },
+    "ModifySecurityPolicyRequest": {
+      "document": "ModifySecurityPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PolicyId",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "192.168.0.0/24 白名单Ip",
+          "example": "192.168.0.0/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityPolicyResponse": {
+      "document": "ModifySecurityPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserPasswordPersonalRequest": {
       "document": "ModifyUserPasswordPersonal请求参数结构体",
       "members": [
@@ -4575,6 +4806,48 @@
           "name": "PrivilegeFiltered",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityPolicy": {
+      "document": "安全策略",
+      "members": [
+        {
+          "default": "",
+          "document": "策略索引",
+          "member": "int64",
+          "name": "PolicyIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "192.168.1.0/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全策略的版本",
+          "member": "string",
+          "name": "PolicyVersion",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -7,6 +7,7 @@ Input:
 ```
 tccli gse DescribeInstances --cli-unfold-argument  \
     --FleetId fleet-qp3g3caa-ay03mhdm \
+    --IpAddress 1.1.1.1 \
     --Offset 0 \
     --Limit 10
 ```

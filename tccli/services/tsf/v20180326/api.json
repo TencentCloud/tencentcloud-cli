@@ -144,6 +144,12 @@
       "name": "创建工作流",
       "output": "CreateTaskFlowResponse"
     },
+    "CreateUnitRule": {
+      "document": "创建单元化规则",
+      "input": "CreateUnitRuleRequest",
+      "name": "创建单元化规则",
+      "output": "CreateUnitRuleResponse"
+    },
     "DeleteApiGroup": {
       "document": "删除Api分组",
       "input": "DeleteApiGroupRequest",
@@ -233,6 +239,18 @@
       "input": "DeleteTaskRequest",
       "name": "删除任务",
       "output": "DeleteTaskResponse"
+    },
+    "DeleteUnitNamespaces": {
+      "document": "删除单元化命名空间",
+      "input": "DeleteUnitNamespacesRequest",
+      "name": "删除单元化命名空间",
+      "output": "DeleteUnitNamespacesResponse"
+    },
+    "DeleteUnitRule": {
+      "document": "删除单元化规则",
+      "input": "DeleteUnitRuleRequest",
+      "name": "删除单元化规则",
+      "output": "DeleteUnitRuleResponse"
     },
     "DeployContainerGroup": {
       "document": "部署容器应用",
@@ -371,6 +389,12 @@
       "input": "DescribeDownloadInfoRequest",
       "name": "获取下载程序包信息",
       "output": "DescribeDownloadInfoResponse"
+    },
+    "DescribeEnabledUnitRule": {
+      "document": "查询生效的单元化规则",
+      "input": "DescribeEnabledUnitRuleRequest",
+      "name": "查询生效的单元化规则",
+      "output": "DescribeEnabledUnitRuleResponse"
     },
     "DescribeFlowLastBatchState": {
       "document": "查询工作流最新一个批次的状态信息",
@@ -588,11 +612,35 @@
       "name": "查看任务最近执行批次状态",
       "output": "DescribeTaskLastStatusResponse"
     },
+    "DescribeUnitNamespaces": {
+      "document": "查询单元化命名空间列表",
+      "input": "DescribeUnitNamespacesRequest",
+      "name": "查询单元化命名空间列表",
+      "output": "DescribeUnitNamespacesResponse"
+    },
+    "DescribeUnitRule": {
+      "document": "查询单元化规则详情",
+      "input": "DescribeUnitRuleRequest",
+      "name": "查询单元化规则详情",
+      "output": "DescribeUnitRuleResponse"
+    },
+    "DescribeUnitRules": {
+      "document": "查询单元化规则列表",
+      "input": "DescribeUnitRulesRequest",
+      "name": "查询单元化规则列表",
+      "output": "DescribeUnitRulesResponse"
+    },
     "DescribeUploadInfo": {
       "document": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436",
       "input": "DescribeUploadInfoRequest",
       "name": "获取上传程序包信息",
       "output": "DescribeUploadInfoResponse"
+    },
+    "DescribeUsableUnitNamespaces": {
+      "document": "查询可用于被导入的命名空间列表",
+      "input": "DescribeUsableUnitNamespacesRequest",
+      "name": "查询可用于被导入的命名空间列表",
+      "output": "DescribeUsableUnitNamespacesResponse"
     },
     "DisableTask": {
       "document": "停用任务",
@@ -605,6 +653,18 @@
       "input": "DisableTaskFlowRequest",
       "name": "停用工作流",
       "output": "DisableTaskFlowResponse"
+    },
+    "DisableUnitRoute": {
+      "document": "禁用单元化路由",
+      "input": "DisableUnitRouteRequest",
+      "name": "禁用单元化路由",
+      "output": "DisableUnitRouteResponse"
+    },
+    "DisableUnitRule": {
+      "document": "禁用单元化规则",
+      "input": "DisableUnitRuleRequest",
+      "name": "禁用单元化规则",
+      "output": "DisableUnitRuleResponse"
     },
     "DraftApiGroup": {
       "document": "下线Api分组",
@@ -623,6 +683,18 @@
       "input": "EnableTaskFlowRequest",
       "name": "启用工作流",
       "output": "EnableTaskFlowResponse"
+    },
+    "EnableUnitRoute": {
+      "document": "启用单元化路由",
+      "input": "EnableUnitRouteRequest",
+      "name": "启用单元化路由",
+      "output": "EnableUnitRouteResponse"
+    },
+    "EnableUnitRule": {
+      "document": "启用单元化规则",
+      "input": "EnableUnitRuleRequest",
+      "name": "启用单元化规则",
+      "output": "EnableUnitRuleResponse"
     },
     "ExecuteTask": {
       "document": "手动执行一次任务。",
@@ -834,6 +906,12 @@
       "name": "批量更新API限流规则",
       "output": "UpdateApiRateLimitRulesResponse"
     },
+    "UpdateApiTimeouts": {
+      "document": "批量更新API超时",
+      "input": "UpdateApiTimeoutsRequest",
+      "name": "更新API超时",
+      "output": "UpdateApiTimeoutsResponse"
+    },
     "UpdateGatewayApi": {
       "document": "更新API",
       "input": "UpdateGatewayApiRequest",
@@ -851,6 +929,12 @@
       "input": "UpdateRepositoryRequest",
       "name": "更新仓库信息",
       "output": "UpdateRepositoryResponse"
+    },
+    "UpdateUnitRule": {
+      "document": "更新单元化规则",
+      "input": "UpdateUnitRuleRequest",
+      "name": "更新单元化规则",
+      "output": "UpdateUnitRuleResponse"
     }
   },
   "metadata": {
@@ -3469,6 +3553,7 @@
         {
           "default": "",
           "document": "分组名称, 不能包含中文",
+          "example": "zuul_test_group",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -3477,6 +3562,7 @@
         {
           "default": "",
           "document": "分组上下文",
+          "example": "%2Fuser",
           "member": "string",
           "name": "GroupContext",
           "required": true,
@@ -3485,6 +3571,7 @@
         {
           "default": "",
           "document": "鉴权类型。secret： 密钥鉴权； none:无鉴权",
+          "example": "none",
           "member": "string",
           "name": "AuthType",
           "required": false,
@@ -3493,6 +3580,7 @@
         {
           "default": "",
           "document": "备注",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3501,8 +3589,18 @@
         {
           "default": "",
           "document": "分组类型,默认ms。 ms： 微服务分组； external:外部Api分组",
+          "example": "ms",
           "member": "string",
           "name": "GroupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "example": "gw-ins-fsdfs000",
+          "member": "string",
+          "name": "GatewayInstanceId",
           "required": false,
           "type": "string"
         }
@@ -3514,8 +3612,10 @@
       "members": [
         {
           "document": "API分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grp-12345678",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4925,6 +5025,63 @@
       ],
       "type": "object"
     },
+    "CreateUnitRuleRequest": {
+      "document": "CreateUnitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则项列表",
+          "member": "UnitRuleItem",
+          "name": "UnitRuleItemList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUnitRuleResponse": {
+      "document": "CreateUnitRule返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteApiGroupRequest": {
       "document": "DeleteApiGroup请求参数结构体",
       "members": [
@@ -5459,6 +5616,80 @@
           "name": "Result",
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUnitNamespacesRequest": {
+      "document": "DeleteUnitNamespaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单元化命名空间ID数组",
+          "member": "string",
+          "name": "UnitNamespaceList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUnitNamespacesResponse": {
+      "document": "DeleteUnitNamespaces返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUnitRuleRequest": {
+      "document": "DeleteUnitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUnitRuleResponse": {
+      "document": "DeleteUnitRule返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6048,6 +6279,7 @@
         {
           "default": "",
           "document": "搜索关键字",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -6056,6 +6288,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6064,6 +6297,7 @@
         {
           "default": "",
           "document": "每页条数，默认为20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6072,6 +6306,7 @@
         {
           "default": "",
           "document": "分组类型。 ms： 微服务分组； external:外部Api分组",
+          "example": "无",
           "member": "string",
           "name": "GroupType",
           "required": false,
@@ -6080,6 +6315,7 @@
         {
           "default": "",
           "document": "鉴权类型。 secret： 秘钥鉴权； none:无鉴权",
+          "example": "无",
           "member": "string",
           "name": "AuthType",
           "required": false,
@@ -6088,6 +6324,7 @@
         {
           "default": "",
           "document": "发布状态, drafted: 未发布。 released: 发布",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -6096,6 +6333,7 @@
         {
           "default": "",
           "document": "排序字段：\"created_time\"或\"group_context\"",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -6104,10 +6342,20 @@
         {
           "default": "",
           "document": "排序类型：0(ASC)或1(DESC)",
+          "example": "无",
           "member": "int64",
           "name": "OrderType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6117,8 +6365,10 @@
       "members": [
         {
           "document": "翻页结构体",
+          "example": "无",
           "member": "TsfPageApiGroupInfo",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7083,6 +7333,39 @@
       ],
       "type": "object"
     },
+    "DescribeEnabledUnitRuleRequest": {
+      "document": "DescribeEnabledUnitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnabledUnitRuleResponse": {
+      "document": "DescribeEnabledUnitRule返回参数结构体",
+      "members": [
+        {
+          "document": "单元化规则对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UnitRule",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowLastBatchStateRequest": {
       "document": "DescribeFlowLastBatchState请求参数结构体",
       "members": [
@@ -7196,6 +7479,7 @@
         {
           "default": "",
           "document": "API 分组ID",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -7204,6 +7488,7 @@
         {
           "default": "",
           "document": "翻页查询偏移量",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -7212,6 +7497,7 @@
         {
           "default": "",
           "document": "翻页查询每页记录数",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -7220,6 +7506,7 @@
         {
           "default": "",
           "document": "搜索关键字",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -7233,8 +7520,10 @@
       "members": [
         {
           "document": "翻页结构体",
+          "example": "无",
           "member": "TsfPageGatewayDeployGroup",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9210,6 +9499,164 @@
       ],
       "type": "object"
     },
+    "DescribeUnitNamespacesRequest": {
+      "document": "DescribeUnitNamespaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据命名空间名或ID模糊查询",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页查询偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页查询每页记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnitNamespacesResponse": {
+      "document": "DescribeUnitNamespaces返回参数结构体",
+      "members": [
+        {
+          "document": "单元化命名空间对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TsfPageUnitNamespace",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnitRuleRequest": {
+      "document": "DescribeUnitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "单元化规则ID",
+          "example": "gw-ins-afsfas",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnitRuleResponse": {
+      "document": "DescribeUnitRule返回参数结构体",
+      "members": [
+        {
+          "document": "单元化规则对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UnitRule",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnitRulesRequest": {
+      "document": "DescribeUnitRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据规则名或备注内容模糊查询",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启用状态, disabled: 未发布， enabled: 发布",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页查询偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页查询每页记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnitRulesResponse": {
+      "document": "DescribeUnitRules返回参数结构体",
+      "members": [
+        {
+          "document": "分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TsfPageUnitRule",
+          "name": "Result",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUploadInfoRequest": {
       "document": "DescribeUploadInfo请求参数结构体",
       "members": [
@@ -9291,6 +9738,55 @@
       ],
       "type": "object"
     },
+    "DescribeUsableUnitNamespacesRequest": {
+      "document": "DescribeUsableUnitNamespaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "根据命名空间名或ID模糊查询",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页查询偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页查询每页记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsableUnitNamespacesResponse": {
+      "document": "DescribeUsableUnitNamespaces返回参数结构体",
+      "members": [
+        {
+          "document": "单元化命名空间对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TsfPageUnitNamespace",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableTaskFlowRequest": {
       "document": "DisableTaskFlow请求参数结构体",
       "members": [
@@ -9347,6 +9843,72 @@
           "name": "Result",
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableUnitRouteRequest": {
+      "document": "DisableUnitRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableUnitRouteResponse": {
+      "document": "DisableUnitRoute返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，成功失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableUnitRuleRequest": {
+      "document": "DisableUnitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableUnitRuleResponse": {
+      "document": "DisableUnitRule返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9446,6 +10008,72 @@
           "name": "Result",
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableUnitRouteRequest": {
+      "document": "EnableUnitRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableUnitRouteResponse": {
+      "document": "EnableUnitRoute返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，成功失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableUnitRuleRequest": {
+      "document": "EnableUnitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableUnitRuleResponse": {
+      "document": "EnableUnitRule返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15203,6 +15831,54 @@
       ],
       "usage": "out"
     },
+    "TsfPageUnitNamespace": {
+      "document": "单元化命名空间翻页对象\n",
+      "members": [
+        {
+          "default": "",
+          "document": "记录总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录实体列表",
+          "member": "UnitNamespace",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageUnitRule": {
+      "document": "单元化规则翻页对象\n",
+      "members": [
+        {
+          "default": "",
+          "document": "记录总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录实体列表",
+          "member": "UnitRule",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TsfPageVmGroup": {
       "document": "列表中部署组分页信息",
       "members": [
@@ -15259,6 +15935,246 @@
         }
       ],
       "type": "object"
+    },
+    "UnitNamespace": {
+      "document": "微服务网关单元化命名空间",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间ID",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间Name",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元化命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UnitRule": {
+      "document": "微服务网关单元化规则",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关实体ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "使用状态：enabled/disabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UnitRuleItem",
+          "name": "UnitRuleItemList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UnitRuleItem": {
+      "document": "微服务网关单元化规则项",
+      "members": [
+        {
+          "default": "",
+          "document": "逻辑关系：AND/OR",
+          "member": "string",
+          "name": "Relationship",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的地命名空间ID",
+          "member": "string",
+          "name": "DestNamespaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的地命名空间名称",
+          "member": "string",
+          "name": "DestNamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则项名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单元化规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnitRuleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则顺序，越小优先级越高：默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UnitRuleTag",
+          "name": "UnitRuleTagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UnitRuleTag": {
+      "document": "微服务网关单元化规则标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签类型 : U(用户标签)",
+          "member": "string",
+          "name": "TagType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签名",
+          "member": "string",
+          "name": "TagField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作符:IN/NOT_IN/EQUAL/NOT_EQUAL/REGEX",
+          "member": "string",
+          "name": "TagOperator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元化规则项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnitRuleItemId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UpdateApiGroupRequest": {
       "document": "UpdateApiGroup请求参数结构体",
@@ -15423,6 +16339,60 @@
       ],
       "type": "object"
     },
+    "UpdateApiTimeoutsRequest": {
+      "document": "UpdateApiTimeouts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API ID 列表",
+          "example": "无",
+          "member": "string",
+          "name": "ApiIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "开启/禁用，enabled/disabled",
+          "example": "无",
+          "member": "string",
+          "name": "UsableStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "超时时间，单位毫秒，开启API超时时，必填",
+          "example": "无",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiTimeoutsResponse": {
+      "document": "UpdateApiTimeouts返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateGatewayApiRequest": {
       "document": "UpdateGatewayApi请求参数结构体",
       "members": [
@@ -15572,6 +16542,63 @@
       "members": [
         {
           "document": "更新仓库是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUnitRuleRequest": {
+      "document": "UpdateUnitRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则项列表",
+          "member": "UnitRuleItem",
+          "name": "UnitRuleItemList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUnitRuleResponse": {
+      "document": "UpdateUnitRule返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "bool",
           "name": "Result",
           "type": "bool",

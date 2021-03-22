@@ -192,6 +192,14 @@
         "title": "创建工作流"
       }
     ],
+    "CreateUnitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateUnitRule\n&GatewayInstanceId=gw-ins-afsfas\n&Name=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "创建单元化规则"
+      }
+    ],
     "DeleteApiGroup": [
       {
         "document": "",
@@ -310,6 +318,22 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DeleteTask\n&TaskId=task-qv9obht5e\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": true\n    }\n}",
         "title": "删除任务"
+      }
+    ],
+    "DeleteUnitNamespaces": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteUnitNamespaces\n&GatewayInstanceId=gw-ins-afsfas\n&UnitNamespaceList.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "删除单元化命名空间"
+      }
+    ],
+    "DeleteUnitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteUnitRule\n&Id=rule-ins-afsfas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "删除单元化规则"
       }
     ],
     "DeployContainerGroup": [
@@ -494,6 +518,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeDownloadInfo\r\n&ApplicationId=application-zxxxxxxx\r\n&PkgId=pkg-xxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2e9885d9-xxxx-xxxx-xxxx-59621dd82a5b\",\n        \"Result\": {\n            \"Bucket\": \"tsf-gz-123456789\",\n            \"Region\": \"ap-guangzhou\",\n            \"Path\": \"/1111111111/application-xxxxxxxx/201905291xxxxx/travel-passenger-xxx-1.0-SNAPSHOT.jar\",\n            \"Credentials\": {\n                \"SessionToken\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"TmpAppId\": \"123456789\",\n                \"TmpSecretId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"TmpSecretKey\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"ExpiredTime\": 1559120000,\n                \"Domain\": \"cos.ap-guangzhou.myqcloud.com\"\n            }\n        }\n    }\n}",
         "title": "获取下载程序包信息"
+      }
+    ],
+    "DescribeEnabledUnitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeEnabledUnitRule\n&GatewayInstanceId=gw-ins-afsfas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efa09114-e0c3-43ec-8347-5f4454696c61\",\n        \"Result\": {\n            \"Id\": \"rule-xxxxxxx\",\n            \"GatewayInstanceId\": \"test\",\n            \"Name\": null,\n            \"Status\": \"enabled\"\n        }\n    }\n}",
+        "title": "查询生效的单元化规则"
       }
     ],
     "DescribeFlowLastBatchState": [
@@ -784,12 +816,44 @@
         "title": "查看任务最近执行批次状态"
       }
     ],
+    "DescribeUnitNamespaces": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeUnitNamespaces\n&GatewayInstanceId=gw-ins-afsfas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efa09114-e0c3-43ec-8347-5f4454696c61\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"Id\": \"gw-xxxxxxx\",\n                    \"NamespaceId\": \"test\",\n                    \"NamespaceName\": \"”DASD“\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询单元化命名空间列表"
+      }
+    ],
+    "DescribeUnitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeUnitRule\n&Id=gw-ins-afsfas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efa09114-e0c3-43ec-8347-5f4454696c61\",\n        \"Result\": {\n            \"Id\": \"rule-xxxxxxx\",\n            \"GatewayInstanceId\": \"test\",\n            \"Name\": null,\n            \"Status\": \"enabled\"\n        }\n    }\n}",
+        "title": "查询单元化规则详情"
+      }
+    ],
+    "DescribeUnitRules": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeUnitRules\n&GatewayInstanceId=gw-ins-afsfas\n&Offset=0\n&Limit=20\n&SearchWord=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efa09114-e0c3-43ec-8347-5f4454696c61\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"Id\": \"gw-xxxxxxx\",\n                    \"GatewayInstanceId\": \"test\",\n                    \"Name\": null,\n                    \"Status\": \"enabled\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询单元化规则列表"
+      }
+    ],
     "DescribeUploadInfo": [
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeUploadInfo\r\n&PkgName=test-drvier-api-1.0.0-SNAPSHOT.jar\r\n&PkgType=fatjar\r\n&PkgVersion=20190529xxxxxx\r\n&ApplicationId=application-xxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b3c781d-xxxx-47d4-xxxx-807a73291ff7\",\n        \"Result\": {\n            \"PkgId\": \"pkg-zzzzzz\",\n            \"Bucket\": \"tsf-gz-123456789\",\n            \"Region\": \"ap-guangzhou\",\n            \"Path\": \"111111111/application-xxxxxxxx/20190529174449/test.jar\",\n            \"Credentials\": {\n                \"SessionToken\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"TmpAppId\": \"123456789\",\n                \"TmpSecretId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"TmpSecretKey\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"ExpiredTime\": 1559100000,\n                \"Domain\": \"cos.ap-guangzhou.myqcloud.com\"\n            }\n        }\n    }\n}",
         "title": "获取上传程序包信息"
+      }
+    ],
+    "DescribeUsableUnitNamespaces": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeUsableUnitNamespaces\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efa09114-e0c3-43ec-8347-5f4454696c61\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"Id\": \"gw-xxxxxxx\",\n                    \"NamespaceId\": \"test\",\n                    \"NamespaceName\": \"”DASD“\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询可用于被导入的命名空间列表"
       }
     ],
     "DisableTask": [
@@ -806,6 +870,22 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DisableTaskFlow\n&FlowId=flow-6g4rq8z6\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Result\": \"false\"\n    }\n}",
         "title": "停用工作流"
+      }
+    ],
+    "DisableUnitRoute": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DisableUnitRoute\n&Id=gw-ins-l6ymbvgd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "禁用单元化路由"
+      }
+    ],
+    "DisableUnitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DisableUnitRule\n&Id=gw-ins-afsfas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "禁用单元化规则"
       }
     ],
     "DraftApiGroup": [
@@ -830,6 +910,22 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=EnableTaskFlow\n&FlowId=flow-6g4rq8z6\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Result\": \"False\"\n    }\n}",
         "title": "启用工作流"
+      }
+    ],
+    "EnableUnitRoute": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=EnableUnitRoute\n&Id=gw-ins-l6ymbvgd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "启用单元化路由"
+      }
+    ],
+    "EnableUnitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=EnableUnitRule\n&Id=gw-ins-afsfas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "创建单元化规则"
       }
     ],
     "ExecuteTask": [
@@ -1112,6 +1208,14 @@
         "title": "批量更新API限流规则"
       }
     ],
+    "UpdateApiTimeouts": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateApiTimeouts\n&ApiIds.0=api-d5970cd\n&ApiIds.1=api-d5971cd\n&UsableStatus=enabled\n&Timeout=10000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "批量更新API超时"
+      }
+    ],
     "UpdateGatewayApi": [
       {
         "document": "",
@@ -1134,6 +1238,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=UpdateRepository\r\n&RepositoryId=application-xxxxxxxx\r\n&RepositoryDesc=aaa\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"718bc8d5-ccd5-4735-b6b2-c864661e20bc\",\n        \"Result\": true\n    }\n}",
         "title": "更新仓库信息"
+      }
+    ],
+    "UpdateUnitRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateUnitRule\n&Id=gw-ins-afsfas\n&Name=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "更新单元化规则"
       }
     ]
   },
