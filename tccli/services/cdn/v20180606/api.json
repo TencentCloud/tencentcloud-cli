@@ -67,7 +67,7 @@
       "output": "DescribeBillingDataResponse"
     },
     "DescribeCdnData": {
-      "document": "DescribeCdnData 用于查询 CDN 实时访问监控数据，支持以下指标查询：\n\n+ 流量（单位为 byte）\n+ 带宽（单位为 bps）\n+ 请求数（单位为 次）\n+ 流量命中率（单位为 %，小数点后保留两位）\n+ 状态码 2xx 汇总及各 2 开头状态码明细（单位为 个）\n+ 状态码 3xx 汇总及各 3 开头状态码明细（单位为 个）\n+ 状态码 4xx 汇总及各 4 开头状态码明细（单位为 个）\n+ 状态码 5xx 汇总及各 5 开头状态码明细（单位为 个）",
+      "document": "DescribeCdnData 用于查询 CDN 实时访问监控数据，支持以下指标查询：\n\n+ 流量（单位为 byte）\n+ 带宽（单位为 bps）\n+ 请求数（单位为 次）\n+ 命中请求数（单位为 次）\n+ 请求命中率（单位为 %）\n+ 命中流量（单位为 byte）\n+ 流量命中率（单位为 %）\n+ 状态码 2xx 汇总及各 2 开头状态码明细（单位为 个）\n+ 状态码 3xx 汇总及各 3 开头状态码明细（单位为 个）\n+ 状态码 4xx 汇总及各 4 开头状态码明细（单位为 个）\n+ 状态码 5xx 汇总及各 5 开头状态码明细（单位为 个）",
       "input": "DescribeCdnDataRequest",
       "name": "访问数据查询",
       "output": "DescribeCdnDataResponse"
@@ -3205,7 +3205,7 @@
         },
         {
           "default": "",
-          "document": "指定查询指标，支持的类型有：\nflux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次\nfluxHitRate：流量命中率，单位为 %\nstatusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个\n2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 个\n3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 个\n4xx：返回 4xx 状态码汇总及各 4 开头状态码数据，单位为 个\n5xx：返回 5xx 状态码汇总及各 5 开头状态码数据，单位为 个\n支持指定具体状态码查询，若未产生过，则返回为空",
+          "document": "指定查询指标，支持的类型有：\nflux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次\nhitRequest：命中请求数，单位为 次\nrequestHitRate：请求命中率，单位为 %，保留小数点后两位\nhitFlux：命中流量，单位为byte\nfluxHitRate：流量命中率，单位为 %，保留小数点后两位\nstatusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个\n2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 个\n3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 个\n4xx：返回 4xx 状态码汇总及各 4 开头状态码数据，单位为 个\n5xx：返回 5xx 状态码汇总及各 5 开头状态码数据，单位为 个\n支持指定具体状态码查询，若未产生过，则返回为空",
           "example": "flux",
           "member": "string",
           "name": "Metric",

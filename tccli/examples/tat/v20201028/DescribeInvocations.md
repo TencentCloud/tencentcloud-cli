@@ -23,6 +23,8 @@ Output:
                 "InvocationId": "inv-q4zp60g0",
                 "InvocationStatus": "SUCCESS",
                 "Description": "Test Invocation",
+                "Parameters": "",
+                "DefaultParameters": "",
                 "InvocationTaskBasicInfoSet": [
                     {
                         "InvocationTaskId": "invt-kakne8h2",

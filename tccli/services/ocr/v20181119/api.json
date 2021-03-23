@@ -97,7 +97,7 @@
       "output": "FinanBillSliceOCRResponse"
     },
     "FlightInvoiceOCR": {
-      "document": "本接口支持机票行程单关键字段的识别，包括姓名、身份证件号码、航班号、票价 、合计、电子客票号码、填开日期等。",
+      "document": "本接口支持机票行程单关键字段的识别，包括旅客姓名、有效身份证件号码、电子客票号码、验证码、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、票价、合计金额、填开日期、国内国际标签、印刷序号、客票级别/类别、客票生效日期、有效期截止日期、免费行李等字段，支持航班信息多行明细输出。",
       "input": "FlightInvoiceOCRRequest",
       "name": "机票行程单识别",
       "output": "FlightInvoiceOCRResponse"
@@ -1963,7 +1963,8 @@
       "members": [
         {
           "default": "",
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n票价、合计金额、填开日期、有效身份证件号码、电子客票号码、验证码、旅客姓名、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、国内国际标签、印刷序号。",
+          "document": "识别出的字段名称(关键字)，支持以下字段：\n票价、合计金额、填开日期、有效身份证件号码、电子客票号码、验证码、旅客姓名、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、国内国际标签、印刷序号、客票级别/类别、客票生效日期、有效期截止日期、免费行李。",
+          "example": "免费行李",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1973,10 +1974,21 @@
         {
           "default": "",
           "document": "识别出的字段名称对应的值，也就是字段 Name 对应的字符串结果。",
+          "example": "30K",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "多个行程的字段所在行号，下标从0开始，非行字段或未能识别行号的该值返回-1。",
+          "example": "0",
+          "member": "int64",
+          "name": "Row",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1987,7 +1999,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "iVBORw0KGg ....",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1995,7 +2008,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -2009,8 +2023,10 @@
       "members": [
         {
           "document": "机票行程单识别结果，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "FlightInvoiceInfo",
           "name": "FlightInvoiceInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2266,7 +2282,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -2274,11 +2291,30 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2288,23 +2324,38 @@
       "members": [
         {
           "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "TextDetection",
           "name": "TextDetections",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "检测到的语言，目前支持的语种范围为：简体中文、繁体中文、英文、日文、韩文。未来将陆续新增对更多语种的支持。\n返回结果含义为：zh - 中英混合，jap - 日文，kor - 韩文。",
+          "example": "zh",
           "member": "string",
           "name": "Language",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负",
+          "example": "6.5",
           "member": "float",
           "name": "Angel",
+          "required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片为PDF时，返回PDF的总页数，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageSize",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5337,7 +5388,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -5345,7 +5397,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -5359,85 +5412,109 @@
       "members": [
         {
           "document": "发票代码",
+          "example": "134031321361",
           "member": "string",
           "name": "InvoiceNum",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "发票号码",
+          "example": "15326798",
           "member": "string",
           "name": "InvoiceCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "日期",
+          "example": "2018年05月17日",
           "member": "string",
           "name": "Date",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "金额",
+          "example": "19.00",
           "member": "string",
           "name": "Fare",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "上车时间",
+          "example": "16:09",
           "member": "string",
           "name": "GetOnTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "下车时间",
+          "example": "16:32",
           "member": "string",
           "name": "GetOffTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "里程",
+          "example": "9.37",
           "member": "string",
           "name": "Distance",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "发票所在地",
+          "example": "安徽省蚌埠市",
           "member": "string",
           "name": "Location",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "车牌号",
+          "example": "C-82851",
           "member": "string",
           "name": "PlateNumber",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "发票消费类型",
+          "example": "交通",
           "member": "string",
           "name": "InvoiceType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "安徽省",
           "member": "string",
           "name": "Province",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "蚌埠市",
           "member": "string",
           "name": "City",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6272,7 +6349,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -6280,7 +6358,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -6294,85 +6373,109 @@
       "members": [
         {
           "document": "编号",
+          "example": "17C060124",
           "member": "string",
           "name": "TicketNum",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "出发站",
+          "example": "南京南",
           "member": "string",
           "name": "StartStation",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "到达站",
+          "example": "上海虹桥",
           "member": "string",
           "name": "DestinationStation",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "出发时间",
+          "example": "2017年12月23日10:33",
           "member": "string",
           "name": "Date",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "车次",
+          "example": "G5",
           "member": "string",
           "name": "TrainNum",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "座位号",
+          "example": "15车18A号",
           "member": "string",
           "name": "Seat",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "姓名",
+          "example": "周周",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "票价",
+          "example": "134.50",
           "member": "string",
           "name": "Price",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "席别",
+          "example": "二等座",
           "member": "string",
           "name": "SeatCategory",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "身份证号",
+          "example": "3210231993****6499",
           "member": "string",
           "name": "ID",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "发票消费类型",
+          "example": "交通",
           "member": "string",
           "name": "InvoiceType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "序列号",
+          "example": "16804000071224C060124",
           "member": "string",
           "name": "SerialNumber",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7883,7 +7986,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -7891,7 +7995,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -7900,6 +8005,7 @@
         {
           "default": "",
           "document": "预检测开关，当待识别运单占整个输入图像的比例较小时，建议打开预检测开关。默认值为false。",
+          "example": "无",
           "member": "bool",
           "name": "EnablePreDetect",
           "required": false,
@@ -7913,8 +8019,10 @@
       "members": [
         {
           "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "TextWaybill",
           "name": "TextDetections",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

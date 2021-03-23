@@ -8,6 +8,7 @@ Input:
 tccli iotvideoindustry CreateRecordPlan --cli-unfold-argument  \
     --Name myPlan \
     --TimeTemplateId template-xxxxx \
+    --EventId 1 \
     --Devices.0.DeviceId xxxx
 ```
 

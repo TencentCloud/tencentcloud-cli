@@ -9,6 +9,8 @@ tccli iotvideoindustry UpdateRecordPlan --cli-unfold-argument  \
     --PlanId plan-xxxxx \
     --Name xxxxxx \
     --TimeTemplateId tgrp-xxxxx \
+    --EventId 1 \
+    --IsModifyDevices 1 \
     --Devices.0.DeviceId xxxx
 ```
 

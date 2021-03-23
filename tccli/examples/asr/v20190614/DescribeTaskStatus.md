@@ -106,7 +106,8 @@ Output:
             "Status": 1,
             "StatusStr": "doing",
             "Result": "",
-            "ErrorMsg": ""
+            "ErrorMsg": "",
+            "ResultDetail": []
         }
     }
 }
@@ -114,7 +115,7 @@ Output:
 
 **Example 4: 轮询结果——任务失败**
 
-用户通过轮询方式获取识别结果，任务失败，请用户查看返回的错误码并对照下面的错误码表检查原因。
+用户通过轮询方式获取识别结果，任务失败，具体原因请用户查看返回中ErrorMsg提示。
 
 Input: 
 
@@ -133,7 +134,8 @@ Output:
             "Status": 3,
             "StatusStr": "failed",
             "Result": "",
-            "ErrorMsg": "Failed to download audio file!"
+            "ErrorMsg": "Failed to download audio file!",
+            "ResultDetail": []
         }
     }
 }

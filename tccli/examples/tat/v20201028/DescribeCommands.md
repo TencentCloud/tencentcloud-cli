@@ -26,6 +26,8 @@ Output:
                 "CommandType": "SHELL",
                 "WorkingDirectory": "/root/",
                 "Timeout": 60,
+                "EnableParameter": false,
+                "DefaultParameters": "",
                 "CreatedTime": "2020-11-02T02:48:11+00:00",
                 "UpdatedTime": "2020-11-02T02:48:11+00:00"
             }
@@ -63,6 +65,8 @@ Output:
                 "CommandType": "SHELL",
                 "WorkingDirectory": "/root/",
                 "Timeout": 60,
+                "EnableParameter": false,
+                "DefaultParameters": "",
                 "CreatedTime": "2020-10-30T07:19:52+00:00",
                 "UpdatedTime": "2020-10-30T07:19:52+00:00"
             },
@@ -74,6 +78,8 @@ Output:
                 "CommandType": "SHELL",
                 "WorkingDirectory": "/",
                 "Timeout": 600,
+                "EnableParameter": false,
+                "DefaultParameters": "",
                 "CreatedTime": "2020-10-26T11:26:07+00:00",
                 "UpdatedTime": "2020-11-09T08:12:45+00:00"
             }

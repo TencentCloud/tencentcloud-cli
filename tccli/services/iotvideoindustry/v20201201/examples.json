@@ -35,7 +35,7 @@
     "CreateRecordPlan": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordPlan\n<公共请求参数>\n\n{\n    \"Name\": \"myPlan\",\n    \"TimeTemplateId\": \"template-xxxxx\",\n    \"Devices\": [\n        {\n            \"DeviceId\": \"xxxx\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordPlan\n<公共请求参数>\n\n{\n    \"Name\": \"myPlan\",\n    \"TimeTemplateId\": \"template-xxxxx\",\n    \"EventId\": 1,\n    \"Devices\": [\n        {\n            \"DeviceId\": \"xxxx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"PlanId\": \"plan-xxxx\",\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
         "title": "CreateRecordPlan"
       }
@@ -265,7 +265,7 @@
     "UpdateRecordPlan": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-xxxxx\",\n    \"Name\": \"xxxxxx\",\n    \"TimeTemplateId\": \"tgrp-xxxxx\",\n    \"Devices\": [\n        {\n            \"DeviceId\": \"xxxx\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-xxxxx\",\n    \"Name\": \"xxxxxx\",\n    \"TimeTemplateId\": \"tgrp-xxxxx\",\n    \"EventId\": 1,\n    \"IsModifyDevices\": 1,\n    \"Devices\": [\n        {\n            \"DeviceId\": \"xxxx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Status\": \"OK\"\n    }\n}",
         "title": "更新录制计划"
       }

@@ -24,6 +24,14 @@
         "title": "网关与API分组批量绑定"
       }
     ],
+    "BindPlugin": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=BindPlugin\n&PluginInstanceList.0.PluginId=pgn-spzs5mv5\n&PluginInstanceList.0.ScopeType=api\n&PluginInstanceList.0.ScopeValue=api-dvdv4i8i\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "插件绑定API"
+      }
+    ],
     "ChangeApiUsableStatus": [
       {
         "document": "",
@@ -600,6 +608,14 @@
         "title": "获取虚拟机部署组列表"
       }
     ],
+    "DescribeGroupsWithPlugin": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroupsWithPlugin\n&PluginId=pgn-33pk2soi\n&GatewayInstanceId=gw-ins-33pk2soi\n&Bound=false\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"Status\": \"xx\",\n                    \"UpdatedTime\": \"xx\",\n                    \"AuthType\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"BindedGatewayDeployGroups\": [\n                        {\n                            \"DeployGroupId\": \"xx\",\n                            \"ApplicationName\": \"xx\",\n                            \"GroupStatus\": \"xx\",\n                            \"ClusterType\": \"xx\",\n                            \"DeployGroupName\": \"xx\",\n                            \"ApplicationType\": \"xx\",\n                            \"ApplicationId\": \"xx\"\n                        }\n                    ],\n                    \"GroupType\": \"xx\",\n                    \"AclMode\": \"xx\",\n                    \"ApiCount\": 1,\n                    \"GroupName\": \"xx\",\n                    \"GroupContext\": \"xx\",\n                    \"CreatedTime\": \"xx\",\n                    \"GroupId\": \"xx\"\n                },\n                {\n                    \"Status\": \"xx\",\n                    \"UpdatedTime\": \"xx\",\n                    \"AuthType\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"BindedGatewayDeployGroups\": [\n                        {\n                            \"DeployGroupId\": \"xx\",\n                            \"ApplicationName\": \"xx\",\n                            \"ApplicationId\": \"xx\",\n                            \"ClusterType\": \"xx\",\n                            \"DeployGroupName\": \"xx\",\n                            \"ApplicationType\": \"xx\",\n                            \"GroupStatus\": \"xx\"\n                        }\n                    ],\n                    \"GroupType\": \"xx\",\n                    \"AclMode\": \"xx\",\n                    \"GroupId\": \"xx\",\n                    \"GroupName\": \"xx\",\n                    \"GroupContext\": \"xx\",\n                    \"CreatedTime\": \"xx\",\n                    \"ApiCount\": 3\n                }\n            ],\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询插件未绑定的分组列表"
+      }
+    ],
     "DescribeImageRepository": [
       {
         "document": "",
@@ -678,6 +694,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribePkgs\n&ApplicationId=application-xxxxxxxx\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"PkgId\": \"xx\",\n                    \"PkgType\": \"xx\",\n                    \"UploadTime\": \"xx\",\n                    \"PkgName\": \"xx\",\n                    \"PkgDesc\": \"xx\",\n                    \"PkgBindInfo\": [\n                        {\n                            \"ApplicationId\": \"xx\",\n                            \"GroupId\": \"xx\"\n                        }\n                    ],\n                    \"PkgVersion\": \"xx\",\n                    \"PkgPubStatus\": 1,\n                    \"Md5\": \"xx\"\n                },\n                {\n                    \"PkgId\": \"xx\",\n                    \"PkgType\": \"xx\",\n                    \"UploadTime\": \"xx\",\n                    \"PkgName\": \"xx\",\n                    \"PkgDesc\": \"xx\",\n                    \"PkgBindInfo\": [\n                        {\n                            \"ApplicationId\": \"xx\",\n                            \"GroupId\": \"xx\"\n                        }\n                    ],\n                    \"PkgVersion\": \"xx\",\n                    \"PkgPubStatus\": 1,\n                    \"Md5\": \"xx\"\n                }\n            ],\n            \"TotalCount\": 2,\n            \"RepositoryType\": \"xx\",\n            \"RepositoryName\": \"xx\",\n            \"RepositoryId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取应用下程序包列表"
+      }
+    ],
+    "DescribePluginInstances": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePluginInstances\n&ScopeValue=grp-83wrlmav\n&Bound=true\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa153f44-22b6-4ea3-86ef-6e257d440f26\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"Id\": \"pgn-33pk2soi\",\n                    \"Name\": \"Tag认证插件\",\n                    \"Type\": \"Tag\",\n                    \"Description\": \"this is description\",\n                    \"CreatedTime\": \"2019-11-02 15:43:09\",\n                    \"UpdatedTime\": \"2019-11-02 17:30:51\",\n                    \"Status\": \"drafted\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询分组已绑定的插件列表"
       }
     ],
     "DescribePodInstances": [

@@ -4168,6 +4168,7 @@
         {
           "default": "",
           "document": "需要查询的云数据库产品类型，目前仅支持 \"mysql\"。",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -4181,29 +4182,37 @@
       "members": [
         {
           "document": "用户在当前地域备份的总个数（包含数据备份和日志备份）。",
+          "example": "15",
           "member": "int64",
           "name": "BackupCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "用户在当前地域备份的总容量",
+          "example": "90000",
           "member": "int64",
           "name": "BackupVolume",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "用户在当前地域备份的计费容量，即超出赠送容量的部分。",
+          "example": "20000",
           "member": "int64",
           "name": "BillingVolume",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "用户在当前地域获得的赠送备份容量。",
+          "example": "70000",
           "member": "int64",
           "name": "FreeVolume",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -54,6 +54,12 @@
       "name": "修改命令",
       "output": "ModifyCommandResponse"
     },
+    "PreviewReplacedCommandContent": {
+      "document": "此接口用于预览自定义参数替换后的命令内容。不会触发真实执行。",
+      "input": "PreviewReplacedCommandContentRequest",
+      "name": "命令预览",
+      "output": "PreviewReplacedCommandContentResponse"
+    },
     "RunCommand": {
       "document": "执行命令，调用成功返回执行活动ID（inv-xxxxxxxx），每个执行活动内部有一个或多个执行任务（invt-xxxxxxxx），每个执行任务代表命令在一台 CVM 或一台 Lighthouse 上的执行记录。\n\n* 如果指定实例未安装 agent，或 agent 不在线，返回失败\n* 如果命令类型与 agent 运行环境不符，返回失败\n* 指定的实例需要处于 VPC 网络\n* 指定的实例需要处于 `RUNNING` 状态\n* 不可同时指定 CVM 和 Lighthouse",
       "input": "RunCommandRequest",
@@ -125,6 +131,7 @@
         {
           "default": "",
           "document": "命令ID。",
+          "example": "cmd-aaaaaaaa",
           "member": "string",
           "name": "CommandId",
           "required": true,
@@ -134,6 +141,7 @@
         {
           "default": "",
           "document": "命令名称。",
+          "example": "cmdname",
           "member": "string",
           "name": "CommandName",
           "required": true,
@@ -143,6 +151,7 @@
         {
           "default": "",
           "document": "命令描述。",
+          "example": "the cmd",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -152,6 +161,7 @@
         {
           "default": "",
           "document": "Base64编码后的命令内容。",
+          "example": "bHMgMTIzCmVjaG8ge3tifX0ge3tjfX0=",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -161,6 +171,7 @@
         {
           "default": "",
           "document": "命令类型。",
+          "example": "SHELL",
           "member": "string",
           "name": "CommandType",
           "required": true,
@@ -170,6 +181,7 @@
         {
           "default": "",
           "document": "命令执行路径。",
+          "example": "/",
           "member": "string",
           "name": "WorkingDirectory",
           "required": true,
@@ -179,6 +191,7 @@
         {
           "default": "",
           "document": "命令超时时间。",
+          "example": "123",
           "member": "uint64",
           "name": "Timeout",
           "required": true,
@@ -188,6 +201,7 @@
         {
           "default": "",
           "document": "命令创建时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -197,8 +211,29 @@
         {
           "default": "",
           "document": "命令更新时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用自定义参数功能。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableParameter",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数的默认取值。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "DefaultParameters",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -304,6 +339,24 @@
           "name": "Timeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否启用自定义参数功能。\n一旦创建，此值不提供修改。\n默认值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableParameter",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "DefaultParameters",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -475,7 +528,7 @@
       "members": [
         {
           "document": "符合条件的命令总数。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
@@ -628,7 +681,7 @@
       "members": [
         {
           "document": "符合条件的执行活动总数。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
@@ -804,6 +857,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数取值。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "Parameters",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数的默认取值。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "DefaultParameters",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -966,6 +1039,15 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Command 的自定义参数。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "Parameters",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1056,6 +1138,15 @@
           "name": "Timeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\n采取整体全覆盖式修改，即修改时必须提供所有新默认值。\n必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "DefaultParameters",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1063,6 +1154,60 @@
     "ModifyCommandResponse": {
       "document": "ModifyCommand返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PreviewReplacedCommandContentRequest": {
+      "document": "PreviewReplacedCommandContent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本次预览采用的自定义参数。字段类型为 json encoded string，如：{\\\"varA\\\": \\\"222\\\"}。\nkey 为自定义参数名称，value 为该参数的取值。kv 均为字符串型。\n自定义参数最多 20 个。\n自定义参数名称需符合以下规范：字符数目上限 64，可选范围【a-zA-Z0-9-_】。\n如果将预览的 CommandId 设置过 DefaultParameters，本参数可以为空。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "Parameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要进行替换预览的命令，如果有设置过 DefaultParameters，会与 Parameters 进行叠加，后者覆盖前者。\nCommandId 与 Content，必须且只能提供一个。",
+          "example": "cmd-abcdefgh",
+          "member": "string",
+          "name": "CommandId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要预览的命令内容，经 Base64 编码，长度不可超过 64KB。\nCommandId 与 Content，必须且只能提供一个。",
+          "example": "bHMge3thfX0KZWNobyB7e2J9fQ==",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PreviewReplacedCommandContentResponse": {
+      "document": "PreviewReplacedCommandContent返回参数结构体",
+      "members": [
+        {
+          "document": "自定义参数替换后的，经Base64编码的命令内容。",
+          "example": "无",
+          "member": "string",
+          "name": "ReplacedContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1179,6 +1324,33 @@
           "name": "SaveCommand",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否启用自定义参数功能。\n一旦创建，此值不提供修改。\n默认值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableParameter",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果 Parameters 未提供，将使用这里的默认值进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "DefaultParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Command 的自定义参数。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 DefaultParameters 进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "example": "{\\\"varA\\\": \\\"222\\\"}",
+          "member": "string",
+          "name": "Parameters",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

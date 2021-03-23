@@ -831,7 +831,7 @@
         },
         {
           "default": "",
-          "document": "实例计费类型，0表示按量计费，1表示预付费，当前版本只支持后付费，默认为按量计费",
+          "document": "实例计费类型，0表示按量计费，1表示预付费，默认为按量计费",
           "example": "1",
           "member": "int64",
           "name": "RegistryChargeType",
@@ -849,6 +849,7 @@
           "example": "tcr-123456",
           "member": "string",
           "name": "RegistryId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

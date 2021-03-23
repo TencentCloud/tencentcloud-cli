@@ -18,6 +18,12 @@
       "name": "网关与API分组批量绑定",
       "output": "BindApiGroupResponse"
     },
+    "BindPlugin": {
+      "document": "插件与网关分组/API批量绑定",
+      "input": "BindPluginRequest",
+      "name": "批量绑定插件",
+      "output": "BindPluginResponse"
+    },
     "ChangeApiUsableStatus": {
       "document": "启用或禁用API",
       "input": "ChangeApiUsableStatusRequest",
@@ -450,6 +456,12 @@
       "name": "获取虚拟机部署组列表",
       "output": "DescribeGroupsResponse"
     },
+    "DescribeGroupsWithPlugin": {
+      "document": "查询某个插件下绑定或未绑定的API分组",
+      "input": "DescribeGroupsWithPluginRequest",
+      "name": "查询某个插件下绑定或未绑定的API分组",
+      "output": "DescribeGroupsWithPluginResponse"
+    },
     "DescribeImageRepository": {
       "document": "镜像仓库列表 ",
       "input": "DescribeImageRepositoryRequest",
@@ -509,6 +521,12 @@
       "input": "DescribePkgsRequest",
       "name": "获取某个应用的程序包信息列表",
       "output": "DescribePkgsResponse"
+    },
+    "DescribePluginInstances": {
+      "document": "分页查询网关分组/API绑定（或未绑定）的插件列表",
+      "input": "DescribePluginInstancesRequest",
+      "name": "查询网关分组或API绑定（或未绑定）的插件列表",
+      "output": "DescribePluginInstancesResponse"
     },
     "DescribePodInstances": {
       "document": "获取部署组实例列表",
@@ -2127,6 +2145,42 @@
           "document": "返回结果，成功失败",
           "member": "bool",
           "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindPluginRequest": {
+      "document": "BindPlugin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分组/API绑定插件列表",
+          "example": "无",
+          "member": "GatewayPluginBoundParam",
+          "name": "PluginInstanceList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindPluginResponse": {
+      "document": "BindPlugin返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，成功失败",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7869,6 +7923,87 @@
       ],
       "type": "object"
     },
+    "DescribeGroupsWithPluginRequest": {
+      "document": "DescribeGroupsWithPlugin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "插件ID",
+          "example": "无",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定/未绑定: true / false",
+          "example": "无",
+          "member": "bool",
+          "name": "Bound",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页记录数量",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关实体ID",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupsWithPluginResponse": {
+      "document": "DescribeGroupsWithPlugin返回参数结构体",
+      "members": [
+        {
+          "document": "API分组信息列表",
+          "example": "无",
+          "member": "TsfPageApiGroupInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeImageRepositoryRequest": {
       "document": "DescribeImageRepository请求参数结构体",
       "members": [
@@ -8482,6 +8617,87 @@
           "document": "符合查询程序包信息列表",
           "example": "无",
           "member": "PkgList",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginInstancesRequest": {
+      "document": "DescribePluginInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分组或者API的ID",
+          "example": "grp-83wrlmav",
+          "member": "string",
+          "name": "ScopeValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定: true; 未绑定: false",
+          "example": "true",
+          "member": "bool",
+          "name": "Bound",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页展示的条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "插件类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginInstancesResponse": {
+      "document": "DescribePluginInstances返回参数结构体",
+      "members": [
+        {
+          "document": "插件信息列表",
+          "example": "无",
+          "member": "TsfPageGatewayPlugin",
           "name": "Result",
           "required": true,
           "type": "object",
@@ -10396,6 +10612,108 @@
           "document": "分组id",
           "member": "string",
           "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GatewayPlugin": {
+      "document": "微服务网关插件实例对象",
+      "members": [
+        {
+          "default": "",
+          "document": "网关插件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "插件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "插件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "插件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GatewayPluginBoundParam": {
+      "document": "微服务网关插件绑定对象",
+      "members": [
+        {
+          "default": "",
+          "document": "插件id",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件绑定到的对象类型:group/api",
+          "member": "string",
+          "name": "ScopeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件绑定到的对象主键值，例如分组的ID/API的ID",
+          "member": "string",
+          "name": "ScopeValue",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15683,6 +16001,30 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageGatewayPlugin": {
+      "document": "GatewayPlugin 翻页对象",
+      "members": [
+        {
+          "default": "",
+          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "记录实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GatewayPlugin",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

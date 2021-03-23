@@ -529,6 +529,15 @@
         },
         {
           "default": "",
+          "document": "触发录制的事件类别 1:全部",
+          "example": "1",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "该录制计划绑定的设备列表",
           "example": "无",
           "member": "DeviceItem",
@@ -2532,12 +2541,30 @@
         },
         {
           "default": "",
+          "document": "触发录制的事件 1：全部",
+          "example": "1",
+          "member": "int64",
+          "name": "EventId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "录制设备列表",
           "example": "无",
           "member": "DeviceItem",
           "name": "Devices",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否更新绑定此录制计划的设备列表\n0 - 不更新\n1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表",
+          "example": "1",
+          "member": "int64",
+          "name": "IsModifyDevices",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
