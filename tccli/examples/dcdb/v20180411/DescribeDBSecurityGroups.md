@@ -14,6 +14,8 @@ Output:
 ```
 {
     "Response": {
+        "VIP": "10.0.0.7",
+        "VPort": 3306,
         "RequestId": "31a60135-7057-47ae-8fd3-7a0617deca38",
         "Groups": [
             {

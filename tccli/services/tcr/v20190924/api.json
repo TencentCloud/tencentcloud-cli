@@ -964,7 +964,7 @@
         },
         {
           "default": "",
-          "document": "true：use instance name as subdomain\nfalse: use instancename+\"-vpc\" as subdomain",
+          "document": "true：为默认域名，公网域名一致\nfalse: 使用vpc域名\n默认为vpc域名",
           "example": "true",
           "member": "bool",
           "name": "UsePublicDomain",
@@ -2548,6 +2548,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-xxxx",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2561,15 +2562,19 @@
       "members": [
         {
           "document": "内网接入信息的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AccessVpc",
           "name": "AccessVpcSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "内网接入总数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3564,6 +3569,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-xxx",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -3572,6 +3578,7 @@
         {
           "default": "",
           "document": "Create/Delete",
+          "example": "Create",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -3580,6 +3587,7 @@
         {
           "default": "",
           "document": "需要接入的用户vpcid",
+          "example": "xxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3588,6 +3596,7 @@
         {
           "default": "",
           "document": "需要接入的用户子网id",
+          "example": "xxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3596,6 +3605,7 @@
         {
           "default": "",
           "document": "请求的地域ID",
+          "example": "5",
           "member": "uint64",
           "name": "RegionId",
           "required": false,
@@ -3609,8 +3619,10 @@
       "members": [
         {
           "document": "实例Id",
+          "example": "XXXX",
           "member": "string",
           "name": "RegistryId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

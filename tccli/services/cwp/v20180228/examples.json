@@ -723,7 +723,7 @@
     "ExportTasks": [
       {
         "document": "",
-        "input": "https://cwp.tencentcloudapi.com/?Action=ExportTasks\n&TaskId='c44c00fb-ab35-22e5-78e8-9a8a910d96f5'\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ExportTasks\n&TaskId=c44c00fb-ab35-22e5-78e8-9a8a910d96f5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": \"FINISHED\",\n        \"DownloadUrl\": \"http://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/1256299843/bruteattack-20200804-824874.csv\",\n        \"RequestId\": \"f8bcfd50-3a9d-ac4c-ba95-6ed70252453e\"\n    }\n}",
         "title": "异步导出任务"
       }
@@ -779,7 +779,7 @@
     "ModifyMalwareTimingScanSettings": [
       {
         "document": "",
-        "input": "https://cwp.tencentcloudapi.com/?Action=ModifyMalwareTimingScanSettings\n&CheckPattern=0\n&StartTime=02:00\n&EndTime=04:00\n&IsGlobal=1\n&EnableScan=1\n&MonitoringPattern=0\n&Cycle=1\n&RealTimeMonitoring=1\n&<公共请求参数>",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ModifyMalwareTimingScanSettings\n&CheckPattern=0\n&StartTime=02:00:00\n&EndTime=04:00:00\n&IsGlobal=1\n&EnableScan=1\n&MonitoringPattern=0\n&Cycle=1\n&RealTimeMonitoring=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"007863e7-fce9-49c2-9561-16bc2a522620\"\n    }\n}",
         "title": "定时扫描设置"
       }

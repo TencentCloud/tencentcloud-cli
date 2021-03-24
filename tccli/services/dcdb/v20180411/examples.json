@@ -92,15 +92,15 @@
       {
         "document": "",
         "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&Product=dcdb\n&InstanceId=tdsqlshard-eb2w7dto\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 0,\n                \"CreateTime\": \"\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"\",\n                \"SecurityGroupName\": \"\",\n                \"SecurityGroupRemark\": \"dcdb\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VIP\": \"10.0.0.7\",\n        \"VPort\": 3306,\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 0,\n                \"CreateTime\": \"\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"\",\n                \"SecurityGroupName\": \"\",\n                \"SecurityGroupRemark\": \"dcdb\"\n            }\n        ]\n    }\n}",
         "title": "示例1 查询实例安全组信息"
       }
     ],
     "DescribeDBSyncMode": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBSyncMode\r\n&InstanceId=dcdbt-avw0207d\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"SyncMode\": 0,\n        \"IsModifying\": 1\n    }\n}",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBSyncMode\n&InstanceId=dcdbt-avw0207d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"SyncMode\": 0,\n        \"CurrentSyncMode\": 0,\n        \"IsModifying\": 1\n    }\n}",
         "title": "查询云数据库同步模式"
       }
     ],

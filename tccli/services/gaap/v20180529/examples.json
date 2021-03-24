@@ -11,7 +11,7 @@
     "BindListenerRealServers": [
       {
         "document": "监听器绑定源站",
-        "input": "https://gaap.tencentcloudapi.com/?Action=BindListenerRealServers\n&ListenerId=listener-pbsgn7ej\n&RealServerBindSet.0.RealServerId=rs-04v3s12t\n&RealServerBindSet.0.RealServerIP=119.28.69.101\n&RealServerBindSet.0.RealServerPort=80\n&RealServerBindSet.0.RealServerWeight=1\n&<公共请求参数>",
+        "input": "https://gaap.tencentcloudapi.com/?Action=BindListenerRealServers\n&ListenerId=listener-pbsgn7ej\n&RealServerBindSet.0.RealServerId=rs-04v3s12t\n&RealServerBindSet.0.RealServerIP=119.28.69.101\n&RealServerBindSet.0.RealServerPort=80\n&RealServerBindSet.0.RealServerWeight=1\n&RealServerBindSet.0.RealServerFailoverRole=master\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f1e794d-a35e-41d2-8f40-fe32a2077329\"\n    }\n}",
         "title": "监听器绑定源站"
       }
@@ -483,8 +483,8 @@
     "DescribeTCPListeners": [
       {
         "document": "查询TCP监听器列表",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeTCPListeners\r\n&ProxyId=link-hwera8lq\r\n&ListenerId=listener-gkzl9e7t\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ListenerSet\": [\n            {\n                \"HealthCheck\": 1,\n                \"Protocol\": \"TCP\",\n                \"ListenerId\": \"listener-gkzl9e7t\",\n                \"Port\": 111,\n                \"RealServerType\": \"IP\",\n                \"RealServerPort\": null,\n                \"DelayLoop\": 30,\n                \"BindStatus\": 0,\n                \"Scheduler\": \"rr\",\n                \"ListenerStatus\": 0,\n                \"ListenerName\": \"111\",\n                \"ConnectTimeout\": 2\n            }\n        ],\n        \"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\n    }\n}",
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeTCPListeners\n&ProxyId=link-hwera8lq\n&ListenerId=listener-gkzl9e7t\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ListenerSet\": [\n            {\n                \"HealthCheck\": 1,\n                \"Protocol\": \"TCP\",\n                \"ListenerId\": \"listener-gkzl9e7t\",\n                \"Port\": 111,\n                \"RealServerType\": \"IP\",\n                \"RealServerPort\": null,\n                \"DelayLoop\": 30,\n                \"BindStatus\": 0,\n                \"Scheduler\": \"rr\",\n                \"ListenerStatus\": 0,\n                \"ListenerName\": \"111\",\n                \"ConnectTimeout\": 2,\n                \"ClientIPMethod\": 1,\n                \"CreateTime\": 1607071157,\n                \"RealServerSet\": [\n                    {\n                        \"RealServerWeight\": 1,\n                        \"RealServerId\": \"rs-d2rwammv\",\n                        \"RealServerPort\": 111,\n                        \"RealServerIP\": \"a.a.com\",\n                        \"RealServerStatus\": -1,\n                        \"DownIPList\": [\n                            \"11.11.11.11:111\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\n    }\n}",
         "title": "查询TCP监听器列表"
       }
     ],
@@ -619,7 +619,7 @@
     "ModifyTCPListenerAttribute": [
       {
         "document": "修改TCP监听器配置",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyTCPListenerAttribute\r\n&ProxyId=link-bjkpdum1\r\n&ListenerId=listener-o0f3at99\r\n&ListenerName=test10\r\n&Scheduler=rr\r\n&DelayLoop=30\r\n&ConnectTimeout=20\r\n&HealthCheck=1\r\n&<公共请求参数>",
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyTCPListenerAttribute\n&ProxyId=link-bjkpdum1\n&ListenerId=listener-o0f3at99\n&ListenerName=test10\n&Scheduler=rr\n&DelayLoop=30\n&ConnectTimeout=20\n&HealthCheck=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3919ba30-85c4-4cb4-81bf-ff243b50f3dc\"\n    }\n}",
         "title": "修改TCP监听器配置"
       }

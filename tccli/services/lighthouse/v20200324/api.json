@@ -236,6 +236,7 @@
         {
           "default": "",
           "document": "套餐 ID。",
+          "example": "bundle_gen_01",
           "member": "string",
           "name": "BundleId",
           "required": true,
@@ -245,6 +246,7 @@
         {
           "default": "",
           "document": "内存大小，单位 GB。",
+          "example": "1",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -254,6 +256,7 @@
         {
           "default": "",
           "document": "系统盘类型。\n取值范围： \n<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>",
+          "example": "CLOUD_SSD",
           "member": "string",
           "name": "SystemDiskType",
           "required": true,
@@ -263,6 +266,7 @@
         {
           "default": "",
           "document": "系统盘大小。",
+          "example": "40",
           "member": "int64",
           "name": "SystemDiskSize",
           "required": true,
@@ -272,6 +276,7 @@
         {
           "default": "",
           "document": "每月网络流量，单位 Gb。",
+          "example": "300",
           "member": "int64",
           "name": "MonthlyTraffic",
           "required": true,
@@ -281,6 +286,7 @@
         {
           "default": "",
           "document": "是否支持 Linux/Unix 平台。",
+          "example": "true",
           "member": "bool",
           "name": "SupportLinuxUnixPlatform",
           "required": true,
@@ -290,6 +296,7 @@
         {
           "default": "",
           "document": "是否支持 Windows 平台。",
+          "example": "true",
           "member": "bool",
           "name": "SupportWindowsPlatform",
           "required": true,
@@ -299,6 +306,7 @@
         {
           "default": "",
           "document": "套餐当前单位价格信息。",
+          "example": " {           \"InstancePrice\": {             \"OriginalBundlePrice",
           "member": "Price",
           "name": "Price",
           "required": true,
@@ -308,6 +316,7 @@
         {
           "default": "",
           "document": "CPU 核数。",
+          "example": "1",
           "member": "int64",
           "name": "CPU",
           "required": true,
@@ -317,6 +326,7 @@
         {
           "default": "",
           "document": "峰值带宽，单位 Mbps。",
+          "example": "3",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -326,6 +336,7 @@
         {
           "default": "",
           "document": "网络计费类型。",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
           "required": true,
@@ -335,6 +346,7 @@
         {
           "default": "",
           "document": "套餐售卖状态,取值:‘AVAILABLE’(可用) , ‘SOLD_OUT’(售罄)",
+          "example": "SOLD_OUT",
           "member": "string",
           "name": "BundleSalesState",
           "required": true,
@@ -344,6 +356,7 @@
         {
           "default": "",
           "document": "套餐类型。\n取值范围：\n<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>",
+          "example": "GENERAL_BUNDLE",
           "member": "string",
           "name": "BundleType",
           "required": true,
@@ -352,7 +365,8 @@
         },
         {
           "default": "",
-          "document": "套餐展示标签.\n取值范围:\n\"ACTIVITY\": 活动套餐,\n\"NORMAL\": 普通套餐",
+          "document": "套餐展示标签.\n取值范围:\n\"ACTIVITY\": 活动套餐,\n\"NORMAL\": 普通套餐\n\"CAREFREE\": 无忧套餐",
+          "example": "NORMAL",
           "member": "string",
           "name": "BundleDisplayLabel",
           "required": true,

@@ -643,7 +643,7 @@
         },
         {
           "default": "",
-          "document": "按字段爱旭，支持如下字段类型，update-time",
+          "document": "按字段排序，支持如下字段类型，update-time",
           "example": "update-time",
           "member": "string",
           "name": "SortBy",

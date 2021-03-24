@@ -2240,10 +2240,20 @@
         {
           "default": "",
           "document": "手机号码",
+          "example": "13800138000",
           "member": "string",
           "name": "Mobile",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2253,22 +2263,28 @@
       "members": [
         {
           "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 成功\n-2: 手机号不存在\n-3: 手机号存在，但无法查询到在网时长\n不收费结果码：\n-1: 手机号格式不正确\n-4: 验证中心服务繁忙",
+          "example": "0",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "业务结果描述。",
+          "example": "成功",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "在网时长区间。\n格式为(a,b]，表示在网时长在a个月以上，b个月以下。若b为+时表示没有上限。",
+          "example": "(23,+]",
           "member": "string",
           "name": "Range",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2287,10 +2303,20 @@
         {
           "default": "",
           "document": "手机号码",
+          "example": "13800138000",
           "member": "string",
           "name": "Mobile",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2300,22 +2326,28 @@
       "members": [
         {
           "document": "认证结果码，收费情况如下。\n收费结果码：\n0：成功\n不收费结果码：\n-1：未查询到结果\n-2：手机号格式不正确\n-3：验证中心服务繁忙",
+          "example": "0",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "业务结果描述。",
+          "example": "成功",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "状态码：\n0：正常\n1：停机\n2：销号\n3：空号\n4：不在网\n99：未知状态",
+          "example": "1",
           "member": "int64",
           "name": "StatusCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

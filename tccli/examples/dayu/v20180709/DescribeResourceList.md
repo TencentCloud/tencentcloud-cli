@@ -14,8 +14,8 @@ tccli dayu DescribeResourceList --cli-unfold-argument  \
     --Name "" \
     --Status 0 1 2 \
     --Expire 0 \
-    --OderBy0.Field bandwidth \
-    --OderBy0.Order DESC \
+    --OderBy.0.Field bandwidth \
+    --OderBy.0.Order DESC \
     --Limit 30 \
     --Offset 0
 ```

@@ -710,6 +710,7 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "listener-pbsgn7ej",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -718,6 +719,7 @@
         {
           "default": "",
           "document": "待绑定源站列表。如果该监听器的源站调度策略是加权轮询，需要填写源站权重 RealServerWeight, 不填或者其他调度类型默认源站权重为1。",
+          "example": "无",
           "member": "RealServerBindSetReq",
           "name": "RealServerBindSet",
           "required": false,
@@ -744,6 +746,7 @@
         {
           "default": "",
           "document": "源站ID",
+          "example": "rs-123456",
           "member": "string",
           "name": "RealServerId",
           "required": true,
@@ -753,6 +756,7 @@
         {
           "default": "",
           "document": "源站IP或者域名",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "RealServerIP",
           "required": true,
@@ -762,6 +766,7 @@
         {
           "default": "",
           "document": "该源站所占权重",
+          "example": "1",
           "member": "int64",
           "name": "RealServerWeight",
           "required": true,
@@ -771,6 +776,7 @@
         {
           "default": "",
           "document": "源站健康检查状态，其中：\n0表示正常；\n1表示异常。\n未开启健康检查状态时，该状态始终为正常。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "RealServerStatus",
           "required": true,
@@ -780,6 +786,7 @@
         {
           "default": "",
           "document": "源站的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "443",
           "member": "int64",
           "name": "RealServerPort",
           "required": true,
@@ -789,6 +796,7 @@
         {
           "default": "",
           "document": "当源站为域名时，域名被解析成一个或者多个IP，该字段表示其中异常的IP列表。状态异常，但该字段为空时，表示域名解析异常。",
+          "example": "[]",
           "member": "string",
           "name": "DownIPList",
           "required": true,
@@ -2112,6 +2120,7 @@
         {
           "default": "",
           "document": "监听器名称。",
+          "example": "test1",
           "member": "string",
           "name": "ListenerName",
           "required": true,
@@ -2120,6 +2129,7 @@
         {
           "default": "",
           "document": "监听器端口列表。",
+          "example": "[\"90\\n\"]",
           "member": "uint64",
           "name": "Ports",
           "required": true,
@@ -2128,6 +2138,7 @@
         {
           "default": "",
           "document": "监听器源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。",
+          "example": "rr",
           "member": "string",
           "name": "Scheduler",
           "required": true,
@@ -2136,6 +2147,7 @@
         {
           "default": "",
           "document": "源站是否开启健康检查：1开启，0关闭，UDP监听器不支持健康检查",
+          "example": "1",
           "member": "uint64",
           "name": "HealthCheck",
           "required": true,
@@ -2144,6 +2156,7 @@
         {
           "default": "",
           "document": "监听器对应源站类型，支持IP或者DOMAIN类型。DOMAIN源站类型不支持wrr的源站调度策略。",
+          "example": "IP",
           "member": "string",
           "name": "RealServerType",
           "required": true,
@@ -2152,6 +2165,7 @@
         {
           "default": "",
           "document": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。",
+          "example": "link-bjkpdum1",
           "member": "string",
           "name": "ProxyId",
           "required": false,
@@ -2160,6 +2174,7 @@
         {
           "default": "",
           "document": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。",
+          "example": "lg-bjkpdum1",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -2168,6 +2183,7 @@
         {
           "default": "",
           "document": "源站健康检查时间间隔，单位：秒。时间间隔取值在[5，300]之间。",
+          "example": "20",
           "member": "uint64",
           "name": "DelayLoop",
           "required": false,
@@ -2176,6 +2192,7 @@
         {
           "default": "",
           "document": "源站健康检查响应超时时间，单位：秒。超时时间取值在[2，60]之间。超时时间应小于健康检查时间间隔DelayLoop。",
+          "example": "20",
           "member": "uint64",
           "name": "ConnectTimeout",
           "required": false,
@@ -2184,6 +2201,7 @@
         {
           "default": "",
           "document": "源站端口列表，该参数仅支持v1版本监听器和通道组监听器。",
+          "example": "[443]",
           "member": "uint64",
           "name": "RealServerPorts",
           "required": false,
@@ -2192,8 +2210,18 @@
         {
           "default": "",
           "document": "监听器获取客户端 IP 的方式，0表示 TOA, 1表示Proxy Protocol",
+          "example": "0",
           "member": "int64",
           "name": "ClientIPMethod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启",
+          "example": "0",
+          "member": "int64",
+          "name": "FailoverSwitch",
           "required": false,
           "type": "int"
         }
@@ -2205,8 +2233,10 @@
       "members": [
         {
           "document": "返回监听器ID",
+          "example": "[\"listener-o0f3at99\"]",
           "member": "string",
           "name": "ListenerIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3182,6 +3212,7 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "listener-pbsgn7ej",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -3195,29 +3226,37 @@
       "members": [
         {
           "document": "可绑定源站的个数",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "源站信息列表",
+          "example": "无",
           "member": "RealServer",
           "name": "RealServerSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "已绑定源站的个数",
+          "example": "1",
           "member": "uint64",
           "name": "BindRealServerTotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "已绑定源站信息列表",
+          "example": "无",
           "member": "BindRealServer",
           "name": "BindRealServerSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4305,6 +4344,7 @@
         {
           "default": "",
           "document": "过滤条件，根据通道ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。",
+          "example": "link-hwera8lq",
           "member": "string",
           "name": "ProxyId",
           "required": false,
@@ -4313,6 +4353,7 @@
         {
           "default": "",
           "document": "过滤条件，根据监听器ID精确查询。\n当设置了ProxyId时，会检查该监听器是否归属于该通道。\n当设置了GroupId时，会检查该监听器是否归属于该通道组。",
+          "example": "listener-gkzl9e7t",
           "member": "string",
           "name": "ListenerId",
           "required": false,
@@ -4321,6 +4362,7 @@
         {
           "default": "",
           "document": "过滤条件，根据监听器名称精确查询",
+          "example": "test",
           "member": "string",
           "name": "ListenerName",
           "required": false,
@@ -4329,6 +4371,7 @@
         {
           "default": "",
           "document": "过滤条件，根据监听器端口精确查询",
+          "example": "443",
           "member": "uint64",
           "name": "Port",
           "required": false,
@@ -4337,6 +4380,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4345,6 +4389,7 @@
         {
           "default": "",
           "document": "限制数量，默认为20",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4353,6 +4398,7 @@
         {
           "default": "",
           "document": "过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。",
+          "example": "lg-bjkpdum1",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -4361,6 +4407,7 @@
         {
           "default": "",
           "document": "过滤条件，支持按照端口或监听器名称进行模糊查询，该参数不能与ListenerName和Port同时使用",
+          "example": "link-bjkpdum1",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -4374,15 +4421,19 @@
       "members": [
         {
           "document": "满足条件的监听器总个数",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "TCP监听器列表",
+          "example": "无",
           "member": "TCPListener",
           "name": "ListenerSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6045,6 +6096,7 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "listener-o0f3at99",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -6053,6 +6105,7 @@
         {
           "default": "",
           "document": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。",
+          "example": "lg-bjkpdum1",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -6061,6 +6114,7 @@
         {
           "default": "",
           "document": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。",
+          "example": "link-bjkpdum1",
           "member": "string",
           "name": "ProxyId",
           "required": false,
@@ -6069,6 +6123,7 @@
         {
           "default": "",
           "document": "监听器名称",
+          "example": "test10",
           "member": "string",
           "name": "ListenerName",
           "required": false,
@@ -6077,6 +6132,7 @@
         {
           "default": "",
           "document": "监听器源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。",
+          "example": "rr",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -6085,6 +6141,7 @@
         {
           "default": "",
           "document": "源站健康检查时间间隔，单位：秒。时间间隔取值在[5，300]之间。",
+          "example": "30",
           "member": "uint64",
           "name": "DelayLoop",
           "required": false,
@@ -6093,6 +6150,7 @@
         {
           "default": "",
           "document": "源站健康检查响应超时时间，单位：秒。超时时间取值在[2，60]之间。超时时间应小于健康检查时间间隔DelayLoop。",
+          "example": "20",
           "member": "uint64",
           "name": "ConnectTimeout",
           "required": false,
@@ -6101,8 +6159,18 @@
         {
           "default": "",
           "document": "是否开启健康检查，1开启，0关闭。",
+          "example": "1",
           "member": "uint64",
           "name": "HealthCheck",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "FailoverSwitch",
           "required": false,
           "type": "int"
         }
@@ -7000,11 +7068,12 @@
       "usage": "out"
     },
     "RealServerBindSetReq": {
-      "document": "RealServerBindSetReq",
+      "document": "绑定的源站信息",
       "members": [
         {
           "default": "",
           "document": "源站id",
+          "example": "rs-123456",
           "member": "string",
           "name": "RealServerId",
           "required": true,
@@ -7014,6 +7083,7 @@
         {
           "default": "",
           "document": "源站端口",
+          "example": "443",
           "member": "uint64",
           "name": "RealServerPort",
           "required": true,
@@ -7023,6 +7093,7 @@
         {
           "default": "",
           "document": "源站IP",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "RealServerIP",
           "required": true,
@@ -7032,10 +7103,21 @@
         {
           "default": "",
           "document": "源站权重",
+          "example": "1",
           "member": "uint64",
           "name": "RealServerWeight",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器",
+          "example": "master",
+          "member": "string",
+          "name": "RealServerFailoverRole",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7573,6 +7655,7 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "link-bjkpdum1",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -7582,6 +7665,7 @@
         {
           "default": "",
           "document": "监听器名称",
+          "example": "test",
           "member": "string",
           "name": "ListenerName",
           "required": true,
@@ -7591,6 +7675,7 @@
         {
           "default": "",
           "document": "监听器端口",
+          "example": "443",
           "member": "uint64",
           "name": "Port",
           "required": true,
@@ -7600,6 +7685,7 @@
         {
           "default": "",
           "document": "监听器转发源站端口，仅对版本为1.0的通道有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "332",
           "member": "uint64",
           "name": "RealServerPort",
           "required": true,
@@ -7609,6 +7695,7 @@
         {
           "default": "",
           "document": "监听器绑定源站类型",
+          "example": "IP",
           "member": "string",
           "name": "RealServerType",
           "required": true,
@@ -7618,6 +7705,7 @@
         {
           "default": "",
           "document": "监听器协议， TCP",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -7627,6 +7715,7 @@
         {
           "default": "",
           "document": "监听器状态，其中：\n0表示运行中；\n1表示创建中；\n2表示销毁中；\n3表示源站调整中；\n4表示配置变更中。",
+          "example": "1",
           "member": "uint64",
           "name": "ListenerStatus",
           "required": true,
@@ -7636,6 +7725,7 @@
         {
           "default": "",
           "document": "监听器源站访问策略，其中：\nrr表示轮询；\nwrr表示加权轮询；\nlc表示最小连接数。",
+          "example": "rr",
           "member": "string",
           "name": "Scheduler",
           "required": true,
@@ -7645,6 +7735,7 @@
         {
           "default": "",
           "document": "源站健康检查响应超时时间，单位：秒",
+          "example": "2",
           "member": "uint64",
           "name": "ConnectTimeout",
           "required": true,
@@ -7654,6 +7745,7 @@
         {
           "default": "",
           "document": "源站健康检查时间间隔，单位：秒",
+          "example": "5",
           "member": "uint64",
           "name": "DelayLoop",
           "required": true,
@@ -7663,6 +7755,7 @@
         {
           "default": "",
           "document": "监听器是否开启健康检查，其中：\n0表示关闭；\n1表示开启",
+          "example": "1",
           "member": "uint64",
           "name": "HealthCheck",
           "required": true,
@@ -7672,6 +7765,7 @@
         {
           "default": "",
           "document": "监听器绑定的源站状态， 其中：\n0表示异常；\n1表示正常。",
+          "example": "1",
           "member": "uint64",
           "name": "BindStatus",
           "required": true,
@@ -7681,6 +7775,7 @@
         {
           "default": "",
           "document": "监听器绑定的源站信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "BindRealServer",
           "name": "RealServerSet",
           "required": true,
@@ -7690,6 +7785,7 @@
         {
           "default": "",
           "document": "监听器创建时间，Unix时间戳",
+          "example": "1607071157",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
@@ -7699,6 +7795,7 @@
         {
           "default": "",
           "document": "监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "ClientIPMethod",
           "required": true,

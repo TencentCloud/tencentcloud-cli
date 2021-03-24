@@ -368,6 +368,14 @@
         "title": "修改产品信息"
       }
     ],
+    "ResetCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorage\n<公共请求参数>\n\n{\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "ResetCloudStorage"
+      }
+    ],
     "RetryDeviceFirmwareTask": [
       {
         "document": "",
@@ -382,6 +390,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetForwardAuth\n<公共请求参数>\n\n{\n    \"Skey\": \"xrnWgKu0fCz7q8JIQYFiNP-XpyaziljFvrQg4A*Cidc_\",\n    \"QueueType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMsg\": \"\",\n        \"RoleName\": \"ckafkaIoTCloud_QCSRole\",\n        \"RoleID\": 1724847,\n        \"RequestId\": \"6e85b1e5-6bbe-4731-8902-df7b6c308fda\",\n        \"QueueType\": 1,\n        \"Endpoint\": \"100011064235\",\n        \"Result\": 0\n    }\n}",
         "title": "设置转发权限"
+      }
+    ],
+    "TransferCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferCloudStorage\n<公共请求参数>\n\n{\n    \"ToDeviceName\": \"event_36502632_2\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "转移云存服务"
       }
     ],
     "UploadFirmware": [

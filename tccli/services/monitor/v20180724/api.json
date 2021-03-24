@@ -2371,7 +2371,7 @@
         },
         {
           "default": "",
-          "document": "起始时间，默认一天前的时间戳",
+          "document": "起始时间，默认一天前的时间戳。对应 FirstOccurTime，告警首次出现时间。",
           "example": "1611600000",
           "member": "int64",
           "name": "StartTime",
@@ -2380,7 +2380,7 @@
         },
         {
           "default": "",
-          "document": "结束时间，默认当前时间戳",
+          "document": "结束时间，默认当前时间戳。对应 FirstOccurTime，告警首次出现时间。",
           "example": "1611650000",
           "member": "int64",
           "name": "EndTime",
@@ -2904,7 +2904,7 @@
         },
         {
           "default": "",
-          "document": "是否未配置通知规则，1：未配置，0：配置",
+          "document": "传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。",
           "example": "1",
           "member": "int64",
           "name": "NotBindingNoticeRule",

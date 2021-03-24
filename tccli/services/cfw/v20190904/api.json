@@ -422,6 +422,7 @@
         {
           "default": "",
           "document": "创建规则数据",
+          "example": "无",
           "member": "SecurityGroupApiRuleData",
           "name": "Data",
           "required": true,
@@ -430,6 +431,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
+          "example": "1",
           "member": "uint64",
           "name": "Direction",
           "required": true,
@@ -437,7 +439,8 @@
         },
         {
           "default": "",
-          "document": "0：后插，1：前插，2：中插",
+          "document": "插入类型，0：后插，1：前插，2：中插",
+          "example": "0",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -446,6 +449,7 @@
         {
           "default": "",
           "document": "腾讯云地域的英文简写",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -459,8 +463,10 @@
       "members": [
         {
           "document": "状态值，0:添加成功，非0：添加失败",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -655,6 +661,7 @@
         {
           "default": "",
           "document": "所需要删除规则的ID",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -663,6 +670,7 @@
         {
           "default": "",
           "document": "腾讯云地域的英文简写",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -671,6 +679,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
+          "example": "0",
           "member": "uint64",
           "name": "Direction",
           "required": true,
@@ -679,6 +688,7 @@
         {
           "default": "",
           "document": "是否删除反向规则，0：否，1：是",
+          "example": "0",
           "member": "uint64",
           "name": "IsDelReverse",
           "required": false,
@@ -691,16 +701,20 @@
       "document": "DeleteSecurityGroupRule返回参数结构体",
       "members": [
         {
-          "document": "状态值",
+          "document": "状态值，0：成功，非0：失败",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回多余的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Info",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1092,6 +1106,7 @@
         {
           "default": "",
           "document": "0: 出站规则，1：入站规则",
+          "example": "1",
           "member": "uint64",
           "name": "Direction",
           "required": true,
@@ -1100,6 +1115,7 @@
         {
           "default": "",
           "document": "地域代码（例: ap-guangzhou),支持腾讯云全部地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -1108,6 +1124,7 @@
         {
           "default": "",
           "document": "搜索值",
+          "example": "无",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -1115,7 +1132,8 @@
         },
         {
           "default": "",
-          "document": "每页条数",
+          "document": "每页条数，默认为10",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1123,7 +1141,8 @@
         },
         {
           "default": "",
-          "document": "偏移值",
+          "document": "偏移值，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1131,7 +1150,8 @@
         },
         {
           "default": "",
-          "document": "'': 全部，'0'：筛选停用规则，'1'：筛选启用规则",
+          "document": "状态，'': 全部，'0'：筛选停用规则，'1'：筛选启用规则",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -1140,6 +1160,7 @@
         {
           "default": "",
           "document": "0: 不过滤，1：过滤掉正常规则，保留下发异常规则",
+          "example": "0",
           "member": "uint64",
           "name": "Filter",
           "required": false,
@@ -1153,29 +1174,37 @@
       "members": [
         {
           "document": "列表当前规则总条数",
+          "example": "0",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "安全组规则列表数据",
+          "example": "无",
           "member": "SecurityGroupListData",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "不算筛选条数的总条数",
+          "example": "0",
           "member": "uint64",
           "name": "AllTotal",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "访问控制规则全部启用/全部停用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Enable",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1676,6 +1705,7 @@
         {
           "default": "",
           "document": "列表规则状态，0：全部停用，1：全部启用",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -1684,6 +1714,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
+          "example": "1",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -1692,6 +1723,7 @@
         {
           "default": "",
           "document": "Edge ID值",
+          "example": "无",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -1699,7 +1731,8 @@
         },
         {
           "default": "",
-          "document": "NAT地域",
+          "document": "NAT地域, 腾讯云地域的英文简写",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -1713,8 +1746,10 @@
       "members": [
         {
           "document": "0: 修改成功, 其他: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

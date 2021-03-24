@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp ExportTasks --cli-unfold-argument  \
-    --TaskId 'c44c00fb-ab35-22e5-78e8-9a8a910d96f5'
+    --TaskId c44c00fb-ab35-22e5-78e8-9a8a910d96f5
 ```
 
 Output: 

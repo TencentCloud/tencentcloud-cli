@@ -6727,6 +6727,7 @@
         {
           "default": "",
           "document": "任务ID",
+          "example": "1",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6740,15 +6741,19 @@
       "members": [
         {
           "document": "PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况",
+          "example": "1",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "下载链接",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8027,6 +8032,7 @@
         {
           "default": "",
           "document": "检测模式 0 全盘检测  1快速检测",
+          "example": "1",
           "member": "uint64",
           "name": "CheckPattern",
           "required": true,
@@ -8034,7 +8040,8 @@
         },
         {
           "default": "",
-          "document": "检测周期 开始时间",
+          "document": "检测周期 开始时间，如：02:00:00",
+          "example": "xxx",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -8042,7 +8049,8 @@
         },
         {
           "default": "",
-          "document": "检测周期 超时结束时间",
+          "document": "检测周期 超时结束时间，如：04:00:00",
+          "example": "xxx",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -8051,6 +8059,7 @@
         {
           "default": "",
           "document": "是否全部服务器 1 全部 2 自选",
+          "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
           "required": true,
@@ -8059,6 +8068,7 @@
         {
           "default": "",
           "document": "定时检测开关 0 关闭 1开启",
+          "example": "1",
           "member": "uint64",
           "name": "EnableScan",
           "required": true,
@@ -8067,6 +8077,7 @@
         {
           "default": "",
           "document": "监控模式 0 标准 1深度",
+          "example": "1",
           "member": "uint64",
           "name": "MonitoringPattern",
           "required": true,
@@ -8075,6 +8086,7 @@
         {
           "default": "",
           "document": "扫描周期 默认每天 1",
+          "example": "1",
           "member": "uint64",
           "name": "Cycle",
           "required": true,
@@ -8083,6 +8095,7 @@
         {
           "default": "",
           "document": "实时监控 0 关闭 1开启",
+          "example": "1",
           "member": "uint64",
           "name": "RealTimeMonitoring",
           "required": true,
@@ -8091,6 +8104,7 @@
         {
           "default": "",
           "document": "自选服务器时必须 主机quuid的string数组",
+          "example": "[]",
           "member": "string",
           "name": "QuuidList",
           "required": false,

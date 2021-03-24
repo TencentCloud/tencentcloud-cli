@@ -10,7 +10,8 @@ tccli gaap BindListenerRealServers --cli-unfold-argument  \
     --RealServerBindSet.0.RealServerId rs-04v3s12t \
     --RealServerBindSet.0.RealServerIP 119.28.69.101 \
     --RealServerBindSet.0.RealServerPort 80 \
-    --RealServerBindSet.0.RealServerWeight 1
+    --RealServerBindSet.0.RealServerWeight 1 \
+    --RealServerBindSet.0.RealServerFailoverRole master
 ```
 
 Output: 

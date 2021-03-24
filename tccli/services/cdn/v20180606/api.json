@@ -1952,6 +1952,7 @@
         {
           "default": "",
           "document": "缓存配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -1961,6 +1962,7 @@
         {
           "default": "",
           "document": "缓存过期时间设置\n单位为秒，最大可设置为 365 天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
           "member": "int64",
           "name": "CacheTime",
           "required": true,
@@ -1970,6 +1972,7 @@
         {
           "default": "",
           "document": "高级缓存过期配置，开启时会对比源站返回的 max-age 值与 CacheRules 中设置的缓存过期时间，取最小值在节点进行缓存\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "CompareMaxAge",
           "required": true,
@@ -1979,6 +1982,7 @@
         {
           "default": "",
           "document": "强制缓存\non：开启\noff：关闭\n默认为关闭状态，开启后，源站返回的 no-store、no-cache 资源，也将按照 CacheRules 规则进行缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "IgnoreCacheControl",
           "required": true,
@@ -1987,7 +1991,8 @@
         },
         {
           "default": "",
-          "document": "忽略源站的 Set-Cookie 头部\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当源站返回Set-Cookie头部时，节点是否缓存该头部及body\non：开启，不缓存该头部及body\noff：关闭，遵循用户自定义的节点缓存规则\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "IgnoreSetCookie",
           "required": true,
@@ -3733,6 +3738,7 @@
         {
           "default": "",
           "document": "分页查询偏移量，默认为 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3741,6 +3747,7 @@
         {
           "default": "",
           "document": "分页查询限制数目，默认为 100，最大可设置为 1000",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3749,6 +3756,7 @@
         {
           "default": "",
           "document": "查询条件过滤器，复杂类型",
+          "example": "无",
           "member": "DomainFilter",
           "name": "Filters",
           "required": false,
@@ -3757,6 +3765,7 @@
         {
           "default": "",
           "document": "排序规则",
+          "example": "无",
           "member": "Sort",
           "name": "Sort",
           "required": false,
@@ -3770,15 +3779,19 @@
       "members": [
         {
           "document": "域名列表",
+          "example": "无",
           "member": "DetailDomain",
           "name": "Domains",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合查询条件的域名总数\n用于分页查询",
+          "example": "201",
           "member": "int64",
           "name": "TotalNumber",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9038,7 +9051,8 @@
       "members": [
         {
           "default": "",
-          "document": "CacheType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\ndefault 时填充 \"no max-age\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CacheType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
           "member": "string",
           "name": "RulePaths",
           "required": true,
@@ -9047,7 +9061,8 @@
         },
         {
           "default": "",
-          "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页\ndefault: 源站无max-age时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
           "member": "string",
           "name": "RuleType",
           "required": true,
@@ -9057,6 +9072,7 @@
         {
           "default": "",
           "document": "缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Cache\":{\"CacheTime\":86400,\"CompareMaxAge\":\"off\",\"IgnoreCacheCo",
           "member": "RuleCacheConfig",
           "name": "CacheConfig",
           "required": true,

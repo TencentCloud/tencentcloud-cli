@@ -6884,6 +6884,7 @@
         {
           "default": "",
           "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）",
+          "example": "bgpip",
           "member": "string",
           "name": "Business",
           "required": true,
@@ -6892,6 +6893,7 @@
         {
           "default": "",
           "document": "地域码搜索，可选，当不指定地域时空数组，当指定地域时，填地域码。例如：[\"gz\", \"sh\"]",
+          "example": "gz",
           "member": "string",
           "name": "RegionList",
           "required": false,
@@ -6900,6 +6902,7 @@
         {
           "default": "",
           "document": "线路搜索，可选，只有当获取高防IP资源列表是可以选填，取值为[1（BGP线路），2（南京电信），3（南京联通），99（第三方合作线路）]，当获取其他产品时请填空数组；",
+          "example": "1",
           "member": "uint64",
           "name": "Line",
           "required": false,
@@ -6908,6 +6911,7 @@
         {
           "default": "",
           "document": "资源ID搜索，可选，当不为空数组时表示获取指定资源的资源列表；",
+          "example": "无",
           "member": "string",
           "name": "IdList",
           "required": false,
@@ -6916,6 +6920,7 @@
         {
           "default": "",
           "document": "资源名称搜索，可选，当不为空字符串时表示按名称搜索资源；",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6923,7 +6928,8 @@
         },
         {
           "default": "",
-          "document": "IP搜索列表，可选，当不为空时表示安装IP搜索资源；",
+          "document": "IP搜索列表，可选，当不为空时表示按照IP搜索资源；",
+          "example": "无",
           "member": "string",
           "name": "IpList",
           "required": false,
@@ -6932,6 +6938,7 @@
         {
           "default": "",
           "document": "资源状态搜索列表，可选，取值为[0（运行中）, 1（清洗中）, 2（封堵中）]，当填空数组时不进行状态搜索；",
+          "example": "无",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -6940,6 +6947,7 @@
         {
           "default": "",
           "document": "即将到期搜索；可选，取值为[0（不搜索），1（搜索即将到期的资源）]",
+          "example": "无",
           "member": "uint64",
           "name": "Expire",
           "required": false,
@@ -6948,6 +6956,7 @@
         {
           "default": "",
           "document": "排序字段，可选",
+          "example": "无",
           "member": "OrderBy",
           "name": "OderBy",
           "required": false,
@@ -6956,6 +6965,7 @@
         {
           "default": "",
           "document": "一页条数，填0表示不分页",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6964,6 +6974,7 @@
         {
           "default": "",
           "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6972,6 +6983,7 @@
         {
           "default": "",
           "document": "高防IP专业版资源的CNAME，可选，只对高防IP专业版资源列表有效；",
+          "example": "无",
           "member": "string",
           "name": "CName",
           "required": false,
@@ -6980,6 +6992,7 @@
         {
           "default": "",
           "document": "高防IP专业版资源的域名，可选，只对高防IP专业版资源列表有效；",
+          "example": "无",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -6993,22 +7006,28 @@
       "members": [
         {
           "document": "总记录数",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "资源记录列表，返回Key值说明：\n\"Key\": \"CreateTime\" 表示资源实例购买时间\n\"Key\": \"Region\" 表示资源实例的地域\n\"Key\": \"BoundIP\" 表示独享包实例绑定的IP\n\"Key\": \"Id\" 表示资源实例的ID\n\"Key\": \"CCEnabled\" 表示资源实例的CC防护开关状态\n\"Key\": \"DDoSThreshold\" 表示资源实例的DDoS的清洗阈值\t\n\"Key\": \"BoundStatus\" 表示独享包或共享包实例的绑定IP操作状态(绑定中或绑定完成)\n\"Key\": \"Type\" 此字段弃用\n\"Key\": \"ElasticLimit\" 表示资源实例的弹性防护值\n\"Key\": \"DDoSAI\" 表示资源实例的DDoS AI防护开关\n\"Key\": \"Bandwidth\" 表示资源实例的保底防护值\n\"Key\": \"OverloadCount\" 表示资源实例受到超过弹性防护值的次数\n\"Key\": \"Status\" 表示资源实例的状态(idle:运行中, attacking:攻击中, blocking:封堵中, isolate:隔离中)\n\"Key\": \"Lbid\" 此字段弃用\n\"Key\": \"ShowFlag\" 此字段弃用\n\"Key\": \"Expire\" 表示资源实例的过期时间\n\"Key\": \"CCThreshold\" 表示资源实例的CC防护触发阈值\n\"Key\": \"AutoRenewFlag\" 表示资源实例的自动续费是否开启\n\"Key\": \"IspCode\" 表示独享包或共享包的线路(0-电信, 1-联通, 2-移动, 5-BGP)\n\"Key\": \"PackType\" 表示套餐包类型\n\"Key\": \"PackId\" 表示套餐包ID\n\"Key\": \"Name\" 表示资源实例的名称\n\"Key\": \"Locked\" 此字段弃用\n\"Key\": \"IpDDoSLevel\" 表示资源实例的防护等级(low-宽松, middle-正常, high-严格)\n\"Key\": \"DefendStatus\" 表示资源实例的DDoS防护状态(防护开启或临时关闭)\n\"Key\": \"UndefendExpire\" 表示资源实例的DDoS防护临时关闭结束时间\n\"Key\": \"Tgw\" 表示资源实例是否是新资源",
+          "document": "资源记录列表，返回Key值说明：\n\"Key\": \"CreateTime\" 表示资源实例购买时间\n\"Key\": \"Region\" 表示资源实例的地域\n\"Key\": \"BoundIP\" 表示独享包实例绑定的IP\n\"Key\": \"Id\" 表示资源实例的ID\n\"Key\": \"CCEnabled\" 表示资源实例的CC防护开关状态\n\"Key\": \"DDoSThreshold\" 表示资源实例的DDoS的清洗阈值\t\n\"Key\": \"BoundStatus\" 表示独享包或共享包实例的绑定IP操作状态(绑定中或绑定完成)\n\"Key\": \"Type\" 此字段弃用\n\"Key\": \"ElasticLimit\" 表示资源实例的弹性防护值\n\"Key\": \"DDoSAI\" 表示资源实例的DDoS AI防护开关\n\"Key\": \"OverloadCount\" 表示资源实例受到超过弹性防护值的次数\n\"Key\": \"Status\" 表示资源实例的状态(idle:运行中, attacking:攻击中, blocking:封堵中, isolate:隔离中)\n\"Key\": \"Lbid\" 此字段弃用\n\"Key\": \"ShowFlag\" 此字段弃用\n\"Key\": \"Expire\" 表示资源实例的过期时间\n\"Key\": \"CCThreshold\" 表示资源实例的CC防护触发阈值\n\"Key\": \"AutoRenewFlag\" 表示资源实例的自动续费是否开启\n\"Key\": \"IspCode\" 表示独享包或共享包的线路(0-电信, 1-联通, 2-移动, 5-BGP)\n\"Key\": \"PackType\" 表示套餐包类型\n\"Key\": \"PackId\" 表示套餐包ID\n\"Key\": \"Name\" 表示资源实例的名称\n\"Key\": \"Locked\" 此字段弃用\n\"Key\": \"IpDDoSLevel\" 表示资源实例的防护等级(low-宽松, middle-正常, high-严格)\n\"Key\": \"DefendStatus\" 表示资源实例的DDoS防护状态(防护开启或临时关闭)\n\"Key\": \"UndefendExpire\" 表示资源实例的DDoS防护临时关闭结束时间\n\"Key\": \"Tgw\" 表示资源实例是否是新资源\n\"Key\": \"Bandwidth\" 表示资源实例的保底防护值，只针对高防包和高防IP\n\"Key\": \"DdosMax\" 表示资源实例的保底防护值，只针对高防IP专业版\n\"Key\": \"GFBandwidth\" 表示资源实例的保底业务带宽，只针对高防IP\n\"Key\": \"ServiceBandwidth\" 表示资源实例的保底业务带宽，只针对高防IP专业版",
+          "example": "无",
           "member": "KeyValueRecord",
           "name": "ServicePacks",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）",
+          "example": "bgpip",
           "member": "string",
           "name": "Business",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

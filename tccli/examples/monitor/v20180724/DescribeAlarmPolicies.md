@@ -24,6 +24,8 @@ Output:
                 "Remark": "For-Test-2",
                 "MonitorType": "MT_QCE",
                 "Enable": 1,
+                "RuleType": "STATIC",
+                "TagInstances": null,
                 "IsDefault": 0,
                 "ProjectId": 0,
                 "ProjectName": "",
@@ -135,7 +137,7 @@ Output:
             }
         ],
         "RequestId": "p7gicv4fb-4euztbaaczrsj4vz-s28g-",
-        "TotalCount": 2
+        "TotalCount": 1
     }
 }
 ```

@@ -52,7 +52,8 @@ Output:
                 "AlarmType": "METRIC",
                 "OriginId": "1278441",
                 "Region": "test-master",
-                "PolicyExists": 1
+                "PolicyExists": 1,
+                "MetricsInfo": null
             },
             {
                 "AlarmId": "779d129a-40a1-4acf-b226-d9c2ae26e63b",
@@ -81,7 +82,8 @@ Output:
                 "AlarmType": "METRIC",
                 "OriginId": "1276973",
                 "Region": "test-master",
-                "PolicyExists": 1
+                "PolicyExists": 1,
+                "MetricsInfo": null
             }
         ],
         "RequestId": "4bzogxhgsgs95hgmxne5ei6y9jjxvi1f",

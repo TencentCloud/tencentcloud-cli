@@ -2416,6 +2416,7 @@
         {
           "default": "",
           "document": "数据库引擎名称，本接口取值：mariadb。",
+          "example": "mariadb",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -2423,7 +2424,8 @@
         },
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
+          "example": "tdsql-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2437,10 +2439,30 @@
       "members": [
         {
           "document": "安全组详情。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "实例VIP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -276,6 +276,12 @@
       "name": "修改产品信息",
       "output": "ModifyProductResponse"
     },
+    "ResetCloudStorage": {
+      "document": "重置云存服务",
+      "input": "ResetCloudStorageRequest",
+      "name": "重置云存服务",
+      "output": "ResetCloudStorageResponse"
+    },
     "RetryDeviceFirmwareTask": {
       "document": "本接口用于重试设备升级任务",
       "input": "RetryDeviceFirmwareTaskRequest",
@@ -287,6 +293,12 @@
       "input": "SetForwardAuthRequest",
       "name": "设置转发权限",
       "output": "SetForwardAuthResponse"
+    },
+    "TransferCloudStorage": {
+      "document": "转移云存服务",
+      "input": "TransferCloudStorageRequest",
+      "name": "转移云存服务",
+      "output": "TransferCloudStorageResponse"
     },
     "UploadFirmware": {
       "document": "本接口（UploadFirmware）用于上传设备固件信息 ",
@@ -4382,6 +4394,42 @@
       ],
       "usage": "out"
     },
+    "ResetCloudStorageRequest": {
+      "document": "ResetCloudStorage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetCloudStorageResponse": {
+      "document": "ResetCloudStorage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RetryDeviceFirmwareTaskRequest": {
       "document": "RetryDeviceFirmwareTask请求参数结构体",
       "members": [
@@ -4577,6 +4625,51 @@
         }
       ],
       "usage": "out"
+    },
+    "TransferCloudStorageRequest": {
+      "document": "TransferCloudStorage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已开通云存的设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "未开通云存的设备名称",
+          "example": "event_36502632_2",
+          "member": "string",
+          "name": "ToDeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferCloudStorageResponse": {
+      "document": "TransferCloudStorage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UploadFirmwareRequest": {
       "document": "UploadFirmware请求参数结构体",

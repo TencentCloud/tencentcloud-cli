@@ -2056,6 +2056,7 @@
         {
           "default": "",
           "document": "数据库引擎名称，本接口取值：dcdb。",
+          "example": "dcdb",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -2064,6 +2065,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "tdsqlshard-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2077,10 +2079,30 @@
       "members": [
         {
           "document": "安全组详情。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "实例VIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2097,6 +2119,7 @@
         {
           "default": "",
           "document": "待修改同步模式的实例ID。形如：dcdbt-ow728lmc。",
+          "example": "dcdbt-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2110,15 +2133,28 @@
       "members": [
         {
           "document": "同步模式：0 异步，1 强同步， 2 强同步可退化",
+          "example": "0",
           "member": "int64",
           "name": "SyncMode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "是否有修改流程在执行中：1 是， 0 否。",
+          "example": "1",
           "member": "int64",
           "name": "IsModifying",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前复制方式，0 异步，1 同步",
+          "example": "0",
+          "member": "int64",
+          "name": "CurrentSyncMode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
