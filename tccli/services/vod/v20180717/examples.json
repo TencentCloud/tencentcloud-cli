@@ -592,6 +592,14 @@
         "title": "获取素材样本列表"
       }
     ],
+    "DescribePrepaidProducts": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribePrepaidProducts\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProductInstanceSet\": [\n            {\n                \"ProductInstanceId\": \"50011-251007502-27891\",\n                \"ProductType\": \"ResourcePackage\",\n                \"StartTime\": \"2019-02-23T16:00:00Z\",\n                \"ExpireTime\": \"2020-02-23T16:01:00Z\",\n                \"LastConsumeDate\": \"2020-02-22T16:00:00Z\",\n                \"BindStatus\": 0,\n                \"ProductInstanceStatus\": \"Effective\",\n                \"ProductInstanceResourceSet\": [\n                    {\n                        \"ResourceType\": \"Review\",\n                        \"Amount\": 18000,\n                        \"Left\": 6376\n                    }\n                ],\n                \"RefundStatus\": \"Denied\"\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "查询购买的预付费商品列表"
+      }
+    ],
     "DescribeProcedureTemplates": [
       {
         "document": "查询名为“我的任务流A”的任务流模板的详情",

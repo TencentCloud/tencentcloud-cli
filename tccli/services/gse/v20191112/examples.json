@@ -184,6 +184,14 @@
         "title": "服务器舰队安全组信息查询"
       }
     ],
+    "DescribeFleetRelatedResources": [
+      {
+        "document": "删除服务器舰队时，可先访问该接口获取与服务器舰队关联的资源",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeFleetRelatedResources\n&FleetId=fleet-qp3g3caa-nkeekxw6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2140e503-13cc-4249-af0f-b6ae0682ca18\",\n        \"Resources\": [\n            {\n                \"ResourceId\": \"alias-qh85lwj6-k4bfes0u\",\n                \"ResourceRegion\": \"ap-shanghai\",\n                \"Type\": \"ALIAS\"\n            },\n            {\n                \"ResourceId\": \"kongtest\",\n                \"ResourceRegion\": \"ap-shanghai\",\n                \"Type\": \"QUEUE\"\n            },\n            {\n                \"ResourceId\": \"kongtest\",\n                \"ResourceRegion\": \"na-siliconvalley\",\n                \"Type\": \"QUEUE\"\n            }\n        ]\n    }\n}",
+        "title": "获取服务器舰队关联的资源"
+      }
+    ],
     "DescribeFleetStatisticDetails": [
       {
         "document": "",
@@ -334,6 +342,14 @@
         "input": "https://gse.tencentcloudapi.com/?Action=DetachCcnInstances\n&FleetId=fleet-qp3g3caa-ax4fq2wi\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1591756528815085354\"\n    }\n}",
         "title": "解关联云联网实例"
+      }
+    ],
+    "GetGameServerInstanceLogUrl": [
+      {
+        "document": "获取游戏实例日志URL",
+        "input": "https://gse.tencentcloudapi.com/?Action=GetGameServerInstanceLogUrl\n&FleetId=fleet-qp3g3ffn-rwh0v05d\n&InstanceId=ins-93lqcfq0\n&ServerIp=21.3.65.11\n&Offset=0\n&Size=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HasNext\": true,\n        \"Total\": 11,\n        \"PresignedUrls\": [\n            \"http://test/url-001\",\n            \"http://test/url-002\",\n            \"http://test/url-003\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取游戏实例日志URL"
       }
     ],
     "GetGameServerSessionLogUrl": [

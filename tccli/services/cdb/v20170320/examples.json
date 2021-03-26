@@ -759,13 +759,13 @@
     "ModifyRoGroupInfo": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyRoGroupInfo\r\n&RoGroupId=cdbrg-iup41a4t\r\n&RoGroupInfo.RoOfflineDelay=1\r\n&RoGroupInfo.RoMaxDelayTime=10\r\n&RoGroupInfo.MinRoInGroup=1\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyRoGroupInfo\n&RoGroupId=cdbrg-iup41a4t\n&RoGroupInfo.RoOfflineDelay=1\n&RoGroupInfo.RoMaxDelayTime=10\n&RoGroupInfo.MinRoInGroup=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "设置RO组的延迟剔除策略"
       },
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyRoGroupInfo\r\n&RoGroupId=cdbrg-iup41a4t\r\n&RoGroupInfo.WeightMode=custom\r\n&RoWeightValues.0.InstanceId=cdbr0-iup41a4t\r\n&RoWeightValues.0.Weight=30\r\n&RoWeightValues.1.InstanceId=cdbr0-test1234\r\n&RoWeightValues.1.Weight=70\r\n&IsBalanceRoLoad=1\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyRoGroupInfo\n&RoGroupId=cdbrg-iup41a4t\n&RoGroupInfo.WeightMode=custom\n&RoWeightValues.0.InstanceId=cdbr0-iup41a4t\n&RoWeightValues.0.Weight=30\n&RoWeightValues.1.InstanceId=cdbr0-test1234\n&RoWeightValues.1.Weight=70\n&IsBalanceRoLoad=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FBQWER\"\n    }\n}",
         "title": "重新均衡RO组内实例的权重"
       }

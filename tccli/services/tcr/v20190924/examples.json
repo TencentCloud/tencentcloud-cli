@@ -313,7 +313,7 @@
     "DescribeImages": [
       {
         "document": "查询指定镜像仓库内全部容器镜像信息，获取镜像版本列表",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeImages\r\n&RegistryId=tcr-okmj78\r\n&NamespaceName=team-01\r\n&RepositoryName=nginx\r\n&Limit=20\r\n&Offset=0\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeImages\n&RegistryId=tcr-okmj78\n&NamespaceName=team-01\n&RepositoryName=nginx\n&Limit=20\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fdc859a-00fb-4ae4-a989-42eb387c6683\",\n        \"ImageInfoList\": [\n            {\n                \"Digest\": \"sha256:ca30d8e9449eae19367f542aeb6e39764e94e7c34fca4277b9b7c77ba93eaa6c\",\n                \"ImageVersion\": \"2.0\",\n                \"Size\": 63923200,\n                \"UpdateTime\": \"2020-02-14T06:45:40.40753972Z\"\n            },\n            {\n                \"Digest\": \"sha256:0925d086715714114c1988f7c947db94064fd385e171a63c07730f1fa014e6f9\",\n                \"ImageVersion\": \"1.0\",\n                \"Size\": 26733036,\n                \"UpdateTime\": \"2020-02-14T06:45:40.40753972Z\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询容器镜像信息"
       }
@@ -484,6 +484,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ManageInternalEndpoint\n&RegistryId=tcr-xxx\n&RegionId=5\n&Operation=Create\n&VpcId=xxx\n&SubnetId=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"XXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "管理内网接入"
+      }
+    ],
+    "ManageReplication": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ManageReplication\n&SourceRegistryId=tcr-xxx\n&DestinationRegistryId=tcr-yyy\n&DestinationRegionId=9\n&Rule.Override=true\n&Rule.DestNamespace=test\n&Rule.Name=test\n&Rule.Filters.0.Type=tag\n&Rule.Filters.0.Value=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "管理实例同步规则"
       }
     ],
     "ModifyApplicationTriggerPersonal": [

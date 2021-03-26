@@ -5,7 +5,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"DatabaseInfo\": {\n        \"Comment\": \"xx\",\n        \"Properties\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"DatabaseName\": \"xx\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "demon-1"
+        "title": "生成建库SQL语句"
       }
     ],
     "CreateScript": [
@@ -82,10 +82,10 @@
     ],
     "DescribeViews": [
       {
-        "document": "查询数据表列表。",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeViews\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"database-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ViewList\": [\n            {\n                \"ModifiedTime\": \"xx\",\n                \"ViewBaseInfo\": {\n                    \"ViewName\": \"xx\",\n                    \"DatabaseName\": \"xx\"\n                },\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Columns\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "示例1"
+        "title": "查询视图列表"
       }
     ]
   },

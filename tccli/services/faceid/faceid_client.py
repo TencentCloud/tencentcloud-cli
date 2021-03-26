@@ -113,6 +113,31 @@ def doBankCard4EVerification(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDetectAuth(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetectAuthRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DetectAuth(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetFaceIdToken(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -313,6 +338,31 @@ def doImageRecognition(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetEidToken(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetEidTokenRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.GetEidToken(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPhoneVerification(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -488,7 +538,7 @@ def doMobileNetworkTimeVerification(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDetectAuth(args, parsed_globals):
+def doGetEidResult(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -502,9 +552,9 @@ def doDetectAuth(args, parsed_globals):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetectAuthRequest()
+    model = models.GetEidResultRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DetectAuth(model)
+    rsp = client.GetEidResult(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -653,6 +703,7 @@ ACTION_MAP = {
     "GetActionSequence": doGetActionSequence,
     "LivenessCompare": doLivenessCompare,
     "BankCard4EVerification": doBankCard4EVerification,
+    "DetectAuth": doDetectAuth,
     "GetFaceIdToken": doGetFaceIdToken,
     "CheckPhoneAndName": doCheckPhoneAndName,
     "BankCardVerification": doBankCardVerification,
@@ -661,6 +712,7 @@ ACTION_MAP = {
     "IdCardOCRVerification": doIdCardOCRVerification,
     "GetFaceIdResult": doGetFaceIdResult,
     "ImageRecognition": doImageRecognition,
+    "GetEidToken": doGetEidToken,
     "PhoneVerification": doPhoneVerification,
     "GetDetectInfo": doGetDetectInfo,
     "MinorsVerification": doMinorsVerification,
@@ -668,7 +720,7 @@ ACTION_MAP = {
     "LivenessRecognition": doLivenessRecognition,
     "IdCardVerification": doIdCardVerification,
     "MobileNetworkTimeVerification": doMobileNetworkTimeVerification,
-    "DetectAuth": doDetectAuth,
+    "GetEidResult": doGetEidResult,
     "GetDetectInfoEnhanced": doGetDetectInfoEnhanced,
     "CheckBankCardInformation": doCheckBankCardInformation,
     "MobileStatus": doMobileStatus,

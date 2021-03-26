@@ -43,9 +43,9 @@
       "output": "DescribeEcdnStatisticsResponse"
     },
     "DescribeIpStatus": {
-      "document": "DescribeIpStatus 用于查询域名所在加速平台的所有节点明细。",
+      "document": "DescribeIpStatus 用于查询域名所在加速平台的所有节点信息, 如果您的源站有白名单设置,可以通过本接口获取ECDN服务的节点IP进行加白, 本接口为内测接口,请联系腾讯云工程师开白。",
       "input": "DescribeIpStatusRequest",
-      "name": "查询域名节点状态",
+      "name": "查询平台服务节点IP",
       "output": "DescribeIpStatusResponse"
     },
     "DescribePurgeQuota": {
@@ -756,6 +756,7 @@
         {
           "default": "",
           "document": "加速域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -764,6 +765,7 @@
         {
           "default": "",
           "document": "查询区域：\nmainland: 国内节点\noverseas: 海外节点\nglobal: 全球节点",
+          "example": "global",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -777,15 +779,19 @@
       "members": [
         {
           "document": "节点列表",
+          "example": "无",
           "member": "IpStatus",
           "name": "Ips",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "节点总个数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2286,7 +2292,8 @@
       "members": [
         {
           "default": "",
-          "document": "WebSocket配置开关，on或off。",
+          "document": "WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.\n\n* WebSocket 为内测功能,如需使用,请联系腾讯云工程师开白.",
+          "example": "off",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -2296,6 +2303,7 @@
         {
           "default": "",
           "document": "设置超时时间，单位为秒，最大超时时间65秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
           "member": "int64",
           "name": "Timeout",
           "required": false,

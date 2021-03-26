@@ -138,6 +138,12 @@
       "name": "服务器舰队安全组信息查询",
       "output": "DescribeFleetPortSettingsResponse"
     },
+    "DescribeFleetRelatedResources": {
+      "document": "本接口（DescribeFleetRelatedResources）用于获取与游戏服务器舰队关联的资源信息，如别名、队列",
+      "input": "DescribeFleetRelatedResourcesRequest",
+      "name": "获取与游戏服务器舰队关联的资源信息",
+      "output": "DescribeFleetRelatedResourcesResponse"
+    },
     "DescribeFleetStatisticDetails": {
       "document": "本接口（DescribeFleetStatisticDetails）用于查询服务部署统计详情。",
       "input": "DescribeFleetStatisticDetailsRequest",
@@ -251,6 +257,12 @@
       "input": "DetachCcnInstancesRequest",
       "name": "解关联云联网实例",
       "output": "DetachCcnInstancesResponse"
+    },
+    "GetGameServerInstanceLogUrl": {
+      "document": "本接口用于获取游戏服务器实例的日志URL。",
+      "input": "GetGameServerInstanceLogUrlRequest",
+      "name": "获取游戏服务器会话的日志URL",
+      "output": "GetGameServerInstanceLogUrlResponse"
     },
     "GetGameServerSessionLogUrl": {
       "document": "本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL。",
@@ -761,6 +773,32 @@
       ],
       "type": "object"
     },
+    "CcnInfo": {
+      "document": "云联网相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "云联网所属账号",
+          "example": "13734*",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云联网id",
+          "example": "ccn-f0jyb*",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CcnInstanceSets": {
       "document": "云联网实例信息",
       "members": [
@@ -934,8 +972,8 @@
         },
         {
           "default": "",
-          "document": "是否选择云联网：CCN_SELECTED 或者 CCN_UNSELECTED；默认是 CCN_UNSELECTED",
-          "example": "CCN_SELECTED",
+          "document": "是否选择云联网：CCN_SELECTED_BEFORE_CREATE（创建前关联）， CCN_SELECTED_AFTER_CREATE（创建后关联）或者 CCN_UNSELECTED（不关联）；默认是 CCN_UNSELECTED",
+          "example": "CCN_UNSELECTED",
           "member": "string",
           "name": "SelectedCcnType",
           "required": false,
@@ -976,6 +1014,15 @@
           "name": "SelectedTimerType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网信息，包含对应的账号信息及所属id",
+          "example": "无",
+          "member": "CcnInfo",
+          "name": "CcnInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1394,6 +1441,15 @@
           "example": "无",
           "member": "DiskInfo",
           "name": "DataDiskInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "云联网信息，包含对应的账号信息及所属id",
+          "example": "无",
+          "member": "CcnInfo",
+          "name": "CcnInfos",
           "required": false,
           "type": "list"
         }
@@ -2205,6 +2261,42 @@
           "document": "安全组信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "InboundPermission",
           "name": "InboundPermissions",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetRelatedResourcesRequest": {
+      "document": "DescribeFleetRelatedResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器舰队 Id",
+          "example": "fleet-qp3g3caa-nkeekxw6",
+          "member": "string",
+          "name": "FleetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetRelatedResourcesResponse": {
+      "document": "DescribeFleetRelatedResources返回参数结构体",
+      "members": [
+        {
+          "document": "与服务器舰队关联的资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FleetRelatedResource",
+          "name": "Resources",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3464,6 +3556,7 @@
         {
           "default": "",
           "document": "生成包 Id",
+          "example": "无",
           "member": "string",
           "name": "AssetId",
           "required": true,
@@ -3473,6 +3566,7 @@
         {
           "default": "",
           "document": "创建服务器舰队时间",
+          "example": "无",
           "member": "string",
           "name": "CreationTime",
           "required": true,
@@ -3482,6 +3576,7 @@
         {
           "default": "",
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -3491,6 +3586,7 @@
         {
           "default": "",
           "document": "服务器舰队资源描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "FleetArn",
           "required": true,
@@ -3500,6 +3596,7 @@
         {
           "default": "",
           "document": "服务器舰队 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -3509,6 +3606,7 @@
         {
           "default": "",
           "document": "服务器舰队类型，目前只支持ON_DEMAND\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "FleetType",
           "required": true,
@@ -3518,6 +3616,7 @@
         {
           "default": "",
           "document": "服务器类型，例如S5.LARGE8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -3527,6 +3626,7 @@
         {
           "default": "",
           "document": "服务器舰队名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3536,6 +3636,7 @@
         {
           "default": "",
           "document": "游戏会话保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NewGameServerSessionProtectionPolicy",
           "required": true,
@@ -3545,6 +3646,7 @@
         {
           "default": "",
           "document": "操作系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "OperatingSystem",
           "required": true,
@@ -3554,6 +3656,7 @@
         {
           "default": "",
           "document": "资源创建限制策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResourceCreationLimitPolicy",
           "name": "ResourceCreationLimitPolicy",
           "required": true,
@@ -3563,6 +3666,7 @@
         {
           "default": "",
           "document": "状态：新建、下载中、验证中、生成中、激活中、活跃、异常、删除中、结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3572,6 +3676,7 @@
         {
           "default": "",
           "document": "服务器舰队停止状态，为空时表示自动扩缩容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "StoppedActions",
           "required": true,
@@ -3581,6 +3686,7 @@
         {
           "default": "",
           "document": "服务器舰队终止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TerminationTime",
           "required": true,
@@ -3590,6 +3696,7 @@
         {
           "default": "",
           "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "GameServerSessionProtectionTimeLimit",
           "required": true,
@@ -3599,6 +3706,7 @@
         {
           "default": "",
           "document": "计费状态：未开通、已开通、异常、欠费隔离、销毁、解冻\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "BillingStatus",
           "required": true,
@@ -3608,6 +3716,7 @@
         {
           "default": "",
           "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -3617,6 +3726,7 @@
         {
           "default": "",
           "document": "数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DiskInfo",
           "name": "DataDiskInfo",
           "required": true,
@@ -3626,10 +3736,21 @@
         {
           "default": "",
           "document": "系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DiskInfo",
           "name": "SystemDiskInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云联网相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RelatedCcnInfo",
+          "name": "RelatedCcnInfos",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3672,6 +3793,39 @@
           "name": "ScalingInterval",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FleetRelatedResource": {
+      "document": "与服务器舰队关联的资源，如别名和队列",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型。\n- ALIAS：别名\n- QUEUE：队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源ID，目前仅支持别名ID和队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源所在区域，如ap-shanghai、na-siliconvalley等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -4339,6 +4493,96 @@
         }
       ],
       "usage": "both"
+    },
+    "GetGameServerInstanceLogUrlRequest": {
+      "document": "GetGameServerInstanceLogUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏舰队ID",
+          "example": "fleet-qp3g3caa-4vruuf5c",
+          "member": "string",
+          "name": "FleetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ins-pfkj99nn",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例IP",
+          "example": "61.2.53.11",
+          "member": "string",
+          "name": "ServerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每次条数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGameServerInstanceLogUrlResponse": {
+      "document": "GetGameServerInstanceLogUrl返回参数结构体",
+      "members": [
+        {
+          "document": "日志下载URL的数组，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"http://test/url-001\"http://test/url-003\"http://test/url-002\"]",
+          "member": "string",
+          "name": "PresignedUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总条数",
+          "example": "13",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否还有没拉取完的",
+          "example": "True",
+          "member": "bool",
+          "name": "HasNext",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetGameServerSessionLogUrlRequest": {
       "document": "GetGameServerSessionLogUrl请求参数结构体",
@@ -5615,6 +5859,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RelatedCcnInfo": {
+      "document": "云联网相关信息描述",
+      "members": [
+        {
+          "default": "",
+          "document": "云联网所属账号",
+          "example": "13734*",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云联网 ID",
+          "example": "ccn-f0jyb*",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联云联网状态",
+          "example": "CCN_SELECTED_BEFORE_CREATE",
+          "member": "string",
+          "name": "AttachType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

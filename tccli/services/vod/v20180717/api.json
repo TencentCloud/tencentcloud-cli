@@ -336,6 +336,12 @@
       "name": "获取素材样本列表",
       "output": "DescribePersonSamplesResponse"
     },
+    "DescribePrepaidProducts": {
+      "document": "该接口可以查询用户已经购买的预付费商品的信息，包括：\n    1. 商品的类型、生效和失效日期。\n    2. 商品中每种资源的额度和剩余额度。",
+      "input": "DescribePrepaidProductsRequest",
+      "name": "查询购买的预付费商品列表",
+      "output": "DescribePrepaidProductsResponse"
+    },
     "DescribeProcedureTemplates": {
       "document": "根据任务流模板名字，获取任务流模板详情列表。",
       "input": "DescribeProcedureTemplatesRequest",
@@ -9316,6 +9322,32 @@
       ],
       "type": "object"
     },
+    "DescribePrepaidProductsRequest": {
+      "document": "DescribePrepaidProducts请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrepaidProductsResponse": {
+      "document": "DescribePrepaidProducts返回参数结构体",
+      "members": [
+        {
+          "document": "购买的预付费商品实例列表。",
+          "example": "无",
+          "member": "ProductInstance",
+          "name": "ProductInstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProcedureTemplatesRequest": {
       "document": "DescribeProcedureTemplates请求参数结构体",
       "members": [
@@ -17577,6 +17609,138 @@
         }
       ],
       "type": "object"
+    },
+    "ProductInstance": {
+      "document": "预付费商品实例",
+      "members": [
+        {
+          "default": "",
+          "document": "预付费商品实例类型，取值有：\n<li>StarterPackage：点播新手包。</li>\n<li>MiniProgramPlugin：点播小程序插件。</li>\n<li>ResourcePackage：点播资源包。</li>",
+          "example": "ResourcePackage",
+          "member": "string",
+          "name": "ProductType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包实例起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "2019-02-23T16:00:00Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包实例过期日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "2020-02-23T16:01:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。",
+          "example": "50011-251007502-27891",
+          "member": "string",
+          "name": "ProductInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统最近一次扣除资源包的日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "2020-02-22T16:00:00Z",
+          "member": "string",
+          "name": "LastConsumeDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包绑定 License 状态，取值有：\n<li>0：未绑定。</li>\n<li>1：已绑定。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "BindStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预付费资源包实例中包含的资源包列表。",
+          "example": "*",
+          "member": "ProductInstanceRecource",
+          "name": "ProductInstanceResourceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包实例的状态，取值有：\n<li>Effective：生效，可用于计费抵扣。</li>\n<li>Isolated：隔离，不可用于计费抵扣。</li>",
+          "example": "Effective",
+          "member": "string",
+          "name": "ProductInstanceStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包实例的可退还状态，取值有：\n<li>FullRefund：可全额退款。</li>\n<li>Denied：不可退款。</li>",
+          "example": "Denied",
+          "member": "string",
+          "name": "RefundStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductInstanceRecource": {
+      "document": "资源包中包含的资源。",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型。\n<li>Storage：存储资源包。</li>\n<li>Traffic：流量资源包。</li>\n<li>Transcode：普通转码资源包。</li>\n<li>TESHD：极速高清转码资源包。</li>\n<li>Review：视频审核转码资源包。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包额度。\n<li>视频存储资源包，单位为字节。</li>\n<li>视频转码资源包，单位为秒。</li>\n<li>视频审核资源包，单位为秒。</li>\n<li>视频极速高清资源包，单位为秒。</li>\n<li>视频加速资源包，单位为字节。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包余量。\n<li>视频存储资源包，单位为字节。</li>\n<li>视频转码资源包，单位为秒。</li>\n<li>视频审核资源包，单位为秒。</li>\n<li>视频极速高清资源包，单位为秒。</li>\n<li>视频加速资源包，单位为字节。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "Left",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProhibitedAsrReviewTemplateInfo": {
       "document": "语音违禁任务控制参数",

@@ -431,6 +431,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -439,6 +440,7 @@
         {
           "default": "",
           "document": "CVM实例ID列表",
+          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -452,8 +454,10 @@
       "members": [
         {
           "document": "伸缩活动ID",
+          "example": "asa-q59zikez",
           "member": "string",
           "name": "ActivityId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2604,6 +2608,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -2612,6 +2617,7 @@
         {
           "default": "",
           "document": "CVM实例ID列表",
+          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2625,8 +2631,10 @@
       "members": [
         {
           "document": "伸缩活动ID",
+          "example": "asa-bcfxhy55",
           "member": "string",
           "name": "ActivityId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3956,6 +3964,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-12wjuh0s",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -3964,6 +3973,7 @@
         {
           "default": "",
           "document": "传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
+          "example": "[\"lb-crhgatrf\\n\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": false,
@@ -3972,6 +3982,7 @@
         {
           "default": "",
           "document": "应用型负载均衡器列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
+          "example": "无",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancers",
           "required": false,
@@ -3980,6 +3991,7 @@
         {
           "default": "",
           "document": "负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。\n<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。\n<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。",
+          "example": "无",
           "member": "string",
           "name": "LoadBalancersCheckPolicy",
           "required": false,
@@ -3993,8 +4005,10 @@
       "members": [
         {
           "document": "伸缩活动ID",
+          "example": "asa-67izy66g",
           "member": "string",
           "name": "ActivityId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4310,6 +4324,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -4318,6 +4333,7 @@
         {
           "default": "",
           "document": "CVM实例ID列表",
+          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4331,8 +4347,10 @@
       "members": [
         {
           "document": "伸缩活动ID",
+          "example": "asa-dne04cxp",
           "member": "string",
           "name": "ActivityId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4645,6 +4663,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -4653,6 +4672,7 @@
         {
           "default": "",
           "document": "待开启的CVM实例ID列表",
+          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4666,8 +4686,10 @@
       "members": [
         {
           "document": "伸缩活动ID",
+          "example": "asa-a023dwdj",
           "member": "string",
           "name": "ActivityId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4686,6 +4708,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -4694,6 +4717,7 @@
         {
           "default": "",
           "document": "待关闭的CVM实例ID列表",
+          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4702,6 +4726,7 @@
         {
           "default": "",
           "document": "关闭的实例是否收费，取值为：  \nKEEP_CHARGING：关机继续收费  \nSTOP_CHARGING：关机停止收费\n默认为 KEEP_CHARGING",
+          "example": "STOP_CHARGING",
           "member": "string",
           "name": "StoppedMode",
           "required": false,
@@ -4715,8 +4740,10 @@
       "members": [
         {
           "document": "伸缩活动ID",
+          "example": "asa-m1ebiskl",
           "member": "string",
           "name": "ActivityId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

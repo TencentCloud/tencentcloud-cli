@@ -1245,6 +1245,7 @@
         {
           "default": "",
           "document": "镜像ID列表 。镜像ID如：`img-gvbnzy6f`。array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/15688)。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。",
+          "example": "[\"img-gvbnzy6f\"]",
           "member": "string",
           "name": "ImageIds",
           "required": false,
@@ -1253,6 +1254,7 @@
         {
           "default": "",
           "document": "过滤条件，每次请求的`Filters`的上限为0，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n<li> image-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤</li>\n<li> image-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\n    PRIVATE_IMAGE: 私有镜像 (本账户创建的镜像) \n    PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\n   SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像) 。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1261,6 +1263,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于Offset详见[API简介](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1269,6 +1272,7 @@
         {
           "default": "",
           "document": "数量限制，默认为20，最大值为100。关于Limit详见[API简介](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1277,6 +1281,7 @@
         {
           "default": "",
           "document": "实例类型，如 `S1.SMALL1`",
+          "example": "\"S1.SMALL1\"",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -1290,15 +1295,19 @@
       "members": [
         {
           "document": "一个关于镜像详细信息的结构体，主要包括镜像的主要状态与属性。",
+          "example": "无",
           "member": "Image",
           "name": "ImageSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合要求的镜像数量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1664,6 +1673,7 @@
         {
           "default": "",
           "document": "密钥对ID，密钥对ID形如：`skey-11112222`（此接口支持同时传入多个ID进行过滤。此参数的具体格式可参考 API [简介](https://cloud.tencent.com/document/api/213/15688)的 `id.N` 一节）。参数不支持同时指定 `KeyIds` 和 `Filters`。密钥对ID可以通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询。",
+          "example": "skey-11112222",
           "member": "string",
           "name": "KeyIds",
           "required": false,
@@ -1672,6 +1682,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>\n<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>参数不支持同时指定 `KeyIds` 和 `Filters`。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1680,6 +1691,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1688,6 +1700,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1701,15 +1714,19 @@
       "members": [
         {
           "document": "符合条件的密钥对数量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "密钥对详细信息列表。",
+          "example": "无",
           "member": "KeyPair",
           "name": "KeyPairSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4987,6 +5004,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4994,7 +5012,8 @@
         },
         {
           "default": "",
-          "document": "是否在正常重启失败后选择强制重启实例。取值范围：<br><li>TRUE：表示在正常重启失败后进行强制重启<br><li>FALSE：表示在正常重启失败后不进行强制重启<br><br>默认取值：FALSE。",
+          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>TRUE：表示在正常重启失败后进行强制重启<br><li>FALSE：表示在正常重启失败后不进行强制重启<br><br>默认取值：FALSE。",
+          "example": "FALSE",
           "member": "bool",
           "name": "ForceReboot",
           "required": false,
@@ -5003,6 +5022,7 @@
         {
           "default": "",
           "document": "关机类型。取值范围：<br><li>SOFT：表示软关机<br><li>HARD：表示硬关机<br><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机<br><br>默认取值：SOFT。",
+          "example": "SOFT",
           "member": "string",
           "name": "StopType",
           "required": false,

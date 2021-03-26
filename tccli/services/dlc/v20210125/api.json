@@ -251,7 +251,7 @@
         },
         {
           "default": "",
-          "document": "脚本描述,",
+          "document": "脚本描述， 不能超过50个字符",
           "example": "create by zhangsan",
           "member": "string",
           "name": "ScriptDesc",
@@ -859,7 +859,7 @@
         },
         {
           "default": "",
-          "document": "排序方式，desc表示正序，asc表示反序",
+          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc。",
           "example": "desc",
           "member": "string",
           "name": "Sorting",
@@ -868,7 +868,7 @@
         },
         {
           "default": "",
-          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻",
           "example": "2019-01-21 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -877,7 +877,7 @@
         },
         {
           "default": "",
-          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。",
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻",
           "example": "2019-01-22 00:00:00",
           "member": "string",
           "name": "EndTime",

@@ -7,23 +7,34 @@ Input:
 ```
 tccli cvm DescribeImages --cli-unfold-argument  \
     --Filters.0.Name image-id \
-    --Filters.0.Values img-pmqg1cw7
+    --Filters.0.Values img-9qabwvbn
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "ImageSet": [
             {
-                "ImageId": "img-pmqg1cw7",
+                "ImageId": "img-9qabwvbn",
+                "OsName": "CentOS 7.6 64位",
+                "ImageSize": 10,
                 "ImageType": "PUBLIC_IMAGE",
-                "ImageName": "CentOS 6.6 32位",
-                "ImageDescription": "CentOS 6.6 32位"
+                "CreatedTime": null,
+                "ImageState": "NORMAL",
+                "ImageSource": "OFFICIAL",
+                "ImageName": "CentOS 7.6 64位",
+                "ImageDescription": "CentOS 7.6 64位",
+                "ImageCreator": null,
+                "SyncPercent": null,
+                "IsSupportCloudinit": true,
+                "Platform": "CentOS",
+                "Architecture": "x86_64",
+                "SnapshotSet": []
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "5920380e-277a-420a-a221-0caac3eb7159"
+        "RequestId": "db145873-3128-4079-8cec-65e05a7c9f89"
     }
 }
 ```
@@ -44,16 +55,33 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 408,
         "ImageSet": [
             {
-                "ImageId": "img-pmqg1cw7",
-                "ImageType": "PUBLIC_IMAGE",
-                "ImageName": "CentOS 6.6 32位",
-                "ImageDescription": "CentOS 6.6 32位"
+                "OsName": "CentOS 7.4 64位",
+                "ImageSize": 20,
+                "ImageType": "PRIVATE_IMAGE",
+                "CreatedTime": "2021-03-10T03:28:10Z",
+                "ImageDescription": "test-image",
+                "ImageSource": "CREATE_IMAGE",
+                "ImageId": "img-qlzp4oea",
+                "ImageName": "test-image",
+                "ImageCreator": "3205597606",
+                "ImageState": "NORMAL",
+                "SyncPercent": null,
+                "SnapshotSet": [
+                    {
+                        "SnapshotId": "snap-gqa37j2p",
+                        "DiskUsage": "SYSTEM_DISK",
+                        "DiskSize": 20
+                    }
+                ],
+                "Architecture": "x86_64",
+                "Platform": "CentOS",
+                "IsSupportCloudinit": true
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "5920380e-277a-420a-a221-0caac3eb7159"
+        "RequestId": "5908394c-5b3f-42e0-a537-8410553890a5"
     }
 }
 ```

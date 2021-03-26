@@ -115,14 +115,14 @@
     "DescribeImages": [
       {
         "document": "已经知道镜像ID，查询镜像相关信息。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImages\r\n&Filters.0.Name=image-id\r\n&Filters.0.Values.0=img-pmqg1cw7\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ImageSet\": [\n            {\n                \"ImageId\": \"img-pmqg1cw7\",\n                \"ImageType\": \"PUBLIC_IMAGE\",\n                \"ImageName\": \"CentOS 6.6 32位\",\n                \"ImageDescription\": \"CentOS 6.6 32位\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5920380e-277a-420a-a221-0caac3eb7159\"\n    }\n}",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImages\n&Filters.0.Name=image-id\n&Filters.0.Values.0=img-9qabwvbn\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSet\": [\n            {\n                \"ImageId\": \"img-9qabwvbn\",\n                \"OsName\": \"CentOS 7.6 64位\",\n                \"ImageSize\": 10,\n                \"ImageType\": \"PUBLIC_IMAGE\",\n                \"CreatedTime\": null,\n                \"ImageState\": \"NORMAL\",\n                \"ImageSource\": \"OFFICIAL\",\n                \"ImageName\": \"CentOS 7.6 64位\",\n                \"ImageDescription\": \"CentOS 7.6 64位\",\n                \"ImageCreator\": null,\n                \"SyncPercent\": null,\n                \"IsSupportCloudinit\": true,\n                \"Platform\": \"CentOS\",\n                \"Architecture\": \"x86_64\",\n                \"SnapshotSet\": []\n            }\n        ],\n        \"RequestId\": \"db145873-3128-4079-8cec-65e05a7c9f89\"\n    }\n}",
         "title": "按镜像ID查询镜像"
       },
       {
         "document": "查询账户下所有私有镜像。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImages\r\n&Filters.0.Name=image-type\r\n&Filters.0.Values.0=PRIVATE_IMAGE\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ImageSet\": [\n            {\n                \"ImageId\": \"img-pmqg1cw7\",\n                \"ImageType\": \"PUBLIC_IMAGE\",\n                \"ImageName\": \"CentOS 6.6 32位\",\n                \"ImageDescription\": \"CentOS 6.6 32位\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5920380e-277a-420a-a221-0caac3eb7159\"\n    }\n}",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImages\n&Filters.0.Name=image-type\n&Filters.0.Values.0=PRIVATE_IMAGE\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 408,\n        \"ImageSet\": [\n            {\n                \"OsName\": \"CentOS 7.4 64位\",\n                \"ImageSize\": 20,\n                \"ImageType\": \"PRIVATE_IMAGE\",\n                \"CreatedTime\": \"2021-03-10T03:28:10Z\",\n                \"ImageDescription\": \"test-image\",\n                \"ImageSource\": \"CREATE_IMAGE\",\n                \"ImageId\": \"img-qlzp4oea\",\n                \"ImageName\": \"test-image\",\n                \"ImageCreator\": \"3205597606\",\n                \"ImageState\": \"NORMAL\",\n                \"SyncPercent\": null,\n                \"SnapshotSet\": [\n                    {\n                        \"SnapshotId\": \"snap-gqa37j2p\",\n                        \"DiskUsage\": \"SYSTEM_DISK\",\n                        \"DiskSize\": 20\n                    }\n                ],\n                \"Architecture\": \"x86_64\",\n                \"Platform\": \"CentOS\",\n                \"IsSupportCloudinit\": true\n            }\n        ],\n        \"RequestId\": \"5908394c-5b3f-42e0-a537-8410553890a5\"\n    }\n}",
         "title": "按镜像类型查询镜像"
       }
     ],
@@ -212,10 +212,10 @@
     ],
     "DescribeKeyPairs": [
       {
-        "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeKeyPairs\r\n&Filters.0.Name=key-name\r\n&Filters.0.Values.0=Tencent\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KeyPairSet\": [\n            {\n                \"KeyId\": \"skey-mv9yzyjj\",\n                \"KeyName\": \"Tencent\",\n                \"Description\": \"\",\n                \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZKAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/XUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCw== skey_112168\",\n                \"AssociatedInstanceIds\": []\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "示例"
+        "document": "本示例用于用户查询密钥对列表的两个实例",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeKeyPairs\n&Filters.0.Name=key-name\n&Filters.0.Values.0=Tencent\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KeyPairSet\": [\n            {\n                \"KeyId\": \"skey-mv9yzyjj\",\n                \"KeyName\": \"Tencent\",\n                \"Description\": \"\",\n                \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZKAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/XUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCw== skey_112168\",\n                \"AssociatedInstanceIds\": [],\n                \"CreatedTime\": \"2016-12-02T00:22:40Z\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "查询密钥对列表"
       }
     ],
     "DescribeRegions": [
@@ -477,7 +477,7 @@
     "RebootInstances": [
       {
         "document": "本示例用于重启两个实例。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=RebootInstances\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&ForceReboot=FALSE\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=RebootInstances\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&ForceReboot=FALSE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "重启实例"
       }

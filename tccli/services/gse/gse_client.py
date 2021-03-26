@@ -88,7 +88,7 @@ def doUpdateFleetCapacity(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStartFleetActions(args, parsed_globals):
+def doDescribeFleetRelatedResources(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -102,9 +102,9 @@ def doStartFleetActions(args, parsed_globals):
     client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartFleetActionsRequest()
+    model = models.DescribeFleetRelatedResourcesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.StartFleetActions(model)
+    rsp = client.DescribeFleetRelatedResources(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -488,6 +488,31 @@ def doCreateAssetWithImage(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doStartFleetActions(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StartFleetActionsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.StartFleetActions(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeGameServerSessionQueues(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -830,6 +855,31 @@ def doDescribeInstanceLimit(args, parsed_globals):
     model = models.DescribeInstanceLimitRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeInstanceLimit(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResolveAlias(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResolveAliasRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ResolveAlias(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1313,7 +1363,7 @@ def doGetUploadFederationToken(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResolveAlias(args, parsed_globals):
+def doGetGameServerInstanceLogUrl(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1327,9 +1377,9 @@ def doResolveAlias(args, parsed_globals):
     client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResolveAliasRequest()
+    model = models.GetGameServerInstanceLogUrlRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ResolveAlias(model)
+    rsp = client.GetGameServerInstanceLogUrl(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1802,7 +1852,7 @@ ACTION_MAP = {
     "UpdateBucketCORSOpt": doUpdateBucketCORSOpt,
     "DeleteFleet": doDeleteFleet,
     "UpdateFleetCapacity": doUpdateFleetCapacity,
-    "StartFleetActions": doStartFleetActions,
+    "DescribeFleetRelatedResources": doDescribeFleetRelatedResources,
     "DescribeRuntimeConfiguration": doDescribeRuntimeConfiguration,
     "UpdateAlias": doUpdateAlias,
     "DescribeGameServerSessionPlacement": doDescribeGameServerSessionPlacement,
@@ -1818,6 +1868,7 @@ ACTION_MAP = {
     "DescribeFleetCapacity": doDescribeFleetCapacity,
     "DeleteGameServerSessionQueue": doDeleteGameServerSessionQueue,
     "CreateAssetWithImage": doCreateAssetWithImage,
+    "StartFleetActions": doStartFleetActions,
     "DescribeGameServerSessionQueues": doDescribeGameServerSessionQueues,
     "DescribeInstanceTypes": doDescribeInstanceTypes,
     "DescribeScalingPolicies": doDescribeScalingPolicies,
@@ -1832,6 +1883,7 @@ ACTION_MAP = {
     "UpdateAsset": doUpdateAsset,
     "StartGameServerSessionPlacement": doStartGameServerSessionPlacement,
     "DescribeInstanceLimit": doDescribeInstanceLimit,
+    "ResolveAlias": doResolveAlias,
     "AttachCcnInstances": doAttachCcnInstances,
     "GetUploadCredentials": doGetUploadCredentials,
     "SearchGameServerSessions": doSearchGameServerSessions,
@@ -1851,7 +1903,7 @@ ACTION_MAP = {
     "DescribeFleetAttributes": doDescribeFleetAttributes,
     "DescribeInstances": doDescribeInstances,
     "GetUploadFederationToken": doGetUploadFederationToken,
-    "ResolveAlias": doResolveAlias,
+    "GetGameServerInstanceLogUrl": doGetGameServerInstanceLogUrl,
     "SetServerReserved": doSetServerReserved,
     "DescribeFleetStatisticDetails": doDescribeFleetStatisticDetails,
     "DescribeAssets": doDescribeAssets,
