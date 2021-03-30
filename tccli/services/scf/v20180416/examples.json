@@ -67,8 +67,8 @@
     "DeleteNamespace": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=DeleteNamespace\r\n&Namespace=test\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteNamespace\n&Namespace=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除命名空间"
       }
     ],

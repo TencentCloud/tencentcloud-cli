@@ -801,6 +801,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台用户标识",
+          "example": "tom",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

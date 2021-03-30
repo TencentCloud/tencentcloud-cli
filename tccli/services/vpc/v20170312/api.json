@@ -3858,6 +3858,7 @@
         {
           "default": "",
           "document": "带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'",
+          "example": "BGP",
           "member": "string",
           "name": "NetworkType",
           "required": false,
@@ -3866,6 +3867,7 @@
         {
           "default": "",
           "document": "带宽包计费类型，包括‘TOP5_POSTPAID_BY_MONTH’，‘PERCENT95_POSTPAID_BY_MONTH’",
+          "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
           "required": false,
@@ -3874,6 +3876,7 @@
         {
           "default": "",
           "document": "带宽包名字",
+          "example": "test",
           "member": "string",
           "name": "BandwidthPackageName",
           "required": false,
@@ -3882,6 +3885,7 @@
         {
           "default": "",
           "document": "带宽包数量(传统账户类型只能填1)",
+          "example": "1",
           "member": "uint64",
           "name": "BandwidthPackageCount",
           "required": false,
@@ -3890,6 +3894,7 @@
         {
           "default": "",
           "document": "带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。",
+          "example": "1",
           "member": "int64",
           "name": "InternetMaxBandwidth",
           "required": false,
@@ -3898,6 +3903,7 @@
         {
           "default": "",
           "document": "需要关联的标签列表。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3906,6 +3912,7 @@
         {
           "default": "",
           "document": "带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。",
+          "example": "IPV4",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -3919,15 +3926,19 @@
       "members": [
         {
           "document": "带宽包唯一ID",
+          "example": "bwp-8rolc8ec",
           "member": "string",
           "name": "BandwidthPackageId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "带宽包唯一ID列表(申请数量大于1时有效)",
+          "example": "[\"bwp-8rolc8ec\"]",
           "member": "string",
           "name": "BandwidthPackageIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

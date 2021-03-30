@@ -86,6 +86,14 @@
         "title": "创建个人版命名空间"
       }
     ],
+    "CreateReplicationInstance": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateReplicationInstance\n&RegistryId=tcr-12345\n&ReplicationRegionId=5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8bf292d-38c7-49d9-8da3-737d08160cfc\",\n        \"ReplicationRegistryId\": \"tcr-06d62e1r-5\"\n    }\n}",
+        "title": "创建从实例"
+      }
+    ],
     "CreateRepository": [
       {
         "document": "",

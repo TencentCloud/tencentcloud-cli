@@ -133,7 +133,7 @@
       "output": "DescribeSubGroupsResponse"
     },
     "GetRecordDatesByDev": {
-      "document": "本接口()用于查询设备含有录像文件的日期列表。",
+      "document": "本接口(GetRecordDatesByDev)用于查询设备含有录像文件的日期列表。",
       "input": "GetRecordDatesByDevRequest",
       "name": "获取设备录像日期列表",
       "output": "GetRecordDatesByDevResponse"
@@ -227,7 +227,7 @@
         },
         {
           "default": "",
-          "document": "设备类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备类型；2：IPC\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
           "name": "DeviceType",
@@ -237,7 +237,7 @@
         },
         {
           "default": "",
-          "document": "设备状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
           "name": "Status",
@@ -297,7 +297,7 @@
         },
         {
           "default": "",
-          "document": "是否存在录像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否存在录像,，0:不存在；1：存在\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
           "name": "IsRecord",
@@ -417,7 +417,7 @@
       "document": "CreateDeviceGroup返回参数结构体",
       "members": [
         {
-          "document": "响应结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "响应结果，“OK”为成功，其他为失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "status",
           "member": "string",
           "name": "Status",
@@ -583,7 +583,7 @@
         },
         {
           "default": "",
-          "document": "是否为每周全时录制，即7*24h录制",
+          "document": "是否为每周全时录制（即7*24h录制），0：非全时录制，1；全时录制，默认0",
           "example": "0",
           "member": "int64",
           "name": "IsAllWeek",
@@ -714,7 +714,7 @@
       "document": "DeleteRecordPlan返回参数结构体",
       "members": [
         {
-          "document": "操作结果",
+          "document": "操作结果，OK：成功，其他：失败",
           "example": "OK",
           "member": "string",
           "name": "Status",
@@ -750,7 +750,7 @@
       "document": "DeleteTimeTemplate返回参数结构体",
       "members": [
         {
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作结果，OK：成功，其他：失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OK",
           "member": "string",
           "name": "Status",
@@ -772,7 +772,7 @@
       "members": [
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，默认0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1039,7 +1039,7 @@
       "members": [
         {
           "default": "",
-          "document": "分组路径",
+          "document": "分组路径，格式为/aaa(/bbb/ccc)",
           "example": "/group-aaa/group-bbb",
           "member": "string",
           "name": "GroupPath",
@@ -1084,7 +1084,7 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，默认0",
           "example": "xxx",
           "member": "int64",
           "name": "Offset",
@@ -1344,7 +1344,7 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，默认0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1488,7 +1488,7 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，默认0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1497,7 +1497,7 @@
         },
         {
           "default": "",
-          "document": "限制量",
+          "document": "限制量，默认200",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -1720,7 +1720,7 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，默认0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1729,7 +1729,7 @@
         },
         {
           "default": "",
-          "document": "限制量",
+          "document": "限制量，默认200",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -1738,7 +1738,7 @@
         },
         {
           "default": "",
-          "document": "0：查询指定日期的录像；1：查询最近一天的录像",
+          "document": "0：查询指定日期的录像；1：查询最近一天的录像；默认0",
           "example": "1",
           "member": "int64",
           "name": "LatestDay",
@@ -2093,7 +2093,7 @@
       "document": "ModifyDeviceData返回参数结构体",
       "members": [
         {
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作结果,“OK”表示成功，其他表示失败。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OK",
           "member": "string",
           "name": "Status",
@@ -2492,7 +2492,7 @@
       "document": "UpdateDevicePassWord返回参数结构体",
       "members": [
         {
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作结果，“OK”表示成功，其他表示失败。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OK",
           "member": "string",
           "name": "Status",
@@ -2613,7 +2613,7 @@
         },
         {
           "default": "",
-          "document": "是否全时录制，即7*24小时录制",
+          "document": "是否全时录制，即7*24小时录制。\n0：非全时录制；1：全时录制。默认1",
           "example": "0",
           "member": "int64",
           "name": "IsAllWeek",
@@ -2636,7 +2636,7 @@
       "document": "UpdateTimeTemplate返回参数结构体",
       "members": [
         {
-          "document": "操作结果",
+          "document": "操作结果，“OK”表示成功，其他表示失败。",
           "example": "OK",
           "member": "string",
           "name": "Status",

@@ -99,7 +99,7 @@
     "DescribeAlarmPolicies": {
       "document": "查询告警策略列表",
       "input": "DescribeAlarmPoliciesRequest",
-      "name": "查询告警策略列表",
+      "name": "查询告警策略列表（支持按实例等条件筛选）",
       "output": "DescribeAlarmPoliciesResponse"
     },
     "DescribeAlarmPolicy": {

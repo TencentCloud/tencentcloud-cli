@@ -49,7 +49,7 @@
       "output": "DeleteLayerVersionResponse"
     },
     "DeleteNamespace": {
-      "document": "该接口根据传入的参数创建命名空间。",
+      "document": "该接口根据传入的参数删除命名空间。",
       "input": "DeleteNamespaceRequest",
       "name": "删除命名空间",
       "output": "DeleteNamespaceResponse"
@@ -1284,6 +1284,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "test",
           "member": "string",
           "name": "Namespace",
           "required": true,

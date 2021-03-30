@@ -115,6 +115,31 @@ def doResetDBInstancePassword(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSetPassword(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetPasswordRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SetPassword(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doFlushInstanceRouterConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -365,6 +390,31 @@ def doRenewDBInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateBackupDownloadTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateBackupDownloadTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateBackupDownloadTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doUpgradeDBInstanceHour(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -565,7 +615,7 @@ def doDescribeSpecInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSetPassword(args, parsed_globals):
+def doDescribeBackupDownloadTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -579,9 +629,9 @@ def doSetPassword(args, parsed_globals):
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetPasswordRequest()
+    model = models.DescribeBackupDownloadTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.SetPassword(model)
+    rsp = client.DescribeBackupDownloadTask(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -807,6 +857,7 @@ ACTION_MAP = {
     "DescribeCurrentOp": doDescribeCurrentOp,
     "DescribeClientConnections": doDescribeClientConnections,
     "ResetDBInstancePassword": doResetDBInstancePassword,
+    "SetPassword": doSetPassword,
     "FlushInstanceRouterConfig": doFlushInstanceRouterConfig,
     "SetAutoRenew": doSetAutoRenew,
     "DescribeDBBackups": doDescribeDBBackups,
@@ -817,6 +868,7 @@ ACTION_MAP = {
     "CreateDBInstanceHour": doCreateDBInstanceHour,
     "TerminateDBInstance": doTerminateDBInstance,
     "RenewDBInstances": doRenewDBInstances,
+    "CreateBackupDownloadTask": doCreateBackupDownloadTask,
     "UpgradeDBInstanceHour": doUpgradeDBInstanceHour,
     "DescribeDBInstances": doDescribeDBInstances,
     "OfflineIsolatedDBInstance": doOfflineIsolatedDBInstance,
@@ -825,7 +877,7 @@ ACTION_MAP = {
     "CreateDBInstance": doCreateDBInstance,
     "ModifyDBInstanceSpec": doModifyDBInstanceSpec,
     "DescribeSpecInfo": doDescribeSpecInfo,
-    "SetPassword": doSetPassword,
+    "DescribeBackupDownloadTask": doDescribeBackupDownloadTask,
     "InquirePriceCreateDBInstances": doInquirePriceCreateDBInstances,
     "AssignProject": doAssignProject,
     "DescribeSlowLog": doDescribeSlowLog,

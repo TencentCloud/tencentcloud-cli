@@ -179,6 +179,7 @@
         {
           "default": "",
           "document": "任务ID",
+          "example": "0",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -192,8 +193,10 @@
       "members": [
         {
           "document": "画像洞察任务TAG详细数据列表",
+          "example": "无",
           "member": "TaskDetailData",
           "name": "TaskDetailDataList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -212,6 +215,7 @@
         {
           "default": "",
           "document": "查询分页页码",
+          "example": "0",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -220,6 +224,7 @@
         {
           "default": "",
           "document": "查询分页大小",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -228,6 +233,7 @@
         {
           "default": "",
           "document": "查询起始时间（13位数字的UNIX时间戳，单位毫秒 ）",
+          "example": "1616056520000",
           "member": "uint64",
           "name": "StartTime",
           "required": false,
@@ -236,6 +242,7 @@
         {
           "default": "",
           "document": "查询结束时间（13位数字的UNIX时间戳，单位毫秒 ）",
+          "example": "1616056520000",
           "member": "uint64",
           "name": "EndTime",
           "required": false,
@@ -244,6 +251,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "task1",
           "member": "string",
           "name": "TaskName",
           "required": false,
@@ -252,6 +260,7 @@
         {
           "default": "",
           "document": "查询任务状态 0:默认状态 1:任务正在运行 2:任务运行成功 3:任务运行失败",
+          "example": "0",
           "member": "uint64",
           "name": "TaskStatus",
           "required": false,
@@ -265,8 +274,10 @@
       "members": [
         {
           "document": "任务列表对象",
+          "example": "无",
           "member": "TaskListData",
           "name": "TaskListData",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -402,6 +413,7 @@
         {
           "default": "",
           "document": "ID标志的类型，0:IMEI 7:IDFA 8:MD5(imei) 100: 手机号明文 101: 手机号md5加密",
+          "example": "8",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -410,6 +422,7 @@
         {
           "default": "",
           "document": "请求唯一标志ID",
+          "example": "9aa40fe5e32938e34f767cc0f9f58702",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -423,8 +436,10 @@
       "members": [
         {
           "document": "意向评级",
+          "example": "无",
           "member": "RatingData",
           "name": "RatingData",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -443,6 +458,7 @@
         {
           "default": "",
           "document": "请求类型 1:人群特征洞察统计 2:购车意向预测统计",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -451,6 +467,7 @@
         {
           "default": "",
           "document": "开始时间戳（毫秒）",
+          "example": "1602470155000",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -459,6 +476,7 @@
         {
           "default": "",
           "document": "结束时间戳（毫秒）",
+          "example": "1602470355000",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -467,6 +485,7 @@
         {
           "default": "",
           "document": "页数",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -475,6 +494,7 @@
         {
           "default": "",
           "document": "每页个数",
+          "example": "100",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -488,8 +508,10 @@
       "members": [
         {
           "document": "调用明细",
+          "example": "无",
           "member": "CallDetails",
           "name": "CallDetails",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -508,6 +530,7 @@
         {
           "default": "",
           "document": "请求类型 1:人群特征洞察统计 2:购车意向预测统计",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -516,6 +539,7 @@
         {
           "default": "",
           "document": "开始时间戳（毫秒）",
+          "example": "1602470155000",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -524,6 +548,7 @@
         {
           "default": "",
           "document": "结束时间戳（毫秒）",
+          "example": "1602470355000",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -537,8 +562,10 @@
       "members": [
         {
           "document": "调用量数组",
+          "example": "无",
           "member": "CallStatItem",
           "name": "CallSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -557,6 +584,7 @@
         {
           "default": "",
           "document": "请求类型:1,人群特征洞察统计 2购车意向预测统计",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -570,8 +598,10 @@
       "members": [
         {
           "document": "调用量信息",
+          "example": "无",
           "member": "GeneralStat",
           "name": "GeneralStat",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -695,6 +725,7 @@
         {
           "default": "",
           "document": "id标志的类型: 0:imei 7:IDFA 8:MD5(imei)",
+          "example": "0",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -703,6 +734,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "Test123",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -711,6 +743,7 @@
         {
           "default": "",
           "document": "ID列表（ID间使用换行符分割、然后使用Base64编码）",
+          "example": "aaaa",
           "member": "string",
           "name": "IdListBase64",
           "required": true,
@@ -724,8 +757,10 @@
       "members": [
         {
           "document": "画像洞察任务ID等信息",
+          "example": "无",
           "member": "TaskData",
           "name": "TaskData",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

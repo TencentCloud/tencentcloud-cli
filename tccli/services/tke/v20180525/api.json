@@ -4690,6 +4690,7 @@
         {
           "default": "",
           "document": "节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD最小配置为4C8G。",
+          "example": "worker",
           "member": "string",
           "name": "NodeRole",
           "required": true,
@@ -4699,6 +4700,7 @@
         {
           "default": "",
           "document": "已存在实例的重装参数",
+          "example": "无",
           "member": "ExistedInstancesPara",
           "name": "ExistedInstancesPara",
           "required": true,
@@ -4708,6 +4710,7 @@
         {
           "default": "",
           "document": "节点高级设置，会覆盖集群级别设置的InstanceAdvancedSettings（当前只对节点自定义参数ExtraArgs生效）",
+          "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettingsOverride",
           "required": false,

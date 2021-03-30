@@ -12,6 +12,12 @@
       "name": "备份实例接口",
       "output": "CreateBackupDBInstanceResponse"
     },
+    "CreateBackupDownloadTask": {
+      "document": "本接口用来创建某个备份文件的下载任务",
+      "input": "CreateBackupDownloadTaskRequest",
+      "name": "创建备份下载任务",
+      "output": "CreateBackupDownloadTaskResponse"
+    },
     "CreateDBInstance": {
       "document": "本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。",
       "input": "CreateDBInstanceRequest",
@@ -35,6 +41,12 @@
       "input": "DescribeBackupAccessRequest",
       "name": "获取实例备份下载授权",
       "output": "DescribeBackupAccessResponse"
+    },
+    "DescribeBackupDownloadTask": {
+      "document": "查询备份下载任务信息",
+      "input": "DescribeBackupDownloadTaskRequest",
+      "name": "查询备份下载任务信息",
+      "output": "DescribeBackupDownloadTaskResponse"
     },
     "DescribeClientConnections": {
       "document": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。",
@@ -198,6 +210,118 @@
         }
       ],
       "type": "object"
+    },
+    "BackupDownloadTask": {
+      "document": "备份下载任务",
+      "members": [
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "example": "2021-01-02 15:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件名",
+          "example": "cmgo-74sjf5mt_2021-03-24 15:40",
+          "member": "string",
+          "name": "BackupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片名称",
+          "example": "cmgo-74sjf5mt_0",
+          "member": "string",
+          "name": "ReplicaSetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份数据大小，单位为字节",
+          "example": "102400",
+          "member": "int64",
+          "name": "BackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务进度百分比",
+          "example": "20",
+          "member": "int64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "耗时，单位为秒",
+          "example": "60",
+          "member": "int64",
+          "name": "TimeSpend",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份数据下载链接",
+          "example": "http://a.b.c/d.tar?e",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupDownloadTaskStatus": {
+      "document": "创建备份下载任务结果",
+      "members": [
+        {
+          "default": "",
+          "document": "分片名",
+          "example": "cmgo-74sjf5mt_0",
+          "member": "string",
+          "name": "ReplicaSetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BackupFile": {
       "document": "备份文件存储信息",
@@ -372,6 +496,60 @@
           "member": "string",
           "name": "AsyncRequestId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupDownloadTaskRequest": {
+      "document": "CreateBackupDownloadTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-f555zzzz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要下载的备份文件名，可通过DescribeDBBackups接口获取",
+          "example": "cmgo-74sjf5mt_2021-03-24 15:40",
+          "member": "string",
+          "name": "BackupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下载备份的分片列表",
+          "example": "无",
+          "member": "ReplicaSetInfo",
+          "name": "BackupSets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupDownloadTaskResponse": {
+      "document": "CreateBackupDownloadTask返回参数结构体",
+      "members": [
+        {
+          "document": "下载任务状态",
+          "example": "无",
+          "member": "BackupDownloadTaskStatus",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -963,6 +1141,123 @@
           "document": "备份文件的存储信息",
           "member": "BackupFile",
           "name": "Files",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDownloadTaskRequest": {
+      "document": "DescribeBackupDownloadTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-74sjf5mt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份文件名，用来过滤指定文件的下载任务",
+          "example": "cmgo-74sjf5mt_2021-03-24 15:40",
+          "member": "string",
+          "name": "BackupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定要查询任务的时间范围，StartTime指定开始时间",
+          "example": "2021-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定要查询任务的时间范围，StartTime指定结束时间",
+          "example": "2021-01-02 15:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "此次查询返回的条数，取值范围为1-100，默认为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定此次查询返回的页数，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，取值为createTime，finishTime两种，默认为createTime",
+          "example": "finishTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，取值为asc，desc两种，默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试",
+          "example": "[2]",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDownloadTaskResponse": {
+      "document": "DescribeBackupDownloadTask返回参数结构体",
+      "members": [
+        {
+          "document": "满足查询条件的所有条数",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下载任务列表",
+          "example": "无",
+          "member": "BackupDownloadTask",
+          "name": "Tasks",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2487,6 +2782,22 @@
         }
       ],
       "type": "object"
+    },
+    "ReplicaSetInfo": {
+      "document": "分片信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分片名称",
+          "example": "cmgo_ih8uido9_0",
+          "member": "string",
+          "name": "ReplicaSetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ResetDBInstancePasswordRequest": {
       "document": "ResetDBInstancePassword请求参数结构体",

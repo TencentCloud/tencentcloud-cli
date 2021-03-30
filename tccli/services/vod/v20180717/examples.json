@@ -538,6 +538,14 @@
         "title": "查询2020-12-0-1到2020-12-02的播放统计文件列表"
       }
     ],
+    "DescribeDrmDataKey": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeDrmDataKey\n&EdkList.0=CiCdpfV8oMGHlWuACHIGUxJ/mdjZnBWEsovP6k78xvj2qRCO08TAChiaoOvUBCokNTQ3N2MwYWQtMmVlYy00ZmNhLWE5OGQtNmNiNjc5MTVmODdh\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyList\": [\n            {\n                \"Edk\": \"CiCdpfV8oMGHlWuACHIGUxJ/mdjZnBWEsovP6k78xvj2qRCO08TAChiaoOvUBCokNTQ3N2MwYWQtMmVlYy00ZmNhLWE5OGQtNmNiNjc5MTVmODdh\",\n                \"Dk\": \"i6zM/pnmIERJE3vAt0UnGg==\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获取视频解密密钥"
+      }
+    ],
     "DescribeEventsState": [
       {
         "document": "",
@@ -722,6 +730,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeTranscodeTemplates\r\n&Definitions.0=10\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": 1008,\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": null,\n                \"Type\": 0,\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"Bitrate\": 256,\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取转码模板"
+      }
+    ],
+    "DescribeVodDomains": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeVodDomains\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"DomainSet\": [\n            {\n                \"Domain\": \"myexample.com\",\n                \"AccelerateAreaInfos\": [\n                    {\n                        \"Area\": \"Internation\",\n                        \"TencentEdgeDomain\": \"myexmample.com.dnsv1.com\"\n                    }\n                ],\n                \"RefererAuthPolicy\": {\n                    \"Status\": \"Disabled\",\n                    \"AuthType\": \"\",\n                    \"BlankRefererAllowed\": \"No\",\n                    \"Referers\": []\n                },\n                \"DeployStatus\": \"Deploying\",\n                \"HTTPSConfig\": {\n                    \"CertExpireTime\": \"2030-01-23T07:25:52Z\"\n                },\n                \"UrlSignatureAuthPolicy\": {\n                    \"Status\": \"Enabled\",\n                    \"EncryptedKey\": \"acmowmeomeo13432a\"\n                },\n                \"CreateTime\": \"2019-12-23T07:25:52Z\"\n            }\n        ],\n        \"RequestId\": \"aeomo-133w3-amomow-22\"\n    }\n}",
+        "title": "查询所有域名"
       }
     ],
     "DescribeWatermarkTemplates": [

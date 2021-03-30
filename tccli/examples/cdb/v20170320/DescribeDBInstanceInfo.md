@@ -1,4 +1,4 @@
-**Example 1: 获取实例基本信息**
+**Example 1: 查询实例信息**
 
 
 
@@ -6,19 +6,20 @@ Input:
 
 ```
 tccli cdb DescribeDBInstanceInfo --cli-unfold-argument  \
-    --InstanceId cdb-***
+    --InstanceId cdb-oaj9cbla
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "InstanceId": "test",
-        "InstanceName": "test",
-        "Encryption": "YES",
-        "KeyId": "sdasdd-12asdasd",
-        "KeyRegion": "ap-guangzhou",
-        "RequestId": "faae8d6a-38fb-44de-988e-5a0e78aba4a7"
+        "DefaultKmsRegion": "ap-hongkong",
+        "Encryption": "NO",
+        "InstanceId": "cdb-oaj9cbla",
+        "InstanceName": "cdb_name",
+        "KeyId": "",
+        "KeyRegion": "",
+        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }
 ```

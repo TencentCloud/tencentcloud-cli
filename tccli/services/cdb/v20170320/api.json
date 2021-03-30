@@ -3275,6 +3275,32 @@
       ],
       "usage": "both"
     },
+    "DatabasesWithCharacterLists": {
+      "document": "数据库名以及字符集",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符集类型",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CharacterSet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteAccountsRequest": {
       "document": "DeleteAccounts请求参数结构体",
       "members": [
@@ -3780,6 +3806,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-txcniupi",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3793,15 +3820,28 @@
       "members": [
         {
           "document": "审计日志保存时长。目前支持的值包括：[0，30，180，365，1095，1825]。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "365",
           "member": "int64",
           "name": "LogExpireDay",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "审计日志存储类型。目前支持的值包括：\"storage\" - 存储型。",
+          "example": "storage",
           "member": "string",
           "name": "LogType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否正在关闭审计。目前支持的值包括：\"false\"-否，\"true\"-是",
+          "example": "false",
+          "member": "string",
+          "name": "IsClosing",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4703,6 +4743,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4716,37 +4757,56 @@
       "members": [
         {
           "document": "主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。",
+          "example": "0",
           "member": "int64",
           "name": "ProtectMode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。",
+          "example": "1",
           "member": "int64",
           "name": "DeployMode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例可用区信息，格式如 \"ap-shanghai-1\"。",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "备库的配置信息。",
+          "document": "备库的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SlaveConfig",
           "name": "SlaveConfig",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "document": "强同步实例第二备库的配置信息。",
+          "document": "强同步实例第二备库的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BackupConfig",
           "name": "BackupConfig",
+          "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否切换备库。",
+          "example": "false",
+          "member": "bool",
+          "name": "Switched",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -4797,6 +4857,7 @@
         {
           "default": "",
           "document": "实例 ID 。",
+          "example": "cdb-59dm059k",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4810,43 +4871,55 @@
       "members": [
         {
           "document": "实例 ID 。",
+          "example": "cdb-59dm059k",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "实例名称。",
+          "example": "your_cdb_name",
           "member": "string",
           "name": "InstanceName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否开通加密，YES 已开通，NO 未开通。",
+          "example": "NO",
           "member": "string",
           "name": "Encryption",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "加密使用的密钥 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "''",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "密钥所在地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "''",
           "member": "string",
           "name": "KeyRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "当前 CDB 后端服务使用的 KMS 服务的默认地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "DefaultKmsRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5538,6 +5611,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "数据库名以及字符集",
+          "example": "[]",
+          "member": "DatabasesWithCharacterLists",
+          "name": "DatabaseList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5902,6 +5984,7 @@
         {
           "default": "",
           "document": "参数模板 ID。",
+          "example": "233",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -5915,37 +5998,56 @@
       "members": [
         {
           "document": "参数模板 ID。",
+          "example": "233",
           "member": "int64",
           "name": "TemplateId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "参数模板名称。",
+          "example": "***",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "参数模板描述",
+          "document": "参数模板对应实例版本",
+          "example": "5.6",
           "member": "string",
           "name": "EngineVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "参数模板中的参数数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "参数详情",
+          "example": "[]",
           "member": "ParameterDetail",
           "name": "Items",
+          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数模板描述",
+          "example": "your_description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5994,6 +6096,7 @@
         {
           "default": "",
           "document": "项目ID。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -6007,9 +6110,20 @@
       "members": [
         {
           "document": "安全组详情。",
+          "example": "[]",
           "member": "SecurityGroup",
           "name": "Groups",
+          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全组规则数量。",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

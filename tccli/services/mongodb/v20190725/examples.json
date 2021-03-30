@@ -16,6 +16,14 @@
         "title": "备份实例接口"
       }
     ],
+    "CreateBackupDownloadTask": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateBackupDownloadTask\n&InstanceId=cmgo-dygv1rnp\n&BackupName=cmgo-dygv1rnp_2021-03-26 10:44\n&BackupSets.0.ReplicaSetId=cmgo-dygv1rnp_0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ed8d110-67be-4650-83b0-5df5a897e9e6\",\n        \"Tasks\": [\n            {\n                \"ReplicaSetId\": \"cmgo-dygv1rnp_0\",\n                \"Status\": 2\n            }\n        ]\n    }\n}",
+        "title": "创建备份下载任务"
+      }
+    ],
     "CreateDBInstance": [
       {
         "document": "",
@@ -46,6 +54,14 @@
         "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeBackupAccess\r\n&InstanceId=cmgo-f0vrx2v9\r\n&BackupName=cmgo-f0vrx2v9_2019-09-02_04:49\r\n&<公共请求参数>",
         "output": "{\r\n        \"Bucket\":\"cmongo-cd-backup\",\r\n        \"Files\":[\r\n            {\r\n                \"File\":\"cmongo_hotbackup/cmgo-f0vrx2v9_0/1567370984\",\r\n                \"ReplicaSetId\":\"cmgo-f0vrx2v9_0\"\r\n            }\r\n        ],\r\n        \"Region\":\"ap-chengdu\",\r\n        \"RequestId\":\"7e108f10-d228-11e9-b27e-9500754d2540\"\r\n}",
         "title": "获取实例备份下载授权"
+      }
+    ],
+    "DescribeBackupDownloadTask": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeBackupDownloadTask\n&InstanceId=cmgo-dygv1rnp\n&Status.0=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c41c0c46-7d5a-49b9-832a-557880c1e9ef\",\n        \"Tasks\": [\n            {\n                \"BackupName\": \"cmgo-dygv1rnp_2021-03-26 10:44\",\n                \"BackupSize\": 844,\n                \"CreateTime\": \"2021-03-26 10:47:37\",\n                \"Percent\": 100,\n                \"ReplicaSetId\": \"cmgo-dygv1rnp_0\",\n                \"Status\": 2,\n                \"TimeSpend\": 0,\n                \"Url\": \"https://mognodb-backup-test-tar-1251937656.cos.ap-guangzhou.myqcloud.com/cmgo-dygv1rnp_2021-03-26%2010%3A44%2Fcmgo-dygv1rnp_0.tar?q-sign-algorithm=sha1&q-ak=AKIDWvAECz43JNFvPjRnW3NUQ0QejcImDaMw&q-sign-time=1616726859%3B1616813259&q-key-time=1616726859%3B1616813259&q-header-list=host&q-url-param-list=&q-signature=f56b0519473227c38be624eb23751b7c972d3d38\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询备份下载任务"
       }
     ],
     "DescribeClientConnections": [

@@ -60,6 +60,12 @@
       "name": "创建个人版命名空间",
       "output": "CreateNamespacePersonalResponse"
     },
+    "CreateReplicationInstance": {
+      "document": "创建从实例",
+      "input": "CreateReplicationInstanceRequest",
+      "name": "创建从实例",
+      "output": "CreateReplicationInstanceResponse"
+    },
     "CreateRepository": {
       "document": "用于企业版创建镜像仓库",
       "input": "CreateRepositoryRequest",
@@ -1051,6 +1057,51 @@
     "CreateNamespaceResponse": {
       "document": "CreateNamespace返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReplicationInstanceRequest": {
+      "document": "CreateReplicationInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-12345",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制实例地域ID",
+          "example": "5",
+          "member": "uint64",
+          "name": "ReplicationRegionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReplicationInstanceResponse": {
+      "document": "CreateReplicationInstance返回参数结构体",
+      "members": [
+        {
+          "document": "企业版复制实例Id",
+          "example": "tcr-06d62e1r-5",
+          "member": "string",
+          "name": "ReplicationRegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3689,6 +3740,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标实例的地域ID，如广州是1",
+          "example": "33",
+          "member": "uint64",
+          "name": "DestinationRegionId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

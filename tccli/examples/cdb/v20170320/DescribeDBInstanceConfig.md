@@ -18,9 +18,16 @@ Output:
             "ReplicationMode": "async",
             "Zone": "ap-guangzhou-3"
         },
+        "BackupConfig": {
+            "ReplicationMode": "sync",
+            "Vip": "",
+            "Vport": 0,
+            "Zone": "ap-guangzhou-3"
+        },
         "ProtectMode": 0,
         "Zone": "ap-guangzhou-3",
-        "DeployMode": 1
+        "DeployMode": 1,
+        "Switched": false
     }
 }
 ```
