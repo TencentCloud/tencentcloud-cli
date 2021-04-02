@@ -256,20 +256,12 @@
       "usage": "out"
     },
     "FaceRect": {
-      "document": "人脸框位置",
+      "document": "人脸框信息",
       "members": [
         {
           "default": "",
-          "document": "人脸框左上角横坐标。",
-          "member": "int64",
-          "name": "X",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "人脸框左上角纵坐标。",
+          "example": "1",
           "member": "int64",
           "name": "Y",
           "required": true,
@@ -278,7 +270,18 @@
         },
         {
           "default": "",
+          "document": "人脸框左上角横坐标。",
+          "example": "1",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "人脸框宽度。",
+          "example": "1",
           "member": "int64",
           "name": "Width",
           "required": true,
@@ -288,6 +291,7 @@
         {
           "default": "",
           "document": "人脸框高度。",
+          "example": "1",
           "member": "int64",
           "name": "Height",
           "required": true,

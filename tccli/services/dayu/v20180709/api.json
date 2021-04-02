@@ -192,6 +192,12 @@
       "name": "获取基础防护黑洞阈值",
       "output": "DescribeBasicDeviceThresholdResponse"
     },
+    "DescribeBizHttpStatus": {
+      "document": "获取业务流量状态码统计",
+      "input": "DescribeBizHttpStatusRequest",
+      "name": "获取业务流量状态码统计",
+      "output": "DescribeBizHttpStatusResponse"
+    },
     "DescribeBizTrend": {
       "document": "获取业务流量曲线",
       "input": "DescribeBizTrendRequest",
@@ -3853,6 +3859,105 @@
           "member": "uint64",
           "name": "Threshold",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizHttpStatusRequest": {
+      "document": "DescribeBizHttpStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "example": "bgpip",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源Id",
+          "example": "bgpip-000000xe",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计周期，可取值300，1800，3600， 21600，86400，单位秒",
+          "example": "300",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "example": "2020-02-01 12:04:12",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间",
+          "example": "2020-02-03 18:03:23",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计方式，仅支持sum",
+          "example": "sum",
+          "member": "string",
+          "name": "Statistics",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
+          "example": "无",
+          "member": "ProtocolPort",
+          "name": "ProtoInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "特定域名查询",
+          "example": "www.xx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizHttpStatusResponse": {
+      "document": "DescribeBizHttpStatus返回参数结构体",
+      "members": [
+        {
+          "document": "业务流量http状态码统计数据",
+          "example": "无",
+          "member": "HttpStatusMap",
+          "name": "HttpStatusMap",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -7680,6 +7785,112 @@
         }
       ],
       "type": "object"
+    },
+    "HttpStatusMap": {
+      "document": "业务流量的http状态码聚合数据",
+      "members": [
+        {
+          "default": "",
+          "document": "http2xx状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "Http2xx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http3xx状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "Http3xx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http404状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "Http404",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http4xx状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "Http4xx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http5xx状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "Http5xx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http2xx回源状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "SourceHttp2xx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http3xx回源状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "SourceHttp3xx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http404回源状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "SourceHttp404",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http4xx回源状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "SourceHttp4xx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http5xx回源状态码",
+          "example": "[1,2,3]",
+          "member": "float",
+          "name": "SourceHttp5xx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "IpBlackWhite": {
       "document": "黑白IP",

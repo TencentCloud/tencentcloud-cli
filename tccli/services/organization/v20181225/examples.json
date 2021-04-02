@@ -35,7 +35,7 @@
     "DeleteOrganization": [
       {
         "document": "",
-        "input": "https://organization.tencentcloudapi.com/?Action=DeleteOrganization\r\n&<公共请求参数>",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteOrganization\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "删除企业组织"
       }
@@ -51,7 +51,7 @@
     "DeleteOrganizationMembers": [
       {
         "document": "",
-        "input": "https://organization.tencentcloudapi.com/?Action=DeleteOrganizationMembers\r\n&Uins.0=1\r\n&<公共请求参数>",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteOrganizationMembers\n&Uins.0=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "批量删除企业组织成员"
       }

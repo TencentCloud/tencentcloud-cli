@@ -6,6 +6,12 @@
       "name": "申请上传",
       "output": "ApplyUploadResponse"
     },
+    "AttachMediaSubtitles": {
+      "document": "关联媒资字幕，将指定的字幕关联到转自适应码流模板号对应的媒体输出文件中（或解除关联）。",
+      "input": "AttachMediaSubtitlesRequest",
+      "name": "关联媒体字幕",
+      "output": "AttachMediaSubtitlesResponse"
+    },
     "CommitUpload": {
       "document": "该接口用于确认媒体文件（和封面文件）上传到腾讯云点播的结果，并存储媒体信息，返回文件的播放地址和文件 ID。",
       "input": "CommitUploadRequest",
@@ -505,7 +511,7 @@
       "output": "ModifyImageSpriteTemplateResponse"
     },
     "ModifyMediaInfo": {
-      "document": "修改媒体文件的属性，包括分类、名称、描述、标签、过期时间、打点信息、视频封面等。",
+      "document": "修改媒体文件的属性，包括分类、名称、描述、标签、过期时间、打点信息、视频封面、字幕信息等。",
       "input": "ModifyMediaInfoRequest",
       "name": "修改媒体文件属性",
       "output": "ModifyMediaInfoResponse"
@@ -4854,6 +4860,60 @@
         }
       ],
       "usage": "in"
+    },
+    "AttachMediaSubtitlesRequest": {
+      "document": "AttachMediaSubtitles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件唯一标识。",
+          "example": "123",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作。取值如下：\n<li>Attach：关联字幕。</li>\n<li>Detach：解除关联字幕。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "[转自适应码流模板号](https://cloud.tencent.com/document/product/266/34071#zsy)。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AdaptiveDynamicStreamingDefinition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "字幕的唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "SubtitleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachMediaSubtitlesResponse": {
+      "document": "AttachMediaSubtitles返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AudioTemplateInfo": {
       "document": "音频流配置参数",
@@ -14582,6 +14642,62 @@
       ],
       "usage": "out"
     },
+    "MediaSubtitleInput": {
+      "document": "字幕信息输入参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "字幕名字，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕语言。常见的取值如下：\n<li>cn：中文</li>\n<li>ja：日文</li>\n<li>en-US：英文</li>\n其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)",
+          "example": "无",
+          "member": "string",
+          "name": "Language",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕格式。取值范围如下：\n<li>vtt</li>",
+          "example": "vtt",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕内容，进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕的唯一标识。长度不能超过16个字符，可以使用大小写字母、数字、下划线（_）或横杠（-）。不能与媒资文件中现有字幕的唯一标识重复。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "MediaSubtitleItem": {
       "document": "字幕信息。",
       "members": [
@@ -15588,6 +15704,7 @@
         {
           "default": "",
           "document": "媒体文件唯一标识。",
+          "example": "123",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -15596,6 +15713,7 @@
         {
           "default": "",
           "document": "媒体文件名称，最长 64 个字符。",
+          "example": "新的视频名称",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -15604,6 +15722,7 @@
         {
           "default": "",
           "document": "媒体文件描述，最长 128 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -15612,6 +15731,7 @@
         {
           "default": "",
           "document": "媒体文件分类 ID。",
+          "example": "无",
           "member": "int64",
           "name": "ClassId",
           "required": false,
@@ -15620,6 +15740,7 @@
         {
           "default": "",
           "document": "媒体文件过期时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。",
+          "example": "无",
           "member": "string",
           "name": "ExpireTime",
           "required": false,
@@ -15628,6 +15749,7 @@
         {
           "default": "",
           "document": "视频封面图片文件（如 jpeg, png 等）进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。",
+          "example": "无",
           "member": "string",
           "name": "CoverData",
           "required": false,
@@ -15636,6 +15758,7 @@
         {
           "default": "",
           "document": "新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。",
+          "example": "无",
           "member": "MediaKeyFrameDescItem",
           "name": "AddKeyFrameDescs",
           "required": false,
@@ -15644,6 +15767,7 @@
         {
           "default": "",
           "document": "要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。",
+          "example": "无",
           "member": "float",
           "name": "DeleteKeyFrameDescs",
           "required": false,
@@ -15652,6 +15776,7 @@
         {
           "default": "",
           "document": "取值 1 表示清空视频打点信息，其他值无意义。\n同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。",
+          "example": "无",
           "member": "int64",
           "name": "ClearKeyFrameDescs",
           "required": false,
@@ -15660,6 +15785,7 @@
         {
           "default": "",
           "document": "新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 16 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。",
+          "example": "无",
           "member": "string",
           "name": "AddTags",
           "required": false,
@@ -15668,6 +15794,7 @@
         {
           "default": "",
           "document": "要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。",
+          "example": "无",
           "member": "string",
           "name": "DeleteTags",
           "required": false,
@@ -15676,6 +15803,7 @@
         {
           "default": "",
           "document": "取值 1 表示清空媒体文件所有标签，其他值无意义。\n同一个请求里，ClearTags 与 AddTags 不能同时出现。",
+          "example": "无",
           "member": "int64",
           "name": "ClearTags",
           "required": false,
@@ -15683,7 +15811,35 @@
         },
         {
           "default": "",
+          "document": "新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。",
+          "example": "无",
+          "member": "MediaSubtitleInput",
+          "name": "AddSubtitles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteSubtitleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。\n同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。",
+          "example": "无",
+          "member": "int64",
+          "name": "ClearSubtitles",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -15697,9 +15853,20 @@
       "members": [
         {
           "document": "新的视频封面 URL。\n* 注意：仅当请求携带 CoverData 时此返回值有效。 *",
+          "example": "无",
           "member": "string",
           "name": "CoverUrl",
+          "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "新增的字幕信息。",
+          "example": "无",
+          "member": "MediaSubtitleItem",
+          "name": "AddedSubtitleSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -19058,6 +19225,15 @@
           "example": "无",
           "member": "string",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。\n<li>单个存储地区长度限制：20个字符。</li>\n<li>数组长度限制：20。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "StorageRegions",
           "required": false,
           "type": "list"
         },

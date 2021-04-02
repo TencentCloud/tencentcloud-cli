@@ -50,6 +50,7 @@
         {
           "default": "",
           "document": "客户端session信息，从JSSDK请求中获得",
+          "example": "xxx",
           "member": "string",
           "name": "ClientSession",
           "required": true,
@@ -58,6 +59,7 @@
         {
           "default": "",
           "document": "游戏用户ID",
+          "example": "xxx",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -66,6 +68,7 @@
         {
           "default": "",
           "document": "游戏ID",
+          "example": "game-abcd1234",
           "member": "string",
           "name": "GameId",
           "required": true,
@@ -73,7 +76,8 @@
         },
         {
           "default": "",
-          "document": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等",
+          "document": "【已废弃】只在TrylockWorker时生效",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "GameRegion",
           "required": false,
@@ -82,6 +86,7 @@
         {
           "default": "",
           "document": "游戏参数",
+          "example": "StartFor=1",
           "member": "string",
           "name": "GameParas",
           "required": false,
@@ -89,7 +94,8 @@
         },
         {
           "default": "",
-          "document": "分辨率,，可设置为1080p或720p",
+          "document": "分辨率,，可设置为1080p或720p或1920x1080格式",
+          "example": "1080p",
           "member": "string",
           "name": "Resolution",
           "required": false,
@@ -98,6 +104,7 @@
         {
           "default": "",
           "document": "背景图url，格式为png或jpeg，宽高1920*1080",
+          "example": "http://ip:port/test.png",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -105,7 +112,8 @@
         },
         {
           "default": "",
-          "document": "【废弃】资源池编号",
+          "document": "【已废弃】",
+          "example": "1",
           "member": "uint64",
           "name": "SetNo",
           "required": false,
@@ -113,7 +121,8 @@
         },
         {
           "default": "",
-          "document": "单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)",
+          "document": "单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)",
+          "example": "2",
           "member": "uint64",
           "name": "Bitrate",
           "required": false,
@@ -121,7 +130,8 @@
         },
         {
           "default": "",
-          "document": "单位Mbps，动态调整最大码率",
+          "document": "单位Mbps，动态调整最大码率，有一定浮动范围",
+          "example": "4",
           "member": "uint64",
           "name": "MaxBitrate",
           "required": false,
@@ -129,7 +139,8 @@
         },
         {
           "default": "",
-          "document": "单位Mbps，动态调整最小码率",
+          "document": "单位Mbps，动态调整最小码率，有一定浮动范围",
+          "example": "2",
           "member": "uint64",
           "name": "MinBitrate",
           "required": false,
@@ -138,6 +149,7 @@
         {
           "default": "",
           "document": "帧率，可设置为30、45、60、90、120、144",
+          "example": "60",
           "member": "uint64",
           "name": "Fps",
           "required": false,
@@ -145,7 +157,8 @@
         },
         {
           "default": "",
-          "document": "游戏用户IP，用于就近调度，例如125.127.178.228",
+          "document": "【已废弃】只在TrylockWorker时生效",
+          "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
           "required": false,
@@ -153,7 +166,8 @@
         },
         {
           "default": "",
-          "document": "优化项，便于客户灰度开启新的优化项，默认为0",
+          "document": "【已废弃】优化项，便于客户灰度开启新的优化项，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Optimization",
           "required": false,
@@ -161,7 +175,8 @@
         },
         {
           "default": "",
-          "document": "【多人云游】游戏主机用户ID",
+          "document": "【互动云游】游戏主机用户ID",
+          "example": "xxx",
           "member": "string",
           "name": "HostUserId",
           "required": false,
@@ -169,7 +184,8 @@
         },
         {
           "default": "",
-          "document": "【多人云游】角色；Player表示玩家；Viewer表示观察者",
+          "document": "【互动云游】角色；Player表示玩家；Viewer表示观察者",
+          "example": "Player",
           "member": "string",
           "name": "Role",
           "required": false,
@@ -178,6 +194,7 @@
         {
           "default": "",
           "document": "游戏相关参数",
+          "example": "{}",
           "member": "string",
           "name": "GameContext",
           "required": false,
@@ -191,22 +208,28 @@
       "members": [
         {
           "document": "服务端session信息，返回给JSSDK",
+          "example": "xxx",
           "member": "string",
           "name": "ServerSession",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "【多人游戏】角色编号；比如1、2、3、4",
+          "document": "【已废弃】",
+          "example": "xx",
           "member": "string",
           "name": "RoleNumber",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "【多人云游】角色；Player表示玩家；Viewer表示观察者",
+          "document": "【互动云游】角色；Player表示玩家；Viewer表示观察者",
+          "example": "Player",
           "member": "string",
           "name": "Role",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -315,6 +338,7 @@
         {
           "default": "",
           "document": "游戏用户ID",
+          "example": "xxx",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -323,6 +347,7 @@
         {
           "default": "",
           "document": "【多人游戏】游戏主机用户ID",
+          "example": "无",
           "member": "string",
           "name": "HostUserId",
           "required": false,
@@ -403,6 +428,7 @@
         {
           "default": "",
           "document": "游戏用户ID",
+          "example": "xxx",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -411,6 +437,7 @@
         {
           "default": "",
           "document": "游戏ID",
+          "example": "game-abcd1234",
           "member": "string",
           "name": "GameId",
           "required": true,
@@ -419,6 +446,7 @@
         {
           "default": "",
           "document": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "GameRegion",
           "required": false,
@@ -427,6 +455,7 @@
         {
           "default": "",
           "document": "【废弃】资源池编号",
+          "example": "1",
           "member": "uint64",
           "name": "SetNo",
           "required": false,
@@ -435,6 +464,7 @@
         {
           "default": "",
           "document": "游戏用户IP，用于就近调度，例如125.127.178.228",
+          "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
           "required": false,
@@ -443,6 +473,7 @@
         {
           "default": "",
           "document": "分组ID",
+          "example": "cgg-1234abcd",
           "member": "string",
           "name": "GroupId",
           "required": false,

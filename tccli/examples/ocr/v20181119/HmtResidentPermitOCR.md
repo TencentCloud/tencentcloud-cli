@@ -22,6 +22,8 @@ Output:
         "CardType": 0,
         "ValidDate": "",
         "Authority": "",
+        "VisaNum": "0",
+        "PassNo": "000",
         "RequestId": "f72e7048-f1e0-42f3-b0bf-f8730d48bb5c"
     }
 }
@@ -50,6 +52,8 @@ Output:
         "CardType": 1,
         "ValidDate": "2018.09.06-2023.09.06",
         "Authority": "合肥市公安局高新分局",
+        "VisaNum": "0",
+        "PassNo": "000",
         "RequestId": "182abb0c-b0bd-403a-ab11-3dba21ae89d0"
     }
 }

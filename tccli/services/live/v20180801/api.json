@@ -9033,6 +9033,7 @@
         {
           "default": "",
           "document": "数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。",
+          "example": "2021-03-01 00:00:00",
           "member": "string",
           "name": "Time",
           "required": true,
@@ -9042,6 +9043,7 @@
         {
           "default": "",
           "document": "推流域名。",
+          "example": "test.com",
           "member": "string",
           "name": "PushDomain",
           "required": true,
@@ -9051,6 +9053,7 @@
         {
           "default": "",
           "document": "推流路径。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -9060,6 +9063,7 @@
         {
           "default": "",
           "document": "推流客户端 IP。",
+          "example": "0.0.0.0",
           "member": "string",
           "name": "ClientIp",
           "required": true,
@@ -9069,6 +9073,7 @@
         {
           "default": "",
           "document": "开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。",
+          "example": "2021-03-01 00:00:00",
           "member": "string",
           "name": "BeginPushTime",
           "required": true,
@@ -9078,6 +9083,7 @@
         {
           "default": "",
           "document": "分辨率信息。",
+          "example": "480*864",
           "member": "string",
           "name": "Resolution",
           "required": true,
@@ -9087,6 +9093,7 @@
         {
           "default": "",
           "document": "视频编码格式。",
+          "example": "H264",
           "member": "string",
           "name": "VCodec",
           "required": true,
@@ -9096,6 +9103,7 @@
         {
           "default": "",
           "document": "音频编码格式。",
+          "example": "AAC",
           "member": "string",
           "name": "ACodec",
           "required": true,
@@ -9105,6 +9113,7 @@
         {
           "default": "",
           "document": "推流序列号，用来唯一的标志一次推流。",
+          "example": "11111",
           "member": "string",
           "name": "Sequence",
           "required": true,
@@ -9114,6 +9123,7 @@
         {
           "default": "",
           "document": "视频帧率。",
+          "example": "1",
           "member": "uint64",
           "name": "VideoFps",
           "required": true,
@@ -9123,6 +9133,7 @@
         {
           "default": "",
           "document": "视频码率，单位: bps。",
+          "example": "1",
           "member": "uint64",
           "name": "VideoRate",
           "required": true,
@@ -9132,6 +9143,7 @@
         {
           "default": "",
           "document": "音频帧率。",
+          "example": "1",
           "member": "uint64",
           "name": "AudioFps",
           "required": true,
@@ -9141,6 +9153,7 @@
         {
           "default": "",
           "document": "音频码率，单位: bps。",
+          "example": "1",
           "member": "uint64",
           "name": "AudioRate",
           "required": true,
@@ -9150,6 +9163,7 @@
         {
           "default": "",
           "document": "本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。",
+          "example": "10",
           "member": "uint64",
           "name": "LocalTs",
           "required": true,
@@ -9159,6 +9173,7 @@
         {
           "default": "",
           "document": "视频流逝时间，单位: ms。",
+          "example": "10",
           "member": "uint64",
           "name": "VideoTs",
           "required": true,
@@ -9168,6 +9183,7 @@
         {
           "default": "",
           "document": "音频流逝时间，单位: ms。",
+          "example": "10",
           "member": "uint64",
           "name": "AudioTs",
           "required": true,
@@ -9177,6 +9193,7 @@
         {
           "default": "",
           "document": "metadata 中的视频码率，单位: kbps。",
+          "example": "1",
           "member": "uint64",
           "name": "MetaVideoRate",
           "required": true,
@@ -9186,6 +9203,7 @@
         {
           "default": "",
           "document": "metadata 中的音频码率，单位: kbps。",
+          "example": "1",
           "member": "uint64",
           "name": "MetaAudioRate",
           "required": true,
@@ -9195,10 +9213,21 @@
         {
           "default": "",
           "document": "metadata 中的帧率。",
+          "example": "1",
           "member": "uint64",
           "name": "MateFps",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流参数",
+          "example": "&test=1",
+          "member": "string",
+          "name": "StreamParam",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -98,6 +98,7 @@
         {
           "default": "",
           "document": "音频码率，取值范围：0 和 [26, 256]，单位：kbps。\n注意：当取值为 0，表示音频码率和原始音频保持一致。",
+          "example": "2000",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
@@ -107,6 +108,7 @@
         {
           "default": "",
           "document": "音频编码器，可选项：aac,mp3,ac3,flac,mp2。",
+          "example": "aac",
           "member": "string",
           "name": "Codec",
           "required": true,
@@ -116,6 +118,7 @@
         {
           "default": "",
           "document": "声道数，可选项：\n1：单声道，\n2：双声道，\n6：立体声。",
+          "example": "6",
           "member": "int64",
           "name": "Channel",
           "required": true,
@@ -125,6 +128,7 @@
         {
           "default": "",
           "document": "采样率，单位：Hz。可选项：32000，44100,48000",
+          "example": "44100",
           "member": "int64",
           "name": "SampleRate",
           "required": true,
@@ -134,10 +138,21 @@
         {
           "default": "",
           "document": "音频降噪信息",
+          "example": "无",
           "member": "Denoise",
           "name": "Denoise",
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开启添加静音，可选项：\n0：不开启，\n1：开启，\n默认不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableMuteAudio",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1987,8 +2002,19 @@
         {
           "default": "",
           "document": "删除流，可选项：video,audio。",
+          "example": "video",
           "member": "string",
           "name": "DeleteStream",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Flv 参数，目前支持add_keyframe_index",
+          "example": "add_keyframe_index",
+          "member": "string",
+          "name": "FlvFlags",
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -446,6 +446,7 @@
         {
           "default": "",
           "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "example": "无",
           "member": "string",
           "name": "SpecCode",
           "required": true,
@@ -454,6 +455,7 @@
         {
           "default": "",
           "document": "PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。",
+          "example": "无",
           "member": "string",
           "name": "DBVersion",
           "required": true,
@@ -462,6 +464,7 @@
         {
           "default": "",
           "document": "实例容量大小，单位：GB。",
+          "example": "无",
           "member": "uint64",
           "name": "Storage",
           "required": true,
@@ -470,6 +473,7 @@
         {
           "default": "",
           "document": "一次性购买的实例数量。取值1-100",
+          "example": "无",
           "member": "uint64",
           "name": "InstanceCount",
           "required": true,
@@ -478,6 +482,7 @@
         {
           "default": "",
           "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "example": "无",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -486,6 +491,7 @@
         {
           "default": "",
           "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "example": "无",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -494,6 +500,7 @@
         {
           "default": "",
           "document": "项目ID。",
+          "example": "无",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -502,6 +509,7 @@
         {
           "default": "",
           "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -510,6 +518,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
+          "example": "无",
           "member": "uint64",
           "name": "AutoVoucher",
           "required": false,
@@ -518,6 +527,7 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "无",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -526,6 +536,7 @@
         {
           "default": "",
           "document": "私有网络ID。",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -534,6 +545,7 @@
         {
           "default": "",
           "document": "私有网络子网ID。",
+          "example": "无",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -542,6 +554,7 @@
         {
           "default": "",
           "document": "续费标记：0-正常续费（默认）；1-自动续费；",
+          "example": "无",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -550,6 +563,7 @@
         {
           "default": "",
           "document": "活动ID",
+          "example": "无",
           "member": "int64",
           "name": "ActivityId",
           "required": false,
@@ -558,6 +572,7 @@
         {
           "default": "",
           "document": "实例名(后续支持)",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -566,6 +581,7 @@
         {
           "default": "",
           "document": "是否需要支持Ipv6，1：是，0：否",
+          "example": "无",
           "member": "uint64",
           "name": "NeedSupportIpv6",
           "required": false,
@@ -574,8 +590,18 @@
         {
           "default": "",
           "document": "实例需要绑定的Tag信息，默认为空",
+          "example": "无",
           "member": "Tag",
           "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
         }
@@ -587,22 +613,28 @@
       "members": [
         {
           "document": "订单号列表。每个实例对应一个订单号。",
+          "example": "无",
           "member": "string",
           "name": "DealNames",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "冻结流水号",
+          "example": "无",
           "member": "string",
           "name": "BillId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "创建成功的实例ID集合，只在后付费情景下有返回值",
+          "example": "无",
           "member": "string",
           "name": "DBInstanceIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -788,6 +820,15 @@
           "name": "TagList",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "[\"sasasasd\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -923,6 +964,15 @@
           "name": "MinDelayEliminateReserve",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "[\"sasasasd\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1157,6 +1207,7 @@
         {
           "default": "",
           "document": "实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1166,6 +1217,7 @@
         {
           "default": "",
           "document": "实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段",
+          "example": "100003",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1175,6 +1227,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "1",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -1184,6 +1237,7 @@
         {
           "default": "",
           "document": "私有网络ID",
+          "example": "123123",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1193,6 +1247,7 @@
         {
           "default": "",
           "document": "子网ID",
+          "example": "1",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1202,6 +1257,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "postgre-123",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -1211,6 +1267,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "postgre-123",
           "member": "string",
           "name": "DBInstanceName",
           "required": true,
@@ -1220,6 +1277,7 @@
         {
           "default": "",
           "document": "实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、readonly（只读）、restarting（重启中）",
+          "example": "applying",
           "member": "string",
           "name": "DBInstanceStatus",
           "required": true,
@@ -1229,6 +1287,7 @@
         {
           "default": "",
           "document": "实例分配的内存大小，单位：GB",
+          "example": "2",
           "member": "uint64",
           "name": "DBInstanceMemory",
           "required": true,
@@ -1238,6 +1297,7 @@
         {
           "default": "",
           "document": "实例分配的存储空间大小，单位：GB",
+          "example": "10",
           "member": "uint64",
           "name": "DBInstanceStorage",
           "required": true,
@@ -1247,6 +1307,7 @@
         {
           "default": "",
           "document": "实例分配的CPU数量，单位：个",
+          "example": "2",
           "member": "uint64",
           "name": "DBInstanceCpu",
           "required": true,
@@ -1256,6 +1317,7 @@
         {
           "default": "",
           "document": "售卖规格ID",
+          "example": "11",
           "member": "string",
           "name": "DBInstanceClass",
           "required": true,
@@ -1265,6 +1327,7 @@
         {
           "default": "",
           "document": "实例类型，类型有：1、primary（主实例）；2、readonly（只读实例）；3、guard（灾备实例）；4、temp（临时实例）",
+          "example": "primary",
           "member": "string",
           "name": "DBInstanceType",
           "required": true,
@@ -1274,6 +1337,7 @@
         {
           "default": "",
           "document": "实例版本，目前只支持standard（双机高可用版, 一主一从）",
+          "example": "standard",
           "member": "string",
           "name": "DBInstanceVersion",
           "required": true,
@@ -1283,6 +1347,7 @@
         {
           "default": "",
           "document": "实例DB字符集",
+          "example": "utf-8",
           "member": "string",
           "name": "DBCharset",
           "required": true,
@@ -1292,6 +1357,7 @@
         {
           "default": "",
           "document": "PostgreSQL内核版本",
+          "example": "12.4",
           "member": "string",
           "name": "DBVersion",
           "required": true,
@@ -1301,6 +1367,7 @@
         {
           "default": "",
           "document": "实例创建时间",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -1310,6 +1377,7 @@
         {
           "default": "",
           "document": "实例执行最后一次更新的时间",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -1319,6 +1387,7 @@
         {
           "default": "",
           "document": "实例到期时间",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime",
           "name": "ExpireTime",
           "required": true,
@@ -1328,6 +1397,7 @@
         {
           "default": "",
           "document": "实例隔离时间",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime",
           "name": "IsolatedTime",
           "required": true,
@@ -1337,6 +1407,7 @@
         {
           "default": "",
           "document": "计费模式，1、prepaid（包年包月,预付费）；2、postpaid（按量计费，后付费）",
+          "example": "prepaid",
           "member": "string",
           "name": "PayType",
           "required": true,
@@ -1346,6 +1417,7 @@
         {
           "default": "",
           "document": "是否自动续费，1：自动续费，0：不自动续费",
+          "example": "1",
           "member": "uint64",
           "name": "AutoRenew",
           "required": true,
@@ -1355,6 +1427,7 @@
         {
           "default": "",
           "document": "实例网络连接信息",
+          "example": "1",
           "member": "DBInstanceNetInfo",
           "name": "DBInstanceNetInfo",
           "required": true,
@@ -1364,6 +1437,7 @@
         {
           "default": "",
           "document": "机器类型",
+          "example": "1",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1373,6 +1447,7 @@
         {
           "default": "",
           "document": "用户的AppId",
+          "example": "123455",
           "member": "uint64",
           "name": "AppId",
           "required": true,
@@ -1382,6 +1457,7 @@
         {
           "default": "",
           "document": "实例的Uid",
+          "example": "12344",
           "member": "uint64",
           "name": "Uid",
           "required": true,
@@ -1391,6 +1467,7 @@
         {
           "default": "",
           "document": "实例是否支持Ipv6，1：支持，0：不支持",
+          "example": "1",
           "member": "uint64",
           "name": "SupportIpv6",
           "required": true,
@@ -1400,6 +1477,7 @@
         {
           "default": "",
           "document": "实例绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "Tag",
           "name": "TagList",
           "required": true,
@@ -1409,6 +1487,7 @@
         {
           "default": "",
           "document": "主实例信息，仅在实例为只读实例时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgre-123",
           "member": "string",
           "name": "MasterDBInstanceId",
           "required": true,
@@ -1418,6 +1497,7 @@
         {
           "default": "",
           "document": "只读实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
           "member": "int64",
           "name": "ReadOnlyInstanceNum",
           "required": true,
@@ -1427,8 +1507,19 @@
         {
           "default": "",
           "document": "只读实例在只读组中的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
           "member": "string",
           "name": "StatusInReadonlyGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03 12:00",
+          "member": "string",
+          "name": "OfflineTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true

@@ -256,6 +256,14 @@
         "title": "DescribeBasicDeviceThreshold"
       }
     ],
+    "DescribeBizHttpStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dayu.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizHttpStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Statistics\": \"xx\",\n    \"Business\": \"xx\",\n    \"ProtoInfo\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Port\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HttpStatusMap\": {\n            \"SourceHttp2xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http5xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"SourceHttp5xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"SourceHttp404\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http4xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"SourceHttp4xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http2xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http404\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"SourceHttp3xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http3xx\": [\n                1,\n                2,\n                3,\n                2\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取业务流量状态码统计曲线"
+      }
+    ],
     "DescribeBizTrend": [
       {
         "document": "",

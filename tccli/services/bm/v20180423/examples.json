@@ -27,8 +27,8 @@
     "CreateCustomImage": [
       {
         "document": "",
-        "input": "https://bm.tencentcloudapi.com/?Action=CreateCustomImage\r\n&InstanceId=testid\r\n&ImageName=aa678\r\n&ImageDescription=876aa\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2a13989-5776-4a8b-83d6-43714117ac3c\",\n        \"TaskId\": 123\n    }\n}",
+        "input": "https://bm.tencentcloudapi.com/?Action=CreateCustomImage\n&InstanceId=testid\n&ImageName=aa678\n&ImageDescription=876aa\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2a13989-5776-4a8b-83d6-43714117ac3c\",\n        \"TaskId\": 123,\n        \"ImageId\": \"bm-img-1a2b3c4d\"\n    }\n}",
         "title": "创建自定义镜像"
       }
     ],

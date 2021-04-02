@@ -5449,7 +5449,8 @@
       "members": [
         {
           "default": "",
-          "document": "加入中节的点数量",
+          "document": "加入中的节点数量",
+          "example": "0",
           "member": "int64",
           "name": "Joining",
           "required": true,
@@ -5459,6 +5460,7 @@
         {
           "default": "",
           "document": "初始化中的节点数量",
+          "example": "0",
           "member": "int64",
           "name": "Initializing",
           "required": true,
@@ -5468,6 +5470,7 @@
         {
           "default": "",
           "document": "正常的节点数量",
+          "example": "1",
           "member": "int64",
           "name": "Normal",
           "required": true,
@@ -5477,6 +5480,7 @@
         {
           "default": "",
           "document": "节点总数",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "required": true,

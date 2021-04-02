@@ -64,6 +64,14 @@
         "title": "查询安全组关联实例列表"
       }
     ],
+    "DescribeCfwEips": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwEips\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"NatGatewayId\": \"ALL\",\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NatFwEipList\": [\n            {\n                \"Eip\": \"xxx\",\n                \"NatGatewayId\": \"nat-xxx\",\n                \"NatGatewayName\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询防火墙弹性公网ip"
+      }
+    ],
     "DescribeNatRuleOverview": [
       {
         "document": "",
@@ -118,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcRuleOverview\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"StrategyNum\": 70,\n        \"StartRuleNum\": 70,\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
         "title": "vpc规则列表概况"
+      }
+    ],
+    "ExpandCfwVertical": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 200,\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "防火墙垂直扩容"
       }
     ],
     "ModifyAcRule": [
@@ -182,6 +198,14 @@
         "input": "https://cfw.tencentcloudapi.com/?Action=RunSyncAsset\n&Type=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "同步资产-互联网&VPC"
+      }
+    ],
+    "SetNatFwDnatRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"OperationType\": \"add\",\n    \"AddOrDelDnatRules\": [\n        {\n            \"IpProtocol\": \"TCP\",\n            \"PublicIpAddress\": \"119.45.163.54\",\n            \"PublicPort\": 80,\n            \"PrivateIpAddress\": \"10.206.22.4\",\n            \"PrivatePort\": 80,\n            \"Description\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "配置防火墙Dnat规则"
       }
     ]
   },

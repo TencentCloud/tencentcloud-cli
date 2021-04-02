@@ -163,7 +163,7 @@ def doCreateSecurityGroupApiRules(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAllAccessControlRule(args, parsed_globals):
+def doDescribeSyncAssetStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -177,9 +177,9 @@ def doDeleteAllAccessControlRule(args, parsed_globals):
     client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAllAccessControlRuleRequest()
+    model = models.DescribeSyncAssetStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteAllAccessControlRule(model)
+    rsp = client.DescribeSyncAssetStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -388,6 +388,31 @@ def doModifyAllSwitchStatus(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSetNatFwDnatRule(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetNatFwDnatRuleRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SetNatFwDnatRule(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyAllRuleStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -430,6 +455,31 @@ def doDescribeTableStatus(args, parsed_globals):
     model = models.DescribeTableStatusRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeTableStatus(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCfwEips(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCfwEipsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCfwEips(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -538,7 +588,7 @@ def doDescribeSwitchLists(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSyncAssetStatus(args, parsed_globals):
+def doDeleteAllAccessControlRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -552,9 +602,34 @@ def doDescribeSyncAssetStatus(args, parsed_globals):
     client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSyncAssetStatusRequest()
+    model = models.DeleteAllAccessControlRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSyncAssetStatus(model)
+    rsp = client.DeleteAllAccessControlRule(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doExpandCfwVertical(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ExpandCfwVerticalRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ExpandCfwVertical(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -605,7 +680,7 @@ ACTION_MAP = {
     "DescribeVpcRuleOverview": doDescribeVpcRuleOverview,
     "DeleteAcRule": doDeleteAcRule,
     "CreateSecurityGroupApiRules": doCreateSecurityGroupApiRules,
-    "DeleteAllAccessControlRule": doDeleteAllAccessControlRule,
+    "DescribeSyncAssetStatus": doDescribeSyncAssetStatus,
     "DescribeSecurityGroupList": doDescribeSecurityGroupList,
     "DeleteSecurityGroupAllRule": doDeleteSecurityGroupAllRule,
     "CreateAcRules": doCreateAcRules,
@@ -614,13 +689,16 @@ ACTION_MAP = {
     "DescribeRuleOverview": doDescribeRuleOverview,
     "ModifySequenceRules": doModifySequenceRules,
     "ModifyAllSwitchStatus": doModifyAllSwitchStatus,
+    "SetNatFwDnatRule": doSetNatFwDnatRule,
     "ModifyAllRuleStatus": doModifyAllRuleStatus,
     "DescribeTableStatus": doDescribeTableStatus,
+    "DescribeCfwEips": doDescribeCfwEips,
     "RunSyncAsset": doRunSyncAsset,
     "ModifyAcRule": doModifyAcRule,
     "DeleteSecurityGroupRule": doDeleteSecurityGroupRule,
     "DescribeSwitchLists": doDescribeSwitchLists,
-    "DescribeSyncAssetStatus": doDescribeSyncAssetStatus,
+    "DeleteAllAccessControlRule": doDeleteAllAccessControlRule,
+    "ExpandCfwVertical": doExpandCfwVertical,
     "ModifyItemSwitchStatus": doModifyItemSwitchStatus,
 
 }

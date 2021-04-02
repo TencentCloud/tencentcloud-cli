@@ -84,6 +84,12 @@
       "name": "获取云开发项目列表",
       "output": "DescribeCloudBaseProjectLatestVersionListResponse"
     },
+    "DescribeCloudBaseProjectVersionList": {
+      "document": "云项目部署列表",
+      "input": "DescribeCloudBaseProjectVersionListRequest",
+      "name": "云项目部署版本列表",
+      "output": "DescribeCloudBaseProjectVersionListResponse"
+    },
     "DescribeCloudBaseRunResource": {
       "document": "查看容器托管的集群状态",
       "input": "DescribeCloudBaseRunResourceRequest",
@@ -666,6 +672,26 @@
           "name": "FailType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "私有仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://github.com/humin09/helloworld",
+          "member": "string",
+          "name": "RepoUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否私有仓库代码变更触发自动部署\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoDeployOnCodeChange",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -1465,6 +1491,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代码分支\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "master",
+          "member": "string",
+          "name": "Branch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1609,6 +1645,24 @@
           "example": "basic",
           "member": "string",
           "name": "FreeQuota",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否代码变更触发自动部署",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoDeployOnCodeChange",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "私有仓库地址",
+          "example": "https://github.com/myrepo/vue",
+          "member": "string",
+          "name": "RepoUrl",
           "required": false,
           "type": "string"
         }
@@ -2601,6 +2655,96 @@
         {
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseProjectVersionListRequest": {
+      "document": "DescribeCloudBaseProjectVersionList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "env-123",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "example": "xx",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "第几页,从0开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "2021-03-27 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终止时间",
+          "example": "2021-03-27 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseProjectVersionListResponse": {
+      "document": "DescribeCloudBaseProjectVersionList返回参数结构体",
+      "members": [
+        {
+          "document": "版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseProjectVersion",
+          "name": "ProjectVersions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,

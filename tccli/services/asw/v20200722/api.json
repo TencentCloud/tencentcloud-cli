@@ -47,6 +47,12 @@
       "input": "StartExecutionRequest",
       "name": "启动执行",
       "output": "StartExecutionResponse"
+    },
+    "StopExecution": {
+      "document": "终止某个状态机",
+      "input": "StopExecutionRequest",
+      "name": "停止状态机",
+      "output": "StopExecutionResponse"
     }
   },
   "metadata": {
@@ -62,6 +68,7 @@
         {
           "default": "",
           "document": "定义文本（JSON格式）",
+          "example": "qrn:qcs:asw:ap-xxxx:123456:execution:cfq5fjii:cgr51dcii",
           "member": "string",
           "name": "Definition",
           "required": true,
@@ -70,6 +77,7 @@
         {
           "default": "",
           "document": "状态机所属服务名",
+          "example": "Hello-World",
           "member": "string",
           "name": "FlowServiceName",
           "required": true,
@@ -78,6 +86,7 @@
         {
           "default": "",
           "document": "是不是新的角色",
+          "example": "false",
           "member": "bool",
           "name": "IsNewRole",
           "required": true,
@@ -86,6 +95,7 @@
         {
           "default": "",
           "document": "状态机类型（EXPRESS，STANDARD）",
+          "example": "EXPRESS",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -94,6 +104,7 @@
         {
           "default": "",
           "document": "状态机所属服务中文名",
+          "example": "你好ASW",
           "member": "string",
           "name": "FlowServiceChineseName",
           "required": false,
@@ -102,6 +113,7 @@
         {
           "default": "",
           "document": "角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine",
+          "example": "qcs::cam::uin/12345:roleName/NameOfARole",
           "member": "string",
           "name": "RoleResource",
           "required": false,
@@ -110,8 +122,27 @@
         {
           "default": "",
           "document": "备注",
+          "example": "这是一个ASW工作流示例",
           "member": "string",
           "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启CLS日志投递功能",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCLS",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "该状态机的默认输入",
+          "example": "{}",
+          "member": "string",
+          "name": "Input",
           "required": false,
           "type": "string"
         }
@@ -123,15 +154,19 @@
       "members": [
         {
           "document": "状态机所属服务资源",
+          "example": "flowservicetest",
           "member": "string",
           "name": "FlowServiceResource",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "生成日期",
+          "example": "1595227100",
           "member": "string",
           "name": "CreateDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -333,6 +368,7 @@
         {
           "default": "",
           "document": "状态机所属服务资源名",
+          "example": "qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicete",
           "member": "string",
           "name": "FlowServiceResource",
           "required": true,
@@ -346,57 +382,100 @@
       "members": [
         {
           "document": "状态机所属服务名",
+          "example": "flowservicetest",
           "member": "string",
           "name": "FlowServiceName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "状态机状态",
+          "example": "Online",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "定义文本（JSON格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Comment\":\"An example of the Amazon States Language using a map state to process elements of an array with a max concurrency of 2.\",\"StartAt\":\"Map\",\"States\":{\"Map\":{\"Type\":\"Map\",\"ItemsPath\":\"$.job-spec\",\"ResultPath\":\"$.array\",\"MaxConcurrency\":2,\"Next\":\"Final State\",\"Iterator\":{\"StartAt\":\"My Stage\",\"States\":{\"My Stage\":{\"Type\":\"Task\",\"Resource\":\"arn:aws:states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"arn:aws:lambda:us-east-1:<>:function:some-lambda:$LATEST\",\"Payload\":{\"Input.$\":\"$.array\"}},\"End\":true}}}},\"Final State\":{\"Type\":\"Pass\",\"End\":true}}}",
           "member": "string",
           "name": "Definition",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "角色资源名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qrn:qcs:asw:sh:1300074211:http:qrn",
           "member": "string",
           "name": "RoleResource",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "状态机的类型，可以为 （EXPRESS/STANDARD）",
+          "example": "EXPRESS",
           "member": "string",
           "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "生成时间",
+          "example": "1595227100",
           "member": "string",
           "name": "CreateDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是一个用来做演示的状态机",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "状态机所属服务中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "状态机中文名称",
           "member": "string",
           "name": "FlowServiceChineseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开启日志CLS服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "EnableCLS",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CLS日志查看地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://console.cloud.tencent.com/cls",
+          "member": "string",
+          "name": "CLSUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "工作流提示输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowInput",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -573,6 +652,7 @@
         {
           "default": "",
           "document": "状态机资源名",
+          "example": "无",
           "member": "string",
           "name": "FlowServiceResource",
           "required": true,
@@ -581,6 +661,7 @@
         {
           "default": "",
           "document": "定义JSON",
+          "example": "无",
           "member": "string",
           "name": "Definition",
           "required": true,
@@ -589,6 +670,7 @@
         {
           "default": "",
           "document": "状态机所属服务名",
+          "example": "无",
           "member": "string",
           "name": "FlowServiceName",
           "required": true,
@@ -597,6 +679,7 @@
         {
           "default": "",
           "document": "状态机所属服务中文名",
+          "example": "无",
           "member": "string",
           "name": "FlowServiceChineseName",
           "required": true,
@@ -605,6 +688,7 @@
         {
           "default": "",
           "document": "是否是新角色",
+          "example": "false",
           "member": "bool",
           "name": "IsNewRole",
           "required": true,
@@ -613,6 +697,7 @@
         {
           "default": "",
           "document": "状态机类型",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -621,6 +706,7 @@
         {
           "default": "",
           "document": "角色资源名",
+          "example": "无",
           "member": "string",
           "name": "RoleResource",
           "required": true,
@@ -629,10 +715,20 @@
         {
           "default": "",
           "document": "状态机备注",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否允许日志投递",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCLS",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -642,15 +738,19 @@
       "members": [
         {
           "document": "状态机资源名",
+          "example": "qrn:qcs:asw:ap-guangzhou:1300000779:http:json:flowmachine:w",
           "member": "string",
           "name": "FlowServiceResource",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "更新时间",
+          "example": "1596628154044",
           "member": "string",
           "name": "UpdateDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -832,6 +932,33 @@
         }
       ],
       "usage": "out"
+    },
+    "StopExecutionRequest": {
+      "document": "StopExecution请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行名称",
+          "example": "qrn:qcs:asw:ap-xxxx:123456:execution:cfq5fjii:cgr51dcii",
+          "member": "string",
+          "name": "ExecutionQrn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopExecutionResponse": {
+      "document": "StopExecution返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

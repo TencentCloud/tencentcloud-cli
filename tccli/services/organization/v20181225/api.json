@@ -315,6 +315,7 @@
         {
           "default": "",
           "document": "被删除成员的UIN列表",
+          "example": "[\"1\\r\\n\"]",
           "member": "uint64",
           "name": "Uins",
           "required": true,

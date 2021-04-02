@@ -112,6 +112,14 @@
         "title": "获取云开发项目列表"
       }
     ],
+    "DescribeCloudBaseProjectVersionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseProjectVersionList\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"ProjectName\": \"xx\",\n    \"StartTime\": \"xx\",\n    \"EndTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ProjectVersions\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdateTime\": 0,\n                \"EnvId\": \"xx\",\n                \"Name\": \"xx\",\n                \"Sam\": \"xx\",\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"RcJson\": \"xx\",\n                \"CDId\": \"xx\",\n                \"NetworkConfig\": \"xx\",\n                \"Parameters\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Source\": {\n                    \"CodingPackageVersion\": \"xx\",\n                    \"WorkDir\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"Url\": \"xx\",\n                    \"RawCode\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"CodingPackageName\": \"xx\"\n                },\n                \"FailReason\": \"xx\",\n                \"AddonConfig\": \"xx\",\n                \"VersionNum\": 0,\n                \"ExtensionId\": \"xx\",\n                \"FailType\": \"xx\",\n                \"CIId\": \"xx\",\n                \"Type\": \"xx\",\n                \"CreateTime\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询云项目部署版本列表"
+      }
+    ],
     "DescribeCloudBaseRunResource": [
       {
         "document": "",

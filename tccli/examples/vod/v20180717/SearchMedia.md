@@ -42,7 +42,7 @@ Output:
                         "SourceType": "Record",
                         "SourceContext": ""
                     },
-                    "StorageRegion": "gzp"
+                    "StorageRegion": "ap-chongqing"
                 },
                 "MetaData": {
                     "Size": 10556,
@@ -231,6 +231,59 @@ Output:
                         {
                             "TimeOffset": 100,
                             "Content": "def"
+                        }
+                    ]
+                },
+                "MiniProgramReviewInfo": {
+                    "MiniProgramReviewList": [
+                        {
+                            "Url": "xx",
+                            "Definition": 0,
+                            "ReviewResult": "xx",
+                            "ReviewSummary": [
+                                {
+                                    "Confidence": 0.0,
+                                    "Type": "xx",
+                                    "Suggestion": "xx"
+                                }
+                            ],
+                            "MetaData": {
+                                "Rotate": 0,
+                                "Container": "xx",
+                                "AudioDuration": 0.0,
+                                "VideoStreamSet": [
+                                    {
+                                        "Width": 0,
+                                        "Codec": "xx",
+                                        "Bitrate": 0,
+                                        "Fps": 0,
+                                        "Height": 0
+                                    }
+                                ],
+                                "Height": 0,
+                                "VideoDuration": 0.0,
+                                "Width": 0,
+                                "Duration": 0.0,
+                                "Size": 0,
+                                "Bitrate": 0,
+                                "AudioStreamSet": [
+                                    {
+                                        "SamplingRate": 0,
+                                        "Codec": "xx",
+                                        "Bitrate": 0
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "AdaptiveDynamicStreamingInfo": {
+                    "AdaptiveDynamicStreamingSet": [
+                        {
+                            "DrmType": "xx",
+                            "Definition": 0,
+                            "Url": "xx",
+                            "Package": "xx"
                         }
                     ]
                 }
@@ -281,7 +334,7 @@ Output:
                         "SourceType": "Record",
                         "SourceContext": ""
                     },
-                    "StorageRegion": "gzp"
+                    "StorageRegion": "ap-chongqing"
                 },
                 "MetaData": {
                     "Size": 10556,
@@ -470,6 +523,59 @@ Output:
                         {
                             "TimeOffset": 100,
                             "Content": "def"
+                        }
+                    ]
+                },
+                "MiniProgramReviewInfo": {
+                    "MiniProgramReviewList": [
+                        {
+                            "Url": "xx",
+                            "Definition": 0,
+                            "ReviewResult": "xx",
+                            "ReviewSummary": [
+                                {
+                                    "Confidence": 0,
+                                    "Type": "xx",
+                                    "Suggestion": "xx"
+                                }
+                            ],
+                            "MetaData": {
+                                "Rotate": 0,
+                                "Container": "xx",
+                                "AudioDuration": 0,
+                                "VideoStreamSet": [
+                                    {
+                                        "Width": 0,
+                                        "Codec": "xx",
+                                        "Bitrate": 0,
+                                        "Fps": 0,
+                                        "Height": 0
+                                    }
+                                ],
+                                "Height": 0,
+                                "VideoDuration": 0,
+                                "Width": 0,
+                                "Duration": 0,
+                                "Size": 0,
+                                "Bitrate": 0,
+                                "AudioStreamSet": [
+                                    {
+                                        "SamplingRate": 0,
+                                        "Codec": "xx",
+                                        "Bitrate": 0
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "AdaptiveDynamicStreamingInfo": {
+                    "AdaptiveDynamicStreamingSet": [
+                        {
+                            "DrmType": "xx",
+                            "Definition": 0,
+                            "Url": "xx",
+                            "Package": "xx"
                         }
                     ]
                 }
@@ -520,7 +626,7 @@ Output:
                         "SourceType": "Record",
                         "SourceContext": ""
                     },
-                    "StorageRegion": "gzp"
+                    "StorageRegion": "ap-chongqing"
                 },
                 "MetaData": {
                     "Size": 10556,
@@ -709,6 +815,59 @@ Output:
                         {
                             "TimeOffset": 100,
                             "Content": "def"
+                        }
+                    ]
+                },
+                "MiniProgramReviewInfo": {
+                    "MiniProgramReviewList": [
+                        {
+                            "Url": "xx",
+                            "Definition": 0,
+                            "ReviewResult": "xx",
+                            "ReviewSummary": [
+                                {
+                                    "Confidence": 0,
+                                    "Type": "xx",
+                                    "Suggestion": "xx"
+                                }
+                            ],
+                            "MetaData": {
+                                "Rotate": 0,
+                                "Container": "xx",
+                                "AudioDuration": 0,
+                                "VideoStreamSet": [
+                                    {
+                                        "Width": 0,
+                                        "Codec": "xx",
+                                        "Bitrate": 0,
+                                        "Fps": 0,
+                                        "Height": 0
+                                    }
+                                ],
+                                "Height": 0,
+                                "VideoDuration": 0,
+                                "Width": 0,
+                                "Duration": 0,
+                                "Size": 0,
+                                "Bitrate": 0,
+                                "AudioStreamSet": [
+                                    {
+                                        "SamplingRate": 0,
+                                        "Codec": "xx",
+                                        "Bitrate": 0
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "AdaptiveDynamicStreamingInfo": {
+                    "AdaptiveDynamicStreamingSet": [
+                        {
+                            "DrmType": "xx",
+                            "Definition": 0,
+                            "Url": "xx",
+                            "Package": "xx"
                         }
                     ]
                 }
@@ -762,7 +921,7 @@ Output:
                     "SourceInfo": {
                         "SourceType": "Upload"
                     },
-                    "StorageRegion": "gzp"
+                    "StorageRegion": "ap-chongqing"
                 },
                 "MetaData": {
                     "Size": 10556,
@@ -951,6 +1110,59 @@ Output:
                         {
                             "TimeOffset": 100,
                             "Content": "def"
+                        }
+                    ]
+                },
+                "MiniProgramReviewInfo": {
+                    "MiniProgramReviewList": [
+                        {
+                            "Url": "xx",
+                            "Definition": 0,
+                            "ReviewResult": "xx",
+                            "ReviewSummary": [
+                                {
+                                    "Confidence": 0,
+                                    "Type": "xx",
+                                    "Suggestion": "xx"
+                                }
+                            ],
+                            "MetaData": {
+                                "Rotate": 0,
+                                "Container": "xx",
+                                "AudioDuration": 0,
+                                "VideoStreamSet": [
+                                    {
+                                        "Width": 0,
+                                        "Codec": "xx",
+                                        "Bitrate": 0,
+                                        "Fps": 0,
+                                        "Height": 0
+                                    }
+                                ],
+                                "Height": 0,
+                                "VideoDuration": 0,
+                                "Width": 0,
+                                "Duration": 0,
+                                "Size": 0,
+                                "Bitrate": 0,
+                                "AudioStreamSet": [
+                                    {
+                                        "SamplingRate": 0,
+                                        "Codec": "xx",
+                                        "Bitrate": 0
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "AdaptiveDynamicStreamingInfo": {
+                    "AdaptiveDynamicStreamingSet": [
+                        {
+                            "DrmType": "xx",
+                            "Definition": 0,
+                            "Url": "xx",
+                            "Package": "xx"
                         }
                     ]
                 }

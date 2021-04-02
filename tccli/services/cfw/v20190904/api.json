@@ -48,6 +48,12 @@
       "name": "获取安全组关联实例列表",
       "output": "DescribeAssociatedInstanceListResponse"
     },
+    "DescribeCfwEips": {
+      "document": "查询防火墙弹性公网ip",
+      "input": "DescribeCfwEipsRequest",
+      "name": "查询防火墙弹性公网ip",
+      "output": "DescribeCfwEipsResponse"
+    },
     "DescribeNatRuleOverview": {
       "document": "nat规则列表概况",
       "input": "DescribeNatRuleOverviewRequest",
@@ -89,6 +95,12 @@
       "input": "DescribeVpcRuleOverviewRequest",
       "name": "vpc规则列表概况",
       "output": "DescribeVpcRuleOverviewResponse"
+    },
+    "ExpandCfwVertical": {
+      "document": "防火墙垂直扩容",
+      "input": "ExpandCfwVerticalRequest",
+      "name": "防火墙垂直扩容",
+      "output": "ExpandCfwVerticalResponse"
     },
     "ModifyAcRule": {
       "document": "修改规则",
@@ -137,6 +149,12 @@
       "input": "RunSyncAssetRequest",
       "name": "同步资产-互联网&VPC",
       "output": "RunSyncAssetResponse"
+    },
+    "SetNatFwDnatRule": {
+      "document": "配置防火墙Dnat规则",
+      "input": "SetNatFwDnatRuleRequest",
+      "name": "配置防火墙Dnat规则",
+      "output": "SetNatFwDnatRuleResponse"
     }
   },
   "metadata": {
@@ -319,6 +337,72 @@
         }
       ],
       "usage": "both"
+    },
+    "CfwNatDnatRule": {
+      "document": "NAT防火墙Dnat规则",
+      "members": [
+        {
+          "default": "",
+          "document": "网络协议，可选值：TCP、UDP。",
+          "example": "TCP",
+          "member": "string",
+          "name": "IpProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性IP。",
+          "example": "175.27.187.125",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公网端口。",
+          "example": "80",
+          "member": "int64",
+          "name": "PublicPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网地址。",
+          "example": "10.10.1.1",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网端口。",
+          "example": "80",
+          "member": "int64",
+          "name": "PrivatePort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NAT防火墙转发规则描述。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CreateAcRulesRequest": {
       "document": "CreateAcRules请求参数结构体",
@@ -949,6 +1033,60 @@
       ],
       "type": "object"
     },
+    "DescribeCfwEipsRequest": {
+      "document": "DescribeCfwEips请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "0：cfw新增模式，1：cfw接入模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ALL：查询所有弹性公网ip; nat-xxxxx：接入模式场景指定网关的弹性公网ip",
+          "example": "ALL",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "防火墙实例id",
+          "example": "cfwnat-d2afc817",
+          "member": "string",
+          "name": "CfwInstance",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwEipsResponse": {
+      "document": "DescribeCfwEips返回参数结构体",
+      "members": [
+        {
+          "document": "返回值信息",
+          "example": "[{\"Eip\":\"xxx\",\"NatGatewayId\":\"nat-xxx\",\"NatGatewayName\":\"xxx\"}]",
+          "member": "NatFwEipsInfo",
+          "name": "NatFwEipList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNatRuleOverviewRequest": {
       "document": "DescribeNatRuleOverview请求参数结构体",
       "members": [
@@ -1464,6 +1602,51 @@
       ],
       "type": "object"
     },
+    "ExpandCfwVerticalRequest": {
+      "document": "ExpandCfwVertical请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "nat：nat防火墙，ew：东西向防火墙",
+          "example": "nat",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "带宽值",
+          "example": "200",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "防火墙实例id",
+          "example": "cfwnat-d2afc817",
+          "member": "string",
+          "name": "CfwInstance",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExpandCfwVerticalResponse": {
+      "document": "ExpandCfwVertical返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAcRuleRequest": {
       "document": "ModifyAcRule请求参数结构体",
       "members": [
@@ -1875,6 +2058,42 @@
         }
       ],
       "type": "object"
+    },
+    "NatFwEipsInfo": {
+      "document": "Nat防火墙弹性公网ip列表",
+      "members": [
+        {
+          "default": "",
+          "document": "弹性公网ip",
+          "example": "175.27.187.125",
+          "member": "string",
+          "name": "Eip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属的Nat网关Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nat-7cq345j4",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Nat网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testName",
+          "member": "string",
+          "name": "NatGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RuleInfoData": {
       "document": "规则输入对象",
@@ -2373,6 +2592,78 @@
         }
       ],
       "usage": "in"
+    },
+    "SetNatFwDnatRuleRequest": {
+      "document": "SetNatFwDnatRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "0：cfw新增模式，1：cfw接入模式。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作类型，可选值：add，del，modify。",
+          "example": "add",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "防火墙实例id。",
+          "example": "cfwnat-d2afc817",
+          "member": "string",
+          "name": "CfwInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "添加或删除操作的Dnat规则列表。",
+          "example": "无",
+          "member": "CfwNatDnatRule",
+          "name": "AddOrDelDnatRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "修改操作的原始Dnat规则",
+          "example": "无",
+          "member": "CfwNatDnatRule",
+          "name": "OriginDnat",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "修改操作的新的Dnat规则",
+          "example": "无",
+          "member": "CfwNatDnatRule",
+          "name": "NewDnat",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SetNatFwDnatRuleResponse": {
+      "document": "SetNatFwDnatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SwitchListsData": {
       "document": "防火墙开关列表对象",

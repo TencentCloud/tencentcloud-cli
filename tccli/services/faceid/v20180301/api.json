@@ -1249,6 +1249,7 @@
         {
           "default": "",
           "document": "人脸核身流程的标识，调用DetectAuth接口时生成。",
+          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
           "member": "string",
           "name": "BizToken",
           "required": true,
@@ -1257,6 +1258,7 @@
         {
           "default": "",
           "document": "用于细分客户使用场景，由腾讯侧在线下对接时分配。",
+          "example": "0",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -1265,6 +1267,7 @@
         {
           "default": "",
           "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：视频最佳截图信息）。\n如 13表示拉取文本类、视频最佳截图信息。\n默认值：0",
+          "example": "1",
           "member": "string",
           "name": "InfoType",
           "required": false,
@@ -1273,6 +1276,7 @@
         {
           "default": "",
           "document": "从活体视频中截取一定张数的最佳帧（仅部分服务支持，若需使用请与慧眼小助手沟通）。默认为0，最大为10，超出10的最多只给10张。（InfoType需要包含3）",
+          "example": "0",
           "member": "uint64",
           "name": "BestFramesCount",
           "required": false,
@@ -1281,6 +1285,7 @@
         {
           "default": "",
           "document": "是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）",
+          "example": "false",
           "member": "bool",
           "name": "IsCutIdCardImage",
           "required": false,
@@ -1289,8 +1294,18 @@
         {
           "default": "",
           "document": "是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）",
+          "example": "false",
           "member": "bool",
           "name": "IsNeedIdCardAvatar",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName",
+          "example": "false",
+          "member": "bool",
+          "name": "IsEncrypt",
           "required": false,
           "type": "bool"
         }
@@ -1302,29 +1317,46 @@
       "members": [
         {
           "document": "文本类信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DetectInfoText",
           "name": "Text",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "身份证照片信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DetectInfoIdCardData",
           "name": "IdCardData",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "最佳帧信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DetectInfoBestFrame",
           "name": "BestFrame",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DetectInfoVideoData",
           "name": "VideoData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "敏感数据加密信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1845,6 +1877,7 @@
         {
           "default": "",
           "document": "身份证号\n姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。",
+          "example": "360*************50",
           "member": "string",
           "name": "IdCard",
           "required": false,
@@ -1853,6 +1886,7 @@
         {
           "default": "",
           "document": "姓名",
+          "example": "**杰",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1861,6 +1895,7 @@
         {
           "default": "",
           "document": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
+          "example": "\"\"",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1869,10 +1904,20 @@
         {
           "default": "",
           "document": "身份证人像面的 Url 地址\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "\"\"",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1882,57 +1927,73 @@
       "members": [
         {
           "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 姓名和身份证号一致\n-1: 姓名和身份证号不一致\n不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）\n-3: 非法姓名（长度、格式等不正确）\n-4: 证件库服务异常\n-5: 证件库中无此身份证记录",
+          "example": "0",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "业务结果描述。",
+          "example": "姓名和身份证号一致",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "用于验证的姓名",
+          "example": "**杰",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "用于验证的身份证号",
+          "example": "360*************50",
           "member": "string",
           "name": "IdCard",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "OCR得到的性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "男",
           "member": "string",
           "name": "Sex",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "OCR得到的民族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "汉",
           "member": "string",
           "name": "Nation",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "OCR得到的生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "Birth",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "OCR得到的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "Address",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

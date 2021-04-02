@@ -21,7 +21,10 @@ Output:
         "Type": "EXPRESS",
         "CreateDate": "1595227100",
         "Description": "这是一个用来做演示的状态机",
-        "RequestId": "ab1b30fc-3503-4b27-96dc-94c14d2fd43w"
+        "RequestId": "ab1b30fc-3503-4b27-96dc-94c14d2fd43w",
+        "EnableCLS": 1,
+        "CLSUrl": "https://console.cloud.tencent.com/cls",
+        "FlowInput": "xx"
     }
 }
 ```

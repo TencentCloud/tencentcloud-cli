@@ -2578,6 +2578,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -2586,6 +2587,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -2594,6 +2596,7 @@
         {
           "default": "",
           "document": "FRONT：有照片的一面（人像面），\nBACK：无照片的一面（国徽面），\n该参数如果不填或填错，将为您自动判断正反面。",
+          "example": "FRONT",
           "member": "string",
           "name": "CardSide",
           "required": false,
@@ -2607,57 +2610,91 @@
       "members": [
         {
           "document": "证件姓名",
+          "example": "李优优",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "性别",
+          "example": "女",
           "member": "string",
           "name": "Sex",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "出生日期",
+          "example": "1997/6/2",
           "member": "string",
           "name": "Birth",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "地址",
+          "example": "上海市徐汇区古美路1528号A1栋腾讯优图1号",
           "member": "string",
           "name": "Address",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "身份证号",
+          "example": "830000199706020042",
           "member": "string",
           "name": "IdCardNo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "0-正面\n1-反面",
+          "example": "0",
           "member": "int64",
           "name": "CardType",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "证件有效期限",
+          "example": "2018.09.06-2023.09.06",
           "member": "string",
           "name": "ValidDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "签发机关",
+          "example": "合肥市公安局高新分局",
           "member": "string",
           "name": "Authority",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "签发次数",
+          "example": "0",
+          "member": "string",
+          "name": "VisaNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "通行证号码",
+          "example": "无",
+          "member": "string",
+          "name": "PassNo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

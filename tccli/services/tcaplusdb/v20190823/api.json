@@ -1247,7 +1247,7 @@
       "members": [
         {
           "default": "",
-          "document": "是否按ipv6过滤",
+          "document": "不为0，表示查询支持ipv6的机器",
           "member": "int64",
           "name": "Ipv6Enable",
           "required": false,

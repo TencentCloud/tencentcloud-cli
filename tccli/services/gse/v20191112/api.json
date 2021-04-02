@@ -261,7 +261,7 @@
     "GetGameServerInstanceLogUrl": {
       "document": "本接口用于获取游戏服务器实例的日志URL。",
       "input": "GetGameServerInstanceLogUrlRequest",
-      "name": "获取游戏服务器会话的日志URL",
+      "name": "获取游戏服务器实例的日志URL",
       "output": "GetGameServerInstanceLogUrlResponse"
     },
     "GetGameServerSessionLogUrl": {

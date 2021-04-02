@@ -16,7 +16,8 @@ Output:
 {
     "Response": {
         "RequestId": "a2a13989-5776-4a8b-83d6-43714117ac3c",
-        "TaskId": 123
+        "TaskId": 123,
+        "ImageId": "bm-img-1a2b3c4d"
     }
 }
 ```

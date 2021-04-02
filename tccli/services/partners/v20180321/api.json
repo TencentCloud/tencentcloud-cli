@@ -48,10 +48,16 @@
       "name": "查询待审核客户列表",
       "output": "DescribeAgentClientsResponse"
     },
-    "DescribeAgentDealsCache": {
+    "DescribeAgentDealsByCache": {
       "document": "供超大型代理商（代客数量>=3000 ）拉取缓存的全量客户订单。",
+      "input": "DescribeAgentDealsByCacheRequest",
+      "name": "代理商缓存订单查询接口（新）",
+      "output": "DescribeAgentDealsByCacheResponse"
+    },
+    "DescribeAgentDealsCache": {
+      "document": "【该接口将逐步下线，请切换使用升级版本DescribeAgentDealsByCache】供超大型代理商（代客数量>=3000 ）拉取缓存的全量客户订单。\n",
       "input": "DescribeAgentDealsCacheRequest",
-      "name": "代理商缓存订单查询接口",
+      "name": "代理商缓存订单查询接口（旧）",
       "output": "DescribeAgentDealsCacheResponse"
     },
     "DescribeAgentPayDeals": {
@@ -501,6 +507,7 @@
         {
           "default": "",
           "document": "订单自增 ID",
+          "example": "123456",
           "member": "string",
           "name": "DealId",
           "required": true,
@@ -510,6 +517,7 @@
         {
           "default": "",
           "document": "订单号",
+          "example": "202008124664564",
           "member": "string",
           "name": "DealName",
           "required": true,
@@ -519,6 +527,7 @@
         {
           "default": "",
           "document": "商品类型 ID",
+          "example": "123456",
           "member": "string",
           "name": "GoodsCategoryId",
           "required": true,
@@ -528,6 +537,7 @@
         {
           "default": "",
           "document": "订单所有者",
+          "example": "123456",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -537,6 +547,7 @@
         {
           "default": "",
           "document": "订单所有者对应 appId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
           "member": "string",
           "name": "AppId",
           "required": true,
@@ -546,6 +557,7 @@
         {
           "default": "",
           "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
           "member": "string",
           "name": "GoodsNum",
           "required": true,
@@ -555,6 +567,7 @@
         {
           "default": "",
           "document": "价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
           "member": "DealGoodsPriceElem",
           "name": "GoodsPrice",
           "required": true,
@@ -564,6 +577,7 @@
         {
           "default": "",
           "document": "下单人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
           "member": "string",
           "name": "Creater",
           "required": true,
@@ -573,6 +587,7 @@
         {
           "default": "",
           "document": "下单时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-03 11:11:12",
           "member": "string",
           "name": "CreatTime",
           "required": true,
@@ -582,6 +597,7 @@
         {
           "default": "",
           "document": "支付结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-03 11:11:12",
           "member": "string",
           "name": "PayEndTime",
           "required": true,
@@ -591,6 +607,7 @@
         {
           "default": "",
           "document": "扣费流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345615882524264",
           "member": "string",
           "name": "BillId",
           "required": true,
@@ -600,6 +617,7 @@
         {
           "default": "",
           "document": "支付人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
           "member": "string",
           "name": "Payer",
           "required": true,
@@ -609,6 +627,7 @@
         {
           "default": "",
           "document": "订单状态，中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "未支付",
           "member": "string",
           "name": "DealStatus",
           "required": true,
@@ -618,6 +637,7 @@
         {
           "default": "",
           "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -627,6 +647,7 @@
         {
           "default": "",
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM",
           "member": "string",
           "name": "GoodsName",
           "required": true,
@@ -636,6 +657,7 @@
         {
           "default": "",
           "document": "客户备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClientRemark",
           "required": true,
@@ -645,6 +667,7 @@
         {
           "default": "",
           "document": "订单操作类型，purchase（新购），renew（续费），modify（配置变更）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "renew",
           "member": "string",
           "name": "ActionType",
           "required": true,
@@ -654,6 +677,7 @@
         {
           "default": "",
           "document": "代金券抵扣金额，单位分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
           "member": "string",
           "name": "VoucherDecline",
           "required": true,
@@ -663,6 +687,7 @@
         {
           "default": "",
           "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
           "member": "string",
           "name": "BigDealId",
           "required": true,
@@ -672,6 +697,7 @@
         {
           "default": "",
           "document": "客户类型（new：新拓；old：存量；assign：指派）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "new",
           "member": "string",
           "name": "ClientType",
           "required": true,
@@ -681,6 +707,7 @@
         {
           "default": "",
           "document": "项目类型（self：自拓；repeat：直销；platform：官网合作）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "self",
           "member": "string",
           "name": "ProjectType",
           "required": true,
@@ -690,6 +717,7 @@
         {
           "default": "",
           "document": "业务员账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
           "member": "string",
           "name": "SalesUin",
           "required": true,
@@ -699,6 +727,7 @@
         {
           "default": "",
           "document": "支付方式，0：自付；1：代付\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "string",
           "name": "PayerMode",
           "required": true,
@@ -708,6 +737,7 @@
         {
           "default": "",
           "document": "活动ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001",
           "member": "string",
           "name": "ActivityId",
           "required": true,
@@ -717,6 +747,7 @@
         {
           "default": "",
           "document": "订单过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-03 11:11:12",
           "member": "string",
           "name": "OverdueTime",
           "required": true,
@@ -726,6 +757,273 @@
         {
           "default": "",
           "document": "产品详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ProductInfoElem",
+          "name": "ProductInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentDealNewElem": {
+      "document": "描述代理商代付的订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "订单自增 ID",
+          "example": "123456",
+          "member": "string",
+          "name": "DealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单号",
+          "example": "202008124664564",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品类型 ID",
+          "example": "123456",
+          "member": "string",
+          "name": "GoodsCategoryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单所有者",
+          "example": "123456",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单所有者对应 appId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "string",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "DealGoodsPriceNewElem",
+          "name": "GoodsPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下单人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "Creater",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下单时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-03 11:11:12",
+          "member": "string",
+          "name": "CreatTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-03 11:11:12",
+          "member": "string",
+          "name": "PayEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扣费流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345615882524264",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "Payer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单状态，中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "未支付",
+          "member": "string",
+          "name": "DealStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM",
+          "member": "string",
+          "name": "GoodsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单操作类型，purchase（新购），renew（续费），modify（配置变更）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "renew",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代金券抵扣金额，单位分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "string",
+          "name": "VoucherDecline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "BigDealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户类型（new：新拓；old：存量；assign：指派）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "new",
+          "member": "string",
+          "name": "ClientType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目类型（self：自拓；repeat：直销；platform：官网合作）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "self",
+          "member": "string",
+          "name": "ProjectType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务员账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "SalesUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式，0：自付；1：代付\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "PayerMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-03 11:11:12",
+          "member": "string",
+          "name": "OverdueTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
           "member": "ProductInfoElem",
           "name": "ProductInfo",
           "required": true,
@@ -952,6 +1250,22 @@
           "default": "",
           "document": "实付金额",
           "member": "uint64",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DealGoodsPriceNewElem": {
+      "document": "订单价格详情",
+      "members": [
+        {
+          "default": "",
+          "document": "实付金额",
+          "example": "-10000",
+          "member": "int64",
           "name": "RealTotalCost",
           "required": true,
           "type": "int",
@@ -1334,12 +1648,13 @@
       ],
       "type": "object"
     },
-    "DescribeAgentDealsCacheRequest": {
-      "document": "DescribeAgentDealsCache请求参数结构体",
+    "DescribeAgentDealsByCacheRequest": {
+      "document": "DescribeAgentDealsByCache请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1348,6 +1663,7 @@
         {
           "default": "",
           "document": "限制数目",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1356,6 +1672,7 @@
         {
           "default": "",
           "document": "下单时间范围起始点",
+          "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
           "required": false,
@@ -1364,6 +1681,7 @@
         {
           "default": "",
           "document": "下单时间范围终止点",
+          "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
           "required": false,
@@ -1372,6 +1690,7 @@
         {
           "default": "",
           "document": "0:下单时间降序；其他：下单时间升序",
+          "example": "0",
           "member": "uint64",
           "name": "Order",
           "required": false,
@@ -1380,6 +1699,7 @@
         {
           "default": "",
           "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -1388,6 +1708,7 @@
         {
           "default": "",
           "document": "下单人账号ID列表",
+          "example": "100001",
           "member": "string",
           "name": "OwnerUins",
           "required": false,
@@ -1396,6 +1717,7 @@
         {
           "default": "",
           "document": "订单号列表",
+          "example": "['202001010000123456', '202001010000123457']",
           "member": "string",
           "name": "DealNames",
           "required": false,
@@ -1404,6 +1726,124 @@
         {
           "default": "",
           "document": "支付方式，0：自付；1：代付",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayerMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDealsByCacheResponse": {
+      "document": "DescribeAgentDealsByCache返回参数结构体",
+      "members": [
+        {
+          "document": "订单数组",
+          "example": "无",
+          "member": "AgentDealNewElem",
+          "name": "AgentDealSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的订单总数量",
+          "example": "401321",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDealsCacheRequest": {
+      "document": "DescribeAgentDealsCache请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围起始点",
+          "example": "2020-01-01 00:00:00",
+          "member": "datetime",
+          "name": "CreatTimeRangeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围终止点",
+          "example": "2020-01-01 00:00:00",
+          "member": "datetime",
+          "name": "CreatTimeRangeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0:下单时间降序；其他：下单时间升序",
+          "example": "0",
+          "member": "uint64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单人账号ID列表",
+          "example": "['100000']",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "订单号列表",
+          "example": "['202001010000000000']",
+          "member": "string",
+          "name": "DealNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "支付方式，0：自付；1：代付",
+          "example": "1",
           "member": "uint64",
           "name": "PayerMode",
           "required": false,
@@ -1417,15 +1857,19 @@
       "members": [
         {
           "document": "订单数组",
+          "example": "无",
           "member": "AgentDealElem",
           "name": "AgentDealSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的订单总数量",
+          "example": "401321",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

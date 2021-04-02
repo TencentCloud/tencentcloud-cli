@@ -795,6 +795,7 @@
         {
           "default": "",
           "document": "用于制作镜像的物理机ID",
+          "example": "testid",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -803,6 +804,7 @@
         {
           "default": "",
           "document": "镜像别名",
+          "example": "aa678",
           "member": "string",
           "name": "ImageName",
           "required": true,
@@ -811,6 +813,7 @@
         {
           "default": "",
           "document": "镜像描述",
+          "example": "876aa",
           "member": "string",
           "name": "ImageDescription",
           "required": false,
@@ -824,9 +827,20 @@
       "members": [
         {
           "document": "黑石异步任务ID",
+          "example": "123",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "镜像ID",
+          "example": "bm-img-1a2b3c4d",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

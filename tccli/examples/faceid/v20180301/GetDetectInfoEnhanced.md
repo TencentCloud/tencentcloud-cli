@@ -71,6 +71,13 @@ Output:
         "VideoData": {
             "LivenessVideo": "xx"
         },
+        "Encryption": {
+            "Iv": "xx",
+            "EncryptList": [
+                "xx"
+            ],
+            "CiphertextBlob": "xx"
+        },
         "RequestId": "f52bac9a-0aee-4fe6-8d34-7de4bce89473"
     }
 }

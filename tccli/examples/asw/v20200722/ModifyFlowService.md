@@ -12,7 +12,8 @@ tccli asw ModifyFlowService --cli-unfold-argument  \
     --FlowServiceChineseName 工作流中文名称 \
     --IsNewRole false \
     --Type EXPRESS \
-    --RoleResource qrn:qcs:asw:ap-guangzhou:1300000779:http:json
+    --RoleResource qrn:qcs:asw:ap-guangzhou:1300000779:http:json \
+    --EnableCLS true
 ```
 
 Output: 

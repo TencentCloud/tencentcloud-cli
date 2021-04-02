@@ -1320,6 +1320,52 @@
       ],
       "usage": "both"
     },
+    "DynamicPodSpec": {
+      "document": "POD浮动规格",
+      "members": [
+        {
+          "default": "",
+          "document": "需求最小cpu核数",
+          "example": "0.1234",
+          "member": "float",
+          "name": "RequestCpu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需求最大cpu核数",
+          "example": "1.2345",
+          "member": "float",
+          "name": "LimitCpu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需求最小memory，单位MB",
+          "example": "1234.5678",
+          "member": "float",
+          "name": "RequestMemory",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需求最大memory，单位MB",
+          "example": "8765.4321",
+          "member": "float",
+          "name": "LimitMemory",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EmrProductConfigOutter": {
       "document": "EMR产品配置",
       "members": [
@@ -2457,6 +2503,7 @@
         {
           "default": "",
           "document": "用户APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "AppId",
           "required": true,
@@ -2466,6 +2513,7 @@
         {
           "default": "",
           "document": "序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "SerialNo",
           "required": true,
@@ -2475,6 +2523,7 @@
         {
           "default": "",
           "document": "机器实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "OrderNo",
           "required": true,
@@ -2484,6 +2533,7 @@
         {
           "default": "",
           "document": "master节点绑定外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "WanIp",
           "required": true,
@@ -2493,6 +2543,7 @@
         {
           "default": "",
           "document": "节点类型。0:common节点；1:master节点\n；2:core节点；3:task节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Flag",
           "required": true,
@@ -2502,6 +2553,7 @@
         {
           "default": "",
           "document": "节点规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "Spec",
           "required": true,
@@ -2511,6 +2563,7 @@
         {
           "default": "",
           "document": "节点核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "CpuNum",
           "required": true,
@@ -2520,6 +2573,7 @@
         {
           "default": "",
           "document": "节点内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "MemSize",
           "required": true,
@@ -2529,6 +2583,7 @@
         {
           "default": "",
           "document": "节点内存描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "MemDesc",
           "required": true,
@@ -2538,6 +2593,7 @@
         {
           "default": "",
           "document": "节点所在region\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RegionId",
           "required": true,
@@ -2547,6 +2603,7 @@
         {
           "default": "",
           "document": "节点所在Zone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -2556,6 +2613,7 @@
         {
           "default": "",
           "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "ApplyTime",
           "required": true,
@@ -2565,6 +2623,7 @@
         {
           "default": "",
           "document": "释放时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "FreeTime",
           "required": true,
@@ -2574,6 +2633,7 @@
         {
           "default": "",
           "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "DiskSize",
           "required": true,
@@ -2583,6 +2643,7 @@
         {
           "default": "",
           "document": "节点描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "NameTag",
           "required": true,
@@ -2592,6 +2653,7 @@
         {
           "default": "",
           "document": "节点部署服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "Services",
           "required": true,
@@ -2601,6 +2663,7 @@
         {
           "default": "",
           "document": "磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "StorageType",
           "required": true,
@@ -2610,6 +2673,7 @@
         {
           "default": "",
           "document": "系统盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RootSize",
           "required": true,
@@ -2619,6 +2683,7 @@
         {
           "default": "",
           "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ChargeType",
           "required": true,
@@ -2628,6 +2693,7 @@
         {
           "default": "",
           "document": "数据库IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "CdbIp",
           "required": true,
@@ -2637,6 +2703,7 @@
         {
           "default": "",
           "document": "数据库端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "CdbPort",
           "required": true,
@@ -2646,6 +2713,7 @@
         {
           "default": "",
           "document": "硬盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "HwDiskSize",
           "required": true,
@@ -2655,6 +2723,7 @@
         {
           "default": "",
           "document": "硬盘容量描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "HwDiskSizeDesc",
           "required": true,
@@ -2664,6 +2733,7 @@
         {
           "default": "",
           "document": "内存容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "HwMemSize",
           "required": true,
@@ -2673,6 +2743,7 @@
         {
           "default": "",
           "document": "内存容量描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "HwMemSizeDesc",
           "required": true,
@@ -2682,6 +2753,7 @@
         {
           "default": "",
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
@@ -2691,6 +2763,7 @@
         {
           "default": "",
           "document": "节点资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "EmrResourceId",
           "required": true,
@@ -2700,6 +2773,7 @@
         {
           "default": "",
           "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "IsAutoRenew",
           "required": true,
@@ -2709,6 +2783,7 @@
         {
           "default": "",
           "document": "设备标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "DeviceClass",
           "required": true,
@@ -2718,6 +2793,7 @@
         {
           "default": "",
           "document": "支持变配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Mutable",
           "required": true,
@@ -2727,6 +2803,7 @@
         {
           "default": "",
           "document": "多云盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "MultiDiskMC",
           "name": "MCMultiDisk",
           "required": true,
@@ -2736,6 +2813,7 @@
         {
           "default": "",
           "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CdbInfo",
           "name": "CdbNodeInfo",
           "required": true,
@@ -2745,6 +2823,7 @@
         {
           "default": "",
           "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -2754,6 +2833,7 @@
         {
           "default": "",
           "document": "此节点是否可销毁，1可销毁，0不可销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Destroyable",
           "required": true,
@@ -2763,6 +2843,7 @@
         {
           "default": "",
           "document": "节点绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -2772,6 +2853,7 @@
         {
           "default": "",
           "document": "是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "AutoFlag",
           "required": true,
@@ -2781,8 +2863,29 @@
         {
           "default": "",
           "document": "资源类型, host/pod\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "HardwareResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否浮动规格，1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDynamicSpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "浮动规格值json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DynamicPodSpec",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2934,12 +3037,49 @@
       ],
       "usage": "in"
     },
+    "PodParameter": {
+      "document": "POD自定义权限和自定义参数",
+      "members": [
+        {
+          "default": "",
+          "document": "TKE或EKS集群ID",
+          "example": "cls-1234abcd",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义权限",
+          "example": "{   \"apiVersion\": \"v1\",   \"clusters\": [     {       \"cluster\": {",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数",
+          "example": "{   \"apiVersion\": \"apps/v1\",   \"kind\": \"Deployment\",   \"metadata",
+          "member": "string",
+          "name": "Parameter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "PodSpec": {
       "document": "扩容容器资源时的资源描述",
       "members": [
         {
           "default": "",
           "document": "外部资源提供者的标识符，例如\"cls-a1cd23fa\"。",
+          "example": "\"\"",
           "member": "string",
           "name": "ResourceProviderIdentifier",
           "required": true,
@@ -2949,6 +3089,7 @@
         {
           "default": "",
           "document": "外部资源提供者类型，例如\"tke\",当前仅支持\"tke\"。",
+          "example": "\"\"",
           "member": "string",
           "name": "ResourceProviderType",
           "required": true,
@@ -2958,6 +3099,7 @@
         {
           "default": "",
           "document": "资源的用途，即节点类型，当前仅支持\"TASK\"。",
+          "example": "\"\"",
           "member": "string",
           "name": "NodeType",
           "required": true,
@@ -2967,6 +3109,7 @@
         {
           "default": "",
           "document": "CPU核数。",
+          "example": "0",
           "member": "uint64",
           "name": "Cpu",
           "required": true,
@@ -2976,6 +3119,7 @@
         {
           "default": "",
           "document": "内存大小，单位为GB。",
+          "example": "0",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -2985,6 +3129,7 @@
         {
           "default": "",
           "document": "资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。弃用",
+          "example": "[]",
           "member": "string",
           "name": "DataVolumes",
           "required": false,
@@ -2994,6 +3139,7 @@
         {
           "default": "",
           "document": "Eks集群-CPU类型，当前支持\"intel\"和\"amd\"",
+          "example": "\"\"",
           "member": "string",
           "name": "CpuType",
           "required": false,
@@ -3003,14 +3149,35 @@
         {
           "default": "",
           "document": "Pod节点数据目录挂载信息。",
+          "example": "[]",
           "member": "PodVolume",
           "name": "PodVolumes",
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否浮动规格，1是，0否",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsDynamicSpec",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "浮动规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DynamicPodSpec",
+          "name": "DynamicPodSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "PodVolume": {
       "document": "Pod的存储设备描述信息。",
@@ -3635,6 +3802,7 @@
         {
           "default": "",
           "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "example": "s",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -3643,6 +3811,7 @@
         {
           "default": "",
           "document": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "example": "3600",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -3651,6 +3820,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "emr-5n3l5c83",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3659,6 +3829,7 @@
         {
           "default": "",
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "PayMode",
           "required": true,
@@ -3667,6 +3838,7 @@
         {
           "default": "",
           "document": "客户端Token。",
+          "example": "\"\"",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -3675,6 +3847,7 @@
         {
           "default": "",
           "document": "引导操作脚本设置。",
+          "example": "无",
           "member": "PreExecuteFileSettings",
           "name": "PreExecutedFileSettings",
           "required": false,
@@ -3683,6 +3856,7 @@
         {
           "default": "",
           "document": "扩容的Task节点数量。",
+          "example": "0",
           "member": "uint64",
           "name": "TaskCount",
           "required": false,
@@ -3691,6 +3865,7 @@
         {
           "default": "",
           "document": "扩容的Core节点数量。",
+          "example": "1",
           "member": "uint64",
           "name": "CoreCount",
           "required": false,
@@ -3699,6 +3874,7 @@
         {
           "default": "",
           "document": "扩容时不需要安装的进程。",
+          "example": "[]",
           "member": "uint64",
           "name": "UnNecessaryNodeList",
           "required": false,
@@ -3707,6 +3883,7 @@
         {
           "default": "",
           "document": "扩容的Router节点数量。",
+          "example": "0",
           "member": "uint64",
           "name": "RouterCount",
           "required": false,
@@ -3715,6 +3892,7 @@
         {
           "default": "",
           "document": "部署的服务。\n<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>\n<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>",
+          "example": "[]",
           "member": "uint64",
           "name": "SoftDeployInfo",
           "required": false,
@@ -3723,6 +3901,7 @@
         {
           "default": "",
           "document": "启动的进程。",
+          "example": "[]",
           "member": "uint64",
           "name": "ServiceNodeInfo",
           "required": false,
@@ -3731,6 +3910,7 @@
         {
           "default": "",
           "document": "分散置放群组ID列表，当前仅支持指定一个。",
+          "example": "[]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -3739,6 +3919,7 @@
         {
           "default": "",
           "document": "扩容节点绑定标签列表。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3747,6 +3928,7 @@
         {
           "default": "",
           "document": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群提供的资源",
+          "example": "\"\"",
           "member": "string",
           "name": "HardwareResourceType",
           "required": false,
@@ -3755,6 +3937,7 @@
         {
           "default": "",
           "document": "使用Pod资源扩容时，指定的Pod规格以及来源等信息",
+          "example": "无",
           "member": "PodSpec",
           "name": "PodSpec",
           "required": false,
@@ -3763,6 +3946,7 @@
         {
           "default": "",
           "document": "使用clickhouse集群扩容时，选择的机器分组名称",
+          "example": "\"\"",
           "member": "string",
           "name": "ClickHouseClusterName",
           "required": false,
@@ -3771,6 +3955,7 @@
         {
           "default": "",
           "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
+          "example": "\"\"",
           "member": "string",
           "name": "ClickHouseClusterType",
           "required": false,
@@ -3779,10 +3964,29 @@
         {
           "default": "",
           "document": "规则扩容指定 yarn node label",
+          "example": "\"\"",
           "member": "string",
           "name": "YarnNodeLabel",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "POD自定义权限和自定义参数",
+          "example": "无",
+          "member": "PodParameter",
+          "name": "PodParameter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "扩容的Master节点的数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MasterCount",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3792,36 +3996,46 @@
       "members": [
         {
           "document": "实例ID。",
+          "example": "emr-5n3l5c83",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20200309357833\",\"20200309357834\",\"20200309357835\",\"20200309357836\"]",
           "member": "string",
           "name": "DealNames",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "客户端Token。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "ClientToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "扩容流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "大订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "BillId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

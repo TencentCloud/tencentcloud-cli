@@ -14,6 +14,8 @@ Output:
 ```
 {
     "Response": {
+        "CoverUrl": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+        "AddedSubtitleSet": [],
         "RequestId": "requestId"
     }
 }
@@ -36,6 +38,8 @@ Output:
 ```
 {
     "Response": {
+        "CoverUrl": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+        "AddedSubtitleSet": [],
         "RequestId": "requestId"
     }
 }
@@ -61,6 +65,8 @@ Output:
 ```
 {
     "Response": {
+        "CoverUrl": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+        "AddedSubtitleSet": [],
         "RequestId": "requestId"
     }
 }
@@ -83,6 +89,41 @@ Output:
 {
     "Response": {
         "CoverUrl": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+        "AddedSubtitleSet": [],
+        "RequestId": "requestId"
+    }
+}
+```
+
+**Example 5: 增加媒资文件的字幕**
+
+
+
+Input: 
+
+```
+tccli vod ModifyMediaInfo --cli-unfold-argument  \
+    --FileId 123 \
+    --AddSubtitles.0.Name English \
+    --AddSubtitles.0.Language en-US \
+    --AddSubtitles.0.Format vtt \
+    --AddSubtitles.0.Content V0VCVlRUCSNFbGVtZW50YWwgTWVkaWEgRW5naW5lKFRNKSAyLjE2LjAuNjAyMzk5ClgtVElNRVNUQU1QLU1BUD1MT0NBTDowMDowMDowMC4wMDAsTVBFR1RTOjE4MzY5MAoKMDA6MDA6MDEuNjAwIC0tPiAwMDowMDoxMC4yMDAKdGhpcyBpcyB0aGUgdnR0IHN1YnRpdGxlcyAKCjAwOjAwOjEwLjIwMSAtLT4gMDA6MDA6MzAuMDAwClRlbmNlbnQgQ2xvdWQgVk9E
+```
+
+Output: 
+```
+{
+    "Response": {
+        "CoverUrl": "",
+        "AddedSubtitleSet": [
+            {
+                "Id": "subtitleId",
+                "Name": "English",
+                "Language": "en-US",
+                "Format": "vtt",
+                "Url": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/subtitles/subtitleId.vtt"
+            }
+        ],
         "RequestId": "requestId"
     }
 }

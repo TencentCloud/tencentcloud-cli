@@ -1163,6 +1163,31 @@ def doDescribeDDoSNetCount(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeBizHttpStatus(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBizHttpStatusRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeBizHttpStatus(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteCCSelfDefinePolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1763,7 +1788,7 @@ def doCreateL7RulesUpload(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSAttackIPRegionMap(args, parsed_globals):
+def doDescribeDDoSPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1777,9 +1802,9 @@ def doDescribeDDoSAttackIPRegionMap(args, parsed_globals):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSAttackIPRegionMapRequest()
+    model = models.DescribeDDoSPolicyRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDDoSAttackIPRegionMap(model)
+    rsp = client.DescribeDDoSPolicy(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2763,7 +2788,7 @@ def doDescribeDDoSEvInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSPolicy(args, parsed_globals):
+def doDescribeDDoSAttackIPRegionMap(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2777,9 +2802,9 @@ def doDescribeDDoSPolicy(args, parsed_globals):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSPolicyRequest()
+    model = models.DescribeDDoSAttackIPRegionMapRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDDoSPolicy(model)
+    rsp = client.DescribeDDoSAttackIPRegionMap(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2845,6 +2870,7 @@ ACTION_MAP = {
     "ModifyNewL4Rule": doModifyNewL4Rule,
     "DeleteDDoSPolicy": doDeleteDDoSPolicy,
     "DescribeDDoSNetCount": doDescribeDDoSNetCount,
+    "DescribeBizHttpStatus": doDescribeBizHttpStatus,
     "DeleteCCSelfDefinePolicy": doDeleteCCSelfDefinePolicy,
     "DescribePolicyCase": doDescribePolicyCase,
     "DescribeActionLog": doDescribeActionLog,
@@ -2869,7 +2895,7 @@ ACTION_MAP = {
     "ModifyL4KeepTime": doModifyL4KeepTime,
     "DescribeL4RulesErrHealth": doDescribeL4RulesErrHealth,
     "CreateL7RulesUpload": doCreateL7RulesUpload,
-    "DescribeDDoSAttackIPRegionMap": doDescribeDDoSAttackIPRegionMap,
+    "DescribeDDoSPolicy": doDescribeDDoSPolicy,
     "DescribeTransmitStatis": doDescribeTransmitStatis,
     "ModifyCCLevel": doModifyCCLevel,
     "ModifyDDoSDefendStatus": doModifyDDoSDefendStatus,
@@ -2909,7 +2935,7 @@ ACTION_MAP = {
     "ModifyResourceRenewFlag": doModifyResourceRenewFlag,
     "ModifyCCSelfDefinePolicy": doModifyCCSelfDefinePolicy,
     "DescribeDDoSEvInfo": doDescribeDDoSEvInfo,
-    "DescribeDDoSPolicy": doDescribeDDoSPolicy,
+    "DescribeDDoSAttackIPRegionMap": doDescribeDDoSAttackIPRegionMap,
 
 }
 

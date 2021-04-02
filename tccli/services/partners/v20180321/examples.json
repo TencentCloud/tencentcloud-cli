@@ -70,6 +70,14 @@
         "title": "失败示例"
       }
     ],
+    "DescribeAgentDealsByCache": [
+      {
+        "document": "",
+        "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentDealsByCache\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e646987c-8b65-4848-8550-2aa48a1426e4\",\n        \"AgentDealSet\": [\n            {\n                \"DealId\": \"27342606\",\n                \"DealName\": \"20190521331769\",\n                \"BigDealId\": \"20190521331770\",\n                \"GoodsCategoryId\": \"100019\",\n                \"OwnerUin\": \"100001340921\",\n                \"AppId\": \"1254282690\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": -357500\n                },\n                \"Creater\": \"100001340921\",\n                \"CreatTime\": \"2019-05-21 11:24:05\",\n                \"Payer\": \"100001340921\",\n                \"BillId\": \"\",\n                \"PayEndTime\": \"0000-00-00 00:00:00\",\n                \"Status\": \"8\",\n                \"VoucherDecline\": \"0\",\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"新购云服务器\",\n                \"ClientRemark\": \"\",\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"\",\n                \"SalesUin\": \"\",\n                \"DealStatus\": \"已过期\",\n                \"ActionType\": \"purchase\",\n                \"ActivityId\": \"222\",\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"OverdueTime\": \"2019-05-21 11:24:05\"\n            }\n        ],\n        \"TotalCount\": 401321\n    }\n}",
+        "title": "获取某代理商缓存订单"
+      }
+    ],
     "DescribeAgentDealsCache": [
       {
         "document": "",
