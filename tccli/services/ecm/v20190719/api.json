@@ -1651,6 +1651,7 @@
         {
           "default": "",
           "document": "HAVIP所在私有网络ID。",
+          "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1659,6 +1660,7 @@
         {
           "default": "",
           "document": "HAVIP所在子网ID。",
+          "example": "subnet-rtmfkg4w",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1667,6 +1669,7 @@
         {
           "default": "",
           "document": "HAVIP名称。",
+          "example": "irang_testHaVip",
           "member": "string",
           "name": "HaVipName",
           "required": true,
@@ -1675,6 +1678,7 @@
         {
           "default": "",
           "document": "指定虚拟IP地址，必须在VPC网段内且未被占用。不指定则自动分配。",
+          "example": "1",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -1688,8 +1692,10 @@
       "members": [
         {
           "document": "HAVIP对象。",
+          "example": "无",
           "member": "HaVip",
           "name": "HaVip",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2161,6 +2167,7 @@
         {
           "default": "",
           "document": "待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-loibq08z",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -2169,6 +2176,7 @@
         {
           "default": "",
           "document": "路由表名称，最大长度不能超过60个字节。",
+          "example": "测试路由表",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -2177,6 +2185,7 @@
         {
           "default": "",
           "document": "ecm地域",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -2190,8 +2199,10 @@
       "members": [
         {
           "document": "路由表对象",
+          "example": "无",
           "member": "RouteTable",
           "name": "RouteTable",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2210,6 +2221,7 @@
         {
           "default": "",
           "document": "路由表实例ID。",
+          "example": "rtb-n0yejvje",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -2218,6 +2230,7 @@
         {
           "default": "",
           "document": "要创建的路由策略对象。",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -2231,15 +2244,19 @@
       "members": [
         {
           "document": "新增的实例个数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "路由表对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2505,6 +2522,7 @@
         {
           "default": "",
           "document": "HAVIP唯一ID，形如：havip-9o233uri。",
+          "example": "havip-kekyk044",
           "member": "string",
           "name": "HaVipId",
           "required": true,
@@ -2711,6 +2729,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c",
+          "example": "rtb-azd4dt1c",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -2737,6 +2756,7 @@
         {
           "default": "",
           "document": "路由表唯一ID。",
+          "example": "rtb-12345678",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -2745,6 +2765,7 @@
         {
           "default": "",
           "document": "路由策略对象。",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -3241,6 +3262,7 @@
         {
           "default": "",
           "document": "HAVIP数组，HAVIP唯一ID，形如：havip-9o233uri。",
+          "example": "[\"havip-bk4275i0\",\"havip-2kce8v4q\"]",
           "member": "string",
           "name": "HaVipIds",
           "required": false,
@@ -3249,6 +3271,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定HaVipIds和Filters。\nhavip-id - String - HAVIP唯一ID，形如：havip-9o233uri。\nhavip-name - String - HAVIP名称。\nvpc-id - String - HAVIP所在私有网络ID。\nsubnet-id - String - HAVIP所在子网ID。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3256,7 +3279,8 @@
         },
         {
           "default": "",
-          "document": "偏移量。",
+          "document": "偏移量，默认值是0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3264,7 +3288,8 @@
         },
         {
           "default": "",
-          "document": "返回数量。",
+          "document": "返回数量，默认值是20，最大是100。",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3273,6 +3298,7 @@
         {
           "default": "",
           "document": "Ecm 区域，不填代表全部区域。",
+          "example": "1",
           "member": "string",
           "name": "EcmRegion",
           "required": false,
@@ -3286,15 +3312,19 @@
       "members": [
         {
           "document": "符合条件的对象数。",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "HAVIP对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HaVip",
           "name": "HaVipSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4128,6 +4158,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-q8o2z892",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -4136,6 +4167,7 @@
         {
           "default": "",
           "document": "要检查的与之冲突的目的端列表",
+          "example": "[\"10.11.0.0\\/24\\n\"]",
           "member": "string",
           "name": "DestinationCidrBlocks",
           "required": true,
@@ -4149,8 +4181,10 @@
       "members": [
         {
           "document": "路由策略冲突列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RouteConflict",
           "name": "RouteConflictSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4169,6 +4203,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "1",
           "member": "string",
           "name": "RouteTableIds",
           "required": false,
@@ -4177,6 +4212,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\nroute-table-id - String - （过滤条件）路由表实例ID。\nroute-table-name - String - （过滤条件）路由表名称。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nassociation.main - String - （过滤条件）是否主路由表。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4185,6 +4221,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4193,6 +4230,7 @@
         {
           "default": "",
           "document": "限数",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4201,6 +4239,7 @@
         {
           "default": "",
           "document": "ECM 地域，传空或不传表示所有区域",
+          "example": "1",
           "member": "string",
           "name": "EcmRegion",
           "required": false,
@@ -4214,15 +4253,19 @@
       "members": [
         {
           "document": "符合条件的实例数量",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "路由表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4777,6 +4820,7 @@
         {
           "default": "",
           "document": "路由表唯一ID。",
+          "example": "rtb-12345678",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -4785,6 +4829,7 @@
         {
           "default": "",
           "document": "路由策略ID。",
+          "example": "[\"678\\n\"]",
           "member": "uint64",
           "name": "RouteIds",
           "required": true,
@@ -4960,6 +5005,7 @@
         {
           "default": "",
           "document": "路由表唯一ID。",
+          "example": "rtb-12345678",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -4968,6 +5014,7 @@
         {
           "default": "",
           "document": "路由策略ID。",
+          "example": "[\"678\\n\"]",
           "member": "uint64",
           "name": "RouteIds",
           "required": true,
@@ -6941,6 +6988,7 @@
         {
           "default": "",
           "document": "HAVIP唯一ID，形如：havip-9o233uri。",
+          "example": "havip-9o233uri",
           "member": "string",
           "name": "HaVipId",
           "required": true,
@@ -6949,6 +6997,7 @@
         {
           "default": "",
           "document": "HAVIP名称，可任意命名，但不得超过60个字符。",
+          "example": "new+name",
           "member": "string",
           "name": "HaVipName",
           "required": true,
@@ -7513,6 +7562,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c",
+          "example": "rtb-n0yejvje",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -7521,6 +7571,7 @@
         {
           "default": "",
           "document": "路由表名称",
+          "example": "NewRouteTableName",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -9132,6 +9183,7 @@
         {
           "default": "",
           "document": "子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。",
+          "example": "subnet-q2079ils",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -9140,6 +9192,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-n0yejvje",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -9148,6 +9201,7 @@
         {
           "default": "",
           "document": "ECM 地域",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -9174,6 +9228,7 @@
         {
           "default": "",
           "document": "路由表实例ID。",
+          "example": "rtb-n0yejvje",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -9182,6 +9237,7 @@
         {
           "default": "",
           "document": "路由策略对象。",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -9392,6 +9448,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-n0yejvje",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -9400,6 +9457,7 @@
         {
           "default": "",
           "document": "路由表名称，最大长度不能超过60个字节。",
+          "example": "ResetRouteTableName",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -9408,6 +9466,7 @@
         {
           "default": "",
           "document": "路由策略。",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
           "required": true,

@@ -50,3 +50,31 @@ Output:
 }
 ```
 
+**Example 3: 创建一个云转推项目**
+
+云转推项目初始化输入输出源
+
+Input: 
+
+```
+tccli cme CreateProject --cli-unfold-argument  \
+    --Platform test \
+    --Category STREAM_CONNECT \
+    --Name stream_connect \
+    --Owner.Id 1111 \
+    --Owner.Type PERSON \
+    --StreamConnectProjectInput.MainInput.InputType LivePull \
+    --StreamConnectProjectInput.MainInput.LivePullInputInfo.InputUrl rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759 \
+    --StreamConnectProjectInput.Outputs.0.PushUrl rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ProjectId": "3f1699f3f97b9f0001920f29",
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+

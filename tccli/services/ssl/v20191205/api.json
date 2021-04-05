@@ -3462,6 +3462,7 @@
         {
           "default": "",
           "document": "管理人ID",
+          "example": "23",
           "member": "int64",
           "name": "ManagerId",
           "required": true,
@@ -3475,8 +3476,10 @@
       "members": [
         {
           "document": "管理人ID",
+          "example": "23",
           "member": "int64",
           "name": "ManagerId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

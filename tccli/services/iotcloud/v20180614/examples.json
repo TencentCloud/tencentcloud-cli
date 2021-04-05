@@ -158,6 +158,22 @@
         "title": "获取设备密钥"
       }
     ],
+    "DescribeDeviceResource": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceResource\n&ProductID=ABCDE12345\n&Name=test\n&DeviceName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": 1,\n            \"DeviceName\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"Name\": \"xx\",\n            \"Percent\": 1,\n            \"ProductName\": \"xx\",\n            \"Md5\": \"xx\",\n            \"ProductID\": \"xx\",\n            \"Size\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询设备资源详情"
+      }
+    ],
+    "DescribeDeviceResources": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceResources\n&ProductID=ABCDE12345\n&Offset=0\n&Limit=10\n&DeviceName=test\n&StartTime=xxx\n&EndTime=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Result\": [\n            {\n                \"Name\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"Md5\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"ProductID\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Size\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取设备资源列表"
+      }
+    ],
     "DescribeDeviceShadow": [
       {
         "document": "",
@@ -246,6 +262,22 @@
         "title": "获取创建多设备结果"
       }
     ],
+    "DescribeProductResource": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProductResource\n&ProductID=ABCDE12345\n&Name=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Name\": \"xx\",\n            \"ProductName\": \"xx\",\n            \"Md5\": \"xx\",\n            \"Description\": \"xx\",\n            \"ProductID\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"Size\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询产品资源详情"
+      }
+    ],
+    "DescribeProductResources": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProductResources\n&ProductID=ABCDE12345\n&Offset=0\n&Limit=10\n&Name=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Result\": [\n            {\n                \"Name\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"Md5\": \"xx\",\n                \"Description\": \"xx\",\n                \"ProductID\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Size\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取产品资源列表"
+      }
+    ],
     "DescribeProductTask": [
       {
         "document": "",
@@ -268,6 +300,22 @@
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProducts\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"ABCDEF12345\",\n                \"ProductName\": \"hello\",\n                \"ProductMetadata\": {\n                    \"CreationDate\": 1529049275\n                },\n                \"ProductProperties\": {\n                    \"ProductDescription\": \"test\",\n                    \"EncryptionType\": \"1\",\n                    \"Region\": \"gz\",\n                    \"ProductType\": 0,\n                    \"Format\": \"json\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
         "title": "获取产品列表"
+      }
+    ],
+    "DescribePushResourceTaskStatistics": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribePushResourceTaskStatistics\n&ProductID=O4CCMMZE3A\n&Name=1.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SuccessTotal\": 1,\n        \"FailureTotal\": 0,\n        \"UpgradingTotal\": 1,\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\n    }\n}",
+        "title": "查询推送资源任务统计信息"
+      }
+    ],
+    "DescribeResourceTasks": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeResourceTasks\n&ProductID=ABCDE12345\n&Name=test\n&Offset=1\n&Limit=5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 53,\n        \"TaskInfos\": [\n            {\n                \"TaskId\": 1000175,\n                \"Status\": 3,\n                \"CreateTime\": 1589466879,\n                \"Type\": 1\n            },\n            {\n                \"TaskId\": 1000176,\n                \"Status\": 3,\n                \"CreateTime\": 1589467049,\n                \"Type\": 1\n            },\n            {\n                \"Status\": 3,\n                \"CreateTime\": 1589467138,\n                \"Type\": 1,\n                \"TaskId\": 1000179\n            },\n            {\n                \"TaskId\": 1000180,\n                \"Status\": 3,\n                \"CreateTime\": 1589467139,\n                \"Type\": 1\n            },\n            {\n                \"Type\": 1,\n                \"TaskId\": 1000182,\n                \"Status\": 3,\n                \"CreateTime\": 1589467141\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询资源推送任务列表"
       }
     ],
     "DescribeTask": [
@@ -308,6 +356,14 @@
         "input": "https://iotcloud.tencentcloudapi.com/?Action=EnableTopicRule\n&RuleName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "启用规则示例"
+      }
+    ],
+    "GetUserResourceInfo": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=GetUserResourceInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"UsedSize\": 100,\n        \"Limit\": 10000,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取用户资源信息"
       }
     ],
     "PublishAsDevice": [

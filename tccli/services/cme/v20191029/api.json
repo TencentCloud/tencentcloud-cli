@@ -19,7 +19,7 @@
       "output": "CreateLinkResponse"
     },
     "CreateProject": {
-      "document": "创建云剪的编辑项目，支持创建视频剪辑、直播剪辑、导播台项目以及视频拆条项目。\n",
+      "document": "创建云剪的编辑项目，支持创建视频剪辑、直播剪辑、导播台、视频拆条、录制回放以及云转推项目。\n",
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse"
@@ -757,7 +757,7 @@
         },
         {
           "default": "",
-          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>",
+          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>",
           "example": "VIDEO_EDIT",
           "member": "string",
           "name": "Category",
@@ -833,6 +833,15 @@
           "example": "无",
           "member": "VideoSegmentationProjectInput",
           "name": "VideoSegmentationProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。",
+          "example": "无",
+          "member": "StreamConnectProjectInput",
+          "name": "StreamConnectProjectInput",
           "required": false,
           "type": "object"
         }
@@ -1469,6 +1478,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1477,6 +1487,7 @@
         {
           "default": "",
           "document": "项目 Id 列表，N 从 0 开始取值，最大 19。",
+          "example": "[\"1111\\n\"]",
           "member": "string",
           "name": "ProjectIds",
           "required": false,
@@ -1485,6 +1496,7 @@
         {
           "default": "",
           "document": "画布宽高比集合。",
+          "example": "无",
           "member": "string",
           "name": "AspectRatioSet",
           "required": false,
@@ -1492,7 +1504,8 @@
         },
         {
           "default": "",
-          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>",
+          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>",
+          "example": "无",
           "member": "string",
           "name": "CategorySet",
           "required": false,
@@ -1501,6 +1514,7 @@
         {
           "default": "",
           "document": "列表排序，支持下列排序字段：\n<li>CreateTime：创建时间；</li>\n<li>UpdateTime：更新时间。</li>",
+          "example": "无",
           "member": "SortBy",
           "name": "Sort",
           "required": false,
@@ -1509,6 +1523,7 @@
         {
           "default": "",
           "document": "项目归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": false,
@@ -1517,6 +1532,7 @@
         {
           "default": "",
           "document": "分页返回的起始偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1525,6 +1541,7 @@
         {
           "default": "",
           "document": "分页返回的记录条数，默认值：10。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1533,6 +1550,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。",
+          "example": "无",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1546,15 +1564,19 @@
       "members": [
         {
           "document": "符合条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "项目信息列表。",
+          "example": "无",
           "member": "ProjectInfo",
           "name": "ProjectInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3186,6 +3208,22 @@
       ],
       "type": "object"
     },
+    "LivePullInputInfo": {
+      "document": "直播拉流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "直播拉流地址。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
+          "member": "string",
+          "name": "InputUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LiveStreamClipProjectInput": {
       "document": "直播剪辑项目输入参数。",
       "members": [
@@ -3633,7 +3671,8 @@
       "members": [
         {
           "default": "",
-          "document": "轨道类型，取值有：\n<ul>\n<li>Video ：视频轨道。视频轨道由以下 Item 组成：<ul><li>VideoTrackItem</li><li>EmptyTrackItem</li></ul> </li>\n<li>Audio ：音频轨道。音频轨道由以下 Item 组成：<ul><li>AudioTrackItem</li><li>EmptyTrackItem</li></ul> </li>\n</ul>",
+          "document": "轨道类型，取值有：\n<ul>\n<li>Video ：视频轨道。视频轨道由以下 Item 组成：<ul><li>VideoTrackItem</li><li>EmptyTrackItem</li><li>MediaTransitionItem</li></ul> </li>\n<li>Audio ：音频轨道。音频轨道由以下 Item 组成：<ul><li>AudioTrackItem</li><li>EmptyTrackItem</li></ul> </li>\n</ul>",
+          "example": "Video",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -3643,6 +3682,7 @@
         {
           "default": "",
           "document": "轨道上的媒体片段列表。",
+          "example": "无",
           "member": "MediaTrackItem",
           "name": "TrackItems",
           "required": true,
@@ -3657,7 +3697,8 @@
       "members": [
         {
           "default": "",
-          "document": "片段类型。取值有：\n<li>Video：视频片段。</li>\n<li>Audio：音频片段。</li>\n<li>Empty：空白片段。</li>",
+          "document": "片段类型。取值有：\n<li>Video：视频片段；</li>\n<li>Audio：音频片段；</li>\n<li>Empty：空白片段；</li>\n<li>Transition：转场。</li>",
+          "example": "Video",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -3667,6 +3708,7 @@
         {
           "default": "",
           "document": "视频片段，当 Type = Video 时有效。",
+          "example": "无",
           "member": "VideoTrackItem",
           "name": "VideoItem",
           "required": false,
@@ -3676,6 +3718,7 @@
         {
           "default": "",
           "document": "音频片段，当 Type = Audio 时有效。",
+          "example": "无",
           "member": "AudioTrackItem",
           "name": "AudioItem",
           "required": false,
@@ -3685,10 +3728,47 @@
         {
           "default": "",
           "document": "空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>\n<li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>",
+          "example": "无",
           "member": "EmptyTrackItem",
           "name": "EmptyItem",
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转场，当 Type = Transition 时有效。",
+          "example": "b64e98advodcq198uje890",
+          "member": "MediaTransitionItem",
+          "name": "TransitionItem",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaTransitionItem": {
+      "document": "转场信息",
+      "members": [
+        {
+          "default": "",
+          "document": "转场 Id 。暂只支持一个转场。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "TransitionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转场持续时间，单位为秒，默认为2秒。进行转场处理的两个媒体片段，第二个片段在轨道上的起始时间会自动进行调整，设置为前面一个片段的结束时间减去转场的持续时间。",
+          "example": "2.0",
+          "member": "float",
+          "name": "Duration",
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -4219,6 +4299,7 @@
         {
           "default": "",
           "document": "项目 Id。",
+          "example": "project_id",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -4228,6 +4309,7 @@
         {
           "default": "",
           "document": "项目名称。",
+          "example": "新建",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4237,6 +4319,7 @@
         {
           "default": "",
           "document": "画布宽高比。",
+          "example": "无",
           "member": "string",
           "name": "AspectRatio",
           "required": true,
@@ -4245,7 +4328,8 @@
         },
         {
           "default": "",
-          "document": "项目类别。",
+          "document": "项目类别，取值：\n项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>",
+          "example": "STREAM_CONNECT",
           "member": "string",
           "name": "Category",
           "required": true,
@@ -4255,6 +4339,7 @@
         {
           "default": "",
           "document": "归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -4264,6 +4349,7 @@
         {
           "default": "",
           "document": "项目封面图片地址。",
+          "example": "无",
           "member": "string",
           "name": "CoverUrl",
           "required": true,
@@ -4273,6 +4359,7 @@
         {
           "default": "",
           "document": "项目创建时间，格式按照 ISO 8601 标准表示。",
+          "example": "2021-03-23T07:51:18.029Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -4282,6 +4369,7 @@
         {
           "default": "",
           "document": "项目更新时间，格式按照 ISO 8601 标准表示。",
+          "example": "2021-03-23T07:51:18.029Z",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -4406,6 +4494,32 @@
         }
       ],
       "type": "object"
+    },
+    "RtmpPushInputInfo": {
+      "document": "直播推流信息，包括推流地址有效时长，云剪后端生成直播推流地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "直播推流地址有效期，单位：秒 。",
+          "example": "60",
+          "member": "uint64",
+          "name": "ExpiredSecond",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "直播推流地址，入参不填默认由云剪生成。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
+          "member": "string",
+          "name": "PushUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SearchMaterialRequest": {
       "document": "SearchMaterial请求参数结构体",
@@ -4634,6 +4748,134 @@
         }
       ],
       "usage": "in"
+    },
+    "StreamConnectOutput": {
+      "document": "云转推输出源。",
+      "members": [
+        {
+          "default": "",
+          "document": "云转推输出源标识，转推项目级别唯一。若不填则由后端生成。",
+          "example": "135ed54d55d",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输出源名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输出源类型，取值：\n<li>URL ：URL类型</li>\n不填默认为URL类型。",
+          "example": "URL",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推推流地址。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
+          "member": "string",
+          "name": "PushUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StreamConnectProjectInput": {
+      "document": "云转推项目输入信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "云转推主输入源信息。",
+          "example": "无",
+          "member": "StreamInputInfo",
+          "name": "MainInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推备输入源信息。",
+          "example": "无",
+          "member": "StreamInputInfo",
+          "name": "BackupInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输出源信息。",
+          "example": "无",
+          "member": "StreamConnectOutput",
+          "name": "Outputs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "StreamInputInfo": {
+      "document": "输入流信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "流输入类型，取值：\n<li>VodPull ： 点播拉流；</li>\n<li>LivePull ：直播拉流；</li>\n<li>RtmpPush ： 直播推流。</li>",
+          "example": "LivePull",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点播拉流信息，当 InputType = VodPull 时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VodPullInputInfo",
+          "name": "VodPullInputInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "直播拉流信息，当 InputType = LivePull  时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LivePullInputInfo",
+          "name": "LivePullInputInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "直播推流信息，当 InputType = RtmpPush 时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RtmpPushInputInfo",
+          "name": "RtmpPushInputInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SwitcherPgmOutputConfig": {
       "document": "导播台主监输出配置信息",
@@ -5281,6 +5523,32 @@
         }
       ],
       "usage": "in"
+    },
+    "VodPullInputInfo": {
+      "document": "点播拉流信息，包括输入拉流地址和播放次数。",
+      "members": [
+        {
+          "default": "",
+          "document": "点播输入拉流 URL 。",
+          "example": "无",
+          "member": "string",
+          "name": "InputUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放次数，取值有：\n<li>-1 : 循环播放，直到转推结束；</li>\n<li>0 : 不循环；</li>\n<li>大于0 : 具体循环次数，次数和时间以先结束的为准。</li>\n默认不循环。",
+          "example": "-1",
+          "member": "int64",
+          "name": "LoopTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "WeiboPublishInfo": {
       "document": "微博发布信息。",

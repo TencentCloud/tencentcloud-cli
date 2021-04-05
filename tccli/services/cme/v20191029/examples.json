@@ -54,6 +54,12 @@
         "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=SWITCHER\n&Name=switcher_project\n&Owner.Id=1111\n&Owner.Type=PERSON\n&SwitcherProjectInput.PgmOutputConfig.TemplateId=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ProjectId\": \"3f1699f3f97b9f0001920f29\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5c\"\n    }\n}",
         "title": "创建一个导播台项目"
+      },
+      {
+        "document": "云转推项目初始化输入输出源",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=STREAM_CONNECT\n&Name=stream_connect\n&Owner.Id=1111\n&Owner.Type=PERSON\n&StreamConnectProjectInput.MainInput.InputType=LivePull\n&StreamConnectProjectInput.MainInput.LivePullInputInfo.InputUrl=rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759\n&StreamConnectProjectInput.Outputs.0.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProjectId\": \"3f1699f3f97b9f0001920f29\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "title": "创建一个云转推项目"
       }
     ],
     "CreateTeam": [
@@ -176,6 +182,12 @@
         "input": "https://cme.tencentcloudapi.com/?Action=DescribeProjects\n&Platform=test\n&ProjectIds.0=1111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ProjectInfoSet\": [\n            {\n                \"ProjectId\": \"1111\",\n                \"Name\": \"test\",\n                \"AspectRatio\": \"16:9\",\n                \"Category\": \"VIDEO_EDIT\",\n                \"Owner\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"user_1233\"\n                },\n                \"UpdateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CreateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CoverUrl\": \"\"\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "获取项目列表"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeProjects\n&Platform=test\n&ProjectIds.0=1111\n&CategorySet.0=STREAM_CONNECT\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ProjectInfoSet\": [\n            {\n                \"ProjectId\": \"1111\",\n                \"Name\": \"test\",\n                \"AspectRatio\": \"16:9\",\n                \"Category\": \"STREAM_CONNECT\",\n                \"Owner\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"user_1233\"\n                },\n                \"UpdateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CreateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CoverUrl\": \"\"\n            }\n        ],\n        \"RequestId\": \"60599df66a6b440001518159\"\n    }\n}",
+        "title": "获取云转推项目信息"
       }
     ],
     "DescribeResourceAuthorization": [
