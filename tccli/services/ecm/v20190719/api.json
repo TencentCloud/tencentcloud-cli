@@ -6723,7 +6723,8 @@
       "members": [
         {
           "default": "",
-          "document": "最大出带宽，单位Mbps。",
+          "document": "最大出带宽，单位Mbps。默认值10",
+          "example": "10",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,

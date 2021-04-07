@@ -173,7 +173,7 @@
     "ModifyDirectConnectAttribute": [
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectAttribute\r\n&DirectConnectId=dcx-abcdefgh\r\n&DirectConnectName=abc\r\n&CircuitCode=ABF_123\r\n&Vlan=100\r\n&TencentAddress=172.168.1.1/30\r\n&CustomerAddress=172.168.1.2/30\r\n&CustomerName=张三\r\n&CustomerContactMail=12345@qq.com\r\n&CustomerContactNumber=18812345678\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectAttribute\n&DirectConnectId=dcx-abcdefgh\n&DirectConnectName=abc\n&CircuitCode=ABF_123\n&Vlan=100\n&TencentAddress=172.168.1.1/30\n&CustomerAddress=172.168.1.2/30\n&CustomerName=张三\n&CustomerContactMail=12345@qq.com\n&CustomerContactNumber=18812345678\n&Bandwidth=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改物理专线属性信息"
       }

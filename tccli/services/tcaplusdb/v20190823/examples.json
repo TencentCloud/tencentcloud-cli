@@ -32,6 +32,14 @@
         "title": "创建集群Cluster"
       }
     ],
+    "CreateSnapshots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SelectedTables\": [\n        {\n            \"SnapshotName\": \"666\",\n            \"TableGroupId\": \"1\",\n            \"SnapshotTime\": \"2020-09-22 00:00:00\",\n            \"TableName\": \"cl_generic\",\n            \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17af6a7a-1fcc-4c1d-a4a2-caab4d9e75cc\",\n        \"TableResults\": [\n            {\n                \"Error\": {\n                    \"Code\": \"\",\n                    \"Message\": \"\"\n                },\n                \"SnapshotCreateTime\": \"2021-03-19 11:40:40\",\n                \"SnapshotDeadTime\": \"2021-03-20 11:40:30\",\n                \"SnapshotName\": \"666\",\n                \"SnapshotSize\": 0,\n                \"SnapshotStatus\": 0,\n                \"SnapshotTime\": \"2021-03-12 11:40:32\",\n                \"TableGroupId\": \"1\",\n                \"TableName\": \"cl_generic\",\n                \"TaskId\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "创建快照"
+      }
+    ],
     "CreateTableGroup": [
       {
         "document": "在集群下创建TcaplusDB表格组",
@@ -62,6 +70,14 @@
         "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIdlFiles\n<公共请求参数>\n\n{\n    \"ClusterId\": \"6084038577\",\n    \"IdlFiles\": [\n        {\n            \"FileExtType\": \"proto\",\n            \"FileType\": \"PROTO\",\n            \"FileName\": \"tb_example\",\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileId\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"IdlFileInfos\": [\n            {\n                \"Error\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 849,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            }\n        ],\n        \"RequestId\": \"4e79897b-5696-4d1b-b337-d2b46824de64\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "删除目标idl文件"
+      }
+    ],
+    "DeleteSnapshots": [
+      {
+        "document": "删除快照数据",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SelectedTables\": [\n        {\n            \"SnapshotName\": \"666\",\n            \"TableGroupId\": \"1\",\n            \"TableName\": \"cl_generic\",\n            \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17af6a7a-1fcc-4c1d-a4a2-caab4d9e75cc\",\n        \"TableResults\": [\n            {\n                \"Error\": {\n                    \"Code\": \"\",\n                    \"Message\": \"\"\n                },\n                \"SnapshotCreateTime\": \"2021-03-19 11:40:40\",\n                \"SnapshotDeadTime\": \"2021-03-20 11:40:30\",\n                \"SnapshotName\": \"666\",\n                \"SnapshotSize\": 0,\n                \"SnapshotStatus\": 0,\n                \"SnapshotTime\": \"2021-03-12 11:40:32\",\n                \"TableGroupId\": \"1\",\n                \"TableName\": \"cl_generic\",\n                \"TaskId\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "删除快照"
       }
     ],
     "DeleteTableGroup": [
@@ -132,6 +148,14 @@
         "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RegionInfos\": [\n            {\n                \"RegionAbbr\": \"sh\",\n                \"RegionId\": 4,\n                \"RegionName\": \"Shanghai\",\n                \"Ipv6Enable\": \"1\"\n            },\n            {\n                \"RegionAbbr\": \"gz\",\n                \"RegionId\": 1,\n                \"RegionName\": \"Guangzhou\",\n                \"Ipv6Enable\": \"0\"\n            },\n            {\n                \"RegionAbbr\": \"hk\",\n                \"RegionId\": 5,\n                \"RegionName\": \"Hongkong\",\n                \"Ipv6Enable\": \"1\"\n            }\n        ],\n        \"RequestId\": \"b64fa31b-a0ca-4a06-82e9-211d610ba516\",\n        \"TotalCount\": 3\n    }\n}",
         "title": "获取地域列表"
+      }
+    ],
+    "DescribeSnapshots": [
+      {
+        "document": "查询表的快照",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"18685341856\",\n    \"TableGroupId\": \"1\",\n    \"TableName\": \"cl_generic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TableResults\": [\n            {\n                \"SnapshotCreateTime\": \"2020-09-22 00:00:00\",\n                \"TableGroupId\": \"1\",\n                \"SnapshotSize\": 1,\n                \"SnapshotName\": \"test\",\n                \"SnapshotTime\": \"2020-09-22 00:00:00\",\n                \"TableName\": \"cl_generic\",\n                \"SnapshotStatus\": 1,\n                \"TaskId\": \"xx\",\n                \"Error\": {\n                    \"Message\": \"xx\",\n                    \"Code\": \"xx\"\n                },\n                \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询快照列表"
       }
     ],
     "DescribeTableGroupTags": [
@@ -206,6 +230,14 @@
         "title": "开启restful api"
       }
     ],
+    "ImportSnapshots": [
+      {
+        "document": "导入快照数据",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportSnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"Snapshots\": {\n        \"SnapshotName\": \"xx\",\n        \"TableGroupId\": \"xx\",\n        \"SnapshotTime\": \"2020-09-22 00:00:00\",\n        \"TableName\": \"xx\",\n        \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n    },\n    \"NewTableGroupId\": \"xx\",\n    \"ImportOriginTable\": \"xx\",\n    \"KeyFile\": {\n        \"FileExtType\": \"xx\",\n        \"FileSize\": 0,\n        \"FileContent\": \"xx\",\n        \"FileName\": \"xx\"\n    },\n    \"ImportSpecialKey\": \"xx\",\n    \"NewTableName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "导入快照"
+      }
+    ],
     "ModifyClusterMachine": [
       {
         "document": "修改集群Cluster的独占机器",
@@ -236,6 +268,14 @@
         "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterTags\n<公共请求参数>\n\n{\n    \"ReplaceTags\": [\n        {\n            \"TagKey\": \"test1\",\n            \"TagValue\": \"value1\"\n        }\n    ],\n    \"DeleteTags\": [\n        {\n            \"TagKey\": \"delete1\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"5674209986\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abd7111a-62d4-4bbb-a781-3646040e9530\",\n        \"TaskId\": \"5674209986-1210\"\n    }\n}",
         "title": "修改集群标签"
+      }
+    ],
+    "ModifySnapshots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SelectedTables\": [\n        {\n            \"SnapshotName\": \"666\",\n            \"TableGroupId\": \"1\",\n            \"TableName\": \"cl_generic\",\n            \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17af6a7a-1fcc-4c1d-a4a2-caab4d9e75cc\",\n        \"TableResults\": [\n            {\n                \"Error\": {\n                    \"Code\": \"\",\n                    \"Message\": \"\"\n                },\n                \"SnapshotCreateTime\": \"2021-03-19 11:40:40\",\n                \"SnapshotDeadTime\": \"2021-03-20 11:40:30\",\n                \"SnapshotName\": \"666\",\n                \"SnapshotSize\": 0,\n                \"SnapshotStatus\": 0,\n                \"SnapshotTime\": \"2021-03-12 11:40:32\",\n                \"TableGroupId\": \"1\",\n                \"TableName\": \"cl_generic\",\n                \"TaskId\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "修改快照"
       }
     ],
     "ModifyTableGroupName": [

@@ -163,7 +163,7 @@
     "DescribeTopic": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopic\r\n&InstanceId=ckafka-xxooa0\r\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopic\n&InstanceId=ckafka-xxooa0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicList\": [\n                {\n                    \"TopicId\": \"inter-topic-8sj6wxwi\",\n                    \"TopicName\": \"test1\",\n                    \"Note\": \"\"\n                },\n                {\n                    \"TopicId\": \"inter-topic-844bkmry\",\n                    \"TopicName\": \"test10\",\n                    \"Note\": \"\"\n                }\n            ],\n            \"TotalCount\": 12\n        },\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\n    }\n}",
         "title": "获取某个实例下的主题列表"
       }

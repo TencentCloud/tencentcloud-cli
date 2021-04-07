@@ -14,7 +14,8 @@ tccli dc ModifyDirectConnectAttribute --cli-unfold-argument  \
     --CustomerAddress 172.168.1.2/30 \
     --CustomerName 张三 \
     --CustomerContactMail 12345@qq.com \
-    --CustomerContactNumber 18812345678
+    --CustomerContactNumber 18812345678 \
+    --Bandwidth 1000
 ```
 
 Output: 

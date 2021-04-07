@@ -3443,6 +3443,16 @@
         },
         {
           "default": "",
+          "document": "模板媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoEditTemplateMaterial",
+          "name": "VideoEditTemplateMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "其他类型媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OtherMaterial",
@@ -4689,6 +4699,52 @@
       ],
       "usage": "in"
     },
+    "SlotInfo": {
+      "document": "卡槽信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "卡槽 Id。",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材类型，同素材素材，可取值有：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片。</li>",
+          "example": "0",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认素材 Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "DefaultMaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材时长，单位秒。",
+          "example": "100",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SlotReplacementInfo": {
       "document": "卡槽替换信息。",
       "members": [
@@ -5278,6 +5334,32 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoEditTemplateMaterial": {
+      "document": "视频编辑模板素材信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频编辑模板宽高比。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卡槽信息。",
+          "example": "无",
+          "member": "SlotInfo",
+          "name": "SlotSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

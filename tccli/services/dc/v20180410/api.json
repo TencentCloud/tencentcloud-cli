@@ -2366,6 +2366,7 @@
         {
           "default": "",
           "document": "物理专线的ID。",
+          "example": "dcx-abcdefgh",
           "member": "string",
           "name": "DirectConnectId",
           "required": true,
@@ -2374,6 +2375,7 @@
         {
           "default": "",
           "document": "物理专线名称。",
+          "example": "abc",
           "member": "string",
           "name": "DirectConnectName",
           "required": false,
@@ -2382,6 +2384,7 @@
         {
           "default": "",
           "document": "运营商或者服务商为物理专线提供的电路编码。",
+          "example": "ABF_123",
           "member": "string",
           "name": "CircuitCode",
           "required": false,
@@ -2390,6 +2393,7 @@
         {
           "default": "",
           "document": "物理专线调试VLAN。",
+          "example": "100",
           "member": "int64",
           "name": "Vlan",
           "required": false,
@@ -2398,6 +2402,7 @@
         {
           "default": "",
           "document": "物理专线调试腾讯侧互联 IP。",
+          "example": "172.168.1.1/30",
           "member": "string",
           "name": "TencentAddress",
           "required": false,
@@ -2406,6 +2411,7 @@
         {
           "default": "",
           "document": "物理专线调试用户侧互联 IP。",
+          "example": "172.168.1.2/30",
           "member": "string",
           "name": "CustomerAddress",
           "required": false,
@@ -2414,6 +2420,7 @@
         {
           "default": "",
           "document": "物理专线申请者姓名。默认从账户体系获取。",
+          "example": "张三",
           "member": "string",
           "name": "CustomerName",
           "required": false,
@@ -2422,6 +2429,7 @@
         {
           "default": "",
           "document": "物理专线申请者联系邮箱。默认从账户体系获取。",
+          "example": "12345@qq.com",
           "member": "string",
           "name": "CustomerContactMail",
           "required": false,
@@ -2430,6 +2438,7 @@
         {
           "default": "",
           "document": "物理专线申请者联系号码。默认从账户体系获取。",
+          "example": "18812345678",
           "member": "string",
           "name": "CustomerContactNumber",
           "required": false,
@@ -2438,6 +2447,7 @@
         {
           "default": "",
           "document": "报障联系人。",
+          "example": "张三",
           "member": "string",
           "name": "FaultReportContactPerson",
           "required": false,
@@ -2446,6 +2456,7 @@
         {
           "default": "",
           "document": "报障联系电话。",
+          "example": "18812345678",
           "member": "string",
           "name": "FaultReportContactNumber",
           "required": false,
@@ -2454,10 +2465,20 @@
         {
           "default": "",
           "document": "物理专线申请者补签用户使用协议",
+          "example": "true",
           "member": "bool",
           "name": "SignLaw",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "物理专线带宽",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

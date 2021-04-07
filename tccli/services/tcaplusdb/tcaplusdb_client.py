@@ -338,7 +338,7 @@ def doDeleteIdlFiles(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRecoverRecycleTables(args, parsed_globals):
+def doCreateSnapshots(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -352,9 +352,9 @@ def doRecoverRecycleTables(args, parsed_globals):
     client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RecoverRecycleTablesRequest()
+    model = models.CreateSnapshotsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RecoverRecycleTables(model)
+    rsp = client.CreateSnapshots(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -563,6 +563,31 @@ def doModifyTableGroupName(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteSnapshots(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSnapshotsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteSnapshots(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateTableGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -580,6 +605,31 @@ def doCreateTableGroup(args, parsed_globals):
     model = models.CreateTableGroupRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateTableGroup(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRecoverRecycleTables(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RecoverRecycleTablesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RecoverRecycleTables(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -630,6 +680,31 @@ def doModifyTableTags(args, parsed_globals):
     model = models.ModifyTableTagsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ModifyTableTags(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSnapshots(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSnapshotsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSnapshots(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -730,6 +805,31 @@ def doDescribeTableGroupTags(args, parsed_globals):
     model = models.DescribeTableGroupTagsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeTableGroupTags(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doImportSnapshots(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ImportSnapshotsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ImportSnapshots(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -863,6 +963,31 @@ def doModifyTableMemos(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTables(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTablesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTables(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doVerifyIdlFiles(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -938,7 +1063,7 @@ def doModifyTables(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTables(args, parsed_globals):
+def doModifySnapshots(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -952,9 +1077,9 @@ def doDescribeTables(args, parsed_globals):
     client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTablesRequest()
+    model = models.ModifySnapshotsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTables(model)
+    rsp = client.ModifySnapshots(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1012,7 +1137,7 @@ ACTION_MAP = {
     "DeleteCluster": doDeleteCluster,
     "ModifyClusterPassword": doModifyClusterPassword,
     "DeleteIdlFiles": doDeleteIdlFiles,
-    "RecoverRecycleTables": doRecoverRecycleTables,
+    "CreateSnapshots": doCreateSnapshots,
     "EnableRestProxy": doEnableRestProxy,
     "CreateBackup": doCreateBackup,
     "CreateTables": doCreateTables,
@@ -1021,22 +1146,27 @@ ACTION_MAP = {
     "ModifyClusterMachine": doModifyClusterMachine,
     "DeleteTableGroup": doDeleteTableGroup,
     "ModifyTableGroupName": doModifyTableGroupName,
+    "DeleteSnapshots": doDeleteSnapshots,
     "CreateTableGroup": doCreateTableGroup,
+    "RecoverRecycleTables": doRecoverRecycleTables,
     "DescribeRegions": doDescribeRegions,
     "ModifyTableTags": doModifyTableTags,
+    "DescribeSnapshots": doDescribeSnapshots,
     "ModifyClusterTags": doModifyClusterTags,
     "ModifyTableGroupTags": doModifyTableGroupTags,
     "SetTableIndex": doSetTableIndex,
     "DescribeTableGroupTags": doDescribeTableGroupTags,
+    "ImportSnapshots": doImportSnapshots,
     "DescribeTableGroups": doDescribeTableGroups,
     "CompareIdlFiles": doCompareIdlFiles,
     "DescribeIdlFileInfos": doDescribeIdlFileInfos,
     "DeleteTables": doDeleteTables,
     "ModifyTableMemos": doModifyTableMemos,
+    "DescribeTables": doDescribeTables,
     "VerifyIdlFiles": doVerifyIdlFiles,
     "DescribeClusterTags": doDescribeClusterTags,
     "ModifyTables": doModifyTables,
-    "DescribeTables": doDescribeTables,
+    "ModifySnapshots": doModifySnapshots,
     "ClearTables": doClearTables,
 
 }

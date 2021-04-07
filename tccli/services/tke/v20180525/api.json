@@ -5867,6 +5867,7 @@
         {
           "default": "",
           "document": "NodePoolId 资源池id",
+          "example": "np-xxx",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -5876,6 +5877,7 @@
         {
           "default": "",
           "document": "Name 资源池名称",
+          "example": "xxx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5885,6 +5887,7 @@
         {
           "default": "",
           "document": "ClusterInstanceId 集群实例id",
+          "example": "cls-xxx",
           "member": "string",
           "name": "ClusterInstanceId",
           "required": true,
@@ -5894,6 +5897,7 @@
         {
           "default": "",
           "document": "LifeState 状态",
+          "example": "normal",
           "member": "string",
           "name": "LifeState",
           "required": true,
@@ -5903,6 +5907,7 @@
         {
           "default": "",
           "document": "LaunchConfigurationId 配置",
+          "example": "asc-xxx",
           "member": "string",
           "name": "LaunchConfigurationId",
           "required": true,
@@ -5912,6 +5917,7 @@
         {
           "default": "",
           "document": "AutoscalingGroupId 分组id",
+          "example": "asg-xxx",
           "member": "string",
           "name": "AutoscalingGroupId",
           "required": true,
@@ -5921,6 +5927,7 @@
         {
           "default": "",
           "document": "Labels 标签",
+          "example": "无",
           "member": "Label",
           "name": "Labels",
           "required": true,
@@ -5930,6 +5937,7 @@
         {
           "default": "",
           "document": "Taints 污点标记",
+          "example": "无",
           "member": "Taint",
           "name": "Taints",
           "required": true,
@@ -5939,6 +5947,7 @@
         {
           "default": "",
           "document": "NodeCountSummary 节点列表",
+          "example": "{\"AutoscalingAdded\":{\"Initializing\":0,\"Joining\":0,\"Normal\":1,\"Sh",
           "member": "NodeCountSummary",
           "name": "NodeCountSummary",
           "required": true,
@@ -5948,6 +5957,7 @@
         {
           "default": "",
           "document": "状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enabled",
           "member": "string",
           "name": "AutoscalingGroupStatus",
           "required": true,
@@ -5957,6 +5967,7 @@
         {
           "default": "",
           "document": "最大节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
           "member": "int64",
           "name": "MaxNodesNum",
           "required": true,
@@ -5966,6 +5977,7 @@
         {
           "default": "",
           "document": "最小节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "MinNodesNum",
           "required": true,
@@ -5975,6 +5987,7 @@
         {
           "default": "",
           "document": "期望的节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "int64",
           "name": "DesiredNodesNum",
           "required": true,
@@ -5984,6 +5997,7 @@
         {
           "default": "",
           "document": "节点池osName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tlinux2.4x86_64",
           "member": "string",
           "name": "NodePoolOs",
           "required": true,
@@ -5993,6 +6007,7 @@
         {
           "default": "",
           "document": "容器的镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
           "required": true,
@@ -6002,8 +6017,29 @@
         {
           "default": "",
           "document": "镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-xxx",
           "member": "string",
           "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "int64",
+          "name": "DesiredPodNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserScript",
           "required": true,
           "type": "string",
           "value_allowed_null": true

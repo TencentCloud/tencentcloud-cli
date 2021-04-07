@@ -59,6 +59,12 @@
       "input": "DescribeTelCdrRequest",
       "name": "获取电话服务记录与录音",
       "output": "DescribeTelCdrResponse"
+    },
+    "DescribeTelSession": {
+      "document": "获取 PSTN 会话信息",
+      "input": "DescribeTelSessionRequest",
+      "name": "获取 PSTN 会话信息",
+      "output": "DescribeTelSessionResponse"
     }
   },
   "metadata": {
@@ -777,6 +783,51 @@
       ],
       "type": "object"
     },
+    "DescribeTelSessionRequest": {
+      "document": "DescribeTelSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "会话ID",
+          "example": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTelSessionResponse": {
+      "document": "DescribeTelSession返回参数结构体",
+      "members": [
+        {
+          "document": "会话信息",
+          "example": "无",
+          "member": "PSTNSession",
+          "name": "Session",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "IMCdrInfo": {
       "document": "全媒体服务记录信息",
       "members": [
@@ -924,6 +975,142 @@
           "name": "Messages",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PSTNSession": {
+      "document": "PSTN 会话类型。",
+      "members": [
+        {
+          "default": "",
+          "document": "会话 ID",
+          "example": "d62a280a-b7dc-4a05-8295-eba7b61c2490",
+          "member": "string",
+          "name": "SessionID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话临时房间 ID",
+          "example": "0",
+          "member": "string",
+          "name": "RoomID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主叫",
+          "example": "00861010101033",
+          "member": "string",
+          "name": "Caller",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被叫",
+          "example": "00861010101031",
+          "member": "string",
+          "name": "Callee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间，Unix 时间戳",
+          "example": "1617184839",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "振铃时间，Unix 时间戳",
+          "example": "1617184839",
+          "member": "int64",
+          "name": "RingTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接听时间，Unix 时间戳",
+          "example": "1617184839",
+          "member": "int64",
+          "name": "AcceptTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席邮箱",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "StaffEmail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席工号",
+          "example": "007",
+          "member": "string",
+          "name": "StaffNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话状态\nringing 振铃中\nseatJoining  等待坐席接听\ninProgress 进行中\nfinished 已完成",
+          "example": "finished",
+          "member": "string",
+          "name": "SessionStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话呼叫方向， 0 呼入 | 1 - 呼出",
+          "example": "0",
+          "member": "int64",
+          "name": "Direction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转外线使用的号码（转外线主叫）",
+          "example": "00861010101031",
+          "member": "string",
+          "name": "OutBoundCaller",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转外线被叫",
+          "example": "00861010101032",
+          "member": "string",
+          "name": "OutBoundCallee",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

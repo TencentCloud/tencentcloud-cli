@@ -1912,6 +1912,7 @@
         {
           "default": "",
           "document": "实例 ID",
+          "example": "ckafka-xxooa0",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1920,6 +1921,7 @@
         {
           "default": "",
           "document": "过滤条件，按照 topicName 过滤，支持模糊查询",
+          "example": "TopicX",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -1928,6 +1930,7 @@
         {
           "default": "",
           "document": "偏移量，不填默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1936,6 +1939,7 @@
         {
           "default": "",
           "document": "返回数量，不填则默认为10，最大值为50",
+          "example": "50",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1949,8 +1953,10 @@
       "members": [
         {
           "document": "返回的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TopicResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
