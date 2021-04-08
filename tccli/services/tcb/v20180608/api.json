@@ -66,6 +66,12 @@
       "name": "删除终端用户",
       "output": "DeleteEndUserResponse"
     },
+    "DeleteWxGatewayRoute": {
+      "document": "删除安全网关路由",
+      "input": "DeleteWxGatewayRouteRequest",
+      "name": "删除安全网关路由",
+      "output": "DeleteWxGatewayRouteResponse"
+    },
     "DescribeAuthDomains": {
       "document": "获取安全域名列表",
       "input": "DescribeAuthDomainsRequest",
@@ -221,6 +227,12 @@
       "input": "EstablishCloudBaseRunServerRequest",
       "name": "创建云应用服务",
       "output": "EstablishCloudBaseRunServerResponse"
+    },
+    "EstablishWxGatewayRoute": {
+      "document": "创建或修改安全网关路由",
+      "input": "EstablishWxGatewayRouteRequest",
+      "name": "创建或修改安全网关路由",
+      "output": "EstablishWxGatewayRouteResponse"
     },
     "ModifyDatabaseACL": {
       "document": "修改数据库权限",
@@ -2420,6 +2432,42 @@
     },
     "DeleteEndUserResponse": {
       "document": "DeleteEndUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWxGatewayRouteRequest": {
+      "document": "DeleteWxGatewayRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "example": "Gateway-test",
+          "member": "string",
+          "name": "GatewayRouteName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWxGatewayRouteResponse": {
+      "document": "DeleteWxGatewayRoute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4849,6 +4897,69 @@
     },
     "EstablishCloudBaseRunServerResponse": {
       "document": "EstablishCloudBaseRunServer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EstablishWxGatewayRouteRequest": {
+      "document": "EstablishWxGatewayRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关id",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "example": "Gateway-test",
+          "member": "string",
+          "name": "GatewayRouteName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务地址",
+          "example": "http://1.2.3.4",
+          "member": "string",
+          "name": "GatewayRouteAddr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议类型 http/https",
+          "example": "http",
+          "member": "string",
+          "name": "GatewayRouteProtocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务描述",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayRouteDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EstablishWxGatewayRouteResponse": {
+      "document": "EstablishWxGatewayRoute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

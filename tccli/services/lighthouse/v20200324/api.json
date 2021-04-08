@@ -1,16 +1,46 @@
 {
   "actions": {
+    "ApplyInstanceSnapshot": {
+      "document": "本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。\n<li>仅支持回滚到原系统盘。</li>\n<li>用于回滚的快照必须处于 NORMAL 状态。快照状态可以通 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。</li>\n<li>回滚快照时，实例的状态必须为 STOPPED 或 RUNNING，可通过 DescribeInstances 接口查询实例状态。处于 RUNNING 状态的实例会强制关机，然后回滚快照。</li>",
+      "input": "ApplyInstanceSnapshotRequest",
+      "name": "回滚实例快照",
+      "output": "ApplyInstanceSnapshotResponse"
+    },
+    "CreateBlueprint": {
+      "document": "本接口 (CreateBlueprint) 用于创建镜像。",
+      "input": "CreateBlueprintRequest",
+      "name": "创建镜像",
+      "output": "CreateBlueprintResponse"
+    },
     "CreateFirewallRules": {
       "document": "本接口（CreateFirewallRules）用于在实例上添加防火墙规则。\n\n\n* FirewallVersion 为防火墙版本号，用户每次更新防火墙规则版本会自动加1，防止您更新的规则已过期，不填不考虑冲突。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "CreateFirewallRulesRequest",
       "name": "添加防火墙规则",
       "output": "CreateFirewallRulesResponse"
     },
+    "CreateInstanceSnapshot": {
+      "document": "本接口（CreateInstanceSnapshot）用于创建指定实例的系统盘快照。",
+      "input": "CreateInstanceSnapshotRequest",
+      "name": "创建实例快照",
+      "output": "CreateInstanceSnapshotResponse"
+    },
+    "DeleteBlueprints": {
+      "document": "本接口 (DeleteBlueprints) 用于删除镜像。",
+      "input": "DeleteBlueprintsRequest",
+      "name": "删除镜像",
+      "output": "DeleteBlueprintsResponse"
+    },
     "DeleteFirewallRules": {
       "document": "本接口（DeleteFirewallRules）用于删除实例的防火墙规则。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接删除指定的规则。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "DeleteFirewallRulesRequest",
       "name": "删除防火墙规则",
       "output": "DeleteFirewallRulesResponse"
+    },
+    "DeleteSnapshots": {
+      "document": "本接口（DeleteSnapshots）用于删除快照。\n快照必须处于 NORMAL 状态，快照状态可以通过 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。",
+      "input": "DeleteSnapshotsRequest",
+      "name": "删除快照",
+      "output": "DeleteSnapshotsResponse"
     },
     "DescribeBlueprints": {
       "document": "本接口（DescribeBlueprints）用于查询镜像信息。",
@@ -41,6 +71,24 @@
       "input": "DescribeInstancesTrafficPackagesRequest",
       "name": "查看实例流量包详情",
       "output": "DescribeInstancesTrafficPackagesResponse"
+    },
+    "DescribeSnapshots": {
+      "document": "本接口（DescribeSnapshots）用于查询快照的详细信息。",
+      "input": "DescribeSnapshotsRequest",
+      "name": "查看快照列表",
+      "output": "DescribeSnapshotsResponse"
+    },
+    "ModifyBlueprintAttribute": {
+      "document": "本接口 (ModifyBlueprintAttribute) 用于修改镜像属性。",
+      "input": "ModifyBlueprintAttributeRequest",
+      "name": "修改镜像属性",
+      "output": "ModifyBlueprintAttributeResponse"
+    },
+    "ModifySnapshotAttribute": {
+      "document": "本接口（ModifySnapshotAttribute）用于修改指定快照的属性。\n<li>“快照名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行快照管理操作的依据。</li>",
+      "input": "ModifySnapshotAttributeRequest",
+      "name": "修改快照信息",
+      "output": "ModifySnapshotAttributeResponse"
     },
     "RebootInstances": {
       "document": "本接口（RebootInstances）用于重启实例。\n\n* 只有状态为 RUNNING 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 REBOOTING 状态；重启实例成功时，实例会进入 RUNNING 状态。\n* 支持批量操作，每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
@@ -74,6 +122,42 @@
     "serviceShortName": "lighthouse"
   },
   "objects": {
+    "ApplyInstanceSnapshotRequest": {
+      "document": "ApplyInstanceSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "example": "lhins-k31c771o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照 ID。",
+          "example": "lhsnap-nv6aqcv6",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyInstanceSnapshotResponse": {
+      "document": "ApplyInstanceSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Blueprint": {
       "document": "描述了镜像信息。",
       "members": [
@@ -376,6 +460,60 @@
       ],
       "usage": "out"
     },
+    "CreateBlueprintRequest": {
+      "document": "CreateBlueprint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像名称。最大长度60。",
+          "example": "test-blueprint",
+          "member": "string",
+          "name": "BlueprintName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像描述。最大长度60。",
+          "example": "test-blueprint",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要制作镜像的实例ID。",
+          "example": "lhins-aaaabbbb",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlueprintResponse": {
+      "document": "CreateBlueprint返回参数结构体",
+      "members": [
+        {
+          "document": "自定义镜像ID。",
+          "example": "lhbp-xkeh87da",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFirewallRulesRequest": {
       "document": "CreateFirewallRules请求参数结构体",
       "members": [
@@ -421,6 +559,78 @@
       ],
       "type": "object"
     },
+    "CreateInstanceSnapshotRequest": {
+      "document": "CreateInstanceSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要创建快照的实例 ID。",
+          "example": "lhins-k31c771o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照名称，最长为 60 个字符。",
+          "example": "snap_20200903",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceSnapshotResponse": {
+      "document": "CreateInstanceSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "快照 ID。",
+          "example": "lhsnap-nv6aqcv6",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlueprintsRequest": {
+      "document": "DeleteBlueprints请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像ID列表。镜像ID，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
+          "example": "[\"lhbp-aaaabbbb\"]",
+          "member": "string",
+          "name": "BlueprintIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlueprintsResponse": {
+      "document": "DeleteBlueprints返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteFirewallRulesRequest": {
       "document": "DeleteFirewallRules请求参数结构体",
       "members": [
@@ -456,6 +666,33 @@
     },
     "DeleteFirewallRulesResponse": {
       "document": "DeleteFirewallRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotsRequest": {
+      "document": "DeleteSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的快照 ID 列表，可通过 DescribeSnapshots 查询。",
+          "example": "[\"lhsnap-nv6aqcv6\\n\"]",
+          "member": "string",
+          "name": "SnapshotIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotsResponse": {
+      "document": "DeleteSnapshots返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -788,6 +1025,78 @@
           "document": "实例流量包详情列表。",
           "member": "InstanceTrafficPackage",
           "name": "InstanceTrafficPackageSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotsRequest": {
+      "document": "DescribeSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询快照的 ID 列表。\n参数不支持同时指定 SnapshotIds 和 Filters。",
+          "example": "[\"lhsnap-nv6aqcv6\"]",
+          "member": "string",
+          "name": "SnapshotIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤器列表。\n<li>snapshot-id</li>按照【快照 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\n<li>snapshot-name</li>按照【快照名称】进行过滤。\n类型：String\n必选：否\n<li>instance-id</li>按照【实例 ID 】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotsResponse": {
+      "document": "DescribeSnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "快照的数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照的详情列表。",
+          "example": "无",
+          "member": "Snapshot",
+          "name": "SnapshotSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1284,6 +1593,87 @@
       ],
       "usage": "out"
     },
+    "ModifyBlueprintAttributeRequest": {
+      "document": "ModifyBlueprintAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
+          "example": "lhbp-aaaabbbb",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设置新的镜像名称。最大长度60。",
+          "example": "test-blueprint",
+          "member": "string",
+          "name": "BlueprintName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设置新的镜像描述。最大长度60。",
+          "example": "test-blueprint",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlueprintAttributeResponse": {
+      "document": "ModifyBlueprintAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotAttributeRequest": {
+      "document": "ModifySnapshotAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照 ID, 可通过 DescribeSnapshots 查询。",
+          "example": "lhsnap-nv6aqcv6",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的快照名称，最长为 60 个字符。",
+          "example": "snap_20200903",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotAttributeResponse": {
+      "document": "ModifySnapshotAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Price": {
       "document": "价格信息",
       "members": [
@@ -1360,6 +1750,111 @@
         }
       ],
       "type": "object"
+    },
+    "Snapshot": {
+      "document": "描述了快照相关信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "快照 ID。",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的磁盘类型。取值：<li>SYSTEM_DISK：系统盘</li>",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的磁盘 ID。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的磁盘大小，单位 GB。",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照名称，用户自定义的快照别名。",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照的状态。取值范围：\n<li>NORMAL：正常 </li>\n<li>CREATING：创建中</li>\n<li>ROLLBACKING：回滚中。</li>",
+          "member": "string",
+          "name": "SnapshotState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建或回滚快照进度百分比，成功后此字段取值为 100。",
+          "member": "int64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LatestOperation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LatestOperationState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LatestOperationRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照的创建时间。",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StartInstancesRequest": {
       "document": "StartInstances请求参数结构体",

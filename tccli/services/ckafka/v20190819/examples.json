@@ -3,8 +3,8 @@
     "CreateAcl": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateAcl\r\n&InstanceId=xxx\r\n&ResourceType=xxx\r\n&ResourceName=1\r\n&Operation=2\r\n&PermissionType=2\r\n&Host=2\r\n&Principal=2\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        },\n        \"RequestId\": \"b1ce770b-3623-47d3-b31b-538f8941142d\"\n    }\n}",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateAcl\n&InstanceId=xxx\n&ResourceType=2\n&ResourceName=test1\n&Operation=2\n&PermissionType=2\n&Host=1.1.1.1\n&Principal=User:user1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"b1ce770b-3623-47d3-b31b-538f8941142d\"\n    }\n}",
         "title": "添加 ACL 策略"
       }
     ],
@@ -54,6 +54,14 @@
         "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteAcl\r\n&InstanceId=xxx\r\n&ResourceType=xxx\r\n&ResourceName=1\r\n&Operation=2\r\n&PermissionType=2\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        },\n        \"RequestId\": \"2140f435-b350-4429-a105-9b83efe104b0\"\n    }\n}",
         "title": "删除ACL"
+      }
+    ],
+    "DeleteAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAclRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-123456\",\n    \"RuleName\": \"testRule\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 12,\n        \"RequestId\": \"8c3daa3a-d87b-47ef-9ddd-f0905eeb8d84\"\n    }\n}",
+        "title": "删除ACL规则示例"
       }
     ],
     "DeleteTopic": [

@@ -18,7 +18,8 @@ tccli ecm RunInstances --cli-unfold-argument  \
     --ModuleId em-0vag13d1 \
     --InstanceName 直播弹幕 \
     --EnhancedService.SecurityService.Enabled false \
-    --EnhancedService.MonitorService.Enabled false
+    --EnhancedService.MonitorService.Enabled false \
+    --InstanceChargeType 0
 ```
 
 Output: 

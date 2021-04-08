@@ -42,6 +42,12 @@
       "name": "删除ACL",
       "output": "DeleteAclResponse"
     },
+    "DeleteAclRule": {
+      "document": "删除ACL规则",
+      "input": "DeleteAclRuleRequest",
+      "name": "删除ACL规则",
+      "output": "DeleteAclRuleResponse"
+    },
     "DeleteTopic": {
       "document": "删除ckafka主题",
       "input": "DeleteTopicRequest",
@@ -509,6 +515,7 @@
         {
           "default": "",
           "document": "实例id信息",
+          "example": "xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -517,6 +524,7 @@
         {
           "default": "",
           "document": "Acl资源类型，(0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID)，当前只有TOPIC，其它字段用于后续兼容开源kafka的acl时使用",
+          "example": "2",
           "member": "int64",
           "name": "ResourceType",
           "required": true,
@@ -524,15 +532,8 @@
         },
         {
           "default": "",
-          "document": "资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称",
-          "member": "string",
-          "name": "ResourceName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "Acl操作方式，(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS)",
+          "example": "2",
           "member": "int64",
           "name": "Operation",
           "required": true,
@@ -541,6 +542,7 @@
         {
           "default": "",
           "document": "权限类型，(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用",
+          "example": "2",
           "member": "int64",
           "name": "PermissionType",
           "required": true,
@@ -548,7 +550,17 @@
         },
         {
           "default": "",
+          "document": "资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称",
+          "example": "test1",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "默认为\\*，表示任何host都可以访问，当前ckafka不支持host为\\*，但是后面开源kafka的产品化会直接支持",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Host",
           "required": false,
@@ -556,7 +568,8 @@
         },
         {
           "default": "",
-          "document": "用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户",
+          "document": "用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。",
+          "example": "User:user1",
           "member": "string",
           "name": "Principal",
           "required": false,
@@ -570,8 +583,10 @@
       "members": [
         {
           "document": "返回结果",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1072,6 +1087,51 @@
           "member": "JgwOperateResponse",
           "name": "Result",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAclRuleRequest": {
+      "document": "DeleteAclRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id信息",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "acl规则名称",
+          "example": "testRule",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAclRuleResponse": {
+      "document": "DeleteAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "返回被删除的规则的ID",
+          "example": "无",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

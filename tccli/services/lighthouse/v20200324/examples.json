@@ -1,5 +1,21 @@
 {
   "actions": {
+    "ApplyInstanceSnapshot": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=ApplyInstanceSnapshot\n&InstanceId=lhins-k31c771o\n&SnapshotId=lhsnap-nv6aqcv6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96aee6e3-172c-4f0f-be7c-fc46b9865763\"\n    }\n}",
+        "title": "回滚实例快照"
+      }
+    ],
+    "CreateBlueprint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlueprint\n<公共请求参数>\n\n{\n    \"BlueprintName\": \"test-blueprint\",\n    \"InstanceId\": \"lhins-7ugtz5e1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintId\": \"lhbp-xkeh87da\",\n        \"RequestId\": \"6bdba9db-c3fe-45b2-87f3-b0125d901a90\"\n    }\n}",
+        "title": "使用实例创建镜像"
+      }
+    ],
     "CreateFirewallRules": [
       {
         "document": "",
@@ -8,12 +24,36 @@
         "title": "添加防火墙规则"
       }
     ],
+    "CreateInstanceSnapshot": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=CreateInstanceSnapshot\n&InstanceId=lhins-k31c771o\n&SnapshotName=snap_20200903\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SnapshotId\": \"lhsnap-nv6aqcv6\",\n        \"RequestId\": \"0580622c-03ef-4ae0-8192-016783412094\"\n    }\n}",
+        "title": "创建实例快照"
+      }
+    ],
+    "DeleteBlueprints": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlueprints\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-1ynlfst1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecad302e-6952-4c06-a64c-2f8f6c526029\"\n    }\n}",
+        "title": "删除一个自定义镜像"
+      }
+    ],
     "DeleteFirewallRules": [
       {
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DeleteFirewallRules\n&InstanceId=lhins-aglzynfg\n&FirewallRules.0.Protocol=TCP\n&FirewallRules.0.Port=80\n&FirewallRules.1.Protocol=UDP\n&FirewallRules.1.Port=22,443\n&FirewallRules.2.Protocol=TCP\n&FirewallRules.2.Port=8000-8081\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5182261-ab41-4801-a702-be05f2277758\"\n    }\n}",
         "title": "删除防火墙规则"
+      }
+    ],
+    "DeleteSnapshots": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DeleteSnapshots\n&SnapshotIds.0=lhsnap-nv6aqcv6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95cd6073-240b-4337-8c04-46345fcbbeb1\"\n    }\n}",
+        "title": "删除快照"
       }
     ],
     "DescribeBlueprints": [
@@ -60,6 +100,30 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeInstancesTrafficPackages\n&Limit=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceTrafficPackageSet\": [\n            {\n                \"InstanceId\": \"lhins-7h98ep3z\",\n                \"TrafficPackageSet\": [\n                    {\n                        \"TrafficPackageId\": \"lhtfp-o1wtyyvx\",\n                        \"TrafficUsed\": 5905577,\n                        \"TrafficPackageTotal\": 536870912000,\n                        \"TrafficPackageRemaining\": 536865006423,\n                        \"TrafficOverflow\": 0,\n                        \"StartTime\": \"2020-06-28T08:15:18Z\",\n                        \"EndTime\": \"2020-07-28T08:15:17Z\",\n                        \"Deadline\": \"2020-07-28T08:15:18Z\",\n                        \"Status\": \"NETWORK_NORMAL\"\n                    }\n                ]\n            },\n            {\n                \"InstanceId\": \"lhins-abtdx7eb\",\n                \"TrafficPackageSet\": [\n                    {\n                        \"TrafficPackageId\": \"lhtfp-4noj8p75\",\n                        \"TrafficUsed\": 3435972,\n                        \"TrafficPackageTotal\": 536870912000,\n                        \"TrafficPackageRemaining\": 536867476028,\n                        \"TrafficOverflow\": 0,\n                        \"StartTime\": \"2020-06-28T08:08:57Z\",\n                        \"EndTime\": \"2020-07-28T08:08:56Z\",\n                        \"Deadline\": \"2020-07-28T08:08:57Z\",\n                        \"Status\": \"NETWORK_NORMAL\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"7839b8ee-f5a4-4a67-b1ab-15fb35b1e2fe\"\n    }\n}",
         "title": "查询实例流量包详情"
+      }
+    ],
+    "DescribeSnapshots": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeSnapshots\n&Filters.0.Name=disk-id\n&Filters.0.Values.0=lhdisk-f71kc5bh\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SnapshotSet\": [\n            {\n                \"SnapshotId\": \"lhsnap-nv6aqcv6\",\n                \"DiskUsage\": \"SYSTEM_DISK\",\n                \"DiskId\": \"lhdisk-f71kc5bh\",\n                \"DiskSize\": 50,\n                \"SnapshotName\": \"lighthouse-test1-0903145122\",\n                \"SnapshotState\": \"NORMAL\",\n                \"Percent\": \"100\",\n                \"LatestOperation\": \"RollbackInstanceSnapshot\",\n                \"LatestOperationState\": \"SUCCESS\",\n                \"LatestOperationRequestId\": \"96aee6e3-172c-4f0f-be7c-fc46b9865763\",\n                \"CreatedTime\": \"2020-09-03T06:51:23Z\"\n            }\n        ],\n        \"RequestId\": \"95aacc96-b271-4d8b-bf83-019647952af9\"\n    }\n}",
+        "title": "查看快照列表"
+      }
+    ],
+    "ModifyBlueprintAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlueprintAttribute\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-1ynlfst1\",\n    \"BlueprintName\": \"new-blueprint\",\n    \"Description\": \"new-blueprint\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"896682bb-fb47-4fce-94d9-9a4f2abbfaac\"\n    }\n}",
+        "title": "修改镜像的名称与描述"
+      }
+    ],
+    "ModifySnapshotAttribute": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=ModifySnapshotAttribute\n&SnapshotId=lhsnap-nv6aqcv6\n&SnapshotName=snap_20200903\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a69469d0-b087-4f59-9557-7cde23662f8f\"\n    }\n}",
+        "title": "修改快照信息"
       }
     ],
     "RebootInstances": [

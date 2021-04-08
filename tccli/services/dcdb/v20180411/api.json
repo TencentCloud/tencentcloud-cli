@@ -3411,10 +3411,19 @@
         },
         {
           "default": "",
-          "document": "分片ID",
+          "document": "分片ID，与ShardSerialId设置一个",
           "example": "shard-ljilb4st",
           "member": "string",
           "name": "ShardId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分片序列ID，与ShardId设置一个",
+          "example": "set_1468379419_1",
+          "member": "string",
+          "name": "ShardSerialId",
           "required": false,
           "type": "string"
         }

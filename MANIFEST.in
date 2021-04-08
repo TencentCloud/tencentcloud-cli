@@ -315,6 +315,8 @@ include tccli/services/trtc/v20190722/api.json
 include tccli/services/trtc/v20190722/examples.json
 include tccli/services/tsf/v20180326/api.json
 include tccli/services/tsf/v20180326/examples.json
+include tccli/services/tsw/v20210412/api.json
+include tccli/services/tsw/v20210412/examples.json
 include tccli/services/tsw/v20200924/api.json
 include tccli/services/tsw/v20200924/examples.json
 include tccli/services/tts/v20190823/api.json
