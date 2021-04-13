@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ManageConfig": [
+      {
+        "document": "配置管理",
+        "input": "https://tse.tencentcloudapi.com/?Action=ManageConfig\n&InstanceId=ins-389a8c12\n&Type=consule\n&Command=PUT\n&Key=name\n&Value=AAA\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": \"true\"\n    }\n}",
+        "title": "配置管理"
+      }
+    ]
+  },
+  "version": "1.0"
+}

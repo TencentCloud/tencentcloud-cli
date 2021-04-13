@@ -355,6 +355,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \n人员人脸总数量至少2张，不可超过5张。 \n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Images",
           "required": false,
@@ -363,6 +364,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \nUrl、Image必须提供一个，如果都提供，只使用 Url。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。 \n人员人脸总数量不可超过5张。 \n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。",
+          "example": "[\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\\n\",\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\\n\"]",
           "member": "string",
           "name": "Urls",
           "required": false,
@@ -371,6 +373,7 @@
         {
           "default": "",
           "document": "人脸渐变参数。可调整每张图片的展示时长、人像渐变的最长时间",
+          "example": "无",
           "member": "GradientInfo",
           "name": "GradientInfos",
           "required": false,
@@ -379,6 +382,7 @@
         {
           "default": "",
           "document": "视频帧率，取值[1,25]。默认10",
+          "example": "10",
           "member": "int64",
           "name": "Fps",
           "required": false,
@@ -386,7 +390,8 @@
         },
         {
           "default": "",
-          "document": "视频类型，取值[0,2]，其中0为MP4，1为GIF，2为MOV。目前仅支持MP4格式，默认为MP4格式",
+          "document": "视频类型，取值0。目前仅支持MP4格式，默认为MP4格式",
+          "example": "0",
           "member": "int64",
           "name": "OutputType",
           "required": false,
@@ -395,6 +400,7 @@
         {
           "default": "",
           "document": "视频宽度，取值[128,1280]。默认值720",
+          "example": "无",
           "member": "int64",
           "name": "OutputWidth",
           "required": false,
@@ -403,6 +409,7 @@
         {
           "default": "",
           "document": "视频高度，取值[128,1280]。默认值1280",
+          "example": "无",
           "member": "int64",
           "name": "OutputHeight",
           "required": false,
@@ -416,15 +423,19 @@
       "members": [
         {
           "document": "人像渐变任务的Job id",
+          "example": "HQ3tBY79dsKl65ob",
           "member": "string",
           "name": "JobId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "预估处理时间，粒度为秒",
+          "example": "30",
           "member": "int64",
           "name": "EstimatedProcessTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

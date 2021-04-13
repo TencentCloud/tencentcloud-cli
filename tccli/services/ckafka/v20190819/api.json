@@ -551,7 +551,7 @@
         {
           "default": "",
           "document": "资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称",
-          "example": "test1",
+          "example": "Topic1",
           "member": "string",
           "name": "ResourceName",
           "required": false,

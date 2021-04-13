@@ -7,7 +7,7 @@ Input:
 ```
 tccli tke UpdateClusterVersion --cli-unfold-argument  \
     --ClusterId cls-xxxxxxxx \
-    --DstVersion 1.8.13
+    --DstVersion 1.18.4
 ```
 
 Output: 

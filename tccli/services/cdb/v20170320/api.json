@@ -3829,7 +3829,7 @@
         },
         {
           "document": "审计日志存储类型。目前支持的值包括：\"storage\" - 存储型。",
-          "example": "storage",
+          "example": "\"storage\"",
           "member": "string",
           "name": "LogType",
           "required": true,
@@ -3838,7 +3838,7 @@
         },
         {
           "document": "是否正在关闭审计。目前支持的值包括：\"false\"-否，\"true\"-是",
-          "example": "false",
+          "example": "\"false\"",
           "member": "string",
           "name": "IsClosing",
           "required": true,

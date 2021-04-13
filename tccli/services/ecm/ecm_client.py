@@ -963,6 +963,31 @@ def doAssociateAddress(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyDefaultSubnet(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDefaultSubnetRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyDefaultSubnet(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteSubnet(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1130,6 +1155,31 @@ def doDescribeImportImageOs(args, parsed_globals):
     model = models.DescribeImportImageOsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeImportImageOs(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMonthPeakNetwork(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMonthPeakNetworkRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeMonthPeakNetwork(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1405,31 +1455,6 @@ def doDisableRoutes(args, parsed_globals):
     model = models.DisableRoutesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DisableRoutes(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyIpv6AddressesAttribute(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyIpv6AddressesAttributeRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyIpv6AddressesAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2038,7 +2063,7 @@ def doDisassociateAddress(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDefaultSubnet(args, parsed_globals):
+def doModifyIpv6AddressesAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2052,9 +2077,9 @@ def doModifyDefaultSubnet(args, parsed_globals):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDefaultSubnetRequest()
+    model = models.ModifyIpv6AddressesAttributeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyDefaultSubnet(model)
+    rsp = client.ModifyIpv6AddressesAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -3012,6 +3037,7 @@ ACTION_MAP = {
     "ModifyModuleDisableWanIp": doModifyModuleDisableWanIp,
     "ModifyListener": doModifyListener,
     "AssociateAddress": doAssociateAddress,
+    "ModifyDefaultSubnet": doModifyDefaultSubnet,
     "DeleteSubnet": doDeleteSubnet,
     "ModifySecurityGroupAttribute": doModifySecurityGroupAttribute,
     "BatchRegisterTargets": doBatchRegisterTargets,
@@ -3019,6 +3045,7 @@ ACTION_MAP = {
     "CreateNetworkInterface": doCreateNetworkInterface,
     "StopInstances": doStopInstances,
     "DescribeImportImageOs": doDescribeImportImageOs,
+    "DescribeMonthPeakNetwork": doDescribeMonthPeakNetwork,
     "DetachNetworkInterface": doDetachNetworkInterface,
     "ResetInstances": doResetInstances,
     "ModifyTargetPort": doModifyTargetPort,
@@ -3030,7 +3057,6 @@ ACTION_MAP = {
     "DescribeRouteConflicts": doDescribeRouteConflicts,
     "RemovePrivateIpAddresses": doRemovePrivateIpAddresses,
     "DisableRoutes": doDisableRoutes,
-    "ModifyIpv6AddressesAttribute": doModifyIpv6AddressesAttribute,
     "DescribeBaseOverview": doDescribeBaseOverview,
     "AttachNetworkInterface": doAttachNetworkInterface,
     "ReleaseAddresses": doReleaseAddresses,
@@ -3055,7 +3081,7 @@ ACTION_MAP = {
     "DeleteRouteTable": doDeleteRouteTable,
     "DescribeSecurityGroupLimits": doDescribeSecurityGroupLimits,
     "DisassociateAddress": doDisassociateAddress,
-    "ModifyDefaultSubnet": doModifyDefaultSubnet,
+    "ModifyIpv6AddressesAttribute": doModifyIpv6AddressesAttribute,
     "RebootInstances": doRebootInstances,
     "AssignIpv6Addresses": doAssignIpv6Addresses,
     "MigratePrivateIpAddress": doMigratePrivateIpAddress,

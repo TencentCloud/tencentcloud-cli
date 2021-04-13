@@ -11,21 +11,15 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "NetworkInterfaceSet": [
             {
-                "VpcId": "vpc-mrzkofih",
-                "SubnetId": "subnet-nao8lfro",
+                "MacAddress": "20:90:6F:F5:34:C7",
+                "VpcId": "vpc-2kx9z6h3",
+                "Business": "cvm",
+                "Zone": "ap-guangzhou-2",
                 "NetworkInterfaceId": "eni-f1xjkw1b",
-                "NetworkInterfaceName": "royhyangtest-main",
-                "NetworkInterfaceDescription": "",
-                "GroupSet": [
-                    "sg-c2r7lnxh",
-                    "sg-f9ekbxeq"
-                ],
                 "Primary": false,
-                "MacAddress": "20: 90: 6F: F3: 3D: BD",
-                "State": "AVAILABLE",
-                "CreatedTime": "2017-11-16 19:56:00",
                 "PrivateIpAddressSet": [
                     {
                         "Description": "",
@@ -60,11 +54,26 @@ Output:
                         "State": "AVAILABLE"
                     }
                 ],
-                "Attachment": {},
-                "Zone": "ap-guangzhou-2"
+                "NetworkInterfaceDescription": "xx",
+                "Ipv6AddressSet": [],
+                "State": "AVAILABLE",
+                "GroupSet": [
+                    "sg-c2r7lnxh",
+                    "sg-f9ekbxeq"
+                ],
+                "Attachment": {
+                    "InstanceId": "ins-ymk3eje8",
+                    "DeviceIndex": 1,
+                    "InstanceAccountId": "251153169",
+                    "AttachTime": "2021-01-08 16:36:49"
+                },
+                "TagSet": [],
+                "EniType": 1,
+                "CreatedTime": "2021-01-07 16:32:55",
+                "SubnetId": "subnet-nao8lfro",
+                "NetworkInterfaceName": "royhyangtest-main"
             }
         ],
-        "TotalCount": 1,
         "RequestId": "5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1"
     }
 }
@@ -148,6 +157,7 @@ Output:
                     }
                 ],
                 "Attachment": null,
+                "Business": "cvm",
                 "Zone": "ap-guangzhou-2",
                 "Ipv6AddressSet": [
                     {

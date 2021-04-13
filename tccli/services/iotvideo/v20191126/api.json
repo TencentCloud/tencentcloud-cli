@@ -306,6 +306,12 @@
       "name": "禁用固件版本",
       "output": "DisableOtaVersionResponse"
     },
+    "ModifyDevice": {
+      "document": "修改设备信息",
+      "input": "ModifyDeviceRequest",
+      "name": "修改设备信息",
+      "output": "ModifyDeviceResponse"
+    },
     "ModifyDeviceAction": {
       "document": "本接口（ModifyDeviceAction）用于修改设备物模型的行为（Action）。\n\n可对ctlVal数据属性进行写入,如:Action.takePhoto.ctlVal,设备在线且成功发送到设备才返回,物模型写入数据时,不需要传入时标信息,平台以当前时标作为数据的时标更新物模型中的时标信息。\n注意:\n  1.若设备当前不在线,会直接返回错误\n  2.若设备网络出现异常时,消息发送可能超时,超时等待最长时间为3秒\n  3.value的内容必须与实际物模型的定义一致",
       "input": "ModifyDeviceActionRequest",
@@ -3498,6 +3504,51 @@
     },
     "ModifyDevicePropertyResponse": {
       "document": "ModifyDeviceProperty返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceRequest": {
+      "document": "ModifyDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备ID",
+          "example": "aaaaaaaaa",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "9222942471405699047",
+          "member": "string",
+          "name": "AccessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备昵称",
+          "example": "Camera",
+          "member": "string",
+          "name": "Nick",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceResponse": {
+      "document": "ModifyDevice返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -299,6 +299,7 @@
         {
           "default": "",
           "document": "数据库引擎名称，本接口取值：dcdb。",
+          "example": "dcdb",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -307,6 +308,7 @@
         {
           "default": "",
           "document": "要绑定的安全组ID，类似sg-efil73jd。",
+          "example": "sg-xxxxxx",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -315,6 +317,7 @@
         {
           "default": "",
           "document": "被绑定的实例ID，类似tdsqlshard-lesecurk，支持指定多个实例。",
+          "example": "[\"tdsql-xxxxxx\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3155,6 +3158,7 @@
         {
           "default": "",
           "document": "数据库引擎名称，本接口取值：dcdb。",
+          "example": "dcdb",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -3163,6 +3167,7 @@
         {
           "default": "",
           "document": "安全组Id。",
+          "example": "sg-xxxxxx",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -3171,6 +3176,7 @@
         {
           "default": "",
           "document": "实例ID列表，一个或者多个实例Id组成的数组。",
+          "example": "[\"tdsql-xxxxxx\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3549,6 +3555,7 @@
         {
           "default": "",
           "document": "数据库引擎名称，本接口取值：dcdb。",
+          "example": "dcdb",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -3557,6 +3564,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "tdsqlshard-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3565,6 +3573,7 @@
         {
           "default": "",
           "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
+          "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,

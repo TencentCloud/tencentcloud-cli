@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc CreateSubnet --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --VpcId vpc-m3ul053f \
     --SubnetName TestSubnet \
     --CidrBlock 10.8.0.0/16 \
@@ -20,21 +19,30 @@ Output:
 {
     "Response": {
         "Subnet": {
-            "VpcId": "vpc-m3ul053f",
-            "IsDefault": false,
-            "SubnetName": "TestSubnet",
-            "Zone": "ap-guangzhou-1",
-            "SubnetId": "subnet-2qhl25io",
-            "CidrBlock": "10.8.255.0/24",
-            "TotalIpAddressCount": 253,
-            "AvailableIpAddressCount": 253,
+            "NetworkAclId": "xx",
+            "RouteTableId": "xx",
+            "VpcId": "xx",
+            "EnableBroadcast": true,
+            "Zone": "xx",
+            "IsCdcSubnet": 0,
+            "Ipv6CidrBlock": "xx",
+            "CdcId": "xx",
+            "AvailableIpAddressCount": 1,
+            "IsRemoteVpcSnat": true,
+            "SubnetName": "xx",
+            "TotalIpAddressCount": 1,
             "TagSet": [
                 {
-                    "Key": "city",
-                    "Value": "shanghai"
+                    "Value": "xx",
+                    "Key": "xx"
                 }
-            ]
-        }
+            ],
+            "CreatedTime": "xx",
+            "SubnetId": "xx",
+            "CidrBlock": "xx",
+            "IsDefault": false
+        },
+        "RequestId": "xx"
     }
 }
 ```

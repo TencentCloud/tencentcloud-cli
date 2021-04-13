@@ -7416,6 +7416,7 @@
         {
           "default": "",
           "document": "集群 Id",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7424,6 +7425,7 @@
         {
           "default": "",
           "document": "需要升级到的版本",
+          "example": "1.18.4",
           "member": "string",
           "name": "DstVersion",
           "required": true,
@@ -7431,7 +7433,17 @@
         },
         {
           "default": "",
+          "document": "集群自定义参数",
+          "example": "无",
+          "member": "ClusterExtraArgs",
+          "name": "ExtraArgs",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "可容忍的最大不可用pod数目",
+          "example": "100",
           "member": "float",
           "name": "MaxNotReadyPercent",
           "required": false,
@@ -7440,6 +7452,7 @@
         {
           "default": "",
           "document": "是否跳过预检查阶段",
+          "example": "false",
           "member": "bool",
           "name": "SkipPreCheck",
           "required": false,

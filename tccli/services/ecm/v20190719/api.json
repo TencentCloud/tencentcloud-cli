@@ -312,6 +312,12 @@
       "name": "展示模块详细信息",
       "output": "DescribeModuleDetailResponse"
     },
+    "DescribeMonthPeakNetwork": {
+      "document": "获取客户节点上的出入带宽月峰和计费带宽信息",
+      "input": "DescribeMonthPeakNetworkRequest",
+      "name": "获取客户节点上的出入月峰和计费带宽",
+      "output": "DescribeMonthPeakNetworkResponse"
+    },
     "DescribeNetworkInterfaces": {
       "document": "查询弹性网卡列表",
       "input": "DescribeNetworkInterfacesRequest",
@@ -3910,6 +3916,51 @@
           "document": "模块详情信息的列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ModuleItem",
           "name": "ModuleItemSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMonthPeakNetworkRequest": {
+      "document": "DescribeMonthPeakNetwork请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "月份时间(xxxx-xx) 如2021-03,默认取当前时间的上一个月份",
+          "example": "2021-03",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "Filters",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMonthPeakNetworkResponse": {
+      "document": "DescribeMonthPeakNetwork返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MonthNetwork",
+          "name": "MonthNetWorkData",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8086,6 +8137,142 @@
           "name": "Module",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MonthNetwork": {
+      "document": "客户对应月份的带宽信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点zone信息",
+          "example": "无",
+          "member": "ZoneInfo",
+          "name": "ZoneInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽月份 示例\"202103\"",
+          "example": "202103",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽包id 格式如\"bwp-xxxxxxxx\"",
+          "example": "bwp-mm9aw7jq",
+          "member": "string",
+          "name": "BandwidthPkgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商简称 取值范围\"CUCC;CTCC;CMCC\"",
+          "example": "CMCC;CTCC;CUCC",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入网带宽包峰值,取值范围0.0-xxx.xxx",
+          "example": "521.34",
+          "member": "float",
+          "name": "TrafficMaxIn",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出网带宽包峰值,取值范围0.0-xxx.xxx",
+          "example": "521.34",
+          "member": "float",
+          "name": "TrafficMaxOut",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费带宽,取值范围0.0-xxx.xxx",
+          "example": "521.34",
+          "member": "float",
+          "name": "FeeTraffic",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "月计费带宽起始时间 格式\"yyyy-mm-dd HH:mm:ss\"",
+          "example": "2021-02-28 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "月计费带宽结束时间 格式\"yyyy-mm-dd HH:mm:ss\"",
+          "example": "2021-02-28 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "月计费带宽实际有效天数 整形必须大于等于0",
+          "example": "1",
+          "member": "int64",
+          "name": "EffectiveDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定月份的实际天数 实例 30",
+          "example": "30",
+          "member": "int64",
+          "name": "MonthDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有效天占比 保留小数点后四位0.2134",
+          "example": "0.2134",
+          "member": "float",
+          "name": "EffectiveDaysRate",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费带宽包类型 实例\"Address\",\"LoadBalance\",\"AddressIpv6\"",
+          "example": "Address",
+          "member": "string",
+          "name": "BandwidthPkgType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

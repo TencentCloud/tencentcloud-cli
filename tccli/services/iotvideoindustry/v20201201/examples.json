@@ -20,7 +20,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDevice\n<公共请求参数>\n\n{\n    \"NickName\": \"myDevice\",\n    \"PassWord\": \"password\",\n    \"GroupId\": \"group_root\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DeviceCode\": \"99999999991320000001\",\n        \"DeviceId\": \"99999999991320000001_99999999991320000001\",\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceCode\": \"99999999991320000001\",\n        \"DeviceId\": \"99999999991320000001_99999999991320000001\",\n        \"VirtualGroupId\": \"\",\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
         "title": "创建设备"
       }
     ],

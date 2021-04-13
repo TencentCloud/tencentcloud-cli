@@ -1,0 +1,91 @@
+{
+  "actions": {
+    "ManageConfig": {
+      "document": "管理配置",
+      "input": "ManageConfigRequest",
+      "name": "管理配置",
+      "output": "ManageConfigResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-07",
+    "api_brief": "介绍如何使用 API 对腾讯云微服务引擎进行操作，包括创建托管服务集群、查询集群信息等。",
+    "serviceNameCN": "腾讯云微服务引擎",
+    "serviceShortName": "tse"
+  },
+  "objects": {
+    "ManageConfigRequest": {
+      "document": "ManageConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ins-389a8c12",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置中心类型（consul、zookeeper、apollo等）",
+          "example": "consul",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求命名 PUT GET DELETE",
+          "example": "PUT",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置的Key",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置的Value",
+          "example": "{name:aaa}",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageConfigResponse": {
+      "document": "ManageConfig返回参数结构体",
+      "members": [
+        {
+          "document": "对配置中心操作配置之后的返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

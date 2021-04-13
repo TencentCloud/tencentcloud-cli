@@ -304,6 +304,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该设备是否可录制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "int64",
+          "name": "Recordable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -493,6 +503,15 @@
           "example": "xxx",
           "member": "string",
           "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备虚拟组信息，仅在创建NVR/VMS时返回该值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VirtualGroupId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1076,7 +1095,7 @@
         {
           "default": "",
           "document": "分组ID",
-          "example": "xxx",
+          "example": "group-1234abcd",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -1085,7 +1104,7 @@
         {
           "default": "",
           "document": "偏移量，默认0",
-          "example": "xxx",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1094,7 +1113,7 @@
         {
           "default": "",
           "document": "限制值，默认200",
-          "example": "xxx",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1103,11 +1122,20 @@
         {
           "default": "",
           "document": "设备名称，根据设备名称模糊匹配时必填",
-          "example": "xxx",
+          "example": "nickname",
           "member": "string",
           "name": "NickName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤不可录制设备",
+          "example": "1",
+          "member": "int64",
+          "name": "Recordable",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1869,6 +1897,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该设备是否可录制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Recordable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1955,6 +1993,26 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "int64",
+          "name": "GroupStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备不存在时产生的错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Error",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2058,6 +2116,16 @@
           "example": "xxx",
           "member": "int64",
           "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "int64",
+          "name": "GroupStatus",
           "required": false,
           "type": "int",
           "value_allowed_null": true

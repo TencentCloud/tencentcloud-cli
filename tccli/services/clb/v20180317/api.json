@@ -367,7 +367,7 @@
       "output": "ReplaceCertForLoadBalancersResponse"
     },
     "SetLoadBalancerClsLog": {
-      "document": "增加、删除、更新负载均衡的日志服务(CLS)主题",
+      "document": "增加、删除、更新负载均衡的日志服务(CLS)主题。",
       "input": "SetLoadBalancerClsLogRequest",
       "name": "设置负载均衡的日志服务主题",
       "output": "SetLoadBalancerClsLogResponse"
@@ -1693,6 +1693,15 @@
           "name": "LogsetName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。",
+          "example": "ACCESS",
+          "member": "string",
+          "name": "LogsetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2260,6 +2269,15 @@
           "name": "PartitionCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。",
+          "example": "ACCESS",
+          "member": "string",
+          "name": "TopicType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3012,9 +3030,18 @@
       "members": [
         {
           "document": "日志集的 ID。",
-          "example": "b046ae5f-00cf-4e90-880c-215e5ae7b624",
+          "example": "b046ae5f-00cf-4e90-880c-215e5ae72222",
           "member": "string",
           "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "健康检查日志集的 ID。",
+          "example": "b046ae5f-00cf-4e90-880c-215e5ae71111",
+          "member": "string",
+          "name": "HealthLogsetId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4585,6 +4612,7 @@
         {
           "default": "",
           "document": "负载均衡实例 ID。",
+          "example": "lb-fwzzxxxx",
           "member": "string",
           "name": "LoadBalancerId",
           "required": false,
@@ -4594,6 +4622,7 @@
         {
           "default": "",
           "document": "负载均衡实例的名称。",
+          "example": "name",
           "member": "string",
           "name": "LoadBalancerName",
           "required": false,
@@ -4603,6 +4632,7 @@
         {
           "default": "",
           "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。",
+          "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
           "required": false,
@@ -4612,6 +4642,7 @@
         {
           "default": "",
           "document": "负载均衡类型标识，1：负载均衡，0：传统型负载均衡。",
+          "example": "1",
           "member": "uint64",
           "name": "Forward",
           "required": false,
@@ -4621,6 +4652,7 @@
         {
           "default": "",
           "document": "负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.aaa.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -4630,6 +4662,7 @@
         {
           "default": "",
           "document": "负载均衡实例的 VIP 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x.x.x.x",
           "member": "string",
           "name": "LoadBalancerVips",
           "required": false,
@@ -4639,6 +4672,7 @@
         {
           "default": "",
           "document": "负载均衡实例的状态，包括\n0：创建中，1：正常运行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -4648,6 +4682,7 @@
         {
           "default": "",
           "document": "负载均衡实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-08 08:00:00",
           "member": "string",
           "name": "CreateTime",
           "required": false,
@@ -4657,6 +4692,7 @@
         {
           "default": "",
           "document": "负载均衡实例的上次状态转换时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-08 08:00:00",
           "member": "string",
           "name": "StatusTime",
           "required": false,
@@ -4666,6 +4702,7 @@
         {
           "default": "",
           "document": "负载均衡实例所属的项目 ID， 0 表示默认项目。",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -4675,6 +4712,7 @@
         {
           "default": "",
           "document": "私有网络的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-mj65xxxx",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -4684,6 +4722,7 @@
         {
           "default": "",
           "document": "高防 LB 的标识，1：高防负载均衡 0：非高防负载均衡。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "OpenBgp",
           "required": false,
@@ -4693,6 +4732,7 @@
         {
           "default": "",
           "document": "在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "Snat",
           "required": false,
@@ -4702,6 +4742,7 @@
         {
           "default": "",
           "document": "0：表示未被隔离，1：表示被隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "Isolation",
           "required": false,
@@ -4711,6 +4752,7 @@
         {
           "default": "",
           "document": "用户开启日志的信息，日志只有公网属性创建了 HTTP 、HTTPS 监听器的负载均衡才会有日志。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " null",
           "member": "string",
           "name": "Log",
           "required": false,
@@ -4720,6 +4762,7 @@
         {
           "default": "",
           "document": "负载均衡实例所在的子网（仅对内网VPC型LB有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-lzj3xxxx",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -4729,6 +4772,7 @@
         {
           "default": "",
           "document": "负载均衡实例的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
@@ -4738,6 +4782,7 @@
         {
           "default": "",
           "document": "负载均衡实例的安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sg-hx6dxxxx",
           "member": "string",
           "name": "SecureGroups",
           "required": false,
@@ -4747,6 +4792,7 @@
         {
           "default": "",
           "document": "负载均衡实例绑定的后端设备的基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TargetRegionInfo",
           "name": "TargetRegionInfo",
           "required": false,
@@ -4756,6 +4802,7 @@
         {
           "default": "",
           "document": "anycast负载均衡的发布域，对于非anycast的负载均衡，此字段返回为空字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " null",
           "member": "string",
           "name": "AnycastZone",
           "required": false,
@@ -4765,6 +4812,7 @@
         {
           "default": "",
           "document": "IP版本，ipv4 | ipv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ipv4",
           "member": "string",
           "name": "AddressIPVersion",
           "required": false,
@@ -4774,6 +4822,7 @@
         {
           "default": "",
           "document": "数值形式的私有网络 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "77599",
           "member": "uint64",
           "name": "NumericalVpcId",
           "required": false,
@@ -4783,6 +4832,7 @@
         {
           "default": "",
           "document": "负载均衡IP地址所属的ISP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BGP",
           "member": "string",
           "name": "VipIsp",
           "required": false,
@@ -4792,6 +4842,7 @@
         {
           "default": "",
           "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "MasterZone",
           "required": false,
@@ -4801,6 +4852,7 @@
         {
           "default": "",
           "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "BackupZoneSet",
           "required": false,
@@ -4810,6 +4862,7 @@
         {
           "default": "",
           "document": "负载均衡实例被隔离的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-02-12 12:15:08",
           "member": "string",
           "name": "IsolatedTime",
           "required": false,
@@ -4819,6 +4872,7 @@
         {
           "default": "",
           "document": "负载均衡实例的过期时间，仅对预付费负载均衡生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-12 12:15:08",
           "member": "string",
           "name": "ExpireTime",
           "required": false,
@@ -4828,6 +4882,7 @@
         {
           "default": "",
           "document": "负载均衡实例的计费类型，PREPAID：包年包月，POSTPAID_BY_HOUR：按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "required": false,
@@ -4837,6 +4892,7 @@
         {
           "default": "",
           "document": "负载均衡实例的网络属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "NetworkAttributes",
           "required": false,
@@ -4846,6 +4902,7 @@
         {
           "default": "",
           "document": "负载均衡实例的预付费相关属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LBChargePrepaid",
           "name": "PrepaidAttributes",
           "required": false,
@@ -4855,6 +4912,7 @@
         {
           "default": "",
           "document": "负载均衡日志服务(CLS)的日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c32fc818-e984-414a-b8f5-3985b4c5xxxx",
           "member": "string",
           "name": "LogSetId",
           "required": false,
@@ -4864,6 +4922,7 @@
         {
           "default": "",
           "document": "负载均衡日志服务(CLS)的日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c32fc818-e984-414a-b8f5-3985b4c5xxxx",
           "member": "string",
           "name": "LogTopicId",
           "required": false,
@@ -4873,6 +4932,7 @@
         {
           "default": "",
           "document": "负载均衡实例的IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2402:4e00:1000:4e00:0:920b:5519:d96d",
           "member": "string",
           "name": "AddressIPv6",
           "required": false,
@@ -4882,6 +4942,7 @@
         {
           "default": "",
           "document": "暂做保留，一般用户无需关注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
           "required": false,
@@ -4891,6 +4952,7 @@
         {
           "default": "",
           "document": "是否可绑定高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "IsDDos",
           "required": false,
@@ -4900,6 +4962,7 @@
         {
           "default": "",
           "document": "负载均衡维度的个性化配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pz-5itmxxxxx",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -4909,6 +4972,7 @@
         {
           "default": "",
           "document": "后端服务是否放通来自LB的流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "LoadBalancerPassToTarget",
           "required": false,
@@ -4918,6 +4982,7 @@
         {
           "default": "",
           "document": "内网独占集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ExclusiveCluster",
           "name": "ExclusiveCluster",
           "required": false,
@@ -4927,6 +4992,7 @@
         {
           "default": "",
           "document": "IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPv6FullChain",
           "member": "string",
           "name": "IPv6Mode",
           "required": false,
@@ -4936,6 +5002,7 @@
         {
           "default": "",
           "document": "是否开启SnatPro。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "SnatPro",
           "required": false,
@@ -4945,6 +5012,7 @@
         {
           "default": "",
           "document": "开启SnatPro负载均衡后，SnatIp列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SnatIp",
           "name": "SnatIps",
           "required": false,
@@ -4954,6 +5022,7 @@
         {
           "default": "",
           "document": "性能保障规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " null",
           "member": "string",
           "name": "SlaType",
           "required": false,
@@ -4963,6 +5032,7 @@
         {
           "default": "",
           "document": "vip是否被封堵\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "IsBlock",
           "required": false,
@@ -4972,6 +5042,7 @@
         {
           "default": "",
           "document": "封堵或解封时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-12 12:15:08",
           "member": "string",
           "name": "IsBlockTime",
           "required": false,
@@ -4981,6 +5052,7 @@
         {
           "default": "",
           "document": "IP类型是否是本地BGP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "LocalBgp",
           "required": false,
@@ -4990,6 +5062,7 @@
         {
           "default": "",
           "document": "7层独占标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FOR_TEST",
           "member": "string",
           "name": "ClusterTag",
           "required": false,
@@ -4999,6 +5072,7 @@
         {
           "default": "",
           "document": "开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "MixIpTarget",
           "required": false,
@@ -5008,6 +5082,7 @@
         {
           "default": "",
           "document": "私有网络内网负载均衡，就近接入模式下规则所落在的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -5017,8 +5092,29 @@
         {
           "default": "",
           "document": "CLB是否为NFV，空：不是，l7nfv：七层是NFV。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "NfvInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡日志服务(CLS)的健康检查日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c32fc818-e984-414a-b8f5-3985b4c51111",
+          "member": "string",
+          "name": "HealthLogSetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡日志服务(CLS)的健康检查日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c32fc818-e984-414a-b8f5-3985b4c52222",
+          "member": "string",
+          "name": "HealthLogTopicId",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7018,7 +7114,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-cuxw2r00",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -7026,7 +7123,8 @@
         },
         {
           "default": "",
-          "document": "日志服务(CLS)的日志集ID",
+          "document": "日志服务(CLS)的日志集ID。",
+          "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "LogSetId",
           "required": true,
@@ -7034,10 +7132,20 @@
         },
         {
           "default": "",
-          "document": "日志服务(CLS)的日志主题ID",
+          "document": "日志服务(CLS)的日志主题ID。",
+          "example": "xxxx-xx-xx-xx-yyyyyyyy",
           "member": "string",
           "name": "LogTopicId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。",
+          "example": "ACCESS",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
           "type": "string"
         }
       ],

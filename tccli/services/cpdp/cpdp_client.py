@@ -13,7 +13,7 @@ from tencentcloud.cpdp.v20190820 import cpdp_client as cpdp_client_v20190820
 from tencentcloud.cpdp.v20190820 import models as models_v20190820
 
 
-def doQuerySinglePay(args, parsed_globals):
+def doCreateRedInvoiceV2(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -27,9 +27,9 @@ def doQuerySinglePay(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QuerySinglePayRequest()
+    model = models.CreateRedInvoiceV2Request()
     model.from_json_string(json.dumps(args))
-    rsp = client.QuerySinglePay(model)
+    rsp = client.CreateRedInvoiceV2(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -130,6 +130,31 @@ def doQueryAnchorContractInfo(args, parsed_globals):
     model = models.QueryAnchorContractInfoRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.QueryAnchorContractInfo(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCheckAmount(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CheckAmountRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CheckAmount(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -363,7 +388,7 @@ def doDescribeChargeDetail(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryMerchantBalance(args, parsed_globals):
+def doQuerySinglePay(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -377,9 +402,9 @@ def doQueryMerchantBalance(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryMerchantBalanceRequest()
+    model = models.QuerySinglePayRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.QueryMerchantBalance(model)
+    rsp = client.QuerySinglePay(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1038,7 +1063,7 @@ def doQueryPayerInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRegisterBillSupportWithdraw(args, parsed_globals):
+def doQueryMerchantBalance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1052,9 +1077,9 @@ def doRegisterBillSupportWithdraw(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RegisterBillSupportWithdrawRequest()
+    model = models.QueryMerchantBalanceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RegisterBillSupportWithdraw(model)
+    rsp = client.QueryMerchantBalance(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1313,7 +1338,7 @@ def doMigrateOrderRefundQuery(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCheckAmount(args, parsed_globals):
+def doQueryInvoiceV2(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1327,9 +1352,9 @@ def doCheckAmount(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckAmountRequest()
+    model = models.QueryInvoiceV2Request()
     model.from_json_string(json.dumps(args))
-    rsp = client.CheckAmount(model)
+    rsp = client.QueryInvoiceV2(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1530,6 +1555,31 @@ def doMigrateOrderRefund(args, parsed_globals):
     model = models.MigrateOrderRefundRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.MigrateOrderRefund(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateInvoiceV2(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInvoiceV2Request()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateInvoiceV2(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1863,7 +1913,7 @@ def doQueryAgentStatements(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryReconciliationDocument(args, parsed_globals):
+def doRegisterBillSupportWithdraw(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1877,9 +1927,9 @@ def doQueryReconciliationDocument(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryReconciliationDocumentRequest()
+    model = models.RegisterBillSupportWithdrawRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.QueryReconciliationDocument(model)
+    rsp = client.RegisterBillSupportWithdraw(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1963,6 +2013,31 @@ def doQueryRefund(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryReconciliationDocument(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryReconciliationDocumentRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.QueryReconciliationDocument(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20190820": cpdp_client_v20190820,
 
@@ -1974,11 +2049,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "QuerySinglePay": doQuerySinglePay,
+    "CreateRedInvoiceV2": doCreateRedInvoiceV2,
     "CheckAcct": doCheckAcct,
     "ApplyPayerInfo": doApplyPayerInfo,
     "BindRelateAcctUnionPay": doBindRelateAcctUnionPay,
     "QueryAnchorContractInfo": doQueryAnchorContractInfo,
+    "CheckAmount": doCheckAmount,
     "BindAcct": doBindAcct,
     "BindRelateAcctSmallAmount": doBindRelateAcctSmallAmount,
     "ApplyWithdrawal": doApplyWithdrawal,
@@ -1988,7 +2064,7 @@ ACTION_MAP = {
     "CreateSinglePay": doCreateSinglePay,
     "QueryTransferResult": doQueryTransferResult,
     "DescribeChargeDetail": doDescribeChargeDetail,
-    "QueryMerchantBalance": doQueryMerchantBalance,
+    "QuerySinglePay": doQuerySinglePay,
     "ReviseMbrProperty": doReviseMbrProperty,
     "QueryAcctInfo": doQueryAcctInfo,
     "CloseOrder": doCloseOrder,
@@ -2015,7 +2091,7 @@ ACTION_MAP = {
     "TransferSinglePay": doTransferSinglePay,
     "QueryOutwardOrder": doQueryOutwardOrder,
     "QueryPayerInfo": doQueryPayerInfo,
-    "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
+    "QueryMerchantBalance": doQueryMerchantBalance,
     "ApplyTrade": doApplyTrade,
     "RefundMemberTransaction": doRefundMemberTransaction,
     "QueryTrade": doQueryTrade,
@@ -2026,7 +2102,7 @@ ACTION_MAP = {
     "CreateAgentTaxPaymentInfos": doCreateAgentTaxPaymentInfos,
     "CreateRedInvoice": doCreateRedInvoice,
     "MigrateOrderRefundQuery": doMigrateOrderRefundQuery,
-    "CheckAmount": doCheckAmount,
+    "QueryInvoiceV2": doQueryInvoiceV2,
     "RevResigterBillSupportWithdraw": doRevResigterBillSupportWithdraw,
     "RevokeMemberRechargeThirdPay": doRevokeMemberRechargeThirdPay,
     "QueryApplicationMaterial": doQueryApplicationMaterial,
@@ -2035,6 +2111,7 @@ ACTION_MAP = {
     "QueryCustAcctIdBalance": doQueryCustAcctIdBalance,
     "QuerySmallAmountTransfer": doQuerySmallAmountTransfer,
     "MigrateOrderRefund": doMigrateOrderRefund,
+    "CreateInvoiceV2": doCreateInvoiceV2,
     "RechargeByThirdPay": doRechargeByThirdPay,
     "RechargeMemberThirdPay": doRechargeMemberThirdPay,
     "QueryInvoice": doQueryInvoice,
@@ -2048,10 +2125,11 @@ ACTION_MAP = {
     "QueryBankWithdrawCashDetails": doQueryBankWithdrawCashDetails,
     "QueryAcctInfoList": doQueryAcctInfoList,
     "QueryAgentStatements": doQueryAgentStatements,
-    "QueryReconciliationDocument": doQueryReconciliationDocument,
+    "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
     "RegisterBill": doRegisterBill,
     "Refund": doRefund,
     "QueryRefund": doQueryRefund,
+    "QueryReconciliationDocument": doQueryReconciliationDocument,
 
 }
 

@@ -452,6 +452,14 @@
         "title": "查看模块详情"
       }
     ],
+    "DescribeMonthPeakNetwork": [
+      {
+        "document": "获取客户指定月份的带宽信息",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeMonthPeakNetwork\n&Month=2020-09\n&Filters.0.Name=region\n&Filters.0.Values.0=ap-zhengzhou-ecm\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee2849f2-facd-4f84-a0ab-bec49edda5fc\",\n        \"MonthNetWorkData\": [\n            {\n                \"ZoneInfo\": {\n                    \"ZoneId\": \"490001\",\n                    \"ZoneName\": \"南京\",\n                    \"Zone\": \"ap-nanjing-ecm-1\"\n                },\n                \"Month\": \"202001\",\n                \"BandwidthPkgId\": \"bwp-mm9aw7jq\",\n                \"Isp\": \"CMCC\",\n                \"TrafficMaxIn\": 12.345,\n                \"TrafficMaxOut\": 12.345,\n                \"FeeTraffic\": 12.345,\n                \"StartTime\": \"2021-03-01 00:00:00\",\n                \"EndTime\": \"2021-03-29 23:59:59\",\n                \"EffectiveDays\": 2,\n                \"MonthDays\": 30,\n                \"EffectiveDaysRate\": 12.34\n            }\n        ]\n    }\n}",
+        "title": "获取客户指定月份的带宽信息"
+      }
+    ],
     "DescribeNetworkInterfaces": [
       {
         "document": "",

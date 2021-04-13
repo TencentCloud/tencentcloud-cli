@@ -228,6 +228,12 @@
       "name": "创建IPV6转换IPV4实例",
       "output": "CreateIp6TranslatorsResponse"
     },
+    "CreateLocalGateway": {
+      "document": "该接口用于创建用于CDC的本地网关。",
+      "input": "CreateLocalGatewayRequest",
+      "name": "创建本地网关",
+      "output": "CreateLocalGatewayResponse"
+    },
     "CreateNatGateway": {
       "document": "本接口(CreateNatGateway)用于创建NAT网关。",
       "input": "CreateNatGatewayRequest",
@@ -407,6 +413,12 @@
       "input": "DeleteIp6TranslatorsRequest",
       "name": "释放IPV6转换实例",
       "output": "DeleteIp6TranslatorsResponse"
+    },
+    "DeleteLocalGateway": {
+      "document": "该接口用于删除CDC的本地网关。",
+      "input": "DeleteLocalGatewayRequest",
+      "name": "删除本地网关",
+      "output": "DeleteLocalGatewayResponse"
     },
     "DeleteNatGateway": {
       "document": "本接口（DeleteNatGateway）用于删除NAT网关。\n删除 NAT 网关后，系统会自动删除路由表中包含此 NAT 网关的路由项，同时也会解绑弹性公网IP（EIP）。",
@@ -689,6 +701,12 @@
       "input": "DescribeIpGeolocationInfosRequest",
       "name": "查询IP地理位置信息",
       "output": "DescribeIpGeolocationInfosResponse"
+    },
+    "DescribeLocalGateway": {
+      "document": "该接口用于查询CDC的本地网关。",
+      "input": "DescribeLocalGatewayRequest",
+      "name": "查询本地网关",
+      "output": "DescribeLocalGatewayResponse"
     },
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": {
       "document": "本接口（DescribeNatGatewayDestinationIpPortTranslationNatRules）用于查询NAT网关端口转发规则对象数组。",
@@ -1062,6 +1080,12 @@
       "name": "修改带宽包属性",
       "output": "ModifyBandwidthPackageAttributeResponse"
     },
+    "ModifyCcnAttachedInstancesAttribute": {
+      "document": "修改CCN关联实例属性，目前仅修改备注description",
+      "input": "ModifyCcnAttachedInstancesAttributeRequest",
+      "name": "修改CCN关联实例属性",
+      "output": "ModifyCcnAttachedInstancesAttributeResponse"
+    },
     "ModifyCcnAttribute": {
       "document": "本接口（ModifyCcnAttribute）用于修改云联网（CCN）的相关属性。",
       "input": "ModifyCcnAttributeRequest",
@@ -1133,6 +1157,12 @@
       "input": "ModifyIpv6AddressesAttributeRequest",
       "name": "修改弹性网卡IPv6地址属性",
       "output": "ModifyIpv6AddressesAttributeResponse"
+    },
+    "ModifyLocalGateway": {
+      "document": "该接口用于修改CDC的本地网关。",
+      "input": "ModifyLocalGatewayRequest",
+      "name": "修改本地网关",
+      "output": "ModifyLocalGatewayResponse"
     },
     "ModifyNatGatewayAttribute": {
       "document": "本接口（ModifyNatGatewayAttribute）用于修改NAT网关的属性。",
@@ -2580,6 +2610,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -2588,6 +2619,7 @@
         {
           "default": "",
           "document": "关联网络实例列表",
+          "example": "无",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,
@@ -2596,6 +2628,7 @@
         {
           "default": "",
           "document": "CCN所属UIN（根账号），默认当前账号所属UIN",
+          "example": "无",
           "member": "string",
           "name": "CcnUin",
           "required": false,
@@ -2933,6 +2966,7 @@
         {
           "default": "",
           "document": "云联网实例ID。",
+          "example": "ccn-31zf3vib",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -2942,6 +2976,7 @@
         {
           "default": "",
           "document": "关联实例类型：\n<li>`VPC`：私有网络</li>\n<li>`DIRECTCONNECT`：专线网关</li>\n<li>`BMVPC`：黑石私有网络</li>",
+          "example": "VPC",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -2951,6 +2986,7 @@
         {
           "default": "",
           "document": "关联实例ID。",
+          "example": "vpc-lt6ork07",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2960,6 +2996,7 @@
         {
           "default": "",
           "document": "关联实例名称。",
+          "example": "test",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -2969,6 +3006,7 @@
         {
           "default": "",
           "document": "关联实例所属大区，例如：ap-guangzhou。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
           "required": true,
@@ -2978,6 +3016,7 @@
         {
           "default": "",
           "document": "关联实例所属UIN（根账号）。",
+          "example": "100000072292",
           "member": "string",
           "name": "InstanceUin",
           "required": true,
@@ -2987,6 +3026,7 @@
         {
           "default": "",
           "document": "关联实例CIDR。",
+          "example": "10.1.0.0/16",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
@@ -2996,6 +3036,7 @@
         {
           "default": "",
           "document": "关联实例状态：\n<li>`PENDING`：申请中</li>\n<li>`ACTIVE`：已连接</li>\n<li>`EXPIRED`：已过期</li>\n<li>`REJECTED`：已拒绝</li>\n<li>`DELETED`：已删除</li>\n<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>\n<li>`ATTACHING`：关联中</li>\n<li>`DETACHING`：解关联中</li>\n<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>",
+          "example": "ACTIVE",
           "member": "string",
           "name": "State",
           "required": true,
@@ -3005,6 +3046,7 @@
         {
           "default": "",
           "document": "关联时间。",
+          "example": "2021-03-03 16:19:44",
           "member": "datetime",
           "name": "AttachedTime",
           "required": true,
@@ -3014,6 +3056,7 @@
         {
           "default": "",
           "document": "云联网所属UIN（根账号）。",
+          "example": "100000072292",
           "member": "string",
           "name": "CcnUin",
           "required": true,
@@ -3023,8 +3066,19 @@
         {
           "default": "",
           "document": "关联实例所属的大地域，如: CHINA_MAINLAND",
+          "example": " CHINA_MAINLAND",
           "member": "string",
           "name": "InstanceArea",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Description",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3098,6 +3152,7 @@
         {
           "default": "",
           "document": "关联实例ID。",
+          "example": "vpc-lt6ork07",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3107,6 +3162,7 @@
         {
           "default": "",
           "document": "关联实例ID所属大区，例如：ap-guangzhou。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
           "required": true,
@@ -3116,8 +3172,19 @@
         {
           "default": "",
           "document": "关联实例类型，可选值：\n<li>`VPC`：私有网络</li>\n<li>`DIRECTCONNECT`：专线网关</li>\n<li>`BMVPC`：黑石私有网络</li>\n<li>`VPNGW`：VPNGW类型</li>",
+          "example": "VPC",
           "member": "string",
           "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4507,6 +4574,60 @@
       ],
       "type": "object"
     },
+    "CreateLocalGatewayRequest": {
+      "document": "CreateLocalGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本地网关名称",
+          "example": "test",
+          "member": "string",
+          "name": "LocalGatewayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC实例ID",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CDC实例ID",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLocalGatewayResponse": {
+      "document": "CreateLocalGateway返回参数结构体",
+      "members": [
+        {
+          "document": "本地网关信息",
+          "example": "无",
+          "member": "LocalGateway",
+          "name": "LocalGateway",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNatGatewayDestinationIpPortTranslationNatRuleRequest": {
       "document": "CreateNatGatewayDestinationIpPortTranslationNatRule请求参数结构体",
       "members": [
@@ -4945,6 +5066,7 @@
         {
           "default": "",
           "document": "路由表实例ID。",
+          "example": "rtb-n0yejvje",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -4953,6 +5075,7 @@
         {
           "default": "",
           "document": "路由策略对象。",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -4966,15 +5089,19 @@
       "members": [
         {
           "document": "新增的实例个数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "路由表对象。",
+          "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5225,6 +5352,7 @@
         {
           "default": "",
           "document": "待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-m3ul053f",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5233,6 +5361,7 @@
         {
           "default": "",
           "document": "子网名称，最大长度不能超过60个字节。",
+          "example": "TestSubnet",
           "member": "string",
           "name": "SubnetName",
           "required": true,
@@ -5241,6 +5370,7 @@
         {
           "default": "",
           "document": "子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。",
+          "example": "10.8.0.0/16",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
@@ -5249,6 +5379,7 @@
         {
           "default": "",
           "document": "子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -5257,10 +5388,20 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "CDC实例ID。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5270,8 +5411,10 @@
       "members": [
         {
           "document": "子网对象。",
+          "example": "无",
           "member": "Subnet",
           "name": "Subnet",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5290,6 +5433,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`",
+          "example": "vpc-6v2ht8q5",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5298,6 +5442,7 @@
         {
           "default": "",
           "document": "子网对象列表。",
+          "example": "无",
           "member": "SubnetInput",
           "name": "Subnets",
           "required": true,
@@ -5306,10 +5451,20 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要增加到的CDC实例ID。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5319,8 +5474,10 @@
       "members": [
         {
           "document": "新创建的子网列表。",
+          "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6362,6 +6519,51 @@
     },
     "DeleteIp6TranslatorsResponse": {
       "document": "DeleteIp6Translators返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLocalGatewayRequest": {
+      "document": "DeleteLocalGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本地网关实例ID",
+          "example": "lgw-1234rfgt",
+          "member": "string",
+          "name": "LocalGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CDC实例ID",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC实例ID",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLocalGatewayResponse": {
+      "document": "DeleteLocalGateway返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8737,6 +8939,69 @@
           "document": "IP地址信息个数",
           "member": "int64",
           "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLocalGatewayRequest": {
+      "document": "DescribeLocalGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件：\nvpc-id：按照VPCID过滤，local-gateway-name：按照本地网关名称过滤，名称支持模糊搜索，local-gateway-id：按照本地网关实例ID过滤，cdc-id：按照cdc实例ID过滤查询。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLocalGatewayResponse": {
+      "document": "DescribeLocalGateway返回参数结构体",
+      "members": [
+        {
+          "document": "本地网关信息集合",
+          "example": "无",
+          "member": "LocalGateway",
+          "name": "LocalGatewaySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本地网关总数",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12593,6 +12858,72 @@
       ],
       "usage": "out"
     },
+    "LocalGateway": {
+      "document": "本地网关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "CDC实例ID",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC实例ID",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地网关实例ID",
+          "example": "lgw-1234erty",
+          "member": "string",
+          "name": "UniqLocalGwId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地网关名称",
+          "example": "test",
+          "member": "string",
+          "name": "LocalGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地网关IP地址",
+          "example": "192.168.15.55",
+          "member": "string",
+          "name": "LocalGwIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地网关创建时间",
+          "example": "2021-03-24 15:31:56",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MigrateNetworkInterfaceRequest": {
       "document": "MigrateNetworkInterface请求参数结构体",
       "members": [
@@ -12994,6 +13325,42 @@
     },
     "ModifyBandwidthPackageAttributeResponse": {
       "document": "ModifyBandwidthPackageAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCcnAttachedInstancesAttributeRequest": {
+      "document": "ModifyCcnAttachedInstancesAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关联网络实例列表",
+          "example": "无",
+          "member": "CcnInstance",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCcnAttachedInstancesAttributeResponse": {
+      "document": "ModifyCcnAttachedInstancesAttribute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13482,6 +13849,60 @@
     },
     "ModifyIpv6AddressesAttributeResponse": {
       "document": "ModifyIpv6AddressesAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLocalGatewayRequest": {
+      "document": "ModifyLocalGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本地网关名称",
+          "example": "test",
+          "member": "string",
+          "name": "LocalGatewayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CDC实例ID",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本地网关实例ID",
+          "example": "lgw-1234ceww",
+          "member": "string",
+          "name": "LocalGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC实例ID",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLocalGatewayResponse": {
+      "document": "ModifyLocalGateway返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15099,6 +15520,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网卡所关联的CDC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15704,6 +16135,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-azd4dt1c",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -15712,6 +16144,7 @@
         {
           "default": "",
           "document": "路由策略对象。需要指定路由策略ID（RouteId）。",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -15723,6 +16156,24 @@
     "ReplaceRoutesResponse": {
       "document": "ReplaceRoutes返回参数结构体",
       "members": [
+        {
+          "document": "原路由策略信息。",
+          "example": "无",
+          "member": "Route",
+          "name": "OldRouteSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修改后的路由策略信息。",
+          "example": "无",
+          "member": "Route",
+          "name": "NewRouteSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16395,7 +16846,7 @@
         },
         {
           "default": "",
-          "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nSSLVPN：sslvpn网关；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nCCN：云联网。",
+          "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nSSLVPN：sslvpn网关；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nCCN：云联网；\nLOCAL_GATEWAY：本地网关。",
           "example": "-",
           "member": "string",
           "name": "GatewayType",
@@ -17259,6 +17710,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。",
+          "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -17268,6 +17720,7 @@
         {
           "default": "",
           "document": "子网实例`ID`，例如：subnet-bthucmmy。",
+          "example": "-",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -17277,6 +17730,7 @@
         {
           "default": "",
           "document": "子网名称。",
+          "example": "-",
           "member": "string",
           "name": "SubnetName",
           "required": true,
@@ -17286,6 +17740,7 @@
         {
           "default": "",
           "document": "子网的 `IPv4` `CIDR`。",
+          "example": "-",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
@@ -17295,6 +17750,7 @@
         {
           "default": "",
           "document": "是否默认子网。",
+          "example": "-",
           "member": "bool",
           "name": "IsDefault",
           "required": true,
@@ -17304,6 +17760,7 @@
         {
           "default": "",
           "document": "是否开启广播。",
+          "example": "-",
           "member": "bool",
           "name": "EnableBroadcast",
           "required": true,
@@ -17313,6 +17770,7 @@
         {
           "default": "",
           "document": "可用区。",
+          "example": "-",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -17322,6 +17780,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-l2h8d7c2。",
+          "example": "-",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -17331,6 +17790,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "-",
           "member": "string",
           "name": "CreatedTime",
           "required": false,
@@ -17340,6 +17800,7 @@
         {
           "default": "",
           "document": "可用`IPv4`数。",
+          "example": "-",
           "member": "uint64",
           "name": "AvailableIpAddressCount",
           "required": true,
@@ -17349,6 +17810,7 @@
         {
           "default": "",
           "document": "子网的 `IPv6` `CIDR`。",
+          "example": "-",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "required": true,
@@ -17358,6 +17820,7 @@
         {
           "default": "",
           "document": "关联`ACL`ID",
+          "example": "-",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -17367,6 +17830,7 @@
         {
           "default": "",
           "document": "是否为 `SNAT` 地址池子网。",
+          "example": "-",
           "member": "bool",
           "name": "IsRemoteVpcSnat",
           "required": true,
@@ -17376,6 +17840,7 @@
         {
           "default": "",
           "document": "子网`IPv4`总数。",
+          "example": "-",
           "member": "uint64",
           "name": "TotalIpAddressCount",
           "required": true,
@@ -17385,11 +17850,32 @@
         {
           "default": "",
           "document": "标签键值对。",
+          "example": "-",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CDC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是CDC所属子网。0:否 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsCdcSubnet",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

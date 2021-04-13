@@ -102,6 +102,12 @@
       "name": "智慧零售-发票开具",
       "output": "CreateInvoiceResponse"
     },
+    "CreateInvoiceV2": {
+      "document": "智慧零售-发票开具V2",
+      "input": "CreateInvoiceV2Request",
+      "name": "智慧零售-发票开具V2",
+      "output": "CreateInvoiceV2Response"
+    },
     "CreateMerchant": {
       "document": "智慧零售-商户注册",
       "input": "CreateMerchantRequest",
@@ -113,6 +119,12 @@
       "input": "CreateRedInvoiceRequest",
       "name": "智慧零售-发票红冲",
       "output": "CreateRedInvoiceResponse"
+    },
+    "CreateRedInvoiceV2": {
+      "document": "智慧零售-发票红冲V2",
+      "input": "CreateRedInvoiceV2Request",
+      "name": "智慧零售-发票红冲V2",
+      "output": "CreateRedInvoiceV2Response"
     },
     "CreateSinglePay": {
       "document": "银企直连-单笔支付接口",
@@ -281,6 +293,12 @@
       "input": "QueryInvoiceRequest",
       "name": "智慧零售-发票查询",
       "output": "QueryInvoiceResponse"
+    },
+    "QueryInvoiceV2": {
+      "document": "智慧零售-发票查询V2",
+      "input": "QueryInvoiceV2Request",
+      "name": "智慧零售-发票查询V2",
+      "output": "QueryInvoiceV2Response"
     },
     "QueryMemberBind": {
       "document": "会员绑定信息查询。查询标志为“单个会员”的情况下，返回该会员的有效的绑定账户信息。\n查询标志为“全部会员”的情况下，返回市场下的全部的有效的绑定账户信息。查询标志为“单个会员的证件信息”的情况下，返回市场下的指定的会员的留存在电商见证宝系统的证件信息。",
@@ -3798,6 +3816,391 @@
       ],
       "usage": "out"
     },
+    "CreateInvoiceResultV2": {
+      "document": "发票结果V2",
+      "members": [
+        {
+          "default": "",
+          "document": "发票ID",
+          "example": "123456",
+          "member": "string",
+          "name": "InvoiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateInvoiceV2Request": {
+      "document": "CreateInvoiceV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开票平台ID。0：高灯，1：票易通",
+          "example": "1",
+          "member": "int64",
+          "name": "InvoicePlatformId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "抬头类型：1：个人/政府事业单位；2：企业",
+          "example": "1",
+          "member": "int64",
+          "name": "TitleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购方名称",
+          "example": "购方名称",
+          "member": "string",
+          "name": "BuyerTitle",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务开票号",
+          "example": "test12345678",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "含税总金额（单位为分）",
+          "example": "1",
+          "member": "int64",
+          "name": "AmountHasTax",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "总税额（单位为分）",
+          "example": "1",
+          "member": "int64",
+          "name": "TaxAmount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "不含税总金额（单位为分）。InvoicePlatformId 为1时，传默认值-1",
+          "example": "1",
+          "member": "int64",
+          "name": "AmountWithoutTax",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "销方纳税人识别号",
+          "example": "1234567890",
+          "member": "string",
+          "name": "SellerTaxpayerNum",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "销方名称。（不填默认读取商户注册时输入的信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "SellerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "销方地址。（不填默认读取商户注册时输入的信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "SellerAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "销方电话。（不填默认读取商户注册时输入的信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "SellerPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "销方银行名称。（不填默认读取商户注册时输入的信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "SellerBankName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "销方银行账号。（不填默认读取商户注册时输入的信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "SellerBankAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购方纳税人识别号（购方票面信息）,若抬头类型为2时，必传",
+          "example": "NULL",
+          "member": "string",
+          "name": "BuyerTaxpayerNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购方地址。开具专用发票时必填",
+          "example": "NULL",
+          "member": "string",
+          "name": "BuyerAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购方银行名称。开具专用发票时必填",
+          "example": "NULL",
+          "member": "string",
+          "name": "BuyerBankName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购方银行账号。开具专用发票时必填",
+          "example": "NULL",
+          "member": "string",
+          "name": "BuyerBankAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购方电话。开具专用发票时必填",
+          "example": "NULL",
+          "member": "string",
+          "name": "BuyerPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收票人邮箱。若填入，会收到发票推送邮件",
+          "example": "NULL",
+          "member": "string",
+          "name": "BuyerEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收票人手机号。若填入，会收到发票推送短信",
+          "example": "NULL",
+          "member": "string",
+          "name": "TakerPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开票类型：\n1：增值税专用发票；\n2：增值税普通发票；\n3：增值税电子发票；\n4：增值税卷式发票；\n5：区块链电子发票。\n若该字段不填，或值不为1-5，则认为开具”增值税电子发票”",
+          "example": "NULL",
+          "member": "int64",
+          "name": "InvoiceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "发票结果回传地址",
+          "example": "NULL",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开票人姓名。（不填默认读取商户注册时输入的信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "Drawer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款人姓名。（不填默认读取商户注册时输入的信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "Payee",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复核人姓名。（不填默认读取商户注册时输入的信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "Checker",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税盘号",
+          "example": "NULL",
+          "member": "string",
+          "name": "TerminalCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "征收方式。开具差额征税发票时必填2。开具普通征税发票时为空",
+          "example": "NULL",
+          "member": "string",
+          "name": "LevyMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "差额征税扣除额（单位为分）",
+          "example": "NULL",
+          "member": "int64",
+          "name": "Deduction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备注（票面信息）",
+          "example": "NULL",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目商品明细",
+          "example": "NULL",
+          "member": "CreateInvoiceItem",
+          "name": "Items",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "接入环境。沙箱环境填sandbox。",
+          "example": "NULL",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "撤销部分商品。0-不撤销，1-撤销",
+          "example": "NULL",
+          "member": "int64",
+          "name": "UndoPart",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单下单时间（格式 YYYYMMDD）",
+          "example": "NULL",
+          "member": "string",
+          "name": "OrderDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单级别折扣（单位为分）",
+          "example": "NULL",
+          "member": "int64",
+          "name": "Discount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "门店编码",
+          "example": "NULL",
+          "member": "string",
+          "name": "StoreNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开票渠道。0：APP渠道，1：线下渠道，2：小程序渠道。不填默认为APP渠道",
+          "example": "NULL",
+          "member": "int64",
+          "name": "InvoiceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInvoiceV2Response": {
+      "document": "CreateInvoiceV2返回参数结构体",
+      "members": [
+        {
+          "document": "发票开具结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"InvoiceId\" : \"123456\"}",
+          "member": "CreateInvoiceResultV2",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "请求成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMerchantRequest": {
       "document": "CreateMerchant请求参数结构体",
       "members": [
@@ -4245,6 +4648,103 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateRedInvoiceResultV2": {
+      "document": "红票结果V2",
+      "members": [
+        {
+          "default": "",
+          "document": "红票ID",
+          "example": "123456",
+          "member": "string",
+          "name": "InvoiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateRedInvoiceV2Request": {
+      "document": "CreateRedInvoiceV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开票平台ID",
+          "example": "1",
+          "member": "int64",
+          "name": "InvoicePlatformId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单号",
+          "example": "123456",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接入环境。沙箱环境填 sandbox。",
+          "example": "NULL",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道",
+          "example": "NULL",
+          "member": "int64",
+          "name": "InvoiceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRedInvoiceV2Response": {
+      "document": "CreateRedInvoiceV2返回参数结构体",
+      "members": [
+        {
+          "document": "红冲结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"InvoiceId\":\"123456\"}",
+          "member": "CreateRedInvoiceResultV2",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "请求成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateSinglePayRequest": {
       "document": "CreateSinglePay请求参数结构体",
@@ -8064,6 +8564,105 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryInvoiceV2Request": {
+      "document": "QueryInvoiceV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开票平台ID",
+          "example": "1",
+          "member": "int64",
+          "name": "InvoicePlatformId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单号",
+          "example": "test123456",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发票种类：\n0：蓝票\n1：红票【该字段默认为0， 如果需要查询红票信息，本字段必须传1，否则可能查询不到需要的发票信息】。",
+          "example": "NULL",
+          "member": "int64",
+          "name": "IsRed",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "接入环境。沙箱环境填sandbox。",
+          "example": "NULL",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道",
+          "example": "NULL",
+          "member": "int64",
+          "name": "InvoiceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当渠道为线下渠道时，必填",
+          "example": "NULL",
+          "member": "string",
+          "name": "SellerTaxpayerNum",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryInvoiceV2Response": {
+      "document": "QueryInvoiceV2返回参数结构体",
+      "members": [
+        {
+          "document": "发票查询结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " {                 \"TaxAmount\": \"\",                 \"IsRedWashed",
+          "member": "QueryInvoiceResultData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "请求成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryItem": {
       "document": "聚鑫商户余额查询输出项",

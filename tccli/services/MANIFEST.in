@@ -313,6 +313,8 @@ include tccli/services/tmt/v20180321/api.json
 include tccli/services/tmt/v20180321/examples.json
 include tccli/services/trtc/v20190722/api.json
 include tccli/services/trtc/v20190722/examples.json
+include tccli/services/tse/v20201207/api.json
+include tccli/services/tse/v20201207/examples.json
 include tccli/services/tsf/v20180326/api.json
 include tccli/services/tsf/v20180326/examples.json
 include tccli/services/tsw/v20210412/api.json

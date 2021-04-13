@@ -193,9 +193,9 @@
       "output": "ModifyAlarmNoticeResponse"
     },
     "ModifyAlarmPolicyCondition": {
-      "document": "编辑告警策略触发条件",
+      "document": "修改告警策略触发条件",
       "input": "ModifyAlarmPolicyConditionRequest",
-      "name": "编辑告警策略触发条件",
+      "name": "修改告警策略触发条件",
       "output": "ModifyAlarmPolicyConditionResponse"
     },
     "ModifyAlarmPolicyInfo": {
@@ -486,7 +486,7 @@
         },
         {
           "default": "",
-          "document": "兼容告警1.0策略组 Id",
+          "document": "可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID",
           "example": "12345",
           "member": "string",
           "name": "OriginId",
@@ -1044,7 +1044,8 @@
       "members": [
         {
           "default": "",
-          "document": "指标名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CpuUsage",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -1053,7 +1054,8 @@
         },
         {
           "default": "",
-          "document": "秒数 统计周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -1062,7 +1064,8 @@
         },
         {
           "default": "",
-          "document": "英文运算符\nintelligent=无阈值智能检测\neq=等于\nge=大于等于\ngt=大于\nle=小于等于\nlt=小于\nne=不等于\nday_increase=天同比增长\nday_decrease=天同比下降\nday_wave=天同比波动\nweek_increase=周同比增长\nweek_decrease=周同比下降\nweek_wave=周同比波动\ncycle_increase=环比增长\ncycle_decrease=环比下降\ncycle_wave=环比波动\nre=正则匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文运算符\nintelligent=无阈值智能检测\neq=等于\nge=大于等于\ngt=大于\nle=小于等于\nlt=小于\nne=不等于\nday_increase=天同比增长\nday_decrease=天同比下降\nday_wave=天同比波动\nweek_increase=周同比增长\nweek_decrease=周同比下降\nweek_wave=周同比波动\ncycle_increase=环比增长\ncycle_decrease=环比下降\ncycle_wave=环比波动\nre=正则匹配\n支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gt",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1071,7 +1074,8 @@
         },
         {
           "default": "",
-          "document": "阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -1080,7 +1084,8 @@
         },
         {
           "default": "",
-          "document": "周期数 持续通知周期 1=持续1个周期 2=持续2个周期...\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ContinuePeriod",
           "required": false,
@@ -1090,6 +1095,7 @@
         {
           "default": "",
           "document": "秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
           "member": "int64",
           "name": "NoticeFrequency",
           "required": false,
@@ -1099,6 +1105,7 @@
         {
           "default": "",
           "document": "告警频率是否指数增长 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "IsPowerNotice",
           "required": false,
@@ -1108,6 +1115,7 @@
         {
           "default": "",
           "document": "对于单个触发规则的过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AlarmPolicyFilter",
           "name": "Filter",
           "required": false,
@@ -1117,6 +1125,7 @@
         {
           "default": "",
           "document": "指标展示名，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CPU使用率",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1126,6 +1135,7 @@
         {
           "default": "",
           "document": "单位，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "%",
           "member": "string",
           "name": "Unit",
           "required": false,
@@ -1134,7 +1144,8 @@
         },
         {
           "default": "",
-          "document": "触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STATIC",
           "member": "string",
           "name": "RuleType",
           "required": false,
@@ -1219,7 +1230,8 @@
       "members": [
         {
           "default": "",
-          "document": "策略组id，如传入PolicyId则该字段可传入任意值",
+          "document": "策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0",
+          "example": "0",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -1228,6 +1240,7 @@
         {
           "default": "",
           "document": "必填。固定值\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -1236,6 +1249,7 @@
         {
           "default": "",
           "document": "实例分组ID",
+          "example": "0",
           "member": "int64",
           "name": "InstanceGroupId",
           "required": false,
@@ -1244,6 +1258,7 @@
         {
           "default": "",
           "document": "需要绑定的对象维度信息",
+          "example": "无",
           "member": "BindingPolicyObjectDimension",
           "name": "Dimensions",
           "required": false,
@@ -1251,7 +1266,8 @@
         },
         {
           "default": "",
-          "document": "告警策略ID，使用此字段时GroupId可传入任意值",
+          "document": "告警策略ID，使用此字段时 GroupId 会被忽略",
+          "example": "policy-abc123",
           "member": "string",
           "name": "PolicyId",
           "required": false,
@@ -1470,6 +1486,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -1478,6 +1495,7 @@
         {
           "default": "",
           "document": "策略名称，不超过20字符",
+          "example": "云服务器告警策略",
           "member": "string",
           "name": "PolicyName",
           "required": true,
@@ -1486,6 +1504,7 @@
         {
           "default": "",
           "document": "监控类型 MT_QCE=云产品监控",
+          "example": "MT_QCE",
           "member": "string",
           "name": "MonitorType",
           "required": true,
@@ -1493,7 +1512,8 @@
         },
         {
           "default": "",
-          "document": "告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device",
+          "document": "告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得，例如 cvm_device",
+          "example": "cvm_device",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -1502,6 +1522,7 @@
         {
           "default": "",
           "document": "备注，不超过100字符，仅支持中英文、数字、下划线、-",
+          "example": "这是一句备注",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1510,6 +1531,7 @@
         {
           "default": "",
           "document": "是否启用 0=停用 1=启用，可不传 默认为1",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
           "required": false,
@@ -1517,7 +1539,8 @@
         },
         {
           "default": "",
-          "document": "项目 Id -1=无项目 0=默认项目，可不传 默认为-1",
+          "document": "项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -1525,7 +1548,17 @@
         },
         {
           "default": "",
-          "document": "指标触发条件",
+          "document": "触发条件模板 Id ，可不传",
+          "example": "无",
+          "member": "int64",
+          "name": "ConditionTemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。",
+          "example": "无",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": false,
@@ -1533,7 +1566,8 @@
         },
         {
           "default": "",
-          "document": "事件触发条件",
+          "document": "事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。",
+          "example": "无",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": false,
@@ -1541,7 +1575,8 @@
         },
         {
           "default": "",
-          "document": "通知规则 Id 列表，由 DescribeAlarmNotices 获得",
+          "document": "通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得",
+          "example": "[\"notice-bv9b4ghqbg\",\"notice-gj2n9wnt29\"]",
           "member": "string",
           "name": "NoticeIds",
           "required": false,
@@ -1550,6 +1585,7 @@
         {
           "default": "",
           "document": "触发任务列表",
+          "example": "无",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": false,
@@ -1563,15 +1599,19 @@
       "members": [
         {
           "document": "告警策略 ID",
+          "example": "policy-hi498gw3h2",
           "member": "string",
           "name": "PolicyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "用于实例、实例组绑定和解绑接口（BindingPolicyObject、UnBindingAllPolicyObject、UnBindingPolicyObject）的策略 ID",
+          "document": "可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID",
+          "example": "1234556",
           "member": "string",
           "name": "OriginId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6537,6 +6577,7 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -6545,6 +6586,7 @@
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-hi498gw3h2",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -6552,7 +6594,17 @@
         },
         {
           "default": "",
+          "document": "触发条件模板 Id，可不传",
+          "example": "123",
+          "member": "int64",
+          "name": "ConditionTemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "指标触发条件",
+          "example": "无",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": false,
@@ -6561,6 +6613,7 @@
         {
           "default": "",
           "document": "事件触发条件",
+          "example": "无",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": false,
@@ -7557,6 +7610,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -7564,7 +7618,8 @@
         },
         {
           "default": "",
-          "document": "策略组id，如传入PolicyId则该字段可传入任意值",
+          "document": "策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0",
+          "example": "0",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -7572,7 +7627,8 @@
         },
         {
           "default": "",
-          "document": "告警策略ID，使用此字段时GroupId可传入任意值",
+          "document": "告警策略ID，使用此字段时 GroupId 会被忽略",
+          "example": "policy-abc123",
           "member": "string",
           "name": "PolicyId",
           "required": false,
@@ -7599,6 +7655,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -7606,7 +7663,8 @@
         },
         {
           "default": "",
-          "document": "策略组id，如传入PolicyId则该字段可传入任意值",
+          "document": "策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0",
+          "example": "11111",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -7615,6 +7673,7 @@
         {
           "default": "",
           "document": "待删除对象实例的唯一id列表，UniqueId从调用[获取已绑定对象列表接口](https://cloud.tencent.com/document/api/248/40570)的出参的List中得到",
+          "example": "[\"3dd5113208fd467b2e5d0c1111111111\\n\"]",
           "member": "string",
           "name": "UniqueId",
           "required": true,
@@ -7622,7 +7681,8 @@
         },
         {
           "default": "",
-          "document": "实例分组id, 如果按实例分组删除的话UniqueId参数是无效的",
+          "document": "实例分组id，如果按实例分组删除的话UniqueId参数是无效的",
+          "example": "0",
           "member": "int64",
           "name": "InstanceGroupId",
           "required": false,
@@ -7630,7 +7690,8 @@
         },
         {
           "default": "",
-          "document": "告警策略ID，使用此字段时GroupId可传入任意值",
+          "document": "告警策略ID，使用此字段时 GroupId 会被忽略",
+          "example": "policy-abc123",
           "member": "string",
           "name": "PolicyId",
           "required": false,

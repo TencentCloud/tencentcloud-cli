@@ -4940,8 +4940,8 @@
         },
         {
           "default": "",
-          "document": "执行类型，UNICAST/BROADCAST",
-          "example": "UNICAST",
+          "document": "执行类型，unicast/broadcast",
+          "example": "unicast",
           "member": "string",
           "name": "ExecuteType",
           "required": true,
@@ -4949,8 +4949,8 @@
         },
         {
           "default": "",
-          "document": "任务类型",
-          "example": "JAVA",
+          "document": "任务类型,java",
+          "example": "java",
           "member": "string",
           "name": "TaskType",
           "required": true,
@@ -12741,7 +12741,7 @@
         {
           "default": "",
           "document": "任务类型",
-          "example": "JAVA",
+          "example": "java",
           "member": "string",
           "name": "TaskType",
           "required": false,
@@ -12759,7 +12759,7 @@
         {
           "default": "",
           "document": "任务执行类型",
-          "example": "Unicast",
+          "example": "unicast",
           "member": "string",
           "name": "ExecuteType",
           "required": false,

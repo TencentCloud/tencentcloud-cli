@@ -1921,12 +1921,49 @@
       ],
       "usage": "out"
     },
+    "MediaResultInfo": {
+      "document": "结果文件媒体信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ResultVideoInfo",
+          "name": "ResultVideoInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ResultAudioInfo",
+          "name": "ResultAudioInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MediaSourceInfo": {
       "document": "编辑处理的媒体源",
       "members": [
         {
           "default": "",
           "document": "媒体源资源下载信息。",
+          "example": "null",
           "member": "DownInfo",
           "name": "DownInfo",
           "required": true,
@@ -1935,7 +1972,8 @@
         },
         {
           "default": "",
-          "document": "媒体源ID标记，用于多个输入源时，请内媒体源的定位，对于多输入的任务，一般要求必选。",
+          "document": "媒体源ID标记，用于多个输入源时，请内媒体源的定位，对于多输入的任务，一般要求必选。\nID只能包含字母、数字、下划线、中划线，长读不能超过128。",
+          "example": "“id”",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -1945,6 +1983,7 @@
         {
           "default": "",
           "document": "媒体源类型，具体类型如下：\nVideo：视频\nImage：图片\nAudio：音频",
+          "example": "Video",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -2579,6 +2618,88 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResultAudioInfo": {
+      "document": "结果媒体文件的视频流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "流在媒体文件中的流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StreamId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流的时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResultVideoInfo": {
+      "document": "结果媒体文件的视频流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "流在媒体文件中的流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StreamId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流的时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "画面宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "画面高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频帧率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3331,10 +3452,31 @@
         {
           "default": "",
           "document": "文件链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "Url",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件大小，部分任务支持，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体信息，对于媒体文件，部分任务支持返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "MediaResultInfo",
+          "name": "MediaInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

@@ -3,8 +3,8 @@
     "DescribeAccountBalance": [
       {
         "document": "",
-        "input": "https://billing.tencentcloudapi.com/?Action=DescribeAccountBalance\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Balance\": 10000,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeAccountBalance\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Uin\": \"90961\",\n        \"RealBalance\": 9647442,\n        \"CashAccountBalance\": 1299806668,\n        \"IncomeIntoAccountBalance\": 0,\n        \"PresentAccountBalance\": 209512,\n        \"FreezeAmount\": 1290368738,\n        \"OweAmount\": 0,\n        \"RequestId\": \"1323\",\n        \"IsAllowArrears\": true,\n        \"IsCreditLimited\": true,\n        \"Balance\": -6188426,\n        \"CreditAmount\": 200,\n        \"CreditBalance\": -6188226,\n        \"RealCreditBalance\": -6188226\n    }\n}",
         "title": "获取账户余额示例"
       }
     ],

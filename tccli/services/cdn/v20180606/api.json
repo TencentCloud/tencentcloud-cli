@@ -6421,7 +6421,8 @@
       "members": [
         {
           "default": "",
-          "document": "http 头部设置方式\nadd：添加头部，若已存在头部，则会存在重复头部\ndel：删除头部\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "http 头部设置方式\nset：设置。变更指定头部参数的取值为设置后的值；若设置的头部不存在，则会增加该头部；若存在多个重复的头部参数，则会全部变更，同时合并为一个头部。\ndel：删除。删除指定的头部参数\nadd：增加。增加指定的头部参数，默认允许重复添加，即重复添加相同的头部（注：重复添加可能会影响浏览器响应，请优先使用set操作）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "set",
           "member": "string",
           "name": "HeaderMode",
           "required": true,
@@ -6431,6 +6432,7 @@
         {
           "default": "",
           "document": "http 头部名称，最多可设置 100 个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
           "member": "string",
           "name": "HeaderName",
           "required": true,
@@ -6440,6 +6442,7 @@
         {
           "default": "",
           "document": "http 头部值，最多可设置 1000 个字符\nMode 为 del 时非必填\nMode 为 add/set 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
           "member": "string",
           "name": "HeaderValue",
           "required": true,
@@ -6449,6 +6452,7 @@
         {
           "default": "",
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
           "member": "string",
           "name": "RuleType",
           "required": true,
@@ -6458,6 +6462,7 @@
         {
           "default": "",
           "document": "RuleType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RulePaths",
           "required": true,

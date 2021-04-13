@@ -136,6 +136,14 @@
         "title": "CreateInvoice"
       }
     ],
+    "CreateInvoiceV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInvoiceV2\n<公共请求参数>\n\n{\n    \"TaxAmount\": 0,\n    \"TerminalCode\": \"xx\",\n    \"BuyerBankAccount\": \"xx\",\n    \"SellerName\": \"xx\",\n    \"Checker\": \"xx\",\n    \"InvoiceChannel\": 0,\n    \"BuyerTaxpayerNum\": \"xx\",\n    \"CallbackUrl\": \"xx\",\n    \"SellerBankName\": \"xx\",\n    \"SellerBankAccount\": \"xx\",\n    \"SellerTaxpayerNum\": \"xx\",\n    \"BuyerBankName\": \"xx\",\n    \"Discount\": 0,\n    \"Profile\": \"xx\",\n    \"StoreNo\": \"xx\",\n    \"SellerPhone\": \"xx\",\n    \"BuyerPhone\": \"xx\",\n    \"SellerAddress\": \"xx\",\n    \"BuyerTitle\": \"xx\",\n    \"TakerPhone\": \"xx\",\n    \"Remark\": \"xx\",\n    \"Items\": [\n        {\n            \"TaxRate\": 0,\n            \"TotalPrice\": 0,\n            \"ZeroTaxFlag\": \"xx\",\n            \"Name\": \"xx\",\n            \"Models\": \"xx\",\n            \"Price\": \"xx\",\n            \"TaxAmount\": 0,\n            \"TaxType\": \"xx\",\n            \"Discount\": 0,\n            \"TaxCode\": \"xx\",\n            \"PreferentialPolicyFlag\": \"xx\",\n            \"VatSpecialManagement\": \"xx\",\n            \"Unit\": \"xx\",\n            \"Total\": \"xx\"\n        }\n    ],\n    \"AmountHasTax\": 0,\n    \"Deduction\": 0,\n    \"Payee\": \"xx\",\n    \"BuyerAddress\": \"xx\",\n    \"LevyMethod\": \"xx\",\n    \"OrderId\": \"xx\",\n    \"UndoPart\": 0,\n    \"AmountWithoutTax\": 0,\n    \"OrderDate\": \"xx\",\n    \"BuyerEmail\": \"xx\",\n    \"Drawer\": \"xx\",\n    \"InvoiceType\": 0,\n    \"InvoicePlatformId\": 0,\n    \"TitleType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585106014055\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"请求成功\",\n        \"Result\": {\n            \"InvoiceId\": \"\"\n        }\n    }\n}",
+        "title": "CreateInvoiceV2"
+      }
+    ],
     "CreateMerchant": [
       {
         "document": "",
@@ -150,6 +158,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRedInvoice\n<公共请求参数>\n\n{\n    \"InvoicePlatformId\": 0,\n    \"Invoices\": [\n        {\n            \"OrderId\": \"test195992\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585106019061\",\n        \"Result\": {\n            \"Message\": \"success\",\n            \"Data\": [\n                {\n                    \"Message\": \"success\",\n                    \"InvoiceId\": \"\",\n                    \"OrderSn\": \"\",\n                    \"Code\": 0\n                }\n            ],\n            \"Code\": 0\n        }\n    }\n}",
         "title": "CreateRedInvoice"
+      }
+    ],
+    "CreateRedInvoiceV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRedInvoiceV2\n<公共请求参数>\n\n{\n    \"InvoicePlatformId\": 0,\n    \"OrderId\": \"test195992\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585106019061\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"请求成功\",\n        \"Result\": {\n            \"InvoiceId\": \"123456\"\n        }\n    }\n}",
+        "title": "CreateRedInvoiceV2"
       }
     ],
     "CreateSinglePay": [
@@ -380,6 +396,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryInvoice\n<公共请求参数>\n\n{\n    \"InvoicePlatformId\": 0,\n    \"OrderId\": \"test195992\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1584287242140\",\n        \"Result\": {\n            \"Code\": 0,\n            \"Data\": {\n                \"TaxAmount\": \"\",\n                \"IsRedWashed\": 0,\n                \"AmountWithoutTax\": \"\",\n                \"TicketCode\": \"\",\n                \"TicketDate\": \"\",\n                \"CheckCode\": \"\",\n                \"PdfUrl\": \"\",\n                \"Message\": \"SUCCESS\",\n                \"TicketSn\": \"\",\n                \"OrderSn\": \"\",\n                \"OrderId\": \"\",\n                \"Status\": 5,\n                \"AmountWithTax\": \"\"\n            },\n            \"Message\": \"success\",\n            \"Order\": {\n                \"OrderId\": \"xx\",\n                \"Name\": \"xx\",\n                \"Items\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"TaxCode\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"Models\": \"xx\",\n                        \"Price\": 0.0,\n                        \"AmountHasTax\": 0.0,\n                        \"Discount\": 0.0,\n                        \"Total\": 0,\n                        \"Unit\": \"xx\"\n                    }\n                ],\n                \"SellerName\": \"xx\",\n                \"Amount\": 0.0,\n                \"AmountHasTax\": 0.0,\n                \"Discount\": 0.0,\n                \"InvoiceType\": 0,\n                \"StoreNo\": \"xx\",\n                \"OrderDate\": \"xx\"\n            }\n        }\n    }\n}",
         "title": "QueryInvoice"
+      }
+    ],
+    "QueryInvoiceV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryInvoiceV2\n<公共请求参数>\n\n{\n    \"InvoicePlatformId\": 0,\n    \"OrderId\": \"test195992\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1584287242140\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"请求成功\",\n        \"Result\": {\n            \"TaxAmount\": \"\",\n            \"IsRedWashed\": 0,\n            \"AmountWithoutTax\": \"\",\n            \"TicketCode\": \"\",\n            \"TicketDate\": \"\",\n            \"CheckCode\": \"\",\n            \"PdfUrl\": \"\",\n            \"Message\": \"SUCCESS\",\n            \"TicketSn\": \"\",\n            \"OrderSn\": \"\",\n            \"OrderId\": \"\",\n            \"Status\": 5,\n            \"AmountWithTax\": \"\"\n        }\n    }\n}",
+        "title": "QueryInvoiceV2"
       }
     ],
     "QueryMemberBind": [

@@ -270,7 +270,7 @@
       {
         "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeClsLogSet\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"LogsetId\": \"b046ae5f-00cf-4e90-880c-215e5ae7b624\",\n        \"RequestId\": \"d8402eb9-37a1-469f-bd30-a5670998f2b1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LogsetId\": \"b046ae5f-00cf-4e90-880c-215e5ae72222\",\n        \"HealthLogsetId\": \"b046ae5f-00cf-4e90-880c-215e5ae71111\",\n        \"RequestId\": \"d8402eb9-37a1-469f-bd30-a5670998f2b1\"\n    }\n}",
         "title": "获取用户的clb独占日志集。"
       }
     ],
@@ -599,13 +599,13 @@
     "SetLoadBalancerClsLog": [
       {
         "document": "添加，或修改负载均衡的日志服务(CLS)主题",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerClsLog\r\n&LoadBalancerId=lb-cuxw2r00\r\n&LogSetId=xxxx-xx-xx-xx-xxxxxxxx\r\n&LogTopicId=xxxx-xx-xx-xx-yyyyyyyy\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerClsLog\n&LoadBalancerId=lb-cuxw2r00\n&LogSetId=xxxx-xx-xx-xx-xxxxxxxx\n&LogTopicId=xxxx-xx-xx-xx-yyyyyyyy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"78a40898-8210-44c7-8bc6-f83e50878d12\"\n    }\n}",
         "title": "设置日志服务主题"
       },
       {
         "document": "删除负载均衡的日志服务(CLS)主题",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerClsLog\r\n&LoadBalancerId=lb-cuxw2r00\r\n&LogSetId=\r\n&LogTopicId=\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerClsLog\n&LoadBalancerId=lb-cuxw2r00\n&LogSetId= \n&LogTopicId= \n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"78a40898-8210-44c7-8bc6-f83e50878d12\"\n    }\n}",
         "title": "删除日志服务主题"
       }

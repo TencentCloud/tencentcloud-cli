@@ -420,6 +420,14 @@
         "title": "DisableOtaVersion"
       }
     ],
+    "ModifyDevice": [
+      {
+        "document": "修改设备信息",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=ModifyDevice\n&Tid=******\n&AccessId=-9222942471405699047\n&Nick=Camera\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\"\n    }\n}",
+        "title": "修改设备信息"
+      }
+    ],
     "ModifyDeviceAction": [
       {
         "document": "",

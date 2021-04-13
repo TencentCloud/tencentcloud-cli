@@ -10,8 +10,8 @@ tccli mongodb CreateDBInstance --cli-unfold-argument  \
     --Volume 250 \
     --GoodsNum 1 \
     --Zone ap-guangzhou-2 \
-    --UniqVpcId vpc-0akbol5v \
-    --UniqSubnetId subnet-fyrtjbqw \
+    --VpcId vpc-0akbol5v \
+    --SubnetId subnet-fyrtjbqw \
     --ProjectId 0 \
     --MongoVersion MONGO_3_WT \
     --MachineCode TGIO \

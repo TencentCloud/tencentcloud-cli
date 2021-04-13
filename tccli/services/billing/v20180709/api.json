@@ -2313,9 +2313,119 @@
       "members": [
         {
           "document": "云账户信息中的”展示可用余额”字段，单位为\"分\"",
+          "example": "10000",
           "member": "int64",
           "name": "Balance",
+          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询的用户Uin",
+          "example": "1",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前真实可用余额",
+          "example": "1",
+          "member": "float",
+          "name": "RealBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "现金账户余额",
+          "example": "1",
+          "member": "float",
+          "name": "CashAccountBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "收益转入账户余额",
+          "example": "1",
+          "member": "float",
+          "name": "IncomeIntoAccountBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "赠送账户余额",
+          "example": "1",
+          "member": "float",
+          "name": "PresentAccountBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结金额",
+          "example": "1",
+          "member": "float",
+          "name": "FreezeAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "欠费金额",
+          "example": "1",
+          "member": "float",
+          "name": "OweAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否允许欠费消费",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAllowArrears",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否限制信用额度",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCreditLimited",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "信用额度",
+          "example": "1",
+          "member": "float",
+          "name": "CreditAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用信用额度",
+          "example": "1",
+          "member": "float",
+          "name": "CreditBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "真实可用信用额度",
+          "example": "1",
+          "member": "float",
+          "name": "RealCreditBalance",
+          "required": true,
+          "type": "float",
           "value_allowed_null": false
         },
         {

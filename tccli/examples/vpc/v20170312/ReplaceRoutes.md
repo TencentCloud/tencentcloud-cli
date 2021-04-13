@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc ReplaceRoutes --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --RouteTableId rtb-n0yejvje \
     --Routes.0.RouteId 17125 \
     --Routes.0.DestinationCidrBlock 192.168.0.0/16 \
@@ -19,7 +18,25 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a"
+        "NewRouteSet": [
+            {
+                "DestinationCidrBlock": "172.16.16.37/22",
+                "RouteTableId": "rtb-n0yejvje",
+                "RouteDescription": "",
+                "GatewayType": "PEERCONNECTION",
+                "GatewayId": "pcx-n9vkqrtm"
+            }
+        ],
+        "RequestId": "3f934a21-2786-44af-a421-38ee6c6e1fae",
+        "OldRouteSet": [
+            {
+                "DestinationCidrBlock": "172.16.16.37/21",
+                "RouteTableId": "rtb-n0yejvje",
+                "RouteDescription": "",
+                "GatewayType": "PEERCONNECTION",
+                "GatewayId": "pcx-n9vkqrtk"
+            }
+        ]
     }
 }
 ```
