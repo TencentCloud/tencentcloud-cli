@@ -86,12 +86,36 @@
         "title": "获取分类内容（Station）列表"
       }
     ],
+    "ModifyMusicOnShelves": [
+      {
+        "document": "供TME侧进行变更歌曲参数",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMusicOnShelves\n<公共请求参数>\n\n{\n    \"MusicDetailInfos\": {\n        \"HitWords\": [\n            \"xx\"\n        ],\n        \"Tags\": [\n            \"xx\"\n        ],\n        \"Bpm\": 0,\n        \"AmeId\": \"xx\",\n        \"MusicId\": \"xx\",\n        \"Score\": 0.0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "变更歌曲参数"
+      }
+    ],
+    "PutMusicOnTheShelves": [
+      {
+        "document": "供TME侧进行歌曲上架",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutMusicOnTheShelves\n<公共请求参数>\n\n{\n    \"MusicIds\": [\n        \"E4CC97317AFDB8BA5569BB40AF7AEF08\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedNum\": 0,\n        \"SuccessNum\": 0,\n        \"FailedMusicIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "上架歌曲接口"
+      }
+    ],
     "ReportData": [
       {
         "document": "",
         "input": "https://ame.tencentcloudapi.com/?Action=ReportData\n&ReportData=1f8b08000000000000007xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1578300559628971903\"\n    }\n}",
         "title": "上报歌曲播放数据"
+      }
+    ],
+    "TakeMusicOffShelves": [
+      {
+        "document": "供TME侧进行下架歌曲",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TakeMusicOffShelves\n<公共请求参数>\n\n{\n    \"TakeMusicOffShelves\": [\n        {\n            \"MusicIds\": \"E4CC97317AFDB8BA5569BB40AF7AEF08\",\n            \"SaleStatus\": \"2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedNum\": 0,\n        \"SuccessNum\": 0,\n        \"FailedMusicIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "下架歌曲接口"
       }
     ]
   },

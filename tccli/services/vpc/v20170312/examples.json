@@ -506,6 +506,30 @@
         "title": "创建VPC"
       }
     ],
+    "CreateVpcEndPoint": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpcEndPoint\n&VpcId=vpc-coekkqtd\n&SubnetId=subnet-4t7fr3fi\n&EndPointName=point_002\n&EndPointServiceId=vpcsvc-kngiybxl\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EndPoint\": {\n            \"ServiceVpcId\": \"vpc-hj3he929\",\n            \"VpcId\": \"vpc-coekkqtd\",\n            \"State\": \"PENDING\",\n            \"ServiceVip\": \"10.101.1.11\",\n            \"EndPointName\": \"point_002\",\n            \"GroupSet\": [],\n            \"EndPointOwner\": \"1302384414\",\n            \"EndPointId\": \"vpce-h0fk8lfc\",\n            \"SubnetId\": \"subnet-4t7fr3fi\",\n            \"CreateTime\": \"0000-00-00 00:00:00\",\n            \"EndPointServiceId\": \"vpcsvc-kngiybxl\",\n            \"EndPointVip\": \"10.0.0.8\",\n            \"ServiceName\": \"服务\"\n        },\n        \"RequestId\": \"fefb383a-7394-46c9-ba34-6b21e8fb3ac1\"\n    }\n}",
+        "title": "创建终端节点"
+      }
+    ],
+    "CreateVpcEndPointService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcEndPointService\n<公共请求参数>\n\n{\n    \"AutoAcceptFlag\": true,\n    \"EndPointServiceName\": \"测试\",\n    \"VpcId\": \"vpce-h0fk8lfc\",\n    \"IsPassService\": true,\n    \"ServiceInstanceId\": \"lb-nswq8wkq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b237f475-49b3-4b10-af8e-071e0a5c7d7a\",\n        \"EndPointService\": {\n            \"VpcId\": \"vpc-hj3he929\",\n            \"AutoAcceptFlag\": \"false\",\n            \"ServiceInstanceId\": \"lb-nswq8wkq\",\n            \"ServiceName\": \"test_002\",\n            \"EndPointServiceId\": \"vpcsvc-kngiybxl\",\n            \"ServiceVip\": \"10.101.1.11\",\n            \"CreateTime\": \"0000-00-00 00:00:00\",\n            \"ServiceOwner\": \"1254277469\",\n            \"EndPointCount\": 1,\n            \"EndPointSet\": []\n        }\n    }\n}",
+        "title": "创建终端节点服务"
+      }
+    ],
+    "CreateVpcEndPointServiceWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"UserUin\": \"100016184089\",\n    \"Description\": \"描述\",\n    \"EndPointServiceId\": \"vpcsvc-kngiybxl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e6f5074-e4a2-4bb6-9cac-d2357a00896f\"\n    }\n}",
+        "title": "创建终端服务白名单"
+      }
+    ],
     "CreateVpnConnection": [
       {
         "document": "",
@@ -760,6 +784,30 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteVpc\n&VpcId=vpc-g69ed0kj\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除VPC"
+      }
+    ],
+    "DeleteVpcEndPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcEndPoint\n<公共请求参数>\n\n{\n    \"EndPointId\": \"vpce-h0fk8lfc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e6f5074-e4a2-4bb6-9cac-d2357a00896f\"\n    }\n}",
+        "title": "DeleteVpcEndPoint"
+      }
+    ],
+    "DeleteVpcEndPointService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcEndPointService\n<公共请求参数>\n\n{\n    \"EndPointServiceId\": \"vpcsvc-kngiybxl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e6f5074-e4a2-4bb6-9cac-d2357a00896f\"\n    }\n}",
+        "title": "删除终端节点服务"
+      }
+    ],
+    "DeleteVpcEndPointServiceWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"UserUin\": [\n        \"100000059551\"\n    ],\n    \"EndPointServiceId\": \"vpcsvc-kngiybxl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecaa7a90-a2fd-4fa3-8bf8-7d0723c95a99\"\n    }\n}",
+        "title": "删除终端节点服务白名单"
       }
     ],
     "DeleteVpnConnection": [
@@ -1304,6 +1352,30 @@
         "title": "查询参数模板配额列表"
       }
     ],
+    "DescribeVpcEndPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcEndPoint\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"EndPointId\": [\n        \"vpce-h0fk8lfc\"\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"7e6f5074-e4a2-4bb6-9cac-d2357a00896f\",\n        \"EndPointSet\": [\n            {\n                \"ServiceVpcId\": \"vpc-hj3he929\",\n                \"GroupSet\": [\n                    \"sg-tyhgrwet\"\n                ],\n                \"ServiceName\": \"测试\",\n                \"State\": \"PENDING\",\n                \"ServiceVip\": \"10.101.1.11\",\n                \"EndPointName\": \"节点\",\n                \"VpcId\": \"vpc-hj3he929\",\n                \"EndPointOwner\": \"1302384414\",\n                \"EndPointId\": \"vpce-h0fk8lfc\",\n                \"SubnetId\": \"subnet-4t7fr3fi\",\n                \"CreateTime\": \"0000-00-00 00:00:00\",\n                \"EndPointServiceId\": \"vpcsvc-kngiybxl\",\n                \"EndPointVip\": \"10.101.1.11\"\n            }\n        ]\n    }\n}",
+        "title": "查询终端节点列表"
+      }
+    ],
+    "DescribeVpcEndPointService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcEndPointService\n<公共请求参数>\n\n{\n    \"EndPointServiceIds\": [\n        \"vpcsvc-kngiybxl\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EndPointServiceSet\": [\n            {\n                \"VpcId\": \"vpc-hj3he929\",\n                \"EndPointSet\": {},\n                \"AutoAcceptFlag\": \"False\",\n                \"ServiceInstanceId\": \"lb-nswq8wkq\",\n                \"ServiceName\": \"test_002\",\n                \"EndPointServiceId\": \"vpcsvc-pnpcflil\",\n                \"ServiceVip\": \"10.101.1.11\",\n                \"CreateTime\": \"2021-04-12 19:22:43\",\n                \"ServiceOwner\": \"1254277469\",\n                \"EndPointCount\": 0\n            }\n        ],\n        \"RequestId\": \"452e8b38-10a1-4d8a-8a31-a64b89c8f565\"\n    }\n}",
+        "title": "查询终端节点服务列表"
+      }
+    ],
+    "DescribeVpcEndPointServiceWhiteList": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcEndPointServiceWhiteList\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"VpcEndpointServiceUserSet\": [\n            {\n                \"Owner\": 1254277469,\n                \"UserUin\": \"100016184089\",\n                \"Description\": \"描述信息\",\n                \"EndPointServiceId\": \"\",\n                \"CreateTime\": \"vpcsvc-kngiybxl\"\n            }\n        ],\n        \"RequestId\": \"7e6f5074-e4a2-4bb6-9cac-d2357a00896f\"\n    }\n}",
+        "title": "DescribeVpcEndPointServiceWhiteList"
+      }
+    ],
     "DescribeVpcInstances": [
       {
         "document": "",
@@ -1484,6 +1556,14 @@
         "title": "弹性网卡解绑安全组"
       }
     ],
+    "DisassociateVpcEndPointSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateVpcEndPointSecurityGroups\n<公共请求参数>\n\n{\n    \"EndPointId\": \"vpce-h0fk8lfc\",\n    \"SecurityGroupIds\": [\n        \"sg-serghftg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e6f5074-e4a2-4bb6-9cac-d2357a00896f\"\n    }\n}",
+        "title": "终端节点解绑安全组"
+      }
+    ],
     "DownloadCustomerGatewayConfiguration": [
       {
         "document": "",
@@ -1520,6 +1600,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=EnableRoutes\n&RouteTableId=rtb-12345678\n&RouteItemIds.0=rti-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "按照唯一ID启用子网路由"
+      }
+    ],
+    "EnableVpcEndPointConnect": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableVpcEndPointConnect\n<公共请求参数>\n\n{\n    \"AcceptFlag\": true,\n    \"EndPointId\": [\n        \"vpce-h0fk8lfc\"\n    ],\n    \"EndPointServiceId\": \"vpcsvc-kngiybxl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecaa7a90-a2fd-4fa3-8bf8-7d0723c95a99\"\n    }\n}",
+        "title": "是否接受终端节点连接请求"
       }
     ],
     "GetCcnRegionBandwidthLimits": [
@@ -1916,6 +2004,30 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyVpcAttribute\n&VpcName=MyTest\n&VpcId=vpc-m7sr81gh\n&EnableMulticast=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"38b1a253-02b7-43d7-8524-7e07432ae31a\"\n    }\n}",
         "title": "修改VPC属性"
+      }
+    ],
+    "ModifyVpcEndPointAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcEndPointAttribute\n<公共请求参数>\n\n{\n    \"EndPointName\": \"测试\",\n    \"EndPointId\": \"vpce-h0fk8lfc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fefb383a-7394-46c9-ba34-6b21e8fb3ac1\"\n    }\n}",
+        "title": "修改终端节点属性"
+      }
+    ],
+    "ModifyVpcEndPointServiceAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcEndPointServiceAttribute\n<公共请求参数>\n\n{\n    \"AutoAcceptFlag\": true,\n    \"EndPointServiceName\": \"测试\",\n    \"EndPointServiceId\": \"vpcsvc-kngiybxl\",\n    \"VpcId\": \"vpc-hj3he929\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fefb383a-7394-46c9-ba34-6b21e8fb3ac1\"\n    }\n}",
+        "title": "修改终端节点服务属性"
+      }
+    ],
+    "ModifyVpcEndPointServiceWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"UserUin\": \"123\",\n    \"Description\": \"测试\",\n    \"EndPointServiceId\": \"vpcsvc-b2mrmmx7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cccb2665-5d02-4d87-b9e7-757bb06e5beb\"\n    }\n}",
+        "title": "修改终端节点服务白名单"
       }
     ],
     "ModifyVpnConnectionAttribute": [

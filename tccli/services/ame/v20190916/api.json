@@ -60,11 +60,29 @@
       "name": "获取分类内容（Station）列表",
       "output": "DescribeStationsResponse"
     },
+    "ModifyMusicOnShelves": {
+      "document": "根据资源方，需要变更的参数，请求该接口进行变更，为空的参数默认为无变更",
+      "input": "ModifyMusicOnShelvesRequest",
+      "name": "变更歌曲参数",
+      "output": "ModifyMusicOnShelvesResponse"
+    },
+    "PutMusicOnTheShelves": {
+      "document": "根据资源方所传歌曲信息，进行歌曲上架，多个歌曲同时请求时，需构造复合结构进行请求",
+      "input": "PutMusicOnTheShelvesRequest",
+      "name": "上架歌曲",
+      "output": "PutMusicOnTheShelvesResponse"
+    },
     "ReportData": {
       "document": "客户上报用户数据功能，为了更好地为用户提供优质服务",
       "input": "ReportDataRequest",
       "name": "上报歌曲播放数据",
       "output": "ReportDataResponse"
+    },
+    "TakeMusicOffShelves": {
+      "document": "根据资源方所传MusicId进行将歌曲进行下架，多个MusicId使用逗号隔开",
+      "input": "TakeMusicOffShelvesRequest",
+      "name": "下架歌曲",
+      "output": "TakeMusicOffShelvesResponse"
     }
   },
   "metadata": {
@@ -890,6 +908,33 @@
       ],
       "usage": "out"
     },
+    "ModifyMusicOnShelvesRequest": {
+      "document": "ModifyMusicOnShelves请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "MusicDetailInfo",
+          "name": "MusicDetailInfos",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMusicOnShelvesResponse": {
+      "document": "ModifyMusicOnShelves返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Music": {
       "document": "音乐详情",
       "members": [
@@ -949,6 +994,72 @@
         }
       ],
       "usage": "out"
+    },
+    "MusicDetailInfo": {
+      "document": "歌曲变更细节",
+      "members": [
+        {
+          "default": "",
+          "document": "资源方音乐Id",
+          "example": "E4CC97317AFDB8BA5569BB40AF7AEF08",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源方识别信息",
+          "example": "TME",
+          "member": "string",
+          "name": "AmeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类标签",
+          "example": "[\"伴奏\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键词",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "HitWords",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节奏信息",
+          "example": "0",
+          "member": "int64",
+          "name": "Bpm",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商业化权益",
+          "example": "5.67",
+          "member": "float",
+          "name": "Score",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "MusicOpenDetail": {
       "document": "对外开放信息",
@@ -1211,6 +1322,60 @@
       ],
       "usage": "out"
     },
+    "PutMusicOnTheShelvesRequest": {
+      "document": "PutMusicOnTheShelves请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源方歌曲Id",
+          "example": "无",
+          "member": "string",
+          "name": "MusicIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PutMusicOnTheShelvesResponse": {
+      "document": "PutMusicOnTheShelves返回参数结构体",
+      "members": [
+        {
+          "document": "操作成功数量",
+          "example": "30",
+          "member": "int64",
+          "name": "SuccessNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "操作失败数量",
+          "example": "0",
+          "member": "int64",
+          "name": "FailedNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "失败歌曲Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailedMusicIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReportDataRequest": {
       "document": "ReportData请求参数结构体",
       "members": [
@@ -1287,6 +1452,86 @@
         }
       ],
       "usage": "out"
+    },
+    "TakeMusicOffShelves": {
+      "document": "下架歌曲复合结构",
+      "members": [
+        {
+          "default": "",
+          "document": "资源方对应音乐Id",
+          "example": "E4CC97317AFDB8BA5569BB40AF7AEF08",
+          "member": "string",
+          "name": "MusicIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当曲目临时下架时：已订购客户无影响，无需消息通知。当曲目封杀下架后，推送消息至已订购老客户，枚举值，判断是否上/下架",
+          "example": "1",
+          "member": "string",
+          "name": "SaleStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TakeMusicOffShelvesRequest": {
+      "document": "TakeMusicOffShelves请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源方下架必传结构",
+          "example": "无",
+          "member": "TakeMusicOffShelves",
+          "name": "TakeMusicOffShelves",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TakeMusicOffShelvesResponse": {
+      "document": "TakeMusicOffShelves返回参数结构体",
+      "members": [
+        {
+          "document": "返回成功数量",
+          "example": "30",
+          "member": "int64",
+          "name": "SuccessNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回失败数量",
+          "example": "0",
+          "member": "int64",
+          "name": "FailedNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回失败歌曲musicId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailedMusicIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UseRange": {
       "document": "曲库包用途信息",

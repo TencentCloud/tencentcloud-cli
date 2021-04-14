@@ -330,6 +330,24 @@
       "name": "创建VPC",
       "output": "CreateVpcResponse"
     },
+    "CreateVpcEndPoint": {
+      "document": "创建终端节点。",
+      "input": "CreateVpcEndPointRequest",
+      "name": "创建终端节点",
+      "output": "CreateVpcEndPointResponse"
+    },
+    "CreateVpcEndPointService": {
+      "document": "创建终端节点服务。",
+      "input": "CreateVpcEndPointServiceRequest",
+      "name": "创建终端节点服务",
+      "output": "CreateVpcEndPointServiceResponse"
+    },
+    "CreateVpcEndPointServiceWhiteList": {
+      "document": "创建终端服务白名单。",
+      "input": "CreateVpcEndPointServiceWhiteListRequest",
+      "name": "创建终端服务白名单",
+      "output": "CreateVpcEndPointServiceWhiteListResponse"
+    },
     "CreateVpnConnection": {
       "document": "本接口（CreateVpnConnection）用于创建VPN通道。",
       "input": "CreateVpnConnectionRequest",
@@ -503,6 +521,24 @@
       "input": "DeleteVpcRequest",
       "name": "删除VPC",
       "output": "DeleteVpcResponse"
+    },
+    "DeleteVpcEndPoint": {
+      "document": "删除终端节点。",
+      "input": "DeleteVpcEndPointRequest",
+      "name": "删除终端节点",
+      "output": "DeleteVpcEndPointResponse"
+    },
+    "DeleteVpcEndPointService": {
+      "document": "删除终端节点服务。\n\n",
+      "input": "DeleteVpcEndPointServiceRequest",
+      "name": "删除终端节点服务",
+      "output": "DeleteVpcEndPointServiceResponse"
+    },
+    "DeleteVpcEndPointServiceWhiteList": {
+      "document": "删除终端节点服务白名单。",
+      "input": "DeleteVpcEndPointServiceWhiteListRequest",
+      "name": "删除终端节点服务白名单",
+      "output": "DeleteVpcEndPointServiceWhiteListResponse"
     },
     "DeleteVpnConnection": {
       "document": "本接口(DeleteVpnConnection)用于删除VPN通道。",
@@ -834,6 +870,24 @@
       "name": "查询参数模板配额列表",
       "output": "DescribeTemplateLimitsResponse"
     },
+    "DescribeVpcEndPoint": {
+      "document": "查询终端节点列表。",
+      "input": "DescribeVpcEndPointRequest",
+      "name": "查询终端节点列表",
+      "output": "DescribeVpcEndPointResponse"
+    },
+    "DescribeVpcEndPointService": {
+      "document": "查询终端节点服务列表。",
+      "input": "DescribeVpcEndPointServiceRequest",
+      "name": "查询终端节点服务列表",
+      "output": "DescribeVpcEndPointServiceResponse"
+    },
+    "DescribeVpcEndPointServiceWhiteList": {
+      "document": "查询终端节点服务的服务白名单列表。",
+      "input": "DescribeVpcEndPointServiceWhiteListRequest",
+      "name": "查询终端节点服务的服务白名单列表",
+      "output": "DescribeVpcEndPointServiceWhiteListResponse"
+    },
     "DescribeVpcInstances": {
       "document": " 本接口（DescribeVpcInstances）用于查询VPC下的云主机实例列表。",
       "input": "DescribeVpcInstancesRequest",
@@ -960,6 +1014,12 @@
       "name": "弹性网卡解绑安全组",
       "output": "DisassociateNetworkInterfaceSecurityGroupsResponse"
     },
+    "DisassociateVpcEndPointSecurityGroups": {
+      "document": "终端节点解绑安全组。",
+      "input": "DisassociateVpcEndPointSecurityGroupsRequest",
+      "name": "终端节点解绑安全组",
+      "output": "DisassociateVpcEndPointSecurityGroupsResponse"
+    },
     "DownloadCustomerGatewayConfiguration": {
       "document": "本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。",
       "input": "DownloadCustomerGatewayConfigurationRequest",
@@ -983,6 +1043,12 @@
       "input": "EnableRoutesRequest",
       "name": "启用子网路由",
       "output": "EnableRoutesResponse"
+    },
+    "EnableVpcEndPointConnect": {
+      "document": "是否接受终端节点连接请求。",
+      "input": "EnableVpcEndPointConnectRequest",
+      "name": "是否接受终端节点连接请求",
+      "output": "EnableVpcEndPointConnectResponse"
     },
     "GetCcnRegionBandwidthLimits": {
       "document": "本接口（GetCcnRegionBandwidthLimits）用于查询云联网相关地域带宽信息，其中预付费模式的云联网仅支持地域间限速，后付费模式的云联网支持地域间限速和地域出口限速。",
@@ -1253,6 +1319,24 @@
       "input": "ModifyVpcAttributeRequest",
       "name": "修改VPC属性",
       "output": "ModifyVpcAttributeResponse"
+    },
+    "ModifyVpcEndPointAttribute": {
+      "document": "修改终端节点属性。",
+      "input": "ModifyVpcEndPointAttributeRequest",
+      "name": "修改终端节点属性",
+      "output": "ModifyVpcEndPointAttributeResponse"
+    },
+    "ModifyVpcEndPointServiceAttribute": {
+      "document": "修改终端节点服务属性。\n\n",
+      "input": "ModifyVpcEndPointServiceAttributeRequest",
+      "name": "修改终端节点服务属性",
+      "output": "ModifyVpcEndPointServiceAttributeResponse"
+    },
+    "ModifyVpcEndPointServiceWhiteList": {
+      "document": "修改终端节点服务白名单属性。",
+      "input": "ModifyVpcEndPointServiceWhiteListRequest",
+      "name": "修改终端节点服务白名单属性",
+      "output": "ModifyVpcEndPointServiceWhiteListResponse"
     },
     "ModifyVpnConnectionAttribute": {
       "document": "本接口（ModifyVpnConnectionAttribute）用于修改VPN通道。",
@@ -5490,6 +5574,204 @@
       ],
       "type": "object"
     },
+    "CreateVpcEndPointRequest": {
+      "document": "CreateVpcEndPoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC实例ID。",
+          "example": "vpc-q26u781x。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网实例ID。",
+          "example": "subnet-qmqye6ew。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点名称。",
+          "example": "示例名称。",
+          "member": "string",
+          "name": "EndPointName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点服务ID。",
+          "example": "vpcsvc-ettmyyrn。",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点VIP，可以指定IP申请。",
+          "example": "10.0.0.0/16。",
+          "member": "string",
+          "name": "EndPointVip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ID。",
+          "example": "sg-123456。",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcEndPointResponse": {
+      "document": "CreateVpcEndPoint返回参数结构体",
+      "members": [
+        {
+          "document": "终端节点对象详细信息。",
+          "example": "无。",
+          "member": "EndPoint",
+          "name": "EndPoint",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcEndPointServiceRequest": {
+      "document": "CreateVpcEndPointService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC实例ID。",
+          "example": "vpc-ihwh81fr。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点服务名称。",
+          "example": "终端服务测试001。",
+          "member": "string",
+          "name": "EndPointServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动接受。",
+          "example": "True。",
+          "member": "bool",
+          "name": "AutoAcceptFlag",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "后端服务ID，比如lb-xxx。",
+          "example": "lb-7xwasqqy。",
+          "member": "string",
+          "name": "ServiceInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否是PassService类型。",
+          "example": "True",
+          "member": "bool",
+          "name": "IsPassService",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcEndPointServiceResponse": {
+      "document": "CreateVpcEndPointService返回参数结构体",
+      "members": [
+        {
+          "document": "终端节点服务对象详细信息。",
+          "example": "无。",
+          "member": "EndPointService",
+          "name": "EndPointService",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcEndPointServiceWhiteListRequest": {
+      "document": "CreateVpcEndPointServiceWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "UIN。",
+          "example": "123",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点服务ID。",
+          "example": "vpcsvc-b2mrmmx7",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "白名单描述。",
+          "example": "测试",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcEndPointServiceWhiteListResponse": {
+      "document": "CreateVpcEndPointServiceWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateVpcRequest": {
       "document": "CreateVpc请求参数结构体",
       "members": [
@@ -6951,6 +7233,96 @@
       ],
       "type": "object"
     },
+    "DeleteVpcEndPointRequest": {
+      "document": "DeleteVpcEndPoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "终端节点ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcEndPointResponse": {
+      "document": "DeleteVpcEndPoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcEndPointServiceRequest": {
+      "document": "DeleteVpcEndPointService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "终端节点ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcEndPointServiceResponse": {
+      "document": "DeleteVpcEndPointService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcEndPointServiceWhiteListRequest": {
+      "document": "DeleteVpcEndPointServiceWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户UIN数组。",
+          "example": "['123']",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "终端节点服务ID。",
+          "example": "vpcsvc-b2mrmmx7",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcEndPointServiceWhiteListResponse": {
+      "document": "DeleteVpcEndPointServiceWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteVpcRequest": {
       "document": "DeleteVpc请求参数结构体",
       "members": [
@@ -7215,7 +7587,7 @@
         },
         {
           "default": "",
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。</li>\n<li> address-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。</li>\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。</li>\n<li> address-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。状态包含：'CREATING'，'BINDING'，'BIND'，'UNBINDING'，'UNBIND'，'OFFLINING'，'BIND_ENI'。</li>\n<li> instance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。</li>\n<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。</li>\n<li> is-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）</li>\n<li> address-type - String - 是否必填：否 - （过滤条件）按照 IP类型 进行过滤。可选值：'EIP'，'AnycastEIP'，'HighQualityEIP'</li>\n<li> address-isp - String - 是否必填：否 - （过滤条件）按照 运营商类型 进行过滤。可选值：'BGP'，'CMCC'，'CUCC', 'CTCC'</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。</li>\n<li> address-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。</li>\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。</li>\n<li> address-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。状态包含：'CREATING'，'BINDING'，'BIND'，'UNBINDING'，'UNBIND'，'OFFLINING'，'BIND_ENI'。</li>\n<li> instance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。</li>\n<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。</li>\n<li> is-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）</li>\n<li> address-type - String - 是否必填：否 - （过滤条件）按照 IP类型 进行过滤。可选值：'EIP'，'AnycastEIP'，'HighQualityEIP'</li>\n<li> address-isp - String - 是否必填：否 - （过滤条件）按照 运营商类型 进行过滤。可选值：'BGP'，'CMCC'，'CUCC', 'CTCC'</li>\n<li> dedicated-cluster-id - String - 是否必填：否 - （过滤条件）按照 CDC 的唯一 ID 过滤。CDC 唯一 ID 形如：cluster-11112222。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -10111,6 +10483,213 @@
       ],
       "type": "object"
     },
+    "DescribeVpcEndPointRequest": {
+      "document": "DescribeVpcEndPoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>\n<li>end-point-name - String - （过滤条件）终端节点实例名称。</li>\n<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>\n<li> vpc-id- String - （过滤条件）VPC实例ID。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单页返回数量，默认为20，最大值为100。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "终端节点ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcEndPointResponse": {
+      "document": "DescribeVpcEndPoint返回参数结构体",
+      "members": [
+        {
+          "document": "终端节点对象。",
+          "example": "无",
+          "member": "EndPoint",
+          "name": "EndPointSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合查询条件的终端节点个数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcEndPointServiceRequest": {
+      "document": "DescribeVpcEndPointService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li> service-id- String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单页返回数量，默认为20，最大值为100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "终端节点服务ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointServiceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcEndPointServiceResponse": {
+      "document": "DescribeVpcEndPointService返回参数结构体",
+      "members": [
+        {
+          "document": "终端节点服务对象数组。",
+          "example": "无",
+          "member": "EndPointService",
+          "name": "EndPointServiceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合查询条件的个数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcEndPointServiceWhiteListRequest": {
+      "document": "DescribeVpcEndPointServiceWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单页返回数量，默认为20，最大值为100。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li> user-uin String - （过滤条件）用户UIN。</li>\n<li> end-point-service-id String - （过滤条件）终端节点服务ID。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcEndPointServiceWhiteListResponse": {
+      "document": "DescribeVpcEndPointServiceWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "白名单对象数组。",
+          "example": "无",
+          "member": "VpcEndPointServiceUser",
+          "name": "VpcEndpointServiceUserSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的白名单个数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcInstancesRequest": {
       "document": "DescribeVpcInstances请求参数结构体",
       "members": [
@@ -11331,6 +11910,42 @@
       ],
       "type": "object"
     },
+    "DisassociateVpcEndPointSecurityGroupsRequest": {
+      "document": "DisassociateVpcEndPointSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全组ID数组。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "终端节点ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateVpcEndPointSecurityGroupsResponse": {
+      "document": "DisassociateVpcEndPointSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DownloadCustomerGatewayConfigurationRequest": {
       "document": "DownloadCustomerGatewayConfiguration请求参数结构体",
       "members": [
@@ -11489,6 +12104,283 @@
         }
       ],
       "type": "object"
+    },
+    "EnableVpcEndPointConnectRequest": {
+      "document": "EnableVpcEndPointConnect请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "终端节点服务ID。",
+          "example": "vpcsvc-8gdaqxi0",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点ID。",
+          "example": "[\"vpce-8gdaqxi0\"]",
+          "member": "string",
+          "name": "EndPointId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否接受终端节点连接请求。",
+          "example": "True",
+          "member": "bool",
+          "name": "AcceptFlag",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableVpcEndPointConnectResponse": {
+      "document": "EnableVpcEndPointConnect返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EndPoint": {
+      "document": "终端节点详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "终端节点ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPCID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "APPID。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointOwner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点名称。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点服务的VPCID。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点服务的VIP。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点服务的ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点的VIP。",
+          "example": "无",
+          "member": "string",
+          "name": "EndPointVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点状态，ACTIVE：可用，PENDING：待接受，ACCEPTING：接受中，REJECTED：已拒绝，FAILED：失败。",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点绑定的安全组实例ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点服务名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EndPointService": {
+      "document": "终端节点服务对象。",
+      "members": [
+        {
+          "default": "",
+          "document": "终端节点服务ID",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPCID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "APPID。",
+          "member": "string",
+          "name": "ServiceOwner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点服务名称。",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的VIP。",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的ID，比如lb-xxx。",
+          "member": "string",
+          "name": "ServiceInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否自动接受。",
+          "member": "bool",
+          "name": "AutoAcceptFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的终端节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "EndPointCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "终端节点对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EndPoint",
+          "name": "EndPointSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "过滤器",
@@ -14560,6 +15452,159 @@
     },
     "ModifyVpcAttributeResponse": {
       "document": "ModifyVpcAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcEndPointAttributeRequest": {
+      "document": "ModifyVpcEndPointAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "终端节点ID。",
+          "example": "vpce-8gdaqxi0。",
+          "member": "string",
+          "name": "EndPointId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点名称。",
+          "example": "名称示例。",
+          "member": "string",
+          "name": "EndPointName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ID列表。",
+          "example": "sg-123456。",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcEndPointAttributeResponse": {
+      "document": "ModifyVpcEndPointAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcEndPointServiceAttributeRequest": {
+      "document": "ModifyVpcEndPointServiceAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "终端节点服务ID。",
+          "example": "vpces-hhth8n9j",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPCID。",
+          "example": "vpc-a2oj00df",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点服务名称。",
+          "example": "测试",
+          "member": "string",
+          "name": "EndPointServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动接受。",
+          "example": "False",
+          "member": "bool",
+          "name": "AutoAcceptFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "后端服务的ID，比如lb-xxx。",
+          "example": "lb-75d88uw8",
+          "member": "string",
+          "name": "ServiceInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcEndPointServiceAttributeResponse": {
+      "document": "ModifyVpcEndPointServiceAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcEndPointServiceWhiteListRequest": {
+      "document": "ModifyVpcEndPointServiceWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户UIN。",
+          "example": "123",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端节点服务ID。",
+          "example": "vpcsvc-b2mrmmx7",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "白名单描述信息。",
+          "example": "测试",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcEndPointServiceWhiteListResponse": {
+      "document": "ModifyVpcEndPointServiceWhiteList返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18269,6 +19314,62 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcEndPointServiceUser": {
+      "document": "终端节点服务的服务白名单对象详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "AppId。",
+          "example": "123",
+          "member": "uint64",
+          "name": "Owner",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Uin。",
+          "example": "123",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述信息。",
+          "example": "测试",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "example": "2021-01-14 15:58:40",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端节点服务ID。",
+          "example": "vpcsvc-b2mrmmx7",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -63,13 +63,13 @@
     "GetEidResult": {
       "document": "完成验证后，用EidToken调用本接口获取结果信息，EidToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetEidResultRequest",
-      "name": "获取小程序核身结果信息",
+      "name": "获取E证通核身结果信息",
       "output": "GetEidResultResponse"
     },
     "GetEidToken": {
-      "document": "每次调用人脸核身小程序服务前，需先调用本接口获取EidToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
+      "document": "每次调用E证通小程序服务前，需先调用本接口获取EidToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
       "input": "GetEidTokenRequest",
-      "name": "获取小程序token",
+      "name": "获取E证通Token",
       "output": "GetEidTokenResponse"
     },
     "GetFaceIdResult": {
@@ -935,6 +935,7 @@
         {
           "default": "",
           "document": "本次流程最终验证结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -944,6 +945,7 @@
         {
           "default": "",
           "document": "本次流程最终验证结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
           "member": "string",
           "name": "ErrMsg",
           "required": true,
@@ -953,6 +955,7 @@
         {
           "default": "",
           "document": "本次验证使用的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "440111111111111111",
           "member": "string",
           "name": "IdCard",
           "required": true,
@@ -962,6 +965,7 @@
         {
           "default": "",
           "document": "本次验证使用的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "爱新觉罗永琪",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -971,6 +975,7 @@
         {
           "default": "",
           "document": "Ocr识别结果。民族。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "汉族",
           "member": "string",
           "name": "OcrNation",
           "required": true,
@@ -980,6 +985,7 @@
         {
           "default": "",
           "document": "Ocr识别结果。家庭住址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省",
           "member": "string",
           "name": "OcrAddress",
           "required": true,
@@ -989,6 +995,7 @@
         {
           "default": "",
           "document": "Ocr识别结果。生日。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1999/01/01",
           "member": "string",
           "name": "OcrBirth",
           "required": true,
@@ -998,6 +1005,7 @@
         {
           "default": "",
           "document": "Ocr识别结果。签发机关。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省",
           "member": "string",
           "name": "OcrAuthority",
           "required": true,
@@ -1007,6 +1015,7 @@
         {
           "default": "",
           "document": "Ocr识别结果。有效日期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1999/01/01",
           "member": "string",
           "name": "OcrValidDate",
           "required": true,
@@ -1016,6 +1025,7 @@
         {
           "default": "",
           "document": "Ocr识别结果。姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "爱新觉罗永琪",
           "member": "string",
           "name": "OcrName",
           "required": true,
@@ -1025,6 +1035,7 @@
         {
           "default": "",
           "document": "Ocr识别结果。身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "440111111111111111",
           "member": "string",
           "name": "OcrIdCard",
           "required": true,
@@ -1034,6 +1045,7 @@
         {
           "default": "",
           "document": "Ocr识别结果。性别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "女",
           "member": "string",
           "name": "OcrGender",
           "required": true,
@@ -1043,6 +1055,7 @@
         {
           "default": "",
           "document": "本次流程最终活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "LiveStatus",
           "required": true,
@@ -1052,6 +1065,7 @@
         {
           "default": "",
           "document": "本次流程最终活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
           "member": "string",
           "name": "LiveMsg",
           "required": true,
@@ -1061,6 +1075,7 @@
         {
           "default": "",
           "document": "本次流程最终一比一结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Comparestatus",
           "required": true,
@@ -1070,6 +1085,7 @@
         {
           "default": "",
           "document": "本次流程最终一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
           "member": "string",
           "name": "Comparemsg",
           "required": true,
@@ -1078,7 +1094,8 @@
         },
         {
           "default": "",
-          "document": "本次流程活体一比一的分数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程活体一比一的分数，取值范围 [0.00, 100.00]。相似度大于等于70时才判断为同一人，也可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "88.3",
           "member": "string",
           "name": "Sim",
           "required": true,
@@ -1088,6 +1105,7 @@
         {
           "default": "",
           "document": "地理位置经纬度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "Location",
           "required": true,
@@ -1097,6 +1115,7 @@
         {
           "default": "",
           "document": "Auth接口带入额外信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "Extra",
           "required": true,
@@ -1106,6 +1125,7 @@
         {
           "default": "",
           "document": "本次流程进行的活体一比一流水。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
           "member": "DetectDetail",
           "name": "LivenessDetail",
           "required": true,
@@ -1115,6 +1135,7 @@
         {
           "default": "",
           "document": "手机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Mobile",
           "required": true,
@@ -1124,6 +1145,7 @@
         {
           "default": "",
           "document": "本次流程最终比对库源类型。包括：\n公安商业库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "公安商业库",
           "member": "string",
           "name": "CompareLibType",
           "required": true,
@@ -1423,7 +1445,7 @@
       "members": [
         {
           "default": "",
-          "document": "人脸核身流程的标识，调用DetectAuth接口时生成。",
+          "document": "人脸核身流程的标识，调用GetEidToken接口时生成的。",
           "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
           "member": "string",
           "name": "EidToken",

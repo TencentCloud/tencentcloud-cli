@@ -32,6 +32,22 @@
         "title": "创建资源配置示例"
       }
     ],
+    "DeleteResourceConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResourceConfigs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"ResourceConfigVersions\": [\n        \"1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
+        "title": "正常请求【无子请求】"
+      }
+    ],
+    "DeleteResources": [
+      {
+        "document": "",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=DeleteResources\n&ResourceIds.0=resource-jj4fx50r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
+        "title": "删除资源示例"
+      }
+    ],
     "DeleteTableConfig": [
       {
         "document": "",
@@ -54,6 +70,30 @@
         "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeJobs\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"JobSet\": [\n            {\n                \"TotalRunMillis\": 2264500,\n                \"Zone\": \"xx\",\n                \"Remark\": \"xx\",\n                \"WebUIUrl\": \"xx\",\n                \"Name\": \"xx\",\n                \"Status\": 4,\n                \"UpdateTime\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"JobId\": \"xx\",\n                \"LastOpResult\": \"xx\",\n                \"RunningCuNum\": 1,\n                \"SchedulerType\": 1,\n                \"JobType\": 1,\n                \"CuMem\": 4,\n                \"LatestJobConfigVersion\": 2,\n                \"Region\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"StopTime\": \"xx\",\n                \"PublishedJobConfigVersion\": 2,\n                \"StatusDesc\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"AppId\": 1234567890,\n                \"ClusterStatus\": 0,\n                \"CurrentRunMillis\": 3201,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询作业列表"
+      }
+    ],
+    "DescribeResourceConfigs": [
+      {
+        "document": "",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeResourceConfigs\n&ResourceId=resource-iloy4wei\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ResourceConfigSet\": [\n            {\n                \"Status\": 0,\n                \"Remark\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"ResourceType\": 1,\n                \"ResourceId\": \"xx\",\n                \"Region\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"ResourceLoc\": {\n                    \"StorageType\": 1,\n                    \"Param\": {\n                        \"Path\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\"\n                    }\n                },\n                \"RefJobCount\": 0,\n                \"Version\": 1,\n                \"AppId\": 1257051234,\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "描述作业配置接口示例"
+      }
+    ],
+    "DescribeResourceRelatedJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceRelatedJobs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"DESCByJobConfigCreateTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RefJobInfos\": [\n            {\n                \"JobConfigVersion\": 0,\n                \"ResourceVersion\": 0,\n                \"JobId\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "正常请求【无子请求】"
+      }
+    ],
+    "DescribeResources": [
+      {
+        "document": "",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeResources\n&ResourceIds.0=resource-abd503yt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ResourceSet\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"Name\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"ResourceType\": 1,\n                \"ResourceId\": \"xx\",\n                \"Region\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"Remark\": \"xx\",\n                \"VersionCount\": 0,\n                \"RefJobCount\": 0,\n                \"LatestResourceConfigVersion\": 1,\n                \"AppId\": 1,\n                \"CreateTime\": \"xx\",\n                \"ResourceLoc\": {\n                    \"StorageType\": 1,\n                    \"Param\": {\n                        \"Path\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\"\n                    }\n                }\n            }\n        ]\n    }\n}",
+        "title": "查询资源配置列表示例"
       }
     ],
     "DescribeSystemResources": [

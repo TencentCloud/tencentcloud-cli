@@ -1,10 +1,22 @@
 {
   "actions": {
+    "CreatePicture": {
+      "document": "上传图片",
+      "input": "CreatePictureRequest",
+      "name": "上传图片",
+      "output": "CreatePictureResponse"
+    },
     "CreateTroubleInfo": {
       "document": "创建异常信息",
       "input": "CreateTroubleInfoRequest",
       "name": "创建异常信息",
       "output": "CreateTroubleInfoResponse"
+    },
+    "DeletePicture": {
+      "document": "删除图片",
+      "input": "DeletePictureRequest",
+      "name": "删除图片",
+      "output": "DeletePictureResponse"
     },
     "DescribeAbnormalEvent": {
       "document": "查询SDKAppID下用户的异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询15天内数据，查询起止时间不超过1个小时。支持跨天查询。异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916",
@@ -29,6 +41,12 @@
       "input": "DescribeHistoryScaleRequest",
       "name": "查询历史房间和用户数",
       "output": "DescribeHistoryScaleResponse"
+    },
+    "DescribePicture": {
+      "document": "查询某图片相关参数。",
+      "input": "DescribePictureRequest",
+      "name": "查询图片",
+      "output": "DescribePictureResponse"
     },
     "DescribeRealtimeNetwork": {
       "document": "查询sdkappid维度下每分钟实时网络状态，包括上行丢包与下行丢包。可查询24小时内数据，查询起止时间不低于1分钟，不超过1个小时。",
@@ -89,6 +107,12 @@
       "input": "DismissRoomByStrRoomIdRequest",
       "name": "解散房间（字符串房间号）",
       "output": "DismissRoomByStrRoomIdResponse"
+    },
+    "ModifyPicture": {
+      "document": "修改图片相关参数。",
+      "input": "ModifyPictureRequest",
+      "name": "修改图片",
+      "output": "ModifyPictureResponse"
     },
     "RemoveUser": {
       "document": "接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。",
@@ -209,6 +233,96 @@
       ],
       "usage": "out"
     },
+    "CreatePictureRequest": {
+      "document": "CreatePicture请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "1234567",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片内容经base64编码后的string格式",
+          "example": "abcde",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片后缀名",
+          "example": "jpg",
+          "member": "string",
+          "name": "Suffix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片长度",
+          "example": "15",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片宽度",
+          "example": "15",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显示位置x轴方向",
+          "example": "15",
+          "member": "uint64",
+          "name": "XPosition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显示位置y轴方向",
+          "example": "15",
+          "member": "uint64",
+          "name": "YPosition",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePictureResponse": {
+      "document": "CreatePicture返回参数结构体",
+      "members": [
+        {
+          "document": "图片id",
+          "example": "123",
+          "member": "uint64",
+          "name": "PictureId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTroubleInfoRequest": {
       "document": "CreateTroubleInfo请求参数结构体",
       "members": [
@@ -281,6 +395,42 @@
     },
     "CreateTroubleInfoResponse": {
       "document": "CreateTroubleInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePictureRequest": {
+      "document": "DeletePicture请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片id",
+          "example": "123",
+          "member": "uint64",
+          "name": "PictureId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePictureResponse": {
+      "document": "DeletePicture返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -576,6 +726,78 @@
           "name": "ScaleList",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePictureRequest": {
+      "document": "DescribePicture请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "1234567",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片id,不传时返回该应用下所有图片",
+          "example": "123",
+          "member": "uint64",
+          "name": "PictureId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePictureResponse": {
+      "document": "DescribePicture返回参数结构体",
+      "members": [
+        {
+          "document": "返回的图片记录数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片信息列表",
+          "example": "无",
+          "member": "PictureInfo",
+          "name": "PictureInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1427,6 +1649,78 @@
       ],
       "usage": "in"
     },
+    "ModifyPictureRequest": {
+      "document": "ModifyPicture请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片id",
+          "example": "123",
+          "member": "uint64",
+          "name": "PictureId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片长度",
+          "example": "12",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片宽度",
+          "example": "15",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显示位置x轴方向",
+          "example": "15",
+          "member": "uint64",
+          "name": "XPosition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显示位置y轴方向",
+          "example": "16",
+          "member": "uint64",
+          "name": "YPosition",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPictureResponse": {
+      "document": "ModifyPicture返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OneSdkAppIdTranscodeTimeUsagesInfo": {
       "document": "旁路转码时长的查询结果",
       "members": [
@@ -1538,6 +1832,72 @@
         }
       ],
       "usage": "in"
+    },
+    "PictureInfo": {
+      "document": "图片列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "图片长度",
+          "example": "15",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片宽度",
+          "example": "15",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "显示位置x轴方向",
+          "example": "36",
+          "member": "uint64",
+          "name": "XPosition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "显示位置y轴方向",
+          "example": "36",
+          "member": "uint64",
+          "name": "YPosition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "1234567",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片id",
+          "example": "123",
+          "member": "uint64",
+          "name": "PictureId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PresetLayoutConfig": {
       "document": "自定义模板中有效，指定用户视频在混合画面中的位置。",
