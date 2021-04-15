@@ -70,6 +70,14 @@
         "title": "关闭GME应用140000001"
       }
     ],
+    "ModifyRoomInfo": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=ModifyRoomInfo\n&SdkAppId=1400000000\n&RoomId=88888\n&OperationType=301\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"ErrMsg\": \"\",\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "title": "修改房间信息"
+      }
+    ],
     "ScanVoice": [
       {
         "document": "通过语音文件的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",

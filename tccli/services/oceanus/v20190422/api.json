@@ -587,7 +587,7 @@
       "members": [
         {
           "document": "总的配置版本数量",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -1141,6 +1141,16 @@
           "example": "1",
           "member": "int64",
           "name": "LogCollect",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业的最大并行度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2048",
+          "member": "uint64",
+          "name": "MaxParallelism",
           "required": true,
           "type": "int",
           "value_allowed_null": true

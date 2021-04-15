@@ -15,19 +15,38 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
+        "RequestId": "xx",
         "JobConfigSet": [
             {
-                "JobId": "cql-fktse6bt",
-                "EntrypointClass": "",
-                "ProgramArgs": "",
-                "DefaultParallelism": 2,
+                "ProgramArgs": "xx",
+                "Remark": "xx",
+                "CreatorUin": "xx",
+                "DefaultParallelism": 1,
+                "ResourceRefDetails": [
+                    {
+                        "ResourceId": "xx",
+                        "SystemProvide": 0,
+                        "Type": 0,
+                        "Version": 0,
+                        "Name": "xx"
+                    }
+                ],
+                "COSBucket": "xx",
+                "UpdateTime": "xx",
+                "JobId": "xx",
+                "EntrypointClass": "xx",
                 "Version": 1,
-                "CreateTime": "2019-06-05 15:05:50",
-                "Remark": "",
-                "Properties": []
+                "Properties": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "LogCollect": 0,
+                "MaxParallelism": 1,
+                "CreateTime": "xx"
             }
-        ],
-        "RequestId": "5d5a201f-0a3d-485f-a82f-3c73ccca348a"
+        ]
     }
 }
 ```

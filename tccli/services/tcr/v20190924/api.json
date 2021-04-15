@@ -342,6 +342,12 @@
       "name": "获取触发器日志",
       "output": "DescribeWebhookTriggerLogResponse"
     },
+    "DownloadHelmChart": {
+      "document": "用于在TCR中下载helm chart",
+      "input": "DownloadHelmChartRequest",
+      "name": "下载Helm Chart",
+      "output": "DownloadHelmChartResponse"
+    },
     "DuplicateImagePersonal": {
       "document": "用于在个人版镜像仓库中复制镜像版本",
       "input": "DuplicateImagePersonalRequest",
@@ -3283,6 +3289,132 @@
           "member": "WebhookTrigger",
           "name": "Triggers",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadHelmChartRequest": {
+      "document": "DownloadHelmChart请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "mytest",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Helm chart名称",
+          "example": "test",
+          "member": "string",
+          "name": "ChartName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Helm chart版本",
+          "example": "1.0",
+          "member": "string",
+          "name": "ChartVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadHelmChartResponse": {
+      "document": "DownloadHelmChart返回参数结构体",
+      "members": [
+        {
+          "document": "临时token",
+          "example": "yyy",
+          "member": "string",
+          "name": "TmpToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时的secretId",
+          "example": "ddd",
+          "member": "string",
+          "name": "TmpSecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时的secretKey",
+          "example": "eeee",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储桶信息",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例ID",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "chart信息",
+          "example": "tcr-test/test-1.0.tgz",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开始时间时间戳",
+          "example": "12345",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "token过期时间时间戳",
+          "example": "123456",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

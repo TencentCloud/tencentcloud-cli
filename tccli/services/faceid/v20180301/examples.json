@@ -199,7 +199,7 @@
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=ImageRecognition\n&IdCard=11204416541220243X\n&Name=韦小宝\n&ImageBase64=<ImageBase64>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"Sim\": \"89.88\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "照片人脸核身 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ImageRecognition&SignVer"
+        "title": "照片人脸核身 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ImageRecognition)"
       }
     ],
     "Liveness": [
