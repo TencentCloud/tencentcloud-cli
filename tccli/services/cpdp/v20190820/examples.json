@@ -652,6 +652,22 @@
         "title": "统一下单请求示例"
       }
     ],
+    "UploadTaxList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadTaxList\n<公共请求参数>\n\n{\n    \"Channel\": 1,\n    \"BeginMonth\": \"2020-10\",\n    \"EndMonth\": \"2020-11\",\n    \"FileUrl\": \"http://cos.qcloud.com/tax.xlsx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaxId\": \"tax-0db3m7jtef\",\n        \"RequestId\": \"8aadd86c-1727-40ef-9927-9f87201449af\"\n    }\n}",
+        "title": "直播平台-上传代理商完税列表"
+      }
+    ],
+    "UploadTaxPayment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadTaxPayment\n<公共请求参数>\n\n{\n    \"Channel\": 1,\n    \"TaxId\": \"tax-xxx\",\n    \"FileUrl\": \"http://cos.qcloud.com/tax.xlsx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8aadd86c-1727-40ef-9927-9f87201449af\"\n    }\n}",
+        "title": "直播平台-上传代理商完税证明"
+      }
+    ],
     "WithdrawCashMembership": [
       {
         "document": "",

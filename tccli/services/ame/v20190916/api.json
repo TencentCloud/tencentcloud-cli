@@ -1001,7 +1001,7 @@
         {
           "default": "",
           "document": "资源方音乐Id",
-          "example": "E4CC97317AFDB8BA5569BB40AF7AEF08",
+          "example": "无",
           "member": "string",
           "name": "MusicId",
           "required": true,
@@ -1459,7 +1459,7 @@
         {
           "default": "",
           "document": "资源方对应音乐Id",
-          "example": "E4CC97317AFDB8BA5569BB40AF7AEF08",
+          "example": "无",
           "member": "string",
           "name": "MusicIds",
           "required": true,

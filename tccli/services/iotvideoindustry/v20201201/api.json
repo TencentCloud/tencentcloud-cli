@@ -108,6 +108,12 @@
       "name": "批量查询分组信息",
       "output": "DescribeGroupsResponse"
     },
+    "DescribeRecordStream": {
+      "document": "获取回放视频流(NVR录制用)\nRecordId和StartTime/EndTime互斥\n当存在RecordId时，StartTime和EndTime无效\n当RecordId为空，StartTime和EndTime生效",
+      "input": "DescribeRecordStreamRequest",
+      "name": "获取回放视频流(NVR录制用)",
+      "output": "DescribeRecordStreamResponse"
+    },
     "DescribeSIPServer": {
       "document": "本接口用于获取SIP服务器相关配置，用户可以通过这些配置项，将设备通过GB28181协议注册到本服务。",
       "input": "DescribeSIPServerRequest",
@@ -131,6 +137,12 @@
       "input": "DescribeSubGroupsRequest",
       "name": "查询子分组列表",
       "output": "DescribeSubGroupsResponse"
+    },
+    "DescribeVideoList": {
+      "document": "根据时间获取回放文件列表(云端录制用)",
+      "input": "DescribeVideoListRequest",
+      "name": "根据时间获取回放文件列表(云端录制用)",
+      "output": "DescribeVideoListResponse"
     },
     "GetRecordDatesByDev": {
       "document": "本接口(GetRecordDatesByDev)用于查询设备含有录像文件的日期列表。",
@@ -1206,6 +1218,134 @@
       ],
       "type": "object"
     },
+    "DescribeRecordStreamData": {
+      "document": "DescribeRecordStreamData 复杂类型",
+      "members": [
+        {
+          "default": "",
+          "document": "Rtsp地址",
+          "example": "NULL",
+          "member": "string",
+          "name": "RtspAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Rtmp地址",
+          "example": "rtmp://dev-pl.video.tencentcs.com/live/1099154940?txSecret=33f87",
+          "member": "string",
+          "name": "RtmpAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Hls地址",
+          "example": "https://dev-pl.video.tencentcs.com/live/1099154940.m3u8?txSecret",
+          "member": "string",
+          "name": "HlsAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Flv地址",
+          "example": "https://dev-pl.video.tencentcs.com/live/1099154940.flv?txSecret=",
+          "member": "string",
+          "name": "FlvAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流Id",
+          "example": "1099154940",
+          "member": "string",
+          "name": "StreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeRecordStreamRequest": {
+      "document": "DescribeRecordStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备Id",
+          "example": "34020000001180000036_34020000001320000092",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流失效时间",
+          "example": "1616914614",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "录像文件Id",
+          "example": "1615995219_1616001641",
+          "member": "string",
+          "name": "RecordId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "录像流开始时间，当录像文件Id为空时有效",
+          "example": "1615995219",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "录像流结束时间，当录像文件Id为空时有效",
+          "example": "1616001641",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordStreamResponse": {
+      "document": "DescribeRecordStream返回参数结构体",
+      "members": [
+        {
+          "document": "结果",
+          "example": "NULL",
+          "member": "DescribeRecordStreamData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSIPServerRequest": {
       "document": "DescribeSIPServer请求参数结构体",
       "members": [],
@@ -1420,6 +1560,78 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoListRequest": {
+      "document": "DescribeVideoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间戳，秒级",
+          "example": "1616660711",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，秒级",
+          "example": "1616661017",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoListResponse": {
+      "document": "DescribeVideoList返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "录像详情列表",
+          "example": "无",
+          "member": "RecordTaskItem",
+          "name": "VideoList",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

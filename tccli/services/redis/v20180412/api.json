@@ -377,6 +377,12 @@
       "input": "UpgradeInstanceVersionRequest",
       "name": "升级实例版本或者结构",
       "output": "UpgradeInstanceVersionResponse"
+    },
+    "UpgradeVersionToMultiAvailabilityZones": {
+      "document": "升级实例支持多AZ",
+      "input": "UpgradeVersionToMultiAvailabilityZonesRequest",
+      "name": "升级实例支持多AZ",
+      "output": "UpgradeVersionToMultiAvailabilityZonesResponse"
     }
   },
   "metadata": {
@@ -6972,6 +6978,42 @@
           "member": "string",
           "name": "DealId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeVersionToMultiAvailabilityZonesRequest": {
+      "document": "UpgradeVersionToMultiAvailabilityZones请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-rhlppeye",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeVersionToMultiAvailabilityZonesResponse": {
+      "document": "UpgradeVersionToMultiAvailabilityZones返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "140171780",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

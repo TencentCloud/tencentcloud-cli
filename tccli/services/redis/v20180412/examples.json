@@ -509,6 +509,14 @@
         "output": "{\n    \"Response\": {\n        \"DealId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "示例"
       }
+    ],
+    "UpgradeVersionToMultiAvailabilityZones": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=UpgradeVersionToMultiAvailabilityZones\n&InstanceId=crs-5qlrlhux\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"140171780\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
+        "title": "请求示例"
+      }
     ]
   },
   "version": "1.0"

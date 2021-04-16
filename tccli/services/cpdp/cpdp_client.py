@@ -938,7 +938,7 @@ def doCreateInvoice(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doApplyOutwardOrder(args, parsed_globals):
+def doUploadTaxList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -952,9 +952,9 @@ def doApplyOutwardOrder(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplyOutwardOrderRequest()
+    model = models.UploadTaxListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ApplyOutwardOrder(model)
+    rsp = client.UploadTaxList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1080,6 +1080,31 @@ def doQueryMerchantBalance(args, parsed_globals):
     model = models.QueryMerchantBalanceRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.QueryMerchantBalance(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doApplyOutwardOrder(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ApplyOutwardOrderRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ApplyOutwardOrder(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1480,6 +1505,31 @@ def doCreateTransferBatch(args, parsed_globals):
     model = models.CreateTransferBatchRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateTransferBatch(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUploadTaxPayment(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UploadTaxPaymentRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UploadTaxPayment(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2086,12 +2136,13 @@ ACTION_MAP = {
     "QueryOrder": doQueryOrder,
     "QueryBillDownloadURL": doQueryBillDownloadURL,
     "CreateInvoice": doCreateInvoice,
-    "ApplyOutwardOrder": doApplyOutwardOrder,
+    "UploadTaxList": doUploadTaxList,
     "BindRelateAccReUnionPay": doBindRelateAccReUnionPay,
     "TransferSinglePay": doTransferSinglePay,
     "QueryOutwardOrder": doQueryOutwardOrder,
     "QueryPayerInfo": doQueryPayerInfo,
     "QueryMerchantBalance": doQueryMerchantBalance,
+    "ApplyOutwardOrder": doApplyOutwardOrder,
     "ApplyTrade": doApplyTrade,
     "RefundMemberTransaction": doRefundMemberTransaction,
     "QueryTrade": doQueryTrade,
@@ -2108,6 +2159,7 @@ ACTION_MAP = {
     "QueryApplicationMaterial": doQueryApplicationMaterial,
     "ApplyReWithdrawal": doApplyReWithdrawal,
     "CreateTransferBatch": doCreateTransferBatch,
+    "UploadTaxPayment": doUploadTaxPayment,
     "QueryCustAcctIdBalance": doQueryCustAcctIdBalance,
     "QuerySmallAmountTransfer": doQuerySmallAmountTransfer,
     "MigrateOrderRefund": doMigrateOrderRefund,

@@ -2312,7 +2312,7 @@
       "document": "DescribeAccountBalance返回参数结构体",
       "members": [
         {
-          "document": "云账户信息中的”展示可用余额”字段，单位为\"分\"",
+          "document": "接口做过变更,为兼容老接口,本字段与RealBalance相同,为当前真实可用余额,单位 分",
           "example": "10000",
           "member": "int64",
           "name": "Balance",
@@ -2330,7 +2330,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "当前真实可用余额",
+          "document": "当前真实可用余额,单位 分",
           "example": "1",
           "member": "float",
           "name": "RealBalance",
@@ -2339,7 +2339,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "现金账户余额",
+          "document": "现金账户余额,单位 分",
           "example": "1",
           "member": "float",
           "name": "CashAccountBalance",
@@ -2348,7 +2348,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "收益转入账户余额",
+          "document": "收益转入账户余额,单位 分",
           "example": "1",
           "member": "float",
           "name": "IncomeIntoAccountBalance",
@@ -2357,7 +2357,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "赠送账户余额",
+          "document": "赠送账户余额,单位 分",
           "example": "1",
           "member": "float",
           "name": "PresentAccountBalance",
@@ -2366,7 +2366,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "冻结金额",
+          "document": "冻结金额,单位 分",
           "example": "1",
           "member": "float",
           "name": "FreezeAmount",
@@ -2375,7 +2375,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "欠费金额",
+          "document": "欠费金额,单位 分",
           "example": "1",
           "member": "float",
           "name": "OweAmount",

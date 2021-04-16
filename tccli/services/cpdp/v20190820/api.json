@@ -480,6 +480,18 @@
       "name": "聚鑫-统一下单接口",
       "output": "UnifiedOrderResponse"
     },
+    "UploadTaxList": {
+      "document": "直播平台-上传代理商完税列表",
+      "input": "UploadTaxListRequest",
+      "name": "直播平台-上传代理商完税列表",
+      "output": "UploadTaxListResponse"
+    },
+    "UploadTaxPayment": {
+      "document": "直播平台-上传代理商完税证明",
+      "input": "UploadTaxPaymentRequest",
+      "name": "直播平台-上传代理商完税证明",
+      "output": "UploadTaxPaymentResponse"
+    },
     "WithdrawCashMembership": {
       "document": "会员提现-不验证。此接口受理会员发起的提现申请。会员子账户的可提现余额、可用余额会减少，市场的资金汇总账户(监管账户)会减少相应的发生金额，提现到会员申请的收款账户。\t\t",
       "input": "WithdrawCashMembershipRequest",
@@ -14058,6 +14070,105 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadTaxListRequest": {
+      "document": "UploadTaxList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台渠道",
+          "member": "int64",
+          "name": "Channel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始月份，YYYY-MM",
+          "member": "string",
+          "name": "BeginMonth",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束月份。如果只上传一个月，结束月份等于起始月份",
+          "member": "string",
+          "name": "EndMonth",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "完税列表下载地址",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadTaxListResponse": {
+      "document": "UploadTaxList返回参数结构体",
+      "members": [
+        {
+          "document": "完税ID",
+          "member": "string",
+          "name": "TaxId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadTaxPaymentRequest": {
+      "document": "UploadTaxPayment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台渠道",
+          "member": "int64",
+          "name": "Channel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "完税ID",
+          "member": "string",
+          "name": "TaxId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "完税列表下载地址",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadTaxPaymentResponse": {
+      "document": "UploadTaxPayment返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
