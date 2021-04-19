@@ -46,6 +46,14 @@
         "title": "查询识别结果列表"
       }
     ],
+    "DescribeRoomInfo": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeRoomInfo\n&SdkAppId=1400000000\n&RoomIds.0=88888\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"RoomUsers\": [\n            {\n                \"RoomId\": 88888,\n                \"Uins\": [\n                    1234,\n                    5678\n                ]\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "title": "获取房间内用户信息"
+      }
+    ],
     "DescribeScanResultList": [
       {
         "document": "",

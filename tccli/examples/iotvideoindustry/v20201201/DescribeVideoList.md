@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli iotvideoindustry DescribeVideoList --cli-unfold-argument  \
+    --DeviceId 99870353841320000007_99870353841320000007 \
     --Offset 0 \
     --Limit 10 \
     --StartTime 1616660711 \

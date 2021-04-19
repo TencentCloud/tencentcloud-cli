@@ -30,6 +30,12 @@
       "name": "查询识别结果列表",
       "output": "DescribeFilterResultListResponse"
     },
+    "DescribeRoomInfo": {
+      "document": "获取房间内用户信息",
+      "input": "DescribeRoomInfoRequest",
+      "name": "获取房间内用户信息",
+      "output": "DescribeRoomInfoResponse"
+    },
     "DescribeScanResultList": {
       "document": "本接口(DescribeScanResultList)用于查询语音检测结果，查询任务列表最多支持100个。\n<p style=\"color:red\">如果在提交语音检测任务时未设置 Callback 字段，则需要通过本接口获取检测结果</p>",
       "input": "DescribeScanResultListRequest",
@@ -607,6 +613,60 @@
       ],
       "type": "object"
     },
+    "DescribeRoomInfoRequest": {
+      "document": "DescribeRoomInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号列表，最大不能超过10个",
+          "example": "[1234, 2345]",
+          "member": "uint64",
+          "name": "RoomIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomInfoResponse": {
+      "document": "DescribeRoomInfo返回参数结构体",
+      "members": [
+        {
+          "document": "操作结果, 0成功, 非0失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "房间用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoomUser",
+          "name": "RoomUsers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScanResult": {
       "document": "语音检测结果返回",
       "members": [
@@ -1042,6 +1102,32 @@
         }
       ],
       "usage": "both"
+    },
+    "RoomUser": {
+      "document": "房间内用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "房间id",
+          "example": "1234",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间里用户uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[123456]",
+          "member": "uint64",
+          "name": "Uins",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ScanDetail": {
       "document": "语音检测详情",

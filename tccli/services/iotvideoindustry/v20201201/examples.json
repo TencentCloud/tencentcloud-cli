@@ -193,7 +193,7 @@
     "DescribeVideoList": [
       {
         "document": "根据时间获取回放文件列表(云端录制用)",
-        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"StartTime\": 1616660711,\n    \"EndTime\": 1616661017\n}",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoList\n<公共请求参数>\n\n{\n    \"DeviceId\": \"99870353841320000007_99870353841320000007\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"StartTime\": 1616660711,\n    \"EndTime\": 1616661017\n}",
         "output": "{\n    \"Response\": {\n        \"VideoList\": {\n            \"EventId\": 1,\n            \"VideoUrl\": \"http://1258344699.vod2.myqcloud.com/1b875455vodcq1258344699/32dcdd5d5285890815979923365/f0.mp4\",\n            \"RecordTaskId\": \"20210325-dced0113e4384a0da0d832cc260d9d7c\",\n            \"StartTime\": 1616661013,\n            \"RecordStatus\": 0,\n            \"RecordPlanId\": \"plan-5sio5j9m\",\n            \"EndTime\": 1616661314\n        },\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "根据时间获取回放文件列表(云端录制用)"
       }

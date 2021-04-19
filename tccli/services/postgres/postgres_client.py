@@ -563,6 +563,31 @@ def doDescribeZones(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doIsolateDBInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PostgresClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.IsolateDBInstancesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.IsolateDBInstances(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteServerlessDBInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -813,7 +838,7 @@ def doDescribeAccounts(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doOpenServerlessDBExtranetAccess(args, parsed_globals):
+def doDisIsolateDBInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -827,9 +852,9 @@ def doOpenServerlessDBExtranetAccess(args, parsed_globals):
     client = mod.PostgresClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.OpenServerlessDBExtranetAccessRequest()
+    model = models.DisIsolateDBInstancesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.OpenServerlessDBExtranetAccess(model)
+    rsp = client.DisIsolateDBInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1063,6 +1088,31 @@ def doRebalanceReadOnlyGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doOpenServerlessDBExtranetAccess(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PostgresClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.OpenServerlessDBExtranetAccessRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.OpenServerlessDBExtranetAccess(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20170312": postgres_client_v20170312,
 
@@ -1096,6 +1146,7 @@ ACTION_MAP = {
     "CreateServerlessDBInstance": doCreateServerlessDBInstance,
     "DescribeDBInstances": doDescribeDBInstances,
     "DescribeZones": doDescribeZones,
+    "IsolateDBInstances": doIsolateDBInstances,
     "DeleteServerlessDBInstance": doDeleteServerlessDBInstance,
     "InitDBInstances": doInitDBInstances,
     "InquiryPriceUpgradeDBInstance": doInquiryPriceUpgradeDBInstance,
@@ -1106,7 +1157,7 @@ ACTION_MAP = {
     "CloseDBExtranetAccess": doCloseDBExtranetAccess,
     "AddDBInstanceToReadOnlyGroup": doAddDBInstanceToReadOnlyGroup,
     "DescribeAccounts": doDescribeAccounts,
-    "OpenServerlessDBExtranetAccess": doOpenServerlessDBExtranetAccess,
+    "DisIsolateDBInstances": doDisIsolateDBInstances,
     "DescribeServerlessDBInstances": doDescribeServerlessDBInstances,
     "RenewInstance": doRenewInstance,
     "DescribeDatabases": doDescribeDatabases,
@@ -1116,6 +1167,7 @@ ACTION_MAP = {
     "RemoveDBInstanceFromReadOnlyGroup": doRemoveDBInstanceFromReadOnlyGroup,
     "DescribeProductConfig": doDescribeProductConfig,
     "RebalanceReadOnlyGroup": doRebalanceReadOnlyGroup,
+    "OpenServerlessDBExtranetAccess": doOpenServerlessDBExtranetAccess,
 
 }
 

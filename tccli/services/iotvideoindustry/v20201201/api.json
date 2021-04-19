@@ -1608,6 +1608,15 @@
           "name": "Limit",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备Id",
+          "example": "99870353841320000007_99870353841320000007",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

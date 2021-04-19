@@ -139,10 +139,16 @@
       "output": "DescribeZonesResponse"
     },
     "DestroyDBInstance": {
-      "document": "本接口 (DestroyDBInstance) 用于销毁指定DBInstanceId对应的实例。当前仅适用于按量计费实例。",
+      "document": "本接口 (DestroyDBInstance) 用于彻底下线指定DBInstanceId对应的实例，下线后实例数据将彻底删除，无法找回，只能下线隔离中的实例。",
       "input": "DestroyDBInstanceRequest",
-      "name": "销毁实例",
+      "name": "下线实例",
       "output": "DestroyDBInstanceResponse"
+    },
+    "DisIsolateDBInstances": {
+      "document": "本接口（DisIsolateDBInstances）用于解隔离实例",
+      "input": "DisIsolateDBInstancesRequest",
+      "name": "解隔离实例",
+      "output": "DisIsolateDBInstancesResponse"
     },
     "InitDBInstances": {
       "document": "本接口 (InitDBInstances) 用于初始化云数据库PostgreSQL实例。",
@@ -167,6 +173,12 @@
       "input": "InquiryPriceUpgradeDBInstanceRequest",
       "name": "查询升级实例价格",
       "output": "InquiryPriceUpgradeDBInstanceResponse"
+    },
+    "IsolateDBInstances": {
+      "document": "本接口（IsolateDBInstances）用于隔离实例",
+      "input": "IsolateDBInstancesRequest",
+      "name": "隔离实例",
+      "output": "IsolateDBInstancesResponse"
     },
     "ModifyAccountRemark": {
       "document": "本接口（ModifyAccountRemark）用于修改帐号备注。",
@@ -2478,7 +2490,8 @@
       "members": [
         {
           "default": "",
-          "document": "待删除实例标识符",
+          "document": "待下线实例ID",
+          "example": "postgres-19nmz2xb",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -2489,6 +2502,60 @@
     },
     "DestroyDBInstanceResponse": {
       "document": "DestroyDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisIsolateDBInstancesRequest": {
+      "document": "DisIsolateDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID列表",
+          "example": "[\"postgres-xxxxxxx\"]",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "包年包月实例解隔离时购买时常 以月为单位",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否使用代金券",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "代金券id列表",
+          "example": "[\"a\"]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisIsolateDBInstancesResponse": {
+      "document": "DisIsolateDBInstances返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2811,6 +2878,33 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDBInstancesRequest": {
+      "document": "IsolateDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID集合",
+          "example": "[\"postgres-xxxxxxxx\"]",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDBInstancesResponse": {
+      "document": "IsolateDBInstances返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

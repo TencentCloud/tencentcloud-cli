@@ -204,6 +204,14 @@
         "title": "销毁PostgreSQL实例"
       }
     ],
+    "DisIsolateDBInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DisIsolateDBInstances\n&DBInstanceIdSet.0=postgres-xxxxxxxx\n&Period=1\n&AutoVoucher=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad1ca88b-5cc8-4c4c-ab10-a882123f8daa\"\n    }\n}",
+        "title": "解隔离实例"
+      }
+    ],
     "InitDBInstances": [
       {
         "document": "例如：初始化的实例Id为: postgres-6fego161",
@@ -240,6 +248,14 @@
         "input": "https://postgres.tencentcloudapi.com/?Action=InquiryPriceUpgradeDBInstance\n&DBInstanceId=postgres-6fego161\n&Memory=4\n&Storage=500\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": 1300,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"OriginalPrice\": 1300\n    }\n}",
         "title": "查询实例扩容价格"
+      }
+    ],
+    "IsolateDBInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=IsolateDBInstances\n&DBInstanceIdSet.0=postgres-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
+        "title": "隔离实例"
       }
     ],
     "ModifyAccountRemark": [

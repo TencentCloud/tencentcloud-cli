@@ -2577,6 +2577,7 @@
         {
           "default": "",
           "document": "API 所在的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -2585,6 +2586,7 @@
         {
           "default": "",
           "document": "API 接口唯一 ID。",
+          "example": "api-e92i2jds",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -2598,8 +2600,10 @@
       "members": [
         {
           "document": "删除操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },

@@ -6326,6 +6326,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6334,6 +6335,7 @@
         {
           "default": "",
           "document": "开始时间戳。",
+          "example": "1585142640",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -6342,6 +6344,7 @@
         {
           "default": "",
           "document": "结束时间戳。",
+          "example": "1585142640",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -6350,6 +6353,7 @@
         {
           "default": "",
           "document": "客户端 Host 列表。",
+          "example": "[\"userhosts0\\n\"]",
           "member": "string",
           "name": "UserHosts",
           "required": false,
@@ -6358,6 +6362,7 @@
         {
           "default": "",
           "document": "客户端 用户名 列表。",
+          "example": "[\"usename0\\n\"]",
           "member": "string",
           "name": "UserNames",
           "required": false,
@@ -6366,6 +6371,7 @@
         {
           "default": "",
           "document": "访问的 数据库 列表。",
+          "example": "[\"database0\\n\"]",
           "member": "string",
           "name": "DataBases",
           "required": false,
@@ -6374,6 +6380,7 @@
         {
           "default": "",
           "document": "排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。",
+          "example": "RowsSent",
           "member": "string",
           "name": "SortBy",
           "required": false,
@@ -6382,6 +6389,7 @@
         {
           "default": "",
           "document": "升序还是降序排列。当前支持：ASC,DESC 。",
+          "example": "DESC",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -6390,6 +6398,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6398,6 +6407,7 @@
         {
           "default": "",
           "document": "一次性返回的记录数量，默认为100，最大为400。",
+          "example": "400",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6406,6 +6416,7 @@
         {
           "default": "",
           "document": "仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。",
+          "example": "master",
           "member": "string",
           "name": "InstType",
           "required": false,
@@ -6419,15 +6430,19 @@
       "members": [
         {
           "document": "符合条件的记录总数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "查询到的记录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SlowLogItem",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
