@@ -84,6 +84,18 @@
       "name": "创建实例公网访问白名单策略",
       "output": "CreateSecurityPolicyResponse"
     },
+    "CreateTagRetentionExecution": {
+      "document": "手动执行版本保留",
+      "input": "CreateTagRetentionExecutionRequest",
+      "name": "手动执行版本保留",
+      "output": "CreateTagRetentionExecutionResponse"
+    },
+    "CreateTagRetentionRule": {
+      "document": "创建版本保留规则",
+      "input": "CreateTagRetentionRuleRequest",
+      "name": "创建版本保留规则",
+      "output": "CreateTagRetentionRuleResponse"
+    },
     "CreateUserPersonal": {
       "document": "创建个人用户",
       "input": "CreateUserPersonalRequest",
@@ -173,6 +185,12 @@
       "input": "DeleteSecurityPolicyRequest",
       "name": "删除实例公网访问白名单策略",
       "output": "DeleteSecurityPolicyResponse"
+    },
+    "DeleteTagRetentionRule": {
+      "document": "删除版本保留规则",
+      "input": "DeleteTagRetentionRuleRequest",
+      "name": "删除版本保留规则",
+      "output": "DeleteTagRetentionRuleResponse"
     },
     "DeleteWebhookTrigger": {
       "document": "删除触发器",
@@ -324,6 +342,24 @@
       "name": "查询实例公网访问白名单策略",
       "output": "DescribeSecurityPoliciesResponse"
     },
+    "DescribeTagRetentionExecution": {
+      "document": "查询版本保留执行记录",
+      "input": "DescribeTagRetentionExecutionRequest",
+      "name": "查询版本保留执行记录",
+      "output": "DescribeTagRetentionExecutionResponse"
+    },
+    "DescribeTagRetentionExecutionTask": {
+      "document": "查询版本保留执行任务",
+      "input": "DescribeTagRetentionExecutionTaskRequest",
+      "name": "查询版本保留执行任务",
+      "output": "DescribeTagRetentionExecutionTaskResponse"
+    },
+    "DescribeTagRetentionRules": {
+      "document": "查询版本保留规则",
+      "input": "DescribeTagRetentionRulesRequest",
+      "name": "查询版本保留规则",
+      "output": "DescribeTagRetentionRulesResponse"
+    },
     "DescribeUserQuotaPersonal": {
       "document": "查询个人用户配额",
       "input": "DescribeUserQuotaPersonalRequest",
@@ -419,6 +455,12 @@
       "input": "ModifySecurityPolicyRequest",
       "name": "更新实例公网访问白名单",
       "output": "ModifySecurityPolicyResponse"
+    },
+    "ModifyTagRetentionRule": {
+      "document": "更新版本保留规则",
+      "input": "ModifyTagRetentionRuleRequest",
+      "name": "更新版本保留规则",
+      "output": "ModifyTagRetentionRuleResponse"
     },
     "ModifyUserPasswordPersonal": {
       "document": "修改个人用户登录密码",
@@ -1271,6 +1313,114 @@
       ],
       "type": "object"
     },
+    "CreateTagRetentionExecutionRequest": {
+      "document": "CreateTagRetentionExecution请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本保留规则Id",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否模拟执行",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagRetentionExecutionResponse": {
+      "document": "CreateTagRetentionExecution返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagRetentionRuleRequest": {
+      "document": "CreateTagRetentionRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间的Id",
+          "example": "1",
+          "member": "int64",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "保留策略",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionRule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "执行周期，当前只能选择： manual;daily;weekly;monthly",
+          "example": "manual",
+          "member": "string",
+          "name": "CronSetting",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否禁用规则",
+          "example": "false",
+          "member": "bool",
+          "name": "Disabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagRetentionRuleResponse": {
+      "document": "CreateTagRetentionRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUserPersonalRequest": {
       "document": "CreateUserPersonal请求参数结构体",
       "members": [
@@ -1794,6 +1944,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTagRetentionRuleRequest": {
+      "document": "DeleteTagRetentionRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本保留规则的Id",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTagRetentionRuleResponse": {
+      "document": "DeleteTagRetentionRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3140,6 +3326,231 @@
       ],
       "type": "object"
     },
+    "DescribeTagRetentionExecutionRequest": {
+      "document": "DescribeTagRetentionExecution请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则Id",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页PageSize",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Page",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagRetentionExecutionResponse": {
+      "document": "DescribeTagRetentionExecution返回参数结构体",
+      "members": [
+        {
+          "document": "版本保留执行记录列表",
+          "example": "无",
+          "member": "RetentionExecution",
+          "name": "RetentionExecutionList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本保留执行记录总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagRetentionExecutionTaskRequest": {
+      "document": "DescribeTagRetentionExecutionTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则Id",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则执行Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Page",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页PageSize",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagRetentionExecutionTaskResponse": {
+      "document": "DescribeTagRetentionExecutionTask返回参数结构体",
+      "members": [
+        {
+          "document": "版本保留执行任务列表",
+          "example": "无",
+          "member": "RetentionTask",
+          "name": "RetentionTaskList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本保留执行任务总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagRetentionRulesRequest": {
+      "document": "DescribeTagRetentionRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间的名称",
+          "example": "mytest",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页PageSize",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Page",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagRetentionRulesResponse": {
+      "document": "DescribeTagRetentionRules返回参数结构体",
+      "members": [
+        {
+          "document": "版本保留策略列表",
+          "example": "无",
+          "member": "RetentionPolicy",
+          "name": "RetentionPolicyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本保留策略总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserQuotaPersonalRequest": {
       "document": "DescribeUserQuotaPersonal请求参数结构体",
       "members": [],
@@ -4276,6 +4687,78 @@
       ],
       "type": "object"
     },
+    "ModifyTagRetentionRuleRequest": {
+      "document": "ModifyTagRetentionRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间的Id，必须填写原有的命名空间id",
+          "example": "1",
+          "member": "int64",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "保留策略",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionRule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "执行周期，必须填写为原来的设置",
+          "example": "manual",
+          "member": "string",
+          "name": "CronSetting",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则Id",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否禁用规则",
+          "example": "false",
+          "member": "bool",
+          "name": "Disabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagRetentionRuleResponse": {
+      "document": "ModifyTagRetentionRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserPasswordPersonalRequest": {
       "document": "ModifyUserPasswordPersonal请求参数结构体",
       "members": [
@@ -5090,6 +5573,240 @@
           "name": "LimitInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RetentionExecution": {
+      "document": "版本保留规则执行",
+      "members": [
+        {
+          "default": "",
+          "document": "执行Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属规则id",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行的开始时间",
+          "example": "“2021-12-02”",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行的结束时间",
+          "example": "“2021-12-02”",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行的状态，Failed, Succeed, Stopped, InProgress",
+          "example": "Successed",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RetentionPolicy": {
+      "document": "版本保留策略",
+      "members": [
+        {
+          "default": "",
+          "document": "版本保留策略Id",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间的名称",
+          "example": "mytest",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则列表",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionRuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定期执行方式",
+          "example": "manual",
+          "member": "string",
+          "name": "CronSetting",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用规则",
+          "example": "false",
+          "member": "bool",
+          "name": "Disabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用",
+          "example": "2021-02-03",
+          "member": "string",
+          "name": "NextExecutionTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RetentionRule": {
+      "document": "版本保留规则",
+      "members": [
+        {
+          "default": "",
+          "document": "支持的策略，可选值为latestPushedK（保留最新推送多少个版本）nDaysSinceLastPush（保留近天内推送）",
+          "example": "latestPushedK",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则设置下的对应值",
+          "example": "0",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RetentionTask": {
+      "document": "版本保留执行的规则",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属的规则执行Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始时间",
+          "example": "“2021-01-22”",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务结束时间",
+          "example": "\"2021-01-22\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务的执行状态，Failed, Succeed, Stopped, InProgress",
+          "example": "Succeed",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总tag数",
+          "example": "64",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留tag数",
+          "example": "1",
+          "member": "int64",
+          "name": "Retained",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用的仓库",
+          "example": "mytest",
+          "member": "string",
+          "name": "Repository",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

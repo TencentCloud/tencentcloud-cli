@@ -113,6 +113,31 @@ def doCreateImageLifecyclePersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTagRetentionExecutionTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTagRetentionExecutionTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTagRetentionExecutionTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateSecurityPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -188,6 +213,31 @@ def doCreateNamespace(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteImage(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteImageRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteImage(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeImagePersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -213,7 +263,7 @@ def doDescribeImagePersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeImageLifecyclePersonal(args, parsed_globals):
+def doModifyApplicationTriggerPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -227,9 +277,9 @@ def doDescribeImageLifecyclePersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeImageLifecyclePersonalRequest()
+    model = models.ModifyApplicationTriggerPersonalRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeImageLifecyclePersonal(model)
+    rsp = client.ModifyApplicationTriggerPersonal(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -238,7 +288,7 @@ def doDescribeImageLifecyclePersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeImages(args, parsed_globals):
+def doDescribeImageLifecycleGlobalPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,9 +302,34 @@ def doDescribeImages(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeImagesRequest()
+    model = models.DescribeImageLifecycleGlobalPersonalRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeImages(model)
+    rsp = client.DescribeImageLifecycleGlobalPersonal(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTagRetentionRule(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTagRetentionRuleRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateTagRetentionRule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -280,6 +355,56 @@ def doDeleteInstance(args, parsed_globals):
     model = models.DeleteInstanceRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DeleteInstance(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteTagRetentionRule(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTagRetentionRuleRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteTagRetentionRule(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTagRetentionExecution(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTagRetentionExecutionRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTagRetentionExecution(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -438,7 +563,7 @@ def doModifyRepositoryInfoPersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRepositoryPersonal(args, parsed_globals):
+def doCreateTagRetentionExecution(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -452,9 +577,9 @@ def doDescribeRepositoryPersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRepositoryPersonalRequest()
+    model = models.CreateTagRetentionExecutionRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeRepositoryPersonal(model)
+    rsp = client.CreateTagRetentionExecution(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -563,7 +688,7 @@ def doDeleteRepositoryPersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeWebhookTriggerLog(args, parsed_globals):
+def doDescribeRepositoryPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -577,9 +702,9 @@ def doDescribeWebhookTriggerLog(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeWebhookTriggerLogRequest()
+    model = models.DescribeRepositoryPersonalRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeWebhookTriggerLog(model)
+    rsp = client.DescribeRepositoryPersonal(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -605,6 +730,31 @@ def doDescribeImageManifests(args, parsed_globals):
     model = models.DescribeImageManifestsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeImageManifests(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteImageLifecycleGlobalPersonal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteImageLifecycleGlobalPersonalRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteImageLifecycleGlobalPersonal(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -888,6 +1038,31 @@ def doDeleteImagePersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWebhookTriggerLog(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWebhookTriggerLogRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeWebhookTriggerLog(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyWebhookTrigger(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -963,7 +1138,7 @@ def doCreateInstance(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBatchDeleteImagePersonal(args, parsed_globals):
+def doDescribeReplicationInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -977,9 +1152,9 @@ def doBatchDeleteImagePersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BatchDeleteImagePersonalRequest()
+    model = models.DescribeReplicationInstancesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.BatchDeleteImagePersonal(model)
+    rsp = client.DescribeReplicationInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1063,7 +1238,7 @@ def doDescribeSecurityPolicies(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeImageLifecycleGlobalPersonal(args, parsed_globals):
+def doBatchDeleteRepositoryPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1077,9 +1252,34 @@ def doDescribeImageLifecycleGlobalPersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeImageLifecycleGlobalPersonalRequest()
+    model = models.BatchDeleteRepositoryPersonalRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeImageLifecycleGlobalPersonal(model)
+    rsp = client.BatchDeleteRepositoryPersonal(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteImageLifecyclePersonal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteImageLifecyclePersonalRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteImageLifecyclePersonal(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1213,7 +1413,7 @@ def doDescribeInternalEndpoints(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyApplicationTriggerPersonal(args, parsed_globals):
+def doDescribeImageLifecyclePersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1227,9 +1427,9 @@ def doModifyApplicationTriggerPersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyApplicationTriggerPersonalRequest()
+    model = models.DescribeImageLifecyclePersonalRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyApplicationTriggerPersonal(model)
+    rsp = client.DescribeImageLifecyclePersonal(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1413,7 +1613,7 @@ def doCreateReplicationInstance(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBatchDeleteRepositoryPersonal(args, parsed_globals):
+def doBatchDeleteImagePersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1427,9 +1627,9 @@ def doBatchDeleteRepositoryPersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BatchDeleteRepositoryPersonalRequest()
+    model = models.BatchDeleteImagePersonalRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.BatchDeleteRepositoryPersonal(model)
+    rsp = client.BatchDeleteImagePersonal(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1438,7 +1638,7 @@ def doBatchDeleteRepositoryPersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImage(args, parsed_globals):
+def doDescribeTagRetentionRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1452,9 +1652,9 @@ def doDeleteImage(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImageRequest()
+    model = models.DescribeTagRetentionRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteImage(model)
+    rsp = client.DescribeTagRetentionRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1663,7 +1863,7 @@ def doDescribeExternalEndpointStatus(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImageLifecycleGlobalPersonal(args, parsed_globals):
+def doDescribeImages(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1677,9 +1877,9 @@ def doDeleteImageLifecycleGlobalPersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImageLifecycleGlobalPersonalRequest()
+    model = models.DescribeImagesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteImageLifecycleGlobalPersonal(model)
+    rsp = client.DescribeImages(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1763,7 +1963,7 @@ def doManageInternalEndpoint(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImageLifecyclePersonal(args, parsed_globals):
+def doModifyTagRetentionRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1777,9 +1977,9 @@ def doDeleteImageLifecyclePersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImageLifecyclePersonalRequest()
+    model = models.ModifyTagRetentionRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteImageLifecyclePersonal(model)
+    rsp = client.ModifyTagRetentionRule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1838,31 +2038,6 @@ def doDescribeInternalEndpointDnsStatus(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeReplicationInstances(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeReplicationInstancesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeReplicationInstances(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeApplicationTriggerPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1903,26 +2078,32 @@ ACTION_MAP = {
     "CreateInternalEndpointDns": doCreateInternalEndpointDns,
     "DescribeImageFilterPersonal": doDescribeImageFilterPersonal,
     "CreateImageLifecyclePersonal": doCreateImageLifecyclePersonal,
+    "DescribeTagRetentionExecutionTask": doDescribeTagRetentionExecutionTask,
     "CreateSecurityPolicy": doCreateSecurityPolicy,
     "DeleteSecurityPolicy": doDeleteSecurityPolicy,
     "CreateNamespace": doCreateNamespace,
+    "DeleteImage": doDeleteImage,
     "DescribeImagePersonal": doDescribeImagePersonal,
-    "DescribeImageLifecyclePersonal": doDescribeImageLifecyclePersonal,
-    "DescribeImages": doDescribeImages,
+    "ModifyApplicationTriggerPersonal": doModifyApplicationTriggerPersonal,
+    "DescribeImageLifecycleGlobalPersonal": doDescribeImageLifecycleGlobalPersonal,
+    "CreateTagRetentionRule": doCreateTagRetentionRule,
     "DeleteInstance": doDeleteInstance,
+    "DeleteTagRetentionRule": doDeleteTagRetentionRule,
+    "DescribeTagRetentionExecution": doDescribeTagRetentionExecution,
     "ModifyRepository": doModifyRepository,
     "DeleteNamespace": doDeleteNamespace,
     "DeleteRepository": doDeleteRepository,
     "DescribeRepositories": doDescribeRepositories,
     "DescribeInstances": doDescribeInstances,
     "ModifyRepositoryInfoPersonal": doModifyRepositoryInfoPersonal,
-    "DescribeRepositoryPersonal": doDescribeRepositoryPersonal,
+    "CreateTagRetentionExecution": doCreateTagRetentionExecution,
     "CheckInstanceName": doCheckInstanceName,
     "ManageReplication": doManageReplication,
     "DescribeNamespacePersonal": doDescribeNamespacePersonal,
     "DeleteRepositoryPersonal": doDeleteRepositoryPersonal,
-    "DescribeWebhookTriggerLog": doDescribeWebhookTriggerLog,
+    "DescribeRepositoryPersonal": doDescribeRepositoryPersonal,
     "DescribeImageManifests": doDescribeImageManifests,
+    "DeleteImageLifecycleGlobalPersonal": doDeleteImageLifecycleGlobalPersonal,
     "DescribeInstanceToken": doDescribeInstanceToken,
     "DownloadHelmChart": doDownloadHelmChart,
     "ManageImageLifecycleGlobalPersonal": doManageImageLifecycleGlobalPersonal,
@@ -1934,20 +2115,22 @@ ACTION_MAP = {
     "DescribeWebhookTrigger": doDescribeWebhookTrigger,
     "CreateRepositoryPersonal": doCreateRepositoryPersonal,
     "DeleteImagePersonal": doDeleteImagePersonal,
+    "DescribeWebhookTriggerLog": doDescribeWebhookTriggerLog,
     "ModifyWebhookTrigger": doModifyWebhookTrigger,
     "ModifyInstanceToken": doModifyInstanceToken,
     "CreateInstance": doCreateInstance,
-    "BatchDeleteImagePersonal": doBatchDeleteImagePersonal,
+    "DescribeReplicationInstances": doDescribeReplicationInstances,
     "CreateWebhookTrigger": doCreateWebhookTrigger,
     "CreateApplicationTriggerPersonal": doCreateApplicationTriggerPersonal,
     "DescribeSecurityPolicies": doDescribeSecurityPolicies,
-    "DescribeImageLifecycleGlobalPersonal": doDescribeImageLifecycleGlobalPersonal,
+    "BatchDeleteRepositoryPersonal": doBatchDeleteRepositoryPersonal,
+    "DeleteImageLifecyclePersonal": doDeleteImageLifecyclePersonal,
     "CreateInstanceToken": doCreateInstanceToken,
     "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
     "DeleteWebhookTrigger": doDeleteWebhookTrigger,
     "DescribeReplicationInstanceCreateTasks": doDescribeReplicationInstanceCreateTasks,
     "DescribeInternalEndpoints": doDescribeInternalEndpoints,
-    "ModifyApplicationTriggerPersonal": doModifyApplicationTriggerPersonal,
+    "DescribeImageLifecyclePersonal": doDescribeImageLifecyclePersonal,
     "ManageExternalEndpoint": doManageExternalEndpoint,
     "DescribeFavorRepositoryPersonal": doDescribeFavorRepositoryPersonal,
     "DescribeRepositoryOwnerPersonal": doDescribeRepositoryOwnerPersonal,
@@ -1955,8 +2138,8 @@ ACTION_MAP = {
     "DescribeNamespaces": doDescribeNamespaces,
     "DescribeInstanceStatus": doDescribeInstanceStatus,
     "CreateReplicationInstance": doCreateReplicationInstance,
-    "BatchDeleteRepositoryPersonal": doBatchDeleteRepositoryPersonal,
-    "DeleteImage": doDeleteImage,
+    "BatchDeleteImagePersonal": doBatchDeleteImagePersonal,
+    "DescribeTagRetentionRules": doDescribeTagRetentionRules,
     "DuplicateImagePersonal": doDuplicateImagePersonal,
     "ModifySecurityPolicy": doModifySecurityPolicy,
     "DescribeRepositoryFilterPersonal": doDescribeRepositoryFilterPersonal,
@@ -1965,14 +2148,13 @@ ACTION_MAP = {
     "CreateNamespacePersonal": doCreateNamespacePersonal,
     "CreateUserPersonal": doCreateUserPersonal,
     "DescribeExternalEndpointStatus": doDescribeExternalEndpointStatus,
-    "DeleteImageLifecycleGlobalPersonal": doDeleteImageLifecycleGlobalPersonal,
+    "DescribeImages": doDescribeImages,
     "DeleteNamespacePersonal": doDeleteNamespacePersonal,
     "ModifyRepositoryAccessPersonal": doModifyRepositoryAccessPersonal,
     "ManageInternalEndpoint": doManageInternalEndpoint,
-    "DeleteImageLifecyclePersonal": doDeleteImageLifecyclePersonal,
+    "ModifyTagRetentionRule": doModifyTagRetentionRule,
     "ValidateRepositoryExistPersonal": doValidateRepositoryExistPersonal,
     "DescribeInternalEndpointDnsStatus": doDescribeInternalEndpointDnsStatus,
-    "DescribeReplicationInstances": doDescribeReplicationInstances,
     "DescribeApplicationTriggerPersonal": doDescribeApplicationTriggerPersonal,
 
 }

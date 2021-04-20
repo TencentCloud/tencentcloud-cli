@@ -1210,6 +1210,7 @@
         {
           "default": "",
           "document": "物理专线ID。",
+          "example": "dc-psjiehij",
           "member": "string",
           "name": "DirectConnectId",
           "required": true,
@@ -1219,6 +1220,7 @@
         {
           "default": "",
           "document": "物理专线的名称。",
+          "example": "test",
           "member": "string",
           "name": "DirectConnectName",
           "required": true,
@@ -1228,6 +1230,7 @@
         {
           "default": "",
           "document": "物理专线的接入点ID。",
+          "example": "ap-beijing-c-jxq",
           "member": "string",
           "name": "AccessPointId",
           "required": true,
@@ -1237,6 +1240,7 @@
         {
           "default": "",
           "document": "物理专线的状态。\n申请中：PENDING \n申请驳回：REJECTED   \n待付款：TOPAY \n已付款：PAID \n建设中：ALLOCATED   \n已开通：AVAILABLE  \n删除中 ：DELETING\n已删除：DELETED 。",
+          "example": "PENDINGPAY",
           "member": "string",
           "name": "State",
           "required": true,
@@ -1246,6 +1250,7 @@
         {
           "default": "",
           "document": "物理专线创建时间。",
+          "example": "2020-12-08 16:57:43",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -1255,6 +1260,7 @@
         {
           "default": "",
           "document": "物理专线的开通时间。",
+          "example": "2021-01-06 10:39:41",
           "member": "datetime_iso",
           "name": "EnabledTime",
           "required": true,
@@ -1264,6 +1270,7 @@
         {
           "default": "",
           "document": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。",
+          "example": "In-houseWiring",
           "member": "string",
           "name": "LineOperator",
           "required": true,
@@ -1273,6 +1280,7 @@
         {
           "default": "",
           "document": "本地数据中心的地理位置。",
+          "example": "test",
           "member": "string",
           "name": "Location",
           "required": true,
@@ -1282,6 +1290,7 @@
         {
           "default": "",
           "document": "物理专线接入接口带宽，单位为Mbps。",
+          "example": "1000",
           "member": "int64",
           "name": "Bandwidth",
           "required": true,
@@ -1291,6 +1300,7 @@
         {
           "default": "",
           "document": "用户侧物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）",
+          "example": "1000Base-LX",
           "member": "string",
           "name": "PortType",
           "required": true,
@@ -1300,6 +1310,7 @@
         {
           "default": "",
           "document": "运营商或者服务商为物理专线提供的电路编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
           "member": "string",
           "name": "CircuitCode",
           "required": true,
@@ -1309,6 +1320,7 @@
         {
           "default": "",
           "document": "冗余物理专线的ID。",
+          "example": "dc-1234",
           "member": "string",
           "name": "RedundantDirectConnectId",
           "required": true,
@@ -1318,6 +1330,7 @@
         {
           "default": "",
           "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "int64",
           "name": "Vlan",
           "required": true,
@@ -1327,6 +1340,7 @@
         {
           "default": "",
           "document": "物理专线调试腾讯侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.2",
           "member": "string",
           "name": "TencentAddress",
           "required": true,
@@ -1336,6 +1350,7 @@
         {
           "default": "",
           "document": "物理专线调试用户侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "CustomerAddress",
           "required": true,
@@ -1345,6 +1360,7 @@
         {
           "default": "",
           "document": "物理专线申请者姓名。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "CustomerName",
           "required": true,
@@ -1354,6 +1370,7 @@
         {
           "default": "",
           "document": "物理专线申请者联系邮箱。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "274907341@qq.com",
           "member": "string",
           "name": "CustomerContactMail",
           "required": true,
@@ -1363,6 +1380,7 @@
         {
           "default": "",
           "document": "物理专线申请者联系号码。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15802738654",
           "member": "string",
           "name": "CustomerContactNumber",
           "required": true,
@@ -1372,6 +1390,7 @@
         {
           "default": "",
           "document": "物理专线的过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2040-01-06 10:39:41",
           "member": "datetime_iso",
           "name": "ExpiredTime",
           "required": true,
@@ -1381,6 +1400,7 @@
         {
           "default": "",
           "document": "物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NON_RECURRING_CHARGE",
           "member": "string",
           "name": "ChargeType",
           "required": true,
@@ -1390,6 +1410,7 @@
         {
           "default": "",
           "document": "报障联系人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "FaultReportContactPerson",
           "required": true,
@@ -1399,6 +1420,7 @@
         {
           "default": "",
           "document": "报障联系电话。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15802738654",
           "member": "string",
           "name": "FaultReportContactNumber",
           "required": true,
@@ -1408,6 +1430,7 @@
         {
           "default": "",
           "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
@@ -1417,6 +1440,7 @@
         {
           "default": "",
           "document": "物理专线的接入点类型。",
+          "example": "VXLAN",
           "member": "string",
           "name": "AccessPointType",
           "required": true,
@@ -1426,6 +1450,7 @@
         {
           "default": "",
           "document": "IDC所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成都",
           "member": "string",
           "name": "IdcCity",
           "required": true,
@@ -1435,6 +1460,7 @@
         {
           "default": "",
           "document": "计费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
           "member": "string",
           "name": "ChargeState",
           "required": true,
@@ -1444,6 +1470,7 @@
         {
           "default": "",
           "document": "物理专线开通时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-08 16:57:43",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -1453,10 +1480,51 @@
         {
           "default": "",
           "document": "物理专线是否已签署用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "SignLaw",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线是否为LocalZone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "LocalZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该物理专线下vlan 0的专线通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "VlanZeroDirectConnectTunnelCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该物理专线下非vlan 0的专线通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OtherVlanDirectConnectTunnelCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线最小带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "MinBandwidth",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

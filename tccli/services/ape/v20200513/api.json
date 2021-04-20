@@ -15,7 +15,7 @@
     "CreateOrderAndDownloads": {
       "document": "核销图片，获取原图URL地址",
       "input": "CreateOrderAndDownloadsRequest",
-      "name": "获取图片原图地址",
+      "name": "获取图片下载地址",
       "output": "CreateOrderAndDownloadsResponse"
     },
     "CreateOrderAndPay": {
@@ -808,6 +808,26 @@
           "example": "tom",
           "member": "string",
           "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台用户下载图片购买的价格(单位:分)",
+          "example": "9800",
+          "member": "uint64",
+          "name": "DownloadPrice",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载类型。匹配集合中的任意元素：\n<li>Single: 单张购买下载</li>\n<li>BasicEnterpriseMember: 企业基础会员下载</li>\n<li>AdvancedEnterpriseMember: 企业高级会员下载</li>\n<li>DistinguishedEnterpriseMember: 企业尊享会员下载</li>",
+          "example": "单张购买下载",
+          "member": "string",
+          "name": "DownloadType",
           "required": false,
           "type": "string",
           "value_allowed_null": false

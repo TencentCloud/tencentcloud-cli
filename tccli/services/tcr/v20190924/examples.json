@@ -118,6 +118,22 @@
         "title": "创建实例公网访问白名单策略"
       }
     ],
+    "CreateTagRetentionExecution": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateTagRetentionExecution\n&RegistryId=tcr-12345\n&RetentionId=1\n&DryRun=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8bf292d-38c7-49d9-8da3-737d08160cfc\"\n    }\n}",
+        "title": "手动执行版本保留"
+      }
+    ],
+    "CreateTagRetentionRule": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateTagRetentionRule\n&RegistryId=tcr-12345\n&NamespaceId=1\n&CronSetting=weekly\n&RetentionRule.Key=latestPushedK\n&RetentionRule.Value=20\n&Disabled=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8bf292d-38c7-49d9-8da3-737d08160cfc\"\n    }\n}",
+        "title": "创建版本保留规则"
+      }
+    ],
     "CreateUserPersonal": [
       {
         "document": "",
@@ -236,6 +252,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DeleteSecurityPolicy\n&RegistryId=tcr-test123\n&PolicyIndex=1\n&PolicyVersion=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除实例公网访问白名单策略"
+      }
+    ],
+    "DeleteTagRetentionRule": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteTagRetentionRule\n&RegistryId=tcr-12345\n&RetentionId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8bf292d-38c7-49d9-8da3-737d08160cfc\"\n    }\n}",
+        "title": "删除版本保留规则"
       }
     ],
     "DeleteWebhookTrigger": [
@@ -438,6 +462,30 @@
         "title": "查看实例安全策略"
       }
     ],
+    "DescribeTagRetentionExecution": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeTagRetentionExecution\n&RegistryId=tcr-12345\n&RetentionId=1\n&Limit=20\n&Offset=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"023eef7f-cf03-4e4a-b7bb-de7d66aa6fbc\",\n        \"RetentionExecutionList\": [\n            {\n                \"ExecutionId\": 1,\n                \"RetentionId\": 1,\n                \"StartTime\": \"2021-04-12T10:49:20Z\",\n                \"EndTime\": \"2021-04-12T10:49:20Z\",\n                \"Status\": \"Succeed\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询版本保留执行记录"
+      }
+    ],
+    "DescribeTagRetentionExecutionTask": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeTagRetentionExecutionTask\n&RegistryId=tcr-12345\n&RetentionId=1\n&ExecutionId=1\n&Limit=20\n&Offset=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RetentionTaskList\": [\n            {\n                \"Status\": \"xx\",\n                \"Total\": 0,\n                \"Retained\": 0,\n                \"TaskId\": 0,\n                \"Repository\": \"xx\",\n                \"ExecutionId\": 0,\n                \"StartTime\": \"xx\",\n                \"EndTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询版本保留执行任务"
+      }
+    ],
+    "DescribeTagRetentionRules": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeTagRetentionRules\n&RegistryId=tcr-12345\n&NamespaceName=test\n&Limit=20\n&Offset=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7abb9f2-9440-43ea-a12f-ae58875acf3d\",\n        \"RetentionPolicyList\": [\n            {\n                \"NextExecutionTime\": \"xx\",\n                \"RetentionId\": 1,\n                \"NamespaceName\": \"aaaa\",\n                \"RetentionRuleList\": [\n                    {\n                        \"Key\": \"latestPushedK\",\n                        \"Value\": 10\n                    }\n                ],\n                \"CronSetting\": \"weekly\",\n                \"Disabled\": false\n            }\n        ],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询版本保留规则"
+      }
+    ],
     "DescribeUserQuotaPersonal": [
       {
         "document": "",
@@ -570,6 +618,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifySecurityPolicy\n&RegistryId=tcr-test123\n&CidrBlock=192.168.0.0/24\n&Description=test\n&PolicyIndex=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新实例外网白名单"
+      }
+    ],
+    "ModifyTagRetentionRule": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyTagRetentionRule\n&RegistryId=tcr-12345\n&RetentionId=1\n&NamespaceId=1\n&CronSetting=weekly\n&RetentionRule.Key=latestPushedK\n&RetentionRule.Value=20\n&Disabled=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8bf292d-38c7-49d9-8da3-737d08160cfc\"\n    }\n}",
+        "title": "更新版本保留规则"
       }
     ],
     "ModifyUserPasswordPersonal": [
