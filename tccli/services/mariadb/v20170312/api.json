@@ -138,6 +138,12 @@
       "name": "查询流程状态",
       "output": "DescribeFlowResponse"
     },
+    "DescribeInstanceNodeInfo": {
+      "document": "本接口（DescribeInstanceNodeInfo）用于获取数据库实例主备节点信息",
+      "input": "DescribeInstanceNodeInfoRequest",
+      "name": "获取实例节点信息",
+      "output": "DescribeInstanceNodeInfoResponse"
+    },
     "DescribeLogFileRetentionPeriod": {
       "document": "本接口(DescribeLogFileRetentionPeriod)用于查看数据库备份日志的备份天数的设置情况。",
       "input": "DescribeLogFileRetentionPeriodRequest",
@@ -2671,6 +2677,69 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceNodeInfoRequest": {
+      "document": "DescribeInstanceNodeInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如tdsql-6ltok4u9",
+          "example": "tdsql-b43f8yjl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一次最多返回多少条数据。默认为无穷大，返回符合要求的所有数据",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据的偏移量，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceNodeInfoResponse": {
+      "document": "DescribeInstanceNodeInfo返回参数结构体",
+      "members": [
+        {
+          "document": "节点总个数",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点信息",
+          "example": "无",
+          "member": "NodeInfo",
+          "name": "NodesInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLogFileRetentionPeriodRequest": {
       "document": "DescribeLogFileRetentionPeriod请求参数结构体",
       "members": [
@@ -3748,6 +3817,30 @@
           "name": "Data",
           "required": true,
           "type": "list"
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeInfo": {
+      "document": "描述实例的各个DB节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DB节点ID",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB节点角色，取值为master或者slave",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

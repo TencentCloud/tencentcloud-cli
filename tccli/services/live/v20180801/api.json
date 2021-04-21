@@ -4426,6 +4426,7 @@
         {
           "default": "",
           "document": "取得第几页，默认1。",
+          "example": "1",
           "member": "int64",
           "name": "PageNum",
           "required": false,
@@ -4434,10 +4435,20 @@
         {
           "default": "",
           "document": "每页大小，最大100。 \n取值：1~100之前的任意整数。\n默认值：10。",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索的推流 id 名称。",
+          "example": "stream_2021",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4447,36 +4458,46 @@
       "members": [
         {
           "document": "符合条件的总个数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总页数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "分页的页码。",
+          "example": "1",
           "member": "int64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页显示的条数。",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "禁推流列表。",
+          "example": "无",
           "member": "ForbidStreamInfo",
           "name": "ForbidStreamList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

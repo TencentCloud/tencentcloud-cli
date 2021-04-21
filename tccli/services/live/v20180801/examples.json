@@ -437,7 +437,7 @@
     "DescribeLiveForbidStreamList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveForbidStreamList\r\n&PageNum=1\r\n&PageSize=10\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveForbidStreamList\n&PageNum=1\n&PageSize=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ForbidStreamList\": [\n            {\n                \"StreamName\": \"5000_abcdefg\",\n                \"CreateTime\": \"2019-01-16T12:00:00Z\",\n                \"ExpireTime\": \"2019-04-16T12:00:00Z\"\n            }\n        ],\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }

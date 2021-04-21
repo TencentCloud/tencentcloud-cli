@@ -1634,12 +1634,21 @@
           "value_allowed_null": false
         },
         {
-          "document": "录像详情列表",
+          "document": "已废弃",
           "example": "无",
           "member": "RecordTaskItem",
           "name": "VideoList",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "录像详情列表",
+          "example": "无",
+          "member": "RecordTaskItem",
+          "name": "RecordList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

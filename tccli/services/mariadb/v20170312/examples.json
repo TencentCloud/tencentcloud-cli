@@ -184,6 +184,14 @@
         "title": "查询任务流程执行状态"
       }
     ],
+    "DescribeInstanceNodeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodeInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-b43f8yjl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"186315\",\n        \"NodesInfo\": [\n            {\n                \"Role\": \"master\",\n                \"NodeId\": \"5c2af09aeeb701fef6d5fef4329bb62d61f211ac\"\n            },\n            {\n                \"Role\": \"slave\",\n                \"NodeId\": \"dbedea66f4ba2b71e6816e3f9d0c2936e5448786\"\n            },\n            {\n                \"Role\": \"slave\",\n                \"NodeId\": \"1b40c8a28bec5c4af666d31b24119e319d68773e\"\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
+        "title": "获取数据库实例主备节点信息"
+      }
+    ],
     "DescribeLogFileRetentionPeriod": [
       {
         "document": "",

@@ -2651,6 +2651,7 @@
         {
           "default": "",
           "document": "专用通道ID",
+          "example": "dcx-r3sml04o",
           "member": "string",
           "name": "DirectConnectTunnelId",
           "required": true,
@@ -2659,6 +2660,7 @@
         {
           "default": "",
           "document": "专用通道的Vlan",
+          "example": "90",
           "member": "int64",
           "name": "Vlan",
           "required": false,
@@ -2667,6 +2669,7 @@
         {
           "default": "",
           "document": "用户侧BGP，Asn，AuthKey",
+          "example": "无",
           "member": "BgpPeer",
           "name": "BgpPeer",
           "required": false,
@@ -2675,6 +2678,7 @@
         {
           "default": "",
           "document": "用户侧过滤网段地址",
+          "example": "无",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
           "required": false,
@@ -2683,6 +2687,7 @@
         {
           "default": "",
           "document": "腾讯侧互联IP",
+          "example": "192.168.1.1/29",
           "member": "string",
           "name": "TencentAddress",
           "required": false,
@@ -2691,6 +2696,7 @@
         {
           "default": "",
           "document": "腾讯侧备用互联IP",
+          "example": "192.168.1.1/29",
           "member": "string",
           "name": "TencentBackupAddress",
           "required": false,
@@ -2699,6 +2705,7 @@
         {
           "default": "",
           "document": "用户侧互联IP",
+          "example": "192.168.1.1/29",
           "member": "string",
           "name": "CustomerAddress",
           "required": false,
@@ -2707,6 +2714,7 @@
         {
           "default": "",
           "document": "专用通道带宽值",
+          "example": "100",
           "member": "int64",
           "name": "Bandwidth",
           "required": false,
@@ -2715,6 +2723,7 @@
         {
           "default": "",
           "document": "BGP community开关",
+          "example": "false",
           "member": "bool",
           "name": "EnableBGPCommunity",
           "required": false,
@@ -2723,6 +2732,7 @@
         {
           "default": "",
           "document": "是否开启BFD",
+          "example": "1",
           "member": "int64",
           "name": "BfdEnable",
           "required": false,
@@ -2731,6 +2741,7 @@
         {
           "default": "",
           "document": "是否开启NQA",
+          "example": "1",
           "member": "int64",
           "name": "NqaEnable",
           "required": false,
@@ -2739,6 +2750,7 @@
         {
           "default": "",
           "document": "BFD配置信息",
+          "example": "无",
           "member": "BFDInfo",
           "name": "BfdInfo",
           "required": false,
@@ -2747,6 +2759,7 @@
         {
           "default": "",
           "document": "NQA配置信息",
+          "example": "无",
           "member": "NQAInfo",
           "name": "NqaInfo",
           "required": false,
@@ -2755,6 +2768,7 @@
         {
           "default": "",
           "document": "0：停用IPv6\n1: 启用IPv6",
+          "example": "1",
           "member": "int64",
           "name": "IPv6Enable",
           "required": false,
@@ -2763,10 +2777,20 @@
         {
           "default": "",
           "document": "去往用户侧的路由信息",
+          "example": "无",
           "member": "RouteFilterPrefix",
           "name": "CustomerIDCRoutes",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启巨帧\n1：开启\n0：不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "JumboEnable",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

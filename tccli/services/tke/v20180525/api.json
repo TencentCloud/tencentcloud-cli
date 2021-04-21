@@ -151,7 +151,7 @@
       "output": "DeleteEKSClusterResponse"
     },
     "DeletePrometheusTemplate": {
-      "document": "删除一个云原生Promehtheus配置模板",
+      "document": "删除一个云原生Prometheus配置模板",
       "input": "DeletePrometheusTemplateRequest",
       "name": "删除模板",
       "output": "DeletePrometheusTemplateResponse"
@@ -2869,6 +2869,7 @@
         {
           "default": "",
           "document": "模板id",
+          "example": "temp-xxx",
           "member": "string",
           "name": "TemplateId",
           "required": true,
