@@ -1,0 +1,1120 @@
+{
+  "actions": {
+    "CreateAudioDeposit": {
+      "document": "用户通过本接口向BTOE写入待存证的音频原文件或下载URL，BTOE对音频原文件存储后，将其Hash值存证上链，并生成含有电子签章的区块链存证电子凭证。音频类型支持格式：mp3、wav、wma、midi、flac；原文件上传大小不超过5 MB，下载URL文件大小不超过25 MB。",
+      "input": "CreateAudioDepositRequest",
+      "name": "音频文件存证",
+      "output": "CreateAudioDepositResponse"
+    },
+    "CreateDataDeposit": {
+      "document": "用户通过本接口向BTOE写入待存证的业务数据明文，业务数据明文存证写入后不可修改，BTOE对业务数据明文存证生成含有电子签章的区块链存证电子凭证。",
+      "input": "CreateDataDepositRequest",
+      "name": "业务数据明文存证",
+      "output": "CreateDataDepositResponse"
+    },
+    "CreateDocDeposit": {
+      "document": "用户通过本接口向BTOE写入待存证的文档原文件或下载URL，BTOE对文档原文件存储后，将其Hash值存证上链，并生成含有电子签章的区块链存证电子凭证。文档类型支持格式：doc、docx、xls、xlsx、ppt、pptx、 pdf、html、txt、md、csv；原文件上传大小不超过5 MB，下载URL文件大小不超过10 MB。",
+      "input": "CreateDocDepositRequest",
+      "name": "文档存证",
+      "output": "CreateDocDepositResponse"
+    },
+    "CreateHashDeposit": {
+      "document": "用户通过本接口向BTOE写入待存证的原文数据Hash值，BTOE对业务数据Hash值存证上链，并生成含有电子签章的区块链存证电子凭证。",
+      "input": "CreateHashDepositRequest",
+      "name": "哈希上链存证",
+      "output": "CreateHashDepositResponse"
+    },
+    "CreateHashDepositNoCert": {
+      "document": "用户通过本接口向BTOE写入待存证的原文数据Hash值，BTOE对业务数据Hash值存证上链，本接口不生成区块链存证电子凭证。",
+      "input": "CreateHashDepositNoCertRequest",
+      "name": "哈希上链存证(无证书)",
+      "output": "CreateHashDepositNoCertResponse"
+    },
+    "CreateHashDepositNoSeal": {
+      "document": "用户通过本接口向BTOE写入待存证的原文数据Hash值，BTOE对业务数据Hash值存证上链，并生成无电子签章的区块链存证电子凭证。",
+      "input": "CreateHashDepositNoSealRequest",
+      "name": "哈希上链存证(有证书，无签章)",
+      "output": "CreateHashDepositNoSealResponse"
+    },
+    "CreateImageDeposit": {
+      "document": "用户通过本接口向BTOE写入待存证的图片原文件或下载URL，BTOE对图片原文件存储后，将其Hash值存证上链，并生成含有电子签章的区块链存证电子凭证。图片类型支持格式：png、jpg、jpeg、bmp、gif、svg；原文件上传大小不超过5 MB，下载URL文件大小不超过10 MB。",
+      "input": "CreateImageDepositRequest",
+      "name": "图片文件存证",
+      "output": "CreateImageDepositResponse"
+    },
+    "CreateVideoDeposit": {
+      "document": "用户通过本接口向BTOE写入待存证的视频的原文件或下载URL，BTOE对视频原文件存储后，将其Hash值存证上链，并生成含有电子签章的区块链存证电子凭证。视频文件支持格式：mp4、avi、mkv、mov、flv,wmv,rmvb,3gp；文件大小限制：直接上传原文件不大于5MB，下载URL文件大小不大于200 MB。",
+      "input": "CreateVideoDepositRequest",
+      "name": "视频文件存证",
+      "output": "CreateVideoDepositResponse"
+    },
+    "CreateWebpageDeposit": {
+      "document": "用户通过本接口向BTOE提交待存证网页的URL，BTOE对URL进行网页快照，并将快照图片存储，将网页快照Hash值存证上链，并生成含有电子签章的区块链存证电子凭证。URL格式必须以http、https开头。",
+      "input": "CreateWebpageDepositRequest",
+      "name": "网页快照存证",
+      "output": "CreateWebpageDepositResponse"
+    },
+    "GetDepositCert": {
+      "document": "用户通过存证编码向BTOE查询存证电子凭证信息。",
+      "input": "GetDepositCertRequest",
+      "name": "BTOE存证电子凭证查询",
+      "output": "GetDepositCertResponse"
+    },
+    "GetDepositFile": {
+      "document": "用户通过存证编码向BTOE获取存证文件的下载URL。\n-注：Hash类存证、业务数据明文存证不产生存证文件。",
+      "input": "GetDepositFileRequest",
+      "name": "存证文件查询",
+      "output": "GetDepositFileResponse"
+    },
+    "GetDepositInfo": {
+      "document": "用户通过存证编码向BTOE查询存证基本信息。",
+      "input": "GetDepositInfoRequest",
+      "name": "存证基本信息查询",
+      "output": "GetDepositInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-03-03",
+    "api_brief": "区块链可信取证（Blockchain Trusted  Obtain Evidence）为您提供实时、高效、可信的在线取证、固证、公证服务。平台基于虚拟化取证环境，让电子数据全链路可信、全节点见证、全流程留痕，有效解决诉讼中存证难、取证难、认证难等问题，提供实现证据的取证、存证、公证、查验、质证等一站式流程服务，大幅降低您的维权成本并提高维权效率。\n\n- 注意\n    本章节BTOE API 接口均为最新 API 3.0 接口，后续BTOE相关新增功能都会在此章节更新。",
+    "serviceNameCN": "区块链可信取证",
+    "serviceShortName": "btoe"
+  },
+  "objects": {
+    "CreateAudioDepositRequest": {
+      "document": "CreateAudioDeposit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证名称(长度最大30)",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对应数据Base64文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件hash",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务ID 透传 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据Base64编码，大小不超过5M",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源访问链接 与fileContent必须二选一",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "存证描述",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAudioDepositResponse": {
+      "document": "CreateAudioDeposit返回参数结构体",
+      "members": [
+        {
+          "document": "业务ID 透传 长度最大不超过64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求成功，返回存证编码,用于查询存证后续业务数据",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataDepositRequest": {
+      "document": "CreateDataDeposit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务数据明文(json格式字符串)，最大256kb",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceInfo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存证名称(长度最大30)",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据hash",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务ID 透传 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "存证描述",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataDepositResponse": {
+      "document": "CreateDataDeposit返回参数结构体",
+      "members": [
+        {
+          "document": "业务ID 透传 长度最大不超过64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求成功，返回存证编码,用于查询存证后续业务数据",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDocDepositRequest": {
+      "document": "CreateDocDeposit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证名称(长度最大30)",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对应数据Base64文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件hash",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务ID 透传 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据Base64编码，大小不超过5M",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源访问链接 与fileContent必须二选一",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "存证描述",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDocDepositResponse": {
+      "document": "CreateDocDeposit返回参数结构体",
+      "members": [
+        {
+          "document": "业务ID 透传 长度最大不超过64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求成功，返回存证编码,用于查询存证后续业务数据",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHashDepositNoCertRequest": {
+      "document": "CreateHashDepositNoCert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据hash",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该字段为透传字段，方便调用方做业务处理， 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务扩展信息",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHashDepositNoCertResponse": {
+      "document": "CreateHashDepositNoCert返回参数结构体",
+      "members": [
+        {
+          "document": "透传字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "存证编码",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上链时间",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链交易哈希",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceTxHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块高度",
+          "example": "无",
+          "member": "uint64",
+          "name": "BlockchainHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHashDepositNoSealRequest": {
+      "document": "CreateHashDepositNoSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据hash",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该字段为透传字段，方便调用方做业务处理， 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务扩展信息",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHashDepositNoSealResponse": {
+      "document": "CreateHashDepositNoSeal返回参数结构体",
+      "members": [
+        {
+          "document": "透传字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "存证编码",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上链时间",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链交易哈希",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceTxHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块高度",
+          "example": "无",
+          "member": "uint64",
+          "name": "BlockchainHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHashDepositRequest": {
+      "document": "CreateHashDeposit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证名称(长度最大30)",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据hash",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该字段为透传字段，方便调用方做业务处理， 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "存证描述",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHashDepositResponse": {
+      "document": "CreateHashDeposit返回参数结构体",
+      "members": [
+        {
+          "document": "透传字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "存证编码",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageDepositRequest": {
+      "document": "CreateImageDeposit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证名称(长度最大30)",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对应数据Base64文件名称 test.png",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件hash",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务ID 透传 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据Base64编码，大小不超过5M",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源访问链接 与fileContent必须二选一",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "存证描述",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageDepositResponse": {
+      "document": "CreateImageDeposit返回参数结构体",
+      "members": [
+        {
+          "document": "业务ID 透传 长度最大不超过64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求成功，返回存证编码,用于查询存证后续业务数据",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoDepositRequest": {
+      "document": "CreateVideoDeposit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证名称(长度最大30)",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对应数据Base64文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件hash",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务ID 透传 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据Base64编码，大小不超过5M",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源访问链接 与fileContent必须二选一",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "存证描述",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoDepositResponse": {
+      "document": "CreateVideoDeposit返回参数结构体",
+      "members": [
+        {
+          "document": "业务ID 透传 长度最大不超过64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求成功，返回存证编码,用于查询存证后续业务数据",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWebpageDepositRequest": {
+      "document": "CreateWebpageDeposit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证名称(长度最大30)",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网页链接",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务ID 透传 长度最大不超过64",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
+          "example": "0,1,2",
+          "member": "uint64",
+          "name": "HashType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "存证描述",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWebpageDepositResponse": {
+      "document": "CreateWebpageDeposit返回参数结构体",
+      "members": [
+        {
+          "document": "业务ID 透传 长度最大不超过64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求成功，返回存证编码,用于查询存证后续业务数据",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDepositCertRequest": {
+      "document": "GetDepositCert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证编码",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDepositCertResponse": {
+      "document": "GetDepositCert返回参数结构体",
+      "members": [
+        {
+          "document": "存证编码",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存证证书文件临时链接",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDepositFileRequest": {
+      "document": "GetDepositFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证编码",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDepositFileResponse": {
+      "document": "GetDepositFile返回参数结构体",
+      "members": [
+        {
+          "document": "存证编号",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存证文件临时链接",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDepositInfoRequest": {
+      "document": "GetDepositInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存证编码",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDepositInfoResponse": {
+      "document": "GetDepositInfo返回参数结构体",
+      "members": [
+        {
+          "document": "存证编号",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上链时间",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链交易哈希",
+          "example": "无",
+          "member": "string",
+          "name": "EvidenceTxHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块高度",
+          "example": "无",
+          "member": "int64",
+          "name": "BlockchainHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

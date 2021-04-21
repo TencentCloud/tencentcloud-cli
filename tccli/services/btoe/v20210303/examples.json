@@ -1,0 +1,113 @@
+{
+  "actions": {
+    "CreateAudioDeposit": [
+      {
+        "document": "用户通过本接口向BTOE写入待存证的音频原文件或下载URL，BTOE对音频原文件存储后，将其Hash值存证上链。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioDeposit\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceName\": \"存证名称\",\n    \"FileContent\": \"\",\n    \"FileName\": \"\",\n    \"FileUrl\": \"https: //cloud.tencent.com/document/product/1259/48506\",\n    \"EvidenceHash\": \"\",\n    \"HashType\": 0,\n    \"EvidenceDescription\": \"存证描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"BusinessId\": \"as1111323311\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "音频文件存证"
+      }
+    ],
+    "CreateDataDeposit": [
+      {
+        "document": "用户通过本接口向BTOE写入待存证的业务数据明文。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataDeposit\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceInfo\": \"业务数据明文\",\n    \"EvidenceName\": \"存证名称\",\n    \"EvidenceHash\": \"\",\n    \"HashType\": 0,\n    \"EvidenceDescription\": \"存证描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"BusinessId\": \"as1111323311\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "业务数据明文存证"
+      }
+    ],
+    "CreateDocDeposit": [
+      {
+        "document": "用户通过本接口向BTOE写入待存证的文档原文件或下载URL，BTOE对文档原文件存储后，将其Hash值存证上链。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDocDeposit\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceName\": \"存证名称\",\n    \"FileContent\": \"\",\n    \"FileName\": \"\",\n    \"FileUrl\": \"https: //cloud.tencent.com/document/product/1259/48506\",\n    \"EvidenceHash\": \"\",\n    \"HashType\": 0,\n    \"EvidenceDescription\": \"存证描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"BusinessId\": \"as1111323311\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "文档存证"
+      }
+    ],
+    "CreateHashDeposit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHashDeposit\n<公共请求参数>\n\n{\n    \"HashType\": \"0\",\n    \"EvidenceDescription\": \"哈希存证\",\n    \"BusinessId\": \"5671ad9c-ebaa-4d96-a2bc-0fcb71b36f2b\",\n    \"EvidenceName\": \"哈希存证测试\",\n    \"EvidenceHash\": \"ce98712408c9fc580be2ff208efeb6c154530ca2b968c2b41af3bbd4b3eab7ec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15d49052-b85b-4418-a2e4-fa4f6a882a0f\",\n        \"EvidenceId\": \"15d49052-b85b-4418-a2e4-fa4f6a882a0f\",\n        \"BusinessId\": \"5671ad9c-ebaa-4d96-a2bc-0fcb71b36f2b\"\n    }\n}",
+        "title": "哈希存证测试示例"
+      }
+    ],
+    "CreateHashDepositNoCert": [
+      {
+        "document": "用户通过本接口向BTOE写入待存证的原文数据Hash值，BTOE对业务数据Hash值存证上链。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHashDepositNoCert\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceInfo\": \"业务扩展信息\",\n    \"EvidenceHash\": \"数据hash\",\n    \"HashType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BusinessId\": \"as1111323311\",\n        \"EvidenceId\": \"as1111323311\",\n        \"EvidenceTime\": \"2021-04-07 14:22:20\",\n        \"EvidenceTxHash\": \"数据hash\",\n        \"BlockchainHeight\": 800,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "哈希上链存证"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHashDepositNoCert\n<公共请求参数>\n\n{\n    \"HashType\": \"0\",\n    \"EvidenceInfo\": \"34545\",\n    \"BusinessId\": \"777\",\n    \"EvidenceHash\": \"34543\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3fe7162-b32f-469b-9850-3e3e328dfec5\",\n        \"BusinessId\": \"777\",\n        \"EvidenceId\": \"f3fe7162-b32f-469b-9850-3e3e328dfec5\",\n        \"EvidenceTime\": \"2021-04-08 17:44:10\",\n        \"EvidenceTxHash\": \"0xf80ee164f4ef86d285d9eab166773700f27d1ac3f124df2fa62f482b743d8a05\",\n        \"BlockchainHeight\": 3354\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateHashDepositNoSeal": [
+      {
+        "document": "用户通过本接口向BTOE写入待存证的原文数据Hash值，BTOE对业务数据Hash值存证上链。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHashDepositNoSeal\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceInfo\": \"业务扩展信息\",\n    \"EvidenceHash\": \"数据hash\",\n    \"HashType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BusinessId\": \"as1111323311\",\n        \"EvidenceId\": \"as1111323311\",\n        \"EvidenceTime\": \"2021-04-07 14:22:20\",\n        \"EvidenceTxHash\": \"数据hash\",\n        \"BlockchainHeight\": 800,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "哈希上链存证"
+      }
+    ],
+    "CreateImageDeposit": [
+      {
+        "document": "用户通过本接口向BTOE写入待存证的图片原文件或下载URL，BTOE对图片原文件存储后，将其Hash值存证上链。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageDeposit\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceName\": \"图片文件存证\",\n    \"FileContent\": \"\",\n    \"FileName\": \"\",\n    \"FileUrl\": \"https: //cloud.tencent.com/document/product/1259/48506\",\n    \"EvidenceHash\": \"\",\n    \"HashType\": 0,\n    \"EvidenceDescription\": \"存证描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"BusinessId\": \"as1111323311\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "图片文件存证"
+      }
+    ],
+    "CreateVideoDeposit": [
+      {
+        "document": "用户通过本接口向BTOE写入待存证的视频的原文件或下载URL，BTOE对视频原文件存储后，将其Hash值存证上链。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoDeposit\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceName\": \"存证名称\",\n    \"FileContent\": \"\",\n    \"FileName\": \"\",\n    \"FileUrl\": \"https: //cloud.tencent.com/document/product/1259/48506\",\n    \"EvidenceHash\": \"\",\n    \"HashType\": 0,\n    \"EvidenceDescription\": \"存证描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"BusinessId\": \"as1111323311\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "视频文件存证"
+      }
+    ],
+    "CreateWebpageDeposit": [
+      {
+        "document": "用户通过本接口向BTOE提交待存证网页的URL，BTOE对URL进行网页快照，并将快照图片存储，将网页快照Hash值存证上链。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action:CreateWebpageDeposit\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceName\": \"网页存证名称\",\n    \"EvidenceUrl\": \"https: //cloud.tencent.com/document/product/1259/48506\",\n    \"HashType\": 0,\n    \"EvidenceDescription\": \"存证描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"BusinessId\": \"as1111323311\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "网页快照存证"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWebpageDeposit\n<公共请求参数>\n\n{\n    \"HashType\": \"0\",\n    \"EvidenceUrl\": \"https://www.xxxxxx.com/\",\n    \"EvidenceDescription\": \"网页快照存证测试\",\n    \"EvidenceName\": \"网页快照存证测试\",\n    \"BusinessId\": \"47d5624a-41d4-4e7c-b99c-3172474073ba\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23a2d753-13e3-4872-87b7-b609a46af01d\",\n        \"EvidenceId\": \"23a2d753-13e3-4872-87b7-b609a46af01d\",\n        \"BusinessId\": \"47d5624a-41d4-4e7c-b99c-3172474073ba\"\n    }\n}",
+        "title": "网页快照存证示例"
+      }
+    ],
+    "GetDepositCert": [
+      {
+        "document": "用户通过存证编码向BTOE查询存证电子凭证信息。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDepositCert\n<公共请求参数>\n\n{\n    \"EvidenceId\": \"testt222e32278733387121ststtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"testtest33111113333111\",\n        \"EvidenceId\": \"testt222e32278733387121ststtest\",\n        \"EvidenceCert\": \"http://test-1251451924.cos.ap-nanjing.myqcloud.com/btoe%2620210326%26testt222e32278733387121ststtest.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDkIyS6YfpfH3bcTuzz05uWr1vwkMjrra6%26q-sign-time%3D1617003400%3B1617007000%26q-key-time%3D1617003400%3B1617007000%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D2c2c544622742db817848beff9580c51804ec7f0\"\n    }\n}",
+        "title": "BTOE存证电子凭证查询"
+      }
+    ],
+    "GetDepositFile": [
+      {
+        "document": "用户通过存证编码向BTOE获取存证文件的下载URL。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDepositFile\n<公共请求参数>\n\n{\n    \"EvidenceId\": \"存证编码\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"testtest33111113333111\",\n        \"EvidenceId\": \"testt222e32278733387121ststtest\",\n        \"EvidenceFile\": \"http://test-1251451924.cos.ap-nanjing.myqcloud.com/btoe%2620210326%26testt222e32278733387121ststtest.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDkIyS6YfpfH3bcTuzz05uWr1vwkMjrra6%26q-sign-time%3D1617003400%3B1617007000%26q-key-time%3D1617003400%3B1617007000%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D2c2c544622742db817848beff9580c51804ec7f0\"\n    }\n}",
+        "title": "存证文件查询"
+      }
+    ],
+    "GetDepositInfo": [
+      {
+        "document": "用户通过存证编码向BTOE查询存证基本信息。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDepositInfo\n<公共请求参数>\n\n{\n    \"EvidenceId\": \"存证编码\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"testt222e32278733387121ststtest\",\n        \"EvidenceId\": \"testt222e32278733387121ststtest\",\n        \"EvidenceTime\": \"2021-03-26 09:06:05\",\n        \"EvidenceTxHash\": \"0x7a0448ff9dd3bb1aa74534a7384b6515d715dc8aa26b68449ce8a6d6b6b5cec3\",\n        \"BlockchainHeight\": 17262\n    }\n}",
+        "title": "存证基本信息查询"
+      }
+    ]
+  },
+  "version": "1.0"
+}
