@@ -10923,6 +10923,7 @@
         {
           "default": "",
           "document": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。",
+          "example": "-",
           "member": "string",
           "name": "VpcIds",
           "required": false,
@@ -10931,6 +10932,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-name - String - （过滤条件）VPC实例名称。</li>\n<li>is-default - String - （过滤条件）是否默认VPC。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）vpc的cidr。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10939,6 +10941,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "string",
           "name": "Offset",
           "required": false,
@@ -10947,6 +10950,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "2",
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -10960,15 +10964,19 @@
       "members": [
         {
           "document": "符合条件的对象数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "VPC对象。",
+          "example": "无",
           "member": "Vpc",
           "name": "VpcSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19201,6 +19209,7 @@
         {
           "default": "",
           "document": "`VPC`名称。",
+          "example": "test",
           "member": "string",
           "name": "VpcName",
           "required": true,
@@ -19210,6 +19219,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`，例如：vpc-azd4dt1c。",
+          "example": " vpc-azd4dt1c",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -19219,6 +19229,7 @@
         {
           "default": "",
           "document": "`VPC`的`IPv4` `CIDR`。",
+          "example": "10.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
@@ -19228,6 +19239,7 @@
         {
           "default": "",
           "document": "是否默认`VPC`。",
+          "example": " true",
           "member": "bool",
           "name": "IsDefault",
           "required": false,
@@ -19237,6 +19249,7 @@
         {
           "default": "",
           "document": "是否开启组播。",
+          "example": "true ",
           "member": "bool",
           "name": "EnableMulticast",
           "required": true,
@@ -19246,6 +19259,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": " 2021-01-03 22:25:45",
           "member": "string",
           "name": "CreatedTime",
           "required": false,
@@ -19255,6 +19269,7 @@
         {
           "default": "",
           "document": "`DNS`列表。",
+          "example": " -",
           "member": "string",
           "name": "DnsServerSet",
           "required": true,
@@ -19264,6 +19279,7 @@
         {
           "default": "",
           "document": "`DHCP`域名选项值。",
+          "example": " test",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -19273,6 +19289,7 @@
         {
           "default": "",
           "document": "`DHCP`选项集`ID`。",
+          "example": " -",
           "member": "string",
           "name": "DhcpOptionsId",
           "required": true,
@@ -19282,6 +19299,7 @@
         {
           "default": "",
           "document": "是否开启`DHCP`。",
+          "example": " false",
           "member": "bool",
           "name": "EnableDhcp",
           "required": true,
@@ -19291,6 +19309,7 @@
         {
           "default": "",
           "document": "`VPC`的`IPv6` `CIDR`。",
+          "example": " -",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "required": true,
@@ -19300,6 +19319,7 @@
         {
           "default": "",
           "document": "标签键值对",
+          "example": "-",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
@@ -19309,6 +19329,7 @@
         {
           "default": "",
           "document": "辅助CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
           "required": true,

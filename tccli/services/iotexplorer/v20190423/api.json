@@ -156,6 +156,12 @@
       "name": "启用规则",
       "output": "EnableTopicRuleResponse"
     },
+    "GetCOSURL": {
+      "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL ",
+      "input": "GetCOSURLRequest",
+      "name": "获取固件下载地址",
+      "output": "GetCOSURLResponse"
+    },
     "GetDeviceList": {
       "document": "用于查询某个产品下的设备列表",
       "input": "GetDeviceListRequest",
@@ -1979,6 +1985,60 @@
         }
       ],
       "usage": "out"
+    },
+    "GetCOSURLRequest": {
+      "document": "GetCOSURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件大小",
+          "example": "10000",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCOSURLResponse": {
+      "document": "GetCOSURL返回参数结构体",
+      "members": [
+        {
+          "document": "固件URL",
+          "example": "http://abc.com",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetDeviceListRequest": {
       "document": "GetDeviceList请求参数结构体",

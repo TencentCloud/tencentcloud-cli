@@ -662,6 +662,7 @@
         {
           "default": "",
           "document": "终端用户在IoT Video上的唯一标识ID",
+          "example": "-9223371585883208722",
           "member": "string",
           "name": "AccessId",
           "required": true,
@@ -670,6 +671,7 @@
         {
           "default": "",
           "document": "设备TID",
+          "example": "********",
           "member": "string",
           "name": "Tid",
           "required": true,
@@ -678,6 +680,7 @@
         {
           "default": "",
           "document": "用户角色，owner：主人，guest：访客",
+          "example": "owner",
           "member": "string",
           "name": "Role",
           "required": true,
@@ -686,10 +689,20 @@
         {
           "default": "",
           "document": "是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填",
+          "example": "true",
           "member": "bool",
           "name": "ForceBind",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "设备昵称",
+          "example": "dev001",
+          "member": "string",
+          "name": "Nick",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -699,8 +712,10 @@
       "members": [
         {
           "document": "访问设备的AccessToken",
+          "example": "***********",
           "member": "string",
           "name": "AccessToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1081,6 +1096,7 @@
         {
           "default": "",
           "document": "云存套餐ID：\nyc1m3d ： 全时3天存储月套餐。\nyc1m7d ： 全时7天存储月套餐。\nyc1m30d ：全时30天存储月套餐。\nyc1y3d ：全时3天存储年套餐。\nyc1y7d ：全时7天存储年套餐。\nyc1y30d ：全时30天存储年套餐。\nye1m3d ：事件3天存储月套餐。\nye1m7d ：事件7天存储月套餐。\nye1m30d ：事件30天存储月套餐 。\nye1y3d ：事件3天存储年套餐。\nye1y7d ：事件7天存储年套餐。\nye1y30d ：事件30天存储年套餐。\nyc1w7d : 全时7天存储周套餐。\nye1w7d : 事件7天存储周套餐。",
+          "example": "xx",
           "member": "string",
           "name": "PkgId",
           "required": true,
@@ -1089,6 +1105,7 @@
         {
           "default": "",
           "document": "设备TID",
+          "example": "xx",
           "member": "string",
           "name": "Tid",
           "required": true,
@@ -1097,6 +1114,7 @@
         {
           "default": "",
           "document": "订单数量,可一次性创建多个订单",
+          "example": "112",
           "member": "int64",
           "name": "OrderCount",
           "required": true,
@@ -1105,6 +1123,7 @@
         {
           "default": "",
           "document": "云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt",
+          "example": "xx",
           "member": "string",
           "name": "StorageRegion",
           "required": true,
@@ -1113,6 +1132,7 @@
         {
           "default": "",
           "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "example": "123",
           "member": "int64",
           "name": "ChnNum",
           "required": false,
@@ -1121,6 +1141,7 @@
         {
           "default": "",
           "document": "设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致",
+          "example": "xx",
           "member": "string",
           "name": "AccessId",
           "required": false,
@@ -1129,6 +1150,7 @@
         {
           "default": "",
           "document": "服务生效时间,若不指定此参数，服务立即生效",
+          "example": "0",
           "member": "int64",
           "name": "EnableTime",
           "required": false,
@@ -1142,71 +1164,91 @@
       "members": [
         {
           "document": "标志是否为续订",
+          "example": "1",
           "member": "bool",
           "name": "IsRenew",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "云存服务ID",
+          "example": "000001010006aada08000000a68601800a000000a6860100",
           "member": "string",
           "name": "ServiceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "云存服务所在的区域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "StorageRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "设备TID",
+          "example": "xxxx",
           "member": "string",
           "name": "Tid",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "example": "0",
           "member": "int64",
           "name": "ChnNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "终端用户在IoT Video平台的注册ID",
+          "example": "9223801559354179592",
           "member": "string",
           "name": "AccessId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "服务开始时间",
+          "example": "1602664844",
           "member": "int64",
           "name": "StartTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "服务失效时间",
+          "example": "1607935244",
           "member": "int64",
           "name": "EndTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "服务状态",
+          "document": "服务状态\n1：正常使用中\n2：待续费。设备云存服务已到期，但是历史云存数据未过期。续费后仍可查看这些历史数据。\n3：已过期。查询不到设备保存在云端的数据。\n4：等待服务生效。",
+          "example": "1",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "新增的云存定单列表",
+          "example": "无",
           "member": "StorageOrder",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1292,6 +1334,7 @@
         {
           "default": "",
           "document": "终端用户在IoT Video上的唯一标识ID",
+          "example": "*******",
           "member": "string",
           "name": "AccessId",
           "required": true,
@@ -1300,6 +1343,7 @@
         {
           "default": "",
           "document": "终端唯一ID，用于区分同一个用户的多个终端",
+          "example": "testDev001",
           "member": "string",
           "name": "UniqueId",
           "required": true,
@@ -1308,10 +1352,20 @@
         {
           "default": "",
           "document": "Token的TTL(time to alive)分钟数",
+          "example": "10",
           "member": "uint64",
           "name": "TtlMinutes",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "旧的AccessToken。续期Token时，此参数为必须。",
+          "example": "02017525B4BCDXXXXXXXXXX305D97E0XXXXXXXX",
+          "member": "string",
+          "name": "OldAccessToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1321,29 +1375,37 @@
       "members": [
         {
           "document": "终端用户在IoT Video上的唯一标识ID",
+          "example": "***********",
           "member": "string",
           "name": "AccessId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "IoT Video平台的AccessToken",
+          "example": "************",
           "member": "string",
           "name": "AccessToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "Token的过期时间，单位秒(UTC时间)",
+          "example": "1583739875",
           "member": "uint64",
           "name": "ExpireTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "终端ID",
+          "example": "-9223371585883208722",
           "member": "string",
           "name": "TerminalId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1658,6 +1720,7 @@
         {
           "default": "",
           "document": "待转移的源云存服务ID",
+          "example": "3452345",
           "member": "string",
           "name": "SrcServiceId",
           "required": true,
@@ -1666,6 +1729,7 @@
         {
           "default": "",
           "document": "设备TID",
+          "example": "2345345",
           "member": "string",
           "name": "Tid",
           "required": true,
@@ -1674,6 +1738,7 @@
         {
           "default": "",
           "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "example": "123",
           "member": "int64",
           "name": "ChnNum",
           "required": false,
@@ -1682,6 +1747,7 @@
         {
           "default": "",
           "document": "设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致",
+          "example": "4564545645",
           "member": "string",
           "name": "AccessId",
           "required": false,
@@ -1695,71 +1761,91 @@
       "members": [
         {
           "document": "被转出的云存服务ID",
+          "example": "000001010006aada08000000a68601800a000000a6860100",
           "member": "string",
           "name": "SrcServiceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "被转入的云存服务ID",
+          "example": "0000010100d641410b000000b086018004000000b0860100",
           "member": "string",
           "name": "ServiceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "云存服务所在的区域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "StorageRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "设备TID",
+          "example": "xxxx",
           "member": "string",
           "name": "Tid",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "example": "0",
           "member": "int64",
           "name": "ChnNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "终端用户在IoT Video平台的注册ID",
+          "example": "9223801602303852555",
           "member": "string",
           "name": "AccessId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "服务开始时间",
+          "example": "1602662040",
           "member": "int64",
           "name": "StartTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "服务失效时间",
+          "example": "1605340416",
           "member": "int64",
           "name": "EndTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "服务状态",
+          "document": "服务状态\n1：正常使用中\n2：待续费。设备云存服务已到期，但是历史云存数据未过期。续费后仍可查看这些历史数据。\n3：已过期。查询不到设备保存在云端的数据。\n4：等待服务生效。",
+          "example": "1",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "新增的云存定单列表",
+          "example": "无",
           "member": "StorageOrder",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2677,6 +2763,7 @@
         {
           "default": "",
           "document": "云存服务ID",
+          "example": "2300001383",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -2685,6 +2772,7 @@
         {
           "default": "",
           "document": "是否返回已结束的订单信息(已过期/已退订/已转移)",
+          "example": "1",
           "member": "bool",
           "name": "GetFinishedOrder",
           "required": false,
@@ -2698,64 +2786,82 @@
       "members": [
         {
           "document": "云存服务ID",
+          "example": "000001010006aada08000000a68601800a000000a6860100",
           "member": "string",
           "name": "ServiceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "云存服务所在的区域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "StorageRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "设备TID",
+          "example": "xxxx",
           "member": "string",
           "name": "Tid",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "example": "0",
           "member": "int64",
           "name": "ChnNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "终端用户在IoT Video平台的注册ID",
+          "example": "9223801559354179592",
           "member": "string",
           "name": "AccessId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "服务开始时间",
+          "example": "1602664844",
           "member": "int64",
           "name": "StartTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "服务失效时间",
+          "example": "1613292044",
           "member": "int64",
           "name": "EndTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "服务状态",
+          "document": "服务状态\n1：正常使用中\n2：待续费。设备云存服务已到期，但是历史云存数据未过期。续费后仍可查看这些历史数据。\n3：已过期。查询不到设备保存在云端的数据。\n4：等待服务生效。",
+          "example": "1",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "云存定单列表",
+          "example": "无",
           "member": "StorageOrder",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4050,6 +4156,7 @@
         {
           "default": "",
           "document": "云存服务ID",
+          "example": "xxxxxx",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -4058,6 +4165,7 @@
         {
           "default": "",
           "document": "云存子订单ID。如果指定子订单ID,则仅退订该子订单，如果未指定子定单ID，则退订所有子订单",
+          "example": "111",
           "member": "string",
           "name": "OrderId",
           "required": false,
@@ -4071,64 +4179,82 @@
       "members": [
         {
           "document": "云存服务ID",
+          "example": "xx",
           "member": "string",
           "name": "ServiceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "云存服务所在的区域",
+          "example": "xx",
           "member": "string",
           "name": "StorageRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "设备TID",
+          "example": "xx",
           "member": "string",
           "name": "Tid",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "example": "0",
           "member": "int64",
           "name": "ChnNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "终端用户在IoT Video平台的注册ID",
+          "example": "xx",
           "member": "string",
           "name": "AccessId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "服务开始时间",
+          "example": "1602664760",
           "member": "int64",
           "name": "StartTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "服务失效时间",
+          "example": "1605343160",
           "member": "int64",
           "name": "EndTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "服务状态",
+          "document": "服务状态\n1：正常使用中\n2：待续费。设备云存服务已到期，但是历史云存数据未过期。续费后仍可查看这些历史数据。\n3：已过期。查询不到设备保存在云端的数据。\n4：等待服务生效。",
+          "example": "2",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "有效云存定单列表",
+          "example": "无",
           "member": "StorageOrder",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4461,6 +4587,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "12345678910",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -4469,6 +4596,7 @@
         {
           "default": "",
           "document": "消息队列类型 1-CMQ; 2-Ckafka",
+          "example": "2",
           "member": "uint64",
           "name": "MsgQueueType",
           "required": true,
@@ -4476,7 +4604,8 @@
         },
         {
           "default": "",
-          "document": "消息类型,整型值（0-31）之间以“,”分隔\n0：在线状态变更\n1.固件版本变更\n2.设置参数变更\n3.控制状态变更\n4.状态信息变更\n5.事件发布",
+          "document": "消息类型,整型值（0-31）之间以“,”分隔\n0：在线状态变更\n1.固件版本变更\n2.设置参数变更\n3.控制状态变更\n4.状态信息变更\n5.事件发布\n6.系统事件",
+          "example": "0,1,2,3,4,5",
           "member": "string",
           "name": "MsgType",
           "required": true,
@@ -4485,6 +4614,7 @@
         {
           "default": "",
           "document": "消息队列主题，不超过32字符",
+          "example": "testTopic",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -4493,6 +4623,7 @@
         {
           "default": "",
           "document": "kafka消息队列的实例名，不超过64字符",
+          "example": "testInstance",
           "member": "string",
           "name": "Instance",
           "required": true,
@@ -4501,6 +4632,7 @@
         {
           "default": "",
           "document": "消息地域，不超过32字符",
+          "example": "xxx",
           "member": "string",
           "name": "MsgRegion",
           "required": true,
@@ -4527,6 +4659,7 @@
         {
           "default": "",
           "document": "定单唯一性ID",
+          "example": "59",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -4536,6 +4669,7 @@
         {
           "default": "",
           "document": "云存套餐ID",
+          "example": "yc1m3d",
           "member": "string",
           "name": "PkgId",
           "required": true,
@@ -4544,7 +4678,8 @@
         },
         {
           "default": "",
-          "document": "定单服务状态",
+          "document": "定单服务状态\n1;订单正在使用。\n2:订单未开始。\n3:订单已经使用过，现在暂时未开始使用(该订单从其他服务转移而来)。\n4:订单已过期。\n5:订单已被退订。\n6:定单已被转移到其他云存服务。",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -4554,6 +4689,7 @@
         {
           "default": "",
           "document": "定单服务生效时间",
+          "example": "1605343244",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -4563,6 +4699,7 @@
         {
           "default": "",
           "document": "定单服务失效时间",
+          "example": "1607935245",
           "member": "int64",
           "name": "EndTime",
           "required": true,

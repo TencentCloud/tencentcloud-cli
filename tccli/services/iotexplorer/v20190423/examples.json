@@ -220,6 +220,14 @@
         "title": "启用规则"
       }
     ],
+    "GetCOSURL": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetCOSURL\n&ProductID=ABCDE12345\n&FirmwareVersion=2.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"http://abc.com\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "GetDeviceList": [
       {
         "document": "根据某个产品ID获取对应的设备列表",

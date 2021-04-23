@@ -2708,7 +2708,7 @@
         },
         {
           "default": "",
-          "document": "ECM 地域",
+          "document": "ECM 地域，形如ap-xian-ecm。",
           "member": "string",
           "name": "EcmRegion",
           "required": true,

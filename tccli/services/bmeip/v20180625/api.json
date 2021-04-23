@@ -134,6 +134,7 @@
         {
           "default": "",
           "document": "待关联的 EIP 与 ACL关系列表",
+          "example": "无",
           "member": "EipAclMap",
           "name": "EipIdAclIdList",
           "required": true,
@@ -160,6 +161,7 @@
         {
           "default": "",
           "document": "Eip实例ID，可通过DescribeBmEip 接口返回字段中的 eipId获取。Eip和EipId参数必须要填写一个。",
+          "example": "eip-kwn5q7mt",
           "member": "string",
           "name": "EipId",
           "required": true,
@@ -168,6 +170,7 @@
         {
           "default": "",
           "document": "托管机器实例ID",
+          "example": "chm-343fqw4",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -181,8 +184,10 @@
       "members": [
         {
           "document": "异步任务ID，可以通过EipBmQueryTask查询任务状态",
+          "example": "2388708",
           "member": "int64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -291,6 +296,7 @@
         {
           "default": "",
           "document": "ACL 名称",
+          "example": "acltest",
           "member": "string",
           "name": "AclName",
           "required": true,
@@ -299,6 +305,7 @@
         {
           "default": "",
           "document": "ACL 状态 0：无状态，1：有状态",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -312,29 +319,37 @@
       "members": [
         {
           "document": "ACL 实例 ID",
+          "example": "bmeipacl-s1hf4voq",
           "member": "string",
           "name": "AclId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "ACL 实例状态",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "ACL 实例名称",
+          "example": "acltest",
           "member": "string",
           "name": "AclName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "ACL 实例创建时间",
+          "example": "2018-10-26 14:42:09",
           "member": "string",
           "name": "CreatedAt",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -441,6 +456,7 @@
         {
           "default": "",
           "document": "待删除的 ACL 实例 ID",
+          "example": "bmeipacl-s1hf4voq",
           "member": "string",
           "name": "AclId",
           "required": true,
@@ -500,6 +516,7 @@
         {
           "default": "",
           "document": "ACL 名称，支持模糊查找",
+          "example": "abc",
           "member": "string",
           "name": "AclName",
           "required": false,
@@ -508,6 +525,7 @@
         {
           "default": "",
           "document": "ACL 实例 ID 列表，数组下标从 0 开始",
+          "example": "[\"bmeipacl-s1hf4voq\\r\\n\"]",
           "member": "string",
           "name": "AclIds",
           "required": false,
@@ -516,6 +534,7 @@
         {
           "default": "",
           "document": "分页参数。偏移量，默认为 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -524,6 +543,7 @@
         {
           "default": "",
           "document": "分页参数。每一页的 EIPACL 列表数目",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -532,6 +552,7 @@
         {
           "default": "",
           "document": "EIP实例ID列表",
+          "example": "[\"eip-1234abcd\", \"eip-abcd1234\"]",
           "member": "string",
           "name": "EipIds",
           "required": false,
@@ -540,6 +561,7 @@
         {
           "default": "",
           "document": "EIP IP地址列表",
+          "example": "[\"1,1,1,1\"]",
           "member": "string",
           "name": "EipIps",
           "required": false,
@@ -548,6 +570,7 @@
         {
           "default": "",
           "document": "EIP名称列表",
+          "example": "name",
           "member": "string",
           "name": "EipNames",
           "required": false,
@@ -556,6 +579,7 @@
         {
           "default": "",
           "document": "排序字段",
+          "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -564,6 +588,7 @@
         {
           "default": "",
           "document": "排序方式，取值：0:增序(默认)，1:降序",
+          "example": "1",
           "member": "uint64",
           "name": "Order",
           "required": false,
@@ -572,6 +597,7 @@
         {
           "default": "",
           "document": "ACL名称列表，支持模糊查找",
+          "example": "[\"abc\", \"def\"]",
           "member": "string",
           "name": "AclNames",
           "required": false,
@@ -585,15 +611,19 @@
       "members": [
         {
           "document": "返回 EIPACL 列表总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "EIPACL列表",
+          "example": "无",
           "member": "EipAcl",
           "name": "EipAclList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -662,8 +692,9 @@
       "document": "DescribeEipTask请求参数结构体",
       "members": [
         {
-          "default": "0",
+          "default": "",
           "document": "EIP查询任务ID",
+          "example": "2488126",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
@@ -677,8 +708,10 @@
       "members": [
         {
           "document": "当前任务状态码：0-成功，1-失败，2-进行中",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1275,6 +1308,7 @@
         {
           "default": "",
           "document": "ACL 实例 ID",
+          "example": "bmeipacl-s1hf4voq",
           "member": "string",
           "name": "AclId",
           "required": true,
@@ -1283,6 +1317,7 @@
         {
           "default": "",
           "document": "ACL 名称",
+          "example": "abc",
           "member": "string",
           "name": "AclName",
           "required": false,
@@ -1291,6 +1326,7 @@
         {
           "default": "",
           "document": "ACL 状态。0：无状态 1：有状态",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -1299,6 +1335,7 @@
         {
           "default": "",
           "document": "规则类型（in/out）。in：入站规则 out：出站规则",
+          "example": "in",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -1307,6 +1344,7 @@
         {
           "default": "",
           "document": "ACL规则列表",
+          "example": "无",
           "member": "EipAclRule",
           "name": "Rules",
           "required": false,
@@ -1416,6 +1454,7 @@
         {
           "default": "",
           "document": "待解关联的 EIP 与 ACL列表",
+          "example": "无",
           "member": "EipAclMap",
           "name": "EipIdAclIdList",
           "required": true,

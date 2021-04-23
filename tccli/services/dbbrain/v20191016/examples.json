@@ -206,6 +206,20 @@
         "title": "获取Top表的空间统计信息"
       }
     ],
+    "DescribeUserSqlAdvice": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeUserSqlAdvice\n&InstanceId=cdb-c1nl9rpv\n&SqlText=select * from t1 where id in ( ? )\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2a51350-8c9f-11eb-bc0f-c9f5ab88d057\",\n        \"Advices\": \"[{\\\"TableName\\\": \\\"t1\\\", \\\"TableSchema\\\": \\\"test\\\", \\\"Keys\\\": [{\\\"SqlText\\\": \\\"alter table `test`.`t1` add index index_0(`id`);\\\"}]}]\",\n        \"Comments\": \"[]\",\n        \"Schema\": \"test\",\n        \"Tables\": \"[{\\\"TableName\\\": \\\"t1\\\", \\\"TableSchema\\\": \\\"test\\\", \\\"TableDDL\\\": \\\"CREATE TABLE `test` (\\n  `id` varchar(36) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC\\\"}]\",\n        \"SqlText\": \"select * from t1 where id in ( ? )\",\n        \"SqlPlan\": \"{\\\"Before\\\": [{\\\"Format\\\": \\\"Table\\\", \\\"Data\\\": {\\\"Names\\\": [\\\"id\\\", \\\"select_type\\\", \\\"table\\\", \\\"partitions\\\", \\\"type\\\", \\\"possible_keys\\\", \\\"key\\\", \\\"key_len\\\", \\\"ref\\\", \\\"rows\\\", \\\"filtered\\\", \\\"Extra\\\"], \\\"Data\\\": [ [1, \\\"SIMPLE\\\", \\\"t1\\\", null, \\\"ALL\\\", null, null, null, null, 1530, 10, \\\"Using where\\\" ]]}}], \\\"After\\\": [{ \\\"Format\\\": \\\"Table\\\", \\\"Data\\\": {\\\"Names\\\": [\\\"id\\\", \\\"select_type\\\", \\\"table\\\", \\\"partitions\\\", \\\"type\\\", \\\"possible_keys\\\", \\\"key\\\", \\\"key_len\\\", \\\"ref\\\", \\\"rows\\\", \\\"filtered\\\", \\\"Extra\\\"], \\\"Data\\\": [[1, \\\"SIMPLE\\\", \\\"t1\\\", null, \\\"ref\\\", \\\"index_0\\\", \\\"index_0\\\", 1056, \\\"const\\\", 51, 100.00, null]]}}]}\",\n        \"Cost\": \"{\\\"Before\\\": 0.1, \\\"After\\\": 0.03, \\\"Ratio\\\": 90.61}\"\n    }\n}",
+        "title": "获取SQL优化建议"
+      },
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeUserSqlAdvice\n&InstanceId=cdb-c1nl9rpv\n&SqlText=select * from t1 where id = ?\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2a51350-8c9f-11eb-bc0f-c9f5ab88d057\",\n        \"Advices\": \"\",\n        \"Comments\": \"\",\n        \"Schema\": \"test\",\n        \"Tables\": \"[{\\\"TableName\\\": \\\"t1\\\", \\\"TableSchema\\\": \\\"test\\\", \\\"TableDDL\\\": \\\"CREATE TABLE `test` (\\n  `id` varchar(36) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC\\\"}]\",\n        \"SqlText\": \"select * from t1 where id in ( ? )\",\n        \"SqlPlan\": \"\",\n        \"Cost\": \"\"\n    }\n}",
+        "title": "获取无需优化SQL的优化建议"
+      }
+    ],
     "ModifyDiagDBInstanceConf": [
       {
         "document": "",

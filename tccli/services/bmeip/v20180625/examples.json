@@ -3,7 +3,7 @@
     "BindEipAcls": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=BindEipAcls\r\n&EipIdAclIdList.0.EipId=eip-pq9cuew0\r\n&EipIdAclIdList.0.AclId=bmeipacl-s1hf4voq\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=BindEipAcls\n&EipIdAclIdList.0.EipId=eip-pq9cuew0\n&EipIdAclIdList.0.AclId=bmeipacl-s1hf4voq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e7d04b6-3154-44c1-b3de-e3dfd7767d55\"\n    }\n}",
         "title": "绑定弹性公网IP ACL"
       }
@@ -11,7 +11,7 @@
     "BindHosted": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=BindHosted\r\n&EipId=eip-kwn5q7mt\r\n&InstanceId=chm-343fqw4\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=BindHosted\n&EipId=eip-kwn5q7mt\n&InstanceId=chm-343fqw4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 2388708,\n        \"RequestId\": \"5159c766-05d9-410c-a5d0-38b84acb6c10\"\n    }\n}",
         "title": "黑石托管机器绑定EIP"
       }
@@ -43,7 +43,7 @@
     "CreateEipAcl": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=CreateEipAcl\r\n&AclName=acltest\r\n&Status=0\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=CreateEipAcl\n&AclName=acltest\n&Status=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AclId\": \"bmeipacl-s1hf4voq\",\n        \"Status\": 0,\n        \"AclName\": \"acltest\",\n        \"CreatedAt\": \"2018-10-26 14:42:09\",\n        \"RequestId\": \"471aa00a-04c7-43e2-afb0-33ddb2702ca2\"\n    }\n}",
         "title": "创建黑石弹性公网 EIPACL"
       }
@@ -59,7 +59,7 @@
     "DeleteEipAcl": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=DeleteEipAcl\r\n&AclId=bmeipacl-s1hf4voq\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=DeleteEipAcl\n&AclId=bmeipacl-s1hf4voq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bbbf0068-fdb3-4da5-a382-298e413f1eb3\"\n    }\n}",
         "title": "删除弹性公网IP ACL"
       }
@@ -67,7 +67,7 @@
     "DescribeEipAcls": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=DescribeEipAcls\r\n&AclIds.0=bmeipacl-s1hf4voq\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=DescribeEipAcls\n&AclIds.0=bmeipacl-s1hf4voq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"EipAclList\": [\n            {\n                \"AclId\": \"bmeipacl-s1hf4voq\",\n                \"AclName\": \"acltest\",\n                \"Status\": \"0\",\n                \"InRules\": [\n                    {\n                        \"Ip\": \"0.0.0.0/0\",\n                        \"Protocol\": \"ANY\",\n                        \"Action\": \"drop\",\n                        \"Port\": \"ALL\",\n                        \"Description\": \"\"\n                    }\n                ],\n                \"OutRules\": [\n                    {\n                        \"Ip\": \"0.0.0.0/0\",\n                        \"Protocol\": \"ANY\",\n                        \"Action\": \"drop\",\n                        \"Port\": \"ALL\",\n                        \"Description\": \"\"\n                    }\n                ],\n                \"CreatedAt\": \"2018-10-26 14:42:09\",\n                \"EipNum\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fae944a8-7b43-475c-ac2b-ff7813d47a71\"\n    }\n}",
         "title": "查询弹性公网IP ACL"
       }
@@ -83,7 +83,7 @@
     "DescribeEipTask": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=DescribeEipTask\r\n&TaskId=2488126\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=DescribeEipTask\n&TaskId=2488126\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"ed3fe48a-c550-450b-9bd5-1cf87b478fe4\"\n    }\n}",
         "title": "查询EIP异步任务状态"
       }
@@ -99,7 +99,7 @@
     "ModifyEipAcl": [
       {
         "document": "此接口用于修改弹性公网IP ACL 名称、入/出站规则",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=ModifyEipAcl\r\n&AclId=bmeipacl-s1hf4voq\r\n&Type=in\r\n&Rules.0.Ip=8.8.8.8\r\n&Rules.0.Port=8080\r\n&Rules.0.Protocol=tcp\r\n&Rules.0.Action=accept\r\n&Rules.0.Description=testrule\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=ModifyEipAcl\n&AclId=bmeipacl-s1hf4voq\n&Type=in\n&Rules.0.Ip=8.8.8.8\n&Rules.0.Port=8080\n&Rules.0.Protocol=tcp\n&Rules.0.Action=accept\n&Rules.0.Description=testrule\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"73ec9a84-2385-43ba-a00b-f27c619858ff\"\n    }\n}",
         "title": "修改弹性公网IP ACL"
       }
@@ -123,7 +123,7 @@
     "UnbindEipAcls": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=UnbindEipAcls\r\n&EipIdAclIdList.0.EipId=eip-pq9cuew0\r\n&EipIdAclIdList.0.AclId=bmeipacl-s1hf4voq\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=UnbindEipAcls\n&EipIdAclIdList.0.EipId=eip-pq9cuew0\n&EipIdAclIdList.0.AclId=bmeipacl-s1hf4voq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"05f46f45-5cc1-428d-bc66-3231344e760d\"\n    }\n}",
         "title": "解绑弹性公网IP ACL"
       }

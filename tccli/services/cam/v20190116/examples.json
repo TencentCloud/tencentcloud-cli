@@ -3,7 +3,7 @@
     "AddUser": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=AddUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&UseApi=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=AddUser\n&Name=test124\n&Remark=test\n&ConsoleLogin=1\n&UseApi=1\n&Password=test123456\n&NeedResetPassword=0\n&PhoneNum=10086\n&CountryCode=86\n&Email=123%40qq.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "添加子用户"
       }

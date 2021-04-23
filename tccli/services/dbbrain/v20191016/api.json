@@ -150,6 +150,12 @@
       "name": "获取Top表的空间统计信息",
       "output": "DescribeTopSpaceTablesResponse"
     },
+    "DescribeUserSqlAdvice": {
+      "document": "获取SQL优化建议。",
+      "input": "DescribeUserSqlAdviceRequest",
+      "name": "获取SQL优化建议",
+      "output": "DescribeUserSqlAdviceResponse"
+    },
     "ModifyDiagDBInstanceConf": {
       "document": "修改实例巡检开关。",
       "input": "ModifyDiagDBInstanceConfRequest",
@@ -2063,6 +2069,114 @@
           "name": "Timestamp",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSqlAdviceRequest": {
+      "document": "DescribeUserSqlAdvice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SQL语句。",
+          "example": "select * from t1",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "库名。",
+          "example": "test",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSqlAdviceResponse": {
+      "document": "DescribeUserSqlAdvice返回参数结构体",
+      "members": [
+        {
+          "document": "SQL优化建议，可解析为JSON数组。",
+          "example": "PossibleKeys",
+          "member": "string",
+          "name": "Advices",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL优化建议备注，可解析为String数组。",
+          "example": "SQL解析不通过",
+          "member": "string",
+          "name": "Comments",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL语句。",
+          "example": "select * from t1",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "库名。",
+          "example": "test",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "相关表的DDL信息，可解析为JSON数组。",
+          "example": "TableDDL",
+          "member": "string",
+          "name": "Tables",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL执行计划，可解析为JSON。",
+          "example": "Before",
+          "member": "string",
+          "name": "SqlPlan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL优化后的成本节约详情，可解析为JSON。",
+          "example": "After",
+          "member": "string",
+          "name": "Cost",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

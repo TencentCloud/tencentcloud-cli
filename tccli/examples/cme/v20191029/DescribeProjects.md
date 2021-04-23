@@ -25,6 +25,7 @@ Output:
                     "Type": "PERSON",
                     "Id": "user_1233"
                 },
+                "StreamConnectProjectInfo": null,
                 "UpdateTime": "2020-11-13T06:41:34.808Z",
                 "CreateTime": "2020-11-13T06:41:34.808Z",
                 "CoverUrl": ""
@@ -65,7 +66,30 @@ Output:
                 },
                 "UpdateTime": "2020-11-13T06:41:34.808Z",
                 "CreateTime": "2020-11-13T06:41:34.808Z",
-                "CoverUrl": ""
+                "CoverUrl": "",
+                "StreamConnectProjectInfo": {
+                    "Status": "Working",
+                    "CurrentInputEndpoint": "Main",
+                    "CurrentStartTime": "2020-11-13T06:41:34.808Z",
+                    "CurrentStopTime": "2020-11-13T08:41:34.808Z",
+                    "LastStopTime": "2020-11-12T07:41:34.808Z",
+                    "MainInput": {
+                        "InputType": "LivePull",
+                        "LivePullInputInfo": {
+                            "InputUrl": "rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759?txSecret=d5f0d5e9eadda723d7fbf6822313b1c0&txTime=6017C8FF"
+                        }
+                    },
+                    "OutputSet": [
+                        {
+                            "PushSwitch": "On",
+                            "StreamConnectOutput": {
+                                "Id": "124522",
+                                "PushUrl": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08",
+                                "Name": "test"
+                            }
+                        }
+                    ]
+                }
             }
         ],
         "RequestId": "60599df66a6b440001518159"

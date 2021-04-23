@@ -13,52 +13,77 @@ Output:
 ```
 {
     "Response": {
-        "ServiceId": "service-rypiqi13",
-        "AvailableEnvironments": [
-            "release"
+        "ServiceDesc": "xx",
+        "CreatedTime": "2020-09-22T00:00:00+00:00",
+        "SetId": 1,
+        "InnerHttpsPort": 0,
+        "InnerHttpPort": 0,
+        "Tags": [
+            {
+                "Value": "xx",
+                "Key": "xx"
+            }
         ],
-        "ServiceName": "dd",
-        "ServiceDesc": "",
-        "Protocol": "http",
-        "CreatedTime": "2020-04-15T11:03:41Z",
-        "ModifiedTime": "2020-04-15T11:03:42Z",
-        "ExclusiveSetName": "",
-        "IpVersion": "IPv4",
-        "UserType": "",
         "NetTypes": [
             "OUTER"
         ],
-        "InternalSubDomain": "",
-        "OuterSubDomain": "service-rypiqi13-1259027407.bj.apigw.tencentcs.com",
-        "InnerHttpPort": 0,
-        "InnerHttpsPort": 0,
-        "SetId": 1,
-        "ApiTotalCount": 1,
-        "ApiIdStatusSet": [
+        "IpVersion": "xx",
+        "UserType": "xx",
+        "UsagePlanList": [
             {
-                "ServiceId": "service-rypiqi13",
-                "ApiId": "api-mpnvjg0b",
-                "ApiDesc": "",
-                "Path": "/",
-                "Method": "GET",
-                "CreatedTime": "2020-05-18T11:11:04Z",
-                "ModifiedTime": "2020-05-18T11:11:04Z",
-                "ApiName": "test_tag",
-                "UniqVpcId": "",
-                "ApiType": "NORMAL",
-                "Protocol": "HTTP",
-                "IsDebugAfterCharge": false,
-                "AuthType": "NONE",
-                "ApiBusinessType": "NORMAL",
-                "AuthRelationApiId": "",
-                "OauthConfig": null,
-                "TokenLocation": null,
-                "RelationBuniessApiIds": null
+                "MaxRequestNumPreSec": 0,
+                "UsagePlanId": "xx",
+                "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                "UsagePlanDesc": "xx",
+                "Environment": "xx",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "UsagePlanName": "xx"
             }
         ],
+        "OuterSubDomain": "xx",
         "UsagePlanTotalCount": 0,
-        "UsagePlanList": [],
-        "RequestId": "b15e7661-c598-4747-85f9-44fc44118608"
+        "SetType": "xx",
+        "ApiIdStatusSet": [
+            {
+                "AuthType": "xx",
+                "Protocol": "xx",
+                "UniqVpcId": "xx",
+                "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                "OauthConfig": {
+                    "PublicKey": "xx",
+                    "LoginRedirectUrl": "xx",
+                    "TokenLocation": "xx"
+                },
+                "ApiId": "xx",
+                "AuthRelationApiId": "xx",
+                "ApiDesc": "xx",
+                "ApiType": "xx",
+                "ApiBusinessType": "xx",
+                "ServiceId": "xx",
+                "ApiName": "xx",
+                "Path": "xx",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "RelationBuniessApiIds": [
+                    "xx"
+                ],
+                "IsDebugAfterCharge": false,
+                "Method": "xx",
+                "TokenLocation": "xx"
+            }
+        ],
+        "ServiceName": "xx",
+        "RequestId": "xx",
+        "InstanceName": "xx",
+        "Protocol": "xx",
+        "ApiTotalCount": 1,
+        "ModifiedTime": "2020-09-22T00:00:00+00:00",
+        "ExclusiveSetName": "xx",
+        "InstanceId": "xx",
+        "AvailableEnvironments": [
+            "release"
+        ],
+        "ServiceId": "xx",
+        "InternalSubDomain": "xx"
     }
 }
 ```

@@ -69,6 +69,7 @@ Output:
                 "CidrBlock": "10.0.0.0/16",
                 "Ipv6CidrBlock": "3402:4e00:20:1200::/56",
                 "IsDefault": false,
+                "EnableDhcp": true,
                 "EnableMulticast": false,
                 "CreatedTime": "2018-04-25 10:26:26",
                 "DhcpOptionsId": "dopt-8g7k5qfq",

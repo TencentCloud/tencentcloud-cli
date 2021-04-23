@@ -78,6 +78,12 @@
       "name": "查询同步模式",
       "output": "DescribeDBSyncModeResponse"
     },
+    "DescribeDCDBInstanceNodeInfo": {
+      "document": "本接口（DescribeDCDBInstanceNodeInfo）用于获取实例节点信息",
+      "input": "DescribeDCDBInstanceNodeInfoRequest",
+      "name": "获取实例节点信息",
+      "output": "DescribeDCDBInstanceNodeInfoResponse"
+    },
     "DescribeDCDBInstances": {
       "document": "查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回10条实例记录，单次请求最多支持返回100条实例记录。",
       "input": "DescribeDCDBInstancesRequest",
@@ -337,6 +343,39 @@
         }
       ],
       "type": "object"
+    },
+    "BriefNodeInfo": {
+      "document": "描述分片DB节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DB节点ID",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB节点角色，取值为master或者slave",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所属分片的分片ID",
+          "member": "string",
+          "name": "ShardId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CloneAccountRequest": {
       "document": "CloneAccount请求参数结构体",
@@ -2159,6 +2198,69 @@
           "name": "CurrentSyncMode",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDCDBInstanceNodeInfoRequest": {
+      "document": "DescribeDCDBInstanceNodeInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsqlshard-8upuqubt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单次最多返回多少条，取值范围为(0-100]，默认为100",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据的偏移值，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDCDBInstanceNodeInfoResponse": {
+      "document": "DescribeDCDBInstanceNodeInfo返回参数结构体",
+      "members": [
+        {
+          "document": "节点总个数",
+          "example": "4",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点信息",
+          "example": "无",
+          "member": "BriefNodeInfo",
+          "name": "NodesInfo",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

@@ -32,6 +32,22 @@
         "title": "绑定自定义域名"
       }
     ],
+    "BuildAPIDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildAPIDoc\n<公共请求参数>\n\n{\n    \"ApiDocId\": \"doc-v8tsladd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"True\",\n        \"RequestId\": \"1dea2e5f-c4d8-47c9-8dab-6ce9b137a15a\"\n    }\n}",
+        "title": "BuildAPIDoc"
+      }
+    ],
+    "CreateAPIDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAPIDoc\n<公共请求参数>\n\n{\n    \"ApiDocName\": \"test\",\n    \"ServiceId\": \"service-2nuhovb7\",\n    \"Environment\": \"release\",\n    \"ApiIds\": [\n        \"api-2dvasde2\",\n        \"api-zewq23\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ApiDocId\": \"apidoc-a7ragqam\",\n            \"ApiDocName\": \"test\",\n            \"ApiDocStatus\": \"PROCESSING\"\n        },\n        \"RequestId\": \"ef2f184f-8044-43f1-b807-6761f259c35f\"\n    }\n}",
+        "title": "CreateAPIDoc"
+      }
+    ],
     "CreateApi": [
       {
         "document": "",
@@ -70,6 +86,14 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=CreateUsagePlan\n&UsagePlanName=xx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-quqxvett\",\n            \"UsagePlanName\": \"xx\",\n            \"UsagePlanDesc\": null,\n            \"InitQuota\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"IsHide\": 0,\n            \"CreatedTime\": \"2020-02-17T11:26:42Z\",\n            \"ModifiedTime\": \"2020-02-17T11:26:42Z\",\n            \"BindSecretIdTotalCount\": 0,\n            \"BindSecretIds\": null,\n            \"BindEnvironmentTotalCount\": 0,\n            \"BindEnvironments\": null\n        },\n        \"RequestId\": \"b30900ef-72e9-4076-a2bd-dc8caab1ef6f\"\n    }\n}",
         "title": "创建使用计划"
+      }
+    ],
+    "DeleteAPIDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAPIDoc\n<公共请求参数>\n\n{\n    \"ApiDocId\": \"doc-v8tsladd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"True\",\n        \"RequestId\": \"1dea2e5f-c4d8-47c9-8dab-6ce9b137a15a\"\n    }\n}",
+        "title": "DeleteAPIDoc"
       }
     ],
     "DeleteApi": [
@@ -126,6 +150,22 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=DemoteServiceUsagePlan\n&UsagePlanId=usagePlan-bxtnltfd\n&ServiceId=service-ody35h5e\n&Environment=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"7787aa0e-be74-43c0-b6f6-7bf56995ce2d\"\n    }\n}",
         "title": "DemoteServiceUsagePlan"
+      }
+    ],
+    "DescribeAPIDocDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIDocDetail\n<公共请求参数>\n\n{\n    \"ApiDocId\": \"apidoc-a7ragqam\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ApiDocId\": \"apidoc-a7ragqam\",\n            \"ApiDocName\": \"clare\",\n            \"ApiCount\": 2,\n            \"ViewCount\": 0,\n            \"ReleaseCount\": 1,\n            \"ApiDocUri\": \"https://apidoc-a7ragqam-apigw.doc.coding.io\",\n            \"SharePassword\": \"123456\",\n            \"ApiDocStatus\": \"COMPLETED\",\n            \"UpdatedTime\": \"2021-01-25 05:46:25\",\n            \"ServiceId\": \"service-esdf2dsf\",\n            \"ServiceName\": \"myservice\",\n            \"ApiIds\": [\n                \"api-23sczadf\"\n            ],\n            \"ApiNames\": [\n                \"test\"\n            ],\n            \"Environment\": \"release\"\n        },\n        \"RequestId\": \"fbee8d42-f977-420f-b6c0-39c9c5fc4f51\"\n    }\n}",
+        "title": "DescribeAPIDocDetail"
+      }
+    ],
+    "DescribeAPIDocs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIDocs\n<公共请求参数>\n\n{\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"APIDocSet\": [\n                {\n                    \"ApiDocId\": \"apidoc-a7ragqam\",\n                    \"ApiDocName\": \"test\",\n                    \"ApiDocStatus\": \"PROCESSING\"\n                }\n            ]\n        },\n        \"RequestId\": \"5ee3cf2e-758b-4cb5-801e-9c28d5b67763\"\n    }\n}",
+        "title": "DescribeAPIDocs"
       }
     ],
     "DescribeApi": [
@@ -225,8 +265,8 @@
     "DescribeService": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeService\r\n&ServiceId=service-rypiqi13\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"service-rypiqi13\",\n        \"AvailableEnvironments\": [\n            \"release\"\n        ],\n        \"ServiceName\": \"dd\",\n        \"ServiceDesc\": \"\",\n        \"Protocol\": \"http\",\n        \"CreatedTime\": \"2020-04-15T11:03:41Z\",\n        \"ModifiedTime\": \"2020-04-15T11:03:42Z\",\n        \"ExclusiveSetName\": \"\",\n        \"IpVersion\": \"IPv4\",\n        \"UserType\": \"\",\n        \"NetTypes\": [\n            \"OUTER\"\n        ],\n        \"InternalSubDomain\": \"\",\n        \"OuterSubDomain\": \"service-rypiqi13-1259027407.bj.apigw.tencentcs.com\",\n        \"InnerHttpPort\": 0,\n        \"InnerHttpsPort\": 0,\n        \"SetId\": 1,\n        \"ApiTotalCount\": 1,\n        \"ApiIdStatusSet\": [\n            {\n                \"ServiceId\": \"service-rypiqi13\",\n                \"ApiId\": \"api-mpnvjg0b\",\n                \"ApiDesc\": \"\",\n                \"Path\": \"/\",\n                \"Method\": \"GET\",\n                \"CreatedTime\": \"2020-05-18T11:11:04Z\",\n                \"ModifiedTime\": \"2020-05-18T11:11:04Z\",\n                \"ApiName\": \"test_tag\",\n                \"UniqVpcId\": \"\",\n                \"ApiType\": \"NORMAL\",\n                \"Protocol\": \"HTTP\",\n                \"IsDebugAfterCharge\": false,\n                \"AuthType\": \"NONE\",\n                \"ApiBusinessType\": \"NORMAL\",\n                \"AuthRelationApiId\": \"\",\n                \"OauthConfig\": null,\n                \"TokenLocation\": null,\n                \"RelationBuniessApiIds\": null\n            }\n        ],\n        \"UsagePlanTotalCount\": 0,\n        \"UsagePlanList\": [],\n        \"RequestId\": \"b15e7661-c598-4747-85f9-44fc44118608\"\n    }\n}",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeService\n&ServiceId=service-rypiqi13\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ServiceDesc\": \"xx\",\n        \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"SetId\": 1,\n        \"InnerHttpsPort\": 0,\n        \"InnerHttpPort\": 0,\n        \"Tags\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"NetTypes\": [\n            \"OUTER\"\n        ],\n        \"IpVersion\": \"xx\",\n        \"UserType\": \"xx\",\n        \"UsagePlanList\": [\n            {\n                \"MaxRequestNumPreSec\": 0,\n                \"UsagePlanId\": \"xx\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanDesc\": \"xx\",\n                \"Environment\": \"xx\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanName\": \"xx\"\n            }\n        ],\n        \"OuterSubDomain\": \"xx\",\n        \"UsagePlanTotalCount\": 0,\n        \"SetType\": \"xx\",\n        \"ApiIdStatusSet\": [\n            {\n                \"AuthType\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"UniqVpcId\": \"xx\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"OauthConfig\": {\n                    \"PublicKey\": \"xx\",\n                    \"LoginRedirectUrl\": \"xx\",\n                    \"TokenLocation\": \"xx\"\n                },\n                \"ApiId\": \"xx\",\n                \"AuthRelationApiId\": \"xx\",\n                \"ApiDesc\": \"xx\",\n                \"ApiType\": \"xx\",\n                \"ApiBusinessType\": \"xx\",\n                \"ServiceId\": \"xx\",\n                \"ApiName\": \"xx\",\n                \"Path\": \"xx\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"RelationBuniessApiIds\": [\n                    \"xx\"\n                ],\n                \"IsDebugAfterCharge\": false,\n                \"Method\": \"xx\",\n                \"TokenLocation\": \"xx\"\n            }\n        ],\n        \"ServiceName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"InstanceName\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"ApiTotalCount\": 1,\n        \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"ExclusiveSetName\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"AvailableEnvironments\": [\n            \"release\"\n        ],\n        \"ServiceId\": \"xx\",\n        \"InternalSubDomain\": \"xx\"\n    }\n}",
         "title": "用于查询服务详情"
       }
     ],
@@ -289,7 +329,7 @@
     "DescribeServicesStatus": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServicesStatus\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServicesStatus\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"ServiceSet\": [\n                {\n                    \"ServiceId\": \"service-hrxy5qsm\",\n                    \"ServiceName\": \"ddd\",\n                    \"ServiceDesc\": \"\",\n                    \"Protocol\": \"http\",\n                    \"OuterSubDomain\": \"service-hrxy5qsm-1259027407.gz.apigw.tencentcs.com\",\n                    \"InnerSubDomain\": \"\",\n                    \"InnerHttpPort\": 0,\n                    \"InnerHttpsPort\": 0,\n                    \"CreatedTime\": \"2020-03-25T15:24:17Z\",\n                    \"ModifiedTime\": \"2020-03-25T15:24:18Z\",\n                    \"NetTypes\": [\n                        \"OUTER\"\n                    ],\n                    \"IpVersion\": \"IPv4\",\n                    \"ExclusiveSetName\": \"\",\n                    \"AvailableEnvironments\": [\n                        \"release\"\n                    ],\n                    \"TradeIsolateStatus\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"7100a7b7-30ed-43c8-8d53-081afb6ecd8b\"\n    }\n}",
         "title": "用于查询服务列表"
       }
@@ -348,6 +388,14 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=GenerateApiDocument\n&ServiceId=service-ody35h5e\n&GenEnvironment=release\n&GenLanguage=Python\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DocumentURL\": \"https://apigateway-document-sdk-xxxxx\",\n            \"SdkURL\": \"https://apigateway-document-sdk-xxxxx\"\n        },\n        \"RequestId\": \"01c56ec2-6a40-46bc-bdf6-8b273d4bec93\"\n    }\n}",
         "title": "下载sdk和api文档"
+      }
+    ],
+    "ModifyAPIDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAPIDoc\n<公共请求参数>\n\n{\n    \"ApiDocName\": \"test\",\n    \"ApiDocId\": \"doc-v8tsladd\",\n    \"ServiceId\": \"service-2nuhovb7\",\n    \"Environment\": \"release\",\n    \"ApiIds\": [\n        \"api-2dvasde2\",\n        \"api-zewq23\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ApiDocId\": \"apidoc-a7ragqam\",\n            \"ApiDocName\": \"test\",\n            \"ApiDocStatus\": \"PROCESSING\"\n        },\n        \"RequestId\": \"ad4b3a69-50ac-4de3-a2dc-08167a9a2d45\"\n    }\n}",
+        "title": "ModifyAPIDoc"
       }
     ],
     "ModifyApi": [
@@ -420,6 +468,14 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=ReleaseService\r\n&ServiceId=service-ody35h5e\r\n&EnvironmentName=prepub\r\n&ReleaseDesc=xx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReleaseDesc\": \"xx\",\n            \"ReleaseVersion\": \"2020022502411672fae6e9-9726-4caa-8867-6366cd3f1ba5\"\n        },\n        \"RequestId\": \"c5b4711b-8044-43eb-97cc-e755c5df1420\"\n    }\n}",
         "title": "ReleaseService"
+      }
+    ],
+    "ResetAPIDocPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetAPIDocPassword\n<公共请求参数>\n\n{\n    \"ApiDocId\": \"apidoc-a7ragqam\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ApiDocId\": \"apidoc-a7ragqam\",\n            \"ApiDocName\": \"test\",\n            \"ApiDocStatus\": \"PROCESSING\"\n        },\n        \"RequestId\": \"ad4b3a69-50ac-4de3-a2dc-08167a9a2d45\"\n    }\n}",
+        "title": "ResetAPIDocPassword"
       }
     ],
     "UnBindEnvironment": [

@@ -419,6 +419,7 @@
         {
           "default": "",
           "document": "子用户用户名",
+          "example": "test124",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -427,6 +428,7 @@
         {
           "default": "",
           "document": "子用户备注",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -435,6 +437,7 @@
         {
           "default": "",
           "document": "子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。",
+          "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
           "required": false,
@@ -443,6 +446,7 @@
         {
           "default": "",
           "document": "是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。",
+          "example": "1",
           "member": "uint64",
           "name": "UseApi",
           "required": false,
@@ -451,6 +455,7 @@
         {
           "default": "",
           "document": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。",
+          "example": "test123456",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -459,6 +464,7 @@
         {
           "default": "",
           "document": "子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedResetPassword",
           "required": false,
@@ -467,6 +473,7 @@
         {
           "default": "",
           "document": "手机号",
+          "example": "10086",
           "member": "string",
           "name": "PhoneNum",
           "required": false,
@@ -475,6 +482,7 @@
         {
           "default": "",
           "document": "区号",
+          "example": "86",
           "member": "string",
           "name": "CountryCode",
           "required": false,
@@ -483,6 +491,7 @@
         {
           "default": "",
           "document": "邮箱",
+          "example": "12340qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -496,43 +505,55 @@
       "members": [
         {
           "document": "子用户 UIN",
+          "example": "100000546533",
           "member": "uint64",
           "name": "Uin",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "子用户用户名",
+          "example": "test124",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "如果输入参数组合为自动生成随机密码，则返回生成的密码",
+          "example": "test123456",
           "member": "string",
           "name": "Password",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "子用户密钥 ID",
+          "example": "faweffewagwaegawe",
           "member": "string",
           "name": "SecretId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "子用户密钥 Key",
+          "example": "fawef23rjhiuaefhuaifhiuawef",
           "member": "string",
           "name": "SecretKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "子用户 UID",
+          "example": "5648765",
           "member": "uint64",
           "name": "Uid",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -24,6 +24,12 @@
       "name": "查询回调地址",
       "output": "DescribeOnlineRecordCallbackResponse"
     },
+    "DescribeQualityMetrics": {
+      "document": "查询互动白板质量数据",
+      "input": "DescribeQualityMetricsRequest",
+      "name": "查询质量数据",
+      "output": "DescribeQualityMetricsResponse"
+    },
     "DescribeTranscode": {
       "document": "查询文档转码任务的执行进度与转码结果",
       "input": "DescribeTranscodeRequest",
@@ -206,6 +212,7 @@
         {
           "default": "",
           "document": "客户的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -213,7 +220,8 @@
         },
         {
           "default": "",
-          "document": "需要进行转码文件地址",
+          "document": "经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。",
+          "example": "https://path/to/document.ppt",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -222,6 +230,7 @@
         {
           "default": "",
           "document": "是否为静态PPT，默认为False；\n如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；",
+          "example": "False",
           "member": "bool",
           "name": "IsStaticPPT",
           "required": false,
@@ -230,6 +239,7 @@
         {
           "default": "",
           "document": "转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率\n\n注意分辨率宽高中间为英文字母\"xyz\"的\"x\"",
+          "example": "960x540",
           "member": "string",
           "name": "MinResolution",
           "required": false,
@@ -238,6 +248,7 @@
         {
           "default": "",
           "document": "动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution",
+          "example": "960x540",
           "member": "string",
           "name": "ThumbnailResolution",
           "required": false,
@@ -246,6 +257,7 @@
         {
           "default": "",
           "document": "转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：\n\nzip： 生成`.zip`压缩包\ntar.gz： 生成`.tar.gz`压缩包",
+          "example": "zip",
           "member": "string",
           "name": "CompressFileType",
           "required": false,
@@ -254,6 +266,7 @@
         {
           "default": "",
           "document": "内部参数",
+          "example": "空 ",
           "member": "string",
           "name": "ExtraData",
           "required": false,
@@ -267,8 +280,10 @@
       "members": [
         {
           "document": "文档转码任务的唯一标识Id，用于查询该任务的进度以及转码结果",
+          "example": "g6ls63ps49vteb8bk1mb",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -541,6 +556,87 @@
           "name": "ReplayUrl",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityMetricsRequest": {
+      "document": "DescribeQualityMetrics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "白板应用的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间，Unix时间戳，单位秒，时间跨度不能超过7天",
+          "example": "1614691834",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间，Unix时间戳，单位秒，时间跨度不能超过7天",
+          "example": "1614691834",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的指标，目前支持以下值\n  - image_load_total_count: 图片加载总数\n  - image_load_fail_count: 图片加载失败数量\n  - image_load_success_rate: 图片加载成功率\n  - ppt_load_total_count: PPT加载总数\n  - ppt_load_fail_count: PPT加载失败总数\n  - ppt_load_success_rate: PPT加载成功率",
+          "example": "image_load_success_rate",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚合的时间维度，目前只支持1小时，输入值为\"1h\"",
+          "example": "1h",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityMetricsResponse": {
+      "document": "DescribeQualityMetrics返回参数结构体",
+      "members": [
+        {
+          "document": "输入的查询指标",
+          "example": "image_load_success_rate",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时间序列",
+          "example": "无",
+          "member": "TimeValue",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2015,6 +2111,32 @@
         }
       ],
       "usage": "in"
+    },
+    "TimeValue": {
+      "document": "查询指标返回的时间序列",
+      "members": [
+        {
+          "default": "",
+          "document": "Unix时间戳，单位秒",
+          "example": "1617883200",
+          "member": "uint64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询指标对应当前时间的值",
+          "example": "100",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VideoInfo": {
       "document": "视频信息",

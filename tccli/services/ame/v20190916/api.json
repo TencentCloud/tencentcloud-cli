@@ -355,6 +355,7 @@
         {
           "default": "",
           "document": "歌曲Id",
+          "example": "xxx",
           "member": "string",
           "name": "MusicId",
           "required": true,
@@ -362,7 +363,8 @@
         },
         {
           "default": "",
-          "document": "歌曲类型，请填写：MP3-320K-FTD",
+          "document": "MP3-320K-FTD-P  为获取320kbps歌曲热门片段。\nMP3-320K-FTD 为获取320kbps已核验歌曲完整资源。",
+          "example": "MP3-320K-FTD-P",
           "member": "string",
           "name": "MusicType",
           "required": false,
@@ -376,43 +378,55 @@
       "members": [
         {
           "document": "歌曲Id",
+          "example": "xxx",
           "member": "string",
           "name": "MusicId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "歌曲名称",
+          "example": "低温xx",
           "member": "string",
           "name": "MusicName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "歌曲时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "288",
           "member": "int64",
           "name": "Duration",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "歌曲链接",
+          "example": "https://xxx.com/wm/10/384/10384721-MP3-128K-FTW-P.mp3?sign=4d7428e523c0d419e6c05db5912c8c67&t=5fcf112a&transDeliveryCode=CA@0@1607400466@S@c56ea136420f5044",
           "member": "string",
           "name": "MusicUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "歌曲图片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx.com/album/097/976740-JPG-240X240-ALBUM.jpg",
           "member": "string",
           "name": "MusicImageUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "歌手列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\\u9648xx\"]",
           "member": "string",
           "name": "Singers",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -590,6 +604,7 @@
         {
           "default": "",
           "document": "歌曲ID",
+          "example": "xxxx",
           "member": "string",
           "name": "ItemId",
           "required": true,
@@ -598,6 +613,7 @@
         {
           "default": "",
           "document": "在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。",
+          "example": "xx",
           "member": "string",
           "name": "IdentityId",
           "required": true,
@@ -605,7 +621,8 @@
         },
         {
           "default": "",
-          "document": "MP3-64K-FTD-P  为获取64kbps歌曲热门片段。\nMP3-320K-FTD 为获取320kbps已核验歌曲完整资源。",
+          "document": "MP3-320K-FTD-P  为获取64kbps歌曲热门片段。\nMP3-320K-FTD 为获取320kbps已核验歌曲完整资源。",
+          "example": "MP3-64K-FTD-P",
           "member": "string",
           "name": "SubItemType",
           "required": false,
@@ -614,6 +631,7 @@
         {
           "default": "",
           "document": "CDN URL Protocol:HTTP or HTTPS/SSL\nValues:Y , N(default)",
+          "example": "无",
           "member": "string",
           "name": "Ssl",
           "required": false,
@@ -627,8 +645,10 @@
       "members": [
         {
           "document": "音乐相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Music",
           "name": "Music",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

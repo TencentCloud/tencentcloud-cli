@@ -44,6 +44,14 @@
         "title": "查询实时录制回调地址"
       }
     ],
+    "DescribeQualityMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityMetrics\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400296030,\n    \"Metric\": \"image_load_fail_count\",\n    \"Interval\": \"1h\",\n    \"StartTime\": 1617874404,\n    \"EndTime\": 1618479204\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c41b5df-2326-4c0b-baca-2fd85ebb4097\",\n        \"Metric\": \"image_load_fail_count\",\n        \"Content\": [\n            {\n                \"Time\": 1617872400,\n                \"Value\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询白板图片加载失败统计"
+      }
+    ],
     "DescribeTranscode": [
       {
         "document": "查询文档动态转码任务结果",

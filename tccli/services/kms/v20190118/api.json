@@ -1476,6 +1476,7 @@
         {
           "default": "",
           "document": "调用CreateKey生成的CMK全局唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1484,6 +1485,7 @@
         {
           "default": "",
           "document": "被加密的明文数据，该字段必须使用base64编码，原文最大长度支持4K",
+          "example": "testName",
           "member": "string",
           "name": "Plaintext",
           "required": true,
@@ -1492,6 +1494,7 @@
         {
           "default": "",
           "document": "key/value对的json字符串，如果指定了该参数，则在调用Decrypt API时需要提供同样的参数，最大支持1024个字符",
+          "example": "testName",
           "member": "string",
           "name": "EncryptionContext",
           "required": false,
@@ -1504,16 +1507,20 @@
       "document": "Encrypt返回参数结构体",
       "members": [
         {
-          "document": "加密后经过base64编码的密文",
+          "document": "加密后的密文，base64编码。注意：本字段中打包了密文和密钥的相关信息，不是对明文的直接加密结果，只有将该字段作为Decrypt接口的输入参数，才可以解密出原文。",
+          "example": "ss",
           "member": "string",
           "name": "CiphertextBlob",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "加密使用的CMK的全局唯一标识",
+          "example": "9999aed0-4956-11e9-bc70-5254005e86b4",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

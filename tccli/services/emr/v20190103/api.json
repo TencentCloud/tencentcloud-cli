@@ -1238,6 +1238,7 @@
         {
           "default": "",
           "document": "流程任务Id，RunJobFlow接口返回的值。",
+          "example": "1",
           "member": "int64",
           "name": "JobFlowId",
           "required": true,
@@ -1251,15 +1252,19 @@
       "members": [
         {
           "document": "流程任务状态，可以为以下值：\nJobFlowInit，流程任务初始化。\nJobFlowResourceApplied，资源申请中，通常为JobFlow需要新建集群时的状态。\nJobFlowResourceReady，执行流程任务的资源就绪。\nJobFlowStepsRunning，流程任务步骤已提交。\nJobFlowStepsComplete，流程任务步骤已完成。\nJobFlowTerminating，流程任务所需资源销毁中。\nJobFlowFinish，流程任务已完成。",
+          "example": "JobFlowFinish",
           "member": "string",
           "name": "State",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "流程任务步骤结果。",
+          "example": "无",
           "member": "JobResult",
           "name": "Details",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3665,6 +3670,7 @@
         {
           "default": "",
           "document": "作业名称。",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3673,6 +3679,7 @@
         {
           "default": "",
           "document": "是否新创建集群。\ntrue，新创建集群，则使用Instance中的参数进行集群创建。\nfalse，使用已有集群，则通过InstanceId传入。",
+          "example": "false",
           "member": "bool",
           "name": "CreateCluster",
           "required": true,
@@ -3681,6 +3688,7 @@
         {
           "default": "",
           "document": "作业流程执行步骤。",
+          "example": "无",
           "member": "Step",
           "name": "Steps",
           "required": true,
@@ -3689,6 +3697,7 @@
         {
           "default": "",
           "document": "作业流程正常完成时，集群的处理方式，可选择:\nTerminate 销毁集群。\nReserve 保留集群。",
+          "example": "Terminate",
           "member": "string",
           "name": "InstancePolicy",
           "required": true,
@@ -3697,6 +3706,7 @@
         {
           "default": "",
           "document": "只有CreateCluster为true时生效，目前只支持EMR版本，例如EMR-2.2.0，不支持ClickHouse和Druid版本。",
+          "example": "无",
           "member": "string",
           "name": "ProductVersion",
           "required": false,
@@ -3705,6 +3715,7 @@
         {
           "default": "",
           "document": "只在CreateCluster为true时生效。\ntrue 表示安装kerberos，false表示不安装kerberos。",
+          "example": "无",
           "member": "bool",
           "name": "SecurityClusterFlag",
           "required": false,
@@ -3713,6 +3724,7 @@
         {
           "default": "",
           "document": "只在CreateCluster为true时生效。\n新建集群时，要安装的软件列表。",
+          "example": "无",
           "member": "string",
           "name": "Software",
           "required": false,
@@ -3721,6 +3733,7 @@
         {
           "default": "",
           "document": "引导脚本。",
+          "example": "无",
           "member": "BootstrapAction",
           "name": "BootstrapActions",
           "required": false,
@@ -3729,6 +3742,7 @@
         {
           "default": "",
           "document": "指定配置创建集群。",
+          "example": "无",
           "member": "Configuration",
           "name": "Configurations",
           "required": false,
@@ -3737,6 +3751,7 @@
         {
           "default": "",
           "document": "作业日志保存地址。",
+          "example": "无",
           "member": "string",
           "name": "LogUri",
           "required": false,
@@ -3745,6 +3760,7 @@
         {
           "default": "",
           "document": "只在CreateCluster为false时生效。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -3753,6 +3769,7 @@
         {
           "default": "",
           "document": "自定义应用角色，大数据应用访问外部服务时使用的角色，默认为\"EME_QCSRole\"。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationRole",
           "required": false,
@@ -3761,6 +3778,7 @@
         {
           "default": "",
           "document": "重入标签，用来可重入检查，防止在一段时间内，创建相同的流程作业。",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -3769,6 +3787,7 @@
         {
           "default": "",
           "document": "只在CreateCluster为true时生效，使用该配置创建集群。",
+          "example": "无",
           "member": "ClusterSetting",
           "name": "Instance",
           "required": false,
@@ -3782,8 +3801,10 @@
       "members": [
         {
           "document": "作业流程ID。",
+          "example": "42",
           "member": "int64",
           "name": "JobFlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
