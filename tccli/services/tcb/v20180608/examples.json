@@ -72,6 +72,14 @@
         "title": "创建静态托管资源"
       }
     ],
+    "CreateWxCloudBaseRunEnv": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWxCloudBaseRunEnv\n<公共请求参数>\n\n{\n    \"WxAppId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"xx\",\n        \"TranId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateWxCloudBaseRunEnv"
+      }
+    ],
     "DeleteCloudBaseProjectLatestVersion": [
       {
         "document": "",
@@ -278,6 +286,22 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeSmsQuotas\n&EnvId=tnt-j715s5gda\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SmsFreeQuotaList\": [\n            {\n                \"FreeQuota\": 1000,\n                \"CycleStart\": \"2020-01-01 23:59:59\",\n                \"CycleEnd\": \"2020-02-01 23:59:59\",\n                \"TodayUsedQuota\": 0\n            }\n        ],\n        \"RequestId\": \"a1b9ccf2-86a7-490d-9769-a5fb6b856192\"\n    }\n}",
         "title": "查询免费量"
+      }
+    ],
+    "DescribeWxCloudBaseRunEnvs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxCloudBaseRunEnvs\n<公共请求参数>\n\n{\n    \"WxAppId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"Status\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"EnvId\": \"xx\",\n                \"Alias\": \"xx\",\n                \"PackageName\": \"xx\",\n                \"IsAutoDegrade\": true,\n                \"Functions\": [\n                    {\n                        \"Region\": \"xx\",\n                        \"Namespace\": \"xx\"\n                    }\n                ],\n                \"EnvChannel\": \"xx\",\n                \"Source\": \"xx\",\n                \"Region\": \"xx\",\n                \"IsDefault\": true,\n                \"PackageId\": \"xx\",\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"CdnDomain\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"AppId\": \"xx\"\n                    }\n                ],\n                \"LogServices\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"TopicName\": \"xx\",\n                        \"LogsetName\": \"xx\",\n                        \"LogsetId\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"StaticStorages\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"StaticDomain\": \"xx\",\n                        \"DefaultDirName\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeWxCloudBaseRunEnvs"
+      }
+    ],
+    "DescribeWxCloudBaseRunSubNets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxCloudBaseRunSubNets\n<公共请求参数>\n\n{\n    \"VpcId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SubNetIds\": [\n            \"aa\",\n            \"bb\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeWxCloudBaseRunSubNets"
       }
     ],
     "DestroyEnv": [

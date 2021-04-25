@@ -54,6 +54,12 @@
       "name": "创建静态托管资源",
       "output": "CreateStaticStoreResponse"
     },
+    "CreateWxCloudBaseRunEnv": {
+      "document": "创建微信云托管",
+      "input": "CreateWxCloudBaseRunEnvRequest",
+      "name": "创建微信云托管",
+      "output": "CreateWxCloudBaseRunEnvResponse"
+    },
     "DeleteCloudBaseProjectLatestVersion": {
       "document": "删除云项目",
       "input": "DeleteCloudBaseProjectLatestVersionRequest",
@@ -209,6 +215,18 @@
       "input": "DescribeSmsQuotasRequest",
       "name": "查询后付费短信资源量",
       "output": "DescribeSmsQuotasResponse"
+    },
+    "DescribeWxCloudBaseRunEnvs": {
+      "document": "查询微信云托管环境信息",
+      "input": "DescribeWxCloudBaseRunEnvsRequest",
+      "name": "查询微信云托管环境信息",
+      "output": "DescribeWxCloudBaseRunEnvsResponse"
+    },
+    "DescribeWxCloudBaseRunSubNets": {
+      "document": "查询微信云托管子网",
+      "input": "DescribeWxCloudBaseRunSubNetsRequest",
+      "name": "查询微信云托管子网",
+      "output": "DescribeWxCloudBaseRunSubNetsResponse"
     },
     "DestroyEnv": {
       "document": "销毁环境",
@@ -2341,6 +2359,96 @@
       ],
       "type": "object"
     },
+    "CreateWxCloudBaseRunEnvRequest": {
+      "document": "CreateWxCloudBaseRunEnv请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "wx应用Id",
+          "example": "wxappid",
+          "member": "string",
+          "name": "WxAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符",
+          "example": "env-alias",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
+          "example": "无",
+          "member": "string",
+          "name": "FreeQuota",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单标记。建议使用方统一转大小写之后再判断。\nQuickStart：快速启动来源\nActivity：活动来源",
+          "example": "无",
+          "member": "string",
+          "name": "Flag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络Id",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网列表",
+          "example": "无",
+          "member": "string",
+          "name": "SubNetIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWxCloudBaseRunEnvResponse": {
+      "document": "CreateWxCloudBaseRunEnv返回参数结构体",
+      "members": [
+        {
+          "document": "环境Id",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "后付费订单号",
+          "example": "无",
+          "member": "string",
+          "name": "TranId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DatabasesInfo": {
       "document": "数据库资源信息",
       "members": [
@@ -4285,6 +4393,87 @@
           "name": "SmsFreeQuotaList",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWxCloudBaseRunEnvsRequest": {
+      "document": "DescribeWxCloudBaseRunEnvs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "wx应用Id",
+          "example": "wx-app-id",
+          "member": "string",
+          "name": "WxAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWxCloudBaseRunEnvsResponse": {
+      "document": "DescribeWxCloudBaseRunEnvs返回参数结构体",
+      "members": [
+        {
+          "document": "env列表",
+          "example": "[{},{}]",
+          "member": "EnvInfo",
+          "name": "EnvList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWxCloudBaseRunSubNetsRequest": {
+      "document": "DescribeWxCloudBaseRunSubNets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC id",
+          "example": "vpc-id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询个数限制，不填或小于等于0，等于不限制",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWxCloudBaseRunSubNetsResponse": {
+      "document": "DescribeWxCloudBaseRunSubNets返回参数结构体",
+      "members": [
+        {
+          "document": "子网Id列表",
+          "example": "无",
+          "member": "string",
+          "name": "SubNetIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

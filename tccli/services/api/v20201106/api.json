@@ -1,0 +1,190 @@
+{
+  "actions": {
+    "DescribeRegions": {
+      "document": "本接口(DescribeRegions)用于查询各个产品支持地域信息，当前只支持cvm。",
+      "input": "DescribeRegionsRequest",
+      "name": "查询产品支持的地域列表",
+      "output": "DescribeRegionsResponse"
+    },
+    "DescribeZones": {
+      "document": "本接口(DescribeZones)用于查询产品可用区信息，当前只支持cvm。",
+      "input": "DescribeZonesRequest",
+      "name": "查询产品可用区列表",
+      "output": "DescribeZonesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-11-06",
+    "api_brief": "接口如何使用API对云API进行操作，包括查询各云产品调用情况，各云产品调用错误码分布等",
+    "serviceNameCN": "云 API",
+    "serviceShortName": "api"
+  },
+  "objects": {
+    "DescribeRegionsRequest": {
+      "document": "DescribeRegions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询产品的名称，例如cvm、vpc",
+          "example": "cvm",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsResponse": {
+      "document": "DescribeRegions返回参数结构体",
+      "members": [
+        {
+          "document": "地域数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域列表信息",
+          "example": "参考输出示例",
+          "member": "RegionInfo",
+          "name": "RegionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZonesRequest": {
+      "document": "DescribeZones请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询产品的名称，例如cvm、vpc",
+          "example": "cvm",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZonesResponse": {
+      "document": "DescribeZones返回参数结构体",
+      "members": [
+        {
+          "document": "可用区数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区列表信息。",
+          "example": "参开输出示例",
+          "member": "ZoneInfo",
+          "name": "ZoneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegionInfo": {
+      "document": "地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域名称，例如，ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域描述，例如，华南地区(广州)",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域是否可用状态",
+          "member": "string",
+          "name": "RegionState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneInfo": {
+      "document": "可用区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区名称，例如，ap-guangzhou-3\n全网可用区名称如下：\n<li> ap-chongqing-1 </li>\n<li> ap-seoul-1 </li>\n<li> ap-seoul-2 </li>\n<li> ap-chengdu-1 </li>\n<li> ap-chengdu-2 </li>\n<li> ap-hongkong-1 </li>\n<li> ap-hongkong-2 </li>\n<li> ap-shenzhen-fsi-1 </li>\n<li> ap-shenzhen-fsi-2 </li>\n<li> ap-shenzhen-fsi-3 </li>\n<li> ap-guangzhou-1（售罄）</li>\n<li> ap-guangzhou-2（售罄）</li>\n<li> ap-guangzhou-3 </li>\n<li> ap-guangzhou-4 </li>\n<li> ap-guangzhou-6 </li>\n<li> ap-tokyo-1 </li>\n<li> ap-singapore-1 </li>\n<li> ap-singapore-2 </li>\n<li> ap-shanghai-fsi-1 </li>\n<li> ap-shanghai-fsi-2 </li>\n<li> ap-shanghai-fsi-3 </li>\n<li> ap-bangkok-1 </li>\n<li> ap-shanghai-1（售罄） </li>\n<li> ap-shanghai-2 </li>\n<li> ap-shanghai-3 </li>\n<li> ap-shanghai-4 </li>\n<li> ap-shanghai-5 </li>\n<li> ap-mumbai-1 </li>\n<li> ap-mumbai-2 </li>\n<li> eu-moscow-1 </li>\n<li> ap-beijing-1 </li>\n<li> ap-beijing-2 </li>\n<li> ap-beijing-3 </li>\n<li> ap-beijing-4 </li>\n<li> ap-beijing-5 </li>\n<li> na-siliconvalley-1 </li>\n<li> na-siliconvalley-2 </li>\n<li> eu-frankfurt-1 </li>\n<li> na-toronto-1 </li>\n<li> na-ashburn-1 </li>\n<li> na-ashburn-2 </li>\n<li> ap-nanjing-1 </li>\n<li> ap-nanjing-2 </li>",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区描述，例如，广州三区",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区ID",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
+          "member": "string",
+          "name": "ZoneState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

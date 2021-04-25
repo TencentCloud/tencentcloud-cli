@@ -815,7 +815,7 @@
         },
         {
           "default": "",
-          "document": "云存套餐ID：\nyc1m3d：全时3天存储月套餐。\nye1m3d：事件3天存储套餐。",
+          "document": "云存套餐ID：\nyc1m3d ： 全时3天存储月套餐。\nyc1m7d ： 全时7天存储月套餐。\nyc1m30d ：全时30天存储月套餐。\nyc1y3d ：全时3天存储年套餐。\nyc1y7d ：全时7天存储年套餐。\nyc1y30d ：全时30天存储年套餐。\nye1m3d ：事件3天存储月套餐。\nye1m7d ：事件7天存储月套餐。\nye1m30d ：事件30天存储月套餐 。\nye1y3d ：事件3天存储年套餐。\nye1y7d ：事件7天存储年套餐。\nye1y30d ：事件30天存储年套餐。\nyc1w7d : 全时7天存储周套餐。\nye1w7d : 事件7天存储周套餐。",
           "example": "yc1m3d",
           "member": "string",
           "name": "PackageId",
@@ -1690,6 +1690,15 @@
           "name": "Total",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频播放URL",
+          "example": "http://test.iotvideo.tencentcs.com/timeshift/live/test.m3u8",
+          "member": "string",
+          "name": "VideoURL",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

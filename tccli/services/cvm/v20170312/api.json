@@ -4917,18 +4917,22 @@
         {
           "default": "",
           "document": "描述了实例价格。",
+          "example": "NA",
           "member": "ItemPrice",
           "name": "InstancePrice",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "描述了网络价格。",
+          "example": "NA",
           "member": "ItemPrice",
           "name": "BandwidthPrice",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

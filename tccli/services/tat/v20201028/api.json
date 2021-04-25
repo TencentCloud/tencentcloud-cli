@@ -1411,6 +1411,7 @@
         {
           "default": "",
           "document": "命令执行ExitCode。",
+          "example": "0",
           "member": "int64",
           "name": "ExitCode",
           "required": true,
@@ -1420,6 +1421,7 @@
         {
           "default": "",
           "document": "Base64编码后的命令输出。最大长度24KB。",
+          "example": "aGVsbG8sd29ybGQ=",
           "member": "string",
           "name": "Output",
           "required": true,
@@ -1429,6 +1431,7 @@
         {
           "default": "",
           "document": "命令执行开始时间。",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "ExecStartTime",
           "required": true,
@@ -1438,10 +1441,21 @@
         {
           "default": "",
           "document": "命令执行结束时间。",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "ExecEndTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令最终输出被截断的字节数。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Dropped",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

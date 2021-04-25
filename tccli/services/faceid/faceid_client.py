@@ -63,7 +63,7 @@ def doGetActionSequence(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLivenessCompare(args, parsed_globals):
+def doCheckIdCardInformation(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,9 +77,9 @@ def doLivenessCompare(args, parsed_globals):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LivenessCompareRequest()
+    model = models.CheckIdCardInformationRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.LivenessCompare(model)
+    rsp = client.CheckIdCardInformation(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -113,7 +113,7 @@ def doBankCard4EVerification(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDetectAuth(args, parsed_globals):
+def doEncryptedPhoneVerification(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -127,9 +127,9 @@ def doDetectAuth(args, parsed_globals):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetectAuthRequest()
+    model = models.EncryptedPhoneVerificationRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DetectAuth(model)
+    rsp = client.EncryptedPhoneVerification(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -213,7 +213,7 @@ def doBankCardVerification(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCheckIdCardInformation(args, parsed_globals):
+def doLivenessCompare(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -227,9 +227,34 @@ def doCheckIdCardInformation(args, parsed_globals):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckIdCardInformationRequest()
+    model = models.LivenessCompareRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CheckIdCardInformation(model)
+    rsp = client.LivenessCompare(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDetectAuth(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetectAuthRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DetectAuth(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -701,13 +726,14 @@ MODELS_MAP = {
 ACTION_MAP = {
     "GetLiveCode": doGetLiveCode,
     "GetActionSequence": doGetActionSequence,
-    "LivenessCompare": doLivenessCompare,
+    "CheckIdCardInformation": doCheckIdCardInformation,
     "BankCard4EVerification": doBankCard4EVerification,
-    "DetectAuth": doDetectAuth,
+    "EncryptedPhoneVerification": doEncryptedPhoneVerification,
     "GetFaceIdToken": doGetFaceIdToken,
     "CheckPhoneAndName": doCheckPhoneAndName,
     "BankCardVerification": doBankCardVerification,
-    "CheckIdCardInformation": doCheckIdCardInformation,
+    "LivenessCompare": doLivenessCompare,
+    "DetectAuth": doDetectAuth,
     "GetRealNameAuthToken": doGetRealNameAuthToken,
     "IdCardOCRVerification": doIdCardOCRVerification,
     "GetFaceIdResult": doGetFaceIdResult,

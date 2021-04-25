@@ -42,6 +42,12 @@
       "name": "实名核身鉴权",
       "output": "DetectAuthResponse"
     },
+    "EncryptedPhoneVerification": {
+      "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持MD5加密传输。",
+      "input": "EncryptedPhoneVerificationRequest",
+      "name": "运营商三要素核验（加密）",
+      "output": "EncryptedPhoneVerificationResponse"
+    },
     "GetActionSequence": {
       "document": "使用动作活体检测模式前，需调用本接口获取动作顺序。",
       "input": "GetActionSequenceRequest",
@@ -1195,6 +1201,78 @@
         }
       ],
       "usage": "out"
+    },
+    "EncryptedPhoneVerificationRequest": {
+      "document": "EncryptedPhoneVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号，加密方式以EncryptionMode为准",
+          "example": "21b2ad431ee1f6d32c3f54c23c687751",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名，加密方式以EncryptionMode为准",
+          "example": "615db57aa314529aaa0fbe95b3e95bd3",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号，加密方式以EncryptionMode为准",
+          "example": "18c6f9a0ca21c6bc9c58675adfc4196e",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感信息的加密方式，目前只支持MD5加密传输，参数取值：\n\n0：明文，不加密\n1：使用MD5加密",
+          "example": "1",
+          "member": "string",
+          "name": "EncryptionMode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EncryptedPhoneVerificationResponse": {
+      "document": "EncryptedPhoneVerification返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码:\n【收费结果码】\n0: 认证通过\n-4: 信息不一致\n\n【不收费结果码】\n-7: 身份证号码有误\n-9: 没有记录\n-11: 验证中心服务繁忙",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "认证通过",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Encryption": {
       "document": "敏感数据加密",

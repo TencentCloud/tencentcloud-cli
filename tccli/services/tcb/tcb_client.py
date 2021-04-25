@@ -13,6 +13,31 @@ from tencentcloud.tcb.v20180608 import tcb_client as tcb_client_v20180608
 from tencentcloud.tcb.v20180608 import models as models_v20180608
 
 
+def doDescribeWxCloudBaseRunSubNets(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWxCloudBaseRunSubNetsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeWxCloudBaseRunSubNets(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeCloudBaseRunVersionSnapshot(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -113,6 +138,31 @@ def doDescribeEndUsers(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWxCloudBaseRunEnvs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWxCloudBaseRunEnvsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeWxCloudBaseRunEnvs(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSmsQuotas(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -130,6 +180,31 @@ def doDescribeSmsQuotas(args, parsed_globals):
     model = models.DescribeSmsQuotasRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeSmsQuotas(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateWxCloudBaseRunEnv(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateWxCloudBaseRunEnvRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateWxCloudBaseRunEnv(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1099,11 +1174,14 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeWxCloudBaseRunSubNets": doDescribeWxCloudBaseRunSubNets,
     "DescribeCloudBaseRunVersionSnapshot": doDescribeCloudBaseRunVersionSnapshot,
     "CreateHostingDomain": doCreateHostingDomain,
     "DeleteWxGatewayRoute": doDeleteWxGatewayRoute,
     "DescribeEndUsers": doDescribeEndUsers,
+    "DescribeWxCloudBaseRunEnvs": doDescribeWxCloudBaseRunEnvs,
     "DescribeSmsQuotas": doDescribeSmsQuotas,
+    "CreateWxCloudBaseRunEnv": doCreateWxCloudBaseRunEnv,
     "CreateAuthDomain": doCreateAuthDomain,
     "CreateCloudBaseRunServerVersion": doCreateCloudBaseRunServerVersion,
     "DescribeCloudBaseRunServerVersion": doDescribeCloudBaseRunServerVersion,

@@ -17,6 +17,8 @@ include tccli/services/apcas/v20201127/api.json
 include tccli/services/apcas/v20201127/examples.json
 include tccli/services/ape/v20200513/api.json
 include tccli/services/ape/v20200513/examples.json
+include tccli/services/api/v20201106/api.json
+include tccli/services/api/v20201106/examples.json
 include tccli/services/apigateway/v20180808/api.json
 include tccli/services/apigateway/v20180808/examples.json
 include tccli/services/autoscaling/v20180419/api.json

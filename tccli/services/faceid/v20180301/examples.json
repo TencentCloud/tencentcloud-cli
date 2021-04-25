@@ -74,6 +74,14 @@
         "title": "鉴权操作 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=DetectAuth&SignVersion=)"
       }
     ],
+    "EncryptedPhoneVerification": [
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=EncryptedPhoneVerification\n&IdCard=21b2ad431ee1f6d32c3f54c23c684751\n&Name=615db57aa314529aaa0fbe95b3e95bd3\n&Phone=18c6f9a0ca21c6bc9c58675adfc4196e\n&EncryptionMode=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
+        "title": "认证通过示例"
+      }
+    ],
     "GetActionSequence": [
       {
         "document": "",
