@@ -101,7 +101,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWxGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayRouteName\": \"xx\",\n    \"EnvId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
-        "title": "创建微信网关"
+        "title": "删除微信网关"
       }
     ],
     "DescribeAuthDomains": [

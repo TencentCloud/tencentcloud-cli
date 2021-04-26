@@ -264,6 +264,12 @@
       "name": "查询机器操作系统列表",
       "output": "DescribeMachineOsListResponse"
     },
+    "DescribeMachineRegions": {
+      "document": "获取机器地域列表",
+      "input": "DescribeMachineRegionsRequest",
+      "name": "获取机器地域列表",
+      "output": "DescribeMachineRegionsResponse"
+    },
     "DescribeMachines": {
       "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
       "input": "DescribeMachinesRequest",
@@ -3871,6 +3877,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineRegionsRequest": {
+      "document": "DescribeMachineRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMachineRegionsResponse": {
+      "document": "DescribeMachineRegions返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8997,6 +9020,7 @@
         {
           "default": "",
           "document": "地域标志，如 ap-guangzhou，ap-shanghai，ap-beijing",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -9006,6 +9030,7 @@
         {
           "default": "",
           "document": "地域中文名，如华南地区（广州），华东地区（上海金融），华北地区（北京）",
+          "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -9015,6 +9040,7 @@
         {
           "default": "",
           "document": "地域ID",
+          "example": "1",
           "member": "uint64",
           "name": "RegionId",
           "required": true,
@@ -9024,8 +9050,19 @@
         {
           "default": "",
           "document": "地域代码，如 gz，sh，bj",
+          "example": "gz",
           "member": "string",
           "name": "RegionCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域英文名",
+          "example": "South China (Guangzhou)",
+          "member": "string",
+          "name": "RegionNameEn",
           "required": true,
           "type": "string",
           "value_allowed_null": false

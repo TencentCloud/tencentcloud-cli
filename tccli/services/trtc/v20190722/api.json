@@ -741,7 +741,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用id",
+          "document": "应用ID",
           "example": "1234567",
           "member": "uint64",
           "name": "SdkAppId",
@@ -750,7 +750,7 @@
         },
         {
           "default": "",
-          "document": "图片id,不传时返回该应用下所有图片",
+          "document": "图片ID，不填时返回该应用下所有图片",
           "example": "123",
           "member": "uint64",
           "name": "PictureId",
@@ -759,7 +759,7 @@
         },
         {
           "default": "",
-          "document": "每页数量",
+          "document": "每页数量，不填时默认为10",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -768,7 +768,7 @@
         },
         {
           "default": "",
-          "document": "页码",
+          "document": "页码，不填时默认为1",
           "example": "1",
           "member": "uint64",
           "name": "PageNo",

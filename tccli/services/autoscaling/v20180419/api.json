@@ -1369,6 +1369,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-8fbozqja",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -1377,6 +1378,7 @@
         {
           "default": "",
           "document": "生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字节。",
+          "example": "one-hook-default",
           "member": "string",
           "name": "LifecycleHookName",
           "required": true,
@@ -1385,6 +1387,7 @@
         {
           "default": "",
           "document": "进行生命周期挂钩的场景，取值范围包括 INSTANCE_LAUNCHING 和 INSTANCE_TERMINATING",
+          "example": "INSTANCE_LAUNCHING",
           "member": "string",
           "name": "LifecycleTransition",
           "required": true,
@@ -1393,6 +1396,7 @@
         {
           "default": "",
           "document": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是 CONTINUE 或 ABANDON，默认值为 CONTINUE",
+          "example": "CONTINUE",
           "member": "string",
           "name": "DefaultResult",
           "required": false,
@@ -1400,7 +1404,8 @@
         },
         {
           "default": "",
-          "document": "生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒",
+          "document": "生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到7200秒，默认值为300秒",
+          "example": "300",
           "member": "int64",
           "name": "HeartbeatTimeout",
           "required": false,
@@ -1409,6 +1414,7 @@
         {
           "default": "",
           "document": "弹性伸缩向通知目标发送的附加信息，默认值为空字符串\"\"。最大长度不能超过1024个字节。",
+          "example": "\"\"",
           "member": "string",
           "name": "NotificationMetadata",
           "required": false,
@@ -1417,6 +1423,7 @@
         {
           "default": "",
           "document": "通知目标",
+          "example": "无",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
           "required": false,
@@ -1425,6 +1432,7 @@
         {
           "default": "",
           "document": "进行生命周期挂钩的场景类型，取值范围包括NORMAL 和 EXTENSION。说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstaces接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。",
+          "example": "NORMAL",
           "member": "string",
           "name": "LifecycleTransitionType",
           "required": false,
@@ -1438,8 +1446,10 @@
       "members": [
         {
           "document": "生命周期挂钩ID",
+          "example": "ash-8azjzxj9",
           "member": "string",
           "name": "LifecycleHookId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1458,6 +1468,7 @@
         {
           "default": "",
           "document": "伸缩组ID。",
+          "example": "asg-12wjuh0s",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -1466,6 +1477,7 @@
         {
           "default": "",
           "document": "通知类型，即为需要订阅的通知类型集合，取值范围如下：\n<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>\n<li>SCALE_OUT_FAILED：扩容失败</li>\n<li>SCALE_IN_SUCCESSFUL：缩容成功</li>\n<li>SCALE_IN_FAILED：缩容失败</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>",
+          "example": "[\"SCALE_OUT_SUCCESSFUL\\n\",\"SCALE_OUT_FAILED\\n\"]",
           "member": "string",
           "name": "NotificationTypes",
           "required": true,
@@ -1474,6 +1486,7 @@
         {
           "default": "",
           "document": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。",
+          "example": "[\"1678\\n\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": true,
@@ -1487,8 +1500,10 @@
       "members": [
         {
           "document": "通知ID。",
+          "example": "asn-2sestqbr",
           "member": "string",
           "name": "AutoScalingNotificationId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1507,6 +1522,7 @@
         {
           "default": "",
           "document": "PAI实例的域名。",
+          "example": "apple-gz012345.pai.tcloudbase.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -1515,6 +1531,7 @@
         {
           "default": "",
           "document": "公网带宽相关信息设置。",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": true,
@@ -1523,6 +1540,7 @@
         {
           "default": "",
           "document": "启动脚本的base64编码字符串。",
+          "example": "无",
           "member": "string",
           "name": "InitScript",
           "required": false,
@@ -1531,6 +1549,7 @@
         {
           "default": "",
           "document": "可用区列表。",
+          "example": "[\"ap-guangzhou-2\\n\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -1539,6 +1558,7 @@
         {
           "default": "",
           "document": "VPC ID。",
+          "example": "vpc-aaaabbbb",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1547,6 +1567,7 @@
         {
           "default": "",
           "document": "子网列表。",
+          "example": "无",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -1555,6 +1576,7 @@
         {
           "default": "",
           "document": "实例显示名称。",
+          "example": "PAI-TEST",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -1563,6 +1585,7 @@
         {
           "default": "",
           "document": "实例机型列表。",
+          "example": "[\"S4.SMALL2\\n\"]",
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
@@ -1571,6 +1594,7 @@
         {
           "default": "",
           "document": "实例登录设置。",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -1579,6 +1603,7 @@
         {
           "default": "",
           "document": "实例计费类型。",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -1587,6 +1612,7 @@
         {
           "default": "",
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -1600,8 +1626,10 @@
       "members": [
         {
           "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例`ID`。返回实例`ID`列表并不代表实例创建成功，可根据 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询返回的InstancesSet中对应实例的`ID`的状态来判断创建是否完成；如果实例状态由“准备中”变为“正在运行”，则为创建成功。",
+          "example": "[\"ins-bmmk7d75\"]",
           "member": "string",
           "name": "InstanceIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1620,6 +1648,7 @@
         {
           "default": "",
           "document": "伸缩组ID。",
+          "example": "asg-12wjuh0s",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -1628,6 +1657,7 @@
         {
           "default": "",
           "document": "告警触发策略名称。",
+          "example": "cpu_policy_test",
           "member": "string",
           "name": "ScalingPolicyName",
           "required": true,
@@ -1636,6 +1666,7 @@
         {
           "default": "",
           "document": "告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>",
+          "example": " CHANGE_IN_CAPACITY",
           "member": "string",
           "name": "AdjustmentType",
           "required": true,
@@ -1644,6 +1675,7 @@
         {
           "default": "",
           "document": "告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。",
+          "example": "1",
           "member": "int64",
           "name": "AdjustmentValue",
           "required": true,
@@ -1652,6 +1684,7 @@
         {
           "default": "",
           "document": "告警监控指标。",
+          "example": "无",
           "member": "MetricAlarm",
           "name": "MetricAlarm",
           "required": true,
@@ -1660,6 +1693,7 @@
         {
           "default": "",
           "document": "冷却时间，单位为秒。默认冷却时间300秒。",
+          "example": "60",
           "member": "uint64",
           "name": "Cooldown",
           "required": false,
@@ -1668,6 +1702,7 @@
         {
           "default": "",
           "document": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。",
+          "example": "[\"1678\\n\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": false,
@@ -1681,8 +1716,10 @@
       "members": [
         {
           "document": "告警触发策略ID。",
+          "example": "asp-iir70sxv",
           "member": "string",
           "name": "AutoScalingPolicyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4087,6 +4124,7 @@
         {
           "default": "",
           "document": "待修改的通知ID。",
+          "example": "asn-2sestqbr",
           "member": "string",
           "name": "AutoScalingNotificationId",
           "required": true,
@@ -4095,6 +4133,7 @@
         {
           "default": "",
           "document": "通知类型，即为需要订阅的通知类型集合，取值范围如下：\n<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>\n<li>SCALE_OUT_FAILED：扩容失败</li>\n<li>SCALE_IN_SUCCESSFUL：缩容成功</li>\n<li>SCALE_IN_FAILED：缩容失败</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>",
+          "example": "[\"SCALE_IN_SUCCESSFUL\\n\",\"SCALE_IN_FAILED\\n\"]",
           "member": "string",
           "name": "NotificationTypes",
           "required": false,
@@ -4103,6 +4142,7 @@
         {
           "default": "",
           "document": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。",
+          "example": "[\"1678\\n\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": false,
@@ -4129,6 +4169,7 @@
         {
           "default": "",
           "document": "告警策略ID。",
+          "example": "asp-iir70sxv",
           "member": "string",
           "name": "AutoScalingPolicyId",
           "required": true,
@@ -4137,6 +4178,7 @@
         {
           "default": "",
           "document": "告警策略名称。",
+          "example": "cpu_policy_test",
           "member": "string",
           "name": "ScalingPolicyName",
           "required": false,
@@ -4145,6 +4187,7 @@
         {
           "default": "",
           "document": "告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>",
+          "example": "CHANGE_IN_CAPACITY",
           "member": "string",
           "name": "AdjustmentType",
           "required": false,
@@ -4153,6 +4196,7 @@
         {
           "default": "",
           "document": "告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。",
+          "example": "1",
           "member": "int64",
           "name": "AdjustmentValue",
           "required": false,
@@ -4161,6 +4205,7 @@
         {
           "default": "",
           "document": "冷却时间，单位为秒。",
+          "example": "60",
           "member": "uint64",
           "name": "Cooldown",
           "required": false,
@@ -4169,6 +4214,7 @@
         {
           "default": "",
           "document": "告警监控指标。",
+          "example": "无",
           "member": "MetricAlarm",
           "name": "MetricAlarm",
           "required": false,
@@ -4177,6 +4223,7 @@
         {
           "default": "",
           "document": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。\n如果需要清空通知用户组，需要在列表中传入特定字符串 \"NULL\"。",
+          "example": "[\"1678\\n\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": false,
@@ -5110,6 +5157,7 @@
         {
           "default": "",
           "document": "生命周期挂钩ID",
+          "example": "ash-8azjzxj9",
           "member": "string",
           "name": "LifecycleHookId",
           "required": true,
@@ -5118,6 +5166,7 @@
         {
           "default": "",
           "document": "生命周期挂钩名称",
+          "example": "hook-updated",
           "member": "string",
           "name": "LifecycleHookName",
           "required": true,
@@ -5126,6 +5175,7 @@
         {
           "default": "",
           "document": "进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”",
+          "example": "INSTANCE_LAUNCHING",
           "member": "string",
           "name": "LifecycleTransition",
           "required": true,
@@ -5134,6 +5184,7 @@
         {
           "default": "",
           "document": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”",
+          "example": "CONTINUE",
           "member": "string",
           "name": "DefaultResult",
           "required": false,
@@ -5141,7 +5192,8 @@
         },
         {
           "default": "",
-          "document": "生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒",
+          "document": "生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到7200秒，默认值为300秒",
+          "example": "240",
           "member": "int64",
           "name": "HeartbeatTimeout",
           "required": false,
@@ -5150,6 +5202,7 @@
         {
           "default": "",
           "document": "弹性伸缩向通知目标发送的附加信息，默认值为空字符串\"\"",
+          "example": "\"\"",
           "member": "string",
           "name": "NotificationMetadata",
           "required": false,
@@ -5158,6 +5211,7 @@
         {
           "default": "",
           "document": "通知目标",
+          "example": "无",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
           "required": false,
@@ -5166,6 +5220,7 @@
         {
           "default": "",
           "document": "进行生命周期挂钩的场景类型，取值范围包括NORMAL 和 EXTENSION。说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstaces接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。",
+          "example": "NORMAL",
           "member": "string",
           "name": "LifecycleTransitionType",
           "required": false,

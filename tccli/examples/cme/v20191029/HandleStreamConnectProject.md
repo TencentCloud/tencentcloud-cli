@@ -7,7 +7,7 @@
 ------- | ------- | ------- | -------
 Operation | 是 | String | 请填写 AddInput
 InputEndpoint | 是 | String | Main 或 Backup
-InputInfo | 是 | [StreamInputInfo](https://tcloud-dev.oa.com/document/product/1138/36423?!preview&preview_docmenu=1&lang=cn&!document=1#StreamInputInfo) | 输入源，InputType 取值 LivePull
+InputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo) | 输入源，InputType 取值 LivePull
 
 Input: 
 
@@ -39,7 +39,7 @@ Output:
 ------- | ------- | ------- | -------
 Operation | 是 | String | 请填写 AddInput
 InputEndpoint | 是 | String | Main 或 Backup
-InputInfo | 是 | [StreamInputInfo](https://tcloud-dev.oa.com/document/product/1138/36423?!preview&preview_docmenu=1&lang=cn&!document=1#StreamInputInfo)| 输入源，InputType 取值 RtmpPush ， 从获取项目列表接口可拿到对应推流输入源的 PushUrl
+InputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo)| 输入源，InputType 取值 RtmpPush ， 从获取项目列表接口可拿到对应推流输入源的 PushUrl
 
 Input: 
 
@@ -71,7 +71,7 @@ Output:
 ------- | ------- | ------- | -------
 Operation | 是 | String | 请填写 AddInput
 InputEndpoint | 是 | String | Main 或 Backup
-InputInfo | 是 | [StreamInputInfo](https://tcloud-dev.oa.com/document/product/1138/36423?!preview&preview_docmenu=1&lang=cn&!document=1#StreamInputInfo)| 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值-1
+InputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo)| 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值-1
 
 Input: 
 
@@ -103,7 +103,7 @@ Output:
 ------- | ------- | ------- | -------
 Operation | 是 | String | 请填写 AddInput
 InputEndpoint | 是 | String | Main 或 Backup
-InputInfo | 是 | [StreamInputInfo](https://tcloud-dev.oa.com/document/product/1138/36423?!preview&preview_docmenu=1&lang=cn&!document=1#StreamInputInfo) | 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值 0
+InputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo) | 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值 0
 
 Input: 
 
@@ -165,7 +165,7 @@ Output:
 ------- | ------- | ------- | -------
 Operation | 是 | String | 请填写 ModifyInput
 InputEndpoint | 是 | String | Main 或 Backup
-InputInfo | 是 | [StreamInputInfo](https://tcloud-dev.oa.com/document/product/1138/36423?!preview&preview_docmenu=1&lang=cn&!document=1#StreamInputInfo) | 输入源
+InputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo) | 输入源
 
 Input: 
 
@@ -197,7 +197,7 @@ Output:
 参数名称 | 必选 | 类型 | 描述
 ------- | ------- | ------- | -------
 Operation | 是 | String | 请填写 AddOutput
-OutputInfo| 是 | [StreamConnectOutput](https://tcloud-dev.oa.com/document/product/1138/36423?!preview&preview_docmenu=1&lang=cn&!document=1#StreamConnectOutput)| 输出源，Id 字段若不填则由后端生成
+OutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段若不填则由后端生成
 
 Input: 
 
@@ -227,7 +227,7 @@ Output:
 参数名称 | 必选 | 类型 | 描述
 ------- | ------- | ------- | -------
 Operation | 是 | String | 请填写 DeleteOutput
-OutputInfo| 是 | [StreamConnectOutput](https://tcloud-dev.oa.com/document/product/1138/36423?!preview&preview_docmenu=1&lang=cn&!document=1#StreamConnectOutput)| 输出源，Id 字段必填，从获取项目列表接口中拿到对应输出源的 Id
+OutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段必填，从获取项目列表接口中拿到对应输出源的 Id
 
 Input: 
 
@@ -256,7 +256,7 @@ Output:
 参数名称 | 必选 | 类型 | 描述
 ------- | ------- | ------- | -------
 Operation | 是 | String | 请填写 ModifyOutput
-OutputInfo| 是 | [StreamConnectOutput](https://tcloud-dev.oa.com/document/product/1138/36423?!preview&preview_docmenu=1&lang=cn&!document=1#StreamConnectOutput)| 输出源，Id 字段必填，从获取项目列表中拿到对应输出源的 Id
+OutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段必填，从获取项目列表中拿到对应输出源的 Id
 
 Input: 
 

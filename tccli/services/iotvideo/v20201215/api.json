@@ -228,6 +228,12 @@
       "name": "编辑固件信息",
       "output": "EditFirmwareResponse"
     },
+    "GenerateSignedVideoURL": {
+      "document": "获取视频防盗链播放URL",
+      "input": "GenerateSignedVideoURLRequest",
+      "name": "获取视频防盗链播放URL",
+      "output": "GenerateSignedVideoURLResponse"
+    },
     "GetAllFirmwareVersion": {
       "document": "本接口（GetAllFirmwareVersion）用于获取所有的版本列表 ",
       "input": "GetAllFirmwareVersionRequest",
@@ -3796,6 +3802,51 @@
         }
       ],
       "usage": "out"
+    },
+    "GenerateSignedVideoURLRequest": {
+      "document": "GenerateSignedVideoURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "视频播放原始URL地址",
+          "example": "http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8",
+          "member": "string",
+          "name": "VideoURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "播放链接过期时间",
+          "example": "1619331648",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateSignedVideoURLResponse": {
+      "document": "GenerateSignedVideoURL返回参数结构体",
+      "members": [
+        {
+          "document": "视频防盗链播放URL",
+          "example": "http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8?sign=x",
+          "member": "string",
+          "name": "SignedVideoURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetAllFirmwareVersionRequest": {
       "document": "GetAllFirmwareVersion请求参数结构体",

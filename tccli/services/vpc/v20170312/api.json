@@ -1272,6 +1272,12 @@
       "name": "修改弹性网卡",
       "output": "ModifyNetworkInterfaceAttributeResponse"
     },
+    "ModifyNetworkInterfaceQos": {
+      "document": "修改弹性网卡服务质量",
+      "input": "ModifyNetworkInterfaceQosRequest",
+      "name": "修改弹性网卡服务质量",
+      "output": "ModifyNetworkInterfaceQosResponse"
+    },
     "ModifyPrivateIpAddressesAttribute": {
       "document": "本接口（ModifyPrivateIpAddressesAttribute）用于修改弹性网卡内网IP属性。",
       "input": "ModifyPrivateIpAddressesAttributeRequest",
@@ -15121,6 +15127,42 @@
     },
     "ModifyNetworkInterfaceAttributeResponse": {
       "document": "ModifyNetworkInterfaceAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkInterfaceQosRequest": {
+      "document": "ModifyNetworkInterfaceQos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "弹性网卡ID，支持批量修改。",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkInterfaceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务质量，可选值：AU、AG、PT，分别代表金、银、白金三个等级。",
+          "example": "无",
+          "member": "string",
+          "name": "QosLevel",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkInterfaceQosResponse": {
+      "document": "ModifyNetworkInterfaceQos返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

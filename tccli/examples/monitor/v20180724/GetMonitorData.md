@@ -77,8 +77,8 @@ Output:
 ```
 {
     "Response": {
-        "StartTime": "2018-09-22 19:50:00",
-        "EndTime": "2018-09-22 20:50:00",
+        "StartTime": "2018-09-22T19:50:00+08:00",
+        "EndTime": "2018-09-22T20:50:00+08:00",
         "Period": 300,
         "MetricName": "CPUUsage",
         "DataPoints": [
@@ -131,8 +131,8 @@ Output:
 ```
 {
     "Response": {
-        "StartTime": "2018-09-22 19:20:00",
-        "EndTime": "2018-09-22 20:20:00",
+        "StartTime": "2018-09-22T19:20:00+08:00",
+        "EndTime": "2018-09-22T20:20:00+08:00",
         "Period": 300,
         "MetricName": "SlowQueries",
         "DataPoints": [

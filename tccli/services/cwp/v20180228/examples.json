@@ -352,6 +352,14 @@
         "title": "示例"
       }
     ],
+    "DescribeMachineRegions": [
+      {
+        "document": "",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachineRegions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d4ffdf0-f350-c3ea-d09c-3f5313e044fd\"\n    }\n}",
+        "title": "获取机器地域列表"
+      }
+    ],
     "DescribeMachines": [
       {
         "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",

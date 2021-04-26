@@ -1942,6 +1942,14 @@
         "title": "修改弹性网卡"
       }
     ],
+    "ModifyNetworkInterfaceQos": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkInterfaceQos\n&NetworkInterfaceIds.0=eni-abcdefgh\n&QosLevel=AU\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改弹性网卡服务质量"
+      }
+    ],
     "ModifyPrivateIpAddressesAttribute": [
       {
         "document": "",
