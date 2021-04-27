@@ -71,6 +71,9 @@ class Loader(object):
             "secretKey": {
                 "help": "specify a SecretKey",
             },
+            "token": {
+                "help": "temporary certificate token",
+            },
             "version": {
                 "help": "specify a DescribeRegions api version",
                 "metavar": "version_name"
@@ -185,8 +188,7 @@ class Loader(object):
         for version in version_action_params:
             for action in version_action_params[version]:
                 if action in action_params:
-                    action_params[action] = list(set(
-                        action_params[action] + version_action_params[version][action]))
+                    action_params[action] = list(set(action_params[action] + version_action_params[version][action]))
                 else:
                     action_params[action] = version_action_params[version][action]
         return action_params
@@ -203,6 +205,7 @@ class Loader(object):
             "--profile": "specify a profile name",
             "--secretId": "specify a SecretId",
             "--secretKey": "specify a SecretKey",
+            "--token": "temporary certificate token",
             "--region": "identify the region to which the instance you want to work with belongs.",
             "--endpoint": "specify an access point domain name",
             "--version": "specify a %s api version" % action,
