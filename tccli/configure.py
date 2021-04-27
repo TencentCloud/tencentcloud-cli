@@ -24,7 +24,7 @@ class BasicConfigure(BasicCommand):
     def __init__(self):
         super(BasicConfigure, self).__init__()
         self.config_list = [OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount]
-        self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey]
+        self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
@@ -81,7 +81,6 @@ class BasicConfigure(BasicCommand):
                 "not exist config file: %s or %s "
                 % (profile_name + ".configure", profile_name + ".credential"))
 
-
     def _profile_existed(self, profile_name):
         return Utils.file_existed(self.cli_path, profile_name)
 
@@ -95,8 +94,8 @@ class ConfigureListCommand(BasicConfigure):
     USEAGE = 'tccli configure list [--profile profile-name]'
     EXAMPLES = "$ tccli configure list\n" \
                "credential:\n" \
-               "secretId =  ********************************\n" \
-               "secretKey =  ********************************\n" \
+               "secretId = ********************************\n" \
+               "secretKey = ********************************\n" \
                "configure:\n" \
                "region = ap-guangzhou\n" \
                "output = json\n" \
@@ -119,7 +118,7 @@ class ConfigureListCommand(BasicConfigure):
             cred = Utils.load_json_msg(cred_path)
             for config in self.cred_list:
                 if config in cred and cred[config]:
-                    self._stream.write("%s =  %s\n" % (config, cred[config]))
+                    self._stream.write("%s = %s\n" % (config, cred[config]))
 
         # other in x.configure
         is_exit, config_path = self._profile_existed(profile_name + ".configure")
@@ -128,7 +127,7 @@ class ConfigureListCommand(BasicConfigure):
             config = Utils.load_json_msg(config_path)
             for c in self.config_list:
                 if c in config and config[c]:
-                    self._stream.write("%s =  %s\n" % (c, config[c]))
+                    self._stream.write("%s = %s\n" % (c, config[c]))
 
             modlist = sorted(config.keys())
             for c in modlist:
@@ -137,8 +136,8 @@ class ConfigureListCommand(BasicConfigure):
                 if c in self.config_list:
                     continue
                 try:
-                    self._stream.write("%s.version =  %s\n" % (c, config[c]["version"]))
-                    self._stream.write("%s.endpoint =  %s\n" % (c, config[c]["endpoint"]))
+                    self._stream.write("%s.version = %s\n" % (c, config[c]["version"]))
+                    self._stream.write("%s.endpoint = %s\n" % (c, config[c]["endpoint"]))
                 except Exception:
                     pass
 
@@ -259,8 +258,7 @@ class ConfigureGetCommand(BasicConfigure):
                     kv = varname.split(".")
                     value = conf[kv[0]][kv[1]]
                 except Exception as err:
-                    raise ConfigurationError(
-                    "%s in %s.configure not exist" % (varname, profile_name))
+                    raise ConfigurationError("%s in %s.configure not exist" % (varname, profile_name))
             self._stream.write("%s = %s" % (varname, value))
             self._stream.write('\n')
 
@@ -344,13 +342,14 @@ class ConfigureCommand(BasicConfigure):
         self._init_configure(profile_name + ".credential", cred_data)
 
     def init_configures(self):
+        config = {}
         if not self._profile_existed("default.configure")[0]:
             config = {
                 "region": "ap-guangzhou",
                 "output": "json",
                 "array_count": 10,
             }
-            self._init_configure("default.configure", config)
+        self._init_configure("default.configure", config)
 
     def _compat_input(self, prompt):
         sys.stdout.write(prompt)
