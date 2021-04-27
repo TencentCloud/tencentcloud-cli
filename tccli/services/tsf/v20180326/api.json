@@ -87,7 +87,7 @@
     "CreateGroup": {
       "document": "创建虚拟机部署组",
       "input": "CreateGroupRequest",
-      "name": "创建虚拟机部署组",
+      "name": "创建部署组",
       "output": "CreateGroupResponse"
     },
     "CreateLane": {
@@ -372,6 +372,12 @@
       "name": "查询配置项列表",
       "output": "DescribeConfigsResponse"
     },
+    "DescribeContainerEvents": {
+      "document": "获取容器事件列表",
+      "input": "DescribeContainerEventsRequest",
+      "name": "获取容器事件列表",
+      "output": "DescribeContainerEventsResponse"
+    },
     "DescribeContainerGroupDetail": {
       "document": " 容器部署组详情",
       "input": "DescribeContainerGroupDetailRequest",
@@ -629,6 +635,12 @@
       "input": "DescribeTaskLastStatusRequest",
       "name": "查看任务最近执行批次状态",
       "output": "DescribeTaskLastStatusResponse"
+    },
+    "DescribeUnitApiUseDetail": {
+      "document": "查询网关API监控明细数据（仅单元化网关），非单元化网关使用DescribeApiUseDetail",
+      "input": "DescribeUnitApiUseDetailRequest",
+      "name": "查询单元化网关API监控明细数据",
+      "output": "DescribeUnitApiUseDetailResponse"
     },
     "DescribeUnitNamespaces": {
       "document": "查询单元化命名空间列表",
@@ -1523,6 +1535,7 @@
         {
           "default": "",
           "document": "Api Group Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grp-vcgimq3x",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -1532,6 +1545,7 @@
         {
           "default": "",
           "document": "Api Group 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-name",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1541,6 +1555,7 @@
         {
           "default": "",
           "document": "分组上下文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test",
           "member": "string",
           "name": "GroupContext",
           "required": true,
@@ -1550,6 +1565,7 @@
         {
           "default": "",
           "document": "鉴权类型。 secret： 密钥鉴权； none:无鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none",
           "member": "string",
           "name": "AuthType",
           "required": true,
@@ -1559,6 +1575,7 @@
         {
           "default": "",
           "document": "发布状态, drafted: 未发布。 released: 发布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "released",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1568,6 +1585,7 @@
         {
           "default": "",
           "document": "分组创建时间 如:2019-06-20 15:51:28\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-20 15:51:28",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -1577,6 +1595,7 @@
         {
           "default": "",
           "document": "分组更新时间 如:2019-06-20 15:51:28\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-20 15:51:28",
           "member": "string",
           "name": "UpdatedTime",
           "required": true,
@@ -1586,6 +1605,7 @@
         {
           "default": "",
           "document": "api分组已绑定的网关部署组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "GatewayDeployGroup",
           "name": "BindedGatewayDeployGroups",
           "required": true,
@@ -1595,6 +1615,7 @@
         {
           "default": "",
           "document": "api 个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "ApiCount",
           "required": true,
@@ -1604,6 +1625,7 @@
         {
           "default": "",
           "document": "访问group的ACL类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none",
           "member": "string",
           "name": "AclMode",
           "required": true,
@@ -1613,6 +1635,7 @@
         {
           "default": "",
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1622,8 +1645,29 @@
         {
           "default": "",
           "document": "分组类型。 ms： 微服务分组； external:外部Api分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms",
           "member": "string",
           "name": "GroupType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关实例的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "unit",
+          "member": "string",
+          "name": "GatewayInstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-12345",
+          "member": "string",
+          "name": "GatewayInstanceId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2885,6 +2929,7 @@
         {
           "default": "",
           "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -2894,6 +2939,7 @@
         {
           "default": "",
           "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -2903,6 +2949,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": false,
@@ -2912,6 +2959,7 @@
         {
           "default": "",
           "document": "镜像server\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Server",
           "required": true,
@@ -2921,6 +2969,7 @@
         {
           "default": "",
           "document": "镜像名，如/tsf/nginx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -2930,6 +2979,7 @@
         {
           "default": "",
           "document": "镜像版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TagName",
           "required": true,
@@ -2939,6 +2989,7 @@
         {
           "default": "",
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2948,6 +2999,7 @@
         {
           "default": "",
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -2957,6 +3009,7 @@
         {
           "default": "",
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -2966,6 +3019,7 @@
         {
           "default": "",
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -2975,6 +3029,7 @@
         {
           "default": "",
           "document": "初始分配的 CPU 核数，对应 K8S request\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CpuRequest",
           "required": true,
@@ -2984,6 +3039,7 @@
         {
           "default": "",
           "document": "最大分配的 CPU 核数，对应 K8S limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CpuLimit",
           "required": true,
@@ -2993,6 +3049,7 @@
         {
           "default": "",
           "document": "初始分配的内存 MiB 数，对应 K8S request\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MemRequest",
           "required": true,
@@ -3002,8 +3059,19 @@
         {
           "default": "",
           "document": "最大分配的内存 MiB 数，对应 K8S limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MemLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Alias",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3031,6 +3099,92 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ContainerEvent": {
+      "document": "返回容器的事件，比如 k8s deployment 或者 pod 的 events",
+      "members": [
+        {
+          "default": "",
+          "document": "第一次出现的时间，以 ms 为单位的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1615463411385",
+          "member": "int64",
+          "name": "FirstTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一次出现的时间，以 ms 为单位的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1615463411385",
+          "member": "int64",
+          "name": "LastTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Warning",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pod",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "shop-demo-7ff965d54d-65rlw.1668ccf6e4263fde",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pulled",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "详细描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0/1 nodes are available: 1 Insufficient memory.",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出现次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4305,6 +4459,7 @@
         {
           "default": "",
           "document": "部署组所属的应用ID",
+          "example": "application-xxxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -4313,6 +4468,7 @@
         {
           "default": "",
           "document": "部署组所属命名空间ID",
+          "example": "namespace-xxxxxxx",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -4321,6 +4477,7 @@
         {
           "default": "",
           "document": "部署组名称",
+          "example": "demo",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -4329,6 +4486,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cluster-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4337,6 +4495,7 @@
         {
           "default": "",
           "document": "部署组描述",
+          "example": "This is desc",
           "member": "string",
           "name": "GroupDesc",
           "required": false,
@@ -4345,8 +4504,18 @@
         {
           "default": "",
           "document": "部署组资源类型",
+          "example": "无",
           "member": "string",
           "name": "GroupResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Alias",
           "required": false,
           "type": "string"
         }
@@ -4358,8 +4527,10 @@
       "members": [
         {
           "document": "groupId， null表示创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-xxxxxxx",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7167,6 +7338,78 @@
       ],
       "type": "object"
     },
+    "DescribeContainerEventsRequest": {
+      "document": "DescribeContainerEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "event 的资源类型, group 或者 instance",
+          "example": "group",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "event 的资源 id",
+          "example": "group-df3fsd23",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，取值从0开始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页个数，默认为20， 取值应为1~50",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当类型是 instance 时需要",
+          "example": "group-df3fsd23",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerEventsResponse": {
+      "document": "DescribeContainerEvents返回参数结构体",
+      "members": [
+        {
+          "document": "events 分页列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TsfPageContainerEvent",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeContainerGroupDetailRequest": {
       "document": "DescribeContainerGroupDetail请求参数结构体",
       "members": [
@@ -9715,6 +9958,114 @@
       ],
       "type": "object"
     },
+    "DescribeUnitApiUseDetailRequest": {
+      "document": "DescribeUnitApiUseDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关部署组ID",
+          "example": "group-i54lzdrq",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关分组Api ID",
+          "example": "api-qabo8xyl",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的日期,格式：yyyy-MM-dd HH:mm:ss",
+          "example": "2020-09-22 00:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的日期,格式：yyyy-MM-dd HH:mm:ss",
+          "example": "2020-09-22 00:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关实例ID",
+          "example": "gw-ins-4hkjbwxy",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关分组ID",
+          "example": "grp-vcgimq3x",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页查询偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页查询每页记录数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监控统计数据粒度",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnitApiUseDetailResponse": {
+      "document": "DescribeUnitApiUseDetail返回参数结构体",
+      "members": [
+        {
+          "document": "单元化使用统计对象",
+          "example": "无",
+          "member": "GroupUnitApiUseStatistics",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUnitNamespacesRequest": {
       "document": "DescribeUnitNamespaces请求参数结构体",
       "members": [
@@ -10319,12 +10670,22 @@
           "example": "bar",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "k8s ValueFrom\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueFrom",
+          "name": "ValueFrom",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ExecuteTaskFlowRequest": {
       "document": "ExecuteTaskFlow请求参数结构体",
@@ -10433,12 +10794,29 @@
       ],
       "type": "object"
     },
+    "FieldRef": {
+      "document": "容器 env 的 FieldRef",
+      "members": [
+        {
+          "default": "",
+          "document": "k8s 的 FieldPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "metadata.name",
+          "member": "string",
+          "name": "FieldPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "GatewayApiGroupVo": {
       "document": "网关分组简单信息",
       "members": [
         {
           "default": "",
           "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grp-vcgimq3x",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -10448,6 +10826,7 @@
         {
           "default": "",
           "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testGroup1",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -10457,6 +10836,7 @@
         {
           "default": "",
           "document": "分组下API个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
           "member": "uint64",
           "name": "GroupApiCount",
           "required": true,
@@ -10466,10 +10846,31 @@
         {
           "default": "",
           "document": "分组API列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "GatewayGroupApiVo",
           "name": "GroupApis",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关实例的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "unit",
+          "member": "string",
+          "name": "GatewayInstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gw-ins-4hkjbwxy",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -10550,6 +10951,7 @@
         {
           "default": "",
           "document": "API ID",
+          "example": "api-sadasf",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -10559,6 +10961,7 @@
         {
           "default": "",
           "document": "API 请求路径",
+          "example": "/test/echo/xxx",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -10568,6 +10971,7 @@
         {
           "default": "",
           "document": "API 微服务名称",
+          "example": "ms1",
           "member": "string",
           "name": "MicroserviceName",
           "required": true,
@@ -10577,6 +10981,7 @@
         {
           "default": "",
           "document": "API 请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
           "member": "string",
           "name": "Method",
           "required": true,
@@ -10586,6 +10991,7 @@
         {
           "default": "",
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ns-test",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -10727,6 +11133,7 @@
         {
           "default": "",
           "document": "网关部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gw-e42d597",
           "member": "string",
           "name": "GatewayDeployGroupId",
           "required": true,
@@ -10736,6 +11143,7 @@
         {
           "default": "",
           "document": "网关部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "scg-container-test",
           "member": "string",
           "name": "GatewayDeployGroupName",
           "required": true,
@@ -10745,6 +11153,7 @@
         {
           "default": "",
           "document": "API 分组个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "GroupNum",
           "required": true,
@@ -10754,6 +11163,7 @@
         {
           "default": "",
           "document": "API 分组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "GatewayApiGroupVo",
           "name": "Groups",
           "required": true,
@@ -10981,6 +11391,128 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupUnitApiDailyUseStatistics": {
+      "document": "单元化API使用详情统计对象列表",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间ID",
+          "example": "ns-123456",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "ns-test",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该API在该命名空间下的总调用次数",
+          "example": "8213434",
+          "member": "string",
+          "name": "SumReqAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该API在该命名空间下的平均错误率",
+          "example": "82.11",
+          "member": "string",
+          "name": "AvgFailureRate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该API在该命名空间下的平均响应时间",
+          "example": "26.56",
+          "member": "string",
+          "name": "AvgTimeCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控数据曲线点位图Map集合",
+          "example": "无",
+          "member": "MetricDataPointMap",
+          "name": "MetricDataPointMap",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态码分布详情",
+          "example": "无",
+          "member": "ApiUseStatisticsEntity",
+          "name": "TopStatusCode",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "耗时分布详情",
+          "example": "无",
+          "member": "ApiUseStatisticsEntity",
+          "name": "TopTimeCost",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分位值对象",
+          "example": "无",
+          "member": "QuantileEntity",
+          "name": "Quantile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupUnitApiUseStatistics": {
+      "document": "查询网关API监控明细数据（单元化网关使用详情）",
+      "members": [
+        {
+          "default": "",
+          "document": "总记录数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询网关API监控明细对象集合",
+          "example": "无",
+          "member": "GroupUnitApiDailyUseStatistics",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12289,6 +12821,75 @@
       ],
       "usage": "out"
     },
+    "MetricDataPoint": {
+      "document": "监控统计数据点",
+      "members": [
+        {
+          "default": "",
+          "document": "数据点键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据点值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据点标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MetricDataPointMap": {
+      "document": "监控统计数据点Map集合（单元化网关使用）",
+      "members": [
+        {
+          "default": "",
+          "document": "总调用次数监控数据点集合",
+          "example": "无",
+          "member": "MetricDataPoint",
+          "name": "SumReqAmount",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均错误率监控数据点集合",
+          "example": "无",
+          "member": "MetricDataPoint",
+          "name": "AvgFailureRate",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均响应时间监控数据点集合",
+          "example": "无",
+          "member": "MetricDataPoint",
+          "name": "AvgTimeCost",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Microservice": {
       "document": "微服务",
       "members": [
@@ -12373,6 +12974,7 @@
         {
           "default": "",
           "document": "部署组ID",
+          "example": "group-xxxxxxx",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -12381,6 +12983,7 @@
         {
           "default": "",
           "document": "0:公网 1:集群内访问 2：NodePort",
+          "example": "2",
           "member": "int64",
           "name": "AccessType",
           "required": false,
@@ -12389,6 +12992,7 @@
         {
           "default": "",
           "document": "ProtocolPorts数组",
+          "example": "无",
           "member": "ProtocolPort",
           "name": "ProtocolPorts",
           "required": false,
@@ -12397,6 +13001,7 @@
         {
           "default": "",
           "document": "更新方式：0:快速更新 1:滚动更新",
+          "example": "1",
           "member": "int64",
           "name": "UpdateType",
           "required": false,
@@ -12405,6 +13010,7 @@
         {
           "default": "",
           "document": "更新间隔,单位秒",
+          "example": "5",
           "member": "int64",
           "name": "UpdateIvl",
           "required": false,
@@ -12413,8 +13019,18 @@
         {
           "default": "",
           "document": "子网ID",
+          "example": "1",
           "member": "string",
           "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Alias",
           "required": false,
           "type": "string"
         }
@@ -12426,8 +13042,10 @@
       "members": [
         {
           "document": "更新部署组是否成功。\ntrue：成功。\nfalse：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -14421,6 +15039,22 @@
       ],
       "usage": "out"
     },
+    "ResourceFieldRef": {
+      "document": "k8s env 的 ResourceFieldRef",
+      "members": [
+        {
+          "default": "",
+          "document": "k8s 的 Resource\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "limits.cpu",
+          "member": "string",
+          "name": "Resource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RevocationConfigRequest": {
       "document": "RevocationConfig请求参数结构体",
       "members": [
@@ -15981,6 +16615,32 @@
       ],
       "usage": "out"
     },
+    "TsfPageContainerEvent": {
+      "document": "分页的 ContainerEvent",
+      "members": [
+        {
+          "default": "",
+          "document": "返回个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "events 数组",
+          "example": "[]",
+          "member": "ContainerEvent",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TsfPageGatewayDeployGroup": {
       "document": "GatewayDeployGroup 翻页对象",
       "members": [
@@ -16955,6 +17615,32 @@
       ],
       "type": "object"
     },
+    "ValueFrom": {
+      "document": "k8s env 的 ValueFrom",
+      "members": [
+        {
+          "default": "",
+          "document": "k8s env 的 FieldRef\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FieldRef",
+          "name": "FieldRef",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "k8s env 的 ResourceFieldRef\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceFieldRef",
+          "name": "ResourceFieldRef",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "VmGroup": {
       "document": "虚拟机部署组信息",
       "members": [
@@ -17297,6 +17983,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -17307,6 +18003,7 @@
         {
           "default": "",
           "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-xyz",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -17316,6 +18013,7 @@
         {
           "default": "",
           "document": "部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "foo",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -17325,6 +18023,7 @@
         {
           "default": "",
           "document": "应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationType",
           "required": true,
@@ -17334,6 +18033,7 @@
         {
           "default": "",
           "document": "部署组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupDesc",
           "required": true,
@@ -17343,6 +18043,7 @@
         {
           "default": "",
           "document": "部署组更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -17352,6 +18053,7 @@
         {
           "default": "",
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -17361,6 +18063,7 @@
         {
           "default": "",
           "document": "部署组启动参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "StartupParameters",
           "required": true,
@@ -17370,6 +18073,7 @@
         {
           "default": "",
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -17379,6 +18083,7 @@
         {
           "default": "",
           "document": "部署组创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -17388,6 +18093,7 @@
         {
           "default": "",
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -17397,6 +18103,7 @@
         {
           "default": "",
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -17406,6 +18113,7 @@
         {
           "default": "",
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApplicationName",
           "required": true,
@@ -17415,6 +18123,7 @@
         {
           "default": "",
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -17424,6 +18133,7 @@
         {
           "default": "",
           "document": "应用微服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceType",
           "required": true,
@@ -17433,6 +18143,7 @@
         {
           "default": "",
           "document": "部署组资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupResourceType",
           "required": true,
@@ -17442,6 +18153,7 @@
         {
           "default": "",
           "document": "部署组更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "UpdatedTime",
           "required": true,
@@ -17451,8 +18163,19 @@
         {
           "default": "",
           "document": "部署应用描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DeployDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Alias",
           "required": true,
           "type": "string",
           "value_allowed_null": true

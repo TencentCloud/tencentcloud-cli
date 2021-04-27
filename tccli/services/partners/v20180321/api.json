@@ -61,16 +61,28 @@
       "output": "DescribeAgentDealsCacheResponse"
     },
     "DescribeAgentPayDeals": {
-      "document": "可以查询代理商代付的所有订单",
+      "document": "【该接口将逐步下线，请切换使用升级版本DescribeAgentPayDealsV2】可以查询代理商代付的所有订单",
       "input": "DescribeAgentPayDealsRequest",
       "name": "代理商代付订单查询接口",
       "output": "DescribeAgentPayDealsResponse"
     },
+    "DescribeAgentPayDealsV2": {
+      "document": "可以查询代理商代付的所有订单",
+      "input": "DescribeAgentPayDealsV2Request",
+      "name": "代理商代付订单查询接口（新）",
+      "output": "DescribeAgentPayDealsV2Response"
+    },
     "DescribeAgentSelfPayDeals": {
-      "document": "可以查询代理商下指定客户的自付订单",
+      "document": "【该接口将逐步下线，请切换使用升级版本DescribeAgentSelfPayDealsV2】可以查询代理商下指定客户的自付订单",
       "input": "DescribeAgentSelfPayDealsRequest",
       "name": "代理商自付订单查询接口",
       "output": "DescribeAgentSelfPayDealsResponse"
+    },
+    "DescribeAgentSelfPayDealsV2": {
+      "document": "可以查询代理商下指定客户的自付订单",
+      "input": "DescribeAgentSelfPayDealsV2Request",
+      "name": "代理商自付订单查询接口（新）",
+      "output": "DescribeAgentSelfPayDealsV2Response"
     },
     "DescribeClientBalance": {
       "document": "为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额",
@@ -1888,6 +1900,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1896,6 +1909,7 @@
         {
           "default": "",
           "document": "限制数目",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1904,6 +1918,7 @@
         {
           "default": "",
           "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
           "required": false,
@@ -1912,6 +1927,7 @@
         {
           "default": "",
           "document": "下单时间范围终止点",
+          "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
           "required": false,
@@ -1920,6 +1936,7 @@
         {
           "default": "",
           "document": "0:下单时间降序；其他：下单时间升序",
+          "example": "0",
           "member": "uint64",
           "name": "Order",
           "required": false,
@@ -1928,6 +1945,7 @@
         {
           "default": "",
           "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -1936,6 +1954,7 @@
         {
           "default": "",
           "document": "下单人账号ID列表",
+          "example": "['1000001', '1000002']",
           "member": "string",
           "name": "OwnerUins",
           "required": false,
@@ -1944,6 +1963,7 @@
         {
           "default": "",
           "document": "订单号列表",
+          "example": "['12456789', '223456789']",
           "member": "string",
           "name": "DealNames",
           "required": false,
@@ -1957,15 +1977,127 @@
       "members": [
         {
           "document": "订单数组",
+          "example": "无",
           "member": "AgentDealElem",
           "name": "AgentPayDealSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的订单总数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentPayDealsV2Request": {
+      "document": "DescribeAgentPayDealsV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "example": "2020-01-01 00:00:00",
+          "member": "datetime",
+          "name": "CreatTimeRangeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围终止点",
+          "example": "2020-01-01 00:00:00",
+          "member": "datetime",
+          "name": "CreatTimeRangeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0:下单时间降序；其他：下单时间升序",
+          "example": "0",
+          "member": "uint64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单人账号ID列表",
+          "example": "[100001,100002]",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "订单号列表",
+          "example": "['123456798', '223456789']",
+          "member": "string",
+          "name": "DealNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentPayDealsV2Response": {
+      "document": "DescribeAgentPayDealsV2返回参数结构体",
+      "members": [
+        {
+          "document": "订单数组",
+          "example": "无",
+          "member": "AgentDealNewElem",
+          "name": "AgentPayDealSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的订单总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1984,6 +2116,7 @@
         {
           "default": "",
           "document": "下单人账号ID",
+          "example": "123456",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -1992,6 +2125,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2000,6 +2134,7 @@
         {
           "default": "",
           "document": "限制数目",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2008,6 +2143,7 @@
         {
           "default": "",
           "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
           "required": false,
@@ -2016,6 +2152,7 @@
         {
           "default": "",
           "document": "下单时间范围终止点",
+          "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
           "required": false,
@@ -2024,6 +2161,7 @@
         {
           "default": "",
           "document": "0:下单时间降序；其他：下单时间升序",
+          "example": "0",
           "member": "uint64",
           "name": "Order",
           "required": false,
@@ -2032,6 +2170,7 @@
         {
           "default": "",
           "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -2040,6 +2179,7 @@
         {
           "default": "",
           "document": "订单号列表",
+          "example": "['12345879', '223456789']",
           "member": "string",
           "name": "DealNames",
           "required": false,
@@ -2053,15 +2193,127 @@
       "members": [
         {
           "document": "订单数组",
+          "example": "无",
           "member": "AgentDealElem",
           "name": "AgentPayDealSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的订单总数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentSelfPayDealsV2Request": {
+      "document": "DescribeAgentSelfPayDealsV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "下单人账号ID",
+          "example": "1000001",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "example": "2020-01-01 00:00:00",
+          "member": "datetime",
+          "name": "CreatTimeRangeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围终止点",
+          "example": "2020-01-01 00:00:00",
+          "member": "datetime",
+          "name": "CreatTimeRangeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0:下单时间降序；其他：下单时间升序",
+          "example": "0",
+          "member": "uint64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单号列表",
+          "example": "['123456798', '223456789']",
+          "member": "string",
+          "name": "DealNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentSelfPayDealsV2Response": {
+      "document": "DescribeAgentSelfPayDealsV2返回参数结构体",
+      "members": [
+        {
+          "document": "订单数组",
+          "example": "无",
+          "member": "AgentDealNewElem",
+          "name": "AgentPayDealSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的订单总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

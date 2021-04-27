@@ -320,6 +320,14 @@
         "title": "获取漏洞受影响机器列表"
       }
     ],
+    "DescribeImportMachineInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImportMachineInfo\n<公共请求参数>\n\n{\n    \"MachineList\": [\n        \"xx\"\n    ],\n    \"ImportType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InvalidMachineList\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\",\n        \"EffectiveMachineInfoList\": [\n            {\n                \"MachineName\": \"xx\",\n                \"MachineTag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"MachinePublicIp\": \"xx\",\n                \"Quuid\": \"xx\",\n                \"MachinePrivateIp\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询批量导入机器信息"
+      }
+    ],
     "DescribeLoginWhiteList": [
       {
         "document": "获取异地登录白名单列表",
@@ -734,6 +742,22 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportTasks\n&TaskId=c44c00fb-ab35-22e5-78e8-9a8a910d96f5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": \"FINISHED\",\n        \"DownloadUrl\": \"http://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/1256299843/bruteattack-20200804-824874.csv\",\n        \"RequestId\": \"f8bcfd50-3a9d-ac4c-ba95-6ed70252453e\"\n    }\n}",
         "title": "异步导出任务"
+      }
+    ],
+    "ExportVulDetectionExcel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportVulDetectionExcel\n<公共请求参数>\n\n{\n    \"TaskId\": \"1596595610\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/%E6%BC%8F%E6%B4%9E%E6%A3%80%E6%B5%8B%E6%8A%A5%E5%91%8A_20210312.pdf?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1615549630%3B1615553230&q-key-time=1615549630%3B1615553230&q-header-list=host&q-url-param-list=&q-signature=b6bcb7404ad9338e34fce4766c32ba6c47b7e5ec\",\n        \"TaskId\": 1615549629\n    }\n}",
+        "title": "导出本次漏洞检测Excel"
+      }
+    ],
+    "ExportVulDetectionReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportVulDetectionReport\n<公共请求参数>\n\n{\n    \"TaskId\": \"1596595610\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/%E6%BC%8F%E6%B4%9E%E6%A3%80%E6%B5%8B%E6%8A%A5%E5%91%8A_20210312.pdf?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1615549630%3B1615553230&q-key-time=1615549630%3B1615553230&q-header-list=host&q-url-param-list=&q-signature=b6bcb7404ad9338e34fce4766c32ba6c47b7e5ec\",\n        \"TaskId\": 1615549629\n    }\n}",
+        "title": "导出漏洞检测报告"
       }
     ],
     "IgnoreImpactedHosts": [

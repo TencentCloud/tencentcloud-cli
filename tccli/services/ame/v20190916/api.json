@@ -933,12 +933,21 @@
       "members": [
         {
           "default": "",
-          "document": "无",
+          "document": "歌曲变更信息",
           "example": "无",
           "member": "MusicDetailInfo",
           "name": "MusicDetailInfos",
           "required": true,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "ame对接资源方密钥",
+          "example": "无",
+          "member": "string",
+          "name": "AmeKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

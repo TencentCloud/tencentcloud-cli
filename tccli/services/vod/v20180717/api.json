@@ -10257,14 +10257,16 @@
         {
           "default": "",
           "document": "过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "default": "",
           "document": "过滤条件：文件 ID。",
+          "example": "528xxx",
           "member": "string",
           "name": "FileId",
           "required": false,
@@ -10272,7 +10274,35 @@
         },
         {
           "default": "",
+          "document": "过滤条件：任务创建时间。",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "CreateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "过滤条件：任务结束时间。",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "FinishTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "排序方式。Sort.Field 可选：\n<li> CreateTime 任务创建时间。</li>\n<li>FinishTime 任务结束时间。</li>",
+          "example": "无",
+          "member": "SortBy",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "5",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10281,6 +10311,7 @@
         {
           "default": "",
           "document": "翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。",
+          "example": "taskId6",
           "member": "string",
           "name": "ScrollToken",
           "required": false,
@@ -10289,6 +10320,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "145xxx",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -10302,15 +10334,19 @@
       "members": [
         {
           "document": "任务概要列表。",
+          "example": "无",
           "member": "TaskSimpleInfo",
           "name": "TaskSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。",
+          "example": "taskId6",
           "member": "string",
           "name": "ScrollToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13000,6 +13036,16 @@
           "example": "无",
           "member": "string",
           "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件的存储类别：\n<li>STANDARD：标准存储。</li>\n<li>STANDARD_IA：低频存储。</li>",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "StorageClass",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20435,6 +20481,24 @@
           "document": "任务 ID。",
           "member": "string",
           "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频 ID。",
+          "member": "string",
+          "name": "FileId",
           "required": true,
           "type": "string",
           "value_allowed_null": false

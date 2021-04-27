@@ -80,6 +80,7 @@ tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
     --ProjectId 12522d74de35ff \
     --Operation AddInput \
+    --InputEndpoint Main \
     --InputInfo.InputType VodPull \
     --InputInfo.VodPullInputInfo.InputUrls https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4 \
     --InputInfo.VodPullInputInfo.LoopTimes -1

@@ -17,33 +17,58 @@ Output:
         "TaskSet": [
             {
                 "TaskId": "taskId1",
+                "Status": "FINISH",
+                "TaskType": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": "2018-12-27T13:57:15Z"
+                "FinishTime": "2018-12-27T13:57:15Z",
+                "SessionContext": "",
+                "SessionId": "",
+                "FileId": "528xx123"
             },
             {
                 "TaskId": "taskId2",
+                "Status": "FINISH",
+                "TaskType": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": "2018-12-27T13:57:15Z"
+                "FinishTime": "2018-12-27T13:57:15Z",
+                "SessionContext": "",
+                "SessionId": "",
+                "FileId": "528xx124"
             },
             {
                 "TaskId": "taskId3",
+                "Status": "FINISH",
+                "TaskType": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": "2018-12-27T13:57:15Z"
+                "FinishTime": "2018-12-27T13:57:15Z",
+                "SessionContext": "",
+                "SessionId": "",
+                "FileId": "528xx125"
             },
             {
                 "TaskId": "taskId4",
+                "Status": "FINISH",
+                "TaskType": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": "2018-12-27T13:57:15Z"
+                "FinishTime": "2018-12-27T13:57:15Z",
+                "SessionContext": "",
+                "SessionId": "",
+                "FileId": "528xx126"
             },
             {
                 "TaskId": "taskId5",
+                "Status": "FINISH",
+                "TaskType": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": "2018-12-27T13:57:15Z"
+                "FinishTime": "2018-12-27T13:57:15Z",
+                "SessionContext": "",
+                "SessionId": "",
+                "FileId": "528xx127"
             }
         ],
         "ScrollToken": "taskId6",
@@ -72,9 +97,14 @@ Output:
         "TaskSet": [
             {
                 "TaskId": "taskId6",
+                "Status": "FINISH",
+                "TaskType": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": "2018-12-27T13:57:15Z"
+                "FinishTime": "2018-12-27T13:57:15Z",
+                "SessionContext": "",
+                "SessionId": "",
+                "FileId": "528xx124"
             }
         ],
         "ScrollToken": null,
@@ -102,9 +132,14 @@ Output:
         "TaskSet": [
             {
                 "TaskId": "taskId7",
+                "Status": "FINISH",
+                "TaskType": "transcode",
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": null
+                "FinishTime": null,
+                "SessionContext": "",
+                "SessionId": "",
+                "FileId": "528xx124"
             }
         ],
         "ScrollToken": null,

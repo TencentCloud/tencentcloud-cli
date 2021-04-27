@@ -37,7 +37,7 @@
       "output": "DescribeAsyncRequestInfoResponse"
     },
     "DescribeBackupAccess": {
-      "document": "本接口（DescribeBackupAccess）用于获取备份文件的下载授权，具体的备份文件信息可通过查询实例备份列表（DescribeDBBackups）接口获取",
+      "document": "备份下载功能已调整，此接口即将下线\n\n本接口（DescribeBackupAccess）用于获取备份文件的下载授权，具体的备份文件信息可通过查询实例备份列表（DescribeDBBackups）接口获取",
       "input": "DescribeBackupAccessRequest",
       "name": "获取实例备份下载授权",
       "output": "DescribeBackupAccessResponse"

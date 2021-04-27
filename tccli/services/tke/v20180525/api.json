@@ -6951,6 +6951,7 @@
         {
           "default": "",
           "document": "地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -6960,6 +6961,7 @@
         {
           "default": "",
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "required": true,
@@ -6969,6 +6971,7 @@
         {
           "default": "",
           "document": "地域状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -6978,6 +6981,7 @@
         {
           "default": "",
           "document": "地域特性开关(按照JSON的形式返回所有属性)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL  ",
           "member": "string",
           "name": "FeatureGates",
           "required": true,
@@ -6987,6 +6991,7 @@
         {
           "default": "",
           "document": "地域简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz ",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -6996,6 +7001,7 @@
         {
           "default": "",
           "document": "地域白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州地域 ",
           "member": "string",
           "name": "Remark",
           "required": true,

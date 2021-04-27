@@ -118,6 +118,14 @@
         "title": "删除一个团队成员"
       }
     ],
+    "DescribeAccounts": [
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeAccounts\n&Platform=100001\n&Phone=15517177077\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccountInfoSet\": [\n            {\n                \"UserId\": \"72392ca4-2c79-44f3-ad5a-63cbfa72367c\",\n                \"Phone\": \"15515555055\",\n                \"Nick\": \"Nick\",\n                \"Status\": \"Normal\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
+        "title": "获取用户信息"
+      }
+    ],
     "DescribeClass": [
       {
         "document": "",
@@ -327,7 +335,7 @@
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo)| 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值-1",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddInput\n&InputInfo.InputType=VodPull\n&InputInfo.VodPullInputInfo.InputUrls.0=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\n&InputInfo.VodPullInputInfo.LoopTimes=-1\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddInput\n&InputEndpoint=Main\n&InputInfo.InputType=VodPull\n&InputInfo.VodPullInputInfo.InputUrls.0=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\n&InputInfo.VodPullInputInfo.LoopTimes=-1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "添加点播拉流输入源且循环播放"
       },

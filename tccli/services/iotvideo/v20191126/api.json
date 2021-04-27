@@ -697,7 +697,7 @@
         },
         {
           "default": "",
-          "document": "设备昵称",
+          "document": "设备昵称，最多不超过64个字符",
           "example": "dev001",
           "member": "string",
           "name": "Nick",
@@ -3643,7 +3643,7 @@
         },
         {
           "default": "",
-          "document": "设备昵称",
+          "document": "设备昵称，最多不超过64个字符",
           "example": "Camera",
           "member": "string",
           "name": "Nick",

@@ -66,6 +66,12 @@
       "name": "删除团队成员",
       "output": "DeleteTeamMembersResponse"
     },
+    "DescribeAccounts": {
+      "document": "获取用户账号信息。",
+      "input": "DescribeAccountsRequest",
+      "name": "获取账号信息",
+      "output": "DescribeAccountsResponse"
+    },
     "DescribeClass": {
       "document": "获取指定归属者下所有的分类信息。",
       "input": "DescribeClassRequest",
@@ -260,6 +266,52 @@
     "serviceShortName": "cme"
   },
   "objects": {
+    "AccountInfo": {
+      "document": "制作云用户账号信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户 Id。",
+          "example": "1000000001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机号码。",
+          "example": "15515555055",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户昵称。",
+          "example": "Nick",
+          "member": "string",
+          "name": "Nick",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号状态，取值：\n<li>Normal：有效；</li>\n<li>Stopped：无效。</li>",
+          "example": "Normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AddMemberInfo": {
       "document": "添加的团队成员信息",
       "members": [
@@ -1203,6 +1255,78 @@
     "DeleteTeamResponse": {
       "document": "DeleteTeam返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountsRequest": {
+      "document": "DescribeAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台唯一标识。",
+          "example": "1000000001",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码。",
+          "example": "15515555055",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：10，最大值：20。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountsResponse": {
+      "document": "DescribeAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "符合搜索条件的记录总数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账号信息列表。",
+          "example": "无",
+          "member": "AccountInfo",
+          "name": "AccountInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

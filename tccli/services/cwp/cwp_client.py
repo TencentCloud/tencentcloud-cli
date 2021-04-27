@@ -338,6 +338,31 @@ def doCreateBaselineStrategy(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeImportMachineInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeImportMachineInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeImportMachineInfo(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeBashRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2738,6 +2763,31 @@ def doIgnoreImpactedHosts(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doExportVulDetectionExcel(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ExportVulDetectionExcelRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ExportVulDetectionExcel(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeBashEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2813,6 +2863,31 @@ def doCreateUsualLoginPlaces(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doExportVulDetectionReport(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ExportVulDetectionReportRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ExportVulDetectionReport(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doInquiryPriceOpenProVersionPrepaid(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2862,6 +2937,7 @@ ACTION_MAP = {
     "DescribeVuls": doDescribeVuls,
     "MisAlarmNonlocalLoginPlaces": doMisAlarmNonlocalLoginPlaces,
     "CreateBaselineStrategy": doCreateBaselineStrategy,
+    "DescribeImportMachineInfo": doDescribeImportMachineInfo,
     "DescribeBashRules": doDescribeBashRules,
     "DeletePrivilegeEvents": doDeletePrivilegeEvents,
     "RenewProVersion": doRenewProVersion,
@@ -2958,9 +3034,11 @@ ACTION_MAP = {
     "DescribeWeeklyReportInfo": doDescribeWeeklyReportInfo,
     "DescribeAttackLogInfo": doDescribeAttackLogInfo,
     "IgnoreImpactedHosts": doIgnoreImpactedHosts,
+    "ExportVulDetectionExcel": doExportVulDetectionExcel,
     "DescribeBashEvents": doDescribeBashEvents,
     "DescribeMachines": doDescribeMachines,
     "CreateUsualLoginPlaces": doCreateUsualLoginPlaces,
+    "ExportVulDetectionReport": doExportVulDetectionReport,
     "InquiryPriceOpenProVersionPrepaid": doInquiryPriceOpenProVersionPrepaid,
 
 }

@@ -240,6 +240,12 @@
       "name": "获取漏洞受影响机器列表",
       "output": "DescribeImpactedHostsResponse"
     },
+    "DescribeImportMachineInfo": {
+      "document": "查询批量导入机器信息",
+      "input": "DescribeImportMachineInfoRequest",
+      "name": "查询批量导入机器信息",
+      "output": "DescribeImportMachineInfoResponse"
+    },
     "DescribeLoginWhiteList": {
       "document": "获取异地登录白名单列表",
       "input": "DescribeLoginWhiteListRequest",
@@ -551,6 +557,18 @@
       "input": "ExportTasksRequest",
       "name": "异步导出任务",
       "output": "ExportTasksResponse"
+    },
+    "ExportVulDetectionExcel": {
+      "document": "导出本次漏洞检测Excel",
+      "input": "ExportVulDetectionExcelRequest",
+      "name": "导出本次漏洞检测Excel",
+      "output": "ExportVulDetectionExcelResponse"
+    },
+    "ExportVulDetectionReport": {
+      "document": "导出漏洞检测报告。",
+      "input": "ExportVulDetectionReportRequest",
+      "name": "导出漏洞检测报告",
+      "output": "ExportVulDetectionReportResponse"
     },
     "IgnoreImpactedHosts": {
       "document": "本接口 (IgnoreImpactedHosts) 用于忽略漏洞。",
@@ -3574,6 +3592,60 @@
       ],
       "type": "object"
     },
+    "DescribeImportMachineInfoRequest": {
+      "document": "DescribeImportMachineInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "MachineList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "批量导入的数据类型：Ip、Name、Id 三选一",
+          "example": "ip",
+          "member": "string",
+          "name": "ImportType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImportMachineInfoResponse": {
+      "document": "DescribeImportMachineInfo返回参数结构体",
+      "members": [
+        {
+          "document": "有效的机器信息列表：机器名称、机器公网/内网ip、机器标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "EffectiveMachineInfo",
+          "name": "EffectiveMachineInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户批量导入失败的机器列表（比如机器不存在等...）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "InvalidMachineList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoginWhiteListRequest": {
       "document": "DescribeLoginWhiteList请求参数结构体",
       "members": [
@@ -6387,6 +6459,62 @@
       ],
       "type": "object"
     },
+    "EffectiveMachineInfo": {
+      "document": "批量导入机器信息.",
+      "members": [
+        {
+          "default": "",
+          "document": "机器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "MachinePublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "MachinePrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MachineTag",
+          "name": "MachineTag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器Quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ExportAttackLogsRequest": {
       "document": "ExportAttackLogs请求参数结构体",
       "members": [
@@ -6776,6 +6904,123 @@
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVulDetectionExcelRequest": {
+      "document": "ExportVulDetectionExcel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本次漏洞检测任务id（不同于出参的导出本次漏洞检测Excel的任务Id）",
+          "example": "1596595610",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVulDetectionExcelResponse": {
+      "document": "ExportVulDetectionExcel返回参数结构体",
+      "members": [
+        {
+          "document": "导出文件下载链接地址",
+          "example": "https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/%E6",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "导出本次漏洞检测Excel的任务Id（不同于入参的本次漏洞检测任务id）",
+          "example": "1615549629",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVulDetectionReportRequest": {
+      "document": "ExportVulDetectionReport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞扫描任务id（不同于出参的导出检测报告的任务Id）",
+          "example": "1596595610",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤参数",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVulDetectionReportResponse": {
+      "document": "ExportVulDetectionReport返回参数结构体",
+      "members": [
+        {
+          "document": "导出文件下载链接地址",
+          "example": "https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/%E6",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "导出检测报告的任务Id（不同于入参的漏洞扫描任务id）",
+          "example": "1615549629",
+          "member": "string",
+          "name": "TaskId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
