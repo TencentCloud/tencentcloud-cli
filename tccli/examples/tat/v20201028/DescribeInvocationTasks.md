@@ -35,6 +35,7 @@ Output:
                 "TaskResult": {
                     "ExitCode": 0,
                     "Output": "cm9vdAo=",
+                    "Dropped": 0,
                     "ExecStartTime": "2020-11-05T07:49:58+00:00",
                     "ExecEndTime": "2020-11-05T07:50:04+00:00"
                 },
@@ -58,6 +59,7 @@ Output:
                 "TaskResult": {
                     "ExitCode": 0,
                     "Output": "cm9vdAo=",
+                    "Dropped": 0,
                     "ExecStartTime": "2020-11-05T07:49:58+00:00",
                     "ExecEndTime": "2020-11-05T07:50:04+00:00"
                 },
@@ -81,6 +83,7 @@ Output:
                 "TaskResult": {
                     "ExitCode": 0,
                     "Output": "cm9vdAo=",
+                    "Dropped": 0,
                     "ExecStartTime": "2020-11-05T07:49:58+00:00",
                     "ExecEndTime": "2020-11-05T07:50:04+00:00"
                 },

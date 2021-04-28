@@ -5793,6 +5793,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5802,6 +5803,7 @@
         {
           "default": "",
           "document": "实例名称，如ens-34241f3s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -5811,6 +5813,7 @@
         {
           "default": "",
           "document": "实例状态。取值范围：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nSTOPPED：表示关机\nSTARTING：表示开机中\nSTOPPING：表示关机中\nREBOOTING：表示重启中\nSHUTDOWN：表示停止待销毁\nTERMINATING：表示销毁中。",
+          "example": "无",
           "member": "string",
           "name": "InstanceState",
           "required": true,
@@ -5820,6 +5823,7 @@
         {
           "default": "",
           "document": "实例当前使用的镜像的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Image",
           "name": "Image",
           "required": true,
@@ -5829,6 +5833,7 @@
         {
           "default": "",
           "document": "实例当前所属的模块简要信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SimpleModule",
           "name": "SimpleModule",
           "required": true,
@@ -5838,6 +5843,7 @@
         {
           "default": "",
           "document": "实例所在的位置相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Position",
           "name": "Position",
           "required": true,
@@ -5847,6 +5853,7 @@
         {
           "default": "",
           "document": "实例的网络相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Internet",
           "name": "Internet",
           "required": true,
@@ -5856,6 +5863,7 @@
         {
           "default": "",
           "document": "实例的配置相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfig",
           "required": true,
@@ -5865,6 +5873,7 @@
         {
           "default": "",
           "document": "实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -5874,6 +5883,7 @@
         {
           "default": "",
           "document": "实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
@@ -5883,6 +5893,7 @@
         {
           "default": "",
           "document": "实例最后一次操作。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestOperation",
           "required": true,
@@ -5892,6 +5903,7 @@
         {
           "default": "",
           "document": "实例最后一次操作结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestOperationState",
           "required": true,
@@ -5901,6 +5913,7 @@
         {
           "default": "",
           "document": "实例业务状态。取值范围：\nNORMAL：表示正常状态的实例\nEXPIRED：表示过期的实例\nPROTECTIVELY_ISOLATED：表示被安全隔离的实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RestrictState",
           "required": true,
@@ -5910,6 +5923,7 @@
         {
           "default": "",
           "document": "系统盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "SystemDiskSize",
           "required": true,
@@ -5919,6 +5933,7 @@
         {
           "default": "",
           "document": "数据盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "DataDiskSize",
           "required": true,
@@ -5928,6 +5943,7 @@
         {
           "default": "",
           "document": "实例UUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UUID",
           "required": true,
@@ -5937,6 +5953,7 @@
         {
           "default": "",
           "document": "付费方式。\n    0为后付费。\n    1为预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "PayMode",
           "required": true,
@@ -5946,6 +5963,7 @@
         {
           "default": "",
           "document": "过期时间。格式为yyyy-mm-dd HH:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
@@ -5955,6 +5973,7 @@
         {
           "default": "",
           "document": "隔离时间。格式为yyyy-mm-dd HH:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "IsolatedTime",
           "required": true,
@@ -5964,6 +5983,7 @@
         {
           "default": "",
           "document": "是否自动续费。\n      0为不自动续费。\n      1为自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "RenewFlag",
           "required": true,
@@ -5973,6 +5993,7 @@
         {
           "default": "",
           "document": "过期状态。\n    NORMAL 表示机器运行正常。\n    WILL_EXPIRE 表示即将过期。\n    EXPIRED 表示已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ExpireState",
           "required": true,
@@ -5982,6 +6003,7 @@
         {
           "default": "",
           "document": "系统盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DiskInfo",
           "name": "SystemDisk",
           "required": true,
@@ -5991,6 +6013,7 @@
         {
           "default": "",
           "document": "数据盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DiskInfo",
           "name": "DataDisks",
           "required": true,
@@ -6000,6 +6023,7 @@
         {
           "default": "",
           "document": "新实例标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "NewFlag",
           "required": true,
@@ -6009,6 +6033,7 @@
         {
           "default": "",
           "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -6018,6 +6043,7 @@
         {
           "default": "",
           "document": "VPC属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": true,
@@ -6027,10 +6053,21 @@
         {
           "default": "",
           "document": "实例运营商字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ISP",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理位置信息。注意该字段目前为保留字段，均为空值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalPosition",
+          "name": "PhysicalPosition",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -6327,7 +6364,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例的内网相关信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PrivateIPAddressInfo",
           "name": "PrivateIPAddressSet",
           "required": true,
@@ -6336,7 +6373,7 @@
         },
         {
           "default": "",
-          "document": "实例的公网相关信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PublicIPAddressInfo",
           "name": "PublicIPAddressSet",
           "required": true,
@@ -8934,6 +8971,42 @@
           "name": "PeakNetworkSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PhysicalPosition": {
+      "document": "物理位置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PosId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机架\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交换机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SwitchId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

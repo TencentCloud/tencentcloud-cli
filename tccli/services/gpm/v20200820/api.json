@@ -101,6 +101,12 @@
       "input": "StartMatchingRequest",
       "name": "发起匹配",
       "output": "StartMatchingResponse"
+    },
+    "StartMatchingBackfill": {
+      "document": "通过调用StartMatchingBackfill，用户可以传入一个回填的匹配请求，GPM为回填请求搜索符合条件的ticket并形成一个新的match。",
+      "input": "StartMatchingBackfillRequest",
+      "name": "发起回填匹配",
+      "output": "StartMatchingBackfillResponse"
     }
   },
   "metadata": {
@@ -1917,6 +1923,69 @@
         }
       ],
       "usage": "out"
+    },
+    "StartMatchingBackfillRequest": {
+      "document": "StartMatchingBackfill请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配code",
+          "example": "match_code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家信息",
+          "example": "无",
+          "member": "Player",
+          "name": "Players",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "游戏服务器回话 ID [1-256] 个ASCII 字符",
+          "example": "game_server_session_id",
+          "member": "string",
+          "name": "GameServerSessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "匹配票据 Id 默认 \"\" 为空则由 GPM 自动生成 长度 [1, 128]",
+          "example": "match_ticket_id",
+          "member": "string",
+          "name": "MatchTicketId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMatchingBackfillResponse": {
+      "document": "StartMatchingBackfill返回参数结构体",
+      "members": [
+        {
+          "document": "匹配票据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MatchTicket",
+          "name": "MatchTicket",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StartMatchingRequest": {
       "document": "StartMatching请求参数结构体",

@@ -32,6 +32,7 @@ Output:
                     {
                         "RouteId": 0,
                         "RouteItemId": "rti6-12345678",
+                        "DestinationCidrBlock": "",
                         "DestinationIpv6CidrBlock": "2402:4e00:1000:810b::/64",
                         "GatewayType": "CCN",
                         "GatewayId": "ccn-12345678",
@@ -71,6 +72,18 @@ Output:
                     }
                 ],
                 "Main": false,
+                "TagSet": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "LocalCidrForCcn": [
+                    {
+                        "Cidr": "xx",
+                        "PublishedToVbc": true
+                    }
+                ],
                 "CreatedTime": "2017-06-30 19:52:03"
             }
         ],
@@ -142,6 +155,12 @@ Output:
                     {
                         "Key": "city",
                         "Value": "shanghai"
+                    }
+                ],
+                "LocalCidrForCcn": [
+                    {
+                        "Cidr": "xx",
+                        "PublishedToVbc": true
                     }
                 ],
                 "Main": false,

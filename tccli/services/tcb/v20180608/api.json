@@ -3692,6 +3692,7 @@
         {
           "default": "",
           "document": "服务名",
+          "example": "test",
           "member": "string",
           "name": "ServerName",
           "required": true,
@@ -3700,6 +3701,7 @@
         {
           "default": "",
           "document": "版本名",
+          "example": "test-001",
           "member": "string",
           "name": "VersionName",
           "required": true,
@@ -3708,6 +3710,7 @@
         {
           "default": "",
           "document": "环境id",
+          "example": "lotestapi100004",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -3716,6 +3719,7 @@
         {
           "default": "",
           "document": "版本历史名",
+          "example": "test",
           "member": "string",
           "name": "SnapshotName",
           "required": false,
@@ -3723,7 +3727,8 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量。默认0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3731,7 +3736,8 @@
         },
         {
           "default": "",
-          "document": "限制大小",
+          "document": "限制大小。默认10，最大20",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3745,8 +3751,10 @@
       "members": [
         {
           "document": "版本历史\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CloudRunServiceSimpleVersionSnapshot",
           "name": "Snapshots",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

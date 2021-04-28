@@ -120,6 +120,12 @@
       "name": "一键开启和关闭",
       "output": "ModifyAllSwitchStatusResponse"
     },
+    "ModifyBlockIgnoreList": {
+      "document": "支持对拦截列表、忽略列表如下操作：\n批量增加拦截IP、忽略IP/域名\n批量删除拦截IP、忽略IP/域名\n批量修改拦截IP、忽略IP/域名生效事件",
+      "input": "ModifyBlockIgnoreListRequest",
+      "name": "拦截列表和忽略列表批量操作接口",
+      "output": "ModifyBlockIgnoreListResponse"
+    },
     "ModifyItemSwitchStatus": {
       "document": "修改单个防火墙开关",
       "input": "ModifyItemSwitchStatusRequest",
@@ -1647,6 +1653,42 @@
       ],
       "type": "object"
     },
+    "IocListData": {
+      "document": "黑白名单IOC列表",
+      "members": [
+        {
+          "default": "",
+          "document": "待处置IP地址，IP/Domain字段二选一",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只能为0或者1   0代表出站 1代表入站",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待处置域名，IP/Domain字段二选一",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ModifyAcRuleRequest": {
       "document": "ModifyAcRule请求参数结构体",
       "members": [
@@ -1821,6 +1863,87 @@
           "document": "修改成功与否的状态值 0：修改成功，非 0：修改失败",
           "member": "uint64",
           "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockIgnoreListRequest": {
+      "document": "ModifyBlockIgnoreList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "1拦截列表 2 忽略列表",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "IP、Domain二选一，不能同时为空",
+          "example": "无",
+          "member": "IocListData",
+          "name": "IOC",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "默认值:delete（删除）、edit（编辑）、add（添加）  其他值无效",
+          "example": "add",
+          "member": "string",
+          "name": "IocAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间格式：yyyy-MM-dd HH:mm:ss",
+          "example": "2020-04-23 18:56:16",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间格式：yyyy-MM-dd HH:mm:ss",
+          "example": "2020-04-30 18:56:16",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockIgnoreListResponse": {
+      "document": "ModifyBlockIgnoreList返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "接口返回错误码，0请求成功  非0失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "ReturnCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

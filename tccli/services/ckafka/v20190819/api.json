@@ -78,6 +78,12 @@
       "name": "查询用户列表",
       "output": "DescribeAppInfoResponse"
     },
+    "DescribeCkafkaZone": {
+      "document": "用于查看ckafka的可用区列表",
+      "input": "DescribeCkafkaZoneRequest",
+      "name": "查看可用区列表",
+      "output": "DescribeCkafkaZoneResponse"
+    },
     "DescribeConsumerGroup": {
       "document": "查询消费分组信息",
       "input": "DescribeConsumerGroupRequest",
@@ -119,6 +125,12 @@
       "input": "DescribeInstancesDetailRequest",
       "name": "获取实例列表详情",
       "output": "DescribeInstancesDetailResponse"
+    },
+    "DescribeRegion": {
+      "document": "枚举地域,只支持广州地域",
+      "input": "DescribeRegionRequest",
+      "name": "枚举地域",
+      "output": "DescribeRegionResponse"
     },
     "DescribeRoute": {
       "document": "查看路由信息",
@@ -307,6 +319,84 @@
           "document": "topic信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "GroupInfoTopics",
           "name": "Topics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterInfo": {
+      "document": "集群信息实体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "member": "int64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群最大磁盘 单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群最大带宽 单位MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群当前可用磁盘  单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AvailableDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群当前可用带宽 单位MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AvailableBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所属可用区，表明集群归属的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ZoneIds",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -1388,6 +1478,32 @@
       ],
       "type": "object"
     },
+    "DescribeCkafkaZoneRequest": {
+      "document": "DescribeCkafkaZone请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCkafkaZoneResponse": {
+      "document": "DescribeCkafkaZone返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果复杂对象实体",
+          "example": "无",
+          "member": "ZoneResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConsumerGroupRequest": {
       "document": "DescribeConsumerGroup请求参数结构体",
       "members": [
@@ -1825,6 +1941,60 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionRequest": {
+      "document": "DescribeRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回最大结果数",
+          "example": "50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务字段，可忽略",
+          "example": "10",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionResponse": {
+      "document": "DescribeRegion返回参数结构体",
+      "members": [
+        {
+          "document": "返回地域枚举结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Region",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3535,6 +3705,116 @@
       ],
       "usage": "out"
     },
+    "Price": {
+      "document": "消息价格实体",
+      "members": [
+        {
+          "default": "",
+          "document": "折扣价",
+          "member": "float",
+          "name": "RealTotalCost",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价",
+          "member": "float",
+          "name": "TotalCost",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Region": {
+      "document": "地域实体对象",
+      "members": [
+        {
+          "default": "",
+          "document": "地域ID",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域名称",
+          "example": "华南地区",
+          "member": "string",
+          "name": "AreaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "RegionCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域代码（V3版本）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionCodeV3",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "NONE:默认值不支持任何特殊机型\\nCVM:支持CVM类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "profession",
+          "member": "string",
+          "name": "Support",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持ipv6, 0：表示不支持，1：表示支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Ipv6",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持跨可用区, 0：表示不支持，1：表示支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MultiZone",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Route": {
       "document": "路由实体对象",
       "members": [
@@ -4119,6 +4399,180 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneInfo": {
+      "document": "zone信息实体",
+      "members": [
+        {
+          "default": "",
+          "document": "zone的id",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否内部APP",
+          "member": "int64",
+          "name": "IsInternalApp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "app id",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标识",
+          "member": "bool",
+          "name": "Flag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "zone名称",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "zone状态",
+          "member": "int64",
+          "name": "ZoneStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外标识",
+          "member": "string",
+          "name": "Exflag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "json对象，key为机型，value true为售罄，false为未售罄",
+          "member": "string",
+          "name": "SoldOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneResponse": {
+      "document": "查询kafka的zone信息返回的实体",
+      "members": [
+        {
+          "default": "",
+          "document": "zone列表",
+          "member": "ZoneInfo",
+          "name": "ZoneList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大购买实例个数",
+          "member": "int64",
+          "name": "MaxBuyInstanceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大购买带宽 单位Mb/s",
+          "member": "int64",
+          "name": "MaxBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后付费单位价格",
+          "member": "Price",
+          "name": "UnitPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后付费消息单价",
+          "member": "Price",
+          "name": "MessagePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户独占集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClusterInfo",
+          "name": "ClusterInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买标准版配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Standard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买标准版S2配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StandardS2",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买专业版配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Profession",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买物理独占版配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Physical",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

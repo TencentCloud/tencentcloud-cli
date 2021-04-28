@@ -942,6 +942,14 @@
         "title": "修改内容智能识别模板，开启令人反感的信息的智能识别任务并指定过滤标签及分数阈值"
       }
     ],
+    "ModifyEventConfig": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyEventConfig\n&Mode=PUSH\n&NotificationUrl=http://mydemo.com/receiveevent\n&UploadMediaCompleteEventSwitch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "设置事件通知信息"
+      }
+    ],
     "ModifyImageSpriteTemplate": [
       {
         "document": "",

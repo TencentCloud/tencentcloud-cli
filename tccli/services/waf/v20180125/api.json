@@ -52,7 +52,7 @@
   "metadata": {
     "apiVersion": "2018-01-25",
     "api_brief": "介绍如果用API对web应用防火墙进行相关操作，比如接入设置，防护设置等",
-    "serviceNameCN": "网站管家",
+    "serviceNameCN": "Web 应用防火墙",
     "serviceShortName": "waf"
   },
   "objects": {

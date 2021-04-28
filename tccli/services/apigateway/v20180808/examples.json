@@ -123,7 +123,7 @@
     "DeleteService": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteService\r\n&ServiceId=service-kaghtzi4\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteService\n&ServiceId=service-kaghtzi4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\n    }\n}",
         "title": "删除服务"
       }

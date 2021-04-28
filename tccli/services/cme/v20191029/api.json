@@ -842,6 +842,15 @@
         },
         {
           "default": "",
+          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "画布宽高比。\n该字段已经废弃，请使用具体项目输入中的 AspectRatio 字段。",
           "example": "16:9",
           "member": "string",
@@ -1647,6 +1656,15 @@
           "example": "无",
           "member": "string",
           "name": "CategorySet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Modes",
           "required": false,
           "type": "list"
         },
@@ -4100,6 +4118,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -4108,6 +4127,7 @@
         {
           "default": "",
           "document": "项目 Id。",
+          "example": "1111",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -4116,6 +4136,7 @@
         {
           "default": "",
           "document": "项目名称，不可超过30个字符。",
+          "example": "first_project",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4124,6 +4145,7 @@
         {
           "default": "",
           "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16。</li>",
+          "example": "无",
           "member": "string",
           "name": "AspectRatio",
           "required": false,
@@ -4132,10 +4154,20 @@
         {
           "default": "",
           "document": "项目归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Defualt：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "example": "Default",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4606,7 +4638,7 @@
         },
         {
           "default": "",
-          "document": "云转推项目信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StreamConnectProjectInfo",
           "name": "StreamConnectProjectInfo",

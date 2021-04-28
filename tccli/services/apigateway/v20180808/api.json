@@ -3130,6 +3130,7 @@
         {
           "default": "",
           "document": "待删除服务的唯一 ID。",
+          "example": "service-kaghtzi4",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -3143,8 +3144,10 @@
       "members": [
         {
           "document": "删除操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
