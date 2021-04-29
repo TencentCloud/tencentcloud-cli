@@ -43,8 +43,8 @@
     "RecognizeTargetAudience": [
       {
         "document": "",
-        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeTargetAudience\r\n&BspData.Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&BspData.AccountType=2\r\n&BspData.ModelIdList.0=5128\r\n&BspData.ModelIdList.1=5129\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeTargetAudience\n&BspData.Uid=bfd81ee3ed27ad31c95ca75e21365973\n&BspData.AccountType=2\n&BspData.ModelIdList.0=5128\n&BspData.ModelIdList.1=5129\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"xx\",\n            \"Code\": 0,\n            \"Value\": [\n                {\n                    \"IsFound\": 0,\n                    \"Score\": 0.0,\n                    \"ModelId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "RecognizeTargetAudience"
       }
     ],

@@ -306,6 +306,12 @@
       "name": "查询创建从实例任务状态",
       "output": "DescribeReplicationInstanceCreateTasksResponse"
     },
+    "DescribeReplicationInstanceSyncStatus": {
+      "document": "查询从实例同步状态",
+      "input": "DescribeReplicationInstanceSyncStatusRequest",
+      "name": "查询从实例同步状态",
+      "output": "DescribeReplicationInstanceSyncStatusResponse"
+    },
     "DescribeReplicationInstances": {
       "document": "查询从实例列表",
       "input": "DescribeReplicationInstancesRequest",
@@ -823,6 +829,7 @@
         {
           "default": "",
           "document": "仓库名称",
+          "example": "dockerhub/test",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -831,6 +838,7 @@
         {
           "default": "",
           "document": "keep_last_days:保留最近几天的数据;keep_last_nums:保留最近多少个",
+          "example": "keep_last_days",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -839,6 +847,7 @@
         {
           "default": "",
           "document": "策略值",
+          "example": "5",
           "member": "int64",
           "name": "Val",
           "required": true,
@@ -1545,6 +1554,7 @@
         {
           "default": "",
           "document": "仓库名称",
+          "example": "dockerhub/test",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -2965,6 +2975,7 @@
         {
           "default": "",
           "document": "同步实例Id",
+          "example": "tcr-ak9876-5",
           "member": "string",
           "name": "ReplicationRegistryId",
           "required": true,
@@ -2973,6 +2984,7 @@
         {
           "default": "",
           "document": "同步实例的地域ID",
+          "example": "5",
           "member": "uint64",
           "name": "ReplicationRegionId",
           "required": true,
@@ -2986,15 +2998,82 @@
       "members": [
         {
           "document": "任务详情",
+          "example": "无",
           "member": "TaskDetail",
           "name": "TaskDetail",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "整体任务状态",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationInstanceSyncStatusRequest": {
+      "document": "DescribeReplicationInstanceSyncStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例Id",
+          "example": "tcr-12345",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制实例Id",
+          "example": "tcr-12345-5",
+          "member": "string",
+          "name": "ReplicationRegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制实例的地域Id",
+          "example": "5",
+          "member": "uint64",
+          "name": "ReplicationRegionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationInstanceSyncStatusResponse": {
+      "document": "DescribeReplicationInstanceSyncStatus返回参数结构体",
+      "members": [
+        {
+          "document": "同步状态",
+          "example": "StatusUnKnow",
+          "member": "string",
+          "name": "ReplicationStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "同步完成时间",
+          "example": "0001-01-01T00:00:00Z",
+          "member": "string",
+          "name": "ReplicationTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3013,6 +3092,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-12345",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -3021,6 +3101,7 @@
         {
           "default": "",
           "document": "偏移量,默认0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3029,6 +3110,7 @@
         {
           "default": "",
           "document": "最大输出条数，默认20，最大为100",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3042,15 +3124,19 @@
       "members": [
         {
           "document": "总实例个数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "同步实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ReplicationRegistry",
           "name": "ReplicationRegistries",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3858,6 +3944,7 @@
         {
           "default": "",
           "document": "源镜像名称，不包含domain。例如： tencentyun/foo:v1",
+          "example": "dockerhub/test:1.0",
           "member": "string",
           "name": "SrcImage",
           "required": true,
@@ -3866,6 +3953,7 @@
         {
           "default": "",
           "document": "目的镜像名称，不包含domain。例如： tencentyun/foo:latest",
+          "example": "dockerhub/test:2.0",
           "member": "string",
           "name": "DestImage",
           "required": true,
@@ -3879,8 +3967,10 @@
       "members": [
         {
           "document": "复制镜像返回值",
+          "example": "无",
           "member": "DupImageTagResp",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4504,6 +4594,7 @@
         {
           "default": "",
           "document": "仓库名称",
+          "example": "dockerhub/test",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -4512,6 +4603,7 @@
         {
           "default": "",
           "document": "默认值为0",
+          "example": "1",
           "member": "int64",
           "name": "Public",
           "required": true,

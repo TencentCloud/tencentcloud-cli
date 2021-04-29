@@ -312,6 +312,12 @@
       "name": "获取视频解密密钥",
       "output": "DescribeDrmDataKeyResponse"
     },
+    "DescribeEventConfig": {
+      "document": "腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。\n\n开发者可以通过本接口来查询当前配置事件通知的接收方式、接收地址以及哪些事件开启了接收回调通知。\n\n默认接口请求频率限制：100次/秒。",
+      "input": "DescribeEventConfigRequest",
+      "name": "查询事件通知配置",
+      "output": "DescribeEventConfigResponse"
+    },
     "DescribeEventsState": {
       "document": "* 该接口用于业务服务器获取 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 事件通知的状态。\n",
       "input": "DescribeEventsStateRequest",
@@ -9104,6 +9110,69 @@
           "name": "KeyList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventConfigRequest": {
+      "document": "DescribeEventConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventConfigResponse": {
+      "document": "DescribeEventConfig返回参数结构体",
+      "members": [
+        {
+          "document": "接收事件通知的方式。\"PUSH\" 为 [HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83)，\"PULL\" 为 [基于消息队列的可靠通知](https://cloud.tencent.com/document/product/266/7829#.E5.9F.BA.E4.BA.8E.E6.B6.88.E6.81.AF.E9.98.9F.E5.88.97.E7.9A.84.E5.8F.AF.E9.9D.A0.E9.80.9A.E7.9F.A5)。",
+          "example": "PUSH",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "采用 [HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83) 接收方式时，用于接收 V3 版本事件通知的地址。",
+          "example": "http://mydemo.com/receiveevent",
+          "member": "string",
+          "name": "NotificationUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否接收 [视频上传完成](https://cloud.tencent.com/document/product/266/7830) 事件通知，\"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。",
+          "example": "ON",
+          "member": "string",
+          "name": "UploadMediaCompleteEventSwitch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否接收 [视频删除完成](https://cloud.tencent.com/document/product/266/13434) 事件通知，\"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。",
+          "example": "OFF",
+          "member": "string",
+          "name": "DeleteMediaCompleteEventSwitch",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

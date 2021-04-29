@@ -7006,6 +7006,7 @@
         {
           "default": "",
           "document": "结算单日期，月结算单填每月1日",
+          "example": "2020-05-01",
           "member": "date",
           "name": "Date",
           "required": true,
@@ -7014,6 +7015,7 @@
         {
           "default": "",
           "document": "日结算单:daily\n月结算单:monthly",
+          "example": "monthly",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -7027,8 +7029,10 @@
       "members": [
         {
           "document": "文件下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cpdp.com/monthly_2020-5.xlsx",
           "member": "string",
           "name": "FileUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

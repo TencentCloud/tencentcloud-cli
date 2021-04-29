@@ -35,7 +35,7 @@
     "CreateImageLifecyclePersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateImageLifecyclePersonal\r\n&RepoName=dockerhub/test\r\n&Type=keep_last_days\r\n&Val=5\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateImageLifecyclePersonal\n&RepoName=dockerhub/test\n&Type=keep_last_days\n&Val=5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "设置个人版仓库tag清理策略"
       }
@@ -177,7 +177,7 @@
     "DeleteImageLifecyclePersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteImageLifecyclePersonal\r\n&RepoName=dockerhub/test\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteImageLifecyclePersonal\n&RepoName=dockerhub/test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除个人版镜像仓库Tag自动清理策略"
       }
@@ -414,6 +414,14 @@
         "title": "查询创建从实例任务状态"
       }
     ],
+    "DescribeReplicationInstanceSyncStatus": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeReplicationInstanceSyncStatus\n&RegistryId=tcr-12345\n&ReplicationRegistryId=tcr-12345-5\n&ReplicationRegionId=5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ReplicationStatus\": \"StatusUnKnow\",\n        \"ReplicationTime\": \"0001-01-01T00:00:00Z\",\n        \"RequestId\": \"4cc6f30c-0862-47d0-8d89-1b7a372b936b\"\n    }\n}",
+        "title": "查询从实例同步状态"
+      }
+    ],
     "DescribeReplicationInstances": [
       {
         "document": "",
@@ -521,7 +529,7 @@
     "DuplicateImagePersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DuplicateImagePersonal\r\n&SrcImage=dockerhub/test:1.0\r\n&DestImage=dockerhub/test:2.0\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DuplicateImagePersonal\n&SrcImage=dockerhub/test:1.0\n&DestImage=dockerhub/test:2.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Data\": {\n            \"Digest\": \"sha256:b3e07cf570a86f5bd5c770e86ccbc2d1c2e79081b1b966332ba873a6d1c3481c\"\n        }\n    }\n}",
         "title": "复制个人版仓库镜像tag"
       }
@@ -599,7 +607,7 @@
     "ModifyRepositoryAccessPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyRepositoryAccessPersonal\r\n&RepoName=dockerhub/test\r\n&Public=1\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyRepositoryAccessPersonal\n&RepoName=dockerhub/test\n&Public=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新个人版仓库访问属性"
       }
