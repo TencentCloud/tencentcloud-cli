@@ -11,6 +11,12 @@
       "input": "DescribeServiceAlertObjectRequest",
       "name": "获取告警对象-服务告警表",
       "output": "DescribeServiceAlertObjectResponse"
+    },
+    "DescribeToken": {
+      "document": "查询token",
+      "input": "DescribeTokenRequest",
+      "name": "查询token",
+      "output": "DescribeTokenResponse"
     }
   },
   "metadata": {
@@ -45,6 +51,42 @@
     "DescribeServiceAlertObjectResponse": {
       "document": "DescribeServiceAlertObject返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenRequest": {
+      "document": "DescribeToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "tsw_site",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenResponse": {
+      "document": "DescribeToken返回参数结构体",
+      "members": [
+        {
+          "document": "token",
+          "example": "token",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

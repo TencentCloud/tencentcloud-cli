@@ -6,8 +6,6 @@ Input:
 
 ```
 tccli cpdp CreateAgentTaxPaymentInfos --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
-    --ImageId img-pmqg1cw7 \
     --AgentId test \
     --Channel 1 \
     --Type 0 \

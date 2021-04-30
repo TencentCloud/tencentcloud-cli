@@ -38,27 +38,3 @@ Output:
 }
 ```
 
-**Example 2: 调用返回失败**
-
-
-
-Input: 
-
-```
-tccli facefusion FaceFusionLite --cli-unfold-argument  \
-    --ProjectId 100646 \
-    --ModelId qc_100646_154021_9 \
-    --RspImgType url \
-    --MergeInfos.0.Url https://test-139.cos.ap-nan.cloud.com/bk.jpeg
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "8ae581fd-c25f-4a63-83b3-d9fcd97230c8",
-        "ReviewResultSet": []
-    }
-}
-```
-

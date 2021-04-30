@@ -937,6 +937,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "输入源推流信息。\n <li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为 2 ，第 0 个代表主输入源，第 1 个代表备输入源。只有当各自输入源类型为推流时才有有效内容。</li>",
+          "example": "无",
+          "member": "RtmpPushInputInfo",
+          "name": "RtmpPushInputInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2919,6 +2928,15 @@
     "HandleStreamConnectProjectResponse": {
       "document": "HandleStreamConnectProject返回参数结构体",
       "members": [
+        {
+          "document": "输入源推流地址，当 Operation 取值 AddInput 且 InputType 为 RtmpPush 类型时有效。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-6086",
+          "member": "string",
+          "name": "StreamInputRtmpPushUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

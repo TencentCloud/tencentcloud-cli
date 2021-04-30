@@ -788,6 +788,7 @@
         {
           "default": "",
           "document": "对接方汇出指令编号",
+          "example": "trasid201911230012",
           "member": "string",
           "name": "TransactionId",
           "required": true,
@@ -796,6 +797,7 @@
         {
           "default": "",
           "document": "申报流水号",
+          "example": "dcldid201911230012",
           "member": "string",
           "name": "DeclareId",
           "required": true,
@@ -804,6 +806,7 @@
         {
           "default": "",
           "document": "付款人ID",
+          "example": "qyfkr201911230004",
           "member": "string",
           "name": "PayerId",
           "required": true,
@@ -812,6 +815,7 @@
         {
           "default": "",
           "document": "源币种",
+          "example": "CNY",
           "member": "string",
           "name": "SourceCurrency",
           "required": true,
@@ -820,6 +824,7 @@
         {
           "default": "",
           "document": "目的币种",
+          "example": "CNY",
           "member": "string",
           "name": "TargetCurrency",
           "required": true,
@@ -828,6 +833,7 @@
         {
           "default": "",
           "document": "贸易编码",
+          "example": "223010",
           "member": "string",
           "name": "TradeCode",
           "required": true,
@@ -836,6 +842,7 @@
         {
           "default": "",
           "document": "原申报流水号",
+          "example": " test12345",
           "member": "string",
           "name": "OriginalDeclareId",
           "required": false,
@@ -844,6 +851,7 @@
         {
           "default": "",
           "document": "源金额",
+          "example": "1",
           "member": "int64",
           "name": "SourceAmount",
           "required": false,
@@ -852,6 +860,7 @@
         {
           "default": "",
           "document": "目的金额",
+          "example": "1",
           "member": "int64",
           "name": "TargetAmount",
           "required": false,
@@ -860,6 +869,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -873,8 +883,10 @@
       "members": [
         {
           "document": "提交申报材料结果",
+          "example": "无",
           "member": "ApplyDeclareResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1010,6 +1022,7 @@
         {
           "default": "",
           "document": "对接方汇出指令编号",
+          "example": "trasid201911230012",
           "member": "string",
           "name": "TransactionId",
           "required": true,
@@ -1018,6 +1031,7 @@
         {
           "default": "",
           "document": "定价币种",
+          "example": "CNY",
           "member": "string",
           "name": "PricingCurrency",
           "required": true,
@@ -1026,6 +1040,7 @@
         {
           "default": "",
           "document": "源币种",
+          "example": "CNY",
           "member": "string",
           "name": "SourceCurrency",
           "required": true,
@@ -1034,6 +1049,7 @@
         {
           "default": "",
           "document": "目的币种",
+          "example": "USD",
           "member": "string",
           "name": "TargetCurrency",
           "required": true,
@@ -1042,6 +1058,7 @@
         {
           "default": "",
           "document": "收款人类型（银行卡填\"BANK_ACCOUNT\"）",
+          "example": "BANK_ACCOUNT",
           "member": "string",
           "name": "PayeeType",
           "required": true,
@@ -1050,6 +1067,7 @@
         {
           "default": "",
           "document": "收款人账号",
+          "example": "325119780000",
           "member": "string",
           "name": "PayeeAccount",
           "required": true,
@@ -1058,6 +1076,7 @@
         {
           "default": "",
           "document": "源币种金额",
+          "example": "10",
           "member": "float",
           "name": "SourceAmount",
           "required": false,
@@ -1066,6 +1085,7 @@
         {
           "default": "",
           "document": "目的金额",
+          "example": "1",
           "member": "float",
           "name": "TargetAmount",
           "required": false,
@@ -1074,6 +1094,7 @@
         {
           "default": "",
           "document": "收款人姓名（PayeeType为\"BANK_COUNT\"时必填）",
+          "example": "TEST",
           "member": "string",
           "name": "PayeeName",
           "required": false,
@@ -1082,6 +1103,7 @@
         {
           "default": "",
           "document": "收款人地址（PayeeType为\"BANK_COUNT\"时必填）",
+          "example": "TEST",
           "member": "string",
           "name": "PayeeAddress",
           "required": false,
@@ -1090,6 +1112,7 @@
         {
           "default": "",
           "document": "收款人银行账号类型（PayeeType为\"BANK_COUNT\"时必填）\n个人填\"INDIVIDUAL\"\n企业填\"CORPORATE\"",
+          "example": "CORPORATE",
           "member": "string",
           "name": "PayeeBankAccountType",
           "required": false,
@@ -1098,6 +1121,7 @@
         {
           "default": "",
           "document": "收款人国家或地区编码（PayeeType为\"BANK_COUNT\"时必填）",
+          "example": "USA",
           "member": "string",
           "name": "PayeeCountryCode",
           "required": false,
@@ -1106,6 +1130,7 @@
         {
           "default": "",
           "document": "收款人开户银行名称（PayeeType为\"BANK_COUNT\"时必填）",
+          "example": "TEST",
           "member": "string",
           "name": "PayeeBankName",
           "required": false,
@@ -1114,6 +1139,7 @@
         {
           "default": "",
           "document": "收款人开户银行地址（PayeeType为\"BANK_COUNT\"时必填）",
+          "example": "TEST",
           "member": "string",
           "name": "PayeeBankAddress",
           "required": false,
@@ -1122,6 +1148,7 @@
         {
           "default": "",
           "document": "收款人开户银行所在国家或地区编码（PayeeType为\"BANK_COUNT\"时必填）",
+          "example": "US",
           "member": "string",
           "name": "PayeeBankDistrict",
           "required": false,
@@ -1130,6 +1157,7 @@
         {
           "default": "",
           "document": "收款银行SwiftCode（PayeeType为\"BANK_COUNT\"时必填）",
+          "example": "CITIUS33XXX",
           "member": "string",
           "name": "PayeeBankSwiftCode",
           "required": false,
@@ -1138,6 +1166,7 @@
         {
           "default": "",
           "document": "收款银行国际编码类型",
+          "example": " TEST",
           "member": "string",
           "name": "PayeeBankType",
           "required": false,
@@ -1146,6 +1175,7 @@
         {
           "default": "",
           "document": "收款银行国际编码",
+          "example": "026009593",
           "member": "string",
           "name": "PayeeBankCode",
           "required": false,
@@ -1154,6 +1184,7 @@
         {
           "default": "",
           "document": "收款人附言",
+          "example": "TEST",
           "member": "string",
           "name": "ReferenceForBeneficiary",
           "required": false,
@@ -1162,6 +1193,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -1175,8 +1207,10 @@
       "members": [
         {
           "document": "汇出指令申请",
+          "example": "无",
           "member": "ApplyOutwardOrderResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1219,6 +1253,7 @@
         {
           "default": "",
           "document": "付款人ID",
+          "example": "qyfkr201911230006",
           "member": "string",
           "name": "PayerId",
           "required": true,
@@ -1227,6 +1262,7 @@
         {
           "default": "",
           "document": "付款人类型 (个人: INDIVIDUAL, 企业: CORPORATE)",
+          "example": "CORPORATE",
           "member": "string",
           "name": "PayerType",
           "required": true,
@@ -1235,6 +1271,7 @@
         {
           "default": "",
           "document": "付款人姓名",
+          "example": "企业名称",
           "member": "string",
           "name": "PayerName",
           "required": true,
@@ -1243,6 +1280,7 @@
         {
           "default": "",
           "document": "付款人证件类型 (身份证: ID_CARD, 统一社会信用代码: UNIFIED_CREDIT_CODE)",
+          "example": "UNIFIED_CREDIT_CODE",
           "member": "string",
           "name": "PayerIdType",
           "required": true,
@@ -1251,6 +1289,7 @@
         {
           "default": "",
           "document": "付款人证件号",
+          "example": "913302127996560011",
           "member": "string",
           "name": "PayerIdNo",
           "required": true,
@@ -1259,6 +1298,7 @@
         {
           "default": "",
           "document": "付款人常驻国家或地区编码 (见常见问题-国家/地区编码)",
+          "example": "TEST",
           "member": "string",
           "name": "PayerCountryCode",
           "required": true,
@@ -1267,6 +1307,7 @@
         {
           "default": "",
           "document": "付款人联系人名称",
+          "example": "TEST",
           "member": "string",
           "name": "PayerContactName",
           "required": false,
@@ -1275,6 +1316,7 @@
         {
           "default": "",
           "document": "付款人联系电话",
+          "example": "TEST",
           "member": "string",
           "name": "PayerContactNumber",
           "required": false,
@@ -1283,6 +1325,7 @@
         {
           "default": "",
           "document": "付款人联系邮箱",
+          "example": "TEST",
           "member": "string",
           "name": "PayerEmailAddress",
           "required": false,
@@ -1291,6 +1334,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -1304,8 +1348,10 @@
       "members": [
         {
           "document": "付款人申请结果",
+          "example": "无",
           "member": "ApplyPayerinfoResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1523,6 +1569,7 @@
         {
           "default": "",
           "document": "贸易材料流水号",
+          "example": "tdflid20191123023",
           "member": "string",
           "name": "TradeFileId",
           "required": true,
@@ -1531,6 +1578,7 @@
         {
           "default": "",
           "document": "贸易材料订单号",
+          "example": "tdodid20191118021",
           "member": "string",
           "name": "TradeOrderId",
           "required": true,
@@ -1539,6 +1587,7 @@
         {
           "default": "",
           "document": "付款人ID",
+          "example": "qyfkr201911230001",
           "member": "string",
           "name": "PayerId",
           "required": true,
@@ -1547,6 +1596,7 @@
         {
           "default": "",
           "document": "收款人姓名",
+          "example": "个人收款姓名A",
           "member": "string",
           "name": "PayeeName",
           "required": true,
@@ -1555,6 +1605,7 @@
         {
           "default": "",
           "document": "收款人常驻国家或地区编码 (见常见问题)",
+          "example": "CHN",
           "member": "string",
           "name": "PayeeCountryCode",
           "required": true,
@@ -1563,6 +1614,7 @@
         {
           "default": "",
           "document": "贸易类型 (GOODS: 商品, SERVICE: 服务)",
+          "example": "GOODS",
           "member": "string",
           "name": "TradeType",
           "required": true,
@@ -1571,6 +1623,7 @@
         {
           "default": "",
           "document": "交易时间 (格式: yyyyMMdd)",
+          "example": "20191118",
           "member": "string",
           "name": "TradeTime",
           "required": true,
@@ -1579,6 +1632,7 @@
         {
           "default": "",
           "document": "交易币种",
+          "example": "USD",
           "member": "string",
           "name": "TradeCurrency",
           "required": true,
@@ -1587,6 +1641,7 @@
         {
           "default": "",
           "document": "交易金额",
+          "example": "10.22",
           "member": "float",
           "name": "TradeAmount",
           "required": true,
@@ -1595,6 +1650,7 @@
         {
           "default": "",
           "document": "交易名称 \n(TradeType=GOODS时填写物品名称，可填写多个，格式无要求；\nTradeType=SERVICE时填写贸易类别，见常见问题-贸易类别)",
+          "example": "帽子",
           "member": "string",
           "name": "TradeName",
           "required": true,
@@ -1603,6 +1659,7 @@
         {
           "default": "",
           "document": "交易数量 (TradeType=GOODS 填写物品数量, TradeType=SERVICE填写服务次数)",
+          "example": "1",
           "member": "int64",
           "name": "TradeCount",
           "required": true,
@@ -1611,6 +1668,7 @@
         {
           "default": "",
           "document": "货贸承运人 (TradeType=GOODS 必填)",
+          "example": "中外运空运;MC2410918701000931505",
           "member": "string",
           "name": "GoodsCarrier",
           "required": false,
@@ -1619,6 +1677,7 @@
         {
           "default": "",
           "document": "服贸交易细节 (TradeType=GOODS 必填, 见常见问题-交易细节)",
+          "example": "TEST",
           "member": "string",
           "name": "ServiceDetail",
           "required": false,
@@ -1627,6 +1686,7 @@
         {
           "default": "",
           "document": "服贸服务时间 (TradeType=GOODS 必填, 见常见问题-服务时间)",
+          "example": "20210101",
           "member": "string",
           "name": "ServiceTime",
           "required": false,
@@ -1635,6 +1695,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -1648,8 +1709,10 @@
       "members": [
         {
           "document": "提交贸易材料结果",
+          "example": "无",
           "member": "ApplyTradeResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3031,6 +3094,7 @@
         {
           "default": "",
           "document": "代理商ID",
+          "example": "test",
           "member": "string",
           "name": "AgentId",
           "required": true,
@@ -3039,6 +3103,7 @@
         {
           "default": "",
           "document": "平台渠道",
+          "example": "1",
           "member": "int64",
           "name": "Channel",
           "required": true,
@@ -3047,6 +3112,7 @@
         {
           "default": "",
           "document": "类型。0-视同，1-个体工商户",
+          "example": "0",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -3055,6 +3121,7 @@
         {
           "default": "",
           "document": "源电子凭证下载地址",
+          "example": "https://cloud.tencent.com/document/product/1122/40638",
           "member": "string",
           "name": "RawElectronicCertUrl",
           "required": true,
@@ -3063,6 +3130,7 @@
         {
           "default": "",
           "document": "文件名",
+          "example": "paxos.pdf",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -3071,6 +3139,7 @@
         {
           "default": "",
           "document": "完税信息",
+          "example": "无",
           "member": "AgentTaxPayment",
           "name": "AgentTaxPaymentInfos",
           "required": true,
@@ -3079,6 +3148,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -3092,8 +3162,10 @@
       "members": [
         {
           "document": "代理商完税证明批次信息",
+          "example": "无",
           "member": "AgentTaxPaymentBatch",
           "name": "AgentTaxPaymentBatch",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4219,6 +4291,7 @@
         {
           "default": "",
           "document": "开票平台ID",
+          "example": "0",
           "member": "int64",
           "name": "InvoicePlatformId",
           "required": true,
@@ -4227,6 +4300,7 @@
         {
           "default": "",
           "document": "企业名称",
+          "example": "测试名称",
           "member": "string",
           "name": "TaxpayerName",
           "required": true,
@@ -4235,6 +4309,7 @@
         {
           "default": "",
           "document": "销方纳税人识别号",
+          "example": "111212222233338",
           "member": "string",
           "name": "TaxpayerNum",
           "required": true,
@@ -4243,6 +4318,7 @@
         {
           "default": "",
           "document": "注册企业法定代表人名称",
+          "example": "测试名称",
           "member": "string",
           "name": "LegalPersonName",
           "required": true,
@@ -4251,6 +4327,7 @@
         {
           "default": "",
           "document": "联系人",
+          "example": "联系人",
           "member": "string",
           "name": "ContactsName",
           "required": true,
@@ -4259,6 +4336,7 @@
         {
           "default": "",
           "document": "联系人手机号",
+          "example": "11111111111",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -4267,6 +4345,7 @@
         {
           "default": "",
           "document": "不包含省市名称的地址",
+          "example": "地址",
           "member": "string",
           "name": "Address",
           "required": true,
@@ -4275,6 +4354,7 @@
         {
           "default": "",
           "document": "地区编码",
+          "example": "44",
           "member": "int64",
           "name": "RegionCode",
           "required": true,
@@ -4283,6 +4363,7 @@
         {
           "default": "",
           "document": "市（地区）名称",
+          "example": "深圳市",
           "member": "string",
           "name": "CityName",
           "required": true,
@@ -4291,6 +4372,7 @@
         {
           "default": "",
           "document": "开票人",
+          "example": "drawer",
           "member": "string",
           "name": "Drawer",
           "required": true,
@@ -4299,6 +4381,7 @@
         {
           "default": "",
           "document": "税务登记证图片（Base64）字符串，需小于 3M",
+          "example": "TEST",
           "member": "string",
           "name": "TaxRegistrationCertificate",
           "required": true,
@@ -4307,6 +4390,7 @@
         {
           "default": "",
           "document": "联系人邮箱地址",
+          "example": "test@email.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -4315,6 +4399,7 @@
         {
           "default": "",
           "document": "企业电话",
+          "example": "123456",
           "member": "string",
           "name": "BusinessMobile",
           "required": false,
@@ -4323,6 +4408,7 @@
         {
           "default": "",
           "document": "银行名称",
+          "example": "银行名称",
           "member": "string",
           "name": "BankName",
           "required": false,
@@ -4331,6 +4417,7 @@
         {
           "default": "",
           "document": "银行账号",
+          "example": "621281240305123200",
           "member": "string",
           "name": "BankAccount",
           "required": false,
@@ -4339,6 +4426,7 @@
         {
           "default": "",
           "document": "复核人",
+          "example": "reviewer",
           "member": "string",
           "name": "Reviewer",
           "required": false,
@@ -4347,6 +4435,7 @@
         {
           "default": "",
           "document": "收款人",
+          "example": "payee",
           "member": "string",
           "name": "Payee",
           "required": false,
@@ -4355,6 +4444,7 @@
         {
           "default": "",
           "document": "注册邀请码",
+          "example": "1010",
           "member": "string",
           "name": "RegisterCode",
           "required": false,
@@ -4363,6 +4453,7 @@
         {
           "default": "",
           "document": "不填默认为1，有效状态\n0：表示无效；\n1:表示有效；\n2:表示禁止开蓝票；\n3:表示禁止冲红。",
+          "example": "1",
           "member": "string",
           "name": "State",
           "required": false,
@@ -4371,6 +4462,7 @@
         {
           "default": "",
           "document": "接收推送的消息地址",
+          "example": "http://test.html",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -4379,6 +4471,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填 sandbox。",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -4392,8 +4485,10 @@
       "members": [
         {
           "document": "商户注册结果",
+          "example": "无",
           "member": "CreateMerchantResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4764,6 +4859,7 @@
         {
           "default": "",
           "document": "业务流水号，历史唯一",
+          "example": "20190505000000000013",
           "member": "string",
           "name": "SerialNumber",
           "required": true,
@@ -4772,6 +4868,7 @@
         {
           "default": "",
           "document": "付方账户号",
+          "example": "123123123",
           "member": "string",
           "name": "PayAccountNumber",
           "required": true,
@@ -4780,6 +4877,7 @@
         {
           "default": "",
           "document": "付方账户名称",
+          "example": "测试付款账户",
           "member": "string",
           "name": "PayAccountName",
           "required": true,
@@ -4788,6 +4886,7 @@
         {
           "default": "",
           "document": "金额",
+          "example": "1",
           "member": "int64",
           "name": "Amount",
           "required": true,
@@ -4796,6 +4895,7 @@
         {
           "default": "",
           "document": "收方账户号",
+          "example": "123123123123",
           "member": "string",
           "name": "RecvAccountNumber",
           "required": true,
@@ -4804,6 +4904,7 @@
         {
           "default": "",
           "document": "收方账户名称",
+          "example": "王大拿",
           "member": "string",
           "name": "RecvAccountName",
           "required": true,
@@ -4812,6 +4913,7 @@
         {
           "default": "",
           "document": "付方账户CNAPS号",
+          "example": "321321321",
           "member": "string",
           "name": "PayBankCnaps",
           "required": false,
@@ -4820,6 +4922,7 @@
         {
           "default": "",
           "document": "付方账户银行大类，PayBankCnaps为空时必传（见常见问题-银企直连银行类型）",
+          "example": "01",
           "member": "string",
           "name": "PayBankType",
           "required": false,
@@ -4828,6 +4931,7 @@
         {
           "default": "",
           "document": "付方账户银行所在省，PayBankCnaps为空时必传（见常见问题-银企直连省份枚举信息）",
+          "example": "TEST",
           "member": "string",
           "name": "PayBankProvince",
           "required": false,
@@ -4836,6 +4940,7 @@
         {
           "default": "",
           "document": "付方账户银行所在地区，PayBankCnaps为空时必传（见常见问题-银企直连城市枚举信息）",
+          "example": "TEST",
           "member": "string",
           "name": "PayBankCity",
           "required": false,
@@ -4844,6 +4949,7 @@
         {
           "default": "",
           "document": "收方账户CNAPS号",
+          "example": "123456",
           "member": "string",
           "name": "RecvBankCnaps",
           "required": false,
@@ -4852,6 +4958,7 @@
         {
           "default": "",
           "document": "收方账户银行大类，RecvBankCnaps为空时必传（见常见问题-银企直连银行类型）",
+          "example": "01",
           "member": "string",
           "name": "RecvBankType",
           "required": false,
@@ -4860,6 +4967,7 @@
         {
           "default": "",
           "document": "收方账户银行所在省，RecvBankCnaps为空时必传（见常见问题-银企直连省份枚举信息）",
+          "example": "TEST",
           "member": "string",
           "name": "RecvBankProvince",
           "required": false,
@@ -4868,6 +4976,7 @@
         {
           "default": "",
           "document": "收方账户银行所在地区，RecvBankCnaps为空时必传（见常见问题-银企直连城市枚举信息）",
+          "example": "TEST",
           "member": "string",
           "name": "RecvBankCity",
           "required": false,
@@ -4876,6 +4985,7 @@
         {
           "default": "",
           "document": "收款方证件类型（见常见问题-银企直连证件类型枚举信息）",
+          "example": "01",
           "member": "string",
           "name": "RecvCertType",
           "required": false,
@@ -4884,6 +4994,7 @@
         {
           "default": "",
           "document": "收款方证件号码",
+          "example": "123456",
           "member": "string",
           "name": "RecvCertNo",
           "required": false,
@@ -4892,6 +5003,7 @@
         {
           "default": "",
           "document": "摘要信息",
+          "example": "TEST",
           "member": "string",
           "name": "Summary",
           "required": false,
@@ -4900,6 +5012,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -4913,8 +5026,10 @@
       "members": [
         {
           "document": "返回结果",
+          "example": "无",
           "member": "CreateSinglePayResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5113,6 +5228,7 @@
         {
           "default": "",
           "document": "批次号",
+          "example": "1",
           "member": "int64",
           "name": "BatchNum",
           "required": true,
@@ -5121,6 +5237,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -5147,6 +5264,7 @@
         {
           "default": "",
           "document": "批次号",
+          "example": "1",
           "member": "int64",
           "name": "BatchNum",
           "required": true,
@@ -6225,6 +6343,7 @@
         {
           "default": "",
           "document": "批次号",
+          "example": "98",
           "member": "int64",
           "name": "BatchNum",
           "required": true,
@@ -6233,6 +6352,7 @@
         {
           "default": "",
           "document": "新源电子凭证地址",
+          "example": "https://xxx.com/url",
           "member": "string",
           "name": "RawElectronicCertUrl",
           "required": true,
@@ -6241,6 +6361,7 @@
         {
           "default": "",
           "document": "新的文件名",
+          "example": "TEST",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -6249,6 +6370,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -6262,8 +6384,10 @@
       "members": [
         {
           "document": "代理商完税证明批次信息",
+          "example": "无",
           "member": "AgentTaxPaymentBatch",
           "name": "AgentTaxPaymentBatch",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7051,6 +7175,7 @@
         {
           "default": "",
           "document": "批次号",
+          "example": "1",
           "member": "int64",
           "name": "BatchNum",
           "required": true,
@@ -7059,6 +7184,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -7072,8 +7198,10 @@
       "members": [
         {
           "document": "代理商完税证明批次信息",
+          "example": "无",
           "member": "AgentTaxPaymentBatch",
           "name": "AgentTaxPaymentBatch",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7092,6 +7220,7 @@
         {
           "default": "",
           "document": "起始时间，格式为yyyy-MM-dd",
+          "example": "2020-01-01",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -7100,6 +7229,7 @@
         {
           "default": "",
           "document": "起始时间，格式为yyyy-MM-dd",
+          "example": "2020-01-01",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -7113,8 +7243,10 @@
       "members": [
         {
           "document": "签约主播数据",
+          "example": "无",
           "member": "AnchorContractInfo",
           "name": "AnchorContractInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7133,6 +7265,7 @@
         {
           "default": "",
           "document": "申报流水号",
+          "example": "DeclareId",
           "member": "string",
           "name": "DeclareId",
           "required": true,
@@ -7141,6 +7274,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -7154,8 +7288,10 @@
       "members": [
         {
           "document": "成功申报材料查询结果",
+          "example": "无",
           "member": "QueryDeclareResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7750,6 +7886,7 @@
         {
           "default": "",
           "document": "商户号",
+          "example": "faryrong",
           "member": "string",
           "name": "MerchantId",
           "required": true,
@@ -7758,6 +7895,7 @@
         {
           "default": "",
           "document": "代发类型：\n1、 微信企业付款 \n2、 支付宝转账 \n3、 平安银企直联代发转账",
+          "example": "3",
           "member": "int64",
           "name": "TransferType",
           "required": true,
@@ -7766,6 +7904,7 @@
         {
           "default": "",
           "document": "账单日期，格式yyyy-MM-dd",
+          "example": "2020-12-18",
           "member": "string",
           "name": "BillDate",
           "required": true,
@@ -7779,22 +7918,28 @@
       "members": [
         {
           "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功",
+          "example": "SUCCESS",
           "member": "string",
           "name": "ErrCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "响应消息",
+          "example": "成功",
           "member": "string",
           "name": "ErrMessage",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "QueryBillDownloadURLData",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8208,6 +8353,7 @@
         {
           "default": "",
           "document": "源币种 (默认CNY)",
+          "example": "CNY",
           "member": "string",
           "name": "SourceCurrency",
           "required": true,
@@ -8216,6 +8362,7 @@
         {
           "default": "",
           "document": "目的币种 (见常见问题-汇出币种)",
+          "example": "TargetCurrency",
           "member": "string",
           "name": "TargetCurrency",
           "required": false,
@@ -8224,6 +8371,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -8237,8 +8385,10 @@
       "members": [
         {
           "document": "查询汇率结果",
+          "example": "无",
           "member": "QueryExchangerateResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9114,6 +9264,7 @@
         {
           "default": "",
           "document": "余额币种",
+          "example": "Currency",
           "member": "string",
           "name": "Currency",
           "required": true,
@@ -9122,6 +9273,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -9135,8 +9287,10 @@
       "members": [
         {
           "document": "对接方账户余额查询结果",
+          "example": "无",
           "member": "QueryMerchantBalanceResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9179,6 +9333,7 @@
         {
           "default": "",
           "document": "开票平台ID",
+          "example": "0",
           "member": "int64",
           "name": "InvoicePlatformId",
           "required": true,
@@ -9187,6 +9342,7 @@
         {
           "default": "",
           "document": "页码",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -9195,6 +9351,7 @@
         {
           "default": "",
           "document": "页大小",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -9203,6 +9360,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox。",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -9216,8 +9374,10 @@
       "members": [
         {
           "document": "商户结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MerchantManagementResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9787,6 +9947,7 @@
         {
           "default": "",
           "document": "对接方汇出指令编号",
+          "example": "TransactionId",
           "member": "string",
           "name": "TransactionId",
           "required": true,
@@ -9795,6 +9956,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -9808,8 +9970,10 @@
       "members": [
         {
           "document": "查询汇出结果",
+          "example": "无",
           "member": "QueryOutwardOrderResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9852,6 +10016,7 @@
         {
           "default": "",
           "document": "付款人ID",
+          "example": "PayerId",
           "member": "string",
           "name": "PayerId",
           "required": true,
@@ -9860,6 +10025,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -9873,8 +10039,10 @@
       "members": [
         {
           "document": "付款人查询结果",
+          "example": "无",
           "member": "QueryPayerinfoResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10246,6 +10414,7 @@
         {
           "default": "",
           "document": "业务流水号",
+          "example": "123456",
           "member": "string",
           "name": "SerialNumber",
           "required": true,
@@ -10254,6 +10423,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -10267,8 +10437,10 @@
       "members": [
         {
           "document": "返回结果",
+          "example": "无",
           "member": "QuerySinglePayResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10746,6 +10918,7 @@
         {
           "default": "",
           "document": "贸易材料流水号",
+          "example": "TradeFileId",
           "member": "string",
           "name": "TradeFileId",
           "required": true,
@@ -10754,6 +10927,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -10767,8 +10941,10 @@
       "members": [
         {
           "document": "贸易材料明细查询结果",
+          "example": "无",
           "member": "QueryTradeResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11225,6 +11401,7 @@
         {
           "default": "",
           "document": "商户号",
+          "example": "xx",
           "member": "string",
           "name": "MerchantId",
           "required": true,
@@ -11233,6 +11410,7 @@
         {
           "default": "",
           "document": "申请商户号的appid或者商户号绑定的appid",
+          "example": "xx",
           "member": "string",
           "name": "MerchantAppId",
           "required": true,
@@ -11241,6 +11419,7 @@
         {
           "default": "",
           "document": "1、 微信企业付款 \n2、 支付宝转账 \n3、 平安银企直联代发转账",
+          "example": "0",
           "member": "int64",
           "name": "TransferType",
           "required": true,
@@ -11249,6 +11428,7 @@
         {
           "default": "",
           "document": "交易流水流水号（与 OrderId 不能同时为空）",
+          "example": "xx",
           "member": "string",
           "name": "TradeSerialNo",
           "required": false,
@@ -11257,6 +11437,7 @@
         {
           "default": "",
           "document": "订单号（与 TradeSerialNo 不能同时为空）",
+          "example": "xx",
           "member": "string",
           "name": "OrderId",
           "required": false,
@@ -11265,6 +11446,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox。",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -11278,22 +11460,28 @@
       "members": [
         {
           "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功",
+          "example": "xx",
           "member": "string",
           "name": "ErrCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "响应消息",
+          "example": "xx",
           "member": "string",
           "name": "ErrMessage",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "QueryTransferResultData",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13438,6 +13626,7 @@
         {
           "default": "",
           "document": "商户号",
+          "example": "test",
           "member": "string",
           "name": "MerchantId",
           "required": true,
@@ -13446,6 +13635,7 @@
         {
           "default": "",
           "document": "微信申请商户号的appid或者商户号绑定的appid\n支付宝、平安填入MerchantId",
+          "example": "test",
           "member": "string",
           "name": "MerchantAppId",
           "required": true,
@@ -13454,6 +13644,7 @@
         {
           "default": "",
           "document": "1、 微信企业付款 \n2、 支付宝转账 \n3、 平安银企直联代发转账",
+          "example": "1",
           "member": "int64",
           "name": "TransferType",
           "required": true,
@@ -13462,6 +13653,7 @@
         {
           "default": "",
           "document": "订单流水号，唯一，不能包含特殊字符，长度最大限制64位，推荐使用字母，数字组合，\"_\",\"-\"组合",
+          "example": "1234567",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -13470,6 +13662,7 @@
         {
           "default": "",
           "document": "转账金额，单位分",
+          "example": "1",
           "member": "int64",
           "name": "TransferAmount",
           "required": true,
@@ -13478,6 +13671,7 @@
         {
           "default": "",
           "document": "收款方标识。\n微信为open_id；\n支付宝为会员alipay_user_id;\n平安为收款方银行账号",
+          "example": "123",
           "member": "string",
           "name": "PayeeId",
           "required": true,
@@ -13485,7 +13679,8 @@
         },
         {
           "default": "",
-          "document": "收款方姓名，微信，支付宝可选；平安模式下必传",
+          "document": "收款方姓名。支付宝可选；微信，平安模式下必传",
+          "example": "test",
           "member": "string",
           "name": "PayeeName",
           "required": false,
@@ -13494,6 +13689,7 @@
         {
           "default": "",
           "document": "收款方附加信息，平安接入使用。需要以JSON格式提供以下字段：\nPayeeBankName：收款人开户行名称\n CcyCode：货币类型（RMB-人民币）\n UnionFlag：行内跨行标志（1：行内转账，0：跨行转账）。",
+          "example": "null",
           "member": "string",
           "name": "PayeeExtends",
           "required": false,
@@ -13502,6 +13698,7 @@
         {
           "default": "",
           "document": "请求预留字段，原样透传返回",
+          "example": "null",
           "member": "string",
           "name": "ReqReserved",
           "required": false,
@@ -13510,6 +13707,7 @@
         {
           "default": "",
           "document": "业务备注",
+          "example": "null",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -13518,6 +13716,7 @@
         {
           "default": "",
           "document": "转账结果回调通知URL。若不填，则不进行回调。",
+          "example": "null",
           "member": "string",
           "name": "NotifyUrl",
           "required": false,
@@ -13526,6 +13725,7 @@
         {
           "default": "",
           "document": "接入环境。沙箱环境填sandbox。",
+          "example": "null",
           "member": "string",
           "name": "Profile",
           "required": false,
@@ -13539,22 +13739,28 @@
       "members": [
         {
           "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功",
+          "example": "SUCCESS",
           "member": "string",
           "name": "ErrCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "响应消息",
+          "example": "请求成功",
           "member": "string",
           "name": "ErrMessage",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "TransferSinglePayData",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

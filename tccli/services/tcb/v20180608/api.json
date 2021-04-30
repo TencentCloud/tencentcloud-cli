@@ -4420,7 +4420,7 @@
           "example": "wx-app-id",
           "member": "string",
           "name": "WxAppId",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -4836,6 +4836,7 @@
         {
           "default": "",
           "document": "账户下该环境唯一标识",
+          "example": "tcb-xxx",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -4845,6 +4846,7 @@
         {
           "default": "",
           "document": "环境来源。包含以下取值：\n<li>miniapp：微信小程序</li>\n<li>qcloud ：腾讯云</li>",
+          "example": "qcloud",
           "member": "string",
           "name": "Source",
           "required": true,
@@ -4854,6 +4856,7 @@
         {
           "default": "",
           "document": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "example": "tcb",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -4863,6 +4866,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "2021-04-26",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -4872,6 +4876,7 @@
         {
           "default": "",
           "document": "最后修改时间",
+          "example": "2021-04-26",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -4881,6 +4886,7 @@
         {
           "default": "",
           "document": "环境状态。包含以下取值：\n<li>NORMAL：正常可用</li>\n<li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>",
+          "example": "NORMAL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4890,6 +4896,7 @@
         {
           "default": "",
           "document": "数据库列表",
+          "example": "[]",
           "member": "DatabasesInfo",
           "name": "Databases",
           "required": true,
@@ -4899,6 +4906,7 @@
         {
           "default": "",
           "document": "存储列表",
+          "example": "[]",
           "member": "StorageInfo",
           "name": "Storages",
           "required": true,
@@ -4908,6 +4916,7 @@
         {
           "default": "",
           "document": "函数列表",
+          "example": "[]",
           "member": "FunctionInfo",
           "name": "Functions",
           "required": true,
@@ -4917,6 +4926,7 @@
         {
           "default": "",
           "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "basic1",
           "member": "string",
           "name": "PackageId",
           "required": true,
@@ -4926,6 +4936,7 @@
         {
           "default": "",
           "document": "套餐中文名称，参考DescribePackages接口的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "基础版1",
           "member": "string",
           "name": "PackageName",
           "required": true,
@@ -4935,6 +4946,7 @@
         {
           "default": "",
           "document": "云日志服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "LogServiceInfo",
           "name": "LogServices",
           "required": true,
@@ -4944,6 +4956,7 @@
         {
           "default": "",
           "document": "静态资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "StaticStorageInfo",
           "name": "StaticStorages",
           "required": true,
@@ -4953,6 +4966,7 @@
         {
           "default": "",
           "document": "是否到期自动降为免费版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "IsAutoDegrade",
           "required": true,
@@ -4962,6 +4976,7 @@
         {
           "default": "",
           "document": "环境渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qc_console",
           "member": "string",
           "name": "EnvChannel",
           "required": true,
@@ -4971,6 +4986,7 @@
         {
           "default": "",
           "document": "支付方式。包含以下取值：\n<li> prepayment：预付费</li>\n<li> postpaid：后付费</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postpaid",
           "member": "string",
           "name": "PayMode",
           "required": true,
@@ -4980,6 +4996,7 @@
         {
           "default": "",
           "document": "是否为默认环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "IsDefault",
           "required": true,
@@ -4989,6 +5006,7 @@
         {
           "default": "",
           "document": "环境所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "required": true,

@@ -6,8 +6,6 @@ Input:
 
 ```
 tccli cpdp QueryMerchantBalance --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
-    --ImageId img-pmqg1cw7 \
     --Currency CNY
 ```
 

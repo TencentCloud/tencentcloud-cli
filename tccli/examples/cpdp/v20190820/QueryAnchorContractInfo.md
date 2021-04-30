@@ -6,8 +6,6 @@ Input:
 
 ```
 tccli cpdp QueryAnchorContractInfo --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
-    --ImageId img-pmqg1cw7 \
     --BeginTime 2020-01-01 \
     --EndTime 2020-01-02
 ```

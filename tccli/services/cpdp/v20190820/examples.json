@@ -3,7 +3,7 @@
     "ApplyApplicationMaterial": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=ApplyApplicationMaterial\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&TransactionId=trasid201911230012&DeclareId=dcldid201911230012&PayerId=qyfkr201911230004&SourceCurrency=CNY&TargetCurrency=CNY&TradeCode=223010",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=ApplyApplicationMaterial\n&TransactionId=trasid201911230012\n&DeclareId=dcldid201911230012\n&PayerId=qyfkr201911230004\n&SourceCurrency=CNY\n&TargetCurrency=CNY\n&TradeCode=223010\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"58529016-114c-43a8-ba51-8b5f290e22be\",\n        \"Result\": {\n            \"Data\": {\n                \"Status\": \"DECLARE_SUCCESS\",\n                \"OriginalDeclareId\": null,\n                \"DeclareId\": \"dcldid201911230012\",\n                \"PayerId\": \"qyfkr201911230004\",\n                \"MerchantId\": \"202002270000054004\",\n                \"TransactionId\": \"trasid201911230012\"\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "ApplyApplicationMaterial"
       }
@@ -11,7 +11,7 @@
     "ApplyOutwardOrder": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=ApplyOutwardOrder\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&TransactionId=trasid201911230012&PricingCurrency=CNY&SourceCurrency=CNY&SourceAmount=10&TargetCurrency=USD&PayeeType=BANK_ACCOUNT&PayeeAccount=325119780000&PayeeName=TEST&PayeeAddress=TEST&PayeeBankAccountType=CORPORATE&PayeeCountryCode=USA&PayeeBankName=TEST&PayeeBankAddress=TEST&PayeeBankDistrict=US&PayeeBankSwiftCode=CITIUS33XXX&PayeeBankType=&PayeeBankCode=026009593&ReferenceForBeneficiary=test",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=ApplyOutwardOrder\n&TransactionId=trasid201911230012\n&PricingCurrency=CNY\n&SourceCurrency=CNY\n&SourceAmount=10\n&TargetCurrency=USD\n&PayeeType=BANK_ACCOUNT\n&PayeeAccount=325119780000\n&PayeeName=TEST\n&PayeeAddress=TEST\n&PayeeBankAccountType=CORPORATE\n&PayeeCountryCode=USA\n&PayeeBankName=TEST\n&PayeeBankAddress=TEST\n&PayeeBankDistrict=US\n&PayeeBankSwiftCode=CITIUS33XXX\n&PayeeBankCode=026009593\n&ReferenceForBeneficiary=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81687630-ec4c-4325-9946-ab1054c07a80\",\n        \"Result\": {\n            \"Data\": {\n                \"Status\": \"WAIT_PAYMENT\",\n                \"MerchantId\": \"202002270000054004\",\n                \"TransactionId\": \"trasid201911230012\"\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "ApplyOutwardOrder"
       }
@@ -19,7 +19,7 @@
     "ApplyPayerInfo": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=ApplyPayerInfo\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&PayerId=qyfkr201911230006&PayerType=CORPORATE&PayerName=企业名称&PayerIdType=UNIFIED_CREDIT_CODE&PayerIdNo=913302127996560011&PayerCountryCode=CHN",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=ApplyPayerInfo\n&PayerId=qyfkr201911230006\n&PayerType=CORPORATE\n&PayerName=企业名称\n&PayerIdType=UNIFIED_CREDIT_CODE\n&PayerIdNo=913302127996560011\n&PayerCountryCode=CHN\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7cdcbb01-127e-4285-9aca-aa77ca55f028\",\n        \"Result\": {\n            \"Data\": {\n                \"Status\": \"PAYER_INFO_APPROVED\",\n                \"PayerId\": \"qyfkr201911230006\",\n                \"MerchantId\": \"202002270000054004\",\n                \"FailReason\": null\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "ApplyPayerInfo"
       }
@@ -35,7 +35,7 @@
     "ApplyTrade": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=ApplyTrade\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&TradeFileId=tdflid20191123023&TradeOrderId=tdodid20191118021&PayerId=qyfkr201911230001&PayeeName=个人收款姓名A&PayeeCountryCode=CHN&TradeType=GOODS&TradeTime=20191118&TradeCurrency=USD&TradeAmount=10.22&TradeName=帽子&TradeCount=1&GoodsCarrier=中外运空运;MC2410918701000931505&ServiceDetail=&ServiceTime=",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=ApplyTrade\n&TradeFileId=tdflid20191123023\n&TradeOrderId=tdodid20191118021\n&PayerId=qyfkr201911230001\n&PayeeName=个人收款\n&PayeeCountryCode=CHN\n&TradeType=GOODS\n&TradeTime=20191118\n&TradeCurrency=USD\n&TradeAmount=10.22\n&TradeName=帽子\n&TradeCount=1\n&GoodsCarrier=中外运空运;MC2410918701000931505\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"740cb348-9ae0-4a40-a9eb-88b3c7425774\",\n        \"Result\": {\n            \"Data\": {\n                \"Status\": \"TRADE_FILE_APPROVED\",\n                \"PayerId\": \"qyfkr201911230001\",\n                \"TradeCurrency\": \"USD\",\n                \"TradeAmount\": \"10.22\",\n                \"MerchantId\": \"202002270000054004\",\n                \"TradeFileId\": \"tdflid20191123023\"\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "ApplyTrade"
       }
@@ -115,7 +115,7 @@
     "CreateAgentTaxPaymentInfos": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=CreateAgentTaxPaymentInfos\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&AgentId=test&Channel=1&Type=0&RawElectronicCertUrl=https://cloud.tencent.com/document/product/1122/40638&FileName=paxos.pdf&AgentTaxPaymentInfos.0.AnchorId=1234567890&AgentTaxPaymentInfos.0.AnchorName=张三&AgentTaxPaymentInfos.0.AnchorIDCard=1234567890&AgentTaxPaymentInfos.0.StartTime=2020-01-01&AgentTaxPaymentInfos.0.EndTime=2020-01-01&AgentTaxPaymentInfos.0.Amount=10000&AgentTaxPaymentInfos.0.Tax=600",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=CreateAgentTaxPaymentInfos\n&AgentId=test\n&Channel=1\n&Type=0\n&RawElectronicCertUrl=https://cloud.tencent.com/document/product/1122/40638\n&FileName=paxos.pdf\n&AgentTaxPaymentInfos.0.AnchorId=1234567890\n&AgentTaxPaymentInfos.0.AnchorName=张三\n&AgentTaxPaymentInfos.0.AnchorIDCard=1234567890\n&AgentTaxPaymentInfos.0.StartTime=2020-01-01\n&AgentTaxPaymentInfos.0.EndTime=2020-01-01\n&AgentTaxPaymentInfos.0.Amount=10000\n&AgentTaxPaymentInfos.0.Tax=600\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0888a907-aad3-4b53-ad10-b07117d1816d\",\n        \"AgentTaxPaymentBatch\": {\n            \"StatusMsg\": \"下载&上传成功\",\n            \"Type\": 0,\n            \"BatchNum\": 98,\n            \"InfoNum\": 1,\n            \"Channel\": 1,\n            \"FileName\": \"paxos.pdf\",\n            \"RawElectronicCertUrl\": \"https://cloud.tencent.com/document/product/1122/40638\",\n            \"AgentId\": \"test\",\n            \"StatusCode\": 0\n        }\n    }\n}",
         "title": "CreateAgentTaxPaymentInfos"
       }
@@ -147,7 +147,7 @@
     "CreateMerchant": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=CreateMerchant\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&InvoicePlatformId=0&BankName=银行名称&BankAccount=621281240305123200&Drawer=drawer&Payee=payee&Reviewer=reviewer&State=1&TaxpayerNum=111212222233338&TaxpayerName=测试名称&LegalPersonName=测试名称&ContactsName=联系人&Email=test@email.com&Phone=11111111111&RegionCode=44&CityName=深圳市&Address=地址&TaxRegistrationCertificate=营业执照base64编码文件",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=CreateMerchant\n&InvoicePlatformId=0\n&BankName=银行名称\n&BankAccount=621281240305123200\n&Drawer=drawer\n&Payee=payee\n&Reviewer=reviewer\n&State=1\n&TaxpayerNum=111212222233338\n&TaxpayerName=测试名称\n&LegalPersonName=测试名称\n&ContactsName=联系人\n&Email=test@email.com\n&Phone=11111111111\n&RegionCode=44\n&CityName=深圳市\n&Address=地址\n&TaxRegistrationCertificate=营业执照base64编码文件\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585012073321\",\n        \"Result\": {\n            \"Message\": \"success\",\n            \"Data\": {\n                \"SerialNo\": \"CPDP\",\n                \"TaxpayerNum\": \"\",\n                \"TaxpayerName\": \"\"\n            },\n            \"Code\": 0\n        }\n    }\n}",
         "title": "CreateMerchant"
       }
@@ -171,7 +171,7 @@
     "CreateSinglePay": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=CreateSinglePay\r\n&Placement.Zone=ap-guangzhou-2\r\n&<公共请求参数>\r\n&SerialNumber=20190505000000000013\r\n&PayAccountNumber=123123123\r\n&PayAccountName=测试付款账户\r\n&PayBankCnaps=321321321\r\n&Amount=1\r\n&RecvAccountNumber=123123123123\r\n&RecvAccountName=王大拿\r\n&RecvBankCnaps=321321321",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=CreateSinglePay\n&SerialNumber=20190505000000000013\n&PayAccountNumber=123123123\n&PayAccountName=测试付款账户\n&PayBankCnaps=321321321\n&Amount=1\n&RecvAccountNumber=123123123123\n&RecvAccountName=王大拿\n&RecvBankCnaps=321321321\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be294bbb-47c9-4f01-9b1e-9e8ca3a72d4b\",\n        \"Result\": {\n            \"SerialNo\": \"20190505000000000013\",\n            \"BankSerialNo\": \"123123123123123\",\n            \"PayStatus\": \"P\",\n            \"HandleStatus\": \"S\",\n            \"BankRetMsg\": null,\n            \"BankRetCode\": null,\n            \"HandleMsg\": \"处理成功！\"\n        }\n    }\n}",
         "title": "CreateSinglePay"
       }
@@ -193,7 +193,7 @@
     "DeleteAgentTaxPaymentInfo": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=DeleteAgentTaxPaymentInfo\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&BatchNum=98",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=DeleteAgentTaxPaymentInfo\n&BatchNum=98\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7af80cba-bff8-46d4-bbb3-28fb4e5635d8\"\n    }\n}",
         "title": "DeleteAgentTaxPaymentInfo"
       }
@@ -201,7 +201,7 @@
     "DeleteAgentTaxPaymentInfos": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=DeleteAgentTaxPaymentInfos\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&BatchNum=1",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=DeleteAgentTaxPaymentInfos\n&BatchNum=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2993188e-6ea2-4e27-b9ab-8adcd21a259d\"\n    }\n}",
         "title": "DeleteAgentTaxPaymentInfos"
       }
@@ -257,7 +257,7 @@
     "ModifyAgentTaxPaymentInfo": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=ModifyAgentTaxPaymentInfo\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&BatchNum=98&RawElectronicCertUrl=https://cloud.tencent.com/document/product/1122/40639",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=ModifyAgentTaxPaymentInfo\n&BatchNum=98\n&RawElectronicCertUrl=https://cloud.tencent.com/document/product/1122/40639\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8ee3913-aa2a-4ea0-840f-9a77247bcabb\",\n        \"AgentTaxPaymentBatch\": {\n            \"StatusMsg\": \"下载&上传成功\",\n            \"Type\": 0,\n            \"BatchNum\": 98,\n            \"InfoNum\": 1,\n            \"Channel\": 1,\n            \"FileName\": \"paxos.pdf\",\n            \"RawElectronicCertUrl\": \"https://cloud.tencent.com/document/product/1122/40639\",\n            \"AgentId\": \"test\",\n            \"StatusCode\": 0\n        }\n    }\n}",
         "title": "ModifyAgentTaxPaymentInfo"
       }
@@ -305,7 +305,7 @@
     "QueryAgentTaxPaymentBatch": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryAgentTaxPaymentBatch\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&BatchNum=98",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryAgentTaxPaymentBatch\n&BatchNum=98\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8aadd86c-1727-40ef-9927-9f87201449af\",\n        \"AgentTaxPaymentBatch\": {\n            \"StatusMsg\": \"下载&上传成功\",\n            \"Type\": 0,\n            \"BatchNum\": 98,\n            \"InfoNum\": 1,\n            \"Channel\": 1,\n            \"FileName\": \"paxos.pdf\",\n            \"RawElectronicCertUrl\": \"https://cloud.tencent.com/document/product/1122/40638\",\n            \"AgentId\": \"test\",\n            \"StatusCode\": 0\n        }\n    }\n}",
         "title": "QueryAgentTaxPaymentBatch"
       }
@@ -313,7 +313,7 @@
     "QueryAnchorContractInfo": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryAnchorContractInfo\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&BeginTime=2020-01-01&EndTime=2020-01-02",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryAnchorContractInfo\n&BeginTime=2020-01-01\n&EndTime=2020-01-02\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1590064374302\",\n        \"AnchorContractInfoList\": [\n            {\n                \"AnchorId\": \"00001\",\n                \"AgentId\": \"1\",\n                \"AgentName\": \"假代理商\",\n                \"IdNo\": \"10086\",\n                \"AnchorName\": \"假主播\"\n            },\n            {\n                \"AnchorId\": \"00002\",\n                \"AgentId\": \"y\",\n                \"AgentName\": \"z\",\n                \"IdNo\": \"10086\",\n                \"AnchorName\": \"假主播2\"\n            }\n        ]\n    }\n}",
         "title": "QueryAnchorContractInfo"
       }
@@ -321,7 +321,7 @@
     "QueryApplicationMaterial": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryApplicationMaterial\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&DeclareId=dcldid201911230011",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryApplicationMaterial\n&DeclareId=dcldid201911230011\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"66ff21b9-caad-466b-9173-c9ec8c99ca61\",\n        \"Result\": {\n            \"Data\": {\n                \"Status\": null,\n                \"DeclareId\": \"dcldid201911230011\",\n                \"OriginalDeclareId\": null,\n                \"PayerId\": \"qyfkr201911230004\",\n                \"SourceCurrency\": \"CNY\",\n                \"SourceAmount\": \"10.00\",\n                \"MerchantId\": \"202002270000054004\",\n                \"TradeCode\": \"223010\",\n                \"TargetAmount\": null,\n                \"TargetCurrency\": \"USD\",\n                \"TransactionId\": \"trasid201911230011\"\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "QueryApplicationMaterial"
       }
@@ -385,7 +385,7 @@
     "QueryExchangeRate": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryExchangeRate\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&SourceCurrency=CNY&TargetCurrency=USD",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryExchangeRate\n&SourceCurrency=CNY\n&TargetCurrency=USD\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2993188e-6ea2-4e27-b9ab-8adcd21a259d\",\n        \"Result\": {\n            \"Data\": [\n                {\n                    \"SourceCurrency\": \"CNY\",\n                    \"Rate\": \"6.85220000\",\n                    \"BaseCurrency\": \"USD\",\n                    \"RateTime\": \"2020-04-13 09:45:00\",\n                    \"TargetCurrency\": \"USD\"\n                }\n            ],\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "QueryExchangeRate"
       }
@@ -425,7 +425,7 @@
     "QueryMerchantBalance": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryMerchantBalance\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&Currency=CNY",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryMerchantBalance\n&Currency=CNY\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"817434e7-050e-4a94-b649-63dcb61d3464\",\n        \"Result\": {\n            \"Data\": {\n                \"Currency\": \"CNY\",\n                \"MerchantId\": \"202002270000054004\",\n                \"Balance\": \"1000000.00\"\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "QueryMerchantBalance"
       }
@@ -433,7 +433,7 @@
     "QueryMerchantInfoForManagement": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryMerchantInfoForManagement\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&InvoicePlatformId=0&Offset=0&Limit=10",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryMerchantInfoForManagement\n&InvoicePlatformId=0\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585143238239\",\n        \"Result\": {\n            \"Total\": 1,\n            \"List\": [\n                {}\n            ]\n        }\n    }\n}",
         "title": "QueryMerchantInfoForManagement"
       }
@@ -449,7 +449,7 @@
     "QueryOutwardOrder": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryOutwardOrder\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&TransactionId=trasid201911230012",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryOutwardOrder\n&TransactionId=trasid201911230012\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"95965399-d7ef-42b4-acb5-516498554a5f\",\n        \"Result\": {\n            \"Data\": {\n                \"FxRate\": null,\n                \"PricingCurrency\": \"CNY\",\n                \"FailReason\": null,\n                \"MerchantId\": \"202002270000054004\",\n                \"TargetCurrency\": \"USD\",\n                \"TargetAmount\": null,\n                \"Status\": \"WAIT_PAYMENT\",\n                \"SourceCurrency\": \"CNY\",\n                \"SourceAmount\": \"10.00\",\n                \"AcctDate\": null,\n                \"RefundAmount\": null,\n                \"TransactionId\": \"trasid201911230012\",\n                \"RefundCurrency\": null\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "QueryOutwardOrder"
       }
@@ -457,7 +457,7 @@
     "QueryPayerInfo": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryPayerInfo\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&PayerId=qyfkr201911230006",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryPayerInfo\n&PayerId=qyfkr201911230006\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c6ffdae-3a65-4808-9d94-874fc1f9e962\",\n        \"Result\": {\n            \"Data\": {\n                \"Status\": \"PAYER_INFO_APPROVED\",\n                \"PayerId\": \"qyfkr201911230006\",\n                \"PayerType\": \"CORPORATE\",\n                \"PayerContactName\": \"张三\",\n                \"FailReason\": null,\n                \"MerchantId\": \"202002270000054004\",\n                \"PayerName\": \"企业名称B\",\n                \"PayerEmailAddress\": null,\n                \"PayerIdType\": \"UNIFIED_CREDIT_CODE\",\n                \"PayerCountryCode\": \"CHN\",\n                \"PayerIdNo\": \"913302127996560011\",\n                \"PayerContactNumber\": \"1999999999\"\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "QueryPayerInfo"
       }
@@ -481,7 +481,7 @@
     "QuerySinglePay": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QuerySinglePay\r\n&Placement.Zone=ap-guangzhou-2\r\n&<公共请求参数>\r\n&SerialNumber=123123123",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QuerySinglePay\n&SerialNumber=123123123\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b919ced-362c-4190-8cb8-cc6216526bfb\",\n        \"Result\": {\n            \"SerialNo\": \"123123123\",\n            \"HandleStatus\": \"S\",\n            \"Items\": [\n                {\n                    \"PayStatus\": \"P\",\n                    \"PlatformMsg\": null,\n                    \"BankRetMsg\": null,\n                    \"BankRetCode\": null\n                }\n            ],\n            \"HandleMsg\": null\n        }\n    }\n}",
         "title": "QuerySinglePay"
       }
@@ -505,7 +505,7 @@
     "QueryTrade": [
       {
         "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryTrade\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&TradeFileId=tdflid20191123023",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryTrade\n&TradeFileId=tdflid20191123023\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00b7a4d1-cdb0-412a-abfa-7d9e693f2802\",\n        \"Result\": {\n            \"Data\": {\n                \"Status\": \"TRADE_FILE_APPROVED\",\n                \"TradeName\": \"帽子\",\n                \"PayerId\": \"qyfkr201911230001\",\n                \"TradeCurrency\": \"USD\",\n                \"TradeTime\": \"20191118\",\n                \"PayeeName\": \"个人收款姓名A\",\n                \"TradeOrderId\": \"tdodid20191118021\",\n                \"FailReason\": null,\n                \"MerchantId\": \"202002270000054004\",\n                \"ServiceDetail\": null,\n                \"TradeAmount\": \"10.22\",\n                \"TradeType\": \"GOODS\",\n                \"GoodsCarrier\": \"中外运空运;MC2410918701000931505\",\n                \"PayeeCountryCode\": \"CHN\",\n                \"ServiceTime\": null,\n                \"TradeCount\": 1,\n                \"TradeFileId\": \"tdflid20191123023\"\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "QueryTrade"
       }

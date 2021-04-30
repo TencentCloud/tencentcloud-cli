@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli cpdp CreateSinglePay --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
     --SerialNumber 20190505000000000013 \
     --PayAccountNumber 123123123 \
     --PayAccountName 测试付款账户 \

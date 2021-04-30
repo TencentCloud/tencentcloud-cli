@@ -6,8 +6,6 @@ Input:
 
 ```
 tccli cpdp CreateMerchant --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
-    --ImageId img-pmqg1cw7 \
     --InvoicePlatformId 0 \
     --BankName 银行名称 \
     --BankAccount 621281240305123200 \

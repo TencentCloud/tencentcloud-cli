@@ -25,6 +25,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -57,6 +58,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "rtmp://liveplay-xx.video-studio.myqcloud.com/output/1250000001-6086674e265b4500018xxx?txSecret=4478cfdfe0fd0eb3820705aebaa328ed&txTime=608FA1CE",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -90,6 +92,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -123,6 +126,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -152,6 +156,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -185,6 +190,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -215,6 +221,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -244,6 +251,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -274,6 +282,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -303,6 +312,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -332,6 +342,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -363,6 +374,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -394,6 +406,7 @@ Output:
 ```
 {
     "Response": {
+        "StreamInputRtmpPushUrl": "",
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }

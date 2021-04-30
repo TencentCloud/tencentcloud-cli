@@ -6,8 +6,6 @@ Input:
 
 ```
 tccli cpdp QueryAgentTaxPaymentBatch --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
-    --ImageId img-pmqg1cw7 \
     --BatchNum 98
 ```
 

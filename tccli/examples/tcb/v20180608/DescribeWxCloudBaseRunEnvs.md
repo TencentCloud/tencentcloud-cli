@@ -19,7 +19,6 @@ Output:
                 "PayMode": "xx",
                 "UpdateTime": "2020-09-22 00:00:00",
                 "EnvId": "xx",
-                "Alias": "xx",
                 "PackageName": "xx",
                 "IsAutoDegrade": true,
                 "Functions": [
@@ -30,6 +29,7 @@ Output:
                 ],
                 "EnvChannel": "xx",
                 "Source": "xx",
+                "Alias": "xx",
                 "Region": "xx",
                 "IsDefault": true,
                 "PackageId": "xx",
