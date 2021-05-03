@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "CreateCosToken": [
+      {
+        "document": "为上传jar包和war包，生成Cos临时秘钥",
+        "input": "https://tem.tencentcloudapi.com/?Action=CreateCosToken\n&ServiceId=\"service-xxxxx\"\n&VersionId=\"version-1233344\"\n&PkgName=\"test-demo.jar\"\n&OptType=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": {}\n    }\n}",
+        "title": "生成Cos临时秘钥"
+      }
+    ],
+    "CreateNamespace": [
+      {
+        "document": "创建环境（命名空间）",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNamespace\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"xx\",\n    \"K8sVersion\": \"1.16.9\",\n    \"SubnetIds\": [\n        \"xx\"\n    ],\n    \"Description\": \"xx\",\n    \"Vpc\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": \"env-xxxx\"\n    }\n}",
+        "title": "创建环境（命名空间）"
+      }
+    ],
+    "DescribeNamespaces": [
+      {
+        "document": "获取租户命名空间列表",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespaces\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Records\": [\n                {\n                    \"Status\": 0,\n                    \"ModifyDate\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"Creator\": \"xx\",\n                    \"CreateDate\": \"xx\",\n                    \"NamespaceName\": \"xx\",\n                    \"Region\": \"xx\",\n                    \"TcbEnvStatus\": \"xx\",\n                    \"ServiceNum\": 0,\n                    \"RunInstancesNum\": 0,\n                    \"Vpc\": \"xx\",\n                    \"SubnetId\": \"xx\",\n                    \"ClusterStatus\": \"xx\",\n                    \"Modifier\": \"xx\",\n                    \"NamespaceId\": \"xx\",\n                    \"Channel\": \"xx\"\n                }\n            ],\n            \"Total\": 0,\n            \"Pages\": 0,\n            \"Size\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取租户命名空间列表"
+      }
+    ],
+    "ModifyIngress": [
+      {
+        "document": "创建或者更新 Ingress 规则",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIngress\n<公共请求参数>\n\n{\n    \"Ingress\": {\n        \"ClusterId\": \"cls-9lxt9ic2\",\n        \"AddressIPVersion\": \"IPV4\",\n        \"Name\": \"test-ingress-1\",\n        \"Rules\": [\n            {\n                \"Host\": \"\",\n                \"Http\": {\n                    \"Paths\": [\n                        {\n                            \"Path\": \"/\",\n                            \"Backend\": {\n                                \"ServiceName\": \"kubernetes\",\n                                \"ServicePort\": 443\n                            }\n                        }\n                    ]\n                }\n            }\n        ],\n        \"Tls\": [\n            {\n                \"Hosts\": [\n                    \"xxx.com\"\n                ],\n                \"SecretName\": \"xxx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "创建或者更新 Ingress 规则"
+      }
+    ],
+    "ModifyNamespace": [
+      {
+        "document": "编辑命名空间",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNamespace\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"xx\",\n    \"SubnetIds\": [\n        \"xx\"\n    ],\n    \"Description\": \"xx\",\n    \"Vpc\": \"xx\",\n    \"NamespaceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑命名空间"
+      }
+    ]
+  },
+  "version": "1.0"
+}
