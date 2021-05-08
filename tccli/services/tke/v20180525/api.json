@@ -3097,7 +3097,7 @@
       "document": "DescribeClusterEndpointStatus返回参数结构体",
       "members": [
         {
-          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中中，NotFound 未开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Created",
           "member": "string",
           "name": "Status",

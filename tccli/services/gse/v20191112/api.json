@@ -1023,6 +1023,15 @@
           "name": "CcnInfos",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps",
+          "example": "无",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1120,6 +1129,7 @@
         {
           "default": "",
           "document": "生成包的ZIP包名，例如：server.zip",
+          "example": "GseLinuxServer.zip",
           "member": "string",
           "name": "BucketKey",
           "required": true,
@@ -1128,6 +1138,7 @@
         {
           "default": "",
           "document": "生成包名字，最小长度为1，最大长度为64",
+          "example": "asset-demo",
           "member": "string",
           "name": "AssetName",
           "required": true,
@@ -1136,6 +1147,7 @@
         {
           "default": "",
           "document": "生成包版本，最小长度为1，最大长度为64",
+          "example": "1.0",
           "member": "string",
           "name": "AssetVersion",
           "required": true,
@@ -1144,6 +1156,7 @@
         {
           "default": "",
           "document": "生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "AssetRegion",
           "required": true,
@@ -1151,7 +1164,8 @@
         },
         {
           "default": "",
-          "document": "生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）",
+          "document": "生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）。这里可通过[DescribeAssetSystems](https://cloud.tencent.com/document/product/1165/49191)接口获取asset支持的操作系统进行传入（使用AssetSupportSys的OsVersion字段）",
+          "example": "CentOS7.16",
           "member": "string",
           "name": "OperateSystem",
           "required": true,
@@ -1160,6 +1174,7 @@
         {
           "default": "",
           "document": "生成包支持的操作系统镜像id，若传入OperateSystem字段的值是CentOS7.16，则不需要传入该值；如果不是，则需要通过[DescribeAssetSystems](https://cloud.tencent.com/document/product/1165/49191)接口获取asset支持的操作系统ImageId进行传入",
+          "example": "img-9qabwvbn",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -1168,6 +1183,7 @@
         {
           "default": "",
           "document": "标签列表，最大长度50组",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1181,15 +1197,19 @@
       "members": [
         {
           "document": "生成包ID",
+          "example": "asset-xxx",
           "member": "string",
           "name": "AssetId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "生成包的全局唯一资源标识符",
+          "example": "xx",
           "member": "string",
           "name": "AssetArn",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1452,6 +1472,15 @@
           "name": "CcnInfos",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps",
+          "example": "无",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2190,6 +2219,7 @@
         {
           "default": "",
           "document": "服务器舰队 Id",
+          "example": "fleet-pro4extc-kej8s8z4",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -2198,6 +2228,7 @@
         {
           "default": "",
           "document": "分页时返回服务器舰队事件的数量，默认为20，最大值为100",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2206,10 +2237,38 @@
         {
           "default": "",
           "document": "分页时的数据偏移量，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "事件代码",
+          "example": "FLEET_STATE_ACTIVE",
+          "member": "string",
+          "name": "EventCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发生事件的开始时间",
+          "example": "2021-04-10T10:56:38+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发生事件的结束时间",
+          "example": "2021-04-12T10:56:38+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2219,15 +2278,19 @@
       "members": [
         {
           "document": "返回的事件列表",
+          "example": "无",
           "member": "Event",
           "name": "Events",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "返回的事件总数",
+          "example": "6",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3751,6 +3814,16 @@
           "name": "RelatedCcnInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

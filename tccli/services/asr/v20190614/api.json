@@ -25,7 +25,7 @@
       "output": "CreateCustomizationResponse"
     },
     "CreateRecTask": {
-      "document": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n<br>• 支持中文普通话、英语、粤语、日语\n<br>• 支持通用、音视频领域\n<br>• 支持wav、mp3、m4a、flv、mp4、wma、3gp、amr、aac、ogg-opus、flac格式\n<br>• 支持语音 URL 和本地语音文件两种请求方式\n<br>• 语音 URL 的音频时长不能长于5小时，文件大小不超过512MB\n<br>• 本地语音文件不能大于5MB\n<br>• 提交录音文件识别请求后，在5小时内完成识别（半小时内发送超过1000小时录音或者2万条识别任务的除外），识别结果在服务端可保存7天\n<br>• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>• 默认接口请求频率限制：20次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n<br>• 支持中文普通话、英语、粤语、日语、泰语\n<br>• 支持通用、音视频领域\n<br>• 支持wav、mp3、m4a、flv、mp4、wma、3gp、amr、aac、ogg-opus、flac格式\n<br>• 支持语音 URL 和本地语音文件两种请求方式\n<br>• 语音 URL 的音频时长不能长于5小时，文件大小不超过512MB\n<br>• 本地语音文件不能大于5MB\n<br>• 提交录音文件识别请求后，在5小时内完成识别（半小时内发送超过1000小时录音或者2万条识别任务的除外），识别结果在服务端可保存7天\n<br>• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>• 默认接口请求频率限制：20次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
       "input": "CreateRecTaskRequest",
       "name": "录音文件识别请求",
       "output": "CreateRecTaskResponse"
@@ -466,7 +466,7 @@
         },
         {
           "default": "",
-          "document": "是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)",
+          "document": "是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)，默认值为 0。",
           "example": "0",
           "member": "int64",
           "name": "SpeakerDiarization",
@@ -475,7 +475,7 @@
         },
         {
           "default": "",
-          "document": "说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。\n注：话者分离目前是beta版本，请根据您的需要谨慎使用",
+          "document": "说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。默认值为 0。\n注：话者分离目前是beta版本，请根据您的需要谨慎使用",
           "example": "0",
           "member": "int64",
           "name": "SpeakerNumber",
@@ -556,7 +556,7 @@
         },
         {
           "default": "",
-          "document": "附加参数",
+          "document": "附加参数(该参数无意义，忽略即可)",
           "example": "无",
           "member": "string",
           "name": "Extra",
@@ -565,7 +565,7 @@
         },
         {
           "default": "",
-          "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。",
+          "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。",
           "example": "0",
           "member": "int64",
           "name": "FilterPunc",
@@ -930,7 +930,7 @@
         },
         {
           "default": "",
-          "document": "分页大小",
+          "document": "分页大小，默认1000",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -939,7 +939,7 @@
         },
         {
           "default": "",
-          "document": "分页offset",
+          "document": "分页offset，默认0",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -1344,7 +1344,7 @@
         },
         {
           "default": "",
-          "document": "是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。",
+          "document": "是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。",
           "example": "0",
           "member": "int64",
           "name": "FilterDirty",
@@ -1353,7 +1353,7 @@
         },
         {
           "default": "",
-          "document": "是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。",
+          "document": "是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。",
           "example": "0",
           "member": "int64",
           "name": "FilterModal",
@@ -1362,7 +1362,7 @@
         },
         {
           "default": "",
-          "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。",
+          "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。",
           "example": "0",
           "member": "int64",
           "name": "FilterPunc",
@@ -1371,7 +1371,7 @@
         },
         {
           "default": "",
-          "document": "是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1",
+          "document": "是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1。",
           "example": "0",
           "member": "int64",
           "name": "ConvertNumMode",
@@ -1380,7 +1380,7 @@
         },
         {
           "default": "",
-          "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH",
+          "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH。默认值为 0。",
           "example": "0",
           "member": "int64",
           "name": "WordInfo",
@@ -1413,7 +1413,7 @@
         },
         {
           "document": "词时间戳列表的长度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "4",
           "member": "int64",
           "name": "WordSize",
           "required": true,
@@ -1627,6 +1627,7 @@
         {
           "default": "",
           "document": "热词表ID",
+          "example": "aa6f402f263f12ea856fc81fbecfd0sd",
           "member": "string",
           "name": "VocabId",
           "required": true,
@@ -1634,7 +1635,8 @@
         },
         {
           "default": "",
-          "document": "热词表名称",
+          "document": "热词表名称，长度在1-255之间",
+          "example": "新的词表名称",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1643,6 +1645,7 @@
         {
           "default": "",
           "document": "词权重数组，包含全部的热词和对应的权重。每个热词的长度不大于10，权重为[1,10]之间整数，数组长度不大于128",
+          "example": "无",
           "member": "HotWord",
           "name": "WordWeights",
           "required": false,
@@ -1651,6 +1654,7 @@
         {
           "default": "",
           "document": "词权重文件（纯文本文件）的二进制base64编码，以行分隔，每行的格式为word|weight，即以英文符号|为分割，左边为词，右边为权重，如：你好|5。\n当用户传此参数（参数长度大于0），即以此参数解析词权重，WordWeights会被忽略",
+          "example": "无",
           "member": "string",
           "name": "WordWeightStr",
           "required": false,
@@ -1658,7 +1662,8 @@
         },
         {
           "default": "",
-          "document": "热词表描述",
+          "document": "热词表描述，长度在0-1000之间",
+          "example": "新的词表描述",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1672,8 +1677,10 @@
       "members": [
         {
           "document": "热词表ID",
+          "example": "aa6f402f263f12ea856fc81fbecfd0sd",
           "member": "string",
           "name": "VocabId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

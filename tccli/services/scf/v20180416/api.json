@@ -1049,6 +1049,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "test",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -1057,6 +1058,7 @@
         {
           "default": "",
           "document": "命名空间描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1594,6 +1596,7 @@
         {
           "default": "",
           "document": "修改时间",
+          "example": "2021-01-10 23:49:31",
           "member": "string",
           "name": "ModTime",
           "required": true,
@@ -1603,6 +1606,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "2021-01-10 23:49:31",
           "member": "string",
           "name": "AddTime",
           "required": true,
@@ -1612,6 +1616,7 @@
         {
           "default": "",
           "document": "运行时",
+          "example": "python2.7",
           "member": "string",
           "name": "Runtime",
           "required": true,
@@ -1621,6 +1626,7 @@
         {
           "default": "",
           "document": "函数名称",
+          "example": "helloworld",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -1630,6 +1636,7 @@
         {
           "default": "",
           "document": "函数ID",
+          "example": "lam-functionid",
           "member": "string",
           "name": "FunctionId",
           "required": true,
@@ -1639,6 +1646,7 @@
         {
           "default": "",
           "document": "命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -1648,6 +1656,7 @@
         {
           "default": "",
           "document": "函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)",
+          "example": "Active",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1657,6 +1666,7 @@
         {
           "default": "",
           "document": "函数状态详情",
+          "example": "\"\"",
           "member": "string",
           "name": "StatusDesc",
           "required": true,
@@ -1666,6 +1676,7 @@
         {
           "default": "",
           "document": "函数描述",
+          "example": "\"\"",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1675,6 +1686,7 @@
         {
           "default": "",
           "document": "函数标签",
+          "example": "[]",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -1684,6 +1696,7 @@
         {
           "default": "",
           "document": "函数类型，取值为 HTTP 或者 Event",
+          "example": "Event",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1693,6 +1706,7 @@
         {
           "default": "",
           "document": "函数状态失败原因",
+          "example": "\"\"",
           "member": "StatusReason",
           "name": "StatusReasons",
           "required": true,
@@ -1702,6 +1716,7 @@
         {
           "default": "",
           "document": "函数所有版本预置并发内存总和\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128000",
           "member": "uint64",
           "name": "TotalProvisionedConcurrencyMem",
           "required": true,
@@ -1711,6 +1726,7 @@
         {
           "default": "",
           "document": "函数并发保留内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12800",
           "member": "uint64",
           "name": "ReservedConcurrencyMem",
           "required": true,
@@ -3441,6 +3457,7 @@
         {
           "default": "",
           "document": "适配的运行时",
+          "example": "<CompatibleRuntime>",
           "member": "string",
           "name": "CompatibleRuntime",
           "required": false,
@@ -3449,6 +3466,7 @@
         {
           "default": "",
           "document": "偏移位置",
+          "example": "<Offset>",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3457,6 +3475,7 @@
         {
           "default": "",
           "document": "查询数目限制",
+          "example": "<Limit>",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3465,6 +3484,7 @@
         {
           "default": "",
           "document": "查询key，模糊匹配名称",
+          "example": "<SearchKey>",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -3478,15 +3498,19 @@
       "members": [
         {
           "document": "层列表",
+          "example": "无",
           "member": "LayerVersionInfo",
           "name": "Layers",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "层总数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3505,6 +3529,7 @@
         {
           "default": "",
           "document": "返回数据长度，默认值为 20",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3513,6 +3538,7 @@
         {
           "default": "",
           "document": "数据的偏移量，默认值为 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3521,6 +3547,7 @@
         {
           "default": "",
           "document": "根据哪个字段进行返回结果排序,支持以下字段：Name,Updatetime",
+          "example": "Name",
           "member": "string",
           "name": "Orderby",
           "required": false,
@@ -3529,6 +3556,7 @@
         {
           "default": "",
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "example": "DESC",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -3542,15 +3570,19 @@
       "members": [
         {
           "document": "namespace详情",
+          "example": "无",
           "member": "Namespace",
           "name": "Namespaces",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "返回的namespace数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4029,6 +4061,7 @@
         {
           "default": "",
           "document": "层名称，支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度1-64",
+          "example": "<LayerName>",
           "member": "string",
           "name": "LayerName",
           "required": true,
@@ -4037,6 +4070,7 @@
         {
           "default": "",
           "document": "层适用的运行时，可多选，可选的值对应函数的 Runtime 可选值。",
+          "example": "Python2.7",
           "member": "string",
           "name": "CompatibleRuntimes",
           "required": true,
@@ -4045,6 +4079,7 @@
         {
           "default": "",
           "document": "层的文件来源或文件内容",
+          "example": "无",
           "member": "Code",
           "name": "Content",
           "required": true,
@@ -4053,6 +4088,7 @@
         {
           "default": "",
           "document": "层的版本的描述",
+          "example": "<Description>",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4061,6 +4097,7 @@
         {
           "default": "",
           "document": "层的软件许可证",
+          "example": "<LicenseInfo>",
           "member": "string",
           "name": "LicenseInfo",
           "required": false,
@@ -4074,8 +4111,10 @@
       "members": [
         {
           "document": "本次创建的层的版本号",
+          "example": "1",
           "member": "int64",
           "name": "LayerVersion",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

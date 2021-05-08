@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tem CreateCosToken --cli-unfold-argument  \
-    --ServiceId "service-xxxxx" \
+    --ServiceId "service-xxxxxx" \
     --VersionId "version-1233344" \
     --PkgName "test-demo.jar" \
     --OptType 1

@@ -9,6 +9,8 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.cii.v20210408 import cii_client as cii_client_v20210408
+from tencentcloud.cii.v20210408 import models as models_v20210408
 from tencentcloud.cii.v20201210 import cii_client as cii_client_v20201210
 from tencentcloud.cii.v20201210 import models as models_v20201210
 
@@ -95,11 +97,13 @@ def doCreateStructureTask(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20210408": cii_client_v20210408,
     "v20201210": cii_client_v20201210,
 
 }
 
 MODELS_MAP = {
+    "v20210408": models_v20210408,
     "v20201210": models_v20201210,
 
 }
@@ -112,6 +116,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20210408",
     "v20201210",
 
 ]

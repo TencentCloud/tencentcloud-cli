@@ -2062,6 +2062,7 @@
         {
           "default": "",
           "document": "按照一个或者多个伸缩活动ID查询。伸缩活动ID形如：`asa-5l2ejpfo`。每次请求的上限为100。参数不支持同时指定`ActivityIds`和`Filters`。",
+          "example": "[\"asa-aaaabbbb\"]",
           "member": "string",
           "name": "ActivityIds",
           "required": false,
@@ -2070,6 +2071,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>\n<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>\n<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2078,6 +2080,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2086,6 +2089,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2094,6 +2098,7 @@
         {
           "default": "",
           "document": "伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
@@ -2102,6 +2107,7 @@
         {
           "default": "",
           "document": "伸缩活动最晚的结束时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -2115,15 +2121,19 @@
       "members": [
         {
           "document": "符合条件的伸缩活动数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的伸缩活动信息集合。",
+          "example": "无",
           "member": "Activity",
           "name": "ActivitySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2931,7 +2941,8 @@
       "members": [
         {
           "default": "",
-          "document": "云服务器的主机名。\n<br><li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。\n<br><li> 不支持 Windows 实例。\n<br><li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器的主机名。\n<br><li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。\n<br><li> 不支持 Windows 实例。\n<br><li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa",
           "member": "string",
           "name": "HostName",
           "required": true,
@@ -2941,6 +2952,7 @@
         {
           "default": "",
           "document": "云服务器主机名的风格，取值范围包括 ORIGINAL 和  UNIQUE，默认为 ORIGINAL。\n<br><li> ORIGINAL，AS 直接将入参中所填的 HostName 传递给 CVM，CVM 可能会对 HostName 追加序列号，伸缩组中实例的 HostName 会出现冲突的情况。\n<br><li> UNIQUE，入参所填的 HostName 相当于主机名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 HostName 可以保证唯一。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ORIGINAL",
           "member": "string",
           "name": "HostNameStyle",
           "required": false,
@@ -3126,7 +3138,8 @@
       "members": [
         {
           "default": "",
-          "document": "云服务器的实例名。\n\n点号（.）和短横线（-）不能作为 InstanceName 的首尾字符，不能连续使用。\n\n其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器的实例名。\n\n点号（.）和短横线（-）不能作为 InstanceName 的首尾字符，不能连续使用。\n\n其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -3136,6 +3149,7 @@
         {
           "default": "",
           "document": "云服务器实例名的风格，取值范围包括 ORIGINAL 和 UNIQUE，默认为 ORIGINAL。\n\nORIGINAL，AS 直接将入参中所填的 InstanceName 传递给 CVM，CVM 可能会对 InstanceName 追加序列号，伸缩组中实例的 InstanceName 会出现冲突的情况。\n\nUNIQUE，入参所填的 InstanceName 相当于实例名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 InstanceName 可以保证唯一。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ORIGINAL",
           "member": "string",
           "name": "InstanceNameStyle",
           "required": false,

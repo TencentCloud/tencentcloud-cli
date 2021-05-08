@@ -2076,6 +2076,7 @@
         {
           "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-1111111",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -2084,6 +2085,7 @@
         {
           "default": "",
           "document": "弹性网卡名称，最大长度不能超过60个字节。",
+          "example": "Test",
           "member": "string",
           "name": "NetworkInterfaceName",
           "required": true,
@@ -2092,6 +2094,7 @@
         {
           "default": "",
           "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。",
+          "example": "subnet-22222222",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -2100,6 +2103,7 @@
         {
           "default": "",
           "document": "ECM 地域，形如ap-xian-ecm。",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -2108,6 +2112,7 @@
         {
           "default": "",
           "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
+          "example": "Test",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": false,
@@ -2115,7 +2120,8 @@
         },
         {
           "default": "",
-          "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。",
+          "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。",
+          "example": "1",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
           "required": false,
@@ -2124,6 +2130,7 @@
         {
           "default": "",
           "document": "指定绑定的安全组，例如：['sg-1dd51d']。",
+          "example": "[]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -2132,6 +2139,7 @@
         {
           "default": "",
           "document": "指定的内网IP信息，单次最多指定10个。",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -2140,6 +2148,7 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -2153,8 +2162,10 @@
       "members": [
         {
           "document": "弹性网卡实例。",
+          "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

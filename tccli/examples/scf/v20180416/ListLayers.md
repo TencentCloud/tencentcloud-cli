@@ -6,18 +6,31 @@ Input:
 
 ```
 tccli scf ListLayers --cli-unfold-argument  \
-    --CompatibleRuntime <CompatibleRuntime> \
-    --Limit <Limit> \
-    --Offset <Offset> \
-    --SearchKey <SearchKey>
+    --SearchKey xx \
+    --CompatibleRuntime xx \
+    --Limit 0 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Layers": [],
-        "TotalCount": 0
+        "Layers": [
+            {
+                "Status": "xx",
+                "LayerVersion": 0,
+                "Description": "xx",
+                "LicenseInfo": "xx",
+                "AddTime": "xx",
+                "CompatibleRuntimes": [
+                    "xx"
+                ],
+                "LayerName": "xx"
+            }
+        ],
+        "TotalCount": 0,
+        "RequestId": "xx"
     }
 }
 ```

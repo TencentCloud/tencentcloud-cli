@@ -68,6 +68,7 @@ Output:
                         "InstanceStatus": "SUCCESSFUL"
                     }
                 ],
+                "LifecycleActionResultSet": [],
                 "ActivityType": "SCALE_OUT",
                 "ActivityId": "asa-o4v87ae9",
                 "StartTime": "2018-11-20T08:33:56Z",

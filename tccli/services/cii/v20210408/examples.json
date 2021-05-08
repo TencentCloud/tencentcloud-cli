@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "CreateStructureTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStructureTask\n<公共请求参数>\n\n{\n    \"ServiceType\": \"Underwrite\",\n    \"PolicyId\": \"0406-01\",\n    \"TriggerType\": \"Auto\",\n    \"InsuranceTypes\": [\n        \"CriticalDiseaseInsurance\",\n        \"LifeInsurance\",\n        \"AccidentInsurance\"\n    ],\n    \"TaskInfos\": [\n        {\n            \"TaskType\": \"HealthReport\",\n            \"CustomerId\": \"0406-01-1\",\n            \"CustomerName\": \"0406-01-1\",\n            \"FileList\": [\n                \"original_upload_dir/test.pdf\"\n            ],\n            \"ImageList\": [],\n            \"Year\": \"2021\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\n        \"MainTaskId\": \"37835597617481728\"\n    }\n}",
+        "title": "创建结构化任务接口示例"
+      }
+    ],
+    "DescribeStructCompareData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStructCompareData\n<公共请求参数>\n\n{\n    \"MainTaskId\": \"fybnnac89vk\",\n    \"SubTaskId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9317f6e4-6636-41a0-bf24-89ad9e4877f2\",\n        \"PolicyId\": \"100001\",\n        \"MainTaskId\": \"fybnnac89vk\",\n        \"SubTaskId\": \"fybnnac89vl\",\n        \"CustomerId\": \"100001\",\n        \"CustomerName\": \"张三\",\n        \"ReviewTime\": \"2020-12-19 18:43:37\",\n        \"MachineResult\": \"{...}\",\n        \"ManualResult\": \"{...}\",\n        \"NewItems\": \"\",\n        \"ModifyItems\": \"\",\n        \"Metrics\": {\n            \"ShortStructAccuracy\": \"95\",\n            \"ShortStructRecall\": \"11\",\n            \"LongStructAccuracy\": \"93\",\n            \"LongStructRecall\": \"14\",\n            \"LongContentAccuracy\": \"94\",\n            \"LongContentRecall\": \"14\"\n        },\n        \"AllTasks\": [\n            {\n                \"MainTaskId\": \"fybnnac89vk\",\n                \"SubTaskId\": \"fybnnac89vl\",\n                \"TaskName\": \"体检报告\",\n                \"TaskType\": \"HealthReport\"\n            }\n        ],\n        \"TaskType\": \"BUltrasoundReport\"\n    }\n}",
+        "title": "结构化对比查询接口示例"
+      }
+    ],
+    "DescribeStructureTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStructureTaskResult\n<公共请求参数>\n\n{\n    \"MainTaskId\": \"37835597617481728\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\n        \"Status\": \"0\",\n        \"Results\": [\n            {\n                \"Quality\": 0.72,\n                \"StructureResult\": \"xxxxxx\"\n            }\n        ]\n    }\n}",
+        "title": "获取结构化结果接口示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

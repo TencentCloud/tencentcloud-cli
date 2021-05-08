@@ -244,8 +244,8 @@
       {
         "document": "",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeExtensionUploadInfo\n&ExtensionFiles.0.FileType=FUNCTION\n&ExtensionFiles.0.FileName=myfilename\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"FilesData\": [\n            {\n                \"CodeUri\": \"extension://ba883a90xxxxx.zip\",\n                \"UploadUrl\": \"https://cloudaccess-code-1258016615.cos.ap-shanghai.myqcloud.com/home%2F4ac1fc8cf53d4211991b65600d854456%2Fhuming-mp.zip_1597925893_z0anckEI.zip?sign=q-sign-algorithm%aa\",\n                \"CustomKey\": \"5umhWq1gNR4kYOP3KXgY3lmhFlllutgb\",\n                \"MaxSize\": 15\n            }\n        ],\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
-        "title": "示例一"
+        "output": "{\n    \"Response\": {\n        \"FilesData\": [\n            {\n                \"CodeUri\": \"extension://ba883a90xxxxx.zip\",\n                \"UploadUrl\": \"https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/home%2Fz0anckEI.zip?sign=q-sign-algorithm%aa\",\n                \"CustomKey\": \"xxxx\",\n                \"MaxSize\": 15\n            }\n        ],\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
+        "title": "获取上次文件的信息"
       }
     ],
     "DescribeExtraPkgBillingInfo": [

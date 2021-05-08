@@ -11,16 +11,17 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "RequestId": "xx",
         "Namespaces": [
             {
-                "Description": "test",
-                "AddTime": "2018-11-27 12:02:25",
-                "ModTime": "2018-11-27 12:02:25",
-                "Type": "default"
+                "ModTime": "2020-09-22 00:00:00",
+                "AddTime": "2020-09-22 00:00:00",
+                "Type": "xx",
+                "Description": "xx",
+                "Name": "xx"
             }
-        ],
-        "TotalCount": 1,
-        "RequestId": "d6b24531-8594-4994-b1a8-f154ec07ff76"
+        ]
     }
 }
 ```

@@ -41,7 +41,10 @@ Output:
             "State": "PENDING",
             "Zone": "ap-hangzhou-ecm-1",
             "CreatedTime": "",
-            "Ipv6AddressSet": []
+            "Ipv6AddressSet": [],
+            "EcmRegion": "ap-hangzhou-ecm",
+            "EniType": 0,
+            "TagSet": []
         },
         "RequestId": "5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1"
     }

@@ -14,111 +14,200 @@ Output:
         "AccountLimit": {
             "Namespace": [
                 {
+                    "TimeoutLimit": 0,
+                    "MaxMsgTTL": 0,
+                    "Namespace": "xx",
+                    "ConcurrentExecutions": 20,
+                    "MinMsgTTL": 0,
                     "Trigger": {
+                        "Vod": 0,
                         "Cos": 2,
+                        "Total": 11,
+                        "Cm": 0,
                         "Timer": 3,
                         "Ckafka": 2,
+                        "Mps": 0,
                         "Apigw": 2,
-                        "Total": 11,
-                        "Cmq": 2
+                        "Clb": 0,
+                        "Cmq": 2,
+                        "Cls": 0
                     },
-                    "Namespace": "test01",
-                    "ConcurrentExecutions": 20
+                    "RetryNumLimit": 0,
+                    "FunctionsCount": 0,
+                    "InitTimeoutLimit": 0,
+                    "TestModelLimit": 0
                 },
                 {
+                    "TestModelLimit": 0,
+                    "FunctionsCount": 0,
+                    "Namespace": "xx",
+                    "ConcurrentExecutions": 20,
+                    "MinMsgTTL": 0,
                     "Trigger": {
+                        "Vod": 0,
                         "Cos": 2,
+                        "Cm": 0,
+                        "Clb": 0,
                         "Timer": 2,
                         "Ckafka": 2,
+                        "Mps": 0,
                         "Apigw": 2,
                         "Total": 10,
-                        "Cmq": 2
+                        "Cmq": 2,
+                        "Cls": 0
                     },
-                    "Namespace": "louiswu02-a8bb21",
-                    "ConcurrentExecutions": 20
+                    "RetryNumLimit": 0,
+                    "TimeoutLimit": 0,
+                    "InitTimeoutLimit": 0,
+                    "MaxMsgTTL": 0
                 },
                 {
+                    "TestModelLimit": 0,
+                    "FunctionsCount": 0,
+                    "Namespace": "xx",
+                    "ConcurrentExecutions": 20,
+                    "MinMsgTTL": 0,
                     "Trigger": {
+                        "Vod": 0,
                         "Cos": 2,
+                        "Cm": 0,
+                        "Clb": 0,
                         "Timer": 2,
                         "Ckafka": 2,
+                        "Mps": 0,
                         "Apigw": 2,
                         "Total": 10,
-                        "Cmq": 2
+                        "Cmq": 2,
+                        "Cls": 0
                     },
-                    "Namespace": "louiswu02-606ce9",
-                    "ConcurrentExecutions": 20
+                    "RetryNumLimit": 0,
+                    "TimeoutLimit": 0,
+                    "InitTimeoutLimit": 0,
+                    "MaxMsgTTL": 0
                 },
                 {
+                    "TestModelLimit": 0,
+                    "FunctionsCount": 0,
+                    "Namespace": "xx",
+                    "ConcurrentExecutions": 20,
+                    "MinMsgTTL": 0,
                     "Trigger": {
+                        "Vod": 0,
                         "Cos": 2,
+                        "Cm": 0,
+                        "Clb": 0,
                         "Timer": 2,
                         "Ckafka": 2,
+                        "Mps": 0,
                         "Apigw": 2,
                         "Total": 10,
-                        "Cmq": 2
+                        "Cmq": 2,
+                        "Cls": 0
                     },
-                    "Namespace": "louisw-f38e69",
-                    "ConcurrentExecutions": 20
+                    "RetryNumLimit": 0,
+                    "TimeoutLimit": 0,
+                    "InitTimeoutLimit": 0,
+                    "MaxMsgTTL": 0
                 },
                 {
+                    "TestModelLimit": 0,
+                    "FunctionsCount": 0,
+                    "Namespace": "xx",
+                    "ConcurrentExecutions": 20,
+                    "MinMsgTTL": 0,
                     "Trigger": {
+                        "Vod": 0,
                         "Cos": 2,
+                        "Cm": 0,
+                        "Clb": 0,
                         "Timer": 2,
                         "Ckafka": 2,
+                        "Mps": 0,
                         "Apigw": 2,
                         "Total": 10,
-                        "Cmq": 2
+                        "Cmq": 2,
+                        "Cls": 0
                     },
-                    "Namespace": "kpk",
-                    "ConcurrentExecutions": 20
+                    "RetryNumLimit": 0,
+                    "TimeoutLimit": 0,
+                    "InitTimeoutLimit": 0,
+                    "MaxMsgTTL": 0
                 },
                 {
+                    "TestModelLimit": 0,
+                    "FunctionsCount": 0,
+                    "Namespace": "xx",
+                    "ConcurrentExecutions": 20,
+                    "MinMsgTTL": 0,
                     "Trigger": {
+                        "Vod": 0,
                         "Cos": 2,
+                        "Cm": 0,
+                        "Clb": 0,
                         "Timer": 2,
                         "Ckafka": 2,
+                        "Mps": 0,
                         "Apigw": 2,
                         "Total": 10,
-                        "Cmq": 2
+                        "Cmq": 2,
+                        "Cls": 0
                     },
-                    "Namespace": "alanoluo",
-                    "ConcurrentExecutions": 20
+                    "RetryNumLimit": 0,
+                    "TimeoutLimit": 0,
+                    "InitTimeoutLimit": 0,
+                    "MaxMsgTTL": 0
                 },
                 {
+                    "TestModelLimit": 0,
+                    "FunctionsCount": 0,
+                    "Namespace": "xx",
+                    "ConcurrentExecutions": 20,
+                    "MinMsgTTL": 0,
                     "Trigger": {
+                        "Vod": 0,
                         "Cos": 2,
+                        "Cm": 0,
+                        "Clb": 0,
                         "Timer": 2,
                         "Ckafka": 2,
+                        "Mps": 0,
                         "Apigw": 2,
                         "Total": 10,
-                        "Cmq": 2
+                        "Cmq": 2,
+                        "Cls": 0
                     },
-                    "Namespace": "12345",
-                    "ConcurrentExecutions": 20
+                    "RetryNumLimit": 0,
+                    "TimeoutLimit": 0,
+                    "InitTimeoutLimit": 0,
+                    "MaxMsgTTL": 0
                 }
             ],
             "NamespacesCount": 50
         },
-        "RequestId": "627bff59-5c1d-43b1-99a8-c56c83b3e59f",
+        "RequestId": "xx",
         "AccountUsage": {
+            "TotalConcurrencyMem": 0,
             "Namespace": [
                 {
                     "Functions": [
                         "testfun01",
                         "testfun02"
                     ],
-                    "Namespace": "test01",
+                    "Namespace": "xx",
                     "FunctionsCount": 2
                 },
                 {
-                    "Functions": [],
-                    "Namespace": "louiswu02-a8bb21",
+                    "Functions": [
+                        "xx"
+                    ],
+                    "Namespace": "xx",
                     "FunctionsCount": 0
                 },
                 {
-                    "Functions": [],
-                    "Namespace": "louiswu02-606ce9",
+                    "Functions": [
+                        "xx"
+                    ],
+                    "Namespace": "xx",
                     "FunctionsCount": 0
                 },
                 {
@@ -131,12 +220,14 @@ Output:
                         "louis02",
                         "louis01"
                     ],
-                    "Namespace": "louisw-f38e69",
+                    "Namespace": "xx",
                     "FunctionsCount": 7
                 },
                 {
-                    "Functions": [],
-                    "Namespace": "kpk",
+                    "Functions": [
+                        "xx"
+                    ],
+                    "Namespace": "xx",
                     "FunctionsCount": 0
                 },
                 {
@@ -145,16 +236,20 @@ Output:
                         "alanoluo_desc",
                         "ttstss"
                     ],
-                    "Namespace": "alanoluo",
+                    "Namespace": "xx",
                     "FunctionsCount": 3
                 },
                 {
-                    "Functions": [],
-                    "Namespace": "12345",
+                    "Functions": [
+                        "xx"
+                    ],
+                    "Namespace": "xx",
                     "FunctionsCount": 0
                 }
             ],
-            "NamespacesCount": 7
+            "TotalAllocatedConcurrencyMem": 0,
+            "NamespacesCount": 7,
+            "UserConcurrencyMemLimit": 0
         }
     }
 }

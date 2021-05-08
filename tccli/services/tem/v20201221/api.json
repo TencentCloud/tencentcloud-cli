@@ -6,17 +6,65 @@
       "name": "生成Cos临时秘钥",
       "output": "CreateCosTokenResponse"
     },
+    "CreateCosTokenV2": {
+      "document": "生成Cos临时秘钥",
+      "input": "CreateCosTokenV2Request",
+      "name": "生成Cos临时秘钥V2",
+      "output": "CreateCosTokenV2Response"
+    },
     "CreateNamespace": {
-      "document": "创建命名空间",
+      "document": "创建环境",
       "input": "CreateNamespaceRequest",
       "name": "创建命名空间",
       "output": "CreateNamespaceResponse"
     },
+    "CreateResource": {
+      "document": "绑定云资源",
+      "input": "CreateResourceRequest",
+      "name": "绑定云资源",
+      "output": "CreateResourceResponse"
+    },
+    "CreateServiceV2": {
+      "document": "创建服务",
+      "input": "CreateServiceV2Request",
+      "name": "创建服务",
+      "output": "CreateServiceV2Response"
+    },
+    "DeleteIngress": {
+      "document": "删除 Ingress 规则",
+      "input": "DeleteIngressRequest",
+      "name": "删除 Ingress 规则",
+      "output": "DeleteIngressResponse"
+    },
+    "DeployServiceV2": {
+      "document": "服务部署\n - 创建新版本\n - 部署新版本\n - 一个服务只能有一个版本，所以前端无需关心版本及版本ID",
+      "input": "DeployServiceV2Request",
+      "name": "服务部署",
+      "output": "DeployServiceV2Response"
+    },
+    "DescribeIngress": {
+      "document": "查询 Ingress 规则",
+      "input": "DescribeIngressRequest",
+      "name": "查询 Ingress 规则",
+      "output": "DescribeIngressResponse"
+    },
+    "DescribeIngresses": {
+      "document": "查询 Ingress 规则列表",
+      "input": "DescribeIngressesRequest",
+      "name": "查询 Ingress 规则列表",
+      "output": "DescribeIngressesResponse"
+    },
     "DescribeNamespaces": {
-      "document": "获取租户命名空间列表",
+      "document": "获取租户环境列表",
       "input": "DescribeNamespacesRequest",
       "name": "获取租户命名空间列表",
       "output": "DescribeNamespacesResponse"
+    },
+    "DescribeServiceRunPodListV2": {
+      "document": "获取服务下面运行pod列表",
+      "input": "DescribeServiceRunPodListV2Request",
+      "name": "获取服务下面运行pod列表",
+      "output": "DescribeServiceRunPodListV2Response"
     },
     "ModifyIngress": {
       "document": "创建或者更新 Ingress 规则",
@@ -25,7 +73,7 @@
       "output": "ModifyIngressResponse"
     },
     "ModifyNamespace": {
-      "document": "编辑命名空间",
+      "document": "编辑环境",
       "input": "ModifyNamespaceRequest",
       "name": "编辑命名空间",
       "output": "ModifyNamespaceResponse"
@@ -197,6 +245,69 @@
       ],
       "type": "object"
     },
+    "CreateCosTokenV2Request": {
+      "document": "CreateCosTokenV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务ID",
+          "example": "1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "包名",
+          "example": "1",
+          "member": "string",
+          "name": "PkgName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "optType 1上传  2查询",
+          "example": "1",
+          "member": "int64",
+          "name": "OptType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "来源 channel",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosTokenV2Response": {
+      "document": "CreateCosTokenV2返回参数结构体",
+      "members": [
+        {
+          "document": "成功时为CosToken对象，失败为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "CosToken",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNamespaceRequest": {
       "document": "CreateNamespace请求参数结构体",
       "members": [
@@ -278,6 +389,618 @@
       ],
       "type": "object"
     },
+    "CreateResourceRequest": {
+      "document": "CreateResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间 Id",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源类型",
+          "example": "CLS",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源 Id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceResponse": {
+      "document": "CreateResource返回参数结构体",
+      "members": [
+        {
+          "document": "成功与否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceV2Request": {
+      "document": "CreateServiceV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务名",
+          "example": "service-a",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "服务a",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否使用默认镜像服务",
+          "example": "0",
+          "member": "int64",
+          "name": "UseDefaultImageService",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "如果是绑定仓库，绑定的仓库类型，0-个人版，1-企业版",
+          "example": "0",
+          "member": "int64",
+          "name": "RepoType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "企业版镜像服务的实例id",
+          "example": "tr-123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定镜像服务器地址",
+          "example": "tcr.tencent.com",
+          "member": "string",
+          "name": "RepoServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定镜像仓库名",
+          "example": "tem-test/repo_te",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务所在子网",
+          "example": "['s1', 's2']",
+          "member": "string",
+          "name": "SubnetList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "编程语言",
+          "example": "1",
+          "member": "string",
+          "name": "CodingLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署方式",
+          "example": "1",
+          "member": "string",
+          "name": "DeployMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceV2Response": {
+      "document": "CreateServiceV2返回参数结构体",
+      "members": [
+        {
+          "document": "服务code",
+          "example": "service-3gn56p6v",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIngressRequest": {
+      "document": "DeleteIngress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tem NamespaceId",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "eks namespace 名",
+          "example": "default",
+          "member": "string",
+          "name": "EksNamespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ingress 规则名",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIngressResponse": {
+      "document": "DeleteIngress返回参数结构体",
+      "members": [
+        {
+          "document": "是否删除成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployServiceV2Request": {
+      "document": "DeployServiceV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务ID",
+          "example": "1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器端口",
+          "example": "1",
+          "member": "uint64",
+          "name": "ContainerPort",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "初始化 pod 数",
+          "example": "1",
+          "member": "uint64",
+          "name": "InitPodNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "cpu规格",
+          "example": "1",
+          "member": "float",
+          "name": "CpuSpec",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "内存规格",
+          "example": "1",
+          "member": "float",
+          "name": "MemorySpec",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库",
+          "example": "1",
+          "member": "string",
+          "name": "ImgRepo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本描述信息",
+          "example": "1",
+          "member": "string",
+          "name": "VersionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启动参数",
+          "example": "1",
+          "member": "string",
+          "name": "JvmOpts",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩配置，不传默认不启用弹性伸缩配置",
+          "example": "1",
+          "member": "EsInfo",
+          "name": "EsInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "环境变量配置",
+          "example": "1",
+          "member": "Pair",
+          "name": "EnvConf",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "日志配置",
+          "example": "1",
+          "member": "string",
+          "name": "LogConfs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据卷配置",
+          "example": "1",
+          "member": "StorageConf",
+          "name": "StorageConfs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据卷挂载配置",
+          "example": "1",
+          "member": "StorageMountConf",
+          "name": "StorageMountConfs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "部署类型。\n- JAR：通过 jar 包部署\n- WAR：通过 war 包部署\n- IMAGE：通过镜像部署",
+          "example": "1",
+          "member": "string",
+          "name": "DeployMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署类型为 IMAGE 时，该参数表示镜像 tag。\n部署类型为 JAR/WAR 时，该参数表示包版本号。",
+          "example": "1",
+          "member": "string",
+          "name": "DeployVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "包名。使用 JAR 包或者 WAR 包部署的时候必填。",
+          "example": "1",
+          "member": "string",
+          "name": "PkgName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "JDK 版本。\n- KONA：使用 kona jdk。\n- OPEN：使用 open jdk。",
+          "example": "1",
+          "member": "string",
+          "name": "JdkVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ID s",
+          "example": "1",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "日志输出配置",
+          "example": "1",
+          "member": "LogOutputConf",
+          "name": "LogOutputConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "版本描述",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像命令",
+          "example": "cd",
+          "member": "string",
+          "name": "ImageCommand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像命令参数",
+          "example": "/home",
+          "member": "string",
+          "name": "ImageArgs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployServiceV2Response": {
+      "document": "DeployServiceV2返回参数结构体",
+      "members": [
+        {
+          "document": "版本ID（前端可忽略）",
+          "example": "1",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIngressRequest": {
+      "document": "DescribeIngress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tem namespaceId",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "eks namespace 名",
+          "example": "default",
+          "member": "string",
+          "name": "EksNamespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ingress 规则名",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIngressResponse": {
+      "document": "DescribeIngress返回参数结构体",
+      "members": [
+        {
+          "document": "ingressInfo",
+          "example": "ingressInfo",
+          "member": "IngressInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIngressesRequest": {
+      "document": "DescribeIngresses请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "namespace id",
+          "example": "111",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "namespace",
+          "example": "default",
+          "member": "string",
+          "name": "EksNamespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIngressesResponse": {
+      "document": "DescribeIngresses返回参数结构体",
+      "members": [
+        {
+          "document": "ingress 数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "IngressInfo",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNamespacesRequest": {
       "document": "DescribeNamespaces请求参数结构体",
       "members": [
@@ -331,6 +1054,208 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeRunPodPage": {
+      "document": "版本pod列表",
+      "members": [
+        {
+          "default": "",
+          "document": "分页下标",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单页条数",
+          "example": "11",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总数",
+          "example": "111",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求id",
+          "example": "ssss",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "条目",
+          "example": "{name:key}",
+          "member": "RunVersionPod",
+          "name": "PodList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeServiceRunPodListV2Request": {
+      "document": "DescribeServiceRunPodListV2请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "namespace-a",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名id",
+          "example": "service-a",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单页条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页下标",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "pod状态",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "名字",
+          "example": "pod-a",
+          "member": "string",
+          "name": "PodName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceRunPodListV2Response": {
+      "document": "DescribeServiceRunPodListV2返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "page",
+          "member": "DescribeRunPodPage",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EsInfo": {
+      "document": "弹性伸缩配置",
+      "members": [
+        {
+          "default": "",
+          "document": "最小实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "MinAliveInstances",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大实例数",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxAliveInstances",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性策略,1:cpu，2:内存",
+          "example": "1",
+          "member": "int64",
+          "name": "EsStrategy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性扩缩容条件值",
+          "example": "50",
+          "member": "uint64",
+          "name": "Threshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本Id",
+          "example": "version-test",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "IngressInfo": {
       "document": "Ingress 配置",
@@ -548,6 +1473,42 @@
       ],
       "usage": "both"
     },
+    "LogOutputConf": {
+      "document": "日志输出配置",
+      "members": [
+        {
+          "default": "",
+          "document": "日志消费端类型",
+          "example": "cls、kafka",
+          "member": "string",
+          "name": "OutputType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cls日志集",
+          "example": "1",
+          "member": "string",
+          "name": "ClsLogsetName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cls日志主题",
+          "example": "1",
+          "member": "string",
+          "name": "ClsLogTopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyIngressRequest": {
       "document": "ModifyIngress请求参数结构体",
       "members": [
@@ -715,6 +1676,146 @@
         }
       ],
       "usage": "out"
+    },
+    "Pair": {
+      "document": "键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "建",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RunVersionPod": {
+      "document": "版本pod",
+      "members": [
+        {
+          "default": "",
+          "document": "shell地址",
+          "example": "sss",
+          "member": "string",
+          "name": "Webshell",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod的id",
+          "example": "aaa",
+          "member": "string",
+          "name": "PodId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2010-11-11 22:21:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod的ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PodIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StorageConf": {
+      "document": "存储卷配置",
+      "members": [
+        {
+          "default": "",
+          "document": "存储卷名称",
+          "example": "1",
+          "member": "string",
+          "name": "StorageVolName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储卷路径",
+          "example": "1",
+          "member": "string",
+          "name": "StorageVolPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储卷IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "StorageVolIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StorageMountConf": {
+      "document": "数据卷挂载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "数据卷名",
+          "member": "string",
+          "name": "VolumeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据卷绑定路径",
+          "member": "string",
+          "name": "MountPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TemNamespaceInfo": {
       "document": "命名空间对象",
