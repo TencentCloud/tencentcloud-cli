@@ -3135,6 +3135,15 @@
           "name": "ServiceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跳过删除前置条件校验（仅支持独享实例上的服务）",
+          "example": "0",
+          "member": "int64",
+          "name": "SkipVerification",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

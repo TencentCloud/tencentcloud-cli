@@ -67,8 +67,8 @@
     "InquiryPriceScaleOutInstance": [
       {
         "document": "",
-        "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceScaleOutInstance\r\n&TimeUnit=s\r\n&TimeSpan=3600\r\n&ZoneId=100003\r\n&PayMode=0\r\n&InstanceId=emr-3ida6zmi\r\n&CoreCount=1\r\n&TaskCount=0\r\n&Currency=CNY\r\n&RouterCount=0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"04daa603-e1e7-4243-b25d-31e6a6736528\"\n    }\n}",
+        "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceScaleOutInstance\n&TimeUnit=s\n&TimeSpan=3600\n&ZoneId=100003\n&PayMode=0\n&InstanceId=emr-3ida6zmi\n&CoreCount=1\n&TaskCount=0\n&Currency=CNY\n&RouterCount=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DiscountCost\": \"77\",\n        \"PriceSpec\": {\n            \"InstanceType\": \"S5\",\n            \"DiskCnt\": 1,\n            \"StorageType\": 1,\n            \"DiskNum\": 1,\n            \"DiskType\": \"2\",\n            \"LocalDiskNum\": 0,\n            \"Cpu\": 0,\n            \"DiskSize\": 100,\n            \"MemSize\": 100,\n            \"RootSize\": 50,\n            \"Spec\": \"S5.2XLARGE8\"\n        },\n        \"Unit\": \"1\",\n        \"OriginalCost\": \"1.1\",\n        \"RequestId\": \"04daa603-e1e7-4243-b25d-31e6a6736528\"\n    }\n}",
         "title": "扩容询价"
       }
     ],

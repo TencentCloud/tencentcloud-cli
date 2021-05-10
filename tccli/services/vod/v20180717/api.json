@@ -66,6 +66,12 @@
       "name": "创建视频内容智能识别模板",
       "output": "CreateContentReviewTemplateResponse"
     },
+    "CreateHeadTailTemplate": {
+      "document": "创建片头片尾模板。",
+      "input": "CreateHeadTailTemplateRequest",
+      "name": "创建片头片尾模板",
+      "output": "CreateHeadTailTemplateResponse"
+    },
     "CreateImageProcessingTemplate": {
       "document": "创建一个用户自定义的图片处理模板，数量上限：16。最多支持三次操作，例如：裁剪-缩略-裁剪。",
       "input": "CreateImageProcessingTemplateRequest",
@@ -167,6 +173,12 @@
       "input": "DeleteContentReviewTemplateRequest",
       "name": "删除视频内容智能识别模板",
       "output": "DeleteContentReviewTemplateResponse"
+    },
+    "DeleteHeadTailTemplate": {
+      "document": "删除片头片尾模板。",
+      "input": "DeleteHeadTailTemplateRequest",
+      "name": "删除片头片尾模板",
+      "output": "DeleteHeadTailTemplateResponse"
     },
     "DeleteImageProcessingTemplate": {
       "document": "删除用户自定义图片处理模板。",
@@ -323,6 +335,12 @@
       "input": "DescribeEventsStateRequest",
       "name": "获取事件通知状态",
       "output": "DescribeEventsStateResponse"
+    },
+    "DescribeHeadTailTemplates": {
+      "document": "获取片头片尾模板列表。",
+      "input": "DescribeHeadTailTemplatesRequest",
+      "name": "获取片头片尾模板列表",
+      "output": "DescribeHeadTailTemplatesResponse"
     },
     "DescribeImageProcessingTemplates": {
       "document": "获取图片处理模板列表，支持根据条件，分页查询。",
@@ -515,6 +533,12 @@
       "input": "ModifyEventConfigRequest",
       "name": "修改事件通知配置",
       "output": "ModifyEventConfigResponse"
+    },
+    "ModifyHeadTailTemplate": {
+      "document": "修改片头片尾模板。",
+      "input": "ModifyHeadTailTemplateRequest",
+      "name": "修改片头片尾模板",
+      "output": "ModifyHeadTailTemplateResponse"
     },
     "ModifyImageSpriteTemplate": {
       "document": "修改用户自定义雪碧图模板。",
@@ -6603,6 +6627,87 @@
       ],
       "type": "object"
     },
+    "CreateHeadTailTemplateRequest": {
+      "document": "CreateHeadTailTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名，长度限制 64 个字符。",
+          "example": "模板名1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板描述信息，长度限制 256 个字符。",
+          "example": "描述信息",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "片头候选列表，填写视频的 FileId。转码时将自动选择与正片宽高比最接近的一个片头（相同宽高比时，靠前的候选项优先）。最多支持 5 个候选片头。",
+          "example": "[\"333XXX123\"]",
+          "member": "string",
+          "name": "HeadCandidateSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "片尾候选列表，填写视频的 FileId。转码时将自动选择与正片宽高比最接近的一个片尾（相同宽高比时，靠前的候选项优先）。最多支持 5 个候选片尾。",
+          "example": "[\"1233XXX3122\"]",
+          "member": "string",
+          "name": "TailCandidateSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li> gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊；</li>\n<li> white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充；</li>\n<li> black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：stretch 。",
+          "example": "black",
+          "member": "string",
+          "name": "FillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "125000",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHeadTailTemplateResponse": {
+      "document": "CreateHeadTailTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "片头片尾模板号。",
+          "example": "10000",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateImageProcessingTemplateRequest": {
       "document": "CreateImageProcessingTemplate请求参数结构体",
       "members": [
@@ -7840,6 +7945,42 @@
     },
     "DeleteContentReviewTemplateResponse": {
       "document": "DeleteContentReviewTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHeadTailTemplateRequest": {
+      "document": "DeleteHeadTailTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "片头片尾模板号。",
+          "example": "1008",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "25100",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHeadTailTemplateResponse": {
+      "document": "DeleteHeadTailTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9206,6 +9347,78 @@
           "member": "uint64",
           "name": "CountOfEventsToPull",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHeadTailTemplatesRequest": {
+      "document": "DescribeHeadTailTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "片头片尾模板号，数组长度限制：100。",
+          "example": "[\"10\\n\"]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "125000",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHeadTailTemplatesResponse": {
+      "document": "DescribeHeadTailTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "片头片尾模板详情列表。",
+          "example": "无",
+          "member": "HeadTailTemplate",
+          "name": "HeadTailTemplateSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11817,6 +12030,88 @@
         }
       ],
       "usage": "in"
+    },
+    "HeadTailTaskInput": {
+      "document": "片尾任务输入类型。",
+      "members": [
+        {
+          "default": "",
+          "document": "片头片尾模板号。",
+          "example": "10000",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HeadTailTemplate": {
+      "document": "片头片尾模板详情",
+      "members": [
+        {
+          "default": "",
+          "document": "片头片尾模板号。",
+          "example": "10000",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板名，最大支持 64 个字符。",
+          "example": "模板名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述，最大支持 256 个字符。",
+          "example": "模板描述",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片头候选列表。使用时会选择跟正片分辨率最贴近的一个使用，当存在相同的候选时，选择第一个使用，最大支持 5 个。",
+          "example": "[\"123xxx90\"]",
+          "member": "string",
+          "name": "HeadCandidateSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片尾候选列表。使用时会选择跟正片分辨率最贴近的一个使用，当存在相同的候选时，选择第一个使用，最大支持 5 个。",
+          "example": "[\"123xxx89\"]",
+          "member": "string",
+          "name": "TailCandidateSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li> gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊；</li>\n<li> white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充；</li>\n<li> black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：stretch 。",
+          "example": "black",
+          "member": "string",
+          "name": "FillType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "HighlightSegmentItem": {
       "document": "智能精彩集锦片段列表。",
@@ -15767,6 +16062,87 @@
     },
     "ModifyEventConfigResponse": {
       "document": "ModifyEventConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHeadTailTemplateRequest": {
+      "document": "ModifyHeadTailTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "片头片尾模板号。",
+          "example": "10000",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板名，长度限制 64 个字符。不传代表不修改。",
+          "example": "模板名1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板描述，长度限制 256 个字符。不传代表不修改，传空代表清空。",
+          "example": "模板描述",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "片头候选列表，填写视频的 FileId。转码时将自动选择与正片宽高比最接近的一个片头（相同宽高比时，靠前的候选项优先）。最多支持 5 个候选片头。不传代表不修改，传空数组代表清空。",
+          "example": "[\"1235xxx32\"]",
+          "member": "string",
+          "name": "HeadCandidateSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "片尾候选列表，填写视频的 FileId。转码时将自动选择与正片宽高比最接近的一个片尾（相同宽高比时，靠前的候选项优先）。最多支持 5 个候选片头。不传代表不修改，传空数组代表清空。",
+          "example": "[\"1235xxx32\"]",
+          "member": "string",
+          "name": "TailCandidateSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li> gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊；</li>\n<li> white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充；</li>\n<li> black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值为不修改。",
+          "example": "black",
+          "member": "string",
+          "name": "FillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "125000",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHeadTailTemplateResponse": {
+      "document": "ModifyHeadTailTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -21257,6 +21633,7 @@
         {
           "default": "",
           "document": "视频转码模板 ID。",
+          "example": "10000",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -21266,6 +21643,7 @@
         {
           "default": "",
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
+          "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
           "required": false,
@@ -21275,6 +21653,7 @@
         {
           "default": "",
           "document": "马赛克列表，最大可支持 10 张。",
+          "example": "无",
           "member": "MosaicInput",
           "name": "MosaicSet",
           "required": false,
@@ -21283,7 +21662,18 @@
         },
         {
           "default": "",
+          "document": "片头片尾列表，支持多片头片尾，最大可支持 10 个。",
+          "example": "无",
+          "member": "HeadTailTaskInput",
+          "name": "HeadTailSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "转码后的视频的起始时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>",
+          "example": "2",
           "member": "float",
           "name": "StartTimeOffset",
           "required": false,
@@ -21293,6 +21683,7 @@
         {
           "default": "",
           "document": "转码后视频的终止时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>",
+          "example": "3",
           "member": "float",
           "name": "EndTimeOffset",
           "required": false,

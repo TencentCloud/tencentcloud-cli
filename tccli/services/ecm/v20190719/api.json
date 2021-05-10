@@ -8689,6 +8689,7 @@
         {
           "default": "",
           "document": "zone信息",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneInfo",
           "required": true,
@@ -8698,6 +8699,7 @@
         {
           "default": "",
           "document": "国家信息",
+          "example": "无",
           "member": "Country",
           "name": "Country",
           "required": true,
@@ -8707,6 +8709,7 @@
         {
           "default": "",
           "document": "区域信息",
+          "example": "无",
           "member": "Area",
           "name": "Area",
           "required": true,
@@ -8716,6 +8719,7 @@
         {
           "default": "",
           "document": "省份信息",
+          "example": "无",
           "member": "Province",
           "name": "Province",
           "required": true,
@@ -8725,6 +8729,7 @@
         {
           "default": "",
           "document": "城市信息",
+          "example": "无",
           "member": "City",
           "name": "City",
           "required": true,
@@ -8734,6 +8739,7 @@
         {
           "default": "",
           "document": "Region信息",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionInfo",
           "required": true,
@@ -8743,6 +8749,7 @@
         {
           "default": "",
           "document": "运营商列表",
+          "example": "无",
           "member": "ISP",
           "name": "ISPSet",
           "required": true,
@@ -8752,6 +8759,7 @@
         {
           "default": "",
           "document": "运营商数量",
+          "example": "无",
           "member": "int64",
           "name": "ISPNum",
           "required": true,

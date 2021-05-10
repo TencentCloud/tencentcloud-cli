@@ -1918,6 +1918,7 @@
         {
           "default": "",
           "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "example": "s",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -1926,6 +1927,7 @@
         {
           "default": "",
           "document": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "example": "3600",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -1934,6 +1936,7 @@
         {
           "default": "",
           "document": "实例所属的可用区ID，例如100003。该参数可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/213/15707) 的返回值中的ZoneId字段来获取。",
+          "example": "100003",
           "member": "uint64",
           "name": "ZoneId",
           "required": true,
@@ -1942,6 +1945,7 @@
         {
           "default": "",
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "PayMode",
           "required": true,
@@ -1950,6 +1954,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "emr-3ida6zmi",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1958,6 +1963,7 @@
         {
           "default": "",
           "document": "扩容的Core节点数量。",
+          "example": "1",
           "member": "uint64",
           "name": "CoreCount",
           "required": true,
@@ -1966,6 +1972,7 @@
         {
           "default": "",
           "document": "扩容的Task节点数量。",
+          "example": "0",
           "member": "uint64",
           "name": "TaskCount",
           "required": true,
@@ -1974,6 +1981,7 @@
         {
           "default": "",
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "example": "CNY",
           "member": "string",
           "name": "Currency",
           "required": true,
@@ -1982,8 +1990,18 @@
         {
           "default": "",
           "document": "扩容的Router节点数量。",
+          "example": "0",
           "member": "uint64",
           "name": "RouterCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容的Master节点数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MasterCount",
           "required": false,
           "type": "int"
         }
@@ -1995,29 +2013,37 @@
       "members": [
         {
           "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "OriginalCost",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DiscountCost",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Unit",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "询价的节点规格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PriceResource",
           "name": "PriceSpec",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

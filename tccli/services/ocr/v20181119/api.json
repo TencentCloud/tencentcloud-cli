@@ -229,7 +229,7 @@
       "output": "PermitOCRResponse"
     },
     "PropOwnerCertOCR": {
-      "document": "本接口支持房产证关键字段的识别，包括房地产权利人、共有情况、登记时间、规划用途、房屋性质、房屋坐落等。",
+      "document": "本接口支持房产证关键字段的识别，包括房地产权利人、共有情况、登记时间、规划用途、房屋性质、房屋坐落等。\n目前接口对合肥、成都、佛山三个城市的房产证版式识别较好。",
       "input": "PropOwnerCertOCRRequest",
       "name": "房产证识别",
       "output": "PropOwnerCertOCRResponse"
@@ -902,7 +902,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -910,7 +911,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg ",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -924,15 +926,19 @@
       "members": [
         {
           "document": "汽车票识别结果，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "BusInvoiceInfo",
           "name": "BusInvoiceInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
+          "example": "358",
           "member": "float",
           "name": "Angle",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2048,7 +2054,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -2056,7 +2063,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -2070,15 +2078,19 @@
       "members": [
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负",
+          "example": "0",
           "member": "int64",
           "name": "Angle",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "TextFormula",
           "name": "FormulaInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3038,7 +3050,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -3046,7 +3059,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg ",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -3060,15 +3074,19 @@
       "members": [
         {
           "document": "通用机打发票识别结果，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "InvoiceGeneralInfo",
           "name": "InvoiceGeneralInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
+          "example": "0",
           "member": "float",
           "name": "Angle",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -4150,7 +4168,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -4158,7 +4177,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -4172,43 +4192,55 @@
       "members": [
         {
           "document": "房地产权利人",
+          "example": "李明",
           "member": "string",
           "name": "Owner",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "共有情况",
+          "example": "单独所有",
           "member": "string",
           "name": "Possession",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "登记时间",
+          "example": "2015-02-22",
           "member": "string",
           "name": "RegisterTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "规划用途",
+          "example": "成套住宅",
           "member": "string",
           "name": "Purpose",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "房屋性质",
+          "example": "商品房",
           "member": "string",
           "name": "Nature",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "房地坐落",
+          "example": "上海市徐汇区田林路397号腾云大厦",
           "member": "string",
           "name": "Location",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4596,6 +4628,7 @@
         {
           "default": "",
           "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -4604,6 +4637,7 @@
         {
           "default": "",
           "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "xxx",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -4612,6 +4646,7 @@
         {
           "default": "",
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
           "member": "bool",
           "name": "IsPdf",
           "required": false,
@@ -4620,6 +4655,7 @@
         {
           "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
           "member": "uint64",
           "name": "PdfPageNumber",
           "required": false,
@@ -4628,6 +4664,7 @@
         {
           "default": "",
           "document": "语言，zh：中英文（默认）jap：日文",
+          "example": "zh",
           "member": "string",
           "name": "TableLanguage",
           "required": false,
@@ -4641,29 +4678,37 @@
       "members": [
         {
           "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "TableDetectInfo",
           "name": "TableDetections",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "Base64 编码后的 Excel 数据。",
+          "example": "8HAABnHAAAFAAAAAAAAAAAAAAAAADMJAAAeGwvc2hhcmVkU3RyaW5ncy54bWxQSwECFAAUAAAACAAAAAAAcxSJldcBAAD9BQAADQAAAAAAAAAAAAAAAACtLAAAeGwvc3R5bGVzLnhtbFBLAQIUABQAAAAIAAAAAAC8TIYcSAYAAP4kAAATAAAAAAAAAAAAAAAAAK8uAAB4bC90aGVtZS90aGVtZTEueG1sUEsBAhQAFAAAAAgAAAAAANG5P9oECwAAUU0AABgAAAAAAAAAAAAAAAAAKDUAAHhsL3dvcmtzaGVldHMvc2hlZXQyLnhtbFBLAQIUABQAAAAIAAAAAADjsY7PqAMAAE8PAAAYAAAAAAAAAAAAAAAAAGJAAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWxQSwUGAAAAAAwADAALAwAAQEQAAAAA",
           "member": "string",
           "name": "Data",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "图片为PDF时，返回PDF的总页数，默认为0",
+          "example": "0",
           "member": "int64",
           "name": "PdfPageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "图片旋转角度（角度制），文本的水平\n方向为 0°；顺时针为正，逆时针为负",
+          "document": "图片旋转角度（角度制），文本的水平方向为0°，统一以逆时针方向旋转，逆时针为负，角度范围为-360°至0°。",
+          "example": "0",
           "member": "float",
           "name": "Angle",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -6350,7 +6395,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -6358,7 +6404,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg ",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -6372,15 +6419,19 @@
       "members": [
         {
           "document": "过路过桥费发票识别结果，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "TollInvoiceInfo",
           "name": "TollInvoiceInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
+          "example": "0",
           "member": "float",
           "name": "Angle",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7142,7 +7193,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -7150,7 +7202,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg ",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -7164,15 +7217,19 @@
       "members": [
         {
           "document": "增值税发票（卷票）识别结果，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "VatRollInvoiceInfo",
           "name": "VatRollInvoiceInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
+          "example": "0",
           "member": "float",
           "name": "Angle",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },

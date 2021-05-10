@@ -526,7 +526,7 @@ def doCreateAdaptiveDynamicStreamingTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDrmDataKey(args, parsed_globals):
+def doDescribeSampleSnapshotTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -542,9 +542,9 @@ def doDescribeDrmDataKey(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDrmDataKeyRequest()
+    model = models.DescribeSampleSnapshotTemplatesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDrmDataKey(model)
+    rsp = client.DescribeSampleSnapshotTemplates(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -904,7 +904,7 @@ def doDescribePrepaidProducts(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doConfirmEvents(args, parsed_globals):
+def doModifyAnimatedGraphicsTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -920,9 +920,9 @@ def doConfirmEvents(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ConfirmEventsRequest()
+    model = models.ModifyAnimatedGraphicsTemplateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ConfirmEvents(model)
+    rsp = client.ModifyAnimatedGraphicsTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1606,7 +1606,7 @@ def doModifyTranscodeTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeContentReviewTemplates(args, parsed_globals):
+def doDescribeAIRecognitionTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1622,9 +1622,36 @@ def doDescribeContentReviewTemplates(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeContentReviewTemplatesRequest()
+    model = models.DescribeAIRecognitionTemplatesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeContentReviewTemplates(model)
+    rsp = client.DescribeAIRecognitionTemplates(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyHeadTailTemplate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyHeadTailTemplateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyHeadTailTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1652,6 +1679,33 @@ def doDeleteImageProcessingTemplate(args, parsed_globals):
     model = models.DeleteImageProcessingTemplateRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DeleteImageProcessingTemplate(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateHeadTailTemplate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateHeadTailTemplateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateHeadTailTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1768,7 +1822,7 @@ def doModifySubAppIdInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateWatermarkTemplate(args, parsed_globals):
+def doCreateImageSpriteTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1784,9 +1838,9 @@ def doCreateWatermarkTemplate(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateWatermarkTemplateRequest()
+    model = models.CreateImageSpriteTemplateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateWatermarkTemplate(model)
+    rsp = client.CreateImageSpriteTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2146,7 +2200,7 @@ def doDescribeAdaptiveDynamicStreamingTemplates(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSampleSnapshotTemplates(args, parsed_globals):
+def doDescribeDrmDataKey(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2162,9 +2216,9 @@ def doDescribeSampleSnapshotTemplates(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSampleSnapshotTemplatesRequest()
+    model = models.DescribeDrmDataKeyRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSampleSnapshotTemplates(model)
+    rsp = client.DescribeDrmDataKey(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2281,7 +2335,7 @@ def doDescribeWatermarkTemplates(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateImageSpriteTemplate(args, parsed_globals):
+def doCreateWatermarkTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2297,9 +2351,9 @@ def doCreateImageSpriteTemplate(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateImageSpriteTemplateRequest()
+    model = models.CreateWatermarkTemplateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateImageSpriteTemplate(model)
+    rsp = client.CreateWatermarkTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2308,7 +2362,7 @@ def doCreateImageSpriteTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAIRecognitionTemplates(args, parsed_globals):
+def doDescribeContentReviewTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2324,9 +2378,9 @@ def doDescribeAIRecognitionTemplates(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAIRecognitionTemplatesRequest()
+    model = models.DescribeContentReviewTemplatesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeAIRecognitionTemplates(model)
+    rsp = client.DescribeContentReviewTemplates(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2389,6 +2443,33 @@ def doDescribeSubAppIds(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeHeadTailTemplates(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHeadTailTemplatesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeHeadTailTemplates(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCommitUpload(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2408,6 +2489,33 @@ def doCommitUpload(args, parsed_globals):
     model = models.CommitUploadRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CommitUpload(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doConfirmEvents(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ConfirmEventsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ConfirmEvents(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2578,33 +2686,6 @@ def doCreateAnimatedGraphicsTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAnimatedGraphicsTemplate(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAnimatedGraphicsTemplateRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyAnimatedGraphicsTemplate(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doAttachMediaSubtitles(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2759,6 +2840,33 @@ def doSimpleHlsClip(args, parsed_globals):
     model = models.SimpleHlsClipRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.SimpleHlsClip(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteHeadTailTemplate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteHeadTailTemplateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteHeadTailTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2986,7 +3094,7 @@ ACTION_MAP = {
     "DeleteProcedureTemplate": doDeleteProcedureTemplate,
     "DeleteAdaptiveDynamicStreamingTemplate": doDeleteAdaptiveDynamicStreamingTemplate,
     "CreateAdaptiveDynamicStreamingTemplate": doCreateAdaptiveDynamicStreamingTemplate,
-    "DescribeDrmDataKey": doDescribeDrmDataKey,
+    "DescribeSampleSnapshotTemplates": doDescribeSampleSnapshotTemplates,
     "DeleteSnapshotByTimeOffsetTemplate": doDeleteSnapshotByTimeOffsetTemplate,
     "DescribeCdnLogs": doDescribeCdnLogs,
     "ModifyClass": doModifyClass,
@@ -3000,7 +3108,7 @@ ACTION_MAP = {
     "ExecuteFunction": doExecuteFunction,
     "DescribeMediaProcessUsageData": doDescribeMediaProcessUsageData,
     "DescribePrepaidProducts": doDescribePrepaidProducts,
-    "ConfirmEvents": doConfirmEvents,
+    "ModifyAnimatedGraphicsTemplate": doModifyAnimatedGraphicsTemplate,
     "ComposeMedia": doComposeMedia,
     "CreateContentReviewTemplate": doCreateContentReviewTemplate,
     "CreateSampleSnapshotTemplate": doCreateSampleSnapshotTemplate,
@@ -3026,13 +3134,15 @@ ACTION_MAP = {
     "DescribeSnapshotByTimeOffsetTemplates": doDescribeSnapshotByTimeOffsetTemplates,
     "ProcessMediaByUrl": doProcessMediaByUrl,
     "ModifyTranscodeTemplate": doModifyTranscodeTemplate,
-    "DescribeContentReviewTemplates": doDescribeContentReviewTemplates,
+    "DescribeAIRecognitionTemplates": doDescribeAIRecognitionTemplates,
+    "ModifyHeadTailTemplate": doModifyHeadTailTemplate,
     "DeleteImageProcessingTemplate": doDeleteImageProcessingTemplate,
+    "CreateHeadTailTemplate": doCreateHeadTailTemplate,
     "ModifyWatermarkTemplate": doModifyWatermarkTemplate,
     "DescribeStorageDetails": doDescribeStorageDetails,
     "DeleteWordSamples": doDeleteWordSamples,
     "ModifySubAppIdInfo": doModifySubAppIdInfo,
-    "CreateWatermarkTemplate": doCreateWatermarkTemplate,
+    "CreateImageSpriteTemplate": doCreateImageSpriteTemplate,
     "DescribePersonSamples": doDescribePersonSamples,
     "DeleteAIRecognitionTemplate": doDeleteAIRecognitionTemplate,
     "CreateSubAppId": doCreateSubAppId,
@@ -3046,29 +3156,31 @@ ACTION_MAP = {
     "CreateWordSamples": doCreateWordSamples,
     "DescribeEventConfig": doDescribeEventConfig,
     "DescribeAdaptiveDynamicStreamingTemplates": doDescribeAdaptiveDynamicStreamingTemplates,
-    "DescribeSampleSnapshotTemplates": doDescribeSampleSnapshotTemplates,
+    "DescribeDrmDataKey": doDescribeDrmDataKey,
     "ModifyWordSample": doModifyWordSample,
     "DescribeImageSpriteTemplates": doDescribeImageSpriteTemplates,
     "DescribeAllClass": doDescribeAllClass,
     "DescribeWatermarkTemplates": doDescribeWatermarkTemplates,
-    "CreateImageSpriteTemplate": doCreateImageSpriteTemplate,
-    "DescribeAIRecognitionTemplates": doDescribeAIRecognitionTemplates,
+    "CreateWatermarkTemplate": doCreateWatermarkTemplate,
+    "DescribeContentReviewTemplates": doDescribeContentReviewTemplates,
     "DescribeSuperPlayerConfigs": doDescribeSuperPlayerConfigs,
     "DescribeSubAppIds": doDescribeSubAppIds,
+    "DescribeHeadTailTemplates": doDescribeHeadTailTemplates,
     "CommitUpload": doCommitUpload,
+    "ConfirmEvents": doConfirmEvents,
     "ModifyAIRecognitionTemplate": doModifyAIRecognitionTemplate,
     "ModifyAdaptiveDynamicStreamingTemplate": doModifyAdaptiveDynamicStreamingTemplate,
     "SearchMedia": doSearchMedia,
     "DeleteWatermarkTemplate": doDeleteWatermarkTemplate,
     "DeletePersonSample": doDeletePersonSample,
     "CreateAnimatedGraphicsTemplate": doCreateAnimatedGraphicsTemplate,
-    "ModifyAnimatedGraphicsTemplate": doModifyAnimatedGraphicsTemplate,
     "AttachMediaSubtitles": doAttachMediaSubtitles,
     "ModifyEventConfig": doModifyEventConfig,
     "DescribeDailyPlayStatFileList": doDescribeDailyPlayStatFileList,
     "DeleteSampleSnapshotTemplate": doDeleteSampleSnapshotTemplate,
     "WeChatMiniProgramPublish": doWeChatMiniProgramPublish,
     "SimpleHlsClip": doSimpleHlsClip,
+    "DeleteHeadTailTemplate": doDeleteHeadTailTemplate,
     "CreatePersonSample": doCreatePersonSample,
     "ModifySubAppIdStatus": doModifySubAppIdStatus,
     "ModifyContentReviewTemplate": doModifyContentReviewTemplate,
