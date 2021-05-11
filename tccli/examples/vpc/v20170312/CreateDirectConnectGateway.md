@@ -32,6 +32,9 @@ Output:
                 true
             ],
             "NatGatewayId": "nat-m7dr11gc",
+            "LocalZone": false,
+            "Zone": "ap-guangzhou-1",
+            "ModeType": "standard",
             "CreateTime": "2020-09-22 00:00:00"
         },
         "RequestId": "b8351d12-3c82-4d4b-9d88-972e02ca4620"
@@ -70,6 +73,9 @@ Output:
             "CcnRouteType": "BGP",
             "NatGatewayId": "",
             "DirectConnectGatewayIp": "10.21.0.5",
+            "LocalZone": false,
+            "Zone": "ap-guangzhou-1",
+            "ModeType": "standard",
             "VXLANSupport": [
                 true
             ],

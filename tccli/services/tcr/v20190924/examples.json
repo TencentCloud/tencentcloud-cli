@@ -577,15 +577,21 @@
     "ModifyInstanceToken": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\r\n&<公共请求参数>\r\n&RegistryId=tcr-12345\r\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\r\n&Enable=true",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Enable=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
         "title": "启用实例长期访问凭证"
       },
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\r\n&<公共请求参数>\r\n&RegistryId=tcr-12345\r\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\r\n&Enable=false",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Enable=false\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
         "title": "禁用实例长期访问凭证"
+      },
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Desc=aaa\n&ModifyFlag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
+        "title": "更新描述"
       }
     ],
     "ModifyNamespace": [

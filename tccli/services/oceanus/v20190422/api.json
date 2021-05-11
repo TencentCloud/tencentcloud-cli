@@ -93,8 +93,8 @@
   },
   "metadata": {
     "apiVersion": "2019-04-22",
-    "api_brief": "首次开放作业管理的8个api",
-    "serviceNameCN": "流计算服务",
+    "api_brief": "用户可以使用云 API 来实现作业、资源的管理。",
+    "serviceNameCN": "流计算 Oceanus",
     "serviceShortName": "oceanus"
   },
   "objects": {
@@ -351,6 +351,7 @@
         {
           "default": "",
           "document": "资源位置",
+          "example": "[]",
           "member": "ResourceLoc",
           "name": "ResourceLoc",
           "required": true,
@@ -359,6 +360,7 @@
         {
           "default": "",
           "document": "资源名称",
+          "example": "1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -366,7 +368,8 @@
         },
         {
           "default": "",
-          "document": "资源类型，占时只支持jar，填1",
+          "document": "资源类型。目前只支持 JAR，取值为 1",
+          "example": "1",
           "member": "int64",
           "name": "ResourceType",
           "required": true,
@@ -375,6 +378,7 @@
         {
           "default": "",
           "document": "资源描述",
+          "example": "v1",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -383,6 +387,7 @@
         {
           "default": "",
           "document": "资源版本描述",
+          "example": "1",
           "member": "string",
           "name": "ResourceConfigRemark",
           "required": false,
@@ -396,15 +401,19 @@
       "members": [
         {
           "document": "资源ID",
+          "example": "resource-xxx",
           "member": "string",
           "name": "ResourceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "资源版本",
+          "example": "1",
           "member": "int64",
           "name": "Version",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -626,7 +635,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，详见作业过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定JobIds和Filters。",
+          "document": "过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId。每次请求的 Filters 个数的上限为 3，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -659,9 +668,10 @@
       "members": [
         {
           "document": "作业总数",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -670,6 +680,7 @@
           "example": "[]",
           "member": "JobV1",
           "name": "JobSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -696,7 +707,7 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，仅当设置 Limit 时该参数有效",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -705,7 +716,7 @@
         },
         {
           "default": "",
-          "document": "返回值大小",
+          "document": "返回值大小，不填则返回全量数据",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -858,7 +869,7 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，仅当设置 Limit 参数时有效",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -867,7 +878,7 @@
         },
         {
           "default": "",
-          "document": "条数限制",
+          "document": "条数限制。如果不填，默认返回 20 条",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -922,6 +933,7 @@
         {
           "default": "",
           "document": "需要查询的资源ID数组",
+          "example": "[]",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
@@ -929,7 +941,8 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，仅当设置 Limit 参数时有效",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -937,7 +950,8 @@
         },
         {
           "default": "",
-          "document": "条数限制",
+          "document": "条数限制，默认返回 20 条",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -945,7 +959,8 @@
         },
         {
           "default": "",
-          "document": "查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表",
+          "document": "查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -954,6 +969,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cluster-xxxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -967,15 +983,19 @@
       "members": [
         {
           "document": "资源详细信息集合",
+          "example": "[]",
           "member": "SystemResourceItem",
           "name": "ResourceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "总数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1857,6 +1877,7 @@
         {
           "default": "",
           "document": "作业Id",
+          "example": "cql-6w8eab6f",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -1866,6 +1887,7 @@
         {
           "default": "",
           "document": "运行类型，1：启动，2：恢复",
+          "example": "1",
           "member": "int64",
           "name": "RunType",
           "required": true,
@@ -1874,7 +1896,8 @@
         },
         {
           "default": "",
-          "document": "SQL类型作业启动参数：指定数据源消费起始时间点",
+          "document": "已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点",
+          "example": "LATEST",
           "member": "string",
           "name": "StartMode",
           "required": false,
@@ -1883,7 +1906,8 @@
         },
         {
           "default": "",
-          "document": "已发布上线的作业配置版本",
+          "document": "当前作业的某个版本",
+          "example": "1",
           "member": "uint64",
           "name": "JobConfigVersion",
           "required": false,
@@ -1975,6 +1999,7 @@
         {
           "default": "",
           "document": "资源ID",
+          "example": "resource-9ds0xim0",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -1984,6 +2009,7 @@
         {
           "default": "",
           "document": "资源名称",
+          "example": "SampleProgram",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1992,7 +2018,8 @@
         },
         {
           "default": "",
-          "document": "资源类型",
+          "document": "资源类型。1 表示 JAR 包，目前只支持该值。",
+          "example": "1",
           "member": "int64",
           "name": "ResourceType",
           "required": true,
@@ -2002,6 +2029,7 @@
         {
           "default": "",
           "document": "资源备注",
+          "example": "我的测试程序包",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -2011,6 +2039,7 @@
         {
           "default": "",
           "document": "资源所属地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -2020,6 +2049,7 @@
         {
           "default": "",
           "document": "资源的最新版本",
+          "example": "2",
           "member": "int64",
           "name": "LatestResourceConfigVersion",
           "required": true,

@@ -7,7 +7,7 @@ Input:
 ```
 tccli nlp TextClassification --cli-unfold-argument  \
     --Text "为迎接下周的比赛，今日巴萨队又开始了集训。" \
-    --Flag 2
+    --Flag 1
 ```
 
 Output: 

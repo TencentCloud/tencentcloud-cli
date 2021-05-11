@@ -40,6 +40,14 @@
         "title": "查询ES集群实例"
       }
     ],
+    "DiagnoseInstance": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=DiagnoseInstance\n&InstanceId=ex-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\n    }\n}",
+        "title": "智能运维诊断集群"
+      }
+    ],
     "GetRequestTargetNodeTypes": [
       {
         "document": "对于冷热分离的集群，可以通过该接口获取到当前集群用于接收客户端请求的节点类型",
@@ -70,6 +78,14 @@
         "input": "https://es.tencentcloudapi.com/?Action=RestartNodes\r\n&InstanceId=es-xxxxxxxx\r\n&NodeNames.0=159229897700074xxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "重启集群节点"
+      }
+    ],
+    "UpdateDiagnoseSettings": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateDiagnoseSettings\n&InstanceId=es-xxxxxx\n&Status=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "开启智能运维"
       }
     ],
     "UpdateInstance": [

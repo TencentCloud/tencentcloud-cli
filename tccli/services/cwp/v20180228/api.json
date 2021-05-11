@@ -216,6 +216,12 @@
       "name": "获取组件列表",
       "output": "DescribeComponentsResponse"
     },
+    "DescribeESHits": {
+      "document": "获取ES查询文档列表",
+      "input": "DescribeESHitsRequest",
+      "name": "获取ES查询文档列表",
+      "output": "DescribeESHitsResponse"
+    },
     "DescribeExportMachines": {
       "document": "本接口 (DescribeExportMachines) 用于导出区域主机列表。",
       "input": "DescribeExportMachinesRequest",
@@ -3249,6 +3255,60 @@
           "name": "Components",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeESHitsRequest": {
+      "document": "DescribeESHits请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES查询条件JSON",
+          "example": "xxx",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeESHitsResponse": {
+      "document": "DescribeESHits返回参数结构体",
+      "members": [
+        {
+          "document": "ES查询结果JSON",
+          "example": "xxx",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

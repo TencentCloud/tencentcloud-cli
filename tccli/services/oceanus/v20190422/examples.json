@@ -37,7 +37,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResourceConfigs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"ResourceConfigVersions\": [\n        \"1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
-        "title": "正常请求【无子请求】"
+        "title": "删除资源版本"
       }
     ],
     "DeleteResources": [
@@ -85,7 +85,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceRelatedJobs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"DESCByJobConfigCreateTime\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RefJobInfos\": [\n            {\n                \"JobConfigVersion\": 0,\n                \"ResourceVersion\": 0,\n                \"JobId\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "正常请求【无子请求】"
+        "title": "获取资源关联作业信息"
       }
     ],
     "DescribeResources": [

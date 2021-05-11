@@ -1388,6 +1388,7 @@
         {
           "default": "",
           "document": "计算签名的密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "string",
           "name": "SecretKey",
           "required": true,
@@ -1397,6 +1398,7 @@
         {
           "default": "",
           "document": "签名参数名设置\n仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头",
+          "example": "-",
           "member": "string",
           "name": "SignParam",
           "required": true,
@@ -1405,7 +1407,8 @@
         },
         {
           "default": "",
-          "document": "签名过期时间设置\n单位为秒，最大可设置为 31536000",
+          "document": "签名过期时间设置\n单位为秒，最大可设置为 630720000",
+          "example": "123",
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
@@ -1415,6 +1418,7 @@
         {
           "default": "",
           "document": "鉴权/不做鉴权的文件扩展名列表设置\n如果包含字符 *  则表示所有文件",
+          "example": "[\"*\"]",
           "member": "string",
           "name": "FileExtensions",
           "required": true,
@@ -1424,6 +1428,7 @@
         {
           "default": "",
           "document": "whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权\nblacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权",
+          "example": "whitelist",
           "member": "string",
           "name": "FilterType",
           "required": true,
@@ -1439,6 +1444,7 @@
         {
           "default": "",
           "document": "计算签名的密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "string",
           "name": "SecretKey",
           "required": true,
@@ -1447,7 +1453,8 @@
         },
         {
           "default": "",
-          "document": "签名过期时间设置\n单位为秒，最大可设置为 31536000",
+          "document": "签名过期时间设置\n单位为秒，最大可设置为 630720000",
+          "example": "123",
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
@@ -1457,6 +1464,7 @@
         {
           "default": "",
           "document": "鉴权/不做鉴权的文件扩展名列表设置\n如果包含字符 *  则表示所有文件",
+          "example": "[\"*\"]",
           "member": "string",
           "name": "FileExtensions",
           "required": true,
@@ -1466,6 +1474,7 @@
         {
           "default": "",
           "document": "whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权\nblacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权",
+          "example": "whitelist",
           "member": "string",
           "name": "FilterType",
           "required": true,
@@ -1481,6 +1490,7 @@
         {
           "default": "",
           "document": "计算签名的密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "string",
           "name": "SecretKey",
           "required": true,
@@ -1489,7 +1499,8 @@
         },
         {
           "default": "",
-          "document": "签名过期时间设置\n单位为秒，最大可设置为 31536000",
+          "document": "签名过期时间设置\n单位为秒，最大可设置为 630720000",
+          "example": "123",
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
@@ -1499,6 +1510,7 @@
         {
           "default": "",
           "document": "鉴权/不做鉴权的文件扩展名列表设置\n如果包含字符 *  则表示所有文件",
+          "example": "[\"*\"]",
           "member": "string",
           "name": "FileExtensions",
           "required": true,
@@ -1508,6 +1520,7 @@
         {
           "default": "",
           "document": "whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权\nblacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权",
+          "example": "whitelist",
           "member": "string",
           "name": "FilterType",
           "required": true,
@@ -1517,6 +1530,7 @@
         {
           "default": "",
           "document": "时间戳进制设置\ndec：十进制\nhex：十六进制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dec",
           "member": "string",
           "name": "TimeFormat",
           "required": false,
@@ -1532,6 +1546,7 @@
         {
           "default": "",
           "document": "计算签名的密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "string",
           "name": "SecretKey",
           "required": true,
@@ -1540,7 +1555,8 @@
         },
         {
           "default": "",
-          "document": "签名过期时间设置\n单位为秒，最大可设置为 31536000",
+          "document": "签名过期时间设置\n单位为秒，最大可设置为 630720000",
+          "example": "123",
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
@@ -1550,6 +1566,7 @@
         {
           "default": "",
           "document": "鉴权/不做鉴权的文件扩展名列表设置\n如果包含字符 *  则表示所有文件",
+          "example": "[\"*\"]",
           "member": "string",
           "name": "FileExtensions",
           "required": true,
@@ -1559,6 +1576,7 @@
         {
           "default": "",
           "document": "whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权\nblacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权",
+          "example": "whitelist",
           "member": "string",
           "name": "FilterType",
           "required": true,
@@ -1568,6 +1586,7 @@
         {
           "default": "",
           "document": "签名参数名设置\n仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头",
+          "example": "-",
           "member": "string",
           "name": "SignParam",
           "required": true,
@@ -1577,6 +1596,7 @@
         {
           "default": "",
           "document": "时间戳参数名设置\n仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头",
+          "example": "tp",
           "member": "string",
           "name": "TimeParam",
           "required": true,
@@ -1586,6 +1606,7 @@
         {
           "default": "",
           "document": "时间戳进制设置\ndec：十进制\nhex：十六进制",
+          "example": "dec",
           "member": "string",
           "name": "TimeFormat",
           "required": true,

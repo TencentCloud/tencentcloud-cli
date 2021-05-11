@@ -18,6 +18,12 @@
       "name": "创建告警策略",
       "output": "CreateAlarmPolicyResponse"
     },
+    "CreateAlertRule": {
+      "document": "创建 Prometheus 告警规则",
+      "input": "CreateAlertRuleRequest",
+      "name": "创建告警规则",
+      "output": "CreateAlertRuleResponse"
+    },
     "CreatePolicyGroup": {
       "document": "增加策略组",
       "input": "CreatePolicyGroupRequest",
@@ -41,6 +47,12 @@
       "input": "DeleteAlarmPolicyRequest",
       "name": "删除告警策略",
       "output": "DeleteAlarmPolicyResponse"
+    },
+    "DeleteAlertRules": {
+      "document": "批量删除 Prometheus 报警规则",
+      "input": "DeleteAlertRulesRequest",
+      "name": "删除报警规则",
+      "output": "DeleteAlertRulesResponse"
     },
     "DeletePolicyGroup": {
       "document": "删除告警策略组",
@@ -107,6 +119,12 @@
       "input": "DescribeAlarmPolicyRequest",
       "name": "获取单个告警策略详情",
       "output": "DescribeAlarmPolicyResponse"
+    },
+    "DescribeAlertRules": {
+      "document": "Prometheus 报警规则查询接口",
+      "input": "DescribeAlertRulesRequest",
+      "name": "报警规则查询",
+      "output": "DescribeAlertRulesResponse"
     },
     "DescribeAllNamespaces": {
       "document": "查询所有名字空间",
@@ -263,6 +281,18 @@
       "input": "UnBindingPolicyObjectRequest",
       "name": "删除策略的关联对象",
       "output": "UnBindingPolicyObjectResponse"
+    },
+    "UpdateAlertRule": {
+      "document": "更新 Prometheus 的报警规则",
+      "input": "UpdateAlertRuleRequest",
+      "name": "更新报警规则",
+      "output": "UpdateAlertRuleResponse"
+    },
+    "UpdateAlertRuleState": {
+      "document": "更新 Prometheus 报警策略状态",
+      "input": "UpdateAlertRuleStateRequest",
+      "name": "更新报警策略状态",
+      "output": "UpdateAlertRuleStateResponse"
     },
     "UpdateServiceDiscovery": {
       "document": "在腾讯云容器服务下更新 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
@@ -1624,6 +1654,114 @@
       ],
       "type": "object"
     },
+    "CreateAlertRuleRequest": {
+      "document": "CreateAlertRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-123131",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "告警规则测试",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则表达式",
+          "example": "job:request_latency_seconds:mean5m{job=\"myjob\"} > 0.5",
+          "member": "string",
+          "name": "Expr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警通知模板 ID 列表",
+          "example": "[\"Consumer-5sfs3242\"]",
+          "member": "string",
+          "name": "Receivers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "规则状态码，取值如下：\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则报警持续时间",
+          "example": "5m",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "[{Key: \"ip\" Value: \"1.1.1.1\"}]",
+          "member": "PrometheusRuleKV",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "注释列表",
+          "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
+          "member": "PrometheusRuleKV",
+          "name": "Annotations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "报警策略模板分类",
+          "example": "TargetDown",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlertRuleResponse": {
+      "document": "CreateAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "arule-f2vx2owo",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePolicyGroupCondition": {
       "document": "创建策略传入的阈值告警条件",
       "members": [
@@ -2021,6 +2159,42 @@
     },
     "DeleteAlarmPolicyResponse": {
       "document": "DeleteAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlertRulesRequest": {
+      "document": "DeleteAlertRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则 ID 列表",
+          "example": "[\"arule-m74lrt6g\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-123123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlertRulesResponse": {
+      "document": "DeleteAlertRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3015,6 +3189,105 @@
           "name": "Policy",
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlertRulesRequest": {
+      "document": "DescribeAlertRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "my-prom-gg",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则 ID",
+          "example": "arule-f2vx278",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则状态码，取值如下：\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "告警规则测试",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报警策略模板分类",
+          "example": "TargetDown",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlertRulesResponse": {
+      "document": "DescribeAlertRules返回参数结构体",
+      "members": [
+        {
+          "document": "报警规则数量",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "报警规则详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusRuleSet",
+          "name": "AlertRuleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7182,6 +7455,144 @@
       ],
       "usage": "out"
     },
+    "PrometheusRuleKV": {
+      "document": "prometheus 报警规则 KV 参数",
+      "members": [
+        {
+          "default": "",
+          "document": "键",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusRuleSet": {
+      "document": "prometheus 报警规则集",
+      "members": [
+        {
+          "default": "",
+          "document": "规则 ID",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则状态码",
+          "member": "int64",
+          "name": "RuleState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusRuleKV",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则注释列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusRuleKV",
+          "name": "Annotations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Expr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则报警持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Duration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "报警接收组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Receivers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则运行健康状态，取值如下：\n<li>unknown 未知状态</li>\n<li>pending 加载中</li>\n<li>ok 运行正常</li>\n<li>err 运行错误</li>",
+          "member": "string",
+          "name": "Health",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PutMonitorDataRequest": {
       "document": "PutMonitorData请求参数结构体",
       "members": [
@@ -7718,6 +8129,168 @@
     },
     "UnBindingPolicyObjectResponse": {
       "document": "UnBindingPolicyObject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAlertRuleRequest": {
+      "document": "UpdateAlertRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 报警规则 ID",
+          "example": "arule-omq28fcm",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-123131",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleState",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "报警规则名称",
+          "example": "告警规则测试",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报警规则表达式",
+          "example": "job:request_latency_seconds:mean5m{job=\"myjob\"} > 0.5",
+          "member": "string",
+          "name": "Expr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报警规则持续时间",
+          "example": "1m",
+          "member": "string",
+          "name": "Duration",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报警规则接收组列表",
+          "example": "[\"Consumer-5sfs3242\"]",
+          "member": "string",
+          "name": "Receivers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "报警规则标签列表",
+          "example": "[{Key: \"ip\" Value: \"1.1.1.1\"}]",
+          "member": "PrometheusRuleKV",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "报警规则注释列表",
+          "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
+          "member": "PrometheusRuleKV",
+          "name": "Annotations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "报警策略模板分类",
+          "example": "TargetDown",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAlertRuleResponse": {
+      "document": "UpdateAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则 ID",
+          "example": "arule-omq28fcm",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAlertRuleStateRequest": {
+      "document": "UpdateAlertRuleState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则 ID 列表",
+          "example": "[\"arule-m74lrt6g\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "my-prom-gg",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则状态码，取值如下：\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
+          "example": "3",
+          "member": "int64",
+          "name": "RuleState",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAlertRuleStateResponse": {
+      "document": "UpdateAlertRuleState返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

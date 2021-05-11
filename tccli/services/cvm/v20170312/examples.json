@@ -72,6 +72,14 @@
         "title": "删除密钥对"
       }
     ],
+    "DescribeAccountQuota": [
+      {
+        "document": "查询用户云主机、各个地域配额等数据。",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeAccountQuota\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccountQuotaOverview\": {\n            \"Region\": \"ap-guangzhou\",\n            \"AccountQuota\": {\n                \"PostPaidQuotaSet\": [\n                    {\n                        \"UsedQuota\": 0,\n                        \"RemainingQuota\": 288,\n                        \"TotalQuota\": 288,\n                        \"Zone\": \"ap-guangzhou-1\"\n                    },\n                    {\n                        \"UsedQuota\": 2,\n                        \"RemainingQuota\": 1248,\n                        \"TotalQuota\": 1250,\n                        \"Zone\": \"ap-guangzhou-2\"\n                    }\n                ],\n                \"DisasterRecoverGroupQuotaSet\": [\n                    {\n                        \"CvmInRackGroupQuota\": 30,\n                        \"GroupQuota\": 10,\n                        \"CvmInHostGroupQuota\": 50,\n                        \"CurrentNum\": 0,\n                        \"CvmInSwitchGroupQuota\": 20\n                    }\n                ],\n                \"PrePaidQuotaSet\": [\n                    {\n                        \"UsedQuota\": 0,\n                        \"OnceQuota\": 300,\n                        \"Zone\": \"ap-guangzhou-1\",\n                        \"TotalQuota\": 255,\n                        \"RemainingQuota\": 255\n                    },\n                    {\n                        \"UsedQuota\": 0,\n                        \"OnceQuota\": 300,\n                        \"Zone\": \"ap-guangzhou-2\",\n                        \"TotalQuota\": 222,\n                        \"RemainingQuota\": 222\n                    }\n                ],\n                \"SpotPaidQuotaSet\": [\n                    {\n                        \"UsedQuota\": 0,\n                        \"RemainingQuota\": 244,\n                        \"TotalQuota\": 244,\n                        \"Zone\": \"ap-guangzhou-1\"\n                    },\n                    {\n                        \"UsedQuota\": 4,\n                        \"RemainingQuota\": 195,\n                        \"TotalQuota\": 199,\n                        \"Zone\": \"ap-guangzhou-2\"\n                    }\n                ],\n                \"ImageQuotaSet\": [\n                    {\n                        \"UsedQuota\": 0,\n                        \"TotalQuota\": 10\n                    }\n                ]\n            }\n        },\n        \"RequestId\": \"7f117776-3d20-4f00-839b-b22b04625f47\",\n        \"AppId\": 251007416\n    }\n}",
+        "title": "查询用户概览数据"
+      }
+    ],
     "DescribeDisasterRecoverGroupQuota": [
       {
         "document": "查询用户置放群组配额",
@@ -501,7 +509,7 @@
     "ResetInstance": [
       {
         "document": "本示例用于指定镜像、登录密码和增强服务来重装实例，同时扩容实例系统盘。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstance\r\n&InstanceId=ins-r8hr2upy\r\n&ImageId=img-pmqg1cw7\r\n&SystemDisk.DiskSize=60\r\n&LoginSettings.Password=Qcloud@TestApi123++\r\n&EnhancedService.SecurityService.Enabled=TRUE\r\n&EnhancedService.MonitorService.Enabled=TRUE\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstance\n&InstanceId=ins-r8hr2upy\n&ImageId=img-pmqg1cw7\n&SystemDisk.DiskSize=60\n&LoginSettings.Password=Qcloud@TestApi123++\n&EnhancedService.SecurityService.Enabled=TRUE\n&EnhancedService.MonitorService.Enabled=TRUE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0a66377-b79f-4a21-846c-d997d6022968\"\n    }\n}",
         "title": "重装实例"
       }
@@ -581,7 +589,7 @@
     "StopInstances": [
       {
         "document": "本示例用于关闭两个实例。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=StopInstances\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&ForceStop=FALSE\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=StopInstances\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&ForceStop=FALSE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "关闭实例"
       }

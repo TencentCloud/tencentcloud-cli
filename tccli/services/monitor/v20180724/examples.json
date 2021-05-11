@@ -24,6 +24,14 @@
         "title": "创建告警策略"
       }
     ],
+    "CreateAlertRule": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=CreateAlertRule\n&InstanceId=my-prom-gg\n&RuleState=2\n&Expr=\"up{service=\\\"rig-prometheus-agent\\\"}>0\"\n&Duration=5m\n&Receivers.0=34224\n&RuleName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"hfd437lxxdj3455-qxdb3eyydvw4doxm\",\n        \"RuleId\": \"arule-f2vx2owo\"\n    }\n}",
+        "title": "创建报警规则"
+      }
+    ],
     "CreatePolicyGroup": [
       {
         "document": "",
@@ -54,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarmPolicy\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"PolicyIds\": [\n        \"policy-289ghn129\",\n        \"policy-3u3h90h3j\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"29ghj2hh-45-h53h234h-23\"\n    }\n}",
         "title": "删除告警策略"
+      }
+    ],
+    "DeleteAlertRules": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DeleteAlertRules\n&InstanceId=my-prom-gg\n&RuleIds.0=arule-m74lrt6g\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ljynf9quqfeko5pwcr24llmhy9rspzye\"\n    }\n}",
+        "title": "删除报警规则"
       }
     ],
     "DeletePolicyGroup": [
@@ -154,6 +170,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmPolicy\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"PolicyId\": \"policy-t1pvz47f\"\n}",
         "output": "{\n    \"Response\": {\n        \"Policy\": {\n            \"PolicyId\": \"policy-t1pvz47f\",\n            \"PolicyName\": \"云服务器基础监控告警策略\",\n            \"UseSum\": 1,\n            \"Remark\": \"\",\n            \"MonitorType\": \"MT_QCE\",\n            \"Enable\": 1,\n            \"IsDefault\": 0,\n            \"ProjectId\": 0,\n            \"ProjectName\": \"默认项目\",\n            \"Namespace\": \"cvm_device\",\n            \"ConditionTemplateId\": \"\",\n            \"Condition\": {\n                \"IsUnionRule\": 0,\n                \"Rules\": [\n                    {\n                        \"MetricName\": \"CpuUsage\",\n                        \"Description\": \"CPU利用率\",\n                        \"Unit\": \"%\",\n                        \"Period\": 60,\n                        \"Operator\": \"gt\",\n                        \"Value\": \"0\",\n                        \"ContinuePeriod\": 1,\n                        \"NoticeFrequency\": 86400,\n                        \"IsPowerNotice\": 0,\n                        \"Filter\": {\n                            \"Type\": \"\",\n                            \"Dimensions\": \"[]\"\n                        },\n                        \"RuleType\": \"\"\n                    }\n                ]\n            },\n            \"EventCondition\": {\n                \"Rules\": []\n            },\n            \"NoticeIds\": [\n                \"notice-rwudonte\"\n            ],\n            \"Notices\": [\n                {\n                    \"Id\": \"notice-rwudonte\",\n                    \"Name\": \"系统预设通知模板\",\n                    \"UpdatedAt\": \"2020-12-04 19:22:30\",\n                    \"UpdatedBy\": \"1500000686\",\n                    \"NoticeType\": \"ALL\",\n                    \"UserNotices\": [\n                        {\n                            \"ReceiverType\": \"USER\",\n                            \"UserIds\": [\n                                1001357\n                            ],\n                            \"GroupIds\": null,\n                            \"StartTime\": 0,\n                            \"EndTime\": 86399,\n                            \"NoticeWay\": [\n                                \"SMS\",\n                                \"EMAIL\"\n                            ],\n                            \"PhoneOrder\": null,\n                            \"PhoneCircleTimes\": 0,\n                            \"PhoneInnerInterval\": 0,\n                            \"PhoneCircleInterval\": 0,\n                            \"NeedPhoneArriveNotice\": 0\n                        }\n                    ],\n                    \"URLNotices\": [],\n                    \"IsPreset\": 1,\n                    \"NoticeLanguage\": \"zh-CN\"\n                }\n            ],\n            \"TriggerTasks\": [],\n            \"OriginId\": \"1319514\",\n            \"ConditionsTemp\": {\n                \"TemplateName\": \"\",\n                \"Condition\": null,\n                \"EventCondition\": null\n            },\n            \"LastEditUin\": \"1500000686\",\n            \"UpdateTime\": 1608197675,\n            \"InsertTime\": 1608197675,\n            \"Region\": [\n                \"bj\",\n                \"ca\",\n                \"cd\",\n                \"cgoec\",\n                \"cq\",\n                \"de\",\n                \"fzec\",\n                \"gz\",\n                \"gzopen\",\n                \"hfeec\",\n                \"hk\",\n                \"hzec\",\n                \"in\",\n                \"jnec\",\n                \"jp\",\n                \"kr\",\n                \"nj\",\n                \"ru\",\n                \"sg\",\n                \"sh\",\n                \"sheec\",\n                \"shjr\",\n                \"szjr\",\n                \"szx\",\n                \"th\",\n                \"tpe\",\n                \"tsn\",\n                \"use\",\n                \"usw\",\n                \"xbec\",\n                \"xiyec\"\n            ],\n            \"NamespaceShowName\": \"云服务器-基础监控\",\n            \"CanSetDefault\": 0,\n            \"InstanceGroupId\": 6155,\n            \"InstanceGroupName\": \"mingc_instance\",\n            \"InstanceSum\": 1,\n            \"RuleType\": \"STATIC\"\n        },\n        \"RequestId\": \"546f55d8-80d1-4668-a43e-11490491d62e\"\n    }\n}",
         "title": "查询告警策略详情"
+      }
+    ],
+    "DescribeAlertRules": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribeAlertRules\n&InstanceId=my-prom-gg\n&RuleState=2\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AlertRuleSet\": [\n            {\n                \"RuleId\": \"arule-c9qvmfm8\",\n                \"RuleName\": \"example6\",\n                \"RuleState\": 3,\n                \"Health\": \"unknown\",\n                \"Type\": \"\",\n                \"Labels\": [\n                    {\n                        \"Key\": \"k1\",\n                        \"Value\": \"v1\"\n                    },\n                    {\n                        \"Key\": \"k2\",\n                        \"Value\": \"v2\"\n                    }\n                ],\n                \"Expr\": \"up{service=\\\"rig-prometheus-agent\\\"} > 0\",\n                \"Annotations\": [\n                    {\n                        \"Key\": \"ak1\",\n                        \"Value\": \"av1\"\n                    },\n                    {\n                        \"Key\": \"ak2\",\n                        \"Value\": \"av2\"\n                    }\n                ],\n                \"Duration\": \"1m\",\n                \"Receivers\": [\n                    \"123\",\n                    \"456\"\n                ],\n                \"CreatedAt\": \"2020-08-24T09:39:27Z\",\n                \"UpdatedAt\": \"2020-08-24T09:39:27Z\"\n            },\n            {\n                \"RuleId\": \"arule-nnqzmis6\",\n                \"RuleName\": \"example5\",\n                \"RuleState\": 2,\n                \"Health\": \"ok\",\n                \"Type\": \"\",\n                \"Labels\": [\n                    {\n                        \"Key\": \"k1\",\n                        \"Value\": \"v1\"\n                    },\n                    {\n                        \"Key\": \"k2\",\n                        \"Value\": \"v2\"\n                    }\n                ],\n                \"Expr\": \"up{service=\\\"rig-prometheus-agent\\\"} > 0\",\n                \"Annotations\": [\n                    {\n                        \"Key\": \"ak1\",\n                        \"Value\": \"av1\"\n                    },\n                    {\n                        \"Key\": \"ak2\",\n                        \"Value\": \"av2\"\n                    }\n                ],\n                \"Duration\": \"1m\",\n                \"Receivers\": [\n                    \"123\",\n                    \"456\"\n                ],\n                \"CreatedAt\": \"2020-08-24T09:39:17Z\",\n                \"UpdatedAt\": \"2020-08-24T09:39:17Z\"\n            }\n        ],\n        \"RequestId\": \"-fp6ttca3mlpv34ks85fv3661vja2bwg\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询报警规则"
       }
     ],
     "DescribeAllNamespaces": [
@@ -380,6 +404,22 @@
         "input": "https://monitor.tencentcloudapi.com/?Action=UnBindingPolicyObject\n&Module=monitor\n&GroupId=11111\n&UniqueId.0=3dd5113208fd467b2e5d0c1111111111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dbb66c2-1111-1111-1111-11111111111\"\n    }\n}",
         "title": "删除策略的关联对象"
+      }
+    ],
+    "UpdateAlertRule": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=UpdateAlertRule\n&InstanceId=my-prom-gg\n&RuleId=arule-omq28fcm\n&RuleState=2\n&RuleName=exampleName\n&Expr=job:request_latency_seconds:mean5m{job=\\\"myjob\\\"}>0.5\n&Duration=1m\n&Receivers.0=33432\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qyh38g1ium4-41o5k994o7hcxuq96zab\",\n        \"RuleId\": \"arule-omq28fcm\"\n    }\n}",
+        "title": "更新报警规则"
+      }
+    ],
+    "UpdateAlertRuleState": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=UpdateAlertRuleState\n&InstanceId=my-prom-gg\n&RuleIds.0=arule-m74lrt6g\n&RuleState=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ljynf9quqfeko5pwcr24llmhy9rspzye\"\n    }\n}",
+        "title": "更新报警策略状态"
       }
     ],
     "UpdateServiceDiscovery": [

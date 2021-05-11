@@ -13,6 +13,9 @@ Output:
 ```
 {
     "Response": {
+        "DownloadUrl": "https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/aaa",
+        "CustomKey": "xxx",
+        "FilePath": "file",
         "RequestId": "d691f154-c2d5-4f48-833a-a408cdaadd9c"
     }
 }

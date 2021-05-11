@@ -1373,6 +1373,15 @@
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "* EnvironmentId\n按照名称空间进行过滤，精确查询。\n类型：String\n必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1382,9 +1391,10 @@
       "members": [
         {
           "document": "命名空间记录数。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1393,6 +1403,7 @@
           "example": "[]",
           "member": "Environment",
           "name": "EnvironmentSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1579,6 +1590,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "test1",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1587,6 +1599,7 @@
         {
           "default": "",
           "document": "主题名模糊匹配。",
+          "example": "topic1",
           "member": "string",
           "name": "TopicName",
           "required": false,
@@ -1595,6 +1608,7 @@
         {
           "default": "",
           "document": "起始下标，不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1603,6 +1617,7 @@
         {
           "default": "",
           "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1611,6 +1626,7 @@
         {
           "default": "",
           "document": "topic类型描述：\n0：普通消息；\n1：全局顺序消息；\n2：局部顺序消息；\n3：重试队列；\n4：死信队列；\n5：事务消息。",
+          "example": "1",
           "member": "uint64",
           "name": "TopicType",
           "required": false,
@@ -1619,10 +1635,20 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "cluster1",
           "member": "string",
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "* TopicName\n按照主题名字查询，精确查询。\n类型：String\n必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1632,15 +1658,19 @@
       "members": [
         {
           "document": "主题集合数组。",
+          "example": "无",
           "member": "Topic",
           "name": "TopicSets",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "主题数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1782,12 +1812,39 @@
       ],
       "usage": "out"
     },
+    "Filter": {
+      "document": "过滤参数",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数的名字",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "FilterSubscription": {
       "document": "过滤订阅列表",
       "members": [
         {
           "default": "",
           "document": "是否仅展示包含真实消费者的订阅。",
+          "example": "false",
           "member": "bool",
           "name": "ConsumerHasCount",
           "required": false,
@@ -1797,6 +1854,7 @@
         {
           "default": "",
           "document": "是否仅展示消息堆积的订阅。",
+          "example": "false",
           "member": "bool",
           "name": "ConsumerHasBacklog",
           "required": false,
@@ -1806,10 +1864,21 @@
         {
           "default": "",
           "document": "是否仅展示存在消息超期丢弃的订阅。",
+          "example": "false",
           "member": "bool",
           "name": "ConsumerHasExpired",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按照订阅名过滤，精确查询。",
+          "example": "false",
+          "member": "string",
+          "name": "SubscriptionNames",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2691,6 +2760,7 @@
         {
           "default": "",
           "document": "最后一次间隔内发布消息的平均byte大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "AverageMsgSize",
           "required": true,
@@ -2700,6 +2770,7 @@
         {
           "default": "",
           "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ConsumerCount",
           "required": true,
@@ -2709,6 +2780,7 @@
         {
           "default": "",
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "LastConfirmedEntry",
           "required": true,
@@ -2718,6 +2790,7 @@
         {
           "default": "",
           "document": "最后一个ledger创建的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "LastLedgerCreatedTimestamp",
           "required": true,
@@ -2727,6 +2800,7 @@
         {
           "default": "",
           "document": "本地和复制的发布者每秒发布消息的速率。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "MsgRateIn",
           "required": true,
@@ -2736,6 +2810,7 @@
         {
           "default": "",
           "document": "本地和复制的消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "MsgRateOut",
           "required": true,
@@ -2745,6 +2820,7 @@
         {
           "default": "",
           "document": "本地和复制的发布者每秒发布消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "MsgThroughputIn",
           "required": true,
@@ -2754,6 +2830,7 @@
         {
           "default": "",
           "document": "本地和复制的消费者每秒分发消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "MsgThroughputOut",
           "required": true,
@@ -2763,6 +2840,7 @@
         {
           "default": "",
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "NumberOfEntries",
           "required": true,
@@ -2772,6 +2850,7 @@
         {
           "default": "",
           "document": "分区数<=0：topic下无子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "int64",
           "name": "Partitions",
           "required": true,
@@ -2781,6 +2860,7 @@
         {
           "default": "",
           "document": "生产者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ProducerCount",
           "required": true,
@@ -2790,6 +2870,7 @@
         {
           "default": "",
           "document": "以byte计算的所有消息存储总量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "TotalSize",
           "required": true,
@@ -2799,6 +2880,7 @@
         {
           "default": "",
           "document": "分区topic里面的子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "PartitionsTopic",
           "name": "SubTopicSets",
           "required": true,
@@ -2808,6 +2890,7 @@
         {
           "default": "",
           "document": "topic类型描述：\n0：普通消息；\n1：全局顺序消息；\n2：局部顺序消息；\n3：重试队列；\n4：死信队列；\n5：事务消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "uint64",
           "name": "TopicType",
           "required": true,
@@ -2817,6 +2900,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -2826,6 +2910,7 @@
         {
           "default": "",
           "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -2835,6 +2920,7 @@
         {
           "default": "",
           "document": "说明，128个字符以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -2844,6 +2930,7 @@
         {
           "default": "",
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -2853,8 +2940,29 @@
         {
           "default": "",
           "document": "最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "datetime",
           "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者上限。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "string",
+          "name": "ProducerLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者上限。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "string",
+          "name": "ConsumerLimit",
           "required": true,
           "type": "string",
           "value_allowed_null": true

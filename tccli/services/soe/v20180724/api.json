@@ -21,7 +21,7 @@
     "TransmitOralProcessWithInit": {
       "document": "初始化并传输音频数据，分片传输时，尽量保证SeqId顺序传输。音频源目前仅支持16k采样率16bit单声道编码方式，如有不一致可能导致评估不准确或失败。",
       "input": "TransmitOralProcessWithInitRequest",
-      "name": "发音数据传输接口附带初始化过程",
+      "name": "发音数据传输接口附带初始化过程（常用实践）",
       "output": "TransmitOralProcessWithInitResponse"
     }
   },
@@ -665,6 +665,7 @@
         {
           "default": "",
           "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。",
+          "example": "1",
           "member": "int64",
           "name": "SeqId",
           "required": true,
@@ -673,6 +674,7 @@
         {
           "default": "",
           "document": "是否传输完毕标志，若为0表示未完毕，若为1则传输完毕开始评估，非流式模式下无意义。",
+          "example": "0",
           "member": "int64",
           "name": "IsEnd",
           "required": true,
@@ -680,7 +682,8 @@
         },
         {
           "default": "",
-          "document": "语音文件类型 \t1: raw, 2: wav, 3: mp3, 4: speex (语言文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败)。",
+          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
+          "example": "1",
           "member": "int64",
           "name": "VoiceFileType",
           "required": true,
@@ -688,7 +691,8 @@
         },
         {
           "default": "",
-          "document": "语音编码类型\t1:pcm。",
+          "document": "语音编码类型\n1:pcm",
+          "example": "1",
           "member": "int64",
           "name": "VoiceEncodeType",
           "required": true,
@@ -696,7 +700,8 @@
         },
         {
           "default": "",
-          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "example": "LyoqKioqKiog5pu05paw5pe26Ze077yaMjAxOeW5tDEx5pyIMTjml6UyMzozMjow",
           "member": "string",
           "name": "UserVoiceData",
           "required": true,
@@ -704,7 +709,8 @@
         },
         {
           "default": "",
-          "document": "语音段唯一标识，一个完整语音一个SessionId。",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
+          "example": "21eae5be-9e8d-11eb-a7c6-e454e8cfe4b4",
           "member": "string",
           "name": "SessionId",
           "required": true,
@@ -712,7 +718,8 @@
         },
         {
           "default": "",
-          "document": "被评估语音对应的文本，句子模式下不超过个 20 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式该值无效。如需要在单词模式和句子模式下使用自定义音素，可以通过设置 TextMode 使用[音素标注](https://cloud.tencent.com/document/product/884/33698)。",
+          "document": "被评估语音对应的文本，仅支持中文和英文。\n句子模式下不超过个 30 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式该值无效。\n如需要在评测模式下使用自定义注音（支持中英文），可以通过设置「TextMode」参数实现，设置方式请参考[音素标注](https://cloud.tencent.com/document/product/884/33698)。",
+          "example": "apple",
           "member": "string",
           "name": "RefText",
           "required": true,
@@ -720,7 +727,8 @@
         },
         {
           "default": "",
-          "document": "语音输入模式，0：流式分片，1：非流式一次性评估",
+          "document": "语音输入模式\n0：流式分片\n1：非流式一次性评估\n推荐使用流式分片传输。",
+          "example": "0",
           "member": "int64",
           "name": "WorkMode",
           "required": true,
@@ -728,7 +736,8 @@
         },
         {
           "default": "",
-          "document": "评估模式，0：词模式（中文评测模式下为文字模式），1：句子模式，2：段落模式，3：自由说模式，当为词模式评估时，能够提供每个音节的评估信息，当为句子模式时，能够提供完整度和流利度信息，4：单词纠错模式：能够对单词和句子中的读错读音进行纠正，给出参考正确读音。",
+          "document": "评测模式\n0：单词/单字模式（中文评测模式下为单字模式）\n1：句子模式\n2：段落模式\n3：自由说模式\n4：单词音素纠错模式\n5：情景评测模式\n6：句子多分支评测模式\n7：单词实时评测模式\n8：拼音评测模式",
+          "example": "0",
           "member": "int64",
           "name": "EvalMode",
           "required": true,
@@ -736,7 +745,8 @@
         },
         {
           "default": "",
-          "document": "评价苛刻指数，取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数，1.0为小年龄段，4.0为最高年龄段",
+          "document": "评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。\n1.0：适用于最小年龄段用户，一般对应儿童应用场景；\n4.0：适用于最高年龄段用户，一般对应成人严格打分场景。",
+          "example": "1.0",
           "member": "float",
           "name": "ScoreCoeff",
           "required": true,
@@ -744,7 +754,8 @@
         },
         {
           "default": "",
-          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "example": "无",
           "member": "string",
           "name": "SoeAppId",
           "required": false,
@@ -752,7 +763,8 @@
         },
         {
           "default": "",
-          "document": "音频存储模式，0：不存储，1：存储到公共对象存储，输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段，2：永久存储音频，需要提工单申请，会产生一定存储费用，3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中，需要提工单登记存储信息。",
+          "document": "音频存储模式\n0：不存储\n1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；\n2：永久存储音频，需要提工单申请，会产生一定的存储费用；\n3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中，需要提工单登记存储信息。关于自定义存储cos基础设置的方式，请查看下文自定义存储cos基础设置流程。\n注：对可用性要求较高的用户建议自行存储至腾讯云COS。",
+          "example": "无",
           "member": "int64",
           "name": "StorageMode",
           "required": false,
@@ -760,7 +772,8 @@
         },
         {
           "default": "",
-          "document": "输出断句中间结果标识，0：不输出，1：输出，通过设置该参数，可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。",
+          "document": "输出断句中间结果标识\n0：不输出\n1：输出，通过设置该参数\n可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。",
+          "example": "无",
           "member": "int64",
           "name": "SentenceInfoEnabled",
           "required": false,
@@ -768,7 +781,8 @@
         },
         {
           "default": "",
-          "document": "评估语言，0：英文，1：中文。",
+          "document": "评估语言\n0：英文\n1：中文",
+          "example": "无",
           "member": "int64",
           "name": "ServerType",
           "required": false,
@@ -776,7 +790,8 @@
         },
         {
           "default": "",
-          "document": "异步模式标识，0：同步模式，1：异步模式，可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。",
+          "document": "异步模式标识\n0：同步模式\n1：异步模式（一般情况不建议使用异步模式）\n可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。",
+          "example": "无",
           "member": "int64",
           "name": "IsAsync",
           "required": false,
@@ -785,6 +800,7 @@
         {
           "default": "",
           "document": "查询标识，当该参数为1时，该请求为查询请求，请求返回该 Session 评估结果。",
+          "example": "无",
           "member": "int64",
           "name": "IsQuery",
           "required": false,
@@ -792,7 +808,8 @@
         },
         {
           "default": "",
-          "document": "输入文本模式，0: 普通文本，1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本。2：音素注册模式（提工单注册需要使用音素的单词）。",
+          "document": "输入文本模式\n0: 普通文本\n1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本\n2：音素注册模式（提工单注册需要使用音素的单词）。",
+          "example": "无",
           "member": "int64",
           "name": "TextMode",
           "required": false,
@@ -806,64 +823,82 @@
       "members": [
         {
           "document": "发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。当为流式模式且请求中IsEnd未置1时，取值无意义。",
+          "example": "65",
           "member": "float",
           "name": "PronAccuracy",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "0.99",
           "member": "float",
           "name": "PronFluency",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "1",
           "member": "float",
           "name": "PronCompletion",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "详细发音评估结果",
+          "example": "无",
           "member": "WordRsp",
           "name": "Words",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "语音段唯一标识，一段语音一个SessionId",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "保存语音音频文件下载地址",
+          "example": "无",
           "member": "string",
           "name": "AudioUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "断句中间结果，中间结果是局部最优而非全局最优的结果，所以中间结果有可能和最终整体结果对应部分不一致；中间结果的输出便于客户端UI更新；待用户发音完全结束后，系统会给出一个综合所有句子的整体结果。",
+          "example": "无",
           "member": "SentenceInfo",
           "name": "SentenceInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "评估 session 状态，“Evaluating\"：评估中、\"Failed\"：评估失败、\"Finished\"：评估完成",
+          "example": "无",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）× 完整度（PronCompletionfloat）×（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "example": "65",
           "member": "float",
           "name": "SuggestedScore",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },

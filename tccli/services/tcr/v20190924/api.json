@@ -4510,6 +4510,7 @@
         {
           "default": "",
           "document": "实例长期访问凭证 ID",
+          "example": "2ab3af0d-893d-423f-91b1-27713566f95f",
           "member": "string",
           "name": "TokenId",
           "required": true,
@@ -4517,19 +4518,39 @@
         },
         {
           "default": "",
-          "document": "启用或禁用实例长期访问凭证",
-          "member": "bool",
-          "name": "Enable",
-          "required": true,
-          "type": "bool"
-        },
-        {
-          "default": "",
           "document": "实例 ID",
+          "example": "tcr-12345",
           "member": "string",
           "name": "RegistryId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启用或禁用实例长期访问凭证",
+          "example": "false",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "访问凭证描述",
+          "example": "test",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1为修改描述 2为启动禁用，不填写默认为修改启动禁用",
+          "example": "1",
+          "member": "int64",
+          "name": "ModifyFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

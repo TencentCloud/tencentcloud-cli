@@ -80,6 +80,14 @@
         "title": "CreateWxCloudBaseRunEnv"
       }
     ],
+    "CreateWxCloudBaseRunServerDBCluster": [
+      {
+        "document": "在微信云托管后台，用户开通MySQL时需要调用",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWxCloudBaseRunServerDBCluster\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"AccountPassword\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "开通微信云托管MySQL服务实例"
+      }
+    ],
     "DeleteCloudBaseProjectLatestVersion": [
       {
         "document": "",
@@ -188,7 +196,7 @@
       {
         "document": "获取文件下载信息",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeDownloadFile\n&CodeUri=\"abc.zip\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/aaa\",\n        \"CustomKey\": \"xxx\",\n        \"FilePath\": \"file\",\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
         "title": "获取文件下载信息"
       }
     ],

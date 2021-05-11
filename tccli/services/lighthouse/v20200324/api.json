@@ -72,6 +72,12 @@
       "name": "查询镜像信息",
       "output": "DescribeBlueprintsResponse"
     },
+    "DescribeBundleDiscount": {
+      "document": "本接口（DescribeBundleDiscount）用于查询套餐折扣信息。",
+      "input": "DescribeBundleDiscountRequest",
+      "name": "查询套餐折扣",
+      "output": "DescribeBundleDiscountResponse"
+    },
     "DescribeBundles": {
       "document": "本接口（DescribeBundles）用于查询套餐信息。",
       "input": "DescribeBundlesRequest",
@@ -1191,6 +1197,51 @@
       ],
       "type": "object"
     },
+    "DescribeBundleDiscountRequest": {
+      "document": "DescribeBundleDiscount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐 ID。",
+          "example": "bundle_bw_small1_1",
+          "member": "string",
+          "name": "BundleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBundleDiscountResponse": {
+      "document": "DescribeBundleDiscount返回参数结构体",
+      "members": [
+        {
+          "document": "币种：CNY人民币，USD 美元。",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。",
+          "example": "无",
+          "member": "DiscountDetail",
+          "name": "DiscountDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBundlesRequest": {
       "document": "DescribeBundles请求参数结构体",
       "members": [
@@ -2082,6 +2133,66 @@
         }
       ],
       "type": "object"
+    },
+    "DiscountDetail": {
+      "document": "套餐折扣详情（仅用于控制台调用询价相关接口返回）。",
+      "members": [
+        {
+          "default": "",
+          "document": "计费时长。",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费单元。",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总价。",
+          "member": "float",
+          "name": "TotalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后总价。",
+          "member": "float",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣。",
+          "member": "int64",
+          "name": "Discount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "具体折扣详情。",
+          "member": "PolicyDetail",
+          "name": "PolicyDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤名称等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以DescribeInstances接口的`Filter`为例。若我们需要查询实例名称（`instance-name`）为test ***并且*** 实例内网IP（`private-ip-address`）为10.10.10.10的实例时，可如下实现：\n```\nFilters.0.Name=instance-name\n&Filters.0.Values.0=test\n&Filters.1.Name=private-ip-address\n&Filters.1.Values.0=10.10.10.10\n```",
@@ -3250,6 +3361,39 @@
         }
       ],
       "type": "object"
+    },
+    "PolicyDetail": {
+      "document": "折扣详情信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户折扣。",
+          "member": "int64",
+          "name": "UserDiscount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公共折扣。",
+          "member": "int64",
+          "name": "CommonDiscount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最终折扣。",
+          "member": "int64",
+          "name": "FinalDiscount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Price": {
       "document": "价格信息",

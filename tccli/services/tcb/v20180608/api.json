@@ -60,6 +60,12 @@
       "name": "创建微信云托管",
       "output": "CreateWxCloudBaseRunEnvResponse"
     },
+    "CreateWxCloudBaseRunServerDBCluster": {
+      "document": "开通微信云托管MySQL数据库服务",
+      "input": "CreateWxCloudBaseRunServerDBClusterRequest",
+      "name": "开通微信云托管MySQL数据库服务",
+      "output": "CreateWxCloudBaseRunServerDBClusterResponse"
+    },
     "DeleteCloudBaseProjectLatestVersion": {
       "document": "删除云项目",
       "input": "DeleteCloudBaseProjectLatestVersionRequest",
@@ -1626,7 +1632,7 @@
         },
         {
           "default": "",
-          "document": "环境别名",
+          "document": "环境别名。要以a-z开头，不能包含a-zA-z0-9-以外的字符",
           "example": "cool",
           "member": "string",
           "name": "EnvAlias",
@@ -1671,7 +1677,7 @@
         },
         {
           "default": "",
-          "document": "免费额度的\"basic\", 不使用的用\"\"",
+          "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
           "example": "basic",
           "member": "string",
           "name": "FreeQuota",
@@ -2449,6 +2455,51 @@
       ],
       "type": "object"
     },
+    "CreateWxCloudBaseRunServerDBClusterRequest": {
+      "document": "CreateWxCloudBaseRunServerDBCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账户密码",
+          "example": "\"123456\"",
+          "member": "string",
+          "name": "AccountPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信appid",
+          "example": "\"wx-appid\"",
+          "member": "string",
+          "name": "WxAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWxCloudBaseRunServerDBClusterResponse": {
+      "document": "CreateWxCloudBaseRunServerDBCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DatabasesInfo": {
       "document": "数据库资源信息",
       "members": [
@@ -2867,7 +2918,7 @@
         },
         {
           "default": "",
-          "document": "起始时间",
+          "document": "起始时间 2021-03-27 12:00:00",
           "example": "2021-03-27 12:00:00",
           "member": "string",
           "name": "StartTime",
@@ -2876,7 +2927,7 @@
         },
         {
           "default": "",
-          "document": "终止时间",
+          "document": "终止时间 2021-03-27 12:00:00",
           "example": "2021-03-27 12:00:00",
           "member": "string",
           "name": "EndTime",
@@ -3814,6 +3865,7 @@
         {
           "default": "",
           "document": "代码uri",
+          "example": "extension://abc.zip",
           "member": "string",
           "name": "CodeUri",
           "required": true,
@@ -3827,22 +3879,28 @@
       "members": [
         {
           "document": "文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "file/path",
           "member": "string",
           "name": "FilePath",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "加密key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx123",
           "member": "string",
           "name": "CustomKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/aaa",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5502,6 +5560,7 @@
         {
           "default": "",
           "document": "环境ID",
+          "example": "YourEnvId",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -5510,6 +5569,7 @@
         {
           "default": "",
           "document": "C端用户端的唯一ID",
+          "example": "8db291f521064c36943482cbd59ecd93",
           "member": "string",
           "name": "UUId",
           "required": true,
@@ -5517,7 +5577,8 @@
         },
         {
           "default": "",
-          "document": "帐号的状态",
+          "document": "帐号的状态\n<li>ENABLE</li>\n<li>DISABLE</li>",
+          "example": "ENABLE",
           "member": "string",
           "name": "Status",
           "required": false,

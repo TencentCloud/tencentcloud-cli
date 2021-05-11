@@ -4401,6 +4401,7 @@
         {
           "default": "",
           "document": "专线网关名称",
+          "example": "test",
           "member": "string",
           "name": "DirectConnectGatewayName",
           "required": true,
@@ -4409,6 +4410,7 @@
         {
           "default": "",
           "document": "关联网络类型，可选值：\n<li>VPC - 私有网络</li>\n<li>CCN - 云联网</li>",
+          "example": "VPC",
           "member": "string",
           "name": "NetworkType",
           "required": true,
@@ -4417,6 +4419,7 @@
         {
           "default": "",
           "document": "<li>NetworkType 为 VPC 时，这里传值为私有网络实例ID</li>\n<li>NetworkType 为 CCN 时，这里传值为云联网实例ID</li>",
+          "example": "vpc-m7sr81gh",
           "member": "string",
           "name": "NetworkInstanceId",
           "required": true,
@@ -4425,6 +4428,7 @@
         {
           "default": "",
           "document": "网关类型，可选值：\n<li>NORMAL - （默认）标准型，注：云联网只支持标准型</li>\n<li>NAT - NAT型</li>NAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关",
+          "example": "NAT",
           "member": "string",
           "name": "GatewayType",
           "required": false,
@@ -4433,8 +4437,18 @@
         {
           "default": "",
           "document": "云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持`ModeType`。",
+          "example": "standard",
           "member": "string",
           "name": "ModeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专线网关可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
           "required": false,
           "type": "string"
         }
@@ -4446,8 +4460,10 @@
       "members": [
         {
           "document": "专线网关对象。",
+          "example": "无",
           "member": "DirectConnectGateway",
           "name": "DirectConnectGateway",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11443,6 +11459,7 @@
         {
           "default": "",
           "document": "专线网关`ID`。",
+          "example": "dcg-e6mxyyvj",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -11452,6 +11469,7 @@
         {
           "default": "",
           "document": "专线网关名称。",
+          "example": "test",
           "member": "string",
           "name": "DirectConnectGatewayName",
           "required": true,
@@ -11461,6 +11479,7 @@
         {
           "default": "",
           "document": "专线网关关联`VPC`实例`ID`。",
+          "example": "vpc-hm2okght",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -11470,6 +11489,7 @@
         {
           "default": "",
           "document": "关联网络类型：\n<li>`VPC` - 私有网络</li>\n<li>`CCN` - 云联网</li>",
+          "example": "CCN",
           "member": "string",
           "name": "NetworkType",
           "required": true,
@@ -11479,6 +11499,7 @@
         {
           "default": "",
           "document": "关联网络实例`ID`：\n<li>`NetworkType`为`VPC`时，这里为私有网络实例`ID`</li>\n<li>`NetworkType`为`CCN`时，这里为云联网实例`ID`</li>",
+          "example": "ccn-4rukgymd",
           "member": "string",
           "name": "NetworkInstanceId",
           "required": true,
@@ -11488,6 +11509,7 @@
         {
           "default": "",
           "document": "网关类型：\n<li>NORMAL - 标准型，注：云联网只支持标准型</li>\n<li>NAT - NAT型</li>\nNAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关",
+          "example": "NORMAL",
           "member": "string",
           "name": "GatewayType",
           "required": true,
@@ -11497,6 +11519,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "2020-02-01 12:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -11506,6 +11529,7 @@
         {
           "default": "",
           "document": "专线网关IP。",
+          "example": "10.212.253.59",
           "member": "string",
           "name": "DirectConnectGatewayIp",
           "required": true,
@@ -11515,6 +11539,7 @@
         {
           "default": "",
           "document": "专线网关关联`CCN`实例`ID`。",
+          "example": "ccn-4rukgymd",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -11524,6 +11549,7 @@
         {
           "default": "",
           "document": "云联网路由学习类型：\n<li>`BGP` - 自动学习。</li>\n<li>`STATIC` - 静态，即用户配置。</li>",
+          "example": "BGP",
           "member": "string",
           "name": "CcnRouteType",
           "required": true,
@@ -11533,6 +11559,7 @@
         {
           "default": "",
           "document": "是否启用BGP。",
+          "example": "true",
           "member": "bool",
           "name": "EnableBGP",
           "required": true,
@@ -11542,6 +11569,7 @@
         {
           "default": "",
           "document": "开启和关闭BGP的community属性。",
+          "example": "false",
           "member": "bool",
           "name": "EnableBGPCommunity",
           "required": true,
@@ -11551,6 +11579,7 @@
         {
           "default": "",
           "document": "绑定的NAT网关ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NAT-TEST",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -11560,6 +11589,7 @@
         {
           "default": "",
           "document": "专线网关是否支持VXLAN架构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "VXLANSupport",
           "required": true,
@@ -11569,8 +11599,29 @@
         {
           "default": "",
           "document": "云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "standard",
           "member": "string",
           "name": "ModeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为localZone专线网关。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "LocalZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专线网关所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
           "required": true,
           "type": "string",
           "value_allowed_null": true

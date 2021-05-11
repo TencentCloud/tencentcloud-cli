@@ -1,6 +1,6 @@
-**Example 1: 传输语音进行发音评估附带初始化过程**
+**Example 1: 传输语音进行发音评估附带初始化过程（常用实践）**
 
-传输语音进行发音评估附带初始化过程
+传输语音进行发音评估附带初始化过程（常用实践）——句子模式（Evalmode为1）
 
 Input: 
 
@@ -22,31 +22,169 @@ Output:
 ```
 {
     "Response": {
-        "PronAccuracy": 65,
-        "PronFluency": 0.99,
+        "SuggestedScore": 99.52305,
+        "PronAccuracy": 99.52305,
+        "PronFluency": 0.93664527,
         "PronCompletion": 1,
-        "SuggestedScore": 65,
-        "RequestId": "xxxxxxx",
+        "RequestId": "1067cb5d-da3f-4205-b1c6-6b4632672a0e",
         "Words": [
             {
-                "MemBeginTime": 1,
-                "MemEndTime": 2,
-                "PronAccuracy": 65,
-                "PronFluency": 0.3,
-                "Word": "xxx",
-                "MatchTag": 1,
+                "MemBeginTime": 2330,
+                "MemEndTime": 3170,
+                "PronAccuracy": 99.52305,
+                "PronFluency": 0.93664527,
+                "ReferenceWord": "",
+                "Word": "thankyou",
+                "MatchTag": 0,
                 "PhoneInfos": [
                     {
-                        "MemBeginTime": 1,
-                        "MemEndTime": 2,
-                        "PronAccuracy": 52,
-                        "Phone": "b",
-                        "Stress": true,
-                        "DetectedStress": false
+                        "MemBeginTime": 2330,
+                        "MemEndTime": 2530,
+                        "PronAccuracy": 98.37366,
+                        "DetectedStress": false,
+                        "Phone": "th",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2530,
+                        "MemEndTime": 2630,
+                        "PronAccuracy": 99.75654,
+                        "DetectedStress": false,
+                        "Phone": "ae",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2630,
+                        "MemEndTime": 2730,
+                        "PronAccuracy": 99.75149,
+                        "DetectedStress": false,
+                        "Phone": "ng",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2730,
+                        "MemEndTime": 2830,
+                        "PronAccuracy": 99.767265,
+                        "DetectedStress": false,
+                        "Phone": "k",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2830,
+                        "MemEndTime": 2910,
+                        "PronAccuracy": 99.72817,
+                        "DetectedStress": false,
+                        "Phone": "y",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2910,
+                        "MemEndTime": 3170,
+                        "PronAccuracy": 99.7612,
+                        "DetectedStress": false,
+                        "Phone": "uw",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
                     }
                 ]
             }
-        ]
+        ],
+        "SessionId": "E6B94BA9-48C7-4DCF-8BDD-9C4B83205176",
+        "AudioUrl": "",
+        "SentenceInfoSet": [
+            {
+                "SuggestedScore": 0,
+                "PronAccuracy": 99.52305,
+                "PronFluency": 0.93664527,
+                "PronCompletion": 1,
+                "Words": [
+                    {
+                        "MemBeginTime": 2330,
+                        "MemEndTime": 3170,
+                        "PronAccuracy": 99.52305,
+                        "PronFluency": 0.93664527,
+                        "ReferenceWord": "",
+                        "Word": "thankyou",
+                        "MatchTag": 0,
+                        "PhoneInfos": [
+                            {
+                                "MemBeginTime": 2330,
+                                "MemEndTime": 2530,
+                                "PronAccuracy": 98.37366,
+                                "DetectedStress": false,
+                                "Phone": "th",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2530,
+                                "MemEndTime": 2630,
+                                "PronAccuracy": 99.75654,
+                                "DetectedStress": false,
+                                "Phone": "ae",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2630,
+                                "MemEndTime": 2730,
+                                "PronAccuracy": 99.75149,
+                                "DetectedStress": false,
+                                "Phone": "ng",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2730,
+                                "MemEndTime": 2830,
+                                "PronAccuracy": 99.767265,
+                                "DetectedStress": false,
+                                "Phone": "k",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2830,
+                                "MemEndTime": 2910,
+                                "PronAccuracy": 99.72817,
+                                "DetectedStress": false,
+                                "Phone": "y",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2910,
+                                "MemEndTime": 3170,
+                                "PronAccuracy": 99.7612,
+                                "DetectedStress": false,
+                                "Phone": "uw",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            }
+                        ]
+                    }
+                ],
+                "SentenceId": -1
+            }
+        ],
+        "Status": "Evaluating"
     }
 }
 ```
