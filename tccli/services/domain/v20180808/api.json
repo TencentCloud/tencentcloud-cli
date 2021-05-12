@@ -288,6 +288,7 @@
         {
           "default": "",
           "document": "所查询域名名称",
+          "example": "domain.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -296,6 +297,7 @@
         {
           "default": "",
           "document": "年限",
+          "example": "1",
           "member": "string",
           "name": "Period",
           "required": false,
@@ -309,92 +311,118 @@
       "members": [
         {
           "document": "所查询域名名称",
+          "example": "domain.com",
           "member": "string",
           "name": "DomainName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否能够注册",
+          "example": "1",
           "member": "bool",
           "name": "Available",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "不能注册原因",
+          "example": "\"\"",
           "member": "string",
           "name": "Reason",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否是溢价词",
+          "example": "false",
           "member": "bool",
           "name": "Premium",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "域名价格",
+          "example": "35",
           "member": "uint64",
           "name": "Price",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "是否是敏感词",
+          "example": "false",
           "member": "bool",
           "name": "BlackWord",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "溢价词描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "Describe",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "溢价词的续费价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "FeeRenew",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "document": "域名真实价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名真实价格, 溢价词时价格跟年限有关，非溢价词时价格为1年的价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "RealPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "溢价词的转入价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "FeeTransfer",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "溢价词的赎回价格",
+          "example": "0",
           "member": "uint64",
           "name": "FeeRestore",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "检测年限",
+          "example": "1",
           "member": "uint64",
           "name": "Period",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "是否支持北京备案  true 支持  false 不支持",
+          "example": "true",
           "member": "bool",
           "name": "RecordSupport",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },

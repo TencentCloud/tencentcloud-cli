@@ -78,6 +78,12 @@
       "name": "查询云数据库实例列表",
       "output": "DescribeDBInstancesResponse"
     },
+    "DescribeSecurityGroup": {
+      "document": "查询实例绑定的安全组",
+      "input": "DescribeSecurityGroupRequest",
+      "name": "查询实例绑定的安全组",
+      "output": "DescribeSecurityGroupResponse"
+    },
     "DescribeSlowLogPatterns": {
       "document": "本接口（DescribeSlowLogPatterns）用于获取数据库实例慢日志的统计信息。",
       "input": "DescribeSlowLogPatternsRequest",
@@ -1745,6 +1751,42 @@
       ],
       "type": "object"
     },
+    "DescribeSecurityGroupRequest": {
+      "document": "DescribeSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。",
+          "example": "cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupResponse": {
+      "document": "DescribeSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "document": "实例绑定的安全组",
+          "example": "无",
+          "member": "SecurityGroup",
+          "name": "Groups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSlowLogPatternsRequest": {
       "document": "DescribeSlowLogPatterns请求参数结构体",
       "members": [
@@ -2892,6 +2934,128 @@
         }
       ],
       "type": "object"
+    },
+    "SecurityGroup": {
+      "document": "安全组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "所属项目id",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-01-02 15:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入站规则",
+          "example": "无",
+          "member": "SecurityGroupBound",
+          "name": "Inbound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出站规则",
+          "example": "无",
+          "member": "SecurityGroupBound",
+          "name": "Outbound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "sg-lxdvbitn",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组名称",
+          "example": "全放通",
+          "member": "string",
+          "name": "SecurityGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组备注",
+          "example": "暴露全部端口到公网和内网，有一定安全风险",
+          "member": "string",
+          "name": "SecurityGroupRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityGroupBound": {
+      "document": "安全组规则",
+      "members": [
+        {
+          "default": "",
+          "document": "执行规则。ACCEPT或DROP",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip段。",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "CidrIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口范围",
+          "example": "80,443",
+          "member": "string",
+          "name": "PortRange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传输层协议。tcp，udp或ALL",
+          "example": "tcp",
+          "member": "string",
+          "name": "IpProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ShardInfo": {
       "document": "实例分片详情",

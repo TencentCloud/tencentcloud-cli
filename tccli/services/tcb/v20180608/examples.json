@@ -375,6 +375,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "恢复已隔离的免费环境"
       }
+    ],
+    "RollUpdateCloudBaseRunServerVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollUpdateCloudBaseRunServerVersion\n<公共请求参数>\n\n{\n    \"MaxNum\": \"xx\",\n    \"EnvParams\": \"xx\",\n    \"PackageName\": \"xx\",\n    \"MountVolumeInfo\": [\n        {\n            \"ReadOnly\": true,\n            \"MountPath\": \"xx\",\n            \"Name\": \"xx\",\n            \"NfsVolumes\": [\n                {\n                    \"Path\": \"xx\",\n                    \"ReadOnly\": true,\n                    \"Server\": \"xx\"\n                }\n            ]\n        }\n    ],\n    \"Branch\": \"xx\",\n    \"Rollback\": true,\n    \"BuildDir\": \"xx\",\n    \"Repository\": \"xx\",\n    \"Mem\": \"xx\",\n    \"UploadType\": \"xx\",\n    \"RepositoryType\": \"xx\",\n    \"InitialDelaySeconds\": 0,\n    \"CustomLogs\": \"xx\",\n    \"FlowRatio\": 0,\n    \"MinNum\": \"xx\",\n    \"VersionRemark\": \"xx\",\n    \"ContainerPort\": 0,\n    \"DockerfilePath\": \"xx\",\n    \"EnvId\": \"xx\",\n    \"SnapshotName\": \"xx\",\n    \"ServerName\": \"xx\",\n    \"EnableUnion\": true,\n    \"PackageVersion\": \"xx\",\n    \"Cpu\": \"xx\",\n    \"CodeDetail\": {\n        \"Url\": \"xx\",\n        \"Name\": {\n            \"FullName\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    },\n    \"ImageInfo\": {\n        \"ImageUrl\": \"xx\",\n        \"RepositoryName\": \"xx\",\n        \"IsPublic\": true,\n        \"ServerAddr\": \"xx\",\n        \"TagName\": \"xx\"\n    },\n    \"PolicyThreshold\": \"xx\",\n    \"IsRebuild\": true,\n    \"PolicyType\": \"xx\",\n    \"VersionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"VersionName\": \"xxx\",\n        \"RunId\": \"a123\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
+        "title": "示例"
+      }
     ]
   },
   "version": "1.0"

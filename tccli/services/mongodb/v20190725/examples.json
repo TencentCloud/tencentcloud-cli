@@ -104,6 +104,14 @@
         "title": "查询实例列表"
       }
     ],
+    "DescribeSecurityGroup": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSecurityGroup\n&InstanceId=cmgo-p8vnipr5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2021-01-07 16:38:48\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"DROP\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"DROP\",\n                        \"CidrIp\": \"::/0\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"DROP\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"DROP\",\n                        \"CidrIp\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-7pw2qq97\",\n                \"SecurityGroupName\": \"全拒绝\",\n                \"SecurityGroupRemark\": \"暴露全部端口到公网和内网，有一定安全风险\"\n            }\n        ],\n        \"RequestId\": \"b1886334-acfe-4445-8429-e11a6e7b3851\"\n    }\n}",
+        "title": "查询实例安全组"
+      }
+    ],
     "DescribeSlowLogPatterns": [
       {
         "document": "",

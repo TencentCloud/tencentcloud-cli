@@ -293,6 +293,7 @@
         {
           "default": "",
           "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。",
+          "example": "test_1001",
           "member": "string",
           "name": "BizType",
           "required": false,
@@ -301,6 +302,7 @@
         {
           "default": "",
           "document": "数据ID，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符",
+          "example": "1213",
           "member": "string",
           "name": "DataId",
           "required": false,
@@ -309,6 +311,7 @@
         {
           "default": "",
           "document": "数据Base64编码，图片检测接口为图片文件内容，大小不能超过5M",
+          "example": "aHR0cDovL2lubmVycG9ybnNjcmVlbnNob3QtMTI1MjgxMzg1MC5jb3MuYXAtZ3Vh",
           "member": "string",
           "name": "FileContent",
           "required": false,
@@ -317,6 +320,7 @@
         {
           "default": "",
           "document": "图片资源访问链接，__与FileContent参数必须二选一输入__",
+          "example": "https://xxx.jpg",
           "member": "string",
           "name": "FileUrl",
           "required": false,
@@ -325,6 +329,7 @@
         {
           "default": "",
           "document": "截帧频率，GIF图/长图检测专用，默认值为0，表示只会检测GIF图/长图的第一帧",
+          "example": "1",
           "member": "int64",
           "name": "Interval",
           "required": false,
@@ -333,6 +338,7 @@
         {
           "default": "",
           "document": "GIF图/长图检测专用，代表均匀最大截帧数量，默认值为1（即只取GIF第一张，或长图不做切分处理（可能会造成处理超时））。",
+          "example": "1",
           "member": "int64",
           "name": "MaxFrames",
           "required": false,
@@ -341,6 +347,7 @@
         {
           "default": "",
           "document": "账号相关信息字段，填入后可识别违规风险账号。",
+          "example": "无",
           "member": "User",
           "name": "User",
           "required": false,
@@ -349,6 +356,7 @@
         {
           "default": "",
           "document": "设备相关信息字段，填入后可识别违规风险设备。",
+          "example": "无",
           "member": "Device",
           "name": "Device",
           "required": false,
@@ -362,85 +370,109 @@
       "members": [
         {
           "document": "数据是否属于恶意类型。\n0：正常，1：可疑；",
+          "example": "1",
           "member": "int64",
           "name": "HitFlag",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
+          "example": "Block",
           "member": "string",
           "name": "Suggestion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。\n以及令人反感、不安全或不适宜的内容类型。",
+          "example": "Porn",
           "member": "string",
           "name": "Label",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "子标签名称，如色情--性行为；当未命中子标签时，返回空字符串；",
+          "example": "SexBehavior",
           "member": "string",
           "name": "SubLabel",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。\n（如：色情 99.99，则该样本属于色情的置信度非常高。）",
+          "example": "90",
           "member": "int64",
           "name": "Score",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "智能模型的识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LabelResult",
           "name": "LabelResults",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "物体检测模型的审核结果，包括实体、广告台标/二维码等物体坐标信息与内容审核信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ObjectResult",
           "name": "ObjectResults",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "OCR识别后的文本识别结果，包括文本所处图片的OCR坐标信息以及图片文本的识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OcrResult",
           "name": "OcrResults",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "基于图片风险库识别的结果。\n风险库包括不安全黑库与正常白库的结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LibResult",
           "name": "LibResults",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "请求参数中的DataId。",
+          "example": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
           "member": "string",
           "name": "DataId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "您在入参时所填入的Biztype参数。 -- 该字段暂未开放。",
+          "example": "test_1001",
           "member": "string",
           "name": "BizType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Extra",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

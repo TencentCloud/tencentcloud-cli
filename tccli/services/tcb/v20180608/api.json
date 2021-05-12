@@ -281,6 +281,12 @@
       "input": "ReinstateEnvRequest",
       "name": "恢复环境，解除隔离状态",
       "output": "ReinstateEnvResponse"
+    },
+    "RollUpdateCloudBaseRunServerVersion": {
+      "document": "针对特定的版本，进行滚动更新",
+      "input": "RollUpdateCloudBaseRunServerVersionRequest",
+      "name": "滚动更新服务版本",
+      "output": "RollUpdateCloudBaseRunServerVersionResponse"
     }
   },
   "metadata": {
@@ -2135,6 +2141,15 @@
           "name": "ServiceVolumes",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否创建JnsGw 0未传默认创建 1创建 2不创建",
+          "example": "无",
+          "member": "int64",
+          "name": "IsCreateJnsGw",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5883,6 +5898,339 @@
     "ReinstateEnvResponse": {
       "document": "ReinstateEnv返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollUpdateCloudBaseRunServerVersionRequest": {
+      "document": "RollUpdateCloudBaseRunServerVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要替换的版本名称，可以为latest",
+          "example": "无",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "枚举（package/repository/image)",
+          "example": "无",
+          "member": "string",
+          "name": "UploadType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "repository的类型(coding/gitlab/github)",
+          "example": "无",
+          "member": "string",
+          "name": "RepositoryType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量占比",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowRatio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "dockerfile地址",
+          "example": "无",
+          "member": "string",
+          "name": "DockerfilePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "构建目录",
+          "example": "无",
+          "member": "string",
+          "name": "BuildDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Cpu的大小，单位：核",
+          "example": "无",
+          "member": "string",
+          "name": "Cpu",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Mem的大小，单位：G",
+          "example": "无",
+          "member": "string",
+          "name": "Mem",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最小副本数，最小值：0",
+          "example": "无",
+          "member": "string",
+          "name": "MinNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大副本数",
+          "example": "无",
+          "member": "string",
+          "name": "MaxNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略类型",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略阈值",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyThreshold",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境变量",
+          "example": "无",
+          "member": "string",
+          "name": "EnvParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器端口",
+          "example": "无",
+          "member": "int64",
+          "name": "ContainerPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "example": "无",
+          "member": "string",
+          "name": "ServerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "repository地址",
+          "example": "无",
+          "member": "string",
+          "name": "Repository",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分支",
+          "example": "无",
+          "member": "string",
+          "name": "Branch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本备注",
+          "example": "无",
+          "member": "string",
+          "name": "VersionRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代码包名字",
+          "example": "无",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代码包版本",
+          "example": "无",
+          "member": "string",
+          "name": "PackageVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Image的详情",
+          "example": "无",
+          "member": "CloudBaseRunImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Github等拉取代码的详情",
+          "example": "无",
+          "member": "CloudBaseCodeRepoDetail",
+          "name": "CodeDetail",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否回放流量",
+          "example": "无",
+          "member": "bool",
+          "name": "IsRebuild",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "延迟多长时间开始健康检查（单位s）",
+          "example": "无",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "cfs挂载信息",
+          "example": "无",
+          "member": "CloudBaseRunVolumeMount",
+          "name": "MountVolumeInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否回滚",
+          "example": "无",
+          "member": "bool",
+          "name": "Rollback",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "版本历史名",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义采集路径",
+          "example": "无",
+          "member": "string",
+          "name": "CustomLogs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用统一域名",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableUnion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "操作备注",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务路径（只会第一次生效）",
+          "example": "无",
+          "member": "string",
+          "name": "ServerPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollUpdateCloudBaseRunServerVersionResponse": {
+      "document": "RollUpdateCloudBaseRunServerVersion返回参数结构体",
+      "members": [
+        {
+          "document": "succ为成功",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "滚动更新的VersionName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "操作记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa123",
+          "member": "string",
+          "name": "RunId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

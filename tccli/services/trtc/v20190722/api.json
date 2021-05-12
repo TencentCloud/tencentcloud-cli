@@ -1905,6 +1905,7 @@
         {
           "default": "",
           "document": "指定显示在该画面上的用户ID。如果不指定用户ID，会按照用户加入房间的顺序自动匹配PresetLayoutConfig中的画面设置。",
+          "example": "user1",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -1914,6 +1915,7 @@
         {
           "default": "",
           "document": "当该画面指定用户时，代表用户的流类型。0为摄像头，1为屏幕分享。小画面为web用户时此值填0。",
+          "example": "0",
           "member": "uint64",
           "name": "StreamType",
           "required": false,
@@ -1923,6 +1925,7 @@
         {
           "default": "",
           "document": "该画面在输出时的宽度，单位为像素值，不填默认为0。",
+          "example": "640",
           "member": "uint64",
           "name": "ImageWidth",
           "required": false,
@@ -1932,6 +1935,7 @@
         {
           "default": "",
           "document": "该画面在输出时的高度，单位为像素值，不填默认为0。",
+          "example": "480",
           "member": "uint64",
           "name": "ImageHeight",
           "required": false,
@@ -1941,6 +1945,7 @@
         {
           "default": "",
           "document": "该画面在输出时的X偏移，单位为像素值，LocationX与ImageWidth之和不能超过混流输出的总宽度，不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "LocationX",
           "required": false,
@@ -1950,6 +1955,7 @@
         {
           "default": "",
           "document": "该画面在输出时的Y偏移，单位为像素值，LocationY与ImageHeight之和不能超过混流输出的总高度，不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "LocationY",
           "required": false,
@@ -1958,7 +1964,8 @@
         },
         {
           "default": "",
-          "document": "该画面在输出时的层级，单位为像素值，不填默认为0。",
+          "document": "该画面在输出时的层级，不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "ZOrder",
           "required": false,
@@ -1968,6 +1975,7 @@
         {
           "default": "",
           "document": "该画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "RenderMode",
           "required": false,
@@ -1977,6 +1985,7 @@
         {
           "default": "",
           "document": "该当前位置用户混入的流类型：0为混入音视频，1为只混入视频，2为只混入音频。默认为0，建议配合指定用户ID使用。",
+          "example": "0",
           "member": "uint64",
           "name": "MixInputType",
           "required": false,
@@ -1986,6 +1995,7 @@
         {
           "default": "",
           "document": "占位图ID。启用占位图功能时，在当前位置的用户没有上行视频时显示占位图。占位图在实时音视频控制台上传并生成，https://cloud.tencent.com/document/product/647/50769",
+          "example": "0",
           "member": "uint64",
           "name": "PlaceImageId",
           "required": false,

@@ -1505,6 +1505,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cls日志集id",
+          "example": "1",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cls日志名称",
+          "example": "1",
+          "member": "string",
+          "name": "ClsLogTopicName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1978,6 +1998,16 @@
           "name": "ClusterStatus",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启tsw",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableTswTraceService",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

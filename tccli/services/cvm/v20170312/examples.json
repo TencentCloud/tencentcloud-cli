@@ -581,7 +581,7 @@
     "StartInstances": [
       {
         "document": "同时启动2台处于关机状态的实例",
-        "input": "https://cvm.tencentcloudapi.com/?Action=StartInstances\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=StartInstances\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "启动指定ID的实例"
       }
