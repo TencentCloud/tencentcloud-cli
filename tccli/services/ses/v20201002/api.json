@@ -61,7 +61,7 @@
       "output": "GetSendEmailStatusResponse"
     },
     "GetStatisticsReport": {
-      "document": "获取近期发送的统计情况，包含发送量、送达率、打开率、退信率等一系列数据。最大跨度为14天。",
+      "document": "获取近期发送的统计情况，包含发送量、送达率、打开率、退信率等一系列数据。",
       "input": "GetStatisticsReportRequest",
       "name": "获取发送统计数据",
       "output": "GetStatisticsReportResponse"
@@ -653,6 +653,7 @@
         {
           "default": "",
           "document": "开始日期",
+          "example": "2020-10-01",
           "member": "date",
           "name": "StartDate",
           "required": true,
@@ -661,6 +662,7 @@
         {
           "default": "",
           "document": "结束日期",
+          "example": "2020-10-03",
           "member": "date",
           "name": "EndDate",
           "required": true,
@@ -669,6 +671,7 @@
         {
           "default": "",
           "document": "发信域名",
+          "example": "qcloud.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -677,6 +680,7 @@
         {
           "default": "",
           "document": "收件方邮箱类型，例如gmail.com",
+          "example": "gmail.com",
           "member": "string",
           "name": "ReceivingMailboxType",
           "required": false,
@@ -690,15 +694,19 @@
       "members": [
         {
           "document": "发信统计报告，按天",
+          "example": "无",
           "member": "Volume",
           "name": "DailyVolumes",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "发信统计报告，总览",
+          "example": "无",
           "member": "Volume",
           "name": "OverallVolume",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

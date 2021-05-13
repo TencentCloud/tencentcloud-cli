@@ -36,6 +36,18 @@
       "name": "创建实时拉取进程任务",
       "output": "CreateProcessTaskResponse"
     },
+    "CreateSearchLog": {
+      "document": "添加历史搜索记录",
+      "input": "CreateSearchLogRequest",
+      "name": "添加历史搜索记录",
+      "output": "CreateSearchLogResponse"
+    },
+    "CreateSearchTemplate": {
+      "document": "添加检索模板",
+      "input": "CreateSearchTemplateRequest",
+      "name": "添加检索模板",
+      "output": "CreateSearchTemplateResponse"
+    },
     "CreateUsualLoginPlaces": {
       "document": "此接口（CreateUsualLoginPlaces）用于添加常用登录地。",
       "input": "CreateUsualLoginPlacesRequest",
@@ -125,6 +137,12 @@
       "input": "DeleteReverseShellRulesRequest",
       "name": "删除反弹Shell规则",
       "output": "DeleteReverseShellRulesResponse"
+    },
+    "DeleteSearchTemplate": {
+      "document": "删除检索模板",
+      "input": "DeleteSearchTemplateRequest",
+      "name": "删除检索模板",
+      "output": "DeleteSearchTemplateResponse"
     },
     "DeleteTags": {
       "document": "删除标签",
@@ -216,6 +234,12 @@
       "name": "获取组件列表",
       "output": "DescribeComponentsResponse"
     },
+    "DescribeESAggregations": {
+      "document": "获取ES字段聚合结果",
+      "input": "DescribeESAggregationsRequest",
+      "name": "获取ES字段聚合结果",
+      "output": "DescribeESAggregationsResponse"
+    },
     "DescribeESHits": {
       "document": "获取ES查询文档列表",
       "input": "DescribeESHitsRequest",
@@ -240,6 +264,12 @@
       "name": "获取帐号变更历史列表",
       "output": "DescribeHistoryAccountsResponse"
     },
+    "DescribeHistoryService": {
+      "document": "查询日志检索服务信息",
+      "input": "DescribeHistoryServiceRequest",
+      "name": "查询日志检索服务信息",
+      "output": "DescribeHistoryServiceResponse"
+    },
     "DescribeImpactedHosts": {
       "document": "本接口 (DescribeImpactedHosts) 用于获取漏洞受影响机器列表。",
       "input": "DescribeImpactedHostsRequest",
@@ -251,6 +281,18 @@
       "input": "DescribeImportMachineInfoRequest",
       "name": "查询批量导入机器信息",
       "output": "DescribeImportMachineInfoResponse"
+    },
+    "DescribeIndexList": {
+      "document": "获取索引列表",
+      "input": "DescribeIndexListRequest",
+      "name": "获取索引列表",
+      "output": "DescribeIndexListResponse"
+    },
+    "DescribeLogStorageStatistic": {
+      "document": "获取日志检索容量使用统计",
+      "input": "DescribeLogStorageStatisticRequest",
+      "name": "获取日志检索容量使用统计",
+      "output": "DescribeLogStorageStatisticResponse"
     },
     "DescribeLoginWhiteList": {
       "document": "获取异地登录白名单列表",
@@ -395,6 +437,24 @@
       "input": "DescribeScanMalwareScheduleRequest",
       "name": "查询木马扫描进度",
       "output": "DescribeScanMalwareScheduleResponse"
+    },
+    "DescribeSearchExportList": {
+      "document": "导出ES查询文档列表",
+      "input": "DescribeSearchExportListRequest",
+      "name": "导出ES查询文档列表",
+      "output": "DescribeSearchExportListResponse"
+    },
+    "DescribeSearchLogs": {
+      "document": "获取历史搜索记录",
+      "input": "DescribeSearchLogsRequest",
+      "name": "获取历史搜索记录",
+      "output": "DescribeSearchLogsResponse"
+    },
+    "DescribeSearchTemplates": {
+      "document": "获取快速检索列表",
+      "input": "DescribeSearchTemplatesRequest",
+      "name": "获取快速检索列表",
+      "output": "DescribeSearchTemplatesResponse"
     },
     "DescribeSecurityDynamics": {
       "document": "本接口 (DescribeSecurityDynamics) 用于获取安全事件消息数据。",
@@ -1712,6 +1772,78 @@
       ],
       "type": "object"
     },
+    "CreateSearchLogRequest": {
+      "document": "CreateSearchLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索内容",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchContent",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSearchLogResponse": {
+      "document": "CreateSearchLog返回参数结构体",
+      "members": [
+        {
+          "document": "0：成功，非0：失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSearchTemplateRequest": {
+      "document": "CreateSearchTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索模板",
+          "example": "xxx",
+          "member": "SearchTemplate",
+          "name": "SearchTemplate",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSearchTemplateResponse": {
+      "document": "CreateSearchTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "0：成功，非0：失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUsualLoginPlacesRequest": {
       "document": "CreateUsualLoginPlaces请求参数结构体",
       "members": [
@@ -2256,6 +2388,42 @@
     "DeleteReverseShellRulesResponse": {
       "document": "DeleteReverseShellRules返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSearchTemplateRequest": {
+      "document": "DeleteSearchTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSearchTemplateResponse": {
+      "document": "DeleteSearchTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "0：成功，非0：失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3266,6 +3434,42 @@
       ],
       "type": "object"
     },
+    "DescribeESAggregationsRequest": {
+      "document": "DescribeESAggregations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES聚合条件JSON",
+          "example": "xxx",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeESAggregationsResponse": {
+      "document": "DescribeESAggregations返回参数结构体",
+      "members": [
+        {
+          "document": "ES聚合结果JSON",
+          "example": "xxx",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeESHitsRequest": {
       "document": "DescribeESHits请求参数结构体",
       "members": [
@@ -3582,6 +3786,77 @@
       ],
       "type": "object"
     },
+    "DescribeHistoryServiceRequest": {
+      "document": "DescribeHistoryService请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeHistoryServiceResponse": {
+      "document": "DescribeHistoryService返回参数结构体",
+      "members": [
+        {
+          "document": "1 可购买 2 只能升降配 3 只能跳到续费管理页",
+          "example": "1",
+          "member": "uint64",
+          "name": "BuyStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户已购容量 单位 G",
+          "example": "1",
+          "member": "uint64",
+          "name": "InquireNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "到期时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否自动续费,0 初始值, 1 开通 2 没开通",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAutoOpenRenew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源ID",
+          "example": "1",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0 没开通 1 正常 2隔离 3销毁",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeImpactedHostsRequest": {
       "document": "DescribeImpactedHosts请求参数结构体",
       "members": [
@@ -3696,6 +3971,67 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexListRequest": {
+      "document": "DescribeIndexList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeIndexListResponse": {
+      "document": "DescribeIndexList返回参数结构体",
+      "members": [
+        {
+          "document": "ES 索引信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogStorageStatisticRequest": {
+      "document": "DescribeLogStorageStatistic请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLogStorageStatisticResponse": {
+      "document": "DescribeLogStorageStatistic返回参数结构体",
+      "members": [
+        {
+          "document": "总容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已使用容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "UsedSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5155,6 +5491,131 @@
           "member": "uint64",
           "name": "ScanStatus",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSearchExportListRequest": {
+      "document": "DescribeSearchExportList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES查询条件JSON",
+          "example": "xxx",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSearchExportListResponse": {
+      "document": "DescribeSearchExportList返回参数结构体",
+      "members": [
+        {
+          "document": "导出的任务号",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下载地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSearchLogsRequest": {
+      "document": "DescribeSearchLogs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSearchLogsResponse": {
+      "document": "DescribeSearchLogs返回参数结构体",
+      "members": [
+        {
+          "document": "历史搜索记录",
+          "example": "[]",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSearchTemplatesRequest": {
+      "document": "DescribeSearchTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSearchTemplatesResponse": {
+      "document": "DescribeSearchTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板列表",
+          "example": "[]",
+          "member": "SearchTemplate",
+          "name": "List",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9716,6 +10177,84 @@
         }
       ],
       "usage": "out"
+    },
+    "SearchTemplate": {
+      "document": "快速搜索模板",
+      "members": [
+        {
+          "default": "",
+          "document": "检索名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索索引类型",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索语句",
+          "member": "string",
+          "name": "Condition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间范围",
+          "member": "string",
+          "name": "TimeRange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转换的检索语句内容",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索方式。输入框检索：standard,过滤，检索：simple",
+          "member": "string",
+          "name": "Flag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "展示数据",
+          "member": "string",
+          "name": "DisplayData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SecurityDynamic": {
       "document": "安全事件消息数据。",

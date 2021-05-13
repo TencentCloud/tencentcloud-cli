@@ -180,6 +180,12 @@
       "name": "集群关联的伸缩组列表",
       "output": "DescribeClusterAsGroupsResponse"
     },
+    "DescribeClusterCommonNames": {
+      "document": "获取指定子账户在RBAC授权模式中对应kube-apiserver客户端证书的CommonName字段，如果没有客户端证书，将会签发一个，此接口有最大传入子账户数量上限，当前为50",
+      "input": "DescribeClusterCommonNamesRequest",
+      "name": "获取集群子账户CommonName映射关系",
+      "output": "DescribeClusterCommonNamesResponse"
+    },
     "DescribeClusterEndpointStatus": {
       "document": "查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
       "input": "DescribeClusterEndpointStatusRequest",
@@ -1699,6 +1705,30 @@
       ],
       "usage": "out"
     },
+    "CommonName": {
+      "document": "账户UIN与客户端证书CommonName的映射",
+      "members": [
+        {
+          "default": "",
+          "document": "子账户UIN",
+          "member": "string",
+          "name": "SubaccountUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子账户客户端证书中的CommonName字段",
+          "member": "string",
+          "name": "CN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateClusterAsGroupRequest": {
       "document": "CreateClusterAsGroup请求参数结构体",
       "members": [
@@ -3057,6 +3087,60 @@
           "document": "集群关联的伸缩组列表",
           "member": "ClusterAsGroup",
           "name": "ClusterAsGroupSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterCommonNamesRequest": {
+      "document": "DescribeClusterCommonNames请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子账户列表，不可超出最大值50",
+          "example": "[\"123457\"]",
+          "member": "string",
+          "name": "SubaccountUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "角色ID列表，不可超出最大值50",
+          "example": "[\"4611686231212124138\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterCommonNamesResponse": {
+      "document": "DescribeClusterCommonNames返回参数结构体",
+      "members": [
+        {
+          "document": "子账户Uin与其客户端证书的CN字段映射",
+          "example": "无",
+          "member": "CommonName",
+          "name": "CommonNames",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

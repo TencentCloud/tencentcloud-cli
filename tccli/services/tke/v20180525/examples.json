@@ -252,6 +252,14 @@
         "title": "集群关联的伸缩组列表"
       }
     ],
+    "DescribeClusterCommonNames": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterCommonNames\n&ClusterId=cls-65r1c5nu\n&SubaccountUins.0=123456\n&SubaccountUins.1=123457\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CommonNames\": [\n            {\n                \"SubaccountUin\": \"123456\",\n                \"CN\": \"123456-1588769189\"\n            }\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "获取集群子账户CommonName映射关系"
+      }
+    ],
     "DescribeClusterEndpointStatus": [
       {
         "document": "",

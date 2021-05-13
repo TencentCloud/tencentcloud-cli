@@ -92,6 +92,22 @@
       ],
       "usage": "in"
     },
+    "AudioEnhance": {
+      "document": "音频音效增强，只支持无背景音的音频",
+      "members": [
+        {
+          "default": "",
+          "document": "音效增强种类，可选项：normal",
+          "example": "normal",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "AudioInfo": {
       "document": "音频参数信息",
       "members": [
@@ -153,6 +169,36 @@
           "name": "EnableMuteAudio",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频响度信息",
+          "example": "无",
+          "member": "LoudnessInfo",
+          "name": "LoudnessInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频音效增强",
+          "example": "无",
+          "member": "AudioEnhance",
+          "name": "AudioEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "去除混音",
+          "example": "无",
+          "member": "RemoveReverb",
+          "name": "RemoveReverb",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -1507,6 +1553,32 @@
       ],
       "usage": "in"
     },
+    "LoudnessInfo": {
+      "document": "音频响度信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频整体响度",
+          "example": "-10.5",
+          "member": "float",
+          "name": "Loudness",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频响度范围",
+          "example": "10.5",
+          "member": "float",
+          "name": "LoudnessRange",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "LowLightEnhance": {
       "document": "低光照增强参数",
       "members": [
@@ -2621,6 +2693,22 @@
         }
       ],
       "usage": "out"
+    },
+    "RemoveReverb": {
+      "document": "音频去除混响",
+      "members": [
+        {
+          "default": "",
+          "document": "去混响类型，可选项：normal",
+          "example": "normal",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ResultAudioInfo": {
       "document": "结果媒体文件的视频流信息",

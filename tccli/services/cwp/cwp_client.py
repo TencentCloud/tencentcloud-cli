@@ -148,7 +148,7 @@ def doDescribeAttackLogs(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doOpenProVersion(args, parsed_globals):
+def doDescribeSearchExportList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -164,9 +164,9 @@ def doOpenProVersion(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.OpenProVersionRequest()
+    model = models.DescribeSearchExportListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.OpenProVersion(model)
+    rsp = client.DescribeSearchExportList(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -202,7 +202,7 @@ def doDescribeWeeklyReportMalwares(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVulInfo(args, parsed_globals):
+def doDeleteSearchTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -218,9 +218,9 @@ def doDescribeVulInfo(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVulInfoRequest()
+    model = models.DeleteSearchTemplateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeVulInfo(model)
+    rsp = client.DeleteSearchTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -418,6 +418,33 @@ def doDescribeBashRules(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSearchLogs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSearchLogsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSearchLogs(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeletePrivilegeEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -580,6 +607,33 @@ def doDeleteMaliciousRequests(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeIndexList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeIndexListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeIndexList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeReverseShellRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -680,6 +734,33 @@ def doDeleteReverseShellRules(args, parsed_globals):
     model = models.DeleteReverseShellRulesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DeleteReverseShellRules(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeHistoryService(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHistoryServiceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeHistoryService(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -842,6 +923,60 @@ def doDescribeMalwares(args, parsed_globals):
     model = models.DescribeMalwaresRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeMalwares(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeESAggregations(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeESAggregationsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeESAggregations(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateSearchLog(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateSearchLogRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateSearchLog(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1147,7 +1282,7 @@ def doDescribeOverviewStatistics(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAttackVulTypeList(args, parsed_globals):
+def doDescribeVulInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1163,9 +1298,63 @@ def doDescribeAttackVulTypeList(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAttackVulTypeListRequest()
+    model = models.DescribeVulInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeAttackVulTypeList(model)
+    rsp = client.DescribeVulInfo(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeComponents(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeComponentsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeComponents(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateSearchTemplate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateSearchTemplateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateSearchTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1795,6 +1984,33 @@ def doAddMachineTag(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSearchTemplates(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSearchTemplatesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSearchTemplates(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyAlarmAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2281,7 +2497,7 @@ def doDescribeAlarmAttribute(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeComponents(args, parsed_globals):
+def doDescribeLogStorageStatistic(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2297,9 +2513,36 @@ def doDescribeComponents(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeComponentsRequest()
+    model = models.DescribeLogStorageStatisticRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeComponents(model)
+    rsp = client.DescribeLogStorageStatistic(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAttackVulTypeList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAttackVulTypeListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAttackVulTypeList(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2543,6 +2786,33 @@ def doUntrustMalwares(args, parsed_globals):
     model = models.UntrustMalwaresRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.UntrustMalwares(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doOpenProVersion(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.OpenProVersionRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.OpenProVersion(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -3188,9 +3458,9 @@ ACTION_MAP = {
     "DescribeComponentStatistics": doDescribeComponentStatistics,
     "DeleteMachineTag": doDeleteMachineTag,
     "DescribeAttackLogs": doDescribeAttackLogs,
-    "OpenProVersion": doOpenProVersion,
+    "DescribeSearchExportList": doDescribeSearchExportList,
     "DescribeWeeklyReportMalwares": doDescribeWeeklyReportMalwares,
-    "DescribeVulInfo": doDescribeVulInfo,
+    "DeleteSearchTemplate": doDeleteSearchTemplate,
     "EditBashRule": doEditBashRule,
     "DeleteUsualLoginPlaces": doDeleteUsualLoginPlaces,
     "DescribeVuls": doDescribeVuls,
@@ -3198,22 +3468,27 @@ ACTION_MAP = {
     "CreateBaselineStrategy": doCreateBaselineStrategy,
     "DescribeImportMachineInfo": doDescribeImportMachineInfo,
     "DescribeBashRules": doDescribeBashRules,
+    "DescribeSearchLogs": doDescribeSearchLogs,
     "DeletePrivilegeEvents": doDeletePrivilegeEvents,
     "RenewProVersion": doRenewProVersion,
     "ExportAttackLogs": doExportAttackLogs,
     "DescribeUsualLoginPlaces": doDescribeUsualLoginPlaces,
     "DeleteBashEvents": doDeleteBashEvents,
     "DeleteMaliciousRequests": doDeleteMaliciousRequests,
+    "DescribeIndexList": doDescribeIndexList,
     "DescribeReverseShellRules": doDescribeReverseShellRules,
     "ExportTasks": doExportTasks,
     "RecoverMalwares": doRecoverMalwares,
     "DeleteReverseShellRules": doDeleteReverseShellRules,
+    "DescribeHistoryService": doDescribeHistoryService,
     "DeleteBruteAttacks": doDeleteBruteAttacks,
     "ExportBashEvents": doExportBashEvents,
     "CreateProcessTask": doCreateProcessTask,
     "EditReverseShellRule": doEditReverseShellRule,
     "DescribeProcesses": doDescribeProcesses,
     "DescribeMalwares": doDescribeMalwares,
+    "DescribeESAggregations": doDescribeESAggregations,
+    "CreateSearchLog": doCreateSearchLog,
     "ModifyLoginWhiteList": doModifyLoginWhiteList,
     "DescribePrivilegeRules": doDescribePrivilegeRules,
     "UntrustMaliciousRequest": doUntrustMaliciousRequest,
@@ -3225,7 +3500,9 @@ ACTION_MAP = {
     "DescribeNonlocalLoginPlaces": doDescribeNonlocalLoginPlaces,
     "ExportPrivilegeEvents": doExportPrivilegeEvents,
     "DescribeOverviewStatistics": doDescribeOverviewStatistics,
-    "DescribeAttackVulTypeList": doDescribeAttackVulTypeList,
+    "DescribeVulInfo": doDescribeVulInfo,
+    "DescribeComponents": doDescribeComponents,
+    "CreateSearchTemplate": doCreateSearchTemplate,
     "DescribeOpenPortTaskStatus": doDescribeOpenPortTaskStatus,
     "DescribeSecurityDynamics": doDescribeSecurityDynamics,
     "DeleteReverseShellEvents": doDeleteReverseShellEvents,
@@ -3249,6 +3526,7 @@ ACTION_MAP = {
     "DescribeBruteAttacks": doDescribeBruteAttacks,
     "OpenProVersionPrepaid": doOpenProVersionPrepaid,
     "AddMachineTag": doAddMachineTag,
+    "DescribeSearchTemplates": doDescribeSearchTemplates,
     "ModifyAlarmAttribute": doModifyAlarmAttribute,
     "SeparateMalwares": doSeparateMalwares,
     "AddLoginWhiteList": doAddLoginWhiteList,
@@ -3267,7 +3545,8 @@ ACTION_MAP = {
     "DescribePrivilegeEvents": doDescribePrivilegeEvents,
     "DescribeMachineInfo": doDescribeMachineInfo,
     "DescribeAlarmAttribute": doDescribeAlarmAttribute,
-    "DescribeComponents": doDescribeComponents,
+    "DescribeLogStorageStatistic": doDescribeLogStorageStatistic,
+    "DescribeAttackVulTypeList": doDescribeAttackVulTypeList,
     "DescribeLoginWhiteList": doDescribeLoginWhiteList,
     "UpdateBaselineStrategy": doUpdateBaselineStrategy,
     "DescribeVulScanResult": doDescribeVulScanResult,
@@ -3277,6 +3556,7 @@ ACTION_MAP = {
     "ExportNonlocalLoginPlaces": doExportNonlocalLoginPlaces,
     "DescribeWeeklyReportBruteAttacks": doDescribeWeeklyReportBruteAttacks,
     "UntrustMalwares": doUntrustMalwares,
+    "OpenProVersion": doOpenProVersion,
     "DescribeWeeklyReportVuls": doDescribeWeeklyReportVuls,
     "DescribeMachineOsList": doDescribeMachineOsList,
     "ModifyMalwareTimingScanSettings": doModifyMalwareTimingScanSettings,
