@@ -472,6 +472,33 @@ def doModifyRepository(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeChartDownloadInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeChartDownloadInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeChartDownloadInfo(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteNamespace(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -526,7 +553,7 @@ def doDeleteRepository(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRepositories(args, parsed_globals):
+def doDescribeUserQuotaPersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -542,9 +569,9 @@ def doDescribeRepositories(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRepositoriesRequest()
+    model = models.DescribeUserQuotaPersonalRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeRepositories(model)
+    rsp = client.DescribeUserQuotaPersonal(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1417,7 +1444,7 @@ def doCreateInstanceToken(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeUserQuotaPersonal(args, parsed_globals):
+def doDescribeRepositories(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1433,9 +1460,9 @@ def doDescribeUserQuotaPersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUserQuotaPersonalRequest()
+    model = models.DescribeRepositoriesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeUserQuotaPersonal(model)
+    rsp = client.DescribeRepositories(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2282,9 +2309,10 @@ ACTION_MAP = {
     "DeleteTagRetentionRule": doDeleteTagRetentionRule,
     "DescribeTagRetentionExecution": doDescribeTagRetentionExecution,
     "ModifyRepository": doModifyRepository,
+    "DescribeChartDownloadInfo": doDescribeChartDownloadInfo,
     "DeleteNamespace": doDeleteNamespace,
     "DeleteRepository": doDeleteRepository,
-    "DescribeRepositories": doDescribeRepositories,
+    "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
     "DescribeInstances": doDescribeInstances,
     "ModifyRepositoryInfoPersonal": doModifyRepositoryInfoPersonal,
     "CreateTagRetentionExecution": doCreateTagRetentionExecution,
@@ -2317,7 +2345,7 @@ ACTION_MAP = {
     "BatchDeleteRepositoryPersonal": doBatchDeleteRepositoryPersonal,
     "DeleteImageLifecyclePersonal": doDeleteImageLifecyclePersonal,
     "CreateInstanceToken": doCreateInstanceToken,
-    "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
+    "DescribeRepositories": doDescribeRepositories,
     "DeleteWebhookTrigger": doDeleteWebhookTrigger,
     "DescribeReplicationInstanceCreateTasks": doDescribeReplicationInstanceCreateTasks,
     "DescribeInternalEndpoints": doDescribeInternalEndpoints,

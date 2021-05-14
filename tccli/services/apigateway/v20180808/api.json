@@ -861,6 +861,7 @@
         {
           "default": "",
           "document": "API 所在的服务唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -870,6 +871,7 @@
         {
           "default": "",
           "document": "API 所在的服务的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -879,6 +881,7 @@
         {
           "default": "",
           "document": "API 所在的服务的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceDesc",
           "required": true,
@@ -888,6 +891,7 @@
         {
           "default": "",
           "document": "API 接口唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -897,6 +901,7 @@
         {
           "default": "",
           "document": "API 接口的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiDesc",
           "required": true,
@@ -906,6 +911,7 @@
         {
           "default": "",
           "document": "创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -915,6 +921,7 @@
         {
           "default": "",
           "document": "最后修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ModifiedTime",
           "required": true,
@@ -924,6 +931,7 @@
         {
           "default": "",
           "document": "API 接口的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiName",
           "required": true,
@@ -933,6 +941,7 @@
         {
           "default": "",
           "document": "API 类型。可取值为NORMAL（普通API）、TSF（微服务API）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiType",
           "required": true,
@@ -942,6 +951,7 @@
         {
           "default": "",
           "document": "API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -951,6 +961,7 @@
         {
           "default": "",
           "document": "API 鉴权类型。可取值为 SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AuthType",
           "required": true,
@@ -960,6 +971,7 @@
         {
           "default": "",
           "document": "OAUTH API的类型。可取值为NORMAL（业务API）、\bOAUTH（授权API）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiBusinessType",
           "required": true,
@@ -969,6 +981,7 @@
         {
           "default": "",
           "document": "OAUTH 业务API 关联的授权API 唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AuthRelationApiId",
           "required": true,
@@ -978,6 +991,7 @@
         {
           "default": "",
           "document": "OAUTH配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OauthConfig",
           "name": "OauthConfig",
           "required": true,
@@ -987,6 +1001,7 @@
         {
           "default": "",
           "document": "是否购买后调试（云市场预留参数）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "IsDebugAfterCharge",
           "required": true,
@@ -996,6 +1011,7 @@
         {
           "default": "",
           "document": "请求的前端配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RequestConfig",
           "name": "RequestConfig",
           "required": true,
@@ -1005,6 +1021,7 @@
         {
           "default": "",
           "document": "返回类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ResponseType",
           "required": true,
@@ -1014,6 +1031,7 @@
         {
           "default": "",
           "document": "自定义响应配置成功响应示例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ResponseSuccessExample",
           "required": true,
@@ -1023,6 +1041,7 @@
         {
           "default": "",
           "document": "自定义响应配置失败响应示例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ResponseFailExample",
           "required": true,
@@ -1032,6 +1051,7 @@
         {
           "default": "",
           "document": "用户自定义错误码配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ErrorCodes",
           "name": "ResponseErrorCodes",
           "required": true,
@@ -1041,6 +1061,7 @@
         {
           "default": "",
           "document": "前端请求参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ReqParameter",
           "name": "RequestParameters",
           "required": true,
@@ -1050,6 +1071,7 @@
         {
           "default": "",
           "document": "API 的后端服务超时时间，单位是秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ServiceTimeout",
           "required": true,
@@ -1059,6 +1081,7 @@
         {
           "default": "",
           "document": "API 的后端服务类型。可取值为 HTTP、MOCK、TSF、CLB、SCF、WEBSOCKET、TARGET（内测）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -1068,6 +1091,7 @@
         {
           "default": "",
           "document": "API 的后端服务配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServiceConfig",
           "name": "ServiceConfig",
           "required": true,
@@ -1077,6 +1101,7 @@
         {
           "default": "",
           "document": "API的后端服务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServiceParameter",
           "name": "ServiceParameters",
           "required": true,
@@ -1086,6 +1111,7 @@
         {
           "default": "",
           "document": "常量参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ConstantParameter",
           "name": "ConstantParameters",
           "required": true,
@@ -1095,6 +1121,7 @@
         {
           "default": "",
           "document": "API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceMockReturnMessage",
           "required": true,
@@ -1104,6 +1131,7 @@
         {
           "default": "",
           "document": "scf 函数名称。当后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceScfFunctionName",
           "required": true,
@@ -1113,6 +1141,7 @@
         {
           "default": "",
           "document": "scf 函数命名空间。当后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceScfFunctionNamespace",
           "required": true,
@@ -1122,6 +1151,7 @@
         {
           "default": "",
           "document": "scf函数版本。当后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceScfFunctionQualifier",
           "required": true,
@@ -1131,6 +1161,7 @@
         {
           "default": "",
           "document": "是否开启集成响应。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "ServiceScfIsIntegratedResponse",
           "required": true,
@@ -1140,6 +1171,7 @@
         {
           "default": "",
           "document": "scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketRegisterFunctionName",
           "required": true,
@@ -1149,6 +1181,7 @@
         {
           "default": "",
           "document": "scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketRegisterFunctionNamespace",
           "required": true,
@@ -1158,6 +1191,7 @@
         {
           "default": "",
           "document": "scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketRegisterFunctionQualifier",
           "required": true,
@@ -1167,6 +1201,7 @@
         {
           "default": "",
           "document": "scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketCleanupFunctionName",
           "required": true,
@@ -1176,6 +1211,7 @@
         {
           "default": "",
           "document": "scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketCleanupFunctionNamespace",
           "required": true,
@@ -1185,6 +1221,7 @@
         {
           "default": "",
           "document": "scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketCleanupFunctionQualifier",
           "required": true,
@@ -1194,6 +1231,7 @@
         {
           "default": "",
           "document": "WEBSOCKET 回推地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InternalDomain",
           "required": true,
@@ -1203,6 +1241,7 @@
         {
           "default": "",
           "document": "scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketTransportFunctionName",
           "required": true,
@@ -1212,6 +1251,7 @@
         {
           "default": "",
           "document": "scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketTransportFunctionNamespace",
           "required": true,
@@ -1221,6 +1261,7 @@
         {
           "default": "",
           "document": "scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceWebsocketTransportFunctionQualifier",
           "required": true,
@@ -1230,6 +1271,7 @@
         {
           "default": "",
           "document": "API绑定微服务服务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MicroService",
           "name": "MicroServices",
           "required": true,
@@ -1239,6 +1281,7 @@
         {
           "default": "",
           "document": "微服务信息详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "MicroServicesInfo",
           "required": true,
@@ -1248,6 +1291,7 @@
         {
           "default": "",
           "document": "微服务的负载均衡配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TsfLoadBalanceConfResp",
           "name": "ServiceTsfLoadBalanceConf",
           "required": true,
@@ -1257,6 +1301,7 @@
         {
           "default": "",
           "document": "微服务的健康检查配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HealthCheckConf",
           "name": "ServiceTsfHealthCheckConf",
           "required": true,
@@ -1266,6 +1311,7 @@
         {
           "default": "",
           "document": "是否开启跨域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "EnableCORS",
           "required": true,
@@ -1275,6 +1321,7 @@
         {
           "default": "",
           "document": "API绑定的tag信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -1284,6 +1331,7 @@
         {
           "default": "",
           "document": "API已发布的环境信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Environments",
           "required": true,
@@ -1293,6 +1341,7 @@
         {
           "default": "",
           "document": "是否开启Base64编码，只有后端为scf时才会生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "IsBase64Encoded",
           "required": true,
@@ -1302,6 +1351,7 @@
         {
           "default": "",
           "document": "是否开启Base64编码的header触发，只有后端为scf时才会生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "IsBase64Trigger",
           "required": true,
@@ -1311,6 +1361,7 @@
         {
           "default": "",
           "document": "Header触发规则，总规则数量不超过10。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Base64EncodedTriggerRule",
           "name": "Base64EncodedTriggerRules",
           "required": true,

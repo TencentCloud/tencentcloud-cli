@@ -54,6 +54,12 @@
       "name": "查询防火墙弹性公网ip",
       "output": "DescribeCfwEipsResponse"
     },
+    "DescribeGuideScanInfo": {
+      "document": "DescribeGuideScanInfo新手引导扫描接口信息",
+      "input": "DescribeGuideScanInfoRequest",
+      "name": "新手引导扫描接口信息",
+      "output": "DescribeGuideScanInfoResponse"
+    },
     "DescribeNatRuleOverview": {
       "document": "nat规则列表概况",
       "input": "DescribeNatRuleOverviewRequest",
@@ -1082,6 +1088,32 @@
           "name": "NatFwEipList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGuideScanInfoRequest": {
+      "document": "DescribeGuideScanInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeGuideScanInfoResponse": {
+      "document": "DescribeGuideScanInfo返回参数结构体",
+      "members": [
+        {
+          "document": "扫描信息",
+          "example": "无",
+          "member": "ScanInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2418,6 +2450,118 @@
         }
       ],
       "type": "object"
+    },
+    "ScanInfo": {
+      "document": "新手引导扫描信息  ",
+      "members": [
+        {
+          "default": "",
+          "document": "扫描结果信息",
+          "example": "   \"ScanResultInfo\": {             \"PortNum\": 0,  暴露端口          ",
+          "member": "ScanResultInfo",
+          "name": "ScanResultInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描状态 0扫描中 1完成   2没赠送过扫描显示开启界面",
+          "example": "1",
+          "member": "int64",
+          "name": "ScanStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进度",
+          "example": "0.55",
+          "member": "float",
+          "name": "ScanPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预计完成时间",
+          "example": "2021-04-17 12:20:03",
+          "member": "string",
+          "name": "ScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ScanResultInfo": {
+      "document": "新手引导扫描结果信息PortNum   int\n\tLeakNum   int\n\tIPNum     int\n\tIPStatus  bool\n\tIdpStatus bool\n\tBanStatus bool",
+      "members": [
+        {
+          "default": "",
+          "document": "暴漏漏洞数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "LeakNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护ip数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "IPNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暴漏端口数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PortNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启防护",
+          "example": "true",
+          "member": "bool",
+          "name": "IPStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否拦截攻击",
+          "example": "true",
+          "member": "bool",
+          "name": "IdpStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否禁封端口",
+          "example": "true",
+          "member": "bool",
+          "name": "BanStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SecurityGroupApiRuleData": {
       "document": "添加安全组Api规则对象",

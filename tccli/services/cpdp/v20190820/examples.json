@@ -273,8 +273,8 @@
     "QueryAcctBinding": [
       {
         "document": "聚鑫-查询子账户绑定银行卡",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryAcctBinding\r\n&<公共请求参数>\r\n&MidasAppId=your_midas_app_id\r\n&SubAppId=your_sub_mch_id\r\n&MidasSecretId=your_midas_secret_id\r\n&MidasSignature=your_midas_signature",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\"\n    }\n}",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryAcctBinding\n&MidasAppId=your_midas_app_id\n&SubAppId=your_sub_mch_id\n&MidasSecretId=your_midas_secret_id\n&MidasSignature=your_midas_signature\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"TotalCount\": 1,\n        \"BankCardItems\": [\n            {\n                \"IdType\": \"xx\",\n                \"AcctBranchName\": \"xx\",\n                \"Mobile\": \"xx\",\n                \"SettleAcctType\": 0,\n                \"CnapsBranchId\": \"xx\",\n                \"BindType\": 0,\n                \"IdCode\": \"xx\",\n                \"SubAppId\": \"xx\",\n                \"EiconBankBranchId\": \"xx\",\n                \"SettleAcctName\": \"xx\",\n                \"SettleAcctNo\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "聚鑫-查询子账户绑定银行卡请求示例"
       }
     ],

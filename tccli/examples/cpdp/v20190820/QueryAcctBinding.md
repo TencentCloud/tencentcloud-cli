@@ -16,7 +16,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fd590936-acd7-440c-9ac5-b698bc0a5af0"
+        "RequestId": "fd590936-acd7-440c-9ac5-b698bc0a5af0",
+        "TotalCount": 1,
+        "BankCardItems": [
+            {
+                "IdType": "xx",
+                "AcctBranchName": "xx",
+                "Mobile": "xx",
+                "SettleAcctType": 0,
+                "CnapsBranchId": "xx",
+                "BindType": 0,
+                "IdCode": "xx",
+                "SubAppId": "xx",
+                "EiconBankBranchId": "xx",
+                "SettleAcctName": "xx",
+                "SettleAcctNo": "xx"
+            }
+        ]
     }
 }
 ```

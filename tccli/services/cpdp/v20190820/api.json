@@ -6699,6 +6699,7 @@
         {
           "default": "",
           "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
           "member": "string",
           "name": "MidasAppId",
           "required": true,
@@ -6707,6 +6708,7 @@
         {
           "default": "",
           "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_mch_id",
           "member": "string",
           "name": "SubAppId",
           "required": true,
@@ -6715,6 +6717,7 @@
         {
           "default": "",
           "document": "由平台客服提供的计费密钥Id",
+          "example": "your_midas_secret_id",
           "member": "string",
           "name": "MidasSecretId",
           "required": true,
@@ -6723,6 +6726,7 @@
         {
           "default": "",
           "document": "计费签名",
+          "example": "your_midas_secret_key",
           "member": "string",
           "name": "MidasSignature",
           "required": true,
@@ -6731,6 +6735,7 @@
         {
           "default": "",
           "document": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA",
+          "example": "RSA",
           "member": "string",
           "name": "EncryptType",
           "required": false,
@@ -6739,6 +6744,7 @@
         {
           "default": "",
           "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "release",
           "member": "string",
           "name": "MidasEnvironment",
           "required": false,
@@ -6752,15 +6758,19 @@
       "members": [
         {
           "document": "总行数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "银行卡信息列表",
+          "example": "无",
           "member": "BankCardItem",
           "name": "BankCardItems",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

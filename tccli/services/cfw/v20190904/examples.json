@@ -72,6 +72,14 @@
         "title": "查询防火墙弹性公网ip"
       }
     ],
+    "DescribeGuideScanInfo": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeGuideScanInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ScanTime\": \"xx\",\n            \"ScanPercent\": 0.0,\n            \"ScanResultInfo\": {\n                \"LeakNum\": 1,\n                \"IPNum\": 1,\n                \"IdpStatus\": true,\n                \"PortNum\": 1,\n                \"BanStatus\": true,\n                \"IPStatus\": true\n            },\n            \"ScanStatus\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeGuideScanInfo 新手引导扫描接口"
+      }
+    ],
     "DescribeNatRuleOverview": [
       {
         "document": "",

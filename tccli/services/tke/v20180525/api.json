@@ -258,6 +258,12 @@
       "name": "查询弹性集群列表",
       "output": "DescribeEKSClustersResponse"
     },
+    "DescribeEnableVpcCniProgress": {
+      "document": "本接口用于查询开启vpc-cni模式的任务进度",
+      "input": "DescribeEnableVpcCniProgressRequest",
+      "name": "查询开启vpc-cni异步任务的进度",
+      "output": "DescribeEnableVpcCniProgressResponse"
+    },
     "DescribeExistedInstances": {
       "document": "查询已经存在的节点，判断是否可以加入集群",
       "input": "DescribeExistedInstancesRequest",
@@ -329,6 +335,12 @@
       "input": "DescribeRouteTableConflictsRequest",
       "name": "查询路由表冲突列表",
       "output": "DescribeRouteTableConflictsResponse"
+    },
+    "EnableVpcCniNetworkType": {
+      "document": "GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力",
+      "input": "EnableVpcCniNetworkTypeRequest",
+      "name": "开启vpc-cni容器网络能力",
+      "output": "EnableVpcCniNetworkTypeResponse"
     },
     "GetUpgradeInstanceProgress": {
       "document": "获得节点升级当前的进度 ",
@@ -3794,6 +3806,51 @@
       ],
       "type": "object"
     },
+    "DescribeEnableVpcCniProgressRequest": {
+      "document": "DescribeEnableVpcCniProgress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开启vpc-cni的集群ID",
+          "example": "\"cls-xxx\"",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnableVpcCniProgressResponse": {
+      "document": "DescribeEnableVpcCniProgress返回参数结构体",
+      "members": [
+        {
+          "document": "任务进度的描述：Running/Succeed/Failed",
+          "example": "\"Running\"",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当任务进度为Failed时，对任务状态的进一步描述，例如IPAMD组件安装失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExistedInstancesRequest": {
       "document": "DescribeExistedInstances请求参数结构体",
       "members": [
@@ -4625,6 +4682,60 @@
         }
       ],
       "usage": "both"
+    },
+    "EnableVpcCniNetworkTypeRequest": {
+      "document": "EnableVpcCniNetworkType请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开启vpc-cni的模式，tke-route-eni开启的是策略路由模式，tke-direct-eni开启的是独立网卡模式",
+          "example": "tke-route-eni;tke-direct-eni",
+          "member": "string",
+          "name": "VpcCniType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启固定IP模式",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableStaticIp",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "使用的容器子网",
+          "example": "[\"subnet-aaa\",\"subnet-bbb\"]",
+          "member": "string",
+          "name": "Subnets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableVpcCniNetworkTypeResponse": {
+      "document": "EnableVpcCniNetworkType返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EnhancedService": {
       "document": "描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent",

@@ -210,6 +210,12 @@
       "name": "查询应用更新触发器",
       "output": "DescribeApplicationTriggerPersonalResponse"
     },
+    "DescribeChartDownloadInfo": {
+      "document": "用于在企业版中返回Chart的下载信息",
+      "input": "DescribeChartDownloadInfoRequest",
+      "name": "查询Chart包下载信息",
+      "output": "DescribeChartDownloadInfoResponse"
+    },
     "DescribeExternalEndpointStatus": {
       "document": "查询实例公网访问入口状态",
       "input": "DescribeExternalEndpointStatusRequest",
@@ -2200,6 +2206,69 @@
           "member": "DescribeApplicationTriggerPersonalResp",
           "name": "Data",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChartDownloadInfoRequest": {
+      "document": "DescribeChartDownloadInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "testgroup",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Chart包的名称",
+          "example": "mychart",
+          "member": "string",
+          "name": "ChartName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Chart包的版本",
+          "example": "1.0",
+          "member": "string",
+          "name": "ChartVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChartDownloadInfoResponse": {
+      "document": "DescribeChartDownloadInfo返回参数结构体",
+      "members": [
+        {
+          "document": "用于下载的url的预签名地址",
+          "example": "https://cos.com",
+          "member": "string",
+          "name": "PreSignedDownloadURL",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
