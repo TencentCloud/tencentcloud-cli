@@ -366,6 +366,12 @@
       "name": "营业执照识别及核验（详细版）",
       "output": "VerifyBizLicenseResponse"
     },
+    "VerifyEnterpriseFourFactors": {
+      "document": "此接口基于企业四要素授权“姓名、证件号码、企业标识、企业全称”，验证企业信息是否一致。",
+      "input": "VerifyEnterpriseFourFactorsRequest",
+      "name": "企业四要素核验",
+      "output": "VerifyEnterpriseFourFactorsResponse"
+    },
     "VerifyOfdVatInvoiceOCR": {
       "document": "本接口支持OFD格式的增值税电子普通发票和增值税电子专用发票的识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。",
       "input": "VerifyOfdVatInvoiceOCRRequest",
@@ -1279,6 +1285,32 @@
           "name": "Y",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Detail": {
+      "document": "企业四要素核验结果",
+      "members": [
+        {
+          "default": "",
+          "document": "企业四要素核验结果状态码",
+          "example": "7",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业四要素核验结果描述",
+          "example": "string",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8136,6 +8168,78 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyEnterpriseFourFactorsRequest": {
+      "document": "VerifyEnterpriseFourFactors请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "string",
+          "member": "string",
+          "name": "RealName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证件号码（公司注册证件号）",
+          "example": "string",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业全称",
+          "example": "string",
+          "member": "string",
+          "name": "EnterpriseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业标识（注册号，统一社会信用代码）",
+          "example": "string",
+          "member": "string",
+          "name": "EnterpriseMark",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyEnterpriseFourFactorsResponse": {
+      "document": "VerifyEnterpriseFourFactors返回参数结构体",
+      "members": [
+        {
+          "document": "核验一致性（1:一致，2:不一致）",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回不一致时，返回明细，-22：姓名不一致，-23：证件号码不一致，-24：企业名称不一致，-25：企业标识不一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Detail",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

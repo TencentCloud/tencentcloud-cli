@@ -1120,6 +1120,33 @@ def doSealOCR(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doFinanBillOCR(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.FinanBillOCRRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.FinanBillOCR(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doTrainTicketOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1579,7 +1606,7 @@ def doGeneralBasicOCR(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doFinanBillOCR(args, parsed_globals):
+def doVerifyEnterpriseFourFactors(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1595,9 +1622,9 @@ def doFinanBillOCR(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.FinanBillOCRRequest()
+    model = models.VerifyEnterpriseFourFactorsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.FinanBillOCR(model)
+    rsp = client.VerifyEnterpriseFourFactors(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1793,6 +1820,7 @@ ACTION_MAP = {
     "EstateCertOCR": doEstateCertOCR,
     "ClassifyDetectOCR": doClassifyDetectOCR,
     "SealOCR": doSealOCR,
+    "FinanBillOCR": doFinanBillOCR,
     "TrainTicketOCR": doTrainTicketOCR,
     "TextDetect": doTextDetect,
     "GeneralEfficientOCR": doGeneralEfficientOCR,
@@ -1810,7 +1838,7 @@ ACTION_MAP = {
     "ShipInvoiceOCR": doShipInvoiceOCR,
     "VerifyOfdVatInvoiceOCR": doVerifyOfdVatInvoiceOCR,
     "GeneralBasicOCR": doGeneralBasicOCR,
-    "FinanBillOCR": doFinanBillOCR,
+    "VerifyEnterpriseFourFactors": doVerifyEnterpriseFourFactors,
     "DriverLicenseOCR": doDriverLicenseOCR,
     "EduPaperOCR": doEduPaperOCR,
     "RideHailingTransportLicenseOCR": doRideHailingTransportLicenseOCR,

@@ -7444,12 +7444,67 @@
     },
     "SetNodePoolNodeProtectionRequest": {
       "document": "SetNodePoolNodeProtection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池id",
+          "example": "np-xxx",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点id",
+          "example": "[\"ins-xxx\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "节点是否需要移出保护",
+          "example": "true",
+          "member": "bool",
+          "name": "ProtectedFromScaleIn",
+          "required": true,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "SetNodePoolNodeProtectionResponse": {
       "document": "SetNodePoolNodeProtection返回参数结构体",
       "members": [
+        {
+          "document": "成功设置的节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ins-xxx\"]",
+          "member": "string",
+          "name": "SucceedInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "没有成功设置的节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

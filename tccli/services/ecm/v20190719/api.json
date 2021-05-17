@@ -7366,6 +7366,7 @@
         {
           "default": "",
           "document": "模块ID。",
+          "example": "em-0vag13d1",
           "member": "string",
           "name": "ModuleId",
           "required": true,
@@ -7374,6 +7375,7 @@
         {
           "default": "",
           "document": "机型ID。",
+          "example": "SN3ne.2XLARGE16",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -7382,6 +7384,7 @@
         {
           "default": "",
           "document": "默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。",
+          "example": "100",
           "member": "int64",
           "name": "DefaultDataDiskSize",
           "required": true,

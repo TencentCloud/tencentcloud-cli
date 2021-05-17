@@ -403,7 +403,7 @@
         },
         {
           "default": "",
-          "document": "资源类型",
+          "document": "资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE",
           "example": "CLS",
           "member": "string",
           "name": "ResourceType",
@@ -421,7 +421,7 @@
         },
         {
           "default": "",
-          "document": "来源",
+          "document": "来源渠道",
           "example": "0",
           "member": "int64",
           "name": "SourceChannel",
@@ -475,7 +475,7 @@
         },
         {
           "default": "",
-          "document": "是否使用默认镜像服务",
+          "document": "是否使用默认镜像服务 1-是，0-否",
           "example": "0",
           "member": "int64",
           "name": "UseDefaultImageService",
@@ -538,7 +538,7 @@
         },
         {
           "default": "",
-          "document": "编程语言",
+          "document": "编程语言 \n- JAVA\n- OTHER",
           "example": "1",
           "member": "string",
           "name": "CodingLanguage",
@@ -547,7 +547,7 @@
         },
         {
           "default": "",
-          "document": "部署方式",
+          "document": "部署方式 \n- IMAGE\n- JAR\n- WAR",
           "example": "1",
           "member": "string",
           "name": "DeployMode",
@@ -930,7 +930,7 @@
       "document": "DescribeIngress返回参数结构体",
       "members": [
         {
-          "document": "ingressInfo",
+          "document": "Ingress 规则配置",
           "example": "ingressInfo",
           "member": "IngressInfo",
           "name": "Result",
@@ -970,7 +970,7 @@
         },
         {
           "default": "",
-          "document": "来源",
+          "document": "来源渠道",
           "example": "0",
           "member": "int64",
           "name": "SourceChannel",
@@ -1134,7 +1134,7 @@
         },
         {
           "default": "",
-          "document": "单页条数",
+          "document": "单页条数，默认值20",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -1143,7 +1143,7 @@
         },
         {
           "default": "",
-          "document": "分页下标",
+          "document": "分页下标，默认值0",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -1152,7 +1152,7 @@
         },
         {
           "default": "",
-          "document": "pod状态",
+          "document": "实例状态 \n- Running \n- Pending \n- Error",
           "example": "Running",
           "member": "string",
           "name": "Status",
@@ -1161,7 +1161,7 @@
         },
         {
           "default": "",
-          "document": "名字",
+          "document": "实例名字",
           "example": "pod-a",
           "member": "string",
           "name": "PodName",

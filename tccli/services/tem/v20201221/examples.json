@@ -52,7 +52,7 @@
       {
         "document": "服务版本部署",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployServiceV2\n<公共请求参数>\n\n{\n    \"JvmOpts\": \"xx\",\n    \"StorageConfs\": [\n        {\n            \"StorageVolName\": \"xx\",\n            \"StorageVolPath\": \"xx\"\n        }\n    ],\n    \"ImgRepo\": \"xx\",\n    \"EnvConf\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"Description\": \"xx\",\n    \"JdkVersion\": \"xx\",\n    \"ContainerPort\": 1,\n    \"LogOutputConf\": {\n        \"ClsLogTopicId\": \"xx\",\n        \"ClsLogsetName\": \"xx\",\n        \"OutputType\": \"xx\"\n    },\n    \"CpuSpec\": 0.0,\n    \"DeployMode\": \"xx\",\n    \"SecurityGroupIds\": [\n        \"xx\"\n    ],\n    \"SourceChannel\": 0,\n    \"DeployVersion\": \"xx\",\n    \"InitPodNum\": 1,\n    \"VersionDesc\": \"xx\",\n    \"MemorySpec\": 0.0,\n    \"LogConfs\": [\n        \"xx\"\n    ],\n    \"PkgName\": \"xx\",\n    \"StorageMountConfs\": [\n        {\n            \"VolumeName\": \"xx\",\n            \"MountPath\": \"xx\"\n        }\n    ],\n    \"EsInfo\": {\n        \"MinAliveInstances\": 0,\n        \"EsStrategy\": 0,\n        \"VersionId\": \"xx\",\n        \"Threshold\": 1,\n        \"MaxAliveInstances\": 2\n    },\n    \"ServiceId\": \"xx\",\n    \"NamespaceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": \"version-xxx\"\n    }\n}",
         "title": "服务版本部署"
       }
     ],
@@ -83,8 +83,8 @@
     "DescribeServiceRunPodListV2": [
       {
         "document": "获取版本下面运行pod列表",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceRunPodListV2\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"PodName\": \"xx\",\n    \"ServiceId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"NamespaceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Limit\": 0,\n            \"RequestId\": \"xx\",\n            \"PodList\": [\n                {\n                    \"Webshell\": \"xx\",\n                    \"Status\": \"xx\",\n                    \"PodIp\": \"xx\",\n                    \"CreateTime\": \"xx\",\n                    \"PodId\": \"xx\"\n                }\n            ],\n            \"Offset\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceRunPodListV2\n<公共请求参数>\n\n{\n    \"PodName\": \"xx\",\n    \"ServiceId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"NamespaceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Limit\": 0,\n            \"RequestId\": \"xx\",\n            \"PodList\": [\n                {\n                    \"Webshell\": \"xx\",\n                    \"Status\": \"xx\",\n                    \"PodId\": \"xx\",\n                    \"PodIp\": \"xx\",\n                    \"CreateTime\": \"xx\"\n                }\n            ],\n            \"Offset\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取版本下面运行pod列表"
       }
     ],

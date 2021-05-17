@@ -201,6 +201,8 @@ include tccli/services/mgobe/v20201014/api.json
 include tccli/services/mgobe/v20201014/examples.json
 include tccli/services/mgobe/v20190929/api.json
 include tccli/services/mgobe/v20190929/examples.json
+include tccli/services/mna/v20210119/api.json
+include tccli/services/mna/v20210119/examples.json
 include tccli/services/mongodb/v20190725/api.json
 include tccli/services/mongodb/v20190725/examples.json
 include tccli/services/mongodb/v20180408/api.json

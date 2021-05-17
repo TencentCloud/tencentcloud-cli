@@ -4580,6 +4580,7 @@
         {
           "default": "",
           "document": "`HAVIP`所在私有网络`ID`。",
+          "example": "vpc-6v2ht8q5",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4588,6 +4589,7 @@
         {
           "default": "",
           "document": "`HAVIP`所在子网`ID`。",
+          "example": "subnet-qq51iwr4",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -4596,6 +4598,7 @@
         {
           "default": "",
           "document": "`HAVIP`名称。",
+          "example": "test+name",
           "member": "string",
           "name": "HaVipName",
           "required": true,
@@ -4604,6 +4607,7 @@
         {
           "default": "",
           "document": "指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。",
+          "example": "10.4.6.15",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -4617,8 +4621,10 @@
       "members": [
         {
           "document": "`HAVIP`对象。",
+          "example": "无",
           "member": "HaVip",
           "name": "HaVip",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6787,6 +6793,7 @@
         {
           "default": "",
           "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。",
+          "example": "havip-9o233uri",
           "member": "string",
           "name": "HaVipId",
           "required": true,
@@ -12953,8 +12960,9 @@
       "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议",
       "members": [
         {
-          "default": "IKEV1",
-          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，默认为3DES-CBC",
+          "default": "",
+          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC",
+          "example": "3DES-CBC",
           "member": "string",
           "name": "PropoEncryAlgorithm",
           "required": false,
@@ -12963,7 +12971,8 @@
         },
         {
           "default": "",
-          "document": "认证算法：可选值：'MD5', 'SHA1'，默认为MD5",
+          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5",
+          "example": "MD5",
           "member": "string",
           "name": "PropoAuthenAlgorithm",
           "required": false,
@@ -12973,6 +12982,7 @@
         {
           "default": "",
           "document": "协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN",
+          "example": "MAIN",
           "member": "string",
           "name": "ExchangeMode",
           "required": false,
@@ -12982,6 +12992,7 @@
         {
           "default": "",
           "document": "本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
+          "example": "ADDRESS",
           "member": "string",
           "name": "LocalIdentity",
           "required": false,
@@ -12991,6 +13002,7 @@
         {
           "default": "",
           "document": "对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
+          "example": "ADDRESS",
           "member": "string",
           "name": "RemoteIdentity",
           "required": false,
@@ -13000,6 +13012,7 @@
         {
           "default": "",
           "document": "本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP",
+          "example": "1.2.3.4",
           "member": "string",
           "name": "LocalAddress",
           "required": false,
@@ -13009,6 +13022,7 @@
         {
           "default": "",
           "document": "对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填",
+          "example": "4.3.2.1",
           "member": "string",
           "name": "RemoteAddress",
           "required": false,
@@ -13018,6 +13032,7 @@
         {
           "default": "",
           "document": "本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填",
+          "example": "LocalName",
           "member": "string",
           "name": "LocalFqdnName",
           "required": false,
@@ -13027,6 +13042,7 @@
         {
           "default": "",
           "document": "对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填",
+          "example": "RemoteName",
           "member": "string",
           "name": "RemoteFqdnName",
           "required": false,
@@ -13036,6 +13052,7 @@
         {
           "default": "",
           "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，",
+          "example": "GOURP1",
           "member": "string",
           "name": "DhGroupName",
           "required": false,
@@ -13045,6 +13062,7 @@
         {
           "default": "",
           "document": "IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800",
+          "example": "60",
           "member": "uint64",
           "name": "IKESaLifetimeSeconds",
           "required": false,
@@ -13054,6 +13072,7 @@
         {
           "default": "",
           "document": "IKE版本",
+          "example": "1",
           "member": "string",
           "name": "IKEVersion",
           "required": false,

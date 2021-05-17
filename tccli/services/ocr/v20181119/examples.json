@@ -566,6 +566,14 @@
         "title": "营业执照识别及核验详细版示例代码（输入关键字段进行核验）"
       }
     ],
+    "VerifyEnterpriseFourFactors": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=VerifyEnterpriseFourFactors\n&RealName=xxxxx\n&IdCard=xxxxx\n&EnterpriseName=xxxxx\n&EnterpriseMark=xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"State\": 2,\n        \"Detail\": {\n            \"Result\": -22,\n            \"Desc\": \"姓名不一致\"\n        },\n        \"RequestId\": \"8d9627c4-eb52-4a8d-8565-5b07ad436c9f\"\n    }\n}",
+        "title": "企业四要素核验示例代码（输入关键字段进行核验）"
+      }
+    ],
     "VerifyOfdVatInvoiceOCR": [
       {
         "document": "",

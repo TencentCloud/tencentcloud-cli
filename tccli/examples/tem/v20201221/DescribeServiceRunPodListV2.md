@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli tem DescribeServiceRunPodListV2 --cli-unfold-argument  \
-    --Status xx \
     --PodName xx \
     --ServiceId xx \
     --Limit 0 \
@@ -26,9 +25,9 @@ Output:
                 {
                     "Webshell": "xx",
                     "Status": "xx",
+                    "PodId": "xx",
                     "PodIp": "xx",
-                    "CreateTime": "xx",
-                    "PodId": "xx"
+                    "CreateTime": "xx"
                 }
             ],
             "Offset": 0

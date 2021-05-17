@@ -16,7 +16,13 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxx"
+        "SucceedInstanceIds": [
+            "ins-xxx"
+        ],
+        "FailedInstanceIds": [
+            "xx"
+        ],
+        "RequestId": "xx"
     }
 }
 ```

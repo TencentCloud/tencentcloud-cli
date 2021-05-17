@@ -26,7 +26,8 @@ Output:
             "InstanceId": "",
             "AddressIp": "",
             "State": "UNBIND",
-            "CreatedTime": "2018-10-10 17:03:09"
+            "CreatedTime": "2018-10-10 17:03:09",
+            "Business": "SCF"
         },
         "RequestId": "fcb47621-838b-428e-8c33-6e210d93c451"
     }

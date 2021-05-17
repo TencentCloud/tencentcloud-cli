@@ -351,8 +351,8 @@
     "CreateHaVip": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateHaVip\r\n&VpcId=vpc-6v2ht8q5\r\n&SubnetId=subnet-qq51iwr4\r\n&HaVipName=test+name\r\n&Vip=10.4.6.15\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"HaVip\": {\n            \"HaVipId\": \"havip-72alakye\",\n            \"HaVipName\": \"test name\",\n            \"Vip\": \"10.4.6.15\",\n            \"VpcId\": \"vpc-6v2ht8q5\",\n            \"SubnetId\": \"subnet-qq51iwr4\",\n            \"NetworkInterfaceId\": \"\",\n            \"InstanceId\": \"\",\n            \"AddressIp\": \"\",\n            \"State\": \"UNBIND\",\n            \"CreatedTime\": \"2018-10-10 17:03:09\"\n        },\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateHaVip\n&VpcId=vpc-6v2ht8q5\n&SubnetId=subnet-qq51iwr4\n&HaVipName=test+name\n&Vip=10.4.6.15\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HaVip\": {\n            \"HaVipId\": \"havip-72alakye\",\n            \"HaVipName\": \"test name\",\n            \"Vip\": \"10.4.6.15\",\n            \"VpcId\": \"vpc-6v2ht8q5\",\n            \"SubnetId\": \"subnet-qq51iwr4\",\n            \"NetworkInterfaceId\": \"\",\n            \"InstanceId\": \"\",\n            \"AddressIp\": \"\",\n            \"State\": \"UNBIND\",\n            \"CreatedTime\": \"2018-10-10 17:03:09\",\n            \"Business\": \"SCF\"\n        },\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "创建HAVIP"
       }
     ],
@@ -635,7 +635,7 @@
     "DeleteHaVip": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteHaVip\r\n&HaVipId=havip-9o233uri\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteHaVip\n&HaVipId=havip-9o233uri\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "删除HAVIP"
       }
