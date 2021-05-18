@@ -22649,6 +22649,7 @@
         {
           "default": "",
           "document": "媒体文件 ID。",
+          "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -22657,6 +22658,7 @@
         {
           "default": "",
           "document": "发布视频所对应的转码模板 ID，为0代表原始视频。",
+          "example": "10",
           "member": "int64",
           "name": "SourceDefinition",
           "required": false,
@@ -22665,6 +22667,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "125",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -22678,8 +22681,10 @@
       "members": [
         {
           "document": "任务 ID。",
+          "example": "125xxx65-wechat-mini-program-publish-bffb15",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

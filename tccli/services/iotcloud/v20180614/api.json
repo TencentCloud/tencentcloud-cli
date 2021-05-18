@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BatchUpdateFirmware": {
+      "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件 ",
+      "input": "BatchUpdateFirmwareRequest",
+      "name": "批量更新固件",
+      "output": "BatchUpdateFirmwareResponse"
+    },
     "BindDevices": {
       "document": "本接口（BindDevices）用于网关设备批量绑定子设备 ",
       "input": "BindDevicesRequest",
@@ -264,6 +270,12 @@
       "name": "启用规则",
       "output": "EnableTopicRuleResponse"
     },
+    "GetCOSURL": {
+      "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL ",
+      "input": "GetCOSURLRequest",
+      "name": "获取固件下载地址",
+      "output": "GetCOSURLResponse"
+    },
     "GetUserResourceInfo": {
       "document": "本接口（GetUserResourceInfo）用于查询用户资源使用信息。",
       "input": "GetUserResourceInfoRequest",
@@ -394,6 +406,114 @@
         }
       ],
       "usage": "in"
+    },
+    "BatchUpdateFirmwareRequest": {
+      "document": "BatchUpdateFirmware请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件新版本号",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件原版本号，根据文件列表升级固件不需要填写此参数",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareOriVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式",
+          "example": "0",
+          "member": "uint64",
+          "name": "UpgradeMethod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备列表文件名称，根据文件列表升级固件需要填写此参数",
+          "example": "ota",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备列表的文件md5值",
+          "example": "608afe29a06b19d3033c5f8787ec75fa",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备列表的文件大小值",
+          "example": "120",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要升级的设备名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "固件升级任务，默认超时时间。 最小取值60秒，最大为3600秒",
+          "example": "120",
+          "member": "uint64",
+          "name": "TimeoutInterval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchUpdateFirmwareResponse": {
+      "document": "BatchUpdateFirmware返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BatchUpdateShadow": {
       "document": "批量更新设备影子任务",
@@ -3742,6 +3862,51 @@
         }
       ],
       "usage": "out"
+    },
+    "GetCOSURLRequest": {
+      "document": "GetCOSURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCOSURLResponse": {
+      "document": "GetCOSURL返回参数结构体",
+      "members": [
+        {
+          "document": "固件URL",
+          "example": "http://abc.com",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetUserResourceInfoRequest": {
       "document": "GetUserResourceInfo请求参数结构体",

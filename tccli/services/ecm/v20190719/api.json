@@ -1131,7 +1131,7 @@
         },
         {
           "default": "",
-          "document": "ECM 地域",
+          "document": "ECM 地域，形如ap-xian-ecm。",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -6838,7 +6838,7 @@
       "members": [
         {
           "default": "",
-          "document": "ECM 地域",
+          "document": "ECM 地域，形如ap-xian-ecm。",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -6888,7 +6888,8 @@
       "members": [
         {
           "default": "",
-          "document": "ECM 地域",
+          "document": "ECM 地域，形如ap-xian-ecm。",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -6896,7 +6897,8 @@
         },
         {
           "default": "",
-          "document": "当内网IP绑定的弹性网卡实例ID，例如：eni-11112222。",
+          "document": "当前内网IP绑定的弹性网卡实例ID，例如：eni-11112222。",
+          "example": "eni-12121212",
           "member": "string",
           "name": "SourceNetworkInterfaceId",
           "required": true,
@@ -6905,6 +6907,7 @@
         {
           "default": "",
           "document": "待迁移的目的弹性网卡实例ID。",
+          "example": "eni-13131313",
           "member": "string",
           "name": "DestinationNetworkInterfaceId",
           "required": true,
@@ -6913,6 +6916,7 @@
         {
           "default": "",
           "document": "迁移的内网IP地址，例如：10.0.0.6。",
+          "example": "172.16.33.109",
           "member": "string",
           "name": "PrivateIpAddress",
           "required": true,
@@ -9423,7 +9427,7 @@
       "members": [
         {
           "default": "",
-          "document": "ECM 地域。",
+          "document": "ECM 地域，形如ap-xian-ecm。",
           "member": "string",
           "name": "EcmRegion",
           "required": true,

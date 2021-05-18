@@ -90,6 +90,12 @@
       "name": "查询客户余额",
       "output": "DescribeClientBalanceResponse"
     },
+    "DescribeClientBaseInfo": {
+      "document": "国际站根据UIN查询代客基础信息",
+      "input": "DescribeClientBaseInfoRequest",
+      "name": "查询代客基础信息",
+      "output": "DescribeClientBaseInfoResponse"
+    },
     "DescribeRebateInfos": {
       "document": "代理商可查询自己名下全部返佣信息",
       "input": "DescribeRebateInfosRequest",
@@ -1229,6 +1235,62 @@
       ],
       "type": "object"
     },
+    "ClientBaseElem": {
+      "document": "代客基础信息，for国际站查代客API",
+      "members": [
+        {
+          "default": "",
+          "document": "代客关联的代理商UIN",
+          "example": "10000001",
+          "member": "string",
+          "name": "AgentUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客UIN",
+          "example": "1000002",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客关联类型 0:代理 1:转售",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClientRelateType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代理商合作模式 0:代理 1:转售",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentCooperationMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代理商国家编码 China:中国  其他:海外，如US等",
+          "example": "China",
+          "member": "string",
+          "name": "AgentCountry",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreatePayRelationForClientRequest": {
       "document": "CreatePayRelationForClient请求参数结构体",
       "members": [
@@ -2332,6 +2394,7 @@
         {
           "default": "",
           "document": "客户(代客)账号ID",
+          "example": "125****938",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -2344,9 +2407,65 @@
       "document": "DescribeClientBalance返回参数结构体",
       "members": [
         {
-          "document": "账户余额，单位分",
+          "document": "账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）",
+          "example": "40",
           "member": "uint64",
           "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账户现金余额，单位分",
+          "example": "10",
+          "member": "int64",
+          "name": "Cash",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientBaseInfoRequest": {
+      "document": "DescribeClientBaseInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "代客UIN",
+          "example": "10000001",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientBaseInfoResponse": {
+      "document": "DescribeClientBaseInfo返回参数结构体",
+      "members": [
+        {
+          "document": "代客基础信息数组",
+          "example": "无",
+          "member": "ClientBaseElem",
+          "name": "ClientBaseSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的代客数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -647,7 +647,7 @@
     "MigrateNetworkInterface": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=MigrateNetworkInterface\r\n&NetworkInterfaceId=eni-12121212\r\n&SourceInstanceId=ins-11221122\r\n&DestinationInstanceId=ins-11331133\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=MigrateNetworkInterface\n&NetworkInterfaceId=eni-12121212\n&SourceInstanceId=ins-11221122\n&DestinationInstanceId=ins-11331133\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网卡迁移"
       }

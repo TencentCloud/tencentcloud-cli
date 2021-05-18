@@ -229,7 +229,7 @@ def doDescribeDevice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateMultiDevice(args, parsed_globals):
+def doGetCOSURL(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -245,9 +245,9 @@ def doCreateMultiDevice(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateMultiDeviceRequest()
+    model = models.GetCOSURLRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateMultiDevice(model)
+    rsp = client.GetCOSURL(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -418,7 +418,7 @@ def doDescribeFirmwareTaskDevices(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeProductResource(args, parsed_globals):
+def doBatchUpdateFirmware(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -434,9 +434,9 @@ def doDescribeProductResource(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeProductResourceRequest()
+    model = models.BatchUpdateFirmwareRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeProductResource(model)
+    rsp = client.BatchUpdateFirmware(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -715,6 +715,33 @@ def doDescribeTask(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeFirmwareTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeFirmwareTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeFirmwareTask(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCancelTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -985,7 +1012,7 @@ def doResetDeviceState(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeFirmwareTask(args, parsed_globals):
+def doDescribeProductResource(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1001,9 +1028,9 @@ def doDescribeFirmwareTask(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeFirmwareTaskRequest()
+    model = models.DescribeProductResourceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeFirmwareTask(model)
+    rsp = client.DescribeProductResource(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1525,6 +1552,33 @@ def doDescribeProductResources(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateMultiDevice(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateMultiDeviceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateMultiDevice(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPublishBroadcastMessage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1598,14 +1652,14 @@ ACTION_MAP = {
     "DescribeFirmware": doDescribeFirmware,
     "DescribeDeviceShadow": doDescribeDeviceShadow,
     "DescribeDevice": doDescribeDevice,
-    "CreateMultiDevice": doCreateMultiDevice,
+    "GetCOSURL": doGetCOSURL,
     "DeleteProduct": doDeleteProduct,
     "DescribeAllDevices": doDescribeAllDevices,
     "CreateTopicRule": doCreateTopicRule,
     "RetryDeviceFirmwareTask": doRetryDeviceFirmwareTask,
     "CreateTopicPolicy": doCreateTopicPolicy,
     "DescribeFirmwareTaskDevices": doDescribeFirmwareTaskDevices,
-    "DescribeProductResource": doDescribeProductResource,
+    "BatchUpdateFirmware": doBatchUpdateFirmware,
     "CreateProduct": doCreateProduct,
     "CreateDevice": doCreateDevice,
     "UploadFirmware": doUploadFirmware,
@@ -1616,6 +1670,7 @@ ACTION_MAP = {
     "DescribeFirmwareTaskStatistics": doDescribeFirmwareTaskStatistics,
     "DescribeLoraDevice": doDescribeLoraDevice,
     "DescribeTask": doDescribeTask,
+    "DescribeFirmwareTask": doDescribeFirmwareTask,
     "CancelTask": doCancelTask,
     "DescribeFirmwareTasks": doDescribeFirmwareTasks,
     "EditFirmware": doEditFirmware,
@@ -1626,7 +1681,7 @@ ACTION_MAP = {
     "DeleteDevice": doDeleteDevice,
     "CreateTaskFileUrl": doCreateTaskFileUrl,
     "ResetDeviceState": doResetDeviceState,
-    "DescribeFirmwareTask": doDescribeFirmwareTask,
+    "DescribeProductResource": doDescribeProductResource,
     "DescribeTasks": doDescribeTasks,
     "DescribeMultiDevices": doDescribeMultiDevices,
     "UpdateDeviceAvailableState": doUpdateDeviceAvailableState,
@@ -1646,6 +1701,7 @@ ACTION_MAP = {
     "DescribePushResourceTaskStatistics": doDescribePushResourceTaskStatistics,
     "PublishToDevice": doPublishToDevice,
     "DescribeProductResources": doDescribeProductResources,
+    "CreateMultiDevice": doCreateMultiDevice,
     "PublishBroadcastMessage": doPublishBroadcastMessage,
     "DeleteTopicRule": doDeleteTopicRule,
 

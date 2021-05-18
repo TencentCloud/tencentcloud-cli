@@ -1499,7 +1499,7 @@
         },
         {
           "default": "",
-          "document": "该物理专线下vlan 0的专线通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该物理专线下vlan 0的专用通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "VlanZeroDirectConnectTunnelCount",
@@ -1509,7 +1509,7 @@
         },
         {
           "default": "",
-          "document": "该物理专线下非vlan 0的专线通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该物理专线下非vlan 0的专用通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "OtherVlanDirectConnectTunnelCount",
@@ -2155,11 +2155,12 @@
       "usage": "out"
     },
     "DirectConnectTunnelRoute": {
-      "document": "专线通道路由",
+      "document": "专用通道路由",
       "members": [
         {
           "default": "",
           "document": "专用通道路由ID",
+          "example": "dcxr-69sg663r",
           "member": "string",
           "name": "RouteId",
           "required": true,
@@ -2169,6 +2170,7 @@
         {
           "default": "",
           "document": "网段CIDR",
+          "example": "10.0.0.0/16",
           "member": "string",
           "name": "DestinationCidrBlock",
           "required": true,
@@ -2178,6 +2180,7 @@
         {
           "default": "",
           "document": "路由类型：BGP/STATIC路由",
+          "example": "BGP",
           "member": "string",
           "name": "RouteType",
           "required": true,
@@ -2187,6 +2190,7 @@
         {
           "default": "",
           "document": "ENABLE：路由启用，DISABLE：路由禁用",
+          "example": "ENABLE",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2196,6 +2200,7 @@
         {
           "default": "",
           "document": "ASPath信息",
+          "example": "['123', '342']",
           "member": "string",
           "name": "ASPath",
           "required": true,
@@ -2205,6 +2210,7 @@
         {
           "default": "",
           "document": "路由下一跳IP",
+          "example": "0.0.0.0",
           "member": "string",
           "name": "NextHop",
           "required": true,

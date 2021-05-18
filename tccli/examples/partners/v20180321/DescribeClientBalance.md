@@ -14,7 +14,8 @@ Output:
 {
     "Response": {
         "RequestId": "eeedc7d9-2310-4b77-bd3e-23f077e44b7d",
-        "Balance": 40
+        "Balance": 40,
+        "Cash": 50
     }
 }
 ```

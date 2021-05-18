@@ -72,6 +72,18 @@
       "name": "删除产品",
       "output": "DeleteProductResponse"
     },
+    "DescribeBalance": {
+      "document": "查询账户余额",
+      "input": "DescribeBalanceRequest",
+      "name": "查询账户余额",
+      "output": "DescribeBalanceResponse"
+    },
+    "DescribeBalanceTransactions": {
+      "document": "拉取账户流水",
+      "input": "DescribeBalanceTransactionsRequest",
+      "name": "拉取账户流水",
+      "output": "DescribeBalanceTransactionsResponse"
+    },
     "DescribeBatch": {
       "document": "获取批次详情",
       "input": "DescribeBatchRequest",
@@ -415,6 +427,72 @@
         }
       ],
       "usage": "out"
+    },
+    "BalanceTransaction": {
+      "document": "账户流水",
+      "members": [
+        {
+          "default": "",
+          "document": "账户类型：1-设备接入 2-云存。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账户变更类型：Rechareg-充值；CreateOrder-新购。",
+          "example": "Recharge",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流水ID。",
+          "example": "a561b35c-6897-4d70-a033-141e13a7b573",
+          "member": "string",
+          "name": "DealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变更金额，单位：分（人民币）。",
+          "example": "200",
+          "member": "uint64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变更后账户余额，单位：分（人民币）。",
+          "example": "4200",
+          "member": "uint64",
+          "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变更时间。",
+          "example": "1621230175",
+          "member": "int64",
+          "name": "OperationTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "BatchUpdateFirmwareRequest": {
       "document": "BatchUpdateFirmware请求参数结构体",
@@ -1401,6 +1479,114 @@
     "DeleteProductResponse": {
       "document": "DeleteProduct返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBalanceRequest": {
+      "document": "DescribeBalance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账户类型：1-设备接入；2-云存。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBalanceResponse": {
+      "document": "DescribeBalance返回参数结构体",
+      "members": [
+        {
+          "document": "账户余额，单位：分（人民币）。",
+          "example": "4200",
+          "member": "uint64",
+          "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBalanceTransactionsRequest": {
+      "document": "DescribeBalanceTransactions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账户类型：1-设备接入；2-云存。",
+          "example": "2",
+          "member": "uint64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页游标开始，默认为0开始拉取第一条。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页每页数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。",
+          "example": "All",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBalanceTransactionsResponse": {
+      "document": "DescribeBalanceTransactions返回参数结构体",
+      "members": [
+        {
+          "document": "账户流水总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账户流水详情数组。",
+          "example": "无",
+          "member": "BalanceTransaction",
+          "name": "Transactions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

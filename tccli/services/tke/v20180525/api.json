@@ -4721,6 +4721,15 @@
           "name": "Subnets",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。",
+          "example": "300",
+          "member": "uint64",
+          "name": "ExpiredSeconds",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

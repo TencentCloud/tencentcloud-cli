@@ -1877,6 +1877,15 @@
           "name": "EndPort",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。",
+          "example": "False",
+          "member": "bool",
+          "name": "DeregisterTargetRst",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4373,6 +4382,7 @@
         {
           "default": "",
           "document": "负载均衡监听器 ID",
+          "example": "lbl-odt45qxx",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -4382,6 +4392,7 @@
         {
           "default": "",
           "document": "监听器协议",
+          "example": "HTTP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -4391,6 +4402,7 @@
         {
           "default": "",
           "document": "监听器端口",
+          "example": "80",
           "member": "int64",
           "name": "Port",
           "required": true,
@@ -4400,6 +4412,7 @@
         {
           "default": "",
           "document": "监听器绑定的证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CertificateOutput",
           "name": "Certificate",
           "required": true,
@@ -4409,6 +4422,7 @@
         {
           "default": "",
           "document": "监听器的健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": true,
@@ -4418,6 +4432,7 @@
         {
           "default": "",
           "document": "请求的调度方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WRR",
           "member": "string",
           "name": "Scheduler",
           "required": true,
@@ -4427,6 +4442,7 @@
         {
           "default": "",
           "document": "会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": true,
@@ -4436,6 +4452,7 @@
         {
           "default": "",
           "document": "是否开启SNI特性（本参数仅对于HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "SniSwitch",
           "required": true,
@@ -4445,6 +4462,7 @@
         {
           "default": "",
           "document": "监听器下的全部转发规则（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RuleOutput",
           "name": "Rules",
           "required": true,
@@ -4454,6 +4472,7 @@
         {
           "default": "",
           "document": "监听器的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
           "member": "string",
           "name": "ListenerName",
           "required": true,
@@ -4463,6 +4482,7 @@
         {
           "default": "",
           "document": "监听器的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-01 15:27:04",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -4472,6 +4492,7 @@
         {
           "default": "",
           "document": "端口段结束端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "EndPort",
           "required": true,
@@ -4481,6 +4502,7 @@
         {
           "default": "",
           "document": "后端服务器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NODE",
           "member": "string",
           "name": "TargetType",
           "required": true,
@@ -4490,6 +4512,7 @@
         {
           "default": "",
           "document": "绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroup",
           "required": true,
@@ -4499,6 +4522,7 @@
         {
           "default": "",
           "document": "会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
           "member": "string",
           "name": "SessionType",
           "required": true,
@@ -4508,6 +4532,7 @@
         {
           "default": "",
           "document": "是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "KeepaliveEnable",
           "required": true,
@@ -4517,8 +4542,19 @@
         {
           "default": "",
           "document": "仅支持Nat64 CLB TCP监听器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "Toa",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DeregisterTargetRst",
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -5881,6 +5917,15 @@
           "name": "KeepaliveEnable",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。",
+          "example": "False",
+          "member": "bool",
+          "name": "DeregisterTargetRst",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

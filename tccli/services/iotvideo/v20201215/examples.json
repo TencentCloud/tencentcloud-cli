@@ -96,6 +96,22 @@
         "title": "删除产品"
       }
     ],
+    "DescribeBalance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBalance\n<公共请求参数>\n\n{\n    \"AccountType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9374cc56-9c23-4de2-b3a0-e4e4bede435d\",\n        \"Balance\": 99990010\n    }\n}",
+        "title": "查询账户余额"
+      }
+    ],
+    "DescribeBalanceTransactions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBalanceTransactions\n<公共请求参数>\n\n{\n    \"Operation\": \"CreateOrder\",\n    \"Limit\": \"10\",\n    \"AccountType\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d6e94e0-4552-4ab3-86fe-1f767db2ceba\",\n        \"TotalCount\": 12,\n        \"Transactions\": [\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"a5b504ba-acab-43d1-8694-bcd5ce0f0802\",\n                \"Amount\": 90,\n                \"Balance\": 99990010,\n                \"OperationTime\": 1611830100\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"19f9d419-4db5-4cb5-9242-3f245dd1627c\",\n                \"Amount\": 900,\n                \"Balance\": 99990100,\n                \"OperationTime\": 1609147842\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"01bcd194-e330-478e-b7df-2912f52cfc80\",\n                \"Amount\": 900,\n                \"Balance\": 99991000,\n                \"OperationTime\": 1609147835\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"51ecad70-262b-4251-a536-345c1c0b31e9\",\n                \"Amount\": 900,\n                \"Balance\": 99991900,\n                \"OperationTime\": 1609147651\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"cc7c13d5-c838-4588-89be-6b354af48adf\",\n                \"Amount\": 900,\n                \"Balance\": 99992800,\n                \"OperationTime\": 1609147330\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"4a4db67c-9b9f-46e4-9eec-59cc0ed41ebc\",\n                \"Amount\": 900,\n                \"Balance\": 99993700,\n                \"OperationTime\": 1609147235\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"4f27575e-5002-492b-84ed-fca0a40b5f6c\",\n                \"Amount\": 900,\n                \"Balance\": 99994600,\n                \"OperationTime\": 1609146690\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"fdd0d195-a23a-4129-a22c-46a53c13a5c0\",\n                \"Amount\": 900,\n                \"Balance\": 99995500,\n                \"OperationTime\": 1609146311\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"849e416b-8d02-449f-ba17-4e479e5e3810\",\n                \"Amount\": 900,\n                \"Balance\": 99996400,\n                \"OperationTime\": 1609145974\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"12a0ef42-ceec-4078-879b-a45d2d78b154\",\n                \"Amount\": 900,\n                \"Balance\": 99997300,\n                \"OperationTime\": 1609145857\n            }\n        ]\n    }\n}",
+        "title": "拉取账户流水"
+      }
+    ],
     "DescribeBatch": [
       {
         "document": "",
