@@ -343,6 +343,9 @@ SERVICE_VERSIONS = {
     "postgres": [
         "2017-03-12"
     ],
+    "privatedns": [
+        "2020-10-28"
+    ],
     "rce": [
         "2020-11-03"
     ],
