@@ -15,7 +15,7 @@ from tencentcloud.sms.v20190711 import sms_client as sms_client_v20190711
 from tencentcloud.sms.v20190711 import models as models_v20190711
 
 
-def doDeleteSmsTemplate(args, parsed_globals):
+def doModifySmsSign(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -31,9 +31,9 @@ def doDeleteSmsTemplate(args, parsed_globals):
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteSmsTemplateRequest()
+    model = models.ModifySmsSignRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteSmsTemplate(model)
+    rsp = client.ModifySmsSign(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -123,7 +123,7 @@ def doSendSms(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySmsSign(args, parsed_globals):
+def doDeleteSmsTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -139,9 +139,9 @@ def doModifySmsSign(args, parsed_globals):
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySmsSignRequest()
+    model = models.DeleteSmsTemplateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifySmsSign(model)
+    rsp = client.DeleteSmsTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -460,11 +460,11 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DeleteSmsTemplate": doDeleteSmsTemplate,
+    "ModifySmsSign": doModifySmsSign,
     "AddSmsSign": doAddSmsSign,
     "PullSmsSendStatus": doPullSmsSendStatus,
     "SendSms": doSendSms,
-    "ModifySmsSign": doModifySmsSign,
+    "DeleteSmsTemplate": doDeleteSmsTemplate,
     "SmsPackagesStatistics": doSmsPackagesStatistics,
     "SendStatusStatistics": doSendStatusStatistics,
     "CallbackStatusStatistics": doCallbackStatusStatistics,

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sms DescribeSmsTemplateList --cli-unfold-argument  \
-    --TemplateIdSet 1110 1111 \
-    --International 0
+    --International 0 \
+    --TemplateIdSet 1110 1111
 ```
 
 Output: 
@@ -16,23 +16,25 @@ Output:
     "Response": {
         "DescribeTemplateStatusSet": [
             {
-                "TemplateName": "xx",
-                "TemplateId": 1,
-                "International": 1,
-                "ReviewReply": "xx",
-                "CreateTime": 1,
+                "TemplateName": "验证码",
+                "TemplateId": 1110,
+                "International": 0,
+                "ReviewReply": "xxxx",
+                "CreateTime": 1617379200,
+                "TemplateContent": "您的验证码是{1}",
                 "StatusCode": 0
             },
             {
-                "TemplateName": "xx",
-                "TemplateId": 1,
-                "International": 1,
-                "ReviewReply": "xx",
-                "CreateTime": 1,
+                "TemplateName": "通知",
+                "TemplateId": 1111,
+                "International": 0,
+                "ReviewReply": "xxxx",
+                "CreateTime": 1617508800,
+                "TemplateContent": "请尽快参加{1}会议",
                 "StatusCode": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "f36e4f00-605e-49b1-ad0d-bfaba81c7325"
     }
 }
 ```
