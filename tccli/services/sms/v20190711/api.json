@@ -49,7 +49,7 @@
       "output": "ModifySmsSignResponse"
     },
     "ModifySmsTemplate": {
-      "document": "1. 修改短信正文模版，修改之前请先认真参阅 [腾讯云短信正文模版审核标准](https://cloud.tencent.com/document/product/382/39023)。\n2. ⚠️注意：个人认证用户不支持使用 API 修改短信正文模版，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 修改短信正文模版。\n3. 修改短信签名，仅当正文模版为**待审核**或**已拒绝**状态时，才能进行修改，**已审核通过**的正文模版不支持修改。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "1. 修改短信正文模版，修改之前请先认真参阅 [腾讯云短信正文模版审核标准](https://cloud.tencent.com/document/product/382/39023)。\n2. ⚠️注意：个人认证用户不支持使用 API 修改短信正文模版，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 修改短信正文模版。\n3. 修改短信模板，仅当正文模版为**待审核**或**已拒绝**状态时，才能进行修改，**已审核通过**的正文模版不支持修改。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
       "input": "ModifySmsTemplateRequest",
       "name": "修改短信模板",
       "output": "ModifySmsTemplateResponse"
@@ -892,6 +892,7 @@
         {
           "default": "",
           "document": "待修改的模板的模板 ID。",
+          "example": "1110",
           "member": "uint64",
           "name": "TemplateId",
           "required": true,
@@ -900,6 +901,7 @@
         {
           "default": "",
           "document": "新的模板名称。",
+          "example": "腾讯云",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -908,6 +910,7 @@
         {
           "default": "",
           "document": "新的模板内容。",
+          "example": "腾讯云",
           "member": "string",
           "name": "TemplateContent",
           "required": true,
@@ -916,6 +919,7 @@
         {
           "default": "",
           "document": "短信类型，0表示普通短信, 1表示营销短信。",
+          "example": "0",
           "member": "uint64",
           "name": "SmsType",
           "required": true,
@@ -924,6 +928,7 @@
         {
           "default": "",
           "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "example": "0",
           "member": "uint64",
           "name": "International",
           "required": true,
@@ -932,6 +937,7 @@
         {
           "default": "",
           "document": "模板备注，例如申请原因，使用场景等。",
+          "example": "xxxx",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -945,8 +951,10 @@
       "members": [
         {
           "document": "修改模板参数响应",
+          "example": "ModifyTemplateStatus\": {             \"TemplateId\": 1110         ",
           "member": "ModifyTemplateStatus",
           "name": "ModifyTemplateStatus",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

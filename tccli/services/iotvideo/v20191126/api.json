@@ -4604,7 +4604,7 @@
         },
         {
           "default": "",
-          "document": "消息类型,整型值（0-31）之间以“,”分隔\n0：在线状态变更\n1.固件版本变更\n2.设置参数变更\n3.控制状态变更\n4.状态信息变更\n5.事件发布\n6.系统事件",
+          "document": "消息类型,整型值（0-31）之间以“,”分隔\n0.设备在线状态变更\n1.常亮属性(ProConst)变更\n2.可写属性(ProWritable)变更\n3.只读属性(ProReadonly)变更\n4.设备控制(Action)\n5.设备事件(Event)\n6.系统事件(System)",
           "example": "0,1,2,3,4,5",
           "member": "string",
           "name": "MsgType",

@@ -17617,7 +17617,8 @@
       "members": [
         {
           "default": "",
-          "document": "Vpc实例ID，例如：vpc-f1xjkw1b。",
+          "document": "Vpc实例ID，例如：vpc-bq4bzxpj。",
+          "example": "vpc-bq4bzxpj",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -17627,6 +17628,7 @@
         {
           "default": "",
           "document": "子网实例ID，例如：subnet-bthucmmy。",
+          "example": "subnet-bthucmmy",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -17636,6 +17638,7 @@
         {
           "default": "",
           "document": "基础网络互通。",
+          "example": "0",
           "member": "uint64",
           "name": "Classiclink",
           "required": true,
@@ -17645,6 +17648,7 @@
         {
           "default": "",
           "document": "专线网关。",
+          "example": "1",
           "member": "uint64",
           "name": "Dcg",
           "required": true,
@@ -17654,6 +17658,7 @@
         {
           "default": "",
           "document": "对等连接。",
+          "example": "0",
           "member": "uint64",
           "name": "Pcx",
           "required": true,
@@ -17662,7 +17667,8 @@
         },
         {
           "default": "",
-          "document": "当前已使用的IP总数。",
+          "document": "统计当前除云服务器 IP、弹性网卡IP和网络探测IP以外的所有已使用的IP总数。云服务器 IP、弹性网卡IP和网络探测IP单独计数。",
+          "example": "0",
           "member": "uint64",
           "name": "Ip",
           "required": true,
@@ -17672,6 +17678,7 @@
         {
           "default": "",
           "document": "NAT网关。",
+          "example": "1",
           "member": "uint64",
           "name": "Nat",
           "required": true,
@@ -17681,6 +17688,7 @@
         {
           "default": "",
           "document": "VPN网关。",
+          "example": "0",
           "member": "uint64",
           "name": "Vpngw",
           "required": true,
@@ -17690,6 +17698,7 @@
         {
           "default": "",
           "document": "流日志。",
+          "example": "0",
           "member": "uint64",
           "name": "FlowLog",
           "required": true,
@@ -17699,6 +17708,7 @@
         {
           "default": "",
           "document": "网络探测。",
+          "example": "0",
           "member": "uint64",
           "name": "NetworkDetect",
           "required": true,
@@ -17708,6 +17718,7 @@
         {
           "default": "",
           "document": "网络ACL。",
+          "example": "0",
           "member": "uint64",
           "name": "NetworkACL",
           "required": true,
@@ -17717,6 +17728,7 @@
         {
           "default": "",
           "document": "云主机。",
+          "example": "2",
           "member": "uint64",
           "name": "CVM",
           "required": true,
@@ -17726,6 +17738,7 @@
         {
           "default": "",
           "document": "负载均衡。",
+          "example": "0",
           "member": "uint64",
           "name": "LB",
           "required": true,
@@ -17735,6 +17748,7 @@
         {
           "default": "",
           "document": "关系型数据库。",
+          "example": "0",
           "member": "uint64",
           "name": "CDB",
           "required": true,
@@ -17744,6 +17758,7 @@
         {
           "default": "",
           "document": "云数据库 TencentDB for Memcached。",
+          "example": "0",
           "member": "uint64",
           "name": "Cmem",
           "required": true,
@@ -17753,6 +17768,7 @@
         {
           "default": "",
           "document": "时序数据库。",
+          "example": "0",
           "member": "uint64",
           "name": "CTSDB",
           "required": true,
@@ -17762,6 +17778,7 @@
         {
           "default": "",
           "document": "数据库 TencentDB for MariaDB（TDSQL）。",
+          "example": "0",
           "member": "uint64",
           "name": "MariaDB",
           "required": true,
@@ -17771,6 +17788,7 @@
         {
           "default": "",
           "document": "数据库 TencentDB for SQL Server。",
+          "example": "0",
           "member": "uint64",
           "name": "SQLServer",
           "required": true,
@@ -17780,6 +17798,7 @@
         {
           "default": "",
           "document": "云数据库 TencentDB for PostgreSQL。",
+          "example": "0",
           "member": "uint64",
           "name": "Postgres",
           "required": true,
@@ -17789,6 +17808,7 @@
         {
           "default": "",
           "document": "网络附加存储。",
+          "example": "0",
           "member": "uint64",
           "name": "NAS",
           "required": true,
@@ -17798,6 +17818,7 @@
         {
           "default": "",
           "document": "Snova云数据仓库。",
+          "example": "0",
           "member": "uint64",
           "name": "Greenplumn",
           "required": true,
@@ -17807,6 +17828,7 @@
         {
           "default": "",
           "document": "消息队列 CKAFKA。",
+          "example": "0",
           "member": "uint64",
           "name": "Ckafka",
           "required": true,
@@ -17816,6 +17838,7 @@
         {
           "default": "",
           "document": "Grocery。",
+          "example": "0",
           "member": "uint64",
           "name": "Grocery",
           "required": true,
@@ -17825,6 +17848,7 @@
         {
           "default": "",
           "document": "数据加密服务。",
+          "example": "0",
           "member": "uint64",
           "name": "HSM",
           "required": true,
@@ -17834,6 +17858,7 @@
         {
           "default": "",
           "document": "游戏存储 Tcaplus。",
+          "example": "0",
           "member": "uint64",
           "name": "Tcaplus",
           "required": true,
@@ -17843,6 +17868,7 @@
         {
           "default": "",
           "document": "Cnas。",
+          "example": "0",
           "member": "uint64",
           "name": "Cnas",
           "required": true,
@@ -17852,6 +17878,7 @@
         {
           "default": "",
           "document": "HTAP 数据库 TiDB。",
+          "example": "0",
           "member": "uint64",
           "name": "TiDB",
           "required": true,
@@ -17861,6 +17888,7 @@
         {
           "default": "",
           "document": "EMR 集群。",
+          "example": "0",
           "member": "uint64",
           "name": "Emr",
           "required": true,
@@ -17870,6 +17898,7 @@
         {
           "default": "",
           "document": "SEAL。",
+          "example": "0",
           "member": "uint64",
           "name": "SEAL",
           "required": true,
@@ -17879,6 +17908,7 @@
         {
           "default": "",
           "document": "文件存储 CFS。",
+          "example": "0",
           "member": "uint64",
           "name": "CFS",
           "required": true,
@@ -17888,6 +17918,7 @@
         {
           "default": "",
           "document": "Oracle。",
+          "example": "0",
           "member": "uint64",
           "name": "Oracle",
           "required": true,
@@ -17897,6 +17928,7 @@
         {
           "default": "",
           "document": "ElasticSearch服务。",
+          "example": "0",
           "member": "uint64",
           "name": "ElasticSearch",
           "required": true,
@@ -17906,6 +17938,7 @@
         {
           "default": "",
           "document": "区块链服务。",
+          "example": "0",
           "member": "uint64",
           "name": "TBaaS",
           "required": true,
@@ -17915,6 +17948,7 @@
         {
           "default": "",
           "document": "Itop。",
+          "example": "0",
           "member": "uint64",
           "name": "Itop",
           "required": true,
@@ -17924,6 +17958,7 @@
         {
           "default": "",
           "document": "云数据库审计。",
+          "example": "0",
           "member": "uint64",
           "name": "DBAudit",
           "required": true,
@@ -17933,6 +17968,7 @@
         {
           "default": "",
           "document": "企业级云数据库 CynosDB for Postgres。",
+          "example": "0",
           "member": "uint64",
           "name": "CynosDBPostgres",
           "required": true,
@@ -17942,6 +17978,7 @@
         {
           "default": "",
           "document": "数据库 TencentDB for Redis。",
+          "example": "0",
           "member": "uint64",
           "name": "Redis",
           "required": true,
@@ -17951,6 +17988,7 @@
         {
           "default": "",
           "document": "数据库 TencentDB for MongoDB。",
+          "example": "0",
           "member": "uint64",
           "name": "MongoDB",
           "required": true,
@@ -17960,6 +17998,7 @@
         {
           "default": "",
           "document": "分布式数据库 TencentDB for TDSQL。",
+          "example": "0",
           "member": "uint64",
           "name": "DCDB",
           "required": true,
@@ -17969,6 +18008,7 @@
         {
           "default": "",
           "document": "企业级云数据库 CynosDB for MySQL。",
+          "example": "0",
           "member": "uint64",
           "name": "CynosDBMySQL",
           "required": true,
@@ -17978,6 +18018,7 @@
         {
           "default": "",
           "document": "子网。",
+          "example": "1",
           "member": "uint64",
           "name": "Subnet",
           "required": true,
@@ -17987,6 +18028,7 @@
         {
           "default": "",
           "document": "路由表。",
+          "example": "1",
           "member": "uint64",
           "name": "RouteTable",
           "required": true,
