@@ -19,10 +19,16 @@
       "output": "CloseServerlessDBExtranetAccessResponse"
     },
     "CreateDBInstances": {
-      "document": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例。",
+      "document": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。",
       "input": "CreateDBInstancesRequest",
-      "name": "创建DB实例",
+      "name": "创建实例(旧)",
       "output": "CreateDBInstancesResponse"
+    },
+    "CreateInstances": {
+      "document": "本接口 (CreateInstances) 用于创建一个或者多个PostgreSQL实例，通过此接口创建的实例无需进行初始化，可直接使用。",
+      "input": "CreateInstancesRequest",
+      "name": "创建实例(新)",
+      "output": "CreateInstancesResponse"
     },
     "CreateReadOnlyDBInstance": {
       "document": "本接口(CreateReadOnlyDBInstance)用于创建只读实例",
@@ -466,7 +472,7 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。",
+          "document": "PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。",
           "example": "无",
           "member": "string",
           "name": "DBVersion",
@@ -643,6 +649,240 @@
         },
         {
           "document": "创建成功的实例ID集合，只在后付费情景下有返回值",
+          "example": "无",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesRequest": {
+      "document": "CreateInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4、11.8、12.4五种版本。",
+          "example": "无",
+          "member": "string",
+          "name": "DBVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例容量大小，单位：GB。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一次性购买的实例数量。取值1-10。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例字符集，目前只支持：UTF8、LATIN1。",
+          "example": "UTF8",
+          "member": "string",
+          "name": "Charset",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例根账号用户名。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例根账号用户名对应的密码。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已配置的私有网络中的子网ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "续费标记：0-正常续费（默认）；1-自动续费。",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "活动ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例名。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要支持Ipv6，1：是，0：否。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NeedSupportIpv6",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例需要绑定的Tag信息，默认为空。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesResponse": {
+      "document": "CreateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "订单号列表。每个实例对应一个订单号。",
+          "example": "无",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结流水号。",
+          "example": "无",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建成功的实例ID集合，只在后付费情景下有返回值。",
           "example": "无",
           "member": "string",
           "name": "DBInstanceIdSet",
@@ -2535,7 +2775,7 @@
         },
         {
           "default": "",
-          "document": "是否使用代金券",
+          "document": "是否使用代金券：true-使用,false-不使用，默认不使用",
           "example": "true",
           "member": "bool",
           "name": "AutoVoucher",

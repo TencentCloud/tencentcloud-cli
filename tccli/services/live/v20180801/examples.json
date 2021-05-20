@@ -426,6 +426,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveDomainReferer": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveDomainReferer\n&DomainName=5000.liveplay.myqcloud.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RefererAuthConfig\": {\n            \"DomainName\": \"5000.liveplay.myqcloud.com\",\n            \"Enable\": 1,\n            \"Type\": 0,\n            \"AllowEmpty\": 1,\n            \"Rules\": \"xxx.com;yyy.com\"\n        },\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveDomains": [
       {
         "document": "",
@@ -549,7 +557,7 @@
     "DescribeLiveStreamState": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamState\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamState\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"StreamState\": \"active\",\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
@@ -767,6 +775,14 @@
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveDomainCert\r\n&DomainName=5000.livepush.myqcloud.com\r\n&CertId=1000\r\n&Status=0\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyLiveDomainReferer": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveDomainReferer\n&DomainName=5000.liveplay.myqcloud.com\n&Enable=1\n&Type=0\n&AllowEmpty=1\n&Rules=aaa.com;bbb.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
     ],

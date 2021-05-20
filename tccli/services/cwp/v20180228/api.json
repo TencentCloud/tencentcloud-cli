@@ -2255,6 +2255,7 @@
         {
           "default": "",
           "document": "删除异地登录事件的方式，可选值：\"Ids\"、\"Ip\"、\"All\"，默认为Ids",
+          "example": "Ip",
           "member": "string",
           "name": "DelType",
           "required": false,
@@ -2263,6 +2264,7 @@
         {
           "default": "",
           "document": "异地登录事件ID数组。DelType为Ids或DelType未填时此项必填",
+          "example": "[]",
           "member": "uint64",
           "name": "Ids",
           "required": false,
@@ -2271,10 +2273,20 @@
         {
           "default": "",
           "document": "异地登录事件的Ip。DelType为Ip时必填",
+          "example": "[]",
           "member": "string",
           "name": "Ip",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4016,7 +4028,7 @@
       "document": "DescribeLogStorageStatistic返回参数结构体",
       "members": [
         {
-          "document": "总容量",
+          "document": "总容量（单位：GB）",
           "example": "1",
           "member": "uint64",
           "name": "TotalSize",
@@ -4025,7 +4037,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "已使用容量",
+          "document": "已使用容量（单位：GB）",
           "example": "1",
           "member": "uint64",
           "name": "UsedSize",

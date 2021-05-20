@@ -49,7 +49,7 @@
       "output": "DescribeBatchOperationLogsResponse"
     },
     "DescribeDomainBaseInfo": {
-      "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。\n\n默认接口请求频率限制：20次/秒。\n",
+      "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。\n",
       "input": "DescribeDomainBaseInfoRequest",
       "name": "获取域名基础信息",
       "output": "DescribeDomainBaseInfoResponse"
@@ -843,6 +843,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "域名",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -856,15 +857,19 @@
       "members": [
         {
           "document": "域名信息",
+          "example": "无",
           "member": "DomainBaseInfo",
           "name": "DomainInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
           "member": "string",
           "name": "Uin",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -980,6 +985,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -988,6 +994,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -996,6 +1003,7 @@
         {
           "default": "",
           "document": "用户注册类型，默认:all , 个人：I ,企业: E",
+          "example": "E",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -1004,8 +1012,18 @@
         {
           "default": "",
           "document": "认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject",
+          "example": "InAudit",
           "member": "string",
           "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名所有者筛选",
+          "example": "域名所有者",
+          "member": "string",
+          "name": "Keyword",
           "required": false,
           "type": "string"
         }
@@ -1017,15 +1035,19 @@
       "members": [
         {
           "document": "模板数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "模板详细信息列表。",
+          "example": "无",
           "member": "TemplateInfo",
           "name": "TemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

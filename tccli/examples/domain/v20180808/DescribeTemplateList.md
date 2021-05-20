@@ -9,7 +9,8 @@ tccli domain DescribeTemplateList --cli-unfold-argument  \
     --Offset 0 \
     --Limit 20 \
     --Status InAudit \
-    --Type E
+    --Type E \
+    --Keyword xx
 ```
 
 Output: 

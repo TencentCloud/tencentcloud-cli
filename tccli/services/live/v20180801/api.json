@@ -306,6 +306,12 @@
       "name": "查询实时的域名维度下行播放数据",
       "output": "DescribeLiveDomainPlayInfoListResponse"
     },
+    "DescribeLiveDomainReferer": {
+      "document": "查询直播域名 Referer 黑白名单配置。\n由于 Referer 信息包含在 http 协议中，在开启配置后，播放协议为 rtmp 或 webrtc 不会校验 Referer 配置，仍可正常播放。如需配置 Referer 鉴权建议使用 http-flv 或 http-hls 协议播放。",
+      "input": "DescribeLiveDomainRefererRequest",
+      "name": "查询直播域名 Referer 黑白名单配置",
+      "output": "DescribeLiveDomainRefererResponse"
+    },
     "DescribeLiveDomains": {
       "document": "根据域名状态、类型等信息查询用户的域名信息。",
       "input": "DescribeLiveDomainsRequest",
@@ -563,6 +569,12 @@
       "input": "ModifyLiveDomainCertRequest",
       "name": "修改域名和证书绑定信息",
       "output": "ModifyLiveDomainCertResponse"
+    },
+    "ModifyLiveDomainReferer": {
+      "document": "设置直播域名 Referer 黑白名单。\n由于 Referer 信息包含在 http 协议中，在开启配置后，播放协议为 rtmp 或 webrtc 不会校验 Referer 配置，仍可正常播放。如需配置 Referer 鉴权建议使用 http-flv 或 http-hls 协议播放。",
+      "input": "ModifyLiveDomainRefererRequest",
+      "name": "设置直播域名 Referer 黑白名单",
+      "output": "ModifyLiveDomainRefererResponse"
     },
     "ModifyLivePlayAuthKey": {
       "document": "修改播放鉴权key",
@@ -4319,6 +4331,42 @@
       ],
       "type": "object"
     },
+    "DescribeLiveDomainRefererRequest": {
+      "document": "DescribeLiveDomainReferer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "播放域名。",
+          "example": "5000.liveplay.myqcloud.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveDomainRefererResponse": {
+      "document": "DescribeLiveDomainReferer返回参数结构体",
+      "members": [
+        {
+          "document": "域名 Referer 黑白名单配置。",
+          "example": "无",
+          "member": "RefererAuthConfig",
+          "name": "RefererAuthConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLiveDomainRequest": {
       "document": "DescribeLiveDomain请求参数结构体",
       "members": [
@@ -5307,6 +5355,7 @@
         {
           "default": "",
           "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -5315,6 +5364,7 @@
         {
           "default": "",
           "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -5323,6 +5373,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -5336,8 +5387,10 @@
       "members": [
         {
           "document": "流状态，\nactive：活跃，\ninactive：非活跃，\nforbid：禁播。",
+          "example": "active",
           "member": "string",
           "name": "StreamState",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7780,6 +7833,69 @@
       ],
       "type": "object"
     },
+    "ModifyLiveDomainRefererRequest": {
+      "document": "ModifyLiveDomainReferer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "播放域名。",
+          "example": "5000.liveplay.myqcloud.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启当前域名的 Referer 黑白名单鉴权。",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "名单类型，0：黑名单，1：白名单。",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否允许空 Referer，0：不允许，1：允许。",
+          "example": "1",
+          "member": "int64",
+          "name": "AllowEmpty",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Referer 名单列表，以;分隔。",
+          "example": "aaa.com;bbb.com",
+          "member": "string",
+          "name": "Rules",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveDomainRefererResponse": {
+      "document": "ModifyLiveDomainReferer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLivePlayAuthKeyRequest": {
       "document": "ModifyLivePlayAuthKey请求参数结构体",
       "members": [
@@ -9408,6 +9524,57 @@
           "name": "Mp3Param",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RefererAuthConfig": {
+      "document": "直播域名Referer黑白名单配置",
+      "members": [
+        {
+          "default": "",
+          "document": "域名。",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用，0：关闭，1：启用。",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名单类型，0：黑名单，1：白名单。",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否允许空Referer，0：不允许，1：允许。",
+          "member": "int64",
+          "name": "AllowEmpty",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名单列表，以分号(;)分隔。",
+          "member": "string",
+          "name": "Rules",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

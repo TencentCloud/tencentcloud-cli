@@ -29,7 +29,7 @@
         "document": "",
         "input": "https://ic.tencentcloudapi.com/?Action=ModifyUserCardRemark\n&Sdkappid=1200168178\n&Iccid=8986****0957\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"124145i30913\"\n    }\n}",
-        "title": "修改物联卡备注信息"
+        "title": "编辑物联卡备注信息"
       }
     ],
     "RenewCards": [

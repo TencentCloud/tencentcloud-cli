@@ -91,7 +91,7 @@
       "output": "DescribeClientBalanceResponse"
     },
     "DescribeClientBaseInfo": {
-      "document": "国际站根据UIN查询代客基础信息",
+      "document": "国际站根据UIN查询代客基础信息【本接口仅限主账号访问】",
       "input": "DescribeClientBaseInfoRequest",
       "name": "查询代客基础信息",
       "output": "DescribeClientBaseInfoResponse"
@@ -1236,7 +1236,7 @@
       "type": "object"
     },
     "ClientBaseElem": {
-      "document": "代客基础信息，for国际站查代客API",
+      "document": "代客基础信息",
       "members": [
         {
           "default": "",

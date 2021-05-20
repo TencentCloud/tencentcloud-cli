@@ -67,7 +67,7 @@ def doDescribeTableTags(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTasks(args, parsed_globals):
+def doModifyTableTags(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -83,9 +83,9 @@ def doDescribeTasks(args, parsed_globals):
     client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTasksRequest()
+    model = models.ModifyTableTagsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTasks(model)
+    rsp = client.ModifyTableTags(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -140,6 +140,33 @@ def doDescribeMachine(args, parsed_globals):
     model = models.DescribeMachineRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeMachine(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doMergeTablesData(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.MergeTablesDataRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.MergeTablesData(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -445,6 +472,33 @@ def doCreateBackup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyCensorship(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCensorshipRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyCensorship(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateTables(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -715,7 +769,7 @@ def doDescribeRegions(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyTableTags(args, parsed_globals):
+def doUpdateApply(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -731,36 +785,9 @@ def doModifyTableTags(args, parsed_globals):
     client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyTableTagsRequest()
+    model = models.UpdateApplyRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyTableTags(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeSnapshots(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSnapshotsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSnapshots(model)
+    rsp = client.UpdateApply(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -796,7 +823,7 @@ def doModifyClusterTags(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyTableGroupTags(args, parsed_globals):
+def doDescribeSnapshots(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -812,9 +839,36 @@ def doModifyTableGroupTags(args, parsed_globals):
     client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyTableGroupTagsRequest()
+    model = models.DescribeSnapshotsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyTableGroupTags(model)
+    rsp = client.DescribeSnapshots(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTasks(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTasksRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTasks(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -842,6 +896,60 @@ def doSetTableIndex(args, parsed_globals):
     model = models.SetTableIndexRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.SetTableIndex(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTableGroupTags(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTableGroupTagsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyTableGroupTags(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeApplications(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcaplusdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeApplicationsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeApplications(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1214,9 +1322,10 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DeleteTableIndex": doDeleteTableIndex,
     "DescribeTableTags": doDescribeTableTags,
-    "DescribeTasks": doDescribeTasks,
+    "ModifyTableTags": doModifyTableTags,
     "CreateCluster": doCreateCluster,
     "DescribeMachine": doDescribeMachine,
+    "MergeTablesData": doMergeTablesData,
     "DescribeUinInWhitelist": doDescribeUinInWhitelist,
     "DescribeTablesInRecycle": doDescribeTablesInRecycle,
     "DisableRestProxy": doDisableRestProxy,
@@ -1228,6 +1337,7 @@ ACTION_MAP = {
     "CreateSnapshots": doCreateSnapshots,
     "EnableRestProxy": doEnableRestProxy,
     "CreateBackup": doCreateBackup,
+    "ModifyCensorship": doModifyCensorship,
     "CreateTables": doCreateTables,
     "ModifyTableQuotas": doModifyTableQuotas,
     "DescribeClusters": doDescribeClusters,
@@ -1238,11 +1348,13 @@ ACTION_MAP = {
     "CreateTableGroup": doCreateTableGroup,
     "RecoverRecycleTables": doRecoverRecycleTables,
     "DescribeRegions": doDescribeRegions,
-    "ModifyTableTags": doModifyTableTags,
-    "DescribeSnapshots": doDescribeSnapshots,
+    "UpdateApply": doUpdateApply,
     "ModifyClusterTags": doModifyClusterTags,
-    "ModifyTableGroupTags": doModifyTableGroupTags,
+    "DescribeSnapshots": doDescribeSnapshots,
+    "DescribeTasks": doDescribeTasks,
     "SetTableIndex": doSetTableIndex,
+    "ModifyTableGroupTags": doModifyTableGroupTags,
+    "DescribeApplications": doDescribeApplications,
     "DescribeTableGroupTags": doDescribeTableGroupTags,
     "ImportSnapshots": doImportSnapshots,
     "DescribeTableGroups": doDescribeTableGroups,

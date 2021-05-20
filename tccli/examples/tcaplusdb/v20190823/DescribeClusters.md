@@ -27,7 +27,9 @@ Output:
                 "PasswordStatus": "modifiable",
                 "Region": "ap-guangzhou",
                 "SubnetId": "subnet-jq2cqev2",
-                "VpcId": "vpc-oezt2hwl"
+                "VpcId": "vpc-oezt2hwl",
+                "Censorship": 0,
+                "DbaUins": []
             },
             {
                 "ApiAccessId": "2",
@@ -44,7 +46,13 @@ Output:
                 "PasswordStatus": "modifiable",
                 "Region": "ap-guangzhou",
                 "SubnetId": "subnet-jq2cqev2",
-                "VpcId": "vpc-oezt2hwl"
+                "VpcId": "vpc-oezt2hwl",
+                "Censorship": 1,
+                "DbaUins": [
+                    "342",
+                    "432432",
+                    "342342"
+                ]
             }
         ],
         "RequestId": "34680b61-9836-44d9-bae9-e231f4b61a48",
