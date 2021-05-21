@@ -13,9 +13,11 @@ Output:
 ```
 {
     "Response": {
-        "EniQuantity": 2,
         "EniPrivateIpAddressQuantity": 10,
-        "RequestId": "01f14f34-e9ae-470d-a71b-e8616ad3fae1"
+        "ExtendEniPrivateIpAddressQuantity": 20,
+        "ExtendEniQuantity": 0,
+        "RequestId": "01f14f34-e9ae-470d-a71b-e8616ad3fae1",
+        "EniQuantity": 2
     }
 }
 ```
@@ -37,6 +39,8 @@ Output:
     "Response": {
         "EniQuantity": 0,
         "EniPrivateIpAddressQuantity": 10,
+        "ExtendEniQuantity": 0,
+        "ExtendEniPrivateIpAddressQuantity": 0,
         "RequestId": "01f14f34-e9ae-470d-a71b-e8616ad3fae1"
     }
 }

@@ -877,6 +877,33 @@ def doDeployServerlessGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeGroup(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeGroupRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeGroup(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1255,7 +1282,7 @@ def doDescribeGroupUseDetail(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSimpleApplications(args, parsed_globals):
+def doDescribeUnitNamespaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1271,9 +1298,9 @@ def doDescribeSimpleApplications(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSimpleApplicationsRequest()
+    model = models.DescribeUnitNamespacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSimpleApplications(model)
+    rsp = client.DescribeUnitNamespaces(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2084,33 +2111,6 @@ def doDescribeGroupGateways(args, parsed_globals):
     model = models.DescribeGroupGatewaysRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeGroupGateways(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeUnitNamespaces(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUnitNamespacesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeUnitNamespaces(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -3469,6 +3469,33 @@ def doCreateTaskFlow(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSimpleApplications(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSimpleApplicationsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSimpleApplications(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteApplication(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3523,7 +3550,7 @@ def doDescribeApiRateLimitRules(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteNamespace(args, parsed_globals):
+def doDescribeTaskRecords(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -3539,9 +3566,9 @@ def doDeleteNamespace(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteNamespaceRequest()
+    model = models.DescribeTaskRecordsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteNamespace(model)
+    rsp = client.DescribeTaskRecords(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -3739,7 +3766,7 @@ def doDescribeApiVersions(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeGroup(args, parsed_globals):
+def doDeleteNamespace(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -3755,9 +3782,9 @@ def doDescribeGroup(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeGroupRequest()
+    model = models.DeleteNamespaceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeGroup(model)
+    rsp = client.DeleteNamespace(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -4403,6 +4430,7 @@ ACTION_MAP = {
     "DescribeGroupsWithPlugin": doDescribeGroupsWithPlugin,
     "DisableUnitRoute": doDisableUnitRoute,
     "DeployServerlessGroup": doDeployServerlessGroup,
+    "DescribeGroup": doDescribeGroup,
     "CreateConfig": doCreateConfig,
     "DescribeContainerGroups": doDescribeContainerGroups,
     "DeleteImageTags": doDeleteImageTags,
@@ -4417,7 +4445,7 @@ ACTION_MAP = {
     "CreateUnitRule": doCreateUnitRule,
     "DeletePathRewrites": doDeletePathRewrites,
     "DescribeGroupUseDetail": doDescribeGroupUseDetail,
-    "DescribeSimpleApplications": doDescribeSimpleApplications,
+    "DescribeUnitNamespaces": doDescribeUnitNamespaces,
     "DescribeUnitApiUseDetail": doDescribeUnitApiUseDetail,
     "UpdateApiTimeouts": doUpdateApiTimeouts,
     "DescribeLanes": doDescribeLanes,
@@ -4448,7 +4476,6 @@ ACTION_MAP = {
     "BindApiGroup": doBindApiGroup,
     "DescribeSimpleGroups": doDescribeSimpleGroups,
     "DescribeGroupGateways": doDescribeGroupGateways,
-    "DescribeUnitNamespaces": doDescribeUnitNamespaces,
     "AddInstances": doAddInstances,
     "ShrinkInstances": doShrinkInstances,
     "DisableUnitRule": doDisableUnitRule,
@@ -4499,9 +4526,10 @@ ACTION_MAP = {
     "StartContainerGroup": doStartContainerGroup,
     "DescribeUnitRule": doDescribeUnitRule,
     "CreateTaskFlow": doCreateTaskFlow,
+    "DescribeSimpleApplications": doDescribeSimpleApplications,
     "DeleteApplication": doDeleteApplication,
     "DescribeApiRateLimitRules": doDescribeApiRateLimitRules,
-    "DeleteNamespace": doDeleteNamespace,
+    "DescribeTaskRecords": doDescribeTaskRecords,
     "DescribeBasicResourceUsage": doDescribeBasicResourceUsage,
     "DeployGroup": doDeployGroup,
     "ReleasePublicConfig": doReleasePublicConfig,
@@ -4509,7 +4537,7 @@ ACTION_MAP = {
     "DraftApiGroup": doDraftApiGroup,
     "ContinueRunFailedTaskBatch": doContinueRunFailedTaskBatch,
     "DescribeApiVersions": doDescribeApiVersions,
-    "DescribeGroup": doDescribeGroup,
+    "DeleteNamespace": doDeleteNamespace,
     "CreateContainGroup": doCreateContainGroup,
     "DescribeEnabledUnitRule": doDescribeEnabledUnitRule,
     "DeleteConfig": doDeleteConfig,

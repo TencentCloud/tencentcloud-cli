@@ -11622,6 +11622,7 @@
         {
           "default": "",
           "document": "创建实例的可用区。",
+          "example": "ap-dongguan-ecm-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -11631,6 +11632,7 @@
         {
           "default": "",
           "document": "在当前可用区欲创建的实例数目。",
+          "example": "1",
           "member": "int64",
           "name": "InstanceCount",
           "required": true,
@@ -11639,7 +11641,8 @@
         },
         {
           "default": "",
-          "document": "运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接\";\"。多运营商需要开通白名单，请直接联系腾讯云客服。",
+          "document": "运营商如下：\nCTCC：中国电信\nCUCC：中国联通\nCMCC：中国移动\n多个运营商用英文分号连接\";\"，例如：\"CMCC;CUCC;CTCC\"。多运营商需要开通白名单，请直接联系腾讯云客服。",
+          "example": "CMCC",
           "member": "string",
           "name": "ISP",
           "required": true,
@@ -11649,6 +11652,7 @@
         {
           "default": "",
           "document": "指定私有网络编号，SubnetId与VpcId必须同时指定或不指定",
+          "example": "vpc-kcejgmxt",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -11658,6 +11662,7 @@
         {
           "default": "",
           "document": "指定子网编号，SubnetId与VpcId必须同时指定或不指定",
+          "example": "subnet-5r8jj7kg",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -11667,6 +11672,7 @@
         {
           "default": "",
           "document": "指定主网卡内网IP。条件：SubnetId与VpcId必须同时指定，并且IP数量与InstanceCount相同，多IP主机副网卡内网IP在相同子网内通过DHCP获取。",
+          "example": "10.212.2.153",
           "member": "string",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -11676,6 +11682,7 @@
         {
           "default": "",
           "document": "为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。",
+          "example": "1",
           "member": "int64",
           "name": "Ipv6AddressCount",
           "required": false,

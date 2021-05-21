@@ -1685,6 +1685,7 @@
         {
           "default": "",
           "document": "`EIP`的`ID`，是`EIP`的唯一标识。",
+          "example": "eip-ip9ongec",
           "member": "string",
           "name": "AddressId",
           "required": false,
@@ -1694,6 +1695,7 @@
         {
           "default": "",
           "document": "`EIP`名称。",
+          "example": "未命名",
           "member": "string",
           "name": "AddressName",
           "required": false,
@@ -1703,6 +1705,7 @@
         {
           "default": "",
           "document": "`EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)",
+          "example": "UNBIND",
           "member": "string",
           "name": "AddressStatus",
           "required": false,
@@ -1712,6 +1715,7 @@
         {
           "default": "",
           "document": "外网IP地址",
+          "example": "100.10.1.1",
           "member": "string",
           "name": "AddressIp",
           "required": false,
@@ -1721,6 +1725,7 @@
         {
           "default": "",
           "document": "绑定的资源实例`ID`。可能是一个`CVM`，`NAT`。",
+          "example": "ins-xxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1730,6 +1735,7 @@
         {
           "default": "",
           "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "2021-05-19T08:37:53Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": false,
@@ -1739,6 +1745,7 @@
         {
           "default": "",
           "document": "绑定的弹性网卡ID",
+          "example": "null",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -1748,6 +1755,7 @@
         {
           "default": "",
           "document": "绑定的资源内网ip",
+          "example": "null",
           "member": "string",
           "name": "PrivateAddressIp",
           "required": true,
@@ -1757,6 +1765,7 @@
         {
           "default": "",
           "document": "资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态",
+          "example": "false",
           "member": "bool",
           "name": "IsArrears",
           "required": true,
@@ -1766,6 +1775,7 @@
         {
           "default": "",
           "document": "资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态",
+          "example": "false",
           "member": "bool",
           "name": "IsBlocked",
           "required": true,
@@ -1775,6 +1785,7 @@
         {
           "default": "",
           "document": "eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式",
+          "example": "false",
           "member": "bool",
           "name": "IsEipDirectConnection",
           "required": true,
@@ -1784,6 +1795,7 @@
         {
           "default": "",
           "document": "eip资源类型，包括\"CalcIP\",\"WanIP\",\"EIP\",\"AnycastEIP\"。其中\"CalcIP\"表示设备ip，“WanIP”表示普通公网ip，“EIP”表示弹性公网ip，“AnycastEip”表示加速EIP",
+          "example": "EIP",
           "member": "string",
           "name": "AddressType",
           "required": true,
@@ -1793,6 +1805,7 @@
         {
           "default": "",
           "document": "eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放",
+          "example": "false",
           "member": "bool",
           "name": "CascadeRelease",
           "required": true,
@@ -1802,6 +1815,7 @@
         {
           "default": "",
           "document": "EIP ALG开启的协议类型。",
+          "example": "无",
           "member": "AlgType",
           "name": "EipAlgType",
           "required": true,
@@ -1811,6 +1825,7 @@
         {
           "default": "",
           "document": "弹性公网IP的运营商信息，当前可能返回值包括\"CMCC\",\"CTCC\",\"CUCC\",\"BGP\"",
+          "example": "BGP",
           "member": "string",
           "name": "InternetServiceProvider",
           "required": true,
@@ -1820,6 +1835,7 @@
         {
           "default": "",
           "document": "是否本地带宽EIP",
+          "example": "false",
           "member": "bool",
           "name": "LocalBgp",
           "required": true,
@@ -1829,6 +1845,7 @@
         {
           "default": "",
           "document": "弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Bandwidth",
           "required": true,
@@ -1838,10 +1855,21 @@
         {
           "default": "",
           "document": "弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性公网IP关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -2793,6 +2821,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网卡的挂载类型：0 标准型，1扩展型，默认值0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AttachType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3877,6 +3914,7 @@
         {
           "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3885,6 +3923,7 @@
         {
           "default": "",
           "document": "弹性网卡名称，最大长度不能超过60个字节。",
+          "example": "eni-ed3452de",
           "member": "string",
           "name": "NetworkInterfaceName",
           "required": true,
@@ -3893,6 +3932,7 @@
         {
           "default": "",
           "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。",
+          "example": "subnet-76r802pg",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3901,6 +3941,7 @@
         {
           "default": "",
           "document": "云服务器实例ID。",
+          "example": "ins-12345678",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3909,6 +3950,7 @@
         {
           "default": "",
           "document": "指定的内网IP信息，单次最多指定10个。",
+          "example": "10.0.0.0",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -3917,6 +3959,7 @@
         {
           "default": "",
           "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。",
+          "example": "10.0.0.2",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
           "required": false,
@@ -3925,6 +3968,7 @@
         {
           "default": "",
           "document": "指定绑定的安全组，例如：['sg-1dd51d']。",
+          "example": "--",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -3933,6 +3977,7 @@
         {
           "default": "",
           "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
+          "example": "uiui",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": false,
@@ -3941,10 +3986,20 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "--",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "绑定类型：0 标准型 1 扩展型。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AttachType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3954,8 +4009,10 @@
       "members": [
         {
           "document": "弹性网卡实例。",
+          "example": "--",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7616,7 +7673,7 @@
         },
         {
           "default": "",
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。</li>\n<li> address-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。</li>\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。</li>\n<li> address-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。状态包含：'CREATING'，'BINDING'，'BIND'，'UNBINDING'，'UNBIND'，'OFFLINING'，'BIND_ENI'。</li>\n<li> instance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。</li>\n<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。</li>\n<li> is-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）</li>\n<li> address-type - String - 是否必填：否 - （过滤条件）按照 IP类型 进行过滤。可选值：'EIP'，'AnycastEIP'，'HighQualityEIP'</li>\n<li> address-isp - String - 是否必填：否 - （过滤条件）按照 运营商类型 进行过滤。可选值：'BGP'，'CMCC'，'CUCC', 'CTCC'</li>\n<li> dedicated-cluster-id - String - 是否必填：否 - （过滤条件）按照 CDC 的唯一 ID 过滤。CDC 唯一 ID 形如：cluster-11112222。</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。</li>\n<li> address-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。</li>\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。</li>\n<li> address-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。状态包含：'CREATING'，'BINDING'，'BIND'，'UNBINDING'，'UNBIND'，'OFFLINING'，'BIND_ENI'。</li>\n<li> instance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。</li>\n<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。</li>\n<li> is-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）</li>\n<li> address-type - String - 是否必填：否 - （过滤条件）按照 IP类型 进行过滤。可选值：'EIP'，'AnycastEIP'，'HighQualityEIP'</li>\n<li> address-isp - String - 是否必填：否 - （过滤条件）按照 运营商类型 进行过滤。可选值：'BGP'，'CMCC'，'CUCC', 'CTCC'</li>\n<li> dedicated-cluster-id - String - 是否必填：否 - （过滤条件）按照 CDC 的唯一 ID 过滤。CDC 唯一 ID 形如：cluster-11112222。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7876,6 +7933,7 @@
         {
           "default": "",
           "document": "带宽包唯一ID列表",
+          "example": "bwp-ofoubyyt",
           "member": "string",
           "name": "BandwidthPackageIds",
           "required": false,
@@ -7883,7 +7941,8 @@
         },
         {
           "default": "",
-          "document": "每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：\n<li> bandwidth-package_id - String - 是否必填：否 - （过滤条件）按照带宽包的唯一标识ID过滤。</li>\n<li> bandwidth-package-name - String - 是否必填：否 - （过滤条件）按照 带宽包名称过滤。不支持模糊过滤。</li>\n<li> network-type - String - 是否必填：否 - （过滤条件）按照带宽包的类型过滤。类型包括'BGP','SINGLEISP'和'ANYCAST'。</li>\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照带宽包的计费类型过滤。计费类型包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'</li>\n<li> resource.resource-type - String - 是否必填：否 - （过滤条件）按照带宽包资源类型过滤。资源类型包括'Address'和'LoadBalance'</li>\n<li> resource.resource-id - String - 是否必填：否 - （过滤条件）按照带宽包资源Id过滤。资源Id形如'eip-xxxx','lb-xxxx'</li>\n<li> resource.address-ip - String - 是否必填：否 - （过滤条件）按照带宽包资源Ip过滤。</li>",
+          "document": "每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：\n<li> bandwidth-package_id - String - 是否必填：否 - （过滤条件）按照带宽包的唯一标识ID过滤。</li>\n<li> bandwidth-package-name - String - 是否必填：否 - （过滤条件）按照 带宽包名称过滤。不支持模糊过滤。</li>\n<li> network-type - String - 是否必填：否 - （过滤条件）按照带宽包的类型过滤。类型包括'HIGH_QUALITY_BGP','BGP','SINGLEISP'和'ANYCAST'。</li>\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照带宽包的计费类型过滤。计费类型包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'。</li>\n<li> resource.resource-type - String - 是否必填：否 - （过滤条件）按照带宽包资源类型过滤。资源类型包括'Address'和'LoadBalance'</li>\n<li> resource.resource-id - String - 是否必填：否 - （过滤条件）按照带宽包资源Id过滤。资源Id形如'eip-xxxx','lb-xxxx'</li>\n<li> resource.address-ip - String - 是否必填：否 - （过滤条件）按照带宽包资源Ip过滤。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -7892,6 +7951,7 @@
         {
           "default": "",
           "document": "查询带宽包偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -7900,6 +7960,7 @@
         {
           "default": "",
           "document": "查询带宽包数量限制",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -7913,15 +7974,19 @@
       "members": [
         {
           "document": "符合条件的带宽包数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "描述带宽包详细信息",
+          "example": "无",
           "member": "BandwidthPackage",
           "name": "BandwidthPackageSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9811,6 +9876,7 @@
         {
           "default": "",
           "document": "要查询的CVM实例ID或弹性网卡ID",
+          "example": "-",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9823,18 +9889,40 @@
       "document": "DescribeNetworkInterfaceLimit返回参数结构体",
       "members": [
         {
-          "document": "弹性网卡配额",
+          "document": "标准型弹性网卡配额",
+          "example": "32",
           "member": "int64",
           "name": "EniQuantity",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "每个弹性网卡可以分配的IP配额",
+          "document": "每个标准型弹性网卡可以分配的IP配额",
+          "example": "20",
           "member": "int64",
           "name": "EniPrivateIpAddressQuantity",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "扩展型网卡配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "400",
+          "member": "int64",
+          "name": "ExtendEniQuantity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "每个扩展型弹性网卡可以分配的IP配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "ExtendEniPrivateIpAddressQuantity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10382,7 +10470,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>",
+          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>cdc-id - String - 是否必填：否 - （过滤条件）按照cdc信息进行过滤。过滤出来制定cdc下的子网。</li>\n<li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>",
           "example": "vpc-pxir56ns",
           "member": "Filter",
           "name": "Filters",
@@ -13906,6 +13994,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "example": "--",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -13914,6 +14003,7 @@
         {
           "default": "",
           "document": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。",
+          "example": "--",
           "member": "string",
           "name": "SourceInstanceId",
           "required": true,
@@ -13922,10 +14012,20 @@
         {
           "default": "",
           "document": "待迁移的目的CVM实例ID。",
+          "example": "--",
           "member": "string",
           "name": "DestinationInstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网卡绑定类型：0 标准型 1 扩展型。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AttachType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -16695,6 +16795,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性网卡类型：0:标准型/1:扩展型。默认值为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AttachType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -19135,6 +19245,7 @@
         {
           "default": "",
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag-key",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -19144,6 +19255,7 @@
         {
           "default": "",
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag-value",
           "member": "string",
           "name": "Value",
           "required": false,

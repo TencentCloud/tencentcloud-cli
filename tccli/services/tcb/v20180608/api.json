@@ -739,6 +739,42 @@
       ],
       "usage": "out"
     },
+    "CloudBaseRunEmptyDirVolumeSource": {
+      "document": "emptydir 数据卷详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "启用emptydir数据卷",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableEmptyDirVolume",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "\"\",\"Memory\",\"HugePages\"",
+          "example": "Memory",
+          "member": "string",
+          "name": "Medium",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "emptydir数据卷大小",
+          "example": "1Gi",
+          "member": "string",
+          "name": "SizeLimit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CloudBaseRunImageInfo": {
       "document": "CloudBaseRun 镜像信息",
       "members": [
@@ -883,6 +919,62 @@
           "name": "EnableEmptyDirVolume",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudBaseRunServiceVolumeMount": {
+      "document": "对标 EKS VolumeMount",
+      "members": [
+        {
+          "default": "",
+          "document": "Volume 名称",
+          "example": "VolumeName",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载路径",
+          "example": "MountPath",
+          "member": "string",
+          "name": "MountPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否只读",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子路径",
+          "example": "SubPath",
+          "member": "string",
+          "name": "SubPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传播挂载方式",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MountPropagation",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1450,12 +1542,22 @@
         },
         {
           "default": "",
-          "document": "是否开启临时目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启临时目录逐步废弃，请使用 EmptyDir\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableEmptyDirVolume",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "emptydir数据卷详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseRunEmptyDirVolumeSource",
+          "name": "EmptyDir",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -2150,6 +2252,15 @@
           "name": "IsCreateJnsGw",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据卷挂载参数",
+          "example": "无",
+          "member": "CloudBaseRunServiceVolumeMount",
+          "name": "ServiceVolumeMounts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4193,6 +4304,7 @@
         {
           "default": "",
           "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
+          "example": "yourenvid-2fb346",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -4201,6 +4313,7 @@
         {
           "default": "",
           "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
+          "example": "true",
           "member": "bool",
           "name": "IsVisible",
           "required": false,
@@ -4209,6 +4322,7 @@
         {
           "default": "",
           "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
+          "example": "[ide,qc_console]",
           "member": "string",
           "name": "Channels",
           "required": false,
@@ -4222,8 +4336,10 @@
       "members": [
         {
           "document": "环境信息列表",
+          "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5084,6 +5200,16 @@
           "name": "Region",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -6382,6 +6508,32 @@
           "document": "资源所属用户的腾讯云appId",
           "member": "string",
           "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "标签键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
           "required": true,
           "type": "string",
           "value_allowed_null": false

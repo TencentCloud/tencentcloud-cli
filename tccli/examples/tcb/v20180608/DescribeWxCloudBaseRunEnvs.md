@@ -19,6 +19,12 @@ Output:
                 "PayMode": "xx",
                 "UpdateTime": "2020-09-22 00:00:00",
                 "EnvId": "xx",
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
                 "PackageName": "xx",
                 "IsAutoDegrade": true,
                 "Functions": [

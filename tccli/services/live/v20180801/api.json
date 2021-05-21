@@ -486,6 +486,12 @@
       "name": "查询拉流配置(该接口已下线,请联系售后获取新接口)",
       "output": "DescribePullStreamConfigsResponse"
     },
+    "DescribeRecordTask": {
+      "document": "查询指定时间段范围内启动和结束的录制任务列表。\n- 使用前提\n1. 仅用于查询由 CreateRecordTask 接口创建的录制任务。\n2. 不能查询被 DeleteRecordTask 接口删除以及已过期（平台侧保留3个月）的录制任务。\n",
+      "input": "DescribeRecordTaskRequest",
+      "name": "查询录制任务列表（新）",
+      "output": "DescribeRecordTaskResponse"
+    },
     "DescribeScreenShotSheetNumList": {
       "document": "接口用来查询直播增值业务--截图的张数",
       "input": "DescribeScreenShotSheetNumListRequest",
@@ -6275,6 +6281,96 @@
       ],
       "type": "object"
     },
+    "DescribeRecordTaskRequest": {
+      "document": "DescribeRecordTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询任务开始时间，Unix 时间戳。设置时间不早于当前时间之前90天的时间，且查询时间跨度不超过一周。",
+          "example": "1595779200",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询任务结束时间，Unix 时间戳。EndTime 必须大于 StartTime，设置时间不早于当前时间之前90天的时间，且查询时间跨度不超过一周。（注意：任务开始结束时间必须在查询时间范围内）。",
+          "example": "1595865600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流名称。",
+          "example": "livetest",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流域名。",
+          "example": "5000.live.push.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流路径。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。",
+          "example": "RF1bV9tRVVEW=",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordTaskResponse": {
+      "document": "DescribeRecordTask返回参数结构体",
+      "members": [
+        {
+          "document": "翻页标识，当请求未返回所有数据，该字段表示下一条记录的 Token。当该字段为空，说明已无更多数据。",
+          "example": "RF1bV9tRVVEW=",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "录制任务列表。当该字段为空，说明已返回所有数据。",
+          "example": "无",
+          "member": "RecordTask",
+          "name": "TaskList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScreenShotSheetNumListRequest": {
       "document": "DescribeScreenShotSheetNumList请求参数结构体",
       "members": [
@@ -9432,6 +9528,84 @@
         }
       ],
       "usage": "both"
+    },
+    "RecordTask": {
+      "document": "录制任务",
+      "members": [
+        {
+          "default": "",
+          "document": "录制任务ID。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流域名。",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流路径。",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流名称。",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始时间，Unix时间戳。",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务结束时间，Unix时间戳。",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制模板ID。",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用 StopRecordTask 停止任务时间，Unix时间戳。值为0表示未曾调用接口停止任务。",
+          "member": "uint64",
+          "name": "Stopped",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RecordTemplateInfo": {
       "document": "录制模板信息",

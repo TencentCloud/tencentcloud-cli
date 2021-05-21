@@ -34,6 +34,8 @@ Output:
                 "IsRemoteVpcSnat": false,
                 "SubnetName": "子网1",
                 "TotalIpAddressCount": 1,
+                "IsCdcSubnet": 0,
+                "CdcId": "cluster-1234dert",
                 "TagSet": [
                     {
                         "Value": "ck",
@@ -80,6 +82,8 @@ Output:
                 "IsRemoteVpcSnat": false,
                 "SubnetName": "子网2",
                 "TotalIpAddressCount": 1,
+                "IsCdcSubnet": 0,
+                "CdcId": "cluster-1234dert",
                 "TagSet": [
                     {
                         "Value": "gt",

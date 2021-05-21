@@ -848,6 +848,14 @@
         "title": "查看任务最近执行批次状态"
       }
     ],
+    "DescribeTaskRecords": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeTaskRecords\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"RetryInterval\": 0,\n                    \"BelongFlowIds\": [\n                        \"xx\"\n                    ],\n                    \"TriggerType\": \"xx\",\n                    \"TimeOut\": 3000,\n                    \"TaskRule\": {\n                        \"RepeatInterval\": 1,\n                        \"RuleType\": \"xx\",\n                        \"Expression\": \"xx\"\n                    },\n                    \"TaskState\": \"xx\",\n                    \"SuccessRatio\": 0,\n                    \"TaskContent\": \"xx\",\n                    \"TaskArgument\": \"xx\",\n                    \"AdvanceSettings\": {\n                        \"SubTaskConcurrency\": 0\n                    },\n                    \"RetryCount\": 0,\n                    \"SuccessOperator\": \"xx\",\n                    \"TaskId\": \"xx\",\n                    \"TaskType\": \"xx\",\n                    \"ShardCount\": 0,\n                    \"ExecuteType\": \"xx\",\n                    \"TaskName\": \"xx\",\n                    \"ShardArguments\": [\n                        {\n                            \"ShardValue\": \"xx\",\n                            \"ShardKey\": 1\n                        }\n                    ],\n                    \"GroupId\": \"xx\",\n                    \"TaskLogId\": \"xx\"\n                }\n            ],\n            \"TotalCount\": 7\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询任务列表"
+      }
+    ],
     "DescribeUnitApiUseDetail": [
       {
         "document": "",

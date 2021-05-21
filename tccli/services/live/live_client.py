@@ -175,7 +175,7 @@ def doModifyLiveSnapshotTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyLiveRecordTemplate(args, parsed_globals):
+def doDescribeRecordTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -191,9 +191,9 @@ def doModifyLiveRecordTemplate(args, parsed_globals):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyLiveRecordTemplateRequest()
+    model = models.DescribeRecordTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyLiveRecordTemplate(model)
+    rsp = client.DescribeRecordTask(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -599,6 +599,33 @@ def doDescribeVisitTopSumInfoList(args, parsed_globals):
     model = models.DescribeVisitTopSumInfoListRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeVisitTopSumInfoList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyLiveRecordTemplate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyLiveRecordTemplateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyLiveRecordTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -3000,7 +3027,7 @@ ACTION_MAP = {
     "CreateLiveRecord": doCreateLiveRecord,
     "UpdateLiveWatermark": doUpdateLiveWatermark,
     "ModifyLiveSnapshotTemplate": doModifyLiveSnapshotTemplate,
-    "ModifyLiveRecordTemplate": doModifyLiveRecordTemplate,
+    "DescribeRecordTask": doDescribeRecordTask,
     "CreateLiveWatermarkRule": doCreateLiveWatermarkRule,
     "DescribeLiveStreamEventList": doDescribeLiveStreamEventList,
     "CreateCommonMixStream": doCreateCommonMixStream,
@@ -3016,6 +3043,7 @@ ACTION_MAP = {
     "DescribeLiveRecordTemplates": doDescribeLiveRecordTemplates,
     "ModifyLiveDomainCert": doModifyLiveDomainCert,
     "DescribeVisitTopSumInfoList": doDescribeVisitTopSumInfoList,
+    "ModifyLiveRecordTemplate": doModifyLiveRecordTemplate,
     "DescribeLiveDomainCert": doDescribeLiveDomainCert,
     "AddLiveWatermark": doAddLiveWatermark,
     "DescribeAreaBillBandwidthAndFluxList": doDescribeAreaBillBandwidthAndFluxList,
