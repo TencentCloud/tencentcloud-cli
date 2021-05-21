@@ -117,6 +117,8 @@ include tccli/services/dcdb/v20180411/api.json
 include tccli/services/dcdb/v20180411/examples.json
 include tccli/services/dlc/v20210125/api.json
 include tccli/services/dlc/v20210125/examples.json
+include tccli/services/dnspod/v20210323/api.json
+include tccli/services/dnspod/v20210323/examples.json
 include tccli/services/domain/v20180808/api.json
 include tccli/services/domain/v20180808/examples.json
 include tccli/services/drm/v20181115/api.json
