@@ -502,6 +502,14 @@
         "title": "跨归属移动媒体"
       }
     ],
+    "ParseEvent": [
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ParseEvent\n&Platform=test\n&EventContent={\"EventType\":\"Storage.NewFileCreated\",\"StorageNewFileCreatedEvent\":{\"FileId\":\"5285890818667693851\",\"MaterialId\":\"60a75c1c30fcbe0001cc09d5\",\"Operator\":\"3fa6b09e-05c6-433e-bc1e-6457d264f1dd\",\"OperationType\":\"Upload\",\"Owner\":{\"Type\":\"PERSON\",\"Id\":\"3fa6b09e-05c6-433e-bc1e-6457d264f1dd\"},\"ClassPath\":\"/媒体\"}}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventContent\": {\n            \"EventType\": \"Storage.NewFileCreated\",\n            \"StorageNewFileCreatedEvent\": {\n                \"FileId\": \"85890818667698972737\",\n                \"MaterialId\": \"60a75c1c30fcbe00093ikd93k\",\n                \"Operator\": \"3fa6b09e-05c6-433e-bc1e-6457d290d9d9\",\n                \"OperationType\": \"Upload\",\n                \"Owner\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"3fa6b09e-05c6-433e-bc1e-6457d290d9d9\"\n                },\n                \"ClassPath\": \"/媒体\"\n            }\n        },\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
+        "title": "分析回调事件内容"
+      }
+    ],
     "RevokeResourceAuthorization": [
       {
         "document": "",

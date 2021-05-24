@@ -1,4 +1,4 @@
-**Example 1: 批量修改域名DNS信息**
+**Example 1: 批量域名 DNS 修改**
 
 
 

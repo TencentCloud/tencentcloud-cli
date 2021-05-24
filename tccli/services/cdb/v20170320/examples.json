@@ -35,7 +35,7 @@
     "CreateAccounts": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"Password\": \"fsdgfdgfd\",\n    \"Accounts\": [\n        {\n            \"Host\": \"127.0.0.1\",\n            \"User\": \"test_user\"\n        }\n    ],\n    \"Description\": \"test description\"\n}",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateAccounts\n&InstanceId=cdb-f35wr6wj\n&Accounts.0.User=ajnnw\n&Accounts.0.Host=127.0.0.1\n&Password=fsdgfdgfd\n&Description=description\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "创建云数据库的账户"
       }
@@ -216,7 +216,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAccounts\n&InstanceId=cdb-f35wr6wj\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 2,\n        \"Items\": [\n            {\n                \"Notes\": \"test\",\n                \"Host\": \"localhost\",\n                \"User\": \"test_user\",\n                \"ModifyTime\": \"2020-11-10 01:00:00\",\n                \"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\n                \"CreateTime\": \"2020-11-10 01:00:00\"\n            },\n            {\n                \"Notes\": \"test2\",\n                \"Host\": \"localhost\",\n                \"User\": \"root\",\n                \"ModifyTime\": \"2020-11-10 01:00:00\",\n                \"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\n                \"CreateTime\": \"2020-11-10 01:00:00\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 2,\n        \"MaxUserConnections\": 10240,\n        \"Items\": [\n            {\n                \"Notes\": \"test\",\n                \"Host\": \"localhost\",\n                \"User\": \"test_user\",\n                \"ModifyTime\": \"2020-11-10 01:00:00\",\n                \"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\n                \"CreateTime\": \"2020-11-10 01:00:00\",\n                \"MaxUserConnections\": 20\n            },\n            {\n                \"Notes\": \"test2\",\n                \"Host\": \"localhost\",\n                \"User\": \"root\",\n                \"ModifyTime\": \"2020-11-10 01:00:00\",\n                \"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\n                \"CreateTime\": \"2020-11-10 01:00:00\",\n                \"MaxUserConnections\": 20\n            }\n        ]\n    }\n}",
         "title": "查询云数据库的所有账号信息"
       }
     ],
@@ -644,6 +644,14 @@
         "title": "修改云数据库实例账号的备注信息"
       }
     ],
+    "ModifyAccountMaxUserConnections": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyAccountMaxUserConnections\n&InstanceId=cdb-f35wr6wj\n&Accounts.0.User=ajnnw\n&Accounts.0.Host=127.0.0.1\n&MaxUserConnections=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
+        "title": "修改云数据库账户最大可用连接数"
+      }
+    ],
     "ModifyAccountPassword": [
       {
         "document": "",
@@ -655,7 +663,7 @@
     "ModifyAccountPrivileges": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&InstanceId=cdb-f35wr6wj\n&Accounts.0.user=ajnnw\n&GlobalPrivileges.0=SELECT\n&Accounts.0.host=127.0.0.1\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&InstanceId=cdb-f35wr6wj\n&Accounts.0.User=ajnnw\n&GlobalPrivileges.0=SELECT\n&Accounts.0.Host=127.0.0.1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "修改云数据库实例账号的权限"
       }

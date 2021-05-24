@@ -7,21 +7,21 @@
       "output": "BatchModifyDomainInfoResponse"
     },
     "CheckBatchStatus": {
-      "document": "本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。",
       "input": "CheckBatchStatusRequest",
-      "name": "查询批量操作日志状态",
+      "name": "批量操作日志状态",
       "output": "CheckBatchStatusResponse"
     },
     "CheckDomain": {
       "document": "检查域名是否可以注册。",
       "input": "CheckDomainRequest",
-      "name": "域名注册检查",
+      "name": "域名注册查询",
       "output": "CheckDomainResponse"
     },
     "CreateDomainBatch": {
-      "document": "本接口 ( CreateDomainBatch ) 用于批量注册域名 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( CreateDomainBatch ) 用于批量域名注册 。",
       "input": "CreateDomainBatchRequest",
-      "name": "批量注册域名",
+      "name": "批量域名注册",
       "output": "CreateDomainBatchResponse"
     },
     "CreateTemplate": {
@@ -31,9 +31,9 @@
       "output": "CreateTemplateResponse"
     },
     "DeleteTemplate": {
-      "document": "本接口 ( DeleteTemplate ) 用于删除域名信息模板。",
+      "document": "本接口 ( DeleteTemplate ) 用于删除信息模板。",
       "input": "DeleteTemplateRequest",
-      "name": "删除域名信息模板",
+      "name": "删除信息模板",
       "output": "DeleteTemplateResponse"
     },
     "DescribeBatchOperationLogDetails": {
@@ -45,25 +45,25 @@
     "DescribeBatchOperationLogs": {
       "document": "本接口 ( DescribeBatchOperationLogs ) 用于获取批量操作日志 。",
       "input": "DescribeBatchOperationLogsRequest",
-      "name": "批量操作日志",
+      "name": "批量操作日志列表",
       "output": "DescribeBatchOperationLogsResponse"
     },
     "DescribeDomainBaseInfo": {
-      "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。\n",
+      "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基本信息。\n",
       "input": "DescribeDomainBaseInfoRequest",
-      "name": "获取域名基础信息",
+      "name": "域名基本信息",
       "output": "DescribeDomainBaseInfoResponse"
     },
     "DescribeDomainNameList": {
-      "document": "本接口 (  DescribeDomainNameList ) 获取域名列表。\n",
+      "document": "本接口 (  DescribeDomainNameList ) 我的域名列表。\n",
       "input": "DescribeDomainNameListRequest",
-      "name": "获取域名列表",
+      "name": "我的域名列表",
       "output": "DescribeDomainNameListResponse"
     },
     "DescribeDomainPriceList": {
       "document": "按照域名后缀获取对应的价格列表",
       "input": "DescribeDomainPriceListRequest",
-      "name": "获取域名价格列表",
+      "name": "域名价格列表",
       "output": "DescribeDomainPriceListResponse"
     },
     "DescribeTemplate": {
@@ -73,57 +73,57 @@
       "output": "DescribeTemplateResponse"
     },
     "DescribeTemplateList": {
-      "document": "本接口 (DescribeTemplateList) 用于获取模板列表。\n",
+      "document": "本接口 (DescribeTemplateList) 用于获取信息模板列表。\n",
       "input": "DescribeTemplateListRequest",
-      "name": "获取模板列表",
+      "name": "信息模板列表",
       "output": "DescribeTemplateListResponse"
     },
     "ModifyDomainDNSBatch": {
-      "document": "本接口 ( ModifyDomainDNSBatch) 用于批量修改域名DNS信息 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。",
       "input": "ModifyDomainDNSBatchRequest",
-      "name": "批量修改域名DNS信息",
+      "name": "批量域名 DNS 修改",
       "output": "ModifyDomainDNSBatchResponse"
     },
     "ModifyDomainOwnerBatch": {
       "document": "本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。",
       "input": "ModifyDomainOwnerBatchRequest",
-      "name": "域名批量账号间转移",
+      "name": "批量账号间转移",
       "output": "ModifyDomainOwnerBatchResponse"
     },
     "RenewDomainBatch": {
-      "document": "本接口 ( RenewDomainBatch ) 用于批量续费域名 。\n\n默认接口请求频率限制：20次/秒。\n",
+      "document": "本接口 ( RenewDomainBatch ) 用于批量续费域名 。\n",
       "input": "RenewDomainBatchRequest",
       "name": "批量域名续费",
       "output": "RenewDomainBatchResponse"
     },
     "SetDomainAutoRenew": {
-      "document": "本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。",
       "input": "SetDomainAutoRenewRequest",
-      "name": "设置域名自动续费",
+      "name": "域名自动续费",
       "output": "SetDomainAutoRenewResponse"
     },
     "TransferInDomainBatch": {
-      "document": "本接口 ( TransferInDomainBatch ) 用于批量转入域名 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( TransferInDomainBatch ) 用于批量转入域名 。",
       "input": "TransferInDomainBatchRequest",
-      "name": "批量转入域名",
+      "name": "批量域名转入",
       "output": "TransferInDomainBatchResponse"
     },
     "TransferProhibitionBatch": {
-      "document": "本接口 ( TransferInDomainBatch ) 用于批量禁止域名转移 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( TransferProhibitionBatch ) 用于批量禁止域名转移 。",
       "input": "TransferProhibitionBatchRequest",
-      "name": "批量禁止域名转移",
+      "name": "批量禁止转移锁",
       "output": "TransferProhibitionBatchResponse"
     },
     "UpdateProhibitionBatch": {
-      "document": "本接口 ( UpdateProhibitionBatch ) 用于批量设置禁止域名更新 。",
+      "document": "本接口 ( UpdateProhibitionBatch ) 用于批量禁止更新锁。",
       "input": "UpdateProhibitionBatchRequest",
-      "name": "批量禁止域名更新",
+      "name": "批量禁止更新锁",
       "output": "UpdateProhibitionBatchResponse"
     },
     "UploadImage": {
-      "document": "本接口 ( UploadImage ) 用于上传资质照片 。",
+      "document": "本接口 ( UploadImage ) 用于证件图片上传 。",
       "input": "UploadImageRequest",
-      "name": "上传资质照片",
+      "name": "证件图片上传",
       "output": "UploadImageResponse"
     }
   },
@@ -140,6 +140,7 @@
         {
           "default": "",
           "document": "批量修改的域名。",
+          "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -148,6 +149,7 @@
         {
           "default": "",
           "document": "模板ID。",
+          "example": "tmpl-xxxxx",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -156,6 +158,7 @@
         {
           "default": "",
           "document": "true： 开启60天内禁止转移注册商锁定\nfalse：关闭60天内禁止转移注册商锁定\n默认 true",
+          "example": "true",
           "member": "bool",
           "name": "LockTransfer",
           "required": false,
@@ -169,8 +172,10 @@
       "members": [
         {
           "document": "日志ID",
+          "example": "318",
           "member": "int64",
           "name": "LogId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -255,6 +260,7 @@
         {
           "default": "",
           "document": "操作日志 ID数组，最多 200 个",
+          "example": "[1]",
           "member": "uint64",
           "name": "LogIds",
           "required": true,
@@ -268,8 +274,10 @@
       "members": [
         {
           "document": "批量任务状态集",
+          "example": "无",
           "member": "BatchStatus",
           "name": "StatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -713,6 +721,7 @@
         {
           "default": "",
           "document": "模板ID",
+          "example": "模板ID",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -739,6 +748,7 @@
         {
           "default": "",
           "document": "日志ID。",
+          "example": "1",
           "member": "int64",
           "name": "LogId",
           "required": true,
@@ -747,6 +757,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -755,6 +766,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为200。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -768,15 +780,19 @@
       "members": [
         {
           "document": "总数量。",
+          "example": "12",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "日志详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DomainBatchDetailSet",
           "name": "DomainBatchDetailSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -795,6 +811,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -803,6 +820,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为200。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -816,15 +834,19 @@
       "members": [
         {
           "document": "总数量",
+          "example": "204",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DomainBatchLogSet",
           "name": "DomainBatchLogSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -888,6 +910,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -896,6 +919,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，取值范围[1,100]",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -909,15 +933,19 @@
       "members": [
         {
           "document": "域名信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DomainList",
           "name": "DomainSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "域名总数量",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -936,6 +964,7 @@
         {
           "default": "",
           "document": "查询价格的后缀列表。默认则为全部后缀",
+          "example": "[\".com\"]",
           "member": "string",
           "name": "TldList",
           "required": false,
@@ -944,6 +973,7 @@
         {
           "default": "",
           "document": "查询购买的年份，默认会列出所有年份的价格",
+          "example": "1",
           "member": "int64",
           "name": "Year",
           "required": false,
@@ -952,6 +982,7 @@
         {
           "default": "",
           "document": "域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入",
+          "example": "new",
           "member": "string",
           "name": "Operation",
           "required": false,
@@ -965,8 +996,10 @@
       "members": [
         {
           "document": "域名价格列表",
+          "example": "无",
           "member": "PriceInfo",
           "name": "PriceList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1420,6 +1453,7 @@
         {
           "default": "",
           "document": "批量操作的域名。",
+          "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -1428,6 +1462,7 @@
         {
           "default": "",
           "document": "域名DNS 数组。",
+          "example": "[\"f1g1ns2.dnspod.net\",\"f1g1ns2.dnspod.net\"]",
           "member": "string",
           "name": "Dns",
           "required": true,
@@ -1441,8 +1476,10 @@
       "members": [
         {
           "document": "日志ID。",
+          "example": "54",
           "member": "uint64",
           "name": "LogId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1461,6 +1498,7 @@
         {
           "default": "",
           "document": "要过户的域名。",
+          "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -1469,6 +1507,7 @@
         {
           "default": "",
           "document": "转入账户的uin。",
+          "example": "123456",
           "member": "string",
           "name": "NewOwnerUin",
           "required": true,
@@ -1482,8 +1521,10 @@
       "members": [
         {
           "document": "日志id",
+          "example": "425",
           "member": "uint64",
           "name": "LogId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1553,6 +1594,7 @@
         {
           "default": "",
           "document": "域名续费的年限。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -1561,6 +1603,7 @@
         {
           "default": "",
           "document": "批量续费的域名。",
+          "example": "[\"h101.dlgslb.cn\",\"h103.dlgslb.cn\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -1569,6 +1612,7 @@
         {
           "default": "",
           "document": "付费模式 0手动在线付费，1使用余额付费。",
+          "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": true,
@@ -1577,6 +1621,7 @@
         {
           "default": "",
           "document": "自动续费开关。有三个可选值：\n0 表示关闭，不自动续费\n1 表示开启，将自动续费\n2 表示不处理，保留域名原有状态（默认值）",
+          "example": "2",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -1590,8 +1635,10 @@
       "members": [
         {
           "document": "操作日志ID。",
+          "example": "318",
           "member": "int64",
           "name": "LogId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1610,6 +1657,7 @@
         {
           "default": "",
           "document": "域名ID。",
+          "example": "域名ID",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -1618,6 +1666,7 @@
         {
           "default": "",
           "document": "AutoRenew 有三个可选值：\n 0：不设置自动续费\n1：设置自动续费\n2：设置到期后不续费",
+          "example": "1",
           "member": "uint64",
           "name": "AutoRenew",
           "required": true,
@@ -1749,6 +1798,7 @@
         {
           "default": "",
           "document": "转入的域名名称数组。",
+          "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -1757,6 +1807,7 @@
         {
           "default": "",
           "document": "域名转移码数组。",
+          "example": "[\"123456\"]",
           "member": "string",
           "name": "PassWords",
           "required": true,
@@ -1765,6 +1816,7 @@
         {
           "default": "",
           "document": "模板ID。",
+          "example": "tmpl-xxxxx",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -1773,6 +1825,7 @@
         {
           "default": "",
           "document": "付费模式 0手动在线付费，1使用余额付费。",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
           "required": true,
@@ -1781,6 +1834,7 @@
         {
           "default": "",
           "document": "自动续费开关。有两个可选值：\n0 表示关闭，不自动续费（默认值）\n1 表示开启，将自动续费",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -1789,6 +1843,7 @@
         {
           "default": "",
           "document": "true： 开启60天内禁止转移注册商锁定\nfalse：关闭60天内禁止转移注册商锁定\n默认 true",
+          "example": "true",
           "member": "bool",
           "name": "LockTransfer",
           "required": false,
@@ -1802,8 +1857,10 @@
       "members": [
         {
           "document": "日志ID",
+          "example": "54",
           "member": "uint64",
           "name": "LogId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1822,6 +1879,7 @@
         {
           "default": "",
           "document": "批量操作的域名。",
+          "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -1830,6 +1888,7 @@
         {
           "default": "",
           "document": "是否开启禁止域名转移。\nTrue: 开启禁止域名转移状态。\nFalse：关闭禁止域名转移状态。",
+          "example": "1",
           "member": "bool",
           "name": "Status",
           "required": true,
@@ -1843,8 +1902,10 @@
       "members": [
         {
           "document": "日志ID",
+          "example": "54",
           "member": "uint64",
           "name": "LogId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1863,6 +1924,7 @@
         {
           "default": "",
           "document": "批量操作的域名。",
+          "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -1871,6 +1933,7 @@
         {
           "default": "",
           "document": "是否开启禁止域名更新。\nTrue:开启禁止域名更新状态。\nFalse：关闭禁止域名更新状态。",
+          "example": "1",
           "member": "bool",
           "name": "Status",
           "required": true,
@@ -1884,8 +1947,10 @@
       "members": [
         {
           "document": "日志ID",
+          "example": "54",
           "member": "uint64",
           "name": "LogId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1904,6 +1969,7 @@
         {
           "default": "",
           "document": "资质照片，照片的base64编码。",
+          "example": "照片的base64编码",
           "member": "string",
           "name": "ImageFile",
           "required": true,
@@ -1917,8 +1983,10 @@
       "members": [
         {
           "document": "资质照片地址。",
+          "example": "xxxxx",
           "member": "string",
           "name": "AccessUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

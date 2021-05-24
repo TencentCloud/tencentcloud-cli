@@ -246,6 +246,12 @@
       "name": "移动资源",
       "output": "MoveResourceResponse"
     },
+    "ParseEvent": {
+      "document": "该接口接受制作云回调给客户的事件内容，将其转化为对应的 EventContent 结构，请不要实际调用该接口，只需要将接收到的事件内容直接使用 JSON 解析到 EventContent  即可使用。",
+      "input": "ParseEventRequest",
+      "name": "回调事件内容解析",
+      "output": "ParseEventResponse"
+    },
     "RevokeResourceAuthorization": {
       "document": " 资源所属实体对目标实体回收目标资源的相应权限，若原本没有相应权限则不产生变更。",
       "input": "RevokeResourceAuthorizationRequest",
@@ -2236,6 +2242,32 @@
         }
       ],
       "usage": "both"
+    },
+    "EventContent": {
+      "document": "回调事件内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "事件类型，可取值为：\n<li>Storage.NewFileCreated：新文件产生。</li>",
+          "example": "Storage.NewFileCreated",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新文件产生事件信息。仅当 EventType 为 Storage.NewFileCreated 时有效。",
+          "example": "无",
+          "member": "StorageNewFileCreatedEvent",
+          "name": "StorageNewFileCreatedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ExportVideoByEditorTrackDataRequest": {
       "document": "ExportVideoByEditorTrackData请求参数结构体",
@@ -4456,6 +4488,51 @@
       ],
       "usage": "out"
     },
+    "ParseEventRequest": {
+      "document": "ParseEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回调事件内容。",
+          "example": "无",
+          "member": "string",
+          "name": "EventContent",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseEventResponse": {
+      "document": "ParseEvent返回参数结构体",
+      "members": [
+        {
+          "document": "事件内容。",
+          "example": "无",
+          "member": "EventContent",
+          "name": "EventContent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PenguinMediaPlatformPublishInfo": {
       "document": "企鹅号发布信息。",
       "members": [
@@ -5148,6 +5225,72 @@
         }
       ],
       "usage": "in"
+    },
+    "StorageNewFileCreatedEvent": {
+      "document": "新文件生成事件",
+      "members": [
+        {
+          "default": "",
+          "document": "云点播文件  Id。",
+          "example": "5285890818667693889292992",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体 Id。",
+          "example": "60a75c1c30fcbe0001cc8990d0",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者 Id。",
+          "example": "3fa6b09e-05c6-433e-bc1e-6457d264f1dd",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型，可取值为：\n<li>Upload：上传；</li>\n<li>PullUpload：拉取上传；</li>\n<li>Record：直播录制。</li>",
+          "example": "Upload",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体分类路径。",
+          "example": "/媒体",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StreamConnectOutput": {
       "document": "云转推输出源。",

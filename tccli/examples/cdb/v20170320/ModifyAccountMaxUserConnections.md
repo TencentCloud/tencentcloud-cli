@@ -1,15 +1,15 @@
-**Example 1: 修改云数据库实例账号的权限**
+**Example 1: 修改云数据库账户最大可用连接数**
 
 
 
 Input: 
 
 ```
-tccli cdb ModifyAccountPrivileges --cli-unfold-argument  \
+tccli cdb ModifyAccountMaxUserConnections --cli-unfold-argument  \
     --InstanceId cdb-f35wr6wj \
     --Accounts.0.User ajnnw \
-    --GlobalPrivileges SELECT \
-    --Accounts.0.Host 127.0.0.1
+    --Accounts.0.Host 127.0.0.1 \
+    --MaxUserConnections 100
 ```
 
 Output: 

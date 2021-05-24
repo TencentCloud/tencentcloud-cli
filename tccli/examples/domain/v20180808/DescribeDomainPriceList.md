@@ -13,447 +13,448 @@ Output:
     "Response": {
         "PriceList": [
             {
-                "Operation": "redem",
-                "Price": 1000,
+                "Price": 1,
+                "RealPrice": 1,
                 "Year": 1,
-                "RealPrice": 1000,
-                "Tld": ".work"
+                "Operation": "xx",
+                "Tld": "xx"
             },
             {
-                "Operation": "tran",
-                "Price": 30,
-                "Year": 1,
-                "RealPrice": 30,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 270,
-                "Year": 9,
-                "RealPrice": 270,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 210,
-                "Year": 7,
-                "RealPrice": 210,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 240,
-                "Year": 8,
-                "RealPrice": 240,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 180,
-                "Year": 6,
-                "RealPrice": 180,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 120,
-                "Year": 4,
-                "RealPrice": 120,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 150,
-                "Year": 5,
-                "RealPrice": 150,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 90,
-                "Year": 3,
-                "RealPrice": 90,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 30,
-                "Year": 1,
-                "RealPrice": 30,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 60,
-                "Year": 2,
-                "RealPrice": 60,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 295,
-                "Year": 10,
-                "RealPrice": 295,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 265,
-                "Year": 9,
-                "RealPrice": 265,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 235,
-                "Year": 8,
-                "RealPrice": 235,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 205,
-                "Year": 7,
-                "RealPrice": 205,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 175,
-                "Year": 6,
-                "RealPrice": 175,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 145,
-                "Year": 5,
-                "RealPrice": 155,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 115,
-                "Year": 4,
-                "RealPrice": 115,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 85,
-                "Year": 3,
-                "RealPrice": 85,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 55,
-                "Year": 2,
-                "RealPrice": 55,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 25,
-                "Year": 1,
-                "RealPrice": 25,
-                "Tld": ".work"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "redem",
-                "Price": 1000,
-                "Year": 1,
-                "RealPrice": 1000,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "tran",
-                "Price": 30,
-                "Year": 1,
-                "RealPrice": 30,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 270,
-                "Year": 9,
-                "RealPrice": 270,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 240,
-                "Year": 8,
-                "RealPrice": 240,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 210,
-                "Year": 7,
-                "RealPrice": 210,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 180,
-                "Year": 6,
-                "RealPrice": 180,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 150,
-                "Year": 5,
-                "RealPrice": 150,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 120,
-                "Year": 4,
-                "RealPrice": 120,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 90,
-                "Year": 3,
-                "RealPrice": 90,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 60,
-                "Year": 2,
-                "RealPrice": 60,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 30,
-                "Year": 1,
-                "RealPrice": 30,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 295,
-                "Year": 10,
-                "RealPrice": 295,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 265,
-                "Year": 9,
-                "RealPrice": 265,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 235,
-                "Year": 8,
-                "RealPrice": 235,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 205,
-                "Year": 7,
-                "RealPrice": 205,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 175,
-                "Year": 6,
-                "RealPrice": 175,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 145,
-                "Year": 5,
-                "RealPrice": 155,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 115,
-                "Year": 4,
-                "RealPrice": 115,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 85,
-                "Year": 3,
-                "RealPrice": 85,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 55,
-                "Year": 2,
-                "RealPrice": 55,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 25,
-                "Year": 1,
-                "RealPrice": 25,
-                "Tld": ".top"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "redem",
-                "Price": 1000,
-                "Year": 1,
-                "RealPrice": 1000,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "tran",
-                "Price": 30,
-                "Year": 1,
-                "RealPrice": 30,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 270,
-                "Year": 9,
-                "RealPrice": 270,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 25,
-                "Year": 1,
-                "RealPrice": 25,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 55,
-                "Year": 2,
-                "RealPrice": 55,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 85,
-                "Year": 3,
-                "RealPrice": 85,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 115,
-                "Year": 4,
-                "RealPrice": 115,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 240,
-                "Year": 8,
-                "RealPrice": 240,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 180,
-                "Year": 6,
-                "RealPrice": 180,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 210,
-                "Year": 7,
-                "RealPrice": 210,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 150,
-                "Year": 5,
-                "RealPrice": 150,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 120,
-                "Year": 4,
-                "RealPrice": 120,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 90,
-                "Year": 3,
-                "RealPrice": 90,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 60,
-                "Year": 2,
-                "RealPrice": 60,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "renew",
-                "Price": 30,
-                "Year": 1,
-                "RealPrice": 30,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 295,
-                "Year": 10,
-                "RealPrice": 295,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 265,
-                "Year": 9,
-                "RealPrice": 265,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 235,
-                "Year": 8,
-                "RealPrice": 235,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 205,
-                "Year": 7,
-                "RealPrice": 205,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 175,
-                "Year": 6,
-                "RealPrice": 175,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             },
             {
-                "Operation": "new",
-                "Price": 145,
-                "Year": 5,
-                "RealPrice": 155,
-                "Tld": ".fashion"
+                "Price": 1,
+                "Operation": "xx",
+                "RealPrice": 1,
+                "Tld": "xx",
+                "Year": 1
             }
-        ]
+        ],
+        "RequestId": "xx"
     }
 }
 ```

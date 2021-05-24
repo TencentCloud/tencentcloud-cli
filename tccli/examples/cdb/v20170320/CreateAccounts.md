@@ -7,10 +7,10 @@ Input:
 ```
 tccli cdb CreateAccounts --cli-unfold-argument  \
     --InstanceId cdb-f35wr6wj \
-    --Password fsdgfdgfd \
+    --Accounts.0.User ajnnw \
     --Accounts.0.Host 127.0.0.1 \
-    --Accounts.0.User test_user \
-    --Description test description
+    --Password fsdgfdgfd \
+    --Description description
 ```
 
 Output: 

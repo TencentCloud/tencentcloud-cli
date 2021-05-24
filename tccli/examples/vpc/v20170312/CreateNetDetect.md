@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc CreateNetDetect --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --VpcId vpc-12345678 \
     --SubnetId subnet-12345678 \
     --NetDetectName test \

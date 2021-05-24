@@ -25,7 +25,7 @@
       "output": "CloseWanServiceResponse"
     },
     "CreateAccounts": {
-      "document": "本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息。",
+      "document": "本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息以及最大可用连接数。",
       "input": "CreateAccountsRequest",
       "name": "创建云数据库的账户",
       "output": "CreateAccountsResponse"
@@ -474,6 +474,12 @@
       "name": "修改云数据库实例账号的备注信息",
       "output": "ModifyAccountDescriptionResponse"
     },
+    "ModifyAccountMaxUserConnections": {
+      "document": "本接口(ModifyAccountMaxUserConnections)用于修改云数据库账户最大可用连接数。",
+      "input": "ModifyAccountMaxUserConnectionsRequest",
+      "name": "修改账户最大可用连接数",
+      "output": "ModifyAccountMaxUserConnectionsResponse"
+    },
     "ModifyAccountPassword": {
       "document": "本接口(ModifyAccountPassword)用于修改云数据库账户的密码。",
       "input": "ModifyAccountPasswordRequest",
@@ -720,50 +726,72 @@
         {
           "default": "",
           "document": "账号备注信息",
+          "example": "your note",
           "member": "string",
           "name": "Notes",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "账号的域名",
+          "example": "%",
           "member": "string",
           "name": "Host",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "账号的名称",
+          "example": "root",
           "member": "string",
           "name": "User",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "账号信息修改时间",
+          "example": "2020-09-09 16:40:30",
           "member": "datetime",
           "name": "ModifyTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "修改密码的时间",
+          "example": "2020-09-09 16:40:30",
           "member": "datetime",
           "name": "ModifyPasswordTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "账号的创建时间",
+          "document": "该值已废弃",
+          "example": "''",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户最大可用实例连接数",
+          "example": "10240",
+          "member": "int64",
+          "name": "MaxUserConnections",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1835,6 +1863,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1843,6 +1872,7 @@
         {
           "default": "",
           "document": "云数据库账号。",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -1851,6 +1881,7 @@
         {
           "default": "",
           "document": "新账户的密码。",
+          "example": "fsdgfdgfd",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -1859,10 +1890,20 @@
         {
           "default": "",
           "document": "备注信息。",
+          "example": "test description",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新账户最大可用连接数。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxUserConnections",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1872,8 +1913,10 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3702,6 +3745,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3710,6 +3754,7 @@
         {
           "default": "",
           "document": "记录偏移量，默认值为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3718,6 +3763,7 @@
         {
           "default": "",
           "document": "单次请求返回的数量，默认值为20，最小值为1，最大值为100。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3726,6 +3772,7 @@
         {
           "default": "",
           "document": "匹配账号名的正则表达式，规则同 MySQL 官网。",
+          "example": "\"\"",
           "member": "string",
           "name": "AccountRegexp",
           "required": false,
@@ -3739,16 +3786,29 @@
       "members": [
         {
           "document": "符合查询条件的账号数量。",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "符合查询条件的账号详细信息。",
+          "example": "无",
           "member": "AccountInfo",
           "name": "Items",
+          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户可设置实例最大连接数。",
+          "example": "10240",
+          "member": "int64",
+          "name": "MaxUserConnections",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8007,6 +8067,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TagInfoItem",
+          "name": "TagList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8339,6 +8409,60 @@
       ],
       "type": "object"
     },
+    "ModifyAccountMaxUserConnectionsRequest": {
+      "document": "ModifyAccountMaxUserConnections请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云数据库账号。",
+          "example": "无",
+          "member": "Account",
+          "name": "Accounts",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设置账户最大可用连接数。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxUserConnections",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountMaxUserConnectionsResponse": {
+      "document": "ModifyAccountMaxUserConnections返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAccountPasswordRequest": {
       "document": "ModifyAccountPassword请求参数结构体",
       "members": [
@@ -8394,6 +8518,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8402,6 +8527,7 @@
         {
           "default": "",
           "document": "数据库的账号，包括用户名和域名。",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -8410,6 +8536,7 @@
         {
           "default": "",
           "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。",
+          "example": "[\"SELECT\\n\"]",
           "member": "string",
           "name": "GlobalPrivileges",
           "required": false,
@@ -8418,6 +8545,7 @@
         {
           "default": "",
           "document": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。",
+          "example": "无",
           "member": "DatabasePrivilege",
           "name": "DatabasePrivileges",
           "required": false,
@@ -8426,6 +8554,7 @@
         {
           "default": "",
           "document": "数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示清除该权限。",
+          "example": "无",
           "member": "TablePrivilege",
           "name": "TablePrivileges",
           "required": false,
@@ -8434,10 +8563,20 @@
         {
           "default": "",
           "document": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，不传该参数表示清除该权限。",
+          "example": "无",
           "member": "ColumnPrivilege",
           "name": "ColumnPrivileges",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "该参数不为空时，为批量修改权限。可选值为：grant，revoke。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyAction",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8447,8 +8586,10 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11473,6 +11614,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagInfoItem": {
+      "document": "标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "‘’",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "‘’",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
