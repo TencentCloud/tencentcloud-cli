@@ -9,11 +9,11 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tse.v20201207 import tse_client as tse_client_v20201207
-from tencentcloud.tse.v20201207 import models as models_v20201207
+from tencentcloud.mrs.v20200910 import mrs_client as mrs_client_v20200910
+from tencentcloud.mrs.v20200910 import models as models_v20200910
 
 
-def doDescribeConfig(args, parsed_globals):
+def doImageToClass(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -26,12 +26,12 @@ def doDescribeConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MrsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigRequest()
+    model = models.ImageToClassRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeConfig(model)
+    rsp = client.ImageToClass(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -40,7 +40,7 @@ def doDescribeConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doManageConfig(args, parsed_globals):
+def doImageToObject(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -53,12 +53,12 @@ def doManageConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MrsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ManageConfigRequest()
+    model = models.ImageToObjectRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ManageConfig(model)
+    rsp = client.ImageToObject(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -67,7 +67,7 @@ def doManageConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSREInstanceAccessAddress(args, parsed_globals):
+def doTextToClass(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -80,12 +80,12 @@ def doDescribeSREInstanceAccessAddress(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MrsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSREInstanceAccessAddressRequest()
+    model = models.TextToClassRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSREInstanceAccessAddress(model)
+    rsp = client.TextToClass(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -94,7 +94,7 @@ def doDescribeSREInstanceAccessAddress(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSREInstances(args, parsed_globals):
+def doTextToObject(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -107,12 +107,12 @@ def doDescribeSREInstances(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MrsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSREInstancesRequest()
+    model = models.TextToObjectRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSREInstances(model)
+    rsp = client.TextToObject(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -122,25 +122,25 @@ def doDescribeSREInstances(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20201207": tse_client_v20201207,
+    "v20200910": mrs_client_v20200910,
 
 }
 
 MODELS_MAP = {
-    "v20201207": models_v20201207,
+    "v20200910": models_v20200910,
 
 }
 
 ACTION_MAP = {
-    "DescribeConfig": doDescribeConfig,
-    "ManageConfig": doManageConfig,
-    "DescribeSREInstanceAccessAddress": doDescribeSREInstanceAccessAddress,
-    "DescribeSREInstances": doDescribeSREInstances,
+    "ImageToClass": doImageToClass,
+    "ImageToObject": doImageToObject,
+    "TextToClass": doTextToClass,
+    "TextToObject": doTextToObject,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20201207",
+    "v20200910",
 
 ]
 
@@ -203,11 +203,11 @@ def parse_global_arg(parsed_globals):
         if g_param[OptionsDefine.ServiceVersion]:
             g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
         else:
-            version = conf["tse"][OptionsDefine.Version]
+            version = conf["mrs"][OptionsDefine.Version]
             g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if g_param[OptionsDefine.Endpoint] is None:
-            g_param[OptionsDefine.Endpoint] = conf["tse"][OptionsDefine.Endpoint]
+            g_param[OptionsDefine.Endpoint] = conf["mrs"][OptionsDefine.Endpoint]
     except Exception as err:
         raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
 

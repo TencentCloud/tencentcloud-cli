@@ -67,7 +67,7 @@
       "output": "CreateDBImportJobResponse"
     },
     "CreateDBInstance": {
-      "document": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 、 MySQL 8.0 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 Port，ParamList 或 Password 时，该实例会进行初始化操作（不支持基础版实例）；",
+      "document": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 、 MySQL 8.0 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 Port，ParamList 或 Password 时，该实例会进行初始化操作（不支持基础版实例）；\n6. 当入参指定 ParamTemplateId 或 AlarmPolicyList 时，需将SDK提升至最新版本方可支持；",
       "input": "CreateDBInstanceRequest",
       "name": "创建云数据库实例（包年包月）",
       "output": "CreateDBInstanceResponse"
@@ -283,7 +283,7 @@
       "output": "DescribeDBInstancesResponse"
     },
     "DescribeDBPrice": {
-      "document": "本接口(DescribeDBPrice)用于查询云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。\n\n注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照 <a href=\"https://cloud.tencent.com/document/api/236/15832\">服务地址</a> 文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com。",
+      "document": "本接口(DescribeDBPrice)用于查询购买或续费云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。可传入实例名称来查询实例续费价格。\n\n注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照 <a href=\"https://cloud.tencent.com/document/api/236/15832\">服务地址</a> 文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com。",
       "input": "DescribeDBPriceRequest",
       "name": "查询数据库价格",
       "output": "DescribeDBPriceResponse"
@@ -5038,6 +5038,7 @@
         {
           "default": "",
           "document": "项目 ID，可使用 [查询项目列表](https://cloud.tencent.com/document/product/378/4400) 接口查询项目 ID。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -5046,6 +5047,7 @@
         {
           "default": "",
           "document": "实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。",
+          "example": "1",
           "member": "uint64",
           "name": "InstanceTypes",
           "required": false,
@@ -5054,6 +5056,7 @@
         {
           "default": "",
           "document": "实例的内网 IP 地址。",
+          "example": "\"\"",
           "member": "string",
           "name": "Vips",
           "required": false,
@@ -5062,6 +5065,7 @@
         {
           "default": "",
           "document": "实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 隔离中（可在回收站恢复开机）",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -5070,6 +5074,7 @@
         {
           "default": "",
           "document": "偏移量，默认值为 0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5078,6 +5083,7 @@
         {
           "default": "",
           "document": "单次请求返回的数量，默认值为 20，最大值为 2000。",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5086,6 +5092,7 @@
         {
           "default": "",
           "document": "安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。",
+          "example": "\"\"",
           "member": "string",
           "name": "SecurityGroupId",
           "required": false,
@@ -5094,6 +5101,7 @@
         {
           "default": "",
           "document": "付费类型，可取值：0 - 包年包月，1 - 小时计费。",
+          "example": "1",
           "member": "uint64",
           "name": "PayTypes",
           "required": false,
@@ -5102,6 +5110,7 @@
         {
           "default": "",
           "document": "实例名称。",
+          "example": "\"\"",
           "member": "string",
           "name": "InstanceNames",
           "required": false,
@@ -5110,6 +5119,7 @@
         {
           "default": "",
           "document": "实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行",
+          "example": "0",
           "member": "uint64",
           "name": "TaskStatus",
           "required": false,
@@ -5118,6 +5128,7 @@
         {
           "default": "",
           "document": "实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。",
+          "example": "\"5.6\"",
           "member": "string",
           "name": "EngineVersions",
           "required": false,
@@ -5126,6 +5137,7 @@
         {
           "default": "",
           "document": "私有网络的 ID。",
+          "example": "0",
           "member": "uint64",
           "name": "VpcIds",
           "required": false,
@@ -5134,6 +5146,7 @@
         {
           "default": "",
           "document": "可用区的 ID。",
+          "example": "720001",
           "member": "uint64",
           "name": "ZoneIds",
           "required": false,
@@ -5142,6 +5155,7 @@
         {
           "default": "",
           "document": "子网 ID。",
+          "example": "0",
           "member": "uint64",
           "name": "SubnetIds",
           "required": false,
@@ -5150,6 +5164,7 @@
         {
           "default": "",
           "document": "是否锁定标记。",
+          "example": "0",
           "member": "int64",
           "name": "CdbErrors",
           "required": false,
@@ -5158,6 +5173,7 @@
         {
           "default": "",
           "document": "返回结果集排序的字段，目前支持：\"InstanceId\"，\"InstanceName\"，\"CreateTime\"，\"DeadlineTime\"。",
+          "example": "\"\"",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -5166,6 +5182,7 @@
         {
           "default": "",
           "document": "返回结果集排序方式，目前支持：\"ASC\" 或者 \"DESC\"。",
+          "example": "\"DESC\"",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -5174,6 +5191,7 @@
         {
           "default": "",
           "document": "是否以安全组 ID 为过滤条件。",
+          "example": "0",
           "member": "int64",
           "name": "WithSecurityGroup",
           "required": false,
@@ -5182,6 +5200,7 @@
         {
           "default": "",
           "document": "是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。",
+          "example": "0",
           "member": "int64",
           "name": "WithExCluster",
           "required": false,
@@ -5190,6 +5209,7 @@
         {
           "default": "",
           "document": "独享集群 ID。",
+          "example": "\"\"",
           "member": "string",
           "name": "ExClusterId",
           "required": false,
@@ -5198,6 +5218,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "[\"cdb-70zdmgg1\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -5206,6 +5227,7 @@
         {
           "default": "",
           "document": "初始化标记，可取值：0 - 未初始化，1 - 初始化。",
+          "example": "0",
           "member": "int64",
           "name": "InitFlag",
           "required": false,
@@ -5214,6 +5236,7 @@
         {
           "default": "",
           "document": "是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。",
+          "example": "0",
           "member": "int64",
           "name": "WithDr",
           "required": false,
@@ -5222,6 +5245,7 @@
         {
           "default": "",
           "document": "是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。",
+          "example": "0",
           "member": "int64",
           "name": "WithRo",
           "required": false,
@@ -5230,6 +5254,7 @@
         {
           "default": "",
           "document": "是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。",
+          "example": "0",
           "member": "int64",
           "name": "WithMaster",
           "required": false,
@@ -5238,8 +5263,18 @@
         {
           "default": "",
           "document": "置放群组ID列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "DeployGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否以标签键为过滤条件。",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "TagKeysForSearch",
           "required": false,
           "type": "list"
         }
@@ -5251,15 +5286,19 @@
       "members": [
         {
           "document": "符合查询条件的实例总数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例详细信息。",
+          "example": "无",
           "member": "InstanceInfo",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5277,51 +5316,6 @@
       "members": [
         {
           "default": "",
-          "document": "可用区信息，格式如 \"ap-guangzhou-2\"。具体能设置的值请通过 <a href=\"https://cloud.tencent.com/document/api/236/17229\">DescribeDBZoneConfig</a> 接口查询。",
-          "example": "ap-guangzhou-2",
-          "member": "string",
-          "name": "Zone",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "实例数量，默认值为 1，最小值 1，最大值为 100。",
-          "example": "1",
-          "member": "int64",
-          "name": "GoodsNum",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "实例内存大小，单位：MB。",
-          "example": "1000",
-          "member": "int64",
-          "name": "Memory",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "实例硬盘大小，单位：GB。",
-          "example": "50",
-          "member": "int64",
-          "name": "Volume",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。",
-          "example": "PRE_PAID",
-          "member": "string",
-          "name": "PayType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。",
           "example": "1",
           "member": "int64",
@@ -5331,10 +5325,55 @@
         },
         {
           "default": "",
-          "document": "实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。",
+          "document": "可用区信息，格式如 \"ap-guangzhou-2\"。具体能设置的值请通过 <a href=\"https://cloud.tencent.com/document/api/236/17229\">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例内存大小，单位：MB。InstanceId为空时该参数为必填项。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。",
+          "example": "50",
+          "member": "int64",
+          "name": "Volume",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。",
           "example": "master",
           "member": "string",
           "name": "InstanceRole",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。",
+          "example": "PRE_PAID",
+          "member": "string",
+          "name": "PayType",
           "required": false,
           "type": "string"
         },
@@ -5373,6 +5412,15 @@
           "name": "Cpu",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。",
+          "example": "\"cdb-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

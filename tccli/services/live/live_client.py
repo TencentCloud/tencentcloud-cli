@@ -742,6 +742,33 @@ def doDeleteLiveWatermarkRule(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDeliverBandwidthList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeliverBandwidthListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeDeliverBandwidthList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteLiveCallbackRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1228,6 +1255,33 @@ def doDeleteLiveSnapshotRule(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteLivePullStreamTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteLivePullStreamTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteLivePullStreamTask(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeLiveForbidStreamList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1247,6 +1301,33 @@ def doDescribeLiveForbidStreamList(args, parsed_globals):
     model = models.DescribeLiveForbidStreamListRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeLiveForbidStreamList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLiveWatermark(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLiveWatermarkRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeLiveWatermark(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1417,7 +1498,7 @@ def doResumeLiveStream(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLiveCallbackTemplate(args, parsed_globals):
+def doModifyLivePullStreamTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1433,9 +1514,9 @@ def doDescribeLiveCallbackTemplate(args, parsed_globals):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLiveCallbackTemplateRequest()
+    model = models.ModifyLivePullStreamTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeLiveCallbackTemplate(model)
+    rsp = client.ModifyLivePullStreamTask(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1490,6 +1571,33 @@ def doModifyLiveCallbackTemplate(args, parsed_globals):
     model = models.ModifyLiveCallbackTemplateRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ModifyLiveCallbackTemplate(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLivePullStreamTasks(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLivePullStreamTasksRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeLivePullStreamTasks(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2227,7 +2335,7 @@ def doAddLiveDomain(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDeliverBandwidthList(args, parsed_globals):
+def doDescribeLiveCallbackTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2243,9 +2351,9 @@ def doDescribeDeliverBandwidthList(args, parsed_globals):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeliverBandwidthListRequest()
+    model = models.DescribeLiveCallbackTemplateRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDeliverBandwidthList(model)
+    rsp = client.DescribeLiveCallbackTemplate(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2335,7 +2443,7 @@ def doCreateLiveRecordRule(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLiveWatermark(args, parsed_globals):
+def doCreateLivePullStreamTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2351,9 +2459,9 @@ def doDescribeLiveWatermark(args, parsed_globals):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLiveWatermarkRequest()
+    model = models.CreateLivePullStreamTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeLiveWatermark(model)
+    rsp = client.CreateLivePullStreamTask(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -3048,6 +3156,7 @@ ACTION_MAP = {
     "AddLiveWatermark": doAddLiveWatermark,
     "DescribeAreaBillBandwidthAndFluxList": doDescribeAreaBillBandwidthAndFluxList,
     "DeleteLiveWatermarkRule": doDeleteLiveWatermarkRule,
+    "DescribeDeliverBandwidthList": doDescribeDeliverBandwidthList,
     "DeleteLiveCallbackRule": doDeleteLiveCallbackRule,
     "ModifyPullStreamConfig": doModifyPullStreamConfig,
     "CreateLiveSnapshotTemplate": doCreateLiveSnapshotTemplate,
@@ -3066,16 +3175,19 @@ ACTION_MAP = {
     "ModifyLiveTranscodeTemplate": doModifyLiveTranscodeTemplate,
     "DeleteLiveTranscodeRule": doDeleteLiveTranscodeRule,
     "DeleteLiveSnapshotRule": doDeleteLiveSnapshotRule,
+    "DeleteLivePullStreamTask": doDeleteLivePullStreamTask,
     "DescribeLiveForbidStreamList": doDescribeLiveForbidStreamList,
+    "DescribeLiveWatermark": doDescribeLiveWatermark,
     "DescribeLiveCert": doDescribeLiveCert,
     "ModifyLiveCert": doModifyLiveCert,
     "DescribeLiveDomains": doDescribeLiveDomains,
     "DeleteLiveCert": doDeleteLiveCert,
     "CreateLiveCallbackTemplate": doCreateLiveCallbackTemplate,
     "ResumeLiveStream": doResumeLiveStream,
-    "DescribeLiveCallbackTemplate": doDescribeLiveCallbackTemplate,
+    "ModifyLivePullStreamTask": doModifyLivePullStreamTask,
     "DeleteLiveDomain": doDeleteLiveDomain,
     "ModifyLiveCallbackTemplate": doModifyLiveCallbackTemplate,
+    "DescribeLivePullStreamTasks": doDescribeLivePullStreamTasks,
     "DescribeProIspPlaySumInfoList": doDescribeProIspPlaySumInfoList,
     "DescribeStreamPlayInfoList": doDescribeStreamPlayInfoList,
     "CreateLiveCert": doCreateLiveCert,
@@ -3103,11 +3215,11 @@ ACTION_MAP = {
     "DeleteLiveRecordRule": doDeleteLiveRecordRule,
     "ForbidLiveStream": doForbidLiveStream,
     "AddLiveDomain": doAddLiveDomain,
-    "DescribeDeliverBandwidthList": doDescribeDeliverBandwidthList,
+    "DescribeLiveCallbackTemplate": doDescribeLiveCallbackTemplate,
     "DescribeLiveDomainPlayInfoList": doDescribeLiveDomainPlayInfoList,
     "DescribeCallbackRecordsList": doDescribeCallbackRecordsList,
     "CreateLiveRecordRule": doCreateLiveRecordRule,
-    "DescribeLiveWatermark": doDescribeLiveWatermark,
+    "CreateLivePullStreamTask": doCreateLivePullStreamTask,
     "DescribeLiveTranscodeTemplates": doDescribeLiveTranscodeTemplates,
     "CreateLiveRecordTemplate": doCreateLiveRecordTemplate,
     "DescribeBillBandwidthAndFluxList": doDescribeBillBandwidthAndFluxList,

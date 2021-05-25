@@ -18,7 +18,8 @@ Output:
 {
     "Response": {
         "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
-        "Result": "true"
+        "Result": "tom",
+        "OpResult": true
     }
 }
 ```

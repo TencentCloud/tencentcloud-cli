@@ -120,7 +120,17 @@ Output:
                 "Vip": "172.16.0.16",
                 "UniqSubnetId": "subnet-1typ0s7d",
                 "Vport": 3306,
-                "CdbError": 0
+                "CdbError": 0,
+                "DeployGroupId": "",
+                "InstanceNodes": 2,
+                "PhysicalId": "",
+                "ZoneId": 720001,
+                "RoVipInfo": [],
+                "DeviceClass": "Z3",
+                "Qps": 0,
+                "TagList": [],
+                "Cpu": 8,
+                "ZoneName": "清远信安一区"
             }
         ]
     }

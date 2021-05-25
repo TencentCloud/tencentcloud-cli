@@ -213,6 +213,8 @@ include tccli/services/monitor/v20180724/api.json
 include tccli/services/monitor/v20180724/examples.json
 include tccli/services/mps/v20190612/api.json
 include tccli/services/mps/v20190612/examples.json
+include tccli/services/mrs/v20200910/api.json
+include tccli/services/mrs/v20200910/examples.json
 include tccli/services/ms/v20180408/api.json
 include tccli/services/ms/v20180408/examples.json
 include tccli/services/msp/v20180319/api.json

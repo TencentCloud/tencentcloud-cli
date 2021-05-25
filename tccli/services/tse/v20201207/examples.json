@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeConfig": [
+      {
+        "document": "查看配置",
+        "input": "https://tse.tencentcloudapi.com/?Action=DescribeConfig\n&InstanceId=ins-389a8c12\n&Type=consul\n&Key=name\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Key\": \"name\",\n        \"Value\": \"tom\",\n        \"IsDir\": false,\n        \"List\": []\n    }\n}",
+        "title": "查看配置"
+      }
+    ],
     "DescribeSREInstanceAccessAddress": [
       {
         "document": "",
@@ -20,7 +28,7 @@
       {
         "document": "配置管理",
         "input": "https://tse.tencentcloudapi.com/?Action=ManageConfig\n&InstanceId=ins-389a8c12\n&Type=consule\n&Command=PUT\n&Key=name\n&Value=AAA\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": \"true\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": \"tom\",\n        \"OpResult\": true\n    }\n}",
         "title": "配置管理"
       }
     ]
