@@ -668,6 +668,52 @@
       ],
       "usage": "out"
     },
+    "CosPublishInputInfo": {
+      "document": "COS 发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布生成的封面在 COS 存储的对象键。",
+          "example": "无",
+          "member": "string",
+          "name": "CoverKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CreateClassRequest": {
       "document": "CreateClass请求参数结构体",
       "members": [
@@ -5766,6 +5812,7 @@
         {
           "default": "",
           "document": "发布通道  ID。",
+          "example": "无",
           "member": "string",
           "name": "ChannelMaterialId",
           "required": true,
@@ -5775,6 +5822,7 @@
         {
           "default": "",
           "document": "企鹅号发布信息，如果使用的发布通道为企鹅号时必填。",
+          "example": "无",
           "member": "PenguinMediaPlatformPublishInfo",
           "name": "PenguinMediaPlatformPublishInfo",
           "required": false,
@@ -5784,6 +5832,7 @@
         {
           "default": "",
           "document": "新浪微博发布信息，如果使用的发布通道为新浪微博时必填。",
+          "example": "无",
           "member": "WeiboPublishInfo",
           "name": "WeiboPublishInfo",
           "required": false,
@@ -5793,8 +5842,19 @@
         {
           "default": "",
           "document": "快手发布信息，如果使用的发布通道为快手时必填。",
+          "example": "无",
           "member": "KuaishouPublishInfo",
           "name": "KuaishouPublishInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。",
+          "example": "无",
+          "member": "CosPublishInputInfo",
+          "name": "CosPublishInfo",
           "required": false,
           "type": "object",
           "value_allowed_null": false

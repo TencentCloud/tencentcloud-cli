@@ -25,7 +25,7 @@
       "output": "CompareFaceResponse"
     },
     "CompareMaskFace": {
-      "document": "对两张图片中的人脸进行相似度比对，返回人脸相似度分数。\n\n戴口罩人脸比对接口可在查询照人脸戴口罩情况下使用，口罩遮挡程度最高可以遮挡鼻尖。\n\n如图片人脸不存在戴口罩情况，建议使用人脸比对服务。",
+      "document": "对两张图片中的人脸进行相似度比对，返回人脸相似度分数。\n\n戴口罩人脸比对接口可在人脸戴口罩情况下使用，口罩遮挡程度最高可以遮挡鼻尖。\n\n如图片人脸不存在戴口罩情况，建议使用人脸比对服务。",
       "input": "CompareMaskFaceRequest",
       "name": "戴口罩人脸比对",
       "output": "CompareMaskFaceResponse"
@@ -633,6 +633,7 @@
         {
           "default": "",
           "document": "A 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "XyE7l...",
           "member": "string",
           "name": "ImageA",
           "required": false,
@@ -641,6 +642,7 @@
         {
           "default": "",
           "document": "B 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "XyE7l...",
           "member": "string",
           "name": "ImageB",
           "required": false,
@@ -649,6 +651,7 @@
         {
           "default": "",
           "document": "A 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nA 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "UrlA",
           "required": false,
@@ -657,6 +660,7 @@
         {
           "default": "",
           "document": "B 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nB 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "UrlB",
           "required": false,
@@ -665,6 +669,7 @@
         {
           "default": "",
           "document": "人脸识别服务所用的算法模型版本。该接口只支持\"3.0\"",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -673,6 +678,7 @@
         {
           "default": "",
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -686,15 +692,19 @@
       "members": [
         {
           "document": "两张图片中人脸的相似度分数。\n不同算法版本返回的相似度分数不同。 \n若需要验证两张图片中人脸是否为同一人，3.0版本误识率千分之一对应分数为40分，误识率万分之一对应分数为50分，误识率十万分之一对应分数为60分。  一般超过50分则可认定为同一人。 \n2.0版本误识率千分之一对应分数为70分，误识率万分之一对应分数为80分，误识率十万分之一对应分数为90分。 一般超过80分则可认定为同一人。 \n若需要验证两张图片中的人脸是否为同一人，建议使用人脸验证接口。",
+          "example": "0.999",
           "member": "float",
           "name": "Score",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -1,0 +1,286 @@
+{
+  "actions": {
+    "DescribeEisConnectorConfig": {
+      "document": "获取连接器配置参数",
+      "input": "DescribeEisConnectorConfigRequest",
+      "name": "获取连接器配置参数",
+      "output": "DescribeEisConnectorConfigResponse"
+    },
+    "ListEisConnectorOperations": {
+      "document": "获取连接器操作列表",
+      "input": "ListEisConnectorOperationsRequest",
+      "name": "获取连接器操作列表",
+      "output": "ListEisConnectorOperationsResponse"
+    },
+    "ListEisConnectors": {
+      "document": "连接器列表",
+      "input": "ListEisConnectorsRequest",
+      "name": "获取连接器列表",
+      "output": "ListEisConnectorsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-07-15",
+    "api_brief": null,
+    "serviceNameCN": "企业集成服务",
+    "serviceShortName": "eis"
+  },
+  "objects": {
+    "DescribeEisConnectorConfigRequest": {
+      "document": "DescribeEisConnectorConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接器版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEisConnectorConfigResponse": {
+      "document": "DescribeEisConnectorConfig返回参数结构体",
+      "members": [
+        {
+          "document": "连接器配置参数描述（json结构），示例如下：\n{\n    \"attributes\":{\n        \"description\":\"测试\",\n        \"displayName\":\"test\",\n        \"name\":\"test\",\n        \"version\":\"1.0.0\"\n    },\n    \"properties\":[\n        {\n            \"displayName\":\"日期\",\n            \"name\":\"prop1\",\n            \"required\":\"true\",\n            \"type\":\"date\"\n        }\n    ],\n    \"operations\":{\n        \"get-info\":[\n            {\n                \"displayName\":\"para1\",\n                \"name\":\"para1\",\n                \"required\":\"true\",\n                \"type\":\"int\"\n            },\n            {\n                \"displayName\":\"para2\",\n                \"name\":\"para2\",\n                \"required\":\"true\",\n                \"type\":\"float\"\n            },\n            {\n                \"displayName\":\"para3\",\n                \"name\":\"para3\",\n                \"required\":\"true\",\n                \"type\":\"string\"\n            },\n            {\n                \"displayName\":\"para4\",\n                \"name\":\"para4\",\n                \"required\":\"true\",\n                \"type\":\"decimal\"\n            },\n            {\n                \"displayName\":\"para5\",\n                \"name\":\"para5\",\n                \"required\":\"true\",\n                \"type\":\"bool\"\n            },\n            {\n                \"displayName\":\"para6\",\n                \"name\":\"para6\",\n                \"required\":\"true\",\n                \"type\":\"date\"\n            },\n            {\n                \"displayName\":\"para7\",\n                \"name\":\"para7\",\n                \"required\":\"true\",\n                \"type\":\"time\"\n            },\n            {\n                \"displayName\":\"para8\",\n                \"name\":\"para8\",\n                \"required\":\"true\",\n                \"type\":\"datetime\"\n            },\n            {\n                \"displayName\":\"para9\",\n                \"name\":\"para9\",\n                \"required\":\"true\",\n                \"type\":\"struct\",\n                \"children\":[\n                    {\n                        \"displayName\":\"date\",\n                        \"name\":\"date\",\n                        \"required\":\"true\",\n                        \"type\":\"date\"\n                    },\n                    {\n                        \"displayName\":\"time\",\n                        \"name\":\"time\",\n                        \"required\":\"true\",\n                        \"type\":\"time\"\n                    },\n                    {\n                        \"displayName\":\"datetime\",\n                        \"name\":\"datetime\",\n                        \"required\":\"true\",\n                        \"type\":\"datetime\"\n                    }\n                ]\n            },\n            {\n                \"displayName\":\"para10\",\n                \"name\":\"para10\",\n                \"required\":\"true\",\n                \"type\":\"list\",\n                \"children\":[\n                    {\n                        \"displayName\":\"value\",\n                        \"name\":\"value\",\n                        \"required\":\"true\",\n                        \"type\":\"string\"\n                    }\n                ]\n            },\n            {\n                \"displayName\":\"para11\",\n                \"name\":\"para11\",\n                \"required\":\"true\",\n                \"type\":\"dict\",\n                \"children\":[\n                    {\n                        \"displayName\":\"key\",\n                        \"name\":\"key\",\n                        \"required\":\"true\",\n                        \"type\":\"string\"\n                    },\n                    {\n                        \"displayName\":\"value\",\n                        \"name\":\"value\",\n                        \"required\":\"true\",\n                        \"type\":\"string\"\n                    }\n                ]\n            },\n            {\n                \"displayName\":\"para12\",\n                \"name\":\"para12\",\n                \"required\":\"true\",\n                \"type\":\"enum\",\n                \"children\":[\n                    {\n                        \"displayName\":\"PC\",\n                        \"name\":\"1\"\n                    },\n                    {\n                        \"displayName\":\"Mac\",\n                        \"name\":\"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorParameter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EisConnectionOperation": {
+      "document": "连接器操作",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器操作名称",
+          "example": "无",
+          "member": "string",
+          "name": "OperationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器展示名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作是否为触发器",
+          "example": "无",
+          "member": "bool",
+          "name": "IsTrigger",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EisConnectorSummary": {
+      "document": "连接器概要信息",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器展示名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器对应企业",
+          "example": "无",
+          "member": "string",
+          "name": "Company",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器对应产品",
+          "example": "无",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器创建时间",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListEisConnectorOperationsRequest": {
+      "document": "ListEisConnectorOperations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接器版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEisConnectorOperationsResponse": {
+      "document": "ListEisConnectorOperations返回参数结构体",
+      "members": [
+        {
+          "document": "连接器列表",
+          "example": "无",
+          "member": "EisConnectionOperation",
+          "name": "Operations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEisConnectorsRequest": {
+      "document": "ListEisConnectors请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器名称,非必输，如输入则按照输入值模糊匹配",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数,数据偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数,每页显示的条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEisConnectorsResponse": {
+      "document": "ListEisConnectors返回参数结构体",
+      "members": [
+        {
+          "document": "连接器总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "连接器列表",
+          "example": "无",
+          "member": "EisConnectorSummary",
+          "name": "Connectors",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

@@ -1620,7 +1620,7 @@
       "members": [
         {
           "default": "",
-          "document": "EID商户id",
+          "document": "EID商户id，字段长度最长50位。",
           "example": "3232",
           "member": "string",
           "name": "MerchantId",
@@ -1647,7 +1647,7 @@
         },
         {
           "default": "",
-          "document": "透传字段，在获取验证结果时返回。",
+          "document": "透传字段，在获取验证结果时返回。最长长度1024位。",
           "example": "无",
           "member": "string",
           "name": "Extra",

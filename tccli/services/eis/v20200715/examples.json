@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DescribeEisConnectorConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEisConnectorConfig\n<公共请求参数>\n\n{\n    \"ConnectorName\": \"xx\",\n    \"ConnectorVersion\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectorParameter\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取连接器配置参数"
+      }
+    ],
+    "ListEisConnectorOperations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEisConnectorOperations\n<公共请求参数>\n\n{\n    \"ConnectorName\": \"xx\",\n    \"ConnectorVersion\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Operations\": [\n            {\n                \"OperationName\": \"xx\",\n                \"DisplayName\": \"xx\",\n                \"IsTrigger\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取连接器操作列表"
+      }
+    ],
+    "ListEisConnectors": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEisConnectors\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Connectors\": [\n            {\n                \"Product\": \"xx\",\n                \"DisplayName\": \"xx\",\n                \"Company\": \"xx\",\n                \"ConnectorName\": \"xx\",\n                \"CreateTime\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取已上架连接器列表（最新版本）"
+      }
+    ]
+  },
+  "version": "1.0"
+}

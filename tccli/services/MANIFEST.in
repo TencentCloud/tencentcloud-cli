@@ -133,6 +133,8 @@ include tccli/services/ecdn/v20191012/api.json
 include tccli/services/ecdn/v20191012/examples.json
 include tccli/services/ecm/v20190719/api.json
 include tccli/services/ecm/v20190719/examples.json
+include tccli/services/eis/v20200715/api.json
+include tccli/services/eis/v20200715/examples.json
 include tccli/services/emr/v20190103/api.json
 include tccli/services/emr/v20190103/examples.json
 include tccli/services/es/v20180416/api.json
