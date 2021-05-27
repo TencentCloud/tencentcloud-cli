@@ -986,6 +986,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cluster-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -994,6 +995,7 @@
         {
           "default": "",
           "document": "云主机ID列表",
+          "example": "[\"ins-xxxxxxx\\n\",\"ins-xxxxxxx\\n\"]",
           "member": "string",
           "name": "InstanceIdList",
           "required": true,
@@ -1002,6 +1004,7 @@
         {
           "default": "",
           "document": "操作系统名称",
+          "example": "无",
           "member": "string",
           "name": "OsName",
           "required": false,
@@ -1010,6 +1013,7 @@
         {
           "default": "",
           "document": "操作系统镜像ID",
+          "example": "img-xxxxxxx",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -1018,6 +1022,7 @@
         {
           "default": "",
           "document": "重装系统密码设置",
+          "example": "xxxxxxx",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1026,6 +1031,7 @@
         {
           "default": "",
           "document": "重装系统，关联密钥设置",
+          "example": "无",
           "member": "string",
           "name": "KeyId",
           "required": false,
@@ -1034,6 +1040,7 @@
         {
           "default": "",
           "document": "安全组设置",
+          "example": "无",
           "member": "string",
           "name": "SgId",
           "required": false,
@@ -1042,6 +1049,7 @@
         {
           "default": "",
           "document": "云主机导入方式，虚拟机集群必填，容器集群不填写此字段，R：重装TSF系统镜像，M：手动安装agent",
+          "example": "R",
           "member": "string",
           "name": "InstanceImportMode",
           "required": false,
@@ -1050,6 +1058,7 @@
         {
           "default": "",
           "document": "镜像定制类型",
+          "example": "无",
           "member": "string",
           "name": "OsCustomizeType",
           "required": false,
@@ -1058,6 +1067,7 @@
         {
           "default": "",
           "document": "镜像特征ID列表",
+          "example": "无",
           "member": "string",
           "name": "FeatureIdList",
           "required": false,
@@ -1066,6 +1076,7 @@
         {
           "default": "",
           "document": "实例额外需要设置参数信息",
+          "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
@@ -1073,7 +1084,8 @@
         },
         {
           "default": "",
-          "document": "部署组ID",
+          "document": "安全组 ID 列表",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -1087,8 +1099,10 @@
       "members": [
         {
           "document": "添加云主机的返回列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AddInstanceResult",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

@@ -132,6 +132,12 @@
       "name": "查询数据库列表",
       "output": "DescribeDatabasesResponse"
     },
+    "DescribeDcnDetail": {
+      "document": "获取实例灾备详情",
+      "input": "DescribeDcnDetailRequest",
+      "name": "获取实例灾备详情",
+      "output": "DescribeDcnDetailResponse"
+    },
     "DescribeFlow": {
       "document": "本接口（DescribeFlow）用于查询流程状态。",
       "input": "DescribeFlowRequest",
@@ -1484,6 +1490,111 @@
       ],
       "usage": "out"
     },
+    "DcnDetailItem": {
+      "document": "DCN详情条目",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例IP地址",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例IPv6地址",
+          "member": "string",
+          "name": "Vipv6",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例端口",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态描述",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例DCN标志，1-主，2-备",
+          "member": "int64",
+          "name": "DcnFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例DCN状态，0-无，1-创建中，2-同步中，3-已断开",
+          "member": "int64",
+          "name": "DcnStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Deal": {
       "document": "订单信息",
       "members": [
@@ -2633,6 +2744,42 @@
           "member": "string",
           "name": "InstanceId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDcnDetailRequest": {
+      "document": "DescribeDcnDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsql-2rn9lmpx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDcnDetailResponse": {
+      "document": "DescribeDcnDetail返回参数结构体",
+      "members": [
+        {
+          "document": "DCN同步详情",
+          "example": "无",
+          "member": "DcnDetailItem",
+          "name": "DcnDetails",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

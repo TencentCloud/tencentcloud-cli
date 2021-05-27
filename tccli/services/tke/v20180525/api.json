@@ -1698,6 +1698,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网访问相关的扩展参数，格式为json",
+          "example": "{}",
+          "member": "string",
+          "name": "ExtraParam",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

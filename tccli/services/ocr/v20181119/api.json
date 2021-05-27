@@ -7643,6 +7643,15 @@
           "name": "RegCapital",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "true表示展示成立/注册日期",
+          "example": "true",
+          "member": "bool",
+          "name": "EstablishTime",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7799,6 +7808,15 @@
           "example": "100",
           "member": "string",
           "name": "RegCapital",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成立/注册日期，只有输入参数EstablishTime为true时展示，默认为空",
+          "example": "string",
+          "member": "string",
+          "name": "EstablishTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false

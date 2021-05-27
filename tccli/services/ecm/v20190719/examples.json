@@ -757,7 +757,7 @@
     "ModifyModuleImage": [
       {
         "document": "修改模块默认镜像",
-        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyModuleImage\r\n&ModuleId=em-bvr8f24q\r\n&DefaultImageId=img-oy9q2bql\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyModuleImage\n&ModuleId=em-bvr8f24q\n&DefaultImageId=img-oy9q2bql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36c0f8c7-a1fb-4ba5-9e5d-fa3447331a5f\"\n    }\n}",
         "title": "修改模块默认镜像"
       }

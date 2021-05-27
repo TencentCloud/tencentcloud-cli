@@ -8,7 +8,8 @@ Input:
 tccli ocr VerifyBasicBizLicense --cli-unfold-argument  \
     --RegNum xxxxx \
     --Name xxxxx \
-    --Address xxxxx
+    --Address xxxxx \
+    --EstablishTime true
 ```
 
 Output: 
@@ -36,6 +37,7 @@ Output:
             "Name": "0",
             "Address": "0"
         },
+        "EstablishTime": "2019-07-02",
         "RequestId": "8d9627c4-eb52-4a8d-8565-5b07ad436c9f"
     }
 }
@@ -50,7 +52,8 @@ Input:
 ```
 tccli ocr VerifyBasicBizLicense --cli-unfold-argument  \
     --ImageUrl https://xx/a.jpg \
-    --ImageConfig {"RegNum":true,"Name":true,"Address":true}
+    --ImageConfig {"RegNum":true,"Name":true,"Address":true} \
+    --EstablishTime false
 ```
 
 Output: 
@@ -73,6 +76,7 @@ Output:
         "VerifyDom": "北京市海淀区知春路49号3层西部309",
         "Dom": "北京市海淀区知春路49号3层西部309",
         "RegCapital": "",
+        "EstablishTime": "",
         "RegNumResult": {
             "RegNum": "0",
             "Name": "-1",

@@ -176,6 +176,14 @@
         "title": "查询实例的库列表"
       }
     ],
+    "DescribeDcnDetail": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDcnDetail\n&InstanceId=tdsql-2rn9lmpx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DcnDetails\": [\n            {\n                \"DcnFlag\": 1,\n                \"DcnStatus\": 0,\n                \"InstanceId\": \"tdsql-2rn9lmpx\",\n                \"InstanceName\": \"tdsql-2rn9lmpx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Vip\": \"10.0.0.24\",\n                \"Vipv6\": \"\",\n                \"Vport\": 3306,\n                \"Zone\": \"ap-guangzhou-4\"\n            },\n            {\n                \"DcnFlag\": 2,\n                \"DcnStatus\": 2,\n                \"InstanceId\": \"tdsql-cbr0g5v1\",\n                \"InstanceName\": \"tdsql-cbr0g5v1\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Vip\": \"10.0.0.29\",\n                \"Vipv6\": \"\",\n                \"Vport\": 3306,\n                \"Zone\": \"ap-guangzhou-4\"\n            }\n        ],\n        \"RequestId\": \"cbca1c8e-e123-11ea-a777-525400542aa6\"\n    }\n}",
+        "title": "无"
+      }
+    ],
     "DescribeFlow": [
       {
         "document": "",

@@ -1963,6 +1963,7 @@
         {
           "default": "",
           "document": "模块名称，如视频直播模块。限制：模块名称不得以空格开头，长度不得超过60个字符。",
+          "example": "智能语音模块",
           "member": "string",
           "name": "ModuleName",
           "required": true,
@@ -1971,6 +1972,7 @@
         {
           "default": "",
           "document": "默认带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。",
+          "example": "50",
           "member": "int64",
           "name": "DefaultBandWidth",
           "required": true,
@@ -1979,6 +1981,7 @@
         {
           "default": "",
           "document": "默认镜像，如img-qsdf3ff2。",
+          "example": "img-1tyt4apn",
           "member": "string",
           "name": "DefaultImageId",
           "required": true,
@@ -1987,6 +1990,7 @@
         {
           "default": "",
           "document": "机型ID。",
+          "example": "SN3ne.2XLARGE16",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -1995,6 +1999,7 @@
         {
           "default": "",
           "document": "默认系统盘大小，单位：G，默认大小为50G。范围不得超过系统盘上下限制，详看DescribeConfig。",
+          "example": "50",
           "member": "int64",
           "name": "DefaultSystemDiskSize",
           "required": true,
@@ -2003,6 +2008,7 @@
         {
           "default": "",
           "document": "默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。",
+          "example": "100",
           "member": "int64",
           "name": "DefaultDataDiskSize",
           "required": true,
@@ -2010,7 +2016,8 @@
         },
         {
           "default": "",
-          "document": "是否关闭IP直通。取值范围：\n1：表示关闭IP直通\n0：表示开通IP直通",
+          "document": "是否关闭IP直通。取值范围：\ntrue：表示关闭IP直通\nfalse：表示开通IP直通",
+          "example": "true",
           "member": "bool",
           "name": "CloseIpDirect",
           "required": false,
@@ -2019,6 +2026,7 @@
         {
           "default": "",
           "document": "标签列表。",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -2027,6 +2035,7 @@
         {
           "default": "",
           "document": "模块默认安全组列表",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroups",
           "required": false,
@@ -2035,6 +2044,7 @@
         {
           "default": "",
           "document": "默认入带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。",
+          "example": "25",
           "member": "int64",
           "name": "DefaultBandWidthIn",
           "required": false,
@@ -2043,6 +2053,7 @@
         {
           "default": "",
           "document": "是否禁止分配外网IP",
+          "example": "true",
           "member": "bool",
           "name": "DisableWanIp",
           "required": false,
@@ -2056,8 +2067,10 @@
       "members": [
         {
           "document": "模块ID，创建模块成功后分配给该模块的ID。",
+          "example": "em-r8nkc81r",
           "member": "string",
           "name": "ModuleId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3359,7 +3372,8 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件，每次请求的Filters的上限为10，详细的过滤条件如下：\nimage-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤\nimage-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\nPRIVATE_IMAGE: 私有镜像 (本帐户创建的镜像) \nPUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)",
+          "document": "过滤条件，每次请求的Filters的上限为10，详细的过滤条件如下：\nimage-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤\nimage-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\nPRIVATE_IMAGE: 私有镜像 (本帐户创建的镜像) \nPUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\ninstance-type -String - 是否必填: 否 - (过滤条件) 按机型过滤支持的镜像",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3368,6 +3382,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3376,6 +3391,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3389,15 +3405,19 @@
       "members": [
         {
           "document": "镜像总数",
+          "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "镜像数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Image",
           "name": "ImageSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7449,6 +7469,7 @@
         {
           "default": "",
           "document": "默认镜像ID",
+          "example": "img-oy9q2bql",
           "member": "string",
           "name": "DefaultImageId",
           "required": true,
@@ -7457,6 +7478,7 @@
         {
           "default": "",
           "document": "模块ID",
+          "example": "em-bvr8f24q",
           "member": "string",
           "name": "ModuleId",
           "required": true,

@@ -631,7 +631,7 @@
       "output": "ProcessMediaByUrlResponse"
     },
     "PullEvents": {
-      "document": "* 该接口用于业务服务器以 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 的方式获取事件通知；\n* 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；\n* 请求最多挂起5秒，建议请求方将超时时间设置为10秒；\n* 未被拉取的事件通知最多保留4天，超过该时限的事件通知可能会被清除；\n* 若该接口有事件返回，调用方必须在<font color=\"red\">30秒</font>内调用 [确认事件通知](https://cloud.tencent.com/document/product/266/33434) 接口，确认事件通知已经处理，否则该事件通知在<font color=\"red\">30秒</font>后会再次被拉取到。",
+      "document": "* 该接口用于业务服务器以 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 的方式获取事件通知；\n* 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；\n* 请求最多挂起5秒，建议请求方将超时时间设置为10秒；\n* 未被拉取的事件通知最多保留4天，超过该时限的事件通知可能会被清除；\n* 若该接口有事件返回，调用方必须在<font color=\"red\">30秒</font>内调用 [确认事件通知](https://cloud.tencent.com/document/product/266/33434) 接口，确认事件通知已经处理，否则该事件通知在<font color=\"red\">30秒</font>后会再次被拉取到。\n* 当前，API 每次最多可以获取16个事件通知。",
       "input": "PullEventsRequest",
       "name": "拉取事件通知",
       "output": "PullEventsResponse"
@@ -20741,6 +20741,7 @@
         {
           "default": "",
           "document": "点播存储的计费区域，可能值：\n<li>Chinese Mainland：中国境内（不包含港澳台）。</li>\n<li>Outside Chinese Mainland：中国境外。</li>",
+          "example": "Chinese Mainland",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -20750,6 +20751,7 @@
         {
           "default": "",
           "document": "当前总存储量，单位是字节。",
+          "example": "40000",
           "member": "uint64",
           "name": "TotalStorage",
           "required": true,
@@ -20759,6 +20761,7 @@
         {
           "default": "",
           "document": "当前低频存储量，单位是字节。",
+          "example": "10000",
           "member": "uint64",
           "name": "InfrequentStorage",
           "required": true,
@@ -20768,8 +20771,29 @@
         {
           "default": "",
           "document": "当前标准存储量，单位是字节。",
+          "example": "10000",
           "member": "uint64",
           "name": "StandardStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前归档存储量，单位是字节。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "ArchiveStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前深度归档存储量，单位是字节。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DeepArchiveStorage",
           "required": true,
           "type": "int",
           "value_allowed_null": false
