@@ -2178,7 +2178,8 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string\ndb-instance-name：按照实例名过滤，类型为string\ndb-project-id：按照项目ID过滤，类型为integer\ndb-pay-mode：按照付费模式过滤，类型为string\ndb-tag-key：按照标签键过滤，类型为string",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2186,7 +2187,8 @@
         },
         {
           "default": "",
-          "document": "每页显示数量，默认返回10条。",
+          "document": "每页显示数量，取值范围为1-100，默认为返回10条。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2194,15 +2196,8 @@
         },
         {
           "default": "",
-          "document": "数据偏移量，从0开始。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime",
+          "example": "CreateTime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -2210,7 +2205,17 @@
         },
         {
           "default": "",
-          "document": "排序方式，包括升序、降序",
+          "document": "页码偏移量，从0开始。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式，包括升序：asc、降序：desc。",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -2224,15 +2229,19 @@
       "members": [
         {
           "document": "查询到的实例数量。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例详细信息集合。",
+          "example": "无",
           "member": "DBInstance",
           "name": "DBInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

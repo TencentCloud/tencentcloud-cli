@@ -18,6 +18,12 @@
       "name": "将集群内节点移入节点池",
       "output": "AddNodeToNodePoolResponse"
     },
+    "AddVpcCniSubnets": {
+      "document": "针对VPC-CNI模式的集群，增加集群容器网络可使用的子网",
+      "input": "AddVpcCniSubnetsRequest",
+      "name": "增加集群子网",
+      "output": "AddVpcCniSubnetsResponse"
+    },
     "CheckInstancesUpgradeAble": {
       "document": "检查给定节点列表中哪些是可升级的 ",
       "input": "CheckInstancesUpgradeAbleRequest",
@@ -636,6 +642,51 @@
     },
     "AddNodeToNodePoolResponse": {
       "document": "AddNodeToNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddVpcCniSubnetsRequest": {
+      "document": "AddVpcCniSubnets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "为集群容器网络增加的子网列表",
+          "example": "[\"subnet-xxxxx\\n\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群所属的VPC的ID",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddVpcCniSubnetsResponse": {
+      "document": "AddVpcCniSubnets返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1603,6 +1654,7 @@
         {
           "default": "",
           "document": "用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突",
+          "example": "10.0.0.0/24",
           "member": "string",
           "name": "ClusterCIDR",
           "required": true,
@@ -1612,6 +1664,7 @@
         {
           "default": "",
           "document": "是否忽略 ClusterCIDR 冲突错误, 默认不忽略",
+          "example": "false",
           "member": "bool",
           "name": "IgnoreClusterCIDRConflict",
           "required": false,
@@ -1621,6 +1674,7 @@
         {
           "default": "",
           "document": "集群中每个Node上最大的Pod数量(默认为256)",
+          "example": "256",
           "member": "uint64",
           "name": "MaxNodePodNum",
           "required": false,
@@ -1630,6 +1684,7 @@
         {
           "default": "",
           "document": "集群最大的service数量(默认为256)",
+          "example": "256",
           "member": "uint64",
           "name": "MaxClusterServiceNum",
           "required": false,
@@ -1639,6 +1694,7 @@
         {
           "default": "",
           "document": "是否启用IPVS(默认不开启)",
+          "example": "false",
           "member": "bool",
           "name": "Ipvs",
           "required": false,
@@ -1648,6 +1704,7 @@
         {
           "default": "",
           "document": "集群的VPCID（如果创建空集群，为必传值，否则自动设置为和集群的节点保持一致）",
+          "example": "vpc-aaa",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1657,14 +1714,45 @@
         {
           "default": "",
           "document": "网络插件是否启用CNI(默认开启)",
+          "example": "false",
           "member": "bool",
           "name": "Cni",
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "service的网络模式，当前参数只适用于ipvs+bpf模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ipvs-bpf",
+          "member": "string",
+          "name": "KubeProxyMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.0/25",
+          "member": "string",
+          "name": "ServiceCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群关联的容器子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"subnet-aa\",\"subnet-bb\"]",
+          "member": "string",
+          "name": "Subnets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
-      "usage": "both"
+      "usage": "out"
     },
     "ClusterPublicLB": {
       "document": "弹性容器集群公网访问负载均衡信息",

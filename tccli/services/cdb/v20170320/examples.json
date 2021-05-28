@@ -119,7 +119,7 @@
     "CreateDeployGroup": [
       {
         "document": "用户可以通过该接口创建置放群组",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDeployGroup\r\n&DeployGroupName=cdb-ezq1vzem\r\n&Description=test\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDeployGroup\n&DeployGroupName=cdb-ezq1vzem\n&Description=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DeployGroupId\": \"213123\",\n        \"RequestId\": \"b4a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "创建置放群组"
       }
@@ -183,7 +183,7 @@
     "DeleteDeployGroups": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DeleteDeployGroups\r\n&DeployGroupIds.0=test\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DeleteDeployGroups\n&DeployGroupIds.0=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "删除置放群组"
       }

@@ -280,6 +280,14 @@
         "title": "获取高危命令规则列表"
       }
     ],
+    "DescribeBruteAttackList": [
+      {
+        "document": "获取密码破解列表",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBruteAttackList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BruteAttackList\": [\n            {\n                \"Id\": 202008000000971,\n                \"Uuid\": \"c2972dd6-165e-11ea-95eb-40f2e9f5667a\",\n                \"MachineIp\": \"10.104.135.28\",\n                \"MachineName\": \"poc测试-debian9\",\n                \"UserName\": \"root\",\n                \"SrcIp\": \"117.146.173.98\",\n                \"Status\": \"FAILED\",\n                \"EventType\": 200,\n                \"Country\": 1,\n                \"City\": 334,\n                \"Province\": 31,\n                \"CreateTime\": \"2020-02-21 16:35:49\",\n                \"BanStatus\": 82,\n                \"Count\": 1098\n            }\n        ],\n        \"RequestId\": \"4234234\",\n        \"TotalCount\": 25328\n    }\n}",
+        "title": "获取密码破解列表"
+      }
+    ],
     "DescribeBruteAttacks": [
       {
         "document": "本接口{DescribeBruteAttacks}用于获取暴力破解事件列表。",

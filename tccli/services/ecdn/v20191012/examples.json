@@ -8,6 +8,14 @@
         "title": "新增加速域名"
       }
     ],
+    "CreateVerifyRecord": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=CreateVerifyRecord\n&Domain=www.qq.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8518c99c-a8eb-4930-a7d0-eff586d9cc37\",\n        \"SubDomain\": \"_cdnauth\",\n        \"Record\": \"202009071516044acd018wf498457628cn75ba018ec9cv\",\n        \"RecordType\": \"TXT\"\n    }\n}",
+        "title": "生成解析记录"
+      }
+    ],
     "DeleteEcdnDomain": [
       {
         "document": "",

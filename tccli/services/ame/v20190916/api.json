@@ -363,7 +363,7 @@
         },
         {
           "default": "",
-          "document": "MP3-320K-FTD-P  为获取320kbps歌曲热门片段。\nMP3-320K-FTD 为获取320kbps已核验歌曲完整资源。",
+          "document": "歌曲类型，可选值有：\n<li>MP3-128K-FTW：含有水印的试听资源；</li>\n<li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>\n<li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>\n默认为：MP3-128K-FTW",
           "example": "MP3-320K-FTD-P",
           "member": "string",
           "name": "MusicType",
@@ -1085,6 +1085,66 @@
           "name": "Score",
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "场景信息",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用地域",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权期限",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "AuthPeriod",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商业化权益",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Commercialization",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨平台传播权益",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传播渠道",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

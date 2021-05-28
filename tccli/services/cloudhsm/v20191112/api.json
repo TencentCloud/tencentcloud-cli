@@ -18,6 +18,12 @@
       "name": "查询子网列表",
       "output": "DescribeSubnetResponse"
     },
+    "DescribeSupportedHsm": {
+      "document": "获取当前地域所支持的设备列表",
+      "input": "DescribeSupportedHsmRequest",
+      "name": "获取当前地域所支持的设备列表",
+      "output": "DescribeSupportedHsmResponse"
+    },
     "DescribeUsg": {
       "document": "根据用户的AppId获取用户安全组列表",
       "input": "DescribeUsgRequest",
@@ -210,6 +216,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSupportedHsmRequest": {
+      "document": "DescribeSupportedHsm请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSupportedHsmResponse": {
+      "document": "DescribeSupportedHsm返回参数结构体",
+      "members": [
+        {
+          "document": "当前地域所支持的设备列表",
+          "example": "无",
+          "member": "DeviceInfo",
+          "name": "DeviceTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -603,6 +635,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TASS",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -649,6 +690,15 @@
           "name": "TagFilters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设备所属的厂商名称，根据厂商来进行筛选",
+          "example": "TASS",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -682,6 +732,58 @@
         }
       ],
       "type": "object"
+    },
+    "DeviceInfo": {
+      "document": "设备厂商信息",
+      "members": [
+        {
+          "default": "",
+          "document": "厂商名称",
+          "example": "TASS",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此厂商旗下的设备信息列表",
+          "example": "无",
+          "member": "HsmInfo",
+          "name": "HsmTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HsmInfo": {
+      "document": "支持的加密机类型信息",
+      "members": [
+        {
+          "default": "",
+          "document": "加密机型号",
+          "example": "SJJ1528",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此类型的加密机所支持的VSM类型列表",
+          "example": "无",
+          "member": "VsmInfo",
+          "name": "VsmTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InquiryPriceBuyVsmRequest": {
       "document": "InquiryPriceBuyVsm请求参数结构体",
@@ -872,6 +974,7 @@
         {
           "default": "",
           "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hsm-xxxxxxxx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -881,6 +984,7 @@
         {
           "default": "",
           "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "defaultHsmName",
           "member": "string",
           "name": "ResourceName",
           "required": true,
@@ -890,6 +994,7 @@
         {
           "default": "",
           "document": "资源状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -899,6 +1004,7 @@
         {
           "default": "",
           "document": "资源IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.4",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -908,6 +1014,7 @@
         {
           "default": "",
           "document": "资源所属Vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -917,6 +1024,7 @@
         {
           "default": "",
           "document": "资源所属子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -926,6 +1034,7 @@
         {
           "default": "",
           "document": "资源所属HSM规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SJJ1528",
           "member": "string",
           "name": "Model",
           "required": true,
@@ -935,6 +1044,7 @@
         {
           "default": "",
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17",
           "member": "int64",
           "name": "VsmType",
           "required": true,
@@ -944,6 +1054,7 @@
         {
           "default": "",
           "document": "地域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "required": true,
@@ -953,6 +1064,7 @@
         {
           "default": "",
           "document": "区域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100001",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -962,6 +1074,7 @@
         {
           "default": "",
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
@@ -971,6 +1084,7 @@
         {
           "default": "",
           "document": "地域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -980,6 +1094,7 @@
         {
           "default": "",
           "document": "区域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -989,6 +1104,7 @@
         {
           "default": "",
           "document": "实例的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SgUnit",
           "name": "SgList",
           "required": true,
@@ -998,6 +1114,7 @@
         {
           "default": "",
           "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SubnetName",
           "required": true,
@@ -1007,6 +1124,7 @@
         {
           "default": "",
           "document": "当前实例是否已经过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "Expired",
           "required": true,
@@ -1016,6 +1134,7 @@
         {
           "default": "",
           "document": "为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RemainSeconds",
           "required": true,
@@ -1025,6 +1144,7 @@
         {
           "default": "",
           "document": "Vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VpcName",
           "required": true,
@@ -1034,6 +1154,7 @@
         {
           "default": "",
           "document": "创建者Uin账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "string",
           "name": "CreateUin",
           "required": true,
@@ -1043,6 +1164,7 @@
         {
           "default": "",
           "document": "自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RenewFlag",
           "required": true,
@@ -1052,10 +1174,21 @@
         {
           "default": "",
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TASS",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1423,6 +1556,32 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VsmInfo": {
+      "document": "支持的Vsm类型信息",
+      "members": [
+        {
+          "default": "",
+          "document": "VSM类型名称",
+          "example": "EVSM",
+          "member": "string",
+          "name": "TypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VSM类型值",
+          "example": "17",
+          "member": "int64",
+          "name": "TypeID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

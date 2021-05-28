@@ -6,6 +6,12 @@
       "name": "新增加速域名",
       "output": "AddEcdnDomainResponse"
     },
+    "CreateVerifyRecord": {
+      "document": "生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权",
+      "input": "CreateVerifyRecordRequest",
+      "name": "生成解析记录",
+      "output": "CreateVerifyRecordResponse"
+    },
     "DeleteEcdnDomain": {
       "document": "本接口（DeleteEcdnDomain）用于删除指定加速域名。待删除域名必须处于已停用状态。",
       "input": "DeleteEcdnDomainRequest",
@@ -333,6 +339,60 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateVerifyRecordRequest": {
+      "document": "CreateVerifyRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要取回的域名",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVerifyRecordResponse": {
+      "document": "CreateVerifyRecord返回参数结构体",
+      "members": [
+        {
+          "document": "子解析",
+          "example": "_cdnauth",
+          "member": "string",
+          "name": "SubDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解析值",
+          "example": "202009071516044acd018wf498457628cn75ba018ec9cv",
+          "member": "string",
+          "name": "Record",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解析类型",
+          "example": "TXT",
+          "member": "string",
+          "name": "RecordType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteEcdnDomainRequest": {
       "document": "DeleteEcdnDomain请求参数结构体",

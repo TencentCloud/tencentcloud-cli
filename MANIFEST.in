@@ -109,6 +109,8 @@ include tccli/services/cynosdb/v20190107/api.json
 include tccli/services/cynosdb/v20190107/examples.json
 include tccli/services/dayu/v20180709/api.json
 include tccli/services/dayu/v20180709/examples.json
+include tccli/services/dbbrain/v20210527/api.json
+include tccli/services/dbbrain/v20210527/examples.json
 include tccli/services/dbbrain/v20191016/api.json
 include tccli/services/dbbrain/v20191016/examples.json
 include tccli/services/dc/v20180410/api.json

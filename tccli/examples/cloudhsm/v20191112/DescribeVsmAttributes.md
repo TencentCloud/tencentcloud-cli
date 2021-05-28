@@ -72,7 +72,8 @@ Output:
         "ExpireTime": 1234567890,
         "Vip": "xx",
         "RemainSeconds": 0,
-        "ZoneName": "xx"
+        "ZoneName": "xx",
+        "Manufacturer": "xxx"
     }
 }
 ```

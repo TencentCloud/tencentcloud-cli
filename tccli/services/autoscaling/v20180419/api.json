@@ -246,6 +246,18 @@
       "name": "从伸缩组中删除 CVM 实例",
       "output": "RemoveInstancesResponse"
     },
+    "ScaleInInstances": {
+      "document": "为伸缩组指定数量缩容实例，返回缩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 根据伸缩组的`TerminationPolicies`策略，选择被缩容的实例，可参考[缩容处理](https://cloud.tencent.com/document/product/377/8563)\n* 接口只会选择`IN_SERVICE`实例缩容，如果需要缩容其他状态实例，可以使用 [DetachInstances](https://cloud.tencent.com/document/api/377/20436) 或 [RemoveInstances](https://cloud.tencent.com/document/api/377/20431) 接口\n* 接口会减少期望实例数，新的期望实例数需要大于等于最小实例数\n* 缩容如果失败或者部分成功，最后期望实例数只会扣减实际缩容成功的实例数量",
+      "input": "ScaleInInstancesRequest",
+      "name": "指定数量缩容实例",
+      "output": "ScaleInInstancesResponse"
+    },
+    "ScaleOutInstances": {
+      "document": "为伸缩组指定数量扩容实例，返回扩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 接口会增加期望实例数，新的期望实例数需要小于等于最大实例数\n* 扩容如果失败或者部分成功，最后期望实例数只会增加实际成功的实例数量",
+      "input": "ScaleOutInstancesRequest",
+      "name": "指定数量扩容实例",
+      "output": "ScaleOutInstancesResponse"
+    },
     "SetInstancesProtection": {
       "document": "本接口（SetInstancesProtection）用于设置实例移除保护。\n子机设置为移除保护之后，当发生不健康替换、报警策略、期望值变更等触发缩容时，将不对此子机缩容操作。",
       "input": "SetInstancesProtectionRequest",
@@ -4549,6 +4561,96 @@
         }
       ],
       "usage": "both"
+    },
+    "ScaleInInstancesRequest": {
+      "document": "ScaleInInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组ID。",
+          "example": "asg-12yqet78",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "希望缩容的实例数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScaleInNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleInInstancesResponse": {
+      "document": "ScaleInInstances返回参数结构体",
+      "members": [
+        {
+          "document": "伸缩活动ID。",
+          "example": "asa-k1q8oaz6",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstancesRequest": {
+      "document": "ScaleOutInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组ID。",
+          "example": "asg-12yqet78",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "希望扩容的实例数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScaleOutNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstancesResponse": {
+      "document": "ScaleOutInstances返回参数结构体",
+      "members": [
+        {
+          "document": "伸缩活动ID。",
+          "example": "asa-n6w01f6m",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ScalingPolicy": {
       "document": "告警触发策略。",

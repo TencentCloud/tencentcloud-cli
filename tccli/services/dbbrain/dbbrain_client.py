@@ -9,6 +9,8 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.dbbrain.v20210527 import dbbrain_client as dbbrain_client_v20210527
+from tencentcloud.dbbrain.v20210527 import models as models_v20210527
 from tencentcloud.dbbrain.v20191016 import dbbrain_client as dbbrain_client_v20191016
 from tencentcloud.dbbrain.v20191016 import models as models_v20191016
 
@@ -743,11 +745,13 @@ def doCreateDBDiagReportUrl(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20210527": dbbrain_client_v20210527,
     "v20191016": dbbrain_client_v20191016,
 
 }
 
 MODELS_MAP = {
+    "v20210527": models_v20210527,
     "v20191016": models_v20191016,
 
 }
@@ -784,6 +788,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20210527",
     "v20191016",
 
 ]

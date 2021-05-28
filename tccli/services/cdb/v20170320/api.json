@@ -3055,6 +3055,7 @@
         {
           "default": "",
           "document": "置放群组名称，最长不能超过60个字符。",
+          "example": "cdb-ezq1vzem",
           "member": "string",
           "name": "DeployGroupName",
           "required": true,
@@ -3063,6 +3064,7 @@
         {
           "default": "",
           "document": "置放群组描述，最长不能超过200个字符。",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3071,6 +3073,7 @@
         {
           "default": "",
           "document": "置放群组的亲和性策略，目前仅支持取值为1，策略1表示同台物理机上限制实例的个数。",
+          "example": "0",
           "member": "int64",
           "name": "Affinity",
           "required": false,
@@ -3079,6 +3082,7 @@
         {
           "default": "",
           "document": "置放群组亲和性策略1中同台物理机上实例的限制个数。",
+          "example": "0",
           "member": "int64",
           "name": "LimitNum",
           "required": false,
@@ -3087,6 +3091,7 @@
         {
           "default": "",
           "document": "置放群组机型属性，可选参数：SH12+SH02、TS85。",
+          "example": "\"\"",
           "member": "string",
           "name": "DevClass",
           "required": false,
@@ -3100,8 +3105,10 @@
       "members": [
         {
           "document": "置放群组ID。",
+          "example": "213123",
           "member": "string",
           "name": "DeployGroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3519,6 +3526,7 @@
         {
           "default": "",
           "document": "要删除的置放群组 ID 列表。",
+          "example": "[\"test\\r\\n\"]",
           "member": "string",
           "name": "DeployGroupIds",
           "required": true,
@@ -5782,6 +5790,7 @@
         {
           "default": "",
           "document": "置放群组 ID。",
+          "example": "test",
           "member": "string",
           "name": "DeployGroupId",
           "required": false,
@@ -5790,6 +5799,7 @@
         {
           "default": "",
           "document": "置放群组名称。",
+          "example": "test",
           "member": "string",
           "name": "DeployGroupName",
           "required": false,
@@ -5798,6 +5808,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5806,6 +5817,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5819,15 +5831,19 @@
       "members": [
         {
           "document": "符合条件的记录总数。",
+          "example": "100",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DeployGroupInfo",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5908,6 +5924,7 @@
         {
           "default": "",
           "document": "实例 ID 。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5916,6 +5933,7 @@
         {
           "default": "",
           "document": "开始时间戳。",
+          "example": "1585142640",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -5924,6 +5942,7 @@
         {
           "default": "",
           "document": "结束时间戳。",
+          "example": "1585142640",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -5932,6 +5951,7 @@
         {
           "default": "",
           "document": "要匹配的关键字列表，最多支持15个关键字。",
+          "example": "[\"keywords0\\n\"]",
           "member": "string",
           "name": "KeyWords",
           "required": false,
@@ -5940,6 +5960,7 @@
         {
           "default": "",
           "document": "分页的返回数量，默认为100，最大为400。",
+          "example": "400",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5948,6 +5969,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5956,6 +5978,7 @@
         {
           "default": "",
           "document": "仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。",
+          "example": "\"\"",
           "member": "string",
           "name": "InstType",
           "required": false,
@@ -5969,15 +5992,19 @@
       "members": [
         {
           "document": "符合条件的记录总数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的记录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ErrlogItem",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

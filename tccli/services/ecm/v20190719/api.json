@@ -679,7 +679,7 @@
       "output": "ResetRoutesResponse"
     },
     "RunInstances": {
-      "document": "创建ECM实例",
+      "document": "创建ECM实例。",
       "input": "RunInstancesRequest",
       "name": "创建实例",
       "output": "RunInstancesResponse"

@@ -24,6 +24,14 @@
         "title": "将集群内节点移入节点池"
       }
     ],
+    "AddVpcCniSubnets": [
+      {
+        "document": "当用户选择了VPC-CNI网络模式时，创建集群时选择的子网资源IP可能将来不足，需要增加子网。",
+        "input": "https://tke.tencentcloudapi.com/?Action=AddVpcCniSubnets\n&VpcId=vpc-xxxx\n&ClusterId=cls-xxxx\n&SubnetIds.0=subnet-xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "为VPC-CNI模式集群增加子网"
+      }
+    ],
     "CheckInstancesUpgradeAble": [
       {
         "document": "",

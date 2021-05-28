@@ -430,6 +430,22 @@
         "title": "从伸缩组删除实例"
       }
     ],
+    "ScaleInInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleInInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12yqet78\",\n    \"ScaleInNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-n6w01f6m\",\n        \"RequestId\": \"c0bb46ea-2b47-471c-9099-e20bf7a23078\"\n    }\n}",
+        "title": "伸缩组缩容一台实例"
+      }
+    ],
+    "ScaleOutInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleOutInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12yqet78\",\n    \"ScaleOutNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-k1q8oaz6\",\n        \"RequestId\": \"6af368fd-35ff-4dcc-b302-35c378f2cccb\"\n    }\n}",
+        "title": "伸缩组扩容一台实例"
+      }
+    ],
     "SetInstancesProtection": [
       {
         "document": "",
