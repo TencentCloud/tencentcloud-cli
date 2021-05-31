@@ -78,6 +78,12 @@
       "name": "聚鑫-关闭订单接口",
       "output": "CloseOrderResponse"
     },
+    "ContractOrder": {
+      "document": "应用需要先带上签约信息调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。",
+      "input": "ContractOrderRequest",
+      "name": "支付中签约接口",
+      "output": "ContractOrderResponse"
+    },
     "CreateAcct": {
       "document": "子商户入驻聚鑫平台",
       "input": "CreateAcctRequest",
@@ -276,6 +282,12 @@
       "name": "云鉴-查询普通转账充值明细",
       "output": "QueryCommonTransferRechargeResponse"
     },
+    "QueryContract": {
+      "document": "通过此接口查询签约数据",
+      "input": "QueryContractRequest",
+      "name": "查询签约数据接口",
+      "output": "QueryContractResponse"
+    },
     "QueryCustAcctIdBalance": {
       "document": "查询银行子账户余额。查询会员子账户以及平台的功能子账户的余额。",
       "input": "QueryCustAcctIdBalanceRequest",
@@ -455,6 +467,18 @@
       "input": "RevokeRechargeByThirdPayRequest",
       "name": "撤销会员在途充值(经第三方支付渠道)接口",
       "output": "RevokeRechargeByThirdPayResponse"
+    },
+    "SyncContractData": {
+      "document": "对于存量的签约关系导入或者部分场景下米大师无法收到签约通知的场景，需要由调用方主动将签约状态同步至米大师",
+      "input": "SyncContractDataRequest",
+      "name": "签约状态同步接口",
+      "output": "SyncContractDataResponse"
+    },
+    "TerminateContract": {
+      "document": "通过此接口进行解约",
+      "input": "TerminateContractRequest",
+      "name": "解除签约关系接口",
+      "output": "TerminateContractResponse"
     },
     "TransferSinglePay": {
       "document": "智能代发-单笔代发转账接口",
@@ -2547,6 +2571,58 @@
       ],
       "type": "object"
     },
+    "ChannelContractInfo": {
+      "document": "米大师内部存放的合约信息",
+      "members": [
+        {
+          "default": "",
+          "document": "外部合约协议号",
+          "example": "code",
+          "member": "string",
+          "name": "OutContractCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "米大师内部生成的合约协议号",
+          "example": "code",
+          "member": "string",
+          "name": "ChannelContractCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ChannelReturnContractInfo": {
+      "document": "米大师内部生成的合约信息",
+      "members": [
+        {
+          "default": "",
+          "document": "平台合约状态\n协议状态，枚举值：\nCONTRACT_STATUS_SIGNED：已签约\nCONTRACT_STATUS_TERMINATED：未签约\nCONTRACT_STATUS_PENDING：签约进行中",
+          "example": "CONTRACT_STATUS_PENDING",
+          "member": "string",
+          "name": "ContractStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "米大师内部存放的合约信息",
+          "example": "无",
+          "member": "ChannelContractInfo",
+          "name": "ChannelContractInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CheckAcctRequest": {
       "document": "CheckAcct请求参数结构体",
       "members": [
@@ -2919,6 +2995,641 @@
         }
       ],
       "type": "object"
+    },
+    "ContractInfo": {
+      "document": "合约信息",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师内部签约商户号",
+          "example": "merchant_id",
+          "member": "string",
+          "name": "ChannelContractMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "米大师内部签约子商户号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sub_merchant_id",
+          "member": "string",
+          "name": "ChannelContractSubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "米大师内部签约应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "appid",
+          "member": "string",
+          "name": "ChannelContractAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "米大师内部签约子应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sub_appid",
+          "member": "string",
+          "name": "ChannelContractSubAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务合约协议号",
+          "example": "out_contract_code",
+          "member": "string",
+          "name": "OutContractCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方渠道用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExternalContractUserInfo",
+          "name": "ExternalContractUserInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签约方式，如 wechat_app ，使用app方式下的微信签",
+          "example": "wechat_app ",
+          "member": "string",
+          "name": "ContractMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合约场景id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "scene_id",
+          "member": "string",
+          "name": "ContractSceneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "ContractUserInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方渠道签约数据",
+          "example": "your_data",
+          "member": "string",
+          "name": "ExternalContractData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ContractOrderInSubOrder": {
+      "document": "支付中签约子订单列表",
+      "members": [
+        {
+          "default": "",
+          "document": "子订单结算应收金额，单位： 分",
+          "example": "1",
+          "member": "int64",
+          "name": "SubMchIncome",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单平台应收金额，单位：分",
+          "example": "1",
+          "member": "int64",
+          "name": "PlatformIncome",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单商品详情",
+          "example": "your_product_detail",
+          "member": "string",
+          "name": "ProductDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单商品名称",
+          "example": "your_product_name",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "unibank10001_01",
+          "member": "string",
+          "name": "SubAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单号",
+          "example": "your_sub_out_trade_no",
+          "member": "string",
+          "name": "SubOutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单支付金额",
+          "example": "3",
+          "member": "int64",
+          "name": "Amt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单原始金额",
+          "example": "3",
+          "member": "int64",
+          "name": "OriginalAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发货标识，由业务在调用聚鑫下单接口的 时候下发",
+          "example": "your_metadata",
+          "member": "string",
+          "name": "Metadata",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ContractOrderRequest": {
+      "document": "ContractOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ISO 货币代码，CNY",
+          "example": "CNY",
+          "member": "string",
+          "name": "CurrencyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "your_order_no",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品详情，需要URL编码",
+          "example": "商品详情",
+          "member": "string",
+          "name": "ProductDetail",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品ID，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "your_product_id",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品名称，需要URL编码",
+          "example": "商品名称",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付金额，单位： 分",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalAmt",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户ID，长度不小于5位，仅支持字母和数字的组合",
+          "example": "your_user_id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "银行真实渠道.如:bank_pingan",
+          "example": "bank_pingan",
+          "member": "string",
+          "name": "RealChannel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始金额",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginalAmt",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
+          "member": "string",
+          "name": "MidasSecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
+          "member": "string",
+          "name": "MidasSignature",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约通知地址",
+          "example": "http://cloud.tencent.com",
+          "member": "string",
+          "name": "ContractNotifyUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Web端回调地址",
+          "example": "http://openmidas.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定支付渠道：  wechat：微信支付  qqwallet：QQ钱包 \n bank：网银支付  只有一个渠道时需要指定",
+          "example": "wechat",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传字段，支付成功回调透传给应用，用于业务透传自定义内容",
+          "example": "your_metadata",
+          "member": "string",
+          "name": "Metadata",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买数量，不传默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Quantity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)\n注：接入银行或其他支付渠道服务商模式下，必传",
+          "example": "无",
+          "member": "ContractOrderInSubOrder",
+          "name": "SubOrderList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "结算应收金额，单位：分",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalMchIncome",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "平台应收金额，单位：分",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalPlatformIncome",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "微信公众号/小程序支付时为必选，需要传微信下的openid",
+          "example": "your_wx_openid",
+          "member": "string",
+          "name": "WxOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一",
+          "example": "your_wx_sub_openid",
+          "member": "string",
+          "name": "WxSubOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "your_midas_environment",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信商户应用ID",
+          "example": "your_wx_app_id",
+          "member": "string",
+          "name": "WxAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信商户子应用ID",
+          "example": "your_wx_sub_app_id",
+          "member": "string",
+          "name": "WxSubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付通知地址",
+          "example": "http://cloud.tencent.com",
+          "member": "string",
+          "name": "PaymentNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "传入调用方在Midas注册签约信息时获得的ContractSceneId。若未在Midas注册签约信息，则传入ExternalContractData。注意：ContractSceneId与ExternalContractData必须二选一传入其中一个",
+          "example": "your_contract_scene_id",
+          "member": "string",
+          "name": "ContractSceneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要按照各个渠道的扩展签约信息规范组装好该字段。若未在Midas注册签约信息，则传入该字段。注意：ContractSceneId与ExternalContractData必须二选一传入其中一个",
+          "example": "{\\\"plan_id\\\":\\\"138096\\\",\\\"contract_code\\\":\\\"your_contract_code\\\"",
+          "member": "string",
+          "name": "ExternalContractData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部签约协议号，唯一标记一个签约关系。仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "your_out_contract_code",
+          "member": "string",
+          "name": "OutContractCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传给第三方渠道的附加数据",
+          "example": "your_attach_data",
+          "member": "string",
+          "name": "AttachData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "展示用的签约用户名称，若不传入时，默认取UserId",
+          "example": "your_contract_display_name",
+          "member": "string",
+          "name": "ContractDisplayName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ContractOrderResponse": {
+      "document": "ContractOrder返回参数结构体",
+      "members": [
+        {
+          "document": "支付金额，单位： 分",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用支付订单号",
+          "example": "your_order_no",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "支付参数透传给聚鑫SDK（原文透传给SDK即可，不需要解码）",
+          "example": "data=%7B%22appid%22%3A%22unibank10001%22%2C%22user_id%22%3A%22us",
+          "member": "string",
+          "name": "PayInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "聚鑫的交易订单号",
+          "example": "E-191018160200005000",
+          "member": "string",
+          "name": "TransactionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "外部签约协议号",
+          "example": "your_out_contract_code",
+          "member": "string",
+          "name": "OutContractCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ContractSyncInfo": {
+      "document": "签约同步信息",
+      "members": [
+        {
+          "default": "",
+          "document": "第三方渠道合约信息",
+          "example": "无",
+          "member": "ExternalReturnContractInfo",
+          "name": "ExternalReturnContractInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方渠道用户信息",
+          "example": "无",
+          "member": "ExternalContractUserInfo",
+          "name": "ExternalContractUserInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签约方式，枚举值，\n<br/>CONTRACT_METHOD_WECHAT_INVALID: 无效\nCONTRACT_METHOD_WECHAT_APP: 微信APP\nCONTRACT_METHOD_WECHAT_PUBLIC: 微信公众号\nCONTRACT_METHOD_WECHAT_MINIPROGRAM: 微信小程序\nCONTRACT_METHOD_WECHAT_H5: 微信H5",
+          "example": "CONTRACT_METHOD_WECHAT_PUBLIC",
+          "member": "string",
+          "name": "ContractMethod",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在米大师侧分配的场景id",
+          "example": "your_contract_scene_id",
+          "member": "string",
+          "name": "ContractSceneId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用方从第三方渠道查询到的签约数据，由各个渠道定义",
+          "example": "your_external_contract_data",
+          "member": "string",
+          "name": "ExternalReturnContractData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ContractUserInfo": {
+      "document": "用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "USER_ID: 用户ID\nANONYMOUS: 匿名类型用户ID",
+          "example": "USER_ID",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户类型",
+          "example": "your_user_id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateAcctRequest": {
       "document": "CreateAcct请求参数结构体",
@@ -6025,6 +6736,138 @@
       ],
       "type": "object"
     },
+    "ExternalContractUserInfo": {
+      "document": "第三方渠道用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "第三方用户类型，例如:  WX_OPENID, WX_SUB_OPENID,WX_PAYER_OPENID",
+          "example": "WX_OPENID",
+          "member": "string",
+          "name": "ExternalUserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方用户ID",
+          "example": "your_wx_openid",
+          "member": "string",
+          "name": "ExternalUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExternalReturnContractInfo": {
+      "document": "第三方渠道合约信息",
+      "members": [
+        {
+          "default": "",
+          "document": "第三方渠道协议id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agreement_id",
+          "member": "string",
+          "name": "ExternalReturnAgreementId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道协议生效时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-11T20:41:07Z",
+          "member": "string",
+          "name": "ExternalReturnContractEffectiveTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道协议解约时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-11T20:41:07Z",
+          "member": "string",
+          "name": "ExternalReturnContractTerminationTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台合约状态\n协议状态，枚举值：\nCONTRACT_STATUS_SIGNED：已签约\nCONTRACT_STATUS_TERMINATED：未签约\nCONTRACT_STATUS_PENDING：签约进行中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CONTRACT_STATUS_PENDING",
+          "member": "string",
+          "name": "ExternalReturnContractStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道请求序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "request_id",
+          "member": "string",
+          "name": "ExternalReturnRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道协议签署时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-11T20:41:07Z",
+          "member": "string",
+          "name": "ExternalReturnContractSignedTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道协议到期时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-11T20:41:07Z",
+          "member": "string",
+          "name": "ExternalReturnContractExpiredTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道返回的合约数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "data",
+          "member": "string",
+          "name": "ExternalReturnContractData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道解约备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mode",
+          "member": "string",
+          "name": "ExternalReturnContractTerminationRemark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道协议解约方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mode",
+          "member": "string",
+          "name": "ExternalReturnContractTerminationMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FileItem": {
       "document": "对账文件信息",
       "members": [
@@ -8089,6 +8932,159 @@
           "name": "ReservedMsg",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryContractRequest": {
+      "document": "QueryContract请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID，长度不小于5位，仅支持字母和数字的组合",
+          "example": "your_user_id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定渠道：  wechat：微信支付  qqwallet：QQ钱包 \n bank：网银支付  只有一个渠道时需要指定",
+          "example": "wechat",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "枚举值：\nCONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE：按 OutContractCode + ContractSceneId 查询\nCONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE：按ChannelContractCode查询",
+          "example": "CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE",
+          "member": "string",
+          "name": "ContractQueryMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
+          "member": "string",
+          "name": "MidasSignature",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
+          "member": "string",
+          "name": "MidasSecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务签约合同协议号 当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 ，必填",
+          "example": "your_out_contract_code",
+          "member": "string",
+          "name": "OutContractCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约场景ID，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 必填，在米大师侧托管后生成",
+          "example": "your_contract_scene_id",
+          "member": "string",
+          "name": "ContractSceneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "米大师生成的协议号 ，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE 时必填",
+          "example": "your_channel_contract_code",
+          "member": "string",
+          "name": "ChannelContractCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "第三方渠道合约数据，为json字符串，与特定渠道有关",
+          "example": "{\\\"plan_id\\\":\\\"10086\\\",\\\"contract_code\\\":\\\"C11111111000001\\\",\\\"w",
+          "member": "string",
+          "name": "ExternalContractData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "your_midas_environment",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "USER_ID: 用户ID\nANONYMOUS: 匿名类型 USER_ID\n默认值为 USER_ID",
+          "example": "USER_ID",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryContractResponse": {
+      "document": "QueryContract返回参数结构体",
+      "members": [
+        {
+          "document": "签约数据",
+          "example": "无",
+          "member": "ResponseQueryContract",
+          "name": "ContractData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请求处理信息",
+          "example": "msg",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12634,6 +13630,184 @@
       ],
       "type": "object"
     },
+    "ResponseQueryContract": {
+      "document": "签约数据",
+      "members": [
+        {
+          "default": "",
+          "document": "第三方渠道错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "code",
+          "member": "string",
+          "name": "ExternalReturnCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "message",
+          "member": "string",
+          "name": "ExternalReturnMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道返回的原始数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "data",
+          "member": "string",
+          "name": "ExternalReturnData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "米大师内部商户号",
+          "example": "id",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "米大师内部子商户号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sub_id",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "米大师内部应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "appid",
+          "member": "string",
+          "name": "ChannelAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "米大师内部子应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sub_appid",
+          "member": "string",
+          "name": "ChannelSubAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道名称",
+          "example": "wechat",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回的合约信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReturnContractInfo",
+          "name": "ReturnContractInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签约通知地址",
+          "example": "http://notify_url",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResponseTerminateContract": {
+      "document": "解约数据",
+      "members": [
+        {
+          "default": "",
+          "document": "第三方渠道错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "code",
+          "member": "string",
+          "name": "ExternalReturnCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "message",
+          "member": "string",
+          "name": "ExternalReturnMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道返回的原始数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "data",
+          "member": "string",
+          "name": "ExternalReturnData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ReturnContractInfo": {
+      "document": "返回的合约信息",
+      "members": [
+        {
+          "default": "",
+          "document": "合约信息",
+          "example": "无",
+          "member": "ContractInfo",
+          "name": "ContractInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "米大师内部生成的合约信息",
+          "example": "无",
+          "member": "ChannelReturnContractInfo",
+          "name": "ChannelReturnContractInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方渠道合约信息",
+          "example": "无",
+          "member": "ExternalReturnContractInfo",
+          "name": "ExternalReturnContractInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RevResigterBillSupportWithdrawRequest": {
       "document": "RevResigterBillSupportWithdraw请求参数结构体",
       "members": [
@@ -13206,6 +14380,339 @@
           "name": "FrontSequenceNumber",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SceneInfo": {
+      "document": "场景信息",
+      "members": [
+        {
+          "default": "",
+          "document": "语言代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "code",
+          "member": "string",
+          "name": "LocaleCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地区代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "code",
+          "member": "string",
+          "name": "RegionCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "your_ip",
+          "member": "string",
+          "name": "UserClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SyncContractDataRequest": {
+      "document": "SyncContractData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID，长度不小于5位，仅支持字母和数字的组合",
+          "example": "your_user_id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约使用的渠道",
+          "example": "wechat",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务签约合同协议号",
+          "example": "your_contract_code",
+          "member": "string",
+          "name": "OutContractCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约状态，枚举值\nCONTRACT_STATUS_INVALID=无效状态\nCONTRACT_STATUS_SIGNED=已签约\nCONTRACT_STATUS_TERMINATED=已解约\nCONTRACT_STATUS_PENDING=签约进行中",
+          "example": "CONTRACT_STATUS_SIGNED",
+          "member": "string",
+          "name": "ContractStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约同步信息",
+          "example": "无",
+          "member": "ContractSyncInfo",
+          "name": "ContractSyncInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
+          "member": "string",
+          "name": "MidasSignature",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
+          "member": "string",
+          "name": "MidasSecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户类型，枚举值\nUSER_ID: 用户ID\nANONYMOUS: 匿名类型 USER_ID\n默认值为 USER_ID",
+          "example": "USER_ID",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景信息",
+          "example": "无",
+          "member": "SceneInfo",
+          "name": "SceneInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "your_midas_environment",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncContractDataResponse": {
+      "document": "SyncContractData返回参数结构体",
+      "members": [
+        {
+          "document": "请求处理信息",
+          "example": "msg",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateContractRequest": {
+      "document": "TerminateContract请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID，长度不小于5位，仅支持字母和数字的组合",
+          "example": "your_user_id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定渠道：  wechat：微信支付  qqwallet：QQ钱包 \n bank：网银支付  只有一个渠道时需要指定",
+          "example": "wechat",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "枚举值：\nCONTRACT_TERMINATION_MODE_BY_OUT_CONTRACT_CODE: 按OutContractCode+ContractSceneId解约\nCONTRACT_TERMINATION_MODE_BY_CHANNEL_CONTRACT_CODE：按ChannelContractCode解约",
+          "example": "CONTRACT_TERMINATION_MODE_BY_OUT_CONTRACT_CODE",
+          "member": "string",
+          "name": "TerminateMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
+          "member": "string",
+          "name": "MidasSecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
+          "member": "string",
+          "name": "MidasSignature",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务签约合同协议号 当TerminateMode=CONTRACT_TERMINATION_MODE_BY_OUT_CONTRACT_CODE 时 必填",
+          "example": "your_contract_code",
+          "member": "string",
+          "name": "OutContractCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约场景ID，当 TerminateMode=CONTRACT_TERMINATION_MODE_BY_OUT_CONTRACT_CODE 时 必填，在米大师侧托管后生成",
+          "example": "your_scene_id",
+          "member": "string",
+          "name": "ContractSceneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "米大师生成的协议号 当 TerminateMode=CONTRACT_TERMINATION_MODE_BY_CHANNEL_CONTRACT_CODE 时 必填",
+          "example": "your_contract_code",
+          "member": "string",
+          "name": "ChannelContractCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "第三方渠道合约数据，json字符串，与特定渠道有关",
+          "example": "{\\\"plan_id\\\":\\\"10086\\\",\\\"contract_code\\\":\\\"C11111111000001\\\",\\\"w",
+          "member": "string",
+          "name": "ExternalContractData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终止合约原因",
+          "example": "your_reason",
+          "member": "string",
+          "name": "TerminationReason",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "USER_ID: 用户ID\nANONYMOUS: 匿名类型 USER_ID\n默认值为 USER_ID",
+          "example": "USER_ID",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateContractResponse": {
+      "document": "TerminateContract返回参数结构体",
+      "members": [
+        {
+          "document": "解约数据",
+          "example": "无",
+          "member": "ResponseTerminateContract",
+          "name": "ContractTerminateData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请求处理信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "msg",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

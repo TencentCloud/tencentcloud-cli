@@ -9,7 +9,8 @@ tccli iotcloud EditFirmware --cli-unfold-argument  \
     --ProductID ABCDE12345 \
     --FirmwareVersion 1.0.0 \
     --FirmwareName name \
-    --FirmwareDescription desc
+    --FirmwareDescription desc \
+    --FwType mcu
 ```
 
 Output: 

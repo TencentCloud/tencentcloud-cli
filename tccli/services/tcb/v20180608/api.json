@@ -5221,6 +5221,7 @@
         {
           "default": "",
           "document": "环境id",
+          "example": "无",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -5229,6 +5230,7 @@
         {
           "default": "",
           "document": "服务名称",
+          "example": "无",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -5237,6 +5239,7 @@
         {
           "default": "",
           "document": "是否开通外网访问",
+          "example": "无",
           "member": "bool",
           "name": "IsPublic",
           "required": true,
@@ -5245,6 +5248,7 @@
         {
           "default": "",
           "document": "镜像仓库",
+          "example": "无",
           "member": "string",
           "name": "ImageRepo",
           "required": false,
@@ -5253,6 +5257,7 @@
         {
           "default": "",
           "document": "服务描述",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -5261,6 +5266,7 @@
         {
           "default": "",
           "document": "es信息",
+          "example": "无",
           "member": "CloudBaseEsInfo",
           "name": "EsInfo",
           "required": false,
@@ -5269,6 +5275,7 @@
         {
           "default": "",
           "document": "日志类型; es/cls",
+          "example": "无",
           "member": "string",
           "name": "LogType",
           "required": false,
@@ -5277,6 +5284,7 @@
         {
           "default": "",
           "document": "操作备注",
+          "example": "无",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
@@ -5285,6 +5293,7 @@
         {
           "default": "",
           "document": "来源方（默认值：qcloud，微信侧来源miniapp)",
+          "example": "无",
           "member": "string",
           "name": "Source",
           "required": false,
@@ -5293,6 +5302,7 @@
         {
           "default": "",
           "document": "vpc信息",
+          "example": "无",
           "member": "CloudBaseRunVpcInfo",
           "name": "VpcInfo",
           "required": false,
@@ -5301,10 +5311,20 @@
         {
           "default": "",
           "document": "0/1=允许公网访问;2=关闭公网访问",
+          "example": "无",
           "member": "int64",
           "name": "PublicAccess",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "OA PUBLIC MINIAPP VPC",
+          "example": "无",
+          "member": "string",
+          "name": "OpenAccessTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

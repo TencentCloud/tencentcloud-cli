@@ -2024,6 +2024,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "7ZISKXPJVU",
           "member": "string",
           "name": "ProductID",
           "required": true,
@@ -2032,6 +2033,7 @@
         {
           "default": "",
           "document": "固件版本号",
+          "example": "1.0.3",
           "member": "string",
           "name": "FirmwareVersion",
           "required": true,
@@ -2045,50 +2047,73 @@
       "members": [
         {
           "document": "固件版本号",
+          "example": "1.0.3",
           "member": "string",
           "name": "Version",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "产品ID",
+          "example": "7ZISKXPJVU",
           "member": "string",
           "name": "ProductId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "desc",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "固件Md5值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "md5",
           "member": "string",
           "name": "Md5sum",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "固件上传的秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1597047368",
           "member": "uint64",
           "name": "Createtime",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "产品名称",
+          "example": "ABC",
           "member": "string",
           "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "固件类型。选项：mcu、module",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3751,6 +3776,7 @@
         {
           "default": "",
           "document": "产品ID。",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductID",
           "required": true,
@@ -3759,6 +3785,7 @@
         {
           "default": "",
           "document": "固件版本号。",
+          "example": "1.0.0",
           "member": "string",
           "name": "FirmwareVersion",
           "required": true,
@@ -3767,6 +3794,7 @@
         {
           "default": "",
           "document": "固件名称。",
+          "example": "name",
           "member": "string",
           "name": "FirmwareName",
           "required": true,
@@ -3775,8 +3803,18 @@
         {
           "default": "",
           "document": "固件描述",
+          "example": "desc",
           "member": "string",
           "name": "FirmwareDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件类型：选填 mcu、moudule。默认：mcu",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
           "required": false,
           "type": "string"
         }
@@ -5246,6 +5284,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductID",
           "required": true,
@@ -5254,6 +5293,7 @@
         {
           "default": "",
           "document": "固件版本号",
+          "example": "1.0.0",
           "member": "string",
           "name": "FirmwareVersion",
           "required": true,
@@ -5262,6 +5302,7 @@
         {
           "default": "",
           "document": "固件的MD5值",
+          "example": "hfshfspodkoiwuidoiwjcuie",
           "member": "string",
           "name": "Md5sum",
           "required": true,
@@ -5270,6 +5311,7 @@
         {
           "default": "",
           "document": "固件的大小",
+          "example": "1024",
           "member": "uint64",
           "name": "FileSize",
           "required": true,
@@ -5278,6 +5320,7 @@
         {
           "default": "",
           "document": "固件名称",
+          "example": "ota_test",
           "member": "string",
           "name": "FirmwareName",
           "required": false,
@@ -5286,8 +5329,18 @@
         {
           "default": "",
           "document": "固件描述",
+          "example": "test",
           "member": "string",
           "name": "FirmwareDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件类型：选填 mcu、moudule。默认：mcu",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
           "required": false,
           "type": "string"
         }

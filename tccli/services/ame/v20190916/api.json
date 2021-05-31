@@ -30,6 +30,12 @@
       "name": "获取分类内容下歌曲列表",
       "output": "DescribeItemsResponse"
     },
+    "DescribeKTVMusicDetail": {
+      "document": "根据 Id 查询歌曲的详细信息，包含基础信息及播放信息。",
+      "input": "DescribeKTVMusicDetailRequest",
+      "name": "查询 KTV 曲目详情",
+      "output": "DescribeKTVMusicDetailResponse"
+    },
     "DescribeLyric": {
       "document": "根据接口的模式及歌曲ID来取得歌词信息。",
       "input": "DescribeLyricRequest",
@@ -77,6 +83,12 @@
       "input": "ReportDataRequest",
       "name": "上报歌曲播放数据",
       "output": "ReportDataResponse"
+    },
+    "SearchKTVMusics": {
+      "document": "根据搜索条件，返回匹配的歌曲列表。",
+      "input": "SearchKTVMusicsRequest",
+      "name": "搜索KTV 歌曲",
+      "output": "SearchKTVMusicsResponse"
     },
     "TakeMusicOffShelves": {
       "document": "根据资源方所传MusicId进行将歌曲进行下架，多个MusicId使用逗号隔开",
@@ -557,6 +569,51 @@
       ],
       "type": "object"
     },
+    "DescribeKTVMusicDetailRequest": {
+      "document": "DescribeKTVMusicDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "曲目 Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicDetailResponse": {
+      "document": "DescribeKTVMusicDetail返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲基础信息",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "播放凭证",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PlayToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLyricRequest": {
       "document": "DescribeLyric请求参数结构体",
       "members": [
@@ -891,6 +948,72 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMusicBaseInfo": {
+      "document": "KTV 曲目基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲 Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "演唱者列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SingerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作词者列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "LyricistSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作曲者列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ComposerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1482,6 +1605,69 @@
     "ReportDataResponse": {
       "document": "ReportData返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchKTVMusicsRequest": {
+      "document": "SearchKTVMusics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索关键词",
+          "example": "\"\"",
+          "member": "string",
+          "name": "KeyWord",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页游标",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页页长",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchKTVMusicsResponse": {
+      "document": "SearchKTVMusics返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "KTV 曲目列表",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

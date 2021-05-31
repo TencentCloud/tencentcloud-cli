@@ -1,4 +1,4 @@
-**Example 1: 删除域名**
+**Example 1: 删除域名 dnspod.com**
 
 
 
@@ -18,7 +18,7 @@ Output:
 }
 ```
 
-**Example 2: DeleteDomain_success**
+**Example 2: 删除域名 iceice.club**
 
 
 

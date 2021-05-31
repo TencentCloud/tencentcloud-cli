@@ -13,6 +13,33 @@ from tencentcloud.ame.v20190916 import ame_client as ame_client_v20190916
 from tencentcloud.ame.v20190916 import models as models_v20190916
 
 
+def doDescribeKTVMusicDetail(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeKTVMusicDetailRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeKTVMusicDetail(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeItemById(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -32,33 +59,6 @@ def doDescribeItemById(args, parsed_globals):
     model = models.DescribeItemByIdRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeItemById(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyMusicOnShelves(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyMusicOnShelvesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyMusicOnShelves(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -256,7 +256,7 @@ def doDescribeCloudMusic(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doPutMusicOnTheShelves(args, parsed_globals):
+def doModifyMusicOnShelves(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -272,9 +272,9 @@ def doPutMusicOnTheShelves(args, parsed_globals):
     client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PutMusicOnTheShelvesRequest()
+    model = models.ModifyMusicOnShelvesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.PutMusicOnTheShelves(model)
+    rsp = client.ModifyMusicOnShelves(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -391,6 +391,60 @@ def doDescribeCloudMusicPurchased(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doPutMusicOnTheShelves(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PutMusicOnTheShelvesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.PutMusicOnTheShelves(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSearchKTVMusics(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchKTVMusicsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SearchKTVMusics(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20190916": ame_client_v20190916,
 
@@ -402,8 +456,8 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeKTVMusicDetail": doDescribeKTVMusicDetail,
     "DescribeItemById": doDescribeItemById,
-    "ModifyMusicOnShelves": doModifyMusicOnShelves,
     "DescribePackages": doDescribePackages,
     "DescribeLyric": doDescribeLyric,
     "DescribeStations": doDescribeStations,
@@ -411,11 +465,13 @@ ACTION_MAP = {
     "DescribeAuthInfo": doDescribeAuthInfo,
     "DescribeMusic": doDescribeMusic,
     "DescribeCloudMusic": doDescribeCloudMusic,
-    "PutMusicOnTheShelves": doPutMusicOnTheShelves,
+    "ModifyMusicOnShelves": doModifyMusicOnShelves,
     "DescribePackageItems": doDescribePackageItems,
     "TakeMusicOffShelves": doTakeMusicOffShelves,
     "ReportData": doReportData,
     "DescribeCloudMusicPurchased": doDescribeCloudMusicPurchased,
+    "PutMusicOnTheShelves": doPutMusicOnTheShelves,
+    "SearchKTVMusics": doSearchKTVMusics,
 
 }
 

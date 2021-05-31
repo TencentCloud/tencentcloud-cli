@@ -1923,6 +1923,7 @@
         {
           "default": "",
           "document": "固件版本",
+          "example": "1.0.0",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -1932,6 +1933,7 @@
         {
           "default": "",
           "document": "固件MD5值",
+          "example": "bd9dc3549a0d75bb242d9d4f5842f221",
           "member": "string",
           "name": "Md5sum",
           "required": true,
@@ -1941,6 +1943,7 @@
         {
           "default": "",
           "document": "固件创建时间",
+          "example": "1619322032",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
@@ -1950,6 +1953,7 @@
         {
           "default": "",
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "productName",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -1959,6 +1963,7 @@
         {
           "default": "",
           "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "firmwareName",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1968,6 +1973,7 @@
         {
           "default": "",
           "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "firmwareDesc",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1977,8 +1983,19 @@
         {
           "default": "",
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "productId",
           "member": "string",
           "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "固件升级模块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3976,6 +3993,15 @@
           "example": "version1.0固件",
           "member": "string",
           "name": "FirmwareDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件升级模块；可选值 mcu|moudule",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
           "required": false,
           "type": "string"
         }

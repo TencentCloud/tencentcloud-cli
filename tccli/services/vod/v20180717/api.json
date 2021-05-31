@@ -8683,7 +8683,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询指标，取值有：\n<li>Traffic：流量，单位为 Byte。</li>\n<li>Bandwidth：带宽，单位为 Bps。</li>",
+          "document": "查询指标，取值有：\n<li>Traffic：流量，单位为 Byte。</li>\n<li>Bandwidth：带宽，单位为 Bps。</li>\n<li>Requests：请求数。</li>",
           "example": "无",
           "member": "string",
           "name": "Metric",
@@ -10147,6 +10147,7 @@
         {
           "default": "",
           "document": "起始时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2018-12-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -10155,6 +10156,7 @@
         {
           "default": "",
           "document": "结束时间，需大于开始日期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2018-12-07T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -10163,6 +10165,7 @@
         {
           "default": "",
           "document": "统计时间粒度，有效值：\n<li>Minute：以5分钟为粒度。</li>\n<li>Day：以天为粒度。</li>\n默认按时间跨度决定，小于等于1天以5分钟为粒度，大于1天则以天为粒度。",
+          "example": "Minute",
           "member": "string",
           "name": "Interval",
           "required": false,
@@ -10170,7 +10173,8 @@
         },
         {
           "default": "",
-          "document": "查询的存储类型，有效值：\n<li>TotalStorage：存储总量。</li>\n<li>StandardStorage：标准存储。</li>\n<li>InfrequentStorage：低频存储。</li>\n默认值为 TotalStorage。",
+          "document": "查询的存储类型，有效值：\n<li>TotalStorage：存储总量，标准、低频、归档和深度归档存储量之和，不含提前删除量。</li>\n<li>StandardStorage：标准存储。</li>\n<li>InfrequentStorage：低频存储。</li>\n<li>ArchiveStorage：归档存储。</li>\n<li>DeepArchiveStorage：深度归档存储。</li>\n<li>DeletedArchiveStorage：归档提前删除量。</li>\n<li>DeletedDeepArchiveStorage：深度归档提前删除量。\n<li>ArchiveStandardRetrieval：归档标准取回量。</li>\n<li>ArchiveExpeditedRetrieval：归档快速取回量。</li>\n<li>ArchiveBulkRetrieval：归档批量取回量。</li>\n<li>DeepArchiveStandardRetrieval：深度归档标准取回量。</li>\n<li>DeepArchiveBulkRetrieval：深度归档批量取回量。</li>\n默认值为 TotalStorage。",
+          "example": "StandardStorage",
           "member": "string",
           "name": "StorageType",
           "required": false,
@@ -10179,6 +10183,7 @@
         {
           "default": "",
           "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。\n当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。",
+          "example": "1450001234",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -10187,6 +10192,7 @@
         {
           "default": "",
           "document": "查询的存储区域，有效值：\n<li>Chinese Mainland：中国境内（不包含港澳台）。</li>\n<li>Outside Chinese Mainland：中国境外。</li>\n默认值为 Chinese Mainland。",
+          "example": "Chinese Mainland",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -10200,8 +10206,10 @@
       "members": [
         {
           "document": "存储统计数据，每5分钟或每天一条数据。",
+          "example": "无",
           "member": "StatDataItem",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10580,7 +10588,7 @@
         },
         {
           "default": "",
-          "document": "(该字段暂不支持)\n排序方式。Sort.Field 可选：\n<li> CreateTime 任务创建时间。</li>\n<li>FinishTime 任务结束时间。</li>",
+          "document": "排序方式。Sort.Field 可选：\n<li> CreateTime 任务创建时间。</li>\n<li>FinishTime 任务结束时间。</li>",
           "example": "无",
           "member": "SortBy",
           "name": "Sort",

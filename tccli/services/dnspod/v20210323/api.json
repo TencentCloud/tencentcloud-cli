@@ -449,7 +449,7 @@
         },
         {
           "default": "",
-          "document": "域名ID,域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain",
+          "document": "域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain",
           "example": "145521",
           "member": "int64",
           "name": "DomainId",
@@ -1511,7 +1511,7 @@
       "members": [
         {
           "default": "",
-          "document": "域名分组类型，默认为ALL",
+          "document": "域名分组类型，默认为ALL。可取值为ALL，MINE，SHARE，ISMARK，PAUSE，VIP，RECENT，SHARE_OUT。",
           "example": "ALL",
           "member": "string",
           "name": "Type",
@@ -1520,7 +1520,7 @@
         },
         {
           "default": "",
-          "document": "记录开始的偏移, 第一条记录为 0, 依次类推",
+          "document": "记录开始的偏移, 第一条记录为 0, 依次类推。默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1529,7 +1529,7 @@
         },
         {
           "default": "",
-          "document": "要获取的域名数量, 比如获取20个, 则为20",
+          "document": "要获取的域名数量, 比如获取20个, 则为20。默认值为3000。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -1952,7 +1952,7 @@
         },
         {
           "default": "",
-          "document": "排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段",
+          "document": "排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。",
           "example": "type",
           "member": "string",
           "name": "SortField",
@@ -1961,7 +1961,7 @@
         },
         {
           "default": "",
-          "document": "排序方式，正序：ASC，逆序：DESC",
+          "document": "排序方式，正序：ASC，逆序：DESC。默认值为ASC。",
           "example": "asc",
           "member": "string",
           "name": "SortType",
@@ -1970,7 +1970,7 @@
         },
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量，默认值为0。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1979,7 +1979,7 @@
         },
         {
           "default": "",
-          "document": "限制数量，当前Limit最大支持3000",
+          "document": "限制数量，当前Limit最大支持3000。默认值为3000。",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -3071,7 +3071,7 @@
         },
         {
           "default": "",
-          "document": "域名状态，”enable” 、”disable” 分别代表启用和暂",
+          "document": "域名状态，”enable” 、”disable” 分别代表启用和暂停",
           "example": "enable",
           "member": "string",
           "name": "Status",

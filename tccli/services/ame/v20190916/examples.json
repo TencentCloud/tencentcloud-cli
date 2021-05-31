@@ -40,6 +40,14 @@
         "title": "获取分类内容下歌曲列表"
       }
     ],
+    "DescribeKTVMusicDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicDetail\n<公共请求参数>\n\n{\n    \"MusicId\": \"ame-78d2xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayToken\": \"DUE3344xxxxxx\",\n        \"KTVMusicBaseInfo\": {\n            \"ComposerSet\": [\n                \"周杰伦\"\n            ],\n            \"MusicId\": \"ame-78d2xxx\",\n            \"SingerSet\": [\n                \"周杰伦\"\n            ],\n            \"Name\": \"七里香\",\n            \"LyricistSet\": [\n                \"方文山\"\n            ],\n            \"TagSet\": [\n                \"华语\",\n                \"流行\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询 KTV 曲目详情"
+      }
+    ],
     "DescribeLyric": [
       {
         "document": "",
@@ -108,6 +116,14 @@
         "input": "https://ame.tencentcloudapi.com/?Action=ReportData\n&ReportData=1f8b08000000000000007xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1578300559628971903\"\n    }\n}",
         "title": "上报歌曲播放数据"
+      }
+    ],
+    "SearchKTVMusics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKTVMusics\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"KeyWord\": \"周杰伦\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"方文山\"\n                ],\n                \"MusicId\": \"ame-78dxxx\",\n                \"SingerSet\": [\n                    \"周杰伦\"\n                ],\n                \"Name\": \"七里香\",\n                \"LyricistSet\": [\n                    \"周杰伦\"\n                ],\n                \"TagSet\": [\n                    \"华语\",\n                    \"流行\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "搜索 KTV 歌曲"
       }
     ],
     "TakeMusicOffShelves": [

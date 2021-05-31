@@ -1151,6 +1151,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cynosdbmysql-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1160,6 +1161,7 @@
         {
           "default": "",
           "document": "集群名称",
+          "example": "cynosdbmysql-xxx",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -1169,6 +1171,7 @@
         {
           "default": "",
           "document": "地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1178,6 +1181,7 @@
         {
           "default": "",
           "document": "状态",
+          "example": "running",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1187,6 +1191,7 @@
         {
           "default": "",
           "document": "状态描述",
+          "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
           "required": true,
@@ -1196,6 +1201,7 @@
         {
           "default": "",
           "document": "VPC名称",
+          "example": "Default-VPC",
           "member": "string",
           "name": "VpcName",
           "required": true,
@@ -1205,6 +1211,7 @@
         {
           "default": "",
           "document": "vpc唯一id",
+          "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1214,6 +1221,7 @@
         {
           "default": "",
           "document": "子网名称",
+          "example": "Default-Subnet",
           "member": "string",
           "name": "SubnetName",
           "required": true,
@@ -1223,6 +1231,7 @@
         {
           "default": "",
           "document": "子网ID",
+          "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1232,6 +1241,7 @@
         {
           "default": "",
           "document": "字符集",
+          "example": "utf8",
           "member": "string",
           "name": "Charset",
           "required": true,
@@ -1241,6 +1251,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "\"2021-05-25 19:23:31\"",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -1250,6 +1261,7 @@
         {
           "default": "",
           "document": "数据库类型",
+          "example": "MYSQL",
           "member": "string",
           "name": "DbType",
           "required": true,
@@ -1259,6 +1271,7 @@
         {
           "default": "",
           "document": "数据库版本",
+          "example": "5.7",
           "member": "string",
           "name": "DbVersion",
           "required": true,
@@ -1268,6 +1281,7 @@
         {
           "default": "",
           "document": "使用容量",
+          "example": "100",
           "member": "int64",
           "name": "UsedStorage",
           "required": true,
@@ -1277,6 +1291,7 @@
         {
           "default": "",
           "document": "读写分离Vport",
+          "example": "无",
           "member": "Addr",
           "name": "RoAddr",
           "required": true,
@@ -1286,6 +1301,7 @@
         {
           "default": "",
           "document": "实例信息",
+          "example": "无",
           "member": "ClusterInstanceDetail",
           "name": "InstanceSet",
           "required": true,
@@ -1295,6 +1311,7 @@
         {
           "default": "",
           "document": "付费模式",
+          "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": true,
@@ -1304,6 +1321,7 @@
         {
           "default": "",
           "document": "到期时间",
+          "example": "\"2021-05-25 19:23:31\"",
           "member": "string",
           "name": "PeriodEndTime",
           "required": true,
@@ -1313,6 +1331,7 @@
         {
           "default": "",
           "document": "vip地址",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -1322,6 +1341,7 @@
         {
           "default": "",
           "document": "vport端口",
+          "example": "3306",
           "member": "int64",
           "name": "Vport",
           "required": true,
@@ -1331,6 +1351,7 @@
         {
           "default": "",
           "document": "项目id",
+          "example": "0",
           "member": "int64",
           "name": "ProjectID",
           "required": true,
@@ -1340,6 +1361,7 @@
         {
           "default": "",
           "document": "可用区",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1349,10 +1371,21 @@
         {
           "default": "",
           "document": "实例绑定的tag数组信息",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当Db类型为SERVERLESS时，serverless集群状态，可选值:\nresume\nresuming\npause\npausing",
+          "example": "resume",
+          "member": "string",
+          "name": "ServerlessStatus",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

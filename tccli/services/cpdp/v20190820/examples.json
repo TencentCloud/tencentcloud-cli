@@ -104,6 +104,14 @@
         "title": "关闭订单请求示例"
       }
     ],
+    "ContractOrder": [
+      {
+        "document": "应用需要先带上签约信息调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=ContractOrder\n&CurrencyType=CNY\n&MidasAppId=your_midas_app_id\n&OutTradeNo=your_order_no\n&ProductDetail=商品详情\n&ProductId=your_product_id\n&ProductName=商品名称\n&TotalAmt=1\n&UserId=your_user_id\n&Channel=wechat\n&Quantity=1\n&RealChannel=bank_pingan\n&SubAppId=your_sub_app_id\n&TotalMchIncome=1\n&TotalPlatformIncome=0\n&WxSubOpenId=your_wx_sub_open_id\n&OriginalAmt=1\n&MidasSecretId=your_midas_secret_id\n&MidasSignature=your_midas_signature\n&WxAppId=your_wx_app_id\n&WxSubAppId=your_wx_sub_app_id\n&SubOrderList.0.SubMchIncome=1\n&SubOrderList.0.PlatformIncome=0\n&SubOrderList.0.ProductDetail=商品详情\n&SubOrderList.0.ProductName=商品名称\n&SubOrderList.0.SubAppId=your_sub_app_id\n&SubOrderList.0.SubOutTradeNo=your_sub_order_no\n&SubOrderList.0.Amt=1\n&SubOrderList.0.OriginalAmt=1\n&SubOrderList.0.Metadata=xxx\n&PaymentNotifyUrl=http://cloud.tencent.com\n&ContractNotifyUrl=http://cloud.tencent.com\n&ExternalContractData={\\\"plan_id\\\":\\\"138096\\\",\\\"contract_code\\\":\\\"your_contract_code\\\",\\\"wx_app_id\\\":\\\"wxa384c55535723da0\\\",\\\"wx_sub_app_id\\\":\\\"wxa384c55535723da0\\\"}\n&OutContractCode=your_contract_code\n&AttachData=your_attach_data\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalAmt\": 1,\n        \"OutTradeNo\": \"your_order_no\",\n        \"OutContractCode\": \"your_contract_code\",\n        \"TransactionId\": \"E-191018160200005000\",\n        \"PayInfo\": \"data=%7B%22appid%22%3A%22unibank10001%22%2C%22user_id%22%3A%22user123%22%2C%22out_trade_no%22%3A%22mikeuf1910181230%22%2C%22product_id%22%3A%22product_111%22%7D&sign=sign\",\n        \"RequestId\": \"6a895298-cd08-4170-b8e2-eeda98794a16\"\n    }\n}",
+        "title": "支付中签约请求示例"
+      }
+    ],
     "CreateAcct": [
       {
         "document": "用于子商户入驻的场景。",
@@ -374,6 +382,14 @@
         "title": "QueryCommonTransferRecharge"
       }
     ],
+    "QueryContract": [
+      {
+        "document": "",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryContract\n&MidasAppId=SAM001\n&SubAppId=xxx\n&UserId=taddeng111\n&Channel=wechat\n&ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE\n&OutContractCode=miketest_contract_0511001\n&ContractSceneId=APP-GENERAL\n&ChannelContractCode=xxx\n&ExternalContractData=xxx\n&MidasEnvironment=dev\n&MidasSignature=xxx\n&MidasSecretId=xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"\",\n        \"RequestId\": \"b9469088-bd71-4ccf-99fe-6fd51e6a29c6\",\n        \"ContractData\": {\n            \"ChannelSubMerchantId\": \"\",\n            \"ChannelAppId\": \"SAM001\",\n            \"ChannelName\": \"wechat\",\n            \"ExternalReturnCode\": \"SUCCESS\",\n            \"ExternalReturnMessage\": \"\",\n            \"ExternalReturnData\": \"<xml><return_code><![CDATA[SUCCESS]]></return_code>\\n<result_code><![CDATA[SUCCESS]]></result_code>\\n<mch_id><![CDATA[1600317581]]></mch_id>\\n<appid><![CDATA[wxa384c55535723da0]]></appid>\\n<contract_id><![CDATA[202105115706341423]]></contract_id>\\n<plan_id>138096</plan_id>\\n<openid><![CDATA[o6khq5FNTcJTADCsk9uXSV6djzvE]]></openid>\\n<request_serial>1620703959</request_serial>\\n<contract_code><![CDATA[miketest_contract_0511001]]></contract_code>\\n<contract_display_account><![CDATA[甘丽娜]]></contract_display_account>\\n<contract_state>1</contract_state>\\n<contract_signed_time><![CDATA[2021-05-11 11:34:22]]></contract_signed_time>\\n<contract_expired_time><![CDATA[2031-05-09 11:34:22]]></contract_expired_time>\\n<contract_terminated_time><![CDATA[2021-05-11 20:41:07]]></contract_terminated_time>\\n<contract_termination_mode>3</contract_termination_mode>\\n<contract_termination_remark><![CDATA[test]]></contract_termination_remark>\\n<err_code>0</err_code>\\n<err_code_des><![CDATA[SUCCESS]]></err_code_des>\\n<sign><![CDATA[AF82AA6BA9B3064F54FEC7C3B104ABAC]]></sign>\\n</xml>\",\n            \"NotifyUrl\": \"https://dev.tke.midas.qq.com/node/vereinen/util/dump/empty_req/post\",\n            \"ChannelSubAppId\": \"\",\n            \"ChannelMerchantId\": \"SAM001\",\n            \"ReturnContractInfo\": {\n                \"ChannelReturnContractInfo\": {\n                    \"ContractStatus\": \"CONTRACT_STATUS_TERMINATED\",\n                    \"ChannelContractInfo\": {\n                        \"ChannelContractCode\": \"miketest_contract_0511001\",\n                        \"OutContractCode\": \"miketest_contract_0511001\"\n                    }\n                },\n                \"ExternalReturnContractInfo\": {\n                    \"ExternalReturnContractSignedTimestamp\": \"2021-05-11T11:34:22Z\",\n                    \"ExternalReturnContractTerminationTimestamp\": \"2021-05-11T20:41:07Z\",\n                    \"ExternalReturnContractEffectiveTimestamp\": \"1970-01-01T00:00:00Z\",\n                    \"ExternalReturnAgreementId\": \"202105115706341423\",\n                    \"ExternalReturnContractData\": \"{\\\"contract_id\\\":\\\"202105115706341423\\\"}\",\n                    \"ExternalReturnRequestId\": \"1620703959\",\n                    \"ExternalReturnContractTerminationRemark\": \"test\",\n                    \"ExternalReturnContractExpiredTimestamp\": \"2031-05-09T11:34:22Z\",\n                    \"ExternalReturnContractStatus\": \"CONTRACT_STATUS_TERMINATED\",\n                    \"ExternalReturnContractTerminationMode\": \"CONTRACT_TERMINATION_MODE_TERMINATED_BY_MERCHANT_API\"\n                },\n                \"ContractInfo\": {\n                    \"ChannelContractMerchantId\": \"SAM001\",\n                    \"ChannelContractSubMerchantId\": \"\",\n                    \"ChannelContractSubAppId\": \"\",\n                    \"ContractSceneId\": \"APP-GENERAL\",\n                    \"ContractMethod\": \"wechat_jsapi\",\n                    \"ChannelContractAppId\": \"SAM001\",\n                    \"ExternalContractUserInfoList\": [],\n                    \"UserInfo\": {\n                        \"UserType\": \"USER_ID\",\n                        \"UserId\": \"taddeng111\"\n                    },\n                    \"OutContractCode\": \"miketest_contract_0511001\",\n                    \"ExternalContractData\": \"\"\n                }\n            }\n        }\n    }\n}",
+        "title": "查询签约关系"
+      }
+    ],
     "QueryCustAcctIdBalance": [
       {
         "document": "",
@@ -618,6 +634,22 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=RevokeRechargeByThirdPay\r\n&<公共请求参数>\r\n&MidasSecretId=1587005497659\r\n&MidasSignature=111\r\n&MidasAppId=unibank10001\r\n&RequestType=MemberRechargeThirdPayReq\r\n&OrderId=2020042180081\r\n&PlatformShortNumber=F08872\r\n&AcquiringChannelType=04\r\n&BankAccountNumber=15000093978307\r\n&PayChannelSubId=1\r\n&PayChannel=bank_pingan\r\n&MerchantCode=4087\r\n&TransSequenceNumber=F088722004270543493495\r\n&OldFrontSequenceNumber=F088722004270543493495\r\n&TranNetMemberCode=xxx\r\n&BankSubAccountNumber=xx\r\n&TransFee=xxx\r\n&ThirdPayChannel=0001\r\n&ThirdPayChannelOrderId=xxxx\r\n&CurrencyAmount=1\r\n&CurrencyUnit=1\r\n&CurrencyType=RMB\r\n&MidasEnvironment=dev",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c96c4eb-ab02-4ba6-a6c6-7d97c698b127\",\n        \"RequestType\": \"MemberRechargeThirdPayAns\",\n        \"FrontSequenceNumber\": \"2005080253306846\",\n        \"ReservedMessage\": \"\"\n    }\n}",
         "title": "撤销在途充值"
+      }
+    ],
+    "SyncContractData": [
+      {
+        "document": "",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=SyncContractData\n&MidasAppId=SAM001\n&SubAppId=xxx\n&UserId=taddeng111\n&Channel=wechat\n&OutContractCode=miketest_contract_0511001\n&ContractStatus=CONTRACT_STATUS_SIGNED\n&MidasEnvironment=dev\n&MidasSignature=xxx\n&MidasSecretId=xxxx\n&ContractSyncInfo.ExternalReturnContractInfo.ExternalReturnAgreementId=sdsdsds\n&ContractSyncInfo.ExternalReturnContractInfo.ExternalReturnContractData=sdsdsds\n&ContractSyncInfo.ExternalReturnContractInfo.ExternalReturnContractStatus=1620872255\n&ContractSyncInfo.ExternalReturnContractInfo.ExternalReturnRequestId=ExternalReturnRequestId\n&ContractSyncInfo.ExternalContractUserInfo.0.ExternalUserType=User_Id\n&ContractSyncInfo.ExternalContractUserInfo.0.ExternalUserId=taddeng111\n&ContractSyncInfo.ContractMethod=APP-GENERAL\n&ContractSyncInfo.ExternalReturnContractInfo.ExternalReturnContractEffectiveTimestamp=xxxx\n&ContractSyncInfo.ExternalReturnContractInfo.ExternalReturnContractTerminationTimestamp=xxx\n&ContractSyncInfo.ExternalReturnContractInfo.ExternalReturnContractSignedTimestamp=xxxxx\n&ContractSyncInfo.ExternalReturnContractInfo.ExternalReturnContractExpiredTimestamp=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b4d0899-6bc5-4261-acc8-29c1f3d29882\",\n        \"Msg\": \"\"\n    }\n}",
+        "title": "签约状态同步接口"
+      }
+    ],
+    "TerminateContract": [
+      {
+        "document": "",
+        "input": "https://cpdp.tencentcloudapi.com/?Action=TerminateContract\n&MidasAppId=SAM001\n&SubAppId=xxx\n&UserId=taddeng111\n&Channel=wechat\n&TerminateMode=CONTRACT_TERMINATION_MODE_BY_OUT_CONTRACT_CODE\n&OutContractCode=miketest_contract_0512001\n&ContractSceneId=APP-GENERAL\n&ChannelContractCode=xxx\n&ExternalContractData=xxx\n&TerminationReason=testreason测试原因\n&MidasSecretId=xxx\n&MidasSignature=xxxx\n&MidasEnvironment=dev\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ContractTerminateData\": {\n            \"ExternalReturnMessage\": \"\",\n            \"ExternalReturnCode\": \"SUCCESS\",\n            \"ExternalReturnData\": \"\"\n        },\n        \"Msg\": \"\",\n        \"RequestId\": \"cb99c2eb-4581-42bc-9f7b-a18571264f91\"\n    }\n}",
+        "title": "解除签约关系接口"
       }
     ],
     "TransferSinglePay": [

@@ -304,7 +304,7 @@
         },
         {
           "default": "",
-          "document": "年限",
+          "document": "年限。该参数为空时无法查询溢价词域名",
           "example": "1",
           "member": "string",
           "name": "Period",

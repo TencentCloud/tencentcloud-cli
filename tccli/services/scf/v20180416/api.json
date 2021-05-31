@@ -4989,15 +4989,8 @@
       "members": [
         {
           "default": "",
-          "document": "函数处理方法名称。名称格式支持“文件名称.函数名称”形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求 2-60 个字符",
-          "member": "string",
-          "name": "Handler",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "要修改的函数名称",
+          "example": "test",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -5005,7 +4998,17 @@
         },
         {
           "default": "",
+          "document": "函数处理方法名称。名称格式支持“文件名称.函数名称”形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求 2-60 个字符",
+          "example": "index.main",
+          "member": "string",
+          "name": "Handler",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "对象存储桶名称",
+          "example": "<CosBucketName>",
           "member": "string",
           "name": "CosBucketName",
           "required": false,
@@ -5014,6 +5017,7 @@
         {
           "default": "",
           "document": "对象存储对象路径",
+          "example": "<CosObjectName>",
           "member": "string",
           "name": "CosObjectName",
           "required": false,
@@ -5022,6 +5026,7 @@
         {
           "default": "",
           "document": "包含函数代码文件及其依赖项的 zip 格式文件，使用该接口时要求将 zip 文件的内容转成 base64 编码，最大支持20M",
+          "example": "<base64>",
           "member": "string",
           "name": "ZipFile",
           "required": false,
@@ -5030,6 +5035,7 @@
         {
           "default": "",
           "document": "函数所属命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5038,6 +5044,7 @@
         {
           "default": "",
           "document": "对象存储的地域，注：北京分为ap-beijing和ap-beijing-1",
+          "example": "ap-beijing",
           "member": "string",
           "name": "CosBucketRegion",
           "required": false,
@@ -5046,6 +5053,7 @@
         {
           "default": "",
           "document": "函数所属环境",
+          "example": "<函数所属环境>",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -5054,6 +5062,7 @@
         {
           "default": "",
           "document": "在更新时是否同步发布新版本，默认为：FALSE，不发布",
+          "example": "FALSE",
           "member": "string",
           "name": "Publish",
           "required": false,
@@ -5062,6 +5071,7 @@
         {
           "default": "",
           "document": "函数代码",
+          "example": "无",
           "member": "Code",
           "name": "Code",
           "required": false,
@@ -5070,6 +5080,7 @@
         {
           "default": "",
           "document": "代码来源方式，支持 ZipFile, Cos, Inline 之一",
+          "example": "Cos",
           "member": "string",
           "name": "CodeSource",
           "required": false,
