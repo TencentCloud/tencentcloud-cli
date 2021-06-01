@@ -3400,6 +3400,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。",
+          "example": "base64编码",
           "member": "string",
           "name": "ImageBase64",
           "required": true,
@@ -3408,6 +3409,7 @@
         {
           "default": "",
           "document": "是否返回图片，默认false",
+          "example": "false",
           "member": "bool",
           "name": "RetImage",
           "required": false,
@@ -3421,71 +3423,91 @@
       "members": [
         {
           "document": "护照ID",
+          "example": "E6918C",
           "member": "string",
           "name": "ID",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "姓名",
+          "example": "LIM HEG CHUN STEE",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "出生日期",
+          "example": "无",
           "member": "string",
           "name": "DateOfBirth",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "性别（F女，M男）",
+          "example": "M",
           "member": "string",
           "name": "Sex",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "有效期",
+          "example": "230414",
           "member": "string",
           "name": "DateOfExpiration",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "发行国",
+          "example": "SGP",
           "member": "string",
           "name": "IssuingCountry",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "国籍",
+          "example": "SGP",
           "member": "string",
           "name": "Nationality",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "告警码\n-9103\t证照翻拍告警\n-9102\t证照复印件告警\n-9106       证件遮挡告警",
+          "example": "[]",
           "member": "int64",
           "name": "Warn",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "证件图片",
+          "example": "无",
           "member": "string",
           "name": "Image",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "扩展字段:\n{\n    ID:{\n        Confidence:0.9999\n    },\n    Name:{\n        Confidence:0.9996\n    }\n}",
+          "example": "{\"IssuingCountry\":{\"Confidence\":\"0.9500\"},\"Name\":{\"Confidence\":\"0.9500\"},\"ID\":{\"Confidence\":\"0.9500\"},\"Nationality\":{\"Confidence\":\"0.9500\"},\"Sex\":{\"Confidence\":\"0.9500\"},\"DateOfExpiration\":{\"Confidence\":\"0.9500\"}}",
           "member": "string",
           "name": "AdvancedInfo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

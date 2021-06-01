@@ -1,6 +1,6 @@
-**Example 1: 传输语音进行发音评估附带初始化过程（常用实践）**
+**Example 1: 发音数据传输接口附带初始化过程（常用实践）——英语句子**
 
-传输语音进行发音评估附带初始化过程（常用实践）——句子模式（Evalmode为1）
+句子评测模式（Evalmode为1，英语）：对句子“thank you”进行评测
 
 Input: 
 
@@ -13,9 +13,10 @@ tccli soe TransmitOralProcessWithInit --cli-unfold-argument  \
     --IsEnd 0 \
     --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5 \
     --WorkMode 0 \
-    --RefText again \
-    --EvalMode 0 \
-    --ScoreCoeff 3.5
+    --RefText thankyou \
+    --ServerType 0 \
+    --EvalMode 1 \
+    --ScoreCoeff 1.0
 ```
 
 Output: 
@@ -26,7 +27,7 @@ Output:
         "PronAccuracy": 99.52305,
         "PronFluency": 0.93664527,
         "PronCompletion": 1,
-        "RequestId": "1067cb5d-da3f-4205-b1c6-6b4632672a0e",
+        "RequestId": "1067cb5d-****-****-b1c6-6b*****72a0e",
         "Words": [
             {
                 "MemBeginTime": 2330,
@@ -100,7 +101,7 @@ Output:
                 ]
             }
         ],
-        "SessionId": "E6B94BA9-48C7-4DCF-8BDD-9C4B83205176",
+        "SessionId": "E6B94BA9-6***-B***-8***-9C4B****5176",
         "AudioUrl": "",
         "SentenceInfoSet": [
             {
@@ -185,6 +186,138 @@ Output:
             }
         ],
         "Status": "Evaluating"
+    }
+}
+```
+
+**Example 2: 发音数据传输接口附带初始化过程（常用实践）——中文汉字**
+
+单字评测模式（Evalmode为0，中文）：对汉字“叫”进行评测
+
+Input: 
+
+```
+tccli soe TransmitOralProcessWithInit --cli-unfold-argument  \
+    --SessionId stress_test_956938 \
+    --VoiceFileType 1 \
+    --SeqId 1 \
+    --VoiceEncodeType 1 \
+    --IsEnd 0 \
+    --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5 \
+    --WorkMode 0 \
+    --RefText 叫 \
+    --ServerType 1 \
+    --EvalMode 0 \
+    --ScoreCoeff 1.0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SuggestedScore": 52.00305,
+        "PronAccuracy": 52.00305,
+        "PronFluency": 0.89224815,
+        "PronCompletion": 1,
+        "RequestId": "59a97be8-4***-4***-b***-8458*****826",
+        "Words": [
+            {
+                "MemBeginTime": 1060,
+                "MemEndTime": 1980,
+                "PronAccuracy": 52.00305,
+                "PronFluency": 0.89224815,
+                "ReferenceWord": "",
+                "Word": "叫",
+                "MatchTag": 0,
+                "PhoneInfos": [
+                    {
+                        "MemBeginTime": 1060,
+                        "MemEndTime": 1310,
+                        "PronAccuracy": 61.52326,
+                        "DetectedStress": false,
+                        "Phone": "j",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 1310,
+                        "MemEndTime": 1600,
+                        "PronAccuracy": 0.15919228,
+                        "DetectedStress": false,
+                        "Phone": "i4",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 1600,
+                        "MemEndTime": 1980,
+                        "PronAccuracy": 73.16487,
+                        "DetectedStress": false,
+                        "Phone": "ao",
+                        "ReferencePhone": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    }
+                ]
+            }
+        ],
+        "SessionId": "B3617A2B-3***-4***-B***-7DB*****49B7",
+        "AudioUrl": "https://soe-125*****09.cos.ap-****.myqcloud.com/125*****49/default/20210527/audio/3a0a7c84-c***-4***-a***-a15ea9775a68.mp3",
+        "SentenceInfoSet": [
+            {
+                "SuggestedScore": 0,
+                "PronAccuracy": 52.00305,
+                "PronFluency": 0.89224815,
+                "PronCompletion": 1,
+                "Words": [
+                    {
+                        "MemBeginTime": 1060,
+                        "MemEndTime": 1980,
+                        "PronAccuracy": 52.00305,
+                        "PronFluency": 0.89224815,
+                        "ReferenceWord": "",
+                        "Word": "叫",
+                        "MatchTag": 0,
+                        "PhoneInfos": [
+                            {
+                                "MemBeginTime": 1060,
+                                "MemEndTime": 1310,
+                                "PronAccuracy": 61.52326,
+                                "DetectedStress": false,
+                                "Phone": "j",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 1310,
+                                "MemEndTime": 1600,
+                                "PronAccuracy": 0.15919228,
+                                "DetectedStress": false,
+                                "Phone": "i4",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 1600,
+                                "MemEndTime": 1980,
+                                "PronAccuracy": 73.16487,
+                                "DetectedStress": false,
+                                "Phone": "ao",
+                                "ReferencePhone": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            }
+                        ]
+                    }
+                ],
+                "SentenceId": -1
+            }
+        ],
+        "Status": "Finished"
     }
 }
 ```

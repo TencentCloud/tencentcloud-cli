@@ -553,6 +553,33 @@ def doModifyDBInstanceName(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDestroyHourDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MariadbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DestroyHourDBInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DestroyHourDBInstance(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDBInstanceSpecs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -788,6 +815,33 @@ def doInitDBInstances(args, parsed_globals):
     model = models.InitDBInstancesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.InitDBInstances(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyAccountPrivileges(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MariadbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAccountPrivilegesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyAccountPrivileges(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1394,6 +1448,7 @@ ACTION_MAP = {
     "ModifyDBInstancesProject": doModifyDBInstancesProject,
     "DescribeSqlLogs": doDescribeSqlLogs,
     "ModifyDBInstanceName": doModifyDBInstanceName,
+    "DestroyHourDBInstance": doDestroyHourDBInstance,
     "DescribeDBInstanceSpecs": doDescribeDBInstanceSpecs,
     "DescribeDBInstances": doDescribeDBInstances,
     "RenewDBInstance": doRenewDBInstance,
@@ -1403,6 +1458,7 @@ ACTION_MAP = {
     "CreateAccount": doCreateAccount,
     "OpenDBExtranetAccess": doOpenDBExtranetAccess,
     "InitDBInstances": doInitDBInstances,
+    "ModifyAccountPrivileges": doModifyAccountPrivileges,
     "ModifyBackupTime": doModifyBackupTime,
     "DescribeDBSlowLogs": doDescribeDBSlowLogs,
     "ModifyDBInstanceSecurityGroups": doModifyDBInstanceSecurityGroups,

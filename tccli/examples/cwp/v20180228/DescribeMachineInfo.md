@@ -13,25 +13,26 @@ Output:
 ```
 {
     "Response": {
-        "MachineType": "CVM",
-        "MachineRegion": "ap-guangzhou",
-        "InstanceId": "ins-ibqb87x3",
-        "MachineWanIp": "130.111.77.111",
-        "MachineIp": "10.104.248.0",
-        "MachineName": "开发机",
-        "MachineOs": "3.10.0-327.36.3.el7.x86_64",
-        "MachineStatus": "ONLINE",
-        "ProtectDays": 120,
-        "Quuid": "56af8eea-5a2a-4f0c-81ca-47208e7cd9b2",
-        "Uuid": "e3fcbf68-3bd6-11e8-8954-0819a624c497",
+        "ProVersionDeadline": "xx",
         "IsProVersion": true,
-        "PayMode": "PREPAY",
-        "ProVersionOpenDate": "2018-07-30 12:34:22",
-        "FreeMalwaresLeft": 1,
+        "MachineOs": "xx",
+        "Uuid": "xx",
+        "RequestId": "xx",
+        "HasAssetScan": 1,
+        "InstanceId": "xx",
+        "MachineName": "xx",
         "FreeVulsLeft": 1,
-        "RequestId": "ad31cc35-8523-42a2-93e0-b733ad247daa",
-        "ProVersionDeadline": "2018-07-30 00:00:00",
-        "AgentVersion": "2.0.0.1"
+        "MachineIp": "xx",
+        "PayMode": "xx",
+        "AgentVersion": "xx",
+        "MachineRegion": "xx",
+        "ProtectDays": 1,
+        "Quuid": "xx",
+        "FreeMalwaresLeft": 1,
+        "MachineStatus": "xx",
+        "MachineWanIp": "xx",
+        "MachineType": "xx",
+        "ProVersionOpenDate": "xx"
     }
 }
 ```

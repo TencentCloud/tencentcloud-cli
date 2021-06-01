@@ -310,7 +310,7 @@ def doDescribeDCDBSaleInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doOpenDBExtranetAccess(args, parsed_globals):
+def doDescribeFlow(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -326,9 +326,9 @@ def doOpenDBExtranetAccess(args, parsed_globals):
     client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.OpenDBExtranetAccessRequest()
+    model = models.DescribeFlowRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.OpenDBExtranetAccess(model)
+    rsp = client.DescribeFlow(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -715,7 +715,7 @@ def doKillSession(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDBInstanceSecurityGroups(args, parsed_globals):
+def doOpenDBExtranetAccess(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -731,9 +731,36 @@ def doModifyDBInstanceSecurityGroups(args, parsed_globals):
     client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDBInstanceSecurityGroupsRequest()
+    model = models.OpenDBExtranetAccessRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyDBInstanceSecurityGroups(model)
+    rsp = client.OpenDBExtranetAccess(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDestroyDCDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DestroyDCDBInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DestroyDCDBInstance(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1039,6 +1066,33 @@ def doDescribeDatabases(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDestroyHourDCDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DestroyHourDCDBInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DestroyHourDCDBInstance(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDBSecurityGroups(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1201,6 +1255,33 @@ def doDescribeDCDBRenewalPrice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyDBInstanceSecurityGroups(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDBInstanceSecurityGroupsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyDBInstanceSecurityGroups(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180411": dcdb_client_v20180411,
 
@@ -1223,7 +1304,7 @@ ACTION_MAP = {
     "DescribeUserTasks": doDescribeUserTasks,
     "ModifyDBParameters": doModifyDBParameters,
     "DescribeDCDBSaleInfo": doDescribeDCDBSaleInfo,
-    "OpenDBExtranetAccess": doOpenDBExtranetAccess,
+    "DescribeFlow": doDescribeFlow,
     "CloneAccount": doCloneAccount,
     "DescribeAccounts": doDescribeAccounts,
     "GrantAccountPrivileges": doGrantAccountPrivileges,
@@ -1238,7 +1319,8 @@ ACTION_MAP = {
     "AssociateSecurityGroups": doAssociateSecurityGroups,
     "DescribeDCDBPrice": doDescribeDCDBPrice,
     "KillSession": doKillSession,
-    "ModifyDBInstanceSecurityGroups": doModifyDBInstanceSecurityGroups,
+    "OpenDBExtranetAccess": doOpenDBExtranetAccess,
+    "DestroyDCDBInstance": doDestroyDCDBInstance,
     "UpgradeDCDBInstance": doUpgradeDCDBInstance,
     "ModifyDBSyncMode": doModifyDBSyncMode,
     "DescribeProjects": doDescribeProjects,
@@ -1250,12 +1332,14 @@ ACTION_MAP = {
     "DescribeDCDBShards": doDescribeDCDBShards,
     "CreateDCDBInstance": doCreateDCDBInstance,
     "DescribeDatabases": doDescribeDatabases,
+    "DestroyHourDCDBInstance": doDestroyHourDCDBInstance,
     "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
     "DescribeDatabaseTable": doDescribeDatabaseTable,
     "InitDCDBInstances": doInitDCDBInstances,
     "CreateAccount": doCreateAccount,
     "FlushBinlog": doFlushBinlog,
     "DescribeDCDBRenewalPrice": doDescribeDCDBRenewalPrice,
+    "ModifyDBInstanceSecurityGroups": doModifyDBInstanceSecurityGroups,
 
 }
 

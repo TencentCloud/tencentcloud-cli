@@ -6,76 +6,92 @@ Input:
 
 ```
 tccli dcdb DescribeDCDBInstances --cli-unfold-argument  \
-    --InstanceIds dcdbt-52s53yyh
+    --InstanceIds tdsqlshard-hptutl5t
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "f5301a70-8a4b-4e5e-b7e4-68d9c2f9c7c6",
-        "TotalCount": 1,
         "Instances": [
             {
-                "Id": 40965,
-                "InstanceId": "dcdbt-52s53yyh",
-                "InstanceName": "dcdbt-52s53yyh",
-                "AppId": 1251006373,
+                "AppId": 251000022,
+                "AutoRenewFlag": 1,
+                "Cpu": 2,
+                "CreateTime": "2021-03-26 16:14:31",
+                "DbEngine": "MariaDB",
+                "DbVersion": "10.1.9",
+                "DcnDstNum": 0,
+                "DcnFlag": 0,
+                "DcnStatus": 0,
+                "ExclusterId": "",
+                "Id": 2000091,
+                "InstanceId": "tdsqlshard-hptutl5t",
+                "InstanceName": "tdsqlshard-hptutl5t",
+                "InstanceType": 2,
+                "Ipv6Flag": 0,
+                "IsAuditSupported": 1,
+                "IsTmp": 0,
+                "IsolatedTimestamp": "0000-00-00 00:00:00",
+                "Locker": 0,
+                "Memory": 4,
+                "NodeCount": 2,
+                "Paymode": "prepaid",
+                "PeriodEndTime": "2021-04-26 16:14:31",
+                "Pid": 1001670,
                 "ProjectId": 0,
                 "Region": "ap-guangzhou",
-                "Zone": "ap-guangzhou-2",
-                "VpcId": 75203,
-                "SubnetId": 45109,
-                "UniqueVpcId": "vpc-5rkcp0wb",
-                "UniqueSubnetId": "subnet-6ffate6q",
-                "Status": 2,
-                "StatusDesc": "运行中",
-                "Vip": "172.17.0.10",
-                "Vport": 3306,
-                "WanDomain": "",
-                "WanVip": "",
-                "WanPort": 0,
-                "CreateTime": "2018-05-04 16:42:18",
-                "UpdateTime": "2018-05-20 18:04:17",
-                "AutoRenewFlag": 0,
-                "NodeCount": 2,
-                "IsTmp": 0,
-                "ExclusterId": "",
-                "Memory": 4,
-                "Storage": 20,
                 "ShardCount": 2,
-                "PeriodEndTime": "2018-05-11 16:42:18",
-                "IsolatedTimestamp": "0000-00-00 00:00:00",
-                "DbVersion": "10.1.9",
-                "DbEngine": "MySQL",
-                "Uin": "20548499",
-                "Pid": 11128,
                 "ShardDetail": [
                     {
-                        "ShardId": 10240,
-                        "ShardInstanceId": "shard-8m3rgssh",
-                        "ShardSerialId": "set_1525423498_1",
-                        "Status": 2,
-                        "Createtime": "2018-05-04 16:42:19",
+                        "Cpu": 1,
+                        "Createtime": "2021-03-26 16:14:31",
                         "Memory": 2,
-                        "Storage": 10,
-                        "Pid": 11128,
-                        "NodeCount": 2
+                        "NodeCount": 1,
+                        "Pid": 1001670,
+                        "ShardId": 12208,
+                        "ShardInstanceId": "shard-qihco4rx",
+                        "ShardSerialId": "set_1616746585_1",
+                        "Status": 2,
+                        "Storage": 10
                     },
                     {
-                        "ShardId": 10241,
-                        "ShardInstanceId": "shard-n8f80yrv",
-                        "ShardSerialId": "set_1525427618_3",
-                        "Status": 2,
-                        "Createtime": "2018-05-04 16:42:19",
+                        "Cpu": 1,
+                        "Createtime": "2021-03-26 16:14:31",
                         "Memory": 2,
-                        "Storage": 10,
-                        "Pid": 11128,
-                        "NodeCount": 2
+                        "NodeCount": 1,
+                        "Pid": 1001670,
+                        "ShardId": 12209,
+                        "ShardInstanceId": "shard-d3moxo2r",
+                        "ShardSerialId": "set_1616746676_3",
+                        "Status": 2,
+                        "Storage": 10
                     }
-                ]
+                ],
+                "Status": 2,
+                "StatusDesc": "运行中",
+                "Storage": 20,
+                "SubnetId": 1479311,
+                "Uin": "918700682",
+                "UniqueSubnetId": "subnet-au6ics6s",
+                "UniqueVpcId": "vpc-737mtr2f",
+                "UpdateTime": "2021-03-29 15:35:33",
+                "Vip": "10.1.0.6",
+                "Vipv6": "",
+                "VpcId": 74809,
+                "Vport": 3306,
+                "WanDomain": "",
+                "WanPort": 0,
+                "WanPortIpv6": 0,
+                "WanStatus": 0,
+                "WanStatusIpv6": 0,
+                "WanVip": "",
+                "WanVipv6": "",
+                "Zone": "ap-guangzhou-1"
             }
-        ]
+        ],
+        "RequestId": "a44a3d24-1e71-4bbf-bc22-f6d583b084d8",
+        "TotalCount": 1
     }
 }
 ```

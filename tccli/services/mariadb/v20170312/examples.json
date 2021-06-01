@@ -99,8 +99,8 @@
     "DescribeDBInstances": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBInstances\n&InstanceIds.0=tdsql-722d255z\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6838d283-fdd9-419c-aabe-df6ee5cf42a7\",\n        \"TotalCount\": 1,\n        \"Instances\": [\n            {\n                \"InstanceId\": \"tdsql-722d255z\",\n                \"InstanceName\": \"tdsql-722d255z\",\n                \"AppId\": 1251006373,\n                \"OriginSerialId\": \"set_1524577391_54095887\",\n                \"ProjectId\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"VpcId\": 75203,\n                \"SubnetId\": 45109,\n                \"UniqueVpcId\": \"vpc-5rkcp0wb\",\n                \"UniqueSubnetId\": \"subnet-6ffate6q\",\n                \"Status\": 2,\n                \"Vip\": \"172.17.0.8\",\n                \"Vport\": 3306,\n                \"WanDomain\": \"\",\n                \"WanVip\": \"\",\n                \"WanPort\": 0,\n                \"CreateTime\": \"2018-04-24 21:40:59\",\n                \"UpdateTime\": \"2018-04-24 22:25:59\",\n                \"AutoRenewFlag\": 0,\n                \"NodeCount\": 2,\n                \"Id\": 40964,\n                \"IsTmp\": 0,\n                \"ExclusterId\": \"\",\n                \"Memory\": 2,\n                \"Storage\": 30,\n                \"Qps\": 2100,\n                \"Pid\": 10890,\n                \"PeriodEndTime\": \"2018-05-02 21:40:59\",\n                \"Uin\": \"20548499\",\n                \"TdsqlVersion\": \"基于MariaDB 10.1.9设计(兼容MySQL 5.6)\"\n            }\n        ]\n    }\n}",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBInstances\n&InstanceIds.0=tdsql-dj77jd0p\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"AppId\": 251000022,\n                \"AutoRenewFlag\": 1,\n                \"Cpu\": 1,\n                \"CreateTime\": \"2021-03-26 15:28:23\",\n                \"DbEngine\": \"Percona\",\n                \"DbVersion\": \"5.7.17\",\n                \"DcnDstNum\": 0,\n                \"DcnFlag\": 0,\n                \"DcnStatus\": 0,\n                \"ExclusterId\": \"\",\n                \"Id\": 2000090,\n                \"InstanceId\": \"tdsql-dj77jd0p\",\n                \"InstanceName\": \"tdsql-dj77jd0p\",\n                \"InstanceType\": 2,\n                \"Ipv6Flag\": 0,\n                \"IsAuditSupported\": 1,\n                \"IsEncryptSupported\": 1,\n                \"IsTmp\": 0,\n                \"Locker\": 0,\n                \"Machine\": \"TS85\",\n                \"Memory\": 2,\n                \"NodeCount\": 2,\n                \"OriginSerialId\": \"set_1616743781_36017514\",\n                \"Paymode\": \"prepaid\",\n                \"PeriodEndTime\": \"2021-04-26 15:28:23\",\n                \"Pid\": 1002231,\n                \"ProjectId\": 0,\n                \"Qps\": 2100,\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 10,\n                \"SubnetId\": 1479311,\n                \"TdsqlVersion\": \"基于Percona 5.7.17设计(兼容Mysql 5.7)\",\n                \"Uin\": \"918700682\",\n                \"UniqueSubnetId\": \"subnet-au6ics6s\",\n                \"UniqueVpcId\": \"vpc-737mtr2f\",\n                \"UpdateTime\": \"2021-03-29 17:20:05\",\n                \"Vip\": \"10.1.0.10\",\n                \"Vipv6\": \"\",\n                \"VpcId\": 74809,\n                \"Vport\": 3306,\n                \"WanDomain\": \"\",\n                \"WanPort\": 0,\n                \"WanPortIpv6\": 0,\n                \"WanStatus\": 0,\n                \"WanStatusIpv6\": 0,\n                \"WanVip\": \"\",\n                \"WanVipv6\": \"\",\n                \"Zone\": \"ap-guangzhou-1\"\n            }\n        ],\n        \"RequestId\": \"66c4d0c5-bdef-45bd-aa5b-05642802d034\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "根据实例ID查询实例列表"
       }
     ],
@@ -270,6 +270,14 @@
         "title": "查询扩容云数据库实例的价格"
       }
     ],
+    "DestroyHourDBInstance": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DestroyHourDBInstance\n&InstanceId=tdsql-avw0207d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"FlowId\": 100,\n        \"InstanceId\": \"tdsql-avw0207d\"\n    }\n}",
+        "title": "请求示例DEMO"
+      }
+    ],
     "DisassociateSecurityGroups": [
       {
         "document": "",
@@ -316,6 +324,14 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyAccountDescription\r\n&InstanceId=tdsql-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&Description=用于测试的账号\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aef9be24-4d49-4358-8022-3405a361fd3b\"\n    }\n}",
         "title": "修改云数据库账号备注"
+      }
+    ],
+    "ModifyAccountPrivileges": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&InstanceId=tdsql-f35wr6wj\n&Accounts.0.User=ajnnw\n&GlobalPrivileges.0=SELECT\n&Accounts.0.Host=127.0.0.1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 145623\n    }\n}",
+        "title": "请求示例DEMO"
       }
     ],
     "ModifyBackupTime": [
@@ -393,7 +409,7 @@
     "RestartDBInstances": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=RestartDBInstances\r\n&InstanceIds.0=tdsql-fdpjf5zh\r\n&<公共请求参数>",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=RestartDBInstances\n&InstanceIds.0=tdsql-fdpjf5zh\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1003623,\n        \"RequestId\": \"1ec14227-d149-4b32-8654-01fb6eaf3bfd\"\n    }\n}",
         "title": "重启数据库实例tdsql-fdpjf5zh"
       }

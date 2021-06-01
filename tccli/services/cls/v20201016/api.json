@@ -1,0 +1,3608 @@
+{
+  "actions": {
+    "CreateAlarm": {
+      "document": "本接口用于创建告警策略。",
+      "input": "CreateAlarmRequest",
+      "name": "创建告警策略",
+      "output": "CreateAlarmResponse"
+    },
+    "CreateAlarmNotice": {
+      "document": "该接口用户创建告警通知模板。",
+      "input": "CreateAlarmNoticeRequest",
+      "name": "创建告警通知模板",
+      "output": "CreateAlarmNoticeResponse"
+    },
+    "CreateExport": {
+      "document": "本接口用于创建日志导出",
+      "input": "CreateExportRequest",
+      "name": "创建日志导出",
+      "output": "CreateExportResponse"
+    },
+    "CreateIndex": {
+      "document": "本接口用于创建索引",
+      "input": "CreateIndexRequest",
+      "name": "创建索引",
+      "output": "CreateIndexResponse"
+    },
+    "CreateMachineGroup": {
+      "document": "创建机器组",
+      "input": "CreateMachineGroupRequest",
+      "name": "创建机器组",
+      "output": "CreateMachineGroupResponse"
+    },
+    "CreateTopic": {
+      "document": "本接口用于创建日志主题。",
+      "input": "CreateTopicRequest",
+      "name": "创建日志主题",
+      "output": "CreateTopicResponse"
+    },
+    "DeleteAlarm": {
+      "document": "本接口用于删除告警策略。",
+      "input": "DeleteAlarmRequest",
+      "name": "删除告警策略",
+      "output": "DeleteAlarmResponse"
+    },
+    "DeleteAlarmNotice": {
+      "document": "该接口用于删除告警通知模板",
+      "input": "DeleteAlarmNoticeRequest",
+      "name": "删除告警通知模板",
+      "output": "DeleteAlarmNoticeResponse"
+    },
+    "DeleteExport": {
+      "document": "本接口用于删除日志导出",
+      "input": "DeleteExportRequest",
+      "name": "删除日志导出",
+      "output": "DeleteExportResponse"
+    },
+    "DeleteIndex": {
+      "document": "本接口用于日志主题的索引配置",
+      "input": "DeleteIndexRequest",
+      "name": "删除索引配置",
+      "output": "DeleteIndexResponse"
+    },
+    "DeleteMachineGroup": {
+      "document": "删除机器组",
+      "input": "DeleteMachineGroupRequest",
+      "name": "删除机器组",
+      "output": "DeleteMachineGroupResponse"
+    },
+    "DeleteTopic": {
+      "document": "本接口用于删除日志主题。",
+      "input": "DeleteTopicRequest",
+      "name": "删除日志主题",
+      "output": "DeleteTopicResponse"
+    },
+    "DescribeAlarmNotices": {
+      "document": "该接口用于获取告警通知模板列表",
+      "input": "DescribeAlarmNoticesRequest",
+      "name": "获取告警通知模板列表",
+      "output": "DescribeAlarmNoticesResponse"
+    },
+    "DescribeAlarms": {
+      "document": "本接口用于获取告警策略。",
+      "input": "DescribeAlarmsRequest",
+      "name": "获取告警策略列表",
+      "output": "DescribeAlarmsResponse"
+    },
+    "DescribeExports": {
+      "document": "本接口用于获取日志导出列表",
+      "input": "DescribeExportsRequest",
+      "name": "获取日志导出列表",
+      "output": "DescribeExportsResponse"
+    },
+    "DescribeIndex": {
+      "document": "本接口用于获取索引配置信息",
+      "input": "DescribeIndexRequest",
+      "name": "获取索引配置信息",
+      "output": "DescribeIndexResponse"
+    },
+    "DescribeLogContext": {
+      "document": "本接口用于搜索日志上下文附近的内容",
+      "input": "DescribeLogContextRequest",
+      "name": "上下文检索",
+      "output": "DescribeLogContextResponse"
+    },
+    "DescribeMachineGroups": {
+      "document": "获取机器组信息列表",
+      "input": "DescribeMachineGroupsRequest",
+      "name": "获取机器组列表",
+      "output": "DescribeMachineGroupsResponse"
+    },
+    "DescribeMachines": {
+      "document": "获取制定机器组下的机器状态",
+      "input": "DescribeMachinesRequest",
+      "name": "获取机器状态",
+      "output": "DescribeMachinesResponse"
+    },
+    "DescribePartitions": {
+      "document": "本接口用于获取主题分区列表。",
+      "input": "DescribePartitionsRequest",
+      "name": "获取分区列表",
+      "output": "DescribePartitionsResponse"
+    },
+    "DescribeTopics": {
+      "document": " 本接口用于获取日志主题列表，支持分页",
+      "input": "DescribeTopicsRequest",
+      "name": "获取日志主题列表",
+      "output": "DescribeTopicsResponse"
+    },
+    "GetAlarmLog": {
+      "document": "本接口用于获取告警任务历史",
+      "input": "GetAlarmLogRequest",
+      "name": "获取告警任务历史记录",
+      "output": "GetAlarmLogResponse"
+    },
+    "MergePartition": {
+      "document": "本接口用于合并一个读写态的主题分区，合并时指定一个主题分区 ID，日志服务会自动合并范围右相邻的分区。",
+      "input": "MergePartitionRequest",
+      "name": "合并分区",
+      "output": "MergePartitionResponse"
+    },
+    "ModifyAlarm": {
+      "document": "本接口用于修改告警策略。需要至少修改一项有效内容。",
+      "input": "ModifyAlarmRequest",
+      "name": "修改告警策略",
+      "output": "ModifyAlarmResponse"
+    },
+    "ModifyAlarmNotice": {
+      "document": "该接口用于修改告警通知模板。",
+      "input": "ModifyAlarmNoticeRequest",
+      "name": "修改告警通知模板",
+      "output": "ModifyAlarmNoticeResponse"
+    },
+    "ModifyIndex": {
+      "document": "本接口用于修改索引配置\n",
+      "input": "ModifyIndexRequest",
+      "name": "修改索引",
+      "output": "ModifyIndexResponse"
+    },
+    "ModifyMachineGroup": {
+      "document": "修改机器组",
+      "input": "ModifyMachineGroupRequest",
+      "name": "修改机器组",
+      "output": "ModifyMachineGroupResponse"
+    },
+    "ModifyTopic": {
+      "document": "本接口用于修改日志主题。",
+      "input": "ModifyTopicRequest",
+      "name": "修改日志主题",
+      "output": "ModifyTopicResponse"
+    },
+    "SearchLog": {
+      "document": "本接口用于搜索日志",
+      "input": "SearchLogRequest",
+      "name": "搜索日志",
+      "output": "SearchLogResponse"
+    },
+    "SplitPartition": {
+      "document": "本接口用于分裂主题分区",
+      "input": "SplitPartitionRequest",
+      "name": "分裂主题分区",
+      "output": "SplitPartitionResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-10-16",
+    "api_brief": "用户可以使用本文档介绍的 API 对日志服务进行相关操作，如创建日志主题、上报日志、检索日志等，具体支持的操作可参见 API 概览。",
+    "serviceNameCN": "日志服务",
+    "serviceShortName": "cls"
+  },
+  "objects": {
+    "AlarmInfo": {
+      "document": "告警策略描述",
+      "members": [
+        {
+          "default": "",
+          "document": "告警策略名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控对象列表。",
+          "example": "无",
+          "member": "AlarmTargetInfo",
+          "name": "AlarmTargets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控任务运行时间点。",
+          "example": "无",
+          "member": "MonitorTime",
+          "name": "MonitorTime",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发条件。",
+          "example": "无",
+          "member": "string",
+          "name": "Condition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
+          "example": "1",
+          "member": "int64",
+          "name": "TriggerCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警重复的周期。单位是min。取值范围是0~1440。",
+          "example": "20",
+          "member": "int64",
+          "name": "AlarmPeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的告警通知模板列表。",
+          "example": "无",
+          "member": "string",
+          "name": "AlarmNoticeIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开启状态。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警策略ID。",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "AlarmId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近更新时间。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义通知模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "message tpl test {{.TopicName}}, raw result: {{.RawResults}}",
+          "member": "string",
+          "name": "MessageTemplate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义回调模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CallBackInfo",
+          "name": "CallBack",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmNotice": {
+      "document": "告警通知模板类型",
+      "members": [
+        {
+          "default": "",
+          "document": "告警通知模板名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警通知模板接收者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "NoticeReceiver",
+          "name": "NoticeReceivers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警通知模板回调信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "WebCallback",
+          "name": "WebCallbacks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警通知模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmTarget": {
+      "document": "告警对象",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID。",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询语句。",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警对象序号；从1开始递增。",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询范围起始时间相对当前的历史时间，单位非分钟，取值为非正，最大值为0，最小值为-1440。",
+          "member": "int64",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询范围终止时间相对当前的历史时间，单位非分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
+          "member": "int64",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志集ID。",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AlarmTargetInfo": {
+      "document": "日志告警监控对线",
+      "members": [
+        {
+          "default": "",
+          "document": "日志集ID。",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志集名称。",
+          "member": "string",
+          "name": "LogsetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题ID。",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询语句。",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警对象序号。",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询范围起始时间相对当前的历史时间，取值为非正，最大值为0，最小值为-1440。",
+          "member": "int64",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询范围终止时间相对当前的历史时间，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
+          "member": "int64",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CallBackInfo": {
+      "document": "回调配置",
+      "members": [
+        {
+          "default": "",
+          "document": "回调时的Body",
+          "example": "无",
+          "member": "string",
+          "name": "Body",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回调时的Headers\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Headers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAlarmNoticeRequest": {
+      "document": "CreateAlarmNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "告警模板名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
+          "example": "All",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警模板接收者信息。",
+          "example": "无",
+          "member": "NoticeReceiver",
+          "name": "NoticeReceivers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警模板回调信息。",
+          "example": "无",
+          "member": "WebCallback",
+          "name": "WebCallbacks",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmNoticeResponse": {
+      "document": "CreateAlarmNotice返回参数结构体",
+      "members": [
+        {
+          "document": "告警模板ID",
+          "example": "xxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmRequest": {
+      "document": "CreateAlarm请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "告警策略名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监控对象列表。",
+          "example": "无",
+          "member": "AlarmTarget",
+          "name": "AlarmTargets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "监控任务运行时间点。",
+          "example": "无",
+          "member": "MonitorTime",
+          "name": "MonitorTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "触发条件。",
+          "example": "$1.count > 10",
+          "member": "string",
+          "name": "Condition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
+          "example": "1",
+          "member": "int64",
+          "name": "TriggerCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
+          "example": "0",
+          "member": "int64",
+          "name": "AlarmPeriod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "关联的告警通知模板列表。",
+          "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
+          "member": "string",
+          "name": "AlarmNoticeIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启告警策略。默认值为true",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmResponse": {
+      "document": "CreateAlarm返回参数结构体",
+      "members": [
+        {
+          "document": "告警策略ID。",
+          "example": "alarm-479dec34-4a59-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "AlarmId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportRequest": {
+      "document": "CreateExport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题",
+          "example": "ee20bb16-3025-4048-b81a-dd436373062e",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出检索语句",
+          "example": "status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出起始时间，毫秒时间戳",
+          "example": "1607499107000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出结束时间，毫秒时间戳",
+          "example": "1607499207000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出时间排序。desc，asc，默认为desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出数据格式。json，csv，默认为json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportResponse": {
+      "document": "CreateExport返回参数结构体",
+      "members": [
+        {
+          "document": "日志导出ID。",
+          "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIndexRequest": {
+      "document": "CreateIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "3edc8551-111b-473b-9fc4-ed66e20dfa8a",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引规则",
+          "example": "无",
+          "member": "RuleInfo",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否生效，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIndexResponse": {
+      "document": "CreateIndex返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMachineGroupRequest": {
+      "document": "CreateMachineGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器组名字，不能重复",
+          "example": "testgroup",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组",
+          "example": "无",
+          "member": "MachineGroupTypeInfo",
+          "name": "MachineGroupType",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的机器组。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启机器组自动更新",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoUpdate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "升级开始时间，建议业务低峰期升级LogListener",
+          "example": "\"12:00:00\"",
+          "member": "string",
+          "name": "UpdateStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级结束时间，建议业务低峰期升级LogListener",
+          "example": "\"13:00:00\"",
+          "member": "string",
+          "name": "UpdateEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
+          "example": "true",
+          "member": "bool",
+          "name": "ServiceLogging",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMachineGroupResponse": {
+      "document": "CreateMachineGroup返回参数结构体",
+      "members": [
+        {
+          "document": "机器组ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRequest": {
+      "document": "CreateTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志集ID",
+          "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题名称",
+          "example": "testname",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题分区个数。默认创建1个，最大支持创建10个分区。",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启自动分裂，默认值为false",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSplit",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "开启自动分裂后，每个主题能够允许的最大分区数，默认值为50",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxSplitPartitions",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志主题的存储类型，可选值 hot（热存储），cold（冷存储）默认为hot",
+          "example": "hot",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicResponse": {
+      "document": "CreateTopic返回参数结构体",
+      "members": [
+        {
+          "document": "日志主题ID",
+          "example": "xxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmNoticeRequest": {
+      "document": "DeleteAlarmNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "告警通知模板",
+          "example": "notice-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmNoticeResponse": {
+      "document": "DeleteAlarmNotice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmRequest": {
+      "document": "DeleteAlarm请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "告警策略ID。",
+          "example": "5944e926-ae21-4fa1-8af6-e1539b577482",
+          "member": "string",
+          "name": "AlarmId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmResponse": {
+      "document": "DeleteAlarm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExportRequest": {
+      "document": "DeleteExport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志导出ID",
+          "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExportResponse": {
+      "document": "DeleteExport返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIndexRequest": {
+      "document": "DeleteIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIndexResponse": {
+      "document": "DeleteIndex返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMachineGroupRequest": {
+      "document": "DeleteMachineGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器组ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMachineGroupResponse": {
+      "document": "DeleteMachineGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicRequest": {
+      "document": "DeleteTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "a5ce0c9c-0690-44a5-bc79-5f2190626bd0",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicResponse": {
+      "document": "DeleteTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNoticesRequest": {
+      "document": "DescribeAlarmNotices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<br><li> name\n\n按照【告警通知模板名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> alarmNoticeId\n\n按照【告警通知模板ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> uid\n\n按照【接收用户ID】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> groupId\n\n按照【用户组ID】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNoticesResponse": {
+      "document": "DescribeAlarmNotices返回参数结构体",
+      "members": [
+        {
+          "document": "告警通知模板列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmNotice",
+          "name": "AlarmNotices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "符合条件的告警通知模板总数。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmsRequest": {
+      "document": "DescribeAlarms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<br><li> name\n\n按照【告警策略名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> alarmId\n\n按照【告警策略ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【监控对象的日志主题ID】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> enable\n\n按照【启用状态】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmsResponse": {
+      "document": "DescribeAlarms返回参数结构体",
+      "members": [
+        {
+          "document": "告警策略列表。",
+          "example": "无",
+          "member": "AlarmInfo",
+          "name": "Alarms",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合查询条件的告警策略数目。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportsRequest": {
+      "document": "DescribeExports请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "ee20bb16-3025-4048-b81a-dd436373062e",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页限制数目，默认值为20，最大值100",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportsResponse": {
+      "document": "DescribeExports返回参数结构体",
+      "members": [
+        {
+          "document": "日志导出列表",
+          "example": "[]",
+          "member": "ExportInfo",
+          "name": "Exports",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数目",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexRequest": {
+      "document": "DescribeIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexResponse": {
+      "document": "DescribeIndex返回参数结构体",
+      "members": [
+        {
+          "document": "日志主题ID",
+          "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否生效",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "索引配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "RuleInfo",
+          "name": "Rule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "索引修改时间，初始值为索引创建时间。",
+          "example": "2021-01-13 21:00:08 ",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogContextRequest": {
+      "document": "DescribeLogContext请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志时间,  格式: YYYY-mm-dd HH:MM:SS",
+          "example": "2021-04-25 14:25:00.000",
+          "member": "string",
+          "name": "BTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志包序号",
+          "example": "528C1318606EFEB8-1A7",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志包内一条日志的序号",
+          "example": "65536",
+          "member": "int64",
+          "name": "PkgLogId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "上文日志条数,  默认值10",
+          "example": "10",
+          "member": "int64",
+          "name": "PrevLogs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下文日志条数,  默认值10",
+          "example": "10",
+          "member": "int64",
+          "name": "NextLogs",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogContextResponse": {
+      "document": "DescribeLogContext返回参数结构体",
+      "members": [
+        {
+          "document": "日志上下文信息集合",
+          "example": "无",
+          "member": "LogContextInfo",
+          "name": "LogContextInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上文日志是否已经返回",
+          "example": "true",
+          "member": "bool",
+          "name": "PrevOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下文日志是否已经返回",
+          "example": "true",
+          "member": "bool",
+          "name": "NextOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineGroupsRequest": {
+      "document": "DescribeMachineGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<br><li> machineGroupName\n\n按照【机器组名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> machineGroupId\n\n按照【机器组ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n类型：String\n\n必选：否\n\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页的限制数目，默认值为20，最大值100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineGroupsResponse": {
+      "document": "DescribeMachineGroups返回参数结构体",
+      "members": [
+        {
+          "document": "机器组信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MachineGroupInfo",
+          "name": "MachineGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页的总数目",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachinesRequest": {
+      "document": "DescribeMachines请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的机器组ID",
+          "example": "ae0d14a7-94e1-461e-8f5d-7d66a0d56d35  ",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachinesResponse": {
+      "document": "DescribeMachines返回参数结构体",
+      "members": [
+        {
+          "document": "机器状态信息组",
+          "example": "0 ",
+          "member": "MachineInfo",
+          "name": "Machines",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机器组是否开启自动升级功能",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoUpdate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机器组自动升级功能预设开始时间",
+          "example": "00:00:00 ",
+          "member": "string",
+          "name": "UpdateStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机器组自动升级功能预设结束时间",
+          "example": "01:00:00 ",
+          "member": "string",
+          "name": "UpdateEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "\b当前用户可用最新的\bLoglistener版本",
+          "example": "2.2.0",
+          "member": "string",
+          "name": "LatestAgentVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启服务日志",
+          "example": "true",
+          "member": "bool",
+          "name": "ServiceLogging",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePartitionsRequest": {
+      "document": "DescribePartitions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "cabcd0a8-4a54-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePartitionsResponse": {
+      "document": "DescribePartitions返回参数结构体",
+      "members": [
+        {
+          "document": "分区列表",
+          "example": "无",
+          "member": "PartitionInfo",
+          "name": "Partitions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicsRequest": {
+      "document": "DescribeTopics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<br><li> topicName\n\n按照【日志主题名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【日志主题ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> logsetId\n\n按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。\n\n类型：String\n\n必选：否\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。\n\n类型：String\n\n必选：否\n\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0。",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "30",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicsResponse": {
+      "document": "DescribeTopics返回参数结构体",
+      "members": [
+        {
+          "document": "日志主题列表",
+          "example": "无",
+          "member": "TopicInfo",
+          "name": "Topics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数目",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportInfo": {
+      "document": "日志导出信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "ee20bb16-3025-4048-b81a-dd436373062e",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出任务ID",
+          "example": "export-57196a6a-7622-47be-bc92-d2ebea959a0f",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出查询语句",
+          "example": "status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出文件名",
+          "example": "log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_571",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志文件大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出时间排序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出格式",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志下载状态。Processing:导出正在进行中，Complete:导出完成，Failed:导出失败，Expired:日志导出已过期（三天有效期）。",
+          "example": "Expired",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出起始时间",
+          "example": "1607499207000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出结束时间",
+          "example": "1607499208000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出路径",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CosPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出创建时间",
+          "example": "2020-08-08 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "需要过滤的字段。",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要过滤的值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FullTextInfo": {
+      "document": "全文索引配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否大小写敏感",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "全文索引的分词符，字符串中每个字符代表一个分词符",
+          "member": "string",
+          "name": "Tokenizer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetAlarmLogRequest": {
+      "document": "GetAlarmLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "example": "1608894763000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "example": "1608894763",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询语句，语句长度最大为1024",
+          "example": "ddddddddd",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单次查询返回的日志条数，最大值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
+          "example": "context",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAlarmLogResponse": {
+      "document": "GetAlarmLog返回参数结构体",
+      "members": [
+        {
+          "document": "加载后续内容的Context",
+          "example": "xx",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志查询结果是否全部返回",
+          "example": "false",
+          "member": "bool",
+          "name": "ListOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的是否为分析结果",
+          "example": "1",
+          "member": "bool",
+          "name": "Analysis",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "如果Analysis为True，则返回分析结果的列名，否则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"time\",\"pv\",\"uv\"]",
+          "member": "string",
+          "name": "ColNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志查询结果；当Analysis为True时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogInfo",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志分析结果；当Analysis为False时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogItems",
+          "name": "AnalysisResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KeyValueInfo": {
+      "document": "键值或者元字段索引的字段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "需要配置键值或者元字段索引的字段",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的索引描述信息",
+          "member": "ValueInfo",
+          "name": "Value",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogContextInfo": {
+      "document": "日志上下文信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志来源设备",
+          "example": "100.105.60.255",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "采集路径",
+          "example": "/usr/local/services/cls_cgi_api3-1.0/log/cls_cgi.log.20210425",
+          "member": "string",
+          "name": "Filename",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志内容",
+          "example": "{\"__TAG__\":{\"full_name\":\"[N][腾讯云CLS_互联网] - [现网运营][上海园区] - [CGI3.",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志包序号",
+          "example": "528C1318606EFEB8-1A0",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志包内一条日志的序号",
+          "example": "196609",
+          "member": "int64",
+          "name": "PkgLogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志时间戳",
+          "example": "2021-04-25 14:25:00.000",
+          "member": "int64",
+          "name": "BTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogInfo": {
+      "document": "日志结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志时间，单位ms",
+          "example": "1619162953000",
+          "member": "int64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志来源IP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志文件名称",
+          "example": "/test/access.log",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志上报请求包的ID",
+          "example": "0",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求包内日志的ID",
+          "example": "0",
+          "member": "string",
+          "name": "PkgLogId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志内容的Json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"content\":\"test\"}",
+          "member": "string",
+          "name": "LogJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LogItem": {
+      "document": "日志中的KV对",
+      "members": [
+        {
+          "default": "",
+          "document": "日志Key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志Value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogItems": {
+      "document": "LogItem的数组",
+      "members": [
+        {
+          "default": "",
+          "document": "分析结果返回的KV数据对",
+          "member": "LogItem",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MachineGroupInfo": {
+      "document": "机器组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机器组ID",
+          "example": "559d015f-fac7-43cd-ad6e-3c4523fe8767",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器组类型",
+          "example": "无",
+          "member": "MachineGroupTypeInfo",
+          "name": "MachineGroupType",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-03-05 00:40:22",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器组绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启机器组自动更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"true\"",
+          "member": "string",
+          "name": "AutoUpdate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "升级开始时间，建议业务低峰期升级LogListener\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"12:00:00\"",
+          "member": "string",
+          "name": "UpdateStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "升级结束时间，建议业务低峰期升级LogListener\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"13:00:00\"",
+          "member": "string",
+          "name": "UpdateEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ServiceLogging",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MachineGroupTypeInfo": {
+      "document": "机器组类型描述",
+      "members": [
+        {
+          "default": "",
+          "document": "机器组类型，ip表示该机器组Values中存的是采集机器的IP地址，label表示该机器组Values中存储的是机器的标签",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器描述列表",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MachineInfo": {
+      "document": "机器状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机器的IP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器状态，0:异常，1:正常",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器离线时间，空为正常，异常返回具体时间",
+          "example": "2021-01-12 20:14:10 ",
+          "member": "string",
+          "name": "OfflineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器是否开启自动升级。0:关闭，1:开启",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoUpdate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器当前版本号。",
+          "example": "2.1.0",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器升级功能状态。",
+          "example": "0",
+          "member": "int64",
+          "name": "UpdateStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器升级结果标识。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器升级结果信息。",
+          "example": "OK",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MergePartitionRequest": {
+      "document": "MergePartition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "427bba81-e149-4a8b-bd0d-b2a412520d7b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合并的PartitionId",
+          "example": "2",
+          "member": "int64",
+          "name": "PartitionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "MergePartitionResponse": {
+      "document": "MergePartition返回参数结构体",
+      "members": [
+        {
+          "document": "合并结果集",
+          "example": "无",
+          "member": "PartitionInfo",
+          "name": "Partitions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmNoticeRequest": {
+      "document": "ModifyAlarmNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "告警通知模板ID。",
+          "example": "notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警模板名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
+          "example": "All",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警模板接收者信息。",
+          "example": "无",
+          "member": "NoticeReceiver",
+          "name": "NoticeReceivers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警模板回调信息。",
+          "example": "无",
+          "member": "WebCallback",
+          "name": "WebCallbacks",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmNoticeResponse": {
+      "document": "ModifyAlarmNotice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmRequest": {
+      "document": "ModifyAlarm请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "告警策略ID。",
+          "example": "alarm-bea71170-4a59-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "AlarmId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监控任务运行时间点。",
+          "example": "无",
+          "member": "MonitorTime",
+          "name": "MonitorTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "触发条件。",
+          "example": "$1.source='10.0.0.1'",
+          "member": "string",
+          "name": "Condition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
+          "example": "1",
+          "member": "int64",
+          "name": "TriggerCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
+          "example": "0",
+          "member": "int64",
+          "name": "AlarmPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "关联的告警通知模板列表。",
+          "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
+          "member": "string",
+          "name": "AlarmNoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "监控对象列表。",
+          "example": "无",
+          "member": "AlarmTarget",
+          "name": "AlarmTargets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启告警策略。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmResponse": {
+      "document": "ModifyAlarm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIndexRequest": {
+      "document": "ModifyIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否生效",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "索引规则，Rule和Effective两个必须有一个参数存在",
+          "example": "无",
+          "member": "RuleInfo",
+          "name": "Rule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIndexResponse": {
+      "document": "ModifyIndex返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMachineGroupRequest": {
+      "document": "ModifyMachineGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器组ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器组名称",
+          "example": "testname",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器组类型",
+          "example": "无",
+          "member": "MachineGroupTypeInfo",
+          "name": "MachineGroupType",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启机器组自动更新",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoUpdate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "升级开始时间，建议业务低峰期升级LogListener",
+          "example": "\"12:00:00\"",
+          "member": "string",
+          "name": "UpdateStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级结束时间，建议业务低峰期升级LogListener",
+          "example": "\"13:00:00\"",
+          "member": "string",
+          "name": "UpdateEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
+          "example": "true",
+          "member": "bool",
+          "name": "ServiceLogging",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMachineGroupResponse": {
+      "document": "ModifyMachineGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicRequest": {
+      "document": "ModifyTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题名称",
+          "example": "testname",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "该日志主题是否开始采集",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启自动分裂",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSplit",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "若开启最大分裂，该主题能够能够允许的最大分区数",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxSplitPartitions",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicResponse": {
+      "document": "ModifyTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MonitorTime": {
+      "document": "告警策略中监控任务的执行时间点",
+      "members": [
+        {
+          "default": "",
+          "document": "可选值：\n<br><li> Period - 周期执行\n<br><li> Fixed - 定期执行",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。",
+          "member": "int64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NoticeReceiver": {
+      "document": "告警通知接收者信息",
+      "members": [
+        {
+          "default": "",
+          "document": "接受者类型。可选值：\n<br><li> Uin - 用户ID\n<br><li> Group - 用户组ID\n暂不支持其余接收者类型。",
+          "example": "Group",
+          "member": "string",
+          "name": "ReceiverType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收者。",
+          "example": "[0]",
+          "member": "int64",
+          "name": "ReceiverIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通知接收渠道。\n<br><li> Email - 邮件\n<br><li> Sms - 短信\n<br><li> WeChat - 微信\n<br><li> Phone - 电话",
+          "example": "['Sms']",
+          "member": "string",
+          "name": "ReceiverChannels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许接收信息的开始时间。",
+          "example": "10:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许接收信息的结束时间。",
+          "example": "20:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位序",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PartitionInfo": {
+      "document": "日志主题分区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分区ID",
+          "member": "int64",
+          "name": "PartitionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区的状态（readwrite或者是readonly）",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区哈希键起始key",
+          "member": "string",
+          "name": "InclusiveBeginKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区哈希键结束key",
+          "member": "string",
+          "name": "ExclusiveEndKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只读分区数据停止写入时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastWriteTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleInfo": {
+      "document": "索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数",
+      "members": [
+        {
+          "default": "",
+          "document": "全文索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FullTextInfo",
+          "name": "FullText",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "键值索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RuleKeyValueInfo",
+          "name": "KeyValue",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "元字段索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RuleTagInfo",
+          "name": "Tag",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleKeyValueInfo": {
+      "document": "键值索引配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否大小写敏感",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要建立索引的键值对信息；最大只能配置100个键值对",
+          "member": "KeyValueInfo",
+          "name": "KeyValues",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleTagInfo": {
+      "document": "标签索引配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否大小写敏感",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签索引配置中的字段信息",
+          "member": "KeyValueInfo",
+          "name": "KeyValues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SearchLogRequest": {
+      "document": "SearchLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "example": "1608794854000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询语句，语句长度最大为4096",
+          "example": "http_status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单次查询返回的日志条数，最大值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
+          "example": "context",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchLogResponse": {
+      "document": "SearchLog返回参数结构体",
+      "members": [
+        {
+          "document": "加载后续内容的Context",
+          "example": "context",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志查询结果是否全部返回",
+          "example": "1",
+          "member": "bool",
+          "name": "ListOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的是否为分析结果",
+          "example": "false",
+          "member": "bool",
+          "name": "Analysis",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "如果Analysis为True，则返回分析结果的列名，否则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "ColNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志查询结果；当Analysis为True时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogInfo",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志分析结果；当Analysis为False时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogItems",
+          "name": "AnalysisResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SplitPartitionRequest": {
+      "document": "SplitPartition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "427bba81-e149-4a8b-bd0d-b2a412520d7b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待分裂分区ID",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分区切分的哈希key的位置，只在Number=2时有意义",
+          "example": "key",
+          "member": "string",
+          "name": "SplitKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区分裂个数(可选)，默认等于2",
+          "example": "2",
+          "member": "int64",
+          "name": "Number",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SplitPartitionResponse": {
+      "document": "SplitPartition返回参数结构体",
+      "members": [
+        {
+          "document": "分裂结果集",
+          "example": "无",
+          "member": "PartitionInfo",
+          "name": "Partitions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "document": "创建资源实例时同时绑定的标签对说明",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TopicInfo": {
+      "document": "日志主题信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志集ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题分区个数",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启索引",
+          "example": "true",
+          "member": "bool",
+          "name": "Index",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日主主题是否开启采集",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该主题是否开启自动分裂\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSplit",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "若开启自动分裂的话，该主题能够允许的最大分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxSplitPartitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日主题的存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hot",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ValueInfo": {
+      "document": "需要开启键值索引的字段的索引描述信息",
+      "members": [
+        {
+          "default": "",
+          "document": "字段类型，目前支持的类型有：long、text、double",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的分词符，只有当字段类型为text时才有意义；输入字符串中的每个字符代表一个分词符",
+          "member": "string",
+          "name": "Tokenizer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段是否开启分析功能",
+          "member": "bool",
+          "name": "SqlFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WebCallback": {
+      "document": "回调地址",
+      "members": [
+        {
+          "default": "",
+          "document": "回调地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回调的类型。可选值：\n<br><li> WeCom\n<br><li> Http",
+          "example": "WeCom",
+          "member": "string",
+          "name": "CallbackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回调方法。可选值：\n<br><li> POST\n<br><li> PUT\n默认值为POST。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POST",
+          "member": "string",
+          "name": "Method",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Headers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求内容。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Body",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "序号",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

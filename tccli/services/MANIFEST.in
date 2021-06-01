@@ -89,6 +89,8 @@ include tccli/services/cloudaudit/v20190319/api.json
 include tccli/services/cloudaudit/v20190319/examples.json
 include tccli/services/cloudhsm/v20191112/api.json
 include tccli/services/cloudhsm/v20191112/examples.json
+include tccli/services/cls/v20201016/api.json
+include tccli/services/cls/v20201016/examples.json
 include tccli/services/cme/v20191029/api.json
 include tccli/services/cme/v20191029/examples.json
 include tccli/services/cmq/v20190304/api.json

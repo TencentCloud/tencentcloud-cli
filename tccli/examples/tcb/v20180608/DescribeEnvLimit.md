@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tcb DescribeEnvLimit --cli-unfold-argument ```
+tccli tcb DescribeEnvLimit --cli-unfold-argument  \
+    --Source sss
+```
 
 Output: 
 ```
@@ -19,6 +21,8 @@ Output:
         "CurrentDeleteTotal": 0,
         "MaxDeleteMonthly": 0,
         "CurrentDeleteMonthly": 0,
+        "CurrentFreeTrialNum": 0,
+        "MaxFreeTrialNum": 0,
         "RequestId": "046cacfd-af90-4355-ac92-f56954bd1831"
     }
 }

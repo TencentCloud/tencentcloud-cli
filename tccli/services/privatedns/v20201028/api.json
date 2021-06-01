@@ -304,7 +304,7 @@
         },
         {
           "default": "",
-          "document": "是否开启子域名递归, ENABLED， DISABLED",
+          "document": "是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED",
           "example": "ENABLED",
           "member": "string",
           "name": "DnsForwardStatus",
@@ -472,7 +472,7 @@
         },
         {
           "default": "",
-          "document": "筛选参数：",
+          "document": "筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -763,7 +763,7 @@
       "document": "DescribePrivateZoneService返回参数结构体",
       "members": [
         {
-          "document": "私有域解析服务开通状态",
+          "document": "私有域解析服务开通状态。ENABLED已开通，DISABLED未开通",
           "example": "ENABLED",
           "member": "string",
           "name": "ServiceStatus",
@@ -785,7 +785,7 @@
       "members": [
         {
           "default": "",
-          "document": "请求量统计起始时间",
+          "document": "请求量统计起始时间，格式：2020-11-22 00:00:00",
           "example": "2020-11-22 00:00:00",
           "member": "string",
           "name": "TimeRangeBegin",
@@ -803,7 +803,7 @@
         },
         {
           "default": "",
-          "document": "请求量统计结束时间",
+          "document": "请求量统计结束时间，格式：2020-11-22 23:59:59",
           "example": "2020-11-23 23:59:59",
           "member": "string",
           "name": "TimeRangeEnd",
@@ -1031,7 +1031,7 @@
       "members": [
         {
           "default": "",
-          "document": "域名，格式必须是标准的TLD",
+          "document": "私有域ID",
           "example": "1",
           "member": "string",
           "name": "ZoneId",

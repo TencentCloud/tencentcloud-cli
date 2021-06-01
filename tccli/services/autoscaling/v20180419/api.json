@@ -4460,6 +4460,7 @@
         {
           "default": "",
           "document": "域名类型",
+          "example": "tcb",
           "member": "string",
           "name": "DomainNameType",
           "required": false,
@@ -4473,8 +4474,10 @@
       "members": [
         {
           "document": "可用的PAI域名",
+          "example": "salmonberry-ey5t3l0k.pai.tcloudbase.com",
           "member": "string",
           "name": "DomainName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

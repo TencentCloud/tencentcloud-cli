@@ -51,7 +51,7 @@
       },
       {
         "document": "批量删除解析记录",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxxx\",\n    \"RecordIdSet\": [\n        \"11111\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxxx\",\n    \"RecordIdSet\": [\n        \"10001\",\n        \"20201\",\n        \"33401\",\n        \"11111\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
         "title": "删除私有域解析记录-批量"
       }
@@ -125,7 +125,13 @@
         "document": "修改A记录",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxxx\",\n    \"RecordId\": \"289\",\n    \"RecordType\": \"A\",\n    \"SubDomain\": \"@\",\n    \"RecordValue\": \"8.8.8.8\",\n    \"TTL\": 600,\n    \"Weight\": \"100\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6f4fef6-8a3c-e2ee-792856f06fa696da\"\n    }\n}",
-        "title": "修改私有域解析记录1"
+        "title": "修改私有域解析记录（A记录）"
+      },
+      {
+        "document": "修改MX记录",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-mao3y9jo\",\n    \"SubDomain\": \"mail\",\n    \"RecordType\": \"MX\",\n    \"RecordValue\": \"stmp.qq.com\",\n    \"TTL\": 300,\n    \"MX\": 10,\n    \"RecordId\": \"16125\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"660006f4-8531-46f0-a2ba-05daf4e7932e\"\n    }\n}",
+        "title": "修改私有域解析记录（MX记录）"
       }
     ],
     "ModifyPrivateZoneVpc": [

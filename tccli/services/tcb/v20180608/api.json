@@ -2352,6 +2352,7 @@
         {
           "default": "",
           "document": "环境ID，需要系统自动创建环境时，此字段不传",
+          "example": "cdnheader-v2a",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -2360,6 +2361,7 @@
         {
           "default": "",
           "document": "微信 AppId，微信必传",
+          "example": "wxxjklfjdkld",
           "member": "string",
           "name": "WxAppId",
           "required": false,
@@ -2368,6 +2370,7 @@
         {
           "default": "",
           "document": "付费来源\n<li>miniapp</li>\n<li>qcloud</li>",
+          "example": "qcloud",
           "member": "string",
           "name": "Source",
           "required": false,
@@ -2376,6 +2379,7 @@
         {
           "default": "",
           "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
+          "example": "basic",
           "member": "string",
           "name": "FreeQuota",
           "required": false,
@@ -2384,6 +2388,7 @@
         {
           "default": "",
           "document": "环境创建来源，取值：\n<li>miniapp</li>\n<li>qcloud</li>\n用法同CreateEnv接口的Source参数\n和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。",
+          "example": "qcloud",
           "member": "string",
           "name": "EnvSource",
           "required": false,
@@ -2392,6 +2397,7 @@
         {
           "default": "",
           "document": "环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符",
+          "example": "env-alias",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -2400,6 +2406,7 @@
         {
           "default": "",
           "document": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework\n和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。",
+          "example": "qc_console",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -2408,6 +2415,7 @@
         {
           "default": "",
           "document": "扩展ID",
+          "example": "无",
           "member": "string",
           "name": "ExtensionId",
           "required": false,
@@ -2416,6 +2424,7 @@
         {
           "default": "",
           "document": "订单标记。建议使用方统一转大小写之后再判断。\n<li>QuickStart：快速启动来源</li>\n<li>Activity：活动来源</li>",
+          "example": "Activity",
           "member": "string",
           "name": "Flag",
           "required": false,
@@ -2429,15 +2438,19 @@
       "members": [
         {
           "document": "后付费订单号",
+          "example": "20200603119423",
           "member": "string",
           "name": "TranId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdnheader-v2a",
           "member": "string",
           "name": "EnvId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4235,57 +4248,91 @@
       "members": [
         {
           "document": "环境总数上限",
+          "example": "1",
           "member": "int64",
           "name": "MaxEnvNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "目前环境总数",
+          "example": "1",
           "member": "int64",
           "name": "CurrentEnvNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "免费环境数量上限",
+          "example": "1",
           "member": "int64",
           "name": "MaxFreeEnvNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "目前免费环境数量",
+          "example": "1",
           "member": "int64",
           "name": "CurrentFreeEnvNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总计允许销毁环境次数上限",
+          "example": "1",
           "member": "int64",
           "name": "MaxDeleteTotal",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "目前已销毁环境次数",
+          "example": "1",
           "member": "int64",
           "name": "CurrentDeleteTotal",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每月允许销毁环境次数上限",
+          "example": "1",
           "member": "int64",
           "name": "MaxDeleteMonthly",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "本月已销毁环境次数",
+          "example": "1",
           "member": "int64",
           "name": "CurrentDeleteMonthly",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信网关体验版可购买月份数",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxFreeTrialNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信网关体验版已购买月份数",
+          "example": "0",
+          "member": "int64",
+          "name": "CurrentFreeTrialNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

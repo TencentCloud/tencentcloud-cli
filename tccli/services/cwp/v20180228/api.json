@@ -576,6 +576,12 @@
       "name": "新增或编辑标签",
       "output": "EditTagsResponse"
     },
+    "ExportAssetCoreModuleList": {
+      "document": "导出资产管理内核模块列表",
+      "input": "ExportAssetCoreModuleListRequest",
+      "name": "导出资产管理内核模块列表",
+      "output": "ExportAssetCoreModuleListResponse"
+    },
     "ExportAttackLogs": {
       "document": "导出网络攻击日志",
       "input": "ExportAttackLogsRequest",
@@ -4388,8 +4394,18 @@
         {
           "default": "",
           "document": "云镜客户端唯一Uuid。",
+          "example": "xxx",
           "member": "string",
           "name": "Uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cvm id， quuid、uuid必填一个",
+          "example": "xxx",
+          "member": "string",
+          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -4401,128 +4417,173 @@
       "members": [
         {
           "document": "机器ip。",
+          "example": "xxx",
           "member": "string",
           "name": "MachineIp",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "受云镜保护天数。",
+          "example": "1",
           "member": "uint64",
           "name": "ProtectDays",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "操作系统。",
+          "example": "xxx",
           "member": "string",
           "name": "MachineOs",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "主机名称。",
+          "example": "xxx",
           "member": "string",
           "name": "MachineName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "在线状态。\n<li>ONLINE： 在线</li>\n<li>OFFLINE：离线</li>",
+          "example": "OFFLINE",
           "member": "string",
           "name": "MachineStatus",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "CVM或BM主机唯一标识。",
+          "example": "CVM",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "主机外网IP。",
+          "example": "xxx",
           "member": "string",
           "name": "MachineWanIp",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "CVM或BM主机唯一Uuid。",
+          "example": "xxx",
           "member": "string",
           "name": "Quuid",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "云镜客户端唯一Uuid。",
+          "example": "xxx",
           "member": "string",
           "name": "Uuid",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否开通专业版。\n<li>true：是</li>\n<li>false：否</li>",
+          "example": "false",
           "member": "bool",
           "name": "IsProVersion",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "专业版开通时间。",
+          "example": "xxx",
           "member": "string",
           "name": "ProVersionOpenDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "云主机类型。\n<li>CVM: 虚拟主机</li>\n<li>BM: 黑石物理机</li>",
+          "example": "CVM",
           "member": "string",
           "name": "MachineType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "主机状态。\n<li>POSTPAY: 表示后付费，即按量计费  </li>\n<li>PREPAY: 表示预付费，即包年包月</li>",
+          "example": "PREPAY",
           "member": "string",
           "name": "PayMode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "免费木马剩余检测数量。",
+          "example": "1",
           "member": "uint64",
           "name": "FreeMalwaresLeft",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "免费漏洞剩余检测数量。",
+          "example": "1",
           "member": "uint64",
           "name": "FreeVulsLeft",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "agent版本号",
+          "example": "xxx",
           "member": "string",
           "name": "AgentVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "专业版到期时间(仅预付费)",
+          "example": "xxx",
           "member": "string",
           "name": "ProVersionDeadline",
+          "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否有资产扫描记录，0无，1有",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasAssetScan",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7312,6 +7373,78 @@
         }
       ],
       "usage": "out"
+    },
+    "ExportAssetCoreModuleListRequest": {
+      "document": "ExportAssetCoreModuleList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序依据:Size,ProcessCount,ModuleCount",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportAssetCoreModuleListResponse": {
+      "document": "ExportAssetCoreModuleList返回参数结构体",
+      "members": [
+        {
+          "document": "异步下载任务ID，需要配合ExportTasks接口使用",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExportAttackLogsRequest": {
       "document": "ExportAttackLogs请求参数结构体",
