@@ -47,6 +47,8 @@ include tccli/services/bmvpc/v20180625/api.json
 include tccli/services/bmvpc/v20180625/examples.json
 include tccli/services/bri/v20190328/api.json
 include tccli/services/bri/v20190328/examples.json
+include tccli/services/btoe/v20210514/api.json
+include tccli/services/btoe/v20210514/examples.json
 include tccli/services/btoe/v20210303/api.json
 include tccli/services/btoe/v20210303/examples.json
 include tccli/services/cam/v20190116/api.json

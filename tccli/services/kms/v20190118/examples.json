@@ -52,7 +52,7 @@
       {
         "document": "创建用户管理数据密钥的主密钥CMK（Custom Master Key），通过CMK后续可以调用其他接口诸如创建数据密钥、加解密等操作。",
         "input": "https://kms.tencentcloudapi.com/?Action=CreateKey\n&Alias=mykey\n&KeyUsage=ENCRYPT_DECRYPT\n&Description=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"KeyId\": \"9999aed0-4956-11e9-bc70-5254005e86b4\",\n        \"Alias\": \"alias-0001\",\n        \"CreateTime\": 1552897190,\n        \"Description\": \"test cmk\",\n        \"TagMsg\": \"Success\",\n        \"TagCode\": 1,\n        \"KeyState\": \"Enabled\",\n        \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyId\": \"9999aed0-4956-11e9-bc70-5254005e86b4\",\n        \"Alias\": \"alias-0001\",\n        \"CreateTime\": 1552897190,\n        \"Description\": \"test cmk\",\n        \"TagMsg\": \"Success\",\n        \"TagCode\": 0,\n        \"KeyState\": \"Enabled\",\n        \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
         "title": "创建主密钥示例"
       }
     ],

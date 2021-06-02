@@ -1930,7 +1930,7 @@
         },
         {
           "default": "",
-          "document": "默认值:delete（删除）、edit（编辑）、add（添加）  其他值无效",
+          "document": "可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效",
           "example": "add",
           "member": "string",
           "name": "IocAction",

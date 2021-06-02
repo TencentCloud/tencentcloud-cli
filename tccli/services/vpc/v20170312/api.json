@@ -13183,8 +13183,9 @@
       "document": "IPSec配置，腾讯云提供IPSec安全会话设置",
       "members": [
         {
-          "default": "AES-CBC-128",
-          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128",
+          "default": "",
+          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128",
+          "example": "AES-CBC-128",
           "member": "string",
           "name": "EncryptAlgorithm",
           "required": false,
@@ -13192,8 +13193,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "MD5",
-          "document": "认证算法：可选值：'MD5', 'SHA1'，默认为",
+          "default": "",
+          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为",
+          "example": "SHA1",
           "member": "string",
           "name": "IntegrityAlgorith",
           "required": false,
@@ -13203,6 +13205,7 @@
         {
           "default": "",
           "document": "IPsec SA lifetime(s)：单位秒，取值范围：180-604800",
+          "example": "180",
           "member": "uint64",
           "name": "IPSECSaLifetimeSeconds",
           "required": false,
@@ -13210,8 +13213,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "NULL",
+          "default": "",
           "document": "PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL",
+          "example": "NULL",
           "member": "string",
           "name": "PfsDhGroup",
           "required": false,
@@ -13221,6 +13225,7 @@
         {
           "default": "",
           "document": "IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800",
+          "example": "2560",
           "member": "uint64",
           "name": "IPSECSaLifetimeTraffic",
           "required": false,

@@ -432,6 +432,12 @@
       "name": "会员间交易退款",
       "output": "RefundMemberTransactionResponse"
     },
+    "RegisterBehavior": {
+      "document": "商户查询是否签约和签约行为上报",
+      "input": "RegisterBehaviorRequest",
+      "name": "聚鑫-签约行为上报",
+      "output": "RegisterBehaviorResponse"
+    },
     "RegisterBill": {
       "document": "登记挂账(支持撤销)",
       "input": "RegisterBillRequest",
@@ -598,6 +604,52 @@
         }
       ],
       "usage": "out"
+    },
+    "AgencyClientInfo": {
+      "document": "经办人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "经办人姓名，存在经办人必输",
+          "example": "张三",
+          "member": "string",
+          "name": "AgencyClientName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人证件类型，存在经办人必输",
+          "example": "1",
+          "member": "string",
+          "name": "AgencyClientGlobalType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人证件号，存在经办人必输",
+          "example": "1234567890",
+          "member": "string",
+          "name": "AgencyClientGlobalId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人手机号，存在经办人必输",
+          "example": "13900000000",
+          "member": "string",
+          "name": "AgencyClientMobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "AgentTaxPayment": {
       "document": "代理商完税证明",
@@ -2030,6 +2082,7 @@
         {
           "default": "",
           "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
           "member": "string",
           "name": "MidasAppId",
           "required": true,
@@ -2038,6 +2091,7 @@
         {
           "default": "",
           "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
           "member": "string",
           "name": "SubAppId",
           "required": true,
@@ -2046,6 +2100,7 @@
         {
           "default": "",
           "document": "1 – 小额转账验证\n2 – 短信验证\n3 - 一分钱转账验证，无需再调CheckAcct验证绑卡\n4 - 银行四要素验证，无需再调CheckAcct验证绑卡\n每个结算账户每天只能使用一次小额转账验证",
+          "example": "1",
           "member": "int64",
           "name": "BindType",
           "required": true,
@@ -2054,6 +2109,7 @@
         {
           "default": "",
           "document": "用于提现\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "encrypted_account_no",
           "member": "string",
           "name": "SettleAcctNo",
           "required": true,
@@ -2062,6 +2118,7 @@
         {
           "default": "",
           "document": "结算账户户名\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "encrypted_account_name",
           "member": "string",
           "name": "SettleAcctName",
           "required": true,
@@ -2070,6 +2127,7 @@
         {
           "default": "",
           "document": "1 – 本行账户\n2 – 他行账户",
+          "example": "1",
           "member": "int64",
           "name": "SettleAcctType",
           "required": true,
@@ -2078,6 +2136,7 @@
         {
           "default": "",
           "document": "证件类型，见《证件类型》表",
+          "example": "1",
           "member": "string",
           "name": "IdType",
           "required": true,
@@ -2086,6 +2145,7 @@
         {
           "default": "",
           "document": "证件号码\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "encrypted_id_code",
           "member": "string",
           "name": "IdCode",
           "required": true,
@@ -2094,6 +2154,7 @@
         {
           "default": "",
           "document": "开户行名称",
+          "example": "银行名称",
           "member": "string",
           "name": "AcctBranchName",
           "required": true,
@@ -2102,6 +2163,7 @@
         {
           "default": "",
           "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
           "member": "string",
           "name": "MidasSecretId",
           "required": true,
@@ -2110,6 +2172,7 @@
         {
           "default": "",
           "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
           "member": "string",
           "name": "MidasSignature",
           "required": true,
@@ -2118,6 +2181,7 @@
         {
           "default": "",
           "document": "用于短信验证\nBindType==2时必填\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "encrypted_mobile_no",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -2126,6 +2190,7 @@
         {
           "default": "",
           "document": "大小额行号，超级网银行号和大小额行号\n二选一",
+          "example": "1234567890",
           "member": "string",
           "name": "CnapsBranchId",
           "required": false,
@@ -2134,6 +2199,7 @@
         {
           "default": "",
           "document": "超级网银行号，超级网银行号和大小额行号\n二选一",
+          "example": "分行ID",
           "member": "string",
           "name": "EiconBankBranchId",
           "required": false,
@@ -2142,6 +2208,7 @@
         {
           "default": "",
           "document": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA",
+          "example": "RSA",
           "member": "string",
           "name": "EncryptType",
           "required": false,
@@ -2150,10 +2217,20 @@
         {
           "default": "",
           "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "release",
           "member": "string",
           "name": "MidasEnvironment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "经办人信息",
+          "example": "无",
+          "member": "AgencyClientInfo",
+          "name": "AgencyClientInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3637,6 +3714,7 @@
         {
           "default": "",
           "document": "聚鑫平台分配的支付MidasAppId",
+          "example": "your_midas_app_id",
           "member": "string",
           "name": "MidasAppId",
           "required": true,
@@ -3645,6 +3723,7 @@
         {
           "default": "",
           "document": "业务平台的子商户ID，唯一",
+          "example": "your_sub_mch_id",
           "member": "string",
           "name": "SubMchId",
           "required": true,
@@ -3653,6 +3732,7 @@
         {
           "default": "",
           "document": "子商户名称",
+          "example": "商户名称",
           "member": "string",
           "name": "SubMchName",
           "required": true,
@@ -3661,6 +3741,7 @@
         {
           "default": "",
           "document": "子商户地址",
+          "example": "商户地址",
           "member": "string",
           "name": "Address",
           "required": true,
@@ -3669,6 +3750,7 @@
         {
           "default": "",
           "document": "子商户联系人\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "encrypted_contact_information",
           "member": "string",
           "name": "Contact",
           "required": true,
@@ -3677,6 +3759,7 @@
         {
           "default": "",
           "document": "联系人手机号\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "encrypted_mobile_no",
           "member": "string",
           "name": "Mobile",
           "required": true,
@@ -3685,6 +3768,7 @@
         {
           "default": "",
           "document": "邮箱 \n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "encrypted_email",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -3693,6 +3777,7 @@
         {
           "default": "",
           "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
           "member": "string",
           "name": "MidasSecretId",
           "required": true,
@@ -3701,6 +3786,7 @@
         {
           "default": "",
           "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
           "member": "string",
           "name": "MidasSignature",
           "required": true,
@@ -3708,7 +3794,8 @@
         },
         {
           "default": "",
-          "document": "子商户类型：\n个人: personal\n企业: enterprise\n缺省: enterprise",
+          "document": "子商户类型：\n个人: personal\n企业: enterprise\n个体工商户: individual\n缺省: enterprise",
+          "example": "enterprise",
           "member": "string",
           "name": "SubMchType",
           "required": false,
@@ -3717,6 +3804,7 @@
         {
           "default": "",
           "document": "不填则默认子商户名称",
+          "example": "商户简称",
           "member": "string",
           "name": "ShortName",
           "required": false,
@@ -3725,6 +3813,7 @@
         {
           "default": "",
           "document": "子商户会员类型：\ngeneral: 普通子账户\nmerchant: 商户子账户\n缺省: general",
+          "example": "general",
           "member": "string",
           "name": "SubMerchantMemberType",
           "required": false,
@@ -3733,6 +3822,7 @@
         {
           "default": "",
           "document": "子商户密钥\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "密钥",
           "member": "string",
           "name": "SubMerchantKey",
           "required": false,
@@ -3741,6 +3831,7 @@
         {
           "default": "",
           "document": "子商户私钥\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "私钥",
           "member": "string",
           "name": "SubMerchantPrivateKey",
           "required": false,
@@ -3749,6 +3840,7 @@
         {
           "default": "",
           "document": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA",
+          "example": "RSA",
           "member": "string",
           "name": "EncryptType",
           "required": false,
@@ -3757,6 +3849,7 @@
         {
           "default": "",
           "document": "银行生成的子商户账户，已开户的场景需要录入",
+          "example": "1234567890",
           "member": "string",
           "name": "SubAcctNo",
           "required": false,
@@ -3765,10 +3858,29 @@
         {
           "default": "",
           "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "release",
           "member": "string",
           "name": "MidasEnvironment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "店铺名称\n企业、个体工商户必输",
+          "example": "示例店铺",
+          "member": "string",
+          "name": "SubMerchantStoreName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公司信息",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "OrganizationInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3778,15 +3890,19 @@
       "members": [
         {
           "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "sub_app_id_used_for_payment",
           "member": "string",
           "name": "SubAppId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "银行生成的子商户账户",
+          "example": "sub_account_no_from_bank",
           "member": "string",
           "name": "SubAcctNo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7535,6 +7651,72 @@
         }
       ],
       "usage": "out"
+    },
+    "OrganizationInfo": {
+      "document": "公司信息",
+      "members": [
+        {
+          "default": "",
+          "document": "公司名称，个体工商户必输",
+          "example": "公司",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司证件类型，个体工商户必输，证件类型仅支持73",
+          "example": "73",
+          "member": "string",
+          "name": "OrganizationType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司证件号码，个体工商户必输",
+          "example": "1234567890",
+          "member": "string",
+          "name": "OrganizationCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）",
+          "example": "张三",
+          "member": "string",
+          "name": "LegalPersonName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "法人证件类型，如果SubMchName不是法人，需要另外送入法人信息（企业必输）",
+          "example": "1",
+          "member": "string",
+          "name": "LegalPersonIdType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）",
+          "example": "1234567890",
+          "member": "string",
+          "name": "LegalPersonIdCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "QueryAcctBindingRequest": {
       "document": "QueryAcctBinding请求参数结构体",
@@ -13306,6 +13488,132 @@
       ],
       "type": "object"
     },
+    "RegisterBehaviorRequest": {
+      "document": "RegisterBehavior请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
+          "member": "string",
+          "name": "SubAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
+          "member": "string",
+          "name": "MidasSecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
+          "member": "string",
+          "name": "MidasSignature",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "功能标志\n1：登记行为记录信息\n2：查询补录信息",
+          "example": "1",
+          "member": "int64",
+          "name": "FunctionFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作点击时间\nyyyyMMddHHmmss\n功能标志FunctionFlag=1时必输",
+          "example": "20210513120030",
+          "member": "string",
+          "name": "OperationClickTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP地址\n功能标志FunctionFlag=1时必输",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IpAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "MAC地址\n功能标志FunctionFlag=1时必输",
+          "example": "A1:B1:C1:D1:E1:F1",
+          "member": "string",
+          "name": "MacAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约渠道\n1:  App\n2:  平台H5网页\n3：公众号\n4：小程序\n功能标志FunctionFlag=1时必输",
+          "example": "1",
+          "member": "int64",
+          "name": "SignChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterBehaviorResponse": {
+      "document": "RegisterBehavior返回参数结构体",
+      "members": [
+        {
+          "document": "补录是否成功标志\n功能标志为2时存在。\nS：成功\nF：失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S",
+          "member": "string",
+          "name": "ReplenishSuccessFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签约信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RegisterInfo",
+          "name": "RegisterInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegisterBillRequest": {
       "document": "RegisterBill请求参数结构体",
       "members": [
@@ -13629,6 +13937,72 @@
         }
       ],
       "type": "object"
+    },
+    "RegisterInfo": {
+      "document": "签约信息",
+      "members": [
+        {
+          "default": "",
+          "document": "法人证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567890",
+          "member": "string",
+          "name": "LegalPersonIdCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LegalPersonIdType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
+          "member": "string",
+          "name": "LegalPersonName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公司证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567890",
+          "member": "string",
+          "name": "OrganizationCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "示例公司",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公司证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "73",
+          "member": "string",
+          "name": "OrganizationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ResponseQueryContract": {
       "document": "签约数据",

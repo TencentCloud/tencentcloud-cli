@@ -7,7 +7,7 @@ Input:
 ```
 tccli privatedns DescribePrivateZoneRecordList --cli-unfold-argument  \
     --ZoneId zone-123456 \
-    --Limit 200 \
+    --Limit 2 \
     --Offset 0 \
     --Filters.0.Name Value \
     --Filters.0.Values 3 b \

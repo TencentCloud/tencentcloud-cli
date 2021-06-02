@@ -667,7 +667,7 @@
         },
         {
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "TagCode",
           "required": true,

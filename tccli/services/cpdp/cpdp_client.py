@@ -715,6 +715,33 @@ def doDeleteAgentTaxPaymentInfos(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRegisterBehavior(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RegisterBehaviorRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RegisterBehavior(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRegisterBillSupportWithdraw(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2011,33 +2038,6 @@ def doQueryMemberTransaction(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBindRelateAccReUnionPay(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BindRelateAccReUnionPayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.BindRelateAccReUnionPay(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doQueryBillDownloadURL(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2165,6 +2165,33 @@ def doMigrateOrderRefundQuery(args, parsed_globals):
     model = models.MigrateOrderRefundQueryRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.MigrateOrderRefundQuery(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQueryAgentStatements(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryAgentStatementsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.QueryAgentStatements(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2308,7 +2335,7 @@ def doTerminateContract(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryAgentStatements(args, parsed_globals):
+def doBindRelateAccReUnionPay(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2324,9 +2351,9 @@ def doQueryAgentStatements(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryAgentStatementsRequest()
+    model = models.BindRelateAccReUnionPayRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.QueryAgentStatements(model)
+    rsp = client.BindRelateAccReUnionPay(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2399,6 +2426,7 @@ ACTION_MAP = {
     "DeleteAgentTaxPaymentInfo": doDeleteAgentTaxPaymentInfo,
     "CreateAgentTaxPaymentInfos": doCreateAgentTaxPaymentInfos,
     "DeleteAgentTaxPaymentInfos": doDeleteAgentTaxPaymentInfos,
+    "RegisterBehavior": doRegisterBehavior,
     "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
     "UnifiedOrder": doUnifiedOrder,
     "UnBindAcct": doUnBindAcct,
@@ -2447,18 +2475,18 @@ ACTION_MAP = {
     "RevokeMemberRechargeThirdPay": doRevokeMemberRechargeThirdPay,
     "BindRelateAcctUnionPay": doBindRelateAcctUnionPay,
     "QueryMemberTransaction": doQueryMemberTransaction,
-    "BindRelateAccReUnionPay": doBindRelateAccReUnionPay,
     "QueryBillDownloadURL": doQueryBillDownloadURL,
     "CreateInvoice": doCreateInvoice,
     "QueryRefund": doQueryRefund,
     "RefundMemberTransaction": doRefundMemberTransaction,
     "MigrateOrderRefundQuery": doMigrateOrderRefundQuery,
+    "QueryAgentStatements": doQueryAgentStatements,
     "QueryContract": doQueryContract,
     "ApplyReWithdrawal": doApplyReWithdrawal,
     "QuerySmallAmountTransfer": doQuerySmallAmountTransfer,
     "QueryTransferBatch": doQueryTransferBatch,
     "TerminateContract": doTerminateContract,
-    "QueryAgentStatements": doQueryAgentStatements,
+    "BindRelateAccReUnionPay": doBindRelateAccReUnionPay,
     "QueryReconciliationDocument": doQueryReconciliationDocument,
 
 }

@@ -48,6 +48,12 @@
       "name": "创建私有域名解析",
       "output": "CreateInternalEndpointDnsResponse"
     },
+    "CreateMultipleSecurityPolicy": {
+      "document": "用于在TCR实例中，创建多个白名单策略",
+      "input": "CreateMultipleSecurityPolicyRequest",
+      "name": "创建实例公网访问多白名单策略",
+      "output": "CreateMultipleSecurityPolicyResponse"
+    },
     "CreateNamespace": {
       "document": "用于在企业版中创建命名空间",
       "input": "CreateNamespaceRequest",
@@ -155,6 +161,12 @@
       "input": "DeleteInternalEndpointDnsRequest",
       "name": "删除私有域名解析",
       "output": "DeleteInternalEndpointDnsResponse"
+    },
+    "DeleteMultipleSecurityPolicy": {
+      "document": "用于删除实例多个公网访问白名单策略",
+      "input": "DeleteMultipleSecurityPolicyRequest",
+      "name": "删除实例公网访问多白名单策略",
+      "output": "DeleteMultipleSecurityPolicyResponse"
     },
     "DeleteNamespace": {
       "document": "删除命名空间",
@@ -1061,6 +1073,51 @@
       ],
       "type": "object"
     },
+    "CreateMultipleSecurityPolicyRequest": {
+      "document": "CreateMultipleSecurityPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组策略",
+          "example": "192.168.0.0/24",
+          "member": "SecurityPolicy",
+          "name": "SecurityGroupPolicySet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMultipleSecurityPolicyResponse": {
+      "document": "CreateMultipleSecurityPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNamespacePersonalRequest": {
       "document": "CreateNamespacePersonal请求参数结构体",
       "members": [
@@ -1778,6 +1835,51 @@
     "DeleteInternalEndpointDnsResponse": {
       "document": "DeleteInternalEndpointDns返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMultipleSecurityPolicyRequest": {
+      "document": "DeleteMultipleSecurityPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组策略",
+          "example": "无",
+          "member": "SecurityPolicy",
+          "name": "SecurityGroupPolicySet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMultipleSecurityPolicyResponse": {
+      "document": "DeleteMultipleSecurityPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6057,41 +6159,45 @@
         {
           "default": "",
           "document": "策略索引",
+          "example": "0",
           "member": "int64",
           "name": "PolicyIndex",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "备注",
+          "example": "mytest",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "192.168.1.0/24",
+          "document": "运行访问的公网IP地址端",
+          "example": "192.168.1.0/24",
           "member": "string",
           "name": "CidrBlock",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "安全策略的版本",
+          "example": "0",
           "member": "string",
           "name": "PolicyVersion",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Tag": {
       "document": "云标签Tag",

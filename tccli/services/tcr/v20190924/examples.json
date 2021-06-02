@@ -70,6 +70,14 @@
         "title": "创建私有域名解析"
       }
     ],
+    "CreateMultipleSecurityPolicy": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateMultipleSecurityPolicy\n&RegistryId=tcr-test123\n&SecurityGroupPolicySet.0.CidrBlock=192.168.0.0/24\n&SecurityGroupPolicySet.0.Description=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建实例公网访问多白名单策略"
+      }
+    ],
     "CreateNamespace": [
       {
         "document": "",
@@ -212,6 +220,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DeleteInternalEndpointDns\n&InstanceId=tcr-xxx\n&VpcId=vpc-xxx\n&EniLBIp=1.1.1.1\n&UsePublicDomain=false\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\"\n    }\n}",
         "title": "删除私有域名解析"
+      }
+    ],
+    "DeleteMultipleSecurityPolicy": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteMultipleSecurityPolicy\n&RegistryId=tcr-test123\n&SecurityGroupPolicySet.0.PolicyIndex=1\n&SecurityGroupPolicySet.0.PolicyVersion=1\n&SecurityGroupPolicySet.0.CidrBlock=127.0.0.1/24\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除实例公网访问白名单策略"
       }
     ],
     "DeleteNamespace": [
