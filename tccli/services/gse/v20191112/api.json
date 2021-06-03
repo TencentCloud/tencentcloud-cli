@@ -258,6 +258,12 @@
       "name": "解关联云联网实例",
       "output": "DetachCcnInstancesResponse"
     },
+    "EndGameServerSessionAndProcess": {
+      "document": "本接口（EndGameServerSessionAndProcess）用于终止游戏服务器会话和对应的进程。",
+      "input": "EndGameServerSessionAndProcessRequest",
+      "name": "终止游戏服务器会话和对应的进程",
+      "output": "EndGameServerSessionAndProcessResponse"
+    },
     "GetGameServerInstanceLogUrl": {
       "document": "本接口用于获取游戏服务器实例的日志URL。",
       "input": "GetGameServerInstanceLogUrlRequest",
@@ -3504,6 +3510,51 @@
         }
       ],
       "usage": "both"
+    },
+    "EndGameServerSessionAndProcessRequest": {
+      "document": "EndGameServerSessionAndProcess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏服务器会话ID",
+          "example": "qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p",
+          "member": "string",
+          "name": "GameServerSessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CVM的公网IP地址",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "IpAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "端口号，最小值不小于1，最大值不超过60000",
+          "example": "8888",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EndGameServerSessionAndProcessResponse": {
+      "document": "EndGameServerSessionAndProcess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Event": {
       "document": "事件对象",

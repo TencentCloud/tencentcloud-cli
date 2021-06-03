@@ -344,6 +344,14 @@
         "title": "解关联云联网实例"
       }
     ],
+    "EndGameServerSessionAndProcess": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=EndGameServerSessionAndProcess\n&GameServerSessionId=qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-pxxx/xxx\n&IpAddress=0.0.0.0\n&Port=8888\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"84708eb1-0247-43f8-834e-c7edfdsfdgd53\"\n    }\n}",
+        "title": "终止游戏服务器会话的进程"
+      }
+    ],
     "GetGameServerInstanceLogUrl": [
       {
         "document": "获取游戏实例日志URL",

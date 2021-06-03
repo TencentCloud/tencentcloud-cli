@@ -26,6 +26,7 @@ Output:
         "Status": "FINISHED",
         "TaskId": "ghucnligqtgtvk2624mb",
         "TotalTime": 18317,
+        "ReplayUrl": "http://replayurl",
         "VideoInfos": [
             {
                 "UserId": "Mac_trtc_04",
@@ -35,6 +36,8 @@ Output:
                 "VideoPlayTime": 0,
                 "VideoSize": 593418,
                 "VideoType": 0,
+                "Width": 640,
+                "Height": 360,
                 "VideoUrl": "http://online-recording-1259648581.file.myqcloud.com/00sp43mantgtv4r842mb/d124f518e865e76a9e36712c629822ba.mp4"
             },
             {
@@ -45,6 +48,8 @@ Output:
                 "VideoPlayTime": 3,
                 "VideoSize": 765545,
                 "VideoType": 3,
+                "Width": 640,
+                "Height": 360,
                 "VideoUrl": "http://online-recording-1259648581.file.myqcloud.com/00sp43mantgtv4r842mb/763d1f6b86724f51fb118bd37d05c85.mp4"
             },
             {
@@ -55,6 +60,8 @@ Output:
                 "VideoPlayTime": 95,
                 "VideoSize": 402038,
                 "VideoType": 3,
+                "Width": 640,
+                "Height": 360,
                 "VideoUrl": "http://online-recording-1259648581.file.myqcloud.com/00sp43mantgtv4r842mb/1b9623df05124f51318df89f6e7fffc1e.mp4"
             },
             {
@@ -65,6 +72,8 @@ Output:
                 "VideoPlayTime": 623,
                 "VideoSize": 226337,
                 "VideoType": 2,
+                "Width": 640,
+                "Height": 360,
                 "VideoUrl": "http://online-recording-1259648581.file.myqcloud.com/00sp43mantgtv4r842mb/a815224f512cfe621dc965a066a5813c.mp4"
             }
         ]

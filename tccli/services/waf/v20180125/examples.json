@@ -54,6 +54,14 @@
         "title": "带过滤参数返回结果为0的场景"
       }
     ],
+    "DescribeFlowTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"www.baidu.com\",\n    \"StartTs\": 1620144000,\n    \"EndTs\": 1620180000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": [\n            {\n                \"Key\": \"xx\",\n                \"Value\": 21,\n                \"Label\": \"xx\",\n                \"TimeStamp\": \"312312\"\n            }\n        ]\n    }\n}",
+        "title": "获取流量趋势数据"
+      }
+    ],
     "DescribeUserClbWafRegions": [
       {
         "document": "",

@@ -36,6 +36,12 @@
       "name": "获取防护配置中的自定义策略列表",
       "output": "DescribeCustomRulesResponse"
     },
+    "DescribeFlowTrend": {
+      "document": "获取waf流量访问趋势",
+      "input": "DescribeFlowTrendRequest",
+      "name": "获取waf流量访问趋势",
+      "output": "DescribeFlowTrendResponse"
+    },
     "DescribeUserClbWafRegions": {
       "document": "在负载均衡型WAF的添加、编辑域名配置的时候，需要展示负载均衡型WAF（clb-waf)支持的地域列表，通过DescribeUserClbWafRegions既可以获得当前对客户已经开放的地域列表",
       "input": "DescribeUserClbWafRegionsRequest",
@@ -172,6 +178,52 @@
         }
       ],
       "type": "object"
+    },
+    "BotStatPointItem": {
+      "document": "bot的趋势图对象",
+      "members": [
+        {
+          "default": "",
+          "document": "横坐标",
+          "example": "2021-04-22 20:30:00",
+          "member": "string",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "value的所属对象",
+          "example": "/api/cf/v4/user/get-info",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "纵列表",
+          "example": "15",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Key对应的页面展示内容",
+          "example": "/api/cf/v4/user/get-info",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateAttackDownloadTaskRequest": {
       "document": "CreateAttackDownloadTask请求参数结构体",
@@ -580,6 +632,60 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeFlowTrendRequest": {
+      "document": "DescribeFlowTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要获取流量趋势的域名, all表示所有域名",
+          "example": "www.baidu.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间戳，精度秒",
+          "example": "1620144000",
+          "member": "int64",
+          "name": "StartTs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，精度秒",
+          "example": "1620180000",
+          "member": "int64",
+          "name": "EndTs",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowTrendResponse": {
+      "document": "DescribeFlowTrend返回参数结构体",
+      "members": [
+        {
+          "document": "流量趋势数据",
+          "example": "{\"TimeStamp\":\"2021-05-05 09:05:00\",\"Key\":\"all_request\",\"Value\":3",
+          "member": "BotStatPointItem",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeUserClbWafRegionsRequest": {
       "document": "DescribeUserClbWafRegions请求参数结构体",

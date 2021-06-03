@@ -1349,6 +1349,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2010-11-11 22:21:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否混合 https，默认 false，可选值 true 代表有 https 协议监听",
+          "example": "false",
+          "member": "bool",
+          "name": "Mixed",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1375,6 +1395,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "协议，选项为 http， https，默认为 http",
+          "example": "protocol",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1452,7 +1482,7 @@
       "members": [
         {
           "default": "",
-          "document": "host 数组",
+          "document": "host 数组, 空数组表示全部域名的默认证书",
           "example": "[\"xx.com\", \"yyy.com\"]",
           "member": "string",
           "name": "Hosts",
@@ -1462,11 +1492,21 @@
         },
         {
           "default": "",
-          "document": "secret name",
+          "document": "secret name，如使用证书，则填空字符串",
           "example": "secret",
           "member": "string",
           "name": "SecretName",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SSL Certificate Id",
+          "example": "CertificateId",
+          "member": "string",
+          "name": "CertificateId",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1766,13 +1806,33 @@
         },
         {
           "default": "",
-          "document": "pod的ip",
+          "document": "实例的ip",
           "example": "127.0.0.1",
           "member": "string",
           "name": "PodIp",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DeployVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

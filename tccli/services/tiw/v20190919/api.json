@@ -447,6 +447,7 @@
         {
           "default": "",
           "document": "客户的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -455,6 +456,7 @@
         {
           "default": "",
           "document": "实时录制任务Id",
+          "example": "ghucnligqtgtvk2624mb",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -467,93 +469,119 @@
       "document": "DescribeOnlineRecord返回参数结构体",
       "members": [
         {
-          "document": "录制结束原因，\n- AUTO: 房间内长时间没有音视频上行及白板操作导致自动停止录制\n- USER_CALL: 主动调用了停止录制接口\n- EXCEPTION: 录制异常结束",
+          "document": "录制结束原因，\n- AUTO: 房间内长时间没有音视频上行及白板操作导致自动停止录制\n- USER_CALL: 主动调用了停止录制接口\n- EXCEPTION: 录制异常结束\n- FORCE_STOP: 强制停止录制，一般是因为暂停超过90分钟或者录制总时长超过24小时。",
+          "example": "USER_CALL",
           "member": "string",
           "name": "FinishReason",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "需要查询结果的录制任务Id",
+          "example": "ghucnligqtgtvk2624mb",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "录制任务状态\n- PREPARED: 表示录制正在准备中（进房/启动录制服务等操作）\n- RECORDING: 表示录制已开始\n- PAUSED: 表示录制已暂停\n- STOPPED: 表示录制已停止，正在处理并上传视频\n- FINISHED: 表示视频处理并上传完成，成功生成录制结果",
+          "example": "FINISHED",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "房间号",
+          "example": "880528",
           "member": "int64",
           "name": "RoomId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "白板的群组 Id",
+          "example": "880528",
           "member": "string",
           "name": "GroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "录制用户Id",
+          "example": "tic_record_user_880528_test-01",
           "member": "string",
           "name": "RecordUserId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "实际开始录制时间，Unix 时间戳，单位秒",
+          "example": "1568949369",
           "member": "int64",
           "name": "RecordStartTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际停止录制时间，Unix 时间戳，单位秒",
+          "example": "1568949392",
           "member": "int64",
           "name": "RecordStopTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "回放视频总时长（单位：毫秒）",
+          "example": "18317",
           "member": "int64",
           "name": "TotalTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "录制过程中出现异常的次数",
+          "example": "0",
           "member": "int64",
           "name": "ExceptionCnt",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "拼接视频中被忽略的时间段，只有开启视频拼接功能的时候，这个参数才是有效的",
+          "example": "无",
           "member": "OmittedDuration",
           "name": "OmittedDurations",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "录制视频列表",
+          "example": "无",
           "member": "VideoInfo",
           "name": "VideoInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "回放URL，需配合信令播放器使用。此字段仅适用于`视频生成模式`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://replayurl",
           "member": "string",
           "name": "ReplayUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

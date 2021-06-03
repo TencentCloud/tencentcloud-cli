@@ -1260,6 +1260,15 @@
       "members": [
         {
           "default": "",
+          "document": "必填。固定值\"monitor\"",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0",
           "example": "0",
           "member": "int64",
@@ -1269,11 +1278,11 @@
         },
         {
           "default": "",
-          "document": "必填。固定值\"monitor\"",
-          "example": "monitor",
+          "document": "告警策略ID，使用此字段时 GroupId 会被忽略",
+          "example": "policy-abc123",
           "member": "string",
-          "name": "Module",
-          "required": true,
+          "name": "PolicyId",
+          "required": false,
           "type": "string"
         },
         {
@@ -1293,15 +1302,6 @@
           "name": "Dimensions",
           "required": false,
           "type": "list"
-        },
-        {
-          "default": "",
-          "document": "告警策略ID，使用此字段时 GroupId 会被忽略",
-          "example": "policy-abc123",
-          "member": "string",
-          "name": "PolicyId",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
