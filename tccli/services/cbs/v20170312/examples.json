@@ -247,7 +247,7 @@
     "ModifyDisksChargeType": [
       {
         "document": "本示例用于切换一个云盘的计费模式（将按量计费云盘转换为包年包月云盘，并购买一个月时长）。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDisksChargeType\r\n&DiskIds.0=disk-jwk0zvrg\r\n&DiskChargePrepaid.Period=1\r\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDisksChargeType\n&DiskIds.0=disk-jwk0zvrg\n&DiskChargePostpaid=True\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "切换云盘的计费模式"
       }

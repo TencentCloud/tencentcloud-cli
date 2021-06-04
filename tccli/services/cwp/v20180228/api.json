@@ -4230,6 +4230,15 @@
           "name": "ImportType",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）",
+          "example": "true",
+          "member": "bool",
+          "name": "IsQueryProMachine",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7367,6 +7376,16 @@
           "example": "xxx",
           "member": "string",
           "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云镜Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Uuid",
           "required": true,
           "type": "string",
           "value_allowed_null": true

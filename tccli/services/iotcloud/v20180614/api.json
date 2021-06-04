@@ -4467,6 +4467,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "ASBHKN121",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -4475,6 +4476,7 @@
         {
           "default": "",
           "document": "消息内容",
+          "example": "123456",
           "member": "string",
           "name": "Payload",
           "required": true,
@@ -4483,10 +4485,20 @@
         {
           "default": "",
           "document": "消息质量等级",
+          "example": "1",
           "member": "int64",
           "name": "Qos",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备",
+          "example": "base64",
+          "member": "string",
+          "name": "PayloadEncoding",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4496,8 +4508,10 @@
       "members": [
         {
           "document": "广播消息任务ID",
+          "example": "1000523",
           "member": "int64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -26,6 +26,7 @@ Output:
             "Rules": [
                 {
                     "Host": "",
+                    "Protocol": "https",
                     "Http": {
                         "Paths": [
                             {

@@ -37,7 +37,7 @@
       "output": "DescribeInvocationsResponse"
     },
     "DescribeRegions": {
-      "document": "此接口用于查询地域列表",
+      "document": "此接口用于查询 TAT 产品后台地域列表。\nRegionState 为 AVAILABLE，代表该地域的 TAT 后台服务已经可用；未返回，代表该地域的 TAT 后台服务尚不可用。",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
       "output": "DescribeRegionsResponse"
@@ -1262,6 +1262,7 @@
         {
           "default": "",
           "document": "地域名称，例如，ap-guangzhou",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1271,6 +1272,7 @@
         {
           "default": "",
           "document": "地域描述，例如: 广州",
+          "example": "广州",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -1279,7 +1281,8 @@
         },
         {
           "default": "",
-          "document": "地域是否可用状态",
+          "document": "地域是否可用状态，AVAILABLE 代表可用",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
           "required": true,

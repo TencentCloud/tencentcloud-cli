@@ -259,7 +259,7 @@
       "output": "DetachCcnInstancesResponse"
     },
     "EndGameServerSessionAndProcess": {
-      "document": "本接口（EndGameServerSessionAndProcess）用于终止游戏服务器会话和对应的进程。",
+      "document": "本接口（EndGameServerSessionAndProcess）用于终止游戏服务器会话和对应的进程，适用于时限保护和不保护。",
       "input": "EndGameServerSessionAndProcessRequest",
       "name": "终止游戏服务器会话和对应的进程",
       "output": "EndGameServerSessionAndProcessResponse"
@@ -3516,7 +3516,7 @@
       "members": [
         {
           "default": "",
-          "document": "游戏服务器会话ID",
+          "document": "游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。",
           "example": "qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p",
           "member": "string",
           "name": "GameServerSessionId",
@@ -3525,7 +3525,7 @@
         },
         {
           "default": "",
-          "document": "CVM的公网IP地址",
+          "document": "CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。",
           "example": "0.0.0.0",
           "member": "string",
           "name": "IpAddress",
@@ -3534,7 +3534,7 @@
         },
         {
           "default": "",
-          "document": "端口号，最小值不小于1，最大值不超过60000",
+          "document": "端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。",
           "example": "8888",
           "member": "int64",
           "name": "Port",

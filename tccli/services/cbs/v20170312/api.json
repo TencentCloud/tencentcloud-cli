@@ -1711,6 +1711,7 @@
         {
           "default": "",
           "document": "购买云盘的时长，默认单位为月，取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
+          "example": "1",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -1720,6 +1721,7 @@
         {
           "default": "",
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -1729,6 +1731,7 @@
         {
           "default": "",
           "document": "需要将云盘的到期时间与挂载的子机对齐时，可传入该参数。该参数表示子机当前的到期时间，此时Period如果传入，则表示子机需要续费的时长，云盘会自动按对齐到子机续费后的到期时间续费，示例取值：2018-03-30 20:15:03。",
+          "example": "2018-03-30 20:15:03",
           "member": "datetime",
           "name": "CurInstanceDeadline",
           "required": false,
@@ -2388,6 +2391,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。",
+          "example": "[\"disk-jwk0zvrg\\r\\n\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -2396,10 +2400,20 @@
         {
           "default": "",
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
+          "example": "无",
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaid",
-          "required": true,
+          "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "后付费模式",
+          "example": "True",
+          "member": "bool",
+          "name": "DiskChargePostpaid",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -7,7 +7,8 @@ Input:
 ```
 tccli cwp DescribeImportMachineInfo --cli-unfold-argument  \
     --MachineList xx \
-    --ImportType xx
+    --ImportType xx \
+    --IsQueryProMachine True
 ```
 
 Output: 

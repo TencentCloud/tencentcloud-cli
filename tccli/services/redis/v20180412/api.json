@@ -6,6 +6,12 @@
       "name": "绑定安全组",
       "output": "AssociateSecurityGroupsResponse"
     },
+    "ChangeReplicaToMaster": {
+      "document": "该接口仅支持多AZ实例副本组提主",
+      "input": "ChangeReplicaToMasterRequest",
+      "name": "副本组提主",
+      "output": "ChangeReplicaToMasterResponse"
+    },
     "CleanUpInstance": {
       "document": "回收站实例立即下线",
       "input": "CleanUpInstanceRequest",
@@ -589,6 +595,51 @@
         }
       ],
       "usage": "out"
+    },
+    "ChangeReplicaToMasterRequest": {
+      "document": "ChangeReplicaToMaster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "crs-cdbdbncd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "副本Id",
+          "example": "354266",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeReplicaToMasterResponse": {
+      "document": "ChangeReplicaToMaster返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "example": "626515",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CleanUpInstanceRequest": {
       "document": "CleanUpInstance请求参数结构体",

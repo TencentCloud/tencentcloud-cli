@@ -1,14 +1,14 @@
-**Example 1: Ingress 列表**
+**Example 1: 服务关联的 Ingress 列表**
 
-Ingress 列表
+服务关联的 Ingress 列表
 
 Input: 
 
 ```
-tccli tem DescribeIngresses --cli-unfold-argument  \
+tccli tem DescribeRelatedIngresses --cli-unfold-argument  \
     --NamespaceId env-xxx \
     --EksNamespace default \
-    --Names test-ingress-1
+    --ServiceId svc-xxx
 ```
 
 Output: 
@@ -25,6 +25,7 @@ Output:
                 "ClbId": "clb-xxxx",
                 "Vip": "10.10.10.10",
                 "Name": "test-ingress-1",
+                "Mixed": true,
                 "Rules": [
                     {
                         "Host": "",

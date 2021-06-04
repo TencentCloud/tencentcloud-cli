@@ -8,10 +8,12 @@ Input:
 tccli tem ModifyIngress --cli-unfold-argument  \
     --SourceChannel 0 \
     --Ingress.Tls.0.Hosts xxx.com \
-    --Ingress.Tls.0.SecretName xx \
+    --Ingress.Tls.0.CertificateId xx \
+    --Ingress.Tls.0.SecretName  \
     --Ingress.EksNamespace xx \
     --Ingress.Name xx \
     --Ingress.Rules.0.Host xx \
+    --Ingress.Rules.0.Protocol https \
     --Ingress.Rules.0.Http.Paths.0.Path xx \
     --Ingress.Rules.0.Http.Paths.0.Backend.ServiceName xx \
     --Ingress.Rules.0.Http.Paths.0.Backend.ServicePort 443 \
