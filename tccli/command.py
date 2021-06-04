@@ -43,9 +43,24 @@ class CLICommand(BaseCommand):
 
         # 解决接口版本(--version) 和 tccli版本(--version)字段冲突
         self._handle_service_version_argumnet(args, parser)
+        self._handle_warning(args)
 
         parsed_args, remaining = parser.parse_known_args(args)
         return command_map[parsed_args.command](remaining, parsed_args)
+
+    def _handle_warning(self, args):
+        profile = "default"
+        if "--profile" in args:
+            location = args.index("--profile") + 1
+            if location < len(args):
+                profile = args[location]
+        conf_path = os.path.join(os.path.expanduser("~"), ".tccli")
+        conf = {}
+        if Utils.file_existed(conf_path, profile+".configure")[0]:
+            conf = Utils.load_json_msg(os.path.join(conf_path, profile+".configure"))
+        if "--warning" not in args and conf.get("warning", "") != "on":
+            import warnings
+            warnings.filterwarnings("ignore")
 
     def _handle_service_version_argumnet(self, args, parser):
         if "--version" in args:
