@@ -110,6 +110,10 @@ class Loader(object):
             'cli-unfold-argument': {
                 'help': 'complex type parameters are expanded with dots',
                 'action': 'store_true'
+            },
+            'warning': {
+                'help': 'Open the warning log',
+                'action': 'store_true'
             }
 
         }
@@ -218,7 +222,9 @@ class Loader(object):
                                        "output, it validates the command inputs and returns a "
                                        "sample output JSON for that command.",
             "--cli-input-json": "Reads arguments from the JSON string provided. The JSON string "
-                                "follows the format provided by --generate-cli-skeleton. "
+                                "follows the format provided by --generate-cli-skeleton. ",
+            "--cli-unfold-argument": "complex type parameters are expanded with dots",
+            "--warning": "Open the warning log",
         }
 
     def _filling_param_info(self, param_info, para, param_type, member):

@@ -23,7 +23,8 @@ class BasicConfigure(BasicCommand):
 
     def __init__(self):
         super(BasicConfigure, self).__init__()
-        self.config_list = [OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount]
+        self.config_list = [
+            OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount, OptionsDefine.Warnings]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
@@ -348,6 +349,7 @@ class ConfigureCommand(BasicConfigure):
                 "region": "ap-guangzhou",
                 "output": "json",
                 "array_count": 10,
+                "warning": "off"
             }
         self._init_configure("default.configure", config)
 
