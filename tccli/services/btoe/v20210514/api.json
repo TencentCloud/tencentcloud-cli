@@ -67,7 +67,7 @@
       "output": "GetDepositInfoResponse"
     },
     "VerifyEvidenceBlockChainTxHash": {
-      "document": "用户向BTOE核验存证结果中的区块链交易hash",
+      "document": "用户向BTOE核验存证结果中的区块链交易hash的真实性",
       "input": "VerifyEvidenceBlockChainTxHashRequest",
       "name": "区块链交易hash核验接口",
       "output": "VerifyEvidenceBlockChainTxHashResponse"
@@ -910,7 +910,7 @@
       "members": [
         {
           "default": "",
-          "document": "‘区块链交易hash，在\"存证基本信息查询”中可以获取",
+          "document": "区块链交易 hash，在“存证基本信息查询（GetDepositInfo）”接口中可以获取。",
           "example": "23eca93c271e6ecf8e24f3b0045436cc6bb7456a715c3bfc6d86fd708518de97",
           "member": "string",
           "name": "EvidenceTxHash",

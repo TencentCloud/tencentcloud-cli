@@ -457,7 +457,7 @@
         },
         {
           "default": "",
-          "document": "镜像所需系统盘大小。",
+          "document": "镜像所需系统盘大小，单位 GB。",
           "example": "20",
           "member": "int64",
           "name": "RequiredSystemDiskSize",
@@ -3451,6 +3451,7 @@
         {
           "default": "",
           "document": "地域名称，例如，ap-guangzhou。",
+          "example": "ap-beijing",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -3460,6 +3461,7 @@
         {
           "default": "",
           "document": "地域描述，例如，华南地区(广州)。",
+          "example": "北京",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -3468,7 +3470,8 @@
         },
         {
           "default": "",
-          "document": "地域是否可用状态。",
+          "document": "地域是否可用状态，取值为AVAILABLE。",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
           "required": true,
@@ -3478,6 +3481,7 @@
         {
           "default": "",
           "document": "是否中国大陆地域",
+          "example": "true",
           "member": "bool",
           "name": "IsChinaMainland",
           "required": true,

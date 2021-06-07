@@ -1353,7 +1353,8 @@
       "members": [
         {
           "default": "",
-          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline，processing。\n- disable：域名封禁状态，normal，unlicensed。\n- projectId：项目ID。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- area：加速区域，支持mainland，overseas或global。",
+          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline，processing。\n- disable：域名封禁状态，normal，unlicensed。\n- projectId：项目ID。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- area：加速区域，支持mainland，overseas或global。\n- tagKey：标签键。",
+          "example": "origin",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1363,6 +1364,7 @@
         {
           "default": "",
           "document": "过滤字段值。",
+          "example": "[‘xxxx.test.com’]",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -1372,6 +1374,7 @@
         {
           "default": "",
           "document": "是否启用模糊查询，仅支持过滤字段名为origin，domain。",
+          "example": "false",
           "member": "bool",
           "name": "Fuzzy",
           "required": false,

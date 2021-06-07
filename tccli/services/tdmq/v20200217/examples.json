@@ -352,6 +352,14 @@
         "title": "成功发送单条消息"
       }
     ],
+    "SendMsg": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendMsg\n&EnvironmentId=default\n&TopicName=cloud_test\n&MsgContent=one_msg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
+        "title": "发送一个消息"
+      }
+    ],
     "UnbindCmqDeadLetter": [
       {
         "document": "",

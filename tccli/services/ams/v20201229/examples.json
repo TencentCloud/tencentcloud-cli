@@ -8,6 +8,14 @@
         "title": "取消任务"
       }
     ],
+    "CreateAudioModerationSyncTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioModerationSyncTask\n<公共请求参数>\n\n{\n    \"BizType\": \"test_biztype\",\n    \"FileUrl\": \"https://test.myqcloud.com/test.mp3\",\n    \"DataId\": \"test0000000000001\",\n    \"Name\": \"test_file\",\n    \"FileFormat\": \"mp3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DataId\": \"test0000000000001\",\n        \"Label\": \"Normal\",\n        \"Name\": \"test_audio\",\n        \"BizType\": \"test_biztype\",\n        \"Suggestion\": \"Pass\",\n        \"AsrText\": \"新年快乐，恭喜发财，身体健康，万事如意。\",\n        \"TextResults\": [\n            {\n                \"Label\": \"Normal\",\n                \"Score\": 0,\n                \"Keywords\": 0,\n                \"Suggestion\": \"Pass\",\n                \"LibId\": \"\",\n                \"LibType\": 0,\n                \"LibName\": \"\"\n            }\n        ],\n        \"MoanResults\": []\n    }\n}",
+        "title": "音频同步接口返回示例"
+      }
+    ],
     "CreateAudioModerationTask": [
       {
         "document": "创建音频审核任务",

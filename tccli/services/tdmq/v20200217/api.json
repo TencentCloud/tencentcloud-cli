@@ -264,6 +264,12 @@
       "name": "发送单条消息",
       "output": "SendMessagesResponse"
     },
+    "SendMsg": {
+      "document": "此接口仅用于测试发生消息，不能作为现网正式生产使用",
+      "input": "SendMsgRequest",
+      "name": "发送消息",
+      "output": "SendMsgResponse"
+    },
     "UnbindCmqDeadLetter": {
       "document": "解绑cmq死信队列",
       "input": "UnbindCmqDeadLetterRequest",
@@ -4570,6 +4576,60 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMsgRequest": {
+      "document": "SendMsg请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "example": "default",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称，如果是分区topic需要指定具体分区，如果没有指定则默认发到0分区，例如：my_topic-partition-0。",
+          "example": "cloud_test",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息内容，不能为空且大小不得大于5242880个byte。",
+          "example": "one_msg",
+          "member": "string",
+          "name": "MsgContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 集群的ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMsgResponse": {
+      "document": "SendMsg返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
