@@ -23,6 +23,22 @@ Output:
         "SubLabel": "SexBehavior",
         "Score": 90,
         "HitFlag": 1,
+        "LabelResults": [
+            {
+                "Scene": "Porn",
+                "Suggestion": "Block",
+                "Label": "Porn",
+                "SubLabel": "SexBehavior",
+                "Score": 90,
+                "Details": [
+                    {
+                        "Id": 0,
+                        "Name": "SexBehavior",
+                        "Score": 90
+                    }
+                ]
+            }
+        ],
         "ObjectResults": [
             {
                 "Scene": "QrCode",
@@ -49,7 +65,54 @@ Output:
                 ]
             }
         ],
-        "OcrResults": [],
+        "OcrResults": [
+            {
+                "Scene": "OCR",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Text": "hello world",
+                "Details": [
+                    {
+                        "Text": "hello world",
+                        "Label": "",
+                        "LibId": "",
+                        "LibName": "",
+                        "Keywords": [],
+                        "Rate": 0,
+                        "Score": 0,
+                        "Location": {
+                            "X": 8,
+                            "Y": 0,
+                            "Width": 111,
+                            "Height": 19,
+                            "Rotate": 0
+                        }
+                    }
+                ]
+            }
+        ],
+        "LibResults": [
+            {
+                "Scene": "Similar",
+                "Label": "Porn",
+                "SubLabel": "",
+                "Score": 99,
+                "Details": [
+                    {
+                        "LibName": "123",
+                        "Score": 99,
+                        "Label": "Porn",
+                        "Tag": "",
+                        "ImageId": "111",
+                        "Id": 0,
+                        "LibId": ""
+                    }
+                ],
+                "Suggestion": "Block"
+            }
+        ],
         "Extra": ""
     }
 }

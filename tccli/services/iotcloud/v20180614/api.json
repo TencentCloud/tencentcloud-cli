@@ -4702,6 +4702,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "testrulename",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -4710,6 +4711,7 @@
         {
           "default": "",
           "document": "替换的规则包体",
+          "example": "无",
           "member": "TopicRulePayload",
           "name": "TopicRulePayload",
           "required": true,
@@ -4718,6 +4720,7 @@
         {
           "default": "",
           "document": "修改类型，0：其他，1：创建行为，2：更新行为，3：删除行为",
+          "example": "1",
           "member": "uint64",
           "name": "ModifyType",
           "required": false,
@@ -4726,6 +4729,7 @@
         {
           "default": "",
           "document": "action增删改变更填对应topicRulePayload里面第几个action",
+          "example": "1",
           "member": "uint64",
           "name": "ActionIndex",
           "required": false,

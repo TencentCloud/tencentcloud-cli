@@ -254,6 +254,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "ins-jw0vit58",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -263,6 +264,7 @@
         {
           "default": "",
           "document": "实例已挂载数据盘的数量。",
+          "example": "1",
           "member": "uint64",
           "name": "AttachedDiskCount",
           "required": true,
@@ -272,6 +274,7 @@
         {
           "default": "",
           "document": "实例最大可挂载数据盘的数量。",
+          "example": "20",
           "member": "uint64",
           "name": "MaxAttachCount",
           "required": true,
@@ -1134,6 +1137,7 @@
         {
           "default": "",
           "document": "云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。",
+          "example": "[\"ins-9w5d2buw\\r\\n\",\"ins-jw0vit58\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -1147,8 +1151,10 @@
       "members": [
         {
           "document": "各个云服务器已挂载和可挂载弹性云盘的数量。",
+          "example": "无",
           "member": "AttachDetail",
           "name": "AttachDetail",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

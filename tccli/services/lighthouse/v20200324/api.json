@@ -2956,7 +2956,8 @@
       "members": [
         {
           "default": "",
-          "document": "网络计费类型。",
+          "document": "网络计费类型,，取值范围：\n<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>\n<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>",
+          "example": "BANDWIDTH_PREPAID",
           "member": "string",
           "name": "InternetChargeType",
           "required": true,
@@ -2966,6 +2967,7 @@
         {
           "default": "",
           "document": "公网出带宽上限，单位：Mbps。",
+          "example": "20",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -2975,6 +2977,7 @@
         {
           "default": "",
           "document": "是否分配公网 IP。",
+          "example": "true",
           "member": "bool",
           "name": "PublicIpAssigned",
           "required": true,

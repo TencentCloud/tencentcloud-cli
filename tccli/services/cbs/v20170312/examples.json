@@ -125,7 +125,7 @@
     "DescribeInstancesDiskNum": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeInstancesDiskNum\r\n&InstanceIds.0=ins-9w5d2buw\r\n&InstanceIds.1=ins-jw0vit58\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeInstancesDiskNum\n&InstanceIds.0=ins-9w5d2buw\n&InstanceIds.1=ins-jw0vit58\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AttachDetail\": [\n            {\n                \"InstanceId\": \"ins-9w5d2buw\",\n                \"AttachedDiskCount\": 1,\n                \"MaxAttachCount\": 10\n            },\n            {\n                \"InstanceId\": \"ins-jw0vit58\",\n                \"AttachedDiskCount\": 2,\n                \"MaxAttachCount\": 10\n            }\n        ],\n        \"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\"\n    }\n}",
         "title": "查询多个实例挂载的云硬盘数量"
       }

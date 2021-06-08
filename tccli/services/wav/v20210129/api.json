@@ -1,0 +1,179 @@
+{
+  "actions": {
+    "QueryActivityLiveCodeList": {
+      "document": "根据游标拉取活动活码列表信息",
+      "input": "QueryActivityLiveCodeListRequest",
+      "name": "查询活动活码列表接口",
+      "output": "QueryActivityLiveCodeListResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-01-29",
+    "api_brief": "企业微信汽车行业版 API 已上线1.0版本。全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码，给您带来简单快捷的使用体验。支持灵活调用产品主流营销业务能力，并支持全地域就近接入让您更快连接腾讯云产品。",
+    "serviceNameCN": "企业微信汽车行业版",
+    "serviceShortName": "wav"
+  },
+  "objects": {
+    "LiveCodeDetail": {
+      "document": "活动活码详情",
+      "members": [
+        {
+          "default": "",
+          "document": "活码id",
+          "example": "1381612531432296450",
+          "member": "uint64",
+          "name": "LiveCodeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活码名称",
+          "example": "留资活动活码",
+          "member": "string",
+          "name": "LiveCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短链url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://aggretrip.map.qq.com/wework_saas/dist/index.html?wexin_t",
+          "member": "string",
+          "name": "ShortChainAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活码二维码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://aggretrip.map.qq.com/wework_saas/dist/index.html?wexin_t",
+          "member": "string",
+          "name": "LiveCodePreview",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动id",
+          "example": "1381619428653346818",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动名称",
+          "example": "留资活动名称",
+          "member": "string",
+          "name": "ActivityName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活码状态，-1：删除，0：启用，1禁用，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "LiveCodeState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活码参数，每个活码参数都是不一样的， 这个的值对应的是字符串json类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"channel\": {                         \"chan",
+          "member": "string",
+          "name": "LiveCodeData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间戳，单位为秒",
+          "example": "1621496513",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间戳，单位为秒",
+          "example": "1621496513",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryActivityLiveCodeListRequest": {
+      "document": "QueryActivityLiveCodeList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryActivityLiveCodeListResponse": {
+      "document": "QueryActivityLiveCodeList返回参数结构体",
+      "members": [
+        {
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "活码列表响应参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveCodeDetail",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

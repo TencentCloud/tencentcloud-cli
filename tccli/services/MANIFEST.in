@@ -361,6 +361,8 @@ include tccli/services/vpc/v20170312/api.json
 include tccli/services/vpc/v20170312/examples.json
 include tccli/services/waf/v20180125/api.json
 include tccli/services/waf/v20180125/examples.json
+include tccli/services/wav/v20210129/api.json
+include tccli/services/wav/v20210129/examples.json
 include tccli/services/wss/v20180426/api.json
 include tccli/services/wss/v20180426/examples.json
 include tccli/services/youmall/v20180228/api.json

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "QueryActivityLiveCodeList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryActivityLiveCodeList\n&Cursor=xxxx\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PageData\": [\n            {\n                \"ActivityName\": \"xx\",\n                \"LiveCodeName\": \"xx\",\n                \"LiveCodeId\": 0,\n                \"LiveCodeState\": 0,\n                \"LiveCodeData\": \"xx\",\n                \"ActivityId\": 0,\n                \"LiveCodePreview\": \"xx\",\n                \"ShortChainAddress\": \"xx\",\n                \"CreateTime\": 0,\n                \"UpdateTime\": 0\n            }\n        ],\n        \"NextCursor\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询活码列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}
