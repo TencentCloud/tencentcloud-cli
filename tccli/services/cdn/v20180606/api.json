@@ -288,6 +288,12 @@
       "name": "管理日志主题下绑定的域名",
       "output": "ManageClsTopicDomainsResponse"
     },
+    "ModifyPurgeFetchTaskStatus": {
+      "document": "ModifyPurgeFetchTaskStatus 用于上报定时刷新预热任务执行状态",
+      "input": "ModifyPurgeFetchTaskStatusRequest",
+      "name": "上报定时刷新预热任务执行状态",
+      "output": "ModifyPurgeFetchTaskStatusResponse"
+    },
     "PurgePathCache": {
       "document": "PurgePathCache 用于批量提交目录刷新，根据域名的加速区域进行对应区域的刷新。\n默认情况下境内、境外加速区域每日目录刷新额度为各 100 条，每次最多可提交 20 条。",
       "input": "PurgePathCacheRequest",
@@ -7765,6 +7771,60 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyPurgeFetchTaskStatusRequest": {
+      "document": "ModifyPurgeFetchTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "ExecutionTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行状态\nsuccess: 成功\nfailed: 失败",
+          "example": "xxx",
+          "member": "string",
+          "name": "ExecutionStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行状态详情",
+          "example": "xxx",
+          "member": "string",
+          "name": "ExecutionStatusDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPurgeFetchTaskStatusResponse": {
+      "document": "ModifyPurgeFetchTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "OfflineCache": {
       "document": "离线缓存是否开启",

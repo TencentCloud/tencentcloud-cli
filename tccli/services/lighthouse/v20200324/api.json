@@ -1571,6 +1571,7 @@
         {
           "default": "",
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
+          "example": "无",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -1579,6 +1580,7 @@
         {
           "default": "",
           "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1587,6 +1589,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1595,6 +1598,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1608,15 +1612,19 @@
       "members": [
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例详细信息列表。",
+          "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2579,6 +2587,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2588,6 +2597,7 @@
         {
           "default": "",
           "document": "套餐 ID。",
+          "example": "无",
           "member": "string",
           "name": "BundleId",
           "required": true,
@@ -2597,6 +2607,7 @@
         {
           "default": "",
           "document": "镜像 ID。",
+          "example": "无",
           "member": "string",
           "name": "BlueprintId",
           "required": true,
@@ -2606,6 +2617,7 @@
         {
           "default": "",
           "document": "实例的 CPU 核数，单位：核。",
+          "example": "无",
           "member": "int64",
           "name": "CPU",
           "required": true,
@@ -2615,6 +2627,7 @@
         {
           "default": "",
           "document": "实例内存容量，单位：GB 。",
+          "example": "无",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -2624,6 +2637,7 @@
         {
           "default": "",
           "document": "实例名称。",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -2633,6 +2647,7 @@
         {
           "default": "",
           "document": "实例计费模式。取值范围： \nPREPAID：表示预付费，即包年包月。",
+          "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -2642,6 +2657,7 @@
         {
           "default": "",
           "document": "实例系统盘信息。",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": true,
@@ -2651,6 +2667,7 @@
         {
           "default": "",
           "document": "实例主网卡的内网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PrivateAddresses",
           "required": true,
@@ -2660,6 +2677,7 @@
         {
           "default": "",
           "document": "实例主网卡的公网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PublicAddresses",
           "required": true,
@@ -2669,6 +2687,7 @@
         {
           "default": "",
           "document": "实例带宽信息。",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": true,
@@ -2678,6 +2697,7 @@
         {
           "default": "",
           "document": "自动续费标识。取值范围： \nNOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  \nNOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。",
+          "example": "无",
           "member": "string",
           "name": "RenewFlag",
           "required": true,
@@ -2687,6 +2707,7 @@
         {
           "default": "",
           "document": "实例登录设置。",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": true,
@@ -2696,6 +2717,7 @@
         {
           "default": "",
           "document": "实例状态。取值范围： \n<li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li>",
+          "example": "无",
           "member": "string",
           "name": "InstanceState",
           "required": true,
@@ -2705,6 +2727,7 @@
         {
           "default": "",
           "document": "实例全局唯一 ID。",
+          "example": "无",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -2714,6 +2737,7 @@
         {
           "default": "",
           "document": "实例的最新操作。例：StopInstances、ResetInstance。注意：此字段可能返回 空值，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestOperation",
           "required": true,
@@ -2723,6 +2747,7 @@
         {
           "default": "",
           "document": "实例的最新操作状态。取值范围： \nSUCCESS：表示操作成功 \nOPERATING：表示操作执行中 \nFAILED：表示操作失败 \n注意：此字段可能返回 空值，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestOperationState",
           "required": true,
@@ -2732,6 +2757,7 @@
         {
           "default": "",
           "document": "实例最新操作的唯一请求 ID。 \n注意：此字段可能返回 空值，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestOperationRequestId",
           "required": true,
@@ -2741,6 +2767,7 @@
         {
           "default": "",
           "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "IsolatedTime",
           "required": true,
@@ -2750,6 +2777,7 @@
         {
           "default": "",
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -2759,6 +2787,7 @@
         {
           "default": "",
           "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ExpiredTime",
           "required": true,
@@ -2768,6 +2797,7 @@
         {
           "default": "",
           "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
+          "example": "无",
           "member": "string",
           "name": "PlatformType",
           "required": true,
@@ -2777,6 +2807,7 @@
         {
           "default": "",
           "document": "操作系统平台。",
+          "example": "无",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2786,6 +2817,7 @@
         {
           "default": "",
           "document": "操作系统名称。",
+          "example": "无",
           "member": "string",
           "name": "OsName",
           "required": true,

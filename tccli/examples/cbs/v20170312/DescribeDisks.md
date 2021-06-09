@@ -48,7 +48,18 @@ Output:
                 "RollbackPercent": 100,
                 "AutoSnapshotPolicyIds": null,
                 "ReturnFailCode": 3,
-                "CreateTime": "2018-09-26 17:36:07"
+                "CreateTime": "2018-09-26 17:36:07",
+                "ThroughputPerformance": 1,
+                "Migrating": true,
+                "InstanceIdList": [
+                    "xx"
+                ],
+                "Shareable": true,
+                "MigratePercent": 100,
+                "SnapshotSize": 100,
+                "SnapshotCount": 0,
+                "BackupDisk": true,
+                "AttachMode": "PF"
             }
         ]
     }

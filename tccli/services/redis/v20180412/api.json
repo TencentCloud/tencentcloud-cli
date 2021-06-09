@@ -5941,6 +5941,7 @@
         {
           "default": "",
           "document": "节点key的个数",
+          "example": "1",
           "member": "int64",
           "name": "Keys",
           "required": true,
@@ -5950,6 +5951,7 @@
         {
           "default": "",
           "document": "节点slot分布",
+          "example": "0-5460",
           "member": "string",
           "name": "Slot",
           "required": true,
@@ -5959,6 +5961,7 @@
         {
           "default": "",
           "document": "节点的序列ID",
+          "example": "b69eda124a34c1b713e81f7cb947161b06214328",
           "member": "string",
           "name": "NodeId",
           "required": true,
@@ -5968,8 +5971,19 @@
         {
           "default": "",
           "document": "节点的状态",
+          "example": "Normal",
           "member": "string",
           "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点角色",
+          "example": "master",
+          "member": "string",
+          "name": "Role",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6016,6 +6030,7 @@
         {
           "default": "",
           "document": "节点ID",
+          "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
           "member": "string",
           "name": "NodeId",
           "required": true,
@@ -6025,6 +6040,7 @@
         {
           "default": "",
           "document": "节点角色",
+          "example": "master",
           "member": "string",
           "name": "NodeRole",
           "required": true,
@@ -6034,8 +6050,19 @@
         {
           "default": "",
           "document": "分片ID",
+          "example": "1",
           "member": "int64",
           "name": "ClusterId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区ID",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
           "required": true,
           "type": "int",
           "value_allowed_null": false

@@ -28,7 +28,8 @@ Output:
                 "InstanceChargeType": "PREPAID",
                 "SystemDisk": {
                     "DiskType": "CLOUD_PREMIUM",
-                    "DiskSize": 50
+                    "DiskSize": 50,
+                    "DiskId": "lhdisk-gayq6kyd"
                 },
                 "PrivateAddresses": [
                     "10.0.0.5"

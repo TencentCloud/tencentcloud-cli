@@ -703,6 +703,15 @@
           "name": "Nick",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性",
+          "example": "sn8a1244/sde=",
+          "member": "string",
+          "name": "BindToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

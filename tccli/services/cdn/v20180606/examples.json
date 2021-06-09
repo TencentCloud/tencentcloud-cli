@@ -384,6 +384,14 @@
         "title": "管理日志主题下域名列表"
       }
     ],
+    "ModifyPurgeFetchTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPurgeFetchTaskStatus\n<公共请求参数>\n\n{\n    \"ExecutionTime\": \"2020-09-22T00:00:00+00:00\",\n    \"ExecutionStatusDesc\": \"xx\",\n    \"Id\": \"xx\",\n    \"ExecutionStatus\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改定时刷新预热任务执行状态"
+      }
+    ],
     "PurgePathCache": [
       {
         "document": "",

@@ -74,6 +74,7 @@
         {
           "default": "",
           "document": "去毛刺方式：weak,,strong",
+          "example": "weak",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -82,7 +83,8 @@
         },
         {
           "default": "",
-          "document": "去毛刺算法，可选项：\nedaf,\nwdaf，\n默认edaf。\n注意：edaf：速度快，去毛刺效果强，保护边缘效果较弱；\nwdaf：速度慢，保护边缘效果好",
+          "document": "去毛刺算法，可选项：\nedaf,\nwdaf，\n默认edaf。\n注意：此参数已经弃用",
+          "example": "edaf",
           "member": "string",
           "name": "Algorithm",
           "required": false,
@@ -3609,6 +3611,7 @@
         {
           "default": "",
           "document": "去编码毛刺、伪影参数。",
+          "example": "无",
           "member": "ArtifactReduction",
           "name": "ArtifactReduction",
           "required": false,
@@ -3618,6 +3621,7 @@
         {
           "default": "",
           "document": "去噪声参数。",
+          "example": "无",
           "member": "Denoising",
           "name": "Denoising",
           "required": false,
@@ -3627,6 +3631,7 @@
         {
           "default": "",
           "document": "颜色增强参数。",
+          "example": "无",
           "member": "ColorEnhance",
           "name": "ColorEnhance",
           "required": false,
@@ -3636,6 +3641,7 @@
         {
           "default": "",
           "document": "细节增强参数。",
+          "example": "无",
           "member": "Sharp",
           "name": "Sharp",
           "required": false,
@@ -3644,7 +3650,8 @@
         },
         {
           "default": "",
-          "document": "超分参数，可选项：2，目前仅支持2倍超分。",
+          "document": "超分参数，可选项：2，目前仅支持2倍超分。\n注意：此参数已经弃用，超分可以使用VideoSuperResolution参数",
+          "example": "2",
           "member": "int64",
           "name": "WdSuperResolution",
           "required": false,
@@ -3654,6 +3661,7 @@
         {
           "default": "",
           "document": "人脸保护信息。",
+          "example": "无",
           "member": "FaceProtect",
           "name": "FaceProtect",
           "required": false,
@@ -3663,6 +3671,7 @@
         {
           "default": "",
           "document": "插帧，取值范围：[0, 60]，单位：Hz。\n注意：当取值为 0，表示帧率和原始视频保持一致。",
+          "example": "30",
           "member": "int64",
           "name": "WdFps",
           "required": false,
@@ -3672,6 +3681,7 @@
         {
           "default": "",
           "document": "去划痕参数",
+          "example": "无",
           "member": "ScratchRepair",
           "name": "ScratchRepair",
           "required": false,
@@ -3681,8 +3691,29 @@
         {
           "default": "",
           "document": "低光照增强参数",
+          "example": "无",
           "member": "LowLightEnhance",
           "name": "LowLightEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频超分参数",
+          "example": "无",
+          "member": "VideoSuperResolution",
+          "name": "VideoSuperResolution",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频画质修复参数",
+          "example": "无",
+          "member": "VideoRepair",
+          "name": "VideoRepair",
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -3912,6 +3943,48 @@
         }
       ],
       "usage": "out"
+    },
+    "VideoRepair": {
+      "document": "综合画质修复，包括：去噪，去毛刺，细节增强，主观画质提升。",
+      "members": [
+        {
+          "default": "",
+          "document": "画质修复类型，可选值：weak，normal，strong;\n默认值: weak",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoSuperResolution": {
+      "document": "视频超分",
+      "members": [
+        {
+          "default": "",
+          "document": "超分视频类型：可选值：lq,hq\nlq: 针对低清晰度有较多噪声视频的超分;\nhq: 针对高清晰度视频超分;\n默认取值：lq。",
+          "example": "lq",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超分倍数，可选值：2。\n注意：当前只支持两倍超分。",
+          "example": "2",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"
