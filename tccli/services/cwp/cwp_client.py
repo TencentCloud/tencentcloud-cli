@@ -904,6 +904,33 @@ def doDescribeProcesses(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSyncAssetScan(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SyncAssetScanRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SyncAssetScan(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2308,6 +2335,33 @@ def doModifyAutoOpenProVersionConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAssetRecentMachineInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAssetRecentMachineInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAssetRecentMachineInfo(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAgentVuls(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3307,6 +3361,33 @@ def doDescribeAttackLogInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAssetInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAssetInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAssetInfo(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doIgnoreImpactedHosts(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3540,6 +3621,7 @@ ACTION_MAP = {
     "CreateProcessTask": doCreateProcessTask,
     "ExportAssetCoreModuleList": doExportAssetCoreModuleList,
     "DescribeProcesses": doDescribeProcesses,
+    "SyncAssetScan": doSyncAssetScan,
     "DescribeMalwares": doDescribeMalwares,
     "DescribeESAggregations": doDescribeESAggregations,
     "CreateSearchLog": doCreateSearchLog,
@@ -3592,6 +3674,7 @@ ACTION_MAP = {
     "DeleteBashRules": doDeleteBashRules,
     "DescribeReverseShellEvents": doDescribeReverseShellEvents,
     "ModifyAutoOpenProVersionConfig": doModifyAutoOpenProVersionConfig,
+    "DescribeAssetRecentMachineInfo": doDescribeAssetRecentMachineInfo,
     "DescribeAgentVuls": doDescribeAgentVuls,
     "DescribeAccounts": doDescribeAccounts,
     "DescribeWeeklyReports": doDescribeWeeklyReports,
@@ -3629,6 +3712,7 @@ ACTION_MAP = {
     "DescribeSecurityTrends": doDescribeSecurityTrends,
     "DescribeWeeklyReportInfo": doDescribeWeeklyReportInfo,
     "DescribeAttackLogInfo": doDescribeAttackLogInfo,
+    "DescribeAssetInfo": doDescribeAssetInfo,
     "IgnoreImpactedHosts": doIgnoreImpactedHosts,
     "ExportVulDetectionExcel": doExportVulDetectionExcel,
     "DescribeBashEvents": doDescribeBashEvents,

@@ -904,6 +904,24 @@
           "name": "UseRegistryDefaultConfig",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "挂载配置信息",
+          "example": "[]",
+          "member": "MountedSettingConf",
+          "name": "SettingConfs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "eks 访问设置",
+          "example": "1",
+          "member": "EksService",
+          "name": "EksService",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1317,6 +1335,122 @@
         }
       ],
       "type": "object"
+    },
+    "EksService": {
+      "document": "eks service info",
+      "members": [
+        {
+          "default": "",
+          "document": "service name",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用端口",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "Ports",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "yaml 内容",
+          "example": "1",
+          "member": "string",
+          "name": "Yaml",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterIp",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ExternalIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "访问类型，可选值：\n- EXTERNAL（公网访问）\n- VPC（vpc内访问）\n- CLUSTER（集群内访问）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网ID，只在类型为vpc访问时才有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡ID，只在外网访问和vpc内访问才有值，默认自动创建\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LoadBalanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口映射\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "PortMapping",
+          "name": "PortMappings",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "EsInfo": {
       "document": "弹性伸缩配置",
@@ -1865,6 +1999,42 @@
         }
       ],
       "type": "object"
+    },
+    "MountedSettingConf": {
+      "document": "挂载配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "配置名称",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigDataName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载路径",
+          "example": "1",
+          "member": "string",
+          "name": "MountedPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置内容",
+          "example": "[]",
+          "member": "Pair",
+          "name": "Data",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "NamespacePage": {
       "document": "命名空间分页",

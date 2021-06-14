@@ -30,6 +30,8 @@ tccli tem DeployServiceV2 --cli-unfold-argument  \
     --PkgName xx \
     --StorageMountConfs.0.VolumeName xx \
     --StorageMountConfs.0.MountPath xx \
+    --SettingConfs.0.ConfigDataName xx \
+    --SettingConfs.0.MountedPath xx \
     --EsInfo.MinAliveInstances 0 \
     --EsInfo.EsStrategy 0 \
     --EsInfo.VersionId xx \

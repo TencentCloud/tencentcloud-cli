@@ -240,6 +240,22 @@
         "title": "获取告警设置"
       }
     ],
+    "DescribeAssetInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"MachineCount\": 1,\n        \"SoftwareCount\": 1,\n        \"PortCount\": 1,\n        \"WebFrameCount\": 1,\n        \"AccountCount\": 1,\n        \"WebAppCount\": 1,\n        \"WebLocationCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ProcessCount\": 1,\n        \"DatabaseCount\": 1,\n        \"WebServiceCount\": 1\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeAssetRecentMachineInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetRecentMachineInfo\n<公共请求参数>\n\n{\n    \"BeginDate\": \"2020-09-22\",\n    \"EndDate\": \"2020-09-22\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskList\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"LiveList\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"TotalList\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"OfflineList\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取主机概况趋势"
+      }
+    ],
     "DescribeAttackLogInfo": [
       {
         "document": "网络攻击日志详情",
@@ -990,6 +1006,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=SwitchBashRules\n&Id=100\n&Disabled=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "切换高危命令规则状态"
+      }
+    ],
+    "SyncAssetScan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncAssetScan\n<公共请求参数>\n\n{\n    \"Sync\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "同步资产扫描信息"
       }
     ],
     "TrustMaliciousRequest": [
