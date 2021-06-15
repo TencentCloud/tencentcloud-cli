@@ -1,11 +1,83 @@
 {
   "actions": {
+    "CreateChannelCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelCode\n<公共请求参数>\n\n{\n    \"Remark\": \"xx\",\n    \"AppIds\": \"xx\",\n    \"Name\": \"xx\",\n    \"UseUserId\": [\n        0\n    ],\n    \"SourceName\": \"xx\",\n    \"MsgId\": 0,\n    \"Source\": \"xx\",\n    \"Tag\": [\n        {\n            \"BizTagIdStr\": \"xx\",\n            \"BizTagId\": 0,\n            \"BizGroupId\": 0,\n            \"TagId\": \"xx\",\n            \"GroupName\": \"xx\",\n            \"TagName\": \"xx\",\n            \"Type\": 0\n        }\n    ],\n    \"SkipVerify\": 0,\n    \"UseUserOpenId\": [\n        \"xx\"\n    ],\n    \"Type\": 0,\n    \"SourceType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "渠道活码创建实例"
+      }
+    ],
+    "CreateCorpTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCorpTag\n<公共请求参数>\n\n{\n    \"GroupName\": \"xx\",\n    \"Sort\": 0,\n    \"Tags\": [\n        {\n            \"TagName\": \"xx\",\n            \"Sort\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TagGroup\": {\n            \"GroupId\": \"TAG_GROUPID1\",\n            \"BizGroupId\": 1348107208961921026,\n            \"GroupName\": \"GOURP_NAME\",\n            \"CreateTime\": 1557838797,\n            \"Sort\": 1,\n            \"Tags\": [\n                {\n                    \"TagId\": \"TAG_ID1\",\n                    \"BizTagId\": 1348107111961921026,\n                    \"TagName\": \"NAME1\",\n                    \"CreateTime\": 1557838797,\n                    \"Sort\": 1\n                }\n            ]\n        }\n    }\n}",
+        "title": "设置标签库"
+      }
+    ],
+    "QueryActivityJoinList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryActivityJoinList\n&Limit=1\n&ActivityId=111111111111111111\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"xxx\",\n        \"RequestId\": \"332120d7-951e-4c43-9223-0c8b980a38d2\",\n        \"PageData\": [\n            {\n                \"ActivityData\": \"{\\\"couponTypeList\\\":[1],\\\"couponInfoList\\\":[{\\\"couponId\\\":\\\"1111111111111111\\\",\\\"couponName\\\":\\\"购车车款减免券001\\\",\\\"thresholdAmount\\\":10000000,\\\"discountAmount\\\":500000,\\\"discountPercentage\\\":0,\\\"couponType\\\":1,\\\"availableTimeType\\\":1,\\\"availableBeginTime\\\":0,\\\"availableEndTime\\\":1111111111}]}\",\n                \"SalesName\": \"xxx\",\n                \"UserName\": \"参与者\",\n                \"ActivityName\": \"满减\",\n                \"SalesPhone\": \"xxx\",\n                \"ActivityId\": 111111111111111111,\n                \"CreateTime\": 111111111,\n                \"LiveCodeId\": 0,\n                \"JoinId\": 111111111111111111,\n                \"JoinState\": 1,\n                \"DuplicateLeadId\": 111111111111111111,\n                \"UserPhone\": \"xxx\",\n                \"UpdateTime\": 111111111,\n                \"Duplicate\": 2,\n                \"JoinTime\": 111111111,\n                \"LeadId\": 111111111111111111\n            }\n        ]\n    }\n}",
+        "title": "查询活动列表"
+      }
+    ],
+    "QueryActivityList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryActivityList\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"xxx\",\n        \"RequestId\": \"c211f8cc-fb98-4a05-93bf-3e7ccb089592\",\n        \"PageData\": [\n            {\n                \"ActivityState\": 20,\n                \"ActivityName\": \"xxx\",\n                \"EndTime\": 111111111,\n                \"ActivityId\": 111111111111111111,\n                \"UpdateTime\": 111111111,\n                \"StartTime\": 111111111,\n                \"ActivityType\": 101,\n                \"PrivacyAgreementId\": \"xxx\",\n                \"MainPhoto\": \"xxx\",\n                \"ActivityDataList\": \"{\\\"couponTypeList\\\":[1],\\\"couponInfoList\\\":[{\\\"couponId\\\":\\\"111111111111\\\",\\\"couponName\\\":\\\"购车车款减免券001\\\",\\\"thresholdAmount\\\":10000000,\\\"discountAmount\\\":500000,\\\"discountPercentage\\\":0,\\\"couponType\\\":1,\\\"availableTimeType\\\":1,\\\"availableBeginTime\\\":0,\\\"availableEndTime\\\":1111111111}]}\"\n            }\n        ]\n    }\n}",
+        "title": "查询活动列表"
+      }
+    ],
     "QueryActivityLiveCodeList": [
       {
         "document": "",
         "input": "https://wav.tencentcloudapi.com/?Action=QueryActivityLiveCodeList\n&Cursor=xxxx\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PageData\": [\n            {\n                \"ActivityName\": \"xx\",\n                \"LiveCodeName\": \"xx\",\n                \"LiveCodeId\": 0,\n                \"LiveCodeState\": 0,\n                \"LiveCodeData\": \"xx\",\n                \"ActivityId\": 0,\n                \"LiveCodePreview\": \"xx\",\n                \"ShortChainAddress\": \"xx\",\n                \"CreateTime\": 0,\n                \"UpdateTime\": 0\n            }\n        ],\n        \"NextCursor\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询活码列表"
+      }
+    ],
+    "QueryChannelCodeList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryChannelCodeList\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"xxx\",\n        \"RequestId\": \"8e368d08-faa7-4cb3-ab55-1eb820b2a915\",\n        \"PageData\": [\n            {\n                \"Friends\": 0,\n                \"QrCodeUrl\": \"xxx\",\n                \"SourceName\": \"xxx\",\n                \"MsgId\": 0,\n                \"Source\": \"xxx\",\n                \"Remark\": \"xxx\",\n                \"Name\": \"xxx\",\n                \"Type\": 0,\n                \"UseUserOpenIdList\": [\n                    \"jonsen\"\n                ],\n                \"AppId\": \"xxx\",\n                \"UseUserIdList\": [\n                    1234556778899\n                ],\n                \"TagList\": [\n                    {\n                        \"GroupName\": \"xxx\",\n                        \"BizGroupId\": \"11111111111111111\",\n                        \"Type\": 1,\n                        \"TagName\": \"xxx\",\n                        \"BizTagIdStr\": \"xxx\",\n                        \"TagId\": \"xxx\",\n                        \"BizTagId\": \"xxx\"\n                    }\n                ],\n                \"ConfigId\": \"xxx\",\n                \"Id\": 11111111111111111111111,\n                \"SkipVerify\": 0,\n                \"RecStatus\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询活码列表"
+      }
+    ],
+    "QueryChatArchivingList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryChatArchivingList\n&Cursor=xxxx\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PageData\": [\n            {\n                \"MsgId\": \"xx\",\n                \"Action\": \"send\",\n                \"MsgType\": \"video\",\n                \"From\": \"xx\",\n                \"ToList\": [\n                    \"xx\"\n                ],\n                \"RoomId\": \"xx\",\n                \"MsgTime\": \"1616990135\",\n                \"Video\": {\n                    \"PlayLength\": 4,\n                    \"FileSize\": 645990,\n                    \"CosKey\": \"http://xx\"\n                }\n            }\n        ],\n        \"NextCursor\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询会话存档列表"
+      }
+    ],
+    "QueryExternalContactDetail": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactDetail\n&ExternalUserId=2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw\n&Cursor=xxxx\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Customer\": {\n            \"Gender\": 1,\n            \"Type\": 1,\n            \"Name\": \"xx\"\n        },\n        \"NextCursor\": \"xx\",\n        \"FollowUser\": [\n            {\n                \"Remark\": \"xx\",\n                \"Description\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"GroupName\": \"xx\",\n                        \"TagId\": \"xx\",\n                        \"Type\": 1,\n                        \"TagName\": \"xx\"\n                    }\n                ],\n                \"OperUserId\": \"xx\",\n                \"UserId\": \"xx\",\n                \"AddWay\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取客户详情"
+      }
+    ],
+    "QueryExternalContactList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactList\n&Cursor=xxxx\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"xxx\",\n        \"PageData\": [\n            {\n                \"UserId\": \"xxx\",\n                \"ExternalUserId\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "客户列表"
+      }
+    ],
+    "QueryMiniAppCodeList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryMiniAppCodeList\n&Cursor=xxxx\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PageData\": [\n            {\n                \"MiniAdminUrl\": \"https://www.xxx.com\",\n                \"State\": 0,\n                \"CreateTime\": 1621309668,\n                \"UpdateTime\": 1621309668,\n                \"MiniAppName\": \"小程序\",\n                \"MiniAppLogo\": \"https://xxx.jpg\",\n                \"Id\": 34\n            }\n        ],\n        \"NextCursor\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询小程序码列表"
       }
     ]
   },
