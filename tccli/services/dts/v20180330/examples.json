@@ -11,7 +11,7 @@
     "CompleteMigrateJob": [
       {
         "document": "",
-        "input": "https://dts.tencentcloudapi.com/?Action=CompleteMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>",
+        "input": "https://dts.tencentcloudapi.com/?Action=CompleteMigrateJob\n&JobId=dts-1kl0iy0v\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5268ea15-6636-44d1-89f9-e989d1c82e7d\"\n    }\n}",
         "title": "完成数据迁移任务"
       }

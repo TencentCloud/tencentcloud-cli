@@ -157,7 +157,7 @@
       "output": "DescribeRegionsResponse"
     },
     "DescribeResetInstanceBlueprints": {
-      "document": "查询重置实例的镜像信息",
+      "document": "本接口（DescribeResetInstanceBlueprints）查询重置实例的镜像信息。",
       "input": "DescribeResetInstanceBlueprintsRequest",
       "name": "查询重置实例的镜像信息",
       "output": "DescribeResetInstanceBlueprintsResponse"
@@ -1177,6 +1177,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1185,6 +1186,7 @@
           "example": " [             {                 \"BlueprintId\": \"lhbp-5e8807sc\",",
           "member": "Blueprint",
           "name": "BlueprintSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1967,7 +1969,7 @@
         },
         {
           "default": "",
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（预置应用的系统 ）；PURE_OS（纯净的 OS 系统）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（预置应用的系统 ）；PURE_OS（纯净的 OS 系统）；PRIVATE（自定义镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2988,7 +2990,7 @@
       "members": [
         {
           "default": "",
-          "document": "网络计费类型,，取值范围：\n<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>\n<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>",
+          "document": "网络计费类型，取值范围：\n<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>\n<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>",
           "example": "BANDWIDTH_PREPAID",
           "member": "string",
           "name": "InternetChargeType",
@@ -3505,7 +3507,7 @@
         },
         {
           "default": "",
-          "document": "地域是否可用状态，取值为AVAILABLE。",
+          "document": "地域是否可用状态，取值仅为AVAILABLE。",
           "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",

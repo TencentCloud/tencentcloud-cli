@@ -18,10 +18,11 @@ Output:
         "TaskList": [
             {
                 "DataSet": "xx",
-                "Id": "xx",
+                "SQLType": "xx",
                 "DatabaseName": "xx",
                 "OutputMessage": "xx",
                 "SQL": "xx",
+                "TaskType": "xx",
                 "ResultExpired": true,
                 "OutputPath": "xx",
                 "State": 0,
@@ -29,8 +30,8 @@ Output:
                 "DataAmount": 0,
                 "Error": "xx",
                 "Percentage": 0,
-                "SQLType": "xx",
                 "CreateTime": "xx",
+                "Id": "xx",
                 "RowAffectInfo": "xx"
             }
         ],

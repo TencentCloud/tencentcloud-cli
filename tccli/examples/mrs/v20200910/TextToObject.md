@@ -34,10 +34,46 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "31753232-9e9c-438f-a1f0-85d19bbaeb99",
+        "RequestId": "1caf2d7c-0c5a-4353-bf76-71dbf7f514be",
         "Template": {
-            "PatientInfo": null,
-            "ReportInfo": null,
+            "PatientInfo": {
+                "Name": "",
+                "Sex": "女",
+                "Age": "35岁",
+                "Phone": "",
+                "Address": "",
+                "IdCard": "",
+                "HealthCardNo": "",
+                "SocialSecurityCardNo": "",
+                "Birthday": "",
+                "Ethnicity": "",
+                "Married": "",
+                "Profession": "",
+                "EducationBackground": "",
+                "Nationality": "",
+                "BirthPlace": "",
+                "MedicalInsuranceType": ""
+            },
+            "ReportInfo": {
+                "Hospital": "",
+                "DepartmentName": "乳腺专科超声号",
+                "BillingTime": "",
+                "ReportTime": "2020-07-0 19:02:37",
+                "InspectTime": "",
+                "CheckNum": "",
+                "ImageNum": "",
+                "RadiationNum": "",
+                "TestNum": "",
+                "OutpatientNum": "n检查部位",
+                "PathologyNum": "",
+                "InHospitalNum": "",
+                "SampleNum": "",
+                "SampleType": "",
+                "MedicalRecordNum": "",
+                "ReportName": "超声检查报告",
+                "UltraNum": "n姓名",
+                "Diagnose": ""
+            },
             "Check": {
                 "Desc": {
                     "Text": "[甲状腺]右侧叶42*19*19MM，左侧叶42*18*14M，峡部厚1.6MM;峡部大小正常，形态规则，内部回声均匀;CDFI显示腺体内部血流分布正常。甲状腺右侧叶内见数枚低回声结节，较大者约13*11MM，边界清，形态规则，内部回声尚均匀，CDFI显示内见条状血流信号。 甲状腺左侧叶内见数枚囊性结节，较大者约2.2*1.4MM，边界清，透声可。 [颈部]两侧颈部各区未见明显异常团块回声，CDFI未见明显异常血流信号。",
@@ -51,7 +87,7 @@ Output:
                                 "NormPart": {
                                     "Part": "甲状腺",
                                     "PartDirection": "右叶",
-                                    "Tissue": "",
+                                    "Tissue": "峡部",
                                     "TissueDirection": "",
                                     "Upper": "甲状腺"
                                 },
@@ -122,130 +158,19 @@ Output:
                                 "Type": "",
                                 "Name": ""
                             },
-                            "Edge": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "InnerEcho": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Gland": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Shape": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Thickness": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "ShapeAttr": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "CDFI": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "SymDesc": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "SizeStatus": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Outline": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Structure": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Density": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Vas": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Cysticwall": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Capsule": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
                             "IsthmusThicknese": {
-                                "Index": null,
-                                "NormSize": null,
-                                "Src": "",
+                                "Index": [
+                                    0,
+                                    32
+                                ],
+                                "NormSize": {
+                                    "Number": [
+                                        "1.6"
+                                    ],
+                                    "Type": "厚",
+                                    "Unit": "MM"
+                                },
+                                "Src": "峡部厚1.6MM",
                                 "Value": ""
                             },
                             "InnerEchoDistribution": {
@@ -299,7 +224,7 @@ Output:
                             "InnerEcho": {
                                 "Index": [
                                     0,
-                                    52
+                                    48
                                 ],
                                 "Positive": "",
                                 "Src": "形态规则",
@@ -310,7 +235,7 @@ Output:
                             "Gland": {
                                 "Index": [
                                     0,
-                                    72
+                                    60
                                 ],
                                 "Positive": "",
                                 "Src": "CDFI显示腺体内部血流分布正常",
@@ -345,7 +270,7 @@ Output:
                             "CDFI": {
                                 "Index": [
                                     0,
-                                    72
+                                    60
                                 ],
                                 "Positive": "",
                                 "Src": "CDFI显示腺体内部血流分布正常",
@@ -354,15 +279,12 @@ Output:
                                 "Name": "CDFI"
                             },
                             "SymDesc": {
-                                "Index": [
-                                    0,
-                                    41
-                                ],
+                                "Index": null,
                                 "Positive": "",
-                                "Src": "峡部大小正常",
-                                "Value": "正常",
-                                "Type": "其他",
-                                "Name": "病变"
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
                             },
                             "SizeStatus": {
                                 "Index": [
@@ -432,7 +354,7 @@ Output:
                             "InnerEchoDistribution": {
                                 "Index": [
                                     0,
-                                    61
+                                    53
                                 ],
                                 "Positive": "",
                                 "Src": "内部回声均匀",
@@ -462,7 +384,7 @@ Output:
                             "Size": null,
                             "Index": [
                                 0,
-                                177
+                                176
                             ],
                             "Envelope": {
                                 "Index": null,
@@ -523,7 +445,7 @@ Output:
                             "CDFI": {
                                 "Index": [
                                     0,
-                                    201
+                                    197
                                 ],
                                 "Positive": "",
                                 "Src": "CDFI未见明显异常血流信号",
@@ -609,7 +531,7 @@ Output:
                                 "Type": "",
                                 "Name": ""
                             },
-                            "Src": "颈部]两侧颈部各区未见明显异常团块回声，CDFI未见明显异常血流信号。"
+                            "Src": "[颈部]                ，CDFI未见明显异常血流信号。"
                         }
                     ],
                     "Tuber": [
@@ -679,7 +601,7 @@ Output:
                             "Edge": {
                                 "Index": [
                                     0,
-                                    113
+                                    105
                                 ],
                                 "Positive": "",
                                 "Src": "边界清",
@@ -711,20 +633,17 @@ Output:
                                 "Name": ""
                             },
                             "Shape": {
-                                "Index": [
-                                    0,
-                                    142
-                                ],
+                                "Index": null,
                                 "Positive": "",
-                                "Src": "CDFI显示内见条状血流信号",
-                                "Value": "条索状",
+                                "Src": "",
+                                "Value": "",
                                 "Type": "",
-                                "Name": "形状"
+                                "Name": ""
                             },
                             "ShapeAttr": {
                                 "Index": [
                                     0,
-                                    121
+                                    109
                                 ],
                                 "Positive": "",
                                 "Src": "形态规则",
@@ -807,7 +726,7 @@ Output:
                             "CDFI": {
                                 "Index": [
                                     0,
-                                    142
+                                    122
                                 ],
                                 "Positive": "",
                                 "Src": "CDFI显示内见条状血流信号",
@@ -830,7 +749,7 @@ Output:
                             "InnerEchoDistribution": {
                                 "Index": [
                                     0,
-                                    130
+                                    114
                                 ],
                                 "Positive": "",
                                 "Src": "内部回声尚均匀",
@@ -961,7 +880,7 @@ Output:
                             "Edge": {
                                 "Index": [
                                     0,
-                                    175
+                                    167
                                 ],
                                 "Positive": "",
                                 "Src": "边界清",
@@ -1164,6 +1083,256 @@ Output:
                                 "Value": ""
                             },
                             "Src": "甲状腺左侧叶内见数枚囊性结节，较大者约2.2*1.4MM，边界清，透声可。"
+                        },
+                        {
+                            "Type": {
+                                "Index": [
+                                    0,
+                                    192
+                                ],
+                                "Positive": "无",
+                                "Src": "团块回声",
+                                "Value": "回声",
+                                "Type": "",
+                                "Name": "类型"
+                            },
+                            "Part": {
+                                "Index": [
+                                    0,
+                                    180
+                                ],
+                                "NormPart": {
+                                    "Part": "颈部",
+                                    "PartDirection": "两侧",
+                                    "Tissue": "",
+                                    "TissueDirection": "",
+                                    "Upper": ""
+                                },
+                                "Src": "两侧颈部",
+                                "Value": "两侧颈部",
+                                "Name": "部位"
+                            },
+                            "Size": null,
+                            "Multiple": {
+                                "Index": null,
+                                "Src": "",
+                                "Value": "",
+                                "Count": 0,
+                                "Name": ""
+                            },
+                            "AspectRatio": {
+                                "Index": null,
+                                "Number": "",
+                                "Relation": "",
+                                "Src": "",
+                                "Value": ""
+                            },
+                            "Edge": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "InnerEcho": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "RearEcho": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Elastic": {
+                                "Index": null,
+                                "Score": "",
+                                "Src": "",
+                                "Value": "",
+                                "Name": ""
+                            },
+                            "Shape": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "ShapeAttr": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "SkinMedulla": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Trend": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Calcification": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Envelope": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Enhancement": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "LymphEnlargement": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "LymphDoor": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Activity": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Operation": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "CDFI": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Index": [
+                                0,
+                                176
+                            ],
+                            "SizeStatus": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "InnerEchoDistribution": {
+                                "Index": [
+                                    0,
+                                    180
+                                ],
+                                "Positive": "",
+                                "Src": "两侧颈部各区未见明显异常团块回声",
+                                "Value": "未见异常",
+                                "Type": "",
+                                "Name": "内部回声分布"
+                            },
+                            "InnerEchoType": null,
+                            "Outline": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Structure": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Density": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Vas": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Cysticwall": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "Capsule": {
+                                "Index": null,
+                                "Positive": "",
+                                "Src": "",
+                                "Value": "",
+                                "Type": "",
+                                "Name": ""
+                            },
+                            "IsthmusThicknese": {
+                                "Index": null,
+                                "NormSize": null,
+                                "Src": "",
+                                "Value": ""
+                            },
+                            "Src": "两侧颈部各区未见明显异常团块回声，"
                         }
                     ]
                 },
@@ -1208,8 +1377,8 @@ Output:
                                 ],
                                 "Positive": "",
                                 "Src": "低回声结节",
-                                "Value": "低回声团",
-                                "Type": "占位",
+                                "Value": "低回声",
+                                "Type": "标准值",
                                 "Name": "病变"
                             },
                             "Attrs": null,
@@ -1254,8 +1423,8 @@ Output:
                                 ],
                                 "Positive": "",
                                 "Src": "囊性结节",
-                                "Value": "结节",
-                                "Type": "占位",
+                                "Value": "囊性结节",
+                                "Type": "标准值",
                                 "Name": "病变"
                             },
                             "Attrs": [
@@ -1282,7 +1451,10 @@ Output:
             "DiagCert": null,
             "FirstPage": null,
             "Indicator": null,
-            "ReportType": "check"
+            "ReportType": "check",
+            "MedicalRecordInfo": null,
+            "Hospitalization": null,
+            "Surgery": null
         }
     }
 }

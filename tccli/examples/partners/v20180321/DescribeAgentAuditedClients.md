@@ -31,7 +31,8 @@ Output:
                 "ClientType": "new",
                 "ProjectType": "self",
                 "SalesUin": "100009484937",
-                "SalesName": "sales2"
+                "SalesName": "sales2",
+                "Mail": "100*****@qq.com"
             }
         ],
         "TotalCount": 9

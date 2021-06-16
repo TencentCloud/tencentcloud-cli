@@ -26,7 +26,11 @@ Output:
                 "BlueprintType": "APP_OS",
                 "ImageUrl": "http://www.wordpress.com/image",
                 "RequiredSystemDiskSize": 50,
-                "BlueprintState": "NORMAL"
+                "BlueprintState": "NORMAL",
+                "CreatedTime": "2020-04-28T03:46:09Z",
+                "BlueprintName": "Wordpress",
+                "SupportAutomationTools": true,
+                "RequiredMemorySize": 1
             }
         ],
         "RequestId": "3df9cd92-cec1-4864-a2a1-358084f41551"

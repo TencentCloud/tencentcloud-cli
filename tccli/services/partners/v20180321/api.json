@@ -249,7 +249,7 @@
         },
         {
           "default": "",
-          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/direct(直销)/direct_newopp(直销(新商机))/空",
+          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量已关联)/old_newchecking(存量-新关联考核中)/old_newnotpass(存量-新关联未达标)/direct(直销)/direct_newopp(直销(新商机))/空",
           "example": "old",
           "member": "string",
           "name": "ClientType",
@@ -1354,6 +1354,7 @@
         {
           "default": "",
           "document": "客户账号ID",
+          "example": "10000",
           "member": "string",
           "name": "ClientUin",
           "required": false,
@@ -1362,6 +1363,7 @@
         {
           "default": "",
           "document": "客户名称。由于涉及隐私，名称打码显示，故名称仅支持打码后的模糊搜索",
+          "example": "腾讯",
           "member": "string",
           "name": "ClientName",
           "required": false,
@@ -1370,6 +1372,7 @@
         {
           "default": "",
           "document": "客户类型，a/b，类型定义参考代理商相关政策文档",
+          "example": "b",
           "member": "string",
           "name": "ClientFlag",
           "required": false,
@@ -1378,6 +1381,7 @@
         {
           "default": "",
           "document": "ASC/DESC， 不区分大小写，按审核通过时间排序",
+          "example": "DESC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -1386,6 +1390,7 @@
         {
           "default": "",
           "document": "客户账号ID列表",
+          "example": "[10000, 10001]",
           "member": "string",
           "name": "ClientUins",
           "required": false,
@@ -1394,6 +1399,7 @@
         {
           "default": "",
           "document": "是否欠费。0：不欠费；1：欠费",
+          "example": "1",
           "member": "uint64",
           "name": "HasOverdueBill",
           "required": false,
@@ -1402,6 +1408,7 @@
         {
           "default": "",
           "document": "客户备注",
+          "example": "腾讯",
           "member": "string",
           "name": "ClientRemark",
           "required": false,
@@ -1410,6 +1417,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1418,6 +1426,7 @@
         {
           "default": "",
           "document": "限制数目",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1425,7 +1434,8 @@
         },
         {
           "default": "",
-          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/空",
+          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量已关联)/old_newchecking(存量-新关联考核中)/old_newnotpass(存量-新关联未达标)/direct(直销)/direct_newopp(直销(新商机))/空",
+          "example": "old",
           "member": "string",
           "name": "ClientType",
           "required": false,
@@ -1434,6 +1444,7 @@
         {
           "default": "",
           "document": "项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空",
+          "example": "self",
           "member": "string",
           "name": "ProjectType",
           "required": false,
@@ -1442,6 +1453,7 @@
         {
           "default": "",
           "document": "业务员ID",
+          "example": "10002",
           "member": "string",
           "name": "SalesUin",
           "required": false,
@@ -1450,6 +1462,7 @@
         {
           "default": "",
           "document": "业务员姓名（模糊查询）",
+          "example": "腾讯",
           "member": "string",
           "name": "SalesName",
           "required": false,
@@ -1463,15 +1476,19 @@
       "members": [
         {
           "document": "已审核代客列表",
+          "example": "{     \"Uin\": \"3286669433\",     \"ClientUin\": \"2461871653\",     \"C",
           "member": "AgentAuditedClient",
           "name": "AgentClientSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的代客总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

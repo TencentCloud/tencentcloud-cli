@@ -19,7 +19,7 @@
       "output": "CreateAlarmPolicyResponse"
     },
     "CreateAlertRule": {
-      "document": "创建 Prometheus 告警规则",
+      "document": "创建 Prometheus 告警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
       "input": "CreateAlertRuleRequest",
       "name": "创建告警规则",
       "output": "CreateAlertRuleResponse"
@@ -283,7 +283,7 @@
       "output": "UnBindingPolicyObjectResponse"
     },
     "UpdateAlertRule": {
-      "document": "更新 Prometheus 的报警规则",
+      "document": "更新 Prometheus 的报警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
       "input": "UpdateAlertRuleRequest",
       "name": "更新报警规则",
       "output": "UpdateAlertRuleResponse"
@@ -1722,7 +1722,7 @@
         },
         {
           "default": "",
-          "document": "注释列表",
+          "document": "注释列表。\n\n告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。",
           "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
           "member": "PrometheusRuleKV",
           "name": "Annotations",
@@ -8216,7 +8216,7 @@
         },
         {
           "default": "",
-          "document": "报警规则注释列表",
+          "document": "报警规则注释列表。\n\n告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。",
           "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
           "member": "PrometheusRuleKV",
           "name": "Annotations",

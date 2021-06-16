@@ -24,6 +24,14 @@
         "title": "判断是否开启的转发的权限"
       }
     ],
+    "ControlDeviceData": [
+      {
+        "document": "设置设备数据",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=ControlDeviceData\n&ProductId=LJ0INDNU7U\n&DeviceName=light1\n&Data={\"brightness\":1}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9b4bcf\",\n        \"Result\": \"{\\\"Sent\\\":1,\\\"pushResult\\\":0}\"\n    }\n}",
+        "title": "设置设备数据"
+      }
+    ],
     "CreateBatch": [
       {
         "document": "",
@@ -390,6 +398,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"37MFSSRMZY\",\n    \"ProductName\": \"测试\",\n    \"ProductDescription\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"719fe65a-40fd-40b3-8fe9-eb166873e050\"\n    }\n}",
         "title": "修改产品信息"
+      }
+    ],
+    "PublishMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n    \"Topic\": \"RL0BAZKZ6V/dev1/control\",\n    \"Payload\": \"AASDFASFSADFASDF\",\n    \"ProductId\": \"Nlasdf****ABCd\",\n    \"DeviceName\": \"dev1\",\n    \"Qos\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "透传Payload至设备"
       }
     ],
     "ResetCloudStorage": [

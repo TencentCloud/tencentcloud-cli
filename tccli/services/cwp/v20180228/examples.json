@@ -48,6 +48,14 @@
         "title": "创建实时拉取进程任务"
       }
     ],
+    "CreateProtectServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProtectServer\n<公共请求参数>\n\n{\n    \"ProtectDir\": \"/tmp\",\n    \"ProtectHostConfig\": [\n        {\n            \"Quuid\": \"quuid\",\n            \"ProtectSwitch\": 1,\n            \"AutoRecovery\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c251fae-8254-42d8-bd2c-17f54dac1275\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateSearchLog": [
       {
         "document": "",
@@ -206,6 +214,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DeleteUsualLoginPlaces\n&Uuid=add4a78a-0d59-11e8-b7ab-00e081e1a5c5\n&CityIds.0=22\n&CityIds.1=33\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除常用登录地"
+      }
+    ],
+    "DeleteWebPageEventLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWebPageEventLog\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9506441-52bc-4d14-a767-7e1251ed3ce5\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeAccountStatistics": [
@@ -704,6 +720,14 @@
         "title": "获取漏洞列表"
       }
     ],
+    "DescribeWebPageGeneralize": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebPageGeneralize\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ProtectDirNum\": 1,\n        \"ProtectFileNum\": 1,\n        \"ProtectHostNum\": 1,\n        \"ProtectMonitor\": 0,\n        \"ProtectToday\": 1,\n        \"RequestId\": \"a0ef4f15-b686-4e47-a4b5-89ad00232ad3\",\n        \"TamperFileNum\": 1,\n        \"TamperNum\": 1\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeWeeklyReportBruteAttacks": [
       {
         "document": "获取专业周报密码破解数据。",
@@ -944,6 +968,14 @@
         "title": "修改专业版续费标识"
       }
     ],
+    "ModifyWebPageProtectSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebPageProtectSetting\n<公共请求参数>\n\n{\n    \"ModifyType\": 1,\n    \"Value\": \"网站名称1\",\n    \"Id\": \"var\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c741a4fd-776f-499b-85a2-7bc70fd5b92s\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "OpenProVersion": [
       {
         "document": "开通专业版",
@@ -982,6 +1014,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=RescanImpactedHost\n&Id=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "重新检测一个漏洞"
+      }
+    ],
+    "ScanVul": [
+      {
+        "document": "漏洞管理 - 一键检测",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ScanVul\n&VulCategories=1;2\n&VulLevels=1;2\n&HostType=1\n&VulEmergency=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TaskId\": 1\n    }\n}",
+        "title": "漏洞管理 - 一键检测"
       }
     ],
     "SeparateMalwares": [

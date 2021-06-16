@@ -44,7 +44,7 @@
       {
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=CreateKeyPair\n&KeyName=test_create_1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"KeyPair\": {\n            \"AssociatedInstanceIds\": [],\n            \"CreatedTime\": null,\n            \"KeyId\": \"lhkp-hfenegt1\",\n            \"KeyName\": \"test_create_1\",\n            \"PrivateKey\": \"xxxxxx\",\n            \"PublicKey\": \"xxxxxx\"\n        },\n        \"RequestId\": \"02dc35eb-06f0-477f-9b06-c980bc56c18d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyPair\": {\n            \"KeyId\": \"lhkp-hfenegt1\",\n            \"KeyName\": \"test_create_1\",\n            \"PublicKey\": \"xxxxxx\",\n            \"AssociatedInstanceIds\": [],\n            \"CreatedTime\": null,\n            \"PrivateKey\": \"xxxxxx\"\n        },\n        \"RequestId\": \"02dc35eb-06f0-477f-9b06-c980bc56c18d\"\n    }\n}",
         "title": "创建密钥对"
       }
     ],
@@ -92,7 +92,7 @@
       {
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeBlueprints\n&BlueprintIds.0=lhbp-5e8807sc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BlueprintSet\": [\n            {\n                \"BlueprintId\": \"lhbp-5e8807sc\",\n                \"DisplayTitle\": \"wordpress\",\n                \"DisplayVersion\": \"5.3.2\",\n                \"Description\": \"个人blog建站\",\n                \"OsName\": \"CentOS-7.6-64bit\",\n                \"Platform\": \"CENTOS\",\n                \"PlatformType\": \"LINUX_UNIX\",\n                \"BlueprintType\": \"APP_OS\",\n                \"ImageUrl\": \"http://www.wordpress.com/image\",\n                \"RequiredSystemDiskSize\": 50,\n                \"BlueprintState\": \"NORMAL\"\n            }\n        ],\n        \"RequestId\": \"3df9cd92-cec1-4864-a2a1-358084f41551\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BlueprintSet\": [\n            {\n                \"BlueprintId\": \"lhbp-5e8807sc\",\n                \"DisplayTitle\": \"wordpress\",\n                \"DisplayVersion\": \"5.3.2\",\n                \"Description\": \"个人blog建站\",\n                \"OsName\": \"CentOS-7.6-64bit\",\n                \"Platform\": \"CENTOS\",\n                \"PlatformType\": \"LINUX_UNIX\",\n                \"BlueprintType\": \"APP_OS\",\n                \"ImageUrl\": \"http://www.wordpress.com/image\",\n                \"RequiredSystemDiskSize\": 50,\n                \"BlueprintState\": \"NORMAL\",\n                \"CreatedTime\": \"2020-04-28T03:46:09Z\",\n                \"BlueprintName\": \"Wordpress\",\n                \"SupportAutomationTools\": true,\n                \"RequiredMemorySize\": 1\n            }\n        ],\n        \"RequestId\": \"3df9cd92-cec1-4864-a2a1-358084f41551\"\n    }\n}",
         "title": "查询镜像信息"
       }
     ],
@@ -194,7 +194,7 @@
       {
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeKeyPairs\n&KeyIds.0=lhkp-omd12oc1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KeyPairSet\": [\n            {\n                \"KeyId\": \"lhkp-omd12oc1\",\n                \"KeyName\": \"test\",\n                \"PublicKey\": \"\",\n                \"PrivateKey\": \"null\",\n                \"AssociatedInstanceIds\": [],\n                \"CreatedTime\": \"2020-04-28T23:01:47Z\"\n            }\n        ],\n        \"RequestId\": \"9abb999a-53d6-4534-9b49-00e53b5c0fea\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KeyPairSet\": [\n            {\n                \"KeyId\": \"lhkp-omd12oc1\",\n                \"KeyName\": \"test\",\n                \"PublicKey\": \"\",\n                \"AssociatedInstanceIds\": [],\n                \"CreatedTime\": \"2020-04-28T23:01:47Z\",\n                \"PrivateKey\": \"null\"\n            }\n        ],\n        \"RequestId\": \"9abb999a-53d6-4534-9b49-00e53b5c0fea\"\n    }\n}",
         "title": "查询用户密钥对列表"
       }
     ],
@@ -210,7 +210,7 @@
       {
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeRegions\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-beijing\",\n                \"RegionName\": \"北京\",\n                \"RegionState\": \"AVAILABLE\",\n                \"IsChinaMainland\": true\n            },\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\",\n                \"RegionState\": \"AVAILABLE\",\n                \"IsChinaMainland\": true\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"RegionName\": \"上海\",\n                \"RegionState\": \"AVAILABLE\",\n                \"IsChinaMainland\": true\n            },\n            {\n                \"Region\": \"ap-hongkong\",\n                \"RegionName\": \"中国香港\",\n                \"RegionState\": \"AVAILABLE\",\n                \"IsChinaMainland\": true\n            }\n        ],\n        \"RequestId\": \"52c5ec46-30ca-47b9-8b72-f696c6cb65ea\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-beijing\",\n                \"RegionName\": \"北京\",\n                \"RegionState\": \"AVAILABLE\",\n                \"IsChinaMainland\": true\n            },\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\",\n                \"RegionState\": \"AVAILABLE\",\n                \"IsChinaMainland\": true\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"RegionName\": \"上海\",\n                \"RegionState\": \"AVAILABLE\",\n                \"IsChinaMainland\": true\n            },\n            {\n                \"Region\": \"ap-hongkong\",\n                \"RegionName\": \"中国香港\",\n                \"RegionState\": \"AVAILABLE\",\n                \"IsChinaMainland\": false\n            }\n        ],\n        \"RequestId\": \"52c5ec46-30ca-47b9-8b72-f696c6cb65ea\"\n    }\n}",
         "title": "查询地域列表"
       }
     ],

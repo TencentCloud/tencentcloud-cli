@@ -19,9 +19,9 @@ Output:
                 "KeyId": "lhkp-omd12oc1",
                 "KeyName": "test",
                 "PublicKey": "",
-                "PrivateKey": "null",
                 "AssociatedInstanceIds": [],
-                "CreatedTime": "2020-04-28T23:01:47Z"
+                "CreatedTime": "2020-04-28T23:01:47Z",
+                "PrivateKey": "null"
             }
         ],
         "RequestId": "9abb999a-53d6-4534-9b49-00e53b5c0fea"

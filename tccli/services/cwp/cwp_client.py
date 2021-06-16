@@ -121,6 +121,33 @@ def doDeleteMachineTag(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeLogStorageStatistic(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLogStorageStatisticRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeLogStorageStatistic(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAttackLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1984,6 +2011,33 @@ def doDescribeBruteAttackList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyWebPageProtectSetting(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyWebPageProtectSettingRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyWebPageProtectSetting(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doOpenProVersionPrepaid(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2335,6 +2389,33 @@ def doModifyAutoOpenProVersionConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteWebPageEventLog(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteWebPageEventLogRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteWebPageEventLog(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAssetRecentMachineInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2497,6 +2578,33 @@ def doDescribeESHits(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWebPageGeneralize(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWebPageGeneralizeRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeWebPageGeneralize(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSecurityEventsCnt(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2605,7 +2713,7 @@ def doDescribeAlarmAttribute(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLogStorageStatistic(args, parsed_globals):
+def doScanVul(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2621,9 +2729,9 @@ def doDescribeLogStorageStatistic(args, parsed_globals):
     client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLogStorageStatisticRequest()
+    model = models.ScanVulRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeLogStorageStatistic(model)
+    rsp = client.ScanVul(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2813,6 +2921,33 @@ def doDescribeHistoryAccounts(args, parsed_globals):
     model = models.DescribeHistoryAccountsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeHistoryAccounts(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateProtectServer(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateProtectServerRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateProtectServer(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -3592,6 +3727,7 @@ ACTION_MAP = {
     "TrustMalwares": doTrustMalwares,
     "DescribeComponentStatistics": doDescribeComponentStatistics,
     "DeleteMachineTag": doDeleteMachineTag,
+    "DescribeLogStorageStatistic": doDescribeLogStorageStatistic,
     "DescribeAttackLogs": doDescribeAttackLogs,
     "DescribeSearchExportList": doDescribeSearchExportList,
     "DescribeWeeklyReportMalwares": doDescribeWeeklyReportMalwares,
@@ -3661,6 +3797,7 @@ ACTION_MAP = {
     "ExportMalwares": doExportMalwares,
     "DescribeBruteAttacks": doDescribeBruteAttacks,
     "DescribeBruteAttackList": doDescribeBruteAttackList,
+    "ModifyWebPageProtectSetting": doModifyWebPageProtectSetting,
     "OpenProVersionPrepaid": doOpenProVersionPrepaid,
     "AddMachineTag": doAddMachineTag,
     "DescribeSearchTemplates": doDescribeSearchTemplates,
@@ -3674,17 +3811,19 @@ ACTION_MAP = {
     "DeleteBashRules": doDeleteBashRules,
     "DescribeReverseShellEvents": doDescribeReverseShellEvents,
     "ModifyAutoOpenProVersionConfig": doModifyAutoOpenProVersionConfig,
+    "DeleteWebPageEventLog": doDeleteWebPageEventLog,
     "DescribeAssetRecentMachineInfo": doDescribeAssetRecentMachineInfo,
     "DescribeAgentVuls": doDescribeAgentVuls,
     "DescribeAccounts": doDescribeAccounts,
     "DescribeWeeklyReports": doDescribeWeeklyReports,
     "DescribeProVersionInfo": doDescribeProVersionInfo,
     "DescribeESHits": doDescribeESHits,
+    "DescribeWebPageGeneralize": doDescribeWebPageGeneralize,
     "DescribeSecurityEventsCnt": doDescribeSecurityEventsCnt,
     "DescribePrivilegeEvents": doDescribePrivilegeEvents,
     "DescribeMachineInfo": doDescribeMachineInfo,
     "DescribeAlarmAttribute": doDescribeAlarmAttribute,
-    "DescribeLogStorageStatistic": doDescribeLogStorageStatistic,
+    "ScanVul": doScanVul,
     "DescribeAttackVulTypeList": doDescribeAttackVulTypeList,
     "DescribeLoginWhiteList": doDescribeLoginWhiteList,
     "UpdateBaselineStrategy": doUpdateBaselineStrategy,
@@ -3692,6 +3831,7 @@ ACTION_MAP = {
     "DescribeMachineRegions": doDescribeMachineRegions,
     "DescribeRiskDnsList": doDescribeRiskDnsList,
     "DescribeHistoryAccounts": doDescribeHistoryAccounts,
+    "CreateProtectServer": doCreateProtectServer,
     "ExportNonlocalLoginPlaces": doExportNonlocalLoginPlaces,
     "DescribeWeeklyReportBruteAttacks": doDescribeWeeklyReportBruteAttacks,
     "UntrustMalwares": doUntrustMalwares,

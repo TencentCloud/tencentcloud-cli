@@ -35,8 +35,8 @@
     "DescribeAgentAuditedClients": [
       {
         "document": "",
-        "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentAuditedClients\r\n&Offset=0\r\n&Limit=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5d1d9fc-0ecb-495d-98bb-f8a1eee37a22\",\n        \"AgentClientSet\": [\n            {\n                \"Uin\": \"3286669433\",\n                \"ClientUin\": \"2461871653\",\n                \"ClientRemark\": \"\",\n                \"ClientName\": \"2461871653\",\n                \"ClientFlag\": \"a\",\n                \"AuthType\": \"-1\",\n                \"AgentTime\": \"1476195568\",\n                \"AppId\": \"1252765299\",\n                \"LastMonthAmt\": 0,\n                \"ThisMonthAmt\": 0,\n                \"HasOverdueBill\": 0,\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"self\",\n                \"SalesUin\": \"100009484937\",\n                \"SalesName\": \"sales2\"\n            }\n        ],\n        \"TotalCount\": 9\n    }\n}",
+        "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentAuditedClients\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5d1d9fc-0ecb-495d-98bb-f8a1eee37a22\",\n        \"AgentClientSet\": [\n            {\n                \"Uin\": \"3286669433\",\n                \"ClientUin\": \"2461871653\",\n                \"ClientRemark\": \"\",\n                \"ClientName\": \"2461871653\",\n                \"ClientFlag\": \"a\",\n                \"AuthType\": \"-1\",\n                \"AgentTime\": \"1476195568\",\n                \"AppId\": \"1252765299\",\n                \"LastMonthAmt\": 0,\n                \"ThisMonthAmt\": 0,\n                \"HasOverdueBill\": 0,\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"self\",\n                \"SalesUin\": \"100009484937\",\n                \"SalesName\": \"sales2\",\n                \"Mail\": \"100*****@qq.com\"\n            }\n        ],\n        \"TotalCount\": 9\n    }\n}",
         "title": "获取已审核客户列表"
       }
     ],

@@ -49,7 +49,7 @@
       "usage": "out"
     },
     "AspectRatio": {
-      "document": "横纵比",
+      "document": "纵横比",
       "members": [
         {
           "default": "",
@@ -407,7 +407,7 @@
       "usage": "out"
     },
     "Elastic": {
-      "document": "质地",
+      "document": "弹性质地",
       "members": [
         {
           "default": "",
@@ -621,7 +621,7 @@
       "usage": "in"
     },
     "HistologyLevel": {
-      "document": "等级",
+      "document": "组织学等级",
       "members": [
         {
           "default": "",
@@ -657,7 +657,7 @@
       "usage": "out"
     },
     "HistologyType": {
-      "document": "类型",
+      "document": "组织学类型",
       "members": [
         {
           "default": "",
@@ -695,6 +695,92 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Hospitalization": {
+      "document": "出入院信息",
+      "members": [
+        {
+          "default": "",
+          "document": "入院时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-12-07",
+          "member": "string",
+          "name": "AdmissionTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出院时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-12-16",
+          "member": "string",
+          "name": "DischargeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "住院天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9天",
+          "member": "string",
+          "name": "AdmissionDays",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "入院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.年龄相关性白内障(双) :2013-09\\n2.倒睫(双) st.A_const:118.3\\n3.年龄相关性黄斑病变(左)",
+          "member": "string",
+          "name": "AdmissionDignosis",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "入院情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AdmissionCondition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "诊疗经过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DiagnosisTreatment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.年龄相关性白内障(双)\\n2.倒睫(双)\\n3.年龄相关性黄斑病变(左)",
+          "member": "string",
+          "name": "DischargeDiagnosis",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出院医嘱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DischargeInstruction",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -807,7 +893,7 @@
         },
         {
           "default": "",
-          "document": "图片类型",
+          "document": "图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -861,7 +947,7 @@
         },
         {
           "default": "",
-          "document": "图片类别",
+          "document": "报告类型，目前支持11（检验报告），12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -870,7 +956,7 @@
         },
         {
           "default": "",
-          "document": "是否使用分类引擎",
+          "document": "是否使用分类引擎，当不确定报告类型时，可以使用收费的报告分类引擎服务。若该字段为 False，则 Type 字段不能为 0，否则无法输出结果。\n注意：当 IsUsedClassify 为True 时，表示使用收费的报告分类服务，将会产生额外的费用，具体收费标准参见 [购买指南的产品价格](https://cloud.tencent.com/document/product/1314/54264)。",
           "example": "true",
           "member": "bool",
           "name": "IsUsedClassify",
@@ -918,7 +1004,7 @@
       "usage": "out"
     },
     "IndicatorItem": {
-      "document": "指标项",
+      "document": "检验指标项",
       "members": [
         {
           "default": "",
@@ -1014,7 +1100,7 @@
       "usage": "out"
     },
     "Invas": {
-      "document": "Invasive",
+      "document": "侵犯扩散",
       "members": [
         {
           "default": "",
@@ -1201,6 +1287,92 @@
       ],
       "usage": "out"
     },
+    "MedicalRecordInfo": {
+      "document": "门诊病历信息",
+      "members": [
+        {
+          "default": "",
+          "document": "就诊日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-09-28 14:46",
+          "member": "string",
+          "name": "DiagnosisTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "就诊科室\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IMC眼科门诊",
+          "member": "string",
+          "name": "DiagnosisDepartmentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "就诊医生\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hwn",
+          "member": "string",
+          "name": "DiagnosisDoctorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "临床诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "过敏性结膜炎ou",
+          "member": "string",
+          "name": "ClinicalDiagnosis",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "眼痒疼数周",
+          "member": "string",
+          "name": "MainNarration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "体格检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VACC1.2/1.2\\nNCT 15/12mmHg\\n双眼结膜充血+乳头++角膜透明，前房-，晶体透明，小瞳眼底C/D0.4",
+          "member": "string",
+          "name": "PhysicalExamination",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检查结论\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "过敏性结膜炎",
+          "member": "string",
+          "name": "InspectionFindings",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "治疗意见\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "裂隙灯检查ST;普通视力检查ST",
+          "member": "string",
+          "name": "TreatmentOpinion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MenstrualMedicalHistory": {
       "document": "月经史",
       "members": [
@@ -1268,7 +1440,7 @@
       "usage": "out"
     },
     "Multiple": {
-      "document": "数量",
+      "document": "多发",
       "members": [
         {
           "default": "",
@@ -1324,7 +1496,7 @@
       "usage": "out"
     },
     "NormPart": {
-      "document": "部位",
+      "document": "标准部位",
       "members": [
         {
           "default": "",
@@ -1668,7 +1840,7 @@
       "usage": "out"
     },
     "Part": {
-      "document": "部位",
+      "document": "部位信息",
       "members": [
         {
           "default": "",
@@ -1931,6 +2103,106 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康卡号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UI7821056C",
+          "member": "string",
+          "name": "HealthCardNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "社保卡号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "489170108",
+          "member": "string",
+          "name": "SocialSecurityCardNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1997-01-01",
+          "member": "string",
+          "name": "Birthday",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "民族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "汉",
+          "member": "string",
+          "name": "Ethnicity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "婚姻状况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "未婚",
+          "member": "string",
+          "name": "Married",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "职业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "学生",
+          "member": "string",
+          "name": "Profession",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "教育程度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "硕士",
+          "member": "string",
+          "name": "EducationBackground",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "国籍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中国",
+          "member": "string",
+          "name": "Nationality",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "籍贯\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东深圳",
+          "member": "string",
+          "name": "BirthPlace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "医保类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "居民医保",
+          "member": "string",
+          "name": "MedicalInsuranceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2047,7 +2319,7 @@
         {
           "default": "",
           "document": "检查号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "859453",
           "member": "string",
           "name": "CheckNum",
           "required": true,
@@ -2057,7 +2329,7 @@
         {
           "default": "",
           "document": "影像号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "26995223",
           "member": "string",
           "name": "ImageNum",
           "required": true,
@@ -2067,7 +2339,7 @@
         {
           "default": "",
           "document": "放射号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "785446",
           "member": "string",
           "name": "RadiationNum",
           "required": true,
@@ -2077,7 +2349,7 @@
         {
           "default": "",
           "document": "检验号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "1143355",
           "member": "string",
           "name": "TestNum",
           "required": true,
@@ -2087,7 +2359,7 @@
         {
           "default": "",
           "document": "门诊号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "867354",
           "member": "string",
           "name": "OutpatientNum",
           "required": true,
@@ -2097,7 +2369,7 @@
         {
           "default": "",
           "document": "病理号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "27965",
           "member": "string",
           "name": "PathologyNum",
           "required": true,
@@ -2107,7 +2379,7 @@
         {
           "default": "",
           "document": "住院号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "546234",
           "member": "string",
           "name": "InHospitalNum",
           "required": true,
@@ -2117,7 +2389,7 @@
         {
           "default": "",
           "document": "样本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "629634",
           "member": "string",
           "name": "SampleNum",
           "required": true,
@@ -2127,7 +2399,7 @@
         {
           "default": "",
           "document": "标本种类\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "“”",
           "member": "string",
           "name": "SampleType",
           "required": true,
@@ -2137,7 +2409,7 @@
         {
           "default": "",
           "document": "病历号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "45568",
           "member": "string",
           "name": "MedicalRecordNum",
           "required": true,
@@ -2147,7 +2419,7 @@
         {
           "default": "",
           "document": "报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "金银潭肺CT报告",
+          "example": "彩色多普勒超声诊断报告单",
           "member": "string",
           "name": "ReportName",
           "required": true,
@@ -2157,9 +2429,19 @@
         {
           "default": "",
           "document": "超声号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "96654",
           "member": "string",
           "name": "UltraNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "临床诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "淋巴组织增生病",
+          "member": "string",
+          "name": "Diagnose",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2214,7 +2496,7 @@
       "usage": "out"
     },
     "Summary": {
-      "document": "总结",
+      "document": "结论",
       "members": [
         {
           "default": "",
@@ -2239,8 +2521,116 @@
       ],
       "usage": "out"
     },
+    "Surgery": {
+      "document": "手术记录",
+      "members": [
+        {
+          "default": "",
+          "document": "手术史\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "SurgeryHistory",
+          "name": "SurgeryHistory",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryAttr": {
+      "document": "手术记录属性",
+      "members": [
+        {
+          "default": "",
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "手术日期",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-16",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryHistory": {
+      "document": "手术史",
+      "members": [
+        {
+          "default": "",
+          "document": "手术名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "SurgeryAttr",
+          "name": "SurgeryName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "手术日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "SurgeryAttr",
+          "name": "SurgeryDate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "术前诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "SurgeryAttr",
+          "name": "PreoperativePathology",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "术中诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "SurgeryAttr",
+          "name": "IntraoperativePathology",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "术后诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "SurgeryAttr",
+          "name": "PostoperativePathology",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "SurgeryAttr",
+          "name": "DischargeDiagnosis",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SymptomInfo": {
-      "document": "病症描述",
+      "document": "病症描述信息",
       "members": [
         {
           "default": "",
@@ -2397,6 +2787,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门诊病历信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "MedicalRecordInfo",
+          "name": "MedicalRecordInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出入院信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "Hospitalization",
+          "name": "Hospitalization",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "手术记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "Surgery",
+          "name": "Surgery",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2451,7 +2871,7 @@
         },
         {
           "default": "",
-          "document": "报告类型，目前支持12（检查报告单），15（病理报告），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
+          "document": "报告类型，目前支持12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -2460,7 +2880,7 @@
         },
         {
           "default": "",
-          "document": "是否使用分类引擎，当不确定报告类型时，可以使用收费的报告分类引擎服务。若该字段为False，则Type字段不能为0，否则无法输出结果。",
+          "document": "是否使用分类引擎，当不确定报告类型时，可以使用收费的报告分类引擎服务。若该字段为False，则Type字段不能为0，否则无法输出结果。\n注意：当 IsUsedClassify 为True 时，表示使用收费的报告分类服务，将会产生额外的费用，具体收费标准参见 [购买指南的产品价格](https://cloud.tencent.com/document/product/1314/54264)。",
           "example": "true",
           "member": "bool",
           "name": "IsUsedClassify",
@@ -2888,7 +3308,7 @@
         },
         {
           "default": "",
-          "document": "质地弹性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性质地\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
           "member": "Elastic",
           "name": "Elastic",

@@ -16,6 +16,14 @@
         "title": "创建sql查询"
       }
     ],
+    "CreateStoreLocation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStoreLocation\n<公共请求参数>\n\n{\n    \"StoreLocation\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建或修改计算结果存储路径"
+      }
+    ],
     "CreateTable": [
       {
         "document": "",
@@ -27,7 +35,7 @@
     "CreateTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"Task\": {\n        \"SQLTask\": {\n            \"SQL\": \"xx\"\n        }\n    },\n    \"DatabaseName\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"Task\": {\n        \"SQLTask\": {\n            \"SQL\": \"xx\",\n            \"Config\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ]\n        },\n        \"SparkSQLTask\": {\n            \"SQL\": \"xx\",\n            \"Config\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ]\n        }\n    },\n    \"DatabaseName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
         "title": "创建sql任务"
       }
@@ -76,7 +84,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskList\": [\n            {\n                \"DataSet\": \"xx\",\n                \"Id\": \"xx\",\n                \"DatabaseName\": \"xx\",\n                \"OutputMessage\": \"xx\",\n                \"SQL\": \"xx\",\n                \"ResultExpired\": true,\n                \"OutputPath\": \"xx\",\n                \"State\": 0,\n                \"UsedTime\": 0,\n                \"DataAmount\": 0,\n                \"Error\": \"xx\",\n                \"Percentage\": 0,\n                \"SQLType\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"RowAffectInfo\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskList\": [\n            {\n                \"DataSet\": \"xx\",\n                \"SQLType\": \"xx\",\n                \"DatabaseName\": \"xx\",\n                \"OutputMessage\": \"xx\",\n                \"SQL\": \"xx\",\n                \"TaskType\": \"xx\",\n                \"ResultExpired\": true,\n                \"OutputPath\": \"xx\",\n                \"State\": 0,\n                \"UsedTime\": 0,\n                \"DataAmount\": 0,\n                \"Error\": \"xx\",\n                \"Percentage\": 0,\n                \"CreateTime\": \"xx\",\n                \"Id\": \"xx\",\n                \"RowAffectInfo\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询任务列表"
       }
     ],

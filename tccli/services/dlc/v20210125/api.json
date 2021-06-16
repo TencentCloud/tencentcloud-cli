@@ -12,6 +12,12 @@
       "name": "创建sql脚本",
       "output": "CreateScriptResponse"
     },
+    "CreateStoreLocation": {
+      "document": "该接口（CreateStoreLocation）新增或覆盖计算结果存储位置。",
+      "input": "CreateStoreLocationRequest",
+      "name": "修改结果存储位置",
+      "output": "CreateStoreLocationResponse"
+    },
     "CreateTable": {
       "document": "本接口（CreateTable）用于生成建表SQL。",
       "input": "CreateTableRequest",
@@ -203,6 +209,15 @@
           "name": "DatabaseInfo",
           "required": true,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据源名称，默认为CosDataCatalog",
+          "example": "CosDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -282,6 +297,33 @@
       ],
       "type": "object"
     },
+    "CreateStoreLocationRequest": {
+      "document": "CreateStoreLocation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "计算结果存储cos路径，如：cosn://bucketname/",
+          "example": "cosn://bucketname/",
+          "member": "string",
+          "name": "StoreLocation",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStoreLocationResponse": {
+      "document": "CreateStoreLocation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTableRequest": {
       "document": "CreateTable请求参数结构体",
       "members": [
@@ -336,6 +378,15 @@
           "example": "database1",
           "member": "string",
           "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认数据源名称。",
+          "example": "CosDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
           "required": false,
           "type": "string"
         }
@@ -586,6 +637,15 @@
           "name": "KeyWord",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为CosDataCatalog",
+          "example": "datasource-xxx",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -721,6 +781,15 @@
           "name": "DatabaseName",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询表所在的数据源名称",
+          "example": "CosDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -784,6 +853,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定查询的数据源名称，默认为CosDataCatalog",
+          "example": "CosDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -955,6 +1033,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据库所属的数据源名称",
+          "example": "COSDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1027,6 +1114,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "KVPair": {
+      "document": "配置格式",
+      "members": [
+        {
+          "default": "",
+          "document": "配置的key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置的value值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1121,6 +1234,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务的配置信息",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Config",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1213,6 +1336,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该数据表所属数据源名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CosDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1368,7 +1501,17 @@
           "example": "无",
           "member": "SQLTask",
           "name": "SQLTask",
-          "required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Spark SQL查询任务",
+          "example": "无",
+          "member": "SQLTask",
+          "name": "SparkSQLTask",
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         }
@@ -1524,6 +1667,16 @@
           "example": "\"\"",
           "member": "string",
           "name": "OutputMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行SQL的引擎类型",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TaskType",
           "required": true,
           "type": "string",
           "value_allowed_null": false

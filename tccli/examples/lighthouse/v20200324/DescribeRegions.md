@@ -35,7 +35,7 @@ Output:
                 "Region": "ap-hongkong",
                 "RegionName": "中国香港",
                 "RegionState": "AVAILABLE",
-                "IsChinaMainland": true
+                "IsChinaMainland": false
             }
         ],
         "RequestId": "52c5ec46-30ca-47b9-8b72-f696c6cb65ea"

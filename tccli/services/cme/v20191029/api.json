@@ -2294,7 +2294,7 @@
       "members": [
         {
           "default": "",
-          "document": "事件类型，可取值为：\n<li>Storage.NewFileCreated：新文件产生。</li>",
+          "document": "事件类型，可取值为：\n<li>Storage.NewFileCreated：新文件产生；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更。</li>",
           "example": "Storage.NewFileCreated",
           "member": "string",
           "name": "EventType",
@@ -2308,6 +2308,16 @@
           "example": "无",
           "member": "StorageNewFileCreatedEvent",
           "name": "StorageNewFileCreatedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推项目状态变更事件信息。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。",
+          "example": "无",
+          "member": "ProjectStreamConnectStatusChangedEvent",
+          "name": "ProjectStreamConnectStatusChangedEvent",
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -4803,6 +4813,32 @@
           "example": "2021-03-23T07:51:18.029Z",
           "member": "string",
           "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectStreamConnectStatusChangedEvent": {
+      "document": "云转推项目状态变更事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目状态，取值有：\n<li>Working：云转推推流开始；</li>\n<li>Stopped：云转推推流结束。</li>",
+          "example": "PushStreamFinish",
+          "member": "string",
+          "name": "Status",
           "required": true,
           "type": "string",
           "value_allowed_null": false

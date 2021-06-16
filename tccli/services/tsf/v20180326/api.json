@@ -864,6 +864,18 @@
       "name": "回滚配置",
       "output": "RollbackConfigResponse"
     },
+    "SearchBusinessLog": {
+      "document": "业务日志搜索",
+      "input": "SearchBusinessLogRequest",
+      "name": "业务日志搜索",
+      "output": "SearchBusinessLogResponse"
+    },
+    "SearchStdoutLog": {
+      "document": "标准输出日志搜索",
+      "input": "SearchStdoutLogRequest",
+      "name": "标准输出日志搜索",
+      "output": "SearchStdoutLogResponse"
+    },
     "ShrinkGroup": {
       "document": "下线部署组所有机器实例",
       "input": "ShrinkGroupRequest",
@@ -2256,6 +2268,66 @@
         }
       ],
       "type": "object"
+    },
+    "BusinessLogV2": {
+      "document": "业务日志",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ChangeApiUsableStatusRequest": {
       "document": "ChangeApiUsableStatus请求参数结构体",
@@ -15326,6 +15398,285 @@
       ],
       "usage": "both"
     },
+    "SearchBusinessLogRequest": {
+      "document": "SearchBusinessLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志配置项ID",
+          "example": "apm-busi-log-cfg-6a7m36a5",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器实例ID，不传表示全部实例",
+          "example": "[\"openapi-service-api-c594fd9cd-x76rf\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2019-05-29 16:06:08",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2019-05-29 17:06:08",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求偏移量，取值范围大于等于0，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单页请求配置数量，取值范围[1, 200]，默认值为50",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序规则，默认值\"time\"",
+          "example": "score",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，取值\"asc\"或\"desc\"，默认值\"desc\"",
+          "example": "无",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "检索关键词",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWords",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "部署组ID列表，不传表示全部部署组",
+          "example": "[\"group-gvkqkdjv\\r\\n\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "检索类型，取值\"LUCENE\", \"REGEXP\", \"NORMAL\"",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWordType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批量请求类型，取值\"page\"或\"scroll\"",
+          "example": "无",
+          "member": "string",
+          "name": "BatchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游标ID",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchBusinessLogResponse": {
+      "document": "SearchBusinessLog返回参数结构体",
+      "members": [
+        {
+          "document": "业务日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TsfPageBusinessLogV2",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchStdoutLogRequest": {
+      "document": "SearchStdoutLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器实例ID",
+          "example": "msjw-uniform-payment-5ffb678dbf-mctr7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单页请求配置数量，取值范围[1, 500]，默认值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检索关键词",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWords",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间",
+          "example": "2019-05-29 14:14:42",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组ID",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "example": "无",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求偏移量，取值范围大于等于0，默认值为\n0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序规则，默认值\"time\"",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，取值\"asc\"或\"desc\"，默认\n值\"desc\"",
+          "example": "无",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "检索类型，取值\"LUCENE\", \"REGEXP\",\n\"NORMAL\"",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWordType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批量请求类型，取值\"page\"或\"scroll\"，默认\n值\"page\"",
+          "example": "无",
+          "member": "string",
+          "name": "BatchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游标ID",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchStdoutLogResponse": {
+      "document": "SearchStdoutLog返回参数结构体",
+      "members": [
+        {
+          "document": "标准输出日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TsfPageStdoutLogV2",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ServerlessGroup": {
       "document": "Serverless部署组信息",
       "members": [
@@ -15989,6 +16340,48 @@
         }
       ],
       "type": "object"
+    },
+    "StdoutLogV2": {
+      "document": "标准输出日志",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "StopContainerGroupRequest": {
       "document": "StopContainerGroup请求参数结构体",
@@ -16692,6 +17085,48 @@
       ],
       "usage": "out"
     },
+    "TsfPageBusinessLogV2": {
+      "document": "业务日志列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BusinessLogV2",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "游标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ScrollId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "查询状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TsfPageCluster": {
       "document": "Tsf分页集群对象",
       "members": [
@@ -17001,6 +17436,48 @@
           "name": "Content",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageStdoutLogV2": {
+      "document": "标准输出日志列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标准输出日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StdoutLogV2",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "游标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ScrollId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "查询状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

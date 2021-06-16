@@ -36,6 +36,12 @@
       "name": "创建实时拉取进程任务",
       "output": "CreateProcessTaskResponse"
     },
+    "CreateProtectServer": {
+      "document": "添加房展防护服务器",
+      "input": "CreateProtectServerRequest",
+      "name": "创建网站防护服务器",
+      "output": "CreateProtectServerResponse"
+    },
     "CreateSearchLog": {
       "document": "添加历史搜索记录",
       "input": "CreateSearchLogRequest",
@@ -155,6 +161,12 @@
       "input": "DeleteUsualLoginPlacesRequest",
       "name": "删除常用登录地",
       "output": "DeleteUsualLoginPlacesResponse"
+    },
+    "DeleteWebPageEventLog": {
+      "document": "网站防篡改-删除事件记录",
+      "input": "DeleteWebPageEventLogRequest",
+      "name": "删除事件记录",
+      "output": "DeleteWebPageEventLogResponse"
     },
     "DescribeAccountStatistics": {
       "document": "本接口 (DescribeAccountStatistics) 用于获取帐号统计列表数据。",
@@ -528,6 +540,12 @@
       "name": "获取漏洞列表",
       "output": "DescribeVulsResponse"
     },
+    "DescribeWebPageGeneralize": {
+      "document": "查询网站防篡改 概览信息",
+      "input": "DescribeWebPageGeneralizeRequest",
+      "name": "查询网页防篡改概览信息",
+      "output": "DescribeWebPageGeneralizeResponse"
+    },
     "DescribeWeeklyReportBruteAttacks": {
       "document": "本接口 (DescribeWeeklyReportBruteAttacks) 用于获取专业周报密码破解数据。",
       "input": "DescribeWeeklyReportBruteAttacksRequest",
@@ -708,6 +726,12 @@
       "name": "修改专业版续费标识",
       "output": "ModifyProVersionRenewFlagResponse"
     },
+    "ModifyWebPageProtectSetting": {
+      "document": "网站防篡改-修改网站防护设置",
+      "input": "ModifyWebPageProtectSettingRequest",
+      "name": "修改网站防护设置",
+      "output": "ModifyWebPageProtectSettingResponse"
+    },
     "OpenProVersion": {
       "document": "本接口 (OpenProVersion) 用于开通专业版。",
       "input": "OpenProVersionRequest",
@@ -737,6 +761,12 @@
       "input": "RescanImpactedHostRequest",
       "name": "漏洞重新检测",
       "output": "RescanImpactedHostResponse"
+    },
+    "ScanVul": {
+      "document": "漏洞管理 - 一键检测",
+      "input": "ScanVulRequest",
+      "name": "漏洞管理 - 一键检测",
+      "output": "ScanVulResponse"
     },
     "SeparateMalwares": {
       "document": "本接口（SeparateMalwares）用于隔离木马。",
@@ -2031,6 +2061,42 @@
       ],
       "type": "object"
     },
+    "CreateProtectServerRequest": {
+      "document": "CreateProtectServer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "防护目录地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectDir",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "防护机器 信息",
+          "example": "xxx",
+          "member": "ProtectHostConfig",
+          "name": "ProtectHostConfig",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProtectServerResponse": {
+      "document": "CreateProtectServer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSearchLogRequest": {
       "document": "CreateSearchLog请求参数结构体",
       "members": [
@@ -2755,6 +2821,23 @@
     },
     "DeleteUsualLoginPlacesResponse": {
       "document": "DeleteUsualLoginPlaces返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWebPageEventLogRequest": {
+      "document": "DeleteWebPageEventLog请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteWebPageEventLogResponse": {
+      "document": "DeleteWebPageEventLog返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6828,6 +6911,86 @@
       ],
       "type": "object"
     },
+    "DescribeWebPageGeneralizeRequest": {
+      "document": "DescribeWebPageGeneralize请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWebPageGeneralizeResponse": {
+      "document": "DescribeWebPageGeneralize返回参数结构体",
+      "members": [
+        {
+          "document": "防护监测 0 未开启 1 已开启 2 异常",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectMonitor",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "防护目录数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectDirNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "防护文件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectFileNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "篡改文件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TamperFileNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "篡改数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TamperNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "今日防护",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectToday",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "防护主机数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectHostNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWeeklyReportBruteAttacksRequest": {
       "document": "DescribeWeeklyReportBruteAttacks请求参数结构体",
       "members": [
@@ -7764,6 +7927,7 @@
         {
           "default": "",
           "document": "过滤参数",
+          "example": "[]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -7777,15 +7941,19 @@
       "members": [
         {
           "document": "导出文件下载链接地址。",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "导出任务ID",
+          "example": "1",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7804,6 +7972,7 @@
         {
           "default": "",
           "document": "过滤参数",
+          "example": "[]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -7817,15 +7986,19 @@
       "members": [
         {
           "document": "导出文件下载链接地址。",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "导出任务ID",
+          "example": "1",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7861,6 +8034,7 @@
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7879,6 +8053,7 @@
         {
           "default": "",
           "document": "限制条数,默认10",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -7887,6 +8062,7 @@
         {
           "default": "",
           "document": "偏移量 默认0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -7895,6 +8071,7 @@
         {
           "default": "",
           "document": "过滤参数。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>FilePath - String - 是否必填：否 - 路径筛选</li>\n<li>VirusName - String - 是否必填：否 - 描述筛选</li>\n<li>CreateBeginTime - String - 是否必填：否 - 创建时间筛选-开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 创建时间筛选-结束时间</li>\n<li>Status - String - 是否必填：否 - 状态筛选</li>",
+          "example": "[]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -7908,15 +8085,19 @@
       "members": [
         {
           "document": "导出文件下载链接地址。",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务id",
+          "example": "1",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7935,6 +8116,7 @@
         {
           "default": "",
           "document": "<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -7948,15 +8130,19 @@
       "members": [
         {
           "document": "导出文件下载链接地址。",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "导出任务ID",
+          "example": "1",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7992,6 +8178,7 @@
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8000,6 +8187,7 @@
           "example": "1596595610",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8018,6 +8206,7 @@
         {
           "default": "",
           "document": "过滤参数",
+          "example": "[]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -8031,15 +8220,19 @@
       "members": [
         {
           "document": "导出文件下载链接地址。",
+          "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务id",
+          "example": "1",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9607,6 +9800,51 @@
       ],
       "type": "object"
     },
+    "ModifyWebPageProtectSettingRequest": {
+      "document": "ModifyWebPageProtectSetting请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要操作的类型1 目录名称 2 防护文件类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModifyType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "提交值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置对应的protect_path",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWebPageProtectSettingResponse": {
+      "document": "ModifyWebPageProtectSetting返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NonLocalLoginPlace": {
       "document": "异地登录",
       "members": [
@@ -10399,6 +10637,39 @@
       ],
       "usage": "out"
     },
+    "ProtectHostConfig": {
+      "document": "防护机器信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机器唯一ID",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护开关 0  关闭 1开启",
+          "member": "uint64",
+          "name": "ProtectSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动恢复开关 0 关闭 1开启",
+          "member": "uint64",
+          "name": "AutoRecovery",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RecoverMalwaresRequest": {
       "document": "RecoverMalwares请求参数结构体",
       "members": [
@@ -10836,6 +11107,78 @@
         }
       ],
       "usage": "out"
+    },
+    "ScanVulRequest": {
+      "document": "ScanVul请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文;分隔)",
+          "example": "1",
+          "member": "string",
+          "name": "VulCategories",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "危害等级：1-低危；2-中危；3-高危；4-严重 (多选英文;分隔)",
+          "example": "1",
+          "member": "string",
+          "name": "VulLevels",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器分类：1:专业版服务器；2:自选服务器",
+          "example": "1",
+          "member": "uint64",
+          "name": "HostType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自选服务器时生效，主机quuid的string数组",
+          "example": "[]",
+          "member": "string",
+          "name": "QuuidList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否是应急漏洞 0 否 1 是",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulEmergency",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ScanVulResponse": {
+      "document": "ScanVul返回参数结构体",
+      "members": [
+        {
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SearchTemplate": {
       "document": "快速搜索模板",
