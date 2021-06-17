@@ -863,6 +863,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -872,6 +873,7 @@
         {
           "default": "",
           "document": "集群名称",
+          "example": "集群",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -881,6 +883,7 @@
         {
           "default": "",
           "document": "集群描述",
+          "example": "示例集群",
           "member": "string",
           "name": "ClusterDescription",
           "required": true,
@@ -890,6 +893,7 @@
         {
           "default": "",
           "document": "集群版本（默认值为1.10.5）",
+          "example": "1.20.6",
           "member": "string",
           "name": "ClusterVersion",
           "required": true,
@@ -899,6 +903,7 @@
         {
           "default": "",
           "document": "集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64",
+          "example": "ubuntu16.04.1 LTSx86_64",
           "member": "string",
           "name": "ClusterOs",
           "required": true,
@@ -908,6 +913,7 @@
         {
           "default": "",
           "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
+          "example": "INDEPENDENT_CLUSTER",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -917,6 +923,7 @@
         {
           "default": "",
           "document": "集群网络相关参数",
+          "example": "无",
           "member": "ClusterNetworkSettings",
           "name": "ClusterNetworkSettings",
           "required": true,
@@ -926,6 +933,7 @@
         {
           "default": "",
           "document": "集群当前node数量",
+          "example": "3",
           "member": "uint64",
           "name": "ClusterNodeNum",
           "required": true,
@@ -935,6 +943,7 @@
         {
           "default": "",
           "document": "集群所属的项目ID",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -944,6 +953,7 @@
         {
           "default": "",
           "document": "标签描述列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": true,
@@ -953,6 +963,7 @@
         {
           "default": "",
           "document": "集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )",
+          "example": "Running",
           "member": "string",
           "name": "ClusterStatus",
           "required": true,
@@ -962,6 +973,7 @@
         {
           "default": "",
           "document": "集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"NodeNameType\\\":\\\"lan-ip\\\",\\\"NetworkType\\\":\\\"GR\\\"}",
           "member": "string",
           "name": "Property",
           "required": true,
@@ -971,6 +983,7 @@
         {
           "default": "",
           "document": "集群当前master数量",
+          "example": "1",
           "member": "uint64",
           "name": "ClusterMaterNodeNum",
           "required": true,
@@ -980,6 +993,7 @@
         {
           "default": "",
           "document": "集群使用镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -989,6 +1003,7 @@
         {
           "default": "",
           "document": "OsCustomizeType 系统定制类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
           "required": true,
@@ -998,6 +1013,7 @@
         {
           "default": "",
           "document": "集群运行环境docker或container\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "docker",
           "member": "string",
           "name": "ContainerRuntime",
           "required": true,
@@ -1007,6 +1023,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -1016,8 +1033,19 @@
         {
           "default": "",
           "document": "删除保护开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群是否开启第三方节点支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableExternalNode",
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -6014,6 +6042,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6022,6 +6051,7 @@
         {
           "default": "",
           "document": "节点池ID",
+          "example": "np-xxx",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -6030,6 +6060,7 @@
         {
           "default": "",
           "document": "名称",
+          "example": "node-pool",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6038,6 +6069,7 @@
         {
           "default": "",
           "document": "最大节点数",
+          "example": "100",
           "member": "int64",
           "name": "MaxNodesNum",
           "required": false,
@@ -6046,6 +6078,7 @@
         {
           "default": "",
           "document": "最小节点数",
+          "example": "1",
           "member": "int64",
           "name": "MinNodesNum",
           "required": false,
@@ -6054,6 +6087,7 @@
         {
           "default": "",
           "document": "标签",
+          "example": "无",
           "member": "Label",
           "name": "Labels",
           "required": false,
@@ -6062,6 +6096,7 @@
         {
           "default": "",
           "document": "污点",
+          "example": "无",
           "member": "Taint",
           "name": "Taints",
           "required": false,
@@ -6070,6 +6105,7 @@
         {
           "default": "",
           "document": "是否开启伸缩",
+          "example": "false",
           "member": "bool",
           "name": "EnableAutoscale",
           "required": false,
@@ -6078,6 +6114,7 @@
         {
           "default": "",
           "document": "操作系统名称",
+          "example": "ubuntu18.04.1x86_64",
           "member": "string",
           "name": "OsName",
           "required": false,
@@ -6086,6 +6123,7 @@
         {
           "default": "",
           "document": "镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)",
+          "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
           "required": false,

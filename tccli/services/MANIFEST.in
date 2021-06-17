@@ -205,6 +205,8 @@ include tccli/services/lp/v20200224/api.json
 include tccli/services/lp/v20200224/examples.json
 include tccli/services/mariadb/v20170312/api.json
 include tccli/services/mariadb/v20170312/examples.json
+include tccli/services/market/v20191010/api.json
+include tccli/services/market/v20191010/examples.json
 include tccli/services/memcached/v20190318/api.json
 include tccli/services/memcached/v20190318/examples.json
 include tccli/services/mgobe/v20201014/api.json

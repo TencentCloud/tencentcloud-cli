@@ -304,6 +304,9 @@ SERVICE_VERSIONS = {
     "mariadb": [
         "2017-03-12"
     ],
+    "market": [
+        "2019-10-10"
+    ],
     "memcached": [
         "2019-03-18"
     ],

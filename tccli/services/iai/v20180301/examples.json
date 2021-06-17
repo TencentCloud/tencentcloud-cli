@@ -353,7 +353,7 @@
     "GetUpgradeGroupFaceModelVersionResult": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetUpgradeGroupFaceModelVersionResult\r\n&JobId=251007453_upgrade_group_qta_1596529493_gjwh07X7\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetUpgradeGroupFaceModelVersionResult\n&JobId=251007453_upgrade_group_qta_1596529493_gjwh07X7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"EndTimestamp\": 1596529510000,\n        \"Status\": 1,\n        \"StartTime\": 1596529493217,\n        \"FromFaceModelVersion\": \"2.0\",\n        \"GroupId\": \"100001testGroupUpgrade\",\n        \"FailedFacesUrl\": \"\",\n        \"ToFaceModelVersion\": \"3.0\",\n        \"RequestId\": \"b0835106-e301-4959-90d5-f982007bb4c8\"\n    }\n}",
         "title": "人员库升级结果查询"
       }
@@ -491,7 +491,7 @@
     "UpgradeGroupFaceModelVersion": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=UpgradeGroupFaceModelVersion\r\n&GroupId=1001\r\n&FaceModelVersion=3.0\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=UpgradeGroupFaceModelVersion\n&GroupId=1001\n&FaceModelVersion=3.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"251007453_upgrade_group_qta_1596529493_gjwh07X7\",\n        \"RequestId\": \"d1388dbb-c9f0-4b7a-8528-ebf61f718e67\"\n    }\n}",
         "title": "人员库升级"
       }

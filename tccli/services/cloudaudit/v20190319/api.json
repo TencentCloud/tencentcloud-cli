@@ -617,6 +617,15 @@
           "name": "LookupAttributes",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否返回 IP 归属地（1 返回，0 不返回）",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsReturnLocation",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

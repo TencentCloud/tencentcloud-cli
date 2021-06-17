@@ -1,0 +1,124 @@
+{
+  "actions": {
+    "GetCateTree": {
+      "document": "获取分类名称",
+      "input": "GetCateTreeRequest",
+      "name": "获取分类名称",
+      "output": "GetCateTreeResponse"
+    },
+    "GetUsagePlanUsageAmount": {
+      "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "GetUsagePlanUsageAmountRequest",
+      "name": "查询使用计划使用量",
+      "output": "GetUsagePlanUsageAmountResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-10-10",
+    "api_brief": "介绍如何使用API对云市场服务进行操作，包括对服务商操作、产品管理等。",
+    "serviceNameCN": "云市场",
+    "serviceShortName": "market"
+  },
+  "objects": {
+    "GetCateTreeRequest": {
+      "document": "GetCateTree请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分类ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "CateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCateTreeResponse": {
+      "document": "GetCateTree返回参数结构体",
+      "members": [
+        {
+          "document": "分类ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUsagePlanUsageAmountRequest": {
+      "document": "GetUsagePlanUsageAmount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于查询实例的Id",
+          "example": "\"123456789\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUsagePlanUsageAmountResponse": {
+      "document": "GetUsagePlanUsageAmount返回参数结构体",
+      "members": [
+        {
+          "document": "最大调用量",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxRequestNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已经调用量",
+          "example": "500",
+          "member": "int64",
+          "name": "InUseRequestNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "剩余调用量",
+          "example": "500",
+          "member": "int64",
+          "name": "RemainingRequestNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

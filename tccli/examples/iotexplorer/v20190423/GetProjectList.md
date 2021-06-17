@@ -23,7 +23,9 @@ Output:
                 "UpdateTime": 1560328009,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             },
             {
                 "ProjectId": "prj-k1c2y9n6",
@@ -33,7 +35,9 @@ Output:
                 "UpdateTime": 1560322591,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             },
             {
                 "ProjectId": "prj-qwdtv1p2",
@@ -43,7 +47,9 @@ Output:
                 "UpdateTime": 1560311336,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             },
             {
                 "ProjectId": "prj-v6j6xbq9",
@@ -53,7 +59,9 @@ Output:
                 "UpdateTime": 1560310472,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             },
             {
                 "ProjectId": "prj-4r2kajtp",
@@ -63,7 +71,9 @@ Output:
                 "UpdateTime": 1559743207,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             },
             {
                 "ProjectId": "prj-zunfat46",
@@ -73,7 +83,9 @@ Output:
                 "UpdateTime": 1559743210,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             },
             {
                 "ProjectId": "prj-9z3jg93n",
@@ -83,7 +95,9 @@ Output:
                 "UpdateTime": 1559743210,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             },
             {
                 "ProjectId": "prj-zycc6aau",
@@ -93,7 +107,9 @@ Output:
                 "UpdateTime": 1559743210,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             },
             {
                 "ProjectId": "prj-3u6jqd4m",
@@ -103,7 +119,9 @@ Output:
                 "UpdateTime": 1559743211,
                 "ProductCount": 0,
                 "NativeAppCount": 0,
-                "WebAppCount": 0
+                "WebAppCount": 0,
+                "DeviceCount": 0,
+                "ApplicationCount": 0
             }
         ],
         "RequestId": "9dbce8ec-76e2-4f34-8c32-ad548b3b598a",

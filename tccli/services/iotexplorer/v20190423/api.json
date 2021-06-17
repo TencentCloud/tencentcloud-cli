@@ -2191,6 +2191,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2199,6 +2200,7 @@
         {
           "default": "",
           "document": "个数限制",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2207,8 +2209,45 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "ins-fdaf1231",
           "member": "string",
           "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按项目D搜索",
+          "example": "prj-fda123f",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按产品ID搜索",
+          "example": "TOIDHQ3AOQ",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加载 ProductCount、DeviceCount、ApplicationCount，可选值：ProductCount、DeviceCount、ApplicationCount，可多选",
+          "example": "[\"ProductCount\",\"DeviceCount\"]",
+          "member": "string",
+          "name": "Includes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按项目名称搜索",
+          "example": "测试项目",
+          "member": "string",
+          "name": "ProjectName",
           "required": false,
           "type": "string"
         }
@@ -2220,15 +2259,19 @@
       "members": [
         {
           "document": "项目列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ProjectEntryEx",
           "name": "Projects",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "列表项个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3501,6 +3544,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ApplicationCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备注册总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DeviceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3635,6 +3698,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "prj-zunfat46",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -3643,6 +3707,7 @@
         {
           "default": "",
           "document": "产品名称",
+          "example": "testtproduct",
           "member": "string",
           "name": "ProductName",
           "required": false,
@@ -3651,6 +3716,7 @@
         {
           "default": "",
           "document": "列表Limit",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3659,6 +3725,7 @@
         {
           "default": "",
           "document": "列表Offset",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3667,8 +3734,18 @@
         {
           "default": "",
           "document": "产品Status",
+          "example": "dev",
           "member": "string",
           "name": "DevStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "FSDA213D",
+          "member": "string",
+          "name": "ProductId",
           "required": false,
           "type": "string"
         }
@@ -3680,15 +3757,19 @@
       "members": [
         {
           "document": "产品列表",
+          "example": "无",
           "member": "ProductEntry",
           "name": "Products",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "产品数量",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

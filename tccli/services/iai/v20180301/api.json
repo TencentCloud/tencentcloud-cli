@@ -2729,6 +2729,7 @@
         {
           "default": "",
           "document": "升级任务ID，用于查询、获取人员库升级的进度和结果。",
+          "example": "251007453_upgrade_group_qta_1596529493_gjwh07X7",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -2742,57 +2743,73 @@
       "members": [
         {
           "document": "人员升级任务预估结束时间。 StartTimestamp的值是自 Unix 纪元时间到人员查重任务预估结束的毫秒数。  \nUnix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。 \n如果为0表示这个任务已经执行完毕。",
+          "example": "1596529510000",
           "member": "uint64",
           "name": "EndTimestamp",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "升级任务完成进度。取值[0.0，100.0]。",
+          "example": "100",
           "member": "float",
           "name": "Progress",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "0表示升级中，1表示升级完毕，2表示回滚完毕。",
+          "example": "1",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "升级起始时间。 \nStartTime的值是自 Unix 纪元时间到Group创建时间的毫秒数。 \nUnix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。 \n有关更多信息，请参阅 Unix 时间。",
+          "example": "1596529493217",
           "member": "uint64",
           "name": "StartTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "当前算法模型版本。",
+          "example": "2.0",
           "member": "string",
           "name": "FromFaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "目标算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "ToFaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "人员库ID。",
+          "example": "100001testGroupUpgrade",
           "member": "string",
           "name": "GroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "无法升级的人脸Id信息，文件格式",
+          "document": "无法升级的人脸Id信息，文件格式为json。半小时有效",
+          "example": "\"https://iaiface-upgradegroup-failedface-1254418846.cos.ap-guang",
           "member": "string",
           "name": "FailedFacesUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3891,6 +3908,7 @@
         {
           "default": "",
           "document": "需要升级的人员库ID。",
+          "example": "1001",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -3898,7 +3916,8 @@
         },
         {
           "default": "",
-          "document": "需要升级至的算法模型版本。默认为最新版本。",
+          "document": "需要升级至的算法模型版本。默认为最新版本。不可逆向升级",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": true,
@@ -3912,8 +3931,10 @@
       "members": [
         {
           "document": "升级任务ID，用于查询、获取升级的进度和结果。",
+          "example": "251007453_upgrade_group_qta_1596529493_gjwh07X7",
           "member": "string",
           "name": "JobId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

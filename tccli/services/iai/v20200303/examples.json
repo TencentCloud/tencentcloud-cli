@@ -374,7 +374,7 @@
         "title": "人员库升级结果查询（升级成功）"
       },
       {
-        "document": "人员库升级失败（Status返回3），FailedFacesUrl包含失败人脸信息，需对失败人脸信息删除后进行重新升级。如果FailedFacesUrl返回值是空，可能是系统失败，可以重新发起一次升级。",
+        "document": "人员库升级失败（Status返回3），FailedFacesUrl包含失败人脸信息，需对失败人脸信息删除后进行重新升级。如果FailedFacesUrl返回值是空，可能是系统失败，可以重新发起一次升级。\n失败人脸信息示例：\n[{\nface_id: \"3758206365629500199\",\nperson_id: \"testGroupUpgradePerson1100001\"\n}, {\nface_id: \"3758206372549784459\",\nperson_id: \"testGroupUpgradePerson2100001\"\n}]",
         "input": "https://iai.tencentcloudapi.com/?Action=GetUpgradeGroupFaceModelVersionResult\n&JobId=251007453_upgrade_group_qta_1596529493_gjwh07X7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"EndTimestamp\": 1607058209000,\n        \"Status\": 3,\n        \"StartTime\": 1607058207375,\n        \"FromFaceModelVersion\": \"3.0\",\n        \"GroupId\": \"test_2_upgrade\",\n        \"FailedFacesUrl\": \"https://iaiface-upgradegroup-failedface-1254418846.cos.ap-guangzhou.myqcloud.com/1253657503/1253657503_upgrade_group_1607058207_qW6RX1UO.json\",\n        \"ToFaceModelVersion\": \"2.0\",\n        \"RequestId\": \"b667bf57-b40f-4618-9ef4-eb2d350eb068\"\n    }\n}",
         "title": "人员库升级结果查询（升级失败）"
@@ -524,7 +524,7 @@
         "title": "人员库升级"
       },
       {
-        "document": "当人员库存在一些无法升级的人脸时，返回FailedOperation.GroupLostFaces错误，并返回一个Url查看具体的PersonId和FaceId，需要删除这些Person或Face，或者重新创建，才可以升级成功。",
+        "document": "当人员库存在一些无法升级的人脸时，返回FailedOperation.GroupLostFaces错误，并返回一个Url查看具体的PersonId和FaceId，需要删除这些Person或Face，或者重新创建，才可以升级成功。\n文件格式：\n[{\n            person_id: 丢失的人员ID,\n            face_id: 丢失的人脸ID,\n            type: 1    // 丢图类型，1. 未知原因，暂无其它类别\n}]",
         "input": "https://iai.tencentcloudapi.com/?Action=UpgradeGroupFaceModelVersion\n&GroupId=1002\n&FaceModelVersion=3.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ad7ccb4-29b5-46b4-adcd-69fd6728d530\"\n    }\n}",
         "title": "升级失败"

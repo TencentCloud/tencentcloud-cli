@@ -29,6 +29,14 @@ Output:
 **Example 2: 人员库升级结果查询（升级失败）**
 
 人员库升级失败（Status返回3），FailedFacesUrl包含失败人脸信息，需对失败人脸信息删除后进行重新升级。如果FailedFacesUrl返回值是空，可能是系统失败，可以重新发起一次升级。
+失败人脸信息示例：
+[{
+face_id: "3758206365629500199",
+person_id: "testGroupUpgradePerson1100001"
+}, {
+face_id: "3758206372549784459",
+person_id: "testGroupUpgradePerson2100001"
+}]
 
 Input: 
 

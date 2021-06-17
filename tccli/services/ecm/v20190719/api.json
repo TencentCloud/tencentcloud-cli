@@ -10462,6 +10462,7 @@
         {
           "default": "",
           "document": "安全组规则索引号",
+          "example": "1",
           "member": "int64",
           "name": "PolicyIndex",
           "required": false,
@@ -10471,6 +10472,7 @@
         {
           "default": "",
           "document": "协议, 取值: TCP,UDP, ICMP。",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -10480,6 +10482,7 @@
         {
           "default": "",
           "document": "端口(all, 离散port, range)。",
+          "example": "80",
           "member": "string",
           "name": "Port",
           "required": false,
@@ -10489,6 +10492,7 @@
         {
           "default": "",
           "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。",
+          "example": "无",
           "member": "ServiceTemplateSpecification",
           "name": "ServiceTemplate",
           "required": false,
@@ -10498,6 +10502,7 @@
         {
           "default": "",
           "document": "网段或IP(互斥)。",
+          "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrBlock",
           "required": false,
@@ -10507,6 +10512,7 @@
         {
           "default": "",
           "document": "安全组实例ID，例如：esg-ohuuioma。",
+          "example": "esg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": false,
@@ -10516,6 +10522,7 @@
         {
           "default": "",
           "document": "IP地址ID或者ID地址组ID。",
+          "example": "无",
           "member": "AddressTemplateSpecification",
           "name": "AddressTemplate",
           "required": false,
@@ -10525,6 +10532,7 @@
         {
           "default": "",
           "document": "ACCEPT 或 DROP。",
+          "example": "ACCEPT",
           "member": "string",
           "name": "Action",
           "required": false,
@@ -10534,6 +10542,7 @@
         {
           "default": "",
           "document": "安全组规则描述。",
+          "example": "放通90端口",
           "member": "string",
           "name": "PolicyDescription",
           "required": false,
@@ -10543,8 +10552,19 @@
         {
           "default": "",
           "document": "修改时间，例如 2020-07-22 19：27：23\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-11 16:46:38",
           "member": "string",
           "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网段或IPv6(互斥)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "::/0",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
           "required": false,
           "type": "string",
           "value_allowed_null": true

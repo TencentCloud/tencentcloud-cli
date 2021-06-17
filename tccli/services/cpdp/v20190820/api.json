@@ -2706,6 +2706,7 @@
         {
           "default": "",
           "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
           "member": "string",
           "name": "MidasAppId",
           "required": true,
@@ -2714,6 +2715,7 @@
         {
           "default": "",
           "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
           "member": "string",
           "name": "SubAppId",
           "required": true,
@@ -2722,6 +2724,7 @@
         {
           "default": "",
           "document": "1 – 小额转账验证\n2 – 短信验证\n每个结算账户每天只能使用一次小额转账验证",
+          "example": "1",
           "member": "int64",
           "name": "BindType",
           "required": true,
@@ -2730,6 +2733,7 @@
         {
           "default": "",
           "document": "结算账户账号\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "encrypted_settle_account_no",
           "member": "string",
           "name": "SettleAcctNo",
           "required": true,
@@ -2738,6 +2742,7 @@
         {
           "default": "",
           "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
           "member": "string",
           "name": "MidasSecretId",
           "required": true,
@@ -2746,6 +2751,7 @@
         {
           "default": "",
           "document": "按照聚鑫安全密钥计算的签名",
+          "example": "签名",
           "member": "string",
           "name": "MidasSignature",
           "required": true,
@@ -2753,7 +2759,8 @@
         },
         {
           "default": "",
-          "document": "短信验证码\nBindType==2必填",
+          "document": "短信验证码或指令号\nBindType==2必填，平安渠道必填",
+          "example": "0000",
           "member": "string",
           "name": "CheckCode",
           "required": false,
@@ -2762,6 +2769,7 @@
         {
           "default": "",
           "document": "币种 RMB\nBindType==1必填",
+          "example": "RMB",
           "member": "string",
           "name": "CurrencyType",
           "required": false,
@@ -2770,6 +2778,7 @@
         {
           "default": "",
           "document": "单位\n1：元，2：角，3：分\nBindType==1必填",
+          "example": "1",
           "member": "int64",
           "name": "CurrencyUnit",
           "required": false,
@@ -2778,6 +2787,7 @@
         {
           "default": "",
           "document": "金额\nBindType==1必填",
+          "example": "10000",
           "member": "string",
           "name": "CurrencyAmt",
           "required": false,
@@ -2786,6 +2796,7 @@
         {
           "default": "",
           "document": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA",
+          "example": "RSA",
           "member": "string",
           "name": "EncryptType",
           "required": false,
@@ -2794,6 +2805,7 @@
         {
           "default": "",
           "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "release",
           "member": "string",
           "name": "MidasEnvironment",
           "required": false,
@@ -2807,8 +2819,10 @@
       "members": [
         {
           "document": "前置流水号，请保存",
+          "example": "1910120069802835",
           "member": "string",
           "name": "FrontSeqNo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

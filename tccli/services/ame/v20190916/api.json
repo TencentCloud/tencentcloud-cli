@@ -33,7 +33,7 @@
     "DescribeKTVMusicDetail": {
       "document": "根据 Id 查询歌曲的详细信息，包含基础信息及播放信息。",
       "input": "DescribeKTVMusicDetailRequest",
-      "name": "查询 KTV 曲目详情",
+      "name": "查询即时广播曲目详情",
       "output": "DescribeKTVMusicDetailResponse"
     },
     "DescribeLyric": {
@@ -87,7 +87,7 @@
     "SearchKTVMusics": {
       "document": "根据搜索条件，返回匹配的歌曲列表。",
       "input": "SearchKTVMusicsRequest",
-      "name": "搜索KTV 歌曲",
+      "name": "搜索即时广播歌曲",
       "output": "SearchKTVMusicsResponse"
     },
     "TakeMusicOffShelves": {

@@ -8335,6 +8335,7 @@
         {
           "default": "",
           "document": "（精确匹配）服务商，可选值：`UNICOM`。",
+          "example": "UNICOM",
           "member": "string",
           "name": "ServiceProvider",
           "required": false,
@@ -8343,6 +8344,7 @@
         {
           "default": "",
           "document": "（精确匹配）合规化审批单`ID`。",
+          "example": "10002",
           "member": "uint64",
           "name": "ComplianceId",
           "required": false,
@@ -8351,6 +8353,7 @@
         {
           "default": "",
           "document": "（模糊查询）公司名称。",
+          "example": "腾讯科技（广州）有限公司",
           "member": "string",
           "name": "Company",
           "required": false,
@@ -8359,6 +8362,7 @@
         {
           "default": "",
           "document": "（精确匹配）统一社会信用代码。",
+          "example": "91440101327598294H",
           "member": "string",
           "name": "UniformSocialCreditCode",
           "required": false,
@@ -8367,6 +8371,7 @@
         {
           "default": "",
           "document": "（模糊查询）法定代表人。",
+          "example": "张颖",
           "member": "string",
           "name": "LegalPerson",
           "required": false,
@@ -8375,6 +8380,7 @@
         {
           "default": "",
           "document": "（模糊查询）发证机关。",
+          "example": "广州市海珠区市场监督管理局",
           "member": "string",
           "name": "IssuingAuthority",
           "required": false,
@@ -8383,6 +8389,7 @@
         {
           "default": "",
           "document": "（模糊查询）营业执照住所。",
+          "example": "广州市海珠区新港中路397号自编72号(商业街F5-1)",
           "member": "string",
           "name": "BusinessAddress",
           "required": false,
@@ -8391,6 +8398,7 @@
         {
           "default": "",
           "document": "（精确匹配）邮编。",
+          "example": "510320",
           "member": "uint64",
           "name": "PostCode",
           "required": false,
@@ -8399,6 +8407,7 @@
         {
           "default": "",
           "document": "（模糊查询）经办人。",
+          "example": "李四",
           "member": "string",
           "name": "Manager",
           "required": false,
@@ -8407,6 +8416,7 @@
         {
           "default": "",
           "document": "（精确查询）经办人身份证号。",
+          "example": "360732199007108888",
           "member": "string",
           "name": "ManagerId",
           "required": false,
@@ -8415,6 +8425,7 @@
         {
           "default": "",
           "document": "（模糊查询）经办人身份证地址。",
+          "example": "广州市海珠区新港中路8888号",
           "member": "string",
           "name": "ManagerAddress",
           "required": false,
@@ -8423,6 +8434,7 @@
         {
           "default": "",
           "document": "（精确匹配）经办人联系电话。",
+          "example": "020-81167888",
           "member": "string",
           "name": "ManagerTelephone",
           "required": false,
@@ -8431,6 +8443,7 @@
         {
           "default": "",
           "document": "（精确匹配）电子邮箱。",
+          "example": "test@tencent.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -8439,6 +8452,7 @@
         {
           "default": "",
           "document": "（精确匹配）服务开始日期，如：`2020-07-28`。",
+          "example": "2020-07-29",
           "member": "string",
           "name": "ServiceStartDate",
           "required": false,
@@ -8447,6 +8461,7 @@
         {
           "default": "",
           "document": "（精确匹配）服务结束日期，如：`2021-07-28`。",
+          "example": "2021-07-29",
           "member": "string",
           "name": "ServiceEndDate",
           "required": false,
@@ -8455,10 +8470,29 @@
         {
           "default": "",
           "document": "（精确匹配）状态。待审批：`PENDING`，通过：`APPROVED `，拒绝：`DENY`。",
+          "example": "PENDING",
           "member": "string",
           "name": "State",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8468,15 +8502,19 @@
       "members": [
         {
           "document": "合规化审批单列表。",
+          "example": "无",
           "member": "CrossBorderCompliance",
           "name": "CrossBorderComplianceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "合规化审批单总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

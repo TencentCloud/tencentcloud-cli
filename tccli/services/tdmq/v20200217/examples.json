@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AcknowledgeMessage": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=AcknowledgeMessage\n&AckTopic=persistent://tenant/namespace/topic\n&MessageId=\"71:12:0\"\n&SubName=“test-sub”\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"ErrorMsg\": \"xxx\"\n    }\n}",
+        "title": "确认消息"
+      }
+    ],
     "ClearCmqQueue": [
       {
         "document": "",
@@ -312,6 +320,14 @@
         "title": "发送cmq主题消息"
       }
     ],
+    "ReceiveMessage": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ReceiveMessage\n&Topic=persistent://tenant/namespace/topic\n&SubscriptionName=\"test-sub\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageID\": \"71:12:0:0\",\n        \"MessagePayload\": \"hello TDMQ\",\n        \"SubName\": \"xx\",\n        \"AckTopic\": \"persistent://tenant/namespace/topic\",\n        \"ErrorMsg\": \"xx\"\n    }\n}",
+        "title": "接收消息"
+      }
+    ],
     "ResetMsgSubOffsetByTimestamp": [
       {
         "document": "",
@@ -331,7 +347,7 @@
     "SendBatchMessages": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=SendBatchMessages\n&Topic=persistent://tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&StringToken=xxxxxx\n&<公共请求参数>",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendBatchMessages\n&Topic=persistent://tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageId\": \"71:12:0:0\",\n        \"ErrorMsg\": \"\"\n    }\n}",
         "title": "成功发送多条消息"
       }
@@ -347,7 +363,7 @@
     "SendMessages": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=SendMessages\n&Topic=persistent://tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&StringToken=xxxxxx\n&<公共请求参数>",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendMessages\n&Topic=persistent://tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageId\": \"71:11:0:0\",\n        \"ErrorMsg\": \"\"\n    }\n}",
         "title": "成功发送单条消息"
       }

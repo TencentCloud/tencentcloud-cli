@@ -9,7 +9,7 @@
     "CreateCorpTag": {
       "document": "该接口用户设置标签库, 每个企业最多可配置3000个企业标签。",
       "input": "CreateCorpTagRequest",
-      "name": "设置标签库",
+      "name": "新增标签库接口",
       "output": "CreateCorpTagResponse"
     },
     "QueryActivityJoinList": {
@@ -562,7 +562,7 @@
         {
           "default": "",
           "document": "如果是群消息，则不为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "群id",
+          "example": "roomId",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -581,12 +581,22 @@
         },
         {
           "default": "",
-          "document": "MsgType=video时的消息体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MsgType=video时的消息体，忽略此字段，见BodyJson字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ChatArchivingMsgTypeVideo",
           "name": "Video",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "BodyJson",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1487,7 +1497,7 @@
         },
         {
           "default": "",
-          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填。当客户在企业内的跟进人超过500人时需要使用cursor参数进行分页获取",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "Cursor",
@@ -1496,7 +1506,7 @@
         },
         {
           "default": "",
-          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "document": "当前接口Limit不需要传参， 保留Limit只是为了保持向后兼容性， Limit默认值为500，当返回结果超过500时， NextCursor才有返回值",
           "example": "100",
           "member": "uint64",
           "name": "Limit",

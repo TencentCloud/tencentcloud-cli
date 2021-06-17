@@ -23,6 +23,12 @@ Output:
 **Example 2: 升级失败**
 
 当人员库存在一些无法升级的人脸时，返回FailedOperation.GroupLostFaces错误，并返回一个Url查看具体的PersonId和FaceId，需要删除这些Person或Face，或者重新创建，才可以升级成功。
+文件格式：
+[{
+            person_id: 丢失的人员ID,
+            face_id: 丢失的人脸ID,
+            type: 1    // 丢图类型，1. 未知原因，暂无其它类别
+}]
 
 Input: 
 

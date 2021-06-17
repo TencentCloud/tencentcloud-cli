@@ -436,6 +436,7 @@
         {
           "default": "",
           "document": "repo的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "repo",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -445,6 +446,7 @@
         {
           "default": "",
           "document": "repo的完整全名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user/repo",
           "member": "string",
           "name": "FullName",
           "required": false,
