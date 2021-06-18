@@ -1,5 +1,11 @@
 {
   "actions": {
+    "FlowProductRemind": {
+      "document": "计量商品用量提醒，用于服务商调用云服务，云服务向客户发送提醒信息",
+      "input": "FlowProductRemindRequest",
+      "name": "计量商品用量提醒",
+      "output": "FlowProductRemindResponse"
+    },
     "GetCateTree": {
       "document": "获取分类名称",
       "input": "GetCateTreeRequest",
@@ -7,7 +13,7 @@
       "output": "GetCateTreeResponse"
     },
     "GetUsagePlanUsageAmount": {
-      "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n",
       "input": "GetUsagePlanUsageAmountRequest",
       "name": "查询使用计划使用量",
       "output": "GetUsagePlanUsageAmountResponse"
@@ -20,6 +26,105 @@
     "serviceShortName": "market"
   },
   "objects": {
+    "FlowProductRemindRequest": {
+      "document": "FlowProductRemind请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务商uin",
+          "example": "12345678",
+          "member": "string",
+          "name": "ProviderUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务商实例ID",
+          "example": "1054492229",
+          "member": "string",
+          "name": "SignId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云市场实例ID",
+          "example": "market-g9sjptwqi",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例总流量",
+          "example": "2000",
+          "member": "string",
+          "name": "TotalFlow",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "剩余流量",
+          "example": "200",
+          "member": "string",
+          "name": "LeftFlow",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量单位",
+          "example": "Mb",
+          "member": "string",
+          "name": "FlowUnit",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FlowProductRemindResponse": {
+      "document": "FlowProductRemind返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "example": "true",
+          "member": "string",
+          "name": "Success",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流水号",
+          "example": "7c0b5ac4-47a6-448b-b486-18d9774e3264",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Info",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetCateTreeRequest": {
       "document": "GetCateTree请求参数结构体",
       "members": [

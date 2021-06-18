@@ -174,6 +174,12 @@
       "name": "查看快照操作限制列表",
       "output": "DescribeSnapshotsDeniedActionsResponse"
     },
+    "DescribeZones": {
+      "document": "查询地域下可用区",
+      "input": "DescribeZonesRequest",
+      "name": "查询可用区",
+      "output": "DescribeZonesResponse"
+    },
     "DisassociateInstancesKeyPairs": {
       "document": "本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。\n\n* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后解绑。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 SSH 登录。可以调用 ResetInstancesPassword 接口来设置登录密码。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "DisassociateInstancesKeyPairsRequest",
@@ -2117,6 +2123,41 @@
       ],
       "type": "object"
     },
+    "DescribeZonesRequest": {
+      "document": "DescribeZones请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeZonesResponse": {
+      "document": "DescribeZones返回参数结构体",
+      "members": [
+        {
+          "document": "可用区数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区详细信息列表",
+          "example": "无",
+          "member": "ZoneInfo",
+          "name": "ZoneInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisassociateInstancesKeyPairsRequest": {
       "document": "DisassociateInstancesKeyPairs请求参数结构体",
       "members": [
@@ -4047,6 +4088,32 @@
           "document": "流量包状态：\n<li>NETWORK_NORMAL：正常</li>\n<li>OVERDUE_NETWORK_DISABLED：欠费断网</li>",
           "member": "string",
           "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneInfo": {
+      "document": "可用区详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区中文名称",
+          "example": "广州一区",
+          "member": "string",
+          "name": "ZoneName",
           "required": true,
           "type": "string",
           "value_allowed_null": false

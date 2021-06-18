@@ -264,6 +264,14 @@
         "title": "查询用户增值包详情"
       }
     ],
+    "DescribeHostingDomainTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostingDomainTask\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Status\": \"doing\"\n    }\n}",
+        "title": "查询环境静态托管域名任务状态"
+      }
+    ],
     "DescribePostpayFreeQuotas": [
       {
         "document": "",

@@ -198,6 +198,12 @@
       "name": "获取增值包计费相关信息",
       "output": "DescribeExtraPkgBillingInfoResponse"
     },
+    "DescribeHostingDomainTask": {
+      "document": "查询静态托管域名任务状态",
+      "input": "DescribeHostingDomainTaskRequest",
+      "name": "查询静态托管域名任务状态",
+      "output": "DescribeHostingDomainTaskResponse"
+    },
     "DescribePostpayFreeQuotas": {
       "document": "查询后付费资源免费量",
       "input": "DescribePostpayFreeQuotasRequest",
@@ -4466,6 +4472,42 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostingDomainTaskRequest": {
+      "document": "DescribeHostingDomainTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "env-xxxxxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostingDomainTaskResponse": {
+      "document": "DescribeHostingDomainTask返回参数结构体",
+      "members": [
+        {
+          "document": "todo/doing/done/error",
+          "example": "done",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -374,6 +374,7 @@
         {
           "default": "",
           "document": "当前音节语音起始时间点，单位为ms",
+          "example": "1000",
           "member": "int64",
           "name": "MemBeginTime",
           "required": true,
@@ -383,6 +384,7 @@
         {
           "default": "",
           "document": "当前音节语音终止时间点，单位为ms",
+          "example": "2000",
           "member": "int64",
           "name": "MemEndTime",
           "required": true,
@@ -392,6 +394,7 @@
         {
           "default": "",
           "document": "音节发音准确度，取值范围[-1, 100]，当取-1时指完全不匹配",
+          "example": "99.52305",
           "member": "float",
           "name": "PronAccuracy",
           "required": true,
@@ -401,6 +404,7 @@
         {
           "default": "",
           "document": "当前音节是否检测为重音",
+          "example": "false",
           "member": "bool",
           "name": "DetectedStress",
           "required": true,
@@ -409,7 +413,8 @@
         },
         {
           "default": "",
-          "document": "当前音节",
+          "document": "当前音节，当前评测识别的音素",
+          "example": "hh",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -419,6 +424,7 @@
         {
           "default": "",
           "document": "当前音节是否应为重音",
+          "example": "false",
           "member": "bool",
           "name": "Stress",
           "required": true,
@@ -428,6 +434,7 @@
         {
           "default": "",
           "document": "参考音素，在单词诊断模式下，代表标准音素",
+          "example": "hh",
           "member": "string",
           "name": "ReferencePhone",
           "required": true,
@@ -437,10 +444,21 @@
         {
           "default": "",
           "document": "当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。",
+          "example": "0",
           "member": "int64",
           "name": "MatchTag",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考字符，在单词诊断模式下，代表音素对应的原始文本",
+          "example": "wh_0",
+          "member": "string",
+          "name": "ReferenceLetter",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -1215,6 +1215,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启用 CiliumMode 的模式，空值表示不启用，“clusterIP” 表示启用 Cilium 支持 ClusterIP",
+          "example": "clusterIP",
+          "member": "string",
+          "name": "CiliumMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -6756,6 +6766,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6765,6 +6776,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6774,6 +6786,7 @@
         {
           "default": "",
           "document": "实例vpcId",
+          "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -6783,6 +6796,7 @@
         {
           "default": "",
           "document": "实例子网Id",
+          "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -6792,6 +6806,7 @@
         {
           "default": "",
           "document": "实例当前的状态\nprepare_env = 初始化环境\ninstall_suit = 安装组件\nrunning = 运行中",
+          "example": "running",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -6801,11 +6816,42 @@
         {
           "default": "",
           "document": "COS桶存储",
+          "example": "prom-xxx-data-0",
           "member": "string",
           "name": "COSBucket",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "grafana默认地址，如果开启外网访问得为域名，否则为内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://1.1.1.1",
+          "member": "string",
+          "name": "GrafanaURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联集群总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BoundTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行正常的集群数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BoundNormal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

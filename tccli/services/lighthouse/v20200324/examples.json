@@ -238,6 +238,14 @@
         "title": "查看快照操作限制列表"
       }
     ],
+    "DescribeZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ZoneInfoSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"ZoneName\": \"广州二区\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"ZoneName\": \"广州三区\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-4\",\n                \"ZoneName\": \"广州四区\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"5e1bf334-e530-4c26-ab92-d911ab148d3a\"\n    }\n}",
+        "title": "查询可用区"
+      }
+    ],
     "DisassociateInstancesKeyPairs": [
       {
         "document": "",
