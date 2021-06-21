@@ -96,6 +96,14 @@
         "title": "获取版本下面运行pod列表"
       }
     ],
+    "GenerateDownloadUrl": [
+      {
+        "document": "生成包预签名下载链接",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateDownloadUrl\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"DeployVersion\": \"xx\",\n    \"ServiceId\": \"xx\",\n    \"PkgName\": \"xx\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\r\n    \"Result\": {\r\n\r\n      }\r\n  }\r\n}",
+        "title": "生成包预签名下载链接"
+      }
+    ],
     "ModifyIngress": [
       {
         "document": "创建或者更新 Ingress 规则",

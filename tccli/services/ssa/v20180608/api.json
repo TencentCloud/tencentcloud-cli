@@ -2099,6 +2099,7 @@
         {
           "default": "",
           "document": "查询过滤参数",
+          "example": "xxx",
           "member": "string",
           "name": "Params",
           "required": true,
@@ -2112,22 +2113,28 @@
       "members": [
         {
           "document": "资产列表",
+          "example": "无",
           "member": "AssetList",
           "name": "AssetList",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "聚合数据",
+          "example": "无",
           "member": "AggregationObj",
           "name": "AggregationData",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "命名空间数据",
+          "example": "[\"test12\",\"testsoc\",\"tstsec\"]",
           "member": "string",
           "name": "NamespaceData",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssa DescribeAssetList --cli-unfold-argument  \
-    --Params xxx
+    --Params {"Limit":10,"Order":"desc","By":"field","Page":1,"FilterObj":{"AssetIpAll":[],"AssetName":[],"AssetRegionName":[],"AssetType":[],"AssetUniqid":[],"AssetVpcid":[],"NameSpace":[],"Tag":[],"RiskTag":""}}
 ```
 
 Output: 

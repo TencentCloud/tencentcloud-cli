@@ -18,31 +18,69 @@ Output:
 ```
 {
     "Response": {
-        "PronAccuracy": 65,
+        "Status": "xx",
+        "SentenceInfoSet": [
+            {
+                "SentenceId": 0,
+                "PronFluency": 0.0,
+                "SuggestedScore": 0.0,
+                "PronCompletion": 0.0,
+                "Words": [
+                    {
+                        "Word": "xx",
+                        "MatchTag": 0,
+                        "PhoneInfos": [
+                            {
+                                "Stress": true,
+                                "ReferencePhone": "xx",
+                                "MatchTag": 0,
+                                "DetectedStress": true,
+                                "Phone": "xx",
+                                "MemBeginTime": 0,
+                                "PronAccuracy": 0.0,
+                                "MemEndTime": 0
+                            }
+                        ],
+                        "PronFluency": 0.0,
+                        "MemBeginTime": 0,
+                        "ReferenceWord": "xx",
+                        "PronAccuracy": 0.0,
+                        "MemEndTime": 0
+                    }
+                ],
+                "PronAccuracy": 0.0
+            }
+        ],
         "PronFluency": 0.3,
-        "PronCompletion": 1,
-        "SuggestedScore": 65,
-        "RequestId": "xxxxxxx",
+        "SessionId": "xx",
+        "SuggestedScore": 0.0,
+        "PronCompletion": 0.0,
         "Words": [
             {
-                "MemBeginTime": 1,
-                "MemEndTime": 2,
-                "PronAccuracy": 65,
-                "PronFluency": 0.3,
-                "Word": "xxx",
+                "Word": "xx",
                 "MatchTag": 1,
                 "PhoneInfos": [
                     {
-                        "MemBeginTime": 1,
-                        "MemEndTime": 2,
-                        "PronAccuracy": 52,
-                        "Phone": "b",
                         "Stress": true,
-                        "DetectedStress": false
+                        "ReferencePhone": "xx",
+                        "MatchTag": 0,
+                        "DetectedStress": false,
+                        "Phone": "xx",
+                        "MemBeginTime": 1,
+                        "PronAccuracy": 0.0,
+                        "MemEndTime": 2
                     }
-                ]
+                ],
+                "PronFluency": 0.3,
+                "MemBeginTime": 1,
+                "ReferenceWord": "xx",
+                "PronAccuracy": 0.0,
+                "MemEndTime": 2
             }
-        ]
+        ],
+        "AudioUrl": "xx",
+        "PronAccuracy": 0.0,
+        "RequestId": "xx"
     }
 }
 ```

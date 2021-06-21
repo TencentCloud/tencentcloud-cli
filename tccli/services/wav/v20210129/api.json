@@ -870,6 +870,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外部联系人联系电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "134xxxxxxxx",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -896,6 +906,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加了此外部联系人的企业成员的姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "销售名称",
+          "member": "string",
+          "name": "SalesName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -18,6 +18,7 @@ Output:
         "Customer": {
             "Gender": 1,
             "Type": 1,
+            "Phone": "13xxxxxxxxx",
             "Name": "xx"
         },
         "NextCursor": "xx",

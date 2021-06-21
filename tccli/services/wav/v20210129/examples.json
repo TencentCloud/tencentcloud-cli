@@ -60,7 +60,7 @@
       {
         "document": "",
         "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactDetail\n&ExternalUserId=2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw\n&Cursor=xxxx\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Customer\": {\n            \"Gender\": 1,\n            \"Type\": 1,\n            \"Name\": \"xx\"\n        },\n        \"NextCursor\": \"xx\",\n        \"FollowUser\": [\n            {\n                \"Remark\": \"xx\",\n                \"Description\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"GroupName\": \"xx\",\n                        \"TagId\": \"xx\",\n                        \"Type\": 1,\n                        \"TagName\": \"xx\"\n                    }\n                ],\n                \"OperUserId\": \"xx\",\n                \"UserId\": \"xx\",\n                \"AddWay\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Customer\": {\n            \"Gender\": 1,\n            \"Type\": 1,\n            \"Phone\": \"13xxxxxxxxx\",\n            \"Name\": \"xx\"\n        },\n        \"NextCursor\": \"xx\",\n        \"FollowUser\": [\n            {\n                \"Remark\": \"xx\",\n                \"Description\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"GroupName\": \"xx\",\n                        \"TagId\": \"xx\",\n                        \"Type\": 1,\n                        \"TagName\": \"xx\"\n                    }\n                ],\n                \"OperUserId\": \"xx\",\n                \"UserId\": \"xx\",\n                \"AddWay\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取客户详情"
       }
     ],
@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactList\n&Cursor=xxxx\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"xxx\",\n        \"PageData\": [\n            {\n                \"UserId\": \"xxx\",\n                \"ExternalUserId\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"xxx\",\n        \"PageData\": [\n            {\n                \"SalesName\": \"\",\n                \"UserId\": \"xxx\",\n                \"ExternalUserId\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
         "title": "客户列表"
       }
     ],
