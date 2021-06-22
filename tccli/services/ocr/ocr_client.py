@@ -850,7 +850,7 @@ def doRecognizeTableOCR(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doFinanBillSliceOCR(args, parsed_globals):
+def doTextDetect(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -866,9 +866,9 @@ def doFinanBillSliceOCR(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.FinanBillSliceOCRRequest()
+    model = models.TextDetectRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.FinanBillSliceOCR(model)
+    rsp = client.TextDetect(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1174,7 +1174,7 @@ def doTrainTicketOCR(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTextDetect(args, parsed_globals):
+def doBankSlipOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1190,9 +1190,9 @@ def doTextDetect(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextDetectRequest()
+    model = models.BankSlipOCRRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.TextDetect(model)
+    rsp = client.BankSlipOCR(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1463,6 +1463,33 @@ def doMainlandPermitOCR(args, parsed_globals):
     model = models.MainlandPermitOCRRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.MainlandPermitOCR(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doFinanBillSliceOCR(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.FinanBillSliceOCRRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.FinanBillSliceOCR(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1810,7 +1837,7 @@ ACTION_MAP = {
     "FlightInvoiceOCR": doFlightInvoiceOCR,
     "PermitOCR": doPermitOCR,
     "RecognizeTableOCR": doRecognizeTableOCR,
-    "FinanBillSliceOCR": doFinanBillSliceOCR,
+    "TextDetect": doTextDetect,
     "BusInvoiceOCR": doBusInvoiceOCR,
     "TableOCR": doTableOCR,
     "EnglishOCR": doEnglishOCR,
@@ -1822,7 +1849,7 @@ ACTION_MAP = {
     "SealOCR": doSealOCR,
     "FinanBillOCR": doFinanBillOCR,
     "TrainTicketOCR": doTrainTicketOCR,
-    "TextDetect": doTextDetect,
+    "BankSlipOCR": doBankSlipOCR,
     "GeneralEfficientOCR": doGeneralEfficientOCR,
     "TaxiInvoiceOCR": doTaxiInvoiceOCR,
     "VerifyBizLicense": doVerifyBizLicense,
@@ -1833,6 +1860,7 @@ ACTION_MAP = {
     "CarInvoiceOCR": doCarInvoiceOCR,
     "DutyPaidProofOCR": doDutyPaidProofOCR,
     "MainlandPermitOCR": doMainlandPermitOCR,
+    "FinanBillSliceOCR": doFinanBillSliceOCR,
     "FormulaOCR": doFormulaOCR,
     "VatInvoiceVerify": doVatInvoiceVerify,
     "ShipInvoiceOCR": doShipInvoiceOCR,

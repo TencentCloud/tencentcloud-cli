@@ -60,7 +60,7 @@
       {
         "document": "",
         "input": "https://gse.tencentcloudapi.com/?Action=CreateGameServerSessionQueue\n&Name=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"GameServerSessionQueue\": {\n            \"Destinations\": [],\n            \"GameServerSessionQueueArn\": \"qcs::gse:ap-shanghai:uin/20534889:queue/test\",\n            \"Name\": \"test\",\n            \"PlayerLatencyPolicies\": [],\n            \"TimeoutInSeconds\": 600\n        },\n        \"RequestId\": \"08f383c1-2694-4236-ba64-e7d3e3453d96c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessionQueue\": {\n            \"Destinations\": [],\n            \"GameServerSessionQueueArn\": \"qcs::gse:ap-shanghai:uin/20534889:queue/test\",\n            \"Name\": \"test\",\n            \"PlayerLatencyPolicies\": [],\n            \"TimeoutInSeconds\": 600,\n            \"Tags\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"08f383c1-2694-4236-ba64-e7d3e3453d96c\"\n    }\n}",
         "title": "创建游戏服务器会话队列"
       }
     ],

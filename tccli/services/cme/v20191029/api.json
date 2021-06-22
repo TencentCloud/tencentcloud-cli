@@ -5263,7 +5263,7 @@
         },
         {
           "default": "",
-          "document": "替换类型，可取值有：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片。</li>\n注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。",
+          "document": "替换类型，可取值有：\n<li> AUDIO ：音频；</li>\n<li> VIDEO ：视频；</li>\n<li> IMAGE ：图片；</li>\n<li> TEXT ：文本。</li>\n注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。",
           "example": "VIDEO",
           "member": "string",
           "name": "ReplacementType",
@@ -5277,6 +5277,16 @@
           "example": " 无",
           "member": "MediaReplacementInfo",
           "name": "MediaReplacementInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本替换信息，仅当要替换的卡槽类型为文本时有效。",
+          "example": "无",
+          "member": "TextReplacementInfo",
+          "name": "TextReplacementInfo",
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -5841,6 +5851,22 @@
         }
       ],
       "usage": "both"
+    },
+    "TextReplacementInfo": {
+      "document": "模板插槽文本替换信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "替换的文本信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ThirdPartyPublishInfo": {
       "document": "第三方平台视频发布信息。",

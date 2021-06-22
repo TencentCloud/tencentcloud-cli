@@ -125,7 +125,7 @@
       "members": [
         {
           "default": "",
-          "document": "签名名称。",
+          "document": "签名名称。\n注：不能重复申请已通过或待审核的签名。",
           "example": "test",
           "member": "string",
           "name": "SignName",
@@ -875,7 +875,7 @@
         },
         {
           "default": "",
-          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。\n注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。",
           "example": "0",
           "member": "uint64",
           "name": "International",

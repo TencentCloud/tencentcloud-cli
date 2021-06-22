@@ -15,124 +15,188 @@ Output:
     "Response": {
         "TextDetections": [
             {
-                "DetectedText": "Confetteria",
-                "Confidence": 99,
-                "ItemPolygon": {
-                    "X": 449,
-                    "Y": 211,
-                    "Width": 115,
-                    "Height": 37
-                },
+                "AdvancedInfo": "xx",
                 "Polygon": [
                     {
-                        "X": 449,
-                        "Y": 231
+                        "Y": 231,
+                        "X": 449
                     },
                     {
-                        "X": 452,
-                        "Y": 211
+                        "Y": 211,
+                        "X": 452
                     },
                     {
-                        "X": 563,
-                        "Y": 227
+                        "Y": 227,
+                        "X": 563
                     },
                     {
-                        "X": 560,
-                        "Y": 247
+                        "Y": 247,
+                        "X": 560
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}"
-            },
-            {
-                "DetectedText": "Raffaello",
                 "Confidence": 99,
                 "ItemPolygon": {
-                    "X": 361,
+                    "Y": 211,
+                    "X": 449,
+                    "Height": 37,
+                    "Width": 115
+                },
+                "WordCoordPoint": [
+                    {
+                        "WordCoordinate": [
+                            {
+                                "Y": 0,
+                                "X": 0
+                            }
+                        ]
+                    }
+                ],
+                "DetectedText": "xx",
+                "Words": [
+                    {
+                        "Confidence": 0,
+                        "Character": "xx"
+                    }
+                ]
+            },
+            {
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 308,
+                        "X": 361
+                    },
+                    {
+                        "Y": 242,
+                        "X": 368
+                    },
+                    {
+                        "Y": 271,
+                        "X": 648
+                    },
+                    {
+                        "Y": 338,
+                        "X": 641
+                    }
+                ],
+                "Confidence": 99,
+                "ItemPolygon": {
                     "Y": 242,
+                    "X": 361,
                     "Width": 288,
                     "Height": 97
                 },
-                "Polygon": [
+                "WordCoordPoint": [
                     {
-                        "X": 361,
-                        "Y": 308
-                    },
-                    {
-                        "X": 368,
-                        "Y": 242
-                    },
-                    {
-                        "X": 648,
-                        "Y": 271
-                    },
-                    {
-                        "X": 641,
-                        "Y": 338
+                        "WordCoordinate": [
+                            {
+                                "Y": 0,
+                                "X": 0
+                            }
+                        ]
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}"
+                "DetectedText": "xx",
+                "Words": [
+                    {
+                        "Confidence": 0,
+                        "Character": "xx"
+                    }
+                ]
             },
             {
-                "DetectedText": "费列罗臻点坊",
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 349,
+                        "X": 394
+                    },
+                    {
+                        "Y": 316,
+                        "X": 398
+                    },
+                    {
+                        "Y": 337,
+                        "X": 593
+                    },
+                    {
+                        "Y": 371,
+                        "X": 589
+                    }
+                ],
                 "Confidence": 99,
                 "ItemPolygon": {
-                    "X": 394,
                     "Y": 316,
+                    "X": 394,
                     "Width": 200,
                     "Height": 56
                 },
-                "Polygon": [
+                "WordCoordPoint": [
                     {
-                        "X": 394,
-                        "Y": 349
-                    },
-                    {
-                        "X": 398,
-                        "Y": 316
-                    },
-                    {
-                        "X": 593,
-                        "Y": 337
-                    },
-                    {
-                        "X": 589,
-                        "Y": 371
+                        "WordCoordinate": [
+                            {
+                                "Y": 0,
+                                "X": 0
+                            }
+                        ]
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}"
+                "DetectedText": "xx",
+                "Words": [
+                    {
+                        "Confidence": 0,
+                        "Character": "xx"
+                    }
+                ]
             },
             {
-                "DetectedText": "拉斐尔@脆雪柔",
+                "AdvancedInfo": "xx",
+                "Polygon": [
+                    {
+                        "Y": 401,
+                        "X": 381
+                    },
+                    {
+                        "Y": 368,
+                        "X": 385
+                    },
+                    {
+                        "Y": 389,
+                        "X": 594
+                    },
+                    {
+                        "Y": 422,
+                        "X": 590
+                    }
+                ],
                 "Confidence": 98,
                 "ItemPolygon": {
-                    "X": 381,
                     "Y": 368,
+                    "X": 381,
                     "Width": 214,
                     "Height": 55
                 },
-                "Polygon": [
+                "WordCoordPoint": [
                     {
-                        "X": 381,
-                        "Y": 401
-                    },
-                    {
-                        "X": 385,
-                        "Y": 368
-                    },
-                    {
-                        "X": 594,
-                        "Y": 389
-                    },
-                    {
-                        "X": 590,
-                        "Y": 422
+                        "WordCoordinate": [
+                            {
+                                "Y": 0,
+                                "X": 0
+                            }
+                        ]
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}"
+                "DetectedText": "xx",
+                "Words": [
+                    {
+                        "Confidence": 0,
+                        "Character": "xx"
+                    }
+                ]
             }
         ],
-        "Angel": 0,
-        "RequestId": "d2a1c039-817d-455b-b2e2-f765a7261906"
+        "RequestId": "xx",
+        "Angel": 0.0
     }
 }
 ```

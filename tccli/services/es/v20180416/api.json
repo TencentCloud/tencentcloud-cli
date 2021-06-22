@@ -134,6 +134,7 @@
         {
           "default": "",
           "document": "可用区",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -141,7 +142,8 @@
         },
         {
           "default": "",
-          "document": "实例版本（支持\"5.6.4\"、\"6.4.3\"、\"6.8.2\"、\"7.5.1\"）",
+          "document": "实例版本（支持\"5.6.4\"、\"6.4.3\"、\"6.8.2\"、\"7.5.1\"、\"7.10.1\"）",
+          "example": "6.4.3",
           "member": "string",
           "name": "EsVersion",
           "required": true,
@@ -150,6 +152,7 @@
         {
           "default": "",
           "document": "私有网络ID",
+          "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -158,6 +161,7 @@
         {
           "default": "",
           "document": "子网ID",
+          "example": "subnet-xxxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -166,6 +170,7 @@
         {
           "default": "",
           "document": "访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）",
+          "example": "xxxxxx",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -174,6 +179,7 @@
         {
           "default": "",
           "document": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "example": "es_test",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -182,6 +188,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n节点数量（2-50个）",
+          "example": "3",
           "member": "uint64",
           "name": "NodeNum",
           "required": false,
@@ -190,6 +197,7 @@
         {
           "default": "",
           "document": "计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "required": false,
@@ -198,6 +206,7 @@
         {
           "default": "",
           "document": "包年包月购买时长（单位由参数TimeUnit决定）",
+          "example": "12",
           "member": "uint64",
           "name": "ChargePeriod",
           "required": false,
@@ -206,6 +215,7 @@
         {
           "default": "",
           "document": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费",
+          "example": "RENEW_FLAG_AUTO",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -214,6 +224,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "ES.S1.4XLARGE64",
           "member": "string",
           "name": "NodeType",
           "required": false,
@@ -222,6 +233,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD",
+          "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
           "required": false,
@@ -230,6 +242,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n节点磁盘容量（单位GB）",
+          "example": "500",
           "member": "uint64",
           "name": "DiskSize",
           "required": false,
@@ -238,6 +251,7 @@
         {
           "default": "",
           "document": "计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）",
+          "example": "m",
           "member": "string",
           "name": "TimeUnit",
           "required": false,
@@ -246,6 +260,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0",
+          "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -254,6 +269,7 @@
         {
           "default": "",
           "document": "代金券ID列表（目前仅支持指定一张代金券）",
+          "example": "[]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -262,6 +278,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false",
+          "example": "false",
           "member": "bool",
           "name": "EnableDedicatedMaster",
           "required": false,
@@ -270,6 +287,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）",
+          "example": "3",
           "member": "uint64",
           "name": "MasterNodeNum",
           "required": false,
@@ -278,6 +296,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "ES.S1.4XLARGE64",
           "member": "string",
           "name": "MasterNodeType",
           "required": false,
@@ -286,6 +305,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）",
+          "example": "100",
           "member": "uint64",
           "name": "MasterNodeDiskSize",
           "required": false,
@@ -294,6 +314,7 @@
         {
           "default": "",
           "document": "集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）",
+          "example": "无",
           "member": "string",
           "name": "ClusterNameInConf",
           "required": false,
@@ -302,6 +323,7 @@
         {
           "default": "",
           "document": "集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署</li>默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "DeployMode",
           "required": false,
@@ -310,6 +332,7 @@
         {
           "default": "",
           "document": "多可用区部署时可用区的详细信息(DeployMode为1时必传)",
+          "example": "无",
           "member": "ZoneDetail",
           "name": "MultiZoneInfo",
           "required": false,
@@ -318,6 +341,7 @@
         {
           "default": "",
           "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum",
+          "example": "platinum",
           "member": "string",
           "name": "LicenseType",
           "required": false,
@@ -326,6 +350,7 @@
         {
           "default": "",
           "document": "节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等",
+          "example": "无",
           "member": "NodeInfo",
           "name": "NodeInfoList",
           "required": false,
@@ -334,6 +359,7 @@
         {
           "default": "",
           "document": "节点标签信息列表",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagList",
           "required": false,
@@ -342,6 +368,7 @@
         {
           "default": "",
           "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>",
+          "example": "2",
           "member": "uint64",
           "name": "BasicSecurityType",
           "required": false,
@@ -350,10 +377,20 @@
         {
           "default": "",
           "document": "场景化模板类型 0：不启用 1：通用 2：日志 3：搜索",
+          "example": "0",
           "member": "int64",
           "name": "SceneType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可视化节点配置",
+          "example": "无",
+          "member": "WebNodeTypeInfo",
+          "name": "WebNodeTypeInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -363,8 +400,10 @@
       "members": [
         {
           "document": "实例ID",
+          "example": "es-xxxxxx",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -891,6 +930,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -900,6 +940,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "实例名称",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -909,6 +950,7 @@
         {
           "default": "",
           "document": "地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -918,6 +960,7 @@
         {
           "default": "",
           "document": "可用区",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -927,6 +970,7 @@
         {
           "default": "",
           "document": "用户ID",
+          "example": "123456789",
           "member": "uint64",
           "name": "AppId",
           "required": true,
@@ -936,6 +980,7 @@
         {
           "default": "",
           "document": "用户UIN",
+          "example": "123456789",
           "member": "string",
           "name": "Uin",
           "required": true,
@@ -945,6 +990,7 @@
         {
           "default": "",
           "document": "实例所属VPC的UID",
+          "example": "vpc-xxxxxxx",
           "member": "string",
           "name": "VpcUid",
           "required": true,
@@ -954,6 +1000,7 @@
         {
           "default": "",
           "document": "实例所属子网的UID",
+          "example": "subnet-xxxxxxx",
           "member": "string",
           "name": "SubnetUid",
           "required": true,
@@ -963,6 +1010,7 @@
         {
           "default": "",
           "document": "实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -972,6 +1020,7 @@
         {
           "default": "",
           "document": "实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。",
+          "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
           "required": true,
@@ -981,6 +1030,7 @@
         {
           "default": "",
           "document": "包年包月购买时长,单位:月",
+          "example": "6",
           "member": "uint64",
           "name": "ChargePeriod",
           "required": true,
@@ -990,6 +1040,7 @@
         {
           "default": "",
           "document": "自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": true,
@@ -999,6 +1050,7 @@
         {
           "default": "",
           "document": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "NodeType",
           "required": true,
@@ -1008,6 +1060,7 @@
         {
           "default": "",
           "document": "节点个数",
+          "example": "3",
           "member": "uint64",
           "name": "NodeNum",
           "required": true,
@@ -1017,6 +1070,7 @@
         {
           "default": "",
           "document": "节点CPU核数",
+          "example": "4",
           "member": "uint64",
           "name": "CpuNum",
           "required": true,
@@ -1026,6 +1080,7 @@
         {
           "default": "",
           "document": "节点内存大小，单位GB",
+          "example": "8",
           "member": "uint64",
           "name": "MemSize",
           "required": true,
@@ -1035,6 +1090,7 @@
         {
           "default": "",
           "document": "节点磁盘类型",
+          "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
           "required": true,
@@ -1044,6 +1100,7 @@
         {
           "default": "",
           "document": "节点磁盘大小，单位GB",
+          "example": "100",
           "member": "uint64",
           "name": "DiskSize",
           "required": true,
@@ -1053,6 +1110,7 @@
         {
           "default": "",
           "document": "ES域名",
+          "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "EsDomain",
           "required": true,
@@ -1062,6 +1120,7 @@
         {
           "default": "",
           "document": "ES VIP",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "EsVip",
           "required": true,
@@ -1071,6 +1130,7 @@
         {
           "default": "",
           "document": "ES端口",
+          "example": "9200",
           "member": "uint64",
           "name": "EsPort",
           "required": true,
@@ -1080,6 +1140,7 @@
         {
           "default": "",
           "document": "Kibana访问url",
+          "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "KibanaUrl",
           "required": true,
@@ -1089,6 +1150,7 @@
         {
           "default": "",
           "document": "ES版本号",
+          "example": "5.6.4",
           "member": "string",
           "name": "EsVersion",
           "required": true,
@@ -1098,6 +1160,7 @@
         {
           "default": "",
           "document": "ES配置项",
+          "example": "\"{}\"",
           "member": "string",
           "name": "EsConfig",
           "required": true,
@@ -1107,6 +1170,7 @@
         {
           "default": "",
           "document": "Kibana访问控制配置",
+          "example": "无",
           "member": "EsAcl",
           "name": "EsAcl",
           "required": true,
@@ -1116,6 +1180,7 @@
         {
           "default": "",
           "document": "实例创建时间",
+          "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -1125,6 +1190,7 @@
         {
           "default": "",
           "document": "实例最后修改操作时间",
+          "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -1134,6 +1200,7 @@
         {
           "default": "",
           "document": "实例到期时间",
+          "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "Deadline",
           "required": true,
@@ -1143,6 +1210,7 @@
         {
           "default": "",
           "document": "实例类型（实例类型标识，当前只有1,2两种）",
+          "example": "1",
           "member": "uint64",
           "name": "InstanceType",
           "required": true,
@@ -1152,6 +1220,7 @@
         {
           "default": "",
           "document": "Ik分词器配置",
+          "example": "无",
           "member": "EsDictionaryInfo",
           "name": "IkConfig",
           "required": true,
@@ -1161,6 +1230,7 @@
         {
           "default": "",
           "document": "专用主节点配置",
+          "example": "无",
           "member": "MasterNodeInfo",
           "name": "MasterNodeInfo",
           "required": true,
@@ -1170,6 +1240,7 @@
         {
           "default": "",
           "document": "cos自动备份配置",
+          "example": "无",
           "member": "CosBackup",
           "name": "CosBackup",
           "required": true,
@@ -1179,6 +1250,7 @@
         {
           "default": "",
           "document": "是否允许cos自动备份",
+          "example": "true",
           "member": "bool",
           "name": "AllowCosBackup",
           "required": true,
@@ -1188,6 +1260,7 @@
         {
           "default": "",
           "document": "实例拥有的标签列表",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagList",
           "required": true,
@@ -1197,6 +1270,7 @@
         {
           "default": "",
           "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum",
+          "example": "platinum",
           "member": "string",
           "name": "LicenseType",
           "required": true,
@@ -1206,6 +1280,7 @@
         {
           "default": "",
           "document": "是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "EnableHotWarmMode",
           "required": true,
@@ -1215,6 +1290,7 @@
         {
           "default": "",
           "document": "冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "WarmNodeType",
           "required": true,
@@ -1224,6 +1300,7 @@
         {
           "default": "",
           "document": "冷节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "uint64",
           "name": "WarmNodeNum",
           "required": true,
@@ -1233,6 +1310,7 @@
         {
           "default": "",
           "document": "冷节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "WarmCpuNum",
           "required": true,
@@ -1242,6 +1320,7 @@
         {
           "default": "",
           "document": "冷节点内存内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
           "member": "uint64",
           "name": "WarmMemSize",
           "required": true,
@@ -1251,6 +1330,7 @@
         {
           "default": "",
           "document": "冷节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "WarmDiskType",
           "required": true,
@@ -1260,6 +1340,7 @@
         {
           "default": "",
           "document": "冷节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "uint64",
           "name": "WarmDiskSize",
           "required": true,
@@ -1269,6 +1350,7 @@
         {
           "default": "",
           "document": "集群节点信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NodeInfo",
           "name": "NodeInfoList",
           "required": true,
@@ -1278,6 +1360,7 @@
         {
           "default": "",
           "document": "Es公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "EsPublicUrl",
           "required": true,
@@ -1287,6 +1370,7 @@
         {
           "default": "",
           "document": "多可用区网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ZoneDetail",
           "name": "MultiZoneInfo",
           "required": true,
@@ -1296,6 +1380,7 @@
         {
           "default": "",
           "document": "部署模式<li>0：单可用区</li><li>1：多可用区</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "DeployMode",
           "required": true,
@@ -1305,6 +1390,7 @@
         {
           "default": "",
           "document": "ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
           "member": "string",
           "name": "PublicAccess",
           "required": true,
@@ -1314,6 +1400,7 @@
         {
           "default": "",
           "document": "ES公网访问控制配置",
+          "example": "无",
           "member": "EsAcl",
           "name": "EsPublicAcl",
           "required": true,
@@ -1323,6 +1410,7 @@
         {
           "default": "",
           "document": "Kibana内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "KibanaPrivateUrl",
           "required": true,
@@ -1332,6 +1420,7 @@
         {
           "default": "",
           "document": "Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
           "member": "string",
           "name": "KibanaPublicAccess",
           "required": true,
@@ -1341,6 +1430,7 @@
         {
           "default": "",
           "document": "Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
           "member": "string",
           "name": "KibanaPrivateAccess",
           "required": true,
@@ -1350,6 +1440,7 @@
         {
           "default": "",
           "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "SecurityType",
           "required": true,
@@ -1359,6 +1450,7 @@
         {
           "default": "",
           "document": "场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "SceneType",
           "required": true,
@@ -1368,10 +1460,21 @@
         {
           "default": "",
           "document": "Kibana配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{}\"",
           "member": "string",
           "name": "KibanaConfig",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Kibana节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KibanaNodeInfo",
+          "name": "KibanaNodeInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -1438,6 +1541,72 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KibanaNodeInfo": {
+      "document": "实例Kibana节点相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Kibana节点规格",
+          "example": "ES.S1.SMALL2",
+          "member": "string",
+          "name": "KibanaNodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "KibanaNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点CPU数",
+          "example": "2",
+          "member": "uint64",
+          "name": "KibanaNodeCpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点内存GB",
+          "example": "4",
+          "member": "uint64",
+          "name": "KibanaNodeMemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点磁盘类型",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "KibanaNodeDiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点磁盘大小",
+          "example": "50",
+          "member": "uint64",
+          "name": "KibanaNodeDiskSize",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2440,6 +2609,32 @@
         }
       ],
       "type": "object"
+    },
+    "WebNodeTypeInfo": {
+      "document": "可视化节点配置",
+      "members": [
+        {
+          "default": "",
+          "document": "可视化节点个数，固定为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可视化节点规格",
+          "example": "ES.S1.SMALL2",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ZoneDetail": {
       "document": "多可用区部署时可用区的详细信息",

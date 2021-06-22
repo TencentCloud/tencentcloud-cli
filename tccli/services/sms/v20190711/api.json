@@ -133,7 +133,8 @@
       "members": [
         {
           "default": "",
-          "document": "签名名称。",
+          "document": "签名名称。\n注：不能重复申请已通过或待审核的签名。",
+          "example": "test",
           "member": "string",
           "name": "SignName",
           "required": true,
@@ -142,6 +143,7 @@
         {
           "default": "",
           "document": "签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：\n0：公司（0，1，2，3）。\n1：APP（0，1，2，3，4） 。\n2：网站（0，1，2，3，5）。\n3：公众号或者小程序（0，1，2，3，6）。\n4：商标（7）。\n5：政府/机关事业单位/其他机构（2，3）。\n注：必须按照对应关系选择证明类型，否则会审核失败。",
+          "example": "0",
           "member": "uint64",
           "name": "SignType",
           "required": true,
@@ -150,6 +152,7 @@
         {
           "default": "",
           "document": "证明类型：\n0：三证合一。\n1：企业营业执照。\n2：组织机构代码证书。\n3：社会信用代码证书。\n4：应用后台管理截图（个人开发APP）。\n5：网站备案后台截图（个人开发网站）。\n6：小程序设置页面截图（个人认证小程序）。\n7：商标注册书。",
+          "example": "1",
           "member": "uint64",
           "name": "DocumentType",
           "required": true,
@@ -158,6 +161,7 @@
         {
           "default": "",
           "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "example": "0",
           "member": "uint64",
           "name": "International",
           "required": true,
@@ -166,6 +170,7 @@
         {
           "default": "",
           "document": "签名用途：\n0：自用。\n1：他用。",
+          "example": "1",
           "member": "uint64",
           "name": "UsedMethod",
           "required": true,
@@ -174,6 +179,7 @@
         {
           "default": "",
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
+          "example": "xxx",
           "member": "string",
           "name": "ProofImage",
           "required": true,
@@ -182,6 +188,7 @@
         {
           "default": "",
           "document": "委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。",
+          "example": "xxx",
           "member": "string",
           "name": "CommissionImage",
           "required": false,
@@ -190,6 +197,7 @@
         {
           "default": "",
           "document": "签名的申请备注。",
+          "example": "xxx",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -203,8 +211,10 @@
       "members": [
         {
           "document": "添加签名响应",
+          "example": "无",
           "member": "AddSignStatus",
           "name": "AddSignStatus",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -223,6 +233,7 @@
         {
           "default": "",
           "document": "模板名称。",
+          "example": "xxx",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -231,6 +242,7 @@
         {
           "default": "",
           "document": "模板内容。",
+          "example": "xxx",
           "member": "string",
           "name": "TemplateContent",
           "required": true,
@@ -239,6 +251,7 @@
         {
           "default": "",
           "document": "短信类型，0表示普通短信, 1表示营销短信。",
+          "example": "0",
           "member": "uint64",
           "name": "SmsType",
           "required": true,
@@ -247,6 +260,7 @@
         {
           "default": "",
           "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "example": "0",
           "member": "uint64",
           "name": "International",
           "required": true,
@@ -255,6 +269,7 @@
         {
           "default": "",
           "document": "模板备注，例如申请原因，使用场景等。",
+          "example": "xxx",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -268,8 +283,10 @@
       "members": [
         {
           "document": "添加短信模板响应包体",
+          "example": "无",
           "member": "AddTemplateStatus",
           "name": "AddTemplateStatus",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -390,6 +407,7 @@
         {
           "default": "",
           "document": "开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。",
+          "example": "2016090800",
           "member": "uint64",
           "name": "StartDateTime",
           "required": true,
@@ -398,6 +416,7 @@
         {
           "default": "",
           "document": "结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时。\n注：EndDataTime 必须大于 StartDateTime。",
+          "example": "2016090823",
           "member": "uint64",
           "name": "EndDataTime",
           "required": true,
@@ -406,6 +425,7 @@
         {
           "default": "",
           "document": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，示例如1400006666。",
+          "example": "1400006874",
           "member": "string",
           "name": "SmsSdkAppid",
           "required": true,
@@ -414,6 +434,7 @@
         {
           "default": "",
           "document": "最大上限。\n注：目前固定设置为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -422,6 +443,7 @@
         {
           "default": "",
           "document": "偏移量。\n注：目前固定设置为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -435,8 +457,10 @@
       "members": [
         {
           "document": "回执数据统计响应包体。",
+          "example": " {             \"CallbackCount\": 1745,             \"RequestSucces",
           "member": "CallbackStatusStatistics",
           "name": "CallbackStatusStatistics",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -479,6 +503,7 @@
         {
           "default": "",
           "document": "待删除的签名 ID。",
+          "example": "1234",
           "member": "uint64",
           "name": "SignId",
           "required": true,
@@ -492,8 +517,10 @@
       "members": [
         {
           "document": "删除签名响应",
+          "example": "无",
           "member": "DeleteSignStatus",
           "name": "DeleteSignStatus",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -512,6 +539,7 @@
         {
           "default": "",
           "document": "待删除的模板 ID。",
+          "example": "1234",
           "member": "uint64",
           "name": "TemplateId",
           "required": true,
@@ -525,8 +553,10 @@
       "members": [
         {
           "document": "删除模板响应",
+          "example": "无",
           "member": "DeleteTemplateStatus",
           "name": "DeleteTemplateStatus",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -629,6 +659,7 @@
         {
           "default": "",
           "document": "签名 ID 数组。",
+          "example": "1110",
           "member": "uint64",
           "name": "SignIdSet",
           "required": true,
@@ -637,6 +668,7 @@
         {
           "default": "",
           "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "example": "0",
           "member": "uint64",
           "name": "International",
           "required": true,
@@ -650,8 +682,10 @@
       "members": [
         {
           "document": "获取签名信息响应",
+          "example": "{ \t\t\t\t\"SignId\": 1110, \t\t\t\t\"International\":0, \t\t\t\t\"StatusCode\":0,",
           "member": "DescribeSignListStatus",
           "name": "DescribeSignListStatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -670,6 +704,7 @@
         {
           "default": "",
           "document": "模板 ID 数组。",
+          "example": "[\"1110\\r\\n\",\"1111\\r\\n\"]",
           "member": "uint64",
           "name": "TemplateIdSet",
           "required": true,
@@ -678,6 +713,7 @@
         {
           "default": "",
           "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "example": "0",
           "member": "uint64",
           "name": "International",
           "required": true,
@@ -691,8 +727,10 @@
       "members": [
         {
           "document": "获取短信模板信息响应",
+          "example": "无",
           "member": "DescribeTemplateListStatus",
           "name": "DescribeTemplateStatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -795,6 +833,7 @@
         {
           "default": "",
           "document": "待修改的签名 ID。",
+          "example": "1110",
           "member": "uint64",
           "name": "SignId",
           "required": true,
@@ -803,6 +842,7 @@
         {
           "default": "",
           "document": "签名名称。",
+          "example": "test",
           "member": "string",
           "name": "SignName",
           "required": true,
@@ -811,6 +851,7 @@
         {
           "default": "",
           "document": "签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：\n0：公司（0，1，2，3）。\n1：APP（0，1，2，3，4） 。\n2：网站（0，1，2，3，5）。\n3：公众号或者小程序（0，1，2，3，6）。\n4：商标（7）。\n5：政府/机关事业单位/其他机构（2，3）。\n注：必须按照对应关系选择证明类型，否则会审核失败。",
+          "example": "0",
           "member": "uint64",
           "name": "SignType",
           "required": true,
@@ -819,6 +860,7 @@
         {
           "default": "",
           "document": "证明类型：\n0：三证合一。\n1：企业营业执照。\n2：组织机构代码证书。\n3：社会信用代码证书。\n4：应用后台管理截图(个人开发APP)。\n5：网站备案后台截图(个人开发网站)。\n6：小程序设置页面截图(个人认证小程序)。\n7：商标注册书。",
+          "example": "1",
           "member": "uint64",
           "name": "DocumentType",
           "required": true,
@@ -826,7 +868,8 @@
         },
         {
           "default": "",
-          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。\n注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。",
+          "example": "0",
           "member": "uint64",
           "name": "International",
           "required": true,
@@ -835,6 +878,7 @@
         {
           "default": "",
           "document": "签名用途：\n0：自用。\n1：他用。",
+          "example": "1",
           "member": "uint64",
           "name": "UsedMethod",
           "required": true,
@@ -843,6 +887,7 @@
         {
           "default": "",
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
+          "example": "xxxx",
           "member": "string",
           "name": "ProofImage",
           "required": true,
@@ -851,6 +896,7 @@
         {
           "default": "",
           "document": "委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。",
+          "example": "xxxx",
           "member": "string",
           "name": "CommissionImage",
           "required": false,
@@ -859,6 +905,7 @@
         {
           "default": "",
           "document": "签名的申请备注。",
+          "example": "xxxx",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -872,8 +919,10 @@
       "members": [
         {
           "document": "修改签名响应",
+          "example": "无",
           "member": "ModifySignStatus",
           "name": "ModifySignStatus",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1057,6 +1106,7 @@
         {
           "default": "",
           "document": "拉取起始时间，UNIX 时间戳（时间：秒）。\n注：最大可拉取当前时期7天前的数据。",
+          "example": "1464624000",
           "member": "uint64",
           "name": "SendDateTime",
           "required": true,
@@ -1065,6 +1115,7 @@
         {
           "default": "",
           "document": "偏移量。\n注：目前固定设置为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1073,6 +1124,7 @@
         {
           "default": "",
           "document": "拉取最大条数，最多 100。",
+          "example": "2",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1081,6 +1133,7 @@
         {
           "default": "",
           "document": "下发目的手机号码，依据 e.164 标准为：+[国家（或地区）码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
+          "example": "+8615291996666",
           "member": "string",
           "name": "PhoneNumber",
           "required": true,
@@ -1089,6 +1142,7 @@
         {
           "default": "",
           "document": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，例如1400006666。",
+          "example": "1400006874",
           "member": "string",
           "name": "SmsSdkAppid",
           "required": true,
@@ -1097,6 +1151,7 @@
         {
           "default": "",
           "document": "拉取截止时间，UNIX 时间戳（时间：秒）。",
+          "example": "1464624123",
           "member": "uint64",
           "name": "EndDateTime",
           "required": false,
@@ -1110,8 +1165,10 @@
       "members": [
         {
           "document": "回复状态响应集合。",
+          "example": "无",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1130,6 +1187,7 @@
         {
           "default": "",
           "document": "拉取最大条数，最多100条。",
+          "example": "2",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1138,6 +1196,7 @@
         {
           "default": "",
           "document": "短信 SdkAppid 在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际 SdkAppid，例如1400006666。",
+          "example": "1400006874",
           "member": "string",
           "name": "SmsSdkAppid",
           "required": true,
@@ -1151,8 +1210,10 @@
       "members": [
         {
           "document": "回复状态响应集合。",
+          "example": "无",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1249,6 +1310,7 @@
         {
           "default": "",
           "document": "拉取起始时间，UNIX 时间戳（时间：秒）。\n注：最大可拉取当前时期7天前的数据。",
+          "example": "1464624000",
           "member": "uint64",
           "name": "SendDateTime",
           "required": true,
@@ -1257,6 +1319,7 @@
         {
           "default": "",
           "document": "偏移量。\n注：目前固定设置为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1265,6 +1328,7 @@
         {
           "default": "",
           "document": "拉取最大条数，最多 100。",
+          "example": "2",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1273,6 +1337,7 @@
         {
           "default": "",
           "document": "下发目的手机号码，依据 e.164 标准为：+[国家（或地区）码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
+          "example": "+8615291996666",
           "member": "string",
           "name": "PhoneNumber",
           "required": true,
@@ -1281,6 +1346,7 @@
         {
           "default": "",
           "document": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，例如1400006666。",
+          "example": "1400006874",
           "member": "string",
           "name": "SmsSdkAppid",
           "required": true,
@@ -1289,6 +1355,7 @@
         {
           "default": "",
           "document": "拉取截止时间，UNIX 时间戳（时间：秒）。",
+          "example": "1464624123",
           "member": "uint64",
           "name": "EndDateTime",
           "required": false,
@@ -1302,8 +1369,10 @@
       "members": [
         {
           "document": "下发状态响应集合。",
+          "example": "无",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1322,6 +1391,7 @@
         {
           "default": "",
           "document": "拉取最大条数，最多100条。",
+          "example": "2",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1330,6 +1400,7 @@
         {
           "default": "",
           "document": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，例如1400006666。",
+          "example": "1400006874",
           "member": "string",
           "name": "SmsSdkAppid",
           "required": true,
@@ -1343,8 +1414,10 @@
       "members": [
         {
           "document": "下发状态响应集合。",
+          "example": "无",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1363,6 +1436,7 @@
         {
           "default": "",
           "document": "下发手机号码，采用 e.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号且要求全为境内手机号或全为境外手机号。\n例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
+          "example": "[\"+8618511122233\\n\",\"+8618511122266\\n\"]",
           "member": "string",
           "name": "PhoneNumberSet",
           "required": true,
@@ -1371,6 +1445,7 @@
         {
           "default": "",
           "document": "模板 ID，必须填写已审核通过的模板 ID。模板ID可登录 [短信控制台](https://console.cloud.tencent.com/smsv2) 查看，若向境外手机号发送短信，仅支持使用国际/港澳台短信模板。",
+          "example": "1234",
           "member": "string",
           "name": "TemplateID",
           "required": true,
@@ -1379,6 +1454,7 @@
         {
           "default": "",
           "document": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2)  添加应用后生成的实际SdkAppid，示例如1400006666。",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppid",
           "required": true,
@@ -1387,6 +1463,7 @@
         {
           "default": "",
           "document": "短信签名内容，使用 UTF-8 编码，必须填写已审核通过的签名，签名信息可登录 [短信控制台](https://console.cloud.tencent.com/smsv2)  查看。注：国内短信为必填参数。",
+          "example": "腾讯云",
           "member": "string",
           "name": "Sign",
           "required": false,
@@ -1395,6 +1472,7 @@
         {
           "default": "",
           "document": "模板参数，若无模板参数，则设置为空。",
+          "example": "[\"12345\"]",
           "member": "string",
           "name": "TemplateParamSet",
           "required": false,
@@ -1403,6 +1481,7 @@
         {
           "default": "",
           "document": "短信码号扩展号，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)。",
+          "example": "1234",
           "member": "string",
           "name": "ExtendCode",
           "required": false,
@@ -1411,6 +1490,7 @@
         {
           "default": "",
           "document": "用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。",
+          "example": "test",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -1419,6 +1499,7 @@
         {
           "default": "",
           "document": "国内短信无senderid，无需填写该项；若需开通国际/港澳台短信senderid，请联系smshelper。",
+          "example": "1234",
           "member": "string",
           "name": "SenderId",
           "required": false,
@@ -1432,8 +1513,10 @@
       "members": [
         {
           "document": "短信发送状态。",
+          "example": "无",
           "member": "SendStatus",
           "name": "SendStatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1554,6 +1637,7 @@
         {
           "default": "",
           "document": "拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。",
+          "example": "2016090800",
           "member": "uint64",
           "name": "StartDateTime",
           "required": true,
@@ -1562,6 +1646,7 @@
         {
           "default": "",
           "document": "结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时\n注：EndDataTime 必须大于 StartDateTime。",
+          "example": "2016090823",
           "member": "uint64",
           "name": "EndDataTime",
           "required": true,
@@ -1570,6 +1655,7 @@
         {
           "default": "",
           "document": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，示例如1400006666。",
+          "example": "1400006874",
           "member": "string",
           "name": "SmsSdkAppid",
           "required": true,
@@ -1578,6 +1664,7 @@
         {
           "default": "",
           "document": "最大上限。\n注：目前固定设置为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1586,6 +1673,7 @@
         {
           "default": "",
           "document": "偏移量。\n注：目前固定设置为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1599,8 +1687,10 @@
       "members": [
         {
           "document": "发送数据统计响应包体。",
+          "example": "无",
           "member": "SendStatusStatistics",
           "name": "SendStatusStatistics",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1715,6 +1805,7 @@
         {
           "default": "",
           "document": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，示例如1400006666。",
+          "example": "1400006879",
           "member": "string",
           "name": "SmsSdkAppid",
           "required": true,
@@ -1723,6 +1814,7 @@
         {
           "default": "",
           "document": "最大上限(需要拉取的套餐包个数)。",
+          "example": "2",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1731,6 +1823,7 @@
         {
           "default": "",
           "document": "偏移量。\n注：目前固定设置为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1744,8 +1837,10 @@
       "members": [
         {
           "document": "发送数据统计响应包体。",
+          "example": "无",
           "member": "SmsPackagesStatistics",
           "name": "SmsPackagesStatisticsSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

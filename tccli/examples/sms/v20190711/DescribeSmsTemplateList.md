@@ -21,7 +21,7 @@ Output:
                 "StatusCode": 0,
                 "ReviewReply": "xxx",
                 "TemplateName": "xxx",
-                "CreateTime": "2020-01-13 15:18:20"
+                "CreateTime": 1578899900
             },
             {
                 "TemplateId": 1111,
@@ -29,7 +29,7 @@ Output:
                 "StatusCode": 0,
                 "ReviewReply": "xxx",
                 "TemplateName": "xxx",
-                "CreateTime": "2020-01-13 15:18:21"
+                "CreateTime": 1578899901
             }
         ],
         "RequestId": "f36e4f00-605e-49b1-ad0d-bfaba81c7325"

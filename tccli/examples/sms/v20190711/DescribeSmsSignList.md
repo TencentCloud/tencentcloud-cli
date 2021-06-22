@@ -14,25 +14,25 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "xx",
         "DescribeSignListStatusSet": [
             {
-                "SignId": 1110,
-                "International": 0,
-                "StatusCode": 0,
-                "ReviewReply": "xxx",
-                "SignName": "xxx",
-                "CreateTime": "2020-01-13 15:18:20"
+                "SignName": "xx",
+                "International": 1,
+                "SignId": 1,
+                "ReviewReply": "xx",
+                "CreateTime": 1,
+                "StatusCode": 0
             },
             {
-                "SignId": 1111,
-                "International": 0,
-                "StatusCode": 0,
-                "ReviewReply": "xxx",
-                "SignName": "xxx",
-                "CreateTime": "2020-01-13 15:18:21"
+                "SignName": "xx",
+                "International": 1,
+                "SignId": 1,
+                "ReviewReply": "xx",
+                "CreateTime": 1,
+                "StatusCode": 0
             }
-        ],
-        "RequestId": "f36e4f00-605e-49b1-ad0d-bfaba81c7325"
+        ]
     }
 }
 ```

@@ -1518,6 +1518,7 @@
         {
           "default": "",
           "document": "游戏服务器会话队列名称，长度1~128",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1526,6 +1527,7 @@
         {
           "default": "",
           "document": "目的服务器舰队（可为别名）列表",
+          "example": "无",
           "member": "GameServerSessionQueueDestination",
           "name": "Destinations",
           "required": false,
@@ -1534,6 +1536,7 @@
         {
           "default": "",
           "document": "延迟策略集合",
+          "example": "无",
           "member": "PlayerLatencyPolicy",
           "name": "PlayerLatencyPolicies",
           "required": false,
@@ -1542,6 +1545,7 @@
         {
           "default": "",
           "document": "超时时间（单位秒，默认值为600秒）",
+          "example": "无",
           "member": "uint64",
           "name": "TimeoutInSeconds",
           "required": false,
@@ -1550,6 +1554,7 @@
         {
           "default": "",
           "document": "标签列表，最大长度50组",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1563,8 +1568,10 @@
       "members": [
         {
           "document": "游戏服务器会话队列",
+          "example": "无",
           "member": "GameServerSessionQueue",
           "name": "GameServerSessionQueue",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2066,6 +2073,7 @@
         {
           "default": "",
           "document": "服务器舰队 Id",
+          "example": "fleet-qp3g3caa-ax4fq2wi",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -2079,15 +2087,19 @@
       "members": [
         {
           "document": "云联网实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CcnInstanceSets",
           "name": "CcnInstanceSets",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "云联网实例个数，最小值为0",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2169,6 +2181,7 @@
         {
           "default": "",
           "document": "服务器舰队ID列表",
+          "example": "[\"fleet-qp3g3caa-ay03mhdm\\n\"]",
           "member": "string",
           "name": "FleetIds",
           "required": true,
@@ -2177,6 +2190,7 @@
         {
           "default": "",
           "document": "结果返回最大数量，最大值 100",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2185,6 +2199,7 @@
         {
           "default": "",
           "document": "返回结果偏移，最小值 0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2198,15 +2213,19 @@
       "members": [
         {
           "document": "服务器舰队的容量配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FleetCapacity",
           "name": "FleetCapacity",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "结果返回最大数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2384,6 +2403,7 @@
         {
           "default": "",
           "document": "服务器舰队ID",
+          "example": "fleet-qp3g3caa-nkeekxw6",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -2392,6 +2412,7 @@
         {
           "default": "",
           "document": "查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss",
+          "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "BeginTime",
           "required": false,
@@ -2400,6 +2421,7 @@
         {
           "default": "",
           "document": "查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss",
+          "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -2408,6 +2430,7 @@
         {
           "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2416,6 +2439,7 @@
         {
           "default": "",
           "document": "返回结果偏移，最小值0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2429,22 +2453,28 @@
       "members": [
         {
           "document": "服务部署统计详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FleetStatisticDetail",
           "name": "DetailList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "统计时间类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DAY",
           "member": "string",
           "name": "TimeType",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2463,6 +2493,7 @@
         {
           "default": "",
           "document": "服务器舰队ID",
+          "example": "fleet-qp3g3caa-nkeekxw6",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -2471,6 +2502,7 @@
         {
           "default": "",
           "document": "查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss",
+          "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "BeginTime",
           "required": false,
@@ -2479,6 +2511,7 @@
         {
           "default": "",
           "document": "查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss",
+          "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -2487,6 +2520,7 @@
         {
           "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2495,6 +2529,7 @@
         {
           "default": "",
           "document": "返回结果偏移，最小值0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2508,29 +2543,37 @@
       "members": [
         {
           "document": "流量统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FleetStatisticFlows",
           "name": "UsedFlowList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "时长统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FleetStatisticTimes",
           "name": "UsedTimeList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "统计时间类型，取值：小时和天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DAY",
           "member": "string",
           "name": "TimeType",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2549,6 +2592,7 @@
         {
           "default": "",
           "document": "服务器舰队ID",
+          "example": "fleet-qp3g3caa-nkeekxw6",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -2557,6 +2601,7 @@
         {
           "default": "",
           "document": "查询开始时间，时间格式: YYYY-MM-DD hh:mm:ss",
+          "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "BeginTime",
           "required": false,
@@ -2565,6 +2610,7 @@
         {
           "default": "",
           "document": "查询结束时间，时间格式: YYYY-MM-DD hh:mm:ss",
+          "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -2578,15 +2624,19 @@
       "members": [
         {
           "document": "总时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
           "member": "string",
           "name": "TotalUsedTimeSeconds",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "总流量，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
           "member": "float",
           "name": "TotalUsedFlowMegaBytes",
+          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2605,6 +2655,7 @@
         {
           "default": "",
           "document": "服务器舰队 Ids",
+          "example": "[\"fleet-qp3g3caa-nkeekxw6\\n\"]",
           "member": "string",
           "name": "FleetIds",
           "required": true,
@@ -2618,15 +2669,19 @@
       "members": [
         {
           "document": "服务器舰队利用率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FleetUtilization",
           "name": "FleetUtilization",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "总数，最小值0",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

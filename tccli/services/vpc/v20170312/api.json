@@ -360,6 +360,12 @@
       "name": "创建VPN网关",
       "output": "CreateVpnGatewayResponse"
     },
+    "CreateVpnGatewayRoutes": {
+      "document": "创建路由型VPN网关的目的路由",
+      "input": "CreateVpnGatewayRoutesRequest",
+      "name": "创建VPN网关路由",
+      "output": "CreateVpnGatewayRoutesResponse"
+    },
     "DeleteAddressTemplate": {
       "document": "本接口（DeleteAddressTemplate）用于删除IP地址模板",
       "input": "DeleteAddressTemplateRequest",
@@ -551,6 +557,12 @@
       "input": "DeleteVpnGatewayRequest",
       "name": "删除VPN网关",
       "output": "DeleteVpnGatewayResponse"
+    },
+    "DeleteVpnGatewayRoutes": {
+      "document": "本接口（DeleteVpnGatewayCcnRoutes）用于删除VPN网关路由",
+      "input": "DeleteVpnGatewayRoutesRequest",
+      "name": "删除VPN网关路由",
+      "output": "DeleteVpnGatewayRoutesResponse"
     },
     "DescribeAccountAttributes": {
       "document": "本接口（DescribeAccountAttributes）用于查询用户账号私有属性。",
@@ -935,6 +947,12 @@
       "input": "DescribeVpnGatewayCcnRoutesRequest",
       "name": "查询VPN网关云联网路由",
       "output": "DescribeVpnGatewayCcnRoutesResponse"
+    },
+    "DescribeVpnGatewayRoutes": {
+      "document": "查询路由型VPN网关的目的路由",
+      "input": "DescribeVpnGatewayRoutesRequest",
+      "name": "查询VPN网关路由",
+      "output": "DescribeVpnGatewayRoutesResponse"
     },
     "DescribeVpnGateways": {
       "document": "本接口（DescribeVpnGateways）用于查询VPN网关列表。",
@@ -1361,6 +1379,12 @@
       "input": "ModifyVpnGatewayCcnRoutesRequest",
       "name": "修改VPN网关云联网路由",
       "output": "ModifyVpnGatewayCcnRoutesResponse"
+    },
+    "ModifyVpnGatewayRoutes": {
+      "document": "修改VPN路由是否启用",
+      "input": "ModifyVpnGatewayRoutesRequest",
+      "name": "修改VPN路由状态",
+      "output": "ModifyVpnGatewayRoutesResponse"
     },
     "NotifyRoutes": {
       "document": "路由表列表页操作增加“发布到云联网”，用于发布路由到云联网。",
@@ -6159,6 +6183,51 @@
       ],
       "type": "object"
     },
+    "CreateVpnGatewayRoutesRequest": {
+      "document": "CreateVpnGatewayRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN网关的ID",
+          "example": "vpn-ngenl4az",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPN网关目的路由列表",
+          "example": "无",
+          "member": "VpnGatewayRoute",
+          "name": "Routes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpnGatewayRoutesResponse": {
+      "document": "CreateVpnGatewayRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "VPN网关目的路由",
+          "example": "无",
+          "member": "VpnGatewayRoute",
+          "name": "Routes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CrossBorderCompliance": {
       "document": "合规化审批单",
       "members": [
@@ -7494,6 +7563,42 @@
     },
     "DeleteVpnGatewayResponse": {
       "document": "DeleteVpnGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpnGatewayRoutesRequest": {
+      "document": "DeleteVpnGatewayRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN网关实例ID",
+          "example": "vpngw-12345678",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由ID信息列表",
+          "example": "[\"xxx-xxxx\\n\",\"xxx-xxxx\\n\"]",
+          "member": "string",
+          "name": "RouteIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpnGatewayRoutesResponse": {
+      "document": "DeleteVpnGatewayRoutes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11262,6 +11367,69 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpnGatewayRoutesRequest": {
+      "document": "DescribeVpnGatewayRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN网关的ID",
+          "example": "vpn-ngenl4az",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量, 默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单页个数, 默认20, 最大值100",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpnGatewayRoutesResponse": {
+      "document": "DescribeVpnGatewayRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "VPN网关目的路由",
+          "example": "无",
+          "member": "VpnGatewayRoute",
+          "name": "Routes",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -16053,6 +16221,51 @@
       ],
       "type": "object"
     },
+    "ModifyVpnGatewayRoutesRequest": {
+      "document": "ModifyVpnGatewayRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Vpn网关id",
+          "example": "vpn-ngenl4az",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由修改参数",
+          "example": "无",
+          "member": "VpnGatewayRouteModify",
+          "name": "Routes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpnGatewayRoutesResponse": {
+      "document": "ModifyVpnGatewayRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "VPN路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpnGatewayRoute",
+          "name": "Routes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NatGateway": {
       "document": "NAT网关对象。",
       "members": [
@@ -20222,6 +20435,117 @@
         }
       ],
       "usage": "out"
+    },
+    "VpnGatewayRoute": {
+      "document": "Vpn网关目的路由",
+      "members": [
+        {
+          "default": "",
+          "document": "目的端IDC网段",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳类型（关联实例类型）可选值:\"VPNCONN\"(VPN通道), \"CCN\"(CCN实例)",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优先级, 可选值: 0, 100",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启用状态, 可选值: \"ENABLE\"(启用), \"DISABLE\"(禁用)",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由条目ID",
+          "member": "string",
+          "name": "RouteId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由类型, 可选值: \"VPC\"(VPC路由), \"CCN\"(云联网传播路由), \"Static\"(静态路由), \"BGP\"(BGP路由)",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VpnGatewayRouteModify": {
+      "document": "修改VPN状态参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Vpn网关路由ID",
+          "member": "string",
+          "name": "RouteId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpn网关状态, ENABEL 启用, DISABLE禁用",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "VpngwCcnRoutes": {
       "document": "VPN网关云联网路由信息",

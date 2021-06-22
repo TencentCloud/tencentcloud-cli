@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "PlayToken": "DUE3344xxxxxx",
+        "LyricsUrl": "http://xxx.qcloud.com/subtitle.vtt",
         "KTVMusicBaseInfo": {
             "ComposerSet": [
                 "周杰伦"

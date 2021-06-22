@@ -552,6 +552,14 @@
         "title": "创建包年包月网关"
       }
     ],
+    "CreateVpnGatewayRoutes": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGatewayRoutes\n&VpnGatewayId=vpn-ngenl4az\n&Routes.0.DestinationCidrBlock=192.241.0.0/24\n&Routes.0.Status=ENABLE\n&Routes.0.InstanceType=VPNCONN\n&Routes.0.InstanceId=vpnx-ng2asdew\n&Routes.0.Priority=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Routes\": [\n            {\n                \"DestinationCidrBlock\": \"192.241.0.0/24\",\n                \"Status\": \"ENABLE\",\n                \"InstanceId\": \"vpnx-ng2asdew\",\n                \"InstanceType\": \"VPNCONN\",\n                \"Priority\": 100\n            }\n        ],\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
+        "title": "创建VPN网关目的路由"
+      }
+    ],
     "DeleteAddressTemplate": [
       {
         "document": "",
@@ -824,6 +832,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteVpnGateway\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-12345678\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "删除VPN网关"
+      }
+    ],
+    "DeleteVpnGatewayRoutes": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteVpnGatewayRoutes\n&VpnGatewayId=vpngw-12345678\n&RouteIds.0=xxx-xxxx\n&RouteIds.1=xxx-xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
+        "title": "删除指定VPN网关路由"
       }
     ],
     "DescribeAccountAttributes": [
@@ -1446,6 +1462,14 @@
         "title": "查询VPN网关云联网路由"
       }
     ],
+    "DescribeVpnGatewayRoutes": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpnGatewayRoutes\n&VpnGatewayId=vpn-ngenl4az\n&Offset=0\n&Limit=2\n&Filters.0.Name=DestinationCidr\n&Filters.0.Values.0=192.241.0.0/24\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Routes\": [\n            {\n                \"DestinationCidrBlock\": \"192.241.0.0/24\",\n                \"Status\": \"ENABLE\",\n                \"InstanceId\": \"vpnx-ng2asdew\",\n                \"InstanceType\": \"VPNCONN\",\n                \"Priority\": 100\n            }\n        ],\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
+        "title": "查询VPN网关目的路由"
+      }
+    ],
     "DescribeVpnGateways": [
       {
         "document": "",
@@ -2060,6 +2084,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyVpnGatewayCcnRoutes\r\n&VpnGatewayId=vpngw-qol17bjx\r\n&Routes.0.RouteId=xxx-xxxxxxxx\r\n&Routes.0.DestinationCidrBlock=10.2.2.0/24\r\n&Routes.0.Status=ENABLE\r\n&Routes.1.RouteId=xxx-xxxxxxxx\r\n&Routes.1.DestinationCidrBlock=10.2.3.0/24\r\n&Routes.1.Status=DISABLE\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
         "title": "修改VPN网关云联网路由"
+      }
+    ],
+    "ModifyVpnGatewayRoutes": [
+      {
+        "document": "禁用某条VPN网关路由",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyVpnGatewayRoutes\n&VpnGatewayId=vpn-ngenl4az\n&Routes.0.RouteId=vpnr-7t3tknmg\n&Routes.0.Status=DISABLE\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Routes\": [\n            {\n                \"DestinationCidrBlock\": \"192.241.0.0/24\",\n                \"Status\": \"ENABLE\",\n                \"InstanceId\": \"vpnx-ng2asdew\",\n                \"InstanceType\": \"VPNCONN\",\n                \"Priority\": 100\n            }\n        ],\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
+        "title": "禁用VPN网关路由"
       }
     ],
     "NotifyRoutes": [

@@ -6597,6 +6597,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "example",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6606,6 +6607,7 @@
         {
           "default": "",
           "document": "prometheus语句",
+          "example": "example",
           "member": "string",
           "name": "Rule",
           "required": true,
@@ -6615,6 +6617,7 @@
         {
           "default": "",
           "document": "额外标签",
+          "example": "Name=a,Value=b",
           "member": "Label",
           "name": "Labels",
           "required": true,
@@ -6624,6 +6627,7 @@
         {
           "default": "",
           "document": "告警发送模板",
+          "example": "temp-xxx",
           "member": "string",
           "name": "Template",
           "required": true,
@@ -6633,6 +6637,7 @@
         {
           "default": "",
           "document": "持续时间",
+          "example": "1s",
           "member": "string",
           "name": "For",
           "required": true,
@@ -6642,10 +6647,21 @@
         {
           "default": "",
           "document": "该条规则的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "example-describe",
           "member": "string",
           "name": "Describe",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参考prometheus rule中的annotations\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name=a,Value=b",
+          "member": "Label",
+          "name": "Annotations",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

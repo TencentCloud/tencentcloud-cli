@@ -605,6 +605,7 @@
         {
           "default": "",
           "document": "图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 \n建议先对图片进行压缩，以便提升处理速度。",
+          "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -613,6 +614,7 @@
         {
           "default": "",
           "document": "图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 \n与ImageUrl同时存在时优先使用ImageUrl字段。",
+          "example": "base64",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -626,17 +628,30 @@
       "members": [
         {
           "document": "检测到的图片中的商品位置和品类预测。 \n当图片中存在多个商品时，输出多组坐标，按照__显著性__排序（综合考虑面积、是否在中心、检测算法置信度）。 \n最多可以输出__3组__检测结果。",
+          "example": "无",
           "member": "RegionDetected",
           "name": "RegionDetected",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "图像识别出的商品的详细信息。 \n当图像中检测到多个物品时，会对显著性最高的进行识别。",
+          "example": "无",
           "member": "ProductInfo",
           "name": "ProductInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "相似商品信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ProductInfo",
+          "name": "ProductInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
