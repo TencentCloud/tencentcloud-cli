@@ -31,7 +31,7 @@
       "output": "DescribePSTNActiveSessionListResponse"
     },
     "DescribeSeatUserList": {
-      "document": "获取坐席用户列表（废弃）",
+      "document": "废弃接口下架\n\n获取坐席用户列表（废弃）",
       "input": "DescribeSeatUserListRequest",
       "name": "获取坐席用户列表（废弃）",
       "output": "DescribeSeatUserListResponse"

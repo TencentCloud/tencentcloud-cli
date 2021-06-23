@@ -6,10 +6,11 @@ Input:
 
 ```
 tccli trtc DescribeUserInformation --cli-unfold-argument  \
-    --CommId 1400353843_218695_1590065777 \
     --StartTime 1590065777 \
-    --EndTime 1590065877 \
-    --SdkAppId 1400353843
+    --CommId 1400353843_218695_1590065777 \
+    --UserIds user1_54816741 user2_2107025 \
+    --SdkAppId 1400353843 \
+    --EndTime 1590065877
 ```
 
 Output: 
@@ -20,9 +21,19 @@ Output:
         "UserList": [
             {
                 "RoomStr": "218695",
-                "UserId": "1716",
+                "UserId": "user1_54816741",
                 "JoinTs": 1590065777,
                 "LeaveTs": 1590067658,
+                "Finished": true,
+                "DeviceType": "",
+                "SdkVersion": "4.3.14",
+                "ClientIp": "10.4.1.13"
+            },
+            {
+                "RoomStr": "218695",
+                "UserId": "user2_2107025",
+                "JoinTs": 1590065700,
+                "LeaveTs": 1590067693,
                 "Finished": true,
                 "DeviceType": "",
                 "SdkVersion": "4.3.14",

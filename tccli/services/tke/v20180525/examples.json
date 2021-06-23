@@ -268,6 +268,14 @@
         "title": "获取集群子账户CommonName映射关系"
       }
     ],
+    "DescribeClusterControllers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterControllers\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ControllerStatusSet\": [\n            {\n                \"Name\": \"route-controller\",\n                \"Enabled\": true\n            },\n            {\n                \"Name\": \"node-ipam-controller\",\n                \"Enabled\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看集群中K8S控制器是否开启"
+      }
+    ],
     "DescribeClusterEndpointStatus": [
       {
         "document": "",

@@ -728,6 +728,7 @@
         {
           "default": "",
           "document": "EIP的ID，是EIP的唯一标识。",
+          "example": "eip-3i05gfm7",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -737,6 +738,7 @@
         {
           "default": "",
           "document": "EIP名称。",
+          "example": "EipName",
           "member": "string",
           "name": "AddressName",
           "required": true,
@@ -746,6 +748,7 @@
         {
           "default": "",
           "document": "EIP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)",
+          "example": "BIND",
           "member": "string",
           "name": "AddressStatus",
           "required": true,
@@ -755,6 +758,7 @@
         {
           "default": "",
           "document": "外网IP地址",
+          "example": "2402:4e00:1700:b500:0:9395:3e54:51e3",
           "member": "string",
           "name": "AddressIp",
           "required": true,
@@ -764,6 +768,7 @@
         {
           "default": "",
           "document": "绑定的资源实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ein-37rhe9le",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -773,6 +778,7 @@
         {
           "default": "",
           "document": "创建时间。ISO 8601 格式：YYYY-MM-DDTHH:mm:ss.sssZ",
+          "example": "2021-06-03T03:48:23Z",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -782,6 +788,7 @@
         {
           "default": "",
           "document": "绑定的弹性网卡ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eni-37rhy9le",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -791,6 +798,7 @@
         {
           "default": "",
           "document": "绑定的资源内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "PrivateAddressIp",
           "required": true,
@@ -800,6 +808,7 @@
         {
           "default": "",
           "document": "资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态",
+          "example": "false",
           "member": "bool",
           "name": "IsArrears",
           "required": true,
@@ -809,6 +818,7 @@
         {
           "default": "",
           "document": "资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态",
+          "example": "false",
           "member": "bool",
           "name": "IsBlocked",
           "required": true,
@@ -818,6 +828,7 @@
         {
           "default": "",
           "document": "eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式",
+          "example": "false",
           "member": "bool",
           "name": "IsEipDirectConnection",
           "required": true,
@@ -827,6 +838,7 @@
         {
           "default": "",
           "document": "eip资源类型，包括\"CalcIP\",\"WanIP\",\"EIP\",\"AnycastEIP\"。其中\"CalcIP\"表示设备ip，“WanIP”表示普通公网ip，“EIP”表示弹性公网ip，“AnycastEip”表示加速EIP",
+          "example": "EIP",
           "member": "string",
           "name": "AddressType",
           "required": true,
@@ -836,6 +848,7 @@
         {
           "default": "",
           "document": "eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放",
+          "example": "false",
           "member": "bool",
           "name": "CascadeRelease",
           "required": true,
@@ -845,6 +858,7 @@
         {
           "default": "",
           "document": "运营商，CTCC电信，CUCC联通，CMCC移动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CTCC",
           "member": "string",
           "name": "InternetServiceProvider",
           "required": true,
@@ -854,6 +868,7 @@
         {
           "default": "",
           "document": "带宽上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
           "member": "uint64",
           "name": "Bandwidth",
           "required": true,
@@ -863,6 +878,7 @@
         {
           "default": "",
           "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BANDWIDTH_PACKAGE",
           "member": "string",
           "name": "PayMode",
           "required": true,
@@ -5151,24 +5167,26 @@
       "usage": "in"
     },
     "Filter": {
-      "document": "过滤器Filter;由Name和ValueSet组成，是string的key和字符串数组的value",
+      "document": "描述键值对过滤器，用于条件过滤查询。",
       "members": [
         {
           "default": "",
-          "document": "过滤字段名称",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "过滤字段内容数组",
+          "document": "一个或者多个过滤值。",
+          "example": "[\"V0\", \"V1\"]",
           "member": "string",
           "name": "Values",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "example": "\"FilterName\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

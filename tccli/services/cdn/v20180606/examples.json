@@ -171,8 +171,8 @@
     "DescribeIpStatus": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeIpStatus\r\n&Domain=www.test.com\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6e9964d-26a3-49d0-adab-993e17d2f950\",\n        \"Ips\": [\n            {\n                \"Ip\": \"1.1.1.1\",\n                \"District\": \"广东\",\n                \"Isp\": \"电信\",\n                \"City\": \"深圳\",\n                \"Status\": \"online\"\n            }\n        ]\n    }\n}",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeIpStatus\n&Domain=www.test.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6e9964d-26a3-49d0-adab-993e17d2f950\",\n        \"TotalCount\": 1,\n        \"Ips\": [\n            {\n                \"Ip\": \"1.1.1.1\",\n                \"District\": \"广东\",\n                \"Isp\": \"电信\",\n                \"City\": \"深圳\",\n                \"Status\": \"online\"\n            }\n        ]\n    }\n}",
         "title": "查询域名节点信息"
       }
     ],
@@ -307,7 +307,7 @@
     "EnableCaches": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=EnableCaches\r\n&Urls.0=http://example.com/path/to.jpg\r\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=EnableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdasdascsa721d8ha8chsa\",\n        \"CacheOptResult\": {\n            \"FailUrls\": [],\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ]\n        }\n    }\n}",
         "title": "解封示例"
       }

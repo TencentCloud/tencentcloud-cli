@@ -1139,6 +1139,7 @@
         {
           "default": "",
           "document": "视频参数信息。",
+          "example": "null",
           "member": "VideoTemplateInfo",
           "name": "Video",
           "required": true,
@@ -1148,6 +1149,7 @@
         {
           "default": "",
           "document": "音频参数信息。",
+          "example": "null",
           "member": "AudioTemplateInfo",
           "name": "Audio",
           "required": true,
@@ -1157,6 +1159,7 @@
         {
           "default": "",
           "document": "是否移除音频流，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "RemoveAudio",
           "required": false,
@@ -1166,6 +1169,7 @@
         {
           "default": "",
           "document": "是否移除视频流，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "RemoveVideo",
           "required": false,
@@ -6281,6 +6285,7 @@
         {
           "default": "",
           "document": "自适应转码格式，取值范围：\n<li>HLS。</li>",
+          "example": "HLS",
           "member": "string",
           "name": "Format",
           "required": true,
@@ -6289,6 +6294,7 @@
         {
           "default": "",
           "document": "自适应转码输出子流参数信息，最多输出10路子流。\n注意：各个子流的帧率必须保持一致；如果不一致，采用第一个子流的帧率作为输出帧率。",
+          "example": "无",
           "member": "AdaptiveStreamTemplate",
           "name": "StreamInfos",
           "required": true,
@@ -6297,6 +6303,7 @@
         {
           "default": "",
           "document": "模板名称，长度限制：64 个字符。",
+          "example": "转自适应码流模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6305,6 +6312,7 @@
         {
           "default": "",
           "document": "DRM方案类型，取值范围：\n<li>SimpleAES。</li>\n如果取值为空字符串，代表不对视频做 DRM 保护。",
+          "example": "无",
           "member": "string",
           "name": "DrmType",
           "required": false,
@@ -6313,6 +6321,7 @@
         {
           "default": "",
           "document": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。",
+          "example": "无",
           "member": "uint64",
           "name": "DisableHigherVideoBitrate",
           "required": false,
@@ -6321,6 +6330,7 @@
         {
           "default": "",
           "document": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。",
+          "example": "无",
           "member": "uint64",
           "name": "DisableHigherVideoResolution",
           "required": false,
@@ -6329,6 +6339,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -6337,6 +6348,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -6350,8 +6362,10 @@
       "members": [
         {
           "document": "自适应转码模板唯一标识。",
+          "example": "30018",
           "member": "uint64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7825,6 +7839,7 @@
         {
           "default": "",
           "document": "自适应转码模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -7833,6 +7848,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -15692,6 +15708,7 @@
         {
           "default": "",
           "document": "自适应转码模板唯一标识。",
+          "example": "10038",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -15700,6 +15717,7 @@
         {
           "default": "",
           "document": "模板名称，长度限制：64 个字符。",
+          "example": "转自适应码流模板2",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -15708,6 +15726,7 @@
         {
           "default": "",
           "document": "自适应转码格式，取值范围：\n<li>HLS。</li>",
+          "example": "HLS",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -15716,6 +15735,7 @@
         {
           "default": "",
           "document": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "example": "无",
           "member": "uint64",
           "name": "DisableHigherVideoBitrate",
           "required": false,
@@ -15724,6 +15744,7 @@
         {
           "default": "",
           "document": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "example": "无",
           "member": "uint64",
           "name": "DisableHigherVideoResolution",
           "required": false,
@@ -15732,6 +15753,7 @@
         {
           "default": "",
           "document": "自适应转码输入流参数信息，最多输入10路流。\n注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。",
+          "example": "无",
           "member": "AdaptiveStreamTemplate",
           "name": "StreamInfos",
           "required": false,
@@ -15740,6 +15762,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -15748,6 +15771,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,

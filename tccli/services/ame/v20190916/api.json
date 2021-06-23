@@ -687,7 +687,7 @@
         },
         {
           "default": "",
-          "document": "MP3-320K-FTD-P  为获取64kbps歌曲热门片段。\nMP3-320K-FTD 为获取320kbps已核验歌曲完整资源。",
+          "document": "MP3-320K-FTD-P  为获取320kbps歌曲热门片段。\nMP3-320K-FTD 为获取320kbps已核验歌曲完整资源。",
           "example": "MP3-64K-FTD-P",
           "member": "string",
           "name": "SubItemType",

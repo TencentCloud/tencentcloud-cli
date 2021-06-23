@@ -19,9 +19,20 @@ Output:
         "DataId": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
         "BizType": "test_1001",
         "Suggestion": "Block",
+        "FileMD5": "",
         "Label": "Porn",
         "SubLabel": "SexBehavior",
         "Score": 90,
+        "LabelResults": [
+            {
+                "Scene": "Porn",
+                "Suggestion": "Block",
+                "Label": "Porn",
+                "SubLabel": "SexBehavior",
+                "Score": 90,
+                "Details": []
+            }
+        ],
         "ObjectResults": [
             {
                 "Scene": "QrCode",
@@ -49,6 +60,7 @@ Output:
             }
         ],
         "OcrResults": [],
+        "LibResults": [],
         "Extra": ""
     }
 }

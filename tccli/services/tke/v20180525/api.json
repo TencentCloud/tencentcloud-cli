@@ -192,6 +192,12 @@
       "name": "获取集群子账户CommonName映射关系",
       "output": "DescribeClusterCommonNamesResponse"
     },
+    "DescribeClusterControllers": {
+      "document": "用于查询Kubernetes的各个原生控制器是否开启",
+      "input": "DescribeClusterControllersRequest",
+      "name": "查询Kubernetes控制器状态",
+      "output": "DescribeClusterControllersResponse"
+    },
     "DescribeClusterEndpointStatus": {
       "document": "查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
       "input": "DescribeClusterEndpointStatusRequest",
@@ -1886,6 +1892,32 @@
       ],
       "usage": "out"
     },
+    "ControllerStatus": {
+      "document": "集群中控制器的状态描述",
+      "members": [
+        {
+          "default": "",
+          "document": "控制器的名字",
+          "example": "node-ipam-controller",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控制器是否开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateClusterAsGroupRequest": {
       "document": "CreateClusterAsGroup请求参数结构体",
       "members": [
@@ -3297,6 +3329,42 @@
           "example": "无",
           "member": "CommonName",
           "name": "CommonNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterControllersRequest": {
+      "document": "DescribeClusterControllers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterControllersResponse": {
+      "document": "DescribeClusterControllers返回参数结构体",
+      "members": [
+        {
+          "document": "描述集群中各个控制器的状态",
+          "example": "[{\"route-controller\",true}]",
+          "member": "ControllerStatus",
+          "name": "ControllerStatusSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false

@@ -78,7 +78,8 @@ Output:
                 "TargetGroup": null,
                 "KeepaliveEnable": 0,
                 "SessionType": "NORMAL",
-                "Toa": false
+                "Toa": false,
+                "DeregisterTargetRst": false
             },
             {
                 "ListenerId": "lbl-a459zzae",
@@ -143,7 +144,8 @@ Output:
                 "TargetGroup": null,
                 "KeepaliveEnable": 0,
                 "SessionType": "NORMAL",
-                "Toa": false
+                "Toa": false,
+                "DeregisterTargetRst": false
             }
         ],
         "RequestId": "2682e290-3f8c-4766-98fa-716610e2d351"
@@ -204,7 +206,8 @@ Output:
                 "TargetGroup": null,
                 "KeepaliveEnable": null,
                 "SessionType": "NORMAL",
-                "Toa": false
+                "Toa": false,
+                "DeregisterTargetRst": false
             }
         ],
         "RequestId": "3ddae670-4a89-4919-af6e-0d6bf195c92e"

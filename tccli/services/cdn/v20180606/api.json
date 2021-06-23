@@ -3970,6 +3970,7 @@
         {
           "default": "",
           "document": "加速域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3978,6 +3979,7 @@
         {
           "default": "",
           "document": "节点类型：\nedge：表示边缘节点\nlast：表示回源层节点\n不填充情况下，默认返回边缘节点信息",
+          "example": "edge",
           "member": "string",
           "name": "Layer",
           "required": false,
@@ -3986,10 +3988,20 @@
         {
           "default": "",
           "document": "查询区域：\nmainland: 国内节点\noverseas: 海外节点\nglobal: 全球节点",
+          "example": "last",
           "member": "string",
           "name": "Area",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否以IP段的格式返回。",
+          "example": "true/false",
+          "member": "bool",
+          "name": "Segment",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3999,15 +4011,19 @@
       "members": [
         {
           "document": "节点列表",
+          "example": "无",
           "member": "IpStatus",
           "name": "Ips",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "节点总个数",
+          "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6121,10 +6137,20 @@
         {
           "default": "",
           "document": "解封 URL 列表",
+          "example": "[\"http:\\/\\/example.com\\/path\\/to.jpg\\r\\n\"]",
           "member": "string",
           "name": "Urls",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "URL封禁日期",
+          "example": "2021-06-01",
+          "member": "date",
+          "name": "Date",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6134,8 +6160,10 @@
       "members": [
         {
           "document": "结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CacheOptResult",
           "name": "CacheOptResult",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

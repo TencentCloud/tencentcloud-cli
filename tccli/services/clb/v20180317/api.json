@@ -187,7 +187,7 @@
       "output": "DescribeExclusiveClustersResponse"
     },
     "DescribeListeners": {
-      "document": "DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。",
+      "document": "DescribeListeners 接口可根据负载均衡器 ID、监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。",
       "input": "DescribeListenersRequest",
       "name": "查询负载均衡的监听器列表",
       "output": "DescribeListenersResponse"
@@ -2399,7 +2399,7 @@
         },
         {
           "default": "",
-          "document": "指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器。",
+          "document": "指定删除的监听器ID数组，最大为20个。若不填则删除负载均衡的所有监听器。",
           "example": "无",
           "member": "string",
           "name": "ListenerIds",
@@ -3232,7 +3232,7 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例ID。",
+          "document": "负载均衡实例 ID。",
           "example": "lb-aniq****",
           "member": "string",
           "name": "LoadBalancerId",
@@ -3241,7 +3241,7 @@
         },
         {
           "default": "",
-          "document": "要查询的负载均衡监听器ID数组。",
+          "document": "要查询的负载均衡监听器 ID 数组，最大为100个。",
           "example": "无",
           "member": "string",
           "name": "ListenerIds",
@@ -3982,7 +3982,7 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例ID。",
+          "document": "负载均衡实例 ID。",
           "example": "lb-10iq9lou",
           "member": "string",
           "name": "LoadBalancerId",
@@ -3991,7 +3991,7 @@
         },
         {
           "default": "",
-          "document": "监听器ID列表。",
+          "document": "监听器 ID 列表。ID 数量上限为20个。",
           "example": "无",
           "member": "string",
           "name": "ListenerIds",

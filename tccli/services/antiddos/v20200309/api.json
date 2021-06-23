@@ -42,6 +42,12 @@
       "name": "设置单IP告警阈值配置",
       "output": "CreateIPAlarmThresholdConfigResponse"
     },
+    "CreateL7RuleCerts": {
+      "document": "批量配置L7转发规则的证书供SSL测调用",
+      "input": "CreateL7RuleCertsRequest",
+      "name": "批量配置L7转发规则的证书",
+      "output": "CreateL7RuleCertsResponse"
+    },
     "CreatePacketFilterConfig": {
       "document": "添加DDoS防护的特征过滤规则",
       "input": "CreatePacketFilterConfigRequest",
@@ -119,6 +125,12 @@
       "input": "DescribeDefaultAlarmThresholdRequest",
       "name": "获取单IP默认告警阈值配置",
       "output": "DescribeDefaultAlarmThresholdResponse"
+    },
+    "DescribeL7RulesBySSLCertId": {
+      "document": "查询与证书ID对于域名匹配的七层规则",
+      "input": "DescribeL7RulesBySSLCertIdRequest",
+      "name": "查询与证书ID匹配的七层规则",
+      "output": "DescribeL7RulesBySSLCertIdResponse"
     },
     "DescribeListBGPIPInstances": {
       "document": "获取高防IP资产实例列表\n",
@@ -815,6 +827,32 @@
       ],
       "usage": "out"
     },
+    "CertIdInsL7Rules": {
+      "document": "使用证书的规则集合",
+      "members": [
+        {
+          "default": "",
+          "document": "使用证书的规则列表",
+          "example": "无",
+          "member": "InsL7Rules",
+          "name": "L7Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateBlackWhiteIpListRequest": {
       "document": "CreateBlackWhiteIpList请求参数结构体",
       "members": [
@@ -1022,6 +1060,32 @@
     "CreateIPAlarmThresholdConfigResponse": {
       "document": "CreateIPAlarmThresholdConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL7RuleCertsRequest": {
+      "document": "CreateL7RuleCerts请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateL7RuleCertsResponse": {
+      "document": "CreateL7RuleCerts返回参数结构体",
+      "members": [
+        {
+          "document": "成功码",
+          "example": "无",
+          "member": "SuccessCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1687,6 +1751,32 @@
           "example": "无",
           "member": "DefaultAlarmThreshold",
           "name": "DefaultAlarmConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7RulesBySSLCertIdRequest": {
+      "document": "DescribeL7RulesBySSLCertId请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeL7RulesBySSLCertIdResponse": {
+      "document": "DescribeL7RulesBySSLCertId返回参数结构体",
+      "members": [
+        {
+          "document": "证书规则集合",
+          "example": "无",
+          "member": "CertIdInsL7Rules",
+          "name": "CertSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2940,6 +3030,82 @@
       ],
       "usage": "both"
     },
+    "InsL7Rules": {
+      "document": "实例7层规则",
+      "members": [
+        {
+          "default": "",
+          "document": "规则状态，0: 正常运行中, 1: 配置规则中(配置生效中), 2: 配置规则失败（配置生效失败）, 3: 删除规则中(删除生效中), 5: 删除规则失败(删除失败), 6: 等待添加规则, 7: 等待删除规则, 8: 等待上传证书, 9: 规则对应的资源不存在，被隔离, 10:等待修改规则, 11:配置修改中",
+          "example": "8",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.xxx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "example": "https",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "bgpip-000001eo",
+          "member": "string",
+          "name": "InsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户AppID",
+          "example": "251008915",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高防端口",
+          "example": "443",
+          "member": "string",
+          "name": "VirtualPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "kneSCNrZ",
+          "member": "string",
+          "name": "SSLId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceRelation": {
       "document": "资源实例IP信息",
       "members": [
@@ -3884,6 +4050,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SuccessCode": {
+      "document": "操作返回码，只用于返回成功的情况",
+      "members": [
+        {
+          "default": "",
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成功/错误码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

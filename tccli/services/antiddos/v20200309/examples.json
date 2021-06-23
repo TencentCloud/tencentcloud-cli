@@ -56,6 +56,14 @@
         "title": "设置单IP告警阈值配置"
       }
     ],
+    "CreateL7RuleCerts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL7RuleCerts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7d078cc-2547-47f8-b1d6-65bc67d28ae7\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "证书绑定域名列表"
+      }
+    ],
     "CreatePacketFilterConfig": [
       {
         "document": "",
@@ -158,6 +166,14 @@
         "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeDefaultAlarmThreshold\n&InstanceType=bgp\n&FilterAlarmType=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7df6626-fb01-4c9e-b43a-7af1db3fe998\",\n        \"DefaultAlarmConfigList\": [\n            {\n                \"AlarmType\": 1,\n                \"AlarmThreshold\": 1000\n            }\n        ]\n    }\n}",
         "title": "获取单IP默认告警阈值配置"
+      }
+    ],
+    "DescribeL7RulesBySSLCertId": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeL7RulesBySSLCertId\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CertSet\": [\n            {\n                \"CertId\": \"kneSCNrZ\",\n                \"L7Rules\": [\n                    {\n                        \"InsId\": \"bgpip-000001eo\",\n                        \"AppId\": \"251008915\",\n                        \"Protocol\": \"https\",\n                        \"Domain\": \"www.xxx.com\",\n                        \"VirtualPort\": \"443\",\n                        \"SSLId\": \"\",\n                        \"Status\": 8\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"d87b0215-5dc6-4b99-ad82-704f0ef1bfb7\"\n    }\n}",
+        "title": "查询可绑定证书的域名规则"
       }
     ],
     "DescribeListBGPIPInstances": [
