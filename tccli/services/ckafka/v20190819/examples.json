@@ -27,7 +27,7 @@
     "CreateTopic": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateTopic\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&PartitionNum=1\r\n&ReplicaNum=2\r\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateTopic\n&InstanceId=xxx\n&TopicName=xxx\n&PartitionNum=1\n&ReplicaNum=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicId\": \"topic-k766ruye\"\n        },\n        \"RequestId\": \"1305a410-b030-476d-acdf-eba0dfd5323b\"\n    }\n}",
         "title": "创建主题"
       }

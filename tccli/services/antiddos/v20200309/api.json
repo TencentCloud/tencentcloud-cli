@@ -12,6 +12,12 @@
       "name": "添加DDoS防护的IP黑白名单",
       "output": "CreateBlackWhiteIpListResponse"
     },
+    "CreateBoundIP": {
+      "document": "绑定IP到高防包实例，支持独享包、共享包；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。",
+      "input": "CreateBoundIPRequest",
+      "name": "绑定IP到高防包实例",
+      "output": "CreateBoundIPResponse"
+    },
     "CreateDDoSAI": {
       "document": "设置DDoS防护的AI防护开关",
       "input": "CreateDDoSAIRequest",
@@ -827,6 +833,62 @@
       ],
       "usage": "out"
     },
+    "BoundIpInfo": {
+      "document": "高防包绑定IP对象",
+      "members": [
+        {
+          "default": "",
+          "document": "IP地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定的产品分类，取值[public（CVM、CLB产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]",
+          "example": "public",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*); 如果绑定的是托管IP没有对应的资源实例ID，请填写\"none\";",
+          "example": "none",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品分类下的子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
+          "example": "cvm",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商，0：电信；1：联通；2：移动；5：BGP",
+          "example": "5",
+          "member": "uint64",
+          "name": "IspCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CertIdInsL7Rules": {
       "document": "使用证书的规则集合",
       "members": [
@@ -889,6 +951,78 @@
     "CreateBlackWhiteIpListResponse": {
       "document": "CreateBlackWhiteIpList返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBoundIPRequest": {
+      "document": "CreateBoundIP请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgp-000000xe",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
+          "example": "无",
+          "member": "BoundIpInfo",
+          "name": "BoundDevList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
+          "example": "无",
+          "member": "BoundIpInfo",
+          "name": "UnBoundDevList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "已弃用，不填",
+          "example": "yes",
+          "member": "string",
+          "name": "CopyPolicy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBoundIPResponse": {
+      "document": "CreateBoundIP返回参数结构体",
+      "members": [
+        {
+          "document": "成功码",
+          "example": "无",
+          "member": "SuccessCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1071,7 +1205,26 @@
     },
     "CreateL7RuleCertsRequest": {
       "document": "CreateL7RuleCerts请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "SSL证书ID",
+          "example": "cMgC0TpV",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "L7域名转发规则列表",
+          "example": "无",
+          "member": "InsL7Rules",
+          "name": "L7Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "CreateL7RuleCertsResponse": {
@@ -1766,7 +1919,26 @@
     },
     "DescribeL7RulesBySSLCertIdRequest": {
       "document": "DescribeL7RulesBySSLCertId请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "域名状态，可取bindable, binded, opened, closed, all，all表示全部状态",
+          "example": "bindable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书ID列表",
+          "example": "[\"cMgC0TpV\", \"kmLKvJiD\", \"kmCL9Kv7\",\"kneSCNrZ\"]",
+          "member": "string",
+          "name": "CertIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeL7RulesBySSLCertIdResponse": {

@@ -3,7 +3,7 @@
     "CreateTtsTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tts.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateTtsTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"Text\": \"语音合成\",\n    \"ModelType\": 1,\n    \"Volume\": 0.0,\n    \"Speed\": 0.0,\n    \"ProjectId\": 0,\n    \"VoiceType\": 101008,\n    \"PrimaryLanguage\": 1,\n    \"SampleRate\": 1,\n    \"Codec\": \"wav\",\n    \"CallbackUrl\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tts.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateTtsTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"Text\": \"欢迎使用腾讯云长文本语音合成\",\n    \"ModelType\": 1,\n    \"Volume\": 0.0,\n    \"Speed\": 0.0,\n    \"ProjectId\": 0,\n    \"VoiceType\": 101001,\n    \"PrimaryLanguage\": 1,\n    \"SampleRate\": 16000,\n    \"Codec\": \"mp3\",\n    \"CallbackUrl\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fabc2d63-a1b7-40a0-b4c3-640f78974919\",\n        \"Data\": {\n            \"TaskId\": \"1000000007\"\n        }\n    }\n}",
         "title": "API调用"
       },

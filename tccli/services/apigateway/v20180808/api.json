@@ -5176,6 +5176,7 @@
         {
           "default": "",
           "document": "域名名称。",
+          "example": "www.xx.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -5185,6 +5186,7 @@
         {
           "default": "",
           "document": "域名解析状态。True 表示正常解析，False 表示解析失败。",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -5194,6 +5196,7 @@
         {
           "default": "",
           "document": "证书ID。",
+          "example": "无",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -5203,6 +5206,7 @@
         {
           "default": "",
           "document": "是否使用默认路径映射。",
+          "example": "true",
           "member": "bool",
           "name": "IsDefaultMapping",
           "required": true,
@@ -5212,6 +5216,7 @@
         {
           "default": "",
           "document": "自定义域名协议类型。",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -5221,10 +5226,31 @@
         {
           "default": "",
           "document": "网络类型（'INNER' 或 'OUTER'）。",
+          "example": "OUTER",
           "member": "string",
           "name": "NetType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsForcedHttps",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名备案注册状态",
+          "example": "true",
+          "member": "bool",
+          "name": "RegistrationStatus",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

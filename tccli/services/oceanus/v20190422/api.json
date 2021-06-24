@@ -190,6 +190,24 @@
           "name": "LogCollect",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "JobManager规格",
+          "example": "0.5",
+          "member": "float",
+          "name": "JobManagerSpec",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "TaskManager规格",
+          "example": "0.5",
+          "member": "float",
+          "name": "TaskManagerSpec",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"
@@ -1174,6 +1192,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "JobManager规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "JobManagerSpec",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TaskManager规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "TaskManagerSpec",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1184,6 +1222,7 @@
         {
           "default": "",
           "document": "作业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -1193,6 +1232,7 @@
         {
           "default": "",
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1202,6 +1242,7 @@
         {
           "default": "",
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1211,6 +1252,7 @@
         {
           "default": "",
           "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "AppId",
           "required": true,
@@ -1220,6 +1262,7 @@
         {
           "default": "",
           "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -1229,6 +1272,7 @@
         {
           "default": "",
           "document": "创建者UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "CreatorUin",
           "required": true,
@@ -1238,6 +1282,7 @@
         {
           "default": "",
           "document": "作业名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1246,7 +1291,8 @@
         },
         {
           "default": "",
-          "document": "作业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "作业类型，1：sql作业，2：Jar作业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "JobType",
           "required": true,
@@ -1256,6 +1302,7 @@
         {
           "default": "",
           "document": "作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1265,6 +1312,7 @@
         {
           "default": "",
           "document": "作业创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -1274,6 +1322,7 @@
         {
           "default": "",
           "document": "作业启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -1283,6 +1332,7 @@
         {
           "default": "",
           "document": "作业停止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "StopTime",
           "required": true,
@@ -1292,6 +1342,7 @@
         {
           "default": "",
           "document": "作业更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -1301,6 +1352,7 @@
         {
           "default": "",
           "document": "作业累计运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13864986",
           "member": "int64",
           "name": "TotalRunMillis",
           "required": true,
@@ -1310,6 +1362,7 @@
         {
           "default": "",
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -1319,6 +1372,7 @@
         {
           "default": "",
           "document": "操作错误提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
           "member": "string",
           "name": "LastOpResult",
           "required": true,
@@ -1328,6 +1382,7 @@
         {
           "default": "",
           "document": "集群名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -1337,6 +1392,7 @@
         {
           "default": "",
           "document": "最新配置版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "LatestJobConfigVersion",
           "required": true,
@@ -1346,6 +1402,7 @@
         {
           "default": "",
           "document": "已发布的配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "PublishedJobConfigVersion",
           "required": true,
@@ -1355,6 +1412,7 @@
         {
           "default": "",
           "document": "运行的CU数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "RunningCuNum",
           "required": true,
@@ -1364,6 +1422,7 @@
         {
           "default": "",
           "document": "作业内存规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
           "member": "int64",
           "name": "CuMem",
           "required": true,
@@ -1373,6 +1432,7 @@
         {
           "default": "",
           "document": "作业状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
           "member": "string",
           "name": "StatusDesc",
           "required": true,
@@ -1382,6 +1442,7 @@
         {
           "default": "",
           "document": "运行状态时表示单次运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "124",
           "member": "int64",
           "name": "CurrentRunMillis",
           "required": true,
@@ -1391,6 +1452,7 @@
         {
           "default": "",
           "document": "作业所在的集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1400,6 +1462,7 @@
         {
           "default": "",
           "document": "作业管理WEB UI 入口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://175.24.255.193//cql-czvy480r-78/?defaultToken=0",
           "member": "string",
           "name": "WebUIUrl",
           "required": true,
@@ -1409,6 +1472,7 @@
         {
           "default": "",
           "document": "作业所在集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "SchedulerType",
           "required": true,
@@ -1418,10 +1482,21 @@
         {
           "default": "",
           "document": "作业所在集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "ClusterStatus",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "细粒度下的运行的CU数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "RunningCu",
+          "required": true,
+          "type": "float",
           "value_allowed_null": true
         }
       ],
@@ -1923,6 +1998,7 @@
         {
           "default": "",
           "document": "批量启动作业的描述信息",
+          "example": "无",
           "member": "RunJobDescription",
           "name": "RunJobDescriptions",
           "required": true,

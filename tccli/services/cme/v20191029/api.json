@@ -499,7 +499,8 @@
       "members": [
         {
           "default": "",
-          "document": "音频媒体来源类型，取值有：\n<ul>\n<li>VOD ：素材来源于云点播文件 ；</li>\n<li>CME ：视频来源于制作云媒体文件 ；</li>\n<li>EXTERNAL ：视频来源于媒资绑定。</li>\n</ul>",
+          "document": "音频媒体来源类型，取值有：\n<ul>\n<li>VOD ：素材来源于云点播文件 ；</li>\n<li>CME ：视频来源于制作云媒体文件 ；</li>\n<li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>\n</ul>",
+          "example": "EXTERNAL ",
           "member": "string",
           "name": "SourceType",
           "required": true,
@@ -508,7 +509,8 @@
         },
         {
           "default": "",
-          "document": "音频片段的媒体来源，可以是：\n<ul>\n<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中 ；</li>\n<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>\n<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>\n</ul>",
+          "document": "音频片段的媒体来源，可以是：\n<ul>\n<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中 ；</li>\n<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>\n<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>\n</ul>\n\n注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉 'https://'；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉 'http://'。",
+          "example": "1000000:www.qq.com/a.mp4",
           "member": "string",
           "name": "SourceMedia",
           "required": true,
@@ -518,6 +520,7 @@
         {
           "default": "",
           "document": "音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。",
+          "example": "0",
           "member": "float",
           "name": "SourceMediaStartTime",
           "required": false,
@@ -527,6 +530,7 @@
         {
           "default": "",
           "document": "音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。",
+          "example": "20",
           "member": "float",
           "name": "Duration",
           "required": false,
@@ -2715,7 +2719,8 @@
       "members": [
         {
           "default": "",
-          "document": "媒资绑定模板 ID。",
+          "document": "媒资绑定模板 ID，可取值为：\n<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>\n<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>\n\n注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。",
+          "example": "1000000",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -2724,7 +2729,8 @@
         },
         {
           "default": "",
-          "document": "媒资绑定媒体路径或文件 ID。",
+          "document": "媒资绑定媒体路径或文件 ID，如果要绑定 URL 类型的媒体，请将 URL 的 'https://' 或者 'http://' 去掉。",
+          "example": "www.qq.com/a.mp4",
           "member": "string",
           "name": "MediaKey",
           "required": true,
@@ -3100,6 +3106,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3108,6 +3115,7 @@
         {
           "default": "",
           "document": "媒体归属者，团队或个人。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -3116,6 +3124,7 @@
         {
           "default": "",
           "document": "媒体名称，不能超过30个字符。",
+          "example": "material_name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3123,7 +3132,8 @@
         },
         {
           "default": "",
-          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n注意：如果不填默认为云点播文件。",
+          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n\n注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。",
+          "example": "VOD",
           "member": "string",
           "name": "SourceType",
           "required": false,
@@ -3132,6 +3142,7 @@
         {
           "default": "",
           "document": "云点播媒资 FileId，仅当 SourceType 为 VOD 时有效。",
+          "example": "5285890796182734267",
           "member": "string",
           "name": "VodFileId",
           "required": false,
@@ -3140,6 +3151,7 @@
         {
           "default": "",
           "document": "原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。",
+          "example": "无",
           "member": "ExternalMediaInfo",
           "name": "ExternalMediaInfo",
           "required": false,
@@ -3148,6 +3160,7 @@
         {
           "default": "",
           "document": "媒体分类路径，形如：\"/a/b\"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。",
+          "example": "/test",
           "member": "string",
           "name": "ClassPath",
           "required": false,
@@ -3156,6 +3169,7 @@
         {
           "default": "",
           "document": "媒体预处理任务模板 ID。取值：\n<li>10：进行编辑预处理。</li>",
+          "example": "10",
           "member": "int64",
           "name": "PreProcessDefinition",
           "required": false,
@@ -3164,6 +3178,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -3177,15 +3192,19 @@
       "members": [
         {
           "document": "媒体 Id。",
+          "example": "materialId",
           "member": "string",
           "name": "MaterialId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "媒体文预处理任务 ID，如果未指定发起预处理任务则为空。",
+          "example": "taskId",
           "member": "string",
           "name": "PreProcessTaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3221,7 +3240,7 @@
         },
         {
           "default": "",
-          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n注意：如果不填默认为云点播文件。",
+          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n\n注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。",
           "example": "VOD",
           "member": "string",
           "name": "SourceType",
@@ -6255,7 +6274,8 @@
       "members": [
         {
           "default": "",
-          "document": "视频媒体来源类型，取值有：\n<ul>\n<li>VOD ：媒体来源于云点播文件 。</li>\n<li>CME ：视频来源制作云媒体文件。</li>\n<li>EXTERNAL ：视频来源于媒资绑定。</li>\n</ul>",
+          "document": "视频媒体来源类型，取值有：\n<ul>\n<li>VOD ：媒体来源于云点播文件 。</li>\n<li>CME ：视频来源制作云媒体文件。</li>\n<li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>\n</ul>",
+          "example": "VOD",
           "member": "string",
           "name": "SourceType",
           "required": true,
@@ -6264,7 +6284,8 @@
         },
         {
           "default": "",
-          "document": "视频片段的媒体文件来源，取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中；</li>\n<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>\n<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>\n</ul>",
+          "document": "视频片段的媒体文件来源，取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中；</li>\n<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>\n<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>\n</ul>\n\n注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉 'https://'；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉 'http://'。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "SourceMedia",
           "required": true,
@@ -6274,6 +6295,7 @@
         {
           "default": "",
           "document": "视频片段取自媒体文件的起始时间，单位为秒。默认为0。",
+          "example": "0",
           "member": "float",
           "name": "SourceMediaStartTime",
           "required": false,
@@ -6283,6 +6305,7 @@
         {
           "default": "",
           "document": "视频片段时长，单位为秒。默认取视频媒体文件本身长度，表示截取全部媒体文件。如果源文件是图片，Duration需要大于0。",
+          "example": "20",
           "member": "float",
           "name": "Duration",
           "required": false,
@@ -6292,6 +6315,7 @@
         {
           "default": "",
           "document": "视频片段原点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布口宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认值：0px。",
+          "example": "10px",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -6301,6 +6325,7 @@
         {
           "default": "",
           "document": "视频片段原点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认值：0px。",
+          "example": "20px",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -6310,6 +6335,7 @@
         {
           "default": "",
           "document": "视频原点位置，取值有：\n<li>Center：坐标原点为中心位置，如画布中心。</li>\n默认值 ：Center。",
+          "example": "Center",
           "member": "string",
           "name": "CoordinateOrigin",
           "required": false,
@@ -6319,6 +6345,7 @@
         {
           "default": "",
           "document": "视频片段的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%；</li>\n<li>当字符串以 px 结尾，表示视频片段 Height 单位为像素，如 100px 表示 Height 为100像素；</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频媒体文件本身的 Width、Height；</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放；</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "example": "1080px",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -6328,6 +6355,7 @@
         {
           "default": "",
           "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示视频片段 Width 单位为像素，如 100px 表示 Width 为100像素；</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频媒体文件本身的 Width、Height；</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放；</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "example": "1920px",
           "member": "string",
           "name": "Width",
           "required": false,

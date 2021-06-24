@@ -7,35 +7,35 @@ Input:
 ```
 tccli wav QueryActivityJoinList --cli-unfold-argument  \
     --Limit 1 \
-    --ActivityId 111111111111111111
+    --ActivityId 1394233693086657654
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "NextCursor": "xxx",
-        "RequestId": "332120d7-951e-4c43-9223-0c8b980a38d2",
+        "NextCursor": "E9y1rxkoUxUW4i+Yx7ThkT7p0+bJm6IXDaCfF4etiyI=",
         "PageData": [
             {
-                "ActivityData": "{\"couponTypeList\":[1],\"couponInfoList\":[{\"couponId\":\"1111111111111111\",\"couponName\":\"购车车款减免券001\",\"thresholdAmount\":10000000,\"discountAmount\":500000,\"discountPercentage\":0,\"couponType\":1,\"availableTimeType\":1,\"availableBeginTime\":0,\"availableEndTime\":1111111111}]}",
-                "SalesName": "xxx",
-                "UserName": "参与者",
-                "ActivityName": "满减",
-                "SalesPhone": "xxx",
-                "ActivityId": 111111111111111111,
-                "CreateTime": 111111111,
+                "ActivityData": "{\"cityInfo\":{\"cityCode\":\"420100\",\"cityName\":\"武汉市\",\"provinceCode\":\"420000\",\"provinceName\":\"湖北省\"},\"carInfo\":{\"carId\":\"1334701452344614913\",\"carName\":\"A车型\",\"brandId\":1334701452336226306,\"tenantSeriesId\":1334701452340420610,\"baseBrandName\":\"大迪\",\"tenantSeriesName\":\"测试素材查看-车型\"},\"shopInfo\":{\"shopId\":1392034008271540226,\"shopName\":\"武汉惠通陆华汽车服务有限公司\",\"cityCode\":\"420100\"}}",
+                "SalesName": "hc",
+                "UserName": "lxc",
+                "ActivityName": "测试未开始活动",
+                "SalesPhone": "18976547654",
+                "ActivityId": 1394233693086657654,
+                "CreateTime": 1624242265,
                 "LiveCodeId": 0,
-                "JoinId": 111111111111111111,
+                "JoinId": 1406800137191108987,
                 "JoinState": 1,
-                "DuplicateLeadId": 111111111111111111,
-                "UserPhone": "xxx",
-                "UpdateTime": 111111111,
-                "Duplicate": 2,
-                "JoinTime": 111111111,
-                "LeadId": 111111111111111111
+                "DuplicateLeadId": 0,
+                "UserPhone": "18045676789",
+                "UpdateTime": 1624242265,
+                "Duplicate": 0,
+                "JoinTime": 1624242264,
+                "LeadId": 1406800137394126823
             }
-        ]
+        ],
+        "RequestId": "cee4598b-9eea-4e87-8544-7f584beb6235"
     }
 }
 ```

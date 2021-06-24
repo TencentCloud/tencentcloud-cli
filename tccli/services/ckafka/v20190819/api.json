@@ -928,6 +928,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -936,6 +937,7 @@
         {
           "default": "",
           "document": "主题名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "xxx",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -944,6 +946,7 @@
         {
           "default": "",
           "document": "Partition个数，大于0",
+          "example": "1",
           "member": "int64",
           "name": "PartitionNum",
           "required": true,
@@ -952,6 +955,7 @@
         {
           "default": "",
           "document": "副本个数，不能多于 broker 数，最大为3",
+          "example": "2",
           "member": "int64",
           "name": "ReplicaNum",
           "required": true,
@@ -960,6 +964,7 @@
         {
           "default": "",
           "document": "ip白名单开关, 1:打开  0:关闭，默认不打开",
+          "example": "0",
           "member": "int64",
           "name": "EnableWhiteList",
           "required": false,
@@ -968,6 +973,7 @@
         {
           "default": "",
           "document": "Ip白名单列表，配额限制，enableWhileList=1时必选",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "member": "string",
           "name": "IpWhiteList",
           "required": false,
@@ -976,6 +982,7 @@
         {
           "default": "",
           "document": "清理日志策略，日志清理模式，默认为\"delete\"。\"delete\"：日志按保存时间删除，\"compact\"：日志按 key 压缩，\"compact, delete\"：日志按 key 压缩且会按保存时间删除。",
+          "example": "delete",
           "member": "string",
           "name": "CleanUpPolicy",
           "required": false,
@@ -984,6 +991,7 @@
         {
           "default": "",
           "document": "主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "note",
           "member": "string",
           "name": "Note",
           "required": false,
@@ -992,6 +1000,7 @@
         {
           "default": "",
           "document": "默认为1",
+          "example": "2",
           "member": "int64",
           "name": "MinInsyncReplicas",
           "required": false,
@@ -1000,6 +1009,7 @@
         {
           "default": "",
           "document": "是否允许未同步的副本选为leader，false:不允许，true:允许，默认不允许",
+          "example": "1",
           "member": "int64",
           "name": "UncleanLeaderElectionEnable",
           "required": false,
@@ -1008,6 +1018,7 @@
         {
           "default": "",
           "document": "可消息选。保留时间，单位ms，当前最小值为60000ms",
+          "example": "60000",
           "member": "int64",
           "name": "RetentionMs",
           "required": false,
@@ -1016,6 +1027,7 @@
         {
           "default": "",
           "document": "Segment分片滚动的时长，单位ms，当前最小为3600000ms",
+          "example": "360000",
           "member": "int64",
           "name": "SegmentMs",
           "required": false,
@@ -1044,8 +1056,10 @@
       "members": [
         {
           "document": "返回创建结果",
+          "example": "无",
           "member": "CreateTopicResp",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

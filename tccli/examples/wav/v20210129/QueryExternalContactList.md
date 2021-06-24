@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wav QueryExternalContactList --cli-unfold-argument  \
-    --Cursor xxxx \
+    --Cursor sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU \
     --Limit 1
 ```
 
@@ -14,12 +14,12 @@ Output:
 ```
 {
     "Response": {
-        "NextCursor": "xxx",
+        "NextCursor": "sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=",
         "PageData": [
             {
-                "SalesName": "",
-                "UserId": "xxx",
-                "ExternalUserId": "xxx"
+                "SalesName": "杨过",
+                "UserId": "YangGuo",
+                "ExternalUserId": "wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA"
             }
         ],
         "RequestId": "b1a024bf-4d74-4b5d-a5bd-bbec330520e8"

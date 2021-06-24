@@ -113,7 +113,7 @@
         },
         {
           "default": "",
-          "document": "活动开始时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动开始时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618243200",
           "member": "int64",
           "name": "StartTime",
@@ -123,7 +123,7 @@
         },
         {
           "default": "",
-          "document": "活动结束时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动结束时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618329600",
           "member": "int64",
           "name": "EndTime",
@@ -153,7 +153,7 @@
         },
         {
           "default": "",
-          "document": "活动更新时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动更新时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1621500202",
           "member": "int64",
           "name": "UpdateTime",
@@ -874,7 +874,7 @@
         {
           "default": "",
           "document": "外部联系人联系电话\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "134xxxxxxxx",
+          "example": "134****3232",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -900,7 +900,7 @@
         {
           "default": "",
           "document": "添加了此外部联系人的企业成员userId",
-          "example": "xxxx",
+          "example": "yangGuo",
           "member": "string",
           "name": "UserId",
           "required": true,

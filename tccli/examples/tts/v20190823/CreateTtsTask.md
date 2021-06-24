@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tts CreateTtsTask --cli-unfold-argument  \
-    --Text 语音合成 \
+    --Text 欢迎使用腾讯云长文本语音合成 \
     --ModelType 1 \
     --Volume 0.0 \
     --Speed 0.0 \
     --ProjectId 0 \
-    --VoiceType 101008 \
+    --VoiceType 101001 \
     --PrimaryLanguage 1 \
-    --SampleRate 1 \
-    --Codec wav \
+    --SampleRate 16000 \
+    --Codec mp3 \
     --CallbackUrl xx
 ```
 

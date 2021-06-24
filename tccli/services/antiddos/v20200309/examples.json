@@ -16,6 +16,14 @@
         "title": "添加DDoS防护的IP黑白名单"
       }
     ],
+    "CreateBoundIP": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateBoundIP\n&Business=bgp\n&Id=bgp-000000xe\n&BoundDevList.0.Ip=1.1.1.1\n&BoundDevList.0.BizType=public\n&BoundDevList.0.DeviceType=cvm\n&BoundDevList.0.InstanceId=ins-f2f9ssbo\n&CopyPolicy=yes\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "绑定IP到高防包实例"
+      }
+    ],
     "CreateDDoSAI": [
       {
         "document": "",
@@ -59,7 +67,7 @@
     "CreateL7RuleCerts": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL7RuleCerts\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL7RuleCerts\n<公共请求参数>\n\n{\n    \"CertId\": \"xxx\",\n    \"L7Rules\": [\n        {\n            \"InsId\": \"bgpip-000001eo\",\n            \"AppId\": \"251008915\",\n            \"Protocol\": \"https\",\n            \"Domain\": \"www.xxx.com\",\n            \"VirtualPort\": \"443\",\n            \"SSLId\": \"\",\n            \"Status\": 8\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7d078cc-2547-47f8-b1d6-65bc67d28ae7\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "证书绑定域名列表"
       }
@@ -171,7 +179,7 @@
     "DescribeL7RulesBySSLCertId": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeL7RulesBySSLCertId\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeL7RulesBySSLCertId\n<公共请求参数>\n\n{\n    \"Status\": \"bindable\",\n    \"CertIds\": [\n        \"xxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CertSet\": [\n            {\n                \"CertId\": \"kneSCNrZ\",\n                \"L7Rules\": [\n                    {\n                        \"InsId\": \"bgpip-000001eo\",\n                        \"AppId\": \"251008915\",\n                        \"Protocol\": \"https\",\n                        \"Domain\": \"www.xxx.com\",\n                        \"VirtualPort\": \"443\",\n                        \"SSLId\": \"\",\n                        \"Status\": 8\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"d87b0215-5dc6-4b99-ad82-704f0ef1bfb7\"\n    }\n}",
         "title": "查询可绑定证书的域名规则"
       }

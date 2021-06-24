@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wav QueryChatArchivingList --cli-unfold-argument  \
-    --Cursor xxxx \
+    --Cursor +1H24tK0tELjSiTOR10DzA \
     --Limit 10
 ```
 
@@ -16,24 +16,24 @@ Output:
     "Response": {
         "PageData": [
             {
-                "MsgId": "xx",
+                "MsgId": "1312616990135121111",
                 "Action": "send",
                 "MsgType": "video",
-                "From": "xx",
+                "From": "YangYan",
                 "ToList": [
-                    "xx"
+                    "YangGuo"
                 ],
-                "RoomId": "xx",
+                "RoomId": "100001",
                 "MsgTime": "1616990135",
                 "Video": {
                     "PlayLength": 4,
                     "FileSize": 645990,
-                    "CosKey": "http://xx"
+                    "CosKey": "http://test"
                 }
             }
         ],
-        "NextCursor": "xx",
-        "RequestId": "xx"
+        "NextCursor": "+1H24tK0tELjSiTOR10DzA==",
+        "RequestId": "4d48312c-a062-4875-a5d5-69f0f11baf96"
     }
 }
 ```
