@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq AcknowledgeMessage --cli-unfold-argument  \
-    --AckTopic persistent://tenant/namespace/topic \
+    --AckTopic tenant/namespace/topic \
     --MessageId "71:12:0" \
     --SubName “test-sub”
 ```

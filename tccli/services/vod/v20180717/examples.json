@@ -75,19 +75,19 @@
     "CreateAIRecognitionTemplate": [
       {
         "document": "创建一个自定义视频内容识别模板，仅开启视频片头片尾识别任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\r\n&Name=视频片头片尾识别任务模板\r\n&Comment=模板1\r\n&HeadTailConfigure.Switch=ON\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\n&Name=视频片头片尾识别任务模板\n&Comment=模板1\n&HeadTailConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建仅支持视频片头片尾识别的任务模板"
       },
       {
         "document": "创建一个自定义视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库，人脸识别过滤分数为 90 分。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\r\n&Name=智能识别模板\r\n&Comment=模板2\r\n&SegmentConfigure.Switch=ON\r\n&FaceConfigure.Switch=ON\r\n&FaceConfigure.FaceLibrary=Default\r\n&FaceConfigure.Score=90\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\n&Name=智能识别模板\n&Comment=模板2\n&SegmentConfigure.Switch=ON\n&FaceConfigure.Switch=ON\n&FaceConfigure.FaceLibrary=Default\n&FaceConfigure.Score=90\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建支持多项视频内容识别任务的模板"
       },
       {
         "document": "创建一个自定义视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库及用户自定义库，人脸识别过滤分数为 90 分，指定截帧间隔为 1.0  秒。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\r\n&Name=智能识别模板\r\n&Comment=模板3\r\n&SegmentConfigure.Switch=ON\r\n&FaceConfigure.Switch=ON\r\n&FaceConfigure.FaceLibrary=All\r\n&ScreenshotInterval=1.0\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\n&Name=智能识别模板\n&Comment=模板3\n&SegmentConfigure.Switch=ON\n&FaceConfigure.Switch=ON\n&FaceConfigure.FaceLibrary=All\n&ScreenshotInterval=1.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建支持多项识别任务的模板，同时指定截帧间隔"
       }
@@ -913,19 +913,19 @@
     "ModifyAIRecognitionTemplate": [
       {
         "document": "修改自定义视频内容识别模板，关闭视频片头片尾识别任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\r\n&Definition=30\r\n&HeadTailConfigure.Switch=OFF\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\n&Definition=30\n&HeadTailConfigure.Switch=OFF\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "关闭视频片头片尾识别任务"
       },
       {
         "document": "修改自定义视频内容识别模板，关闭视频片头片尾识别任务，开启视频拆条任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\r\n&Definition=30\r\n&HeadTailConfigure.Switch=OFF\r\n&SegmentConfigure.Switch=ON\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\n&Definition=30\n&HeadTailConfigure.Switch=OFF\n&SegmentConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "同时关闭和开启一项识别任务"
       },
       {
         "document": "修改自定义智能识别模板，将截帧间隔修改为 0.5 秒。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\r\n&Definition=30\r\n&ScreenshotInterval=0.5\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\n&Definition=30\n&ScreenshotInterval=0.5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改内容识别截帧间隔时间"
       }

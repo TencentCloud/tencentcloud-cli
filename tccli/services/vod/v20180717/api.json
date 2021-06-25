@@ -6164,6 +6164,7 @@
         {
           "default": "",
           "document": "视频内容识别模板名称，长度限制：64 个字符。",
+          "example": "视频片头片尾识别任务模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6172,6 +6173,7 @@
         {
           "default": "",
           "document": "视频内容识别模板描述信息，长度限制：256 个字符。",
+          "example": "模板1",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -6180,6 +6182,7 @@
         {
           "default": "",
           "document": "视频片头片尾识别控制参数。",
+          "example": "无",
           "member": "HeadTailConfigureInfo",
           "name": "HeadTailConfigure",
           "required": false,
@@ -6188,6 +6191,7 @@
         {
           "default": "",
           "document": "视频拆条识别控制参数。",
+          "example": "无",
           "member": "SegmentConfigureInfo",
           "name": "SegmentConfigure",
           "required": false,
@@ -6196,6 +6200,7 @@
         {
           "default": "",
           "document": "人脸识别控制参数。",
+          "example": "无",
           "member": "FaceConfigureInfo",
           "name": "FaceConfigure",
           "required": false,
@@ -6204,6 +6209,7 @@
         {
           "default": "",
           "document": "文本全文识别控制参数。",
+          "example": "无",
           "member": "OcrFullTextConfigureInfo",
           "name": "OcrFullTextConfigure",
           "required": false,
@@ -6212,6 +6218,7 @@
         {
           "default": "",
           "document": "文本关键词识别控制参数。",
+          "example": "无",
           "member": "OcrWordsConfigureInfo",
           "name": "OcrWordsConfigure",
           "required": false,
@@ -6220,6 +6227,7 @@
         {
           "default": "",
           "document": "语音全文识别控制参数。",
+          "example": "无",
           "member": "AsrFullTextConfigureInfo",
           "name": "AsrFullTextConfigure",
           "required": false,
@@ -6228,6 +6236,7 @@
         {
           "default": "",
           "document": "语音关键词识别控制参数。",
+          "example": "无",
           "member": "AsrWordsConfigureInfo",
           "name": "AsrWordsConfigure",
           "required": false,
@@ -6236,6 +6245,7 @@
         {
           "default": "",
           "document": "物体识别控制参数。",
+          "example": "无",
           "member": "ObjectConfigureInfo",
           "name": "ObjectConfigure",
           "required": false,
@@ -6244,6 +6254,7 @@
         {
           "default": "",
           "document": "截帧间隔，单位为秒。当不填时，默认截帧间隔为 1 秒，最小值为 0.5 秒。",
+          "example": "无",
           "member": "float",
           "name": "ScreenshotInterval",
           "required": false,
@@ -6252,6 +6263,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -6265,8 +6277,10 @@
       "members": [
         {
           "document": "视频内容识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11783,6 +11797,7 @@
         {
           "default": "",
           "document": "人脸识别任务开关，可选值：\n<li>ON：开启智能人脸识别任务；</li>\n<li>OFF：关闭智能人脸识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -11792,6 +11807,7 @@
         {
           "default": "",
           "document": "人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。默认 95 分。取值范围：0 - 100。",
+          "example": "无",
           "member": "float",
           "name": "Score",
           "required": false,
@@ -11801,6 +11817,7 @@
         {
           "default": "",
           "document": "默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：\n<li>entertainment：娱乐明星；</li>\n<li>sport：体育明星；</li>\n<li>politician：政治人物。</li>",
+          "example": "无",
           "member": "string",
           "name": "DefaultLibraryLabelSet",
           "required": false,
@@ -11809,7 +11826,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "document": "用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。\n标签个数最多 100 个，每个标签长度最多 16 个字符。",
+          "example": "无",
           "member": "string",
           "name": "UserDefineLibraryLabelSet",
           "required": false,
@@ -11819,6 +11837,7 @@
         {
           "default": "",
           "document": "人物库选择，可选值：\n<li>Default：使用默认人物库；</li>\n<li>UserDefine：使用用户自定义人物库。</li>\n<li>All：同时使用默认人物库和用户自定义人物库。</li>\n默认值：All，使用系统默认人物库及用户自定义人物库。",
+          "example": "无",
           "member": "string",
           "name": "FaceLibrary",
           "required": false,
@@ -11834,6 +11853,7 @@
         {
           "default": "",
           "document": "人脸识别任务开关，可选值：\n<li>ON：开启智能人脸识别任务；</li>\n<li>OFF：关闭智能人脸识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -11843,6 +11863,7 @@
         {
           "default": "",
           "document": "人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。",
+          "example": "无",
           "member": "float",
           "name": "Score",
           "required": false,
@@ -11852,6 +11873,7 @@
         {
           "default": "",
           "document": "默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：\n<li>entertainment：娱乐明星；</li>\n<li>sport：体育明星；</li>\n<li>politician：政治人物。</li>",
+          "example": "无",
           "member": "string",
           "name": "DefaultLibraryLabelSet",
           "required": false,
@@ -11860,7 +11882,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "document": "用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。\n标签个数最多 100 个，每个标签长度最多 16 个字符。",
+          "example": "无",
           "member": "string",
           "name": "UserDefineLibraryLabelSet",
           "required": false,
@@ -11870,6 +11893,7 @@
         {
           "default": "",
           "document": "人物库选择，可选值：\n<li>Default：使用默认人物库；</li>\n<li>UserDefine：使用用户自定义人物库。</li>\n<li>All：同时使用默认人物库和用户自定义人物库。</li>",
+          "example": "无",
           "member": "string",
           "name": "FaceLibrary",
           "required": false,
@@ -15586,6 +15610,7 @@
         {
           "default": "",
           "document": "视频内容识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -15594,6 +15619,7 @@
         {
           "default": "",
           "document": "视频内容识别模板名称，长度限制：64 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -15602,6 +15628,7 @@
         {
           "default": "",
           "document": "视频内容识别模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -15610,6 +15637,7 @@
         {
           "default": "",
           "document": "视频片头片尾识别控制参数。",
+          "example": "无",
           "member": "HeadTailConfigureInfoForUpdate",
           "name": "HeadTailConfigure",
           "required": false,
@@ -15618,6 +15646,7 @@
         {
           "default": "",
           "document": "视频拆条识别控制参数。",
+          "example": "无",
           "member": "SegmentConfigureInfoForUpdate",
           "name": "SegmentConfigure",
           "required": false,
@@ -15626,6 +15655,7 @@
         {
           "default": "",
           "document": "人脸识别控制参数。",
+          "example": "无",
           "member": "FaceConfigureInfoForUpdate",
           "name": "FaceConfigure",
           "required": false,
@@ -15634,6 +15664,7 @@
         {
           "default": "",
           "document": "文本全文识别控制参数。",
+          "example": "无",
           "member": "OcrFullTextConfigureInfoForUpdate",
           "name": "OcrFullTextConfigure",
           "required": false,
@@ -15642,6 +15673,7 @@
         {
           "default": "",
           "document": "文本关键词识别控制参数。",
+          "example": "无",
           "member": "OcrWordsConfigureInfoForUpdate",
           "name": "OcrWordsConfigure",
           "required": false,
@@ -15650,6 +15682,7 @@
         {
           "default": "",
           "document": "语音全文识别控制参数。",
+          "example": "无",
           "member": "AsrFullTextConfigureInfoForUpdate",
           "name": "AsrFullTextConfigure",
           "required": false,
@@ -15658,6 +15691,7 @@
         {
           "default": "",
           "document": "语音关键词识别控制参数。",
+          "example": "无",
           "member": "AsrWordsConfigureInfoForUpdate",
           "name": "AsrWordsConfigure",
           "required": false,
@@ -15666,6 +15700,7 @@
         {
           "default": "",
           "document": "物体识别控制参数。",
+          "example": "无",
           "member": "ObjectConfigureInfoForUpdate",
           "name": "ObjectConfigure",
           "required": false,
@@ -15674,6 +15709,7 @@
         {
           "default": "",
           "document": "截帧间隔，单位为秒，最小值为 0.5 秒。",
+          "example": "无",
           "member": "float",
           "name": "ScreenshotInterval",
           "required": false,
@@ -15682,6 +15718,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,

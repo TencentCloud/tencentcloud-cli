@@ -96,6 +96,12 @@
       "name": "获取邮件配置",
       "output": "DescribeMailProfileResponse"
     },
+    "DescribeMySqlProcessList": {
+      "document": "查询关系型数据库的实时线程列表。",
+      "input": "DescribeMySqlProcessListRequest",
+      "name": "查询实时线程列表",
+      "output": "DescribeMySqlProcessListResponse"
+    },
     "DescribeSecurityAuditLogDownloadUrls": {
       "document": "查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。",
       "input": "DescribeSecurityAuditLogDownloadUrlsRequest",
@@ -1048,7 +1054,7 @@
         },
         {
           "default": "",
-          "document": "返回数量，默认20。",
+          "document": "返回数量，默认20，最大值为100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -1210,7 +1216,7 @@
         },
         {
           "default": "",
-          "document": "分页参数，分页值。",
+          "document": "分页参数，分页值，最大值为100。",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -1421,6 +1427,132 @@
       ],
       "type": "object"
     },
+    "DescribeMySqlProcessListRequest": {
+      "document": "DescribeMySqlProcessList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "线程的ID，用于筛选线程列表。",
+          "example": "20",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "线程的操作账号名，用于筛选线程列表。",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "线程的操作主机地址，用于筛选线程列表。",
+          "example": "127.0.0.1:41528",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "线程的操作数据库，用于筛选线程列表。",
+          "example": "test",
+          "member": "string",
+          "name": "DB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "线程的操作状态，用于筛选线程列表。",
+          "example": "updating",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "线程的执行类型，用于筛选线程列表。",
+          "example": "Execute",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Time",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "线程的操作语句，用于筛选线程列表。",
+          "example": "DELETE FROM `test` WHERE time<=1",
+          "member": "string",
+          "name": "Info",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMySqlProcessListResponse": {
+      "document": "DescribeMySqlProcessList返回参数结构体",
+      "members": [
+        {
+          "document": "实时线程列表。",
+          "example": "无",
+          "member": "MySqlProcess",
+          "name": "ProcessList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSecurityAuditLogDownloadUrlsRequest": {
       "document": "DescribeSecurityAuditLogDownloadUrls请求参数结构体",
       "members": [
@@ -1516,7 +1648,7 @@
         },
         {
           "default": "",
-          "document": "返回数量，默认20。",
+          "document": "返回数量，默认20，最大值为100。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1669,7 +1801,7 @@
         },
         {
           "default": "",
-          "document": "排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。",
+          "document": "排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。",
           "example": "QueryTime",
           "member": "string",
           "name": "SortBy",
@@ -1678,7 +1810,7 @@
         },
         {
           "default": "",
-          "document": "排序方式，支持ASC（升序）以及DESC（降序）。",
+          "document": "排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。",
           "example": "ASC",
           "member": "string",
           "name": "OrderBy",
@@ -3131,7 +3263,7 @@
       "members": [
         {
           "default": "",
-          "document": "巡检开关。",
+          "document": "实例配置，包括巡检、概览开关等。",
           "example": "无",
           "member": "InstanceConfs",
           "name": "InstanceConfs",
@@ -3299,6 +3431,92 @@
           "name": "Timestamp",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MySqlProcess": {
+      "document": "关系型数据库线程",
+      "members": [
+        {
+          "default": "",
+          "document": "线程ID。",
+          "example": "12",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线程的操作账号名。",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线程的操作主机地址。",
+          "example": "127.0.0.1:41528",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线程的操作数据库。",
+          "example": "test",
+          "member": "string",
+          "name": "DB",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线程的操作状态。",
+          "example": "updating",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线程的执行类型。",
+          "example": "Execute",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线程的操作时长，单位秒。",
+          "example": "1225",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线程的操作语句。",
+          "example": "DELETE FROM `test` WHERE time<=1",
+          "member": "string",
+          "name": "Info",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3707,7 +3925,7 @@
       "members": [
         {
           "default": "",
-          "document": "sql总锁等待时间",
+          "document": "sql总锁等待时间，单位秒",
           "example": "0.00008",
           "member": "float",
           "name": "LockTime",
@@ -3717,7 +3935,7 @@
         },
         {
           "default": "",
-          "document": "最大锁等待时间",
+          "document": "最大锁等待时间，单位秒",
           "example": "0.000096",
           "member": "float",
           "name": "LockTimeMax",
@@ -3727,7 +3945,7 @@
         },
         {
           "default": "",
-          "document": "最小锁等待时间",
+          "document": "最小锁等待时间，单位秒",
           "example": "0.000041",
           "member": "float",
           "name": "LockTimeMin",
@@ -3767,7 +3985,7 @@
         },
         {
           "default": "",
-          "document": "总耗时",
+          "document": "总耗时，单位秒",
           "example": "0.513363",
           "member": "float",
           "name": "QueryTime",
@@ -3777,7 +3995,7 @@
         },
         {
           "default": "",
-          "document": "最大执行时间",
+          "document": "最大执行时间，单位秒",
           "example": "0.765213",
           "member": "float",
           "name": "QueryTimeMax",
@@ -3787,7 +4005,7 @@
         },
         {
           "default": "",
-          "document": "最小执行时间",
+          "document": "最小执行时间，单位秒",
           "example": "0.629921",
           "member": "float",
           "name": "QueryTimeMin",
@@ -3867,7 +4085,7 @@
         },
         {
           "default": "",
-          "document": "总耗时占比",
+          "document": "总耗时占比，单位%",
           "example": "2.44",
           "member": "float",
           "name": "QueryTimeRatio",
@@ -3877,7 +4095,7 @@
         },
         {
           "default": "",
-          "document": "sql总锁等待时间占比",
+          "document": "sql总锁等待时间占比，单位%",
           "example": "1.92",
           "member": "float",
           "name": "LockTimeRatio",
@@ -3887,7 +4105,7 @@
         },
         {
           "default": "",
-          "document": "总扫描行数占比",
+          "document": "总扫描行数占比，单位%",
           "example": "2.3",
           "member": "float",
           "name": "RowsExaminedRatio",
@@ -3897,7 +4115,7 @@
         },
         {
           "default": "",
-          "document": "总返回行数占比",
+          "document": "总返回行数占比，单位%",
           "example": "18.67",
           "member": "float",
           "name": "RowsSentRatio",
@@ -3907,7 +4125,7 @@
         },
         {
           "default": "",
-          "document": "平均执行时间",
+          "document": "平均执行时间，单位秒",
           "example": "0.513363",
           "member": "float",
           "name": "QueryTimeAvg",
@@ -3927,7 +4145,7 @@
         },
         {
           "default": "",
-          "document": "平均锁等待时间",
+          "document": "平均锁等待时间，单位秒",
           "example": "0.000096",
           "member": "float",
           "name": "LockTimeAvg",

@@ -20,7 +20,7 @@
       {
         "document": "",
         "input": "https://ocr.tencentcloudapi.com/?Action=BankCardOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BankInfo\": \"招商银行(03080000)\",\n        \"ValidDate\": \"07/2023\",\n        \"CardType\": \"贷记卡\",\n        \"CardName\": \"招商银行信用卡\",\n        \"BorderCutImage\": null,\n        \"CardNoImage\": null,\n        \"WarningCode\": [\n            -9110\n        ],\n        \"CardNo\": \"6225768888888888\",\n        \"RequestId\": \"68f8fcbf-6004-0111a-ac18-6f1a9308fs100mab\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BankInfo\": \"招商银行(03080000)\",\n        \"ValidDate\": \"07/2023\",\n        \"CardType\": \"贷记卡\",\n        \"CardName\": \"招商银行信用卡\",\n        \"BorderCutImage\": null,\n        \"CardNoImage\": null,\n        \"QualityValue\": 80,\n        \"WarningCode\": [\n            -9110\n        ],\n        \"CardNo\": \"6225768888888888\",\n        \"RequestId\": \"68f8fcbf-6004-0111a-ac18-6f1a9308fs100mab\"\n    }\n}",
         "title": "银行卡识别示例代码"
       }
     ],

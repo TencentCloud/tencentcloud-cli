@@ -601,6 +601,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -609,6 +610,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -617,6 +619,7 @@
         {
           "default": "",
           "document": "是否返回预处理（精确剪裁对齐）后的银行卡图片数据，默认false。",
+          "example": "false",
           "member": "bool",
           "name": "RetBorderCutImage",
           "required": false,
@@ -625,6 +628,7 @@
         {
           "default": "",
           "document": "是否返回卡号的切图图片数据，默认false。",
+          "example": "false",
           "member": "bool",
           "name": "RetCardNoImage",
           "required": false,
@@ -633,6 +637,7 @@
         {
           "default": "",
           "document": "复印件检测开关，如果输入的图片是银行卡复印件图片则返回告警，默认false。",
+          "example": "false",
           "member": "bool",
           "name": "EnableCopyCheck",
           "required": false,
@@ -641,6 +646,7 @@
         {
           "default": "",
           "document": "翻拍检测开关，如果输入的图片是银行卡翻拍图片则返回告警，默认false。",
+          "example": "false",
           "member": "bool",
           "name": "EnableReshootCheck",
           "required": false,
@@ -649,8 +655,18 @@
         {
           "default": "",
           "document": "边框遮挡检测开关，如果输入的图片是银行卡边框被遮挡则返回告警，默认false。",
+          "example": "false",
           "member": "bool",
           "name": "EnableBorderCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否返回图片质量分数（图片质量分数是评价一个图片的模糊程度的标准），默认false。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableQualityValue",
           "required": false,
           "type": "bool"
         }
@@ -662,58 +678,83 @@
       "members": [
         {
           "document": "卡号",
+          "example": "6225768888888888",
           "member": "string",
           "name": "CardNo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "银行信息",
+          "example": "招商银行(03080000)",
           "member": "string",
           "name": "BankInfo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "有效期，格式如：07/2023",
+          "example": "07/2023",
           "member": "string",
           "name": "ValidDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "卡类型",
+          "example": "贷记卡",
           "member": "string",
           "name": "CardType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "卡名字",
+          "example": "招商银行信用卡",
           "member": "string",
           "name": "CardName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "切片图片数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "BorderCutImage",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "卡号图片数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CardNoImage",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "WarningCode 告警码列表和释义：\n-9110:银行卡日期无效; \n-9111:银行卡边框不完整; \n-9112:银行卡图片反光;\n-9113:银行卡复印件;\n-9114:银行卡翻拍件\n（告警码可以同时存在多个）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[-9110]",
           "member": "int64",
           "name": "WarningCode",
+          "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "图片质量分数，请求enable_quality_value时返回（取值范围：0-100，分数越低越模糊，建议阈值≥50）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "int64",
+          "name": "QualityValue",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -1770,6 +1811,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1778,6 +1820,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1786,6 +1829,7 @@
         {
           "default": "",
           "document": "单词四点坐标开关，开启可返回图片中单词的四点坐标。\n该参数默认值为false。",
+          "example": "false",
           "member": "bool",
           "name": "EnableCoordPoint",
           "required": false,
@@ -1794,8 +1838,18 @@
         {
           "default": "",
           "document": "候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。\n该参数默认值为false。",
+          "example": "false",
           "member": "bool",
           "name": "EnableCandWord",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。",
+          "example": "false",
+          "member": "bool",
+          "name": "Preprocess",
           "required": false,
           "type": "bool"
         }
@@ -1807,15 +1861,19 @@
       "members": [
         {
           "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "TextDetectionEn",
           "name": "TextDetections",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "example": "0",
           "member": "float",
           "name": "Angel",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },

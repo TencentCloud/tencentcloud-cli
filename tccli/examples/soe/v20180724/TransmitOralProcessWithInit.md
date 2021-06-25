@@ -45,6 +45,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "th",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     },
@@ -55,6 +56,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "ae",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     },
@@ -65,6 +67,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "ng",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     },
@@ -75,6 +78,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "k",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     },
@@ -85,6 +89,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "y",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     },
@@ -95,6 +100,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "uw",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     }
@@ -126,6 +132,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "th",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             },
@@ -136,6 +143,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "ae",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             },
@@ -146,6 +154,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "ng",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             },
@@ -156,6 +165,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "k",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             },
@@ -166,6 +176,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "y",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             },
@@ -176,6 +187,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "uw",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             }
@@ -237,6 +249,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "j",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     },
@@ -247,6 +260,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "i4",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     },
@@ -257,6 +271,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "ao",
                         "ReferencePhone": "",
+                        "ReferenceLetter": "",
                         "Stress": false,
                         "MatchTag": 0
                     }
@@ -288,6 +303,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "j",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             },
@@ -298,6 +314,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "i4",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             },
@@ -308,6 +325,7 @@ Output:
                                 "DetectedStress": false,
                                 "Phone": "ao",
                                 "ReferencePhone": "",
+                                "ReferenceLetter": "",
                                 "Stress": false,
                                 "MatchTag": 0
                             }

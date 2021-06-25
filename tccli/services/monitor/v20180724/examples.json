@@ -99,7 +99,7 @@
     "DescribeAlarmEvents": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmEvents\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"Namespace\": \"cvm_device\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmEvents\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"Namespace\": \"cvm_device\",\n    \"MonitorType\": \"MT_QCE\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"92hg92hj1-2h352h25hj-2h235h\",\n        \"Events\": [\n            {\n                \"EventName\": \"ping_unreachable\",\n                \"Description\": \"ping不可达\",\n                \"Namespace\": \"cvm_device\"\n            }\n        ]\n    }\n}",
         "title": "查询事件列表"
       }

@@ -84,7 +84,7 @@
       {
         "document": "",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagHistory\n&StartTime=2019-01-01 00:00:00\n&EndTime=2019-01-01 01:00:00\n&InstanceId=cdb-test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Events\": [\n            {\n                \"DiagType\": \"行锁\",\n                \"StartTime\": \"2019-01-01 00:00:20\",\n                \"EndTime\": \"2019-01-01 00:00:30\",\n                \"InstanceId\": \"cdb-test\",\n                \"Region\": \"ap-beijing\",\n                \"Metric\": \"\",\n                \"EventId\": 5,\n                \"Severity\": 4,\n                \"Outline\": \"监控指标 \\\"innodb_row_lock_waits\\\" 告警，当前值 131\",\n                \"DiagItem\": \"更新语句等待行锁\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed279d8b-a9d9-48d6-9429-e0fde000994a\",\n        \"Events\": [\n            {\n                \"DiagType\": \"行锁\",\n                \"StartTime\": \"2019-01-01 00:00:20\",\n                \"EndTime\": \"2019-01-01 00:00:30\",\n                \"InstanceId\": \"cdb-test\",\n                \"Region\": \"ap-beijing\",\n                \"Metric\": \"\",\n                \"EventId\": 5,\n                \"Severity\": 4,\n                \"Outline\": \"监控指标 \\\"innodb_row_lock_waits\\\" 告警，当前值 131\",\n                \"DiagItem\": \"更新语句等待行锁\"\n            }\n        ]\n    }\n}",
         "title": "获取实例诊断事件列表"
       }
     ],
@@ -128,6 +128,14 @@
         "title": "获取邮件配置"
       }
     ],
+    "DescribeMySqlProcessList": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeMySqlProcessList\n&Product=mysql\n&InstanceId=cdb-test\n&User=root\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"24665720-8c93-11eb-bee6-e98cea0e6794\",\n        \"ProcessList\": [\n            {\n                \"Host\": \"127.0.0.1:42036\",\n                \"State\": \"\",\n                \"Command\": \"Sleep\",\n                \"Time\": \"1179\",\n                \"ID\": \"171588317\",\n                \"User\": \"root\",\n                \"Info\": \"\",\n                \"DB\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "查询实时线程列表。"
+      }
+    ],
     "DescribeSecurityAuditLogDownloadUrls": [
       {
         "document": "",
@@ -156,7 +164,7 @@
       {
         "document": "",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSlowLogTopSqls\n&InstanceId=test\n&SortBy=QueryTime\n&OrderBy=ASC\n&Limit=10\n&Offset=0\n&StartTime=2019-01-01 00:00:00\n&EndTime=2019-01-01 01:00:00\n&SchemaList.0.Schema=dbName\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"TotalCount\": 1,\n        \"Rows\": [\n            {\n                \"QueryTimeMin\": 0.0,\n                \"LockTimeMin\": 0.0,\n                \"QueryTimeMax\": 14.086705,\n                \"QueryTimeRatio\": 0.0,\n                \"RowsSentRatio\": 0.0,\n                \"RowsSentMax\": 0,\n                \"RowsExaminedMin\": 0,\n                \"RowsSentMin\": 0,\n                \"SqlText\": \"xx\",\n                \"Schema\": \"xx\",\n                \"LockTimeMax\": 0.0,\n                \"LockTimeRatio\": 0.0,\n                \"ExecTimes\": 2,\n                \"LockTimeAvg\": 0.0,\n                \"RowsExamined\": 0,\n                \"RowsSentAvg\": 0.0,\n                \"QueryTime\": 28.17341,\n                \"RowsExaminedAvg\": 0.0,\n                \"RowsExaminedMax\": 0,\n                \"RowsSent\": 0,\n                \"RowsExaminedRatio\": 0.0,\n                \"QueryTimeAvg\": 0.0,\n                \"SqlTemplate\": \"xx\",\n                \"LockTime\": 0.0\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed279d8b-a9d9-48d6-9429-e0fde000994a\",\n        \"TotalCount\": 1,\n        \"Rows\": [\n            {\n                \"QueryTimeMin\": 0.0,\n                \"LockTimeMin\": 0.0,\n                \"QueryTimeMax\": 14.086705,\n                \"QueryTimeRatio\": 0.0,\n                \"RowsSentRatio\": 0.0,\n                \"RowsSentMax\": 0,\n                \"RowsExaminedMin\": 0,\n                \"RowsSentMin\": 0,\n                \"SqlText\": \"xx\",\n                \"Schema\": \"xx\",\n                \"LockTimeMax\": 0.0,\n                \"LockTimeRatio\": 0.0,\n                \"ExecTimes\": 2,\n                \"LockTimeAvg\": 0.0,\n                \"RowsExamined\": 0,\n                \"RowsSentAvg\": 0.0,\n                \"QueryTime\": 28.17341,\n                \"RowsExaminedAvg\": 0.0,\n                \"RowsExaminedMax\": 0,\n                \"RowsSent\": 0,\n                \"RowsExaminedRatio\": 0.0,\n                \"QueryTimeAvg\": 0.0,\n                \"SqlTemplate\": \"xx\",\n                \"LockTime\": 0.0\n            }\n        ]\n    }\n}",
         "title": "按照Sql模板查询指定时间段内的慢日志统计结果"
       }
     ],

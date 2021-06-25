@@ -85,10 +85,16 @@
       "output": "DescribeAgentSelfPayDealsV2Response"
     },
     "DescribeClientBalance": {
-      "document": "为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额",
+      "document": "【该接口将逐步下线，请切换使用升级版本DescribeClientBalanceNew】为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额.",
       "input": "DescribeClientBalanceRequest",
       "name": "查询客户余额",
       "output": "DescribeClientBalanceResponse"
+    },
+    "DescribeClientBalanceNew": {
+      "document": "为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额",
+      "input": "DescribeClientBalanceNewRequest",
+      "name": "查询客户余额（新）",
+      "output": "DescribeClientBalanceNewResponse"
     },
     "DescribeClientBaseInfo": {
       "document": "该接口即将下线，请切换调用DescribeClientBasicInfo。\n\n国际站根据UIN查询代客基础信息【本接口仅限主账号访问】",
@@ -429,6 +435,7 @@
         {
           "default": "",
           "document": "代理商账号ID",
+          "example": "10000001",
           "member": "string",
           "name": "Uin",
           "required": true,
@@ -438,6 +445,7 @@
         {
           "default": "",
           "document": "代客账号ID",
+          "example": "10000001",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -447,6 +455,7 @@
         {
           "default": "",
           "document": "代客申请时间戳",
+          "example": "1618294993",
           "member": "uint64",
           "name": "ApplyTime",
           "required": true,
@@ -456,6 +465,7 @@
         {
           "default": "",
           "document": "代客类型，可能值为a/b/c",
+          "example": "a",
           "member": "string",
           "name": "ClientFlag",
           "required": true,
@@ -465,6 +475,7 @@
         {
           "default": "",
           "document": "代客邮箱，打码显示",
+          "example": "88******@qq.com",
           "member": "string",
           "name": "Mail",
           "required": true,
@@ -474,6 +485,7 @@
         {
           "default": "",
           "document": "代客手机，打码显示",
+          "example": "188****8888",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -483,6 +495,7 @@
         {
           "default": "",
           "document": "0表示不欠费，1表示欠费",
+          "example": "0",
           "member": "uint64",
           "name": "HasOverdueBill",
           "required": true,
@@ -491,7 +504,8 @@
         },
         {
           "default": "",
-          "document": "1:待代理商审核;2:待腾讯云审核",
+          "document": "1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -501,6 +515,7 @@
         {
           "default": "",
           "document": "业务员ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000001",
           "member": "string",
           "name": "SalesUin",
           "required": true,
@@ -510,8 +525,19 @@
         {
           "default": "",
           "document": "业务员姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*工",
           "member": "string",
           "name": "SalesName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户名称，此字段和控制台返回一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*户",
+          "member": "string",
+          "name": "ClientName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -781,6 +807,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "按月：3个月",
+          "member": "string",
+          "name": "PaymentMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1046,6 +1092,26 @@
           "name": "ProductInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "按月：3个月",
+          "member": "string",
+          "name": "PaymentMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1322,9 +1388,20 @@
       "members": [
         {
           "default": "",
-          "document": "实付金额",
+          "document": "实付金额（单位：分）",
+          "example": "10000",
           "member": "uint64",
           "name": "RealTotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单实际金额（不含折扣，单位：分）",
+          "example": "10000",
+          "member": "int64",
+          "name": "OriginalTotalCost",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1337,10 +1414,20 @@
       "members": [
         {
           "default": "",
-          "document": "实付金额",
+          "document": "实付金额（单位：分）",
           "example": "-10000",
           "member": "int64",
           "name": "RealTotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原始金额（不含折扣，单位：分）",
+          "example": "10000",
+          "member": "int64",
+          "name": "OriginalTotalCost",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2392,6 +2479,51 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientBalanceNewRequest": {
+      "document": "DescribeClientBalanceNew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户(代客)账号ID",
+          "example": "125****938",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientBalanceNewResponse": {
+      "document": "DescribeClientBalanceNew返回参数结构体",
+      "members": [
+        {
+          "document": "账户可用余额，单位分 （可用余额 = 现金余额 + 赠送金余额 - 欠费金额 - 冻结金额）",
+          "example": "40",
+          "member": "int64",
+          "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账户现金余额，单位分",
+          "example": "40",
+          "member": "int64",
+          "name": "Cash",
           "required": true,
           "type": "int",
           "value_allowed_null": false

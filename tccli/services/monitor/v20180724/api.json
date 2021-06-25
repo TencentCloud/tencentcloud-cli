@@ -1620,6 +1620,24 @@
           "name": "TriggerTasks",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "全局过滤条件",
+          "example": "无",
+          "member": "AlarmPolicyFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "聚合维度列表，指定按哪些维度 key 来做 group by",
+          "example": "[\"service_name\"]",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2509,6 +2527,7 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -2517,9 +2536,19 @@
         {
           "default": "",
           "document": "告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device",
+          "example": "cvm_device",
           "member": "string",
           "name": "Namespace",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监控类型，如 MT_QCE。如果不填默认为 MT_QCE。",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2530,8 +2559,10 @@
       "members": [
         {
           "document": "告警事件列表",
+          "example": "无",
           "member": "AlarmEvent",
           "name": "Events",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6907,6 +6938,24 @@
           "name": "EventCondition",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "全局过滤条件",
+          "example": "无",
+          "member": "AlarmPolicyFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "聚合维度列表，指定按哪些维度 key 来做 group by",
+          "example": "无",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

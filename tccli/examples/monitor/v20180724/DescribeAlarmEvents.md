@@ -7,7 +7,8 @@ Input:
 ```
 tccli monitor DescribeAlarmEvents --cli-unfold-argument  \
     --Module monitor \
-    --Namespace cvm_device
+    --Namespace cvm_device \
+    --MonitorType MT_QCE
 ```
 
 Output: 

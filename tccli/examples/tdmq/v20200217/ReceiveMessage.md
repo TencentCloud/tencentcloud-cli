@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq ReceiveMessage --cli-unfold-argument  \
-    --Topic persistent://tenant/namespace/topic \
+    --Topic tenant/namespace/topic \
     --SubscriptionName "test-sub"
 ```
 

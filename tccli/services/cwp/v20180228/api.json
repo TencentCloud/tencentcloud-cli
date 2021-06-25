@@ -5232,6 +5232,7 @@
         {
           "default": "",
           "document": "客户端唯一Uuid。",
+          "example": "uuid",
           "member": "string",
           "name": "Uuid",
           "required": false,
@@ -5240,6 +5241,7 @@
         {
           "default": "",
           "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5248,6 +5250,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5256,6 +5259,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 木马状态（UN_OPERATED: 未处理 | SEGREGATED: 已隔离|TRUSTED：信任）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询。",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5269,15 +5273,19 @@
       "members": [
         {
           "document": "木马总数。",
+          "example": "100",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "Malware数组。",
+          "document": "木马相关信息。",
+          "example": "[]",
           "member": "Malware",
           "name": "Malwares",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6086,7 +6094,7 @@
         },
         {
           "default": "",
-          "document": "排序方式",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
           "example": "asc",
           "member": "string",
           "name": "Order",
@@ -6095,7 +6103,7 @@
         },
         {
           "default": "",
-          "document": "排序字段",
+          "document": "排序字段：AccessCount-请求次数",
           "example": "AccessCount",
           "member": "string",
           "name": "By",
@@ -6126,30 +6134,38 @@
       "document": "DescribeScanMalwareSchedule返回参数结构体",
       "members": [
         {
-          "document": "扫描进度",
+          "document": "扫描进度（单位：%）",
+          "example": "1",
           "member": "int64",
           "name": "Schedule",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "风险文件数,当进度满了以后才有该值",
+          "example": "1",
           "member": "int64",
           "name": "RiskFileNumber",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "是否正在扫描中",
+          "example": "true",
           "member": "bool",
           "name": "IsSchedule",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "0 从未扫描过、 1 扫描中、 2扫描完成、 3停止中、 4停止完成",
+          "example": "1",
           "member": "uint64",
           "name": "ScanStatus",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10675,7 +10691,8 @@
       "members": [
         {
           "default": "",
-          "document": "木马Id数组,单次最大删除不能超过200条",
+          "document": "木马Id数组（单次最大恢复不超过100条）",
+          "example": "[]",
           "member": "uint64",
           "name": "Ids",
           "required": true,
@@ -10689,15 +10706,19 @@
       "members": [
         {
           "document": "恢复成功id数组",
+          "example": "[]",
           "member": "uint64",
           "name": "SuccessIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "恢复失败id数组",
+          "example": "[]",
           "member": "uint64",
           "name": "FailedIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11625,7 +11646,8 @@
       "members": [
         {
           "default": "",
-          "document": "木马ID数组。",
+          "document": "木马ID数组（单次不超过的最大条数：100）",
+          "example": "[]",
           "member": "uint64",
           "name": "Ids",
           "required": true,

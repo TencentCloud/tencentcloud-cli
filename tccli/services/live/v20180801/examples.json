@@ -589,8 +589,8 @@
     "DescribeLiveTranscodeDetailInfo": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveTranscodeDetailInfo\r\n&DayTime=20190307\r\n&PageNum=1\r\n&PageSize=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"StreamName\": \"test\",\n                \"StartTime\": \"2019-03-01 01:00\",\n                \"EndTime\": \"2019-03-01 04:00\",\n                \"Duration\": 8,\n                \"Bitrate\": 120,\n                \"Type\": \"混流\",\n                \"PushDomain\": \"5000.livepush.com\",\n                \"Resolution\": \"480P\"\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 20,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveTranscodeDetailInfo\n&DayTime=20190307\n&PageNum=1\n&PageSize=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"StreamName\": \"test\",\n                \"StartTime\": \"2019-03-01 01:00\",\n                \"EndTime\": \"2019-03-01 04:00\",\n                \"Duration\": 8,\n                \"ModuleCodec\": \"liveprocessor_H264\",\n                \"Bitrate\": 120,\n                \"Type\": \"混流\",\n                \"PushDomain\": \"5000.livepush.com\",\n                \"Resolution\": \"480P\"\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 20,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
     ],

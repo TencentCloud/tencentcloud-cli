@@ -126,6 +126,14 @@
         "title": "查询客户余额"
       }
     ],
+    "DescribeClientBalanceNew": [
+      {
+        "document": "",
+        "input": "https://partners.tencentcloudapi.com/?Action=DescribeClientBalanceNew\n&ClientUin=125****938\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eeedc7d9-2310-4b77-bd3e-23f077e44b7d\",\n        \"Balance\": 40,\n        \"Cash\": 40\n    }\n}",
+        "title": "查询客户余额"
+      }
+    ],
     "DescribeClientBaseInfo": [
       {
         "document": "请求参数不正确导致返回错误",

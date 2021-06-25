@@ -7,7 +7,7 @@
       "output": "AddTeamMemberResponse"
     },
     "CreateClass": {
-      "document": "新增分类，用于管理素材。\n<li>分类层数不能超过10；</li>\n<li>子分类数不能超过10。</li>",
+      "document": "新增分类，用于管理素材。分类层数不能超过20。",
       "input": "CreateClassRequest",
       "name": "创建分类",
       "output": "CreateClassResponse"
@@ -724,6 +724,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -732,6 +733,7 @@
         {
           "default": "",
           "document": "归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -740,6 +742,7 @@
         {
           "default": "",
           "document": "分类路径。",
+          "example": "/a/b",
           "member": "string",
           "name": "ClassPath",
           "required": true,
@@ -748,6 +751,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验分类创建权限。",
+          "example": "aaa1e081-***-9162840cadb7",
           "member": "string",
           "name": "Operator",
           "required": false,

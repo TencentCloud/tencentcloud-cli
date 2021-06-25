@@ -19,6 +19,7 @@ Output:
         "CardName": "招商银行信用卡",
         "BorderCutImage": null,
         "CardNoImage": null,
+        "QualityValue": 80,
         "WarningCode": [
             -9110
         ],
