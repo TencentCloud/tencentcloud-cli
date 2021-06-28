@@ -21,19 +21,23 @@ Output:
     "Response": {
         "ClusterList": [
             {
-                "AddTime": "2019-09-16 16:48:01",
+                "AddTime": "2021-01-20 21:28:05",
                 "AlarmInfo": "",
-                "AppId": 251008830,
+                "AliasInfo": "eyJjb21tb24iOiJjb21tb24iLCJjb3JlIjoiY29yZSIsIm1hc3RlciI6Im1hc3RlciIsInRhc2siOiJ0YXNrIn0=",
+                "AppId": 1258469122,
                 "ChargeType": 1,
-                "ClusterId": "emr-p9f700x8",
-                "ClusterName": "beckwu_包年勿删",
+                "ClusterId": "emr-myzhptk6",
+                "ClusterName": "ganlu-hdfs-study-一直在用-勿删",
                 "Config": {
+                    "ApplicationRole": "",
+                    "CbsEncrypt": 0,
                     "ChargeType": 1,
                     "ComNodeSize": 0,
                     "ComResource": {
                         "Cpu": 0,
                         "DiskSize": 0,
                         "DiskType": "",
+                        "InstanceType": "",
                         "MemSize": 0,
                         "RootSize": 0,
                         "Spec": "",
@@ -42,63 +46,83 @@ Output:
                     },
                     "CoreNodeSize": 2,
                     "CoreResource": {
-                        "Cpu": 2,
+                        "Cpu": 4,
                         "DiskSize": 100,
-                        "DiskType": "CLOUD_BASIC",
+                        "DiskType": "CLOUD_PREMIUM",
+                        "InstanceType": "",
                         "MemSize": 8192,
                         "RootSize": 0,
                         "Spec": "CVM.S2",
                         "SpecName": "EMR标准型S2",
-                        "StorageType": 2
+                        "StorageType": 5
                     },
                     "MasterNodeSize": 1,
                     "MasterResource": {
-                        "Cpu": 2,
+                        "Cpu": 4,
                         "DiskSize": 100,
-                        "DiskType": "CLOUD_BASIC",
+                        "DiskType": "CLOUD_PREMIUM",
+                        "InstanceType": "",
                         "MemSize": 8192,
                         "RootSize": 0,
                         "Spec": "CVM.S2",
                         "SpecName": "EMR标准型S2",
-                        "StorageType": 2
+                        "StorageType": 5
                     },
                     "OnCos": false,
-                    "SoftInfo": [
-                        "zookeeper-3.4.9",
-                        "hadoop-3.1.2",
-                        "knox-1.2.0",
-                        "sys-1.0"
+                    "RouterNodeSize": 0,
+                    "SecurityGroup": "sg-9zhz084e",
+                    "SecurityGroups": [
+                        "sg-9zhz084e"
                     ],
-                    "TaskNodeSize": 1,
+                    "SecurityOn": false,
+                    "SoftInfo": [
+                        "zookeeper-3.6.1",
+                        "yarn-3.1.2",
+                        "hdfs-3.1.2",
+                        "knox-1.2.0",
+                        "hive-3.1.1",
+                        "tez-0.9.2"
+                    ],
+                    "SupportHA": false,
+                    "TaskNodeSize": 2,
                     "TaskResource": {
-                        "Cpu": 2,
+                        "Cpu": 4,
                         "DiskSize": 100,
-                        "DiskType": "CLOUD_BASIC",
+                        "DiskType": "CLOUD_PREMIUM",
+                        "InstanceType": "",
                         "MemSize": 8192,
                         "RootSize": 0,
                         "Spec": "CVM.S2",
                         "SpecName": "EMR标准型S2",
-                        "StorageType": 2
+                        "StorageType": 5
                     }
                 },
-                "EmrVersion": "EMR-V3.0.0",
-                "Ftitle": "集群运行中",
-                "Id": 19541,
+                "EmrVersion": "EMR-V3.1.0",
+                "Ftitle": "集群安装组件中",
+                "HiveMetaDb": "cdb-709c8dh9",
+                "Id": 150118,
                 "IsTradeCluster": 0,
-                "MasterIp": "--",
+                "IsWoodpeckerCluster": 1,
+                "MasterIp": "170.106.101.90",
+                "MetaDb": "cdb-709c8dh9",
+                "ProductId": 25,
                 "ProjectId": 0,
-                "RegionId": 1,
+                "RegionId": 15,
                 "ResourceOrderId": 0,
-                "RunTime": "0天2小时48分钟55秒",
-                "Status": 2,
-                "SubnetId": 1230738,
+                "RunTime": "146天21小时50分钟30秒",
+                "ServiceClass": "HADOOP",
+                "Status": 6,
+                "SubnetId": 85503,
+                "Tags": [],
                 "TradeVersion": 1,
-                "Uin": "1875765535",
-                "VpcId": 78518,
-                "ZoneId": 100002
+                "Uin": "100008965662",
+                "VpcId": 848834,
+                "Zone": "na-siliconvalley-2",
+                "ZoneId": 150002
             }
         ],
-        "RequestId": "4f337873-6fea-4338-9715-24f539b60949",
+        "RequestId": "7ee88474-b29a-45b8-9ecc-595d03c4ef95",
+        "TagKeys": [],
         "TotalCnt": 1
     }
 }

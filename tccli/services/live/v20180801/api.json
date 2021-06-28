@@ -1880,6 +1880,7 @@
         {
           "default": "",
           "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testName",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -1888,6 +1889,7 @@
         {
           "default": "",
           "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1896,6 +1898,7 @@
         {
           "default": "",
           "document": "开播回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
+          "example": "无",
           "member": "string",
           "name": "StreamBeginNotifyUrl",
           "required": false,
@@ -1904,6 +1907,7 @@
         {
           "default": "",
           "document": "断流回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
+          "example": "无",
           "member": "string",
           "name": "StreamEndNotifyUrl",
           "required": false,
@@ -1912,6 +1916,7 @@
         {
           "default": "",
           "document": "录制回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
+          "example": "无",
           "member": "string",
           "name": "RecordNotifyUrl",
           "required": false,
@@ -1920,6 +1925,7 @@
         {
           "default": "",
           "document": "截图回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
+          "example": "无",
           "member": "string",
           "name": "SnapshotNotifyUrl",
           "required": false,
@@ -1928,6 +1934,7 @@
         {
           "default": "",
           "document": "鉴黄回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32741)。",
+          "example": "无",
           "member": "string",
           "name": "PornCensorshipNotifyUrl",
           "required": false,
@@ -1936,6 +1943,7 @@
         {
           "default": "",
           "document": "回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。\n[事件消息通知](/document/product/267/32744)。",
+          "example": "adasda131312",
           "member": "string",
           "name": "CallbackKey",
           "required": false,
@@ -1944,6 +1952,7 @@
         {
           "default": "",
           "document": "混流回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
+          "example": "asdsad",
           "member": "string",
           "name": "StreamMixNotifyUrl",
           "required": false,
@@ -1957,8 +1966,10 @@
       "members": [
         {
           "document": "模板ID。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8075,6 +8086,7 @@
         {
           "default": "",
           "document": "DescribeLiveCallbackTemplates接口返回的模板 ID。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -8083,6 +8095,7 @@
         {
           "default": "",
           "document": "模板名称。",
+          "example": "testName",
           "member": "string",
           "name": "TemplateName",
           "required": false,
@@ -8091,6 +8104,7 @@
         {
           "default": "",
           "document": "描述信息。",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -8099,6 +8113,7 @@
         {
           "default": "",
           "document": "开播回调 URL。",
+          "example": "无",
           "member": "string",
           "name": "StreamBeginNotifyUrl",
           "required": false,
@@ -8107,6 +8122,7 @@
         {
           "default": "",
           "document": "断流回调 URL。",
+          "example": "无",
           "member": "string",
           "name": "StreamEndNotifyUrl",
           "required": false,
@@ -8115,6 +8131,7 @@
         {
           "default": "",
           "document": "录制回调 URL。",
+          "example": "无",
           "member": "string",
           "name": "RecordNotifyUrl",
           "required": false,
@@ -8123,6 +8140,7 @@
         {
           "default": "",
           "document": "截图回调 URL。",
+          "example": "无",
           "member": "string",
           "name": "SnapshotNotifyUrl",
           "required": false,
@@ -8131,6 +8149,7 @@
         {
           "default": "",
           "document": "鉴黄回调 URL。",
+          "example": "无",
           "member": "string",
           "name": "PornCensorshipNotifyUrl",
           "required": false,
@@ -8139,6 +8158,7 @@
         {
           "default": "",
           "document": "回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。\n[事件消息通知](/document/product/267/32744)。",
+          "example": "adasdas23432423",
           "member": "string",
           "name": "CallbackKey",
           "required": false,

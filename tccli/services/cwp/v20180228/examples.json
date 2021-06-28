@@ -612,7 +612,7 @@
       {
         "document": "入侵检测-获取恶意请求列表",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeRiskDnsList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"RiskDnsList\": [\n            {\n                \"Url\": \"odysseusweb.ru\",\n                \"AccessCount\": 6,\n                \"ProcessName\": \"C:\\\\Program Files (x86)\\\\Internet Explorer\\\\iexplore.exe\",\n                \"ProcessMd5\": \"97cdf8b51cea8d0f296e6871e388979d\",\n                \"GlobalRuleId\": 0,\n                \"UserRuleId\": 0,\n                \"Status\": 0,\n                \"CreateTime\": \"2019-12-25 22:31:54\",\n                \"MergeTime\": \"2019-12-25 22:31:54\",\n                \"Quuid\": \"e761c2dc-bc72-40cd-b9ed-d233c86b1a8b\",\n                \"HostIp\": \"2402:4e00:1010:5401:0:8f51:5190:3bfa\",\n                \"Alias\": \"ipv6_windows_test\",\n                \"Description\": \"\",\n                \"Uuid\": \"e761c2dc-bc72-40cd-b9ed-d233c86b1a8\",\n                \"Pid\": 1,\n                \"Id\": 1,\n                \"CmdLine\": \"xx\",\n                \"Reference\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 20\n    }\n}",
         "title": "获取恶意请求列表"
       }
     ],

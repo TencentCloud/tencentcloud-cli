@@ -789,7 +789,7 @@
     "ModifyLiveCallbackTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveCallbackTemplate\r\n&TemplateId=1000\r\n&TemplateName=testName\r\n&Description=test\r\n&CallbackKey=adasdas23432423\r\n&StreamBeginNotifyUrl=http://www.yourdomain.com/api/notify?action=streamBegin\r\n&StreamEndNotifyUrl=http://www.yourdomain.com/api/notify?action=streamEnd\r\n&RecordNotifyUrl=http://www.yourdomain.com/api/notify?action=record\r\n&SnapshotNotifyUrl=http://www.yourdomain.com/api/notify?action=snapshot\r\n&PornCensorshipNotifyUrl=http://www.yourdomain.com/api/notify?action=porn\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveCallbackTemplate\n&TemplateId=1000\n&TemplateName=testName\n&Description=test\n&CallbackKey=adasdas23432423\n&StreamBeginNotifyUrl=http://www.yourdomain.com/api/notify?action=streamBegin\n&StreamEndNotifyUrl=http://www.yourdomain.com/api/notify?action=streamEnd\n&RecordNotifyUrl=http://www.yourdomain.com/api/notify?action=record\n&SnapshotNotifyUrl=http://www.yourdomain.com/api/notify?action=snapshot\n&PornCensorshipNotifyUrl=http://www.yourdomain.com/api/notify?action=porn\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

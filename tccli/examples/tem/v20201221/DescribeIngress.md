@@ -15,24 +15,28 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "81f74023-563c-437d-abf7-8139449ef178",
         "Result": {
-            "ClusterId": "cls-9lxt9ic2",
-            "NamespaceId": null,
-            "EksNamespace": "default",
-            "AddressIPVersion": "IPV4",
-            "ClbId": "clb-xxxx",
-            "Name": "test-ingress-1",
+            "Tls": [
+                {
+                    "CertificateId": "xx",
+                    "Hosts": [
+                        "xxx.com"
+                    ],
+                    "SecretName": "xx"
+                }
+            ],
+            "EksNamespace": "xx",
+            "Name": "xx",
             "Rules": [
                 {
-                    "Host": "",
-                    "Protocol": "https",
+                    "Protocol": "xx",
+                    "Host": "xx",
                     "Http": {
                         "Paths": [
                             {
-                                "Path": "/",
+                                "Path": "xx",
                                 "Backend": {
-                                    "ServiceName": "kubernetes",
+                                    "ServiceName": "xx",
                                     "ServicePort": 443
                                 }
                             }
@@ -40,15 +44,15 @@ Output:
                     }
                 }
             ],
-            "Tls": [
-                {
-                    "Hosts": [
-                        "xxx.com"
-                    ],
-                    "SecretName": "xxx"
-                }
-            ]
-        }
+            "ClbId": "xx",
+            "ClusterId": "xx",
+            "CreateTime": "xx",
+            "Vip": "xx",
+            "Mixed": true,
+            "AddressIPVersion": "xx",
+            "NamespaceId": "xx"
+        },
+        "RequestId": "xx"
     }
 }
 ```

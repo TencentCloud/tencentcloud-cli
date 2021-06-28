@@ -1,0 +1,1557 @@
+{
+  "actions": {
+    "AddUserToUserGroup": {
+      "document": "加入用户到用户组",
+      "input": "AddUserToUserGroupRequest",
+      "name": "加入用户到用户组",
+      "output": "AddUserToUserGroupResponse"
+    },
+    "CreateOrgNode": {
+      "document": "新建一个机构节点",
+      "input": "CreateOrgNodeRequest",
+      "name": "新建机构节点",
+      "output": "CreateOrgNodeResponse"
+    },
+    "CreateUser": {
+      "document": "新建一个用户",
+      "input": "CreateUserRequest",
+      "name": "新建用户",
+      "output": "CreateUserResponse"
+    },
+    "CreateUserGroup": {
+      "document": "新建用户组",
+      "input": "CreateUserGroupRequest",
+      "name": "新建用户组",
+      "output": "CreateUserGroupResponse"
+    },
+    "DecribePublicKey": {
+      "document": "获取JWT公钥信息",
+      "input": "DecribePublicKeyRequest",
+      "name": "获取JWT公钥",
+      "output": "DecribePublicKeyResponse"
+    },
+    "DeleteOrgNode": {
+      "document": "删除一个机构节点",
+      "input": "DeleteOrgNodeRequest",
+      "name": "删除机构节点",
+      "output": "DeleteOrgNodeResponse"
+    },
+    "DeleteUser": {
+      "document": "通过用户名或用户 id 删除用户。",
+      "input": "DeleteUserRequest",
+      "name": "删除用户",
+      "output": "DeleteUserResponse"
+    },
+    "DeleteUserGroup": {
+      "document": "删除一个用户组",
+      "input": "DeleteUserGroupRequest",
+      "name": "删除用户组",
+      "output": "DeleteUserGroupResponse"
+    },
+    "DescribeApplication": {
+      "document": "获取一个应用的信息。",
+      "input": "DescribeApplicationRequest",
+      "name": "获取应用信息",
+      "output": "DescribeApplicationResponse"
+    },
+    "DescribeOrgNode": {
+      "document": "根据机构节点ID读取机构节点信息",
+      "input": "DescribeOrgNodeRequest",
+      "name": "读取机构节点信息",
+      "output": "DescribeOrgNodeResponse"
+    },
+    "DescribeUserGroup": {
+      "document": "获取用户组信息",
+      "input": "DescribeUserGroupRequest",
+      "name": "获取用户组信息",
+      "output": "DescribeUserGroupResponse"
+    },
+    "DescribeUserInfo": {
+      "document": "通过用户名或用户 id 搜索用户",
+      "input": "DescribeUserInfoRequest",
+      "name": "获取用户信息",
+      "output": "DescribeUserInfoResponse"
+    },
+    "ListAuthorizedApplicationsToOrgNode": {
+      "document": "通过机构节点ID获得被授权访问的应用列表。",
+      "input": "ListAuthorizedApplicationsToOrgNodeRequest",
+      "name": "获取机构节点被授权访问的应用列表",
+      "output": "ListAuthorizedApplicationsToOrgNodeResponse"
+    },
+    "ListAuthorizedApplicationsToUser": {
+      "document": "通过用户ID获得被授权访问的应用列表。",
+      "input": "ListAuthorizedApplicationsToUserRequest",
+      "name": "获取用户被授权访问的应用列表",
+      "output": "ListAuthorizedApplicationsToUserResponse"
+    },
+    "ListAuthorizedApplicationsToUserGroup": {
+      "document": "通过用户组ID获得被授权访问的应用列表。",
+      "input": "ListAuthorizedApplicationsToUserGroupRequest",
+      "name": "获取用户组被授权访问的应用列表",
+      "output": "ListAuthorizedApplicationsToUserGroupResponse"
+    },
+    "ListUserGroupsOfUser": {
+      "document": "获取用户所在的用户组列表",
+      "input": "ListUserGroupsOfUserRequest",
+      "name": "获取用户所在的用户组列表",
+      "output": "ListUserGroupsOfUserResponse"
+    },
+    "ListUsersInOrgNode": {
+      "document": "根据机构节点ID读取节点下用户",
+      "input": "ListUsersInOrgNodeRequest",
+      "name": "读取节点下用户",
+      "output": "ListUsersInOrgNodeResponse"
+    },
+    "ListUsersInUserGroup": {
+      "document": "获取用户组中的用户列表",
+      "input": "ListUsersInUserGroupRequest",
+      "name": "获取用户组中的用户列表",
+      "output": "ListUsersInUserGroupResponse"
+    },
+    "RemoveUserFromUserGroup": {
+      "document": "从用户组中移除用户",
+      "input": "RemoveUserFromUserGroupRequest",
+      "name": "从用户组中移除用户",
+      "output": "RemoveUserFromUserGroupResponse"
+    },
+    "UpdateOrgNode": {
+      "document": "新建一个机构节点，",
+      "input": "UpdateOrgNodeRequest",
+      "name": "更新机构节点",
+      "output": "UpdateOrgNodeResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-04-20",
+    "api_brief": "数字身份管控平台（员工版）（Identity and Access Management B2E Version，以下简称 EIAM） Rest API 是为IDAM产品的合作方开发者接入并访问产品中用户管理管理、权限管理与信任规则等提供的一组工具，是访问数字身份管控平台 SaaS 服务的入口。合作伙伴可以通过数字身份管控平台 API 进行二次开发，例如新建用户，关联用户与账号，授予应用访问权限等。\n\n|术语 |全称 |中文 |说明 |\n| ------ | ------ | ------ |\n| OrgNode |OrgNode|机构节点| EIAM产品下创建的机构。 |\n| UserGroup |User Group| 用户组|EIAM产品下创建的用户组。\n| User |User |用户|EIAM产品下创建的用户。\n\n\t\n\t\n\t\n\t\n\t\n\t\n\t- Limit 和 Offset\n>用来控制分页的参数：Limit 为单次返回的最多条目数量；Offset 为偏移量。当相应结果是列表形式时，如果数量超过了 Limit 所限定的值，那么只返回 Limit 个值。\n举例来说，参数 Offset=0&amp;Limit=20 返回第 0 到 19 项，Offset=20&amp;Limit=20 返回第 20 到 39 项，Offset=40&amp;Limit=20 返回第 40 到 59 项；以此类推。\n\t\n\t- Ids.N\n>同时输入多个参数的格式。当遇到形如这样的格式时，那么该输入参数可以同时传多个。例如：\nGET 请求或者 POST x-www-form-urlencoded 请求：Ids.0=example-8e5c15b6&amp;Ids.1=example-709dd13f&amp;Ids.2=example-ead6be46\n以此类推（以下标 0 开始）。\nPOST json 请求：{\"Ids\": [\"example-8e5c15b6\", \"example-709dd13f\", \"example-ead6be46\"]}",
+    "serviceNameCN": "数字身份管控平台（员工版）",
+    "serviceShortName": "eiam"
+  },
+  "objects": {
+    "AddUserToUserGroupRequest": {
+      "document": "AddUserToUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "加入用户组的用户ID列表。",
+          "example": "id",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户组ID，是用户组的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserToUserGroupResponse": {
+      "document": "AddUserToUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplicationAuthorizationInfo": {
+      "document": "应用信息列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户在被授权应用下对应的账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationAccounts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID，是应用的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "展示用户所在的用户组、机构节点拥有该应用的访问权限的ID信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InheritedForm",
+          "name": "InheritedForm",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateOrgNodeRequest": {
+      "document": "CreateOrgNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机构节点名称，长度限制：64个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "父机构节点ID，如果为空则默认创建在机构根节点下。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentOrgNodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构节点描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomizedOrgNodeId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrgNodeResponse": {
+      "document": "CreateOrgNode返回参数结构体",
+      "members": [
+        {
+          "document": "机构节点ID，是机构节点的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupRequest": {
+      "document": "CreateUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "昵称，长度限制：64个字符。 DisplayName是唯一的。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户备注，长度限制：512个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupResponse": {
+      "document": "CreateUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "用户组ID，是用户组的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，长度限制：64个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户密码， 需要符合密码策略的配置。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "昵称，长度限制：64个字符。 默认与用户名相同。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户备注，长度限制：512个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户所属用户组ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户手机号。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户所属组织机构唯一ID。如果为空，默认为在根节点下创建用户。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户过期时间，遵循 ISO 8601 标准。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpirationTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户邮箱。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "密码是否需要重置，为空默认为false不需要重置密码。",
+          "example": "无",
+          "member": "bool",
+          "name": "PwdNeedReset",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "document": "返回的新创建的用户ID，是该用户的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DecribePublicKeyRequest": {
+      "document": "DecribePublicKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID，是应用的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DecribePublicKeyResponse": {
+      "document": "DecribePublicKey返回参数结构体",
+      "members": [
+        {
+          "document": "jwt验证签名所用的公钥信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "jwt的密钥id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用ID，是应用的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrgNodeRequest": {
+      "document": "DeleteOrgNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机构节点ID，是机构节点的全局唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrgNodeResponse": {
+      "document": "DeleteOrgNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupRequest": {
+      "document": "DeleteUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID，是用户组的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupResponse": {
+      "document": "DeleteUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，长度限制：32个字符。 Username 和 UserId 需选择一个作为搜索条件；如两个条件同时使用则默认使用Username作为搜索条件。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 id。 Username 和 UserId 需选择一个作为搜索条件；如两个条件同时使用则默认使用Username作为搜索条件。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationRequest": {
+      "document": "DescribeApplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用id，是应用的全局唯一标识，与ClientId参数不能同时为空。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端id，与ApplicationId参数不能同时为空。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationResponse": {
+      "document": "DescribeApplication返回参数结构体",
+      "members": [
+        {
+          "document": "密钥id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用展示名称，长度限制：64个字符。 默认与应用名字相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用最后修改时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastModifiedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "客户端id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用类型，即创建应用时所选择的应用模版类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用id，是应用的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "令牌有效时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TokenExpired",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "客户端secret。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientSecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "公钥信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "授权地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizeUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrgNodeRequest": {
+      "document": "DescribeOrgNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机构节点ID，是机构节点全局唯一标识，长度限制：64个字符。如果为空默认读取机构根节点信息。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否读取其子节点信息。当读取层数为空或0时，默认仅读取当前机构节点信息。当读取层数为1时，读取本机构节点以及其第一层子节点信息。",
+          "example": "无",
+          "member": "bool",
+          "name": "IncludeOrgNodeChildInfo",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrgNodeResponse": {
+      "document": "DescribeOrgNode返回参数结构体",
+      "members": [
+        {
+          "document": "机构节点展示名称，长度限制：64个字符。 默认与机构名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机构节点最后修改时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastModifiedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机构节点外部ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "CustomizedOrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前机构节点的父节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "ParentOrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机构节点ID，是机构节点的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机构节点创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前机构节点下的子节点列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgNodeChildInfo",
+          "name": "OrgNodeChildInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupRequest": {
+      "document": "DescribeUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID，是用户组的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupResponse": {
+      "document": "DescribeUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "昵称，长度限制：64个字符。 DisplayName不唯一。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户备注，长度限制：512个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户组ID，是用户组的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoRequest": {
+      "document": "DescribeUserInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，长度限制：64个字符。 Username 和 UserId 需至少一个不为空；都不为空时优先使用 Username。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 id，长度限制：64个字符。 Username 和 UserId 需至少一个不为空；都不为空时优先使用 Username。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoResponse": {
+      "document": "DescribeUserInfo返回参数结构体",
+      "members": [
+        {
+          "document": "用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户状态，取值 NORMAL （正常）、FREEZE （已冻结）、LOCKED （已锁定）或 NOT_ENABLED （未启用）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户所属用户组 id 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户 id，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户邮箱。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户手机号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户所属组织机构 Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户过期时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpirationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户激活时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActivationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InheritedForm": {
+      "document": "应用信息列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所在的用户组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户所在的机构节点ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListAuthorizedApplicationsToOrgNodeRequest": {
+      "document": "ListAuthorizedApplicationsToOrgNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机构节点 Id 。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAuthorizedApplicationsToOrgNodeResponse": {
+      "document": "ListAuthorizedApplicationsToOrgNode返回参数结构体",
+      "members": [
+        {
+          "document": "机构节点拥有访问权限的应用 id 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "ApplicationIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAuthorizedApplicationsToUserGroupRequest": {
+      "document": "ListAuthorizedApplicationsToUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组 Id 。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAuthorizedApplicationsToUserGroupResponse": {
+      "document": "ListAuthorizedApplicationsToUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "用户组拥有访问权限的应用 id 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "ApplicationIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAuthorizedApplicationsToUserRequest": {
+      "document": "ListAuthorizedApplicationsToUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户 ID。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询范围是否包括用户关联的用户组、组织机构的应用访问权限。默认为不查询 。传0表示不查询该范围，传1表示应用查询该范围。",
+          "example": "无",
+          "member": "bool",
+          "name": "IncludeInheritedAuthorizations",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAuthorizedApplicationsToUserResponse": {
+      "document": "ListAuthorizedApplicationsToUser返回参数结构体",
+      "members": [
+        {
+          "document": "用户拥有访问权限的应用信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationAuthorizationInfo",
+          "name": "ApplicationAuthorizationInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserGroupsOfUserRequest": {
+      "document": "ListUserGroupsOfUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID，是用户的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserGroupsOfUserResponse": {
+      "document": "ListUserGroupsOfUser返回参数结构体",
+      "members": [
+        {
+          "document": "用户所属的用户组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户ID，是用户的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersInOrgNodeRequest": {
+      "document": "ListUsersInOrgNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机构节点ID，是机构节点全局唯一标识，长度限制：64个字符。如果为空默认读取机构根节点下用户信息。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "限制读取子节点信息层数。当读取层数为空或0时，默认仅读取当前机构节点信息。当读取层数为1时，读取本机构节点以及其第一层子节点信息。",
+          "example": "无",
+          "member": "bool",
+          "name": "IncludeOrgNodeChildInfo",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersInOrgNodeResponse": {
+      "document": "ListUsersInOrgNode返回参数结构体",
+      "members": [
+        {
+          "document": "机构子节点下的用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgNodeChildUserInfo",
+          "name": "OrgNodeChildUserInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机构ID，是机构节点全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前机构节点下的用户总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalUserNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersInUserGroupRequest": {
+      "document": "ListUsersInUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID，是用户组的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersInUserGroupResponse": {
+      "document": "ListUsersInUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "用户组ID，是用户组的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回的用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回的用户信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrgNodeChildInfo": {
+      "document": "当前机构节点下的子节点列表",
+      "members": [
+        {
+          "default": "",
+          "document": "机构节点展示名称，长度限制：64个字符。 默认与机构名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构节点最后修改时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "LastModifiedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户自定义可选填的机构节点对外ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "CustomizedOrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前机构节点的父节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "ParentOrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构节点ID，是机构节点的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "DataSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构节点创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OrgNodeChildUserInfo": {
+      "document": "机构子节点下的用户信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "机构ID，是机构节点全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前机构节点下的用户总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalUserNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveUserFromUserGroupRequest": {
+      "document": "RemoveUserFromUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要加入用户组的用户ID列表。",
+          "example": "id",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户组ID，是用户组的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveUserFromUserGroupResponse": {
+      "document": "RemoveUserFromUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrgNodeRequest": {
+      "document": "UpdateOrgNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机构节点ID，是机构节点的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构节点名称，长度限制：64个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构节点描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。",
+          "example": "id",
+          "member": "string",
+          "name": "CustomizedOrgNodeId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrgNodeResponse": {
+      "document": "UpdateOrgNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserInfo": {
+      "document": "用户信息列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

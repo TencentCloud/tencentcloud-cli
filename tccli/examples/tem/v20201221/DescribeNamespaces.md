@@ -21,6 +21,7 @@ Output:
                     "CreateDate": "xx",
                     "NamespaceName": "xx",
                     "Region": "xx",
+                    "EnableTswTraceService": true,
                     "TcbEnvStatus": "xx",
                     "ServiceNum": 0,
                     "RunInstancesNum": 0,

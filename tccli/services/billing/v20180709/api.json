@@ -2760,6 +2760,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2768,6 +2769,7 @@
         {
           "default": "",
           "document": "数量，最大值为1000",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2776,6 +2778,7 @@
         {
           "default": "",
           "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
+          "example": "byPayTime",
           "member": "string",
           "name": "PeriodType",
           "required": true,
@@ -2784,6 +2787,7 @@
         {
           "default": "",
           "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
+          "example": "2018-08",
           "member": "string",
           "name": "Month",
           "required": true,
@@ -2792,6 +2796,7 @@
         {
           "default": "",
           "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "example": "无",
           "member": "int64",
           "name": "NeedRecordNum",
           "required": false,
@@ -2800,8 +2805,27 @@
         {
           "default": "",
           "document": "查询交易类型。如 按量计费日结，按量计费小时结 等",
+          "example": "按量计费扣费",
           "member": "string",
           "name": "ActionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定资源信息",
+          "example": "ins-1op7g2iz",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式 prePay/postPay",
+          "example": "prePay",
+          "member": "string",
+          "name": "PayMode",
           "required": false,
           "type": "string"
         }
@@ -2813,15 +2837,19 @@
       "members": [
         {
           "document": "资源汇总列表",
+          "example": "无",
           "member": "BillResourceSummary",
           "name": "ResourceSummarySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "资源汇总列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "103",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

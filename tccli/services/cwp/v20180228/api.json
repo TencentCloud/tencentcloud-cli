@@ -6117,6 +6117,24 @@
       "document": "DescribeRiskDnsList返回参数结构体",
       "members": [
         {
+          "document": "恶意请求列表数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "RiskDnsList",
+          "name": "RiskDnsList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -11124,6 +11142,212 @@
           "name": "Hostip",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RiskDnsList": {
+      "document": "恶意请求列表",
+      "members": [
+        {
+          "default": "",
+          "document": "对外访问域名",
+          "example": "re.r3r3.org",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问次数",
+          "example": "22",
+          "member": "uint64",
+          "name": "AccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程名",
+          "example": "pidname",
+          "member": "string",
+          "name": "ProcessName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程MD5",
+          "example": "4fwraaw32f",
+          "member": "string",
+          "name": "ProcessMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为全局规则，0否，1是",
+          "example": "22",
+          "member": "uint64",
+          "name": "GlobalRuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户规则id",
+          "example": "12",
+          "member": "uint64",
+          "name": "UserRuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态；0-待处理，2-已加白，3-非信任状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次访问时间",
+          "example": "2021-04-26 15:19:04",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近访问时间",
+          "example": "2021-04-26 15:19:04",
+          "member": "string",
+          "name": "MergeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "唯一 Quuid",
+          "example": "erwfr3frsaggrw3",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机ip",
+          "example": "123.22.3.1",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "别名",
+          "example": "别名",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "唯一ID",
+          "example": "153",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考",
+          "example": "http://www.vxjump.net/files/virus_analysis/virut%20botnet%20anal",
+          "member": "string",
+          "name": "Reference",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令行",
+          "example": "cmd",
+          "member": "string",
+          "name": "CmdLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程号",
+          "example": "33",
+          "member": "uint64",
+          "name": "Pid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "唯一UUID",
+          "example": "124jygrq33",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建议方案",
+          "example": "建议方案",
+          "member": "string",
+          "name": "SuggestScheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签特性",
+          "example": "[\"vueir\",\"mle\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

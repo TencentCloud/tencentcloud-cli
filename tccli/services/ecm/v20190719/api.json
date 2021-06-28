@@ -3388,7 +3388,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件，每次请求的Filters的上限为10，详细的过滤条件如下：\nimage-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤\nimage-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\nPRIVATE_IMAGE: 私有镜像 (本帐户创建的镜像) \nPUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\ninstance-type -String - 是否必填: 否 - (过滤条件) 按机型过滤支持的镜像",
+          "document": "过滤条件，每次请求的Filters的上限为10，详细的过滤条件如下：\nimage-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤\nimage-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\nPRIVATE_IMAGE: 私有镜像 (本帐户创建的镜像) \nPUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\ninstance-type -String - 是否必填: 否 - (过滤条件) 按机型过滤支持的镜像\nimage-name - String - 是否必填：否 - (过滤条件) 按镜像的名称模糊匹配，只能提供一个值\nimage-os - String - 是否必填：否 - (过滤条件) 按镜像系统的名称模糊匹配，只能提供一个值",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5465,6 +5465,7 @@
         {
           "default": "",
           "document": "镜像ID",
+          "example": "无",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -5474,6 +5475,7 @@
         {
           "default": "",
           "document": "镜像名称",
+          "example": "无",
           "member": "string",
           "name": "ImageName",
           "required": true,
@@ -5483,6 +5485,7 @@
         {
           "default": "",
           "document": "镜像状态",
+          "example": "无",
           "member": "string",
           "name": "ImageState",
           "required": true,
@@ -5492,6 +5495,7 @@
         {
           "default": "",
           "document": "镜像类型",
+          "example": "无",
           "member": "string",
           "name": "ImageType",
           "required": true,
@@ -5501,6 +5505,7 @@
         {
           "default": "",
           "document": "操作系统名称",
+          "example": "无",
           "member": "string",
           "name": "ImageOsName",
           "required": true,
@@ -5510,6 +5515,7 @@
         {
           "default": "",
           "document": "镜像描述",
+          "example": "无",
           "member": "string",
           "name": "ImageDescription",
           "required": true,
@@ -5519,6 +5525,7 @@
         {
           "default": "",
           "document": "镜像导入时间",
+          "example": "无",
           "member": "string",
           "name": "ImageCreateTime",
           "required": true,
@@ -5528,6 +5535,7 @@
         {
           "default": "",
           "document": "操作系统位数",
+          "example": "无",
           "member": "string",
           "name": "Architecture",
           "required": true,
@@ -5537,6 +5545,7 @@
         {
           "default": "",
           "document": "操作系统类型",
+          "example": "无",
           "member": "string",
           "name": "OsType",
           "required": true,
@@ -5546,6 +5555,7 @@
         {
           "default": "",
           "document": "操作系统版本",
+          "example": "无",
           "member": "string",
           "name": "OsVersion",
           "required": true,
@@ -5555,6 +5565,7 @@
         {
           "default": "",
           "document": "操作系统平台",
+          "example": "无",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -5564,6 +5575,7 @@
         {
           "default": "",
           "document": "镜像所有者",
+          "example": "无",
           "member": "int64",
           "name": "ImageOwner",
           "required": true,
@@ -5573,6 +5585,7 @@
         {
           "default": "",
           "document": "镜像大小。单位：GB",
+          "example": "无",
           "member": "int64",
           "name": "ImageSize",
           "required": true,
@@ -5582,6 +5595,7 @@
         {
           "default": "",
           "document": "镜像来源信息",
+          "example": "无",
           "member": "SrcImage",
           "name": "SrcImage",
           "required": true,
@@ -5591,6 +5605,7 @@
         {
           "default": "",
           "document": "镜像来源类型",
+          "example": "无",
           "member": "string",
           "name": "ImageSource",
           "required": true,
@@ -5600,6 +5615,7 @@
         {
           "default": "",
           "document": "中间态和失败时候的任务ID",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,

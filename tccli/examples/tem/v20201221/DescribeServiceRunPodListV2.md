@@ -25,7 +25,9 @@ Output:
                 {
                     "Webshell": "xx",
                     "Status": "xx",
+                    "Zone": "xx",
                     "PodId": "xx",
+                    "DeployVersion": "xx",
                     "PodIp": "xx",
                     "CreateTime": "xx"
                 }
