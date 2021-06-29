@@ -11,17 +11,18 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "Connectors": [
             {
-                "Product": "xx",
-                "DisplayName": "xx",
-                "Company": "xx",
-                "ConnectorName": "xx",
-                "CreateTime": 0
+                "Company": "",
+                "ConnectorName": "tencent-lexiang",
+                "ConnectorVersion": "1.0.0",
+                "CreateTime": 1621684293,
+                "DisplayName": "腾讯乐享",
+                "Product": ""
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "s1621939791738929666",
+        "TotalCount": 1
     }
 }
 ```

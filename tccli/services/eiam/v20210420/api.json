@@ -108,6 +108,12 @@
       "name": "获取用户组中的用户列表",
       "output": "ListUsersInUserGroupResponse"
     },
+    "ModifyUserInfo": {
+      "document": "通过用户名或用户 id 冻结用户",
+      "input": "ModifyUserInfoRequest",
+      "name": "修改用户",
+      "output": "ModifyUserInfoResponse"
+    },
     "RemoveUserFromUserGroup": {
       "document": "从用户组中移除用户",
       "input": "RemoveUserFromUserGroupRequest",
@@ -1315,6 +1321,114 @@
           "type": "int",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserInfoRequest": {
+      "document": "ModifyUserInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，长度限制：32个字符。 Username 和 UserId 需选择一个作为搜索条件；如两个条件同时使用则默认使用Username作为搜索条件。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "昵称，长度限制：64个字符。 默认与用户名相同。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户备注，长度限制：512个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户所属用户组ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户 id。 Username 和 UserId 需选择一个作为搜索条件；如两个条件同时使用则默认使用Username作为搜索条件。",
+          "example": "id",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户手机号。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户过期时间，遵循 ISO 8601 标准。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpirationTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户密码， 需要符合密码策略的配置。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户邮箱。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "密码是否需要重置，为空默认为false不需要重置密码。",
+          "example": "无",
+          "member": "bool",
+          "name": "PwdNeedReset",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserInfoResponse": {
+      "document": "ModifyUserInfo返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

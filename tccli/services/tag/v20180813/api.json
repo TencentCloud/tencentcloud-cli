@@ -744,6 +744,7 @@
         {
           "default": "",
           "document": "标签过滤数组",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": true,
@@ -752,6 +753,7 @@
         {
           "default": "",
           "document": "创建标签者uin",
+          "example": "1",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -760,6 +762,7 @@
         {
           "default": "",
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -768,6 +771,7 @@
         {
           "default": "",
           "document": "每页大小，默认为 15",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -776,6 +780,7 @@
         {
           "default": "",
           "document": "资源前缀",
+          "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
           "required": false,
@@ -784,6 +789,7 @@
         {
           "default": "",
           "document": "资源唯一标记",
+          "example": "ins-1234",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -792,6 +798,7 @@
         {
           "default": "",
           "document": "资源所在地域",
+          "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
           "required": false,
@@ -800,6 +807,7 @@
         {
           "default": "",
           "document": "业务类型",
+          "example": "cvm",
           "member": "string",
           "name": "ServiceType",
           "required": false,
@@ -813,29 +821,37 @@
       "members": [
         {
           "document": "结果总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "数据位移偏量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "资源标签",
+          "example": "无",
           "member": "ResourceTag",
           "name": "Rows",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

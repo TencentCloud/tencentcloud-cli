@@ -72,6 +72,14 @@
         "title": "客户列表"
       }
     ],
+    "QueryExternalUserMappingInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryExternalUserMappingInfo\n<公共请求参数>\n\n{\n    \"CorpExternalUserIdList\": [\n        \"wmQIM2CwAAywHqH07voRw9aacKXf09eQ\",\n        \"wmAA2CCwAAywHqH07voRw9aacAFEewf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExternalUserIdMapping\": [\n            {\n                \"CorpExternalUserId\": \"wmabc2CAAATGwpQTxuU1IaaaiOFH2cXA\",\n                \"ExternalUserId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "外部联系人转换接口"
+      }
+    ],
     "QueryMiniAppCodeList": [
       {
         "document": "",

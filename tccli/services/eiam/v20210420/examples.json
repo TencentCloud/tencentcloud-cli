@@ -144,6 +144,14 @@
         "title": "请求示例"
       }
     ],
+    "ModifyUserInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserInfo\n<公共请求参数>\n\n{\n    \"DisplayName\": \"修改用户\",\n    \"UserId\": \"3945dcb0-e433-4fd0-a69b-b5074abe3cbd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b2d3828-82ec-483c-b8cc-9e5f2da05905\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "RemoveUserFromUserGroup": [
       {
         "document": "",

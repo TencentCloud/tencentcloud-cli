@@ -16,12 +16,17 @@ Output:
     "Response": {
         "Operations": [
             {
-                "OperationName": "xx",
-                "DisplayName": "xx",
-                "IsTrigger": true
+                "DisplayName": "更新成员",
+                "IsTrigger": false,
+                "OperationName": "update-user"
+            },
+            {
+                "DisplayName": "删除成员",
+                "IsTrigger": false,
+                "OperationName": "resign-user"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "s1621939905452658979"
     }
 }
 ```

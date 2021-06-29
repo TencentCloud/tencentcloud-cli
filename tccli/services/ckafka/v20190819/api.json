@@ -4423,6 +4423,7 @@
         {
           "default": "",
           "document": "zone的id",
+          "example": "100001",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -4432,6 +4433,7 @@
         {
           "default": "",
           "document": "是否内部APP",
+          "example": "1",
           "member": "int64",
           "name": "IsInternalApp",
           "required": true,
@@ -4441,6 +4443,7 @@
         {
           "default": "",
           "document": "app id",
+          "example": "1231312",
           "member": "int64",
           "name": "AppId",
           "required": true,
@@ -4450,6 +4453,7 @@
         {
           "default": "",
           "document": "标识",
+          "example": "1",
           "member": "bool",
           "name": "Flag",
           "required": true,
@@ -4459,6 +4463,7 @@
         {
           "default": "",
           "document": "zone名称",
+          "example": "一区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -4468,6 +4473,7 @@
         {
           "default": "",
           "document": "zone状态",
+          "example": "1",
           "member": "int64",
           "name": "ZoneStatus",
           "required": true,
@@ -4477,6 +4483,7 @@
         {
           "default": "",
           "document": "额外标识",
+          "example": "1",
           "member": "string",
           "name": "Exflag",
           "required": true,
@@ -4486,6 +4493,7 @@
         {
           "default": "",
           "document": "json对象，key为机型，value true为售罄，false为未售罄",
+          "example": "1",
           "member": "string",
           "name": "SoldOut",
           "required": true,
