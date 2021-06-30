@@ -3237,6 +3237,7 @@
         {
           "default": "",
           "document": "服务唯一 ID。",
+          "example": "service-19c5fnhy",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -3245,6 +3246,7 @@
         {
           "default": "",
           "document": "服务绑定的自定义域名。",
+          "example": "xxxxxxx",
           "member": "string",
           "name": "SubDomain",
           "required": true,
@@ -3253,6 +3255,7 @@
         {
           "default": "",
           "document": "待删除映射的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。",
+          "example": "test",
           "member": "string",
           "name": "Environment",
           "required": true,
@@ -3266,8 +3269,10 @@
       "members": [
         {
           "document": "删除自定义域名的路径映射操作是否成功。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4749,6 +4754,7 @@
         {
           "default": "",
           "document": "服务唯一 ID。",
+          "example": "service-19c5fnhy",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -4757,6 +4763,7 @@
         {
           "default": "",
           "document": "服务绑定的自定义域名。",
+          "example": "xxxxxx",
           "member": "string",
           "name": "SubDomain",
           "required": true,
@@ -4770,8 +4777,10 @@
       "members": [
         {
           "document": "自定义路径映射列表。",
+          "example": "无",
           "member": "ServiceSubDomainMappings",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4790,6 +4799,7 @@
         {
           "default": "",
           "document": "服务唯一 ID。",
+          "example": "service-19c5fnhy",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -4798,6 +4808,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4806,6 +4817,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4819,8 +4831,10 @@
       "members": [
         {
           "document": "查询服务自定义域名列表。",
+          "example": "无",
           "member": "DomainSets",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6670,6 +6684,7 @@
         {
           "default": "",
           "document": "服务唯一 ID。",
+          "example": "service-19c5fnhy",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -6678,6 +6693,7 @@
         {
           "default": "",
           "document": "待修改路径映射的自定义的域名。",
+          "example": "xxxxxx",
           "member": "string",
           "name": "SubDomain",
           "required": true,
@@ -6686,6 +6702,7 @@
         {
           "default": "",
           "document": "是否修改为使用默认路径映射。为 true，表示使用默认路径映射，为 false，表示使用自定义路径映射。",
+          "example": "false",
           "member": "bool",
           "name": "IsDefaultMapping",
           "required": true,
@@ -6694,6 +6711,7 @@
         {
           "default": "",
           "document": "证书 ID，协议包含 HTTPS 的时候要传该字段。",
+          "example": "x x",
           "member": "string",
           "name": "CertificateId",
           "required": false,
@@ -6702,6 +6720,7 @@
         {
           "default": "",
           "document": "修改后的自定义域名协议类型。（http，https 或 http&https)",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -6710,6 +6729,7 @@
         {
           "default": "",
           "document": "修改后的路径映射列表。",
+          "example": "无",
           "member": "PathMapping",
           "name": "PathMappingSet",
           "required": false,
@@ -6718,6 +6738,7 @@
         {
           "default": "",
           "document": "网络类型 （'INNER' 或 'OUTER'）",
+          "example": "OUTER",
           "member": "string",
           "name": "NetType",
           "required": false,
@@ -6726,6 +6747,7 @@
         {
           "default": "",
           "document": "是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。",
+          "example": "x x",
           "member": "bool",
           "name": "IsForcedHttps",
           "required": false,
@@ -6739,8 +6761,10 @@
       "members": [
         {
           "document": "修改自定义域名操作是否成功。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8171,6 +8195,7 @@
         {
           "default": "",
           "document": "服务唯一 ID。",
+          "example": "service-19c5fnhy",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -8179,6 +8204,7 @@
         {
           "default": "",
           "document": "待解绑的自定义的域名。",
+          "example": "xxxxxxxx",
           "member": "string",
           "name": "SubDomain",
           "required": true,
@@ -8192,8 +8218,10 @@
       "members": [
         {
           "document": "解绑自定义域名操作是否成功。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },

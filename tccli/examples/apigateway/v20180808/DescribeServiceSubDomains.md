@@ -17,16 +17,18 @@ Output:
             "TotalCount": 1,
             "DomainSet": [
                 {
-                    "DomainName": "xxxxxxxxx",
                     "Status": 1,
-                    "CertificateId": "",
+                    "CertificateId": "xx",
+                    "Protocol": "xx",
                     "IsDefaultMapping": false,
-                    "Protocol": "http",
-                    "NetType": "OUTER"
+                    "DomainName": "xx",
+                    "IsForcedHttps": true,
+                    "NetType": "xx",
+                    "RegistrationStatus": true
                 }
             ]
         },
-        "RequestId": "01c56ec2-6a40-46bc-bdf6-8b273d4bec93"
+        "RequestId": "xx"
     }
 }
 ```

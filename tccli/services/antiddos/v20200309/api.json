@@ -3183,7 +3183,8 @@
       "members": [
         {
           "default": "",
-          "document": "IP线路类型，取值[\n\"bgp\"：BGP线路IP\n\"ctcc\"：电信线路IP\n\"cucc\"：联通线路IP\n\"cmcc\"：移动线路IP\n\"abroad\"：海外线路IP\n]",
+          "document": "IP线路类型，取值[\n\"bgp\"：BGP线路IP\n\"ctcc\"：电信线路IP\n\"cucc\"：联通线路IP\n\"cmcc\"：移动线路IP\n\"abroad\"：境外线路IP\n]",
+          "example": "bgp",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -3193,6 +3194,7 @@
         {
           "default": "",
           "document": "线路IP",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Eip",
           "required": true,

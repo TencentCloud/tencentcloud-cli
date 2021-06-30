@@ -131,7 +131,7 @@
     "DeleteServiceSubDomainMapping": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteServiceSubDomainMapping\r\n&ServiceId=service-19c5fnhy\r\n&SubDomain=xxxxxxx\r\n&Environment=test\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteServiceSubDomainMapping\n&ServiceId=service-19c5fnhy\n&SubDomain=xxxxxxx\n&Environment=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"1ab681ab-545a-4e71-91f1-8f1ea8ef13ad\"\n    }\n}",
         "title": "删除自定义域名的路径映射"
       }
@@ -305,7 +305,7 @@
     "DescribeServiceSubDomainMappings": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServiceSubDomainMappings\r\n&ServiceId=service-19c5fnhy\r\n&SubDomain=xxxxxx\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServiceSubDomainMappings\n&ServiceId=service-19c5fnhy\n&SubDomain=xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"IsDefaultMapping\": false,\n            \"PathMappingSet\": [\n                {\n                    \"Path\": \"/\",\n                    \"Environment\": \"release\"\n                }\n            ]\n        },\n        \"RequestId\": \"01c56ec2-6a40-46bc-bdf6-8b273d4bec93\"\n    }\n}",
         "title": "查询自定义域名的路径映射"
       }
@@ -313,8 +313,8 @@
     "DescribeServiceSubDomains": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServiceSubDomains\r\n&ServiceId=service-19c5fnhy\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"DomainSet\": [\n                {\n                    \"DomainName\": \"xxxxxxxxx\",\n                    \"Status\": 1,\n                    \"CertificateId\": \"\",\n                    \"IsDefaultMapping\": false,\n                    \"Protocol\": \"http\",\n                    \"NetType\": \"OUTER\"\n                }\n            ]\n        },\n        \"RequestId\": \"01c56ec2-6a40-46bc-bdf6-8b273d4bec93\"\n    }\n}",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServiceSubDomains\n&ServiceId=service-19c5fnhy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"DomainSet\": [\n                {\n                    \"Status\": 1,\n                    \"CertificateId\": \"xx\",\n                    \"Protocol\": \"xx\",\n                    \"IsDefaultMapping\": false,\n                    \"DomainName\": \"xx\",\n                    \"IsForcedHttps\": true,\n                    \"NetType\": \"xx\",\n                    \"RegistrationStatus\": true\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询服务自定义域名列表"
       }
     ],
@@ -505,7 +505,7 @@
     "UnBindSubDomain": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=UnBindSubDomain\r\n&ServiceId=service-19c5fnhy\r\n&SubDomain=xxxxxxxx\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=UnBindSubDomain\n&ServiceId=service-19c5fnhy\n&SubDomain=xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"b3197c48-53fb-46df-b721-df4424cf8be9\"\n    }\n}",
         "title": "解绑自定义域名"
       }
