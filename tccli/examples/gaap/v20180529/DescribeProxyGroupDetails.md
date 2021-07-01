@@ -17,6 +17,9 @@ Output:
         "ProxyGroupDetail": {
             "Status": 0,
             "Domain": null,
+            "ClientIPMethod": [
+                0
+            ],
             "ProxyNum": 0,
             "ProjectId": 0,
             "OwnerUin": "2186969362",
@@ -37,7 +40,8 @@ Output:
             "IsOldGroup": false,
             "CreateUin": "2202003302",
             "CreateTime": 1552978237,
-            "DnsDefaultIp": ""
+            "DnsDefaultIp": "",
+            "IPAddressVersion": "IPv6"
         }
     }
 }

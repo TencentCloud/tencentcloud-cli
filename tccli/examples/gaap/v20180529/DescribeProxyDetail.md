@@ -20,7 +20,7 @@ Output:
             },
             "RelatedGlobalDomains": [],
             "Version": "3.0",
-            "PolicyId": null,
+            "PolicyId": "",
             "Scalarable": 1,
             "Status": "RUNNING",
             "ProxyType": 100,
@@ -48,7 +48,9 @@ Output:
             "TagSet": [],
             "ProxyName": "p_weidzhao_test",
             "ModifyConfigTime": 1598417633,
-            "GroupId": null
+            "GroupId": "",
+            "ClientIPMethod": 1,
+            "IPAddressVersion": "IPv4"
         },
         "RequestId": "2a3ba5c4-aa37-4f01-825a-04140b4b25da"
     }

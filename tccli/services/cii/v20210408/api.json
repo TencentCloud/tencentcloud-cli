@@ -1,7 +1,7 @@
 {
   "actions": {
     "CreateStructureTask": {
-      "document": "基于提供的客户及保单信息，启动结构化识别任务。",
+      "document": "本接口(CreateStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。",
       "input": "CreateStructureTaskRequest",
       "name": "新建结构化任务",
       "output": "CreateStructureTaskResponse"
@@ -11,6 +11,12 @@
       "input": "DescribeStructCompareDataRequest",
       "name": "结构化对比查询",
       "output": "DescribeStructCompareDataResponse"
+    },
+    "DescribeStructureResult": {
+      "document": "本接口(DescribeStructureResult)用于查询结构化结果接口",
+      "input": "DescribeStructureResultRequest",
+      "name": "查询结构化结果接口",
+      "output": "DescribeStructureResultResponse"
     },
     "DescribeStructureTaskResult": {
       "document": "依据任务ID获取结构化结果接口。",
@@ -205,6 +211,15 @@
           "name": "InsuranceTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "回调地址，接收Post请求传送结果",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -213,7 +228,7 @@
       "document": "CreateStructureTask返回参数结构体",
       "members": [
         {
-          "document": "创建的主任务号",
+          "document": "创建的主任务号，用于查询结果",
           "example": "46313288149458944",
           "member": "string",
           "name": "MainTaskId",
@@ -383,6 +398,51 @@
       ],
       "type": "object"
     },
+    "DescribeStructureResultRequest": {
+      "document": "DescribeStructureResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建任务时返回的主任务ID",
+          "example": "Sjepg20lk7i9",
+          "member": "string",
+          "name": "MainTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStructureResultResponse": {
+      "document": "DescribeStructureResult返回参数结构体",
+      "members": [
+        {
+          "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结构化结果",
+          "example": "无",
+          "member": "StructureResultObject",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeStructureTaskResultRequest": {
       "document": "DescribeStructureTaskResult请求参数结构体",
       "members": [
@@ -493,6 +553,42 @@
           "example": "HealthReport",
           "member": "string",
           "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StructureResultObject": {
+      "document": "结构化结果",
+      "members": [
+        {
+          "default": "",
+          "document": "0表示正常返回",
+          "example": "0",
+          "member": "uint64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "报告类型",
+          "example": "HealthReport",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结构化结果",
+          "example": "无",
+          "member": "string",
+          "name": "StructureResult",
           "required": true,
           "type": "string",
           "value_allowed_null": false
