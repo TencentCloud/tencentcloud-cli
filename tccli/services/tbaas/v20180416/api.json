@@ -2192,6 +2192,7 @@
         {
           "default": "",
           "document": "模块名，固定字段：transaction",
+          "example": "transaction",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -2200,6 +2201,7 @@
         {
           "default": "",
           "document": "操作名，固定字段：query_txid",
+          "example": "query_txid",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -2208,6 +2210,7 @@
         {
           "default": "",
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "example": "251005746envnew",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2216,6 +2219,7 @@
         {
           "default": "",
           "document": "业务所属通道名称，可在通道详情或列表中获取",
+          "example": "ch042103",
           "member": "string",
           "name": "ChannelName",
           "required": true,
@@ -2224,6 +2228,7 @@
         {
           "default": "",
           "document": "执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称",
+          "example": "peer0.neworg02.envnew",
           "member": "string",
           "name": "PeerName",
           "required": true,
@@ -2232,6 +2237,7 @@
         {
           "default": "",
           "document": "执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称",
+          "example": "NewOrg02",
           "member": "string",
           "name": "PeerGroup",
           "required": true,
@@ -2240,6 +2246,7 @@
         {
           "default": "",
           "document": "交易ID",
+          "example": "280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c",
           "member": "string",
           "name": "TxId",
           "required": true,
@@ -2248,6 +2255,7 @@
         {
           "default": "",
           "document": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "example": "NewOrg02",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -2261,22 +2269,28 @@
       "members": [
         {
           "document": "交易执行状态码",
+          "example": "0",
           "member": "int64",
           "name": "TxValidationCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "交易执行消息",
+          "example": "VALID",
           "member": "string",
           "name": "TxValidationMsg",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "交易所在区块ID",
+          "example": "6",
           "member": "int64",
           "name": "BlockId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

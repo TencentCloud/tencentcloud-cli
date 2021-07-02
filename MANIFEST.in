@@ -133,6 +133,8 @@ include tccli/services/drm/v20181115/api.json
 include tccli/services/drm/v20181115/examples.json
 include tccli/services/ds/v20180523/api.json
 include tccli/services/ds/v20180523/examples.json
+include tccli/services/dtf/v20200506/api.json
+include tccli/services/dtf/v20200506/examples.json
 include tccli/services/dts/v20180330/api.json
 include tccli/services/dts/v20180330/examples.json
 include tccli/services/ecc/v20181213/api.json
