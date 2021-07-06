@@ -30,6 +30,12 @@
       "name": "创建个人版镜像版本清理策略",
       "output": "CreateImageLifecyclePersonalResponse"
     },
+    "CreateImmutableTagRules": {
+      "document": "创建镜像不可变规则",
+      "input": "CreateImmutableTagRulesRequest",
+      "name": "创建镜像不可变规则",
+      "output": "CreateImmutableTagRulesResponse"
+    },
     "CreateInstance": {
       "document": "创建实例",
       "input": "CreateInstanceRequest",
@@ -143,6 +149,12 @@
       "input": "DeleteImagePersonalRequest",
       "name": "删除个人版仓库tag",
       "output": "DeleteImagePersonalResponse"
+    },
+    "DeleteImmutableTagRules": {
+      "document": " 删除镜像不可变规则",
+      "input": "DeleteImmutableTagRulesRequest",
+      "name": "删除镜像不可变规则",
+      "output": "DeleteImmutableTagRulesResponse"
     },
     "DeleteInstance": {
       "document": "删除镜像仓库企业版实例",
@@ -275,6 +287,12 @@
       "input": "DescribeImagesRequest",
       "name": "查询容器镜像信息",
       "output": "DescribeImagesResponse"
+    },
+    "DescribeImmutableTagRules": {
+      "document": "列出镜像不可变规则",
+      "input": "DescribeImmutableTagRulesRequest",
+      "name": "列出镜像不可变规则",
+      "output": "DescribeImmutableTagRulesResponse"
     },
     "DescribeInstanceStatus": {
       "document": "查询实例当前状态以及过程信息",
@@ -443,6 +461,12 @@
       "input": "ModifyApplicationTriggerPersonalRequest",
       "name": "修改应用更新触发器",
       "output": "ModifyApplicationTriggerPersonalResponse"
+    },
+    "ModifyImmutableTagRules": {
+      "document": "更新镜像不可变规则",
+      "input": "ModifyImmutableTagRulesRequest",
+      "name": "更新镜像不可变规则",
+      "output": "ModifyImmutableTagRulesResponse"
     },
     "ModifyInstanceToken": {
       "document": "更新实例内指定长期访问凭证的启用状态",
@@ -876,6 +900,51 @@
     },
     "CreateImageLifecyclePersonalResponse": {
       "document": "CreateImageLifecyclePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImmutableTagRulesRequest": {
+      "document": "CreateImmutableTagRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "library",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则",
+          "example": "无",
+          "member": "ImmutableTagRule",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImmutableTagRulesResponse": {
+      "document": "CreateImmutableTagRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1712,6 +1781,51 @@
     },
     "DeleteImageResponse": {
       "document": "DeleteImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImmutableTagRulesRequest": {
+      "document": "DeleteImmutableTagRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "library",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则 Id",
+          "example": "123",
+          "member": "int64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImmutableTagRulesResponse": {
+      "document": "DeleteImmutableTagRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2772,6 +2886,60 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImmutableTagRulesRequest": {
+      "document": "DescribeImmutableTagRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImmutableTagRulesResponse": {
+      "document": "DescribeImmutableTagRules返回参数结构体",
+      "members": [
+        {
+          "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImmutableTagRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "未创建规则的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EmptyNs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则总量",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -4322,6 +4490,82 @@
       ],
       "usage": "both"
     },
+    "ImmutableTagRule": {
+      "document": "镜像 tag 不可变规则",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库匹配规则",
+          "example": "**",
+          "member": "string",
+          "name": "RepositoryPattern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Tag 匹配规则",
+          "example": "**",
+          "member": "string",
+          "name": "TagPattern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "repoMatches或repoExcludes",
+          "example": "repoMatches",
+          "member": "string",
+          "name": "RepositoryDecoration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "matches或excludes",
+          "example": "matches",
+          "member": "string",
+          "name": "TagDecoration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "禁用规则",
+          "example": "false",
+          "member": "bool",
+          "name": "Disabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则 Id",
+          "example": "123",
+          "member": "int64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "library",
+          "member": "string",
+          "name": "NsName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Limit": {
       "document": "共享镜像仓库用户配额",
       "members": [
@@ -4665,6 +4909,60 @@
     },
     "ModifyApplicationTriggerPersonalResponse": {
       "document": "ModifyApplicationTriggerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyImmutableTagRulesRequest": {
+      "document": "ModifyImmutableTagRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "library",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则 Id",
+          "example": "123",
+          "member": "int64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则",
+          "example": "无",
+          "member": "ImmutableTagRule",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyImmutableTagRulesResponse": {
+      "document": "ModifyImmutableTagRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

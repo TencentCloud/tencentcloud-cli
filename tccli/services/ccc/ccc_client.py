@@ -67,6 +67,33 @@ def doDescribeIMCdrs(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteStaff(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteStaffRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteStaff(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSkillGroupInfoList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -140,6 +167,33 @@ def doCreateStaff(args, parsed_globals):
     model = models.CreateStaffRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateStaff(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnbindStaffSkillGroupList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnbindStaffSkillGroupListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UnbindStaffSkillGroupList(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -283,6 +337,33 @@ def doDescribeTelCallInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doBindStaffSkillGroupList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BindStaffSkillGroupListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.BindStaffSkillGroupList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeTelCdr(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -323,14 +404,17 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DescribeChatMessages": doDescribeChatMessages,
     "DescribeIMCdrs": doDescribeIMCdrs,
+    "DeleteStaff": doDeleteStaff,
     "DescribeSkillGroupInfoList": doDescribeSkillGroupInfoList,
     "DescribeStaffInfoList": doDescribeStaffInfoList,
     "CreateStaff": doCreateStaff,
+    "UnbindStaffSkillGroupList": doUnbindStaffSkillGroupList,
     "DescribeTelSession": doDescribeTelSession,
     "CreateSDKLoginToken": doCreateSDKLoginToken,
     "DescribePSTNActiveSessionList": doDescribePSTNActiveSessionList,
     "DescribeSeatUserList": doDescribeSeatUserList,
     "DescribeTelCallInfo": doDescribeTelCallInfo,
+    "BindStaffSkillGroupList": doBindStaffSkillGroupList,
     "DescribeTelCdr": doDescribeTelCdr,
 
 }

@@ -388,6 +388,14 @@
         "title": "按小时后付费实例购买询价"
       }
     ],
+    "InquiryPriceTerminateInstances": [
+      {
+        "document": "本示例用于销毁一个实例的询价。",
+        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceTerminateInstances\n&InstanceIds.0=ins-rfmme2si\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75731c35-e2ad-4721-b4bc-8cdb6c2ad2a5\"\n    }\n}",
+        "title": "销毁指定ID的实例"
+      }
+    ],
     "ModifyDisasterRecoverGroupAttribute": [
       {
         "document": "修改分散置放群组属性",

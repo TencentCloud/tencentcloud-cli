@@ -40,6 +40,14 @@
         "title": "设置个人版仓库tag清理策略"
       }
     ],
+    "CreateImmutableTagRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImmutableTagRules\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"kofj\",\n    \"RegistryId\": \"tcr-mfoeec7x\",\n    \"Rule\": {\n        \"RepositoryDecoration\": \"repoMatches\",\n        \"RepositoryPattern\": \"**\",\n        \"TagPattern\": \"**\",\n        \"TagDecoration\": \"matches\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e60d9467-ceb5-4da3-9956-4a9f2d63d37e\"\n    }\n}",
+        "title": "新建规则"
+      }
+    ],
     "CreateInstance": [
       {
         "document": "",
@@ -196,6 +204,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DeleteImagePersonal\n&RepoName=dockerhub/test\n&Tag=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "个人版仓库删除tag"
+      }
+    ],
+    "DeleteImmutableTagRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImmutableTagRules\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"kofj\",\n    \"RegistryId\": \"tcr-mfoeec7x\",\n    \"RuleId\": 15\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e60d9467-ceb5-4da3-9956-4a9f2d63d37e\"\n    }\n}",
+        "title": "删除规则"
       }
     ],
     "DeleteInstance": [
@@ -372,6 +388,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeImages\n&RegistryId=tcr-okmj78\n&NamespaceName=team-01\n&RepositoryName=nginx\n&Limit=20\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fdc859a-00fb-4ae4-a989-42eb387c6683\",\n        \"ImageInfoList\": [\n            {\n                \"Digest\": \"sha256:ca30d8e9449eae19367f542aeb6e39764e94e7c34fca4277b9b7c77ba93eaa6c\",\n                \"ImageVersion\": \"2.0\",\n                \"Size\": 63923200,\n                \"UpdateTime\": \"2020-02-14T06:45:40.40753972Z\"\n            },\n            {\n                \"Digest\": \"sha256:0925d086715714114c1988f7c947db94064fd385e171a63c07730f1fa014e6f9\",\n                \"ImageVersion\": \"1.0\",\n                \"Size\": 26733036,\n                \"UpdateTime\": \"2020-02-14T06:45:40.40753972Z\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询容器镜像信息"
+      }
+    ],
+    "DescribeImmutableTagRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImmutableTagRules\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-mfoeec7x\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"TagDecoration\": \"matches\",\n                \"RuleId\": 19,\n                \"Disabled\": false,\n                \"RepositoryDecoration\": \"repoMatches\",\n                \"RepositoryPattern\": \"**\",\n                \"TagPattern\": \"**\",\n                \"NsName\": \"kofj\"\n            }\n        ],\n        \"EmptyNs\": [\n            \"library\"\n        ],\n        \"Total\": 3,\n        \"RequestId\": \"17eacd5a-b943-4e39-8a7a-3fb7b171c995\"\n    }\n}",
+        "title": "列出规则"
       }
     ],
     "DescribeInstanceStatus": [
@@ -596,6 +620,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyApplicationTriggerPersonal\r\n&RepoName=test/test123&TriggerName=testtrig&InvokeMethod=all&ClusterId=cls-xxxxxxxx&Namespace=default&WorkloadType=Deployment&WorkloadName=testdeploy&ContainerName=nginx&ClusterRegion=16&NewTriggerName=test2\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"26358c69-7254-41e8-8f4e-bb13836e4165\"\n    }\n}",
         "title": "修改应用更新触发器"
+      }
+    ],
+    "ModifyImmutableTagRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImmutableTagRules\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"kofj\",\n    \"RegistryId\": \"tcr-mfoeec7x\",\n    \"Rule\": {\n        \"RepositoryDecoration\": \"repoMatches\",\n        \"RepositoryPattern\": \"**\",\n        \"TagPattern\": \"**\",\n        \"TagDecoration\": \"matches\"\n    },\n    \"RuleId\": 19\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e60d9467-ceb5-4da3-9956-4a9f2d63d37e\"\n    }\n}",
+        "title": "更新规则"
       }
     ],
     "ModifyInstanceToken": [

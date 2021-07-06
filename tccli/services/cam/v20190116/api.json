@@ -270,6 +270,12 @@
       "name": "查询策略列表",
       "output": "ListPoliciesResponse"
     },
+    "ListPoliciesGrantingServiceAccess": {
+      "document": "获取所有已授权服务",
+      "input": "ListPoliciesGrantingServiceAccessRequest",
+      "name": "获取所有已授权服务",
+      "output": "ListPoliciesGrantingServiceAccessResponse"
+    },
     "ListPolicyVersions": {
       "document": "该接口（ListPolicyVersions）用于获取策略版本列表",
       "input": "ListPolicyVersionsRequest",
@@ -2794,6 +2800,140 @@
       ],
       "type": "object"
     },
+    "ListGrantServiceAccessActionNode": {
+      "document": "ListGrantServiceAccessAction节点",
+      "members": [
+        {
+          "default": "",
+          "document": "接口名",
+          "example": "DescribeInstances",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接口描述",
+          "example": "获取实例详情",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListGrantServiceAccessNode": {
+      "document": "用于ListPoliciesGrantingServiceAccess接口的List节点",
+      "members": [
+        {
+          "default": "",
+          "document": "服务",
+          "example": "无",
+          "member": "ListGrantServiceAccessService",
+          "name": "Service",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接口信息",
+          "example": "无",
+          "member": "ListGrantServiceAccessActionNode",
+          "name": "Action",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权的策略",
+          "example": "无",
+          "member": "ListGrantServiceAccessPolicy",
+          "name": "Policy",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListGrantServiceAccessPolicy": {
+      "document": "用于ListPoliciesGrantingServiceAccess接口的Policy节点",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "1",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名",
+          "example": "AdministratorAccess",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略类型: Custom自定义策略，Presetting预设策略",
+          "example": "Custom",
+          "member": "string",
+          "name": "PolicyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略描述",
+          "example": "全读写访问权限",
+          "member": "string",
+          "name": "PolicyDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListGrantServiceAccessService": {
+      "document": "用于ListPoliciesGrantingServiceAccess接口的Service节点",
+      "members": [
+        {
+          "default": "",
+          "document": "服务",
+          "example": "cvm",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务名",
+          "example": "云服务器",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ListGroupsForUserRequest": {
       "document": "ListGroupsForUser请求参数结构体",
       "members": [
@@ -2902,6 +3042,69 @@
           "document": "用户组数组信息。",
           "member": "GroupInfo",
           "name": "GroupInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPoliciesGrantingServiceAccessRequest": {
+      "document": "ListPoliciesGrantingServiceAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子账号uin，与RoleId、GroupId三选一必传",
+          "example": "1000000001",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "角色ID，与TargetUin、GroupId三选一必传",
+          "example": "4611000000000000",
+          "member": "uint64",
+          "name": "RoleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户组ID，与TargetUin、RoleId三选一必传",
+          "example": "10000",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务名，查看服务授权接口详情时需传该字段",
+          "example": "cam",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPoliciesGrantingServiceAccessResponse": {
+      "document": "ListPoliciesGrantingServiceAccess返回参数结构体",
+      "members": [
+        {
+          "document": "列表",
+          "example": "无",
+          "member": "ListGrantServiceAccessNode",
+          "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

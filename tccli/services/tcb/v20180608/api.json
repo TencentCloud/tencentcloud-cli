@@ -5416,6 +5416,15 @@
           "name": "OpenAccessTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否创建Path 0未传默认创建 1创建 2不创建",
+          "example": "无",
+          "member": "int64",
+          "name": "IsCreatePath",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

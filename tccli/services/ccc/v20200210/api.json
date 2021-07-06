@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BindStaffSkillGroupList": {
+      "document": "绑定坐席所属技能组",
+      "input": "BindStaffSkillGroupListRequest",
+      "name": "绑定坐席所属技能组",
+      "output": "BindStaffSkillGroupListResponse"
+    },
     "CreateSDKLoginToken": {
       "document": "创建 SDK 登录 Token。",
       "input": "CreateSDKLoginTokenRequest",
@@ -11,6 +17,12 @@
       "input": "CreateStaffRequest",
       "name": "创建客服账号",
       "output": "CreateStaffResponse"
+    },
+    "DeleteStaff": {
+      "document": "删除坐席信息",
+      "input": "DeleteStaffRequest",
+      "name": "删除坐席信息",
+      "output": "DeleteStaffResponse"
     },
     "DescribeChatMessages": {
       "document": "包括具体聊天内容",
@@ -25,7 +37,7 @@
       "output": "DescribeIMCdrsResponse"
     },
     "DescribePSTNActiveSessionList": {
-      "document": "获取 PSTN 活动会话列表。",
+      "document": "获取当前正在通话的会话列表",
       "input": "DescribePSTNActiveSessionListRequest",
       "name": "获取 PSTN 活动会话列表",
       "output": "DescribePSTNActiveSessionListResponse"
@@ -65,6 +77,12 @@
       "input": "DescribeTelSessionRequest",
       "name": "获取 PSTN 会话信息",
       "output": "DescribeTelSessionResponse"
+    },
+    "UnbindStaffSkillGroupList": {
+      "document": "解绑坐席所属技能组",
+      "input": "UnbindStaffSkillGroupListRequest",
+      "name": "解绑坐席所属技能组",
+      "output": "UnbindStaffSkillGroupListResponse"
     }
   },
   "metadata": {
@@ -74,6 +92,51 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "BindStaffSkillGroupListRequest": {
+      "document": "BindStaffSkillGroupList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "坐席邮箱",
+          "example": "staff1@xx.com",
+          "member": "string",
+          "name": "StaffEmail",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定技能组列表",
+          "example": "无",
+          "member": "int64",
+          "name": "SkillGroupList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStaffSkillGroupListResponse": {
+      "document": "BindStaffSkillGroupList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSDKLoginTokenRequest": {
       "document": "CreateSDKLoginToken请求参数结构体",
       "members": [
@@ -135,6 +198,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -143,6 +207,7 @@
         {
           "default": "",
           "document": "客服信息，个数不超过 10",
+          "example": "无",
           "member": "SeatUserInfo",
           "name": "Staffs",
           "required": true,
@@ -154,6 +219,60 @@
     "CreateStaffResponse": {
       "document": "CreateStaff返回参数结构体",
       "members": [
+        {
+          "document": "错误坐席列表及错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrStaffItem",
+          "name": "ErrorStaffList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStaffRequest": {
+      "document": "DeleteStaff请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "待删除客服邮箱列表",
+          "example": "无",
+          "member": "string",
+          "name": "StaffList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStaffResponse": {
+      "document": "DeleteStaff返回参数结构体",
+      "members": [
+        {
+          "document": "无法删除的状态为在线的客服列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OnlineStaffList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -337,6 +456,7 @@
         {
           "default": "",
           "document": "应用 ID",
+          "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -345,6 +465,7 @@
         {
           "default": "",
           "document": "数据偏移",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -353,6 +474,7 @@
         {
           "default": "",
           "document": "返回的数据条数，最大 25",
+          "example": "25",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -366,15 +488,19 @@
       "members": [
         {
           "document": "列表总条数",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "列表内容",
+          "example": "无",
           "member": "PSTNSessionInfo",
           "name": "Sessions",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -827,6 +953,42 @@
         }
       ],
       "type": "object"
+    },
+    "ErrStaffItem": {
+      "document": "批量添加客服时，返回出错客服的像个信息",
+      "members": [
+        {
+          "default": "",
+          "document": "坐席邮箱地址",
+          "example": "xxx@xxx.com",
+          "member": "string",
+          "name": "StaffEmail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码",
+          "example": "err",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误描述",
+          "example": "some error ",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "IMCdrInfo": {
       "document": "全媒体服务记录信息",
@@ -1906,6 +2068,51 @@
         }
       ],
       "usage": "out"
+    },
+    "UnbindStaffSkillGroupListRequest": {
+      "document": "UnbindStaffSkillGroupList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客服邮箱",
+          "example": "staff1@xx.com",
+          "member": "string",
+          "name": "StaffEmail",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解绑技能组列表",
+          "example": "无",
+          "member": "int64",
+          "name": "SkillGroupList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindStaffSkillGroupListResponse": {
+      "document": "UnbindStaffSkillGroupList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

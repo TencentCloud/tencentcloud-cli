@@ -177,7 +177,7 @@
     "DescribeZones": {
       "document": "查询地域下可用区",
       "input": "DescribeZonesRequest",
-      "name": "查询可用区",
+      "name": "查询可用区列表",
       "output": "DescribeZonesResponse"
     },
     "DisassociateInstancesKeyPairs": {
@@ -1286,6 +1286,15 @@
           "example": "无",
           "member": "Filter",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可用区列表。默认为全部可用区。",
+          "example": "无",
+          "member": "string",
+          "name": "Zones",
           "required": false,
           "type": "list"
         }
@@ -2863,6 +2872,16 @@
           "example": "无",
           "member": "string",
           "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
           "required": true,
           "type": "string",
           "value_allowed_null": false

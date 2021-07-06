@@ -264,6 +264,12 @@
       "name": "创建实例询价",
       "output": "InquiryPriceRunInstancesResponse"
     },
+    "InquiryPriceTerminateInstances": {
+      "document": "本接口 (InquiryPriceTerminateInstances) 用于退还实例询价。\n\n* 查询退还实例可以返还的费用。\n* 支持批量操作，每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定[错误码](#4.-.E9.94.99.E8.AF.AF.E7.A0.81)返回。",
+      "input": "InquiryPriceTerminateInstancesRequest",
+      "name": "退还实例询价",
+      "output": "InquiryPriceTerminateInstancesResponse"
+    },
     "ModifyDisasterRecoverGroupAttribute": {
       "document": "本接口 (ModifyDisasterRecoverGroupAttribute)用于修改[分散置放群组](https://cloud.tencent.com/document/product/213/15486)属性。",
       "input": "ModifyDisasterRecoverGroupAttributeRequest",
@@ -3493,6 +3499,33 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceTerminateInstancesRequest": {
+      "document": "InquiryPriceTerminateInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-rfmme2si\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceTerminateInstancesResponse": {
+      "document": "InquiryPriceTerminateInstances返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

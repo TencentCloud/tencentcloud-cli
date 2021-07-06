@@ -15,7 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6bb56a09-2787-40bc-80c5-dc6dab783eff"
+        "RequestId": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
+        "ErrorStaffList": null
     }
 }
 ```

@@ -310,6 +310,33 @@ def doManageImageLifecycleGlobalPersonal(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteImmutableTagRules(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteImmutableTagRulesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteImmutableTagRules(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteImagePersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1309,6 +1336,33 @@ def doModifyNamespace(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeImmutableTagRules(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeImmutableTagRulesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeImmutableTagRules(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateSecurityPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1444,6 +1498,33 @@ def doDescribeUserQuotaPersonal(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateImmutableTagRules(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateImmutableTagRulesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateImmutableTagRules(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeInstanceToken(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1490,6 +1571,33 @@ def doDownloadHelmChart(args, parsed_globals):
     model = models.DownloadHelmChartRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DownloadHelmChart(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyImmutableTagRules(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyImmutableTagRulesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyImmutableTagRules(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2065,7 +2173,7 @@ def doDescribeWebhookTrigger(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInternalEndpoints(args, parsed_globals):
+def doManageInternalEndpoint(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2081,9 +2189,9 @@ def doDescribeInternalEndpoints(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInternalEndpointsRequest()
+    model = models.ManageInternalEndpointRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeInternalEndpoints(model)
+    rsp = client.ManageInternalEndpoint(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2146,7 +2254,7 @@ def doCreateRepositoryPersonal(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImage(args, parsed_globals):
+def doDescribeInternalEndpointDnsStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2162,9 +2270,9 @@ def doDeleteImage(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImageRequest()
+    model = models.DescribeInternalEndpointDnsStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteImage(model)
+    rsp = client.DescribeInternalEndpointDnsStatus(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2254,7 +2362,7 @@ def doDescribeExternalEndpointStatus(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doManageInternalEndpoint(args, parsed_globals):
+def doDescribeInternalEndpoints(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2270,9 +2378,9 @@ def doManageInternalEndpoint(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ManageInternalEndpointRequest()
+    model = models.DescribeInternalEndpointsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ManageInternalEndpoint(model)
+    rsp = client.DescribeInternalEndpoints(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2281,7 +2389,7 @@ def doManageInternalEndpoint(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInternalEndpointDnsStatus(args, parsed_globals):
+def doDeleteImage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2297,9 +2405,9 @@ def doDescribeInternalEndpointDnsStatus(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInternalEndpointDnsStatusRequest()
+    model = models.DeleteImageRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeInternalEndpointDnsStatus(model)
+    rsp = client.DeleteImage(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2357,6 +2465,7 @@ ACTION_MAP = {
     "DescribeWebhookTriggerLog": doDescribeWebhookTriggerLog,
     "DescribeImageManifests": doDescribeImageManifests,
     "ManageImageLifecycleGlobalPersonal": doManageImageLifecycleGlobalPersonal,
+    "DeleteImmutableTagRules": doDeleteImmutableTagRules,
     "DeleteImagePersonal": doDeleteImagePersonal,
     "ModifyWebhookTrigger": doModifyWebhookTrigger,
     "BatchDeleteRepositoryPersonal": doBatchDeleteRepositoryPersonal,
@@ -2394,13 +2503,16 @@ ACTION_MAP = {
     "DescribeRepositoryFilterPersonal": doDescribeRepositoryFilterPersonal,
     "CreateUserPersonal": doCreateUserPersonal,
     "ModifyNamespace": doModifyNamespace,
+    "DescribeImmutableTagRules": doDescribeImmutableTagRules,
     "CreateSecurityPolicy": doCreateSecurityPolicy,
     "DeleteInstance": doDeleteInstance,
     "ModifyRepository": doModifyRepository,
     "DescribeChartDownloadInfo": doDescribeChartDownloadInfo,
     "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
+    "CreateImmutableTagRules": doCreateImmutableTagRules,
     "DescribeInstanceToken": doDescribeInstanceToken,
     "DownloadHelmChart": doDownloadHelmChart,
+    "ModifyImmutableTagRules": doModifyImmutableTagRules,
     "DeleteApplicationTriggerPersonal": doDeleteApplicationTriggerPersonal,
     "CreateInternalEndpointDns": doCreateInternalEndpointDns,
     "ModifyInstanceToken": doModifyInstanceToken,
@@ -2422,15 +2534,15 @@ ACTION_MAP = {
     "DeleteInstanceToken": doDeleteInstanceToken,
     "ModifyUserPasswordPersonal": doModifyUserPasswordPersonal,
     "DescribeWebhookTrigger": doDescribeWebhookTrigger,
-    "DescribeInternalEndpoints": doDescribeInternalEndpoints,
+    "ManageInternalEndpoint": doManageInternalEndpoint,
     "DescribeInstanceStatus": doDescribeInstanceStatus,
     "CreateRepositoryPersonal": doCreateRepositoryPersonal,
-    "DeleteImage": doDeleteImage,
+    "DescribeInternalEndpointDnsStatus": doDescribeInternalEndpointDnsStatus,
     "ValidateNamespaceExistPersonal": doValidateNamespaceExistPersonal,
     "CreateNamespacePersonal": doCreateNamespacePersonal,
     "DescribeExternalEndpointStatus": doDescribeExternalEndpointStatus,
-    "ManageInternalEndpoint": doManageInternalEndpoint,
-    "DescribeInternalEndpointDnsStatus": doDescribeInternalEndpointDnsStatus,
+    "DescribeInternalEndpoints": doDescribeInternalEndpoints,
+    "DeleteImage": doDeleteImage,
     "CreateInstanceToken": doCreateInstanceToken,
 
 }

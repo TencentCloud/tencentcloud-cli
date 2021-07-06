@@ -1979,7 +1979,7 @@
         },
         {
           "default": "",
-          "document": "限制数量，当前Limit最大支持3000。默认值为3000。",
+          "document": "限制数量，当前Limit最大支持3000。默认值为100。",
           "example": "100",
           "member": "uint64",
           "name": "Limit",

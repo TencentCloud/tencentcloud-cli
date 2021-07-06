@@ -366,6 +366,20 @@
         "title": "查看策略列表"
       }
     ],
+    "ListPoliciesGrantingServiceAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPoliciesGrantingServiceAccess\n<公共请求参数>\n\n{\n    \"TargetUin\": 100000001\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"-\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
+        "title": "所有已授权服务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPoliciesGrantingServiceAccess\n<公共请求参数>\n\n{\n    \"TargetUin\": 100000001,\n    \"ServiceType\": \"cvm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [\n                    {\n                        \"Name\": \"AddInstanceInDeployGroup\",\n                        \"Description\": \"新增实例部署组\"\n                    }\n                ],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"-\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
+        "title": "查看已授权服务中所有已授权接口"
+      }
+    ],
     "ListPolicyVersions": [
       {
         "document": "获取一个策略的版本列表",
