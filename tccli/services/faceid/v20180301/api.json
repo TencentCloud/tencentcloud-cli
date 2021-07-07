@@ -24,6 +24,12 @@
       "name": "银行卡基础信息查询",
       "output": "CheckBankCardInformationResponse"
     },
+    "CheckEidTokenStatus": {
+      "document": "用于轮询E证通H5场景EidToken验证状态。",
+      "input": "CheckEidTokenStatusRequest",
+      "name": "获取E证通Token状态",
+      "output": "CheckEidTokenStatusResponse"
+    },
     "CheckIdCardInformation": {
       "document": "传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与公安权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。",
       "input": "CheckIdCardInformationRequest",
@@ -69,11 +75,11 @@
     "GetEidResult": {
       "document": "完成验证后，用EidToken调用本接口获取结果信息，EidToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetEidResultRequest",
-      "name": "获取E证通核身结果信息",
+      "name": "获取E证通结果信息",
       "output": "GetEidResultResponse"
     },
     "GetEidToken": {
-      "document": "每次调用E证通小程序服务前，需先调用本接口获取EidToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
+      "document": "每次调用E证通服务前，需先调用本接口获取EidToken，用来串联E证通流程，在验证完成后，用于获取E证通结果信息。",
       "input": "GetEidTokenRequest",
       "name": "获取E证通Token",
       "output": "GetEidTokenResponse"
@@ -438,6 +444,42 @@
           "member": "int64",
           "name": "AccountType",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckEidTokenStatusRequest": {
+      "document": "CheckEidTokenStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "E证通流程的唯一标识，调用GetEidToken接口时生成。",
+          "example": "2132323",
+          "member": "string",
+          "name": "EidToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckEidTokenStatusResponse": {
+      "document": "CheckEidTokenStatus返回参数结构体",
+      "members": [
+        {
+          "document": "枚举：\ninit：token未验证\ndoing: 验证中\nfinished: 验证完成\ntimeout: token已超时",
+          "example": "init",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1523,7 +1565,7 @@
       "members": [
         {
           "default": "",
-          "document": "人脸核身流程的标识，调用GetEidToken接口时生成的。",
+          "document": "E证通流程的唯一标识，调用GetEidToken接口时生成。",
           "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
           "member": "string",
           "name": "EidToken",
@@ -1662,6 +1704,15 @@
           "name": "Config",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "最长长度1024位。用户从Url中进入核身认证结束后重定向的回调链接地址。EidToken会在该链接的query参数中。",
+          "example": "无",
+          "member": "string",
+          "name": "RedirectUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1670,10 +1721,19 @@
       "document": "GetEidToken返回参数结构体",
       "members": [
         {
-          "document": "一次核身流程的标识，有效时间为7,200秒；\n完成核身后，可用该标识获取验证结果信息。",
+          "document": "一次核身流程的标识，有效时间为600秒；\n完成核身后，可用该标识获取验证结果信息。",
           "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
           "member": "string",
           "name": "EidToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发起核身流程的URL，用于H5场景核身。",
+          "example": "https://www.qq.com",
+          "member": "string",
+          "name": "Url",
           "required": true,
           "type": "string",
           "value_allowed_null": false

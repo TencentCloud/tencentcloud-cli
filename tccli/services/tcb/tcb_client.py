@@ -499,7 +499,7 @@ def doDescribeCloudBaseProjectLatestVersionList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeHostingDomainTask(args, parsed_globals):
+def doDescribeCloudBaseRunConfForGateWay(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -515,9 +515,9 @@ def doDescribeHostingDomainTask(args, parsed_globals):
     client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeHostingDomainTaskRequest()
+    model = models.DescribeCloudBaseRunConfForGateWayRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeHostingDomainTask(model)
+    rsp = client.DescribeCloudBaseRunConfForGateWay(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -572,6 +572,33 @@ def doDescribeDatabaseACL(args, parsed_globals):
     model = models.DescribeDatabaseACLRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeDatabaseACL(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCloudBaseRunServerFlowConf(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCloudBaseRunServerFlowConfRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyCloudBaseRunServerFlowConf(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -842,6 +869,33 @@ def doDescribeExtensionUploadInfo(args, parsed_globals):
     model = models.DescribeExtensionUploadInfoRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeExtensionUploadInfo(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeHostingDomainTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHostingDomainTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeHostingDomainTask(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1365,9 +1419,10 @@ ACTION_MAP = {
     "DescribeCloudBaseRunResource": doDescribeCloudBaseRunResource,
     "DescribeCloudBaseProjectVersionList": doDescribeCloudBaseProjectVersionList,
     "DescribeCloudBaseProjectLatestVersionList": doDescribeCloudBaseProjectLatestVersionList,
-    "DescribeHostingDomainTask": doDescribeHostingDomainTask,
+    "DescribeCloudBaseRunConfForGateWay": doDescribeCloudBaseRunConfForGateWay,
     "ReinstateEnv": doReinstateEnv,
     "DescribeDatabaseACL": doDescribeDatabaseACL,
+    "ModifyCloudBaseRunServerFlowConf": doModifyCloudBaseRunServerFlowConf,
     "DescribeCloudBaseRunResourceForExtend": doDescribeCloudBaseRunResourceForExtend,
     "ModifyEndUser": doModifyEndUser,
     "DescribeDownloadFile": doDescribeDownloadFile,
@@ -1378,6 +1433,7 @@ ACTION_MAP = {
     "CheckTcbService": doCheckTcbService,
     "DeleteEndUser": doDeleteEndUser,
     "DescribeExtensionUploadInfo": doDescribeExtensionUploadInfo,
+    "DescribeHostingDomainTask": doDescribeHostingDomainTask,
     "EstablishWxGatewayRoute": doEstablishWxGatewayRoute,
     "DescribeQuotaData": doDescribeQuotaData,
     "CreateCloudBaseRunResource": doCreateCloudBaseRunResource,

@@ -72,6 +72,14 @@
         "title": "CreateIPStrategy"
       }
     ],
+    "CreatePlugin": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=CreatePlugin\n&PluginName=mytestPlugin\n&PluginType=IPControl\n&Description=IPControl\n&PluginData={\"blocks\":\"1.1.1.12\",\"type\":\"black_list\"}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"PluginId\": \"plugin-qrboebt1\",\n            \"PluginName\": \"mytestPlugin\",\n            \"PluginType\": \"IPControl\",\n            \"Description\": \"IPControl\",\n            \"PluginData\": \"{\\\"blocks\\\":\\\"1.1.1.12\\\",\\\"type\\\":\\\"black_list\\\"}\",\n            \"CreatedTime\": \"2021-01-25T05:46:25Z\",\n            \"ModifiedTime\": \"2021-01-25T05:46:25Z\",\n            \"AttachedApiTotalCount\": null,\n            \"AttachedApis\": null\n        },\n        \"RequestId\": \"b4ffe46b-ae2c-4ff1-911b-57fe15f3d95b\"\n    }\n}",
+        "title": "CreatePlugin"
+      }
+    ],
     "CreateService": [
       {
         "document": "",

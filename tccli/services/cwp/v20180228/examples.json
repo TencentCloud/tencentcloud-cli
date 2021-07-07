@@ -56,6 +56,14 @@
         "title": "示例"
       }
     ],
+    "CreateScanMalwareSetting": [
+      {
+        "document": "",
+        "input": "https://cwp.tencentcloudapi.com/?Action=CreateScanMalwareSetting\n&HostType=1\n&ScanPattern=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"007863e7-fce9-49c2-9561-16bc2a522620\"\n    }\n}",
+        "title": "一键检测"
+      }
+    ],
     "CreateSearchLog": [
       {
         "document": "",
@@ -467,8 +475,8 @@
     "DescribeMachineRegions": [
       {
         "document": "",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachineRegions\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d4ffdf0-f350-c3ea-d09c-3f5313e044fd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMachineRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CVM\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"华南地区（广州）\",\n                \"RegionId\": \"1\",\n                \"RegionCode\": \"gz\",\n                \"RegionNameEn\": \"South China (Guangzhou)\"\n            }\n        ],\n        \"BM\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"华南地区（广州）\",\n                \"RegionId\": \"1\",\n                \"RegionCode\": \"gz\",\n                \"RegionNameEn\": \"South China (Guangzhou)\"\n            }\n        ],\n        \"LH\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"华南地区（广州）\",\n                \"RegionId\": \"1\",\n                \"RegionCode\": \"gz\",\n                \"RegionNameEn\": \"South China (Guangzhou)\"\n            }\n        ],\n        \"ECM\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"华南地区（广州）\",\n                \"RegionId\": \"1\",\n                \"RegionCode\": \"gz\",\n                \"RegionNameEn\": \"South China (Guangzhou)\"\n            }\n        ],\n        \"Other\": [\n            {\n                \"Region\": \"ap-others\",\n                \"RegionName\": \"其他地域（其他）\",\n                \"RegionId\": \"47\",\n                \"RegionCode\": \"others\",\n                \"RegionNameEn\": \"South China (Guangzhou)\"\n            }\n        ],\n        \"RequestId\": \"3d4ffdf0-f350-c3ea-d09c-3f5313e044fd\"\n    }\n}",
         "title": "获取机器地域列表"
       }
     ],
@@ -494,6 +502,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMalwareInfo\n&Id=10000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"MalwareInfo\": {\n            \"Id\": 111,\n            \"VirusName\": \"这是病毒的名字\",\n            \"FileSize\": \"1024\",\n            \"FilePath\": \"/tmp/.X25-unix/.r\",\n            \"FileCreateTime\": \"2020/05/20 00:00:00\",\n            \"FileModifierTime\": \"2020/05/20 00:00:00\",\n            \"HarmDescribe\": \"这是一段危害描述...\",\n            \"SuggestScheme\": \"这是一段建议方案\",\n            \"ServersName\": \"这是一段服务器名称\",\n            \"HostIp\": \"192/168.10.10\",\n            \"ProcessName\": \"Nginx.exe\",\n            \"ProcessID\": \"80\",\n            \"Tags\": [\n                \"挖矿木马\",\n                \"勒索病毒\"\n            ],\n            \"Breadth\": \"中\",\n            \"Heat\": \"查询热度\",\n            \"MD5\": \"202cb962ac59075b964b07152d234b70\",\n            \"FileName\": \"文件名称\",\n            \"LatestScanTime\": \"2020-10-01 00:00:00\",\n            \"CreateTime\": \"2020-10-01 00:00:00\"\n        }\n    }\n}",
         "title": "查看恶意文件详情"
+      }
+    ],
+    "DescribeMalwareTimingScanSetting": [
+      {
+        "document": "",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMalwareTimingScanSetting\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"CheckPattern\": 1,\n        \"StartTime\": \"2020-05-20 00:00:00\",\n        \"EndTime\": \"2020-05-20 00:00:00\",\n        \"IsGlobal\": 1,\n        \"QuuidList\": [],\n        \"RealTimeMonitoring\": 1,\n        \"MonitoringPattern\": 0,\n        \"Cycle\": 1,\n        \"EnableScan\": 1,\n        \"Id\": 0,\n        \"AutoIsolation\": 1,\n        \"ClickTimeout\": 0\n    }\n}",
+        "title": "查询定时扫描配置"
       }
     ],
     "DescribeMalwares": [
@@ -622,6 +638,22 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeScanMalwareSchedule\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"Schedule\": 20,\n        \"IsSchedule\": true,\n        \"RiskFileNumber\": 4,\n        \"ScanStatus\": 1\n    }\n}",
         "title": "查询扫描进度"
+      }
+    ],
+    "DescribeScanTaskDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskDetails\n<公共请求参数>\n\n{\n    \"ModuleType\": \"Vul\",\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ScanContent\": [\n            \"xx\"\n        ],\n        \"VulInfo\": [\n            {\n                \"CveId\": \"xx\",\n                \"CvssScore\": 0.0,\n                \"Name\": \"xx\",\n                \"Reference\": \"xx\",\n                \"Level\": 1,\n                \"Fix\": \"xx\",\n                \"Descript\": \"xx\",\n                \"PublishTime\": \"xx\",\n                \"VulId\": 1,\n                \"Cvss\": \"xx\",\n                \"VulCategory\": 1\n            }\n        ],\n        \"ScanMachineCount\": 1,\n        \"ScanTaskDetailList\": [\n            {\n                \"Status\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"ScanEndTime\": \"xx\",\n                \"FailType\": 1,\n                \"HostName\": \"xx\",\n                \"ScanBeginTime\": \"xx\",\n                \"OsName\": \"xx\",\n                \"Quuid\": \"xx\",\n                \"HostIp\": \"xx\",\n                \"RiskNum\": 1,\n                \"Id\": 1,\n                \"Description\": \"xx\"\n            }\n        ],\n        \"ScanEndTime\": \"xx\",\n        \"ScanTime\": 1,\n        \"ScanProgress\": 1,\n        \"ScanLeftTime\": 1,\n        \"ScanBeginTime\": \"xx\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"RiskEventCount\": 1,\n        \"RiskMachineCount\": 1,\n        \"Type\": 1,\n        \"StoppingAll\": false\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeScanVulSetting": [
+      {
+        "document": "使用appid查询定时检测配置的信息",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeScanVulSetting\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VulCategories\": \"xx\",\n        \"TimerTime\": \"xx\",\n        \"VulLevels\": \"xx\",\n        \"VulEmergency\": 1,\n        \"RequestId\": \"xx\",\n        \"TimerInterval\": 1,\n        \"EndTime\": \"\",\n        \"EnableScan\": 1,\n        \"StartTime\": \"\",\n        \"ClickTimeout\": 0\n    }\n}",
+        "title": "查询定时检测配置信息"
       }
     ],
     "DescribeSearchExportList": [
@@ -780,6 +812,14 @@
       {
         "document": "新增/修改高危命令规则",
         "input": "https://cwp.tencentcloudapi.com/?Action=EditBashRule\n&Name=规则名\n&Level=1\n&Rule=.*\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "新增/修改高危命令规则"
+      }
+    ],
+    "EditBashRules": [
+      {
+        "document": "新增/修改高危命令规则，之前的EditBashRule只支持用户输入单个IP去新增或修改高危命令规则，而该接口EditBashRules支持多服务器选择。",
+        "input": "https://cwp.tencentcloudapi.com/?Action=EditBashRules\n&Name=test\n&Level=1\n&Rule=.*\n&IsGlobal=0\n&Uuids.0=11\n&Uuids.1=12\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "新增/修改高危命令规则"
       }
@@ -1022,6 +1062,22 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=ScanVul\n&VulCategories=1;2\n&VulLevels=1;2\n&HostType=1\n&VulEmergency=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TaskId\": 1\n    }\n}",
         "title": "漏洞管理 - 一键检测"
+      }
+    ],
+    "ScanVulAgain": [
+      {
+        "document": "漏洞管理-重新检测接口",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ScanVulAgain\n&EventIds=1,2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\"\n    }\n}",
+        "title": "漏洞管理-重新检测接口"
+      }
+    ],
+    "ScanVulSetting": [
+      {
+        "document": "定期扫描漏洞设置",
+        "input": "https://cwp.tencentcloudapi.com/?Action=ScanVulSetting\n&VulCategories.0=1\n&VulLevels.0=1\n&TimerInterval=3\n&TimerTime=02:10:50\n&VulEmergency=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\"\n    }\n}",
+        "title": "定期扫描漏洞设置"
       }
     ],
     "SeparateMalwares": [

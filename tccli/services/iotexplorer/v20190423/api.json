@@ -1679,6 +1679,7 @@
         {
           "default": "",
           "document": "设备名",
+          "example": "1",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -1688,6 +1689,7 @@
         {
           "default": "",
           "document": "0: 离线, 1: 在线, 2: 获取失败, 3 未激活",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1697,6 +1699,7 @@
         {
           "default": "",
           "document": "设备密钥，密钥加密的设备返回",
+          "example": "2",
           "member": "string",
           "name": "DevicePsk",
           "required": true,
@@ -1706,6 +1709,7 @@
         {
           "default": "",
           "document": "首次上线时间\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "FirstOnlineTime",
           "required": true,
@@ -1715,6 +1719,7 @@
         {
           "default": "",
           "document": "最后一次上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "LoginTime",
           "required": true,
@@ -1724,6 +1729,7 @@
         {
           "default": "",
           "document": "设备创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "CreateTime",
           "required": true,
@@ -1733,6 +1739,7 @@
         {
           "default": "",
           "document": "设备固件版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -1742,6 +1749,7 @@
         {
           "default": "",
           "document": "设备证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "DeviceCert",
           "required": true,
@@ -1751,6 +1759,7 @@
         {
           "default": "",
           "document": "日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "LogLevel",
           "required": true,
@@ -1760,6 +1769,7 @@
         {
           "default": "",
           "document": "LoRaWAN 设备地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "DevAddr",
           "required": true,
@@ -1769,6 +1779,7 @@
         {
           "default": "",
           "document": "LoRaWAN 应用密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "AppKey",
           "required": true,
@@ -1778,6 +1789,7 @@
         {
           "default": "",
           "document": "LoRaWAN 设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "DevEUI",
           "required": true,
@@ -1787,6 +1799,7 @@
         {
           "default": "",
           "document": "LoRaWAN 应用会话密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "AppSKey",
           "required": true,
@@ -1796,8 +1809,29 @@
         {
           "default": "",
           "document": "LoRaWAN 网络会话密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "NwkSKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建人Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CreateUserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建人昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreatorNickName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1996,6 +2030,26 @@
           "example": "mcu",
           "member": "string",
           "name": "FwType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者子 uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "CreateUserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "喵喵",
+          "member": "string",
+          "name": "CreatorNickName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3206,6 +3260,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "1",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -3215,6 +3270,7 @@
         {
           "default": "",
           "document": "产品名称",
+          "example": "1",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -3224,6 +3280,7 @@
         {
           "default": "",
           "document": "产品分组模板ID",
+          "example": "0",
           "member": "int64",
           "name": "CategoryId",
           "required": true,
@@ -3233,6 +3290,7 @@
         {
           "default": "",
           "document": "加密类型",
+          "example": "0",
           "member": "string",
           "name": "EncryptionType",
           "required": true,
@@ -3242,6 +3300,7 @@
         {
           "default": "",
           "document": "连接类型",
+          "example": "0",
           "member": "string",
           "name": "NetType",
           "required": true,
@@ -3251,6 +3310,7 @@
         {
           "default": "",
           "document": "数据协议",
+          "example": "0",
           "member": "int64",
           "name": "DataProtocol",
           "required": true,
@@ -3260,6 +3320,7 @@
         {
           "default": "",
           "document": "产品描述",
+          "example": "0",
           "member": "string",
           "name": "ProductDesc",
           "required": true,
@@ -3269,6 +3330,7 @@
         {
           "default": "",
           "document": "状态",
+          "example": "0",
           "member": "string",
           "name": "DevStatus",
           "required": true,
@@ -3278,6 +3340,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "0",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
@@ -3287,6 +3350,7 @@
         {
           "default": "",
           "document": "更新时间",
+          "example": "0",
           "member": "uint64",
           "name": "UpdateTime",
           "required": true,
@@ -3296,6 +3360,7 @@
         {
           "default": "",
           "document": "区域",
+          "example": "0",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -3305,6 +3370,7 @@
         {
           "default": "",
           "document": "产品类型",
+          "example": "0",
           "member": "int64",
           "name": "ProductType",
           "required": true,
@@ -3314,6 +3380,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "0",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -3323,6 +3390,7 @@
         {
           "default": "",
           "document": "产品ModuleId",
+          "example": "0",
           "member": "int64",
           "name": "ModuleId",
           "required": true,
@@ -3332,8 +3400,29 @@
         {
           "default": "",
           "document": "是否使用脚本进行二进制转json功能 可以取值 true / false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "EnableProductScript",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建人 UinId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CreateUserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreatorNickName",
           "required": true,
           "type": "string",
           "value_allowed_null": true

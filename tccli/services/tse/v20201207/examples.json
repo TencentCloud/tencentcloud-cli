@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "https://tse.tencentcloudapi.com/?Action=DescribeSREInstanceAccessAddress\n&InstanceId=sre-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"IntranetAddress\": \"10.1.8.15\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"IntranetAddress\": \"10.1.8.15\",\n        \"InternetAddress\": \"10.0.0.1\"\n    }\n}",
         "title": "查询微服务注册引擎实例访问地址"
       }
     ],

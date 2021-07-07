@@ -144,6 +144,14 @@
         "title": "查询云项目部署版本列表"
       }
     ],
+    "DescribeCloudBaseRunConfForGateWay": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseRunConfForGateWay\n<公共请求参数>\n\n{\n    \"EnvID\": \"xx\",\n    \"VpcID\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"EnvId\": \"xx\",\n                \"GrayKey\": \"xx\",\n                \"Weight\": 100,\n                \"ServerName\": \"xx\",\n                \"AccessType\": 2,\n                \"LbAddr\": \"xx\",\n                \"IsZero\": false,\n                \"GrayType\": \"xx\",\n                \"VersionName\": \"xx\",\n                \"URLs\": [\n                    \"xx\"\n                ],\n                \"IsDefault\": false,\n                \"GrayValue\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"LastUpTime\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeCloudBaseRunResource": [
       {
         "document": "",
@@ -350,6 +358,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EstablishWxGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayId\": \"xx\",\n    \"GatewayRouteDesc\": \"xx\",\n    \"GatewayRouteProtocol\": \"xx\",\n    \"GatewayRouteAddr\": \"xx\",\n    \"GatewayRouteName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "创建微信网关"
+      }
+    ],
+    "ModifyCloudBaseRunServerFlowConf": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=ModifyCloudBaseRunServerFlowConf\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyDatabaseACL": [

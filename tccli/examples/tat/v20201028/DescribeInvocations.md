@@ -21,6 +21,7 @@ Output:
             {
                 "CommandId": "cmd-9dxzty3m",
                 "InvocationId": "inv-q4zp60g0",
+                "InstanceKind": "CVM",
                 "InvocationStatus": "SUCCESS",
                 "Description": "Test Invocation",
                 "Parameters": "",

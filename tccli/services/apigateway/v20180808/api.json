@@ -54,6 +54,12 @@
       "name": "创建服务IP策略",
       "output": "CreateIPStrategyResponse"
     },
+    "CreatePlugin": {
+      "document": "创建API网关插件。",
+      "input": "CreatePluginRequest",
+      "name": "创建插件",
+      "output": "CreatePluginResponse"
+    },
     "CreateService": {
       "document": "本接口（CreateService）用于创建服务。\nAPI 网关使用的最大单元为服务，每个服务中可创建多个 API 接口。每个服务有一个默认域名供客户调用，用户也可绑定自定义域名到此服务中。",
       "input": "CreateServiceRequest",
@@ -2784,6 +2790,69 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePluginRequest": {
+      "document": "CreatePlugin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户自定义的插件名称。最长50个字符，支持 a-z,A-Z,0-9,_, 必须字母开头，字母或者数字结尾。",
+          "example": "myplugin",
+          "member": "string",
+          "name": "PluginName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "插件类型。目前支持IPControl。",
+          "example": "IPControl",
+          "member": "string",
+          "name": "PluginType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "插件定义语句，支持json。",
+          "example": "无",
+          "member": "string",
+          "name": "PluginData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "插件描述，限定200字以内。",
+          "example": "myPlugin",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePluginResponse": {
+      "document": "CreatePlugin返回参数结构体",
+      "members": [
+        {
+          "document": "新建的插件详情。",
+          "example": "无",
+          "member": "Plugin",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

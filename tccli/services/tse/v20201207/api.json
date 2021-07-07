@@ -141,6 +141,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "公网访问地址",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "InternetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

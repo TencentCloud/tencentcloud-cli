@@ -14,7 +14,8 @@ Output:
 {
     "Response": {
         "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
-        "IntranetAddress": "10.1.8.15"
+        "IntranetAddress": "10.1.8.15",
+        "InternetAddress": "10.0.0.1"
     }
 }
 ```

@@ -23,6 +23,7 @@ Output:
         "TotalCount": 2,
         "TelCdrs": [
             {
+                "SessionId": "xx",
                 "Caller": "12345678901",
                 "Callee": "23456789011",
                 "Time": 1590547606,
@@ -66,6 +67,7 @@ Output:
                 ]
             },
             {
+                "SessionId": "xx",
                 "Caller": "12345678902",
                 "Callee": "23456789011",
                 "Time": 1590547630,
@@ -84,7 +86,15 @@ Output:
                 "EndedTimestamp": 1590547606,
                 "RingTimestamp": 1590547606,
                 "HungUpSide": "user",
-                "ServeParticipants": [],
+                "ServeParticipants": {
+                    "Mail": "foo@tencent.com",
+                    "Phone": "008615793909390",
+                    "RingTimestamp": 1610627284,
+                    "AcceptTimestamp": 1610627284,
+                    "EndedTimestamp": 1610627284,
+                    "RecordId": "1610622284",
+                    "Type": "staffSeat"
+                },
                 "IVRDuration": 5,
                 "IVRKeyPressed": [
                     "5"

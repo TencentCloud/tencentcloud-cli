@@ -8,14 +8,6 @@
         "title": "计量商品用量提醒"
       }
     ],
-    "GetCateTree": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: market.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCateTree\n<公共请求参数>\n\n{\n    \"CateId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"CateId\": 1,\n        \"Name\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取分类名称"
-      }
-    ],
     "GetUsagePlanUsageAmount": [
       {
         "document": "",

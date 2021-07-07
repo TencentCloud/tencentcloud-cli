@@ -1,10 +1,22 @@
 {
   "actions": {
+    "ApplyAIModel": {
+      "document": "申请AI模型",
+      "input": "ApplyAIModelRequest",
+      "name": "申请AI模型",
+      "output": "ApplyAIModelResponse"
+    },
     "BatchUpdateFirmware": {
       "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件 ",
       "input": "BatchUpdateFirmwareRequest",
       "name": "批量更新固件",
       "output": "BatchUpdateFirmwareResponse"
+    },
+    "CancelAIModelApplication": {
+      "document": "取消AI模型申请",
+      "input": "CancelAIModelApplicationRequest",
+      "name": "取消AI模型申请",
+      "output": "CancelAIModelApplicationResponse"
     },
     "CancelDeviceFirmwareTask": {
       "document": "本接口用于取消设备升级任务",
@@ -24,11 +36,23 @@
       "name": "设备远程控制",
       "output": "ControlDeviceDataResponse"
     },
+    "CreateAIDetection": {
+      "document": "发起AI推理请求",
+      "input": "CreateAIDetectionRequest",
+      "name": "发起AI推理请求",
+      "output": "CreateAIDetectionResponse"
+    },
     "CreateBatch": {
       "document": "创建批次",
       "input": "CreateBatchRequest",
       "name": "创建批次",
       "output": "CreateBatchResponse"
+    },
+    "CreateCOSCredentials": {
+      "document": "创建COS上传密钥",
+      "input": "CreateCOSCredentialsRequest",
+      "name": "创建COS上传密钥",
+      "output": "CreateCOSCredentialsResponse"
     },
     "CreateCloudStorage": {
       "document": "开通云存服务",
@@ -77,6 +101,30 @@
       "input": "DeleteProductRequest",
       "name": "删除产品",
       "output": "DeleteProductResponse"
+    },
+    "DescribeAIModelApplications": {
+      "document": "用户AI模型申请记录",
+      "input": "DescribeAIModelApplicationsRequest",
+      "name": "用户AI模型申请记录",
+      "output": "DescribeAIModelApplicationsResponse"
+    },
+    "DescribeAIModelChannel": {
+      "document": "查看AI推理结果推送配置",
+      "input": "DescribeAIModelChannelRequest",
+      "name": "查看AI推理结果推送配置",
+      "output": "DescribeAIModelChannelResponse"
+    },
+    "DescribeAIModelUsage": {
+      "document": "查看AI模型资源包",
+      "input": "DescribeAIModelUsageRequest",
+      "name": "查看AI模型资源包",
+      "output": "DescribeAIModelUsageResponse"
+    },
+    "DescribeAIModels": {
+      "document": "拉取AI模型列表",
+      "input": "DescribeAIModelsRequest",
+      "name": "拉取AI模型列表",
+      "output": "DescribeAIModelsResponse"
     },
     "DescribeBalance": {
       "document": "查询账户余额",
@@ -306,6 +354,12 @@
       "name": "设备透传指令控制",
       "output": "PublishMessageResponse"
     },
+    "ReportAliveDevice": {
+      "document": "上报活跃设备",
+      "input": "ReportAliveDeviceRequest",
+      "name": "上报活跃设备",
+      "output": "ReportAliveDeviceResponse"
+    },
     "ResetCloudStorage": {
       "document": "重置云存服务",
       "input": "ResetCloudStorageRequest",
@@ -330,6 +384,12 @@
       "name": "转移云存服务",
       "output": "TransferCloudStorageResponse"
     },
+    "UpdateAIModelChannel": {
+      "document": "更新AI推理结果推送配置",
+      "input": "UpdateAIModelChannelRequest",
+      "name": "更新AI推理结果推送配置",
+      "output": "UpdateAIModelChannelResponse"
+    },
     "UploadFirmware": {
       "document": "本接口（UploadFirmware）用于上传设备固件信息 ",
       "input": "UploadFirmwareRequest",
@@ -344,6 +404,154 @@
     "serviceShortName": "iotvideo"
   },
   "objects": {
+    "AIModelApplication": {
+      "document": "AI模型申请信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIModelInfo": {
+      "document": "AI模型信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可调用数量",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已调用数量",
+          "example": "9845",
+          "member": "uint64",
+          "name": "Used",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请时间",
+          "example": "1620289238",
+          "member": "uint64",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审批通过时间",
+          "example": "1620289238",
+          "member": "uint64",
+          "name": "ApprovalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIModelUsageInfo": {
+      "document": "AI模型资源使用信息",
+      "members": [
+        {
+          "default": "",
+          "document": "开通时间",
+          "example": "1620289238",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源总量",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用资源数量",
+          "example": "982",
+          "member": "uint64",
+          "name": "Used",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ActionHistory": {
       "document": "查询设备历史",
       "members": [
@@ -439,6 +647,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ApplyAIModelRequest": {
+      "document": "ApplyAIModel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "AI模型ID",
+          "example": "body_detection",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyAIModelResponse": {
+      "document": "ApplyAIModel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BalanceTransaction": {
       "document": "账户流水",
@@ -596,6 +840,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelAIModelApplicationRequest": {
+      "document": "CancelAIModelApplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "AI模型ID",
+          "example": "body_detection",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelAIModelApplicationResponse": {
+      "document": "CancelAIModelApplication返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -915,6 +1195,69 @@
       ],
       "type": "object"
     },
+    "CreateAIDetectionRequest": {
+      "document": "CreateAIDetection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "AI模型ID",
+          "example": "detect",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片上传的开始时间",
+          "example": "1619431648",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片上传的结束时间",
+          "example": "1619431658",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAIDetectionResponse": {
+      "document": "CreateAIDetection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateBatchRequest": {
       "document": "CreateBatch请求参数结构体",
       "members": [
@@ -956,6 +1299,105 @@
           "example": "123",
           "member": "uint64",
           "name": "BatchId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCOSCredentialsRequest": {
+      "document": "CreateCOSCredentials请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCOSCredentialsResponse": {
+      "document": "CreateCOSCredentials返回参数结构体",
+      "members": [
+        {
+          "document": "COS存储桶名称",
+          "example": "video-cv-test-111",
+          "member": "string",
+          "name": "StorageBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "COS存储桶区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "COS存储桶路径",
+          "example": "/uin/test/ai/",
+          "member": "string",
+          "name": "StoragePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "COS上传用的SecretID",
+          "example": "secretid",
+          "member": "string",
+          "name": "SecretID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "COS上传用的SecretKey",
+          "example": "secretkey",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "COS上传用的Token",
+          "example": "token",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "密钥信息过期时间",
+          "example": "1619431648",
+          "member": "uint64",
+          "name": "ExpiredTime",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1581,6 +2023,312 @@
     "DeleteProductResponse": {
       "document": "DeleteProduct返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelApplicationsRequest": {
+      "document": "DescribeAIModelApplications请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "body_detection",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页的大小，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "PV1674YINM",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelApplicationsResponse": {
+      "document": "DescribeAIModelApplications返回参数结构体",
+      "members": [
+        {
+          "document": "申请记录数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "申请记录数组",
+          "example": "无",
+          "member": "AIModelApplication",
+          "name": "Applications",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelChannelRequest": {
+      "document": "DescribeAIModelChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "body_detection",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelChannelResponse": {
+      "document": "DescribeAIModelChannel返回参数结构体",
+      "members": [
+        {
+          "document": "推送类型。ckafka：消息队列；forward：http/https推送",
+          "example": "ckafka",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "第三方推送地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://yourdomain.com:8000/api",
+          "member": "string",
+          "name": "ForwardAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "第三方推送密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kugaiuwef8rfwe",
+          "member": "string",
+          "name": "ForwardKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "ckafka地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "CKafkaRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "ckafka实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-wehnaf",
+          "member": "string",
+          "name": "CKafkaInstance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "ckafka订阅主题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "CKafkaTopic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelUsageRequest": {
+      "document": "DescribeAIModelUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "body_detection",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelUsageResponse": {
+      "document": "DescribeAIModelUsage返回参数结构体",
+      "members": [
+        {
+          "document": "AI模型资源包总量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "AI模型资源包信息数组",
+          "example": "无",
+          "member": "AIModelUsageInfo",
+          "name": "UsageInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelsRequest": {
+      "document": "DescribeAIModels请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "body_detection",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelsResponse": {
+      "document": "DescribeAIModels返回参数结构体",
+      "members": [
+        {
+          "document": "AI模型数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "AI模型信息数组",
+          "example": "无",
+          "member": "AIModelInfo",
+          "name": "Models",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4814,6 +5562,42 @@
       ],
       "type": "object"
     },
+    "ReportAliveDeviceRequest": {
+      "document": "ReportAliveDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportAliveDeviceResponse": {
+      "document": "ReportAliveDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResetCloudStorageRequest": {
       "document": "ResetCloudStorage请求参数结构体",
       "members": [
@@ -5082,6 +5866,105 @@
     "TransferCloudStorageResponse": {
       "document": "TransferCloudStorage返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAIModelChannelRequest": {
+      "document": "UpdateAIModelChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "body_detection",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推送类型。ckafka：消息队列；forward：http/https推送",
+          "example": "forward",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "第三方推送地址",
+          "example": "https://yourdomain.com:8000/api",
+          "member": "string",
+          "name": "ForwardAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "第三方推送密钥，不填写则腾讯云自动生成。",
+          "example": "kugaiuwef8rfwe",
+          "member": "string",
+          "name": "ForwardKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ckafka地域",
+          "example": "gz",
+          "member": "string",
+          "name": "CKafkaRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ckafka实例",
+          "example": "ins-wehnaf",
+          "member": "string",
+          "name": "CKafkaInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ckafka订阅主题",
+          "example": "test",
+          "member": "string",
+          "name": "CKafkaTopic",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAIModelChannelResponse": {
+      "document": "UpdateAIModelChannel返回参数结构体",
+      "members": [
+        {
+          "document": "第三方推送密钥，如果选择自动生成则会返回此字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kugaiuwef8rfwe",
+          "member": "string",
+          "name": "ForwardKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -35,7 +35,7 @@
     "CreateInstanceAccount": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=CreateInstanceAccount\r\n&InstanceId=crs-5a4py64p\r\n&AccountName=test\r\n&AccountPassword=1234567a\r\n&ReadonlyPolicy=master\r\n&Privilege=rw\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=CreateInstanceAccount\n&InstanceId=crs-5a4py64p\n&AccountName=test\n&AccountPassword=1234567a\n&ReadonlyPolicy.0=master\n&Privilege=rw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
       }
@@ -185,7 +185,7 @@
     "DescribeInstanceMonitorTopNCmdTook": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceMonitorTopNCmdTook\r\n&InstanceId=crs-r34wkc1d\r\n&SpanType=4\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceMonitorTopNCmdTook\n&InstanceId=crs-r34wkc1d\n&SpanType=4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Cmd\": \"ping\",\n                \"Took\": 4688000\n            }\n        ],\n        \"RequestId\": \"95308f10-19d9-4313-bedf-cb65a846826f\"\n    }\n}",
         "title": "请求示例"
       }
@@ -274,7 +274,7 @@
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeProjectSecurityGroups\n&ProjectId=11954\n&Product=redis\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A1\",\n        \"Groups\": [\n            {\n                \"Outbound\": [],\n                \"SecurityGroupName\": \"CDB\",\n                \"Inbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupRemark\": \"\",\n                \"CreateTime\": \"2017-04-13 15:00:06\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A1\",\n        \"Groups\": [\n            {\n                \"Outbound\": [],\n                \"SecurityGroupName\": \"CDB\",\n                \"Inbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupRemark\": \"\",\n                \"CreateTime\": \"2017-04-13 15:00:06\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],

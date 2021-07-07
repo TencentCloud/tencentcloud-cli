@@ -108,6 +108,12 @@
       "name": "云项目部署版本列表",
       "output": "DescribeCloudBaseProjectVersionListResponse"
     },
+    "DescribeCloudBaseRunConfForGateWay": {
+      "document": "独立网关中拉取云托管服务对应的配置信息",
+      "input": "DescribeCloudBaseRunConfForGateWayRequest",
+      "name": "独立网关云托管服务配置",
+      "output": "DescribeCloudBaseRunConfForGateWayResponse"
+    },
     "DescribeCloudBaseRunResource": {
       "document": "查看容器托管的集群状态",
       "input": "DescribeCloudBaseRunResourceRequest",
@@ -263,6 +269,12 @@
       "input": "EstablishWxGatewayRouteRequest",
       "name": "创建或修改安全网关路由",
       "output": "EstablishWxGatewayRouteResponse"
+    },
+    "ModifyCloudBaseRunServerFlowConf": {
+      "document": "修改容器内的版本流量配置",
+      "input": "ModifyCloudBaseRunServerFlowConfRequest",
+      "name": "修改容器内的版本流量配置",
+      "output": "ModifyCloudBaseRunServerFlowConfResponse"
     },
     "ModifyDatabaseACL": {
       "document": "修改数据库权限",
@@ -783,6 +795,142 @@
       ],
       "usage": "in"
     },
+    "CloudBaseRunForGatewayConf": {
+      "document": "独立网关云托管服务配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否缩容到0",
+          "example": "false",
+          "member": "bool",
+          "name": "IsZero",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按百分比灰度的权重",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按请求/header参数的灰度Key",
+          "example": "value",
+          "member": "string",
+          "name": "GrayKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按请求/header参数的灰度Value",
+          "example": "key",
+          "member": "string",
+          "name": "GrayValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为默认版本(按请求/header参数)",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问权限，对应二进制分多段，vpc内网｜公网｜oa",
+          "example": "2",
+          "member": "int64",
+          "name": "AccessType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问的URL（域名＋路径）列表",
+          "example": "[\"xxxxx\"]",
+          "member": "string",
+          "name": "URLs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "env_xxxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "example": "mapportal",
+          "member": "string",
+          "name": "ServerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本名称",
+          "example": "mapportal-001",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "灰度类型：FLOW(权重), URL_PARAMS/HEAD_PARAMS",
+          "example": "Weigth",
+          "member": "string",
+          "name": "GrayType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CLB的IP:Port",
+          "example": "9.34.54.12:8090",
+          "member": "string",
+          "name": "LbAddr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0:http访问服务配置信息, 1: 服务域名",
+          "example": "0/1",
+          "member": "int64",
+          "name": "ConfigType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CloudBaseRunImageInfo": {
       "document": "CloudBaseRun 镜像信息",
       "members": [
@@ -1079,6 +1227,57 @@
           "name": "VolumeMountInfos",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudBaseRunVersionFlowItem": {
+      "document": "版本流量占比",
+      "members": [
+        {
+          "default": "",
+          "document": "版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FlowRatio",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量参数键值对（URL参数/HEADERS参数）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ObjectKV",
+          "name": "UrlParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是默认兜底版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsDefaultPriority",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -3103,6 +3302,60 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunConfForGateWayRequest": {
+      "document": "DescribeCloudBaseRunConfForGateWay请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "env_xxxx",
+          "member": "string",
+          "name": "EnvID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc信息",
+          "example": "vpc-xxxxx",
+          "member": "string",
+          "name": "VpcID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunConfForGateWayResponse": {
+      "document": "DescribeCloudBaseRunConfForGateWay返回参数结构体",
+      "members": [
+        {
+          "document": "最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "LastUpTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseRunForGatewayConf",
+          "name": "Data",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -5425,6 +5678,15 @@
           "name": "IsCreatePath",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定创建路径（如不存在，则创建。存在，则忽略）",
+          "example": "无",
+          "member": "string",
+          "name": "ServerPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5773,6 +6035,78 @@
       ],
       "usage": "both"
     },
+    "ModifyCloudBaseRunServerFlowConfRequest": {
+      "document": "ModifyCloudBaseRunServerFlowConf请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "lotestapi100004",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "example": "dockerservicename",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量占比",
+          "example": "无",
+          "member": "CloudBaseRunVersionFlowItem",
+          "name": "VersionFlowItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "流量类型（URL_PARAMS / FLOW / HEADERS)",
+          "example": "无",
+          "member": "string",
+          "name": "TrafficType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作备注",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudBaseRunServerFlowConfResponse": {
+      "document": "ModifyCloudBaseRunServerFlowConf返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，succ代表成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDatabaseACLRequest": {
       "document": "ModifyDatabaseACL请求参数结构体",
       "members": [
@@ -5895,6 +6229,30 @@
         }
       ],
       "type": "object"
+    },
+    "ObjectKV": {
+      "document": "Key-Value类型，模拟的 object 类型",
+      "members": [
+        {
+          "default": "",
+          "document": "object 的 key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "object key 对应的 value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OrderInfo": {
       "document": "订单信息",

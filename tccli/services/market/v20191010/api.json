@@ -6,12 +6,6 @@
       "name": "计量商品用量提醒",
       "output": "FlowProductRemindResponse"
     },
-    "GetCateTree": {
-      "document": "获取分类名称",
-      "input": "GetCateTreeRequest",
-      "name": "获取分类名称",
-      "output": "GetCateTreeResponse"
-    },
     "GetUsagePlanUsageAmount": {
       "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n",
       "input": "GetUsagePlanUsageAmountRequest",
@@ -112,51 +106,6 @@
           "example": "无",
           "member": "string",
           "name": "Info",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetCateTreeRequest": {
-      "document": "GetCateTree请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "分类ID",
-          "example": "1",
-          "member": "uint64",
-          "name": "CateId",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "GetCateTreeResponse": {
-      "document": "GetCateTree返回参数结构体",
-      "members": [
-        {
-          "document": "分类ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "uint64",
-          "name": "CateId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "document": "分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"123\"",
-          "member": "string",
-          "name": "Name",
           "required": true,
           "type": "string",
           "value_allowed_null": true

@@ -201,7 +201,7 @@
     "DescribeProjectSecurityGroups": {
       "document": "本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。",
       "input": "DescribeProjectSecurityGroupsRequest",
-      "name": "查询项目安全组信息",
+      "name": "查询项目安全组详情",
       "output": "DescribeProjectSecurityGroupsResponse"
     },
     "DescribeProxySlowLog": {
@@ -745,6 +745,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -753,6 +754,7 @@
         {
           "default": "",
           "document": "子账号名称",
+          "example": "test",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -760,7 +762,8 @@
         },
         {
           "default": "",
-          "document": "子账号密码",
+          "document": "1.长度8-30位,推荐使用12位以上的密码\n2.不能以\"/\"开头\n3.至少包含两项\n    a.小写字母a-z\n    b.大写字母A-Z\n    c.数字0-9\n    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/",
+          "example": "1234567aA",
           "member": "string",
           "name": "AccountPassword",
           "required": true,
@@ -769,6 +772,7 @@
         {
           "default": "",
           "document": "路由策略：填写master或者replication，表示主节点或者从节点",
+          "example": "[\"master\"]",
           "member": "string",
           "name": "ReadonlyPolicy",
           "required": true,
@@ -777,6 +781,7 @@
         {
           "default": "",
           "document": "读写策略：填写r、rw，表示只读、读写",
+          "example": "rw",
           "member": "string",
           "name": "Privilege",
           "required": true,
@@ -785,6 +790,7 @@
         {
           "default": "",
           "document": "子账号描述信息",
+          "example": "\"\"",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -798,8 +804,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "123456",
           "member": "int64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1203,6 +1211,7 @@
         {
           "default": "",
           "document": "实例Vip信息列表",
+          "example": "crs-deindi7de",
           "member": "int64",
           "name": "VpcIds",
           "required": false,
@@ -1211,6 +1220,7 @@
         {
           "default": "",
           "document": "子网id信息列表",
+          "example": "null",
           "member": "int64",
           "name": "SubnetIds",
           "required": false,
@@ -1219,6 +1229,7 @@
         {
           "default": "",
           "document": "计费类型过滤列表；0表示包年包月，1表示按量计费",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
           "required": false,
@@ -1227,6 +1238,7 @@
         {
           "default": "",
           "document": "实例id过滤信息列表",
+          "example": "[\"crs-nh47ubwr\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -1235,6 +1247,7 @@
         {
           "default": "",
           "document": "实例名称过滤信息列表",
+          "example": "null",
           "member": "string",
           "name": "InstanceNames",
           "required": false,
@@ -1243,6 +1256,7 @@
         {
           "default": "",
           "document": "实例状态信息过滤列表",
+          "example": "null",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -1251,6 +1265,7 @@
         {
           "default": "",
           "document": "排序字段",
+          "example": "null",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1259,6 +1274,7 @@
         {
           "default": "",
           "document": "排序方式",
+          "example": "null",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -1267,6 +1283,7 @@
         {
           "default": "",
           "document": "实例vip信息列表",
+          "example": "null",
           "member": "string",
           "name": "Vips",
           "required": false,
@@ -1274,7 +1291,8 @@
         },
         {
           "default": "",
-          "document": "vpc网络统一Id列表",
+          "document": "vpc网络ID信息列表",
+          "example": "null",
           "member": "string",
           "name": "UniqVpcIds",
           "required": false,
@@ -1282,7 +1300,8 @@
         },
         {
           "default": "",
-          "document": "子网统一id列表",
+          "document": "子网统一ID列表",
+          "example": "null",
           "member": "string",
           "name": "UniqSubnetIds",
           "required": false,
@@ -1291,6 +1310,7 @@
         {
           "default": "",
           "document": "数量限制，默认推荐100",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1299,6 +1319,7 @@
         {
           "default": "",
           "document": "偏移量，默认0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1312,15 +1333,19 @@
       "members": [
         {
           "document": "实例数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例信息",
+          "example": "无",
           "member": "RedisCommonInstanceList",
           "name": "InstanceDetails",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2007,7 +2032,8 @@
       "members": [
         {
           "default": "",
-          "document": "实例Id",
+          "document": "实例ID",
+          "example": "crs-r34wkc1d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2016,6 +2042,7 @@
         {
           "default": "",
           "document": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时",
+          "example": "4",
           "member": "int64",
           "name": "SpanType",
           "required": true,
@@ -2029,8 +2056,10 @@
       "members": [
         {
           "document": "耗时详细信息",
+          "example": "无",
           "member": "CommandTake",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2695,6 +2724,7 @@
         {
           "default": "",
           "document": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb",
+          "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -2703,6 +2733,7 @@
         {
           "default": "",
           "document": "项目Id。",
+          "example": "11954",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -2711,6 +2742,7 @@
         {
           "default": "",
           "document": "偏移量。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2719,6 +2751,7 @@
         {
           "default": "",
           "document": "拉取数量限制。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2727,6 +2760,7 @@
         {
           "default": "",
           "document": "搜索条件，支持安全组id或者安全组名称。",
+          "example": "无",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -2740,15 +2774,19 @@
       "members": [
         {
           "document": "安全组规则。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的安全组总数量。",
+          "example": "0",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5809,6 +5847,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "InstanceName",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -5818,6 +5857,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "crs-xxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5827,6 +5867,7 @@
         {
           "default": "",
           "document": "用户id",
+          "example": "000000000",
           "member": "int64",
           "name": "AppId",
           "required": true,
@@ -5836,6 +5877,7 @@
         {
           "default": "",
           "document": "实例所属项目id",
+          "example": "000000000",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -5845,6 +5887,7 @@
         {
           "default": "",
           "document": "实例接入区域",
+          "example": "1",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -5854,6 +5897,7 @@
         {
           "default": "",
           "document": "实例接入zone",
+          "example": "100001",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -5863,6 +5907,7 @@
         {
           "default": "",
           "document": "实例网络id",
+          "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5872,6 +5917,7 @@
         {
           "default": "",
           "document": "子网id",
+          "example": "sub-vcp-xxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -5880,7 +5926,8 @@
         },
         {
           "default": "",
-          "document": "实例状态信息，0-创建中，1-运行中",
+          "document": "实例状态信息，1-流程中 ,2-运行中, -2-实例已隔离 ,-3-实例待回收, -4-实例已删除",
+          "example": "1",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -5890,6 +5937,7 @@
         {
           "default": "",
           "document": "实例网络ip",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Vips",
           "required": true,
@@ -5899,6 +5947,7 @@
         {
           "default": "",
           "document": "实例网络端口",
+          "example": "6379",
           "member": "int64",
           "name": "Vport",
           "required": true,
@@ -5908,6 +5957,7 @@
         {
           "default": "",
           "document": "实例创建时间",
+          "example": "yyyy-MM-dd",
           "member": "string",
           "name": "Createtime",
           "required": true,
@@ -5917,6 +5967,7 @@
         {
           "default": "",
           "document": "计费类型，0-按量计费，1-包年包月",
+          "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": true,
@@ -5926,6 +5977,7 @@
         {
           "default": "",
           "document": "网络类型，0-基础网络，1-VPC网络",
+          "example": "1",
           "member": "int64",
           "name": "NetType",
           "required": true,

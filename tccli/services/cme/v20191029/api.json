@@ -1214,6 +1214,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1222,6 +1223,7 @@
         {
           "default": "",
           "document": "项目 Id。",
+          "example": "1112",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -1230,6 +1232,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。",
+          "example": "user_id_100001",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1941,6 +1944,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1949,6 +1953,7 @@
         {
           "default": "",
           "document": "任务 Id。",
+          "example": "1400-tfusion-ct0",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1957,6 +1962,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。",
+          "example": "85b8cdac-8e18-430a-aeae-08076ac26a11",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1970,50 +1976,64 @@
       "members": [
         {
           "document": "任务状态，取值有：\n<li>PROCESSING：处理中：</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务进度，取值为：0~100。",
+          "example": "100",
           "member": "uint64",
           "name": "Progress",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "错误码。\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "ErrCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "错误信息。",
+          "example": "Success.",
           "member": "string",
           "name": "ErrMsg",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务类型，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>",
+          "example": "VIDEO_EDIT_PROJECT_EXPORT",
           "member": "string",
           "name": "TaskType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "导出项目输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VideoEditProjectOutput",
           "name": "VideoEditProjectOutput",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "创建时间，格式按照 ISO 8601 标准表示。",
+          "example": "2020-04-28T18:16:58Z",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6046,6 +6066,7 @@
         {
           "default": "",
           "document": "导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。",
+          "example": "无",
           "member": "string",
           "name": "MaterialId",
           "required": true,
@@ -6055,6 +6076,7 @@
         {
           "default": "",
           "document": "云点播媒资 FileId。",
+          "example": "无",
           "member": "string",
           "name": "VodFileId",
           "required": true,
@@ -6064,6 +6086,7 @@
         {
           "default": "",
           "document": "导出的媒资 URL。",
+          "example": "无",
           "member": "string",
           "name": "URL",
           "required": true,
@@ -6073,6 +6096,7 @@
         {
           "default": "",
           "document": "元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
           "required": true,
