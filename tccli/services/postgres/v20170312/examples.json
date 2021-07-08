@@ -291,7 +291,7 @@
     "ModifyDBInstanceReadOnlyGroup": [
       {
         "document": "",
-        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstanceReadOnlyGroup\n&DBInstanceId=\"postgres-k95qzetn\"\n&NewReadOnlyGroupId=NewGroup\n&ReadOnlyGroupId=OldGroup\n&<公共请求参数>",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstanceReadOnlyGroup\n&DBInstanceId=postgres-k95qzetn\n&NewReadOnlyGroupId=NewGroup\n&ReadOnlyGroupId=OldGroup\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\",\n        \"FlowId\": 912\n    }\n}",
         "title": "ModifyDBInstanceReadOnlyGroup"
       }

@@ -8,6 +8,14 @@
         "title": "将一个成员添加到团队"
       }
     ],
+    "CopyProject": [
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=CopyProject\n&Platform=test\n&ProjectId=cmepid_88kkdkkkkd009d9d9d99d9\n&Name=复制项目\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProjectId\": \"mepid_88kkdkkkkd009d9duujde77\",\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
+        "title": "复制一个项目"
+      }
+    ],
     "CreateClass": [
       {
         "document": "",

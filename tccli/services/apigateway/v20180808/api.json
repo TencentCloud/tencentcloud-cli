@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AttachPlugin": {
+      "document": "绑定插件到API上。",
+      "input": "AttachPluginRequest",
+      "name": "插件绑定API",
+      "output": "AttachPluginResponse"
+    },
     "BindEnvironment": {
       "document": "本接口（BindEnvironment）用于绑定使用计划到服务或API。\n用户在发布服务到某个环境中后，如果 API 需要鉴权，还需要绑定使用计划才能进行调用，此接口用户将使用计划绑定到特定环境。\n目前支持绑定使用计划到API，但是同一个服务不能同时存在绑定到服务的使用计划和绑定到API的使用计划，所以对已经绑定过服务级别使用计划的环境，请先使用 服务级别使用计划降级 接口进行降级操作。",
       "input": "BindEnvironmentRequest",
@@ -96,6 +102,12 @@
       "name": "删除服务IP策略",
       "output": "DeleteIPStrategyResponse"
     },
+    "DeletePlugin": {
+      "document": "删除API网关插件",
+      "input": "DeletePluginRequest",
+      "name": "删除插件",
+      "output": "DeletePluginResponse"
+    },
     "DeleteService": {
       "document": "本接口（DeleteService）用于删除 API 网关中某个服务。",
       "input": "DeleteServiceRequest",
@@ -131,6 +143,12 @@
       "input": "DescribeAPIDocsRequest",
       "name": "查询 API 文档列表",
       "output": "DescribeAPIDocsResponse"
+    },
+    "DescribeAllPluginApis": {
+      "document": "展示插件相关的API列表，包括已绑定的和未绑定的API信息。",
+      "input": "DescribeAllPluginApisRequest",
+      "name": "展示插件相关的API列表",
+      "output": "DescribeAllPluginApisResponse"
     },
     "DescribeApi": {
       "document": "本接口（DescribeApi）用于查询用户 API 网关的 API 接口的详细信息。​",
@@ -191,6 +209,18 @@
       "input": "DescribeLogSearchRequest",
       "name": "日志搜索服务",
       "output": "DescribeLogSearchResponse"
+    },
+    "DescribePlugin": {
+      "document": "展示插件详情，支持按照插件ID进行。",
+      "input": "DescribePluginRequest",
+      "name": "查询插件详情",
+      "output": "DescribePluginResponse"
+    },
+    "DescribePluginApis": {
+      "document": "查询指定插件下绑定的API信息",
+      "input": "DescribePluginApisRequest",
+      "name": "查询插件绑定的API列表",
+      "output": "DescribePluginApisResponse"
     },
     "DescribePlugins": {
       "document": "展示插件列表和详情，支持分页，支持按照插件类型查询，支持按照插件ID批量查询，支持按照插件名称查询。",
@@ -276,6 +306,12 @@
       "name": "查询使用计划列表",
       "output": "DescribeUsagePlansStatusResponse"
     },
+    "DetachPlugin": {
+      "document": "解除插件与API绑定",
+      "input": "DetachPluginRequest",
+      "name": "插件解绑API",
+      "output": "DetachPluginResponse"
+    },
     "DisableApiKey": {
       "document": "本接口（DisableApiKey）用于禁用一对 API 密钥。",
       "input": "DisableApiKeyRequest",
@@ -323,6 +359,12 @@
       "input": "ModifyIPStrategyRequest",
       "name": "修改服务IP策略",
       "output": "ModifyIPStrategyResponse"
+    },
+    "ModifyPlugin": {
+      "document": "修改API网关插件。",
+      "input": "ModifyPluginRequest",
+      "name": "修改插件",
+      "output": "ModifyPluginResponse"
     },
     "ModifyService": {
       "document": "本接口（ModifyService）用于修改服务的相关信息。当服务创建后，服务的名称、描述和服务类型均可被修改。",
@@ -1377,6 +1419,32 @@
       ],
       "usage": "out"
     },
+    "ApiInfoSummary": {
+      "document": "插件相关的API列表信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "插件相关的API总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件相关的API信息。",
+          "example": "无",
+          "member": "AvailableApiInfo",
+          "name": "ApiSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ApiKey": {
       "document": "密钥详情",
       "members": [
@@ -1683,6 +1751,69 @@
       ],
       "usage": "out"
     },
+    "AttachPluginRequest": {
+      "document": "AttachPlugin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "绑定的API网关插件ID。",
+          "example": "plugin-2nuhovb7",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要操作的服务ID。",
+          "example": "service-jzo37opy",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要操作API的环境。",
+          "example": "release",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要绑定的API列表。",
+          "example": "['api-buz84890','api-9nb6hd46']",
+          "member": "string",
+          "name": "ApiIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachPluginResponse": {
+      "document": "AttachPlugin返回参数结构体",
+      "members": [
+        {
+          "document": "绑定操作是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AttachedApiInfo": {
       "document": "插件绑定的API信息",
       "members": [
@@ -1757,6 +1888,106 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachedApiSummary": {
+      "document": "插件绑定的API列表",
+      "members": [
+        {
+          "default": "",
+          "document": "插件绑定的API数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件绑定的API信息。",
+          "member": "AttachedApiInfo",
+          "name": "AttachedApis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvailableApiInfo": {
+      "document": "插件相关的API信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "API ID。",
+          "example": "api-d2sdvx",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API名称。",
+          "example": "helloapi",
+          "member": "string",
+          "name": "ApiName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API类型。",
+          "example": "Normal",
+          "member": "string",
+          "name": "ApiType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API路径。",
+          "example": "/happy",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API方法。",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API是否绑定其他插件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AttachedOtherPlugin",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API是否绑定当前插件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAttached",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3255,6 +3486,42 @@
       ],
       "type": "object"
     },
+    "DeletePluginRequest": {
+      "document": "DeletePlugin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的API网关插件的ID。",
+          "example": "plugin-2nuhovb7",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePluginResponse": {
+      "document": "DeletePlugin返回参数结构体",
+      "members": [
+        {
+          "document": "删除操作是否成功。",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteServiceRequest": {
       "document": "DeleteService请求参数结构体",
       "members": [
@@ -3680,6 +3947,78 @@
           "document": "API文档列表信息",
           "example": " 无",
           "member": "APIDocs",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllPluginApisRequest": {
+      "document": "DescribeAllPluginApis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的服务ID。",
+          "example": "service-o5as3moe",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的插件ID。",
+          "example": "plugin-ca5k53id",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境信息。",
+          "example": "release",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllPluginApisResponse": {
+      "document": "DescribeAllPluginApis返回参数结构体",
+      "members": [
+        {
+          "document": "插件相关API的列表。",
+          "example": " 无",
+          "member": "ApiInfoSummary",
           "name": "Result",
           "required": true,
           "type": "object",
@@ -4278,6 +4617,114 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginApisRequest": {
+      "document": "DescribePluginApis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的插件ID。",
+          "example": "plugin-2nuhovb7",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginApisResponse": {
+      "document": "DescribePluginApis返回参数结构体",
+      "members": [
+        {
+          "document": "插件绑定的API列表信息。",
+          "example": "无",
+          "member": "AttachedApiSummary",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginRequest": {
+      "document": "DescribePlugin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的插件ID。",
+          "example": "plugin-ca5k53id",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginResponse": {
+      "document": "DescribePlugin返回参数结构体",
+      "members": [
+        {
+          "document": "插件详情。",
+          "example": "无",
+          "member": "Plugin",
+          "name": "Result",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -5197,6 +5644,69 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachPluginRequest": {
+      "document": "DetachPlugin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要解绑的API网关插件ID。",
+          "example": "plugin-2nuhovb7",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要操作的服务ID。",
+          "example": "service-jzo37opy",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要操作API的环境。",
+          "example": "release",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要解绑的API ID。",
+          "example": "['api-1clczx66']",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachPluginResponse": {
+      "document": "DetachPlugin返回参数结构体",
+      "members": [
+        {
+          "document": "解绑操作是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6630,6 +7140,69 @@
           "name": "Result",
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPluginRequest": {
+      "document": "ModifyPlugin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要修改的插件ID。",
+          "example": "plugin-9l0d4sdf",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的API网关插件名称。最长50个字符，支持 a-z,A-Z,0-9,_, 必须字母开头，字母或者数字结尾。",
+          "example": "myplugin",
+          "member": "string",
+          "name": "PluginName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的插件描述，限定200字以内。",
+          "example": "newmodify",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的插件定义语句，支持json。",
+          "example": "{\"blocks\":\"1.1.1.1\",\"type\":\"black_list\"}",
+          "member": "string",
+          "name": "PluginData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPluginResponse": {
+      "document": "ModifyPlugin返回参数结构体",
+      "members": [
+        {
+          "document": "修改操作是否成功。",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

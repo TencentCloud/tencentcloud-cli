@@ -364,6 +364,33 @@ def doDescribeRuleOverview(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTLogInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTLogInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTLogInfo(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyBlockIgnoreList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -410,6 +437,33 @@ def doDescribeGuideScanInfo(args, parsed_globals):
     model = models.DescribeGuideScanInfoRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeGuideScanInfo(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeUnHandleEventTabList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeUnHandleEventTabListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeUnHandleEventTabList(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -518,6 +572,33 @@ def doModifyAllRuleStatus(args, parsed_globals):
     model = models.ModifyAllRuleStatusRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ModifyAllRuleStatus(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyBlockTop(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyBlockTopRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyBlockTop(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -661,6 +742,33 @@ def doDeleteSecurityGroupRule(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTLogIpList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTLogIpListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTLogIpList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSwitchLists(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -742,6 +850,60 @@ def doExpandCfwVertical(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeBlockByIpTimesList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBlockByIpTimesListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeBlockByIpTimesList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBlockStaticList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBlockStaticListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeBlockStaticList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyItemSwitchStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -793,20 +955,26 @@ ACTION_MAP = {
     "ModifySecurityGroupAllRuleStatus": doModifySecurityGroupAllRuleStatus,
     "DescribeAcLists": doDescribeAcLists,
     "DescribeRuleOverview": doDescribeRuleOverview,
+    "DescribeTLogInfo": doDescribeTLogInfo,
     "ModifyBlockIgnoreList": doModifyBlockIgnoreList,
     "DescribeGuideScanInfo": doDescribeGuideScanInfo,
+    "DescribeUnHandleEventTabList": doDescribeUnHandleEventTabList,
     "ModifySequenceRules": doModifySequenceRules,
     "ModifyAllSwitchStatus": doModifyAllSwitchStatus,
     "SetNatFwDnatRule": doSetNatFwDnatRule,
     "ModifyAllRuleStatus": doModifyAllRuleStatus,
+    "ModifyBlockTop": doModifyBlockTop,
     "DescribeTableStatus": doDescribeTableStatus,
     "DescribeCfwEips": doDescribeCfwEips,
     "RunSyncAsset": doRunSyncAsset,
     "ModifyAcRule": doModifyAcRule,
     "DeleteSecurityGroupRule": doDeleteSecurityGroupRule,
+    "DescribeTLogIpList": doDescribeTLogIpList,
     "DescribeSwitchLists": doDescribeSwitchLists,
     "DeleteAllAccessControlRule": doDeleteAllAccessControlRule,
     "ExpandCfwVertical": doExpandCfwVertical,
+    "DescribeBlockByIpTimesList": doDescribeBlockByIpTimesList,
+    "DescribeBlockStaticList": doDescribeBlockStaticList,
     "ModifyItemSwitchStatus": doModifyItemSwitchStatus,
 
 }

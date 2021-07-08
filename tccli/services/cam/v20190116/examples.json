@@ -281,8 +281,8 @@
     "GetSecurityLastUsed": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecurityLastUsed\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15a763ee-c2da-446a-9b21-25632d7cecb5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecurityLastUsed\n<公共请求参数>\n\n{\n    \"SecretIdList\": [\n        \"xxxxxxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretIdLastUsedRows\": [\n            {\n                \"SecretId\": \"xxxxxxxxx\",\n                \"LastUsedDate\": \"2021-03-20\"\n            }\n        ],\n        \"RequestId\": \"15a763ee-c2da-446a-9b21-25632d7cecb5\"\n    }\n}",
         "title": "获取密钥最近使用情况"
       }
     ],

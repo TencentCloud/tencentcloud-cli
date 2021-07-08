@@ -1207,6 +1207,7 @@
         {
           "default": "",
           "document": "客户账号ID",
+          "example": "125****938",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -1215,6 +1216,7 @@
         {
           "default": "",
           "document": "转账金额，单位分",
+          "example": "100",
           "member": "uint64",
           "name": "Amount",
           "required": true,

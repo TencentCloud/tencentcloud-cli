@@ -18,6 +18,12 @@
       "name": "创建客服账号",
       "output": "CreateStaffResponse"
     },
+    "CreateUserSig": {
+      "document": "创建用户数据签名",
+      "input": "CreateUserSigRequest",
+      "name": "创建用户数据签名",
+      "output": "CreateUserSigResponse"
+    },
     "DeleteStaff": {
       "document": "删除坐席信息",
       "input": "DeleteStaffRequest",
@@ -227,6 +233,69 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserSigRequest": {
+      "document": "CreateUserSig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用 ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户 ID",
+          "example": "foo",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "有效期，单位秒，不超过 1 小时",
+          "example": "86400",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户签名数据",
+          "example": "bar",
+          "member": "string",
+          "name": "ClientData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserSigResponse": {
+      "document": "CreateUserSig返回参数结构体",
+      "members": [
+        {
+          "document": "签名结果",
+          "example": "eJw0jkFPwjAYQP-Ld9Wwfm2HtokHswhK9IBMBtw22uEHbpa1JRrjfzfZ5vW95OX9",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

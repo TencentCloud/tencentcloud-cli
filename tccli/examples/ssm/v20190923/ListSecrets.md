@@ -6,37 +6,44 @@ Input:
 
 ```
 tccli ssm ListSecrets --cli-unfold-argument  \
-    --Limit 2
+    --Limit 2 \
+    --SecretType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3586bdc7-c8a5-4ccd-883f-9f256a96533a",
-        "TotalCount": 8,
+        "TotalCount": 1,
         "SecretMetadatas": [
             {
-                "SecretName": "test",
-                "Description": "test version 1.0",
-                "KmsKeyId": "13437ab9-e002-11e9-9936-5254006d0810",
-                "KmsKeyType": "DEFAULT",
-                "CreateUin": 3350000000,
-                "Status": "Enabled",
-                "DeleteTime": 0,
-                "CreateTime": 1574160561
+                "Status": "xx",
+                "Description": "xx",
+                "CreateUin": 1,
+                "ProductName": "xx",
+                "SecretType": 0,
+                "KmsKeyId": "xx",
+                "KmsKeyType": "xx",
+                "SecretName": "xx",
+                "DeleteTime": 1,
+                "CreateTime": 1,
+                "NextRotationTime": 1
             },
             {
-                "SecretName": "test2",
-                "Description": "test desc 2",
-                "KmsKeyId": "13437ab9-e002-11e9-9936-5254006d0810",
-                "KmsKeyType": "DEFAULT",
-                "CreateUin": 3350000000,
-                "Status": "Enabled",
-                "DeleteTime": 0,
-                "CreateTime": 1574067178
+                "Status": "xx",
+                "Description": "xx",
+                "CreateUin": 1,
+                "KmsKeyType": "xx",
+                "ProductName": "xx",
+                "KmsKeyId": "xx",
+                "SecretType": 0,
+                "SecretName": "xx",
+                "DeleteTime": 1,
+                "CreateTime": 1,
+                "NextRotationTime": 1
             }
-        ]
+        ],
+        "RequestId": "xx"
     }
 }
 ```

@@ -832,7 +832,7 @@
         },
         {
           "default": "",
-          "document": "是否需要支持Ipv6，1：是，0：否。",
+          "document": "是否需要支持Ipv6，1：是，0：否（默认）。",
           "example": "无",
           "member": "uint64",
           "name": "NeedSupportIpv6",

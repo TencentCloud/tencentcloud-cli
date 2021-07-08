@@ -67,7 +67,7 @@ def doBuildAPIDoc(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeUsagePlansStatus(args, parsed_globals):
+def doAttachPlugin(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -83,9 +83,9 @@ def doDescribeUsagePlansStatus(args, parsed_globals):
     client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUsagePlansStatusRequest()
+    model = models.AttachPluginRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeUsagePlansStatus(model)
+    rsp = client.AttachPlugin(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -256,7 +256,7 @@ def doDeleteAPIDoc(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyApiEnvironmentStrategy(args, parsed_globals):
+def doDescribeUsagePlansStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -272,9 +272,9 @@ def doModifyApiEnvironmentStrategy(args, parsed_globals):
     client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyApiEnvironmentStrategyRequest()
+    model = models.DescribeUsagePlansStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyApiEnvironmentStrategy(model)
+    rsp = client.DescribeUsagePlansStatus(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -526,6 +526,33 @@ def doDescribeIPStrategyApisStatus(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyPlugin(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyPluginRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyPlugin(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doUnReleaseService(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -626,6 +653,33 @@ def doDescribeApiUsagePlan(args, parsed_globals):
     model = models.DescribeApiUsagePlanRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeApiUsagePlan(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePlugin(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePluginRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePlugin(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -823,6 +877,33 @@ def doDeleteApiKey(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAllPluginApis(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAllPluginApisRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAllPluginApis(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyService(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -869,6 +950,33 @@ def doUpdateApiKey(args, parsed_globals):
     model = models.UpdateApiKeyRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.UpdateApiKey(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeletePlugin(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeletePluginRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeletePlugin(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1282,6 +1390,33 @@ def doModifySubDomain(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDetachPlugin(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetachPluginRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DetachPlugin(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeServiceEnvironmentList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1301,6 +1436,33 @@ def doDescribeServiceEnvironmentList(args, parsed_globals):
     model = models.DescribeServiceEnvironmentListRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeServiceEnvironmentList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePluginApis(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePluginApisRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePluginApis(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1687,6 +1849,33 @@ def doBindSubDomain(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyApiEnvironmentStrategy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApigatewayClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyApiEnvironmentStrategyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyApiEnvironmentStrategy(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteIPStrategy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1835,14 +2024,14 @@ MODELS_MAP = {
 ACTION_MAP = {
     "CreateService": doCreateService,
     "BuildAPIDoc": doBuildAPIDoc,
-    "DescribeUsagePlansStatus": doDescribeUsagePlansStatus,
+    "AttachPlugin": doAttachPlugin,
     "DeleteUsagePlan": doDeleteUsagePlan,
     "DescribeAPIDocDetail": doDescribeAPIDocDetail,
     "ModifyApi": doModifyApi,
     "DemoteServiceUsagePlan": doDemoteServiceUsagePlan,
     "DescribeApiKeysStatus": doDescribeApiKeysStatus,
     "DeleteAPIDoc": doDeleteAPIDoc,
-    "ModifyApiEnvironmentStrategy": doModifyApiEnvironmentStrategy,
+    "DescribeUsagePlansStatus": doDescribeUsagePlansStatus,
     "DescribeLogSearch": doDescribeLogSearch,
     "DescribeUsagePlanSecretIds": doDescribeUsagePlanSecretIds,
     "DescribeServiceSubDomains": doDescribeServiceSubDomains,
@@ -1852,10 +2041,12 @@ ACTION_MAP = {
     "CreateAPIDoc": doCreateAPIDoc,
     "UpdateService": doUpdateService,
     "DescribeIPStrategyApisStatus": doDescribeIPStrategyApisStatus,
+    "ModifyPlugin": doModifyPlugin,
     "UnReleaseService": doUnReleaseService,
     "ModifyApiIncrement": doModifyApiIncrement,
     "DescribeServiceEnvironmentReleaseHistory": doDescribeServiceEnvironmentReleaseHistory,
     "DescribeApiUsagePlan": doDescribeApiUsagePlan,
+    "DescribePlugin": doDescribePlugin,
     "DeleteApi": doDeleteApi,
     "DescribeAPIDocs": doDescribeAPIDocs,
     "DescribeIPStrategysStatus": doDescribeIPStrategysStatus,
@@ -1863,8 +2054,10 @@ ACTION_MAP = {
     "ModifyServiceEnvironmentStrategy": doModifyServiceEnvironmentStrategy,
     "CreateUsagePlan": doCreateUsagePlan,
     "DeleteApiKey": doDeleteApiKey,
+    "DescribeAllPluginApis": doDescribeAllPluginApis,
     "ModifyService": doModifyService,
     "UpdateApiKey": doUpdateApiKey,
+    "DeletePlugin": doDeletePlugin,
     "ModifyUsagePlan": doModifyUsagePlan,
     "BindEnvironment": doBindEnvironment,
     "ModifyAPIDoc": doModifyAPIDoc,
@@ -1880,7 +2073,9 @@ ACTION_MAP = {
     "DescribeApisStatus": doDescribeApisStatus,
     "CreateApiKey": doCreateApiKey,
     "ModifySubDomain": doModifySubDomain,
+    "DetachPlugin": doDetachPlugin,
     "DescribeServiceEnvironmentList": doDescribeServiceEnvironmentList,
+    "DescribePluginApis": doDescribePluginApis,
     "DisableApiKey": doDisableApiKey,
     "ReleaseService": doReleaseService,
     "UnBindEnvironment": doUnBindEnvironment,
@@ -1895,6 +2090,7 @@ ACTION_MAP = {
     "DescribeUsagePlan": doDescribeUsagePlan,
     "DescribeApi": doDescribeApi,
     "BindSubDomain": doBindSubDomain,
+    "ModifyApiEnvironmentStrategy": doModifyApiEnvironmentStrategy,
     "DeleteIPStrategy": doDeleteIPStrategy,
     "GenerateApiDocument": doGenerateApiDocument,
     "BindSecretIds": doBindSecretIds,

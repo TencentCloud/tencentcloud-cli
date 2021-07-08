@@ -2172,12 +2172,31 @@
     },
     "GetSecurityLastUsedRequest": {
       "document": "GetSecurityLastUsed请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "查询密钥ID列表",
+          "example": "[\"id1\",\"id2\"]",
+          "member": "string",
+          "name": "SecretIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "GetSecurityLastUsedResponse": {
       "document": "GetSecurityLastUsed返回参数结构体",
       "members": [
+        {
+          "document": "密钥ID最近访问列表",
+          "example": "无",
+          "member": "SecretIdLastUsed",
+          "name": "SecretIdLastUsedRows",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3852,6 +3871,32 @@
         }
       ],
       "usage": "both"
+    },
+    "SecretIdLastUsed": {
+      "document": "密钥最后使用时间",
+      "members": [
+        {
+          "default": "",
+          "document": "密钥ID",
+          "example": "Key",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后访问日期(有1天延迟)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-20",
+          "member": "date",
+          "name": "LastUsedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SetDefaultPolicyVersionRequest": {
       "document": "SetDefaultPolicyVersion请求参数结构体",

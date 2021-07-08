@@ -64,6 +64,22 @@
         "title": "查询安全组关联实例列表"
       }
     ],
+    "DescribeBlockByIpTimesList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlockByIpTimesList\n<公共请求参数>\n\n{\n    \"Ip\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"StartTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"StatTime\": \"xx\",\n                \"Num\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeBlockByIpTimesList"
+      }
+    ],
+    "DescribeBlockStaticList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlockStaticList\n<公共请求参数>\n\n{\n    \"Top\": 10,\n    \"EndTime\": \"xx\",\n    \"SearchValue\": \"xx\",\n    \"QueryType\": \"xx\",\n    \"StartTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Ip\": \"xx\",\n                \"Num\": 0,\n                \"Port\": \"xx\",\n                \"Address\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeBlockStaticList"
+      }
+    ],
     "DescribeCfwEips": [
       {
         "document": "",
@@ -120,12 +136,36 @@
         "title": "同步资产状态查询-互联网&VPC"
       }
     ],
+    "DescribeTLogInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTLogInfo\n<公共请求参数>\n\n{\n    \"EndTime\": \"xx\",\n    \"SearchValue\": \"xx\",\n    \"QueryType\": \"xx\",\n    \"StartTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"NetworkNum\": 0,\n            \"HandleNum\": 0,\n            \"BanNum\": 0,\n            \"VulNum\": 0,\n            \"OutNum\": 0,\n            \"BruteForceNum\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeTLogInfo"
+      }
+    ],
+    "DescribeTLogIpList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTLogIpList\n<公共请求参数>\n\n{\n    \"Top\": 0,\n    \"EndTime\": \"xx\",\n    \"SearchValue\": \"xx\",\n    \"QueryType\": \"xx\",\n    \"StartTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Ip\": \"xx\",\n                \"Num\": 0,\n                \"Port\": \"xx\",\n                \"Address\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeTLogIpList"
+      }
+    ],
     "DescribeTableStatus": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableStatus\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"Direction\": 0,\n    \"EdgeId\": \"\",\n    \"Area\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询规则表状态"
+      }
+    ],
+    "DescribeUnHandleEventTabList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnHandleEventTabList \n<公共请求参数>\n\n{\n    \"EndTime\": \"2021-05-206 23:59:59\",\n    \"StartTime\": \"2021-05-20 00:00:00\",\n    \"AssetID\": \"ins-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"EventTableListStruct\": [\n                {\n                    \"EventName\": \"主机失陷\",\n                    \"Total\": 3\n                },\n                {\n                    \"EventName\": \"安全基线（出）\",\n                    \"Total\": 2635\n                }\n            ],\n            \"BaseLineUser\": 1,\n            \"BaseLineInSwitch\": 1,\n            \"BaseLineOutSwitch\": 1\n        },\n        \"RequestId\": \"121233\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"scuess\"\n    }\n}",
+        "title": "DescribeUnHandleEventTabList"
       }
     ],
     "DescribeVpcRuleOverview": [
@@ -174,6 +214,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockIgnoreList\n<公共请求参数>\n\n{\n    \"IOC\": [\n        {\n            \"IP\": \"192.168.1.1\",\n            \"Direction\": 1,\n            \"Domain\": \"\"\n        }\n    ],\n    \"RuleType\": 1,\n    \"IocAction\": \"add\",\n    \"StartTime\": \"2021-04-16 18:01:09\",\n    \"EndTime\": \"3000-01-01 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
         "title": "入侵防御-拦截列表/忽略列表-增删改接口"
+      }
+    ],
+    "ModifyBlockTop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockTop\n<公共请求参数>\n\n{\n    \"OpeType\": \"xx\",\n    \"UniqueId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "取消置顶接口"
       }
     ],
     "ModifyItemSwitchStatus": [

@@ -48,6 +48,18 @@
       "name": "获取安全组关联实例列表",
       "output": "DescribeAssociatedInstanceListResponse"
     },
+    "DescribeBlockByIpTimesList": {
+      "document": "DescribeBlockByIpTimesList 告警中心阻断ip折线图\n",
+      "input": "DescribeBlockByIpTimesListRequest",
+      "name": "告警中心阻断ip折线图",
+      "output": "DescribeBlockByIpTimesListResponse"
+    },
+    "DescribeBlockStaticList": {
+      "document": "DescribeBlockStaticList 告警中心柱形图\n",
+      "input": "DescribeBlockStaticListRequest",
+      "name": "告警中心柱形图",
+      "output": "DescribeBlockStaticListResponse"
+    },
     "DescribeCfwEips": {
       "document": "查询防火墙弹性公网ip",
       "input": "DescribeCfwEipsRequest",
@@ -90,11 +102,29 @@
       "name": "同步资产状态查询-互联网&VPC",
       "output": "DescribeSyncAssetStatusResponse"
     },
+    "DescribeTLogInfo": {
+      "document": "DescribeTLogInfo告警中心概况\n",
+      "input": "DescribeTLogInfoRequest",
+      "name": "告警中心概况",
+      "output": "DescribeTLogInfoResponse"
+    },
+    "DescribeTLogIpList": {
+      "document": "DescribeTLogIpList告警中心ip柱形图\n",
+      "input": "DescribeTLogIpListRequest",
+      "name": "告警中心ip柱形图",
+      "output": "DescribeTLogIpListResponse"
+    },
     "DescribeTableStatus": {
       "document": "查询规则表状态",
       "input": "DescribeTableStatusRequest",
       "name": "查询规则表状态",
       "output": "DescribeTableStatusResponse"
+    },
+    "DescribeUnHandleEventTabList": {
+      "document": "DescribeUnHandleEventTabList 告警中心伪攻击链事件未处置接口\n",
+      "input": "DescribeUnHandleEventTabListRequest",
+      "name": "告警中心伪攻击链事件未处置接口",
+      "output": "DescribeUnHandleEventTabListResponse"
     },
     "DescribeVpcRuleOverview": {
       "document": "vpc规则列表概况",
@@ -131,6 +161,12 @@
       "input": "ModifyBlockIgnoreListRequest",
       "name": "拦截列表和忽略列表批量操作接口",
       "output": "ModifyBlockIgnoreListResponse"
+    },
+    "ModifyBlockTop": {
+      "document": "ModifyBlockTop取消置顶接口",
+      "input": "ModifyBlockTopRequest",
+      "name": "取消阻断记录置顶接口",
+      "output": "ModifyBlockTopResponse"
     },
     "ModifyItemSwitchStatus": {
       "document": "修改单个防火墙开关",
@@ -1045,6 +1081,159 @@
       ],
       "type": "object"
     },
+    "DescribeBlockByIpTimesListRequest": {
+      "document": "DescribeBlockByIpTimesList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-05-21",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-05-26",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ip查询条件",
+          "example": "183.1.2.6",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "方向",
+          "example": "1",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "1",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockByIpTimesListResponse": {
+      "document": "DescribeBlockByIpTimesList返回参数结构体",
+      "members": [
+        {
+          "document": "返回数据",
+          "example": "无",
+          "member": "IpStatic",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockStaticListRequest": {
+      "document": "DescribeBlockStaticList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-05-21",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-05-26",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "address",
+          "member": "string",
+          "name": "QueryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "top数",
+          "example": "10",
+          "member": "int64",
+          "name": "Top",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "example": "\"search_value\":{  \"PublicIp\": \"1.116.139.155\"}",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockStaticListResponse": {
+      "document": "DescribeBlockStaticList返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "StaticInfo",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCfwEipsRequest": {
       "document": "DescribeCfwEips请求参数结构体",
       "members": [
@@ -1543,6 +1732,141 @@
       ],
       "type": "object"
     },
+    "DescribeTLogInfoRequest": {
+      "document": "DescribeTLogInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-05-21",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-05-26",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型 1 告警 2阻断",
+          "example": "1",
+          "member": "string",
+          "name": "QueryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "example": "\"search_value\":{  \"PublicIp\": \"1.116.139.155\"}",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTLogInfoResponse": {
+      "document": "DescribeTLogInfo返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "TLogInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTLogIpListRequest": {
+      "document": "DescribeTLogIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-05-21",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-05-26",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型 1 告警 2阻断",
+          "example": "address",
+          "member": "string",
+          "name": "QueryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "top数",
+          "example": "10",
+          "member": "int64",
+          "name": "Top",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "example": "\"search_value\":{  \"PublicIp\": \"1.116.139.155\"}",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTLogIpListResponse": {
+      "document": "DescribeTLogIpList返回参数结构体",
+      "members": [
+        {
+          "document": "数据集合",
+          "example": "无",
+          "member": "StaticInfo",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTableStatusRequest": {
       "document": "DescribeTableStatus请求参数结构体",
       "members": [
@@ -1590,6 +1914,78 @@
           "name": "Status",
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnHandleEventTabListRequest": {
+      "document": "DescribeUnHandleEventTabList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-05-21",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-05-26",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询示例ID",
+          "example": "ins-xxxx",
+          "member": "string",
+          "name": "AssetID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnHandleEventTabListResponse": {
+      "document": "DescribeUnHandleEventTabList返回参数结构体",
+      "members": [
+        {
+          "document": "租户伪攻击链未处置事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"EventTableLst\":[{\"EventName\":\"主机失陷\",\"Total\":3},{\"EventName\":\"安",
+          "member": "UnHandleEvent",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误码，0成功 非0错误",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息 success成功",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1720,6 +2116,32 @@
         }
       ],
       "usage": "in"
+    },
+    "IpStatic": {
+      "document": "统计折线图通用结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "值",
+          "example": "10",
+          "member": "int64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折线图横坐标时间",
+          "example": "2021-05-21",
+          "member": "string",
+          "name": "StatTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ModifyAcRuleRequest": {
       "document": "ModifyAcRule请求参数结构体",
@@ -1979,6 +2401,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockTopRequest": {
+      "document": "ModifyBlockTop请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "记录id",
+          "example": "xxxx",
+          "member": "string",
+          "name": "UniqueId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型 1 置顶 0取消",
+          "example": "1",
+          "member": "string",
+          "name": "OpeType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockTopResponse": {
+      "document": "ModifyBlockTop返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2932,6 +3390,72 @@
       ],
       "type": "object"
     },
+    "StaticInfo": {
+      "document": "StaticInfo 告警柱形图统计信息\n ",
+      "members": [
+        {
+          "default": "",
+          "document": "数",
+          "example": "10",
+          "member": "int64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "example": "80",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip信息",
+          "example": "“183.45.1.2\"",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地址",
+          "example": "上海",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产id",
+          "example": "ins-123456",
+          "member": "string",
+          "name": "InsID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产名称",
+          "example": "test",
+          "member": "string",
+          "name": "InsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SwitchListsData": {
       "document": "防火墙开关列表对象",
       "members": [
@@ -3051,6 +3575,144 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TLogInfo": {
+      "document": "告警中心概览数据\n",
+      "members": [
+        {
+          "default": "",
+          "document": "失陷主机",
+          "example": "10",
+          "member": "int64",
+          "name": "OutNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待处置告警",
+          "example": "22",
+          "member": "int64",
+          "name": "HandleNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞攻击",
+          "example": "0",
+          "member": "int64",
+          "name": "VulNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络探测",
+          "example": "1",
+          "member": "int64",
+          "name": "NetworkNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封禁列表",
+          "example": "11",
+          "member": "int64",
+          "name": "BanNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暴力破解",
+          "example": "222",
+          "member": "int64",
+          "name": "BruteForceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UnHandleEvent": {
+      "document": "未处置事件详情",
+      "members": [
+        {
+          "default": "",
+          "document": "伪攻击链类型",
+          "example": "漏洞利用",
+          "member": "UnHandleEventDetail",
+          "name": "EventTableListStruct",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1 是  0否",
+          "example": "1",
+          "member": "uint64",
+          "name": "BaseLineUser",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1 打开 0 关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "BaseLineInSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1 打开 0 关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "BaseLineOutSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UnHandleEventDetail": {
+      "document": "未处置事件信息汇总",
+      "members": [
+        {
+          "default": "",
+          "document": "安全事件名称",
+          "example": "主机失陷",
+          "member": "string",
+          "name": "EventName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "未处置事件数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

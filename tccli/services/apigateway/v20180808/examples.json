@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AttachPlugin": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=AttachPlugin\n&ServiceId=Service-3fasdgrg\n&PluginId=Plugin-3datbg1f\n&EnvironmentName=release\n&ApiIds.0=api-gesv1rfa\n&ApiIds.1=api-9ads3g\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"bb85842c-c0d2-4543-8f4d-396a193babe8\"\n    }\n}",
+        "title": "AttachPlugin"
+      }
+    ],
     "BindEnvironment": [
       {
         "document": "",
@@ -128,6 +136,14 @@
         "title": "DeleteIPStrategy"
       }
     ],
+    "DeletePlugin": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DeletePlugin\n&PluginId=Plugin-3datbg1f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"bb85842c-c0d2-4543-8f4d-396a193babe8\"\n    }\n}",
+        "title": "DeletePlugin"
+      }
+    ],
     "DeleteService": [
       {
         "document": "",
@@ -174,6 +190,14 @@
         "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIDocs\n<公共请求参数>\n\n{\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"APIDocSet\": [\n                {\n                    \"ApiDocId\": \"apidoc-a7ragqam\",\n                    \"ApiDocName\": \"test\",\n                    \"ApiDocStatus\": \"PROCESSING\"\n                }\n            ]\n        },\n        \"RequestId\": \"5ee3cf2e-758b-4cb5-801e-9c28d5b67763\"\n    }\n}",
         "title": "DescribeAPIDocs"
+      }
+    ],
+    "DescribeAllPluginApis": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeAllPluginApis\n&PluginId=Plugin-23sdcda\n&EnvironmentName=release\n&ServiceId=service-jzo37opy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"ApiSet\": [\n                {\n                    \"ApiId\": \"api-hjqpe4dg\",\n                    \"ApiName\": \"notbind\",\n                    \"ApiType\": \"NORMAL\",\n                    \"Path\": \"/notbind\",\n                    \"Method\": \"GET\",\n                    \"IsAttached\": false,\n                    \"AttachedOtherPlugin\": false\n                },\n                {\n                    \"ApiId\": \"api-1clczx66\",\n                    \"ApiName\": \"mock2\",\n                    \"ApiType\": \"NORMAL\",\n                    \"Path\": \"/mock2\",\n                    \"Method\": \"GET\",\n                    \"IsAttached\": false,\n                    \"AttachedOtherPlugin\": true\n                }\n            ]\n        },\n        \"RequestId\": \"5aaeb03a-8f00-4644-95e8-6307b1690aa2\"\n    }\n}",
+        "title": "DescribeAllPluginApis"
       }
     ],
     "DescribeApi": [
@@ -260,6 +284,22 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeLogSearch\r\n&StartTime=2019-10-10 00:00:00\r\n&EndTime=2019-10-10 23:59:59\r\n&ServiceId=service-8xipv0ua\r\n&Limit=101\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a8b1de4-04f5-48eb-9be6-93491ebee6e1\"\n    }\n}",
         "title": "请求失败"
+      }
+    ],
+    "DescribePlugin": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribePlugin\n&PluginId=plugin-5xzwu9vh\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"PluginId\": \"plugin-5xzwu9vh\",\n            \"PluginName\": \"mynewplugins\",\n            \"PluginType\": \"IPControl\",\n            \"Description\": \"newmodify\",\n            \"PluginData\": \"{\\\"blocks\\\":\\\"1.1.1.1\\\",\\\"type\\\":\\\"black_list\\\"}\",\n            \"CreatedTime\": \"2021-01-26T03:00:34Z\",\n            \"ModifiedTime\": \"2021-01-26T04:14:01Z\",\n            \"AttachedApiTotalCount\": 1,\n            \"AttachedApis\": [\n                {\n                    \"ServiceId\": \"service-2mvp5cwi\",\n                    \"ServiceName\": \"clarescftest2\",\n                    \"ServiceDesc\": \"\",\n                    \"ApiId\": \"api-6wn5mmfq\",\n                    \"ApiName\": \"eee\",\n                    \"ApiDesc\": \"\",\n                    \"Environment\": \"release\",\n                    \"AttachedTime\": \"2021-01-26T04:17:41Z\"\n                }\n            ]\n        },\n        \"RequestId\": \"d1f768f4-ef4f-49e7-8117-4e12f720e355\"\n    }\n}",
+        "title": "DescribePlugin"
+      }
+    ],
+    "DescribePluginApis": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribePluginApis\n&PluginId=Plugin-23sdcda\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"AttachedApis\": [\n                {\n                    \"ServiceId\": \"service-jzo37opy\",\n                    \"ServiceName\": \"clareplugin\",\n                    \"ServiceDesc\": \"\",\n                    \"ApiId\": \"api-1vkzehtw\",\n                    \"ApiName\": \"mock3\",\n                    \"ApiDesc\": \"\",\n                    \"Environment\": \"release\",\n                    \"AttachedTime\": \"2021-01-25T07:14:27Z\"\n                },\n                {\n                    \"ServiceId\": \"service-jzo37opy\",\n                    \"ServiceName\": \"clareplugin\",\n                    \"ServiceDesc\": \"\",\n                    \"ApiId\": \"api-buz84890\",\n                    \"ApiName\": \"mock\",\n                    \"ApiDesc\": \"\",\n                    \"Environment\": \"release\",\n                    \"AttachedTime\": \"2021-01-25T06:56:58Z\"\n                }\n            ]\n        },\n        \"RequestId\": \"f373cf5c-dddf-4263-98af-834fd0b773cf\"\n    }\n}",
+        "title": "DescribePluginApis"
       }
     ],
     "DescribePlugins": [
@@ -374,6 +414,14 @@
         "title": "DescribeUsagePlansStatus"
       }
     ],
+    "DetachPlugin": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DetachPlugin\n&ServiceId=Service-3fasdgrg\n&PluginId=Plugin-3datbg1f\n&EnvironmentName=release\n&ApiId=api-gesv1rfa\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"bb85842c-c0d2-4543-8f4d-396a193babe8\"\n    }\n}",
+        "title": "DetachPlugin"
+      }
+    ],
     "DisableApiKey": [
       {
         "document": "",
@@ -436,6 +484,14 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyIPStrategy\n&StrategyId=IPStrategy-0ez0c8to\n&ServiceId=service-ody35h5e\n&StrategyData=3.3.3.3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"cfbd2c3f-64f4-4266-bcca-f04568c6c9ce\"\n    }\n}",
         "title": "ModifyIPStrategy"
+      }
+    ],
+    "ModifyPlugin": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyPlugin\n&PluginName=newplugin\n&PluginId=plugin-3datbg1f\n&Description=Modify a plugin\n&PluginData={\"type\":\"white_list\",\"blocks\":\"172.3.1.4\"}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"bb85842c-c0d2-4543-8f4d-396a193babe8\"\n    }\n}",
+        "title": "ModifyPlugin"
       }
     ],
     "ModifyService": [

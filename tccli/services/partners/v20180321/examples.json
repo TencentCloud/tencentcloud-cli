@@ -11,7 +11,7 @@
     "AgentTransferMoney": [
       {
         "document": "",
-        "input": "https://partners.tencentcloudapi.com/?Action=AgentTransferMoney\r\n&ClientUin=125****938\r\n&Amount=100\r\n&<公共请求参数>",
+        "input": "https://partners.tencentcloudapi.com/?Action=AgentTransferMoney\n&ClientUin=125****938\n&Amount=100\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eeedc7d9-2310-4b77-bd3e-23f077e44b7d\"\n    }\n}",
         "title": "给客户转账"
       }

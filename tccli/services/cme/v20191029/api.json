@@ -6,6 +6,12 @@
       "name": "添加团队成员",
       "output": "AddTeamMemberResponse"
     },
+    "CopyProject": {
+      "document": "复制一个项目，包括项目素材及轨道数据。目前仅普通剪辑及模板制作项目可复制，其它类型的项目不支持复制。",
+      "input": "CopyProjectRequest",
+      "name": "复制项目",
+      "output": "CopyProjectResponse"
+    },
     "CreateClass": {
       "document": "新增分类，用于管理素材。分类层数不能超过20。",
       "input": "CreateClassRequest",
@@ -671,6 +677,78 @@
         }
       ],
       "usage": "out"
+    },
+    "CopyProjectRequest": {
+      "document": "CopyProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被复制的项目 ID。",
+          "example": "cmepid_88kkdkkkkd009d9d9d99d9",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制后的项目名称，不填为原项目名称+\"(副本)\"。",
+          "example": "复制项目",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制后的项目归属者，不填为原项目归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "user_id_1000001",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyProjectResponse": {
+      "document": "CopyProject返回参数结构体",
+      "members": [
+        {
+          "document": "复制后的项目 ID。",
+          "example": "mepid_88kkdkkkkd009d9duujde77",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CosPublishInputInfo": {
       "document": "COS 发布信息。",
