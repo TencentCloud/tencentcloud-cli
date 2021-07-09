@@ -282,6 +282,12 @@
       "name": "查询实例扩容价格",
       "output": "InquiryPriceUpgradeInstanceResponse"
     },
+    "KillMasterGroup": {
+      "document": "模拟故障",
+      "input": "KillMasterGroupRequest",
+      "name": "模拟故障接口",
+      "output": "KillMasterGroupResponse"
+    },
     "ManualBackupInstance": {
       "document": "手动备份Redis实例",
       "input": "ManualBackupInstanceRequest",
@@ -4956,6 +4962,51 @@
         }
       ],
       "usage": "out"
+    },
+    "KillMasterGroupRequest": {
+      "document": "KillMasterGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-dfndi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1.长度8-30位,推荐使用12位以上的密码\n2.不能以\"/\"开头\n3.至少包含两项\n    a.小写字母a-z\n    b.大写字母A-Z\n    c.数字0-9\n    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/",
+          "example": "12345Aa",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KillMasterGroupResponse": {
+      "document": "KillMasterGroup返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "example": "156156",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ManualBackupInstanceRequest": {
       "document": "ManualBackupInstance请求参数结构体",

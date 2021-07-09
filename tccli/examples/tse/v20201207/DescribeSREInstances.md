@@ -1,6 +1,6 @@
-**Example 1: 查询微服务注册引擎实例列表**
+**Example 1: 查询微服务引擎实例列表**
 
-用于查询微服务注册引擎实例列表
+用于查询微服务引擎实例列表
 
 Input: 
 
@@ -31,6 +31,21 @@ Output:
                 "StorageCapacity": 0,
                 "Edition": "xx",
                 "Replica": 3,
+                "EnvInfos": [
+                    {
+                        "VpcInfos": [
+                            {
+                                "SubnetId": "xx",
+                                "VpcId": "xx"
+                            }
+                        ],
+                        "Status": "xx",
+                        "ConfigServiceIp": "xx",
+                        "StorageCapacity": 0,
+                        "EnvName": "xx",
+                        "AdminServiceIp": "xx"
+                    }
+                ],
                 "Type": "xx",
                 "CreateTime": "xx"
             }

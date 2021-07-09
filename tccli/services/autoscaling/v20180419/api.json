@@ -494,6 +494,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-30wif85u",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -503,6 +504,7 @@
         {
           "default": "",
           "document": "伸缩组名称",
+          "example": "test-asg",
           "member": "string",
           "name": "AutoScalingGroupName",
           "required": true,
@@ -512,6 +514,7 @@
         {
           "default": "",
           "document": "伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br><li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>",
+          "example": "NORMAL",
           "member": "string",
           "name": "AutoScalingGroupStatus",
           "required": true,
@@ -521,6 +524,7 @@
         {
           "default": "",
           "document": "创建时间，采用UTC标准计时",
+          "example": "2021-05-31T12:38:35Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -530,6 +534,7 @@
         {
           "default": "",
           "document": "默认冷却时间，单位秒",
+          "example": "300",
           "member": "int64",
           "name": "DefaultCooldown",
           "required": true,
@@ -539,6 +544,7 @@
         {
           "default": "",
           "document": "期望实例数",
+          "example": "0",
           "member": "int64",
           "name": "DesiredCapacity",
           "required": true,
@@ -548,6 +554,7 @@
         {
           "default": "",
           "document": "启用状态，取值包括`ENABLED`和`DISABLED`",
+          "example": "ENABLED",
           "member": "string",
           "name": "EnabledStatus",
           "required": true,
@@ -557,6 +564,7 @@
         {
           "default": "",
           "document": "应用型负载均衡器列表",
+          "example": "[]",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancerSet",
           "required": true,
@@ -566,6 +574,7 @@
         {
           "default": "",
           "document": "实例数量",
+          "example": "0",
           "member": "int64",
           "name": "InstanceCount",
           "required": true,
@@ -575,6 +584,7 @@
         {
           "default": "",
           "document": "状态为`IN_SERVICE`实例的数量",
+          "example": "0",
           "member": "int64",
           "name": "InServiceInstanceCount",
           "required": true,
@@ -584,6 +594,7 @@
         {
           "default": "",
           "document": "启动配置ID",
+          "example": "asc-966b7fk2",
           "member": "string",
           "name": "LaunchConfigurationId",
           "required": true,
@@ -593,6 +604,7 @@
         {
           "default": "",
           "document": "启动配置名称",
+          "example": "test-lc",
           "member": "string",
           "name": "LaunchConfigurationName",
           "required": true,
@@ -602,6 +614,7 @@
         {
           "default": "",
           "document": "传统型负载均衡器ID列表",
+          "example": "[]",
           "member": "string",
           "name": "LoadBalancerIdSet",
           "required": true,
@@ -611,6 +624,7 @@
         {
           "default": "",
           "document": "最大实例数",
+          "example": "10",
           "member": "int64",
           "name": "MaxSize",
           "required": true,
@@ -620,6 +634,7 @@
         {
           "default": "",
           "document": "最小实例数",
+          "example": "0",
           "member": "int64",
           "name": "MinSize",
           "required": true,
@@ -629,6 +644,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -638,6 +654,7 @@
         {
           "default": "",
           "document": "子网ID列表",
+          "example": "[\"subnet-rdm629r2\"]",
           "member": "string",
           "name": "SubnetIdSet",
           "required": true,
@@ -647,6 +664,7 @@
         {
           "default": "",
           "document": "销毁策略",
+          "example": "OLDEST_INSTANCE",
           "member": "string",
           "name": "TerminationPolicySet",
           "required": true,
@@ -656,6 +674,7 @@
         {
           "default": "",
           "document": "VPC标识",
+          "example": "vpc-h3cd5td5",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -665,6 +684,7 @@
         {
           "default": "",
           "document": "可用区列表",
+          "example": "[]",
           "member": "string",
           "name": "ZoneSet",
           "required": true,
@@ -674,6 +694,7 @@
         {
           "default": "",
           "document": "重试策略",
+          "example": "NO_RETRY",
           "member": "string",
           "name": "RetryPolicy",
           "required": true,
@@ -683,6 +704,7 @@
         {
           "default": "",
           "document": "伸缩组是否处于伸缩活动中，`IN_ACTIVITY`表示处于伸缩活动中，`NOT_IN_ACTIVITY`表示不处于伸缩活动中。",
+          "example": "IN_ACTIVITY",
           "member": "string",
           "name": "InActivityStatus",
           "required": true,
@@ -692,6 +714,7 @@
         {
           "default": "",
           "document": "伸缩组标签列表",
+          "example": "[]",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -701,6 +724,7 @@
         {
           "default": "",
           "document": "服务设置",
+          "example": "null",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "required": true,
@@ -710,6 +734,7 @@
         {
           "default": "",
           "document": "实例具有IPv6地址数量的配置",
+          "example": "0",
           "member": "int64",
           "name": "Ipv6AddressCount",
           "required": true,
@@ -719,10 +744,31 @@
         {
           "default": "",
           "document": "多可用区/子网策略。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。",
+          "example": "PRIORITY",
           "member": "string",
           "name": "MultiZoneSubnetPolicy",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097)",
+          "example": "CLB",
+          "member": "string",
+          "name": "HealthCheckType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CLB健康检查宽限期",
+          "example": "300",
+          "member": "uint64",
+          "name": "LoadBalancerHealthCheckGracePeriod",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -812,6 +858,24 @@
           "example": "false",
           "member": "bool",
           "name": "ClearDataDisks",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否清空云服务器主机名相关设置信息，非必填，默认为 false。\n填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClearHostNameSettings",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否清空云服务器实例名相关设置信息，非必填，默认为 false。\n填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClearInstanceNameSettings",
           "required": false,
           "type": "bool"
         }
@@ -1856,7 +1920,8 @@
       "members": [
         {
           "default": "",
-          "document": "数据盘类型。数据盘类型限制详见[CVM实例配置](https://cloud.tencent.com/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：LOCAL_BASIC。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘类型。数据盘类型限制详见[CVM实例配置](https://cloud.tencent.com/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值与系统盘类型（SystemDisk.DiskType）保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
           "required": false,
@@ -1866,6 +1931,7 @@
         {
           "default": "",
           "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](https://cloud.tencent.com/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "DiskSize",
           "required": false,
@@ -1875,6 +1941,7 @@
         {
           "default": "",
           "document": "数据盘快照 ID，类似 `snap-l8psqwnt`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "snap-l8psqwnt",
           "member": "string",
           "name": "SnapshotId",
           "required": false,
@@ -4032,7 +4099,7 @@
         },
         {
           "default": "",
-          "document": "实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。\n启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。",
+          "document": "实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。\nInstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。",
           "example": "S5.SMALL2",
           "member": "string",
           "name": "InstanceTypes",
@@ -4059,7 +4126,7 @@
         },
         {
           "default": "",
-          "document": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串",
+          "document": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串。",
           "example": "\"\"",
           "member": "string",
           "name": "UserData",
@@ -4077,7 +4144,7 @@
         },
         {
           "default": "",
-          "document": "公网带宽相关信息设置。\n本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。",
+          "document": "公网带宽相关信息设置。\n当公网出带宽上限为0Mbps时，不支持修改为开通分配公网IP；相应的，当前为开通分配公网IP时，修改的公网出带宽上限值必须大于0Mbps。",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -4095,7 +4162,7 @@
         },
         {
           "default": "",
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。\n若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。\n本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。\n若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。\n当新增该字段时，必须传递购买实例的时长，其它未传递字段会设置为默认值。\n当修改本字段时，当前付费模式必须为预付费。",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -4104,7 +4171,7 @@
         },
         {
           "default": "",
-          "document": "实例的市场相关选项，如竞价实例相关参数。\n若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。\n本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。",
+          "document": "实例的市场相关选项，如竞价实例相关参数。\n若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。\n当新增该字段时，必须传递竞价相关选项下的竞价出价，其它未传递字段会设置为默认值。\n当修改本字段时，当前付费模式必须为竞价付费。",
           "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
@@ -4131,12 +4198,30 @@
         },
         {
           "default": "",
-          "document": "实例数据盘配置信息。最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。",
+          "document": "实例数据盘配置信息。\n最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。\n数据盘类型默认与系统盘类型保持一致。",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "云服务器主机名（HostName）的相关设置。\n不支持windows实例设置主机名。\n新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。",
+          "example": "无",
+          "member": "HostNameSettings",
+          "name": "HostNameSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "云服务器（InstanceName）实例名的相关设置。 \n如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。\n新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。",
+          "example": "无",
+          "member": "InstanceNameSettings",
+          "name": "InstanceNameSettings",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5071,7 +5156,8 @@
       "members": [
         {
           "default": "",
-          "document": "系统盘类型。系统盘类型限制详见[CVM实例配置](https://cloud.tencent.com/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：LOCAL_BASIC。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘类型。系统盘类型限制详见[CVM实例配置](https://cloud.tencent.com/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
           "required": false,
@@ -5081,6 +5167,7 @@
         {
           "default": "",
           "document": "系统盘大小，单位：GB。默认值为 50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
           "member": "uint64",
           "name": "DiskSize",
           "required": false,

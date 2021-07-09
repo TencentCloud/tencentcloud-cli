@@ -32,14 +32,6 @@
         "title": "请求示例"
       }
     ],
-    "DecribePublicKey": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DecribePublicKey\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ApplicationId\": \"xx\",\n        \"PublicKey\": \"{\\\"kty\\\":\\\"EC\\\",\\\"kid\\\":\\\"xxxxxxxxxxxxxxxxxx\\\",\\\"use\\\":\\\"sig\\\",\\\"alg\\\":\\\"ES256\\\",\\\"x\\\":\\\"xxxxxxxxxxxxxxxxxx\\\",\\\"y\\\":\\\"xxxxxxxxxxxxxxxxxx\\\",\\\"crv\\\":\\\"P-256\\\"}\",\n        \"KeyId\": \"xx\"\n    }\n}",
-        "title": "请求示例"
-      }
-    ],
     "DeleteOrgNode": [
       {
         "document": "",

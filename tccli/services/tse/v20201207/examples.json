@@ -18,10 +18,10 @@
     ],
     "DescribeSREInstances": [
       {
-        "document": "用于查询微服务注册引擎实例列表",
+        "document": "用于查询微服务引擎实例列表",
         "input": "https://tse.tencentcloudapi.com/?Action=DescribeSREInstances\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Status\": \"xx\",\n                \"Paymode\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"SpecId\": \"xx\",\n                \"Name\": \"xx\",\n                \"EnableStorage\": true,\n                \"InstanceId\": \"xx\",\n                \"EKSClusterID\": \"xx\",\n                \"SubnetIds\": [\n                    \"a\"\n                ],\n                \"StorageType\": \"xx\",\n                \"StorageCapacity\": 0,\n                \"Edition\": \"xx\",\n                \"Replica\": 3,\n                \"Type\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询微服务注册引擎实例列表"
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Status\": \"xx\",\n                \"Paymode\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"SpecId\": \"xx\",\n                \"Name\": \"xx\",\n                \"EnableStorage\": true,\n                \"InstanceId\": \"xx\",\n                \"EKSClusterID\": \"xx\",\n                \"SubnetIds\": [\n                    \"a\"\n                ],\n                \"StorageType\": \"xx\",\n                \"StorageCapacity\": 0,\n                \"Edition\": \"xx\",\n                \"Replica\": 3,\n                \"EnvInfos\": [\n                    {\n                        \"VpcInfos\": [\n                            {\n                                \"SubnetId\": \"xx\",\n                                \"VpcId\": \"xx\"\n                            }\n                        ],\n                        \"Status\": \"xx\",\n                        \"ConfigServiceIp\": \"xx\",\n                        \"StorageCapacity\": 0,\n                        \"EnvName\": \"xx\",\n                        \"AdminServiceIp\": \"xx\"\n                    }\n                ],\n                \"Type\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询微服务引擎实例列表"
       }
     ],
     "ManageConfig": [

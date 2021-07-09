@@ -1956,6 +1956,7 @@
         {
           "default": "",
           "document": "是否大小写敏感",
+          "example": "false",
           "member": "bool",
           "name": "CaseSensitive",
           "required": true,
@@ -1965,11 +1966,22 @@
         {
           "default": "",
           "document": "全文索引的分词符，字符串中每个字符代表一个分词符",
+          "example": "xxx",
           "member": "string",
           "name": "Tokenizer",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否包含中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ContainZH",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2742,7 +2754,7 @@
         },
         {
           "default": "",
-          "document": "是否生效",
+          "document": "默认不生效",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -3510,6 +3522,7 @@
         {
           "default": "",
           "document": "字段类型，目前支持的类型有：long、text、double",
+          "example": "long",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -3519,6 +3532,7 @@
         {
           "default": "",
           "document": "字段的分词符，只有当字段类型为text时才有意义；输入字符串中的每个字符代表一个分词符",
+          "example": ".*",
           "member": "string",
           "name": "Tokenizer",
           "required": false,
@@ -3528,11 +3542,22 @@
         {
           "default": "",
           "document": "字段是否开启分析功能",
+          "example": "true",
           "member": "bool",
           "name": "SqlFlag",
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否包含中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ContainZH",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

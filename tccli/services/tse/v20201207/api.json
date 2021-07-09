@@ -13,9 +13,9 @@
       "output": "DescribeSREInstanceAccessAddressResponse"
     },
     "DescribeSREInstances": {
-      "document": "用于查询微服务注册中心实例列表",
+      "document": "用于查询微服务引擎实例列表",
       "input": "DescribeSREInstancesRequest",
-      "name": "查询微服务注册中心实例列表",
+      "name": "查询微服务引擎实例列表",
       "output": "DescribeSREInstancesResponse"
     },
     "ManageConfig": {
@@ -187,6 +187,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询类型",
+          "example": "config",
+          "member": "string",
+          "name": "QueryType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -220,6 +229,72 @@
         }
       ],
       "type": "object"
+    },
+    "EnvInfo": {
+      "document": "环境具体信息",
+      "members": [
+        {
+          "default": "",
+          "document": "环境名称",
+          "example": "pro",
+          "member": "string",
+          "name": "EnvName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境对应的网络信息",
+          "example": "[{\"VpcId\":\"vpc-xxxxxxx\",\"SubnetId\":\"subnet-xxxxxxxx\"}]",
+          "member": "VpcInfo",
+          "name": "VpcInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘容量",
+          "example": "50",
+          "member": "int64",
+          "name": "StorageCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Admin service 访问地址",
+          "example": "xxxx.xx.xx.xx",
+          "member": "string",
+          "name": "AdminServiceIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Config service访问地址",
+          "example": "xxxx.xx.xx.xx",
+          "member": "string",
+          "name": "ConfigServiceIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Filter": {
       "document": "查询过滤通用对象",
@@ -478,9 +553,45 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境配置信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
+          "member": "EnvInfo",
+          "name": "EnvInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "VpcInfo": {
+      "document": "私有网络信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Vpc Id",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"
