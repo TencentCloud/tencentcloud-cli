@@ -4038,6 +4038,7 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -4051,8 +4052,10 @@
       "members": [
         {
           "document": "监控类型，云产品监控为 MT_QCE",
+          "example": "[\"MT_QCE\"]",
           "member": "string",
           "name": "MonitorTypes",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

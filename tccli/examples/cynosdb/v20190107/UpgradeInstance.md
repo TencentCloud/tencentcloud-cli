@@ -16,7 +16,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "165202"
+        "BigDealIds": [
+            "xx"
+        ],
+        "RequestId": "165202",
+        "TranId": "xx",
+        "DealNames": [
+            "xx"
+        ]
     }
 }
 ```

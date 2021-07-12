@@ -13,6 +13,33 @@ from tencentcloud.dlc.v20210125 import dlc_client as dlc_client_v20210125
 from tencentcloud.dlc.v20210125 import models as models_v20210125
 
 
+def doDetachWorkGroupPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetachWorkGroupPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DetachWorkGroupPolicy(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -40,7 +67,7 @@ def doCreateTask(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDatabases(args, parsed_globals):
+def doAddUsersToWorkGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -56,9 +83,144 @@ def doDescribeDatabases(args, parsed_globals):
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDatabasesRequest()
+    model = models.AddUsersToWorkGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDatabases(model)
+    rsp = client.AddUsersToWorkGroup(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doBindWorkGroupsToUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BindWorkGroupsToUserRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.BindWorkGroupsToUser(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTable(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTableRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateTable(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeUsers(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeUsersRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeUsers(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeScripts(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeScriptsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeScripts(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteWorkGroup(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteWorkGroupRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteWorkGroup(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -86,6 +248,249 @@ def doCreateStoreLocation(args, parsed_globals):
     model = models.CreateStoreLocationRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateStoreLocation(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteUsersFromWorkGroup(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteUsersFromWorkGroupRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteUsersFromWorkGroup(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateWorkGroup(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateWorkGroupRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateWorkGroup(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnbindWorkGroupsFromUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnbindWorkGroupsFromUserRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UnbindWorkGroupsFromUser(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAttachWorkGroupPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AttachWorkGroupPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.AttachWorkGroupPolicy(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWorkGroups(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWorkGroupsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeWorkGroups(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCancelTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CancelTask(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateScript(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateScriptRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateScript(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateDatabase(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDatabaseRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateDatabase(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyWorkGroup(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyWorkGroupRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyWorkGroup(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -148,33 +553,6 @@ def doDescribeTable(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateTable(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTableRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateTable(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeTasks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -229,7 +607,7 @@ def doDeleteScript(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateScript(args, parsed_globals):
+def doModifyUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -245,9 +623,9 @@ def doCreateScript(args, parsed_globals):
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateScriptRequest()
+    model = models.ModifyUserRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateScript(model)
+    rsp = client.ModifyUser(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -256,7 +634,7 @@ def doCreateScript(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeScripts(args, parsed_globals):
+def doDeleteUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -272,9 +650,9 @@ def doDescribeScripts(args, parsed_globals):
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeScriptsRequest()
+    model = models.DeleteUserRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeScripts(model)
+    rsp = client.DeleteUser(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -283,7 +661,7 @@ def doDescribeScripts(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDatabase(args, parsed_globals):
+def doDescribeDatabases(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -299,9 +677,117 @@ def doCreateDatabase(args, parsed_globals):
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDatabaseRequest()
+    model = models.DescribeDatabasesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateDatabase(model)
+    rsp = client.DescribeDatabases(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAttachUserPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AttachUserPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.AttachUserPolicy(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeStoreLocation(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeStoreLocationRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeStoreLocation(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateUserRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateUser(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDetachUserPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetachUserPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DetachUserPolicy(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -348,17 +834,35 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DetachWorkGroupPolicy": doDetachWorkGroupPolicy,
     "CreateTask": doCreateTask,
-    "DescribeDatabases": doDescribeDatabases,
+    "AddUsersToWorkGroup": doAddUsersToWorkGroup,
+    "BindWorkGroupsToUser": doBindWorkGroupsToUser,
+    "CreateTable": doCreateTable,
+    "DescribeUsers": doDescribeUsers,
+    "DescribeScripts": doDescribeScripts,
+    "DeleteWorkGroup": doDeleteWorkGroup,
     "CreateStoreLocation": doCreateStoreLocation,
+    "DeleteUsersFromWorkGroup": doDeleteUsersFromWorkGroup,
+    "CreateWorkGroup": doCreateWorkGroup,
+    "UnbindWorkGroupsFromUser": doUnbindWorkGroupsFromUser,
+    "AttachWorkGroupPolicy": doAttachWorkGroupPolicy,
+    "DescribeWorkGroups": doDescribeWorkGroups,
+    "CancelTask": doCancelTask,
+    "CreateScript": doCreateScript,
+    "CreateDatabase": doCreateDatabase,
+    "ModifyWorkGroup": doModifyWorkGroup,
     "DescribeViews": doDescribeViews,
     "DescribeTable": doDescribeTable,
-    "CreateTable": doCreateTable,
     "DescribeTasks": doDescribeTasks,
     "DeleteScript": doDeleteScript,
-    "CreateScript": doCreateScript,
-    "DescribeScripts": doDescribeScripts,
-    "CreateDatabase": doCreateDatabase,
+    "ModifyUser": doModifyUser,
+    "DeleteUser": doDeleteUser,
+    "DescribeDatabases": doDescribeDatabases,
+    "AttachUserPolicy": doAttachUserPolicy,
+    "DescribeStoreLocation": doDescribeStoreLocation,
+    "CreateUser": doCreateUser,
+    "DetachUserPolicy": doDetachUserPolicy,
     "DescribeTables": doDescribeTables,
 
 }

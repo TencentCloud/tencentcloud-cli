@@ -19,6 +19,7 @@ Output:
         "BackupList": [
             {
                 "SnapshotId": 10000,
+                "SnapshotTime": "xx",
                 "FileName": "snap",
                 "FileSize": 20190215,
                 "StartTime": "2019-01-20 01:10:12",

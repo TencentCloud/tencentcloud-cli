@@ -1,5 +1,35 @@
 {
   "actions": {
+    "AddUsersToWorkGroup": {
+      "document": "添加用户到工作组",
+      "input": "AddUsersToWorkGroupRequest",
+      "name": "添加用户到工作组",
+      "output": "AddUsersToWorkGroupResponse"
+    },
+    "AttachUserPolicy": {
+      "document": "绑定鉴权策略到用户",
+      "input": "AttachUserPolicyRequest",
+      "name": "绑定鉴权策略到用户",
+      "output": "AttachUserPolicyResponse"
+    },
+    "AttachWorkGroupPolicy": {
+      "document": "绑定鉴权策略到工作组",
+      "input": "AttachWorkGroupPolicyRequest",
+      "name": "绑定鉴权策略到工作组",
+      "output": "AttachWorkGroupPolicyResponse"
+    },
+    "BindWorkGroupsToUser": {
+      "document": "绑定工作组到用户",
+      "input": "BindWorkGroupsToUserRequest",
+      "name": "绑定工作组到用户",
+      "output": "BindWorkGroupsToUserResponse"
+    },
+    "CancelTask": {
+      "document": "取消任务执行",
+      "input": "CancelTaskRequest",
+      "name": "取消任务执行",
+      "output": "CancelTaskResponse"
+    },
     "CreateDatabase": {
       "document": "本接口（CreateDatabase）用于生成建库SQL语句。",
       "input": "CreateDatabaseRequest",
@@ -30,11 +60,41 @@
       "name": "任务创建",
       "output": "CreateTaskResponse"
     },
+    "CreateUser": {
+      "document": "创建用户",
+      "input": "CreateUserRequest",
+      "name": "创建用户",
+      "output": "CreateUserResponse"
+    },
+    "CreateWorkGroup": {
+      "document": "创建工作组",
+      "input": "CreateWorkGroupRequest",
+      "name": "创建工作组",
+      "output": "CreateWorkGroupResponse"
+    },
     "DeleteScript": {
       "document": "该接口（DeleteScript）用于删除sql脚本。",
       "input": "DeleteScriptRequest",
       "name": "删除sql脚本",
       "output": "DeleteScriptResponse"
+    },
+    "DeleteUser": {
+      "document": "删除用户",
+      "input": "DeleteUserRequest",
+      "name": "删除用户",
+      "output": "DeleteUserResponse"
+    },
+    "DeleteUsersFromWorkGroup": {
+      "document": "从工作组中删除用户",
+      "input": "DeleteUsersFromWorkGroupRequest",
+      "name": "从工作组中删除用户",
+      "output": "DeleteUsersFromWorkGroupResponse"
+    },
+    "DeleteWorkGroup": {
+      "document": "删除工作组",
+      "input": "DeleteWorkGroupRequest",
+      "name": "删除工作组",
+      "output": "DeleteWorkGroupResponse"
     },
     "DescribeDatabases": {
       "document": "本接口（DescribeDatabases）用于查询数据库列表。",
@@ -47,6 +107,12 @@
       "input": "DescribeScriptsRequest",
       "name": "查询script列表",
       "output": "DescribeScriptsResponse"
+    },
+    "DescribeStoreLocation": {
+      "document": "查询计算结果存储位置。",
+      "input": "DescribeStoreLocationRequest",
+      "name": "查询结果存储位置",
+      "output": "DescribeStoreLocationResponse"
     },
     "DescribeTable": {
       "document": "查询单个表的详细信息。",
@@ -66,11 +132,53 @@
       "name": "查询任务列表",
       "output": "DescribeTasksResponse"
     },
+    "DescribeUsers": {
+      "document": "获取用户列表信息",
+      "input": "DescribeUsersRequest",
+      "name": "获取用户列表信息",
+      "output": "DescribeUsersResponse"
+    },
     "DescribeViews": {
       "document": "本接口（DescribeViews）用于查询数据视图列表。",
       "input": "DescribeViewsRequest",
       "name": "查询视图列表",
       "output": "DescribeViewsResponse"
+    },
+    "DescribeWorkGroups": {
+      "document": "获取工作组列表",
+      "input": "DescribeWorkGroupsRequest",
+      "name": "获取工作组列表",
+      "output": "DescribeWorkGroupsResponse"
+    },
+    "DetachUserPolicy": {
+      "document": "解绑用户鉴权策略",
+      "input": "DetachUserPolicyRequest",
+      "name": "解绑用户鉴权策略",
+      "output": "DetachUserPolicyResponse"
+    },
+    "DetachWorkGroupPolicy": {
+      "document": "解绑工作组鉴权策略",
+      "input": "DetachWorkGroupPolicyRequest",
+      "name": "解绑工作组鉴权策略",
+      "output": "DetachWorkGroupPolicyResponse"
+    },
+    "ModifyUser": {
+      "document": "修改用户信息",
+      "input": "ModifyUserRequest",
+      "name": "修改用户信息",
+      "output": "ModifyUserResponse"
+    },
+    "ModifyWorkGroup": {
+      "document": "修改工作组信息",
+      "input": "ModifyWorkGroupRequest",
+      "name": "修改工作组信息",
+      "output": "ModifyWorkGroupResponse"
+    },
+    "UnbindWorkGroupsFromUser": {
+      "document": "解绑用户上的用户组",
+      "input": "UnbindWorkGroupsFromUserRequest",
+      "name": "解绑用户上的用户组",
+      "output": "UnbindWorkGroupsFromUserResponse"
     }
   },
   "metadata": {
@@ -80,6 +188,132 @@
     "serviceShortName": "dlc"
   },
   "objects": {
+    "AddUsersToWorkGroupRequest": {
+      "document": "AddUsersToWorkGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要操作的工作组和用户信息",
+          "example": "无",
+          "member": "UserIdSetOfWorkGroupId",
+          "name": "AddInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUsersToWorkGroupResponse": {
+      "document": "AddUsersToWorkGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachUserPolicyRequest": {
+      "document": "AttachUserPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Id，和CAM侧Uin匹配",
+          "example": "12345678",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "鉴权策略集合",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachUserPolicyResponse": {
+      "document": "AttachUserPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachWorkGroupPolicyRequest": {
+      "document": "AttachWorkGroupPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工作组Id",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要绑定的策略集合",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachWorkGroupPolicyResponse": {
+      "document": "AttachWorkGroupPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindWorkGroupsToUserRequest": {
+      "document": "BindWorkGroupsToUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "绑定的用户和工作组信息",
+          "example": "无",
+          "member": "WorkGroupIdSetOfUserId",
+          "name": "AddInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BindWorkGroupsToUserResponse": {
+      "document": "BindWorkGroupsToUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CSV": {
       "document": "CSV类型数据格式",
       "members": [
@@ -161,6 +395,33 @@
         }
       ],
       "usage": "in"
+    },
+    "CancelTaskRequest": {
+      "document": "CancelTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id，全局唯一",
+          "example": "“”",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelTaskResponse": {
+      "document": "CancelTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Column": {
       "document": "数据表列信息。",
@@ -414,6 +675,105 @@
       ],
       "type": "object"
     },
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Id，当前主账号的子账号Uin，和CAM侧匹配",
+          "example": "12345678",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户描述",
+          "example": "for test",
+          "member": "string",
+          "name": "UserDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定到用户的权限集合",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkGroupRequest": {
+      "document": "CreateWorkGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工作组名称",
+          "example": "workgroup1",
+          "member": "string",
+          "name": "WorkGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作组描述",
+          "example": "for test",
+          "member": "string",
+          "name": "WorkGroupDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作组绑定的鉴权策略集合",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkGroupResponse": {
+      "document": "CreateWorkGroup返回参数结构体",
+      "members": [
+        {
+          "document": "工作组Id，全局唯一",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DataFormat": {
       "document": "数据表数据格式。",
       "members": [
@@ -608,6 +968,87 @@
       ],
       "type": "object"
     },
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的用户的Id",
+          "example": "[12345678]",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUsersFromWorkGroupRequest": {
+      "document": "DeleteUsersFromWorkGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的用户信息",
+          "example": "无",
+          "member": "UserIdSetOfWorkGroupId",
+          "name": "AddInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUsersFromWorkGroupResponse": {
+      "document": "DeleteUsersFromWorkGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWorkGroupRequest": {
+      "document": "DeleteWorkGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的工作组Id集合",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "WorkGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWorkGroupResponse": {
+      "document": "DeleteWorkGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDatabasesRequest": {
       "document": "DescribeDatabases请求参数结构体",
       "members": [
@@ -751,6 +1192,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStoreLocationRequest": {
+      "document": "DescribeStoreLocation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeStoreLocationResponse": {
+      "document": "DescribeStoreLocation返回参数结构体",
+      "members": [
+        {
+          "document": "返回用户设置的结果存储位置路径，如果未设置则返回空字符串：\"\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://test-bucket-123434324234/result/",
+          "member": "string",
+          "name": "StoreLocation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -995,6 +1462,87 @@
       ],
       "type": "object"
     },
+    "DescribeUsersRequest": {
+      "document": "DescribeUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的用户Id，和CAM侧Uin匹配",
+          "example": "12345678",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认20，最大值100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持如下字段类型，create-time",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersResponse": {
+      "document": "DescribeUsers返回参数结构体",
+      "members": [
+        {
+          "document": "用户总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户集合",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "UserSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeViewsRequest": {
       "document": "DescribeViews请求参数结构体",
       "members": [
@@ -1076,6 +1624,168 @@
       ],
       "type": "object"
     },
+    "DescribeWorkGroupsRequest": {
+      "document": "DescribeWorkGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的工作组Id",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，当前仅支持按照工作组名称进行模糊搜索。Key为workgroup-name",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认20，最大值100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持如下字段类型，create-time",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkGroupsResponse": {
+      "document": "DescribeWorkGroups返回参数结构体",
+      "members": [
+        {
+          "document": "工作组总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "工作组信息集合",
+          "example": "无",
+          "member": "WorkGroupInfo",
+          "name": "WorkGroupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachUserPolicyRequest": {
+      "document": "DetachUserPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Id，和CAM侧Uin匹配",
+          "example": "12345678",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解绑的权限集合",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachUserPolicyResponse": {
+      "document": "DetachUserPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachWorkGroupPolicyRequest": {
+      "document": "DetachWorkGroupPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工作组Id",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "解绑的权限集合",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachWorkGroupPolicyResponse": {
+      "document": "DetachWorkGroupPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Execution": {
       "document": "SQL语句对象",
       "members": [
@@ -1144,6 +1854,78 @@
       ],
       "usage": "in"
     },
+    "ModifyUserRequest": {
+      "document": "ModifyUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Id，和CAM侧Uin匹配",
+          "example": "12345678",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户描述",
+          "example": "for test",
+          "member": "string",
+          "name": "UserDescription",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserResponse": {
+      "document": "ModifyUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkGroupRequest": {
+      "document": "ModifyWorkGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工作组Id",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "工作组描述",
+          "example": "for test",
+          "member": "string",
+          "name": "WorkGroupDescription",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkGroupResponse": {
+      "document": "ModifyWorkGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Other": {
       "document": "数据格式其它类型。",
       "members": [
@@ -1195,6 +1977,52 @@
         }
       ],
       "usage": "out"
+    },
+    "Policy": {
+      "document": "权限对象",
+      "members": [
+        {
+          "default": "",
+          "document": "需要授权的数据源名称，*代表拥有全部数据源权限",
+          "example": "COSDataCatalog",
+          "member": "string",
+          "name": "Catalog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要授权的数据库名称，*代表拥有全部数据库名称",
+          "example": "test_database",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要授权的表名称，*代表拥有全部表权限",
+          "example": "test_table",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权的操作，当前只支持“ALL”",
+          "example": "ALL",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Property": {
       "document": "数据库和数据表属性信息",
@@ -1710,6 +2538,181 @@
       ],
       "usage": "out"
     },
+    "UnbindWorkGroupsFromUserRequest": {
+      "document": "UnbindWorkGroupsFromUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "解绑的工作组Id和用户Id的关联关系",
+          "example": "无",
+          "member": "WorkGroupIdSetOfUserId",
+          "name": "AddInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindWorkGroupsFromUserResponse": {
+      "document": "UnbindWorkGroupsFromUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserIdSetOfWorkGroupId": {
+      "document": "绑定到同一个工作组的用户Id的集合",
+      "members": [
+        {
+          "default": "",
+          "document": "工作组Id",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Id集合，和CAM侧Uin匹配",
+          "example": "[\"12345678\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UserInfo": {
+      "document": "授权用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Id，和CAM侧Uin匹配",
+          "example": "12345678",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试用户",
+          "member": "string",
+          "name": "UserDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单独给用户绑定的权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者",
+          "example": "Administrator",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2010/10/04",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的工作组集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkGroupMessage",
+          "name": "WorkGroupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是管理员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOwner",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UserMessage": {
+      "document": "用户部分信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Id，和CAM侧Uin匹配",
+          "example": "12345678",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test user",
+          "member": "string",
+          "name": "UserDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者",
+          "example": "Administrator",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2020/10/04",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ViewBaseInfo": {
       "document": "视图基本配置信息",
       "members": [
@@ -1785,6 +2788,174 @@
           "example": "1611646962",
           "member": "string",
           "name": "ModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkGroupIdSetOfUserId": {
+      "document": "同一个用户绑定的工作组集合",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Id，和CAM侧Uin匹配",
+          "example": "“12345678”",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作组Id集合",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "WorkGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "WorkGroupInfo": {
+      "document": "工作组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "工作组Id",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作组名称",
+          "example": "testGroup",
+          "member": "string",
+          "name": "WorkGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "WorkGroupDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作组关联的用户数量",
+          "example": "0",
+          "member": "int64",
+          "name": "UserNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作组关联的用户集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserMessage",
+          "name": "UserSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作组绑定的权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者",
+          "example": "Administrator",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2020/10/04",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkGroupMessage": {
+      "document": "工作组部分信息",
+      "members": [
+        {
+          "default": "",
+          "document": "工作组Id",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作组名称",
+          "example": "group1",
+          "member": "string",
+          "name": "WorkGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "WorkGroupDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者",
+          "example": "Administrator",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2020/10/04",
+          "member": "string",
+          "name": "CreateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false

@@ -6,15 +6,26 @@ Input:
 
 ```
 tccli cynosdb DescribeBackupConfig --cli-unfold-argument  \
-    --ClusterId cynosdbpg-45knmnra
+    --ClusterId cynosdbmysql-45knmnra
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BackupTimeBeg": 7200,
+        "BackupFreq": [
+            "full",
+            "increment",
+            "increment",
+            "increment",
+            "increment",
+            "increment",
+            "increment"
+        ],
+        "BackupType": "",
         "BackupTimeEnd": 21600,
+        "BackupTimeBeg": 7200,
+        "RequestId": "180877",
         "ReserveDuration": 604800
     }
 }

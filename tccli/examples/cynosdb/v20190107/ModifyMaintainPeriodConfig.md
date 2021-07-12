@@ -9,7 +9,7 @@ tccli cynosdb ModifyMaintainPeriodConfig --cli-unfold-argument  \
     --InstanceId cynosdbpg-ins-n7ocdslw \
     --MaintainStartTime 3600 \
     --MaintainDuration 3600 \
-    --MaintainWeekDays '[Mon, Tue]'
+    --MaintainWeekDays Mon
 ```
 
 Output: 

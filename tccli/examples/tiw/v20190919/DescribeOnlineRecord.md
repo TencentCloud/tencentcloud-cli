@@ -27,6 +27,7 @@ Output:
         "TaskId": "ghucnligqtgtvk2624mb",
         "TotalTime": 18317,
         "ReplayUrl": "http://replayurl",
+        "Interrupts": [],
         "VideoInfos": [
             {
                 "UserId": "Mac_trtc_04",

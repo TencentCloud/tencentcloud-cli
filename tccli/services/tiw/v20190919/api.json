@@ -595,6 +595,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "视频流在录制过程中断流次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Interrupt",
+          "name": "Interrupts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1121,6 +1130,32 @@
         }
       ],
       "type": "object"
+    },
+    "Interrupt": {
+      "document": "实时录制中出现的用户视频流断流次数统计",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tiw_user_634",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频流断流次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "LayoutParams": {
       "document": "自定义混流配置布局参数",

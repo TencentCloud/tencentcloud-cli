@@ -54,6 +54,12 @@
       "name": "读取机构节点信息",
       "output": "DescribeOrgNodeResponse"
     },
+    "DescribePublicKey": {
+      "document": "获取JWT公钥信息。",
+      "input": "DescribePublicKeyRequest",
+      "name": "获取JWT公钥信息",
+      "output": "DescribePublicKeyResponse"
+    },
     "DescribeUserGroup": {
       "document": "获取用户组信息",
       "input": "DescribeUserGroupRequest",
@@ -65,6 +71,18 @@
       "input": "DescribeUserInfoRequest",
       "name": "获取用户信息",
       "output": "DescribeUserInfoResponse"
+    },
+    "ListApplicationAuthorizations": {
+      "document": "应用授权关系列表（含搜索条件匹配）。",
+      "input": "ListApplicationAuthorizationsRequest",
+      "name": "应用授权关系列表信息",
+      "output": "ListApplicationAuthorizationsResponse"
+    },
+    "ListApplications": {
+      "document": "获取应用列表信息。",
+      "input": "ListApplicationsRequest",
+      "name": "获取应用列表信息",
+      "output": "ListApplicationsResponse"
     },
     "ListAuthorizedApplicationsToOrgNode": {
       "document": "通过机构节点ID获得被授权访问的应用列表。",
@@ -84,11 +102,23 @@
       "name": "获取用户组被授权访问的应用列表",
       "output": "ListAuthorizedApplicationsToUserGroupResponse"
     },
+    "ListUserGroups": {
+      "document": "获取用户组列表信息（包含查询条件）。",
+      "input": "ListUserGroupsRequest",
+      "name": "获取用户组列表信息",
+      "output": "ListUserGroupsResponse"
+    },
     "ListUserGroupsOfUser": {
       "document": "获取用户所在的用户组列表",
       "input": "ListUserGroupsOfUserRequest",
       "name": "获取用户所在的用户组列表",
       "output": "ListUserGroupsOfUserResponse"
+    },
+    "ListUsers": {
+      "document": "获取用户列表信息。",
+      "input": "ListUsersRequest",
+      "name": "获取用户列表信息",
+      "output": "ListUsersResponse"
     },
     "ListUsersInOrgNode": {
       "document": "根据机构节点ID读取节点下用户",
@@ -199,6 +229,200 @@
         }
       ],
       "usage": "out"
+    },
+    "ApplicationInfoSearchCriteria": {
+      "document": "应用属性搜索条件。",
+      "members": [
+        {
+          "default": "",
+          "document": "应用匹配搜索关键字，匹配范围包括：应用名称、应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用类型。ApplicationType的取值范围有：OAUTH2、JWT、CAS、SAML2、FORM、OIDC、APIGW。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ApplicationInformation": {
+      "document": "应用信息列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID，是应用的全局唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用展示名称，长度限制：64个字符。 默认与应用名字相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上次更新时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastModifiedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AppStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用图标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Icon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户端id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AuthorizationInfo": {
+      "document": "返回的授权关系信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "应用唯一ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型名称。",
+          "example": "无",
+          "member": "string",
+          "name": "EntityName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型唯一ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上次更新时间，符合 ISO8601 标准。",
+          "example": "无",
+          "member": "string",
+          "name": "LastModifiedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权类型唯一ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuthorizationInfoSearchCriteria": {
+      "document": "用户属性搜索条件。\n",
+      "members": [
+        {
+          "default": "",
+          "document": "名称匹配搜索，当查询类型为用户时，匹配范围包括：用户名称、应用名称；当查询类型为用户组时，匹配范围包括：用户组名称、应用名称；当查询类型为组织机构时，匹配范围包括：组织机构名称、应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CreateOrgNodeRequest": {
       "document": "CreateOrgNode请求参数结构体",
@@ -758,6 +982,60 @@
       ],
       "type": "object"
     },
+    "DescribePublicKeyRequest": {
+      "document": "DescribePublicKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID，是应用的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicKeyResponse": {
+      "document": "DescribePublicKey返回参数结构体",
+      "members": [
+        {
+          "document": "jwt验证签名所用的公钥信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "jwt的密钥id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用ID，是应用的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserGroupRequest": {
       "document": "DescribeUserGroup请求参数结构体",
       "members": [
@@ -982,6 +1260,159 @@
       ],
       "usage": "out"
     },
+    "ListApplicationAuthorizationsRequest": {
+      "document": "ListApplicationAuthorizations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询类型，包含用户（User）、用户组（UserGroup）、组织机构（OrgNode）。",
+          "example": "无",
+          "member": "string",
+          "name": "EntityType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（\"\"）表示全匹配、以星号（* ) 结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
+          "example": "无",
+          "member": "AuthorizationInfoSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "排序条件集合。可排序的属性支持：上次修改时间（lastModifiedDate）。如果该字段为空，则默认按照应用名称正向排序。",
+          "example": "无",
+          "member": "SortCondition",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页读取数量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListApplicationAuthorizationsResponse": {
+      "document": "ListApplicationAuthorizations返回参数结构体",
+      "members": [
+        {
+          "document": "返回的应用授权信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthorizationInfo",
+          "name": "AuthorizationInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回的应用信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListApplicationsRequest": {
+      "document": "ListApplications请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（\"\"）表示全匹配、以星号（* ) 结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
+          "example": "无",
+          "member": "ApplicationInfoSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "排序条件集合。可排序的属性支持：应用名字（displayName）、创建时间（createdDate）、上次修改时间（lastModifiedDate）。如果该字段为空，则默认按照应用名字正向排序。",
+          "example": "无",
+          "member": "SortCondition",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页读取数量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListApplicationsResponse": {
+      "document": "ListApplications返回参数结构体",
+      "members": [
+        {
+          "document": "返回的应用信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回的应用信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationInformation",
+          "name": "ApplicationInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListAuthorizedApplicationsToOrgNodeRequest": {
       "document": "ListAuthorizedApplicationsToOrgNode请求参数结构体",
       "members": [
@@ -1144,6 +1575,78 @@
       ],
       "type": "object"
     },
+    "ListUserGroupsRequest": {
+      "document": "ListUserGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（\"\"）表示全匹配、以星号（* ) 结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
+          "example": "无",
+          "member": "UserGroupInfoSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "排序条件集合。可排序的属性支持：用户组名称（DisplayName）、用户组ID（UserGroupId）、上次更新时间（LastModifiedDate）。如果该字段为空，则默认按照用户组名称正向排序。",
+          "example": "无",
+          "member": "SortCondition",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页读取数量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserGroupsResponse": {
+      "document": "ListUserGroups返回参数结构体",
+      "members": [
+        {
+          "document": "返回的用户组列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupInformation",
+          "name": "UserGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回的用户组信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListUsersInOrgNodeRequest": {
       "document": "ListUsersInOrgNode请求参数结构体",
       "members": [
@@ -1257,6 +1760,96 @@
           "example": "无",
           "member": "int64",
           "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersRequest": {
+      "document": "ListUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户属性搜索条件，可查询条件包括：用户名、手机号码，邮箱、用户锁定状态、用户冻结状态、创建时间、上次修改时间，支持多种属性组合作为查询条件。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（*）结尾表示字段部分匹配、中括号以逗号分隔（[Min，Max]）表示闭区间查询、大括号以逗号分隔（{Min，Max}）表示开区间查询，中括号与大括号可以配合使用（例如：{Min，Max]表示最小值开区间，最大值闭区间查询）。范围匹配支持使用星号（例如{20,*]表示查询范围为大于20的所有数据）。范围查询同时支持时间段查询，支持的属性包括创建时间 （CreationTime）、上次修改时间（LastUpdateTime），查询的时间格式遵循 ISO 8601 标准，例如：2021-01-13T09:44:07.182+0000。",
+          "example": "无",
+          "member": "UserSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "指定期望返回的用户属性，默认返回所有用户内置属性。内置用户属性包括：用户UUID（UserId）、用户昵称（DisplayName）、用户名字（UserName）、手机号（Phone）、邮箱（Email）、用户状态（Status）、用户组（SubjectGroups）机构路径（OrgPath）、备注（Description）、创建时间 （CreationTime）、上次修改时间（LastUpdateTime）、上次登录时间（LastLoginTime）。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpectedFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序条件集合。可排序的属性支持：用户名字（UserName）、手机号（Phone）、邮箱（Email）、用户状态（Status）、创建时间 （CreationTime）、上次修改时间（LastUpdateTime）、上次登录时间（LastLoginTime）。",
+          "example": "无",
+          "member": "SortCondition",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认为0。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多1000个用户。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页读取数量，默认为50，最大值为100。 Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多1000个用户。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否查看搜索结果的总数，默认该选项为false不查看。",
+          "example": "无",
+          "member": "bool",
+          "name": "IncludeTotal",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersResponse": {
+      "document": "ListUsers返回参数结构体",
+      "members": [
+        {
+          "document": "查询返回的相关用户列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserInformation",
+          "name": "UserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回查询用户的总数量，仅当入参IncludeTotal等于true时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -1526,6 +2119,32 @@
       ],
       "type": "object"
     },
+    "SortCondition": {
+      "document": "排序条件。",
+      "members": [
+        {
+          "default": "",
+          "document": "排序属性。",
+          "example": "无",
+          "member": "string",
+          "name": "SortKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排序顺序，ASC为正向排序，DESC为反向排序。",
+          "example": "无",
+          "member": "string",
+          "name": "SortOrder",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "UpdateOrgNodeRequest": {
       "document": "UpdateOrgNode请求参数结构体",
       "members": [
@@ -1580,6 +2199,58 @@
       ],
       "type": "object"
     },
+    "UserGroupInfoSearchCriteria": {
+      "document": "用户组属性搜索条件。",
+      "members": [
+        {
+          "default": "",
+          "document": "名称匹配搜索，匹配范围包括：用户组名称、用户组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UserGroupInformation": {
+      "document": "返回的用户组列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组名称。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上次更新时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastModifiedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "UserInfo": {
       "document": "用户信息列表。",
       "members": [
@@ -1605,6 +2276,208 @@
         }
       ],
       "usage": "out"
+    },
+    "UserInformation": {
+      "document": "用户信息列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，长度限制：32个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户备注，长度限制：512个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户上次更新时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户创建时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户所属组织机构路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带国家号的用户手机号，例如+86-00000000000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户所属用户组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubjectGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户邮箱。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户上次登录时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastLoginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UserSearchCriteria": {
+      "document": "用户属性搜索条件。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，长度限制：64个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机号。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户邮箱。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户状态，取值 NORMAL （正常）、FREEZE （已冻结）、LOCKED （已锁定）或 NOT_ENABLED （未启用）。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户创建时间，遵循 ISO 8601 标准。",
+          "example": "无",
+          "member": "string",
+          "name": "CreationTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户上次更新时间区间。",
+          "example": "无",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名称匹配搜索，匹配范围包括：用户名称、用户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

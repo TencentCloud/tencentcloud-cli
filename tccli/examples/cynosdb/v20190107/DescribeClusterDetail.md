@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "Detail": {
+            "ServerlessStatus": "xx",
             "UsedStorage": 129417216,
             "VpcId": "vpc-1ptuei0b",
             "SubnetId": "subnet-1tmw9t4o",
@@ -21,18 +22,35 @@ Output:
             "ClusterId": "cynosdbpg-962bpoek",
             "DbType": "POSTGRESQL",
             "SubnetName": "cynosdb-test",
-            "CreateTime": "2018-12-03 17:04:07",
+            "CreateTime": "xx",
             "Charset": "UTF8",
             "Vip": "10.0.1.5",
+            "ResourceTags": [
+                {
+                    "TagKey": "xx",
+                    "TagValue": "xx"
+                }
+            ],
             "Region": "ap-guangzhou",
+            "Zone": "xx",
             "ClusterName": "funnyTest",
             "StatusDesc": "运行中",
             "DbVersion": "10.0",
+            "PeriodEndTime": "xx",
+            "PayMode": 0,
+            "ProjectID": 0,
             "Status": "running",
+            "RoAddr": [
+                {
+                    "IP": "xx",
+                    "Port": 0
+                }
+            ],
             "InstanceSet": [
                 {
                     "InstanceStatus": "running",
                     "InstanceCpu": 2,
+                    "InstanceId": "xx",
                     "InstanceStatusDesc": "运行中",
                     "InstanceMemory": 4,
                     "InstanceStorage": 100,

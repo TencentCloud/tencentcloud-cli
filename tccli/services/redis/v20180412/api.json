@@ -4981,7 +4981,7 @@
           "example": "12345Aa",
           "member": "string",
           "name": "Password",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],

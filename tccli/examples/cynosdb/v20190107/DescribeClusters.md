@@ -8,8 +8,9 @@ Input:
 tccli cynosdb DescribeClusters --cli-unfold-argument  \
     --Limit 20 \
     --Offset 0 \
-    --Filters.0.Name InstanceId \
+    --Filters.0.Names InstanceId \
     --Filters.0.Values cynosdbpg-ins-bzkxxrmt \
+    --Filters.0.ExactMatch true \
     --DbType MYSQL
 ```
 
@@ -30,6 +31,7 @@ Output:
                 "PeriodEndTime": "2019-03-14 14:26:42",
                 "Region": "ap-guangzhou",
                 "Status": "running",
+                "ProjectID": 0,
                 "StatusDesc": "运行中",
                 "Uin": "20548499",
                 "UpdateTime": "2019-02-15 20:15:59",
@@ -46,6 +48,7 @@ Output:
                 "DbVersion": "10.0",
                 "InstanceNum": 1,
                 "PayMode": 0,
+                "ProjectID": 0,
                 "PeriodEndTime": "2019-03-02 16:43:00",
                 "Region": "ap-guangzhou",
                 "Status": "creating",
@@ -65,6 +68,7 @@ Output:
                 "DbVersion": "10.0",
                 "InstanceNum": 1,
                 "PayMode": 0,
+                "ProjectID": 0,
                 "PeriodEndTime": "2019-03-02 16:33:51",
                 "Region": "ap-guangzhou",
                 "Status": "creating",

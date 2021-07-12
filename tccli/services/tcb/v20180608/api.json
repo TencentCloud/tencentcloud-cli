@@ -72,6 +72,12 @@
       "name": "删除云项目",
       "output": "DeleteCloudBaseProjectLatestVersionResponse"
     },
+    "DeleteCloudBaseRunServerVersion": {
+      "document": "删除服务版本",
+      "input": "DeleteCloudBaseRunServerVersionRequest",
+      "name": "删除服务版本",
+      "output": "DeleteCloudBaseRunServerVersionResponse"
+    },
     "DeleteEndUser": {
       "document": "删除终端用户",
       "input": "DeleteEndUserRequest",
@@ -2904,6 +2910,87 @@
     "DeleteCloudBaseProjectLatestVersionResponse": {
       "document": "DeleteCloudBaseProjectLatestVersion返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudBaseRunServerVersionRequest": {
+      "document": "DeleteCloudBaseRunServerVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "lotestapi100004",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "example": "dockerservicename",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本名称",
+          "example": "ded",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否删除服务，只有最后一个版本的时候，才生效。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDeleteServer",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "只有删除服务的时候，才会起作用",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDeleteImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "操作备注",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudBaseRunServerVersionResponse": {
+      "document": "DeleteCloudBaseRunServerVersion返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果，succ为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -14,7 +14,10 @@ Output:
 {
     "Response": {
         "RequestId": "128046",
-        "FlowId": "123"
+        "FlowId": "123",
+        "DealNames": [
+            "123"
+        ]
     }
 }
 ```

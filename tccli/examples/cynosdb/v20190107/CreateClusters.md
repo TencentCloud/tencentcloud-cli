@@ -20,6 +20,7 @@ tccli cynosdb CreateClusters --cli-unfold-argument  \
     --HaCount 1 \
     --Count 1 \
     --PayMode 0 \
+    --StoragePayMode 0 \
     --RollbackStrategy noneRollback \
     --StorageLimit 100
 ```

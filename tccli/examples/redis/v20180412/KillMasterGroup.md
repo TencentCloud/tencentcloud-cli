@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli redis KillMasterGroup --cli-unfold-argument  \
-    --InstanceId crs-sa5dsfs
+    --InstanceId crs-sa5dsfs \
+    --Password xx
 ```
 
 Output: 

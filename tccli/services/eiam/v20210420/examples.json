@@ -72,6 +72,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribePublicKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicKey\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ApplicationId\": \"xxx\",\n        \"PublicKey\": \"{\\\"kty\\\":\\\"EC\\\",\\\"kid\\\":\\\"xxx\\\",\\\"use\\\":\\\"sig\\\",\\\"alg\\\":\\\"ES256\\\",\\\"x\\\":\\\"xxx\\\",\\\"y\\\":\\\"xxx\\\",\\\"crv\\\":\\\"P-256\\\"}\",\n        \"KeyId\": \"xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeUserGroup": [
       {
         "document": "",
@@ -85,6 +93,22 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"UserGroupIds\": [\n            \"5142dacf-88a1-4950-a5a2-f61f3f4b0dae\",\n            \"8533930b-57e1-4d0a-8961-90478823cdcf\"\n        ],\n        \"UserId\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"Email\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ListApplicationAuthorizations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApplicationAuthorizations\n<公共请求参数>\n\n{\n    \"EntityType\": \"OrgNode\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthorizationInfoList\": [\n            {\n                \"EntityId\": \"xxx\",\n                \"LastModifiedDate\": \"2021-03-25T19:48:29.504+0800\",\n                \"EntityName\": \"腾讯企业邮箱1\",\n                \"AppId\": \"xxx\",\n                \"AppName\": \"CAS（标准）1\",\n                \"AuthorizationId\": \"xxx\"\n            },\n            {\n                \"EntityId\": \"xxx\",\n                \"LastModifiedDate\": \"2021-03-30T18:05:33.143+0800\",\n                \"EntityName\": \"11\",\n                \"AppId\": \"xxx\",\n                \"AppName\": \"腾讯企业邮箱2\",\n                \"AuthorizationId\": \"xxx\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ListApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApplications\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"xxx\",\n        \"ApplicationInfoList\": [\n            {\n                \"ApplicationType\": \"API\",\n                \"LastModifiedDate\": \"2021-07-07T16:05:47.964+0800\",\n                \"AppStatus\": true,\n                \"CreatedDate\": \"2021-07-07T16:05:47.964+0800\",\n                \"DisplayName\": \"112\",\n                \"ClientId\": null,\n                \"Icon\": null,\n                \"ApplicationId\": \"xxx\"\n            },\n            {\n                \"ApplicationType\": \"API\",\n                \"LastModifiedDate\": \"2021-07-07T16:04:34.529+0800\",\n                \"AppStatus\": true,\n                \"CreatedDate\": \"2021-07-07T16:04:34.529+0800\",\n                \"DisplayName\": \"字符串\",\n                \"ClientId\": null,\n                \"Icon\": null,\n                \"ApplicationId\": \"xxx\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -112,11 +136,27 @@
         "title": "请求示例"
       }
     ],
+    "ListUserGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserGroups\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"baf1b9a7-eefa-497f-99e4-2ba8918a2c67\",\n        \"UserGroupList\": [\n            {\n                \"LastModifiedDate\": \"2021-07-07T15:59:19.944+0800\",\n                \"UserGroupId\": \"e16f643e-51ac-4748-a1e8-ac43a4a90e58\",\n                \"UserGroupName\": \"字符串\"\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ListUserGroupsOfUser": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserGroupsOfUser\n<公共请求参数>\n\n{\n    \"UserId\": \"5c1ab60e-4844-4d92-8708-82257657d916\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cc65331-b49b-4bd3-b4da-3c1e5f598091\",\n        \"UserId\": \"5c1ab60e-4844-4d92-8708-82257657d916\",\n        \"UserGroupIds\": [\n            \"1453013c-d0e9-424b-b9c7-dabcea3bd0ca\"\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ListUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsers\n<公共请求参数>\n\n{\n    \"SearchCondition\": {\n        \"Keyword\": \"\\\"\\\"\"\n    },\n    \"ExpectedFields\": [\n        \"UserId\",\n        \"UserName\",\n        \"DisplayName\",\n        \"LastUpdateTime\",\n        \"Status\"\n    ],\n    \"Sort\": {\n        \"SortKey\": \"LastUpdateTime\",\n        \"SortOrder\": \"ASC\"\n    },\n    \"Limit\": 2,\n    \"Offset\": 0,\n    \"IncludeTotal\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"2151788c-45ac-47be-8a6f-5ca114fcfbeb\",\n        \"UserList\": []\n    }\n}",
         "title": "请求示例"
       }
     ],
