@@ -14,46 +14,48 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
+        "RequestId": "xx",
         "TopicSets": [
             {
-                "TopicName": "test",
-                "EnvironmentId": "default",
-                "AverageMsgSize": "0.0",
-                "ConsumerCount": "0",
-                "LastConfirmedEntry": "",
-                "LastLedgerCreatedTimestamp": "",
-                "MsgRateIn": "0.0",
-                "MsgRateOut": "0.0",
-                "MsgThroughputIn": "0.0",
-                "MsgThroughputOut": "0.0",
-                "NumberOfEntries": "0",
-                "Partitions": 1,
-                "ProducerCount": "0",
-                "TotalSize": "0",
-                "TopicType": 0,
-                "Remark": "",
-                "CreateTime": "2021-01-13 16:39:57",
-                "UpdateTime": "2021-01-13 16:39:57",
+                "EnvironmentId": "xx",
+                "Remark": "xx",
+                "TopicType": 1,
+                "ProducerCount": "xx",
+                "LastConfirmedEntry": "xx",
+                "TotalSize": "xx",
                 "SubTopicSets": [
                     {
-                        "AverageMsgSize": "0.0",
-                        "ConsumerCount": "0",
-                        "LastConfirmedEntry": "199291:-1",
-                        "LastLedgerCreatedTimestamp": "2021-01-13 16:39:57",
-                        "MsgRateIn": "0.0",
-                        "MsgRateOut": "0.0",
-                        "MsgThroughputIn": "0.0",
-                        "MsgThroughputOut": "0.0",
-                        "NumberOfEntries": "0",
+                        "TopicType": 1,
+                        "ProducerCount": "xx",
+                        "LastConfirmedEntry": "xx",
+                        "TotalSize": "xx",
+                        "NumberOfEntries": "xx",
+                        "ConsumerCount": "xx",
+                        "MsgRateOut": "xx",
+                        "AverageMsgSize": "xx",
+                        "MsgThroughputIn": "xx",
+                        "MsgRateIn": "xx",
                         "Partitions": 0,
-                        "ProducerCount": "0",
-                        "TopicType": 0,
-                        "TotalSize": "0"
+                        "LastLedgerCreatedTimestamp": "xx",
+                        "MsgThroughputOut": "xx"
                     }
-                ]
+                ],
+                "NumberOfEntries": "xx",
+                "ConsumerCount": "xx",
+                "MsgRateOut": "xx",
+                "UpdateTime": "2020-09-22 00:00:00",
+                "CreateTime": "2020-09-22 00:00:00",
+                "ConsumerLimit": "xx",
+                "AverageMsgSize": "xx",
+                "MsgThroughputIn": "xx",
+                "MsgRateIn": "xx",
+                "Partitions": 1,
+                "ProducerLimit": "xx",
+                "LastLedgerCreatedTimestamp": "xx",
+                "TopicName": "xx",
+                "MsgThroughputOut": "xx"
             }
-        ],
-        "RequestId": "dde566ff-ee5d-4ba9-af1c-0481f4220f93"
+        ]
     }
 }
 ```

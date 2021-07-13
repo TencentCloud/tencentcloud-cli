@@ -109,7 +109,7 @@
         },
         {
           "default": "",
-          "document": "对应数据Base64文件名称",
+          "document": "带后缀的文件名称，如music.mp3",
           "example": "无",
           "member": "string",
           "name": "FileName",
@@ -289,7 +289,7 @@
         },
         {
           "default": "",
-          "document": "对应数据Base64文件名称",
+          "document": "带后缀的文件名称，如 test.doc",
           "example": "无",
           "member": "string",
           "name": "FileName",
@@ -586,7 +586,7 @@
         },
         {
           "default": "",
-          "document": "对应数据Base64文件名称 test.png",
+          "document": "带后缀的文件名称，如 test.png",
           "example": "无",
           "member": "string",
           "name": "FileName",
@@ -685,7 +685,7 @@
         },
         {
           "default": "",
-          "document": "对应数据Base64文件名称",
+          "document": "带后缀的文件名称，如music.mkv",
           "example": "无",
           "member": "string",
           "name": "FileName",

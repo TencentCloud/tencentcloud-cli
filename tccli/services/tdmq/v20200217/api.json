@@ -2984,9 +2984,10 @@
       "members": [
         {
           "document": "记录数。",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2995,6 +2996,7 @@
           "example": "[]",
           "member": "EnvironmentRole",
           "name": "EnvironmentRoleSets",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3174,6 +3176,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "test1",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -3182,6 +3185,7 @@
         {
           "default": "",
           "document": "主题名称。",
+          "example": "test",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -3190,6 +3194,7 @@
         {
           "default": "",
           "document": "起始下标，不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3198,6 +3203,7 @@
         {
           "default": "",
           "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3206,6 +3212,7 @@
         {
           "default": "",
           "document": "订阅者名称，模糊匹配。",
+          "example": "test",
           "member": "string",
           "name": "SubscriptionName",
           "required": false,
@@ -3214,6 +3221,7 @@
         {
           "default": "",
           "document": "数据过滤条件。",
+          "example": "无",
           "member": "FilterSubscription",
           "name": "Filters",
           "required": false,
@@ -3222,6 +3230,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-xxxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -3235,15 +3244,19 @@
       "members": [
         {
           "document": "订阅者集合数组。",
+          "example": "无",
           "member": "Subscription",
           "name": "SubscriptionSets",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3361,6 +3374,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -3370,6 +3384,7 @@
         {
           "default": "",
           "document": "说明",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -3379,6 +3394,7 @@
         {
           "default": "",
           "document": "未消费消息过期时间，单位：秒，最大1296000（15天）",
+          "example": "2",
           "member": "int64",
           "name": "MsgTTL",
           "required": true,
@@ -3388,6 +3404,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "2020-02-17 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -3397,6 +3414,7 @@
         {
           "default": "",
           "document": "最近修改时间",
+          "example": "2020-02-17 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -3406,6 +3424,7 @@
         {
           "default": "",
           "document": "命名空间ID",
+          "example": "test",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -3415,11 +3434,22 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "test",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "TopicNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -3,13 +3,13 @@
     "BankCard2EVerification": [
       {
         "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=BankCard2EVerification\r\n&Name=张三\r\n&BankCard=6222222222222222222\r\n&<公共请求参数>",
+        "input": "https://faceid.tencentcloudapi.com/?Action=BankCard2EVerification\n&Name=张三\n&BankCard=6222222222222222222\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"c6daaf7f-dbdc-4a9d-a20b-9a14ffdd8328\"\n    }\n}",
         "title": "认证通过示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCard2EVerification&S"
       },
       {
         "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=BankCard2EVerification\r\n&Name=张三\r\n&BankCard=6222222222222222222\r\n&<公共请求参数>",
+        "input": "https://faceid.tencentcloudapi.com/?Action=BankCard2EVerification\n&Name=张三\n&BankCard=6222222222222222222\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"-4\",\n        \"Description\": \"持卡人信息有误\",\n        \"RequestId\": \"d668328c-7847-42d7-bdce-215ebadffd9b\"\n    }\n}",
         "title": "认证不通过示例  [前往调试工具] (https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCard2EVerificatio"
       }
@@ -62,7 +62,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=CheckIdCardInformation\n&ImageBase64=<base64字符串>\n&Config={\"CopyWarn\":true}\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Address\": \"广东省xxxxxxxxxxxx\",\n        \"Birth\": \"1995/8/6\",\n        \"Description\": \"成功\",\n        \"IdNum\": \"xxxxxxx\",\n        \"Name\": \"洪**\",\n        \"Nation\": \"汉\",\n        \"RequestId\": \"eb10******579b9a\",\n        \"Result\": \"FailedOperation.OcrWarningOccurred\",\n        \"Sex\": \"男\",\n        \"Sim\": 98.819999694824,\n        \"Portrait\": \"zok/tK7k2bLjyJE\",\n        \"Warnings\": \"-9101|-9106|-9104\",\n        \"Quality\": 0.0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Address\": \"广东省xxxxxxxxxxxx\",\n        \"Birth\": \"1995/8/6\",\n        \"Description\": \"成功\",\n        \"IdNum\": \"xxxxxxx\",\n        \"Name\": \"洪**\",\n        \"Nation\": \"汉\",\n        \"RequestId\": \"eb10******579b9a\",\n        \"Result\": \"FailedOperation.OcrWarningOccurred\",\n        \"Sex\": \"男\",\n        \"Sim\": 98.819999694824,\n        \"Portrait\": \"zok/tK7k2bLjyJE\",\n        \"Warnings\": \"-9101|-9106|-9104\",\n        \"Quality\": 0.0,\n        \"Encryption\": {\n            \"Iv\": \"xx\",\n            \"EncryptList\": [\n                \"IdName\"\n            ],\n            \"CiphertextBlob\": \"xx\"\n        }\n    }\n}",
         "title": "使用身份证照片Base64进行验证"
       }
     ],
@@ -214,7 +214,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=ImageRecognition\n&IdCard=11204416541220243X\n&Name=韦小宝\n&ImageBase64=<ImageBase64>\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"Sim\": \"89.88\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "照片人脸核身 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ImageRecognition)"
       }
     ],

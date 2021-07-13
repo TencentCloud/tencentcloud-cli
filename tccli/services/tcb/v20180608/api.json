@@ -2891,6 +2891,7 @@
         {
           "default": "",
           "document": "环境id",
+          "example": "alic-test01",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -2899,10 +2900,20 @@
         {
           "default": "",
           "document": "项目名",
+          "example": "Express-Starter",
           "member": "string",
           "name": "ProjectName",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否保留资源",
+          "example": "false",
+          "member": "bool",
+          "name": "KeepResource",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4680,6 +4691,42 @@
           "example": "0",
           "member": "int64",
           "name": "CurrentFreeTrialNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转支付限额总数",
+          "example": "0",
+          "member": "int64",
+          "name": "ChangePayTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前已用转支付次数",
+          "example": "0",
+          "member": "int64",
+          "name": "CurrentChangePayTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转支付每月限额",
+          "example": "0",
+          "member": "int64",
+          "name": "ChangePayMonthly",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本月已用转支付额度",
+          "example": "0",
+          "member": "int64",
+          "name": "CurrentChangePayMonthly",
           "required": true,
           "type": "int",
           "value_allowed_null": false

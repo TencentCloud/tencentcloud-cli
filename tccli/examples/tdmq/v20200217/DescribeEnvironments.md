@@ -23,6 +23,7 @@ Output:
                 "NamespaceName": "xx",
                 "UpdateTime": "2020-09-22 00:00:00",
                 "NamespaceId": "xx",
+                "TopicNum": 0,
                 "MsgTTL": 0,
                 "CreateTime": "2020-09-22 00:00:00"
             }

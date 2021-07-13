@@ -2853,6 +2853,7 @@
         {
           "default": "",
           "document": "目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2860,7 +2861,8 @@
         },
         {
           "default": "",
-          "document": "备份导入任务ID",
+          "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-cg0ffgqt",
           "member": "string",
           "name": "BackupMigrationId",
           "required": true,
@@ -2868,7 +2870,8 @@
         },
         {
           "default": "",
-          "document": "增量备份导入任务ID",
+          "document": "增量备份导入任务ID，由CreateIncrementalMigration接口返回",
+          "example": "mssql-incremental-migration-67q4wy87",
           "member": "string",
           "name": "IncrementalMigrationId",
           "required": true,
@@ -3193,6 +3196,7 @@
         {
           "default": "",
           "document": "导入目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3201,6 +3205,7 @@
         {
           "default": "",
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-kpl74n9l",
           "member": "string",
           "name": "BackupMigrationId",
           "required": false,
@@ -3209,6 +3214,7 @@
         {
           "default": "",
           "document": "导入任务名称",
+          "example": "字符串",
           "member": "string",
           "name": "MigrationName",
           "required": false,
@@ -3217,6 +3223,7 @@
         {
           "default": "",
           "document": "备份文件名称",
+          "example": "db1",
           "member": "string",
           "name": "BackupFileName",
           "required": false,
@@ -3225,6 +3232,7 @@
         {
           "default": "",
           "document": "导入任务状态集合",
+          "example": "[\"2\\n\"]",
           "member": "int64",
           "name": "StatusSet",
           "required": false,
@@ -3233,6 +3241,7 @@
         {
           "default": "",
           "document": "导入任务恢复类型，FULL,FULL_LOG,FULL_DIFF",
+          "example": "FULL",
           "member": "string",
           "name": "RecoveryType",
           "required": false,
@@ -3241,6 +3250,7 @@
         {
           "default": "",
           "document": "COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
+          "example": "COS_UPLOAD",
           "member": "string",
           "name": "UploadType",
           "required": false,
@@ -3248,7 +3258,8 @@
         },
         {
           "default": "",
-          "document": "分页，页大小",
+          "document": "分页，页大小，默认值：100",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3256,7 +3267,8 @@
         },
         {
           "default": "",
-          "document": "分页，页数",
+          "document": "分页，页数，默认值：0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3264,7 +3276,8 @@
         },
         {
           "default": "",
-          "document": "排序字段，name,createTime,startTime,endTime",
+          "document": "排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。",
+          "example": "createTime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -3272,7 +3285,8 @@
         },
         {
           "default": "",
-          "document": "排序方式，desc,asc",
+          "document": "排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -3286,15 +3300,19 @@
       "members": [
         {
           "document": "迁移任务总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务集合",
+          "example": "无",
           "member": "Migration",
           "name": "BackupMigrationSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3816,6 +3834,7 @@
         {
           "default": "",
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-cg0ffgqt",
           "member": "string",
           "name": "BackupMigrationId",
           "required": true,
@@ -3824,6 +3843,7 @@
         {
           "default": "",
           "document": "导入目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3832,6 +3852,7 @@
         {
           "default": "",
           "document": "备份文件名称",
+          "example": "cvm",
           "member": "string",
           "name": "BackupFileName",
           "required": false,
@@ -3840,6 +3861,7 @@
         {
           "default": "",
           "document": "导入任务状态集合",
+          "example": "[\"2\\n\"]",
           "member": "int64",
           "name": "StatusSet",
           "required": false,
@@ -3847,7 +3869,8 @@
         },
         {
           "default": "",
-          "document": "分页，页大小",
+          "document": "分页，页大小，默认值：100",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3855,7 +3878,8 @@
         },
         {
           "default": "",
-          "document": "分页，页数",
+          "document": "分页，页数，默认值：0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3863,7 +3887,8 @@
         },
         {
           "default": "",
-          "document": "排序字段，name,createTime,startTime,endTime",
+          "document": "排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。",
+          "example": "createTime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -3871,7 +3896,8 @@
         },
         {
           "default": "",
-          "document": "排序方式，desc,asc",
+          "document": "排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -3879,7 +3905,8 @@
         },
         {
           "default": "",
-          "document": "增量备份导入任务ID",
+          "document": "增量备份导入任务ID，由CreateIncrementalMigration接口返回",
+          "example": "mssql-incremental-migration-kp7bgv8p",
           "member": "string",
           "name": "IncrementalMigrationId",
           "required": false,
@@ -3893,15 +3920,19 @@
       "members": [
         {
           "document": "增量导入任务总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "增量导入任务集合",
+          "example": "无",
           "member": "Migration",
           "name": "IncrementalMigrationSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6505,6 +6536,7 @@
         {
           "default": "",
           "document": "导入目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6513,6 +6545,7 @@
         {
           "default": "",
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-cg0ffgqt",
           "member": "string",
           "name": "BackupMigrationId",
           "required": true,
@@ -6520,7 +6553,8 @@
         },
         {
           "default": "",
-          "document": "增量导入任务ID",
+          "document": "增量导入任务ID，由CreateIncrementalMigration接口返回",
+          "example": "mssql-incremental-migration-kp7bgv8p",
           "member": "string",
           "name": "IncrementalMigrationId",
           "required": true,
@@ -6528,7 +6562,8 @@
         },
         {
           "default": "",
-          "document": "是否需要恢复，NO-不需要，YES-需要",
+          "document": "是否需要恢复，NO-不需要，YES-需要，默认不修改增量备份导入任务是否需要恢复的属性。",
+          "example": "YES",
           "member": "string",
           "name": "IsRecovery",
           "required": false,
@@ -6537,6 +6572,7 @@
         {
           "default": "",
           "document": "UploadType是COS_URL时这里时URL，COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
+          "example": "[\"db_cvm_1_20200927204209_2log2_2reconvery2.bak\\n\"]",
           "member": "string",
           "name": "BackupFiles",
           "required": false,
@@ -6550,8 +6586,10 @@
       "members": [
         {
           "document": "增量备份导入任务ID",
+          "example": "mssql-incremental-migration-kp7bgv8p",
           "member": "string",
           "name": "IncrementalMigrationId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -252,7 +252,7 @@
       {
         "document": "",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvLimit\n&Source=sss\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MaxEnvNum\": 0,\n        \"CurrentEnvNum\": 0,\n        \"MaxFreeEnvNum\": 0,\n        \"CurrentFreeEnvNum\": 0,\n        \"MaxDeleteTotal\": 0,\n        \"CurrentDeleteTotal\": 0,\n        \"MaxDeleteMonthly\": 0,\n        \"CurrentDeleteMonthly\": 0,\n        \"CurrentFreeTrialNum\": 0,\n        \"MaxFreeTrialNum\": 0,\n        \"RequestId\": \"046cacfd-af90-4355-ac92-f56954bd1831\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CurrentFreeEnvNum\": 0,\n        \"ChangePayTotal\": 0,\n        \"CurrentChangePayMonthly\": 0,\n        \"MaxDeleteMonthly\": 0,\n        \"MaxEnvNum\": 0,\n        \"ChangePayMonthly\": 0,\n        \"CurrentChangePayTotal\": 0,\n        \"MaxDeleteTotal\": 0,\n        \"CurrentEnvNum\": 0,\n        \"CurrentDeleteMonthly\": 0,\n        \"CurrentDeleteTotal\": 0,\n        \"CurrentFreeTrialNum\": 0,\n        \"MaxFreeTrialNum\": 0,\n        \"MaxFreeEnvNum\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询环境个数上限接口"
       }
     ],

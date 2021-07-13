@@ -26,7 +26,14 @@ Output:
         "Sim": 98.819999694824,
         "Portrait": "zok/tK7k2bLjyJE",
         "Warnings": "-9101|-9106|-9104",
-        "Quality": 0.0
+        "Quality": 0.0,
+        "Encryption": {
+            "Iv": "xx",
+            "EncryptList": [
+                "IdName"
+            ],
+            "CiphertextBlob": "xx"
+        }
     }
 }
 ```

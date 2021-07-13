@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddUserContact": {
-      "document": "添加邮件接收联系人的姓名， 邮件地址，返回值为添加成功的联系人id。Region统一选择广州。",
+      "document": "添加邮件接收联系人的姓名， 邮件地址，返回值为添加成功的联系人id。",
       "input": "AddUserContactRequest",
       "name": "添加联系人信息",
       "output": "AddUserContactResponse"
@@ -91,7 +91,7 @@
       "output": "DescribeHealthScoreResponse"
     },
     "DescribeMailProfile": {
-      "document": "获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。Region统一选择广州。",
+      "document": "获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。",
       "input": "DescribeMailProfileRequest",
       "name": "获取邮件配置",
       "output": "DescribeMailProfileResponse"
@@ -181,7 +181,7 @@
       "members": [
         {
           "default": "",
-          "document": "联系人姓名，大小写字母+数字+下划线，最小 2 位最大 60 位的长度， 不能以\"_\"开头，且联系人名保持唯一。",
+          "document": "联系人姓名，由中英文、数字、空格、!@#$%^&*()_+-=（）组成，不能以下划线开头，长度在20以内。",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -190,7 +190,7 @@
         },
         {
           "default": "",
-          "document": "邮箱地址，大小写字母、数字及下划线组成， 不能以\"_\"开头。",
+          "document": "邮箱地址，支持大小写字母、数字、下划线及@字符， 不能以下划线开头，邮箱地址不可重复。",
           "example": "test@qq.com",
           "member": "string",
           "name": "ContactInfo",
@@ -843,7 +843,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "事件详情。",
+          "document": "诊断事件详情，若无附加解释信息则输出为空。",
           "example": "[]",
           "member": "string",
           "name": "Explanation",
@@ -852,7 +852,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "概要。",
+          "document": "诊断概要。",
           "example": "数据库健康检查，发现1个问题",
           "member": "string",
           "name": "Outline",
@@ -888,7 +888,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "建议。",
+          "document": "诊断建议，若无建议则输出为空。",
           "example": "[]",
           "member": "string",
           "name": "Suggestions",
@@ -1306,7 +1306,7 @@
         },
         {
           "default": "",
-          "document": "获取健康得分的时间。",
+          "document": "获取健康得分的时间，时间格式如：2019-09-10 12:13:14。",
           "example": "2019-01-01T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "Time",
@@ -2301,7 +2301,7 @@
       "document": "DescribeUserSqlAdvice返回参数结构体",
       "members": [
         {
-          "document": "SQL优化建议，可解析为JSON数组。",
+          "document": "SQL优化建议，可解析为JSON数组，无需优化时输出为空。",
           "example": "PossibleKeys",
           "member": "string",
           "name": "Advices",
@@ -2310,7 +2310,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "SQL优化建议备注，可解析为String数组。",
+          "document": "SQL优化建议备注，可解析为String数组，无需优化时输出为空。",
           "example": "SQL解析不通过",
           "member": "string",
           "name": "Comments",
@@ -2346,7 +2346,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "SQL执行计划，可解析为JSON。",
+          "document": "SQL执行计划，可解析为JSON，无需优化时输出为空。",
           "example": "Before",
           "member": "string",
           "name": "SqlPlan",
@@ -2355,7 +2355,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "SQL优化后的成本节约详情，可解析为JSON。",
+          "document": "SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。",
           "example": "After",
           "member": "string",
           "name": "Cost",
@@ -2407,7 +2407,7 @@
         },
         {
           "default": "",
-          "document": "事件 ID 。",
+          "document": "事件唯一ID 。",
           "example": "1",
           "member": "int64",
           "name": "EventId",
@@ -2427,7 +2427,7 @@
         },
         {
           "default": "",
-          "document": "概要。",
+          "document": "诊断概要。",
           "example": "无",
           "member": "string",
           "name": "Outline",
@@ -2437,7 +2437,7 @@
         },
         {
           "default": "",
-          "document": "诊断项。",
+          "document": "诊断项说明。",
           "example": "无",
           "member": "string",
           "name": "DiagItem",
@@ -2447,17 +2447,17 @@
         },
         {
           "default": "",
-          "document": "实例 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例 ID 。",
           "example": "cdb-test",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保留字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Metric",
@@ -2467,13 +2467,13 @@
         },
         {
           "default": "",
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域。",
           "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4359,7 +4359,7 @@
         },
         {
           "default": "",
-          "document": "配置类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置类型，支持值包括：\"dbScan_mail_configuration\" - 数据库巡检邮件配置，\"scheduler_mail_configuration\" - 定期生成邮件配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dbScan_mail_configuration",
           "member": "string",
           "name": "ProfileType",
@@ -4369,7 +4369,7 @@
         },
         {
           "default": "",
-          "document": "配置级别，\"User\"或\"Instance\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置级别，支持值包括：\"User\" - 用户级别，\"Instance\" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "User",
           "member": "string",
           "name": "ProfileLevel",
