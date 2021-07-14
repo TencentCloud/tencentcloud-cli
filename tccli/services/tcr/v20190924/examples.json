@@ -16,6 +16,14 @@
         "title": "批量删除个人版仓库"
       }
     ],
+    "CheckInstance": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CheckInstance\n&RegistryId=tcr-test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IsValidated\": true,\n        \"RegionId\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "检测实例ID是否存在"
+      }
+    ],
     "CheckInstanceName": [
       {
         "document": "",
@@ -611,7 +619,13 @@
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=ManageReplication\n&SourceRegistryId=tcr-xxx\n&DestinationRegistryId=tcr-yyy\n&DestinationRegionId=9\n&Rule.Override=true\n&Rule.DestNamespace=test\n&Rule.Name=test\n&Rule.Filters.0.Type=tag\n&Rule.Filters.0.Value=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "管理实例同步规则"
+        "title": "创建实例同步"
+      },
+      {
+        "document": "用于创建跨主账号的实例同步",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ManageReplication\n&SourceRegistryId=tcr-3498\n&DestinationRegistryId=tcr-98676\n&DestinationRegionId=9\n&Rule.Override=true\n&Rule.DestNamespace=test\n&Rule.Name=test\n&Rule.Filters.0.Type=tag\n&Rule.Filters.0.Value=test\n&PeerReplicationOption.EnablePeerReplication=true\n&PeerReplicationOption.PeerRegistryUin=113498\n&PeerReplicationOption.PeerRegistryToken=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建跨主账号实例同步"
       }
     ],
     "ModifyApplicationTriggerPersonal": [

@@ -1100,6 +1100,7 @@
         {
           "default": "",
           "document": "模板 ID。",
+          "example": "1",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -1109,6 +1110,7 @@
         {
           "default": "",
           "document": "模板名称。",
+          "example": "aaa",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -1118,6 +1120,7 @@
         {
           "default": "",
           "document": "描述信息。",
+          "example": "xxx",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1127,6 +1130,7 @@
         {
           "default": "",
           "document": "开播回调 URL。",
+          "example": "http://abc.com/abc",
           "member": "string",
           "name": "StreamBeginNotifyUrl",
           "required": true,
@@ -1135,16 +1139,8 @@
         },
         {
           "default": "",
-          "document": "断流回调 URL。",
-          "member": "string",
-          "name": "StreamEndNotifyUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "混流回调 URL。",
+          "document": "混流回调 URL。(参数已弃用)。",
+          "example": "无",
           "member": "string",
           "name": "StreamMixNotifyUrl",
           "required": true,
@@ -1153,7 +1149,18 @@
         },
         {
           "default": "",
+          "document": "断流回调 URL。",
+          "example": "http://abc.com/abc",
+          "member": "string",
+          "name": "StreamEndNotifyUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "录制回调 URL。",
+          "example": "http://abc.com/abc",
           "member": "string",
           "name": "RecordNotifyUrl",
           "required": true,
@@ -1163,6 +1170,7 @@
         {
           "default": "",
           "document": "截图回调 URL。",
+          "example": "http://abc.com/abc",
           "member": "string",
           "name": "SnapshotNotifyUrl",
           "required": true,
@@ -1172,6 +1180,7 @@
         {
           "default": "",
           "document": "鉴黄回调 URL。",
+          "example": "http://abc.com/abc",
           "member": "string",
           "name": "PornCensorshipNotifyUrl",
           "required": true,
@@ -1181,6 +1190,7 @@
         {
           "default": "",
           "document": "回调的鉴权 key。",
+          "example": "def",
           "member": "string",
           "name": "CallbackKey",
           "required": true,
@@ -4337,6 +4347,7 @@
         {
           "default": "",
           "document": "模板 ID。\n1. 在创建回调模板接口 [CreateLiveCallbackTemplate](/document/product/267/32637) 调用的返回值中获取模板 ID。\n2. 可以从接口 [DescribeLiveCallbackTemplates](/document/product/267/32632) 查询已经创建的过的模板列表。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -4350,8 +4361,10 @@
       "members": [
         {
           "document": "回调模板信息。",
+          "example": "无",
           "member": "CallBackTemplateInfo",
           "name": "Template",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4374,8 +4387,10 @@
       "members": [
         {
           "document": "模板信息列表。",
+          "example": "无",
           "member": "CallBackTemplateInfo",
           "name": "Templates",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11406,9 +11421,19 @@
         {
           "default": "",
           "document": "播放域名。",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "枚举值：\ngray: 解绑灰度规则\nformal(默认): 解绑正式规则\n\n不传则为formal",
+          "example": "\"gray\"",
+          "member": "string",
+          "name": "Type",
+          "required": false,
           "type": "string"
         }
       ],

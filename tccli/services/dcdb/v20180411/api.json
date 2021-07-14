@@ -115,9 +115,9 @@
       "output": "DescribeDCDBShardsResponse"
     },
     "DescribeDCDBUpgradePrice": {
-      "document": "本接口（DescribeDCDBUpgradePrice）用于查询升级分布式数据库实例价格。",
+      "document": "本接口（DescribeDCDBUpgradePrice）用于查询变配分布式数据库实例价格。",
       "input": "DescribeDCDBUpgradePriceRequest",
-      "name": "查询升级分布式数据库实例价格",
+      "name": "查询变配分布式数据库实例价格",
       "output": "DescribeDCDBUpgradePriceResponse"
     },
     "DescribeDatabaseObjects": {
@@ -296,6 +296,7 @@
         {
           "default": "",
           "document": "新增分片的数量",
+          "example": "1",
           "member": "int64",
           "name": "ShardCount",
           "required": true,
@@ -305,6 +306,7 @@
         {
           "default": "",
           "document": "分片内存大小，单位 GB",
+          "example": "2",
           "member": "int64",
           "name": "ShardMemory",
           "required": true,
@@ -314,6 +316,7 @@
         {
           "default": "",
           "document": "分片存储大小，单位 GB",
+          "example": "10",
           "member": "int64",
           "name": "ShardStorage",
           "required": true,
@@ -1804,6 +1807,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "暂无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1813,6 +1817,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "暂无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -1822,6 +1827,7 @@
         {
           "default": "",
           "document": "实例地域",
+          "example": "暂无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1831,6 +1837,7 @@
         {
           "default": "",
           "document": "实例可用区",
+          "example": "暂无",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1840,6 +1847,7 @@
         {
           "default": "",
           "document": "实例IP地址",
+          "example": "暂无",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -1849,6 +1857,7 @@
         {
           "default": "",
           "document": "实例IPv6地址",
+          "example": "暂无",
           "member": "string",
           "name": "Vipv6",
           "required": true,
@@ -1858,6 +1867,7 @@
         {
           "default": "",
           "document": "实例端口",
+          "example": "暂无",
           "member": "int64",
           "name": "Vport",
           "required": true,
@@ -1867,6 +1877,7 @@
         {
           "default": "",
           "document": "实例状态",
+          "example": "暂无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1876,6 +1887,7 @@
         {
           "default": "",
           "document": "实例状态描述",
+          "example": "暂无",
           "member": "string",
           "name": "StatusDesc",
           "required": true,
@@ -1885,6 +1897,7 @@
         {
           "default": "",
           "document": "实例DCN标志，1-主，2-备",
+          "example": "暂无",
           "member": "int64",
           "name": "DcnFlag",
           "required": true,
@@ -1894,8 +1907,79 @@
         {
           "default": "",
           "document": "实例DCN状态，0-无，1-创建中，2-同步中，3-已断开",
+          "example": "暂无",
           "member": "int64",
           "name": "DcnStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例CPU核数",
+          "example": "暂无",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内存大小，单位 GB",
+          "example": "暂无",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例存储大小，单位 GB",
+          "example": "暂无",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式",
+          "example": "暂无",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间，格式为 2006-01-02 15:04:05",
+          "example": "暂无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例到期时间，格式为 2006-01-02 15:04:05",
+          "example": "暂无",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）",
+          "example": "暂无",
+          "member": "int64",
+          "name": "InstanceType",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2917,6 +3001,7 @@
         {
           "default": "",
           "document": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "dcdbt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2925,6 +3010,7 @@
         {
           "default": "",
           "document": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
+          "example": "ADD",
           "member": "string",
           "name": "UpgradeType",
           "required": true,
@@ -2933,6 +3019,7 @@
         {
           "default": "",
           "document": "新增分片配置，当UpgradeType为ADD时生效。",
+          "example": "无",
           "member": "AddShardConfig",
           "name": "AddShardConfig",
           "required": false,
@@ -2941,6 +3028,7 @@
         {
           "default": "",
           "document": "扩容分片配置，当UpgradeType为EXPAND时生效。",
+          "example": "无",
           "member": "ExpandShardConfig",
           "name": "ExpandShardConfig",
           "required": false,
@@ -2949,6 +3037,7 @@
         {
           "default": "",
           "document": "切分分片配置，当UpgradeType为SPLIT时生效。",
+          "example": "无",
           "member": "SplitShardConfig",
           "name": "SplitShardConfig",
           "required": false,
@@ -2962,16 +3051,29 @@
       "members": [
         {
           "document": "原价，单位：分",
+          "example": "7020",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "example": "7020",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "变配明细计算公式",
+          "example": "变配订单金额：退款3.45 元[1、退费3.45 元=变配差价3.45 元*现金比例100 %，>代金券不可退；2、变配差价3.",
+          "member": "string",
+          "name": "Formula",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -3578,7 +3680,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/237/16177)。",
+          "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/557/56485)。",
           "example": "100",
           "member": "int64",
           "name": "FlowId",
@@ -3614,7 +3716,7 @@
       "document": "DestroyHourDCDBInstance返回参数结构体",
       "members": [
         {
-          "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/237/16177)。",
+          "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/557/56485)。",
           "example": "100",
           "member": "int64",
           "name": "FlowId",
@@ -3691,6 +3793,7 @@
         {
           "default": "",
           "document": "分片ID数组",
+          "example": "[\"shard-xxxx\"]",
           "member": "string",
           "name": "ShardInstanceIds",
           "required": true,
@@ -3700,6 +3803,7 @@
         {
           "default": "",
           "document": "分片内存大小，单位 GB",
+          "example": "2",
           "member": "int64",
           "name": "ShardMemory",
           "required": true,
@@ -3709,6 +3813,7 @@
         {
           "default": "",
           "document": "分片存储大小，单位 GB",
+          "example": "10",
           "member": "int64",
           "name": "ShardStorage",
           "required": true,
@@ -4998,6 +5103,7 @@
         {
           "default": "",
           "document": "分片ID数组",
+          "example": "[\"shard-xxxx\"]",
           "member": "string",
           "name": "ShardInstanceIds",
           "required": true,
@@ -5006,7 +5112,8 @@
         },
         {
           "default": "",
-          "document": "数据切分比例",
+          "document": "数据切分比例，固定50%",
+          "example": "50",
           "member": "int64",
           "name": "SplitRate",
           "required": true,
@@ -5016,6 +5123,7 @@
         {
           "default": "",
           "document": "分片内存大小，单位 GB",
+          "example": "2",
           "member": "int64",
           "name": "ShardMemory",
           "required": true,
@@ -5025,6 +5133,7 @@
         {
           "default": "",
           "document": "分片存储大小，单位 GB",
+          "example": "10",
           "member": "int64",
           "name": "ShardStorage",
           "required": true,

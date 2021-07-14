@@ -211,7 +211,8 @@
       "members": [
         {
           "default": "",
-          "document": "音频流的流id",
+          "document": "音频流的流id。",
+          "example": "1",
           "member": "int64",
           "name": "Stream",
           "required": true,
@@ -220,7 +221,8 @@
         },
         {
           "default": "",
-          "document": "音频采样率 。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频采样率 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "44100",
           "member": "int64",
           "name": "Sample",
           "required": true,
@@ -229,7 +231,8 @@
         },
         {
           "default": "",
-          "document": "音频声道数。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频声道数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "Channel",
           "required": true,
@@ -238,7 +241,8 @@
         },
         {
           "default": "",
-          "document": "编码格式，如aac, mp3等。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编码格式，如aac, mp3等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aac",
           "member": "string",
           "name": "Codec",
           "required": true,
@@ -247,7 +251,8 @@
         },
         {
           "default": "",
-          "document": "码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128188",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
@@ -256,7 +261,8 @@
         },
         {
           "default": "",
-          "document": "音频时长，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频时长，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
           "member": "int64",
           "name": "Duration",
           "required": true,
@@ -1199,7 +1205,8 @@
       "members": [
         {
           "default": "",
-          "document": "任务结束后生成的文件大小。\n注意：此字段可能返回 null，表示取不到有效值 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
           "member": "int64",
           "name": "FileSize",
           "required": true,
@@ -1208,7 +1215,8 @@
         },
         {
           "default": "",
-          "document": "任务结束后生成的文件格式，例如：mp4,flv等等。\n注意：此字段可能返回 null，表示取不到有效值 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件格式，例如：mp4,flv等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mp4",
           "member": "string",
           "name": "FileType",
           "required": true,
@@ -1217,7 +1225,8 @@
         },
         {
           "default": "",
-          "document": "任务结束后生成的文件整体码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件整体码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20000",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
@@ -1226,7 +1235,8 @@
         },
         {
           "default": "",
-          "document": "任务结束后生成的文件时长，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件时长，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
           "member": "int64",
           "name": "Duration",
           "required": true,
@@ -1235,7 +1245,8 @@
         },
         {
           "default": "",
-          "document": "任务结束后生成的文件视频信息。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VideoInfoResultItem",
           "name": "VideoInfoResult",
           "required": true,
@@ -1244,7 +1255,8 @@
         },
         {
           "default": "",
-          "document": "任务结束后生成的文件音频信息。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件音频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AudioInfoResultItem",
           "name": "AudioInfoResult",
           "required": true,
@@ -3097,7 +3109,8 @@
       "members": [
         {
           "default": "",
-          "document": "子任务名称。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子任务名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -3107,6 +3120,7 @@
         {
           "default": "",
           "document": "子任务状态。\n0：成功；\n1：执行中；\n其他值：失败。",
+          "example": "0",
           "member": "int64",
           "name": "StatusCode",
           "required": true,
@@ -3116,6 +3130,7 @@
         {
           "default": "",
           "document": "子任务状态描述。",
+          "example": "success",
           "member": "string",
           "name": "StatusMsg",
           "required": true,
@@ -3124,7 +3139,8 @@
         },
         {
           "default": "",
-          "document": "子任务进度。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子任务进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
           "member": "int64",
           "name": "ProgressRate",
           "required": true,
@@ -3133,7 +3149,8 @@
         },
         {
           "default": "",
-          "document": "画质重生处理后文件的下载地址。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画质重生处理后文件的下载地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://yayunhui-1251820392.cos.ap-beijing.myqcloud.com/test.mp4",
           "member": "string",
           "name": "DownloadUrl",
           "required": true,
@@ -3142,7 +3159,8 @@
         },
         {
           "default": "",
-          "document": "画质重生处理后文件的MD5。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画质重生处理后文件的MD5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "e993da7f46b38b48efa3b9f0d7ba17d5",
           "member": "string",
           "name": "Md5",
           "required": true,
@@ -3151,7 +3169,8 @@
         },
         {
           "default": "",
-          "document": "画质重生处理后文件的详细信息。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画质重生处理后文件的详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FileInfo",
           "name": "FileInfo",
           "required": true,
@@ -3796,7 +3815,7 @@
         },
         {
           "default": "",
-          "document": "编码器支持选项，可选值：\nh264,\nh265,\nav1\n。\n不填默认h264。",
+          "document": "编码器支持选项，可选值：\nh264,\nh265,\nav1。\n不填默认h264。",
           "example": "h264",
           "member": "string",
           "name": "VideoCodec",
@@ -3863,6 +3882,7 @@
         {
           "default": "",
           "document": "视频流的流id。",
+          "example": "0",
           "member": "int64",
           "name": "Stream",
           "required": true,
@@ -3871,7 +3891,8 @@
         },
         {
           "default": "",
-          "document": "视频宽度。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频宽度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
           "member": "int64",
           "name": "Width",
           "required": true,
@@ -3880,7 +3901,8 @@
         },
         {
           "default": "",
-          "document": "视频高度。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频高度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
           "member": "int64",
           "name": "Height",
           "required": true,
@@ -3889,7 +3911,8 @@
         },
         {
           "default": "",
-          "document": "视频码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
@@ -3898,7 +3921,8 @@
         },
         {
           "default": "",
-          "document": "视频帧率，用分数格式表示，如：25/1, 99/32等等。\n注意：此字段可能返回 null，表示取不到有效值 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频帧率，用分数格式表示，如：25/1, 99/32等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "25",
           "member": "string",
           "name": "Fps",
           "required": true,
@@ -3907,7 +3931,8 @@
         },
         {
           "default": "",
-          "document": "编码格式，如h264,h265等等 。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编码格式，如h264,h265等等 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "h264",
           "member": "string",
           "name": "Codec",
           "required": true,
@@ -3916,7 +3941,8 @@
         },
         {
           "default": "",
-          "document": "播放旋转角度，可选值0-360。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "播放旋转角度，可选值0-360。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "180",
           "member": "int64",
           "name": "Rotate",
           "required": true,
@@ -3925,7 +3951,8 @@
         },
         {
           "default": "",
-          "document": "视频时长，单位：ms 。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频时长，单位：ms 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
           "member": "int64",
           "name": "Duration",
           "required": true,
@@ -3934,7 +3961,8 @@
         },
         {
           "default": "",
-          "document": "颜色空间，如yuv420p，yuv444p等等。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "颜色空间，如yuv420p，yuv444p等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yuv420p",
           "member": "string",
           "name": "PixFormat",
           "required": true,

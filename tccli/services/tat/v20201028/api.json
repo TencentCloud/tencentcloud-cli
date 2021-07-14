@@ -267,6 +267,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在实例上执行命令的用户名。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -277,6 +287,7 @@
         {
           "default": "",
           "document": "Base64 编码后的执行命令。",
+          "example": "无",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -286,6 +297,7 @@
         {
           "default": "",
           "document": "命令类型。",
+          "example": "SHELL",
           "member": "string",
           "name": "CommandType",
           "required": true,
@@ -295,6 +307,7 @@
         {
           "default": "",
           "document": "超时时间。",
+          "example": "60",
           "member": "uint64",
           "name": "Timeout",
           "required": true,
@@ -304,8 +317,19 @@
         {
           "default": "",
           "document": "执行路径。",
+          "example": "/root",
           "member": "string",
           "name": "WorkingDirectory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行用户。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -396,6 +420,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "在 CVM 或 Lighthouse 实例中执行命令的用户名称。\n使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在Linux实例中以root用户执行命令。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -926,6 +959,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在实例上执行命令时使用的用户名。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1097,6 +1140,15 @@
           "name": "Parameters",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在 CVM 或 Lighthouse 实例中执行命令的用户名称。\n使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。若不填，默认以 Command 配置的 Username 执行。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1194,6 +1246,15 @@
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
           "name": "DefaultParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在 CVM 或 Lighthouse 实例中执行命令的用户名称。\n使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在Linux实例中以root用户执行命令。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
           "required": false,
           "type": "string"
         }
@@ -1412,6 +1473,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "在 CVM 或 Lighthouse 实例中执行命令的用户名称。\n使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在Linux实例中以root用户执行命令。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

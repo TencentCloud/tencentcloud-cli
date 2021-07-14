@@ -9324,6 +9324,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "123",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -9333,6 +9334,7 @@
         {
           "default": "",
           "document": "具体配置",
+          "example": "无",
           "member": "ScdnAclRule",
           "name": "Configure",
           "required": true,
@@ -9341,7 +9343,8 @@
         },
         {
           "default": "",
-          "document": "规则行为，一般为refuse",
+          "document": "规则行为，一般为refuse，重定向redirect",
+          "example": "refuse",
           "member": "string",
           "name": "Result",
           "required": true,
@@ -9351,11 +9354,22 @@
         {
           "default": "",
           "document": "规则是否生效中active|inactive",
+          "example": "active",
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误页面配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScdnErrorPage",
+          "name": "ErrorPage",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

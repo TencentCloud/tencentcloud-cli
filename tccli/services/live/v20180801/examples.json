@@ -381,16 +381,16 @@
     "DescribeLiveCallbackTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveCallbackTemplate\r\n&TemplateId=1000\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Template\": {\n            \"TemplateId\": 1000,\n            \"TemplateName\": \"testName\",\n            \"Description\": \"test\",\n            \"StreamBeginNotifyUrl\": \"http://www.qq.com/api/notify?action=streamBegin\",\n            \"StreamEndNotifyUrl\": \"http://www.qq.com/api/notify?action=streamEnd\",\n            \"StreamMixNotifyUrl\": \"http://www.qq.com/api/notify?action=streamMix\",\n            \"RecordNotifyUrl\": \"http://www.qq.com/api/notify?action=record\",\n            \"SnapshotNotifyUrl\": \"http://www.qq.com/api/notify?action=record\",\n            \"PornCensorshipNotifyUrl\": \"http://www.qq.com/api/notify?action=porn\",\n            \"CallbackKey\": \"adasdasda1312312\"\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveCallbackTemplate\n&TemplateId=1000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Template\": {\n            \"TemplateId\": 1000,\n            \"TemplateName\": \"testName\",\n            \"Description\": \"test\",\n            \"StreamBeginNotifyUrl\": \"http://www.qq.com/api/notify?action=streamBegin\",\n            \"StreamEndNotifyUrl\": \"http://www.qq.com/api/notify?action=streamEnd\",\n            \"StreamMixNotifyUrl\": \"\",\n            \"RecordNotifyUrl\": \"http://www.qq.com/api/notify?action=record\",\n            \"SnapshotNotifyUrl\": \"http://www.qq.com/api/notify?action=record\",\n            \"PornCensorshipNotifyUrl\": \"http://www.qq.com/api/notify?action=porn\",\n            \"CallbackKey\": \"adasdasda1312312\"\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DescribeLiveCallbackTemplates": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveCallbackTemplates\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"TemplateId\": 1000,\n                \"TemplateName\": \"testName\",\n                \"Description\": \"test\",\n                \"StreamBeginNotifyUrl\": \"http://www.qq.com/api/notify?action=streamBegin\",\n                \"StreamEndNotifyUrl\": \"http://www.qq.com/api/notify?action=streamEnd\",\n                \"StreamMixNotifyUrl\": \"http://www.qq.com/api/notify?action=streamMix\",\n                \"RecordNotifyUrl\": \"http://www.qq.com/api/notify?action=record\",\n                \"SnapshotNotifyUrl\": \"http://www.qq.com/api/notify?action=record\",\n                \"PornCensorshipNotifyUrl\": \"http://www.qq.com/api/notify?action=porn\",\n                \"CallbackKey\": \"adafas1412423432\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveCallbackTemplates\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"TemplateId\": 1000,\n                \"TemplateName\": \"testName\",\n                \"Description\": \"test\",\n                \"StreamBeginNotifyUrl\": \"http://www.qq.com/api/notify?action=streamBegin\",\n                \"StreamEndNotifyUrl\": \"http://www.qq.com/api/notify?action=streamEnd\",\n                \"StreamMixNotifyUrl\": \"\",\n                \"RecordNotifyUrl\": \"http://www.qq.com/api/notify?action=record\",\n                \"SnapshotNotifyUrl\": \"http://www.qq.com/api/notify?action=record\",\n                \"PornCensorshipNotifyUrl\": \"http://www.qq.com/api/notify?action=porn\",\n                \"CallbackKey\": \"adafas1412423432\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -925,7 +925,7 @@
     "UnBindLiveDomainCert": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=UnBindLiveDomainCert\r\n&DomainName=5000.livepush.myqcloud.com\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=UnBindLiveDomainCert\n&DomainName=5000.livepush.myqcloud.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

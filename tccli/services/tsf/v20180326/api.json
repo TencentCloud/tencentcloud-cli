@@ -78,6 +78,12 @@
       "name": "创建容器部署组",
       "output": "CreateContainGroupResponse"
     },
+    "CreateFileConfig": {
+      "document": "创建文件配置项",
+      "input": "CreateFileConfigRequest",
+      "name": "创建文件配置项",
+      "output": "CreateFileConfigResponse"
+    },
     "CreateGatewayApi": {
       "document": "批量导入API至api分组(也支持新建API到分组)",
       "input": "CreateGatewayApiRequest",
@@ -407,6 +413,12 @@
       "input": "DescribeEnabledUnitRuleRequest",
       "name": "查询生效的单元化规则",
       "output": "DescribeEnabledUnitRuleResponse"
+    },
+    "DescribeFileConfigs": {
+      "document": "查询文件配置项列表",
+      "input": "DescribeFileConfigsRequest",
+      "name": "查询文件配置项列表",
+      "output": "DescribeFileConfigsResponse"
     },
     "DescribeFlowLastBatchState": {
       "document": "查询工作流最新一个批次的状态信息",
@@ -833,6 +845,12 @@
       "input": "ReleaseConfigRequest",
       "name": "发布配置",
       "output": "ReleaseConfigResponse"
+    },
+    "ReleaseFileConfig": {
+      "document": "发布文件配置",
+      "input": "ReleaseFileConfigRequest",
+      "name": "发布文件配置",
+      "output": "ReleaseFileConfigResponse"
     },
     "ReleasePublicConfig": {
       "document": "发布公共配置",
@@ -4526,6 +4544,123 @@
       ],
       "type": "object"
     },
+    "CreateFileConfigRequest": {
+      "document": "CreateFileConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项名称",
+          "example": "consumer-config",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置项版本",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置项文件名",
+          "example": "update",
+          "member": "string",
+          "name": "ConfigFileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置项文件内容（原始内容编码需要 utf-8 格式，如果 ConfigFileCode 为 gbk，后台会进行转换）",
+          "example": "workdir",
+          "member": "string",
+          "name": "ConfigFileValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置项关联应用ID",
+          "example": "application-dapbkdgy",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发布路径",
+          "example": "/root",
+          "member": "string",
+          "name": "ConfigFilePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置项版本描述",
+          "example": "first",
+          "member": "string",
+          "name": "ConfigVersionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置项文件编码，utf-8 或 gbk。注：如果选择 gbk，需要新版本 tsf-consul-template （公有云虚拟机需要使用 1.32 tsf-agent，容器需要从文档中获取最新的 tsf-consul-template-docker.tar.gz）的支持",
+          "example": "utf-8",
+          "member": "string",
+          "name": "ConfigFileCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "后置命令",
+          "example": "/usr/bin/bash",
+          "member": "string",
+          "name": "ConfigPostCmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Base64编码的配置项",
+          "example": "true",
+          "member": "bool",
+          "name": "EncodeWithBase64",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileConfigResponse": {
+      "document": "CreateFileConfig返回参数结构体",
+      "members": [
+        {
+          "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateGatewayApiRequest": {
       "document": "CreateGatewayApi请求参数结构体",
       "members": [
@@ -7786,6 +7921,96 @@
       ],
       "type": "object"
     },
+    "DescribeFileConfigsRequest": {
+      "document": "DescribeFileConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项ID",
+          "example": "dcfg-f-xxx",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置项ID列表",
+          "example": "null",
+          "member": "string",
+          "name": "ConfigIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "配置项名称",
+          "example": "sadf",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "application-6ymrrbag",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条数",
+          "example": "50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "配置项版本",
+          "example": "v1",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileConfigsResponse": {
+      "document": "DescribeFileConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "文件配置项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TsfPageFileConfig",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowLastBatchStateRequest": {
       "document": "DescribeFlowLastBatchState请求参数结构体",
       "members": [
@@ -11026,6 +11251,156 @@
           "name": "FieldPath",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FileConfig": {
+      "document": "文件配置项",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项版本描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigVersionDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigFileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项文件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigFileValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项文件编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigFileCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreationTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项归属应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "DeleteFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项版本数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ConfigVersionCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigFilePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后置命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigPostCmd",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项文件长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ConfigFileValueLength",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -15059,6 +15434,60 @@
       ],
       "type": "object"
     },
+    "ReleaseFileConfigRequest": {
+      "document": "ReleaseFileConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置ID",
+          "example": "dcfg-f-mae7g3v3",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组ID",
+          "example": "group-oydld25a",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发布描述",
+          "example": "release v1",
+          "member": "string",
+          "name": "ReleaseDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseFileConfigResponse": {
+      "document": "ReleaseFileConfig返回参数结构体",
+      "members": [
+        {
+          "document": "发布结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReleasePublicConfigRequest": {
       "document": "ReleasePublicConfig请求参数结构体",
       "members": [
@@ -17245,6 +17674,30 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageFileConfig": {
+      "document": "文件配置项列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件配置数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FileConfig",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

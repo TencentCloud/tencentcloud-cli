@@ -104,6 +104,14 @@
         "title": "创建容器部署组"
       }
     ],
+    "CreateFileConfig": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateFileConfig\n&ApplicationId=application-dapbkdgy\n&ConfigName=war-config\n&ConfigVersion=1\n&ConfigFileName=update\n&ConfigFileCode=utf-8\n&ConfigPostCmd=/usr/bin/bash\n&ConfigFileValue=workdir\n&ConfigFilePath=/root\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3063d6c8-9801-4ed0-b306-be14b89f6133\",\n        \"Result\": true\n    }\n}",
+        "title": "创建文件配置项"
+      }
+    ],
     "CreateGatewayApi": [
       {
         "document": "",
@@ -542,6 +550,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeEnabledUnitRule\n&GatewayInstanceId=gw-ins-afsfas\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"efa09114-e0c3-43ec-8347-5f4454696c61\",\n        \"Result\": {\n            \"Id\": \"rule-xxxxxxx\",\n            \"GatewayInstanceId\": \"test\",\n            \"Name\": null,\n            \"Status\": \"enabled\"\n        }\n    }\n}",
         "title": "查询生效的单元化规则"
+      }
+    ],
+    "DescribeFileConfigs": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeFileConfigs\n&ConfigName=sadf\n&ApplicationId=application-6ymrrbag\n&Offset=0\n&Limit=50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"678168f0-96f6-4d78-838c-7bcd5a305e65\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"ConfigId\": \"dcfg-f-zvw5q89v\",\n                    \"ConfigName\": \"sadf\",\n                    \"ConfigVersion\": \"1.0\",\n                    \"ConfigVersionDesc\": null,\n                    \"ConfigFileName\": \"Dockerfile\",\n                    \"ConfigFileCode\": \"UTF-8\",\n                    \"ConfigFileValue\": \"FROM centos:7\\r\\n\\r\\nRUN echo \\\"ip_resolve=4\\\" >> /etc/yum.conf\\r\\nRUN yum update -y && yum install -y java-1.8.0-openjdk\\r\\n\\r\\nCOPY demo-calculate-1.10.0-RELEASE.jar /data/tsf/\\r\\nCOPY run.sh /data/tsf/\\r\\n\\r\\n# GMT+8 for CentOS\\r\\nRUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime\\r\\nRUN echo \\\"Asia/Shanghai\\\" > /etc/timezone\\r\\n\\r\\n# run.sh\\r\\nCMD [\\\"sh\\\", \\\"-c\\\", \\\"cd /data/tsf; sh run.sh demo-calculate-1.10.0-RELEASE.jar /data/tsf\\\"]\\r\\n\",\n                    \"ConfigFilePath\": \"/a/\",\n                    \"ConfigPostCmd\": null,\n                    \"CreationTime\": \"2019-03-28 18:16:40\",\n                    \"LastUpdateTime\": null,\n                    \"ConfigVersionCount\": null,\n                    \"ApplicationId\": \"application-6ymrrbag\",\n                    \"ApplicationName\": \"provider\",\n                    \"DeleteFlag\": true,\n                    \"ConfigFileValueLength\": 419\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询文件配置项列表"
       }
     ],
     "DescribeFlowLastBatchState": [
@@ -1110,6 +1126,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=ReleaseConfig\r\n&ConfigId=dcfg-zvw6kxa8\r\n&GroupId=group-nalqbgvq\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36ccafba-c8ab-4d15-a4f1-4cfd2070d1d3\",\n        \"Result\": true\n    }\n}",
         "title": "发布配置"
+      }
+    ],
+    "ReleaseFileConfig": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ReleaseFileConfig\n&ConfigId=dcfg-f-mae7g3v3\n&GroupId=group-oydld25a\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16b1d7dc-d13a-40bb-870e-3b4a107cca63\",\n        \"Result\": true\n    }\n}",
+        "title": "发布文件配置"
       }
     ],
     "ReleasePublicConfig": [

@@ -5201,6 +5201,7 @@
         {
           "default": "",
           "document": "负载均衡实例 ID。",
+          "example": "lb-12345678",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -5210,6 +5211,7 @@
         {
           "default": "",
           "document": "负载均衡实例的名称。",
+          "example": "test",
           "member": "string",
           "name": "LoadBalancerName",
           "required": true,
@@ -5219,6 +5221,7 @@
         {
           "default": "",
           "document": "负载均衡实例的网络类型：\nPublic：公网属性， Private：内网属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
           "required": true,
@@ -5228,6 +5231,7 @@
         {
           "default": "",
           "document": "负载均衡实例的状态，包括\n0：创建中，1：正常运行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -5237,6 +5241,7 @@
         {
           "default": "",
           "document": "负载均衡实例的 VIP 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Address",
           "required": true,
@@ -5246,6 +5251,7 @@
         {
           "default": "",
           "document": "负载均衡实例 VIP 的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "AddressIPv6",
           "required": true,
@@ -5255,6 +5261,7 @@
         {
           "default": "",
           "document": "负载均衡实例IP版本，IPv4 | IPv6。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPv4",
           "member": "string",
           "name": "AddressIPVersion",
           "required": true,
@@ -5264,6 +5271,7 @@
         {
           "default": "",
           "document": "负载均衡实例IPv6地址类型，IPv6Nat64 | IPv6FullChain。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "IPv6Mode",
           "required": true,
@@ -5273,6 +5281,7 @@
         {
           "default": "",
           "document": "负载均衡实例所在可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -5282,6 +5291,7 @@
         {
           "default": "",
           "document": "负载均衡实例IP地址所属的ISP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CMCC",
           "member": "string",
           "name": "AddressIsp",
           "required": true,
@@ -5291,6 +5301,7 @@
         {
           "default": "",
           "document": "负载均衡实例所属私有网络的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5300,6 +5311,7 @@
         {
           "default": "",
           "document": "负载均衡实例所属的项目 ID， 0 表示默认项目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -5309,6 +5321,7 @@
         {
           "default": "",
           "document": "负载均衡实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -5318,6 +5331,7 @@
         {
           "default": "",
           "document": "负载均衡实例的计费类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "required": true,
@@ -5327,6 +5341,7 @@
         {
           "default": "",
           "document": "负载均衡实例的网络属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "InternetAccessible",
           "name": "NetworkAttributes",
           "required": true,
@@ -5336,6 +5351,7 @@
         {
           "default": "",
           "document": "负载均衡实例的预付费相关属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "LBChargePrepaid",
           "name": "PrepaidAttributes",
           "required": true,
@@ -5345,6 +5361,7 @@
         {
           "default": "",
           "document": "暂做保留，一般用户无需关注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ZhitTong\":false,\"TgwGroupName\":null}",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
           "required": true,
@@ -5354,6 +5371,7 @@
         {
           "default": "",
           "document": "负载均衡维度的个性化配置ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pz-12345678",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -5363,6 +5381,7 @@
         {
           "default": "",
           "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"TagKey\":\"1\",\"TagValue\":\"2\"}]",
           "member": "TagInfo",
           "name": "Tags",
           "required": true,
@@ -5372,6 +5391,7 @@
         {
           "default": "",
           "document": "负载均衡监听器 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lbl-12345678",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -5381,6 +5401,7 @@
         {
           "default": "",
           "document": "监听器协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcp",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -5390,6 +5411,7 @@
         {
           "default": "",
           "document": "监听器端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
           "member": "uint64",
           "name": "Port",
           "required": true,
@@ -5399,6 +5421,7 @@
         {
           "default": "",
           "document": "转发规则的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "loc-12345678",
           "member": "string",
           "name": "LocationId",
           "required": true,
@@ -5408,6 +5431,7 @@
         {
           "default": "",
           "document": "转发规则的域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5417,6 +5441,7 @@
         {
           "default": "",
           "document": "转发规则的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -5426,6 +5451,7 @@
         {
           "default": "",
           "document": "后端目标ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-12345678",
           "member": "string",
           "name": "TargetId",
           "required": true,
@@ -5435,6 +5461,7 @@
         {
           "default": "",
           "document": "后端目标的IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.16.0.2",
           "member": "string",
           "name": "TargetAddress",
           "required": true,
@@ -5444,6 +5471,7 @@
         {
           "default": "",
           "document": "后端目标监听端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
           "member": "uint64",
           "name": "TargetPort",
           "required": true,
@@ -5453,6 +5481,7 @@
         {
           "default": "",
           "document": "后端目标转发权重。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "TargetWeight",
           "required": true,
@@ -5462,6 +5491,7 @@
         {
           "default": "",
           "document": "0：表示未被隔离，1：表示被隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "Isolation",
           "required": true,
@@ -5471,6 +5501,7 @@
         {
           "default": "",
           "document": "负载均衡绑定的安全组列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroup",
           "required": true,
@@ -5480,10 +5511,21 @@
         {
           "default": "",
           "document": "负载均衡安全组上移特性是否开启标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "LoadBalancerPassToTarget",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端目标健康状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Alive",
+          "member": "string",
+          "name": "TargetHealth",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

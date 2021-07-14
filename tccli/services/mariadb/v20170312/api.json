@@ -193,9 +193,9 @@
       "output": "DescribeSqlLogsResponse"
     },
     "DescribeUpgradePrice": {
-      "document": "本接口（DescribeUpgradePrice）用于在扩容云数据库实例时，查询扩容的价格。",
+      "document": "本接口（DescribeUpgradePrice）用于在扩容云数据库实例时，查询变配的价格。",
       "input": "DescribeUpgradePriceRequest",
-      "name": "扩容实例询价",
+      "name": "变配实例询价",
       "output": "DescribeUpgradePriceResponse"
     },
     "DestroyHourDBInstance": {
@@ -1665,6 +1665,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "暂无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1674,6 +1675,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "暂无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -1683,6 +1685,7 @@
         {
           "default": "",
           "document": "实例地域",
+          "example": "暂无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1692,6 +1695,7 @@
         {
           "default": "",
           "document": "实例可用区",
+          "example": "暂无",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1701,6 +1705,7 @@
         {
           "default": "",
           "document": "实例IP地址",
+          "example": "暂无",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -1710,6 +1715,7 @@
         {
           "default": "",
           "document": "实例IPv6地址",
+          "example": "暂无",
           "member": "string",
           "name": "Vipv6",
           "required": true,
@@ -1719,6 +1725,7 @@
         {
           "default": "",
           "document": "实例端口",
+          "example": "暂无",
           "member": "int64",
           "name": "Vport",
           "required": true,
@@ -1728,6 +1735,7 @@
         {
           "default": "",
           "document": "实例状态",
+          "example": "暂无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1737,6 +1745,7 @@
         {
           "default": "",
           "document": "实例状态描述",
+          "example": "暂无",
           "member": "string",
           "name": "StatusDesc",
           "required": true,
@@ -1746,6 +1755,7 @@
         {
           "default": "",
           "document": "实例DCN标志，1-主，2-备",
+          "example": "暂无",
           "member": "int64",
           "name": "DcnFlag",
           "required": true,
@@ -1755,8 +1765,79 @@
         {
           "default": "",
           "document": "实例DCN状态，0-无，1-创建中，2-同步中，3-已断开",
+          "example": "暂无",
           "member": "int64",
           "name": "DcnStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例CPU核数",
+          "example": "暂无",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内存大小，单位 GB",
+          "example": "暂无",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例存储大小，单位 GB",
+          "example": "暂无",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式",
+          "example": "暂无",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间，格式为 2006-01-02 15:04:05",
+          "example": "暂无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例到期时间，格式为 2006-01-02 15:04:05",
+          "example": "暂无",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）",
+          "example": "暂无",
+          "member": "int64",
+          "name": "InstanceType",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3470,6 +3551,7 @@
         {
           "default": "",
           "document": "待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3478,6 +3560,7 @@
         {
           "default": "",
           "document": "内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得。",
+          "example": "2000",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -3486,6 +3569,7 @@
         {
           "default": "",
           "document": "存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。",
+          "example": "20000",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -3499,16 +3583,29 @@
       "members": [
         {
           "document": "原价，单位：分",
+          "example": "720",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "example": "720",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "变配明细计算公式",
+          "example": "变配订单金额：退款3.45 元[1、退费3.45 元=变配差价3.45 元*现金比例100 %，>代金券不可退；2、变配差价3.",
+          "member": "string",
+          "name": "Formula",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

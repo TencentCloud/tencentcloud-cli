@@ -26,6 +26,7 @@ Output:
                 "Description": "Test Invocation",
                 "Parameters": "",
                 "DefaultParameters": "",
+                "Username": "root",
                 "InvocationTaskBasicInfoSet": [
                     {
                         "InvocationTaskId": "invt-kakne8h2",

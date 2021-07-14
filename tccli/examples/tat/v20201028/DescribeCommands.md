@@ -30,6 +30,7 @@ Output:
                 "Timeout": 60,
                 "EnableParameter": false,
                 "DefaultParameters": "",
+                "Username": "root",
                 "Tags": [
                     {
                         "Value": "test-key",
@@ -77,6 +78,7 @@ Output:
                 "Timeout": 60,
                 "EnableParameter": false,
                 "DefaultParameters": "",
+                "Username": "root",
                 "Tags": [
                     {
                         "Value": "test-key",
@@ -98,6 +100,7 @@ Output:
                 "Timeout": 600,
                 "EnableParameter": false,
                 "DefaultParameters": "",
+                "Username": "root",
                 "Tags": [
                     {
                         "Value": "test-key",
@@ -145,6 +148,7 @@ Output:
                 "Timeout": 60,
                 "EnableParameter": false,
                 "DefaultParameters": "",
+                "Username": "root",
                 "Tags": [],
                 "CreatedTime": "2020-10-30T07:19:52+00:00",
                 "UpdatedTime": "2020-10-30T07:19:52+00:00"
@@ -185,6 +189,7 @@ Output:
                 "Timeout": 60,
                 "EnableParameter": false,
                 "DefaultParameters": "",
+                "Username": "root",
                 "Tags": [
                     {
                         "Key": "test-key",

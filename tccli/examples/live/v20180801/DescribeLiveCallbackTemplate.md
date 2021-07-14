@@ -19,7 +19,7 @@ Output:
             "Description": "test",
             "StreamBeginNotifyUrl": "http://www.qq.com/api/notify?action=streamBegin",
             "StreamEndNotifyUrl": "http://www.qq.com/api/notify?action=streamEnd",
-            "StreamMixNotifyUrl": "http://www.qq.com/api/notify?action=streamMix",
+            "StreamMixNotifyUrl": "",
             "RecordNotifyUrl": "http://www.qq.com/api/notify?action=record",
             "SnapshotNotifyUrl": "http://www.qq.com/api/notify?action=record",
             "PornCensorshipNotifyUrl": "http://www.qq.com/api/notify?action=porn",

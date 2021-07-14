@@ -26,6 +26,7 @@ Output:
                     "Content": "d2hvYW1p",
                     "CommandType": "SHELL",
                     "Timeout": 1,
+                    "Username": "root",
                     "WorkingDirectory": "/root/"
                 },
                 "InvocationId": "inv-1vll7hda",
@@ -50,6 +51,7 @@ Output:
                     "Content": "d2hvYW1p",
                     "CommandType": "SHELL",
                     "Timeout": 1,
+                    "Username": "root",
                     "WorkingDirectory": "/root/"
                 },
                 "InvocationId": "inv-1vll7hda",
@@ -74,6 +76,7 @@ Output:
                     "Content": "d2hvYW1p",
                     "CommandType": "SHELL",
                     "Timeout": 1,
+                    "Username": "root",
                     "WorkingDirectory": "/root/"
                 },
                 "InvocationId": "inv-1vll7hda",

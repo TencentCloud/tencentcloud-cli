@@ -12,6 +12,12 @@
       "name": "批量删除个人版仓库",
       "output": "BatchDeleteRepositoryPersonalResponse"
     },
+    "CheckInstance": {
+      "document": "用于校验企业版实例信息",
+      "input": "CheckInstanceRequest",
+      "name": "校验实例信息",
+      "output": "CheckInstanceResponse"
+    },
     "CheckInstanceName": {
       "document": "检查待创建的实例名称是否符合规范",
       "input": "CheckInstanceNameRequest",
@@ -756,6 +762,51 @@
           "member": "bool",
           "name": "IsValidated",
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckInstanceRequest": {
+      "document": "CheckInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待检测的实例Id",
+          "example": "test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckInstanceResponse": {
+      "document": "CheckInstance返回参数结构体",
+      "members": [
+        {
+          "document": "检查结果，true为合法，false为非法",
+          "example": "true",
+          "member": "bool",
+          "name": "IsValidated",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例所在的RegionId",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4797,6 +4848,15 @@
           "name": "DestinationRegionId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开启跨主账号实例同步配置项",
+          "example": "无",
+          "member": "PeerReplicationOption",
+          "name": "PeerReplicationOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5489,6 +5549,42 @@
         }
       ],
       "usage": "out"
+    },
+    "PeerReplicationOption": {
+      "document": "跨主账号实例同步参数",
+      "members": [
+        {
+          "default": "",
+          "document": "待同步实例的uin",
+          "example": "156789",
+          "member": "string",
+          "name": "PeerRegistryUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待同步实例的访问永久Token",
+          "example": "123",
+          "member": "string",
+          "name": "PeerRegistryToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启跨主账号实例同步",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePeerReplication",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Registry": {
       "document": "实例信息结构体",

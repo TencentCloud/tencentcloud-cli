@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli eiam DescribeUserInfo --cli-unfold-argument ```
+tccli eiam DescribeUserInfo --cli-unfold-argument  \
+    --UserName xxx
+```
 
 Output: 
 ```

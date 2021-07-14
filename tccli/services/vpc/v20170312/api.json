@@ -16272,6 +16272,7 @@
         {
           "default": "",
           "document": "NAT网关的ID。",
+          "example": "\"nat-12345678\"",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -16281,6 +16282,7 @@
         {
           "default": "",
           "document": "NAT网关的名称。",
+          "example": "\"test\"",
           "member": "string",
           "name": "NatGatewayName",
           "required": true,
@@ -16290,6 +16292,7 @@
         {
           "default": "",
           "document": "NAT网关创建的时间。",
+          "example": "\"2021-05-24 19:28:31\"",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -16299,6 +16302,7 @@
         {
           "default": "",
           "document": "NAT网关的状态。\n 'PENDING'：生产中，'DELETING'：删除中，'AVAILABLE'：运行中，'UPDATING'：升级中，\n‘FAILED’：失败。",
+          "example": "\"AVAILABLE\"",
           "member": "string",
           "name": "State",
           "required": true,
@@ -16308,6 +16312,7 @@
         {
           "default": "",
           "document": "网关最大外网出带宽(单位:Mbps)。",
+          "example": "10",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -16317,6 +16322,7 @@
         {
           "default": "",
           "document": "网关并发连接上限。",
+          "example": "10000000",
           "member": "uint64",
           "name": "MaxConcurrentConnection",
           "required": true,
@@ -16326,6 +16332,7 @@
         {
           "default": "",
           "document": "绑定NAT网关的公网IP对象数组。",
+          "example": " 无",
           "member": "NatGatewayAddress",
           "name": "PublicIpAddressSet",
           "required": true,
@@ -16335,6 +16342,7 @@
         {
           "default": "",
           "document": "NAT网关网络状态。“AVAILABLE”:运行中, “UNAVAILABLE”:不可用, “INSUFFICIENT”:欠费停服。",
+          "example": "\"AVAILABLE\"",
           "member": "string",
           "name": "NetworkState",
           "required": true,
@@ -16344,6 +16352,7 @@
         {
           "default": "",
           "document": "NAT网关的端口转发规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "DestinationIpPortTranslationNatRuleSet",
           "required": true,
@@ -16353,6 +16362,7 @@
         {
           "default": "",
           "document": "VPC实例ID。",
+          "example": "\"vpc-12345678\"",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -16362,6 +16372,7 @@
         {
           "default": "",
           "document": "NAT网关所在的可用区。",
+          "example": "\"ap-guangzhou-2\"",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -16371,6 +16382,7 @@
         {
           "default": "",
           "document": "绑定的专线网关ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"dcg-12345678\"]",
           "member": "string",
           "name": "DirectConnectGatewayIds",
           "required": true,
@@ -16380,6 +16392,7 @@
         {
           "default": "",
           "document": "所属子网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"subnet-12345678\"",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -16389,6 +16402,7 @@
         {
           "default": "",
           "document": "标签键值对。",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
@@ -16398,10 +16412,41 @@
         {
           "default": "",
           "document": "NAT网关绑定的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroupSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "NAT网关的SNAT转发规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceIpTranslationNatRule",
+          "name": "SourceIpTranslationNatRuleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否独享型NAT。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExclusive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50000",
+          "member": "uint64",
+          "name": "ExclusiveGatewayBandwidth",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

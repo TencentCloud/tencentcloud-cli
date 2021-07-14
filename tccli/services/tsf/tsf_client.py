@@ -715,7 +715,7 @@ def doDescribeImageTags(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyUploadInfo(args, parsed_globals):
+def doDescribeFileConfigs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -731,9 +731,9 @@ def doModifyUploadInfo(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyUploadInfoRequest()
+    model = models.DescribeFileConfigsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyUploadInfo(model)
+    rsp = client.DescribeFileConfigs(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1552,6 +1552,33 @@ def doCreateServerlessGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePublicConfigReleaseLogs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePublicConfigReleaseLogsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePublicConfigReleaseLogs(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeConfigReleaseLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2092,6 +2119,33 @@ def doDescribeSimpleGroups(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doReleaseFileConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReleaseFileConfigRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ReleaseFileConfig(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeGroupGateways(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2192,6 +2246,33 @@ def doDisableUnitRule(args, parsed_globals):
     model = models.DisableUnitRuleRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DisableUnitRule(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateFileConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateFileConfigRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateFileConfig(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -3172,7 +3253,7 @@ def doRedoTaskBatch(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicConfigReleaseLogs(args, parsed_globals):
+def doModifyUploadInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -3188,9 +3269,9 @@ def doDescribePublicConfigReleaseLogs(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicConfigReleaseLogsRequest()
+    model = models.ModifyUploadInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePublicConfigReleaseLogs(model)
+    rsp = client.ModifyUploadInfo(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -4478,7 +4559,7 @@ ACTION_MAP = {
     "RollbackConfig": doRollbackConfig,
     "ExpandGroup": doExpandGroup,
     "DescribeImageTags": doDescribeImageTags,
-    "ModifyUploadInfo": doModifyUploadInfo,
+    "DescribeFileConfigs": doDescribeFileConfigs,
     "DescribeSimpleClusters": doDescribeSimpleClusters,
     "DescribeApiDetail": doDescribeApiDetail,
     "DescribeGroupsWithPlugin": doDescribeGroupsWithPlugin,
@@ -4509,6 +4590,7 @@ ACTION_MAP = {
     "DescribeSimpleNamespaces": doDescribeSimpleNamespaces,
     "CreateApiRateLimitRule": doCreateApiRateLimitRule,
     "CreateServerlessGroup": doCreateServerlessGroup,
+    "DescribePublicConfigReleaseLogs": doDescribePublicConfigReleaseLogs,
     "DescribeConfigReleaseLogs": doDescribeConfigReleaseLogs,
     "DescribeCreateGatewayApiStatus": doDescribeCreateGatewayApiStatus,
     "ModifyTask": doModifyTask,
@@ -4529,10 +4611,12 @@ ACTION_MAP = {
     "CreatePublicConfig": doCreatePublicConfig,
     "BindApiGroup": doBindApiGroup,
     "DescribeSimpleGroups": doDescribeSimpleGroups,
+    "ReleaseFileConfig": doReleaseFileConfig,
     "DescribeGroupGateways": doDescribeGroupGateways,
     "AddInstances": doAddInstances,
     "ShrinkInstances": doShrinkInstances,
     "DisableUnitRule": doDisableUnitRule,
+    "CreateFileConfig": doCreateFileConfig,
     "RedoTask": doRedoTask,
     "DescribePkgs": doDescribePkgs,
     "CreateApiGroup": doCreateApiGroup,
@@ -4569,7 +4653,7 @@ ACTION_MAP = {
     "CreateApplication": doCreateApplication,
     "ModifyPathRewrite": doModifyPathRewrite,
     "RedoTaskBatch": doRedoTaskBatch,
-    "DescribePublicConfigReleaseLogs": doDescribePublicConfigReleaseLogs,
+    "ModifyUploadInfo": doModifyUploadInfo,
     "StopContainerGroup": doStopContainerGroup,
     "ExecuteTaskFlow": doExecuteTaskFlow,
     "DescribeMicroservice": doDescribeMicroservice,

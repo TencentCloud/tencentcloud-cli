@@ -59,8 +59,8 @@
     "DescribeApplication": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplication\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ClientSecret\": \"xx\",\n        \"KeyId\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"AuthorizeUrl\": \"xx\",\n        \"LastModifiedDate\": \"xx\",\n        \"TokenExpired\": 0,\n        \"ClientId\": \"xx\",\n        \"PublicKey\": \"xx\",\n        \"ApplicationType\": \"xx\",\n        \"CreatedDate\": \"xx\",\n        \"ApplicationId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efe4663a-f71b-498d-a270-0cca0c69f743\",\n        \"ApplicationId\": \"52edd4a7-cd07-4ab1-8f33-8bb537179ba2\",\n        \"DisplayName\": \"测试API网关应用\",\n        \"CreatedDate\": \"2020-05-28T02:09:57.343+00:00\",\n        \"LastModifiedDate\": \"2020-11-26T03:41:21.891+00:00\",\n        \"ApplicationType\": \"API\",\n        \"TokenExpired\": \"4800\",\n        \"ClientId\": \"xxx\",\n        \"ClientSecret\": \"xxx\",\n        \"KeyId\": \"xxx\",\n        \"PublicKey\": \"{\\\"kty\\\":\\\"RSA\\\",\\\"kid\\\":\\\"xxx\\\",\\\"use\\\":\\\"sig\\\",\\\"alg\\\":\\\"RS256\\\",\\\"n\\\":\\\"xxx\\\",\\\"e\\\":\\\"AQAB\\\"}\",\n        \"AuthorizeUrl\": \"https://xxx.com/auth/oauth2/authorize?client_id=xxx&response_type=code&state=xxx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -91,7 +91,7 @@
     "DescribeUserInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"UserGroupIds\": [\n            \"5142dacf-88a1-4950-a5a2-f61f3f4b0dae\",\n            \"8533930b-57e1-4d0a-8961-90478823cdcf\"\n        ],\n        \"UserId\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"Email\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
       }
